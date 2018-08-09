@@ -25,7 +25,7 @@ Overview of Redis Enterprise VPC (RV)
         Creating an AWS User for Redis Enterprise VPC X
         Importing Data Into Your Database X
 Overview of Redis Enterprise Cloud (RC)
-    Quick Setup of Redis Enterprise Cloud X
+    Quick Setup of Redis Enterprise Cloud
     Concepts behind Redis Enterprise Cloud
         Data Persistence
         Clustering
