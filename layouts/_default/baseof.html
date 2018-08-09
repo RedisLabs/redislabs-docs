@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {{ partial "flex/head" . }}
+  </head>
+  <body data-url="{{ .RelPermalink }}">
+    {{ partial "flex/body-beforecontent" . }}
+   
+    {{ partial "mini-toc" . }}
+
+    {{ block "main" . }}
+    {{ end }}
+    
+    {{ partial "flex/body-aftercontent" . }}
+
+    {{ block "footer" . }}
+    {{ end }}
+
+    {{ partial "custom-footer" . }}
+  </body>
+</html>

@@ -1,0 +1,109 @@
+---
+Title: ReJSON Quick Start Tutorial
+description: $description
+weight: $weight
+alwaysopen: false
+---
+For this quick start, you will need the following:
+
+-   [A Redis Enterprise Software cluster with set up already
+    complete](/redis-enterprise-documentation/getting-started/quick-setup/)
+-   Any redis-cli or ReJSON enabled client
+
+### Create a new database that uses the Module
+
+1.  Navigate to **databases** tab
+2.  Click on the **+** sign, if necessary, then **create database**
+3.  On the create database screen, check the box for Redis Modules and
+    select the module you want to use for this database.\
+    ![](/wp-content/uploads/2017/10/create_database-1.png){.alignnone
+    .size-full .wp-image-30752 width="794" height="554"}
+4.  Click **Show advanced options** and put **12543** for the port.
+5.  Click the **Activate** button
+
+Quick start with redis-cli
+--------------------------
+
+These examples will use redis-cli as the Redis client to show how easy
+it is. The first ReJSON command to try out is JSON.SET, which sets a
+Redis key with a JSON value. All JSON values can be used, for example a
+string:
+
+Connect to redis using --raw so we can read the json correctly.
+Otherwise the quotes are "escaped" and formatting is not ideal.
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+$ redis-cli --raw -p 12543
+127.0.0.1:12543>
+```
+
+Add a simple document
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.SET foo . '{"foo" : "bar"}'
+OK
+```
+
+Read back the only entity with a get
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.GET foo
+{"foo":"bar"}
+```
+
+Check what type foo is
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.TYPE foo .
+object
+```
+
+See what type of entity the foo entity is in the foo document.
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.TYPE foo .foo
+string
+```
+
+Now that we have a minimal JSON document. Add some more data to it. The
+great thing is, we do not need the entire document, we only write what
+needs to change. Add an entity into the document called test with a
+integer value of 1.
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.SET foo .test 1
+OK
+```
+
+Next increment that value by 2 and this returns the updated value.
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.NUMINCRBY foo .test 2
+3
+```
+
+Now create a new document, add another document to it, and then add
+another name/value pair to that sub-document.
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.SET foo . '{"foo":"bar"}'
+OK
+```
+
+Add the test entity with a JSON document
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.SET foo .test '{"test2":true}'
+OK
+127.0.0.1:12543> JSON.GET foo
+{"foo":"bar","test":{"test2":true}}
+```
+
+Add another entity to the test document
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+127.0.0.1:12543> JSON.SET foo .test.test3 '"test"'
+OK
+127.0.0.1:12543> JSON.GET foo
+{"foo":"bar","test":{"test2":true,"test3":"test"}}
+```

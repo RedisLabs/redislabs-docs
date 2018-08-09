@@ -1,0 +1,72 @@
+baseURL = "/"
+languageCode = "en-us"
+DefaultContentLanguage = "en"
+title = "Redis Labs Documentation Center"
+theme = "docdock"
+# themesdir = "../.."
+pygmentsCodeFences = true
+pygmentsStyle = "monokailight"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+enableMissingTranslationPlaceholders = false
+
+canonifyURLs = true
+relativeURLs = true
+
+# [Languages]
+# [Languages.en]
+# title = "Documentation for Hugo docDock"
+# weight = 1
+# languageName = "English"
+# 
+# [Languages.fr]
+# title = "Documentation du thème docDock"
+# weight = 2
+# languageName = "Français"
+
+[params]
+editURL = "https://github.com/redislabsdev/redislabs-docs/edit/branch/content/"
+showVisitedLinks = true # default is false
+themeStyle = "flex" # "original" or "flex" # default "flex"
+themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
+ordersectionsby = "weight" # ordersectionsby = "title"
+disableHomeIcon = false # default is false
+disableSearch = false # default is false
+disableNavChevron = false # set true to hide next/prev chevron, default is false
+highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
+menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
+enableGitInfo = true
+googleAnalytics = ""
+
+[blackfriday]
+hrefTargetBlank = false
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+# name = "<i class='fa fa-question-circle'></i> <label>Product</label>"
+name = "<label>Docs</label>"
+url = "https://redislabs.com/docs"
+weight = 10
+
+[[menu.shortcuts]]
+name = "<label>University</label>"
+url = "https://university.redislabs.com"
+weight = 40
+
+[[menu.shortcuts]]
+name = "<label>Search</label>"
+url = "https://redislabs.com/?s="
+weight = 60
+
+[[menu.shortcuts]]
+name = "<label>Login</label>"
+url = "https://app.redislabs.com/#/login?"
+weight = 70
+
+[[menu.shortcuts]]
+name = "<label>Getting Started</label>"
+url = "https://redislabs.com/get-started/"
+weight = 80

@@ -1,0 +1,40 @@
+---
+Title: Performance Optimization
+description: $description
+weight: $weight
+alwaysopen: false
+---
+Redis Enterprise Software (RS) employs various algorithms to optimize
+performance. As part of this process, RS examines usage characteristics
+and load and adjusts its run-time configuration accordingly. Depending
+on your specific usage characteristics and load, it might take RS some
+time to adjust itself to optimal performance.
+
+To ensure optimal performance, you must run your workload several times
+and for a long duration until performance stabilizes.
+
+In addition, RS can be optimized for two different environments:
+
+-   Local-network environment
+-   Cloud environment
+
+Depending on which configuration you choose, RS will use different
+thresholds to make operation related decisions.
+
+The default configuration is for local-network environments. If you are
+running RS in a cloud environment, it is advisable that you change the
+configuration.
+
+How to change the environment configuration
+-------------------------------------------
+
+In the rladmin command-line interface (CLI), run the following command:
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+rladmin tune cluster watchdog_profile [cloud | local-network]
+```
+
+If after following all of the instructions above, you find that RS still
+does not meet your performance expectations, contact us
+at <support@redislabs.com> to help you optimize RS to your specific
+needs.

@@ -1,0 +1,79 @@
+---
+Title: Configuring AWS Instances for Redis Enterprise Software
+description: $description
+weight: $weight
+alwaysopen: false
+---
+There are some special considerations that are important when installing
+and running Redis Enterprise Software (RS) on an AWS instances.
+
+Storage Considerations
+======================
+
+AWS instances are ephemeral, but your persistent database storage should
+not be. If you require a persistent storage location for your database,
+the storage must be located outside of the instance. Therefore, when you
+set up an instance ensure that it has a properly sized EBS backed volume
+connected. Later, when setting up RS on the instance, ensure that the
+persistence storage (for additional details, refer to [Persistent and
+ephemeral
+storage](/redis-enterprise-documentation/cluster-administration/best-practices/persistent-and-ephemeral-storage/))
+is configured to use this volume.
+
+Note: After installing the RS package on the instance (for additional
+details, refer to [Accessing and installing the setup
+package](/redis-enterprise-documentation/administering/installing-upgrading/downloading-installing/))
+and **before** running through the setup process (for additional
+details, refer to [Initial setup -- creating a new
+cluster](/redis-enterprise-documentation/initial-setup-creating-a-new-cluster)),
+you must give the group 'redislabs' permissions to the EBS volume by
+running the following command from the OS command-line interface (CLI):
+chown redislabs:redislabs /\< ebs folder name \>
+
+Another feature that may be of importance to you is the use of
+Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a
+certain level of disk performance. There are two features in RS where
+this feature could be critical to use:
+
+1.  When using [Redis on
+    Flash](/redis-enterprise-documentation/redis-e-flash/)
+2.  When using AOF on every write and there is a high write load. In
+    this case, the provisioned IOPS should be on the nodes used as
+    slaves in the cluster.
+
+Instance Types
+==============
+
+Choose an instance type that has (at minimum) enough free memory and
+disk space to meet RS's [hardware
+requirements](/redis-enterprise-documentation/administering/designing-production/hardware-requirements/).
+
+In addition, some instance types are optimized for EBS backed volumes
+and some are not. If you are using persistent storage, you should use an
+instance type that is, if disk drain rate matters to your database
+implementation.
+
+Security
+========
+
+When configuring the Security Group:
+
+-   Define a custom TCP rule for port 8443 to allow web browser access
+    to the RS management UI from the IP address/ range you will use to
+    access the UI.
+-   If you are using the DNS resolving option with RS, define a DNS UDP
+    rule for port 53 to allow access to the databases' endpoints by
+    using the DNS resolving mechanism. For additional details, refer to
+    DNS.
+-   If you would like to create a cluster that has multiple nodes all
+    running as instances on AWS, you need to define a security group
+    that has an All TCP rule for all ports, 0 -- 65535, and add it to
+    all instances that are part of the cluster. This will ensure that
+    all nodes are able to communicate with each other. If you would not
+    like to open all TCP ports and instead define specific ports and
+    ports ranges, refer to Machine ports configuration for a
+    comprehensive list of ports being used.
+
+After successfully launching the instances, setup the cluster as
+described in [Initial setup -- creating a new
+cluster](/redis-enterprise-documentation/initial-setup-creating-a-new-cluster).

@@ -1,0 +1,34 @@
+---
+Title: Configuring Swap in Linux for Redis Enterprise Software (RS)
+description: $description
+weight: $weight
+alwaysopen: false
+---
+Swap space is used by the Linux OS to help manage memory (pages) by
+copying pages from RAM to disk and the OS is configured by default to be
+fairly aggressive. For Redis Enterprise Software (RS) with the way it
+utilizes and manages memory, it is best to eliminate the likelihood of
+the OS swapping. If you would like to understand why, please read more
+on [how RS manages
+memory](/redis-enterprise-documentation/concepts-architecture/memory-architecture/memory-management/)
+for best functionality and performance in the section below. The formal
+recommendation is to disable Linux swap completely in the OS.
+
+Disabling Swap
+--------------
+
+To disable the swap in the OS of an existing server/VM/instance, you
+must have sudo access or be root to run the following command:
+
+``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+$ sudo swapoff -a
+$ sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
+```
+
+The first command turns swap off immediately and the second command
+comments out the swap partition(s) configured in the OS so swap being
+off will survive a reboot.
+
+If you are able to, it is best when you install/build the OS on the
+server/VM/instance to be used in your RS cluster, to simply not
+configure swap partitions at all.

@@ -1,0 +1,13 @@
+#git files
+/.github
+
+#Hugo output
+/public/*
+!/public/.gitkeep
+
+#Forestry config files
+/forestry
+
+# IDEA configuration
+.idea/
+

@@ -1,0 +1,10 @@
+{
+	"swaggerVersion": "1.2",
+	"apiVersion": "3.0",
+	"apis": [
+	{
+		"path": "http://getcloudify.org/guide/3.1/rest-api/spec.json",
+		"description": "Auto generated API docs by flask-restful-swagger"
+	}
+	]
+}
