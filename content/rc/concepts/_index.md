@@ -1,7 +1,7 @@
 ---
 Title: Concepts behind Redis Enterprise Cloud
 description: $description
-weight: $weight
+weight: 20
 alwaysopen: false
 ---
 This section of pages contains content that describes the main concepts

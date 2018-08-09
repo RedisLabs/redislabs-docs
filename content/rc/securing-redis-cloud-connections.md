@@ -1,7 +1,7 @@
 ---
 title: Securing Connections with SSL/TLS
 description: $description
-weight: $weight
+weight: 25
 alwaysopen: false
 ---
 Getting SSL/TLS Support Added to Your Subscription

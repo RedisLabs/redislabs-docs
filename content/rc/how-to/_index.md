@@ -1,7 +1,7 @@
 ---
-Title: HowTos
+Title: How Tos
 description: $description
-weight: $weight
+weight: 40
 alwaysopen: false
 ---
 [Using flushall with Redis Enterprise

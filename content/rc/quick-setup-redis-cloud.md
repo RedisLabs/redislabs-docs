@@ -1,7 +1,7 @@
 ---
 Title: Quick Setup of Redis Enterprise Cloud
 description: $description
-weight: $weight
+weight: 10
 alwaysopen: false
 ---
 The steps here are super simple and go as follows:
