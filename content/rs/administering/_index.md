@@ -1,7 +1,7 @@
 ---
-Title: Administering Redis Enterprise Software (RS)
+Title: Administering Redis Enterprise
 description: $description
-weight: $weight
+weight: 60
 alwaysopen: false
 ---
 This section covers everything you need to know to get up and running

@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software Documentation
+Title: Redis Enterprise Software (RS)
 description: 
 weight: 10
 alwaysopen: false

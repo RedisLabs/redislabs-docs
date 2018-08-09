@@ -1,7 +1,7 @@
 ---
-Title: Overview of Redis Enterprise Software Architecture {#overview-of-redis-enterprise-software-architecture .parent}
+Title: Concepts and Architecture
 description: $description
-weight: $weight
+weight: 40
 alwaysopen: false
 ---
 A Redis Enterprise cluster is composed of identical nodes that are

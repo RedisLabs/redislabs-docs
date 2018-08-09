@@ -1,7 +1,7 @@
 ---
 Title: Getting Started with Redis Enterprise Software (RS)
 description: $description
-weight: $weight
+weight: 30
 alwaysopen: false
 ---
 This section contains pages to help you get started quickly with a

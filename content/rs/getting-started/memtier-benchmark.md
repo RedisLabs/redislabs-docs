@@ -1,7 +1,7 @@
 ---
-Title: Quick Start Tutorial on How to Benchmark Redis Enterprise
+Title: Benchmarking Redis Enterprise
 description: $description
-weight: $weight
+weight: 50
 alwaysopen: false
 ---
 If you need to do a quick performance benchmark of Redis Enterprise, we

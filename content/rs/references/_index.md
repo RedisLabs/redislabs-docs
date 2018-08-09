@@ -1,7 +1,7 @@
 ---
-Title: For Redis Enterprise Software, there are many tools that can assist with
+Title: Developer References
 description: $description
-weight: $weight
+weight: 80
 alwaysopen: false
 ---
 

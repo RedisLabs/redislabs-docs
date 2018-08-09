@@ -1,7 +1,7 @@
 ---
 Title: Quick Setup of Redis Enterprise Software (RS)
 description: $description
-weight: $weight
+weight: 10
 alwaysopen: false
 ---
 The steps to set up a Redis Enterprise Software (RS) cluster with a

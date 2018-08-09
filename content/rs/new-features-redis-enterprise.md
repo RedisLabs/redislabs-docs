@@ -1,7 +1,7 @@
 ---
 Title: What's new in Redis Enterprise Software 5.0?
 description: $description
-weight: $weight
+weight: 20
 alwaysopen: false
 ---
 Below are detailed a few of the major features of this release of Redis

@@ -1,7 +1,7 @@
 ---
 Title: FAQs {#faqs .parent}
 description: $description
-weight: $weight
+weight: 70
 alwaysopen: false
 ---
 This section includes various frequently asked questions.

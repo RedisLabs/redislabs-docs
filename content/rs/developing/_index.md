@@ -1,7 +1,7 @@
 ---
-Title: Developing
+Title: Developing for Redis Enterprise
 description: $description
-weight: $weight
+weight: 50
 alwaysopen: false
 ---
 -   [Search and

@@ -1,7 +1,7 @@
 ---
-Title: Quick Start Tutorial with Redis Enterprise Software for Pivotal Cloud Foundry (PCF)
+Title: Redis Enterprise Software for Pivotal Cloud Foundry (PCF)
 description: $description
-weight: $weight
+weight: 40
 alwaysopen: false
 ---
 Redis Enterprise for Pivotal Cloud Foundry (PCF) exposes its service

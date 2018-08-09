@@ -1,7 +1,7 @@
 ---
-Title: Release Notes {#release-notes .parent}
+Title: Release Notes
 description: $description
-weight: $weight
+weight: 90
 alwaysopen: false
 ---
 [5.3.0 (BETA) -- July
