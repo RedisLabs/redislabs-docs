@@ -1,7 +1,7 @@
 ---
-Title: Overview of Redis Enterprise VPC (RV)
+Title: Redis Enterprise VPC (RV)
 description: 
-weight: $weight
+weight: 30
 alwaysopen: false
 ---
 Redis Enterprise VPC (RV) delivers a cost-effective, fully managed

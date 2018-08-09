@@ -1,7 +1,7 @@
 ---
-Title: Overview of Redis Enterprise Cloud (RC)
+Title: Redis Enterprise Cloud (RC)
 description: 
-weight: $weight
+weight: 20
 alwaysopen: false
 ---
 Redis Enterprise Cloud (RC) is a managed, serverless,
