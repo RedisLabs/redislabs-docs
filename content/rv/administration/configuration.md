@@ -1,7 +1,7 @@
 ---
 Title: Configuring Redis Enterprise VPC Resources
 description: $description
-weight: $weight
+weight: 20
 alwaysopen: false
 ---
 While there is very little configuration of Redis Enterprise VPC

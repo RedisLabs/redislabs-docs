@@ -1,7 +1,7 @@
 ---
 Title: Payment Methods
 description: $description
-weight: $weight
+weight: 40
 alwaysopen: false
 ---
 On this page you can view and edit your account's existing payment

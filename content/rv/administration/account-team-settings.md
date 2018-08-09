@@ -1,7 +1,7 @@
 ---
 Title: Account and Team Settings
 description: $description
-weight: $weight
+weight: 60
 alwaysopen: false
 ---
 On this page you can view settings for your Redis Enterprise VPC account

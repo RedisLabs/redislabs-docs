@@ -1,7 +1,7 @@
 ---
 Title: Usage Reports
 description: $description
-weight: $weight
+weight: 70
 alwaysopen: false
 ---
 You can view the number of gigabytes used by this account. You are able

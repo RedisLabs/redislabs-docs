@@ -1,7 +1,7 @@
 ---
 Title: Billing History
 description: $description
-weight: $weight
+weight: 30
 alwaysopen: false
 ---
 This page contains a list of purchases, changes, and payments for the
