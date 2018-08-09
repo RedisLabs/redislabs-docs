@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software Documentation
 description: 
-weight: $weight
+weight: 10
 alwaysopen: false
 ---
 This documentation covers both Redis Enterprise Software and 4.5 and
