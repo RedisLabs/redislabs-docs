@@ -1,6 +1,9 @@
-Data Persistence with Redis Enterprise VPC
-==========================================
-
+---
+Title: Data Persistence with Redis Enterprise VPC
+description: $description
+weight: $weight
+alwaysopen: false
+---
 Redis Enterprise VPC supports persisting your data to disk on a
 per-database basis and in multiple ways. Unlike a few cloud provider's
 Redis offerings, Redis Enterprise VPC has two options for persistence,

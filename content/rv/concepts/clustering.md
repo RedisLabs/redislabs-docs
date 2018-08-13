@@ -1,6 +1,9 @@
-Clustering Redis Databases with Redis Enterprise VPC
-====================================================
-
+---
+Title: Clustering Redis Databases with Redis Enterprise VPC
+description: $description
+weight: $weight
+alwaysopen: false
+---
 While it is a design decision that Redis is a (mostly) single-threaded
 process and this does keep it extremely performant yet simple, there are
 times when clustering is advised. Redis Enterprise VPC, employs our

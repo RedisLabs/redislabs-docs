@@ -1,6 +1,9 @@
-Quick Setup of Redis Enterprise VPC (RV)
-========================================
-
+---
+Title: Quick Setup of Redis Enterprise VPC (RV)
+description: $description
+weight: $weight
+alwaysopen: false
+---
 The steps for creating a simple Redis Enterprise VPC (RV) deployment are
 as follows:
 

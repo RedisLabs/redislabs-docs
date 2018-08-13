@@ -1,6 +1,9 @@
-Monitoring Performance in Redis Enterprise VPC
-==============================================
-
+---
+Title: Monitoring Performance in Redis Enterprise VPC
+description: $description
+weight: $weight
+alwaysopen: false
+---
 Redis Enterprise VPC (RV) provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on
 the Metrics tab of a selected database. Use the scroll bar at the top to

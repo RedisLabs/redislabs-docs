@@ -1,6 +1,9 @@
-Creating a Subscription in Redis Enterprise VPC (RV)
-====================================================
-
+---
+Title: Creating a Subscription in Redis Enterprise VPC (RV)
+description: $description
+weight: $weight
+alwaysopen: false
+---
 What is a Subscription?
 -----------------------
 

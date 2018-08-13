@@ -1,6 +1,9 @@
-View and Edit a Redis Enterprise VPC (RV) Cloud Account
-=======================================================
-
+---
+Title: View and Edit a Redis Enterprise VPC (RV) Cloud Account
+description: $description
+weight: $weight
+alwaysopen: false
+---
 To view or edit your existing cloud accounts please select **Cloud
 Accounts** from the right side menu.
 

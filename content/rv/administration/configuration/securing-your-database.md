@@ -1,6 +1,9 @@
-Securing Your Database in Redis Enterprise VPC (RV)
-===================================================
-
+---
+Title: Securing Your Database in Redis Enterprise VPC (RV)
+description: $description
+weight: $weight
+alwaysopen: false
+---
 Access Control by Source IP/Subnet
 ----------------------------------
 

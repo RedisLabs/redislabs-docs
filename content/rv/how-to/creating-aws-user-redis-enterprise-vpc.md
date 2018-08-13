@@ -1,6 +1,9 @@
-Creating an AWS User for Redis Enterprise VPC
-=============================================
-
+---
+Title: Creating an AWS User for Redis Enterprise VPC
+description: $description
+weight: $weight
+alwaysopen: false
+---
 Redis Enterprise VPC (RV) automatically manages your cluster and
 provisions instances when needed. In order for RV to be able to perform
 its duties, you must have an AWS account that is separate from your AWS

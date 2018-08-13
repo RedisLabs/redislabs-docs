@@ -1,6 +1,9 @@
-Creating a Redis Enterprise VPC (RV) Cloud Account
-==================================================
-
+---
+Title: Creating a Redis Enterprise VPC (RV) Cloud Account
+description: $description
+weight: $weight
+alwaysopen: false
+---
 What is a Cloud Account?
 ------------------------
 

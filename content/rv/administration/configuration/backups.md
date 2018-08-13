@@ -1,6 +1,9 @@
-Database Backups on Redis Enterprise VPC (RV)
-=============================================
-
+---
+Title: Database Backups on Redis Enterprise VPC (RV)
+description: $description
+weight: $weight
+alwaysopen: false
+---
 You can back up your Redis Enterprise VPC databases to a storage bucket
 of your choosing. This article explains how to create a cloud storage
 bucket and grant permissions to use it for scheduled and on-demand
@@ -9,7 +12,7 @@ instead.
 
 **Note**: Backups are only available for paid plans. If you are free
 plan user, you must upgrade your subscription to a paid plan (zero
-downtime) in order to utilize this feature.
+downtime) in order to utilize this feature.
 
 Amazon Simple Storage Service (AWS S3)
 --------------------------------------
@@ -18,8 +21,8 @@ To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
 steps:
 
-1.  Select the **S3** service under **Services** -\> **Storage -\> S3**
-    to navigate to the **S3 Management Console**.
+1.  Select the **S3** service under **Services** -\> **Storage -\>
+    S3** to navigate to the **S3 Management Console**.
 2.  Navigate to your bucket's permissions page:
     a.  To create a new bucket:
         1.  Click the **+ Create Bucket** button
@@ -46,8 +49,8 @@ steps:
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614\
             ![](/wp-content/uploads/2017/02/add_user_existing.png){.alignnone
             .size-full .wp-image-31106 width="700" height="175"}***
-        3.  Check read/write boxes for various **permissions**, then
-            click the **Save** button
+        3.  Check read/write boxes for various** permissions**, then
+            click the **Save** button
 
 \>
 
