@@ -6,7 +6,6 @@ alwaysopen: false
 ---
 This section includes various frequently asked questions.
 
-::: {.chapter-summary}
 Topics
 
 -   [I use open source Redis. Why should I switch to Redis Enterprise

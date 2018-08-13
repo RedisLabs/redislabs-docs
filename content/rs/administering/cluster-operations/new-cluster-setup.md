@@ -98,7 +98,6 @@ by carrying out the following tests:
     [Testing Client
     Connectivity](/redis-enterprise-documentation/administering/troubleshooting/testing-client-connectivity/).
 
-::: {.chapter-summary}
 Topics
 
 -   [How to Set the Cluster

@@ -7,7 +7,6 @@ alwaysopen: false
 This section explains how to install, upgrade and uninstall Redis
 Enterprise Software (RS).
 
-::: {.chapter-summary}
 Topics:
 
 -   [Installing the setup
