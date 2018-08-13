@@ -1,21 +1,21 @@
 Overview of Redis Enterprise VPC (RV)
-    Quick Setup X
+    Quick Setup
     Concepts
-        Data Persistence X
-        Clustering X
+        Data Persistence
+        Clustering
         Data Eviction Policies
     Administration
         Setup and Editing of Redis Enterprise VPC Resources
-            Creating a Cloud Account X
-            View and Edit a Cloud Account X
-            Creating a Subscription X
-            Creating Databases X
-            Viewing and Editing Databases X
-            Deleting a Database X
+            Creating a Cloud Account
+            View and Edit a Cloud Account
+            Creating a Subscription
+            Creating Databases
+            Viewing and Editing Databases
+            Deleting a Database
         Configuring Redis Enterprise VPC Resources
-            Securing Your Database X
-            Configuring Database Backups X
-            Monitoring Performance X
+            Securing Your Database
+            Configuring Database Backups
+            Monitoring Performance
         Billing History
         Payment Methods
         System Logs
