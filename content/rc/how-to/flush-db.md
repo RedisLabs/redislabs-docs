@@ -34,4 +34,4 @@ includes all data in memory and persisted to disk. So before doing
 flushall, it is best practice to [backup your
 database](/redis-cloud-documentation/configuration/backups/) first.
 
-###  {#flush_all-SASL-Memcached}
+### 

@@ -211,7 +211,7 @@ number of requests.
 |                       | database.             |                       |
 +-----------------------+-----------------------+-----------------------+
 
-Redis on Flash Metrics {#redis-flash-metrics}
+Redis on Flash Metrics
 ======================
 
 Metric

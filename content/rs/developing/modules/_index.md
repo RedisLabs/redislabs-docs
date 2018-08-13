@@ -7,7 +7,7 @@ alwaysopen: false
 Note: Modules are not supported in Redis Enterprise Software on
 RHEL/CentOS 6.x
 
-Redis Labs' Packaged Modules {#packaged_modules}
+Redis Labs' Packaged Modules
 ----------------------------
 
 There are three modules Redis Labs has developed, certified, and
@@ -41,7 +41,7 @@ Module](/redis-enterprise-documentation/developing/modules/upgrading/).
 Critical: Redis Labs does not and can not support third party modules or
 databases created with them.
 
-Packaging Non-Certified Modules {#non-certified-modules}
+Packaging Non-Certified Modules
 -------------------------------
 
 In addition to the ones Redis Labs packages and certifies, there are

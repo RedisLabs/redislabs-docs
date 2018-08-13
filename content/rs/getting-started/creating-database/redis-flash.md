@@ -20,7 +20,7 @@ visit the [installing and upgrading
 section](/redis-enterprise-documentation/administering/installing-upgrading/downloading-installing/)
 of the technical documentation.
 
-Step 1: Install Redis Enterprise Software {#step1}
+Step 1: Install Redis Enterprise Software
 -----------------------------------------
 
 ### Bare Metal, VM, Cloud Instance
@@ -50,7 +50,7 @@ Docker container on Windows, macOS, and Linux
 $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
-Step 2: Setup a Cluster and Enable Redis on Flash {#step2}
+Step 2: Setup a Cluster and Enable Redis on Flash
 -------------------------------------------------
 
 Direct your browser to https://localhost:8443/ on the host machine to
@@ -79,7 +79,7 @@ email for the login and a password.
 ![](/wp-content/uploads/2017/04/RP-SetupScreen4.jpeg){.alignnone
 .size-full .wp-image-26409 width="600" height="377"}
 
-Step 3: Create a Database {#step3}
+Step 3: Create a Database
 -------------------------
 
 Select the "new redis db flash" option.
@@ -100,7 +100,7 @@ db](https://redislabs.com/wp-content/uploads/2017/09/newredisflashdb.png){.align
 
 You now have a Redis Enterprise Flash database!
 
-Step 4: Connecting to your Database {#step4}
+Step 4: Connecting to your Database
 -----------------------------------
 
 With the Redis database created, you are ready to connect to your

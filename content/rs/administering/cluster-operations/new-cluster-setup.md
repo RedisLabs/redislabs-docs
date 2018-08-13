@@ -1,5 +1,5 @@
 ---
-Title: New Cluster Setup {#new-cluster-setup .parent}
+Title: New Cluster Setup
 description: $description
 weight: $weight
 alwaysopen: false

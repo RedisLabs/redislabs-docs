@@ -85,7 +85,7 @@ standard Redis database creation.
     Note: Be sure you add the cluster you are currently on as a
     participating cluster!
 
-### Participating Clusters {#part-clusters}
+### Participating Clusters
 
 A CRDB is a global database made up of separate databases spanning
 multiple clusters, when creating a new CRDB you must configure which

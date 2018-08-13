@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software Product Lifecycle {#redis-enterprise-software-product-lifecycle .parent}
+Title: Redis Enterprise Software Product Lifecycle
 description: $description
 weight: $weight
 alwaysopen: false
@@ -30,7 +30,7 @@ versions of its products. The format is "Major1.Major2.Minor-Build"
 Redis Enterprise Software typically gets one major and one minor release
 every year but the product ship cycles may vary.
 
-End-of-Life Schedule {#eol-schedule}
+End-of-Life Schedule
 --------------------
 
 End-of-Life for a given release occurs eighteen (18) months after the

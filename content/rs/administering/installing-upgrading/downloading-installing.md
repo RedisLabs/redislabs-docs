@@ -40,7 +40,7 @@ Prerequisites
 3.  Ensure you have root level access to each node, either directly or
     via sudo.
 
-Installation Procedure {#install_proc}
+Installation Procedure
 ----------------------
 
 If you downloaded the .tar file installation package, install the
@@ -161,7 +161,7 @@ perform the steps necessary for Redis Enterprise Flash or creating a
 cluster. That part of each node's install still has to be done and
 potentially automated separately.
 
-Installation questions {#questions}
+Installation questions
 ----------------------
 
 During the interactive installation process, there questions asked to

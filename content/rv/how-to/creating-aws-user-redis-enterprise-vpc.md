@@ -20,7 +20,7 @@ For assistance with creating the user, please see the [AWS documentation
 on the
 topic](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
-Step \#1 -- Create the IAM Instance Policy {#step1}
+Step \#1 -- Create the IAM Instance Policy
 ------------------------------------------
 
 First, let's create a policy that we will attach to the new instance
@@ -38,7 +38,7 @@ role that we create later:
     ![](/wp-content/uploads/2017/05/review_role_policy.png){.alignnone
     .size-full .wp-image-30690 width="700" height="270"}**
 
-Step \#2 -- Create the Role {#step2}
+Step \#2 -- Create the Role
 ---------------------------
 
 [Now that we have the policy, let's create the role that uses
@@ -61,7 +61,7 @@ it:]{style="font-weight: 400;"}
 4.  Name the role **redislabs-cluster-node-role** and save it by
     clicking on **Create Role.**
 
-Step \#3 -- Create the User Policy {#step3}
+Step \#3 -- Create the User Policy
 ----------------------------------
 
 Let's continue with creating a policy that will be assigned to the user
@@ -83,7 +83,7 @@ RV will utilize:
     ![](/wp-content/uploads/2017/05/review_user_policy.png){.alignnone
     .size-full .wp-image-30694 width="700" height="292"}**
 
-Step \#4 -- Create the User {#step4}
+Step \#4 -- Create the User
 ---------------------------
 
 Last, you will have to create a user and attach the policy you have

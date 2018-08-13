@@ -23,7 +23,7 @@ testing. With two or fewer nodes in a cluster, a quorum cannot be
 attained in the event of failure. For that kind of testing or anything
 more serious, please see the production environment requirements.
 
-Production environment hardware requirements {#production-environment-reqs}
+Production environment hardware requirements
 --------------------------------------------
 
 The table below explains the minimum and the recommended hardware

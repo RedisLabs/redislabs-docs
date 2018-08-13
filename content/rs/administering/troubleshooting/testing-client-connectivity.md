@@ -25,7 +25,7 @@ To test client connectivity:
 If any issues are encountered during the connectivity test, contact our
 support at <support@redislabs.com>.
 
-Test Connecting to your Database {#step4}
+Test Connecting to your Database
 --------------------------------
 
 With the Redis database created, you are ready to connect to your

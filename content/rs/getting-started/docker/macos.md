@@ -24,7 +24,7 @@ Docker container image.
 Step-by-Step Guide for Redis Enterprise Software on macOS
 ---------------------------------------------------------
 
-### Step 1: Run the Container {#run-container}
+### Step 1: Run the Container
 
 Run the Redis Enterprise Software Docker container by executing the
 following command at the Terminal window.
@@ -37,7 +37,7 @@ $ docker run -d --cap-add sys_resource --name rp \
 -p 8443:8443 -p 12000:12000 redislabs/redis
 ```
 
-### Step 2: Set Up a Cluster {#setup-cluster}
+### Step 2: Set Up a Cluster
 
 Direct your browser to https://localhost:8443/ on the host machine to
 see the Redis Enterprise Software web console. Simply click the

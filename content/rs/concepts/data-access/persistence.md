@@ -69,7 +69,7 @@ you select it. If the database is being used as a cache, then you may
 not need persistence. If you do need persistence, then you need to
 identify which is the best type for your use case.
 
-Append Only File (AOF) vs Snapshot (RDB) {#aof-vs-rdb}
+Append Only File (AOF) vs Snapshot (RDB)
 ----------------------------------------
 
 Now that you know the available options, to assist in making a decision
@@ -84,7 +84,7 @@ two:
   More disk space required (files tend to grow large and require compaction)   Requires less resource (I/O once every several hours and no compaction required)
   ---------------------------------------------------------------------------- ----------------------------------------------------------------------------------
 
-Data Persistence and Redis Enterprise Flash {#redis-flash}
+Data Persistence and Redis Enterprise Flash
 -------------------------------------------
 
 If you are enabling data persistence for databases running on Redis

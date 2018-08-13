@@ -25,7 +25,7 @@ visit the [installing and
 upgrading](https://redislabs.com/redis-enterprise-documentation/administering/installing-upgrading/)
 section of the technical documentation.
 
-Step 1: Install Redis Enterprise Software {#step1}
+Step 1: Install Redis Enterprise Software
 -----------------------------------------
 
 You can download the binaries from the [Redis Enterprise Software
@@ -44,7 +44,7 @@ the current directory.
 $ sudo ./install.sh -y
 ```
 
-Step 2: Setup a Cluster {#step2}
+Step 2: Setup a Cluster
 -----------------------
 
 Direct your browser to https://localhost:8443/ on the host machine to
@@ -72,7 +72,7 @@ email for the login and a password.
 ![](/wp-content/uploads/2017/04/RP-SetupScreen4.jpeg){.alignnone
 .size-full .wp-image-26409 width="600" height="377"}
 
-Step 3: Create a Database {#step3}
+Step 3: Create a Database
 -------------------------
 
 Choose the "new redis db" option.
@@ -90,7 +90,7 @@ database.
 
 You now have a Redis database!
 
-Step 4: Connect to your Database {#step4}
+Step 4: Connect to your Database
 --------------------------------
 
 With the Redis database created, you are ready to connect to your

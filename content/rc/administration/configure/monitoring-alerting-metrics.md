@@ -21,7 +21,7 @@ Writes/sec mini-graph.
 
 For a quick tour of what you get, watch this video.
 
-Definition of Each Metric {#definition-of-each-metric}
+Definition of Each Metric
 -------------------------
 
 For each database, there are 14 different metrics you can see on the

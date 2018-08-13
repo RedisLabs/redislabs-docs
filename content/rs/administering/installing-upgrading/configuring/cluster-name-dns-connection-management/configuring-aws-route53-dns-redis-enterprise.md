@@ -16,7 +16,7 @@ Amazon's Route53 as the primary/master nameserver (NS) for this domain
 or for a delegated zone under this domain. Finally, you need to have the
 zone (either the whole domain or a sub-zone) defined in AWS Route53.
 
-How does Redis Enterprise Software achieve failover? {#how-does-rp-achieve-failover-}
+How does Redis Enterprise Software achieve failover?
 ----------------------------------------------------
 
 If you have a three node Redis Enterprise Software cluster. When your

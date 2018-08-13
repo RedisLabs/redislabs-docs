@@ -73,7 +73,7 @@ error
 *(error) WRONGTYPE Operation against a key holding the wrong kind of
 value*
 
-### String Data Type with Counter Value in CRDBs {#counters}
+### String Data Type with Counter Value in CRDBs
 
 While traditional Redis does not have an explicit counter type, Redis
 Enterprise Pack's CRDBs does. Counters can be used to implement

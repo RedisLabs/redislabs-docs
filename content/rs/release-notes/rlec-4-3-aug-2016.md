@@ -1,5 +1,5 @@
 ---
-Title: Release Notes {#release-notes .parent}
+Title: Release Notes
 description: $description
 weight: $weight
 alwaysopen: false

@@ -1,5 +1,5 @@
 ---
-Title: Installing and upgrading {#installing-and-upgrading .parent}
+Title: Installing and upgrading
 description: $description
 weight: $weight
 alwaysopen: false

@@ -66,7 +66,7 @@ RediSearch: "arabic", "danish", "dutch", "english", "finnish", "french",
 The index specifically supports auto-complete engines with specific
 commands that can provide real-time interactive search suggestions.
 
-RediSearch Index {#indexes}
+RediSearch Index
 ----------------
 
 The fundamental part of any search engine is what's called an Inverted
@@ -93,7 +93,7 @@ has its limitations: it doesn't support exact phrase search, it has a
 big memory overhead, and can be very slow with big records
 intersections.
 
-Storing Documents {#storing_docs}
+Storing Documents
 -----------------
 
 The RediSearch engine indexes "documents", which are a list of
@@ -118,7 +118,7 @@ data by adding the NOSAVE modifier to the indexing command.
 Configuring
 -----------
 
-### Partitioning and Shards In Regards to RediSearch Enterprise {#partition}
+### Partitioning and Shards In Regards to RediSearch Enterprise
 
 RediSearch Enterprise differs from its open source brother in one key
 aspect. The enterprise version can work with multiple shards on a
@@ -151,7 +151,7 @@ For other configurations, please see the [RediSearch site on
 configuring](http://redisearch.io/Configuring/). To change these, please
 use the settings icon and add configurations there.
 
-RediSearch Commands {#commands}
+RediSearch Commands
 -------------------
 
 For the authoritative list of RediSearch commands, please go

@@ -29,7 +29,7 @@ Team members can have different roles to the account:
 -   Member -- Can view, create, and edit databases.
 -   Viewer -- Can view databases
 
-### Add/Edit a Team Member {#add-team-member}
+### Add/Edit a Team Member
 
 You can easily add a new team member to your account. Click on the
 "**+**" icon to add more team members or the pencil icon on the right
@@ -39,7 +39,7 @@ side of the form to edit an existing team member.
 Cloud](/wp-content/uploads/2017/04/settings_team.png){.alignnone
 .wp-image-26975 .size-full width="1000" height="454"}
 
-### Delete a Team Member {#delete-team-member}
+### Delete a Team Member
 
 To delete a team member it is just as easy as creating. For an existing
 member, hover over the member to edit. Click on the pencil icon that

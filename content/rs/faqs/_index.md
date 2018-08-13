@@ -1,5 +1,5 @@
 ---
-Title: FAQs {#faqs .parent}
+Title: FAQs
 description: $description
 weight: 70
 alwaysopen: false

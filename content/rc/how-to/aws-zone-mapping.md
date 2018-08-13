@@ -76,7 +76,7 @@ option, [please contact
 support](mailto:support@redislabs.com?Subject=Zero%20Downtime%20DB%20Migration)
 for further assistance.
 
-Unprivileged user creation {#unprivileged-user}
+Unprivileged user creation
 --------------------------
 
 RC requires an AWS IAM user to perform the zone mapping as. It is

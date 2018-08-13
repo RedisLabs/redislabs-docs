@@ -4,7 +4,7 @@ description: $description
 weight: $weight
 alwaysopen: false
 ---
-### flush\_all for SASL Protected Memcached Enterprise Cloud Databases {#flush_all-SASL-Memcached}
+### flush\_all for SASL Protected Memcached Enterprise Cloud Databases
 
 If your resource has SASL authentication enabled, you can't use nc
 command or telnet to run flush\_all on your Memcached Enterprise Cloud

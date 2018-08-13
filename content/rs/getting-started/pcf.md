@@ -12,7 +12,7 @@ using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI).
 []{#install}Installation and Configuration
 ------------------------------------------
 
-### Step 1 -- Import the Redis Enterprise Software Tile {#step1}
+### Step 1 -- Import the Redis Enterprise Software Tile
 
 You will need to import the Redis Enterprise Software .pivotal file into
 your Pivotal Cloud Foundry environment to get started.
@@ -25,7 +25,7 @@ your Pivotal Cloud Foundry environment to get started.
     ![](/wp-content/uploads/2017/06/pcf_view_ops_manger.png){.alignnone
     .size-full .wp-image-27349 width="800" height="205"}
 
-### Step 2 -- Configure Redis Enterprise Software {#step2}
+### Step 2 -- Configure Redis Enterprise Software
 
 1.  Click the newly imported tile.\
     ![](/wp-content/uploads/2017/06/pcf_pre-install_tile.png){.alignnone
@@ -66,7 +66,7 @@ nodes meet the minimum HW specification requirements for Redis
 Enterprise Software. See the [minimum HW
 specifications](/redis-enterprise-documentation/installing-and-upgrading/hardware-software-requirements/).
 
-### Step 3 -- Deploy the Redis Enterprise Software Cluster {#step3}
+### Step 3 -- Deploy the Redis Enterprise Software Cluster
 
 1.  Once the tile configuration is done, you can save the changes and
     click the **Apply changes** to deploy the cluster.\
@@ -76,7 +76,7 @@ specifications](/redis-enterprise-documentation/installing-and-upgrading/hardwar
     state of the cluster nodes under the jobs named
     **redis-pack-node** and **redis-pack-service-broker**.
 
-### Step 4 -- Apps Manager Service Deployment {#step4}
+### Step 4 -- Apps Manager Service Deployment
 
 [With the Ops Manager side complete, we turn our attention to deploying
 a service in PCF Apps Manager.]{style="font-weight: 400;"}

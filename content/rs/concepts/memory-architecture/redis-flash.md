@@ -1,5 +1,5 @@
 ---
-Title: Redis on Flash {#redis-on-flash .parent}
+Title: Redis on Flash
 description: $description
 weight: $weight
 alwaysopen: false

@@ -46,7 +46,7 @@ enables ensuring database high-availability.
 
 For a quick overview of ReplicaOf capabilities watch this quick video.\
 
-Replica of sources {#Replica-of-sources}
+Replica of sources
 ------------------
 
 RS has a security mechanism in which an internal admin password is
@@ -107,7 +107,7 @@ restarted from scratch for all the source databases.
 [Client prerequisites for
 mDNS](/redis-enterprise-documentation/administering/installing-upgrading/configuring/mdns/).
 
-Replication process {#Replication-process}
+Replication process
 -------------------
 
 When a database is defined as a replica of another database, all its
@@ -133,7 +133,7 @@ or by the system -- the user can restart the process. **Restarting the
 process causes the synchronization process to flush the DB and restart
 the process from the beginning**.
 
-### Replica of status {#Replica-of-status}
+### Replica of status
 
 The replication process can have the following statuses:
 
@@ -160,7 +160,7 @@ of the statuses of all the sources.
 to the troubleshooting section [Replica of repeatedly
 fails](/redis-enterprise-documentation/administering/troubleshooting/replicaof-repeatedly-fails/).
 
-### Synchronization errors {#Synchronization-errors}
+### Synchronization errors
 
 Certain errors that occur during the synchronization process require
 user intervention for their resolution. When such errors occur, the
@@ -188,7 +188,7 @@ stop:
     point it reached (partial sync) or require a complete
     resynchronization from scratch across all sources (full sync).
 
-Encryption {#Replica-of-encryption}
+Encryption
 ----------
 
 ReplicaOf supports the ability to encrypt uni-directional replication
@@ -239,7 +239,7 @@ following steps:
 3.  Press the **Continue** button, save the certificate and **Update**
     the database changes.
 
-"Replica of" data compression {#Replica-of-data-compression}
+"Replica of" data compression
 -----------------------------
 
 When the *Replica of* is defined across different Redis Enterprise
@@ -274,7 +274,7 @@ In the Redis Enterprise Software management UI, when designating a
 there is also an option to enable compression. When enabled, gzip
 compression with level -6 is utilized.
 
-Database clustering (sharding) implications {#Database-clustering-implications}
+Database clustering (sharding) implications
 -------------------------------------------
 
 If a **source** database is sharded, that entire database is treated as

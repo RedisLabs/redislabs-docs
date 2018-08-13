@@ -117,7 +117,7 @@ in separate data centers in different regions. However in this case, for
 local testing, we have created the scale-minimized deployment using two
 local clusters running on the same host.
 
-Step 4: Connect to your member Redis CRDBs {#test-connectivity}
+Step 4: Connect to your member Redis CRDBs
 ------------------------------------------
 
 With the Redis database created, you are ready to connect to your

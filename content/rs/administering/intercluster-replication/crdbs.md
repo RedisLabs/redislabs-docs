@@ -68,7 +68,7 @@ Before configuring a CRDB, you will need:
     CRDBs are not compatible with that feature. ReplicaOf is a one-way
     replication, while CRDB utilize multi-master replication.
 
-### Network Time Service (NTP or Chrony) {#network-time}
+### Network Time Service (NTP or Chrony)
 
 Utilizing a time service like NTP or Chrony is required for CRDBs. It is
 critical to minimize time drift both intercluster and intracluster for

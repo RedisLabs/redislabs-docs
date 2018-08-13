@@ -1,5 +1,5 @@
 ---
-Title: rladmin command-line interface {#rladmin-command-line-interface .parent}
+Title: rladmin command-line interface
 description: $description
 weight: $weight
 alwaysopen: false

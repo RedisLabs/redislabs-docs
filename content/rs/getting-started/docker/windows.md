@@ -23,7 +23,7 @@ Docker container image.
 Step-by-Step Guide for Redis Enterprise Software on Windows
 -----------------------------------------------------------
 
-### Step 1: Run the Container {#run-container}
+### Step 1: Run the Container
 
 Run the Redis Enterprise Software Docker container by executing the
 following command in the command-line window.
@@ -35,7 +35,7 @@ your Windows machine is running Linux containers.
 $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis
 ```
 
-### Step 2: Setup a Cluster {#setup-cluster}
+### Step 2: Setup a Cluster
 
 Direct your browser to https://localhost:8443 on the host machine to see
 the Redis Enterprise Software web console. Simply click the **Setup**

@@ -1,5 +1,5 @@
 ---
-Title: Rack-zone awareness in Redis Enterprise Software {#rack-zone-awareness-in-redis-enterprise-software .parent}
+Title: Rack-zone awareness in Redis Enterprise Software
 description: $description
 weight: $weight
 alwaysopen: false

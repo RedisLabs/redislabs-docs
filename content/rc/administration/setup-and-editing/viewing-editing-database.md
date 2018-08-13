@@ -36,7 +36,7 @@ To Edit a database, click on the pencil icon.
 icons](/wp-content/uploads/2017/05/view_database2.png){.alignnone
 .wp-image-26958 .size-full width="600" height="338"}
 
-Edit a Database {#edit-database}
+Edit a Database
 ---------------
 
 From the "View Database" page for the database you wish to edit, click
