@@ -110,16 +110,16 @@ workflows:
           filters:
             branches:
               only: /.*-build/
-      - deploy-staging:
-          requires:
-            - build-staging
-          filters:
-            branches:
-              ignore: /.*-build/
-      - deploy-prod:
-          requires:
-            - build-prod
-          filters:
-            branches:
-              only:
-                - /.*-build/
+#       - deploy-staging:
+#           requires:
+#             - build-staging
+#           filters:
+#             branches:
+#               ignore: /.*-build/
+#       - deploy-prod:
+#           requires:
+#             - build-prod
+#           filters:
+#             branches:
+#               only:
+#                 - /.*-build/
