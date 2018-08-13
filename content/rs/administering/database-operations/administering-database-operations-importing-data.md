@@ -18,7 +18,6 @@ Redis Enterprise web UI handles these data types for you. When you
 import data into a CRDB, there will be a special prompt such as the
 below.
 
-::: {#attachment_37176 .wp-caption .alignleft style="width: 1730px"}
 ![Import into a
 CRDB](https://redislabs.com/wp-content/uploads/2018/03/Screen-Shot-2018-03-29-at-10.00.12-PM.png){.size-full
 .wp-image-37176 width="1720" height="702"}
