@@ -1,0 +1,1020 @@
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 128.25 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 124.79 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 126.96 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 128.04 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 4 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/uploads/2014/12/new_databases.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 102.11 B/s
+
+Done!
+Downloaded 4 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 130.21 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.01 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 5 images:
+https://redislabs.com/wp-content/uploads/2017/10/new_geo-distrbuted.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/uploads/2017/10/image8.png
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:01  67.11 B/s
+
+Done!
+Downloaded 5 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 4 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/uploads/2014/12/import_amazon_s3.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:01  95.69 B/s
+
+Done!
+Downloaded 4 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 4 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/uploads/2014/12/export_amazon_s3.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:01  93.22 B/s
+
+Done!
+Downloaded 4 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 4 images:
+https://redislabs.com/wp-content/uploads/2018/03/Screen-Shot-2018-03-29-at-10.00.12-PM.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:01  76.60 B/s
+
+Done!
+Downloaded 4 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 4 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/uploads/2018/05/create_db_causal.png
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:01  80.30 B/s
+
+Done!
+Downloaded 4 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 131.69 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.97 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 123.66 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 5 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/uploads/2014/12/pasted-image-0-1.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/uploads/2014/12/pasted-image-SSL.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:02  41.34 B/s
+
+Done!
+Downloaded 5 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 130.34 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 125.84 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.66 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 131.93 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.72 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 7 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.48.18-PM.png
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.17.59-PM.png
+https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.49.55-PM.png
+https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.32.01-PM.png
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:02  43.64 B/s
+
+Done!
+Downloaded 7 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 130.90 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.13 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 4 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/uploads/2014/12/useradd-300x101.png
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 126.64 B/s
+
+Done!
+Downloaded 4 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 128.54 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 121.10 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 125.81 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.39 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.53 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 125.55 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 126.26 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.40 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 132.92 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.24 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 128.74 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.09 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.79 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.08 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 131.23 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 123.05 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 124.90 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 130.21 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 128.26 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.87 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 128.53 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 123.28 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.66 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 129.53 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 119.54 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 120.36 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 122.40 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 127.71 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 117.92 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 132.27 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:01  95.33 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 132.22 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 114.90 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 116.73 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 116.34 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 115.82 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 113.77 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 117.56 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 116.55 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 114.68 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 111.62 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
+
+
+ImageScraper
+============
+Requesting page....
+
+Found 3 images:
+https://redislabs.com/wp-content/themes/redislabs/assets/images/glassdoor.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/instagram.svg
+https://redislabs.com/wp-content/themes/redislabs/assets/images/redis-conf-venue.jpg
+Progress: 100% |||||||||||||||||||||||||||||||||||||| Time: 00:00:00 116.54 B/s
+
+Done!
+Downloaded 3 images
+Failed: 0
