@@ -1,0 +1,28 @@
+Get-Module -ListAvailable
+
+Set-AWSCredential -AccessKey $ -SecretKey $ -StoreAs docs-creds
+
+$BucketName = "docs.redislabs.com"
+
+Initialize-AWSDefaultConfiguration -ProfileName docs-creds -Region us-east-1
+
+Write-S3Object -BucketName $BucketName -Key index.html -File public/index.html
+
+Write S3BucketWebsite -BucketName $BucketName -WebSiteConfiguration_IndexDocumentSuffix index.html
+
+http://docs.redislabs.com.s3-website-us-east-1.amazonaws.com/
+
+WriteS3BucketPolicy -BucketName $BucketName -Policy @'
+{
+  "Version": "2018-08-15",
+  "Statement": [
+    {
+      "Sid": "Allow Public Access to All Objects",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::'docs.redislabs.com'/*"
+    }
+  ]
+}
+'@
