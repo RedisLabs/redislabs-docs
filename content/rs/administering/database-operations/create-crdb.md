@@ -37,7 +37,7 @@ clusters when orchestration is necessary. To do this, go to **settings
 -\> team** and click the plus icon on the lower left to add an account.
 
 ![Service Account
-Creation](/wp-content/uploads/2017/10/image8.png){.alignnone .size-full
+Creation](/images/rs/image8.png){.alignnone .size-full
 .wp-image-30132 width="1000" height="490"}
 
 This service account will be used when the CRDB is created, but also on
@@ -64,7 +64,7 @@ Direct your browser to the web UI of one of the RS clusters that will
 host the CRDB. Under the databases tab, choose the Redis database with
 Deployment type set to Geo-Distributed.
 
-![](/wp-content/uploads/2017/10/new_geo-distrbuted.png){.alignnone
+![](/images/rs/new_geo-distrbuted.png){.alignnone
 .wp-image-31475 .size-full width="600" height="608"}
 
 On the create database page, click the **show advanced option** link.

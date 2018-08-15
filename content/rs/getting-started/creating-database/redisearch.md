@@ -16,7 +16,7 @@ For this quick start, you will need the following:
 2.  Click on the **+** sign, if necessary, then **create database**
 3.  On the create database screen, check the box for Redis Modules and
     select the module you want to use for this database.\
-    ![](/wp-content/uploads/2017/10/create_database-1.png){.alignnone
+    ![](/images/rs/create_database-1.png){.alignnone
     .size-full .wp-image-30752 width="794" height="554"}
 4.  Click **Show advanced options** and put **12544** for the port.
 5.  Click the **Activate** button

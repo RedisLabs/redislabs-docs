@@ -29,10 +29,10 @@ Add Module to the Cluster
 2.  Navigate to the **settings** -\> **redis^e^ modules**
 3.  Click on **Add Module** button and navigate to where you downloaded
     the module package\
-    ![](/wp-content/uploads/2017/10/add_module.png){.alignnone
+    ![](/images/rs/add_module.png){.alignnone
     .size-full .wp-image-30749 width="800" height="318"}
 4.  Click on the **Upload** button and notice the name and version\
-    ![](/wp-content/uploads/2017/10/upload_module.png){.alignnone
+    ![](/images/rs/upload_module.png){.alignnone
     .size-full .wp-image-30750 width="800" height="321"}
 
 ### Create a new database that uses the Module
@@ -50,7 +50,7 @@ to the newest versions.
 2.  Click on the **+** sign, if necessary, then **create database**
 3.  On the create database screen, check the box for Redis Modules and
     select the module you want to use for this database.\
-    ![](/wp-content/uploads/2017/10/create_database-1.png){.alignnone
+    ![](/images/rs/create_database-1.png){.alignnone
     .size-full .wp-image-30752 width="794" height="554"}
 4.  Click **Show advanced options** and put **12544** for the port.
 5.  Click the **activate** button

@@ -31,7 +31,7 @@ that can maintain correctness under geo-failovers and concurrent
 cross-region writes to the same data.
 
 ![geo replication world
-map](/wp-content/uploads/2017/10/crdbs.png){.alignnone .size-full
+map](/images/rs/crdbs.png){.alignnone .size-full
 .wp-image-30163 width="800" height="569"}
 
 CRDBs replicate data between multiple Redis Enterprise Software

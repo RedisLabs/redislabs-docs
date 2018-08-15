@@ -16,7 +16,7 @@ For this quick start, you will need the following:
 2.  Click on the **+** sign, if necessary, then **create database**
 3.  On the create database screen, check the box for Redis Modules and
     select the ReBloom module you want to use for this database.\
-    ![](/wp-content/uploads/2017/12/rebloom_database.png){.alignnone
+    ![](/images/rs/rebloom_database.png){.alignnone
     .size-full .wp-image-30934 width="797" height="556"}
 4.  Click **Show advanced options** and put **12544** for the port.
 5.  Click the **Activate** button

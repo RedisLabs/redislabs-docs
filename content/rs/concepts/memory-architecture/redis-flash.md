@@ -18,7 +18,7 @@ This enables you to have much larger datasets with RAM-like latency and
 performance, but at dramatically lower cost than an all-RAM database.
 
 ![All-RAM Redis Databases versus Redis Enterprise Flash enabled
-databases](/wp-content/uploads/2016/07/redis_flash_px.png){.alignnone
+databases](/images/rs/redis_flash_px.png){.alignnone
 .wp-image-26777 .size-full width="600" height="328"}
 
 By using Redis on Flash to distribute the data between RAM and flash

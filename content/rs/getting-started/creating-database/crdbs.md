@@ -54,14 +54,14 @@ click the **Setup** button on the page to get started.
 Note: Depending on your browser, you may see a certificate error. Simply
 choose **continue to the website** to get to the setup screen.
 
-![](/wp-content/uploads/2017/10/image4.png){.alignnone .size-full
+![](/images/rs/image4.png){.alignnone .size-full
 .wp-image-30128 width="1000" height="611"}
 
 On the **node configuration** page, select your default settings and
 provide a cluster FQDN: **cluster1.local**. Then simply click the
 **Next** button.
 
-![](/wp-content/uploads/2017/10/image5.png){.alignnone .size-full
+![](/images/rs/image5.png){.alignnone .size-full
 .wp-image-30129 width="1000" height="611"}
 
 If you don't have a license key, click the **Next** button to try the
@@ -70,7 +70,7 @@ trial version of the product.
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-![](/wp-content/uploads/2017/10/image9.png){.alignnone .size-full
+![](/images/rs/image9.png){.alignnone .size-full
 .wp-image-30133 width="1000" height="611"}
 
  
@@ -92,7 +92,7 @@ Step 3: Create a Redis CRDB
 Under the databases tab, choose the Redis database with deployment type
 set to Geo-Distributed.
 
-![](/wp-content/uploads/2017/10/new_geo-distrbuted.png){.alignnone
+![](/images/rs/new_geo-distrbuted.png){.alignnone
 .wp-image-31475 .size-full width="600" height="608"}
 
 On the create database page, click the **show advanced option** link and
@@ -131,7 +131,7 @@ Remember we have two member CRDBs that are available for connections and
 concurrent reads and writes. The member CRDBs are using bi-directional
 replication to for the global CRDB.
 
-![CRDB Diagram](/wp-content/uploads/2017/10/image3.png){.alignnone
+![CRDB Diagram](/images/rs/image3.png){.alignnone
 .size-full .wp-image-30127 width="930" height="543"}
 
  

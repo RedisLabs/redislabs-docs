@@ -205,14 +205,14 @@ following steps:
     -   **SSL for All Communications **enforce SSL for both- application
         communication as well as ReplicaOf communication:
         ![Replic-of
-        Encryption](https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.17.59-PM.png){.wp-image-37193
+        Encryption](https://redislabs.com/images/rs/Screen-Shot-2018-03-29-at-10.17.59-PM.png){.wp-image-37193
         .size-full width="1728" height="316"}
         Replic-of Encryption
         2.  From the *destination cluster*, copy the "Syncer Certificate"
     (located under **settings**-\> **general**) and paste it as SSL
     certificate for the source Database:
     ![Replica-of Encryption -
-    certificate](https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.32.01-PM.png){.size-full
+    certificate](https://redislabs.com/images/rs/Screen-Shot-2018-03-29-at-10.32.01-PM.png){.size-full
     .wp-image-37198 width="1650" height="350"}
     Replica-of Encryption -- certificate
     
@@ -223,7 +223,7 @@ following steps:
 1.  Edit the 'Replica of' section of the destination Database to point
     the source Database and press the 'Enable SSL Authentication' icon:
     ![Replica-of
-    Destination](https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.48.18-PM.png){.size-full
+    Destination](https://redislabs.com/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png){.size-full
     .wp-image-37200 width="1608" height="178"}
     Replica-of Destination
     
@@ -232,7 +232,7 @@ following steps:
     it as the **Source Cluster Certificate** for the destination
     Database:
     ![Replica-of Destination -
-    Certificate](https://redislabs.com/wp-content/uploads/2015/06/Screen-Shot-2018-03-29-at-10.49.55-PM.png){.size-full
+    Certificate](https://redislabs.com/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png){.size-full
     .wp-image-37201 width="1596" height="626"}
     Replica-of Destination -- Certificate
     

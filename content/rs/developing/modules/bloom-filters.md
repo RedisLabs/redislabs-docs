@@ -41,7 +41,7 @@ set to 1. This looks fairly similar to how buckets in a hash table are
 mapped. To check if an item is present or not, the hash is computed and
 the filter sees if the corresponding bit is set or not.
 
-![](/wp-content/uploads/2017/07/image2.png){.alignnone .size-full
+![](/images/rs/image2.png){.alignnone .size-full
 .wp-image-28193 width="266" height="112"}
 
 Of course, this is subject to collisions. If a collision occurs, the
@@ -62,7 +62,7 @@ The actual value of *bpe* is determined at the time the filter is
 created. Generally the more bits per element, the lower the likelihood
 of false positives.
 
-![](/wp-content/uploads/2017/07/image1.png){.alignnone .size-full
+![](/images/rs/image1.png){.alignnone .size-full
 .wp-image-28194 width="489" height="172"}
 
 In the example above, all three bits would need to be set in order for

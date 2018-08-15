@@ -45,7 +45,7 @@ Note: Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
 
 ![Redis Enterprise Pack Setup
-Screen](/wp-content/uploads/2017/04/setup-windows.png){.alignnone
+Screen](/images/rs/setup-windows.png){.alignnone
 .wp-image-26376 .size-full width="600" height="246"}
 
 On the "node configuration" page, select your default settings and
@@ -53,7 +53,7 @@ provide a cluster FQDN: "cluster.local". Then simply click the
 "**Next**" button.
 
 ![Redis Enterprise Pack node configuration
-screen](/wp-content/uploads/2017/04/setup2-windows-1.png){.alignnone
+screen](/images/rs/setup2-windows-1.png){.alignnone
 .wp-image-26379 .size-full width="600" height="374"}
 
 If you don't have a license key, click the **Next** button to try the
@@ -63,7 +63,7 @@ On the next screen, set up a Cluster Administrator account using
 an email for the login and a password.
 
 ![Redis Enterprise Pack admin credentials
-screen](/wp-content/uploads/2017/04/RP-SetupScreen4.jpeg){.alignnone
+screen](/images/rs/RP-SetupScreen4.jpeg){.alignnone
 .wp-image-26409 .size-full width="600" height="377"}
 
 ### Step 3: Create a Database
@@ -71,7 +71,7 @@ screen](/wp-content/uploads/2017/04/RP-SetupScreen4.jpeg){.alignnone
 Choose the "new redis db" option.
 
 ![Redis Enterprise Pack create database
-screen](/wp-content/uploads/2017/04/RP-SetupScreen5.jpeg){.alignnone
+screen](/images/rs/RP-SetupScreen5.jpeg){.alignnone
 .wp-image-26410 .size-full width="600" height="375"}
 
 On the "new redis db" page, click the "show advanced option" link and
@@ -79,7 +79,7 @@ enter "database1" for a database name and "12000" for the endpoint port
 number. Then click "Activate" to create your database.
 
 ![Redis Enterprise Pack configure new database
-screen](/wp-content/uploads/2017/04/RP-DBScreen2.jpeg){.alignnone
+screen](/images/rs/RP-DBScreen2.jpeg){.alignnone
 .wp-image-26411 .size-full width="600" height="378"}
 
 You now have a Redis database!

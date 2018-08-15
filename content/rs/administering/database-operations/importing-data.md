@@ -53,5 +53,5 @@ Ensure first that you have all these details from your platform.
 Below is an example of the screen to import from AWS S3.
 
 ![Import data from AWS S3 into Redis
-Enterprise](https://redislabs.com/wp-content/uploads/2014/12/import_amazon_s3.png){.alignnone
+Enterprise](https://redislabs.com/images/rs/import_amazon_s3.png){.alignnone
 .size-full .wp-image-36869 width="700" height="648"}

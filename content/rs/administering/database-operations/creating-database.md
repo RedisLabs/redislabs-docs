@@ -40,7 +40,7 @@ To create a new database in the UI:
     to [Conflict-free geo-Replicated Databases
     (CRDB)](/redis-enterprise-documentation/administering/intercluster-replication/crdbs/).
 
-3.  ![](/wp-content/uploads/2014/12/new_databases.png){.alignnone
+3.  ![](/images/rs/new_databases.png){.alignnone
     .wp-image-31471 .size-full width="584" height="599"}
 4.  Enter a **name** for the database.\
     The database name must comply with the following rules:
