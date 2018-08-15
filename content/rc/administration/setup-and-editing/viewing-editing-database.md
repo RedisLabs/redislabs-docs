@@ -9,7 +9,7 @@ see a list of your databases grouped by
 [Subscription](/redis-cloud-documentation/administration/setup-editing/create-subscription/).
 
 ![Viewing databases in
-UI](/wp-content/uploads/2017/05/databases_main.png){.alignnone
+UI](/images/rc/databases_main.png){.alignnone
 .wp-image-26959 .size-full width="600" height="366"}
 
 In this view, you have pertinent information about each database and
@@ -33,7 +33,7 @@ the title of the page:
 To Edit a database, click on the pencil icon.
 
 ![Viewing databases edit
-icons](/wp-content/uploads/2017/05/view_database2.png){.alignnone
+icons](/images/rc/view_database2.png){.alignnone
 .wp-image-26958 .size-full width="600" height="338"}
 
 Edit a Database

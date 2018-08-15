@@ -48,14 +48,14 @@ How to MAP Zones
 Allow the process a few minutes to complete as it maps the availability
 zones. Once complete, you will see this:
 
-![](/wp-content/uploads/2017/02/zone-mapping.png){.alignnone
+![](/images/rc/zone-mapping.png){.alignnone
 .wp-image-27143 .size-full width="600" height="359"}
 
 When the process is complete, the next time you go to create a new
 subscription, the drop down for "Cloud" will have the zone letter in
 them.
 
-![](/wp-content/uploads/2017/02/after_zone_mapping.png){.alignnone
+![](/images/rc/after_zone_mapping.png){.alignnone
 .size-full .wp-image-27142 width="600" height="192"}
 
 For existing subscriptions in RC, you will now see the Availability Zone
@@ -87,7 +87,7 @@ To do this:
     hosted**.
 2.  Create access keys for that user.
 3.  Give the user [this IAM
-    policy](/wp-content/uploads/2017/02/zone-mapping-user-policy.json_.txt).
+    policy](/images/rc/zone-mapping-user-policy.json_.txt).
 
 If you are unfamiliar on how to create a new user in AWS, please see
 their documentation on the topic.

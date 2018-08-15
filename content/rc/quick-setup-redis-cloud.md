@@ -53,7 +53,7 @@ Subscription](/redis-cloud-documentation/administration/setup-editing/create-sub
 Once you have made your selections, click **Continue** to finalize your
 subscription.
 
-![](/wp-content/uploads/2017/02/new_sub.png){.alignnone .size-full
+![](/images/rc/new_sub.png){.alignnone .size-full
 .wp-image-26929 width="600" height="466"}
 
 Step \#3 -- Set up a database
@@ -65,7 +65,7 @@ Step \#3 -- Set up a database
 Note: the Endpoint displayed on this page is very important because it
 is your entry point to this database.
 
-![](/wp-content/uploads/2017/02/rc-view-database-endpoint.png){.alignnone
+![](/images/rc/rc-view-database-endpoint.png){.alignnone
 .wp-image-24845 width="600" height="409"}
 
 Step \#4 -- Reading and Writing Data
