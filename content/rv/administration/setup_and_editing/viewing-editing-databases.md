@@ -7,7 +7,7 @@ alwaysopen: false
 To view your database, select **Databases** from the menu. You will see
 a list of your databases grouped by Subscription.
 
-![](/wp-content/uploads/2017/05/databases_main.png){.alignnone
+![](/images/rv/databases_main.png){.alignnone
 .size-full .wp-image-26959 width="600" height="366"}
 
 In this view, you see pertinent information about each database and some
@@ -26,7 +26,7 @@ title of the page:
 
 To Edit a database, click on the pencil icon.
 
-![](/wp-content/uploads/2017/05/view_database2.png){.alignnone
+![](/images/rv/view_database2.png){.alignnone
 .size-full .wp-image-26958 width="600" height="338"}
 
 Edit a Database

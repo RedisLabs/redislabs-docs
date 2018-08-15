@@ -13,7 +13,7 @@ account](/redis-cloud-documentation/administration/configuration/securing-redis-
 you will be prompted to supply the downloadable Redis Labs CA
 Certificate from this page.
 
-![](/wp-content/uploads/2017/04/settings.png){.alignnone .size-full
+![](/images/rv/settings.png){.alignnone .size-full
 .wp-image-26974 width="1000" height="782"}
 
 Team Management
@@ -32,5 +32,5 @@ Team members can have different roles to the account:
 -   Viewer -- Can view databases
 
 ![Team settings on Redis Enterprise
-Cloud](/wp-content/uploads/2017/04/settings_team.png){.alignnone
+Cloud](/images/rv/settings_team.png){.alignnone
 .wp-image-26975 .size-full width="1000" height="454"}

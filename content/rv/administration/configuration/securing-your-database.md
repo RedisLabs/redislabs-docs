@@ -14,7 +14,7 @@ IP or [CIDR
 notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
 
 ![Source
-IP/Subnet](/wp-content/uploads/2017/02/source_ip_subnet-1.png){.alignnone
+IP/Subnet](/images/rv/source_ip_subnet-1.png){.alignnone
 .size-full .wp-image-25136 width="600" height="102"}
 
 In case you require more source IP rules than your current RV plan
@@ -36,7 +36,7 @@ One feature often overlooked is the little eye icon on the right side of
 the form field that can be used to view the password.
 
 ![redis
-password](/wp-content/uploads/2017/02/redis_password.png){.alignnone
+password](/images/rv/redis_password.png){.alignnone
 .size-full .wp-image-25161 width="600" height="42"}
 
 AWS Security groups

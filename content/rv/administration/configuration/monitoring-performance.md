@@ -58,7 +58,7 @@ There are five metrics, located on the Configuration tab for each
 database, that you can and should create alerts for.
 
 ![Alert
-Settings](/wp-content/uploads/2017/02/alert_settings-2.png){.alignnone
+Settings](/images/rv/alert_settings-2.png){.alignnone
 .wp-image-25329 .size-full width="600" height="151"}
 
 If you want to edit the values or enable/disable an alert, you must

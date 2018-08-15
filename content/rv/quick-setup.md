@@ -35,7 +35,7 @@ Step \#3 -- Create a new RV subscription
 Add a new subscription to your account, if you do not already have one.
 If you do have an existing RV subscription, then proceed to Step 4.
 
-![](/wp-content/uploads/2017/05/new_subscription.png){.alignnone
+![](/images/rv/new_subscription.png){.alignnone
 .size-full .wp-image-30962 width="800" height="406"}
 
 For a new subscription, you will need to provide the following:
@@ -82,7 +82,7 @@ Once selections are made, save the settings entered row by clicking on
 the **Add** button. You can add more rows by clicking on the plus
 button.
 
-![](/wp-content/uploads/2017/05/add_database.png){.alignnone .size-full
+![](/images/rv/add_database.png){.alignnone .size-full
 .wp-image-30965 width="800" height="444"}
 
 Once done with all databases, click on **Continue**.
@@ -102,7 +102,7 @@ database information. Either select **Free Trial** or provide a payment
 method by selecting an existing one or click on the **+** button to add
 a new one.
 
-![](/wp-content/uploads/2017/05/review_create.png){.alignnone .size-full
+![](/images/rv/review_create.png){.alignnone .size-full
 .wp-image-30970 width="800" height="594"}
 
 Select the **Continue** button to create the subscription and deploy the
@@ -118,7 +118,7 @@ Using the menu, navigate to the Databases page. Select one of the
 databases and select the Configuration tab and look for the database
 endpoint.
 
-![](/wp-content/uploads/2017/05/connect_to_database.png){.alignnone
+![](/images/rv/connect_to_database.png){.alignnone
 .size-full .wp-image-30974 width="800" height="599"}
 
 ### Using Telnet
