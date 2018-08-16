@@ -11,7 +11,7 @@ purposes.
 In addition, ensure that the ICMP protocol is enabled for communications
 between the nodes.
 
-By default, the cluster assigns ports in the range of 10,000 -- 19,999
+By default, the cluster assigns ports in the range of 10,000 - 19,999
 to database endpoints. If you assign a specific port for a database when
 creating it, even outside of this range, the cluster will only verify
 that the assigned port is not already in use. You will have to manually

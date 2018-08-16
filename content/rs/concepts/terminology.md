@@ -23,7 +23,7 @@ which helps to achieve high availability.
 A node is made up of several components, as detailed below, and works
 together with the other cluster nodes.
 
-Redis Instance -- Shard
+Redis Instance - Shard
 -----------------------
 
 As indicated above, each node serves as a container for hosting multiple
@@ -31,19 +31,19 @@ database instances, referred to as "shards".
 
 RS supports various database configurations:
 
--   **Standard Redis database** -- A single Redis shard with no
+-   **Standard Redis database** - A single Redis shard with no
     replication or data sharding.
--   **Highly available Redis database** -- Every database master shard
+-   **Highly available Redis database** - Every database master shard
     has a replicated slave shard, so that if the master shard fails the
     cluster can automatically failover to the slave shard with minimal
     to no impact. Master and slave shards are always placed on separate
     nodes to ensure high availability.
--   **Clustered Redis database** -- The data stored in the database is
+-   **Clustered Redis database** - The data stored in the database is
     split across several shards. The number of shards can be defined by
     the user. Various performance optimization algorithms define where
     shards are placed within the cluster. During the lifetime of the
     cluster, these algorithms might migrate a shard between nodes.
--   **Clustered & highly available Redis database** -- Each master shard
+-   **Clustered & highly available Redis database** - Each master shard
     in the clustered database has a slave shard, enabling failover if
     the master shard fails.
 

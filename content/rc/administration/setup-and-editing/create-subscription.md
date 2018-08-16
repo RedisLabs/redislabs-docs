@@ -8,7 +8,7 @@ What is a Subscription?
 -----------------------
 
 A Redis Enterprise Cloud subscription consists of a selected cloud
-provider (and respective region, e.g. "Azure -- US Central"),
+provider (and respective region, e.g. "Azure - US Central"),
 architectural model, memory limit and feature set. You can have multiple
 subscriptions in different providers and regions, all easily managed
 from a single console.
@@ -33,7 +33,7 @@ Creating a Subscription
         your dataset.
     -   Multi-AZ (Availability Zone) plans offer all the benefits of
         Standard plans, as well as auto-failover and in-memory
-        replication to another availability zone. Memory size -- select
+        replication to another availability zone. Memory size - select
         from 30MB (free) to 5GB (\$33/mo), or a flexible pay-as-you-go
         model.
 6.  You can have multiple databases within a plan, but the combined size

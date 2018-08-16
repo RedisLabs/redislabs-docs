@@ -32,5 +32,5 @@ buffer on the source database to a bigger value:
     soft limit \> \< soft seconds \>"
 
 For additional information about this issue and configuration, refer to
-the following blog post: [Top Redis Headaches for Devops -- Replication
+the following blog post: [Top Redis Headaches for Devops - Replication
 Buffer](/blog/top-redis-headaches-for-devops-replication-buffer).

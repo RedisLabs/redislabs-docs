@@ -13,7 +13,7 @@ as follows:
 4.  Create a new database definition
 5.  Connect to your database
 
-Step \#1 -- Sign up for Redis Enterprise VPC account
+Step \#1 - Sign up for Redis Enterprise VPC account
 ----------------------------------------------------
 
 If you do not already have one, sign up for a [Redis Enterprise VPC
@@ -21,7 +21,7 @@ account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-clou
 If you already have an account, sign in to [Redis Enterprise
 VPC](https://app.redislabs.com/#/login?).
 
-Step \#2 -- Create an AWS account for RV to use
+Step \#2 - Create an AWS account for RV to use
 -----------------------------------------------
 
 RV requires a dedicated AWS account to perform operations on your
@@ -29,7 +29,7 @@ behalf. Inside of that account, create an AWS user in IAM specifically
 for RV use, per "[Creating an AWS user for Redis Enterprise
 VPC](com/redis-cloud-private-documentation/how-to/creating-aws-user-redis-cloud-private/)."
 
-Step \#3 -- Create a new RV subscription
+Step \#3 - Create a new RV subscription
 ----------------------------------------
 
 Add a new subscription to your account, if you do not already have one.
@@ -46,7 +46,7 @@ For a new subscription, you will need to provide the following:
     or pure RAM Redis database
 4.  The Cloud Account to be used. Use the AWS user created above in Step
     \#2 for setting up your RV Cloud Account
-5.  Please provide the required Deployment CIDR -- this is an IPv4
+5.  Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
     that you would like RV to use. For a standard deployment, you can
@@ -58,7 +58,7 @@ Once your selections are made, click **Continue** to finalize your
 subscription. RV will authenticate the credentials with AWS, then
 proceed to the next step.
 
-Step \#4 -- Create the database definition
+Step \#4 - Create the database definition
 ------------------------------------------
 
 Next, define the databases to provision. Each row in the table
@@ -67,9 +67,9 @@ represents a group of databases that share the same specification.
 To start with a single database, provide the following details:
 
 1.  Database name
-2.  Dataset size -- The estimated size of your data. You can specify 1GB
+2.  Dataset size - The estimated size of your data. You can specify 1GB
     for a small database.
-3.  Throughput -- The estimated total throughput you expect from your
+3.  Throughput - The estimated total throughput you expect from your
     database. You can specify 10,000 ops/sec to start with a small
     deployment.
 
@@ -108,7 +108,7 @@ take ten to fifteen minutes to construct the infrastructure using the
 generated optimization plan. You will receive an email once your
 databases are ready to use.
 
-Step \#5 -- Connect to your database
+Step \#5 - Connect to your database
 ------------------------------------
 
 Using the menu, navigate to the Databases page. Select one of the

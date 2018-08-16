@@ -39,149 +39,149 @@ below:
 +-----------------------+-----------------------+-----------------------+
 | Command               | Value of interest     | Complexity            |
 +=======================+=======================+=======================+
-| LINSERT               | N -- list len         | O(N)                  |
+| LINSERT               | N - list len         | O(N)                  |
 +-----------------------+-----------------------+-----------------------+
-| LREM                  | N -- list len         | O(N)                  |
+| LREM                  | N - list len         | O(N)                  |
 +-----------------------+-----------------------+-----------------------+
-| LTRIM                 | N -- number of        | O(N)                  |
+| LTRIM                 | N - number of        | O(N)                  |
 |                       | removed elements      |                       |
 +-----------------------+-----------------------+-----------------------+
-| PUBLISH               | N -- number of        | O(N+M)                |
+| PUBLISH               | N - number of        | O(N+M)                |
 |                       | channel subscribers   |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | subscribed patterns   |                       |
 +-----------------------+-----------------------+-----------------------+
-| PSUBSCRIBE            | N -- number of        | O(argc\*N)            |
+| PSUBSCRIBE            | N - number of        | O(argc\*N)            |
 |                       | patterns client is    |                       |
 |                       | subscribed to         |                       |
 |                       |                       |                       |
-|                       | argc -- number of     |                       |
+|                       | argc - number of     |                       |
 |                       | arguments passed to   |                       |
 |                       | the command           |                       |
 +-----------------------+-----------------------+-----------------------+
-| PUNSUBSCRIBE          | N -- number of        | O(argc\*(N+M))        |
+| PUNSUBSCRIBE          | N - number of        | O(argc\*(N+M))        |
 |                       | patterns client is    |                       |
 |                       | subscribed to         |                       |
 |                       |                       |                       |
-|                       | M -- total number of  |                       |
+|                       | M - total number of  |                       |
 |                       | subscribed patterns   |                       |
 |                       |                       |                       |
-|                       | argc -- number of     |                       |
+|                       | argc - number of     |                       |
 |                       | arguments passed to   |                       |
 |                       | the command           |                       |
 +-----------------------+-----------------------+-----------------------+
-| SDIFF                 | N -- total number of  | O(N)                  |
+| SDIFF                 | N - total number of  | O(N)                  |
 |                       | elements in all sets  |                       |
 +-----------------------+-----------------------+-----------------------+
-| SDIFFSTORE            | N -- total number of  | O(N)                  |
+| SDIFFSTORE            | N - total number of  | O(N)                  |
 |                       | elements in all sets  |                       |
 +-----------------------+-----------------------+-----------------------+
-| SINTER                | N -- number of        | O(argc\*N)            |
+| SINTER                | N - number of        | O(argc\*N)            |
 |                       | elements in smallest  |                       |
 |                       | set                   |                       |
 |                       |                       |                       |
-|                       | argc -- number of     |                       |
+|                       | argc - number of     |                       |
 |                       | arguments passed to   |                       |
 |                       | the command           |                       |
 +-----------------------+-----------------------+-----------------------+
-| SINTERSTORE           | N -- number of        | O(argc\*N)            |
+| SINTERSTORE           | N - number of        | O(argc\*N)            |
 |                       | elements in smallest  |                       |
 |                       | set                   |                       |
 |                       |                       |                       |
-|                       | argc -- number of     |                       |
+|                       | argc - number of     |                       |
 |                       | arguments passed to   |                       |
 |                       | the command           |                       |
 +-----------------------+-----------------------+-----------------------+
-| SMEMBERS              | N -- number of        | O(N)                  |
+| SMEMBERS              | N - number of        | O(N)                  |
 |                       | elements in a set     |                       |
 +-----------------------+-----------------------+-----------------------+
-| SORT                  | N -- number of        | O(N+M\*log(M))O(N)    |
+| SORT                  | N - number of        | O(N+M\*log(M))O(N)    |
 |                       | elements in the       | when no sorting       |
 |                       | list/set/zset         |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | elements in result    |                       |
 +-----------------------+-----------------------+-----------------------+
-| SUNION                | N -- total number of  | O(N)                  |
+| SUNION                | N - total number of  | O(N)                  |
 |                       | elements in all sets  |                       |
 +-----------------------+-----------------------+-----------------------+
-| SUNIONSTORE           | N -- total number of  | O(N)                  |
+| SUNIONSTORE           | N - total number of  | O(N)                  |
 |                       | elements in all sets  |                       |
 +-----------------------+-----------------------+-----------------------+
-| UNSUBSCRIBE           | N -- total number of  | O(N)                  |
+| UNSUBSCRIBE           | N - total number of  | O(N)                  |
 |                       | clients subscribed to |                       |
 |                       | all channels          |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZADD                  | N -- number of        | O(log(N))             |
+| ZADD                  | N - number of        | O(log(N))             |
 |                       | elements in the zset  |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZCOUNT                | N -- number of        | O(log(N)+M)           |
+| ZCOUNT                | N - number of        | O(log(N)+M)           |
 |                       | elements in the zset  |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | elements between min  |                       |
 |                       | and max               |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZINCRBY               | N -- number of        | O(log(N))             |
+| ZINCRBY               | N - number of        | O(log(N))             |
 |                       | elements in the zset  |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZINTERSTORE           | N -- number of        | O(N\*K)+O(M\*log(M))  |
+| ZINTERSTORE           | N - number of        | O(N\*K)+O(M\*log(M))  |
 |                       | elements in the       |                       |
 |                       | smallest zset         |                       |
 |                       |                       |                       |
-|                       | K -- number of zsets  |                       |
+|                       | K - number of zsets  |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | elements in the       |                       |
 |                       | results set           |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZRANGE                | N -- number of        | O(log(N)+M)           |
+| ZRANGE                | N - number of        | O(log(N)+M)           |
 |                       | elements in the zset  |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | results               |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZRANGEBYSCORE         | N -- number of        | O(log(N)+M)           |
+| ZRANGEBYSCORE         | N - number of        | O(log(N)+M)           |
 |                       | elements in the zset  |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | results               |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZRANK                 | N -- number of        | O(log(N))             |
+| ZRANK                 | N - number of        | O(log(N))             |
 |                       | elements in the zset  |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZREM                  | N -- number of        | O(argc\*log(N))       |
+| ZREM                  | N - number of        | O(argc\*log(N))       |
 |                       | elements in the zset  |                       |
 |                       |                       |                       |
-|                       | argc -- number of     |                       |
+|                       | argc - number of     |                       |
 |                       | arguments passed to   |                       |
 |                       | the command           |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZREMRANGEBYRANK       | N -- number of        | O(log(N)+M)           |
+| ZREMRANGEBYRANK       | N - number of        | O(log(N)+M)           |
 |                       | elements in the zset  |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | elements removed      |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZREMRANGEBYSCORE      | N -- number of        | O(log(N)+M)           |
+| ZREMRANGEBYSCORE      | N - number of        | O(log(N)+M)           |
 |                       | elements in the zset  |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | elements removed      |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZREVRANGE             | N -- number of        | O(log(N)+M)           |
+| ZREVRANGE             | N - number of        | O(log(N)+M)           |
 |                       | elements in the zset  |                       |
 |                       |                       |                       |
-|                       | M -- number of        |                       |
+|                       | M - number of        |                       |
 |                       | results               |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZREVRANK              | N -- number of        | O(log(N))             |
+| ZREVRANK              | N - number of        | O(log(N))             |
 |                       | elements in the zset  |                       |
 +-----------------------+-----------------------+-----------------------+
-| ZUNIONSTORE           | N -- sum of element   | O(N)+O(M\*log(M))     |
+| ZUNIONSTORE           | N - sum of element   | O(N)+O(M\*log(M))     |
 |                       | counts of all zsets   |                       |
 |                       |                       |                       |
-|                       | M -- element count of |                       |
+|                       | M - element count of |                       |
 |                       | result                |                       |
 +-----------------------+-----------------------+-----------------------+

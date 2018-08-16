@@ -12,13 +12,13 @@ Regardless, navigate to the [Redis Labs download
 page](https://app.redislabs.com/#/sign-up/software?direct=true) and
 select one of the following options:
 
--   **Installation package** -- Click the **Download** button for the OS
+-   **Installation package** - Click the **Download** button for the OS
     you would like to use in order to download the .tar file
     installation package.
--   **AMI** -- Click the **AWS AMI** button for the option you would
+-   **AMI** - Click the **AWS AMI** button for the option you would
     like to use in order to launch an instance on Amazon Web Services
     (AWS).
--   **Docker** -- Go
+-   **Docker** - Go
     [here](/redis-enterprise-documentation/installing-and-upgrading/docker/)
     for the install guide and skip this page.
 

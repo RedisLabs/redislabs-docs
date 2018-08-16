@@ -73,21 +73,21 @@ yet.
 
 The command has the following parameters:
 
-1.  filename -- mandatory. The path of the old cluster configuration
+1.  filename - mandatory. The path of the old cluster configuration
     file. The file name is ccs-redis.rdb, and it is located in the /ccs
     directory of the persistent storage drive of the old cluster. This
     file exists on the persistent storage drive of all nodes and
     contains the same exact data, so it does not matter which old node's
     persistence storage you choose to use the file from.
-2.  persistent\_path -- optional. The location of the persistent storage
+2.  persistent\_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
-3.  ephemeral\_path -- optional. The location of the ephemeral storage
+3.  ephemeral\_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
-4.  rack\_id -- optional. If rack-zone awareness was enabled in the
+4.  rack\_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
     awareness](/redis-enterprise-documentation/rack-zone-awareness)),
     you can use this parameter to override the rack ID value that was
@@ -109,27 +109,27 @@ node to the recovered cluster, and specify which of the nodes in the old
 cluster this node is going to replace. The command has the following
 parameters:
 
-1.  name -- mandatory. The name of the cluster this node is joining (for
+1.  name - mandatory. The name of the cluster this node is joining (for
     additional details, refer to [How to set the cluster
     name](/redis-enterprise-documentation/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
     (FQDN)). Alternatively, the nodes parameter can be used.
-2.  nodes -- mandatory. The IP address of a node in the cluster this
+2.  nodes - mandatory. The IP address of a node in the cluster this
     node is joining. Alternatively, the name parameter can be used.
-3.  username -- mandatory. The email address of the cluster
+3.  username - mandatory. The email address of the cluster
     administrator that was set when the cluster was created.
-4.  password -- mandatory. The password of the cluster administrator
+4.  password - mandatory. The password of the cluster administrator
     that was set when the cluster was created.
-5.  replace\_node -- mandatory. The ID of the node in the old cluster
+5.  replace\_node - mandatory. The ID of the node in the old cluster
     which this node is going to replace.
-6.  persistent\_path -- optional. The location of the persistent storage
+6.  persistent\_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
-7.  ephemeral\_path -- optional. The location of the ephemeral storage
+7.  ephemeral\_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
-8.  rack\_id -- optional. If rack-zone awareness was enabled in the
+8.  rack\_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
     awareness](/redis-enterprise-documentation/rack-zone-awareness)),
     use this parameter to set the rack ID to be the same as the rack ID

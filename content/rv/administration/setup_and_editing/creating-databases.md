@@ -10,7 +10,7 @@ Enterprise VPC by following these steps:
 1.  Select **Databases** from the top right menu in Redis Enterprise
     VPC.
 2.  Click on the **+** button to add a database to a Subscription.
-3.  Protocol -- Select whether the database will be **Redis** or
+3.  Protocol - Select whether the database will be **Redis** or
     **Memcached**
 4.  Enter a **Database Name** that is up to 40 characters long;
 5.  Enter a **Memory Limit**. Please take in mind that replication is
@@ -30,7 +30,7 @@ Enterprise VPC by following these steps:
     select 'RediSearch' please provide the estimated number of documents
     you are about to index.
 12. Choose a **Data Eviction Policy** or accept the default.
-13. Periodic backups -- If you would like periodic backups of your
+13. Periodic backups - If you would like periodic backups of your
     database, enter the path to storage here. For specific information
     visit Configuring Database Backups for Redis Enterprise Cloud.
 14. You can add **Alert Settings** for your database so that you and

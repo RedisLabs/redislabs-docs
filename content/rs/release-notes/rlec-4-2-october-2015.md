@@ -1,5 +1,5 @@
 ---
-Title: Release Notes 4.2.1-30 -- October 18, 2015
+Title: Release Notes 4.2.1-30 - October 18, 2015
 description: $description
 weight: $weight
 alwaysopen: false
@@ -15,7 +15,7 @@ before running through the upgrade process.
 New features
 ------------
 
--   rsyslog logging support -- RLEC now writes by default to syslog,
+-   rsyslog logging support - RLEC now writes by default to syslog,
     which enables monitoring through rsyslog.
 -   Profile support for tuning cloud and non-cloud environments --
     enables the administrator to configure RLEC to run with different
@@ -24,37 +24,37 @@ New features
     [Performance
     optimization](/redis-enterprise-documentation/cluster-administration/best-practices/performance-optimization)
     section.
--   SLA for AOF rewrite -- enables the administrator to configure
+-   SLA for AOF rewrite - enables the administrator to configure
     database parameters, by running the rladmin tune command, related to
     when AOF rewrite is triggered based on the time it would take to
     load the database from the AOF file, and on the maximum AOF rewrite
     file size. In addition, updates to the AOF rewrite mechanism
     minimize chances of the disk getting full.
--   New warning and alerts related to AOF rewrite mechanism -- a warning
+-   New warning and alerts related to AOF rewrite mechanism - a warning
     is shown during the setup process in case the disk size is lower
     than twice the size of the RAM. New cluster level alerts added to
     alert when node available disk space is lower than the needed disk
     space for AOF rewrite purposes, and when node performance is
     degraded due to reaching disk I/O limits.
--   Replica of support for multiple sources -- the Replica of feature is
+-   Replica of support for multiple sources - the Replica of feature is
     enhanced to support creating a database that is a replica of
     multiple source databases. For additional details, refer to the
     [Replica
     of](/redis-enterprise-documentation/database-configuration/replica-of)
     section.
--   Cross cluster Replica of -- the Replica of feature now supports
+-   Cross cluster Replica of - the Replica of feature now supports
     defining a database that is a replica of databases that belong to a
     different RLEC cluster. For additional details, refer to the
     [Replica
     of](/redis-enterprise-documentation/database-configuration/replica-of)
     section.
--   Multi-IP support -- on a node that has multiple IPs, enables the
+-   Multi-IP support - on a node that has multiple IPs, enables the
     administrator to specify which IP address is used for internal
     traffic and which IP addresses are used for external traffic. For
     additional details, refer to [Multi-IP &
     IPv6](/redis-enterprise-documentation/cluster-administration/best-practices/multi-ip-ipv6-support)
     support.
--   IPv6 support for external traffic -- on a node that has multiple
+-   IPv6 support for external traffic - on a node that has multiple
     IPs, external IP addresses can be of IPv6 type. For additional
     details, refer to [Multi-IP &
     IPv6](/redis-enterprise-documentation/cluster-administration/best-practices/multi-ip-ipv6-support)
@@ -65,7 +65,7 @@ New features
     and [Importing data to a
     database](/redis-enterprise-documentation/database-configuration/importing-data-to-a-database)
     sections.
--   Import of a sharded database -- support for importing data of a
+-   Import of a sharded database - support for importing data of a
     sharded database by indicating multiple files paths. For additional
     details, refer to the [Importing data to a
     database](/redis-enterprise-documentation/database-configuration/importing-data-to-a-database)
@@ -99,7 +99,7 @@ Changes
 -   Various enhancements to rladmin command-line-interface (CLI) to
     support new commands.
 -   Redis version updated to 2.8.21 that addresses
-    [CVE-2015-4335/DSA-3279 -- Redis Lua Sandbox
+    [CVE-2015-4335/DSA-3279 - Redis Lua Sandbox
     Escape](https://groups.google.com/forum/#!msg/redis-db/4Y6OqK8gEyk/Dg-5cejl-eUJ).
 -   Port 3336 added to the list of ports being used by RLEC.
 -   Node "Network utilization" alert measured in percentages (%) has
@@ -126,8 +126,8 @@ Fixed issues
 -   Sometimes a wrong value is reported in the UI for node used
     ephemeral storage space.
 -   Sometime the wrong Replica of Lag value is reported in the UI.
--   RLEC-6875 -- email server settings not working when using port 587.
--   RLEC-5498 -- Improve rladmin response time when a node is down.
+-   RLEC-6875 - email server settings not working when using port 587.
+-   RLEC-5498 - Improve rladmin response time when a node is down.
 -   Validation of Replica of source definition did not fail in the UI
     and would only fail in runtime if it was using the Cluster Name
     (FQDN) and the FQDN was not properly configured in the DNS.

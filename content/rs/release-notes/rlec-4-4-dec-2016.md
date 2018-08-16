@@ -1,5 +1,5 @@
 ---
-Title: Release Notes 4.4 -- December 2016
+Title: Release Notes 4.4 - December 2016
 description: $description
 weight: $weight
 alwaysopen: false
@@ -77,68 +77,68 @@ Changes
 Important fixed issues since 4.3.0
 ----------------------------------
 
--   RLEC-7542 -- Add ability to create and manage role based user
+-   RLEC-7542 - Add ability to create and manage role based user
     security
--   RLEC-8283 -- The cluster recovery process does not work properly
+-   RLEC-8283 - The cluster recovery process does not work properly
     when the cluster that needs to be recovered does not have a node
     with ID 1.
--   RLEC-8284 -- Add functionality to rladmin to mark a node as a quorum
+-   RLEC-8284 - Add functionality to rladmin to mark a node as a quorum
     only node
--   RLEC-8498 -- Backup fails under rare conditions
--   RLEC-8579 -- rladmin supports uppercase for external\_addr value
--   RLEC-8656 -- Fixed conflict with SELinux
--   RLEC-8687 -- Fixed issue where strong password requirements were not
+-   RLEC-8498 - Backup fails under rare conditions
+-   RLEC-8579 - rladmin supports uppercase for external\_addr value
+-   RLEC-8656 - Fixed conflict with SELinux
+-   RLEC-8687 - Fixed issue where strong password requirements were not
     honored correctly.
--   RLEC-8694 -- DMC failed while creating DB with 75 (150 replicated)
+-   RLEC-8694 - DMC failed while creating DB with 75 (150 replicated)
     shards
--   RLEC-8700 -- Fixed issue with network split scenario
--   RLEC-8833 -- Fixed issue where in some cases endpoint were not
+-   RLEC-8700 - Fixed issue with network split scenario
+-   RLEC-8833 - Fixed issue where in some cases endpoint were not
     getting new IPs after node replacement.
--   RLEC-9069 -- Fixed issue related to RHEL 7 and IPv6.
--   RLEC-9156 -- Fixed issue causing a full resync of data when a source
+-   RLEC-9069 - Fixed issue related to RHEL 7 and IPv6.
+-   RLEC-9156 - Fixed issue causing a full resync of data when a source
     or destination failure occurred.
--   RLEC-9173 -- Issue with writing data after master and slave failed
--   RLEC-9235 -- Issue with SSL connection error and self signed
+-   RLEC-9173 - Issue with writing data after master and slave failed
+-   RLEC-9235 - Issue with SSL connection error and self signed
     certificates
--   RLEC-9491 -- Fixed alerting issue due to incorrect measurement
--   RLEC-9534 -- Fixed issue with node remove command after RLEC
+-   RLEC-9491 - Fixed alerting issue due to incorrect measurement
+-   RLEC-9534 - Fixed issue with node remove command after RLEC
     uninstalled
--   RLEC-9658 -- Failed to import backup file from FTP server.
--   RLEC-9737 -- Fixed issue with backup process to use ephemeral
+-   RLEC-9658 - Failed to import backup file from FTP server.
+-   RLEC-9737 - Fixed issue with backup process to use ephemeral
     storage when needed
--   RLEC-9761 -- UI had incorrect value increments
--   RLEC-9827 -- Server with a high number of cores and running RHEL can
+-   RLEC-9761 - UI had incorrect value increments
+-   RLEC-9827 - Server with a high number of cores and running RHEL can
     have issues running systune.sh
--   RLEC-9853 -- Fixed issues with logrotate on RHEL 7.1 so it runs as
+-   RLEC-9853 - Fixed issues with logrotate on RHEL 7.1 so it runs as
     non-privileged user
--   RLEC-9858 -- If proxy crashed, in some cases this would prevent
+-   RLEC-9858 - If proxy crashed, in some cases this would prevent
     completion of redis failover process
--   RLEC-9893 -- DB recovery process doesn't recognize original rack
+-   RLEC-9893 - DB recovery process doesn't recognize original rack
     name when in uppercase
--   RLEC-9905 -- x.509 certificate signed by custom CA cannot be loaded
+-   RLEC-9905 - x.509 certificate signed by custom CA cannot be loaded
     in UI
--   RLEC-9925 -- master endpoint and shards goes down if co-hosted with
+-   RLEC-9925 - master endpoint and shards goes down if co-hosted with
     master of the cluster and the node goes down (single proxy policy)
--   RLEC-9926 -- Master shard could remain down if on the same node as
+-   RLEC-9926 - Master shard could remain down if on the same node as
     the master of the cluster and the entire node goes down
--   RLEC-10340 -- Fixed a typo that crashed rladmin status output in
+-   RLEC-10340 - Fixed a typo that crashed rladmin status output in
     some cases
 
 Changes in 4.4.2-42:
 
--   RLEC-11941 -- Upgrade to 4.4.2-35 on RHEL6 -- leash failed when
+-   RLEC-11941 - Upgrade to 4.4.2-35 on RHEL6 - leash failed when
     python2.6 is installed
--   RLEC-11994 -- RLEC 4.4.2-35: the UI doesn't display the DBs with
+-   RLEC-11994 - RLEC 4.4.2-35: the UI doesn't display the DBs with
     replication
 
 <div>
 
-Changes in 4.4.2 -- 49
+Changes in 4.4.2 - 49
 
 </div>
 
--   RLEC-11209 -- Unable to run upgrade due to running\_actions check
--   RLEC-12647 -- Backup to S3 with periods in bucket name are failing
+-   RLEC-11209 - Unable to run upgrade due to running\_actions check
+-   RLEC-12647 - Backup to S3 with periods in bucket name are failing
     in some cases
 
 Known issues
@@ -154,14 +154,14 @@ Known issues
     to 3.2 you should run the **rladmin upgrade db** command with the
     **keep\_current\_version** flag which will ensure the database is
     upgraded to the latest 3.0 version supported by RLEC.
--   **Issue:** RLEC-9200 -- in a database configured with multiple
+-   **Issue:** RLEC-9200 - in a database configured with multiple
     proxies, if a client sends the MONITOR, CLIENT LIST or CLIENT KILL
     commands, only commands from clients connected from the same proxy
     are returned instead of all commands from all connections.\
     **Workaround:** If you would like to get a result across all
     clients, you need to send the monitor command to all proxies and
     aggregate them.
--   **Issue:** RLEC-9296 -- Different actions in the cluster, like node
+-   **Issue:** RLEC-9296 - Different actions in the cluster, like node
     failure or taking a node offline, might cause the Proxy policy to
     change Manual.\
     **Workaround:** You can use the **rladmin bind \[db \<db:id \|
@@ -169,7 +169,7 @@ Known issues
     all-nodes\>** command to set the policy back to the required policy,
     which will ensure all needed proxies are bounded. Note that existing
     client connections might disconnected as result of this process.
--   **Issue:** RLEC-8787 -- In some cases when using the replica-of
+-   **Issue:** RLEC-8787 - In some cases when using the replica-of
     feature, if the source database(s) are larget than the target
     database, the memory limit on the target database is not enforced
     and that used memory of the target database can go over the memory
@@ -177,12 +177,12 @@ Known issues
     **Workaround:** You should ensure that the total memory limit of all
     source databases is not bigger than the memory limit of the target
     database.
--   **Issue:** RLEC-8487 -- Some Redis processes stay running after
+-   **Issue:** RLEC-8487 - Some Redis processes stay running after
     purging RLEC from the machine and causes an attempt to reinstall
     RLEC to fail.\
     **Workaround:** Run the purge process for a second time and ensure
     that the Redis processes were removed.
--   **Issue:** RLEC-8747 -- When upgrading to this version, if the UI is
+-   **Issue:** RLEC-8747 - When upgrading to this version, if the UI is
     open in the browser the UI might not work properly after the
     upgrade.\
     **Workaround:** Refresh the browser and the UI will return to work

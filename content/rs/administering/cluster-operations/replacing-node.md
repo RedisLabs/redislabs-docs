@@ -28,7 +28,7 @@ failure](/images/rs/node-failure.png?width=600&height=152)
 4.  A message appears, informing you that the cluster has a faulty node
     and that the new node will replace the faulty node.
 5.  If the new node has insufficient memory, you are prompted to add a
-    different node -- one with sufficient memory.
+    different node - one with sufficient memory.
 
 **Note**: If there is a faulty node in the cluster to which you are
 adding a node, RP will enforce using the new node to replace the faulty

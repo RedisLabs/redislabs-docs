@@ -1,5 +1,5 @@
 ---
-Title: Release Notes -- Redis Enterprise Pack -- v4.5 -- May 2017
+Title: Release Notes - Redis Enterprise Pack - v4.5 - May 2017
 description: $description
 weight: $weight
 alwaysopen: false
@@ -65,56 +65,56 @@ Support has been added RHEL 7.3 with this version.
 Important Fixes
 ---------------
 
--   RP10106 -- SSL Certificate should not need to be signed with a
+-   RP10106 - SSL Certificate should not need to be signed with a
     stronger hashing algorithm to be accepted
--   RP10465 -- failover times can be higher under certain scenarios in
+-   RP10465 - failover times can be higher under certain scenarios in
     local watchdog profile
--   RP10633 -- Improve install.sh and answers file
--   RP11880 -- Improved slave sync and add node robustness
--   RP8689 -- Minimized impact when changing RAM-Flash limit on Redis
+-   RP10633 - Improve install.sh and answers file
+-   RP11880 - Improved slave sync and add node robustness
+-   RP8689 - Minimized impact when changing RAM-Flash limit on Redis
     Enterprise Flash
--   RP12063 -- Improved Redis Flash data import/population performance
--   RP11608 -- Improvements to databases.txt creation in support package
--   RP11941 -- Eliminated warning and errors during upgrade on RHEL6
+-   RP12063 - Improved Redis Flash data import/population performance
+-   RP11608 - Improvements to databases.txt creation in support package
+-   RP11941 - Eliminated warning and errors during upgrade on RHEL6
     with leash and python2.6 is installed
--   RP11994 -- Databases under certain cases may not display in UI even
+-   RP11994 - Databases under certain cases may not display in UI even
     though they are in the cluster metadata and safely operating.
--   RP12438 -- Email alerts with Amazon SES may fail under certain
+-   RP12438 - Email alerts with Amazon SES may fail under certain
     conditions.
--   RP12538 -- Redis failover was initiated by node\_wd during sync to
+-   RP12538 - Redis failover was initiated by node\_wd during sync to
     new slave
--   RP10264 -- Improved debuginfo package for better supportability
+-   RP10264 - Improved debuginfo package for better supportability
 
 Important fixes in RP 4.5.0-22
 
--   RP12667 -- Nginx security improvements, improved TLS and SSL related
+-   RP12667 - Nginx security improvements, improved TLS and SSL related
     warnings on security scans.
--   RP12690 -- Added simpler ability to recover cluster from AWS S3
--   RP13359 -- Advanced memory allocation and booking enhancements
+-   RP12690 - Added simpler ability to recover cluster from AWS S3
+-   RP13359 - Advanced memory allocation and booking enhancements
 
 Important fixes in RP 4.5.0-31
 
--   RP13060 -- Client may experience reconnect issues after failover of
+-   RP13060 - Client may experience reconnect issues after failover of
     the endpoint.
--   RP13711 -- Disabling IPv6 may cause startup of node services to fail
+-   RP13711 - Disabling IPv6 may cause startup of node services to fail
     (NGINX) on RHEL 7
--   RP12747 -- Calculation can be incorrect for memory quota for
+-   RP12747 - Calculation can be incorrect for memory quota for
     databases
 
 Important fixes in RP 4.5.0-35
 
--   RP12844 -- cnm\_exec crashes on "not enough arguments for format
+-   RP12844 - cnm\_exec crashes on "not enough arguments for format
     string"
 
 Important fixes in RP 4.5.0-43
 
--   RP9846 -- In UI, Used Memory may show incorrect values
--   RP12211 -- UI fails import from a Redis OSS DB with password
--   RP13356 -- Enable failover when license expires
--   RP14692 -- rladmin status command may crash during backup
--   RP14541 -- In rare cases, DMC log grew quickly and caused stability
+-   RP9846 - In UI, Used Memory may show incorrect values
+-   RP12211 - UI fails import from a Redis OSS DB with password
+-   RP13356 - Enable failover when license expires
+-   RP14692 - rladmin status command may crash during backup
+-   RP14541 - In rare cases, DMC log grew quickly and caused stability
     issues
--   RP15107 -- When using Redis Enterprise Flash, it may cause DMC proxy
+-   RP15107 - When using Redis Enterprise Flash, it may cause DMC proxy
     crashes
 
 Important fixes in RP 4.5.0-47
@@ -123,8 +123,8 @@ Important fixes in RP 4.5.0-47
 
 Important fixes in RP 4.5.0-51
 
--   15161 -- Make Unix socket folder configurable at install time
--   15164 -- Make Unix socket folder configurable at build time
--   16082 -- Make Unix socket folder configurable at runtime
+-   15161 - Make Unix socket folder configurable at install time
+-   15164 - Make Unix socket folder configurable at build time
+-   16082 - Make Unix socket folder configurable at runtime
 -   Fixed an issue where on import of data, TTL information was set
     incorrectly

@@ -1,5 +1,5 @@
 ---
-Title: Release Notes 4.0.0-49 -- June 18, 2015
+Title: Release Notes 4.0.0-49 - June 18, 2015
 description: $description
 weight: $weight
 alwaysopen: false
@@ -58,7 +58,7 @@ Fixed issues
 Known issues
 ------------
 
--   **Issue**: RLEC-6819 -- Uninstall on Red Hat Enterprise Linux does
+-   **Issue**: RLEC-6819 - Uninstall on Red Hat Enterprise Linux does
     not stop all services and if you try to install the software again
     on the same machine the new installation might use prior
     installation data.**Workaround**: Before installing the software

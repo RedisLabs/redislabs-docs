@@ -7,7 +7,7 @@ alwaysopen: false
 Before you can install a module, it must be packaged to be used in Redis
 Enterprise Software (RS). There are two types
 
-1.  Redis Labs pre-packaged modules -- To download these modules, go to
+1.  Redis Labs pre-packaged modules - To download these modules, go to
     the [Redis Enterprise downloads
     page](/products/redis-pack/downloads/). For more specific
     information on each module:
@@ -15,7 +15,7 @@ Enterprise Software (RS). There are two types
     b.  [RediSearch
         Enterprise](/redis-enterprise-documentation/developing/modules/redisearch/)
     c.  [ReBloom](/redis-enterprise-documentation/developing/modules/bloom-filters/)
-2.  Custom packaged modules -- For instructions on packing up any module
+2.  Custom packaged modules - For instructions on packing up any module
     from redismodules.com, see [Developing with
     Modules](/redis-enterprise-documentation/developing/modules/).
 

@@ -52,10 +52,10 @@ database and your application, as described below.
             the textbox.
         3.  This will also trigger an automatic download of a zip
             archive with the following contents:
-            1.  `garantia_user.crt` -- the certificate's public key.
-            2.  `garantia_user_private.key` -- the certificate's private
+            1.  `garantia_user.crt` - the certificate's public key.
+            2.  `garantia_user_private.key` - the certificate's private
                 key.
-            3.  `garantia_ca.pem` -- the service's certification
+            3.  `garantia_ca.pem` - the service's certification
                 authority.
 5.  Click the **Update** button to apply the changes to your resource.
 
@@ -92,9 +92,9 @@ OS-Specific Instructions for Setting Up stunnel
     ```
 
 2.  Copy all certificate files to /etc/stunnel.
-    1.  `garantia_user.crt` -- the certificate's public key.
-    2.  `garantia_user_private.key` -- the certificate's private key.
-    3.  `garantia_ca.pem` -- the service's certification authority.
+    1.  `garantia_user.crt` - the certificate's public key.
+    2.  `garantia_user_private.key` - the certificate's private key.
+    3.  `garantia_ca.pem` - the service's certification authority.
 3.  Change the permissions of the private key:
 
     ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
@@ -104,7 +104,7 @@ OS-Specific Instructions for Setting Up stunnel
     ```
 
 4.  Create a configuration file named /etc/stunnel/redislabs.conf as
-    shown in the sample below -- make sure that you replace host
+    shown in the sample below - make sure that you replace host
     and port in the last line with your resource's respective
     attributes.
 5.  Enable the stunnel service by editing /etc/default/stunnel4 and
@@ -124,9 +124,9 @@ OS-Specific Instructions for Setting Up stunnel
     ```
 
 2.  Copy all certificate files to `/etc/stunnel`.
-    1.  `garantia_user.crt` -- the certificate's public key.
-    2.  `garantia_user_private.key` -- the certificate's private key.
-    3.  `garantia_ca.pem` -- the service's certification authority.
+    1.  `garantia_user.crt` - the certificate's public key.
+    2.  `garantia_user_private.key` - the certificate's private key.
+    3.  `garantia_ca.pem` - the service's certification authority.
 3.  Change the permissions of the private key:
 
     ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
@@ -136,7 +136,7 @@ OS-Specific Instructions for Setting Up stunnel
     ```
 
 4.  Create a configuration file named /etc/stunnel/stunnel.conf as shown
-    in the sample below -- make sure that you replace host and port in
+    in the sample below - make sure that you replace host and port in
     the last line with your resource's respective attributes.
 5.  Configure stunnel to run as a daemon by creating the following
     /etc/init.d/stunnel file:

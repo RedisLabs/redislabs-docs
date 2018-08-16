@@ -37,7 +37,7 @@ You can configure the database to be periodically backed up to a chosen
 location. If you do so, specify the interval of how often to back up the
 database: every 4, 12, or 24 hours.
 
-### Ad-hoc backup -- Export
+### Ad-hoc backup - Export
 
 You can, at any time, backup any database as described in [Exporting
 data from a

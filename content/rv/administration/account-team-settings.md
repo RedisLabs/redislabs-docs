@@ -26,9 +26,9 @@ existing team member.
 
 Team members can have different roles to the account:
 
--   Owner -- Can view, create, and edit any aspects of the account
--   Member -- Can view, create, and edit databases.
--   Viewer -- Can view databases
+-   Owner - Can view, create, and edit any aspects of the account
+-   Member - Can view, create, and edit databases.
+-   Viewer - Can view databases
 
 ![Team settings on Redis Enterprise
 Cloud](/images/rv/settings_team.png?width=1000&height=454)

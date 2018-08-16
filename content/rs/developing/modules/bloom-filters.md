@@ -23,9 +23,9 @@ in a set, they provide excellent speed and most importantly excellent
 space efficiency.
 
 Bloom filters are used in a wide variety of applications such as ad
-serving -- making sure a user doesn't see an ad too often; likewise in
-content recommendation systems -- ensuring recommendations don't appear
-too often, in databases -- quickly checking if an entry exists in a
+serving - making sure a user doesn't see an ad too often; likewise in
+content recommendation systems - ensuring recommendations don't appear
+too often, in databases - quickly checking if an entry exists in a
 table before accessing it on disk, and so on.
 
 How Bloom filters work
@@ -44,7 +44,7 @@ the filter sees if the corresponding bit is set or not.
 ![](/images/rs/image2.png?width=266&height=112)
 
 Of course, this is subject to collisions. If a collision occurs, the
-filter will return a false positive -- indicating that the entry is
+filter will return a false positive - indicating that the entry is
 indeed found (note that a bloom filter will never return a false
 negative, that is, claim that something does not exist when it fact it
 is present).
@@ -95,7 +95,7 @@ involves inspecting each layer for presence. Adding new items now
 involves checking that it does not exist beforehand, and adding it to
 the current filter. Hashes still only need to be computed once, however.
 
-When creating a Bloom filter -- even a scalable one, it's important to
+When creating a Bloom filter - even a scalable one, it's important to
 have a good idea of how many items it is expected to contain. A filter
 whose initial layer can only contain a small number of elements will
 degrade performance significantly because it will take more layers to

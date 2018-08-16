@@ -1,5 +1,5 @@
 ---
-Title: Release Notes -- Redis Enterprise Software -- v5.0.2 -- 2018 March
+Title: Release Notes - Redis Enterprise Software - v5.0.2 - 2018 March
 description: $description
 weight: $weight
 alwaysopen: false
@@ -51,22 +51,22 @@ Important Fixes
 ---------------
 
 -   RS16153 -- Supervisord version update
--   RS16667 -- Fixed issue with 'rladmin status' timeout
--   RS17746 -- Fixed upgrade issue when -s option used
--   RS17997, RS18088 -- Upgrade issues when using non-default socket
+-   RS16667 - Fixed issue with 'rladmin status' timeout
+-   RS17746 - Fixed upgrade issue when -s option used
+-   RS17997, RS18088 - Upgrade issues when using non-default socket
     file path
 -   RS8584 -- Endpoint migration provided misleading plan message
--   RS17696 -- Fixed issues with Multi-proxy and intermittent network
+-   RS17696 - Fixed issues with Multi-proxy and intermittent network
     issues
--   RS17362 -- Upgrade fails under some circumstances
--   RS18351 -- Listener active after node has been declared dead
--   RS18874 -- Fixed OOM issue due to redis\_mgr high memory consumption
--   RS19002 -- Fixed wrong message when an upgrade of a quorum node with
+-   RS17362 - Upgrade fails under some circumstances
+-   RS18351 - Listener active after node has been declared dead
+-   RS18874 - Fixed OOM issue due to redis\_mgr high memory consumption
+-   RS19002 - Fixed wrong message when an upgrade of a quorum node with
     all-nodes policy takes place
 
 **Important Fixes in Build \#30:**
 
--   RS19701 -- Fixed high CPU usage on large scale clusters
+-   RS19701 - Fixed high CPU usage on large scale clusters
 -   RS[19869- Added]{style="font-weight: 400;"} s[upport for Redis
     version 4.0.9]{style="font-weight: 400;"}
 -   RS20153- Fixed Redis important security issues related to the Lua

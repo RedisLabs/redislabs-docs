@@ -59,7 +59,7 @@ on AWS using the following setup:
 
 -   2 x i3.2xlarge (8 vCPU, 61 GiB RAM, up to 10GBit, 1.9TB NMVe SSD) --
     will be used for serving RoF data
--   1 x m4.large -- will be used as a quorum node
+-   1 x m4.large - will be used as a quorum node
 
 For specific information and step-by-step guides on how to install RS
 and set up a cluster, go to the Quick Setup section or the Install and

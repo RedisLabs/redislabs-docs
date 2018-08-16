@@ -49,10 +49,10 @@ Names are case-sensitive\
 Time complexity of path evaluation\
 The complexity of searching (navigating to) an element in the path is
 made of:\
-Child level -- every level along the path adds an additional search\
-Key search -- O(N)\*\*, where N is the number of keys in the parent
+Child level - every level along the path adds an additional search\
+Key search - O(N)\*\*, where N is the number of keys in the parent
 object\
-Array search -- O(1)\
+Array search - O(1)\
 This means that the overall time complexity of searching a path is
 O(N\*M), where N is the depth and M is the number of parent object keys.
 

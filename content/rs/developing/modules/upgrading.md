@@ -10,7 +10,7 @@ fixes.]{style="font-weight: 400;"}
 
 ### [Acquiring the Packaged Modules]{style="font-weight: 400;"}
 
-1.  [Redis Enterprise pre-packaged modules -- To download the upgrades
+1.  [Redis Enterprise pre-packaged modules - To download the upgrades
     to the modules, go to the ]{style="font-weight: 400;"}[[Redis
     Enterprise downloads
     page]{style="font-weight: 400;"}](https://redislabs.com/products/redis-pack/downloads/)[.
@@ -20,7 +20,7 @@ fixes.]{style="font-weight: 400;"}
     2.  [[RediSearch
         Enterprise]{style="font-weight: 400;"}](https://redislabs.com/redis-enterprise-documentation/developing/modules/redisearch/)
     3.  [[ReBloom]{style="font-weight: 400;"}](https://redislabs.com/redis-enterprise-documentation/developing/modules/bloom-filters/)
-2.  [Custom packaged modules -- For instructions on packing up any
+2.  [Custom packaged modules - For instructions on packing up any
     module from
     ]{style="font-weight: 400;"}[[redismodules.com]{style="font-weight: 400;"}](http://redismodules.com)[
     to use in upgrades, see ]{style="font-weight: 400;"}[[Developing

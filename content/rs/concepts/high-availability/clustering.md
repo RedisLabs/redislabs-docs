@@ -109,7 +109,7 @@ hashing policy is provided through a set of Perl Compatible Regular
 Expressions (PCRE) rules that describe the dataset's key name patterns.
 
 To configure a custom hashing policy, enter the regular expression
-(RegEx) rules that identify the substring in the key's name -- hash tag
+(RegEx) rules that identify the substring in the key's name - hash tag
 -- on which hashing will be done. The hashing tag is denoted in the
 RegEx by the use of the \`tag\` named subpattern. Different keys that
 have the same hash tag will be stored and managed in the same slot.

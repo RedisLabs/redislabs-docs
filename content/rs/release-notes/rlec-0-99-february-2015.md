@@ -1,5 +1,5 @@
 ---
-Title: Release Notes 0.99.5-24 -- February 15, 2015
+Title: Release Notes 0.99.5-24 - February 15, 2015
 description: $description
 weight: $weight
 alwaysopen: false

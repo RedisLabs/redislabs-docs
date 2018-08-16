@@ -54,9 +54,9 @@ node external\_addr \[ add \| remove \]
 
 Where:
 
--   addr -- is the internal address (can be used only when the node is
+-   addr - is the internal address (can be used only when the node is
     offline)
--   external\_addr -- is the external address(es)
+-   external\_addr - is the external address(es)
 
 **Note:** While [Joining a new node to a
 cluster](/redis-enterprise-documentation/joining-a-new-node-to-a-cluster)

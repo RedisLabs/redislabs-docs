@@ -55,7 +55,7 @@ You create a database and:
     shards
 -   Enable database replication in order to ensure high-availability
 
-The cluster will create 6 shards in total -- 3 master shards and 3 slave
+The cluster will create 6 shards in total - 3 master shards and 3 slave
 shards. Each of these shards can have a different size depending on the
 amount of data stored in it, as long as the total size across all master
 shards does not exceed 3 GB. In this case, the maximum dataset size you

@@ -1,5 +1,5 @@
 ---
-Title: rlcheck -- Node Verification Utility
+Title: rlcheck - Node Verification Utility
 description: $description
 weight: $weight
 alwaysopen: false

@@ -76,11 +76,11 @@ rejected.]{style="font-weight: 400;"}
 [When creating CRDBs, you can specify SSL in two
 ways:]{style="font-weight: 400;"}
 
-1.  [Require SSL for All Communications -- This configures the CRDB to
+1.  [Require SSL for All Communications - This configures the CRDB to
     support SSL for both data access operations performed on the
     database as well as inter-cluster CRDB
     communications.]{style="font-weight: 400;"}
-2.  [Require SSL for CRDB Communications Only -- This configures the
+2.  [Require SSL for CRDB Communications Only - This configures the
     CRDB to support SSL for only inter-cluster CRDB
     communications.]{style="font-weight: 400;"}
 

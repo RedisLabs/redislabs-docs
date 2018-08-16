@@ -4,7 +4,7 @@ description: $description
 weight: $weight
 alwaysopen: false
 ---
-4.3.0-230 -- August 2, 2016
+4.3.0-230 - August 2, 2016
 ---------------------------
 
 ### Overview
@@ -51,7 +51,7 @@ upgrade to this version.
     Utility](/redis-enterprise-documentation/troubleshooting/rlcheck-installation-verification-utility).
 -   Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
-    For additional details, refer to [Initial setup -- creating a new
+    For additional details, refer to [Initial setup - creating a new
     cluster.](/redis-enterprise-documentation/initial-setup-creating-a-new-cluster)
 -   Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
@@ -84,36 +84,36 @@ upgrade to this version.
 
 ### Fixed issues
 
--   RLEC-7110 -- node does not recover properly after restart in case
+-   RLEC-7110 - node does not recover properly after restart in case
     ephemeral storage is not available yet
--   RLEC-7502 -- log rotate job not working properly on RHEL operating
+-   RLEC-7502 - log rotate job not working properly on RHEL operating
     system
--   RLEC-7599 -- issues running on a server with no IPv6 kernel support
--   RLEC-7561, RLEC-7597 -- issues connecting to database endpoint as
+-   RLEC-7599 - issues running on a server with no IPv6 kernel support
+-   RLEC-7561, RLEC-7597 - issues connecting to database endpoint as
     result of cluster name containing capital letters
--   RLEC-7245 -- on machines with multiple IPs sometimes the wrong IP
+-   RLEC-7245 - on machines with multiple IPs sometimes the wrong IP
     address is chosen for internal traffic
--   RLEC-6815 -- wrong log entry is added when enabling cluster alert
+-   RLEC-6815 - wrong log entry is added when enabling cluster alert
     regarding database version compatibility
--   RLEC-7652 -- database is down in certain failover scenarios only
+-   RLEC-7652 - database is down in certain failover scenarios only
     when the database is completely empty
--   RLEC-7737 -- issue where in a specific scenario after node restarts,
+-   RLEC-7737 - issue where in a specific scenario after node restarts,
     a database with replication both master and slave shards are
     reported as down
--   RLEC-7712 -- in some cases, the Replica of process may fail when
+-   RLEC-7712 - in some cases, the Replica of process may fail when
     Redis password is set
--   RLEC-7726 -- node object "avg\_latency" statistic is not returned in
+-   RLEC-7726 - node object "avg\_latency" statistic is not returned in
     the REST API
--   RLEC-7358 -- install script issue when running on LVM disks
--   RLEC-8086 -- port 9443 missing from redislabs-clients.xml
--   RLEC-7281 -- rotation of internal log files not working properly
--   RLEC-8279 -- updates to a user definition might cause password reset
+-   RLEC-7358 - install script issue when running on LVM disks
+-   RLEC-8086 - port 9443 missing from redislabs-clients.xml
+-   RLEC-7281 - rotation of internal log files not working properly
+-   RLEC-8279 - updates to a user definition might cause password reset
     to be required
--   RLEC-8512 -- when upgrading an existing cluster that has uppercase
+-   RLEC-8512 - when upgrading an existing cluster that has uppercase
     letters in the cluster name (FQDN) the cluster might not function
     properly after the upgrade and attempts to connect to a database
     might fail
--   RLEC-8371 -- email alerts do not work when using Amazon SES service
+-   RLEC-8371 - email alerts do not work when using Amazon SES service
 -   In certain scenarios the node upgrade process may fail if the node
     is in the offline state
 
@@ -130,11 +130,11 @@ upgrade to this version.
     (using rladmin tune cluster command), and then trigger the Redis
     process to be restarted by migrating the database shards (using
     rladmin migrate db command).
--   **Issue**: RLEC-8486 -- On Ubuntu, when uninstalling RLEC using the
+-   **Issue**: RLEC-8486 - On Ubuntu, when uninstalling RLEC using the
     apt-get purge command, some of the Redis processes on the machine
     might continue running.**Workaround**: If you encounter this issue
     you must manually kill the Redis processes.
--   **Issue**: RLEC-8283 -- The cluster recovery process does not work
+-   **Issue**: RLEC-8283 - The cluster recovery process does not work
     properly when the cluster that needs to be recovered does not have a
     node with ID 1.**Workaround**: If you encounter this issue please
     contact support at: <support@redislabs.com>

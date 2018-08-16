@@ -48,7 +48,7 @@ Software](/redis-enterprise-documentation/administering/designing-production/per
 When running on a cloud environment, the flash memory for Redis on Flash
 should be on the ephemeral SSDs of the cloud instance and persistent
 database storage should be network attached, e.g AWS EBS. For AWS, we
-specifically recommend "[Storage Optimized I3 -- High I/O
+specifically recommend "[Storage Optimized I3 - High I/O
 Instances](https://aws.amazon.com/ec2/instance-types/#storage-optimized)"
 because of the performance of NVMe for flash memory.
 

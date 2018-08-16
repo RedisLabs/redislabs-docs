@@ -24,9 +24,9 @@ members on this account.
 
 Team members can have different roles to the account:
 
--   Owner -- Can view, create, and edit any aspects of the account
--   Member -- Can view, create, and edit databases.
--   Viewer -- Can view databases
+-   Owner - Can view, create, and edit any aspects of the account
+-   Member - Can view, create, and edit databases.
+-   Viewer - Can view databases
 
 ### Add/Edit a Team Member
 

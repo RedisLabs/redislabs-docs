@@ -128,8 +128,8 @@ details below.
 
 In addition, **the user can manually stop the synchronization process**.
 
-When the process is in the stopped state -- whether stopped by the user
-or by the system -- the user can restart the process. **Restarting the
+When the process is in the stopped state - whether stopped by the user
+or by the system - the user can restart the process. **Restarting the
 process causes the synchronization process to flush the DB and restart
 the process from the beginning**.
 
@@ -137,13 +137,13 @@ the process from the beginning**.
 
 The replication process can have the following statuses:
 
--   **Syncing** -- indicates that the synchronization process has
+-   **Syncing** - indicates that the synchronization process has
     started from scratch. Progress is indicated in percentages (%).
--   **Synced** -- indicates that the initial synchronization process was
+-   **Synced** - indicates that the initial synchronization process was
     completed and the destination is synchronizing changes on an ongoing
     basis. The **Lag** delay in synchronization with the source is
     indicated as a time duration.
--   **Sync stopped** -- indicates that the synchronization process is
+-   **Sync stopped** - indicates that the synchronization process is
     currently not running and the user needs to restart it in order for
     it to continue running. This status occurs if the user stops the
     process, or if certain errors arose that prevent synchronization
@@ -212,7 +212,7 @@ following steps:
     certificate for the source Database:
     ![Replica-of Encryption -
     certificate](/images/rs/Screen-Shot-2018-03-29-at-10.32.01-PM.png?width=1650&height=350)
-    Replica-of Encryption -- certificate
+    Replica-of Encryption - certificate
     
 3.  Save the certificate and **Update** the database changes.
 
@@ -230,7 +230,7 @@ following steps:
     Database:
     ![Replica-of Destination -
     Certificate](/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png?width=1596&height=626)
-    Replica-of Destination -- Certificate
+    Replica-of Destination - Certificate
     
 3.  Press the **Continue** button, save the certificate and **Update**
     the database changes.

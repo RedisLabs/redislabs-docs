@@ -55,7 +55,7 @@ number of requests.
 |                       |                       | last values are also  |
 |                       |                       | shown                 |
 +-----------------------+-----------------------+-----------------------+
-| Used memory           | The total memory used | Note -- used memory   |
+| Used memory           | The total memory used | Note - used memory   |
 |                       | by the database,      | doesn't include:      |
 |                       | including RAM, Flash  |                       |
 |                       | (if enabled) and      | 1.  The fragmentation |
@@ -82,13 +82,13 @@ number of requests.
 |                       |                       |         process is    |
 |                       |                       |         started       |
 +-----------------------+-----------------------+-----------------------+
-| Memory limit          | The memory size limit | Note -- used memory   |
+| Memory limit          | The memory size limit | Note - used memory   |
 |                       | of the database,      | doesn't include:      |
 |                       | enforced on           |                       |
 |                       | \`used\_memory\`.     | 1.  Fragmentation     |
 |                       |                       |     ratio             |
 |                       |                       | 2.  Replication       |
-|                       |                       |     buffer -- it is   |
+|                       |                       |     buffer - it is   |
 |                       |                       |     \`auto\_slavebuf\ |
 |                       |                       | _ratio\`              |
 |                       |                       |     % of              |
@@ -160,7 +160,7 @@ number of requests.
 |                       | TTL that was deleted  | Redis implements 2    |
 |                       | from the database.    | expiry mechanisms:    |
 |                       |                       |                       |
-|                       |                       | 1.  Lazy expiry -- on |
+|                       |                       | 1.  Lazy expiry - on |
 |                       |                       |     every access to   |
 |                       |                       |     an object Redis   |
 |                       |                       |     first checks      |
@@ -171,7 +171,7 @@ number of requests.
 |                       |                       |     looking at its    |
 |                       |                       |     TTL, and if 'yes' |
 |                       |                       |     Redis deletes it  |
-|                       |                       | 2.  Active expiry --  |
+|                       |                       | 2.  Active expiry -  |
 |                       |                       |     Redis constantly  |
 |                       |                       |     selects random    |
 |                       |                       |     keys and deletes  |
@@ -237,9 +237,9 @@ Calculated as: \`requests\_served\_from\_ram\` / \`total\_requests\`;
 
 Where:
 
-1.  requests\_served\_from\_ram -- refers to all requests processed
+1.  requests\_served\_from\_ram - refers to all requests processed
     values directly from RAM (i.e. without touching the Flash)
-2.  total\_requests -- refers to all requests processed by the database
+2.  total\_requests - refers to all requests processed by the database
 
 Values in RAM
 
@@ -305,7 +305,7 @@ Redis on Flash average value size, when the value is in Flash
 
 This is calculated as: used\_flash / values\_in\_flash
 
-\*\*Note\*\* -- values in Flash are serialized and will always be
+\*\*Note\*\* - values in Flash are serialized and will always be
 smaller than in RAM.
 
 In Redis on Flash how come:

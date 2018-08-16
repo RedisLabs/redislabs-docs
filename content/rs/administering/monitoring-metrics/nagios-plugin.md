@@ -61,7 +61,7 @@ you would like to monitor. More details below.
 The RS Nagios package includes two components:
 
 -   The plugin itself ­- with suffix "rlec\_nagios\_plugin"
--   Configuration files -- with suffix "rlec\_nagios\_conf"
+-   Configuration files - with suffix "rlec\_nagios\_conf"
 
 Below is the list of files included in these packages and instructions
 regarding what updates need to be made to these flies.

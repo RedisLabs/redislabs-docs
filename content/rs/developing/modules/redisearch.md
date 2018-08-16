@@ -81,7 +81,7 @@ documents.
 Searching consists of loading, traversing, intersecting (if needed) and
 sorting these indexes in order to produce the most relevant results. It
 gets much more complicated, of course, as those indexes contain relevant
-scores, term positions in the document and more -- but that's beyond the
+scores, term positions in the document and more - but that's beyond the
 scope of this document.
 
 Until now, Inverted Indexes on top of a Redis database were always

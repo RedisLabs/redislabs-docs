@@ -43,8 +43,8 @@ throughput and latency.
 
 1.  The proxy is responsible for terminating the SSL/TLS connection
 2.  Server certificate and key are located on
-    /etc/opt/redislabs:proxy\_cert.pem -- server certificate
-    thatproxy\_key.pem -- server certificate key\*any update on these
+    /etc/opt/redislabs:proxy\_cert.pem - server certificate
+    thatproxy\_key.pem - server certificate key\*any update on these
     require a proxy restart
 3.  Enabling of SSL/TLS is done via "ssl authentication" field in the
     UI. You are required to add a client-side certificate as a SSL/TLS

@@ -247,7 +247,7 @@ t6
 [ZSCORE Z x =\> 2.0]{style="font-weight: 400;"}
 
 *[[Explanation]{style="text-decoration: underline;"}: ]{style="font-weight: 400;"}*[
-At t4 -- t5, concurrent ZREM and ZINCRBY operations ran on Instance 1
+At t4 - t5, concurrent ZREM and ZINCRBY operations ran on Instance 1
 and Instance 2 respectively. Before the instances were in sync, the ZREM
 operation could only delete what had been seen by Instance 1, so
 Instance 2 was not affected. Therefore, the ZSCORE operation shows the

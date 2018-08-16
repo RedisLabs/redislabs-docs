@@ -39,13 +39,13 @@ There are three modules Redis Labs has developed and certified with
 Redis Enterprise Software (RS). The modules are:
 
 -   [RediSearch](/redis-enterprise-documentation/developing/redisearch/)
-    -- This module turns RS into a supercharged distributed in-memory
+    - This module turns RS into a supercharged distributed in-memory
     full-text indexing and search beast.
--   [ReJSON](/redis-enterprise-documentation/developing/rejson/) -- Now
+-   [ReJSON](/redis-enterprise-documentation/developing/rejson/) - Now
     you have the convenience JSON as a built-in data type and easily
     able to address nested data via a path.
 -   [ReBloom](/redis-enterprise-documentation/developing/modules/bloom-filters/)
-    -- Enables RS to have a scalable bloom filter as a data type. Bloom
+    - Enables RS to have a scalable bloom filter as a data type. Bloom
     filters are probabilistic data structures that do a very good job at
     quickly determining if something is contained within a set.
 

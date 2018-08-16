@@ -24,7 +24,7 @@ Note: After installing the RS package on the instance (for additional
 details, refer to [Accessing and installing the setup
 package](/redis-enterprise-documentation/administering/installing-upgrading/downloading-installing/))
 and **before** running through the setup process (for additional
-details, refer to [Initial setup -- creating a new
+details, refer to [Initial setup - creating a new
 cluster](/redis-enterprise-documentation/initial-setup-creating-a-new-cluster)),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
@@ -67,7 +67,7 @@ When configuring the Security Group:
     DNS.
 -   If you would like to create a cluster that has multiple nodes all
     running as instances on AWS, you need to define a security group
-    that has an All TCP rule for all ports, 0 -- 65535, and add it to
+    that has an All TCP rule for all ports, 0 - 65535, and add it to
     all instances that are part of the cluster. This will ensure that
     all nodes are able to communicate with each other. If you would not
     like to open all TCP ports and instead define specific ports and
@@ -75,5 +75,5 @@ When configuring the Security Group:
     comprehensive list of ports being used.
 
 After successfully launching the instances, setup the cluster as
-described in [Initial setup -- creating a new
+described in [Initial setup - creating a new
 cluster](/redis-enterprise-documentation/initial-setup-creating-a-new-cluster).

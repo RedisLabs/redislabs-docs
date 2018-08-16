@@ -150,7 +150,7 @@ t5
 [LRANGE L 0 -1 =\> y]{style="font-weight: 400;"}
 
 [*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
-At t4 -- t6, DEL deletes only observed elements. This is why L still
+At t4 - t6, DEL deletes only observed elements. This is why L still
 contains y.]{style="font-weight: 400;"}
 
  

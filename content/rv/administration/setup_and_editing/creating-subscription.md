@@ -8,16 +8,16 @@ What is a Subscription?
 -----------------------
 
 A Redis Enterprise VPC (RV) subscription consists of a selected cloud
-provider (and respective region, e.g. "AWS -- US-West-2"), architectural
+provider (and respective region, e.g. "AWS - US-West-2"), architectural
 model, memory limit and feature set. You can have multiple subscriptions
 in different providers and regions, all easily managed from a single
 console.
 
 Pre-requisites
 
--   AWS Account -- RV is deployed into your AWS environment under a
+-   AWS Account - RV is deployed into your AWS environment under a
     special account you create specifically for it.
--   Cloud Account -- RV relies on a user in AWS' Identity and Account
+-   Cloud Account - RV relies on a user in AWS' Identity and Account
     Management (IAM) with specific privileges in order to create,
     maintain, and manage your RV cluster and databases. See "[Creating
     an AWS user for Redis Enterprise
@@ -29,15 +29,15 @@ Create a New Subscription
 
 Creating a subscription is a four-step process:
 
-1.  Setup -- Select the general settings and input the required
+1.  Setup - Select the general settings and input the required
     credentials for the cloud user account.
-2.  Sizing -- Describe the specification of the databases you want to
+2.  Sizing - Describe the specification of the databases you want to
     provision. After this step, RV will calculate the optimal
     configuration and required infrastructure.
-3.  Review & Create -- You will be presented with the required
+3.  Review & Create - You will be presented with the required
     infrastructure and the subscription price. Enter your payment method
     and you are pretty much done.
-4.  Provisioning -- Automatically set up the relevant infrastructure and
+4.  Provisioning - Automatically set up the relevant infrastructure and
     provision the databases.
 
 ### Setup
@@ -51,7 +51,7 @@ For a new subscription, you will need to provide the following:
     created in. This should be in the same region as the applications
     that will be connecting as you will be using AWS' [VPC
     Peering](https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html).
-4.  Multi-AZ -- Select whether or not the cluster should span
+4.  Multi-AZ - Select whether or not the cluster should span
     Availability Zones for better high availability. To work optimally,
     make sure the selected region contains at least three availability
     zones.
@@ -62,16 +62,16 @@ For a new subscription, you will need to provide the following:
     Account](/redis-cloud-private-documentation/administration/setup-and-editing/creating-cloud-account/)
     for RV to use.
 7.  Select your subscription networking options:
-    -   [**New VPC** -- this will create a new VPC and provision your
+    -   [**New VPC** - this will create a new VPC and provision your
         subscription in it. Please provide the required Deployment CIDR
-        -- This is an IPv4 subnet, in]{style="font-weight: 400;"}[[CIDR
+        - This is an IPv4 subnet, in]{style="font-weight: 400;"}[[CIDR
         notation]{style="font-weight: 400;"}](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)[,
         that you would like RV to use. The subnet should be /24 in size.
         Later on, you will have to create a VPC peering link to your
         application, therefore, please make sure that the CIDR you
         provide does not conflict with your application VPC
         CIDR.]{style="font-weight: 400;"}
-    -   [**Existing VPC** -- this will provision your subscription in an
+    -   [**Existing VPC** - this will provision your subscription in an
         already existing VPC. With this option, you can provision your
         subscription in the VPC as your application and in that way save
         on the cost and latency that comes with VPC peering.
@@ -97,24 +97,24 @@ specifications.
 
 For each row, select the following:
 
-1.  Name -- Give the database a name
-2.  Protocol -- Select the relevant database type, either Redis or
+1.  Name - Give the database a name
+2.  Protocol - Select the relevant database type, either Redis or
     Memcached
 3.  The estimated **Memory Limit** of your database. The minimum value
     is 1GB.
 4.  If you selected to have a Redis Enterprise Flash subscription,
     provide your data average item size
-5.  Replication -- Enables instant failover by keeping a standby,
+5.  Replication - Enables instant failover by keeping a standby,
     in-memory slave replica (note: by checking this option, your dataset
     will consume twice the amount of memory)
-6.  Data persistence -- Select the relevant data persistence policy for
+6.  Data persistence - Select the relevant data persistence policy for
     your database.
-7.  Throughput -- You can define your estimated **total throughput** you
+7.  Throughput - You can define your estimated **total throughput** you
     expect from your database by either specifying the required ops/sec
     or number of shards needed.
-8.  Data persistence -- Select the relevant data persistence policy for
+8.  Data persistence - Select the relevant data persistence policy for
     your database.
-9.  Modules -- You can select which Redis Module you want to load to
+9.  Modules - You can select which Redis Module you want to load to
     your database. In case you select 'RediSearch' please provide the
     estimated number of documents you are going to index.
 10. Enter the number of databases with these settings that you would
