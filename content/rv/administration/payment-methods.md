@@ -9,5 +9,4 @@ methods, as well as add new ones to your account. Click the name of an
 existing method to view and edit it or click the "+" icon to add a new
 payment method.
 
-![](/images/rv/payment_methods.png){.alignnone
-.size-full .wp-image-26967 width="1000" height="365"}
+![](/images/rv/payment_methods.png?width=1000&height=365)

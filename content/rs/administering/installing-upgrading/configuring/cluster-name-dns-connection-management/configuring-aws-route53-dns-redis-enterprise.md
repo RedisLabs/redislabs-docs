@@ -73,16 +73,14 @@ The first step is to connect your browser to AWS and to login into the
 administration interface. Then, you have to go in the *Services* menu at
 the top of the page and clic on the *Route53* menu item:
 
-![](/images/rs/01-ServicesRoute53-en.png){.alignnone
-.wp-image-25003 width="600" height="837"}
+![](/images/rs/01-ServicesRoute53-en.png?width=600&height=837)
 
 Then, I assume that you already have registered a domain, and that you
 defined *Route53* as the primary/master name server for the whole domain
 or for one of its sub-domains. So, you should have at least one zone in
 *Route53*. Clic on the *Hosted zones* link to open it:
 
-![](/images/rs/02-Route53HostedZones-en.png){.alignnone
-.wp-image-25002 width="600" height="237"}
+![](/images/rs/02-Route53HostedZones-en.png?width=600&height=237)
 
  
 
@@ -90,8 +88,7 @@ or for one of its sub-domains. So, you should have at least one zone in
 need to clic on the zone in which you want to define your cluster,
 *demo-rlec.redislabs.com* in my case:
 
-![](/images/rs/03-HostedZoneSelection-en.png){.alignnone
-.wp-image-25001 width="600" height="206"}
+![](/images/rs/03-HostedZoneSelection-en.png?width=600&height=206)
 
 Nameserver records creation
 ---------------------------
@@ -101,8 +98,7 @@ your cluster's name servers, ie one of your cluster's nodes. To create
 the first name server IP address resolution record, you need to clic on
 the *Create Record Set* blue button at the top of the list:
 
-![](/images/rs/04-CreateRecordSet-en.png){.alignnone
-.wp-image-25000 width="600" height="189"}
+![](/images/rs/04-CreateRecordSet-en.png?width=600&height=189)
 
 This record will **only** be used to resolve the IP address of the
 cluster name server to query, it is **not** used by the application to
@@ -130,15 +126,13 @@ IP, he already had the name server list).
 Finally submit the first name server's *A* record to *Route53*, using
 the *Create* button at the bottom of the right panel:
 
-![](/images/rs/05-NS1Configuration-en.png){.alignnone
-.wp-image-24999 width="400" height="802"}
+![](/images/rs/05-NS1Configuration-en.png?width=400&height=802)
 
 You want (and need) to have all your cluster nodes acting asname
 servers, soyou have to repeat these steps for all your nodes and you
 should get a list of *A* records in *Route53* interface:
 
-![](/images/rs/06-NSList-en.png){.alignnone
-.wp-image-24998 width="600" height="133"}
+![](/images/rs/06-NSList-en.png?width=600&height=133)
 
 Now, the client-side resolver and the forwarding DNS can reach the
 cluster nameservers by their IP address, if they know what are the names
@@ -169,8 +163,7 @@ these records with a final dot, it is not a typo, because some other DNS
 require it and it does not seem to be an issue with \*Route53\*. At the
 end, we can clic on the \*Create\* button:
 
-![](/images/rs/07-NSRecord-en.png){.alignnone
-.wp-image-24997 width="400" height="817"}
+![](/images/rs/07-NSRecord-en.png?width=400&height=817)
 
 Congratulations, you completed the *Route53* DNS configuration for your
 Redis Enterprise Software. Let's check what you have.
@@ -182,8 +175,7 @@ You should end with several name server *A* record (one for each cluster
 node) to be able to reach any of them by its name. You should also have
 one record that lists the nameservers names for the zone (cluster):
 
-![](/images/rs/08-FinalConfig-en.png){.alignnone
-.wp-image-24996 width="600" height="155"}
+![](/images/rs/08-FinalConfig-en.png?width=600&height=155)
 
 If your cluster nodes are healthy, up and running, with DNS network
 ports unfiltered, you can test the configuration. Who are the

@@ -41,8 +41,7 @@ if they were not designed to use it beforehand.
 **Note:** Redis Enterprise Cloud clustering is only available in the
 "Pay-As-You-Go" subscription.
 
-![](/images/rc/subscription-selection-2.png){.alignnone
-.size-full .wp-image-25695 width="600" height="221"}
+![](/images/rc/subscription-selection-2.png?width=600&height=221)
 
 Multi-Key Operations
 --------------------

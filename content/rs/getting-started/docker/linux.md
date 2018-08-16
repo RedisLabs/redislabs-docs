@@ -39,15 +39,13 @@ button on the page to get started.
 Note: Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
 
-![](/images/rs/setup_linux.png){.alignnone .size-medium
-.wp-image-26436}
+![](/images/rs/setup_linux.png)
 
 On the "node configuration" page, select your default settings and
 provide a cluster FQDN: "cluster.local". Then simply click the "Next"
 button.
 
-![](/images/rs/setup2_linux.png){.alignnone
-.size-medium .wp-image-26437}
+![](/images/rs/setup2_linux.png)
 
 If you don't have a license key, click the "Next" button to try the
 trial version of the product.
@@ -55,22 +53,19 @@ trial version of the product.
 On the next screen, set up a Cluster Administrator account using
 an email for login and a password.
 
-![](/images/rs/Screenshot-from-2017-04-06-16-54-41.png){.alignnone
-.size-medium .wp-image-26435}
+![](/images/rs/Screenshot-from-2017-04-06-16-54-41.png)
 
 ### Step 3: Create a Database
 
 Choose the "new redis db" option.
 
-![](/images/rs/pick-db-linux.png){.alignnone
-.size-medium .wp-image-26434}
+![](/images/rs/pick-db-linux.png)
 
 On the "new redis db" page, click the "show advanced option" link and
 enter "database1" for a database name and "12000" for the endpoint port
 number. Then click "Activate" to create your database.
 
-![](/images/rs/db-create-screen-linux.png){.alignnone
-.size-full .wp-image-26433 width="600" height="635"}
+![](/images/rs/db-create-screen-linux.png?width=600&height=635)
 
 You now have a Redis database!
 

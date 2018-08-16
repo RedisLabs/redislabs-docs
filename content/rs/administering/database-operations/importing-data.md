@@ -53,5 +53,4 @@ Ensure first that you have all these details from your platform.
 Below is an example of the screen to import from AWS S3.
 
 ![Import data from AWS S3 into Redis
-Enterprise](/images/rs/import_amazon_s3.png){.alignnone
-.size-full .wp-image-36869 width="700" height="648"}
+Enterprise](/images/rs/import_amazon_s3.png?width=700&height=648)

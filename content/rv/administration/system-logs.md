@@ -10,5 +10,4 @@ column headers, search through the system logs, as well as export all
 logs as a CSV file for use in other systems and programs.
 
 ![System Logs in the
-UI](/images/rv/system_log.png){.alignnone .size-full
-.wp-image-26971 width="998" height="576"}
+UI](/images/rv/system_log.png?width=998&height=576)

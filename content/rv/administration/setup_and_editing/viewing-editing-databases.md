@@ -7,8 +7,7 @@ alwaysopen: false
 To view your database, select **Databases** from the menu. You will see
 a list of your databases grouped by Subscription.
 
-![](/images/rv/databases_main.png){.alignnone
-.size-full .wp-image-26959 width="600" height="366"}
+![](/images/rv/databases_main.png?width=600&height=366)
 
 In this view, you see pertinent information about each database and some
 of its features. Since a Subscription can have multiple databases, you
@@ -26,8 +25,7 @@ title of the page:
 
 To Edit a database, click on the pencil icon.
 
-![](/images/rv/view_database2.png){.alignnone
-.size-full .wp-image-26958 width="600" height="338"}
+![](/images/rv/view_database2.png?width=600&height=338)
 
 Edit a Database
 ---------------

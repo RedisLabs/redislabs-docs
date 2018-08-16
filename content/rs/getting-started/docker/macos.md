@@ -46,15 +46,13 @@ see the Redis Enterprise Software web console. Simply click the
 Note: Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
 
-![](/images/rs/RP-SetupScreen.jpeg){.alignnone
-.size-full .wp-image-26426 width="600" height="378"}
+![](/images/rs/RP-SetupScreen.jpeg?width=600&height=378)
 
 On the **node configuration** page, select your default settings and
 provide a cluster FQDN: "cluster.local". Then simply click the **Next**
 button.
 
-![](/images/rs/RP-SetupScreen2.jpeg){.alignnone
-.size-full .wp-image-26427 width="600" height="378"}
+![](/images/rs/RP-SetupScreen2.jpeg?width=600&height=378)
 
 If you don't have a license key, click the **Next** button to try the
 trial version of the product.
@@ -62,22 +60,19 @@ trial version of the product.
 On the next screen, set up a Cluster Administrator account using
 an email for the login and a password.
 
-![](/images/rs/RP-SetupScreen4-1.jpeg){.alignnone
-.size-full .wp-image-26428 width="600" height="298"}
+![](/images/rs/RP-SetupScreen4-1.jpeg?width=600&height=298)
 
 ### Step 3: Create a Database
 
 Choose the **new redis db** option.
 
-![](/images/rs/RP-DBScreen1.jpeg){.alignnone .size-full
-.wp-image-26424 width="600" height="378"}
+![](/images/rs/RP-DBScreen1.jpeg?width=600&height=378)
 
 On the **new redis** db page, click the **show advanced options** link
 and enter "database1" for the database name and **12000** for the
 endpoint port number. Then click **Activate** to create your database.
 
-![](/images/rs/RP-DBScreen2-1.jpeg){.alignnone
-.size-full .wp-image-26425 width="600" height="374"}
+![](/images/rs/RP-DBScreen2-1.jpeg?width=600&height=374)
 
 You now have a Redis database!
 

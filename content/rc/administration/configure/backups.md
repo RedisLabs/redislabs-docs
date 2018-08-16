@@ -27,8 +27,7 @@ steps:
     a.  To create a new bucket:
         1.  Click the **+ Create Bucket** button
         2.  Enter a **name** and **region** for the bucket\
-            ![](/images/rc/new-bucket.png){.alignnone
-            .size-full .wp-image-31104 width="600" height="678"}
+            ![](/images/rc/new-bucket.png?width=600&height=678)
         3.  Click the **Next** button.
         4.  Set any bucket properties to your company's standards
         5.  On the Set permissions page, click the **+ Add account**
@@ -37,8 +36,7 @@ steps:
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614***
         7.  Check read/write boxes for **Objects** and **Object
             permissions**, then click **Save\
-            ![](/images/rc/add_s3_user.png){.alignnone
-            .size-full .wp-image-31108 width="600" height="698"}\
+            ![](/images/rc/add_s3_user.png?width=600&height=698)\
             **
         8.  Click the **Create bucket** button
     b.  To use an existing bucket, click on the bucket and go to the
@@ -47,8 +45,7 @@ steps:
             accounts** section enter the below information
         2.  In the Account field enter
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614\
-            ![](/images/rc/add_user_existing.png){.alignnone
-            .size-full .wp-image-31106 width="700" height="175"}***
+            ![](/images/rc/add_user_existing.png?width=700&height=175)***
         3.  Check read/write boxes for various** permissions**, then
             click the **Save** button
 
@@ -68,8 +65,7 @@ identify the version go to the configuration page of the database you
 wish you backup.
 
 ![Identify the redis
-version](/images/rc/backups-version1.png){.alignnone
-.size-full .wp-image-27594 width="800" height="448"}
+version](/images/rc/backups-version1.png?width=800&height=448)
 
 ### For Redis versions prior to 3.2.x
 
@@ -114,15 +110,13 @@ bucket's name is backups-bucket, you should use the following path:
 3.  Click on the three dot button (1) on your relevant bucket name and
     choose "**Edit bucket permissions**" (2).\
     ![GCS bucket
-    permissions](/images/rc/bucket-perm1.png){.alignnone
-    .size-full .wp-image-27591 width="800" height="493"}
+    permissions](/images/rc/bucket-perm1.png?width=800&height=493)
 4.  Under "**Add members**" input
     **service\@redislabs-prod-clusters.iam.gserviceaccount.com**
 5.  For the role, select "**Storage Legacy -\> Storage Legacy Bucket
     Writer**".\
     ![Google Cloud Storage
-    Permissions](/images/rc/gcs-permissions.jpg){.alignnone
-    .size-full .wp-image-27595 width="800" height="606"}
+    Permissions](/images/rc/gcs-permissions.jpg?width=800&height=606)
 6.  Click on the "**Add**" button.
 
 Once your bucket's permissions are set, you can use it with your

@@ -22,14 +22,12 @@ your Pivotal Cloud Foundry environment to get started.
 -   Navigate to your Ops Manager URL and click on **Import a Product**
     button and select the downloaded .pivotal file for Redis Enterprise
     Software\
-    ![](/images/rs/pcf_view_ops_manger.png){.alignnone
-    .size-full .wp-image-27349 width="800" height="205"}
+    ![](/images/rs/pcf_view_ops_manger.png?width=800&height=205)
 
 ### Step 2 -- Configure Redis Enterprise Software
 
 1.  Click the newly imported tile.\
-    ![](/images/rs/pcf_pre-install_tile.png){.alignnone
-    .wp-image-27350 width="189" height="189"}
+    ![](/images/rs/pcf_pre-install_tile.png?width=189&height=189)
 2.  Navigate to the **Assign AZs and Network** section on the right
     navigation bar. Select the network for the cluster to use. In my
     environment that is **pcf-ert-network**.
@@ -50,15 +48,13 @@ your Pivotal Cloud Foundry environment to get started.
         use for cluster nodes or let the tile choose them for you from
         the previously selected PCF network.\
         ![Redis Enterprise for PCF tile
-        configuration](/images/rs/rs_tile_config.png?_t=1520874329){.alignnone
-        .wp-image-36758 .size-full width="800" height="604"}
+        configuration](/images/rs/rs_tile_config.png?_t=1520874329?width=800&height=604)
 4.  **Service Plans** You could add a new plan you want to offer it in
     Apps Manager, but for the moment, click the **Save** button.
 5.  **Syslog** Check **Disabled** for now as we do not want to utilize
     this functionality for this quick start.\
     ![Redis Enterprise for PCF syslog
-    configuration](/images/rs/syslog_disable.png){.alignnone
-    .size-full .wp-image-36760 width="800" height="557"}
+    configuration](/images/rs/syslog_disable.png?width=800&height=557)
 6.  **Stemcell** Upload the proper stemcell requested on the page.
 
 **Note**: It is important to ensure the capacity used for RP cluster
@@ -70,8 +66,7 @@ specifications](/redis-enterprise-documentation/installing-and-upgrading/hardwar
 
 1.  Once the tile configuration is done, you can save the changes and
     click the **Apply changes** to deploy the cluster.\
-    ![](/images/rs/post-install-dashboard.png){.alignnone
-    .size-full .wp-image-27353 width="800" height="227"}
+    ![](/images/rs/post-install-dashboard.png?width=800&height=227)
 2.  You can switch into the tile and to the **Status** tab to view the
     state of the cluster nodes under the jobs named
     **redis-pack-node** and **redis-pack-service-broker**.
@@ -82,13 +77,11 @@ specifications](/redis-enterprise-documentation/installing-and-upgrading/hardwar
 a service in PCF Apps Manager.]{style="font-weight: 400;"}
 
 1.  Click on **Add A Service\
-    ![](/images/rs/apps_manager_add_service_button.png){.alignnone
-    .size-full .wp-image-36784 width="1000" height="278"}\
+    ![](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)\
     **
 2.  [Select ]{style="font-weight: 400;"}**Redis Enterprise**[ from the
     choices of Services\
-    ![](/images/rs/apps_manager_add_service-1.png?_t=1520885153){.alignnone
-    .wp-image-36788 .size-full width="800" height="635"}\
+    ![](/images/rs/apps_manager_add_service-1.png?_t=1520885153?width=800&height=635)\
     ]{style="font-weight: 400;"}
 3.  Select a plan from the list for the proper sized cluster for Redis
     Enterprise and then click the **Select Plan** button.

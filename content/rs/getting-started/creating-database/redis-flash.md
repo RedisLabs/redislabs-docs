@@ -60,34 +60,28 @@ see the Redis Enterprise Software web console. Simply click the
 Note: Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
 
-![](/images/rs/setup_linux.png){.alignnone .size-full
-.wp-image-26436 width="600" height="287"}
+![](/images/rs/setup_linux.png?width=600&height=287)
 
 On the "**node configuration**" page, select the "Enable flash storage
 support" checkbox and provide a cluster FQDN: "**mycluster.local**".
 Then simply click the "**Next**" button.
 
 ![Enable Redis
-Flash](/images/rs/enable_redis_flash.png){.alignnone
-.size-full .wp-image-29247 width="800" height="663"}
+Flash](/images/rs/enable_redis_flash.png?width=800&height=663)
 
 If you don't have a license key yet, click the "**Next"** button to try
 the trial version of the product.\
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-![](/images/rs/RP-SetupScreen4.jpeg){.alignnone
-.size-full .wp-image-26409 width="600" height="377"}
+![](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
 
 Step 3: Create a Database
 -------------------------
 
 Select the "new redis db flash" option.
 
-![](https://redislabs.bluecoastweb.com/images/rs/redis-on-flash.png){.alignnone
-.wp-image-31433 .size-full width="600" height="613"
-sizes="(max-width: 600px) 100vw, 600px"
-srcset="https://redislabs.com/images/rs/redis-on-flash.png 600w, https://redislabs.com/images/rs/redis-on-flash-147x150.png 147w, https://redislabs.com/images/rs/redis-on-flash-294x300.png 294w"}
+![](/images/rs/redis-on-flash.png?width=391&height=400)
 
 On the "**new redis on flash db**" page, click the "**show advanced
 option**" link and enter "**myredisflashdb**" for a database name and
@@ -95,8 +89,7 @@ option**" link and enter "**myredisflashdb**" for a database name and
 create your database.
 
 ![new redis flash
-db](/images/rs/newredisflashdb.png){.alignnone
-.size-full .wp-image-29406 width="700" height="714"}
+db](/images/rs/newredisflashdb.png?width=700&height=714)
 
 You now have a Redis Enterprise Flash database!
 

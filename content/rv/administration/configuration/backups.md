@@ -27,8 +27,7 @@ steps:
     a.  To create a new bucket:
         1.  Click the **+ Create Bucket** button
         2.  Enter a **name** and **region** for the bucket\
-            ![](/images/rv/new-bucket.png){.alignnone
-            .size-full .wp-image-31104 width="600" height="678"}
+            ![](/images/rv/new-bucket.png?width=600&height=678)
         3.  Click the **Next** button.
         4.  Set any bucket properties to your company's standards
         5.  On the Set permissions page, click the **+ Add account**
@@ -37,8 +36,7 @@ steps:
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614***
         7.  Check read/write boxes for **Objects** and **Object
             permissions**, then click **Save\
-            ![](/images/rv/add_s3_user.png){.alignnone
-            .size-full .wp-image-31108 width="600" height="698"}\
+            ![](/images/rv/add_s3_user.png?width=600&height=698)\
             **
         8.  Click the **Create bucket** button
     b.  To use an existing bucket, click on the bucket and go to the
@@ -47,8 +45,7 @@ steps:
             accounts** section enter the below information
         2.  In the Account field enter
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614\
-            ![](/images/rv/add_user_existing.png){.alignnone
-            .size-full .wp-image-31106 width="700" height="175"}***
+            ![](/images/rv/add_user_existing.png?width=700&height=175)***
         3.  Check read/write boxes for various** permissions**, then
             click the **Save** button
 

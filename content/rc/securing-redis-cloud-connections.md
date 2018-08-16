@@ -18,14 +18,12 @@ enabling SSL.
 To find your account number, go to the "Settings" page in the Web UI and
 look for "Account Number":
 
-![](/images/rc/account_number.png){.alignnone
-.size-full .wp-image-26993 width="600" height="265"}
+![](/images/rc/account_number.png?width=600&height=265)
 
 For your subscription number, please go to the "Subscriptions" page of
 the Web UI and look in the title.
 
-![](/images/rc/subscriptions2.png){.alignnone
-.wp-image-30306 .size-full width="600" height="248"}
+![](/images/rc/subscriptions2.png?width=600&height=248)
 
 Setting Up Your Database
 ------------------------

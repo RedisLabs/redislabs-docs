@@ -205,15 +205,13 @@ following steps:
     -   **SSL for All Communications **enforce SSL for both- application
         communication as well as ReplicaOf communication:
         ![Replic-of
-        Encryption](/images/rs/Screen-Shot-2018-03-29-at-10.17.59-PM.png){.wp-image-37193
-        .size-full width="1728" height="316"}
+        Encryption](/images/rs/Screen-Shot-2018-03-29-at-10.17.59-PM.png?width=1728&height=316)
         Replic-of Encryption
         2.  From the *destination cluster*, copy the "Syncer Certificate"
     (located under **settings**-\> **general**) and paste it as SSL
     certificate for the source Database:
     ![Replica-of Encryption -
-    certificate](/images/rs/Screen-Shot-2018-03-29-at-10.32.01-PM.png){.size-full
-    .wp-image-37198 width="1650" height="350"}
+    certificate](/images/rs/Screen-Shot-2018-03-29-at-10.32.01-PM.png?width=1650&height=350)
     Replica-of Encryption -- certificate
     
 3.  Save the certificate and **Update** the database changes.
@@ -223,8 +221,7 @@ following steps:
 1.  Edit the 'Replica of' section of the destination Database to point
     the source Database and press the 'Enable SSL Authentication' icon:
     ![Replica-of
-    Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png){.size-full
-    .wp-image-37200 width="1608" height="178"}
+    Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png?width=1608&height=178)
     Replica-of Destination
     
 2.  From the *[source cluster]{.underline}*, copy the "Proxy
@@ -232,8 +229,7 @@ following steps:
     it as the **Source Cluster Certificate** for the destination
     Database:
     ![Replica-of Destination -
-    Certificate](/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png){.size-full
-    .wp-image-37201 width="1596" height="626"}
+    Certificate](/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png?width=1596&height=626)
     Replica-of Destination -- Certificate
     
 3.  Press the **Continue** button, save the certificate and **Update**

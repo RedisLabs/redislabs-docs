@@ -95,9 +95,7 @@ Adding a User
 4.  Indicate whether the user will receive email alerts.
 5.  Click **Save** icon.
 
-![](/images/rs/useradd-300x101.png){.alignnone
-.wp-image-21486 sizes="(max-width: 300px) 100vw, 300px"
-srcset="https://redislabs.com/images/rs/useradd-300x101.png 300w, https://redislabs.com/images/rs/useradd-768x260.png 768w, https://redislabs.com/images/rs/useradd.png 887w"}
+![](/images/rs/useradd-300x101.png)
 
 Updating a User
 ---------------

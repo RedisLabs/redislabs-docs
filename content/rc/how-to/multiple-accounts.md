@@ -14,5 +14,4 @@ will show you all the accounts you are a member of and allow you to
 quickly switch between each. The rights you have for each account are
 dictated by the role you are assigned by each account's owner.
 
-![](/images/rc/account_multiple_teams.png){.alignnone
-.wp-image-26979 width="399" height="622"}
+![](/images/rc/account_multiple_teams.png?width=399&height=622)

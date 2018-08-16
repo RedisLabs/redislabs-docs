@@ -9,8 +9,7 @@ the **Status** column of the **Nodes** page, and in the **Cluster \>
 Configuration** page.
 
 ![Example of a node
-failure](/images/rs/node-failure.png){.alignnone
-.size-full .wp-image-25649 width="600" height="152"}
+failure](/images/rs/node-failure.png?width=600&height=152)
 
 **To replace a faulty node**:
 

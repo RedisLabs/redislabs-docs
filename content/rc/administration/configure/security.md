@@ -14,8 +14,7 @@ either IP or [CIDR
 notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
 
 ![Source
-IP/Subnet](/images/rc/source_ip_subnet-1.png){.alignnone
-.size-full .wp-image-25136 width="600" height="102"}
+IP/Subnet](/images/rc/source_ip_subnet-1.png?width=600&height=102)
 
 In case you require more source IP rules than your current REC
 plan entitles you to, you can see the different plans and the maximum
@@ -43,8 +42,7 @@ One feature often overlooked is the little eye icon on the right side of
 form field that can be used to view the password.
 
 ![redis
-password](/images/rc/redis_password.png){.alignnone
-.size-full .wp-image-25161 width="600" height="42"}
+password](/images/rc/redis_password.png?width=600&height=42)
 
 AWS Security groups
 -------------------
