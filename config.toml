@@ -26,7 +26,7 @@ relativeURLs = true
 # languageName = "Français"
 
 [params]
-editURL = "https://github.com/redislabsdev/redislabs-docs/edit/branch/content/"
+editURL = "https://github.com/RedisLabs/redislabs-docs/edit/branch/content/"
 showVisitedLinks = true # default is false
 themeStyle = "flex" # "original" or "flex" # default "flex"
 themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
