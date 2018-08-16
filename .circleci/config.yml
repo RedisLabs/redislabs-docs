@@ -77,7 +77,7 @@ jobs:
                     else
                         export LOCATION=staging/${CIRCLE_BRANCH} ;
                     fi
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only
 
     # Deploy for -build to push to /{version} without -build
     deploy-prod:
@@ -96,7 +96,7 @@ jobs:
                 name: Deploy to S3
                 command:  |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read
+                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only
 
 workflows:
   version: 2
