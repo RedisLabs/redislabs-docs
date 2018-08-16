@@ -16,6 +16,7 @@ For this quick start, you will need the following:
 2.  Click on the **+** sign, if necessary, then **create database**
 3.  On the create database screen, check the box for Redis Modules and
     select the ReBloom module you want to use for this database.\
+
     ![](/images/rs/rebloom_database.png?width=797&height=556)
 4.  Click **Show advanced options** and put **12544** for the port.
 5.  Click the **Activate** button

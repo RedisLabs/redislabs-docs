@@ -142,6 +142,7 @@ from the current database to the new one.
 If you need to create a database that has a PARTITIONS value that is not
 AUTO, this is not typical, you select the **Redis Modules** checkbox,
 then the settings icon, the alter the number of partitions.\
+
 ![](/images/rs/redisearch_partitions.png?width=700&height=119)
 
 ### Other Configurations

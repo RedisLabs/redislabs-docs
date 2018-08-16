@@ -39,8 +39,8 @@ To create a new database in the UI:
     **Geo-Distributed**. For more information on Geo-distributed, refer
     to [Conflict-free geo-Replicated Databases
     (CRDB)](/redis-enterprise-documentation/administering/intercluster-replication/crdbs/).
-
-3.  ![](/images/rs/new_databases.png?width=584&height=599)
+    
+    ![](/images/rs/new_databases.png?width=584&height=599)
 4.  Enter a **name** for the database.\
     The database name must comply with the following rules:
 
