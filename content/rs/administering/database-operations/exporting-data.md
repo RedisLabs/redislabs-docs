@@ -38,5 +38,5 @@ that you have all these details from your platform.
 For example, here is the data necessary to export to AWS S3.
 
 ![Export from Redis Enterprise to Amazon
-S3](https://redislabs.com/images/rs/export_amazon_s3.png){.alignnone
+S3](/images/rs/export_amazon_s3.png){.alignnone
 .size-full .wp-image-36865 width="700" height="578"}

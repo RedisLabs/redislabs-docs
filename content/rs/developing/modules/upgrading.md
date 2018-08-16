@@ -37,7 +37,7 @@ it:]{style="font-weight: 400;"}
 2.  [Click on ]{style="font-weight: 400;"}**redise** **modules**
 3.  [Click on ]{style="font-weight: 400;"}**Add Module**
 
-![](https://redislabs.com/images/rs/upgrade_module-1.png){.alignnone
+![](/images/rs/upgrade_module-1.png){.alignnone
 .size-full .wp-image-37248 width="1600" height="956"}
 
 1.  [Select the packaged module from your file system and upload
@@ -48,7 +48,7 @@ it:]{style="font-weight: 400;"}
     available.]{style="font-weight: 400;"}[\
     ]{style="font-weight: 400;"}
 
-![](https://redislabs.com/images/rs/update_available-1.png){.alignnone
+![](/images/rs/update_available-1.png){.alignnone
 .size-full .wp-image-37249 width="1346" height="1600"}
 
 1.  [At this time, you cannot upgrade this database from the web UI. It
@@ -62,7 +62,7 @@ it:]{style="font-weight: 400;"}
     upgrading]{style="font-weight: 400;"}[\
     ]{style="font-weight: 400;"}
 
-![](https://redislabs.com/images/rs/rladmin_status-1.png){.alignnone
+![](/images/rs/rladmin_status-1.png){.alignnone
 .size-full .wp-image-37250 width="1000" height="214"}
 
 1.  [Run the rladmin command]{style="font-weight: 400;"}[\
@@ -85,7 +85,7 @@ file. The necessary data should be at the end of the JSON document. For
 example, here is the information for the RediSearch Enterprise module
 that i used for the example command above:]{style="font-weight: 400;"}
 
-![](https://redislabs.com/images/rs/module_info-1.png){.alignnone
+![](/images/rs/module_info-1.png){.alignnone
 .size-full .wp-image-37251 width="1000" height="382"}
 
 ### [Examples]{style="font-weight: 400;"}

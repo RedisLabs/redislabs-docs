@@ -33,7 +33,7 @@ activated.]{style="font-weight: 400;"}
 [During the creation of a CRDB, the Causal Consistency parameter should
 be set as illustrated in the figure below:]{style="font-weight: 400;"}
 
-![](https://redislabs.com/images/rs/create_db_causal.png){.alignnone
+![](/images/rs/create_db_causal.png){.alignnone
 .size-full .wp-image-38582 width="1050" height="930"}
 
 [Once enabled, additional operations to

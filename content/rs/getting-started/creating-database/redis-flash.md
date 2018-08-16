@@ -95,7 +95,7 @@ option**" link and enter "**myredisflashdb**" for a database name and
 create your database.
 
 ![new redis flash
-db](https://redislabs.com/images/rs/newredisflashdb.png){.alignnone
+db](/images/rs/newredisflashdb.png){.alignnone
 .size-full .wp-image-29406 width="700" height="714"}
 
 You now have a Redis Enterprise Flash database!

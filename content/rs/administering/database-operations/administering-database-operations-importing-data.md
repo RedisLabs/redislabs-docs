@@ -19,7 +19,7 @@ import data into a CRDB, there will be a special prompt such as the
 below.
 
 ![Import into a
-CRDB](https://redislabs.com/images/rs/Screen-Shot-2018-03-29-at-10.00.12-PM.png){.size-full
+CRDB](/images/rs/Screen-Shot-2018-03-29-at-10.00.12-PM.png){.size-full
 .wp-image-37176 width="1720" height="702"}
 
 Import into a CRDB

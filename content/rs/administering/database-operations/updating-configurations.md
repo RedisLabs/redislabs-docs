@@ -46,7 +46,7 @@ changes at any one time to the Participating Cluster list. The changes
 you make to the list are committed when the database configuration is
 saved.]{style="font-weight: 400;"}
 
-![](https://redislabs.com/images/rs/pasted-image-0-1.png){.alignnone
+![](/images/rs/pasted-image-0-1.png){.alignnone
 .size-full .wp-image-37257 width="1534" height="233"}
 
 [When adding new Participating Clusters, a CRDB requires that all
@@ -90,7 +90,7 @@ select the ]{style="font-weight: 400;"}**Require SSL for all
 communications**[ from the ]{style="font-weight: 400;"}**SSL
 Authentication**[ drop down.]{style="font-weight: 400;"}
 
-![](https://redislabs.com/images/rs/pasted-image-SSL.png){.alignnone
+![](/images/rs/pasted-image-SSL.png){.alignnone
 .size-full .wp-image-37258 width="1080" height="1221"}
 
  
