@@ -6,7 +6,7 @@ alwaysopen: false
 ---
 By default, RES manages a node's memory so data is entirely in RAM for
 performance reasons. The exception to this is RES's [Redis on
-Flash](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-enterprise-flash/)
+Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-enterprise-flash/)
 feature where Flash memory (SSDs) can be used to store data too. If
 there's not enough RAM available, RES does not allow inserting of more
 data into databases. This limitation is intentional and ultimately

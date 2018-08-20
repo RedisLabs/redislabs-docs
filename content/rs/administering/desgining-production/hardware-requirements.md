@@ -138,7 +138,7 @@ scenarios](/redis-enterprise-documentation/cluster-administration/best-practices
 section to determine the right Persistent Storage size.
 
 If [Redis on
-Flash](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-enterprise-flash/) is
+Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-enterprise-flash/) is
 enabled, calculate the recommended size as 5x of (RAM+Flash).
 
 Network

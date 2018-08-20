@@ -98,5 +98,5 @@ required to create, manage and monitor Redis clusters, nodes, and
 databases in RS.
 
 You can read more about RS's architecture in the [Concepts and
-Architecture](/redis-enterprise-documentation/concepts-architecture/overview/)
+Architecture](/redis-enterprise-documentation/concepts/overview/)
 section.

@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 ---
 Once you have a
-[subscription](/redis-cloud-documentation/administration/setup-editing/create-subscription/),
+[subscription](/redis-cloud-documentation/administration/setup-and-editing/create-subscription/),
 creating a Redis database in Redis Enterprise Cloud is simple with the
 steps below.
 
@@ -43,7 +43,7 @@ first.
     can add SSL Client Authentication to your database here. For
     specific information on this process, see [Securing Redis Enterprise
     Cloud Connections with
-    SSL/TLS](/redis-cloud-documentation/administration/configuration/securing-redis-cloud-connections/).
+    SSL/TLS](/redis-cloud-documentation/administration/configure/securing-redis-cloud-connections/).
 11. For more advanced options, click on **More Options**.
 12. Choose a [Data Eviction
     Policy](/redis-cloud-documentation/concepts/data-eviction-policies/)
@@ -51,7 +51,7 @@ first.
 13. If you would like periodic backups of your database, enter the path
     to storage here. For specific information visit [Configuring
     Database Backups for Redis Enterprise
-    Cloud](/redis-cloud-documentation/administration/configuration/backups/).
+    Cloud](/redis-cloud-documentation/administration/configure/backups/).
 14. You can add **Alert Settings** to your database so that you and your
     team can be alerted when thresholds are passed.
 15. Click **Activate**.

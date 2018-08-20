@@ -59,10 +59,10 @@ they are using. If you desire to remove the latency discussed before,
 you must
 
 1.  [Create a new
-    subscription](/redis-cloud-documentation/administration/setup-editing/create-subscription/) in
+    subscription](/redis-cloud-documentation/administration/setup-and-editing/create-subscription/) in
     the correct AZ
 2.  [Create a new
-    database](/redis-cloud-documentation/administration/setup-editing/creating-databases/)
+    database](/redis-cloud-documentation/administration/setup-and-editing/creating-databases/)
 3.  [Migrate your
     data](/redis-cloud-documentation/how-to/importing-dataset-redis-cloud/)
     over to the new database.

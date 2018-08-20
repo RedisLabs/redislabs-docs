@@ -25,7 +25,7 @@ update your firewall with the port for that new database endpoint.
   3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380   Internal cluster usage                                                                                                                              TCP
   53                                                       Used for accessing DNS/mDNS functionality in the cluster                                                                                            TCP, UDP
   5353                                                     Used for accessing DNS/mDNS functionality in the cluster                                                                                            UDP
-  8001                                                     Used by your application to access the RS [Discovery Service](/redis-enterprise-documentation/concepts-architecture/concepts/discovery-service/)    TCP
+  8001                                                     Used by your application to access the RS [Discovery Service](/redis-enterprise-documentation/concepts/concepts/discovery-service/)    TCP
   8443                                                     Used for secure (https) access to the management web UI                                                                                             TCP
   8444, 9080                                               Used for nginx \<-\>cnm\_http/cm communications on the same host only. Ports are bound to loopback adapter.                                         TCP
   8080, 9443                                               Used to expose the REST API for cluster management                                                                                                  TCP
