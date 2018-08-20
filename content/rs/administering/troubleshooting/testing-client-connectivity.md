@@ -13,14 +13,14 @@ To test client connectivity:
 1.  Create a Redis database and get the database's endpoint, which
     contains the cluster name (FQDN). For additional details, refer to
     [Creating a new
-    database](/redis-enterprise-documentation/database-configuration/creating-a-new-database).
+    database](/rs/database-configuration/creating-a-new-database).
 2.  Try to connect to the database endpoint from your client of choice,
     and execute commands against the database.
 3.  If the database does not respond, try to connect to the database
     endpoint by using the IP address rather than the FQDN; if you
     succeed, it means that the DNS is not properly configured. For
     additional details, refer to
-    [DNS](/redis-enterprise-documentation/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/).
+    [DNS](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/).
 
 If any issues are encountered during the connectivity test, contact our
 support at <support@redislabs.com>.

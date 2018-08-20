@@ -25,7 +25,7 @@ VPC](https://app.redislabs.com/#/login?).
 RV requires a dedicated AWS account to perform operations on your
 behalf. Inside of that account, create an AWS user in IAM specifically
 for RV use, per "[Creating an AWS user for Redis Enterprise
-VPC](com/redis-cloud-private-documentation/how-to/creating-aws-user-redis-cloud-private/)."
+VPC](com/rv/how-to/creating-aws-user-redis-cloud-private/)."
 
 ## Step 3 - Create a new RV subscription
 
@@ -39,7 +39,7 @@ For a new subscription, you will need to provide the following:
 1.  A subscription name
 2.  The cloud region you want your databases to be created in AWS
 3.  Whether you want to use [Redis on
-    Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-flash/)
+    Flash](/rs/concepts/memory-architecture/redis-flash/)
     or pure RAM Redis database
 4.  The Cloud Account to be used. Use the AWS user created above in Step
     #2 for setting up your RV Cloud Account
@@ -175,12 +175,12 @@ and you are done.
 ## More Information
 
 1.  [Data Persistence with Redis Enterprise
-    VPC](/redis-cloud-private-documentation/concepts/data-persistence/)
+    VPC](/rv/concepts/data-persistence/)
 2.  [Securing Your Redis Enterprise VPC
-    Database](/redis-cloud-private-documentation/administration/configuration/securing-your-database/)
+    Database](/rv/administration/configure/securing-your-database/)
 3.  [Creating
-    Databases](/redis-cloud-private-documentation/administration/setup-and-editing/creating-databases/)
+    Databases](/rv/administration/setup-and-editing/creating-databases/)
 4.  [Redis Enterprise Cloud Database
-    Backups](/redis-cloud-private-documentation/administration/configuration/backups/)
+    Backups](/rv/administration/configure/backups/)
 5.  [Monitoring Redis Enterprise VPC
-    Performance](/redis-cloud-private-documentation/administration/configuration/monitoring-performance/).
+    Performance](/rv/administration/configure/monitoring-performance/).

@@ -15,11 +15,11 @@ guarantees data is served with minimal to no interruption.
 When rack-zone awareness is used, there is additional and more advanced
 logic used for determining which nodes get designated as the master or
 slave, as explained in [Rack/zone
-awareness](/redis-enterprise-documentation/rack-zone-awareness).
+awareness](/rs/rack-zone-awareness).
 
 **Note**: Enabling replication has implications for the total database
 size, as explained in [Database memory
-limit](/redis-enterprise-documentation/database-configuration/database-memory-limit).
+limit](/rs/database-configuration/database-memory-limit).
 
 ## Redis on Flash Replication Considerations
 

@@ -10,21 +10,21 @@ Enterprise Software (RS).
 Topics:
 
 -   [Installing the setup
-    package](/redis-enterprise-documentation/installing-and-upgrading/accessing-and-installing-the-setup-package)
--   [Configuring](/redis-enterprise-documentation/administering/installing-upgrading/configuring/)
+    package](/rs/installing-and-upgrading/accessing-and-installing-the-setup-package)
+-   [Configuring](/rs/administering/installing-upgrading/configuring/)
     -   [Linux
-        Swap](/redis-enterprise-documentation/administering/installing-upgrading/configuring/linux-swap/)
+        Swap](/rs/administering/installing-upgrading/configuring/linux-swap/)
     -   [CentOS/RHEL Firewall
-        settings](/redis-enterprise-documentation/administering/installing-upgrading/configuring/centos-rhel-7-firewall/)
+        settings](/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall/)
     -   [DNS
-        Setup](/redis-enterprise-documentation/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
+        Setup](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
     -   [Client prerequisites for
-        mDNS](/redis-enterprise-documentation/administering/installing-upgrading/configuring/mdns/)
--   [Uninstalling](/redis-enterprise-documentation/installing-and-upgrading/uninstalling)
--   [Upgrading](/redis-enterprise-documentation/installing-and-upgrading/upgrading)
+        mDNS](/rs/administering/installing-upgrading/configuring/mdns/)
+-   [Uninstalling](/rs/installing-and-upgrading/uninstalling)
+-   [Upgrading](/rs/installing-and-upgrading/upgrading)
 -   [Offline
-    Installation](/redis-enterprise-documentation/administering/installing-upgrading/offline-installation/)
+    Installation](/rs/administering/installing-upgrading/offline-installation/)
 -   [Configuring AWS
-    instances](/redis-enterprise-documentation/administering/installing-upgrading/configuring-aws-instances/)
+    instances](/rs/administering/installing-upgrading/configuring-aws-instances/)
 -   [File
-    Locations](/redis-enterprise-documentation/administering/installing-upgrading/file-locations/)
+    Locations](/rs/administering/installing-upgrading/file-locations/)

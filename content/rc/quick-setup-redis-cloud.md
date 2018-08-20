@@ -46,7 +46,7 @@ For a new subscription, you will need to select the following:
 
 You can consider a quick overview of each tier's features upon
 selection. For more specific information, see [Creating a
-Subscription](/redis-cloud-documentation/administration/setup-and-editing/create-subscription/).
+Subscription](/rc/administration/setup-and-editing/create-subscription/).
 
 Once you have made your selections, click **Continue** to finalize your
 subscription.
@@ -128,12 +128,12 @@ and you are done.
 ## More Information
 
 1.  [Data Persistence with Redis Enterprise
-    Cloud](/redis-cloud-documentation/concepts/data-persistence-redis-cloud/).
+    Cloud](/rc/concepts/data-persistence-redis-cloud/).
 2.  [Securing Your Redis Enterprise Cloud
-    Database](/redis-cloud-documentation/administration/configure/security/).
+    Database](/rc/administration/configure/security/).
 3.  [Creating a
-    database](/redis-cloud-documentation/administration/setup-and-editing/creating-databases-redis-cloud/).
+    database](/rc/administration/setup-and-editing/creating-databases-redis-cloud/).
 4.  [Redis Enterprise Cloud Database
-    Backups](/redis-cloud-documentation/administration/configure/backups/).
+    Backups](/rc/administration/configure/backups/).
 5.  [Monitoring Redis Enterprise Cloud
-    Performance](/redis-cloud-documentation/administration/configure/monitoring-alerting-metrics/).
+    Performance](/rc/administration/configure/monitoring-alerting-metrics/).

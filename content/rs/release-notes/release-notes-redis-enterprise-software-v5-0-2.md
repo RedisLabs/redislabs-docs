@@ -19,7 +19,7 @@ version older than 4.4.2, you must first upgrade to at least 5.0.
 Note: Starting from RS 5.0.2, ports 3338 and 3339 should also be opened
 on each node for the purpose of internal cluster communication. For more
 information, check the ['network port
-configurations'](/redis-enterprise-documentation/administering/designing-production/networking/port-configurations/)
+configurations'](/rs/administering/designing-production/networking/port-configurations/)
 page
 
 ## New Features

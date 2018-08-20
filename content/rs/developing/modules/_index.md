@@ -14,19 +14,19 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
 
 -   RediSearch Enterprise
     -   [Quick
-        Start](/redis-enterprise-documentation/getting-started/creating-database/redisearch/)
+        Start](/rs/getting-started/creating-database/redisearch/)
     -   [Developing with RediSearch
-        Enterprise](/redis-enterprise-documentation/developing/modules/redisearch/)
+        Enterprise](/rs/developing/modules/redisearch/)
 -   ReJSON
     -   [Quick
-        Start](/redis-enterprise-documentation/getting-started/creating-database/rejson-quick-start/)
+        Start](/rs/getting-started/creating-database/rejson-quick-start/)
     -   [Developing
-        with ReJSON](/redis-enterprise-documentation/developing/modules/rejson/)
+        with ReJSON](/rs/developing/modules/rejson/)
 -   ReBloom
     -   [Quick
-        Start](/redis-enterprise-documentation/getting-started/creating-database/rebloom/)
+        Start](/rs/getting-started/creating-database/rebloom/)
     -   [Developing with
-        ReBloom](/redis-enterprise-documentation/developing/modules/bloom-filters/)
+        ReBloom](/rs/developing/modules/bloom-filters/)
 
 [In 5.0.2 and later, enterprise modules (RediSearch Enterprise, ReJSON,
 ReBloom) come pre-installed.]{style="font-weight: 400;"}
@@ -35,7 +35,7 @@ To download these modules, please go to the [Redis Enterprise downloads
 page](/products/redis-pack/downloads/).
 
 To upgrade these modules, please go to [Upgrading a
-Module](/redis-enterprise-documentation/developing/modules/upgrading/).
+Module](/rs/developing/modules/upgrading/).
 
 Critical: Redis Labs does not and can not support third party modules or
 databases created with them.
@@ -97,4 +97,4 @@ ramp ](https://github.com/RedisLabs/RAMP)github[page](https://github.com/RedisL
 for more information each command line switch in ramp.
 
 To deploy the packaged module, see [Installing a
-Module](/redis-enterprise-documentation/developing/modules/installing/).
+Module](/rs/developing/modules/installing/).

@@ -65,7 +65,7 @@ Additional recommendations:
     you should look at migrating busy resources to less busy nodes.
 2.  If all the cluster nodes are utilizing over 80% of the CPU,
     scale-out the cluster by [adding a
-    node](/redis-enterprise-documentation/cluster-administration/joining-a-new-node-to-a-cluster/).
+    node](/rs/cluster-administration/joining-a-new-node-to-a-cluster/).
 
 4 cores
 
@@ -85,7 +85,7 @@ Additional recommendations:
     you should look at migrating busy resources to less busy nodes.
 2.  If all the cluster nodes are utilizing over 70% of the RAM, you
     should look to scale out the cluster by [adding a
-    node](/redis-enterprise-documentation/cluster-administration/joining-a-new-node-to-a-cluster/).
+    node](/rs/cluster-administration/joining-a-new-node-to-a-cluster/).
 3.  Do not run other memory-consuming systems on the same machine that
     is used as an RS node.
 
@@ -100,17 +100,17 @@ storage systems to be connected to each node in the cluster (as
 described below). It is also highly recommended that you use SSD-based
 storage to avoid performance issues when persisting data to disk.
 
-If [Redis on Flash](/redis-enterprise-documentation/redis-e-flash/) is
+If [Redis on Flash](/rs/redis-e-flash/) is
 used, the size of the Flash storage must be at least ten times (10x) the
 size of the RAM storage. For additional details, refer to [Redis on
-Flash](/redis-enterprise-documentation/redis-e-flash/) page.
+Flash](/rs/redis-e-flash/) page.
 
 Ephemeral Storage
 
 Used for storing replication files (RDB format) and cluster log files.
 
 For additional details, refer to [Persistent and Ephemeral
-Storage](/redis-enterprise-documentation/cluster-administration/best-practices/persistent-and-ephemeral-storage/).
+Storage](/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage/).
 
 2x node's RAM size
 
@@ -123,7 +123,7 @@ storage media, which (unlike ephemeral storage) is not deleted in cases
 of node failure.
 
 For additional details, refer to [Persistent and Ephemeral
-Storage](/redis-enterprise-documentation/cluster-administration/best-practices/persistent-and-ephemeral-storage/).
+Storage](/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage/).
 
 Examples of persistent storage devices:
 
@@ -134,11 +134,11 @@ Examples of persistent storage devices:
 
 \>=6x node's RAM size. For extreme 'write' scenarios, refer to the [Disk
 size requirements for extreme write
-scenarios](/redis-enterprise-documentation/cluster-administration/best-practices/disk-size-requirements-for-extreme-write-scenarios)
+scenarios](/rs/cluster-administration/best-practices/disk-size-requirements-for-extreme-write-scenarios)
 section to determine the right Persistent Storage size.
 
 If [Redis on
-Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-enterprise-flash/) is
+Flash](/rs/concepts/memory-architecture/redis-enterprise-flash/) is
 enabled, calculate the recommended size as 5x of (RAM+Flash).
 
 Network

@@ -22,5 +22,5 @@ Note: Only users defined as Owners on the team can delete a database.
     of its data, and configurations is now deleted.
 
 Note: It is considered best practice that you [create a
-backup](/redis-cloud-documentation/configuration/backups/) of your
+backup](/rc/configuration/backups/) of your
 database before deleting it.

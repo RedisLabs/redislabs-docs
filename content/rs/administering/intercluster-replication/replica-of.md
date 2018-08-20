@@ -14,7 +14,7 @@ keep a database (destination) that is an exact replica of a database.
 ReplicaOf is uni-directional replication between databases, either
 within a cluster or between clusters. It should not be confused with
 [Geo-Replication via
-CRDBs](/redis-enterprise-documentation/administering/intercluster-replication/crdbs/),
+CRDBs](/rs/administering/intercluster-replication/crdbs/),
 which is bi-directional replication between N+1 databases on separate,
 possibly geo-located, clusters.
 
@@ -40,7 +40,7 @@ destination database.
 
 **Note:** The *Replica of* feature should not be confused with the
 in-memory [Database
-replication](/redis-enterprise-documentation/database-configuration/database-replication)
+replication](/rs/database-configuration/database-replication)
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 
@@ -83,7 +83,7 @@ can be Redis databases that are not part of an RS.
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
-    compression](/redis-enterprise-documentation/database-configuration/replica-of#Replica-of-data-compression)
+    compression](/rs/database-configuration/replica-of#Replica-of-data-compression)
     section.
 -   When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:\
@@ -104,7 +104,7 @@ restarted from scratch for all the source databases.
 (FQDN), ensure that the client mDNS perquisites are met in order for the
 *Replica of* feature to work. For additional details, refer to the
 [Client prerequisites for
-mDNS](/redis-enterprise-documentation/administering/installing-upgrading/configuring/mdns/).
+mDNS](/rs/administering/installing-upgrading/configuring/mdns/).
 
 ## Replication process
 
@@ -156,7 +156,7 @@ of the statuses of all the sources.
 
 **Note:** If you encounter issues with the *Replica of* process, refer
 to the troubleshooting section [Replica of repeatedly
-fails](/redis-enterprise-documentation/administering/troubleshooting/replicaof-repeatedly-fails/).
+fails](/rs/administering/troubleshooting/replicaof-repeatedly-fails/).
 
 ### Synchronization errors
 

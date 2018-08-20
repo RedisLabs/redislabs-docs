@@ -104,7 +104,7 @@ reach a larger capacity.
 The first thing you need is to download, install the package into the RS
 cluster, and then create a database that uses the module. For this, see
 [Installing a
-Module](/redis-enterprise-documentation/developing/modules/installing/).
+Module](/rs/developing/modules/installing/).
 
 ### Trying It Out
 

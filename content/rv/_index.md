@@ -10,8 +10,8 @@ Database-as-a-Service (DBaaS) offering hosted on your Cloud account. <!--more-->
 RV
 is based on the proven Redis Enterprise technology, serving thousands of
 customers of our [Redis Enterprise
-Cloud](/redis-cloud-documentation/overview) and [Redis Enterprise
-Software](/redis-enterprise-documentation/overview/) products. With RV,
+Cloud](/rc/overview) and [Redis Enterprise
+Software](/rs/overview/) products. With RV,
 you can deploy quickly on Amazon Web Services (AWS) and create Redis
 databases that are fully compatible with the open-source Redis databases
 contained solely in your Amazon Virtual Private Cloud (VPC).

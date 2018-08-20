@@ -8,7 +8,7 @@ alwaysopen: false
 
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions](/redis-enterprise-documentation/installing-and-upgrading/upgrading)
+instructions](/rs/installing-and-upgrading/upgrading)
 before running through the upgrade process.
 
 If you are upgrading from version 0.99.5-11:
@@ -21,7 +21,7 @@ If you are upgrading from version 0.99.5-11:
     databases are from an old version. It is recommended that you
     upgrade the databases as soon as possible, as described in the
     [upgrade
-    instructions](/redis-enterprise-documentation/installing-and-upgrading/upgrading).
+    instructions](/rs/installing-and-upgrading/upgrading).
 
 ## New features
 

@@ -29,7 +29,7 @@ on. The result is that for all but the initial call to get the cluster
 topology or reacquire the location of the master shard, the client will
 connect to the RS endpoint proxy where the master shard is located.
 [Learn more about the Cluster API
-implementation](/redis-enterprise-documentation/concepts/data-access/cluster-api/).
+implementation](/rs/concepts/data-access/cluster-api/).
 
 ### Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB)
 
@@ -45,7 +45,7 @@ provide smart and automatic conflict resolution based on the data type's
 intent.
 
 For more information, go here. For information, go to [Developing with
-CRDBs](/redis-enterprise-documentation/developing/crdbs/).
+CRDBs](/rs/developing/crdbs/).
 
 ### Redis Modules
 
@@ -60,13 +60,13 @@ Enterprise is known for.
 There are three modules Redis Labs has developed and certified with
 Redis Enterprise Pack (RS). The modules are:
 
--   [RediSearch](/redis-enterprise-documentation/developing/modules/redisearch/)
+-   [RediSearch](/rs/developing/modules/redisearch/)
     - This module turns RS into a supercharged distributed in-memory
     full-text indexing and search beast.
--   [ReJSON](/redis-enterprise-documentation/developing/modules/rejson/)
+-   [ReJSON](/rs/developing/modules/rejson/)
     - Now you have the convenience JSON as a built-in data type and
     easily able to address nested data via a path.
--   [ReBloom](/redis-enterprise-documentation/developing/modules/bloom-filters/)
+-   [ReBloom](/rs/developing/modules/bloom-filters/)
     - Enables RS to have a scalable bloom filter as a data type. Bloom
     filters are probabilistic data structures that do a very good job at
     quickly determining if something is contained within a set.
@@ -86,7 +86,7 @@ easily and quickly deploy several containers to start running a scalable
 and highly available cluster Redis Enterprise Pack is famous for.
 
 For more information, go to [quick start with Redis Enterprise Pack on
-Docker.](/redis-enterprise-documentation/getting-started/docker/)
+Docker.](/rs/getting-started/docker/)
 
 ## LDAP Integration
 
@@ -97,7 +97,7 @@ accounts can be used for administering resources on the cluster via
 command line, Rest API, or Web UI.
 
 For more information see [LDAP
-Integration](/redis-enterprise-documentation/administering/security/ldap-integration/).
+Integration](/rs/administering/security/ldap-integration/).
 
 ## Additional Capabilities
 

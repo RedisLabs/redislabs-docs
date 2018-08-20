@@ -32,6 +32,6 @@ $ redis-cli -h redis-12345.c24.us-east-mz-1.ec2.cloud.redislabs.com -p 12345 -a 
 Remember that this will delete ALL of the data in the database. This
 includes all data in memory and persisted to disk. So before doing
 flushall, it is best practice to [backup your
-database](/redis-cloud-documentation/configuration/backups/) first.
+database](/rc/configuration/backups/) first.
 
 ### 

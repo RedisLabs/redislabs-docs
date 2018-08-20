@@ -16,7 +16,7 @@ Enterprise VPC by following these steps:
 5.  Enter a **Memory Limit**. Please take in mind that replication is
     on.
 6.  If your database will run with [Redis on
-    Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-enterprise-flash/),
+    Flash](/rs/concepts/memory-architecture/redis-enterprise-flash/),
     please specify your average item size(in bytes). This will allow us
     to configure your database in the most optimal way.
 7.  Enter the required throughput. The minimum is 500,000 ops/sec or you

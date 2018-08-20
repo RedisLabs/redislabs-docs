@@ -23,7 +23,7 @@ connecting to databases.
 The Discovery Service is available for querying on each node of the
 cluster, listening on port 8001. To employ it, your application utilizes
 a [Redis Sentinel enabled client
-library](/redis-enterprise-documentation/administering/designing-production/supported-clients-browsers/)
+library](/rs/administering/designing-production/supported-clients-browsers/)
 to connect to the Discovery Service and request the endpoint for the
 given database. The Discovery Service replies with the database's
 endpoint for that database. In case of a node failure, the Discovery
@@ -86,7 +86,7 @@ to derive which node in the cluster to communicate with.\
 You can find the recommended list of client libraries to use for
 Discovery Service using the Redis Sentinel API on the [hardware and
 software requirements
-page](/redis-enterprise-documentation/installing-and-upgrading/hardware-software-requirements/),
+page](/rs/installing-and-upgrading/hardware-software-requirements/),
 under "Client" section.
 
 Note: Redis Sentinel API can return endpoints for both master and slave

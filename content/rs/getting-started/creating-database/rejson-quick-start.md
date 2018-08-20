@@ -7,7 +7,7 @@ alwaysopen: false
 For this quick start, you will need the following:
 
 -   [A Redis Enterprise Software cluster with set up already
-    complete](/redis-enterprise-documentation/getting-started/quick-setup/)
+    complete](/rs/getting-started/quick-setup/)
 -   Any redis-cli or ReJSON enabled client
 
 ### Create a new database that uses the Module

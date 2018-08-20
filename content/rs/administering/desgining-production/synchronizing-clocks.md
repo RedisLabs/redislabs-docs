@@ -28,5 +28,5 @@ If you are using Geo-Replication, it is critical to keep OS clocks
 consistent across clusters as well. Certain aspects of conflict
 resolution are achieved using OS time. For specific information, please
 see [Network Time
-Services](/redis-enterprise-documentation/administering/intercluster-replication/crdbs/#network-time)
+Services](/rs/administering/intercluster-replication/crdbs/#network-time)
 as they pertain to CRDBs.

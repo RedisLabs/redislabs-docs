@@ -14,7 +14,7 @@ Prerequisites:
 -   A database created
 
 If you need a quick setup for the prerequisites, please [go
-here](/redis-enterprise-documentation/getting-started/quick-setup/).
+here](/rs/getting-started/quick-setup/).
 
 It is recommended to run memtier\_benchmark on a separate node that is
 not part of the cluster being tested. If you run it on a node of the

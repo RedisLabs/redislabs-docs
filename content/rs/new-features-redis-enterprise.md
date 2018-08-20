@@ -21,7 +21,7 @@ provide smart and automatic conflict resolution based on the data type's
 intent.
 
 For more information, go here. For information, go to [Developing with
-CRDBs](/redis-enterprise-documentation/developing/crdbs/).
+CRDBs](/rs/developing/crdbs/).
 
 ## Redis Modules
 
@@ -36,13 +36,13 @@ Enterprise is known for.
 There are three modules Redis Labs has developed and certified with
 Redis Enterprise Software (RS). The modules are:
 
--   [RediSearch](/redis-enterprise-documentation/developing/redisearch/)
+-   [RediSearch](/rs/developing/redisearch/)
     - This module turns RS into a supercharged distributed in-memory
     full-text indexing and search beast.
--   [ReJSON](/redis-enterprise-documentation/developing/rejson/) - Now
+-   [ReJSON](/rs/developing/rejson/) - Now
     you have the convenience JSON as a built-in data type and easily
     able to address nested data via a path.
--   [ReBloom](/redis-enterprise-documentation/developing/modules/bloom-filters/)
+-   [ReBloom](/rs/developing/modules/bloom-filters/)
     - Enables RS to have a scalable bloom filter as a data type. Bloom
     filters are probabilistic data structures that do a very good job at
     quickly determining if something is contained within a set.
@@ -62,7 +62,7 @@ easily and quickly deploy several containers to start running a scalable
 and highly available cluster Redis Enterprise Software is famous for.
 
 For more information go to [quick start with Redis Enterprise Software
-on Docker.](/redis-enterprise-documentation/getting-started/docker/)
+on Docker.](/rs/getting-started/docker/)
 
 ## LDAP Integration
 
@@ -73,4 +73,4 @@ accounts can be used for administering resources on the cluster via
 command line, Rest API, or Web UI.
 
 For more information see [LDAP
-Integration](/redis-enterprise-documentation/administering/security/ldap-integration/).
+Integration](/rs/administering/security/ldap-integration/).

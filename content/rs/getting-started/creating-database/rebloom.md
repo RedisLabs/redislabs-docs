@@ -7,7 +7,7 @@ alwaysopen: false
 For this quick start, you will need the following:
 
 -   [A Redis Enterprise Software cluster with set up already
-    complete](/redis-enterprise-documentation/getting-started/quick-setup/)
+    complete](/rs/getting-started/quick-setup/)
 -   Any redis-cli or ReBloom enabled client
 
 ### Create a new database that uses the Module
@@ -80,7 +80,7 @@ You can play with it using redis-cli:
 ```
 
 For more information, please see [Developing with Bloom
-Filters](/redis-enterprise-documentation/developing/modules/bloom-filters/).
+Filters](/rs/developing/modules/bloom-filters/).
 
 For in depth information on Cuckoo filters you can visit the
 original [Cuckoo

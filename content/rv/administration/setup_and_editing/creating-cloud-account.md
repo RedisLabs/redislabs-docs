@@ -18,7 +18,7 @@ subscriptions.
 
 To create a RV Cloud Account, please select **Cloud Accounts** from the
 right side menu. Please follow [our
-instructions](/redis-cloud-private-documentation/how-to/creating-aws-user-redis-cloud-private/)
+instructions](/rv/how-to/creating-aws-user-redis-cloud-private/)
 on how to set up a user for RV to use on your AWS account.\
 To create a new Cloud Account, click on the '**+**' button.
 

@@ -40,7 +40,7 @@ you might also look into enabling the multiple NIC support in RS. With
 nodes that have multiple physical NICs (Network Interface Cards), you
 can configure RS to separate internal and external traffic onto
 independent physical NICs. For more details, refer to [Multi-IP &
-IPv6](/redis-enterprise-documentation/cluster-administration/best-practices/multi-ip-ipv6-support/).
+IPv6](/rs/cluster-administration/best-practices/multi-ip-ipv6-support/).
 
 Having multiple proxies for a database can improve RS's ability for fast
 failover in case of proxy and/or node failure. With multiple proxies for
@@ -94,7 +94,7 @@ A database can have one of two shard placement policies:
   ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 See [Shard
-Placement](/redis-enterprise-documentation/concepts/rebalancing-shard-placement/),
+Placement](/rs/concepts/rebalancing-shard-placement/),
 for more information.
 
 ## Database configuration

@@ -48,7 +48,7 @@ existence of a faulty node and automatically replaces the faulty node
 with the new node.
 
 For guidelines, refer to [Replacing a faulty
-node](/redis-enterprise-documentation/cluster-administration/replacing-a-faulty-node).
+node](/rs/cluster-administration/replacing-a-faulty-node).
 
 ## Replacing a healthy node
 
@@ -57,15 +57,15 @@ must first add the new node to the cluster, migrate all the resources
 from the node you would like to remove, and only then remove the node.
 
 For further guidance, refer to [adding a new node to a
-cluster](/redis-enterprise-documentation/administering/cluster-operations/adding-node/).
+cluster](/rs/administering/cluster-operations/adding-node/).
 
 You can migrate resources by using the *rladmin* command-line interface
 (CLI). For guidelines, refer to [*rladmin* command line interface
-(CLI)](/redis-enterprise-documentation/references/cli-reference/rladmin/).
+(CLI)](/rs/references/cli-reference/rladmin/).
 
 **Note**: The DNS records must be updated each time a node is added or
 replaced. For additional details, refer to
-[DNS](/redis-enterprise-documentation/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/).
+[DNS](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/).
 
 ## Removing a node
 
@@ -84,11 +84,11 @@ To remove a node:
 
 You can choose to receive email alerts related to this process, as
 described in [Managing cluster
-alerts](/redis-enterprise-documentation/cluster-administration/viewing-and-defining-cluster-settings/managing-cluster-alerts).
+alerts](/rs/cluster-administration/viewing-and-defining-cluster-settings/managing-cluster-alerts).
 
 **Note**: Once you remove a node, if you need to add it back to a
 cluster, you must first
-[uninstall](/redis-enterprise-documentation/administering/installing-upgrading/uninstalling/)
+[uninstall](/rs/administering/installing-upgrading/uninstalling/)
 and
-[reinstall](/redis-enterprise-documentation/administering/installing-upgrading/downloading-installing/)
+[reinstall](/rs/administering/installing-upgrading/downloading-installing/)
 the software on that node.
