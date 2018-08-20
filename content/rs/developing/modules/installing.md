@@ -40,7 +40,7 @@ the next step of adding the module to Redis Enterprise Software.
 
 Note: before creating a new DB with modules, it is recommend to download
 and [upgrade the currently installed
-modules](https://redislabs.com/redis-enterprise-documentation/developing/modules/upgrading/)
+modules](/redis-enterprise-documentation/developing/modules/upgrading/)
 to the newest versions.
 
  

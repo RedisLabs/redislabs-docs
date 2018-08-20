@@ -27,4 +27,4 @@ As part of the import in the UI, RS will increment counters by the value
 that is in the importing data.
 
 You can read more on how to perform the import
-[here](https://redislabs.com/redis-enterprise-documentation/administering/database-operations/importing-data).
+[here](/redis-enterprise-documentation/administering/database-operations/importing-data).

@@ -156,8 +156,8 @@ followed by descriptions:
   Float Counters     Supported, [see detailed information](/redis-enterprise-documentation/developing/crdbs/strings/#counters)
   Sets               Supported, [see detailed information](/redis-enterprise-documentation/developing/crdbs/developing-sets-crdb/)
   Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information](/redis-enterprise-documentation/developing/crdbs/developing-hashes-crdb/).
-  Lists              [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](https://redislabs.com/redis-enterprise-documentation/developing-lists-crdb/)
-  Sorted Sets        [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](https://redislabs.com/redis-enterprise-documentation/developing-sorted-sets-crdb/)
+  Lists              [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](/redis-enterprise-documentation/developing-lists-crdb/)
+  Sorted Sets        [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](/redis-enterprise-documentation/developing-sorted-sets-crdb/)
   Bitsets            Not currently supported
   ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

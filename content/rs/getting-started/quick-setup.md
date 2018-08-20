@@ -22,7 +22,7 @@ and
 
 If you are looking for more detailed installation instructions you can
 visit the [installing and
-upgrading](https://redislabs.com/redis-enterprise-documentation/administering/installing-upgrading/)
+upgrading](/redis-enterprise-documentation/administering/installing-upgrading/)
 section of the technical documentation.
 
 ## Step 1 - Install Redis Enterprise Software
@@ -154,5 +154,5 @@ b'123'
 Now that you have a database, if you'd like to do a quick test against
 the database or add a bunch of data for cluster testing, the
 [memtier\_benchmark Quick
-Start](https://redislabs.com/redis-enterprise-documentation/getting-started/memtier_benchmark/)
+Start](/redis-enterprise-documentation/getting-started/memtier_benchmark/)
 should help.
