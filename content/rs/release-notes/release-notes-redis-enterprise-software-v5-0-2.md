@@ -42,7 +42,7 @@ page
 ### Other
 
 -   Discovery Service supports encryption using SSL/TLS
--   Starting from version 5.0.2 build \#30, Redis Enterprise Software is
+-   Starting from version 5.0.2 build #30, Redis Enterprise Software is
     supported on RHEL 7.5
 
 ## Important Fixes
@@ -61,7 +61,7 @@ page
 -   RS19002 - Fixed wrong message when an upgrade of a quorum node with
     all-nodes policy takes place
 
-**Important Fixes in Build \#30:**
+**Important Fixes in Build #30:**
 
 -   RS19701 - Fixed high CPU usage on large scale clusters
 -   RS[19869- Added]{style="font-weight: 400;"} s[upport for Redis

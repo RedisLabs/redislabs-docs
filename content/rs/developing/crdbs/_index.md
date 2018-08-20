@@ -187,13 +187,13 @@ If a key's expiration time is changed at the same time on different
 members of the CRDB, the longer extended time set via TTL on a key is
 preserved. As an example:
 
-If this command was performed on key1 on cluster \#1
+If this command was performed on key1 on cluster #1
 
 ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
 127.0.0.1:6379> EXPIRE key1 10
 ```
 
-And if this command was performed on key1 on cluster \#2
+And if this command was performed on key1 on cluster #2
 
 ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
 127.0.0.1:6379> EXPIRE key1 50
@@ -201,7 +201,7 @@ And if this command was performed on key1 on cluster \#2
 
 The EXPIRE command setting the key to 50 would win.
 
-And if this command was performed on key1 on cluster \#3:
+And if this command was performed on key1 on cluster #3:
 
 ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
 127.0.0.1:6379> PERSIST key1

@@ -8,7 +8,7 @@ You can view the Redis Enterprise Software subscription agreement
 [here](/company/terms-of-use#software). For details of the End of Life
 (EOL) Policy for Redis Enterprise Software, please see Software Terms
 PDF in the link above and look for details under "Exhibit A - Support
-Policy", Section \#9.
+Policy", Section #9.
 
 ## Release numbering
 

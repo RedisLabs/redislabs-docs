@@ -11,7 +11,7 @@ When importing data into a CRDB, there are two options:
     2.  Import data but merge it into the existing or add new data from
         the import file.
 
-When using option \#2, there are special considerations to be aware of.
+When using option #2, there are special considerations to be aware of.
 Unlike a traditional Redis database, CRDBs have a numeric counter data
 type and thus require special ways to increment. The import through the
 Redis Enterprise web UI handles these data types for you. When you

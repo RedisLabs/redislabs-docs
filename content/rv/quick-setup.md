@@ -42,7 +42,7 @@ For a new subscription, you will need to provide the following:
     Flash](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-flash/)
     or pure RAM Redis database
 4.  The Cloud Account to be used. Use the AWS user created above in Step
-    \#2 for setting up your RV Cloud Account
+    #2 for setting up your RV Cloud Account
 5.  Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
