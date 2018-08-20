@@ -1,6 +1,6 @@
 ---
 Title: Integrating LDAP Authentication
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

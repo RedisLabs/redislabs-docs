@@ -1,6 +1,6 @@
 ---
 Title: Cluster License Keys
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

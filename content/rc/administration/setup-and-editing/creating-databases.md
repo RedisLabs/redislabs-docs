@@ -1,6 +1,6 @@
 ---
 Title: Creating Databases on Redis Enterprise Cloud (RC)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

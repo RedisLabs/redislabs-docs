@@ -1,6 +1,6 @@
 ---
 Title: Securing Redis Client Connections
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: What am I allowed to do with the trial version?
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

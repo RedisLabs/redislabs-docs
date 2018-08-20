@@ -1,6 +1,6 @@
 ---
 Title: Monitoring Performance in Redis Enterprise VPC
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

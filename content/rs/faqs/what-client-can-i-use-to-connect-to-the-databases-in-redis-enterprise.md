@@ -1,6 +1,6 @@
 ---
 Title: What client can I use to connect to the databases in Redis Enterprise Software?
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

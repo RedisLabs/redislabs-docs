@@ -1,6 +1,6 @@
 ---
 Title: Release Notes 4.2.1-30 - October 18, 2015
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

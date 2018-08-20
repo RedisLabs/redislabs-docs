@@ -1,6 +1,6 @@
 ---
 Title: DNS Setup
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

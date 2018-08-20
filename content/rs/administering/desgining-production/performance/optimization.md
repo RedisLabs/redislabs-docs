@@ -1,6 +1,6 @@
 ---
 Title: Performance Optimization
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

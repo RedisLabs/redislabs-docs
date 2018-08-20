@@ -1,6 +1,6 @@
 ---
 Title: What happens when my database fills up?
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

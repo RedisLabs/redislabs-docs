@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Cloud Database Backups
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

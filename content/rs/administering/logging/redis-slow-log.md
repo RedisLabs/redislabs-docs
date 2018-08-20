@@ -1,6 +1,6 @@
 ---
 Title: Viewing Redis Slow Log
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

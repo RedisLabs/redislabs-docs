@@ -1,6 +1,6 @@
 ---
 Title: Getting Started Tutorial with Redis Enterprise Software using Docker on macOS
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

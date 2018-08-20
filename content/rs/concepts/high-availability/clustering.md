@@ -1,6 +1,6 @@
 ---
 Title: Database clustering
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

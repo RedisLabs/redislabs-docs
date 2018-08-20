@@ -1,6 +1,6 @@
 ---
 Title: Unidirectional Replication with Replica of
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

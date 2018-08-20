@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of a Redis on Flash Database
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

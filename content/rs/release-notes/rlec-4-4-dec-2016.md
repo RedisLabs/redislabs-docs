@@ -1,6 +1,6 @@
 ---
 Title: Release Notes 4.4 - December 2016
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

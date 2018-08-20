@@ -1,6 +1,6 @@
 ---
 Title: Creating a support package
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

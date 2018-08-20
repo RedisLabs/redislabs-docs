@@ -1,6 +1,6 @@
 ---
 Title: Rebalancing and Shard Placement
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

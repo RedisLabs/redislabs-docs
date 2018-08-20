@@ -1,6 +1,6 @@
 ---
 Title: Monitoring Redis Enterprise Cloud Performance
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

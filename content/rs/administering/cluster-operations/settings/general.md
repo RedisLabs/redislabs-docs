@@ -1,6 +1,6 @@
 ---
 Title: General settings
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

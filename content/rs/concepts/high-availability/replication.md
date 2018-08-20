@@ -1,6 +1,6 @@
 ---
 Title: Database replication
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

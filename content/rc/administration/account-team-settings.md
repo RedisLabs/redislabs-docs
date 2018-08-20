@@ -1,6 +1,6 @@
 ---
 Title: Account and Team Settings
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

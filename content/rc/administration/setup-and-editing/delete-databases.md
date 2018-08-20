@@ -1,6 +1,6 @@
 ---
 Title: Deleting Redis Enterprise Cloud (RC) Databases
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

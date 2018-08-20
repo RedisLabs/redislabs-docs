@@ -1,6 +1,6 @@
 ---
 Title: What's new in Redis Enterprise Software 5.0?
-description: $description
+description: 
 weight: 20
 alwaysopen: false
 ---

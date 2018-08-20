@@ -1,6 +1,6 @@
 ---
 Title: Supported Clients and Web Browsers
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

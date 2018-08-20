@@ -1,6 +1,6 @@
 ---
 Title: Intercluster Replication
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

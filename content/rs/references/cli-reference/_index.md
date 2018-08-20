@@ -1,6 +1,6 @@
 ---
 Title: CLI References
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

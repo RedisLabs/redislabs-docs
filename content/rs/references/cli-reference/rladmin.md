@@ -1,6 +1,6 @@
 ---
 Title: rladmin command-line interface
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

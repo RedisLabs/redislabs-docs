@@ -1,6 +1,6 @@
 ---
 Title: Working with Redis Enterprise Software (RES) with Docker Containers
-description: $description
+description: 
 weight: 30
 alwaysopen: false
 ---

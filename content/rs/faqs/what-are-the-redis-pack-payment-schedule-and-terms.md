@@ -1,6 +1,6 @@
 ---
 Title: What are the Redis Enterprise Software (RS) payment schedule and terms?
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

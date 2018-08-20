@@ -1,6 +1,6 @@
 ---
 Title: Configuring Redis Enterprise Cloud Resources
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

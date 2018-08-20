@@ -1,6 +1,6 @@
 ---
 Title: Administering CRDBs
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

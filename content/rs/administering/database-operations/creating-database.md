@@ -1,6 +1,6 @@
 ---
 Title: Creating a Redis Enterprise Software (RS) database
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: Developing with Redis Modules in Redis Enterprise Software (RS)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: Member of multiple accounts
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

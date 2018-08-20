@@ -1,6 +1,6 @@
 ---
 Title: Creating an AWS User for Redis Enterprise VPC
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

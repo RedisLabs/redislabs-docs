@@ -1,6 +1,6 @@
 ---
 Title: Upgrading Redis Enterprise Software
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

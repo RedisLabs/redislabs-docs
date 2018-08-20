@@ -1,6 +1,6 @@
 ---
 Title: ReplicaOf Repeatedly Fails
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

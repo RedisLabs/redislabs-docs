@@ -1,6 +1,6 @@
 ---
 Title: 0.99.5-11 - January 5, 2015
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

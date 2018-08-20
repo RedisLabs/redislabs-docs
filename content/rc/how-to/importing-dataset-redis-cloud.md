@@ -1,6 +1,6 @@
 ---
 Title: Importing Data Into Your Redis Enterprise Cloud Database
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

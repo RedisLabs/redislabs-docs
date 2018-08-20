@@ -1,6 +1,6 @@
 ---
 Title: AWS Zone Mapping
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

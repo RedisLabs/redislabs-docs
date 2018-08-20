@@ -1,6 +1,6 @@
 ---
 Title: Benchmark a Redis on Flash Enabled Database
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

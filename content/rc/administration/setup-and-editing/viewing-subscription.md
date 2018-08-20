@@ -1,6 +1,6 @@
 ---
 Title: Viewing a Subscription
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

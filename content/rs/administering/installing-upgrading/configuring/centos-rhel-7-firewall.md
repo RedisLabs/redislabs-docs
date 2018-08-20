@@ -1,6 +1,6 @@
 ---
 title: CentOS / RHEL 7 firewall configuration
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

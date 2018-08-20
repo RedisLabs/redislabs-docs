@@ -1,6 +1,6 @@
 ---
 Title: Logging and Audit Events
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: Cluster API Architecture
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

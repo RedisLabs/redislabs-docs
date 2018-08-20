@@ -1,6 +1,6 @@
 ---
 Title: Securing Your Database in Redis Enterprise VPC (RV)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

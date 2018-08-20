@@ -1,6 +1,6 @@
 ---
 Title: New Cluster Setup
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

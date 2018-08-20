@@ -1,6 +1,6 @@
 ---
 Title: Testing client connectivity
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

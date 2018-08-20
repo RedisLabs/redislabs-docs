@@ -1,6 +1,6 @@
 ---
 Title: Administering Redis Enterprise
-description: $description
+description: 
 weight: 60
 alwaysopen: false
 ---

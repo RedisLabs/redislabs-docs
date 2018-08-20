@@ -1,6 +1,6 @@
 ---
 Title: Setup and Editing of Redis Enterprise Cloud Resources
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

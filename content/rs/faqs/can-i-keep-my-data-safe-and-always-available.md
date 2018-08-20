@@ -1,6 +1,6 @@
 ---
 Title: Can I keep my data safe and always available?
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

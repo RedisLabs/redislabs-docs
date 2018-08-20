@@ -1,6 +1,6 @@
 ---
 Title: Getting Started with Redis Enterprise CRDBs (conflict-free replicated databases)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

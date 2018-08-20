@@ -1,6 +1,6 @@
 ---
 Title: What do you mean by the term Shard?
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

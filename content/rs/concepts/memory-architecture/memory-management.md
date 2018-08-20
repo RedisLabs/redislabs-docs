@@ -1,6 +1,6 @@
 ---
 Title: Memory Mangement with Redis Enterprise Software (RES)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

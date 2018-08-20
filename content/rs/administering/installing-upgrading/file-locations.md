@@ -1,6 +1,6 @@
 ---
 Title: File Locations
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

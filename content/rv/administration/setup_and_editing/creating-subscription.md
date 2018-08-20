@@ -1,6 +1,6 @@
 ---
 Title: Creating a Subscription in Redis Enterprise VPC (RV)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

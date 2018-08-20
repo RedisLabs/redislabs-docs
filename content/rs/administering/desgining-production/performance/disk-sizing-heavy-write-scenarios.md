@@ -1,6 +1,6 @@
 ---
 Title: Disk Sizing for Heavy Write Scenarios
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: FAQs
-description: $description
+description: 
 weight: 70
 alwaysopen: false
 ---

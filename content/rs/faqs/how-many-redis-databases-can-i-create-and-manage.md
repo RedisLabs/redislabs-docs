@@ -1,6 +1,6 @@
 ---
 Title: How many Redis databases can I create and manage?
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

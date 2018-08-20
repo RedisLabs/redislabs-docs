@@ -1,6 +1,6 @@
 ---
 Title: Installing the setup package
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

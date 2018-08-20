@@ -1,6 +1,6 @@
 ---
 Title: Release Notes
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

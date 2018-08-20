@@ -1,6 +1,6 @@
 ---
 Title: Database Backups on Redis Enterprise VPC (RV)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

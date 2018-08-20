@@ -1,6 +1,6 @@
 ---
 Title: Developing Applications with Geo-replicated CRDBs on Redis Enterprise Software (RS)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

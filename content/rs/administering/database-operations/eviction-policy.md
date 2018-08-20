@@ -1,6 +1,6 @@
 ---
 Title: Eviction policies
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

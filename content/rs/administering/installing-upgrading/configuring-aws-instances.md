@@ -1,6 +1,6 @@
 ---
 Title: Configuring AWS Instances for Redis Enterprise Software
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

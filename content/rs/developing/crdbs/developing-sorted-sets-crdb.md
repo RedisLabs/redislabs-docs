@@ -1,6 +1,6 @@
 ---
 Title: Developing with Sorted Sets in a CRDB
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

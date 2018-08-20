@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Software Product Lifecycle
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

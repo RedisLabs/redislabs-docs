@@ -1,6 +1,6 @@
 ---
 Title: Release Notes - Redis Enterprise Pack - v4.5 - May 2017
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

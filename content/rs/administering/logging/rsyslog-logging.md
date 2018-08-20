@@ -1,6 +1,6 @@
 ---
 Title: rsyslog logging
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

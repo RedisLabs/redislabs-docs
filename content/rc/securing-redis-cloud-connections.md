@@ -1,6 +1,6 @@
 ---
 title: Securing Connections with SSL/TLS
-description: $description
+description: 
 weight: 25
 alwaysopen: false
 ---

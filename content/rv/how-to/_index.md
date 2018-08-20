@@ -1,6 +1,6 @@
 ---
 Title: How Tos
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

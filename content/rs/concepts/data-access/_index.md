@@ -1,6 +1,6 @@
 ---
 Title: Data Access Architecture
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

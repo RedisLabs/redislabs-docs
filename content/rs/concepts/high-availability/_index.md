@@ -1,6 +1,6 @@
 ---
 Title: High Availability
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

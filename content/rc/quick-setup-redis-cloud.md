@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of Redis Enterprise Cloud
-description: $description
+description: 
 weight: 10
 alwaysopen: false
 ---

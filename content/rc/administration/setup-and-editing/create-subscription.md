@@ -1,6 +1,6 @@
 ---
 Title: Creating a Redis Enterprise Cloud Subscription
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: Getting Started with Redis Enterprise Software using Docker on Linux
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

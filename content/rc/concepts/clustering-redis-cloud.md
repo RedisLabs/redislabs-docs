@@ -1,6 +1,6 @@
 ---
 Title: Clustering Redis Databases with Redis Enterprise Cloud
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

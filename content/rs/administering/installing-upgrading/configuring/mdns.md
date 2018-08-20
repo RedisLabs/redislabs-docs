@@ -1,6 +1,6 @@
 ---
 Title: Client prerequisites for m[DNS]{.small-caps}
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: Exporting Data from Redis Enterprise
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

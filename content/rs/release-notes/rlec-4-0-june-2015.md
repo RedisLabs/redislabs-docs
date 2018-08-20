@@ -1,6 +1,6 @@
 ---
 Title: Release Notes 4.0.0-49 - June 18, 2015
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

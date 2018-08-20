@@ -1,6 +1,6 @@
 ---
 Title: Concepts and Architecture
-description: $description
+description: 
 weight: 40
 alwaysopen: false
 ---

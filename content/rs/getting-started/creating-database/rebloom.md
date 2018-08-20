@@ -1,6 +1,6 @@
 ---
 Title: ReBloom Quick Start Tutorial
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

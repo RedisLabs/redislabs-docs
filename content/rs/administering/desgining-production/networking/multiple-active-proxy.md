@@ -1,6 +1,6 @@
 ---
 Title: Multiple Active Proxy Support
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

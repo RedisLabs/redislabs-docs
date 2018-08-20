@@ -1,6 +1,6 @@
 ---
 Title: Developing for Redis Enterprise
-description: $description
+description: 
 weight: 50
 alwaysopen: false
 ---

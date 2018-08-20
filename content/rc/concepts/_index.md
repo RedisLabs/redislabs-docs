@@ -1,6 +1,6 @@
 ---
 Title: Concepts behind Redis Enterprise Cloud
-description: $description
+description: 
 weight: 20
 alwaysopen: false
 ---

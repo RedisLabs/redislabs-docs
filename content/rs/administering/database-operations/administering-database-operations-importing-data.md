@@ -1,6 +1,6 @@
 ---
 Title: Importing Data into your CRDB
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

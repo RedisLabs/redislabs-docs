@@ -1,6 +1,6 @@
 ---
 Title: Installing and upgrading
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

@@ -1,6 +1,6 @@
 ---
 Title: Network configuration
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

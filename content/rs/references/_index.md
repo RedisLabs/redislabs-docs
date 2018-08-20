@@ -1,6 +1,6 @@
 ---
 Title: Developer References
-description: $description
+description: 
 weight: 80
 alwaysopen: false
 ---

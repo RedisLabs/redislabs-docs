@@ -1,6 +1,6 @@
 ---
 Title: Designing for Production
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

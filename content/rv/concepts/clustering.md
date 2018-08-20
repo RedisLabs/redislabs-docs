@@ -1,6 +1,6 @@
 ---
 Title: Clustering Redis Databases with Redis Enterprise VPC
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

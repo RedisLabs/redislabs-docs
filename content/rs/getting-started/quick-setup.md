@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of Redis Enterprise Software (RS)
-description: $description
+description: 
 weight: 10
 alwaysopen: false
 ---

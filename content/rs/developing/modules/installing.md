@@ -1,6 +1,6 @@
 ---
 Title: Installing a Module
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

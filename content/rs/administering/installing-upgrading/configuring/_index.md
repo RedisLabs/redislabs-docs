@@ -1,6 +1,6 @@
 ---
 Title: Configuring the Installation
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

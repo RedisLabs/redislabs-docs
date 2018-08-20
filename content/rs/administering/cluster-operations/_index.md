@@ -1,6 +1,6 @@
 ---
 Title: Cluster Operations
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

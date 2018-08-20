@@ -1,6 +1,6 @@
 ---
 Title: Billing History
-description: $description
+description: 
 weight: 30
 alwaysopen: false
 ---

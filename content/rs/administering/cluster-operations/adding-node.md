@@ -1,6 +1,6 @@
 ---
 Title: Adding a Node to an Existing Cluster
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

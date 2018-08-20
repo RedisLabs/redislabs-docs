@@ -1,6 +1,6 @@
 ---
 Title: Periodic Backups
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

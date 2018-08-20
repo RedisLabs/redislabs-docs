@@ -1,6 +1,6 @@
 ---
 Title: Deleting a Conflict-free Replicated Database (CRDB)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

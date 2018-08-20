@@ -1,6 +1,6 @@
 ---
 Title: Payment Methods
-description: $description
+description: 
 weight: 40
 alwaysopen: false
 ---

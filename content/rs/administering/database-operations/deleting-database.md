@@ -1,6 +1,6 @@
 ---
 Title: Delete a Database
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---

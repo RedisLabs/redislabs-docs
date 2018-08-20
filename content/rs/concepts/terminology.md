@@ -1,6 +1,6 @@
 ---
 Title: Terminology in Redis Enterprise Software (RS)
-description: $description
+description: 
 weight: $weight
 alwaysopen: false
 ---
