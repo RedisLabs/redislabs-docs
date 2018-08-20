@@ -57,10 +57,10 @@ release as well.<!--more-->
 | the overall cost.                 | Instead of depending on just      |
 |                                   | simplistic "last-writer-wins"     |
 | [Learn more about Redis on        | type conflict resolution,         |
-| Flash.](/redis-enterprise-documen | geo-distributed CRDBs combines    |
-| tation/concepts-architecture/memo | techniques defined in CRDT        |
-| ry-architecture/redis-enterprise- | (conflict-free replicated data    |
-| flash/)                           | types) research with Redis types  |
+| Flash.](/rs/concepts/memory-architecture/redis-enterprise-flash) | geo-distributed CRDBs combines    |
+|                                   | techniques defined in CRDT        |
+|                                   | (conflict-free replicated data    |
+|                                   | types) research with Redis types  |
 |                                   | to provide smart and automatic    |
 |                                   | conflict resolution based on the  |
 |                                   | data types intent.                |
@@ -95,7 +95,7 @@ in the cluster without human intervention. RS technology is capable of
 automatically handling node failures, Redis failures, and proxy
 failures. Auto-failover is carried out within a few seconds. [Learn more
 about High
-Availability](/redis-enterprise-documentation/concepts/high-availability/)
+Availability](/rs/concepts/high-availability/)
 in RS.\
 
 ### Built-in data persistence, backups, and replication

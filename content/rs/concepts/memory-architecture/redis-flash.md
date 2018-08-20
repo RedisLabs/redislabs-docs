@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 ---
 Redis on Flash (RoF) offers users of [Redis Enterprise
-Software](/redis-enterprise-documentation/overview/) and [Redis
+Software](/rs/overview/) and [Redis
 Enterprise VPC](/products/redis-cloud-private/) the unique ability to
 have very large Redis database but at significant cost savings. Where
 standard Redis databases must all be in RAM, Redis on Flash enables your
@@ -42,7 +42,7 @@ There are a few critical recommendations
 
 For more information read [Ephemeral and Persistent Storage in Redis
 Enterprise
-Software](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/).
+Software](/rs/administering/designing-production/persistent-ephemeral-storage/).
 
 When running on a cloud environment, the flash memory for Redis on Flash
 should be on the ephemeral SSDs of the cloud instance and persistent
@@ -130,20 +130,20 @@ prerequisites:
 -   Have ephemeral, persistent and flash memory mounted on Redis
     Enterprise Software nodes with the proper disk size, per the [Redis
     on Flash memory
-    guidelines](/redis-enterprise-documentation/installing-and-upgrading/hardware-software-requirements#production-environment-reqs).
+    guidelines](/rs/installing-and-upgrading/hardware-software-requirements#production-environment-reqs).
 -   Have all [hardware
-    requirements](/redis-enterprise-documentation/administering/designing-production/hardware-requirements/)
+    requirements](/rs/administering/designing-production/hardware-requirements/)
     in place.
 -   Have all [software
-    requirements](/redis-enterprise-documentation/administering/designing-production/supported-platforms/)
+    requirements](/rs/administering/designing-production/supported-platforms/)
     in place.
 -   Perform the [initial setup and creation of a new
-    cluster](/redis-enterprise-documentation/administering/installing-upgrading/downloading-installing/).
+    cluster](/rs/administering/installing-upgrading/downloading-installing/).
 
 Once these requirements are met, both Redis of Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
-database](/redis-enterprise-documentation/database-configuration/creating-a-new-database).
+database](/rs/database-configuration/creating-a-new-database).
 
 When Redis on Flash is enabled, additional settings and
 [metrics](redis-enterprise-documentation/administering/monitoring-metrics/definitions/#redis-flash-metrics)

@@ -5,10 +5,10 @@ weight: 30
 alwaysopen: false
 ---
 Redis Enterprise Software can be deployed using Docker Container on
-[Windows](/redis-enterprise-documentation/installing-and-upgrading/docker/windows/),
-[macOS](/redis-enterprise-documentation/installing-and-upgrading/docker/macos/)
+[Windows](/rs/installing-and-upgrading/docker/windows/),
+[macOS](/rs/installing-and-upgrading/docker/macos/)
 and
-[Linux](/redis-enterprise-documentation/installing-and-upgrading/docker/linux/)-based
+[Linux](/rs/installing-and-upgrading/docker/linux/)-based
 systems. [Redis Enterprise Software
 container](https://hub.docker.com/r/redislabs/redis/) represents a node
 in an RES Cluster. When deploying RES using Docker, there are a couple

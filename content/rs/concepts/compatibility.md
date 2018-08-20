@@ -77,5 +77,5 @@ cluster as needed.
 
 For additional details regarding the RES architecture, refer to the
 [System
-architecture](/redis-enterprise-documentation/system-architecture)
+architecture](/rs/system-architecture)
 section.

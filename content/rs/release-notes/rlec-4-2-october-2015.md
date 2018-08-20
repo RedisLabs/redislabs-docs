@@ -8,7 +8,7 @@ alwaysopen: false
 
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions](/redis-enterprise-documentation/installing-and-upgrading/upgrading)
+instructions](/rs/installing-and-upgrading/upgrading)
 before running through the upgrade process.
 
 ## New features
@@ -20,7 +20,7 @@ before running through the upgrade process.
     performance profiles that are optimized for either cloud or
     non-cloud environments. For additional details, refer to the
     [Performance
-    optimization](/redis-enterprise-documentation/cluster-administration/best-practices/performance-optimization)
+    optimization](/rs/cluster-administration/best-practices/performance-optimization)
     section.
 -   SLA for AOF rewrite - enables the administrator to configure
     database parameters, by running the rladmin tune command, related to
@@ -38,41 +38,41 @@ before running through the upgrade process.
     enhanced to support creating a database that is a replica of
     multiple source databases. For additional details, refer to the
     [Replica
-    of](/redis-enterprise-documentation/database-configuration/replica-of)
+    of](/rs/database-configuration/replica-of)
     section.
 -   Cross cluster Replica of - the Replica of feature now supports
     defining a database that is a replica of databases that belong to a
     different RLEC cluster. For additional details, refer to the
     [Replica
-    of](/redis-enterprise-documentation/database-configuration/replica-of)
+    of](/rs/database-configuration/replica-of)
     section.
 -   Multi-IP support - on a node that has multiple IPs, enables the
     administrator to specify which IP address is used for internal
     traffic and which IP addresses are used for external traffic. For
     additional details, refer to [Multi-IP &
-    IPv6](/redis-enterprise-documentation/cluster-administration/best-practices/multi-ip-ipv6-support)
+    IPv6](/rs/cluster-administration/best-practices/multi-ip-ipv6-support)
     support.
 -   IPv6 support for external traffic - on a node that has multiple
     IPs, external IP addresses can be of IPv6 type. For additional
     details, refer to [Multi-IP &
-    IPv6](/redis-enterprise-documentation/cluster-administration/best-practices/multi-ip-ipv6-support)
+    IPv6](/rs/cluster-administration/best-practices/multi-ip-ipv6-support)
     support section.
 -   Support for OpenStack Object Store ("Swift") location for import /
     export / backup. For additional details, refer to [Database
-    backup](/redis-enterprise-documentation/database-configuration/database-backup)
+    backup](/rs/database-configuration/database-backup)
     and [Importing data to a
-    database](/redis-enterprise-documentation/database-configuration/importing-data-to-a-database)
+    database](/rs/database-configuration/importing-data-to-a-database)
     sections.
 -   Import of a sharded database - support for importing data of a
     sharded database by indicating multiple files paths. For additional
     details, refer to the [Importing data to a
-    database](/redis-enterprise-documentation/database-configuration/importing-data-to-a-database)
+    database](/rs/database-configuration/importing-data-to-a-database)
     section.
 -   Enable running the install script in silent mode using "-y"
     parameter for default answers ("Y") or "-c" for file path parameters
     for custom answers. For additional details, refer to [Accessing and
     installing the setup
-    package](/redis-enterprise-documentation/installing-and-upgrading/accessing-and-installing-the-setup-package)
+    package](/rs/installing-and-upgrading/accessing-and-installing-the-setup-package)
     section.
 -   New rladmin command-line-interface "info" command allows for
     fetching current value of tunable parameters.
@@ -82,7 +82,7 @@ before running through the upgrade process.
 -   rladmin command-line-interface can only be run under user root or
     redislabs. For additional details, refer to the [rladmin
     command-line
-    interface (CLI)](/redis-enterprise-documentation/rladmin-command-line-interface-cli)
+    interface (CLI)](/rs/rladmin-command-line-interface-cli)
     section.
 -   Import / export / backup to/from Amazon S3 requires supplying the
     credentials per usage instance; it does not use central cloud
@@ -139,9 +139,9 @@ before running through the upgrade process.
     used in the endpoint.
 -   **Issue**: When upgrading a node to a new RLEC version (refer to
     [Upgrading
-    nodes](/redis-enterprise-documentation/installing-and-upgrading/upgrading))
+    nodes](/rs/installing-and-upgrading/upgrading))
     while the node is in the offline state (refer to [Taking a node
-    offline](/redis-enterprise-documentation/cluster-administration/removing-a-node)),
+    offline](/rs/cluster-administration/removing-a-node)),
     the upgrade process succeeds but might result in an unstable
     cluster.**Workaround**: Do not try to upgrade a node while it is in
     the offline state.

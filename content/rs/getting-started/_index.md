@@ -10,13 +10,13 @@ offered with Redis Enterprise Software.
 
   ----------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------
   **Redis Enterprise Software General**                                                                                   **Docker**                                                                             **Other**
-  [Redis Enterprise Software Quick Setup](/redis-enterprise-documentation/getting-started/quick-setup/)                   [Docker on Linux](/redis-enterprise-documentation/getting-started/docker/linux/)       [Pivotal Cloud Foundry Quick Setup](/redis-enterprise-documentation/getting-started/pcf/)
-  [ReJSON Quick Start](/redis-enterprise-documentation/getting-started/creating-database/rejson-quick-start/)             [Docker on Mac](/redis-enterprise-documentation/getting-started/docker/macos/)         [memtier\_benchmark](/redis-enterprise-documentation/getting-started/memtier_benchmark/)
-  [RediSearch](/redis-enterprise-documentation/getting-started/creating-database/redisearch/)                             [Docker on Windows](/redis-enterprise-documentation/getting-started/docker/windows/)   
-   [Active-Active geo-replication with CRDBs](/redis-enterprise-documentation/getting-started/creating-database/crdbs/)                                                                                          
+  [Redis Enterprise Software Quick Setup](/rs/getting-started/quick-setup/)                   [Docker on Linux](/rs/getting-started/docker/linux/)       [Pivotal Cloud Foundry Quick Setup](/rs/getting-started/pcf/)
+  [ReJSON Quick Start](/rs/getting-started/creating-database/rejson-quick-start/)             [Docker on Mac](/rs/getting-started/docker/macos/)         [memtier\_benchmark](/rs/getting-started/memtier_benchmark/)
+  [RediSearch](/rs/getting-started/creating-database/redisearch/)                             [Docker on Windows](/rs/getting-started/docker/windows/)   
+   [Active-Active geo-replication with CRDBs](/rs/getting-started/creating-database/crdbs/)                                                                                          
   ----------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------
 
 If you are looking for Redis Enterprise in a fully managed Database as a
 Service (DBaaS), please see [Redis Enterprise
-Cloud](/redis-cloud-documentation/overview/) or [Redis Enterprise
-VPC](/redis-cloud-private-documentation/overview/).
+Cloud](/rc/overview/) or [Redis Enterprise
+VPC](/rv/overview/).

@@ -151,13 +151,13 @@ followed by descriptions:
 
   ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   **Data Type**      **Support Level **
-  Strings            Supported, [see detailed information](/redis-enterprise-documentation/developing/crdbs/strings/)
-  Integer Counters   Supported, [see detailed information](/redis-enterprise-documentation/developing/crdbs/strings/#counters)
-  Float Counters     Supported, [see detailed information](/redis-enterprise-documentation/developing/crdbs/strings/#counters)
-  Sets               Supported, [see detailed information](/redis-enterprise-documentation/developing/crdbs/developing-sets-crdb/)
-  Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information](/redis-enterprise-documentation/developing/crdbs/developing-hashes-crdb/).
-  Lists              [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](/redis-enterprise-documentation/developing-lists-crdb/)
-  Sorted Sets        [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](/redis-enterprise-documentation/developing-sorted-sets-crdb/)
+  Strings            Supported, [see detailed information](/rs/developing/crdbs/strings/)
+  Integer Counters   Supported, [see detailed information](/rs/developing/crdbs/strings/#counters)
+  Float Counters     Supported, [see detailed information](/rs/developing/crdbs/strings/#counters)
+  Sets               Supported, [see detailed information](/rs/developing/crdbs/developing-sets-crdb/)
+  Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information](/rs/developing/crdbs/developing-hashes-crdb/).
+  Lists              [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](/rs/developing-lists-crdb/)
+  Sorted Sets        [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}](/rs/developing-sorted-sets-crdb/)
   Bitsets            Not currently supported
   ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

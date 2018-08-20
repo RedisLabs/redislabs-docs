@@ -20,13 +20,13 @@ limit. You can select any of the following:
 
 One mechanism to avoid this, but still keep performance is to use [Redis
 on
-Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-enterprise-flash/).
+Flash](/rs/concepts/memory-architecture/redis-enterprise-flash/).
 It can span your database across RAM + Flash Memory and intelligently
 manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).
 
 Note: [Geo-Replicated
-CRDBs](/redis-enterprise-documentation/administering/intercluster-replication/crdbs/)
+CRDBs](/rs/administering/intercluster-replication/crdbs/)
 will always operate in noeviction mode.
 
  

@@ -5,14 +5,14 @@ weight: $weight
 alwaysopen: false
 ---
 -   [Creating a
-    Subscription](/redis-cloud-documentation/administration/setup-and-editing/create-subscription/)
+    Subscription](/rc/administration/setup-and-editing/create-subscription/)
 -   [Viewing a
-    Subscription](/redis-cloud-documentation/administration/setup-and-editing/viewing-subscription/)
+    Subscription](/rc/administration/setup-and-editing/viewing-subscription/)
 -   [Changing Subscription
-    Plans](/redis-cloud-documentation/administration/setup-and-editing/changing-subscription-plan/)
+    Plans](/rc/administration/setup-and-editing/changing-subscription-plan/)
 -   [Creating a
-    Database](/redis-cloud-documentation/administration/setup-and-editing/creating-databases/)
+    Database](/rc/administration/setup-and-editing/creating-databases/)
 -   [Viewing and Editing
-    Databases](/redis-cloud-documentation/administration/setup-and-editing/viewing-editing-database/)
+    Databases](/rc/administration/setup-and-editing/viewing-editing-database/)
 -   [Deleting
-    Databases](/redis-cloud-documentation/administration/setup-and-editing/delete-databases/)
+    Databases](/rc/administration/setup-and-editing/delete-databases/)

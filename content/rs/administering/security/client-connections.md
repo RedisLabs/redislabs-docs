@@ -23,7 +23,7 @@ certificates. These certificates can be replaced with your own
 certificate, preferably a certificate issued by an intermediate
 certificate authority (CA). For additional details, refer to [Updating
 SSL/TLS
-certificates](/redis-enterprise-documentation/administering/cluster-operations/updating-certificates/).
+certificates](/rs/administering/cluster-operations/updating-certificates/).
 
 ### Configuration of the database
 
@@ -129,7 +129,7 @@ certificates, and a self-signed certificate on the client machine.
     The certificates are saved in a file named proxy\_cert.pem, which is
     stored in /etc/opt/redislabs in each node. For additional details,
     refer to [Updating SSL/TLS
-    certificates](/redis-enterprise-documentation/administering/cluster-operations/updating-certificates/).
+    certificates](/rs/administering/cluster-operations/updating-certificates/).
 4.  Rename the certificate files fetched from the RS nodes as
     certsvr.pem. For example: certsvr1.pem, certsvr2.pem.
 5.  Create a single file for all of the server certificates on the

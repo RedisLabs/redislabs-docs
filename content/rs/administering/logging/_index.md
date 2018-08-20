@@ -31,5 +31,5 @@ If you need to look at the audit log of what a user on the cluster has
 done, e.g. edited a DB configuration, this is where you could look.
 
 -   [Redis slow
-    log](/redis-enterprise-documentation/administering/logging/redis-slow-log/)
--   [rsyslog logging](/redis-enterprise-documentation/administering/logging/rsyslog-logging/)
+    log](/rs/administering/logging/redis-slow-log/)
+-   [rsyslog logging](/rs/administering/logging/rsyslog-logging/)

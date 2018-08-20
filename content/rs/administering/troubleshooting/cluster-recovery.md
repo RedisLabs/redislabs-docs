@@ -19,14 +19,14 @@ steps:
 3.  Recovering the databases, and recovering their data if data
     persistence was configured (for additional details, refer to
     [Database
-    persistence](/redis-enterprise-documentation/database-configuration/database-persistence)).
+    persistence](/rs/database-configuration/database-persistence)).
 
 The cluster recovery process is carried out by using the cluster
 configuration backup files and database persistence files that are
 created by the cluster. These files are stored in the persistence
 storage location (for additional details, refer to [Persistent and
 ephemeral
-storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
+storage](/rs/administering/designing-production/persistent-ephemeral-storage/)).
 
 Prerequisites:
 
@@ -40,7 +40,7 @@ Prerequisites:
 -   The new nodes must run the **exact same RS version as was running on
     the old nodes** (for additional details, refer to [Accessing and
     installing the setup
-    package](/redis-enterprise-documentation/administering/installing-upgrading/downloading-installing/)).
+    package](/rs/administering/installing-upgrading/downloading-installing/)).
     The cluster recovery may fail unless the same RS version is
     installed on the new nodes.
 -   The persistent storage drives of the old cluster nodes must be
@@ -61,7 +61,7 @@ Prerequisites:
 The recovery process is carried out from the rladmin command-line
 interface (for additional details, refer to [rladmin command-line
 interface
-(CLI)](/redis-enterprise-documentation/references/cli-reference/rladmin/)).
+(CLI)](/rs/references/cli-reference/rladmin/)).
 
 ### Recovering the cluster configuration into the first node
 
@@ -81,14 +81,14 @@ The command has the following parameters:
 2.  persistent\_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
-    storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
+    storage](/rs/administering/designing-production/persistent-ephemeral-storage/)).
 3.  ephemeral\_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
-    storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
+    storage](/rs/administering/designing-production/persistent-ephemeral-storage/)).
 4.  rack\_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
-    awareness](/redis-enterprise-documentation/rack-zone-awareness)),
+    awareness](/rs/rack-zone-awareness)),
     you can use this parameter to override the rack ID value that was
     set for the node with ID 1, with a new rack ID. Otherwise, the node
     will get the same rack ID as the original node.
@@ -110,7 +110,7 @@ parameters:
 
 1.  name - mandatory. The name of the cluster this node is joining (for
     additional details, refer to [How to set the cluster
-    name](/redis-enterprise-documentation/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
+    name](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
     (FQDN)). Alternatively, the nodes parameter can be used.
 2.  nodes - mandatory. The IP address of a node in the cluster this
     node is joining. Alternatively, the name parameter can be used.
@@ -123,14 +123,14 @@ parameters:
 6.  persistent\_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
-    storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
+    storage](/rs/administering/designing-production/persistent-ephemeral-storage/)).
 7.  ephemeral\_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
-    storage](/redis-enterprise-documentation/administering/designing-production/persistent-ephemeral-storage/)).
+    storage](/rs/administering/designing-production/persistent-ephemeral-storage/)).
 8.  rack\_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
-    awareness](/redis-enterprise-documentation/rack-zone-awareness)),
+    awareness](/rs/rack-zone-awareness)),
     use this parameter to set the rack ID to be the same as the rack ID
     of the old node. You can also change the value of the rack ID by
     providing a different value and using the override\_rack\_id flag.
@@ -142,7 +142,7 @@ nodes are now active, and the databases are pending recovery.
 
 **Note**: Remember to update the DNS records with the new nodes' IP
 addresses. For additional details, refer to
-[DNS](/redis-enterprise-documentation/initial-setup-creating-a-new-cluster/how-to-set-the-cluster-name-fqdn).
+[DNS](/rs/initial-setup-creating-a-new-cluster/how-to-set-the-cluster-name-fqdn).
 
 ### Recovering the databases
 

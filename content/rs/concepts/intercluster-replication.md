@@ -78,7 +78,7 @@ t6
 [SET key1 "d"]{style="font-family: courier;"}
 
 [Learn more about
-synchronization](/redis-enterprise-documentation/developing/crdbs/) for
+synchronization](/rs/developing/crdbs/) for
 each supported data type and how to develop with them on RES.
 
 ## Terminology
