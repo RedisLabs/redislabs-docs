@@ -39,7 +39,7 @@ For a new subscription, you will need to provide the following:
 1.  A subscription name
 2.  The cloud region you want your databases to be created in AWS
 3.  Whether you want to use [Redis on
-    Flash](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-flash/)
+    Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-flash/)
     or pure RAM Redis database
 4.  The Cloud Account to be used. Use the AWS user created above in Step
     #2 for setting up your RV Cloud Account

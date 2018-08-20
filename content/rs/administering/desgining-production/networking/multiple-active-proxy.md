@@ -94,7 +94,7 @@ A database can have one of two shard placement policies:
   ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 See [Shard
-Placement](/redis-enterprise-documentation/concepts-architecture/rebalancing-shard-placement/),
+Placement](/redis-enterprise-documentation/concepts/rebalancing-shard-placement/),
 for more information.
 
 ## Database configuration

@@ -95,7 +95,7 @@ in the cluster without human intervention. RS technology is capable of
 automatically handling node failures, Redis failures, and proxy
 failures. Auto-failover is carried out within a few seconds. [Learn more
 about High
-Availability](/redis-enterprise-documentation/concepts-architecture/high-availability/)
+Availability](/redis-enterprise-documentation/concepts/high-availability/)
 in RS.\
 
 ### Built-in data persistence, backups, and replication

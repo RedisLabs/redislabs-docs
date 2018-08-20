@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 ---
 The steps to set up a Redis Enterprise Software cluster using [Redis on
-Flash](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-enterprise-flash/)
+Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-enterprise-flash/)
 with a single node are simple and are as follows:
 
 -   Step 1: Install Redis Enterprise Software or launch with Docker
@@ -167,4 +167,4 @@ help. However please note that to see the true performance and scale of
 Redis on Flash, you will need to tune your IO path and have the flash
 path set to the mounted path of SSD or NVMe flash memory as that is what
 it is designed to run on. For more information, see [Redis on
-Flash](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-enterprise-flash/).
+Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-enterprise-flash/).

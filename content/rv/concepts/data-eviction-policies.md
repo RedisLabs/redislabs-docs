@@ -18,7 +18,7 @@ policies:
 
 One mechanism to avoid this, but still keep performance is to use [Redis
 on
-Flash](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-flash/).
+Flash](/redis-enterprise-documentation/concepts/memory-architecture/redis-flash/).
 It can span your database across RAM + Flash Memory and intelligently
 manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).

@@ -55,7 +55,7 @@ For a new subscription, you will need to provide the following:
     zones.
 5.  Select whether you want the subscription to support databases with
     the ability to span RAM only or [RAM + Flash
-    Memory](https://redislabs.com/redis-enterprise-documentation/concepts-architecture/concepts/redis-e-flash/).
+    Memory](https://redislabs.com/redis-enterprise-documentation/concepts/concepts/redis-e-flash/).
 6.  Select an existing or [Create a new Cloud
     Account](/redis-cloud-private-documentation/administration/setup-and-editing/creating-cloud-account/)
     for RV to use.

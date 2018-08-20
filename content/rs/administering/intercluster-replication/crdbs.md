@@ -33,7 +33,7 @@ Before configuring a CRDB, you will need:
     documentation](/redis-enterprise-documentation/administering/cluster-operations/new-cluster-setup/)
     and configured to utilize FQDNs via DNS for connections to the
     cluster. CRDBs are not compatible with the [Discovery
-    Service](/redis-enterprise-documentation/concepts-architecture/concepts/discovery-service/)for
+    Service](/redis-enterprise-documentation/concepts/concepts/discovery-service/)for
     inter-cluster communications, but are compatible with local
     application connections.
 -   Configure the network so that all nodes in each cluster are able to
@@ -110,7 +110,7 @@ The use of [DNS and
 FQDNs](/redis-enterprise-documentation/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
 (Fully Qualified Domain Names) is required as MMR is not compatible with
 the [Discovery
-Service](/redis-enterprise-documentation/concepts-architecture/concepts/discovery-service/)
+Service](/redis-enterprise-documentation/concepts/concepts/discovery-service/)
 for connections. FQDNs must be set up for each cluster per the [regular
 Redis Enterprise Software cluster
 configuration](/redis-enterprise-documentation/administering/cluster-operations/)

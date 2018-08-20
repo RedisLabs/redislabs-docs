@@ -6,7 +6,7 @@ alwaysopen: false
 ---
 DNS is critical to the default operation of Redis Enterprise Software
 (RS) deployments. This can be altered, but instead using the [Discovery
-Service](/redis-enterprise-documentation/concepts-architecture/concepts/discovery-service/),
+Service](/redis-enterprise-documentation/concepts/concepts/discovery-service/),
 which utilizes pure IP based connectivity as it is compliant with the
 Redis Sentinel API.
 
@@ -142,7 +142,7 @@ to the admin console and manage the cluster.
 Applications connecting to RS databases for data access have the same
 constraints. When using the IP based connection method, you can use the
 [Discovery
-Service](/redis-enterprise-documentation/concepts-architecture/concepts/discovery-service/)
+Service](/redis-enterprise-documentation/concepts/concepts/discovery-service/)
 to discover the database endpoint for a given database name as long as
 you have an IP address for at least one of the nodes in the cluster. The
 API used for discovery service is compliant with the Redis Sentinel API.
