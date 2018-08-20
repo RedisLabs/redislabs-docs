@@ -2,7 +2,7 @@
 title: Markdown Cheatsheet
 description: Syntax instructions for markdown formatting
 favorite_food: ice cream
-draft: true
+draft: false
 ---
 # Tabbed paragraphs
 
@@ -42,9 +42,9 @@ HTML: *I love {{< field "favorite_food" >}}!*
 
 * To link to an anchor on another page in the content directory:
 
-    `[The manager installation instructions]({{</* relref "install_maintain/installation/installing-manager.md#installing-cloudify-manager" */>}})`
+    `[The manager installation instructions]({{</* relref "install_maintain/installation/installing-manager.md#installing-manager" */>}})`
 
-    For example: [The manager installation instructions]({{< relref "install_maintain/installation/installing-manager.md#installing-cloudify-manager" >}})
+    For example: [The manager installation instructions]({{< relref "install_maintain/installation/installing-manager.md#installing-manager" >}})
 
 # Text Formatting
 
@@ -104,14 +104,14 @@ def hello_world():
 `![Alt text]( /images/path/image.png )
 `
 
-For example, `![Building with Cloudify]( /images/cfy_complex.png )` shows:
+For example, `![Building]( /images/cfy_complex.png )` shows:
 
-![Building with Cloudify]( /images/cfy_complex.png )
+![Building]( /images/cfy_complex.png )
 
 To make an image appear on the next line in a list:
 
 1. Write your instruction.
-1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
+2. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
     ![The blueprint upload button]( /images/manager/ui_upload_blueprint_button.png )
 
 # Panels
