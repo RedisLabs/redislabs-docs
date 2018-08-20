@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Pre-requisites
---------------
+## Prerequisites
 
 -   Two or more Redis Enterprise Software clusters running version 5.0,
     each with minimum of two nodes
@@ -14,8 +13,7 @@ Pre-requisites
     configured and running on each node in all clusters. Please see
     "Network Time Service" for more information.
 
-Creating a CRDB
----------------
+## Creating a CRDB
 
 CRDBs span multiple Redis Enterprise Software (RS) clusters. Overview of
 the steps to create a CRDB:
@@ -26,8 +24,7 @@ the steps to create a CRDB:
 4.  Test writing to one cluster
 5.  Test reading from a different cluster
 
-Create a Service Account
-------------------------
+## Create a Service Account
 
 A local account with the Admin role is highly recommended on each
 cluster that will host a CRDB. While you could use a user account, it is

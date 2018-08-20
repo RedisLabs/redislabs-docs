@@ -10,8 +10,7 @@ You can view the Redis Enterprise Software subscription agreement
 PDF in the link above and look for details under "Exhibit A - Support
 Policy", Section \#9.
 
-Release numbering
------------------
+## Release numbering
 
 Redis Labs uses a four-place numbering scheme to designate released
 versions of its products. The format is "Major1.Major2.Minor-Build"
@@ -30,8 +29,7 @@ versions of its products. The format is "Major1.Major2.Minor-Build"
 Redis Enterprise Software typically gets one major and one minor release
 every year but the product ship cycles may vary.
 
-End-of-Life Schedule
---------------------
+## End-of-Life Schedule
 
 End-of-Life for a given release occurs eighteen (18) months after the
 formal release of that version.

@@ -66,8 +66,7 @@ RediSearch: "arabic", "danish", "dutch", "english", "finnish", "french",
 The index specifically supports auto-complete engines with specific
 commands that can provide real-time interactive search suggestions.
 
-RediSearch Index
-----------------
+## RediSearch Index
 
 The fundamental part of any search engine is what's called an Inverted
 Index. In very simple terms, a search index is a map between words or
@@ -93,8 +92,7 @@ has its limitations: it doesn't support exact phrase search, it has a
 big memory overhead, and can be very slow with big records
 intersections.
 
-Storing Documents
------------------
+## Storing Documents
 
 The RediSearch engine indexes "documents", which are a list of
 field-value pairs. The index knows how to index each field, but that's
@@ -115,8 +113,7 @@ document, and you can even use the Redis database as a search index for
 another database. In that case, you simply tell Redis not to store the
 data by adding the NOSAVE modifier to the indexing command.
 
-Configuring
------------
+## Configuring
 
 ### Partitioning and Shards In Regards to RediSearch Enterprise
 
@@ -151,8 +148,7 @@ For other configurations, please see the [RediSearch site on
 configuring](http://redisearch.io/Configuring/). To change these, please
 use the settings icon and add configurations there.
 
-RediSearch Commands
--------------------
+## RediSearch Commands
 
 For the authoritative list of RediSearch commands, please go
 [here](http://redisearch.io/).

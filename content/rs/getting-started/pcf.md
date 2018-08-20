@@ -9,8 +9,7 @@ plans on the Marketplace. Developers can provision highly available and
 scalable Redis databases by creating instances of the service plans
 using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI).
 
-[]{#install}Installation and Configuration
-------------------------------------------
+## Installation and Configuration
 
 ### Step 1 - Import the Redis Enterprise Software Tile
 

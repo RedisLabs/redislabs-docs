@@ -17,8 +17,7 @@ creating it, even outside of this range, the cluster will only verify
 that the assigned port is not already in use. You will have to manually
 update your firewall with the port for that new database endpoint.
 
-List of ports and port ranges used by Redis Enterprise Software
----------------------------------------------------------------
+## List of ports and port ranges used by Redis Enterprise Software
 
   Port                                                     Description                                                                                                                                        Protocol
   -------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------- -----------
@@ -33,8 +32,7 @@ List of ports and port ranges used by Redis Enterprise Software
   10000-19999                                              Used for exposing databases externally                                                                                                              TCP
   20000-29999                                              Used for internal communications with database shards                                                                                               TCP
 
-Changing the Management Web UI Port
------------------------------------
+## Changing the Management Web UI Port
 
 Note: This only applies to RS 5.0
 

@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-What is a Subscription?
------------------------
+## What is a Subscription?
 
 A Redis Enterprise VPC (RV) subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural
@@ -24,8 +23,7 @@ Pre-requisites
     VPC](https://redislabs.com/redis-cloud-private-documentation/how-to/creating-aws-user-redis-cloud-private/)"
     for help creating this user and the necessary roles, policies, etc.
 
-Create a New Subscription
--------------------------
+## Create a New Subscription
 
 Creating a subscription is a four-step process:
 
@@ -152,8 +150,7 @@ groups on your application account and RV account.
 For more information and pricing, please go
 [here](https://redislabs.com/pricing/redis-cloud-private/).
 
-Viewing Subscriptions
----------------------
+## Viewing Subscriptions
 
 To view the details of a subscription click "Subscriptions" in the menu,
 and then click on the name of the Subscription you wish to view.

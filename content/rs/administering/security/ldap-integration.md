@@ -28,8 +28,7 @@ sending and receiving data in the clear. You should use only a trusted
 network such as a VPN, a connection encrypted with TLS v1.2, or some
 other trusted network.
 
-Configuring the saslauthd Service
----------------------------------
+## Configuring the saslauthd Service
 
 saslauthd is a process that handles authentication requests to support
 Redis Enterprise Software while the LDAP protocol is utilized to connect

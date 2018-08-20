@@ -14,8 +14,7 @@ memory](/redis-enterprise-documentation/concepts-architecture/memory-architectur
 for best functionality and performance in the section below. The formal
 recommendation is to disable Linux swap completely in the OS.
 
-Disabling Swap
---------------
+## Disabling Swap
 
 To disable the swap in the OS of an existing server/VM/instance, you
 must have sudo access or be root to run the following command:

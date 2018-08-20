@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Node
-----
+## Node
 
 A node is a physical machine, virtual machine, container or cloud
 instance on which the RS installation package was installed and the
@@ -23,8 +22,7 @@ which helps to achieve high availability.
 A node is made up of several components, as detailed below, and works
 together with the other cluster nodes.
 
-Redis Instance - Shard
------------------------
+## Redis Instance - Shard
 
 As indicated above, each node serves as a container for hosting multiple
 database instances, referred to as "shards".
@@ -47,8 +45,7 @@ RS supports various database configurations:
     in the clustered database has a slave shard, enabling failover if
     the master shard fails.
 
-Proxy
------
+## Proxy
 
 Each node includes one or more zero-latency multi-threaded proxies
 (written in low-level C) that mask the underlying system complexity. The
@@ -62,8 +59,7 @@ and employs various optimization methods. For example, to help ensure
 high-throughput and low-latency performance, the proxy might use
 instruction pipelining even if not instructed to do so by the client.
 
-Database endpoint
------------------
+## Database endpoint
 
 Each database is served by a database endpoint that is part of and
 managed by the proxies. The endpoint oversees forwarding Redis
@@ -88,8 +84,7 @@ In the case of a clustered database with multiple database shards, only
 one master endpoint acts as the master endpoint for all master shards,
 forwarding Redis operations to all shards as needed.
 
-Cluster manager
----------------
+## Cluster manager
 
 The cluster manager oversees all node management-related tasks, and the
 cluster manager in the master node looks after all the cluster related
@@ -118,16 +113,14 @@ Some of the primary functionalities of the cluster manager include:
 -   Gathering operational statistics
 -   Enforcing license and subscription limitations
 
-Management UI
--------------
+## Management UI
 
 Each node runs a web server that is used to provide the user with access
 to the management user interface (UI). The management UI allows viewing
 and managing the entire cluster, so it does not matter which node is
 used for accessing the UI.
 
-REST API
---------
+## REST API
 
 Each node exposes a REST API to the cluster. Using the REST API, you can
 automate various tasks that are managed through the management UI. For

@@ -32,8 +32,7 @@ Redis client. This allows applications to benefit from using the
 database clustering without performing any code changes, even if they
 were not designed beforehand to use it.
 
-Abbreviations
--------------
+## Abbreviations
 
 [Tag / Hash Tag]{.observation}\
 A part of the key that is used in the hash calculation.
@@ -44,8 +43,7 @@ The result of the hash calculation.
 [Shard]{.observation}\
 Redis process that is part of the Redis clustered database.
 
-When to use sharding
---------------------
+## When to use sharding
 
 Sharding the keyspace is an efficient way of scaling Redis that should
 be employed when:
@@ -58,8 +56,7 @@ be employed when:
     manage the database's shards, the load of operations is distributed
     among them.
 
-Number of shards
-----------------
+## Number of shards
 
 When enabling database clustering you can set the number of database
 shards. The minimum number of shards per database is 2 and the maximum
@@ -76,8 +73,7 @@ RediSearch Enterprise enabled database, you must create a new database
 at the new required size and replicate the current database to the new
 one.
 
-Supported sharding policies
----------------------------
+## Supported sharding policies
 
 ### Standard hashing policy
 
@@ -140,8 +136,7 @@ their order to suit your application's requirements.
     PCRE\_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 
-Changing the sharding policy
-----------------------------
+## Changing the sharding policy
 
 The sharding policy of a clustered database can be changed. However,
 most sharding policy changes trigger the deletion (i.e., FLUSHDB) of the
@@ -159,8 +154,7 @@ Examples of such changes include:
 or require flushing the database, is to back up the database and import
 the data to a newly configured database.
 
-Multi-Key operations
---------------------
+## Multi-Key operations
 
 Operations on multiple keys in a clustered database are supported with
 the following limitations:

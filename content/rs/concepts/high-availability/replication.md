@@ -21,8 +21,7 @@ awareness](/redis-enterprise-documentation/rack-zone-awareness).
 size, as explained in [Database memory
 limit](/redis-enterprise-documentation/database-configuration/database-memory-limit).
 
-Redis on Flash Replication Considerations
------------------------------------------
+## Redis on Flash Replication Considerations
 
 We recommend that you set the sequential replication feature using
 rladmin. This is due to the potential for relatively slow replication

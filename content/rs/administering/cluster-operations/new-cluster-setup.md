@@ -21,8 +21,9 @@ to the cluster (for additional details, refer to [Joining a new node to
 a
 cluster](/redis-enterprise-documentation/cluster-administration/joining-a-new-node-to-a-cluster)).
 
+## Creating a cluster
+
 To create a cluster:
---------------------
 
 1.  In a browser, navigate to https://\<name or IP address of a machine
     on which you installed the package\>:8443. For example, if you

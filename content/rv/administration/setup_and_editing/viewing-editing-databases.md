@@ -27,8 +27,7 @@ To Edit a database, click on the pencil icon.
 
 ![](/images/rv/view_database2.png?width=600&height=338)
 
-Edit a Database
----------------
+## Edit a Database
 
 From the "View Database" page of the database you wish to edit, click on
 the pencil icon to edit the database. This view allows you to edit the

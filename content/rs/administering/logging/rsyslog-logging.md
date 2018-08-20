@@ -4,15 +4,13 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Overview
---------
+## Overview
 
 This document explains the structure of Redis Enterprise Software (RS)
 log entries that go into rsyslog and how to use these log entries to
 identify events.
 
-Logging concepts
-----------------
+## Logging concepts
 
 RS adds to the log different log entries, from various cluster
 components, for various events and actions that take place in the
@@ -321,8 +319,7 @@ false,"time":1434365471,"disk":705667072,"type":
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below
 
-Mapping UI events and alerts to log entries
--------------------------------------------
+## Mapping UI events and alerts to log entries
 
 ### Cluster / Node related events
 

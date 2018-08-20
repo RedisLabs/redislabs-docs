@@ -13,8 +13,7 @@ it at all.
 **Note:** If you have a Multi-AZ subscription in Redis Enterprise Cloud,
 you do not need to perform AWS Zone Mapping.
 
-Why Do Zone Mapping?
---------------------
+## Why Do Zone Mapping?
 
 As you probably know, AWS operates regions across the world and
 Availability Zones (AZ) inside each region where they host the [Amazon
@@ -34,8 +33,7 @@ with our AZ. This will allow us to make sure your app and database will
 be co-located on the same physical AZ and by that reducing unnecessary
 latency.
 
-How to MAP Zones
-----------------
+## How to MAP Zones
 
 1.  [Log in](https://app.redislabs.com/#/login) to your RC account
 2.  Navigate to **Settings** page from the menu and then the **Account**
@@ -74,8 +72,7 @@ option, [please contact
 support](mailto:support@redislabs.com?Subject=Zero%20Downtime%20DB%20Migration)
 for further assistance.
 
-Unprivileged user creation
---------------------------
+## Unprivileged user creation
 
 RC requires an AWS IAM user to perform the zone mapping as. It is
 recommended to create a new and restricted account for security reasons.

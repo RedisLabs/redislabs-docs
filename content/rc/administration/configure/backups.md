@@ -14,8 +14,7 @@ Note: Backups are only available for paid plans. If you are free plan
 user, you must upgrade your subscription to a paid plan (zero downtime)
 in order to utilize this feature.
 
-Amazon Simple Storage Service (AWS S3)
---------------------------------------
+## Amazon Simple Storage Service (AWS S3)
 
 To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
@@ -56,8 +55,7 @@ name is *backups-bucket*, you should use the following path:
 
 `s3://backups-bucket`
 
-Google Cloud Storage (GCS)
---------------------------
+## Google Cloud Storage (GCS)
 
 There are two ways to backup to Google Cloud Storage and which you use
 depends on the Redis version your database has in Redis^e^ Cloud. To
@@ -129,8 +127,7 @@ bucket's name is backups-bucket, you should use the following path:
 Note: Backup to GCS locations is only available for Google Cloud
 Platform subscriptions.
 
-Azure Blob Storage (ABS)
-------------------------
+## Azure Blob Storage (ABS)
 
 To use an ABS container for storing your resources' backups, follow
 these steps in your [Microsoft Azure Management
@@ -167,8 +164,7 @@ Where:
 -   *container\_name:* the name of the container, if needed.
 -   *path*: the backups path, if needed.
 
-FTP Server
-----------
+## FTP Server
 
 To store your resource backups on an FTP server, set its **Backup Path**
 using the following syntax:

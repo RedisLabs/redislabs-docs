@@ -21,8 +21,7 @@ CLI:
 -   Upgrade the version of a database to the most current version
     supported by the cluster.
 
-Accessing the rladmin CLI
--------------------------
+## Accessing the rladmin CLI
 
 To open the *rladmin* CLI:
 
@@ -39,8 +38,7 @@ To open the *rladmin* CLI:
 
 4.  A message confirms that you are now running rladmin.
 
-rladmin features
-----------------
+## rladmin features
 
 In the rladmin CLI you can:
 

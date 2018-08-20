@@ -22,8 +22,7 @@ Enterprise Software (RS). There are two types
 Once you have acquired the package (it will be in zip format) proceed to
 the next step of adding the module to Redis Enterprise Software.
 
-Add Module to the Cluster
--------------------------
+## Add Module to the Cluster
 
 1.  Log into the Redis Enterprise Software web UI
 2.  Navigate to the **settings** -\> **redis^e^ modules**

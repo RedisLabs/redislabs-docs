@@ -17,8 +17,9 @@ There are two types of Redis databases that can be created in RS.
     which is used to create a Geo-Distributed Active-Active Redis
     database.
 
+## Creating a new database in the UI
+
 To create a new database in the UI:
------------------------------------
 
 1.  On the **Databases** page, click the + (plus) sign below the table.\
     The buttons of the various database types that can be created will
@@ -139,8 +140,7 @@ There are a few simple ways to check connectivity to your database:
 -   Redis\_cli
 -   Using a simple application
 
-Testing Database Connectivity with Telnet
------------------------------------------
+## Testing Database Connectivity with Telnet
 
 As a quick smoke test, telnet to your endpoint and port for the database
 you wish to test. Then do the redis PING command.
@@ -158,8 +158,7 @@ PING
 +PONG
 ```
 
-Testing Database Connectivity with redis-cli
---------------------------------------------
+## Testing Database Connectivity with redis-cli
 
 You can find redis-cli utility on each node in Redis Enterprise Software
 cluster with the rest of the utilities. For information about directory
@@ -175,8 +174,7 @@ redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
 ```
 
-Testing Database Connectivity with Simple Application
------------------------------------------------------
+## Testing Database Connectivity with Simple Application
 
 You can also use a simple application to test connectivity to your
 database. The following section details a simple IP based connection

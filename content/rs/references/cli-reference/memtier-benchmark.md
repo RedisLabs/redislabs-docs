@@ -18,8 +18,7 @@ Note: memtier\_benchmark is included with Redis Enterprise Software in
 RS, [memtier\_benchmark is avialable on
 GitHub](https://github.com/RedisLabs/memtier_benchmark).
 
-Benchmark and Performance Test Considerations
----------------------------------------------
+## Benchmark and Performance Test Considerations
 
 This page focuses on how to configure a Redis Enterprise Software
 cluster with the trial version and use memtier\_benchmark to evaluate
@@ -42,8 +41,7 @@ Redis shards with multiple combinations of databases, such as:
 -   One highly available and clustered database with two master shards
     and two slave shards
 
-Test Environment and RS Cluster Setup
--------------------------------------
+## Test Environment and RS Cluster Setup
 
 For the test environment, there are three required tasks:
 
@@ -77,15 +75,13 @@ to host the database on. So if you are going to do this in another
 environment (e.g. on-premise), you need to have NVMe SSDs to see the
 performance benefits of RoF.
 
-Preparing the Flash Memory
---------------------------
+## Preparing the Flash Memory
 
 The flash memory that is attached to the i3.2xlarge instances in AWS
 needs to be prepared and formatted by using the
 /opt/redislabs/sbin/prepare\_flash.sh once RS is installed on a node.
 
-Setting up the load generation tool
------------------------------------
+## Setting up the load generation tool
 
 The memtier\_benchmark load generator tool, which is part of the RS
 installation package, will be used to generate the load on the RoF
@@ -98,8 +94,7 @@ tool itself.
 For these tests, an AWS c4.8xlarge instance type was selected for load
 generation.Database Configuration Parameters
 
-Database Configuration Parameters
----------------------------------
+## Database Configuration Parameters
 
 ### Create a 'Redis DB Flash' test database
 
@@ -179,8 +174,7 @@ Default
 
 Please keep the default values for the other configuration parameters.
 
-Data Population
----------------
+## Data Population
 
 ### Populate the benchmark dataset
 
@@ -227,8 +221,7 @@ Number of items\
 
 500 Bytes
 
-Centralize around the median of the keyspace
---------------------------------------------
+## Centralize around the median of the keyspace
 
 In the case of a highly available clustered database with 75 million
 items, we run the below memtier\_benchmark command. This will result in
@@ -256,8 +249,7 @@ $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-pattern=P:P --ratio=0:1
 ```
 
-Test Runs
----------
+## Test Runs
 
 ### Generate load
 
@@ -303,8 +295,7 @@ Important test parameters are:
   (-t) and number of clients per thread (-c)                             
   ---------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Test Results
-------------
+## Test Results
 
 ### Monitor the test results
 

@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-4.3.0-230 - August 2, 2016
----------------------------
+## 4.3.0-230 - August 2, 2016
 
 ### Overview
 

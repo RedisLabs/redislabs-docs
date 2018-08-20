@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-What is a Cloud Account?
-------------------------
+## What is a Cloud Account?
 
 A RV Cloud Account contains all necessary credentials and information
 for an account with your cloud provider. This Cloud Account enables RV
@@ -15,8 +14,7 @@ behalf.
 Once a Cloud Account is set up you can reuse it with several
 subscriptions.
 
-Create a new Cloud Account
---------------------------
+## Create a new Cloud Account
 
 To create a RV Cloud Account, please select **Cloud Accounts** from the
 right side menu. Please follow [our

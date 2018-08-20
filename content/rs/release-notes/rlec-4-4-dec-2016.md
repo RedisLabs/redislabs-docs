@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Overview
---------
+## Overview
 
 If you are upgrading from a previous version, make sure to review the
 [upgrade
@@ -16,8 +15,7 @@ You can upgrade to this version from any 4.3 version. If you have a
 version older than 4.3 you must first upgrade to 4.3 and only then
 upgrade to this version.
 
-New features
-------------
+## New features
 
 -   Databases can now be configured to have multiple proxies for
     improved performance. Note that when you upgrade the cluster to this
@@ -44,8 +42,7 @@ New features
 -   Users can now be assigned security roles to control what level of
     the databases or cluster the users can view and/or edit.
 
-Changes
--------
+## Changes
 
 -   As result of adding the support for multiple proxies for a database,
     the following changes have been made:
@@ -74,8 +71,7 @@ Changes
     information see [Disabling Swap in
     Linux](/redis-enterprise-documentation/installing-and-upgrading/configuring-linux-swap/).
 
-Important fixed issues since 4.3.0
-----------------------------------
+## Important fixed issues since 4.3.0
 
 -   RLEC-7542 - Add ability to create and manage role based user
     security
@@ -141,8 +137,7 @@ Changes in 4.4.2 - 49
 -   RLEC-12647 - Backup to S3 with periods in bucket name are failing
     in some cases
 
-Known issues
-------------
+## Known issues
 
 -   **Issue:** When upgrading to this version from a previous RLEC
     version, **rladmin status** output will show the database status as

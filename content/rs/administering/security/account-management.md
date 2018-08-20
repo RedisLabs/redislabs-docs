@@ -7,8 +7,7 @@ alwaysopen: false
 You can view and update the cluster users in the** **cluster's
 **Settings \> team** page.
 
-User Roles
-----------
+## User Roles
 
 In Redis Enterprise Software 4.4 and above, administrative user roles as
 part of Role Based Access Control (RBAC) are now supported.
@@ -84,8 +83,7 @@ All roles apply to both the UI and API levels.
 You can assign users with these roles through Settings -\> team page in
 the UI or through the users API.
 
-Adding a User
--------------
+## Adding a User
 
 **To add a user:**
 
@@ -97,16 +95,14 @@ Adding a User
 
 ![](/images/rs/useradd-300x101.png)
 
-Updating a User
----------------
+## Updating a User
 
 **To update a user:**
 
 1.  Click the **Edit** icon at the far right of the user row.
 2.  Edit the user details or delete the user.
 
-Creating users for use with LDAP authentication
------------------------------------------------
+## Creating users for use with LDAP authentication
 
 To have a user authenticate with LDAP, you must have [LDAP integration
 enabled](/redis-enterprise-documentation/administering/cluster-operations/settings/ldap-integration/),

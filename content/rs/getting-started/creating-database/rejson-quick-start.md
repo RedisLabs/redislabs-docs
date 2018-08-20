@@ -21,8 +21,7 @@ For this quick start, you will need the following:
 4.  Click **Show advanced options** and put **12543** for the port.
 5.  Click the **Activate** button
 
-Quick start with redis-cli
---------------------------
+## Quick start with redis-cli
 
 These examples will use redis-cli as the Redis client to show how easy
 it is. The first ReJSON command to try out is JSON.SET, which sets a

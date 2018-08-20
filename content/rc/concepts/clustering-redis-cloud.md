@@ -43,8 +43,7 @@ if they were not designed to use it beforehand.
 
 ![](/images/rc/subscription-selection-2.png?width=600&height=221)
 
-Multi-Key Operations
---------------------
+## Multi-Key Operations
 
 Operations on multiple keys in a sharded Redis Enterprise Cloud cluster
 are supported with the following limitations:
@@ -70,8 +69,7 @@ are supported with the following limitations:
     and pipelining are supported with Redis Enterprise Cloud cluster
     like if it were a non-cluster DB.
 
-Changing the Sharding Policy
-----------------------------
+## Changing the Sharding Policy
 
 The clustering configuration of a Redis Enterprise Cloud instance can be
 changed. However, sharding policy changes will trigger the deletion

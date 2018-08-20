@@ -7,8 +7,7 @@ alwaysopen: false
 You can view and set various cluster settings in the "**Settings \>
 General**" page.
 
-Entering a Cluster Key
-----------------------
+## Entering a Cluster Key
 
 After purchasing a cluster key and if your account has the "Admin" role,
 you can enter the key in the Cluster Key field, either during initial
@@ -17,28 +16,24 @@ cluster settings, such as the maximum number of shards you can have in
 the cluster. For more detailed information see [Cluster License
 Keys](/redis-enterprise-documentation/cluster-administration/viewing-and-defining-cluster-settings/cluster-license-keys/).
 
-Viewing the maximum number of allowed shards
---------------------------------------------
+## Viewing the maximum number of allowed shards
 
 The maximum number of allowed shards, which is determined by the Cluster
 Key, appears in the **Max number of shards** field.
 
-Viewing the cluster name
-------------------------
+## Viewing the cluster name
 
 The cluster name appears in the **Cluster name** field. This gives a
 common name that your team or Redis Labs support can refer to. It is
 especially helpful if you have multiple clusters.
 
-Setting your time zone
-----------------------
+## Setting your time zone
 
 You can set your time zone in the **Timezone** field. This is
 recommended in order to ensure that the date, time fields, and log
 entries are displayed in your preferred time zone.
 
-Configuring email server settings
----------------------------------
+## Configuring email server settings
 
 To enable receiving alerts by email, fill in the details for your email
 server in the email server settings section and select the requested

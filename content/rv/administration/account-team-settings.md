@@ -15,8 +15,7 @@ Certificate from this page.
 
 ![](/images/rv/settings.png?width=1000&height=782)
 
-Team Management
----------------
+## Team Management
 
 To manage the team of people who have access to the account, click on
 the "Team" tab and you will be presented with the current list of team

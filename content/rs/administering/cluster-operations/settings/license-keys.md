@@ -9,8 +9,7 @@ Enterprise Software. A key can be added, or updated at any time in a
 cluster's life cycle. The absence of a key means the cluster is in trial
 mode.
 
-Trial Mode
-----------
+## Trial Mode
 
 A cluster without a key is running in trial mode. Trial mode is limited
 to thirty days and a total of four shards, including master and slave
@@ -19,8 +18,7 @@ the cluster setup was done (with the first cluster node provisioned).
 This mode allows all features to be enabled, including Redis^e^ Flash,
 during the trial period.
 
-Adding or Updating a Cluster Key
---------------------------------
+## Adding or Updating a Cluster Key
 
 A key can be input into the cluster either using rladmin during cluster
 setup or afterward through the web UI. In the web UI, go to "**Settings
@@ -35,8 +33,7 @@ cluster license key is valid. If saving of a new cluster key fails, the
 operation returns the error "invalid license key". In this case, the
 existing key stays in effect.
 
-Expired Cluster Key
--------------------
+## Expired Cluster Key
 
 If the current date is not between the start and end date embedded in
 the key, the key has expired.

@@ -21,8 +21,7 @@ For this quick start, you will need the following:
 4.  Click **Show advanced options** and put **12544** for the port.
 5.  Click the **Activate** button
 
-Using Bloom filters in Redis Enterprise Software
-------------------------------------------------
+## Using Bloom filters in Redis Enterprise Software
 
 ### Trying It Out
 
@@ -64,8 +63,7 @@ case:
  1) (integer) 1
 ```
 
-Using Cuckoo filters in Redis Enterprise Software
--------------------------------------------------
+## Using Cuckoo filters in Redis Enterprise Software
 
 Cuckoo filters can also be used as part of the ReBloom module.\
 You can play with it using redis-cli:

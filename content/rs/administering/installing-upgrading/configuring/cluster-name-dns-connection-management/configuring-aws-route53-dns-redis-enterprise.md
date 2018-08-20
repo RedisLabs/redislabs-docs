@@ -16,8 +16,7 @@ Amazon's Route53 as the primary/master nameserver (NS) for this domain
 or for a delegated zone under this domain. Finally, you need to have the
 zone (either the whole domain or a sub-zone) defined in AWS Route53.
 
-How does Redis Enterprise Software achieve failover?
-----------------------------------------------------
+## How does Redis Enterprise Software achieve failover?
 
 If you have a three node Redis Enterprise Software cluster. When your
 application wants to connect to a RS database, it connects to any node
@@ -66,8 +65,7 @@ official name server.
 
 If you would like to watch a video on the process, here you go.
 
-Connection to AWS Route53
--------------------------
+## Connection to AWS Route53
 
 The first step is to connect your browser to AWS and to login into the
 administration interface. Then, you have to go in the *Services* menu at
@@ -90,8 +88,7 @@ need to clic on the zone in which you want to define your cluster,
 
 ![](/images/rs/03-HostedZoneSelection-en.png?width=600&height=206)
 
-Nameserver records creation
----------------------------
+## Nameserver records creation
 
 The next step is to create the record that returns the IP address of
 your cluster's name servers, ie one of your cluster's nodes. To create
@@ -138,8 +135,7 @@ Now, the client-side resolver and the forwarding DNS can reach the
 cluster nameservers by their IP address, if they know what are the names
 of the cluster's name servers. That's the next point.
 
-Sub-zone's nameserver list definition
--------------------------------------
+## Defining the nameserver list for a subzone
 
 Here, the idea is to provide the list of the cluster nameserver's names
 to the resolvers and the forwarding DNS, so that they will be able to
@@ -168,8 +164,7 @@ end, we can clic on the \*Create\* button:
 Congratulations, you completed the *Route53* DNS configuration for your
 Redis Enterprise Software. Let's check what you have.
 
-Verification
-------------
+## Verification
 
 You should end with several name server *A* record (one for each cluster
 node) to be able to reach any of them by its name. You should also have

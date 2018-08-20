@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Overview
---------
+## Overview
 
 The RS Nagios plugin enables you to monitor the status of RS related
 objects and alerts. The RS alerts can be related to the cluster, nodes,
@@ -29,8 +28,7 @@ otherwise Linux Secret Service compatible password store. With no
 keyring service available, the password is saved with base64 encoding,
 under the user home directory.
 
-Configuring the Nagios plugin
------------------------------
+## Configuring the Nagios plugin
 
 In order to configure the Nagios plugin you need to copy the files that
 come with the package into your Nagios environment and place them in a

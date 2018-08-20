@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Development environment hardware requirements
----------------------------------------------
+## Development environment hardware requirements
 
 If you are looking to do development, test or experimentation with Redis
 Enterprise Software (RS), you can use non-production hardware (e.g.
@@ -23,8 +22,7 @@ testing. With two or fewer nodes in a cluster, a quorum cannot be
 attained in the event of failure. For that kind of testing or anything
 more serious, please see the production environment requirements.
 
-Production environment hardware requirements
---------------------------------------------
+## Production environment hardware requirements
 
 The table below explains the minimum and the recommended hardware
 requirements for a production system:

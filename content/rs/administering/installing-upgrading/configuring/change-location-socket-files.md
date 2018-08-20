@@ -13,8 +13,7 @@ Redis Enterprise Software to version 4.5.0.-51 or higher. If this change
 needs to be performed immediately on an existing cluster, see the
 instructions below.
 
-Changing the Location on an Existing Redis Enterprise Software (RS) Installation
---------------------------------------------------------------------------------
+## Changing the Location on an Existing Redis Enterprise Software (RS) Installation
 
 You must be running RS version 4.5.0-51 or higher, and with the sock
 files location is still under the default location of /tmp. (This is

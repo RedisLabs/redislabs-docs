@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Overview
---------
+## Overview
 
 If you are upgrading from a previous version, make sure to review the
 [upgrade
@@ -17,8 +16,7 @@ you might be prompted to approve changes to a configuration file named
 ccs-redis.conf. It is crucial that you choose Yes when asked whether to
 update this file.
 
-New features
-------------
+## New features
 
 -   Support for Red Hat Enterprise Linux (RHEL) and CentOS 6.5 and 7
     operating systems.
@@ -37,8 +35,7 @@ New features
 -   Database Export functionality.
 -   Email alerts on database Export and Import.
 
-Changes
--------
+## Changes
 
 -   Database Backup Now functionality replaced with Export
     functionality.
@@ -48,15 +45,13 @@ Changes
     scenarios and limited disk space configurations.
 -   Enhancements to rladmin CLI to support additional commands.
 
-Fixed issues
-------------
+## Fixed issues
 
 -   Cluster stability improvements related to removing nodes and taking
     nodes offline.
 -   rladmin CLI bug fixes.
 
-Known issues
-------------
+## Known issues
 
 -   **Issue**: RLEC-6819 - Uninstall on Red Hat Enterprise Linux does
     not stop all services and if you try to install the software again

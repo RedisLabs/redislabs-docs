@@ -11,8 +11,7 @@ The steps here are super simple and go as follows:
 3.  Setup a database
 4.  Connect to your Database
 
-Step \#1 - Sign up for Redis Enterprise Cloud account
-------------------------------------------------------
+## Step 1 - Sign up for Redis Enterprise Cloud account
 
 If you do not already have one, [sign up for a Redis Enterprise Cloud
 account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-cloud).
@@ -20,8 +19,7 @@ account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-clou
 If you already have an account, [sign in to Redis Enterprise
 Cloud](https://app.redislabs.com/#/login?).
 
-Step \#2 - Create a new subscription
--------------------------------------
+## Step 2 - Create a new subscription
 
 Add a new subscription to your account, if you do not already have one.
 If you have an existing subscription, then proceed to Step 3.
@@ -55,8 +53,7 @@ subscription.
 
 ![](/images/rc/new_sub.png?width=600&height=466)
 
-Step \#3 - Set up a database
------------------------------
+## Step 3 - Set up a database
 
 1.  Give your database a name.
 2.  Click the "**Activate**" button to create your database.
@@ -66,8 +63,7 @@ is your entry point to this database.
 
 ![](/images/rc/rc-view-database-endpoint.png?width=600&height=409)
 
-Step \#4 - Reading and Writing Data
-------------------------------------
+## Step 4 - Reading and Writing Data
 
 ### Using Telnet
 
@@ -129,8 +125,7 @@ With that simple test complete, if you have existing code or an app that
 uses Redis, just change the host, port, password and SSL certificates
 and you are done.
 
-More Information
-----------------
+## More Information
 
 1.  [Data Persistence with Redis Enterprise
     Cloud](/redis-cloud-documentation/concepts/data-persistence-redis-cloud/).

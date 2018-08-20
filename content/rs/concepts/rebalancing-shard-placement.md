@@ -8,8 +8,7 @@ Redis Enterprise Software (RES) cluster offer a few master and slave
 shard placement policies that govern how shards of each database is
 distributed and placed both at creation and at resharding.
 
-Shard Placement
----------------
+## Shard Placement
 
 The placement of shards governs how the node resources are utilized
 across the cluster for each database.
@@ -59,8 +58,7 @@ database.
 red\
 and two slave shards in gray with sparse placement policy.*
 
-Slave Shard Placement
----------------------
+## Slave Shard Placement
 
 In a Redis Enterprise cluster, when replication is enabled on a
 database, master and slave shards carry identical data and clusters

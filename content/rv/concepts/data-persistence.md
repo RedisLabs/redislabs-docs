@@ -40,8 +40,7 @@ database as well. When these two features are enabled, persistence will
 be done on the slave instance and will not reduce the performance of the
 master.
 
-Options for Configuring Data Persistence
-----------------------------------------
+## Options for Configuring Data Persistence
 
 There are five options for persistence in Redis Enterprise VPC:
 
@@ -60,8 +59,7 @@ database is only being used as a cache, you may not want to incur the
 overhead that comes with using persistence. If you do need persistence,
 then you need to identify the best type for your use case.
 
-Append Only File (AOF) vs Snapshot (RDB)
-----------------------------------------
+## Append Only File (AOF) vs Snapshot (RDB)
 
 Use these details to determine which options best meet your needs:
 

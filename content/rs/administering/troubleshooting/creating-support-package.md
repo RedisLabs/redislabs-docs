@@ -9,8 +9,9 @@ and need to contact Redis Labs support for assistance, you can create a
 support package that gathers all essential information to help us debug
 your issues.
 
+## Creating a support package
+
 To create a support package:
-----------------------------
 
 1.  Click **Support** at the top right of the management UI.
 2.  Click **Create Support Package** at the bottom of the page, and

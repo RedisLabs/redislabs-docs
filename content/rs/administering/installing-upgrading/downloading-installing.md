@@ -27,8 +27,7 @@ package on an AWS instance, review the guidelines in [Configuration of
 AWS
 instances](/redis-enterprise-documentation/cluster-administration/best-practices/configuration-of-aws-instances).
 
-Prerequisites
--------------
+## Prerequisites
 
 1.  If you intend to use [Redis on
     Flash](/redis-enterprise-documentation/redis-e-flash/) for your
@@ -40,8 +39,7 @@ Prerequisites
 3.  Ensure you have root level access to each node, either directly or
     via sudo.
 
-Installation Procedure
-----------------------
+## Installation Procedure
 
 If you downloaded the .tar file installation package, install the
 package on a machine that will serve as one of the nodes in the cluster
@@ -123,8 +121,7 @@ by performing the following steps:
 6.  Open a web browser and go to the Web UI to complete the cluster
     setup.
 
-Silent Installations
---------------------
+## Silent Installations
 
 If you would like to automate the installation script, use either of the
 following methods to perform a "silent" installation that speeds the
@@ -161,8 +158,7 @@ perform the steps necessary for Redis Enterprise Flash or creating a
 cluster. That part of each node's install still has to be done and
 potentially automated separately.
 
-Installation questions
-----------------------
+## Installation questions
 
 During the interactive installation process, there questions asked to
 understand how much you want the process to try and configure the OS

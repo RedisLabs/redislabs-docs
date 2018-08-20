@@ -56,8 +56,7 @@ Prerequisites:
     strongly advised to back up all files in the old persistent storage
     drives to another location.
 
-Running the Cluster Recovery Process
-------------------------------------
+## Running the Cluster Recovery Process
 
 The recovery process is carried out from the rladmin command-line
 interface (for additional details, refer to [rladmin command-line

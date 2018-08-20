@@ -22,8 +22,7 @@ to the new version. Attempting to use newly added capabilities from the
 newer version of Redis Enterprise Software when the upgrade is ongoing,
 can produce unexpected results or cause failures in the cluster.
 
-Upgrading nodes
----------------
+## Upgrading nodes
 
 Upgrading the nodes' software requires installing the RS installation
 package on all of the machines on which RS is installed. For
@@ -70,8 +69,7 @@ If you have the RS management UI open in the browser while you are
 upgrading the nodes, ensure that you refresh the browser before trying
 to work with the UI again.
 
-Upgrading databases
--------------------
+## Upgrading databases
 
 Some RS upgrades add support for new Redis versions. In these cases,
 Redis Labs recommends that you upgrade the databases to the new Redis

@@ -8,8 +8,7 @@ Redis Enterprise Software 5.0.2 is now available. Key features include
 functional and performance updates for CRDB, changes to module
 deployment, and general fixes.
 
-Overview
---------
+## Overview
 
 If you are upgrading from a previous version, make sure to review the
 upgrade instructions before beginning the upgrade process.
@@ -23,8 +22,7 @@ information, check the ['network port
 configurations'](https://redislabs.com/redis-enterprise-documentation/administering/designing-production/networking/port-configurations/)
 page
 
-New Features
-------------
+## New Features
 
 ### CRDBs
 
@@ -47,8 +45,7 @@ New Features
 -   Starting from version 5.0.2 build \#30, Redis Enterprise Software is
     supported on RHEL 7.5
 
-Important Fixes
----------------
+## Important Fixes
 
 -   RS16153 -- Supervisord version update
 -   RS16667 - Fixed issue with 'rladmin status' timeout
@@ -74,8 +71,7 @@ Important Fixes
 -   RS[19852- Fixed proxy crash which might happen for SSL-enabled
     DBs]{style="font-weight: 400;"}
 
-Known Limitations
------------------
+## Known Limitations
 
 -   Since Redis Enterprise CRDBs have counters, unlike traditional Redis
     databases, they must be handled differently when importing. There is

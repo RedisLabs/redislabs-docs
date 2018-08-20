@@ -7,8 +7,7 @@ alwaysopen: false
 Below are detailed a few of the major features of this release of Redis
 Enterprise Software along with bug fixes and patches.
 
-Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB)
------------------------------------------------------------------------
+## Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB)
 
 Developing globally distributed applications can be challenging, as
 developers have to think about race conditions and complex combinations
@@ -24,8 +23,7 @@ intent.
 For more information, go here. For information, go to [Developing with
 CRDBs](/redis-enterprise-documentation/developing/crdbs/).
 
-Redis Modules
--------------
+## Redis Modules
 
 Redis Modules enable you to extend the functionality of Redis Enterprise
 Software. One can add new data types, capabilities, etc. to tailor the
@@ -55,8 +53,7 @@ In addition, Redis Enterprise Software provides the ability to load and
 use custom modules from [redismodules.com](http://redismodules.com/) or
 of your own creation.
 
-Support for Docker in Production
---------------------------------
+## Support for Docker in Production
 
 Deploying and running your Redis Enterprise Software cluster on Docker
 containers is now officially supported in production systems and
@@ -67,8 +64,7 @@ and highly available cluster Redis Enterprise Software is famous for.
 For more information go to [quick start with Redis Enterprise Software
 on Docker.](/redis-enterprise-documentation/getting-started/docker/)
 
-LDAP Integration
-----------------
+## LDAP Integration
 
 As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Software can now use either built-in

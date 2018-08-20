@@ -4,16 +4,14 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Overview
---------
+## Overview
 
 If you are upgrading from a previous version, make sure to review the
 [upgrade
 instructions](/redis-enterprise-documentation/installing-and-upgrading/upgrading)
 before running through the upgrade process.
 
-New features
-------------
+## New features
 
 -   rsyslog logging support - RLEC now writes by default to syslog,
     which enables monitoring through rsyslog.
@@ -79,8 +77,7 @@ New features
 -   New rladmin command-line-interface "info" command allows for
     fetching current value of tunable parameters.
 
-Changes
--------
+## Changes
 
 -   rladmin command-line-interface can only be run under user root or
     redislabs. For additional details, refer to the [rladmin
@@ -116,8 +113,7 @@ Changes
 -   rladmin CLI "tune watchdog profile" command syntax updated to "tune
     cluster watchdog\_profile".
 
-Fixed issues
-------------
+## Fixed issues
 
 -   Support for relative path for backup and import functionalities.
 -   Fix issue with TLS configuration of email server settings.
@@ -133,8 +129,7 @@ Fixed issues
     (FQDN) and the FQDN was not properly configured in the DNS.
 -   Various improvements to error messages reported by rladmin.
 
-Known issues
-------------
+## Known issues
 
 -   **Issue**: Connecting from a client to a database endpoint with
     mixed upper case and lower case letters can result in a slow

@@ -9,8 +9,7 @@ Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB),
 LDAP integration, Redis Module integration, and support for the Redis
 Cluster API.
 
-Overview
---------
+## Overview
 
 If you are upgrading from a previous version, make sure to review the
 upgrade instructions before beginning the upgrade process.
@@ -18,8 +17,7 @@ upgrade instructions before beginning the upgrade process.
 You can upgrade to RS 5.0 from RS 4.4.2 and above. If you have a version
 older than this, you must first upgrade to at least 4.4.2.
 
-New Features
-------------
+## New Features
 
 ### Support for Redis' Cluster API
 
@@ -79,8 +77,7 @@ In addition, Redis Enterprise Pack provides the ability to load and use
 custom modules from [redismodules.com](http://redismodules.com/) or of
 your own creation.
 
-Support for Docker in Production
---------------------------------
+## Support for Docker in Production
 
 Deploying and running your Redis Enterprise Pack cluster on Docker
 containers is now officially supported in production systems and
@@ -91,8 +88,7 @@ and highly available cluster Redis Enterprise Pack is famous for.
 For more information, go to [quick start with Redis Enterprise Pack on
 Docker.](/redis-enterprise-documentation/getting-started/docker/)
 
-LDAP Integration
-----------------
+## LDAP Integration
 
 As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Pack can now use either built-in
@@ -103,16 +99,14 @@ command line, Rest API, or Web UI.
 For more information see [LDAP
 Integration](/redis-enterprise-documentation/administering/security/ldap-integration/).
 
-Additional Capabilities
------------------------
+## Additional Capabilities
 
 Support for additional Redis commands and features:
 
 -   Support for Redis version 4.0.2
 -   Support added for RHEL/CentOS 6.9 and 7.4
 
-Information
------------
+## Information
 
 -   In the node bootstrap API, the structure of the JSON has changed for
     adding an external IP during the bootstrap process.
@@ -121,8 +115,7 @@ Information
 -   Modules are not supported in Redis Enterprise Pack 5.0 for
     RHEL/CentOS 6.x
 
-Important Fixes
----------------
+## Important Fixes
 
 **5.0.0-31**
 

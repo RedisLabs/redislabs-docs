@@ -4,8 +4,7 @@ description:
 weight: 25
 alwaysopen: false
 ---
-Getting SSL/TLS Support Added to Your Subscription
---------------------------------------------------
+## Getting SSL/TLS Support Added to Your Subscription
 
 To configure your subscription so you can use SSL/TLS with your Redis
 Enterprise Cloud (RC) database, please contact support. To speed up this
@@ -25,8 +24,7 @@ the Web UI and look in the title.
 
 ![](/images/rc/subscriptions2.png?width=600&height=248)
 
-Setting Up Your Database
-------------------------
+## Setting Up Your Database
 
 Using SSL/TLS requires setup of both your Redis Enterprise Cloud
 database and your application, as described below.
@@ -63,8 +61,7 @@ database and your application, as described below.
 enabled, your database will no longer accept regular, non-SSL
 connections.
 
-Setting up your application if you are not using an SSL/TLS enabled client library
-----------------------------------------------------------------------------------
+## Setting up your application if you are not using an SSL/TLS enabled client library
 
 This procedure describes the steps required to install and configure
 [stunnel](https://stunnel.org), an open-source secure proxy, to connect
@@ -80,8 +77,7 @@ below) instead of your resource's endpoint.
 
 ### ``
 
-OS-Specific Instructions for Setting Up stunnel
------------------------------------------------
+## OS-Specific Instructions for Setting Up stunnel
 
 ### Ubuntu 12.04
 

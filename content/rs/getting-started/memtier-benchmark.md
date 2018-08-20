@@ -32,8 +32,7 @@ Enterprise database and generates a load doing the following:
 -   A 50/50 Set to Get ratio
 -   Each object will have random data in the value
 
-Populate a Database with Testing Data
--------------------------------------
+## Populate a Database with Testing Data
 
 If you need to populate a database with some test data for a proof of
 concept, or failover testing, etc. here is an example for you.

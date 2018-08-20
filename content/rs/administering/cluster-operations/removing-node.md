@@ -18,8 +18,7 @@ achieved, as well as their impact and considerations.
 **Make sure to read through these explanations thoroughly before taking
 any action.**\
 
-Permanently removing a node
----------------------------
+## Permanently removing a node
 
 Permanently removing a node means you are decreasing cluster capacity.
 Before trying to remove a node, ensure that the cluster has enough
@@ -41,8 +40,7 @@ If a cluster has only two nodes (which is not recommended for production
 deployments) and some databases have replication enabled, you will not
 be able to remove a node.
 
-Replacing a faulty node
------------------------
+## Replacing a faulty node
 
 If the cluster has a faulty node that you would like to replace, you
 only need to add a new node to the cluster. The cluster recognizes the
@@ -52,8 +50,7 @@ with the new node.
 For guidelines, refer to [Replacing a faulty
 node](/redis-enterprise-documentation/cluster-administration/replacing-a-faulty-node).
 
-Replacing a healthy node
-------------------------
+## Replacing a healthy node
 
 If you would like to replace a healthy node with a different node, you
 must first add the new node to the cluster, migrate all the resources
@@ -70,8 +67,9 @@ You can migrate resources by using the *rladmin* command-line interface
 replaced. For additional details, refer to
 [DNS](/redis-enterprise-documentation/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/).
 
+## Removing a node
+
 To remove a node:
------------------
 
 1.  Click **Remove** at the top of the **Node** page for the node to be
     removed.

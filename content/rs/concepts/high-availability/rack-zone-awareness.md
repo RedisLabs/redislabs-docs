@@ -28,8 +28,7 @@ and endpoint migration, and database failover.
 To benefit from rack-zone awareness, you need to configure it at the
 cluster, node and database levels.
 
-Cluster/node configuration
---------------------------
+## Cluster/node configuration
 
 In order for the cluster to support rack-zone awareness, you need to
 enable it when initially creating the cluster. Afterwards, every time
@@ -47,8 +46,7 @@ The rack-zone ID must comply with the following rules:
 **Note**: The rack-zone ID is case-insensitive, i.e. uppercase and
 lowercase letters are treated exactly the same.
 
-Database configuration
-----------------------
+## Database configuration
 
 Once the cluster has been configured to support rack-zone awareness, and
 it includes nodes with at least two different rack-zone IDs, you can

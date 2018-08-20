@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Redis Client Libraries
-----------------------
+## Redis Client Libraries
 
 For connecting to Redis Enterprise Software (RS) databases with your
 Redis application, you can use any of the available [client libraries
@@ -28,8 +27,7 @@ If you need to use other clients with the Discovery Service, perhaps
 look at [Sentinel Tunnel](https://github.com/RedisLabs/sentinel_tunnel),
 a utility published by Redis Labs for this purpose.
 
-Web Browsers
-------------
+## Web Browsers
 
 For theRedis Enterprise Software Web Console, the following web browsers
 and versions are supported:

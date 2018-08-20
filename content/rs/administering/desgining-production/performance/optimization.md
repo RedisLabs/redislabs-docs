@@ -25,8 +25,7 @@ The default configuration is for local-network environments. If you are
 running RS in a cloud environment, it is advisable that you change the
 configuration.
 
-How to change the environment configuration
--------------------------------------------
+## How to change the environment configuration
 
 In the rladmin command-line interface (CLI), run the following command:
 

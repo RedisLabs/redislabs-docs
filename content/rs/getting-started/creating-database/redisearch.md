@@ -21,8 +21,7 @@ For this quick start, you will need the following:
 4.  Click **Show advanced options** and put **12544** for the port.
 5.  Click the **Activate** button
 
-Creating Indexes
-----------------
+## Creating Indexes
 
 Let's create a new index called "myidx". When you define the index, you
 must pass in the structure of the data you will be adding to the index.

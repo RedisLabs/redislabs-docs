@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Overview
---------
+## Overview
 
 If you are upgrading from a previous version, make sure to review the
 [upgrade
@@ -24,26 +23,22 @@ If you are upgrading from version 0.99.5-11:
     [upgrade
     instructions](/redis-enterprise-documentation/installing-and-upgrading/upgrading).
 
-New features
-------------
+## New features
 
 None.
 
-Changes
--------
+## Changes
 
 -   Enhancements to memtier\_benchmark tool that is included in the
     installation package. You can find more details in the [GitHub
     project.](https://github.com/RedisLabs/memtier_benchmark)
 
-Fixed issues
-------------
+## Fixed issues
 
 -   Improvements and fixes related to node failover, remove node and
     take node offline functionality.
 
-Known issues
-------------
+## Known issues
 
 -   **Issue:** When taking a node offline or removing a node, if the
     node being taken offline or removed is currently serving as the web

@@ -18,8 +18,7 @@ applied.
 The following examples show how different database configurations affect
 the total database size.
 
-Example 1
----------
+## Example 1
 
 You create a database and:
 
@@ -30,8 +29,7 @@ The cluster will create 2 shards: a master and a slave. Each of the
 shards will have a maximum size of 2 GB. In this case, the maximum
 dataset size that you will be able to store in the database is 2 GB.
 
-Example 2
----------
+## Example 2
 
 You create a database and:
 
@@ -45,8 +43,7 @@ different size depending on the amount of data stored in it, as long as
 the total size across all shards does not exceed 6 GB. In this case, the
 maximum dataset size you will be able to store in the database is 6 GB.
 
-Example 3
----------
+## Example 3
 
 You create a database and:
 

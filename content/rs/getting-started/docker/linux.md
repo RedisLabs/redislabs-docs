@@ -17,8 +17,7 @@ Hub](https://hub.docker.com/r/redislabs/redis/) for instructions on
 getting Docker installed and working with the Redis Enterprise Software
 Docker container image.
 
-Step-by-Step Guide for Redis Enterprise Software on Linux
----------------------------------------------------------
+## Step-by-Step Guide for Redis Enterprise Software on Linux
 
 ### Step 1: Run the Container
 

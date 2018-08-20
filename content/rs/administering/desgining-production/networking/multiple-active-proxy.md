@@ -48,8 +48,7 @@ a database, there will be no need for a client to wait for the cluster
 to spin up another proxy and a DNS change in most cases, the client will
 just use the next IP in the list to connect to another proxy.
 
-Proxy policies
---------------
+## Proxy policies
 
 A database can have one of the following four proxy policies:
 
@@ -84,8 +83,7 @@ replication is available.
 Note: Manual intervention is also available via the rladmin bind add and
 remove commands.
 
-Shard placement policy
-----------------------
+## Shard placement policy
 
 A database can have one of two shard placement policies:
 
@@ -99,8 +97,7 @@ See [Shard
 Placement](/redis-enterprise-documentation/concepts-architecture/rebalancing-shard-placement/),
 for more information.
 
-Database configuration
-----------------------
+## Database configuration
 
 A database can be configured with any combination of proxy policy and
 shard placement policy using rladmin bind and rladmin placement.

@@ -16,8 +16,9 @@ backup](/redis-enterprise-documentation/database-configuration/database-backup).
 Note: Importing data via this method will erase all existing content in
 the database.
 
+## Importing data into a database
+
 To import data into a database:
--------------------------------
 
 1.  Click the relevant database row in the **Databases** page. The
     selected database page appears.

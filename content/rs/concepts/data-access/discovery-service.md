@@ -81,8 +81,7 @@ implements only the parts required to provide applications with easy
 High Availability, be compatible with the protocol, and not rely on DNS
 to derive which node in the cluster to communicate with.\
 
-Redis client support
---------------------
+## Redis client support
 
 You can find the recommended list of client libraries to use for
 Discovery Service using the Redis Sentinel API on the [hardware and

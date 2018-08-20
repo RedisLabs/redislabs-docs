@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Access Control by Source IP/Subnet
-----------------------------------
+## Access Control by Source IP/Subnet
 
 The number of source IP rules that you can add depends on the Redis
 Enterprise Cloud plan that you purchased. For example, the 1GB plan
@@ -25,15 +24,13 @@ Configuration =\> Edit =\> Access Control & Security.
 
 **Note:** only the account owner can upgrade/downgrade the subscription.
 
-Securing Connection to Your Database with SSL/TLS
--------------------------------------------------
+## Securing Connection to Your Database with SSL/TLS
 
 There is a [dedicated
 page](/redis-cloud-documentation/configuration/securing-redis-cloud-connections/)
 on this topic with steps you need to achieve this.
 
-Redis Password
---------------
+## Redis Password
 
 You can and should add a password for your database. This password is
 purely for full access to the data in the database.
@@ -44,8 +41,7 @@ form field that can be used to view the password.
 ![redis
 password](/images/rc/redis_password.png?width=600&height=42)
 
-AWS Security groups
--------------------
+## AWS Security groups
 
 This option accepts the Group Name and the AWS Account ID as input to
 identify the security group and secure your database.

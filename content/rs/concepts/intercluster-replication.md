@@ -40,8 +40,7 @@ user's locations. MMR is always multi-directional amongst the clusters
 configured in the CRDB. For unidirectional replication, please see the
 ReplicaOf capabilities in Redis Enterprise Software.
 
-Example of synchronization
---------------------------
+## Example of synchronization
 
 In the example below, database writes are concurrent at the point in
 times t1 and t2 and happen before a sync can communicate the changes.
@@ -82,8 +81,7 @@ t6
 synchronization](/redis-enterprise-documentation/developing/crdbs/) for
 each supported data type and how to develop with them on RES.
 
-Terminology
------------
+## Terminology
 
 1.  **Global conflict-free replicated database (CRDB):** refers to a new
     type of Redis Enterprise Software database that spans clusters.

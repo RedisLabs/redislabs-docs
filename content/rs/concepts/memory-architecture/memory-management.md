@@ -24,8 +24,7 @@ With this memory management style, comes the responsibility to monitor
 the nodes, clusters, databases, etc., but you are already doing that,
 right?
 
-What happens when Redis Enterprise Software is low on RAM?
-----------------------------------------------------------
+## What happens when Redis Enterprise Software is low on RAM?
 
 If free RAM is low, RES will automatically attempt to migrate shards to
 other nodes, (if there are any) to free RAM on this node. If that is not

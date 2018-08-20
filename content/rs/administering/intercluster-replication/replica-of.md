@@ -46,8 +46,7 @@ enables ensuring database high-availability.
 
 For a quick overview of ReplicaOf capabilities watch this quick video.\
 
-Replica of sources
-------------------
+## Replica of sources
 
 RS has a security mechanism in which an internal admin password is
 assigned to each database. This password helps protect the database from
@@ -107,8 +106,7 @@ restarted from scratch for all the source databases.
 [Client prerequisites for
 mDNS](/redis-enterprise-documentation/administering/installing-upgrading/configuring/mdns/).
 
-Replication process
--------------------
+## Replication process
 
 When a database is defined as a replica of another database, all its
 existing data is deleted and replaced by data that is loaded from the
@@ -188,8 +186,7 @@ stop:
     point it reached (partial sync) or require a complete
     resynchronization from scratch across all sources (full sync).
 
-Encryption
-----------
+## Encryption
 
 ReplicaOf supports the ability to encrypt uni-directional replication
 communications between source and destination clusters utilizing TLS 1.2
@@ -235,8 +232,7 @@ following steps:
 3.  Press the **Continue** button, save the certificate and **Update**
     the database changes.
 
-"Replica of" data compression
------------------------------
+## Data compression for Replica Of
 
 When the *Replica of* is defined across different Redis Enterprise
 Software clusters, it may be beneficial to compress the data that flows
@@ -270,8 +266,7 @@ In the Redis Enterprise Software management UI, when designating a
 there is also an option to enable compression. When enabled, gzip
 compression with level -6 is utilized.
 
-Database clustering (sharding) implications
--------------------------------------------
+## Database clustering (sharding) implications
 
 If a **source** database is sharded, that entire database is treated as
 a single source for the destination database.

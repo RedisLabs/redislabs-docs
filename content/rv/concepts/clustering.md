@@ -33,8 +33,7 @@ When creating or editing a Redis database on Redis Enterprise VPC the
 system will automatically calculate the number of shards needed based on
 the database memory limit and required throughput.
 
-Multi-Key Operations
---------------------
+## Multi-Key Operations
 
 Operations on multiple keys in a sharded Redis Enterprise VPC cluster
 are supported with the following limitations:
@@ -57,8 +56,7 @@ are supported with the following limitations:
     allowed only when both the key's original name and its new name are
     mapped to the same hash slot.
 
-Changing the Sharding Policy
-----------------------------
+## Changing the Sharding Policy
 
 The clustering configuration of a Redis Enterprise VPC instance can be
 changed. However, sharding policy changes will trigger the deletion

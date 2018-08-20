@@ -124,8 +124,7 @@ more metadata to create the conflict-free data type experience. This
 section will detail what you need to know about developing with CRDBs on
 Redis Enterprise Software.
 
-Compatibility
--------------
+## Compatibility
 
 CRDBs act very much like a standard Redis database except a few
 differences:
@@ -137,8 +136,7 @@ differences:
     have slightly different requirements in CRDBs vs standard Redis
     databases. (ex: String type)
 
-Data Types
-----------
+## Data Types
 
 Even though the data types and methods look identical in standard Redis
 and CRDBs, there are specific rules that govern the handling of
@@ -169,22 +167,19 @@ followed by descriptions:
 not currently supported in this version of
 CRDBs.]{style="font-weight: 400;"}
 
-Lua Scripts
------------
+## Lua Scripts
 
 CRDB supports Lua scripts, but unlike standard Redis, Lua scripts always
 execute in effects replication mode. There is currently no way to
 execute them in script-replication mode.
 
-Eviction
---------
+## Eviction
 
 CRDBs always operate in no eviction mode. The reasoning is that if
 memory is low, eviction may not help (or even worse) until garbage
 collection takes place.
 
-Expiration
-----------
+## Expiration
 
 Expiration is supported with special multi-master semantics.
 
@@ -228,15 +223,13 @@ will:
 -   Expire it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
 
-Out-of-Memory (OOM)
--------------------
+## Out-of-Memory (OOM)
 
 If a member CRDB is in an out of memory situation, that member is marked
 "inconsistent" by RS, the member stops responding to user traffic, and
 the syncer initiates full reconciliation with other peers in the CRDB.
 
-INFO
-----
+## INFO
 
 The INFO command has an additional crdt section which provides advanced
 troubleshooting information (applicable to support etc.):

@@ -7,8 +7,7 @@ alwaysopen: false
 Applications developed with the open source version of ReJSON are 100%
 compatible with ReJSON in Redis Enterprise Software (RS).
 
-ReJSON Path Syntax
-------------------
+## ReJSON Path Syntax
 
 Since there is no standard for JSON path syntax, ReJSON implements its
 own. ReJSON's syntax is a subset of common best practices and resembles
@@ -33,8 +32,7 @@ negative numbers, indicating indices starting at the end of the array.
 For example, -1 is the last element in the array, -2 the penultimate,
 and so on.'
 
-A note about JSON key names and path compatibility
---------------------------------------------------
+## A note about JSON key names and path compatibility
 
 By definition, a JSON key can be any valid JSON String. Paths, on the
 other hand, are traditionally based on JavaScript's (and in Java in
@@ -60,8 +58,7 @@ O(N\*M), where N is the depth and M is the number of parent object keys.
 be optimized for larger objects, and this is planned for a future
 version.
 
-Example
--------
+## Example
 
 Log into the ReJSON enabled database with redis-cli and the --raw switch
 so we can see the raw output:
@@ -104,8 +101,7 @@ As you can see, you can easily traverse the document structure by path
 to get only the data you want, when you need it. You could also use this
 to increment or another operation on this object.
 
-ReJSON Commands
----------------
+## ReJSON Commands
 
 For the authoritative list of ReJSON commands, please go
 [here](http://rejson.io/).

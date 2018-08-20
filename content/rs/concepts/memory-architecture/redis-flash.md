@@ -26,8 +26,7 @@ better utilize hardware, hypervisor, and cloud resources. In many cases,
 Redis on Flash can cut resource costs by over 70% when compared to an
 all-RAM Redis Enterprise Software deployment.
 
-Flash Memory
-------------
+## Flash Memory
 
 Unlike standard Redis Enterprise Software installations, implementing
 Redis on Flash requires pre-planning around memory and overall sizing.
@@ -61,8 +60,7 @@ When you begin planning the deployment of Redis on Flash in Production,
 we recommend working closely with the Redis Labs technical team for
 sizing and performance tuning.
 
-Tunable RAM to Flash Ratio
---------------------------
+## Tunable RAM to Flash Ratio
 
 You can easily configure or tune the ratio of RAM-to-Flash for each
 database independently, optimizing performance for your specific use
@@ -71,8 +69,7 @@ database. Think of this like a gas pedal in a car, the database speeds
 up as you give it more gas (RAM). We recommend you keep at least 20% of
 all values in RAM.
 
-Working Set Management
-----------------------
+## Working Set Management
 
 Of your dataset, perhaps there is a subset of highly active objects
 considered the application's "working set." Redis on Flash will
@@ -80,15 +77,13 @@ intelligently manage the location of the working set (RAM) and the
 infrequently accessed keys (flash memory), based on LRU
 (least-recently-used) on a per-object basis.
 
-Redis Client Support
---------------------
+## Redis Client Support
 
 Just like all-RAM databases, RF is compatible with existing Redis
 applications. Databases that employ RoF are identical to all-RAM Redis
 Enterprise Software databases in characteristics and features.
 
-Redis on Flash vs Disk Based Databases
---------------------------------------
+## Redis on Flash vs Disk Based Databases
 
 Flash memory can be SATA or NVMe based storage devices, but NVMe is
 where you will see the performance benefits. There are many databases in
@@ -127,8 +122,7 @@ than extending RAM in a number of ways.
     Redis Enterprise Software. You get the benefits of RoF now and into
     the future regardless of how flash memory evolves.
 
-Next Steps
-----------
+## Next Steps
 
 To create Redis on Flash databases you must meet the following
 prerequisites:

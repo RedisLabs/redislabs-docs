@@ -4,8 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-Overview
---------
+## Overview
 
 If you are upgrading from a previous version, make sure to review the
 upgrade instructions before beginning the upgrade process.
@@ -14,8 +13,7 @@ You can upgrade to this version from any 4.4 version. If you have a
 version older than 4.4 you must first upgrade to 4.4 or higher, and only
 then upgrade to this version.
 
-New Features
-------------
+## New Features
 
 ### The New Discovery Service with Support for Redis' Sentinel API
 
@@ -62,8 +60,7 @@ Support for additional Redis commands and features:
 
 Support has been added RHEL 7.3 with this version.
 
-Important Fixes
----------------
+## Important Fixes
 
 -   RP10106 - SSL Certificate should not need to be signed with a
     stronger hashing algorithm to be accepted

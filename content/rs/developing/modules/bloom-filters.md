@@ -28,8 +28,7 @@ content recommendation systems - ensuring recommendations don't appear
 too often, in databases - quickly checking if an entry exists in a
 table before accessing it on disk, and so on.
 
-How Bloom filters work
-----------------------
+## How Bloom filters work
 
 Most of the literature on Bloom filter uses highly symbolic and/or
 mathematical descriptions to describe it. If you're mathematically
@@ -72,8 +71,7 @@ a vast majority of bits set, the likelihood of any specific lookup
 returning false is decreased, and thus the possibility of the filter
 returning false positives is increased.
 
-Scalable Bloom filters
-----------------------
+## Scalable Bloom filters
 
 Typically Bloom filters must be created with a foreknowledge of how many
 entries they will contain. The *bpe* number needs to be fixed, and
@@ -101,8 +99,7 @@ whose initial layer can only contain a small number of elements will
 degrade performance significantly because it will take more layers to
 reach a larger capacity.
 
-Using Bloom filters in Redis Enterprise Software (RS)
------------------------------------------------------
+## Using Bloom filters in Redis Enterprise Software (RS)
 
 The first thing you need is to download, install the package into the RS
 cluster, and then create a database that uses the module. For this, see

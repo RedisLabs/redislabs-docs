@@ -16,8 +16,7 @@ you can deploy quickly on Amazon Web Services (AWS) and create Redis
 databases that are fully compatible with the open-source Redis databases
 contained solely in your Amazon Virtual Private Cloud (VPC).
 
-Features
---------
+## Features
 
 ### Infinite and seamless scalability
 

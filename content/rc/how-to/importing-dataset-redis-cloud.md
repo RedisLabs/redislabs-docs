@@ -20,8 +20,7 @@ Note: Expired keys do not get imported. As a result, the number of keys
 in the source and destination databases might be different after the
 import completes.
 
-Import a Dataset from a Redis Server
-------------------------------------
+## Import a Dataset from a Redis Server
 
 To import a dataset from any publicly available Redis server, simply
 enter the following information in the Import Dataset dialog of your
@@ -34,8 +33,7 @@ Redis^e^ Cloud instance and click the "Import" button when done:
 3.  If the source Redis server is set with a password, enter it in the
     **Password** input control field.
 
-Import a Dataset from a RDB File
---------------------------------
+## Import a Dataset from a RDB File
 
 You can import any standard RDB to your Redis Enterprise Cloud instance.
 Both uncompressed and compressed (with a .gz suffix) RDB files are
@@ -62,8 +60,7 @@ Where:
 -   *filename*: the filename of the RDB file, optionally compressed and
     with the *.gz* suffix.
 
-RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
---------------------------------------------------------------
+## RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
 
 To import an RDB file that's stored in an S3 bucket, first make sure the
 file is shared with Redis Cloud. To do so, access your AWS Management

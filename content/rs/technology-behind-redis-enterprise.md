@@ -11,8 +11,7 @@ objectives:
 -   Ensure consistent top performance
 -   Simplify and automate operations
 
-Decouple data path from cluster management
-------------------------------------------
+## Decouple data path from cluster management
 
 RS's architecture completely decouples the data path from the cluster
 management in order to optimize the operations of each of these
@@ -51,8 +50,7 @@ events at the same time. Because the cluster manager is entirely
 decoupled from the data path components, changes to its software
 components do not affect the data path components.
 
-Ensure consistent top performance
----------------------------------
+## Ensure consistent top performance
 
 Multiple techniques are implemented by RS to provide consistent top
 performance for Redis:
@@ -71,8 +69,7 @@ performance for Redis:
     support burst write operations without degrading (or blocking)
     database performance.
 
-Simplified and automated operations
------------------------------------
+## Simplified and automated operations
 
 RS boosts the productivity of developers and DevOps by simplifying and
 automating certain complex and time-consuming ops-related tasks. Tasks
