@@ -36,15 +36,15 @@ HTML: *I love {{< field "favorite_food" >}}!*
 
 * To link to another page in the content directory:
 
-    `[The manager installation page]({{</* relref  "install_maintain/installation/installing-manager.md" */>}})`
+    `[Redis Enterprise VPC Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
 
-    For example: [The manager installation page]({{< relref  "install_maintain/installation/installing-manager.md" >}})
+    For example: [Redis Enterprise VPC Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
 
 * To link to an anchor on another page in the content directory:
 
-    `[The manager installation instructions]({{</* relref "install_maintain/installation/installing-manager.md#installing-manager" */>}})`
+    `[Sign up for Redis Enterprise VPC]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" */>}})`
 
-    For example: [The manager installation instructions]({{< relref "install_maintain/installation/installing-manager.md#installing-manager" >}})
+    For example: [Sign up for Redis Enterprise VPC]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" >}})
 
 # Text Formatting
 
@@ -104,15 +104,15 @@ def hello_world():
 `![Alt text]( /images/path/image.png )
 `
 
-For example, `![Building]( /images/cfy_complex.png )` shows:
+For example, `![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )` shows:
 
-![Building]( /images/cfy_complex.png )
+![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
 To make an image appear on the next line in a list:
 
 1. Write your instruction.
 2. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
-    ![The blueprint upload button]( /images/manager/ui_upload_blueprint_button.png )
+    ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
 # Panels
 
