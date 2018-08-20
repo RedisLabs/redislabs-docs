@@ -4,5 +4,4 @@ description:
 weight: $weight
 alwaysopen: false
 ---
--   [Cluster API
-    Architecture](/redis-enterprise-documentation/concepts-architecture/data-access/cluster-api/)
+{{%children style="h2" description="true"%}}
