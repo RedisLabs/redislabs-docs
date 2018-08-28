@@ -18,11 +18,11 @@ policies:
 
 One mechanism to avoid this, but still keep performance is to use [Redis
 on
-Flash](/rs/concepts/memory-architecture/redis-flash/).
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 It can span your database across RAM + Flash Memory and intelligently
 manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).
 
 Note: [Active-Active Geo-Replicated
-CRDBs](/rs/administering/intercluster-replication/crdbs/)
+CRDBs]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}})
 will always operate in noeviction mode.

@@ -28,4 +28,4 @@ In addition, the scale selector at the top of the page allows you to set
 the scale of the graphs' X-axis (time).
 
 If you need, there is a [definition of each
-metric](/rs/administering/monitoring-metrics/definitions/).
+metric]({{< relref "/rs/administering/monitoring-metrics/definitions.md" >}}).

@@ -15,14 +15,14 @@ failure](/images/rs/node-failure.png?width=600&height=152)
 
 1.  Acquire a new node that is identical to the old node, install and
     configure Redis Enterprise Software on it per the [install
-    instructions](/rs/administering/installing-upgrading/downloading-installing/).
+    instructions]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
 
     Note: If you are using [Redis on
-    Flash](/rs/redis-e-flash/), you must
+    Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}), you must
     make sure the required flash storage is set up on this new node.
 
 2.  Add a new node, as described in [adding a new node to a
-    cluster](/rs/administering/cluster-operations/adding-node/).
+    cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 3.  Make sure the new node has as much available memory as the faulty
     node.
 4.  A message appears, informing you that the cluster has a faulty node
@@ -40,4 +40,4 @@ one.
 the DNS records must be updated each time a node is added or replaced.
 For additional details, For more information, refer to the [connection
 management
-page](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/).
+page]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).

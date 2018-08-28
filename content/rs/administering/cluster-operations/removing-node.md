@@ -48,7 +48,7 @@ existence of a faulty node and automatically replaces the faulty node
 with the new node.
 
 For guidelines, refer to [Replacing a faulty
-node](/rs/cluster-administration/replacing-a-faulty-node).
+node]({{< relref "/rs/cluster-administration/replacing-a-faulty-node.md" >}}).
 
 ## Replacing a healthy node
 
@@ -57,15 +57,15 @@ must first add the new node to the cluster, migrate all the resources
 from the node you would like to remove, and only then remove the node.
 
 For further guidance, refer to [adding a new node to a
-cluster](/rs/administering/cluster-operations/adding-node/).
+cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 
 You can migrate resources by using the *rladmin* command-line interface
 (CLI). For guidelines, refer to [*rladmin* command line interface
-(CLI)](/rs/references/cli-reference/rladmin/).
+(CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}}).
 
 **Note**: The DNS records must be updated each time a node is added or
 replaced. For additional details, refer to
-[DNS](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/).
+[DNS]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 
 ## Removing a node
 
@@ -84,11 +84,11 @@ To remove a node:
 
 You can choose to receive email alerts related to this process, as
 described in [Managing cluster
-alerts](/rs/cluster-administration/viewing-and-defining-cluster-settings/managing-cluster-alerts).
+alerts]({{< relref "/rs/cluster-administration/viewing-and-defining-cluster-settings/managing-cluster-alerts.md" >}}).
 
 **Note**: Once you remove a node, if you need to add it back to a
 cluster, you must first
-[uninstall](/rs/administering/installing-upgrading/uninstalling/)
+[uninstall]({{< relref "/rs/administering/installing-upgrading/uninstalling.md" >}})
 and
-[reinstall](/rs/administering/installing-upgrading/downloading-installing/)
+[reinstall]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
 the software on that node.

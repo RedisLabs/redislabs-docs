@@ -10,7 +10,7 @@ fairly aggressive. For Redis Enterprise Software (RS) with the way it
 utilizes and manages memory, it is best to eliminate the likelihood of
 the OS swapping. If you would like to understand why, please read more
 on [how RS manages
-memory](/rs/concepts/memory-architecture/memory-management/)
+memory]({{< relref "/rs/concepts/memory-architecture/memory-management.md" >}})
 for best functionality and performance in the section below. The formal
 recommendation is to disable Linux swap completely in the OS.
 

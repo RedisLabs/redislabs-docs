@@ -32,6 +32,6 @@ allow these two services through the firewall, as necessary.
 
 **Note**: If databases are created with non-standard RES ports (for
 additional details, refer to [Server ports
-configuration](/rs/administering/designing-production/networking/port-configurations/)),
+configuration]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}),
 you need to explicitly configure firewalld to make sure those ports are
 not blocked.

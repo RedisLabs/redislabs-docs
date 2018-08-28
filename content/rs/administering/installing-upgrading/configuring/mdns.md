@@ -9,13 +9,13 @@ and should only be used in dev/test environments.
 
 If you choose to use the mDNS protocol when setting the cluster name
 (for details, refer [How to set the cluster
-name](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)),
+name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
 ensure that the configurations and prerequisites, which are required for
 resolving databases' endpoints, are met. These configurations and
 perquisites are needed on the client machines, as well as on the
 machines you are using as Redis Enterprise Software (RES) nodes if you
 are using the [Replica
-of](/rs/database-configuration/replica-of)
+of]({{< relref "/rs/database-configuration/replica-of.md" >}})
 feature.
 
 First, ensure that the machines acting as clients and the machines
@@ -49,7 +49,7 @@ on the operating system you are using:
 
 If you are using mDNS along with IPv6 addresses (see more details in
 [Multi-IP &
-IPv6](/rs/administering/designing-production/networking/multi-ip-ipv6/)),
+IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}),
 ensure that you also make the following update to the
 "/etc/nsswitch.conf" file:
 

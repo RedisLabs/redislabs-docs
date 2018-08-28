@@ -6,9 +6,9 @@ alwaysopen: false
 ---
 You can change the location of the socket files anytime, but to limit
 downtime, it is best to perform this change when you are
-[installing](/rs/administering/installing-upgrading/downloading-installing/)
+[installing]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
 or
-[upgrading](/rs/administering/installing-upgrading/upgrading/)
+[upgrading]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
 Redis Enterprise Software to version 4.5.0.-51 or higher. If this change
 needs to be performed immediately on an existing cluster, see the
 instructions below.

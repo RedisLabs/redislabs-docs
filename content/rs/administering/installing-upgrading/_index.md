@@ -10,21 +10,21 @@ Enterprise Software (RS).
 Topics:
 
 -   [Installing the setup
-    package](/rs/installing-and-upgrading/accessing-and-installing-the-setup-package)
--   [Configuring](/rs/administering/installing-upgrading/configuring/)
+    package]({{< relref "/rs/installing-and-upgrading/downloading-installing" >}})
+-   [Configuring]({{< relref "/rs/administering/installing-upgrading/configuring.md" >}})
     -   [Linux
-        Swap](/rs/administering/installing-upgrading/configuring/linux-swap/)
+        Swap]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}})
     -   [CentOS/RHEL Firewall
-        settings](/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall/)
+        settings]({{< relref "/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
     -   [DNS
-        Setup](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
+        Setup]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
     -   [Client prerequisites for
-        mDNS](/rs/administering/installing-upgrading/configuring/mdns/)
--   [Uninstalling](/rs/installing-and-upgrading/uninstalling)
--   [Upgrading](/rs/installing-and-upgrading/upgrading)
+        mDNS]({{< relref "/rs/administering/installing-upgrading/configuring/mdns.md" >}})
+-   [Uninstalling]({{< relref "/rs/installing-and-upgrading/uninstalling.md" >}})
+-   [Upgrading]({{< relref "/rs/administering/installing-and-upgrading/upgrading.md" >}})
 -   [Offline
-    Installation](/rs/administering/installing-upgrading/offline-installation/)
+    Installation]({{< relref "/rs/administering/installing-upgrading/offline-installation.md" >}})
 -   [Configuring AWS
-    instances](/rs/administering/installing-upgrading/configuring-aws-instances/)
+    instances]({{< relref "/rs/administering/installing-upgrading/configuring-aws-instances.md" >}})
 -   [File
-    Locations](/rs/administering/installing-upgrading/file-locations/)
+    Locations]({{< relref "/rs/administering/installing-upgrading/file-locations.md" >}})

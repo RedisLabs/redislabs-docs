@@ -51,4 +51,4 @@ from a single console.
         costs using the usage calculator that appears at the bottom of
         the page when you select this plan.
 7.  Click the "continue" button to [create a
-    database](/rc/administration/setup-and-editing/creating-databases/).
+    database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).

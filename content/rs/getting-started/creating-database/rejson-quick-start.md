@@ -7,7 +7,7 @@ alwaysopen: false
 For this quick start, you will need the following:
 
 -   [A Redis Enterprise Software cluster with set up already
-    complete](/rs/getting-started/quick-setup/)
+    complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
 -   Any redis-cli or ReJSON enabled client
 
 ### Create a new database that uses the Module

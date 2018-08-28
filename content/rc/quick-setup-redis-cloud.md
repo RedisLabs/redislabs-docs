@@ -46,7 +46,7 @@ For a new subscription, you will need to select the following:
 
 You can consider a quick overview of each tier's features upon
 selection. For more specific information, see [Creating a
-Subscription](/rc/administration/setup-and-editing/create-subscription/).
+Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}).
 
 Once you have made your selections, click **Continue** to finalize your
 subscription.
@@ -128,12 +128,12 @@ and you are done.
 ## More Information
 
 1.  [Data Persistence with Redis Enterprise
-    Cloud](/rc/concepts/data-persistence-redis-cloud/).
+    Cloud]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
 2.  [Securing Your Redis Enterprise Cloud
-    Database](/rc/administration/configure/security/).
+    Database]({{< relref "/rc/administration/configure/security.md" >}}).
 3.  [Creating a
-    database](/rc/administration/setup-and-editing/creating-databases-redis-cloud/).
+    database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
 4.  [Redis Enterprise Cloud Database
-    Backups](/rc/administration/configure/backups/).
+    Backups]({{< relref "/rc/administration/configure/backups.md" >}}).
 5.  [Monitoring Redis Enterprise Cloud
-    Performance](/rc/administration/configure/monitoring-alerting-metrics/).
+    Performance]({{< relref "/rc/administration/configure/monitoring-alerting-metrics.md" >}}).

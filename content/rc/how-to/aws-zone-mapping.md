@@ -59,12 +59,12 @@ they are using. If you desire to remove the latency discussed before,
 you must
 
 1.  [Create a new
-    subscription](/rc/administration/setup-and-editing/create-subscription/) in
+    subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}) in
     the correct AZ
 2.  [Create a new
-    database](/rc/administration/setup-and-editing/creating-databases/)
+    database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}})
 3.  [Migrate your
-    data](/rc/how-to/importing-dataset-redis-cloud/)
+    data]({{< relref "/rc/how-to/importing-dataset-redis-cloud.md" >}})
     over to the new database.
 
 While simple, this will cause some downtime. If downtime is not an

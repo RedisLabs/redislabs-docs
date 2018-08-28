@@ -9,7 +9,7 @@ events trigger alert notifications.
 
 **Note**: For instructions on configuring alerts at the database level,
 refer to [Database
-alerts](/rs/database-configuration/database-alerts).
+alerts]({{< relref "/rs/database-configuration/database-alerts.md" >}}).
 
 Certain alerts, such as **Node failed** can only be turned on or off.
 Some alerts require setting a threshold, such as **Node memory has
@@ -24,7 +24,7 @@ To enable receiving email alerts:
 2.  Add the relevant users to the Team page, and ensure that the
     checkbox Email Alerts is selected (for additional details, refer to
     [Managing
-    users](/rs/administering/cluster-operations/settings/account-management/)).
+    users]({{< relref "/rs/administering/cluster-operations/settings/account-management.md" >}}).
 3.  Configure the email server settings on the General page (for
     additional details, refer to [Managing general
-    settings](/rs/administering/cluster-operations/settings/general/)).
+    settings]({{< relref "/rs/administering/cluster-operations/settings/general.md" >}}).

@@ -20,7 +20,7 @@ Pre-requisites
     Management (IAM) with specific privileges in order to create,
     maintain, and manage your RV cluster and databases. See "[Creating
     an AWS user for Redis Enterprise
-    VPC](/rv/how-to/creating-aws-user-redis-cloud-private/)"
+    VPC]({{< relref "/rv/how-to/creating-aws-user-redis-cloud-private.md" >}})"
     for help creating this user and the necessary roles, policies, etc.
 
 ## Create a New Subscription
@@ -55,9 +55,9 @@ For a new subscription, you will need to provide the following:
     zones.
 5.  Select whether you want the subscription to support databases with
     the ability to span RAM only or [RAM + Flash
-    Memory](/rs/concepts/concepts/redis-e-flash/).
+    Memory]({{< relref "/rs/concepts/concepts/redis-e-flash.md" >}}).
 6.  Select an existing or [Create a new Cloud
-    Account](/rv/administration/setup-and-editing/creating-cloud-account/)
+    Account]({{< relref "/rv/administration/setup-and-editing/creating-cloud-account.md" >}})
     for RV to use.
 7.  Select your subscription networking options:
     -   [**New VPC** - this will create a new VPC and provision your

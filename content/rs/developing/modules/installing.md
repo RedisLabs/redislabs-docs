@@ -11,13 +11,13 @@ Enterprise Software (RS). There are two types
     the [Redis Enterprise downloads
     page](/products/redis-pack/downloads/). For more specific
     information on each module:
-    a.  [ReJSON](/rs/developing/modules/rejson/)
+    a.  [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
     b.  [RediSearch
-        Enterprise](/rs/developing/modules/redisearch/)
-    c.  [ReBloom](/rs/developing/modules/bloom-filters/)
+        Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    c.  [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 2.  Custom packaged modules - For instructions on packing up any module
     from redismodules.com, see [Developing with
-    Modules](/rs/developing/modules/).
+    Modules]({{< relref "/rs/developing/modules.md" >}}).
 
 Once you have acquired the package (it will be in zip format) proceed to
 the next step of adding the module to Redis Enterprise Software.
@@ -40,7 +40,7 @@ the next step of adding the module to Redis Enterprise Software.
 
 Note: before creating a new DB with modules, it is recommend to download
 and [upgrade the currently installed
-modules](/rs/developing/modules/upgrading/)
+modules]({{< relref "/rs/developing/modules/upgrading.md" >}})
 to the newest versions.
 
  

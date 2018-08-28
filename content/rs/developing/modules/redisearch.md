@@ -133,7 +133,7 @@ number of shards. Once you create the database, you will not be able to
 edit this value or the number of shards the database has. If at a later
 point you need to expand the database with more shards, you must create
 a new database with the settings you need, then [replicate the
-data](/rs/administering/intercluster-replication/replica-of/)
+data]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
 from the current database to the new one.
 
 If you need to create a database that has a PARTITIONS value that is not

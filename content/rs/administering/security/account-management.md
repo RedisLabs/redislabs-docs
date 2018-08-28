@@ -105,7 +105,7 @@ the UI or through the users API.
 ## Creating users for use with LDAP authentication
 
 To have a user authenticate with LDAP, you must have [LDAP integration
-enabled](/rs/administering/cluster-operations/settings/ldap-integration/),
+enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}),
 and then create a new user via the REST API call like this:
 
 ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}

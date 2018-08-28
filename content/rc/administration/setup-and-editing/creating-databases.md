@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 ---
 Once you have a
-[subscription](/rc/administration/setup-and-editing/create-subscription/),
+[subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}),
 creating a Redis database in Redis Enterprise Cloud is simple with the
 steps below.
 
@@ -24,10 +24,10 @@ first.
     that by enabling this feature, your database will consume twice as
     much memory in your subscription.
 5.  Select your preferred [Data
-    Persistence](/rc/concepts/data-persistence-redis-cloud/)
+    Persistence]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}})
     option.
 6.  If this is a **Pay-as-You-Go** subscription, you will see [Database
-    Clustering](/rc/concepts/clustering-redis-cloud/)
+    Clustering]({{< relref "/rc/concepts/clustering-redis-cloud.md" >}})
     as an option.
 7.  Enter a **password** if you would like to secure your database. This
     is highly recommended.
@@ -43,15 +43,15 @@ first.
     can add SSL Client Authentication to your database here. For
     specific information on this process, see [Securing Redis Enterprise
     Cloud Connections with
-    SSL/TLS](/rc/administration/configure/securing-redis-cloud-connections/).
+    SSL/TLS]({{< relref "/rc/securing-redis-cloud-connections.md" >}}).
 11. For more advanced options, click on **More Options**.
 12. Choose a [Data Eviction
-    Policy](/rc/concepts/data-eviction-policies/)
+    Policy]({{< relref "/rc/concepts/data-eviction-policies.md" >}})
     or accept the default.
 13. If you would like periodic backups of your database, enter the path
     to storage here. For specific information visit [Configuring
     Database Backups for Redis Enterprise
-    Cloud](/rc/administration/configure/backups/).
+    Cloud]({{< relref "/rc/administration/configure/backups.md" >}}).
 14. You can add **Alert Settings** to your database so that you and your
     team can be alerted when thresholds are passed.
 15. Click **Activate**.
