@@ -10,9 +10,9 @@ offered with Redis Enterprise Software.
 
   ----------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------
   **Redis Enterprise Software General**                                                                                   **Docker**                                                                             **Other**
-  [Redis Enterprise Software Quick Setup]({{< relref "/rs/getting-started/quick-setup/) }})                  [Docker on Linux]({{< relref "/rs/getting-started/docker/linux/) }})      [Pivotal Cloud Foundry Quick Setup]({{< relref "/rs/getting-started/pcf.md" >}})
-  [ReJSON Quick Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start/) }})            [Docker on Mac]({{< relref "/rs/getting-started/docker/macos/) }})        [memtier\_benchmark]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
-  [RediSearch]({{< relref "/rs/getting-started/creating-database/redisearch/) }})                            [Docker on Windows]({{< relref "/rs/getting-started/docker/windows.md" >}})   
+  [Redis Enterprise Software Quick Setup]({{< relref "/rs/getting-started/quick-setup.md" >}})                  [Docker on Linux]({{< relref "/rs/getting-started/docker/linux.md" >}})      [Pivotal Cloud Foundry Quick Setup]({{< relref "/rs/getting-started/pcf.md" >}})
+  [ReJSON Quick Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}})            [Docker on Mac]({{< relref "/rs/getting-started/docker/macos.md" >}})        [memtier\_benchmark]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
+  [RediSearch]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})                            [Docker on Windows]({{< relref "/rs/getting-started/docker/windows.md" >}})   
    [Active-Active geo-replication with CRDBs]({{< relref "/rs/getting-started/creating-database/crdbs.md" >}})                                                                                          
   ----------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------- -------------------------------------------------------------------------------------------
 
