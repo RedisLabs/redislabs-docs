@@ -16,7 +16,7 @@ database at any time.]{style="font-weight: 400;"}
 4.  [The database settings appear. You can edit any of the configurable
     parameters. For explanation, refer to
     ]{style="font-weight: 400;"}[[Creating a new
-    database]{style="font-weight: 400;"}](/rs/administering/database-operations/creating-database/)[.]{style="font-weight: 400;"}
+    database]{style="font-weight: 400;"}]({{< relref "/rs/administering/database-operations/creating-database.md" >}})[.]{style="font-weight: 400;"}
 5.  [Click Update.]{style="font-weight: 400;"}
 
  

@@ -17,7 +17,7 @@ The steps do the installation through Docker containers. However bare
 metal installation is quite similar to installing and setting up
 clusters on other infrastructure like bare metal machines or virtualized
 environments on Windows, MacOS or Linux. You can find other "Getting
-Started" guides [here](/rs/quick-setup/).
+Started" guides [here]({{< relref "/rs/getting-started/quick-setup.md" >}}).
 
 Note: if you are setting up a production-grade environment, please
 follow the detailed installation guide in the administration section.

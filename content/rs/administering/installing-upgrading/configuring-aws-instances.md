@@ -17,15 +17,15 @@ set up an instance ensure that it has a properly sized EBS backed volume
 connected. Later, when setting up RS on the instance, ensure that the
 persistence storage (for additional details, refer to [Persistent and
 ephemeral
-storage](/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage/))
+storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 is configured to use this volume.
 
 Note: After installing the RS package on the instance (for additional
 details, refer to [Accessing and installing the setup
-package](/rs/administering/installing-upgrading/downloading-installing/))
+package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
 and **before** running through the setup process (for additional
 details, refer to [Initial setup - creating a new
-cluster](/rs/initial-setup-creating-a-new-cluster)),
+cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
 chown redislabs:redislabs /\< ebs folder name \>
@@ -36,7 +36,7 @@ certain level of disk performance. There are two features in RS where
 this feature could be critical to use:
 
 1.  When using [Redis on
-    Flash](/rs/redis-e-flash/)
+    Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 2.  When using AOF on every write and there is a high write load. In
     this case, the provisioned IOPS should be on the nodes used as
     slaves in the cluster.
@@ -46,7 +46,7 @@ Instance Types
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
-requirements](/rs/administering/designing-production/hardware-requirements/).
+requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
 In addition, some instance types are optimized for EBS backed volumes
 and some are not. If you are using persistent storage, you should use an
@@ -76,4 +76,4 @@ When configuring the Security Group:
 
 After successfully launching the instances, setup the cluster as
 described in [Initial setup - creating a new
-cluster](/rs/initial-setup-creating-a-new-cluster).
+cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).

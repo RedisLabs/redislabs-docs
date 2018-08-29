@@ -6,7 +6,7 @@ alwaysopen: false
 ---
 [All data is stored and managed exclusively in either RAM or RAM + Flash
 Memory ([Redis on
-Flash](/rs/concepts/memory-architecture/redis-enterprise-flash/))
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 and therefore, is at risk of being lost upon a process or server
 failure.]{style="font-weight: 400;"} As Redis Enterprise Software is not
 just a caching solution, but also a full-fledged database,

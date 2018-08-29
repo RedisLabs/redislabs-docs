@@ -14,19 +14,19 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
 
 -   RediSearch Enterprise
     -   [Quick
-        Start](/rs/getting-started/creating-database/redisearch/)
+        Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     -   [Developing with RediSearch
-        Enterprise](/rs/developing/modules/redisearch/)
+        Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 -   ReJSON
     -   [Quick
-        Start](/rs/getting-started/creating-database/rejson-quick-start/)
+        Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}})
     -   [Developing
-        with ReJSON](/rs/developing/modules/rejson/)
+        with ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
 -   ReBloom
     -   [Quick
-        Start](/rs/getting-started/creating-database/rebloom/)
+        Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
     -   [Developing with
-        ReBloom](/rs/developing/modules/bloom-filters/)
+        ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 
 [In 5.0.2 and later, enterprise modules (RediSearch Enterprise, ReJSON,
 ReBloom) come pre-installed.]{style="font-weight: 400;"}
@@ -35,7 +35,7 @@ To download these modules, please go to the [Redis Enterprise downloads
 page](/products/redis-pack/downloads/).
 
 To upgrade these modules, please go to [Upgrading a
-Module](/rs/developing/modules/upgrading/).
+Module]({{< relref "/rs/developing/modules/upgrading.md" >}}).
 
 Critical: Redis Labs does not and can not support third party modules or
 databases created with them.
@@ -97,4 +97,4 @@ ramp ](https://github.com/RedisLabs/RAMP)github[page](https://github.com/RedisL
 for more information each command line switch in ramp.
 
 To deploy the packaged module, see [Installing a
-Module](/rs/developing/modules/installing/).
+Module]({{< relref "/rs/developing/modules/installing.md" >}}).

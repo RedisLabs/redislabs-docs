@@ -19,22 +19,22 @@ select one of the following options:
     like to use in order to launch an instance on Amazon Web Services
     (AWS).
 -   **Docker** - Go
-    [here](/rs/installing-and-upgrading/docker/)
+    [here]({{< relref "/rs/getting-started/docker/_index.md" >}})
     for the install guide and skip this page.
 
 Info: If you are using the AMI option or installing the .tar file
 package on an AWS instance, review the guidelines in [Configuration of
 AWS
-instances](/rs/cluster-administration/best-practices/configuration-of-aws-instances).
+instances]({{< relref "/rs/administering/installing-upgrading/configuring-aws-instances.md" >}}).
 
 ## Prerequisites
 
 1.  If you intend to use [Redis on
-    Flash](/rs/redis-e-flash/) for your
+    Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for your
     databases, be familiar with the specifics of that feature and its
     set of prerequisites, storage, and considerations.
 2.  [Disable Linux
-    swap](/rs/administering/installing-upgrading/configuring/linux-swap/)
+    swap]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}})
     on all nodes to be part of the cluster.
 3.  Ensure you have root level access to each node, either directly or
     via sudo.
@@ -102,7 +102,7 @@ by performing the following steps:
         cluster.
 
     2.  If you intend to create [Redis on
-        Flash](/rs/redis-e-flash/) enabled
+        Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) enabled
         databases, you must prepare and format the flash memory. You
         should run:
 
@@ -174,7 +174,7 @@ Swap is enabled. Do you want to proceed? [Y/N]?
 Due to how Redis Enterprise manages memory on a node, Linux swap should
 be disabled in the operating system configuration. For more information
 on why and how to do this, please see [Swap in
-Linux](/rs/administering/installing-upgrading/configuring/linux-swap/).
+Linux]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}}).
 
 ### Shard is syncing
 
@@ -218,7 +218,7 @@ Do you want to set up NTP time synchronization now [Y/N]?
 Redis Enterprise requires that all nodes of the cluster have
 synchronized time. If you do not permit the script to configure this,
 then you must do this manually. For more information see [Syncing Node
-Clocks](/rs/administering/designing-production/synchronizing-clocks/).
+Clocks]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
 
 ### Firewall Ports
 
@@ -229,10 +229,10 @@ Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N
 If a firewall is operating on the node the install process is running,
 the script can configure the firewall to open the correct [ports Redis
 Enterprise
-requires](/rs/administering/designing-production/networking/port-configurations/)
+requires]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 to operate. If not, you will have to open the necessary ports on your
 own. If you need, there is specific information on [RHEL/CentOS firewall
-configuration](/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall/).
+configuration]({{< relref "/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
 
 ### Final Check
 

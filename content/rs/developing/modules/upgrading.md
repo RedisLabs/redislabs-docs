@@ -16,16 +16,16 @@ fixes.]{style="font-weight: 400;"}
     page]{style="font-weight: 400;"}](https://redislabs.com/products/redis-pack/downloads/)[.
     For more specific information on developing with each module
     see:]{style="font-weight: 400;"}
-    1.  [[ReJSON]{style="font-weight: 400;"}](/rs/developing/modules/rejson/)
+    1.  [[ReJSON]{style="font-weight: 400;"}]({{< relref "/rs/developing/modules/rejson.md" >}})
     2.  [[RediSearch
-        Enterprise]{style="font-weight: 400;"}](/rs/developing/modules/redisearch/)
-    3.  [[ReBloom]{style="font-weight: 400;"}](/rs/developing/modules/bloom-filters/)
+        Enterprise]{style="font-weight: 400;"}]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    3.  [[ReBloom]{style="font-weight: 400;"}]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 2.  [Custom packaged modules - For instructions on packing up any
     module from
     ]{style="font-weight: 400;"}[[redismodules.com]{style="font-weight: 400;"}](http://redismodules.com)[
     to use in upgrades, see ]{style="font-weight: 400;"}[[Developing
     with
-    Modules]{style="font-weight: 400;"}](/rs/developing/modules/)[.]{style="font-weight: 400;"}
+    Modules]{style="font-weight: 400;"}]({{< relref "/rs/developing/modules/_index.md" >}})[.]{style="font-weight: 400;"}
 
 ### [Deploying the Packaged Module into Redis Enterprise Software]{style="font-weight: 400;"}
 

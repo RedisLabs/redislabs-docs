@@ -6,7 +6,7 @@ alwaysopen: false
 ---
 By default, RES manages a node's memory so data is entirely in RAM for
 performance reasons. The exception to this is RES's [Redis on
-Flash](/rs/concepts/memory-architecture/redis-enterprise-flash/)
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 feature where Flash memory (SSDs) can be used to store data too. If
 there's not enough RAM available, RES does not allow inserting of more
 data into databases. This limitation is intentional and ultimately
@@ -17,7 +17,7 @@ it needs and when it needs it. RES protects the existing data and
 prevents the database from being able to store data into the shards. It
 can be configured to move the data to another node, or even discard it.
 This depends on [eviction
-policy](/rs/database-configuration/database-eviction-policy/)
+policy]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}})
 set on a database by the administrator.
 
 With this memory management style, comes the responsibility to monitor

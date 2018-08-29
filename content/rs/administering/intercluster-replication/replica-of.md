@@ -14,7 +14,7 @@ keep a database (destination) that is an exact replica of a database.
 ReplicaOf is uni-directional replication between databases, either
 within a cluster or between clusters. It should not be confused with
 [Geo-Replication via
-CRDBs](/rs/administering/intercluster-replication/crdbs/),
+CRDBs]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}),
 which is bi-directional replication between N+1 databases on separate,
 possibly geo-located, clusters.
 
@@ -40,7 +40,7 @@ destination database.
 
 **Note:** The *Replica of* feature should not be confused with the
 in-memory [Database
-replication](/rs/database-configuration/database-replication)
+replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 
@@ -83,7 +83,7 @@ can be Redis databases that are not part of an RS.
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
-    compression](/rs/database-configuration/replica-of#Replica-of-data-compression)
+    compression]({{< relref "/rs/administering/intercluster-replication/replica-of.md#Replica-of-data-compression" >}})
     section.
 -   When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:\
@@ -104,7 +104,7 @@ restarted from scratch for all the source databases.
 (FQDN), ensure that the client mDNS perquisites are met in order for the
 *Replica of* feature to work. For additional details, refer to the
 [Client prerequisites for
-mDNS](/rs/administering/installing-upgrading/configuring/mdns/).
+mDNS]({{< relref "/rs/administering/installing-upgrading/configuring/mdns.md" >}}).
 
 ## Replication process
 
@@ -156,7 +156,7 @@ of the statuses of all the sources.
 
 **Note:** If you encounter issues with the *Replica of* process, refer
 to the troubleshooting section [Replica of repeatedly
-fails](/rs/administering/troubleshooting/replicaof-repeatedly-fails/).
+fails]({{< relref "/rs/administering/troubleshooting/replicaof-repeatedly-fails.md" >}}).
 
 ### Synchronization errors
 

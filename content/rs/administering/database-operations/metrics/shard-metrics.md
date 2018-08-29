@@ -11,10 +11,10 @@ two detailed graphs at the top of the page, as follows:
     -   The first group displays all available **resources**: the
         database itself, and each of the database shards. These can be
         master shards, slave shards (if [Database
-        replication](/rs/database-configuration/database-replication) is
+        replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) is
         enabled), or shards that take part of a clustered database (for
         additional details, refer to [Database
-        clustering](/rs/database-configuration/database-clustering)).\
+        clustering]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).\
         The shard name refers to the shard role (whether master or
         slave).\
         Each small shard graph also lists the node it is located on, and

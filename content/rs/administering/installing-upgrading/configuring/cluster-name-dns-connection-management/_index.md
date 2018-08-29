@@ -6,7 +6,7 @@ alwaysopen: false
 ---
 DNS is critical to the default operation of Redis Enterprise Software
 (RS) deployments. This can be altered, but instead using the [Discovery
-Service](/rs/concepts/concepts/discovery-service/),
+Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}),
 which utilizes pure IP based connectivity as it is compliant with the
 Redis Sentinel API.
 
@@ -49,7 +49,7 @@ the internal DNS to enable the automatic and transparent failover of
 nodes, databases shards, and endpoints, by automatically updating their
 IP addresses. For additional details on these components and their
 roles, refer to [System
-architecture](/rs/system-architecture).
+architecture]({{< relref "/rs/concepts/_index.md" >}}).
 
 Note: Setting the cluster's FQDN is a one-time operation. Once the FQDN
 is set it cannot be updated.
@@ -142,7 +142,7 @@ to the admin console and manage the cluster.
 Applications connecting to RS databases for data access have the same
 constraints. When using the IP based connection method, you can use the
 [Discovery
-Service](/rs/concepts/concepts/discovery-service/)
+Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})
 to discover the database endpoint for a given database name as long as
 you have an IP address for at least one of the nodes in the cluster. The
 API used for discovery service is compliant with the Redis Sentinel API.
@@ -154,4 +154,4 @@ page](/resources/how-to-redis-enterprise/).
 You can find a simple example of URL and IP Based connection in the
 "Testing Connectivity to your Database" section on the ["Creating a new
 database"
-page](/rs/database-configuration/creating-a-new-database/#simple-connectivity-test).
+page]({{< relref "/rs/administering/database-operations/creating-database.md#simple-connectivity-test" >}}).

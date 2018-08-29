@@ -41,7 +41,7 @@ database: every 4, 12, or 24 hours.
 
 You can, at any time, backup any database as described in [Exporting
 data from a
-database](/rs/database-configuration/exporting-data-from-a-database).
+database]({{< relref "/rs/administering/database-operations/exporting-data.md" >}}).
 
 ### Backup of a sharded database
 

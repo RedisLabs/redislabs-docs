@@ -30,10 +30,10 @@ CRDB Instance on a RS cluster.
 Before configuring a CRDB, you will need:
 
 -   All RS clusters hosting a CRDB must be [set up per the standard
-    documentation](/rs/administering/cluster-operations/new-cluster-setup/)
+    documentation]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
     and configured to utilize FQDNs via DNS for connections to the
     cluster. CRDBs are not compatible with the [Discovery
-    Service](/rs/concepts/concepts/discovery-service/)for
+    Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})for
     inter-cluster communications, but are compatible with local
     application connections.
 -   Configure the network so that all nodes in each cluster are able to
@@ -63,7 +63,7 @@ Before configuring a CRDB, you will need:
     mDNS(development only).
 5.  A CRDB cannot utilize Redis on Flash.
 6.  While similar to
-    [ReplicaOf](/rs/administering/intercluster-replication/replica-of/),
+    [ReplicaOf]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}),
     CRDBs are not compatible with that feature. ReplicaOf is a one-way
     replication, while CRDB utilize multi-master replication.
 
@@ -107,13 +107,13 @@ clusters that are part of the CRDB. If it is not set up yet, the setup
 of the CRDB will immediately fail.
 
 The use of [DNS and
-FQDNs](/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/)
+FQDNs]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
 (Fully Qualified Domain Names) is required as MMR is not compatible with
 the [Discovery
-Service](/rs/concepts/concepts/discovery-service/)
+Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})
 for connections. FQDNs must be set up for each cluster per the [regular
 Redis Enterprise Software cluster
-configuration](/rs/administering/cluster-operations/)
+configuration]({{< relref "/rs/administering/_index.md" >}})
 before a CRDB can be configured.
 
 ### Network Ports
@@ -128,7 +128,7 @@ number to be 12845, that is the endpoint of the proxy for that CRDB on
 each cluster and must be opened.
 
 See [Network Port
-Configuration](/rs/administering/designing-production/networking/port-configurations/)
+Configuration]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 for specifics on what ports should be open for VPNs and Security groups.
 
 ### **Data Persistence**

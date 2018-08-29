@@ -15,14 +15,14 @@ single node are super simple and go as follows:
 "Quick Setup" steps on this page apply to a Linux based system install.
 If you would instead like to use Docker, there are platform-specific
 instructions for
-[Linux](/rs/getting-started/docker/linux/),
-[Windows](/rs/getting-started/docker/windows/),
+[Linux]({{< relref "/rs/getting-started/docker/linux.md" >}}),
+[Windows]({{< relref "/rs/getting-started/docker/windows.md" >}}),
 and
-[MacOS](/rs/getting-started/docker/macos/).
+[MacOS]({{< relref "/rs/getting-started/docker/macos.md" >}}).
 
 If you are looking for more detailed installation instructions you can
 visit the [installing and
-upgrading](/rs/administering/installing-upgrading/)
+upgrading]({{< relref "/rs/administering/installing-upgrading/_index.md" >}})
 section of the technical documentation.
 
 ## Step 1 - Install Redis Enterprise Software
@@ -154,5 +154,5 @@ b'123'
 Now that you have a database, if you'd like to do a quick test against
 the database or add a bunch of data for cluster testing, the
 [memtier\_benchmark Quick
-Start](/rs/getting-started/memtier_benchmark/)
+Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
 should help.

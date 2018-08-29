@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 ---
 The steps to set up a Redis Enterprise Software cluster using [Redis on
-Flash](/rs/concepts/memory-architecture/redis-enterprise-flash/)
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 with a single node are simple and are as follows:
 
 -   Step 1: Install Redis Enterprise Software or launch with Docker
@@ -17,7 +17,7 @@ with a single node are simple and are as follows:
 
 If you are looking for more detailed installation instructions you can
 visit the [installing and upgrading
-section](/rs/administering/installing-upgrading/downloading-installing/)
+section]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
 of the technical documentation.
 
 ## Step 1 - Install Redis Enterprise Software
@@ -162,9 +162,9 @@ b'123'
 Now that you have a database, if you'd like to generate load against the
 database or add a bunch of data for cluster testing,
 the [memtier\_benchmark Quick
-Start](/rs/getting-started/memtier_benchmark/) should
+Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) should
 help. However please note that to see the true performance and scale of
 Redis on Flash, you will need to tune your IO path and have the flash
 path set to the mounted path of SSD or NVMe flash memory as that is what
 it is designed to run on. For more information, see [Redis on
-Flash](/rs/concepts/memory-architecture/redis-enterprise-flash/).
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).

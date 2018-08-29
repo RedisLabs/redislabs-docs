@@ -9,7 +9,7 @@ account and team. You can add or edit your VAT ID, account's Time Zone,
 and New Relic license key.
 
 When [setting up SSL/TLS for your
-account](/rc/administration/configure/securing-redis-cloud-connections/),
+account]({{< relref "/rc/securing-redis-cloud-connections.md" >}}),
 you will be prompted to supply the downloadable Redis Labs CA
 Certificate from this page.
 

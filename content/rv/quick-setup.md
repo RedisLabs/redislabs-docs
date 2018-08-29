@@ -39,7 +39,7 @@ For a new subscription, you will need to provide the following:
 1.  A subscription name
 2.  The cloud region you want your databases to be created in AWS
 3.  Whether you want to use [Redis on
-    Flash](/rs/concepts/memory-architecture/redis-flash/)
+    Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database
 4.  The Cloud Account to be used. Use the AWS user created above in Step
     #2 for setting up your RV Cloud Account
@@ -175,12 +175,12 @@ and you are done.
 ## More Information
 
 1.  [Data Persistence with Redis Enterprise
-    VPC](/rv/concepts/data-persistence/)
+    VPC]({{< relref "/rv/concepts/data-persistence.md" >}})
 2.  [Securing Your Redis Enterprise VPC
-    Database](/rv/administration/configure/securing-your-database/)
+    Database]({{< relref "/rv/administration/configuration/securing-your-database.md" >}})
 3.  [Creating
-    Databases](/rv/administration/setup-and-editing/creating-databases/)
+    Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
 4.  [Redis Enterprise Cloud Database
-    Backups](/rv/administration/configure/backups/)
+    Backups]({{< relref "/rv/administration/configuration/backups.md" >}})
 5.  [Monitoring Redis Enterprise VPC
-    Performance](/rv/administration/configure/monitoring-performance/).
+    Performance]({{< relref "/rv/administration/configuration/monitoring-performance.md" >}}).

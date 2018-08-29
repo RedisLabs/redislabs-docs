@@ -31,5 +31,5 @@ disk space they would require in this scenario:
 
 For disk size requirements in standard usage scenarios, refer to the
 [Hardware
-requirements](/rs/administering/designing-production/hardware-requirements/)
+requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 section.

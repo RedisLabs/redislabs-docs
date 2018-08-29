@@ -18,7 +18,7 @@ buffer on the source database to a bigger value:
 
 -   If the source database is a Redis that is part of RS, run the
     following command in
-    [rladmin](/rs/references/cli-reference/rladmin/) to
+    [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}}) to
     increase the slave buffer size of the **source database**:\
     tune db \< db:id \| name \> slave\_buffer \< value \>
 

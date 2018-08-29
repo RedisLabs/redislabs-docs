@@ -23,10 +23,10 @@ of Redis Enterprise Software.
 For disk size requirements refer to the following sections:
 
 -   [Hardware
-    requirements](/rs/administering/designing-production/hardware-requirements/)
+    requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
     for general guidelines regarding the ideal disk size each type of
     storage
 -   [Disk size requirements for extreme write
-    scenarios](/rs/administering/designing-production/performance/disk-sizing-heavy-write-scenarios/)
+    scenarios]({{< relref "/rs/administering/designing-production/performance/disk-sizing-heavy-write-scenarios.md" >}})
     for special considerations when dealing with a high rate of write
     commands

@@ -27,7 +27,7 @@ can produce unexpected results or cause failures in the cluster.
 Upgrading the nodes' software requires installing the RS installation
 package on all of the machines on which RS is installed. For
 instructions, refer to [Accessing and installing the setup
-package](/rs/administering/installing-upgrading/downloading-installing/).
+package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
 
 The master node should be upgraded first and only then the other nodes.
 
@@ -63,7 +63,7 @@ It is highly advisable to run *rlcheck* and *rladmin status extra all*
 on the node both before and after the upgrade, to ensure that the node
 is functioning properly. For additional details, refer to [rlcheck
 Installation Verification
-Utility](/rs/references/cli-reference/rlcheck/).
+Utility]({{< relref "/rs/references/cli-reference/rlcheck.md" >}}).
 
 If you have the RS management UI open in the browser while you are
 upgrading the nodes, ensure that you refresh the browser before trying
@@ -89,7 +89,7 @@ version supported by RS:**
 
 -   In the *rladmin* CLI, run the status command (For additional
     details, refer to [*rladmin* command-line
-    interface (CLI)](/rs/references/cli-reference/rladmin/)).
+    interface (CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}}).
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
 -   In the Management UI, go to the **Cluster \> Configuration** page.
@@ -105,14 +105,14 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
     not be able to upgrade the databases.
 2.  In the *rladmin* CLI, run the upgrade db command for each database.
     For additional details, refer to [*rladmin* command-line
-    interface (CLI)](/rs/references/cli-reference/rladmin/).
+    interface (CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}}).
 
 During the database upgrade process, the database will be restarted. As
 a result:
 
 -   For databases that have replication enabled (for additional details,
     refer to [Database
-    replication](/rs/database-configuration/database-replication))
+    replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
     a failover occurs prior to restarting the database to ensure that
     there is no downtime.
 -   For databases that do not have replication enabled and persistence
@@ -122,5 +122,5 @@ a result:
     usually takes longer than an RDB file.
 -   For databases that have neither replication nor persistence enabled
     (for additional details, refer to [Database
-    persistence](/rs/database-configuration/database-persistence)),
+    persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}),
     the database loses all its data after it is restarted.

@@ -62,7 +62,7 @@ your Pivotal Cloud Foundry environment to get started.
 **Note**: It is important to ensure the capacity used for RP cluster
 nodes meet the minimum HW specification requirements for Redis
 Enterprise Software. See the [minimum HW
-specifications](/rs/installing-and-upgrading/hardware-software-requirements/).
+specifications]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
 ### Step 3 - Deploy the Redis Enterprise Software Cluster
 

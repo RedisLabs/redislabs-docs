@@ -8,7 +8,7 @@ By default, the installation process requires an Internet connection to
 enable installing dependency packages and for synchronizing the
 operating system clock against an NTP server (for additional details,
 refer to [Synchronizing node
-clocks](/rs/administering/designing-production/synchronizing-clocks/)).
+clocks]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
 
 If you install Redis Enterprise Software (RS) on a machine with no
 Internet connection, you need to perform these two tasks manually, as
@@ -29,4 +29,4 @@ appropriate error message, but the installation completes successfully.
 Despite the successful completion of the installation, you still have to
 configure all nodes for NTP time synchronization as described
 in [Synchronizing node
-clocks](/rs/administering/designing-production/synchronizing-clocks/).
+clocks]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).

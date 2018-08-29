@@ -27,7 +27,7 @@ Configuration =\> Edit =\> Access Control & Security.
 ## Securing Connection to Your Database with SSL/TLS
 
 There is a [dedicated
-page](/rc/configuration/securing-redis-cloud-connections/)
+page]({{< relref "/rc/securing-redis-cloud-connections.md" >}})
 on this topic with steps you need to achieve this.
 
 ## Redis Password
