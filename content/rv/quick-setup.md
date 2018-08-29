@@ -179,7 +179,7 @@ and you are done.
 2.  [Securing Your Redis Enterprise VPC
     Database]({{< relref "/rv/administration/configuration/securing-your-database.md" >}})
 3.  [Creating
-    Databases]({{< relref "//rs/administering/database-operations/creating-database.md" >}})
+    Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
 4.  [Redis Enterprise Cloud Database
     Backups]({{< relref "/rv/administration/configuration/backups.md" >}})
 5.  [Monitoring Redis Enterprise VPC
