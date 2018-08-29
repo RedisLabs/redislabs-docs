@@ -22,7 +22,7 @@ and
 
 If you are looking for more detailed installation instructions you can
 visit the [installing and
-upgrading]({{< relref "/rs/administering/installing-upgrading.md" >}})
+upgrading]({{< relref "/rs/administering/installing-upgrading/_index.md" >}})
 section of the technical documentation.
 
 ## Step 1 - Install Redis Enterprise Software
@@ -154,5 +154,5 @@ b'123'
 Now that you have a database, if you'd like to do a quick test against
 the database or add a bunch of data for cluster testing, the
 [memtier\_benchmark Quick
-Start]({{< relref "/rs/getting-started/memtier_benchmark.md" >}})
+Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
 should help.

@@ -13,7 +13,7 @@ listed on Redis.io](https://redis.io/clients).
 ### Discovery Service
 
 For the [Discovery
-Service]({{< relref "/rs/concepts/concepts/discovery-service.md" >}}) which
+Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) which
 utilizes the Redis Sentinel API, the following clients are tested and
 recommended:
 

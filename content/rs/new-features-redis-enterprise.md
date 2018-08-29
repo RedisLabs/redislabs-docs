@@ -21,7 +21,7 @@ provide smart and automatic conflict resolution based on the data type's
 intent.
 
 For more information, go here. For information, go to [Developing with
-CRDBs]({{< relref "/rs/developing/crdbs.md" >}}).
+CRDBs]({{< relref "/rs/developing/crdbs/_index.md" >}}).
 
 ## Redis Modules
 
@@ -36,10 +36,10 @@ Enterprise is known for.
 There are three modules Redis Labs has developed and certified with
 Redis Enterprise Software (RS). The modules are:
 
--   [RediSearch]({{< relref "/rs/developing/redisearch.md" >}})
+-   [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
     - This module turns RS into a supercharged distributed in-memory
     full-text indexing and search beast.
--   [ReJSON]({{< relref "/rs/developing/rejson.md" >}}) - Now
+-   [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}}) - Now
     you have the convenience JSON as a built-in data type and easily
     able to address nested data via a path.
 -   [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
@@ -62,7 +62,7 @@ easily and quickly deploy several containers to start running a scalable
 and highly available cluster Redis Enterprise Software is famous for.
 
 For more information go to [quick start with Redis Enterprise Software
-on Docker.]({{< relref "/rs/getting-started/docker.md" >}})
+on Docker.]({{< relref "/rs/getting-started/docker/_index.md" >}})
 
 ## LDAP Integration
 

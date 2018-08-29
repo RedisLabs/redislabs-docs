@@ -78,7 +78,7 @@ t6
 [SET key1 "d"]{style="font-family: courier;"}
 
 [Learn more about
-synchronization]({{< relref "/rs/developing/crdbs.md" >}}) for
+synchronization]({{< relref "/rs/developing/crdbs/_index.md" >}}) for
 each supported data type and how to develop with them on RES.
 
 ## Terminology

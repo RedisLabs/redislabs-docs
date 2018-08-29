@@ -11,7 +11,7 @@ HTTP location, FTP server, Amazon S3, or OpenStack Object Storage
 You can either import from a single file, or from multiple files in case
 you are importing from a backup of a sharded database. For additional
 details, refer to the Backup of a sharded database section in [Database
-backup]({{< relref "/rs/database-configuration/database-backup.md" >}}).
+backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
 
 Note: Importing data via this method will erase all existing content in
 the database.

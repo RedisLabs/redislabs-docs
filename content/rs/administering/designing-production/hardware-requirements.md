@@ -65,7 +65,7 @@ Additional recommendations:
     you should look at migrating busy resources to less busy nodes.
 2.  If all the cluster nodes are utilizing over 80% of the CPU,
     scale-out the cluster by [adding a
-    node]({{< relref "/rs/cluster-administration/joining-a-new-node-to-a-cluster.md" >}}).
+    node]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 
 4 cores
 
@@ -85,7 +85,7 @@ Additional recommendations:
     you should look at migrating busy resources to less busy nodes.
 2.  If all the cluster nodes are utilizing over 70% of the RAM, you
     should look to scale out the cluster by [adding a
-    node]({{< relref "/rs/cluster-administration/joining-a-new-node-to-a-cluster.md" >}}).
+    node]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 3.  Do not run other memory-consuming systems on the same machine that
     is used as an RS node.
 
@@ -110,7 +110,7 @@ Ephemeral Storage
 Used for storing replication files (RDB format) and cluster log files.
 
 For additional details, refer to [Persistent and Ephemeral
-Storage]({{< relref "/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage.md" >}}).
+Storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
 2x node's RAM size
 
@@ -123,7 +123,7 @@ storage media, which (unlike ephemeral storage) is not deleted in cases
 of node failure.
 
 For additional details, refer to [Persistent and Ephemeral
-Storage]({{< relref "/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage.md" >}}).
+Storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
 Examples of persistent storage devices:
 
@@ -134,7 +134,7 @@ Examples of persistent storage devices:
 
 \>=6x node's RAM size. For extreme 'write' scenarios, refer to the [Disk
 size requirements for extreme write
-scenarios]({{< relref "/rs/cluster-administration/best-practices/disk-size-requirements-for-extreme-write-scenarios.md" >}})
+scenarios]({{< relref "/rs/administering/designing-production/performance/disk-sizing-heavy-write-scenarios.md" >}})
 section to determine the right Persistent Storage size.
 
 If [Redis on

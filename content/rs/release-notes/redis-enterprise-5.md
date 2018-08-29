@@ -45,7 +45,7 @@ provide smart and automatic conflict resolution based on the data type's
 intent.
 
 For more information, go here. For information, go to [Developing with
-CRDBs]({{< relref "/rs/developing/crdbs.md" >}}).
+CRDBs]({{< relref "/rs/developing/crdbs/_index.md" >}}).
 
 ### Redis Modules
 
@@ -86,7 +86,7 @@ easily and quickly deploy several containers to start running a scalable
 and highly available cluster Redis Enterprise Pack is famous for.
 
 For more information, go to [quick start with Redis Enterprise Pack on
-Docker.]({{< relref "/rs/getting-started/docker.md" >}})
+Docker.]({{< relref "/rs/getting-started/docker/_index.md" >}})
 
 ## LDAP Integration
 

@@ -19,7 +19,7 @@ steps:
 3.  Recovering the databases, and recovering their data if data
     persistence was configured (for additional details, refer to
     [Database
-    persistence]({{< relref "/rs/database-configuration/database-persistence.md" >}}).
+    persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}).
 
 The cluster recovery process is carried out by using the cluster
 configuration backup files and database persistence files that are
@@ -142,7 +142,7 @@ nodes are now active, and the databases are pending recovery.
 
 **Note**: Remember to update the DNS records with the new nodes' IP
 addresses. For additional details, refer to
-[DNS]({{< relref "/rs/initial-setup-creating-a-new-cluster/how-to-set-the-cluster-name-fqdn.md" >}}).
+[DNS]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 
 ### Recovering the databases
 

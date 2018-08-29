@@ -17,18 +17,18 @@ To add a node in Redis Enterprise Software (RS):
 
     **Note:** The RS management UI uses SSL encryption. For additional
     details, refer to [Updating SSL
-    certificates]({{< relref "/rs/cluster-administration/best-practices/updating-ssl-certificates.md" >}}).
+    certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 
 3.  In the window that appears, click **Setup**.
 4.  In the Node configuration page:\
     a.  Enter a path for **Persistent storage**, or leave the default
         path.\
         For additional details, refer to [Persistent and ephemeral
-        storage]({{< relref "/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage.md" >}}).
+        storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     b.  You can enter a path for **Ephemeral storage**, or leave the
         default path.\
         For additional details, refer to [Persistent and ephemeral
-        storage]({{< relref "/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage.md" >}}).
+        storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     c.  If you want to enable Redis on Flash, select the check box
         Enable flash storage support and enter the path to the Flash
         storage that should be used as RAM extension.\

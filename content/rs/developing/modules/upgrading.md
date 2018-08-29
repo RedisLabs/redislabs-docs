@@ -25,7 +25,7 @@ fixes.]{style="font-weight: 400;"}
     ]{style="font-weight: 400;"}[[redismodules.com]{style="font-weight: 400;"}](http://redismodules.com)[
     to use in upgrades, see ]{style="font-weight: 400;"}[[Developing
     with
-    Modules]{style="font-weight: 400;"}]({{< relref "/rs/developing/modules.md" >}})[.]{style="font-weight: 400;"}
+    Modules]{style="font-weight: 400;"}]({{< relref "/rs/developing/modules/_index.md" >}})[.]{style="font-weight: 400;"}
 
 ### [Deploying the Packaged Module into Redis Enterprise Software]{style="font-weight: 400;"}
 

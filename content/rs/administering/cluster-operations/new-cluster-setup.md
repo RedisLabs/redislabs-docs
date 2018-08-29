@@ -14,12 +14,12 @@ ensure high availability), are not enabled.
 
 To set up a new cluster, you must first [install the Redis Enterprise
 Software
-package]({{< relref "/rs/installing-and-upgrading/downloading-installing" >}})
+package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
 as described in the previous section and then set up the cluster as
 described below. After the cluster is created you can add multiple nodes
 to the cluster (for additional details, refer to [Joining a new node to
 a
-cluster]({{< relref "/rs/cluster-administration/joining-a-new-node-to-a-cluster.md" >}}).
+cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 
 ## Creating a cluster
 
@@ -32,7 +32,7 @@ To create a cluster:
 
     **Note:** The RS management UI uses a self-signed SSL encryption.
     For additional details, refer to [Updating SSL
-    certificates]({{< relref "/rs/cluster-administration/best-practices/updating-ssl-certificates.md" >}}).
+    certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 
     **Note:** If the machine has both an internal IP address and an
     external IP address, use the external IP address to access the setup
@@ -43,11 +43,11 @@ To create a cluster:
     a.  Enter a path for **Persistent storage**, or leave the default
         path.\
         For additional details, refer to [Persistent and ephemeral
-        storage]({{< relref "/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage.md" >}}).
+        storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     b.  Enter a path for **Ephemeral storage**, or leave the default
         path.\
         For additional details, refer to [Persistent and ephemeral
-        storage]({{< relref "/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage.md" >}}).
+        storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     c.  If you want to enable Redis^e^ Flash, select the **Enable flash
         storage support** checkbox and enter the path to the Flash
         storage that should be used as RAM extension.\
@@ -85,9 +85,9 @@ UI appears.
 
 You can now access any of the management capabilities. To create a
 database, refer to [Creating a new
-database]({{< relref "/rs/database-configuration/creating-a-new-database.md" >}}),
+database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}),
 or add another node to this cluster, refer to [Joining a new node to a
-cluster]({{< relref "/rs/cluster-administration/joining-a-new-node-to-a-cluster.md" >}}).
+cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 
 It is highly advisable to verify that the node is functioning properly,
 by carrying out the following tests:

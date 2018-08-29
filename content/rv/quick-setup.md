@@ -177,10 +177,10 @@ and you are done.
 1.  [Data Persistence with Redis Enterprise
     VPC]({{< relref "/rv/concepts/data-persistence.md" >}})
 2.  [Securing Your Redis Enterprise VPC
-    Database]({{< relref "/rv/administration/configure/securing-your-database.md" >}})
+    Database]({{< relref "/rv/administration/configuration/securing-your-database.md" >}})
 3.  [Creating
-    Databases]({{< relref "/rv/administration/setup-and-editing/creating-databases.md" >}})
+    Databases]({{< relref "//rs/administering/database-operations/creating-database.md" >}})
 4.  [Redis Enterprise Cloud Database
-    Backups]({{< relref "/rv/administration/configure/backups.md" >}})
+    Backups]({{< relref "/rv/administration/configuration/backups.md" >}})
 5.  [Monitoring Redis Enterprise VPC
-    Performance]({{< relref "/rv/administration/configure/monitoring-performance.md" >}}).
+    Performance]({{< relref "/rv/administration/configuration/monitoring-performance.md" >}}).

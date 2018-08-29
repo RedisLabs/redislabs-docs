@@ -10,8 +10,8 @@ Enterprise Software (RS).
 Topics:
 
 -   [Installing the setup
-    package]({{< relref "/rs/installing-and-upgrading/downloading-installing" >}})
--   [Configuring]({{< relref "/rs/administering/installing-upgrading/configuring.md" >}})
+    package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
+-   [Configuring]({{< relref "/rs/administering/installing-upgrading/configuring/_index.md" >}})
     -   [Linux
         Swap]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}})
     -   [CentOS/RHEL Firewall
@@ -20,8 +20,8 @@ Topics:
         Setup]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
     -   [Client prerequisites for
         mDNS]({{< relref "/rs/administering/installing-upgrading/configuring/mdns.md" >}})
--   [Uninstalling]({{< relref "/rs/installing-and-upgrading/uninstalling.md" >}})
--   [Upgrading]({{< relref "/rs/administering/installing-and-upgrading/upgrading.md" >}})
+-   [Uninstalling]({{< relref "/rs/administering/installing-upgrading/uninstalling.md" >}})
+-   [Upgrading]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
 -   [Offline
     Installation]({{< relref "/rs/administering/installing-upgrading/offline-installation.md" >}})
 -   [Configuring AWS

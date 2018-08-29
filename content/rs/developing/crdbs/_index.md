@@ -156,8 +156,8 @@ followed by descriptions:
   Float Counters     Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}})
   Sets               Supported, [see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}})
   Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}).
-  Lists              [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}]({{< relref "/rs/developing-lists-crdb.md" >}})
-  Sorted Sets        [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}]({{< relref "/rs/developing-sorted-sets-crdb.md" >}})
+  Lists              [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}})
+  Sorted Sets        [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}})
   Bitsets            Not currently supported
   ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -19,7 +19,7 @@ awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}
 
 **Note**: Enabling replication has implications for the total database
 size, as explained in [Database memory
-limit]({{< relref "/rs/database-configuration/database-memory-limit.md" >}}).
+limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
 
 ## Redis on Flash Replication Considerations
 

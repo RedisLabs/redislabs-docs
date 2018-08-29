@@ -17,7 +17,7 @@ set up an instance ensure that it has a properly sized EBS backed volume
 connected. Later, when setting up RS on the instance, ensure that the
 persistence storage (for additional details, refer to [Persistent and
 ephemeral
-storage]({{< relref "/rs/cluster-administration/best-practices/persistent-and-ephemeral-storage.md" >}})
+storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 is configured to use this volume.
 
 Note: After installing the RS package on the instance (for additional
@@ -25,7 +25,7 @@ details, refer to [Accessing and installing the setup
 package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
 and **before** running through the setup process (for additional
 details, refer to [Initial setup - creating a new
-cluster]({{< relref "/rs/initial-setup-creating-a-new-cluster.md" >}}),
+cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
 chown redislabs:redislabs /\< ebs folder name \>
@@ -76,4 +76,4 @@ When configuring the Security Group:
 
 After successfully launching the instances, setup the cluster as
 described in [Initial setup - creating a new
-cluster]({{< relref "/rs/initial-setup-creating-a-new-cluster.md" >}}).
+cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).

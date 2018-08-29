@@ -40,7 +40,7 @@ destination database.
 
 **Note:** The *Replica of* feature should not be confused with the
 in-memory [Database
-replication]({{< relref "/rs/database-configuration/database-replication.md" >}})
+replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 
@@ -83,7 +83,7 @@ can be Redis databases that are not part of an RS.
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
-    compression]({{< relref "/rs/database-configuration/replica-of#Replica-of-data-compression.md" >}})
+    compression]({{< relref "/rs/administering/intercluster-replication/replica-of.md#Replica-of-data-compression" >}})
     section.
 -   When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:\

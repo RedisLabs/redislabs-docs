@@ -48,7 +48,7 @@ existence of a faulty node and automatically replaces the faulty node
 with the new node.
 
 For guidelines, refer to [Replacing a faulty
-node]({{< relref "/rs/cluster-administration/replacing-a-faulty-node.md" >}}).
+node]({{< relref "/rs/administering/cluster-operations/replacing-node.md" >}}).
 
 ## Replacing a healthy node
 
@@ -84,7 +84,7 @@ To remove a node:
 
 You can choose to receive email alerts related to this process, as
 described in [Managing cluster
-alerts]({{< relref "/rs/cluster-administration/viewing-and-defining-cluster-settings/managing-cluster-alerts.md" >}}).
+alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
 
 **Note**: Once you remove a node, if you need to add it back to a
 cluster, you must first

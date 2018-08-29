@@ -77,5 +77,5 @@ cluster as needed.
 
 For additional details regarding the RES architecture, refer to the
 [System
-architecture]({{< relref "/rs/system-architecture.md" >}})
+architecture]({{< relref "/rs/concepts/_index.md" >}})
 section.

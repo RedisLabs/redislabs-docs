@@ -17,7 +17,7 @@ it needs and when it needs it. RES protects the existing data and
 prevents the database from being able to store data into the shards. It
 can be configured to move the data to another node, or even discard it.
 This depends on [eviction
-policy]({{< relref "/rs/database-configuration/database-eviction-policy.md" >}})
+policy]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}})
 set on a database by the administrator.
 
 With this memory management style, comes the responsibility to monitor

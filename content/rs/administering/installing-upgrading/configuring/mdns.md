@@ -15,7 +15,7 @@ resolving databases' endpoints, are met. These configurations and
 perquisites are needed on the client machines, as well as on the
 machines you are using as Redis Enterprise Software (RES) nodes if you
 are using the [Replica
-of]({{< relref "/rs/database-configuration/replica-of.md" >}})
+of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
 feature.
 
 First, ensure that the machines acting as clients and the machines

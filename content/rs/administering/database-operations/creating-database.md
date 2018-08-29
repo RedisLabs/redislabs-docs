@@ -55,7 +55,7 @@ To create a new database in the UI:
 5.  Set the **memory limit** of the database. The application displays
     the total amount of memory available in the cluster. For relevant
     considerations, refer to [Database memory
-    limit]({{< relref "/rs/database-configuration/database-memory-limit.md" >}}).
+    limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
 
     **Note:** If you create a Redis Flash or a Memcached Flash database,
     you also have to set the RAM-to-Flash ratio for this database.
@@ -68,11 +68,11 @@ To create a new database in the UI:
 
 6.  Specify whether to enable **replication**. For a full explanation,
     refer to [Database
-    replication]({{< relref "/rs/database-configuration/database-replication.md" >}}).
+    replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}).
 
     **Note**: Enabling **replication** affects the total database size,
     as explained in [Database memory
-    limit]({{< relref "/rs/database-configuration/database-memory-limit.md" >}}).
+    limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
 
     a.  If the cluster is configured to support rack-zone awareness,
         once you enable replication you can also choose whether to
@@ -82,7 +82,7 @@ To create a new database in the UI:
 
 7.  Specify whether to enable **data persistence**, and if so, what type
     to employ. For a full explanation, refer to [Database
-    persistence]({{< relref "/rs/database-configuration/database-persistence.md" >}}).
+    persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}).
 8.  Next, you can specify **security** settings:
     -   If you are creating a Redis database, enter a Redis password.
     -   If you are creating a Memcached database, enter a username and
@@ -95,36 +95,36 @@ To create a new database in the UI:
     **Note**: Defining the port number during database creation is a
     one-time operation; the number cannot be changed at a later stage.
     For additional details, refer to [Machine ports
-    configuration]({{< relref "/rs/cluster-administration/best-practices/machine-ports-configuration.md" >}}).
+    configuration]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
 10. Select whether to enable **database clustering**. If you enable
     clustering, select the number of database shards. For a Redis
     database, select also the hashing policy. For additional details,
     refer to [Database
-    clustering]({{< relref "/rs/database-configuration/database-clustering.md" >}}).
+    clustering]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
 11. Set the **data eviction policy** (for additional details, refer to
     [Database eviction
-    policy]({{< relref "/rs/database-configuration/database-eviction-policy.md" >}}).
+    policy]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}).
     This policy is applied when the total size of the database reaches
     its memory limit.
 12. If you would like the database to be a **replica of** one or more
     databases, you can define the source databases with which this
     database will synchronize on an ongoing basis. For additional
     details, refer to [Replica
-    of]({{< relref "/rs/database-configuration/replica-of.md" >}}).
+    of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}).
 13. If you would like to encrypt the connection to the database endpoint
     with SSL encryption, you have to enter the contents of the client
     certificate to the **SSL client authentication** field. For
     additional details, refer to [Securing client connection with
-    SSL]({{< relref "/rs/database-configuration/securing-client-connection-with-ssl.md" >}}).
+    SSL]({{< relref "/rs/administering/security/client-connections.md" >}}).
 14. Specify whether to perform a **periodic back up** of the database.
     For additional details, refer to [Database
-    backup]({{< relref "/rs/database-configuration/database-backup.md" >}}).
+    backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
     If you specify periodic backup, set the interval and specify the
     backup location parameters, as appropriate.
 15. Configure **database alerts**. For additional details, refer to
     [Database
-    alerts]({{< relref "/rs/database-configuration/database-alerts.md" >}}).
+    alerts]({{< relref "/rs/administering/database-operations/alerting.md" >}}).
 16. Click **Activate**.
 
 Simple Connectivity Test

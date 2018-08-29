@@ -17,7 +17,7 @@ Enterprise Software (RS). There are two types
     c.  [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 2.  Custom packaged modules - For instructions on packing up any module
     from redismodules.com, see [Developing with
-    Modules]({{< relref "/rs/developing/modules.md" >}}).
+    Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
 Once you have acquired the package (it will be in zip format) proceed to
 the next step of adding the module to Redis Enterprise Software.

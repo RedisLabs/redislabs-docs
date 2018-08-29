@@ -112,7 +112,7 @@ a result:
 
 -   For databases that have replication enabled (for additional details,
     refer to [Database
-    replication]({{< relref "/rs/database-configuration/database-replication.md" >}})
+    replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
     a failover occurs prior to restarting the database to ensure that
     there is no downtime.
 -   For databases that do not have replication enabled and persistence
@@ -122,5 +122,5 @@ a result:
     usually takes longer than an RDB file.
 -   For databases that have neither replication nor persistence enabled
     (for additional details, refer to [Database
-    persistence]({{< relref "/rs/database-configuration/database-persistence.md" >}}),
+    persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}),
     the database loses all its data after it is restarted.

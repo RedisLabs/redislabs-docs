@@ -130,7 +130,7 @@ prerequisites:
 -   Have ephemeral, persistent and flash memory mounted on Redis
     Enterprise Software nodes with the proper disk size, per the [Redis
     on Flash memory
-    guidelines]({{< relref "/rs/installing-and-upgrading/hardware-software-requirements#production-environment-reqs.md" >}}).
+    guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements.md#production-environment-reqs.md" >}}).
 -   Have all [hardware
     requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
     in place.
@@ -143,7 +143,7 @@ prerequisites:
 Once these requirements are met, both Redis of Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
-database]({{< relref "/rs/database-configuration/creating-a-new-database.md" >}}).
+database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
 When Redis on Flash is enabled, additional settings and
 [metrics](redis-enterprise-documentation/administering/monitoring-metrics/definitions/#redis-flash-metrics)

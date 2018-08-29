@@ -19,13 +19,13 @@ select one of the following options:
     like to use in order to launch an instance on Amazon Web Services
     (AWS).
 -   **Docker** - Go
-    [here]({{< relref "/rs/installing-and-upgrading/docker.md" >}})
+    [here]({{< relref "/rs/getting-started/docker/_index.md" >}})
     for the install guide and skip this page.
 
 Info: If you are using the AMI option or installing the .tar file
 package on an AWS instance, review the guidelines in [Configuration of
 AWS
-instances]({{< relref "/rs/cluster-administration/best-practices/configuration-of-aws-instances.md" >}}).
+instances]({{< relref "/rs/administering/installing-upgrading/configuring-aws-instances.md" >}}).
 
 ## Prerequisites
 
