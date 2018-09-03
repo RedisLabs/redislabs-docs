@@ -15,15 +15,15 @@ to fulfill two major objectives:
 In order to fulfill both objectives, the audit records contain the
 following information:
 
-1.  Who performed the action?]{style="font-weight: 400;"}
-2.  [What exactly was the performed action?]{style="font-weight: 400;"}
-3.  [When was the action performed?
+1.  Who performed the action?
+2.  What exactly was the performed action?
+3.  When was the action performed?
 4.  Did the action succeed or not?
 
-[To get the list of audit records/events, you can use the REST API or
+To get the list of audit records/events, you can use the REST API or
 the **Log** page in the UI. The Log page displays the system and user
 events regarding alerts, notifications and
-configurations.]{style="font-weight: 400;"}
+configurations.
 
 ![](https://lh3.googleusercontent.com/7mYBah2_66GuMuFE4rm-po4ttoHJ41Mb8DClsJmdyw41NoLJOZSf10jiOV2b5IN0pGvfcT01kyb2o6v1e_FJH0iQrsRws2s7gTkn70BJIzx56EwUotx3JDHzWThPtHBb2MfcfOVd)
 

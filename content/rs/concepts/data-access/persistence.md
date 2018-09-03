@@ -4,11 +4,11 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-[All data is stored and managed exclusively in either RAM or RAM + Flash
+All data is stored and managed exclusively in either RAM or RAM + Flash
 Memory ([Redis on
 Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 and therefore, is at risk of being lost upon a process or server
-failure.]{style="font-weight: 400;"} As Redis Enterprise Software is not
+failure. As Redis Enterprise Software is not
 just a caching solution, but also a full-fledged database,
 [persistence](https://redislabs.com/redis-features/persistence) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting

@@ -133,11 +133,11 @@ for specifics on what ports should be open for VPNs and Security groups.
 
 ### **Data Persistence**
 
-[After creating CRDB instances on each participating cluster, you can
+After creating CRDB instances on each participating cluster, you can
 individually set your data persistence configuration. Just like regular
 Redis Enterprise databases, CRDB data persistence options include AOF
 (Append-Only File) data persistence and
-snapshot.]{style="font-weight: 400;"}
+snapshot.
 
 For CRDB instances, it's **highly
 recommended** to use the Snapshot mechanism over AOF, since recovering

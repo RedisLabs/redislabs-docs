@@ -78,9 +78,9 @@ SMEMBERS key1\
 
 t2
 
-SREM key1 "a"]{style="font-family: courier;"}
+SREM key1 "a"
 
-[SADD key1 "c"
+SADD key1 "c"
 
 t3
 

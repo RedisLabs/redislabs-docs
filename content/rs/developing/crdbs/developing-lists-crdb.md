@@ -4,12 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-[Redis Lists are simply lists of strings, sorted by insertion order. It
+Redis Lists are simply lists of strings, sorted by insertion order. It
 is possible to add elements to a Redis List that push new elements to
 the head (on the left) or to the tail (on the right) of the list. Redis
 Lists can be used to easily implement queues (using LPUSH and RPOP, for
 example) and stacks (using LPUSH and LPOP, for
-example).]{style="font-weight: 400;"}
+example).
 
 Lists in CRDBs are just the same as regular Redis Lists. Please see the
 following examples to get familiar with Lists' behavior in a
@@ -17,8 +17,8 @@ CRDB.
 
  
 
-[Simple Lists
-example:]{style="font-weight: 400;"}
+Simple Lists
+example:
 
 **Time**
 
@@ -44,21 +44,21 @@ t4
 
  t5
 
-LRANGE mylist 0 -1 =\>]{style="font-weight: 400;"}["world"
+LRANGE mylist 0 -1 =\>"world"
 "hello"
 
-LRANGE mylist 0 -1 =\> ]{style="font-weight: 400;"}["world"
+LRANGE mylist 0 -1 =\> "world"
 "hello"
 
-*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
+**Explanation**:
 The final list contains both the "world" and "hello" elements, in that
 order (Instance 2 observed "hello" when it added
-"world").]{style="font-weight: 400;"}
+"world").
 
  
 
-[Example of Lists with Concurrent
-Insertions:]{style="font-weight: 400;"}
+Example of Lists with Concurrent
+Insertions:
 
 **Time**
 
@@ -84,10 +84,10 @@ LINSERT L AFTER x y2
 
  t5
 
-LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x
+LRANGE L 0 -1 =\> x
 y1
 
-LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x
+LRANGE L 0 -1 =\> x
 y2
 
 t6
@@ -96,22 +96,22 @@ t6
 
  t7
 
-LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x y1
+LRANGE L 0 -1 =\> x y1
 y2
 
-LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x y1
+LRANGE L 0 -1 =\> x y1
 y2
 
-*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
+**Explanation**:
 Instance 1 added an element y1 after x, and then Instance 2 added
 element y2 after x. The final List contains all three elements: x is the
 first element, after it y1 and then y2, since Instance 2 performed the
-LINSERT operation at time t4\>t3.]{style="font-weight: 400;"}
+LINSERT operation at time t4\>t3.
 
  
 
-[Example of Deleting a List while Pushing a New
-Element:]{style="font-weight: 400;"}
+Example of Deleting a List while Pushing a New
+Element:
 
 **Time**
 
@@ -129,15 +129,15 @@ t2
 
 t3
 
-LRANGE L 0 -1 =\> x]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> x
 
-[LRANGE L 0 -1 =\> x
+LRANGE L 0 -1 =\> x
 
  t4
 
-LPUSH L y]{style="font-weight: 400;"}
+LPUSH L y
 
-[DEL L
+DEL L
 
 t5
 
@@ -145,18 +145,18 @@ t5
 
  t6
 
-LRANGE L 0 -1 =\> y]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> y
 
-[LRANGE L 0 -1 =\> y
+LRANGE L 0 -1 =\> y
 
-*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+**Explanation**
 At t4 - t6, DEL deletes only observed elements. This is why L still
 contains y.
 
  
 
-[Example of Popping Elements from a
-List:]{style="font-weight: 400;"}
+Example of Popping Elements from a
+List:
 
 **Time**
 
@@ -190,28 +190,28 @@ t6
 
  t7
 
-RPOP L =\> z]{style="font-weight: 400;"}
+RPOP L =\> z
 
-[RPOP L =\> z
+RPOP L =\> z
 
-*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
+**Explanation**:
 At t1, the operation pushes elements x, y, z to List L. At3, the
 sequential pops behaves as expected from a queue. At 7, the concurrent
 pop in both instances might show the same result. The instance was not
 able to sync regarding the z removal so, from the point of view of each
 instance, z is located in the List and can be popped. After syncing,
-both lists are empty.]{style="font-weight: 400;"}
+both lists are empty.
 
-[Be aware of the behavior of Lists in CRDBs when using List as a stack
+Be aware of the behavior of Lists in CRDBs when using List as a stack
 or queue. As seen in the above example, two parallel RPOP operations
 performed by two different CRDB instances can get the same element in
 the case of a concurrent operation. Lists in CRDBs guarantee that each
 element will be POP-ed at least once, but cannot guarantee that each
 element will be POP-ed only once. Such behavior should be taken into
 account when, for example, using Lists in CRDBs as building blocks for
-inter-process communication systems.]{style="font-weight: 400;"}
+inter-process communication systems.
 
-[In that case, if the same element cannot be handled twice by the
+In that case, if the same element cannot be handled twice by the
 application(s), it's recommended that the POP operations be performed by
 one CRDB instance, whereas the PUSH operations can be performed by
-multiple CRDB instances.]{style="font-weight: 400;"}
+multiple CRDB instances.

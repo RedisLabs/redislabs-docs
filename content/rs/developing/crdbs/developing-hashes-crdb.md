@@ -48,14 +48,14 @@ t4
 
  t5
 
-[HGETALL key1\
+HGETALL key1\
 1) "field2"\
 2) "b"\
 3) "field1"\
-4) "a"]{style="font-family: courier;"}
+4) "a"
 
-[HGETALL key1\
+HGETALL key1\
 1) "field2"\
 2) "b"\
 3) "field1"\
-4) "a"]{style="font-family: courier;"}
+4) "a"

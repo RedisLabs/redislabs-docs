@@ -42,7 +42,7 @@ role that we create later:
 Now that we have the policy, let's create the role that uses
 it:
 
-1.  In AWS IAM console go to]{style="font-weight: 400;"} **Roles** [and
+1.  In AWS IAM console go to **Roles** and
     click on **Create Role\
 
     ![](/images/rv/create_role.png?width=700&height=636)\

@@ -68,12 +68,12 @@ For a new subscription, you will need to provide the following:
         Later on, you will have to create a VPC peering link to your
         application, therefore, please make sure that the CIDR you
         provide does not conflict with your application VPC
-        CIDR.]{style="font-weight: 400;"}
-    -   [**Existing VPC** - this will provision your subscription in an
+        CIDR.
+    -   **Existing VPC** - this will provision your subscription in an
         already existing VPC. With this option, you can provision your
         subscription in the VPC as your application and in that way save
         on the cost and latency that comes with VPC peering.
-        ]{style="font-weight: 400;"}Please provide the required
+        Please provide the required
         Deployment CIDR and the VPC ID in which the subscription should
         be deployed.
 8.  Advanced Options
