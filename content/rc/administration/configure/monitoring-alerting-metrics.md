@@ -26,23 +26,22 @@ For a quick tour of what you get, watch this video.
 For each database, there are 14 different metrics you can see on the
 page:
 
-  ----------------------------------- -------------------------------------------------------------------------------------------------------------------------
-   **Metric**                          **Description**
-   Ops/sec                             The number of overall operations per sec for all Redis commands
-   Reads/sec                           The number of read operations per second
-   Writes/sec                          The number of write operations per second
-   Other cmds/sec                      The number of other Redis commands per second
-   Latency (in milliseconds)           Latency per write operation
-   Reads Latency (in milliseconds)     The average, min, max and last values are also shown
-   Writes Latency (in milliseconds)    Latency per write operation
-   Other Latency (in milliseconds)     Latency per other commands
-   Used Memory                         The amount of memory used by the database
-   Total Keys                          The total number of keys in the database
-   Connections                         The total number of connections to the end point
-   Evicted Objects/sec                 Number of objects evicted from the database per second
-   Expired Objects/sec                 Number of expired objects per sec. An expired object is an object with expired TTL that was deleted from the database.
-   Hit Ratio (percentage)              The number of operations on existing keys divided by total database operations.
-  ----------------------------------- -------------------------------------------------------------------------------------------------------------------------
+| **Metric** | **Description** |
+|------------|-----------------|
+| Ops/sec    | The number of overall operations per sec for all Redis commands |
+| Reads/sec                          | The number of read operations per second |
+| Writes/sec                         | The number of write operations per second |
+| Other cmds/sec                     | The number of other Redis commands per second |
+| Latency (in milliseconds)          | Latency per write operation |
+| Reads Latency (in milliseconds)    | The average, min, max and last values are also shown |
+| Writes Latency (in milliseconds)   | Latency per write operation |
+| Other Latency (in milliseconds)    | Latency per other commands |
+| Used Memory                        | The amount of memory used by the database |
+| Total Keys                         | The total number of keys in the database |
+| Connections                        | The total number of connections to the end point |
+| Evicted Objects/sec                | Number of objects evicted from the database per second |
+| Expired Objects/sec                | Number of expired objects per sec. An expired object is an object with expired TTL that was deleted from the database. |
+| Hit Ratio (percentage)             | The number of operations on existing keys divided by total database operations. |
 
 If you want to get more information, we recommend
 [Redsmin](https://www.redsmin.com/) and/or [New
