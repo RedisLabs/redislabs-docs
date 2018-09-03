@@ -8,15 +8,14 @@ The eviction policy designates a data eviction method for Redis
 Enterprise Software (RS) to use when the database size reaches its
 limit. You can select any of the following:
 
-  ------------------ -----------------------------------------------------------------------------------------------------------
-  **Policy**         **Description**
-   noeviction        Returns an error if the memory limit has been reached when trying to insert more data
-   allkeys-lru       Evicts the least recently used keys out of all keys
-   allkeys-random    Randomly evicts keys out of all keys
-   volatile-lru      Evicts the least recently used keys out of all keys with an "expire" field set
-   volatile-ttl      Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set.
-   volatile-random   Randomly evicts keys with an "expire" field set
-  ------------------ -----------------------------------------------------------------------------------------------------------
+| **Policy** | **Description** |
+|------------|-----------------|
+|  noeviction | Returns an error if the memory limit has been reached when trying to insert more data |
+|  allkeys-lru | Evicts the least recently used keys out of all keys |
+|  allkeys-random | Randomly evicts keys out of all keys |
+|  volatile-lru | Evicts the least recently used keys out of all keys with an "expire" field set |
+|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
+|  volatile-random | Randomly evicts keys with an "expire" field set |
 
 One mechanism to avoid this, but still keep performance is to use [Redis
 on

@@ -87,11 +87,10 @@ remove commands.
 
 A database can have one of two shard placement policies:
 
-  ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Placement Policy**   **Description**
-  Dense                  The cluster should attempt to place as many shards as possible on the smallest number of nodes as possible. This mode is useful when there is a single proxy in order to reduce the latency between the proxy and the database shards.
-  Sparse                 The cluster should attempt to spread the shards across as many nodes in the cluster as possible. This mode is useful when multiple proxies are bound to the database in order to spread the traffic as much as possible across cluster nodes.
-  ---------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| **Placement Policy** | **Description** |
+|------------|-----------------|
+| Dense | The cluster should attempt to place as many shards as possible on the smallest number of nodes as possible. This mode is useful when there is a single proxy in order to reduce the latency between the proxy and the database shards. |
+| Sparse | The cluster should attempt to spread the shards across as many nodes in the cluster as possible. This mode is useful when multiple proxies are bound to the database in order to spread the traffic as much as possible across cluster nodes. |
 
 See [Shard
 Placement]({{< relref "/rs/concepts/rebalancing-shard-placement.md" >}}),
