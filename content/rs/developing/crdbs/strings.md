@@ -22,27 +22,27 @@ time (t2) wins over the update at t1.
 
 t1
 
-[SET key1 "a"]{style="font-family: courier;"}
+SET key1 "a"
 
 t2
 
-[SET key1 "b"]{style="font-family: courier;"}
+SET key1 "b"
 
 t3
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t4
 
-[SET key1 "c"]{style="font-family: courier;"}
+SET key1 "c"
 
 t5
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t6
 
-[SET key1 "d"]{style="font-family: courier;"}
+SET key1 "d"
 
 String type in Redis is implicitly and dynamically typed. Besides string
 command like APPEND, It is overloaded with numeric and bitfield command
@@ -96,51 +96,51 @@ concurrent writes.
 
 t1
 
-[INCRBY key1 7]{style="font-family: courier;"}
+INCRBY key1 7
 
 t2
 
-[INCRBY key1 3]{style="font-family: courier;"}
+INCRBY key1 3
 
 t3
 
-[GET key1\
-7]{style="font-family: courier;"}
+GET key1\
+7
 
-[GET key1\
-3]{style="font-family: courier;"}
+GET key1\
+3
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[GET key1\
-10]{style="font-family: courier;"}
+GET key1\
+10
 
-[GET key1\
-10]{style="font-family: courier;"}
+GET key1\
+10
 
 t6
 
-[DECRBY key1 3]{style="font-family: courier;"}
+DECRBY key1 3
 
 t7
 
-[INCRBY key1 6]{style="font-family: courier;"}
+INCRBY key1 6
 
 t8
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t9
 
-[GET key1\
-13]{style="font-family: courier;"}
+GET key1\
+13
 
-[GET key1\
-13]{style="font-family: courier;"}
+GET key1\
+13
 
 It is important to note that counter values are created through the
 INCR, INCRBY, DECR and DECRBY commands and only these commands can be

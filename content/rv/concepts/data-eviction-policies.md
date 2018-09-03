@@ -11,7 +11,7 @@ policies:
   --------------------------------------------------------- ------------------------------------------------------------------------------------------------------
   allkeys-lru                                               Evicts the least recently used (LRU) keys out of all keys in the database
   allkeys-random                                            Randomly evicts keys out of all keys in the database
-  volatile-lru (**default**[)]{style="font-weight: 400;"}   Evicts the least recently used (LRU) keys out of keys with an "expire" field set
+  volatile-lru (**default**)   Evicts the least recently used (LRU) keys out of keys with an "expire" field set
   volatile-random                                           Randomly evicts keys with an "expire" field set
   volatile-ttl                                              Evicts the shortest time-to-live and least recently used keys out of keys with an "expire" field set
   no eviction                                               Returns error if memory limit has been reached when trying to insert more data

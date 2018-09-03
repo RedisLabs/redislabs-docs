@@ -64,12 +64,12 @@ page
 **Important Fixes in Build #30:**
 
 -   RS19701 - Fixed high CPU usage on large scale clusters
--   RS[19869- Added]{style="font-weight: 400;"} s[upport for Redis
-    version 4.0.9]{style="font-weight: 400;"}
+-   RS19869- Added support for Redis
+    version 4.0.9
 -   RS20153- Fixed Redis important security issues related to the Lua
     scripting engine
--   RS[19852- Fixed proxy crash which might happen for SSL-enabled
-    DBs]{style="font-weight: 400;"}
+-   RS19852- Fixed proxy crash which might happen for SSL-enabled
+    DBs
 
 ## Known Limitations
 

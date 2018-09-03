@@ -60,22 +60,22 @@ For a new subscription, you will need to provide the following:
     Account]({{< relref "/rv/administration/setup_and_editing/creating-cloud-account.md" >}})
     for RV to use.
 7.  Select your subscription networking options:
-    -   [**New VPC** - this will create a new VPC and provision your
+    -   **New VPC** - this will create a new VPC and provision your
         subscription in it. Please provide the required Deployment CIDR
-        - This is an IPv4 subnet, in]{style="font-weight: 400;"}[[CIDR
-        notation]{style="font-weight: 400;"}](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)[,
+        - This is an IPv4 subnet, in[CIDR
+        notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)[,
         that you would like RV to use. The subnet should be /24 in size.
         Later on, you will have to create a VPC peering link to your
         application, therefore, please make sure that the CIDR you
         provide does not conflict with your application VPC
-        CIDR.]{style="font-weight: 400;"}
-    -   [**Existing VPC** - this will provision your subscription in an
+        CIDR.
+    -   **Existing VPC** - this will provision your subscription in an
         already existing VPC. With this option, you can provision your
         subscription in the VPC as your application and in that way save
         on the cost and latency that comes with VPC peering.
-        ]{style="font-weight: 400;"}[Please provide the required
+        Please provide the required
         Deployment CIDR and the VPC ID in which the subscription should
-        be deployed.]{style="font-weight: 400;"}
+        be deployed.
 8.  Advanced Options
     1.  You can select the exact Availability Zone(s) in which your
         subscription will be deployed. Select one for single AZ or three

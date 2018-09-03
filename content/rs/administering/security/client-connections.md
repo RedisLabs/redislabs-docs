@@ -188,10 +188,10 @@ using an older TLS version against RS. Therefore it is considered best
 practice to stay current on your client libraries for the most up to
 date security.
 
-[To set the minimum TLS version that can be used for encrypting the data
+To set the minimum TLS version that can be used for encrypting the data
 in transit between a Redis client and a Redis Enterprise cluster, use
 the REST API or the following rladmin
-command:]{style="font-weight: 400;"}
+command:
 
     rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
 

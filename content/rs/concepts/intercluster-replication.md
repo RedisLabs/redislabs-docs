@@ -55,27 +55,27 @@ in between.
 
 t1
 
-[SET key1 "a"]{style="font-family: courier;"}
+SET key1 "a"
 
 t2
 
-[SET key1 "b"]{style="font-family: courier;"}
+SET key1 "b"
 
 t3
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t4
 
-[SET key1 "c"]{style="font-family: courier;"}
+SET key1 "c"
 
 t5
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t6
 
-[SET key1 "d"]{style="font-family: courier;"}
+SET key1 "d"
 
 [Learn more about
 synchronization]({{< relref "/rs/developing/crdbs/_index.md" >}}) for

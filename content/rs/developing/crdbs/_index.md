@@ -34,51 +34,51 @@ updates to other participating clusters and other member CRDBs.
 
 t1
 
-[INCRBY key1 7]{style="font-family: courier;"}
+INCRBY key1 7
 
 t2
 
-[INCRBY key1 3]{style="font-family: courier;"}
+INCRBY key1 3
 
 t3
 
-[GET key1\
-7]{style="font-family: courier;"}
+GET key1\
+7
 
-[GET key1\
-3]{style="font-family: courier;"}
+GET key1\
+3
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[GET key1\
-10]{style="font-family: courier;"}
+GET key1\
+10
 
-[GET key1\
-10]{style="font-family: courier;"}
+GET key1\
+10
 
 t6
 
-[DECRBY key1 3]{style="font-family: courier;"}
+DECRBY key1 3
 
 t7
 
-[INCRBY key1 6]{style="font-family: courier;"}
+INCRBY key1 6
 
 t8
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t9
 
-[GET key1\
-13]{style="font-family: courier;"}
+GET key1\
+13
 
-[GET key1\
-13]{style="font-family: courier;"}
+GET key1\
+13
 
 Databases provide various approaches to address some of these concerns
 
@@ -129,9 +129,9 @@ Redis Enterprise Software.
 CRDBs act very much like a standard Redis database except a few
 differences:
 
--   [CRDBs in this version support all major Redis data types. See the
+-   CRDBs in this version support all major Redis data types. See the
     list of types supported in CRDBs under the Data Types
-    section.]{style="font-weight: 400;"}
+    section.
 -   As conflict handling rules differ between data types, some commands
     have slightly different requirements in CRDBs vs standard Redis
     databases. (ex: String type)
@@ -154,18 +154,18 @@ followed by descriptions:
   Strings            Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}})
   Integer Counters   Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}})
   Float Counters     Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}})
-  Sets               Supported, [see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}})
-  Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}).
-  Lists              [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}})
-  Sorted Sets        [Supported, ]{style="font-weight: 400;"}[[see detailed information]{style="font-weight: 400;"}]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}})
+  Sets               Supported, see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}})
+  Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}})
+  Lists              Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}})
+  Sorted Sets        Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}})
   Bitsets            Not currently supported
   ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Other Data Types
 
-[Bitmap, Bitfields, Hyperloglog and Geo data types and operations are
+Bitmap, Bitfields, Hyperloglog and Geo data types and operations are
 not currently supported in this version of
-CRDBs.]{style="font-weight: 400;"}
+CRDBs.
 
 ## Lua Scripts
 

@@ -39,11 +39,11 @@ role that we create later:
 
 ## Step 2 - Create the Role
 
-[Now that we have the policy, let's create the role that uses
-it:]{style="font-weight: 400;"}
+Now that we have the policy, let's create the role that uses
+it:
 
-1.  [In AWS IAM console go to]{style="font-weight: 400;"} **Roles** [and
-    click on]{style="font-weight: 400;"} **Create Role\
+1.  In AWS IAM console go to **Roles** and
+    click on **Create Role\
 
     ![](/images/rv/create_role.png?width=700&height=636)\
     **
@@ -68,7 +68,7 @@ RV will utilize:
 2.  Select the **JSON** tab and copy-paste the below policy or get it
     from our GitHub.\
     ***ATTENTION: Replace
-    [ACCOUNT-ID-WITHOUT-HYPHENS]{style="text-decoration: underline;"}
+    ACCOUNT-ID-WITHOUT-HYPHENS
     with the AWS account ID that RV will be using***\
     **RedislabsIAMUserRestrictedPolicy.json**\
     \

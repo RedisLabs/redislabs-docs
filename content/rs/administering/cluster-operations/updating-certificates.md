@@ -83,19 +83,19 @@ Instructions:
 
 ### **TLS version**
 
-[To set the minimum TLS version that can be used for encrypting various
+To set the minimum TLS version that can be used for encrypting various
 flows, use the REST API or the following rladmin
-commands:]{style="font-weight: 400;"}
+commands:
 
--   -   [For the management UI and REST API:]{style="font-weight: 400;"}
+-   -   For the management UI and REST API:
 
             rladmin> cluster config min_control_TLS_version [version, e.g. 1.2]
 
 <!-- -->
 
--   -   [For data path encryption:]{style="font-weight: 400;"}
+-   -   For data path encryption:
 
             rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
 
-[Note that communications using older TLS versions will not be
-allowed.]{style="font-weight: 400;"}
+Note that communications using older TLS versions will not be
+allowed.

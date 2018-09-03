@@ -36,26 +36,26 @@ Here is an example of an "add wins" case
 
 t1
 
-[HSET key1 field1 "a"]{style="font-family: courier;"}
+HSET key1 field1 "a"
 
 t2
 
-[HSET key1 field2 "b"]{style="font-family: courier;"}
+HSET key1 field2 "b"
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[HGETALL key1\
+HGETALL key1\
 1) "field2"\
 2) "b"\
 3) "field1"\
-4) "a"]{style="font-family: courier;"}
+4) "a"
 
-[HGETALL key1\
+HGETALL key1\
 1) "field2"\
 2) "b"\
 3) "field1"\
-4) "a"]{style="font-family: courier;"}
+4) "a"
