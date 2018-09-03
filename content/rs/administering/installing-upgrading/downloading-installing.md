@@ -241,7 +241,7 @@ Would you like to run rlcheck to verify proper configuration? [Y/N]?
 ```
 
 This runs a final check to make sure everything has been done correctly.
-It is [advisable]{style="font-weight: 400;"} to answer 'Y' on this. If
+It is advisable to answer 'Y' on this. If
 you would like to see the contents of this script, it is installed
-to [/opt/redislabs/bin/rlcheck on every Redis Enterprise
-node.]{style="font-weight: 400;"}
+to /opt/redislabs/bin/rlcheck on every Redis Enterprise
+node.

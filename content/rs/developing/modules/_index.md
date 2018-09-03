@@ -28,8 +28,8 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
     -   [Developing with
         ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 
-[In 5.0.2 and later, enterprise modules (RediSearch Enterprise, ReJSON,
-ReBloom) come pre-installed.]{style="font-weight: 400;"}
+In 5.0.2 and later, enterprise modules (RediSearch Enterprise, ReJSON,
+ReBloom) come pre-installed.
 
 To download these modules, please go to the [Redis Enterprise downloads
 page](/products/redis-pack/downloads/).

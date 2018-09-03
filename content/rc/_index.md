@@ -72,9 +72,9 @@ worries!
 
 ### Multiple dedicated databases in one plan
 
-[Utilize multiple databases in a single plan, each running in a
+Utilize multiple databases in a single plan, each running in a
 dedicated process and in a non-blocking
-manner.]{style="font-weight: 400;"}
+manner.
 
 ### Email Alerts
 

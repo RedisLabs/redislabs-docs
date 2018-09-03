@@ -4,28 +4,28 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-[You can change the configuration of a Redis Enterprise Software
-database at any time.]{style="font-weight: 400;"}
+You can change the configuration of a Redis Enterprise Software
+database at any time.
 
-[To edit the configuration of a database:]{style="font-weight: 400;"}
+To edit the configuration of a database:
 
-1.  [Click the relevant database row on the Databases page. The selected
+1.  Click the relevant database row on the Databases page. The selected
     database page appears.]{style="font-weight: 400;"}
-2.  [Select the Configuration tab.]{style="font-weight: 400;"}
-3.  [Click Edit at the bottom of the page.]{style="font-weight: 400;"}
-4.  [The database settings appear. You can edit any of the configurable
+2.  [Select the Configuration tab.
+3.  Click Edit at the bottom of the page.
+4.  The database settings appear. You can edit any of the configurable
     parameters. For explanation, refer to
-    ]{style="font-weight: 400;"}[[Creating a new
+    [Creating a new
     database]{style="font-weight: 400;"}]({{< relref "/rs/administering/database-operations/creating-database.md" >}})[.]{style="font-weight: 400;"}
-5.  [Click Update.]{style="font-weight: 400;"}
+5.  [Click Update.
 
  
 
 **Updating CRDB configuration**
 
-[A Conflict-Free Replicated Database (CRDB) is a global database that
+A Conflict-Free Replicated Database (CRDB) is a global database that
 spans multiple Redis Enterprise clusters called
-]{style="font-weight: 400;"}**Participating Clusters**[ and is made up
+**Participating Clusters**[ and is made up
 of individual database instances. When creating a new CRDB you must
 configure which Participating Clusters are to host instances of the
 CRDB. However when updating database configurations with CRDB, most
@@ -73,21 +73,21 @@ rejected.]{style="font-weight: 400;"}
 
 **SSL Authentication and Encryption**
 
-[When creating CRDBs, you can specify SSL in two
-ways:]{style="font-weight: 400;"}
+When creating CRDBs, you can specify SSL in two
+ways:
 
 1.  [Require SSL for All Communications - This configures the CRDB to
     support SSL for both data access operations performed on the
     database as well as inter-cluster CRDB
     communications.]{style="font-weight: 400;"}
-2.  [Require SSL for CRDB Communications Only - This configures the
+2.  Require SSL for CRDB Communications Only - This configures the
     CRDB to support SSL for only inter-cluster CRDB
-    communications.]{style="font-weight: 400;"}
+    communications.
 
-[To enable SSL for all communication between Participating Clusters,
+To enable SSL for all communication between Participating Clusters,
 select the ]{style="font-weight: 400;"}**Require SSL for all
-communications**[ from the ]{style="font-weight: 400;"}**SSL
-Authentication**[ drop down.]{style="font-weight: 400;"}
+communications**[ from the **SSL
+Authentication** drop down.
 
 ![](/images/rs/pasted-image-SSL.png?width=1080&height=1221)
 

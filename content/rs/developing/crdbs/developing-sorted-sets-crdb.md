@@ -24,17 +24,17 @@ phases:]{style="font-weight: 400;"}
     In this case, an observed Remove rule is followed, and only
     instances it has already seen are removed. In all other cases, the
     Add / Update element wins.]{style="font-weight: 400;"}
-2.  [Second, the database resolves conflict at the score level. In this
+2.  Second, the database resolves conflict at the score level. In this
     case, the score is treated as a counter and applies the same
-    conflict resolution as regular counters.]{style="font-weight: 400;"}
+    conflict resolution as regular counters.
 
-[Please see the following examples to get familiar with Sorted Sets'
-behavior in CRDB:]{style="font-weight: 400;"}
+Please see the following examples to get familiar with Sorted Sets'
+behavior in CRDB:
 
  
 
-[[Example of Simple Sorted Set with No
-Conflict:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Simple Sorted Set with No
+Conflict:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -44,27 +44,27 @@ Conflict:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[ZADD Z 1.1 x]{style="font-weight: 400;"}
+ZADD Z 1.1 x
 
 t2
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t3
 
-[ZADD Z 1.2 y]{style="font-weight: 400;"}
+ZADD Z 1.2 y
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[ZRANGE Z 0 -1 =\> x y]{style="font-weight: 400;"}
+ZRANGE Z 0 -1 =\> x y]{style="font-weight: 400;"}
 
-[ZRANGE Z 0 -1 =\> x y]{style="font-weight: 400;"}
+[ZRANGE Z 0 -1 =\> x y
 
-[*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
 When adding two different elements to a Sorted Set from different
 replicas (in this example, x with score 1.1 was added by Instance 1 to
 Sorted Set Z, and y with score 1.2 was added by Instance 2 to Sorted Set
@@ -75,8 +75,8 @@ Set including both elements in each CRDB instance.
 
  
 
-[[Example of Sorted Set and Concurrent
-Add:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Sorted Set and Concurrent
+Add:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -86,29 +86,29 @@ Add:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[ZADD Z 1.1 x]{style="font-weight: 400;"}
+ZADD Z 1.1 x
 
  t2
 
-[ZADD Z 2.1 x]{style="font-weight: 400;"}
+ZADD Z 2.1 x
 
  t3
 
-[ZSCORE Z x =\> 1.1]{style="font-weight: 400;"}
+ZSCORE Z x =\> 1.1]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 2.1]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 2.1
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[ZSCORE Z x =\> 2.1]{style="font-weight: 400;"}
+ZSCORE Z x =\> 2.1]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 2.1]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 2.1
 
-[*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
 When concurrently adding an element x to a Sorted Set Z by two different
 CRDB instances (Instance 1 added score 1.1 and Instance 2 added score
 2.1), the CRDB implements Last Write Win (LWW) to determine the score of
@@ -118,8 +118,8 @@ x.]{style="font-weight: 400;"}
 
  
 
-[[Example of Sorted Set with Concurrent Add Happening at the Exact Same
-Time:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Sorted Set with Concurrent Add Happening at the Exact Same
+Time:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -129,27 +129,27 @@ Time:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[ZADD Z 1.1 x]{style="font-weight: 400;"}
+ZADD Z 1.1 x]{style="font-weight: 400;"}
 
-[ZADD Z 2.1 x]{style="font-weight: 400;"}
+[ZADD Z 2.1 x
 
  t2
 
-[ZSCORE Z x =\> 1.1]{style="font-weight: 400;"}
+ZSCORE Z x =\> 1.1]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 2.1]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 2.1
 
 t3
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t4
 
-[ZSCORE Z x =\> 1.1]{style="font-weight: 400;"}
+ZSCORE Z x =\> 1.1]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 1.1]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 1.1
 
-*[Explanation]{style="font-weight: 400;"}[:]{style="font-weight: 400;"}*[
+*Explanation]{style="font-weight: 400;"}[:*[
 The example above shows a relatively rare situation, in which two CRDB
 instances concurrently added the same element x to a Sorted Set at the
 same exact time but with a different score, i.e. Instance 1 added x with
@@ -161,8 +161,8 @@ instances) giving precedence to Instance 1.
 
  
 
-[[Example of Sorted Set with Concurrent Counter
-Increment:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Sorted Set with Concurrent Counter
+Increment:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -172,37 +172,37 @@ Increment:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[ZADD Z 1.1 x]{style="font-weight: 400;"}
+ZADD Z 1.1 x
 
 t2
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t3
 
-[ZINCRBY Z 1.0 x]{style="font-weight: 400;"}
+ZINCRBY Z 1.0 x]{style="font-weight: 400;"}
 
-[ZINCRBY Z 1.0 x]{style="font-weight: 400;"}
+[ZINCRBY Z 1.0 x
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[ZSCORE Z x =\> 3.1]{style="font-weight: 400;"}
+ZSCORE Z x =\> 3.1]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 3.1]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 3.1
 
-[*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
 The result is the sum of all
-]{style="font-weight: 400;"}[ZINCRBY]{style="font-weight: 400;"}[
-operations performed by all CRDB instances.]{style="font-weight: 400;"}
+]{style="font-weight: 400;"}[ZINCRBY
+operations performed by all CRDB instances.
 
  
 
-[[Example of Removing an Element from a Sorted
-Set:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Removing an Element from a Sorted
+Set:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -212,41 +212,41 @@ Set:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[ZADD Z 4.1 x]{style="font-weight: 400;"}
+ZADD Z 4.1 x
 
 t2
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t3
 
-[ZSCORE Z x =\> 4.1]{style="font-weight: 400;"}
+ZSCORE Z x =\> 4.1]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 4.1]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 4.1
 
  t4
 
-[ZREM Z x]{style="font-weight: 400;"}
+ZREM Z x]{style="font-weight: 400;"}
 
-[ZINCRBY Z 2.0 x]{style="font-weight: 400;"}
+[ZINCRBY Z 2.0 x
 
  t5
 
-[ZSCORE Z x =\> nill]{style="font-weight: 400;"}
+ZSCORE Z x =\> nill]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 6.1]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 6.1
 
 t6
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t7
 
-[ZSCORE Z x =\> 2.0]{style="font-weight: 400;"}
+ZSCORE Z x =\> 2.0]{style="font-weight: 400;"}
 
-[ZSCORE Z x =\> 2.0]{style="font-weight: 400;"}
+[ZSCORE Z x =\> 2.0
 
-*[[Explanation]{style="text-decoration: underline;"}: ]{style="font-weight: 400;"}*[
+*[Explanation]{style="text-decoration: underline;"}: *[
 At t4 - t5, concurrent ZREM and ZINCRBY operations ran on Instance 1
 and Instance 2 respectively. Before the instances were in sync, the ZREM
 operation could only delete what had been seen by Instance 1, so

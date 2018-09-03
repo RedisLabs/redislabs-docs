@@ -4,9 +4,9 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-[When enabling Causal Consistency in CRDBs, the order of operations on a
+When enabling Causal Consistency in CRDBs, the order of operations on a
 specific key will be maintained across all CRDB
-instances.]{style="font-weight: 400;"}
+instances.
 
 [For instance, if operations A and B were applied on the same key, and B
 was performed after the effect of A was observed by the CRDB Instance
@@ -30,14 +30,14 @@ activated.]{style="font-weight: 400;"}
 
 ### **Enabling Causal Consistency**
 
-[During the creation of a CRDB, the Causal Consistency parameter should
-be set as illustrated in the figure below:]{style="font-weight: 400;"}
+During the creation of a CRDB, the Causal Consistency parameter should
+be set as illustrated in the figure below:
 
 ![](/images/rs/create_db_causal.png?width=1050&height=930)
 
-[Once enabled, additional operations to
-]{style="font-weight: 400;"}[enable or disable can only be performed
+Once enabled, additional operations to
+enable or disable can only be performed
 using the REST API or the crdb-cli tool. In this case, the updated CRDB
-behavior will take place only for ]{style="font-weight: 400;"}[commands
+behavior will take place only for commands
 and operations received after the
-change]{style="font-weight: 400;"}[.]{style="font-weight: 400;"}
+change]{style="font-weight: 400;"}[.

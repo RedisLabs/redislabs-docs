@@ -30,33 +30,33 @@ Here is an example of an "add wins" case:
 
 t1
 
-[SADD key1 "a"]{style="font-family: courier;"}
+SADD key1 "a"
 
 t2
 
-[SADD key1 "b"]{style="font-family: courier;"}
+SADD key1 "b"
 
 t3
 
-[SMEMBERS key1\
-"a"]{style="font-family: courier;"}
+SMEMBERS key1\
+"a"
 
-[SMEMBERS key1\
-"b"]{style="font-family: courier;"}
+SMEMBERS key1\
+"b"
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t3
 
-[SMEMBERS key1\
+SMEMBERS key1\
 "a"\
-"b"]{style="font-family: courier;"}
+"b"
 
-[SMEMBERS key1\
+SMEMBERS key1\
 "a"\
-"b"]{style="font-family: courier;"}
+"b"
 
 Here is an example of an "observed remove" case.
 
@@ -68,36 +68,36 @@ Here is an example of an "observed remove" case.
 
 t1
 
-[SMEMBERS key1\
+SMEMBERS key1\
 "a"\
-"b"]{style="font-family: courier;"}
+"b"
 
-[SMEMBERS key1\
+SMEMBERS key1\
 "a"\
-"b"]{style="font-family: courier;"}
+"b"
 
 t2
 
-[SREM key1 "a"]{style="font-family: courier;"}
+SREM key1 "a"]{style="font-family: courier;"}
 
-[SADD key1 "c"]{style="font-family: courier;"}
+[SADD key1 "c"
 
 t3
 
-[SREM key1 "c"]{style="font-family: courier;"}
+SREM key1 "c"
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t3
 
-[SMEMBERS key1\
+SMEMBERS key1\
 "c"\
-"b"]{style="font-family: courier;"}
+"b"
 
-[SMEMBERS key1\
+SMEMBERS key1\
 "c"\
-"b"]{style="font-family: courier;"}
+"b"
 
  

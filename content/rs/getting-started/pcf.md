@@ -76,18 +76,18 @@ specifications]({{< relref "/rs/administering/designing-production/hardware-requ
 
 ### Step 4 - Apps Manager Service Deployment
 
-[With the Ops Manager side complete, we turn our attention to deploying
-a service in PCF Apps Manager.]{style="font-weight: 400;"}
+With the Ops Manager side complete, we turn our attention to deploying
+a service in PCF Apps Manager.
 
 1.  Click on **Add A Service\
 
-    ![](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)\
+    !](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)\
     **
-2.  [Select ]{style="font-weight: 400;"}**Redis Enterprise**[ from the
+2.  [Select **Redis Enterprise**[ from the
     choices of Services\
 
-    ![](/images/rs/apps_manager_add_service-1.png?_t=1520885153?width=800&height=635)\
-    ]{style="font-weight: 400;"}
+    !](/images/rs/apps_manager_add_service-1.png?_t=1520885153?width=800&height=635)\
+    
 3.  Select a plan from the list for the proper sized cluster for Redis
     Enterprise and then click the **Select Plan** button.
 4.  Type in the name of the service as **Instance Name**. Click the

@@ -11,14 +11,14 @@ Lists can be used to easily implement queues (using LPUSH and RPOP, for
 example) and stacks (using LPUSH and LPOP, for
 example).]{style="font-weight: 400;"}
 
-[Lists in CRDBs are just the same as regular Redis Lists. Please see the
+Lists in CRDBs are just the same as regular Redis Lists. Please see the
 following examples to get familiar with Lists' behavior in a
-CRDB.]{style="font-weight: 400;"}
+CRDB.
 
  
 
-[[Simple Lists
-example:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Simple Lists
+example:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -28,37 +28,37 @@ example:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[LPUSH mylist "hello"]{style="font-weight: 400;"}
+LPUSH mylist "hello"
 
 t2
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t3
 
-[LPUSH mylist "world"]{style="font-weight: 400;"}
+LPUSH mylist "world"
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[LRANGE mylist 0 -1 =\>]{style="font-weight: 400;"}["world"
-"hello"]{style="font-weight: 400;"}
+LRANGE mylist 0 -1 =\>]{style="font-weight: 400;"}["world"
+"hello"
 
-[LRANGE mylist 0 -1 =\> ]{style="font-weight: 400;"}["world"
-"hello"]{style="font-weight: 400;"}
+LRANGE mylist 0 -1 =\> ]{style="font-weight: 400;"}["world"
+"hello"
 
-[*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
 The final list contains both the "world" and "hello" elements, in that
 order (Instance 2 observed "hello" when it added
 "world").]{style="font-weight: 400;"}
 
  
 
-[[Example of Lists with Concurrent
-Insertions:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Lists with Concurrent
+Insertions:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -68,41 +68,41 @@ Insertions:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[LPUSH L x]{style="font-weight: 400;"}
+LPUSH L x
 
 t2
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t3
 
-[LINSERT L AFTER x y1]{style="font-weight: 400;"}
+LINSERT L AFTER x y1
 
  t4
 
-[LINSERT L AFTER x y2]{style="font-weight: 400;"}
+LINSERT L AFTER x y2
 
  t5
 
-[LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x
-y1]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x
+y1
 
-[LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x
-y2]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x
+y2
 
 t6
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t7
 
-[LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x y1
-y2]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x y1
+y2
 
-[LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x y1
-y2]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> ]{style="font-weight: 400;"}[x y1
+y2
 
-[*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
 Instance 1 added an element y1 after x, and then Instance 2 added
 element y2 after x. The final List contains all three elements: x is the
 first element, after it y1 and then y2, since Instance 2 performed the
@@ -110,8 +110,8 @@ LINSERT operation at time t4\>t3.]{style="font-weight: 400;"}
 
  
 
-[[Example of Deleting a List while Pushing a New
-Element:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Deleting a List while Pushing a New
+Element:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -121,42 +121,42 @@ Element:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[LPUSH L x]{style="font-weight: 400;"}
+LPUSH L x
 
 t2
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t3
 
-[LRANGE L 0 -1 =\> x]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> x]{style="font-weight: 400;"}
 
-[LRANGE L 0 -1 =\> x]{style="font-weight: 400;"}
+[LRANGE L 0 -1 =\> x
 
  t4
 
-[LPUSH L y]{style="font-weight: 400;"}
+LPUSH L y]{style="font-weight: 400;"}
 
-[DEL L]{style="font-weight: 400;"}
+[DEL L
 
 t5
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t6
 
-[LRANGE L 0 -1 =\> y]{style="font-weight: 400;"}
+LRANGE L 0 -1 =\> y]{style="font-weight: 400;"}
 
-[LRANGE L 0 -1 =\> y]{style="font-weight: 400;"}
+[LRANGE L 0 -1 =\> y
 
-[*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
 At t4 - t6, DEL deletes only observed elements. This is why L still
-contains y.]{style="font-weight: 400;"}
+contains y.
 
  
 
-[[Example of Popping Elements from a
-List:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
+[Example of Popping Elements from a
+List:]{style="font-weight: 400;"}
 
 **Time**
 
@@ -166,35 +166,35 @@ List:]{style="font-weight: 400;"}]{style="text-decoration: underline;"}
 
 t1
 
-[LPUSH L x y z]{style="font-weight: 400;"}
+LPUSH L x y z
 
 t2
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
 t3
 
-[RPOP L =\> x]{style="font-weight: 400;"}
+RPOP L =\> x
 
 t4
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t5
 
-[RPOP L =\> y]{style="font-weight: 400;"}
+RPOP L =\> y
 
 t6
 
-[--- Sync ---]{style="font-family: courier;"}
+--- Sync ---
 
  t7
 
-[RPOP L =\> z]{style="font-weight: 400;"}
+RPOP L =\> z]{style="font-weight: 400;"}
 
-[RPOP L =\> z]{style="font-weight: 400;"}
+[RPOP L =\> z
 
-[*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:]{style="font-weight: 400;"}*[
+*[Explanation]{style="font-weight: 400;"}*]{style="text-decoration: underline;"}*[:*[
 At t1, the operation pushes elements x, y, z to List L. At3, the
 sequential pops behaves as expected from a queue. At 7, the concurrent
 pop in both instances might show the same result. The instance was not

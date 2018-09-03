@@ -57,7 +57,7 @@ database and your application, as described below.
                 authority.
 5.  Click the **Update** button to apply the changes to your resource.
 
-[**Important**]{style="text-decoration: underline;"}: Once SSL is
+**Important**: Once SSL is
 enabled, your database will no longer accept regular, non-SSL
 connections.
 
