@@ -33,7 +33,7 @@ upgrade to this version.
     minor version, refer to the Known Issues section below.
 -   The cluster can now be configured to support both private and public
     IPs to connect to database endpoints through both public and private
-    networks. For additional details, refer to [Private & Public
+    networks. For additional details, refer to [Private and Public
     Endpoints]({{< relref "/rs/administering/designing-production/networking/private-public-endpoints.md" >}}).
 -   **rladmin status** command output has been enhanced to include an
     indication on which node rladmin is running by adding the '\*' sign

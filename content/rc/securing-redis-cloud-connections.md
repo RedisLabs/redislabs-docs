@@ -75,8 +75,6 @@ section below that's relevant to your client's OS. Once done, configure
 your client to connect to stunnel (i.e. 127.0.0.1:6379 in the examples
 below) instead of your resource's endpoint.
 
-### ``
-
 ## OS-Specific Instructions for Setting Up stunnel
 
 ### Ubuntu 12.04

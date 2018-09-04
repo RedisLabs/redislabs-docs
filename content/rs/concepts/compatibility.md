@@ -11,7 +11,7 @@ the open source's specifications and makes every effort to update
 RES with the latest version of Redis.
 
 Any standard Redis client can be used with RES. That said, some of
-Redis' functionality is not applicable in the context of RES, as
+Redis functionality is not applicable in the context of RES, as
 follows:
 
 -   Shared databases are not supported in RES given their potential
@@ -48,7 +48,7 @@ follows:
     -   LATENCY RESET
     -   LATENCY GRAPH
     -   LATENCY DOCTOR
--   Lastly, only a subset of Redis' configuration settings (via CONFIG
+-   Lastly, only a subset of Redis configuration settings (via CONFIG
     GET/SET) is applicable to RES. Attempts to get or set a
     configuration parameter that is not included in the following list
     will result in an error:

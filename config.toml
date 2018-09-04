@@ -41,6 +41,7 @@ googleAnalytics = ""
 
 [blackfriday]
 hrefTargetBlank = false
+smartypants = false
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

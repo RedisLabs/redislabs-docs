@@ -57,14 +57,14 @@ multi-cloud or hybrid (on-premises and cloud) Redis Enterprise
 Deployments that accelerate your applications and require zero time to
 recover.
 
-### 24/7 Monitoring & support
+### 24/7 Monitoring and support
 
 Reap benefits from the tremendous operational expertise of the team that
 develops and maintains open-source Redis and the professionals who
 manage hundreds of thousands of Redis databases daily. Enjoy our 24/7
 support via online helpdesk or phone.
 
-### Encryption & authentication
+### Encryption and authentication
 
 Meet your security goals without compromising performance using RV's
 fully encrypted SSL connections, and apply multi-level authentication

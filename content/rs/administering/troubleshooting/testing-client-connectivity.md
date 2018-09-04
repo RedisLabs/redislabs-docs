@@ -32,7 +32,7 @@ database to store data. You can use one of the following ways to test
 connectivity to your database:
 
 -   Connecting with redis-cli, the built-in command-line tool
--   Connecting with a "hello world" application using Python.
+-   Connecting with a _Hello World_ application using Python.
 
 ### Connecting Using redis-cli
 

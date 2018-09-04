@@ -41,7 +41,7 @@ RS supports various database configurations:
     the user. Various performance optimization algorithms define where
     shards are placed within the cluster. During the lifetime of the
     cluster, these algorithms might migrate a shard between nodes.
--   **Clustered & highly available Redis database** - Each master shard
+-   **Clustered and highly available Redis database** - Each master shard
     in the clustered database has a slave shard, enabling failover if
     the master shard fails.
 

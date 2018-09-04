@@ -117,7 +117,7 @@ database to store data. You can use one of the following ways to test
 connectivity to your database
 
 -   Connecting with redis-cli, the built-in command-line tool.
--   Connecting with a "hello world" application using Python.
+-   Connecting with a _Hello World_ application using Python.
 
 Remember we have two member CRDBs that are available for connections and
 concurrent reads and writes. The member CRDBs are using bi-directional
@@ -159,7 +159,7 @@ $ sudo /opt/redislabs/bin/redis-cli -p 12000
 "123"
 ```
 
-### Connecting Using "Hello World" Application in Python
+### Connecting Using _Hello World_ Application in Python
 
 A simple python application running on the host machine can also connect
 to the database1.
