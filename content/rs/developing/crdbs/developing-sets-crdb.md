@@ -33,6 +33,7 @@ Here is an example of an "add wins" case:
 Here is an example of an "observed remove" case.
 
 |  **Time** | **CRDB Instance1** | **CRDB Instance2** |
+|  ------: | :------: | :------: |
 |  t1 | SMEMBERS key1 “a” “b” | SMEMBERS key1 “a” “b” |
 |  t2 | SREM key1 “a” | SADD key1 “c” |
 |  t3 | SREM key1 “c” |  |
