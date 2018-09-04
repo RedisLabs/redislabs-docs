@@ -72,7 +72,7 @@ The fundamental part of any search engine is what's called an Inverted
 Index. In very simple terms, a search index is a map between words or
 terms, to the respective documents they appear in.
 
-If we have two documents, one titled "Hello World" and the other titled
+If we have two documents, one titled _Hello World_ and the other titled
 "Hello Kitty", a search engine would keep an Inverted Index of the word
 "hello" that contains two records, one for each of the aforementioned
 documents.
@@ -84,9 +84,9 @@ scores, term positions in the document and more - but that's beyond the
 scope of this document.
 
 Until now, Inverted Indexes on top of a Redis database were always
-modeled with Redis' native data types, usually Sorted Sets, where the
+modeled with Redis native data types, usually Sorted Sets, where the
 document ID was stored as the "element" and the relevance as the
-"score." This worked great because it allowed developers to use Redis'
+"score." This worked great because it allowed developers to use Redis
 intersection and union to perform multi-word searches, but the approach
 has its limitations: it doesn't support exact phrase search, it has a
 big memory overhead, and can be very slow with big records

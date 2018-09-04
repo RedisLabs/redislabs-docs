@@ -15,7 +15,7 @@ then upgrade to this version.
 
 ## New Features
 
-### The New Discovery Service with Support for Redis' Sentinel API
+### The New Discovery Service with Support for Redis Sentinel API
 
 The Discovery Service provides an IP-based connection management service
 used when connecting to Redis Enterprise Pack databases. When used in

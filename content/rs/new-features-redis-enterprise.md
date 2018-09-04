@@ -31,7 +31,7 @@ cluster to a specific use case or need. Once installed, modules benefit
 from the high performance, scalability, and high availability that Redis
 Enterprise is known for.
 
-### Redis Labs' Modules
+### Redis Labs Modules
 
 There are three modules Redis Labs has developed and certified with
 Redis Enterprise Software (RS). The modules are:

@@ -75,7 +75,7 @@ and store data. You can use one of the following ways to test
 connectivity to your database:
 
 -   Connecting with redis-cli, the built-in command line tool
--   Connecting with a "hello world" application using Python.
+-   Connecting with a _Hello World_ application using Python.
 
 ### Connecting Using redis-cli
 
@@ -99,7 +99,7 @@ OK
 "123"
 ```
 
-### Connecting Using "Hello World" Application in Python
+### Connecting Using _Hello World_ Application in Python
 
 A simple python application running on the **host machine**, not the
 container, can also connect to database1.

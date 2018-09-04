@@ -32,7 +32,7 @@ Creating a subscription is a four-step process:
 2.  Sizing - Describe the specification of the databases you want to
     provision. After this step, RV will calculate the optimal
     configuration and required infrastructure.
-3.  Review & Create - You will be presented with the required
+3.  Review and Create - You will be presented with the required
     infrastructure and the subscription price. Enter your payment method
     and you are pretty much done.
 4.  Provisioning - Automatically set up the relevant infrastructure and
@@ -124,7 +124,7 @@ more rows by clicking the "**+**" button.
 Once done, click the **Continue** button. The system may take a moment
 to calculate the optimized cloud infrastructure based on your inputs.
 
-### Review & Activate
+### Review and Activate
 
 Once planning is complete, please review the subscription and database
 information presented. Then select an existing payment method or click

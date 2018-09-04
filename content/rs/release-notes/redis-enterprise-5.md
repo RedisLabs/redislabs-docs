@@ -19,7 +19,7 @@ older than this, you must first upgrade to at least 4.4.2.
 
 ## New Features
 
-### Support for Redis' Cluster API
+### Support for Redis Cluster API
 
 The Redis Cluster API support in Redis Enterprise Software (RS) provides
 a simple mechanism for Cluster enabled Redis clients to learn and know

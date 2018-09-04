@@ -96,7 +96,7 @@ generation.Database Configuration Parameters
 
 ## Database Configuration Parameters
 
-### Create a 'Redis DB Flash' test database
+### Create a _Redis DB Flash_ test database
 
 You can use the RS Web UI for creating a test database. It is
 recommended that you use a separate database for each test case. The
