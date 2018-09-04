@@ -51,15 +51,14 @@ the master.
 
 There are six options for persistence in Redis Enterprise Software:
 
-  --------------------------------------- -------------------------------------------------------
-  ** Options**                            ** Description**
-  None                                    Data is not persisted to disk at all.
-  Append Only File (AoF) on every write   Data is fsynced to disk with every write.
-  Append Only File (AoF) one second       Data is fsynced to disk every second.
-  Snapshot every 1 hour                   A snapshot of the database is created every hour.
-  Snapshot every 6 hours                  A snapshot of the database is created every 6 hours.
-  Snapshot every 12 hours                 A snapshot of the database is created every 12 hours.
-  --------------------------------------- -------------------------------------------------------
+|  **Options** | **Description** |
+|  ------ | ------ |
+|  None | Data is not persisted to disk at all. |
+|  Append Only File (AoF) on every write | Data is fsynced to disk with every write. |
+|  Append Only File (AoF) one second | Data is fsynced to disk every second. |
+|  Snapshot every 1 hour | A snapshot of the database is created every hour. |
+|  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
+|  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
 
 The first thing you need to do is determine if you even need
 persistence. Persistence is used to recover from a catastrophic failure,

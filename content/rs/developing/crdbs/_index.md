@@ -149,17 +149,16 @@ requirements in CRDBs.
 Below is a table of the primary data types and their support levels,
 followed by descriptions:
 
-  ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Data Type**      **Support Level **
-  Strings            Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}})
-  Integer Counters   Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}})
-  Float Counters     Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}})
-  Sets               Supported, see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}})
-  Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}})
-  Lists              Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}})
-  Sorted Sets        Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}})
-  Bitsets            Not currently supported
-  ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  **Data Type** | **Support Level** |
+|------------|-----------------|
+|  Strings | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
+|  Integer Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+|  Float Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+|  Sets | Supported, see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
+|  Hashes | Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}) |
+|  Lists | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
+|  Sorted Sets | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+|  Bitsets | Not currently supported |
 
 ### Other Data Types
 

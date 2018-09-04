@@ -323,250 +323,33 @@ false,"time":1434365471,"disk":705667072,"type":
 
 ### Cluster / Node related events
 
-**Event as shown in the UI**
-
-**Event code­name**
-
-**Object type**
-
-**Category**
-
-**Severity**
-
-**Notes**
-
-Node failed
-
-failed
-
-node
-
-alert
-
-critical
-
-Node joined
-
-node\_joined
-
-cluster
-
-event
-
-info
-
-Node removed
-
-node\_remove\_completed\
-node\_remove\_failed\
-node\_remove\_abort\_completed\
-node\_remove\_abort\_failed
-
-cluster
-
-event
-
-info\
-error\
-info\
-error
-
-The remove node is a process that can fail and can also be aborted. If
-aborted, the abort can succeed or fail.
-
-Node memory has reached % of its capacity
-
-memory
-
-node
-
-alert
-
-true: warning\
-false: info
-
-Has global\_threshold parameter in the key/value section of the log
-entry.
-
-Persistent storage has reached % of its capacity
-
-persistent\_storage
-
-node
-
-alert
-
-true: warning\
-false: info
-
-Has global\_threshold parameter in the key/value section of the log
-entry.
-
-Ephemeral storage has reached
-
-ephemeral\_storage
-
-node
-
-alert
-
-true: warning\
-false: info
-
-Has global\_threshold parameter in the % of its capacity key/value
-section of the log entry.
-
-CPU utilization has reached %
-
-cpu\_utilization
-
-node
-
-alert
-
-true: warning\
-false: info
-
-Has global\_threshold parameter in the key/value section of the log
-entry.
-
-Network throughput has reached MB/s
-
-net\_throughput
-
-node
-
-alert
-
-true: warning\
-false: info
-
-Has global\_threshold parameter in the key/value section of the log
-entry.
-
-Node has insufficient disk space for AOF rewrite
-
-insufficient\_disk\_aofrw
-
-node
-
-alert
-
-true: error
-
-false: info
-
-Redis performance is degraded as result of disk I/O limits
-
-aof\_slow\_disk\_io
-
-node
-
-alert
-
-true: error\
-false: info
-
-Cluster capacity is less than total memory allocated to its databases
-
-ram\_overcommit
-
-cluster
-
-alert
-
-true: error\
-false: info
-
-Nodes rebalanced
-
-rebalance\_failed\
-rebalance\_completed\
-rebalance\_abort\_failed\
-rebalance\_abort\_completed
-
-cluster
-
-event
-
-error\
-info\
-error\
-info
-
-The nodes rebalance is a process that can fail and can also be aborted.
-If aborted, the abort can succeed or fail.
-
-Database replication requires at least two nodes in cluster
-
-too\_few\_nodes\_for\_\
-replication
-
-cluster
-
-alert
-
-true: warning\
-false: info
-
-True high availability requires an odd number of nodes with a minimum of
-three nodes
-
-even\_node\_count
-
-cluster
-
-alert
-
-true: warning\
-false: info
-
-Not all nodes in the cluster are running the same Redis Labs Enterprise
-Cluster version
-
-inconsistent\_rl\_sw
-
-cluster
-
-alert
-
-true: warning\
-false: info
-
-Not all databases are running the same open source version
-
-inconsistent\_redis\_sw
-
-cluster
-
-alert
-
-true: warning\
-false: info
+| **Event as shown in the UI** | **Event code­name** | **Object type** | **Category** | **Severity** | **Notes**
+|------------|-----------------|------------|-----------------|------------|-----------------|
+| Node failed | failed | node | alert | critical | |
+| Node joined | node_joined | cluster | event | info | |
+| Node removed | node_remove_completed</br>node_remove_failed</br>node_remove_abort_completed</br>node_remove_abort_failed | cluster | event | info</br>error</br>info</br>error | The remove node is a process that can fail and can also be aborted. If aborted, the abort can succeed or fail. |
+| Node memory has reached % of its capacity | memory | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
+| Persistent storage has reached % of its capacity | persistent_storage | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
+| Ephemeral storage has reached | ephemeral_storage | node | alert | true: warning</br>false: info | Has global_threshold parameter in the % of its capacity key/value section of the log entry. |
+| CPU utilization has reached % | cpu_utilization | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
+| Network throughput has reached MB/s | net_throughput | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
+| Node has insufficient disk space for AOF rewrite | insufficient_disk_aofrw | node | alert | true: error</br>false: info | |
+| Redis performance is degraded as result of disk I/O limits | aof_slow_disk_io | node | alert | true: error</br>false: info | |
+| Cluster capacity is less than total memory allocated to its databases | ram_overcommit | cluster | alert | true: error</br>false: info | |
+| Nodes rebalanced | rebalance_failed</br>rebalance_completed</br>rebalance_abort_failed</br>rebalance_abort_completed | cluster | event | error</br>info</br>error</br>info | The nodes rebalance is a process that can fail and can also be aborted. If aborted, the abort can succeed or fail. |
+| Database replication requires at least two nodes in cluster | too_few_nodes_for_replication | cluster | alert | true: warning</br>false: info | |
+| True high availability requires an odd number of nodes with a minimum of three nodes | even_node_count | cluster | alert | true: warning</br>false: info | |
+| Not all nodes in the cluster are running the same Redis Labs Enterprise Cluster version | inconsistent_rl_sw | cluster | alert | true: warning</br>false: info |
+| Not all databases are running the same open source version | inconsistent_redis_sw | cluster | alert | true: warning</br>false: info | |
 
 #### Database related events
 
-  ---------------------------------------------------------- ---------------------------- ----------------- -------------- ---------------- --------------------------------------------------------------------
-  **Event as shown in the UI**                               **Event code-­name**         **Object type**   **Category**   **Severity**     **Notes**
-
-  Dataset size has reached % of the memory limit             size                         bdb               alert          true: warning\   Has threshold parameter in the key/value section of the log entry.
-                                                                                                                           false: info      
-
-  Throughput is higher than RPS (requests per second)        high\_throughput             bdb               alert          true: warning\   Has threshold parameter in the key/value section of the log entry.
-                                                                                                                           false: info      
-
-  Throughput is lower than RPS (requests per second)         low\_throughput              bdb               alert          true: warning\   Has threshold parameter in the key/value section of the log entry.
-                                                                                                                           false: info      
-
-  Latency is higher than msec                                high\_latency                bdb               alert          true: warning\   Has threshold parameter in the key/value section of the log entry.
-                                                                                                                           false: info      
-
-  Periodic backup has been delayed for longer than minutes   backup\_delayed              bdb               alert          true: warning\   Has threshold parameter in the data: section of the log entry.
-                                                                                                                           false: info      
-
-  Replica of ­database unable to sync with source            syncer\_connection\_error\   bdb               alert          error\           
-                                                             syncer\_general\_error                                        error            
-
-  Replica of ­ sync lag is higher than seconds               high\_syncer\_lag            bdb               alert          true: warning\   Has threshold parameter in the key/value section of the log entry.
-                                                                                                                           false: info      
-  ---------------------------------------------------------- ---------------------------- ----------------- -------------- ---------------- --------------------------------------------------------------------
+| **Event as shown in the UI** | **Event code-­name** | **Object type** | **Category** | **Severity** | **Notes** |
+|------------|-----------------|------------|-----------------|------------|-----------------|
+| Dataset size has reached % of the memory limit | size | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
+| Throughput is higher than RPS (requests per second) | high_throughput | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
+| Throughput is lower than RPS (requests per second) | low_throughput | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
+| Latency is higher than msec | high_latency | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
+| Periodic backup has been delayed for longer than minutes | backup_delayed | bdb | alert | true: warning</br>false: info | Has threshold parameter in the data: section of the log entry. |
+| Replica of ­database unable to sync with source | syncer_connection_error</br>syncer_general_error | bdb | alert | error</br>error |
+| Replica of ­ sync lag is higher than seconds | high_syncer_lag | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |

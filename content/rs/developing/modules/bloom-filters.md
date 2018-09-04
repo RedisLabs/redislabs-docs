@@ -164,18 +164,12 @@ enhancements:
     were done using a single client thread, and with pipelining to avoid
     network/scheduling interference as much as possible:
 
-+-----------------------+-----------------------+-----------------------+
-| **[Implementation]{.c | **[Add]{.c8}**        | **[Check]{.c8}**      |
-| 12}**                 |                       |                       |
-+-----------------------+-----------------------+-----------------------+
-| [redablooms]{.c1}     | [20k/s]{.c1}          | [7k/s]{.c1}           |
-+-----------------------+-----------------------+-----------------------+
-| [lua]{.c1}            | [29k/s]{.c1}          | [25k/s]{.c1}          |
-+-----------------------+-----------------------+-----------------------+
-| [bloomd]{.c1}         | [250k/s]{.c1}         | [200k/s]{.c1}         |
-+-----------------------+-----------------------+-----------------------+
-| [rebloom]{.c1}        | [400k/s]{.c1}         | [440k/s]{.c1}         |
-+-----------------------+-----------------------+-----------------------+
+| **Implementation** | **Add**        | **Check**      |
+|------------|-----------------|------------|
+| redablooms     | 20k/s          | 7k/s           |
+| lua            | 29k/s          | 25k/s          |
+| bloomd         | 250k/s         | 200k/s         |
+| rebloom        | 400k/s         | 440k/s         |
 
 Once all was done, I benchmarked it and compared it to some other
 implementations. I wrote this filter initially because a [previous

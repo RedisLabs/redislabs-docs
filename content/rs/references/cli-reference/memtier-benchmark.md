@@ -280,20 +280,12 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=24 -c 20 -t 1
 
 Important test parameters are:
 
-  ---------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Parameter**                                                          **Description**
-
-  Access pattern (--key-pattern) and standard deviation (--key-stddev)   Controls the RAM Hit ratio after the centralization process has been performed
-
-  Number of threads\                                                     Controls how many connections are opened to the database, whereby the number of connections is the number of threads multiplied by the number of connections per thread
-  (-t) and number of clients per thread (-c)                             
-
-  Number of threads\                                                     Pipelining allows you to send multiple requests without waiting for each individual response
-  (-t) and number of clients per thread (-c)                             
-
-  Number of threads\                                                     A value of 1:1 means that you have the same number of write operations as read operations
-  (-t) and number of clients per thread (-c)                             
-  ---------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  **Parameter** | **Description** |
+|------------|-----------------|
+|  Access pattern (--key-pattern) and standard deviation (--key-stddev) | Controls the RAM Hit ratio after the centralization process has been performed |
+|  Number of threads\ | Controls how many connections are opened to the database, whereby the number of connections is the number of threads multiplied by the number of connections per thread (-t) and number of clients per thread (-c) |
+|  Number of threads\ | Pipelining allows you to send multiple requests without waiting for each individual response (-t) and number of clients per thread (-c) |
+|  Number of threads\ | A value of 1:1 means that you have the same number of write operations as read operations (-t) and number of clients per thread (-c) |
 
 ## Test Results
 

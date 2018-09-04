@@ -113,15 +113,10 @@ same hash tag will be stored and managed in the same slot.
 Once you enable the custom hashing policy, the Redis Enterprise VPC's
 default RegEx rules that implement the standard hashing policy are:
 
-<div>
-
-  ----------------------- ------------------------------------------------------------
-  RegEx Rule              Description
-  .\*{(?\<tag\>.\*)}.\*   Hashing is done on the substring between the curly braces.
-  (?\<tag\>.\*)           The entire key's name is used for hashing.
-  ----------------------- ------------------------------------------------------------
-
-</div>
+|  RegEx Rule | Description |
+|------------|-----------------|
+|  .\*{(?\<tag\>.\*)}.\* | Hashing is done on the substring between the curly braces. |
+|  (?\<tag\>.\*) | The entire key's name is used for hashing. |
 
 You can modify existing rules, add new ones, delete rules or change
 their order to suit your application's requirements.
