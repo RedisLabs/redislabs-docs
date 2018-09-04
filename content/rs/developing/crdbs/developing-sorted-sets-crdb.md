@@ -36,33 +36,13 @@ behavior in CRDB:
 Example of Simple Sorted Set with No
 Conflict:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-ZADD Z 1.1 x
-
-t2
-
---- Sync ---
-
- t3
-
-ZADD Z 1.2 y
-
-t4
-
---- Sync ---
-
- t5
-
-ZRANGE Z 0 -1 =\> x y
-
-ZRANGE Z 0 -1 =\> x y
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | ZADD Z 1.1 x |  |
+|  t2 | — Sync — | — Sync — |
+|  t3 |  | ZADD Z 1.2 y |
+|  t4 | — Sync — | — Sync — |
+|  t5 | ZRANGE Z 0 -1 => x y | ZRANGE Z 0 -1 => x y |
 
 **Explanation**:
 When adding two different elements to a Sorted Set from different
@@ -78,35 +58,13 @@ Set including both elements in each CRDB instance.
 Example of Sorted Set and Concurrent
 Add:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-ZADD Z 1.1 x
-
- t2
-
-ZADD Z 2.1 x
-
- t3
-
-ZSCORE Z x =\> 1.1
-
-ZSCORE Z x =\> 2.1
-
-t4
-
---- Sync ---
-
- t5
-
-ZSCORE Z x =\> 2.1
-
-ZSCORE Z x =\> 2.1
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | ZADD Z 1.1 x |  |
+|  t2 |  | ZADD Z 2.1 x |
+|  t3 | ZSCORE Z x => 1.1 | ZSCORE Z x => 2.1 |
+|  t4 | — Sync — | — Sync — |
+|  t5 | ZSCORE Z x => 2.1 | ZSCORE Z x => 2.1 |
 
 **Explanation**:
 When concurrently adding an element x to a Sorted Set Z by two different
@@ -121,33 +79,12 @@ x.
 Example of Sorted Set with Concurrent Add Happening at the Exact Same
 Time:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-ZADD Z 1.1 x
-
-ZADD Z 2.1 x
-
- t2
-
-ZSCORE Z x =\> 1.1
-
-ZSCORE Z x =\> 2.1
-
-t3
-
---- Sync ---
-
- t4
-
-ZSCORE Z x =\> 1.1
-
-ZSCORE Z x =\> 1.1
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | ZADD Z 1.1 x | ZADD Z 2.1 x |
+|  t2 | ZSCORE Z x => 1.1 | ZSCORE Z x => 2.1 |
+|  t3 | — Sync — | — Sync — |
+|  t4 | ZSCORE Z x => 1.1 | ZSCORE Z x => 1.1 |
 
 **Explanation**:
 The example above shows a relatively rare situation, in which two CRDB
@@ -164,35 +101,13 @@ instances) giving precedence to Instance 1.
 Example of Sorted Set with Concurrent Counter
 Increment:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-ZADD Z 1.1 x
-
-t2
-
---- Sync ---
-
- t3
-
-ZINCRBY Z 1.0 x
-
-ZINCRBY Z 1.0 x
-
-t4
-
---- Sync ---
-
- t5
-
-ZSCORE Z x =\> 3.1
-
-ZSCORE Z x =\> 3.1
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | ZADD Z 1.1 x |  |
+|  t2 | — Sync — | — Sync — |
+|  t3 | ZINCRBY Z 1.0 x | ZINCRBY Z 1.0 x |
+|  t4 | — Sync — | — Sync — |
+|  t5 | ZSCORE Z x => 3.1 | ZSCORE Z x => 3.1 |
 
 **Explanation**:
 The result is the sum of all
@@ -204,47 +119,15 @@ operations performed by all CRDB instances.
 Example of Removing an Element from a Sorted
 Set:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-ZADD Z 4.1 x
-
-t2
-
---- Sync ---
-
- t3
-
-ZSCORE Z x =\> 4.1
-
-ZSCORE Z x =\> 4.1
-
- t4
-
-ZREM Z x
-
-ZINCRBY Z 2.0 x
-
- t5
-
-ZSCORE Z x =\> nill
-
-ZSCORE Z x =\> 6.1
-
-t6
-
---- Sync ---
-
- t7
-
-ZSCORE Z x =\> 2.0
-
-ZSCORE Z x =\> 2.0
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | ZADD Z 4.1 x |  |
+|  t2 | — Sync — | — Sync — |
+|  t3 | ZSCORE Z x => 4.1 | ZSCORE Z x => 4.1 |
+|  t4 | ZREM Z x | ZINCRBY Z 2.0 x |
+|  t5 | ZSCORE Z x => nill | ZSCORE Z x => 6.1 |
+|  t6 | — Sync — | — Sync — |
+|  t7 | ZSCORE Z x => 2.0 | ZSCORE Z x => 2.0 |
 
 **Explanation**:
 At t4 - t5, concurrent ZREM and ZINCRBY operations ran on Instance 1

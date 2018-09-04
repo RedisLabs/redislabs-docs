@@ -20,35 +20,13 @@ CRDB.
 Simple Lists
 example:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-LPUSH mylist "hello"
-
-t2
-
---- Sync ---
-
- t3
-
-LPUSH mylist "world"
-
-t4
-
---- Sync ---
-
- t5
-
-LRANGE mylist 0 -1 =\>"world"
-"hello"
-
-LRANGE mylist 0 -1 =\> "world"
-"hello"
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | LPUSH mylist “hello” |  |
+|  t2 | — Sync — | — Sync — |
+|  t3 |  | LPUSH mylist “world” |
+|  t4 | — Sync — | — Sync — |
+|  t5 | LRANGE mylist 0 -1 =>“world” “hello” | LRANGE mylist 0 -1 => “world” “hello” |
 
 **Explanation**:
 The final list contains both the "world" and "hello" elements, in that
@@ -60,47 +38,15 @@ order (Instance 2 observed "hello" when it added
 Example of Lists with Concurrent
 Insertions:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-LPUSH L x
-
-t2
-
---- Sync ---
-
- t3
-
-LINSERT L AFTER x y1
-
- t4
-
-LINSERT L AFTER x y2
-
- t5
-
-LRANGE L 0 -1 =\> x
-y1
-
-LRANGE L 0 -1 =\> x
-y2
-
-t6
-
---- Sync ---
-
- t7
-
-LRANGE L 0 -1 =\> x y1
-y2
-
-LRANGE L 0 -1 =\> x y1
-y2
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | LPUSH L x |  |
+|  t2 | — Sync — | — Sync — |
+|  t3 | LINSERT L AFTER x y1 |  |
+|  t4 |  | LINSERT L AFTER x y2 |
+|  t5 | LRANGE L 0 -1 => x y1 | LRANGE L 0 -1 => x y2 |
+|  t6 | — Sync — | — Sync — |
+|  t7 | LRANGE L 0 -1 => x y1 y2 | LRANGE L 0 -1 => x y1 y2 |
 
 **Explanation**:
 Instance 1 added an element y1 after x, and then Instance 2 added
@@ -113,41 +59,14 @@ LINSERT operation at time t4\>t3.
 Example of Deleting a List while Pushing a New
 Element:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-LPUSH L x
-
-t2
-
---- Sync ---
-
-t3
-
-LRANGE L 0 -1 =\> x
-
-LRANGE L 0 -1 =\> x
-
- t4
-
-LPUSH L y
-
-DEL L
-
-t5
-
---- Sync ---
-
- t6
-
-LRANGE L 0 -1 =\> y
-
-LRANGE L 0 -1 =\> y
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | LPUSH L x |  |
+|  t2 | — Sync — | — Sync — |
+|  t3 | LRANGE L 0 -1 => x | LRANGE L 0 -1 => x |
+|  t4 | LPUSH L y | DEL L |
+|  t5 | — Sync — | — Sync — |
+|  t6 | LRANGE L 0 -1 => y | LRANGE L 0 -1 => y |
 
 **Explanation**
 At t4 - t6, DEL deletes only observed elements. This is why L still
@@ -158,41 +77,15 @@ contains y.
 Example of Popping Elements from a
 List:
 
-**Time**
-
-**CRDB Instance 1**
-
-**CRDB Instance 2**
-
-t1
-
-LPUSH L x y z
-
-t2
-
---- Sync ---
-
-t3
-
-RPOP L =\> x
-
-t4
-
---- Sync ---
-
- t5
-
-RPOP L =\> y
-
-t6
-
---- Sync ---
-
- t7
-
-RPOP L =\> z
-
-RPOP L =\> z
+|  **Time** | **CRDB Instance 1** | **CRDB Instance 2** |
+|  ------: | :------: | :------: |
+|  t1 | LPUSH L x y z |  |
+|  t2 | — Sync — | — Sync — |
+|  t3 |  | RPOP L => x |
+|  t4 | — Sync — | — Sync — |
+|  t5 | RPOP L => y |  |
+|  t6 | — Sync — | — Sync — |
+|  t7 | RPOP L => z | RPOP L => z |
 
 **Explanation**:
 At t1, the operation pushes elements x, y, z to List L. At3, the

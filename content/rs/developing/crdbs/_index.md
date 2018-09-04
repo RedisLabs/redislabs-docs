@@ -26,59 +26,17 @@ listed under the member CRDB name. The "Sync" even represent the moment
 where synchronization catches up to distribute all local member CRDB
 updates to other participating clusters and other member CRDBs.
 
-**Time**
-
-**Member CRDB1**
-
-**Member CRDB2**
-
-t1
-
-INCRBY key1 7
-
-t2
-
-INCRBY key1 3
-
-t3
-
-GET key1\
-7
-
-GET key1\
-3
-
-t4
-
---- Sync ---
-
- t5
-
-GET key1\
-10
-
-GET key1\
-10
-
-t6
-
-DECRBY key1 3
-
-t7
-
-INCRBY key1 6
-
-t8
-
---- Sync ---
-
-t9
-
-GET key1\
-13
-
-GET key1\
-13
+|  **Time** | **Member CRDB1** | **Member CRDB2** |
+|  ------: | :------: | :------: |
+|  t1 | INCRBY key1 7 |  |
+|  t2 |  | INCRBY key1 3 |
+|  t3 | GET key1 7 | GET key1 3 |
+|  t4 | — Sync — | — Sync — |
+|  t5 | GET key1 10 | GET key1 10 |
+|  t6 | DECRBY key1 3 |  |
+|  t7 |  | INCRBY key1 6 |
+|  t8 | — Sync — | — Sync — |
+|  t9 | GET key1 13 | GET key1 13 |
 
 Databases provide various approaches to address some of these concerns
 

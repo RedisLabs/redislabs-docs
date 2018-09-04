@@ -52,33 +52,12 @@ just use the next IP in the list to connect to another proxy.
 
 A database can have one of the following four proxy policies:
 
-**Proxy Policy**
-
-**Description**
-
-Single
-
-There is only a single proxy that is bound to the database. This is the
-default database configuration and preferable in most use cases.
-
-All Master Shards
-
-There are multiple proxies that are bound to the database, one on each
-node that hosts a database master shard. This mode fits most use cases
-that require multiple proxies.
-
-All Nodes
-
-There are multiple proxies that are bound to the database, one on each
-node in the cluster, regardless of whether or not there is a shard from
-this database on the node. This mode should be used only in special
-cases.
-
-Legacy
-
-The proxy binding is done with the behavior that existed in earlier
-versions. The binding is static and a slave listener is only created if
-replication is available.
+| **Proxy Policy** | **Description** |
+|------------|-----------------|
+| Single | There is only a single proxy that is bound to the database. This is the default database configuration and preferable in most use cases. |
+| All Master Shards | There are multiple proxies that are bound to the database, one on each node that hosts a database master shard. This mode fits most use cases that require multiple proxies. |
+| All Nodes | There are multiple proxies that are bound to the database, one on each node in the cluster, regardless of whether or not there is a shard from this database on the node. This mode should be used only in special cases. |
+| Legacy | The proxy binding is done with the behavior that existed in earlier versions. The binding is static and a slave listener is only created if replication is available. |
 
 Note: Manual intervention is also available via the rladmin bind add and
 remove commands.

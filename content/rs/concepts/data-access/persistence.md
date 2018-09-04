@@ -73,13 +73,12 @@ Now that you know the available options, to assist in making a decision
 on which option is right for your use case, here is a table about the
 two:
 
-  ---------------------------------------------------------------------------- ----------------------------------------------------------------------------------
-  ** AOF Append Only File)**                                                   ** RDB (Snapshot)**
-  More resource intensive                                                      Less resource intensive
-  Provides better durability (recover the latest point in time)                Less durable
-  Slower time to recover (Larger files)                                        Faster recovery time
-  More disk space required (files tend to grow large and require compaction)   Requires less resource (I/O once every several hours and no compaction required)
-  ---------------------------------------------------------------------------- ----------------------------------------------------------------------------------
+|  ** AOF Append Only File)** | ** RDB (Snapshot)** |
+|------------|-----------------|
+|  More resource intensive | Less resource intensive |
+|  Provides better durability (recover the latest point in time) | Less durable |
+|  Slower time to recover (Larger files) | Faster recovery time |
+|  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
 
 ## Data Persistence and Redis Enterprise Flash
 
