@@ -12,71 +12,13 @@ You can view and update the cluster users in the** **cluster's
 In Redis Enterprise Software 4.4 and above, administrative user roles as
 part of Role Based Access Control (RBAC) are now supported.
 
-+-----------------------+-----------------------+-----------------------+
-| **Role**              | **Description**       | **Details**           |
-+-----------------------+-----------------------+-----------------------+
-| **Admin**             | Has full access to    |                       |
-|                       | the system            |                       |
-+-----------------------+-----------------------+-----------------------+
-| **DB Viewer**         | Allowed to view DB    | -   Can view info     |
-|                       | configuration/metrics |     about all         |
-|                       | .                     |     databases on the  |
-|                       | All Node/Cluster      |     cluster           |
-|                       | information and       | -   Cannot view info  |
-|                       | settings are          |     about nodes and   |
-|                       | unavailable           |     cluster           |
-|                       |                       | -   Can view logs     |
-|                       |                       | -   Cannot view       |
-|                       |                       |     cluster settings  |
-|                       |                       |     outside of        |
-|                       |                       |     changing own      |
-|                       |                       |     password          |
-+-----------------------+-----------------------+-----------------------+
-| **Cluster Viewer**    | Allowed to view       | -   Can view all info |
-|                       | Cluster and DB        |     about Cluster,    |
-|                       | configuration/metrics |     nodes and         |
-|                       | .                     |     databases.        |
-|                       |                       | -   Can view logs     |
-|                       |                       | -   Cannot view       |
-|                       |                       |     cluster settings  |
-|                       |                       |     outside of        |
-|                       |                       |     changing own      |
-|                       |                       |     password          |
-+-----------------------+-----------------------+-----------------------+
-| DB Member             | Allowed to view and   | -   Can create        |
-|                       | edit DB               |     databases         |
-|                       | configuration. All    | -   Can view db       |
-|                       | Node/Cluster          |     metrics           |
-|                       | information and       | -   Can edit database |
-|                       | settings are          |     configurations    |
-|                       | unavailable           | -   Can clear slowlog |
-|                       |                       | -   Can view logs     |
-|                       |                       | -   Cannot view info  |
-|                       |                       |     about nodes and   |
-|                       |                       |     cluster           |
-|                       |                       | -   Cannot view       |
-|                       |                       |     cluster settings  |
-|                       |                       |     outside of        |
-|                       |                       |     changing own      |
-|                       |                       |     password          |
-+-----------------------+-----------------------+-----------------------+
-| **Cluster Member**    | Allowed to view       | -   Can view info     |
-|                       | Node/DB information   |     about nodes and   |
-|                       | and edit DB           |     cluster           |
-|                       | configurations        | -   Can create        |
-|                       |                       |     databases         |
-|                       |                       | -   Can view db       |
-|                       |                       |     metrics           |
-|                       |                       | -   Can edit database |
-|                       |                       |     configurations    |
-|                       |                       | -   Can clear slowlog |
-|                       |                       | -   Can view logs     |
-|                       |                       | -   Cannot view       |
-|                       |                       |     cluster settings  |
-|                       |                       |     outside of        |
-|                       |                       |     changing own      |
-|                       |                       |     password          |
-+-----------------------+-----------------------+-----------------------+
+|  **Role** | **Description** | **Details** |
+|  ------ | ------ | ------ |
+|  **Admin** | Has full access to the system |  |
+|  **DB Viewer** | Allowed to view DB configuration/metrics. All Node/Cluster information and settings are unavailable | Can view info about all databases on the cluster<br/><br/>Cannot view info about nodes and cluster<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
+|  **Cluster Viewer** | Allowed to view Cluster and DB configuration/metrics. | Can view all info about Cluster, nodes and databases.<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
+|  DB Member | Allowed to view and edit DB configuration. All Node/Cluster information and settings are unavailable | Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
+|  **Cluster Member** | Allowed to view Node/DB information and edit DB configurations | Can view info about nodes and cluster<br/><br/>Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
 
 All roles apply to both the UI and API levels.
 

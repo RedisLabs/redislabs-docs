@@ -19,18 +19,18 @@ update your firewall with the port for that new database endpoint.
 
 ## List of ports and port ranges used by Redis Enterprise Software
 
-  Port                                                     Description                                                                                                                                        Protocol
-  -------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------- -----------
-  \*                                                       Used for connectivity checking between nodes                                                                                                       ICMP
-  3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380   Internal cluster usage                                                                                                                              TCP
-  53                                                       Used for accessing DNS/mDNS functionality in the cluster                                                                                            TCP, UDP
-  5353                                                     Used for accessing DNS/mDNS functionality in the cluster                                                                                            UDP
-  8001                                                     Used by your application to access the RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})    TCP
-  8443                                                     Used for secure (https) access to the management web UI                                                                                             TCP
-  8444, 9080                                               Used for nginx \<-\>cnm\_http/cm communications on the same host only. Ports are bound to loopback adapter.                                         TCP
-  8080, 9443                                               Used to expose the REST API for cluster management                                                                                                  TCP
-  10000-19999                                              Used for exposing databases externally                                                                                                              TCP
-  20000-29999                                              Used for internal communications with database shards                                                                                               TCP
+| Port | Description | Protocol |
+|------------|-----------------|-----------------|
+| * | Used for connectivity checking between nodes | ICMP |
+| 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal cluster usage | TCP |
+| 53 | Used for accessing DNS/mDNS functionality in the cluster | TCP, UDP |
+| 5353 | Used for accessing DNS/mDNS functionality in the cluster | UDP |
+| 8001 | Used by your application to access the RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) | TCP |
+| 8443 | Used for secure (https) access to the management web UI | TCP |
+| 8444, 9080 | Used for nginx \<-\>cnm\_http/cm communications on the same host only. Ports are bound to loopback adapter. | TCP |
+| 8080, 9443 | Used to expose the REST API for cluster management | TCP |
+| 10000-19999 | Used for exposing databases externally | TCP |
+| 20000-29999 | Used for internal communications with database shards | TCP |
 
 ## Changing the Management Web UI Port
 

@@ -8,71 +8,33 @@ This documentation covers both Redis Enterprise Software and 4.5 and
 5.0. Anything that is not explicitly marked for 5.0, applies to 4.5
 release as well.<!--more-->
 
-+-----------------------------------+-----------------------------------+
-| ### What is Redis Enterprise Soft | ### What does RS enable?          |
-| ware?                             |                                   |
-|                                   | RS's architecture supports        |
-| Redis Enterprise Software (RS) is | multiple threaded Redis databases |
-| based on the proven technology    | created for multiple users across |
-| behind the [Redis Enterprise      | the same cluster infrastructure   |
-| offering](/why-redis/redis-enterp | while keeping the databases       |
-| rise/),                           | completely isolated from one      |
-| used by thousands of customers.   | another. In addition, RS gives    |
-| RS extends and provides advanced, | you the flexibility to run your   |
-| enterprise-critical features to   | Redis database in multiple        |
-| Redis.                            | configurations to accommodate     |
-|                                   | your specific performance and     |
-| You can install RS in your        | availability needs.               |
-| environment of choice, whether    |                                   |
-| for an on-premises data-center,   | [Learn more about Redis           |
-| Docker, or your preferred cloud   | Enterprise Software               |
-| platform. You have full control   | architecture.](/redis-enterprise- |
-| of your data, clusters,           | documentation/concepts-architectu |
-| databases, and configuration.     | re/overview/)                     |
-|                                   |                                   |
-| Note: The previous name of Redis  |                                   |
-| Enterprise Software (RS) was      |                                   |
-| "Redis Enterprise Pack" (RP) or   |                                   |
-| "Redis Labs Enterprise Cluster"   |                                   |
-| (RLEC). So you may see this on    |                                   |
-| our website or other places.      |                                   |
-+-----------------------------------+-----------------------------------+
+## What is Redis Enterprise Software?
 
-+-----------------------------------+-----------------------------------+
-| ### Redis on Flash                | ### Geo-Distributed Active-Active |
-|                                   |  Conflict-free Replicated Redis D |
-| Redis on Flash offers the unique  | atabases (CRDB)                   |
-| ability to have very large Redis  |                                   |
-| database but at significant cost  | Developing globally distributed   |
-| savings. Where standard Redis     | applications can be challenging,  |
-| databases must all be in RAM, RoF | as developers have to think about |
-| enables your Redis databases to   | race conditions and complex       |
-| span both RAM and dedicated flash | combinations of events under      |
-| memory (SSD) to "hot" values in   | geo-failovers and cross-region    |
-| RAM and "warm" values on flash.   | write conflicts. CRDBs simplify   |
-| All of this while guaranteeing    | developing such applications by   |
-| 100% compatibility with all Redis | directly using built-in smarts    |
-| clients, data types, and          | for handling conflicting writes   |
-| commands, at just a fraction of   | based on the data type in use.    |
-| the overall cost.                 | Instead of depending on just      |
-|                                   | simplistic "last-writer-wins"     |
-| [Learn more about Redis on        | type conflict resolution,         |
-| Flash.]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) | geo-distributed CRDBs combines    |
-|                                   | techniques defined in CRDT        |
-|                                   | (conflict-free replicated data    |
-|                                   | types) research with Redis types  |
-|                                   | to provide smart and automatic    |
-|                                   | conflict resolution based on the  |
-|                                   | data types intent.                |
-|                                   |                                   |
-|                                   | [Learn more                       |
-|                                   | about CRDBs.](/redis-enterprise-d |
-|                                   | ocumentation/concepts-architectur |
-|                                   | e/intercluster-replication/)      |
-+-----------------------------------+-----------------------------------+
+Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](/why-redis/redis-enterprise/), used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.
 
-Major Features
-==============
+You can install RS in your environment of choice, whether for an on-premises data-center, Docker, or your preferred cloud platform. You have full control of your data, clusters, databases, and configuration.
+
+Note: The previous name of Redis Enterprise Software (RS) was “Redis Enterprise Pack” (RP) or “Redis Labs Enterprise Cluster” (RLEC). So you may see this on our website or other places.
+
+## What does RS enable?
+
+RS’s architecture supports multiple threaded Redis databases created for multiple users across the same cluster infrastructure while keeping the databases completely isolated from one another. In addition, RS gives you the flexibility to run your Redis database in multiple configurations to accommodate your specific performance and availability needs.
+
+[Learn more about Redis Enterprise Software architecture.](/redis-enterprise-documentation/concepts-architecture/overview/)
+
+## Redis on Flash
+
+Redis on Flash offers the unique ability to have very large Redis database but at significant cost savings. Where standard Redis databases must all be in RAM, RoF enables your Redis databases to span both RAM and dedicated flash memory (SSD) to “hot” values in RAM and “warm” values on flash. All of this while guaranteeing 100% compatibility with all Redis clients, data types, and commands, at just a fraction of the overall cost.
+
+[Learn more about Redis on Flash.](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-enterprise-flash/)
+
+## Geo-Distributed Active-Active Conflict-free Replicated Redis Databases (CRDB)
+
+Developing globally distributed applications can be challenging, as developers have to think about race conditions and complex combinations of events under geo-failovers and cross-region write conflicts. CRDBs simplify developing such applications by directly using built-in smarts for handling conflicting writes based on the data type in use. Instead of depending on just simplistic “last-writer-wins” type conflict resolution, geo-distributed CRDBs combines techniques defined in CRDT (conflict-free replicated data types) research with Redis types to provide smart and automatic conflict resolution based on the data types intent.
+
+[Learn more about CRDBs.](/redis-enterprise-documentation/concepts-architecture/intercluster-replication/)
+
+## Major Features
 
 ### Seamless scalability
 

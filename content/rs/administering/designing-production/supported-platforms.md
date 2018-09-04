@@ -10,43 +10,14 @@ are 64-bit compatible.
 
 Note: This document covers RS 5.0 and up.
 
-+-----------------------------------+-----------------------------------+
-| **Platform**                      | **Versions/Information**          |
-+-----------------------------------+-----------------------------------+
-| Ubuntu                            |  14.04, 16.04 64-bit, Server or   |
-|                                   | Desktop. The Server version is    |
-|                                   | recommended for production        |
-|                                   | deployments.                      |
-+-----------------------------------+-----------------------------------+
-| RHEL/CentOS 6                     |  6.7, 6.8, 6.9 64-bit. Requires   |
-|                                   | at least "Minimal Install"        |
-|                                   | configuration.                    |
-+-----------------------------------+-----------------------------------+
-| RHEL/CentOS 7                     | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5      |
-|                                   | 64-bit. Requires at least         |
-|                                   | "Minimal Install" configuration.  |
-|                                   | For additional considerations,    |
-|                                   | refer to [CentOS / RHEL 7         |
-|                                   | firewall                          |
-|                                   | configuration](/redis-enterprise- |
-|                                   | documentation/cluster-administrat |
-|                                   | ion/best-practices/centos-rhel-7- |
-|                                   | firewall-configuration).          |
-+-----------------------------------+-----------------------------------+
-| Oracle Linux                      | 6.7, 6.8, 6.9 64 bit              |
-|                                   |                                   |
-|                                   | 7.0, 7.1, 7.2, 7.3, 7.4 64 bit    |
-+-----------------------------------+-----------------------------------+
-| Amazon Linux                      |  All 64-bit Versions              |
-+-----------------------------------+-----------------------------------+
-| Docker                            | At this time, official Redis      |
-|                                   | Enterprise Software Docker images |
-|                                   | are Linux-based images and        |
-|                                   | therefore are only certified for  |
-|                                   | production use on a Linux host.   |
-|                                   | All other OS hosts are certified  |
-|                                   | for Development and Testing only. |
-+-----------------------------------+-----------------------------------+
+| **Platform** | **Versions/Information** |
+|------------|-----------------|
+| Ubuntu |  14.04, 16.04 64-bit, Server or Desktop. The Server version is recommended for production deployments. |
+| RHEL/CentOS 6 |  6.7, 6.8, 6.9 64-bit. Requires at least "Minimal Install" configuration. |
+| RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5 64-bit. Requires at least "Minimal Install" configuration. For additional considerations, refer to [CentOS / RHEL 7 firewall configuration](/redis-enterprise-documentation/cluster-administration/best-practices/centos-rhel-7-firewall-configuration). |
+| Oracle Linux | 6.7, 6.8, 6.9 64-bit; 7.0, 7.1, 7.2, 7.3, 7.4 64-bit |
+| Amazon Linux |  All 64-bit Versions              |
+| Docker | At this time, official Redis Enterprise Software Docker images are Linux-based images and therefore are only certified for production use on a Linux host. All other OS hosts are certified for Development and Testing only. |
 
 No other applications should be running on the same server that is
 running RS. The RS software's resource consumption assumes that all RAM

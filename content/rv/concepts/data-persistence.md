@@ -44,14 +44,13 @@ master.
 
 There are five options for persistence in Redis Enterprise VPC:
 
-  ------------------------- -------------------------------------------------------
-  **Options**               **Description**
-  None                      Data is not persisted to disk at all.
-  Append Only File (AoF)    Data is fsynced to disk every second.
-  Snapshot every 1 hour     A snapshot of the database is created every hour.
-  Snapshot every 6 hours    A snapshot of the database is created every 6 hours.
-  Snapshot every 12 hours   A snapshot of the database is created every 12 hours.
-  ------------------------- -------------------------------------------------------
+|  **Options** | **Description** |
+|------------|-----------------|
+|  None | Data is not persisted to disk at all. |
+|  Append Only File (AoF) | Data is fsynced to disk every second. |
+|  Snapshot every 1 hour | A snapshot of the database is created every hour. |
+|  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
+|  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
 
 First, you should determine if you even need persistence at all.
 Persistence is used to recover from a catastrophic failure, so if the
@@ -63,9 +62,8 @@ then you need to identify the best type for your use case.
 
 Use these details to determine which options best meet your needs:
 
-  ----------------------------------------------------------- -------------------------
-  **AOF (Append Only File)**                                  **RDB (Snapshot)**
-  More resource intensive                                     Less resource intensive
-  Provides better durability (recover latest point in time)   Less durable
-  Slower time to recover (Larger files)                       Faster recovery time
-  ----------------------------------------------------------- -------------------------
+|  **AOF (Append Only File)** | **RDB (Snapshot)** |
+|------------|-----------------|
+|  More resource intensive | Less resource intensive |
+|  Provides better durability (recover latest point in time) | Less durable |
+|  Slower time to recover (Larger files) | Faster recovery time |

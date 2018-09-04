@@ -103,76 +103,16 @@ recommended that you use a separate database for each test case. The
 following table summarizes how to configure the databases for the two
 test cases, 'with replication' and 'without replication':
 
-**Parameter**
-
-**With replication**
-
-**Without replication**
-
-**Description**
-
-Name
-
-test-1
-
-test-2
-
-The name of the test database
-
-Memory limit
-
-100 GB
-
-The memory limit refers to RAM+Flash. It is enforced on the aggregated
-usage across all the shards of the database, including master and slave
-shards.
-
-RAM limit
-
-30%
-
-RoF always keeps the Redis keys and Redis dictionary in RAM. In
-addition, there should be enough additional RAM for storing hot values.
-For the purpose of these tests 30% RAM was calculated as an optimal
-value.
-
-Replication
-
-Enabled
-
-Disabled
-
-A database with no replication has only master shards; a database with
-replication has master and slave shards.
-
-Data persistence
-
-None
-
-No data persistence should be configured for these tests.
-
-Database clustering
-
-Enabled
-
-A clustered database consists of multiple shards.
-
-Number of (master) shards
-
-2
-
-4
-
-In this configuration shards will be distributed as follows:
-
--   With replication: one master shard and one slave shard on each node
--   Without replication: two master shards on each node
-
-Other parameters
-
-Default
-
-Please keep the default values for the other configuration parameters.
+|  **Parameter** | **With replication** | **Without replication** | **Description** |
+|  ------ | ------ | ------ | ------ |
+|  Name | test-1 | test-2 | The name of the test database |
+|  Memory limit | 100 GB | 100 GB | The memory limit refers to RAM+Flash. It is enforced on the aggregated usage across all the shards of the database, including master and slave shards. |
+|  RAM limit | 0.3 | 0.3 | RoF always keeps the Redis keys and Redis dictionary in RAM. In addition, there should be enough additional RAM for storing hot values. For the purpose of these tests 30% RAM was calculated as an optimal value. |
+|  Replication | Enabled | Disabled | A database with no replication has only master shards; a database with replication has master and slave shards. |
+|  Data persistence | None | None | No data persistence should be configured for these tests. |
+|  Database clustering | Enabled | Enabled | A clustered database consists of multiple shards. |
+|  Number of (master) shards | 2 | 4 | In this configuration shards will be distributed as follows:<br/>* With replication: one master shard and one slave shard on each node<br/>* Without replication: two master shards on each node |
+|  Other parameters | Default | Default | Please keep the default values for the other configuration parameters. |
 
 ## Data Population
 
@@ -192,34 +132,12 @@ generation instance!
 
 Please use the following parameters for populating your test database:
 
-**Parameter**
-
-**With replication**
-
-**Without replication**
-
-Database host\
-(-s)
-
-The fully qualified name of the endpoint or the IP, according to what is
-shown in your RS configuration screen for your test database
-
-Database port\
-(-p)
-
-The endpoint port, as shown in you RS configuration screen
-
-Number of items\
-(--key-maximum)
-
-75 Million
-
-150 Million
-
- Item size\
-(-d)
-
-500 Bytes
+|  **Parameter** | **Description** |
+|  ------ | ------ |
+|  Database host<br/>(-s) | The fully qualified name of the endpoint or the IP, according to what is shown in your RS configuration screen for your test database |
+|  Database port<br/>(-p) | The endpoint port, as shown in you RS configuration screen |
+|  Number of items<br/>(–key-maximum) | With replication: 75 Million<br/>Without replication: 150 Million |
+|  Item size<br/>(-d) | 500 Bytes |
 
 ## Centralize around the median of the keyspace
 
@@ -280,20 +198,12 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=24 -c 20 -t 1
 
 Important test parameters are:
 
-  ---------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Parameter**                                                          **Description**
-
-  Access pattern (--key-pattern) and standard deviation (--key-stddev)   Controls the RAM Hit ratio after the centralization process has been performed
-
-  Number of threads\                                                     Controls how many connections are opened to the database, whereby the number of connections is the number of threads multiplied by the number of connections per thread
-  (-t) and number of clients per thread (-c)                             
-
-  Number of threads\                                                     Pipelining allows you to send multiple requests without waiting for each individual response
-  (-t) and number of clients per thread (-c)                             
-
-  Number of threads\                                                     A value of 1:1 means that you have the same number of write operations as read operations
-  (-t) and number of clients per thread (-c)                             
-  ---------------------------------------------------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  **Parameter** | **Description** |
+|------------|-----------------|
+|  Access pattern (--key-pattern) and standard deviation (--key-stddev) | Controls the RAM Hit ratio after the centralization process has been performed |
+|  Number of threads\ | Controls how many connections are opened to the database, whereby the number of connections is the number of threads multiplied by the number of connections per thread (-t) and number of clients per thread (-c) |
+|  Number of threads\ | Pipelining allows you to send multiple requests without waiting for each individual response (-t) and number of clients per thread (-c) |
+|  Number of threads\ | A value of 1:1 means that you have the same number of write operations as read operations (-t) and number of clients per thread (-c) |
 
 ## Test Results
 

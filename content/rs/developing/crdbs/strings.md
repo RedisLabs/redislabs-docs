@@ -14,35 +14,14 @@ time is used to resolve a conflict.
 Here is an example where an update happening to the same key at a later
 time (t2) wins over the update at t1.
 
-**Time**
-
-**Member CRDB1**
-
-**Member CRDB2**
-
-t1
-
-SET key1 "a"
-
-t2
-
-SET key1 "b"
-
-t3
-
---- Sync ---
-
- t4
-
-SET key1 "c"
-
-t5
-
---- Sync ---
-
-t6
-
-SET key1 "d"
+|  **Time** | **Member CRDB1** | **Member CRDB2** |
+|  ------: | :------: | :------: |
+|  t1 | SET key1 “a” |  |
+|  t2 |  | SET key1 “b” |
+|  t3 | — Sync — | — Sync — |
+|  t4 | SET key1 “c” |  |
+|  t5 | — Sync — | — Sync — |
+|  t6 |  | SET key1 “d” |
 
 String type in Redis is implicitly and dynamically typed. Besides string
 command like APPEND, It is overloaded with numeric and bitfield command
@@ -88,59 +67,17 @@ each sync, the counter value accumulates the private increment and
 decrements of each site and maintain an accurate counter across
 concurrent writes.
 
-**Time**
-
-**Member CRDB1**
-
-**Member CRDB2**
-
-t1
-
-INCRBY key1 7
-
-t2
-
-INCRBY key1 3
-
-t3
-
-GET key1\
-7
-
-GET key1\
-3
-
-t4
-
---- Sync ---
-
- t5
-
-GET key1\
-10
-
-GET key1\
-10
-
-t6
-
-DECRBY key1 3
-
-t7
-
-INCRBY key1 6
-
-t8
-
---- Sync ---
-
-t9
-
-GET key1\
-13
-
-GET key1\
-13
+|  **Time** | **Member CRDB1** | **Member CRDB2** |
+|  ------: | :------: | :------: |
+|  t1 | INCRBY key1 7 |  |
+|  t2 |  | INCRBY key1 3 |
+|  t3 | GET key1<br/>7 | GET key1<br/>3 |
+|  t4 | — Sync — | — Sync — |
+|  t5 | GET key1<br/>10 | GET key1<br/>10 |
+|  t6 | DECRBY key1 3 |  |
+|  t7 |  | INCRBY key1 6 |
+|  t8 | — Sync — | — Sync — |
+|  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
 It is important to note that counter values are created through the
 INCR, INCRBY, DECR and DECRBY commands and only these commands can be

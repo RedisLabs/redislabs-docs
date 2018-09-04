@@ -85,14 +85,14 @@ configured in the DNS with the appropriate NS entries.
 In the FQDN field, enter the value: redislabscluster.mydomain.com, and
 add the following records in the DNS for mydomain.com:
 
-  ------------------------------------- ---- --------------------------------------
+```
   redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com\
                                              node2.redislabscluster.mydomain.com
 
   node1.redislabscluster.mydomain.com   A    1.1.1.1
 
   node2.redislabscluster.mydomain.com   A    2.2.2.2
-  ------------------------------------- ---- --------------------------------------
+```
 
 ### 2. Zero-configuration using mDNS (Development option only)
 

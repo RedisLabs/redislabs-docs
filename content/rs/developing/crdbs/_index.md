@@ -26,59 +26,17 @@ listed under the member CRDB name. The "Sync" even represent the moment
 where synchronization catches up to distribute all local member CRDB
 updates to other participating clusters and other member CRDBs.
 
-**Time**
-
-**Member CRDB1**
-
-**Member CRDB2**
-
-t1
-
-INCRBY key1 7
-
-t2
-
-INCRBY key1 3
-
-t3
-
-GET key1\
-7
-
-GET key1\
-3
-
-t4
-
---- Sync ---
-
- t5
-
-GET key1\
-10
-
-GET key1\
-10
-
-t6
-
-DECRBY key1 3
-
-t7
-
-INCRBY key1 6
-
-t8
-
---- Sync ---
-
-t9
-
-GET key1\
-13
-
-GET key1\
-13
+|  **Time** | **Member CRDB1** | **Member CRDB2** |
+|  ------: | :------: | :------: |
+|  t1 | INCRBY key1 7 |  |
+|  t2 |  | INCRBY key1 3 |
+|  t3 | GET key1 7 | GET key1 3 |
+|  t4 | — Sync — | — Sync — |
+|  t5 | GET key1 10 | GET key1 10 |
+|  t6 | DECRBY key1 3 |  |
+|  t7 |  | INCRBY key1 6 |
+|  t8 | — Sync — | — Sync — |
+|  t9 | GET key1 13 | GET key1 13 |
 
 Databases provide various approaches to address some of these concerns
 
@@ -149,17 +107,16 @@ requirements in CRDBs.
 Below is a table of the primary data types and their support levels,
 followed by descriptions:
 
-  ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Data Type**      **Support Level **
-  Strings            Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}})
-  Integer Counters   Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}})
-  Float Counters     Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}})
-  Sets               Supported, see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}})
-  Hashes             Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}})
-  Lists              Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}})
-  Sorted Sets        Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}})
-  Bitsets            Not currently supported
-  ------------------ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  **Data Type** | **Support Level** |
+|------------|-----------------|
+|  Strings | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
+|  Integer Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+|  Float Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+|  Sets | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
+|  Hashes | Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}) |
+|  Lists | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
+|  Sorted Sets | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+|  Bitsets | Not currently supported |
 
 ### Other Data Types
 
@@ -234,123 +191,30 @@ the syncer initiates full reconciliation with other peers in the CRDB.
 The INFO command has an additional crdt section which provides advanced
 troubleshooting information (applicable to support etc.):
 
-**Section**
-
-**Field**
-
-**Description**
-
-CRDT Context
-
-crdt\_config\_version
-
-Currently active CRDB configuration version.
-
-crdt\_slots
-
-Hash slots assigned and reported by this shard.
-
-crdt\_replid
-
-Unique Replica/Shard IDs.
-
-crdt\_clock
-
-Clock value of local vector clock.
-
-crdt\_ovc
-
-Locally observed CRDB vector clock.
-
-Peers
-
-A list of currently connected Peer Replication peers.  This is similar
-to the slaves list reported by Redis.
-
-Backlogs
-
-A list of Peer Replication backlogs currently maintained.  Typically in
-a full mesh topology only a single backlog is used for all peers, as the
-requested Ids are identical.
-
-CRDT Stats
-
-crdt\_sync\_full
-
-Number of inbound full synchronization processes performed.
-
-crdt\_sync\_partial\_ok
-
-Number of partial (backlog based) re-synchronization processes
-performed.
-
-crdt\_sync\_partial-err
-
-Number of partial re-synchronization processes failed due to exhausted
-backlog.
-
-crdt\_merge\_reqs
-
-Number of inbound merge requests processed.
-
-crdt\_effect\_reqs
-
-Number of inbound effect requests processed.
-
-crdt\_ovc\_filtered\_effect\_reqs
-
-Number of inbound effect requests filtered due to old vector clock.
-
-crdt\_gc\_pending
-
-Number of elements pending garbage collection.
-
-crdt\_gc\_attempted
-
-Number of attempts to garbage collect tombstones.
-
-crdt\_gc\_collected
-
-Number of tombstones garbaged collected successfully.
-
-crdt\_gc\_gvc\_min
-
-The minimal globally observed vector clock, as computed locally from all
-received observed clocks.
-
-crdt\_stale\_released\_with\_merge
-
-Indicates last stale flag transition was a result of a complete full
-sync.
-
-CRDT Replicas
-
-A list of *crdt\_replica\<uid\>* entries, each describes the known state
-of a remote instance with the following fields:
-
-config\_version
-
-Last configuration version reported.
-
-shards
-
-Number of shards.
-
-slots
-
-Total number of hash slots.
-
-slot\_coverage
-
-A flag indicating remote shards provide full coverage (i.e. all shards
-are alive).
-
-max\_ops\_lag
-
-Number of local operations not yet observed by the least updated remote
-shard
-
-min\_ops\_lag
-
-Number of local operations not yet observed by the most updated remote
-shard
+|  **Section** | **Field** | **Description** |
+|  ------ | ------ | ------ |
+|  **CRDT Context** | crdt_config_version | Currently active CRDB configuration version. |
+|   | crdt_slots | Hash slots assigned and reported by this shard. |
+|   | crdt_replid | Unique Replica/Shard IDs. |
+|   | crdt_clock | Clock value of local vector clock. |
+|   | crdt_ovc | Locally observed CRDB vector clock. |
+|  **Peers** | A list of currently connected Peer Replication peers. This is similar to the slaves list reported by Redis. |  |
+|  **Backlogs** | A list of Peer Replication backlogs currently maintained. Typically in a full mesh topology only a single backlog is used for all peers, as the requested Ids are identical. |  |
+|  **CRDT Stats** | crdt_sync_full | Number of inbound full synchronization processes performed. |
+|   | crdt_sync_partial_ok | Number of partial (backlog based) re-synchronization processes performed. |
+|   | crdt_sync_partial-err | Number of partial re-synchronization processes failed due to exhausted backlog. |
+|   | crdt_merge_reqs | Number of inbound merge requests processed. |
+|   | crdt_effect_reqs | Number of inbound effect requests processed. |
+|   | crdt_ovc_filtered_effect_reqs | Number of inbound effect requests filtered due to old vector clock. |
+|   | crdt_gc_pending | Number of elements pending garbage collection. |
+|   | crdt_gc_attempted | Number of attempts to garbage collect tombstones. |
+|   | crdt_gc_collected | Number of tombstones garbaged collected successfully. |
+|   | crdt_gc_gvc_min | The minimal globally observed vector clock, as computed locally from all received observed clocks. |
+|   | crdt_stale_released_with_merge | Indicates last stale flag transition was a result of a complete full sync. |
+|  **CRDT Replicas** | A list of crdt_replica<uid> entries, each describes the known state of a remote instance with the following fields: |  |
+|   | config_version | Last configuration version reported. |
+|   | shards | Number of shards. |
+|   | slots | Total number of hash slots. |
+|   | slot_coverage | A flag indicating remote shards provide full coverage (i.e. all shards are alive). |
+|   | max_ops_lag | Number of local operations not yet observed by the least updated remote shard |
+|   | min_ops_lag | Number of local operations not yet observed by the most updated remote shard |
