@@ -323,7 +323,7 @@ false,"time":1434365471,"disk":705667072,"type":
 
 ### Cluster / Node related events
 
-| **Event as shown in the UI** | **Event code­name** | **Object type** | **Category** | **Severity** | **Notes**
+| **Event as shown in the UI** | **Event code­name** | **Object type** | **Category** | **Severity** | **Notes** |
 |------------|-----------------|------------|-----------------|------------|-----------------|
 | Node failed | failed | node | alert | critical | |
 | Node joined | node_joined | cluster | event | info | |
