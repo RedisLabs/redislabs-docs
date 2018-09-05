@@ -93,7 +93,7 @@ And finally start the Kubernetes proxy:
 
 # Step 2 – Deploy the Redis Enterprise containers to Kubernetes cluster
 
-You now need to feed the container yaml file to provision Redis Enterprise cluster. Sample YAML file can be found [here](https://raw.githubusercontent.com/cihanb/kubernetesdemo_rp/master/redis-enterprise.yaml).
+You now need to feed the container yaml file to provision Redis Enterprise cluster. Sample YAML file can be found [here](https://github.com/RedisLabs/redislabs-docs/blob/kubernetes/content/rs/getting-started/redis-enterprise.yaml).
 
     kubectl apply -f redis-enterprise.yaml
 
