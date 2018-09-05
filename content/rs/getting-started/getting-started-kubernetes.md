@@ -44,7 +44,8 @@ Lets first get your commandline environment set up.
 
 *   Get the default project_ID set. Here is how you can list and set the project context to be used by upcoming commands. Note that you will get some random name like mine ("speedy-lattice-166011") if you have not explicitly specified an ID
 
-    gcloud projects list gcloud config set project speedy-lattice-166011
+    gcloud projects list
+    gcloud config set project speedy-lattice-166011
 
 
 
@@ -56,7 +57,7 @@ Lets first get your commandline environment set up.
 
 Let's get the Kubernetes cluster up and running.
 
-On your Google Cloud console, click on "Container Engine" option on the left nav and create a new cluster.
+On your Google Cloud console, click on "Kubernetes Engine" option on the left nav and create a new cluster.
 
 <!-- Add image -->
 
