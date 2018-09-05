@@ -1,1 +1,1 @@
-[![Redis Labs]( /images/logo_white_bkd.png )](https://redislabs.com)
+[![Redis Labs]( /images/redislabs_logo_white.png )](https://redislabs.com)
