@@ -67,15 +67,13 @@ To define your Kubernetes cluster, give it a name and keep the size of the clust
 
 Note: it may take a few mins to create the cluster. Ensure the Kubernetes cluster creation is complete before proceeding to the next step.
 
-For best placement, Redis Enterprise pods should be placed on separate physical nodes in the Kubernetes cluster. This ensures better availability under nodes failures. Placing multiple Redis Enterprise nodes in the same physical host can cause multiple nodes to fail at once and may result in availability and data loss. To ensure we can guarantee better placement, we need to upgrade the Kubernetes cluster to **1.6.2** or better. You can do the upgrade in the details page of the Kubernetes cluster deployment we just created.
+For best placement, Redis Enterprise pods should be placed on separate physical nodes in the Kubernetes cluster. This ensures better availability under nodes failures. Placing multiple Redis Enterprise nodes in the same physical host can cause multiple nodes to fail at once and may result in availability and data loss.
 
 <!-- Add image -->
 
 _Note: By the way, If you are a commandline kind of person, here is how you can simplify the three screen above into 2 simple lines;_
 
     gcloud container clusters create cluster-1 --num-nodes=3 -m n1-standard-2
-
-    gcloud container clusters upgrade cluster-1 --master --cluster-version=1.6.2
 
 Finally to finish the Kubernetes deployment, you need to get the Kubernetes console up and running and start the Kubernetes proxy. on the terminal window, run the following commands;
 
