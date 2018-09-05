@@ -53,7 +53,7 @@ manage hundreds of thousands of Redis databases daily. Monitor all your
 resources in real-time on the [Status](https://status.redislabs.com/)
 page. Enjoy our 24/7 support via online helpdesk or phone.
 
-### Encryption & authentication
+### Encryption and authentication
 
 Meet your security goals without compromising performance using Redis
 Enterprise Cloud's fully encrypted SSL connections, and apply
