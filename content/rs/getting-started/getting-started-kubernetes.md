@@ -45,9 +45,8 @@ Lets first get your commandline environment set up.
 *   Get the default project_ID set. Here is how you can list and set the project context to be used by upcoming commands. Note that you will get some random name like mine ("speedy-lattice-166011") if you have not explicitly specified an ID
 
     gcloud projects list
+
     gcloud config set project speedy-lattice-166011
-
-
 
 *   Finally, let's get the default zone/geography where you want your cluster set up. Here is how you can list the zones and set the zone context to be used by upcoming commands.
 
