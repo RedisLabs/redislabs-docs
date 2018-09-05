@@ -23,7 +23,7 @@ jobs:
                         export LOCATION=staging/${CIRCLE_BRANCH} ;
                     fi
                     echo ${LOCATION}
-                    hugo -v --baseURL //docs.redislabs.com/$LOCATION
+                    hugo -v --baseURL //docs.redislabs.com.s3-website-us-east-1.amazonaws.com/$LOCATION
             - persist_to_workspace:
                 root: .
                 paths:
@@ -50,7 +50,7 @@ jobs:
                 name: Building site
                 command: |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    HUGO_ENV=production hugo -v --baseURL //docs.redislabs.com/$VERSION
+                    HUGO_ENV=production hugo -v --baseURL //docs.redislabs.com.s3-website-us-east-1.amazonaws.com/$VERSION
             - persist_to_workspace:
                 root: .
                 paths:
