@@ -29,7 +29,7 @@ configuration.
 
 In the rladmin command-line interface (CLI), run the following command:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 rladmin tune cluster watchdog_profile [cloud | local-network]
 ```
 

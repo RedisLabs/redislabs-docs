@@ -27,13 +27,13 @@ on the operating system you are using:
 
 -   In Ubuntu:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     apt-get install libnss-mdns
     ```
 
 -   In RHEL / CentOS 6.x:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
     $ yum install nss-mdns
     $ service avahi-daemon start
@@ -41,7 +41,7 @@ on the operating system you are using:
 
 -   In RHEL / CentOS 7:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ rpm -ivh http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
     $ yum install nss-mdns
     $ service avahi-daemon start

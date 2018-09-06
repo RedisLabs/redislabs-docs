@@ -40,7 +40,7 @@ You may change the port used for the RS Web UI. To do that, run the
 following command on any node in the cluster as this cluster-wide
 setting:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ rladmin cluster config cm_port <new-port>
 ```
 

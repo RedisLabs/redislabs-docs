@@ -50,13 +50,13 @@ by performing the following steps:
     directory where you saved the .tar file.
 2.  Extract the package by running the following command in the CLI:
 
-    ``` {style="border: 2px solid #ddd; font-family: courier; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ tar vxf <tarfile name>
     ```
 
 3.  To initiate the installation in the CLI, run the following command:
 
-    ``` {style="border: 2px solid #ddd; font-family: courier; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ sudo ./install.sh -s /var/run/redislabs
     ```
 
@@ -106,7 +106,7 @@ by performing the following steps:
         databases, you must prepare and format the flash memory. You
         should run:
 
-        ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+        ``` src
         $ sudo /opt/redislabs/sbin/prepare_flash.sh
         ```
 
@@ -114,7 +114,7 @@ by performing the following steps:
         them under /var/opt/redislabs/flash\
         You can verify the configuration by running:
 
-        ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+        ``` src
         $ sudo lsblk
         ```
 
@@ -167,7 +167,7 @@ what they will do is below.
 
 ### Linux Swap
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 Swap is enabled. Do you want to proceed? [Y/N]?
 ```
 
@@ -181,7 +181,7 @@ Linux]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap
 Under some circumstances, a database shard may be syncing at the time
 you run the install script.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 shard:X of db:Y is now syncing. Do you want to continue the upgrade
 ```
 
@@ -191,7 +191,7 @@ the risk or abort the install/upgrade.
 
 ### Automatically Tuning the System
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 Do you want to automatically tune the system for best performance [Y/N]?
 ```
 
@@ -211,7 +211,7 @@ If you would like to see specifically what is being done, please see
 
 ### Network Time Configuration
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 Do you want to set up NTP time synchronization now [Y/N]?
 ```
 
@@ -222,7 +222,7 @@ Clocks]({{< relref "/rs/administering/designing-production/synchronizing-clocks.
 
 ### Firewall Ports
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?
 ```
 
@@ -236,7 +236,7 @@ configuration]({{< relref "/rs/administering/installing-upgrading/configuring/ce
 
 ### Final Check
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 Would you like to run rlcheck to verify proper configuration? [Y/N]?
 ```
 

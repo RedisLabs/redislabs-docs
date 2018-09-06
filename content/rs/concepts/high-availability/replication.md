@@ -39,7 +39,7 @@ any given time.
 
 The recommended sequential replication configuration is two, i.e.:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ rladmin tune cluster max_redis_forks 1 max_slave_full_syncs 1
 ```
 

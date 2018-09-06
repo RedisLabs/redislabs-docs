@@ -29,14 +29,14 @@ the [Redis Enterprise download
 site](https://app.redislabs.com/#/sign-up/software?direct=true). Once
 you have the bits on a Linux based OS, you need to untar the image
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ tar -vxf <downloaded tar file name>
 ```
 
 Once the tar command completes, you will find a new install.sh script in
 the current directory.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ sudo ./install.sh -y
 ```
 
@@ -45,7 +45,7 @@ $ sudo ./install.sh -y
 If you prefer, you can also simply run the Redis Enterprise Software
 Docker container on Windows, macOS, and Linux
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
@@ -104,7 +104,7 @@ connectivity to your database:
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ sudo /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:16653> set key1 123
 OK
@@ -126,13 +126,13 @@ redis-py](https://github.com/andymccurdy/redis-py).
 In the command-line Terminal, create a new file called
 "**redis\_test.py**"
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ vi redis_test.py
 ```
 
 Paste the following into a file named "**redis\_test.py**".
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 import redis
 
 r = redis.StrictRedis(host='localhost', port=12000, db=0)
@@ -145,14 +145,14 @@ print(r.get('key1'))
 Run "redis\_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ python redis_test.py
 ```
 
 The output should look like the following screen if the connection is
 successful.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 set key1 123
 True
 get key1

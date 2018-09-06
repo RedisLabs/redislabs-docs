@@ -27,7 +27,7 @@ For this quick start, you will need the following:
 
 You can play with it a bit using redis-cli:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
  127.0.0.1:12544> BF.ADD bloom kirk
  1) (integer) 1
  127.0.0.1:12544> BF.ADD bloom redis
@@ -56,7 +56,7 @@ a new Bloom filter suitable for a small-ish number of items. This
 consumes less memory but may not be ideal for large filters. In that
 case:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
  127.0.0.1:12544> BF.RESERVE largebloom 0.0001 1000000
  OK
  127.0.0.1:12544> BF.ADD largebloom kirk
@@ -68,7 +68,7 @@ case:
 Cuckoo filters can also be used as part of the ReBloom module.\
 You can play with it using redis-cli:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 127.0.0.1:6379> CF.ADD cuckoo redis
 (integer) 1
 127.0.0.1:6379> CF.EXISTS newcuckoo redis

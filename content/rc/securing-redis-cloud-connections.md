@@ -81,7 +81,7 @@ below) instead of your resource's endpoint.
 
 1.  Install stunnel:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ apt-get install stunnel
     ```
 
@@ -91,7 +91,7 @@ below) instead of your resource's endpoint.
     3.  `garantia_ca.pem` - the service's certification authority.
 3.  Change the permissions of the private key:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ chown root:root /etc/stunnel/garantia_user_private.key
 
     $ chmod 0600 /etc/stunnel/garantia_user_private.key
@@ -105,7 +105,7 @@ below) instead of your resource's endpoint.
     changing the line that says ENABLED=0 to ENABLED=1.
 6.  Start the stunnel service:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ service stunnel4 start
     ```
 
@@ -113,7 +113,7 @@ below) instead of your resource's endpoint.
 
 1.  Install stunnel:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ yum install stunnel
     ```
 
@@ -123,7 +123,7 @@ below) instead of your resource's endpoint.
     3.  `garantia_ca.pem` - the service's certification authority.
 3.  Change the permissions of the private key:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ chown root:root /etc/stunnel/garantia_user_private.key
 
     $ chmod 0600 /etc/stunnel/garantia_user_private.key
@@ -135,7 +135,7 @@ below) instead of your resource's endpoint.
 5.  Configure stunnel to run as a daemon by creating the following
     /etc/init.d/stunnel file:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     #!/bin/bash
 
     #
@@ -272,7 +272,7 @@ below) instead of your resource's endpoint.
     Then run the following commands to set file permissions and starting
     the service correctly:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ chown root:root /etc/init.d/stunnel
 
     $ chmod 0755 /etc/init.d/stunnel
@@ -299,6 +299,6 @@ localhost:
 You can test the connection from your client using redis-cli, for
 example::
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ redis-cli -h <hostname> -p <portnumber> PING
 ```

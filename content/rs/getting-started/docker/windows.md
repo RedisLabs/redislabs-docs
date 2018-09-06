@@ -30,7 +30,7 @@ following command in the command-line window.
 Redis Enterprise Software uses a Linux based container. Make sure that
 your Windows machine is running Linux containers.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis
 ```
 
@@ -94,14 +94,14 @@ redis-cli is a simple command-line tool to interact with Redis database.
 Use "docker exec" to switch your context into the Redis Enterprise
 Software container
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ docker exec -it rp bash
 ```
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ sudo /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:16653> set key1 123
 OK
@@ -122,13 +122,13 @@ redis-py](https://github.com/andymccurdy/redis-py).
 
 In the command-line window, create a new file called "redis\_test.py"
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 notepad redis_test.py
 ```
 
 Paste the following into a file named "redis\_test.py".
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 import redis
 
 r = redis.StrictRedis(host='localhost', port=12000, db=0)
@@ -141,14 +141,14 @@ print(r.get('key1'))
 Run "redis\_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 python.exe redis_test.py
 ```
 
 The output should look like the following screen if the connection is
 successful.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 set key1 123
 True
 get key1

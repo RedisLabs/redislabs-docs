@@ -17,7 +17,7 @@ recommended to run the following command from the operating system
 command-line-interface (CLI) and wait for it to finish before shutting
 down the machine:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ sudo supervisorctl stop-all
 ```
 

@@ -27,7 +27,7 @@ follow the detailed installation guide in the administration section.
 We'll use two of the containers for first cluster and the remaining two
 containers for the second cluster.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 
 -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 
@@ -133,14 +133,14 @@ redis-cli is a simple command-line tool to interact with redis database.
 Use "docker exec" to switch your context into the Redis Enterprise
 Software container of node 1 in cluster 1.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ docker exec -it rp1_node1 bash
 ```
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ sudo /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:12000> set key1 123
 OK
@@ -152,7 +152,7 @@ You can see the write replicated to cluster 2. Use "docker exec" to
 switch your context into the Redis Enterprise Software container of node
 1 in cluster 2.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ docker exec -it rp2_node1 bash
 $ sudo /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:12000> get key1
@@ -171,13 +171,13 @@ redis-py on the github page for redis-py
 
 In the command-line Terminal, create a new file called "redis\_test.py"
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ vi redis_test.py
 ```
 
 Paste the following into a file named "redis\_test.py".
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 import redis
 
 rp1 = redis.StrictRedis(host='localhost', port=12000, db=0)
@@ -195,14 +195,14 @@ print(rp1.get('key1'))
 Run "redis\_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ python redis_test.py
 ```
 
 The output should look like the following screen if the connection is
 successful.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 set key1 123 in cluster 1
 True
 get key1 cluster 1

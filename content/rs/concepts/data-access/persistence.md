@@ -102,6 +102,6 @@ you don't want to risk data persistence adding latency. If that is the
 case, you can disable data-persistence on the master shards using the
 following *rladmin* command:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ rladmin tune db db: master_persistence disabled
 ```

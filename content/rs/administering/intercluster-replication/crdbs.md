@@ -88,7 +88,7 @@ Enterprise Software, the installation process will ask if you want to
 would like to install/configure a network time service. Answer yes to
 that as well. The install will appear something like this.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 2017-10-30 11:24:07 [?] Do you want to automatically tune the system for best performance [Y/N]? Y
 2017-10-30 11:24:15 [?] Cluster nodes must have their system time synchronized.
 Do you want to set up NTP time synchronization now [Y/N]? Y
