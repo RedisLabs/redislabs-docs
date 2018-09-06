@@ -32,7 +32,7 @@ other = "Oh no; it's a 404!"
 other = "You can use the Search or look in the menu. Here are some popular links:"
 
 [Go-to-homepage]
-other = "Go to the Cloudify Documentation Center"
+other = "Go to the Redis Labs Documentation Center"
 
 [Edit-this-page]
 other = "Edit this page"

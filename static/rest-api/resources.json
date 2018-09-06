@@ -3,7 +3,7 @@
 	"apiVersion": "3.0",
 	"apis": [
 	{
-		"path": "http://getcloudify.org/guide/3.1/rest-api/spec.json",
+		"path": "http://example.com/api",
 		"description": "Auto generated API docs by flask-restful-swagger"
 	}
 	]
