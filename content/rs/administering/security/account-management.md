@@ -50,7 +50,7 @@ To have a user authenticate with LDAP, you must have [LDAP integration
 enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}),
 and then create a new user via the REST API call like this:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" 
 -X POST  http://:8080/v1/users 
 -d "{\"auth_method\": \"external\", \"name\": \"\", \"role\": \"\"}"

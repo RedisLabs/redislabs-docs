@@ -19,13 +19,13 @@ your favorite Redis client.
 
 Here is how to do it using redis-cli:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ redis-cli -h <hostname> -p <portnumber> -a <password> flushall
 ```
 
 Example:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ redis-cli -h redis-12345.c24.us-east-mz-1.ec2.cloud.redislabs.com -p 12345 -a xyz flushall
 ```
 

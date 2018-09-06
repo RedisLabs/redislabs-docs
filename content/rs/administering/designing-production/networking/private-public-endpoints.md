@@ -40,13 +40,13 @@ If your cluster is on RS 4.4 or above, you can enable it by using the
 
 To add an internal FQDN/IP to a cluster:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ rladmin suffix add name <node1.internal.clustername.domain.com> internal
 ```
 
 To add an internal FQDN/IP to a cluster, but signal to the cluster there
 is slave for DNS:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ rladmin suffix add name <node2.internal.clustername.domain.com> internal slave 10.0.1.1
 ```

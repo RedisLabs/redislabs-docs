@@ -10,13 +10,13 @@ system CLI:
 
 -   In Ubuntu:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ sudo apt-get purge redislabs
     ```
 
 -   In CentOS / RHEL:
 
-    ``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+    ``` src
     $ sudo yum remove redislabs
     ```
 

@@ -169,7 +169,7 @@ directory.
 
 You can view which databases are recoverable by running:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ rladmin recovery list
 ```
 

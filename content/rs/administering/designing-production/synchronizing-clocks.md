@@ -20,7 +20,7 @@ To synchronize the server clock, run the command relevant to your host's
 operating system. For example, in Ubuntu, the following command can be
 used to synchronize a server's clock to an NTP server:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ sudo /etc/network/if-up.d/ntpdate
 ```
 

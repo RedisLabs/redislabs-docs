@@ -176,7 +176,7 @@ If your cluster nodes are healthy, up and running, with DNS network
 ports unfiltered, you can test the configuration. Who are the
 nameservers in charge of the resolution in the cluster:
 
-``` {style="border: 2px solid #ddd; font-family: courier; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 dig ns demo.francois.demo-rlec.redislabs.com
 
 ; <<>> DiG 9.9.5-9+deb8u9-Debian <<>> ns demo.francois.demo-rlec.redislabs.com

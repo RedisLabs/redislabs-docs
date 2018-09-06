@@ -19,7 +19,7 @@ recommendation is to disable Linux swap completely in the OS.
 To disable the swap in the OS of an existing server/VM/instance, you
 must have sudo access or be root to run the following command:
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ sudo swapoff -a
 $ sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
 ```

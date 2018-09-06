@@ -50,7 +50,7 @@ the other clusters that are to host the CRDB. This test should be done
 from every node in each Participating Cluster to each node in the other
 Participating Clusters.
 
-``` {style="border: 2px solid #ddd; background-color: #333; color: #fff; padding: 10px; -webkit-font-smoothing: auto;"}
+``` src
 $ telnet <target FQDN> 8080
 ```
 
