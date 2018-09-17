@@ -251,12 +251,21 @@ section a {
 #sidebar-toggle-span {
   display: none; }
 
+.fa-arrow-right {
+  color: #354253;
+}
+
+.fa-arrow-left {
+  color: #354253;
+}
+
 #navigation {
-  border-bottom: 1px solid #e9e7e4;
-  padding: .5rem 0rem;
+  border-bottom: 1px solid #354253;
+  border-top: 1px solid #354253;
+  padding: .5rem 0rem .5rem 58rem;
   display: flex;
   flex-direction: row;
-  align-items: stretch; }
+  font-size: 0.5rem}
   #navigation a {
     width: 50%;
     flex: 1;
