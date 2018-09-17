@@ -309,12 +309,10 @@ article section.page {
   padding: 2rem 4rem; }
   article section.page h1:first-of-type {
     margin: 2rem 0rem;
-    font-family: "Calibri", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
     text-align: center;
-    text-transform: uppercase;
     color: #ce0300;
-    font-weight: inherit;
-    font-size: 3rem;
+    font-weight: 700;
+    font-size: 3.5rem;
     line-height: 2.7rem; }
   article section.page h1 {
     margin-top: 3.5rem; }
