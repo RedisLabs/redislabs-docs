@@ -34,6 +34,9 @@
 
     
 {{- if not $.Site.Params.disableNavChevron -}}
+        <a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="fa fa-edit"></i>
+            {{T "Edit-this-page"}}</a>
+        <a class="nav-spacer"></a>
     {{- with ($.Scratch.Get "prevPage") -}}
         <a class="nav nav-prev" href="{{.URL}}" title="{{.Title}}"> <i class="fa fa-arrow-left"></i></a>
     {{ end -}}
