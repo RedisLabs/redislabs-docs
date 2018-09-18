@@ -269,7 +269,7 @@ section a {
   border-top: 1px solid #354253;
   display: flex;
   flex-direction: row;
-  font-size: 0.5rem; }
+  font-size: 17px; }
   #navigation a {
     width: 50%;
     flex: 1;
@@ -288,10 +288,13 @@ section a {
       self-align: stretch;
       font-size: 1.3rem;
       font-family: 'Calibri', serif; }
-  #navigation a.nav-next {
-    text-align: right; }
-  #navigation a.nav-spacer {
-    width: 100rem; }
+    #navigation a.nav-next-prev {
+      font-size: 0.5rem; }
+    #navigation a.nav-spacer {
+      width: 100%; }
+    #navigation a.github-link {
+      font-size: 0.8rem;
+      margin: 0.2rem; }
 
 .burger {
   display: none; }
