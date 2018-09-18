@@ -275,10 +275,9 @@ section a {
 #navigation {
   border-bottom: 1px solid #354253;
   border-top: 1px solid #354253;
-  padding: .5rem 0rem .5rem 58rem;
   display: flex;
   flex-direction: row;
-  font-size: 0.5rem}
+  font-size: 0.5rem; }
   #navigation a {
     width: 50%;
     flex: 1;
