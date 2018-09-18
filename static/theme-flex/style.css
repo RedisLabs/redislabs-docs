@@ -224,7 +224,6 @@ section a {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  border-radius: 5px;
   background-color: #f7f7f7;
   overflow: hidden; }
 
