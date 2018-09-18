@@ -212,34 +212,37 @@ section a {
 /* section strong {
   font-weight: 500; } */
 
-.searchbackground {
-  padding: 1rem; 
-  margin: -2rem -4rem 0rem -4rem; }
-
-.searchbackgroundhome {
-  padding: 8rem; 
-  margin: -2rem -4rem 0rem -4rem; }
-
 .nav-select {
   background: #e5e5e5;
   display: none; }
 
+.searchcontainer {
+  margin: 0 0 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #f7f7f7;
+  overflow: hidden; }
+
+.searchicon {
+  padding: 12.9px 14.2px 11.5px 14.2px; }
+  
 .searchbox {
-  padding-top: 1rem;
-  text-align: center; }
+  border: 0;
+  background-color: #f7f7f7;
+  padding: 0.5rem;
+  flex: 1; }
 
 .searchbox input {
-  border: solid #545350;
-  border-width: 1px;
-  color: #555555;
+  border-width: 0px;
+  color: #f3f3f3;
   display: inline-block;
   font-size: 16px;
-  line-height: 20px;
-  padding-bottom: 6px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  width: 80%; }
+  line-height: 20px; 
+  padding: 12.5px 0 10.5px 0; }
 
 .searchbox span {
   position: absolute;
@@ -252,20 +255,17 @@ section a {
   display: none; }
 
 #navigation {
-  border-bottom: 1px solid #e9e7e4;
-  padding: .5rem 0rem;
+  border-bottom: 1px solid #354253;
+  border-top: 1px solid #354253;
   display: flex;
   flex-direction: row;
-  align-items: stretch; }
+  font-size: 17px; }
   #navigation a {
-    width: 50%;
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-right: 0px;
     align-items: baseline;
-    color: #7f7d77; }
+    color: #354253; }
     #navigation a i {
       font-size: 2em;
       margin: auto; }
@@ -275,8 +275,16 @@ section a {
       self-align: stretch;
       font-size: 1.3rem;
       font-family: 'Calibri', serif; }
-  #navigation a.nav-next {
-    text-align: right; }
+    #navigation a.nav-prev-next {
+      font-size: 0.5rem;
+      width: 3rem; }
+    #navigation a.nav-spacer {
+      width: 100%; }
+    #navigation a.github-link {
+      font-size: 0.8rem;
+      margin: 0.2rem 18rem 0.2rem 0.2rem;
+      width: 14rem;
+      text-align: left; }
 
 .burger {
   display: none; }
@@ -299,12 +307,10 @@ article section.page {
   overflow-y: auto; 
   padding: 2rem 4rem; }
   article section.page h1:first-of-type {
-    margin: 2rem 0rem;
-    font-family: "Calibri", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    margin: 5rem 0rem;
     text-align: center;
-    text-transform: uppercase;
     color: #ce0300;
-    font-weight: inherit;
+    font-weight: 700;
     font-size: 3rem;
     line-height: 2.7rem; }
   article section.page h1 {
