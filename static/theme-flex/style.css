@@ -264,14 +264,6 @@ section a {
 #sidebar-toggle-span {
   display: none; }
 
-.fa-arrow-right {
-  color: #354253;
-}
-
-.fa-arrow-left {
-  color: #354253;
-}
-
 #navigation {
   border-bottom: 1px solid #354253;
   border-top: 1px solid #354253;
@@ -286,7 +278,7 @@ section a {
     justify-content: flex-start;
     padding-right: 0px;
     align-items: baseline;
-    color: #7f7d77; }
+    color: #354253; }
     #navigation a i {
       font-size: 2em;
       margin: auto; }
@@ -298,6 +290,8 @@ section a {
       font-family: 'Calibri', serif; }
   #navigation a.nav-next {
     text-align: right; }
+  #navigation a.nav-spacer {
+    width: 100rem; }
 
 .burger {
   display: none; }
