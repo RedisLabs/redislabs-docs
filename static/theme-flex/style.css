@@ -262,12 +262,9 @@ section a {
   flex-direction: row;
   font-size: 17px; }
   #navigation a {
-    width: 50%;
-    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    padding-right: 0px;
     align-items: baseline;
     color: #354253; }
     #navigation a i {
@@ -280,12 +277,15 @@ section a {
       font-size: 1.3rem;
       font-family: 'Calibri', serif; }
     #navigation a.nav-prev-next {
-      font-size: 0.5rem; }
+      font-size: 0.5rem;
+      width: 3rem; }
     #navigation a.nav-spacer {
       width: 100%; }
     #navigation a.github-link {
       font-size: 0.8rem;
-      margin: 0.2rem; }
+      margin: 0.2rem 18rem 0.2rem 0.2rem;
+      width: 14rem;
+      text-align: left; }
 
 .burger {
   display: none; }
