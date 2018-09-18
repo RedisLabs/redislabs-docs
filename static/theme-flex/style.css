@@ -212,20 +212,12 @@ section a {
 /* section strong {
   font-weight: 500; } */
 
-.searchbackground {
-  padding: 1rem; 
-  margin: -2rem -4rem 0rem -4rem; }
-
-.searchbackgroundhome {
-  padding: 8rem; 
-  margin: -2rem -4rem 0rem -4rem; }
-
 .nav-select {
   background: #e5e5e5;
   display: none; }
 
 .searchcontainer {
-  margin-left: 3rem;
+  margin: 0 0 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -234,8 +226,7 @@ section a {
   flex: 1;
   border-radius: 5px;
   background-color: #f7f7f7;
-  overflow: hidden;
-  width: 90%; }
+  overflow: hidden; }
 
 .searchicon {
   padding: 12.9px 14.2px 11.5px 14.2px; }
@@ -288,7 +279,7 @@ section a {
       self-align: stretch;
       font-size: 1.3rem;
       font-family: 'Calibri', serif; }
-    #navigation a.nav-next-prev {
+    #navigation a.nav-prev-next {
       font-size: 0.5rem; }
     #navigation a.nav-spacer {
       width: 100%; }
