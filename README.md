@@ -55,6 +55,12 @@ The master branch is published to https://docs.Redis Labs.co/staging/dev and rep
 
 The next branch is published to https://docs.Redis Labs.co/staging/next and represents the latest documentation for the upcoming release. This branch is published to the community documentation site https://docs.Redis Labs.co/community each time a community milestone is released. -->
 
+## Contributing to the documentation
+
+Whether you see a typo or you want to suggest a change to the technical content, we encourage you to fork this repository and submit a pull request.
+
+The "Edit on GitHub" link that is in the upper-left corner of every page opens the source file of that page so you can easily submit a change.
+
 ## Content organization
 
 Articles are organized in directories that present the articles in a heirarchy in the site sidebar. When you add a file to a directory, it is automatically listed in that section in the sidebar.
