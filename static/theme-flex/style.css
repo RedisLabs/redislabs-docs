@@ -310,7 +310,7 @@ article section.page {
     text-align: center;
     color: #b62411;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3.4rem;
     line-height: 2.7rem; }
   article section.page h1 {
     margin-top: 3.5rem; }
@@ -412,13 +412,15 @@ nav#toc {
   width: 30%; }
   nav#toc h4 {
     color: #b62411 ;
-    margin: 0rem 0rem 1.2rem 0rem ; }
+    margin: 0rem 0rem 1.2rem 0rem ;
+    font-size: 1.1rem; }
     nav#toc ul {
     margin: 0 ;
     padding-left: 2.5em;
     list-style-type: disc; }
     nav#toc ul li {
-    color: #b62411; }
+    color: #b62411;
+    font-size: 1rem; }
 
 .anchor {
   color: #2053AB;
