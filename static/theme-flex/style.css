@@ -115,7 +115,7 @@ article > aside {
     article > aside .menu .dd-item {
       padding-left: 1rem;
       list-style: none;
-      font-size: .9rem; }
+      font-size: 1rem; }
       article > aside .menu .dd-item.alwaysopen > ul {
         display: block; }
       article > aside .menu .dd-item.parent > ul {
