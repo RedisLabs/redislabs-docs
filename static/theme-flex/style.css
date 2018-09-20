@@ -83,7 +83,7 @@ header {
         opacity: 1; }
 
 article > aside {
-  background-color: #e9e7e4;
+  background-color: #f7f7f7;
   bottom: 0;
   box-sizing: border-box;
   display: -webkit-box;
@@ -123,8 +123,7 @@ article > aside {
       article > aside .menu .dd-item.active > ul {
         display: block; }
         article > aside .menu .dd-item.active > div {
-          background-color: #5190b3;
-          color: #ffffff; }
+          color: #b62411; }
         article > aside .menu .dd-item.active > div * {
           font-weight: semi-bold; }
       article > aside .menu .dd-item.haschildren > div {
@@ -180,7 +179,7 @@ html {
 
 body {
   background-color: #fff;
-  color: #5f5f5f;
+  color: #354253;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
