@@ -7,7 +7,7 @@ header {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #ce0300;
+  background-color: #b62411;
   background: url(https://redislabs.com/wp-content/themes/redislabs/assets/images/bg-poly-slate-1.png);
   background-position-x: right;
   background-size: cover;
@@ -207,7 +207,7 @@ section ul {
   list-style-type: square; }
 
 section a {
-  color: #ce0300; }
+  color: #b62411; }
 
 /* section strong {
   font-weight: 500; } */
@@ -309,7 +309,7 @@ article section.page {
   article section.page h1:first-of-type {
     margin: 5rem 0rem;
     text-align: center;
-    color: #ce0300;
+    color: #b62411;
     font-weight: 700;
     font-size: 3rem;
     line-height: 2.7rem; }
@@ -412,14 +412,14 @@ nav#toc {
   padding: 0rem 2rem 2rem 2rem ;
   width: 30%; }
   nav#toc h4 {
-    color: #ce0300 ;
+    color: #b62411 ;
     margin: 0rem 0rem 1.2rem 0rem ; }
     nav#toc ul {
     margin: 0 ;
     padding-left: 2.5em;
     list-style-type: disc; }
     nav#toc ul li {
-    color: #ce0300; }
+    color: #b62411; }
 
 .anchor {
   color: #2053AB;
