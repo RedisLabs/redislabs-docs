@@ -96,4 +96,6 @@ crossed.
 Use as many database connections as you want.
 
 If you'd rather watch an overview of Redis Cloud VPC, watch the below
-video:\
+video:
+
+{{< youtube y3tvS2kCl5I >}}

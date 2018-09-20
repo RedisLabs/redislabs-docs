@@ -11,6 +11,8 @@ The steps here are super simple and go as follows:
 3.  Setup a database
 4.  Connect to your Database
 
+{{< youtube I9sPna1OOUg >}}
+
 ## Step 1 - Sign up for Redis Enterprise Cloud account
 
 If you do not already have one, [sign up for a Redis Enterprise Cloud

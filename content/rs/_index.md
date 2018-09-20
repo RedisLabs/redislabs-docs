@@ -47,6 +47,8 @@ can increase your dataset's maximum size by simply changing the memory
 limit setting, or increase the number of shards with the click of a
 button. Scaling, upgrades, and downgrades do not incur any downtime.\
 
+{{< youtube 6iVpOg8V5lQ >}}
+
 ### True high availability
 
 In addition to replicating a database within the same data center, you
@@ -58,7 +60,9 @@ automatically handling node failures, Redis failures, and proxy
 failures. Auto-failover is carried out within a few seconds. [Learn more
 about High
 Availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
-in RS.\
+in RS.
+
+{{< youtube qIZuW_8bPtQ >}}
 
 ### Built-in data persistence, backups, and replication
 

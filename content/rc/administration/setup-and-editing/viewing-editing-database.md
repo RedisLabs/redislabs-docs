@@ -38,7 +38,9 @@ icons](/images/rc/view_database2.png?width=600&height=338)
 
 From the "View Database" page for the database you wish to edit, click
 on the pencil icon to edit the database. This view allows you to edit
-the database settings just as they were when the database was created.\
-\
+the database settings just as they were when the database was created.
+
+{{< youtube nrN7rAr73co >}}
+
 For detailed descriptions of every field, read [Create a
 Database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).

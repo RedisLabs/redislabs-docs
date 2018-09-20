@@ -60,3 +60,7 @@ look for:
 -   An orange spinning icon on the top right to turn to a green
     checkmark
 -   The **Endpoint** issued for the new database
+
+If you’d prefer to watch a video on this topic:
+
+{{< youtube Z8KgtMsyNx0 >}}

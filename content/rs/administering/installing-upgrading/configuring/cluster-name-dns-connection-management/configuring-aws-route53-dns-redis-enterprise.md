@@ -65,6 +65,8 @@ official name server.
 
 If you would like to watch a video on the process, here you go.
 
+{{< youtube Dp5xAGhy4ng >}}
+
 ## Connection to AWS Route53
 
 The first step is to connect your browser to AWS and to login into the

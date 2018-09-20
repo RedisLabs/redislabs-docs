@@ -44,7 +44,9 @@ replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 
-For a quick overview of ReplicaOf capabilities watch this quick video.\
+For a quick overview of ReplicaOf capabilities watch this quick video.
+
+{{< youtube AG-XGn7BQkQ >}}
 
 ## Replica of sources
 
