@@ -346,9 +346,8 @@ article section.page {
   article section.page img {
     padding:1px;
     margin: auto;
-    border:.08rem solid #5f5f5f;
+    border:.08rem solid #354253;
     border-radius: .2rem;
-    background: color #000000;
     max-width: 100%;
     text-align: center; }
     article section.page img.border {
