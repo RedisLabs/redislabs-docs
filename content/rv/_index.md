@@ -98,4 +98,4 @@ Use as many database connections as you want.
 If you'd rather watch an overview of Redis Cloud VPC, watch the below
 video:
 
-{{< youtube y3tvS2kCl5I >}}
+{{< youtube_start y3tvS2kCl5I 76 >}}

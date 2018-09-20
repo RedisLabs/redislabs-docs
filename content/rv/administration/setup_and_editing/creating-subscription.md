@@ -176,4 +176,6 @@ not have any databases**. If it does, you must first delete the
 databases.
 
 If you'd rather watch an overview of Redis Cloud VPC, watch the below
-video:\
+video:
+
+{{< youtube_start y3tvS2kCl5I 76 >}}
