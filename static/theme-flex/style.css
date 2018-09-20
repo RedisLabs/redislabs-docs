@@ -408,15 +408,18 @@ article section.page {
 
 nav#toc {
   float: right;
-  background-color: #e9e7e4;
-  margin: 1.7rem 0 1.7rem 1.7rem ;
-  padding: 2rem ;
+  margin: 0rem 0 1.7rem 1.7rem ;
+  padding: 0rem 2rem 2rem 2rem ;
   width: 30%; }
   nav#toc h4 {
-    margin-top: 0 }
+    color: #ce0300 ;
+    margin: 0rem 0rem 1.2rem 0rem ; }
     nav#toc ul {
     margin: 0 ;
-    padding-left: 2.5em }
+    padding-left: 2.5em;
+    list-style-type: disc; }
+    nav#toc ul li {
+    color: #ce0300; }
 
 .anchor {
   color: #2053AB;
