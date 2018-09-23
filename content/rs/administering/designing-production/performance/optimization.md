@@ -15,8 +15,8 @@ and for a long duration until performance stabilizes.
 
 In addition, RS can be optimized for two different environments:
 
--   Local-network environment
--   Cloud environment
+- Local-network environment
+- Cloud environment
 
 Depending on which configuration you choose, RS will use different
 thresholds to make operation related decisions.

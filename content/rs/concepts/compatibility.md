@@ -14,25 +14,25 @@ Any standard Redis client can be used with RES. That said, some of
 Redis functionality is not applicable in the context of RES, as
 follows:
 
--   Shared databases are not supported in RES given their potential
+- Shared databases are not supported in RES given their potential
     negative impact on performance. Redis Labs recommends using
     dedicated databases instead. Therefore the following commands are
     blocked and will produce an error when executed:
     -   MOVE
     -   SELECT
--   Because data persistency and backups are managed from RES's
+- Because data persistency and backups are managed from RES's
     management UI, the following commands are blocked:
     -   BGREWRITEAOF
     -   BGSAVE
     -   LASTSAVE
     -   SAVE
--   Because replication is managed automatically by RES and because it
+- Because replication is managed automatically by RES and because it
     could present a security risk, the following commands are blocked:
     -   MIGRATE
     -   REPLCONF
     -   SLAVEOF
     -   SYNC/PSYNC
--   Commands that are not relevant for a hosted Redis instance are
+- Commands that are not relevant for a hosted Redis instance are
     blocked:
     -   CONFIG RESETSTAT
     -   DEBUG OBJECT/SEGFAULT
@@ -48,7 +48,7 @@ follows:
     -   LATENCY RESET
     -   LATENCY GRAPH
     -   LATENCY DOCTOR
--   Lastly, only a subset of Redis configuration settings (via CONFIG
+- Lastly, only a subset of Redis configuration settings (via CONFIG
     GET/SET) is applicable to RES. Attempts to get or set a
     configuration parameter that is not included in the following list
     will result in an error:

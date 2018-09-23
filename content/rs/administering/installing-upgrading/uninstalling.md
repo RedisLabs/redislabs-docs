@@ -8,13 +8,13 @@ In the event that you need to uninstall Redis Enterprise Software
 (RS) from a server, please run the following command in the operating
 system CLI:
 
--   In Ubuntu:
+- In Ubuntu:
 
     ``` src
     $ sudo apt-get purge redislabs
     ```
 
--   In CentOS / RHEL:
+- In CentOS / RHEL:
 
     ``` src
     $ sudo yum remove redislabs

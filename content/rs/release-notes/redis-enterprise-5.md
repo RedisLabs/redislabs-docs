@@ -60,13 +60,13 @@ Enterprise is known for.
 There are three modules Redis Labs has developed and certified with
 Redis Enterprise Pack (RS). The modules are:
 
--   [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
+- [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
     - This module turns RS into a supercharged distributed in-memory
     full-text indexing and search beast.
--   [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+- [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
     - Now you have the convenience JSON as a built-in data type and
     easily able to address nested data via a path.
--   [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+- [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
     filters are probabilistic data structures that do a very good job at
     quickly determining if something is contained within a set.
@@ -103,49 +103,49 @@ Integration]({{< relref "/rs/administering/security/ldap-integration.md" >}}).
 
 Support for additional Redis commands and features:
 
--   Support for Redis version 4.0.2
--   Support added for RHEL/CentOS 6.9 and 7.4
+- Support for Redis version 4.0.2
+- Support added for RHEL/CentOS 6.9 and 7.4
 
 ## Information
 
--   In the node bootstrap API, the structure of the JSON has changed for
+- In the node bootstrap API, the structure of the JSON has changed for
     adding an external IP during the bootstrap process.
--   End-of-Life for RHEL/CentOS 6.5 and 6.6 have been reached, so those
+- End-of-Life for RHEL/CentOS 6.5 and 6.6 have been reached, so those
     versions are no longer supported.
--   Modules are not supported in Redis Enterprise Pack 5.0 for
+- Modules are not supported in Redis Enterprise Pack 5.0 for
     RHEL/CentOS 6.x
 
 ## Important Fixes
 
 **5.0.0-31**
 
--   RP9299 - Issue with reliability of metric ingress
--   RP9680 - Redis Enterprise Pack starting before /etc/rc.local script
+- RP9299 - Issue with reliability of metric ingress
+- RP9680 - Redis Enterprise Pack starting before /etc/rc.local script
     executed
--   RP12363 - In some cases, flash drives do not mount following a
+- RP12363 - In some cases, flash drives do not mount following a
     stop/start of the node
--   RP12493 - Allow change to debug package creation location
--   RP13079 - DNS doesn't change after having removed the external IP
+- RP12493 - Allow change to debug package creation location
+- RP13079 - DNS doesn't change after having removed the external IP
     address in some cases
--   RP13933 - rladmin balance sometimes shows incorrect information
--   RP14060 - pubsub stats aren't reflected correctly by the stats
+- RP13933 - rladmin balance sometimes shows incorrect information
+- RP14060 - pubsub stats aren't reflected correctly by the stats
     archiver
--   RP14939 - Add license checks to all needed entry points in the
+- RP14939 - Add license checks to all needed entry points in the
     cluster
--   RP15090 - Problem in log rotate script causes other logs to not
+- RP15090 - Problem in log rotate script causes other logs to not
     rotate
--   RP15104 - rlutil check fix doesn't work sometimes
--   RP15130 - Fixed permission on two logs with incorrect ownership
--   RP15160 - Allow option to change ports for API and CM in NGINX
--   RP15164 - Allow unix socket folder to be configurable at build time
--   RP15499 - rladmin command not responding on a cluster with large
+- RP15104 - rlutil check fix doesn't work sometimes
+- RP15130 - Fixed permission on two logs with incorrect ownership
+- RP15160 - Allow option to change ports for API and CM in NGINX
+- RP15164 - Allow unix socket folder to be configurable at build time
+- RP15499 - rladmin command not responding on a cluster with large
     number of shards
--   RP15853 - When trying to add a new db the 'activate' button was
+- RP15853 - When trying to add a new db the 'activate' button was
     changed to 'update' and was grayed out.
--   RP15861 - Allow unix socket folder to be configurable at install
+- RP15861 - Allow unix socket folder to be configurable at install
     time
--   RP16115 - TTL bug with ReplicaOf and import
--   RP16447 - DMC client connection reports incorrect number of
+- RP16115 - TTL bug with ReplicaOf and import
+- RP16447 - DMC client connection reports incorrect number of
     connections to monitoring applications.
--   RP16481 - In some cases, resource\_mgr uses incorrect directories
+- RP16481 - In some cases, resource\_mgr uses incorrect directories
     to compute persistent and ephemeral storage

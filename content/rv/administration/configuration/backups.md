@@ -24,28 +24,28 @@ steps:
     S3** to navigate to the **S3 Management Console**.
 1. Navigate to your bucket's permissions page:
     a.  To create a new bucket:
-        1.  Click the **+ Create Bucket** button
-        2.  Enter a **name** and **region** for the bucket\
+        1. Click the **+ Create Bucket** button
+        1. Enter a **name** and **region** for the bucket\
             ![](/images/rv/new-bucket.png?width=600&height=678)
-        3.  Click the **Next** button.
-        4.  Set any bucket properties to your company's standards
-        5.  On the Set permissions page, click the **+ Add account**
+        1. Click the **Next** button.
+        1. Set any bucket properties to your company's standards
+        1. On the Set permissions page, click the **+ Add account**
             button
-        6.  In the Account field enter
+        1. In the Account field enter
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614***
-        7.  Check read/write boxes for **Objects** and **Object
+        1. Check read/write boxes for **Objects** and **Object
             permissions**, then click **Save\
             ![](/images/rv/add_s3_user.png?width=600&height=698)\
             **
-        8.  Click the **Create bucket** button
+        1. Click the **Create bucket** button
     b.  To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
-        1.  Click **+ Add account** in the **Access for other AWS
+        1. Click **+ Add account** in the **Access for other AWS
             accounts** section enter the below information
-        2.  In the Account field enter
+        1. In the Account field enter
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614\
             ![](/images/rv/add_user_existing.png?width=700&height=175)***
-        3.  Check read/write boxes for various** permissions**, then
+        1. Check read/write boxes for various** permissions**, then
             click the **Save** button
 
 \>
@@ -64,26 +64,26 @@ steps in your [Google Cloud Platform (GCP)
 console](https://developers.google.com/console/):
 
 1. Access your GCP project by:
-    1.  Creating a new project using the **NEW PROJECT** button, or
-    2.  Opening an existing project by clicking it.
+    1. Creating a new project using the **NEW PROJECT** button, or
+    1. Opening an existing project by clicking it.
 1. Select **Cloud Storage** in the left-hand menu to open the Storage
     browser and view your buckets.
 1. Navigate to your bucket's permissions page:
-    1.  To create a new bucket:
-        1.  Click the **NEW BUCKET** button.
-        2.  Enter a name for the bucket.
-        3.  Click the **Create** button.
-        4.  Navigate one level up and out of the newly created bucket.
-        5.  Continue to step 3.2.
-    2.  To use an existing bucket, select it using the left-most
+    1. To create a new bucket:
+        1. Click the **NEW BUCKET** button.
+        1. Enter a name for the bucket.
+        1. Click the **Create** button.
+        1. Navigate one level up and out of the newly created bucket.
+        1. Continue to step 3.2.
+    1. To use an existing bucket, select it using the left-most
         checkmark control and click the **Bucket Permissions** button.
 1. At your bucket's permissions page, add another permission by
     entering the following information at the bottom of the page:
-    1.  In the left-most drop-box, make sure that the value *User* is
+    1. In the left-most drop-box, make sure that the value *User* is
         selected.
-    2.  Next, enter ***service\@garantiadata.com***.
-    3.  Set the permission to *Writer*.
-    4.  Click the **Add** and then the **Save** buttons to apply your
+    1. Next, enter ***service\@garantiadata.com***.
+    1. Set the permission to *Writer*.
+    1. Click the **Add** and then the **Save** buttons to apply your
         changes.
 
 Once your bucket's permissions are set, you can use it with your
@@ -104,18 +104,18 @@ Portal](https://manage.windowsazure.com/):
 
 1. Access your storage by clicking the left-hand **STORAGE** icon.
 1. Select the storage account:
-    1.  To create a new storage account:
-        1.  Click the **+ NEW** button at the lower-left corner of the
+    1. To create a new storage account:
+        1. Click the **+ NEW** button at the lower-left corner of the
             page.
-        2.  Verify that you've selected **DATA
+        1. Verify that you've selected **DATA
             SERVICES-\>STORAGE-\>QUICK CREATE** from the menu.
-        3.  Enter the **URL** for your new storage account.
-        4.  Select a **LOCATION/AFFINITY GROUP** for the storage
+        1. Enter the **URL** for your new storage account.
+        1. Select a **LOCATION/AFFINITY GROUP** for the storage
             account.
-        5.  Choose a **REPLICATION** mode for the account.
-        6.  Click the **CREATE STORAGE ACCOUNT** button.
-        7.  Continue to step 2.2.
-    2.  To use an existing storage account, select it by clicking on it.
+        1. Choose a **REPLICATION** mode for the account.
+        1. Click the **CREATE STORAGE ACCOUNT** button.
+        1. Continue to step 2.2.
+    1. To use an existing storage account, select it by clicking on it.
 1. Click the **MANAGE ACCESS KEYS** button at the bottom of the page.
 1. Copy your storage account's **PRIMARY ACCESS KEY**
 
@@ -126,12 +126,12 @@ account and clicking the **Apply** button using the following syntax:
 
 Where:
 
--   *storage\_account\_access\_key:* the primary access key to the
+- *storage\_account\_access\_key:* the primary access key to the
     storage account
--   *storage\_account\_name:* the storage account name
--   *url:* the URL of of the storage account.
--   *container\_name:* the name of the container, if needed.
--   *path*: the backups path, if needed.
+- *storage\_account\_name:* the storage account name
+- *url:* the URL of of the storage account.
+- *container\_name:* the name of the container, if needed.
+- *path*: the backups path, if needed.
 
 ## FTP Server
 
@@ -142,12 +142,12 @@ using the following syntax:
 
 Where:
 
--   *protocol*: the server's protocol, can be either ftp or ftps.
--   *username*: your username, if needed.
--   *password*: your password, if needed.
--   *hostname*: the hostname or IP address of the server.
--   *port*: the port number of the server, if needed.
--   *path*: the backups path, if needed.
+- *protocol*: the server's protocol, can be either ftp or ftps.
+- *username*: your username, if needed.
+- *password*: your password, if needed.
+- *hostname*: the hostname or IP address of the server.
+- *port*: the port number of the server, if needed.
+- *path*: the backups path, if needed.
 
 ### Can I export my Redis data from Redis Enterprise VPC?
 

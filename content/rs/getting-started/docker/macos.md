@@ -9,12 +9,12 @@ Note: macOS is only supported as a development and testing environment.
 To get started with a single Redis Enterprise Software container on
 macOS, follow these steps:
 
--   Step 0: [Install
+- Step 0: [Install
     Docker](https://docs.docker.com/docker-for-mac/install/)
--   Step 1: Run the container
--   Step 2: Setup a cluster
--   Step 3: Create a new database
--   Step 4: Connect to your database
+- Step 1: Run the container
+- Step 2: Setup a cluster
+- Step 3: Create a new database
+- Step 4: Connect to your database
 
 You can also visit [Docker
 Hub](https://hub.docker.com/r/redislabs/redis/) for instructions on
@@ -81,8 +81,8 @@ With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
 connectivity to your database
 
--   Connecting with redis-cli, the built-in command-line tool.
--   Connecting with a _Hello World_ application using Python.
+- Connecting with redis-cli, the built-in command-line tool.
+- Connecting with a _Hello World_ application using Python.
 
 #### Connecting Using redis-cli
 

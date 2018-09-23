@@ -58,14 +58,14 @@ Security
 
 When configuring the Security Group:
 
--   Define a custom TCP rule for port 8443 to allow web browser access
+- Define a custom TCP rule for port 8443 to allow web browser access
     to the RS management UI from the IP address/ range you will use to
     access the UI.
--   If you are using the DNS resolving option with RS, define a DNS UDP
+- If you are using the DNS resolving option with RS, define a DNS UDP
     rule for port 53 to allow access to the databases' endpoints by
     using the DNS resolving mechanism. For additional details, refer to
     DNS.
--   If you would like to create a cluster that has multiple nodes all
+- If you would like to create a cluster that has multiple nodes all
     running as instances on AWS, you need to define a security group
     that has an All TCP rule for all ports, 0 - 65535, and add it to
     all instances that are part of the cluster. This will ensure that

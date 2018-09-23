@@ -23,14 +23,14 @@ unexpected and erroneous behavior.
 When connecting to the cluster for administration or connecting to
 databases for data access, there are 2 options:
 
--   URL Based Connections: URL based connections require DNS setup for
+- URL Based Connections: URL based connections require DNS setup for
     resolution of the cluster name (FQDN) when connecting to the cluster
     for administration or connecting to databases for data access. As
     the topology of the cluster changes and new nodes are added or
     existing nodes are removed from the cluster, DNS records may need to
     be modified. However, with URL based connections, applications
     simply have to remember the URL for the cluster or the database.
--   IP Based Connections: IP based connections do not require DNS setup
+- IP Based Connections: IP based connections do not require DNS setup
     and instead use IP addresses of the nodes in the cluster for
     connecting to the cluster for administration or data access. As the
     topology of the cluster changes and new nodes are added or existing
@@ -73,10 +73,10 @@ configured in the DNS with the appropriate NS entries.
 
 #### For example:
 
--   Your domain is: mydomain.com
--   You would like to name the Redis Enterprise Software cluster:
+- Your domain is: mydomain.com
+- You would like to name the Redis Enterprise Software cluster:
     redislabscluster
--   You have two nodes in the cluster:
+- You have two nodes in the cluster:
     -   node1 with IP 1.1.1.1
     -   node2 with IP 2.2.2.2
 

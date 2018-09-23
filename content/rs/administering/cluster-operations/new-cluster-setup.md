@@ -92,14 +92,14 @@ cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 It is highly advisable to verify that the node is functioning properly,
 by carrying out the following tests:
 
--   Run *rlcheck* on the node. For additional details, refer to [rlcheck
+- Run *rlcheck* on the node. For additional details, refer to [rlcheck
     Installation Verification
     Utility]({{< relref "/rs/references/cli-reference/rlcheck.md" >}}).
--   Test connectivity to the database. For additional details, refer to
+- Test connectivity to the database. For additional details, refer to
     [Testing Client
     Connectivity]({{< relref "/rs/administering/troubleshooting/testing-client-connectivity.md" >}}).
 
 Topics
 
--   [How to Set the Cluster
+- [How to Set the Cluster
     Name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})

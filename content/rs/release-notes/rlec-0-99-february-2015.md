@@ -29,18 +29,18 @@ None.
 
 ## Changes
 
--   Enhancements to memtier\_benchmark tool that is included in the
+- Enhancements to memtier\_benchmark tool that is included in the
     installation package. You can find more details in the [GitHub
     project.](https://github.com/RedisLabs/memtier_benchmark)
 
 ## Fixed issues
 
--   Improvements and fixes related to node failover, remove node and
+- Improvements and fixes related to node failover, remove node and
     take node offline functionality.
 
 ## Known issues
 
--   **Issue:** When taking a node offline or removing a node, if the
+- **Issue:** When taking a node offline or removing a node, if the
     node being taken offline or removed is currently serving as the web
     server for the web browser being used to view the management UI, the
     management UI appears down while the node is down.\

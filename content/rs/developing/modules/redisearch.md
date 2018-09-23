@@ -19,16 +19,16 @@ You can build compound indexes, indexing multiple fields with text,
 numeric or geo types. RediSearch can be used to index a few types of
 data:
 
--   Indexing new data stored in Redis: If you want to keep all data and
+- Indexing new data stored in Redis: If you want to keep all data and
     index in Redis, this is the best approach. Do this using the ADD
     command.
--   Indexing existing data in Redis hashes: If you have your data stored
+- Indexing existing data in Redis hashes: If you have your data stored
     in hashes, that is the most convenient way to index your data. Do
     this through ADDHASH command.
--   Index data that is stored in another database: If you already have
+- Index data that is stored in another database: If you already have
     the data in another database and all you want is a fast, lightweight
     in-memory index, this can reduce the data redundancy.
--   The RediSearch index only keeps index data and not the full document
+- The RediSearch index only keeps index data and not the full document
     in Redis. Do this using ADD command with NOSAVE option.
 
 Applications developed with open source version of RediSearch are 100%

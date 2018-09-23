@@ -9,10 +9,10 @@ software on each of the nodes.
 
 Version requirements:
 
--   To upgrade your cluster to v4.5, your cluster must first be on 4.4.
--   To upgrade your cluster to v5.0, your cluster must first be on 4.4.2
+- To upgrade your cluster to v4.5, your cluster must first be on 4.4.
+- To upgrade your cluster to v5.0, your cluster must first be on 4.4.2
     or above
--   To upgrade your cluster to v5.2, your cluster must first be on 4.5
+- To upgrade your cluster to v5.2, your cluster must first be on 4.5
     or above
 
 Note: A Redis Enterprise Software cluster upgrade is considered to be
@@ -87,12 +87,12 @@ previous Redis version supported.
 **To check whether your Redis database versions match the latest Redis
 version supported by RS:**
 
--   In the *rladmin* CLI, run the status command (For additional
+- In the *rladmin* CLI, run the status command (For additional
     details, refer to [*rladmin* command-line
     interface (CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}}).
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
--   In the Management UI, go to the **Cluster \> Configuration** page.
+- In the Management UI, go to the **Cluster \> Configuration** page.
     The page lists the latest Redis version supported.
 
 If the Redis database versions are older than the version supported by
@@ -110,17 +110,17 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
 During the database upgrade process, the database will be restarted. As
 a result:
 
--   For databases that have replication enabled (for additional details,
+- For databases that have replication enabled (for additional details,
     refer to [Database
     replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
     a failover occurs prior to restarting the database to ensure that
     there is no downtime.
--   For databases that do not have replication enabled and persistence
+- For databases that do not have replication enabled and persistence
     enabled, some downtime occurs while the database is restarting. The
     type of persistence chosen for this database is a variable in the
     time it will take for a database to come back up. For example, AOF
     usually takes longer than an RDB file.
--   For databases that have neither replication nor persistence enabled
+- For databases that have neither replication nor persistence enabled
     (for additional details, refer to [Database
     persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}),
     the database loses all its data after it is restarted.

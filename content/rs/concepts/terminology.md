@@ -29,19 +29,19 @@ database instances, referred to as "shards".
 
 RS supports various database configurations:
 
--   **Standard Redis database** - A single Redis shard with no
+- **Standard Redis database** - A single Redis shard with no
     replication or data sharding.
--   **Highly available Redis database** - Every database master shard
+- **Highly available Redis database** - Every database master shard
     has a replicated slave shard, so that if the master shard fails the
     cluster can automatically failover to the slave shard with minimal
     to no impact. Master and slave shards are always placed on separate
     nodes to ensure high availability.
--   **Clustered Redis database** - The data stored in the database is
+- **Clustered Redis database** - The data stored in the database is
     split across several shards. The number of shards can be defined by
     the user. Various performance optimization algorithms define where
     shards are placed within the cluster. During the lifetime of the
     cluster, these algorithms might migrate a shard between nodes.
--   **Clustered and highly available Redis database** - Each master shard
+- **Clustered and highly available Redis database** - Each master shard
     in the clustered database has a slave shard, enabling failover if
     the master shard fails.
 
@@ -104,14 +104,14 @@ the cluster manager itself does not affect the Redis operation.
 
 Some of the primary functionalities of the cluster manager include:
 
--   Deciding where shards will be created
--   Deciding when shards will be migrated and to where
--   Monitoring database size
--   Monitoring databases and endpoints across all nodes
--   Running the database resharding process
--   Running the database provisioning and de-provisioning processes
--   Gathering operational statistics
--   Enforcing license and subscription limitations
+- Deciding where shards will be created
+- Deciding when shards will be migrated and to where
+- Monitoring database size
+- Monitoring databases and endpoints across all nodes
+- Running the database resharding process
+- Running the database provisioning and de-provisioning processes
+- Gathering operational statistics
+- Enforcing license and subscription limitations
 
 ## Management UI
 

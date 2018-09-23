@@ -58,8 +58,8 @@ you would like to monitor. More details below.
 
 The RS Nagios package includes two components:
 
--   The plugin itself ­- with suffix "rlec\_nagios\_plugin"
--   Configuration files - with suffix "rlec\_nagios\_conf"
+- The plugin itself ­- with suffix "rlec\_nagios\_plugin"
+- Configuration files - with suffix "rlec\_nagios\_conf"
 
 Below is the list of files included in these packages and instructions
 regarding what updates need to be made to these flies.
@@ -75,11 +75,11 @@ to "/usr/local/nagios/"
 
 These files included in it are:
 
--   check\_rlec\_alert
--   check\_rlec\_node
--   check\_rlec\_bdb
--   email\_stub
--   rlecdigest.py
+- check\_rlec\_alert
+- check\_rlec\_node
+- check\_rlec\_bdb
+- email\_stub
+- rlecdigest.py
 
 Note : The check\_rlec\_alert, check\_rlec\_node, check\_rlec\_bdb files
 are the actual plugin implementation. You can run each of them with a
@@ -90,9 +90,9 @@ parameters.
 
 Add the following lines to your "nagios.cfg":
 
--   cfg\_dir=/usr/local/nagios/etc/rlec\_obj
--   cfg\_dir=/usr/local/nagios/etc/rlec\_local
--   resource\_file=/usr/local/nagios/etc/rlec\_resource.cfg
+- cfg\_dir=/usr/local/nagios/etc/rlec\_obj
+- cfg\_dir=/usr/local/nagios/etc/rlec\_local
+- resource\_file=/usr/local/nagios/etc/rlec\_resource.cfg
 
 ### Step 3
 

@@ -37,10 +37,10 @@ for the node.
 
 The rack-zone ID must comply with the following rules:
 
--   Length: up to 63 characters.
--   Characters: only letters, digits and hyphen ('-') are allowed.
--   Start with a letter and end with a letter or a digit.
--   Case insensitive: note that uppercase and lowercase letter are
+- Length: up to 63 characters.
+- Characters: only letters, digits and hyphen ('-') are allowed.
+- Start with a letter and end with a letter or a digit.
+- Case insensitive: note that uppercase and lowercase letter are
     treated exactly the same.
 
 **Note**: The rack-zone ID is case-insensitive, i.e. uppercase and

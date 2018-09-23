@@ -40,14 +40,14 @@ updates to other participating clusters and other member CRDBs.
 
 Databases provide various approaches to address some of these concerns
 
--   Active-Passive Geo-distributed deployments: With active-passive
+- Active-Passive Geo-distributed deployments: With active-passive
     distributions, all writes go to an active cluster. Redis Enterprise
     provides a "Replica Of" capability that provides a similar approach.
     This can be employed when the workload is heavily balanced towards
     read and very few writes. However, WAN performance and availability
     is quite flaky and traveling large distances for writes take away
     from application performance and availability.
--   Two-phase Commit (2PC): This approach is designed around a protocol
+- Two-phase Commit (2PC): This approach is designed around a protocol
     that commits a transaction across multiple transaction managers.
     Two-phase commit provides a consistent transactional write across
     regions but fails transactions unless all participating transaction
@@ -55,14 +55,14 @@ Databases provide various approaches to address some of these concerns
     of messages exchanged and its cross-regional availability
     requirement make two-phase commit unsuitable for even moderate
     throughputs and cross-geo writes that go over WANs.
--   Sync update with Quorum-based writes: This approach synchronously
+- Sync update with Quorum-based writes: This approach synchronously
     coordinates a write across majority number of replicas across
     clusters spanning multiple regions. However, just like two-phase
     commit, number of messages exchanged and its cross-regional
     availability requirement make geo-distributed quorum writes
     unsuitable for moderate throughputs and cross geo writes that go
     over WANs.
--   Last-Writer-Wins (LWW) Conflict Resolution: Some systems provide
+- Last-Writer-Wins (LWW) Conflict Resolution: Some systems provide
     simplistic conflict resolution for all types of writes where the
     system clocks are used to determine the winner across conflicting
     writes. LWW is lightweight and can be suitable for simpler data.
@@ -70,7 +70,7 @@ Databases provide various approaches to address some of these concerns
     conflicting. For example adding a new element to a set across two
     geographies concurrently would result in only one of these new
     elements appearing in the final result with LWW.
--   MVCC (multi-version concurrency control): MVCC systems maintain
+- MVCC (multi-version concurrency control): MVCC systems maintain
     multiple versions of data and may expose ways for applications to
     resolve conflicts. Even though MVCC system can provide a flexible
     way to resolve conflicting writes, it comes at a cost of great
@@ -87,10 +87,10 @@ Redis Enterprise Software.
 CRDBs act very much like a standard Redis database except a few
 differences:
 
--   CRDBs in this version support all major Redis data types. See the
+- CRDBs in this version support all major Redis data types. See the
     list of types supported in CRDBs under the Data Types
     section.
--   As conflict handling rules differ between data types, some commands
+- As conflict handling rules differ between data types, some commands
     have slightly different requirements in CRDBs vs standard Redis
     databases. (ex: String type)
 
@@ -174,10 +174,10 @@ for expiring the key, unless another EXPIRE command resets the TTL.
 Furthermore, a replica that is NOT the "owner" of the expired value
 will:
 
--   Silently ignore the key if a user attempts to access it in READ
+- Silently ignore the key if a user attempts to access it in READ
     mode, e.g. treating it as if it was expired but not propagating a
     DEL.
--   Expire it (sending a DEL) before making any modifications if a user
+- Expire it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
 
 ## Out-of-Memory (OOM)

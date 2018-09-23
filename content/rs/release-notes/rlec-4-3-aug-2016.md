@@ -19,13 +19,13 @@ upgrade to this version.
 
 ### New features
 
--   Various improvements to internal performance and stability were
+- Various improvements to internal performance and stability were
     implemented.
--   RLEC Flash functionality added. For additional details, refer to
+- RLEC Flash functionality added. For additional details, refer to
     [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     and contact <support@redislabs.com> if you are interested in this
     functionality.
--   Support for Redis version 3.0 added. When you install or upgrade the
+- Support for Redis version 3.0 added. When you install or upgrade the
     cluster the new default version for Redis databases will be 3.0 and
     when you upgrade the databases they will be updated to this version.
     If you would like to change the default version to Redis 2.8 refer
@@ -33,92 +33,92 @@ upgrade to this version.
     databases]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
     section. If you would like to upgrade existing databases to the
     latest 2.8 minor version, refer to the Known Issues section below.
--   Complete cluster failure recovery instructions added. For additional
+- Complete cluster failure recovery instructions added. For additional
     details, refer to [Cluster
     Recovery]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
--   Major improvements made to database replication performance process
+- Major improvements made to database replication performance process
     by using diskless replication between master and slave shards. The
     data between the master and slave shards is streamed directly,
     instead of using the default file-on-disk mechanism. This behavior
     can be changed for the entire cluster or per database through
     rladmin.
--   Major enhancements made to rladmin command line interface to add new
+- Major enhancements made to rladmin command line interface to add new
     administration functionalities.
--   rlcheck installation verification utility added to facilitate
+- rlcheck installation verification utility added to facilitate
     checking node health. For additional details, refer to [rlcheck
     Installation Verification
     Utility]({{< relref "/rs/references/cli-reference/rlcheck.md" >}}).
--   Added the ability to allow the user to configure how machine IP
+- Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
     For additional details, refer to [Initial setup - creating a new
     cluster.]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
--   Connection to database endpoint can now be encrypted with SSL. For
+- Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
     SSL]({{< relref "/rs/administering/security/client-connections.md" >}}).
--   Added support for running the cluster on the following operating
+- Added support for running the cluster on the following operating
     systems and versions: RHEL/CentOS 6.6, 7.1, 7.2, RHEL 6.7, Oracle
     Linux 6.5.
 
 ### Changes
 
--   Environment configuration profile with name "default" has been
+- Environment configuration profile with name "default" has been
     changed to "cloud" and the default value has been changed to
     "local-network". For additional details, refer to [Performance
     optimization]({{< relref "/rs/administering/designing-production/performance/optimization.md" >}})
     section.
--   In the REST API, when creating a database and not setting the
+- In the REST API, when creating a database and not setting the
     database replication parameter to "true", the default value assigned
     by the cluster has changed from "true" to "false".
--   rladmin syntax updates can affect commands written for prior
+- rladmin syntax updates can affect commands written for prior
     versions of RLEC. In this version commands that are run directly
     from the operating system CLI prompt (not through the rladmin
     prompt) no longer require quotation marks for text with special
     characters.
--   Option added to the *Replica-of* process that allows gradual
+- Option added to the *Replica-of* process that allows gradual
     "shard-by- shard" replication of a sharded database, reducing the
     load on internal buffers. This optimization setting can be
     configured on the target database using the gradual\_sync\_mode
     parameter in rladmin.
--   The functionality for taking a node offline was removed from the UI.
+- The functionality for taking a node offline was removed from the UI.
 
 ### Fixed issues
 
--   RLEC-7110 - node does not recover properly after restart in case
+- RLEC-7110 - node does not recover properly after restart in case
     ephemeral storage is not available yet
--   RLEC-7502 - log rotate job not working properly on RHEL operating
+- RLEC-7502 - log rotate job not working properly on RHEL operating
     system
--   RLEC-7599 - issues running on a server with no IPv6 kernel support
--   RLEC-7561, RLEC-7597 - issues connecting to database endpoint as
+- RLEC-7599 - issues running on a server with no IPv6 kernel support
+- RLEC-7561, RLEC-7597 - issues connecting to database endpoint as
     result of cluster name containing capital letters
--   RLEC-7245 - on machines with multiple IPs sometimes the wrong IP
+- RLEC-7245 - on machines with multiple IPs sometimes the wrong IP
     address is chosen for internal traffic
--   RLEC-6815 - wrong log entry is added when enabling cluster alert
+- RLEC-6815 - wrong log entry is added when enabling cluster alert
     regarding database version compatibility
--   RLEC-7652 - database is down in certain failover scenarios only
+- RLEC-7652 - database is down in certain failover scenarios only
     when the database is completely empty
--   RLEC-7737 - issue where in a specific scenario after node restarts,
+- RLEC-7737 - issue where in a specific scenario after node restarts,
     a database with replication both master and slave shards are
     reported as down
--   RLEC-7712 - in some cases, the Replica of process may fail when
+- RLEC-7712 - in some cases, the Replica of process may fail when
     Redis password is set
--   RLEC-7726 - node object "avg\_latency" statistic is not returned in
+- RLEC-7726 - node object "avg\_latency" statistic is not returned in
     the REST API
--   RLEC-7358 - install script issue when running on LVM disks
--   RLEC-8086 - port 9443 missing from redislabs-clients.xml
--   RLEC-7281 - rotation of internal log files not working properly
--   RLEC-8279 - updates to a user definition might cause password reset
+- RLEC-7358 - install script issue when running on LVM disks
+- RLEC-8086 - port 9443 missing from redislabs-clients.xml
+- RLEC-7281 - rotation of internal log files not working properly
+- RLEC-8279 - updates to a user definition might cause password reset
     to be required
--   RLEC-8512 - when upgrading an existing cluster that has uppercase
+- RLEC-8512 - when upgrading an existing cluster that has uppercase
     letters in the cluster name (FQDN) the cluster might not function
     properly after the upgrade and attempts to connect to a database
     might fail
--   RLEC-8371 - email alerts do not work when using Amazon SES service
--   In certain scenarios the node upgrade process may fail if the node
+- RLEC-8371 - email alerts do not work when using Amazon SES service
+- In certain scenarios the node upgrade process may fail if the node
     is in the offline state
 
 ### Known issues
 
--   **Issue**: When upgrading to this version from a previous RLEC
+- **Issue**: When upgrading to this version from a previous RLEC
     version, rladmin status output will show the database status as
     having an old version. When you upgrade the Redis database (using
     rladmin upgrade db command) the Redis version will be updated to 3.0
@@ -129,34 +129,34 @@ upgrade to this version.
     (using rladmin tune cluster command), and then trigger the Redis
     process to be restarted by migrating the database shards (using
     rladmin migrate db command).
--   **Issue**: RLEC-8486 - On Ubuntu, when uninstalling RLEC using the
+- **Issue**: RLEC-8486 - On Ubuntu, when uninstalling RLEC using the
     apt-get purge command, some of the Redis processes on the machine
     might continue running.**Workaround**: If you encounter this issue
     you must manually kill the Redis processes.
--   **Issue**: RLEC-8283 - The cluster recovery process does not work
+- **Issue**: RLEC-8283 - The cluster recovery process does not work
     properly when the cluster that needs to be recovered does not have a
     node with ID 1.**Workaround**: If you encounter this issue please
     contact support at: <support@redislabs.com>
--   **Issue**: In the *Replica of* process, if the target database does
+- **Issue**: In the *Replica of* process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on the target database might not be in sync with
     the source database, although the status of the *Replica of* process
     indicates that it is.**Workaround**: You must manually stop and
     restart the synchronization process in order to ensure the databases
     are in sync.
--   **Issue**: In the *Replica of* process, if the source database is
+- **Issue**: In the *Replica of* process, if the source database is
     resharded while the *Replica of* process is active, the
     synchronization process will fail.**Workaround**: You must manually
     stop and restart the synchronization process after the resharding of
     the source database is done.
--   **Issue**: In the *Replica of* process, if there is very high
+- **Issue**: In the *Replica of* process, if there is very high
     traffic on the database the *Replica of* process might be restarted
     frequently due to the "slave buffer" being exceeded. In this case
     you will often see the status of the *Replica of* process display as
     "Syncing".**Workaround**: You must manually increase the "slave
     buffer" size through rladmin. In order to find the appropriate
     buffer size please contact support at: <support@redislabs.com>
--   **Issue**: In a cluster that is configured to support rack-zone
+- **Issue**: In a cluster that is configured to support rack-zone
     awareness, if the user forces migration of a master or slave shard
     through rladmin to a node on the same rack-zone as its corresponding
     master or slave shard, and later runs the rebalance process, the

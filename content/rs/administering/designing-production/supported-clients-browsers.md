@@ -17,11 +17,11 @@ Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) which
 utilizes the Redis Sentinel API, the following clients are tested and
 recommended:
 
--   [Redis-py](https://github.com/andymccurdy/redis-py) (Python redis
+- [Redis-py](https://github.com/andymccurdy/redis-py) (Python redis
     client)
--   [HiRedis](https://github.com/redis/hiredis) (C redis client)
--   [Jedis](https://github.com/xetorthio/jedis) (Java redis client)
--   [Ioredis](https://github.com/luin/ioredis) (NodeJS redis client)
+- [HiRedis](https://github.com/redis/hiredis) (C redis client)
+- [Jedis](https://github.com/xetorthio/jedis) (Java redis client)
+- [Ioredis](https://github.com/luin/ioredis) (NodeJS redis client)
 
 If you need to use other clients with the Discovery Service, perhaps
 look at [Sentinel Tunnel](https://github.com/RedisLabs/sentinel_tunnel),
@@ -32,7 +32,7 @@ a utility published by Redis Labs for this purpose.
 For theRedis Enterprise Software Web Console, the following web browsers
 and versions are supported:
 
--   On Windows 10:
+- On Windows 10:
     -   Edge version 20 and up
     -   Firefox version 44 and up
     -   Chrome version 48 and up
@@ -40,21 +40,21 @@ and versions are supported:
 
 <!-- -->
 
--   On Windows 8.1:
+- On Windows 8.1:
     -   Internet Explorer version 11 and up
     -   Chrome version 48 and up
     -   Firefox version 44 and up
 
 <!-- -->
 
--   On macOS:
+- On macOS:
     -   Firefox version 43 and up
     -   Chrome version 48 and up
     -   Opera version 35 and up
 
 <!-- -->
 
--   On Linux 14.04:
+- On Linux 14.04:
     -   Firefox version 44 and up
     -   Chrome version 49 and up
     -   Opera 35 and up

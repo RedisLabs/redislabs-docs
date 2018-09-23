@@ -9,9 +9,9 @@ have a tool just for this; memtier\_benchmark.
 
 Prerequisites:
 
--   Redis Enterprise Software installed
--   A cluster configured
--   A database created
+- Redis Enterprise Software installed
+- A cluster configured
+- A database created
 
 If you need a quick setup for the prerequisites, please [go
 here]({{< relref "/rs/getting-started/quick-setup.md" >}}).
@@ -29,8 +29,8 @@ $ /opt/redislabs/bin/memtier_benchmark -s $DB_HOST -p $DB_PORT \
 This command instructs memtier\_benchmark to connect to your Redis
 Enterprise database and generates a load doing the following:
 
--   A 50/50 Set to Get ratio
--   Each object will have random data in the value
+- A 50/50 Set to Get ratio
+- Each object will have random data in the value
 
 ## Populate a Database with Testing Data
 
@@ -45,10 +45,10 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT -R -n allkeys \
 This command instructs memtier\_benchmark to connect to your Redis
 Enterprise database and generates a load doing the following:
 
--   Write objects only, no reads
--   A 500 byte object
--   Each object will have random data in the value
--   Each key will have a random pattern, then a colon, followed by a
+- Write objects only, no reads
+- A 500 byte object
+- Each object will have random data in the value
+- Each key will have a random pattern, then a colon, followed by a
     random pattern.
 
 Run this command until it fills up your database to where you want it

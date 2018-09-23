@@ -25,8 +25,8 @@ cluster with the trial version and use memtier\_benchmark to evaluate
 the performance of a Redis on Flash enabled database in the following
 scenarios:
 
--   Without replication: Four master shards
--   With replication: Two master and two slave shards
+- Without replication: Four master shards
+- With replication: Two master and two slave shards
 
 While it concentrates on RoF, much of this scenario could be applied
 without using that feature of RS.
@@ -34,11 +34,11 @@ without using that feature of RS.
 The Redis Enterprise Software trial version allows you to use up to four
 Redis shards with multiple combinations of databases, such as:
 
--   Four databases with one master shard each
--   Two highly available databases with replication, whereby each one
+- Four databases with one master shard each
+- Two highly available databases with replication, whereby each one
     has one master shard and one slave shard
--   One non-replicated clustered database with four master shards
--   One highly available and clustered database with two master shards
+- One non-replicated clustered database with four master shards
+- One highly available and clustered database with two master shards
     and two slave shards
 
 ## Test Environment and RS Cluster Setup
@@ -55,9 +55,9 @@ For this performance test, you will need at least a three-node RS
 cluster. All tests in the example scenarios on this page are performed
 on AWS using the following setup:
 
--   2 x i3.2xlarge (8 vCPU, 61 GiB RAM, up to 10GBit, 1.9TB NMVe SSD) --
+- 2 x i3.2xlarge (8 vCPU, 61 GiB RAM, up to 10GBit, 1.9TB NMVe SSD) --
     will be used for serving RoF data
--   1 x m4.large - will be used as a quorum node
+- 1 x m4.large - will be used as a quorum node
 
 For specific information and step-by-step guides on how to install RS
 and set up a cluster, go to the Quick Setup section or the Install and

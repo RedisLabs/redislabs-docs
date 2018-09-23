@@ -40,17 +40,17 @@ the key, the key has expired.
 
 When the license has expired, you cannot do the following operations:
 
--   Change database settings including security and config options
--   Add/Remove new database
--   Upgrade database to a new version
--   Add/Remove new node
+- Change database settings including security and config options
+- Add/Remove new database
+- Upgrade database to a new version
+- Add/Remove new node
 
 You can perform the following operations even if your key fails to
 update:
 
--   View the UI: cluster, node and database settings, metrics at any
+- View the UI: cluster, node and database settings, metrics at any
     resolutions (sec to min to hour etc)
--   Change cluster settings including license key, security for admins
+- Change cluster settings including license key, security for admins
     and cluster alerts.
--   over when a node fails and explicitly migrate shard between nodes
--   Upgrade node to a new version
+- over when a node fails and explicitly migrate shard between nodes
+- Upgrade node to a new version

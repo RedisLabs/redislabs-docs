@@ -16,10 +16,10 @@ fixes.
     page](https://redislabs.com/products/redis-pack/downloads/).
     For more specific information on developing with each module
     see:
-    1.  [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
-    2.  [[RediSearch
+    1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+    1. [[RediSearch
         Enterprise)
-    3.  [ReBloom)
+    1. [ReBloom)
 1. Custom packaged modules - For instructions on packing up any
     module from
     [redismodules.com](http://redismodules.com)

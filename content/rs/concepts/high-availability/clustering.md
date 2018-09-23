@@ -48,10 +48,10 @@ Redis process that is part of the Redis clustered database.
 Sharding the keyspace is an efficient way of scaling Redis that should
 be employed when:
 
--   The dataset is large enough to benefit from using the RAM resources
+- The dataset is large enough to benefit from using the RAM resources
     of more than one server. Redis Labs recommends sharding a dataset
     once it reaches a size of 50-100 GB.
--   The operations performed against the database are CPU-intensive,
+- The operations performed against the database are CPU-intensive,
     resulting in performance degradation. By having multiple CPU cores
     manage the database's shards, the load of operations is distributed
     among them.
@@ -80,13 +80,13 @@ one.
 When using the standard hashing policy, a clustered database behaves
 just like a standard, open-source, Redis cluster:
 
--   **Keys with a hash tag**: a key's hash tag is any substring between
+- **Keys with a hash tag**: a key's hash tag is any substring between
     '{' and '}' in the key's name. That means that when a key's name
     includes the pattern '{...}', the hash tag is used as input for the
     hashing function. For example, the following key names have the same
     hash tag and would, therefore, be mapped to the same slot: foo{bar},
     {bar}baz, foo{bar}baz.
--   **Keys without a hash tag**: when a key does not contain the '{...}'
+- **Keys without a hash tag**: when a key does not contain the '{...}'
     pattern, the entire key's name is used for hashing.
 
 You can use the '{...}' pattern to direct related keys to the same hash
@@ -144,11 +144,11 @@ data before they can be applied.
 
 Examples of such changes include:
 
--   Changing the hashing policy from standard to custom or conversely,
+- Changing the hashing policy from standard to custom or conversely,
     custom to standard.
--   Changing the order of custom hashing policy rules.
--   Adding new rules in the custom hashing policy.
--   Deleting rules from the custom hashing policy.
+- Changing the order of custom hashing policy rules.
+- Adding new rules in the custom hashing policy.
+- Deleting rules from the custom hashing policy.
 
 **Note:** The recommended workaround for updates that are not enabled,
 or require flushing the database, is to back up the database and import
@@ -159,7 +159,7 @@ the data to a newly configured database.
 Operations on multiple keys in a clustered database are supported with
 the following limitations:
 
--   **Multi-key commands**: Redis offers several commands that accept
+- **Multi-key commands**: Redis offers several commands that accept
     multiple keys as arguments. In a clustered database, most multi-key
     commands are not allowed across tags. The following multi-key
     commands **are allowed** across tags: DEL, MSET, MGET, KEYS, HMGET,
@@ -175,16 +175,16 @@ the following limitations:
     MSETNX, RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE,
     SORT, SUNION, ZINTERSTORE, ZUNIONSTORE.
 
--   **Geo commands**: In GEORADIUS/GEOREADIUSBYMEMBER commands, the
+- **Geo commands**: In GEORADIUS/GEOREADIUSBYMEMBER commands, the
     STORE and STOREDIST option can only be used when all affected keys
     reside in the same slot.
--   **Transactions**: All operations within a WATCH / MULTI / EXEC block
+- **Transactions**: All operations within a WATCH / MULTI / EXEC block
     should be performed on keys that have the same tag.
--   **Lua scripts**: All keys used by a Lua script must have the same
+- **Lua scripts**: All keys used by a Lua script must have the same
     tag and must be provided as arguments to the EVAL / EVALSHA commands
     (as per the Redis specification). Using keys in a Lua script that
     were not provided as arguments might violate the sharding concept
     but will not result in the proper violation error being returned.
--   **Renaming keys**: The use of the RENAME / RENAMENX commands is
+- **Renaming keys**: The use of the RENAME / RENAMENX commands is
     allowed only when the key's original and new values are mapped to
     the same tag.

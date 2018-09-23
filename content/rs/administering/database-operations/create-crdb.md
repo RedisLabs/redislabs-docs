@@ -6,10 +6,10 @@ alwaysopen: false
 ---
 ## Prerequisites
 
--   Two or more Redis Enterprise Software clusters running version 5.0,
+- Two or more Redis Enterprise Software clusters running version 5.0,
     each with minimum of two nodes
--   Networking and cluster FQDN name resolution between all clusters
--   Confirm that a network time service listener (e.g. ntpd) is
+- Networking and cluster FQDN name resolution between all clusters
+- Confirm that a network time service listener (e.g. ntpd) is
     configured and running on each node in all clusters. Please see
     "Network Time Service" for more information.
 

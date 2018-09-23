@@ -6,9 +6,9 @@ alwaysopen: false
 ---
 For this quick start, you will need the following:
 
--   [A Redis Enterprise Software cluster with set up already
+- [A Redis Enterprise Software cluster with set up already
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
--   redis-cli
+- redis-cli
 
 ### Create a new database that uses the Module
 

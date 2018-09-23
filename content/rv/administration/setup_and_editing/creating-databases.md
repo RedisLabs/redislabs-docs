@@ -57,9 +57,9 @@ Once activated, the screen presents detailed information while the
 system is creating the database. There are two things on this page to
 look for:
 
--   An orange spinning icon on the top right to turn to a green
+- An orange spinning icon on the top right to turn to a green
     checkmark
--   The **Endpoint** issued for the new database
+- The **Endpoint** issued for the new database
 
 If you’d prefer to watch a video on this topic:
 

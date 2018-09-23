@@ -37,23 +37,23 @@ database and your application, as described below.
     Client Authentication** is selected.
 1. Set the resource's client certificate using one of the following
     ways.
-    1.  Bring Your Own Key:
-        1.  If you have your own X.509-compliant certificate, simply
+    1. Bring Your Own Key:
+        1. If you have your own X.509-compliant certificate, simply
             paste it to the textbox with the "*Enter Client
             Certificate"* comment.
-        2.  Click the **Download Redis Labs' Certification Authority**
+        1. Click the **Download Redis Labs' Certification Authority**
             link to obtain the service certification authority.
-    2.  Generate a Certificate:
-        1.  Use the **Generate Client Certificate** button to generate a
+    1. Generate a Certificate:
+        1. Use the **Generate Client Certificate** button to generate a
             client certificate.
-        2.  The generated certificate's public key will be displayed in
+        1. The generated certificate's public key will be displayed in
             the textbox.
-        3.  This will also trigger an automatic download of a zip
+        1. This will also trigger an automatic download of a zip
             archive with the following contents:
-            1.  `garantia_user.crt` - the certificate's public key.
-            2.  `garantia_user_private.key` - the certificate's private
+            1. `garantia_user.crt` - the certificate's public key.
+            1. `garantia_user_private.key` - the certificate's private
                 key.
-            3.  `garantia_ca.pem` - the service's certification
+            1. `garantia_ca.pem` - the service's certification
                 authority.
 1. Click the **Update** button to apply the changes to your resource.
 
@@ -86,9 +86,9 @@ below) instead of your resource's endpoint.
     ```
 
 1. Copy all certificate files to /etc/stunnel.
-    1.  `garantia_user.crt` - the certificate's public key.
-    2.  `garantia_user_private.key` - the certificate's private key.
-    3.  `garantia_ca.pem` - the service's certification authority.
+    1. `garantia_user.crt` - the certificate's public key.
+    1. `garantia_user_private.key` - the certificate's private key.
+    1. `garantia_ca.pem` - the service's certification authority.
 1. Change the permissions of the private key:
 
     ``` src
@@ -118,9 +118,9 @@ below) instead of your resource's endpoint.
     ```
 
 1. Copy all certificate files to `/etc/stunnel`.
-    1.  `garantia_user.crt` - the certificate's public key.
-    2.  `garantia_user_private.key` - the certificate's private key.
-    3.  `garantia_ca.pem` - the service's certification authority.
+    1. `garantia_user.crt` - the certificate's public key.
+    1. `garantia_user_private.key` - the certificate's private key.
+    1. `garantia_ca.pem` - the service's certification authority.
 1. Change the permissions of the private key:
 
     ``` src

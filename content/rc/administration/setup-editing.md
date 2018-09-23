@@ -4,15 +4,15 @@ description:
 weight: $weight
 alwaysopen: false
 ---
--   [Creating a
+- [Creating a
     Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}})
--   [Viewing a
+- [Viewing a
     Subscription]({{< relref "/rc/administration/setup-and-editing/viewing-subscription.md" >}})
--   [Changing Subscription
+- [Changing Subscription
     Plans]({{< relref "/rc/administration/setup-and-editing/changing-subscription-plan.md" >}})
--   [Creating a
+- [Creating a
     Database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}})
--   [Viewing and Editing
+- [Viewing and Editing
     Databases]({{< relref "/rc/administration/setup-and-editing/viewing-editing-database.md" >}})
--   [Deleting
+- [Deleting
     Databases]({{< relref "/rc/administration/setup-and-editing/delete-databases.md" >}})

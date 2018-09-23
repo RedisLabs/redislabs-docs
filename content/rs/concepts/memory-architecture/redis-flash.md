@@ -32,11 +32,11 @@ Unlike standard Redis Enterprise Software installations, implementing
 Redis on Flash requires pre-planning around memory and overall sizing.
 There are a few critical recommendations
 
--   The flash memory should be local to the server/VM/instance/container
+- The flash memory should be local to the server/VM/instance/container
     as opposed to network attached.
--   The flash memory should be dedicated to RF and not shared with other
+- The flash memory should be dedicated to RF and not shared with other
     parts of the database, (e.g. durability, binaries, etc.).
--   The flash memory should be [NVMe
+- The flash memory should be [NVMe
     based](https://en.wikipedia.org/wiki/NVM_Express) for best
     performance.
 
@@ -91,14 +91,14 @@ the industry that are disk based. Disk-based databases use RAM to cache
 part of the data for fast access. However, this approach is different
 than extending RAM in a number of ways.
 
--   Hot Value Handling: In many applications, a large portion of
+- Hot Value Handling: In many applications, a large portion of
     operations utilize only a subset of keys in the database. For
     example, the same keys may receive multiple writes repeatedly in a
     short amount of time. Under these conditions, disk-based databases
     have to repeatedly do I/O to save the updates to disk. In contrast,
     with RoF, the hot values stay in RAM and repeated writes to the same
     key do not generate IO to the flash memory.
--   Write Performance: With pure disk-based databases, the writes to the
+- Write Performance: With pure disk-based databases, the writes to the
     disk have to be durable. To ensure durable writes, disk-based
     databases use techniques like WAL (write-ahead log) or Redo-Logs. In
     contrast, when RoF ejects a value from RAM to Flash, the write
@@ -106,7 +106,7 @@ than extending RAM in a number of ways.
     In other words, write amplification with durable writes is much
     slower than writes RoF performs to extend RAM. That said, you can
     still do durable writes with RF, but there are some considerations.
--   Future Proof: In recent years, with the emergence of persistent
+- Future Proof: In recent years, with the emergence of persistent
     memory technologies, memory has been moving to converge with
     storage. Persisted memory technologies like [3d
     XPoint](https://en.wikipedia.org/wiki/3D_XPoint) are good examples
@@ -127,17 +127,17 @@ than extending RAM in a number of ways.
 To create Redis on Flash databases you must meet the following
 prerequisites:
 
--   Have ephemeral, persistent and flash memory mounted on Redis
+- Have ephemeral, persistent and flash memory mounted on Redis
     Enterprise Software nodes with the proper disk size, per the [Redis
     on Flash memory
     guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements.md#production-environment-reqs.md" >}}).
--   Have all [hardware
+- Have all [hardware
     requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
     in place.
--   Have all [software
+- Have all [software
     requirements]({{< relref "/rs/administering/designing-production/supported-platforms.md" >}})
     in place.
--   Perform the [initial setup and creation of a new
+- Perform the [initial setup and creation of a new
     cluster]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
 
 Once these requirements are met, both Redis of Flash databases and

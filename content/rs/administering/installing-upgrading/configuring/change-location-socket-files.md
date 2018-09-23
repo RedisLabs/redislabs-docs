@@ -39,14 +39,14 @@ where they go when install.sh is executed without -s flag.)
 
 1. There are two ways to do the next step depending on your uptime
     requirements.
-    1.  Restart each database in the cluster, but you will incur
+    1. Restart each database in the cluster, but you will incur
         downtime. This is by far the easiest option to execute.
 
         ``` src
         $ rladmin restart db <db name>
         ```
 
-    2.  Execute the following three commands **for each** master/slave
+    1. Execute the following three commands **for each** master/slave
         shards during a maintenance window. All three of these commands
         **must** be executed **on the node hosting the shard being
         operated on**:

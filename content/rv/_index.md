@@ -70,10 +70,10 @@ Meet your security goals without compromising performance using RV's
 fully encrypted SSL connections, and apply multi-level authentication
 mechanisms such as:
 
--   IP whitelist
--   Client-based SSL authentication
--   Redis password
--   Data at rest encryption for compliance and security
+- IP whitelist
+- Client-based SSL authentication
+- Redis password
+- Data at rest encryption for compliance and security
 
 ### Fully-automated service
 

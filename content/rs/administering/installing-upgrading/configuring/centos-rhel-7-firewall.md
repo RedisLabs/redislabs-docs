@@ -12,9 +12,9 @@ interfaces to the **public** zone and blocks all ports, except 22 (SSH).
 Redis Enterprise Software (RES) installation on CentOS / RHEL 7
 automatically creates two firewalld system services:
 
--   A service named **redislabs**, which includes all ports and
+- A service named **redislabs**, which includes all ports and
     protocols needed for communications between cluster nodes.
--   A service named **redislabs-clients**, which includes the ports and
+- A service named **redislabs-clients**, which includes the ports and
     protocols needed for communications external to the cluster.
 
 These services are defined but **not allowed through the firewall by

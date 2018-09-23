@@ -7,10 +7,10 @@ alwaysopen: false
 There are various reasons why you may want to remove a node in Redis
 Enterprise Software (RS):
 
--   You no longer need the extra capacity, meaning you wish to
+- You no longer need the extra capacity, meaning you wish to
     permanently remove the node.
--   You would like to replace a faulty node with a healthy node.
--   You would like to replace a healthy node with a different node.
+- You would like to replace a faulty node with a healthy node.
+- You would like to replace a healthy node with a different node.
 
 The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
