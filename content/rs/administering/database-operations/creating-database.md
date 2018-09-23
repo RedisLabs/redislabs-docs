@@ -45,9 +45,9 @@ To create a new database in the UI:
 1. Enter a **name** for the database.\
     The database name must comply with the following rules:
 
-  - Length: up to 63 characters.
-  - Characters: only letters, digits and hyphen ('-') are allowed.
-  - Start with a letter and end with a letter or digit.
+   - Length: up to 63 characters.
+   - Characters: only letters, digits and hyphen ('-') are allowed.
+   - Start with a letter and end with a letter or digit.
 
     **Note**: The database name is case-insensitive, i.e. uppercase and
     lowercase letter are treated exactly the same.
@@ -84,8 +84,8 @@ To create a new database in the UI:
     to employ. For a full explanation, refer to [Database
     persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}).
 1. Next, you can specify **security** settings:
-  - If you are creating a Redis database, enter a Redis password.
-  - If you are creating a Memcached database, enter a username and
+   - If you are creating a Redis database, enter a Redis password.
+   - If you are creating a Memcached database, enter a username and
         password for SASL Authentication.
 1. If you would like to define the port number that will be part of the
     endpoint used to connect to the database, you can insert it in the

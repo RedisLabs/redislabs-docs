@@ -31,16 +31,16 @@ For a new subscription, you will need to select the following:
 1. The cloud and region you desire your database(s) to be created in
 1. A subscription name
 1. One of three subscription plans:
-  - Cache plans provide highly available, low-latency caching for
+   - Cache plans provide highly available, low-latency caching for
         applications when the authoritative version of the data is
         stored in another database. Cache plans do not include
         replication or data persistence so failures may result in an
         empty cache
-  - Standard plans can have a diverse set of features including
+   - Standard plans can have a diverse set of features including
         in-memory replication, auto-failover, data persistence, and
         backups. Selecting this option will double the memory size of
         your dataset.
-  - Multi-AZ (Availability Zone) plans offer all the benefits of
+   - Multi-AZ (Availability Zone) plans offer all the benefits of
         Standard plans, as well as auto-failover and in-memory
         replication to another availability zone.
 1. Memory size - select from 30MB (free) to 5GB (\$33/mo), or a

@@ -33,18 +33,18 @@ your Pivotal Cloud Foundry environment to get started.
     environment that is **pcf-ert-network**.
 1. From the **Settings** tab, click **Cluster Configuration** and
     complete the following fields and then click **Save**:
-  - **Cluster Name**: Provide a sub-domain for the cluster name. The
+   - **Cluster Name**: Provide a sub-domain for the cluster name. The
         cluster name is a sub-domain under the **System Domain** which
         is found under the **Pivotal Elastic Runtime** in Ops Manager.
         This is the connection string for Redis applications will use to
         connect to Redis databases on Redis Enterprise Software.
-  - **Admin Email**: Provide an email address for the administrative
+   - **Admin Email**: Provide an email address for the administrative
         user who will have full administrative privileges to the new
         Redis Enterprise Software cluster.
-  - **Admin account password**: Provide the password for the
+   - **Admin account password**: Provide the password for the
         administrative account.
-  - and enabled Multiple Availability Zone (Rack) awareness.
-  - **Static IPs**: You may provide a set of static IPs addresses to
+   - and enabled Multiple Availability Zone (Rack) awareness.
+   - **Static IPs**: You may provide a set of static IPs addresses to
         use for cluster nodes or let the tile choose them for you from
         the previously selected PCF network.\
 
