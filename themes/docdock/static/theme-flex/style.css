@@ -716,7 +716,8 @@ ul.children.children-card {
   .nav-select {
     display: block;
     margin-left: -10px;
-    margin-right: -10px; }
+    margin-right: -10px;
+    background-color: #fff; }
 
   .nav-select select {
     display: block; }
