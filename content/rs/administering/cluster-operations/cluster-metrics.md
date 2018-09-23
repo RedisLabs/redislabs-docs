@@ -12,9 +12,9 @@ You can choose which resources and metric to display in each of the two
 detailed graphs at the top of the page, as follows:
 
 - Below the top two graphs there are two groups of smaller graphs:
-    -   The first group displays all available **resources**: the
+  - The first group displays all available **resources**: the
         cluster itself, and each of the cluster nodes.
-    -   The second group displays all available **metrics**, such as CPU
+  - The second group displays all available **metrics**, such as CPU
         utilization and operations per second.
 - In each of the **resources** graphs, clicking the left arrow
     displays that resource in the top left graph. Clicking the right

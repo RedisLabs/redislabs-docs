@@ -83,7 +83,7 @@ event\_log\[\]:{\<list of key value pairs in any order\>}
     specific event. The key­values pairs can appear in any order. Some
     key­value pairs will\
     always appear, and some appear depending on the specific event.
-    -   **Key­value pairs that will always appear:**
+  - **Key­value pairs that will always appear:**
         -   "type" A unique code­name identifying the event logged. For
             the list of\
             codenames relevant for this purpose please review the event
@@ -95,7 +95,7 @@ event\_log\[\]:{\<list of key value pairs in any order\>}
             related to. For\
             example cluster, node with id, bdb with id, etc'.
         -   "time" unix time, can be ignored in this context.
-    -   **Key­value pairs that might appear depending on the specific
+  - **Key­value pairs that might appear depending on the specific
         entry:**
         -   "state" boolean with value true or false. This is relevant
             only for\

@@ -46,17 +46,17 @@ upgrade to this version.
 
 - As result of adding the support for multiple proxies for a database,
     the following changes have been made:
-    -   When you upgrade the cluster to this version and then upgrade
+  - When you upgrade the cluster to this version and then upgrade
         existing databases, the databases will be updated to use the
         Single proxy policy and Dense shard placement policy.
-    -   **rladmin status** command output has been updated.
-    -   **failover \[db \<db:id \| name\>\] endpoint \<id1 .. idN\>**
+  - **rladmin status** command output has been updated.
+  - **failover \[db \<db:id \| name\>\] endpoint \<id1 .. idN\>**
         and **migrate \[db \<db:id \| name\> \| node \<origin
         node:id\>\] endpoint \<id\> target\_node \<id\>** commands are
         no longer relevant for databases using the **single \|
         all-master-shards \| all-nodes** proxy policy. Instead proxies
         can be bound or unbounded to databases as needed.
-    -   New **rladmin** commands were added, such as **bind** and
+  - New **rladmin** commands were added, such as **bind** and
         **placement**.
 - RLEC has been updated to remove the need to use **sudo** in runtime.
     You still need to be root or use **sudo** when initially installing

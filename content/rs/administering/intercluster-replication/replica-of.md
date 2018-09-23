@@ -199,9 +199,9 @@ following steps:
 
 1. Edit and mark **SSL Authentication** for the source Database of the
     ReplicaOf, and choose when SSL is required:
-    -   **SSL for Replication Only **enforce SSL for the communication
+  - **SSL for Replication Only **enforce SSL for the communication
         between the source and the destination of the ReplicaOf
-    -   **SSL for All Communications **enforce SSL for both- application
+  - **SSL for All Communications **enforce SSL for both- application
         communication as well as ReplicaOf communication:
         ![Replic-of
         Encryption](/images/rs/Screen-Shot-2018-03-29-at-10.17.59-PM.png?width=1728&height=316)
