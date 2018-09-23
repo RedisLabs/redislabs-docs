@@ -59,7 +59,7 @@ The source databases can be located in the same Redis Enterprise
 Software (RS) as the destination database, in a different RS, or they
 can be Redis databases that are not part of an RS.
 
--   When a source database is from within RS, the source URL has the
+- When a source database is from within RS, the source URL has the
     following format:\
     \[database name\]: redis://admin:\[internal database
     password\]@\[database endpoint with port\] where the internal
@@ -68,7 +68,7 @@ can be Redis databases that are not part of an RS.
     to define a replica source from within the target database page, the
     list of existing databases is shown with the appropriate URL,
     including the internal admin password, already set up.
--   When a source database is from a different RS, the source URL has
+- When a source database is from a different RS, the source URL has
     the same exact format as indicated above (except for the
     **\[database name\]:** prefix), but in this case, the URL does not
     show up as an option in the UI. In order to configure the target
@@ -81,13 +81,13 @@ can be Redis databases that are not part of an RS.
     regenerate the internal admin password, any existing replica
     destinations already configured will stop working until you update
     them.
--   **Compression:** when a source database is located on a different
+- **Compression:** when a source database is located on a different
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
     compression]({{< relref "/rs/administering/intercluster-replication/replica-of.md#Replica-of-data-compression" >}})
     section.
--   When a source database is external to a Redis Enterprise Software
+- When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:\
     redis://:\[redis password\]@\[hostname\]:\[port\] where the password
     is the Redis password assigned by the user, represented with URL
@@ -137,13 +137,13 @@ the process from the beginning**.
 
 The replication process can have the following statuses:
 
--   **Syncing** - indicates that the synchronization process has
+- **Syncing** - indicates that the synchronization process has
     started from scratch. Progress is indicated in percentages (%).
--   **Synced** - indicates that the initial synchronization process was
+- **Synced** - indicates that the initial synchronization process was
     completed and the destination is synchronizing changes on an ongoing
     basis. The **Lag** delay in synchronization with the source is
     indicated as a time duration.
--   **Sync stopped** - indicates that the synchronization process is
+- **Sync stopped** - indicates that the synchronization process is
     currently not running and the user needs to restart it in order for
     it to continue running. This status occurs if the user stops the
     process, or if certain errors arose that prevent synchronization
@@ -172,16 +172,16 @@ assumption that the error will be automatically resolved.
 Examples of errors that require user intervention for their resolution
 and that stop the synchronization process include:
 
--   Error authenticating with the source database.
--   Cross slot violation error while executing a command on a sharded
+- Error authenticating with the source database.
+- Cross slot violation error while executing a command on a sharded
     destination database.
--   Out-of-memory error that occurs on a source or on the destination
+- Out-of-memory error that occurs on a source or on the destination
     database.
 
 Example of an error that does not cause the synchronization process to
 stop:
 
--   Connection error with the source database. A connection error might
+- Connection error with the source database. A connection error might
     occur occasionally, for example as result of temporary network
     issues that get resolved. Depending on the connection error and its
     duration the process might be able to start syncing from the last
@@ -206,7 +206,7 @@ following steps:
         ![Replic-of
         Encryption](/images/rs/Screen-Shot-2018-03-29-at-10.17.59-PM.png?width=1728&height=316)
         Replic-of Encryption
-        2.  From the *destination cluster*, copy the "Syncer Certificate"
+        1. From the *destination cluster*, copy the "Syncer Certificate"
     (located under **settings**-\> **general**) and paste it as SSL
     certificate for the source Database:
     ![Replica-of Encryption -
@@ -243,21 +243,21 @@ and the available network).
 
 Compressing the data reduces the traffic and can help:
 
--   Resolve throughput issues
--   Reduce network traffic costs
+- Resolve throughput issues
+- Reduce network traffic costs
 
 Compressing the data does have trade-offs, which is why it should not
 always be turned on by default. For example:
 
--   It uses CPU and disk resources to compress the data before sending
+- It uses CPU and disk resources to compress the data before sending
     it to the network and decompress it on the other side.
--   It takes time to compress and decompress the data which can increase
+- It takes time to compress and decompress the data which can increase
     latency.
--   Replication is disk-based and done gradually, shard by shard in the
+- Replication is disk-based and done gradually, shard by shard in the
     case of a multi-shard database. This may have an impact on
     replication times depending on the speed of the disks and load on
     the database.
--   If traffic is too fast and the compression takes too much time it
+- If traffic is too fast and the compression takes too much time it
     can cause the replication process to fail and be restarted.
 
 It is advised that you test compression out in a lower environment

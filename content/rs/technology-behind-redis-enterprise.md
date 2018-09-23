@@ -7,9 +7,9 @@ alwaysopen: false
 RS's unique and patented technology was developed to meet these main
 objectives:
 
--   Decouple data path from cluster management
--   Ensure consistent top performance
--   Simplify and automate operations
+- Decouple data path from cluster management
+- Ensure consistent top performance
+- Simplify and automate operations
 
 ## Decouple data path from cluster management
 
@@ -55,17 +55,17 @@ components do not affect the data path components.
 Multiple techniques are implemented by RS to provide consistent top
 performance for Redis:
 
--   A shared-nothing architecture maximizes the performance of each
+- A shared-nothing architecture maximizes the performance of each
     database. Automatic migration of shards between nodes is performed
     when needed.
--   The zero-latency proxy utilizes several mechanisms for improving
+- The zero-latency proxy utilizes several mechanisms for improving
     performance, including just-in-time pipelining, socket connections,
     connection pooling, and multiplexing.
--   Improvements to AOF data persistence and optimized rewrite
+- Improvements to AOF data persistence and optimized rewrite
     algorithms.
--   Diskless replication is employed between master and slave shards,
+- Diskless replication is employed between master and slave shards,
     instead of using the default file-based data streaming.
--   File-system-level improvements enable optimal access to storage and
+- File-system-level improvements enable optimal access to storage and
     support burst write operations without degrading (or blocking)
     database performance.
 

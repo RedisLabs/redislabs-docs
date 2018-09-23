@@ -62,23 +62,23 @@ in messages log file.
 
 **Command components:**
 
--   \%pri­text% ­adds the severity
--   \%timegenerated% ­adds the timestamp
--   \%HOSTNAME% ­adds the machine name
--   \%syslogtag% ­the RS message as detailed below in the Log entry
+- \%pri­text% ­adds the severity
+- \%timegenerated% ­adds the timestamp
+- \%HOSTNAME% ­adds the machine name
+- \%syslogtag% ­the RS message as detailed below in the Log entry
     structure section\
     below.
--   \%msg:::drop­last­lf%n ­ removes duplicated log entries
+- \%msg:::drop­last­lf%n ­ removes duplicated log entries
 
 #### Log entry structure
 
 The log entries have the following basic structure:\
 event\_log\[\]:{\<list of key value pairs in any order\>}
 
--   event\_log­ plain static text that will always show at the beginning
+- event\_log­ plain static text that will always show at the beginning
     of the entry.
--   processid­ the id of the process the logging in running under.
--   listofkeyvaluepairsinanyorder­ a list of key value pairs describing
+- processid­ the id of the process the logging in running under.
+- listofkeyvaluepairsinanyorder­ a list of key value pairs describing
     the\
     specific event. The key­values pairs can appear in any order. Some
     key­value pairs will\
@@ -127,23 +127,23 @@ result of storage utilization reaching the value of \~90%.
 
 **Log entry components:**
 
--   daemon.warning ­ severity of entry is warning
--   Jun1414:49:20­ the timestamp of the event
--   node1­ machine name
--   event\_log­ static text that always appears
--   \[3464\]­ process id
--   "storage\_util":90.061643120001­ current ephemeral storage
+- daemon.warning ­ severity of entry is warning
+- Jun1414:49:20­ the timestamp of the event
+- node1­ machine name
+- event\_log­ static text that always appears
+- \[3464\]­ process id
+- "storage\_util":90.061643120001­ current ephemeral storage
     utilization, in this\
     case \~90%
--   "global\_threshold":"70″­ the user configured threshold above which
+- "global\_threshold":"70″­ the user configured threshold above which
     the alert is\
     raised, in this case it is 70%
--   "object":"node:1″­ the object for which this alert has been raised
+- "object":"node:1″­ the object for which this alert has been raised
     for, in this case it\
     is node with id 1
--   "state":true­ current state of the alert, in this case it is on
--   "time":1434282560­ can be ignored
--   "type":"ephemeral\_storage"­ is the code name identifier of this
+- "state":true­ current state of the alert, in this case it is on
+- "time":1434282560­ can be ignored
+- "type":"ephemeral\_storage"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below
@@ -160,23 +160,23 @@ as result of storage utilization reaching the value of \~60%.
 
 **Log entry components**:
 
--   daemon.info ­ severity of entry is info
--   Jun1414:51:35­ the timestamp of the event
--   node1­ machine name
--   event\_log­ static text that always appears
--   \[3464\]­ process id
--   "storage\_util":60.051723520008­ current ephemeral storage
+- daemon.info ­ severity of entry is info
+- Jun1414:51:35­ the timestamp of the event
+- node1­ machine name
+- event\_log­ static text that always appears
+- \[3464\]­ process id
+- "storage\_util":60.051723520008­ current ephemeral storage
     utilization, in this\
     case \~60%
--   "global\_threshold":"70″­ the user configured threshold above which
+- "global\_threshold":"70″­ the user configured threshold above which
     the alert is\
     raised, in this case it is 70%
--   "object":"node:1″­ the object for which this alert has been raised
+- "object":"node:1″­ the object for which this alert has been raised
     for, in this case it\
     is node with id 1
--   "state":false­ current state of the alert, in this case it is on
--   "time":1434283480­ can be ignored
--   "type":"ephemeral\_storage"­ is the code name identifier of this
+- "state":false­ current state of the alert, in this case it is on
+- "time":1434283480­ can be ignored
+- "type":"ephemeral\_storage"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below\
@@ -196,18 +196,18 @@ having only one node.
 
 **Log entry components:**
 
--   daemon.warning­ severity of entry is warning
--   Jun1415:25:00­ the timestamp of the event
--   node1­ machine name
--   event\_log­ static text that always appears
--   \[8310\]­ process id
--   "object":"cluster"­ the object for which this alert has been raised
+- daemon.warning­ severity of entry is warning
+- Jun1415:25:00­ the timestamp of the event
+- node1­ machine name
+- event\_log­ static text that always appears
+- \[8310\]­ process id
+- "object":"cluster"­ the object for which this alert has been raised
     for, in this case\
     it is the cluster
--   "state":true­ current state of the alert, in this case it is on
--   "time":1434284700­ can be ignored
--   "node\_count":1­ the number of nodes in the cluster, in this case 1
--   "type":"even\_node\_count"­ is the code name identifier of this
+- "state":true­ current state of the alert, in this case it is on
+- "time":1434284700­ can be ignored
+- "node\_count":1­ the number of nodes in the cluster, in this case 1
+- "type":"even\_node\_count"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below
@@ -226,18 +226,18 @@ having 3 nodes.
 
 **Log entry components:**
 
--   daemon.info­ severity of entry is warning
--   Jun1415:30:40­ the timestamp of the event
--   node1­ machine name
--   event\_log­ static text that always appears
--   \[8310\]­ process id
--   "object":"cluster"­ the object for which this alert has been raised
+- daemon.info­ severity of entry is warning
+- Jun1415:30:40­ the timestamp of the event
+- node1­ machine name
+- event\_log­ static text that always appears
+- \[8310\]­ process id
+- "object":"cluster"­ the object for which this alert has been raised
     for, in this case\
     it is the cluster
--   "state":false­ current state of the alert, in this case it is off
--   "time":1434285200­ can be ignored
--   "node\_count":3­ the number of nodes in the cluster, in this case 3
--   "type":"even\_node\_count"­ is the code name identifier of this
+- "state":false­ current state of the alert, in this case it is off
+- "time":1434285200­ can be ignored
+- "node\_count":3­ the number of nodes in the cluster, in this case 3
+- "type":"even\_node\_count"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below\
@@ -258,28 +258,28 @@ for AOF rewrite purposes. It is missing 604602126 bytes.
 
 **Log entry components:**
 
--   daemon.err­ severity of entry is err
--   Jun1513:51:23­ the timestamp of the event
--   node1­ machine name
--   event\_log­ static text that always appears
--   \[34252\]­ process id
--   "used":23457188­ the amount of disk space in bytes currently used
+- daemon.err­ severity of entry is err
+- Jun1513:51:23­ the timestamp of the event
+- node1­ machine name
+- event\_log­ static text that always appears
+- \[34252\]­ process id
+- "used":23457188­ the amount of disk space in bytes currently used
     for AOF files
--   "missing":604602126­ the amount of disk space in bytes that is
+- "missing":604602126­ the amount of disk space in bytes that is
     currently missing for\
     AOF rewrite purposes
--   "object":"node:1″­ the object for which this alert has been raised
+- "object":"node:1″­ the object for which this alert has been raised
     for, in this case it\
     is node with id 1
--   "free":9867264­ the amount of disk space in bytes that is currently
+- "free":9867264­ the amount of disk space in bytes that is currently
     free
--   "needed":637926578­ the amount of total disk space in bytes that is
+- "needed":637926578­ the amount of total disk space in bytes that is
     needed for AOF\
     rewrite purposes
--   state":true­ current state of the alert, in this case it is on
--   "time":1434365483­ can be ignored
--   "disk":705667072­ the total size in bytes of the persistent storage
--   "type":"insufficient\_disk\_aofrw"­ is the code name identifier of
+- state":true­ current state of the alert, in this case it is on
+- "time":1434365483­ can be ignored
+- "disk":705667072­ the total size in bytes of the persistent storage
+- "type":"insufficient\_disk\_aofrw"­ is the code name identifier of
     this specific\
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below
@@ -292,29 +292,29 @@ false,"time":1434365471,"disk":705667072,"type":
 
 **Log entry components:**
 
--   daemon.info­ severity of entry is info
--   Jun1513:51:11­ the timestamp of the event
--   node1­ machine name
--   event\_log­ static text that always appears
--   \[34252\]­ process id
--   "used":0­ the amount of disk space in bytes currently used for AOF
+- daemon.info­ severity of entry is info
+- Jun1513:51:11­ the timestamp of the event
+- node1­ machine name
+- event\_log­ static text that always appears
+- \[34252\]­ process id
+- "used":0­ the amount of disk space in bytes currently used for AOF
     files
--   "missing":‐21614592­ the amount of disk space in bytes that is
+- "missing":‐21614592­ the amount of disk space in bytes that is
     currently missing for\
     AOF rewrite purposes, in this case it is not missing because the
     number is negative
--   "object":"node:1″­ the object for which this alert has been raised
+- "object":"node:1″­ the object for which this alert has been raised
     for, in this case it\
     is node with id 1
--   "free":21614592­ the amount of disk space in bytes that is currently
+- "free":21614592­ the amount of disk space in bytes that is currently
     free
--   "needed":0­ the amount of total disk space in bytes that is needed
+- "needed":0­ the amount of total disk space in bytes that is needed
     for AOF rewrite\
     purposes, in this case no space is needed
--   "state":false­ current state of the alert, in this case it is off
--   "time":1434365471­ can be ignored
--   "disk":705667072­ the total size in bytes of the persistent storage
--   "type":"insufficient\_disk\_aofrw"­ is the code name identifier of
+- "state":false­ current state of the alert, in this case it is off
+- "time":1434365471­ can be ignored
+- "disk":705667072­ the total size in bytes of the persistent storage
+- "type":"insufficient\_disk\_aofrw"­ is the code name identifier of
     this specific\
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below

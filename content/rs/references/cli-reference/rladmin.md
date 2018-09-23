@@ -12,13 +12,13 @@ UI and some are unique to the CLI.
 The following are examples of tasks that can be performed through the
 CLI:
 
--   View the detailed status of the cluster including information about
+- View the detailed status of the cluster including information about
     each node, each database, each shard, etc.
--   Execute failover between a master and slave shard, or a master and
+- Execute failover between a master and slave shard, or a master and
     slave endpoint.
--   Migrate a specific shard or endpoint between nodes.
--   Tune specific internal parameters of a database.
--   Upgrade the version of a database to the most current version
+- Migrate a specific shard or endpoint between nodes.
+- Tune specific internal parameters of a database.
+- Upgrade the version of a database to the most current version
     supported by the cluster.
 
 ## Accessing the rladmin CLI
@@ -42,7 +42,7 @@ To open the *rladmin* CLI:
 
 In the rladmin CLI you can:
 
--   Enter ? to view the full list of available commands.
--   Type help, followed by the name of a command to view a detailed
+- Enter ? to view the full list of available commands.
+- Type help, followed by the name of a command to view a detailed
     explanation of the command and its usage.
--   Use the Tab key for automatic command completion.
+- Use the Tab key for automatic command completion.

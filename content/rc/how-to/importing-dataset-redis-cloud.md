@@ -50,14 +50,14 @@ provide the file's URL:
 
 Where:
 
--   *protocol*: the server's protocol, can be either ftp, ftps, http or
+- *protocol*: the server's protocol, can be either ftp, ftps, http or
     https.
--   *username*: your username, if needed.
--   *password*: your password, if needed.
--   *hostname*: the hostname or IP address of the server.
--   *port*: the port number of the server, if needed.
--   *path*: the path to the file, if needed.
--   *filename*: the filename of the RDB file, optionally compressed and
+- *username*: your username, if needed.
+- *password*: your password, if needed.
+- *hostname*: the hostname or IP address of the server.
+- *port*: the port number of the server, if needed.
+- *path*: the path to the file, if needed.
+- *filename*: the filename of the RDB file, optionally compressed and
     with the *.gz* suffix.
 
 ## RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
@@ -77,9 +77,9 @@ Console and follow these steps:
 1. Add access permissions to our service:
     a.  Click the Add more permissions button.
     b.  In the newly-added row:
-        1.  Enter the value service\@garantiadata.com in the Grantee
+        1. Enter the value service\@garantiadata.com in the Grantee
             field.
-        2.  Check the Open/Download box.
+        1. Check the Open/Download box.
     c.  Click the Save button.
 
 Once the file's permissions are set, you can import it by entering its
@@ -89,7 +89,7 @@ s3://bucketname/\[path/\]filename.rdb\[.gz\]
 
 Where:
 
--   *bucketname*: the name of the S3 bucket.
--   *path*: the path to the file, if needed.
--   *filename*: the filename of the RDB file, optionally compressed and
+- *bucketname*: the name of the S3 bucket.
+- *path*: the path to the file, if needed.
+- *filename*: the filename of the RDB file, optionally compressed and
     with the .gz suffix.

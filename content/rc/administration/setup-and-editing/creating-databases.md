@@ -60,9 +60,9 @@ Once activated, the screen presents detailed information as the system
 is creating the database. There are two things you are looking for on
 this page:
 
--   The orange spinning icon on the top right to turn to a green
+- The orange spinning icon on the top right to turn to a green
     checkmark
--   The Endpoint issued for the new database
+- The Endpoint issued for the new database
 
 []{#CreateDBVideo}\
 If you'd prefer to watch a video on this topic:\

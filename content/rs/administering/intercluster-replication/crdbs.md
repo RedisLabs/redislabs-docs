@@ -29,23 +29,23 @@ CRDB Instance on a RS cluster.
 
 Before configuring a CRDB, you will need:
 
--   All RS clusters hosting a CRDB must be [set up per the standard
+- All RS clusters hosting a CRDB must be [set up per the standard
     documentation]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
     and configured to utilize FQDNs via DNS for connections to the
     cluster. CRDBs are not compatible with the [Discovery
     Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})for
     inter-cluster communications, but are compatible with local
     application connections.
--   Configure the network so that all nodes in each cluster are able to
+- Configure the network so that all nodes in each cluster are able to
     connect to the Proxy (you can choose which port you want and then
     set the proxy to run on it when you create the CRDB) and cluster's
     admin port (8080) on all destination clusters over the network and
     vice versa.
--   If the CRDB spans a WAN, establish a VPN between each of the
+- If the CRDB spans a WAN, establish a VPN between each of the
     cluster's networks before setting up a CRDB.
--   Confirm that all clusters are on the same version of Redis
+- Confirm that all clusters are on the same version of Redis
     Enterprise Software.
--   Confirm that a network time service is configured and running on
+- Confirm that a network time service is configured and running on
     each node in all clusters. See [Network Time
     Service](#network-time).
 

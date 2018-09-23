@@ -12,13 +12,13 @@ Regardless, navigate to the [Redis Labs download
 page](https://app.redislabs.com/#/sign-up/software?direct=true) and
 select one of the following options:
 
--   **Installation package** - Click the **Download** button for the OS
+- **Installation package** - Click the **Download** button for the OS
     you would like to use in order to download the .tar file
     installation package.
--   **AMI** - Click the **AWS AMI** button for the option you would
+- **AMI** - Click the **AWS AMI** button for the option you would
     like to use in order to launch an instance on Amazon Web Services
     (AWS).
--   **Docker** - Go
+- **Docker** - Go
     [here]({{< relref "/rs/getting-started/docker/_index.md" >}})
     for the install guide and skip this page.
 
@@ -69,7 +69,7 @@ by performing the following steps:
 1. During the installation process, enter the requested input each time
     you are prompted to do so.
 1. After installation has completed successfully
-    1.  The install finishes up with rlcheck make testing the
+    1. The install finishes up with rlcheck make testing the
         installation out and confirming the installation passed.
 
         2017-04-24 10:54:12 \[!\] Installation is complete!\
@@ -101,7 +101,7 @@ by performing the following steps:
         Make sure to save this URL for when you go to configure the
         cluster.
 
-    2.  If you intend to create [Redis on
+    1. If you intend to create [Redis on
         Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) enabled
         databases, you must prepare and format the flash memory. You
         should run:

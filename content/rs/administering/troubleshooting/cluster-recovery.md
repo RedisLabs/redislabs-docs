@@ -30,20 +30,20 @@ storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral
 
 Prerequisites:
 
--   You will need the persistent storage drives of the old cluster.
+- You will need the persistent storage drives of the old cluster.
     These drives contain the cluster configuration backup files and
     databases' persistence files.
--   You will need servers on which to run the new cluster nodes. You
+- You will need servers on which to run the new cluster nodes. You
     will need the same number of nodes as existed in the old cluster.
     Ensure that these nodes contain at least the same space as the nodes
     that you had in the old cluster.
--   The new nodes must run the **exact same RS version as was running on
+- The new nodes must run the **exact same RS version as was running on
     the old nodes** (for additional details, refer to [Accessing and
     installing the setup
     package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
     The cluster recovery may fail unless the same RS version is
     installed on the new nodes.
--   The persistent storage drives of the old cluster nodes must be
+- The persistent storage drives of the old cluster nodes must be
     mounted to the new servers, to make the configuration and
     persistence files available for the recovery process. You must
     ensure that the user redislabs has permissions to access this
@@ -177,8 +177,8 @@ The status for each database can be either ready for recovery or missing
 files. An indication of missing files in any of the databases may result
 from either of the following:
 
--   The recovery path of the nodes has not been set appropriately
--   There is some issue with the persistence files (for example: lack of
+- The recovery path of the nodes has not been set appropriately
+- There is some issue with the persistence files (for example: lack of
     permissions to read the files, missing files, or corrupted files)
 
 First, ensure that the recovery path is set correctly on all of the

@@ -7,9 +7,9 @@ alwaysopen: false
 Redis Enterprise Software (RS) uses self-signed certificates to encrypt
 the following:
 
--   Management UI
--   REST API
--   The connection between the client and the database endpoint (TLS
+- Management UI
+- REST API
+- The connection between the client and the database endpoint (TLS
     encryption)
 
 These self-signed certificates are generated each time RS is installed,
@@ -36,7 +36,7 @@ Instructions:
 
 1. 1.  On the cluster machine, after RS has been installed, navigate to
         the **/etc/opt/redislabs** folder.
-    2.  Replace the following certificate files with your own files and
+    1. Replace the following certificate files with your own files and
         rename them to the same exact names as the original files:
 
         -   -   For the management UI certificate and private key:
@@ -57,10 +57,10 @@ Instructions:
         for a cluster with the name "redislabs.com" the certificate
         should be for "redis-\*.redislabs.com"
 
-    3.  If you are using a certificate issued by an intermediate
+    1. If you are using a certificate issued by an intermediate
         certificate authority (CA), you should also add the chain file
         named **"chain\_certs.pem"** to the same folder.
-    4.  After replacing the files, restart the relevant service by
+    1. After replacing the files, restart the relevant service by
         running the following command from the operating system
         command-line interface (CLI):
 
@@ -79,7 +79,7 @@ Instructions:
         **Note**: Restarting the dmcproxy service will disconnect any
         existing clients connected to any of the databases.
 
-    5.  Repeat these steps on all other machines in the cluster.
+    1. Repeat these steps on all other machines in the cluster.
 
 ### **TLS version**
 
@@ -87,13 +87,13 @@ To set the minimum TLS version that can be used for encrypting various
 flows, use the REST API or the following rladmin
 commands:
 
--   -   For the management UI and REST API:
+- -   For the management UI and REST API:
 
             rladmin> cluster config min_control_TLS_version [version, e.g. 1.2]
 
 <!-- -->
 
--   -   For data path encryption:
+- -   For data path encryption:
 
             rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
 

@@ -10,12 +10,12 @@ zones. Redis Enterprise architecture is made up of a management path
 (depicted in the blue layer in Figure 1 below) and data access path
 (depicted in the red layer in Figure 1 below).
 
--   Management path includes the cluster manager, proxy and secure REST
+- Management path includes the cluster manager, proxy and secure REST
     API/UI for programmatic administration. In short, cluster manager is
     responsible for orchestrating the cluster, placement of database
     shards as well as detecting and mitigating failures. Proxy helps
     scale connection management.
--   Data Access path is composed of master and slave Redis shards.
+- Data Access path is composed of master and slave Redis shards.
     Clients perform data operations on the master shard. Master shards
     maintain slave shards using the in-memory replication for protection
     against failures that may render master shard inaccessible.
@@ -85,13 +85,13 @@ accesses to the same value is fast, once the value is in RAM.
 
 Redis Enterprise has two durability options:
 
--   Disk-based durability: Redis Enterprise still maintains a durable
+- Disk-based durability: Redis Enterprise still maintains a durable
     copy on disk. Just like disk-based systems, this IO path is placed
     on a slower and durable network-attached storage device. Redis
     databases provide tunable options to maintain this durable copy and
     keep it up to date with frequent periodic writes all the way to
     every write operation.
--   Replication-based durability: Redis Enterprise also maintains a
+- Replication-based durability: Redis Enterprise also maintains a
     replica, a slave shard, for durability. This replicated durability
     protects against node, rack, or zone failures. Replicated-durability
     provides better write performance over network-attached storage

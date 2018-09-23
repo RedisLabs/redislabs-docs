@@ -8,8 +8,8 @@ When you set a database's memory limit, you define the maximum size the
 database can reach in the cluster, across all database replicas and
 shards, including:
 
--   Slave shards (if database replication is enabled)
--   Database shards (if database clustering is enabled)
+- Slave shards (if database replication is enabled)
+- Database shards (if database clustering is enabled)
 
 If the total size of the database in the cluster reaches the memory
 limit, the data eviction policy that was defined for the database is
@@ -22,8 +22,8 @@ the total database size.
 
 You create a database and:
 
--   Set the memory limit to 4 GB
--   Enable database replication in order to ensure high-availability
+- Set the memory limit to 4 GB
+- Enable database replication in order to ensure high-availability
 
 The cluster will create 2 shards: a master and a slave. Each of the
 shards will have a maximum size of 2 GB. In this case, the maximum
@@ -33,10 +33,10 @@ dataset size that you will be able to store in the database is 2 GB.
 
 You create a database and:
 
--   Set the memory limit to 6 GB
--   Enable database clustering and configure the database to have 3
+- Set the memory limit to 6 GB
+- Enable database clustering and configure the database to have 3
     shards
--   Do not enable replication
+- Do not enable replication
 
 The cluster will create 3 shards. Each of these shards can have a
 different size depending on the amount of data stored in it, as long as
@@ -47,10 +47,10 @@ maximum dataset size you will be able to store in the database is 6 GB.
 
 You create a database and:
 
--   Set the memory limit to 6 GB
--   Enable database clustering and configure the database to have 3
+- Set the memory limit to 6 GB
+- Enable database clustering and configure the database to have 3
     shards
--   Enable database replication in order to ensure high-availability
+- Enable database replication in order to ensure high-availability
 
 The cluster will create 6 shards in total - 3 master shards and 3 slave
 shards. Each of these shards can have a different size depending on the

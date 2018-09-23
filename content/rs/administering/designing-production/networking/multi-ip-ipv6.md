@@ -10,9 +10,9 @@ multiple IP addresses, as well as IPv6 addresses.
 RS related traffic can be logically and physically divided into internal
 traffic and external traffic:
 
--   "Internal traffic" refers to internal cluster communications, such
+- "Internal traffic" refers to internal cluster communications, such
     as communications between the nodes for cluster management purposes.
--   "External traffic" refers to communications between the clients and
+- "External traffic" refers to communications between the clients and
     the databases, as well as connections to the management UI in the
     browser.
 
@@ -21,8 +21,8 @@ it is used for both internal and external traffic.
 
 When more than one IP address exists on an RS node:
 
--   One of the IPv4 addresses is used for internal traffic
--   Other IP addresses may only be used for external traffic
+- One of the IPv4 addresses is used for internal traffic
+- Other IP addresses may only be used for external traffic
 
 As part of the node configuration process, if the machine has multiple
 IP addresses, you are required to assign one of the machine's IPv4
@@ -54,9 +54,9 @@ node external\_addr \[ add \| remove \]
 
 Where:
 
--   addr - is the internal address (can be used only when the node is
+- addr - is the internal address (can be used only when the node is
     offline)
--   external\_addr - is the external address(es)
+- external\_addr - is the external address(es)
 
 **Note:** While [Joining a new node to a
 cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}})

@@ -7,10 +7,10 @@ alwaysopen: false
 To get started with a single Redis Enterprise Software container on
 Linux, follow these four steps:
 
--   Step 1: Run the container
--   Step 2: Set up a cluster
--   Step 3: Create a new database
--   Step 4: Connect to your database
+- Step 1: Run the container
+- Step 2: Set up a cluster
+- Step 3: Create a new database
+- Step 4: Connect to your database
 
 You can also visit [Docker
 Hub](https://hub.docker.com/r/redislabs/redis/) for instructions on
@@ -74,8 +74,8 @@ With a Redis database created, you are ready to connect to your database
 and store data. You can use one of the following ways to test
 connectivity to your database:
 
--   Connecting with redis-cli, the built-in command line tool
--   Connecting with a _Hello World_ application using Python.
+- Connecting with redis-cli, the built-in command line tool
+- Connecting with a _Hello World_ application using Python.
 
 ### Connecting Using redis-cli
 

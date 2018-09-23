@@ -10,9 +10,9 @@ connect to database endpoints through both public and private networks.
 In certain environments, and especially in cloud platforms, an instance
 can have both:
 
--   A private IP address that can be used only from within the internal
+- A private IP address that can be used only from within the internal
     network
--   Public IP address(es) that can be used from the public network
+- Public IP address(es) that can be used from the public network
     (Internet)
 
 In this case, it is possible to configure Redis Enterprise Software to
@@ -21,12 +21,12 @@ database through both the private and the public IP addresses.
 
 To enable this configuration you need to:
 
--   The IPs must already be bound to the server/instance.
--   Enable support when the cluster is created for a new cluster or
+- The IPs must already be bound to the server/instance.
+- Enable support when the cluster is created for a new cluster or
     using rladmin for an existing cluster.
--   Configure public IP of the machine to be used for external traffic
+- Configure public IP of the machine to be used for external traffic
     in the node configuration.
--   Configure private IP to be used for both internal and external
+- Configure private IP to be used for both internal and external
     traffic in the node configuration so it can be used for private
     database endpoints.
 

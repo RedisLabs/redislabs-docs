@@ -16,9 +16,9 @@ using Apps Manager or the Cloud Foundry Command Line Interface (cf CLI).
 You will need to import the Redis Enterprise Software .pivotal file into
 your Pivotal Cloud Foundry environment to get started.
 
--   Download [the .pivotal file for Redis Enterprise
+- Download [the .pivotal file for Redis Enterprise
     Software](https://app.redislabs.com/#/sign-up/software?direct=true&download=pivotal_cf).
--   Navigate to your Ops Manager URL and click on **Import a Product**
+- Navigate to your Ops Manager URL and click on **Import a Product**
     button and select the downloaded .pivotal file for Redis Enterprise
     Software\
     ![](/images/rs/pcf_view_ops_manger.png?width=800&height=205)

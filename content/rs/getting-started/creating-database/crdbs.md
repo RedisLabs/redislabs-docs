@@ -8,10 +8,10 @@ In this guide, we'll set up a scale-minimized CRDB (conflict-free
 replicated database) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
--   Step 1: Run four Docker containers
--   Step 2: Setup two clusters
--   Step 3: Create a new Redis Enterprise CRDB
--   Step 4: Connect to your member Redis Enterprise CRDBs
+- Step 1: Run four Docker containers
+- Step 2: Setup two clusters
+- Step 3: Create a new Redis Enterprise CRDB
+- Step 4: Connect to your member Redis Enterprise CRDBs
 
 The steps do the installation through Docker containers. However bare
 metal installation is quite similar to installing and setting up
@@ -73,7 +73,7 @@ email for the login and a password.
 We will repeat the same operations for cluster 2. There are only a few
 differences.
 
--   For the node of cluster 2, direct the **https://localhost:8445** to
+- For the node of cluster 2, direct the **https://localhost:8445** to
     set up the cluster 2. Specify **create new cluster** option with the
     cluster FQDN as **cluster2.local** and follow the steps to finish
     setup on this node.
@@ -116,8 +116,8 @@ With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
 connectivity to your database
 
--   Connecting with redis-cli, the built-in command-line tool.
--   Connecting with a _Hello World_ application using Python.
+- Connecting with redis-cli, the built-in command-line tool.
+- Connecting with a _Hello World_ application using Python.
 
 Remember we have two member CRDBs that are available for connections and
 concurrent reads and writes. The member CRDBs are using bi-directional

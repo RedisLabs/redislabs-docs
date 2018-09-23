@@ -13,12 +13,12 @@ database or shard metrics.
 Examples of metrics that are not collected during the resharding process
 are:
 
--   Used memory
--   Memory usage
--   Total keys
--   Write misses/sec
--   Read misses/sec
--   Expired objects/sec
--   Evicted objects/sec
--   Incoming traffic
--   Outgoing traffic
+- Used memory
+- Memory usage
+- Total keys
+- Write misses/sec
+- Read misses/sec
+- Expired objects/sec
+- Evicted objects/sec
+- Incoming traffic
+- Outgoing traffic

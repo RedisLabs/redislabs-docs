@@ -21,9 +21,9 @@ Dotted and square-bracketed, single-or-double-quoted-child notation are
 both supported for object keys, so the following paths all refer to bar,
 child of foo under the root:
 
--   *.foo.bar*
--   *foo\["bar"\]*
--   *\['foo'\]\["bar"\]*
+- *.foo.bar*
+- *foo\["bar"\]*
+- *\['foo'\]\["bar"\]*
 
 Array elements are accessed by their index enclosed by a pair of square
 brackets. The index is 0-based, with 0 being the first element of the

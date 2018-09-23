@@ -17,10 +17,10 @@ Subscription table.
 On the View Database page you will see four important icons next to the
 title of the page:
 
--   The pencil icon is for editing the database
--   The trash can is for deleting the database
--   The arrow icon is for importing data into the database
--   The clock is for backing up the database (if backups are already
+- The pencil icon is for editing the database
+- The trash can is for deleting the database
+- The arrow icon is for importing data into the database
+- The clock is for backing up the database (if backups are already
     configured)
 
 To Edit a database, click on the pencil icon.

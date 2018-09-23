@@ -50,12 +50,12 @@ provide the file's URL:
 
 Where:
 
--   *protocol*: the server's protocol, can be either ftp, ftps, http or
+- *protocol*: the server's protocol, can be either ftp, ftps, http or
     https.
--   *username*: your username, if needed.
--   *password*: your password, if needed.
--   *hostname*: the hostname or IP address of the server.
--   *port*: the port number of the server, if needed.
--   *path*: the path to the file, if needed.
--   *filename*: the filename of the RDB file, optionally compressed and
+- *username*: your username, if needed.
+- *password*: your password, if needed.
+- *hostname*: the hostname or IP address of the server.
+- *port*: the port number of the server, if needed.
+- *path*: the path to the file, if needed.
+- *filename*: the filename of the RDB file, optionally compressed and
     with the *.gz* suffix.

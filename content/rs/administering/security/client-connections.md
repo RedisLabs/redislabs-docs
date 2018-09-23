@@ -114,10 +114,10 @@ certificates, and a self-signed certificate on the client machine.
     versions of stunnel do not support the TLS protocol.
 1. Create a self-signed certificate on the client machine:
 
-    1.  Generate a private key by running the following commands:sudo su
+    1. Generate a private key by running the following commands:sudo su
         --\
         openssl genrsa -out /etc/stunnel/keyclient.pem 4096
-    2.  Generate a client certificate by running the following
+    1. Generate a client certificate by running the following
         commands:openssl req -new -x509 -key /etc/stunnel/keyclient.pem
         -out\
         /etc/stunnel/cert.pem -days 1826
@@ -137,10 +137,10 @@ certificates, and a self-signed certificate on the client machine.
     For example:cat /etc/stunnel/certsvr1.pem
     /etc/stunnel/certsvr2.pem \> /etc/stunnel/servercerts.pem
 1. Configure stunnel for the connection to RS by using the steps below:
-    1.  Create a redislabs.conf file in /etc/stunnel folder.
-    2.  Ensure that the certificates that have been generated exist in
+    1. Create a redislabs.conf file in /etc/stunnel folder.
+    1. Ensure that the certificates that have been generated exist in
         the following folder: /etc/stunnel.
-    3.  Edit the redislabs.conf content to look as follows:cert =
+    1. Edit the redislabs.conf content to look as follows:cert =
         /etc/stunnel/cert.pem\
         key = /etc/stunnel/keyclient.pem\
         cafile = /etc/stunnel/servercerts.pem\

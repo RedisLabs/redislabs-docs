@@ -18,52 +18,52 @@ update this file.
 
 ## New features
 
--   Support for Red Hat Enterprise Linux (RHEL) and CentOS 6.5 and 7
+- Support for Red Hat Enterprise Linux (RHEL) and CentOS 6.5 and 7
     operating systems.
--   Support for additional AWS AMIs for Ubuntu and Amazon Linux, on
+- Support for additional AWS AMIs for Ubuntu and Amazon Linux, on
     multiple AWS regions.
--   Support for additional browsers and operating systems for the
+- Support for additional browsers and operating systems for the
     management UI.
--   Replica of feature which enables creating a Redis database that
+- Replica of feature which enables creating a Redis database that
     keeps synchronizing data from another Redis database.
--   Rack-zone awareness feature which enables mapping nodes to
+- Rack-zone awareness feature which enables mapping nodes to
     racks/zones to ensure a more sophisticated high-availability
     mechanism.
--   Database-related alerts and email alerts.
--   Auto-configuration of synchronization of cluster server clocks with
+- Database-related alerts and email alerts.
+- Auto-configuration of synchronization of cluster server clocks with
     NTP as part of installation script.
--   Database Export functionality.
--   Email alerts on database Export and Import.
+- Database Export functionality.
+- Email alerts on database Export and Import.
 
 ## Changes
 
--   Database Backup Now functionality replaced with Export
+- Database Backup Now functionality replaced with Export
     functionality.
--   Database performance improvements to increase throughput and reduce
+- Database performance improvements to increase throughput and reduce
     latency.
--   Improvement to AOF rewrite mechanism to deal with extreme-write
+- Improvement to AOF rewrite mechanism to deal with extreme-write
     scenarios and limited disk space configurations.
--   Enhancements to rladmin CLI to support additional commands.
+- Enhancements to rladmin CLI to support additional commands.
 
 ## Fixed issues
 
--   Cluster stability improvements related to removing nodes and taking
+- Cluster stability improvements related to removing nodes and taking
     nodes offline.
--   rladmin CLI bug fixes.
+- rladmin CLI bug fixes.
 
 ## Known issues
 
--   **Issue**: RLEC-6819 - Uninstall on Red Hat Enterprise Linux does
+- **Issue**: RLEC-6819 - Uninstall on Red Hat Enterprise Linux does
     not stop all services and if you try to install the software again
     on the same machine the new installation might use prior
     installation data.**Workaround**: Before installing the software
     again restart the machine or verify that all services are down.
--   **Issue**: In the replica of process, if the source database is
+- **Issue**: In the replica of process, if the source database is
     resharded while the replica of process is active, the
     synchronization process will fail.**Workaround**: You need to
     manually stop and restart the synchronization process after
     resharding of the source database is done.
--   **Issue**: In the replica of process, if there is very high traffic
+- **Issue**: In the replica of process, if there is very high traffic
     on the database the replica of process might be restarted frequently
     as result of the "slave buffer" being exceeded. In this case you see
     the status of the replica of process as "Syncing"
@@ -71,7 +71,7 @@ update this file.
     "slave buffer" through rladmin and set the buffer size to a new
     size. In order to find the appropriate buffer size please contact
     support at: <support@redislabs.com>.
--   **Issue**: In a cluster that is configured to support rack-zone
+- **Issue**: In a cluster that is configured to support rack-zone
     awareness, if the user forces migration of a master or slave shard,
     through rladmin, to a node on the same rack-zone as its
     corresponding master or slave shard, and later runs the rebalance
@@ -80,7 +80,7 @@ update this file.
     described above, you need to manually migrate the shard, through
     rladmin, to a node on a valid rack-zone in order to ensure rack-zone
     awareness compliance.
--   **Issue**: In case you deploy a cluster and use the DNS option for
+- **Issue**: In case you deploy a cluster and use the DNS option for
     the cluster name (see details in [How to set the Cluster Name
     (FQDN)]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
     do not configure the DNS entries for the cluster nodes, and try to
@@ -94,7 +94,7 @@ update this file.
     the DNS accordingly, or recreate the cluster and use the mDNS option
     for the cluster name as described in [How to set the Cluster Name
     (FQDN)]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
--   **Issue**: When taking a node offline or removing a node, if the
+- **Issue**: When taking a node offline or removing a node, if the
     node being taken offline or removed is currently serving as the web
     server for the web browser being used to view the management UI,
     then the management UI appears down while the node is

@@ -59,10 +59,10 @@ Meet your security goals without compromising performance using Redis
 Enterprise Cloud's fully encrypted SSL connections, and apply
 multi-level authentication mechanisms such as:
 
--   IP whitelist
--   Security groups (on AWS)
--   Client-based SSL authentication
--   Redis password
+- IP whitelist
+- Security groups (on AWS)
+- Client-based SSL authentication
+- Redis password
 
 ### Fully Automated Service
 

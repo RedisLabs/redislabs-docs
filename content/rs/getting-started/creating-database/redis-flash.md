@@ -8,12 +8,12 @@ The steps to set up a Redis Enterprise Software cluster using [Redis on
 Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 with a single node are simple and are as follows:
 
--   Step 1: Install Redis Enterprise Software or launch with Docker
+- Step 1: Install Redis Enterprise Software or launch with Docker
     container
--   Step 2: Setup a Redis Enterprise Software cluster with Redis on
+- Step 2: Setup a Redis Enterprise Software cluster with Redis on
     Flash
--   Step 3: Create a new Redis on Flash database
--   Step 4: Connect to your new database
+- Step 3: Create a new Redis on Flash database
+- Step 4: Connect to your new database
 
 If you are looking for more detailed installation instructions you can
 visit the [installing and upgrading
@@ -96,8 +96,8 @@ With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
 connectivity to your database:
 
--   Connecting with redis-cli, the built-in command-line tool
--   Connecting with a _Hello World_ application using Python
+- Connecting with redis-cli, the built-in command-line tool
+- Connecting with a _Hello World_ application using Python
 
 ### Connecting Using redis-cli
 

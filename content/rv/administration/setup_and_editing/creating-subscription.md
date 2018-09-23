@@ -14,9 +14,9 @@ console.
 
 Pre-requisites
 
--   AWS Account - RV is deployed into your AWS environment under a
+- AWS Account - RV is deployed into your AWS environment under a
     special account you create specifically for it.
--   Cloud Account - RV relies on a user in AWS' Identity and Account
+- Cloud Account - RV relies on a user in AWS' Identity and Account
     Management (IAM) with specific privileges in order to create,
     maintain, and manage your RV cluster and databases. See "[Creating
     an AWS user for Redis Enterprise
@@ -77,10 +77,10 @@ For a new subscription, you will need to provide the following:
         Deployment CIDR and the VPC ID in which the subscription should
         be deployed.
 1. Advanced Options
-    1.  You can select the exact Availability Zone(s) in which your
+    1. You can select the exact Availability Zone(s) in which your
         subscription will be deployed. Select one for single AZ or three
         for multi-AZ.
-    2.  You can enable data at rest encryption. This will attach
+    1. You can enable data at rest encryption. This will attach
         encrypted EBS volumes to your instances.
 
 Once you have made your selections, click **Continue**" to finalize your

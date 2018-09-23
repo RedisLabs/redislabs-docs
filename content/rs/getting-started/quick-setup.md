@@ -7,10 +7,10 @@ alwaysopen: false
 The steps to set up a Redis Enterprise Software (RS) cluster with a
 single node are super simple and go as follows:
 
--   Step 1: Install Redis Enterprise Software
--   Step 2: Setup a Redis Enterprise Software cluster
--   Step 3: Create a new Redis database
--   Step 4: Connect to your Redis database
+- Step 1: Install Redis Enterprise Software
+- Step 2: Setup a Redis Enterprise Software cluster
+- Step 3: Create a new Redis database
+- Step 4: Connect to your Redis database
 
 "Quick Setup" steps on this page apply to a Linux based system install.
 If you would instead like to use Docker, there are platform-specific
@@ -88,8 +88,8 @@ With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
 connectivity to your database:
 
--   Connecting with redis-cli, the built-in command-line tool
--   Connecting with a _Hello World_ application using Python.
+- Connecting with redis-cli, the built-in command-line tool
+- Connecting with a _Hello World_ application using Python.
 
 ### Connecting Using redis-cli
 

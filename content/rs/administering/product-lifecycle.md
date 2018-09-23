@@ -15,14 +15,14 @@ Policy", Section #9.
 Redis Labs uses a four-place numbering scheme to designate released
 versions of its products. The format is "Major1.Major2.Minor-Build"
 
--   Major sections of the version number represent fundamental changes
+- Major sections of the version number represent fundamental changes
     and additions in capabilities to Redis Enterprise Software. Major1
     or Major2 part of the version number is incremented based on the
     size and scale of the changes in each release.
--   Minor section of the version number represents quality improvements
+- Minor section of the version number represents quality improvements
     and fixes to existing capabilities. We increment the minor number
     when many quality improvements are added to the release.
--   Build number is incremented with any changes to the product. Build
+- Build number is incremented with any changes to the product. Build
     number is incremented with each build when any change is made to the
     binaries.
 

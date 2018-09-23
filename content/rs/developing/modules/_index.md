@@ -12,17 +12,17 @@ RHEL/CentOS 6.x
 There are three modules Redis Labs has developed, certified, and
 packaged for use with Redis Enterprise Software (RS) clusters. They are:
 
--   RediSearch Enterprise
+- RediSearch Enterprise
     -   [Quick
         Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     -   [Developing with RediSearch
         Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
--   ReJSON
+- ReJSON
     -   [Quick
         Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}})
     -   [Developing
         with ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
--   ReBloom
+- ReBloom
     -   [Quick
         Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
     -   [Developing with

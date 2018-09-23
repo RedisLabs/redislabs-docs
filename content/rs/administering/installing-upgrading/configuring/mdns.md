@@ -25,13 +25,13 @@ networking infrastructure configured to allow multicasting between them.
 Second, install the prerequisite packages, which are different depending
 on the operating system you are using:
 
--   In Ubuntu:
+- In Ubuntu:
 
     ``` src
     apt-get install libnss-mdns
     ```
 
--   In RHEL / CentOS 6.x:
+- In RHEL / CentOS 6.x:
 
     ``` src
     $ rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
@@ -39,7 +39,7 @@ on the operating system you are using:
     $ service avahi-daemon start
     ```
 
--   In RHEL / CentOS 7:
+- In RHEL / CentOS 7:
 
     ``` src
     $ rpm -ivh http://download.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
@@ -53,5 +53,5 @@ IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv
 ensure that you also make the following update to the
 "/etc/nsswitch.conf" file:
 
--   Update the hosts line to: hosts: files mdns4\_minimal
+- Update the hosts line to: hosts: files mdns4\_minimal
     \[NOTFOUND=return\] mdns

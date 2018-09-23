@@ -16,7 +16,7 @@ database and find an entry in the log describing this issue.
 To resolve this issue, follow the instructions below to reconfigure the
 buffer on the source database to a bigger value:
 
--   If the source database is a Redis that is part of RS, run the
+- If the source database is a Redis that is part of RS, run the
     following command in
     [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}}) to
     increase the slave buffer size of the **source database**:\
@@ -24,7 +24,7 @@ buffer on the source database to a bigger value:
 
 <!-- -->
 
--   If the source database is a Redis that is not part of RS, run the
+- If the source database is a Redis that is not part of RS, run the
     [config set](http://redis.io/commands/config-set) command through
     redis-CLI to increase the client output buffer size of the **source
     database**:\

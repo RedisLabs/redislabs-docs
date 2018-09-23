@@ -84,8 +84,8 @@ Once done with all databases, click on **Continue**.
 Behind the scenes, RV is performing a few operations based on your
 inputs:
 
--   Calculating the necessary resources
--   Crafting a plan for an optimized cloud infrastructure based on those
+- Calculating the necessary resources
+- Crafting a plan for an optimized cloud infrastructure based on those
     calculations
 
 **Note**: Plan creation may take a little time base on a few factors,

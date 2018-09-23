@@ -151,14 +151,14 @@ Rebloom uses a modified version of
 [libloom](https://github.com/jvirkki/libbloom), with some additional
 enhancements:
 
--   I discovered that when testing for presence, libbloom would continue
+- I discovered that when testing for presence, libbloom would continue
     checking for each bit even when an unset bit was discovered. Making
     it so that it returned as soon as it found the first unset bit
     increased performance.\
     I decoupled the hash calculation API from the lookup API. This meant
     I only needed to compute the hash, and then feed it into the filter
     code.
--   Here's a summary of performance benchmarks. The table below shows a
+- Here's a summary of performance benchmarks. The table below shows a
     benchmark of setting a single Bloom filter with an initial capacity
     of 10,000, an error rate of 0.01, and a scaling factor of 2. Tests
     were done using a single client thread, and with pipelining to avoid
