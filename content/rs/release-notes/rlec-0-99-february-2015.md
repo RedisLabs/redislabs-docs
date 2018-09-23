@@ -13,11 +13,11 @@ before running through the upgrade process.
 
 If you are upgrading from version 0.99.5-11:
 
-1.  You must restart the services after the upgrade by running the
+1. You must restart the services after the upgrade by running the
     following command with user root (sudo su). From the operating
     system's CLI, run the following command:\
     cnm\_ctl restart
-2.  After the upgrade, rladmin status command will report that the
+1. After the upgrade, rladmin status command will report that the
     databases are from an old version. It is recommended that you
     upgrade the databases as soon as possible, as described in the
     [upgrade

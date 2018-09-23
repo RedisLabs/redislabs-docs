@@ -9,11 +9,11 @@ all with no downtime.
 
 To do this:
 
-1.  Go to "Subscriptions" in the menu
-2.  Click on the subscription name you wish to edit
-3.  Click on "Change Subscription" button at the bottom of the form
-4.  Click on which plan you would like to upgrade or downgrade to
-5.  Click the "Update" button
+1. Go to "Subscriptions" in the menu
+1. Click on the subscription name you wish to edit
+1. Click on "Change Subscription" button at the bottom of the form
+1. Click on which plan you would like to upgrade or downgrade to
+1. Click the "Update" button
 
 Be aware that you cannot downgrade your plan if the databases in your
 subscription are larger in total size than the next lowest plan. For

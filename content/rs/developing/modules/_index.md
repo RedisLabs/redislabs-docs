@@ -51,12 +51,12 @@ use them in the cluster.
 Deploying a custom module and creating a database utilizing that modules
 require six steps:
 
-1.  Get the module from git
-2.  Compile the module
-3.  Install ramp-packer utility
-4.  Wrap the custom module using ramp utility
-5.  Deploy the custom module to the cluster using the web UI
-6.  Create a database that utilizes the module
+1. Get the module from git
+1. Compile the module
+1. Install ramp-packer utility
+1. Wrap the custom module using ramp utility
+1. Deploy the custom module to the cluster using the web UI
+1. Create a database that utilizes the module
 
 ### Get the Module from Github
 

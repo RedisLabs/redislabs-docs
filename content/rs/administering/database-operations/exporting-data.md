@@ -12,15 +12,15 @@ release. You cannot back up to the local machine.
 
 To perform a database export:
 
-1.  Click the relevant database row in the **Databases** page. The
+1. Click the relevant database row in the **Databases** page. The
     selected database page appears.
-2.  Select the **Configuration** tab.
-3.  Click **Export** button at the bottom of the page.
-4.  In the popup that appears, choose the location type and populate the
+1. Select the **Configuration** tab.
+1. Click **Export** button at the bottom of the page.
+1. In the popup that appears, choose the location type and populate the
     relevant fields
-5.  You can also choose whether or not you would like to receive email
+1. You can also choose whether or not you would like to receive email
     notifications with regard to the export process
-6.  Click **Export**.
+1. Click **Export**.
 
 ### FTP location
 

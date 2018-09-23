@@ -9,15 +9,15 @@ database at any time.
 
 To edit the configuration of a database:
 
-1.  Click the relevant database row on the Databases page. The selected
+1. Click the relevant database row on the Databases page. The selected
     database page appears.
-2.  Select the Configuration tab.
-3.  Click Edit at the bottom of the page.
-4.  The database settings appear. You can edit any of the configurable
+1. Select the Configuration tab.
+1. Click Edit at the bottom of the page.
+1. The database settings appear. You can edit any of the configurable
     parameters. For explanation, refer to
     [Creating a new
     database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
-5.  Click Update.
+1. Click Update.
 
  
 
@@ -76,11 +76,11 @@ rejected.
 When creating CRDBs, you can specify SSL in two
 ways:
 
-1.  Require SSL for All Communications - This configures the CRDB to
+1. Require SSL for All Communications - This configures the CRDB to
     support SSL for both data access operations performed on the
     database as well as inter-cluster CRDB
     communications.
-2.  Require SSL for CRDB Communications Only - This configures the
+1. Require SSL for CRDB Communications Only - This configures the
     CRDB to support SSL for only inter-cluster CRDB
     communications.
 

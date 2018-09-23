@@ -16,7 +16,7 @@ behave the same and maintain additional metadata to handle concurrent
 conflicting writes. Conflict resolution is done in two
 phases:
 
-1.  First, the database resolves conflict at the set level using "OR
+1. First, the database resolves conflict at the set level using "OR
     Set" (Observed-Remove Set). With OR-Set behavior, writes across
     multiple CRDB instances are typically unioned except in cases of
     conflicts. Conflicting writes can happen when a CRDB instance
@@ -24,7 +24,7 @@ phases:
     In this case, an observed Remove rule is followed, and only
     instances it has already seen are removed. In all other cases, the
     Add / Update element wins.
-2.  Second, the database resolves conflict at the score level. In this
+1. Second, the database resolves conflict at the score level. In this
     case, the score is treated as a counter and applies the same
     conflict resolution as regular counters.
 

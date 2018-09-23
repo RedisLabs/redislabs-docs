@@ -19,25 +19,25 @@ You must be running RS version 4.5.0-51 or higher, and with the sock
 files location is still under the default location of /tmp. (This is
 where they go when install.sh is executed without -s flag.)
 
-1.  Execute this command **on all nodes**:
+1. Execute this command **on all nodes**:
 
     ``` src
     $ sudo rlutil create_socket_path socket_path=/var/run/redislabs
     ```
 
-2.  Execute this command **on the master node**:
+1. Execute this command **on the master node**:
 
     ``` src
     $ sudo rlutil set_socket_path socket_path=/var/run/redislabs
     ```
 
-3.  Execute this command **on all nodes in a serial manner**:
+1. Execute this command **on all nodes in a serial manner**:
 
     ``` src
     $ sudo service rlec_supervisor restart
     ```
 
-4.  There are two ways to do the next step depending on your uptime
+1. There are two ways to do the next step depending on your uptime
     requirements.
     1.  Restart each database in the cluster, but you will incur
         downtime. This is by far the easiest option to execute.

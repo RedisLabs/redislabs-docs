@@ -10,9 +10,9 @@ purchased with your subscription.
 
 There are two types of Redis databases that can be created in RS.
 
-1.  Traditional Redis databases that are sharded and distributed across
+1. Traditional Redis databases that are sharded and distributed across
     a single RS cluster. The detailed instructions are covered below.
-2.  [Conflict-Free Replicated Database
+1. [Conflict-Free Replicated Database
     (CRDB)]({{< relref "/rs/administering/database-operations/create-crdb.md" >}})
     which is used to create a Geo-Distributed Active-Active Redis
     database.
@@ -21,14 +21,14 @@ There are two types of Redis databases that can be created in RS.
 
 To create a new database in the UI:
 
-1.  On the **Databases** page, click the + (plus) sign below the table.\
+1. On the **Databases** page, click the + (plus) sign below the table.\
     The buttons of the various database types that can be created will
     appear.
 
     **Note**: If no databases exist, the new database buttons are
     displayed upon entering the page.
 
-2.  Select the type of database to create: a **Redis** database or a
+1. Select the type of database to create: a **Redis** database or a
     **Memcached** database.
 
     If the nodes in your cluster are Flash-enabled, you can opt to
@@ -42,7 +42,7 @@ To create a new database in the UI:
     (CRDB)]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}).
     
     ![](/images/rs/new_databases.png?width=584&height=599)
-4.  Enter a **name** for the database.\
+1. Enter a **name** for the database.\
     The database name must comply with the following rules:
 
     -   Length: up to 63 characters.
@@ -52,7 +52,7 @@ To create a new database in the UI:
     **Note**: The database name is case-insensitive, i.e. uppercase and
     lowercase letter are treated exactly the same.
 
-5.  Set the **memory limit** of the database. The application displays
+1. Set the **memory limit** of the database. The application displays
     the total amount of memory available in the cluster. For relevant
     considerations, refer to [Database memory
     limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
@@ -66,7 +66,7 @@ To create a new database in the UI:
     **Note:** The name and the memory limit are the only mandatory
     parameters.
 
-6.  Specify whether to enable **replication**. For a full explanation,
+1. Specify whether to enable **replication**. For a full explanation,
     refer to [Database
     replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}).
 
@@ -80,14 +80,14 @@ To create a new database in the UI:
         details, refer to [Rack-zone
         awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
 
-7.  Specify whether to enable **data persistence**, and if so, what type
+1. Specify whether to enable **data persistence**, and if so, what type
     to employ. For a full explanation, refer to [Database
     persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}).
-8.  Next, you can specify **security** settings:
+1. Next, you can specify **security** settings:
     -   If you are creating a Redis database, enter a Redis password.
     -   If you are creating a Memcached database, enter a username and
         password for SASL Authentication.
-9.  If you would like to define the port number that will be part of the
+1. If you would like to define the port number that will be part of the
     endpoint used to connect to the database, you can insert it in the
     **endpoint port number** field. If you do not define it the system
     will allocate a randomly selected free port.
@@ -97,35 +97,35 @@ To create a new database in the UI:
     For additional details, refer to [Machine ports
     configuration]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
-10. Select whether to enable **database clustering**. If you enable
+1. Select whether to enable **database clustering**. If you enable
     clustering, select the number of database shards. For a Redis
     database, select also the hashing policy. For additional details,
     refer to [Database
     clustering]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
-11. Set the **data eviction policy** (for additional details, refer to
+1. Set the **data eviction policy** (for additional details, refer to
     [Database eviction
     policy]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}).
     This policy is applied when the total size of the database reaches
     its memory limit.
-12. If you would like the database to be a **replica of** one or more
+1. If you would like the database to be a **replica of** one or more
     databases, you can define the source databases with which this
     database will synchronize on an ongoing basis. For additional
     details, refer to [Replica
     of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}).
-13. If you would like to encrypt the connection to the database endpoint
+1. If you would like to encrypt the connection to the database endpoint
     with SSL encryption, you have to enter the contents of the client
     certificate to the **SSL client authentication** field. For
     additional details, refer to [Securing client connection with
     SSL]({{< relref "/rs/administering/security/client-connections.md" >}}).
-14. Specify whether to perform a **periodic back up** of the database.
+1. Specify whether to perform a **periodic back up** of the database.
     For additional details, refer to [Database
     backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
     If you specify periodic backup, set the interval and specify the
     backup location parameters, as appropriate.
-15. Configure **database alerts**. For additional details, refer to
+1. Configure **database alerts**. For additional details, refer to
     [Database
     alerts]({{< relref "/rs/administering/database-operations/alerting.md" >}}).
-16. Click **Activate**.
+1. Click **Activate**.
 
 Simple Connectivity Test
 ========================

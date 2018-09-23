@@ -197,7 +197,7 @@ following steps:
 
 **ReplicaOf's Source Database:**
 
-1.  Edit and mark **SSL Authentication** for the source Database of the
+1. Edit and mark **SSL Authentication** for the source Database of the
     ReplicaOf, and choose when SSL is required:
     -   **SSL for Replication Only **enforce SSL for the communication
         between the source and the destination of the ReplicaOf
@@ -213,17 +213,17 @@ following steps:
     certificate](/images/rs/Screen-Shot-2018-03-29-at-10.32.01-PM.png?width=1650&height=350)
     Replica-of Encryption - certificate
     
-3.  Save the certificate and **Update** the database changes.
+1. Save the certificate and **Update** the database changes.
 
 **ReplicaOf's Destination Database:**
 
-1.  Edit the 'Replica of' section of the destination Database to point
+1. Edit the 'Replica of' section of the destination Database to point
     the source Database and press the 'Enable SSL Authentication' icon:
     ![Replica-of
     Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png?width=1608&height=178)
     Replica-of Destination
     
-2.  From the *[source cluster]{.underline}*, copy the "Proxy
+1. From the *[source cluster]{.underline}*, copy the "Proxy
     Certificate" (located under **settings**-\> **general**) and paste
     it as the **Source Cluster Certificate** for the destination
     Database:
@@ -231,7 +231,7 @@ following steps:
     Certificate](/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png?width=1596&height=626)
     Replica-of Destination - Certificate
     
-3.  Press the **Continue** button, save the certificate and **Update**
+1. Press the **Continue** button, save the certificate and **Update**
     the database changes.
 
 ## Data compression for Replica Of

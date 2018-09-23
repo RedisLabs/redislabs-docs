@@ -7,11 +7,11 @@ alwaysopen: false
 The steps for creating a simple Redis Enterprise VPC (RV) deployment are
 as follows:
 
-1.  Sign up for a RV account
-2.  Create a dedicated AWS account/User for RV
-3.  Create a new RV subscription
-4.  Create a new database definition
-5.  Connect to your database
+1. Sign up for a RV account
+1. Create a dedicated AWS account/User for RV
+1. Create a new RV subscription
+1. Create a new database definition
+1. Connect to your database
 
 ## Step 1 - Sign up for Redis Enterprise VPC account
 
@@ -36,14 +36,14 @@ If you do have an existing RV subscription, then proceed to Step 4.
 
 For a new subscription, you will need to provide the following:
 
-1.  A subscription name
-2.  The cloud region you want your databases to be created in AWS
-3.  Whether you want to use [Redis on
+1. A subscription name
+1. The cloud region you want your databases to be created in AWS
+1. Whether you want to use [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database
-4.  The Cloud Account to be used. Use the AWS user created above in Step
+1. The Cloud Account to be used. Use the AWS user created above in Step
     #2 for setting up your RV Cloud Account
-5.  Please provide the required Deployment CIDR - this is an IPv4
+1. Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
     that you would like RV to use. For a standard deployment, you can
@@ -62,10 +62,10 @@ represents a group of databases that share the same specification.
 
 To start with a single database, provide the following details:
 
-1.  Database name
-2.  Dataset size - The estimated size of your data. You can specify 1GB
+1. Database name
+1. Dataset size - The estimated size of your data. You can specify 1GB
     for a small database.
-3.  Throughput - The estimated total throughput you expect from your
+1. Throughput - The estimated total throughput you expect from your
     database. You can specify 10,000 ops/sec to start with a small
     deployment.
 
@@ -174,13 +174,13 @@ and you are done.
 
 ## More Information
 
-1.  [Data Persistence with Redis Enterprise
+1. [Data Persistence with Redis Enterprise
     VPC]({{< relref "/rv/concepts/data-persistence.md" >}})
-2.  [Securing Your Redis Enterprise VPC
+1. [Securing Your Redis Enterprise VPC
     Database]({{< relref "/rv/administration/configuration/securing-your-database.md" >}})
-3.  [Creating
+1. [Creating
     Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
-4.  [Redis Enterprise Cloud Database
+1. [Redis Enterprise Cloud Database
     Backups]({{< relref "/rv/administration/configuration/backups.md" >}})
-5.  [Monitoring Redis Enterprise VPC
+1. [Monitoring Redis Enterprise VPC
     Performance]({{< relref "/rv/administration/configuration/monitoring-performance.md" >}}).

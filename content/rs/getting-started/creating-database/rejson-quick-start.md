@@ -12,14 +12,14 @@ For this quick start, you will need the following:
 
 ### Create a new database that uses the Module
 
-1.  Navigate to **databases** tab
-2.  Click on the **+** sign, if necessary, then **create database**
-3.  On the create database screen, check the box for Redis Modules and
+1. Navigate to **databases** tab
+1. Click on the **+** sign, if necessary, then **create database**
+1. On the create database screen, check the box for Redis Modules and
     select the module you want to use for this database.\
 
     ![](/images/rs/create_database-1.png?width=794&height=554)
-4.  Click **Show advanced options** and put **12543** for the port.
-5.  Click the **Activate** button
+1. Click **Show advanced options** and put **12543** for the port.
+1. Click the **Activate** button
 
 ## Quick start with redis-cli
 

@@ -41,19 +41,19 @@ throughput and latency.
 
 #### Background
 
-1.  The proxy is responsible for terminating the SSL/TLS connection
-2.  Server certificate and key are located on
+1. The proxy is responsible for terminating the SSL/TLS connection
+1. Server certificate and key are located on
     /etc/opt/redislabs:proxy\_cert.pem - server certificate
     thatproxy\_key.pem - server certificate key\*any update on these
     require a proxy restart
-3.  Enabling of SSL/TLS is done via "ssl authentication" field in the
+1. Enabling of SSL/TLS is done via "ssl authentication" field in the
     UI. You are required to add a client-side certificate as a SSL/TLS
     connection is done via client certificate authentication (not just
     server side authentication).
 
 #### Installing CA signed certificates high-level steps
 
-1.  Replace the RS server certificates on all nodes and key with the CA
+1. Replace the RS server certificates on all nodes and key with the CA
     signed certificate and restart proxy
 
     Note: A certificate for the databases' endpoint should be assigned
@@ -61,7 +61,7 @@ throughput and latency.
     with the name "redislabs.com" the certificate should be for
     "redis-\*.redislabs.com".
 
-2.  Add the SSL/TLS client certificates in the UI including CA
+1. Add the SSL/TLS client certificates in the UI including CA
     certificates and any intermediate certificates by chaining the
     certificate into one file (you can use a cat command to chain the
     certs).
@@ -70,7 +70,7 @@ throughput and latency.
     version 4.4 and above. For a lower version, it's possible to insert
     it via API but the UI will not have the option.
 
-3.  On the client side make sure to import and trust the CA and
+1. On the client side make sure to import and trust the CA and
     intermediate certificates (you can chain the CA cert with
     intermediate as one file to use and import)
 
@@ -110,9 +110,9 @@ secure tunnel between a client machine and the RS nodes when the client
 is running on Ubuntu, using the default RS nodes' self-signed
 certificates, and a self-signed certificate on the client machine.
 
-1.  Install stunnel version 5 or higher on the client machine. Older
+1. Install stunnel version 5 or higher on the client machine. Older
     versions of stunnel do not support the TLS protocol.
-2.  Create a self-signed certificate on the client machine:
+1. Create a self-signed certificate on the client machine:
 
     1.  Generate a private key by running the following commands:sudo su
         --\
@@ -125,18 +125,18 @@ certificates, and a self-signed certificate on the client machine.
     When prompted, enter the appropriate configuration details for the
     certificate.
 
-3.  Copy the RS nodes certificates from all nodes to the client machine.
+1. Copy the RS nodes certificates from all nodes to the client machine.
     The certificates are saved in a file named proxy\_cert.pem, which is
     stored in /etc/opt/redislabs in each node. For additional details,
     refer to [Updating SSL/TLS
     certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-4.  Rename the certificate files fetched from the RS nodes as
+1. Rename the certificate files fetched from the RS nodes as
     certsvr.pem. For example: certsvr1.pem, certsvr2.pem.
-5.  Create a single file for all of the server certificates on the
+1. Create a single file for all of the server certificates on the
     client machine, by running the following command from the OS CLI.
     For example:cat /etc/stunnel/certsvr1.pem
     /etc/stunnel/certsvr2.pem \> /etc/stunnel/servercerts.pem
-6.  Configure stunnel for the connection to RS by using the steps below:
+1. Configure stunnel for the connection to RS by using the steps below:
     1.  Create a redislabs.conf file in /etc/stunnel folder.
     2.  Ensure that the certificates that have been generated exist in
         the following folder: /etc/stunnel.
@@ -158,11 +158,11 @@ certificates, and a self-signed certificate on the client machine.
         secure tunnel to the database endpoint configured in the connect
         parameter.
 
-7.  Copy the contents of the client certificate from cert.pem and enter
+1. Copy the contents of the client certificate from cert.pem and enter
     them in the **SSL Client Authentication** field, in the RS UI, of
     the database you would like to secure. When done, be sure to save
     the change.
-8.  Start the stunnel service by running the following command:service
+1. Start the stunnel service by running the following command:service
     stunnel restart
 
     **Note**: Any change made to the stunnel configuration requires
@@ -172,7 +172,7 @@ certificates, and a self-signed certificate on the client machine.
     properly. The log file is created under the root folder within the
     configuration mentioned above.
 
-9.  Test the connection to the Redis database from the client machine.
+1. Test the connection to the Redis database from the client machine.
     You can use redis-cli to run commands on the client machine, and the
     commands will be redirected from the local machine's port 6379 to
     the RS database endpoint. Note that the connection to the Redis

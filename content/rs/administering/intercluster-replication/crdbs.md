@@ -51,18 +51,18 @@ Before configuring a CRDB, you will need:
 
 ### CRDB Current Limitations
 
-1.  RS is limited to five Participating Clusters or CRDB Instances per
+1. RS is limited to five Participating Clusters or CRDB Instances per
     CRDB.
-2.  An existing database cannot be configured to be a CRDB and visa
+1. An existing database cannot be configured to be a CRDB and visa
     versa. You must create a new CRDB and migrate your existing data.
-3.  CRDBs do not currently interoperate with other modules (e.g. ReJSON,
+1. CRDBs do not currently interoperate with other modules (e.g. ReJSON,
     RediSearch, etc.). You must use only the data types supported by
     CRDBs.
-4.  Access to CRDBs does not work with IP based connection management
+1. Access to CRDBs does not work with IP based connection management
     via the Discovery Service, it requires the setup and use of FQDNs or
     mDNS(development only).
-5.  A CRDB cannot utilize Redis on Flash.
-6.  While similar to
+1. A CRDB cannot utilize Redis on Flash.
+1. While similar to
     [ReplicaOf]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}),
     CRDBs are not compatible with that feature. ReplicaOf is a one-way
     replication, while CRDB utilize multi-master replication.

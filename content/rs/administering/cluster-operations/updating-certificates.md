@@ -34,7 +34,7 @@ that you add to the cluster in the future.
 
 Instructions:
 
-1.  1.  On the cluster machine, after RS has been installed, navigate to
+1. 1.  On the cluster machine, after RS has been installed, navigate to
         the **/etc/opt/redislabs** folder.
     2.  Replace the following certificate files with your own files and
         rename them to the same exact names as the original files:

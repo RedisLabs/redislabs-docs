@@ -7,7 +7,7 @@ alwaysopen: false
 Before you can install a module, it must be packaged to be used in Redis
 Enterprise Software (RS). There are two types
 
-1.  Redis Labs pre-packaged modules - To download these modules, go to
+1. Redis Labs pre-packaged modules - To download these modules, go to
     the [Redis Enterprise downloads
     page](/products/redis-pack/downloads/). For more specific
     information on each module:
@@ -15,7 +15,7 @@ Enterprise Software (RS). There are two types
     b.  [RediSearch
         Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
     c.  [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
-2.  Custom packaged modules - For instructions on packing up any module
+1. Custom packaged modules - For instructions on packing up any module
     from redismodules.com, see [Developing with
     Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
@@ -24,13 +24,13 @@ the next step of adding the module to Redis Enterprise Software.
 
 ## Add Module to the Cluster
 
-1.  Log into the Redis Enterprise Software web UI
-2.  Navigate to the **settings** -\> **redis^e^ modules**
-3.  Click on **Add Module** button and navigate to where you downloaded
+1. Log into the Redis Enterprise Software web UI
+1. Navigate to the **settings** -\> **redis^e^ modules**
+1. Click on **Add Module** button and navigate to where you downloaded
     the module package\
 
     ![](/images/rs/add_module.png?width=800&height=318)
-4.  Click on the **Upload** button and notice the name and version\
+1. Click on the **Upload** button and notice the name and version\
 
     ![](/images/rs/upload_module.png?width=800&height=321)
 
@@ -45,11 +45,11 @@ to the newest versions.
 
  
 
-1.  Navigate to **databases** tab
-2.  Click on the **+** sign, if necessary, then **create database**
-3.  On the create database screen, check the box for Redis Modules and
+1. Navigate to **databases** tab
+1. Click on the **+** sign, if necessary, then **create database**
+1. On the create database screen, check the box for Redis Modules and
     select the module you want to use for this database.\
     
     ![](/images/rs/create_database-1.png?width=794&height=554)
-4.  Click **Show advanced options** and put **12544** for the port.
-5.  Click the **activate** button
+1. Click **Show advanced options** and put **12544** for the port.
+1. Click the **activate** button

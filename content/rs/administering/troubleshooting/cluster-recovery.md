@@ -12,11 +12,11 @@ exact same configuration, databases, and data as the original cluster.
 At a high-level, the cluster recovery process consists of the following
 steps:
 
-1.  Recovering the cluster configuration into the first node in the new
+1. Recovering the cluster configuration into the first node in the new
     cluster.
-2.  Recovering the rest of the nodes by joining nodes to the new cluster
+1. Recovering the rest of the nodes by joining nodes to the new cluster
     that replace corresponding nodes in the old cluster.
-3.  Recovering the databases, and recovering their data if data
+1. Recovering the databases, and recovering their data if data
     persistence was configured (for additional details, refer to
     [Database
     persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}).
@@ -72,21 +72,21 @@ yet.
 
 The command has the following parameters:
 
-1.  filename - mandatory. The path of the old cluster configuration
+1. filename - mandatory. The path of the old cluster configuration
     file. The file name is ccs-redis.rdb, and it is located in the /ccs
     directory of the persistent storage drive of the old cluster. This
     file exists on the persistent storage drive of all nodes and
     contains the same exact data, so it does not matter which old node's
     persistence storage you choose to use the file from.
-2.  persistent\_path - optional. The location of the persistent storage
+1. persistent\_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-3.  ephemeral\_path - optional. The location of the ephemeral storage
+1. ephemeral\_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-4.  rack\_id - optional. If rack-zone awareness was enabled in the
+1. rack\_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
     awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
     you can use this parameter to override the rack ID value that was
@@ -108,27 +108,27 @@ node to the recovered cluster, and specify which of the nodes in the old
 cluster this node is going to replace. The command has the following
 parameters:
 
-1.  name - mandatory. The name of the cluster this node is joining (for
+1. name - mandatory. The name of the cluster this node is joining (for
     additional details, refer to [How to set the cluster
     name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
     (FQDN)). Alternatively, the nodes parameter can be used.
-2.  nodes - mandatory. The IP address of a node in the cluster this
+1. nodes - mandatory. The IP address of a node in the cluster this
     node is joining. Alternatively, the name parameter can be used.
-3.  username - mandatory. The email address of the cluster
+1. username - mandatory. The email address of the cluster
     administrator that was set when the cluster was created.
-4.  password - mandatory. The password of the cluster administrator
+1. password - mandatory. The password of the cluster administrator
     that was set when the cluster was created.
-5.  replace\_node - mandatory. The ID of the node in the old cluster
+1. replace\_node - mandatory. The ID of the node in the old cluster
     which this node is going to replace.
-6.  persistent\_path - optional. The location of the persistent storage
+1. persistent\_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-7.  ephemeral\_path - optional. The location of the ephemeral storage
+1. ephemeral\_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-8.  rack\_id - optional. If rack-zone awareness was enabled in the
+1. rack\_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
     awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
     use this parameter to set the rack ID to be the same as the rack ID

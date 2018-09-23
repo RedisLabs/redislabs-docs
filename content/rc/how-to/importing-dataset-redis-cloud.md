@@ -26,11 +26,11 @@ To import a dataset from any publicly available Redis server, simply
 enter the following information in the Import Dataset dialog of your
 Redis^e^ Cloud instance and click the "Import" button when done:
 
-1.  Enter the hostname or the public IP address of the source Redis
+1. Enter the hostname or the public IP address of the source Redis
     server in the **Redis Hostname/IP Address** box.
-2.  Enter the port of the source Redis server in the Port field, if it
+1. Enter the port of the source Redis server in the Port field, if it
     is different from the default value of *6379*.
-3.  If the source Redis server is set with a password, enter it in the
+1. If the source Redis server is set with a password, enter it in the
     **Password** input control field.
 
 ## Import a Dataset from a RDB File
@@ -66,15 +66,15 @@ To import an RDB file that's stored in an S3 bucket, first make sure the
 file is shared with Redis Cloud. To do so, access your AWS Management
 Console and follow these steps:
 
-1.  Select the S3 service under Storage & Content Delivery to navigate
+1. Select the S3 service under Storage & Content Delivery to navigate
     to the S3 Management Console.
-2.  Open the bucket where the RDB file is stored by clicking it.
-3.  Navigate to the file's permissions:
+1. Open the bucket where the RDB file is stored by clicking it.
+1. Navigate to the file's permissions:
     a.  Select the RDB file.
     b.  Right-click the file and select Properties from the context
         menu.
     c.  Click the Permissions tab in the Properties pane.
-4.  Add access permissions to our service:
+1. Add access permissions to our service:
     a.  Click the Add more permissions button.
     b.  In the newly-added row:
         1.  Enter the value service\@garantiadata.com in the Grantee

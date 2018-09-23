@@ -82,8 +82,8 @@ Any member of the account team can receive alert emails.
 
 To change the alert email recipients please do the following:
 
-1.  Click the **'Team'** button in the top right of the main UI page.
-2.  Click **'Edit'**.
-3.  Check the **'Receive Email Alerts'** checkbox of the users who
+1. Click the **'Team'** button in the top right of the main UI page.
+1. Click **'Edit'**.
+1. Check the **'Receive Email Alerts'** checkbox of the users who
     should receive alerts.
-4.  Save your changes by clicking **'Save'**.
+1. Save your changes by clicking **'Save'**.

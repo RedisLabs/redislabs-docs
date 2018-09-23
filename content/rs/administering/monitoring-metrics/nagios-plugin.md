@@ -39,10 +39,10 @@ If Keyring capabilities are needed to store the password, python keyring
 package should be installed and used by following the below steps from
 the operating system CLI on Nagios machine:
 
-1.  pip install keyring ­to install the package (See
+1. pip install keyring ­to install the package (See
     https://pip.pypa.io/en/stable/installing/ on how to install python
     pip if needed).
-2.  keyring set RLEC­-Nagios ­\<RLEC user email\> to set the password.
+1. keyring set RLEC­-Nagios ­\<RLEC user email\> to set the password.
     User email should be identical to the email used in Nagios
     configuration and the password should be set using the same user
     that run the Nagios server.
@@ -100,14 +100,14 @@ Copy the configuration files along with their folders to
 "/usr/local/nagios/etc" and make the required updates, as detailed
 below.
 
-1.  Under the "/etc" folder:
+1. Under the "/etc" folder:
     A.  "rlec\_resource.cfg " ­ holds global variables definitions for
         the user and password to use to connect to RS. You should update
         the variables to the relevant user and password for your
         deployment.
     B.  "rlec\_local " folder
     C.  "rlec\_obj" folder
-2.  Under the "/rlec\_local" folder:
+1. Under the "/rlec\_local" folder:
     A.  "cluster.cfg " ­ holds configuration details at the cluster
         level. If you would like to monitor more than one cluster then
         you need to duplicate the two existing entries in the file for

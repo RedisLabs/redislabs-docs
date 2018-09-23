@@ -35,13 +35,13 @@ latency.
 
 ## How to MAP Zones
 
-1.  [Log in](https://app.redislabs.com/#/login) to your RC account
-2.  Navigate to **Settings** page from the menu and then the **Account**
+1. [Log in](https://app.redislabs.com/#/login) to your RC account
+1. Navigate to **Settings** page from the menu and then the **Account**
     tab
-3.  Press the **Map your AWS Zones** button
-4.  Enter the Access Key ID and Secret Access Key for an [unprivileged
+1. Press the **Map your AWS Zones** button
+1. Enter the Access Key ID and Secret Access Key for an [unprivileged
     AWS user](#unprivileged-user).
-5.  Press on **Map Zones** button.
+1. Press on **Map Zones** button.
 
 Allow the process a few minutes to complete as it maps the availability
 zones. Once complete, you will see this:
@@ -58,12 +58,12 @@ For existing subscriptions in RC, you will now see the Availability Zone
 they are using. If you desire to remove the latency discussed before,
 you must
 
-1.  [Create a new
+1. [Create a new
     subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}) in
     the correct AZ
-2.  [Create a new
+1. [Create a new
     database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}})
-3.  [Migrate your
+1. [Migrate your
     data]({{< relref "/rc/how-to/importing-dataset-redis-cloud.md" >}})
     over to the new database.
 
@@ -78,10 +78,10 @@ RC requires an AWS IAM user to perform the zone mapping as. It is
 recommended to create a new and restricted account for security reasons.
 To do this:
 
-1.  Create a new user in your AWS account **where your application is
+1. Create a new user in your AWS account **where your application is
     hosted**.
-2.  Create access keys for that user.
-3.  Give the user [this IAM
+1. Create access keys for that user.
+1. Give the user [this IAM
     policy](/images/rc/zone-mapping-user-policy.json_.txt).
 
 If you are unfamiliar on how to create a new user in AWS, please see

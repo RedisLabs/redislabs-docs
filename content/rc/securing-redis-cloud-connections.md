@@ -29,13 +29,13 @@ the Web UI and look in the title.
 Using SSL/TLS requires setup of both your Redis Enterprise Cloud
 database and your application, as described below.
 
-1.  Login to your account and navigate to the "**Database**" page in the
+1. Login to your account and navigate to the "**Database**" page in the
     top right menu.
-2.  Select the database you wish to connect to and click the "**Edit**"
+1. Select the database you wish to connect to and click the "**Edit**"
     button.
-3.  Under the "**Access Control & Security" **section, make sure **SSL
+1. Under the "**Access Control & Security" **section, make sure **SSL
     Client Authentication** is selected.
-4.  Set the resource's client certificate using one of the following
+1. Set the resource's client certificate using one of the following
     ways.
     1.  Bring Your Own Key:
         1.  If you have your own X.509-compliant certificate, simply
@@ -55,7 +55,7 @@ database and your application, as described below.
                 key.
             3.  `garantia_ca.pem` - the service's certification
                 authority.
-5.  Click the **Update** button to apply the changes to your resource.
+1. Click the **Update** button to apply the changes to your resource.
 
 **Important**: Once SSL is
 enabled, your database will no longer accept regular, non-SSL
@@ -79,17 +79,17 @@ below) instead of your resource's endpoint.
 
 ### Ubuntu 12.04
 
-1.  Install stunnel:
+1. Install stunnel:
 
     ``` src
     $ apt-get install stunnel
     ```
 
-2.  Copy all certificate files to /etc/stunnel.
+1. Copy all certificate files to /etc/stunnel.
     1.  `garantia_user.crt` - the certificate's public key.
     2.  `garantia_user_private.key` - the certificate's private key.
     3.  `garantia_ca.pem` - the service's certification authority.
-3.  Change the permissions of the private key:
+1. Change the permissions of the private key:
 
     ``` src
     $ chown root:root /etc/stunnel/garantia_user_private.key
@@ -97,13 +97,13 @@ below) instead of your resource's endpoint.
     $ chmod 0600 /etc/stunnel/garantia_user_private.key
     ```
 
-4.  Create a configuration file named /etc/stunnel/redislabs.conf as
+1. Create a configuration file named /etc/stunnel/redislabs.conf as
     shown in the sample below - make sure that you replace host
     and port in the last line with your resource's respective
     attributes.
-5.  Enable the stunnel service by editing /etc/default/stunnel4 and
+1. Enable the stunnel service by editing /etc/default/stunnel4 and
     changing the line that says ENABLED=0 to ENABLED=1.
-6.  Start the stunnel service:
+1. Start the stunnel service:
 
     ``` src
     $ service stunnel4 start
@@ -111,17 +111,17 @@ below) instead of your resource's endpoint.
 
 ### CentOS 6.5
 
-1.  Install stunnel:
+1. Install stunnel:
 
     ``` src
     $ yum install stunnel
     ```
 
-2.  Copy all certificate files to `/etc/stunnel`.
+1. Copy all certificate files to `/etc/stunnel`.
     1.  `garantia_user.crt` - the certificate's public key.
     2.  `garantia_user_private.key` - the certificate's private key.
     3.  `garantia_ca.pem` - the service's certification authority.
-3.  Change the permissions of the private key:
+1. Change the permissions of the private key:
 
     ``` src
     $ chown root:root /etc/stunnel/garantia_user_private.key
@@ -129,10 +129,10 @@ below) instead of your resource's endpoint.
     $ chmod 0600 /etc/stunnel/garantia_user_private.key
     ```
 
-4.  Create a configuration file named /etc/stunnel/stunnel.conf as shown
+1. Create a configuration file named /etc/stunnel/stunnel.conf as shown
     in the sample below - make sure that you replace host and port in
     the last line with your resource's respective attributes.
-5.  Configure stunnel to run as a daemon by creating the following
+1. Configure stunnel to run as a daemon by creating the following
     /etc/init.d/stunnel file:
 
     ``` src

@@ -22,12 +22,12 @@ the **Log **page, and can also be sent by **email**.
 
 **To enable receiving email alerts**:
 
-1.  Select the checkbox at the bottom of the section.
-2.  Add the relevant users on the **Team** page, and ensure that the
+1. Select the checkbox at the bottom of the section.
+1. Add the relevant users on the **Team** page, and ensure that the
     checkbox Email Alerts is selected (for additional details, refer to
     [Account
     Management]({{< relref "/rs/administering/security/account-management.md" >}}).
-3.  Configure the email server settings on the **General** page (for
+1. Configure the email server settings on the **General** page (for
     additional details, refer to [general
     settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}}).
 

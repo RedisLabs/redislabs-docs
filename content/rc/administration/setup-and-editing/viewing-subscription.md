@@ -9,9 +9,9 @@ and then click on the name of the Subscription you wish to view.
 
 There three things you can change about an existing subscription:
 
-1.  The name of the subscription
-2.  The payment method used
-3.  The Redis Enterprise Cloud plan
+1. The name of the subscription
+1. The payment method used
+1. The Redis Enterprise Cloud plan
 
 To change the first two, click on the pencil icon to the right of each.
 To change the plan, click on "Change Subscription" button at the bottom

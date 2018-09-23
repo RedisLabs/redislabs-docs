@@ -38,21 +38,21 @@ the database memory limit and required throughput.
 Operations on multiple keys in a sharded Redis Enterprise VPC cluster
 are supported with the following limitations:
 
-1.  **Multi-key commands:** Redis offers several commands that accept
+1. **Multi-key commands:** Redis offers several commands that accept
     multiple keys as arguments. In a sharded setup, multi-key commands
     can only be used when all affected keys reside in the same slot.
     These commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH, MSETNX,
     RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE, SORT,
     SUNION, ZINTERSTORE, ZUNIONSTORE.
-2.  **Geo commands:** In GEORADIUS/GEOREADIUSBYMEMBER commands, the
+1. **Geo commands:** In GEORADIUS/GEOREADIUSBYMEMBER commands, the
     STORE and STOREDIST options can only be used when all affected keys
     reside in the same slot.
-3.  **Transactions:** All operations within a WATCH/MULTI/EXEC block
+1. **Transactions:** All operations within a WATCH/MULTI/EXEC block
     should be performed on keys that are in the same slot.
-4.  **Lua scripts:** All keys that are used by the script must reside in
+1. **Lua scripts:** All keys that are used by the script must reside in
     the same slot and need to be provided as arguments to the
     EVAL/EVALSHA commands (as per the Redis specification).
-5.  **Renaming keys:** The use of the RENAME/RENAMENX commands is
+1. **Renaming keys:** The use of the RENAME/RENAMENX commands is
     allowed only when both the key's original name and its new name are
     mapped to the same hash slot.
 
@@ -63,11 +63,11 @@ changed. However, sharding policy changes will trigger the deletion
 (i.e. FLUSHDB) of the data before they can be applied. These changes
 are:
 
-1.  Changing the hashing policy from standard to custom or vice versa.
-2.  Changing the order of custom hashing policy rules.
-3.  Adding rules before existing ones in the custom hashing policy.
-4.  Deleting rules from the custom hashing policy.
-5.  Disabling clustering for the database.
+1. Changing the hashing policy from standard to custom or vice versa.
+1. Changing the order of custom hashing policy rules.
+1. Adding rules before existing ones in the custom hashing policy.
+1. Deleting rules from the custom hashing policy.
+1. Disabling clustering for the database.
 
 []{#standard-hashing-policy}
 
@@ -77,13 +77,13 @@ When using the standard hashing policy, a Redis Enterprise VPC cluster
 behaves like the standard, open-source Redis cluster, and hashing is
 performed as follows:
 
-1.  Keys with a hash tag: a key's hash tag is any substring between '{'
+1. Keys with a hash tag: a key's hash tag is any substring between '{'
     and '}' in the key's name. That means that when a key's name
     includes the pattern '{...}', the hash tag is used as input for the
     hashing function. For example, the following key names have the same
     hash tag and would therefore be mapped to the same slot: foo{bar},
     {bar}baz & foo{bar}baz.
-2.  Keys without a hash tag: when a key doesn't contain the '{...}'
+1. Keys without a hash tag: when a key doesn't contain the '{...}'
     pattern, the entire key's name is used for hashing.
 
 You can use the '{...}' pattern to direct related keys to the same hash
@@ -123,15 +123,15 @@ their order to suit your application's requirements.
 
 ### Custom Hashing Policy Notes and Limitations
 
-1.  You can define up to 32 RegEx rules, each up to 256 characters.
-2.  RegEx rules are evaluated by their order.
-3.  The first rule matched is used; strive to place common key name
+1. You can define up to 32 RegEx rules, each up to 256 characters.
+1. RegEx rules are evaluated by their order.
+1. The first rule matched is used; strive to place common key name
     patterns at the beginning of the rule list.
-4.  Key names that do not match any of the RegEx rules will trigger an
+1. Key names that do not match any of the RegEx rules will trigger an
     error.
-5.  The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot as the
+1. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot as the
     hash key will always be empty. When used, this should be the last
     catch-all rule.
-6.  The following flag is enabled in our regular expression parser:
+1. The following flag is enabled in our regular expression parser:
     -   **PCRE\_ANCHORED:** the pattern is constrained to match only at
         the start of the string which is being searched.
