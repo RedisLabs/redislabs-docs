@@ -6,9 +6,9 @@ alwaysopen: false
 ---
 When importing data into a CRDB, there are two options:
 
-1. 1.  Perform a flushall to the database, thus deleting all data. Then
+- Perform a flushall to the database, thus deleting all data. Then
         import the data into the CRDB.
-    1. Import data but merge it into the existing or add new data from
+- Import data but merge it into the existing or add new data from
         the import file.
 
 When using option #2, there are special considerations to be aware of.
