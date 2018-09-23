@@ -100,7 +100,7 @@ how we had to add the cluster we are currently on.
 
 Then click **Activate** to create your database.
 
-![](https://lh6.googleusercontent.com/BpQBxYWXeuTuPCqL0TQKRRJaQlr8jLIMoNnScsD2s0wRzDkTc9kgWwngjQ6PnJff_hF1Ca98aZkJTJzU5Sk5rCJwZmR2egkImQCJyMm9E9WfJDrtlzHUJQFAi05lx395EEOZvi3D)
+![create_database_settings](https://lh6.googleusercontent.com/BpQBxYWXeuTuPCqL0TQKRRJaQlr8jLIMoNnScsD2s0wRzDkTc9kgWwngjQ6PnJff_hF1Ca98aZkJTJzU5Sk5rCJwZmR2egkImQCJyMm9E9WfJDrtlzHUJQFAi05lx395EEOZvi3D)
 
 Once the global CRDB is created, you can now visit each cluster 1 at
 http://localhost:8443 and cluster 2 at http://localhost:8445. See that
