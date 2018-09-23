@@ -77,8 +77,8 @@ configured in the DNS with the appropriate NS entries.
 - You would like to name the Redis Enterprise Software cluster:
     redislabscluster
 - You have two nodes in the cluster:
-    -   node1 with IP 1.1.1.1
-    -   node2 with IP 2.2.2.2
+  - node1 with IP 1.1.1.1
+  - node2 with IP 2.2.2.2
 
 #### Then
 

@@ -13,19 +13,19 @@ There are three modules Redis Labs has developed, certified, and
 packaged for use with Redis Enterprise Software (RS) clusters. They are:
 
 - RediSearch Enterprise
-    -   [Quick
+  - [Quick
         Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
-    -   [Developing with RediSearch
+  - [Developing with RediSearch
         Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 - ReJSON
-    -   [Quick
+  - [Quick
         Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}})
-    -   [Developing
+  - [Developing
         with ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
 - ReBloom
-    -   [Quick
+  - [Quick
         Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
-    -   [Developing with
+  - [Developing with
         ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 
 In 5.0.2 and later, enterprise modules (RediSearch Enterprise, ReJSON,

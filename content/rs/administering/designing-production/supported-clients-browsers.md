@@ -33,28 +33,28 @@ For theRedis Enterprise Software Web Console, the following web browsers
 and versions are supported:
 
 - On Windows 10:
-    -   Edge version 20 and up
-    -   Firefox version 44 and up
-    -   Chrome version 48 and up
-    -   Opera version 35 and up
+  - Edge version 20 and up
+  - Firefox version 44 and up
+  - Chrome version 48 and up
+  - Opera version 35 and up
 
 <!-- -->
 
 - On Windows 8.1:
-    -   Internet Explorer version 11 and up
-    -   Chrome version 48 and up
-    -   Firefox version 44 and up
+  - Internet Explorer version 11 and up
+  - Chrome version 48 and up
+  - Firefox version 44 and up
 
 <!-- -->
 
 - On macOS:
-    -   Firefox version 43 and up
-    -   Chrome version 48 and up
-    -   Opera version 35 and up
+  - Firefox version 43 and up
+  - Chrome version 48 and up
+  - Opera version 35 and up
 
 <!-- -->
 
 - On Linux 14.04:
-    -   Firefox version 44 and up
-    -   Chrome version 49 and up
-    -   Opera 35 and up
+  - Firefox version 44 and up
+  - Chrome version 49 and up
+  - Opera 35 and up

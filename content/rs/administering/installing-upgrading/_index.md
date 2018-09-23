@@ -12,13 +12,13 @@ Topics:
 - [Installing the setup
     package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
 - [Configuring]({{< relref "/rs/administering/installing-upgrading/configuring/_index.md" >}})
-    -   [Linux
+  - [Linux
         Swap]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}})
-    -   [CentOS/RHEL Firewall
+  - [CentOS/RHEL Firewall
         settings]({{< relref "/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
-    -   [DNS
+  - [DNS
         Setup]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
-    -   [Client prerequisites for
+  - [Client prerequisites for
         mDNS]({{< relref "/rs/administering/installing-upgrading/configuring/mdns.md" >}})
 - [Uninstalling]({{< relref "/rs/administering/installing-upgrading/uninstalling.md" >}})
 - [Upgrading]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
