@@ -12,13 +12,13 @@ Note: Only users defined as Owners on the team can delete a database.
 
 ### Steps
 
-1.  Navigate to the "Databases" page from the RC menu
-2.  Click on the database you wish to delete from the list of your
+1. Navigate to the "Databases" page from the RC menu
+1. Click on the database you wish to delete from the list of your
     databases.
-3.  Click on the trash can icon next to "View Database."
-4.  A window will pop up asking if you really want to delete your
+1. Click on the trash can icon next to "View Database."
+1. A window will pop up asking if you really want to delete your
     database. If so, click "Delete."
-5.  You will be taken back to the main Databases page. The database, all
+1. You will be taken back to the main Databases page. The database, all
     of its data, and configurations is now deleted.
 
 Note: It is considered best practice that you [create a

@@ -25,7 +25,7 @@ cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 
 To create a cluster:
 
-1.  In a browser, navigate to https://\<name or IP address of a machine
+1. In a browser, navigate to https://\<name or IP address of a machine
     on which you installed the package\>:8443. For example, if you
     installed RS on a machine with IP address 10.0.1.34, then navigate
     to https://10.0.1.34:8443.
@@ -38,8 +38,8 @@ To create a cluster:
     external IP address, use the external IP address to access the setup
     UI.
 
-2.  Click **Setup**.
-3.  In the Node Configuration page that appears:
+1. Click **Setup**.
+1. In the Node Configuration page that appears:
     a.  Enter a path for **Persistent storage**, or leave the default
         path.\
         For additional details, refer to [Persistent and ephemeral
@@ -71,14 +71,14 @@ To create a cluster:
         the node. For additional details, refer to [Rack-zone
         awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
     i.  Click **Next**.
-4.  If you purchased a cluster key, use the **Cluster authentication**
+1. If you purchased a cluster key, use the **Cluster authentication**
     page to enter the key. Otherwise, you get the trial license by
     default. Read the product Terms and Conditions and click **Next.**
-5.  Use the **Set admin credentials** page to enter the credentials of
+1. Use the **Set admin credentials** page to enter the credentials of
     the cluster administrator. These credentials are required in order
     to add nodes to the cluster, and to regularly log in to the cluster
     management UI.
-6.  Click **Next**.
+1. Click **Next**.
 
 After a short wait, your cluster is created and the cluster management
 UI appears.

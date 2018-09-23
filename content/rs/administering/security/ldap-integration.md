@@ -17,10 +17,10 @@ cluster, set up accounts on the LDAP Server, then map those IDs in RS.
 
 The steps are:
 
-1.  Configuring the saslauthd service
-2.  Set up accounts on the LDAP server if not already there
-3.  Mapping user IDs using the RS web UI to the LDAP server
-4.  Using the REST API or rladmin to propagate configurations to cluster
+1. Configuring the saslauthd service
+1. Set up accounts on the LDAP server if not already there
+1. Mapping user IDs using the RS web UI to the LDAP server
+1. Using the REST API or rladmin to propagate configurations to cluster
 
 **Warning:** Use a secure/encrypted connections between RS nodes and
 between RS nodes and LDAP servers. The LDAP server uses SASL PLAIN,

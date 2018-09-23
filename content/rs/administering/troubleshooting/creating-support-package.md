@@ -13,8 +13,8 @@ your issues.
 
 To create a support package:
 
-1.  Click **Support** at the top right of the management UI.
-2.  Click **Create Support Package** at the bottom of the page, and
+1. Click **Support** at the top right of the management UI.
+1. Click **Create Support Package** at the bottom of the page, and
     confirm the action.
 
 The package is created and downloaded to your browser.

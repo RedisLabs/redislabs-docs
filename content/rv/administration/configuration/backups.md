@@ -20,9 +20,9 @@ To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
 steps:
 
-1.  Select the **S3** service under **Services** -\> **Storage -\>
+1. Select the **S3** service under **Services** -\> **Storage -\>
     S3** to navigate to the **S3 Management Console**.
-2.  Navigate to your bucket's permissions page:
+1. Navigate to your bucket's permissions page:
     a.  To create a new bucket:
         1.  Click the **+ Create Bucket** button
         2.  Enter a **name** and **region** for the bucket\
@@ -63,12 +63,12 @@ To use a GCS bucket for storing your resources' backups, follow these
 steps in your [Google Cloud Platform (GCP)
 console](https://developers.google.com/console/):
 
-1.  Access your GCP project by:
+1. Access your GCP project by:
     1.  Creating a new project using the **NEW PROJECT** button, or
     2.  Opening an existing project by clicking it.
-2.  Select **Cloud Storage** in the left-hand menu to open the Storage
+1. Select **Cloud Storage** in the left-hand menu to open the Storage
     browser and view your buckets.
-3.  Navigate to your bucket's permissions page:
+1. Navigate to your bucket's permissions page:
     1.  To create a new bucket:
         1.  Click the **NEW BUCKET** button.
         2.  Enter a name for the bucket.
@@ -77,7 +77,7 @@ console](https://developers.google.com/console/):
         5.  Continue to step 3.2.
     2.  To use an existing bucket, select it using the left-most
         checkmark control and click the **Bucket Permissions** button.
-4.  At your bucket's permissions page, add another permission by
+1. At your bucket's permissions page, add another permission by
     entering the following information at the bottom of the page:
     1.  In the left-most drop-box, make sure that the value *User* is
         selected.
@@ -102,8 +102,8 @@ To use an ABS container for storing your resources' backups, follow
 these steps in your [Microsoft Azure Management
 Portal](https://manage.windowsazure.com/):
 
-1.  Access your storage by clicking the left-hand **STORAGE** icon.
-2.  Select the storage account:
+1. Access your storage by clicking the left-hand **STORAGE** icon.
+1. Select the storage account:
     1.  To create a new storage account:
         1.  Click the **+ NEW** button at the lower-left corner of the
             page.
@@ -116,8 +116,8 @@ Portal](https://manage.windowsazure.com/):
         6.  Click the **CREATE STORAGE ACCOUNT** button.
         7.  Continue to step 2.2.
     2.  To use an existing storage account, select it by clicking on it.
-3.  Click the **MANAGE ACCESS KEYS** button at the bottom of the page.
-4.  Copy your storage account's **PRIMARY ACCESS KEY**
+1. Click the **MANAGE ACCESS KEYS** button at the bottom of the page.
+1. Copy your storage account's **PRIMARY ACCESS KEY**
 
 Set your resource's **Backup Path** to the path of your ABS storage
 account and clicking the **Apply** button using the following syntax:

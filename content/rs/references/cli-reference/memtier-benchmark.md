@@ -45,9 +45,9 @@ Redis shards with multiple combinations of databases, such as:
 
 For the test environment, there are three required tasks:
 
-1.  Create a three-node RS cluster
-2.  Preparing the flash memory
-3.  Setup the load generation tool
+1. Create a three-node RS cluster
+1. Preparing the flash memory
+1. Setup the load generation tool
 
 ### Creating a three-node RS cluster
 

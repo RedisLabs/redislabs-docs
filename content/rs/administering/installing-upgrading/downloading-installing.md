@@ -29,14 +29,14 @@ instances]({{< relref "/rs/administering/installing-upgrading/configuring-aws-in
 
 ## Prerequisites
 
-1.  If you intend to use [Redis on
+1. If you intend to use [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for your
     databases, be familiar with the specifics of that feature and its
     set of prerequisites, storage, and considerations.
-2.  [Disable Linux
+1. [Disable Linux
     swap]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}})
     on all nodes to be part of the cluster.
-3.  Ensure you have root level access to each node, either directly or
+1. Ensure you have root level access to each node, either directly or
     via sudo.
 
 ## Installation Procedure
@@ -45,16 +45,16 @@ If you downloaded the .tar file installation package, install the
 package on a machine that will serve as one of the nodes in the cluster
 by performing the following steps:
 
-1.  In the operating system command-line-interface (CLI), also referred
+1. In the operating system command-line-interface (CLI), also referred
     to as Terminal, run the cd command to change the location to the
     directory where you saved the .tar file.
-2.  Extract the package by running the following command in the CLI:
+1. Extract the package by running the following command in the CLI:
 
     ``` src
     $ tar vxf <tarfile name>
     ```
 
-3.  To initiate the installation in the CLI, run the following command:
+1. To initiate the installation in the CLI, run the following command:
 
     ``` src
     $ sudo ./install.sh -s /var/run/redislabs
@@ -66,9 +66,9 @@ by performing the following steps:
     The -s switch is to tell install.sh to locate the Linux socket files
     in /var/run/redislabs instead of the default, which is /tmp.
 
-4.  During the installation process, enter the requested input each time
+1. During the installation process, enter the requested input each time
     you are prompted to do so.
-5.  After installation has completed successfully
+1. After installation has completed successfully
     1.  The install finishes up with rlcheck make testing the
         installation out and confirming the installation passed.
 
@@ -118,7 +118,7 @@ by performing the following steps:
         $ sudo lsblk
         ```
 
-6.  Open a web browser and go to the Web UI to complete the cluster
+1. Open a web browser and go to the Web UI to complete the cluster
     setup.
 
 ## Silent Installations
@@ -127,7 +127,7 @@ If you would like to automate the installation script, use either of the
 following methods to perform a "silent" installation that speeds the
 process:
 
-1.  Run the install script with "-y" as a parameter (i.e. ./install.sh
+1. Run the install script with "-y" as a parameter (i.e. ./install.sh
     -y), which will silently use "Y" as a default response to all
     questions.\
     WARNING: By using the -y parameter you will fail to see any alerts
@@ -136,7 +136,7 @@ process:
     they find a DB in that state. Check that your DBs are not in this
     state before possibly using this flag. Otherwise, do not use this
     feature.
-2.  Run the install script with "-c" and an answers file path as
+1. Run the install script with "-c" and an answers file path as
     parameters (i.e. ./install.sh --c \<answers and="" file="" name=""
     path=""\>), thereby allowing the installation to use the answers
     provided in your answers file. Here is sample content for the

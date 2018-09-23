@@ -7,18 +7,18 @@ alwaysopen: false
 Management actions performed with Redis Enterprise are audited in order
 to fulfill two major objectives:
 
-1.  To ensure that system management tasks are appropriately performed
+1. To ensure that system management tasks are appropriately performed
     and/or monitored by the Administrator(s)
-2.  To facilitate compliance with regulatory
+1. To facilitate compliance with regulatory
     standards
 
 In order to fulfill both objectives, the audit records contain the
 following information:
 
-1.  Who performed the action?
-2.  What exactly was the performed action?
-3.  When was the action performed?
-4.  Did the action succeed or not?
+1. Who performed the action?
+1. What exactly was the performed action?
+1. When was the action performed?
+1. Did the action succeed or not?
 
 To get the list of audit records/events, you can use the REST API or
 the **Log** page in the UI. The Log page displays the system and user

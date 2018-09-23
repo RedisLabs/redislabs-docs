@@ -27,39 +27,39 @@ Pre-requisites
 
 Creating a subscription is a four-step process:
 
-1.  Setup - Select the general settings and input the required
+1. Setup - Select the general settings and input the required
     credentials for the cloud user account.
-2.  Sizing - Describe the specification of the databases you want to
+1. Sizing - Describe the specification of the databases you want to
     provision. After this step, RV will calculate the optimal
     configuration and required infrastructure.
-3.  Review and Create - You will be presented with the required
+1. Review and Create - You will be presented with the required
     infrastructure and the subscription price. Enter your payment method
     and you are pretty much done.
-4.  Provisioning - Automatically set up the relevant infrastructure and
+1. Provisioning - Automatically set up the relevant infrastructure and
     provision the databases.
 
 ### Setup
 
 For a new subscription, you will need to provide the following:
 
-1.  A subscription name
-2.  Your cloud provider (currently only AWS is supported; other cloud
+1. A subscription name
+1. Your cloud provider (currently only AWS is supported; other cloud
     providers will be added in the future)
-3.  The cloud region (e.g. "us-west-2") you want your databases to be
+1. The cloud region (e.g. "us-west-2") you want your databases to be
     created in. This should be in the same region as the applications
     that will be connecting as you will be using AWS' [VPC
     Peering](https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html).
-4.  Multi-AZ - Select whether or not the cluster should span
+1. Multi-AZ - Select whether or not the cluster should span
     Availability Zones for better high availability. To work optimally,
     make sure the selected region contains at least three availability
     zones.
-5.  Select whether you want the subscription to support databases with
+1. Select whether you want the subscription to support databases with
     the ability to span RAM only or [RAM + Flash
     Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
-6.  Select an existing or [Create a new Cloud
+1. Select an existing or [Create a new Cloud
     Account]({{< relref "/rv/administration/setup_and_editing/creating-cloud-account.md" >}})
     for RV to use.
-7.  Select your subscription networking options:
+1. Select your subscription networking options:
     -   **New VPC** - this will create a new VPC and provision your
         subscription in it. Please provide the required Deployment CIDR
         - This is an IPv4 subnet, in[CIDR
@@ -76,7 +76,7 @@ For a new subscription, you will need to provide the following:
         Please provide the required
         Deployment CIDR and the VPC ID in which the subscription should
         be deployed.
-8.  Advanced Options
+1. Advanced Options
     1.  You can select the exact Availability Zone(s) in which your
         subscription will be deployed. Select one for single AZ or three
         for multi-AZ.
@@ -95,27 +95,27 @@ specifications.
 
 For each row, select the following:
 
-1.  Name - Give the database a name
-2.  Protocol - Select the relevant database type, either Redis or
+1. Name - Give the database a name
+1. Protocol - Select the relevant database type, either Redis or
     Memcached
-3.  The estimated **Memory Limit** of your database. The minimum value
+1. The estimated **Memory Limit** of your database. The minimum value
     is 1GB.
-4.  If you selected to have a Redis Enterprise Flash subscription,
+1. If you selected to have a Redis Enterprise Flash subscription,
     provide your data average item size
-5.  Replication - Enables instant failover by keeping a standby,
+1. Replication - Enables instant failover by keeping a standby,
     in-memory slave replica (note: by checking this option, your dataset
     will consume twice the amount of memory)
-6.  Data persistence - Select the relevant data persistence policy for
+1. Data persistence - Select the relevant data persistence policy for
     your database.
-7.  Throughput - You can define your estimated **total throughput** you
+1. Throughput - You can define your estimated **total throughput** you
     expect from your database by either specifying the required ops/sec
     or number of shards needed.
-8.  Data persistence - Select the relevant data persistence policy for
+1. Data persistence - Select the relevant data persistence policy for
     your database.
-9.  Modules - You can select which Redis Module you want to load to
+1. Modules - You can select which Redis Module you want to load to
     your database. In case you select 'RediSearch' please provide the
     estimated number of documents you are going to index.
-10. Enter the number of databases with these settings that you would
+1. Enter the number of databases with these settings that you would
     like to provision.
 
 Once complete, save the settings by clicking the **Add** button. Add
@@ -157,17 +157,17 @@ and then click on the name of the Subscription you wish to view.
 
 There are two things you can change about an existing subscription:
 
-1.  The RV Cloud Account used by the subscription
-2.  Subscription name
-3.  Payment method used
-4.  Cloud network details
+1. The RV Cloud Account used by the subscription
+1. Subscription name
+1. Payment method used
+1. Cloud network details
 
 To edit an item, click on the pencil icon to the right of it.
 
 In addition, you can see:
 
-1.  The number of shards purchased and their cost
-2.  The underlying resources that your subscription is running on
+1. The number of shards purchased and their cost
+1. The underlying resources that your subscription is running on
 
 To delete a subscription, click on the "**Delete**" button at the bottom
 of the form. You will be prompted to confirm before your subscription is

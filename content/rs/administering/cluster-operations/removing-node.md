@@ -71,15 +71,15 @@ replaced. For additional details, refer to
 
 To remove a node:
 
-1.  Click **Remove** at the top of the **Node** page for the node to be
+1. Click **Remove** at the top of the **Node** page for the node to be
     removed.
-2.  Approve the action.
-3.  RS examines the node and the cluster and takes the actions required
+1. Approve the action.
+1. RS examines the node and the cluster and takes the actions required
     to remove the node.
-4.  At any point, you can click the **Abort** button to stop the
+1. At any point, you can click the **Abort** button to stop the
     process. When aborted, the current internal action is completed, and
     then the process stops.
-5.  Once the process finishes, the node will no longer be displayed in
+1. Once the process finishes, the node will no longer be displayed in
     the UI.
 
 You can choose to receive email alerts related to this process, as

@@ -12,13 +12,13 @@ button.
 
 In edit mode please enter or update the following details:
 
-1.  **Account Name** - Give the account a name so you could recognize
+1. **Account Name** - Give the account a name so you could recognize
     him
-2.  **AWS\_ACCESS\_KEY\_ID** - RV user's AWS access key
-3.  **AWS\_SECRET\_ACCESS\_KEY** - RV user's AWS secret key
-4.  **AWS Console User** - RV AWS UI console user
-5.  **AWS Console password** - RV AWS UI console user's password
-6.  **IAM Users sign-in link** - This is the link you use to log into
+1. **AWS\_ACCESS\_KEY\_ID** - RV user's AWS access key
+1. **AWS\_SECRET\_ACCESS\_KEY** - RV user's AWS secret key
+1. **AWS Console User** - RV AWS UI console user
+1. **AWS Console password** - RV AWS UI console user's password
+1. **IAM Users sign-in link** - This is the link you use to log into
     the AWS console (e.g.
     https://YOUR-ACCOUNT-ID-WITHOUT-HYPENS.signin.aws.amazon.com/console)
 

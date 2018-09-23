@@ -123,16 +123,16 @@ their order to suit your application's requirements.
 
 ### Custom hashing policy notes and limitations
 
-1.  You can define up to 32 RegEx rules, each up to 256 characters.
-2.  RegEx rules are evaluated in their order and the first rule matched
+1. You can define up to 32 RegEx rules, each up to 256 characters.
+1. RegEx rules are evaluated in their order and the first rule matched
     is used. Therefore, strive to place common key name patterns at the
     beginning of the rule list.
-3.  Key names that do not match any of the RegEx rules will trigger an
+1. Key names that do not match any of the RegEx rules will trigger an
     error.
-4.  The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot
+1. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot
     because the hash key will always be empty. Therefore, when used,
     this should be the last, catch-all rule.
-5.  The following flag is enabled in the regular expression parser:\
+1. The following flag is enabled in the regular expression parser:\
     PCRE\_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 

@@ -62,27 +62,27 @@ each supported data type and how to develop with them on RES.
 
 ## Terminology
 
-1.  **Global conflict-free replicated database (CRDB):** refers to a new
+1. **Global conflict-free replicated database (CRDB):** refers to a new
     type of Redis Enterprise Software database that spans clusters.
     There can be one or more member databases across many clusters that
     form a conflict-free replicated database (CRDB)s. Each local
     database can have different shard count, replica count, and other
     database options but contain identical information in steady-state.
-2.  **CRDB Instance:** is a "member database" instance of a global CRDB
+1. **CRDB Instance:** is a "member database" instance of a global CRDB
     which is made up of its own master and slave shards spanning a
     single cluster. An CRDB Instance can participate in only one (CRDB)
     scheme.
-3.  **Multi-master Replication (MMR):** is the multi-directional
+1. **Multi-master Replication (MMR):** is the multi-directional
     replication that power the efficient replication required to achieve
     active-active concurrent writes in CRDBs.
-4.  **Conflict-free Replicated Data Types (CRDT):** is the underlying
+1. **Conflict-free Replicated Data Types (CRDT):** is the underlying
     research that describes techniques used by Redis data types in CRDBs
     that smartly handle conflicting concurrent writes across member
     CRDBs.
-5.  **Participating Clusters:** refers to clusters participating in the
+1. **Participating Clusters:** refers to clusters participating in the
     multi-master replication of a conflict-free replicated database
     (CRDB).
-6.  **Concurrent Writes or Concurrent Updates:** Concurrency or updates
+1. **Concurrent Writes or Concurrent Updates:** Concurrency or updates
     and writes refer to more than events that happen at the same wall
     clock time across member CRDBs. Concurrent updates refer to the fact
     that updates happen in between sync events that catch up member

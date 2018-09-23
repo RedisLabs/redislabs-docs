@@ -15,8 +15,8 @@ interface (CLI) and should be run separately on each RS node.
 To run rlcheck, in the operating system command-line interface (CLI),
 enter the following commands:
 
-1.  sudo su --
-2.  rlcheck
+1. sudo su --
+1. rlcheck
 
 The utility runs and reports the result of each check.
 

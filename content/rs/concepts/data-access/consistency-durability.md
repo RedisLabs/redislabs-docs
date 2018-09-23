@@ -13,12 +13,12 @@ persisted database in RES.
 Any updates that are issued to the database are typically performed with
 the following flow depicted below;
 
-1.  Application issues a write,
-2.  Proxy communicates with the correct master "shard" in the system
+1. Application issues a write,
+1. Proxy communicates with the correct master "shard" in the system
     that contains the given key,
-3.  The acknowledgment is sent to proxy once the write operation
+1. The acknowledgment is sent to proxy once the write operation
     completes
-4.  The proxy sends the acknowledgment back to the application.
+1. The proxy sends the acknowledgment back to the application.
 
 Independently, the write is communicated from master to slave and
 replication acknowledges the write back to the master. These are steps 5
@@ -35,13 +35,13 @@ acknowledgments only after replication or persistence is confirmed on
 the slave. The flow of a write operation with the WAIT command is
 depicted below:
 
-1.  Application issues a write,
-2.  Proxy communicates with the correct master "shard" in the system
+1. Application issues a write,
+1. Proxy communicates with the correct master "shard" in the system
     that contains the given key,
-3.  Replication communicated the update to the slave shard.
-4.  Slave persists the update to disk (assuming AOF every write setting
+1. Replication communicated the update to the slave shard.
+1. Slave persists the update to disk (assuming AOF every write setting
     is selected).
-5.  The acknowledgment is sent back from the slave all the way to the
+1. The acknowledgment is sent back from the slave all the way to the
     proxy with steps 5 to 8.
 
 With this flow, the application only gets the acknowledgment from the

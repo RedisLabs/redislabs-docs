@@ -6,10 +6,10 @@ alwaysopen: false
 ---
 The steps here are super simple and go as follows:
 
-1.  Sign up for a Redis Enterprise Cloud account
-2.  Create a new subscription
-3.  Setup a database
-4.  Connect to your Database
+1. Sign up for a Redis Enterprise Cloud account
+1. Create a new subscription
+1. Setup a database
+1. Connect to your Database
 
 {{< youtube I9sPna1OOUg >}}
 
@@ -28,9 +28,9 @@ If you have an existing subscription, then proceed to Step 3.
 
 For a new subscription, you will need to select the following:
 
-1.  The cloud and region you desire your database(s) to be created in
-2.  A subscription name
-3.  One of three subscription plans:
+1. The cloud and region you desire your database(s) to be created in
+1. A subscription name
+1. One of three subscription plans:
     -   Cache plans provide highly available, low-latency caching for
         applications when the authoritative version of the data is
         stored in another database. Cache plans do not include
@@ -43,7 +43,7 @@ For a new subscription, you will need to select the following:
     -   Multi-AZ (Availability Zone) plans offer all the benefits of
         Standard plans, as well as auto-failover and in-memory
         replication to another availability zone.
-4.  Memory size - select from 30MB (free) to 5GB (\$33/mo), or a
+1. Memory size - select from 30MB (free) to 5GB (\$33/mo), or a
     flexible pay-as-you-go model.
 
 You can consider a quick overview of each tier's features upon
@@ -57,8 +57,8 @@ subscription.
 
 ## Step 3 - Set up a database
 
-1.  Give your database a name.
-2.  Click the "**Activate**" button to create your database.
+1. Give your database a name.
+1. Click the "**Activate**" button to create your database.
 
 Note: the Endpoint displayed on this page is very important because it
 is your entry point to this database.
@@ -140,13 +140,13 @@ and you are done.
 
 ## More Information
 
-1.  [Data Persistence with Redis Enterprise
+1. [Data Persistence with Redis Enterprise
     Cloud]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
-2.  [Securing Your Redis Enterprise Cloud
+1. [Securing Your Redis Enterprise Cloud
     Database]({{< relref "/rc/administration/configure/security.md" >}}).
-3.  [Creating a
+1. [Creating a
     database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
-4.  [Redis Enterprise Cloud Database
+1. [Redis Enterprise Cloud Database
     Backups]({{< relref "/rc/administration/configure/backups.md" >}}).
-5.  [Monitoring Redis Enterprise Cloud
+1. [Monitoring Redis Enterprise Cloud
     Performance]({{< relref "/rc/administration/configure/monitoring-alerting-metrics.md" >}}).

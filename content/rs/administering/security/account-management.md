@@ -29,11 +29,11 @@ the UI or through the users API.
 
 **To add a user:**
 
-1.  Click the + (plus) sign at the bottom of the table.
-2.  Enter the name, email and password of the new user.
-3.  Select which Role the user should have
-4.  Indicate whether the user will receive email alerts.
-5.  Click **Save** icon.
+1. Click the + (plus) sign at the bottom of the table.
+1. Enter the name, email and password of the new user.
+1. Select which Role the user should have
+1. Indicate whether the user will receive email alerts.
+1. Click **Save** icon.
 
 ![](/images/rs/useradd-300x101.png)
 
@@ -41,8 +41,8 @@ the UI or through the users API.
 
 **To update a user:**
 
-1.  Click the **Edit** icon at the far right of the user row.
-2.  Edit the user details or delete the user.
+1. Click the **Edit** icon at the far right of the user row.
+1. Edit the user details or delete the user.
 
 ## Creating users for use with LDAP authentication
 

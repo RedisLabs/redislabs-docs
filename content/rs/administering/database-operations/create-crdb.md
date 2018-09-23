@@ -18,11 +18,11 @@ alwaysopen: false
 CRDBs span multiple Redis Enterprise Software (RS) clusters. Overview of
 the steps to create a CRDB:
 
-1.  Create a service account on each cluster as an admin
-2.  Confirm network is setup
-3.  Connect to one of your clusters and configure a new CRDB
-4.  Test writing to one cluster
-5.  Test reading from a different cluster
+1. Create a service account on each cluster as an admin
+1. Confirm network is setup
+1. Connect to one of your clusters and configure a new CRDB
+1. Test writing to one cluster
+1. Test reading from a different cluster
 
 ## Create a Service Account
 
@@ -66,14 +66,14 @@ On the create database page, click the **show advanced option** link.
 There are some key differences in the creation process between CRDBs and
 standard Redis database creation.
 
-1.  Intra-cluster Replication is required for each Participating Cluster
+1. Intra-cluster Replication is required for each Participating Cluster
     to be included in a CRDB. This is due to how the intercluster
     replication process, called syncer, always reads off slaves and not
     masters. Therefore slaves must exist. In the interface, you will see
     that you cannot change this option and if not possible, the creation
     will error.
-2.  The eviction policy can only be set to noeviction for CRDBs.
-3.  [Participating Clusters](#part-clusters) section is where you define
+1. The eviction policy can only be set to noeviction for CRDBs.
+1. [Participating Clusters](#part-clusters) section is where you define
     the clusters that will host member CRDBs and the admin user account
     to connect to each cluster.
 

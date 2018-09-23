@@ -35,9 +35,9 @@ Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a
 certain level of disk performance. There are two features in RS where
 this feature could be critical to use:
 
-1.  When using [Redis on
+1. When using [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
-2.  When using AOF on every write and there is a high write load. In
+1. When using AOF on every write and there is a high write load. In
     this case, the provisioned IOPS should be on the nodes used as
     slaves in the cluster.
 
