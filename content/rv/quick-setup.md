@@ -159,7 +159,18 @@ $ sudo pip install redis
 ```
 
 Next copy and paste this into a file named
-"**example\_redis.py**":` #import the library import redis # Create connection object r = redis.Redis( host='pub-redis-10382.us-west-2-1.1.ec2.garantiadata.com', port=10382) # set a value for the foo object r.set('foo', 'bar') # retrieve and print the value for the foo object print(r.get('foo'))`
+"**example\_redis.py**":
+
+```python
+#import the library
+import redis 
+# Create connection object
+r = redis.Redis( host='pub-redis-10382.us-west-2-1.1.ec2.garantiadata.com', port=10382)
+# set a value for the foo object
+r.set('foo', 'bar')
+# retrieve and print the value for the foo object
+print(r.get('foo'))
+```
 
 Now run the code:
 
