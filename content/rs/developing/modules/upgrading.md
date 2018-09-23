@@ -35,7 +35,7 @@ it:
 1. Click on **redise** **modules**
 1. Click on **Add Module**
 
-![](/images/rs/upgrade_module-1.png?width=1600&height=956)
+![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
 
 1. Select the packaged module from your file system and upload
     it.
@@ -45,7 +45,7 @@ it:
     available.
     
 
-![](/images/rs/update_available-1.png?width=1346&height=1600)
+![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
 1. At this time, you cannot upgrade this database from the web UI. It
     must be completed using the rladmin command line utility from one of

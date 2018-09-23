@@ -41,7 +41,7 @@ To create a new database in the UI:
     to [Conflict-free geo-Replicated Databases
     (CRDB)]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}).
     
-    ![](/images/rs/new_databases.png?width=584&height=599)
+    ![new_databases](/images/rs/new_databases.png?width=584&height=599)
 1. Enter a **name** for the database.\
     The database name must comply with the following rules:
 

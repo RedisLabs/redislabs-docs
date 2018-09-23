@@ -54,7 +54,7 @@ Enterprise database and generates a load doing the following:
 Run this command until it fills up your database to where you want it
 for testing. The easiest way to check is on the database metrics page.
 
-![](/images/rs/memtier_metrics_page.png?width=700&height=158)
+![memtier_metrics_page](/images/rs/memtier_metrics_page.png?width=700&height=158)
 
 Another use for memtier\_benchmark is to populate a database with data
 for failure testing.

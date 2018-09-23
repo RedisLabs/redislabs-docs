@@ -53,7 +53,7 @@ Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscripti
 Once you have made your selections, click **Continue** to finalize your
 subscription.
 
-![](/images/rc/new_sub.png?width=600&height=466)
+![new_sub](/images/rc/new_sub.png?width=600&height=466)
 
 ## Step 3 - Set up a database
 
@@ -63,7 +63,7 @@ subscription.
 Note: the Endpoint displayed on this page is very important because it
 is your entry point to this database.
 
-![](/images/rc/rc-view-database-endpoint.png?width=600&height=409)
+![rc-view-database-endpoint](/images/rc/rc-view-database-endpoint.png?width=600&height=409)
 
 ## Step 4 - Reading and Writing Data
 

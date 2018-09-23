@@ -21,13 +21,13 @@ your Pivotal Cloud Foundry environment to get started.
 - Navigate to your Ops Manager URL and click on **Import a Product**
     button and select the downloaded .pivotal file for Redis Enterprise
     Software\
-    ![](/images/rs/pcf_view_ops_manger.png?width=800&height=205)
+    ![pcf_view_ops_manger](/images/rs/pcf_view_ops_manger.png?width=800&height=205)
 
 ### Step 2 - Configure Redis Enterprise Software
 
 1. Click the newly imported tile.\
 
-    ![](/images/rs/pcf_pre-install_tile.png?width=189&height=189)
+    ![pcf_pre-install_tile](/images/rs/pcf_pre-install_tile.png?width=189&height=189)
 1. Navigate to the **Assign AZs and Network** section on the right
     navigation bar. Select the network for the cluster to use. In my
     environment that is **pcf-ert-network**.
@@ -69,7 +69,7 @@ specifications]({{< relref "/rs/administering/designing-production/hardware-requ
 1. Once the tile configuration is done, you can save the changes and
     click the **Apply changes** to deploy the cluster.\
 
-    ![](/images/rs/post-install-dashboard.png?width=800&height=227)
+    ![post-install-dashboard](/images/rs/post-install-dashboard.png?width=800&height=227)
 1. You can switch into the tile and to the **Status** tab to view the
     state of the cluster nodes under the jobs named
     **redis-pack-node** and **redis-pack-service-broker**.

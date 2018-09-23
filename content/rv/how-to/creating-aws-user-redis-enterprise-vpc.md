@@ -27,7 +27,7 @@ role that we create later:
 
 1. In AWS IAM console go to **Policies** -\> **Create policy**\
 
-    ![](/images/rv/create_policy-1.png?width=700&height=621)
+    ![create_policy-1](/images/rv/create_policy-1.png?width=700&height=621)
 1. Select the **JSON** tab and copy-paste the below policy or get it
     from our github.\
     **redislabs-cluster-node-role.json**\
@@ -35,7 +35,7 @@ role that we create later:
 1. Enter **RedisLabsInstanceRolePolicy** as the policy name and save it
     by clicking **Create Policy\
 
-    ![](/images/rv/review_role_policy.png?width=700&height=270)**
+    ![review_role_policy](/images/rv/review_role_policy.png?width=700&height=270)**
 
 ## Step 2 - Create the Role
 
@@ -45,17 +45,17 @@ it:
 1. In AWS IAM console go to **Roles** and
     click on **Create Role\
 
-    ![](/images/rv/create_role.png?width=700&height=636)\
+    ![create_role](/images/rv/create_role.png?width=700&height=636)\
     **
 1. Select **AWS Service** as the trusted entity, **EC2** as the service
     and use case and click **Next: Permissions\
 
-    ![](/images/rv/select_service.png?width=700&height=625)\
+    ![select_service](/images/rv/select_service.png?width=700&height=625)\
     **
 1. Type **RedisLabsInstanceRolePolicy** in the search box to lookup the
     policy we have just created, select it and click **Next: Review**.\
 
-    ![](/images/rv/attach_policies.png?width=700&height=348)
+    ![attach_policies](/images/rv/attach_policies.png?width=700&height=348)
 1. Name the role **redislabs-cluster-node-role** and save it by
     clicking on **Create Role.**
 
@@ -73,12 +73,12 @@ RV will utilize:
     **RedislabsIAMUserRestrictedPolicy.json**\
     \
 
-    ![](/images/rv/edit_policy.png?width=700&height=214)
+    ![edit_policy](/images/rv/edit_policy.png?width=700&height=214)
 1. Validate it and press **Review Policy**
 1. Enter **RedislabsIAMUserRestrictedPolicy** as the policy name and
     save it by clicking **Create Policy\
 
-    ![](/images/rv/review_user_policy.png?width=700&height=292)**
+    ![review_user_policy](/images/rv/review_user_policy.png?width=700&height=292)**
 
 ## Step 4 - Create the User
 
@@ -87,18 +87,18 @@ created before:
 
 1. In AWS IAM console go to **Users** -\> select **Add user\
 
-    ![](/images/rv/add_user.png?width=700&height=751)\
+    ![add_user](/images/rv/add_user.png?width=700&height=751)\
     **
 1. Name it **redislabs-user** and select both options: **Programmatic
     access** and **AWS Management Console access**\
 
-    ![](/images/rv/select_access_type.png?width=700&height=393)
+    ![select_access_type](/images/rv/select_access_type.png?width=700&height=393)
 1. Set a password or auto-generate one and press **Next: Permissions**
 1. Select **Attach existing policies directly** and select
     **RedislabsIAMUserRestrictedPolicy** from the list (the policy you
     previously created)\
 
-    ![](/images/rv/set_permissions.png?width=700&height=477)
+    ![set_permissions](/images/rv/set_permissions.png?width=700&height=477)
 1. Press **Next: Review**
 1. Press **Create user**
 1. **Please make sure to save the user credentials**

@@ -9,4 +9,4 @@ methods, as well as add new ones to your Redis Enterprise Cloud account.
 Click the name of an existing method to view and edit it or click the
 "+" icon to add a new payment method.
 
-![](/images/rc/payment_methods.png?width=1000&height=365)
+![payment_methods](/images/rc/payment_methods.png?width=1000&height=365)

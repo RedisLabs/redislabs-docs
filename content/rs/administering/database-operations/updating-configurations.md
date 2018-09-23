@@ -46,7 +46,7 @@ changes at any one time to the Participating Cluster list. The changes
 you make to the list are committed when the database configuration is
 saved.
 
-![](/images/rs/pasted-image-0-1.png?width=1534&height=233)
+![pasted-image-0-1](/images/rs/pasted-image-0-1.png?width=1534&height=233)
 
 When adding new Participating Clusters, a CRDB requires that all
 existing participating clusters are online and in a syncing state. If
@@ -89,6 +89,6 @@ select the **Require SSL for all
 communications** from the **SSL
 Authentication** drop down.
 
-![](/images/rs/pasted-image-SSL.png?width=1080&height=1221)
+![pasted-image-SSL](/images/rs/pasted-image-SSL.png?width=1080&height=1221)
 
  

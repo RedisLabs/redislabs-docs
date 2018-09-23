@@ -33,7 +33,7 @@ activated.
 During the creation of a CRDB, the Causal Consistency parameter should
 be set as illustrated in the figure below:
 
-![](/images/rs/create_db_causal.png?width=1050&height=930)
+![create_db_causal](/images/rs/create_db_causal.png?width=1050&height=930)
 
 Once enabled, additional operations to
 enable or disable can only be performed

@@ -52,13 +52,13 @@ click the **Setup** button on the page to get started.
 Note: Depending on your browser, you may see a certificate error. Simply
 choose **continue to the website** to get to the setup screen.
 
-![](/images/rs/image4.png?width=1000&height=611)
+![image4](/images/rs/image4.png?width=1000&height=611)
 
 On the **node configuration** page, select your default settings and
 provide a cluster FQDN: **cluster1.local**. Then simply click the
 **Next** button.
 
-![](/images/rs/image5.png?width=1000&height=611)
+![image5](/images/rs/image5.png?width=1000&height=611)
 
 If you don't have a license key, click the **Next** button to try the
 trial version of the product.
@@ -66,7 +66,7 @@ trial version of the product.
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-![](/images/rs/image9.png?width=1000&height=611)
+![image9](/images/rs/image9.png?width=1000&height=611)
 
  
 
@@ -86,7 +86,7 @@ At this point, we have two Redis Enterprise Software clusters with FQDNs
 Under the databases tab, choose the Redis database with deployment type
 set to Geo-Distributed.
 
-![](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
 On the create database page, click the **show advanced option** link and
 enter **database1** for the database name and **12000** for the endpoint
