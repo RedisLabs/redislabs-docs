@@ -31,35 +31,35 @@ string:
 Connect to redis using --raw so we can read the json correctly.
 Otherwise the quotes are "escaped" and formatting is not ideal.
 
-``` src
+```src
 $ redis-cli --raw -p 12543
 127.0.0.1:12543>
 ```
 
 Add a simple document
 
-``` src
+```src
 127.0.0.1:12543> JSON.SET foo . '{"foo" : "bar"}'
 OK
 ```
 
 Read back the only entity with a get
 
-``` src
+```src
 127.0.0.1:12543> JSON.GET foo
 {"foo":"bar"}
 ```
 
 Check what type foo is
 
-``` src
+```src
 127.0.0.1:12543> JSON.TYPE foo .
 object
 ```
 
 See what type of entity the foo entity is in the foo document.
 
-``` src
+```src
 127.0.0.1:12543> JSON.TYPE foo .foo
 string
 ```
@@ -69,14 +69,14 @@ great thing is, we do not need the entire document, we only write what
 needs to change. Add an entity into the document called test with a
 integer value of 1.
 
-``` src
+```src
 127.0.0.1:12543> JSON.SET foo .test 1
 OK
 ```
 
 Next increment that value by 2 and this returns the updated value.
 
-``` src
+```src
 127.0.0.1:12543> JSON.NUMINCRBY foo .test 2
 3
 ```
@@ -84,14 +84,14 @@ Next increment that value by 2 and this returns the updated value.
 Now create a new document, add another document to it, and then add
 another name/value pair to that sub-document.
 
-``` src
+```src
 127.0.0.1:12543> JSON.SET foo . '{"foo":"bar"}'
 OK
 ```
 
 Add the test entity with a JSON document
 
-``` src
+```src
 127.0.0.1:12543> JSON.SET foo .test '{"test2":true}'
 OK
 127.0.0.1:12543> JSON.GET foo
@@ -100,7 +100,7 @@ OK
 
 Add another entity to the test document
 
-``` src
+```src
 127.0.0.1:12543> JSON.SET foo .test.test3 '"test"'
 OK
 127.0.0.1:12543> JSON.GET foo

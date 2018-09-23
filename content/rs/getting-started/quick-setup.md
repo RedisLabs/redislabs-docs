@@ -32,14 +32,14 @@ download
 site](https://app.redislabs.com/#/sign-up/software?direct=true). Once
 you have the bits on a Linux based OS, you need to untar the image
 
-``` src
+```src
 $ tar vxf <downloaded tar file name>
 ```
 
 Once the tar command completes, you will find a new install.sh script in
 the current directory.
 
-``` src
+```src
 $ sudo ./install.sh -y
 ```
 
@@ -96,7 +96,7 @@ connectivity to your database:
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1
 
-``` src
+```src
 # sudo /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:16653> set key1 123
 OK
@@ -118,13 +118,13 @@ redis-py](https://github.com/andymccurdy/redis-py).
 In the command-line Terminal, create a new file called
 "**redis\_test.py**"
 
-``` src
+```src
 $ vi redis_test.py
 ```
 
 Paste the following into a file named "**redis\_test.py**".
 
-``` src
+```src
 import redis
 
 r = redis.StrictRedis(host='localhost', port=12000, db=0)
@@ -137,14 +137,14 @@ print(r.get('key1'))
 Run "redis\_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
-``` src
+```src
 $ python redis_test.py
 ```
 
 The output should look like the following screen if the connection is
 successful.
 
-``` src
+```src
 set key1 123
 True
 get key1

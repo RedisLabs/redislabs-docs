@@ -43,7 +43,7 @@ an upgrade and proceed accordingly.
 Just like for a new installation, you must sudo to or be root to do the
 upgrade.
 
-``` src
+```src
 $ sudo ./install.sh
 ```
 

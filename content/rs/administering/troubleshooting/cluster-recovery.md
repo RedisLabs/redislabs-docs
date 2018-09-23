@@ -169,7 +169,7 @@ directory.
 
 You can view which databases are recoverable by running:
 
-``` src
+```src
 $ rladmin recovery list
 ```
 

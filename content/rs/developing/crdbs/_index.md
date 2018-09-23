@@ -146,13 +146,13 @@ preserved. As an example:
 
 If this command was performed on key1 on cluster #1
 
-``` src
+```src
 127.0.0.1:6379> EXPIRE key1 10
 ```
 
 And if this command was performed on key1 on cluster #2
 
-``` src
+```src
 127.0.0.1:6379> EXPIRE key1 50
 ```
 
@@ -160,7 +160,7 @@ The EXPIRE command setting the key to 50 would win.
 
 And if this command was performed on key1 on cluster #3:
 
-``` src
+```src
 127.0.0.1:6379> PERSIST key1
 ```
 

@@ -10,13 +10,13 @@ system CLI:
 
 - In Ubuntu:
 
-    ``` src
+    ```src
     $ sudo apt-get purge redislabs
     ```
 
 - In CentOS / RHEL:
 
-    ``` src
+    ```src
     $ sudo yum remove redislabs
     ```
 

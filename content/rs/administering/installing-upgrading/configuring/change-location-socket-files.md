@@ -21,19 +21,19 @@ where they go when install.sh is executed without -s flag.)
 
 1. Execute this command **on all nodes**:
 
-    ``` src
+    ```src
     $ sudo rlutil create_socket_path socket_path=/var/run/redislabs
     ```
 
 1. Execute this command **on the master node**:
 
-    ``` src
+    ```src
     $ sudo rlutil set_socket_path socket_path=/var/run/redislabs
     ```
 
 1. Execute this command **on all nodes in a serial manner**:
 
-    ``` src
+    ```src
     $ sudo service rlec_supervisor restart
     ```
 
@@ -42,7 +42,7 @@ where they go when install.sh is executed without -s flag.)
     1. Restart each database in the cluster, but you will incur
         downtime. This is by far the easiest option to execute.
 
-        ``` src
+        ```src
         $ rladmin restart db <db name>
         ```
 
@@ -51,7 +51,7 @@ where they go when install.sh is executed without -s flag.)
         **must** be executed **on the node hosting the shard being
         operated on**:
 
-        ``` src
+        ```src
         $ redis_ctl stop <slave shard id>
         $ rladmin failover shard <master shard id>
         $ redis_ctl stop <new slave shard id>
@@ -59,7 +59,7 @@ where they go when install.sh is executed without -s flag.)
 
         Example:
 
-        ``` src
+        ```src
         $ redis_ctl stop 6 # command run on node 1, since shard 6 is running on node 1
         $ rladmin failover shard 5
         $ redis_ctl stop 5 # command run on node 3, since shard 5 is running on node 3

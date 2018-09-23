@@ -72,7 +72,7 @@ is your entry point to this database.
 As a quick smoke test, telnet to your assigned endpoint and port. Then
 enter the Redis PING command. You should see something like this:
 
-``` src
+```src
 # telnet redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 19836
 Trying 54.89.217.184...
 Connected to redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com.
@@ -87,7 +87,7 @@ use as you will use it for other things.
 
 ### Using redis-cli
 
-``` src
+```src
 $ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
@@ -129,7 +129,7 @@ print(r.get('foo'))
 
 Now run the code:
 
-``` src
+```src
 $ python example_redis.py
 bar
 ```

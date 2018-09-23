@@ -17,7 +17,7 @@ recommended to run the following command from the operating system
 command-line-interface (CLI) and wait for it to finish before shutting
 down the machine:
 
-``` src
+```src
 $ sudo supervisorctl stop-all
 ```
 

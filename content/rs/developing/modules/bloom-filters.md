@@ -110,7 +110,7 @@ Module]({{< relref "/rs/developing/modules/installing.md" >}}).
 
 You can play with it a bit using redis-cli:
 
-``` src
+```src
  127.0.0.1:6379> BF.ADD bloom mark
  1) (integer) 1
  127.0.0.1:6379> BF.ADD bloom redis
@@ -138,7 +138,7 @@ You can also create a custom Bloom filter. The *BF.ADD* command creates
 a new Bloom filter suitable for a small-ish number of items. This
 consumes less memory but may not be ideal for large filters:
 
-``` src
+```src
  127.0.0.1:6379> BF.RESERVE largebloom 0.0001 1000000
  OK
  127.0.0.1:6379> BF.ADD largebloom mark
@@ -180,7 +180,7 @@ with 20k/sec.
 
 Running the equivalent command with rebloom:
 
-``` src
+```src
  mnunberg@mbp15III ~/Source/rebloom $ redis-benchmark -e -r 100000000 -n 1000000 -c 20 bf.add test __rand_int__
  ====== bf.add test __rand_int__ ======
  1000000 requests completed in 8.92 seconds
@@ -205,7 +205,7 @@ Bloomd by default uses an initial capacity of 100k and an error ratio of
 then reads them. It uses fire-and-forget semantics when setting items so
 network latency doesn't become a factor when sending the commands:
 
-``` src
+```src
 mnunberg@mbp15III ~/Source/bloomd $ ./bench
  Thread started.Using filter: foobar1464749818
  Connect: 0 msec
@@ -219,7 +219,7 @@ or 166K ops/sec.
 
 The equivalent with rebloom:
 
-``` src
+```src
  mnunberg@mbp15III ~/Source/rebloom $ redis-cli del test; redis-cli bf.reserve test 0.0001 100000; redis-benchmark -e -r 1000000 -l -n 1000000 -P 100 -c 1 bf.add test __rand_int__
  (integer) 1
  OK
@@ -241,7 +241,7 @@ Rebloom performs at 370k/s, or about 50% faster than bloomd.
 
 For reading:
 
-``` src
+```src
  mnunberg@mbp15III ~/Source/rebloom $ redis-benchmark -e -r 1000000 -n 1000000 -l -P 100 -c 1 bf.exists test __rand_int__
  ====== bf.exists test __rand_int__ ======
  1000000 requests completed in 2.65 seconds
@@ -260,7 +260,7 @@ Which is about 150% faster than bloomd!
 Finally, I added a BF.DEBUG command, to see exactly how the filter is
 being utilized:
 
-``` src
+```src
  127.0.0.1:6379> BF.DEBUG test
  1) "size:987949"
  2) "bytes:239627 bits:1917011 hashes:14 capacity:100000 size:100000 ratio:0.0001"

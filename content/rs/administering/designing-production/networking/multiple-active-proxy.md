@@ -89,7 +89,7 @@ configuration.
 The **info** command on cluster returns the existing proxy policy for
 sharded and non-sharded (single shard) databases.
 
-``` src
+```src
 $ rladmin info cluster
 cluster configuration:
    repl_diskless: enabled
@@ -112,7 +112,7 @@ rladmin. The following command is an example that changes the bind
 policy for a database called "db1" with an endpoint id "1:1" to "All
 Master Shards" proxy policy.
 
-``` src
+```src
 $ rladmin bind db db1 endpoint 1:1 policy all-master-shards
 ```
 
@@ -126,7 +126,7 @@ multi-proxy policies need to be manually reapplied after topology
 changes like node restarts, failovers and migrations. To reset the
 policy, users can run:
 
-``` src
+```src
 $ rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards||all-nodes>
 ```
 

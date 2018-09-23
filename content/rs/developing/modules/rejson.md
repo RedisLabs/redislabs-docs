@@ -63,28 +63,28 @@ version.
 Log into the ReJSON enabled database with redis-cli and the --raw switch
 so we can see the raw output:
 
-``` src
+```src
 $ redis-cli --raw
 127.0.0.1:6379>
 ```
 
 I have a document called example1 I want to store and it looks like so:
 
-``` src
+```src
 {"foo": "bar"}
 ```
 
 Add a new entity to the example1 document called test2 and set it to an
 array called test3
 
-``` src
+```src
 127.0.0.1:6379> json.set example1 .test2 '{"test3":[1,2,3]}'
 OK
 ```
 
 Get the object to see what it looks like:
 
-``` src
+```src
 127.0.0.1:6379> JSON.GET example1
 {"foo":"bar","test2":{"test3":[1,2,3]}}
 ```
@@ -92,7 +92,7 @@ Get the object to see what it looks like:
 Get the second array value from the test2 sub-document in the test3
 object's array:
 
-``` src
+```src
 127.0.0.1:6379> JSON.GET example1 .test2.test3[1]
 2
 ```

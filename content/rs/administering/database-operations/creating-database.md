@@ -148,7 +148,7 @@ you wish to test. Then do the redis PING command.
 Using the URL based connection method, you should see something like
 this:
 
-``` src
+```src
 $ telnet redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 19836
 Trying 54.89.217.184…
 Connected to redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com.
@@ -167,7 +167,7 @@ locations please refer to the installation page.
 Using the URL based connection method, you can provide the database
 endpoint URL and port number as follows:
 
-``` src
+```src
 $ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com  
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
@@ -185,7 +185,7 @@ the database name. In this method, we simply use the discovery service
 that listens on port 8001 on all nodes of the cluster to discover the
 endpoint for the database named "db1"
 
-``` src
+```src
 from redis.sentinel import Sentinel
 
 # with IP based connections, a list of known node IP addresses is constructed
@@ -212,7 +212,7 @@ In the URL based connection method, you do need to provide the endpoint
 and the port number remember the port number for the database you like
 to connect to.
 
-``` src
+```src
 import redis
 
 # the URL provided to redis. Redis method comes from the database configuration

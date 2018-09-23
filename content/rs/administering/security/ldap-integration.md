@@ -36,7 +36,7 @@ the LDAP server.
 
 ### Step #1: Configure LDAP options in config file
 
-``` src
+```src
 $ vi /tmp/saslauthd.conf
 ```
 
@@ -48,7 +48,7 @@ authenticating with. You can specify multiple LDAP servers by listing
 them separated by a space. If you are using LDAP over SSL, then replace
 ldap:// in the URL with ldaps://.
 
-``` src
+```src
 # Add the following, but with your LDAP Server FQDNs or IPs:
 ldap_servers: ldap://ldap1.mydomain.com:389 ldap://ldap2.mydomain.com:389
 
@@ -66,7 +66,7 @@ ldap_password: <your password here>
 
 Example saslauthd.conf file
 
-``` src
+```src
 ldap_servers: ldap://ldap1.mydomain.com ldap://ldap2.mydomain.com
 ldap_search_base: ou=coolUsers,dc=company,dc=com
 ldap_filter: (uid=%u)
@@ -75,7 +75,7 @@ ldap_password: secretSquirrel
 
 ### Step #2: Distribute saslauthd.conf to all nodes in the cluster
 
-``` src
+```src
 >$ sudo /opt/redislabs/bin/rladmin cluster config saslauthd_ldap_conf /tmp/saslauthd.conf
 Cluster configured successfully
 ```
@@ -88,7 +88,7 @@ cluster must be set up already.
 Now that we have saslauthd configured, let's test with a known LDAP user
 before we finish the configurations in RS.
 
-``` src
+```src
 >$ testsaslauthd -u user -p password
 0: OK "Success."
 ```
@@ -105,7 +105,7 @@ cluster.
 To have a user authenticate with LDAP, you need to create a new user via
 the REST API call like this:
 
-``` src
+```src
 $ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted 
 -H "Content-Type: application/json" -X POST http://<your-res-cluster>:8080/v1/users 
 -d "{\"auth_method\": \"external\", \"name\": \"<internal-user-name>\", \"role\": \"<user-role>\"}"

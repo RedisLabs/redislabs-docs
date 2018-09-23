@@ -60,7 +60,7 @@ require six steps:
 
 ### Get the Module from Github
 
-``` src
+```src
 $ git clone https://github.com/account/myModule.git
 ```
 
@@ -68,7 +68,7 @@ $ git clone https://github.com/account/myModule.git
 
 To compile the module just run:
 
-``` src
+```src
 $ cd myModule/;make
 ```
 
@@ -80,13 +80,13 @@ to be installed into Redis Enterprise.
 
 Run the next command to install ramp-packer:
 
-``` src
+```src
 $ pip install ramp-packer
 ```
 
 ### Wrap the Custom Module Using Ramp Utility
 
-``` src
+```src
 $ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com" 
 -A "x86_64" -d "My Module" -h "https://www.mymodule.com/" -l "LicenseType" 
 -r "4.0.2"
