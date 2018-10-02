@@ -60,7 +60,7 @@ Direct your browser to the web UI of one of the RS clusters that will
 host the CRDB. Under the databases tab, choose the Redis database with
 Deployment type set to Geo-Distributed.
 
-![](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
 On the create database page, click the **show advanced option** link.
 There are some key differences in the creation process between CRDBs and

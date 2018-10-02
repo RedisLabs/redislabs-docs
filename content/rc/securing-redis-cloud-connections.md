@@ -17,12 +17,12 @@ enabling SSL.
 To find your account number, go to the "Settings" page in the Web UI and
 look for "Account Number":
 
-![](/images/rc/account_number.png?width=600&height=265)
+![account_number](/images/rc/account_number.png?width=600&height=265)
 
 For your subscription number, please go to the "Subscriptions" page of
 the Web UI and look in the title.
 
-![](/images/rc/subscriptions2.png?width=600&height=248)
+![subscriptions2](/images/rc/subscriptions2.png?width=600&height=248)
 
 ## Setting Up Your Database
 

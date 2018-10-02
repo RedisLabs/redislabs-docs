@@ -17,7 +17,7 @@ For this quick start, you will need the following:
 1. On the create database screen, check the box for Redis Modules and
     select the module you want to use for this database.\
 
-    ![](/images/rs/create_database-1.png?width=794&height=554)
+    ![create_database-1](/images/rs/create_database-1.png?width=794&height=554)
 1. Click **Show advanced options** and put **12543** for the port.
 1. Click the **Activate** button
 

@@ -13,7 +13,7 @@ account]({{< relref "/rc/securing-redis-cloud-connections.md" >}}),
 you will be prompted to supply the downloadable Redis Labs CA
 Certificate from this page.
 
-![](/images/rc/settings.png?width=1000&height=782)
+![settings](/images/rc/settings.png?width=1000&height=782)
 
 ## Team Management
 

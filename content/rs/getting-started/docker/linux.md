@@ -64,7 +64,7 @@ On the "new redis db" page, click the "show advanced option" link and
 enter "database1" for a database name and "12000" for the endpoint port
 number. Then click "Activate" to create your database.
 
-![](/images/rs/db-create-screen-linux.png?width=600&height=635)
+![db-create-screen-linux](/images/rs/db-create-screen-linux.png?width=600&height=635)
 
 You now have a Redis database!
 

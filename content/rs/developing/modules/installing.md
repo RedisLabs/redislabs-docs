@@ -29,10 +29,10 @@ the next step of adding the module to Redis Enterprise Software.
 1. Click on **Add Module** button and navigate to where you downloaded
     the module package\
 
-    ![](/images/rs/add_module.png?width=800&height=318)
+    ![add_module](/images/rs/add_module.png?width=800&height=318)
 1. Click on the **Upload** button and notice the name and version\
 
-    ![](/images/rs/upload_module.png?width=800&height=321)
+    ![upload_module](/images/rs/upload_module.png?width=800&height=321)
 
 ### Create a new database that uses the Module
 
@@ -50,6 +50,6 @@ to the newest versions.
 1. On the create database screen, check the box for Redis Modules and
     select the module you want to use for this database.\
     
-    ![](/images/rs/create_database-1.png?width=794&height=554)
+    ![create_database-1](/images/rs/create_database-1.png?width=794&height=554)
 1. Click **Show advanced options** and put **12544** for the port.
 1. Click the **activate** button

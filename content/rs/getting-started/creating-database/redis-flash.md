@@ -58,7 +58,7 @@ see the Redis Enterprise Software web console. Simply click the
 Note: Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
 
-![](/images/rs/setup_linux.png?width=600&height=287)
+![setup_linux](/images/rs/setup_linux.png?width=600&height=287)
 
 On the "**node configuration**" page, select the "Enable flash storage
 support" checkbox and provide a cluster FQDN: "**mycluster.local**".
@@ -72,13 +72,13 @@ the trial version of the product.\
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-![](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
+![RP-SetupScreen4](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
 
 ## Step 3 - Create a Database
 
 Select the "new redis db flash" option.
 
-![](/images/rs/redis-on-flash.png?width=391&height=400)
+![redis-on-flash](/images/rs/redis-on-flash.png?width=391&height=400)
 
 On the "**new redis on flash db**" page, click the "**show advanced
 option**" link and enter "**myredisflashdb**" for a database name and

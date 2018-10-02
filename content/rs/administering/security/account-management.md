@@ -35,7 +35,7 @@ the UI or through the users API.
 1. Indicate whether the user will receive email alerts.
 1. Click **Save** icon.
 
-![](/images/rs/useradd-300x101.png)
+![useradd](/images/rs/useradd-300x101.png)
 
 ## Updating a User
 

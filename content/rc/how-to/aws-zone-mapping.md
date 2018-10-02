@@ -46,13 +46,13 @@ latency.
 Allow the process a few minutes to complete as it maps the availability
 zones. Once complete, you will see this:
 
-![](/images/rc/zone-mapping.png?width=600&height=359)
+![zone-mapping](/images/rc/zone-mapping.png?width=600&height=359)
 
 When the process is complete, the next time you go to create a new
 subscription, the drop down for "Cloud" will have the zone letter in
 them.
 
-![](/images/rc/after_zone_mapping.png?width=600&height=192)
+![after_zone_mapping](/images/rc/after_zone_mapping.png?width=600&height=192)
 
 For existing subscriptions in RC, you will now see the Availability Zone
 they are using. If you desire to remove the latency discussed before,
