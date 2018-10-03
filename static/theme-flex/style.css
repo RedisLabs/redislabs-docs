@@ -150,8 +150,7 @@ article > aside {
           line-height: 1.2rem;
           text-decoration: none; }
           article > aside .menu .dd-item div a:hover, article > aside .menu .dd-item div a:focus, article > aside .menu .dd-item div a:active {
-            background-color: #f2f2f2;
-            border-radius: .2rem; }
+            color: #b62411; }
         article > aside .menu .dd-item div i.category-icon:active,
         article > aside .menu .dd-item div i.category-icon:focus,
         article > aside .menu .dd-item div i.category-icon:hover {
