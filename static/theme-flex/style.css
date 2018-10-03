@@ -406,17 +406,19 @@ article section.page {
 
 nav#toc {
   float: right;
-  margin: 0rem 0 1.7rem 1.7rem ;
-  padding: 0rem 2rem 2rem 2rem ;
+  line-height: 1.2rem;
+  /* margin: 0rem 0 1.7rem 1.7rem ;
+  padding: 0rem 2rem 2rem 2rem ; */
   width: 30%; }
   nav#toc h4 {
     color: #b62411 ;
     margin: 0rem 0rem 1.2rem 0rem ;
     font-size: 1.1rem; }
     nav#toc ul {
-    margin: 0 ;
+    margin-top: 1.7rem;
+    margin-bottom: 1.7rem;
     padding-left: 2.5em;
-    list-style-type: disc; }
+    list-style-type: none; }
     nav#toc ul li {
     color: #b62411;
     font-size: 1rem; }
