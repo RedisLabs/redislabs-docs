@@ -15,11 +15,11 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 3.5rem;
+  height: 72px;
   left: 0;
   line-height: 3.5rem;
   margin-bottom: .35rem;
-  padding: 0 2rem;
+  padding: 0 20px;
   position: fixed;
   right: 0;
   top: 0;
@@ -39,9 +39,10 @@ header {
     header .logo * {
       vertical-align: middle; }
     header .logo img {
-      height: 50px;
+      height: 40.2292px;
       margin-right: .5rem;
-      margin-bottom: .2rem; }
+      margin-bottom: 2rem;
+      margin-top: 2rem; }
   header nav.shortcuts {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -94,9 +95,9 @@ article > aside {
   -ms-flex-direction: column;
   flex-direction: column;
   left: 0;
-  padding: 2rem 0rem 1rem 0rem;
+  padding: 0rem 0rem 1rem 0rem;
   position: fixed;
-  top: 3.5rem;
+  top: 72px;
   width: 20rem;
   overflow-y: auto; }
   article > aside .menu {
@@ -154,7 +155,6 @@ article > aside {
         article > aside .menu .dd-item div i.category-icon:active,
         article > aside .menu .dd-item div i.category-icon:focus,
         article > aside .menu .dd-item div i.category-icon:hover {
-          background-color: #eee;
           border-radius: .2rem;
           padding: 0 0rem; }
   article > aside section {
@@ -294,7 +294,7 @@ article {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin-top: 3.5rem; }
+  margin-top: 72px; }
 
 article section.page {
   -webkit-box-flex: 1;
