@@ -38,7 +38,7 @@
             {{T "Edit-this-page"}}</a>
         <a class="nav-spacer"></a>
     {{- with ($.Scratch.Get "prevPage") -}}
-        <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"> <i class="fa fa-arrow-left"></i></a>
+        <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="fa fa-arrow-left"></i></a>
     {{ end -}}
     {{- with ($.Scratch.Get "nextPage") -}}
         <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="fa fa-arrow-right"></i></a>
