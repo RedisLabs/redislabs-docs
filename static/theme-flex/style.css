@@ -15,11 +15,11 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 72px;
+  height: 3.5rem;
   left: 0;
   line-height: 3.5rem;
   margin-bottom: .35rem;
-  padding: 0 20px;
+  padding: 0 2rem;
   position: fixed;
   right: 0;
   top: 0;
@@ -39,10 +39,9 @@ header {
     header .logo * {
       vertical-align: middle; }
     header .logo img {
-      height: 40.2292px;
+      height: 50px;
       margin-right: .5rem;
-      margin-bottom: 2rem;
-      margin-top: 2rem; }
+      margin-bottom: .2rem; }
   header nav.shortcuts {
     -webkit-box-flex: 1;
     -ms-flex: 1;
