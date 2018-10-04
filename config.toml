@@ -49,7 +49,7 @@ home = [ "HTML", "RSS", "JSON"]
 [[menu.shortcuts]]
 # name = "<i class='fa fa-question-circle'></i> <label>Product</label>"
 name = "<label>Docs</label>"
-url = "https://redislabs.com/docs"
+url = "https://redislabs.com/resources/documentation/"
 weight = 10
 
 [[menu.shortcuts]]
