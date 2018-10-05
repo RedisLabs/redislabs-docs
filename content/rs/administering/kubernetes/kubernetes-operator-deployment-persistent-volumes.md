@@ -9,16 +9,11 @@ spec should include a *persistentSpec* section, in the
 *redis-enterprise-cluster.yaml* file:
 
     spec:
-
-    nodes: 3
-
-    persistentSpec:
-
-    enabled: true
-
-    storageClassName: “standard”
-
-    volumeSize: “23Gi” \#optional
+      nodes: 3
+      persistentSpec:
+       enabled: true
+       storageClassName: "standard"
+       volumeSize: "23Gi” #optional 
 
 Persistence storage is a requirement for this deployment type.
 
@@ -68,14 +63,11 @@ on AWS uses “gp2” as the Storage Class name while GKE uses
 
 Example of the redisEnterpriseNodeResources definition:
 
+
     redisEnterpriseNodeResources:
-
-        limits:
-
-            cpu: “4000m”
-            memory: 4Gi
-
-        requests:
-
-            cpu: “4000m”
-            memory: 4Gi
+      limits:
+        cpu: “4000m”
+        memory: 4Gi    
+      requests:
+        cpu: “4000m”
+        memory: 4Gi
