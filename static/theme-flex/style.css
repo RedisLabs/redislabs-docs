@@ -443,6 +443,10 @@ article section.page pre[class*="language-"] {
   tab-size: 4;
   white-space: pre; }
 
+ul.menu > li.dd-item:not(.parent) i {
+  opacity: 0 !important;
+}
+
 nav#toc {
   position: fixed;
   /* margin: 0rem 0 1.7rem 1.7rem; */
@@ -839,7 +843,9 @@ ul.menu > li  ul li {
       font-size: 2rem;
       line-height: 2.45rem;
     }
-
+ul.menu > li.dd-item:not(.parent) i {
+    opacity: 0 !important;
+}
 
   article > aside {
     display: none; }
