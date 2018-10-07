@@ -1,5 +1,5 @@
 {{ if eq (getenv "HUGO_ENV") "production" }}
-    {{ with .Site.Params.googleAnalytics }}
+    {{ with .Site.Params.googleTagManager }}
     {{ "<!-- Google Tag Manager -->" | safeHTML }}
     <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id={{ . }}" height="0" width="0" 
