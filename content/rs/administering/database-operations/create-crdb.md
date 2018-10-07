@@ -11,8 +11,7 @@ the steps to create a CRDB:
 1. Create a service account on each cluster as an admin
 1. Confirm network is setup
 1. Connect to one of your clusters and configure a new CRDB
-1. Test writing to one cluster
-1. Test reading from a different cluster
+1. Test writing to one cluster and reading from a different cluster
 
 ## Prerequisites
 
@@ -23,7 +22,7 @@ the steps to create a CRDB:
     configured and running on each node in all clusters. Please see
     "Network Time Service" for more information.
 
-## Create a Service Account
+## Step 1 - Create a Service Account
 
 A local account with the Admin role is highly recommended on each
 cluster that will host a CRDB. While you could use a user account, it is
@@ -38,7 +37,7 @@ Creation](/images/rs/image8.png?width=1000&height=490)
 This service account will be used when the CRDB is created, but also on
 an ongoing basis by the clusters to help manage the CRDB.
 
-## Confirm network is setup
+## Step 2 - Confirm network is setup
 
 The CRDB creation process assumes the required secured network
 configurations are in place. If you have not already done so, please see
@@ -53,7 +52,7 @@ Participating Clusters.
 $ telnet <target FQDN> 8080
 ```
 
-## Create a CRDB
+## Step 3 - Create a CRDB
 
 Direct your browser to the web UI of one of the RS clusters that will
 host the CRDB. Under the databases tab, choose the Redis database with
@@ -72,7 +71,7 @@ standard Redis database creation.
     that you cannot change this option and if not possible, the creation
     will error.
 1. The eviction policy can only be set to noeviction for CRDBs.
-1. [Participating Clusters](#part-clusters) section is where you define
+1. [Participating Clusters](#participating-clusters) section is where you define
     the clusters that will host member CRDBs and the admin user account
     to connect to each cluster.
 
@@ -129,9 +128,11 @@ setting for all CRDB instances.
 Once activated, the Redis Enterprise Software cluster will authenticate
 and communicate with each of the listed Participating Clusters on your
 behalf via Rest API and the service account. RS will create a member
-database on each cluster, join it to the CRDB, and commence replication.
+database on each cluster, join it to the CRDB, and start replication.
 If you view any Participating Cluster individually, you should see the
 new database created as a member of the CRDB.
+
+## Step 4 - Test Read and Write
 
 If you would like to a smoke test of connectivity and replication, see
 the connecting section of [the CRDB Quick
