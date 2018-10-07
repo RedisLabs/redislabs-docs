@@ -6,11 +6,16 @@
   <body data-url="{{ .RelPermalink }}">
     {{ partial "flex/body-beforecontent" . }}
    
-    {{ partial "mini-toc" . }}
+    <div class="main-content">
+      <div class="main-content-left">
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+      <div class="main-content-right">
+      {{ partial "mini-toc" . }}
+    </div>
+    </div>
 
-    {{ block "main" . }}
-    {{ end }}
-    
     {{ partial "flex/body-aftercontent" . }}
 
     {{ block "footer" . }}

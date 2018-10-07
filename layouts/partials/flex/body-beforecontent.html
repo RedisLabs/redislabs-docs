@@ -33,7 +33,7 @@
     <section class="page">
 
       {{- if not .Site.Params.disableSearch}}
-        <div>
+        <div class="search_lang_wrapper">
           <div class="searchcontainer">
             <i class="fa fa-search searchicon"></i>
             <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
@@ -53,7 +53,7 @@
       {{- end}}
 
   {{end}}
-    
+
     {{if not .IsHome}}
     <aside>
       <ul class="menu">
@@ -64,50 +64,51 @@
             </a>
             </li>
         {{- end}}
-  
+
         {{- partial "menu.html" . }}
-  
+
       </ul>
-      
+
       {{- partial "language-selector.html" . }}
       <section>
           {{- partial "menu-footer.html" . }}
       </section>
     </aside>
     <section class="page">
-
-        {{- if not .Site.Params.disableSearch}}
-          <div>
-            <div class="searchcontainer">
-              <i class="fa fa-search searchicon"></i>
-              <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
+      <div class="top-content">
+          {{- if not .Site.Params.disableSearch}}
+            <div class="search_lang_wrapper">
+              <div class="searchcontainer">
+                <i class="fa fa-search searchicon"></i>
+                <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
+              </div>
+              <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
+              <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
+              <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
+              <script type="text/javascript">
+                {{ if .Site.IsMultiLingual }}
+                    var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
+                {{ else }}
+                    var baseurl = "{{.Site.BaseURL}}";
+                {{ end }}
+              </script>
+              <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
             </div>
-            <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-            <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
-            <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-            <script type="text/javascript">
-              {{ if .Site.IsMultiLingual }}
-                  var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
-              {{ else }}
-                  var baseurl = "{{.Site.BaseURL}}";
-              {{ end }}
-            </script>
-            <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
-          </div>
-        {{- end}}
+          {{- end}}
 
-      <div class="chevrons">
-        {{ partial "next-prev-page.html" . }}
+        <div class="chevrons">
+          {{ partial "next-prev-page.html" . }}
+        </div>
+      {{end}}
+
+      {{if not .IsHome}}<h1>{{.Title}}</h1>{{end}}
+
+      <div class="nav-select">
+        <center>
+          <select onchange="javascript:location.href = this.value;">
+            {{partial "flex/selectnavigation.html" .}}
+          </select>
+        </center>
       </div>
-    {{end}}
-
-    {{if not .IsHome}}<h1>{{.Title}}</h1>{{end}}
-
-    <div class="nav-select">
-      <center>
-        <select onchange="javascript:location.href = this.value;">
-          {{partial "flex/selectnavigation.html" .}}
-        </select>
-      </center>
     </div>
 
