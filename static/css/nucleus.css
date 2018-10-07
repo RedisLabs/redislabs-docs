@@ -112,7 +112,7 @@ textarea {
 
 header > .menu select, header > .menu select > option {
   color: #545350 }
-  
+
 button {
   overflow: visible; }
 
@@ -183,18 +183,18 @@ th {
   width: 75em;
   margin: 0 auto;
   padding: 0; }
-  @media only all and (min-width: 60em) and (max-width: 74.938em) {
-    .container {
-      width: 60em; } }
-  @media only all and (min-width: 48em) and (max-width: 59.938em) {
-    .container {
-      width: 48em; } }
-  @media only all and (min-width: 30.063em) and (max-width: 47.938em) {
-    .container {
-      width: 30em; } }
-  @media only all and (max-width: 30em) {
-    .container {
-      width: 100%; } }
+@media only all and (min-width: 60em) and (max-width: 74.938em) {
+  .container {
+    width: 60em; } }
+@media only all and (min-width: 48em) and (max-width: 59.938em) {
+  .container {
+    width: 48em; } }
+@media only all and (min-width: 30.063em) and (max-width: 47.938em) {
+  .container {
+    width: 30em; } }
+@media only all and (max-width: 30em) {
+  .container {
+    width: 100%; } }
 
 .grid {
   display: -webkit-box;
@@ -210,11 +210,11 @@ th {
   list-style: none;
   margin: 0;
   padding: 0; }
-  @media only all and (max-width: 47.938em) {
-    .grid {
-      -webkit-flex-flow: row wrap;
-      -moz-flex-flow: row wrap;
-      flex-flow: row wrap; } }
+@media only all and (max-width: 47.938em) {
+  .grid {
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
+    flex-flow: row wrap; } }
 
 .block {
   -webkit-box-flex: 1;
@@ -226,15 +226,15 @@ th {
   flex: 1;
   min-width: 0;
   min-height: 0; }
-  @media only all and (max-width: 47.938em) {
-    .block {
-      -webkit-box-flex: 0;
-      -moz-box-flex: 0;
-      box-flex: 0;
-      -webkit-flex: 0 100%;
-      -moz-flex: 0 100%;
-      -ms-flex: 0 100%;
-      flex: 0 100%; } }
+@media only all and (max-width: 47.938em) {
+  .block {
+    -webkit-box-flex: 0;
+    -moz-box-flex: 0;
+    box-flex: 0;
+    -webkit-flex: 0 100%;
+    -moz-flex: 0 100%;
+    -ms-flex: 0 100%;
+    flex: 0 100%; } }
 
 .content {
   margin: 0.625rem;
@@ -485,28 +485,28 @@ th {
   -webkit-flex-flow: row wrap;
   -moz-flex-flow: row wrap;
   flex-flow: row wrap; }
+.fixed-blocks .block {
+  -webkit-box-flex: inherit;
+  -moz-box-flex: inherit;
+  box-flex: inherit;
+  -webkit-flex: inherit;
+  -moz-flex: inherit;
+  -ms-flex: inherit;
+  flex: inherit;
+  width: 25%; }
+@media only all and (min-width: 60em) and (max-width: 74.938em) {
   .fixed-blocks .block {
-    -webkit-box-flex: inherit;
-    -moz-box-flex: inherit;
-    box-flex: inherit;
-    -webkit-flex: inherit;
-    -moz-flex: inherit;
-    -ms-flex: inherit;
-    flex: inherit;
-    width: 25%; }
-    @media only all and (min-width: 60em) and (max-width: 74.938em) {
-      .fixed-blocks .block {
-        width: 33.33333%; } }
-    @media only all and (min-width: 48em) and (max-width: 59.938em) {
-      .fixed-blocks .block {
-        width: 50%; } }
-    @media only all and (max-width: 47.938em) {
-      .fixed-blocks .block {
-        width: 100%; } }
+    width: 33.33333%; } }
+@media only all and (min-width: 48em) and (max-width: 59.938em) {
+  .fixed-blocks .block {
+    width: 50%; } }
+@media only all and (max-width: 47.938em) {
+  .fixed-blocks .block {
+    width: 100%; } }
 
 body {
   font-size: 1.15rem;
-  line-height: 1.7; 
+  line-height: 1.7;
   font-family: 'Lato', sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -518,11 +518,13 @@ h1 {
   line-height: 2.5rem; }
 
 h2 {
-  font-size: 2rem;
-  line-height: 2rem; }
+  font-size: 1.8rem;
+  line-height: 1.9rem;
+}
 
 h3 {
-  font-size: 1.8rem; }
+  font-size: 1.4rem;
+}
 
 h4 {
   font-size: 1.5rem; }
@@ -539,9 +541,9 @@ p {
 ul, ol {
   margin-top: 1.7rem;
   margin-bottom: 1.7rem; }
-  ul ul, ul ol, ol ul, ol ol {
-    margin-top: 0;
-    margin-bottom: 0; }
+ul ul, ul ol, ol ul, ol ol {
+  margin-top: 0;
+  margin-bottom: 0; }
 
 blockquote {
   margin: 1.7rem 0;
@@ -550,8 +552,8 @@ blockquote {
 cite {
   display: block;
   font-size: 0.925rem; }
-  cite:before {
-    content: "\2014 \0020"; }
+cite:before {
+  content: "\2014 \0020"; }
 
 pre {
   margin: 1.7rem 0;
@@ -580,12 +582,12 @@ select {
   display: block; }
 
 label {
-  margin-bottom: 0.425rem; 
+  margin-bottom: 0.425rem;
   cursor: pointer; }
-  label.required:after {
-    content: "*"; }
-  label abbr {
-    display: none; }
+label.required:after {
+  content: "*"; }
+label abbr {
+  display: none; }
 
 textarea, input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], select[multiple=multiple] {
   -webkit-transition: border-color;
@@ -594,8 +596,8 @@ textarea, input[type="email"], input[type="number"], input[type="password"], inp
   border-radius: 0.1875rem;
   padding: 0.425rem 0.425rem;
   width: 100%; }
-  textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
-    outline: none; }
+textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
+  outline: none; }
 
 textarea {
   resize: vertical; }
@@ -621,3 +623,9 @@ input[type="submit"] {
   border: inherit; }
 
 /*# sourceMappingURL=nucleus.css.map */
+
+
+
+section a:hover {
+  text-decoration: underline;
+}
