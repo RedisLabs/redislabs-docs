@@ -445,6 +445,7 @@ article section.page pre[class*="language-"] {
 
 ul.menu > li.dd-item:not(.parent) i {
   opacity: 0 !important;
+  pointer-events: none;
 }
 
 nav#toc {
