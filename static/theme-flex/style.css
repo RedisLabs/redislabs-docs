@@ -445,11 +445,10 @@ article section.page pre[class*="language-"] {
 
 ul.menu > li.dd-item:not(.parent) i {
   opacity: 0 !important;
-  pointer-events: none;
 }
 
 nav#toc {
-  position: fixed;
+  position: relative;
   /* margin: 0rem 0 1.7rem 1.7rem; */
   /* padding: 0rem 2rem 2rem 2rem; */
   width: 262px;
@@ -743,7 +742,10 @@ ul.children.children-card > span p {
 
 
 /*# sourceMappingURL=style.css.map */
-
+nav#toc.fixed-pos {
+  position: fixed;
+  top: 100px;
+}
 
 nav.shortcuts li:last-child {
   background: white;
@@ -789,8 +791,8 @@ nav#toc > ul > li {
 
 nav#toc > ul > li > ul > li {
   list-style-type: disc;
-  list-style-position: inside;
-  margin: 8px 0;
+  /* list-style-position: inside; */
+  margin: 8px 0 8px 10px;
 }
 
 nav#toc > ul > li > ul > li:last-child {
@@ -805,7 +807,7 @@ nav#toc > ul > li > ul > li:last-child {
 .main-content-right {
     width: 30%;
 }
-article > aside .menu li.parent {
+article > aside .menu > li.parent {
   grid-area: 1;
   border-bottom: 1px solid #5d6876;
   padding-bottom: 30px;
@@ -814,6 +816,10 @@ article > aside .menu li.parent {
 
 ul.menu > li  ul li {
   padding-left: 15px;
+}
+
+ul.menu > li.dd-item:not(.parent) i {
+  pointer-events: none;
 }
 @media (max-width: 1024px) {
   section {
