@@ -29,7 +29,7 @@ other = "Attachments"
 other = "Oh no; it's a 404!"
 
 [message-404]
-other = "You can use the Search or look in the menu. Here are some popular links:"
+other = "You can use the Search or look in the menu."
 
 [Go-to-homepage]
 other = "Go to the Redis Labs Documentation Center"
