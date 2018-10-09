@@ -12,7 +12,6 @@
   </div> -->
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
   {{- with .Site.Menus.shortcuts}}
-<<<<<<< HEAD
     <nav class="shortcuts">
         {{- range sort . "Weight"}}
             <li class="" role="">
@@ -22,47 +21,11 @@
             </li>
         {{- end}}
     </nav>
-=======
-  <nav class="shortcuts">
-    {{- range sort . "Weight"}}
-    <li class="" role="">
-      <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}} target="_blank" {{end}} rel="noopener">
-        {{safeHTML .Name}}
-      </a>
-    </li>
-    {{- end}}
-  </nav>
->>>>>>> Move GTM body to partial
   {{- end}}
 </header>
 <article>
   {{if .IsHome}}
   <section class="page">
-
-<<<<<<< HEAD
-      {{- if not .Site.Params.disableSearch}}
-        <div class="search_lang_wrapper">
-          <div class="searchcontainer">
-            <i class="fa fa-search searchicon"></i>
-            <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
-          </div>
-          <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-          <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
-          <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-          <script type="text/javascript">
-            {{ if .Site.IsMultiLingual }}
-                var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
-            {{ else }}
-                var baseurl = "{{.Site.BaseURL}}";
-            {{ end }}
-          </script>
-          <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
-        </div>
-      {{- end}}
-
-  {{end}}
-
-=======
     {{- if not .Site.Params.disableSearch}}
     <div>
       <div class="searchcontainer">
@@ -85,7 +48,6 @@
 
     {{end}}
 
->>>>>>> Move GTM body to partial
     {{if not .IsHome}}
     <aside>
       <ul class="menu">
@@ -107,44 +69,6 @@
       </section>
     </aside>
     <section class="page">
-<<<<<<< HEAD
-      <div class="top-content">
-          {{- if not .Site.Params.disableSearch}}
-            <div class="search_lang_wrapper">
-              <div class="searchcontainer">
-                <i class="fa fa-search searchicon"></i>
-                <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
-              </div>
-              <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-              <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
-              <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-              <script type="text/javascript">
-                {{ if .Site.IsMultiLingual }}
-                    var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
-                {{ else }}
-                    var baseurl = "{{.Site.BaseURL}}";
-                {{ end }}
-              </script>
-              <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
-            </div>
-          {{- end}}
-
-        <div class="chevrons">
-          {{ partial "next-prev-page.html" . }}
-        </div>
-      {{end}}
-
-      {{if not .IsHome}}<h1>{{.Title}}</h1>{{end}}
-
-      <div class="nav-select">
-        <center>
-          <select onchange="javascript:location.href = this.value;">
-            {{partial "flex/selectnavigation.html" .}}
-          </select>
-        </center>
-      </div>
-    </div>
-=======
 
       {{- if not .Site.Params.disableSearch}}
       <div>
@@ -172,7 +96,6 @@
       {{end}}
 
       {{if not .IsHome}}<h1>{{.Title}}</h1>{{end}}
->>>>>>> Move GTM body to partial
 
       <div class="nav-select">
         <center>
