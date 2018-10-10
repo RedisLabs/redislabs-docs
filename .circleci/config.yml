@@ -99,7 +99,7 @@ jobs:
                     aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only
             # Hide OSS docs landing page with redirect index.html to https://redislabs.com/resources/documentation/
             - run:
-                name: Deploy to S3
+                name: Redirect index.html
                 command: aws s3 cp s3://docs.redislabs.com/$VERSION/index.html s3://docs.redislabs.com/$VERSION/index.html --website-redirect https://redislabs.com/resources/documentation/
 
 workflows:
