@@ -78,6 +78,10 @@ jobs:
                         export LOCATION=staging/${CIRCLE_BRANCH} ;
                     fi
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only
+                         # Hide OSS docs landing page with redirect index.html to https://redislabs.com/resources/documentation/
+            - run:
+                name: Redirect index.html
+                command: aws s3 cp s3://docs.redislabs.com/$LOCATION/index.html s3://docs.redislabs.com/$LOCATION/index.html --website-redirect https://redislabs.com/resources/documentation/
 
     # Deploy for -build to push to /{version} without -build
     deploy-prod:
