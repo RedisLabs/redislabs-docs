@@ -114,6 +114,7 @@ article > aside {
   left: 0;
   padding: 0 26px;
   position: fixed;
+  z-index: 2;
   top: 58px;
   width: 24rem;
   overflow-y: auto;
@@ -334,7 +335,13 @@ section a {
     margin: 0 auto;
     padding: 30px 0;
 }
-
+.main-content-bottom {
+    margin-top: 90px;
+    padding: 10px 0 60px;
+    background: white;
+    position: relative;
+    z-index: 1;
+}
 .btm_footer ul li {
     list-style-type: none;
 }
@@ -378,7 +385,7 @@ section.page {
   -ms-flex: 1;
   flex: 1;
   box-sizing: border-box;
-  padding: 2rem 1rem 2rem 25rem;
+  padding: 2rem 1rem 0 25rem;
   max-width: 1300px;
   margin: 0 auto;
   padding-right: 1rem;
@@ -525,6 +532,7 @@ nav#toc ul li {
     padding: 6px;
     border-radius: 3px;
     text-decoration: none !important;
+    transition: all 150ms linear;
 }
 .nav-links-footer-right a {
     margin-right: 8px;
@@ -537,8 +545,7 @@ nav#toc ul li {
     font-size: 10px;
     justify-content: space-between;
     line-height: 1;
-    padding: 10px 0;
-    margin-top: 90px;
+    /* padding: 10px 0; */
 }
 
 .nav-links-footer {
@@ -707,7 +714,7 @@ footer {
   /* margin: 0; */
   /* padding: 0; */
   position: relative;
-  z-index: 7;
+  z-index: 0;
   }
 footer p {
   margin: 0px; }
@@ -831,7 +838,6 @@ ul.children.children-card > span p {
 nav#toc.fixed-pos {
   position: fixed;
   top: 100px;
-  z-index: -1;
 }
 .post-bottom .edit-link a:hover {
     color: white;
@@ -938,8 +944,8 @@ button.close-button {
 }
 .main-content-right {
     width: 30%;
-    position: relative;
-    z-index: 7;
+    /* position: relative; */
+    /* z-index: -1; */
 }
 article > aside .menu > li.parent {
   grid-area: 1;
