@@ -7,7 +7,7 @@ alwaysopen: false
 The steps for creating a simple Redis Enterprise VPC (RV) deployment are
 as follows:
 
-1. Sign up for a RV account
+1. Sign up for an RV account
 1. Create a dedicated AWS account/User for RV
 1. Create a new RV subscription
 1. Create a new database definition
@@ -37,7 +37,7 @@ If you do have an existing RV subscription, then proceed to Step 4.
 For a new subscription, you will need to provide the following:
 
 1. A subscription name
-1. The cloud region you want your databases to be created in AWS
+1. The cloud region in which you want your databases to be created
 1. Whether you want to use [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database
@@ -165,7 +165,7 @@ Next copy and paste this into a file named
 #import the library
 import redis 
 # Create connection object
-r = redis.Redis( host='pub-redis-10382.us-west-2-1.1.ec2.garantiadata.com', port=10382)
+r = redis.Redis(host='pub-redis-10382.us-west-2-1.1.ec2.garantiadata.com', port=10382)
 # set a value for the foo object
 r.set('foo', 'bar')
 # retrieve and print the value for the foo object
