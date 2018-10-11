@@ -547,7 +547,9 @@ nav#toc ul li {
     line-height: 1;
     /* padding: 10px 0; */
 }
-
+footer .close-button {
+  display: none;
+}
 .nav-links-footer {
     display: flex;
     justify-content: space-between;
