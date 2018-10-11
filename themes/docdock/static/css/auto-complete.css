@@ -1,21 +1,22 @@
 .autocomplete-suggestions {
     text-align: left;
     cursor: default;
-    border: 1px solid #ccc;
+    /* border: 1px solid #e0e0e0; */
     border-top: 0;
-    background: #fff;
-    box-shadow: 0px 0px 4px #ccc;
+    background: #f7f7f7;
     transition: left 0.1s ease-in-out;
     
     /* core styles should not be changed */
     position: absolute;
-    display: none;
-    z-index: 9999;
+    /* display: none; */
+    z-index: 99;
     max-height: 70vh;
     width: 265px;
     overflow: hidden;
     overflow-y: hidden;
     box-sizing: border-box;
+    /* margin-left: -44px; */
+    margin-top: -1px;
 }
 .autocomplete-suggestion {
     position: relative;
@@ -25,7 +26,8 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #354253;
+    font-size: 14px;
+    color: #7f7f7f;
 }
 
 .autocomplete-suggestion b {

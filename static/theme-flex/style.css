@@ -22,7 +22,7 @@ header {
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 9;
+  z-index: 999;
 }
 header:after {
   content: '';
@@ -226,7 +226,9 @@ body {
   pointer-events: none; }
 
 a {
-  color: inherit; }
+  color: inherit;
+  transition: all 150ms;
+  }
 
 a:focus {
   outline: 0; }
@@ -319,11 +321,10 @@ section a {
 }
 #navigation a.nav-spacer {
   width: 100%; }
-#navigation a.github-link {
-  /* font-size: 0.8rem; */
-  /* margin: 0.2rem 18rem 0.2rem 0.2rem; */
-  /* width: 14rem; */
-  /* text-align: left; */
+  
+#navigation a.github-link:hover {
+  color: #b62411;
+
 }
 .btm_footer ul {
     margin: 0;
@@ -436,6 +437,7 @@ article section.page img {
   border-radius: .2rem;
   max-width: 100%;
   text-align: center;
+  height: 100% !important;
   }
 article section.page img.border {
   border: 2px solid #e6e6e6 !important;
@@ -457,11 +459,13 @@ article section.page li code,
 article section.page table code {
   padding: 0 0.25rem; }
 article section.page pre {
-  background-color: #eee;
+  background-color: #f7f7f7 !important;
   border-radius: .2rem;
   color: #444;
   overflow: auto;
-  padding: .5rem; }
+  padding: .5rem;
+  font-size: 15px;
+  }
 article section.page pre .copy-to-clipboard {
   float: right;
   position: relative;
@@ -534,6 +538,10 @@ nav#toc ul li {
     text-decoration: none !important;
     transition: all 150ms linear;
 }
+.edit-link i:before {
+  position: relative;
+  top: 3px;
+}
 .nav-links-footer-right a {
     margin-right: 8px;
 }
@@ -546,6 +554,12 @@ nav#toc ul li {
     justify-content: space-between;
     line-height: 1;
     /* padding: 10px 0; */
+}
+span.links span:nth-child(2) {
+  display: none;
+}
+.main-content-left p:first-child {
+  margin-top: 1px;
 }
 footer .close-button {
   display: none;
@@ -850,6 +864,12 @@ nav.shortcuts li:last-child {
   border-radius: 4px;
   transition: background 150ms ease-in-out;
 }
+.panel-heading {
+    text-indent: -9999px;
+}
+
+.panel-info .panel-heading:before {
+}
 
 nav.shortcuts li:last-child a label {
   color: #b62411;
@@ -863,7 +883,7 @@ ol li ul li {
   margin-right: 6px;
   font-size: 17px;
   position: relative;
-  top: 2px;
+  top: -3px;
 }
 ol > li > ul > li {
   margin-top: 10px;
@@ -877,6 +897,7 @@ i.icon-Top {
 div#breadcrumbs {
     font-size: 12px;
     margin-bottom: 30px;
+    color: #7f7f7f;
 }
 .go-top-link {
   position: relative;
@@ -907,6 +928,13 @@ nav#toc ul > li > ul {
 nav#toc > ul > li {
   padding-bottom: 10px;
 }
+.panel-heading {
+  text-indent: -9999px;
+}
+
+.panel-info .panel-heading:before {
+}
+
 .youtube-container {
   margin-bottom: 50px;
 }
