@@ -12,7 +12,7 @@ model, memory limit and feature set. You can have multiple subscriptions
 in different providers and regions, all easily managed from a single
 console.
 
-Pre-requisites
+Prerequisites:
 
 - AWS Account - RV is deployed into your AWS environment under a
     special account you create specifically for it.
@@ -99,9 +99,9 @@ For each row, select the following:
 1. Protocol - Select the relevant database type, either Redis or
     Memcached
 1. The estimated **Memory Limit** of your database. The minimum value
-    is 1GB.
+    is 0.1GB.
 1. If you selected to have a Redis Enterprise Flash subscription,
-    provide your data average item size
+    provide your data average item size if you know it.
 1. Replication - Enables instant failover by keeping a standby,
     in-memory slave replica (note: by checking this option, your dataset
     will consume twice the amount of memory)
