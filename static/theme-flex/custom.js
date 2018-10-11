@@ -23,6 +23,15 @@ jQuery('document').ready(function($) {
         nav.slideToggle(300);
     });
 
-// $('.main-content-right .nav li a').on('click', function())
+
+$('.main-content-right .nav li a').on('click', function (e) {
+    e.preventDefault();
+
+    $('html, body').animate({
+        scrollTop: $($(this).attr('href')).offset().top - 80
+    }, 750, 'swing');
+});
+
 
 });
+
