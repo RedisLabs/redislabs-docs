@@ -13,4 +13,15 @@ jQuery('document').ready(function($) {
         }
     });
 
+    $('.hamburger').click(function() {
+        var w = $(window).width(),
+            nav = $('#navModal');
+        console.log(w/2);
+        // nav.css('width' , w/2);
+        $(this).toggleClass('is-active');
+        nav.slideToggle(300);
+    });
+
+
+
 });

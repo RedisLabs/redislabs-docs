@@ -7,10 +7,6 @@
   <div class="logo">
     {{ partial "header.html" . }}
   </div>
-  <!-- <div class="menu">
-    {{ partial "version.html" . }}
-  </div> -->
-  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
   {{- with .Site.Menus.shortcuts}}
     <nav class="shortcuts">
         {{- range sort . "Weight"}}
@@ -22,6 +18,14 @@
         {{- end}}
     </nav>
   {{- end}}
+  <button class="hamburger hamburger--spring" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner">Menu</span>
+    </span>
+  </button>
+  <div class="reveal large" id="navModal">
+    {{ partial "navigation.html" . }}
+  </div>
 </header>
 <article>
   {{if .IsHome}}
