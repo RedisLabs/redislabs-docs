@@ -7,10 +7,6 @@
   <div class="logo">
     {{ partial "header.html" . }}
   </div>
-  <!-- <div class="menu">
-    {{ partial "version.html" . }}
-  </div> -->
-  <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
   {{- with .Site.Menus.shortcuts}}
     <nav class="shortcuts">
         {{- range sort . "Weight"}}
@@ -22,26 +18,35 @@
         {{- end}}
     </nav>
   {{- end}}
+  <button class="hamburger hamburger--spring" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner">Menu</span>
+    </span>
+  </button>
+  <div class="reveal large" id="navModal">
+    {{ partial "navigation.html" . }}
+  </div>
 </header>
+<a id="top"></a>
 <article>
   {{if .IsHome}}
   <section class="page">
     {{- if not .Site.Params.disableSearch}}
     <div>
       <div class="searchcontainer">
-        <i class="fa fa-search searchicon"></i>
+        <i class="icon-Search searchicon"></i>
         <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
       </div>
       <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
       <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
       <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-      <script type="text/javascript">
+      <!-- <script type="text/javascript">
         { { if .Site.IsMultiLingual } }
         var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
         { { else } }
         var baseurl = "{{.Site.BaseURL}}";
         { { end } }
-      </script>
+      </script> -->
       <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
     </div>
     {{- end}}
@@ -69,23 +74,28 @@
       </section>
     </aside>
     <section class="page">
-
+        <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <span class="links">
+          {{ template "breadcrumb" dict "page" . "value" .Title }}   
+          </span>
+        </div>
+      
       {{- if not .Site.Params.disableSearch}}
       <div>
         <div class="searchcontainer">
-          <i class="fa fa-search searchicon"></i>
+          <i class="icon-Search searchicon"></i>
           <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
         </div>
         <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
         <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
         <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-        <script type="text/javascript">
+        <!-- <script type="text/javascript">
           { { if .Site.IsMultiLingual } }
           var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
           { { else } }
           var baseurl = "{{.Site.BaseURL}}";
           { { end } }
-        </script>
+        </script> -->
         <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
       </div>
       {{- end}}

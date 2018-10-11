@@ -8,14 +8,16 @@
    
     <div class="main-content">
       <div class="main-content-left">
-      {{ block "main" . }}
-      {{ end }}
-    </div>
+        {{ block "main" . }}
+        {{ end }}
+      </div>
       <div class="main-content-right">
-      {{ partial "mini-toc" . }}
+        {{ partial "mini-toc" . }}
+      </div>
     </div>
+    <div class="main-content-bottom">
+        {{ partial "post-bottom" . }}
     </div>
-
     {{ partial "flex/body-aftercontent" . }}
 
     {{ block "footer" . }}
