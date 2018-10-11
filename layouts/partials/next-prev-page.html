@@ -34,14 +34,14 @@
 
     
 {{- if not $.Site.Params.disableNavChevron -}}
-        <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="fa fa-edit"></i>
+        <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a></div>
         <!--<a class="nav-spacer"></a>-->
     {{- with ($.Scratch.Get "prevPage") -}}
-        <div class="nav-links"><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="fa fa-arrow-left"></i></a>
+        <div class="nav-links"><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
     {{ end -}}
     {{- with ($.Scratch.Get "nextPage") -}}
-        <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="fa fa-arrow-right"></i></a></div>
+        <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="icon-ArrowRight"></i></a></div>
     {{- end }}
 {{- end -}}
 </div>

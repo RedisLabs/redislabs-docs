@@ -1,0 +1,25 @@
+<div class="post-bottom">
+{{- if not $.Site.Params.disableNavChevron -}}
+    <div class="extra-links-gooter">
+        <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
+            <span>{{T "Edit-this-page"}}</span></a>
+        </div>
+        <div class="go-top-link">
+                <a href="#top" class="got-to-top">Top&nbsp;<i class="icon-Top"></i></a>
+        </div>
+    </div>    
+        <!--<a class="nav-spacer"></a>-->
+    {{- with ($.Scratch.Get "prevPage") -}}
+        <div class="nav-links-footer">
+            <div class="nav-links-footer-left">
+                <i class="icon-ArrowLeft"></i><span>Previous:</span><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}">{{.Title}}</a>
+            </div>
+    {{ end -}}
+    {{- with ($.Scratch.Get "nextPage") -}}
+            <div class="nav-links-footer-right">
+                <span>Next:</span><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}">&nbsp;{{.Title}}</a><i class="icon-ArrowRight"></i>
+            </div>
+        </div>
+    {{- end }}
+{{- end -}}
+</div>
