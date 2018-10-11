@@ -1,18 +1,19 @@
 jQuery('document').ready(function($) {
     var toc = $('#toc');
-    var distance = toc.offset().top - 100,
-    $window = $(window);
+    if (toc.length > 0) {
+        var distance = toc.offset().top - 100,
+        $window = $(window);
 
-    $window.scroll(function() {
-        if ( $window.scrollTop() >= distance ) {
-            // Your div has reached the top
-            toc.addClass('fixed-pos')
-        }
-        else {
-            toc.removeClass('fixed-pos')
-        }
-    });
-
+        $window.scroll(function() {
+            if ( $window.scrollTop() >= distance ) {
+                // Your div has reached the top
+                toc.addClass('fixed-pos')
+            }
+            else {
+                toc.removeClass('fixed-pos')
+            }
+        });
+    }
     $('.hamburger').click(function() {
         var w = $(window).width(),
             nav = $('#navModal');
@@ -22,6 +23,6 @@ jQuery('document').ready(function($) {
         nav.slideToggle(300);
     });
 
-
+// $('.main-content-right .nav li a').on('click', function())
 
 });
