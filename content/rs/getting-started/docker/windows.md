@@ -128,7 +128,7 @@ notepad redis_test.py
 
 Paste the following into a file named "redis\_test.py".
 
-```src
+```python
 import redis
 
 r = redis.StrictRedis(host='localhost', port=12000, db=0)
