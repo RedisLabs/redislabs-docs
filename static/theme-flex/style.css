@@ -213,15 +213,15 @@ body {
 }
 
 .cbp-spmenu-push-toleft header {
-  left: -300px;
-  right: 300px;
+  left: -250px;
+  right: 250px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .cbp-spmenu-push-toleft article > aside {
-  left: -240px;
+  left: -250px;
   -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -1277,10 +1277,11 @@ ul.no-bullet li {
 /* Orientation-dependent styles for the content of the menu */
 
 .cbp-spmenu-vertical {
-	width: 300px;
+	width: 250px;
 	height: 100%;
 	top: 0;
 	z-index: 1000;
+	overflow-y: scroll;
 }
 
 .cbp-spmenu-vertical a {
@@ -1312,11 +1313,11 @@ ul.no-bullet li {
 /* Vertical menu that slides from the left or right */
 
 .cbp-spmenu-left {
-	left: -300px;
+	left: -250px;
 }
 
 .cbp-spmenu-right {
-	right: -300px;
+	right: -250px;
 }
 
 .cbp-spmenu-left.cbp-spmenu-open {
@@ -1354,11 +1355,11 @@ ul.no-bullet li {
 }
 
 .cbp-spmenu-push-toright {
-	left: 300px;
+	left: 250px;
 }
 
 .cbp-spmenu-push-toleft {
-	left: -300px;
+	left: -250px;
 }
 
 /* Transitions */
@@ -1419,7 +1420,7 @@ ul.no-bullet li {
 	position: fixed;
 	top: 120px;
 	left: 0;
-	width: 300px;
+	width: 250px;
 	height: calc(100vh - 120px);
 	background: #1c1d22;
 }
