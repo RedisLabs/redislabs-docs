@@ -12,12 +12,12 @@
     {{- with ($.Scratch.Get "prevPage") -}}
         <div class="nav-links-footer">
             <div class="nav-links-footer-left">
-                <i class="icon-ArrowLeft"></i><span>Previous:</span><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}">{{.Title}}</a>
+                <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i><span>Previous:</span>{{.Title}}</a>
             </div>
     {{ end -}}
     {{- with ($.Scratch.Get "nextPage") -}}
             <div class="nav-links-footer-right">
-                <span>Next:</span><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}">&nbsp;{{.Title}}</a><i class="icon-ArrowRight"></i>
+                <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><span>Next:</span>&nbsp;{{.Title}}&nbsp;&nbsp;&nbsp;<i class="icon-ArrowRight"></i></a>
             </div>
         </div>
     {{- end }}
