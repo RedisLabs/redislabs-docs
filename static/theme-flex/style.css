@@ -1086,6 +1086,7 @@ button.close-button {
     line-height: 1;
     cursor: pointer;
     background: transparent;
+    display: none;
 }
 .main-content-right {
     width: 30%;
