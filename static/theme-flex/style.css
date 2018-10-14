@@ -1637,11 +1637,12 @@ ul.no-bullet li {
 
 .menu__breadcrumbs a:not(:last-child)::after {
 	content: '\e903';
-	display: inline-block;
-	padding: 0 0.5em;
-	color: white;
+	padding: 0 5px;
+	color: #b3b6ba;
 	font-family: 'redis_icomoon' !important;
 	transform: rotate(180deg);
+	font-size: 24px;
+	text-indent: 0;
 }
 
 .menu__breadcrumbs a:not(:last-child):hover::after,
@@ -1696,6 +1697,8 @@ nav.menu__breadcrumbs a {
 
 nav.menu__breadcrumbs a:first-child {
     display: flex;
+    text-indent: -9999px;
+    justify-content: flex-end;
 }
 .action--open {
 	font-size: 1.5em;
