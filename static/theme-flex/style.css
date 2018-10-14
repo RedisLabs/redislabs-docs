@@ -503,7 +503,7 @@ nav#toc {
   position: relative;
   /* margin: 0rem 0 1.7rem 1.7rem; */
   /* padding: 0rem 2rem 2rem 2rem; */
-  width: 100%;
+  /* width: 100%; */
   max-width: 262px;
   }
 nav#toc h4 {
