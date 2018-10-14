@@ -1642,6 +1642,7 @@ ul.no-bullet li {
 	font-family: 'redis_icomoon' !important;
 	transform: rotate(180deg);
 	font-size: 24px;
+	transition: all .3s;
 	text-indent: 0;
 }
 
