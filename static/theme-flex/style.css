@@ -503,7 +503,8 @@ nav#toc {
   position: relative;
   /* margin: 0rem 0 1.7rem 1.7rem; */
   /* padding: 0rem 2rem 2rem 2rem; */
-  width: 262px;
+  width: 100%;
+  max-width: 262px;
   }
 nav#toc h4 {
   color: #b62411 ;
@@ -573,6 +574,27 @@ footer .close-button {
     font-size: 13px;
     padding: 10px 0;
     margin-top: 30px;
+}
+.search-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 640px;
+  height: 114px;
+  background: #393b3c;
+  display: flex;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.search-box .searchbox {
+  max-width: 400px;
+  height: 40px;
 }
 .anchor {
   color: #2053AB;
@@ -1048,7 +1070,40 @@ header #navModal {
   border-radius: 0.188rem;
   font-size: 16px;
 }
+form.search-form {
+    display: flex;
+    align-items: center;
+}
 
+.input-group-button {
+    display: flex;
+}
+
+input.search-submit.button {
+    background: #b62412;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 8px 14px;
+    border-radius: 0 3px 3px 0;
+}
+
+input.search-field {
+    border: 0;
+    padding: 7px;
+    border-radius: 3px 0 0 3px;
+}
+
+a.close.button.secondary.hollow {
+    border: 1px solid #777;
+    color: #777;
+    display: flex;
+    align-items: center;
+    width: 37px;
+    justify-content: center;
+    margin-left: 5px;
+    border-radius: 3px;
+}
 ul.no-bullet {
   list-style-type: none;
   margin: 0;

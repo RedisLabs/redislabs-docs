@@ -59,7 +59,7 @@ url = "https://university.redislabs.com"
 weight = 40
 
 [[menu.shortcuts]]
-name = "<label>Search</label>"
+name = "<span class='search-btn'><label>Search</label></span>"
 url = "https://redislabs.com/?s="
 weight = 60
 
