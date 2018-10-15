@@ -14,6 +14,9 @@ Redis databases to span both RAM and dedicated flash memory
 the location of their values (RAM vs Flash) in the database via a
 LRU-based (least-recently-used) mechanism. Hot values will be in RAM,
 but infrequently used, or warm values, will be ejected to flash memory.
+<!-- Use the term "evicted" instead of "ejected"? Seems more appropriate according to common usage.
+For example, see this Wikipedia article: https://en.wikipedia.org/wiki/Cache_replacement_policies
+It mentions eviction several time, but not ejection. -->
 This enables you to have much larger datasets with RAM-like latency and
 performance, but at dramatically lower cost than an all-RAM database.
 
@@ -102,6 +105,7 @@ than extending RAM in a number of ways.
     disk have to be durable. To ensure durable writes, disk-based
     databases use techniques like WAL (write-ahead log) or Redo-Logs. In
     contrast, when RoF ejects a value from RAM to Flash, the write
+<!-- "evicts"? See above comment -->
     operation does not incur the expensive WAL or Redo log techniques.
     In other words, write amplification with durable writes is much
     slower than writes RoF performs to extend RAM. That said, you can
