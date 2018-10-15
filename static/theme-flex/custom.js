@@ -1,19 +1,26 @@
 jQuery('document').ready(function($) {
-    var toc = $('#toc');
+	
+	var toc = $('#toc');
+	
     if (toc.length > 0) {
-        var distance = toc.offset().top - 100,
-        $window = $(window);
+		var distance = toc.offset().top - 100;
 
-        $window.scroll(function() {
-            if ( $window.scrollTop() >= distance ) {
+		$('body').on( 'scroll', function(){
+			if ( $('body').scrollTop() >= distance ) {
                 // Your div has reached the top
-                toc.addClass('fixed-pos')
+				toc.addClass('fixed-pos');
+				console.log('yes')
             }
             else {
-                toc.removeClass('fixed-pos')
+				toc.removeClass('fixed-pos');
+				console.log('yes')
+
             }
-        });
-    }
+		 });
+
+  
+	};
+	
     $('.hamburger-desktop').click(function() {
         var w = $(window).width(),
             nav = $('#navModal');
@@ -32,31 +39,38 @@ jQuery('document').ready(function($) {
     //     nav.slideToggle(300);
     // });
 
-$('.main-content-right .nav li a').on('click', function (e) {
-    e.preventDefault();
+	$('.main-content-right .nav li a').on('click', function (e) {
+		e.preventDefault();
 
-    $('html, body').animate({
-        scrollTop: $($(this).attr('href')).offset().top - 80
-    }, 750, 'swing');
+		$('html, body').animate({
+			scrollTop: $($(this).attr('href')).offset().top - 80
+		}, 620, 'linear');
+	});
+
+
+	function mobile_nav() {
+		var showRightPush = document.getElementById( 'showRightPush' ),
+			menuRight = document.getElementById( 'ml-menu' ),
+			body = document.body;
+
+		showRightPush.onclick = function() {
+			classie.toggle( this, 'is-active' );
+			classie.toggle( body, 'cbp-spmenu-push-toleft' );
+			classie.toggle( menuRight, 'cbp-spmenu-open' );
+		};
+
+	}
+	mobile_nav();
+
 });
 
 
-function mobile_nav() {
-    var showRightPush = document.getElementById( 'showRightPush' ),
-        menuRight = document.getElementById( 'ml-menu' ),
-        body = document.body;
-
-    showRightPush.onclick = function() {
-        classie.toggle( this, 'is-active' );
-        classie.toggle( body, 'cbp-spmenu-push-toleft' );
-        classie.toggle( menuRight, 'cbp-spmenu-open' );
-    };
-
-}
-mobile_nav();
 
 
 
+
+
+jQuery('document').ready(function($) {
 
 // ML MENU //
 
@@ -460,27 +474,27 @@ mobile_nav();
             // itemsDelayInterval : 60, // delay between each menu item sliding animation
         });
 
-    // mobile menu toggle
-    var openMenuCtrl = document.querySelector('.action--open'),
-        closeMenuCtrl = document.querySelector('.action--close');
+    // // mobile menu toggle
+    // var openMenuCtrl = document.querySelector('.action--open'),
+    //     closeMenuCtrl = document.querySelector('.action--close');
 
-    openMenuCtrl.addEventListener('click', openMenu);
-    closeMenuCtrl.addEventListener('click', closeMenu);
+    // openMenuCtrl.addEventListener('click', openMenu);
+    // closeMenuCtrl.addEventListener('click', closeMenu);
 
-    function openMenu() {
-        classie.add(menuEl, 'menu--open');
-        closeMenuCtrl.focus();
-    }
+    // function openMenu() {
+    //     classie.add(menuEl, 'menu--open');
+    //     closeMenuCtrl.focus();
+    // }
 
-    function closeMenu() {
-        classie.remove(menuEl, 'menu--open');
-        openMenuCtrl.focus();
-    }
+    // function closeMenu() {
+    //     classie.remove(menuEl, 'menu--open');
+    //     openMenuCtrl.focus();
+    // }
 
     
 })();
 
 
 
-});
 
+});
