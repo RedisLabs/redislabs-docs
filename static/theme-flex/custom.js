@@ -64,13 +64,14 @@ jQuery('document').ready(function($) {
 	// });
 
 
-	// $('.main-content-right .nav li a').on('click', function (e) {
-	// 	e.preventDefault();
+	$('.main-content-right .nav li a').on('click', function (e) {
+		e.preventDefault();
 
-	// 	$('html, body').animate({
-	// 		scrollTop: $($(this).attr('href')).offset().top - 80
-	// 	}, 620, 'linear');
-	// });
+		$('html, body').stop().animate({
+			scrollTop: $($(this).attr('href')).offset().top + $('body').scrollTop()
+		}, 620, 'linear');
+		return false;
+	});
 
 
 	function mobile_nav() {

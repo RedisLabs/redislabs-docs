@@ -407,7 +407,7 @@ article {
 .cbp-spmenu a.menu__link__title {
     opacity: 0.4;
     font-size: 16px;
-    font-weight: 400;
+    /* font-weight: 400; */
     pointer-events: none;
 }
 section.page {
@@ -460,13 +460,14 @@ article section.page table td:first-child code {
   background-color: transparent;
   padding: 0; }
 article section.page img {
-  padding:1px;
+  /* padding:1px; */
   margin: auto;
   border: 1px solid #c0c3c5;
   border-radius: .2rem;
   max-width: 100%;
   text-align: center;
-  height: 100% !important;
+  /* height: 100% !important; */
+  height: auto !important;
   }
 article section.page img.border {
   border: 2px solid #e6e6e6 !important;
@@ -574,7 +575,7 @@ a.menu__link:before {
     position: absolute;
     bottom: 0;
     transition: all 150ms ease-in-out;
-    opacity: 0.4;
+    opacity: 0.2;
 }
 
 a.menu__link:hover:before {
