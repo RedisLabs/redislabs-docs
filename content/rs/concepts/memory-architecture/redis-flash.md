@@ -108,14 +108,14 @@ than extending RAM in a number of ways.
     still do durable writes with RF, but there are some considerations.
 - Future Proof: In recent years, with the emergence of persistent
     memory technologies, memory has been moving to converge with
-    storage. Persisted memory technologies like [3d
+    storage. Persisted memory technologies like [3D
     XPoint](https://en.wikipedia.org/wiki/3D_XPoint) are good examples
     of these technologies. These technologies assume that your
     application is aware of which parts of the dataset should be kept in
     RAM and which part is OK to store in persistent memory. If your
     application is not specifically designed for this technology,
     persistent-memory performance is going to be very slow and perhaps
-    unpredictable.Redis Enterprise Flash, in contrast, is application
+    unpredictable. Redis Enterprise Flash, in contrast, is application
     agnostic as it performs this function on the server side and your
     application has no need to understand where the data resides. Your
     application issues the same commands it always has with Redis and
@@ -127,7 +127,7 @@ than extending RAM in a number of ways.
 To create Redis on Flash databases you must meet the following
 prerequisites:
 
-- Have ephemeral, persistent and flash memory mounted on Redis
+- Have ephemeral and persistent flash memory mounted on Redis
     Enterprise Software nodes with the proper disk size, per the [Redis
     on Flash memory
     guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements.md#production-environment-reqs.md" >}}).
