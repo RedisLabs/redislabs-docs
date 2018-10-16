@@ -9,7 +9,7 @@ achieve high-availability (HA) and fail-over regardless of where it is
 installed. Here we will discuss doing this with AWS's Route53 service
 for DNS resolution.
 
-### Prerequisites
+## Prerequisites
 
 You need to have a domain name registered. Then, either you need to have
 Amazon's Route53 as the primary/master nameserver (NS) for this domain
@@ -56,8 +56,7 @@ your application is asking to resolve, it will always get the IP address
 of one node in the cluster that is healthy, up and running and the
 connection will succeed.
 
-Configuration
-=============
+## Configuration
 
 After the theory, we can go through the hands-on steps to achieve this
 configuration with AWS's Route53 DNS as your domain or sub-domain
