@@ -201,16 +201,15 @@ article > aside section {
   margin: 0;
   padding: 0; }
 
-html,
-body {
-  height: 100%; 
-  overflow-x: hidden;
-  position: relative;
-  left: 0;
-  -webkit-transition: all 0.3s ease;
+  html,
+  body {
+    height: 100%;
+    position: relative;
+    left: 0;
+    -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
+  }
 
 .cbp-spmenu-push-toleft header {
   left: -250px;

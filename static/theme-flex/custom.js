@@ -68,7 +68,7 @@ jQuery('document').ready(function($) {
 		e.preventDefault();
 
 		$('html, body').stop().animate({
-			scrollTop: $($(this).attr('href')).offset().top + $('body').scrollTop()
+			scrollTop: $($(this).attr('href')).offset().top + $('body').scrollTop() - 75
 		}, 620, 'linear');
 		return false;
 	});
