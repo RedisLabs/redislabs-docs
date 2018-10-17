@@ -35,6 +35,7 @@ There are a few critical recommendations
 - The flash memory should be local to the server/VM/instance/container
     as opposed to network attached.
 - The flash memory should be dedicated to RF and not shared with other
+<!-- Sometimes the term "RF" is used instead of "RoF". It might make sense to always use "RoF" for consistency. -->
     parts of the database, (e.g. durability, binaries, etc.).
 - The flash memory should be [NVMe
     based](https://en.wikipedia.org/wiki/NVM_Express) for best
