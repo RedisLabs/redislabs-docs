@@ -536,8 +536,8 @@ nav#toc {
   /* margin: 0rem 0 1.7rem 1.7rem; */
   /* padding: 0rem 2rem 2rem 2rem; */
   /* width: 100%; */
-  min-width: 300px;
-  width: 100%;
+  width: 300px;
+  /* width: 100%; */
   padding-left: 100px;
   }
 nav#toc h4 {
@@ -1097,7 +1097,7 @@ button.close-button {
     /* z-index: -1; */
     /* padding-left: 90px; */
     /* max-width: 400px; */
-    /* min-width: 260px; */
+    min-width: 300px;
 }
 article > aside .menu > li.parent {
   grid-area: 1;
@@ -1883,6 +1883,7 @@ button.hamburger.hamburger--spring {
     display: none; }
   .main-content-right {
     width: 0;
+    min-width: auto;
 }
 button.hamburger.hamburger--spring.hamburger-mobile {
     display: inline-block;
