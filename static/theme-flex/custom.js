@@ -5,15 +5,13 @@ jQuery('document').ready(function($) {
     if (toc.length > 0) {
 		var distance = toc.offset().top - 100;
 
-		$('body').on( 'scroll', function(){
-			if ( $('body').scrollTop() >= distance ) {
+		$(document).on( 'scroll', function(){
+			if ( $(document).scrollTop() >= distance ) {
                 // Your div has reached the top
 				toc.addClass('fixed-pos');
-				console.log('yes')
             }
             else {
 				toc.removeClass('fixed-pos');
-				console.log('yes')
 
             }
 		 });
