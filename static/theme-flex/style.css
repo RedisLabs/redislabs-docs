@@ -97,7 +97,8 @@ header nav.shortcuts li a label:hover {
 }
 
 .main-content-left {
-    width: 54%;
+    width: auto;
+    /* padding-right: 100px; */
 }
 
 article > aside {
@@ -535,7 +536,9 @@ nav#toc {
   /* margin: 0rem 0 1.7rem 1.7rem; */
   /* padding: 0rem 2rem 2rem 2rem; */
   /* width: 100%; */
-  max-width: 262px;
+  min-width: 300px;
+  width: 100%;
+  padding-left: 100px;
   }
 nav#toc h4 {
   color: #b62411;
@@ -1089,9 +1092,12 @@ button.close-button {
     display: none;
 }
 .main-content-right {
-    width: 30%;
+    /* width: auto; */
     /* position: relative; */
     /* z-index: -1; */
+    /* padding-left: 90px; */
+    /* max-width: 400px; */
+    /* min-width: 260px; */
 }
 article > aside .menu > li.parent {
   grid-area: 1;
