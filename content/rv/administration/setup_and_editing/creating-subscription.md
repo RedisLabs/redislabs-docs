@@ -100,7 +100,7 @@ For each row, select the following:
     Memcached
 1. The estimated **Memory Limit** of your database. The minimum value
     is 0.1GB.
-1. If you selected to have a Redis Enterprise Flash subscription,
+1. If you selected to have a Redis on Flash subscription,
     provide your data average item size if you know it.
 1. Replication - Enables instant failover by keeping a standby,
     in-memory slave replica (note: by checking this option, your dataset
