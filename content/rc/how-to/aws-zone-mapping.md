@@ -74,7 +74,7 @@ for further assistance.
 
 ## Unprivileged user creation
 
-RC requires an AWS IAM user to perform the zone mapping as. It is
+RC requires an AWS IAM user to perform the zone mapping. It is
 recommended to create a new and restricted account for security reasons.
 To do this:
 
