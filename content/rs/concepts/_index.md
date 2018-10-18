@@ -73,7 +73,7 @@ RAM and Flash drive. The administrator can choose the RAM vs Flash ratio
 and adjust that anytime in the lifetime of the database without
 downtime.
 
-With Redis Enterprise Flash, instead of storing all keys and data for a
+With Redis on Flash, instead of storing all keys and data for a
 given shard in RAM, less frequently accessed values are pushed to flash.
 If applications need to access a value that is in flash, Redis
 Enterprise automatically brings the value into RAM. Depending on the

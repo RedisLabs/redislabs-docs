@@ -154,7 +154,7 @@ situation is detected, the admin needs to knowingly assume the risk of
 proceeding and not waiting.
 
 Info: While \`sudo ./install.sh -y\` or using an answers file does not
-perform the steps necessary for Redis Enterprise Flash or creating a
+perform the steps necessary for Redis on Flash or creating a
 cluster. That part of each node's install still has to be done and
 potentially automated separately.
 

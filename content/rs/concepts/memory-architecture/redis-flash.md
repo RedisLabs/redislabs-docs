@@ -17,7 +17,7 @@ but infrequently used, or warm values, will be ejected to flash memory.
 This enables you to have much larger datasets with RAM-like latency and
 performance, but at dramatically lower cost than an all-RAM database.
 
-![All-RAM Redis Databases versus Redis Enterprise Flash enabled
+![All-RAM Redis Databases versus Redis on Flash enabled
 databases](/images/rs/redis_flash_px.png?width=600&height=328)
 
 By using Redis on Flash to distribute the data between RAM and flash
@@ -34,7 +34,7 @@ There are a few critical recommendations
 
 - The flash memory should be local to the server/VM/instance/container
     as opposed to network attached.
-- The flash memory should be dedicated to RF and not shared with other
+- The flash memory should be dedicated to RoF and not shared with other
     parts of the database, (e.g. durability, binaries, etc.).
 - The flash memory should be [NVMe
     based](https://en.wikipedia.org/wiki/NVM_Express) for best
@@ -51,7 +51,7 @@ specifically recommend "[Storage Optimized I3 - High I/O
 Instances](https://aws.amazon.com/ec2/instance-types/#storage-optimized)"
 because of the performance of NVMe for flash memory.
 
-When running RF on-premise, it is best to use local internal flash
+When running RoF on-premise, it is best to use local internal flash
 memory in each server (preferably NVMe SSDs for their exceptional
 performance). The Redis Enterprise Software database persistent and
 ephemeral storage can be on different disks, either local or attached.
@@ -79,7 +79,7 @@ infrequently accessed keys (flash memory), based on LRU
 
 ## Redis Client Support
 
-Just like all-RAM databases, RF is compatible with existing Redis
+Just like all-RAM databases, RoF is compatible with existing Redis
 applications. Databases that employ RoF are identical to all-RAM Redis
 Enterprise Software databases in characteristics and features.
 
@@ -105,7 +105,7 @@ than extending RAM in a number of ways.
     operation does not incur the expensive WAL or Redo log techniques.
     In other words, write amplification with durable writes is much
     slower than writes RoF performs to extend RAM. That said, you can
-    still do durable writes with RF, but there are some considerations.
+    still do durable writes with RoF, but there are some considerations.
 - Future Proof: In recent years, with the emergence of persistent
     memory technologies, memory has been moving to converge with
     storage. Persisted memory technologies like [3D
@@ -115,7 +115,7 @@ than extending RAM in a number of ways.
     RAM and which part is OK to store in persistent memory. If your
     application is not specifically designed for this technology,
     persistent-memory performance is going to be very slow and perhaps
-    unpredictable. Redis Enterprise Flash, in contrast, is application
+    unpredictable. Redis on Flash, in contrast, is application
     agnostic as it performs this function on the server side and your
     application has no need to understand where the data resides. Your
     application issues the same commands it always has with Redis and

@@ -88,7 +88,7 @@ create your database.
 ![new redis flash
 db](/images/rs/newredisflashdb.png?width=700&height=714)
 
-You now have a Redis Enterprise Flash database!
+You now have a Redis on Flash database!
 
 ## Step 4 - Connecting to your Database
 

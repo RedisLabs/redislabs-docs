@@ -33,17 +33,17 @@ side by side in a given cluster where some clients can use Discovery
 Service based connection while others can use DNS name resolution when
 connecting to databases.
 
-### Building Large Databases with RAM and Flash Memory in Redis Enterprise Flash v2.0
+### Building Large Databases with RAM and Flash Memory in Redis on Flash v2.0
 
-With Redis Enterprise Pack 4.5, Redis Enterprise Flash v2 is production
+With Redis Enterprise Pack 4.5, Redis on Flash v2 is production
 ready. RFv2 brings performance, reliability, and stability enhancements
 as well as many features customers have been waiting for.
 
-Redis Enterprise Flash (RF) offers users of Redis Enterprise Pack and
+Redis on Flash (RoF) offers users of Redis Enterprise Pack and
 Redis Enterprise Cloud Private the unique ability to operate a Redis
 database that spans both RAM and flash memory (SSD), but remains
 separate from Redis Enterprise Pack's persistence mechanisms. Whilst
-keys are always stored in RAM, RF intelligently manages the location of
+keys are always stored in RAM, RoF intelligently manages the location of
 their values (RAM vs Flash) in the database via a LRU-based
 (least-recently-used) mechanism. Hot values will be in RAM and
 infrequently used, while warm values will be ejected to flash memory.
@@ -111,12 +111,12 @@ Important fixes in RP 4.5.0-43
 - RP14692 - rladmin status command may crash during backup
 - RP14541 - In rare cases, DMC log grew quickly and caused stability
     issues
-- RP15107 - When using Redis Enterprise Flash, it may cause DMC proxy
+- RP15107 - When using Redis on Flash, it may cause DMC proxy
     crashes
 
 Important fixes in RP 4.5.0-47
 
-- Multiple important Redis Enterprise Flash updates.
+- Multiple important Redis on Flash updates.
 
 Important fixes in RP 4.5.0-51
 
