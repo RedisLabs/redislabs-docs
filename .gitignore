@@ -11,3 +11,5 @@
 # IDEA configuration
 .idea/
 
+# VSCode configuration
+.vscode/
