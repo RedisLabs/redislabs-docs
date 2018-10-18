@@ -13,3 +13,6 @@
 
 # VSCode configuration
 .vscode/
+
+# Windows files
+Thumbs.db
