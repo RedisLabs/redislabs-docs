@@ -18,11 +18,18 @@
         {{- end}}
     </nav>
   {{- end}}
-  <button class="hamburger hamburger--spring" type="button">
+  <button class="hamburger hamburger--spring hamburger-desktop" type="button">
     <span class="hamburger-box">
       <span class="hamburger-inner">Menu</span>
     </span>
   </button>
+
+  <button id="showRightPush" class="hamburger hamburger--spring hamburger-mobile" type="button">
+    <span class="hamburger-box">
+      <span class="hamburger-inner">Menu Mobile</span>
+    </span>
+  </button>
+
   <div class="reveal large" id="navModal">
     {{ partial "navigation.html" . }}
   </div>
