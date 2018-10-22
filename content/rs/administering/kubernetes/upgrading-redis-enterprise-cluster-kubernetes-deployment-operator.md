@@ -24,7 +24,7 @@ the upgrade process successfully.
 
 ![kubernetes-rolling-updates-newcluster]( /images/rs/kubernetes-rolling-updates-newcluster.png )
 
-![kubernetes-rolling-updates-done]( /images/rs/kubernetes-rolling-updates-done.png )
+![kubernetes-rolling-updates-done]( /images/rs/kubernetes-rolling updates-done.png )
 
 Updates to the Pods in the StatefulSet are performed in reverse ordinal order. 
 The Kubernetes controller terminates each Pod and waits for it to transition to Running, 
