@@ -30,9 +30,9 @@ jQuery('document').ready(function($) {
 
 
     $('.dd-item').hover(function(){
-        $(this).find('.highlight').next().addClass('hovered');
+        $(this).find('.highlight').first().next().addClass('hovered');
     }, function(){
-        $(this).find('.highlight').next().removeClass('hovered');
+        $(this).find('.highlight').first().next().removeClass('hovered');
     });
 
 
@@ -48,6 +48,9 @@ jQuery('document').ready(function($) {
         console.log('clicked');
         $('.search-box').slideToggle().toggleClass('active');
     });
+
+
+
 
 
 
