@@ -12,19 +12,19 @@ Kubernetes is an excellent orchestration tool, but it was not designed to deal w
 
 To overcome these issues, Redis Labs created a layered architecture approach that splits responsibilities between operations Kubernetes does well, procedures Redis Enterprise Cluster excels at, and the processes both can orchestrate together. The figure below illustrated this layered orchestration architecture:
 
-![kubernetes-overview-image6]( /images/rs/kubernetes-overview-image6.png )
+![kubernetes-overview-layered-orchestration]( /images/rs/kubernetes-overview-layered-orchestration.png )
 
 ## Operator based deployment
 
 Operator allows Redis Labs to maintain a unified deployment solution across all Kubernetes environments, i.e., RedHat OpenShift, Pivotal Container Services (PKS), Google Kubernetes Engine (GKE), Azure Kubernetes Service (AKS), Amazon Elastic Container Service for Kubernetes (EKS) and vanilla Kubernetes. Statefulset and anti-affinity guarantee that each Redis Enterprise node resides on a Pod that is hosted on a different VM or physical server. See this setup depicted in the figure below:
 
-![kubernetes-overview-image2]( /images/rs/kubernetes-overview-image2.png )
+![kubernetes-overview-unified-deployment]( /images/rs/kubernetes-overview-unified-deployment.png )
 
 ## Network-attached persistent storage
 
 Kubernetes and cloud-native environments require that storage volumes be network-attached to the compute instances, to guarantee data durability. Otherwise, if using local storage,  data may be lost in a Pod failure event. See the figure below:
 
-![kubernetes-overview-image5]( /images/rs/kubernetes-overview-image5.png )
+![kubernetes-overview-network-attached-persistent-storage]( /images/rs/kubernetes-overview-network-attached-persistent-storage.png )
 
 On the left-hand side (marked #1), Redis Enterprise uses local ephemeral storage for durability. When a Pod fails, Kubernetes launches another Pod as a replacement, but this Pod comes up with empty local ephemeral storage, and the data from the original Pod is now lost.
 
@@ -32,10 +32,10 @@ On the right-hand side of the figure (marked #2), Redis Enterprise uses network-
 
 Redis Enterprise is not only great as an in-memory database but also extremely efficient in the way it uses persistent storage, even when the user chooses to configure Redis Enterprise to write every change to the disk. Compared to a disk-based database that requires multiple interactions (in most cases) with a storage device for every read or write operation, Redis Enterprise uses a single IOPS, in most cases, for a write operation and zero IOPS for a read operation. As a result, significant performance improvements are seen in typical Kubernetes environments, as illustrated in the figures below:
 
-![kubernetes-overview-image1]( /images/rs/kubernetes-overview-image1.png )
+![kubernetes-overview-performance-improvements]( /images/rs/kubernetes-overview-performance-improvements.png )
 
 ## Multiple services on each Pod
 
 Each Pod includes multiple Redis Enterprise instances (multiple services). We found that the traditional method of deploying a Redis Enterprise database over Kubernetes, in which each Pod includes only a single Redis Enterprise instance while preserving a dedicated CPU, is notably inefficient. Redis Enterprise is exceptionally fast and in many cases can use just a fraction of the CPU resources to deliver the requested throughput. Furthermore, when running a Redis Enterprise Cluster with multiple Redis Enterprise instances across multiple Pods, the Kubernetes network, with its multiple vSwitches, can quickly become the deployment’s bottleneck. Therefore, Redis Labs took a different approach to managing Redis Enterprise over the Kubernetes environment. Deploying multiple Redis Enterprise database instances on a single Pod allows us to better utilize the hardware resources used by the Pod such as CPU, memory, and network while keeping the same level of isolation. See the figure below:
 
-![kubernetes-overview-image3]( /images/rs/kubernetes-overview-image3.png )
+![kubernetes-overview-multiple-services-per-pod]( /images/rs/kubernetes-overview-multiple-services-per-pod.png )
