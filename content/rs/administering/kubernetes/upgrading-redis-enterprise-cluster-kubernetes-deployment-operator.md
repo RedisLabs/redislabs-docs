@@ -1,7 +1,7 @@
 ---
 Title: Upgrading a Redis Enterprise Cluster – Kubernetes Deployment with Operator
 description: 
-weight: 40
+weight: 50
 alwaysopen: false
 ---
 Redis Labs implements rolling updates for software upgrades in Kubernetes deployments.
