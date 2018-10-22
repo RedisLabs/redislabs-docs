@@ -657,23 +657,15 @@ footer .close-button {
   max-width: 400px;
   height: 40px;
 }
-.anchor {
-  color: #2053AB;
-  font-size: 0.5em;
-  cursor: pointer;
-  visibility: hidden;
-  vertical-align: middle;
-  -webkit-transition: color 0.35s ease;
-  -moz-transition: color 0.35s ease;
-  -ms-transition: color 0.35s ease;
-  transition: color 0.35s ease; }
+
 
 .anchor:hover {
-  color: #238fbd;
+  color: #b62412;
   -webkit-transition: color 0.35s ease;
   -moz-transition: color 0.35s ease;
   -ms-transition: color 0.35s ease;
-  transition: color 0.35s ease; }
+  transition: color 0.35s ease;
+}
 
 h2:hover .anchor,
 h3:hover .anchor,
@@ -2635,22 +2627,23 @@ footer .close-button {
   height: 40px;
 }
 .anchor {
-  color: #2053AB;
-  font-size: 0.5em;
+  color: #354253;
+  font-size: 3.5em;
   cursor: pointer;
   visibility: hidden;
   vertical-align: middle;
   -webkit-transition: color 0.35s ease;
   -moz-transition: color 0.35s ease;
   -ms-transition: color 0.35s ease;
-  transition: color 0.35s ease; }
+  transition: color 0.35s ease;
+  width: 20px;
+  height: 20px;
+  background-size: 20px;
+  display: inline-block;
+  background-image: url(./img/anchor.svg);
+  margin-left: 5px;
+}
 
-.anchor:hover {
-  color: #238fbd;
-  -webkit-transition: color 0.35s ease;
-  -moz-transition: color 0.35s ease;
-  -ms-transition: color 0.35s ease;
-  transition: color 0.35s ease; }
 
 h2:hover .anchor,
 h3:hover .anchor,

@@ -50,12 +50,11 @@ jQuery(document).ready(function() {
 	// Clipboard
 	// Add link button for every
     var text, clip = new Clipboard('.anchor');
-    $("h1~h2,h1~h3,h1~h4,h1~h5,h1~h6").append(function (index, html) {
+    $("h1,h2,h1~h2,h1~h3,h1~h4,h1~h5,h1~h6,h2~h3,h3~h4,h4~h5").append(function (index, html) {
         var element = $(this);
         var url = document.location.origin + document.location.pathname;
         var link = url + "#" + element[0].id;
-        return " <span class='anchor' data-clipboard-text='" + link + "'>" +
-            "<i class='fa fa-link fa-lg'></i>" +
+        return " <span class='anchor' data-clipboard-text='" + link + "'>"  +
             "</span>";
     });
 
