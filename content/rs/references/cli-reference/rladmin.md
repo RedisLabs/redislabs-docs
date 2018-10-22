@@ -113,6 +113,7 @@ Example: :
 
 
 ## cluster
+
 If node is configured as part of a cluster:
 ===============================
 ### cluster reset_password
@@ -122,9 +123,15 @@ Changes the access password of a user whose e-mail address is provided.
 
 ### cluster config
 
-    cluster config [cipher_suites cipher-suites-str ] [ipv6 <enabled/disabled>] 
-    [handle_redirects <enabled/disabled>] [http_support <enabled/disabled>] [cm_port number] 
-    [cnm_http_port number] [cnm_https_port number][min_control_TLS_version control_tls_version] [min_data_TLS_version data_tls_version]
+    cluster config [cipher_suites cipher-suites-str ] 
+        [ipv6 <enabled/disabled>] 
+        [handle_redirects <enabled/disabled>] 
+        [http_support <enabled/disabled>] 
+        [cm_port number] 
+        [cnm_http_port number] 
+        [cnm_https_port number]
+        [min_control_TLS_version control_tls_version] 
+        [min_data_TLS_version data_tls_version]
 
 The following parameters are optional:
 cipher_suites - Encryption cipher suites used by the cluster API & UI services
@@ -143,18 +150,19 @@ If node is not yet configured as part of a cluster:
 =====================================
 ### cluster create 
 
-    cluster create <name cluster-name> <username admin-user> <password admin-password> 
-    [node_uid node-uid] 
-    [rack_aware] 
-    [rack_id node-rack-id] 
-    [license_file file] 
-    [ephemeral_path path] 
-    [persistent_path path] 
-    [register_dns_suffix] 
-    [flash_enabled] 
-    [flash_path path] 
-    [addr ip-address] 
-    [external_addr ip-addresses]
+    cluster create <name cluster-name> <username admin-user> 
+        <password> admin-password> 
+        [node_uid node-uid] 
+        [rack_aware] 
+        [rack_id node-rack-id] 
+        [license_file file] 
+        [ephemeral_path path] 
+        [persistent_path path] 
+        [register_dns_suffix] 
+        [flash_enabled] 
+        [flash_path path] 
+        [addr ip-address] 
+        [external_addr ip-addresses]
 
 
 Creates a new cluster, making this node the first node of the cluster.
@@ -538,13 +546,14 @@ of the bdb in slave high availability mechanism. it overrides the calculated pri
 **continue_on_error** is a flag, that if set, skips gracefully the shards that cannot be reached.
 
 ### Configuring proxies
-mode determines whether or not the proxy can automatically adjust the
+
+**mode** determines whether or not the proxy can automatically adjust the
 number of threads depending on load.
 
-threads and max_threads determine the initial number of threads
+**threads** and **max_threads** determine the initial number of threads
 created on startup, and the maximum number of threads allowed.
 
-scale_threshold determines the CPU utilization threshold that
+**scale_threshold** determines the CPU utilization threshold that
 triggers spawning new threads.  This CPU utilization level needs to be
 maintained for at least scale_duration seconds before automatic
 scaling is performed.
