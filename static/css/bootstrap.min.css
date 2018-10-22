@@ -902,7 +902,7 @@
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -1538,14 +1538,14 @@ a.badge:focus {
   font-style: italic;
 }
 .panel-body {
-  padding: 15px;
+  /* padding: 15px; */
 }
 .panel-body > p {
   margin: 0;
 }
 .panel-heading {
-  padding: 15px 15px;
-  border-right: 1px solid #354253;
+  /* padding: 15px 15px; */
+  /* border-right: 1px solid #354253; */
   /* border-top-right-radius: 3px; */
   /* border-top-left-radius: 3px; */
 }
@@ -1824,6 +1824,7 @@ a.badge:focus {
   /* padding: 10px; */
   /* color: #31708f; */
   /* font-style: italic; */
+  display: fl;
 }
 .panel-info > .panel-heading {
   background-color: #f7f7f7;

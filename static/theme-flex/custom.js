@@ -49,6 +49,7 @@ jQuery('document').ready(function($) {
         $('.search-box').slideToggle().toggleClass('active');
     });
 
+    $('select').niceSelect();
 
 
 

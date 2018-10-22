@@ -5,7 +5,7 @@
     border-top: 0;
     background: #f7f7f7;
     transition: left 0.1s ease-in-out;
-    
+
     /* core styles should not be changed */
     position: absolute;
     /* display: none; */
@@ -27,7 +27,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 14px;
-    color: #7f7f7f;
+    color: #9c9c9c;
+    text-indent: 21px;
 }
 
 .autocomplete-suggestion b {
@@ -36,15 +37,16 @@
 }
 
 .autocomplete-suggestion.selected {
-    background: #333;
-    color: #fff;
+    /* background: #333; */
+    /* font-weight: 600; */
 }
 
 .autocomplete-suggestion:hover {
-    background: #444;
-    color: #fff;
+    /* background: #444; */
+    color: #354253;
 }
 
 .autocomplete-suggestion > .context {
     font-size: 12px;
+    display: none;
 }

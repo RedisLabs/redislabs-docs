@@ -583,15 +583,15 @@ body {
   font-size: 16px;
   line-height: 20px;
   font-family: 'Lato', sans-serif;
-  }
+}
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0.85rem 0 1.7rem 0;
+  margin: 2.5rem 0 1.3rem 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  }
+}
 
 h1 {
   font-size: 2.5rem;
@@ -616,7 +616,8 @@ h6 {
   font-size: 0.9rem; }
 
 p {
-  margin: 1.7rem 0; }
+  margin: 1.3rem 0;
+}
 
 ul, ol {
   margin-top: 1.7rem;
