@@ -7,7 +7,7 @@ header {
   -ms-flex-align: center;
   align-items: center;
   background-color: #b62411;
-  background: url(https://redislabs.com/wp-content/themes/redislabs/assets/images/bg-poly-slate-1.png);
+  background: url(./img/bg-poly-slate-1.jpg);
   background-position-x: right;
   background-size: cover;
   color: #fff;
@@ -636,7 +636,7 @@ footer .close-button {
   color: #b62412;
 }
 .search-box {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -649,7 +649,9 @@ footer .close-button {
   z-index: 99;
   align-items: center;
   justify-content: center;
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  transition: opacity .5s;
 }
 
 .search-box .searchbox {
@@ -897,6 +899,11 @@ div.notices p:first-child:before {
   content: '';
   left: 10px; }
 
+a.close.button.secondary.hollow:hover {
+  border: 1px solid #fefefe;
+  color: #fefefe;
+}
+
 div.notices p:first-child:after {
   position: absolute;
   top: -27px;
@@ -1047,7 +1054,9 @@ div#navigation a {
 .nav-links a:first-child {
   margin-right: 10px;
 }
-
+.search-box.active {
+  opacity: 1;
+}
 nav#toc ul > li > ul {
   padding-left: 20px;
 }
@@ -1211,15 +1220,17 @@ input.search-submit.button {
   background: #b62412;
   color: white;
   text-transform: uppercase;
-  font-weight: 300;
-  padding: 8px 14px;
+  /* font-weight: 300; */
+  padding: 11px 14px;
   border-radius: 0 3px 3px 0;
+  font-size: 14px;
 }
 
 input.search-field {
   border: 0;
-  padding: 7px;
+  padding: 9px;
   border-radius: 3px 0 0 3px;
+  width: 380px;
 }
 
 a.close.button.secondary.hollow {
@@ -1231,6 +1242,8 @@ a.close.button.secondary.hollow {
   justify-content: center;
   margin-left: 5px;
   border-radius: 3px;
+  transition: all .2s;
+  cursor: pointer;
 }
 ul.no-bullet {
   list-style-type: none;

@@ -36,6 +36,19 @@ jQuery('document').ready(function($) {
     });
 
 
+	$('.shortcuts li:nth-child(3) a').on('click', function (e) {
+		e.preventDefault();
+        console.log('clicked');
+        $('.search-box').slideToggle().toggleClass('active');
+        return false;
+	});
+
+	$('a.close.button').on('click', function (e) {
+        e.preventDefault();
+        console.log('clicked');
+        $('.search-box').slideToggle().toggleClass('active');
+    });
+
 
 
     $('.main-content-right .nav li a').on('click', function (e) {
