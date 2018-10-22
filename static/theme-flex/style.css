@@ -244,7 +244,8 @@ a:focus {
 
 section ol,
 section ul {
-  padding: 0 1.5rem; }
+  padding: 0;
+}
 
 section ul {
   list-style-type: disc;
@@ -598,25 +599,35 @@ article section.page table {
   margin-bottom: 2em;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid #e6e6e6; }
+  /* border: 1px solid #e6e6e6; */
+  /* border-bottom: 1px solid rgba(53, 66, 83, 0.8); */
+  /* border-top: 1px solid rgba(53, 66, 83, 0.8); */
+  margin-top: 35px;
+}
 article section.page table th,
 article section.page table td {
   padding: 0.25rem 0.75rem; }
 article section.page table th {
-  padding: 0.5rem;
-  text-transform: uppercase;
+  /* padding: 0.5rem; */
+  /* text-transform: uppercase; */
   vertical-align: middle;
   text-align: center;
-  font-weight: 800;
-  background: #d8e3e8;
-  color: black;
-  border-bottom: 2px solid #7f7d77; }
+  font-weight: 700;
+  /* background: #d8e3e8; */
+  /* color: black; */
+  /* border-bottom: 2px solid #7f7d77; */
+  font-size: 14px;
+  padding: 0.7rem;
+}
 article section.page table td {
   padding: 0.5rem;
   vertical-align: middle;
   border-bottom: 1px solid #e5e5e5;
-  border: 1px solid #e6e6e6;
-  color: #323232; }
+  /* border: 1px solid #e6e6e6; */
+  color: #323232;
+  font-size: 14px;
+  line-height: 20px;
+}
 article section.page table td:first-child code {
   background-color: transparent;
   padding: 0; }
@@ -644,7 +655,8 @@ article section.page img.inline {
   margin: 0 !important;
   vertical-align: bottom; }
 article section.page code {
-  font-family: "RobotoMono", monospace; }
+  font-family: "RobotoMono", monospace;
+}
 article section.page p > code,
 article section.page li code,
 article section.page table code {
@@ -656,11 +668,17 @@ article section.page pre {
   overflow: auto;
   padding: .5rem;
   font-size: 15px;
+  white-space: normal;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
 }
 article section.page pre .copy-to-clipboard {
   float: right;
   position: relative;
-  right: 0px; }
+  right: 0px;
+  cursor: pointer;
+}
 article section.page pre[class*="language-"] {
   background-color: #333;
   color: #eee;
@@ -684,7 +702,8 @@ article section.page pre[class*="language-"] {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  white-space: pre; }
+  /* white-space: pre; */
+}
 
 ul.menu > li.dd-item:not(.parent) i {
   opacity: 0 !important;
@@ -824,23 +843,8 @@ span.current {
   max-width: 400px;
   height: 40px;
 }
-.anchor {
-  color: #2053AB;
-  font-size: 0.5em;
-  cursor: pointer;
-  visibility: hidden;
-  vertical-align: middle;
-  -webkit-transition: color 0.35s ease;
-  -moz-transition: color 0.35s ease;
-  -ms-transition: color 0.35s ease;
-  transition: color 0.35s ease; }
 
-.anchor:hover {
-  color: #238fbd;
-  -webkit-transition: color 0.35s ease;
-  -moz-transition: color 0.35s ease;
-  -ms-transition: color 0.35s ease;
-  transition: color 0.35s ease; }
+
 
 h2:hover .anchor,
 h3:hover .anchor,
@@ -875,7 +879,10 @@ iframe {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 3px;
   -webkit-font-smoothing: subpixel-antialiased; }
-
+thead tr {
+  border-bottom: 1px solid rgba(53, 66, 83, 0.8);
+  border-top: 1px solid rgba(53, 66, 83, 0.8);
+}
 .tooltipped:before {
   position: absolute;
   z-index: 1000001;
@@ -1041,12 +1048,13 @@ div.notices {
   -moz-transition: color 0.35s ease;
   -ms-transition: color 0.35s ease;
   transition: color 0.35s ease;
-  width: 20px;
-  height: 20px;
-  background-size: 20px;
+  width: 17px;
+  height: 17px;
+  background-size: 17px;
   display: inline-block;
   background-image: url(./img/anchor.svg);
-  margin-left: 5px;
+  margin-left: 3px;
+  background-repeat: no-repeat;
 }
 
 
@@ -2103,6 +2111,11 @@ button.hamburger.hamburger--spring {
   header #navModal {
     display: none !important;
   }
+  article section.page h1:first-of-type {
+    font-size: 2rem;
+    line-height: 2.45rem;
+    margin: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2111,11 +2124,29 @@ button.hamburger.hamburger--spring {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-  article section.page h1:first-of-type {
-    font-size: 2rem;
-    line-height: 2.45rem;
-    margin: 2rem;
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    margin: 0 auto;
+    position: relative;
+    top: 16px;
   }
+  .chevrons {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+  }
+  #navigation {
+    border-bottom: 0;
+    border-top: 0;
+  }
+
+  div#navigation .edit-link {
+    display: none;
+  }
+
   .anchor {
     display: none;
   }

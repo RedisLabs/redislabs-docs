@@ -37,6 +37,7 @@
 }
 .icon-icons_Copy:before {
   content: "\e90c";
+  transition: color .2s;
 }
 .icon-ArrowRight:before {
   content: "\e900";
@@ -656,7 +657,9 @@ fieldset {
   border: 0;
   padding: 0.938rem;
   margin: 0 0 1.7rem 0; }
-
+span.icon-icons_Copy:hover:before {
+  color: #b62411;
+}
 input,
 label,
 select {
