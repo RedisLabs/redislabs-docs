@@ -1056,6 +1056,8 @@ div.notices {
   background-image: url(./img/anchor.svg);
   margin-left: 3px;
   background-repeat: no-repeat;
+  position: relative;
+  top: -2px;
 }
 
 
@@ -2254,4 +2256,5 @@ i.icon-icons_plus, i.icon-icons_minus {
   transition: all .2s;
   display: flex;
   align-items: start;
+  margin-bottom: 12px;
 }
