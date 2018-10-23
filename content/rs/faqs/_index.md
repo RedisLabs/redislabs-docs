@@ -6,26 +6,12 @@ alwaysopen: false
 ---
 This section includes various frequently asked questions.
 
+## Features and Terminology
+
 {{%expand "Can I keep my data safe and always available?" %}}
 Redis Enterprise Software offers a comprehensive suite of
 high-availability provisions, including in-memory replication,
 persistent storage, and backups.
-{{% /expand%}}
-
-{{%expand "How many Redis databases can I create and manage?" %}}
-The number of databases is unlimited. The limiting factor is the
-available memory in the cluster, and the number of shards in the
-subscription.
-
-Note that the impact of the specific database configuration on the 
-number of shards it consumes. For example:
-
-- Enabling database replication, without enabling database clustering, 
-  creates two shards: a master shard and a slave shard.
-- Enabling database clustering creates as many database shards as you 
-  configure.
-- Enabling both database replication and database clustering creates 
-  double the number of database shards you configure.
 {{% /expand%}}
 
 {{%expand "What do you mean by the term Shard?" %}}
@@ -33,6 +19,7 @@ A shard is any type of provisioned Redis instance, such as a master
 copy, slave copy, database shard that is part of a clustered database,
 etc.
 {{% /expand%}}
+
 
 {{%expand "I use open source Redis. Why should I switch to Redis Enterprise Software?" %}}
 Redis Enterprise Software (RES) helps you overcome the limitations of
@@ -75,6 +62,24 @@ Use your existing Redis client and code, as they work directly against a
 RES cluster. You point your existing standard Redis client and code
 connection string at the RES cluster, then scale on the RES cluster as
 you need.
+{{% /expand%}}
+
+## Technical Capabilities
+
+{{%expand "How many Redis databases can I create and manage?" %}}
+The number of databases is unlimited. The limiting factor is the
+available memory in the cluster, and the number of shards in the
+subscription.
+
+Note that the impact of the specific database configuration on the 
+number of shards it consumes. For example:
+
+- Enabling database replication, without enabling database clustering, 
+  creates two shards: a master shard and a slave shard.
+- Enabling database clustering creates as many database shards as you 
+  configure.
+- Enabling both database replication and database clustering creates 
+  double the number of database shards you configure.
 {{% /expand%}}
 
 {{%expand "What happens when my database fills up?" %}}
