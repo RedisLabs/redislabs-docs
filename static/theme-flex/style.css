@@ -2088,7 +2088,9 @@ button.hamburger.hamburger--spring {
 
   section > .toc {
     display: none; }
-
+  article section.page pre {
+    white-space: pre;
+  }
   nav#toc {
     display: none; }
 
@@ -2112,9 +2114,9 @@ button.hamburger.hamburger--spring {
     display: none !important;
   }
   article section.page h1:first-of-type {
-    font-size: 2rem;
-    line-height: 2.45rem;
-    margin: 2rem;
+    font-size: 1.8rem;
+    line-height: 2.25rem;
+    margin: 1.5rem;
   }
 }
 
@@ -2131,7 +2133,7 @@ button.hamburger.hamburger--spring {
     width: 96%;
     margin: 0 auto;
     position: relative;
-    top: 16px;
+    top: 9px;
   }
   .chevrons {
     position: absolute;
@@ -2183,7 +2185,7 @@ button.hamburger.hamburger--spring {
 
   article > section.page {
     margin: 0 0;
-    padding: 1rem 1.6rem;
+    padding: 1rem 1.4rem;
   }
   .edit-link a {
     text-decoration: none !important;
@@ -2220,8 +2222,9 @@ button.hamburger.hamburger--spring {
 
   .nav-select {
     display: block;
-    margin-left: -10px;
-    margin-right: -10px; }
+    /* margin-left: -10px; */
+    /* margin-right: -10px; */
+  }
 
   .nav-select select {
     display: block; }
