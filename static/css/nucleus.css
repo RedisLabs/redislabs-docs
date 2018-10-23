@@ -25,6 +25,13 @@
 }
 
 
+
+.icon-icons_plus:before {
+  content: "\e90d";
+}
+.icon-icons_minus:before {
+  content: "\e90e";
+}
 .icon-Copy-anchore:before {
   content: "\e90b";
 }
@@ -33,11 +40,9 @@
 }
 .icon-ArrowRight:before {
   content: "\e900";
-  font-size: 10px;
 }
 .icon-ArrowLeft:before {
   content: "\e901";
-  font-size: 10px;
 }
 .icon-TriangleOpen_triangleOpen:before {
   content: "\e902";
