@@ -97,6 +97,7 @@ In the rladmin CLI you can:
 
 
 
+---
 ## bind
 
 Usage:
@@ -113,15 +114,18 @@ Example: :
 
 
 
+---
 ## cluster
 
-If node is configured as part of a cluster:
-===============================
+
+*If node is configured as part of a cluster:*
+---
 ### cluster reset_password
     cluster reset_password <user email>
-----------------------------------------------------------
+
 Changes the access password of a user whose e-mail address is provided.
 
+---
 ### cluster config
 
     cluster config [cipher_suites cipher-suites-str ] 
@@ -135,20 +139,24 @@ Changes the access password of a user whose e-mail address is provided.
         [min_data_TLS_version data_tls_version]
 
 The following parameters are optional:
-cipher_suites - Encryption cipher suites used by the cluster API & UI services
-ipv6 - Enable or disable use of IPv6 by the cluster API & UI services
-handle_redirects - Enable or disable handling cluster redirects internally
-http_support - Enable or disable using HTTP for REST API
-cm_port - UI server listening port
-cnm_http_port - HTTP REST API server listening port
-cnm_https_port - HTTPS REST API server listening port
-saslauthd_ldap_conf - Path to local file containing the desired saslauthd configuration
-debuginfo_path - Path to local directory under which files should be placed when generating support packages.
-min_control_TLS_version - The minimum version of TLS protocol which is supported at the control path.
-min_data_TLS_version - The minimum version of TLS protocol which is supported at the data path.
+| Option|Description|
+|-|-|
+|cipher_suites | Encryption cipher suites used by the cluster API & UI services|
+|ipv6 | Enable or disable use of IPv6 by the cluster API & UI services|
+| handle_redirects | Enable or disable handling cluster redirects internally|
+|http_support | Enable or disable using HTTP for REST API
+cm_port | UI server listening port|
+|cnm_http_port | HTTP REST API server listening port|
+|cnm_https_port | HTTPS REST API server listening port|
+|saslauthd_ldap_conf | Path to local file containing the desired saslauthd configuration|
+|debuginfo_path | Path to local directory under which files should be placed when generating support packages.|
+|min_control_TLS_version |The minimum version of TLS protocol which is supported at the control path.|
+|min_data_TLS_version | The minimum version of TLS protocol which is supported at the data path.|
 
+---
 *If node is not yet configured as part of a cluster:*
-=====================================
+
+---
 ### cluster create 
 
     cluster create <name cluster-name> <username admin-user> 
@@ -188,6 +196,7 @@ addr parameter. If provided it will set the internal address of the node. If not
 
 **external_addr** parameter: If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
 
+---
 ### cluster join
 
     cluster join <name cluster-name | nodes node-address>
@@ -224,6 +233,7 @@ If **override_repair** is marked, the node will join the cluster even if there i
 **cnm_http_port** is used to join a cluster to which the default cnm_http
 port was changed (using ``rladmin cluster config cnm_http_port``)
 
+---
 ### cluster recover 
 
     cluster recover filename <recovery-file-name> 
@@ -255,6 +265,8 @@ addr parameter. If provided it will set the internal address of the node. If not
 
 **external_addr** parameter: If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
 
+
+---
 ### cluster debug_info
 
     cluster debug_info [path <path>]
@@ -265,6 +277,7 @@ The following parameters are optional:
 
 **path** lets you specify the path where support package will be written, instead of the default.
 
+---
 ## failover 
 
 Usage: 
@@ -278,6 +291,7 @@ When failing over shards, the slaves are verified to be in full sync before
 fail-over is performed, unless the optional immediate keyboard is
 specified.
 
+---
 ## info
 
 Usage: 
@@ -290,6 +304,7 @@ Show current tunable settings for a specific or all databases, proxies,
 cluster.
 
 
+---
 ## migrate
 
 Usage:
@@ -334,6 +349,7 @@ options:
 |preserve_roles | performs an additional fail-over in order to guarantee that the roles of masters are preserved.|
 
 
+---
 ## node
 
 Usage: 
@@ -359,6 +375,7 @@ Enslaving all bound resources of a node is available using the 'enslave' command
 Handling node snapshots from the current node state (active endpoints and shards)may be done using the 'snapshot create', 'snapshot restore', 'snapshot list' and'snapdshot delete' commands.
 
 
+---
 ## placement
 
 Usage:
@@ -367,6 +384,7 @@ Usage:
 
 Configure shards placement policy for a given database.
 
+---
 ## recover
 
 Usage:
@@ -383,6 +401,7 @@ Use only_configuration to recover only db configuration without its data:
 list all databases available to recover:
     recover list
 
+---
 ## restart
 
 Usage: 
@@ -400,7 +419,8 @@ The **discard_data** optional flag indicates that the data can be discarded and 
 
 The **force_discard** optional flag indicates we force discard_data even if there is replication or persistence.
 
-status
+---
+##status
 
 Usage:
 
@@ -446,6 +466,7 @@ e.g:
 issues_only: Filters out all the OK items from status.
 
 
+---
 ## suffix
 
 Usage: 
@@ -469,6 +490,7 @@ Handles the DNS suffixes in the cluster.
 - **suffix delete** deletes the suffix named name.
 
 
+---
 ## tune
 
 Usage: 
@@ -627,6 +649,7 @@ a period after shard relocation in which slave high availability mechanism
 cannot relocate database from any other node.
 
 
+---
 ## upgrade
 
 Usage: 
@@ -650,6 +673,7 @@ The **discard_data** optional flag indicates that the data can be discarded and 
 The **force_discard** optinal flag indicates we force discard_data even if there is replication or persistence.
 
 
+---
 ## verify
 
 Usage: 
