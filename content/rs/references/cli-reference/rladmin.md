@@ -77,22 +77,22 @@ In the rladmin CLI you can:
 
 # rladmin usage
 
--  **bind**      Bind an endpoint
--  **cluster**   Cluster management commands
+-  [**bind**](#bind)      Bind an endpoint
+-  [**cluster**](#cluster)   Cluster management commands
 -  **exit**      Exit admin shell
--  **failover**  Fail-over master to slave
+-  [**failover**](#failover)  Fail-over master to slave
 -  **help**      Show available commands, or use ```help <command>``` for a specific command
--  **info**      Show information about tunable parameters
--  **migrate**   Migrate elements between nodes
--  **node**      Node management commands
--  **placement** Configure shards placement policy
--  **recover**   Recover databases
--  **restart**   Restart database shards
--  **status**    Show status information
--  **suffix**    Suffix management
--  **tune**      Tune system parameters
--  **upgrade**   Upgrade entity version
--  **verify**    Cluster verification reports
+-  [**info**](#info)    Show information about tunable parameters
+-  [**migrate**](#migrate)   Migrate elements between nodes
+-  [**node**](#node)      Node management commands
+-  [**placement**](#placement) Configure shards placement policy
+-  [**recover**](#recover)   Recover databases
+-  [**restart**](#restart)   Restart database shards
+-  [**status**](#status)    Show status information
+-  [**suffix**](#suffix)    Suffix management
+-  [**tune**](#tune)      Tune system parameters
+-  [**upgrade**](#upgrade)   Upgrade entity version
+-  [**verify**](#verify)    Cluster verification reports
 
 
 
@@ -146,7 +146,7 @@ debuginfo_path - Path to local directory under which files should be placed when
 min_control_TLS_version - The minimum version of TLS protocol which is supported at the control path.
 min_data_TLS_version - The minimum version of TLS protocol which is supported at the data path.
 
-If node is not yet configured as part of a cluster:
+*If node is not yet configured as part of a cluster:*
 =====================================
 ### cluster create 
 
@@ -169,15 +169,23 @@ Creates a new cluster, making this node the first node of the cluster.
 When creating a new cluster, it is mandatory to specify the cluster name (FQDN) and the cluster administrator's credentials: username and password. FQDN (Fully Qualified Domain Name) is the unique cluster identifier name that enables clients to connect to the different components that are part of the Redis Labs Enterprise Cluster (RLEC).
 
 The following parameters are optional:
-node_uid parameter lets you set the node uid of the first node in the cluster, the uid defaults to 1.
-rack_aware flag. If not provided then rack awareness is disabled by default. When the flag is provided, each node must be assigned a rack-zone ID (rack_id). This ID maps the node to a physical rack or a logical zone, which itself is mapped to a physical rack.
-license_file parameter lets you insert a license file automatically from the rladmin. The file path can either be absolute or relative.
-The persistent_path path parameter specifies a path for persistent storage (default location: /var/opt/redislabs/persist), while the ephemeral_path path parameter specifies a path for ephemeral storage (default location: /var/opt/redislabs).
-register_dns_suffix flag. If provided, created databases will be maped to an internal as well as external IP addresses. If not provided each database will mapped to single (external) IP address.
-flash_enabled flag. If provided, created database will have its flash capabilities enabled. This only works on a node supporting flash.
-flash_path parameters specifies a path for flash storage (default location: /var/opt/redislabs/flash), This is needed in case the node does not support CAPI. The location should have flash drive mounted on it.
+
+**node_uid** parameter lets you set the node uid of the first node in the cluster, the uid defaults to 1.
+
+**rack_aware** flag: If not provided then rack awareness is disabled by default. When the flag is provided, each node must be assigned a rack-zone ID (**rack_id**). This ID maps the node to a physical rack or a logical zone, which itself is mapped to a physical rack.
+
+**license_file** parameter lets you insert a license file automatically from the rladmin. The file path can either be absolute or relative.
+
+The **persistent_path** path parameter specifies a path for persistent storage (default location: /var/opt/redislabs/persist), while the **ephemeral_path** path parameter specifies a path for ephemeral storage (default location: /var/opt/redislabs).
+
+**register_dns_suffix** flag: If provided, created databases will be maped to an internal as well as external IP addresses. If not provided each database will mapped to single (external) IP address.
+
+**flash_enabled** flag: If provided, created database will have its flash capabilities enabled. This only works on a node supporting flash.
+
+**flash_path** parameter specifies a path for flash storage (default location: /var/opt/redislabs/flash), This is needed in case the node does not support CAPI. The location should have flash drive mounted on it.
 addr parameter. If provided it will set the internal address of the node. If not provided the node will set address automatically.
-external_addr parameter. If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
+
+**external_addr** parameter: If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
 
 ### cluster join
 
@@ -199,16 +207,21 @@ Joins the specified node to an existing cluster.
 When joining a node to an existing cluster, it is mandatory to provide an administrator username and password, and to specify either the cluster name or the internal IP address of an existing node (nodes). If the cluster name is provided, it will be resolved in order to find the address/es of one or more existing nodes.
 
 The following parameters are optional:
-The persistent_path path parameter specifies a path for persistent storage (default location: /var/opt/redislabs/persist), while the ephemeral_path path parameter specifies a path ephemeral storage (default location: /var/opt/redislabs).
-flash_enabled flag. If provided, created database will have its flash  capabilities enabled. This only works on a node supporting flash.
+
+The **persistent_path** path parameter specifies a path for persistent storage (default location: /var/opt/redislabs/persist), while the **ephemeral_path** path parameter specifies a path ephemeral storage (default location: /var/opt/redislabs).
+
+**flash_enabled** flag: If provided, created database will have its flash  capabilities enabled. This only works on a node supporting flash.
 flash_path parameters specifies a path for flash storage (default      location: /var/opt/redislabs/flash), This is needed in case the node does not  support CAPI. The location should have flash drive mounted on it.
-If rack awareness is enabled in the cluster the it is mandatory to supply the rack_id.
-If this node is added in order to replace an existing node then you need to supply the ID of the node to be replaced in the replace_node parameter. In this case you can update the rack_id by supplying a new value and supplying the override_rack_id flag. You can add flash support using flash_enabled but if original node already had flash support, flash_enabled is mandatory.
-addr parameter. If provided it will set the internal address of the node. If not provided the node will set address automatically.
-external_addr parameter. If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
-If override_repair is marked, the node will join the cluster even if there is a dead node in it.
-cnm_http_port is used to join a cluster to which the default cnm_http
-port was changed (using rladmin cluster config cnm_http_port)
+
+If rack awareness is enabled in the cluster the it is mandatory to supply the **rack_id**. If this node is added in order to replace an existing node then you need to supply the ID of the node to be replaced in the replace_node parameter. In this case you can update the rack_id by supplying a new value and supplying the **override_rack_id** flag. You can add flash support using **flash_enabled** but if original node already had flash support, **flash_enabled** is mandatory.
+
+**addr** parameter: If provided it will set the internal address of the node. If not provided the node will set address automatically.
+
+**external_addr** parameter: If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
+If **override_repair** is marked, the node will join the cluster even if there is a dead node in it.
+
+**cnm_http_port** is used to join a cluster to which the default cnm_http
+port was changed (using ``rladmin cluster config cnm_http_port``)
 
 ### cluster recover 
 
@@ -227,13 +240,19 @@ Recovers cluster from backup, making this node replace the node with ID 1 in the
 When recovering a cluster, it is mandatory to specify the filename: the location (full path) of the cluster configuration backup file, which is used for recovering the cluster. The file can be retrieved from any of the failed cluster's nodes. By default, the location of the configuration backup file is /var/opt/redislabs/persist/ccs/ccs-redis.rdb, where: /var/opt/redislabs/persist/ is the persistent storage path.
 
 The following parameters are optional:
-The persistent_path path parameter specifies a path for persistent storage (default location: /var/opt/redislabs/persist), while the ephemeral_path path parameter specifies a path ephemeral storage (default location: /var/opt/redislabs).
-If rack awareness is enabled in the cluster you can override the rack ID by supplying a different rack_id and providing the override_rack_id flag, otherwise the existing value will be kept.
-node_uid lets you specify which node will be the first to be recovered and take the role of the master in the recovered cluster. If not specified defaults to 1.
-flash_enabled flag. If provided, enables flash in a supporting Node. In case the master node already had flash support. This is mandatory.
-flash_path parameters specifies a path for flash storage (default      location: /var/opt/redislabs/flash), This is needed in case the node does not  support CAPI. The location should have flash drive mounted on it.
+
+The **persistent_path** path parameter specifies a path for persistent storage (default location: /var/opt/redislabs/persist), while the ephemeral_path path parameter specifies a path ephemeral storage (default location: /var/opt/redislabs).
+
+If rack awareness is enabled in the cluster you can override the rack ID by supplying a different rack_id and providing the **override_rack_id** flag, otherwise the existing value will be kept.
+
+**node_uid** lets you specify which node will be the first to be recovered and take the role of the master in the recovered cluster. If not specified defaults to 1.
+
+**flash_enabled** flag: If provided, enables flash in a supporting Node. In case the master node already had flash support. This is mandatory.
+
+**flash_path** parameters specifies a path for flash storage (default      location: /var/opt/redislabs/flash), This is needed in case the node does not  support CAPI. The location should have flash drive mounted on it.
 addr parameter. If provided it will set the internal address of the node. If not provided the node will set address automatically.
-external_addr parameter. If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
+
+**external_addr** parameter: If provided it will set the external addresses of the node. If not provided the node will set addresses automatically.
 
 ### cluster debug_info
 
@@ -242,7 +261,8 @@ external_addr parameter. If provided it will set the external addresses of the n
 Writes support package to debuginfo_path as set in cluster config.
 
 The following parameters are optional:
-path lets you specify the path where support package will be written, instead of the default.
+
+**path** lets you specify the path where support package will be written, instead of the default.
 
 ## failover 
 
@@ -290,27 +310,28 @@ Migrate one or more shards or endpoints to a new node.
 
 commands:
 
-```
-shard - migrate a single or a list of shards
-all_slave_shards - migrate all slave shards of a certain db or node
-all_master_shards- migrate all master shards of a certain db or node
-all_shards - migrate all shards (masters and slaves) of a certain node
-endpoint_to_shards - migrate endpoints of all or one db to the node where majority of the shards are (master to masters, slave to slaves), unless the to_first_slot flag is used
-shards_to_endpoint - migrate shards of all or one db to the node where the endpoint is (masters to master, slaves to slave)
-```
+| Option| Description|
+|-|-|
+|shard | migrate a single or a list of shards|
+|all_slave_shards | migrate all slave shards of a certain db or node|
+|all_master_shards| migrate all master shards of a certain db or node|
+|all_shards |migrate all shards (masters and slaves) of a certain node|
+|endpoint_to_shards | migrate endpoints of all or one db to the node where majority of the shards are (master to masters, slave to slaves), unless the to_first_slot flag is used|
+|shards_to_endpoint | migrate shards of all or one db to the node where the endpoint is (masters to master, slaves to slave)|
 
 options:
-```
-db - limit to shards / endpoints of a specific database
-node - limit to shards / endpoints on a specific origin node
-target_node - migration target node
-restrict_target_node - let the automatic mechanism find the target node, but perform only action for this target node
-override_policy - override rack aware policy allowing master and slave to reside on the same rack. You must manually fix this invalid state later on
-to_first_slot - find the node of with the shard with the first hash slot rather than the majority of shards
-commit - perform the actions! (default is a dry-run)
-max_concurrent_migrations - maximum number of concurrent endpoint migrations (default is 1)
-preserve_roles - performs an additional fail-over in order to guarantee that the roles of masters are preserved.
-```
+| Option | Description|
+|-- | --|
+|db | limit to shards / endpoints of a specific database|
+|node | limit to shards / endpoints on a specific origin node|
+|target_node | migration target node|
+|restrict_target_node | let the automatic mechanism find the target node, but perform only action for this target node|
+|override_policy | override rack aware policy allowing master and slave to reside on the same rack. You must manually fix this invalid state later on|
+|to_first_slot | find the node of with the shard with the first hash slot rather than the majority of shards|
+|commit | perform the actions! (default is a dry-run)|
+|max_concurrent_migrations | maximum number of concurrent endpoint migrations (default is 1)|
+|preserve_roles | performs an additional fail-over in order to guarantee that the roles of masters are preserved.|
+
 
 ## node
 
@@ -334,9 +355,7 @@ or remove existing addresses, respectively.
 
 Enslaving all bound resources of a node is available using the 'enslave' command.
 
-Handling node snapshots from the current node state (active endpoints and shards)
-may be done using the 'snapdhot create', 'snapdhot restore', 'snapdhot list' and
-'snapdhot delete' commands.
+Handling node snapshots from the current node state (active endpoints and shards)may be done using the 'snapshot create', 'snapshot restore', 'snapshot list' and'snapdshot delete' commands.
 
 
 ## placement
@@ -372,13 +391,13 @@ Usage:
 Performs a restart of the Redis software in use by a specific database
 instance, by scheduling a restart of the master and slave processes.
 
-The preserve_roles optional flag indicates an additional fail-over
+The **preserve_roles** optional flag indicates an additional fail-over
 can be used in order to guarantee that the roles of masters and slaves are
 preserved by the end of the upgrade process.
 
-The discard_data optional flag indicates that the data can be discarded and will not be saved after restart.
+The **discard_data** optional flag indicates that the data can be discarded and will not be saved after restart.
 
-The force_discard optional flag indicates we force discard_data even if there is replication or persistence.
+The **force_discard** optional flag indicates we force discard_data even if there is replication or persistence.
 
 status
 
@@ -406,16 +425,18 @@ status report of just the shards table:
 Display current cluster status and topology information.
 
 Extra info options:
-```    
-extra state_machine         Shows extra execution state machine info
-extra nodestats                Shows extra masters/slaves shards per node
-extra backups                  Shows extra dbs and shards periodic backup status
-extra frag                     Shows extra shards fragmented memory that could be reclaimed by restart
-extra watchdog                 Shows extra watchdog status
-extra rack_id                  Shows rack_id even when cluster is not marked as rack aware
-extra redis_version            Shows redis version of all the databases
-extra all                      Shows all extra info
-```
+
+| options | description |
+|---------|------|   
+|extra state_machine |        Shows extra execution state machine info|
+|extra nodestats|                Shows extra masters/slaves shards per node|
+|extra backups |                 Shows extra dbs and shards periodic backup ||status|
+|extra frag|                     Shows extra shards fragmented memory that could be reclaimed by restart|
+|extra watchdog|                 Shows extra watchdog status|
+|extra rack_id |                 Shows rack_id even when cluster is not marked as rack aware|
+|extra redis_version|            Shows redis version of all the databases|
+|extra all |                     Shows all extra info|
+
 
 COLUMN_TITLES: a list of table column titles.
 e.g:
@@ -630,10 +651,14 @@ The **force_discard** optinal flag indicates we force discard_data even if there
 
 ## verify
 
-Usage: verify balance [node <id>]
-       verify rack_aware
+Usage: 
+
+    verify balance [node <id>]
+    
+    verify rack_aware
 
 Print cluster shard balance report.
+
 Print cluster rack aware verification report.
 
 
