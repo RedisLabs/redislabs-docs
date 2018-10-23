@@ -825,8 +825,8 @@ span.current {
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
-  bottom: 0;
+  top: 180px;
+  /* bottom: 0; */
   margin: auto;
   width: 640px;
   height: 114px;
@@ -837,7 +837,7 @@ span.current {
   justify-content: center;
   /* display: none; */
   opacity: 0;
-  transition: opacity .5s;
+  transition: all .8s;
 }
 
 .search-box .searchbox {
@@ -1235,6 +1235,7 @@ div#navigation a {
 }
 .search-box.active {
   opacity: 1;
+  top: 300px;
 }
 nav#toc ul > li > ul {
   padding-left: 20px;
