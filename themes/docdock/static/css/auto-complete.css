@@ -5,7 +5,7 @@
     border-top: 0;
     background: #f7f7f7;
     transition: left 0.1s ease-in-out;
-    
+
     /* core styles should not be changed */
     position: absolute;
     /* display: none; */
@@ -47,4 +47,8 @@
 
 .autocomplete-suggestion > .context {
     font-size: 12px;
+}
+.autocomplete-suggestion > .context {
+    font-size: 12px;
+    display: none;
 }
