@@ -91,7 +91,8 @@ Example: :
 ## cluster
 
 
-*If node is configured as part of a cluster:*
+Note: Only applies to nodes that are configured as part of a cluster
+
 ---
 ### cluster reset_password
     cluster reset_password <user email>
