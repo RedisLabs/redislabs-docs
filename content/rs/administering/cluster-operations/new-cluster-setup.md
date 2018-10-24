@@ -41,45 +41,45 @@ To create a cluster:
 1. Click **Setup**.
 1. In the Node Configuration page that appears:
 
-   a.  Enter a path for **Persistent storage**, or leave the default
+    1. Enter a path for **Persistent storage**, or leave the default
         path.\
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
         
-   b.  Enter a path for **Ephemeral storage**, or leave the default
+    1. Enter a path for **Ephemeral storage**, or leave the default
         path.\
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
    
-   c.  If you want to enable Redis^e^ Flash, select the **Enable flash
+    1. If you want to enable Redis^e^ Flash, select the **Enable flash
         storage support** checkbox and enter the path to the Flash
         storage that should be used as RAM extension.\
         For additional details, refer to [Redis Enterprise
         Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
         
-   d.  If your machine is configured to have multiple IP addresses, the
+    1. If your machine is configured to have multiple IP addresses, the
         section **IP Addresses Usage** is displayed. Use the **IP
         Addresses Usage** section to assign a single IPv4 type address
         for internal traffic and multiple IPv4/IPv6 type addresses for
         external traffic. For additional details, refer to Multi-IP &
         IPv6.
         
-   e.  In Cluster configuration, select **Create new cluster**.
+    1. In Cluster configuration, select **Create new cluster**.
    
-   f.  In **Cluster name (FQDN)**, enter a unique name for the
+    1. In **Cluster name (FQDN)**, enter a unique name for the
         cluster.\
         For guidelines, refer to [How to set the cluster
         name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
         
-   g.  Choose whether to **Enable private & public endpoints support**.
+    1. Choose whether to **Enable private & public endpoints support**.
         For additional details, refer to Private & Public Endpoints.
         
-   h.  Choose whether to **Enable rack-zone awareness**. Enabling
+    1. Choose whether to **Enable rack-zone awareness**. Enabling
         rack-zone awareness requires setting the **Rack-zone ID** for
         the node. For additional details, refer to [Rack-zone
         awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
         
-   i.  Click **Next**.
+    1. Click **Next**.
 1. If you purchased a cluster key, use the **Cluster authentication**
     page to enter the key. Otherwise, you get the trial license by
     default. Read the product Terms and Conditions and click **Next.**
