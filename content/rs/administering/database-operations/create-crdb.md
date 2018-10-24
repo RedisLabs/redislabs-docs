@@ -4,17 +4,6 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-## Prerequisites
-
-- Two or more Redis Enterprise Software clusters running version 5.0,
-    each with minimum of two nodes
-- Networking and cluster FQDN name resolution between all clusters
-- Confirm that a network time service listener (e.g. ntpd) is
-    configured and running on each node in all clusters. Please see
-    "Network Time Service" for more information.
-
-## Creating a CRDB
-
 CRDBs span multiple Redis Enterprise Software (RS) clusters. Overview of
 the steps to create a CRDB:
 
@@ -23,6 +12,15 @@ the steps to create a CRDB:
 1. Connect to one of your clusters and configure a new CRDB
 1. Test writing to one cluster
 1. Test reading from a different cluster
+
+## Prerequisites
+
+- Two or more Redis Enterprise Software clusters running version 5.0,
+    each with minimum of two nodes
+- Networking and cluster FQDN name resolution between all clusters
+- Confirm that a network time service listener (e.g. ntpd) is
+    configured and running on each node in all clusters. Please see
+    "Network Time Service" for more information.
 
 ## Create a Service Account
 
@@ -39,7 +37,7 @@ Creation](/images/rs/image8.png?width=1000&height=490)
 This service account will be used when the CRDB is created, but also on
 an ongoing basis by the clusters to help manage the CRDB.
 
-### Confirm network is setup
+## Confirm network is setup
 
 The CRDB creation process assumes the required secured network
 configurations are in place. If you have not already done so, please see
@@ -54,7 +52,7 @@ Participating Clusters.
 $ telnet <target FQDN> 8080
 ```
 
-### Create a CRDB
+## Create a CRDB
 
 Direct your browser to the web UI of one of the RS clusters that will
 host the CRDB. Under the databases tab, choose the Redis database with
@@ -80,7 +78,7 @@ standard Redis database creation.
     Note: Be sure you add the cluster you are currently on as a
     participating cluster!
 
-### Participating Clusters
+## Participating Clusters
 
 A CRDB is a global database made up of separate databases spanning
 multiple clusters, when creating a new CRDB you must configure which

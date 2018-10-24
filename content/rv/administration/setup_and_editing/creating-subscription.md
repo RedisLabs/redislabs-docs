@@ -4,8 +4,6 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-## What is a Subscription?
-
 A Redis Enterprise VPC (RV) subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural
 model, memory limit and feature set. You can have multiple subscriptions
@@ -29,13 +27,13 @@ Creating a subscription is a four-step process:
 
 1. Setup - Select the general settings and input the required
     credentials for the cloud user account.
-1. Sizing - Describe the specification of the databases you want to
+2. Sizing - Describe the specification of the databases you want to
     provision. After this step, RV will calculate the optimal
     configuration and required infrastructure.
-1. Review and Create - You will be presented with the required
+3. Review and Create - You will be presented with the required
     infrastructure and the subscription price. Enter your payment method
     and you are pretty much done.
-1. Provisioning - Automatically set up the relevant infrastructure and
+4. Provisioning - Automatically set up the relevant infrastructure and
     provision the databases.
 
 ### Setup

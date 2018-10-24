@@ -4,8 +4,6 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-## What is a Subscription?
-
 A Redis Enterprise Cloud subscription consists of a selected cloud
 provider (and respective region, e.g. "Azure - US Central"),
 architectural model, memory limit and feature set. You can have multiple

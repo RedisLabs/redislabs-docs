@@ -4,8 +4,6 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-## Overview
-
 If you are upgrading from a previous version, make sure to review the
 [upgrade
 instructions]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})

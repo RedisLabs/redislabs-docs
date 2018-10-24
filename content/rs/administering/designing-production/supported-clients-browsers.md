@@ -4,9 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 ---
+You can configuration Redis Enterprise Software (RS) programmatically with client libraries 
+or manually with the RS Web Console.
+
 ## Redis Client Libraries
 
-For connecting to Redis Enterprise Software (RS) databases with your
+For connecting to RS databases with your
 Redis application, you can use any of the available [client libraries
 listed on Redis.io](https://redis.io/clients).
 
@@ -29,7 +32,7 @@ a utility published by Redis Labs for this purpose.
 
 ## Web Browsers
 
-For theRedis Enterprise Software Web Console, the following web browsers
+For the Redis Enterprise Software Web Console, the following web browsers
 and versions are supported:
 
 - On Windows 10:

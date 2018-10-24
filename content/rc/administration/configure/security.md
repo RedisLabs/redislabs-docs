@@ -4,6 +4,8 @@ description:
 weight: $weight
 alwaysopen: false
 ---
+The security controls for your database are:
+
 ## Access Control by Source IP/Subnet
 
 The number of source IP rules that you can add depends on the Redis

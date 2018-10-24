@@ -4,8 +4,6 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-## What is a Cloud Account?
-
 An RV Cloud Account contains all necessary credentials and information
 for an account with your cloud provider. This Cloud Account enables RV
 to create, manage, and monitor Cloud resources automatically on your

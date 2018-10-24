@@ -4,8 +4,6 @@ description:
 weight: 25
 alwaysopen: false
 ---
-## Getting SSL/TLS Support Added to Your Subscription
-
 To configure your subscription so you can use SSL/TLS with your Redis
 Enterprise Cloud (RC) database, please contact support. To speed up this
 process, provide the agent with the Account ID and subscription number

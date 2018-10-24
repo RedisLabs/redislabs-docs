@@ -4,8 +4,6 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-## Overview
-
 This document explains the structure of Redis Enterprise Software (RS)
 log entries that go into rsyslog and how to use these log entries to
 identify events.

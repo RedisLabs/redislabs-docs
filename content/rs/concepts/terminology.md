@@ -4,6 +4,8 @@ description:
 weight: $weight
 alwaysopen: false
 ---
+Here are explanations of some of the terms used in RS.
+
 ## Node
 
 A node is a physical machine, virtual machine, container or cloud

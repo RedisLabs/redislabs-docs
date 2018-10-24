@@ -4,10 +4,11 @@ description:
 weight: $weight
 alwaysopen: false
 ---
+The hardware requirements for Redis Enterprise Software (RS) are different for development and productions environments.
+
 ## Development environment hardware requirements
 
-If you are looking to do development, test or experimentation with Redis
-Enterprise Software (RS), you can use non-production hardware (e.g.
+If you are looking to do development, test or experimentation with RS, you can use non-production hardware (e.g.
 laptops, desktop, small VM/instance, etc.).
 
 | Item | Description | Minimum Requirements | Recommended |
