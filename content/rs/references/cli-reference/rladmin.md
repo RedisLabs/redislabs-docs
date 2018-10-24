@@ -113,8 +113,9 @@ Changes the access password of a user whose e-mail address is provided.
         [min_data_TLS_version data_tls_version]
 
 The following parameters are optional:
+
 | Option|Description|
-|-|-|
+|-------|-----------|
 |cipher_suites | Encryption cipher suites used by the cluster API & UI services|
 |ipv6 | Enable or disable use of IPv6 by the cluster API & UI services|
 | handle_redirects | Enable or disable handling cluster redirects internally|
