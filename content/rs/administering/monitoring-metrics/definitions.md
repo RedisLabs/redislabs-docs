@@ -19,7 +19,7 @@ number of requests.
 |  Ops/sec | Number of total operations per sec | Where operations means:<br>1. read operations<br>2. write operations<br>3. other commands operations |
 |  Reads/sec | Number of total reads per sec | e.g. get |
 |  Writes/sec | Number of total writes per sec | e.g. set |
-|  Other cmds | Number of other commands per sec | e.g.: PING, Auth, INFO |
+|  Other cmds | Number of other commands per sec | e.g.: PING, AUTH, INFO |
 |  Latency | Latency per operation | The graph shows average, min, max and last values are also shown |
 |  Reads latency | Latency per read operation | The graph shows average, min, max and last values are also shown |
 |  Writes latency | Latency per write operation | The graph shows average, min, max and last values are also shown |
