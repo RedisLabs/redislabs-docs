@@ -51,24 +51,24 @@ In the rladmin CLI you can:
 
 # rladmin usage
 
--  [**bind**](#bind)      Bind an endpoint
--  [**cluster**](#cluster)   Cluster management commands
--  **exit**      Exit admin shell
--  [**failover**](#failover)  Fail-over master to slave
--  **help**      Show available commands, or use ```help <command>``` for a specific command
--  [**info**](#info)    Show information about tunable parameters
--  [**migrate**](#migrate)   Migrate elements between nodes
--  [**node**](#node)      Node management commands
--  [**placement**](#placement) Configure shards placement policy
--  [**recover**](#recover)   Recover databases
--  [**restart**](#restart)   Restart database shards
--  [**status**](#status)    Show status information
--  [**suffix**](#suffix)    Suffix management
--  [**tune**](#tune)      Tune system parameters
--  [**upgrade**](#upgrade)   Upgrade entity version
--  [**verify**](#verify)    Cluster verification reports
-
-
+| Command | Description |
+|---------|-------------|
+| [**bind**](#bind) | Bind an endpoint |
+| [**cluster**](#cluster) | Cluster management commands |
+| **exit** | Exit admin shell |
+| [**failover**](#failover) | Fail-over master to slave |
+| **help** | Show available commands, or use ```help <command>``` for a specific command |
+| [**info**](#info) | Show information about tunable parameters |
+| [**migrate**](#migrate) | Migrate elements between nodes |
+| [**node**](#node) | Node management commands |
+| [**placement**](#placement) | Configure shards placement policy |
+| [**recover**](#recover) | Recover databases |
+| [**restart**](#restart) | Restart database shards |
+| [**status**](#status) | Show status information |
+| [**suffix**](#suffix) | Suffix management |
+| [**tune**](#tune) | Tune system parameters |
+| [**upgrade**](#upgrade) | Upgrade entity version |
+| [**verify**](#verify) | Cluster verification reports |
 
 ---
 ## bind
