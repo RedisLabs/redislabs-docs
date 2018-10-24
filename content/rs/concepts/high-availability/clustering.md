@@ -49,8 +49,8 @@ Sharding the keyspace is an efficient way of scaling Redis that should
 be employed when:
 
 - The dataset is large enough to benefit from using the RAM resources
-    of more than one server. Redis Labs recommends sharding a dataset
-    once it reaches a size of 50-100 GB.
+    of more than one server. We recommend sharding a dataset
+    once it reaches a size of 25 GB (50 GB for RoF).
 - The operations performed against the database are CPU-intensive,
     resulting in performance degradation. By having multiple CPU cores
     manage the database's shards, the load of operations is distributed

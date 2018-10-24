@@ -12,7 +12,7 @@ when:
 
 1. The dataset is big enough that it would benefit from using the RAM
     resources of more than one server. We recommend sharding a dataset
-    once it reaches the size of 25 GB.
+    once it reaches the size of 25 GB (50 GB for RoF).
 1. The operations performed against the database are CPU intensive
     enough to degrade performance. In this case the load of operations
     can be distributed across the same server or multiple servers to
