@@ -50,7 +50,7 @@ upgrade to this version.
   - **rladmin status** command output has been updated.
   - **failover \[db \<db:id \| name\>\] endpoint \<id1 .. idN\>**
         and **migrate \[db \<db:id \| name\> \| node \<origin
-        node:id\>\] endpoint \<id\> target\_node \<id\>** commands are
+        node:id\>\] endpoint \<id\> target_node \<id\>** commands are
         no longer relevant for databases using the **single \|
         all-master-shards \| all-nodes** proxy policy. Instead proxies
         can be bound or unbounded to databases as needed.
@@ -79,7 +79,7 @@ upgrade to this version.
 - RLEC-8284 - Add functionality to rladmin to mark a node as a quorum
     only node
 - RLEC-8498 - Backup fails under rare conditions
-- RLEC-8579 - rladmin supports uppercase for external\_addr value
+- RLEC-8579 - rladmin supports uppercase for external_addr value
 - RLEC-8656 - Fixed conflict with SELinux
 - RLEC-8687 - Fixed issue where strong password requirements were not
     honored correctly.
@@ -131,7 +131,7 @@ Changes in 4.4.2 - 49
 
 </div>
 
-- RLEC-11209 - Unable to run upgrade due to running\_actions check
+- RLEC-11209 - Unable to run upgrade due to running_actions check
 - RLEC-12647 - Backup to S3 with periods in bucket name are failing
     in some cases
 
@@ -145,7 +145,7 @@ Changes in 4.4.2 - 49
     **Workaround:** If you would like to cancel the old version
     indication in **rladmin status** without upgrading the Redis version
     to 3.2 you should run the **rladmin upgrade db** command with the
-    **keep\_current\_version** flag which will ensure the database is
+    **keep_current_version** flag which will ensure the database is
     upgraded to the latest 3.0 version supported by RLEC.
 - **Issue:** RLEC-9200 - in a database configured with multiple
     proxies, if a client sends the MONITOR, CLIENT LIST or CLIENT KILL

@@ -49,7 +49,7 @@ negative, that is, claim that something does not exist when it fact it
 is present).
 
 In order to reduce the risk of collisions, an entry may use more than
-one bit: the entry is hashed *bits\_per\_element (bpe)* times with a
+one bit: the entry is hashed *bits_per_element (bpe)* times with a
 different seed for each iteration resulting in a different hash value,
 and for each hash value, the corresponding *hash % nbits* bit is set. To
 check if an entry exists, the candidate key is also hashed *bpe* times,

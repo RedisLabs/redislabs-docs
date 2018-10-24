@@ -78,15 +78,15 @@ The command has the following parameters:
     file exists on the persistent storage drive of all nodes and
     contains the same exact data, so it does not matter which old node's
     persistence storage you choose to use the file from.
-1. persistent\_path - optional. The location of the persistent storage
+1. persistent_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-1. ephemeral\_path - optional. The location of the ephemeral storage
+1. ephemeral_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-1. rack\_id - optional. If rack-zone awareness was enabled in the
+1. rack_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
     awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
     you can use this parameter to override the rack ID value that was
@@ -118,22 +118,22 @@ parameters:
     administrator that was set when the cluster was created.
 1. password - mandatory. The password of the cluster administrator
     that was set when the cluster was created.
-1. replace\_node - mandatory. The ID of the node in the old cluster
+1. replace_node - mandatory. The ID of the node in the old cluster
     which this node is going to replace.
-1. persistent\_path - optional. The location of the persistent storage
+1. persistent_path - optional. The location of the persistent storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-1. ephemeral\_path - optional. The location of the ephemeral storage
+1. ephemeral_path - optional. The location of the ephemeral storage
     in the new node (for additional details, refer to [Persistent and
     ephemeral
     storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-1. rack\_id - optional. If rack-zone awareness was enabled in the
+1. rack_id - optional. If rack-zone awareness was enabled in the
     cluster (for additional details, refer to [Rack-zone
     awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
     use this parameter to set the rack ID to be the same as the rack ID
     of the old node. You can also change the value of the rack ID by
-    providing a different value and using the override\_rack\_id flag.
+    providing a different value and using the override_rack_id flag.
 
 Repeat these steps to replace all of the nodes in the old cluster.
 
@@ -162,7 +162,7 @@ node. If the persistence files of the databases from the old cluster are
 not stored in the new node's persistence storage location (which is
 recommended for the recovery process), you must first map the recovery
 path of each node to the location of the old persistence files. To do
-so, run the node \<id\> recovery\_path set command in rladmin. The
+so, run the node \<id\> recovery_path set command in rladmin. The
 persistence files for each database are located in the persistent
 storage path of the nodes from the old cluster, under the /redis
 directory.

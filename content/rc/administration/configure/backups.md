@@ -157,11 +157,11 @@ account and clicking the **Apply** button using the following syntax:
 
 Where:
 
-- *storage\_account\_access\_key:* the primary access key to the
+- *storage_account_access_key:* the primary access key to the
     storage account
-- *storage\_account\_name:* the storage account name
+- *storage_account_name:* the storage account name
 - *url:* the URL of of the storage account.
-- *container\_name:* the name of the container, if needed.
+- *container_name:* the name of the container, if needed.
 - *path*: the backups path, if needed.
 
 ## FTP Server

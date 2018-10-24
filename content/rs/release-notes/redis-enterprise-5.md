@@ -147,5 +147,5 @@ Support for additional Redis commands and features:
 - RP16115 - TTL bug with ReplicaOf and import
 - RP16447 - DMC client connection reports incorrect number of
     connections to monitoring applications.
-- RP16481 - In some cases, resource\_mgr uses incorrect directories
+- RP16481 - In some cases, resource_mgr uses incorrect directories
     to compute persistent and ephemeral storage

@@ -40,7 +40,7 @@ turn) variable naming conventions. Therefore, while it is possible to
 have ReJSON store objects containing arbitrary key names, accessing
 these keys via a path will only be possible if they respect these naming
 syntax rules:\
-Names must begin with a letter, a dollar (\$) or an underscore (\_)
+Names must begin with a letter, a dollar ($) or an underscore (_)
 character\
 Names can contain letters, digits, dollar signs and underscores\
 Names are case-sensitive\

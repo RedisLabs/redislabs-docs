@@ -23,14 +23,14 @@ the **/etc/opt/redislabs** folder.
 1. Replace the following certificate files with your own files and
 rename them to the same exact names as the original files:
     - For the management UI certificate and private key:
-        - cm\_cert.pem
-        - cm\_key.pem
+        - cm_cert.pem
+        - cm_key.pem
     - For the REST API certificate and private key:
-        - api\_cert.pem
-        - api\_key.pem
+        - api_cert.pem
+        - api_key.pem
     - For the database endpoint encryption certificate and private key:
-        - proxy\_cert.pem
-        - proxy\_key.pem
+        - proxy_cert.pem
+        - proxy_key.pem
 
     **Note**: A certificate for the databases' endpoint should be
     assigned for the same domain as the cluster name. For example,
@@ -39,7 +39,7 @@ rename them to the same exact names as the original files:
 
 1. If you are using a certificate issued by an intermediate
 certificate authority (CA), you should also add the chain file
-named **"chain\_certs.pem"** to the same folder.
+named **"chain_certs.pem"** to the same folder.
 1. After replacing the files, restart the relevant service by
 running the following command from the operating system
 command-line interface (CLI):

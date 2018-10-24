@@ -76,7 +76,7 @@ Support has been added RHEL 7.3 with this version.
     though they are in the cluster metadata and safely operating.
 - RP12438 - Email alerts with Amazon SES may fail under certain
     conditions.
-- RP12538 - Redis failover was initiated by node\_wd during sync to
+- RP12538 - Redis failover was initiated by node_wd during sync to
     new slave
 - RP10264 - Improved debuginfo package for better supportability
 
@@ -98,7 +98,7 @@ Important fixes in RP 4.5.0-31
 
 Important fixes in RP 4.5.0-35
 
-- RP12844 - cnm\_exec crashes on "not enough arguments for format
+- RP12844 - cnm_exec crashes on "not enough arguments for format
     string"
 
 Important fixes in RP 4.5.0-43

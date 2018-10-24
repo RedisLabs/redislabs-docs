@@ -14,7 +14,7 @@ If you are upgrading from version 0.99.5-11:
 1. You must restart the services after the upgrade by running the
     following command with user root (sudo su). From the operating
     system's CLI, run the following command:\
-    cnm\_ctl restart
+    cnm_ctl restart
 1. After the upgrade, rladmin status command will report that the
     databases are from an old version. It is recommended that you
     upgrade the databases as soon as possible, as described in the
@@ -27,7 +27,7 @@ None.
 
 ## Changes
 
-- Enhancements to memtier\_benchmark tool that is included in the
+- Enhancements to memtier_benchmark tool that is included in the
     installation package. You can find more details in the [GitHub
     project.](https://github.com/RedisLabs/memtier_benchmark)
 

@@ -43,8 +43,8 @@ throughput and latency.
 
 1. The proxy is responsible for terminating the SSL/TLS connection
 1. Server certificate and key are located on
-    /etc/opt/redislabs:proxy\_cert.pem - server certificate
-    thatproxy\_key.pem - server certificate key\*any update on these
+    /etc/opt/redislabs:proxy_cert.pem - server certificate
+    thatproxy_key.pem - server certificate key\*any update on these
     require a proxy restart
 1. Enabling of SSL/TLS is done via "ssl authentication" field in the
     UI. You are required to add a client-side certificate as a SSL/TLS
@@ -126,7 +126,7 @@ certificates, and a self-signed certificate on the client machine.
     certificate.
 
 1. Copy the RS nodes certificates from all nodes to the client machine.
-    The certificates are saved in a file named proxy\_cert.pem, which is
+    The certificates are saved in a file named proxy_cert.pem, which is
     stored in /etc/opt/redislabs in each node. For additional details,
     refer to [Updating SSL/TLS
     certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).

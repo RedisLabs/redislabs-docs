@@ -124,13 +124,13 @@ redis-py on the [github page for
 redis-py](https://github.com/andymccurdy/redis-py).
 
 In the command-line Terminal, create a new file called
-"**redis\_test.py**"
+"**redis_test.py**"
 
 ```src
 $ vi redis_test.py
 ```
 
-Paste the following into a file named "**redis\_test.py**".
+Paste the following into a file named "**redis_test.py**".
 
 ```src
 import redis
@@ -142,7 +142,7 @@ print ("get key1")
 print(r.get('key1'))
 ```
 
-Run "redis\_test.py" application to connect to the database and store
+Run "redis_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
 ```src
@@ -161,7 +161,7 @@ b'123'
 
 Now that you have a database, if you'd like to generate load against the
 database or add a bunch of data for cluster testing,
-the [memtier\_benchmark Quick
+the [memtier_benchmark Quick
 Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) should
 help. However please note that to see the true performance and scale of
 Redis on Flash, you will need to tune your IO path and have the flash

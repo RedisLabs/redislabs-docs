@@ -49,11 +49,11 @@ Since rsyslog entries do not include the severity information by
 default, you can use the following instructions in order to log that
 information (in Ubuntu):\
 Add the following line to /etc/rsyslog.conf\
-\$templateTraditionalFormatWithPRI,"%pri‐text%:%timegenerated%%HOSTNAME%\
+$templateTraditionalFormatWithPRI,"%pri‐text%:%timegenerated%%HOSTNAME%\
 %syslogtag%%msg:::drop‐last‐lf%n"
 
-And modify \$ActionFileDefaultTemplate to use your new template\
-\$ActionFileDefaultTemplateTraditionalFormatWithPRI\
+And modify $ActionFileDefaultTemplate to use your new template\
+$ActionFileDefaultTemplateTraditionalFormatWithPRI\
 Make sure to save the changes and restart rsyslog in order for the
 changes to take effect. you can see the alerts and events under /var/log
 in messages log file.
@@ -71,9 +71,9 @@ in messages log file.
 #### Log entry structure
 
 The log entries have the following basic structure:\
-event\_log\[\]:{\<list of key value pairs in any order\>}
+event_log\[\]:{\<list of key value pairs in any order\>}
 
-- event\_log­ plain static text that will always show at the beginning
+- event_log­ plain static text that will always show at the beginning
     of the entry.
 - processid­ the id of the process the logging in running under.
 - listofkeyvaluepairsinanyorder­ a list of key value pairs describing
@@ -100,7 +100,7 @@ event\_log\[\]:{\<list of key value pairs in any order\>}
             entries from category alert. True means that the alert is
             on. False means\
             that the alert is off.
-        -   "global\_threshold" a value of a threshold for alerts
+        -   "global_threshold" a value of a threshold for alerts
             related to the\
             "cluster"or "node"objects.
         -   "threshold" a value of a threshold for alerts related to the
@@ -115,9 +115,9 @@ mentioned above that add the severity, timestamp and machine name.
 #### Ephemeral storage passed threshold
 
 **"Alert on" log entry sample:**\
-daemon.warning:Jun1414:49:20node1event\_log\[3464\]:{"storage\_util":
-90.061643120001,"global\_threshold":"70″,"object":"node:1″,"state":
-true,"time":1434282560,"type":"ephemeral\_storage"}
+daemon.warning:Jun1414:49:20node1event_log\[3464\]:{"storage_util":
+90.061643120001,"global_threshold":"70″,"object":"node:1″,"state":
+true,"time":1434282560,"type":"ephemeral_storage"}
 
 The log entry above is an example of when the alert for node with id 1
 "Ephemeral storage has reached 70% of its capacity" has been raised as
@@ -128,12 +128,12 @@ result of storage utilization reaching the value of \~90%.
 - daemon.warning ­ severity of entry is warning
 - Jun1414:49:20­ the timestamp of the event
 - node1­ machine name
-- event\_log­ static text that always appears
+- event_log­ static text that always appears
 - \[3464\]­ process id
-- "storage\_util":90.061643120001­ current ephemeral storage
+- "storage_util":90.061643120001­ current ephemeral storage
     utilization, in this\
     case \~90%
-- "global\_threshold":"70″­ the user configured threshold above which
+- "global_threshold":"70″­ the user configured threshold above which
     the alert is\
     raised, in this case it is 70%
 - "object":"node:1″­ the object for which this alert has been raised
@@ -141,16 +141,16 @@ result of storage utilization reaching the value of \~90%.
     is node with id 1
 - "state":true­ current state of the alert, in this case it is on
 - "time":1434282560­ can be ignored
-- "type":"ephemeral\_storage"­ is the code name identifier of this
+- "type":"ephemeral_storage"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below
 
 **"Alert off" log entry sample:**
 
-daemon.info:Jun1414:51:35node1event\_log\[3464\]:{"storage\_util":
-60.051723520008,"global\_threshold":"70″,"object":"node:1″,"state":
-false,"time":1434283480,"type":"ephemeral\_storage"}
+daemon.info:Jun1414:51:35node1event_log\[3464\]:{"storage_util":
+60.051723520008,"global_threshold":"70″,"object":"node:1″,"state":
+false,"time":1434283480,"type":"ephemeral_storage"}
 
 The log entry above is an example of when the alert for node with id 1
 "Ephemeral storage has reached 70% of its capacity" has been turned off
@@ -161,12 +161,12 @@ as result of storage utilization reaching the value of \~60%.
 - daemon.info ­ severity of entry is info
 - Jun1414:51:35­ the timestamp of the event
 - node1­ machine name
-- event\_log­ static text that always appears
+- event_log­ static text that always appears
 - \[3464\]­ process id
-- "storage\_util":60.051723520008­ current ephemeral storage
+- "storage_util":60.051723520008­ current ephemeral storage
     utilization, in this\
     case \~60%
-- "global\_threshold":"70″­ the user configured threshold above which
+- "global_threshold":"70″­ the user configured threshold above which
     the alert is\
     raised, in this case it is 70%
 - "object":"node:1″­ the object for which this alert has been raised
@@ -174,7 +174,7 @@ as result of storage utilization reaching the value of \~60%.
     is node with id 1
 - "state":false­ current state of the alert, in this case it is on
 - "time":1434283480­ can be ignored
-- "type":"ephemeral\_storage"­ is the code name identifier of this
+- "type":"ephemeral_storage"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below\
@@ -182,9 +182,9 @@ as result of storage utilization reaching the value of \~60%.
 
 **"Alert on" log entry sample:**
 
-daemon.warning:Jun1415:25:00node1event\_log\[8310\]:{"object":
-"cluster","state":true,"time":1434284700,"node\_count":1,"type":
-"even\_node\_count"}
+daemon.warning:Jun1415:25:00node1event_log\[8310\]:{"object":
+"cluster","state":true,"time":1434284700,"node_count":1,"type":
+"even_node_count"}
 
 The log entry above is an example of when the alert for "True high
 availability requires an odd\
@@ -197,24 +197,24 @@ having only one node.
 - daemon.warning­ severity of entry is warning
 - Jun1415:25:00­ the timestamp of the event
 - node1­ machine name
-- event\_log­ static text that always appears
+- event_log­ static text that always appears
 - \[8310\]­ process id
 - "object":"cluster"­ the object for which this alert has been raised
     for, in this case\
     it is the cluster
 - "state":true­ current state of the alert, in this case it is on
 - "time":1434284700­ can be ignored
-- "node\_count":1­ the number of nodes in the cluster, in this case 1
-- "type":"even\_node\_count"­ is the code name identifier of this
+- "node_count":1­ the number of nodes in the cluster, in this case 1
+- "type":"even_node_count"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below
 
 **"Alert off" log entry sample:**
 
-daemon.warning:Jun1415:30:40node1event\_log\[8310\]:{"object":
-"cluster","state":false,"time":1434285200,"node\_count":3,"type":
-"even\_node\_count"}
+daemon.warning:Jun1415:30:40node1event_log\[8310\]:{"object":
+"cluster","state":false,"time":1434285200,"node_count":3,"type":
+"even_node_count"}
 
 The log entry above is an example of when the alert for "True high
 availability requires an odd\
@@ -227,15 +227,15 @@ having 3 nodes.
 - daemon.info­ severity of entry is warning
 - Jun1415:30:40­ the timestamp of the event
 - node1­ machine name
-- event\_log­ static text that always appears
+- event_log­ static text that always appears
 - \[8310\]­ process id
 - "object":"cluster"­ the object for which this alert has been raised
     for, in this case\
     it is the cluster
 - "state":false­ current state of the alert, in this case it is off
 - "time":1434285200­ can be ignored
-- "node\_count":3­ the number of nodes in the cluster, in this case 3
-- "type":"even\_node\_count"­ is the code name identifier of this
+- "node_count":3­ the number of nodes in the cluster, in this case 3
+- "type":"even_node_count"­ is the code name identifier of this
     specific event, see\
     full mapping in the Mapping UI events and alerts to log entries
     section below\
@@ -243,10 +243,10 @@ having 3 nodes.
 
 **"Alert on" log entry sample:**
 
-daemon.err:Jun1513:51:23node1event\_log\[34252\]:{"used":23457188,
+daemon.err:Jun1513:51:23node1event_log\[34252\]:{"used":23457188,
 "missing":604602126,"object":"node:1″,"free":9867264,"needed":
 637926578,"state":true,"time":1434365483,"disk":705667072,"type":
-"insufficient\_disk\_aofrw"}
+"insufficient_disk_aofrw"}
 
 The log entry above is an example of when the alert for "Node has
 insufficient disk space for\
@@ -259,7 +259,7 @@ for AOF rewrite purposes. It is missing 604602126 bytes.
 - daemon.err­ severity of entry is err
 - Jun1513:51:23­ the timestamp of the event
 - node1­ machine name
-- event\_log­ static text that always appears
+- event_log­ static text that always appears
 - \[34252\]­ process id
 - "used":23457188­ the amount of disk space in bytes currently used
     for AOF files
@@ -277,23 +277,23 @@ for AOF rewrite purposes. It is missing 604602126 bytes.
 - state":true­ current state of the alert, in this case it is on
 - "time":1434365483­ can be ignored
 - "disk":705667072­ the total size in bytes of the persistent storage
-- "type":"insufficient\_disk\_aofrw"­ is the code name identifier of
+- "type":"insufficient_disk_aofrw"­ is the code name identifier of
     this specific\
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below
 
 "Alert off" log entry sample:\
-daemon.info:Jun1513:51:11node1event\_log\[34252\]:{"used":0,"missing":
+daemon.info:Jun1513:51:11node1event_log\[34252\]:{"used":0,"missing":
 ‐21614592,"object":"node:1″,"free":21614592,"needed":0,"state":
 false,"time":1434365471,"disk":705667072,"type":
-"insufficient\_disk\_aofrw"}
+"insufficient_disk_aofrw"}
 
 **Log entry components:**
 
 - daemon.info­ severity of entry is info
 - Jun1513:51:11­ the timestamp of the event
 - node1­ machine name
-- event\_log­ static text that always appears
+- event_log­ static text that always appears
 - \[34252\]­ process id
 - "used":0­ the amount of disk space in bytes currently used for AOF
     files
@@ -312,7 +312,7 @@ false,"time":1434365471,"disk":705667072,"type":
 - "state":false­ current state of the alert, in this case it is off
 - "time":1434365471­ can be ignored
 - "disk":705667072­ the total size in bytes of the persistent storage
-- "type":"insufficient\_disk\_aofrw"­ is the code name identifier of
+- "type":"insufficient_disk_aofrw"­ is the code name identifier of
     this specific\
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below

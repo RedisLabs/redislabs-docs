@@ -13,15 +13,15 @@ version as it is free to download and test against. If you would like
 assistance with your evaluation or need to test a larger cluster, we'd
 be happy to help.
 
-Note: memtier\_benchmark is included with Redis Enterprise Software in
+Note: memtier_benchmark is included with Redis Enterprise Software in
 /opt/redislabs/bin/, but if you are benchmarking something other than
-RS, [memtier\_benchmark is avialable on
+RS, [memtier_benchmark is avialable on
 GitHub](https://github.com/RedisLabs/memtier_benchmark).
 
 ## Benchmark and Performance Test Considerations
 
 This page focuses on how to configure a Redis Enterprise Software
-cluster with the trial version and use memtier\_benchmark to evaluate
+cluster with the trial version and use memtier_benchmark to evaluate
 the performance of a Redis on Flash enabled database in the following
 scenarios:
 
@@ -79,11 +79,11 @@ performance benefits of RoF.
 
 The flash memory that is attached to the i3.2xlarge instances in AWS
 needs to be prepared and formatted by using the
-/opt/redislabs/sbin/prepare\_flash.sh once RS is installed on a node.
+/opt/redislabs/sbin/prepare_flash.sh once RS is installed on a node.
 
 ## Setting up the load generation tool
 
-The memtier\_benchmark load generator tool, which is part of the RS
+The memtier_benchmark load generator tool, which is part of the RS
 installation package, will be used to generate the load on the RoF
 databases. In order to utilize this tool, you should install RS on a
 dedicated instance that is not part of the RS cluster, but should run on
@@ -118,7 +118,7 @@ test cases, 'with replication' and 'without replication':
 
 ### Populate the benchmark dataset
 
-The memtier\_benchmark load generation tool is used for populating the
+The memtier_benchmark load generation tool is used for populating the
 database. Here is an example of how to populate N items, each of them
 500 Bytes in size:
 
@@ -127,7 +127,7 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-maximum=$N -n allkeys -d 500 --key-pattern=P:P --ratio=1:0
 ```
 
-Note: please remember to run memtier\_benchmark on your dedicated load
+Note: please remember to run memtier_benchmark on your dedicated load
 generation instance!
 
 Please use the following parameters for populating your test database:
@@ -142,7 +142,7 @@ Please use the following parameters for populating your test database:
 ## Centralize around the median of the keyspace
 
 In the case of a highly available clustered database with 75 million
-items, we run the below memtier\_benchmark command. This will result in
+items, we run the below memtier_benchmark command. This will result in
 about 20.5 million items being in RAM. You can validate this by looking
 at the 'Values in RAM' metric on the 'metrics' page of your database in
 the RS Web UI.
@@ -171,7 +171,7 @@ $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 
 ### Generate load
 
-Execute the following memtier\_benchmark commands to test RoF with an
+Execute the following memtier_benchmark commands to test RoF with an
 85% RAM Hit Ratio. It is recommended that you do a dry run and double
 check the RAM Hit Ratio on the 'metrics' screen in the RS UI, before
 writing down the test results.
@@ -210,8 +210,8 @@ Important test parameters are:
 ### Monitor the test results
 
 You can either monitor the results with the RS Web UI (on the 'metrics'
-tab of your database) or by using the memtier\_benchmark output. Please
-note that the memtier\_benchmark results include the network latency
+tab of your database) or by using the memtier_benchmark output. Please
+note that the memtier_benchmark results include the network latency
 (i.e. between the load generator instance and the cluster instances),
 whereas the latency metrics shown in the RS Web UI don't include network
 latency.

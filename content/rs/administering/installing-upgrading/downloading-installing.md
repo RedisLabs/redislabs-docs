@@ -75,18 +75,18 @@ by performing the following steps:
         2017-04-24 10:54:12 \[!\] Installation is complete!\
         2017-04-24 10:54:12 \[?\] Would you like to run rlcheck to
         verify proper configuration? \[Y/N\]? Y\
-        2017-04-24 10:54:15 \[\$\] executing:
+        2017-04-24 10:54:15 \[$\] executing:
         '/opt/redislabs/bin/rlcheck
-        --suppress-tests=verify\_bootstrap\_status,verify\_processes'\
+        --suppress-tests=verify_bootstrap_status,verify_processes'\
         saving to file: /var/opt/redislabs/log/rlcheck.log\
         \#\#\#\#\# Welcome to RedisLabs Enterprise Cluster settings
         verification utility \#\#\#\#\
-        Skipping test: verify\_bootstrap\_status\
-        Skipping test: verify\_processes\
-        Running test: verify\_dmcproxy\
+        Skipping test: verify_bootstrap_status\
+        Skipping test: verify_processes\
+        Running test: verify_dmcproxy\
         Verifying dmcproxy process...\
         PASS\
-        Running test: verify\_port\_range\
+        Running test: verify_port_range\
         Verifying local port range...\
         PASS\
         Summary:\
@@ -96,7 +96,7 @@ by performing the following steps:
         sure all environment changes are applied.\
         2017-04-24 10:54:15 \[!\] Point your browser at the following
         URL to continue:\
-        2017-04-24 10:54:15 \[!\] https://\<your\_ip\_here\>:8443
+        2017-04-24 10:54:15 \[!\] https://\<your_ip_here\>:8443
 
         Make sure to save this URL for when you go to configure the
         cluster.

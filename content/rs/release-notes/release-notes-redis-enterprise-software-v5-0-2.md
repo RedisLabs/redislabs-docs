@@ -57,7 +57,7 @@ page
     issues
 - RS17362 - Upgrade fails under some circumstances
 - RS18351 - Listener active after node has been declared dead
-- RS18874 - Fixed OOM issue due to redis\_mgr high memory consumption
+- RS18874 - Fixed OOM issue due to redis_mgr high memory consumption
 - RS19002 - Fixed wrong message when an upgrade of a quorum node with
     all-nodes policy takes place
 

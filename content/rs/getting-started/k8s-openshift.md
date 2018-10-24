@@ -30,7 +30,7 @@ Prerequisites:
 
 - Next, verify that you are using the newly created project. Type:
 
-  oc project your\_project\_name
+  oc project your_project_name
 
 This will shift to your project rather than the default project (you can verify the project you’re currently using with the *oc project* command).
 
@@ -40,7 +40,7 @@ This will shift to your project rather than the default project (you can verify 
 
   git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
 
-*Note: For RHEL images, please use the redis-enterprise-cluter\_rhel.yaml and operator\_rhel.yaml files.*
+*Note: For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_rhel.yaml files.*
 
 Specifically for the redis-enterprise-cluster yaml file, you may also download and edit one of the following examples: [simple](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/simple.yaml), [persistent](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/persistent.yaml), [service broker](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/with_service_broker.yaml), [service broker RHEL](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/examples/with_service_broker_rhel.yaml) (for RHEL images) or use the one provided in the repository.
 
@@ -62,7 +62,7 @@ You should receive the following response:
 
 Now you need to bind the scc to your project by typing:
 
-  oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your\_project\_name  
+  oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name  
 
 (If you do not remember your project name, run “oc project”)
 
@@ -78,19 +78,19 @@ You should receive the following response:
   serviceaccount/redis-enterprise-operator created  
   rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
 
-- [sb\_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac_sc.yaml)
+- [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac_sc.yaml)
 
-If you’re deploying a service broker, also apply the sb\_rbac.yaml file. First, edit the sb\_rbac.yaml namespace field to reflect the namespace you’ve created or switched to during the previous steps. The sb\_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker. We need this to allow our Service Broker application to expose and manage database plans.
+If you’re deploying a service broker, also apply the sb_rbac.yaml file. First, edit the sb_rbac.yaml namespace field to reflect the namespace you’ve created or switched to during the previous steps. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker. We need this to allow our Service Broker application to expose and manage database plans.
 
 As a first step, edit the file and change the following:
 
-  namespace: your\_project\_name  
+  namespace: your_project_name  
 
 We strongly recommend **not** changing anything else in this yaml file.
 
 To apply it, run:
 
-  kubectl apply -f sb\_rbac.yaml  
+  kubectl apply -f sb_rbac.yaml  
 
 You should receive the following response:
 
@@ -130,17 +130,17 @@ Now, run kubectl get deployment and verify that your redis-enterprise-operator d
 
 - [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml)
 
-The mycluster yaml defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your\_cluster\_name.yaml to keep things tidy, but this isn’t a mandatory step.
+The mycluster yaml defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_cluster_name.yaml to keep things tidy, but this isn’t a mandatory step.
 
 This yaml **must** be edited, however, to reflect the specific configurations of your Cluster. Here are the main fields you should review and edit:
 
-- name: “your\_cluster\_name” (e.g. “demo-cluster”)
-- nodes: number\_of\_nodes\_in\_the\_cluster (Must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
-- uiServiceType: service\_type
+- name: “your_cluster_name” (e.g. “demo-cluster”)
+- nodes: number_of_nodes_in_the_cluster (Must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
+- uiServiceType: service_type
 
 Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.
 
-- username: \<your\_email@your\_domain.your\_suffix\>
+- username: \<your_email@your_domain.your_suffix\>
 
 persistentSpec:
 
@@ -189,9 +189,9 @@ This is an optional configuration. If omitted, it will default to the latest ver
 
 ## Step 4: Create your Cluster
 
-Once you have your\_cluster\_name yaml set, you need to apply it to create your Redis Enterprise Cluster:
+Once you have your_cluster_name yaml set, you need to apply it to create your Redis Enterprise Cluster:
 
-  kubectl apply -f your\_cluster\_name.yaml
+  kubectl apply -f your_cluster_name.yaml
 
 Run kubectl get rec and verify that creation was successful (rec is a shortcut for “RedisEnterpriseClusters”).
 
@@ -199,7 +199,7 @@ You should receive a response similar to the following:
 
   NAME AGE
 
-  Your\_cluster\_name 17s
+  Your_cluster_name 17s
 
 Your Cluster will be ready shortly—typically within a few minutes.
 
@@ -212,10 +212,10 @@ You should receive a response similar to the following:
 |                                    |       |         |          |     |
 | ---------------------------------- | ----- | ------- | -------- | --- |
 | NAME                               | READY | STATUS  | RESTARTS | AGE |
-| your\_cluster\_name-0              | 1/1   | Running | 0        | 1m  |
-| your\_cluster\_name-1              | 1/1   | Running | 0        | 1m  |
-| your\_cluster\_name-2              | 1/1   | Running | 0        | 1m  |
-| your\_cluster\_name-controller-x-x | 1/1   | Running | 0        | 1m  |
+| your_cluster_name-0              | 1/1   | Running | 0        | 1m  |
+| your_cluster_name-1              | 1/1   | Running | 0        | 1m  |
+| your_cluster_name-2              | 1/1   | Running | 0        | 1m  |
+| your_cluster_name-controller-x-x | 1/1   | Running | 0        | 1m  |
 | Redis-enterprise-operator-x-x      | 1/1   | Running | 0        | 5m  |
 
 Next, create your databases.
@@ -226,9 +226,9 @@ In order to create your database, we will log in to the Redis Enterprise UI.
 
 - First, apply port forwarding to your Cluster:
 
-  kubectl port-forward your\_cluster\_name-0 8443:8443
+  kubectl port-forward your_cluster_name-0 8443:8443
 
-*Note: your\_cluster\_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.*
+*Note: your_cluster_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.*
 
 *Note: The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in RedHat Openshift documentation.](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types)*
 
@@ -238,7 +238,7 @@ Next, create your database.
 
   ![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image5.png)
 
-- In order to retrieve your password, navigate to the OpenShift management console, select your project name, go to    Resources-\>Secrets-\>your\_cluster\_name
+- In order to retrieve your password, navigate to the OpenShift management console, select your project name, go to    Resources-\>Secrets-\>your_cluster_name
 - Retrieve your password by selecting “Reveal Secret.”  
   
   ![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image3.png)

@@ -43,7 +43,7 @@ For a new subscription, you will need to select the following:
    - Multi-AZ (Availability Zone) plans offer all the benefits of
         Standard plans, as well as auto-failover and in-memory
         replication to another availability zone.
-1. Memory size - select from 30MB (free) to 5GB (\$33/mo), or a
+1. Memory size - select from 30MB (free) to 5GB ($33/mo), or a
     flexible pay-as-you-go model.
 
 You can consider a quick overview of each tier's features upon
@@ -114,7 +114,7 @@ $ sudo pip install redis
 ```
 
 Next copy and paste this into a file named
-"example\_redis.py":
+"example_redis.py":
 
 ```python
 # import the library

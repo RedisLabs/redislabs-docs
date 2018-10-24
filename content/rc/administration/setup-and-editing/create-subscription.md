@@ -30,7 +30,7 @@ from a single console.
    - Multi-AZ (Availability Zone) plans offer all the benefits of
         Standard plans, as well as auto-failover and in-memory
         replication to another availability zone. Memory size - select
-        from 30MB (free) to 5GB (\$33/mo), or a flexible pay-as-you-go
+        from 30MB (free) to 5GB ($33/mo), or a flexible pay-as-you-go
         model.
 1. You can have multiple databases within a plan, but the combined size
     cannot exceed the plan's memory limit. For unlimited sizes, try the

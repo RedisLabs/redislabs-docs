@@ -159,7 +159,7 @@ $ sudo pip install redis
 ```
 
 Next copy and paste this into a file named
-"**example\_redis.py**":
+"**example_redis.py**":
 
 ```python
 #import the library

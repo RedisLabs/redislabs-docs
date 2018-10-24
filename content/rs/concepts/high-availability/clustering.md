@@ -133,7 +133,7 @@ their order to suit your application's requirements.
     because the hash key will always be empty. Therefore, when used,
     this should be the last, catch-all rule.
 1. The following flag is enabled in the regular expression parser:\
-    PCRE\_ANCHORED: the pattern is constrained to match only at the
+    PCRE_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 
 ## Changing the sharding policy

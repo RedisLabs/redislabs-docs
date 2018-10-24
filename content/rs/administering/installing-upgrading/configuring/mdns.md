@@ -53,5 +53,5 @@ IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv
 ensure that you also make the following update to the
 "/etc/nsswitch.conf" file:
 
-- Update the hosts line to: hosts: files mdns4\_minimal
+- Update the hosts line to: hosts: files mdns4_minimal
     \[NOTFOUND=return\] mdns

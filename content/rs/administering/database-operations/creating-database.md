@@ -137,7 +137,7 @@ listed under the "Endpoint" property
 There are a few simple ways to check connectivity to your database:
 
 - telnet
-- Redis\_cli
+- Redis_cli
 - Using a simple application
 
 ## Testing Database Connectivity with Telnet

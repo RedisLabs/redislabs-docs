@@ -146,5 +146,5 @@ their order to suit your application's requirements.
     hash key will always be empty. When used, this should be the last
     catch-all rule.
 1. The following flag is enabled in our regular expression parser:
-   - **PCRE\_ANCHORED:** the pattern is constrained to match only at
+   - **PCRE_ANCHORED:** the pattern is constrained to match only at
         the start of the string which is being searched.

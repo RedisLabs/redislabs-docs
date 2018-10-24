@@ -110,13 +110,13 @@ running the container. You can find the instructions to configure
 redis-py on the [github page for
 redis-py](https://github.com/andymccurdy/redis-py).
 
-In the command line Terminal, create a new file called "redis\_test.py"
+In the command line Terminal, create a new file called "redis_test.py"
 
 ```src
 $ vi redis_test.py
 ```
 
-Paste the following into a file named "redis\_test.py".
+Paste the following into a file named "redis_test.py".
 
 ```src
 import redis
@@ -128,7 +128,7 @@ print ("get key1")
 print(r.get('key1'))
 ```
 
-Run "redis\_test.py" application to connect to the database and store
+Run "redis_test.py" application to connect to the database and store
 and retrieve a key using the command line:
 
 ```src

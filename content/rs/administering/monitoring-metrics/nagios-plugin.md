@@ -18,7 +18,7 @@ Through Nagios you can only view the status and information of the
 alerts.
 
 The full list of alerts can be found in the plugin package itself (in
-"/rlec\_obj/rlec\_services.cfg" file, more details below).
+"/rlec_obj/rlec_services.cfg" file, more details below).
 
 RS Nagios plugin support API password retrieval from Gnome keyring,
 KWallet, Windows credential vault, Mac OS X Keychain, if present, or
@@ -56,8 +56,8 @@ you would like to monitor. More details below.
 
 The RS Nagios package includes two components:
 
-- The plugin itself ­- with suffix "rlec\_nagios\_plugin"
-- Configuration files - with suffix "rlec\_nagios\_conf"
+- The plugin itself ­- with suffix "rlec_nagios_plugin"
+- Configuration files - with suffix "rlec_nagios_conf"
 
 Below is the list of files included in these packages and instructions
 regarding what updates need to be made to these flies.
@@ -73,13 +73,13 @@ to "/usr/local/nagios/"
 
 These files included in it are:
 
-- check\_rlec\_alert
-- check\_rlec\_node
-- check\_rlec\_bdb
-- email\_stub
+- check_rlec_alert
+- check_rlec_node
+- check_rlec_bdb
+- email_stub
 - rlecdigest.py
 
-Note : The check\_rlec\_alert, check\_rlec\_node, check\_rlec\_bdb files
+Note : The check_rlec_alert, check_rlec_node, check_rlec_bdb files
 are the actual plugin implementation. You can run each of them with a
 "­h" switch in order to retrieve their documentation and their expected
 parameters.
@@ -88,9 +88,9 @@ parameters.
 
 Add the following lines to your "nagios.cfg":
 
-- cfg\_dir=/usr/local/nagios/etc/rlec\_obj
-- cfg\_dir=/usr/local/nagios/etc/rlec\_local
-- resource\_file=/usr/local/nagios/etc/rlec\_resource.cfg
+- cfg_dir=/usr/local/nagios/etc/rlec_obj
+- cfg_dir=/usr/local/nagios/etc/rlec_local
+- resource_file=/usr/local/nagios/etc/rlec_resource.cfg
 
 ### Step 3
 
@@ -99,13 +99,13 @@ Copy the configuration files along with their folders to
 below.
 
 1. Under the "/etc" folder:
-    A.  "rlec\_resource.cfg " ­ holds global variables definitions for
+    A.  "rlec_resource.cfg " ­ holds global variables definitions for
         the user and password to use to connect to RS. You should update
         the variables to the relevant user and password for your
         deployment.
-    B.  "rlec\_local " folder
-    C.  "rlec\_obj" folder
-1. Under the "/rlec\_local" folder:
+    B.  "rlec_local " folder
+    C.  "rlec_obj" folder
+1. Under the "/rlec_local" folder:
     A.  "cluster.cfg " ­ holds configuration details at the cluster
         level. If you would like to monitor more than one cluster then
         you need to duplicate the two existing entries in the file for
@@ -120,8 +120,8 @@ below.
                 duplicating this section you should make sure:
                 i.  The "name" is unique.
         II. In the second "define host" section:
-            a.  The "host\_name " in each entry must be unique.
-            b.  The "display\_name" in each entry can be updated to a
+            a.  The "host_name " in each entry must be unique.
+            b.  The "display_name" in each entry can be updated to a
                 user-friendly name that will show in Nagios UI.
     B.  "contacts.cfg " ­ holds configuration details who to send emails
         to. It should be updated to values relevant for your deployment.
@@ -130,31 +130,31 @@ below.
     C.  "databases.cfg" ­ holds configuration details of the databases
         to monitor. The "define host" section should be duplicated for
         every database to monitor.
-        I.  "host\_name" should be a unique value.
-        II. "display\_name " should be updated to a user-friendly name
+        I.  "host_name" should be a unique value.
+        II. "display_name " should be updated to a user-friendly name
             to show in the UI.
-        III. "\_RLECID " should be the database's internal id that can
+        III. "_RLECID " should be the database's internal id that can
             be retrieved from
             [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
             status command output.
     D.  "nodes.cfg " ­ holds configuration details of the nodes in the
         cluster. The "define host" section should be duplicated for
         every node in the cluster.
-        I.  "host\_name" should be a unique value.
-        II. "display\_name " should be updated to a user-friendly name
+        I.  "host_name" should be a unique value.
+        II. "display_name " should be updated to a user-friendly name
             to show in the UI.
         III. "address" should be updated to the DNS name mapped to the
             IP address of the node, or to the IP address itself.
-        IV. "\_RLECID " should be the node's internal id that can be
+        IV. "_RLECID " should be the node's internal id that can be
             retrieved
             from [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
             status command output.
-    E.  Under the "/rlec\_obj" folder:
-        I.  "rlec\_cmd.cfg" ­ holds configuration details of how to
+    E.  Under the "/rlec_obj" folder:
+        I.  "rlec_cmd.cfg" ­ holds configuration details of how to
             activate the plugin. No need to make any updates to it.
-        II. "rlec\_groups.cfg" holds definitions of host groups. No need
+        II. "rlec_groups.cfg" holds definitions of host groups. No need
             to make any updates to it.
-        III. "rlec\_services.cfg" holds definitions of all alerts that
+        III. "rlec_services.cfg" holds definitions of all alerts that
             are monitored. No need to make any updates to it.
-        IV. "rlec\_templates.cfg" holds general RS Nagios definitions.
+        IV. "rlec_templates.cfg" holds general RS Nagios definitions.
             No need to make any updates to it.

@@ -81,7 +81,7 @@ are created with the latest version, and existing databases get upgraded
 to the latest version according to the instructions detailed below. If
 you would like to change the default Redis version to the previous
 version supported, you should use the tune cluster
-default\_redis\_version command in the *rladmin* CLI and set it to the
+default_redis_version command in the *rladmin* CLI and set it to the
 previous Redis version supported.
 
 **To check whether your Redis database versions match the latest Redis

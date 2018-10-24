@@ -5,7 +5,7 @@ weight: 50
 alwaysopen: false
 ---
 If you need to do a quick performance benchmark of Redis Enterprise, we
-have a tool just for this; memtier\_benchmark.
+have a tool just for this; memtier_benchmark.
 
 Prerequisites:
 
@@ -16,17 +16,17 @@ Prerequisites:
 If you need a quick setup for the prerequisites, please [go
 here]({{< relref "/rs/getting-started/quick-setup.md" >}}).
 
-It is recommended to run memtier\_benchmark on a separate node that is
+It is recommended to run memtier_benchmark on a separate node that is
 not part of the cluster being tested. If you run it on a node of the
 cluster, be mindful that it will affect the performance of both the
-cluster and memtier\_benchmark.
+cluster and memtier_benchmark.
 
 ```src
 $ /opt/redislabs/bin/memtier_benchmark -s $DB_HOST -p $DB_PORT \
 -t 4 -R --ratio=1:1
 ```
 
-This command instructs memtier\_benchmark to connect to your Redis
+This command instructs memtier_benchmark to connect to your Redis
 Enterprise database and generates a load doing the following:
 
 - A 50/50 Set to Get ratio
@@ -42,7 +42,7 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT -R -n allkeys \
 -d 500 --key-pattern=P:P --ratio=1:0
 ```
 
-This command instructs memtier\_benchmark to connect to your Redis
+This command instructs memtier_benchmark to connect to your Redis
 Enterprise database and generates a load doing the following:
 
 - Write objects only, no reads
@@ -56,5 +56,5 @@ for testing. The easiest way to check is on the database metrics page.
 
 ![memtier_metrics_page](/images/rs/memtier_metrics_page.png?width=700&height=158)
 
-Another use for memtier\_benchmark is to populate a database with data
+Another use for memtier_benchmark is to populate a database with data
 for failure testing.

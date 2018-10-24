@@ -59,10 +59,10 @@ $ curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json"
 For the user-role, put in one of the following roles:
 
 - admin
-- cluster\_member
-- db\_viewer
-- db\_member
-- cluster\_viewer
+- cluster_member
+- db_viewer
+- db_member
+- cluster_viewer
 
 **Note**: At this time, there is no way to convert an existing account
 to use LDAP. You must delete the existing and create a new account to

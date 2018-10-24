@@ -61,9 +61,9 @@ it:
 !](/images/rs/rladmin_status-1.png?width=1000&height=214)
 
 1. Run the rladmin command\
-    \$ rladmin upgrade module db\_name
-    \<your\_db\_name\> module\_name \<module\_name\> version
-    \<new\_module\_version\_num\> module\_args \<module
+    $ rladmin upgrade module db_name
+    \<your_db_name\> module_name \<module_name\> version
+    \<new_module_version_num\> module_args \<module
     arguments\>
     \
     Note: When this is done, it will
@@ -74,7 +74,7 @@ it:
 
 Each module package is a zip file. Inside the zip file is a JSON file
 and it will contain the information necessary for the above rladmin
-command for the module\_name and version information necessary. The
+command for the module_name and version information necessary. The
 specific data points must be entered exactly as you see it in that JSON
 file. The necessary data should be at the end of the JSON document. For
 example, here is the information for the RediSearch Enterprise module
@@ -87,21 +87,21 @@ that i used for the example command above:
 An example of upgrading the version of RediSearch to 10017.0 would
 be:\
 \
-\$ rladmin upgrade module db\_name
-MyAwesomeDB module\_name ft version 10017.0
-module\_args
+$ rladmin upgrade module db_name
+MyAwesomeDB module_name ft version 10017.0
+module_args
 
  
 
 An example of upgrading ReBloom:\
 \
-\$ rladmin upgrade module db\_name MyDB
-module\_name bf version 10100.0 module\_args
+$ rladmin upgrade module db_name MyDB
+module_name bf version 10100.0 module_args
 ""
 
  
 
 An example of upgrading ReJSON:
 
-\$ rladmin upgrade module db\_name MyDB module\_name ReJSON version
-10002.0 module\_args ""
+$ rladmin upgrade module db_name MyDB module_name ReJSON version
+10002.0 module_args ""

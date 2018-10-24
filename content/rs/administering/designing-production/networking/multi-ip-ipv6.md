@@ -49,14 +49,14 @@ load balancer VIP and so on).
 
 rladmin node address commands syntax:\
 node addr set\
-node external\_addr set\
-node external\_addr \[ add \| remove \]
+node external_addr set\
+node external_addr \[ add \| remove \]
 
 Where:
 
 - addr - is the internal address (can be used only when the node is
     offline)
-- external\_addr - is the external address(es)
+- external_addr - is the external address(es)
 
 **Note:** While [Joining a new node to a
 cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}})

@@ -14,8 +14,8 @@ In edit mode please enter or update the following details:
 
 1. **Account Name** - Give the account a name so you could recognize
     him
-1. **AWS\_ACCESS\_KEY\_ID** - RV user's AWS access key
-1. **AWS\_SECRET\_ACCESS\_KEY** - RV user's AWS secret key
+1. **AWS_ACCESS_KEY_ID** - RV user's AWS access key
+1. **AWS_SECRET_ACCESS_KEY** - RV user's AWS secret key
 1. **AWS Console User** - RV AWS UI console user
 1. **AWS Console password** - RV AWS UI console user's password
 1. **IAM Users sign-in link** - This is the link you use to log into

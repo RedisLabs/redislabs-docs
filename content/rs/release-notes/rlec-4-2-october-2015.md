@@ -109,7 +109,7 @@ before running through the upgrade process.
 - Disabled "dofile" functionality in Redis to solve a possible
     security vulnerability.
 - rladmin CLI "tune watchdog profile" command syntax updated to "tune
-    cluster watchdog\_profile".
+    cluster watchdog_profile".
 
 ## Fixed issues
 
@@ -163,7 +163,7 @@ before running through the upgrade process.
     Afterwards, from the operating system command line interface (CLI)
     run the following commands:\
     yum install policycoreutils-python\
-    semanage fcontext -a -t var\_log\_t '/var/opt/redislabs/log(/.\*)?'\
+    semanage fcontext -a -t var_log_t '/var/opt/redislabs/log(/.\*)?'\
     restsorecon -R /var/opt/redislabs/log\
 - **Issue**: In the Replica of process, if the target database does
     not have replication enabled and it is restarted or fails for any

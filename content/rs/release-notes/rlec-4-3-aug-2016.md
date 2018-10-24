@@ -73,7 +73,7 @@ upgrade to this version.
 - Option added to the *Replica-of* process that allows gradual
     "shard-by- shard" replication of a sharded database, reducing the
     load on internal buffers. This optimization setting can be
-    configured on the target database using the gradual\_sync\_mode
+    configured on the target database using the gradual_sync_mode
     parameter in rladmin.
 - The functionality for taking a node offline was removed from the UI.
 
@@ -97,7 +97,7 @@ upgrade to this version.
     reported as down
 - RLEC-7712 - in some cases, the Replica of process may fail when
     Redis password is set
-- RLEC-7726 - node object "avg\_latency" statistic is not returned in
+- RLEC-7726 - node object "avg_latency" statistic is not returned in
     the REST API
 - RLEC-7358 - install script issue when running on LVM disks
 - RLEC-8086 - port 9443 missing from redislabs-clients.xml
