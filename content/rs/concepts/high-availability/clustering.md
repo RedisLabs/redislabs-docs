@@ -34,13 +34,13 @@ were not designed beforehand to use it.
 
 ## Abbreviations
 
-[Tag / Hash Tag]{.observation}\
+Tag / Hash Tag
 A part of the key that is used in the hash calculation.
 
-[Slot / Hash Slot]{.observation}\
+Slot / Hash Slot
 The result of the hash calculation.
 
-[Shard]{.observation}\
+Shard
 Redis process that is part of the Redis clustered database.
 
 ## When to use sharding
@@ -124,15 +124,15 @@ their order to suit your application's requirements.
 ### Custom hashing policy notes and limitations
 
 1. You can define up to 32 RegEx rules, each up to 256 characters.
-1. RegEx rules are evaluated in their order and the first rule matched
+2. RegEx rules are evaluated in their order and the first rule matched
     is used. Therefore, strive to place common key name patterns at the
     beginning of the rule list.
-1. Key names that do not match any of the RegEx rules will trigger an
+3. Key names that do not match any of the RegEx rules will trigger an
     error.
-1. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot
+4. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot
     because the hash key will always be empty. Therefore, when used,
     this should be the last, catch-all rule.
-1. The following flag is enabled in the regular expression parser:\
+5. The following flag is enabled in the regular expression parser:\
     PCRE_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 

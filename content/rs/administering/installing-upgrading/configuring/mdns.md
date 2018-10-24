@@ -1,5 +1,5 @@
 ---
-Title: Client prerequisites for m[DNS]{.small-caps}
+Title: Client prerequisites for mDNS
 description: 
 weight: $weight
 alwaysopen: false

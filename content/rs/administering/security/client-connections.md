@@ -102,8 +102,7 @@ When using a certificate issued by an intermediate certificate authority
 (CA) on the cluster nodes, ensure that the CA root certificate is
 installed on the client machines.
 
-[Example how to secure client connection with SSL/TLS using
-stunnel]{.underline}
+#### Example how to secure client connection with SSL/TLS using stunnel
 
 The instructions below explain how to use stunnel for setting up a
 secure tunnel between a client machine and the RS nodes when the client
@@ -112,12 +111,12 @@ certificates, and a self-signed certificate on the client machine.
 
 1. Install stunnel version 5 or higher on the client machine. Older
     versions of stunnel do not support the TLS protocol.
-1. Create a self-signed certificate on the client machine:
+2. Create a self-signed certificate on the client machine:
 
     1. Generate a private key by running the following commands:sudo su
         --\
         openssl genrsa -out /etc/stunnel/keyclient.pem 4096
-    1. Generate a client certificate by running the following
+    2. Generate a client certificate by running the following
         commands:openssl req -new -x509 -key /etc/stunnel/keyclient.pem
         -out\
         /etc/stunnel/cert.pem -days 1826
@@ -125,22 +124,22 @@ certificates, and a self-signed certificate on the client machine.
     When prompted, enter the appropriate configuration details for the
     certificate.
 
-1. Copy the RS nodes certificates from all nodes to the client machine.
+3. Copy the RS nodes certificates from all nodes to the client machine.
     The certificates are saved in a file named proxy_cert.pem, which is
     stored in /etc/opt/redislabs in each node. For additional details,
     refer to [Updating SSL/TLS
     certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-1. Rename the certificate files fetched from the RS nodes as
+4. Rename the certificate files fetched from the RS nodes as
     certsvr.pem. For example: certsvr1.pem, certsvr2.pem.
-1. Create a single file for all of the server certificates on the
+5. Create a single file for all of the server certificates on the
     client machine, by running the following command from the OS CLI.
     For example:cat /etc/stunnel/certsvr1.pem
     /etc/stunnel/certsvr2.pem \> /etc/stunnel/servercerts.pem
-1. Configure stunnel for the connection to RS by using the steps below:
+6. Configure stunnel for the connection to RS by using the steps below:
     1. Create a redislabs.conf file in /etc/stunnel folder.
-    1. Ensure that the certificates that have been generated exist in
+    2. Ensure that the certificates that have been generated exist in
         the following folder: /etc/stunnel.
-    1. Edit the redislabs.conf content to look as follows:cert =
+    3. Edit the redislabs.conf content to look as follows:cert =
         /etc/stunnel/cert.pem\
         key = /etc/stunnel/keyclient.pem\
         cafile = /etc/stunnel/servercerts.pem\
@@ -158,11 +157,11 @@ certificates, and a self-signed certificate on the client machine.
         secure tunnel to the database endpoint configured in the connect
         parameter.
 
-1. Copy the contents of the client certificate from cert.pem and enter
+7. Copy the contents of the client certificate from cert.pem and enter
     them in the **SSL Client Authentication** field, in the RS UI, of
     the database you would like to secure. When done, be sure to save
     the change.
-1. Start the stunnel service by running the following command:service
+8. Start the stunnel service by running the following command:service
     stunnel restart
 
     **Note**: Any change made to the stunnel configuration requires
@@ -172,7 +171,7 @@ certificates, and a self-signed certificate on the client machine.
     properly. The log file is created under the root folder within the
     configuration mentioned above.
 
-1. Test the connection to the Redis database from the client machine.
+9. Test the connection to the Redis database from the client machine.
     You can use redis-cli to run commands on the client machine, and the
     commands will be redirected from the local machine's port 6379 to
     the RS database endpoint. Note that the connection to the Redis

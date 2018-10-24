@@ -221,14 +221,14 @@ following steps:
     ![Replica-of
     Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png?width=1608&height=178)
     Replica-of Destination
-1. From the *[source cluster]{.underline}*, copy the "Proxy
+2. From the *source cluster*, copy the "Proxy
     Certificate" (located under **settings**-\> **general**) and paste
     it as the **Source Cluster Certificate** for the destination
     Database:
     ![Replica-of Destination -
     Certificate](/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png?width=1596&height=626)
     Replica-of Destination - Certificate
-1. Press the **Continue** button, save the certificate and **Update**
+3. Press the **Continue** button, save the certificate and **Update**
     the database changes.
 
 ## Data compression for Replica Of
