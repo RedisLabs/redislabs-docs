@@ -22,33 +22,6 @@ CLI:
 - Upgrade the version of a database to the most current version
     supported by the cluster.
 
-Document Table of Contents
-- [Accessing the rladmin CLI](#accessing-the-rladmin-cli)
-- [rladmin features](#rladmin-features)
-- [rladmin usage](#rladmin-usage)
-    - [bind](#bind)
-    - [cluster](#cluster)
-        - [cluster reset_password](#cluster-reset_password)
-        - [cluster config](#cluster-config)
-        - [cluster create](#cluster-create)
-        - [cluster join](#cluster-join)
-        - [cluster recover](#cluster-recover)
-        - [cluster debug_info](#cluster-debug_info)
-    - [failover](#failover)
-    - [info](#info)
-    - [migrate](#migrate)
-    - [node](#node)
-    - [placement](#placement)
-    - [recover](#recover)
-    - [restart](#restart)
-    - [suffix](#suffix)
-    - [tune](#tune)
-        - [Configuring databases](#configuring-databases)
-        - [Configuring proxies](#configuring-proxies)
-        - [Configuring cluster](#configuring-cluster)
-    - [upgrade](#upgrade)
-    - [verify](#verify)
-
 # Accessing the rladmin CLI 
 
 To open the *rladmin* CLI:
@@ -447,16 +420,16 @@ Display current cluster status and topology information.
 
 Extra info options:
 
-| options | description |
-|---------|------|   
-|extra state_machine |        Shows extra execution state machine info|
-|extra nodestats|                Shows extra masters/slaves shards per node|
-|extra backups |                 Shows extra dbs and shards periodic backup ||status|
-|extra frag|                     Shows extra shards fragmented memory that could be reclaimed by restart|
-|extra watchdog|                 Shows extra watchdog status|
-|extra rack_id |                 Shows rack_id even when cluster is not marked as rack aware|
-|extra redis_version|            Shows redis version of all the databases|
-|extra all |                     Shows all extra info|
+| options             | description                                                             |
+| ------------------- | ----------------------------------------------------------------------- |
+| extra state_machine | Shows extra execution state machine info                                |
+| extra nodestats     | Shows extra masters/slaves shards per node                              |
+| extra backups       | Shows extra dbs and shards periodic backup                              | status |
+| extra frag          | Shows extra shards fragmented memory that could be reclaimed by restart |
+| extra watchdog      | Shows extra watchdog status                                             |
+| extra rack_id       | Shows rack_id even when cluster is not marked as rack aware             |
+| extra redis_version | Shows redis version of all the databases                                |
+| extra all           | Shows all extra info                                                    |
 
 
 COLUMN_TITLES: a list of table column titles.
