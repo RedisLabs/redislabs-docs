@@ -96,7 +96,7 @@ jobs:
                 name: Deploy to S3
                 command:  |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 sync public s3://docs.redislabs.com/$VERSION --exclude "index.html" --delete --acl public-read --size-only
+                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only
 
 workflows:
   version: 2
