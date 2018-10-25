@@ -112,12 +112,13 @@
       </div>
       {{end}}
 
+      <div class="nav-select">
+          <center>
+          <select onchange="javascript:location.href = this.value;">
+          {{partial "flex/selectnavigation.html" .}}
+      </select>
+      </center>
+      </div>
+
       {{if not .IsHome}}<h1>{{.Title}}</h1>{{end}}
 
-      <div class="nav-select">
-        <center>
-          <select onchange="javascript:location.href = this.value;">
-            {{partial "flex/selectnavigation.html" .}}
-          </select>
-        </center>
-      </div>
