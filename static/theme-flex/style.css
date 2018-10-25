@@ -2166,7 +2166,9 @@ button.hamburger.hamburger--spring {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-
+  nav.shortcuts li:last-child a label {
+    font-size: 12px;
+  }
   .nav-links {
     display: flex;
     justify-content: space-between;
