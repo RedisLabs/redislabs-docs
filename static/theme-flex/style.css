@@ -2169,6 +2169,9 @@ button.hamburger.hamburger--spring {
   nav.shortcuts li:last-child a label {
     font-size: 12px;
   }
+  header .logo img {
+    height: 32.2292px;
+  }
   .nav-links {
     display: flex;
     justify-content: space-between;
@@ -2214,6 +2217,7 @@ button.hamburger.hamburger--spring {
     /* display: none; */
     height: 34px;
     line-height: 34px;
+    margin-left: 0;
   }
   button.hamburger.hamburger--spring {
     display: none;
