@@ -101,7 +101,7 @@ jobs:
                 name: Replace index.html
                 command:  |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 copy s3://docs.redislabs.com/index.html s3://docs.redislabs.com/$VERSION/index.html
+                    aws s3 cp s3://docs.redislabs.com/index.html s3://docs.redislabs.com/$VERSION/index.html
 
 workflows:
   version: 2
