@@ -4,7 +4,7 @@ description: Syntax instructions for markdown formatting
 favorite_food: ice cream
 draft: false
 ---
-# Tabbed paragraphs
+## Tabbed paragraphs
 
 A tabbed paragraph create scrolling code blocks like this:
 
@@ -16,7 +16,7 @@ A tabbed paragraph in a bulleted or numbered list create indented paragraphs lik
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur, velit sit amet tempus commodo, orci ipsum laoreet turpis, eu ullamcorper orci enim ut dui.
 
-# Page variables
+## Page variables
 
 You can add custom variables to the page metadata and use these variables within the page.
 
@@ -32,7 +32,7 @@ I love {{</* field "favorite_food" */>}}!
 
 HTML: *I love {{< field "favorite_food" >}}!*
 
-# Links to internal pages
+## Links to internal pages
 
 * To link to another page in the content directory:
 
@@ -46,7 +46,7 @@ HTML: *I love {{< field "favorite_food" >}}!*
 
     For example: [Sign up for Redis Enterprise VPC]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" >}})
 
-# Text Formatting
+## Text Formatting
 
 | **Description** | **Syntax** | **Output** |
 |-------------|----------------|-------------
@@ -54,14 +54,14 @@ HTML: *I love {{< field "favorite_food" >}}!*
 | Bold text | \*\*bold\*\* | **bold** |
 | Inline code | \`print "hello world!"\` | `print "hello world!"` |
 
-# Code Blocks
+## Code Blocks
 
 To add code blocks of a specific language, e.g. python, type this:
 
 ~~~md
 ```python
 
-# this is python code
+##this is python code
 
 def hello_world():
 
@@ -73,13 +73,13 @@ def hello_world():
 Output:
 
 ```python
-# this is python code
+##this is python code
 
 def hello_world():
   print "Hello World!"
 ```
 
-# Tables
+## Tables
 
 **Syntax**:
 
@@ -97,7 +97,7 @@ def hello_world():
 | cell 1x1  | cell 1x2  |
 | cell 2x1  | cell 2x2  |
 
-# Adding an image
+## Adding an image
 
 1. Copy the image to a directory in: /static/images
 1. In the markdown page, add the alt text and path to the image like this:
@@ -114,9 +114,9 @@ To make an image appear on the next line in a list:
 1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
-# Panels
+##Panels
 
-## Info
+### Info
 
 Info boxes give background information that does not prevent proper use of the product.
 
@@ -128,7 +128,7 @@ Info boxes give background information that does not prevent proper use of the p
 
 {{% info title="FYI" %}}After you do this the first time, it gets easier.{{% /info %}}
 
-## Tip
+### Tip
 
 Tips give additional information for improved use of the product.
 
@@ -140,7 +140,7 @@ Tips give additional information for improved use of the product.
 
 {{%tip title="A friendly tip!" %}}Eating on time prevents hunger.{{% /tip %}}
 
-## Note
+### Note
 
 Notes suggest steps that prevent errors that do not cause data loss.
 
@@ -152,7 +152,7 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 {{% note title="Here is a note" %}}Make sure you have enough disk space.{{% /note %}}
 
-## Warning
+### Warning
 
 Warnings suggest that users think carefully before doing steps that can cause irresversible data loss.
 
