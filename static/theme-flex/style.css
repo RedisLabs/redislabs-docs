@@ -678,13 +678,18 @@ article section.page pre {
   word-break: normal;
   word-wrap: normal;
   /* position: relative; */
+  max-width: 100%;
+  width: 100%;
+  display: inline-grid;
+  position: relative;
+  /* overflow: visible; */
 }
 article section.page pre .copy-to-clipboard {
   /* float: right; */
   position: absolute;
-  right: 0;
+  right: 10px;
   cursor: pointer;
-  /* top: 32px; */
+  top: 10px;
 }
 article section.page pre[class*="language-"] {
   background-color: #333;
@@ -1318,12 +1323,7 @@ a.got-to-top:hover {
   color: #b62411;
   text-decoration: none;
 }
-.highlight {
-  max-width: 100%;
-  width: 100%;
-  display: inline-grid;
-  position: relative;
-}
+
 .logo p {
   margin: 0;
   padding: 0;
