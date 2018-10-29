@@ -1186,6 +1186,13 @@ nav.shortcuts li:last-child {
   margin-right: 3px;
   display: inline;
 }
+.extra-links-gooter a {
+  display: block;
+}
+
+.nav-links-footer a {
+  display: block;
+}
 li.menu__item.menu__title {
   margin-top: 22px;
 }
