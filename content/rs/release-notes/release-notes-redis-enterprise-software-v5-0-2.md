@@ -1,7 +1,7 @@
 ---
-Title: Release Notes - Redis Enterprise Software - v5.0.2 - 2018 March
+Title: Redis Enterprise Software 5.0.2 (2018 March)
 description: 
-weight: $weight
+weight: 92
 alwaysopen: false
 ---
 Redis Enterprise Software 5.0.2 is now available. Key features include

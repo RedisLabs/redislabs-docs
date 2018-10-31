@@ -1,7 +1,7 @@
 ---
-Title: Release Notes - Redis Enterprise Pack - v5.0 - November 2017
+Title: Redis Enterprise Pack 5.0 Release Notes (November 2017)
 description: 
-weight: $weight
+weight: 93
 alwaysopen: false
 ---
 Redis Enterprise Software 5.0 is now available. Key features include
