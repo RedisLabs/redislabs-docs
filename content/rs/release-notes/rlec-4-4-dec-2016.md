@@ -1,7 +1,7 @@
 ---
-Title: Release Notes 4.4 - December 2016
+Title: RLEC 4.4 Release Notes (December 2016)
 description: 
-weight: $weight
+weight: 95
 alwaysopen: false
 ---
 If you are upgrading from a previous version, make sure to review the

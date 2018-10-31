@@ -4,4 +4,4 @@ description:
 weight: 90
 alwaysopen: false
 ---
-{{%children style="h2" description="true"%}}
+{{%children style="h2" sort="Weight"%}}

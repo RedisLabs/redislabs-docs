@@ -1,7 +1,7 @@
 ---
-Title: Release Notes - Redis Enterprise Pack - v4.5 - May 2017
+Title: Redis Enterprise Pack 4.5 Release Notes (May 2017)
 description: 
-weight: $weight
+weight: 94
 alwaysopen: false
 ---
 If you are upgrading from a previous version, make sure to review the

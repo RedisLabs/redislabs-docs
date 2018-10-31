@@ -1,7 +1,7 @@
 ---
-Title: Release Notes 0.99.5-24 - February 15, 2015
+Title: RLEC 0.99.5-24 Release Notes (February 15, 2015)
 description: 
-weight: $weight
+weight: 99
 alwaysopen: false
 ---
 If you are upgrading from a previous version, make sure to review the

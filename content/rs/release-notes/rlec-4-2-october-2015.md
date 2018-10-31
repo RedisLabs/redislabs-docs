@@ -1,7 +1,7 @@
 ---
-Title: Release Notes 4.2.1-30 - October 18, 2015
+Title: RLEC 4.2.1-30 Release Notes (October 18, 2015)
 description: 
-weight: $weight
+weight: 97
 alwaysopen: false
 ---
 If you are upgrading from a previous version, make sure to review the
