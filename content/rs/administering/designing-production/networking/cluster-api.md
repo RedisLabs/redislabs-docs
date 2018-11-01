@@ -3,7 +3,6 @@ Title: Cluster API
 description: 
 weight: $weight
 alwaysopen: false
-draft: false
 ---
 To use the cluster API, you must have a newly created database in your v5.x or higher Redis Enterprise Software (RS) cluster. If you have an existing database you would like to use with the cluster API, you must create a new database and migrate the data over using ReplicaOf.
 
