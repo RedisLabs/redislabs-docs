@@ -1,132 +1,160 @@
-
-  </section>
+</section>
 </article>
 
 <footer>
-  <div class="reveal large" id="navModal">
-    {{ partial "navigation.html" . }}
-  </div>
+    <div class="reveal large" id="navModal">
+        {{ partial "navigation.html" . }}
+    </div>
 
-  <div class="btm_footer">
-    {{ partial "footer.html" . }}
-  </div>
+    <div class="btm_footer">
+        {{ partial "footer.html" . }}
+    </div>
 </footer>
 
 <div class="search-box" style="display: none">
-  <form role="search" method="get" class="search-form" action="https://redislabs.com/">
-      <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
-      <div class="input-group-button">
-        <input type="submit" class="search-submit button" value="Search"><a data-close="" aria-label="Close modal" class="close button secondary hollow"><span aria-hidden="true">×</span></a>
-      </div>
-  </form>
+    <form role="search" method="get" class="search-form" action="https://redislabs.com/">
+        <input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:">
+        <div class="input-group-button">
+            <input type="submit" class="search-submit button" value="Search"><a data-close="" aria-label="Close modal"
+                class="close button secondary hollow"><span aria-hidden="true">×</span></a>
+        </div>
+    </form>
 </div>
 
 
 <nav id="ml-menu" class="menu cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
-  <div class="menu__wrap">
-    <ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">
-      <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1" href="#">Products</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2" href="#">Pricing</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3" href="#">Solutions</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-4" href="#">Partners</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-5" href="#">Resources</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-6" href="#">Company</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-7" href="#">Community</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://university.redislabs.com/">Redis University</a></li>
-    </ul>
-    <!-- Submenu 1 -->
-    <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Products">
-      <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="https://redislabs.com/redis-enterprise/">Redis Enterprise</a></li>
-        
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/">Advantages</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/technology/">Technology</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/customers/">Customers</a></li>
-
-      <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="https://redislabs.com/redis-enterprise/deployments/">Deployments</a></li>
-
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/deployments/">Overview</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/cloud/">Cloud (Hosted)</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/vpc/">VPC (Managed)</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/software/">Software</a></li>
-
-      <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="#">More</a></li>
-
-
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/redis-modules/">Redis Modules</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/connectors/">Connectors</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/memcached/">Memcached</a></li>
-    </ul>
-    <!-- Submenu 2 -->
-    <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Pricing">
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/pricing/">Selection Guide</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/cloud/cloud-pricing/">Cloud (Hosted)</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/vpc/vpc-pricing/">VPC (Managed)</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/software/software-pricing/">Software</a></li>
-    </ul>
-    <!-- Submenu 3 -->
-    <ul data-menu="submenu-3" id="submenu-3" class="menu__level" tabindex="-1" role="menu" aria-label="Solutions">
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/solutions/">Overview</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/personalization/">Personalization</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/fraud-detection/">Fraud Mitigation</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/social-apps/">Social Apps</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/metering/">Metering</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/ecommerce/">Ecommerce</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/industries/redis-financial-services/">Financial Services</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/search/">Search</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/iot/">IoT</a></li>
-
-      <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="#">More</a></li>
-
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/use-cases/">Use Cases</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/industries/">Industries</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/partner-integrations/">Integrations</a></li>
-    </ul>
-    <!-- Submenu 4 -->
-    <ul data-menu="submenu-4" id="submenu-4" class="menu__level" tabindex="-1" role="menu" aria-label="Partners">
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/partners/">Partner Center</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/partners/find-a-partner/">Find a Partner</a></li>
-      <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/partners/become-a-partner/">Become a Partner</a></li>
-    </ul>
-    <!-- Submenu 5 -->
-    <ul data-menu="submenu-5" id="submenu-5" class="menu__level" tabindex="-1" role="menu" aria-label="Resources">
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/">Resource Center</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/blog/">Company Blog</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/webinars/">Webinars</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/videos/">Videos</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/benchmarks/">Benchmarks</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/datasheets/">Datasheets</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/whitepapers/">Whitepapers</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/faqs/">FAQs</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/documentation/">Documentation</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/how-to-redis-enterprise/">How To</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/redis-clients/">Redis Clients</a></li>
-      </ul>
+    <div class="menu__wrap">
+        <ul data-menu="main" class="menu__level" tabindex="-1" role="menu" aria-label="All">
+            <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-1" aria-owns="submenu-1"
+                    href="#">Products</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-2" aria-owns="submenu-2"
+                    href="#">Pricing</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-3"
+                    href="#">Solutions</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-3" aria-owns="submenu-4"
+                    href="#">Partners</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-5"
+                    href="#">Resources</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-6"
+                    href="#">Company</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" data-submenu="submenu-4" aria-owns="submenu-7"
+                    href="#">Community</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://university.redislabs.com/">Redis
+                    University</a></li>
+        </ul>
+        <!-- Submenu 1 -->
+        <ul data-menu="submenu-1" id="submenu-1" class="menu__level" tabindex="-1" role="menu" aria-label="Products">
+            <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="https://redislabs.com/redis-enterprise/">Redis
+                    Enterprise</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/">Advantages</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/technology/">Technology</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/customers/">Customers</a></li>
+            <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="https://redislabs.com/redis-enterprise/deployments/">Deployments</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/deployments/">Overview</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/cloud/">Cloud
+                    (Hosted)</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/vpc/">VPC
+                    (Managed)</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/software/">Software</a></li>
+            <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="#">More</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/redis-modules/">Redis
+                    Modules</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/connectors/">Connectors</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/memcached/">Memcached</a></li>
+        </ul>
+        <!-- Submenu 2 -->
+        <ul data-menu="submenu-2" id="submenu-2" class="menu__level" tabindex="-1" role="menu" aria-label="Pricing">
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/pricing/">Selection
+                    Guide</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/cloud/cloud-pricing/">Cloud
+                    (Hosted)</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/vpc/vpc-pricing/">VPC
+                    (Managed)</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/redis-enterprise/software/software-pricing/">Software</a></li>
+        </ul>
+        <!-- Submenu 3 -->
+        <ul data-menu="submenu-3" id="submenu-3" class="menu__level" tabindex="-1" role="menu" aria-label="Solutions">
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/solutions/">Overview</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/personalization/">Personalization</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/fraud-detection/">Fraud
+                    Mitigation</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/social-apps/">Social
+                    Apps</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/metering/">Metering</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/ecommerce/">Ecommerce</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/industries/redis-financial-services/">Financial
+                    Services</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/search/">Search</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/iot/">IoT</a></li>
+            <li class="menu__item menu__title" role="menuitem"><a class="menu__link__title" href="#">More</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/use-cases/">Use
+                    Cases</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/industries/">Industries</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/solutions/partner-integrations/">Integrations</a></li>
+        </ul>
+        <!-- Submenu 4 -->
+        <ul data-menu="submenu-4" id="submenu-4" class="menu__level" tabindex="-1" role="menu" aria-label="Partners">
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/partners/">Partner
+                    Center</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/partners/find-a-partner/">Find
+                    a Partner</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/partners/become-a-partner/">Become
+                    a Partner</a></li>
+        </ul>
+        <!-- Submenu 5 -->
+        <ul data-menu="submenu-5" id="submenu-5" class="menu__level" tabindex="-1" role="menu" aria-label="Resources">
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/">Resource
+                    Center</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/blog/">Company
+                    Blog</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/webinars/">Webinars</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/videos/">Videos</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/benchmarks/">Benchmarks</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/datasheets/">Datasheets</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/whitepapers/">Whitepapers</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/faqs/">FAQs</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/documentation/">Documentation</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/how-to-redis-enterprise/">How
+                    To</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/resources/redis-clients/">Redis
+                    Clients</a></li>
+        </ul>
         <!-- Submenu 6 -->
-    <ul data-menu="submenu-6" id="submenu-6" class="menu__level" tabindex="-1" role="menu" aria-label="Resources">
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company">About Us</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/team/">Team</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/careers/">Careers</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/newsroom/">Newsroom</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/events/">Corporate Events</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/contact/">Contact Us</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/support/">Support</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://status.redislabs.com/">Service Status</a></li>
-      </ul>
+        <ul data-menu="submenu-6" id="submenu-6" class="menu__level" tabindex="-1" role="menu" aria-label="Resources">
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company">About Us</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/team/">Team</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/careers/">Careers</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/newsroom/">Newsroom</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/events/">Corporate
+                    Events</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/contact/">Contact
+                    Us</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/company/support/">Support</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://status.redislabs.com/">Service
+                    Status</a></li>
+        </ul>
 
-      <!-- Submenu 7 -->
-    <ul data-menu="submenu-7" id="submenu-7" class="menu__level" tabindex="-1" role="menu" aria-label="Resources">
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/why-redis/">Why Redis</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/oss-projects/">OSS Projects</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/redis-modules-hub/">Modules Hub</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/redis-best-practices/">Best Practices</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/community-events/">Community Events</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/presentations/">Tech Presentations</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/tech-blog/">Tech Blog</a></li>
-        <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/ebook/">e-Book</a></li>
-      </ul>
+        <!-- Submenu 7 -->
+        <ul data-menu="submenu-7" id="submenu-7" class="menu__level" tabindex="-1" role="menu" aria-label="Resources">
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/why-redis/">Why
+                    Redis</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/oss-projects/">OSS
+                    Projects</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/redis-modules-hub/">Modules
+                    Hub</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/redis-best-practices/">Best
+                    Practices</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/community-events/">Community
+                    Events</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/presentations/">Tech
+                    Presentations</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/tech-blog/">Tech
+                    Blog</a></li>
+            <li class="menu__item" role="menuitem"><a class="menu__link" href="https://redislabs.com/community/ebook/">e-Book</a></li>
+        </ul>
 
 
-  </div>
+    </div>
 </nav>
 
 {{ partial "flex/scripts.html" . }}
