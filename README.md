@@ -37,23 +37,13 @@ To run the Redis Labs Documentation Center locally:
 
 To access the site, go to: http://localhost:1313
 
-<!-- ## Staging
-
-Version branches are automatically built to https://docs.Redis Labs.co.
-
-When you commit a change to any other branch, the site is built to the staging directory  so you can preview and share your changes before publishing them in the official public documentation.
-
-Your staging website is available at: https://docs.Redis Labs.co/staging/<branch_name>
-
-Don't worry about cluttering - staging websites are automatically removed after 21 days.
-
 ## Publishing
 
-Official version documentation is published through the version build branches (for example 4.3.0-build).
+Official version documentation is published through the version build branches (for example latest-build).
 
-The master branch is published to https://docs.Redis Labs.co/staging/dev and represents the latest documentation for the latest publicly available release. This branch is published to the latest official version site once a day.
+The master branch is published to https://docs.redislabs.com/staging/dev and represents the unstable version of documentation for the latest publicly available release. When stable, this branch is published to the latest branch.
 
-The next branch is published to https://docs.Redis Labs.co/staging/next and represents the latest documentation for the upcoming release. This branch is published to the community documentation site https://docs.Redis Labs.co/community each time a community milestone is released. -->
+The latest branch is the latest stable version of documentation for the latest publicly available release at: https://docs.redislabs.com/latest
 
 ## Contributing to the documentation
 
@@ -72,16 +62,6 @@ The metadata (front matter) of a page is used to:
 
 To add a new section in the sidebar, you must add a directory and add an `_index.md` file in that directory. The content of the _index.md file is shown when you click on the category in the sidebar, and the `weight` of the _index.md file determines the order in which the category is listed in the sidebar.
 
-<!-- ## Link to latest 
-
-To create a link that will always direct to the latest version of the docs use 'latest/' syntax:
-```
-[Latest home page](http://docs.Redis Labs.co/latest)
-```
-Goes to: `http://docs.Redis Labs.co/<latest_version_number>`
-
-For example: [Latest home page](http://docs.Redis Labs.co/latest)
-
 ## Markdown
 
-For more information about markdown syntax, see the [cheatsheet](http://www.redislabs.com/docs/latest/cheatsheet). -->
+For more information about markdown syntax for our docs, see the [cheatsheet](http://www.redislabs.com/docs/latest/cheatsheet).
