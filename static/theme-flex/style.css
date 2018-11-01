@@ -673,7 +673,7 @@ article section.page pre {
   overflow: auto;
   padding: .5rem;
   font-size: 15px;
-  white-space: normal;
+  white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
