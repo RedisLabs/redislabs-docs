@@ -41,7 +41,7 @@ jobs:
             - run:
                 name: Replace "branch" with branch name in config.toml (except for latest version change to master)
                 command: |
-                    if [ "${CIRCLE_BRANCH}" == "preview-build" ] ;
+                    if [ "${CIRCLE_BRANCH}" == "latest-build" ] ;
                         then sed -i s/branch/master/g config.toml
                     else
                         sed -i s/branch/${CIRCLE_BRANCH}/g config.toml ;
