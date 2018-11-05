@@ -10,7 +10,7 @@ management in RS. LDAP authentication for RS administrator accounts
 requires minimal manual steps to configure the systems to interact.
 
 **Note**: LDAP groups cannot be mapped to Redis Enterprise Software
-admin accounts.
+accounts.
 
 For the steps, you need to configure the saslauthd service for the
 cluster, set up accounts on the LDAP Server, then map those IDs in RS.
@@ -45,8 +45,11 @@ system config file we configured in the previous step.
 
 You must specify the URIs for the LDAP servers you will be
 authenticating with. You can specify multiple LDAP servers by listing
-them separated by a space. If you are using LDAP over SSL, then replace
-ldap:// in the URL with ldaps://.
+them separated by a space. 
+
+If you are using LDAP over SSL, then 
+1. Replace ldap:// in the URL with ldaps://.
+2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
 
 ```src
 # Add the following, but with your LDAP Server FQDNs or IPs:
@@ -62,6 +65,9 @@ ldap_filter: (uid=%u)
 
 # If your LDAP servers require a password to connect, add that to the conf file.
 ldap_password: <your password here>
+
+# If your LDAP servers don't allow anonymous binds, add this to the conf file.
+ldap_bind_dn: cn=admin,dc=company,dc=com
 ```
 
 Example saslauthd.conf file
