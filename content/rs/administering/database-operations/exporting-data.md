@@ -26,8 +26,8 @@ To perform a database export:
 
 To export to FTP, you must ensure permissions to read and write to the
 FTP location. If needed, you can specify the username and password for
-the FTP location as part of the path with\
-the following structure: ftp://user:password\@host:port/path/
+the FTP location as part of the path with the following structure: 
+ftp://user:password@host:port/path/
 
 ### Amazon S3 or OpenStack Swift location
 
