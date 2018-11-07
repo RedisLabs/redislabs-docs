@@ -24,4 +24,4 @@ features, this solution provides high performance and low latency, all
 while providing applications the capabilities to cope with topology
 changes such as adding, removing of nodes, node failovers and so on.
 
-For more about working with the Cluster API, see [Using the Cluster API]({{< relref "/rs/administering/designing-production/networking/using-cluster-api.md" >}}). 
+For more about working with the Cluster API, see [Using the Cluster API]({{< relref "/rs/administering/designing-production/networking/using-cluster-api.md" >}}).
