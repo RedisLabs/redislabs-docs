@@ -1,5 +1,5 @@
 ---
-Title: Cluster API
+Title: Using the Cluster API
 description: 
 weight: $weight
 alwaysopen: false
