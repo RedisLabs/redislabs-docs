@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 ---
 A Redis Enterprise Software (RS) cluster typically consists of several
-nodes. For production deployments, Redis Labs recommends an uneven
+nodes. For production deployments, we recommend an uneven
 number of nodes, with a minimum of three.
 
 Note: In a cluster that consists of only one node, some features and
