@@ -17,11 +17,10 @@ The first step is to find the newly created database’s ID, so we convert the c
 
 In this example, the db’s ID is 4 and that is what we will need for <db-id> below.
 
-Using the ccs-cli command line utility, configure the two parameters for this database necessary to be compatible with the Cluster API.
+Using the rladmin command line utility, enable the Cluster API.
 
-    $ sudo ccs-cli
-    redis /tmp/ccs.sock> hset bdb:<db-id> shard_function crc16_to_12
-    redis /tmp/ccs.sock> hset bdb:<db-id> oss_cluster_mode enabled
+    $ sudo rladmin
+    rladmin> tune db crdb oss_cluster enable
 
 Finally, we need to reconfigure the database to load the new settings and restart the endpoint proxy.
 
