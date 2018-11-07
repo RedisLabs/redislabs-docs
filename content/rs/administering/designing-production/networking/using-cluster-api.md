@@ -22,6 +22,8 @@ Using the rladmin command line utility, enable the Cluster API.
     $ sudo rladmin
     rladmin> tune db crdb oss_cluster enable
 
+Note: To disable Cluster API with rladmin, run: tune db crdb oss_cluster disable
+
 Finally, we need to reconfigure the database to load the new settings and restart the endpoint proxy.
 
     $ sudo rlutil dmc_reconf bdb=<db-id>
