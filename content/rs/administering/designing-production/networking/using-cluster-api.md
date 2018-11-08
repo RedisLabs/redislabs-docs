@@ -17,10 +17,10 @@ The first step is to find the newly created database’s ID, so we convert the c
 
 In this example, the db’s ID is 4 and that is what we will need for <db-id> below.
 
-Using the rladmin command line utility, enable the Cluster API.
+Using the rladmin command line utility, enable the Cluster API for a specified database.
 
     $ sudo rladmin
-    rladmin> tune db crdb oss_cluster enable
+    rladmin> tune db <database name or ID> oss_cluster enable
 
 Note: To disable Cluster API with rladmin, run: tune db crdb oss_cluster disable
 
