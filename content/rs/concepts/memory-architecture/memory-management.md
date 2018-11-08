@@ -26,6 +26,16 @@ which can cause data loss or out of memory (OOM) messages. If shards cannot
 free memory, then RS depends on the OS processes to kill slaves (but
 tries to avoid killing masters).
 
+If a node is low on RAM, RS follows this mitigation flow:
+
+1. If there are other nodes available, RS migrates shards to other nodes.
+2. If the eviction policy allows eviction, RS causes shards to release memory, 
+which can result in data loss.
+3. If the eviction poilcy does not allow eviction, RS sends 
+out of memory (OOM) messages.
+4. If shards cannot free memory, RS relies on the OS processes to kill slaves, 
+but tries to avoid killing masters.
+
 We still recommend that you have a monitoring platform that alerts you 
 proactively before a system gets low on RAM. Maintaining a properly sized 
 cluster is critical to a healthy RS installation and is a day-to-day 
