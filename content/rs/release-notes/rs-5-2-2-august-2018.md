@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software 5.2.2 (August 2018)
 description: 
-weight: 90
+weight: 89
 alwaysopen: false
 ---
 Redis Enterprise Software (RS) 5.2.2 is now available.
