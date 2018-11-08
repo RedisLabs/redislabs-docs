@@ -308,6 +308,13 @@ section a {
   right: 30px;
   cursor: pointer; }
 
+.autocomplete-suggestion .category {
+  color: #888;
+  margin-left: 10px;
+  font-size: 12px;
+  font-style: italic;
+}
+
 #sidebar-toggle-span {
   display: none; }
 

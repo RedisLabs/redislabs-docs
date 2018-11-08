@@ -3,6 +3,7 @@ Title: Redis Labs Kubernetes Architecture – Overview
 description: 
 weight: 30
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Redis Labs bases its Kubernetes architecture on the several vital concepts.
 

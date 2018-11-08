@@ -3,6 +3,7 @@ Title: Getting Started with Redis Enterprise Software using Kubernetes
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Kubernetes provides simpler orchestration with containers and has been widely adapted. It is simple to get a Redis Enterprise cluster on Kubernetes with the new Redis Enterprise Docker container.
 

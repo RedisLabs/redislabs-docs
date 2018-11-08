@@ -27,6 +27,9 @@ function initLunr() {
             lunrIndex.field("content", {
                 boost: 5
             });
+            lunrIndex.field("categories", {
+                boost: 1
+            });            
 
             // Feed lunr with each file and let lunr actually index them
             pagesIndex.forEach(function(page) {
@@ -72,6 +75,7 @@ $( document ).ready(function() {
                 "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
                     term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
             item.context = text;
+            item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
@@ -80,6 +84,7 @@ $( document ).ready(function() {
                 '» ' + item.title +
                 '<div class="context">' +
                 (item.context || '') +'</div>' +
+                '<strong class="category">' + item.cat + '</strong>' +
                 '</div>';
         },
         /* onSelect callback fires when a search suggestion is chosen */

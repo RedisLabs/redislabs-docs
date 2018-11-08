@@ -3,6 +3,7 @@ Title: Getting Started with Kubernetes and OpenShift
 description: 
 weight: 50
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 These are the steps required to set up a Redis Enterprise Software
 Cluster with OpenShift.
