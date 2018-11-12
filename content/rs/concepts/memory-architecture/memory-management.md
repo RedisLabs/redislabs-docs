@@ -19,7 +19,7 @@ to store data.
 
 ## What happens when Redis Enterprise Software is low on RAM?
 
-If a node is low on RAM, RS follows this mitigation flow:
+If a node is low on RAM, RS follows this order of priority:
 
 1. If there are other nodes available, RS migrates shards to other nodes.
 2. If the eviction policy allows eviction, RS causes shards to release memory, 
