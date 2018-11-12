@@ -1,10 +1,10 @@
 ---
-Title: Cluster API Architecture
+Title: OSS Cluster API Architecture
 description: 
 weight: $weight
 alwaysopen: false
 ---
-The Redis Cluster API support in Redis Enterprise Software (RES)
+The Redis OSS Cluster API support in Redis Enterprise Software (RES)
 provides a simple mechanism for Cluster enabled Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
 to an RES proxy on the node hosting the master shard for the data being
@@ -24,4 +24,4 @@ features, this solution provides high performance and low latency, all
 while providing applications the capabilities to cope with topology
 changes such as adding, removing of nodes, node failovers and so on.
 
-For more about working with the Cluster API, see [Using the Cluster API]({{< relref "/rs/administering/designing-production/networking/using-cluster-api.md" >}}).
+For more about working with the OSS Cluster API, see [Using the OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}).
