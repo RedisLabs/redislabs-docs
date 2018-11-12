@@ -29,7 +29,7 @@ on. The result is that for all but the initial call to get the cluster
 topology or reacquire the location of the master shard, the client will
 connect to the RS endpoint proxy where the master shard is located.
 [Learn more about the Cluster API
-implementation]({{< relref "/rs/concepts/data-access/cluster-api.md" >}}).
+implementation]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).
 
 ### Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB)
 
