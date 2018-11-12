@@ -19,13 +19,6 @@ to store data.
 
 ## What happens when Redis Enterprise Software is low on RAM?
 
-If free RAM is low, RS automatically tries to migrate shards to
-other nodes (if there are any) in order to free RAM on this node. If that is not
-possible, RS causes shards to release memory if the eviction policy allows it, 
-which can cause data loss or out of memory (OOM) messages. If shards cannot
-free memory, then RS depends on the OS processes to kill slaves (but
-tries to avoid killing masters).
-
 If a node is low on RAM, RS follows this mitigation flow:
 
 1. If there are other nodes available, RS migrates shards to other nodes.
