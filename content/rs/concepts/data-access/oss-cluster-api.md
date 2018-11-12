@@ -4,13 +4,13 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-The Redis OSS Cluster API support in Redis Enterprise Software (RES)
-provides a simple mechanism for Cluster enabled Redis clients to learn
+The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
-to an RES proxy on the node hosting the master shard for the data being
+to an RS proxy on the node hosting the master shard for the data being
 operated on. The result is that for all but the initial call to get the
-cluster topology or reacquire the location of the master shard, the
-client will connect to the RES endpoint proxy where the master shard is
+cluster topology or the call to reacquire the location of the master shard, the
+client will connect to the RS endpoint proxy where the master shard is
 located.
 
 For example, the initial connection from a client might be to cluster
@@ -19,9 +19,9 @@ needs to go directly to another node in the cluster to interact directly
 with the data for the query. This process can dramatically reduce access
 times and latency, but also offers near-linear scalability.
 
-When combined with Redis Enterprise Software's other high availability
-features, this solution provides high performance and low latency, all
-while providing applications the capabilities to cope with topology
-changes such as adding, removing of nodes, node failovers and so on.
+When combined with the other RS high availability features, 
+this solution provides high performance and low latency, all
+while giving applications the ability to cope with topology
+changes, including add node, remove node, and node failover.
 
 For more about working with the OSS Cluster API, see [Using the OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}).
