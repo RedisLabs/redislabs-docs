@@ -4,11 +4,11 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+{{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
 to an RS proxy on the node hosting the master shard for the data being
-operated on. The result is that for all but the initial call to get the
+operated on.{{% /excerpt%}} The result is that for all but the initial call to get the
 cluster topology or the call to reacquire the location of the master shard, the
 client will connect to the RS endpoint proxy where the master shard is
 located.

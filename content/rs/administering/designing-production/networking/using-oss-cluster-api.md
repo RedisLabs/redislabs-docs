@@ -4,7 +4,8 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-
+{{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}} 
+For more information, see [Redis OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).
 
 Note: The OSS Cluster API setting is not cluster-wide. 
 The setting only applies to the specified database.
