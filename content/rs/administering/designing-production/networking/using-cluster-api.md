@@ -45,8 +45,8 @@ for the specified database.
     $ sudo rlutil dmc_reconf bdb=<db-id>
     ```
 
-To get the benefits of using the OSS Cluster API, make sure that your Redis clients 
-are cluster-aware, such as redis-py-cluster or jedis.
+To get the benefits of using the OSS Cluster API, make sure that you are using 
+Redis clients that are cluster-aware, such as redis-py-cluster or jedis.
 
 ## Converting an existing Redis database to use the OSS Cluster API
 
