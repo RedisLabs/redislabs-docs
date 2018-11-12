@@ -4,17 +4,14 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-To use the OSS Cluster API, you must have a newly created database 
-in your v5.x or higher Redis Enterprise Software (RS) cluster. 
-If you have an existing database you want to use with the OSS Cluster API, 
-you must create a new database and migrate the data over using ReplicaOf.
+
 
 Note: The OSS Cluster API setting is not cluster-wide. 
 The setting only applies to the specified database.
 
-## Configuring a New RS Database to Use the OSS Cluster API
+## Configuring an RS Database to Use the OSS Cluster API
 
-To configure a new RS database to use the OSS Cluster API:
+To configure an RS database to use the OSS Cluster API:
 
 1. Make sure that the database meets these requirements:
     * The database must use the standard hashing policy.
@@ -47,9 +44,3 @@ for the specified database.
 
 To get the benefits of using the OSS Cluster API, make sure that you are using 
 Redis clients that are cluster-aware, such as redis-py-cluster or jedis.
-
-## Converting an existing Redis database to use the OSS Cluster API
-
-While there are commands to convert an existing database to be able to use the OSS Cluster API, if that database has data in it, this process is not supported as you will lose some data in the conversion. The commands are designed for converting an empty database.
-
-If you need a OSS Cluster API enabled database, create a new database in a cluster that is Redis Enterprise Software v5 or higher. Then migrate the data from the existing database to the new database using ReplicaOf.
