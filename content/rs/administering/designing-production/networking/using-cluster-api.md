@@ -37,7 +37,7 @@ for the specified database.
     rladmin> tune db <database name or ID> oss_cluster enable
     ```
 
-    Note: To disable OSS Cluster API with rladmin, run: tune db crdb oss_cluster disable
+    Note: To disable OSS Cluster API with rladmin, run: `tune db crdb oss_cluster disable`
 
 1. Reconfigure the database to load the new settings and restart the endpoint proxy.
 
