@@ -25,7 +25,7 @@ If a node is low on RAM, RS follows this mitigation flow:
 2. If the eviction policy allows eviction, RS causes shards to release memory, 
 which can result in data loss.
 3. If the eviction poilcy does not allow eviction, RS sends 
-out of memory (OOM) messages.
+out of memory (OOM) responses.
 4. If shards cannot free memory, RS relies on the OS processes to kill slaves, 
 but tries to avoid killing masters.
 
