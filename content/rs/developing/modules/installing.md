@@ -11,10 +11,10 @@ Enterprise Software (RS). There are two types
     the [Redis Enterprise downloads
     page](/products/redis-pack/downloads/). For more specific
     information on each module:
-    a.  [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
-    b.  [RediSearch
+    1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+    1. [RediSearch
         Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
-    c.  [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    1. [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 1. Custom packaged modules - For instructions on packing up any module
     from redismodules.com, see [Developing with
     Modules]({{< relref "/rs/developing/modules/_index.md" >}}).

@@ -21,36 +21,36 @@ To add a node in Redis Enterprise Software (RS):
 
 1. In the window that appears, click **Setup**.
 1. In the Node configuration page:\
-    a.  Enter a path for **Persistent storage**, or leave the default
+    1. Enter a path for **Persistent storage**, or leave the default
         path.\
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-    b.  You can enter a path for **Ephemeral storage**, or leave the
+    1. You can enter a path for **Ephemeral storage**, or leave the
         default path.\
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-    c.  If you want to enable Redis on Flash, select the check box
+    1. If you want to enable Redis on Flash, select the check box
         Enable flash storage support and enter the path to the Flash
         storage that should be used as RAM extension.\
         For additional details, refer to [Redis on
         Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
-    d.  If your machine is configured to have multiple IP addresses, the
+    1. If your machine is configured to have multiple IP addresses, the
         section **IP Addresses Usage** is displayed. Use the **IP
         Addresses Usage** section to assign a single IPv4 type address
         for internal traffic and multiple IPv4/IPv6 type addresses for
         external traffic.\
         For additional details, refer to [Multi-IP &
         IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}).
-    e.  In Cluster configuration, select **Join cluster**.
-    f.  Enter an IP address of a node in the cluster.
+    1. In Cluster configuration, select **Join cluster**.
+    1. Enter an IP address of a node in the cluster.
 
         **Note:** You must use the internal IP address if the node has
         both an internal and external IP address.
 
-    g.  Enter the credentials of the cluster administrator, which you
+    1. Enter the credentials of the cluster administrator, which you
         defined when you created the cluster.
-    h.  Click **Next**.
-    i.  If the cluster is configured to support rack-zone awareness, you
+    1. Click **Next**.
+    1. If the cluster is configured to support rack-zone awareness, you
         are redirected to a page in which you must set the node's
         Rack-zone ID. For additional details, refer to [Rack-zone
         awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).

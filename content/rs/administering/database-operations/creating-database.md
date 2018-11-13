@@ -74,7 +74,7 @@ To create a new database in the UI:
     as explained in [Database memory
     limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
 
-    a.  If the cluster is configured to support rack-zone awareness,
+    1. If the cluster is configured to support rack-zone awareness,
         once you enable replication you can also choose whether to
         enable **rack-zone awareness** for the database. For additional
         details, refer to [Rack-zone

@@ -23,7 +23,7 @@ steps:
 1. Select the **S3** service under **Services** -\> **Storage -\>
     S3** to navigate to the **S3 Management Console**.
 1. Navigate to your bucket's permissions page:
-    a.  To create a new bucket:
+    1. To create a new bucket:
         1. Click the **+ Create Bucket** button
         1. Enter a **name** and **region** for the bucket\
             ![new-bucket](/images/rc/new-bucket.png?width=600&height=678)
@@ -38,7 +38,7 @@ steps:
             ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)\
             **
         1. Click the **Create bucket** button
-    b.  To use an existing bucket, click on the bucket and go to the
+    1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
         1. Click **+ Add account** in the **Access for other AWS
             accounts** section enter the below information
@@ -72,26 +72,26 @@ steps in your [Google Cloud Platform (GCP)
 console](https://developers.google.com/console/):
 
 1. Access your GCP project by:
-    a.  Creating a new project using the "**NEW PROJECT**" button, or
-    b.  Opening an existing project by clicking it.
+    1. Creating a new project using the "**NEW PROJECT**" button, or
+    1. Opening an existing project by clicking it.
 1. Select "**Cloud Storage**" in the left-hand menu to open the Storage
     browser and view your buckets.
 1. Navigate to your bucket's permissions page:
-    a.  To create a new bucket:
+    1. To create a new bucket:
         1. Click the "**NEW BUCKET**" button.
         1. Enter a name for the bucket.
         1. Click the "**Create**" button.
         1. Navigate one level up and out of the newly created bucket.
         1. Continue to step 3.2.
-    b.  To use an existing bucket, select it using the left-most
+    1. To use an existing bucket, select it using the left-most
         checkmark control and click the "**Bucket Permissions**" button.
 1. At your bucket's permissions page, add another permission by
     entering the following information at the bottom of the page:
-    a.  In the left-most dropbox, make sure that the value *User* is
+    1. In the left-most dropbox, make sure that the value *User* is
         selected.
-    b.  Next, enter ***service\@garantiadata.com***.
-    c.  Set the permission to *Writer*.
-    d.  Click the **Add** and then the **Save** buttons to apply your
+    1. Next, enter ***service\@garantiadata.com***.
+    1. Set the permission to *Writer*.
+    1. Click the **Add** and then the **Save** buttons to apply your
         changes.
 
 Once your bucket's permissions are set, you can use it with your
@@ -135,7 +135,7 @@ Portal](https://manage.windowsazure.com/):
 
 1. Access your storage by clicking the left-hand **STORAGE** icon.
 1. Select the storage account:
-    a.  To create a new storage account:
+    1. To create a new storage account:
         1. Click the **+ NEW** button at the lower-left corner of the
             page.
         1. Verify that you've selected **DATA
@@ -146,7 +146,7 @@ Portal](https://manage.windowsazure.com/):
         1. Choose a **REPLICATION** mode for the account.
         1. Click the **CREATE STORAGE ACCOUNT** button.
         1. Continue to step 2.2.
-    b.  To use an existing storage account, select it by clicking on it.
+    1. To use an existing storage account, select it by clicking on it.
 1. Click the **MANAGE ACCESS KEYS** button at the bottom of the page.
 1. Copy your storage account's **PRIMARY ACCESS KEY**
 

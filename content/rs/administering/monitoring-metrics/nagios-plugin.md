@@ -118,7 +118,7 @@ below.
                 the cluster.
             1. If you are configuring more than one RS then when
                 duplicating this section you should make sure:
-                i.  The "name" is unique.
+                1. The "name" is unique.
         1. In the second "define host" section:
             1. The "host_name " in each entry must be unique.
             1. The "display_name" in each entry can be updated to a

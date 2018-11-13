@@ -23,7 +23,7 @@ steps:
 1. Select the **S3** service under **Services** -\> **Storage -\>
     S3** to navigate to the **S3 Management Console**.
 1. Navigate to your bucket's permissions page:
-    a.  To create a new bucket:
+    1. To create a new bucket:
         1. Click the **+ Create Bucket** button
         1. Enter a **name** and **region** for the bucket\
             ![new-bucket](/images/rv/new-bucket.png?width=600&height=678)
@@ -38,7 +38,7 @@ steps:
             ![add_s3_user](/images/rv/add_s3_user.png?width=600&height=698)\
             **
         1. Click the **Create bucket** button
-    b.  To use an existing bucket, click on the bucket and go to the
+    1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
         1. Click **+ Add account** in the **Access for other AWS
             accounts** section enter the below information

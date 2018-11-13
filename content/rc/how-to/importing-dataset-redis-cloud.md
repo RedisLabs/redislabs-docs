@@ -70,17 +70,17 @@ Console and follow these steps:
     to the S3 Management Console.
 1. Open the bucket where the RDB file is stored by clicking it.
 1. Navigate to the file's permissions:
-    a.  Select the RDB file.
-    b.  Right-click the file and select Properties from the context
+    1. Select the RDB file.
+    1. Right-click the file and select Properties from the context
         menu.
-    c.  Click the Permissions tab in the Properties pane.
+    1. Click the Permissions tab in the Properties pane.
 1. Add access permissions to our service:
-    a.  Click the Add more permissions button.
-    b.  In the newly-added row:
+    1. Click the Add more permissions button.
+    1. In the newly-added row:
         1. Enter the value service\@garantiadata.com in the Grantee
             field.
         1. Check the Open/Download box.
-    c.  Click the Save button.
+    1. Click the Save button.
 
 Once the file's permissions are set, you can import it by entering its
 URL in the Import Dataset dialog's RDB File Path field using the
