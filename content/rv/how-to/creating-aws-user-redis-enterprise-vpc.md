@@ -10,8 +10,8 @@ its duties, you must have an AWS account that is separate from your AWS
 application account, along with a user on that separate account.
 
 Within that new AWS account, you need to create an **instance role** and
-a user with a specific **policy**. The user requires both **UI console
-access** and an **Access Key** so that RV can programmatically create
+a user with a specific **policy**. The user requires both **UI console access** 
+and an **Access Key** so that RV can programmatically create
 and manage AWS resources on your behalf. After the user is created,
 generate an Access Key for the user. Save the keys in a secure location,
 as these keys are required when creating an RV Cloud Account.
