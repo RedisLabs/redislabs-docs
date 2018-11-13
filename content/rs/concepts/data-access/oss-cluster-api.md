@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 aliases: /rs/concepts/data-access/cluster-api/
+categories: ["Redis Enterprise Software (RS)"]
 ---
 {{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
