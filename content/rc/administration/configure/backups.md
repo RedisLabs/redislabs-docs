@@ -20,33 +20,31 @@ To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
 steps:
 
-1. Select the **S3** service under **Services** -\> **Storage -\>
-    S3** to navigate to the **S3 Management Console**.
+1. Select the **S3** service under **Services** -> **Storage** ->
+    **S3** to navigate to the **S3 Management Console**.
 1. Navigate to your bucket's permissions page:
     1. To create a new bucket:
-        1. Click the **+ Create Bucket** button
-        1. Enter a **name** and **region** for the bucket\
+        1. Click the **Create Bucket** button.
+        1. Enter a **name** and **region** for the bucket.
             ![new-bucket](/images/rc/new-bucket.png?width=600&height=678)
         1. Click the **Next** button.
-        1. Set any bucket properties to your company's standards
-        1. On the Set permissions page, click the **+ Add account**
-            button
-        1. In the Account field enter
-            ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614***
-        1. Check read/write boxes for **Objects** and **Object
-            permissions**, then click **Save\
-            ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)\
-            **
-        1. Click the **Create bucket** button
+        1. Set any bucket properties to your company's standards.
+        1. On the Set permissions page, click the **Add account**
+            button.
+        1. In the Account field enter:
+            `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
+        1. Check read/write boxes for **Objects** and **Object permissions**, 
+            then click **Save**.
+            ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)
+        1. Click the **Create bucket** button.
     1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
-        1. Click **+ Add account** in the **Access for other AWS
-            accounts** section enter the below information
-        1. In the Account field enter
-            ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614\
-            ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)***
-        1. Check read/write boxes for various** permissions**, then
-            click the **Save** button
+        1. Click **Add account** in the **Access for other AWS accounts** 
+            section enter the below information.
+        1. In the Account field enter:
+            `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
+            ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)
+        1. Select the **permissions** that you need and click **Save**.
 
 Once your bucket's permissions are set, you can use it with your
 resource by setting its **Backup Path** to the path of your S3 bucket
@@ -60,7 +58,7 @@ name is *backups-bucket*, you should use the following path:
 There are two ways to backup to Google Cloud Storage and which you use
 depends on the Redis version your database has in Redis^e^ Cloud. To
 identify the version go to the configuration page of the database you
-wish you backup.
+wish to backup.
 
 ![Identify the redis
 version](/images/rc/backups-version1.png?width=800&height=448)
@@ -89,7 +87,7 @@ console](https://developers.google.com/console/):
     entering the following information at the bottom of the page:
     1. In the left-most dropbox, make sure that the value *User* is
         selected.
-    1. Next, enter ***service\@garantiadata.com***.
+    1. Next, enter `service@garantiadata.com`.
     1. Set the permission to *Writer*.
     1. Click the **Add** and then the **Save** buttons to apply your
         changes.
@@ -109,8 +107,8 @@ bucket's name is backups-bucket, you should use the following path:
     choose "**Edit bucket permissions**" (2).\
     ![GCS bucket
     permissions](/images/rc/bucket-perm1.png?width=800&height=493)
-1. Under "**Add members**" input
-    **service\@redislabs-prod-clusters.iam.gserviceaccount.com**
+1. Under "**Add members**", enter:
+    `service@redislabs-prod-clusters.iam.gserviceaccount.com`
 1. For the role, select "**Storage Legacy -\> Storage Legacy Bucket
     Writer**".\
     ![Google Cloud Storage
@@ -136,10 +134,10 @@ Portal](https://manage.windowsazure.com/):
 1. Access your storage by clicking the left-hand **STORAGE** icon.
 1. Select the storage account:
     1. To create a new storage account:
-        1. Click the **+ NEW** button at the lower-left corner of the
+        1. Click the **NEW** button at the lower-left corner of the
             page.
         1. Verify that you've selected **DATA
-            SERVICES-\>STORAGE-\>QUICK CREATE** from the menu.
+            SERVICES->STORAGE->QUICK CREATE** from the menu.
         1. Enter the **URL** for your new storage account.
         1. Select a **LOCATION/AFFINITY GROUP** for the storage
             account.
