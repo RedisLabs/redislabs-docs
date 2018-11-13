@@ -32,11 +32,11 @@ To create a new database in the UI:
     **Memcached** database.
 
     If the nodes in your cluster are Flash-enabled, you can opt to
-    select "**Runs on**" as either **RAM** or **Flash**. For additional
+    select **Runs on** as either **RAM** or **Flash**. For additional
     details, refer to [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 
-    Select your "**Deployment**" as **Single Region** or
+    Select your **Deployment** as **Single Region** or
     **Geo-Distributed**. For more information on Geo-distributed, refer
     to [Conflict-free geo-Replicated Databases
     (CRDB)]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}).

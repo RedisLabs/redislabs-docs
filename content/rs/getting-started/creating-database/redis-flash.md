@@ -53,21 +53,21 @@ $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 red
 
 Direct your browser to https://localhost:8443/ on the host machine to
 see the Redis Enterprise Software web console. Simply click the
-"**Setup**" button to get started.
+**Setup** button to get started.
 
 Note: Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
 
 ![setup_linux](/images/rs/setup_linux.png?width=600&height=287)
 
-On the "**node configuration**" page, select the "Enable flash storage
-support" checkbox and provide a cluster FQDN: "**mycluster.local**".
-Then simply click the "**Next**" button.
+On the **node configuration** page, select the **Enable flash storage
+support** checkbox and provide a cluster FQDN: **mycluster.local**.
+Then simply click the **Next** button.
 
 ![Enable Redis
 Flash](/images/rs/enable_redis_flash.png?width=800&height=663)
 
-If you don't have a license key yet, click the "**Next"** button to try
+If you don't have a license key yet, click the **Next** button to try
 the trial version of the product.\
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
@@ -80,9 +80,9 @@ Select the "new redis db flash" option.
 
 ![redis-on-flash](/images/rs/redis-on-flash.png?width=391&height=400)
 
-On the "**new redis on flash db**" page, click the "**show advanced
-option**" link and enter "**myredisflashdb**" for a database name and
-"**12000**" for the endpoint port number. Then click "**Activate**" to
+On the **new redis on flash db** page, click the **show advanced
+option** link and enter **myredisflashdb** for a database name and
+**12000** for the endpoint port number. Then click **Activate** to
 create your database.
 
 ![new redis flash
@@ -124,13 +124,13 @@ redis-py on the [github page for
 redis-py](https://github.com/andymccurdy/redis-py).
 
 In the command-line Terminal, create a new file called
-"**redis_test.py**"
+**redis_test.py**
 
 ```src
 $ vi redis_test.py
 ```
 
-Paste the following into a file named "**redis_test.py**".
+Paste the following into a file named **redis_test.py**.
 
 ```src
 import redis

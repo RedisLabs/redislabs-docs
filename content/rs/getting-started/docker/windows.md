@@ -48,7 +48,7 @@ Screen](/images/rs/setup-windows.png?width=600&height=246)
 
 On the "node configuration" page, select your default settings and
 provide a cluster FQDN: "cluster.local". Then simply click the
-"**Next**" button.
+**Next** button.
 
 ![Redis Enterprise Pack node configuration
 screen](/images/rs/setup2-windows-1.png?width=600&height=374)

@@ -27,11 +27,11 @@ the Web UI and look in the title.
 Using SSL/TLS requires setup of both your Redis Enterprise Cloud
 database and your application, as described below.
 
-1. Login to your account and navigate to the "**Database**" page in the
+1. Login to your account and navigate to the **Database** page in the
     top right menu.
-1. Select the database you wish to connect to and click the "**Edit**"
+1. Select the database you wish to connect to and click the **Edit**
     button.
-1. Under the "**Access Control & Security" **section, make sure **SSL
+1. Under the **Access Control & Security** section, make sure **SSL
     Client Authentication** is selected.
 1. Set the resource's client certificate using one of the following
     ways.

@@ -114,7 +114,7 @@ mentioned above that add the severity, timestamp and machine name.
 
 #### Ephemeral storage passed threshold
 
-**"Alert on" log entry sample:**\
+**Alert on" log entry sample:**\
 daemon.warning:Jun1414:49:20node1event_log\[3464\]:{"storage_util":
 90.061643120001,"global_threshold":"70″,"object":"node:1″,"state":
 true,"time":1434282560,"type":"ephemeral_storage"}
@@ -146,7 +146,7 @@ result of storage utilization reaching the value of \~90%.
     full mapping in the Mapping UI events and alerts to log entries
     section below
 
-**"Alert off" log entry sample:**
+**Alert off" log entry sample:**
 
 daemon.info:Jun1414:51:35node1event_log\[3464\]:{"storage_util":
 60.051723520008,"global_threshold":"70″,"object":"node:1″,"state":
@@ -180,7 +180,7 @@ as result of storage utilization reaching the value of \~60%.
     section below\
     Odd number of nodes with a minimum of three nodes alert
 
-**"Alert on" log entry sample:**
+**Alert on" log entry sample:**
 
 daemon.warning:Jun1415:25:00node1event_log\[8310\]:{"object":
 "cluster","state":true,"time":1434284700,"node_count":1,"type":
@@ -210,7 +210,7 @@ having only one node.
     full mapping in the Mapping UI events and alerts to log entries
     section below
 
-**"Alert off" log entry sample:**
+**Alert off" log entry sample:**
 
 daemon.warning:Jun1415:30:40node1event_log\[8310\]:{"object":
 "cluster","state":false,"time":1434285200,"node_count":3,"type":
@@ -241,7 +241,7 @@ having 3 nodes.
     section below\
     Node has insufficient disk space for AOF rewrite
 
-**"Alert on" log entry sample:**
+**Alert on" log entry sample:**
 
 daemon.err:Jun1513:51:23node1event_log\[34252\]:{"used":23457188,
 "missing":604602126,"object":"node:1″,"free":9867264,"needed":

@@ -47,20 +47,20 @@ $ sudo ./install.sh -y
 
 Direct your browser to https://localhost:8443/ on the host machine to
 see the Redis Enterprise Software web console. Simply click the
-"**Setup**" button to get started.
+**Setup** button to get started.
 
 Note: Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
 
 ![setup_linux](/images/rs/setup_linux.png?width=600&height=287)
 
-On the "**node configuration**" page, select your default settings and
-provide a cluster FQDN: "**cluster.local**". Then simply click the
-"**Next**" button.
+On the **node configuration** page, select your default settings and
+provide a cluster FQDN: **cluster.local**. Then simply click the
+**Next** button.
 
 ![RP-SetupScreen2](/images/rs/RP-SetupScreen2.jpeg?width=600&height=378)
 
-If you don't have a license key yet, click the "**Next"** button to try
+If you don't have a license key yet, click the **Next** button to try
 the trial version of the product.\
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
@@ -73,9 +73,9 @@ Choose the "new redis db" option.
 
 ![RP-SetupScreen5](/images/rs/RP-SetupScreen5.jpeg?width=600&height=375)
 
-On the "**new redis db**" page, click the "**show advanced option**"
-link and enter "**database1**" for a database name and "**12000**" for
-the endpoint port number. Then click "**Activate**" to create your
+On the **new redis db** page, click the **show advanced option**
+link and enter **database1** for a database name and **12000** for
+the endpoint port number. Then click **Activate** to create your
 database.
 
 ![RP-DBScreen2](/images/rs/RP-DBScreen2.jpeg?width=600&height=378)
@@ -116,13 +116,13 @@ redis-py on the [github page for
 redis-py](https://github.com/andymccurdy/redis-py).
 
 In the command-line Terminal, create a new file called
-"**redis_test.py**"
+**redis_test.py**
 
 ```src
 $ vi redis_test.py
 ```
 
-Paste the following into a file named "**redis_test.py**".
+Paste the following into a file named **redis_test.py**.
 
 ```src
 import redis

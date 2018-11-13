@@ -21,9 +21,9 @@ during the trial period.
 ## Adding or Updating a Cluster Key
 
 A key can be input into the cluster either using rladmin during cluster
-setup or afterward through the web UI. In the web UI, go to "**Settings
--\> General**" and paste your cluster key into the form field for it.
-Click the "**Save**" button.
+setup or afterward through the web UI. In the web UI, go to **Settings
+-\> General** and paste your cluster key into the form field for it.
+Click the **Save** button.
 
 **Note**: Once a key is added, you can not remove or revert the cluster
 to trial mode, but the key can be updated.

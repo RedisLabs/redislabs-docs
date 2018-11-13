@@ -58,7 +58,7 @@ subscription.
 ## Step 3 - Set up a database
 
 1. Give your database a name.
-1. Click the "**Activate**" button to create your database.
+1. Click the **Activate** button to create your database.
 
 Note: the Endpoint displayed on this page is very important because it
 is your entry point to this database.

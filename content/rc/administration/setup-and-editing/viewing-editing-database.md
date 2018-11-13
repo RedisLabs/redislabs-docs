@@ -15,7 +15,7 @@ In this view, you have pertinent information about each database and
 some of its features. Since a
 [Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}})
 can have multiple databases, you can add one to a Subscription by
-clicking on the "**+**" below each Subscription table.
+clicking on the **+** below each Subscription table.
 
 On the "View Database" page you will see four important icons next to
 the title of the page:

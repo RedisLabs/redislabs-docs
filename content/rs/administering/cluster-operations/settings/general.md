@@ -4,8 +4,8 @@ description:
 weight: $weight
 alwaysopen: false
 ---
-You can view and set various cluster settings in the "**Settings \>
-General**" page.
+You can view and set various cluster settings in the **Settings \>
+General** page.
 
 ## Entering a Cluster Key
 
@@ -39,4 +39,4 @@ To enable receiving alerts by email, fill in the details for your email
 server in the email server settings section and select the requested
 connection security method: TLS/SSL, STARTTLS, or None. Upon completing
 to fill-in all details, it is advisable to verify the specified settings
-by clicking "**Test Mail**".
+by clicking **Test Mail**.

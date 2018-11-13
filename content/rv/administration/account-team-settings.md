@@ -19,7 +19,7 @@ Certificate from this page.
 
 To manage the team of people who have access to the account, click on
 the "Team" tab and you will be presented with the current list of team
-members on this account. Click on the "**+**" icon to add more team
+members on this account. Click on the **+** icon to add more team
 members or the pencil icon on the right side of the form to edit an
 existing team member.
 

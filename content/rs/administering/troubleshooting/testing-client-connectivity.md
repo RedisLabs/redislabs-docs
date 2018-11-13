@@ -59,13 +59,13 @@ redis-py on the [github page for
 redis-py](https://github.com/andymccurdy/redis-py).
 
 In the command-line Terminal, create a new file called
-"**redis_test.py**"
+**redis_test.py**
 
 ```src
 $ vi redis_test.py
 ```
 
-Paste the following into a file named "**redis_test.py**".
+Paste the following into a file named **redis_test.py**.
 
 ```src
 import redis

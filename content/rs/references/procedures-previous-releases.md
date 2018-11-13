@@ -39,7 +39,7 @@ rename them to the same exact names as the original files:
 
 1. If you are using a certificate issued by an intermediate
 certificate authority (CA), you should also add the chain file
-named **"chain_certs.pem"** to the same folder.
+named **chain_certs.pem** to the same folder.
 1. After replacing the files, restart the relevant service by
 running the following command from the operating system
 command-line interface (CLI):

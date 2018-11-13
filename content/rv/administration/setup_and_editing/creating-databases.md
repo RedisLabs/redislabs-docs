@@ -35,9 +35,9 @@ Enterprise VPC by following these steps:
     visit Configuring Database Backups for Redis Enterprise Cloud.
 1. You can add **Alert Settings** for your database so that you and
     your team can be alerted when thresholds are passed.
-1. Click "**Activate**."
+1. Click **Activate**.
 
-Once "**Activate**" is clicked, a few of things happen in the
+Once **Activate** is clicked, a few of things happen in the
 background:
 
 1. RV will calculate the number of shards needed for this database.

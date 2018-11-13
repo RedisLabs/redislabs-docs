@@ -81,7 +81,7 @@ For a new subscription, you will need to provide the following:
     1. You can enable data at rest encryption. This will attach
         encrypted EBS volumes to your instances.
 
-Once you have made your selections, click **Continue**" to finalize your
+Once you have made your selections, click **Continue** to finalize your
 subscription. RV will authenticate the credentials with AWS and proceed
 to the next step.
 
@@ -117,7 +117,7 @@ For each row, select the following:
     like to provision.
 
 Once complete, save the settings by clicking the **Add** button. Add
-more rows by clicking the "**+**" button.
+more rows by clicking the **+** button.
 
 Once done, click the **Continue** button. The system may take a moment
 to calculate the optimized cloud infrastructure based on your inputs.
@@ -126,7 +126,7 @@ to calculate the optimized cloud infrastructure based on your inputs.
 
 Once planning is complete, please review the subscription and database
 information presented. Then select an existing payment method or click
-on the "**+**" button to add a new payment method or select our 14-days
+on the **+** button to add a new payment method or select our 14-days
 unlimited free trial option.
 
 ### Provisioning
@@ -167,7 +167,7 @@ In addition, you can see:
 1. The number of shards purchased and their cost
 1. The underlying resources that your subscription is running on
 
-To delete a subscription, click on the "**Delete**" button at the bottom
+To delete a subscription, click on the **Delete** button at the bottom
 of the form. You will be prompted to confirm before your subscription is
 actually deleted. The delete will only occur if the subscription **does
 not have any databases**. If it does, you must first delete the

@@ -30,7 +30,7 @@ Team members can have different roles to the account:
 ### Add/Edit a Team Member
 
 You can easily add a new team member to your account. Click on the
-"**+**" icon to add more team members or the pencil icon on the right
+**+** icon to add more team members or the pencil icon on the right
 side of the form to edit an existing team member.
 
 ![Team settings on Redis Enterprise
