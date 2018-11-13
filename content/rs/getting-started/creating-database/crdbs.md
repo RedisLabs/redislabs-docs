@@ -3,6 +3,7 @@ Title: Getting Started with Redis Enterprise CRDBs (conflict-free replicated dat
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 In this guide, we'll set up a scale-minimized CRDB (conflict-free
 replicated database) spanning across two Redis Enterprise Software

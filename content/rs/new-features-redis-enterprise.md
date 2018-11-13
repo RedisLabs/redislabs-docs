@@ -3,6 +3,7 @@ Title: What's new in Redis Enterprise Software 5.0?
 description: 
 weight: 20
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Below are detailed a few of the major features of this release of Redis
 Enterprise Software along with bug fixes and patches.

@@ -3,6 +3,7 @@ Title: Viewing node metrics
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 On the **Node \> Metrics** page you can view detailed graphs of various
 node metrics in real-time.

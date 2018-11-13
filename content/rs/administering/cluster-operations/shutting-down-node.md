@@ -3,6 +3,7 @@ Title: Shutting Down a Node
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 When you shut down a machine acting as a Redis Enterprise Software (RS)
 node, databases that have persistence enabled will attempt to persist

@@ -3,6 +3,7 @@ Title: Billing History
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 This page contains a list of purchases, changes, and payments for the
 subscriptions you have in your Redis Enterprise Cloud account. If you

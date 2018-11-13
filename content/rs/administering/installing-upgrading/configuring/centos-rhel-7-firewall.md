@@ -3,6 +3,7 @@ title: CentOS / RHEL 7 firewall configuration
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 CentOS / RHEL7 distributions have, by default, a restrictive firewall
 mechanism based on **firewalld** (which in turn configures the standard

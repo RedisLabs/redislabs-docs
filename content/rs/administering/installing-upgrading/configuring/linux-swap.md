@@ -3,6 +3,7 @@ Title: Configuring Swap in Linux for Redis Enterprise Software (RS)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Swap space is used by the Linux OS to help manage memory (pages) by
 copying pages from RAM to disk and the OS is configured by default to be

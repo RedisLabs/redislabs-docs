@@ -3,6 +3,7 @@ Title: Changing Redis Enterprise Cloud Subscription Plans
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 It is very easy to upgrade or downgrade your subscription at any time,
 all with no downtime.

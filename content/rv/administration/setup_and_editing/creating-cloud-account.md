@@ -3,6 +3,7 @@ Title: Creating a Redis Enterprise VPC (RV) Cloud Account
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 An RV Cloud Account contains all necessary credentials and information
 for an account with your cloud provider. This Cloud Account enables RV

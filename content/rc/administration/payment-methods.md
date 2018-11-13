@@ -3,6 +3,7 @@ Title: Payment Methods
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 On this page, you can view and edit your account's existing payment
 methods, as well as add new ones to your Redis Enterprise Cloud account.

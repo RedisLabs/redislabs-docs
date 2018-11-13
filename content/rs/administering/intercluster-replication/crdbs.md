@@ -3,6 +3,7 @@ Title: Administering CRDBs
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Conflict Free Replicated Databases (CRDBs) provide a simple and
 effective way to replicate your data between one or more Redis

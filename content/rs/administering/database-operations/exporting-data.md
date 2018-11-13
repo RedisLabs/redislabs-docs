@@ -3,6 +3,7 @@ Title: Exporting Data from Redis Enterprise
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Using the Export option, you can back up a database at any time to an
 FTP server, Amazon S3, or OpenStack Object Storage ("Swift"). Other

@@ -3,6 +3,7 @@ Title: Data Eviction Policies
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 For each database, you can choose from these six supported data eviction
 policies:

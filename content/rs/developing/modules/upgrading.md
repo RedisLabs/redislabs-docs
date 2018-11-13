@@ -3,6 +3,7 @@ Title: Upgrading a Module in Redis Enterprise Software
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 As modules are upgraded, you will need to load them into Redis
 Enterprise if you desire having the new features and/or

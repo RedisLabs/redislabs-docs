@@ -3,6 +3,7 @@ Title: Deleting a Database in Redis Enterprise VPC (RV)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 Deleting a database is just as easy as creating one. Make sure that you
 are truly done with the database, as once you delete the database it

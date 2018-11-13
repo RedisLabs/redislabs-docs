@@ -3,6 +3,7 @@ Title: Shards metrics
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 You can choose which resource(s) and metric(s) are shown in each of the
 two detailed graphs at the top of the page, as follows:

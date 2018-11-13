@@ -3,6 +3,7 @@ Title: Quick Setup of Redis Enterprise Cloud
 description: 
 weight: 10
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 The steps here are super simple and go as follows:
 

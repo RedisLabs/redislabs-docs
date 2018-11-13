@@ -3,6 +3,7 @@ Title: View and Edit a Database
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 To view your database, select **Databases** from the menu. You will see
 a list of your databases grouped by Subscription.

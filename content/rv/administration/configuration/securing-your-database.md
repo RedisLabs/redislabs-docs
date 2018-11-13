@@ -3,6 +3,7 @@ Title: Securing Your Database in Redis Enterprise VPC (RV)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 The security controls for your database are:
 

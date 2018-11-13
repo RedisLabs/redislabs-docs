@@ -3,6 +3,7 @@ Title: Cluster Recovery
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Cluster recovery in Redis Enterprise Software (RS) is used for restoring
 an entire cluster, usually due to a complete cluster failure. The

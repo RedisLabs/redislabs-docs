@@ -3,6 +3,7 @@ Title: Benchmarking Redis Enterprise
 description: 
 weight: 50
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 If you need to do a quick performance benchmark of Redis Enterprise, we
 have a tool just for this; memtier_benchmark.

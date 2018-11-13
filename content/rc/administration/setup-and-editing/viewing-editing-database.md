@@ -3,6 +3,7 @@ Title: Viewing and Editing Databases
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 To view your database, go to the Menu and click on "Databases". You will
 see a list of your databases grouped by

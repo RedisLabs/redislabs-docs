@@ -3,6 +3,7 @@ Title: Securing Redis Client Connections
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 If you configure it, Redis Enterprise Software (RS) can
 use industry-standard encryption to protect your data in transit between

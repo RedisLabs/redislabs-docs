@@ -3,6 +3,7 @@ Title: rladmin command-line interface
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Redis Enterprise Software (RS) includes a command-line interface (CLI),
 called *rladmin* that can be used for various advanced administrative

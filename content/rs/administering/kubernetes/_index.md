@@ -3,6 +3,7 @@ Title: Kubernetes
 description: 
 weight: 40
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 This section contains Kubernetes specific articles which cover various aspects of administering a Redis Enterprise Cluster K8s deployment.
 

@@ -3,6 +3,7 @@ Title: Managing Cluster Alerts in Redis Enterprise Software (RS)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 The **Settings \> Alerts** allows you to designate which cluster-level
 events trigger alert notifications.

@@ -3,6 +3,7 @@ Title: Creating a Redis Enterprise Cloud Subscription
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 A Redis Enterprise Cloud subscription consists of a selected cloud
 provider (and respective region, e.g. "Azure - US Central"),

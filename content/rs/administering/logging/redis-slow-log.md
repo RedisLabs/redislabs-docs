@@ -3,6 +3,7 @@ Title: Viewing Redis Slow Log
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 On the **Database** \> **Slow Log** page, you can view Slow Log details
 for Redis Enterprise Software (RS) databases.

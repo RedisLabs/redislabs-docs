@@ -3,6 +3,7 @@ Title: Periodic Backups
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 You can back up your dataset to an FTP server, Amazon S3, or OpenStack
 Object Storage ("Swift"), periodically, or ad-hoc. You cannot back up to

@@ -3,6 +3,7 @@ Title: Supported Clients and Web Browsers
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 You can configuration Redis Enterprise Software (RS) programmatically with client libraries 
 or manually with the RS Web Console.

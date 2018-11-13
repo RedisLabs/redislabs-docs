@@ -3,6 +3,7 @@ Title: Usage Reports
 description: 
 weight: 70
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 You can view the number of gigabytes used by this account. You are able
 to filter the data by subscription, database, and statement month/year.

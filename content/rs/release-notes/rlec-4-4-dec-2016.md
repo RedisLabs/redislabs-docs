@@ -3,6 +3,7 @@ Title: RLEC 4.4 Release Notes (December 2016)
 description: 
 weight: 95
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade

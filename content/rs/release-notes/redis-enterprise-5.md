@@ -3,6 +3,7 @@ Title: Redis Enterprise Pack 5.0 Release Notes (November 2017)
 description: 
 weight: 93
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Redis Enterprise Software 5.0 is now available. Key features include
 Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB),

@@ -3,6 +3,7 @@ Title: Account and Team Settings
 description: 
 weight: 60
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 On this page you can view settings for your Redis Enterprise VPC account
 and team. You can add or edit your VAT ID, account's Time Zone, and New

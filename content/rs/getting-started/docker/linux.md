@@ -3,6 +3,7 @@ Title: Getting Started with Redis Enterprise Software using Docker on Linux
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 To get started with a single Redis Enterprise Software container on
 Linux, follow these four steps:

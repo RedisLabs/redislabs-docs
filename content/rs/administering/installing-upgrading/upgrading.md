@@ -3,6 +3,7 @@ Title: Upgrading Redis Enterprise Software
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Upgrading Redis Enterprise Software (RS) consists of upgrading the
 software on each of the nodes.

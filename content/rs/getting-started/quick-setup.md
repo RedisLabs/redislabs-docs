@@ -3,6 +3,7 @@ Title: Quick Setup of Redis Enterprise Software (RS)
 description: 
 weight: 10
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 The steps to set up a Redis Enterprise Software (RS) cluster with a
 single node are super simple and go as follows:
