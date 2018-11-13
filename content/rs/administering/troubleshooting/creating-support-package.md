@@ -3,6 +3,7 @@ Title: Creating a support package
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 If you encounter any issues that you are not able to resolve yourself
 and need to contact Redis Labs support for assistance, you can create a

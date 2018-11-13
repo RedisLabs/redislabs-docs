@@ -3,6 +3,7 @@ Title: Securing Your Redis Enterprise Cloud Database
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 The security controls for your database are:
 

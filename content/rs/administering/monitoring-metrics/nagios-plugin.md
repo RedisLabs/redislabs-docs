@@ -3,6 +3,7 @@ Title: Nagios plugin for Redis Enterprise Software (RS)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 The RS Nagios plugin enables you to monitor the status of RS related
 objects and alerts. The RS alerts can be related to the cluster, nodes,

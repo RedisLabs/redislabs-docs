@@ -3,6 +3,7 @@ Title: Data Persistence with Redis Enterprise VPC
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 Redis Enterprise VPC supports persisting your data to disk on a
 per-database basis and in multiple ways. Unlike a few cloud provider's

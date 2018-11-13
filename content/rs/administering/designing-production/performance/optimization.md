@@ -3,6 +3,7 @@ Title: Performance Optimization
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Redis Enterprise Software (RS) employs various algorithms to optimize
 performance. As part of this process, RS examines usage characteristics

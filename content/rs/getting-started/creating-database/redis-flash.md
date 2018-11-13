@@ -3,6 +3,7 @@ Title: Quick Setup of a Redis on Flash Database
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 The steps to set up a Redis Enterprise Software cluster using [Redis on
 Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})

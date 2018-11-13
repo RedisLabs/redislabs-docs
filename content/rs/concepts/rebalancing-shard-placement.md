@@ -3,6 +3,7 @@ Title: Rebalancing and Shard Placement
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Redis Enterprise Software (RES) cluster offer a few master and slave
 shard placement policies that govern how shards of each database is

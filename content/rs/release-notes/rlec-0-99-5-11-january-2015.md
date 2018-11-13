@@ -3,6 +3,7 @@ Title: RLEC 0.99.5-11 Release Notes (January 5, 2015)
 description: 
 weight:
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 ### New features
 

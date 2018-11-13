@@ -3,6 +3,7 @@ Title: Administration
 description: 
 weight: 30
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 While there is very little configuration of Redis Enterprise Cloud
 required, there are some things that you can and may want to do to

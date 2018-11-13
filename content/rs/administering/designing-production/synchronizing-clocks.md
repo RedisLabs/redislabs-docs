@@ -3,6 +3,7 @@ Title: Synchronizing cluster node clocks
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 It is important to ensure all cluster node's clocks are synchronized
 using Chrony and/or NTP. Without this synchronization, there may be

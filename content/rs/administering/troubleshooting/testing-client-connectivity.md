@@ -3,6 +3,7 @@ Title: Testing client connectivity
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 In various scenarios, such as after creating a new cluster or upgrading
 the cluster, it is highly advisable to verify client connectivity to the

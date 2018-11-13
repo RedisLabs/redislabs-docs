@@ -3,6 +3,7 @@ Title: Getting Started with Redis Enterprise Software (RS)
 description: 
 weight: 30
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 This section contains pages to help you get started quickly with a
 minimum setup and use the various features, environments, and systems

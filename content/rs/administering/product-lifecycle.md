@@ -3,6 +3,7 @@ Title: Redis Enterprise Software Product Lifecycle
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 You can view the Redis Enterprise Software subscription agreement
 [here](https://redislabs.com/company/terms-of-use#software). For details of the End of Life

@@ -3,6 +3,7 @@ Title: Database alerting
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 In the *Alerts* section of the Redis Enterprise Software database page,
 you can designate which database events will trigger alert

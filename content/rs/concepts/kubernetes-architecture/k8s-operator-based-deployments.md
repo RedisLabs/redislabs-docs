@@ -3,6 +3,7 @@ Title: Redis Enterprise K8s Operator-based deployments – Overview
 description: 
 weight: 40
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 The Redis Enterprise Operator is the fastest, most efficient way to
 deploy and maintain a Redis Enterprise Cluster in Kubernetes.

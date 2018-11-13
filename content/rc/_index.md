@@ -3,6 +3,7 @@ Title: Redis Enterprise Cloud (RC)
 description: 
 weight: 20
 alwaysopen: false
+categories: ["Redis Enterprise Cloud (RC)"]
 ---
 Redis Enterprise Cloud (RC) is a managed, serverless,
 Database-as-a-Service (DBaaS) offering. <!--more-->

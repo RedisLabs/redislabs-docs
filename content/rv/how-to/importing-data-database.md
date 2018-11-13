@@ -3,6 +3,7 @@ Title: Importing Data Into Your Redis Enterprise VPC Database
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 You can import an existing dataset into your Redis Enterprise VPC
 instance. This article lists the steps required to share your dataset

@@ -3,6 +3,7 @@ Title: Creating a Subscription in Redis Enterprise VPC (RV)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise VPC (RV)"]
 ---
 A Redis Enterprise VPC (RV) subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural

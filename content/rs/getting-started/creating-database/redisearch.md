@@ -3,6 +3,7 @@ Title: RediSearch Quick Start Tutorial
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 For this quick start, you will need the following:
 

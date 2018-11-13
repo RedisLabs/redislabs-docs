@@ -3,6 +3,7 @@ Title: The Technology Behind Redis Enterprise Software (RS)
 description: 
 weight: 10
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 RS's unique and patented technology was developed to meet these main
 objectives:

@@ -3,6 +3,7 @@ Title: Logging and Audit Events
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Management actions performed with Redis Enterprise are audited in order
 to fulfill two major objectives:

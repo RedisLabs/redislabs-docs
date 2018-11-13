@@ -3,6 +3,7 @@ Title: Replacing a node
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 If a node in your cluster is faulty, its status appears as **Down **in
 the **Status** column of the **Nodes** page, and in the **Cluster \>

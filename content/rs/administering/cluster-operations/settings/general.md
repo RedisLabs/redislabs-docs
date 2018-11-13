@@ -3,6 +3,7 @@ Title: General settings
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 You can view and set various cluster settings in the **Settings \>
 General** page.

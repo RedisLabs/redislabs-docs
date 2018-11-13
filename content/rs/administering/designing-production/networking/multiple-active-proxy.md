@@ -3,6 +3,7 @@ Title: Multiple Active Proxy Support
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Redis Enterprise Software (RS) provides high-performance data access
 through a proxy process that manages and optimizes access to shards

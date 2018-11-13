@@ -3,6 +3,7 @@ Title: Terminology in Redis Enterprise Software (RS)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Here are explanations of some of the terms used in RS.
 

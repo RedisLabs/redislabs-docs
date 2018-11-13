@@ -3,6 +3,7 @@ Title: Database metrics are blank during resharding
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Because data is being moved around across shards during the resharding
 process, it is impossible to report the values of some of the metrics in

@@ -3,6 +3,7 @@ Title: Updating database configuration
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 You can change the configuration of a Redis Enterprise Software
 database at any time.

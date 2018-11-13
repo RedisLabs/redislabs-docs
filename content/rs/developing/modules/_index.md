@@ -3,6 +3,7 @@ Title: Developing with Redis Modules in Redis Enterprise Software (RS)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Note: Modules are not supported in Redis Enterprise Software on
 RHEL/CentOS 6.x

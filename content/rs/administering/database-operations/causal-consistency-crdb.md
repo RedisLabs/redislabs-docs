@@ -3,6 +3,7 @@ Title: Causal Consistency in a Conflict-free Replicated Database (CRDB)
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 When enabling Causal Consistency in CRDBs, the order of operations on a
 specific key will be maintained across all CRDB

@@ -3,6 +3,7 @@ Title: File Locations
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Below is a table of which directories Redis Enterprise Software (RS)
 installs into and/or utilizes.

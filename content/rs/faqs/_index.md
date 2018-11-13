@@ -3,6 +3,7 @@ Title: FAQs
 description: 
 weight: 70
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 This section includes various frequently asked questions.
 

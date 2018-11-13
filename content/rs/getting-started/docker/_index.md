@@ -3,6 +3,7 @@ Title: Working with Redis Enterprise Software (RES) with Docker Containers
 description: 
 weight: 30
 alwaysopen: false
+categories: ["Redis Enterprise Software (RS)"]
 ---
 Redis Enterprise Software can be deployed using Docker Container on
 [Windows]({{< relref "/rs/getting-started/docker/windows.md" >}}),
