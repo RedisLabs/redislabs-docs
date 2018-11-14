@@ -1,3 +1,22 @@
+<!-- Version selector -->
+<script>
+function openVersionSelector() {
+    document.getElementById('versionSelectorList').classList.toggle('--open');
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.menu__version-selector__invoker')) {
+    var d = document.getElementsByClassName('menu__version-selector__list');
+    var i;
+    for (i = 0; i < d.length; i++) {
+      if (d[i].classList.contains('--open')) {
+        d[i].classList.remove('--open');
+      }
+    }
+  }
+}</script>
+<!-- /Version selector -->
+
 <script src="{{"js/clipboard.min.js" | relURL}}"></script>
 
 <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">

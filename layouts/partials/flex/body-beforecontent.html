@@ -39,6 +39,17 @@
     {{if not .IsHome}}
     <aside>
       <ul class="menu">
+        {{if eq .RelPermalink "/rs/"}}
+          <div class="menu__version-selector">
+            <button onclick="openVersionSelector()" class="menu__version-selector__invoker">Version 5.2 &#x25BC;</button>
+            <div id="versionSelectorList" class="menu__version-selector__list">
+              <a href="#">Version 5.1</a>
+              <a href="#">Version 5.2</a>
+              <a href="#">Version 5.3</a>
+            </div>
+          </div>
+        {{end}}
+
         {{- if not .Site.Params.disableHomeIcon}}
             <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
               <a href="{{"/" | relLangURL}}">
