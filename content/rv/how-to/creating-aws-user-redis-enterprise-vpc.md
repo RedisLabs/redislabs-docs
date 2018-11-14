@@ -224,7 +224,6 @@ Now create a policy to assign to the user:
     }
     {{% /expand%}}
 
-    ![edit_policy](/images/rv/edit_policy.png?width=700&height=214)
 1. Validate the policy and click **Review Policy**.
 1. Enter `RedislabsIAMUserRestrictedPolicy` as the policy name and click **Create Policy**.
     ![review_user_policy](/images/rv/review_user_policy.png?width=700&height=292)
