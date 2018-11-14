@@ -33,4 +33,4 @@ buffer on the source database to a bigger value:
 
 For additional information about this issue and configuration, refer to
 the following blog post: [Top Redis Headaches for Devops - Replication
-Buffer](/blog/top-redis-headaches-for-devops-replication-buffer).
+Buffer](https://redislabs.com/blog/top-redis-headaches-for-devops-replication-buffer).

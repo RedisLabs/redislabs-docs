@@ -82,7 +82,7 @@ any Redis client and create a secured tunnel between the client machine
 and the RS nodes.
 
 To learn which clients inherently support SSL/TLS, refer to this [blog
-post](/blog/secure-redis-ssl-added-to-redsmin-and-clients).
+post](https://redislabs.com/blog/secure-redis-ssl-added-to-redsmin-and-clients).
 
 To create a secure tunnel between the client machine and the RS nodes,
 use tools that enable this functionality, such as
