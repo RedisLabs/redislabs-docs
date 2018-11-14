@@ -3,7 +3,7 @@ Title: Developing with Sorted Sets in a CRDB
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Similar to Redis Sets, Redis Sorted Sets are non-repeating collections
 of Strings. The difference between the two is that every member of a

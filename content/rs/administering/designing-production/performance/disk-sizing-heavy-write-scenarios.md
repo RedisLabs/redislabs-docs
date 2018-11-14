@@ -3,7 +3,7 @@ Title: Disk Sizing for Heavy Write Scenarios
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 In extreme write scenarios, when AOF is enabled, the AOF rewrite process
 may require considerably more disk space for database persistence.

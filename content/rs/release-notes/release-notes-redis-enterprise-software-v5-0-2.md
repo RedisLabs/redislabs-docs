@@ -3,7 +3,7 @@ Title: Redis Enterprise Software 5.0.2 (2018 March)
 description: 
 weight: 92
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise Software 5.0.2 is now available. Key features include
 functional and performance updates for CRDB, changes to module

@@ -3,7 +3,7 @@ Title: Cluster License Keys
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 The cluster license key enables features and capacity within Redis
 Enterprise Software. A key can be added, or updated at any time in a

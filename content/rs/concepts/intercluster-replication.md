@@ -3,7 +3,7 @@ Title: Geo-Distributed Active-Active Redis Applications with Conflict-free Repli
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Developing globally distributed applications can be challenging, as
 developers have to think about race conditions and complex combinations

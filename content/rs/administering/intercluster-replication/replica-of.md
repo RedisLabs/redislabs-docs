@@ -3,7 +3,7 @@ Title: Unidirectional Replication with Replica of
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 *Replica of* is a feature of Redis Enterprise Software (RS) where an
 administrator designates a database to be a replica (destination) of one

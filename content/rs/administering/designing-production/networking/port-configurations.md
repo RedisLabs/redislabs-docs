@@ -3,7 +3,7 @@ Title: Network port configurations
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Servers used as Redis Enterprise Software (RS) nodes should ideally have
 all the below ports open between them for internal cluster communication

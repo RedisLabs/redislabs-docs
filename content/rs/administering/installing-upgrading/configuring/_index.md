@@ -3,7 +3,7 @@ Title: Configuring the Installation
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 This section details many aspects of the OS and Redis Enterprise
 Software configurations necessary.

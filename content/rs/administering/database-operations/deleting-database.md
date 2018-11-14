@@ -3,7 +3,7 @@ Title: Delete a Database
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 To delete a database in Redis Enterprise Software (RS):
 

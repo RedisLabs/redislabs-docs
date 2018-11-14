@@ -3,7 +3,7 @@ Title: Database memory limits in Redis Enterprise Software
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 When you set a database's memory limit, you define the maximum size the
 database can reach in the cluster, across all database replicas and

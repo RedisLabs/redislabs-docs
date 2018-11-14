@@ -3,7 +3,7 @@ Title: Developing with Strings in a CRDB
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Strings have particular unique characteristics in a CRDB. First off,
 they are the only data type that Last Write Wins (LWW) applies to. As

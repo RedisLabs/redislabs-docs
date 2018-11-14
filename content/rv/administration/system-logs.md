@@ -3,7 +3,7 @@ Title: System Logs
 description: 
 weight: 50
 alwaysopen: false
-categories: ["Redis Enterprise VPC (RV)"]
+categories: ["RV"]
 ---
 This page contains events, alerts, and logs from the activities,
 databases, and subscriptions in your account. You can sort by any of the

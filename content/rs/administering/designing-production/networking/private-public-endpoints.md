@@ -3,7 +3,7 @@ Title: Private and Public Endpoints on Redis Enterprise Software (RS)
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 The cluster can be configured to support both private and public IPs to
 connect to database endpoints through both public and private networks.

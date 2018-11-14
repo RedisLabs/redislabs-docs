@@ -3,7 +3,7 @@ Title: Importing Data into Redis Enterprise
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 You can import data into a Redis Enterprise Software database from an
 HTTP location, FTP server, Amazon S3, or OpenStack Object Storage

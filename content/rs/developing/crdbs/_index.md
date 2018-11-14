@@ -3,7 +3,7 @@ Title: Developing Applications with Geo-replicated CRDBs on Redis Enterprise Sof
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Developing geo-distributed, multi-master applications can be difficult.
 Application developers may have to understand a large number of race

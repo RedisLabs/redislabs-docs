@@ -3,7 +3,7 @@ title: Updating SSL/TLS certificates
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates to encrypt
 the following:

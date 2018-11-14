@@ -3,7 +3,7 @@ Title: Monitoring Redis Enterprise Cloud Performance
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 Redis Enterprise Cloud (RC) provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on

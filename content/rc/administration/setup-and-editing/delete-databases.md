@@ -3,7 +3,7 @@ Title: Deleting Redis Enterprise Cloud (RC) Databases
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 Deleting a database is just as easy as creating one. Make sure that you
 are truly done with the database as once you delete the database, it

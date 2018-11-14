@@ -3,7 +3,7 @@ Title: Data Persistence with Redis Enterprise Cloud
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 Redis Enterprise Cloud (RC) supports persisting your data to disk on a
 per-database basis and in multiple ways. Unlike a few cloud provider's

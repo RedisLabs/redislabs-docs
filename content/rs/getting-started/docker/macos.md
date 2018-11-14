@@ -3,7 +3,7 @@ Title: Getting Started Tutorial with Redis Enterprise Software using Docker on 
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Note: macOS is only supported as a development and testing environment.
 

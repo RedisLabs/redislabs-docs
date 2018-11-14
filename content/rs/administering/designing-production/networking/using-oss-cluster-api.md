@@ -3,7 +3,7 @@ Title: Using the OSS Cluster API
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}} 
 For more information, see [Redis OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).

@@ -3,7 +3,7 @@ Title: Payment Methods
 description: 
 weight: 40
 alwaysopen: false
-categories: ["Redis Enterprise VPC (RV)"]
+categories: ["RV"]
 ---
 On this page you can view and edit your account's existing payment
 methods, as well as add new ones to your account. Click the name of an

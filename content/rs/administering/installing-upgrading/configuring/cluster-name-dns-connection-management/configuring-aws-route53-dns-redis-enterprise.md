@@ -3,7 +3,7 @@ Title: Configuring AWS Route53
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise Software (RS) requires DNS to be properly configured to
 achieve high-availability (HA) and fail-over regardless of where it is

@@ -3,7 +3,7 @@ Title: rsyslog logging
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 This document explains the structure of Redis Enterprise Software (RS)
 log entries that go into rsyslog and how to use these log entries to

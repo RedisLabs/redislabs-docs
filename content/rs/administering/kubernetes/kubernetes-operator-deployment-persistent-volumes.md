@@ -3,7 +3,7 @@ Title: Kubernetes Operator Deployment – Persistent Volumes
 description: 
 weight: 40
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 To deploy a Redis Enterprise Cluster with Redis Enterprise Operator the
 spec should include a *persistentSpec* section, in the

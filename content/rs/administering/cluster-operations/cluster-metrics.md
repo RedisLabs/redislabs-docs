@@ -3,7 +3,7 @@ Title: Viewing cluster metrics on Redis Enterprise Software (RS)
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 On the **Cluster \> Metrics** page you can view detailed real-time
 graphs of various metrics for the entire cluster, as well as specific

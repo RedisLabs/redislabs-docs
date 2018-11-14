@@ -3,7 +3,7 @@ Title: Removing a Node
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 There are various reasons why you may want to remove a node in Redis
 Enterprise Software (RS):

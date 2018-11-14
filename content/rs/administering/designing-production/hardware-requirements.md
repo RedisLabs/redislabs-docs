@@ -3,7 +3,7 @@ Title: Hardware requirements
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 The hardware requirements for Redis Enterprise Software (RS) are different for development and productions environments.
 

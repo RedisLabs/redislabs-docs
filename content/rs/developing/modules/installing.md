@@ -3,7 +3,7 @@ Title: Installing a Module
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Before you can install a module, it must be packaged to be used in Redis
 Enterprise Software (RS). There are two types

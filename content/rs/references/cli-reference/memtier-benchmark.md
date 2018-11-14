@@ -3,7 +3,7 @@ Title: Benchmark a Redis on Flash Enabled Database
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis on Flash (RoF) on Redis Enterprise Software (RS) enables you to
 use more cost-effective Flash memory as a RAM extension for your

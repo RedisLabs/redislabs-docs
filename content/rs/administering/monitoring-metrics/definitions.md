@@ -3,7 +3,7 @@ Title: Metrics Definitions
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise Software (RS) includes many useful metrics that can be
 tracked to give you a detailed picture of what is going on in the

@@ -3,7 +3,7 @@ Title: Billing History
 description: 
 weight: 30
 alwaysopen: false
-categories: ["Redis Enterprise VPC (RV)"]
+categories: ["RV"]
 ---
 This page contains a list of purchases, changes, and payments for the
 subscriptions you have in your account. If you have a question about

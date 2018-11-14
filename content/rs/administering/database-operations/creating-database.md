@@ -3,7 +3,7 @@ Title: Creating a Redis Enterprise Software (RS) database
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 You can create as many databases as you wish in the cluster, so long as
 you do not exceed the available memory or the number of shards you

@@ -3,7 +3,7 @@ Title: AWS Zone Mapping
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 If you are looking to squeeze every drop of performance out of your
 Redis Enterprise Cloud (RC) Database, then matching the AWS availability

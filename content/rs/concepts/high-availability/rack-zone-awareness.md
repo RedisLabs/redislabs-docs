@@ -3,7 +3,7 @@ Title: Rack-zone awareness in Redis Enterprise Software
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 The rack-zone awareness feature enables more sophisticated placement of
 database shards and endpoints in high-availability scenarios, as

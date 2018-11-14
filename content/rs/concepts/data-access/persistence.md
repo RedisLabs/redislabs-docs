@@ -3,7 +3,7 @@ Title: Database Persistence with Redis Enterprise Software
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 All data is stored and managed exclusively in either RAM or RAM + Flash
 Memory ([Redis on

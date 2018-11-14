@@ -3,7 +3,7 @@ Title: Account Management
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 You can view and update the cluster users in the** **cluster's
 **Settings \> team** page.

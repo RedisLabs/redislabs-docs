@@ -3,7 +3,7 @@ Title: System Logs
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 This page contains events, alerts, and logs from the activities,
 databases, and subscriptions in your Redis Enterprise Cloud account. You

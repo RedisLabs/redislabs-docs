@@ -3,7 +3,7 @@ Title: Developing with Lists in a CRDB
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Lists are simply lists of strings, sorted by insertion order. It
 is possible to add elements to a Redis List that push new elements to
