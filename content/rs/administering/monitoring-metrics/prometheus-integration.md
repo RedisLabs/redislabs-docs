@@ -9,7 +9,7 @@ Redis Enterprise lets you connect your Prometheus or Grafana server to your Redi
 *   Prometheus ([https://prometheus.io/](https://prometheus.io/)) is an open-source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 *   Grafana ([https://grafana.com/](https://grafana.com/)) is an open-source, feature-rich metrics dashboard and graph editor that can process Prometheus data.
 
-![grafana-prometheus](/images/rs/grafana-prometheus.png)
+![grafana-prometheus](/images/rs/grafana-prometheus.png?width=500)
 
 In each cluster, the metrics_exporter component listens on port 8070 and serves as a prometheus scraping endpoint that send metrics out.
 
@@ -47,7 +47,7 @@ To get started with custom monitoring:
 
 	NOTES:
         
-    * If you already have prometheus install, just copy the 'redis-enterprise' job into your existing Prometheus configuration.
+    * If you already have prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration.
     * Replace `<your cluster FQDN>` with your actual cluster FQDN.
 
     ```
@@ -93,21 +93,21 @@ To get started with custom monitoring:
 
 1. Click **Data Sources**.
 
-    ![data-sources](/images/rs/data-sources.png)
+    ![data-sources](/images/rs/data-sources.png?width=300)
 
 1. Add a new data source with:
 
-        Name: `redis-enterprise`
-        Type: `Prometheus`
-        URL: `http://<your prometheus address>:9090`
-        Access: `server`
+    * Name: `redis-enterprise`
+    * Type: `Prometheus`
+    * URL: `http://<your prometheus address>:9090`
+    * Access: `server`
 
     NOTES:
 
-    * Make sure it is accessible to the grafana server, otherwise use 'browser' option.
-    * In testing environments, you can also select 'Skip TLS verification'.
+    * Make sure it is accessible to the grafana server, otherwise use the 'browser' option.
+    * In a testing environments, you can also select 'Skip TLS verification'.
 
-    ![prometheus-connection](/images/rs/prometheus-connection.png)
+    ![prometheus-connection](/images/rs/prometheus-connection.png?width=500)
 
 1. Add dashboard for cluster, node, and database metrics.
 
