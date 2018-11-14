@@ -9,7 +9,7 @@ Enterprise Software (RS). There are two types
 
 1. Redis Labs pre-packaged modules - To download these modules, go to
     the [Redis Enterprise downloads
-    page](/products/redis-pack/downloads/). For more specific
+    page](https://redislabs.com/products/redis-pack/downloads/). For more specific
     information on each module:
     1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
     1. [RediSearch

@@ -149,7 +149,7 @@ start reading and writing data. The following code snippet writes the
 value bar to the Redis key "foo", reads it back, and then prints it.
 This snippet is written in Python, but you can use your favorite
 language (for examples in other languages, go
-[here](/resources/how-to-redis-enterprise/)).
+[here](https://redislabs.com/resources/how-to-redis-enterprise/)).
 
 You first need to install the Redis client library for Python if you do
 not have it already.

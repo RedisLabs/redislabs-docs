@@ -6,7 +6,7 @@ alwaysopen: false
 ---
 Redis on Flash (RoF) offers users of [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) and [Redis
-Enterprise VPC](/products/redis-cloud-private/) the unique ability to
+Enterprise VPC](https://redislabs.com/products/redis-cloud-private/) the unique ability to
 have very large Redis databases but at significant cost savings. Where
 standard Redis databases must all be in RAM, Redis on Flash enables your
 Redis databases to span both RAM and dedicated flash memory

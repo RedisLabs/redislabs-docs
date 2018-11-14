@@ -49,7 +49,7 @@ If you want to get more information, we recommend
 [Redsmin](https://www.redsmin.com/) and/or [New
 Relic](https://newrelic.com/plugins/poison-pen-llc/28). Also, you might
 want to read [this
-post](/blog/secure-redis-ssl-added-to-redsmin-and-clients).
+post](https://redislabs.com/blog/secure-redis-ssl-added-to-redsmin-and-clients).
 
 ## Alerting on Metrics
 

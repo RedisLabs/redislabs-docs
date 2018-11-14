@@ -32,7 +32,7 @@ In 5.0.2 and later, enterprise modules (RediSearch Enterprise, ReJSON,
 ReBloom) come pre-installed.
 
 To download these modules, please go to the [Redis Enterprise downloads
-page](/products/redis-pack/downloads/).
+page](https://redislabs.com/products/redis-pack/downloads/).
 
 To upgrade these modules, please go to [Upgrading a
 Module]({{< relref "/rs/developing/modules/upgrading.md" >}}).

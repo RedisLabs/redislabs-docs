@@ -149,7 +149,7 @@ API used for discovery service is compliant with the Redis Sentinel API.
 
 You can find examples of how to connect to databases using the DNS or IP
 based methods from various client libraries here on the [How-To
-page](/resources/how-to-redis-enterprise/).
+page](https://redislabs.com/resources/how-to-redis-enterprise/).
 
 You can find a simple example of URL and IP Based connection in the
 "Testing Connectivity to your Database" section on the ["Creating a new
