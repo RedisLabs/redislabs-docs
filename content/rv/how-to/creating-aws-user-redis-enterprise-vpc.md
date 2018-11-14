@@ -122,9 +122,6 @@ Now create a policy to assign to the user:
 1. In AWS IAM console, go to **Policies** > **Create policy**.
 1. In the **JSON** tab, paste the contents of the redislabsIAMUserRestrictedPolicy.json policy file.
     
-    WARNING: Replace `ACCOUNT-ID-WITHOUT-HYPHENS` with the AWS account ID 
-    that you use for RV.
-    
     {{%expand "View RedislabsIAMUserRestrictedPolicy.json" %}}
     {
         "Version": "2012-10-17",
