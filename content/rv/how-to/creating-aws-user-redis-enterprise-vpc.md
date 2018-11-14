@@ -28,75 +28,72 @@ First, create a policy to use for the new instance role:
 
     {{%expand "View RedisLabsInstanceRolePolicy.json" %}}
     {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "EC2CommonReadonlyActions",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:DescribeAvailabilityZones",
-                    "ec2:DescribeRegions"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "EC2EBSActions",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:AttachVolume",
-                    "ec2:CreateVolume",
-                    "ec2:DescribeVolumes"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "S3FullAccess",
-                "Effect": "Allow",
-                "Action": "s3:*",
-                "Resource": "*"
-            },
-            {
-                "Sid": "SecurityGroupAccessDescribeSecurityGroups",
-                "Effect": "Allow",
-                "Action": "ec2:DescribeSecurityGroups",
-                "Resource": "*"
-            },
-            {
-                "Sid": "SecurityGroupAccessActions",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:AuthorizeSecurityGroupIngress",
-                    "ec2:DeleteSecurityGroup",
-                    "ec2:RevokeSecurityGroupIngress"
-                ],
-                "Resource": "*"
-            },
-            {
-                "Sid": "TagResources",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:CreateTags",
-                    "ec2:DeleteTags",
-                    "ec2:DescribeTags"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "GetPolicyInfo",
-                "Effect": "Allow",
-                "Action": [
-                    "iam:ListPolicies",
-                    "iam:GetPolicy"
-                ],
-                "Resource": "arn:aws:iam::*:policy/*"
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeRegions",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeTags",
+                "ec2:DescribeVolumes"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "EC2Tagged",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:DeleteSecurityGroup",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/RedisLabsIdentifier": "Redislabs-VPC"
+                }
             }
-        ]
+        },
+        {
+            "Sid": "EBSVolumeActions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:CreateVolume",
+                "ec2:CreateTags",
+                "ec2:DescribeTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "S3Object",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:DeleteObject",
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IAM",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetPolicy",
+                "iam:ListPolicies"
+            ],
+            "Resource": "*"
+        }
+    ]
     }
     {{% /expand%}}
 
@@ -130,247 +127,103 @@ Now create a policy to assign to the user:
     
     {{%expand "View RedislabsIAMUserRestrictedPolicy.json" %}}
     {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "GetUserInfo",
-                "Effect": "Allow",
-                "Action": [
-                    "iam:GetPolicy",
-                    "iam:GetUserPolicy",
-                    "iam:GetUser",
-                    "iam:ListUsers"
-                ],
-                "Resource": [
-                    "arn:aws:iam::*:user/${aws:username}"
-                ]
-            },
-            {
-                "Sid": "AllowGetRole",
-                "Action": [
-                    "iam:GetRole",
-                    "iam:ListAttachedRolePolicies",
-                    "iam:ListRolePolicies"
-                ],
-                "Effect": "Allow",
-                "Resource": "*"
-            },
-            {
-                "Sid": "SimulatePolicy",
-                "Effect": "Allow",
-                "Action": [
-                    "iam:ListInstanceProfiles",
-                    "iam:ListInstanceProfilesForRole",
-                    "iam:SimulatePrincipalPolicy"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:Describe*",
-                    "ec2:CreateKeyPair",
-                    "ec2:DeleteKeyPair",
-                    "ec2:ImportKeyPair"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "cloudWath",
-                "Effect": "Allow",
-                "Action": [
-                    "cloudwatch:*"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "CreateDescTags",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:CreateTags",
-                    "ec2:DescribeTags"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "CreateSGAndVolumeAllow",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:CreateSecurityGroup",
-                    "ec2:CreateVolume",
-                    "ec2:DescribeVolumes",
-                    "ec2:AttachVolume",
-                    "ec2:DeleteVolume"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "NeededIAMForChef",
-                "Effect": "Allow",
-                "Action": [
-                    "iam:PassRole",
-                    "iam:ListInstanceProfiles"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "NeededEC2ForChef",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:RunInstances"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "OnlyCreateVPCNoDelete",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:CreateVpc",
-                    "ec2:*Subnet*",
-                    "ec2:CreateInternetGateway",
-                    "ec2:AttachInternetGateway",
-                    "ec2:*Vpn*",
-                    "ec2:*Route*",
-                    "ec2:*Address*",
-                    "ec2:CreateSecurityGroup",
-                    "ec2:AuthorizeSecurityGroupIngress",
-                    "ec2:AuthorizeSecurityGroupEgress",
-                    "ec2:*NetworkAcl*",
-                    "ec2:*DhcpOptions*"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "RoleAccessInstancesAllowBasedOnTag",
-                "Effect": "Allow",
-                "Action": [
-                    "iam:PassRole",
-                    "iam:ListInstanceProfiles"
-                ],
-                "Resource": [
-                    "arn:aws:ec2:*:<ACCOUNT-ID-WITHOUT-HYPHENS>:instance/*"
-                ],
-                "Condition": {
-                    "StringEquals": {
-                        "ec2:ResourceTag/RedisLabsIdentifier": "RedisLabs"
-                    }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Ec2DescribeAll",
+            "Effect": "Allow",
+            "Action": "ec2:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Sid": "GetUserInfo",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetUser",
+                "iam:GetUserPolicy"
+            ],
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Sid": "RolePolicyUserReadActions",
+            "Action": [
+                "iam:GetRole",
+                "iam:GetPolicy",
+                "iam:ListUsers",
+                "iam:ListPolicies",
+                "iam:ListRolePolicies",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListInstanceProfiles",
+                "iam:ListInstanceProfilesForRole",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Sid": "KeyPairActions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateKeyPair",
+                "ec2:DeleteKeyPair",
+                "ec2:ImportKeyPair"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "CreateInstancesVolumesAndTags",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateVolume",
+                "ec2:AttachVolume",
+                "ec2:StartInstances",
+                "ec2:RunInstances",
+                "ec2:CreateTags"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "PassRlClusterNodeRole",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "arn:aws:iam::*:role/redislabs-cluster-node-role"
+        },
+        {
+            "Sid": "NetworkAccess",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*Vpc*",
+                "ec2:*VpcPeering*",
+                "ec2:*Subnet*",
+                "ec2:*Gateway*",
+                "ec2:*Vpn*",
+                "ec2:*Route*",
+                "ec2:*Address*",
+                "ec2:*SecurityGroup*",
+                "ec2:*NetworkAcl*",
+                "ec2:*DhcpOptions*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "DeleteInstancesVolumesAndTagsWithIdentiferTag",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:RebootInstances",
+                "ec2:StopInstances",
+                "ec2:TerminateInstances",
+                "ec2:DeleteVolume",
+                "ec2:DetachVolume",
+                "ec2:DeleteTags"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:ResourceTag/RedisLabsIdentifier": "Redislabs-VPC"
                 }
-            },
-            {
-                "Sid": "VPCAccessWithTAG",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:*Vpc*",
-                    "ec2:*Subnet*",
-                    "ec2:*Gateway*",
-                    "ec2:*Vpn*",
-                    "ec2:*Route*",
-                    "ec2:*Address*",
-                    "ec2:*SecurityGroup*",
-                    "ec2:*NetworkAcl*",
-                    "ec2:*DhcpOptions*",
-                    "ec2:RunInstances",
-                    "ec2:StartInstances",
-                    "ec2:Describe*"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "ec2MinorActionsOnlyWithTag",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:RevokeSecurityGroupEgress",
-                    "ec2:RevokeSecurityGroupIngress"
-                ],
-                "Resource": [
-                    "*"
-                ],
-                "Condition": {
-                    "StringEquals": {
-                        "ec2:ResourceTag/RedisLabsIdentifier": "RedisLabs"
-                    }
-                }
-            },
-            {
-                "Sid": "AllowIngressSG",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:AuthorizeSecurityGroupEgress",
-                    "ec2:AuthorizeSecurityGroupIngress"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "InstanceActionsOnlyTaggedInstances",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:AttachVolume",
-                    "ec2:CreateVolume",
-                    "ec2:DetachVolume",
-                    "ec2:StartInstances",
-                    "ec2:RunInstances"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "DeleteVolumesTagged",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:DeleteVolume"
-                ],
-                "Resource": [
-                    "*"
-                ],
-                "Condition": {
-                    "StringEquals": {
-                        "ec2:ResourceTag/RedisLabsIdentifier": "RedisLabs"
-                    }
-                }
-            },
-            {
-                "Sid": "InstanceActionsOnlyBasedOnROLE",
-                "Effect": "Allow",
-                "Action": [
-                    "ec2:RebootInstances",
-                    "ec2:StopInstances",
-                    "ec2:TerminateInstances"
-                ],
-                "Resource": [
-                    "*"
-                ]
-            },
-            {
-                "Sid": "GetPolicyInfo",
-                "Effect": "Allow",
-                "Action": [
-                    "iam:ListPolicies",
-                    "iam:GetPolicy"
-                ],
-                "Resource": "arn:aws:iam::*:policy/*"
             }
-        ]
+        }
+    ]
     }
     {{% /expand%}}
 
