@@ -3,7 +3,7 @@ Title: Redis Enterprise VPC (RV)
 description: 
 weight: 30
 alwaysopen: false
-categories: ["Redis Enterprise VPC (RV)"]
+categories: ["RV"]
 ---
 Redis Enterprise VPC (RV) delivers a cost-effective, fully managed
 Database-as-a-Service (DBaaS) offering hosted on your Cloud account. <!--more-->

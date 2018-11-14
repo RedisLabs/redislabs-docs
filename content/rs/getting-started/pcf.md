@@ -3,7 +3,7 @@ Title: Redis Enterprise Software for Pivotal Cloud Foundry (PCF)
 description: 
 weight: 40
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise for Pivotal Cloud Foundry (PCF) exposes its service
 plans on the Marketplace. Developers can provision highly available and

@@ -3,7 +3,7 @@ Title: Database Backups on Redis Enterprise VPC (RV)
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise VPC (RV)"]
+categories: ["RV"]
 ---
 You can back up your Redis Enterprise VPC databases to a storage bucket
 of your choosing. This article explains how to create a cloud storage

@@ -3,7 +3,7 @@ Title: Creating an AWS User for Redis Enterprise VPC
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise VPC (RV)"]
+categories: ["RV"]
 ---
 Redis Enterprise VPC (RV) automatically manages your cluster and
 provisions instances when needed. In order for RV to be able to manager AWS 

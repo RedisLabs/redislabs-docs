@@ -3,7 +3,7 @@ Title: Developing Applications with ReJSON
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Applications developed with the open source version of ReJSON are 100%
 compatible with ReJSON in Redis Enterprise Software (RS).

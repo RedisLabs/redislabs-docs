@@ -3,7 +3,7 @@ Title: Importing Data into your CRDB
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 When importing data into a CRDB, there are two options:
 

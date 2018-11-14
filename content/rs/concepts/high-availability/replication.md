@@ -3,7 +3,7 @@ Title: Database replication
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Database replication provides a mechanism to ensure high availability.
 When replication is enabled, your dataset is replicated to a slave node,

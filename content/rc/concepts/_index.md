@@ -3,7 +3,7 @@ Title: Concepts behind Redis Enterprise Cloud
 description: 
 weight: 20
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 This section of pages contains content that describes the main concepts
 and architecture that you need to know about for Redis Enterprise Cloud.

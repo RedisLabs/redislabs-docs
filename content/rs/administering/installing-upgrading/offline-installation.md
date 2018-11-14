@@ -3,7 +3,7 @@ Title: Offline Installation
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 By default, the installation process requires an Internet connection to
 enable installing dependency packages and for synchronizing the

@@ -3,7 +3,7 @@ Title: Procedures for Previous Releases
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Here you can find procedures that were used in previous releases.
 

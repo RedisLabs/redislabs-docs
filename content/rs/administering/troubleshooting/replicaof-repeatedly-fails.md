@@ -3,7 +3,7 @@ Title: ReplicaOf Repeatedly Fails
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 There might be instances in which the Replica of process repeatedly
 fails and restarts itself on Redis Enterprise Software (RS). This can

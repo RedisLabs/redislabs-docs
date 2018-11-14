@@ -3,7 +3,7 @@ Title: Redis Enterprise Cloud Database Backups
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 You can back up your Redis Enterprise Cloud (RC) databases to a storage
 bucket of your choosing. This article explains how to create a cloud

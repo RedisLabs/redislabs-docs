@@ -3,7 +3,7 @@ Title: Clustering Redis Databases with Redis Enterprise Cloud
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 While it is a design decision that Redis is a (mostly) single-threaded
 process and this does keep it extremely performant yet simple, there are

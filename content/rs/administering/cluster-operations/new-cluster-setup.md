@@ -3,7 +3,7 @@ Title: New Cluster Setup
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 A Redis Enterprise Software (RS) cluster typically consists of several
 nodes. For production deployments, Redis Labs recommends an uneven

@@ -3,7 +3,7 @@ Title: Configuring AWS Instances for Redis Enterprise Software
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 There are some special considerations that are important when installing
 and running Redis Enterprise Software (RS) on an AWS instances.

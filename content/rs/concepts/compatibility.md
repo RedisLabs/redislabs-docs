@@ -3,7 +3,7 @@ Title: Redis Enterprise Software Compatibility with Open Source Redis
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise Software (RES) is fully compatible with open source
 Redis. Redis Labs contributes extensively to the open source Redis

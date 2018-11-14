@@ -3,7 +3,7 @@ Title: Importing Data Into Your Redis Enterprise Cloud Database
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 You can import an existing dataset into your Redis Enterprise Cloud
 instance. This article lists the steps required to share your dataset

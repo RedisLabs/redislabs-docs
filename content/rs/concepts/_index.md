@@ -3,7 +3,7 @@ Title: Concepts and Architecture
 description: 
 weight: 40
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 A Redis Enterprise cluster is composed of identical nodes that are
 deployed within a data center or stretched across local availability

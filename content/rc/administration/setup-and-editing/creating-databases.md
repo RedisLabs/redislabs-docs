@@ -3,7 +3,7 @@ Title: Creating Databases on Redis Enterprise Cloud (RC)
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 Once you have a
 [subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}),

@@ -3,7 +3,7 @@ Title: RLEC 4.0.0-49 Release Notes (June 18, 2015)
 description: 
 weight: 98
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade

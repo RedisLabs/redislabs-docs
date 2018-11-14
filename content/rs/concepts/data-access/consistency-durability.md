@@ -3,7 +3,7 @@ Title: Consistency and Durability
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise Software (RES) comes with the ability to replicate data
 to another slave for high availability and persist in-memory data on

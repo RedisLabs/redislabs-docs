@@ -3,7 +3,7 @@ Title: Client prerequisites for mDNS
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 **Note:** mDNS is **not** supported for use with production environments
 and should only be used in dev/test environments.

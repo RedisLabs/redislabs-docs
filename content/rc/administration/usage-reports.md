@@ -3,7 +3,7 @@ Title: Usage Reports
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 You can view the number of gigabytes used by this Redis Enterprise Cloud
 account. You are able to filter the data by subscription, database, and

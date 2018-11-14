@@ -3,7 +3,7 @@ Title: Developing with Hashes in a CRDB
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Hashes are great for structured data that contain a map of fields and
 values. They are used for managing distributed user or app session

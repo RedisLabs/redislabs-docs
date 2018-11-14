@@ -3,7 +3,7 @@ Title: DNS Setup
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 DNS is critical to the default operation of Redis Enterprise Software
 (RS) deployments. This can be altered, but instead using the [Discovery

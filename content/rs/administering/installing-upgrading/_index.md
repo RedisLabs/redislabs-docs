@@ -3,7 +3,7 @@ Title: Installing and upgrading
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 This section explains how to install, upgrade and uninstall Redis
 Enterprise Software (RS).

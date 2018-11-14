@@ -3,7 +3,7 @@ Title: Eviction policies
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 The eviction policy designates a data eviction method for Redis
 Enterprise Software (RS) to use when the database size reaches its

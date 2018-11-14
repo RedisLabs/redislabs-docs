@@ -3,7 +3,7 @@ Title: Adding a Node to an Existing Cluster
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 To add a node in Redis Enterprise Software (RS):
 

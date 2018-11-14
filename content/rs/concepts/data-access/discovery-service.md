@@ -3,7 +3,7 @@ Title: Discovery Service
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 The Discovery Service provides an IP-based connection management service
 used when connecting to Redis Enterprise Software databases. When used

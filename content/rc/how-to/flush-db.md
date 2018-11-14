@@ -3,7 +3,7 @@ Title: Using flushall Command on Redis Enterprise Cloud
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 There are times where you want to delete all database data. In previous
 versions of Redis Enterprise Cloud, there was a button to perform this

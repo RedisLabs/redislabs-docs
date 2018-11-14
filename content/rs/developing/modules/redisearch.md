@@ -3,7 +3,7 @@ Title: Developing Fast Search and Query with In-Memory Indexing
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 The RediSearch Enterprise Module combined with Redis Enterprise Software
 (RS) provides a high performance, integrated query, and full-text search

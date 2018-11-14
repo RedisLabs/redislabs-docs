@@ -3,7 +3,7 @@ Title: rlcheck - Node Verification Utility
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 rlcheck is a utility that runs various health checks on an Redis
 Enterprise Software (RS) node, and alerts on any issues found. This

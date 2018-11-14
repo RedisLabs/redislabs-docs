@@ -3,7 +3,7 @@ Title: Multi-IP and IPv6
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 Redis Enterprise Software (RS) supports server/instances/VMs with
 multiple IP addresses, as well as IPv6 addresses.

@@ -3,7 +3,7 @@ Title: Viewing a Subscription
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Cloud (RC)"]
+categories: ["RC"]
 ---
 To view the details of a subscription click "Subscriptions" in the menu
 and then click on the name of the Subscription you wish to view.

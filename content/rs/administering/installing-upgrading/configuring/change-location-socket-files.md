@@ -3,7 +3,7 @@ Title: Change Location of Socket Files
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 You can change the location of the socket files anytime, but to limit
 downtime, it is best to perform this change when you are

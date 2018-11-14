@@ -3,7 +3,7 @@ Title: Creating Databases on Redis Enterprise VPC (RV)
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise VPC (RV)"]
+categories: ["RV"]
 ---
 Once you have a subscription, you can easily create a database in Redis
 Enterprise VPC by following these steps:

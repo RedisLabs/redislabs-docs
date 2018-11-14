@@ -3,7 +3,7 @@ Title: Database clustering
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 [Redis](https://redislabs.com/redis-features/redis) is (mostly) a
 single-threaded process. This is a design decision that allows it to be

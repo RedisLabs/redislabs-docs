@@ -3,7 +3,7 @@ Title: Redis Enterprise Pack 4.5 Release Notes (May 2017)
 description: 
 weight: 94
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 upgrade instructions before beginning the upgrade process.

@@ -3,7 +3,7 @@ Title: Cluster Operations
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["Redis Enterprise Software (RS)"]
+categories: ["RS"]
 ---
 This section has all you need to know pertaining to administering the
 cluster in Redis Enterprise Software.
