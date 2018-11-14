@@ -20,19 +20,19 @@ Note: The previous name of Redis Enterprise Software (RS) was “Redis Enterpris
 
 RS’s architecture supports multiple threaded Redis databases created for multiple users across the same cluster infrastructure while keeping the databases completely isolated from one another. In addition, RS gives you the flexibility to run your Redis database in multiple configurations to accommodate your specific performance and availability needs.
 
-[Learn more about Redis Enterprise Software architecture.](/redis-enterprise-documentation/concepts-architecture/overview/)
+[Learn more about Redis Enterprise Software architecture.]({{< relref "/rs/concepts/_index.md" >}})
 
 ## Redis on Flash
 
 Redis on Flash offers the unique ability to have very large Redis database but at significant cost savings. Where standard Redis databases must all be in RAM, RoF enables your Redis databases to span both RAM and dedicated flash memory (SSD) to “hot” values in RAM and “warm” values on flash. All of this while guaranteeing 100% compatibility with all Redis clients, data types, and commands, at just a fraction of the overall cost.
 
-[Learn more about Redis on Flash.](/redis-enterprise-documentation/concepts-architecture/memory-architecture/redis-enterprise-flash/)
+[Learn more about Redis on Flash.]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 
 ## Geo-Distributed Active-Active Conflict-free Replicated Redis Databases (CRDB)
 
 Developing globally distributed applications can be challenging, as developers have to think about race conditions and complex combinations of events under geo-failovers and cross-region write conflicts. CRDBs simplify developing such applications by directly using built-in smarts for handling conflicting writes based on the data type in use. Instead of depending on just simplistic “last-writer-wins” type conflict resolution, geo-distributed CRDBs combines techniques defined in CRDT (conflict-free replicated data types) research with Redis types to provide smart and automatic conflict resolution based on the data types intent.
 
-[Learn more about CRDBs.](/redis-enterprise-documentation/concepts-architecture/intercluster-replication/)
+[Learn more about CRDBs.]({{< relref "/rs/concepts/intercluster-replication.md" >}})
 
 ## Major Features
 
