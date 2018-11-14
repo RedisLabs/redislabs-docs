@@ -24,9 +24,9 @@ First, create a policy to use for the new instance role:
 
 1. In the AWS IAM console, go to **Policies** > **Create policy**.
     ![create_policy-1](/images/rv/create_policy-1.png?width=700&height=621)
-1. In the **JSON** tab, paste the contents of the redislabs-cluster-node-role.json policy file.
+1. In the **JSON** tab, paste the contents of the RedisLabsInstanceRolePolicy.json policy file.
 
-    {{%expand "View redislabs-cluster-node-role.json" %}}
+    {{%expand "View RedisLabsInstanceRolePolicy.json" %}}
     {
         "Version": "2012-10-17",
         "Statement": [
@@ -128,7 +128,7 @@ Now create a policy to assign to the user:
     WARNING: Replace `ACCOUNT-ID-WITHOUT-HYPHENS` with the AWS account ID 
     that you use for RV.
     
-    {{%expand "View redislabsIAMUserRestrictedPolicy.json" %}}
+    {{%expand "View RedislabsIAMUserRestrictedPolicy.json" %}}
     {
         "Version": "2012-10-17",
         "Statement": [
