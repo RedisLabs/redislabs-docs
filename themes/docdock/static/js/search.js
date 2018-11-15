@@ -81,7 +81,7 @@ $( document ).ready(function() {
                 'data-title="' + item.title + '" ' +
                 'data-uri="'+ item.uri + '" ' +
                 'data-context="' + item.context + '">' +
-                '» ' + item.title +
+                '' + item.title +
                 '<div class="context">' +
                 (item.context || '') +'</div>' +
                 '<strong class="category">' + item.cat + '</strong>' +
