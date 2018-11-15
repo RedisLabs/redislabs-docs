@@ -36,16 +36,18 @@ Enterprise is known for.
 There are three modules Redis Labs has developed and certified with
 Redis Enterprise Software (RS). The modules are:
 
-- [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
-  - This module turns RS into a supercharged distributed in-memory
-    full-text indexing and search beast.
-- [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}}) - Now
-    you have the convenience JSON as a built-in data type and easily
-    able to address nested data via a path.
 - [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
   - Enables RS to have a scalable bloom filter as a data type. Bloom
     filters are probabilistic data structures that do a very good job at
     quickly determining if something is contained within a set.
+- [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
+  - 
+- [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+  - Now you have the convenience JSON as a built-in data type and easily
+    able to address nested data via a path.
+- [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
+  - This module turns RS into a supercharged distributed in-memory
+    full-text indexing and search beast.
 
 ### Custom Modules
 

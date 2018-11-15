@@ -25,8 +25,7 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     - [Developing with RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 
-In 5.0.2 and later, enterprise modules (RediSearch Enterprise, ReJSON,
-ReBloom) come pre-installed.
+In 5.0.2 and later, enterprise modules are pre-installed.
 
 To download these modules, please go to the [Redis Enterprise downloads
 page](https://redislabs.com/products/redis-pack/downloads/).
