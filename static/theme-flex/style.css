@@ -1801,7 +1801,7 @@ ul.no-bullet li {
 /* Version selector in side menu */
 article > aside .menu .menu__version-selector {
   border: 1px solid transparent;
-  padding: 0 5px;
+  padding: 0 10px 0 8px;
   position: absolute;
   right: 0;
 }
@@ -1814,8 +1814,21 @@ article > aside .menu .menu__version-selector button {
   background: transparent;
   border: none;
   font-size: 13px;
-  font-weight: 700;
   outline: none;
+}
+
+article > aside .menu .menu__version-selector button span {
+  display: none;  
+  font-size: 8px;
+  transform: translateY(-1px) translateX(4px);
+}
+
+article > aside .menu .menu__version-selector span.menu__version-selector__opener {
+  display: inline-block;
+}
+
+article > aside .menu .menu__version-selector span.menu__version-selector__closer {
+  display: none;
 }
 
 article > aside .menu .menu__version-selector .menu__version-selector__list {
@@ -1824,14 +1837,26 @@ article > aside .menu .menu__version-selector .menu__version-selector__list {
   border-top: none;
   display: none;
   font-size: 13px;
-  left: 0;
+  left: -1px;
   padding-left: 6px;
   position: absolute;
-  width: 100%;
+  width: calc(100% + 2px);
   z-index: 1;
 }
 
-article > aside .menu .menu__version-selector .menu__version-selector__list.--open {
+article > aside .menu .menu__version-selector.--open {
+  border: 1px solid #eee;
+}
+
+article > aside .menu .menu__version-selector.--open .menu__version-selector__opener {
+  display: none;  
+}
+
+article > aside .menu .menu__version-selector.--open .menu__version-selector__closer {
+  display: inline-block;
+}
+
+article > aside .menu .menu__version-selector.--open .menu__version-selector__list {
   display: block;
 }
 
