@@ -308,8 +308,12 @@ section a {
   right: 30px;
   cursor: pointer; }
 
+.autocomplete-suggestion {
+  padding-left: 36px !important;
+}
+
 .autocomplete-suggestion .category {
-  color: #888;
+  color: #a7a7a7;
   margin-left: 10px;
   font-size: 12px;
   font-style: italic;
