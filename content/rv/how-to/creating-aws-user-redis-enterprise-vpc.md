@@ -18,7 +18,7 @@ These keys are required when you create an RV account.
 
 For more about creating an AWS user, see the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
-## Step 1 - Create the IAM Instance Policy
+## Step 1: Create the IAM Instance Policy
 
 First, create a policy to use for the new instance role:
 
@@ -101,7 +101,7 @@ First, create a policy to use for the new instance role:
 1. Enter **RedisLabsInstanceRolePolicy** as the policy name and click **Create Policy**.
     ![review_role_policy](/images/rv/review_role_policy.png?width=700&height=270)
 
-## Step 2 - Create the Role
+## Step 2: Create the Role
 
 Now create the role that uses the policy:
 
@@ -115,7 +115,7 @@ Now create the role that uses the policy:
     ![attach_policies](/images/rv/attach_policies.png?width=700&height=348)
 1. Name the role `redislabs-cluster-node-role` and click **Create Role**.
 
-## Step 3 - Create the User Policy
+## Step 3: Create the User Policy
 
 Now create a policy to assign to the user:
 
@@ -228,7 +228,7 @@ Now create a policy to assign to the user:
 1. Enter `RedislabsIAMUserRestrictedPolicy` as the policy name and click **Create Policy**.
     ![review_user_policy](/images/rv/review_user_policy.png?width=700&height=292)
 
-## Step 4 - Create the User
+## Step 4: Create the User
 
 Last, create a user and attach the policy you created:
 
