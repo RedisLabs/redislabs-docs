@@ -22,7 +22,7 @@ Started" guides [here]({{< relref "/rs/getting-started/quick-setup.md" >}}).
 Note: if you are setting up a production-grade environment, please
 follow the detailed installation guide in the administration section.
 
-## Step 1 - Run Two Containers
+## Step 1: Run Two Containers
 
 We'll use two of the containers for first cluster and the remaining two
 containers for the second cluster.
@@ -43,7 +43,7 @@ that's running the containers.
 Note: You may have to increase the amount of RAM allocated to Docker on
 your computer. This setting is under Preferences -\> Advanced.
 
-## Step 2 - Setup Two Clusters
+## Step 2: Setup Two Clusters
 
 For cluster 1, direct your browser to **https://localhost:8443** on the
 host machine to see the Redis Enterprise Software web console. Simply
@@ -81,7 +81,7 @@ differences.
 At this point, we have two Redis Enterprise Software clusters with FQDNs
 **cluster1.local** and **cluster2.local**.
 
-## Step 3 - Create a Redis CRDB
+## Step 3: Create a Redis CRDB
 
 Under the databases tab, choose the Redis database with deployment type
 set to Geo-Distributed.
@@ -110,7 +110,7 @@ in separate data centers in different regions. However in this case, for
 local testing, we have created the scale-minimized deployment using two
 local clusters running on the same host.
 
-## Step 4 - Connect to your member Redis CRDBs
+## Step 4: Connect to your member Redis CRDBs
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test

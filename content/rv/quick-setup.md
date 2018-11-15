@@ -13,21 +13,21 @@ as follows:
 1. Create a new database definition
 1. Connect to your database
 
-## Step 1 - Sign up for Redis Enterprise VPC account
+## Step 1: Sign up for Redis Enterprise VPC account
 
 If you do not already have one, sign up for a [Redis Enterprise VPC
 account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-cloud-private).\
 If you already have an account, sign in to [Redis Enterprise
 VPC](https://app.redislabs.com/#/login?).
 
-## Step 2 - Create an AWS account for RV to use
+## Step 2: Create an AWS account for RV to use
 
 RV requires a dedicated AWS account to perform operations on your
 behalf. Inside of that account, create an AWS user in IAM specifically
 for RV use, per "[Creating an AWS user for Redis Enterprise
 VPC](com/rv/how-to/creating-aws-user-redis-cloud-private/)."
 
-## Step 3 - Create a new RV subscription
+## Step 3: Create a new RV subscription
 
 Add a new subscription to your account, if you do not already have one.
 If you do have an existing RV subscription, then proceed to Step 4.
@@ -55,7 +55,7 @@ Once your selections are made, click **Continue** to finalize your
 subscription. RV will authenticate the credentials with AWS, then
 proceed to the next step.
 
-## Step 4 - Create the database definition
+## Step 4: Create the database definition
 
 Next, define the databases to provision. Each row in the table
 represents a group of databases that share the same specification.
@@ -104,7 +104,7 @@ take ten to fifteen minutes to construct the infrastructure using the
 generated optimization plan. You will receive an email once your
 databases are ready to use.
 
-## Step 5 - Connect to your database
+## Step 5: Connect to your database
 
 Using the menu, navigate to the Databases page. Select one of the
 databases and select the Configuration tab and look for the database
