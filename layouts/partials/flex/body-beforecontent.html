@@ -40,9 +40,13 @@
     <aside>
       <ul class="menu">
         {{if eq .RelPermalink "/rs/"}}
-          <div class="menu__version-selector">
-            <button onclick="openVersionSelector()" class="menu__version-selector__invoker">Version 5.2 &#x25BC;</button>
-            <div id="versionSelectorList" class="menu__version-selector__list">
+          <div id="versionSelector" class="menu__version-selector">
+            <button onclick="openVersionSelector()">
+              Version 5.2
+              <span class="menu__version-selector__opener">&#x25BC;</span>
+              <span class="menu__version-selector__closer">&#x25B2;</span>
+            </button>
+            <div class="menu__version-selector__list">
               <a href="#">Version 5.1</a>
               <a href="#">Version 5.2</a>
               <a href="#">Version 5.3</a>
