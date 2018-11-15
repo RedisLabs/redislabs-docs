@@ -1807,7 +1807,7 @@ article > aside .menu .menu__version-selector {
 }
 
 article > aside .menu .menu__version-selector:hover {
-  border: 1px solid #eee;
+  border: 1px solid #dfdfdf;
 }
 
 article > aside .menu .menu__version-selector button {
@@ -1823,17 +1823,17 @@ article > aside .menu .menu__version-selector button span {
   transform: translateY(-1px) translateX(4px);
 }
 
-article > aside .menu .menu__version-selector span.menu__version-selector__opener {
+article > aside .menu .menu__version-selector span.menu__version-selector__toggler.--opener {
   display: inline-block;
 }
 
-article > aside .menu .menu__version-selector span.menu__version-selector__closer {
+article > aside .menu .menu__version-selector span.menu__version-selector__toggler.--closer {
   display: none;
 }
 
 article > aside .menu .menu__version-selector .menu__version-selector__list {
   background: #f7f7f7;  
-  border: 1px solid #eee;
+  border: 1px solid #dfdfdf;
   border-top: none;
   display: none;
   font-size: 13px;
@@ -1845,14 +1845,14 @@ article > aside .menu .menu__version-selector .menu__version-selector__list {
 }
 
 article > aside .menu .menu__version-selector.--open {
-  border: 1px solid #eee;
+  border: 1px solid #dfdfdf;
 }
 
-article > aside .menu .menu__version-selector.--open .menu__version-selector__opener {
+article > aside .menu .menu__version-selector.--open .menu__version-selector__toggler.--opener {
   display: none;  
 }
 
-article > aside .menu .menu__version-selector.--open .menu__version-selector__closer {
+article > aside .menu .menu__version-selector.--open .menu__version-selector__toggler.--closer {
   display: inline-block;
 }
 
