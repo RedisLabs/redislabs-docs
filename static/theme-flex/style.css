@@ -1838,11 +1838,16 @@ article > aside .menu .menu__version-selector .menu__version-selector__list {
   display: none;
   font-size: 13px;
   left: -1px;
-  padding-left: 6px;
   position: absolute;
   width: calc(100% + 2px);
   z-index: 1;
 }
+
+article > aside .menu .menu__version-selector .menu__version-selector__list a {
+  display: block;
+  padding-left: 10px;
+  width: 100%;
+}    
 
 article > aside .menu .menu__version-selector.--open {
   border: 1px solid #dfdfdf;
