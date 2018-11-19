@@ -49,15 +49,13 @@ your Pivotal Cloud Foundry environment to get started.
         use for cluster nodes or let the tile choose them for you from
         the previously selected PCF network.\
 
-        ![Redis Enterprise for PCF tile
-        configuration](/images/rs/rs_tile_config.png?_t=1520874329?width=800&height=604)
+        ![Redis Enterprise for PCF tile configuration](/images/rs/rs_tile_config.png?_t=1520874329?width=800&height=604)
 1. **Service Plans** You could add a new plan you want to offer it in
     Apps Manager, but for the moment, click the **Save** button.
 1. **Syslog** Check **Disabled** for now as we do not want to utilize
     this functionality for this quick start.\
 
-    ![Redis Enterprise for PCF syslog
-    configuration](/images/rs/syslog_disable.png?width=800&height=557)
+    ![Redis Enterprise for PCF syslog configuration](/images/rs/syslog_disable.png?width=800&height=557)
 1. **Stemcell** Upload the proper stemcell requested on the page.
 
 **Note**: It is important to ensure the capacity used for RP cluster
@@ -82,12 +80,12 @@ a service in PCF Apps Manager.
 
 1. Click on **Add A Service\
 
-    !](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)\
+    ![apps_manager_add_service_button](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)\
     **
 1. [Select **Redis Enterprise**[ from the
     choices of Services\
 
-    !](/images/rs/apps_manager_add_service-1.png?_t=1520885153?width=800&height=635)\
+    ![apps_manager_add_service-1](/images/rs/apps_manager_add_service-1.png?_t=1520885153?width=800&height=635)\
     
 1. Select a plan from the list for the proper sized cluster for Redis
     Enterprise and then click the **Select Plan** button.

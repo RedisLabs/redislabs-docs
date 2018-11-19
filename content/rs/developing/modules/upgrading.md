@@ -59,7 +59,7 @@ it:
     upgrading.
     
 
-!](/images/rs/rladmin_status-1.png?width=1000&height=214)
+![rladmin_status-1](/images/rs/rladmin_status-1.png?width=1000&height=214)
 
 1. Run the rladmin command\
     $ rladmin upgrade module db_name
@@ -81,7 +81,7 @@ file. The necessary data should be at the end of the JSON document. For
 example, here is the information for the RediSearch Enterprise module
 that i used for the example command above:
 
-!](/images/rs/module_info-1.png?width=1000&height=382)
+![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
 
 ### [Examples
 
