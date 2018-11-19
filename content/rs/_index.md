@@ -15,7 +15,7 @@ Redis Enterprise Software (RS) is based on the proven technology behind the [Red
 
 You can install RS in your environment of choice, whether for an on-premises data-center, Docker, or your preferred cloud platform. You have full control of your data, clusters, databases, and configuration.
 
-Note: The previous name of Redis Enterprise Software (RS) was “Redis Enterprise Pack” (RP) or “Redis Labs Enterprise Cluster” (RLEC). So you may see this on our website or other places.
+Note: The previous name of Redis Enterprise Software (RS) was “Redis Labs Enterprise Cluster” (RLEC). So you may see this on our website or other places.
 
 ## What does RS enable?
 

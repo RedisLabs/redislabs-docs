@@ -56,7 +56,7 @@ value*
 ### String Data Type with Counter Value in CRDBs
 
 While traditional Redis does not have an explicit counter type, Redis
-Enterprise Pack's CRDBs does. Counters can be used to implement
+Enterprise Software's CRDBs does. Counters can be used to implement
 distributed counters. This can be useful when counting total views of an
 article or image, or when counting social interactions like "retweets"
 or "likes" of an article in a CRDB distributed to multiple geographies.
