@@ -35,9 +35,8 @@ steps:
         1. In the Account field enter
             ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614***
         1. Check read/write boxes for **Objects** and **Object
-            permissions**, then click **Save
+            permissions**, then click **Save**.
             ![add_s3_user](/images/rv/add_s3_user.png?width=600&height=698)
-            **
         1. Click the **Create bucket** button
     1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab

@@ -78,12 +78,12 @@ specifications]({{< relref "/rs/administering/designing-production/hardware-requ
 With the Ops Manager side complete, we turn our attention to deploying
 a service in PCF Apps Manager.
 
-1. Click on **Add A Service
+1. Click on **Add A Service**.
 
     ![apps_manager_add_service_button](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)
-    **
+
 1. Select **Redis Enterprise** from the
-    choices of Services
+    choices of Services.
 
     ![apps_manager_add_service-1](/images/rs/apps_manager_add_service-1.png?width=800&height=635)
     
