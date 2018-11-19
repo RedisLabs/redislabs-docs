@@ -80,7 +80,7 @@ protocol that are not applicable or would be duplication with existing
 technology in Redis Enterprise Software. The Discovery Service
 implements only the parts required to provide applications with easy
 High Availability, be compatible with the protocol, and not rely on DNS
-to derive which node in the cluster to communicate with.\
+to derive which node in the cluster to communicate with.
 
 ## Redis client support
 

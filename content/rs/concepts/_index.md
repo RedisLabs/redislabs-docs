@@ -24,7 +24,7 @@ zones. Redis Enterprise architecture is made up of a management path
 ![Redis Enterprise
 Stack](/images/rs/rp_stack.png?width=700&height=319)
 
-*Figure 1*\
+*Figure 1*
 *Redis Enterprise Nodes with blue layer representing the management path
 and red tiles representing the data access path with Redis as the
 shards.*
@@ -61,7 +61,7 @@ latencies. Resharding is performed without downtime.
 
 ![Sharding diagram](/images/rs/sharding.png?width=700&height=406)
 
-*Figure 2*\
+*Figure 2*
 *Redis Enterprise places master (M) and slave (S) replicas in separate
 nodes, racks and zones and use in-memory replication to protect data
 against failures.*

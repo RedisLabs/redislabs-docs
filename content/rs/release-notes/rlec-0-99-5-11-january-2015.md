@@ -22,7 +22,7 @@ None.
 - **Issue:** When taking a node offline or removing a node, if the
     node being taken offline or removed is currently serving as the web
     server for the web browser being used to view the management UI, the
-    management UI appears down while the node is down.\
+    management UI appears down while the node is down.
     **Workaround:** If you are using the cluster name in order to
     connect to the management UI in the browser, and the cluster name is
     registered in your external DNS or you are using the mDNS option,

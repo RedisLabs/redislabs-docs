@@ -61,7 +61,7 @@ Software (RS) as the destination database, in a different RS, or they
 can be Redis databases that are not part of an RS.
 
 - When a source database is from within RS, the source URL has the
-    following format:\
+    following format:
     \[database name\]: redis://admin:\[internal database
     password\]@\[database endpoint with port\] where the internal
     database password is the password automatically assigned and
@@ -89,11 +89,11 @@ can be Redis databases that are not part of an RS.
     compression]({{< relref "/rs/administering/intercluster-replication/replica-of.md#Replica-of-data-compression" >}})
     section.
 - When a source database is external to a Redis Enterprise Software
-    cluster, the source URL has the following format:\
+    cluster, the source URL has the following format:
     redis://:\[redis password\]@\[hostname\]:\[port\] where the password
     is the Redis password assigned by the user, represented with URL
     encoding escape characters. If no password was defined for the
-    database, the following format should be used:\
+    database, the following format should be used:
     redis://hostname:port.
 
 When multiple sources are defined there is no meaning to the order in

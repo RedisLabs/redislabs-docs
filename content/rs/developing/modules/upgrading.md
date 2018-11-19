@@ -61,12 +61,12 @@ it:
 
 ![rladmin_status-1](/images/rs/rladmin_status-1.png?width=1000&height=214)
 
-1. Run the rladmin command\
+1. Run the rladmin command
     $ rladmin upgrade module db_name
     \<your_db_name\> module_name \<module_name\> version
     \<new_module_version_num\> module_args \<module
     arguments\>
-    \
+    
     Note: When this is done, it will
     restart the database shards and thus cause downtime for this
     database across the cluster.
@@ -86,16 +86,16 @@ that i used for the example command above:
 ### [Examples
 
 An example of upgrading the version of RediSearch to 10017.0 would
-be:\
-\
+be:
+
 $ rladmin upgrade module db_name
 MyAwesomeDB module_name ft version 10017.0
 module_args
 
  
 
-An example of upgrading ReBloom:\
-\
+An example of upgrading ReBloom:
+
 $ rladmin upgrade module db_name MyDB
 module_name bf version 10100.0 module_args
 ""

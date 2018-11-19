@@ -133,7 +133,7 @@ their order to suit your application's requirements.
 4. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot
     because the hash key will always be empty. Therefore, when used,
     this should be the last, catch-all rule.
-5. The following flag is enabled in the regular expression parser:\
+5. The following flag is enabled in the regular expression parser:
     PCRE_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 
@@ -171,7 +171,7 @@ the following limitations:
     shards are combined into a single response.
 
     All other multi-key commands are **not allowed** across tags and if
-    used across tags will return an error.\
+    used across tags will return an error.
     Examples of such commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH,
     MSETNX, RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE,
     SORT, SUNION, ZINTERSTORE, ZUNIONSTORE.

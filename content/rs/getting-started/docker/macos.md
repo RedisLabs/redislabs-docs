@@ -33,7 +33,7 @@ Redis Enterprise Software utilizes a Linux based container. Make sure
 that your macOS machine is running Linux containers.
 
 ```src
-$ docker run -d --cap-add sys_resource --name rp \
+$ docker run -d --cap-add sys_resource --name rp 
 -p 8443:8443 -p 12000:12000 redislabs/redis
 ```
 

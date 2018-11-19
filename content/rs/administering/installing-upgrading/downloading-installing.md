@@ -73,30 +73,30 @@ by performing the following steps:
     1. The install finishes up with rlcheck make testing the
         installation out and confirming the installation passed.
 
-        2017-04-24 10:54:12 \[!\] Installation is complete!\
+        2017-04-24 10:54:12 \[!\] Installation is complete!
         2017-04-24 10:54:12 \[?\] Would you like to run rlcheck to
-        verify proper configuration? \[Y/N\]? Y\
+        verify proper configuration? \[Y/N\]? Y
         2017-04-24 10:54:15 \[$\] executing:
         '/opt/redislabs/bin/rlcheck
-        --suppress-tests=verify_bootstrap_status,verify_processes'\
-        saving to file: /var/opt/redislabs/log/rlcheck.log\
+        --suppress-tests=verify_bootstrap_status,verify_processes'
+        saving to file: /var/opt/redislabs/log/rlcheck.log
         \#\#\#\#\# Welcome to RedisLabs Enterprise Cluster settings
-        verification utility \#\#\#\#\
-        Skipping test: verify_bootstrap_status\
-        Skipping test: verify_processes\
-        Running test: verify_dmcproxy\
-        Verifying dmcproxy process...\
-        PASS\
-        Running test: verify_port_range\
-        Verifying local port range...\
-        PASS\
-        Summary:\
-        -------\
-        ALL TESTS PASSED.\
+        verification utility \#\#\#\#
+        Skipping test: verify_bootstrap_status
+        Skipping test: verify_processes
+        Running test: verify_dmcproxy
+        Verifying dmcproxy process...
+        PASS
+        Running test: verify_port_range
+        Verifying local port range...
+        PASS
+        Summary:
+        -------
+        ALL TESTS PASSED.
         2017-04-24 10:54:15 \[!\] Please logout and login again to make
-        sure all environment changes are applied.\
+        sure all environment changes are applied.
         2017-04-24 10:54:15 \[!\] Point your browser at the following
-        URL to continue:\
+        URL to continue:
         2017-04-24 10:54:15 \[!\] https://\<your_ip_here\>:8443
 
         Make sure to save this URL for when you go to configure the
@@ -112,7 +112,7 @@ by performing the following steps:
         ```
 
         This command finds all the unformatted disks, RAIDs and mounts
-        them under /var/opt/redislabs/flash\
+        them under /var/opt/redislabs/flash
         You can verify the configuration by running:
 
         ```src
@@ -130,7 +130,7 @@ process:
 
 1. Run the install script with "-y" as a parameter (i.e. ./install.sh
     -y), which will silently use "Y" as a default response to all
-    questions.\
+    questions.
     WARNING: By using the -y parameter you will fail to see any alerts
     from the installer to the possible presence of DBs in Sync state.
     These alerts when in normal mode allow you to stop the upgrade if
@@ -141,10 +141,10 @@ process:
     parameters (i.e. ./install.sh --c \<answers and="" file="" name=""
     path=""\>), thereby allowing the installation to use the answers
     provided in your answers file. Here is sample content for the
-    answers file:\
-    systune=yes\
-    ntp=no\
-    firewall=no\
+    answers file:
+    systune=yes
+    ntp=no
+    firewall=no
     rlcheck=yes
 
 Not all questions in install.sh can be automated with the answers file.

@@ -33,9 +33,9 @@ slave shards. This policy would be useful in cases where you want to
 engage fewer system resources and a single or only a few of the proxies
 in the system for data access to this database.
 
-![dense_placement_1-1](/images/rs/dense_placement_1-1.png?width=550&height=463)\
+![dense_placement_1-1](/images/rs/dense_placement_1-1.png?width=550&height=463)
 *Figure: Three node Redis Enterprise Cluster with two master shards in
-red\
+red
 and two slave shards in gray with a dense placement policy*
 
 ### Sparse Shard Placement Policy
@@ -54,9 +54,9 @@ policy would be useful in cases where you want to engage as much of the
 system resources and many proxies in the system for data access to this
 database.
 
-![sparse_placement_1-1](/images/rs/sparse_placement_1-1.png?width=555&height=474)\
+![sparse_placement_1-1](/images/rs/sparse_placement_1-1.png?width=555&height=474)
 *Figure: Three node Redis Enterprise Cluster with two master shards in
-red\
+red
 and two slave shards in gray with sparse placement policy.*
 
 ## Slave Shard Placement

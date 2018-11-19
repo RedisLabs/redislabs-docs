@@ -15,12 +15,12 @@ two detailed graphs at the top of the page, as follows:
         replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) is
         enabled), or shards that take part of a clustered database (for
         additional details, refer to [Database
-        clustering]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).\
+        clustering]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
         The shard name refers to the shard role (whether master or
-        slave).\
+        slave).
         Each small shard graph also lists the node it is located on, and
         the hash slot to which it is mapped, if it is part of a
-        clustered database.\
+        clustered database.
         Note that corresponding master / slave shards in a clustered
         database have the same hash slot.
   - The second group displays all available **metrics**, such as

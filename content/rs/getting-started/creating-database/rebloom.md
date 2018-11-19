@@ -16,7 +16,7 @@ For this quick start, you will need the following:
 1. Navigate to **databases** tab
 1. Click on the **+** sign, if necessary, then **create database**
 1. On the create database screen, check the box for Redis Modules and
-    select the ReBloom module you want to use for this database.\
+    select the ReBloom module you want to use for this database.
 
     ![rebloom_database](/images/rs/rebloom_database.png?width=797&height=556)
 1. Click **Show advanced options** and put **12544** for the port.
@@ -66,7 +66,7 @@ case:
 
 ## Using Cuckoo filters in Redis Enterprise Software
 
-Cuckoo filters can also be used as part of the ReBloom module.\
+Cuckoo filters can also be used as part of the ReBloom module.
 You can play with it using redis-cli:
 
 ```src

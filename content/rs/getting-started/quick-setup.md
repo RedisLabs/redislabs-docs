@@ -62,7 +62,7 @@ provide a cluster FQDN: **cluster.local**. Then simply click the
 ![RP-SetupScreen2](/images/rs/RP-SetupScreen2.jpeg?width=600&height=378)
 
 If you don't have a license key yet, click the **Next** button to try
-the trial version of the product.\
+the trial version of the product.
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 

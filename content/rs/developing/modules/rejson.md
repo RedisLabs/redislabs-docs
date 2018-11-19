@@ -40,18 +40,18 @@ other hand, are traditionally based on JavaScript's (and in Java in
 turn) variable naming conventions. Therefore, while it is possible to
 have ReJSON store objects containing arbitrary key names, accessing
 these keys via a path will only be possible if they respect these naming
-syntax rules:\
+syntax rules:
 Names must begin with a letter, a dollar ($) or an underscore (_)
-character\
-Names can contain letters, digits, dollar signs and underscores\
-Names are case-sensitive\
-Time complexity of path evaluation\
+character
+Names can contain letters, digits, dollar signs and underscores
+Names are case-sensitive
+Time complexity of path evaluation
 The complexity of searching (navigating to) an element in the path is
-made of:\
-Child level - every level along the path adds an additional search\
+made of:
+Child level - every level along the path adds an additional search
 Key search - O(N)\*\*, where N is the number of keys in the parent
-object\
-Array search - O(1)\
+object
+Array search - O(1)
 This means that the overall time complexity of searching a path is
 O(N\*M), where N is the depth and M is the number of parent object keys.
 

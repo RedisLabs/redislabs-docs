@@ -23,7 +23,7 @@ down there might be various log entries added by different cluster
 components from various nodes with different descriptions, until the
 cluster gets to a final decision that the node is actually down. In
 other cases, similar entries might be added to the log and the cluster
-will eventually get to a decision that the node is\
+will eventually get to a decision that the node is
 actually not down.
 
 In addition, some actions that might seem to the user as an atomic
@@ -48,13 +48,13 @@ severity for example.
 
 Since rsyslog entries do not include the severity information by
 default, you can use the following instructions in order to log that
-information (in Ubuntu):\
-Add the following line to /etc/rsyslog.conf\
-$templateTraditionalFormatWithPRI,"%pri‐text%:%timegenerated%%HOSTNAME%\
+information (in Ubuntu):
+Add the following line to /etc/rsyslog.conf
+$templateTraditionalFormatWithPRI,"%pri‐text%:%timegenerated%%HOSTNAME%
 %syslogtag%%msg:::drop‐last‐lf%n"
 
-And modify $ActionFileDefaultTemplate to use your new template\
-$ActionFileDefaultTemplateTraditionalFormatWithPRI\
+And modify $ActionFileDefaultTemplate to use your new template
+$ActionFileDefaultTemplateTraditionalFormatWithPRI
 Make sure to save the changes and restart rsyslog in order for the
 changes to take effect. you can see the alerts and events under /var/log
 in messages log file.
@@ -65,47 +65,47 @@ in messages log file.
 - \%timegenerated% ­adds the timestamp
 - \%HOSTNAME% ­adds the machine name
 - \%syslogtag% ­the RS message as detailed below in the Log entry
-    structure section\
+    structure section
     below.
 - \%msg:::drop­last­lf%n ­ removes duplicated log entries
 
 #### Log entry structure
 
-The log entries have the following basic structure:\
+The log entries have the following basic structure:
 event_log\[\]:{\<list of key value pairs in any order\>}
 
 - event_log­ plain static text that will always show at the beginning
     of the entry.
 - processid­ the id of the process the logging in running under.
 - listofkeyvaluepairsinanyorder­ a list of key value pairs describing
-    the\
+    the
     specific event. The key­values pairs can appear in any order. Some
-    key­value pairs will\
+    key­value pairs will
     always appear, and some appear depending on the specific event.
   - **Key­value pairs that will always appear:**
         -   "type" A unique code­name identifying the event logged. For
-            the list of\
+            the list of
             codenames relevant for this purpose please review the event
-            code­name\
+            code­name
             column in the Mapping UI events and alerts to log entries
             section below.
-        -   "object" has the format of "\[:\]". Defines the\
+        -   "object" has the format of "\[:\]". Defines the
             object type, and id if relevant, of the object this event is
-            related to. For\
+            related to. For
             example cluster, node with id, bdb with id, etc'.
         -   "time" unix time, can be ignored in this context.
   - **Key­value pairs that might appear depending on the specific
         entry:**
         -   "state" boolean with value true or false. This is relevant
-            only for\
+            only for
             entries from category alert. True means that the alert is
-            on. False means\
+            on. False means
             that the alert is off.
         -   "global_threshold" a value of a threshold for alerts
-            related to the\
+            related to the
             "cluster"or "node"objects.
         -   "threshold" a value of a threshold for alerts related to the
-            "bdb"\
+            "bdb"
             object.
 
 #### Log entry samples
@@ -115,7 +115,7 @@ mentioned above that add the severity, timestamp and machine name.
 
 #### Ephemeral storage passed threshold
 
-**Alert on" log entry sample:**\
+**Alert on" log entry sample:**
 daemon.warning:Jun1414:49:20node1event_log\[3464\]:{"storage_util":
 90.061643120001,"global_threshold":"70″,"object":"node:1″,"state":
 true,"time":1434282560,"type":"ephemeral_storage"}
@@ -132,18 +132,18 @@ result of storage utilization reaching the value of \~90%.
 - event_log­ static text that always appears
 - \[3464\]­ process id
 - "storage_util":90.061643120001­ current ephemeral storage
-    utilization, in this\
+    utilization, in this
     case \~90%
 - "global_threshold":"70″­ the user configured threshold above which
-    the alert is\
+    the alert is
     raised, in this case it is 70%
 - "object":"node:1″­ the object for which this alert has been raised
-    for, in this case it\
+    for, in this case it
     is node with id 1
 - "state":true­ current state of the alert, in this case it is on
 - "time":1434282560­ can be ignored
 - "type":"ephemeral_storage"­ is the code name identifier of this
-    specific event, see\
+    specific event, see
     full mapping in the Mapping UI events and alerts to log entries
     section below
 
@@ -165,20 +165,20 @@ as result of storage utilization reaching the value of \~60%.
 - event_log­ static text that always appears
 - \[3464\]­ process id
 - "storage_util":60.051723520008­ current ephemeral storage
-    utilization, in this\
+    utilization, in this
     case \~60%
 - "global_threshold":"70″­ the user configured threshold above which
-    the alert is\
+    the alert is
     raised, in this case it is 70%
 - "object":"node:1″­ the object for which this alert has been raised
-    for, in this case it\
+    for, in this case it
     is node with id 1
 - "state":false­ current state of the alert, in this case it is on
 - "time":1434283480­ can be ignored
 - "type":"ephemeral_storage"­ is the code name identifier of this
-    specific event, see\
+    specific event, see
     full mapping in the Mapping UI events and alerts to log entries
-    section below\
+    section below
     Odd number of nodes with a minimum of three nodes alert
 
 **Alert on" log entry sample:**
@@ -188,9 +188,9 @@ daemon.warning:Jun1415:25:00node1event_log\[8310\]:{"object":
 "even_node_count"}
 
 The log entry above is an example of when the alert for "True high
-availability requires an odd\
+availability requires an odd
 number of nodes with a minimum of three nodes" has been turned on as
-result of the cluster\
+result of the cluster
 having only one node.
 
 **Log entry components:**
@@ -201,13 +201,13 @@ having only one node.
 - event_log­ static text that always appears
 - \[8310\]­ process id
 - "object":"cluster"­ the object for which this alert has been raised
-    for, in this case\
+    for, in this case
     it is the cluster
 - "state":true­ current state of the alert, in this case it is on
 - "time":1434284700­ can be ignored
 - "node_count":1­ the number of nodes in the cluster, in this case 1
 - "type":"even_node_count"­ is the code name identifier of this
-    specific event, see\
+    specific event, see
     full mapping in the Mapping UI events and alerts to log entries
     section below
 
@@ -218,9 +218,9 @@ daemon.warning:Jun1415:30:40node1event_log\[8310\]:{"object":
 "even_node_count"}
 
 The log entry above is an example of when the alert for "True high
-availability requires an odd\
+availability requires an odd
 number of nodes with a minimum of three nodes" has been turned off as
-result of the cluster\
+result of the cluster
 having 3 nodes.
 
 **Log entry components:**
@@ -231,15 +231,15 @@ having 3 nodes.
 - event_log­ static text that always appears
 - \[8310\]­ process id
 - "object":"cluster"­ the object for which this alert has been raised
-    for, in this case\
+    for, in this case
     it is the cluster
 - "state":false­ current state of the alert, in this case it is off
 - "time":1434285200­ can be ignored
 - "node_count":3­ the number of nodes in the cluster, in this case 3
 - "type":"even_node_count"­ is the code name identifier of this
-    specific event, see\
+    specific event, see
     full mapping in the Mapping UI events and alerts to log entries
-    section below\
+    section below
     Node has insufficient disk space for AOF rewrite
 
 **Alert on" log entry sample:**
@@ -250,9 +250,9 @@ daemon.err:Jun1513:51:23node1event_log\[34252\]:{"used":23457188,
 "insufficient_disk_aofrw"}
 
 The log entry above is an example of when the alert for "Node has
-insufficient disk space for\
+insufficient disk space for
 AOF rewrite" has been turned on as result of not having enough
-persistent storage disk space\
+persistent storage disk space
 for AOF rewrite purposes. It is missing 604602126 bytes.
 
 **Log entry components:**
@@ -265,25 +265,25 @@ for AOF rewrite purposes. It is missing 604602126 bytes.
 - "used":23457188­ the amount of disk space in bytes currently used
     for AOF files
 - "missing":604602126­ the amount of disk space in bytes that is
-    currently missing for\
+    currently missing for
     AOF rewrite purposes
 - "object":"node:1″­ the object for which this alert has been raised
-    for, in this case it\
+    for, in this case it
     is node with id 1
 - "free":9867264­ the amount of disk space in bytes that is currently
     free
 - "needed":637926578­ the amount of total disk space in bytes that is
-    needed for AOF\
+    needed for AOF
     rewrite purposes
 - state":true­ current state of the alert, in this case it is on
 - "time":1434365483­ can be ignored
 - "disk":705667072­ the total size in bytes of the persistent storage
 - "type":"insufficient_disk_aofrw"­ is the code name identifier of
-    this specific\
+    this specific
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below
 
-"Alert off" log entry sample:\
+"Alert off" log entry sample:
 daemon.info:Jun1513:51:11node1event_log\[34252\]:{"used":0,"missing":
 ‐21614592,"object":"node:1″,"free":21614592,"needed":0,"state":
 false,"time":1434365471,"disk":705667072,"type":
@@ -299,22 +299,22 @@ false,"time":1434365471,"disk":705667072,"type":
 - "used":0­ the amount of disk space in bytes currently used for AOF
     files
 - "missing":‐21614592­ the amount of disk space in bytes that is
-    currently missing for\
+    currently missing for
     AOF rewrite purposes, in this case it is not missing because the
     number is negative
 - "object":"node:1″­ the object for which this alert has been raised
-    for, in this case it\
+    for, in this case it
     is node with id 1
 - "free":21614592­ the amount of disk space in bytes that is currently
     free
 - "needed":0­ the amount of total disk space in bytes that is needed
-    for AOF rewrite\
+    for AOF rewrite
     purposes, in this case no space is needed
 - "state":false­ current state of the alert, in this case it is off
 - "time":1434365471­ can be ignored
 - "disk":705667072­ the total size in bytes of the persistent storage
 - "type":"insufficient_disk_aofrw"­ is the code name identifier of
-    this specific\
+    this specific
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below
 

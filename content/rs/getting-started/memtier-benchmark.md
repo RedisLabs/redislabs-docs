@@ -23,7 +23,7 @@ cluster, be mindful that it will affect the performance of both the
 cluster and memtier_benchmark.
 
 ```src
-$ /opt/redislabs/bin/memtier_benchmark -s $DB_HOST -p $DB_PORT \
+$ /opt/redislabs/bin/memtier_benchmark -s $DB_HOST -p $DB_PORT 
 -t 4 -R --ratio=1:1
 ```
 
@@ -39,7 +39,7 @@ If you need to populate a database with some test data for a proof of
 concept, or failover testing, etc. here is an example for you.
 
 ```src
-$ memtier_benchmark -s $DB_HOST -p $DB_PORT -R -n allkeys \
+$ memtier_benchmark -s $DB_HOST -p $DB_PORT -R -n allkeys 
 -d 500 --key-pattern=P:P --ratio=1:0
 ```
 

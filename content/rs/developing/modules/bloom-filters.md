@@ -76,7 +76,7 @@ returning false positives is increased.
 
 Typically Bloom filters must be created with a foreknowledge of how many
 entries they will contain. The *bpe* number needs to be fixed, and
-likewise, the width of the bit array is also fixed.\
+likewise, the width of the bit array is also fixed.
 Unlike hash tables, Bloom filters cannot be "rebalanced" because there
 is no way to know *which* entries are part of the filter (the filter can
 only determine whether a given entry is *not* present, but does not
@@ -155,7 +155,7 @@ enhancements:
 - I discovered that when testing for presence, libbloom would continue
     checking for each bit even when an unset bit was discovered. Making
     it so that it returned as soon as it found the first unset bit
-    increased performance.\
+    increased performance.
     I decoupled the hash calculation API from the lookup API. This meant
     I only needed to compute the hash, and then feed it into the filter
     code.

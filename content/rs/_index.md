@@ -46,7 +46,7 @@ choice), RS overcomes the memory limitations of a single node and the
 performance limitations of a single core. Dynamic scaling is easy; you
 can increase your dataset's maximum size by simply changing the memory
 limit setting, or increase the number of shards with the click of a
-button. Scaling, upgrades, and downgrades do not incur any downtime.\
+button. Scaling, upgrades, and downgrades do not incur any downtime.
 
 {{< youtube 6iVpOg8V5lQ >}}
 
