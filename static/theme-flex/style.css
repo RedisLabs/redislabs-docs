@@ -371,6 +371,10 @@ section a {
   .home-options {
     width: 860px;
   }
+
+  .home-options__option p {
+    height: 160px;
+  }
 }
 
 @media screen and (max-width: 860px){
@@ -392,12 +396,22 @@ section a {
   }
 
   .home-options__option p {
-    width: 50%;
-    height: 100px;
+    width: 88%;
+    height: auto;
   }
 
   .home-options__option ul {
-    padding-left: 38%;
+    padding-left: 25%;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 860px){
+  .home-options__option p {
+    width: 50%;
+  }
+
+  .home-options__option ul {
+    padding-left: 40%;
   }
 }
 
