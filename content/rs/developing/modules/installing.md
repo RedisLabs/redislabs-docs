@@ -26,7 +26,7 @@ the next step of adding the module to Redis Enterprise Software.
 ## Add Module to the Cluster
 
 1. Log into the Redis Enterprise Software web UI
-1. Navigate to the **settings** -\> **redis^e^ modules**
+1. Navigate to the **settings** -\> **redis<sup>e</sup> modules**
 1. Click on **Add Module** button and navigate to where you downloaded
     the module package
 
