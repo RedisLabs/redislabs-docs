@@ -126,7 +126,7 @@ number of shards it consumes. For example:
 As explained in the open source [Redis FAQ](http://redis.io/topics/faq),
 under "What happens if Redis runs out of memory?":
 
-<blockquote>...\[you\] can use the "maxmemory" option in the config file to put a
+<blockquote>...[you] can use the "maxmemory" option in the config file to put a
 limit to the memory Redis can use. If this limit is reached Redis will
 start to reply with an error to write commands (but will continue to
 accept read-only commands), or you can configure it to evict keys when
