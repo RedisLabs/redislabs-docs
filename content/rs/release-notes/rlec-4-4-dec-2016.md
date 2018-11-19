@@ -142,7 +142,7 @@ Changes in 4.4.2 - 49
     version, **rladmin status** output will show the database status as
     having an old version. When you upgrade the Redis database (using
     **rladmin upgrade db** command) the Redis version will be updated to
-    3.2 even if you updated the cluster's Redis default version to 3.0.\
+    3.2 even if you updated the cluster's Redis default version to 3.0.
     **Workaround:** If you would like to cancel the old version
     indication in **rladmin status** without upgrading the Redis version
     to 3.2 you should run the **rladmin upgrade db** command with the
@@ -151,13 +151,13 @@ Changes in 4.4.2 - 49
 - **Issue:** RLEC-9200 - in a database configured with multiple
     proxies, if a client sends the MONITOR, CLIENT LIST or CLIENT KILL
     commands, only commands from clients connected from the same proxy
-    are returned instead of all commands from all connections.\
+    are returned instead of all commands from all connections.
     **Workaround:** If you would like to get a result across all
     clients, you need to send the monitor command to all proxies and
     aggregate them.
 - **Issue:** RLEC-9296 - Different actions in the cluster, like node
     failure or taking a node offline, might cause the Proxy policy to
-    change Manual.\
+    change Manual.
     **Workaround:** You can use the **rladmin bind \[db \<db:id \|
     name\>\] endpoint \<id\> policy \<single \| all-master-shards \|
     all-nodes\>** command to set the policy back to the required policy,
@@ -167,31 +167,31 @@ Changes in 4.4.2 - 49
     feature, if the source database(s) are larget than the target
     database, the memory limit on the target database is not enforced
     and that used memory of the target database can go over the memory
-    limit set.\
+    limit set.
     **Workaround:** You should ensure that the total memory limit of all
     source databases is not bigger than the memory limit of the target
     database.
 - **Issue:** RLEC-8487 - Some Redis processes stay running after
     purging RLEC from the machine and causes an attempt to reinstall
-    RLEC to fail.\
+    RLEC to fail.
     **Workaround:** Run the purge process for a second time and ensure
     that the Redis processes were removed.
 - **Issue:** RLEC-8747 - When upgrading to this version, if the UI is
     open in the browser the UI might not work properly after the
-    upgrade.\
+    upgrade.
     **Workaround:** Refresh the browser and the UI will return to work
     properly.
 - **Issue:** In the *Replica of* process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on the target database might not be in sync with
     the source database, although the status of the *Replica of* process
-    indicates that it is.\
+    indicates that it is.
     **Workaround:** You must manually stop and restart the
     synchronization process in order to ensure the databases are in
     sync.
 - **Issue:** In the *Replica of* process, if the source database is
     resharded while the *Replica of* process is active, the
-    synchronization process will fail.\
+    synchronization process will fail.
     **Workaround:** You must manually stop and restart the
     synchronization process after the resharding of the source database
     is done.
@@ -199,7 +199,7 @@ Changes in 4.4.2 - 49
     traffic on the database the *Replica of* process might be restarted
     frequently due to the "slave buffer" being exceeded. In this case,
     you will often see the status of the *Replica of* process display as
-    "Syncing".\
+    "Syncing".
     **Workaround:** You must manually increase the "slave buffer" size
     through rladmin. To find the appropriate buffer size please contact
     support at: <support@redislabs.com>.
@@ -208,14 +208,14 @@ Changes in 4.4.2 - 49
     through rladmin to a node on the same rack-zone as its corresponding
     master or slave shard, and later runs the rebalance process, the
     rebalance process will not migrate the shards to ensure rack-zone
-    awareness compliance.\
+    awareness compliance.
     **Workaround:** In the scenario described above, you must use
     rladmin to manually migrate the shard to a node on a valid rack-zone
     in order to ensure rack-zone awareness compliance.
 - **Issue:** DNS doesn't change after having removed the external IP
-    address.\
+    address.
     **Workaround:** Unbind IP from affected node and then bind it back.
 - **Issue**: CCS gets an error and won't start
-    if /var/opt/redislabs/persist/ does not exist.\
+    if /var/opt/redislabs/persist/ does not exist.
     **Workaround**: Make sure this directory is not deleted and
     continues to exist.

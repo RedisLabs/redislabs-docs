@@ -105,13 +105,13 @@ bucket's name is backups-bucket, you should use the following path:
 1. Login to your account on Google Cloud Platform
 1. Navigate to **Storage -\> Browser**
 1. Click on the three dot button (1) on your relevant bucket name and
-    choose **Edit bucket permissions** (2).\
+    choose **Edit bucket permissions** (2).
     ![GCS bucket
     permissions](/images/rc/bucket-perm1.png?width=800&height=493)
 1. Under **Add members**, enter:
     `service@redislabs-prod-clusters.iam.gserviceaccount.com`
 1. For the role, select **Storage Legacy -\> Storage Legacy Bucket
-    Writer**.\
+    Writer**.
     ![Google Cloud Storage
     Permissions](/images/rc/gcs-permissions.jpg?width=800&height=606)
 1. Click on the **Add** button.

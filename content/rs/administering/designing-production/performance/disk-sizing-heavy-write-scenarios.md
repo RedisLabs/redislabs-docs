@@ -16,8 +16,8 @@ write scenarios, assuming identical shard sizes:**
 
 **X (1 + 3Y +Y²)**
 
-      where:\
-**X** = each shard size\
+      where:
+**X** = each shard size
 **Y** = number of shards
 
 Following are examples of database configurations and the persistence

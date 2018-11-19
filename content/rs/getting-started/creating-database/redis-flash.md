@@ -69,7 +69,7 @@ Then simply click the **Next** button.
 Flash](/images/rs/enable_redis_flash.png?width=800&height=663)
 
 If you don't have a license key yet, click the **Next** button to try
-the trial version of the product.\
+the trial version of the product.
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 

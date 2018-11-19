@@ -85,7 +85,7 @@ Console and follow these steps:
 
 Once the file's permissions are set, you can import it by entering its
 URL in the Import Dataset dialog's RDB File Path field using the
-following syntax:\
+following syntax:
 s3://bucketname/\[path/\]filename.rdb\[.gz\]
 
 Where:

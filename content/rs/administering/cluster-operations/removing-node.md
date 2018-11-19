@@ -17,7 +17,7 @@ The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
 
 **Make sure to read through these explanations thoroughly before taking
-any action.**\
+any action.**
 
 ## Permanently removing a node
 

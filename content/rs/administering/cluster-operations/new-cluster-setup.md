@@ -43,18 +43,18 @@ To create a cluster:
 1. In the Node Configuration page that appears:
 
     1. Enter a path for **Persistent storage**, or leave the default
-        path.\
+        path.
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
         
     1. Enter a path for **Ephemeral storage**, or leave the default
-        path.\
+        path.
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
    
     1. If you want to enable Redis^e^ Flash, select the **Enable flash
         storage support** checkbox and enter the path to the Flash
-        storage that should be used as RAM extension.\
+        storage that should be used as RAM extension.
         For additional details, refer to [Redis Enterprise
         Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
         
@@ -68,7 +68,7 @@ To create a cluster:
     1. In Cluster configuration, select **Create new cluster**.
    
     1. In **Cluster name (FQDN)**, enter a unique name for the
-        cluster.\
+        cluster.
         For guidelines, refer to [How to set the cluster
         name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
         

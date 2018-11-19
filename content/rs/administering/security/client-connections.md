@@ -29,7 +29,7 @@ certificates]({{< relref "/rs/administering/cluster-operations/updating-certific
 ### Configuration of the database
 
 To encrypt the connection to the database endpoint with SSL, enter the
-contents the client certificate\
+contents the client certificate
 to the **SSL client authentication** field.
 
 **Note**: Once SSL/TLS encryption is enabled for the database endpoint,
@@ -115,11 +115,11 @@ certificates, and a self-signed certificate on the client machine.
 2. Create a self-signed certificate on the client machine:
 
     1. Generate a private key by running the following commands:sudo su
-        --\
+        --
         openssl genrsa -out /etc/stunnel/keyclient.pem 4096
     2. Generate a client certificate by running the following
         commands:openssl req -new -x509 -key /etc/stunnel/keyclient.pem
-        -out\
+        -out
         /etc/stunnel/cert.pem -days 1826
 
     When prompted, enter the appropriate configuration details for the
@@ -141,15 +141,15 @@ certificates, and a self-signed certificate on the client machine.
     2. Ensure that the certificates that have been generated exist in
         the following folder: /etc/stunnel.
     3. Edit the redislabs.conf content to look as follows:cert =
-        /etc/stunnel/cert.pem\
-        key = /etc/stunnel/keyclient.pem\
-        cafile = /etc/stunnel/servercerts.pem\
-        verify = 2\
-        delay = yes\
-        output = /tmp/stunnel.log\
-        pid = /tmp/stunnel.pid\[redislabs\]\
-        client = yes\
-        accept = 127.0.0.1:6379\
+        /etc/stunnel/cert.pem
+        key = /etc/stunnel/keyclient.pem
+        cafile = /etc/stunnel/servercerts.pem
+        verify = 2
+        delay = yes
+        output = /tmp/stunnel.log
+        pid = /tmp/stunnel.pid\[redislabs\]
+        client = yes
+        accept = 127.0.0.1:6379
         connect = \[database endpoint value\]Where \[database endpoint
         value\] is the database endpoint as can be retrieved from RS.
 

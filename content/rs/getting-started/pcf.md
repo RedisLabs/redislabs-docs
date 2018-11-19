@@ -21,12 +21,12 @@ your Pivotal Cloud Foundry environment to get started.
     Software](https://app.redislabs.com/#/sign-up/software?direct=true&download=pivotal_cf).
 - Navigate to your Ops Manager URL and click on **Import a Product**
     button and select the downloaded .pivotal file for Redis Enterprise
-    Software\
+    Software
     ![pcf_view_ops_manger](/images/rs/pcf_view_ops_manger.png?width=800&height=205)
 
 ### Step 2: Configure Redis Enterprise Software
 
-1. Click the newly imported tile.\
+1. Click the newly imported tile.
 
     ![pcf_pre-install_tile](/images/rs/pcf_pre-install_tile.png?width=189&height=189)
 1. Navigate to the **Assign AZs and Network** section on the right
@@ -47,17 +47,15 @@ your Pivotal Cloud Foundry environment to get started.
    - and enabled Multiple Availability Zone (Rack) awareness.
    - **Static IPs**: You may provide a set of static IPs addresses to
         use for cluster nodes or let the tile choose them for you from
-        the previously selected PCF network.\
+        the previously selected PCF network.
 
-        ![Redis Enterprise for PCF tile
-        configuration](/images/rs/rs_tile_config.png?_t=1520874329?width=800&height=604)
+        ![Redis Enterprise for PCF tile configuration](/images/rs/rs_tile_config.png?width=800&height=604)
 1. **Service Plans** You could add a new plan you want to offer it in
     Apps Manager, but for the moment, click the **Save** button.
 1. **Syslog** Check **Disabled** for now as we do not want to utilize
-    this functionality for this quick start.\
+    this functionality for this quick start.
 
-    ![Redis Enterprise for PCF syslog
-    configuration](/images/rs/syslog_disable.png?width=800&height=557)
+    ![Redis Enterprise for PCF syslog configuration](/images/rs/syslog_disable.png?width=800&height=557)
 1. **Stemcell** Upload the proper stemcell requested on the page.
 
 **Note**: It is important to ensure the capacity used for RP cluster
@@ -68,7 +66,7 @@ specifications]({{< relref "/rs/administering/designing-production/hardware-requ
 ### Step 3: Deploy the Redis Enterprise Software Cluster
 
 1. Once the tile configuration is done, you can save the changes and
-    click the **Apply changes** to deploy the cluster.\
+    click the **Apply changes** to deploy the cluster.
 
     ![post-install-dashboard](/images/rs/post-install-dashboard.png?width=800&height=227)
 1. You can switch into the tile and to the **Status** tab to view the
@@ -80,14 +78,14 @@ specifications]({{< relref "/rs/administering/designing-production/hardware-requ
 With the Ops Manager side complete, we turn our attention to deploying
 a service in PCF Apps Manager.
 
-1. Click on **Add A Service\
+1. Click on **Add A Service**.
 
-    !](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)\
-    **
-1. [Select **Redis Enterprise**[ from the
-    choices of Services\
+    ![apps_manager_add_service_button](/images/rs/apps_manager_add_service_button.png?width=1000&height=278)
 
-    !](/images/rs/apps_manager_add_service-1.png?_t=1520885153?width=800&height=635)\
+1. Select **Redis Enterprise** from the
+    choices of Services.
+
+    ![apps_manager_add_service-1](/images/rs/apps_manager_add_service-1.png?width=800&height=635)
     
 1. Select a plan from the list for the proper sized cluster for Redis
     Enterprise and then click the **Select Plan** button.

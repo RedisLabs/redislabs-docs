@@ -8,11 +8,11 @@ categories: ["RS"]
 To add a node in Redis Enterprise Software (RS):
 
 1. Install the installation package on the machine that will serve as
-    the new node.\
+    the new node.
     For additional details, refer to [installing the setup
     package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
 1. In a browser, navigate to https://\<name or IP address of the node
-    on which you installed the package\>:8443.\
+    on which you installed the package\>:8443.
     For example, if you installed the RS package on a machine with IP
     address 10.0.1.34, then navigate to https://10.0.1.34:8443.
 
@@ -21,25 +21,25 @@ To add a node in Redis Enterprise Software (RS):
     certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 
 1. In the window that appears, click **Setup**.
-1. In the Node configuration page:\
+1. In the Node configuration page:
     1. Enter a path for **Persistent storage**, or leave the default
-        path.\
+        path.
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     1. You can enter a path for **Ephemeral storage**, or leave the
-        default path.\
+        default path.
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     1. If you want to enable Redis on Flash, select the check box
         Enable flash storage support and enter the path to the Flash
-        storage that should be used as RAM extension.\
+        storage that should be used as RAM extension.
         For additional details, refer to [Redis on
         Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
     1. If your machine is configured to have multiple IP addresses, the
         section **IP Addresses Usage** is displayed. Use the **IP
         Addresses Usage** section to assign a single IPv4 type address
         for internal traffic and multiple IPv4/IPv6 type addresses for
-        external traffic.\
+        external traffic.
         For additional details, refer to [Multi-IP &
         IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}).
     1. In Cluster configuration, select **Join cluster**.

@@ -22,7 +22,7 @@ There are two types of Redis databases that can be created in RS.
 
 To create a new database in the UI:
 
-1. On the **Databases** page, click the + (plus) sign below the table.\
+1. On the **Databases** page, click the + (plus) sign below the table.
     The buttons of the various database types that can be created will
     appear.
 
@@ -43,7 +43,7 @@ To create a new database in the UI:
     (CRDB)]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}).
     
     ![new_databases](/images/rs/new_databases.png?width=584&height=599)
-1. Enter a **name** for the database.\
+1. Enter a **name** for the database.
     The database name must comply with the following rules:
 
    - Length: up to 63 characters.

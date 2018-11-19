@@ -17,7 +17,7 @@ as follows:
 ## Step 1: Sign up for Redis Enterprise VPC account
 
 If you do not already have one, sign up for a [Redis Enterprise VPC
-account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-cloud-private).\
+account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-cloud-private).
 If you already have an account, sign in to [Redis Enterprise
 VPC](https://app.redislabs.com/#/login?).
 

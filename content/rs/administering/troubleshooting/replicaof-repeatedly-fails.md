@@ -20,7 +20,7 @@ buffer on the source database to a bigger value:
 - If the source database is a Redis that is part of RS, run the
     following command in
     [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}}) to
-    increase the slave buffer size of the **source database**:\
+    increase the slave buffer size of the **source database**:
     tune db \< db:id \| name \> slave_buffer \< value \>
 
 <!-- -->
@@ -28,7 +28,7 @@ buffer on the source database to a bigger value:
 - If the source database is a Redis that is not part of RS, run the
     [config set](http://redis.io/commands/config-set) command through
     redis-CLI to increase the client output buffer size of the **source
-    database**:\
+    database**:
     config set client-output-buffer-limit "slave \< hard limit \> \<
     soft limit \> \< soft seconds \>"
 
