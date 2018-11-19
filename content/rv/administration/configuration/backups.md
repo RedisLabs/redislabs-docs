@@ -32,8 +32,8 @@ steps:
         1. Set any bucket properties to your company's standards
         1. On the Set permissions page, click the **+ Add account**
             button
-        1. In the Account field enter
-            ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614***
+        1. In the Account field enter:
+            `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
         1. Check read/write boxes for **Objects** and **Object
             permissions**, then click **Save**.
             ![add_s3_user](/images/rv/add_s3_user.png?width=600&height=698)
@@ -42,9 +42,9 @@ steps:
         **Permissions** tab
         1. Click **+ Add account** in the **Access for other AWS
             accounts** section enter the below information
-        1. In the Account field enter
-            ***fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614
-            ![add_user_existing](/images/rv/add_user_existing.png?width=700&height=175)***
+        1. In the Account field enter:
+            `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
+            ![add_user_existing](/images/rv/add_user_existing.png?width=700&height=175)
         1. Check read/write boxes for various** permissions**, then
             click the **Save** button
 
@@ -81,7 +81,7 @@ console](https://developers.google.com/console/):
     entering the following information at the bottom of the page:
     1. In the left-most drop-box, make sure that the value *User* is
         selected.
-    1. Next, enter ***service\@garantiadata.com***.
+    1. Next, enter `service@garantiadata.com`.
     1. Set the permission to *Writer*.
     1. Click the **Add** and then the **Save** buttons to apply your
         changes.

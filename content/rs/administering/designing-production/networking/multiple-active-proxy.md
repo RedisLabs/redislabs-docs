@@ -108,7 +108,7 @@ cluster configuration:
    watchdog profile: local-network
 ```
 
-You can configure the proxy policy using the ***bind*** command in
+You can configure the proxy policy using the `bind` command in
 rladmin. The following command is an example that changes the bind
 policy for a database called "db1" with an endpoint id "1:1" to "All
 Master Shards" proxy policy.
