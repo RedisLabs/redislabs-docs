@@ -1,6 +1,21 @@
+{{if eq .RelPermalink "/rs/"}}
 <!-- Version selector -->
 <script>
-function openVersionSelector() {
+(function () {
+  var v = sessionStorage.getItem('_rs_version');
+  if(!v) v = '5.4';
+  _setVersion(v);
+})();
+
+function _setVersion(ver) {
+  document.getElementById('versionSelectorValue').innerText = ver;
+}
+
+function _selectVersion(ver) {
+  sessionStorage.setItem('_rs_version', ver);
+}
+  
+function _openVersionSelector() {
     document.getElementById('versionSelector').classList.toggle('--open');
 }
 
@@ -16,6 +31,7 @@ window.onclick = function(e) {
   }
 }</script>
 <!-- /Version selector -->
+{{end}}
 
 <script src="{{"js/clipboard.min.js" | relURL}}"></script>
 
