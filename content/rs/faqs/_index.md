@@ -94,7 +94,7 @@ accept read-only commands), or you can configure it to evict keys when
 the max memory limit is reached in the case you are using Redis for
 caching.</blockquote>
 
-You can set the **maxmemory** value of each Redis^e^ Pack database in
+You can set the **maxmemory** value of each Redis Enterprise Software database in
 the management UI using the **Memory limit** property, as well as
 configure an eviction policy by setting it to any of the standard Redis
 behaviors, without interrupting database operations.

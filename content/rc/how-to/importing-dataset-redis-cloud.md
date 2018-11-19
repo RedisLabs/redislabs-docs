@@ -25,7 +25,7 @@ import completes.
 
 To import a dataset from any publicly available Redis server, simply
 enter the following information in the Import Dataset dialog of your
-Redis^e^ Cloud instance and click the "Import" button when done:
+Redis Enterprise Cloud instance and click the "Import" button when done:
 
 1. Enter the hostname or the public IP address of the source Redis
     server in the **Redis Hostname/IP Address** box.
