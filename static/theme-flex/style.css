@@ -1817,7 +1817,7 @@ article > aside .menu .menu__version-selector button {
   outline: none;
 }
 
-article > aside .menu .menu__version-selector button span {
+article > aside .menu .menu__version-selector button span.menu__version-selector__toggler {
   display: none;  
   font-size: 8px;
   transform: translateY(-1px) translateX(4px);
