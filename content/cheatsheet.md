@@ -84,18 +84,18 @@ def hello_world():
 **Syntax**:
 
 ```md
-| heading 1 | heading 2 |
-|-----------|-----------|
-| cell 1x1  | cell 1x2  |
-| cell 2x1  | cell 2x2  |
+| heading 1 | heading 2 | heading 3 |
+| :-----| :-----: |-----: |
+| cell 1x1  | cell 1x2  | cell 1x3  |
+| cell 2x1  | cell 2x2  | cell 2x3  |
 ```
 
 **Output**:
 
-| heading 1 | heading 2 |
-|-----------|-----------|
-| cell 1x1  | cell 1x2  |
-| cell 2x1  | cell 2x2  |
+| heading 1 | heading 2 | heading 3 |
+| :-----| :-----: |-----: |
+| cell 1x1  | cell 1x2  | cell 1x3  |
+| cell 2x1  | cell 2x2  | cell 2x3  |
 
 ## Adding an image
 
@@ -113,6 +113,42 @@ To make an image appear on the next line in a list:
 1. Write your instruction.
 1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
+
+## Expanding Blocks
+
+```
+{{%expand "How do you make expanding blocks?" %}}
+This is how you make expanding blocks.
+{{% /expand%}}
+```
+
+{{%expand "How do you make expanding blocks?" %}}
+This is how you make expanding blocks.
+{{% /expand%}}
+
+## Excerpts
+
+### Defining an excerpt
+
+```
+{{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+provides a simple mechanism for cluster-aware Redis clients to learn
+and know the cluster topology. This enables clients to connect directly
+to an RS proxy on the node hosting the master shard for the data being
+operated on.{{% /excerpt%}}
+```
+
+{{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+provides a simple mechanism for cluster-aware Redis clients to learn
+and know the cluster topology. This enables clients to connect directly
+to an RS proxy on the node hosting the master shard for the data being
+operated on.{{% /excerpt%}}
+
+### Including an excerpt
+
+`{{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}`
+
+{{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 
 ## Panels
 
