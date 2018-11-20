@@ -116,7 +116,7 @@ To make an image appear on the next line in a list:
 
 ## Expanding Blocks
 
-```
+```md
 {{%expand "How do you make expanding blocks?" %}}
 This is how you make expanding blocks.
 {{% /expand%}}
@@ -146,7 +146,7 @@ operated on.{{% /excerpt%}}
 
 ### Including an excerpt
 
-`{{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}`
+` {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}} `
 
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 
