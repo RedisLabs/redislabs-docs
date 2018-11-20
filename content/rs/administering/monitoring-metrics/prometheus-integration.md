@@ -50,7 +50,7 @@ To get started with custom monitoring:
     * If you already have prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration.
     * Replace `<your cluster FQDN>` with your actual cluster FQDN.
 
-    ```
+    ``` 
     global:
     scrape_interval:     15s
     evaluation_interval: 15s
