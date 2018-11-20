@@ -41,12 +41,10 @@ the operating system CLI on Nagios machine:
 1. pip install keyring ­to install the package (See
     https://pip.pypa.io/en/stable/installing/ on how to install python
     pip if needed).
-1. keyring set RLEC­-Nagios ­\<RLEC user email\> to set the password.
+1. keyring set RS-Nagios ­\<RS user email\> to set the password.
     User email should be identical to the email used in Nagios
     configuration and the password should be set using the same user
     that run the Nagios server.
-
-Note: RLEC is a previous name of Redis Enterprise Software
 
 Then, you need to update the local parameters, such as hostnames,
 addresses, and object IDs, to the values relevant for your

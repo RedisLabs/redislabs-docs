@@ -57,7 +57,7 @@ name is *backups-bucket*, you should use the following path:
 ## Google Cloud Storage (GCS)
 
 There are two ways to backup to Google Cloud Storage and which you use
-depends on the Redis version your database has in Redis^e^ Cloud. To
+depends on the Redis version your database has in Redis Enterprise Cloud. To
 identify the version go to the configuration page of the database you
 wish to backup.
 

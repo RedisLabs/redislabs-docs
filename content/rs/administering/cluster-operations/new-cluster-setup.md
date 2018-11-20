@@ -52,7 +52,7 @@ To create a cluster:
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
    
-    1. If you want to enable Redis^e^ Flash, select the **Enable flash
+    1. If you want to enable Redis on Flash, select the **Enable flash
         storage support** checkbox and enter the path to the Flash
         storage that should be used as RAM extension.
         For additional details, refer to [Redis Enterprise

@@ -64,7 +64,7 @@ connections.
 
 This procedure describes the steps required to install and configure
 [stunnel](https://stunnel.org), an open-source secure proxy, to connect
-to an SSL-enabled Redis^e^ Cloud database.
+to an SSL-enabled Redis Enterprise Cloud database.
 
 Important: This procedure is only required if you are **NOT** using an
 SSL/TLS enabled Redis client.
