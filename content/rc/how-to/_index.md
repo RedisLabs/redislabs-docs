@@ -5,4 +5,4 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 ---
-{{%children style="h2" description="true"%}}
+{{%allchildren style="h2" description="true"%}}

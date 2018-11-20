@@ -9,4 +9,4 @@ Redis Enterprise Software has multiple memory mechanisms in its
 architecture, from RAM to Flash Memory, to having databases that span
 them both.
 
-{{%children style="h2" description="true"%}}
+{{%allchildren style="h2" description="true"%}}
