@@ -11,4 +11,4 @@ cluster, creating databases, etc.
 
 Topics include:
 
-{{%children style="h2" description="true"%}}
+{{%allchildren style="h2" description="true"%}}

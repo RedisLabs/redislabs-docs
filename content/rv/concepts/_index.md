@@ -8,4 +8,4 @@ categories: ["RV"]
 This section of pages contains content that describes the main concepts
 that Redis Enterprise VPC is built around.
 
-{{%children style="h2" description="true"%}}
+{{%allchildren style="h2" description="true"%}}

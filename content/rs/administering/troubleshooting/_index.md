@@ -10,4 +10,4 @@ Enterprise Software (RES).
 
 Topics:
 
-{{%children style="h2" description="true"%}}
+{{%allchildren style="h2" description="true"%}}
