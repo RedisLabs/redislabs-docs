@@ -9,6 +9,7 @@ Here are some frequently asked questions about Redis Enterprise Software.
 
 ## Features and Terminology
 
+<!-- Also in RC -->
 {{%expand "What exactly is Redis Enterprise?" %}}
 Redis Labs has enhanced open source Redis with a technology layer that encapsulates open source Redis, while fully supporting all its commands, data structures and modules. It adds exceptional flexibility, stable high performance and unmatched resilience, as well as multiple deployment choices (public and private clouds, on-premises, hybrid, RAM-Flash combination), topology (active-active, active-passive, active-replica) and support for very large dataset sizes. This enhanced and exponentially more powerful database platform is Redis Enterprise.
 
@@ -106,6 +107,7 @@ you need.
 
 ## Technical Capabilities
 
+<!-- Also in RC -->
 {{%expand "How many Redis databases can I create and manage?" %}}
 The number of databases is unlimited. The limiting factor is the
 available memory in the cluster, and the number of shards in the
