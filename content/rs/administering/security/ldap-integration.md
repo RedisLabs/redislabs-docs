@@ -35,7 +35,7 @@ saslauthd is a process that handles authentication requests to support
 Redis Enterprise Software while the LDAP protocol is utilized to connect
 the LDAP server.
 
-### Step #1: Configure LDAP options in config file
+### Step 1: Configure LDAP options in config file
 
 ```src
 $ vi /tmp/saslauthd.conf
@@ -80,7 +80,7 @@ ldap_filter: (uid=%u)
 ldap_password: secretSquirrel
 ```
 
-### Step #2: Distribute saslauthd.conf to all nodes in the cluster
+### Step 2: Distribute saslauthd.conf to all nodes in the cluster
 
 ```src
 >$ sudo /opt/redislabs/bin/rladmin cluster config saslauthd_ldap_conf /tmp/saslauthd.conf
@@ -90,7 +90,7 @@ Cluster configured successfully
 Note: If this is a new server installation, for this command to work, a
 cluster must be set up already.
 
-### Step #3: Confirm saslauthd is configured
+### Step 3: Confirm saslauthd is configured
 
 Now that we have saslauthd configured, let's test with a known LDAP user
 before we finish the configurations in RS.
@@ -107,7 +107,7 @@ Note: If you are using Multi-Master Replication and wish to use LDAP for
 administrators, the LDAP set up process must be performed on each
 cluster.
 
-### Step #4: Create an RS User to Authenticate with LDAP
+### Step 4: Create an RS User to Authenticate with LDAP
 
 To have a user authenticate with LDAP, you need to create a new user via
 the REST API call like this:

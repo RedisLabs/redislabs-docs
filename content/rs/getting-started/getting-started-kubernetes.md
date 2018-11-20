@@ -22,10 +22,10 @@ We will use the Docker container for 4.5 version of Redis Enterprise for the ste
 
 We will go through 4 steps to set up our cluster with Redis Enterprise:
 
-*   Step #1 – Create a Kubernetes cluster on Google Cloud
-*   Step #2 – Deploy the Redis Enterprise containers to Kubernetes cluster
-*   Step #3 – Setup Redis Enterprise cluster
-*   Step #4 – Create a Redis database and test your connectivity
+*   Step 1: Create a Kubernetes cluster on Google Cloud
+*   Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
+*   Step 3: Setup Redis Enterprise cluster
+*   Step 4: Create a Redis database and test your connectivity
 
 _Note: The deployment is deliberately simplified and is great for getting started with Kubernetes and Redis Enterprise fast. It certainly isn't intended for production use._
 
@@ -33,7 +33,7 @@ _Note: The deployment is deliberately simplified and is great for getting starte
 
 The steps below were performed using the latest [Google Cloud sdk](https://cloud.google.com/sdk/) and [kubectl tool](https://kubernetes.io/docs/tasks/kubectl/install/) on MacOS. There may be slight differences in detailed instructions with another operating system.
 
-# Step 1 – Create a Kubernetes cluster on Google Cloud
+# Step 1: Create a Kubernetes cluster on Google Cloud
 
 Lets first get your commandline environment set up.
 
@@ -91,7 +91,7 @@ And finally start the Kubernetes proxy:
     kubectl proxy
 
 
-# Step 2 – Deploy the Redis Enterprise containers to Kubernetes cluster
+# Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
 
 You now need to feed the container yaml file to provision Redis Enterprise cluster. Sample YAML file can be found [here](https://github.com/RedisLabs/redislabs-docs/blob/kubernetes/content/rs/getting-started/redis-enterprise.yaml).
 
@@ -117,7 +117,7 @@ The output will look something like this;
     redispack-deployment-709212938-kcjd7 1/1 Running 0 7s
 
 
-# Step 3 – Setup Redis Enterprise cluster
+# Step 3: Setup Redis Enterprise cluster
 
 We are now ready to create the Redis Enterprise cluster. There is one small change that needs to be done to the container to get networking to work properly: we need to change the css binding to 0.0.0.0. To do this, you need to run the following in each container with each iteration using the pods name from the _kubectl get po_ output above.
 
@@ -142,7 +142,7 @@ In my case the output was 10.0.2.10. Lets add node 2 and 3 to the cluster
     kubectl exec -it redispack-deployment-709212938-kcjd7 "/opt/redislabs/bin/rladmin" cluster join username cihan@redislabs.com password redislabs123 nodes 10.0.2.10 flash_enabled
 
 
-# Step 4 – Create a Redis database and test your connectivity
+# Step 4: Create a Redis database and test your connectivity
 
 We are now ready to create the database and connect to it. The following curl command can be used to create a database on port 12000. the database will be named "sample-db".
 
