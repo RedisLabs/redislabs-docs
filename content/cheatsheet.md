@@ -114,7 +114,7 @@ To make an image appear on the next line in a list:
 1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
-##Panels
+## Panels
 
 ### Info
 
