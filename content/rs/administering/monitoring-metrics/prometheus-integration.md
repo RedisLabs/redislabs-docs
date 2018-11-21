@@ -41,7 +41,7 @@ To get started with custom monitoring:
         ```
     1. To start the containers, run: `docker-compose up -d`
     1. To check that all the containers are up, run: `docker ps`
-    1. In your browser, login to Prometheus at `localhost:9090` to make sure the server is running.
+    1. In your browser, login to Prometheus at http://localhost:9090 to make sure the server is running.
     1. Look for the **node_up** metric to make sure that you are receiving statistics from Redis Enterprise.
 1. Copy this Prometheus configuration into `./prometheus/prometheus.yml` in your current folder:
 
@@ -86,7 +86,7 @@ To get started with custom monitoring:
     ```
 
 1. Configure the Grafana datasource and dashboards:
-    1. Login to Grafana. If you installed Grafana locally, go to `localhost:3000` and login with:
+    1. Login to Grafana. If you installed Grafana locally, go to http://localhost:3000 and login with:
 
     	Username: admin
     	Password: secret
