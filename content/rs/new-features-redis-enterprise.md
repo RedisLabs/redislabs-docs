@@ -42,6 +42,7 @@ Redis Labs developed and certified these modules for use with Redis Enterprise S
 - [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
   - RedisGraph is the first queryable Property Graph database to use sparse 
     matrices to represent the adjacency matrix in graphs and linear algebra to query the graph.
+    RedisGraph uses [Cypher](https://www.opencypher.org/) as its query language.
 - [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
   - Now you have the convenience JSON as a built-in data type and easily
     able to address nested data via a path.
