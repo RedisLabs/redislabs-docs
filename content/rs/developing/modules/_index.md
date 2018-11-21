@@ -15,7 +15,7 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
 - ReBloom
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
     - [Developing with ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
-- RedisGraph
+- RedisGraph (version 5.4 and higher)
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
@@ -26,7 +26,7 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     - [Developing with RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 
-In 5.0.2 and later, enterprise modules are pre-installed.
+Enterprise modules are pre-installed in version 5.0.2 and higher.
 
 To download these modules, please go to the [Redis Enterprise downloads
 page](https://redislabs.com/products/redis-pack/downloads/).
