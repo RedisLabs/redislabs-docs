@@ -5,7 +5,7 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-This documentation covers both Redisaaaaaa Enterprise Software 4.5 and
+This documentation covers both Redis Enterprise Software 4.5 and
 5.0. Anything that is not explicitly marked for 5.0, applies to 4.5
 release as well.<!--more-->
 

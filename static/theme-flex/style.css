@@ -265,7 +265,7 @@ section a {
 
 /* Home */
 .home-hero {
-  padding: 2.25rem 0 2.5rem 0;
+  padding: 2.75rem 0 1.5rem 0;
   background-image: url(./img/bg-poly-white-1.jpg);
   background-size: cover;
   border-bottom: 1px solid #e5e5e5;
@@ -282,7 +282,7 @@ section a {
 
 .home-hero p {
   color: #5f5f5f;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 300;
   text-align: center;
 }
@@ -292,7 +292,7 @@ section a {
   flex-direction: row;
   margin: 0 auto;
   padding-top: 5rem;
-  padding-bottom: 4.5rem;
+  padding-bottom: 6.5rem;
   width: 1020px;
 }
 
@@ -320,7 +320,7 @@ section a {
 
 .home-options__option h5 {
   color: #3d5051;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
   margin: 30px 0 20px 0;
@@ -329,8 +329,7 @@ section a {
 .home-options__option p {
   color: #5f5f5f;
   font-size: 1.25rem;
-  font-weight: 300;
-  height: 130px;
+  /* font-weight: 300; */
   line-height: 1.5;
   margin: 0 auto;
   padding: 0 10px 0 10px;
@@ -338,7 +337,7 @@ section a {
 }
 
 .home-options__option ul {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   list-style-type: none;
   padding-left: 30%;
   text-align: left;
