@@ -28,7 +28,8 @@ Enterprise VPC by following these steps:
     traffic (i.e. your application server) to come from.
 1. Choose a **Redis** **Module** that you would like to use. If you
     select 'RediSearch' please provide the estimated number of documents
-    you are about to index.
+    you are about to index. If you select 'RedisGraph' you can figure out the
+    needed input [here].(https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
 1. Choose a **Data Eviction Policy** or accept the default.
 1. Periodic backups - If you would like periodic backups of your
     database, enter the path to storage here. For specific information
