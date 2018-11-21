@@ -24,20 +24,20 @@ To get started with custom monitoring:
         version: '3'
         services:
             prometheus-server:
-            image: prom/prometheus
-            ports:
-                - 9090:9090
-            volumes:
-                - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+                image: prom/prometheus
+                ports:
+                    - 9090:9090
+                volumes:
+                    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
             grafana-ui:
-            image: grafana/grafana
-            ports:
-                - 3000:3000
-            environment:
-                - GF_SECURITY_ADMIN_PASSWORD=secret
-            links:
-                - prometheus-server:prometheus
+                image: grafana/grafana
+                ports:
+                    - 3000:3000
+                environment:
+                    - GF_SECURITY_ADMIN_PASSWORD=secret
+                links:
+                    - prometheus-server:prometheus
         ```
     1. To start the containers, run: `docker-compose up -d`
     1. To check that all the containers are up, run: `docker ps`
