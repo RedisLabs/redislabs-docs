@@ -56,8 +56,7 @@ Before configuring a CRDB, you will need:
     CRDB.
 1. An existing database cannot be configured to be a CRDB and visa
     versa. You must create a new CRDB and migrate your existing data.
-1. CRDBs do not currently interoperate with other modules (e.g. ReJSON,
-    RediSearch, etc.). You must use only the data types supported by
+1. CRDBs do not currently interoperate with other [modules]({{< relref "/rs/developing/modules/_index.md" >}}). You must use only the data types supported by
     CRDBs.
 1. Access to CRDBs does not work with IP based connection management
     via the Discovery Service, it requires the setup and use of FQDNs or

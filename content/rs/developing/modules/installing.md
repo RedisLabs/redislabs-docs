@@ -10,12 +10,12 @@ Enterprise Software (RS). There are two types
 
 1. Redis Labs pre-packaged modules - To download these modules, go to
     the [Redis Enterprise downloads
-    page](https://redislabs.com/products/redis-pack/downloads/). For more specific
+    page](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo). For more specific
     information on each module:
-    1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
-    1. [RediSearch
-        Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
     1. [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
+    1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+    1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 1. Custom packaged modules - For instructions on packing up any module
     from redismodules.com, see [Developing with
     Modules]({{< relref "/rs/developing/modules/_index.md" >}}).

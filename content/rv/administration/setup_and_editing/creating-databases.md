@@ -28,8 +28,9 @@ Enterprise VPC by following these steps:
 1. Enter a **Source IP/Subnet** that you would like to require source
     traffic (i.e. your application server) to come from.
 1. Choose a **Redis** **Module** that you would like to use. If you
-    select 'RediSearch' please provide the estimated number of documents
-    you are about to index.
+    select 'RediSearch', provide the estimated number of documents
+    you want to index. If you select 'RedisGraph' you can calculate the
+    required resources with the [sizing calculator].(https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
 1. Choose a **Data Eviction Policy** or accept the default.
 1. Periodic backups - If you would like periodic backups of your
     database, enter the path to storage here. For specific information

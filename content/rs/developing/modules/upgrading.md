@@ -17,13 +17,12 @@ fixes.
     page](https://redislabs.com/products/redis-pack/downloads/).
     For more specific information on developing with each module
     see:
+    1. [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
-    1. [[RediSearch
-        Enterprise)
-    1. [ReBloom)
+    1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 1. Custom packaged modules - For instructions on packing up any
-    module from
-    [redismodules.com](http://redismodules.com)
+    module from [redismodules.com](http://redismodules.com)
     to use in upgrades, see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
 ### Deploying the Packaged Module into Redis Enterprise Software
