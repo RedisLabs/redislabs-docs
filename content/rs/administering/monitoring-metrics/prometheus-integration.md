@@ -13,7 +13,7 @@ Redis Enterprise lets you connect your Prometheus or Grafana server to your Redi
 
 In each cluster, the metrics_exporter component listens on port 8070 and serves as a prometheus scraping endpoint that send metrics out.
 
-## Quick Start
+## Quick Start 
 
 To get started with custom monitoring:
 
