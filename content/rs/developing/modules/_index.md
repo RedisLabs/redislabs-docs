@@ -18,6 +18,7 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
 - RedisGraph
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
+    - [Sizing you graph](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
 - ReJSON
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}})
     - [Developing with ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
