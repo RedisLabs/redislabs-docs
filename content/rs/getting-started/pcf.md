@@ -94,7 +94,7 @@ a service in PCF Apps Manager.
 
 You now have a Redis database on Redis Enterprise Software!
 
-## PCF Deployment Backup and Restore
+## Backup and Restore
 
 You must use the BOSH Backup and Restore (BBR) command-line tool 
 to backup and restore your PCF deployment. These backup and restore instructions 
@@ -105,12 +105,18 @@ deployment backup and restore, see the [PCF documentation](https://docs.pivotal.
 
 To install the BBR command-line tool:
 
-1. Find the latest version of the BBR tool at: `https://github.com/cloudfoundry-incubator/bosh-backup-and-restore/releases`
+1. Find the latest version of the BBR tool at:
+
+    https://github.com/cloudfoundry-incubator/bosh-backup-and-restore/releases
+
 1. Right-click on the latest tar archive of the tool and copy the link address.
 1. To download the BBR tool, in the Ops Manager run:
-   wget <archive link address> -O bbr.tar && tar -xvf bbr.tar
-1. Extract the archive.
-1. scp bbr ubuntu@52.13.176.148:/home/ubuntu/
+
+    ```
+    wget <archive_link_address> -O bbr.tar && tar -xvf bbr.tar
+    ```
+
+The bbr tool is extracted to `/releases/bbr`.
 
 ### Backup
 
@@ -177,7 +183,7 @@ To restore a Redis Enterprise for PCF deployment:
     `rladmin node 1 recovery_path set /var/vcap/store/redis/redis/`
 
     `rladmin node 2 recovery_path set /var/vcap/store/redis/redis/`
-    
+
     `rladmin node 3 recovery_path set /var/vcap/store/redis/redis/`
 
 1. To verify that database recovery is ready, run: `rladmin recover list`
