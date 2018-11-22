@@ -37,12 +37,16 @@ $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 red
 
 ### Step 2: Setup a Cluster
 
-Direct your browser to https://localhost:8443 on the host machine to see
-the Redis Enterprise Software web console. Simply click the **Setup**
-button to get started.
+In your web browser on the host machine, go to https://localhost:8443 to see
+the Redis Enterprise Software web console.
 
-Note: Depending on your browser, you may see a certificate error. Simply
+Note:
+
+* Depending on your browser, you may see a certificate error. Simply
 choose "continue to the website" to get to the setup screen.
+* If you see an error from nginx, try again after a few minutes.
+
+Simply click the **Setup** button to get started.
 
 ![Redis Enterprise Software Setup
 Screen](/images/rs/setup-windows.png?width=600&height=246)
@@ -65,17 +69,21 @@ screen](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
 
 ### Step 3: Create a Database
 
-Choose the "new redis db" option.
+Select "redis database" and the "single region" deployment, and click Next.
 
 ![Redis Enterprise Software create database
 screen](/images/rs/RP-SetupScreen5.jpeg?width=600&height=375)
 
-On the "new redis db" page, click the "show advanced option" link and
-enter "database1" for a database name and "12000" for the endpoint port
-number. Then click "Activate" to create your database.
+On the "create database" page, enter "database1" for a database name. Then 
+click "Show advanced options" and enter "12000" for the endpoint port
+number. Click "Activate" to create your database.
 
 ![Redis Enterprise Software configure new database
 screen](/images/rs/RP-DBScreen2.jpeg?width=600&height=378)
+
+Note: If you cannot activate the database because of a memory limitation, 
+make sure that Docker has enough memory allocated in the Advanced section 
+of Docker Settings.
 
 You now have a Redis database!
 
