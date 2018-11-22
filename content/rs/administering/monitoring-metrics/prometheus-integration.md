@@ -17,10 +17,51 @@ In each cluster, the metrics_exporter component listens on port 8070 and serves 
 
 To get started with custom monitoring:
 
-1. If you don't already have Prometheus and Grafana installed, setup the Prometheus and Grafana servers:
-    1. You can use this _docker-compose.yml_ file to define the containers:
+1. Copy this Prometheus configuration into `./prometheus/prometheus.yml` in your current folder:
 
-        ```
+    * If you already have prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration and skip the next step.
+    * Replace `<cluster_name_or_ipaddress>` with your actual cluster FQDN or IP address.
+
+    ```yml
+    global:
+    scrape_interval: 15s
+    evaluation_interval: 15s
+
+    # Attach these labels to any time series or alerts when communicating with
+    # external systems (federation, remote storage, Alertmanager).
+    external_labels:
+        monitor: "prometheus-stack-monitor"
+
+    # Load and evaluate rules in this file every 'evaluation_interval' seconds.
+    #rule_files:
+    # - "first.rules"
+    # - "second.rules"
+
+    scrape_configs:
+    # scrape Prometheus itself
+    - job_name: prometheus
+        scrape_interval: 10s
+        scrape_timeout: 5s
+        static_configs:
+        - targets: ["localhost:9090"]
+
+    # scrape Redis Enterprise
+    - job_name: redis-enterprise
+        scrape_interval: 30s
+        scrape_timeout: 30s
+        metrics_path: /
+        scheme: https
+        tls_config:
+        insecure_skip_verify: true
+        static_configs:
+        - targets: ["<cluster_name_or_ipaddress>:8070"]
+    ```
+
+1. Setup your Prometheus and Grafana servers.
+    To setup Prometheus and Grafana on Docker containers:
+    1. Create a _docker-compose.yml_ file with this yaml contents:
+
+        ```yml
         version: '3'
         services:
             prometheus-server:
@@ -42,74 +83,35 @@ To get started with custom monitoring:
     1. To start the containers, run: `docker-compose up -d`
     1. To check that all the containers are up, run: `docker ps`
     1. In your browser, login to Prometheus at http://localhost:9090 to make sure the server is running.
-    1. Look for the **node_up** metric to make sure that you are receiving statistics from Redis Enterprise.
-1. Copy this Prometheus configuration into `./prometheus/prometheus.yml` in your current folder:
+    1. Enter **node_up** in the Expression field.
+        If Prometheus is connected to the Redis Enterprise cluster, the cluster metrics are shown.
 
-	NOTES:
-        
-    * If you already have prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration.
-    * Replace `<your cluster FQDN>` with your actual cluster FQDN.
-
-    ``` 
-    global:
-    scrape_interval:     15s
-    evaluation_interval: 15s
-
-    # Attach these labels to any time series or alerts when communicating with
-    # external systems (federation, remote storage, Alertmanager).
-    external_labels:
-        monitor: 'prometheus-stack-monitor'
-
-    # Load and evaluate rules in this file every 'evaluation_interval' seconds.
-    #rule_files:
-    # - "first.rules"
-    # - "second.rules"
-
-    scrape_configs:
-    # scrape Prometheus itself
-    - job_name: 'prometheus'
-        scrape_interval: 10s
-        scrape_timeout: 5s
-        static_configs:
-        - targets: ['localhost:9090']
-
-    # scrape Redis Enterprise
-    - job_name: 'redis-enterprise'
-        scrape_interval: 30s
-        scrape_timeout: 30s
-        metrics_path: /
-        scheme: https
-        tls_config:
-        insecure_skip_verify: true
-        static_configs:
-        - targets: ['<your cluster FQDN>:8070']
-    ```
-
-1. Configure the Grafana datasource and dashboards:
+1. Configure the Grafana datasource:
     1. Login to Grafana. If you installed Grafana locally, go to http://localhost:3000 and login with:
 
-    	Username: admin
-    	Password: secret
+    	* Username: admin
+    	* Password: secret
 
-1. Click **Data Sources**.
+    1. In the Grafana configuration menu, select **Data Sources**.
 
-    ![data-sources](/images/rs/data-sources.png?width=300)
+        ![data-sources](/images/rs/data-sources.png?width=300)
 
-1. Add a new data source with:
+    1. Add a new data source with:
 
-    * Name: `redis-enterprise`
-    * Type: `Prometheus`
-    * URL: `http://<your prometheus address>:9090`
-    * Access: `server`
+        * Name: `redis-enterprise`
+        * Type: `Prometheus`
+        * URL: `http://<your prometheus address>:9090`
+        * Access: `Server`
 
     NOTES:
 
-    * Make sure it is accessible to the grafana server, otherwise use the 'browser' option.
-    * In a testing environments, you can also select 'Skip TLS verification'.
+    * If the network port is not accessible to the Grafana server, 
+    select the 'Browser' option from the Access menu.
+    * In a testing environment, you can select 'Skip TLS verification'.
 
     ![prometheus-connection](/images/rs/prometheus-connection.png?width=500)
 
-1. Add dashboard for cluster, node, and database metrics.
+1. Add dashboards for cluster, node, and database metrics.
 
 ## Metrics
 
