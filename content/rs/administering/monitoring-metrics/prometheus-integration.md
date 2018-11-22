@@ -5182,7 +5182,7 @@ To get started with custom monitoring:
     1. In the Import options, select the `redis-enterprise` datasource and click **Import**.
    
 The dashboards that you create from the configurations are sample dashboards. 
-You can change them to match your needs.
+For more information about configuring dashboards, see the [Grafana documentation](http://docs.grafana.org).
 
 ## Metrics
 
