@@ -120,21 +120,25 @@ The bbr tool is extracted to `/releases/bbr`.
 
 ### Backup
 
-Pivotal recommends that you run a backup daily.
+Pivotal recommends that you run a daily backup.
 
 Before you configure a backup process you must have:
 
 * BBR user credentials - Find the values for `bbr_user` and `bbr_user_pass` in the Ops Manager file: 
-`https://<host>/api/v0/deployed/director/credentials/uaa_bbr_client_credentials`
-* Deployment name - On the Ops Manager, run the command `bosh -e cf deployments` 
-and find the `deployment_name` that begins with `redis-enterprise-`
+https://<host>/api/v0/deployed/director/credentials/uaa_bbr_client_credentials
+* Deployment name - On the Ops Manager, find the deployment name that begins 
+    with `redis-enterprise-` in the output of the command:
+
+    ```
+    bosh -e cf deployments
+    ```
 
 To backup your Redis Enterprise for PCF deployment:
 
 1. Run the backup command: 
    
     ```
-    BOSH_CLIENT_SECRET=<bbr_user_pass> releases/bbr deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> backup
+    BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> releases/bbr deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> backup
     ```
 
     For example:
@@ -144,7 +148,7 @@ To backup your Redis Enterprise for PCF deployment:
 
     You can remove the --debug flag to reduce the command output.
 
-    The backup is saved in the <deployment_name>_<date> directory, for example: `redis-enterprise-b25242b578838c375ba1_20180312T135418Z`
+    The backup is saved in the directory named with `<deployment_name>_<date>`, for example: `redis-enterprise-b25242b578838c375ba1_20180312T135418Z`
 
 1. Copy this backup archive from the Ops Manager machine to a dedicated storage location.
 
@@ -163,7 +167,7 @@ To restore a Redis Enterprise for PCF deployment:
     Note: This command does not recover databases.
 
     ```
-    BOSH_CLIENT_SECRET=<bbr_user_pass> bbr deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> restore --artifact-path=<archive_path>
+    BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> restore --artifact-path=<archive_path>
     ```
     
     For example:
@@ -172,10 +176,10 @@ To restore a Redis Enterprise for PCF deployment:
 
 1. Connect to one of the cluster machines with SSH.
 1. To see that all of the nodes are connected, run: `rladmin status extra all`
-1. To set recovery source path for all nodes, run:
+1. To set the recovery source path for all nodes, run:
     
     ```
-    rladmin node <node_id> recovery_path set import_path
+    rladmin node <node_id> recovery_path set <import_path>
     ```
     
     For example:
@@ -189,5 +193,11 @@ To restore a Redis Enterprise for PCF deployment:
 1. To verify that database recovery is ready, run: `rladmin recover list`
     
     Make sure there are no errors in the command output.
-1. To start database recovery, run: `rladmin recover all`
+
+1. To start database recovery, run:
+
+    ```
+    rladmin recover all
+    ```
+
 1. In the Ops Manager, uncheck the **Recovery Mode** checkbox and click **Apply changes**.
