@@ -176,7 +176,7 @@ To restore a Redis Enterprise for PCF deployment:
 
 1. Connect to one of the cluster machines with SSH.
 1. To see that all of the nodes are connected, run: `rladmin status extra all`
-1. To set the recovery source path for all nodes, run:
+1. On each node, set the [cluster recovery]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) source path to the cluster backup file:
     
     ```
     rladmin node <node_id> recovery_path set <import_path>
