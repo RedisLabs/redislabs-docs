@@ -370,10 +370,6 @@ section a {
   .home-options {
     width: 860px;
   }
-
-  .home-options__option p {
-    height: 160px;
-  }
 }
 
 @media screen and (max-width: 860px){
@@ -396,7 +392,6 @@ section a {
 
   .home-options__option p {
     width: 88%;
-    height: auto;
   }
 
   .home-options__option ul {
