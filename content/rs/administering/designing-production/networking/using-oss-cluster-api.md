@@ -38,11 +38,5 @@ for the specified database.
 
     Note: To disable OSS Cluster API with rladmin, run: `tune db <database name or ID> oss_cluster disable`
 
-1. Reconfigure the database to load the new settings and restart the endpoint proxy.
-
-    ```sh
-    $ sudo rlutil dmc_reconf bdb=<db-id>
-    ```
-
 To get the benefits of using the OSS Cluster API, make sure that you are using 
 Redis clients that are cluster-aware, such as redis-py-cluster or jedis.
