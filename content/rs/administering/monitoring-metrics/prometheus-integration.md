@@ -3,8 +3,9 @@ Title: Redis Enterprise Software Integration with Prometheus
 description: 
 weight: $weight
 alwaysopen: false
+categories: ["RS"]
 ---
-Redis Enterprise lets you connect your Prometheus or Grafana server to your Redis Enterprise cluster in order to collect and display metrics data. Metrics are exposed at the node, database, shard and proxy levels.
+From Redis Enterprise Software version 5.0.2 and higher, you can connect your Prometheus or Grafana server to your Redis Enterprise cluster in order to collect and display metrics data. Metrics are exposed at the node, database, shard and proxy levels.
 
 *   Prometheus ([https://prometheus.io/](https://prometheus.io/)) is an open-source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 *   Grafana ([https://grafana.com/](https://grafana.com/)) is an open-source, feature-rich metrics dashboard and graph editor that can process Prometheus data.
