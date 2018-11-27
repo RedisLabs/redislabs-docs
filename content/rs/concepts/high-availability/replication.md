@@ -11,12 +11,17 @@ which is constantly synchronized with the master node. If the master
 node fails, an automatic failover occurs and the slave node is promoted
 to be the new master node. When the old master node recovers, it becomes
 the slave node of the new master node. This auto-failover mechanism
-guarantees data is served with minimal to no interruption.
+guarantees that data is served with minimal to no interruption.
 
-When rack-zone awareness is used, there is additional and more advanced
+You can tune your high availability configuration with:
+
+* [Rack/Zone
+Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) - When rack-zone awareness is used, there is additional and more advanced
 logic used for determining which nodes get designated as the master or
-slave, as explained in [Rack/zone
-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+slave.
+* [High Availability for Slave Shards]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) - When high availability 
+for slave shards is used, the new slave is automatically created to maintain 
+the high availability redundancy.
 
 **Note**: Enabling replication has implications for the total database
 size, as explained in [Database memory
