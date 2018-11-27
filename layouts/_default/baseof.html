@@ -5,19 +5,26 @@
   </head>
   <body data-url="{{ .RelPermalink }}">
     {{ partial "flex/body-beforecontent" . }}
-   
-    <div class="main-content">
-      <div class="main-content-left">
-        {{ block "main" . }}
-        {{ end }}
+
+    {{if .IsHome}}
+      {{ partial "home/hero" . }}
+      {{ partial "home/options" . }}
+    {{end}}
+
+    {{if not .IsHome}}
+      <div class="main-content">
+          <div class="main-content-left">
+            {{ block "main" . }}
+            {{ end }}
+          </div>
+          <div class="main-content-right">
+            {{ partial "mini-toc" . }}
+          </div>
       </div>
-      <div class="main-content-right">
-        {{ partial "mini-toc" . }}
+      <div class="main-content-bottom">
+          {{ partial "post-bottom" . }}
       </div>
-    </div>
-    <div class="main-content-bottom">
-        {{ partial "post-bottom" . }}
-    </div>
+    {{end}}
     {{ partial "flex/body-aftercontent" . }}
 
     {{ block "footer" . }}

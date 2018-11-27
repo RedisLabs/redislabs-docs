@@ -16,3 +16,6 @@
 
 # Windows files
 Thumbs.db
+
+# MacOS files
+.DS_Store

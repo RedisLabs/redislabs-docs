@@ -21,3 +21,13 @@
             var baseurl = "{{.Site.BaseURL}}";
       </script>
       {{ partial "custom-head.html" . }}
+      
+      {{if .IsHome}}
+      <style>
+            @media screen and (max-width: 768px) {
+                  .nice-select {
+                  display: none !important;
+                  }
+            }
+      </style>
+      {{end}}

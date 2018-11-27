@@ -263,6 +263,153 @@ section a {
   display: none;
 }
 
+/* Home */
+.home-hero {
+  padding: 2.75rem 0 1.5rem 0;
+  background-image: url(./img/bg-poly-white-1.jpg);
+  background-size: cover;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.home-hero h1 {
+  color: #dc382d;
+  font-size: 3.3rem;
+  line-height: 1.4;  
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: none;
+}
+
+.home-hero p {
+  color: #5f5f5f;
+  font-size: 2.25rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.home-options {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 6.5rem;
+  width: 1020px;
+}
+
+.home-options__option {
+  flex: 1;    
+  text-align: center;
+}
+
+.home-options__option__icon {
+  height: 90px;  
+  position: relative;
+}
+
+.home-options__option__icon img {
+  width: 100px;
+}
+
+.home-options__option__icon a.--opener {
+  height: 100%;
+  left: 28%;
+  position: absolute;
+  top: 0;  
+  width: 140px;
+}
+
+.home-options__option h5 {
+  color: #3d5051;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  margin: 30px 0 20px 0;
+}
+
+.home-options__option p {
+  color: #5f5f5f;
+  font-size: 1.25rem;
+  /* font-weight: 300; */
+  line-height: 1.5;
+  margin: 0 auto;
+  padding: 0 10px 0 10px;
+  width: 75%;
+}
+
+.home-options__option ul {
+  font-size: 1.15rem;
+  list-style-type: none;
+  padding-left: 30%;
+  text-align: left;
+}
+
+.home-options__option ul li {
+  line-height: 1.5;
+  padding-left: 2rem;
+  position: relative;  
+}
+
+.home-options__option ul li a:hover {  
+  color: #3d5051;
+  text-decoration: none;
+}
+
+.home-options__option ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: url(./img/ico-check-mark.svg);
+  background-repeat: no-repeat;
+  left: 0;
+  top: .375rem;
+  width: 1.175rem;
+  height: 1.588rem;
+}
+
+@media screen and (max-width: 1024px){
+  .home-options {
+    width: 860px;
+  }
+}
+
+@media screen and (max-width: 860px){
+  .home-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-hero p {
+    font-size: 1.6rem;
+    width: 98%;
+  }
+
+  .home-options {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-options__option {
+    margin-bottom: 40px;
+  }
+
+  .home-options__option p {
+    width: 88%;
+  }
+
+  .home-options__option ul {
+    padding-left: 25%;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 860px){
+  .home-options__option p {
+    width: 50%;
+  }
+
+  .home-options__option ul {
+    padding-left: 40%;
+  }
+}
+
 .searchcontainer {
   margin: 0 0 1rem 0;
   display: -webkit-box;
