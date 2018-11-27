@@ -5,27 +5,31 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When a master shard fails, a slave shard is automatically changed to a master shard 
+When a master shard fails, a slave shard is automatically promoted to a master shard 
 to maintain data availability. If there are no other slave shards in the database, 
 this creates a single point of failure until a new slave shard is manually created.
 
-To automatically avoid this single point of failure, you can configure the database 
-to automatically create a new slave shard as in this example flow:
+To automatically avoid this single point of failure, you can configure the cluster 
+to automatically relocate the slave shard to another available node. In practice, 
+slave relocation creates a new slave shard and replicates the data from the master 
+shard to the new slave shard. For example:
 
 1. Node:2 has a master shard and node:3 has the corresponding the slave shard.
-2. Node:2 fails and triggers a failover so that the slave shard on node:3 is promoted to master.
-3. If slave HA is enabled, a new slave shard is created on an available node that 
+1. Node:2 fails and triggers a failover.
+1. The slave shard on node:3 is promoted to master.
+1. If slave HA is enabled, a new slave shard is created on an available node that 
 that does not also have the master shard.
+1. The data from the master shard is replicated to the new slave shard.
 
-Note: If slave HA is enabled for a master shard that does not have any slaves, 
-on master failure a new master is created on an available node. The data from the 
+Note: If slave HA is enabled for a database that does not have any slave shards, 
+the failover creates a new master on an available node. The data from the 
 original master is lost but a new master is available for new transactions. This 
 is a typical for caching use cases.
 
 ## Grace Period
 
-By default, RS has a X second grace period before new slave shards are created. To configure 
-this grace period from rladmin, run:
+By default, slave HA has a X second grace period before new slave shards are created. 
+To configure this grace period from rladmin, run:
 
     rladmin tune cluster slave_ha_grace_period <time_in_seconds>
 
@@ -46,14 +50,10 @@ and relies on a working slave.
 
 ## Cooldown Periods
 
-Both the cluster and the database have cooldown periods. Slave HA cannot run on 
-another node in a cluster until the cooldown period for the cluster passes. 
-Similarly, the database cannot go through another slave HA relocation until the 
+Both the cluster and the database have cooldown periods. Slave relocation cannot run 
+on another node in a cluster until the cooldown period for the cluster passes. 
+Similarly, the database cannot go through another slave relocation until the 
 cooldown period for the database passes.
-
-## Constraints
-
-**Do we need to mention the planner constraints?**
 
 ## Alerts
 
