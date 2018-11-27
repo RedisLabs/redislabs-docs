@@ -12,7 +12,7 @@ From Redis Enterprise Software version 5.0.2 and higher, you can connect your Pr
 
 ![grafana-prometheus](/images/rs/grafana-prometheus.png?width=500)
 
-In each cluster, the metrics_exporter component listens on port 8070 and serves as a prometheus scraping endpoint that send metrics out.
+In each cluster, the metrics_exporter component listens on port 8070 and serves as a Prometheus scraping endpoint for obtaining metrics.
 
 ## Quick Start 
 
@@ -20,7 +20,7 @@ To get started with custom monitoring:
 
 1. Copy this Prometheus configuration into `./prometheus/prometheus.yml` in your current folder:
 
-    * If you already have prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration and skip the next step.
+    * If you already have Prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration and skip the next step.
     * Replace `<cluster_name_or_ipaddress>` with your actual cluster FQDN or IP address.
 
     ```yml
