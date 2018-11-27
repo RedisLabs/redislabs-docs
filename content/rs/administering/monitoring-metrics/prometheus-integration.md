@@ -25,12 +25,12 @@ To get started with custom monitoring:
 
     ```yml
     global:
-    scrape_interval: 15s
-    evaluation_interval: 15s
+      scrape_interval: 15s
+      evaluation_interval: 15s
 
     # Attach these labels to any time series or alerts when communicating with
     # external systems (federation, remote storage, Alertmanager).
-    external_labels:
+      external_labels:
         monitor: "prometheus-stack-monitor"
 
     # Load and evaluate rules in this file every 'evaluation_interval' seconds.
@@ -40,22 +40,22 @@ To get started with custom monitoring:
 
     scrape_configs:
     # scrape Prometheus itself
-    - job_name: prometheus
+      - job_name: prometheus
         scrape_interval: 10s
         scrape_timeout: 5s
         static_configs:
-        - targets: ["localhost:9090"]
+          - targets: ["localhost:9090"]
 
     # scrape Redis Enterprise
-    - job_name: redis-enterprise
+      - job_name: redis-enterprise
         scrape_interval: 30s
         scrape_timeout: 30s
         metrics_path: /
         scheme: https
         tls_config:
-        insecure_skip_verify: true
+          insecure_skip_verify: true
         static_configs:
-        - targets: ["<cluster_name_or_ipaddress>:8070"]
+          - targets: ["<cluster_name_or_ipaddress>:8070"]
     ```
 
 1. Setup your Prometheus and Grafana servers.
