@@ -28,7 +28,7 @@ is a typical for caching use cases.
 
 ## Grace Period
 
-By default, slave HA has a X second grace period before new slave shards are created. 
+By default, slave HA has a 15 minute grace period before new slave shards are created. 
 To configure this grace period from rladmin, run:
 
     rladmin tune cluster slave_ha_grace_period <time_in_seconds>
@@ -51,9 +51,19 @@ and relies on a working slave.
 ## Cooldown Periods
 
 Both the cluster and the database have cooldown periods. Slave relocation cannot run 
-on another node in a cluster until the cooldown period for the cluster passes. 
+on another node in a cluster until the cooldown period for the cluster passes, which is 1 hour. 
 Similarly, the database cannot go through another slave relocation until the 
-cooldown period for the database passes.
+cooldown period for the database passes, which is 24 hours.
+
+To configure this grace period from rladmin, run:
+
+    * For a cluster:
+
+        rladmin tune cluster slave_ha_cooldown_period <time_in_seconds>
+    
+    * For a database:
+
+        rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
 
 ## Alerts
 
