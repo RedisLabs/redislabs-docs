@@ -69,6 +69,9 @@ email for the login and a password.
 
     ![image9](/images/rs/image9.png?width=1000&height=611)
 
+1. Click **OK** to confirm that you are aware of the SSL certificate replacement 
+for the server, and proceed through the browser warning.
+
 We will repeat the same operations for cluster 2. There are only a few
 differences.
 
