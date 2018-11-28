@@ -1,5 +1,6 @@
-{{if eq .RelPermalink "/rs/"}}
 <!-- Version selector -->
+{{if .Params.categories}}
+{{if eq (index .Params.categories 0) "RS"}}
 <script>
 (function () {
   var v = sessionStorage.getItem('_rs_version');
@@ -30,8 +31,9 @@ window.onclick = function(e) {
     }
   }
 }</script>
-<!-- /Version selector -->
 {{end}}
+{{end}}
+<!-- /Version selector -->
 
 <script src="{{"js/clipboard.min.js" | relURL}}"></script>
 
