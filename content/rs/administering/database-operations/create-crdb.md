@@ -3,7 +3,6 @@ Title: Create a Geo-Replicated Conflict-free Replicated Database (CRDB)
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RS"]
 ---
 CRDBs span multiple Redis Enterprise Software (RS) clusters. Overview of
 the steps to create a CRDB:
