@@ -61,6 +61,9 @@ Then click **Next** button.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
 
+1. Click **OK** to confirm that you are aware of the SSL certificate replacement 
+for the server, and proceed through the browser warning.
+
 ## Step 3: Create a Database
 
 1. Select "redis database" and the "single region" deployment, and click Next.
