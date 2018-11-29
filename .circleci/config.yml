@@ -97,11 +97,6 @@ jobs:
                 command:  |
                     export VERSION=${CIRCLE_BRANCH/-build/}
                     aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only
-            - run:
-                name: Replace index.html
-                command:  |
-                    export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 cp s3://docs.redislabs.com/index.html s3://docs.redislabs.com/index.html --website-redirect https://docs.redislabs.com/latest/index.html
 
 workflows:
   version: 2
