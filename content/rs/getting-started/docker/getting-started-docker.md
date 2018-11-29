@@ -1,41 +1,53 @@
 ---
-Title: Quick Setup of Redis Enterprise Software (RS)
+Title: Getting Started with Redis Enterprise Software using Docker 
 description: 
-weight: 10
+weight: $weight
 alwaysopen: false
+aliases:
+    - /rs/getting-started/docker/windows/
+    - /rs/getting-started/docker/linux/
+    - /rs/getting-started/docker/macos/
 categories: ["RS"]
 ---
-The steps to set up a Redis Enterprise Software (RS) cluster with a
-single node are super simple and go as follows:
+You can install [Docker Engine](https://www.docker.com/get-started) on Windows, 
+MacOS or Linux-based operating systems. After you install Docker Engine, you can 
+run Redis Enterprise Software (RS) as Docker containers.
 
-- Step 1: Install Redis Enterprise Software
-- Step 2: Setup a Redis Enterprise Software cluster
-- Step 3: Create a new Redis database
-- Step 4: Connect to your Redis database
+Note: Windows and MacOS are currently only supported for development and testing environments.
 
-"Quick Setup" steps on this page apply to a Linux based system install.
-For instructions for running Docker on Linux, Windows, or MacOS, go to the [Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
+To get started with a single Redis Enterprise Software container:
 
-## Step 1: Install Redis Enterprise Software
+- Step 1: Install Docker Engine for your operating system
+- Step 2: Run the RS Docker container
+- Step 3: Setup a cluster
+- Step 4: Create a new database
+- Step 5: Connect to your database
 
-You can download the binaries from the [Redis Enterprise Software
-download
-site](https://app.redislabs.com/#/sign-up/software?direct=true). Once
-you have the bits on a Linux based OS, you need to untar the image
+## Step 1: Install Docker Engine
+
+Go to the Docker installation page for your operating system for detailed instructions 
+about installing Docker Engine:
+
+- [Linux](https://docs.docker.com/install/#supported-platforms)
+- [MacOS](https://docs.docker.com/docker-for-mac/install/)
+- [Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
+
+## Step 2: Run the Container
+
+To pull and start the Redis Enterprise Software Docker container, run this 
+`docker run` command in the terminal or command-line for your operating system.
+
+Note: On Windows, make sure Docker is configured to run Linux-based containers.
 
 ```src
-$ tar vxf <downloaded tar file name>
+$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis
 ```
 
-Once the tar command completes, you will find a new install.sh script in
-the current directory.
+The Docker container with RS runs on your localhost with port 8443 open for HTTPS 
+connections and with port 12000 open for redis client connections.
 
-```src
-$ sudo ./install.sh -y
-```
-
-<!-- Also in getting-started-docker.md -->
-## Step 2: Setup a Cluster
+<!-- Also in quick-start.md -->
+## Step 3: Setup a Cluster
 
 1. In the web browser on the host machine, go to https://localhost:8443 to see
 the Redis Enterprise Software web console.
@@ -61,7 +73,7 @@ Then click **Next** button.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
 
-## Step 3: Create a Database
+## Step 4: Create a Database
 
 1. Select "redis database" and the "single region" deployment, and click Next.
 
@@ -78,7 +90,7 @@ of Docker Settings.
 
 You now have a Redis database!
 
-## Step 4: Connect to your Database
+## Step 5: Connect to your Database
 
 After you create the Redis database, you are ready to store data in your
 database. You can test connectivity to your database with:
