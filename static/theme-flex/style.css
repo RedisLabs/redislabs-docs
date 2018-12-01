@@ -1804,6 +1804,7 @@ article > aside .menu .menu__version-selector {
   padding: 0 10px 0 8px;
   position: absolute;
   right: 0;
+  top: 30px;
 }
 
 article > aside .menu .menu__version-selector:hover {
@@ -1863,6 +1864,14 @@ article > aside .menu .menu__version-selector.--open .menu__version-selector__to
 
 article > aside .menu .menu__version-selector.--open .menu__version-selector__list {
   display: block;
+}
+
+article > aside .menu > li > .children {
+  display: none;
+}
+
+article > aside .menu > li.parent > .children {
+  display: flex;
 }
 
 /* Example media queries */
