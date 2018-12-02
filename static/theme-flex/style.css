@@ -823,6 +823,12 @@ article section.page p > code,
 article section.page li code,
 article section.page table code {
   padding: 0 0.25rem; }
+
+/* Code source and copy */
+article section.page .highlight {
+  position: relative;
+}
+
 article section.page pre {
   background-color: #f7f7f7 !important;
   border-radius: .2rem;
@@ -834,19 +840,20 @@ article section.page pre {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  /* position: relative; */
   max-width: 100%;
   width: 100%;
   display: inline-grid;
-  position: relative;
-  /* overflow: visible; */
 }
 article section.page pre .copy-to-clipboard {
-  /* float: right; */
-  position: absolute;
-  right: 10px;
+  background: #f7f7f7;
   cursor: pointer;
-  top: 10px;
+  padding-bottom: 4px;
+  padding-top: 10px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 24px;
+  width: 28px;
 }
 article section.page pre[class*="language-"] {
   background-color: #333;
@@ -872,6 +879,7 @@ article section.page pre[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
   white-space: pre;
+  width: 105%; /* to make room for copy icon once scrolled fully to the right */  
 }
 
 ul.menu > li.dd-item:not(.parent) i {
@@ -2476,3 +2484,4 @@ i.icon-icons_plus, i.icon-icons_minus {
 .main-content-left > ol > li > ol {list-style: lower-alpha;}
 
 .main-content ol > li > ol > li > ol > li > ol  {list-style-type: lower-alpha;}
+
