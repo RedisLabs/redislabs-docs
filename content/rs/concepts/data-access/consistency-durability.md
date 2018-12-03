@@ -5,11 +5,11 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software (RES) comes with the ability to replicate data
+Redis Enterprise Software (RS) comes with the ability to replicate data
 to another slave for high availability and persist in-memory data on
 disk permanently for durability. With the new WAIT command, you can
 control the consistency and durability guarantees for the replicated and
-persisted database in RES.
+persisted database in RS.
 
 Any updates that are issued to the database are typically performed with
 the following flow depicted below;

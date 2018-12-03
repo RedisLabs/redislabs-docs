@@ -10,7 +10,7 @@ mechanism based on **firewalld** (which in turn configures the standard
 iptables system). The default configuration assigns the network
 interfaces to the **public** zone and blocks all ports, except 22 (SSH).
 
-Redis Enterprise Software (RES) installation on CentOS / RHEL 7
+Redis Enterprise Software (RS) installation on CentOS / RHEL 7
 automatically creates two firewalld system services:
 
 - A service named **redislabs**, which includes all ports and
@@ -31,7 +31,7 @@ configuration tools such as **firewall-cmd** (command line) or
 **firewall-config** (UI) to create more specific firewall policies that
 allow these two services through the firewall, as necessary.
 
-**Note**: If databases are created with non-standard RES ports (for
+**Note**: If databases are created with non-standard RS ports (for
 additional details, refer to [Server ports
 configuration]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}),
 you need to explicitly configure firewalld to make sure those ports are

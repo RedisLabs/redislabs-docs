@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software (RES) cluster offer a few master and slave
+Redis Enterprise Software (RS) cluster offer a few master and slave
 shard placement policies that govern how shards of each database is
 distributed and placed both at creation and at resharding.
 

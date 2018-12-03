@@ -59,7 +59,7 @@ in between.
 
 [Learn more about
 synchronization]({{< relref "/rs/developing/crdbs/_index.md" >}}) for
-each supported data type and how to develop with them on RES.
+each supported data type and how to develop with them on RS.
 
 ## Terminology
 

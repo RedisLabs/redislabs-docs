@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 This section includes various troubleshooting tips and tricks for Redis
-Enterprise Software (RES).
+Enterprise Software (RS).
 
 Topics:
 

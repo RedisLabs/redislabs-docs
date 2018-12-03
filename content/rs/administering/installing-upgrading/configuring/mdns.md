@@ -14,7 +14,7 @@ name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-nam
 ensure that the configurations and prerequisites, which are required for
 resolving databases' endpoints, are met. These configurations and
 perquisites are needed on the client machines, as well as on the
-machines you are using as Redis Enterprise Software (RES) nodes if you
+machines you are using as Redis Enterprise Software (RS) nodes if you
 are using the [Replica
 of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
 feature.

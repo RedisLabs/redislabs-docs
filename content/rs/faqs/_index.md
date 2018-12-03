@@ -82,7 +82,7 @@ Redis Enterprise works with all existing standard clients; it does not require y
 
 {{%expand "What am I allowed to do with the trial version?" %}}
 You can use, experience and administer the full capabilities of Redis
-Enterprise Software (RES), but you may not deploy it in a production
+Enterprise Software (RS), but you may not deploy it in a production
 environment. In addition, the trial version allows a maximum of four
 shards and is limited to thirty (30) days of use after initial
 installation on the first server in the cluster. After the thirty day
@@ -98,10 +98,10 @@ Contact us at <sales@redislabs.com> to learn about RS pricing.
 {{% /expand%}}
 
 {{%expand "What client can I use to connect to the databases in Redis Enterprise Software?" %}}
-Redis Enterprise Software (RES) works with any standard Redis client.
+Redis Enterprise Software (RS) works with any standard Redis client.
 Use your existing Redis client and code, as they work directly against a
-RES cluster. You point your existing standard Redis client and code
-connection string at the RES cluster, then scale on the RES cluster as
+RS cluster. You point your existing standard Redis client and code
+connection string at the RS cluster, then scale on the RS cluster as
 you need.
 {{% /expand%}}
 

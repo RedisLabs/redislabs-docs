@@ -35,7 +35,7 @@ every year but the product ship cycles may vary.
 End-of-Life for a given release occurs eighteen (18) months after the
 formal release of that version.
 
-|  Release Date – Full Support Starts for RES | End of Service Life (EOSL) |
+|  Release Date – Full Support Starts for RS | End of Service Life (EOSL) |
 |  ------ | ------ |
 |  5.2 – June 2018 | December 31st, 2019 |
 |  5.0.2 – Mar 2018 | Sep 30th, 2019 |
