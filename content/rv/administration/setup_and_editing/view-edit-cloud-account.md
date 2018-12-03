@@ -21,7 +21,7 @@ In edit mode please enter or update the following details:
 1. **AWS Console password** - RV AWS UI console user's password
 1. **IAM Users sign-in link** - This is the link you use to log into
     the AWS console (e.g.
-    https://YOUR-ACCOUNT-ID-WITHOUT-HYPENS.signin.aws.amazon.com/console)
+    https://<YOUR-ACCOUNT-ID-WITHOUT-HYPHENS>.signin.aws.amazon.com/console)
 
 You can delete your RV Cloud Account from our system by clicking on the
 **Delete** button. Please note, you can only delete a Cloud Account if
