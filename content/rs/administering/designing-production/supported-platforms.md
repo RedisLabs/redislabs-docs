@@ -13,7 +13,7 @@ Note: This document covers RS 5.0 and up.
 
 | **Platform** | **Versions/Information** |
 |------------|-----------------|
-| Ubuntu |  14.04, 16.04 64-bit, Server or Desktop. The Server version is recommended for production deployments. |
+| Ubuntu (Server or Desktop) |  14.04, 16.04 64-bit, 18.04 64-bit. The Server version is recommended for production deployments. |
 | RHEL/CentOS 6 |  6.7, 6.8, 6.9 64-bit. Requires at least "Minimal Install" configuration. |
 | RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5 64-bit. Requires at least "Minimal Install" configuration. For additional considerations, refer to [CentOS / RHEL 7 firewall configuration]({{< relref "/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}). |
 | Oracle Linux | 6.7, 6.8, 6.9 64-bit; 7.0, 7.1, 7.2, 7.3, 7.4 64-bit |
