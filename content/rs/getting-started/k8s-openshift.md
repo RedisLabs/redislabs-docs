@@ -79,7 +79,7 @@ You should receive the following response:
   serviceaccount/redis-enterprise-operator created  
   rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
 
-- [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac_sc.yaml)
+- [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/sb_rbac.yaml)
 
 If you’re deploying a service broker, also apply the sb_rbac.yaml file. First, edit the sb_rbac.yaml namespace field to reflect the namespace you’ve created or switched to during the previous steps. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker. We need this to allow our Service Broker application to expose and manage database plans.
 
