@@ -34,6 +34,10 @@ the current directory.
 $ sudo ./install.sh -y
 ```
 
+Note: RS installation on Ubuntu 18.04 fails if port 53 is used by systemd-resolved 
+to resolve DNS requests from locally running programs. To install RS on Ubuntu 18.04, 
+make sure that systemd-resolved is disabled before you install.
+
 <!-- Also in getting-started-docker.md -->
 ## Step 2: Setup a Cluster
 
