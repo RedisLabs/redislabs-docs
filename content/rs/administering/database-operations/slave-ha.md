@@ -19,6 +19,7 @@ shard to the new slave shard. For example:
 1. The slave shard on node:3 is promoted to master.
 1. If slave HA is enabled, a new slave shard is created on an available node that 
 that does not also have the master shard.
+    All of the constraints of shard relocation apply, such as rack-awareness.
 1. The data from the master shard is replicated to the new slave shard.
 
 Note: If slave HA is enabled for a database that does not have any slave shards, 
