@@ -72,10 +72,6 @@ Then click **Next** button.
     ![Redis Enterprise Software configure new database
 screen](/images/rs/getstarted-createdatabase.png)
 
-Note: If you cannot activate the database because of a memory limitation, 
-make sure that Docker has enough memory allocated in the Advanced section 
-of Docker Settings.
-
 You now have a Redis database!
 
 ## Step 4: Connect to your Database
@@ -89,13 +85,6 @@ database. You can test connectivity to your database with:
 ### Connecting Using redis-cli
 
 redis-cli is a simple command-line tool to interact with Redis database.
-
-Use "docker exec" to switch your context into the Redis Enterprise
-Software container
-
-```src
-$ docker exec -it rp bash
-```
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1
