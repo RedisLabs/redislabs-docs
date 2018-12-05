@@ -37,9 +37,6 @@ The **-p** options map the web UI port (8443), REST API port (9443), and
 database access port differently for each containers to make sure that all 
 containers can be accessed from the host OS that is running the containers.
 
-Note: You may have to increase the amount of RAM allocated to Docker on
-your computer. This setting is under Preferences -\> Advanced.
-
 ## Step 2: Setup Two Clusters
 
 1. For cluster 1, direct your browser to **https://localhost:8443** on the
@@ -105,6 +102,11 @@ set to Geo-Distributed.
 1. Click **Activate** to create your database.
 
     ![create_database_settings](https://lh6.googleusercontent.com/BpQBxYWXeuTuPCqL0TQKRRJaQlr8jLIMoNnScsD2s0wRzDkTc9kgWwngjQ6PnJff_hF1Ca98aZkJTJzU5Sk5rCJwZmR2egkImQCJyMm9E9WfJDrtlzHUJQFAi05lx395EEOZvi3D)
+
+    <!-- Also in getting-started-docker.md -->
+    Note: If you cannot activate the database because of a memory limitation, 
+    make sure that Docker has enough memory allocated in the Advanced section 
+    of Docker Settings.
 
 1. After the global CRDB is created, you can now visit each cluster 1 at
 http://localhost:8443 and cluster 2 at http://localhost:8445.
