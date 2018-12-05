@@ -77,6 +77,20 @@ standard Redis database creation.
     Note: Be sure you add the cluster you are currently on as a
     participating cluster!
 
+### Database clustering
+
+In the **Database clustering** option, you can either:
+
+<!-- Also in crdbs.md -->
+1. Select the number of shards that you want to have in the database.
+    You can change the number of shards in the database at any time, but 
+    databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+1. Clear the **Database clustering** option to use only one shard and so 
+    that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+    limitations do not apply.
+    
+    Note: You cannot enable or disable database clustering after the CRDB is created.
+
 ## Participating Clusters
 
 A CRDB is a global database made up of separate databases spanning
