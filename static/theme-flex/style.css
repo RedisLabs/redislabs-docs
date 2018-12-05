@@ -1804,7 +1804,8 @@ article > aside .menu .menu__version-selector {
   padding: 0 10px 0 8px;
   position: absolute;
   right: 0;
-  top: 30px;
+  top: 55px;
+  z-index: 1;
 }
 
 article > aside .menu .menu__version-selector:hover {
@@ -1845,10 +1846,15 @@ article > aside .menu .menu__version-selector .menu__version-selector__list {
 }
 
 article > aside .menu .menu__version-selector .menu__version-selector__list a {
+  color: #868484;
   display: block;
   padding-left: 10px;
-  width: 100%;
+  width: 100%;  
 }    
+
+article > aside .menu .menu__version-selector .menu__version-selector__list a:hover {
+  color: #000;
+}
 
 article > aside .menu .menu__version-selector.--open {
   border: 1px solid #dfdfdf;
@@ -1866,12 +1872,47 @@ article > aside .menu .menu__version-selector.--open .menu__version-selector__li
   display: block;
 }
 
+article > aside .menu > li .menu-divider {
+  border-top: 1px solid #5d6876;
+  height: 1px;
+  left: 20px;  
+  margin-left: 0 !important;
+  position: absolute;
+  top: 10px;
+  width: calc(100% - 20px);
+}
+
 article > aside .menu > li > .children {
   display: none;
 }
 
 article > aside .menu > li.parent > .children {
   display: flex;
+  position: relative;
+  padding-top: 25px;
+}
+
+article > aside .menu .dd-item div i.expand-all-icon {
+  margin-left: 15px;
+  color: #354253;
+}
+
+article > aside .menu .dd-item div i.expand-all-icon:hover,
+article > aside .menu .dd-item div i.expand-all-icon.--hovered {
+  color: #b62411;
+}
+
+article > aside .menu .dd-item .highlight:hover {
+  color: #b62411;
+}
+
+.expander-title span {
+  color: #354253;
+}
+
+.expander-title span:hover, .expander-title span.--hovered {
+  color: #b62411;
+  cursor: pointer;
 }
 
 /* Example media queries */
@@ -2553,11 +2594,3 @@ i.icon-icons_plus, i.icon-icons_minus {
 .main-content-left > ol > li > ol {list-style: lower-alpha;}
 
 .main-content ol > li > ol > li > ol > li > ol  {list-style-type: lower-alpha;}
-
-.expander-title {
-  cursor: default !important;
-}
-
-.expander-title:hover {
-  color: initial !important;
-}

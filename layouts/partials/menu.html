@@ -26,26 +26,37 @@
         {{- if ne $numberOfPages 0 }} haschildren{{end}}
         ">
         {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") }}
-          <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+          <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
         {{- if eq .URL .RelPermalink }}
           <!-- Child items -->
           <div class="children">
               {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }}
-                <a class="expander-title">Expand all</a>
+                <div class="menu-divider"></div>
+                
+                {{- if ne $numberOfPages 0 }}
+                  {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
+                    <a class="expander-title"><span class="SideMenuExpanderTitle">Collapse all</span></a>
+                    <i class="fa fa-angle-double-up fa-lg category-icon expand-all-icon"></i>
+                  {{- else -}}
+                    <a class="expander-title"><span class="SideMenuExpanderTitle">Expand all</span></a>
+                    <i class="fa fa-angle-double-right fa-lg category-icon expand-all-icon"></i>
+                  {{- end}}
+                {{- end}}      
+          
               {{- else}}
                 <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+
+                {{- if ne $numberOfPages 0 }}
+                  {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
+                    <i class="fa fa-angle-down fa-lg category-icon"></i>
+                  {{- else -}}
+                    <i class="fa fa-angle-right fa-lg category-icon"></i>
+                  {{- end}}
+                {{- end}}                
               {{- end}}
             
-            {{- if ne $numberOfPages 0 }}
-              {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
-                <i class="fa fa-angle-down fa-lg category-icon"></i>
-              {{- else -}}
-                <i class="fa fa-angle-right fa-lg category-icon"></i>
-              {{- end}}
-            {{- end}}
-
             {{- if $showvisitedlinks}}<i class="fa fa-circle-thin read-icon"></i>{{end}}
           </div>
         {{- end}}
