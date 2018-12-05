@@ -92,7 +92,7 @@ port number.
 
 1. A CRDB is a global database that spans multiple clusters. In this case,
 both cluster 1 and cluster 2. On the participating clusters list, add
-two clusters, http://cluster1.local:8080 and http://cluster2.local:8080,
+two clusters, `http://cluster1.local:8080` and `http://cluster2.local:8080`,
 with the admin accounts and passwords for each cluster. Notice
 that we had to add the cluster we are currently on.
 
