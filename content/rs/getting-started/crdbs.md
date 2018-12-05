@@ -6,28 +6,24 @@ alwaysopen: false
 alias: /rs/getting-started/creating-database/crdbs.md
 categories: ["RS"]
 ---
-In this guide, we'll set up a scale-minimized CRDB (conflict-free
+In this guide, we'll set up a CRDB (conflict-free
 replicated database) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
-- Step 1: Run four Docker containers
-- Step 2: Setup two clusters
+- Step 1: Run two RS Docker containers
+- Step 2: Setup each container as a cluster
 - Step 3: Create a new Redis Enterprise CRDB
-- Step 4: Connect to your member Redis Enterprise CRDBs
+- Step 4: Test connectivity to the CRDB
 
-The steps do the installation through Docker containers. However bare
-metal installation is quite similar to installing and setting up
-clusters on other infrastructure like bare metal machines or virtualized
-environments on Windows, MacOS or Linux. You can find other "Getting
-Started" guides [here]({{< relref "/rs/getting-started/quick-setup.md" >}}).
+To run a CRDB on installations from the [RS download package]({{< relref "/rs/getting-started/quick-setup.md" >}}), 
+setup two RS installations and continue from Step 2.
 
-Note: if you are setting up a production-grade environment, please
-follow the detailed installation guide in the administration section.
+Note: To setup CRDB in a production-grade environment, follow the instuctions 
+in the installation guide in the [administration section]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
 
 ## Step 1: Run Two Containers
 
-We'll use two of the containers for first cluster and the remaining two
-containers for the second cluster.
+To spin up two RS containers, run these commands:
 
 ```
 $ docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
@@ -37,10 +33,9 @@ $ docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 -p 8443:844
 $ docker run -d --cap-add sys_resource -h rp2_node1 --name rp2_node1 -p 8445:8443 -p 9445:9443 -p 12002:12000 redislabs/redis
 ```
 
-It is important to note the **-p** options: Each container maps its web
-UI port (8443), REST API port (9443), and database access port to a
-unique number to ensure all containers can be accessed from the host OS
-that's running the containers.
+The **-p** options map the web UI port (8443), REST API port (9443), and 
+database access port differently for each containers to make sure that all 
+containers can be accessed from the host OS that is running the containers.
 
 Note: You may have to increase the amount of RAM allocated to Docker on
 your computer. This setting is under Preferences -\> Advanced.
@@ -100,8 +95,12 @@ set to Geo-Distributed.
     1. In the **Database clustering** option, either:
         1. Select the number of shards that you want to have in the database.
             You can change the number of shards in the database at any time, but 
-            databases that use clustering cannot use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
-        1. Clear the option to use only one shard and allow [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+            databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+        1. Clear the **Database clustering** option to use only one shard and so 
+            that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+            limitations do not apply.
+        
+        Note: You cannot enable or disable database clustering after the CRDB is created.
 
 1. Click **Activate** to create your database.
 
