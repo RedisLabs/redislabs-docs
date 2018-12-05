@@ -3,6 +3,7 @@ Title: Getting Started with Redis Enterprise CRDBs (conflict-free replicated dat
 description: 
 weight: $weight
 alwaysopen: false
+alias: /rs/getting-started/creating-database/crdbs.md
 categories: ["RS"]
 ---
 In this guide, we'll set up a scale-minimized CRDB (conflict-free
@@ -28,12 +29,12 @@ follow the detailed installation guide in the administration section.
 We'll use two of the containers for first cluster and the remaining two
 containers for the second cluster.
 
-```src
-$ docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 
--p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
+```
+$ docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
+```
 
-$ docker run -d --cap-add sys_resource -h rp2_node1 --name rp2_node1 
--p 8445:8443 -p 9445:9443 -p 12002:12000 redislabs/redis
+```
+$ docker run -d --cap-add sys_resource -h rp2_node1 --name rp2_node1 -p 8445:8443 -p 9445:9443 -p 12002:12000 redislabs/redis
 ```
 
 It is important to note the **-p** options: Each container maps its web
