@@ -90,15 +90,18 @@ set to Geo-Distributed.
 
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
-1. On the create database page, click the **show advanced option** link and
-enter **database1** for the database name and **12000** for the endpoint
-port number.
-
-1. A CRDB is a global database that spans multiple clusters. In this case,
-both cluster 1 and cluster 2. On the participating clusters list, add
-two clusters, `http://cluster1.local:8080` and `http://cluster2.local:8080`,
-with the admin accounts and passwords for each cluster. Notice
-that we had to add the cluster we are currently on.
+1. In **create database**, click the **show advanced option** and:
+    
+    1. For the **database name**, enter: `database1`
+    1. For the **endpoint port number**, enter: `12000`
+    1. In the **participating clusters** list, add the address and admin credentials for:
+        * `http://cluster1.local:8080` - the cluster you are currently connected to
+        * `http://cluster2.local:8080` - the other cluster
+    1. In the **Database clustering** option, either:
+        1. Select the number of shards that you want to have in the database.
+            You can change the number of shards in the database at any time, but 
+            databases that use clustering cannot use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+        1. Clear the option to use only one shard and allow [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
 
 1. Click **Activate** to create your database.
 
