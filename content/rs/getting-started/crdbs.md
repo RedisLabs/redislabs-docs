@@ -144,7 +144,7 @@ Software container of node 1 in cluster 1.
 to port 12000 and store and retrieve a key in database1:
 
     ```src
-    $ sudo /opt/redislabs/bin/redis-cli -p 12000
+    $ redis-cli -p 12000
     127.0.0.1:12000> set key1 123
     OK
     127.0.0.1:12000> get key1
@@ -158,7 +158,7 @@ container of node 1 in cluster 2.
 
     ```src
     $ docker exec -it rp2_node1 bash
-    $ sudo /opt/redislabs/bin/redis-cli -p 12000
+    $ redis-cli -p 12000
     127.0.0.1:12000> get key1
     "123"
     ```
