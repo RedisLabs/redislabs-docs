@@ -133,29 +133,39 @@ replication to for the global CRDB.
 
 redis-cli is a simple command-line tool to interact with redis database.
 
-1. Use "docker exec" to switch your context into the Redis Enterprise
-Software container of node 1 in cluster 1.
+1. To switch your context into the RS container of node 1 in cluster 1, run:
 
     ```src
     $ docker exec -it rp1_node1 bash
     ```
 
-1. Run redis-cli, located in the /opt/redislabs/bin directory, to connect
-to port 12000 and store and retrieve a key in database1:
+1. To use redis-cli on port 12000, run:
 
     ```src
     $ redis-cli -p 12000
+    ```
+
+1.  Store and retrieve a key in the database to test the connection with these 
+    commands:
+    
+    * `set key1 123`
+    * `get key1`
+
+    The output of the command looks like this:
+
+    ```src
     127.0.0.1:12000> set key1 123
     OK
     127.0.0.1:12000> get key1
     "123"
     ```
+1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
+   RS container of node 1 in cluster 1.
+1. To see that the key replicated to cluster 2, repeat the steps to switch your 
+   context into the RS container of node 1 in cluster 2, run the redis-cli and 
+   retrieve key1.
 
-    You can see the write replicated to cluster 2.
-
-1. Use "docker exec" to switch your context into the Redis Enterprise Software 
-container of node 1 in cluster 2.
-
+    The output of the commands looks like this:
     ```src
     $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000
@@ -168,10 +178,9 @@ container of node 1 in cluster 2.
 A simple python application running on the host machine can also connect
 to the database1.
 
-Note: The following section assumes you already have python and redis-py
+Note: The following section assumes you already have python and [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
-running the container. You can find the instructions to configure
-redis-py on the github page for redis-py
+running the container.
 
 1. In the command-line terminal, create a new file called "redis_test.py"
 
@@ -179,9 +188,12 @@ redis-py on the github page for redis-py
     $ vi redis_test.py
     ```
 
-1. Paste the following into a file named "redis_test.py".
+1. Paste this code into the "redis_test.py" file.
 
-    ```src
+    This application stores a value in key1 in cluster 1, gets that value from 
+    key1 in cluster 1, and gets the value from key1 in cluster 2.
+
+    ```py
     import redis
 
     rp1 = redis.StrictRedis(host='localhost', port=12000, db=0)
@@ -196,15 +208,13 @@ redis-py on the github page for redis-py
     print (rp2.get('key1'))
     ```
 
-1. Run "redis_test.py" application to connect to the database and store
-and retrieve a key using the command-line.
+1. To run the "redis_test.py" application, run:
 
     ```src
     $ python redis_test.py
     ```
 
-    The output should look like the following screen if the connection is
-successful.
+    If the connection is successful, the output of the application looks like:
 
     ```src
     set key1 123 in cluster 1
