@@ -89,6 +89,7 @@ set to Geo-Distributed.
     1. In the **participating clusters** list, add the address and admin credentials for:
         * `http://cluster1.local:8080` - the cluster you are currently connected to
         * `http://cluster2.local:8080` - the other cluster
+    <!-- Also in create-crdb.md -->
     1. In the **Database clustering** option, either:
         1. Select the number of shards that you want to have in the database.
             You can change the number of shards in the database at any time, but 
