@@ -34,7 +34,7 @@ $ docker run -d --cap-add sys_resource -h rp2_node1 --name rp2_node1 -p 8445:844
 ```
 
 The **-p** options map the web UI port (8443), REST API port (9443), and 
-database access port differently for each containers to make sure that all 
+database access port differently for each container to make sure that all 
 containers can be accessed from the host OS that is running the containers.
 
 ## Step 2: Setup Two Clusters
@@ -65,20 +65,19 @@ email for the login and a password.
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL 
     certificate on the node, and proceed through the browser warning.
 
-We will repeat the same operations for cluster 2. There are only a few
-differences.
+Repeat the same operations for cluster 2 with these differences:
 
 - In your web browser, go to **https://localhost:8445** to
     set up the cluster 2.
-- For the **Cluster name (FQDN)**, enter a different name, for example  as `cluster2.local`.
+- For the **Cluster name (FQDN)**, enter a different name, such as `cluster2.local`.
 
 Now we have two Redis Enterprise Software clusters with FQDNs
 **cluster1.local** and **cluster2.local**.
 
 ## Step 3: Create a Redis CRDB
 
-1. After you login to cluster1.local, select the Redis database with deployment type
-set to Geo-Distributed.
+1. After you login to cluster1.local, select the Redis database and deployment type
+**Geo-Distributed**. Then click **Next**.
 
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
@@ -91,16 +90,17 @@ set to Geo-Distributed.
         * `http://cluster2.local:8080` - the other cluster
     <!-- Also in create-crdb.md -->
     1. In the **Database clustering** option, either:
-        1. Select the number of shards that you want to have in the database.
-            You can change the number of shards in the database at any time, but 
-            databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+        1. Select the number of shards that you want to have in the CRDB.
+            You can change the number of shards in the CRDB for each cluster at any 
+            time, but CRDBs are subject to limitations on 
+            [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
         1. Clear the **Database clustering** option to use only one shard and so 
             that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
             limitations do not apply.
         
         Note: You cannot enable or disable database clustering after the CRDB is created.
 
-1. Click **Activate** to create your database.
+1. Click **Activate** to create your CRDB.
 
     ![create_database_settings](https://lh6.googleusercontent.com/BpQBxYWXeuTuPCqL0TQKRRJaQlr8jLIMoNnScsD2s0wRzDkTc9kgWwngjQ6PnJff_hF1Ca98aZkJTJzU5Sk5rCJwZmR2egkImQCJyMm9E9WfJDrtlzHUJQFAi05lx395EEOZvi3D)
 
@@ -109,14 +109,14 @@ set to Geo-Distributed.
     make sure that Docker has enough memory allocated in the Advanced section 
     of Docker Settings.
 
-1. After the global CRDB is created, you can now visit each cluster 1 at
+1. After the CRDB is created, you can now visit each cluster 1 at
 http://localhost:8443 and cluster 2 at http://localhost:8445.
 
-1. Make sure that each cluster has a local CRDB member database under the name database1.
+1. Make sure that each cluster has a CRDB member database with the name `database1`.
 
     In a real-world deployment, cluster 1 and cluster 2 would most likely be
-    in separate data centers in different regions. However in this case, for
-    local testing, we have created the scale-minimized deployment using two
+    in separate data centers in different regions. However, for
+    local testing we created the scale-minimized deployment using two
     local clusters running on the same host.
 
 ## Step 4: Connect to your member Redis CRDBs
@@ -181,9 +181,10 @@ redis-cli is a simple command-line tool to interact with redis database.
 ### Connecting Using _Hello World_ Application in Python
 
 A simple python application running on the host machine can also connect
-to the database1.
+to the database.
 
-Note: The following section assumes you already have python and [redis-py](https://github.com/andymccurdy/redis-py#installation)
+Note: Before you continue, you must have python and 
+[redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
 running the container.
 
