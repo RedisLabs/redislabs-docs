@@ -3,7 +3,7 @@ Title: Getting Started with Redis Enterprise CRDBs (conflict-free replicated dat
 description: 
 weight: $weight
 alwaysopen: false
-alias: /rs/getting-started/creating-database/crdbs.md
+aliases: /rs/getting-started/creating-database/crdbs/
 categories: ["RS"]
 ---
 In this guide, we'll set up a CRDB (conflict-free
