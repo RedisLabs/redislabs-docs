@@ -21,7 +21,7 @@ To get started with custom monitoring:
 1. Copy this Prometheus configuration into `./prometheus/prometheus.yml` in your current folder:
 
     * If you already have Prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration and skip the next step.
-    * Replace `<cluster_name_or_ipaddress>` with your actual cluster FQDN.
+    * Replace `<cluster_name>` with your actual cluster FQDN.
 
     ```yml
     global:
