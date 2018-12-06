@@ -78,4 +78,3 @@ To view the status of the current rolling upgrade run:
 ```
     kubectl rollout status sts
 ```
-/<name>
