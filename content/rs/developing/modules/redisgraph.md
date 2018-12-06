@@ -1,28 +1,26 @@
 ---
-Title: RedisGraph Quick Start Tutorial
+Title: Developing Applications with RedisGraph
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-For this quick start, you will need the following:
+RedisGraph is the first queryable [Property Graph](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc) database to use [sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix) to represent the [adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) in graphs and [linear algebra](http://faculty.cse.tamu.edu/davis/GraphBLAS.html) to query the graph.
 
-- [A Redis Enterprise Software cluster with set up already
-    complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
-- redis-cli
+Primary features:
 
-## Create a new database that uses the Module
+* Based on the [Property Graph Model](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc)
+  * Nodes (vertices) and Relationships (edges) that may have attributes
+  * Nodes that can be labeled
+  * Relationships have a relationship type
+* Graphs represented as sparse adjacency matrices
+* [Cypher](http://www.opencypher.org/) as query language
+  * Cypher queries translated into linear algebra expressions
 
-1. Navigate to **databases** tab
-1. Click on the **+** sign, if necessary, then **create database**
-1. On the create database screen, check the box for Redis Modules and
-    select the module you want to use for this database.
+## Developing with RedisGraph
 
-    ![create_database-1](/images/rs/create_database-1.png?width=794&height=554)
-1. Click **Show advanced options** and put **12544** for the port.
-1. Click the **Activate** button
-
-## Give it a try
+Before using RedisGraph, you should familiarize yourself with its commands and syntax as detailed in the
+[commands reference](https://oss.redislabs.com/redisgraph/commands/).
 
 After you load RedisGraph, you can interact with it using redis-cli.
 
@@ -61,19 +59,6 @@ How many riders represent team Ducati?
 1) 1) 1) "count(r)"
    2) 1) "1.000000"
 2) 1) "Query internal execution time: 0.129000 milliseconds"
-```
-## Using RedisGraph
-
-Before using RedisGraph, you should familiarize yourself with its commands and syntax as detailed in the
-[commands reference](commands.md).
-
-You can call RedisGraph's commands from any Redis client.
-
-### With `redis-cli`
-
-```sh
-$ redis-cli
-127.0.0.1:6379> GRAPH.QUERY social "CREATE (:person {name: 'roi', age: 33, gender: 'male', status: 'married'})"
 ```
 
 ### With any other client
