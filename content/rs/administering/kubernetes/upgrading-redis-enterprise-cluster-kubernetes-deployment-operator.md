@@ -38,7 +38,7 @@ If so, make sure to apply and verify that an Operator upgrade has completed depl
 Edit the image value in your <operator>.yaml file,
 known by the default name operator.yaml:
 
-```    
+```src    
     spec:
       serviceAccount:   redis-enterprise-operator
       containers:
@@ -52,14 +52,14 @@ After editing the operator.yaml file, apply it by running:
     
 Verify that the Operator deployment has successfully completed by running the following command and verifying that it has achieved Ready status:
 
-```
+```src
     kubectl get pod/redis-enterprise-operator-*-*
 ```
 
 Once the Operator is up and running with the upgraded image, edit the image value in your <my-cluster-name>.yaml file, 
 known by the default name redis-enterprise-cluster.yaml:
 
-```
+```src
     spec:
       redisEnterpriseImageSpec:
         imagePullPolicy:    IfNotPresent
@@ -69,12 +69,12 @@ known by the default name redis-enterprise-cluster.yaml:
 
 After editing the redis-enterprise-cluster.yaml file, apply it by running:
 
-```
+```src
     kubectl apply -f operator.yaml
 ```
 
 To view the status of the current rolling upgrade run:
 
-```
+```src
     kubectl rollout status sts
 ```

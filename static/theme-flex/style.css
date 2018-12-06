@@ -825,10 +825,6 @@ article section.page table code {
   padding: 0 0.25rem; }
 
 /* Code source and copy */
-article section.page .highlight {
-  position: relative;
-}
-
 article section.page pre {
   background-color: #f7f7f7 !important;
   border-radius: .2rem;
@@ -843,6 +839,7 @@ article section.page pre {
   max-width: 100%;
   width: 100%;
   display: inline-grid;
+  position: relative;
 }
 article section.page pre .copy-to-clipboard {
   background: #f7f7f7;
@@ -852,7 +849,7 @@ article section.page pre .copy-to-clipboard {
   position: absolute;
   right: 0;
   text-align: center;
-  top: 24px;
+  top: 0;
   width: 28px;
 }
 article section.page pre[class*="language-"] {
@@ -879,7 +876,9 @@ article section.page pre[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
   white-space: pre;
-  width: 105%; /* to make room for copy icon once scrolled fully to the right */  
+  /* width: 105%; to make room for copy icon once scrolled fully to the right   */
+  padding-right: 50px;
+  overflow-x: auto;
 }
 
 ul.menu > li.dd-item:not(.parent) i {

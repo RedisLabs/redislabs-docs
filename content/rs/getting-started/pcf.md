@@ -112,7 +112,7 @@ To install the BBR command-line tool:
 1. Right-click on the latest tar archive of the tool and copy the link address.
 1. To download the BBR tool, in the Ops Manager run:
 
-    ```
+    ```src
     wget <archive_link_address> -O bbr.tar && tar -xvf bbr.tar
     ```
 
@@ -129,7 +129,7 @@ https://<host>/api/v0/deployed/director/credentials/uaa_bbr_client_credentials
 * Deployment name - On the Ops Manager, find the deployment name that begins 
     with `redis-enterprise-` in the output of the command:
 
-    ```
+    ```src
     bosh -e cf deployments
     ```
 
@@ -137,7 +137,7 @@ To backup your Redis Enterprise for PCF deployment:
 
 1. Run the backup command: 
    
-    ```
+    ```src
     BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> releases/bbr deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> backup
     ```
 
@@ -166,7 +166,7 @@ To restore a Redis Enterprise for PCF deployment:
 
     Note: This command does not recover databases.
 
-    ```
+    ```src
     BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> restore --artifact-path=<archive_path>
     ```
     
@@ -178,7 +178,7 @@ To restore a Redis Enterprise for PCF deployment:
 1. To see that all of the nodes are connected, run: `rladmin status extra all`
 1. On each node, set the [cluster recovery]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) source path to the cluster backup file:
     
-    ```
+    ```src
     rladmin node <node_id> recovery_path set <import_path>
     ```
     
@@ -196,7 +196,7 @@ To restore a Redis Enterprise for PCF deployment:
 
 1. To start database recovery, run:
 
-    ```
+    ```src
     rladmin recover all
     ```
 
