@@ -738,7 +738,7 @@ section.page {
   padding: 2rem 3rem 0 27rem;
   max-width: 1420px;
   margin: 0 auto;
-  padding-right: 3rem;
+  padding-right: 0;
 }
 article section.page h1:first-of-type {
   margin: 5rem 0rem;
@@ -965,7 +965,7 @@ a.menu__link:hover:before {
   font-size: 10px;
   justify-content: space-between;
   line-height: 1;
-  /* padding: 10px 0; */
+  padding-right: 10px;
 }
 span.links span:nth-child(2) {
   display: none;
