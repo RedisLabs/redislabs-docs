@@ -149,4 +149,4 @@ new database created as a member of the CRDB.
 
 If you would like to a smoke test of connectivity and replication, see
 the connecting section of [the CRDB Quick
-Start]({{< relref "/rs/getting-started/creating-database/crdbs.md#test-connectivity" >}}).
+Start]({{< relref "/rs/getting-started/crdbs.md#test-connectivity" >}}).
