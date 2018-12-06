@@ -876,8 +876,7 @@ article section.page pre[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
   white-space: pre;
-  /* width: 105%; to make room for copy icon once scrolled fully to the right   */
-  padding-right: 50px;
+  padding-right: 50px; /* to make room for copy icon once scrolled fully to the right   */
   overflow-x: auto;
 }
 
