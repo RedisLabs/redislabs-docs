@@ -55,7 +55,7 @@ To get started with custom monitoring:
         tls_config:
           insecure_skip_verify: true
         static_configs:
-          - targets: ["<cluster_name_or_ipaddress>:8070"]
+          - targets: ["<cluster_name>:8070"]
     ```
 
 1. Setup your Prometheus and Grafana servers.
