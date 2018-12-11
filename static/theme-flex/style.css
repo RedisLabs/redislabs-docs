@@ -1801,7 +1801,7 @@ ul.no-bullet li {
 /* Version selector in side menu */
 article > aside .menu .menu__version-selector {
   border: 1px solid transparent;
-  padding: 0 10px 0 8px;
+  padding: 0 25px 0 10px;
   position: absolute;
   right: 0;
   top: 55px;
