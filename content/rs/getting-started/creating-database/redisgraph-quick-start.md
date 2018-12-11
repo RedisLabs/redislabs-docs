@@ -11,16 +11,15 @@ For this quick start, you will need the following:
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
 - redis-cli
 
-## Create a new database that uses the Module
+## Create a new database that uses the module
 
-1. Navigate to **databases** tab
-1. Click on the **+** sign, if necessary, then **create database**
-1. On the create database screen, check the box for Redis Modules and
+1. Go to **databases**.
+1. Click **+**, select a Redis database deployment, and click **Next**.
+1. On the create database screen, select **Redis Modules** and
     select the module you want to use for this database.
-
     ![select_module](/images/rs/select_module.png?width=794&height=554)
-1. Click **Show advanced options** and put **12544** for the port.
-1. Click the **Activate** button
+1. Click **Show advanced options** and enter `12544` for the **Endpoint port number**.
+1. Click **Activate**.
 
 ## Give it a try
 
