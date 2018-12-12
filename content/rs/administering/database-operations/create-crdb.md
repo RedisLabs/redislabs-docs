@@ -63,6 +63,7 @@ Deployment type set to Geo-Distributed.
 There are some key differences in the creation process between CRDBs and
 standard Redis database creation.
 
+* Intra-cluster Replication is highly recommended for each Participating Cluster in production use. The intercluster replication process, called syncer, is most efficient when it reads from slaves and not masters.
 * The eviction policy can only be set to noeviction for CRDBs.
 * In [Participating Clusters](#participating-clusters) you must define
     the clusters that will host member CRDBs and the admin user account
