@@ -12,7 +12,7 @@ jQuery(document).ready(function() {
     jQuery('.parent .expand-all-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-double-up fa-angle-double-right") ;
         $( this ).parent().parent().children('ul').toggle() ;
-        _toggleExpanderTitle();
+        // _toggleExpanderTitle();
         return false;
     });  
     
@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
         var $i = jQuery( '.parent .expand-all-icon' );
         $i.toggleClass("fa-angle-double-up fa-angle-double-right") ;
         $i.parent().parent().children('ul').toggle() ;
-        _toggleExpanderTitle();
+        // _toggleExpanderTitle();
         return false;
     });
 

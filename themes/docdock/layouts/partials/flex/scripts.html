@@ -4,16 +4,32 @@
 <script>
 (function () {
   var v = sessionStorage.getItem('_rs_version');
-  if(!v) v = '5.4';
-  _setVersion(v);
+  var d = sessionStorage.getItem('_rs_version_display_name');
+  if(!v) {
+    v = '5.4';
+    d = '5.4 (latest)';
+  } 
+  _setVersion(v, d);
+  _setSelectedVersion(v);
 })();
 
-function _setVersion(ver) {
-  document.getElementById('versionSelectorValue').innerText = 'Version ' + ver;
+function _setVersion(ver, displayName) {
+  document.getElementById('versionSelectorValue').innerText = displayName;
 }
 
-function _selectVersion(ver) {
+function _selectVersion(ver, displayName) {
   sessionStorage.setItem('_rs_version', ver);
+  sessionStorage.setItem('_rs_version_display_name', displayName);
+  _setSelectedVersion(ver);
+}
+
+function _setSelectedVersion(ver) {
+  if(ver) {
+    var i = document.getElementById('version-select-' + ver);
+    if(i) {
+      i.classList.toggle('--selected-version');
+    }
+  }  
 }
   
 function _openVersionSelector() {
