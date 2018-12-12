@@ -59,9 +59,9 @@ make sure that its slave shards are created first. To assign priority to a datab
 
     rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
 
-1. Slave shards of CRDBs because their regional replication is critical, 
-and relies on a working slave.
-1. A cache database is unavailable if it is not moved to an available node.
+1. Slave shards of CRDBs - because the sync between the various replicas is critical, 
+and should be performed using slave shards.
+1. Cache databases - because such databases are unavailable if it is not moved to an available node.
 1. Smaller databases are moved more easily than larger databases.
 1. In the case of databases that match all other criteria, the database with a higher UID is moved first.
 
