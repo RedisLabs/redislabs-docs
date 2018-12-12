@@ -8,8 +8,7 @@ categories: ["RS"]
 When Replication is enabled and master shard fails, the slave shard is automatically promoted to a master shard 
 to maintain data availability. This creates a single point of failure until a new slave shard is manually created.
 
-To automatically avoid this single point of failure, you can configure the cluster 
-to automatically migrate the slave shard to another available node. In practice, 
+To automatically avoid this single point of failure, you can configure high availability for slave shards (slave HA) for the cluster to automatically migrate the slave shard to another available node. In practice, 
 slave migration creates a new slave shard and replicates the data from the master 
 shard to the new slave shard. For example:
 
@@ -46,7 +45,7 @@ You can see the current configuration options for slave HA with: `rladmin info c
 
 ### Grace Period
 
-By default, slave HA has a 15 minute grace period before new slave shards are created. 
+By default, slave HA has a 15-minute grace period after node failure and before new slave shards are created. 
 To configure this grace period from rladmin, run:
 
     rladmin tune cluster slave_ha_grace_period <time_in_seconds>
