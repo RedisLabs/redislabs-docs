@@ -63,22 +63,25 @@ Deployment type set to Geo-Distributed.
 There are some key differences in the creation process between CRDBs and
 standard Redis database creation.
 
-1. The eviction policy can only be set to noeviction for CRDBs.
-1. [Participating Clusters](#participating-clusters) section is where you define
+* The eviction policy can only be set to noeviction for CRDBs.
+* In [Participating Clusters](#participating-clusters) you must define
     the clusters that will host member CRDBs and the admin user account
     to connect to each cluster.
 
-    Note: Be sure you add the cluster you are currently on as a
-    participating cluster!
-1. In the **Database clustering** option, you can either:
+    Note: Make sure you add the cluster you are currently on as a
+    participating cluster.
 
+* In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
-1. Make sure the Database clustering is enabled and select the number of shards that you want to have in the database. In this option, databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). You can increase the number of shards in the database at any time. 
-1. Clear the **Database clustering** option to use only one shard and so 
+    * Make sure the Database clustering is enabled and select the number of shards 
+    that you want to have in the database. When database clustering is enabled, 
+    databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). 
+    You can increase the number of shards in the database at any time. 
+    * Clear the **Database clustering** option to use only one shard and so 
     that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
     limitations do not apply.
     
-    Note: You cannot change the Database clustering <choose the correct word> after the CRDB is created.
+    Note: You cannot enable or disable database clustering after the CRDB is created.
 
 ## Participating Clusters
 
@@ -136,6 +139,6 @@ new database created as a member of the CRDB.
 
 ## Step 4 - Test Read and Write
 
-If you would like to a smoke test of connectivity and replication, see
-the connecting section of [the CRDB Quick
+If you would like to test connectivity and replication, see
+the [the CRDB Quick
 Start]({{< relref "/rs/getting-started/crdbs.md#test-connectivity" >}}).
