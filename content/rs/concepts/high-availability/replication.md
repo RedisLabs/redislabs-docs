@@ -20,8 +20,7 @@ Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}
 logic used for determining which nodes get designated as the master or
 slave.
 * [High Availability for Slave Shards]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) - When high availability 
-for slave shards is used, the new slave is automatically migrated on node failover to maintain 
-the high availability redundancy.
+for slave shards is used, the slave is automatically migrated on node failover to maintain high availability.
 
 **Note**: Enabling replication has implications for the total database
 size, as explained in [Database memory
