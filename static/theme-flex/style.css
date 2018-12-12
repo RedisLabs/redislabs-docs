@@ -1856,6 +1856,11 @@ article > aside .menu .menu__version-selector .menu__version-selector__list a:ho
   color: #000;
 }
 
+article > aside .menu .menu__version-selector .menu__version-selector__list a.--selected-version {
+  display: none;
+}
+
+
 article > aside .menu .menu__version-selector.--open {
   border: 1px solid #dfdfdf;
 }

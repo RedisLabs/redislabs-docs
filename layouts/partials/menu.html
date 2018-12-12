@@ -36,11 +36,11 @@
                 <div class="menu-divider"></div>
                 
                 {{- if ne $numberOfPages 0 }}
+                  <a class="expander-title"><span class="SideMenuExpanderTitle">Expand all</span></a>
                   {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
-                    <a class="expander-title"><span class="SideMenuExpanderTitle">Collapse all</span></a>
+                    <!-- <a class="expander-title"><span class="SideMenuExpanderTitle">Collapse all</span></a> -->
                     <i class="fa fa-angle-double-up fa-lg category-icon expand-all-icon"></i>
-                  {{- else -}}
-                    <a class="expander-title"><span class="SideMenuExpanderTitle">Expand all</span></a>
+                  {{- else -}}                    
                     <i class="fa fa-angle-double-right fa-lg category-icon expand-all-icon"></i>
                   {{- end}}
                 {{- end}}      
