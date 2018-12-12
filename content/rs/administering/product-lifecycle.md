@@ -37,11 +37,12 @@ formal release of that version.
 
 |  Release Date – Full Support Starts for RS | End of Service Life (EOSL) |
 |  ------ | ------ |
-|  5.2 – June 2018 | December 31st, 2019 |
-|  5.0.2 – Mar 2018 | Sep 30th, 2019 |
-|  5.0 – Nov 2017 | May 31st, 2019 |
-|  4.5 – May 2017 | November 30th, 2018 |
-|  4.4 – Dec 2016 | June 30th, 2018 |
-|  4.3 – August 2, 2016 | January 31st, 2018 |
-|  4.2 – October 18, 2015 | July 22nd, 2017 |
-|  4.0 – June 18, 2015 | December 31st, 2016 |
+|  5.4 – December 2018 | June 30, 2020 |
+|  5.2 – June 2018 | December 31, 2019 |
+|  5.0.2 – March 2018 | September 30, 2019 |
+|  5.0 – November 2017 | May 31, 2019 |
+|  4.5 – May 2017 | November 30, 2018 |
+|  4.4 – December 2016 | June 30, 2018 |
+|  4.3 – August 2, 2016 | January 31, 2018 |
+|  4.2 – October 18, 2015 | July 22, 2017 |
+|  4.0 – June 18, 2015 | December 31, 2016 |
