@@ -8,7 +8,7 @@ categories: ["RS"]
 Upgrading Redis Enterprise Software (RS) consists of upgrading the
 software on each of the nodes.
 
-{{% warning title="WARNING" %}}Before you upgrade, you must read the RS 5.4 release notes.{{% /warning %}}
+{{% warning title="WARNING" %}}Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}).{{% /warning %}}
 
 Version requirements:
 
