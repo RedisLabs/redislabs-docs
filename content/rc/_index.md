@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 Redis Enterprise Cloud (RC) is a managed, serverless,
-Database-as-a-Service (DBaaS) offering. <!--more-->
+Database-as-a-Service (DBaaS) offering.
 
 RC is based on the proven Redis
 Enterprise technology. With RC, developers can select a supported cloud
