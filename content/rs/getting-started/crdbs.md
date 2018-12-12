@@ -90,13 +90,14 @@ Now we have two Redis Enterprise Software clusters with FQDNs
         * `http://cluster2.local:8080` - the other cluster
     <!-- Also in create-crdb.md -->
     1. In the **Database clustering** option, either:
-        1. Select the number of shards that you want to have in the CRDB.
-            You can change the number of shards in the CRDB for each cluster at any 
-            time, but CRDBs are subject to limitations on 
-            [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
-        1. Clear the **Database clustering** option to use only one shard and so 
-            that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-            limitations do not apply.
+
+        * Make sure the Database clustering is enabled and select the number of shards 
+        that you want to have in the database. When database clustering is enabled, 
+        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). 
+        You can increase the number of shards in the database at any time. 
+        * Clear the **Database clustering** option to use only one shard and so 
+        that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        limitations do not apply.
         
         Note: You cannot enable or disable database clustering after the CRDB is created.
 
