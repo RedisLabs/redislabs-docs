@@ -84,8 +84,8 @@ To create a cluster:
 1. If you purchased a cluster key, use the **Cluster authentication**
     page to enter the key. Otherwise, you get the trial license by
     default. Read the product Terms and Conditions and click **Next.**
-1. Click **OK** to confirm that you are aware of the SSL certificate replacement 
-    for the server, and proceed through the browser warning.
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL 
+    certificate on the node, and proceed, and proceed through the browser warning.
 1. Use the **Set admin credentials** page to enter the credentials of
     the cluster administrator. These credentials are required in order
     to add nodes to the cluster, and to regularly log in to the cluster

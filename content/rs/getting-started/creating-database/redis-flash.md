@@ -75,8 +75,8 @@ email for the login and a password.
 
 ![RP-SetupScreen4](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
 
-Click **OK** to confirm that you are aware of the SSL certificate replacement 
-for the server, and proceed through the browser warning.
+Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL 
+certificate on the node, and proceed through the browser warning.
 
 ## Step 3: Create a Database
 
