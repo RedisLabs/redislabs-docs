@@ -5,9 +5,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When a master shard fails, a slave shard is automatically promoted to a master shard 
-to maintain data availability. If there are no other slave shards in the database, 
-this creates a single point of failure until a new slave shard is manually created.
+When Replication is enabled and master shard fails, the slave shard is automatically promoted to a master shard 
+to maintain data availability. This creates a single point of failure until a new slave shard is manually created.
 
 To automatically avoid this single point of failure, you can configure the cluster 
 to automatically migrate the slave shard to another available node. In practice, 
@@ -17,8 +16,7 @@ shard to the new slave shard. For example:
 1. Node:2 has a master shard and node:3 has the corresponding the slave shard.
 1. Node:2 fails and triggers a failover.
 1. The slave shard on node:3 is promoted to master.
-1. If slave HA is enabled, a new slave shard is created on an available node that 
-that does not also have the master shard.
+1. If slave HA is enabled, a new slave shard is created on an available node that does not hold the master shard.
     All of the constraints of shard migration apply, such as rack-awareness.
 1. The data from the master shard is replicated to the new slave shard.
 
