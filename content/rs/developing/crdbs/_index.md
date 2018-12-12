@@ -110,14 +110,15 @@ followed by descriptions:
 
 |  **Data Type** | **Support Level** |
 |------------|-----------------|
-|  Strings | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
-|  Integer Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
 |  Float Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
-|  Sets | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
 |  Hashes | Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}) |
+|  Integer Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
 |  Lists | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
+|  Sets | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
+|  Strings | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
 |  Sorted Sets | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
 |  Bitsets | Not currently supported |
+|  Streams | Not currently supported |
 
 ### Other Data Types
 
