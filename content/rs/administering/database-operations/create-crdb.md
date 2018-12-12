@@ -59,16 +59,9 @@ Deployment type set to Geo-Distributed.
 
 ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
-On the create database page, click the **show advanced option** link.
 There are some key differences in the creation process between CRDBs and
 standard Redis database creation.
 
-1. Intra-cluster Replication is required for each Participating Cluster
-    to be included in a CRDB. This is due to how the intercluster
-    replication process, called syncer, always reads off slaves and not
-    masters. Therefore slaves must exist. In the interface, you will see
-    that you cannot change this option and if not possible, the creation
-    will error.
 1. The eviction policy can only be set to noeviction for CRDBs.
 1. [Participating Clusters](#participating-clusters) section is where you define
     the clusters that will host member CRDBs and the admin user account
@@ -76,20 +69,15 @@ standard Redis database creation.
 
     Note: Be sure you add the cluster you are currently on as a
     participating cluster!
-
-### Database clustering
-
-In the **Database clustering** option, you can either:
+1. In the **Database clustering** option, you can either:
 
 <!-- Also in crdbs.md -->
-1. Select the number of shards that you want to have in the database.
-    You can change the number of shards in the database at any time, but 
-    databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+1. Make sure the Database clustering is enabled and select the number of shards that you want to have in the database. In this option, databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). You can increase the number of shards in the database at any time. 
 1. Clear the **Database clustering** option to use only one shard and so 
     that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
     limitations do not apply.
     
-    Note: You cannot enable or disable database clustering after the CRDB is created.
+    Note: You cannot change the Database clustering <choose the correct word> after the CRDB is created.
 
 ## Participating Clusters
 
