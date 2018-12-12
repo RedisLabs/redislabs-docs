@@ -34,9 +34,8 @@ That said, the following Redis features are not applicable in the context of our
     * [REPLCONF](http://redis.io/commands/REPLCONF)
     * [SLAVEOF](http://redis.io/commands/SLAVEOF)
     * [SYNC](http://redis.io/commands/SYNC)/[PSYNC](http://redis.io/commands/PSYNC)
-* Redis Labs clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result:
-    *  [all Cluster related commands](http://redis.io/commands#cluster) are blocked and will produce an error when invoked.
-    *  The CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
+* Redis Labs clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and will produce an error when invoked.
+* Redis Labs clustering technology allows [multiple active proxies]({{< relref "/rs/administering/designing-production/networking/multiple-active-proxy.md" >}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 * Commands that aren’t relevant for a hosted Redis service are blocked:
     * [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
     * [DEBUG OBJECT](http://redis.io/commands/DEBUG-OBJECT)/[SEGFAULT](http://redis.io/commands/DEBUG-SEGFAULT)
