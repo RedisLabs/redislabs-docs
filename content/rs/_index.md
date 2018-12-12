@@ -5,13 +5,9 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-This documentation covers both Redis Enterprise Software 4.5 and
-5.0. Anything that is not explicitly marked for 5.0 applies to the 4.5
-release as well.<!--more-->
-
 ## What is Redis Enterprise Software?
 
-Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](https://redislabs.com/why-redis/redis-enterprise/), which is used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.
+Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](https://redislabs.com/why-redis/redis-enterprise/), which is used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.<!--more-->
 
 You can install RS in your environment of choice, whether for an on-premises data-center, Docker, or your preferred cloud platform. You have full control of your data, clusters, databases, and configuration.
 
