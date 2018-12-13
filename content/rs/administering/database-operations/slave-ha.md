@@ -57,7 +57,7 @@ To configure this grace period from rladmin, run:
 
 ### Shard Priority
 
-Slave HA migrates slave shards for databases according to this order of priority:
+Slave shard migration is based on priority so that, in the case of limited memory resources, the most important slave shards are migrated first. Slave HA migrates slave shards for databases according to this order of priority:
 
 1. slave_ha_priority - The slave shards of the database with the higher slave_ha_priority 
     integer value are migrated first.
