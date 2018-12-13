@@ -1901,27 +1901,8 @@ article > aside .menu > li.parent > .children.--has-version-selector {
   padding-top: 60px;
 }
 
-article > aside .menu .dd-item div i.expand-all-icon {
-  margin-left: 15px;
-  color: #354253;
-}
-
-article > aside .menu .dd-item div i.expand-all-icon:hover,
-article > aside .menu .dd-item div i.expand-all-icon.--hovered {
-  color: #b62411;
-}
-
 article > aside .menu .dd-item .highlight:hover {
   color: #b62411;
-}
-
-.expander-title span {
-  color: #354253;
-}
-
-.expander-title span:hover, .expander-title span.--hovered {
-  color: #b62411;
-  cursor: pointer;
 }
 
 /* Example media queries */

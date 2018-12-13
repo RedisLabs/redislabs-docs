@@ -1,54 +1,10 @@
 jQuery(document).ready(function() {
     jQuery('.category-icon').on('click', function() {
-        if($( this ).attr("class").indexOf('expand-all-icon') !== -1) {
-            return;
-        }
-
         $( this ).toggleClass("fa-angle-down fa-angle-right") ;
         $( this ).parent().parent().children('ul').toggle() ;
         return false;
     });
-
-    jQuery('.parent .expand-all-icon').on('click', function() {
-        $( this ).toggleClass("fa-angle-double-up fa-angle-double-right") ;
-        $( this ).parent().parent().children('ul').toggle() ;
-        // _toggleExpanderTitle();
-        return false;
-    });  
     
-    jQuery('.SideMenuExpanderTitle').on('click', function() {
-        var $i = jQuery( '.parent .expand-all-icon' );
-        $i.toggleClass("fa-angle-double-up fa-angle-double-right") ;
-        $i.parent().parent().children('ul').toggle() ;
-        // _toggleExpanderTitle();
-        return false;
-    });
-
-    function _toggleExpanderTitle() {
-        $e = jQuery('.parent .SideMenuExpanderTitle');
-        if($e && $e[0]) {
-            var isOpen = (jQuery( '.parent .expand-all-icon' ).attr("class").indexOf('fa-angle-double-up') !== -1);
-            $e[0].innerText = isOpen? 'Collapse all': 'Expand all';
-        }
-    }
-
-    jQuery('.SideMenuExpanderTitle').on('mouseenter', function() {
-        jQuery('.expand-all-icon').addClass('--hovered');
-    });
-
-    jQuery('.SideMenuExpanderTitle').on('mouseleave', function() {
-        jQuery('.expand-all-icon').removeClass('--hovered');
-    });
-
-    jQuery('.expand-all-icon').on('mouseenter', function() {
-        jQuery('.SideMenuExpanderTitle').addClass('--hovered');
-    });
-
-    jQuery('.expand-all-icon').on('mouseleave', function() {
-        jQuery('.SideMenuExpanderTitle').removeClass('--hovered');
-    });    
-
-
 
     // Images
     // Execute actions on images generated from Markdown pages
