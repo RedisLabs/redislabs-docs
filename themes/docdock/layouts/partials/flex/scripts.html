@@ -1,3 +1,56 @@
+<!-- Version selector -->
+{{if .Params.categories}}
+{{if eq (index .Params.categories 0) "RS"}}
+<script>
+(function () {
+  var v = sessionStorage.getItem('_rs_version');
+  var d = sessionStorage.getItem('_rs_version_display_name');
+  if(!v) {
+    v = '5.2';
+    d = 'v5.2 (and below)';
+  } 
+  _setVersion(v, d);
+  _setSelectedVersion(v);
+})();
+
+function _setVersion(ver, displayName) {
+  document.getElementById('versionSelectorValue').innerText = displayName;
+}
+
+function _selectVersion(ver, displayName) {
+  sessionStorage.setItem('_rs_version', ver);
+  sessionStorage.setItem('_rs_version_display_name', displayName);
+  _setSelectedVersion(ver);
+}
+
+function _setSelectedVersion(ver) {
+  if(ver) {
+    var i = document.getElementById('version-select-' + ver);
+    if(i) {
+      i.classList.toggle('--selected-version');
+    }
+  }  
+}
+  
+function _openVersionSelector() {
+    document.getElementById('versionSelector').classList.toggle('--open');
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.version-selector-control')) {
+    var d = document.getElementsByClassName('menu__version-selector');
+    var i;
+    for (i = 0; i < d.length; i++) {
+      if (d[i].classList.contains('--open')) {
+        d[i].classList.remove('--open');
+      }
+    }
+  }
+}</script>
+{{end}}
+{{end}}
+<!-- /Version selector -->
+
 <script src="{{"js/clipboard.min.js" | relURL}}"></script>
 
 <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
