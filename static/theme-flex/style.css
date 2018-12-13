@@ -1894,7 +1894,11 @@ article > aside .menu > li > .children {
 article > aside .menu > li.parent > .children {
   display: flex;
   position: relative;
-  padding-top: 25px;
+  padding-top: 30px;
+}
+
+article > aside .menu > li.parent > .children.--has-version-selector {
+  padding-top: 60px;
 }
 
 article > aside .menu .dd-item div i.expand-all-icon {
