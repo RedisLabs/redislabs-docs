@@ -44,7 +44,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 ## Product Version Lifecycle
 
-*   The end-of-service-life (EOSL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/administering/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
+*   The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/administering/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
 
 ## Important Fixes
 
@@ -67,12 +67,12 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 ### Installation
 
-*   In default Ubuntu 18.04 installations, port 53 is in use by systemd-resolved (DNS server). In such a case, the system configuration should be changed to make this port available before running RS installation.
+*   In default Ubuntu 18.04 installations, port 53 is in use by systemd-resolved (DNS server). In such a case, the system configuration must be changed to make this port available before running RS installation.
 
 ### Upgrade
 
 *   Before upgrading a database with RediSearch Module to Redis 5.0, the RediSearch Module must be upgraded to 1.4.2 or above.
-*   Node upgrade fails if the SSL certificate/s were configured in version 5.2.X without using the new API, but by updating the cert on the disk. For assistance with this issue, please contact support. 
+*   Node upgrade fails if SSL certificates were configured in version 5.0.2 and above by updating the certificates on the disk instead of using the new API. For assistance with this issue, please contact support. 
 
 ### Cluster API
 
