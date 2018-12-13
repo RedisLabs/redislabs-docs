@@ -87,6 +87,7 @@ certificate on the node, and proceed through the browser warning.
     ![Redis Enterprise Software configure new database
 screen](/images/rs/getstarted-createdatabase.png)
 
+<!-- Also in crdbs.md -->
 Note: If you cannot activate the database because of a memory limitation, 
 make sure that Docker has enough memory allocated in the Advanced section 
 of Docker Settings.
