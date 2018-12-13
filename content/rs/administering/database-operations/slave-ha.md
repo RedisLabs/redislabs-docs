@@ -24,10 +24,15 @@ shard to the new slave shard. For example:
 You can enable slave HA either for:
 
 * Cluster - All databases in the cluster use slave HA
-* Database - Only the specific database uses slave HA
+* Database - Only the specified database uses slave HA
 
-By default, slave HA is set to disabled at the cluster level. You can enable it 
-for a cluster and then disable slave HA for specific databases.
+By default, slave HA is set to disabled at the cluster level and enabled at the 
+database level, with the cluster level overriding, so that:
+
+* To enable slave HA for all databases in the cluster - Enable slave HA for the cluster
+* To enable slave HA for only specified databases in the cluster:
+    1. Enable slave HA for the cluster
+    1. Disable slave HA for the databases for which you do not want slave HA enabled
 
 You can enable and disable slave HA using rladmin or using the REST API.
 
