@@ -5,23 +5,33 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When Replication is enabled and master shard fails, the slave shard is automatically promoted to a master shard 
-to maintain data availability. This creates a single point of failure until a new slave shard is manually created.
+When you enable [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) 
+for your database, RS replicates your data to a slave node to make sure that your 
+data is highly available. Whether the slave node fails or the master node fails 
+and the slave is promoted to master, the remaining master node is a 
+single point of failure.
 
-To automatically avoid this single point of failure, you can configure high availability for slave shards (slave HA) for the cluster to automatically migrate the slave shard to another available node. In practice, 
-slave migration creates a new slave shard and replicates the data from the master 
-shard to the new slave shard. For example:
+You can configure high availability for slave shards (slave HA) so that the cluster
+automatically migrates the slave shards to another available node. In practice, slave 
+migration creates a new slave shard and replicates the data from the master shard to the 
+new slave shard. For example:
 
 1. Node:2 has a master shard and node:3 has the corresponding the slave shard.
-1. Node:2 fails and triggers a failover.
-1. The slave shard on node:3 is promoted to master.
-1. If slave HA is enabled, a new slave shard is created on an available node that does not hold the master shard.
-    All of the constraints of shard migration apply, such as rack-awareness.
+1. Either:
+
+    * Node:2 fails and the slave shard on node:3 is promoted to master.
+    * Node:3 fails and the master shard is no longer replicated.
+
+1. If slave HA is enabled, a new slave shard is created on an available node 
+    that does not hold the master shard.
+
+    All of the constraints of shard migration apply, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+
 1. The data from the master shard is replicated to the new slave shard.
 
 ## Configuring High Availability for Slave Shards
 
-You can enable slave HA either for:
+You can enable slave HA using rladmin or using the REST API either for:
 
 * Cluster - All databases in the cluster use slave HA
 * Database - Only the specified database uses slave HA
@@ -33,8 +43,6 @@ database level, with the cluster level overriding, so that:
 * To enable slave HA for only specified databases in the cluster:
     1. Enable slave HA for the cluster
     1. Disable slave HA for the databases for which you do not want slave HA enabled
-
-You can enable and disable slave HA using rladmin or using the REST API.
 
 To enable slave HA for a cluster using rladmin, run:
 
