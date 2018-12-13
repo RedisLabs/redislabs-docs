@@ -57,35 +57,44 @@ To configure this grace period from rladmin, run:
 
 ### Shard Priority
 
-Slave HA creates new slave shards for databases according to this order of priority:
+Slave HA migrates slave shards for databases according to this order of priority:
 
-1. slave_ha_priority - You can assign a priority number to a specific database to 
-make sure that its slave shards are created first. To assign priority to a database, run:
+1. slave_ha_priority - The slave shards of the database with the higher slave_ha_priority 
+    integer value are migrated first.
+    
+    To assign priority to a database, run:
 
+    ```
     rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
+    ```
 
-1. Slave shards of CRDBs - The sync between the CRDB replicas is critical and 
-    should be performed using slave shards.
-1. Smaller databases - It is easier and more efficient to move smaller databases.
-1. Database UID - The database with a higher UID is moved first.
+1. CRDBs - The CRDB synchronization uses slave shards to synchronize between the replicas.
+1. Database size - It is easier and more efficient to move slave shards of smaller databases.
+1. Database UID - The slave shards of databases with a higher UID is moved first.
 
 ### Cooldown Periods
 
-Both the cluster and the database have cooldown periods. The cluster cooldown period 
-prevents another slave migration for any databases in the cluster until the cooldown 
-period ends after node failure (Default: 1 hour).
-Similarly, the database cannot go through another slave migration until the 
-cooldown period for the database ends (Default: 24 hours).
+Both the cluster and the database have cooldown periods. After node failure, the cluster 
+cooldown period prevents another slave migration due to another node failure for any 
+databases in the cluster until the cooldown period ends  (Default: 1 hour).
+
+After a database is migrated with slave HA, it cannot go through another slave migration 
+due to another node failure until the cooldown period for the database ends (Default: 24 
+hours).
 
 To configure this grace period from rladmin, run:
 
-    * For the cluster:
-
-        rladmin tune cluster slave_ha_cooldown_period <time_in_seconds>
+* For the cluster:
     
-    * For all databases in the cluster:
+    ```
+    rladmin tune cluster slave_ha_cooldown_period <time_in_seconds>
+    ```
 
-        rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
+* For all databases in the cluster:
+
+    ```
+    rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
+    ```
 
 ### Alerts
 
