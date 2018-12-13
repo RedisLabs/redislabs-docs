@@ -59,17 +59,18 @@ make sure that its slave shards are created first. To assign priority to a datab
 
     rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
 
-1. Slave shards of CRDBs - because the sync between the various replicas is critical, 
-and should be performed using slave shards.
-1. Smaller databases - because it is more efficient and easy to move smaller databases.
-1. The database with a higher UID is moved first.
+1. Slave shards of CRDBs - The sync between the CRDB replicas is critical and 
+    should be performed using slave shards.
+1. Smaller databases - It is easier and more efficient to move smaller databases.
+1. Database UID - The database with a higher UID is moved first.
 
 ### Cooldown Periods
 
-Both the cluster and the database have cooldown periods, i.e. after node failure, slave migration cannot run 
-again in case of another node failure in the cluster until the cooldown period for the cluster passes (Default: 1 hour). 
+Both the cluster and the database have cooldown periods. The cluster cooldown period 
+prevents another slave migration for any databases in the cluster until the cooldown 
+period ends after node failure (Default: 1 hour).
 Similarly, the database cannot go through another slave migration until the 
-cooldown period for the database passes (Default: 24 hours).
+cooldown period for the database ends (Default: 24 hours).
 
 To configure this grace period from rladmin, run:
 
