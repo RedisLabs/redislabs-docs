@@ -41,7 +41,7 @@ jobs:
             - run:
                 name: Replace "branch" with branch name in config.toml (except for latest version change to master)
                 command: |
-                    if [ "${CIRCLE_BRANCH}" == "latest-build" ] ;
+                    if [ "${CIRCLE_BRANCH}" == "latest" ] ;
                         then sed -i s/branch/master/g config.toml
                     else
                         sed -i s/branch/${CIRCLE_BRANCH}/g config.toml ;
@@ -113,9 +113,7 @@ jobs:
             # Deploy to the S3 bucket corresponding to the current branch
             - run:
                 name: Deploy to S3
-                command:  |
-                    export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only
+                command: aws s3 sync public s3://docs.redislabs.com/${CIRCLE_BRANCH} --delete --acl public-read --size-only
 
 workflows:
   version: 2
@@ -124,27 +122,32 @@ workflows:
       - build-staging:
           filters:
             branches:
-              ignore: /.*-build/
+              ignore:
+                - /.*-build/
+                - latest
       - build-prod:
           filters:
             branches:
-              only: /.*-build/
+              only:
+                - /.*-build/
+                - latest
       - deploy-staging:
           requires:
             - build-staging
           filters:
             branches:
-              ignore: /.*-build/
+              ignore:
+                - /.*-build/
+                - latest
       - deploy-prod:
           requires:
             - build-prod
           filters:
             branches:
               only: /.*-build/
-              ignore: /latest-build/
       - deploy-latest:
           requires:
             - build-prod
           filters:
             branches:
-              only: /latest-build/
+              only: latest
