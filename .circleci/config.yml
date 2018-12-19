@@ -79,8 +79,27 @@ jobs:
                     fi
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only
 
-    # Deploy for -build to push to /{version} without -build
+    # Deploy for -build to push to /{version} without -build and rs only
     deploy-prod:
+        docker:
+            - image: xueshanf/awscli:latest
+        working_directory: ~/project
+        steps:
+            - attach_workspace:
+                at: ~/project
+            # Set the signature version for the S3 auth
+            - run:
+                name: Setting Signature Version 4 for S3 Request Authentication
+                command: aws configure set default.s3.signature_version s3v4
+            # Deploy to the S3 bucket corresponding to the current branch
+            - run:
+                name: Deploy to S3
+                command:  |
+                    export VERSION=${CIRCLE_BRANCH/-build/}
+                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only --exclude "*rv/*" --exclude "*rc/*"
+
+    # Deploy for -build to push to /{version} without -build
+    deploy-latest:
         docker:
             - image: xueshanf/awscli:latest
         working_directory: ~/project
@@ -121,5 +140,11 @@ workflows:
             - build-prod
           filters:
             branches:
-              only:
-                - /.*-build/
+              only: /.*-build/
+              ignore: /latest-build/
+      - deploy-latest:
+          requires:
+            - build-prod
+          filters:
+            branches:
+              only: /latest-build/
