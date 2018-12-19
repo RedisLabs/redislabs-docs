@@ -124,11 +124,11 @@ workflows:
       - build-staging:
           filters:
             branches:
-              ignore: /deploy-rs-only/ # Replace with /.*-build/
+              ignore: /.*-build/
       - build-prod:
           filters:
             branches:
-              only: /deploy-rs-only/ # Replace with /.*-build/
+              only: /.*-build/
       - deploy-staging:
           requires:
             - build-staging
@@ -140,7 +140,7 @@ workflows:
             - build-prod
           filters:
             branches:
-              only: /deploy-rs-only/
+              only: /.*-build/
               ignore: /latest-build/
       - deploy-latest:
           requires:
