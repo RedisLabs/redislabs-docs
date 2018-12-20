@@ -38,7 +38,23 @@
 <article>
     {{if not .IsHome}}
     <aside>
-      <ul class="menu">
+      <ul class="menu">        
+        {{if .Params.categories}}
+          {{if eq (index .Params.categories 0) "RS"}}
+            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
+              <button class="menu__version-selector-btn version-selector-control">
+                <span id="versionSelectorValue" class="version-selector-control"></span>
+                <span class="menu__version-selector__toggler --opener version-selector-control">&#x25BC;</span>
+                <span class="menu__version-selector__toggler --closer version-selector-control">&#x25B2;</span>
+              </button>
+              <div class="menu__version-selector__list version-selector-control">                
+                <a href="https://docs.redislabs.com/5.4/rs" id="version-select-5.4" onclick="_setSelectedVersion('5.4', 'v5.4 (latest)')">v5.4 (latest)</a>
+                <a href="https://docs.redislabs.com/5.2/rs" id="version-select-5.2" onclick="_setSelectedVersion('5.2', 'v5.2 (and below)')">v5.2 (and below)</a>
+              </div>
+            </div>
+          {{end}}
+        {{end}}
+
         {{- if not .Site.Params.disableHomeIcon}}
             <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
               <a href="{{"/" | relLangURL}}">
