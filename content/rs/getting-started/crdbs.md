@@ -103,7 +103,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
 
 1. Click **Activate** to create your CRDB.
 
-    ![create_database_settings](https://lh6.googleusercontent.com/BpQBxYWXeuTuPCqL0TQKRRJaQlr8jLIMoNnScsD2s0wRzDkTc9kgWwngjQ6PnJff_hF1Ca98aZkJTJzU5Sk5rCJwZmR2egkImQCJyMm9E9WfJDrtlzHUJQFAi05lx395EEOZvi3D)
+    ![crdb-activate](/images/rs/crdb-activate.png)
 
     <!-- Also in getting-started-docker.md -->
     Note: If you cannot activate the database because of a memory limitation, 
