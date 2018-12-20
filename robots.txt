@@ -4,10 +4,6 @@ Disallow: /staging/
 
 # Rule 2
 User-agent: *
-Disallow: /5.2/
-
-# Rule 3
-User-agent: *
 Allow: /
 
 Sitemap: https://docs.redislabs.com/latest/sitemap.xml
