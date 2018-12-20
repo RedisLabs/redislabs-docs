@@ -41,7 +41,7 @@ jobs:
             - run:
                 name: Replace "branch" with branch name in config.toml (except for latest version change to master)
                 command: |
-                    if [ "${CIRCLE_BRANCH}" == "latest-build" ] ;
+                    if [ "${CIRCLE_BRANCH}" == "latest" ] ;
                         then sed -i s/branch/master/g config.toml
                     else
                         sed -i s/branch/${CIRCLE_BRANCH}/g config.toml ;
@@ -79,7 +79,7 @@ jobs:
                     fi
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only
 
-    # Deploy for -build to push to /{version} without -build
+    # Deploy for -build to push to /{version} without -build and rs only
     deploy-prod:
         docker:
             - image: xueshanf/awscli:latest
@@ -96,7 +96,24 @@ jobs:
                 name: Deploy to S3
                 command:  |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only
+                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only --exclude "*rv/*" --exclude "*rc/*"
+
+    # Deploy for -build to push to /{version} without -build
+    deploy-latest:
+        docker:
+            - image: xueshanf/awscli:latest
+        working_directory: ~/project
+        steps:
+            - attach_workspace:
+                at: ~/project
+            # Set the signature version for the S3 auth
+            - run:
+                name: Setting Signature Version 4 for S3 Request Authentication
+                command: aws configure set default.s3.signature_version s3v4
+            # Deploy to the S3 bucket corresponding to the current branch
+            - run:
+                name: Deploy to S3
+                command: aws s3 sync public s3://docs.redislabs.com/${CIRCLE_BRANCH} --delete --acl public-read --size-only
 
 workflows:
   version: 2
@@ -105,21 +122,32 @@ workflows:
       - build-staging:
           filters:
             branches:
-              ignore: /.*-build/
+              ignore:
+                - /.*-build/
+                - latest
       - build-prod:
           filters:
             branches:
-              only: /.*-build/
+              only:
+                - /.*-build/
+                - latest
       - deploy-staging:
           requires:
             - build-staging
           filters:
             branches:
-              ignore: /.*-build/
+              ignore:
+                - /.*-build/
+                - latest
       - deploy-prod:
           requires:
             - build-prod
           filters:
             branches:
-              only:
-                - /.*-build/
+              only: /.*-build/
+      - deploy-latest:
+          requires:
+            - build-prod
+          filters:
+            branches:
+              only: latest
