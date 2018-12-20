@@ -26,7 +26,8 @@ the **Log** page in the UI. The Log page displays the system and user
 events regarding alerts, notifications and
 configurations.
 
-![](https://lh3.googleusercontent.com/7mYBah2_66GuMuFE4rm-po4ttoHJ41Mb8DClsJmdyw41NoLJOZSf10jiOV2b5IN0pGvfcT01kyb2o6v1e_FJH0iQrsRws2s7gTkn70BJIzx56EwUotx3JDHzWThPtHBb2MfcfOVd)
+![events-log](/images/rs/events-log.png)
+
 
 If you need to look at the audit log of what a user on the cluster has
 done, e.g. edited a DB configuration, this is where you could look.

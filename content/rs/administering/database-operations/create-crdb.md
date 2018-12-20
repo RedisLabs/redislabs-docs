@@ -94,7 +94,8 @@ cluster, use the service account and password created earlier for the
 admin account. Make sure to use port 8080 for this configuration, then
 click Activate to create your new Conflict-Free Replicated Database.
 
-![](https://lh6.googleusercontent.com/BpQBxYWXeuTuPCqL0TQKRRJaQlr8jLIMoNnScsD2s0wRzDkTc9kgWwngjQ6PnJff_hF1Ca98aZkJTJzU5Sk5rCJwZmR2egkImQCJyMm9E9WfJDrtlzHUJQFAi05lx395EEOZvi3D)
+![crdb-activate](/images/rs/crdb-activate.png)
+
 
 **Causal Consistency**
 
@@ -129,7 +130,8 @@ Enabling SSL for data access operation is a
 impacts the specific CRDB instance you are editing and is not a global
 setting for all CRDB instances.
 
-![](https://lh3.googleusercontent.com/qi-Bj63e_Oh642cg5T_fHiN6GLWHBqeBJN-y87-OqNrAH6h_Y6xYgKV7tr1jiPA33clXQlAlAMjetwCFm4Pg_CFEP1Qi7IvPKyF56QnVXBa7e8j0Mx3GzXL4hE_U1I1sN6xkNdNk)
+![crdb-ssl](/images/rs/crdb-ssl.png)
+
 
 Once activated, the Redis Enterprise Software cluster will authenticate
 and communicate with each of the listed Participating Clusters on your
