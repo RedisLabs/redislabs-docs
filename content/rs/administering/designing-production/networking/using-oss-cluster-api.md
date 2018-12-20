@@ -33,7 +33,7 @@ for the specified database.
 
     ```sh
     $ sudo rladmin
-    rladmin> tune db <database name or ID> oss_cluster enable
+    rladmin> tune db <database name or ID> oss_cluster enabled
     ```
 
     Note: To disable OSS Cluster API with rladmin, run: `tune db <database name or ID> oss_cluster disable`
