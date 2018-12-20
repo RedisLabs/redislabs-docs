@@ -39,11 +39,11 @@ To access the site, go to: http://localhost:1313
 
 ## Publishing
 
-Official version documentation is published through the version build branches (for example latest-build).
+The latest branch is the latest stable version of documentation for the latest publicly available release at: https://docs.redislabs.com/latest
+
+Documentation for previous versions is published through the version build branches (for example 5.2-build).
 
 The master branch is published to https://docs.redislabs.com/staging/dev and represents the unstable version of documentation for the latest publicly available release. When stable, this branch is published to the latest branch.
-
-The latest branch is the latest stable version of documentation for the latest publicly available release at: https://docs.redislabs.com/latest
 
 ## Contributing to the documentation
 
