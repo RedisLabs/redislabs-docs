@@ -3,12 +3,20 @@
 {{if eq (index .Params.categories 0) "RS"}}
 <script>
 (function () {
-  var v = sessionStorage.getItem('_rs_version');
-  var d = sessionStorage.getItem('_rs_version_display_name');
-  if(!v) {
+  // var v = sessionStorage.getItem('_rs_version');
+  // var d = sessionStorage.getItem('_rs_version_display_name');
+
+  var pa = window.location.pathname.split('/');
+  var pv = pa[2]; // latest or 5.2
+
+  if(pv == 'version-dropdown') {
     v = '5.4';
     d = 'v5.4 (latest)';
-  } 
+  } else if (pv == 'version-dropdown-5.2') {
+    v = '5.2';
+    d = 'v5.2 (and below)';
+  }
+
   _setVersion(v, d);
   _setSelectedVersion(v);
 })();
