@@ -3,16 +3,13 @@
 {{if eq (index .Params.categories 0) "RS"}}
 <script>
 (function () {
-  // var v = sessionStorage.getItem('_rs_version');
-  // var d = sessionStorage.getItem('_rs_version_display_name');
-
   var pa = window.location.pathname.split('/');
-  var pv = pa[2]; // latest or 5.2
+  var pv = pa[2]; // latest, 5.4 or 5.2
 
-  if(pv == 'version-dropdown') {
+  if(pv == '5.4' || pv == 'latest') {
     v = '5.4';
     d = 'v5.4 (latest)';
-  } else if (pv == 'version-dropdown-5.2') {
+  } else if (pv == '5.2') {
     v = '5.2';
     d = 'v5.2 (and below)';
   }
@@ -23,12 +20,6 @@
 
 function _setVersion(ver, displayName) {
   document.getElementById('versionSelectorValue').innerText = displayName;
-}
-
-function _selectVersion(ver, displayName) {
-  sessionStorage.setItem('_rs_version', ver);
-  sessionStorage.setItem('_rs_version_display_name', displayName);
-  _setSelectedVersion(ver);
 }
 
 function _setSelectedVersion(ver) {
