@@ -2,8 +2,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
       {{ if ne (getenv "HUGO_ENV") "production" }}
             {{- partial "noindex" . | safeHTML -}}
-            {{- partial "canonical-url" . | safeHTML -}}
       {{ end }}
+      {{- partial "canonical-url" . | safeHTML -}}
       {{ .Hugo.Generator }}
       <title>{{ .Title }} | {{ .Site.Title }}</title>
       <link rel="shortcut icon" href="{{"/images/icon_logo/favicon-32x32.png" | relURL}}" type="image/x-icon" />
