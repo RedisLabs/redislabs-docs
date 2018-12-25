@@ -2588,4 +2588,6 @@ i.icon-icons_plus, i.icon-icons_minus {
 
 .main-content ol > li > ol > li > ol > li > ol  {list-style-type: lower-alpha;}
 
-/* test */
+.autocomplete-suggestion > .context {
+  display: block !important;
+}

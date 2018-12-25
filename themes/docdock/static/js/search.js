@@ -70,7 +70,7 @@ $( document ).ready(function() {
         },
         /* renderItem displays individual search results */
         renderItem: function(item, term) {
-            var numContextWords = 2;
+            var numContextWords = 3;
             var text = item.content.match(
                 "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
                     term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
@@ -81,10 +81,8 @@ $( document ).ready(function() {
                 'data-title="' + item.title + '" ' +
                 'data-uri="'+ item.uri + '" ' +
                 'data-context="' + item.context + '">' +
-                '' + item.title +
-                '<div class="context">' +
-                (item.context || '') +'</div>' +
-                '<strong class="category">' + item.cat + '</strong>' +
+                    '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
+                    '<div class="context">' + (item.context || '') +'</div>' +
                 '</div>';
         },
         /* onSelect callback fires when a search suggestion is chosen */
