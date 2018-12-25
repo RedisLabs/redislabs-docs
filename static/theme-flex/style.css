@@ -844,7 +844,6 @@ article section.page pre {
 article section.page pre .copy-to-clipboard {
   background: #f7f7f7;
   cursor: pointer;
-  padding-bottom: 4px;
   padding-top: 10px;
   position: absolute;
   right: 0;
@@ -876,7 +875,7 @@ article section.page pre[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
   white-space: pre;
-  padding-right: 50px; /* to make room for copy icon once scrolled fully to the right   */
+  padding-right: 25px; /* to make room for copy icon once scrolled fully to the right   */
   overflow-x: auto;
 }
 
