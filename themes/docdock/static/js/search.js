@@ -74,7 +74,9 @@ $( document ).ready(function() {
             var text = item.content.match(
                 "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
                     term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
-            item.context = text;
+            if(text && text.length > 0) {
+                item.context = '...' + text[0].trim() + '...';
+            }
             item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
