@@ -12,7 +12,7 @@ Enterprise Software (RS) clusters.
 Common uses for CRDBs include disaster recovery, geographically
 redundant applications, and keeping data closer to your user's
 locations. MMR is always multi-directional amongst clusters configured
-in the CRDB. For unidirectional replication, please see the ReplicaOf
+in the CRDB. For unidirectional replication, see the [ReplicaOf]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
 capabilities in Redis Enterprise Software.
 
 Note: CRDBs do not replicate the entire database, only the data. Any
