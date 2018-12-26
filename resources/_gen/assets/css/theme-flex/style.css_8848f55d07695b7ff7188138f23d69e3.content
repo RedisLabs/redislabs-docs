@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 header {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -2468,15 +2466,15 @@ i.icon-icons_plus, i.icon-icons_minus {
   margin-left: 45px;
 }
 
-.expand-label > span:hover {
-  color: #b62410;
-}
-
 .expand-label {
   transition: all .2s;
   display: flex;
   align-items: start;
   margin-bottom: 12px;
+}
+
+.expand-label > span:hover {
+  color: #b62410;
 }
 
 .main-content-left > ol > li > ol {list-style: lower-alpha;}
