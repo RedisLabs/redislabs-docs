@@ -134,11 +134,22 @@ Now create a policy to assign to the user:
                 "Resource": "*"
             },
             {
-                "Sid": "GetUserInfo",
+                "Sid": "CloudWatchReadOnly",
+                "Effect": "Allow",
+                "Action": [
+                    "cloudwatch:Describe*",
+                    "cloudwatch:Get*",
+                    "cloudwatch:List*"
+                ],
+                "Resource": "*"
+            },
+            {
+                "Sid": "IamUserOperations",
                 "Effect": "Allow",
                 "Action": [
                     "iam:GetUser",
-                    "iam:GetUserPolicy"
+                    "iam:GetUserPolicy",
+                    "iam:ChangePassword"
                 ],
                 "Resource": "arn:aws:iam::*:user/${aws:username}"
             },
