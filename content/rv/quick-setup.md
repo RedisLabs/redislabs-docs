@@ -26,7 +26,7 @@ VPC](https://app.redislabs.com/#/login?).
 RV requires a dedicated AWS account to perform operations on your
 behalf. Inside of that account, create an AWS user in IAM specifically
 for RV use, per "[Creating an AWS user for Redis Enterprise
-VPC](com/rv/how-to/creating-aws-user-redis-cloud-private/)."
+VPC]({{< relref "/rv/how-to/creating-aws-user-redis-cloud-private.md" >}}).
 
 ## Step 3: Create a new RV subscription
 
