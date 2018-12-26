@@ -92,7 +92,7 @@ use tools that enable this functionality, such as
 stunnel is detailed below.
 
 **Note**: For security reasons, RS supports only the TLS protocol.
-Therefore, ensure that the Redis client or secured tunnel solution you
+Therefore, make sure that the Redis client or secured tunnel solution you
 use supports TLS, preferably TLS v1.2.
 
 When using self-signed certificates on the cluster nodes, make sure to
@@ -100,7 +100,7 @@ copy these certificates to the client machines as well, thereby enabling
 the client to validate the cluster nodes.
 
 When using a certificate issued by an intermediate certificate authority
-(CA) on the cluster nodes, ensure that the CA root certificate is
+(CA) on the cluster nodes, make sure that the CA root certificate is
 installed on the client machines.
 
 #### Example how to secure client connection with SSL/TLS using stunnel
@@ -138,7 +138,7 @@ certificates, and a self-signed certificate on the client machine.
     /etc/stunnel/certsvr2.pem \> /etc/stunnel/servercerts.pem
 6. Configure stunnel for the connection to RS by using the steps below:
     1. Create a redislabs.conf file in /etc/stunnel folder.
-    2. Ensure that the certificates that have been generated exist in
+    2. Make sure that the certificates that have been generated exist in
         the following folder: /etc/stunnel.
     3. Edit the redislabs.conf content to look as follows:cert =
         /etc/stunnel/cert.pem

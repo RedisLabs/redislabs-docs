@@ -14,8 +14,8 @@ Storage Considerations
 AWS instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. Therefore, when you
-set up an instance ensure that it has a properly sized EBS backed volume
-connected. Later, when setting up RS on the instance, ensure that the
+set up an instance make sure that it has a properly sized EBS backed volume
+connected. Later, when setting up RS on the instance, make sure that the
 persistence storage (for additional details, refer to [Persistent and
 ephemeral
 storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
@@ -69,7 +69,7 @@ When configuring the Security Group:
 - If you would like to create a cluster that has multiple nodes all
     running as instances on AWS, you need to define a security group
     that has an All TCP rule for all ports, 0 - 65535, and add it to
-    all instances that are part of the cluster. This will ensure that
+    all instances that are part of the cluster. This will make sure that
     all nodes are able to communicate with each other. If you would not
     like to open all TCP ports and instead define specific ports and
     ports ranges, refer to Machine ports configuration for a

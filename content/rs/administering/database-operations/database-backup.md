@@ -29,7 +29,7 @@ ftp://user:password\@host:port/path/
 ### Amazon S3 or OpenStack Swift location
 
 To backup to Amazon S3 or OpenStack Swift, select the location type and
-enter the details in relevant fields. Ensure first that you have all
+enter the details in relevant fields. Make sure first that you have all
 these details from your selected platform.
 
 ### Periodic backup

@@ -65,7 +65,7 @@ To define your Kubernetes cluster, give it a name and keep the size of the clust
 
 Note: it may take a few mins to create the cluster. Ensure the Kubernetes cluster creation is complete before proceeding to the next step.
 
-For best placement, Redis Enterprise pods should be placed on separate physical nodes in the Kubernetes cluster. This ensures better availability under nodes failures. Placing multiple Redis Enterprise nodes in the same physical host can cause multiple nodes to fail at once and may result in availability and data loss.
+For best placement, Redis Enterprise pods should be placed on separate physical nodes in the Kubernetes cluster. This makes sure that there is better availability during node failures. Placing multiple Redis Enterprise nodes in the same physical host can cause multiple nodes to fail at once and may result in availability and data loss.
 
 <!-- Add image -->
 

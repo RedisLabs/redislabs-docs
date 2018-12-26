@@ -24,7 +24,7 @@ the **Log **page, and can also be sent by **email**.
 **To enable receiving email alerts**:
 
 1. Select the checkbox at the bottom of the section.
-1. Add the relevant users on the **Team** page, and ensure that the
+1. Add the relevant users on the **Team** page, and make sure that the
     checkbox Email Alerts is selected (for additional details, refer to
     [Account
     Management]({{< relref "/rs/administering/security/account-management.md" >}}).

@@ -36,7 +36,7 @@ Prerequisites:
     databases' persistence files.
 - You will need servers on which to run the new cluster nodes. You
     will need the same number of nodes as existed in the old cluster.
-    Ensure that these nodes contain at least the same space as the nodes
+    Make sure that these nodes contain at least the same space as the nodes
     that you had in the old cluster.
 - The new nodes must run the **exact same RS version as was running on
     the old nodes** (for additional details, refer to [Accessing and
@@ -47,7 +47,7 @@ Prerequisites:
 - The persistent storage drives of the old cluster nodes must be
     mounted to the new servers, to make the configuration and
     persistence files available for the recovery process. You must
-    ensure that the user redislabs has permissions to access this
+    make sure that the user redislabs has permissions to access this
     storage location on each of the nodes.
 
     **Note**: We highly recommended that you allocate new persistent
@@ -182,7 +182,7 @@ from either of the following:
 - There is some issue with the persistence files (for example: lack of
     permissions to read the files, missing files, or corrupted files)
 
-First, ensure that the recovery path is set correctly on all of the
+First, make sure that the recovery path is set correctly on all of the
 nodes in the cluster. If that does not resolve the issues, [contact our
 support team](mailto:support@redislabs.com).
 

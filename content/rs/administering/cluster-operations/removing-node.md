@@ -22,7 +22,7 @@ any action.**
 ## Permanently removing a node
 
 Permanently removing a node means you are decreasing cluster capacity.
-Before trying to remove a node, ensure that the cluster has enough
+Before trying to remove a node, make sure that the cluster has enough
 capacity for all resources without that node, otherwise you will not be
 able to remove the node.
 

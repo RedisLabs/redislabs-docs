@@ -10,8 +10,7 @@ nodes. For production deployments, Redis Labs recommends an uneven
 number of nodes, with a minimum of three.
 
 Note: In a cluster that consists of only one node, some features and
-capabilities such as database replication (which enables failover to
-ensure high availability), are not enabled.
+capabilities are not enabled, such as database replication that provides high availability.
 
 To set up a new cluster, you must first [install the Redis Enterprise
 Software
