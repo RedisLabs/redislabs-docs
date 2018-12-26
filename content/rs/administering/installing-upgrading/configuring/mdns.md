@@ -11,7 +11,7 @@ and should only be used in dev/test environments.
 If you choose to use the mDNS protocol when setting the cluster name
 (for details, refer [How to set the cluster
 name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
-ensure that the configurations and prerequisites, which are required for
+make sure that the configurations and prerequisites, which are required for
 resolving databases' endpoints, are met. These configurations and
 perquisites are needed on the client machines, as well as on the
 machines you are using as Redis Enterprise Software (RS) nodes if you
@@ -19,7 +19,7 @@ are using the [Replica
 of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
 feature.
 
-First, ensure that the machines acting as clients and the machines
+First, make sure that the machines acting as clients and the machines
 acting as nodes reside on the same physical network, or have the
 networking infrastructure configured to allow multicasting between them.
 
@@ -51,7 +51,7 @@ on the operating system you are using:
 If you are using mDNS along with IPv6 addresses (see more details in
 [Multi-IP &
 IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}),
-ensure that you also make the following update to the
+make sure that you also make the following update to the
 "/etc/nsswitch.conf" file:
 
 - Update the hosts line to: hosts: files mdns4_minimal

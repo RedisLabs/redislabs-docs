@@ -64,13 +64,13 @@ important to upgrade the nodes one by one, and **not attempt to upgrade
 more than one node at a time**.
 
 It is highly advisable to run *rlcheck* and *rladmin status extra all*
-on the node both before and after the upgrade, to ensure that the node
+on the node both before and after the upgrade, to make sure that the node
 is functioning properly. For additional details, refer to [rlcheck
 Installation Verification
 Utility]({{< relref "/rs/references/cli-reference/rlcheck.md" >}}).
 
 If you have the RS management UI open in the browser while you are
-upgrading the nodes, ensure that you refresh the browser before trying
+upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
 ## Upgrading databases
@@ -104,7 +104,7 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
 
 **To upgrade your database:**
 
-1. Ensure that all of the nodes in the RS cluster have been upgraded,
+1. Make sure that all of the nodes in the RS cluster have been upgraded,
     as described in Upgrading nodes section above. Otherwise, you will
     not be able to upgrade the databases.
 1. In the *rladmin* CLI, run the upgrade db command for each database.
@@ -117,7 +117,7 @@ a result:
 - For databases that have replication enabled (for additional details,
     refer to [Database
     replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
-    a failover occurs prior to restarting the database to ensure that
+    a failover occurs prior to restarting the database to make sure that
     there is no downtime.
 - For databases that do not have replication enabled and persistence
     enabled, some downtime occurs while the database is restarting. The

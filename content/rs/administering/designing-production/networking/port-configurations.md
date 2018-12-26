@@ -9,7 +9,7 @@ Servers used as Redis Enterprise Software (RS) nodes should ideally have
 all the below ports open between them for internal cluster communication
 purposes.
 
-In addition, ensure that the ICMP protocol is enabled for communications
+In addition, make sure that the ICMP protocol is enabled for communications
 between the nodes.
 
 By default, the cluster assigns ports in the range of 10,000 - 19,999

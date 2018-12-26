@@ -22,7 +22,7 @@ Status** fields, in the **Log **page, and can also be sent via email.
 To enable receiving email alerts:
 
 1. Select the checkbox at the bottom of the Alerts page.
-1. Add the relevant users to the Team page, and ensure that the
+1. Add the relevant users to the Team page, and make sure that the
     checkbox Email Alerts is selected (for additional details, refer to
     [Managing
     users]({{< relref "/rs/administering/security/account-management.md" >}}).

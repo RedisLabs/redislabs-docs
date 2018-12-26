@@ -8,7 +8,7 @@ categories: ["RS"]
 Management actions performed with Redis Enterprise are audited in order
 to fulfill two major objectives:
 
-1. To ensure that system management tasks are appropriately performed
+1. To make sure that system management tasks are appropriately performed
     and/or monitored by the Administrator(s)
 1. To facilitate compliance with regulatory
     standards

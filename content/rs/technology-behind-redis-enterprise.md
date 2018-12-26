@@ -89,7 +89,7 @@ additional virtual servers for scaling out (or in) when load increases
 or decreases. Built-in configurable monitoring functions help the
 administrator keep an eye on a cluster's resources' utilization levels.
 
-RS also ensures uninterrupted operation of Redis databases by protecting
+RS also makes sure that there is uninterrupted operation of Redis databases by protecting
 against out-of-memory events and tuning memory fragmentation
 automatically.
 

@@ -66,7 +66,7 @@ database, master and slave shards carry identical data and clusters
 replication capabilities communicate all updates from the master shards
 to the slave shard. As the goal of replication between master and slave
 shards is high availability and protection against failures, Redis
-Enterprise cluster ensures that the master and slave shards are never
+Enterprise cluster makes sure that the master and slave shards are never
 placed on the same node.
 
 Administrators can also protect against rack or zone failures by
@@ -76,7 +76,7 @@ assumes the nodes are running in the same rack or zone and if rack ids
 differ between nodes, the system understands that the nodes are on
 different racks or zones. This added configuration can help place shards
 for better protection against rack or zone failures. When rack and zone
-protection is enabled, Redis Enterprise Software cluster ensures master
+protection is enabled, Redis Enterprise Software cluster makes sure that master
 and slave shards are never placed in the same rack or zone. This means
 if an entire node or rack fails and takes out a few nodes of the
 cluster, Redis Enterprise can continue to function without downtime as

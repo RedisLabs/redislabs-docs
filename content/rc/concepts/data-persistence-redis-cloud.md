@@ -10,7 +10,7 @@ per-database basis and in multiple ways. Unlike a few cloud provider's
 Redis offerings, RC has two options for persistence, Append Only File
 (AOF) and Snapshot (RDB), and in addition, data-persistence is always
 performed over a persistent storage that is attached to the cloud
-instance (e.g. AWS EBS). This ensures no data-loss in case of a node
+instance (e.g. AWS EBS). This makes sure that no data is lost in case of a node
 failure event, as the new cloud instance will be attached to the
 existing persistent storage volume.
 

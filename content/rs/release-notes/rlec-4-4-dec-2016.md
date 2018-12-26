@@ -168,7 +168,7 @@ Changes in 4.4.2 - 49
     database, the memory limit on the target database is not enforced
     and that used memory of the target database can go over the memory
     limit set.
-    **Workaround:** You should ensure that the total memory limit of all
+    **Workaround:** You should make sure that the total memory limit of all
     source databases is not bigger than the memory limit of the target
     database.
 - **Issue:** RLEC-8487 - Some Redis processes stay running after

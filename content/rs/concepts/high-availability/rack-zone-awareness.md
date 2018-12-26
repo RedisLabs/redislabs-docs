@@ -12,7 +12,7 @@ compared to non-rack-zone aware configuration.
 When you enable rack-zone awareness in the cluster, you need to assign
 each node to a rack-zone ID. This ID is used for mapping the node to a
 physical rack or a logical zone (which itself is mapped to a physical
-rack). The cluster can then ensure that master shards and corresponding
+rack). The cluster can then make sure that master shards and corresponding
 slave shards, and similarly endpoints, are placed on nodes in different
 racks. Thus, if a rack fails and master / slave failover takes place,
 the slaves are much more likely to be available because they reside on
@@ -60,7 +60,7 @@ rack-zone awareness as well.
 
 If you do not enable rack-zone awareness for the database, the cluster
 does not ensure the masters and corresponding slaves are placed on nodes
-residing in different racks. However, the cluster still ensures master
+residing in different racks. However, the cluster still makes sure that master
 and slaves are placed on different nodes, in order to ensure
 high-availability, as it would in a non-rack-zone aware cluster.
 

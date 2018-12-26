@@ -104,7 +104,7 @@ adding or deleting a source), then the synchronization process is
 restarted from scratch for all the source databases.
 
 **Note:** If you used the mDNS protocol when naming the cluster name
-(FQDN), ensure that the client mDNS perquisites are met in order for the
+(FQDN), make sure that the client mDNS perquisites are met in order for the
 *Replica of* feature to work. For additional details, refer to the
 [Client prerequisites for
 mDNS]({{< relref "/rs/administering/installing-upgrading/configuring/mdns.md" >}}).

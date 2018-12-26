@@ -68,7 +68,7 @@ You have two options for naming the cluster FQDN:
 Use this option if you already have your own domain, would like to make
 the cluster part of your domain and are able to update the DNS.
 
-Choosing this option requires you to ensure that the cluster and at
+Choosing this option requires you to make sure that the cluster and at
 least one node (preferably all nodes) in the cluster are correctly
 configured in the DNS with the appropriate NS entries.
 
