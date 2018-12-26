@@ -738,7 +738,7 @@ section.page {
   padding: 2rem 3rem 0 27rem;
   max-width: 1420px;
   margin: 0 auto;
-  padding-right: 3rem;
+  padding-right: 0;
 }
 article section.page h1:first-of-type {
   margin: 5rem 0rem;
@@ -823,6 +823,8 @@ article section.page p > code,
 article section.page li code,
 article section.page table code {
   padding: 0 0.25rem; }
+
+/* Code source and copy */
 article section.page pre {
   background-color: #f7f7f7 !important;
   border-radius: .2rem;
@@ -834,19 +836,21 @@ article section.page pre {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  /* position: relative; */
   max-width: 100%;
   width: 100%;
   display: inline-grid;
   position: relative;
-  /* overflow: visible; */
 }
 article section.page pre .copy-to-clipboard {
-  /* float: right; */
-  position: absolute;
-  right: 10px;
+  background: #f7f7f7;
   cursor: pointer;
-  top: 10px;
+  padding-top: 10px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 28px;
+  height: 29px;
 }
 article section.page pre[class*="language-"] {
   background-color: #333;
@@ -872,6 +876,8 @@ article section.page pre[class*="language-"] {
   -o-tab-size: 4;
   tab-size: 4;
   white-space: pre;
+  padding-right: 25px; /* to make room for copy icon once scrolled fully to the right   */
+  overflow-x: auto;
 }
 
 ul.menu > li.dd-item:not(.parent) i {
@@ -959,7 +965,7 @@ a.menu__link:hover:before {
   font-size: 10px;
   justify-content: space-between;
   line-height: 1;
-  /* padding: 10px 0; */
+  padding-right: 10px;
 }
 span.links span:nth-child(2) {
   display: none;
@@ -2476,3 +2482,4 @@ i.icon-icons_plus, i.icon-icons_minus {
 .main-content-left > ol > li > ol {list-style: lower-alpha;}
 
 .main-content ol > li > ol > li > ol > li > ol  {list-style-type: lower-alpha;}
+

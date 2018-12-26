@@ -86,7 +86,7 @@ configured in the DNS with the appropriate NS entries.
 In the FQDN field, enter the value: redislabscluster.mydomain.com, and
 add the following records in the DNS for mydomain.com:
 
-```
+```src
   redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com
                                              node2.redislabscluster.mydomain.com
 
