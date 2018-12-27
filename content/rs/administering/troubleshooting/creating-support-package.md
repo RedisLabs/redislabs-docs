@@ -24,7 +24,7 @@ If package creation fails with `internal error` or if you cannot access the UI, 
 
 - On any one of the node in the cluster, run: `/opt/redislabs/bin/rladmin cluster debug_info`
 
-If it this command fails, you can create a support package for each cluster node from the command-line:
+If this command fails, you can create a support package for the cluster, using the following from the command-line:
 
 - On each node of the cluster, run: `/opt/redislabs/bin/debuginfo`
 
