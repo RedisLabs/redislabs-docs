@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/configuring/mdns/
 ---
 **Note:** mDNS is **not** supported for use with production environments
 and should only be used in dev/test environments.

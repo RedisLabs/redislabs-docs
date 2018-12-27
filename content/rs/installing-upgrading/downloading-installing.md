@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/downloading-installing/
 ---
 The first thing you need to decide is how you will deploy Redis
 Enterprise Software. If on-premise or in the cloud and you want to

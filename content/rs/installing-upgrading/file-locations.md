@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/file-locations/
 ---
 Below is a table of which directories Redis Enterprise Software (RS)
 installs into and/or utilizes.

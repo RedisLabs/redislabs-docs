@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/upgrading/
 ---
 Upgrading Redis Enterprise Software (RS) consists of upgrading the
 software on each of the nodes.

@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/configuring/change-location-socket-files/
 ---
 You can change the location of the socket files anytime, but to limit
 downtime, it is best to perform this change when you are
