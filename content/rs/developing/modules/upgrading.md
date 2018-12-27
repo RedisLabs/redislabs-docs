@@ -43,7 +43,6 @@ it:
     the configuration section
 1. You will see in the page that an update is
     available.
-    
 
 ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
@@ -56,7 +55,6 @@ it:
 1. SSH into any node of the cluster
 1. Identify the database you are
     upgrading.
-    
 
 ![rladmin_status-1](/images/rs/rladmin_status-1.png?width=1000&height=214)
 
@@ -65,12 +63,10 @@ it:
     \<your_db_name\> module_name \<module_name\> version
     \<new_module_version_num\> module_args \<module
     arguments\>
-    
+
     Note: When this is done, it will
     restart the database shards and thus cause downtime for this
     database across the cluster.
-
- 
 
 Each module package is a zip file. Inside the zip file is a JSON file
 and it will contain the information necessary for the above rladmin
@@ -91,15 +87,11 @@ $ rladmin upgrade module db_name
 MyAwesomeDB module_name ft version 10017.0
 module_args
 
- 
-
 An example of upgrading ReBloom:
 
 $ rladmin upgrade module db_name MyDB
 module_name bf version 10100.0 module_args
 ""
-
- 
 
 An example of upgrading ReJSON:
 

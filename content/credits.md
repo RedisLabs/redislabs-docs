@@ -4,7 +4,6 @@ description: contributors and packages used by hugo-theme-docdock
 draft: true
 ---
 
-
 ## github contributors
 {{%ghcontributors "https://api.github.com/repos/vjeantet/hugo-theme-docdock/contributors?per_page=100" %}}
 
@@ -24,7 +23,6 @@ draft: true
 </div>
 
 </div>
-
 
 
 ## Packages and libraries

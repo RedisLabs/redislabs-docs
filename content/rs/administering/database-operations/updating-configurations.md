@@ -20,8 +20,6 @@ To edit the configuration of a database:
     database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 1. Click Update.
 
- 
-
 **Updating CRDB configuration**
 
 A Conflict-Free Replicated Database (CRDB) is a global database that
@@ -35,8 +33,6 @@ Changes done to "Memory limit", "Data persistence", "Redis password",
 "Number of Shards", or "SSL Mode" and "Periodic backup" are only applied
 to the local CRDB instance and not applied to all Participating
 Clusters.
-
- 
 
 **Participating Clusters**
 
@@ -70,8 +66,6 @@ Participating Cluster is removed, all updates received by remaining CRDB
 Instances from the removed CRDB instance, are
 rejected.
 
- 
-
 **SSL Authentication and Encryption**
 
 When creating CRDBs, you can specify SSL in two
@@ -91,5 +85,3 @@ communications** from the **SSL
 Authentication** drop down.
 
 ![pasted-image-SSL](/images/rs/pasted-image-SSL.png?width=1080&height=1221)
-
- 

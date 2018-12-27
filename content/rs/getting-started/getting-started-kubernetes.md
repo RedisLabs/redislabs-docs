@@ -39,8 +39,6 @@ Lets first get your commandline environment set up.
 
     gcloud auth login
 
-
-
 *   Get the default project_ID set. Here is how you can list and set the project context to be used by upcoming commands. Note that you will get some random name like mine ("speedy-lattice-166011") if you have not explicitly specified an ID
 
     gcloud projects list
@@ -88,7 +86,6 @@ And finally start the Kubernetes proxy:
 
     kubectl proxy
 
-
 ## Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
 
 You now need to feed the container yaml file to provision Redis Enterprise cluster. You can download a sample [container yaml file](https://docs.redislabs.com/latest/rs/getting-started/redis-enterprise.yaml).
@@ -114,7 +111,6 @@ The output will look something like this;
 
     redispack-deployment-709212938-kcjd7 1/1 Running 0 7s
 
-
 ## Step 3: Setup Redis Enterprise cluster
 
 We are now ready to create the Redis Enterprise cluster. There is one small change that needs to be done to the container to get networking to work properly: we need to change the css binding to 0.0.0.0. To do this, you need to run the following in each container with each iteration using the pods name from the _kubectl get po_ output above.
@@ -138,7 +134,6 @@ In my case the output was 10.0.2.10. Lets add node 2 and 3 to the cluster
     kubectl exec -it redispack-deployment-709212938-k8njr "/opt/redislabs/bin/rladmin" cluster join username cihan@redislabs.com password redislabs123 nodes 10.0.2.10 flash_enabled
 
     kubectl exec -it redispack-deployment-709212938-kcjd7 "/opt/redislabs/bin/rladmin" cluster join username cihan@redislabs.com password redislabs123 nodes 10.0.2.10 flash_enabled
-
 
 ## Step 4: Create a Redis database and test your connectivity
 

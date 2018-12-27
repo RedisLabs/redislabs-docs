@@ -15,7 +15,6 @@ Here you can find procedures that were used in previous releases.
 
 To update a certificate in the cluster, [upgrade the cluster]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}}) to RS 5.2.0 or above and then update the certificates with the REST API.
 
-
 ### For versions below 5.0.2
 
 **Note**: If you choose to update the certificates you must follow these

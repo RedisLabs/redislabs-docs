@@ -63,5 +63,3 @@ does not ensure the masters and corresponding slaves are placed on nodes
 residing in different racks. However, the cluster still makes sure that master
 and slaves are placed on different nodes, in order to ensure
 high-availability, as it would in a non-rack-zone aware cluster.
-
- 
