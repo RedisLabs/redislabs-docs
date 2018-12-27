@@ -28,7 +28,7 @@ If it this command fails, you can create a support package for each cluster node
 
 - On each node of the cluster, run: `/opt/redislabs/bin/debuginfo`
 
-Upload the tar archive to the Redis Labs Support site. The path to the archive is shown in the command output.
+Upload the tar archive to the [Redis Labs Support site](https://support.redislabs.com). The path to the archive is shown in the command output.
 {{% /expand%}}
 
 Note that creating a support package might take several minutes and
