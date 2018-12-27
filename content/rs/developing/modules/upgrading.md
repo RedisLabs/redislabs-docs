@@ -78,7 +78,7 @@ that i used for the example command above:
 
 ![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
 
-## [Examples
+## Examples
 
 An example of upgrading the version of RediSearch to 10017.0 would
 be:
