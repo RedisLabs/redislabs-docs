@@ -13,17 +13,17 @@ Redis is the most popular database used with Docker containers. Redis Enterprise
 
 We will use the Docker container for 4.5 version of Redis Enterprise for the steps here. You can find more information on the container image on [Docker Hub](https://hub.docker.com/r/redislabs/redis/) and see details on how to deploy the container locally with Docker below:
 
-*   [Working with Redis Enterprise and Docker]({{< relref "/rs/getting-started/docker/_index.md" >}})
-*   [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}})
+-   [Working with Redis Enterprise and Docker]({{< relref "/rs/getting-started/docker/_index.md" >}})
+-   [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}})
 
 ## Deploying Redis Enterprise with Kubernetes on Google Cloud
 
 We will go through 4 steps to set up our cluster with Redis Enterprise:
 
-*   Step 1: Create a Kubernetes cluster on Google Cloud
-*   Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
-*   Step 3: Setup Redis Enterprise cluster
-*   Step 4: Create a Redis database and test your connectivity
+-   Step 1: Create a Kubernetes cluster on Google Cloud
+-   Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
+-   Step 3: Setup Redis Enterprise cluster
+-   Step 4: Create a Redis database and test your connectivity
 
 _Note: The deployment is deliberately simplified and is great for getting started with Kubernetes and Redis Enterprise fast. It certainly isn't intended for production use._
 
@@ -35,17 +35,17 @@ The steps below were performed using the latest [Google Cloud sdk](https://cloud
 
 Lets first get your commandline environment set up.
 
-*   First authenticate to your Google Cloud environment.
+-   First authenticate to your Google Cloud environment.
 
     gcloud auth login
 
-*   Get the default project_ID set. Here is how you can list and set the project context to be used by upcoming commands. Note that you will get some random name like mine ("speedy-lattice-166011") if you have not explicitly specified an ID
+-   Get the default project_ID set. Here is how you can list and set the project context to be used by upcoming commands. Note that you will get some random name like mine ("speedy-lattice-166011") if you have not explicitly specified an ID
 
     gcloud projects list
 
     gcloud config set project speedy-lattice-166011
 
-*   Finally, let's get the default zone/geography where you want your cluster set up. Here is how you can list the zones and set the zone context to be used by upcoming commands.
+-   Finally, let's get the default zone/geography where you want your cluster set up. Here is how you can list the zones and set the zone context to be used by upcoming commands.
 
     gcloud compute zones list
 

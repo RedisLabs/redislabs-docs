@@ -7,8 +7,8 @@ categories: ["RS"]
 ---
 From Redis Enterprise Software version 5.0.2 and higher, you can connect your Prometheus or Grafana server to your Redis Enterprise cluster in order to collect and display metrics data. Metrics are exposed at the node, database, shard and proxy levels.
 
-*   Prometheus ([https://prometheus.io/](https://prometheus.io/)) is an open-source systems monitoring and alerting toolkit that can scrape metrics from different sources.
-*   Grafana ([https://grafana.com/](https://grafana.com/)) is an open-source, feature-rich metrics dashboard and graph editor that can process Prometheus data.
+-   Prometheus ([https://prometheus.io/](https://prometheus.io/)) is an open-source systems monitoring and alerting toolkit that can scrape metrics from different sources.
+-   Grafana ([https://grafana.com/](https://grafana.com/)) is an open-source, feature-rich metrics dashboard and graph editor that can process Prometheus data.
 
 ![grafana-prometheus](/images/rs/grafana-prometheus.png?width=500)
 
@@ -20,8 +20,8 @@ To get started with custom monitoring:
 
 1. Copy this Prometheus configuration into `./prometheus/prometheus.yml` in your current folder:
 
-    * If you already have Prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration and skip the next step.
-    * Replace `<cluster_name>` with your actual cluster FQDN.
+    - If you already have Prometheus installed, just copy the 'redis-enterprise' job into your existing Prometheus configuration and skip the next step.
+    - Replace `<cluster_name>` with your actual cluster FQDN.
 
     ```yml
     global:
@@ -90,8 +90,8 @@ To get started with custom monitoring:
 1. Configure the Grafana datasource:
     1. Login to Grafana. If you installed Grafana locally, go to http://localhost:3000 and login with:
 
-    	* Username: admin
-    	* Password: secret
+     - Username: admin
+     - Password: secret
 
     1. In the Grafana configuration menu, select **Data Sources**.
 
@@ -99,16 +99,16 @@ To get started with custom monitoring:
 
     1. Add a new data source with:
 
-        * Name: `redis-enterprise`
-        * Type: `Prometheus`
-        * URL: `http://<your prometheus address>:9090`
-        * Access: `Server`
+        - Name: `redis-enterprise`
+        - Type: `Prometheus`
+        - URL: `http://<your prometheus address>:9090`
+        - Access: `Server`
 
     NOTES:
 
-    * If the network port is not accessible to the Grafana server, 
+    - If the network port is not accessible to the Grafana server, 
     select the 'Browser' option from the Access menu.
-    * In a testing environment, you can select 'Skip TLS verification'.
+    - In a testing environment, you can select 'Skip TLS verification'.
 
     ![prometheus-connection](/images/rs/prometheus-connection.png?width=500)
 

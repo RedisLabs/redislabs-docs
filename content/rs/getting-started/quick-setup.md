@@ -47,9 +47,9 @@ the Redis Enterprise Software web console.
 
     Note:
 
-    * Depending on your browser, you may see a certificate error. You can safely 
+    - Depending on your browser, you may see a certificate error. You can safely 
     continue to the web console.
-    * If you see an error from nginx, try again after a few minutes.
+    - If you see an error from nginx, try again after a few minutes.
 
 1. Click **Setup** to start the node configuration steps.
 
@@ -87,8 +87,8 @@ You now have a Redis database!
 After you create the Redis database, you are ready to store data in your
 database. You can test connectivity to your database with:
 
-* redis-cli - the built-in command-line tool
-* A _Hello World_ application using Python
+- redis-cli - the built-in command-line tool
+- A _Hello World_ application using Python
 
 ### Connecting Using redis-cli
 

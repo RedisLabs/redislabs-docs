@@ -19,8 +19,8 @@ new slave shard. For example:
 1. Node:2 has a master shard and node:3 has the corresponding the slave shard.
 1. Either:
 
-    * Node:2 fails and the slave shard on node:3 is promoted to master.
-    * Node:3 fails and the master shard is no longer replicated.
+    - Node:2 fails and the slave shard on node:3 is promoted to master.
+    - Node:3 fails and the master shard is no longer replicated.
 
 1. If slave HA is enabled, a new slave shard is created on an available node 
     that does not hold the master shard.
@@ -33,14 +33,14 @@ new slave shard. For example:
 
 You can enable slave HA using rladmin or using the REST API either for:
 
-* Cluster - All databases in the cluster use slave HA
-* Database - Only the specified database uses slave HA
+- Cluster - All databases in the cluster use slave HA
+- Database - Only the specified database uses slave HA
 
 By default, slave HA is set to disabled at the cluster level and enabled at the 
 database level, with the cluster level overriding, so that:
 
-* To enable slave HA for all databases in the cluster - Enable slave HA for the cluster
-* To enable slave HA for only specified databases in the cluster:
+- To enable slave HA for all databases in the cluster - Enable slave HA for the cluster
+- To enable slave HA for only specified databases in the cluster:
     1. Enable slave HA for the cluster
     1. Disable slave HA for the databases for which you do not want slave HA enabled
 
@@ -92,13 +92,13 @@ hours).
 
 To configure this grace period from rladmin, run:
 
-* For the cluster:
+- For the cluster:
     
     ```
     rladmin tune cluster slave_ha_cooldown_period <time_in_seconds>
     ```
 
-* For all databases in the cluster:
+- For all databases in the cluster:
 
     ```
     rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
@@ -108,6 +108,6 @@ To configure this grace period from rladmin, run:
 
 The following alerts are sent during slave HA activation:
 
-* Shard migration begins after the grace period
-* Shard migration fails because there is no available node (Sent hourly)
-* Shard migration is delayed because of the cooldown period
+- Shard migration begins after the grace period
+- Shard migration fails because there is no available node (Sent hourly)
+- Shard migration is delayed because of the cooldown period

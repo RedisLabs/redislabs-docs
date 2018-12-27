@@ -12,8 +12,8 @@ by incrementally updating Pods’ Redis Enterprise Cluster instances with new on
 
 The following illustrations depict how a rolling update occurs:
 
-* Each pentagon represents a node
-* Each box represents a Pod
+- Each pentagon represents a node
+- Each box represents a Pod
 
 ![kubernetes-rolling-updates]( /images/rs/kubernetes-rolling-updates.png )
 

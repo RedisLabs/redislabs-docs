@@ -86,16 +86,16 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     1. For the **database name**, enter: `database1`
     1. For the **endpoint port number**, enter: `12000`
     1. In the **participating clusters** list, add the address and admin credentials for:
-        * `http://cluster1.local:8080` - the cluster you are currently connected to
-        * `http://cluster2.local:8080` - the other cluster
+        - `http://cluster1.local:8080` - the cluster you are currently connected to
+        - `http://cluster2.local:8080` - the other cluster
     <!-- Also in create-crdb.md -->
     1. In the **Database clustering** option, either:
 
-        * Make sure the Database clustering is enabled and select the number of shards 
+        - Make sure the Database clustering is enabled and select the number of shards 
         that you want to have in the database. When database clustering is enabled, 
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). 
         You can increase the number of shards in the database at any time. 
-        * Clear the **Database clustering** option to use only one shard and so 
+        - Clear the **Database clustering** option to use only one shard and so 
         that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         limitations do not apply.
         
@@ -154,8 +154,8 @@ redis-cli is a simple command-line tool to interact with redis database.
 1.  Store and retrieve a key in the database to test the connection with these 
     commands:
     
-    * `set key1 123`
-    * `get key1`
+    - `set key1 123`
+    - `get key1`
 
     The output of the command looks like this:
 

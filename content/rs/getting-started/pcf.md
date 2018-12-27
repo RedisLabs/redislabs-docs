@@ -124,9 +124,9 @@ Pivotal recommends that you run a daily backup.
 
 Before you configure a backup process you must have:
 
-* BBR user credentials - Find the values for `bbr_user` and `bbr_user_pass` in the Ops Manager file: 
+- BBR user credentials - Find the values for `bbr_user` and `bbr_user_pass` in the Ops Manager file: 
 https://<host>/api/v0/deployed/director/credentials/uaa_bbr_client_credentials
-* Deployment name - On the Ops Manager, find the deployment name that begins 
+- Deployment name - On the Ops Manager, find the deployment name that begins 
     with `redis-enterprise-` in the output of the command:
 
     ```src

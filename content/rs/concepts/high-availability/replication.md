@@ -15,11 +15,11 @@ guarantees that data is served with minimal to no interruption.
 
 You can tune your high availability configuration with:
 
-* [Rack/Zone
+- [Rack/Zone
 Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) - When rack-zone awareness is used, there is additional and more advanced
 logic used for determining which nodes get designated as the master or
 slave.
-* [High Availability for Slave Shards]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) - When high availability 
+- [High Availability for Slave Shards]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) - When high availability 
 for slave shards is used, the slave is automatically migrated on node failover to maintain high availability.
 
 **Note**: Enabling replication has implications for the total database

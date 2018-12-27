@@ -40,47 +40,47 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 ## Additional Capabilities
 
-*   Support for a new operating system- Ubuntu 18.04 64-bit.
+-   Support for a new operating system- Ubuntu 18.04 64-bit.
 
 ## Product Version Lifecycle
 
-*   The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/administering/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
+-   The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/administering/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
 
 ## Important Fixes
 
-*   RS23616 - Fixed a failure when updating the memory limit of RoF database.
-*   RS22871 - Fixed a certificate verify failure after nodes upgrade.
-*   RS2862 - Improved web UI performance in case multiple browsers or windows are directed to the web UI.
-*   RS22751 - Fixed an issue in the backup process which caused temporary service outage.
-*   RS22636 - Fixed Redis process failure when a ReJSON Module's command is executed.
-*   RS22601 - Fixed a failure during shard migration procedure.
-*   RS22478 - Fixed a failure in replica-of process between two databases with ReBloom Module.
-*   RS21974 - SMTP username and password are not mandatory in the email server settings when there is no need for authentication.
-*   RS21801 - Fixed web UI issues when cluster is configured with FIPS compliance.
-*   RS21772 - Fixed a failure when trying to update a database's endpoint policy to all-master-shards.
-*   RS19842 - Updated permissions of some internal files.
-*   RS19433 - Improved RAM eviction process for RoF databases.
-*   RS18875 - Added the ability to upgrade database gradually, few shards at a time.
-*   RS15207 - Fixed a failure during re-shard operation.
+-   RS23616 - Fixed a failure when updating the memory limit of RoF database.
+-   RS22871 - Fixed a certificate verify failure after nodes upgrade.
+-   RS2862 - Improved web UI performance in case multiple browsers or windows are directed to the web UI.
+-   RS22751 - Fixed an issue in the backup process which caused temporary service outage.
+-   RS22636 - Fixed Redis process failure when a ReJSON Module's command is executed.
+-   RS22601 - Fixed a failure during shard migration procedure.
+-   RS22478 - Fixed a failure in replica-of process between two databases with ReBloom Module.
+-   RS21974 - SMTP username and password are not mandatory in the email server settings when there is no need for authentication.
+-   RS21801 - Fixed web UI issues when cluster is configured with FIPS compliance.
+-   RS21772 - Fixed a failure when trying to update a database's endpoint policy to all-master-shards.
+-   RS19842 - Updated permissions of some internal files.
+-   RS19433 - Improved RAM eviction process for RoF databases.
+-   RS18875 - Added the ability to upgrade database gradually, few shards at a time.
+-   RS15207 - Fixed a failure during re-shard operation.
 
 ## Known Limitations
 
 ### Installation
 
-*   In default Ubuntu 18.04 installations, port 53 is in use by systemd-resolved (DNS server). In such a case, the system configuration must be changed to make this port available before running RS installation.
+-   In default Ubuntu 18.04 installations, port 53 is in use by systemd-resolved (DNS server). In such a case, the system configuration must be changed to make this port available before running RS installation.
 
 ### Upgrade
 
-*   Before you upgrade a database with the RediSearch module to Redis 5.0, you must upgrade the RediSearch module to 1.4.2 or higher. We recommend that you upgrade the RediSearch module before you upgrade the cluster to RS 5.4.
-*   Node upgrade fails if SSL certificates were configured in version 5.0.2 and above by updating the certificates on the disk instead of using the new API. For assistance with this issue, please contact support. 
+-   Before you upgrade a database with the RediSearch module to Redis 5.0, you must upgrade the RediSearch module to 1.4.2 or higher. We recommend that you upgrade the RediSearch module before you upgrade the cluster to RS 5.4.
+-   Node upgrade fails if SSL certificates were configured in version 5.0.2 and above by updating the certificates on the disk instead of using the new API. For assistance with this issue, please contact support. 
 
 ### Cluster API
 
-*   Removed the deprecated argument `backup_path` from cluster API. To create or update BDBs, please use `backup_location`.
+-   Removed the deprecated argument `backup_path` from cluster API. To create or update BDBs, please use `backup_location`.
 
 ### Redis Commands
 
-*   The capability of disabling specific Redis commands does not work on Redis Module specific commands.
-*   The CLIENT ID command cannot guarantee incremental IDs between clients that connect to different nodes under multi proxy policies.
-*   The length of the socket_path variable, which is defined in a node, cannot exceed 88 characters.
-*   CLIENT UNBLOCK command is not supported in RS 5.4.
+-   The capability of disabling specific Redis commands does not work on Redis Module specific commands.
+-   The CLIENT ID command cannot guarantee incremental IDs between clients that connect to different nodes under multi proxy policies.
+-   The length of the socket_path variable, which is defined in a node, cannot exceed 88 characters.
+-   CLIENT UNBLOCK command is not supported in RS 5.4.
