@@ -9,7 +9,7 @@ As modules are upgraded, you will need to load them into Redis
 Enterprise if you desire having the new features and/or
 fixes.
 
-### Acquiring the Packaged Modules
+## Acquiring the Packaged Modules
 
 1. Redis Enterprise pre-packaged modules - To download the upgrades
     to the modules, go to the [Redis
@@ -25,7 +25,7 @@ fixes.
     module from [redismodules.com](http://redismodules.com)
     to use in upgrades, see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
-### Deploying the Packaged Module into Redis Enterprise Software
+## Deploying the Packaged Module into Redis Enterprise Software
 
 Once you have the upgraded package, you are ready to deploy
 it:
@@ -35,7 +35,7 @@ it:
 1. Click on **redise** **modules**
 1. Click on **Add Module**
 
-![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
+    ![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
 
 1. Select the packaged module from your file system and upload
     it.
@@ -44,19 +44,19 @@ it:
 1. You will see in the page that an update is
     available.
 
-![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
+    ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
 1. At this time, you cannot upgrade this database from the web UI. It
     must be completed using the rladmin command line utility from one of
     the nodes in the cluster.
 
-### Upgrading the Database to Use the New Version
+## Upgrading the Database to Use the New Version
 
 1. SSH into any node of the cluster
 1. Identify the database you are
     upgrading.
 
-![rladmin_status-1](/images/rs/rladmin_status-1.png?width=1000&height=214)
+    ![rladmin_status-1](/images/rs/rladmin_status-1.png?width=1000&height=214)
 
 1. Run the rladmin command
     $ rladmin upgrade module db_name
@@ -78,7 +78,7 @@ that i used for the example command above:
 
 ![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
 
-### [Examples
+## [Examples
 
 An example of upgrading the version of RediSearch to 10017.0 would
 be:
