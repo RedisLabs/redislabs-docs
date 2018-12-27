@@ -65,7 +65,6 @@ this page:
     checkmark
 - The Endpoint issued for the new database
 
-[]{#CreateDBVideo}
 If you'd prefer to watch a video on this topic:
 
-### 
+{{< youtube Z8KgtMsyNx0 >}}

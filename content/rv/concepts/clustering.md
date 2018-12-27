@@ -70,8 +70,6 @@ are:
 1. Deleting rules from the custom hashing policy.
 1. Disabling clustering for the database.
 
-[]{#standard-hashing-policy}
-
 ### Standard Hashing Policy
 
 When using the standard hashing policy, a Redis Enterprise VPC cluster
@@ -93,8 +91,6 @@ hand, not using a hash tag in the key's name results in a
 (statistically) even distribution of keys across the keyspace's shards.
 If your application does not perform multi-key operations, you don't
 need to construct key names with hash tags.
-
-[]{#custom-hashing-policy}
 
 ### Custom Hashing Policy
 
