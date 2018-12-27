@@ -17,10 +17,19 @@ To create a support package:
 1. Click **Support** at the top right of the management UI.
 1. Click **Create Support Package** at the bottom of the page, and
     confirm the action.
+    The package is created and downloaded by your browser.
 
-The package is created and downloaded by your browser.
+{{%expand "The package creation failed with an error? You can't access the UI?" %}}
+If package creation fails with `internal error` or if you cannot access the UI, create a support package for the cluster from the command-line:
 
-If you get `internal error` on the UI while creating support package, or if you cannot access the UI, please execute `/opt/redislabs/bin/rladmin cluster debug_info` for version > 4.4 on any one of the node in the cluster. If it still fails, then please execute the command `/opt/redislabs/bin/debuginfo` on each node of the cluster and upload the tarball thus created. The path to the tarball is shown at the end after the command executes successfully.
+- On any one of the node in the cluster, run: `/opt/redislabs/bin/rladmin cluster debug_info`
+
+If it this command fails, you can create a support package for each cluster node from the command-line:
+
+- On each node of the cluster, run: `/opt/redislabs/bin/debuginfo`
+
+Upload the tar archive to the Redis Labs Support site. The path to the archive is shown in the command output.
+{{% /expand%}}
 
 Note that creating a support package might take several minutes and
 might overload the system; therefore, do not attempt to initiate this
