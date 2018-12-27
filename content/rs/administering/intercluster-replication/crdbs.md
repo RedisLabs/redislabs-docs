@@ -66,6 +66,8 @@ Before configuring a CRDB, you will need:
     [ReplicaOf]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}),
     CRDBs are not compatible with that feature. ReplicaOf is a one-way
     replication, while CRDB utilize multi-master replication.
+1. [OSS cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) is not supported
+    for use with CRDB.
 
 ### Network Time Service (NTP or Chrony)
 

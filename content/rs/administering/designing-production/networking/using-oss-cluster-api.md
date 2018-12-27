@@ -19,6 +19,7 @@ To configure an RS database to use the OSS Cluster API:
     * The database must use the standard hashing policy.
     * The database proxy policy is `all-master-shards`.
     * The database proxy policy must not use node `include` or `exclude`.
+    * The database is not a CRDB.
 1. Find the database ID to make sure that we convert the correct database.
 
     ```sh
