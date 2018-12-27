@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
+instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
 before running through the upgrade process.
 
 ## New features
@@ -71,7 +71,7 @@ before running through the upgrade process.
     parameter for default answers ("Y") or "-c" for file path parameters
     for custom answers. For additional details, refer to [Accessing and
     installing the setup
-    package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
+    package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
     section.
 - New rladmin command-line-interface "info" command allows for
     fetching current value of tunable parameters.
@@ -138,7 +138,7 @@ before running through the upgrade process.
     used in the endpoint.
 - **Issue**: When upgrading a node to a new RLEC version (refer to
     [Upgrading
-    nodes]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
+    nodes]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
     while the node is in the offline state (refer to [Taking a node
     offline]({{< relref "/rs/administering/cluster-operations/removing-node.md" >}}),
     the upgrade process succeeds but might result in an unstable

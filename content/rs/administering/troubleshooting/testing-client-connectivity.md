@@ -21,7 +21,7 @@ To test client connectivity:
     endpoint by using the IP address rather than the FQDN; if you
     succeed, it means that the DNS is not properly configured. For
     additional details, refer to
-    [DNS]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+    [DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 
 If any issues are encountered during the connectivity test, contact our
 support at <support@redislabs.com>.

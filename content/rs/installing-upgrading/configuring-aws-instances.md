@@ -24,7 +24,7 @@ is configured to use this volume.
 
 Note: After installing the RS package on the instance (for additional
 details, refer to [Accessing and installing the setup
-package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
+package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
 and **before** running through the setup process (for additional
 details, refer to [Initial setup - creating a new
 cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}),

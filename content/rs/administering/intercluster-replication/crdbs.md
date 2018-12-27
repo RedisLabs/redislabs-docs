@@ -109,7 +109,7 @@ clusters that are part of the CRDB. If it is not set up yet, the setup
 of the CRDB will immediately fail.
 
 The use of [DNS and
-FQDNs]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+FQDNs]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
 (Fully Qualified Domain Names) is required as MMR is not compatible with
 the [Discovery
 Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})

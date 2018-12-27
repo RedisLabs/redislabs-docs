@@ -16,7 +16,7 @@ failure](/images/rs/node-failure.png?width=600&height=152)
 
 1. Acquire a new node that is identical to the old node, install and
     configure Redis Enterprise Software on it per the [install
-    instructions]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
+    instructions]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
 
     Note: If you are using [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}), you must
@@ -39,4 +39,4 @@ one.
 the DNS records must be updated each time a node is added or replaced.
 For additional details, For more information, refer to the [connection
 management
-page]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+page]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).

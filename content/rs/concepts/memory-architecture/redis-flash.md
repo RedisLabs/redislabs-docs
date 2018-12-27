@@ -139,7 +139,7 @@ prerequisites:
     requirements]({{< relref "/rs/administering/designing-production/supported-platforms.md" >}})
     in place.
 - Perform the [initial setup and creation of a new
-    cluster]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
+    cluster]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
 
 Once these requirements are met, both Redis of Flash databases and
 all-RAM databases can be created and managed in the same cluster. For

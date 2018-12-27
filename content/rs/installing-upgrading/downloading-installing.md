@@ -27,7 +27,7 @@ select one of the following options:
 Info: If you are using the AMI option or installing the .tar file
 package on an AWS instance, review the guidelines in [Configuration of
 AWS
-instances]({{< relref "/rs/administering/installing-upgrading/configuring-aws-instances.md" >}}).
+instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}}).
 
 ## Prerequisites
 
@@ -36,7 +36,7 @@ instances]({{< relref "/rs/administering/installing-upgrading/configuring-aws-in
     databases, be familiar with the specifics of that feature and its
     set of prerequisites, storage, and considerations.
 1. [Disable Linux
-    swap]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}})
+    swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}})
     on all nodes to be part of the cluster.
 1. Ensure you have root level access to each node, either directly or
     via sudo.
@@ -180,7 +180,7 @@ Swap is enabled. Do you want to proceed? [Y/N]?
 Due to how Redis Enterprise manages memory on a node, Linux swap should
 be disabled in the operating system configuration. For more information
 on why and how to do this, please see [Swap in
-Linux]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}}).
+Linux]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}).
 
 ### Shard is syncing
 
@@ -238,7 +238,7 @@ Enterprise
 requires]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 to operate. If not, you will have to open the necessary ports on your
 own. If you need, there is specific information on [RHEL/CentOS firewall
-configuration]({{< relref "/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
+configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
 
 ### Final Check
 
