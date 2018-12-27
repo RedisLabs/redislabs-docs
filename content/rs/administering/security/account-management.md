@@ -5,8 +5,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view and update the cluster users in the** **cluster's
-**Settings \> team** page.
+You can view and update the cluster users in the cluster
+**Settings > team** page.
 
 ## User Roles
 
@@ -18,7 +18,7 @@ part of Role Based Access Control (RBAC) are now supported.
 |  **Admin** | Has full access to the system |  |
 |  **DB Viewer** | Allowed to view DB configuration/metrics. All Node/Cluster information and settings are unavailable | Can view info about all databases on the cluster<br/><br/>Cannot view info about nodes and cluster<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
 |  **Cluster Viewer** | Allowed to view Cluster and DB configuration/metrics. | Can view all info about Cluster, nodes and databases.<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
-|  DB Member | Allowed to view and edit DB configuration. All Node/Cluster information and settings are unavailable | Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
+|  **DB Member** | Allowed to view and edit DB configuration. All Node/Cluster information and settings are unavailable | Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
 |  **Cluster Member** | Allowed to view Node/DB information and edit DB configurations | Can view info about nodes and cluster<br/><br/>Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
 
 All roles apply to both the UI and API levels.
@@ -36,7 +36,7 @@ the UI or through the users API.
 1. Indicate whether the user will receive email alerts.
 1. Click **Save** icon.
 
-![useradd](/images/rs/useradd-300x101.png)
+    ![useradd](/images/rs/useradd-300x101.png)
 
 ## Updating a User
 
@@ -52,9 +52,7 @@ enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}),
 and then create a new user via the REST API call like this:
 
 ```src
-$ curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" 
--X POST  http://:8080/v1/users 
--d "{\"auth_method\": \"external\", \"name\": \"\", \"role\": \"\"}"
+curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://:8080/v1/users -d "{\"auth_method\": \"external\", \"name\": \"\", \"role\": \"\"}"
 ```
 
 For the user-role, put in one of the following roles:
