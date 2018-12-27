@@ -1,7 +1,7 @@
 ---
 Title: Administering Redis Enterprise
 description: 
-weight: 60
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---

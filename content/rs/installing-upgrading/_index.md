@@ -1,5 +1,5 @@
 ---
-Title: Installing and upgrading
+Title: Installing and Upgrading
 description: 
 weight: 35
 alwaysopen: false
