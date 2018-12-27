@@ -28,7 +28,6 @@ configurations.
 
 ![events-log](/images/rs/events-log.png)
 
-
 If you need to look at the audit log of what a user on the cluster has
 done, e.g. edited a DB configuration, this is where you could look.
 

@@ -96,7 +96,6 @@ click Activate to create your new Conflict-Free Replicated Database.
 
 ![crdb-activate](/images/rs/crdb-activate.png)
 
-
 **Causal Consistency**
 
 [Causal Consistency in a
@@ -131,7 +130,6 @@ impacts the specific CRDB instance you are editing and is not a global
 setting for all CRDB instances.
 
 ![crdb-ssl](/images/rs/crdb-ssl.png)
-
 
 Once activated, the Redis Enterprise Software cluster will authenticate
 and communicate with each of the listed Participating Clusters on your

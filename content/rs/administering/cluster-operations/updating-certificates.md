@@ -47,7 +47,6 @@ Warning: The new certificate replaces the equivalent certificate on all nodes in
 
 When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
-
 ## **TLS version**
 
 To set the minimum TLS version that can be used for encrypting various

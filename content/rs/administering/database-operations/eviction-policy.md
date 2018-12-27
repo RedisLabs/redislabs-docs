@@ -29,8 +29,6 @@ Note: [Geo-Replicated
 CRDBs]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}})
 will always operate in noeviction mode.
 
- 
-
 Warning: Some redis Modules do not fully support eviction or all
 eviction types. Please see each module's documentation for more
 information on this topic.

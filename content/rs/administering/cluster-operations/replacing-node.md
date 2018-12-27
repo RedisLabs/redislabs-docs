@@ -35,8 +35,6 @@ failure](/images/rs/node-failure.png?width=600&height=152)
 adding a node, RP will enforce using the new node to replace the faulty
 one.
 
- 
-
 **Note**: If you are using the DNS NS record based connection approach,
 the DNS records must be updated each time a node is added or replaced.
 For additional details, For more information, refer to the [connection

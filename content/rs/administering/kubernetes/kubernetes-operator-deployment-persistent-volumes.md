@@ -64,7 +64,6 @@ on AWS uses “gp2” as the Storage Class name while GKE uses
 
 Example of the redisEnterpriseNodeResources definition:
 
-
     redisEnterpriseNodeResources:
       limits:
         cpu: “4000m”

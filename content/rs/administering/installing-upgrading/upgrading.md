@@ -38,8 +38,6 @@ The master node should be upgraded first and only then the other nodes.
 Note: The master node can be identified by running the 'rladmin status
 nodes' command and checking the ROLE value of each node.
 
- 
-
 You will run install.sh from the directory where you untarred the media
 just like you do for a new install. The software will recognize this is
 an upgrade and proceed accordingly.

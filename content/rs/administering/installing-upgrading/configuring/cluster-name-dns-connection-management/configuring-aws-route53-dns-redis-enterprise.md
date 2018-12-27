@@ -82,8 +82,6 @@ or for one of its sub-domains. So, you should have at least one zone in
 
 ![02-Route53HostedZones-en](/images/rs/02-Route53HostedZones-en.png?width=600&height=237)
 
- 
-
 *Route53* is now displaying the list of the zones that you defined. You
 need to clic on the zone in which you want to define your cluster,
 *demo-rlec.redislabs.com* in my case:

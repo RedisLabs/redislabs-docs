@@ -37,14 +37,10 @@ the next step of adding the module to Redis Enterprise Software.
 
 ### Create a new database that uses the Module
 
- 
-
 Note: before creating a new DB with modules, it is recommend to download
 and [upgrade the currently installed
 modules]({{< relref "/rs/developing/modules/upgrading.md" >}})
 to the newest versions.
-
- 
 
 1. Navigate to **databases** tab
 1. Click on the **+** sign, if necessary, then **create database**

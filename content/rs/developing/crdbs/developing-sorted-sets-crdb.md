@@ -32,8 +32,6 @@ phases:
 Please see the following examples to get familiar with Sorted Sets'
 behavior in CRDB:
 
- 
-
 Example of Simple Sorted Set with No
 Conflict:
 
@@ -52,10 +50,6 @@ Sorted Set Z, and y with score 1.2 was added by Instance 2 to Sorted Set
 Z) in a non-concurrent manner (i.e. each operation happened separately
 and after both instances were in sync), the end result will be a Sorted
 Set including both elements in each CRDB instance.
- 
-
- 
-
 Example of Sorted Set and Concurrent
 Add:
 
@@ -75,8 +69,6 @@ x. In this scenario, Instance 2 performed the ZADD operation at time
 t2\>t1 and therefore the CRDB will set the score 2.1 to
 x.
 
- 
-
 Example of Sorted Set with Concurrent Add Happening at the Exact Same
 Time:
 
@@ -95,10 +87,6 @@ a 1.1 score and Instance 2 added x with a 2.1 score. After syncing, the
 CRDB realized that both operations happened at the same time and
 resolved the conflict by arbitrarily (but consistently across all CRDB
 instances) giving precedence to Instance 1.
- 
-
- 
-
 Example of Sorted Set with Concurrent Counter
 Increment:
 
@@ -114,8 +102,6 @@ Increment:
 The result is the sum of all
 ZINCRBY
 operations performed by all CRDB instances.
-
- 
 
 Example of Removing an Element from a Sorted
 Set:
@@ -138,4 +124,3 @@ Instance 2 was not affected. Therefore, the ZSCORE operation shows the
 local effect on x. At t7, after both instances were in-sync, the CRDB
 resolved the conflict by subtracting 4.1 (the value of element x in
 Instance 1) from 6.1 (the value of element x in Instance 2).
- 

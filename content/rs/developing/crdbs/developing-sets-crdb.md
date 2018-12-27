@@ -40,4 +40,3 @@ Here is an example of an "observed remove" case.
 |  t3 | SREM key1 “c” |  |
 |  t4 | — Sync — | — Sync — |
 |  t3 | SMEMBERS key1 “c” “b” | SMEMBERS key1 “c” “b” |
- 
