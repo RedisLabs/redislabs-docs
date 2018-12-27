@@ -60,7 +60,7 @@ weight = 40
 
 [[menu.shortcuts]]
 name = "<label>Login</label>"
-url = "https://app.redislabs.com/#/login?"
+url = "https://app.redislabs.com/#/login"
 weight = 70
 
 [[menu.shortcuts]]

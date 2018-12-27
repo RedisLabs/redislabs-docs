@@ -35,14 +35,6 @@ jQuery('document').ready(function($) {
         $(this).find('.highlight').first().next().removeClass('hovered');
     });
 
-
-	$('.shortcuts li:nth-child(3) a').on('click', function (e) {
-		e.preventDefault();
-        console.log('clicked');
-        $('.search-box').slideToggle(500).toggleClass('active');
-        return false;
-	});
-
 	$('a.close.button').on('click', function (e) {
         e.preventDefault();
         console.log('clicked');
