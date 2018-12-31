@@ -89,7 +89,7 @@ configured to write to disk. This is unlike a standard Redis Enterprise
 Software database where only the slave shards persist to disk. This
 master and slave dual data persistence with replication is done to
 better protect the database against node failures. Flash-based databases
-are expected to holder larger datasets and repair times for shards can
+are expected to hold larger datasets and repair times for shards can
 be longer under node failures. Having dual-persistence provides better
 protection against failures under these longer repair times.
 
