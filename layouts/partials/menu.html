@@ -23,7 +23,8 @@
         {{- if .IsAncestor $currentNode}} parent{{end}}
         {{- if eq .URL $currentNode.URL}} active{{end}}
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
-        {{- if ne $numberOfPages 0 }} haschildren{{end}}
+        {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }} root-item {{end}}
+        {{- if ne $numberOfPages 0 }} haschildren{{end}}        
         ">
       {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") }}
         <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
@@ -40,13 +41,13 @@
           {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }}
             <div class="menu-divider"></div>
             
-            {{- if ne $numberOfPages 0 }}
-              {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
+            {{- if ne $numberOfPages 0 }}                       
+              {{- if or (eq $currentNode.URL "/rs/") (eq $currentNode.URL "/rc/") (eq $currentNode.URL "/rv/") }}
+                <a class="expander-title"><span class="SideMenuExpanderTitle">Expand all</span></a>     
+                <i class="fa fa-angle-double-down fa-lg category-icon expand-all-icon"></i>
+              {{ else }}
                 <a class="expander-title"><span class="SideMenuExpanderTitle">Collapse all</span></a>
                 <i class="fa fa-angle-double-up fa-lg category-icon expand-all-icon"></i>
-              {{- else -}}
-                <a class="expander-title"><span class="SideMenuExpanderTitle">Expand all</span></a>
-                <i class="fa fa-angle-double-right fa-lg category-icon expand-all-icon"></i>
               {{- end}}
             {{- end}}
       

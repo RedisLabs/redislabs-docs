@@ -194,6 +194,14 @@ article > aside section {
   margin: 2rem 0rem; }
 
 /* Expand/Collapse menu */
+article > aside .menu > li.dd-item.active > ul {
+  display: none;
+}
+
+article > aside .menu > li.dd-item:not(.parent) .children {
+  display: none;
+}
+
 article > aside .menu .dd-item div i.expand-all-icon {
   margin-left: 15px;
   color: #354253;

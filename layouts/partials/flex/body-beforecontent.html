@@ -1,7 +1,12 @@
 
+{{ if eq (getenv "HUGO_ENV") "production" }}
+{{ with .Site.Params.googleTagManager }}
+  {{ partial "gtm-body" . | safeHTML }}
+{{ end }}
+{{ end }}
 <header>
-  <div class="logo">
-    
+<div class="logo">
+  {{ partial "header.html" . }}    
   </div>
   {{- with .Site.Menus.shortcuts}}
     <nav class="shortcuts">

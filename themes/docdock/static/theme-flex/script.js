@@ -1,32 +1,26 @@
 jQuery(document).ready(function() {
-    // jQuery('.category-icon').on('click', function() {
-    //     $( this ).toggleClass("fa-angle-down fa-angle-right") ;
-    //     $( this ).parent().parent().children('ul').toggle() ;
-    //     return false;
-    // });
-
     jQuery('.category-icon').on('click', function() {
         if($( this ).attr("class").indexOf('expand-all-icon') !== -1) {
             return;
         }
 
         $( this ).toggleClass("fa-angle-down fa-angle-right") ;
-        $( this ).parent().parent().children('ul').toggle() ;
+        $( this ).parent().parent().children('ul').toggle();
         return false;
     });
 
     jQuery('.parent .expand-all-icon').on('click', function() {
-        $( this ).toggleClass("fa-angle-double-up fa-angle-double-right") ;
+        $( this ).toggleClass("fa-angle-double-up fa-angle-double-down") ;
         $( this ).parent().parent().children('ul').toggle() ;
-        // _toggleExpanderTitle();
+        _toggleExpanderTitle();
         return false;
     });  
     
     jQuery('.SideMenuExpanderTitle').on('click', function() {
         var $i = jQuery( '.parent .expand-all-icon' );
-        $i.toggleClass("fa-angle-double-up fa-angle-double-right") ;
+        $i.toggleClass("fa-angle-double-up fa-angle-double-down") ;
         $i.parent().parent().children('ul').toggle() ;
-        // _toggleExpanderTitle();
+        _toggleExpanderTitle();
         return false;
     });
 
@@ -52,7 +46,7 @@ jQuery(document).ready(function() {
 
     jQuery('.expand-all-icon').on('mouseleave', function() {
         jQuery('.SideMenuExpanderTitle').removeClass('--hovered');
-    });        
+    });   
 
 
     // Images
