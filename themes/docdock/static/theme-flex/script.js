@@ -4,8 +4,7 @@ jQuery(document).ready(function() {
         $( this ).parent().parent().children('ul').toggle() ;
         return false;
     });
-
-
+    
 
     // Images
     // Execute actions on images generated from Markdown pages
