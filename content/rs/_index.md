@@ -54,10 +54,9 @@ achieve high availability, disaster recovery, and performance benefits.
 If a node fails, the data is seamlessly served from a replacement node
 in the cluster without human intervention. RS technology is capable of
 automatically handling node failures, Redis failures, and proxy
-failures. Auto-failover is carried out within a few seconds. [Learn more
-about High
-Availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
-in RS.
+failures. Auto-failover is carried out within a few seconds.
+
+[Learn more about High Availability in RS]({{< relref "/rs/concepts/high-availability/_index.md" >}}).
 
 {{< youtube qIZuW_8bPtQ >}}
 
