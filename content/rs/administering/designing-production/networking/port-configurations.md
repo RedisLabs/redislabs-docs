@@ -35,8 +35,6 @@ update your firewall with the port for that new database endpoint.
 
 ## Changing the Management Web UI Port
 
-Note: This only applies to RS 5.0
-
 You may change the port used for the RS Web UI. To do that, run the
 following command on any node in the cluster as this cluster-wide
 setting:
@@ -50,5 +48,6 @@ in use by some other process before running this command.
 
 Critical: If you make this change, any time you add a new node to the
 cluster, you must specify the non-default port number in the management
-UI URL to join the new node to the cluster. For example,
-https://newnode.mycluster.example.com:**\<nonstandard-port-number\>**/
+UI URL to join the new node to the cluster. For example:
+
+https\://newnode.mycluster.example.com:**\<nonstandard-port-number\>**

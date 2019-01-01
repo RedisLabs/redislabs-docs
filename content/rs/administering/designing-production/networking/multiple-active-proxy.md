@@ -7,9 +7,9 @@ categories: ["RS"]
 ---
 Redis Enterprise Software (RS) provides high-performance data access
 through a proxy process that manages and optimizes access to shards
-within the RS cluster. In RS 4.4 and above, each node contains a single
-proxy process. Each proxy can be active and take incoming traffic or it
-can be passive and wait for failovers.
+within the RS cluster. Each node contains a single proxy process.
+Each proxy can be active and take incoming traffic or it can be passive
+and wait for failovers.
 
 RS allows multiple databases to be created. Each database gets an
 endpoint (a unique URL and port on the FQDN). This endpoint receives all
@@ -120,10 +120,10 @@ Note: you can find the endpoint id for the endpoint argument by running
 *status* command for rladmin. Look for the endpoint id information under
 the *ENDPOINT* section of the output.
 
-### Critical Note for 4.4 and above
+### Reapply Multi-Proxy Policies
 
-multi-proxy policies need to be manually reapplied after topology
-changes like node restarts, failovers and migrations. To reset the
+You must manually reapply multi-proxy policies after topology
+changes, such as node restarts, failovers and migrations. To reset the
 policy, users can run:
 
 ```src

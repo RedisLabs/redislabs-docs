@@ -5,13 +5,11 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view and update the cluster users in the cluster
-**Settings > team** page.
+You can view and update the cluster users in the cluster **Settings > team** page.
 
 ## User Roles
 
-In Redis Enterprise Software 4.4 and above, administrative user roles as
-part of Role Based Access Control (RBAC) are now supported.
+The user roles included in Role Based Access Control (RBAC) are:
 
 |  **Role** | **Description** | **Details** |
 |  ------ | ------ | ------ |

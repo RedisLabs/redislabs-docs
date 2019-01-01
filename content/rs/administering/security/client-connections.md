@@ -67,10 +67,6 @@ throughput and latency.
     certificate into one file (you can use a cat command to chain the
     certs).
 
-    Note: CA signed certificates and chains will only work in UI using
-    version 4.4 and above. For a lower version, it's possible to insert
-    it via API but the UI will not have the option.
-
 1. On the client side make sure to import and trust the CA and
     intermediate certificates (you can chain the CA cert with
     intermediate as one file to use and import)

@@ -1,5 +1,5 @@
 ---
-Title: What's new in Redis Enterprise Software 5.0?
+Title: What's new in Redis Enterprise Software 5.x?
 description: 
 weight: 20
 alwaysopen: false

@@ -36,8 +36,7 @@ available for the databases in the cluster.
 
 ## Modifying an Existing Cluster
 
-If your cluster is on RS 4.4 or above, you can enable it by using the
-***rladmin suffix add*** command.
+You can enable it by using the ***rladmin suffix add*** command.
 
 To add an internal FQDN/IP to a cluster:
 
