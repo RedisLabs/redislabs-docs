@@ -12,7 +12,7 @@ A tabbed paragraph create scrolling code blocks like this:
 
 A tabbed paragraph in a bulleted or numbered list create indented paragraphs like this:
 
-* Lorem
+- Lorem
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur, velit sit amet tempus commodo, orci ipsum laoreet turpis, eu ullamcorper orci enim ut dui.
 
@@ -34,13 +34,13 @@ HTML: *I love {{< field "favorite_food" >}}!*
 
 ## Links to internal pages
 
-* To link to another page in the content directory:
+- To link to another page in the content directory:
 
     `[Redis Enterprise VPC Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
 
     For example: [Redis Enterprise VPC Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
 
-* To link to an anchor on another page in the content directory:
+- To link to an anchor on another page in the content directory:
 
     `[Sign up for Redis Enterprise VPC]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" */>}})`
 

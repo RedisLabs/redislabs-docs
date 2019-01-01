@@ -20,21 +20,21 @@ RediSearch Enterprise, which is installed with Redis Enterprise Software by defa
 
 ## Important Fixes
 
-* RED-21080 – Fixed the memory limit calculation for RoF databases
-* RED-20825 – Updated the ‘RAM limit’ of RoF databases to a range between 10% and 100%
-* RED-20506 – Fixed high CPU and File Descriptors utilization by the node watchdog process (node_wd)
-* RED-20275 – Fixed wrong metrics values while importing a dataset into an RoF database
-* RED-20214 – Fixed obstacles to login to the UI when using an LDAP integration
-* RED-20162 – Fixed known limitation of being able to activate “Require SSL for All Communication” to Redis Enterprise CRDBs via Rest API without providing a certificate
-* RED-19758 – Upgraded NGINX from 1.10.3 to 1.13.12
-* RED-19415, RED-18945 – Improved support for Lettuce client with OSS Cluster enabled
-* RED-19287 – Fixed a scenario of a stuck shard migration process
-* RED-18459 – Updated the data persistence (AOF / Snapshot) of RoF databases to be handled, by default, by the slave shard/s
-* RED-20541– Improved handling of aof file when its tail is corrupted (using aof-load-corrupt-tail flag)
-* RED-21936 – Improved handling of CRDB configuration update when URL parameter was supplied at creation time
-* RED-19760 – Added the capability to control the minimum TLS version that can be used for encrypting the Discovery Service data
+- RED-21080 – Fixed the memory limit calculation for RoF databases
+- RED-20825 – Updated the ‘RAM limit’ of RoF databases to a range between 10% and 100%
+- RED-20506 – Fixed high CPU and File Descriptors utilization by the node watchdog process (node_wd)
+- RED-20275 – Fixed wrong metrics values while importing a dataset into an RoF database
+- RED-20214 – Fixed obstacles to login to the UI when using an LDAP integration
+- RED-20162 – Fixed known limitation of being able to activate “Require SSL for All Communication” to Redis Enterprise CRDBs via Rest API without providing a certificate
+- RED-19758 – Upgraded NGINX from 1.10.3 to 1.13.12
+- RED-19415, RED-18945 – Improved support for Lettuce client with OSS Cluster enabled
+- RED-19287 – Fixed a scenario of a stuck shard migration process
+- RED-18459 – Updated the data persistence (AOF / Snapshot) of RoF databases to be handled, by default, by the slave shard/s
+- RED-20541– Improved handling of aof file when its tail is corrupted (using aof-load-corrupt-tail flag)
+- RED-21936 – Improved handling of CRDB configuration update when URL parameter was supplied at creation time
+- RED-19760 – Added the capability to control the minimum TLS version that can be used for encrypting the Discovery Service data
 
 ## Known Limitations
 
-* When updating the general settings of a cluster, the ‘username’ and ‘password’ fields in the email server settings cannot be left empty. In case one wants to update the general settings and prefer to leave the ‘username’ and ‘password’ fields empty, the REST API should be used.
-* An issue prevents the user from defining ‘min_data_TLS_version’ on the source cluster when working with ReplicaOf or CRDB.
+- When updating the general settings of a cluster, the ‘username’ and ‘password’ fields in the email server settings cannot be left empty. In case one wants to update the general settings and prefer to leave the ‘username’ and ‘password’ fields empty, the REST API should be used.
+- An issue prevents the user from defining ‘min_data_TLS_version’ on the source cluster when working with ReplicaOf or CRDB.

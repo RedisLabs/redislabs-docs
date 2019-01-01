@@ -63,22 +63,22 @@ Deployment type set to Geo-Distributed.
 There are some key differences in the creation process between CRDBs and
 standard Redis database creation.
 
-* Intra-cluster Replication is highly recommended for each Participating Cluster in production use. The intercluster replication process, called syncer, is most efficient when it reads from slaves and not masters.
-* The eviction policy can only be set to noeviction for CRDBs.
-* In [Participating Clusters](#participating-clusters) you must define
+- Intra-cluster Replication is highly recommended for each Participating Cluster in production use. The intercluster replication process, called syncer, is most efficient when it reads from slaves and not masters.
+- The eviction policy can only be set to noeviction for CRDBs.
+- In [Participating Clusters](#participating-clusters) you must define
     the clusters that will host member CRDBs and the admin user account
     to connect to each cluster.
 
     Note: Make sure you add the cluster you are currently on as a
     participating cluster.
 
-* In the **Database clustering** option, you can either:
+- In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
-    * Make sure the Database clustering is enabled and select the number of shards 
+    - Make sure the Database clustering is enabled and select the number of shards 
     that you want to have in the database. When database clustering is enabled, 
     databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). 
     You can increase the number of shards in the database at any time. 
-    * Clear the **Database clustering** option to use only one shard and so 
+    - Clear the **Database clustering** option to use only one shard and so 
     that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
     limitations do not apply.
     

@@ -29,7 +29,7 @@ future sessions.
 
 Warning: The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.
 
-* Use the REST API to replace the certificate:
+- Use the REST API to replace the certificate:
 
     ```bash
 
@@ -39,9 +39,9 @@ Warning: The new certificate replaces the equivalent certificate on all nodes in
  
     Where:
 
-    * cert_name - The certificate to replace: cm, api, proxy, syncer
-    * key - The contents of the *_key.pem file
-    * cert - The contents of the *_cert.pem file
+    - cert_name - The certificate to replace: cm, api, proxy, syncer
+    - key - The contents of the *_key.pem file
+    - cert - The contents of the *_cert.pem file
 
     The certificate is copied automatically to all nodes in the cluster.
 
