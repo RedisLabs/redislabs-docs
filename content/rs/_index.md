@@ -13,7 +13,7 @@ You can install RS in your environment of choice, whether for an on-premises dat
 
 Note: The previous name of Redis Enterprise Software (RS) was “Redis Labs Enterprise Cluster” (RLEC).
 
-## What does RS enable?
+## What are the benefits of using RS?
 
 RS’s architecture supports multiple threaded Redis databases created for multiple users across the same cluster infrastructure while keeping the databases completely isolated from one another. In addition, RS gives you the flexibility to run your Redis database in multiple configurations to accommodate your specific performance and availability needs.
 
@@ -99,5 +99,5 @@ data-persistence tuning, shards migration and auto-failover needs.
 
 ### 24/7 support
 
-Paying customers enjoy our premium 24/7 support via Redis Labs' online
-or phone helpdesk.
+Paying customers enjoy our premium 24/7 support through Redis Labs online
+or phone support services.
