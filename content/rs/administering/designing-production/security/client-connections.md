@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/security/client-connections/
 ---
 If you configure it, Redis Enterprise Software (RS) can
 use industry-standard encryption to protect your data in transit between

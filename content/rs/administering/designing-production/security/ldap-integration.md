@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/security/ldap-integration/
 ---
 Redis Enterprise Software (RS) provides you with the ability to
 integrate your existing LDAP server for authentication for account

@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/security/account-management/
 ---
 You can view and update the cluster users in the cluster **Settings > team** page.
 
