@@ -11,16 +11,13 @@ cloud storage options, such as Azure Geo-Redundant Storage, SoftLayer
 Object Storage, and Google Cloud Storage will be added in a future
 release. You cannot back up to the local machine.
 
-To perform a database export:
+To export data from a database:
 
-1. Click the relevant database row in the **Databases** page. The
-    selected database page appears.
-1. Select the **Configuration** tab.
-1. Click **Export** button at the bottom of the page.
-1. In the popup that appears, choose the location type and populate the
-    relevant fields
-1. You can also choose whether or not you would like to receive email
-    notifications with regard to the export process
+1. In **databases**, click on the database that you want to export data from.
+1. In **configuration**, at the bottom of the page click **Export**.
+1. Select the location type to export the data to and enter the connection details.
+1. Select **Receive email notification on success/failure**, if you want to receive
+    email notifications about the import process.
 1. Click **Export**.
 
 ### FTP location
