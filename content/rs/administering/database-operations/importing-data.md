@@ -21,20 +21,11 @@ the database.
 
 To import data into a database:
 
-1. Click the relevant database row in the **Databases** page. The
-    selected database page appears.
-1. Read and understand the warning.
-1. Select the **Configuration** tab.
-1. Click **Import** at the bottom of the page.
-1. A warning appears, informing you that importing a dataset into the
-    database will erase all existing database content. Click
-    **Continue**.
-1. In the popup that appears, select the location type and populate the
-    relevant fields. The RDB file path / object name should have an RDB
-    format or a compressed RDB format file. To import from multiple
-    files, enter each file path in a new line.
-1. You can also choose whether or not you would like to receive email
-    notifications with regard to the import process.
+1. In **databases**, click on the database that you want to import data to.
+1. In **configuration**, at the bottom of the page click **Import**.
+1. Select the location to import the data from and enter the connection details.
+1. Select **Receive email notification on success/failure**, if you want to receive
+    email notifications about the import process.
 1. Click **Import**.
 
 ### FTP location
