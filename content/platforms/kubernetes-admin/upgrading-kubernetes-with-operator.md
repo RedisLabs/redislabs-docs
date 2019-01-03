@@ -4,6 +4,7 @@ description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/
 ---
 Redis Labs implements rolling updates for software upgrades in Kubernetes deployments.
 
