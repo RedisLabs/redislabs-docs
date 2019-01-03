@@ -1,5 +1,5 @@
 ---
-Title: Kubernetes
+Title: Administering Kubernetes
 description: 
 weight: 40
 alwaysopen: false
