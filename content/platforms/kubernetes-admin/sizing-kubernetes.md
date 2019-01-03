@@ -109,4 +109,4 @@ Then, apply the file by running:
     kubectl apply – f redis-enterprise-cluster.yaml
 
 For Persistent Storage sizing, please refer to [Kubernetes Operator Deployment – Persistent Volumes]
-({{< relref "rs/administering/kubernetes/kubernetes-operator-deployment-persistent-volumes.md" >}}).
+({{< relref "/platforms/kubernetes-admin/kubernetes-persistent-volumes.md" >}}).

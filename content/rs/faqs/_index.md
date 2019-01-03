@@ -145,7 +145,7 @@ behaviors, without interrupting database operations.
 ## RS on Kubernetes
 
 {{%expand "What is an Operator?" %}}
-An Operator is a [Kubernetes custom controller]( https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Please refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/rs/concepts/kubernetes-architecture/k8s-operator-based-deployments.md" >}}).
+An Operator is a [Kubernetes custom controller]( https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Please refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes-architecture/kubernetes-with-operator.md" >}}).
 {{% /expand%}}
 
 {{%expand "Does Redis Enterprise Operator support multiple clusters per namespace?" %}}
@@ -189,7 +189,7 @@ Connect to the UI by pointing your browser to `https://localhost:8443`
 {{%expand "How should I size Redis Enterprise Cluster nodes?" %}}
 For nodes hosting the Redis Enterprise Cluster statefulSet pods, please follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
-For additional information please also refer to [Kubernetes Operator Deployment – Persistent Volumes]({{< relref "/rs/administering/kubernetes/kubernetes-operator-deployment-persistent-volumes.md" >}}).
+For additional information please also refer to [Kubernetes Operator Deployment – Persistent Volumes]({{< relref "/platforms/kubernetes-admin/kubernetes-persistent-volumes.md" >}}).
 {{% /expand%}}
 
 {{%expand "How to retrieve the username/password for a Redis Enterprise Cluster?" %}}
