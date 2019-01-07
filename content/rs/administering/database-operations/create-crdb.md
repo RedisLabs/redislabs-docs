@@ -118,12 +118,11 @@ CRDBs. It is not an option that can be updated later. If you have an
 existing CRDB and would like to use SSL, you need to create a new CRDB
 and migrate your data over.
 
-[At creation time, SSL can only be enabled for communications between
+At creation time, SSL can only be enabled for communications between
 Participating Clusters. After creating the CRDB instances on each
 Participating Cluster, you can individually enable SSL also for the data
-access operations from applications just
-like regular Redis Enterprise
-databases).
+access operations from applications just like regular Redis Enterprise
+databases.
 Enabling SSL for data access operation is a
 **local setting** on each cluster that only
 impacts the specific CRDB instance you are editing and is not a global
