@@ -3,7 +3,7 @@ Title: Sizing and scaling a Redis Enterprise Cluster Kubernetes deployment
 description: 
 weight: 40
 alwaysopen: false
-categories: ["RS"]
+categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/sizing-scaling-redis-enterprise-cluster-kubernetes-deployment/
 ---
 The following article reviews the mechanism and methods available for sizing 

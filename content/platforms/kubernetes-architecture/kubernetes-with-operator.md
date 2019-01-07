@@ -3,7 +3,7 @@ Title: Redis Enterprise K8s Operator-based deployments – Overview
 description: 
 weight: 40
 alwaysopen: false
-categories: ["RS"]
+categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/k8s-operator-based-deployments
 ---
 The Redis Enterprise Operator is the fastest, most efficient way to

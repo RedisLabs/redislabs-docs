@@ -3,7 +3,7 @@ Title: Kubernetes Operator Deployment – Persistent Volumes
 description: 
 weight: 40
 alwaysopen: false
-categories: ["RS"]
+categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/kubernetes-operator-deployment-persistent-volumes/
 ---
 To deploy a Redis Enterprise Cluster with Redis Enterprise Operator the
