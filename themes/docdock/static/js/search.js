@@ -75,7 +75,8 @@ $( document ).ready(function() {
                 "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
                     term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
             if(text && text.length > 0) {
-                item.context = '...' + text[0].trim() + '...';
+                var len = text[0].split(' ').length;
+                item.context = len > 1? '...' + text[0].trim() + '...' : null;
             }
             item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
             return '<div class="autocomplete-suggestion" ' +
