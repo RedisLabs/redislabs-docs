@@ -98,14 +98,11 @@ click Activate to create your new Conflict-Free Replicated Database.
 
 **Causal Consistency**
 
-[Causal Consistency in a
-CRDB) guarantees
-that the order of operations on a specific key is maintained across all
-CRDB instances. You can enable Causal
+Causal Consistency in a CRDB guarantees that the order of operations on a 
+specific key is maintained across all CRDB instances. You can enable Causal
 Consistency during the CRDB creation process. If you have an existing
 CRDB and would like to enable Causal Consistency, use the
-REST API or the crdb-cli
-tool.
+REST API or the crdb-cli tool.
 
 **SSL Authentication**
 
@@ -123,10 +120,9 @@ Participating Clusters. After creating the CRDB instances on each
 Participating Cluster, you can individually enable SSL also for the data
 access operations from applications just like regular Redis Enterprise
 databases.
-Enabling SSL for data access operation is a
-**local setting** on each cluster that only
-impacts the specific CRDB instance you are editing and is not a global
-setting for all CRDB instances.
+Enabling SSL for data access operation is a **local setting** on each
+cluster that only impacts the specific CRDB instance you are editing and
+is not a global setting for all CRDB instances.
 
 ![crdb-ssl](/images/rs/crdb-ssl.png)
 
