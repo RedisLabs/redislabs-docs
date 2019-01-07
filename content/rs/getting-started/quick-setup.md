@@ -13,8 +13,13 @@ single node are super simple and go as follows:
 - Step 3: Create a new Redis database
 - Step 4: Connect to your Redis database
 
-"Quick Setup" steps on this page apply to a Linux based system install.
-For instructions for running Docker on Linux, Windows, or MacOS, go to the [Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
+Note: This getting started guide is for installing RS in development or demonstration
+environments.
+
+- To run RS in a Docker container on Linux, Windows, or MacOS, go to the
+- [Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
+- To install RS in a production environment, use the instuctions for
+[installing RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
 
 ## Step 1: Install Redis Enterprise Software
 
