@@ -1,7 +1,7 @@
 ---
 Title: File Locations
 description: 
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/file-locations/
@@ -21,5 +21,5 @@ installs into and/or utilizes.
 | /etc/opt/redislabs | Default location for cluster manager configuration and certificates |
 | /tmp | Temporary files |
 
-Info: At this time, changing the directories RS installs to is not
+Note: At this time, changing the directories RS installs to is not
 supported.

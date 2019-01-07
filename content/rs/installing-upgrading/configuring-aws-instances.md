@@ -1,7 +1,7 @@
 ---
 Title: Configuring AWS Instances for Redis Enterprise Software
 description: 
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring-aws-instances/

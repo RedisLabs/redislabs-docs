@@ -1,7 +1,7 @@
 ---
 Title: Offline Installation
 description: 
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/offline-installation/

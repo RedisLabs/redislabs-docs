@@ -1,7 +1,7 @@
 ---
 Title: Upgrading Redis Enterprise Software
 description: 
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/

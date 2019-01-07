@@ -1,7 +1,7 @@
 ---
 Title: Configuring the Installation
 description: 
-weight: $weight
+weight: 80
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/

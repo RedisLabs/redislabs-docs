@@ -1,7 +1,7 @@
 ---
 Title: Uninstalling Redis Enterprise Software
 description: 
-weight: $weight
+weight: 70
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/uninstalling/
