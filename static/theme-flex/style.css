@@ -1933,10 +1933,6 @@ article > aside .menu > li.parent > .children {
   padding-top: 30px;
 }
 
-article > aside .menu > li.parent > .children.--has-version-selector {
-  padding-top: 60px;
-}
-
 article > aside .menu .dd-item .highlight:hover {
   color: #b62411;
 }
