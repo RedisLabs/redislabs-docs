@@ -21,8 +21,8 @@ components.
 ### Data path
 
 The data path is based on multiple zero-latency, multi-threaded proxies
-that reside on each of the cluster's nodes to mask the system's
-underlying complexity. This model supports multiple proxies per Redis
+that reside on each of the cluster nodes to mask the underlying complexity
+of the system. This model supports multiple proxies per Redis
 database and permits the use of any regular or cluster-aware Redis
 client. This allows the user's code base to work as-is. Each proxy
 forwards client requests to the relevant Redis servers (shards). When
@@ -44,14 +44,14 @@ The cluster manager is a sophisticated governing function that provides
 capabilities such as resharding, rebalancing, auto-failover,
 rack-awareness, database provisioning, resource management, data
 persistence configuration, backup and recovery. The cluster manager
-employs multiple watchdog mechanisms at the cluster's node level and at
+employs multiple watchdog mechanisms at the cluster node level and at
 the process level, which guarantees an instant response to events such
 as node, rack and data center failures, and can handle multiple failover
 events at the same time. Because the cluster manager is entirely
 decoupled from the data path components, changes to its software
 components do not affect the data path components.
 
-## Ensure consistent top performance
+## Consistent top performance
 
 Multiple techniques are implemented by RS to provide consistent top
 performance for Redis:
@@ -73,12 +73,12 @@ performance for Redis:
 ## Simplified and automated operations
 
 RS boosts the productivity of developers and DevOps by simplifying and
-automating certain complex and time-consuming ops-related tasks. Tasks
-such as provisioning new databases, updating database configuration,
+automating certain complex and time-consuming ops-related tasks, including
+provisioning new databases, updating database configuration,
 resharding existing databases and rebalancing shards across cluster
 nodes.
 
-RS's homogeneous, symmetric cluster architecture enables the underlying
+The homogeneous, symmetric cluster architecture of RS enables the underlying
 infrastructure to be fully heterogeneous, where each node in the cluster
 can be physical or virtual, with variations in RAM capacity, storage
 devices, and the number of compute cores. This freedom of configuration
@@ -87,7 +87,7 @@ use of the resources, with minimal system limitations. For example, a
 cluster may be based on a few permanent bare-metal servers with
 additional virtual servers for scaling out (or in) when load increases
 or decreases. Built-in configurable monitoring functions help the
-administrator keep an eye on a cluster's resources' utilization levels.
+administrator keep an eye on the resource utilization levels in the cluster.
 
 RS also makes sure that there is uninterrupted operation of Redis databases by protecting
 against out-of-memory events and tuning memory fragmentation
@@ -98,6 +98,5 @@ interface, CLI tools, and APIs. Special experience or knowledge is not
 required to create, manage and monitor Redis clusters, nodes, and
 databases in RS.
 
-You can read more about RS's architecture in the [Concepts and
-Architecture]({{< relref "/rs/concepts/_index.md" >}})
-section.
+You can read more about the architecture of RS in [Concepts and
+Architecture]({{< relref "/rs/concepts/_index.md" >}}).
