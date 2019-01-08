@@ -27,8 +27,12 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     - [Developing with RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 
-Enterprise modules are pre-installed with RS. To upgrade the modules, go to [Upgrading a
-Module]({{< relref "/rs/developing/modules/upgrading.md" >}}).
+Enterprise modules are pre-installed with RS.
+
+- To download later versions of these modules, go to: [Redis Enterprise downloads
+page](https://redislabs.com/products/redis-pack/downloads/)
+- To upgrade the modules, go to: [Upgrading a
+Module]({{< relref "/rs/developing/modules/upgrading.md" >}})
 
 Warning: Redis Labs does not and cannot support third party modules or
 databases created with them.
