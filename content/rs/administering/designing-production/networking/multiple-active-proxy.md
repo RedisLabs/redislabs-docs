@@ -120,11 +120,10 @@ Note: you can find the endpoint id for the endpoint argument by running
 *status* command for rladmin. Look for the endpoint id information under
 the *ENDPOINT* section of the output.
 
-### Reapply Multi-Proxy Policies
+### Reapply Policies After Topology Changes
 
-You must manually reapply multi-proxy policies after topology
-changes, such as node restarts, failovers and migrations. To reset the
-policy, users can run:
+If you want to reapply the policy after topology changes, such as node restarts,
+failovers and migrations, run this command to reset the policy:
 
 ```src
 $ rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards||all-nodes>
