@@ -16,7 +16,7 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
 - ReBloom
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
     - [Developing with ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
-- RedisGraph (version 5.4 and higher)
+- RedisGraph
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
@@ -27,15 +27,14 @@ packaged for use with Redis Enterprise Software (RS) clusters. They are:
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     - [Developing with RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 
-Enterprise modules are pre-installed in version 5.0.2 and higher.
+Enterprise modules are pre-installed with RS.
 
-To download these modules, please go to the [Redis Enterprise downloads
-page](https://redislabs.com/products/redis-pack/downloads/).
+- To download later versions of these modules, go to: [Redis Enterprise downloads
+page](https://redislabs.com/products/redis-pack/downloads/)
+- To upgrade the modules, go to: [Upgrading a
+Module]({{< relref "/rs/developing/modules/upgrading.md" >}})
 
-To upgrade these modules, please go to [Upgrading a
-Module]({{< relref "/rs/developing/modules/upgrading.md" >}}).
-
-Critical: Redis Labs does not and can not support third party modules or
+Warning: Redis Labs does not and cannot support third party modules or
 databases created with them.
 
 ## Packaging Non-Certified Modules

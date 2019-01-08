@@ -12,12 +12,9 @@ software on each of the nodes.
 
 Version requirements:
 
-- To upgrade your cluster to v5.4, your cluster must first be on 5.0
-    or above
-- To upgrade your cluster to v5.2, your cluster must first be on 4.5
-    or above
-- To upgrade your cluster to v5.0, your cluster must first be on 4.4.2
-    or above
+- To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above
+- To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above
+- To upgrade your cluster to v5.0, your cluster must first be on 4.4.2 or above
 
 Note: A Redis Enterprise Software cluster upgrade is considered to be
 "ongoing" when nodes within a cluster have mixed versions. The upgrade

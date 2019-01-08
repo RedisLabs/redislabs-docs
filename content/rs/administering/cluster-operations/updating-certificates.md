@@ -25,8 +25,6 @@ future sessions.
 
 ## How to update SSL/TLS certificates
 
-**For versions 5.2.0 and above:** ([Procedures for previous releases]({{< relref "/rs/references/procedures-previous-releases.md#Updating-SSL/TLS-certificates-for-Previous-Releases" >}}))
-
 Warning: The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.
 
 - Use the REST API to replace the certificate:
