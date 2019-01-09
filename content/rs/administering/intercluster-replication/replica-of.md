@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-*Replica of* is a feature of Redis Enterprise Software (RS) where an
+**Replica Of** is a feature of Redis Enterprise Software (RS) where an
 administrator designates a database to be a replica (destination) of one
 or more databases (sources). Once you have done so and the initial data
 load from source to destination is completed, all write commands are
