@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-*Replica of* is a feature of Redis Enterprise Software (RS) where an
+**Replica Of** is a feature of Redis Enterprise Software (RS) where an
 administrator designates a database to be a replica (destination) of one
 or more databases (sources). Once you have done so and the initial data
 load from source to destination is completed, all write commands are
@@ -86,8 +86,9 @@ can be Redis databases that are not part of an RS.
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
-    compression]({{< relref "/rs/administering/intercluster-replication/replica-of.md#Replica-of-data-compression" >}})
-    section.
+    compression]({{< relref
+    "/rs/administering/intercluster-replication/replica-of.md#data-compression-for-replica-of"
+    >}}) section.
 - When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:
     redis://:\[redis password\]@\[hostname\]:\[port\] where the password
