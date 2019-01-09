@@ -4,14 +4,14 @@ jQuery(document).ready(function() {
             return;
         }
 
-        $( this ).toggleClass("fa-angle-down fa-angle-right") ;
+        $( this ).toggleClass("fa-angle-down fa-angle-right");
         $( this ).parent().parent().children('ul').toggle();
         return false;
     });
 
     jQuery('.parent .expand-all-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-double-up fa-angle-double-down") ;
-        $( this ).parent().parent().children('ul').toggle() ;
+        _toggleFirstLevelItems();
         _toggleExpanderTitle();
         return false;
     });  
@@ -19,10 +19,14 @@ jQuery(document).ready(function() {
     jQuery('.SideMenuExpanderTitle').on('click', function() {
         var $i = jQuery( '.parent .expand-all-icon' );
         $i.toggleClass("fa-angle-double-up fa-angle-double-down") ;
-        $i.parent().parent().children('ul').toggle() ;
+        _toggleFirstLevelItems();
         _toggleExpanderTitle();
         return false;
     });
+
+    function _toggleFirstLevelItems() {
+        $('.menu .root-item.parent').children('ul').children('li').children('ul').toggleClass('--open');
+    }
 
     function _toggleExpanderTitle() {
         $e = jQuery('.parent .SideMenuExpanderTitle');
