@@ -9,9 +9,15 @@ aliases:
     - /rs/getting-started/docker/macos/
 categories: ["RS"]
 ---
-You can install [Docker Engine](https://www.docker.com/get-started) on Windows, 
-MacOS or Linux-based operating systems. After you install Docker Engine, you can 
-run Redis Enterprise Software (RS) as Docker containers.
+In this quick setup guide, we take you through the steps to run RS in a Docker container to test its capabilities.
+
+- To test RS in a Linux-based, development environment, go to the
+  [Quick Setup of Redis Enterprise Software]({{< relref "/rs/getting-started/quick-setup.md" >}}).
+- To install RS on Linux in a production environment, follow the complete instuctions 
+  in [installing RS] ({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
+
+Before you start, you must install the [Docker engine](https://www.docker.com/get-started)
+on Windows, MacOS or Linux-based operating systems.
 
 Note: Windows and MacOS are currently only supported for development and testing environments.
 
