@@ -50,8 +50,6 @@ number of requests.
 |  Values in Flash | The number of keys with values stored in Flash (not including replication even if replication enabled). |
 |  Non values RAM overhead | The percentage of RAM used for storing everything rather than pure values. I.e. keys, Redis dictionary and other key/value overheads. |
 |  Used Flash | The total size of values stored in Flash. |
-|  Flash limit | The Flash size limit of the database, enforced on `used_flash` |
-|  Flash usage | Calculated as: `used_flash` / `flash_limit`. |
 |  RAM dataset overhead | Includes the ‘keys’ and the ‘keys overhead’ |
 |  RAM fragmentation | The level of fragmentation for the RAM portion of the database. |
 |  Flash fragmentation | The level of fragmentation for the flash memory portion of the database. |
