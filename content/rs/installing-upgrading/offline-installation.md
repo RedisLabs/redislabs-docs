@@ -1,9 +1,10 @@
 ---
 Title: Offline Installation
 description: 
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/offline-installation/
 ---
 By default, the installation process requires an Internet connection to
 enable installing dependency packages and for synchronizing the

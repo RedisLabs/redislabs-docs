@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
+instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
 before beginning the upgrade process.
 
 You can upgrade to this version from any 4.3 version. If you have a
@@ -27,7 +27,7 @@ upgrade to this version.
     when you upgrade the databases they will be updated to this version.
     If you would like to change the default version to Redis 3.0, refer
     to the instruction in the [Upgrading
-    databases]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
+    databases]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
     If you would like to upgrade existing databases to the latest 3.0
     minor version, refer to the Known Issues section below.
 - The cluster can now be configured to support both private and public
@@ -68,7 +68,7 @@ upgrade to this version.
     done using **supervisorctl** command from the OS CLI.
 - Linux OS vm.swappiness is now advised to be set to zero, for more
     information see [Disabling Swap in
-    Linux]({{< relref "/rs/administering/installing-upgrading/configuring/linux-swap.md" >}}).
+    Linux]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}).
 
 ## Important fixed issues since 4.3.0
 

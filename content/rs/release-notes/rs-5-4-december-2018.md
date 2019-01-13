@@ -9,7 +9,7 @@ Redis Enterprise Software (RS) 5.4 is now available. RS 5.4 adds support for Red
 
 ## Overview
 
-You can upgrade to RS 5.4 from RS 5.0 and above according to the [upgrade instructions]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}}). If you have a version older than 5.0, you should first upgrade to version 5.2 (or at least 5.0).
+You can upgrade to RS 5.4 from RS 5.0 and above according to the [upgrade instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}). If you have a version older than 5.0, you should first upgrade to version 5.2 (or at least 5.0).
 
 ## New Features
 

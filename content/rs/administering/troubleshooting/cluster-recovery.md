@@ -41,7 +41,7 @@ Prerequisites:
 - The new nodes must run the **exact same RS version as was running on
     the old nodes** (for additional details, refer to [Accessing and
     installing the setup
-    package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
+    package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
     The cluster recovery may fail unless the same RS version is
     installed on the new nodes.
 - The persistent storage drives of the old cluster nodes must be
@@ -111,7 +111,7 @@ parameters:
 
 1. name - mandatory. The name of the cluster this node is joining (for
     additional details, refer to [How to set the cluster
-    name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+    name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
     (FQDN)). Alternatively, the nodes parameter can be used.
 1. nodes - mandatory. The IP address of a node in the cluster this
     node is joining. Alternatively, the name parameter can be used.
@@ -143,7 +143,7 @@ nodes are now active, and the databases are pending recovery.
 
 **Note**: Remember to update the DNS records with the new nodes' IP
 addresses. For additional details, refer to
-[DNS]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+[DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 
 ### Recovering the databases
 

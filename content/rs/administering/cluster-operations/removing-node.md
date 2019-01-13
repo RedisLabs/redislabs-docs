@@ -66,7 +66,7 @@ You can migrate resources by using the *rladmin* command-line interface
 
 **Note**: The DNS records must be updated each time a node is added or
 replaced. For additional details, refer to
-[DNS]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+[DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 
 ## Removing a node
 
@@ -89,7 +89,7 @@ alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}
 
 **Note**: Once you remove a node, if you need to add it back to a
 cluster, you must first
-[uninstall]({{< relref "/rs/administering/installing-upgrading/uninstalling.md" >}})
+[uninstall]({{< relref "/rs/installing-upgrading/uninstalling.md" >}})
 and
-[reinstall]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
+[reinstall]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
 the software on that node.

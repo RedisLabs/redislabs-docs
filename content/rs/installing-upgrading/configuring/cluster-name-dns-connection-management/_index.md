@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/
 ---
 DNS is critical to the default operation of Redis Enterprise Software
 (RS) deployments. This can be altered, but instead using the [Discovery

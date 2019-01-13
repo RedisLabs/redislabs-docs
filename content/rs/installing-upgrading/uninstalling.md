@@ -1,9 +1,10 @@
 ---
 Title: Uninstalling Redis Enterprise Software
 description: 
-weight: $weight
+weight: 70
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/uninstalling/
 ---
 In the event that you need to uninstall Redis Enterprise Software
 (RS) from a server, please run the following command in the operating

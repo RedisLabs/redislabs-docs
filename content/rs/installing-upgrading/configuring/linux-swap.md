@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/configuring/linux-swap/
 ---
 Swap space is used by the Linux OS to help manage memory (pages) by
 copying pages from RAM to disk and the OS is configured by default to be

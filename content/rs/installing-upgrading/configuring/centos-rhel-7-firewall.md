@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall/
 ---
 CentOS / RHEL7 distributions have, by default, a restrictive firewall
 mechanism based on **firewalld** (which in turn configures the standard

@@ -5,6 +5,13 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
+In this quick setup guide, we take you through the steps to install RS in a Linux environment to test its capabilities.
+
+- To run RS in a Docker container on Linux, Windows, or MacOS, go to the
+  [Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
+- To install RS on Linux in a production environment, follow the complete instuctions 
+  in [installing RS] ({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
+
 The steps to set up a Redis Enterprise Software (RS) cluster with a
 single node are super simple and go as follows:
 
@@ -13,21 +20,17 @@ single node are super simple and go as follows:
 - Step 3: Create a new Redis database
 - Step 4: Connect to your Redis database
 
-"Quick Setup" steps on this page apply to a Linux based system install.
-For instructions for running Docker on Linux, Windows, or MacOS, go to the [Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
-
 ## Step 1: Install Redis Enterprise Software
 
 You can download the binaries from the [Redis Enterprise Software
 download
-site](https://app.redislabs.com/#/sign-up/software?direct=true). Once
-you have the bits on a Linux based OS, you need to untar the image
+site](https://app.redislabs.com/#/sign-up/software?direct=true) and copy the download package to machine with a Linux-based OS. To untar the image:
 
 ```src
 $ tar vxf <downloaded tar file name>
 ```
 
-Once the tar command completes, you will find a new install.sh script in
+Once the tar command completes, install RS with the install.sh script in
 the current directory.
 
 ```src

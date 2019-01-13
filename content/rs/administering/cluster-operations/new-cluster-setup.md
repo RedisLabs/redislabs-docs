@@ -14,7 +14,7 @@ capabilities are not enabled, such as database replication that provides high av
 
 To set up a new cluster, you must first [install the Redis Enterprise
 Software
-package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}})
+package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
 as described in the previous section and then set up the cluster as
 described below. After the cluster is created you can add multiple nodes
 to the cluster (for additional details, refer to [Joining a new node to
@@ -69,7 +69,7 @@ To create a cluster:
     1. In **Cluster name (FQDN)**, enter a unique name for the
         cluster.
         For guidelines, refer to [How to set the cluster
-        name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+        name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
         
     1. Choose whether to **Enable private & public endpoints support**.
         For additional details, refer to Private & Public Endpoints.
@@ -113,4 +113,4 @@ by carrying out the following tests:
 Topics
 
 - [How to Set the Cluster
-    Name]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+    Name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})

@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/configuring-aws-route53-dns-redis-enterprise
 ---
 Redis Enterprise Software (RS) requires DNS to be properly configured to
 achieve high-availability (HA) and fail-over regardless of where it is

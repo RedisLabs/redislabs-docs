@@ -18,8 +18,9 @@ clusters for test and development environments. Here are the steps:
 To run a CRDB on installations from the [RS download package]({{< relref "/rs/getting-started/quick-setup.md" >}}), 
 setup two RS installations and continue from Step 2.
 
-Note: To setup CRDB in a production-grade environment, follow the instuctions 
-in the installation guide in the [administration section]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
+Note: This getting started guide is for development or demonstration environments.
+To setup CRDB in a production environment, use the instuctions for
+[creating a CRDB]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
 
 ## Step 1: Run Two Containers
 

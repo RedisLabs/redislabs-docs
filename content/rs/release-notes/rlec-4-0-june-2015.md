@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 If you are upgrading from a previous version, make sure to review the
 [upgrade
-instructions]({{< relref "/rs/administering/installing-upgrading/upgrading.md" >}})
+instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
 before running through the upgrade process.
 
 In addition, when running the install.sh script to upgrade the software,
@@ -81,7 +81,7 @@ update this file.
     awareness compliance.
 - **Issue**: In case you deploy a cluster and use the DNS option for
     the cluster name (see details in [How to set the Cluster Name
-    (FQDN)]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
+    (FQDN)]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
     do not configure the DNS entries for the cluster nodes, and try to
     configure a database that is a replica of another database within
     the cluster, then the UI allows you to configure the source database
@@ -92,7 +92,7 @@ update this file.
     the cluster does not operate correctly. You have to either update
     the DNS accordingly, or recreate the cluster and use the mDNS option
     for the cluster name as described in [How to set the Cluster Name
-    (FQDN)]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+    (FQDN)]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 - **Issue**: When taking a node offline or removing a node, if the
     node being taken offline or removed is currently serving as the web
     server for the web browser being used to view the management UI,

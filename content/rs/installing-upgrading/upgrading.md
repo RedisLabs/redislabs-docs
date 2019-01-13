@@ -1,9 +1,10 @@
 ---
 Title: Upgrading Redis Enterprise Software
 description: 
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/installing-upgrading/upgrading/
 ---
 Upgrading Redis Enterprise Software (RS) consists of upgrading the
 software on each of the nodes.
@@ -28,7 +29,7 @@ can produce unexpected results or cause failures in the cluster.
 Upgrading the nodes' software requires installing the RS installation
 package on all of the machines on which RS is installed. For
 instructions, refer to [Accessing and installing the setup
-package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
+package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
 
 The master node should be upgraded first and only then the other nodes.
 

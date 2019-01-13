@@ -108,7 +108,7 @@ restarted from scratch for all the source databases.
 (FQDN), make sure that the client mDNS perquisites are met in order for the
 *Replica of* feature to work. For additional details, refer to the
 [Client prerequisites for
-mDNS]({{< relref "/rs/administering/installing-upgrading/configuring/mdns.md" >}}).
+mDNS]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}).
 
 ## Replication process
 

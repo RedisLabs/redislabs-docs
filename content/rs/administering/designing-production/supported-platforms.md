@@ -14,7 +14,7 @@ systems, cloud environments, and virtual environments.
 |------------|-----------------|
 | Ubuntu | 14.04, 16.04, 18.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
 | RHEL/CentOS 6 |  6.7, 6.8, 6.9<br>Requires at least "Minimal Install" configuration. |
-| RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5<br>Requires at least "Minimal Install" configuration. For additional considerations, refer to [CentOS / RHEL 7 firewall configuration]({{< relref "/rs/administering/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}). |
+| RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5<br>Requires at least "Minimal Install" configuration. For additional considerations, refer to [CentOS / RHEL 7 firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}). |
 | Oracle Linux | 6.7, 6.8, 6.9; 7.0, 7.1, 7.2, 7.3, 7.4 |
 | Amazon Linux | All 64-bit Versions |
 | Docker | At this time, official Redis Enterprise Software Docker images are Linux-based images and therefore are only certified for production use on a Linux host. All other OS hosts are certified for Development and Testing only. |

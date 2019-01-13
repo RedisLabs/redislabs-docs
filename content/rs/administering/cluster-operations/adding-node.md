@@ -10,7 +10,7 @@ To add a node in Redis Enterprise Software (RS):
 1. Install the installation package on the machine that will serve as
     the new node.
     For additional details, refer to [installing the setup
-    package]({{< relref "/rs/administering/installing-upgrading/downloading-installing.md" >}}).
+    package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
 1. In a browser, navigate to https://\<name or IP address of the node
     on which you installed the package\>:8443.
     For example, if you installed the RS package on a machine with IP
@@ -74,4 +74,4 @@ Clocks]({{< relref "/rs/administering/designing-production/synchronizing-clocks.
 
 **Note: **The DNS records must be updated each time a node is added or
 replaced. For additional details, refer to
-[DNS]({{< relref "/rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+[DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
