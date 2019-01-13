@@ -15,8 +15,8 @@ number of requests.
 
 ## Redis Enterprise Software Metrics
 
-|  Metric | Components measured | Description | More information |
-|  ------ | ------ | ------ | ------ |
+| Metric | Components measured | Description | More information |
+| ------ | ------ | ------ | ------ |
 | Connections | Cluster, Node, Database | Number of connections used to access the database |  |
 | CPU usage | Cluster, Node | Percent usage of the CPU |  |
 | Evicted objects/sec | Database, Shard | Number of objects evicted per second | The eviction process is taken place if:<br>1. The database reaches its memory_limit;<br><br>2. The eviction policy allows eviction; i.e. it is not configured to ‘no-eviction’<br><br>3. The dataset keys are compliant with the selected eviction policy. e.g. volatile-lru eviction policy, only applied to keys which are violated, i.e. with TTL set. |
@@ -52,21 +52,21 @@ number of requests.
 
 ## Redis on Flash Metrics
 
-|  Metric | Description |
-|  ------ | ------ |
-|  Flash fragmentation | The level of fragmentation for the flash memory portion of the database. |
-|  RAM dataset overhead | Includes the ‘keys’ and the ‘keys overhead’ |
-|  Non values RAM overhead | The percentage of RAM used for storing everything rather than pure values. I.e. keys, Redis dictionary and other key/value overheads. |
-|  RAM fragmentation | The level of fragmentation for the RAM portion of the database. |
-|  RAM hit ratio | Calculated as: `requests_served_from_ram` / `total_requests`;<br>Where:<br>1. requests_served_from_ram – refers to all requests processed values directly from RAM (i.e. without touching the Flash)<br>2. total_requests – refers to all requests processed by the database |
-|  RAM limit | The RAM size limit of the database, enforced on `used_ram`. |
-|  RAM usage | Calculated as: `used_ram` / `ram_limit`. |
-|  Used Flash | The total size of values stored in Flash. |
-|  Used RAM | The total size of data stored in RAM, including keys, values, overheads and including replication if enabled. |
-|  Values in Flash | The number of keys with values stored in Flash (not including replication even if replication enabled). |
-|  Values in RAM | The number of keys with values stored in RAM (not including replication even if replication enabled). |
-|  **What we can calculate and what we should know from the above** | |
-|  Redis on Flash average key size (+ overhead) | Redis on Flash keeps all the keys and their overheads in RAM. Use the following steps to calculate the average size of a single key (including its overhead):<br>1. `total_keys_size` = `non_values_ram_overhead` * `used_ram`<br>2. `avg_key_size` = `total_keys_size` / (`total_keys` * 2) |
-|  Redis on Flash average value size, when the value is in RAM | Use following steps to calculate the average size of a value in RAM:<br>`total_size_of_values_in_ram` = (1 – `non_values_ram_overhead`) * `used_ram` `avg_value_size_in_ram` = `total_szie_of_values_in_ram` / (`values_in_ram` * 2) |
-|  Redis on Flash average value size, when the value is in Flash | This is calculated as: used_flash / values_in_flash<br>**Note** – values in Flash are serialized and will always be smaller than in RAM. |
-|  In Redis on Flash how come:<br>`value_in_ram` + `value_in_flash` > `total_keys` | Calculated as: `used_flash` / `flash_limit`. |
+| Metric | Description |
+| ------ | ------ |
+| Flash fragmentation | The level of fragmentation for the flash memory portion of the database. |
+| RAM dataset overhead | Includes the ‘keys’ and the ‘keys overhead’ |
+| Non values RAM overhead | The percentage of RAM used for storing everything rather than pure values. I.e. keys, Redis dictionary and other key/value overheads. |
+| RAM fragmentation | The level of fragmentation for the RAM portion of the database. |
+| RAM hit ratio | Calculated as: `requests_served_from_ram` / `total_requests`;<br>Where:<br>1. requests_served_from_ram – refers to all requests processed values directly from RAM (i.e. without touching the Flash)<br>2. total_requests – refers to all requests processed by the database |
+| RAM limit | The RAM size limit of the database, enforced on `used_ram`. |
+| RAM usage | Calculated as: `used_ram` / `ram_limit`. |
+| Used Flash | The total size of values stored in Flash. |
+| Used RAM | The total size of data stored in RAM, including keys, values, overheads and including replication if enabled. |
+| Values in Flash | The number of keys with values stored in Flash (not including replication even if replication enabled). |
+| Values in RAM | The number of keys with values stored in RAM (not including replication even if replication enabled). |
+| **What we can calculate and what we should know from the above** | |
+| Redis on Flash average key size (+ overhead) | Redis on Flash keeps all the keys and their overheads in RAM. Use the following steps to calculate the average size of a single key (including its overhead):<br>1. `total_keys_size` = `non_values_ram_overhead` * `used_ram`<br>2. `avg_key_size` = `total_keys_size` / (`total_keys` * 2) |
+| Redis on Flash average value size, when the value is in RAM | Use following steps to calculate the average size of a value in RAM:<br>`total_size_of_values_in_ram` = (1 – `non_values_ram_overhead`) * `used_ram` `avg_value_size_in_ram` = `total_szie_of_values_in_ram` / (`values_in_ram` * 2) |
+| Redis on Flash average value size, when the value is in Flash | This is calculated as: used_flash / values_in_flash<br>**Note** – values in Flash are serialized and will always be smaller than in RAM. |
+| In Redis on Flash how come:<br>`value_in_ram` + `value_in_flash` > `total_keys` | Calculated as: `used_flash` / `flash_limit`. |
