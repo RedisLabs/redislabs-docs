@@ -54,19 +54,24 @@ number of requests.
 
 | Metric | Description |
 | ------ | ------ |
-| Flash fragmentation | The level of fragmentation for the flash memory portion of the database. |
-| RAM dataset overhead | Includes the ‘keys’ and the ‘keys overhead’ |
-| Non values RAM overhead | The percentage of RAM used for storing everything rather than pure values. I.e. keys, Redis dictionary and other key/value overheads. |
-| RAM fragmentation | The level of fragmentation for the RAM portion of the database. |
-| RAM hit ratio | Calculated as: `requests_served_from_ram` / `total_requests`;<br>Where:<br>1. requests_served_from_ram – refers to all requests processed values directly from RAM (i.e. without touching the Flash)<br>2. total_requests – refers to all requests processed by the database |
-| RAM limit | The RAM size limit of the database, enforced on `used_ram`. |
-| RAM usage | Calculated as: `used_ram` / `ram_limit`. |
-| Used Flash | The total size of values stored in Flash. |
-| Used RAM | The total size of data stored in RAM, including keys, values, overheads and including replication if enabled. |
-| Values in Flash | The number of keys with values stored in Flash (not including replication even if replication enabled). |
-| Values in RAM | The number of keys with values stored in RAM (not including replication even if replication enabled). |
+|  % Values in RAM | Database ROF, Shard ROF | Percentage of Total key count, for which values are stored in RAM |  |
+|  Flash bytes/sec | Cluster ROF, Node ROF, Database ROF, Shard ROF | Read+write bytes per second on flash storage device |  |
+|  Flash fragmentation | Database ROF, Shard ROF | Ratio between the (logical) used flash memory and the actual physical flash that is used |  |
+|  Flash IOPS | Cluster ROF, Node ROF | Rate of I\O operations per second on flash storage device |  |
+|  Flash KV ops | Node ROF | Rate of operations on flash key values (read + write + del) per second |  |
+|  Flash ops/sec | Database ROF, Shard ROF | Rate of operations on flash key values (read + write + del) per second |  |
+|  Free flash | Cluster ROF, Node ROF | Free space on flash storage |  |
+|  RAM dataset overhead | Database ROF, Shard ROF | Percentage of the RAM limit that is used for anything other than values, such as key names, dictionaries and other overheads |  |
+|  RAM hit ratio | Database ROF, Shard ROF | Calculated as: `requests_served_from_ram` / `total_requests`;<br/>Where:<br/>1. requests_served_from_ram – refers to all requests processed values directly from RAM (that is without touching the Flash)<br/>2. total_requests – refers to all requests processed by the database |  |
+|  RAM limit | Database ROF | RAM limit in bytes |  |
+|  RAM usage | Database ROF | Percentage of the RAM limit usage | Calculated as: `used_ram` / `ram_limit` |
+|  RAM:Flash access ratio | Database ROF, Shard ROF | Ratio between logical redis key value operations, and actual flash key value operations (regardless of what triggered these operations, that is including ram eviction and other background tasks) |  |
+|  Used Flash | Database ROF, Shard ROF | Total RAM used to store values in Flash |  |
+|  Used RAM | Database ROF, Shard ROF | Total size of data stored in RAM, including keys, values, overheads and including replication, if enabled |  |
+|  Values in Flash | Database ROF, Shard ROF | Number of keys with values stored in Flash, not including replication |  |
+|  Values in RAM | Database ROF, Shard ROF | Number of keys with values stored in RAM, not including replication |  |
 | **What we can calculate and what we should know from the above** | |
 | Redis on Flash average key size (+ overhead) | Redis on Flash keeps all the keys and their overheads in RAM. Use the following steps to calculate the average size of a single key (including its overhead):<br>1. `total_keys_size` = `non_values_ram_overhead` * `used_ram`<br>2. `avg_key_size` = `total_keys_size` / (`total_keys` * 2) |
 | Redis on Flash average value size, when the value is in RAM | Use following steps to calculate the average size of a value in RAM:<br>`total_size_of_values_in_ram` = (1 – `non_values_ram_overhead`) * `used_ram` `avg_value_size_in_ram` = `total_szie_of_values_in_ram` / (`values_in_ram` * 2) |
-| Redis on Flash average value size, when the value is in Flash | This is calculated as: used_flash / values_in_flash<br>**Note** – values in Flash are serialized and will always be smaller than in RAM. |
-| In Redis on Flash how come:<br>`value_in_ram` + `value_in_flash` > `total_keys` | Calculated as: `used_flash` / `flash_limit`. |
+| Redis on Flash average value size, when the value is in Flash | This is calculated as: used_flash / values_in_flash<br>**Note** – Values in Flash are serialized and will always be smaller than in RAM |
+| In Redis on Flash how come:<br>`value_in_ram` + `value_in_flash` > `total_keys` | Calculated as: `used_flash` / `flash_limit` |
