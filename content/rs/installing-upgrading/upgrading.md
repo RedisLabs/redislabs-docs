@@ -47,6 +47,9 @@ upgrade.
 $ sudo ./install.sh
 ```
 
+**Note**: Make sure that you answer Y to questions about upgrade mode so that the
+upgrade mode is enabled during the upgrade process.
+
 During the node upgrade process, the services running RS are restarted.
 This will result in a very short interruption to the proxy and node
 itself and the databases running on it. This can be dramatically reduced
