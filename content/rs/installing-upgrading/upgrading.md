@@ -40,7 +40,7 @@ You will run install.sh from the directory where you untarred the media
 just like you do for a new install. The software will recognize this is
 an upgrade and proceed accordingly.
 
-Just like for a new installation, you must sudo to or be root to do the
+Just like for a new installation, you must sudo or be root to do the
 upgrade.
 
 ```src
@@ -59,7 +59,7 @@ the database.
 important to upgrade the nodes one by one, and **not attempt to upgrade
 more than one node at a time**.
 
-It is highly advisable to run *rlcheck* and *rladmin status extra all*
+It is highly advisable to run `rlcheck` and `rladmin status extra all`
 on the node both before and after the upgrade, to make sure that the node
 is functioning properly. For additional details, refer to [rlcheck
 Installation Verification
@@ -80,16 +80,15 @@ RS always supports two Redis versions. By default, new Redis databases
 are created with the latest version, and existing databases get upgraded
 to the latest version according to the instructions detailed below. If
 you would like to change the default Redis version to the previous
-version supported, you should use the tune cluster
-default_redis_version command in the *rladmin* CLI and set it to the
-previous Redis version supported.
+version supported, you should use the `tune cluster default_redis_version`
+command in the *rladmin* CLI and set it to the previous Redis version supported.
 
 **To check whether your Redis database versions match the latest Redis
 version supported by RS:**
 
 - In the *rladmin* CLI, run the status command (For additional
     details, refer to [*rladmin* command-line
-    interface (CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}}).
+    interface (CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}})).
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
 - In the Management UI, go to the **Cluster \> Configuration** page.
