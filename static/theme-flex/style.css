@@ -100,6 +100,11 @@ header nav.shortcuts li a label:hover {
   max-width: 700px;
 }
 
+article {
+  display: block !important;
+  -ms-flex: none !important;
+}
+
 article > aside {
   background-color: #f7f7f7;
   bottom: 0;
