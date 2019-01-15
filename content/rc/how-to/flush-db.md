@@ -1,5 +1,5 @@
 ---
-Title: Using flushall Command on Redis Enterprise Cloud
+Title: Flushing Databases on Redis Enterprise Cloud
 description: 
 weight: $weight
 alwaysopen: false
@@ -35,4 +35,12 @@ includes all data in memory and persisted to disk. So before doing
 flushall, it is best practice to [backup your
 database]({{< relref "/rc/administration/configure/backups.md" >}}) first.
 
-### 
+### Flushing Redis Enterprise Cloud CRDBs
+
+When you flush a CRDB, multiple resources flush their data simultaneously.
+To flush data from a CRDB, use the flush command in the crdb-cli.
+
+To flush a CRDB:
+
+1. To find the ID of the CRDB, run: `crdb-cli crdb list`
+1. To flush the CRDB, run: `crdb-cli crdb flush --crdb-guid <ID_of_the_CRDB>`
