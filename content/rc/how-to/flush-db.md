@@ -40,7 +40,12 @@ database]({{< relref "/rc/administration/configure/backups.md" >}}) first.
 When you flush a CRDB, multiple resources flush their data simultaneously.
 To flush data from a CRDB, use the flush command in the crdb-cli.
 
-To flush a CRDB:
+To flush a CRDB from crdb-cli:
 
 1. To find the ID of the CRDB, run: `crdb-cli crdb list`
 1. To flush the CRDB, run: `crdb-cli crdb flush --crdb-guid <ID_of_the_CRDB>`
+
+To flush a CRDB from the API:
+
+1. To find the ID of the CRDB, run: `curl -v -u <user>@<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/`
+1. To flush the CRDB, run: `curl -v -u <username> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush`
