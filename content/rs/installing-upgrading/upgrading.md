@@ -45,8 +45,12 @@ upgrade.
 $ sudo ./install.sh
 ```
 
-**Note**: Make sure that you answer Y to questions about upgrade mode so that the
-upgrade mode is enabled during the upgrade process.
+{{% note title="Make sure that you answer Y to these questions" %}}
+
+- At the beginning of the upgrade process - `Do you want to enable upgrade mode now [Y/N]?`
+- At the end of the upgrade process - `Do you want to disable upgrade mode now [Y/N]?`
+
+{{% /note %}}
 
 During the node upgrade process, the services running RS are restarted.
 This will result in a very short interruption to the proxy and node
