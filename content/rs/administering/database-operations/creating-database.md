@@ -107,8 +107,7 @@ To create a new database in the UI:
 1. Configure [**database alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}).
 1. Click **Activate**.
 
-Simple Connectivity Test
-========================
+## Simple Connectivity Test
 
 Once the database is created, you can find the endpoint and port for the
 database in the web UI on the configuration page of each database. It is
@@ -120,7 +119,7 @@ There are a few simple ways to check connectivity to your database:
 - Redis_cli
 - Using a simple application
 
-## Testing Database Connectivity with Telnet
+### Testing Database Connectivity with Telnet
 
 As a quick smoke test, telnet to your endpoint and port for the database
 you wish to test. Then do the redis PING command.
@@ -138,7 +137,7 @@ PING
 +PONG
 ```
 
-## Testing Database Connectivity with redis-cli
+### Testing Database Connectivity with redis-cli
 
 You can find redis-cli utility on each node in Redis Enterprise Software
 cluster with the rest of the utilities. For information about directory
@@ -154,7 +153,7 @@ redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
 ```
 
-## Testing Database Connectivity with Simple Application
+### Testing Database Connectivity with Simple Application
 
 You can also use a simple application to test connectivity to your
 database. The following section details a simple IP based connection
