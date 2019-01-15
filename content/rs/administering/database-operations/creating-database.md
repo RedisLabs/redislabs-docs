@@ -60,9 +60,7 @@ To create a new database in the UI:
     **Note:** The name and the memory limit are the only mandatory
     parameters.
 
-1. Specify whether to enable **replication**. For a full explanation,
-    refer to [Database
-    replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}).
+1. Specify whether to enable [**replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}).
 
     **Note**: Enabling **replication** affects the total database size,
     as explained in [Database memory
