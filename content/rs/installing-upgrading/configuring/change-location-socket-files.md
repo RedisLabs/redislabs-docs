@@ -18,19 +18,20 @@ instructions below.
 ## Changing the Location on an Existing Redis Enterprise Software (RS) Installation
 
 You must be running RS version 4.5.0-51 or higher, and with the sock
-files location is still under the default location of /tmp. (This is
+files location is still under the default location of /tmp. Note: as of 5.2.2 
+the default socket location is /var/opt/redislabs/run (this is
 where they go when install.sh is executed without -s flag.)
 
 1. Execute this command **on all nodes**:
 
     ```src
-    $ sudo rlutil create_socket_path socket_path=/var/run/redislabs
+    $ sudo rlutil create_socket_path socket_path=/var/opt/redislabs/run
     ```
 
 1. Execute this command **on the master node**:
 
     ```src
-    $ sudo rlutil set_socket_path socket_path=/var/run/redislabs
+    $ sudo rlutil set_socket_path socket_path=/var/opt/redislabs/run
     ```
 
 1. Execute this command **on all nodes in a serial manner**:
