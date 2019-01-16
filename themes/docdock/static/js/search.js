@@ -72,8 +72,8 @@ $( document ).ready(function() {
         renderItem: function(item, term) {
             var numContextWords = 3;
             var text = item.content.match(
-                "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
-                    term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
+                "(?:\\s?(?:[\\w.]+)\\s?){0,"+numContextWords+"}" +
+                    term+"(?:\\s?(?:[\\w.]+)\\s?){0,"+numContextWords+"}");
             if(text && text.length > 0) {
                 var len = text[0].split(' ').length;
                 item.context = len > 1? '...' + text[0].trim() + '...' : null;
