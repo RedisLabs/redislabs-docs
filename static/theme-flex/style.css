@@ -848,7 +848,6 @@ article section.page pre {
   word-wrap: normal;
   max-width: 100%;
   width: 100%;
-  display: inline-grid;
   position: relative;
 }
 article section.page pre .copy-to-clipboard {
@@ -962,7 +961,7 @@ a.menu__link:hover:before {
   top: 3px;
 }
 .main-content-left > ul > li {
-  margin-bottom: 15px;
+  margin-bottom: 1.3rem;
 }
 .nav-links-footer-right a {
   /* margin-right: 8px; */
