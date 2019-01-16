@@ -12,6 +12,10 @@ Cloud for their authoritative database, keeping that data safe is even
 more critical. So this operation was removed from the web UI so people
 did not accidentally hit it.
 
+{{% warning title="Data Loss Warning" %}} The flush command deletes ALL of the data in the database. This
+includes all data in memory and persisted to disk. We recommend that you
+[backup your database]({{< relref "/rc/administration/configure/backups.md" >}}) first.{{% /warning %}}
+
 ### flushall for Redis Enterprise Cloud Databases
 
 You can flush a database from the command line with the redis-cli command or with
@@ -28,8 +32,3 @@ Example:
 ```src
 $ redis-cli -h redis-12345.c24.us-east-mz-1.ec2.cloud.redislabs.com -p 12345 -a xyz flushall
 ```
-
-Remember that this will delete ALL of the data in the database. This
-includes all data in memory and persisted to disk. So before doing
-flushall, it is best practice to [backup your
-database]({{< relref "/rc/administration/configure/backups.md" >}}) first.
