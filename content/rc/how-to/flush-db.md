@@ -49,6 +49,8 @@ To flush a CRDB with the REST API:
 
 1. To find the ID of the CRDB, run: `curl -v -u <user>@<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/`
 1. To flush the CRDB, run: `curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush`
+    
     The command output contains the GUID of the flush task.
 1. To check the status of the flush task, run: `curl -v -u <username>:<password> https://<cluster-fqdn>:9443/v1/crdb_tasks/<task-id>`
+    
     When the task status is finished, the task is completed successfully.
