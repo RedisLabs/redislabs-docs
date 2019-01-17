@@ -150,7 +150,7 @@ operated on.{{% /excerpt%}}
 
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 
-## Panels
+## Informative Notices
 
 ### Info
 
@@ -158,11 +158,11 @@ Info boxes give background information that does not prevent proper use of the p
 
 **Syntax**:
 
-` {{%/* info title="FYI" */%}}After you do this the first time, it gets easier.{{%/* /info */%}} `
+` {{%/* info */%}}After you do this the first time, it gets easier.{{%/* /info */%}} `
 
 **Output**:
 
-{{% info title="FYI" %}}After you do this the first time, it gets easier.{{% /info %}}
+{{% info %}}After you do this the first time, it gets easier.{{% /info %}}
 
 ### Tip
 
@@ -170,11 +170,11 @@ Tips give additional information for improved use of the product.
 
 **Syntax**:
 
-` {{%/*tip title="A friendly tip!" */%}}Eating on time prevents hunger.{{%/* /tip */%}} `
+` {{%/* tip */%}}Eating on time prevents hunger.{{%/* /tip */%}} `
 
 **Output**:
 
-{{%tip title="A friendly tip!" %}}Eating on time prevents hunger.{{% /tip %}}
+{{% tip %}}Eating on time prevents hunger.{{% /tip %}}
 
 ### Note
 
@@ -182,11 +182,11 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 **Syntax**:
 
-` {{%/* note title="Here is a note" */%}}Make sure you have enough disk space.{{%/* note */%}} `
+` {{%/* note */%}}Make sure you have enough disk space.{{%/* note */%}} `
 
 **Output**:
 
-{{% note title="Here is a note" %}}Make sure you have enough disk space.{{% /note %}}
+{{% note %}}Make sure you have enough disk space.{{% /note %}}
 
 ### Warning
 
@@ -194,8 +194,8 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 **Syntax**:
 
-` {{%/* warning title="ACHTUNG" */%}}Backup your data before erasing the hard disk!{{%/* warning */%}} `
+` {{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* warning */%}} `
 
 **Output**:
 
-{{% warning title="ACHTUNG" %}}Backup your data before erasing the hard disk!{{% /warning %}}
+{{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
