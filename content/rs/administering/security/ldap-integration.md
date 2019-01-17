@@ -113,8 +113,8 @@ To have a user authenticate with LDAP, you need to create a new user via
 the REST API call like this:
 
 ```src
-$ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted 
--H "Content-Type: application/json" -X POST http://<your-res-cluster>:8080/v1/users 
+$ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted \
+-H "Content-Type: application/json" -X POST http://<your-res-cluster>:8080/v1/users \
 -d "{\"auth_method\": \"external\", \"name\": \"<internal-user-name>\", \"role\": \"<user-role>\"}"
 ```
 
