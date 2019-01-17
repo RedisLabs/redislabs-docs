@@ -25,6 +25,9 @@ In addition, this feature can be used for carrying out a one-time
 synchronization of a database, either within RS or external to RS, to
 another database.
 
+**Warning:** Configuring a database as a replica of the database that it replicates
+creates a cyclical replication and is not supported.
+
 The *Replica of* is defined in the context of the destination database
 by specifying the source databases.
 
@@ -82,7 +85,7 @@ can be Redis databases that are not part of an RS.
     regenerate the internal admin password, any existing replica
     destinations already configured will stop working until you update
     them.
-- **Compression:** when a source database is located on a different
+    - **Compression:** when a source database is located on a different
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
