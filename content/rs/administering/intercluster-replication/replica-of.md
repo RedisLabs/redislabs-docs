@@ -200,29 +200,34 @@ communications between source and destination clusters utilizing TLS 1.2
 based encryption. To enable this encryption, proceed through the
 following steps:
 
-**ReplicaOf's Source Database:**
+**ReplicaOf Source Database:**
 
-1. Edit and mark **SSL Authentication** for the source Database of the
-    ReplicaOf, and choose when SSL is required:
-   - **SSL for Replication Only **enforce SSL for the communication
-        between the source and the destination of the ReplicaOf
-   - **SSL for All Communications **enforce SSL for both- application
-        communication as well as ReplicaOf communication:
-        ![Replic-of
-        Encryption](/images/rs/Screen-Shot-2018-03-29-at-10.17.59-PM.png?width=1728&height=316)
-        Replic-of Encryption
-        1. From the *destination cluster*, copy the "Syncer Certificate"
-    (located under **settings**-\> **general**) and paste it as SSL
-    certificate for the source Database:
-    ![Replica-of Encryption -
-    certificate](/images/rs/Screen-Shot-2018-03-29-at-10.32.01-PM.png?width=1650&height=350)
-    Replica-of Encryption - certificate
-1. Save the certificate and **Update** the database changes.
+To enable TLS for Replica Of communication only for a database:
+
+1. In **databases**, click ![Icon - Add](/images/rs/icon_add.png) to create a new 
+   database or click on the database that you want to configure.
+1. In **configuration**, at the bottom of the page click **edit**.
+1. Enable **TLS**.
+1. By default, client authentication is enforced so you must enter the syncer certificates of the clusters that host the replica instances of the database. The syncer certificate is shown in the Settings of the cluster.
+
+    You can also clear **Enforce client authentication** so that all clusters or 
+    clients can connect to your database without authentication.
+
+To enable TLS for Replica Of and client communication for a database:
+
+1. In **databases**, click ![Icon - Add](/images/rs/icon_add.png) to create a new database or click on the database that you want to configure.
+1. In **configuration**, at the bottom of the page click **edit**.
+1. Enable **TLS** and select **Require TLS for all communications** so that encryption and server authentication is used for Replica Of and client traffic.
+1. By default, client authentication is enforced so you must enter:
+    1. The syncer certificates of the clusters that host the replica instances of the database. The syncer certificate is shown in the Settings of the cluster.
+    1. The certificates of the clients that connect to the database.
+
+    You can also clear **Enforce client authentication** so that all clusters or clients can connect to your database without authentication.
 
 **ReplicaOf's Destination Database:**
 
 1. Edit the 'Replica of' section of the destination Database to point
-    the source Database and press the 'Enable SSL Authentication' icon:
+    the source Database and press the 'Enable TLS Authentication' icon:
     ![Replica-of
     Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png?width=1608&height=178)
     Replica-of Destination
