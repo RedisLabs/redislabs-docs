@@ -1,10 +1,6 @@
-<!-- Alert -->
-{{- if .Get "title" -}}
+<!-- Information that prevents data loss -->
 <div class="panel panel-primary panel-warning"><i class="icon-Warning"></i>
-	{{ with .Get "title" }}<div class="panel-content"><span class="panel-heading">{{htmlUnescape .}}:</span>{{end}}
+	<div class="panel-content"><span class="panel-heading">Warning - </span>
 		<div class="panel-body">{{- .Inner | markdownify -}}</div>
-	</div></div>
-{{- else -}}
-<div class="alert alert-info" role="alert">{{- .Inner | markdownify -}}</div>
-{{- end -}}
-<!-- Alert -->
+	</div>
+</div>
