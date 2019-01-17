@@ -9,7 +9,7 @@ aliases: /rs/administering/installing-upgrading/upgrading/
 Upgrading Redis Enterprise Software (RS) consists of upgrading the
 software on each of the nodes.
 
-{{% warning title="WARNING" %}}Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}), including the [5.4 upgrade notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md#upgrade" >}}).{{% /warning %}}
+{{% warning %}}Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}), including the [5.4 upgrade notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md#upgrade" >}}).{{% /warning %}}
 
 Version requirements:
 
@@ -45,7 +45,7 @@ upgrade.
 $ sudo ./install.sh
 ```
 
-{{% note title="Make sure that you answer Y to these questions" %}}
+{{% note %}}Make sure that you answer Y to these questions:
 
 - At the beginning of the upgrade process - `Do you want to enable upgrade mode now [Y/N]?`
 - At the end of the upgrade process - `Do you want to disable upgrade mode now [Y/N]?`
