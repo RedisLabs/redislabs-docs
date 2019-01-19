@@ -31,16 +31,18 @@ Prerequisites:
 
 - Next, verify that you are using the newly created project. Type:
 
-  oc project your_project_name
+```src 
+ $ oc login https://your-cluster.acme.com –token=your$login$token  
+```
 
 This will shift to your project rather than the default project (you can verify the project you’re currently using with the *oc project* command).
 
 ## Step 2: Get deployment files
 
 - Clone this repository, which contains the deployment files:
-
-  git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
-
+```src
+ $ git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
+```
 *Note: For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_rhel.yaml files.*
 
 Specifically for the redis-enterprise-cluster yaml file, you may also download and edit one of the following examples: [simple](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/simple.yaml), [persistent](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/persistent.yaml), [service broker](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/with_service_broker.yaml), [service broker RHEL](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/examples/with_service_broker_rhel.yaml) (for RHEL images) or use the one provided in the repository.
@@ -54,61 +56,57 @@ Let’s look at each yaml file to see what requires editing:
 The scc ([Security Context Constraint](https://docs.openshift.com/enterprise/3.0/admin_guide/manage_scc.html)) yaml defines the cluster’s security context constraints, which we will apply to our project later on. We strongly recommend **not** changing anything in this yaml file.
 
 Apply the file:
-
-  oc apply -f scc.yaml  
-
+```src
+ $ oc apply -f scc.yaml  
+```
 You should receive the following response:
 
-  securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured  
+  `securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured`  
 
 Now you need to bind the scc to your project by typing:
-
-  oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name  
-
+```src
+ $ oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name  
+```
 (If you do not remember your project name, run “oc project”)
 
 - [rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac.yaml)
 
 The rbac (Role-Based Access Control) yaml defines who can access which resources. We need this to allow our Operator application to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). Therefore, we strongly recommend **not** changing anything in this yaml file. To apply it, type:
-
-  kubectl apply -f rbac.yaml  
-
+```src
+ $ kubectl apply -f rbac.yaml  
+```
 You should receive the following response:
 
-  role.rbac.authorization.k8s.io/redis-enterprise-operator created
+  `role.rbac.authorization.k8s.io/redis-enterprise-operator created
   serviceaccount/redis-enterprise-operator created  
-  rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
+  rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
 
 - [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/sb_rbac.yaml)
 
-If you’re deploying a service broker, also apply the sb_rbac.yaml file. First, edit the sb_rbac.yaml namespace field to reflect the namespace you’ve created or switched to during the previous steps. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker. We need this to allow our Service Broker application to expose and manage database plans.
+If you’re deploying a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker. 
 
-As a first step, edit the file and change the following:
-
-  namespace: your_project_name  
-
-We strongly recommend **not** changing anything else in this yaml file.
+We strongly recommend **not** changing anything in this yaml file.
 
 To apply it, run:
-
-  kubectl apply -f sb_rbac.yaml  
-
+```src
+ $ kubectl apply -f sb_rbac.yaml  
+```
 You should receive the following response:
 
-  clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
-  clusterrolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured
+  `clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
+  clusterrolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured`
 
 - [crd.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml)
 
 The next step applies crd.yaml, creating a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next. We strongly recommend **not** changing anything in this yaml file.
 
 To apply it, run:
-
-  kubectl apply -f crd.yaml  
-
+```src
+ $ kubectl apply -f crd.yaml  
+```
 You should receive the following response:
 
-  customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com     configured
+  `customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com     configured`
 
 - [operator.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/operator.yaml)
 
@@ -118,12 +116,12 @@ Always make sure you have the latest [operator.yaml](https://raw.githubuserconte
 image:redislabs/operator:tag
 
 To apply the operator.yaml, run:
-
-  kubectl apply -f operator.yaml
-
+```src
+ $ kubectl apply -f operator.yaml
+```
 You should receive the following response:
 
-  deployment.apps/redis-enterprise-operator created
+  `deployment.apps/redis-enterprise-operator created`
 
 Now, run kubectl get deployment and verify that your redis-enterprise-operator deployment is running. A Typical response will look like this:
 
@@ -191,23 +189,23 @@ This is an optional configuration. If omitted, it will default to the latest ver
 ## Step 4: Create your Cluster
 
 Once you have your_cluster_name yaml set, you need to apply it to create your Redis Enterprise Cluster:
-
-  kubectl apply -f your_cluster_name.yaml
-
+```src
+ $ kubectl apply -f your_cluster_name.yaml
+```
 Run kubectl get rec and verify that creation was successful (rec is a shortcut for “RedisEnterpriseClusters”).
 
 You should receive a response similar to the following:
 
-  NAME AGE
-
-  Your_cluster_name 17s
+`NAME AGE`
+  
+  `Your_cluster_name 17s`
 
 Your Cluster will be ready shortly—typically within a few minutes.
 
 To check the cluster status, type the following:
-
-  kubectl get pod
-
+```src
+ $ kubectl get pod
+```
 You should receive a response similar to the following:
 
 |                                    |       |         |          |     |
@@ -226,9 +224,9 @@ Next, create your databases.
 In order to create your database, we will log in to the Redis Enterprise UI.
 
 - First, apply port forwarding to your Cluster:
-
-  kubectl port-forward your_cluster_name-0 8443:8443
-
+```src
+ $ kubectl port-forward your_cluster_name-0 8443:8443
+```
 *Note: your_cluster_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.*
 
 *Note: The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in RedHat Openshift documentation.](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types)*
