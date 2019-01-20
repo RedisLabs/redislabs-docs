@@ -857,31 +857,6 @@ article section.page pre {
   display: inline-grid;
 }
 
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* IE10+ CSS styles go here */
-  article section.page .highlight {
-    position: relative;
-  }
-  article section.page pre {
-    position: static;
-    display: -ms-grid;
-    display: grid;
-  }
-}
-
-@supports (-ms-ime-align: auto) {
-  /* MS Edge styles */
-  article section.page .highlight {
-    position: relative;
-  }
-  article section.page pre {
-    position: static;
-    display: -ms-grid;
-    display: grid;
-  }
-}
-
 article section.page pre .copy-to-clipboard {
   background: #f7f7f7;
   cursor: pointer;
@@ -2652,4 +2627,32 @@ a[href*="#no-click"], img[src*="#no-click"] {
 
 .autocomplete-suggestion > .context {
   display: block !important;
+}
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  header .logo img {
+    width: 100px;
+  }  
+  article section.page .highlight {
+    position: relative;
+    max-width: 800px;
+    display: inline-block;    
+  }
+  article section.page pre {
+    position: static;
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  /* MS Edge styles */
+  article section.page .highlight {
+    position: relative;    
+  }
+  article section.page pre {
+    position: static;
+    display: -ms-grid;
+    display: grid;
+  }
 }
