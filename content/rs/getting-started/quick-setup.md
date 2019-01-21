@@ -37,10 +37,20 @@ the current directory.
 $ sudo ./install.sh -y
 ```
 
-Note: When port 53 is in use, the installation fails. This is known to happen in 
-default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running. 
-To workaround this issue, change the system configuration to make this port available 
+{{% note %}}When port 53 is in use, the installation fails. This is known to happen in 
+default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
+To workaround this issue, change the system configuration to make this port available
 before running RS installation.
+
+{{% expand "Example steps to resolve the port 53 conflict:" %}}
+
+1. Run: `sudo gedit /etc/systemd/resolved.conf`
+1. Add `DNSStubListener=no` as the last line in the file and save the file.
+1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
+1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
+1. Run: `sudo service systemd-resolved restart`
+{{% /expand %}}
+{{% /note %}}
 
 <!-- Also in getting-started-docker.md -->
 ## Step 2: Setup a Cluster
