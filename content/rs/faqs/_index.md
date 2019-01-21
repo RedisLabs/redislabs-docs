@@ -177,9 +177,9 @@ While Helm Charts help automate multi-resource deployments, they do not provide 
 
 {{%expand "How to connect to the Redis Enterprise Cluster UI?" %}}
 Create a port forwarding rule to expose the cluster UI port. For example, when the default port 8443 is used, run:
-
-    kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:8443
-
+```src
+   $ kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:8443
+```
 Connect to the UI by pointing your browser to `https://localhost:8443`
 {{% /expand%}}
 
@@ -195,9 +195,9 @@ The Redis Enterprise Cluster stores the username/password of the UI in a K8s sec
 To retrieve, first, find the secret by retrieving secrets and locating one of type Opaque with a name identical or containing your Redis Enterprise Cluster name.
 
 For example, run:
-
-    kubectl get secrets
-
+```src
+   $ kubectl get secrets
+```
 A possible response may look like this:
 
 | NAME | TYPE | DATA | AGE |
@@ -205,9 +205,9 @@ A possible response may look like this:
 | redis-enterprise-cluster | Opaque | 2 | 5d |
 
 To retrieve the secret run:
-
-    kubectl get secret redis-enterprise-cluster -o yaml
-
+```src
+   $ kubectl get secret redis-enterprise-cluster -o yaml
+```
 A possible response may look like this:
 
 ```yaml
@@ -259,8 +259,9 @@ type: Opaque
 ```
 
 Next, decode, for example, the password field. Run:
-
-    echo ‘Q2h5N1BBY28=’ | base64 –decode
+```src
+   $ echo "Q2h5N1BBY28=" | base64 –-decode
+```
 
 {{% /expand%}}
 
