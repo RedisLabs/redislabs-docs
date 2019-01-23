@@ -1,0 +1,238 @@
+---
+
+Title: Getting Started with Active-Active (CRDB) on OpenShift with Route based ingress
+
+description: 
+
+weight: $weight
+
+alwaysopen: false
+
+
+
+categories: ["RS"]
+
+---
+
+In this guide, we'll set up a CRDB (conflict-free
+
+replicated database) also known as an Active-Active database deployment spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator and OpenShift Route.
+
+## Overview
+
+A router is the most common way to allow external access to an OpenShift cluster.
+
+A [router] ({{< relref "https://docs.openshift.com/container-platform/3.5/architecture/core_concepts/routes.html#architecture-core-concepts-routes" >}}) is configured to accept external requests and proxy them based on the configured routes. 
+
+This is limited to HTTP/HTTPS(SNI)/TLS(SNI), which covers web applications.
+
+Usually, the k8s cluster's administrator configures a [DNS wildcard entry] ({{< relref "https://docs.openshift.com/container-platform/3.9/install_config/install/prerequisites.html#prereq-dns" >}}) that will resolve to the OpenShift Container Platform node that is running the OpenShift Container Platform router.
+
+The default router in OpenShift is HAProxy; a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
+
+The Operator uses the routes mechanism to expose 2 inter-cluster services: the Redis Enterprise Cluster API service and the DB service that exposes the CRDB - both are used during the creation and the management of a CRDB deployment.
+
+These Routes are configured with TLS passthrough. 
+
+Note: Routes should have unique hosts names across a k8s cluster.
+
+##Steps for creating a CRDB deployment with Service Broker:
+
+Create a cluster using the REC custom resource, with a Service Broker deployment as covered in [Getting Started with K8s and Openshift] ({{< relref "/latest/rs/getting-started/k8s-openshift/" >}})
+
+ Note: Make sure you use the latest versions of the deployment files available on GitHub.
+
+ Note: Make sure you follow the instructions to deploy the Redis Enterprise Service Broker
+
+The peerClusters section in the spec is used for creating a CRDB with the Service Broker.
+
+ Note: This is only relevant for OpenShift deployments, which support Service Brokers natively
+
+Add this section in the REC spec - adjust it and apply in every cluster who will participate in the CRDB deployment (active-active database replication), by editing the cluster .yaml file and applying it using kubectl apply -f <cluster.yaml> :
+
+   activeActive:
+
+    apiIngressUrl:  api1.cluster1.<openshift.department.organization.com>
+
+    dbIngressSuffix: -cluster1.<openshift.department.organization.com>
+
+     method: openShiftRoute
+
+     peerClusters:
+
+      - apiIngressUrl:  api2.cluster2.<openshift.department.organization.com>
+
+        authSecret: cluster2_secret
+
+        dbIngressSuffix: -cluster2.<openshift.department.organization.com>
+
+        fqdn: <cluster2_name>.<cluster2_namespace>.svc.cluster.local 
+
+      - apiIngressUrl:  api3.cluster3.<openshift.department.organization.com>
+
+        authSecret: cluster2_secret
+
+        dbIngressSuffix: -cluster3.<openshift.department.organization.com>
+
+        fqdn: <cluster3_name>.<cluster3_namespace>.svc.cluster.local 
+
+           
+
+This block is added to the Service Broker config map when the REC spec changes, this triggers a restart of the service broker pod to pass the peer clusters configuration to the service broker.
+
+Once the SB pod restarts, you can select the CRDB plan from the OS UI.
+
+**apiIngressUrl** - the OpenShift hostname that will be created using OpenShift route
+
+**dbIngressSuffix** - suffix of the db route name - the resulting host is <db-name><db ingress suffix> - this is used by the Redis Enterprise Syncer to sync data between the databases. 
+
+**fqdn** - the fqdn of the k8s cluster where the pattern is <cluster_name>.<cluster_namespace>.svc.cluster.local (remember RS cluster name is set in the REC spec)
+
+**authSecret** - the k8s secret name that contains username and password to access this cluster. 
+
+We need to create a secret to reference from authSecret, based on the cluster admin credentials that were automatically created when the clusters were created.
+
+In order to accomplish this, we’ll repeat the following process for each of the clusters involved:
+
+Login to the OpenShift cluster where your Redis Enterprise Cluster (aka REC) resides
+
+Find the secret holding the REC credentials by running the following command:
+
+```src
+
+    $ kubectl get secrets
+
+```
+
+    From the secrets that are listed you’ll find one that is named after your REC and of type Opaque, like this:
+
+```
+
+    redis-enterprise-cluster                              Opaque                                3         1d
+
+Extract the hashed password and username from the file and create a .yaml file with that information in the following format:
+
+```yaml
+
+apiVersion: v1
+
+kind: Secret
+
+metadata:
+
+      name: crdb1-cred
+
+type: Opaque
+
+data:
+
+       password: NWhYRWU2OWQ=
+
+       username: YWRtaW5AYWNtZS5jb20=
+
+```
+
+Deploy the newly created secret .yaml file in the other cluster/s:
+
+```src
+
+    $ kubectl create -f crdb1-secret.yaml
+
+```
+
+A typical response would be:
+
+```
+
+    secret/crdb1-cred created
+
+```
+
+Repeat the process for the other cluster/s, until each cluster has a secret with the credentials of the other clusters
+
+After applying the update cluster deployment file, the Service Broker will be redeployed in order to apply the changes to the config map.
+
+Now, proceed to the Openshift Contain Platform web console.
+
+Select a projects that holds one of your configured clusters from the pull down on the left and then Add to Project -> Browse Catalog.
+
+Find the Redis Enterprise [Project Name:Cluster Name] tile and double click it to start the wizard.
+
+Choose Next in the ‘Information’ step.
+
+Then, to deploy a CRDB database on the clusters you’ve previously configured, select the ‘geo-distributed-redis’ plan radio button and click ‘Next’.
+
+Click ‘Next’ on the ‘Configuration’ step and then choose a binding option in the ‘Binding’ step and click ‘Create’.
+
+  
+
+The CRDB connected databases are now created, as well as the binding if this option was chosen during the setup process.
+
+You may view the binding by following the link to the secret.
+
+##Validating CRDB deployment
+
+Follow these steps to perform a basic validation test of database replication:
+
+Connect to one of the cluster pods using the following command:
+
+```src
+
+    $ oc exec -it <your-cluster1-name>-0 bash
+
+```
+
+At the prompt, launch the redis CLI:
+
+```src
+
+    $ redis-cli -h <your database1 hostname> -p <your database1 port> -a <your database1 password>
+
+```
+
+Set some values and verify they have been set:
+
+```src
+
+    > set keymaster Vinz
+
+OK
+
+> set gatekeeper Zuul
+
+OK
+
+> get keymaster
+
+"Vinz"
+
+> get gatekeeper
+
+"Zuul"
+
+```
+
+Now, exist the CLI and the podexecution environment and login to the the synched database on the other cluster.
+
+```src
+
+    $ oc exec -it <your-cluster2-name>-0 bash
+
+    $redis-cli -h <your database2 hostname> -p <your database2 port> -a <your database2 password>
+
+```
+
+Retreive the values you’ve previously set or continue manipulating key:value pairs and observe the 2-way synchronization:
+
+```src
+
+    > get keymaster
+
+"Vinz"
+
+> get gatekeeper
+
+"Zuul"
+
+```
+
