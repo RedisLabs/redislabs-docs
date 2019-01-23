@@ -133,18 +133,36 @@ in order to apply the changes to the config map.
 
 Now, proceed to the Openshift Container Platform web console.
 
-1. From the left menu, select a project
-that holds one of your configured clusters and then select **Add to Project > Browse Catalog**.
+1. From the left menu, select a project that holds one of your configured clusters and
+then select **Add to Project > Browse Catalog**.
+
+	![openshift-crdb-catalog]( /images/rs/openshift-crdb-catalog.png )
+
 1. Find the **Redis Enterprise [Project Name:Cluster Name]** tile and double-click it to start the wizard.
-1. Choose **Next** in the Information step.
+
+	![openshift-crdb-information]( /images/rs/openshift-crdb-information.png )
+
+1. Click **Next** in the Information step.
+
+	![openshift-crdb-plan]( /images/rs/openshift-crdb-plan.png )
+
 1. Then, to deploy a CRDB database on the clusters you’ve previously configured,
 select the **geo-distributed-redis** plan radio button and click **Next**.
+
+	![openshift-crdb-configuration]( /images/rs/openshift-crdb-configuration.png )
+
 1. Click **Next** on the Configuration step, choose a binding option in the Binding step,
 and click **Create**.
-  
+
+	![openshift-crdb-binding]( /images/rs/openshift-crdb-binding.png )
+
 The CRDB connected databases are now created with the specified binding, if you selected a binding.
 
+![openshift-crdb-results]( /images/rs/openshift-crdb-results.png )
+
 You can view the binding by following the link to the secret.
+
+![openshift-crdb-secret]( /images/rs/openshift-crdb-secret.png )
 
 ## Validating CRDB deployment
 
