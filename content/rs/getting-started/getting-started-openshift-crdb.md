@@ -12,11 +12,12 @@ and OpenShift Route.
 
 ## Overview
 
-A CRDB deployment requires connectivity between different Kubernetes clusters. A router is the most common way to allow such external access. 
-A [router]
+A CRDB deployment requires connectivity between different Kubernetes clusters.
+A router is the most common way to allow such external access. A [router]
 (https://docs.openshift.com/container-platform/3.5/architecture/core_concepts/routes.html#architecture-core-concepts-routes)
-is configured to accept requests external to the cluster and proxy them into the cluster based on how the route is configured.
-Routes are limited to HTTP/HTTPS(SNI)/TLS(SNI), which covers web applications.
+is configured to accept requests external to the cluster and proxy them into the
+cluster based on how the route is configured. Routes are limited to HTTP/HTTPS(SNI)/TLS(SNI),
+which covers web applications.
 
 Typically, a Kubernetes cluster administrator configures a [DNS wildcard entry]
 (https://docs.openshift.com/container-platform/3.9/install_config/install/prerequisites.html#prereq-dns)
@@ -33,16 +34,15 @@ The routes are configured with TLS passthrough.
 
 **Note**: Routes should have unique hostnames across a Kubernetes cluster.
 
-## Steps for creating a CRDB deployment with Service Broker:
+## Steps for creating a CRDB deployment with Service Broker
 
-Create a cluster using the REC custom resource, with a Service Broker deployment
-as covered in [Getting Started with Kubernetes and Openshift]({{< relref "/rs/getting-started/k8s-openshift.md" >}}), while noting the following:
+Before you create a CRDB deployment with Service Broker, you must create a cluster
+using the REC custom resource, with a Service Broker deployment as covered in
+[Getting Started with Kubernetes and Openshift]({{< relref "/rs/getting-started/k8s-openshift.md" >}}), while noting the following:
 
-1. Make sure you use the latest versions of the deployment files available on GitHub
-
-2. Deploy nodes with at least 6GB of RAM in order to accommodate the CRDB plan's 5GB database size 
-
-3. Make sure you follow the instructions to deploy the Redis Enterprise Service Broker
+1. Make sure you use the latest versions of the deployment files available on GitHub.
+1. Deploy nodes with at least 6GB of RAM in order to accommodate the CRDB plan's 5GB database size.
+1. Make sure you follow the instructions to deploy the Redis Enterprise Service Broker.
 
 The peerClusters section in the spec is used for creating a CRDB with the Service Broker.
 
@@ -76,7 +76,7 @@ CRDB plan from the OS service catalog UI.
 
 The elements of the section are:
 
-- **apiIngressUrl** - The OpenShift hostname that created using OpenShift route
+- **apiIngressUrl** - The OpenShift hostname that is created using OpenShift route.
 
 - **dbIngressSuffix** - The suffix of the db route name. The resulting host is
 `<db-name><db ingress suffix>`. This is used by the Redis Enterprise Syncer to
@@ -167,7 +167,7 @@ You can view the binding by following the link to the secret.
 
 ![openshift-crdb-secret]( /images/rs/openshift-crdb-secret.png )
 
-## Validating CRDB deployment
+## Validating CRDB Deployment
 
 To do a basic validation test of database replication:
 
