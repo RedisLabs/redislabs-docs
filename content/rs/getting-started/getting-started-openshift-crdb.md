@@ -32,7 +32,7 @@ The routes are configured with TLS passthrough.
 
 **Note**: Routes should have unique host names across a Kubernetes cluster.
 
-## Steps for creating a CRDB deployment with Service Broker:
+## Steps for creating a CRDB deployment with Service Broker
 
 Create a cluster using the REC custom resource, with a Service Broker deployment
 as covered in [Getting Started with Kubernetes and Openshift]({{< relref "/rs/getting-started/k8s-openshift.md" >}}).
@@ -164,7 +164,7 @@ You can view the binding by following the link to the secret.
 
 ![openshift-crdb-secret]( /images/rs/openshift-crdb-secret.png )
 
-## Validating CRDB deployment
+## Validating CRDB Deployment
 
 To do a basic validation test of database replication:
 
