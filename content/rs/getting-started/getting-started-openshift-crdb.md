@@ -12,41 +12,44 @@ and OpenShift Route.
 
 ## Overview
 
-A router is the most common way to allow external access to an OpenShift cluster. A [router]
+A CRDB deployment requires connectivity between different Kubernetes clusters.
+A router is the most common way to allow such external access. A [router]
 (https://docs.openshift.com/container-platform/3.5/architecture/core_concepts/routes.html#architecture-core-concepts-routes)
-is configured to accept external requests and proxy them based on the configured routes.
-This is limited to HTTP/HTTPS(SNI)/TLS(SNI), which covers web applications.
+is configured to accept requests external to the cluster and proxy them into the
+cluster based on how the route is configured. Routes are limited to HTTP/HTTPS(SNI)/TLS(SNI),
+which covers web applications.
 
-Usually, the Kubernetes cluster administrator configures a [DNS wildcard entry]
+Typically, a Kubernetes cluster administrator configures a [DNS wildcard entry]
 (https://docs.openshift.com/container-platform/3.9/install_config/install/prerequisites.html#prereq-dns)
-that will resolve to the OpenShift Container Platform node that is running
-the OpenShift Container Platform router.
+that resolves to an OpenShift Container Platform node that is running
+the OpenShift router.
 
 The default router in OpenShift is HAProxy, which is a free, very fast and reliable solution
 offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
 
-The Operator uses the routes mechanism to expose 2 intercluster services:
+The Redis Enterprise Operator uses the routes mechanism to expose 2 inter-cluster services:
 the Redis Enterprise Cluster API service and the DB service that exposes the CRDB.
-Both services are used during the creation and the management of a CRDB deployment.
+Both services are used during the creation and management of a CRDB deployment.
 The routes are configured with TLS passthrough.
 
-**Note**: Routes should have unique host names across a Kubernetes cluster.
+**Note**: Routes should have unique hostnames across a Kubernetes cluster.
 
 ## Steps for creating a CRDB deployment with Service Broker
 
-Create a cluster using the REC custom resource, with a Service Broker deployment
-as covered in [Getting Started with Kubernetes and Openshift]({{< relref "/rs/getting-started/k8s-openshift.md" >}}).
+Before you create a CRDB deployment with Service Broker, you must create a cluster
+using the REC custom resource, with a Service Broker deployment as covered in
+[Getting Started with Kubernetes and Openshift]({{< relref "/rs/getting-started/k8s-openshift.md" >}}), while noting the following:
 
-Note: Make sure you use the latest versions of the deployment files available on GitHub.
-
-Note: Make sure you follow the instructions to deploy the Redis Enterprise Service Broker
+1. Make sure you use the latest versions of the deployment files available on GitHub.
+1. Deploy nodes with at least 6GB of RAM in order to accommodate the CRDB plan's 5GB database size.
+1. Make sure you follow the instructions to deploy the Redis Enterprise Service Broker.
 
 The peerClusters section in the spec is used for creating a CRDB with the Service Broker.
 
 Note: This is only relevant for OpenShift deployments, which support Service Brokers natively.
 
 Copy this section of the REC spec and modify it for your environment. To apply it
-to every cluster that will participate in the CRDB deployment, edit the cluster .yaml file
+to every cluster that will participate in the CRDB deployment, edit the cluster yaml file
 and apply it using `kubectl apply -f <cluster.yaml>`:
 
 ```yaml
@@ -69,11 +72,11 @@ and apply it using `kubectl apply -f <cluster.yaml>`:
 This block is added to the Service Broker config map when the REC spec changes, and
 it triggers a restart of the Service Broker pod to pass the peer clusters configuration
 to the service broker. Once the Service Broker pod restarts, you can select the
-CRDB plan from the OS UI.
+CRDB plan from the OS service catalog UI.
 
 The elements of the section are:
 
-- **apiIngressUrl** - The OpenShift hostname that will be created using OpenShift route
+- **apiIngressUrl** - The OpenShift hostname that is created using OpenShift route.
 
 - **dbIngressSuffix** - The suffix of the db route name. The resulting host is
 `<db-name><db ingress suffix>`. This is used by the Redis Enterprise Syncer to
@@ -86,20 +89,20 @@ sync data between the databases.
 to access this cluster. 
 
 We need to create a secret to reference from authSecret based on the cluster admin credentials
-that were automatically created when the clusters were created. To do this, we will
+that were automatically created when the clusters were created. To do this,
 repeat the following process for each of the clusters involved:
 
 1. Login to the OpenShift cluster where your Redis Enterprise Cluster (REC) resides.
 1. To find the secret that holds the REC credentials, run: `kubectl get secrets`
 	
-	From the secrets that are listed you’ll find one that is named after your REC and
+	From the secrets listed, you’ll find one that is named after your REC and
 	of type Opaque, like this:
 
 	```src
 	redis-enterprise-cluster            Opaque                  3       1d
 	```
 
-1. Copy the hashed password and username from the file and create a .yaml file
+1. Copy the hashed password and username from the file and create a yaml file
 with that information in the following format:
 
 	```yaml
@@ -113,7 +116,7 @@ with that information in the following format:
 		username: YWRtaW5AYWNtZS5jb20=
 	```
 
-1. Deploy the newly created secret .yaml file in the other clusters:
+1. Deploy the newly created secret yaml file in the other clusters:
 
 	```src
 	$ kubectl create -f crdb1-secret.yaml
@@ -128,10 +131,10 @@ with that information in the following format:
 1. Repeat the process for the other clusters until each cluster has a secret
 with the credentials of the other clusters.
 
-After applying the update cluster deployment file, the Service Broker will be redeployed
-in order to apply the changes to the config map.
+After applying the update cluster deployment file, the Service Broker is redeployed
+to apply the changes to the config map.
 
-Now, proceed to the Openshift Container Platform web console.
+Now, proceed to the Openshift web console.
 
 1. From the left menu, select a project that holds one of your configured clusters and
 then select **Add to Project > Browse Catalog**.
@@ -201,7 +204,7 @@ on the other cluster.
 	$redis-cli -h <your database2 hostname> -p <your database2 port> -a <your database2 password>
 	```
 
-1. Retreive the values you previously set or continue manipulating key:value pairs
+1. Retrieve the values you previously set or continue manipulating key:value pairs
 and observe the 2-way synchronization, for example:
 
 	```src
