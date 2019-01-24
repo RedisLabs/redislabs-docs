@@ -71,9 +71,10 @@ $( document ).ready(function() {
         /* renderItem displays individual search results */
         renderItem: function(item, term) {
             var numContextWords = 3;
+            var regEx = "(?:\\s?(?:[\\w\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]+)\\s?){0";
             var text = item.content.match(
-                "(?:\\s?(?:[\\w.]+)\\s?){0,"+numContextWords+"}" +
-                    term+"(?:\\s?(?:[\\w.]+)\\s?){0,"+numContextWords+"}");
+                regEx+numContextWords+"}" +
+                    term+regEx+numContextWords+"}");
             if(text && text.length > 0) {
                 var len = text[0].split(' ').length;
                 item.context = len > 1? '...' + text[0].trim() + '...' : null;
