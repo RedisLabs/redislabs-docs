@@ -2646,7 +2646,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
 }
 
 @supports (-ms-ime-align: auto) {
-  /* Edge styles */
+  /* MS Edge styles */
   article section.page .highlight {
     position: relative;    
   }

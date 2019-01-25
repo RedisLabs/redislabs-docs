@@ -2613,7 +2613,7 @@ i.icon-icons_plus, i.icon-icons_minus {
 }
 
 @supports (-ms-ime-align: auto) {
-  /* Edge styles */
+  /* MS Edge styles */
   article section.page .highlight {
     position: relative;    
   }
