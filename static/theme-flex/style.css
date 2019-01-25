@@ -32,6 +32,7 @@ header:after {
 header a {
   text-decoration: none; }
 header .logo {
+  border: 1px solid blue;
   font-size: 100%; }
 header .logo * {
   vertical-align: middle;
@@ -2611,6 +2612,7 @@ i.icon-icons_plus, i.icon-icons_minus {
 }
 
 .main-content-left > ol > li > ol {list-style: lower-alpha;}
+
 .main-content ol > li > ol > li > ol > li > ol  {list-style-type: lower-alpha;}
 
 /* no-click turns off border and click event on small icons */
