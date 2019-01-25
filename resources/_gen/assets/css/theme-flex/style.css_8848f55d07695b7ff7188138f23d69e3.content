@@ -2592,7 +2592,6 @@ i.icon-icons_plus, i.icon-icons_minus {
 }
 
 .main-content-left > ol > li > ol {list-style: lower-alpha;}
-
 .main-content ol > li > ol > li > ol > li > ol  {list-style-type: lower-alpha;}
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
