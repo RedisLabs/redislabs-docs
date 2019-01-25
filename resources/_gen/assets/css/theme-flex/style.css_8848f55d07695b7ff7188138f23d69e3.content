@@ -2601,14 +2601,14 @@ i.icon-icons_plus, i.icon-icons_minus {
     width: 100px;
   }  
   article section.page .highlight {
-    position: relative;
-    max-width: 800px;
     display: inline-block;    
+    max-width: 800px;
+    position: relative;
   }
   article section.page pre {
-    position: static;
     display: -ms-grid;
     display: grid;
+    position: static;
   }
 }
 
@@ -2618,8 +2618,8 @@ i.icon-icons_plus, i.icon-icons_minus {
     position: relative;    
   }
   article section.page pre {
-    position: static;
     display: -ms-grid;
     display: grid;
+    position: static;
   }
 }

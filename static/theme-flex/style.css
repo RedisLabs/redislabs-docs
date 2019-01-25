@@ -2634,14 +2634,14 @@ a[href*="#no-click"], img[src*="#no-click"] {
     width: 100px;
   }  
   article section.page .highlight {
-    position: relative;
-    max-width: 800px;
     display: inline-block;    
+    max-width: 800px;
+    position: relative;
   }
   article section.page pre {
-    position: static;
     display: -ms-grid;
     display: grid;
+    position: static;
   }
 }
 
@@ -2651,8 +2651,8 @@ a[href*="#no-click"], img[src*="#no-click"] {
     position: relative;    
   }
   article section.page pre {
-    position: static;
     display: -ms-grid;
     display: grid;
+    position: static;
   }
 }
