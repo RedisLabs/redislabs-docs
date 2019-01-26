@@ -9,31 +9,64 @@ jQuery(document).ready(function() {
         return false;
     });
 
+    // Expand/Collapse All
     jQuery('.parent .expand-all-icon').on('click', function() {
-        $( this ).toggleClass("fa-angle-double-up fa-angle-double-down") ;
-        _toggleFirstLevelItems();
-        _toggleExpanderTitle();
-        return false;
-    });  
+        if($( this ).attr("class").indexOf('--expander') !== -1) {
+            $( this ).addClass("fa-angle-double-up").removeClass("fa-angle-double-down");
+            _toggleFirstLevelItems('expand');
+            _toggleExpanderTitle('expand');
+            return false;
+        }                
+
+        if($( this ).attr("class").indexOf('--collapser') !== -1) {
+            $( this ).addClass("fa-angle-double-down").removeClass("fa-angle-double-up");
+            _toggleFirstLevelItems('collapse');
+            _toggleExpanderTitle('collapse');
+            return false;
+        }
+    });
     
     jQuery('.SideMenuExpanderTitle').on('click', function() {
-        var $i = jQuery( '.parent .expand-all-icon' );
-        $i.toggleClass("fa-angle-double-up fa-angle-double-down") ;
-        _toggleFirstLevelItems();
-        _toggleExpanderTitle();
-        return false;
+        if($( this ).attr("class").indexOf('--expander') !== -1) {
+            var $i = jQuery( '.parent .expand-all-icon' );
+            $i.addClass("fa-angle-double-up").removeClass("fa-angle-double-down");
+            _toggleFirstLevelItems('expand');
+            _toggleExpanderTitle('expand');
+            return false;
+        }
+
+        if($( this ).attr("class").indexOf('--collapser') !== -1) {
+            var $i = jQuery( '.parent .expand-all-icon' );
+            $i.addClass("fa-angle-double-down").removeClass("fa-angle-double-up");
+            _toggleFirstLevelItems('collapse');
+            _toggleExpanderTitle('collapse');
+            return false;
+        }        
     });
 
-    function _toggleFirstLevelItems() {
-        $('.menu .root-item.parent').children('ul').children('li').children('ul').toggleClass('--open');
+    function _toggleFirstLevelItems(act) {
+        if(act === 'expand') {
+            $('article > aside .menu > li.dd-item.active > ul').addClass('active-menu-expanded');
+            $('article > aside .menu > li.dd-item.active > ul .fa.fa-angle-right').addClass('fa-angle-down').removeClass('fa-angle-right');
+            return;
+        }
+
+        $('article > aside .menu > li.dd-item.active > ul').removeClass('active-menu-expanded');
+        $('article > aside .menu > li.dd-item.active > ul .fa.fa-angle-down').addClass('fa-angle-right');
+        $('article > aside .menu > li.dd-item.active > ul .fa.fa-angle-down').removeClass('fa-angle-down');
     }
 
-    function _toggleExpanderTitle() {
-        $e = jQuery('.parent .SideMenuExpanderTitle');
-        if($e && $e[0]) {
-            var isOpen = (jQuery( '.parent .expand-all-icon' ).attr("class").indexOf('fa-angle-double-up') !== -1);
-            $e[0].innerText = isOpen? 'Collapse all': 'Expand all';
+    function _toggleExpanderTitle(act) {        
+        if(act === 'expand') {
+            var $e = jQuery('.parent .SideMenuExpanderTitle.--expander');
+            $e[0].innerText = 'Collapse all';
+            $e.addClass('--collapser').removeClass('--expander')
+            return;
         }
+
+        var $e = jQuery('.parent .SideMenuExpanderTitle.--collapser');
+        $e[0].innerText = 'Expand all';
+        $e.addClass('--expander').removeClass('--collapser')
     }
 
     jQuery('.SideMenuExpanderTitle').on('mouseenter', function() {

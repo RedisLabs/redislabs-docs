@@ -195,8 +195,20 @@ article > aside section {
 
 /* Expand/Collapse menu */
 article > aside .menu > li.dd-item.active > ul {
-  display: none;
+  display: block;
 }
+
+article > aside .menu > li.dd-item.active > ul.active-menu-expanded .haschildren ul {
+  display: block;
+}
+
+/* article > aside .menu > li.dd-item.active > ul.active-menu-expanded .haschildren ul .fa-angle-down {
+  display: block;
+}
+
+article > aside .menu > li.dd-item.active > ul.active-menu-expanded .haschildren ul .fa-angle-right {
+  display: none;
+} */
 
 article > aside .menu > li.dd-item:not(.parent) .children {
   display: none;

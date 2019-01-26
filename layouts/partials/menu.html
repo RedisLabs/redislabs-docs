@@ -43,11 +43,11 @@
             
             {{- if ne $numberOfPages 0 }}                       
               {{- if or (eq $currentNode.URL "/rs/") (eq $currentNode.URL "/rc/") (eq $currentNode.URL "/rv/") }}
-                <a class="expander-title"><span class="SideMenuExpanderTitle">Expand all</span></a>     
-                <i class="fa fa-angle-double-down fa-lg category-icon expand-all-icon"></i>
+                <a class="expander-title"><span class="SideMenuExpanderTitle --expander">Expand all</span></a>     
+                <i class="fa fa-angle-double-down fa-lg category-icon expand-all-icon --expander"></i>
               {{ else }}
-                <a class="expander-title"><span class="SideMenuExpanderTitle">Collapse all</span></a>
-                <i class="fa fa-angle-double-up fa-lg category-icon expand-all-icon"></i>
+                <a class="expander-title"><span class="SideMenuExpanderTitle --collapser">Collapse all</span></a>
+                <i class="fa fa-angle-double-up fa-lg category-icon expand-all-icon --collapser"></i>
               {{- end}}
             {{- end}}
       
