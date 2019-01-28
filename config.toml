@@ -49,15 +49,24 @@ smartypants = false
 home = [ "HTML", "RSS", "JSON"]
 
 [[menu.shortcuts]]
-# name = "<i class='fa fa-question-circle'></i> <label>Product</label>"
 name = "<label>Docs</label>"
 url = "https://redislabs.com/resources/documentation/"
+weight = 20
+
+[[menu.shortcuts]]
+name = "<label>Redis</label>"
+url = "https://redislabs.io/why-redis"
 weight = 10
 
 [[menu.shortcuts]]
 name = "<label>University</label>"
 url = "https://university.redislabs.com"
 weight = 40
+
+[[menu.shortcuts]]
+name = "<label>Blog</label>"
+url = "https://redislabs.com/blog"
+weight = 50
 
 [[menu.shortcuts]]
 name = "<label>Login</label>"
