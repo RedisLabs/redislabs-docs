@@ -96,19 +96,12 @@ To create a new database in the UI:
     database will synchronize on an ongoing basis.
 1. If you would like to encrypt the connection to the database endpoint
     with SSL encryption, you have to enter the contents of the client
-<<<<<<< HEAD
-    certificate to the [**SSL client authentication**]({{< relref "/rs/administering/security/client-connections.md" >}})
-    field.
-1. Specify whether to perform a [**periodic back up**]({{< relref "/rs/administering/database-operations/database-backup.md" >}})
-    of the database.
-=======
     certificate to the **SSL client authentication** field. For
     additional details, refer to [Securing client connection with
     SSL]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}}).
 1. Specify whether to perform a **periodic back up** of the database.
     For additional details, refer to [Database
     backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
->>>>>>> Fix links to security topics
     If you specify periodic backup, set the interval and specify the
     backup location parameters, as appropriate.
 1. Configure [**database alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}).
