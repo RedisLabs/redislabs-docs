@@ -15,7 +15,7 @@ laptops, desktop, small VM/instance, etc.).
 | Item | Description | Minimum Requirements | Recommended |
 |------------|-----------------|------------|-----------------|
 | \# of nodes per cluster | One node is fine, but to utilize the advanced cluster features at least two nodes are required. | 1 node | 2+ |
-| RAM | The amount of RAM for the node. | At least 2GB --> in 5.4 (or maybe even before), we need more minimum RAM. CAn you please ask Uri for this value and update accordingly?  | 4GB |
+| RAM | The amount of RAM for the node. | At least 2GB | 4GB |
 | Storage | The amount of storage space for the node. | At least 10GB of free space | 20GB |
 
 This minimal setup is meant for simple development and minimal
