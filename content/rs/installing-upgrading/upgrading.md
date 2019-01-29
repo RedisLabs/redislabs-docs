@@ -31,8 +31,8 @@ package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
 on all of the machines on which RS is installed.
 
 {{% note %}}You must upgrade the master node before you upgrade the other nodes.
-After you upgrade the master node, if the master node goes down you must upgrade
-the new master mode before the other nodes.
+We recommend that you plan to keep all nodes up until the upgrade is completed
+on all nodes.
 
 The node role is shown in the output of the 'rladmin status
 nodes' command.
