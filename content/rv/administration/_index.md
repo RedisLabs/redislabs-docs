@@ -1,7 +1,7 @@
 ---
 Title: Administration
 description: 
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RV"]
 ---
