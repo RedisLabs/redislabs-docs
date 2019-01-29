@@ -273,7 +273,7 @@ Extra info options:
 | ------------------- | ----------------------------------------------------------------------- |
 | extra state_machine | Shows extra execution state machine info                                |
 | extra nodestats     | Shows extra masters/slaves shards per node                              |
-| extra backups       | Shows extra dbs and shards periodic backup                              | status |
+| extra backups       | Shows extra dbs and shards periodic backup                              |
 | extra frag          | Shows extra shards fragmented memory that could be reclaimed by restart |
 | extra watchdog      | Shows extra watchdog status                                             |
 | extra rack_id       | Shows rack_id even when cluster is not marked as rack aware             |
