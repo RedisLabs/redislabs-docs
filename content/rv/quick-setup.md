@@ -1,7 +1,7 @@
 ---
 Title: Quick Setup of Redis Enterprise VPC (RV)
 description: 
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["RV"]
 ---
@@ -17,16 +17,14 @@ as follows:
 ## Step 1: Sign up for Redis Enterprise VPC account
 
 If you do not already have one, sign up for a [Redis Enterprise VPC
-account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-cloud-private).
+account](https://app.redislabs.com/#/sign-up/vpc).
 If you already have an account, sign in to [Redis Enterprise
 VPC](https://app.redislabs.com/#/login?).
 
 ## Step 2: Create an AWS account for RV to use
 
 RV requires a dedicated AWS account to perform operations on your
-behalf. Inside of that account, create an AWS user in IAM specifically
-for RV use, per "[Creating an AWS user for Redis Enterprise
-VPC]({{< relref "/rv/how-to/creating-aws-user-redis-enterprise-vpc.md" >}}).
+behalf. Inside of that account, [create an AWS user in IAM]({{< relref "/rv/how-to/creating-aws-user-redis-enterprise-vpc.md" >}}).
 
 ## Step 3: Create a new RV subscription
 

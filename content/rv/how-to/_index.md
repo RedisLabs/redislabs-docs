@@ -1,7 +1,7 @@
 ---
 Title: How Tos
 description: 
-weight: $weight
+weight: 70
 alwaysopen: false
 categories: ["RV"]
 ---

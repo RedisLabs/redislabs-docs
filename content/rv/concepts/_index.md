@@ -1,7 +1,7 @@
 ---
 Title: Concepts
 description: 
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RV"]
 ---
