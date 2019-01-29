@@ -1,6 +1,6 @@
 ---
 Title: rladmin command-line interface
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -22,7 +22,7 @@ CLI:
 - Upgrade the version of a database to the most current version
     supported by the cluster.
 
-# Accessing the rladmin CLI 
+# Accessing the rladmin CLI
 
 To open the *rladmin* CLI:
 
@@ -39,15 +39,12 @@ To open the *rladmin* CLI:
 
 4. A message confirms that you are now running rladmin.
 
-# rladmin features 
-
 In the rladmin CLI you can:
 
 - Enter ? to view the full list of available commands.
 - Type help, followed by the name of a command to view a detailed
     explanation of the command and its usage.
 - Use the Tab key for automatic command completion.
-
 
 # rladmin usage
 
@@ -68,42 +65,44 @@ In the rladmin CLI you can:
 | [**upgrade**](#upgrade) | Upgrade entity version |
 
 ---
+
 ## bind
 
 Usage:
-    
-    bind [db <db:id | name>] endpoint <id> 
+
+    bind [db <db:id | name>] endpoint <id>
     [ include | exclude ] proxy <id1 .. idN>
-    
+
     bind [db <db:id | name>] endpoint <id> policy <single | all-master-shards | all-nodes>
 
 Configure a specific endpoint's binding to proxies or change its binding policy.
 
-Example: : 
+Example: :
     ``insert example``
 
-
-
 ---
-## cluster
 
+## cluster
 
 Note: Only applies to nodes that are configured as part of a cluster
 
 ---
+
 ### cluster reset_password
+
     cluster reset_password <user email>
 
 Changes the access password of a user whose e-mail address is provided.
 
 ---
+
 ### cluster config
 
-    cluster config [cipher_suites cipher-suites-str ] 
-        [ipv6 <enabled/disabled>] 
-        [handle_redirects <enabled/disabled>] 
-        [http_support <enabled/disabled>] 
-        [min_control_TLS_version control_tls_version] 
+    cluster config [cipher_suites cipher-suites-str ]
+        [ipv6 <enabled/disabled>]
+        [handle_redirects <enabled/disabled>]
+        [http_support <enabled/disabled>]
+        [min_control_TLS_version control_tls_version]
         [min_data_TLS_version data_tls_version]
 
 The following parameters are optional:
@@ -116,10 +115,11 @@ The following parameters are optional:
 |sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed|
 
 ---
-## failover 
 
-Usage: 
-    
+## failover
+
+Usage:
+
     failover [db <db:id | name>] shard <id1 .. idN> [immediate]
 
 Fail-over one or more master shards of a specific database,
@@ -130,9 +130,10 @@ fail-over is performed, unless the optional immediate keyboard is
 specified.
 
 ---
+
 ## info
 
-Usage: 
+Usage:
 
     info db <db:id | name>
     info proxy <id | all>
@@ -141,19 +142,19 @@ Usage:
 Show current tunable settings for a specific or all databases, proxies,
 cluster.
 
-
 ---
+
 ## migrate
 
 Usage:
-    
-    migrate [db <db:id | name> | node <origin node:id>] 
+
+    migrate [db <db:id | name> | node <origin node:id>]
         shard <id1 .. idN> [preserve_roles] target_node <id> [override_policy]
-    
+
     migrate (db <db:id | name> | node <origin node:id>) all_slave_shards target_node <id> [override_policy]
 
     migrate (db <db:id | name> | node <origin node:id>) all_master_shards target_node <id> [override_policy]
-    
+
     migrate  node <origin node:id>  all_shards target_node <id> [override_policy]
 
     migrate [db <db:id | name> | node <origin node:id>] shards_to_endpoint [restrict_target_node <id>] [override_policy] [commit]
@@ -186,11 +187,11 @@ options:
 |max_concurrent_migrations | maximum number of concurrent endpoint migrations (default is 1)|
 |preserve_roles | performs an additional fail-over in order to guarantee that the roles of masters are preserved.|
 
-
 ---
+
 ## node
 
-Usage: 
+Usage:
 
     node <id> enslave [ shards_only | endpoints_only ]
     node <id> snapshot [ create | list | restore | delete ]
@@ -209,21 +210,22 @@ Enslaving all bound resources of a node is available using the 'enslave' command
 
 Handling node snapshots from the current node state (active endpoints and shards)may be done using the 'snapshot create', 'snapshot restore', 'snapshot list' and'snapdshot delete' commands.
 
-
 ---
+
 ## placement
 
 Usage:
-    
+
     placement [db <db:id | name>] [ dense | sparse ]
 
 Configure shards placement policy for a given database.
 
 ---
+
 ## restart
 
-Usage: 
-    
+Usage:
+
     restart db <db:id | name> [preserve_roles] [discard_data] [force_discard]
 
 Performs a restart of the Redis software in use by a specific database
@@ -238,27 +240,28 @@ The **discard_data** optional flag indicates that the data can be discarded and 
 The **force_discard** optional flag indicates we force discard_data even if there is replication or persistence.
 
 ---
-##status
+
+## status
 
 Usage:
 
 full status report:
-    
+
     status [extra options] [issues_only]
 status report of just the nodes table:
-    
+
     status nodes [extra options] [sort <COLUMN_TITLES>] [issues_only]
 
 status report of just the database table:
-    
+
     status databases [extra options] [sort <COLUMN_TITLES>] [issues_only]
 
 status report of just the endpoints table:
-    
+
     status endpoints [node <id>] [db <db:id | name>] [extra options] [sort <COLUMN_TITLES>] [issues_only]
 
 status report of just the shards table:
-    
+
     status shards [node <id>] [db <db:id | name>] [extra options] [sort <COLUMN_TITLES>] [issues_only]
 
 Display current cluster status and topology information.
@@ -276,7 +279,6 @@ Extra info options:
 | extra redis_version | Shows redis version of all the databases                                |
 | extra all           | Shows all extra info                                                    |
 
-
 COLUMN_TITLES: a list of table column titles.
 e.g:
     status shards sort NODE USED_MEMORY
@@ -284,9 +286,10 @@ e.g:
 issues_only: Filters out all the OK items from status.
 
 ---
+
 ## tune
 
-Usage: 
+Usage:
 
     tune db <db:id | name> [slave_buffer <value>]
         [slave_ha <enabled/disabled>]
@@ -315,12 +318,13 @@ a period after shard relocation in which slave high availability mechanism
 cannot relocate database from any other node.
 
 ---
+
 ## upgrade
 
-Usage: 
-    
-    upgrade db <db:id | name> 
-        [preserve_roles] [keep_current_version] 
+Usage:
+
+    upgrade db <db:id | name>
+        [preserve_roles] [keep_current_version]
         [discard_data] [force_discard]
 
 Performs an upgrade of the Redis software in use by a specific database
