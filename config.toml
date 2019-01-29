@@ -55,7 +55,7 @@ weight = 20
 
 [[menu.shortcuts]]
 name = "<label>Redis</label>"
-url = "https://redislabs.io/why-redis"
+url = "https://redislabs.com/why-redis/"
 weight = 10
 
 [[menu.shortcuts]]
@@ -65,7 +65,7 @@ weight = 40
 
 [[menu.shortcuts]]
 name = "<label>Blog</label>"
-url = "https://redislabs.com/blog"
+url = "https://redislabs.com/blog/"
 weight = 50
 
 [[menu.shortcuts]]
