@@ -48,21 +48,21 @@ In the rladmin CLI you can:
 
 # rladmin usage
 
-| Command | Description |
-|---------|-------------|
-| [**bind**](#bind) | Bind an endpoint |
-| [**cluster**](#cluster) | Cluster management commands |
-| **exit** | Exit admin shell |
-| [**failover**](#failover) | Fail-over master to slave |
-| **help** | Show available commands, or use `help <command>` for a specific command |
-| [**info**](#info) | Show information about tunable parameters |
-| [**migrate**](#migrate) | Migrate elements between nodes |
-| [**node**](#node) | Node management commands |
-| [**placement**](#placement) | Configure shards placement policy |
-| [**restart**](#restart) | Restart database shards |
-| [**status**](#status) | Show status information |
-| [**tune**](#tune) | Tune system parameters |
-| [**upgrade**](#upgrade) | Upgrade entity version |
+| Command                     | Description                                                             |
+| --------------------------- | ----------------------------------------------------------------------- |
+| [**bind**](#bind)           | Bind an endpoint                                                        |
+| [**cluster**](#cluster)     | Cluster management commands                                             |
+| **exit**                    | Exit admin shell                                                        |
+| [**failover**](#failover)   | Fail-over master to slave                                               |
+| **help**                    | Show available commands, or use `help <command>` for a specific command |
+| [**info**](#info)           | Show information about tunable parameters                               |
+| [**migrate**](#migrate)     | Migrate elements between nodes                                          |
+| [**node**](#node)           | Node management commands                                                |
+| [**placement**](#placement) | Configure shards placement policy                                       |
+| [**restart**](#restart)     | Restart database shards                                                 |
+| [**status**](#status)       | Show status information                                                 |
+| [**tune**](#tune)           | Tune system parameters                                                  |
+| [**upgrade**](#upgrade)     | Upgrade entity version                                                  |
 
 ---
 
@@ -107,12 +107,12 @@ Changes the access password of a user whose e-mail address is provided.
 
 The following parameters are optional:
 
-| Option|Description|
-|-------|-----------|
-|http_support | Enable or disable using HTTP for REST API
-|min_control_TLS_version |The minimum version of TLS protocol which is supported at the control path.|
-|min_data_TLS_version | The minimum version of TLS protocol which is supported at the data path.|
-|sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed|
+| Option                  | Description                                                                 |
+| ----------------------- | --------------------------------------------------------------------------- |
+| http_support            | Enable or disable using HTTP for REST API                                   |
+| min_control_TLS_version | The minimum version of TLS protocol which is supported at the control path. |
+| min_data_TLS_version    | The minimum version of TLS protocol which is supported at the data path.    |
+| sentinel_ssl_policy     | Define SSL policy for the Discovery Service: required/disabled/allowed      |
 
 ---
 
@@ -165,27 +165,28 @@ Migrate one or more shards or endpoints to a new node.
 
 commands:
 
-| Option| Description|
-|-|-|
-|shard | migrate a single or a list of shards|
-|all_slave_shards | migrate all slave shards of a certain db or node|
-|all_master_shards| migrate all master shards of a certain db or node|
-|all_shards |migrate all shards (masters and slaves) of a certain node|
-|endpoint_to_shards | migrate endpoints of all or one db to the node where majority of the shards are (master to masters, slave to slaves), unless the to_first_slot flag is used|
-|shards_to_endpoint | migrate shards of all or one db to the node where the endpoint is (masters to master, slaves to slave)|
+| Option             | Description                                                                                                                                                 |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| shard              | migrate a single or a list of shards                                                                                                                        |
+| all_slave_shards   | migrate all slave shards of a certain db or node                                                                                                            |
+| all_master_shards  | migrate all master shards of a certain db or node                                                                                                           |
+| all_shards         | migrate all shards (masters and slaves) of a certain node                                                                                                   |
+| endpoint_to_shards | migrate endpoints of all or one db to the node where majority of the shards are (master to masters, slave to slaves), unless the to_first_slot flag is used |
+| shards_to_endpoint | migrate shards of all or one db to the node where the endpoint is (masters to master, slaves to slave)                                                      |
 
 options:
-| Option | Description|
-|-- | --|
-|db | limit to shards / endpoints of a specific database|
-|node | limit to shards / endpoints on a specific origin node|
-|target_node | migration target node|
-|restrict_target_node | let the automatic mechanism find the target node, but perform only action for this target node|
-|override_policy | override rack aware policy allowing master and slave to reside on the same rack. You must manually fix this invalid state later on|
-|to_first_slot | find the node of with the shard with the first hash slot rather than the majority of shards|
-|commit | perform the actions! (default is a dry-run)|
-|max_concurrent_migrations | maximum number of concurrent endpoint migrations (default is 1)|
-|preserve_roles | performs an additional fail-over in order to guarantee that the roles of masters are preserved.|
+
+| Option                    | Description                                                                                                                        |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| db                        | limit to shards / endpoints of a specific database                                                                                 |
+| node                      | limit to shards / endpoints on a specific origin node                                                                              |
+| target_node               | migration target node                                                                                                              |
+| restrict_target_node      | let the automatic mechanism find the target node, but perform only action for this target node                                     |
+| override_policy           | override rack aware policy allowing master and slave to reside on the same rack. You must manually fix this invalid state later on |
+| to_first_slot             | find the node of with the shard with the first hash slot rather than the majority of shards                                        |
+| commit                    | perform the actions! (default is a dry-run)                                                                                        |
+| max_concurrent_migrations | maximum number of concurrent endpoint migrations (default is 1)                                                                    |
+| preserve_roles            | performs an additional fail-over in order to guarantee that the roles of masters are preserved.                                    |
 
 ---
 
