@@ -14,13 +14,15 @@ When you enable TLS for a database or CRDB, encryption is enforced on either all
 
 Related topics:
 
-- You can use the REST API to [update the server TLS certificates and TLS protocol version]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-- To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+- You can use the REST API to [update the server TLS certificates and TLS protocol version
+  ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+- To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database
+  ({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 
 ## Authentication for Databases
 
 When you configure Replica Of for a database, synchronization traffic flows between the
-primary instance of the database and the replica instance of the database. You can
+source and destination databases. You can
 configure authentication for Replica Of synchronization traffic only, or for all
 communications, including Replica Of synchronization traffic and data traffic between
 the database and the clients.
@@ -44,10 +46,11 @@ To enable TLS for Replica Of communication only for a database:
     - For an existing database that is configured to **Require TLS for all
     communications** - Select **Require TLS for Replica Of communications only**.
 
-    By default, client authentication is enforced so you must enter the syncer certificates of the clusters that host the replica instances of the database.
+    By default, client authentication is enforced so you must enter the syncer certificates
+    of the clusters that host the destination databases.
 
 1. To enter the certificates:
-    1. Copy the syncer certificates for each cluster with a replica instance:
+    1. Copy the syncer certificates for each cluster with a destination database:
         1. Login to the cluster.
         1. Go to **Settings**.
         1. In the syncer certificates box, copy the entire text of the certificate.
@@ -76,13 +79,13 @@ To enable TLS for Replica Of and client communication for a database:
     ![alt_text](/images/TLS-Configuration6.png "image_tooltip")
 
     By default, client authentication is enforced so you must enter the syncer
-    certificates of the clusters that host the replica instances of the database.
+    certificates of the clusters that host the destination databases.
     The certificates of the clients that connect to the database.
 
 1. To enter the certificates:
     1. Copy the entire text of the syncer and client certificates.
 
-        For each cluster with a replica instance:
+        For each cluster with a destination database:
 
         1. Login to the cluster.
         1. Go to **Settings**.
