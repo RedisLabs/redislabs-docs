@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To prevent unauthorized access to your data, RS databases support the TLS protocol that includes:
+To prevent unauthorized access to your data, RS databases support the SSL/TLS protocol that includes:
 
 - Encryption - Makes sure that the traffic can only be read by the sender and recipient.
 - Authentication - The server or client makes sure that it communicates with an authorized entity.
@@ -53,7 +53,7 @@ To enable TLS for Replica Of communication only for a database:
         1. In the syncer certificates box, copy the entire text of the certificate.
     1. Click ![icon_add](/images/rs/icon_add.png "+") to open the certificate box.
 
-    ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
+        ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
 
     1. Paste the text of the certificates in the box.
     1. Click ![icon_save](/images/rs/icon_save.png "Save")
@@ -61,6 +61,8 @@ To enable TLS for Replica Of communication only for a database:
 
     You can also clear **Enforce client authentication** so that all clusters or
     clients can connect to your database without authentication.
+
+    To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 
 To enable TLS for Replica Of and client communication for a database:
 
@@ -88,13 +90,15 @@ To enable TLS for Replica Of and client communication for a database:
     1. Click ![icon_add](/images/rs/icon_add.png "+")
     to open the certificate box.
 
-    ![alt_text](/images/TLS-Configuration8.png "image_tooltip")
+        ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
 
     1. Paste the text of the certificates in the box.
     1. Click ![icon_save](/images/rs/icon_save.png "Save")
     to save the certificates.
 
-    You can also clear **Enforce client authentication **so that all clusters or clients can connect to your database without authentication.
+    You can also clear **Enforce client authentication** so that all clusters or clients can connect to your database without authentication.
+
+    To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 
 ## Authentication for CRDBs
 
@@ -111,9 +115,9 @@ To enable TLS for CRDB communication only for a CRDB:
 1. In **configuration**, at the bottom of the page click **edit**.
 1. Enable **TLS**.
 
-![alt_text](/images/TLS-Configuration11.png "image_tooltip")
+![crdb-tls-config-enable](/images/rs/crdb-tls-config-enable.png "crdb-tls-config-enable")
 
-    Client authentication is enforced and the certificates for the participating clusters are used automatically.
+Client authentication is enforced and the certificates for the participating clusters are used automatically.
 
 To enable TLS for CRDB and client communication for a CRDB:
 
@@ -122,15 +126,19 @@ To enable TLS for CRDB and client communication for a CRDB:
 1. In **configuration**, at the bottom of the page click **edit**.
 1. Enable **TLS**.
 
-![alt_text](/images/TLS-Configuration13.png "image_tooltip")
+    ![alt_text](/images/TLS-Configuration13.png "image_tooltip")
 
-1. After you create the CRDB, edit the CRDB settings and select **Require TLS for all communications** so that encryption and server authentication is used for CRDB and client traffic.
+1. After you create the CRDB on all participating clusters, on the participating clusters
+    for which you want to require TLS for all communications, edit the CRDB instance and
+    select **Require TLS for all communications**.
 
     ![alt_text](/images/TLS-Configuration14.png "image_tooltip")
 
-    By default, client authentication is enforced so you must enter the certificates of the clients that connect to the database. The certificates for the participating clusters are used automatically.
+    By default, client authentication is enforced so you must enter the certificates
+    of the clients that connect to the database. The certificates for the participating
+    clusters are used automatically.
 
-1. To enter the certificates:
+1. To enter the client certificates:
     1. Copy the entire text of the client certificates.
     1. Click ![icon_add](/images/rs/icon_add.png "+")
     to open the certificate box.
