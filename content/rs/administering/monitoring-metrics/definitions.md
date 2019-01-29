@@ -5,13 +5,10 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software (RS) includes many useful metrics that can be
-tracked to give you a detailed picture of what is going on in the
-cluster/node/database. Below are some of the metrics for RS and Redis on
-Flash (RoF). Also included is a list of metrics that are important how
-they are computed from other metrics. For example, if I need the know
-the RAM hit ratio you can dive the Request served from RAM by the total
-number of requests.
+Redis Enterprise Software (RS) includes many useful metrics give you
+a detailed picture of what is going on in the cluster, node, database,
+and shard. For Redis on Flash (ROF) databases, additional metrics are
+available.
 
 ## Standard Metrics
 
