@@ -8,17 +8,23 @@ categories: ["RS"]
 To prevent unauthorized access to your data, RS databases support the TLS protocol
 (the more secure successor to SSL) that includes:
 
-- Encryption - Makes sure that the traffic can only be read by the sender and recipient.
-- Authentication - The server or client makes sure that it communicates with an authorized entity.
+- Encryption - Makes sure that the traffic can only be read by the sender and
+  recipient.
+- Authentication - The server or client makes sure that it communicates with an
+  authorized entity.
 
-When you enable TLS for a database or CRDB, encryption is enforced on either all communications or communications between clusters, and RS sends its certificate to clusters and clients for authentication to the database or CRDB. You can also configure a database or CRDB to require authentication with a certificate for traffic received from clusters or clients.
+When you enable TLS for a database or CRDB, encryption is enforced on either all
+communications or only communications between clusters, and RS sends its certificate
+to clusters and clients for authentication to the database or CRDB. You can also
+configure a database or CRDB to require authentication with a certificate for traffic
+received from clusters or clients.
 
 Related topics:
 
 - You can use the REST API to [update the server TLS certificates and TLS protocol version
   ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-- To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database
-  ({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+- To encrypt Replica Of synchronization traffic, you must also [configure encryption
+  for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 
 ## Authentication for Databases
 
