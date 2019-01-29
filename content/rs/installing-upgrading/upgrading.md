@@ -28,11 +28,15 @@ can produce unexpected results or cause failures in the cluster.
 
 Upgrading the nodes' software requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
-on all of the machines on which RS is installed. First upgrade the master
-node and only then the other nodes.
+on all of the machines on which RS is installed.
 
-Note: The master node can be identified by running the 'rladmin status
-nodes' command and checking the ROLE value of each node.
+{{% note %}}You must upgrade the master node before you upgrade the other nodes.
+We recommend that you plan to keep all nodes up until the upgrade is completed
+on all nodes.
+
+The node role is shown in the output of the 'rladmin status
+nodes' command.
+{{% note %}}
 
 You will run install.sh from the directory where you untarred the media
 just like you do for a new install. The software will recognize this is
