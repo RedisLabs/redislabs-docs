@@ -13,7 +13,7 @@ they are computed from other metrics. For example, if I need the know
 the RAM hit ratio you can dive the Request served from RAM by the total
 number of requests.
 
-## RS Metrics
+## Standard Metrics
 
 | Metric | Components measured | Description | More information |
 | ------ | ------ | ------ | ------ |
