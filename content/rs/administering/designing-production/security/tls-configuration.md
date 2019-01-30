@@ -87,13 +87,13 @@ To enable TLS for Replica Of and client communication for a database:
     page click **edit**.
 1. Enable **TLS** and select **Require TLS for all communications**.
 
-    ![alt_text](/images/TLS-Configuration6.png "image_tooltip")
+    ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
 
     By default, client authentication is enforced so you must enter the syncer
     certificates of the clusters that host the destination databases.
     The certificates of the clients that connect to the database.
 
-1. To enter the certificates:
+1. To enter the syncer and client certificates:
     1. Copy the entire text of the syncer and client certificates.
 
         For each cluster with a destination database:
@@ -144,13 +144,13 @@ To enable TLS for CRDB and client communication for a CRDB:
 1. In **configuration**, at the bottom of the page click **edit**.
 1. Enable **TLS**.
 
-    ![alt_text](/images/TLS-Configuration13.png "image_tooltip")
+    ![crdb-tls-config-enable](/images/rs/crdb-tls-config-enable.png "crdb-tls-config-enable")
 
 1. After you create the CRDB on all participating clusters, on the participating clusters
     for which you want to require TLS for all communications, edit the CRDB instance and
     select **Require TLS for all communications**.
 
-    ![alt_text](/images/TLS-Configuration14.png "image_tooltip")
+    ![crdb-tls-all](/images/rs/crdb-tls-all.png "crdb-tls-all")
 
     By default, client authentication is enforced so you must enter the certificates
     of the clients that connect to the database. The certificates for the participating
@@ -164,6 +164,6 @@ To enable TLS for CRDB and client communication for a CRDB:
     1. Click ![icon_save](/images/rs/icon_save.png "Save")
     to save the certificates.
 
-    ![alt_text](/images/TLS-Configuration17.png "image_tooltip")
+    ![crdb-tls-all-certs](/images/rs/crdb-tls-all-certs.png "crdb-tls-all-certs")
 
     You can also clear **Enforce client authentication** so that all clusters or clients can connect to your database without authentication.
