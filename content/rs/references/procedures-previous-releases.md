@@ -11,9 +11,14 @@ Here you can find procedures that were used in previous releases.
 
 ### For version 5.0.2
 
-{{% warning %}}If the SSL certificate/s were configured in RS 5.0.2 without using the REST API, but by updating the certificate/s on the disk, contact [Redis Labs support](https://support.redislabs.com) before you upgrade the cluster to a later version as certificates are overwritten during upgrade.{{% /warning %}}
+{{% warning %}}If the SSL/TLS certificate/s were configured in RS 5.0.2 without using
+the REST API, but by updating the certificate/s on the disk, contact [Redis Labs support
+(https://support.redislabs.com) before you upgrade the cluster to a later version
+as certificates are overwritten during upgrade.{{% /warning %}}
 
-To update a certificate in the cluster, [upgrade the cluster]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) to RS 5.2.0 or above and then update the certificates with the REST API.
+To update a certificate in the cluster, [upgrade the cluster]
+({{< relref "/rs/installing-upgrading/upgrading.md" >}}) to RS 5.2.0 or above and
+then update the certificates with the REST API.
 
 ### For versions below 5.0.2
 

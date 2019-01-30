@@ -94,11 +94,10 @@ To create a new database in the UI:
 1. If you would like the database to be a [**replica of**]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
     one or more databases, you can define the source databases with which this
     database will synchronize on an ongoing basis.
-1. If you would like to encrypt the connection to the database endpoint
-    with SSL encryption, you have to enter the contents of the client
-    certificate to the **SSL client authentication** field. For
-    additional details, refer to [Securing client connection with
-    SSL]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}}).
+1. If you would like to [encrypt the connection to the database endpoint]
+    ({{< relref "/rs/administering/designing-production/security/client-connections.md" >}})
+    with TLS encryption, you have to enter the contents of the client certificate
+    to the **TLS** field.
 1. Specify whether to perform a **periodic back up** of the database.
     For additional details, refer to [Database
     backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).

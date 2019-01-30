@@ -51,6 +51,11 @@ You must specify the URIs for the LDAP servers you will be
 authenticating with. You can specify multiple LDAP servers by listing
 them separated by a space. 
 
+If you are using LDAP over SSL/TLS, then 
+1. Replace ldap:// in the URL with ldaps://.
+2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
+ SSL/TLS in other articles
+
 ```src
 # Add the following, but with your LDAP Server FQDNs or IPs:
 ldap_servers: ldap://ldap1.mydomain.com:389 ldap://ldap2.mydomain.com:389
