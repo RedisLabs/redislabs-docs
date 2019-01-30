@@ -37,6 +37,8 @@ the database and the clients.
 You can also specify that authentication is not enforced for traffic received from
 clusters or clients.
 
+### Configuring TLS for Replica Of communication only
+
 To enable TLS for Replica Of communication only for a database:
 
 1. In **databases**, either:
@@ -73,6 +75,8 @@ To enable TLS for Replica Of communication only for a database:
     clients can connect to your database without authentication.
 
     To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+
+### Configuring TLS for Replica Of and client communication
 
 To enable TLS for Replica Of and client communication for a database:
 
@@ -118,6 +122,8 @@ You can also specify that authentication is not enforced for traffic received fr
 
 Note: You cannot enable or disable TLS after the CRDB is created, but you can change the TLS configuration.
 
+### Configuring TLS for CRDB communication only
+
 To enable TLS for CRDB communication only for a CRDB:
 
 1. In **databases**, click ![icon_add](/images/rs/icon_add.png "+")
@@ -128,6 +134,8 @@ To enable TLS for CRDB communication only for a CRDB:
 ![crdb-tls-config-enable](/images/rs/crdb-tls-config-enable.png "crdb-tls-config-enable")
 
 Client authentication is enforced and the certificates for the participating clusters are used automatically.
+
+### Configuring TLS for CRDB and client communication
 
 To enable TLS for CRDB and client communication for a CRDB:
 
