@@ -200,31 +200,11 @@ communications between source and destination clusters utilizing TLS 1.2
 based encryption. To enable this encryption, proceed through the
 following steps:
 
-**ReplicaOf Source Database:**
+{{%excerpt-include filename="rs/administering/designing-production/security/tls-configuration.md" %}}
 
-To enable TLS for Replica Of communication only for a database:
+### Configuring TLS for Replica Of on the destination database
 
-1. In **databases**, click ![Icon - Add](/images/rs/icon_add.png) to create a new 
-   database or click on the database that you want to configure.
-1. In **configuration**, at the bottom of the page click **edit**.
-1. Enable **TLS**.
-1. By default, client authentication is enforced so you must enter the syncer certificates of the clusters that host the replica instances of the database. The syncer certificate is shown in the Settings of the cluster.
-
-    You can also clear **Enforce client authentication** so that all clusters or 
-    clients can connect to your database without authentication.
-
-To enable TLS for Replica Of and client communication for a database:
-
-1. In **databases**, click ![Icon - Add](/images/rs/icon_add.png) to create a new database or click on the database that you want to configure.
-1. In **configuration**, at the bottom of the page click **edit**.
-1. Enable **TLS** and select **Require TLS for all communications** so that encryption and server authentication is used for Replica Of and client traffic.
-1. By default, client authentication is enforced so you must enter:
-    1. The syncer certificates of the clusters that host the replica instances of the database. The syncer certificate is shown in the Settings of the cluster.
-    1. The certificates of the clients that connect to the database.
-
-    You can also clear **Enforce client authentication** so that all clusters or clients can connect to your database without authentication.
-
-**ReplicaOf's Destination Database:**
+To enable TLS for Replica Of in the destintation database:
 
 1. Edit the 'Replica of' section of the destination Database to point
     the source Database and press the 'Enable TLS Authentication' icon:
