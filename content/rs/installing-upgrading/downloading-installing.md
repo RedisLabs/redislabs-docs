@@ -1,5 +1,5 @@
 ---
-Title: Installing the setup package
+Title: Installing the Setup Package
 description: 
 weight: 10
 alwaysopen: false
