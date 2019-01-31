@@ -49,6 +49,8 @@ Prerequisites:
     persistence files available for the recovery process. You must
     make sure that the user redislabs has permissions to access this
     storage location on each of the nodes.
+- When you use a local persistent storage, make sure to place all the
+    recovery files on each of the cluster nodes.
 
     **Note**: We highly recommended that you allocate new persistent
     storage drives for the new cluster nodes. However, if you decide to
