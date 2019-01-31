@@ -12,7 +12,7 @@ by incrementally updating Pods’ Redis Enterprise Cluster instances with new on
 
 The following illustrations depict how a rolling update occurs:
 
-- Each pentagon represents a node
+- Each hexagon represents a node
 - Each box represents a Pod
 
 ![kubernetes-rolling-updates]( /images/rs/kubernetes-rolling-updates.png )
@@ -70,7 +70,7 @@ known by the default name redis-enterprise-cluster.yaml:
 After editing the redis-enterprise-cluster.yaml file, apply it by running:
 
 ```src
-    kubectl apply -f operator.yaml
+    kubectl apply -f redis-enterprise-cluster.yaml
 ```
 
 To view the status of the current rolling upgrade run:
