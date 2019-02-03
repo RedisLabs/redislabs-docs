@@ -198,17 +198,32 @@ article > aside .menu > li.dd-item.active > ul {
   display: block;
 }
 
-article > aside .menu > li.dd-item.active > ul.active-menu-expanded .haschildren ul {
-  display: block;
+article > aside .menu .SideMenuToggle {
+  color: #354253;
+  display: flex;
 }
 
-/* article > aside .menu > li.dd-item.active > ul.active-menu-expanded .haschildren ul .fa-angle-down {
-  display: block;
+
+article > aside .menu .SideMenuToggle:hover {
+  cursor: pointer;
+  color: #b62411 !important;
 }
 
-article > aside .menu > li.dd-item.active > ul.active-menu-expanded .haschildren ul .fa-angle-right {
+article > aside .menu .SideMenuToggle:hover i.expand-all-icon {
+  color: #b62411 !important;
+}
+
+article > aside .menu .dd-item.parent.root-item.collapsed > ul {
+  display: block !important;
+}
+
+article > aside .menu .dd-item.parent.root-item.collapsed ul {
   display: none;
-} */
+}
+
+article > aside .menu .dd-item.parent.root-item.expanded > ul {
+  display: block;
+}
 
 article > aside .menu > li.dd-item:not(.parent) .children {
   display: none;
@@ -219,22 +234,8 @@ article > aside .menu .dd-item div i.expand-all-icon {
   color: #354253;
 }
 
-article > aside .menu .dd-item div i.expand-all-icon:hover,
-article > aside .menu .dd-item div i.expand-all-icon.--hovered {
-  color: #b62411;
-}
-
 article > aside .menu .dd-item .highlight:hover {
   color: #b62411;
-}
-
-.expander-title span {
-  color: #354253;
-}
-
-.expander-title span:hover, .expander-title span.--hovered {
-  color: #b62411;
-  cursor: pointer;
 }
 
 /*!

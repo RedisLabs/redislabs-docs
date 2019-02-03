@@ -15,6 +15,10 @@
 {{- define "section-tree-nav" }}
 {{- $showvisitedlinks := .showvisitedlinks }}
 {{- $currentNode := .currentnode }}
+{{- $isFirstLevel := eq $currentNode.Parent .CurrentSection -}}
+{{- $isParentless := eq (len $currentNode.Sections) 0 -}}
+{{- $collapsed := or (eq $currentNode.URL "/rs/") (eq $currentNode.URL "/rc/") (eq $currentNode.URL "/rv/") (and $isFirstLevel $isParentless) -}}
+
  {{- with .sect}}
   {{- if and .IsSection (or (not .Params.hidden) $.showhidden)}}
     {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
@@ -22,7 +26,8 @@
     <li data-nav-id="{{.URL}}" class="dd-item
         {{- if .IsAncestor $currentNode}} parent{{end}}
         {{- if eq .URL $currentNode.URL}} active{{end}}
-        {{- if .Params.alwaysopen}} alwaysopen{{end -}}
+        {{- if .Params.alwaysopen}} alwaysopen{{end -}}        
+        {{- if $collapsed}} collapsed {{- else}} expanded {{end -}}
         {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }} root-item {{end}}
         {{- if ne $numberOfPages 0 }} haschildren{{end}}        
         ">
@@ -40,15 +45,16 @@
 
           {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }}
             <div class="menu-divider"></div>
-            
-            {{- if ne $numberOfPages 0 }}                       
-              {{- if or (eq $currentNode.URL "/rs/") (eq $currentNode.URL "/rc/") (eq $currentNode.URL "/rv/") }}
-                <a class="expander-title"><span class="SideMenuExpanderTitle --expander">Expand all</span></a>     
-                <i class="fa fa-angle-double-down fa-lg category-icon expand-all-icon --expander"></i>
-              {{ else }}
-                <a class="expander-title"><span class="SideMenuExpanderTitle --collapser">Collapse all</span></a>
-                <i class="fa fa-angle-double-up fa-lg category-icon expand-all-icon --collapser"></i>
-              {{- end}}
+            {{- if $collapsed }}
+              <span class="SideMenuToggle --expander">
+                <a class="expander-title"><span class="SideMenuExpanderTitle">Expand all</span></a>
+                <i class="fa fa-angle-double-down fa-lg category-icon expand-all-icon"></i>
+              </span>
+            {{- else}}
+              <span class="SideMenuToggle --collapser">
+                <a class="expander-title"><span class="SideMenuExpanderTitle">Collapse all</span></a>
+                <i class="fa fa-angle-double-up fa-lg category-icon expand-all-icon"></i>
+              </span>
             {{- end}}
       
           {{- else}}

@@ -10,81 +10,48 @@ jQuery(document).ready(function() {
     });
 
     // Expand/Collapse All
-    jQuery('.parent .expand-all-icon').on('click', function() {
-        if($( this ).attr("class").indexOf('--expander') !== -1) {
-            $( this ).addClass("fa-angle-double-up").removeClass("fa-angle-double-down");
-            _toggleFirstLevelItems('expand');
-            _toggleExpanderTitle('expand');
-            return false;
-        }                
+    jQuery('.menu .parent .SideMenuToggle').on('click', function() {
+        var $i = jQuery('.menu .parent .SideMenuToggle .expand-all-icon');
 
-        if($( this ).attr("class").indexOf('--collapser') !== -1) {
-            $( this ).addClass("fa-angle-double-down").removeClass("fa-angle-double-up");
-            _toggleFirstLevelItems('collapse');
-            _toggleExpanderTitle('collapse');
-            return false;
-        }
-    });
-    
-    jQuery('.SideMenuExpanderTitle').on('click', function() {
-        if($( this ).attr("class").indexOf('--expander') !== -1) {
-            var $i = jQuery( '.parent .expand-all-icon' );
+        if($( this ).attr("class").indexOf('--expander') !== -1) {            
             $i.addClass("fa-angle-double-up").removeClass("fa-angle-double-down");
-            _toggleFirstLevelItems('expand');
+
+            _toggleItems('expand');
             _toggleExpanderTitle('expand');
             return false;
         }
 
-        if($( this ).attr("class").indexOf('--collapser') !== -1) {
-            var $i = jQuery( '.parent .expand-all-icon' );
-            $i.addClass("fa-angle-double-down").removeClass("fa-angle-double-up");
-            _toggleFirstLevelItems('collapse');
-            _toggleExpanderTitle('collapse');
-            return false;
-        }        
+        $i.addClass("fa-angle-double-down").removeClass("fa-angle-double-up");
+        _toggleItems('collapse');
+        _toggleExpanderTitle('collapse');
+        return false;        
     });
 
-    function _toggleFirstLevelItems(act) {
+    function _toggleItems(act) {
         if(act === 'expand') {
-            $('article > aside .menu > li.dd-item.active > ul').addClass('active-menu-expanded');
-            $('article > aside .menu > li.dd-item.active > ul .fa.fa-angle-right').addClass('fa-angle-down').removeClass('fa-angle-right');
+            $('article > aside .menu > li.dd-item.parent.root-item').addClass('expanded').removeClass('collapsed');
+            $('article > aside .menu > li.dd-item.parent.root-item .fa.fa-angle-right').addClass('fa-angle-down').removeClass('fa-angle-right');
             return;
         }
 
-        $('article > aside .menu > li.dd-item.active > ul').removeClass('active-menu-expanded');
-        $('article > aside .menu > li.dd-item.active > ul .fa.fa-angle-down').addClass('fa-angle-right');
-        $('article > aside .menu > li.dd-item.active > ul .fa.fa-angle-down').removeClass('fa-angle-down');
+        $('article > aside .menu > li.dd-item.parent.root-item').addClass('collapsed').removeClass('expanded');
+        $('article > aside .menu > li.dd-item.parent.root-item .fa.fa-angle-down').addClass('fa-angle-right');
+        $('article > aside .menu > li.dd-item.parent.root-item .fa.fa-angle-down').removeClass('fa-angle-down');
     }
 
     function _toggleExpanderTitle(act) {        
+        var $toggle = jQuery('.menu .parent .SideMenuToggle');
         if(act === 'expand') {
-            var $e = jQuery('.parent .SideMenuExpanderTitle.--expander');
+            var $e = jQuery('.menu .parent .SideMenuToggle.--expander .SideMenuExpanderTitle');
             $e[0].innerText = 'Collapse all';
-            $e.addClass('--collapser').removeClass('--expander')
+            $toggle.addClass('--collapser').removeClass('--expander')
             return;
         }
 
-        var $e = jQuery('.parent .SideMenuExpanderTitle.--collapser');
+        var $e = jQuery('.menu .parent .SideMenuToggle.--collapser .SideMenuExpanderTitle');
         $e[0].innerText = 'Expand all';
-        $e.addClass('--expander').removeClass('--collapser')
-    }
-
-    jQuery('.SideMenuExpanderTitle').on('mouseenter', function() {
-        jQuery('.expand-all-icon').addClass('--hovered');
-    });
-
-    jQuery('.SideMenuExpanderTitle').on('mouseleave', function() {
-        jQuery('.expand-all-icon').removeClass('--hovered');
-    });
-
-    jQuery('.expand-all-icon').on('mouseenter', function() {
-        jQuery('.SideMenuExpanderTitle').addClass('--hovered');
-    });
-
-    jQuery('.expand-all-icon').on('mouseleave', function() {
-        jQuery('.SideMenuExpanderTitle').removeClass('--hovered');
-    });   
-
+        $toggle.addClass('--expander').removeClass('--collapser')
+    }  
 
     // Images
     // Execute actions on images generated from Markdown pages
