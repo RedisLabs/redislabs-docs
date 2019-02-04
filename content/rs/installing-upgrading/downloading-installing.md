@@ -1,5 +1,5 @@
 ---
-Title: Installing the setup package
+Title: Installing the Setup Package
 description: 
 weight: 10
 alwaysopen: false
@@ -137,7 +137,7 @@ by performing the following steps:
 1. Open a web browser and go to the Web UI to complete the cluster
     setup.
 
-## Silent Installations
+### Silent Installations
 
 If you would like to automate the installation script, use either of the
 following methods to perform a "silent" installation that speeds the
@@ -261,3 +261,11 @@ It is advisable to answer 'Y' on this. If
 you would like to see the contents of this script, it is installed
 to /opt/redislabs/bin/rlcheck on every Redis Enterprise
 node.
+
+## Next Steps
+
+After you install RS, you must [create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
+or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) a cluster. Then you can:
+
+1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
+1. [Create an active/active database or CRDB]({{< relref "/rs/administering/database-operations/create-crdb.md" >}})
