@@ -57,8 +57,8 @@ ldap_servers: ldap://ldap1.mydomain.com:389 ldap://ldap2.mydomain.com:389
 # It should include the base domain component (dc)
 ldap_search_base: ou=coolUsers,dc=company,dc=com
 
-# Specify a search filter. The value for the configuration option (%u)
-# should correspond to parameters (uid) specific for your installation.
+# Specify a LDAP search filter. The value for the configuration option (%u)
+# should correspond to parameters specific for your installation.
 ldap_filter: (sAMAccountName=%u)
 
 # If your LDAP servers require a password to connect, add that to the conf file.
