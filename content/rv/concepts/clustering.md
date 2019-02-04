@@ -1,5 +1,5 @@
 ---
-Title: Clustering Redis Databases with Redis Enterprise VPC
+Title: Clustering Redis Databases
 description: 
 weight: $weight
 alwaysopen: false

@@ -1,5 +1,5 @@
 ---
-Title: View and Edit a Redis Enterprise VPC (RV) Cloud Account
+Title: View and Edit a Cloud Account
 description: 
 weight: 20
 alwaysopen: false

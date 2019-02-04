@@ -1,5 +1,5 @@
 ---
-Title: Creating a Redis Enterprise VPC (RV) Cloud Account
+Title: Creating a Cloud Account
 description: 
 weight: 10
 alwaysopen: false

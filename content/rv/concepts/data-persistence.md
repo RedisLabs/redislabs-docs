@@ -1,5 +1,5 @@
 ---
-Title: Data Persistence with Redis Enterprise VPC
+Title: Data Persistence
 description: 
 weight: $weight
 alwaysopen: false

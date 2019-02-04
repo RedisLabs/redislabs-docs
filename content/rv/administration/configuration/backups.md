@@ -1,5 +1,5 @@
 ---
-Title: Database Backups on Redis Enterprise VPC (RV)
+Title: Database Backups
 description: 
 weight: 70
 alwaysopen: false

@@ -1,5 +1,5 @@
 ---
-Title: Configuring Redis Enterprise VPC Resources
+Title: Configuring RV Resources
 description: 
 weight: 30
 alwaysopen: false

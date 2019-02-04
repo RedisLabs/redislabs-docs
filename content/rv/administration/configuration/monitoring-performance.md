@@ -1,5 +1,5 @@
 ---
-Title: Monitoring Performance in Redis Enterprise VPC
+Title: Monitoring Performance
 description: 
 weight: 40
 alwaysopen: false

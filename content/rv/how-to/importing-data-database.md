@@ -1,5 +1,5 @@
 ---
-Title: Importing Data Into Your Redis Enterprise VPC Database
+Title: Importing Data Into Your Database
 description: 
 weight: $weight
 alwaysopen: false
