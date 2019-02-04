@@ -1,7 +1,7 @@
 ---
 Title: Account and Team Settings
 description: 
-weight: 60
+weight: 40
 alwaysopen: false
 categories: ["RV"]
 ---

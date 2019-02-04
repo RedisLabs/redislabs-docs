@@ -8,8 +8,7 @@ categories: ["RV"]
 Redis Enterprise VPC (RV) delivers a cost-effective, fully managed
 Database-as-a-Service (DBaaS) offering hosted on your Cloud account.
 
-RV
-is based on the proven Redis Enterprise technology, serving thousands of
+RV is based on the proven Redis Enterprise technology, serving thousands of
 customers of our [Redis Enterprise
 Cloud]({{< relref "/rc/_index.md" >}}) and [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) products. With RV,

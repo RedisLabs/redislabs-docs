@@ -1,5 +1,5 @@
 ---
-Title: Quick Setup of Redis Enterprise VPC (RV)
+Title: Quick Setup of Redis Enterprise VPC
 description: 
 weight: 10
 alwaysopen: false

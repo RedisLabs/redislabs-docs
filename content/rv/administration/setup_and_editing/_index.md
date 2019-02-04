@@ -1,7 +1,7 @@
 ---
 title: Setup and Editing
 description: 
-weight: 50
+weight: 20
 alwaysopen: false
 categories: ["RV"]
 ---
