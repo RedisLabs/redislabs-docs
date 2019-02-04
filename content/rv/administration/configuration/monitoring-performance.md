@@ -1,7 +1,7 @@
 ---
 Title: Monitoring Performance in Redis Enterprise VPC
 description: 
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RV"]
 ---

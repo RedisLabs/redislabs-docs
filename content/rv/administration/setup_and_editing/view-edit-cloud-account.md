@@ -1,7 +1,7 @@
 ---
 Title: View and Edit a Redis Enterprise VPC (RV) Cloud Account
 description: 
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RV"]
 ---

@@ -1,7 +1,7 @@
 ---
 Title: Deleting a Database in Redis Enterprise VPC (RV)
 description: 
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RV"]
 ---

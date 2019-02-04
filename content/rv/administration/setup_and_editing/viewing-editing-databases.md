@@ -1,7 +1,7 @@
 ---
 Title: View and Edit a Database
 description: 
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RV"]
 ---

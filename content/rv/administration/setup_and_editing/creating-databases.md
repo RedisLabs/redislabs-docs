@@ -1,7 +1,7 @@
 ---
 Title: Creating Databases on Redis Enterprise VPC (RV)
 description: 
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RV"]
 ---
