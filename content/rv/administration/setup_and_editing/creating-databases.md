@@ -8,61 +8,77 @@ categories: ["RV"]
 Once you have a subscription, you can easily create a database in Redis
 Enterprise VPC by following these steps:
 
-1. Select **Databases** from the top right menu in Redis Enterprise
-    VPC.
-1. Click on the **+** button to add a database to a Subscription.
-1. Protocol - Select whether the database will be **Redis** or
-    **Memcached**
-1. Enter a **Database Name** that is up to 40 characters long;
-1. Enter a **Memory Limit**. Please take in mind that replication is
-    on.
-1. If your database will run with [Redis on
-    Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
-    please specify your average item size(in bytes). This will allow us
-    to configure your database in the most optimal way.
-1. Enter the required throughput. The minimum is 500,000 ops/sec or you
-    can specify the number of shards needed.
-1. Select your preferred **Data Persistence** option.
-1. Enter a **password** to secure your database; **this is highly
-    recommended**.
-1. Enter a **Source IP/Subnet** that you would like to require source
-    traffic (i.e. your application server) to come from.
-1. Choose a **Redis** **Module** that you would like to use. If you
-    select 'RediSearch', provide the estimated number of documents
-    you want to index. If you select 'RedisGraph' you can calculate the
-    required resources with the [sizing calculator].(https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
-1. Choose a **Data Eviction Policy** or accept the default.
-1. Periodic backups - If you would like periodic backups of your
-    database, enter the path to storage here. For specific information
-    visit Configuring Database Backups for Redis Enterprise Cloud.
-1. You can add **Alert Settings** for your database so that you and
-    your team can be alerted when thresholds are passed.
+1. In the Redis Enterprise VPC menu, click **Databases**.
+1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png "Add").
+1. Configure the database:
+    1. Enter a **Database Name** that is up to 40 characters long.
+    1. Protocol - Select whether the database uses **Redis** or **Memcached**.
+    1. Enter a **Memory Limit**. Please take in mind that replication is
+        on.
+    1. If your database uses [Redis on
+        Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+        enter the average item size(in bytes). This helps us optimaize your database.
+    1. In **Throughput by**, select the definition of thoughput as:
+    1. Ops/sec - Enter the required **Max Throughput** between 1000 and 10000000.
+    1. Shards - Enter the number of **Shards** you require for the database.
+    1. **Replication** is enabled by default so that each shard has a slave shard.
+        If you do not require slave shards, for example in a caching database,
+        disable replication.
+    1. In **Data Persistence**, select when the data is saved to [persistent storage]
+        ({{< relref "/rv/concepts/data-persistence.md" >}}) :
+        - None - Data is not persisted to disk at all.
+        - Append Only File (AoF) one second - Data is fsynced to disk every second.
+        - Snapshot every 1 hour - A snapshot of the database is created every hour.
+        - Snapshot every 6 hours - A snapshot of the database is created every 6 hours.
+        - Snapshot every 12 hours - A snapshot of the database is created every 12 hours.
+    1. By default, **OSS Cluster API** is disabled. You can 
+        - Enable [OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}})
+            to expose the cluster topology to your application.
+        - Select **Use external endpoint** to let clients connect to the OSS cluster
+            API throught the external endpoint.
+    1. By default, **Replica Of** is disabled. You can enable [Replica Of]
+        ({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
+        and select the endpoint of a database to hold a copy of the data.
+    1. In **Access Control & Security**, you can
+        - Set the **Redis Password** for the database.
+            We recommend that you use a complex password and not leave the password blank.
+        - Specify the **Source IP/Subnet** addresses that your database receives
+            traffic from, for example your application server.
+        - Enable **SSL Client Authentication**, and either:
+            - **Generate Client Certificate** and configure your client to use
+                the generated certificate.
+            - Paste the certificate for your client.
+            For more information, see [Securing Redis Client Connections]
+            ({{< relref "/rs/administering/security/client-connections.md" >}})
+    1. Choose a **Data Eviction Policy** or accept the default. For more information,
+        see [Data Eviction Policies]({{< relref "/rv/concepts/data-eviction-policies.md" >}}).
+    1. Enable **Periodic Backups** and specify the [database backup]
+        ({{< relref "/rv/administration/configuration/backups.md" >}}) location.
+    1. Choose a **Redis** **Module** to use with the database. If you
+        select 'RediSearch', enter the estimated number of documents
+        you want to index. If you select 'RedisGraph', calculate the
+        required resources with the [sizing calculator](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/).
+    1. In **Alert Settings**, select the alerts that you want sent to you and
+        your team when the specified threshold is passed.
 1. Click **Activate**.
 
-Once **Activate** is clicked, a few of things happen in the
-background:
+After you click **Activate**, RV:
 
-1. RV will calculate the number of shards needed for this database.
-1. RV will calculate whether there is enough space to fit the database
-    with the current infrastructure or expansion of the underlying
-    infrastructure is required.
-1. It will also check that you have enough unused shards in your
-    subscription.
+- Calculates the number of shards needed for this database.
+- Calculate if is enough space to fit the database in the current infrastructure
+    or if you must increase the cloud resources.
+- Checks that you have enough unused shards in your subscription.
 
 If a new infrastructure needs to be deployed, or more shards need to be
-purchased, you will be prompted with a popup showing you the additional
-instances/shards that are needed for this database and their cost.
-Please review this information and approve the addition. Once approved,
-the activation will take place.
+purchased, RV shows you the additional instances/shards that you need for this
+database and the cost of the additional resources. You can review this information
+and approve the additional resources. After you approve, RV activates the resources.
 
-Once activated, the screen presents detailed information while the
-system is creating the database. There are two things on this page to
-look for:
+When activation is completed, creates the database. During this process you can see:
 
-- An orange spinning icon on the top right to turn to a green
-    checkmark
-- The **Endpoint** issued for the new database
+- An orange spinning icon on the top right to turn to a green checkmark
+- The **Endpoint** of the new database
 
-If you’d prefer to watch a video on this topic:
+Here is a video tutorial that shows this process:
 
 {{< youtube Z8KgtMsyNx0 >}}
