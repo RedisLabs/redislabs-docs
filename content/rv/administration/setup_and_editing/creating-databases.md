@@ -31,7 +31,7 @@ Enterprise VPC by following these steps:
         - Snapshot every 1 hour - A snapshot of the database is created every hour.
         - Snapshot every 6 hours - A snapshot of the database is created every 6 hours.
         - Snapshot every 12 hours - A snapshot of the database is created every 12 hours.
-    1. By default, **OSS Cluster API** is disabled. You can 
+    1. By default, **OSS Cluster API** is disabled. You can:
         - Enable [OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}})
             to expose the cluster topology to your application.
         - Select **Use external endpoint** to let clients connect to the OSS cluster
