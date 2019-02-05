@@ -154,19 +154,19 @@ For more information and pricing, please go
 To view the details of a subscription click "Subscriptions" in the menu,
 and then click on the name of the Subscription you wish to view.
 
-There are two things you can change about an existing subscription:
+When you view a subscription, you can see:
 
-1. The RV Cloud Account used by the subscription
-1. Subscription name
-1. Payment method used
-1. Cloud network details
+- Subscription name (To edit this, click )
+- The RV Cloud Account used by the subscription
+- Cloud network details
 
-To edit an item, click on the pencil icon to the right of it.
+In the Security section, you can [define access]({{< relref 
+"/rv/administration/setup_and_editing/defining-vpc-access.md" >}}) to your VPC.
 
-In addition, you can see:
+In the Payment Information section, you can see:
 
-1. The number of shards purchased and their cost
-1. The underlying resources that your subscription is running on
+- The cloud resources that your subscription is running on
+- The number of shards purchased and their cost
 
 To delete a subscription, click on the **Delete** button at the bottom
 of the form. You will be prompted to confirm before your subscription is
