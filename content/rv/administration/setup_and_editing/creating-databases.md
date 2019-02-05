@@ -1,5 +1,5 @@
 ---
-Title: Creating Databases
+Title: Creating a Database
 description: 
 weight: 50
 alwaysopen: false
