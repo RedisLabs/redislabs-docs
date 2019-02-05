@@ -149,31 +149,6 @@ groups on your application account and RV account.
 For more information and pricing, please go
 [here](https://redislabs.com/pricing/redis-cloud-private/).
 
-## Viewing Subscriptions
-
-To view the details of a subscription click "Subscriptions" in the menu,
-and then click on the name of the Subscription you wish to view.
-
-When you view a subscription, you can see:
-
-- Subscription name (To edit this, click )
-- The RV Cloud Account used by the subscription
-- Cloud network details
-
-In the Security section, you can [define access]({{< relref 
-"/rv/administration/setup_and_editing/defining-vpc-access.md" >}}) to your VPC.
-
-In the Payment Information section, you can see:
-
-- The cloud resources that your subscription is running on
-- The number of shards purchased and their cost
-
-To delete a subscription, click on the **Delete** button at the bottom
-of the form. You will be prompted to confirm before your subscription is
-actually deleted. The delete will only occur if the subscription **does
-not have any databases**. If it does, you must first delete the
-databases.
-
 If you'd rather watch an overview of Redis Cloud VPC, watch the below
 video:
 
