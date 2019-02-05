@@ -53,7 +53,7 @@ peering and a CIDR whitelist to allow more direct access to your VPC.
 To peer your VPC with another VPC:
 
 1. In **Subscriptions**, click on the subscription use for VPC peering.
-1. In **Security** > **VPC Peering**, click ![Add](/images/rv/icon_add.png "Add").
+1. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png "Add").
 1. Enter the details of the VPC to peer with, including:
     - AWS Account ID
     - AWS Region
@@ -66,8 +66,8 @@ To define the CIDR whitelist:
 
 1. In **Subscriptions**, click on the subscription use for VPC peering.
 1. Go to: **Security** > **CIDR Whitelist**
-1. If there are no CIDR whitelist entries, click ![Add](/images/rv/icon_add.png "Add")
-   to create a CIDR whitelist. Otherwise, click ![Add](/images/rv/icon_add.png "Add")
+1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png "Add")
+   to create a CIDR whitelist. Otherwise, click ![Add](/images/rs/icon_add.png "Add")
    under the list of CIDR whitelist entries to add another entry.
 1. Specify a whitelist entry as either:
     - IP Address:
@@ -79,5 +79,5 @@ To define the CIDR whitelist:
         1. For the value, enter the ID of the AWS security group to grant access to.
 1. Click ![Save](/images/rv/icon_save.png "Save").
 1. Either:
-   1. Add more whitelist entries - Click ![Add](/images/rv/icon_add.png "Add").
+   1. Add more whitelist entries - Click ![Add](/images/rs/icon_add.png "Add").
    1. Apply the changes to the whitelist - Click **Apply all changes**.
