@@ -39,7 +39,13 @@ Enterprise VPC by following these steps:
     1. By default, **Replica Of** is disabled. You can enable [Replica Of]
         ({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
         and select the endpoint of a database to hold a copy of the data.
-    1. In **Access Control & Security**, you can
+
+        {{% note %}}You must configure [VPC Peering]
+        ({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md#vpc-peering" >}})
+        between the VPC that this database is on and the VPC that the destination
+        database is on.{{% /note %}}
+
+    1. In **Access Control & Security**, you can:
         - Set the **Redis Password** for the database.
             We recommend that you use a complex password and not leave the password blank.
         - Specify the **Source IP/Subnet** addresses that your database receives
@@ -54,7 +60,7 @@ Enterprise VPC by following these steps:
         see [Data Eviction Policies]({{< relref "/rv/concepts/data-eviction-policies.md" >}}).
     1. Enable **Periodic Backups** and specify the [database backup]
         ({{< relref "/rv/administration/configuration/backups.md" >}}) location.
-    1. Choose a **Redis** **Module** to use with the database. If you
+    1. Choose a **Module** to use with the database. If you
         select 'RediSearch', enter the estimated number of documents
         you want to index. If you select 'RedisGraph', calculate the
         required resources with the [sizing calculator](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/).
