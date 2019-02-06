@@ -123,7 +123,7 @@ more rows by clicking the **+** button.
 Once done, click the **Continue** button. The system may take a moment
 to calculate the optimized cloud infrastructure based on your inputs.
 
-### Review and Activate
+### Review and Create
 
 Once planning is complete, please review the subscription and database
 information presented. Then select an existing payment method or click
