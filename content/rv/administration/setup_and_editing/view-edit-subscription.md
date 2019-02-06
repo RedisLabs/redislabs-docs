@@ -60,6 +60,8 @@ To peer your VPC with another VPC:
     - AWS VPC ID
 1. Click **Initiate Peering**.
 
+[Comment - Allegra]: Please add reference to AWS' documentation on VPC peering for users who want to read more about it.
+
 ### CIDR Whitelist
 
 To define the CIDR whitelist:
