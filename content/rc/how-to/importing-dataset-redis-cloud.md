@@ -94,3 +94,34 @@ Where:
 - *path*: the path to the file, if needed.
 - *filename*: the filename of the RDB file, optionally compressed and
     with the .gz suffix.
+    
+## RDB File from a Google Cloud Storage (GCS) Bucket
+To import an RDB file that’s stored in a GCS bucket, first make sure the file is shared with Redis Cloud.
+To do so, follow these steps in your Google Cloud Platform (GCP) console:
+1. Access your GCP project by clicking it.
+1. Select Cloud Storage in the left-hand menu to open the Storage browser and view your buckets.
+1. Open the bucket where the RDB file is stored by clicking it.
+1. Open the file’s permissions dialog:
+    1. Select the RDB file.
+    1. Click the Object Permissions button.
+    1. Add access permissions to the service by entering the following information at the bottom of the page:
+    1. In the left-most drop-box, make sure the value User is selected.
+    1. Next, enter service@garantiadata.com.
+    1. Set permission to Reader.
+    1. Click the Add and then the Save buttons to apply your changes.
+1. Once the file’s permissions are set, you can import it by entering its URL in the Import Dataset dialog’s RDB File Path field using the following syntax:
+gs://bucketname/[path/]filename.rdb[.gz]
+Where:
+- *bucketname*: the name of the GCS bucket.
+- *path*: the path to the file, if needed.
+- *filename*: the filename of the RDB file, optionally compressed and with the .gz suffix
+ 
+## RDB File from an Azure Blob Storage (ABS) Container
+To import an RDB file that’s stored in an ABS container, enter its URL in the Import Dataset dialog’s RDB File Path field using the following syntax:
+abs://:storage_account_access_key@storage_account_name/[container/]filename.rdb[.gz]
+Where:
+- *storage_account_access_key*: the primary access key to the storage account
+- *storage_account_name*: the storage account name.
+- *url*: the URL of of the storage account.
+- *container*: the name of the container, if needed.
+- *filename*: the filename of the RDB file, optionally compressed and with the .gz suffix.
