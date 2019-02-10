@@ -46,10 +46,10 @@ peering and CIDR whitelists are parts of functionality that is provided by [Amaz
 Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) (Amazon VPC),
 but you can configure them here in RV.
 
-- [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)
-    - The route tables of each VPC have access to the entire CIDR block of the peered VPC.
-- [CIDR whitelist](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html)
-    - The route table of your VPC has access to the specified CIDR blocks and security groups.
+- [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) -
+    The route tables of each VPC have access to the entire CIDR block of the peered VPC.
+- [CIDR whitelist](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html) -
+    The route table of your VPC has access to the specified CIDR blocks and security groups.
 
 ### VPC Peering
 
