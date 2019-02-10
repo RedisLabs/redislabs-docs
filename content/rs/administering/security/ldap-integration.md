@@ -30,6 +30,7 @@ network such as a VPN, a connection encrypted with TLS v1.2, or some
 other trusted network.
 
 If you are using LDAP over SSL, then make the following changes to saslauthd.conf:
+
 1. Replace ldap:// in the URL with ldaps://.
 2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
 
