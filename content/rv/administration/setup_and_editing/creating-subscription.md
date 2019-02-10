@@ -123,7 +123,7 @@ more rows by clicking the **+** button.
 Once done, click the **Continue** button. The system may take a moment
 to calculate the optimized cloud infrastructure based on your inputs.
 
-### Review and Activate
+### Review and Create
 
 Once planning is complete, please review the subscription and database
 information presented. Then select an existing payment method or click
@@ -148,31 +148,6 @@ groups on your application account and RV account.
 
 For more information and pricing, please go
 [here](https://redislabs.com/pricing/redis-cloud-private/).
-
-## Viewing Subscriptions
-
-To view the details of a subscription click "Subscriptions" in the menu,
-and then click on the name of the Subscription you wish to view.
-
-There are two things you can change about an existing subscription:
-
-1. The RV Cloud Account used by the subscription
-1. Subscription name
-1. Payment method used
-1. Cloud network details
-
-To edit an item, click on the pencil icon to the right of it.
-
-In addition, you can see:
-
-1. The number of shards purchased and their cost
-1. The underlying resources that your subscription is running on
-
-To delete a subscription, click on the **Delete** button at the bottom
-of the form. You will be prompted to confirm before your subscription is
-actually deleted. The delete will only occur if the subscription **does
-not have any databases**. If it does, you must first delete the
-databases.
 
 If you'd rather watch an overview of Redis Cloud VPC, watch the below
 video:
