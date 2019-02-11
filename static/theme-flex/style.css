@@ -2612,3 +2612,11 @@ a[href*="#no-click"], img[src*="#no-click"] {
   cursor: default;
   pointer-events: none;
 }
+
+.autocomplete-suggestions {
+  overflow-y: auto !important;
+}
+
+.autocomplete-suggestion > .context {
+  display: block !important;
+}
