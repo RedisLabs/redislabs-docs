@@ -1,7 +1,7 @@
 ---
 Title: Deleting a Database
 description: 
-weight: 60
+weight: 70
 alwaysopen: false
 categories: ["RV"]
 ---

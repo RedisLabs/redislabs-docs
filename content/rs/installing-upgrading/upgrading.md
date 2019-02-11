@@ -17,12 +17,13 @@ Version requirements:
 - To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above
 - To upgrade your cluster to v5.0, your cluster must first be on 4.4.2 or above
 
-Note: A Redis Enterprise Software cluster upgrade is considered to be
+A Redis Enterprise Software cluster upgrade is considered to be
 "ongoing" when nodes within a cluster have mixed versions. The upgrade
 is only considered complete when all nodes of the cluster are upgraded
-to the new version. Attempting to use newly added capabilities from the
-newer version of Redis Enterprise Software when the upgrade is ongoing,
-can produce unexpected results or cause failures in the cluster.
+to the new version.
+
+{{% warning %}}Using features from the newer version before all nodes are upgraded
+can produce unexpected results or cause failures in the cluster.{{% /warning %}}
 
 ## Upgrading nodes
 
@@ -30,13 +31,13 @@ Upgrading the nodes' software requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
 on all of the machines on which RS is installed.
 
-{{% note %}}You must upgrade the master node before you upgrade the other nodes.
+{{% warning %}}You must upgrade the master node before you upgrade the other nodes.
 We recommend that you plan to keep all nodes up until the upgrade is completed
 on all nodes.
 
 The node role is shown in the output of the 'rladmin status
 nodes' command.
-{{% note %}}
+{{% /warning %}}
 
 You will run install.sh from the directory where you untarred the media
 just like you do for a new install. The software will recognize this is
@@ -53,7 +54,6 @@ $ sudo ./install.sh
 
 - At the beginning of the upgrade process - `Do you want to enable upgrade mode now [Y/N]?`
 - At the end of the upgrade process - `Do you want to disable upgrade mode now [Y/N]?`
-
 {{% /note %}}
 
 During the node upgrade process, the services running RS are restarted.
@@ -64,13 +64,14 @@ the connection to the proxy on the node being upgraded, but then
 automatically reconnect to another active proxy you have configured for
 the database.
 
-**Note**: In order to ensure cluster and databases' availability, it is
+{{% warning %}}In order to ensure cluster and databases' availability, it is
 important to upgrade the nodes one by one, and **not attempt to upgrade
 more than one node at a time**.
+{{% /warning %}}
 
-It is highly advisable to run [`rlcheck`]({{< relref "/rs/references/cli-reference/rlcheck.md" >}})
-and `rladmin status extra all` on the node both before and after the upgrade,
-to make sure that the node is functioning properly.
+To make sure that the node is functioning properly, run [`rlcheck`]
+({{< relref "/rs/references/cli-reference/rlcheck.md" >}}) and `rladmin status extra all`
+on the node both before and after the upgrade.
 
 If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
@@ -108,8 +109,8 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
 1. Make sure that all of the nodes in the RS cluster have been upgraded,
     as described in Upgrading nodes section above. Otherwise, you will
     not be able to upgrade the databases.
-1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}}),
-    run the upgrade db command for each database.
+1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+    on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
 
 During the database upgrade process, the database will be restarted. As
 a result:
