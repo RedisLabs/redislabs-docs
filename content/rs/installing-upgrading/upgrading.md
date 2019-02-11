@@ -6,8 +6,8 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/
 ---
-Upgrading Redis Enterprise Software (RS) consists of upgrading the
-software on each of the nodes and then upgrading the databases on one of the nodes. 
+To complete the upgrade process you must upgrade the Redis Enterprise Software (RS)
+software on each of the nodes and then upgrade each of the databases in the cluster.
 
 {{% warning %}}Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}), including the [5.4 upgrade notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md#upgrade" >}}).{{% /warning %}}
 
