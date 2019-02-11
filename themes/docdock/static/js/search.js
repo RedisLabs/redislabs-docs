@@ -70,21 +70,23 @@ $( document ).ready(function() {
         },
         /* renderItem displays individual search results */
         renderItem: function(item, term) {
-            var numContextWords = 2;
+            var numContextWords = 3;
+            var regEx = "(?:\\s?(?:[\\w\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]+)\\s?){0";
             var text = item.content.match(
-                "(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}" +
-                    term+"(?:\\s?(?:[\\w]+)\\s?){0,"+numContextWords+"}");
-            item.context = text;
+                regEx+numContextWords+"}" +
+                    term+regEx+numContextWords+"}");
+            if(text && text.length > 0) {
+                var len = text[0].split(' ').length;
+                item.context = len > 1? '...' + text[0].trim() + '...' : null;
+            }
             item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
                 'data-uri="'+ item.uri + '" ' +
                 'data-context="' + item.context + '">' +
-                '' + item.title +
-                '<div class="context">' +
-                (item.context || '') +'</div>' +
-                '<strong class="category">' + item.cat + '</strong>' +
+                    '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
+                    '<div class="context">' + (item.context || '') +'</div>' +
                 '</div>';
         },
         /* onSelect callback fires when a search suggestion is chosen */
