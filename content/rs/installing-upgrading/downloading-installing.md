@@ -46,7 +46,7 @@ instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}
     before running RS installation.
 
     {{% expand "Example steps to resolve the port 53 conflict:" %}}
- 1. Run: `sudo gedit /etc/systemd/resolved.conf`
+ 1. Run: `sudo vi /etc/systemd/resolved.conf`
  1. Add `DNSStubListener=no` as the last line in the file and save the file.
  1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
  1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
