@@ -108,8 +108,8 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
 1. Make sure that all of the nodes in the RS cluster have been upgraded,
     as described in Upgrading nodes section above. Otherwise, you will
     not be able to upgrade the databases.
-1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}}),
-    run the command "rladmin upgrade db <db-name>" command for each database (run from any of the nodes).
+1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+    on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
 
 During the database upgrade process, the database will be restarted. As
 a result:
