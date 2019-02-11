@@ -29,6 +29,11 @@ sending and receiving data in the clear. You should use only a trusted
 network such as a VPN, a connection encrypted with TLS v1.2, or some
 other trusted network.
 
+If you are using LDAP over SSL, then make the following changes to saslauthd.conf:
+
+1. Replace ldap:// in the URL with ldaps://.
+2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
+
 ## Configuring the saslauthd Service
 
 saslauthd is a process that handles authentication requests to support
@@ -41,16 +46,9 @@ the LDAP server.
 $ vi /tmp/saslauthd.conf
 ```
 
-Note: If you change the path for the conf file, be sure to change the
-system config file we configured in the previous step.
-
 You must specify the URIs for the LDAP servers you will be
 authenticating with. You can specify multiple LDAP servers by listing
 them separated by a space. 
-
-If you are using LDAP over SSL, then 
-1. Replace ldap:// in the URL with ldaps://.
-2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
 
 ```src
 # Add the following, but with your LDAP Server FQDNs or IPs:
@@ -60,9 +58,9 @@ ldap_servers: ldap://ldap1.mydomain.com:389 ldap://ldap2.mydomain.com:389
 # It should include the base domain component (dc)
 ldap_search_base: ou=coolUsers,dc=company,dc=com
 
-# Specify a search filter. The value for the configuration option (%u)
-# should correspond to parameters (uid) specific for your installation.
-ldap_filter: (uid=%u)
+# Specify a LDAP search filter. The value for the configuration option (%u)
+# should correspond to parameters specific for your installation.
+ldap_filter: (sAMAccountName=%u)
 
 # If your LDAP servers require a password to connect, add that to the conf file.
 ldap_password: <your password here>
@@ -76,14 +74,14 @@ Example saslauthd.conf file
 ```src
 ldap_servers: ldap://ldap1.mydomain.com ldap://ldap2.mydomain.com
 ldap_search_base: ou=coolUsers,dc=company,dc=com
-ldap_filter: (uid=%u)
+ldap_filter: (sAMAccountName=%u)
 ldap_password: secretSquirrel
 ```
 
 ### Step 2: Distribute saslauthd.conf to all nodes in the cluster
 
 ```src
->$ sudo /opt/redislabs/bin/rladmin cluster config saslauthd_ldap_conf /tmp/saslauthd.conf
+$ sudo /opt/redislabs/bin/rladmin cluster config saslauthd_ldap_conf /tmp/saslauthd.conf
 Cluster configured successfully
 ```
 
@@ -96,7 +94,7 @@ Now that we have saslauthd configured, let's test with a known LDAP user
 before we finish the configurations in RS.
 
 ```src
->$ testsaslauthd -u user -p password
+$ testsaslauthd -u user -p password
 0: OK "Success."
 ```
 
@@ -109,8 +107,8 @@ cluster.
 
 ### Step 4: Create an RS User to Authenticate with LDAP
 
-To have a user authenticate with LDAP, you need to create a new user via
-the REST API call like this:
+To have a user authenticate with LDAP, you can create a new user via
+the REST API like this:
 
 ```src
 $ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted \
