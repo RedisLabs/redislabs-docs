@@ -19,7 +19,7 @@ import completes.{{% /note %}}
 
 To import a dataset from any publicly available Redis server:
 
-1. In the management console, go to the database that you want to import into.
+1. In the RV management console, go to the database that you want to import into.
 1. Click **Import**.
 1. In the Source Type field, select **Redis**.
 1. In the Redis Hostname/IP Address field, enter the hostname or the public IP address
@@ -39,7 +39,7 @@ valid.
 
 To import an RDB file that is stored in an FTP or HTTP server:
 
-1. In the management console, go to the database that you want to import into.
+1. In the RV management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **FTP** or **HTTP**.
@@ -57,7 +57,7 @@ To import an RDB file that is stored in an FTP or HTTP server:
 
 ### RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
 
-Before you import the RDB file through the management console, you must go to the AWS 
+Before you import the RDB file through the RV console, you must go to the AWS 
 management console and share the file.
 
 To share and import an RDB file that is stored in an AWS S3 bucket:
@@ -70,7 +70,7 @@ To share and import an RDB file that is stored in an AWS S3 bucket:
     1. In the Account field, enter: `service@garantiadata.com`
     1. In the Read object column, select **Yes**.
     1. Click **Save**.
-1. In the management console, go to the database that you want to import into.
+1. In the RV management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **AWS S3**.
@@ -84,7 +84,7 @@ To share and import an RDB file that is stored in an AWS S3 bucket:
 
 ### RDB File from a Google Cloud Storage (GCS) Bucket
 
-Before you import the RDB file through the management console, you must go to the Google
+Before you import the RDB file through the RV console, you must go to the Google
 Cloud Platform (GCP) console and share the file.
 
 To share and import an RDB file that is stored in a GCS bucket:
@@ -100,7 +100,7 @@ To share and import an RDB file that is stored in a GCS bucket:
        - In the Name field of the new item, enter: `service@garantiadata.com`
        - In the Access field of the new item, select **Reader**.
     1. Click **Save**.
-1. In the management console, go to the database that you want to import into.
+1. In the RV management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **Google Cloud Storage**.
@@ -115,7 +115,7 @@ To share and import an RDB file that is stored in a GCS bucket:
 
 To import an RDB file that is stored in an ABS container:
 
-1. In the management console, go to the database that you want to import into.
+1. In the RV management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **Azure Blob Storage**.
