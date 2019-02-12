@@ -56,13 +56,8 @@ $ sudo ./install.sh
 - At the end of the upgrade process - `Do you want to disable upgrade mode now [Y/N]?`
 {{% /note %}}
 
-During the node upgrade process, the services running RS are restarted.
-This will result in a very short interruption to the proxy and node
-itself and the databases running on it. This can be dramatically reduced
-by using multiple active proxies for your database. The client will lose
-the connection to the proxy on the node being upgraded, but then
-automatically reconnect to another active proxy you have configured for
-the database.
+The node upgrade process restarts the services running RS, which causes
+a short interruption to connections to the proxy, node and databases.
 
 {{% warning %}}In order to ensure cluster and databases' availability, it is
 important to upgrade the nodes one by one, and **not attempt to upgrade
