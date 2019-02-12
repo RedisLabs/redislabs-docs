@@ -94,29 +94,38 @@ Where:
 - *path*: the path to the file, if needed.
 - *filename*: the filename of the RDB file, optionally compressed and
     with the .gz suffix.
-    
+
 ## RDB File from a Google Cloud Storage (GCS) Bucket
-To import an RDB file that’s stored in a GCS bucket, first make sure the file is shared with Redis Cloud.
-To do so, follow these steps in your Google Cloud Platform (GCP) console:
-1. Access your GCP project by clicking it.
-1. Select Cloud Storage in the left-hand menu to open the Storage browser and view your buckets.
-1. Open the bucket where the RDB file is stored by clicking it.
-1. Open the file’s permissions dialog:
-    1. Select the RDB file.
-    1. Click the Object Permissions button.
-    1. Add access permissions to the service by entering the following information at the bottom of the page:
-    1. In the left-most drop-box, make sure the value User is selected.
-    1. Next, enter service@garantiadata.com.
-    1. Set permission to Reader.
-    1. Click the Add and then the Save buttons to apply your changes.
-1. Once the file’s permissions are set, you can import it by entering its URL in the Import Dataset dialog’s RDB File Path field using the following syntax:
-gs://bucketname/[path/]filename.rdb[.gz]
-Where:
-- *bucketname*: the name of the GCS bucket.
-- *path*: the path to the file, if needed.
-- *filename*: the filename of the RDB file, optionally compressed and with the .gz suffix
- 
+
+Before you import the RDB file through the RV console, you must go to the Google
+Cloud Platform (GCP) console and share the file.
+
+To share and import an RDB file that is stored in a GCS bucket:
+
+1. Go to the GCP console and click on your GCP project.
+1. Click on the menu to open it, and select **Storage** to open the Storage browser and view your buckets.
+1. Click on the bucket where the RDB file is stored.
+1. Edit the file permissions:
+    1. Click on the RDB file menu to open it, and click **Edit permissions**.
+    1. Click **Add item**.
+    1. Enter the user details and access:
+       - In the Entity box of the new item, select **User**.
+       - In the Name box of the new item, enter: `service@garantiadata.com`
+       - In the Access box of the new item, select **Reader**.
+    1. Click **Save**.
+1. In the RV management console, go to the database that you want to import into.
+1. Click **Import**.
+1. Enter the details for the RDB file:
+    - Source Type - Select **Google Cloud Storage**.
+    - RDB file path - Enter the URL for RDB file: `gs://bucketname/[path/]filename.rdb[.gz]`
+
+        Where:
+        - `bucketname`: Name of the GCS bucket
+        - `path`: Path to the file
+        - `filename`: Filename of the RDB file, including the .gz suffix if the file is compressed
+
 ## RDB File from an Azure Blob Storage (ABS) Container
+
 To import an RDB file that’s stored in an ABS container, enter its URL in the Import Dataset dialog’s RDB File Path field using the following syntax:
 abs://:storage_account_access_key@storage_account_name/[container/]filename.rdb[.gz]
 Where:
