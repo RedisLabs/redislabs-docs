@@ -56,9 +56,10 @@ $ sudo ./install.sh
 
 {{% /note %}}
 
-During the node upgrade process, the services running RS are restarted.
-This will result in a very short interruption to the proxy and node
-itself and the databases running on it.
+The node upgrade process restarts the services running RS, which causes
+a short interruption to connections to the proxy, node and databases.
+Clusters with [multiple active proxies]({{< relref "/rs/administering/designing-production/networking/multiple-active-proxy.md" >}})
+have reduced interruption time.
 
 **Note**: In order to ensure cluster and databases' availability, it is
 important to upgrade the nodes one by one, and **not attempt to upgrade
