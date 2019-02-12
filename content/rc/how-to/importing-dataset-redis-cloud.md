@@ -47,13 +47,13 @@ To import an RDB file that is stored in an FTP or HTTP server:
 
     Where:
 
-    - `protocol`: Server protocol: ftp, ftps, http, https
-    - `username`: Your username, if needed
-    - `password`: Your password, if needed
-    - `hostname`: Hostname or IP address of the server
-    - `port`: Port number of the server, if not standard
-    - `path`: Path to the file, if needed
-    - `filename`: Filename of the RDB file, including the .gz suffix if the file is compressed
+    - `protocol` - Server protocol: ftp, ftps, http, https
+    - `username` - Your username, if needed
+    - `password` - Your password, if needed
+    - `hostname` - Hostname or IP address of the server
+    - `port` - Port number of the server, if not standard
+    - `path` - Path to the file, if needed
+    - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
 
 ### RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
 
@@ -78,9 +78,9 @@ To share and import an RDB file that is stored in an AWS S3 bucket:
 
         Where:
 
-        - `bucketname`: Name of the S3 bucket
-        - `path`: Path to the file, if needed
-        - `filename`: Filename of the RDB file, including the .gz suffix if the file is compressed
+        - `bucketname` - Name of the S3 bucket
+        - `path` - Path to the file, if needed
+        - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
 
 ### RDB File from a Google Cloud Storage (GCS) Bucket
 
@@ -107,9 +107,9 @@ To share and import an RDB file that is stored in a GCS bucket:
     - RDB file path - Enter the URL for RDB file: `gs://bucketname/[path/]filename.rdb[.gz]`
 
         Where:
-        - `bucketname`: Name of the GCS bucket
-        - `path`: Path to the file
-        - `filename`: Filename of the RDB file, including the .gz suffix if the file is compressed
+        - `bucketname` - Name of the GCS bucket
+        - `path` - Path to the file
+        - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
 
 ### RDB File from an Azure Blob Storage (ABS) Container
 
@@ -122,8 +122,8 @@ To import an RDB file that is stored in an ABS container:
     - RDB file path - Enter the URL for RDB file: `abs://:storage_account_access_key@storage_account_name/[container/]filename.rdb[.gz]`
 
         Where:
-        - `storage_account_access_key`: Primary access key to the storage account
-        - `storage_account_name`: Name of the storage account
-        - `url`: URL of the storage account
-        - `container`: Name of the container, if needed
-        - `filename`: Filename of the RDB file, including the .gz suffix if the file is compressed
+        - `storage_account_access_key` - Primary access key to the storage account
+        - `storage_account_name` - Name of the storage account
+        - `url` - URL of the storage account
+        - `container` - Name of the container, if needed
+        - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
