@@ -38,7 +38,7 @@ The routes are configured with TLS passthrough.
 
 Before you create a CRDB deployment with Service Broker, you must create a cluster
 using the REC custom resource, with a Service Broker deployment as covered in
-[Getting Started with Kubernetes and Openshift]({{< relref "/rs/getting-started/k8s-openshift.md" >}}), while noting the following:
+[Getting Started with Kubernetes and Openshift]({{< relref "/platforms/getting-started-kubernetes-openshift.md" >}}), while noting the following:
 
 1. Make sure you use the latest versions of the deployment files available on GitHub.
 1. Deploy nodes with at least 6GB of RAM in order to accommodate the CRDB plan's 5GB database size.
