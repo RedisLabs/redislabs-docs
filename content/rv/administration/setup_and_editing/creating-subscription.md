@@ -142,6 +142,7 @@ set up a peer between your **application VPC** and **RV VPC**. To find
 out what your RV VPC is, either go to **View subscription** or check the
 **AWS console**. To better understand how to set up **VPC peering**,
 please consult AWS documentation on the subject.
+Please find full instruction for VPC Peering setup in 'View and Edit a Subscription'.
 
 Once the peering was established please define the relevant routing
 groups on your application account and RV account.
