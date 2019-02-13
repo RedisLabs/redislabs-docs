@@ -40,7 +40,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 ## Additional Capabilities
 
--   Support for new operating systems- Ubuntu 18.04 64-bit and RHEL 7.6.
+-   Support for new operating systems- Ubuntu 18.04 and RHEL 7.6.
 
 ## Product Version Lifecycle
 
