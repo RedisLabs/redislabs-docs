@@ -174,7 +174,7 @@ the following limitations:
     used across tags will return an error.
     Examples of such commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH,
     MSETNX, RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE,
-    SORT, SUNION, ZINTERSTORE, ZUNIONSTORE.
+    SORT, SUNION, XREAD, XREADGROUP, ZINTERSTORE, ZUNIONSTORE.
 
 - **Geo commands**: In GEORADIUS/GEOREADIUSBYMEMBER commands, the
     STORE and STOREDIST option can only be used when all affected keys
