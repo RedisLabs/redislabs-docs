@@ -65,7 +65,9 @@ To peer your VPC with another VPC:
 
 ### CIDR Whitelist
 
-CIDR Whitelist defines a range of IP addresses and/or AWS security groups, that control inbound and outbound traffic to the RV VPC. You can update the CIDR Whitelist on your RV Subscription to extend the access to the RV machines, and use the Security Groups of your AWS application's VPC in case you would like to grant the same access controls to your application and to the RV machines.
+The CIDR whitelist defines a range of IP addresses and AWS security groups that control inbound
+and outbound traffic to the RV VPC. When you manage the CIDR whitelist with security groups you
+can easily use the same security groups to manage access to your application.
 
 To define the CIDR whitelist:
 
