@@ -15,9 +15,9 @@ the steps to create a CRDB:
 
 ## Prerequisites
 
-- Two or more Redis Enterprise Software clusters running version 5.0,
-    each with minimum of two nodes
-- Networking and cluster FQDN name resolution between all clusters
+- Two or more Redis Enterprise Software clusters running the same RS
+    version, each with minimum of two nodes.
+- Networking and cluster FQDN name resolution between all clusters.
 - Confirm that a network time service listener (e.g. ntpd) is
     configured and running on each node in all clusters. Please see
     "Network Time Service" for more information.
