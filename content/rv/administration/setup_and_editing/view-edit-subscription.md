@@ -40,11 +40,11 @@ databases.
 
 ## Defining Access to your Subscription
 
-After you create an Redis Enterprise VPC (RV) subscription, you can configure VPC
+After you create a Redis Enterprise VPC (RV) subscription, you can configure VPC
 peering and a CIDR whitelist to allow more direct access to your VPC. VPC
-peering and CIDR whitelists are parts of functionality that is provided by [Amazon
-Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) (Amazon VPC),
-but you can configure them here in RV.
+peering and CIDR whitelists are capabilities provided by [Amazon Virtual Private Cloud]
+(https://docs.aws.amazon.com/vpc/latest/userguide/) (Amazon VPC), but you can
+configure them here in RV.
 
 - [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) -
     The route tables of each VPC have access to the entire CIDR block of the peered VPC.
@@ -53,15 +53,45 @@ but you can configure them here in RV.
 
 ### VPC Peering
 
-To peer your VPC with another VPC:
+A VPC peering connection is a networking connection between two VPCs that enables you
+to route traffic between them using private IP addresses. Instances in either VPC can
+communicate with each other as if they are within the same network. You can connect your
+VPC in the RV subscription to the VPC of your application. Then your application can
+connect to the RV database using VPC Peering to optimize the performance of your application.
 
-1. In **Subscriptions**, click on the subscription use for VPC peering.
-1. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png "Add").
-1. Enter the details of the VPC to peer with, including:
-    - AWS Account ID
-    - AWS Region
-    - AWS VPC ID
-1. Click **Initiate Peering**.
+The VPC peering configuration requires you to initiate VPC peering on your RV subcription
+and accept the VPC peering request for the AWS VPC that you want to peer with.
+
+1. To peer your VPC with another VPC:
+    1. In **Subscriptions**, click on the subscription use for VPC peering.
+    1. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png "Add").
+    1. Enter the details of the VPC to peer with, including:
+        - AWS Account ID
+        - AWS Region
+        - AWS VPC ID
+    1. Click **Initiate Peering**.
+        A VPC Peering request is automatically created and appears in the VPC Peering tab until
+        it is accepted by the VPC that you want to peer with.
+    1. Note the Peering ID of the peering request.
+1. To approve the VPC Peering request on your application's VPC:
+    1. Go to the AWS management console and login to your AWS account that contains the peer VPC.
+    1. Go to: **Services** > **VPC** > **Peering Connections**
+    1. Select the peering connection with the Peering ID of your peering request.
+    1. Go to **Description** and note the Requester VPC CIDRs shown in the Peering Connection details.
+    1. Click **Actions** and select **Accept Request**.
+        To confirm to accept the request, click **Yes, Accept**.
+1. To update your routing tables for the peering connection:
+    1. After you accept the peering request, click **Modify my route tables now**.
+    1. Find the ID of your VPC in the list of routes and select it.
+    1. Go to **Routes** and click on **Edit Routes**.
+    1. To add a route, click **Add Route**.
+    1. In the Destination field, enter the Requester VPC CIDRs shown when you accepted the peering request.
+        This is the RV VPC CIDR address, to which your application's VPC will connect
+    1. In the Target field, select **Peering Connection** and select the relevant Peering ID.
+    1. Click **Save Routes** and **Close**.
+
+Now the VPC Peering request is accepted. Its status in the VPC Peering tab in the RV subscription is updated to 'Peer Established'.
+Also, the Route Table in your peered VPC is updated to accept connections to the RV VPC. Now you are ready to start using the VPC Peering.
 
 ### CIDR Whitelist
 
