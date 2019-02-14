@@ -55,7 +55,7 @@ but you can configure them here in RV.
 
 A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them using private IP addresses. Instances in either VPC can communicate with each other as if they are within the same network. As a result, the communication between the VPCs can be faster and more secure.
 
-After an RCP Subscription has been created, you can connect your RCP Subscription's VPC to the VPC of your application, so that your application can connect to the RCP database using VPC Peering. Such VPC Peering connection can optimize the performance of your application.
+After an RV Subscription has been created, you can connect your RV Subscription's VPC to the VPC of your application, so that your application can connect to the RV database using VPC Peering. Such VPC Peering connection can optimize the performance of your application.
 
 To peer your VPC with another VPC do the next steps:
 
