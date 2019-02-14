@@ -95,6 +95,10 @@ Also, the Route Table in your peered VPC is updated to accept connections to the
 
 ### CIDR Whitelist
 
+The CIDR whitelist defines a range of IP addresses and AWS security groups that control inbound
+and outbound traffic to the RV VPC. When you manage the CIDR whitelist with security groups you
+can easily use the same security groups to manage access to your application.
+
 To define the CIDR whitelist:
 
 1. In **Subscriptions**, click on the subscription use for VPC peering.
