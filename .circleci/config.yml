@@ -110,10 +110,14 @@ jobs:
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
                 command: aws configure set default.s3.signature_version s3v4
-            # Deploy to the S3 bucket corresponding to the current branch
+            # Deploy HTML files to the S3 bucket corresponding to the current branch
             - run:
-                name: Deploy to S3
-                command: aws s3 sync public s3://docs.redislabs.com/${CIRCLE_BRANCH} --delete --acl public-read --size-only
+                name: Deploy HTML to S3
+                command: aws s3 sync public s3://docs.redislabs.com/${CIRCLE_BRANCH} --delete --acl public-read --size-only --metadata-directive REPLACE --recursive --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0
+            # Deploy other files to the S3 bucket corresponding to the current branch
+            - run:
+                name: Deploy other files to S3
+                command: aws s3 sync public s3://docs.redislabs.com/${CIRCLE_BRANCH} --delete --acl public-read --size-only --exclude "*.html" --exclude "*.css"
 
 workflows:
   version: 2
