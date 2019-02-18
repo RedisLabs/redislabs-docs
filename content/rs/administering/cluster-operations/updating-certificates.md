@@ -6,14 +6,12 @@ alwaysopen: false
 categories: ["RS"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates to encrypt
-the following:
+the following traffic:
 
 - Management UI
 - REST API
-- The connection between the client and the database endpoint (TLS
-    encryption)
-- Syncer connection that synchronizes data between databases for
-    ReplicaOf and CRDB
+- Connections between clients and the database endpoint
+- Synchronization data between databases for ReplicaOf and CRDB
 
 These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
 
