@@ -59,15 +59,15 @@ commands:
 
 - For the management UI and REST API:
 
-            ```bash
-            rladmin> cluster config min_control_TLS_version [version, e.g. 1.2]
-            ```
+    ```bash
+    rladmin> cluster config min_control_TLS_version [version, e.g. 1.2]
+    ```
 
 - For data path encryption:
 
-            ```bash
-            rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
-            ```
+    ```bash
+    rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
+    ```
 
 {{% note %}}Communications using older TLS versions will not be
 allowed.{{% /note %}}
