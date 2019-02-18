@@ -44,9 +44,9 @@ After you create a Redis Enterprise VPC (RV) subscription, you can configure VPC
 peering and a CIDR whitelist to allow more secure access to your VPC.
 
 - [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) -
-    Connect two VPCs together, allowing network access between them.
+    Allow unresticted network access between two VPCs.
 - [CIDR whitelist](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html) -
-    narrow down the access to your entire subscription by specifing the relevant CIDR blocks and security groups.
+    Limit network access between the VPCs to the specified CIDR blocks and security groups.
 
 ### VPC Peering
 
