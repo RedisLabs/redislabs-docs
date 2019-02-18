@@ -41,7 +41,7 @@ Warning: The new certificate replaces the equivalent certificate on all nodes in
     - cert_name - The certificate to replace: `cm`, `api`, `proxy`, `syncer`
     - key - The contents of the *_key.pem file
     
-    {{ tip }}The key file contains end of line characters (\n). You can use `sed -z 's/\n/\\n/g'` to remove these characters.{{ /tip }}
+    {{% tip %}}The key file contains end of line characters (\n). You can use `sed -z 's/\n/\\n/g'` to remove these characters.{{% /tip %}}
     
     - cert - The contents of the *_cert.pem file
 
