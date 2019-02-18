@@ -39,6 +39,10 @@ future sessions.{{% /note %}}
     Where:
 
     - cert_name - The certificate to replace: `cm`, `api`, `proxy`, `syncer`
+        - Management UI - `cm`
+        - REST API - `api`
+        - Database endpoint - `proxy`
+        - Syncer connection - `syncer`
     - key - The contents of the *_key.pem file
     
     {{% tip %}}The key file contains `\n` end of line characters (EOL). You can use `sed -z 's/\n/\\\n/g'` to change the EOL characters to regular characters.{{% /tip %}}
