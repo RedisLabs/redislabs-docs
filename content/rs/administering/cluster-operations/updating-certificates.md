@@ -8,12 +8,12 @@ categories: ["RS"]
 Redis Enterprise Software (RS) uses self-signed certificates to encrypt
 the following:
 
-- Management UI (`cm`)
-- REST API (`api`)
+- Management UI
+- REST API
 - The connection between the client and the database endpoint (TLS
-    encryption) (`proxy`)
+    encryption)
 - Syncer connection that synchronizes data between databases for
-    ReplicaOf and CRDB (`syncer`)
+    ReplicaOf and CRDB
 
 These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
 
@@ -41,7 +41,7 @@ Warning: The new certificate replaces the equivalent certificate on all nodes in
     - cert_name - The certificate to replace: `cm`, `api`, `proxy`, `syncer`
     - key - The contents of the *_key.pem file
     
-    {{% tip %}}The key file contains end of line characters (\n). You can use `sed -z 's/\n/\\n/g'` to remove these characters.{{% /tip %}}
+    {{% tip %}}The key file contains `\n` end of line characters (EOL). You can use `sed -z 's/\n/\\\n/g'` to change the EOL characters to regular characters.{{% /tip %}}
     
     - cert - The contents of the *_cert.pem file
 
