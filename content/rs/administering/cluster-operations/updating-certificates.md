@@ -38,7 +38,7 @@ future sessions.{{% /note %}}
  
     Where:
 
-    - cert_name - The certificate to replace: `cm`, `api`, `proxy`, `syncer`
+    - cert_name - The name of the certificate to replace:
         - Management UI - `cm`
         - REST API - `api`
         - Database endpoint - `proxy`
