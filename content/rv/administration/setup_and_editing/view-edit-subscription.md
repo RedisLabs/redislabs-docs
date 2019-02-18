@@ -54,7 +54,7 @@ A VPC peering connection is a networking connection between two VPCs that enable
 to route traffic between them using private IP addresses. Instances in either VPC can
 communicate with each other as if they are within the same network. You can connect your
 VPC in the RV subscription to the VPC of your application. Then your application can
-connect securly to your RV database using VPC Peering to optimize the performance of your application.
+connect securely to your RV database using VPC Peering to optimize the performance of your application.
 
 The VPC peering configuration requires you to initiate VPC peering on your RV subcription
 and accept the VPC peering request for the AWS VPC that you want to peer with.
