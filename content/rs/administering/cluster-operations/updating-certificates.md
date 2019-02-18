@@ -51,7 +51,7 @@ future sessions.{{% /note %}}
 
 When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
-## **TLS version**
+## TLS version
 
 To set the minimum TLS version that can be used for encrypting various
 flows, use the REST API or the following rladmin
@@ -60,14 +60,14 @@ commands:
 - For the management UI and REST API:
 
     ```bash
-    rladmin> cluster config min_control_TLS_version [version, e.g. 1.2]
+    rladmin> cluster config min_control_TLS_version <version, e.g. 1.2>
     ```
 
 - For data path encryption:
 
     ```bash
-    rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
+    rladmin> cluster config min_data_TLS_version <version, e.g. 1.2>
     ```
 
-{{% note %}}Communications using older TLS versions will not be
-allowed.{{% /note %}}
+After you set the minimum TLS version, RS does not accept communications with
+TLS versions older than the specified version.
