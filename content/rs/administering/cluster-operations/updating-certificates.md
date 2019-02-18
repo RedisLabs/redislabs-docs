@@ -17,16 +17,16 @@ the following:
 
 These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
 
-**Note**: When using the default self-signed certificates, an untrusted
+{{% note %}}When using the default self-signed certificates, an untrusted
 connection notification will appear in the management UI. If you do not
 update the self-signed certificate with your own certificate, depending
 on the browser you use, you might be able to allow the connection for
 this specific session, or add an exception to make this site trusted in
-future sessions.
+future sessions.{{% /note %}}
 
 ## How to update SSL/TLS certificates
 
-Warning: The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.
+{{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
 
 - Use the REST API to replace the certificate:
 
@@ -63,5 +63,5 @@ commands:
 
             rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
 
-Note that communications using older TLS versions will not be
-allowed.
+{{% note %}}Communications using older TLS versions will not be
+allowed.{{% /note %}}
