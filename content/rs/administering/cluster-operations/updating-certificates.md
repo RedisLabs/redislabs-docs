@@ -37,10 +37,10 @@ future sessions.{{% /note %}}
     Where:
 
     - cert_name - The name of the certificate to replace:
-        - Management UI - `cm`
-        - REST API - `api`
-        - Database endpoint - `proxy`
-        - Syncer connection - `syncer`
+        - For management UI: `cm`
+        - For REST API: `api`
+        - For database endpoint: `proxy`
+        - For syncer: `syncer`
     - key - The contents of the *_key.pem file
     
     {{% tip %}}The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call. You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.{{% /tip %}}
