@@ -29,6 +29,8 @@ update your firewall with the port for that new database endpoint.
 | 8001 | Used by your application to access the RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) | TCP |
 | 8443 | Used for secure (https) access to the management web UI | TCP |
 | 8444, 9080 | Used for nginx \<-\>cnm_http/cm communications on the same host only. Ports are bound to loopback adapter. | TCP |
+| 9081 | Used for crdb_coordinator | TCP |
+| 8070, 8071 | Used for metrics exported managed by nginx | TCP | 
 | 8080, 9443 | Used to expose the REST API for cluster management | TCP |
 | 10000-19999 | Used for exposing databases externally | TCP |
 | 20000-29999 | Used for internal communications with database shards | TCP |
