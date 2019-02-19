@@ -11,7 +11,7 @@ the following traffic:
 - Management UI
 - REST API
 - Connections between clients and the database endpoint
-- Synchronization data between databases for ReplicaOf and CRDB
+- Synchronization between databases for ReplicaOf and CRDB
 
 These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
 
