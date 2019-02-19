@@ -8,19 +8,16 @@ categories: ["RS"]
 CRDBs span multiple Redis Enterprise Software (RS) clusters. Overview of
 the steps to create a CRDB:
 
-1. Create a service account on each cluster as an admin
-1. Confirm network is setup
-1. Connect to one of your clusters and configure a new CRDB
-1. Test writing to one cluster and reading from a different cluster
+1. Create a service account on each cluster as an admin.
+1. Confirm network is setup.
+1. Connect to one of your clusters and configure a new CRDB.
+1. Test writing to one cluster and reading from a different cluster.
 
 ## Prerequisites
 
-- Two or more Redis Enterprise Software clusters running the same RS
-    version, each with minimum of two nodes.
-- Networking and cluster FQDN name resolution between all clusters.
-- Confirm that a network time service listener (e.g. ntpd) is
-    configured and running on each node in all clusters. Please see
-    "Network Time Service" for more information.
+- Two or more RS clusters running the same RS version, each with minimum of two nodes
+- Networking and cluster FQDN name resolution between all clusters
+- [Network time service]({{< relref "/rs/administering/intercluster-replication/crdbs/#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 
 ## Step 1 - Create a Service Account
 

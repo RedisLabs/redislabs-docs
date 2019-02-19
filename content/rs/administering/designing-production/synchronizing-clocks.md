@@ -25,9 +25,7 @@ used to synchronize a server's clock to an NTP server:
 $ sudo /etc/network/if-up.d/ntpdate
 ```
 
-If you are using Geo-Replication, it is critical to keep OS clocks
-consistent across clusters as well. Certain aspects of conflict
-resolution are achieved using OS time. For specific information, please
-see [Network Time
-Services]({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time" >}})
-as they pertain to CRDBs.
+If you are using Geo-Replication, it is critical to use [Network Time Service (ntpd)]
+({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time-service-ntp-or-chrony" >}})
+to synchronize OS clocks consistent across clusters as well. Certain aspects of conflict
+resolution are achieved using OS time.
