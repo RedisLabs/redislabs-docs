@@ -12,11 +12,9 @@ There are two default locations for the socket files:
 - `/var/opt/redislabs/run` - In clean installations of RS version 5.2.2 and higher
 
 When you upgrade from a RS version lower than 5.2.2 to 5.2.2 and higher, the socket files
-are not moved to the new location by default. You can change the location of the socket
-files anytime, but we recommend that you change the location of the socket files during
-[installation]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
-or [upgrade]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) to avoid
-unecessary downtime.
+are not moved to the new location by default. During [installation]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
+you can specify a custom location for the socket files, but after installation
+you must use this procedure to move the socket files.
 
 To change the location of the socket files:
 
@@ -25,6 +23,7 @@ To change the location of the socket files:
     ```src
     $ sudo rlutil create_socket_path socket_path=/var/opt/redislabs/run
     ```
+
 1. Identify the master node:
     1. On any node in the cluster, run: `rladmin status nodes`
     1. Find the node that has the **master** role.
