@@ -14,7 +14,7 @@ After you install the first node, you can add more nodes to the cluster.
     "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
 
     If the clock in the node you are trying to join to the cluster is not
-    synchronized with the nodes already in the cluster the action will fail
+    synchronized with the nodes already in the cluster, the action will fail
     and an error message will appear indicating that you must synchronize
     the clocks first.
 
@@ -26,7 +26,7 @@ After you install the first node, you can add more nodes to the cluster.
 
 To add a node in Redis Enterprise Software (RS):
 
-1. [Install the installation package]({{< relref
+1. [Install the RS installation package]({{< relref
     "/rs/installing-upgrading/downloading-installing.md" >}}) on a clean installation
     of a [supported operating system]({{< relref
     "/rs/administering/designing-production/supported-platforms.md" >}}).
