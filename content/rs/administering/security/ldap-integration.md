@@ -76,6 +76,7 @@ ldap_servers: ldap://ldap1.mydomain.com ldap://ldap2.mydomain.com
 ldap_search_base: ou=coolUsers,dc=company,dc=com
 ldap_filter: (sAMAccountName=%u)
 ldap_password: secretSquirrel
+ldap_bind_dn: cn=admin,dc=company,dc=com
 ```
 
 ### Step 2: Distribute saslauthd.conf to all nodes in the cluster
