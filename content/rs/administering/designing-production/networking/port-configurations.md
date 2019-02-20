@@ -32,7 +32,7 @@ update your firewall with the port for that new database endpoint.
 | 8080, 9443 | Used to expose the REST API for cluster management | TCP |
 | 10000-19999 | Used for exposing databases externally | TCP |
 | 20000-29999 | Used for internal communications with database shards | TCP |
-
+ 
 ## Changing the Management Web UI Port
 
 You may change the port used for the RS Web UI. To do that, run the
