@@ -15,7 +15,7 @@ the steps to create a CRDB:
 
 ## Prerequisites
 
-- Two or more RS clusters running the same RS version, each with minimum of two nodes
+- Two or more machines with the same version of RS installed
 - Networking and cluster FQDN name resolution between all clusters
 - [Network time service]({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 
