@@ -11,10 +11,13 @@ There are two default locations for the socket files:
 - `/tmp` - In clean installations of RS version lower than 5.2.2
 - `/var/opt/redislabs/run` - In clean installations of RS version 5.2.2 and higher
 
+We made this change because some customers have maintenance procedures that delete the
+`/tmp` directory.
+
 When you upgrade from a RS version lower than 5.2.2 to 5.2.2 and higher, the socket files
-are not moved to the new location by default. During [installation]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
-you can specify a custom location for the socket files, but after installation
-you must use this procedure to move the socket files.
+are not moved to the new location by default. During [installation]({{< relref 
+"/rs/installing-upgrading/downloading-installing.md" >}}) you can specify a custom location
+for the socket files, but after installation you must use this procedure to move the socket files.
 
 To change the location of the socket files:
 
