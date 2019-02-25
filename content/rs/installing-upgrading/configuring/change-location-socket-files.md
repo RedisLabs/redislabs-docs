@@ -52,7 +52,7 @@ To change the location of the socket files:
         $ rladmin restart db <db name>
         ```
 
-    - For each master/slave shard for each database in the cluster:
+    - Restart each master and slave shard for each database in the cluster:
 
         {{% warning %}}
         We recommend that you run these commands during a maintenance window
