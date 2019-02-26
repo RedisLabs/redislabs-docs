@@ -44,7 +44,7 @@ it. If node is restarted, the cluster will automatically elect another
 master node.
 
 
-### dont_migrate_slave_shards flag
+### keep_slave_shards flag
 If flag is specified, cluster will not attempt to migrate shards out of
 the node, but will failover all master shards. This is useful when you
 have a small cluster, that does not have enough resources to migrate
@@ -68,19 +68,19 @@ multiple snapshots. If you want to request a specific snapshot, you can
 do so by specifying which snapshot in the maintenance off command:
 
 ```src
-$ rladmin node <id> maintenance_mode off restore_from_snapshot <snaphot name>
+$ rladmin node <id> maintenance_mode off snapshot_name <snaphot name>
 ```
 
 It is a good idea to choose the earliest snapshot in this case, as it
 has the original state of the node, before maintenance mode was used.
 
-### dont_restore flag
+### skip_shards_restore flag
 
 If you prefer not to restore the shards to the node that was in
 maintenance, you can do this using the flag:
 
 ```src
-$ rladmin node <id> maintenance_mode off dont_restore
+$ rladmin node <id> maintenance_mode off skip_shards_restore
 ```
 
 You might want to skip the restoration phase if the original
