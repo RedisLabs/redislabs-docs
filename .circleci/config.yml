@@ -74,7 +74,7 @@ jobs:
                 command: |
                     export LOCATION=staging/${CIRCLE_BRANCH}
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --metadata-directive REPLACE --recursive --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0
                     # Deploy all other files to the S3 bucket corresponding to the current branch
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --exclude "*.html" --exclude "*.css"
 
