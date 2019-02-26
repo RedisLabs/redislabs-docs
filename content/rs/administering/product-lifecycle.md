@@ -5,12 +5,14 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view the Redis Enterprise Software subscription agreement
-[here](https://redislabs.com/company/terms-of-use#software). This Product Lifecycle should fully reflect our subscription agreement. However, for any discrepancy between the two policies, the subscription agreement prevails.
+You can view the Redis Enterprise Software subscription agreement [here](https://redislabs.com/company/terms-of-use#software).
+This Product Lifecycle should fully reflect our subscription agreement.
+However, for any discrepancy between the two policies, the subscription agreement prevails.
 
 ## Release numbering
 
-Redis Labs uses a four-place numbering scheme to designate released versions of its products. The format is “Major1.Major2.Minor-Build”
+Redis Labs uses a four-place numbering scheme to designate released versions of its products.
+The format is “Major1.Major2.Minor-Build”.
 
 - Major sections of the version number represents fundamental changes and additions in
     capabilities to Redis  Enterprise Software. The Major1 and Major2 part of the
@@ -23,9 +25,6 @@ Redis Labs uses a four-place numbering scheme to designate released versions of 
     incremented with each build when any change is made to the binaries.
 
 Redis Enterprise Software typically gets 2 major releases every year but the product shipping cycles may vary.
-
-
-
 
 ## End-of-Life Schedule
 
