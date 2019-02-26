@@ -72,12 +72,11 @@ jobs:
             - run:
                 name: Deploy to S3
                 command: |
-                    if [ "${CIRCLE_BRANCH}" == "master" ] ;
-                        then export LOCATION=staging/dev
-                    else
-                        export LOCATION=staging/${CIRCLE_BRANCH} ;
-                    fi
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only
+                    export LOCATION=staging/${CIRCLE_BRANCH}
+                    # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --metadata-directive REPLACE --recursive --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0
+                    # Deploy all other files to the S3 bucket corresponding to the current branch
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --exclude "*.html" --exclude "*.css"
 
     # Deploy for -build to push to /{version} without -build and rs only
     deploy-prod:
