@@ -72,7 +72,10 @@ jobs:
             - run:
                 name: Deploy to S3
                 command: |
+                    #set aws S3 target to staging/branch_name
                     export LOCATION=staging/${CIRCLE_BRANCH}
+                    # Delete contents of staging/branch_name
+                    aws s3 rm s3://docs.redislabs.com/$LOCATION/ --recursive
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0
                     # Deploy all other files to the S3 bucket corresponding to the current branch
