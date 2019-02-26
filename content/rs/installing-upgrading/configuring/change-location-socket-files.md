@@ -36,35 +36,24 @@ To change the location of the socket files:
     $ sudo rlutil set_socket_path socket_path=/var/opt/redislabs/run
     ```
 
-1. On each node in the cluster one at a time, run:
+    Now the master node points to the new socket file location.
+    To update the location for all other nodes, you must restart RS on each node.
+
+1. To restart RS, on each node in the cluster one at a time run:
 
     ```src
     $ sudo service rlec_supervisor restart
     ```
 
-1. To restart all of the shards in the cluster, either:
-    - Restart each database in the cluster:
+    Now all nodes point to the new socket file location.
+    To update the location for the databases in the cluster, you must restart each database.
+
+1. To restart the databases, for each database in the cluster run:
     
-        {{% warning %}}
-        Database restart can cause interruptions in data traffic.
-        {{% /warning %}}
-        ```src
-        $ rladmin restart db <db name>
-        ```
-
-    - Restart each master and slave shard for each database in the cluster:
-
-        {{% warning %}}
-        We recommend that you run these commands during a maintenance window
-        to reduce the risk of downtime.
-        {{% /warning %}}
-
-        1. On the node that hosts the slave shard, run: `redis_ctl stop <slave shard id>`
-        1. On the node that hosts the slave shard, run: `rladmin failover shard <master shard id>`
-        1. On the node that hosts the master shard that failed over, run: `redis_ctl stop <failed-over master shard id>`
-
-        For example, if the slave shard 6 is on node 1 and the master shard 5 is on node 3:
-
-        1. On node 1, run: `redis_ctl stop 6`
-        1. On node 1, run: `rladmin failover shard 5`
-        1. On node 3, run: `redis_ctl stop 5`
+    {{% warning %}}
+    Database restart can cause interruptions in data traffic.
+    {{% /warning %}}
+    
+    ```src
+    $ rladmin restart db <db name>
+    ```
