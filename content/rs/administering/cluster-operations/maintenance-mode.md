@@ -5,84 +5,83 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-From time to time, a node requires maintenance, for reasons relating to
-your organization, not to the Redis Enterprise cluster. The Maintenance
-Mode is a process to simplify the process of moving Redis shards away
-from node, and returning them after the maintenance is done.
+When you need to do hardware or operating system maintenance on an RS server,
+it is important that you move all of the shards on that server to another node to avoid the risk of data loss.
+You can use maintenance mode to handle this process simply and efficiently.
 
-## Basic Usage
+## Turning Maintenance Mode ON
 
-Connect via SSH to the cluster, and use rladmin:
+When you turn maintenance mode on, RS:
 
-```src
-$ rladmin node <id> maintenance_mode on
-```
+1. Checks whether shutdown of the node causes quorum loss. If so, maintenance mode is not turned on.
+1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on node at that time.
+1. Marks the node as a quorum node to prevent shards from migrating into the node.
+1. Migrates shards to other nodes and binds endpoints to other nodes.
 
-Wait for cluster to remove all Redis shards from node, and perform
-maintenance. Once maintenance is done, use the following to return the
-shards that were on the node back:
+{{% note %}}
+If the node is the master node in the cluster, maintenance mode does not demote the node.
+As usual, the cluster elects a new master node when the master node is restarted.
+{{% /note %}}
 
-```src
-$ rladmin node <id> maintenance_mode off
-```
-
-## Maintenance On Steps
-
-1. Checks that node with that id exists in the cluster.
-1. Checks that cluster will not lose quorum if node is shut off.
-1. Cluster takes a snapshot of node. This is a record of which shards
-and endpoints are on node at that time. This is not an RDB snapshot of
-the actual data, but just the node configuration
-1. Prevents shards from migrating into the node, by making it a quorum
-node.
-1. Cluster tries to evict node. By default, all shards will be migrated
-to other nodes, and endpoints will be bound to other nodes.
-
-**Note:**
-If maintained node if the cluster's master node, process won't demote
-it. If node is restarted, the cluster will automatically elect another
-master node.
-
-
-### keep_slave_shards flag
-If flag is specified, cluster will not attempt to migrate shards out of
-the node, but will failover all master shards. This is useful when you
-have a small cluster, that does not have enough resources to migrate
-all shards out of a maintained node. Be advised - this means there
-might be slave shards on node during maintenance.
-
-## Maintenance Off Steps
-
-1. Checks that node with that id exists in the cluster, and is alive.
-1. Checks if a specific snapshot was requested, and if not gets the
-latest available one.
-1. Allows shards to migrate into the node (turn off quorum only node).
-1. Restore shards and endpoints that were in node at the time when
-the snapshot was taken.
-1. Delete the configuration snapshot.
-
-### Specifying which snapshot to restore
-
-If maintenance was turned on multiple times, you will end up with
-multiple snapshots. If you want to request a specific snapshot, you can
-do so by specifying which snapshot in the maintenance off command:
+To turn maintenance mode on, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <id> maintenance_mode off snapshot_name <snaphot name>
+$ rladmin node <node_id> maintenance_mode on
 ```
 
-It is a good idea to choose the earliest snapshot in this case, as it
-has the original state of the node, before maintenance mode was used.
+After all of the shards are moved from the node, it is safe to do maintenance on the server.
 
-### skip_shards_restore flag
+### Prevent slave shard migration
 
-If you prefer not to restore the shards to the node that was in
-maintenance, you can do this using the flag:
+If you do not have enough resources in other cluster nodes to migrate all of the shards to other nodes,
+you can turn maintenance mode on without migrating the slave shards.
+
+{{% warning %}}
+If you prevent slave shard migration, the slave shards are kept on the node during maintenance.
+If the node fails, the master shards will not have slave shards for data redundancy.
+{{% /warning %}}
+
+To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <id> maintenance_mode off skip_shards_restore
+$ rladmin node <node_id> maintenance_mode on keep_slave_shards
 ```
 
-You might want to skip the restoration phase if the original
-distribution of shards was not better than the current one. This process
-is much faster if shards are not returned to node.
+## Turning Maintenance Mode OFF
+
+When you turn maintenance mode off, RS:
+
+1. Loads the latest snapshot, unless a snapshot is specified.
+1. Unmarks the node as a quorum node to allow shards to migrate into the node.
+1. Restores the shards and endpoints that were in node at the time when the snapshot was taken.
+1. Deletes the configuration snapshot.
+
+To turn maintenance mode off after you finish the server maintenance, on one of the nodes in the cluster run:
+
+```src
+$ rladmin node <node_id> maintenance_mode off
+```
+
+### Specifying a snapshot
+
+Each time maintenance mode is turned on, a snapshot of the node configuration is saved.
+If there are multiple snapshots, you can restore a specified snapshot when you turn maintenance mode off.
+
+To specify a snapshot when you turn maintenance mode off, on one of the nodes in the cluster run:
+
+```src
+$ rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
+```
+
+We recommend that you use the earliest snapshot available because it contains the original state of the node.
+
+### Skipping shard restoration
+
+If you do not want to change the distribution of shards in the cluster when you turn maintenance mode off,
+you can turn maintenance mode off and prevent the shards from moving back to the node.
+
+To skip shard restoration, on one of the nodes in the cluster run:
+
+```src
+$ rladmin node <node_id> maintenance_mode off skip_shards_restore
+```
