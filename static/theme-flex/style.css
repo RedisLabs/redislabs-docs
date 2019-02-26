@@ -750,7 +750,14 @@ article section.page h1:first-of-type {
 article section.page h1 {
   margin-top: 3.5rem; }
 article section.page h2 {
-  margin-top: 2.5rem; }
+  margin-top: 2.5rem;
+}  
+article section.page h2::before, article section.page h3::before {
+  content:"";
+  display:block;
+  height: 60px; /* header height*/
+  margin: -60px 0 0;
+} 
 article section.page table {
   width: 100%;
   margin-bottom: 2em;
