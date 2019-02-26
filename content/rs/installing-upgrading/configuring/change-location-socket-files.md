@@ -6,66 +6,54 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/change-location-socket-files/
 ---
-You can change the location of the socket files anytime, but to limit
-downtime, it is best to perform this change when you are
-[installing]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
-or
-[upgrading]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
-Redis Enterprise Software to version 4.5.0.-51 or higher. If this change
-needs to be performed immediately on an existing cluster, see the
-instructions below.
+There are two default locations for the socket files:
 
-## Changing the Location on an Existing Redis Enterprise Software (RS) Installation
+- `/tmp` - In clean installations of RS version lower than 5.2.2
+- `/var/opt/redislabs/run` - In clean installations of RS version 5.2.2 and higher
 
-You must be running RS version 4.5.0-51 or higher, and with the sock
-files location is still under the default location of /tmp. (This is
-where they go when install.sh is executed without -s flag.)
+We made this change because some customers have maintenance procedures that delete the
+`/tmp` directory.
 
-1. Execute this command **on all nodes**:
+When you upgrade from a RS version lower than 5.2.2 to 5.2.2 and higher, the socket files
+are not moved to the new location by default. During [installation]({{< relref 
+"/rs/installing-upgrading/downloading-installing.md" >}}) you can specify a custom location
+for the socket files, but after installation you must use this procedure to move the socket files.
 
-    ```src
-    $ sudo rlutil create_socket_path socket_path=/var/run/redislabs
-    ```
+To change the location of the socket files:
 
-1. Execute this command **on the master node**:
+1. On each node in the cluster, run:
 
     ```src
-    $ sudo rlutil set_socket_path socket_path=/var/run/redislabs
+    $ sudo rlutil create_socket_path socket_path=/var/opt/redislabs/run
     ```
 
-1. Execute this command **on all nodes in a serial manner**:
+1. Identify the master node:
+    1. On any node in the cluster, run: `rladmin status nodes`
+    1. Find the node that has the **master** role.
+1. On the master node, run:
+
+    ```src
+    $ sudo rlutil set_socket_path socket_path=/var/opt/redislabs/run
+    ```
+
+    Now the master node points to the new socket file location.
+    To update the location for all other nodes, you must restart RS on each node.
+
+1. To restart RS, on each node in the cluster one at a time run:
 
     ```src
     $ sudo service rlec_supervisor restart
     ```
 
-1. There are two ways to do the next step depending on your uptime
-    requirements.
-    1. Restart each database in the cluster, but you will incur
-        downtime. This is by far the easiest option to execute.
+    Now all nodes point to the new socket file location.
+    To update the location for the databases in the cluster, you must restart each database.
 
-        ```src
-        $ rladmin restart db <db name>
-        ```
-
-    1. Execute the following three commands **for each** master/slave
-        shards during a maintenance window. All three of these commands
-        **must** be executed **on the node hosting the shard being
-        operated on**:
-
-        ```src
-        $ redis_ctl stop <slave shard id>
-        $ rladmin failover shard <master shard id>
-        $ redis_ctl stop <new slave shard id>
-        ```
-
-        Example:
-
-        ```src
-        $ redis_ctl stop 6 # command run on node 1, since shard 6 is running on node 1
-        $ rladmin failover shard 5
-        $ redis_ctl stop 5 # command run on node 3, since shard 5 is running on node 3
-        ```
-
-        This must be performed **for each database** in the cluster and
-        **each shard** in each database.
+1. To restart the databases, for each database in the cluster run:
+    
+    {{% warning %}}
+    Database restart can cause interruptions in data traffic.
+    {{% /warning %}}
+    
+    ```src
+    $ rladmin restart db <db name>
+    ```
