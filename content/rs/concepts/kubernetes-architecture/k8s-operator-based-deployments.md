@@ -32,7 +32,7 @@ We at Redis Labs have created an Operator that deploys and manages the
 lifecycle of a Redis Enterprise Cluster.
 
 The Redis Enterprise Operator acts as a custom controller for the custom
-resource RedisEnterpriseCluster, or ‘rec’, with is defined through K8s
+resource RedisEnterpriseCluster, or ‘rec’, which is defined through K8s
 CRD ([customer resource definition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#custom-resources))
 and deployed with a yaml file.
 
