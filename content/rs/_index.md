@@ -5,6 +5,13 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
+## Hot Topics
+| [Getting Started]({{< relef "/rs/getting-started.md" >}}) | [Installation]({{< relef "/rs/installing-upgrading.md" >}}) | [Administeration]({{< relef "/rs/administering.md" >}}) | [Concepts]({{< relef "/rs/concepts.md" >}}) |
+| ----- | ----- | ----- | ----- |
+| [RS in Docker]({{< relef "/rs/getting-started/docker/getting-started-docker.md" >}}) | [Installing RS]({{< relef "/rs/installing-upgrading/downloading-installing.md" >}}) | [Creating a database]({{< relef "/rs/administering/database-operations/creating-database.md" >}}) | [Redis on Flash]({{< relef "/rs/concepts/memory-architecture/redis-flash.md" >}}) |
+| [Quick RS installation]({{< relef "/rs/getting-started/quick-setup.md" >}}) | [DNS configuration]({{< relef "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management.md" >}}) | [Securing client connections]({{< relef "/rs/administering/security/client-connections.md" >}}) | [RS on Kubernetes]({{< relef "/rs/concepts/kubernetes-architecture.md" >}}) |
+| [Quick ReJSON setup]({{< relef "/rs/getting-started/creating-database/rejson-quick-start.md" >}}) | [Configure AWS instances]({{< relef "/rs/installing-upgrading/configuring-aws-instances.md" >}}) | [Setting up a new cluster]({{< relef "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) | [Clustering]({{< relef "/rs/concepts/high-availability/clustering.md" >}}) |
+
 ## What is Redis Enterprise Software?
 
 Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](https://redislabs.com/why-redis/redis-enterprise/), which is used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.
