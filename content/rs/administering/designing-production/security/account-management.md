@@ -15,7 +15,7 @@ The user roles included in Role Based Access Control (RBAC) are:
 |  **Role** | **Description** | **Details** |
 |  ------ | ------ | ------ |
 |  **Admin** | Has full access to the system |  |
-|  **DB Viewer** | Allowed to view DB configuration/metrics. All Node/Cluster information and settings are unavailable | Can view info about all databases on the cluster<br/><br/>Cannot view info about nodes and cluster<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
+|  **DB Viewer** | Allowed to view DB configuration/metrics. All Node/Cluster information and settings are unavailable | Can view info about all databases on the cluster<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
 |  **Cluster Viewer** | Allowed to view Cluster and DB configuration/metrics. | Can view all info about Cluster, nodes and databases.<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
 |  **DB Member** | Allowed to view and edit DB configuration. All Node/Cluster information and settings are unavailable | Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
 |  **Cluster Member** | Allowed to view Node/DB information and edit DB configurations | Can view info about nodes and cluster<br/><br/>Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
