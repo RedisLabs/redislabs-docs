@@ -5,51 +5,49 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Servers used as Redis Enterprise Software (RS) nodes should ideally have
-all the below ports open between them for internal cluster communication
-purposes.
-
-In addition, make sure that the ICMP protocol is enabled for communications
-between the nodes.
+To make sure that RS servers can pass necessary communications between them,
+we recommend that all RS servers have all of the ports listed here open
+between them.
 
 By default, the cluster assigns ports in the range of 10,000 - 19,999
 to database endpoints. If you assign a specific port for a database when
-creating it, even outside of this range, the cluster will only verify
-that the assigned port is not already in use. You will have to manually
+you create it, even outside of this range, the cluster only verifies
+that the assigned port is not already in use. You must manually
 update your firewall with the port for that new database endpoint.
 
-## List of ports and port ranges used by Redis Enterprise Software
+## Ports and port ranges used by Redis Enterprise Software
 
 | Port | Description | Protocol |
 |------------|-----------------|-----------------|
-| * | Used for connectivity checking between nodes | ICMP |
-| 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal cluster usage | TCP |
-| 53 | Used for accessing DNS/mDNS functionality in the cluster | UDP |
-| 5353 | Used for accessing DNS/mDNS functionality in the cluster | UDP |
-| 8001 | Used by your application to access the RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) | TCP |
-| 8443 | Used for secure (https) access to the management web UI | TCP |
-| 8444, 9080 | Used for nginx \<-\>cnm_http/cm communications on the same host only. Ports are bound to loopback adapter. | TCP |
-| 9081 | Used for CRDB management | TCP |
-| 8070, 8071 | Used for metrics exported and managed by nginx | TCP | 
-| 8080, 9443 | Used to expose the REST API for cluster management | TCP |
-| 10000-19999 | Used for exposing databases externally | TCP |
-| 20000-29999 | Used for internal communications with database shards | TCP |
+| ICMP | * | For connectivity checking between nodes |
+| TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal cluster usage |
+| UCP | 53 | For accessing DNS/mDNS functionality in the cluster |
+| UCP | 5353 | For accessing DNS/mDNS functionality in the cluster |
+| TCP | 8001 | For application to access the RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
+| TCP | 8443 | For secure (https) access to the management web UI |
+| TCP | 8444, 9080 | For nginx \<-\>cnm_http/cm communications on the same host only. Ports are bound to loopback adapter. |
+| TCP | 9081 | For CRDB management |
+| TCP | 8070, 8071 | For metrics exported and managed by nginx |
+| TCP | 8080, 9443 | Fo expose the REST API for cluster management |
+| TCP | 10000-19999 | For exposing databases externally |
+| TCP | 20000-29999 | For internal communications with database shards |
 
 ## Changing the Management Web UI Port
 
-You may change the port used for the RS Web UI. To do that, run the
-following command on any node in the cluster as this cluster-wide
-setting:
+If for any reason you want to use a custom port for the RS Web UI
+instead of the default port, 8443, you can change the port. Before you
+change the RS Web UI port, make sure that the new port is not in
+use by another process.
+
+{{% note %}}
+After you change the RS Web UI port, when you add a new node to the
+cluster you must specify the custom port, in the format:
+
+`https\://newnode.mycluster.example.com:**\<nonstandard-port-number\>**`
+{{% /note%}}
+
+To change the default port for the RS Web UI, on any node in the cluster run:
 
 ```src
 $ rladmin cluster config cm_port <new-port>
 ```
-
-Before making this change, be sure to check the new port is not already
-in use by some other process before running this command.
-
-Critical: If you make this change, any time you add a new node to the
-cluster, you must specify the non-default port number in the management
-UI URL to join the new node to the cluster. For example:
-
-https\://newnode.mycluster.example.com:**\<nonstandard-port-number\>**
