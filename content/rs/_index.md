@@ -6,11 +6,11 @@ alwaysopen: false
 categories: ["RS"]
 ---
 ## Hot Topics
-| [Getting Started]({{< relef "/rs/getting-started.md" >}}) | [Installation]({{< relef "/rs/installing-upgrading.md" >}}) | [Administeration]({{< relef "/rs/administering.md" >}}) | [Concepts]({{< relef "/rs/concepts.md" >}}) |
+| [Getting Started]({{< relref "/rs/getting-started.md" >}}) | [Installation]({{< relref "/rs/installing-upgrading.md" >}}) | [Administeration]({{< relref "/rs/administering.md" >}}) | [Concepts]({{< relref "/rs/concepts.md" >}}) |
 | ----- | ----- | ----- | ----- |
-| [RS in Docker]({{< relef "/rs/getting-started/docker/getting-started-docker.md" >}}) | [Installing RS]({{< relef "/rs/installing-upgrading/downloading-installing.md" >}}) | [Creating a database]({{< relef "/rs/administering/database-operations/creating-database.md" >}}) | [Redis on Flash]({{< relef "/rs/concepts/memory-architecture/redis-flash.md" >}}) |
-| [Quick RS installation]({{< relef "/rs/getting-started/quick-setup.md" >}}) | [DNS configuration]({{< relef "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management.md" >}}) | [Securing client connections]({{< relef "/rs/administering/security/client-connections.md" >}}) | [RS on Kubernetes]({{< relef "/rs/concepts/kubernetes-architecture.md" >}}) |
-| [Quick ReJSON setup]({{< relef "/rs/getting-started/creating-database/rejson-quick-start.md" >}}) | [Configure AWS instances]({{< relef "/rs/installing-upgrading/configuring-aws-instances.md" >}}) | [Setting up a new cluster]({{< relef "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) | [Clustering]({{< relef "/rs/concepts/high-availability/clustering.md" >}}) |
+| [RS in Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) | [Installing RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) | [Creating a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) | [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) |
+| [Quick RS installation]({{< relref "/rs/getting-started/quick-setup.md" >}}) | [DNS configuration]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management.md" >}}) | [Securing client connections]({{< relref "/rs/administering/security/client-connections.md" >}}) | [RS on Kubernetes]({{< relref "/rs/concepts/kubernetes-architecture.md" >}}) |
+| [Quick ReJSON setup]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}}) | [Configure AWS instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}}) | [Setting up a new cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) | [Clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) |
 
 ## What is Redis Enterprise Software?
 
