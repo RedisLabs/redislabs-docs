@@ -4,6 +4,8 @@ description: Syntax instructions for markdown formatting
 favorite_food: ice cream
 draft: false
 ---
+Here you can find examples of style and formatting elements that you can use in your pages.
+
 ## Tabbed paragraphs
 
 A tabbed paragraph create scrolling code blocks like this:
@@ -199,3 +201,9 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 **Output**:
 
 {{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
+
+## Other Shortcodes
+
+- [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
+- [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)
+- [Children](https://learn.netlify.com/en/shortcodes/children/)
