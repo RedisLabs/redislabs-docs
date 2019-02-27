@@ -17,7 +17,7 @@ update your firewall with the port for that new database endpoint.
 
 ## Ports and port ranges used by Redis Enterprise Software
 
-| Port | Description | Protocol |
+| Protocol | Port | Description |
 |------------|-----------------|-----------------|
 | ICMP | * | For connectivity checking between nodes |
 | TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal cluster usage |
