@@ -6,10 +6,10 @@ alwaysopen: false
 categories: ["RS"]
 ---
 ## Hot Topics
-| [Getting Started]({{< relref "/rs/getting-started.md" >}}) | [Installation]({{< relref "/rs/installing-upgrading.md" >}}) | [Administeration]({{< relref "/rs/administering.md" >}}) | [Concepts]({{< relref "/rs/concepts.md" >}}) |
+| [Getting Started]({{< relref "/rs/getting-started/_index.md" >}}) | [Installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) | [Administration]({{< relref "/rs/administering/_index.md" >}}) | [Concepts]({{< relref "/rs/concepts/_index.md" >}}) |
 | ----- | ----- | ----- | ----- |
 | [RS in Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) | [Installing RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) | [Creating a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) | [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) |
-| [Quick RS installation]({{< relref "/rs/getting-started/quick-setup.md" >}}) | [DNS configuration]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management.md" >}}) | [Securing client connections]({{< relref "/rs/administering/security/client-connections.md" >}}) | [RS on Kubernetes]({{< relref "/rs/concepts/kubernetes-architecture.md" >}}) |
+| [Quick RS installation]({{< relref "/rs/getting-started/quick-setup.md" >}}) | [DNS configuration]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) | [Securing client connections]({{< relref "/rs/administering/security/client-connections.md" >}}) | [RS on Kubernetes]({{< relref "/rs/concepts/kubernetes-architecture/_index.md" >}}) |
 | [Quick ReJSON setup]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}}) | [Configure AWS instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}}) | [Setting up a new cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) | [Clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) |
 
 ## What is Redis Enterprise Software?
