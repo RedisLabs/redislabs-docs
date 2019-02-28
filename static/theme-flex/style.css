@@ -1855,11 +1855,11 @@ article > aside .menu .menu__version-selector button span.menu__version-selector
   transform: translateY(-1px) translateX(4px);
 }
 
-article > aside .menu .menu__version-selector span.menu__version-selector__toggler.--opener {
+article > aside .menu .menu__version-selector span.menu__version-selector__toggler.opener {
   display: inline-block;
 }
 
-article > aside .menu .menu__version-selector span.menu__version-selector__toggler.--closer {
+article > aside .menu .menu__version-selector span.menu__version-selector__toggler.closer {
   display: none;
 }
 
@@ -1891,19 +1891,19 @@ article > aside .menu .menu__version-selector .menu__version-selector__list a.--
 }
 
 
-article > aside .menu .menu__version-selector.--open {
+article > aside .menu .menu__version-selector.open {
   border: 1px solid #dfdfdf;
 }
 
-article > aside .menu .menu__version-selector.--open .menu__version-selector__toggler.--opener {
+article > aside .menu .menu__version-selector.open .menu__version-selector__toggler.opener {
   display: none;  
 }
 
-article > aside .menu .menu__version-selector.--open .menu__version-selector__toggler.--closer {
+article > aside .menu .menu__version-selector.open .menu__version-selector__toggler.closer {
   display: inline-block;
 }
 
-article > aside .menu .menu__version-selector.--open .menu__version-selector__list {
+article > aside .menu .menu__version-selector.open .menu__version-selector__list {
   display: block;
 }
 
@@ -1927,7 +1927,7 @@ article > aside .menu > li.parent > .children {
   padding-top: 30px;
 }
 
-article > aside .menu > li.parent > .children.--has-version-selector {
+article > aside .menu > li.parent > .children.has-version-selector {
   padding-top: 60px;
 }
 
@@ -2632,8 +2632,18 @@ a[href*="#no-click"], img[src*="#no-click"] {
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */
   header .logo img {
-    width: 100px;
-  }  
+    width: 163px;
+  }
+  article > aside .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  article > aside .menu > .dd-item {
+    order: 2;
+  }
+  article > aside .menu > .dd-item.parent {
+    order: 1;
+  }
   article section.page .highlight {
     display: inline-block;    
     max-width: 800px;
@@ -2642,6 +2652,8 @@ a[href*="#no-click"], img[src*="#no-click"] {
   article section.page pre {
     display: -ms-grid;
     display: grid;
+    max-width: 700px;
+    width: 700px;    
     position: static;
   }
 }

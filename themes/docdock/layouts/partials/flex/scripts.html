@@ -3,6 +3,11 @@
 {{if eq (index .Params.categories 0) "RS"}}
 <script>
 (function () {
+  if (!Element.prototype.matches) {
+    Element.prototype.matches = Element.prototype.msMatchesSelector;
+  }
+
+
   var pa = window.location.pathname.split('/');
   var pv = pa[1]; // latest, 5.4 or 5.2
 
@@ -12,6 +17,10 @@
   } else if (pv == '5.2') {
     v = '5.2';
     d = 'v5.2 (and below)';
+  } else {
+    // For staging
+    v = '0.0';
+    d = 'v0.0 (staging)';
   }
 
   _setVersion(v, d);
@@ -28,11 +37,11 @@ function _setSelectedVersion(ver) {
     if(i) {
       i.classList.toggle('--selected-version');
     }
-  }  
+  }
 }
-  
+
 function _openVersionSelector() {
-    document.getElementById('versionSelector').classList.toggle('--open');
+    document.getElementById('versionSelector').classList.toggle('open');
 }
 
 window.onclick = function(e) {
@@ -40,8 +49,8 @@ window.onclick = function(e) {
     var d = document.getElementsByClassName('menu__version-selector');
     var i;
     for (i = 0; i < d.length; i++) {
-      if (d[i].classList.contains('--open')) {
-        d[i].classList.remove('--open');
+      if (d[i].classList.contains('open')) {
+        d[i].classList.remove('open');
       }
     }
   }
