@@ -20,9 +20,9 @@ and then click on the name of the Subscription you wish to view.
 
 When you view a subscription, you can see:
 
-- Subscription name (To edit the name, click ![Edit](/images/rv/icon_edit.png "Edit"))
+- Subscription name (To edit the name, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
 - The RV Cloud Account used by the subscription
-- Cloud network details (To edit the details, click ![Edit](/images/rv/icon_edit.png "Edit"))
+- Cloud network details (To edit the details, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
 
 In the Security section, you can [define access](#defining-access-to-your-subscription)
 to your VPC.
@@ -100,8 +100,8 @@ To define the CIDR whitelist:
 
 1. In **Subscriptions**, click on the subscription use for VPC peering.
 1. Go to: **Security** > **CIDR Whitelist**
-1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png "Add")
-   to create a CIDR whitelist. Otherwise, click ![Add](/images/rs/icon_add.png "Add")
+1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png#no-click "Add")
+   to create a CIDR whitelist. Otherwise, click ![Add](/images/rs/icon_add.png#no-click "Add")
    under the list of CIDR whitelist entries to add another entry.
 1. Specify a whitelist entry as either:
     - IP Address:
@@ -111,7 +111,7 @@ To define the CIDR whitelist:
     - Security Group:
         1. For the type, select **Security Group**.
         1. For the value, enter the ID of the AWS security group to grant access to.
-1. Click ![Save](/images/rv/icon_save.png "Save").
+1. Click ![Save](/images/rv/icon_save.png#no-click "Save").
 1. Either:
-   1. Add more whitelist entries - Click ![Add](/images/rs/icon_add.png "Add").
+   1. Add more whitelist entries - Click ![Add](/images/rs/icon_add.png#no-click "Add").
    1. Apply the changes to the whitelist - Click **Apply all changes**.
