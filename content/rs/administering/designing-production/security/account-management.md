@@ -6,11 +6,11 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/account-management/
 ---
-You can view and update the cluster users in the cluster **Settings > team** page.
+To give each user only the permissions that they need for their work with the cluster,
+RS lets you assign a role to each user.
+You can manage users and roles in **Settings** > **team**, or with the API.
 
-## User Roles
-
-The user roles included in Role Based Access Control (RBAC) are:
+The roles and permissions available in RS are:
 
 |  **Role** | **Description** | **Details** |
 |  ------ | ------ | ------ |
@@ -19,11 +19,6 @@ The user roles included in Role Based Access Control (RBAC) are:
 |  **Cluster Viewer** | Allowed to view Cluster and DB configuration/metrics. | Can view all info about Cluster, nodes and databases.<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
 |  **DB Member** | Allowed to view and edit DB configuration. All Node/Cluster information and settings are unavailable | Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
 |  **Cluster Member** | Allowed to view Node/DB information and edit DB configurations | Can view info about nodes and cluster<br/><br/>Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
-
-All roles apply to both the UI and API levels.
-
-You can assign users with these roles through Settings -\> team page in
-the UI or through the users API.
 
 ## Adding a User
 
