@@ -12,13 +12,104 @@ You can manage users and roles in **Settings** > **team**, or with the API.
 
 The roles and permissions available in RS are:
 
-|  **Role** | **Description** | **Details** |
-|  ------ | ------ | ------ |
-|  **Admin** | Has full access to the system |  |
-|  **DB Viewer** | Allowed to view DB configuration/metrics. All Node/Cluster information and settings are unavailable | Can view info about all databases on the cluster<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
-|  **Cluster Viewer** | Allowed to view Cluster and DB configuration/metrics. | Can view all info about Cluster, nodes and databases.<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
-|  **DB Member** | Allowed to view and edit DB configuration. All Node/Cluster information and settings are unavailable | Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
-|  **Cluster Member** | Allowed to view Node/DB information and edit DB configurations | Can view info about nodes and cluster<br/><br/>Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
+<table class="small">
+  <tr>
+    <th></th>
+    <th colspan="4">Database</th>
+    <th colspan="3">Nodes</th>
+    <th colspan="5">Cluster</th>
+  </tr>
+  <tr>
+    <td align="center"></td>
+    <td class="cat-boundary">View metrics</td>
+    <td align="center">View<br>config</td>
+    <td align="center">Edit config</td>
+    <td align="center">Clear<br>slow log</td>
+    <td class="cat-boundary">View metrics</td>
+    <td align="center">View<br>config</td>
+    <td align="center">Edit<br>config</td>
+    <td class="cat-boundary">View metrics</td>
+    <td align="center">View<br>config</td>
+    <td align="center">Edit<br>config</td>
+    <td align="center">View logs</td>
+    <td align="center">View<br>and edit<br>settings</td>
+  </tr>
+  <tr>
+    <td class="row-head">DB Viewer</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td class="cat-boundary" align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td class="cat-boundary" align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td class="row-head">DB Member</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td class="cat-boundary" align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td class="cat-boundary" align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td class="row-head">Cluster Viewer</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">0</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td class="row-head">Cluster Member</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+    <td align="center">1</td>
+    <td align="center">0</td>
+  </tr>
+  <tr>
+    <td class="row-head">Admin</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td class="cat-boundary" align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+    <td align="center">1</td>
+  </tr>
+</table>
 
 ## Adding a User
 
