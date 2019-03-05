@@ -8,11 +8,11 @@ aliases: /rs/administering/designing-production/security/account-management/
 ---
 To give each user only the permissions that they need for their work with the cluster,
 RS lets you assign a role to each user.
-You can manage users and roles in **Settings** > **team**, or with the API.
+You can manage users and roles in **settings** > **team**, or with the API.
 
 The roles and permissions available in RS are:
 
-<table class="small">
+<table>
   <tr>
     <th></th>
     <th colspan="4">Database</th>
@@ -111,24 +111,35 @@ The roles and permissions available in RS are:
   </tr>
 </table>
 
-## Adding a User
+## Adding a user
 
-**To add a user:**
+To add a user to the cluster:
 
-1. Click the + (plus) sign at the bottom of the table.
-1. Enter the name, email and password of the new user.
-1. Select which Role the user should have
-1. Indicate whether the user will receive email alerts.
-1. Click **Save** icon.
+1. Go to: **settings** > **team**
+1. Click ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Enter the name, email and password of the new user and select the role to assign to the user.
+1. Select the type of user:
+    - internal - The user authenticates to RS
+    - external - The user authenticates to an external LDAP server
 
-    ![useradd](/images/rs/useradd-300x101.png)
+      To have a user authenticate with LDAP, you must first [enable LDAP integration]({{< relref
+      "/rs/administering/security/ldap-integration.md" >}}).
 
-## Updating a User
+1. For the email alerts, click **Edit** and select the alerts that the user receives.
+    You can select:
+    - Receive alerts for databases - The alerts that are enabled for the selected databases are sent to
+      the user. You can either select all databases,or you can select **Customize** and select the
+      individual databases to send alerts for.
+    - Receive cluster alerts - The alerts that are enabled for the cluster are send to the user.
 
-**To update a user:**
+    {{% expand "Show me how..." %}}![Select email alerts](/images/rs/add-user-email-alerts.gif "Select email alerts"){{% /expand %}}
 
-1. Click the **Edit** icon at the far right of the user row.
-1. Edit the user details or delete the user.
+    Then, click **Save**.
+1. Click ![Save](/images/rv/icon_save.png#no-click "Save").
+
+To edit the name, password, role or email alerts of a user, hover over the user and click ![Edit]
+(/images/rv/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
+delete the user and re-add it.
 
 ## Creating users for use with LDAP authentication
 
