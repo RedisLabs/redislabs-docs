@@ -21,14 +21,14 @@ The roles and permissions available in RS are:
   </tr>
   <tr>
     <td align="center"></td>
-    <td class="cat-boundary">View metrics</td>
+    <td class="cat-boundary" align="center">View metrics</td>
     <td align="center">View<br>config</td>
     <td align="center">Edit config</td>
     <td align="center">Clear<br>slow log</td>
-    <td class="cat-boundary">View metrics</td>
+    <td class="cat-boundary" align="center">View metrics</td>
     <td align="center">View<br>config</td>
     <td align="center">Edit<br>config</td>
-    <td class="cat-boundary">View metrics</td>
+    <td class="cat-boundary" align="center">View metrics</td>
     <td align="center">View<br>config</td>
     <td align="center">Edit<br>config</td>
     <td align="center">View logs</td>
@@ -36,78 +36,78 @@ The roles and permissions available in RS are:
   </tr>
   <tr>
     <td class="row-head">DB Viewer</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
-    <td class="cat-boundary" align="center">0</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
-    <td class="cat-boundary" align="center">0</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td class="cat-boundary" align="center" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td class="cat-boundary" align="center" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
   </tr>
   <tr>
     <td class="row-head">DB Member</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td class="cat-boundary" align="center">0</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
-    <td class="cat-boundary" align="center">0</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td class="cat-boundary" align="center" align="center"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
   </tr>
   <tr>
     <td class="row-head">Cluster Viewer</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
-    <td align="center">0</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
+    <td align="center"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
   </tr>
   <tr>
     <td class="row-head">Cluster Member</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
-    <td align="center">1</td>
-    <td align="center">0</td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"></td>
   </tr>
   <tr>
     <td class="row-head">Admin</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td class="cat-boundary" align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
-    <td align="center">1</td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
   </tr>
 </table>
 
