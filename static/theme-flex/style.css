@@ -808,10 +808,6 @@ article section.page table td {
 article section.page table.small td.cat-boundary {
   border-left: black solid 1px
 }
-article section.page table.small td.row-head {
-  padding-right: 3px;
-  font-size: 12px;
-}
 article section.page table td:first-child code {
   background-color: transparent;
   padding: 0; }
