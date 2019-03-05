@@ -36,8 +36,8 @@ The roles and permissions available in RS are:
   </tr>
   <tr>
     <td class="row-head">DB Viewer</td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
     <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"></td>
@@ -51,63 +51,63 @@ The roles and permissions available in RS are:
   </tr>
   <tr>
     <td class="row-head">DB Member</td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td class="cat-boundary" align="center" align="center"></td>
     <td align="center"></td>
     <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"></td>
     <td align="center"></td>
     <td align="center"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
   </tr>
   <tr>
     <td class="row-head">Cluster Viewer</td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
     <td align="center"></td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
   </tr>
   <tr>
     <td class="row-head">Cluster Member</td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
   </tr>
   <tr>
     <td class="row-head">Admin</td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
+    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
   </tr>
 </table>
 
