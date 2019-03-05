@@ -9,7 +9,7 @@ Once you have a subscription, you can easily create a database in Redis
 Enterprise VPC by following these steps:
 
 1. In the Redis Enterprise VPC menu, click **Databases**.
-1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png "Add").
+1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Configure the database:
     1. Enter a **Database Name** that is up to 40 characters long.
     1. Protocol - Select whether the database uses **Redis** or **Memcached**.
