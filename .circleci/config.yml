@@ -10,7 +10,7 @@ jobs:
             - checkout
             # Set GitHub branch name in config.toml for the Improve this Page link
             - run:
-                name: Replace "branch" with branch name in config.toml 
+                name: Replace "branch" with branch name in config.toml
                 command: sed -i s/branch/${CIRCLE_BRANCH}/g config.toml
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
@@ -73,7 +73,7 @@ jobs:
                 name: Deploy to S3
                 command: |
                     #set aws S3 target to staging/branch_name
-                    export LOCATION=staging/${CIRCLE_BRANCH}
+                    export LOCATION=staging2/${CIRCLE_BRANCH}
                     # Delete contents of staging/branch_name
                     aws s3 rm s3://docs.redislabs.com/$LOCATION/ --recursive
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
