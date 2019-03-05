@@ -805,7 +805,7 @@ article section.page table td {
   font-size: 14px;
   line-height: 20px;
 }
-article section.page table.small td.cat-boundary {
+article section.page table td.cat-boundary {
   border-left: black solid 1px
 }
 article section.page table td:first-child code {
