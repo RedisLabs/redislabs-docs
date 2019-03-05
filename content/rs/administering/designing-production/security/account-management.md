@@ -8,7 +8,7 @@ aliases: /rs/administering/designing-production/security/account-management/
 ---
 To give each user only the permissions that they need for their work with the cluster,
 RS lets you assign a role to each user.
-You can manage users and roles in **settings** > **team**, or with the API.
+You can manage users and roles in **settings** > **team**, or with the REST API.
 
 The roles and permissions available in RS are:
 
