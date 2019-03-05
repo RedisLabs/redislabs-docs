@@ -61,7 +61,7 @@ and accept the VPC peering request for the AWS VPC that you want to peer with.
 
 1. To peer your VPC with another VPC:
     1. In **Subscriptions**, click on the subscription use for VPC peering.
-    1. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png "Add").
+    1. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the details of the VPC to peer with, including:
         - AWS Account ID
         - AWS Region
