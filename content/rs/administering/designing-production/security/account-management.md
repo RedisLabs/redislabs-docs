@@ -125,8 +125,8 @@ To add a user to the cluster:
 1. Click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Enter the name, email and password of the new user and select the role to assign to the user.
 1. Select the type of user:
-    - internal - The user authenticates to RS
-    - external - The user authenticates to an external LDAP server
+    - internal - Authenticates with RS
+    - external - Authenticates with an external LDAP server
 
       To have a user authenticate with LDAP, you must first [enable LDAP integration]({{< relref
       "/rs/administering/security/ldap-integration.md" >}}).
