@@ -11,8 +11,8 @@ You can view and update the cluster users in the cluster **Settings > team** pag
 
 The user roles included in Role Based Access Control (RBAC) are:
 
-{{< embed-md "rs/partials/rbac-table.md" >}}
-{{< embed-html "rs/partials/sample-table.html" >}}
+{{< embed-md "/partials/rbac-table.md" >}}
+{{< embed-html "/partials/sample-table.html" >}}
 
 All roles apply to both the UI and API levels.
 
