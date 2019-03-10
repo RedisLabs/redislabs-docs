@@ -84,7 +84,7 @@ Absolutely! There is no lock-in with Redis Enterprise Cloud. With a click of but
 {{% /expand%}}
 
 {{%expand "What is the difference between Redis Enterprise VPC and Redis Enterprise Cloud?" %}}
-Redis Enterprise VPC and Redis Enterprise Cloud are both fully-managed Redis services operated by Redis Labs, however Redis Enterprise VPC runs in your own AWS Virtual Private Cloud (VPC) on dedicated and secure instances, while Redis Enterprise Cloud runs on instances owned by Redis Labs’ AWS account. In addition, Redis Enterprise VPC offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB. Running Redis in a fully-automated manner with 24/7 expert support over Redis Enterprise VPC is lower in cost than managing your own Redis instances on the cloud.
+Redis Enterprise VPC and Redis Enterprise Cloud are both fully-managed Redis services operated by Redis Labs, however Hide the sentence in curly brackets for Unification: {Redis Enterprise VPC runs in your own AWS Virtual Private Cloud (VPC) on dedicated and secure instances, while Redis Enterprise Cloud runs on instances owned by Redis Labs’ AWS account. In addition,} Redis Enterprise VPC offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB. Running Redis in a fully-automated manner with 24/7 expert support over Redis Enterprise VPC is lower in cost than managing your own Redis instances on the cloud.
 {{% /expand%}}
 
 {{%expand "Why should I run Redis Enterprise VPC on Flash?" %}}
