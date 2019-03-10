@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RV"]
 ---
-Redis Enterprise VPC supports persisting your data to disk on a
+Redis Cloud Pro supports persisting your data to disk on a
 per-database basis and in multiple ways. Unlike a few cloud provider's
-Redis offerings, Redis Enterprise VPC has two options for persistence,
+Redis offerings, Redis Cloud Pro has two options for persistence,
 Append Only File (AOF) and Snapshot (RDB), and in addition,
 data-persistence is always performed over a persistent storage that is
 attached to the cloud instance (e.g. AWS EBS). This makes sure that there is no data lost
@@ -43,7 +43,7 @@ master.
 
 ## Options for Configuring Data Persistence
 
-There are five options for persistence in Redis Enterprise VPC:
+There are five options for persistence in Redis Cloud Pro:
 
 |  **Options** | **Description** |
 |------------|-----------------|
