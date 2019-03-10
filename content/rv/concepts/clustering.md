@@ -7,15 +7,15 @@ categories: ["RV"]
 ---
 While it is a design decision that Redis is a (mostly) single-threaded
 process and this does keep it extremely performant yet simple, there are
-times when clustering is advised. Redis Enterprise VPC, employs our
+times when clustering is advised. Redis Cloud Pro employs our
 Redis Enterprise technology to scale Redis databases on your behalf.
 
-A Redis Enterprise VPC cluster is a set of managed Redis processes and
+A Redis Cloud Pro cluster is a set of managed Redis processes and
 cloud instances, with each process managing a subset of the database's
 keyspace. This approach overcomes scaling challenges via horizontal
 scaling using multiple cores and multiple instance's resources.
 
-In a Redis Enterprise VPC cluster, the keyspace is partitioned into hash
+In a Redis Cloud Pro cluster, the keyspace is partitioned into hash
 slots. At any given time a slot resides on and is managed by a single
 Redis server. An instance that belongs to a cluster can manage multiple
 slots. This division of the key space, a.k.a. sharding, is achieved by
@@ -23,20 +23,20 @@ hashing the keys' names, or parts of these (key hash tags), in order to
 obtain the slot in which a key should reside.
 
 Even while employing multiple Redis processes, the use of a Redis
-Enterprise VPC cluster is nearly transparent to the application that
+Cloud Pro cluster is nearly transparent to the application that
 uses it. The cluster is accessible via a single endpoint that
 automatically routes all operations to the relevant shards, without the
 complexity of a cluster-aware Redis client. This allows applications to
 benefit from using the cluster without performing any code changes, even
 if they were not designed to use it beforehand.
 
-When creating or editing a Redis database on Redis Enterprise VPC the
+When creating or editing a Redis database on Redis Cloud Pro, the
 system will automatically calculate the number of shards needed based on
 the database memory limit and required throughput.
 
 ## Multi-Key Operations
 
-Operations on multiple keys in a sharded Redis Enterprise VPC cluster
+Operations on multiple keys in a sharded Redis Cloud Pro cluster
 are supported with the following limitations:
 
 1. **Multi-key commands:** Redis offers several commands that accept
@@ -59,7 +59,7 @@ are supported with the following limitations:
 
 ## Changing the Sharding Policy
 
-The clustering configuration of a Redis Enterprise VPC instance can be
+The clustering configuration of a Redis Cloud Pro instance can be
 changed. However, sharding policy changes will trigger the deletion
 (i.e. FLUSHDB) of the data before they can be applied. These changes
 are:
@@ -72,7 +72,7 @@ are:
 
 ### Standard Hashing Policy
 
-When using the standard hashing policy, a Redis Enterprise VPC cluster
+When using the standard hashing policy, a Redis Cloud Pro cluster
 behaves like the standard, open-source Redis cluster, and hashing is
 performed as follows:
 
@@ -94,10 +94,10 @@ need to construct key names with hash tags.
 
 ### Custom Hashing Policy
 
-A Redis Enterprise VPC cluster can be configured to use a custom hashing
+A Redis Cloud Pro cluster can be configured to use a custom hashing
 policy. A custom hashing policy is required when different keys need to
 be kept together on the same shard to allow multi-key operations. Redis
-Enterprise VPC's custom hashing policy is provided via a set of Perl
+Cloud Pro's custom hashing policy is provided via a set of Perl
 Compatible Regular Expressions (PCRE) rules that describe the dataset's
 key name patterns.
 
@@ -107,7 +107,7 @@ which hashing will be done. The hashing tag is denoted in the RegEx by
 the use of the \`tag\` named subpattern. Different keys that have the
 same hash tag will be stored and managed in the same slot.
 
-Once you enable the custom hashing policy, the Redis Enterprise VPC's
+Once you enable the custom hashing policy, the Redis Cloud Pro's
 default RegEx rules that implement the standard hashing policy are:
 
 |  RegEx Rule | Description |
