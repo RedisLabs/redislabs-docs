@@ -5,7 +5,7 @@ weight: 70
 alwaysopen: false
 categories: ["RV"]
 ---
-You can back up your Redis Enterprise VPC databases to a storage bucket
+You can back up your Redis Cloud Pro databases to a storage bucket
 of your choosing. This article explains how to create a cloud storage
 bucket and grant permissions to use it for scheduled and on-demand
 backups. Alternatively, you may use an FTP server to store your backups
@@ -149,9 +149,9 @@ Where:
 - *port*: the port number of the server, if needed.
 - *path*: the backups path, if needed.
 
-### Can I export my Redis data from Redis Enterprise VPC?
+### Can I export my Redis data from Redis Cloud Pro?
 
-Absolutely! There is no lock-in with Redis Enterprise VPC. Using the
+Absolutely! There is no lock-in with Redis Cloud Pro. Using the
 instructions on this page, you can export your latest RDB backup file
 from your cloud storage, FTP or HTTP server to any Redis server of your
 choice (paid subscriptions only).
