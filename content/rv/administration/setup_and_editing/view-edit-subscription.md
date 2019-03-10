@@ -9,7 +9,7 @@ After you create a subscription, you can view the subscription details and
 change some of them, including:
 
 - Subscription name
-- Cloud account
+- Hide this item for Unification: Cloud account
 - Security access
 - Payment method
 
@@ -21,7 +21,7 @@ and then click on the name of the Subscription you wish to view.
 When you view a subscription, you can see:
 
 - Subscription name (To edit the name, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
-- The RV Cloud Account used by the subscription
+- Hide this item for Unification: The RV Cloud Account used by the subscription
 - Cloud network details (To edit the details, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
 
 In the Security section, you can [define access](#defining-access-to-your-subscription)
