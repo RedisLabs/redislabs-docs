@@ -5,22 +5,12 @@ weight: 30
 alwaysopen: false
 categories: ["RV"]
 ---
-A Redis Enterprise VPC (RV) subscription consists of a selected cloud
+A Redis Cloud Pro subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural
 model, memory limit and feature set. You can have multiple subscriptions
 in different providers and regions, all easily managed from a single
 console.
 
-Prerequisites:
-
-- AWS Account - RV is deployed into your AWS environment under a
-    special account you create specifically for it.
-- Cloud Account - RV relies on a user in AWS' Identity and Account
-    Management (IAM) with specific privileges in order to create,
-    maintain, and manage your RV cluster and databases. See "[Creating
-    an AWS user for Redis Enterprise
-    VPC]({{< relref "/rv/how-to/creating-aws-user-redis-enterprise-vpc.md" >}})"
-    for help creating this user and the necessary roles, policies, etc.
 
 ## Create a New Subscription
 
@@ -29,7 +19,7 @@ Creating a subscription is a four-step process:
 1. Setup - Select the general settings and input the required
     credentials for the cloud user account.
 2. Sizing - Describe the specification of the databases you want to
-    provision. After this step, RV will calculate the optimal
+    provision. After this step, Redis Cloud Pro will calculate the optimal
     configuration and required infrastructure.
 3. Review and Create - You will be presented with the required
     infrastructure and the subscription price. Enter your payment method
@@ -55,15 +45,19 @@ For a new subscription, you will need to provide the following:
 1. Select whether you want the subscription to support databases with
     the ability to span RAM only or [RAM + Flash
     Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
+<<<<<<< HEAD
 1. Select an existing or [Create a new Cloud
     Account]({{< relref "/rv/administration/setup_and_editing/creating-cloud-account.md" >}})
     for RV to use. Hide this item for Unification
 1. Select your subscription networking options: Hide this item for Unification
+=======
+1. Select your subscription networking options:
+>>>>>>> eb2de7e... Update creating-subscription.md
    - **New VPC** - this will create a new VPC and provision your
         subscription in it. Please provide the required Deployment CIDR
         - This is an IPv4 subnet, in[CIDR
         notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)[,
-        that you would like RV to use. The subnet should be /24 in size.
+        that you would like Redis Cloud Pro to use. The subnet should be /24 in size.
         Later on, you will have to create a VPC peering link to your
         application, therefore, please make sure that the CIDR you
         provide does not conflict with your application VPC
@@ -83,7 +77,11 @@ For a new subscription, you will need to provide the following:
         encrypted EBS volumes to your instances.
 
 Once you have made your selections, click **Continue** to finalize your
+<<<<<<< HEAD
 subscription.  Hide the following sentence for Unification: RV will authenticate the credentials with AWS and proceed
+=======
+subscription. Redis Cloud Pro will authenticate the credentials with AWS and proceed
+>>>>>>> eb2de7e... Update creating-subscription.md
 to the next step.
 
 ### Sizing
@@ -137,19 +135,26 @@ database(s). The subscription will show a "Pending" status and take
 approximately ten to fifteen minutes to create. You will receive an
 email once your databases are ready to use.
 
+<<<<<<< HEAD
 Once provisioning is complete, Hide the following sentence for Unification (in curly beackets): {if it was deployed in a new VPC,} please
 set up a peer between your **application VPC** and **RV VPC**. To find
 out what your RV VPC is, either go to **View subscription** Hide the following sentence for Unification (in curly beackets): {or check the
 **AWS console**}. To better understand how to set up VPC peering see [View and Edit a Subscription]
+=======
+Once provisioning is complete, if it was deployed in a new VPC, please
+set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To find
+out what your RV VPC is, either go to **View subscription**. To better understand how to set up VPC peering see [View and Edit a Subscription]
+>>>>>>> eb2de7e... Update creating-subscription.md
 ({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md" >}}).
 
 Once the peering was established please define the relevant routing
-groups on your application account and RV account.
+groups on your application account and Redis Cloud Pro account.
 
 For more information and pricing, please go
 [here](https://redislabs.com/pricing/redis-cloud-private/).
 
-If you'd rather watch an overview of Redis Cloud VPC, watch the below
+If you'd rather watch an overview of Redis Cloud Pro, watch the below
 video:
 
+This video is out of date- decide if to leave it on the documentation or remove it.
 {{< youtube_start y3tvS2kCl5I 76 >}}
