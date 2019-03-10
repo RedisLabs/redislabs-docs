@@ -9,7 +9,7 @@ The steps for creating a simple Redis Enterprise VPC (RV) deployment are
 as follows:
 
 1. Sign up for an RV account
-1. Create a dedicated AWS account/User for RV
+1. Create a dedicated AWS account/User for RV - hide this item for unification (do not remove, only hide)
 1. Create a new RV subscription
 1. Create a new database definition
 1. Connect to your database
@@ -21,7 +21,7 @@ account](https://app.redislabs.com/#/sign-up/vpc).
 If you already have an account, sign in to [Redis Enterprise
 VPC](https://app.redislabs.com/#/login?).
 
-## Step 2: Create an AWS account for RV to use
+## Step 2: Create an AWS account for RV to use - hide 'Step 2' section for unification
 
 RV requires a dedicated AWS account to perform operations on your
 behalf. Inside of that account, [create an AWS user in IAM]({{< relref "/rv/how-to/creating-aws-user-redis-enterprise-vpc.md" >}}).
@@ -41,7 +41,7 @@ For a new subscription, you will need to provide the following:
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database
 1. The Cloud Account to be used. Use the AWS user created above in Step
-    #2 for setting up your RV Cloud Account
+    #2 for setting up your RV Cloud Account - hide this step for unification
 1. Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
