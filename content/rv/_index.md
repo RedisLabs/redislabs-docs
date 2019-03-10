@@ -1,20 +1,21 @@
 ---
-Title: Redis Enterprise VPC (RV)
+Title: Redis Cloud Pro
 description: 
 weight: 30
 alwaysopen: false
 categories: ["RV"]
 ---
-Redis Enterprise VPC (RV) delivers a cost-effective, fully managed
+
+Redis Cloud Pro delivers a cost-effective, fully managed
 Database-as-a-Service (DBaaS) offering hosted on your Cloud account.
 
-RV is based on the proven Redis Enterprise technology, serving thousands of
+Redis Cloud Pro is based on the proven Redis Enterprise technology, serving thousands of
 customers of our [Redis Enterprise
 Cloud]({{< relref "/rc/_index.md" >}}) and [Redis Enterprise
-Software]({{< relref "/rs/_index.md" >}}) products. With RV,
+Software]({{< relref "/rs/_index.md" >}}) products. With Redis Cloud Pro,
 you can deploy quickly on Amazon Web Services (AWS) and create Redis
 databases that are fully compatible with the open-source Redis databases
-contained solely in your Amazon Virtual Private Cloud (VPC).
+contained on Redis Labs' cloud infrastrucure.
 
 ## Features
 
@@ -95,7 +96,7 @@ crossed.
 
 Use as many database connections as you want.
 
-If you'd rather watch an overview of Redis Cloud VPC, watch the below
+If you'd rather watch an overview of Redis Cloud Pro, watch the below
 video:
 
 {{< youtube_start y3tvS2kCl5I 76 >}}
