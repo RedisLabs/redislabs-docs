@@ -27,7 +27,13 @@ Cloud](https://app.redislabs.com/#/login?).
 Add a new subscription to your account, if you do not already have one.
 If you have an existing subscription, then proceed to Step 3.
 
-For a new subscription, you will need to select the following:
+To create a new Redis Cloud Essentials subscription do the following:
+1. Select 'Cloud (Hosted)' from the dropdown on the top of the page
+1. Select 'Subscriptions' from the sidebar
+1. If you have existing subscriptions- click on the '+' icon. If you don't have existing subsctiptions- proceed to the next step
+1. Click on the 'Select' button inside the 'Essentials' box
+
+New subscription details page will be opened. You will need to select the following:
 
 1. The cloud and region you desire your database(s) to be created in
 1. A subscription name
