@@ -21,11 +21,15 @@ and then click on the name of the Subscription you wish to view.
 When you view a subscription, you can see:
 
 - Subscription name (To edit the name, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
+<<<<<<< HEAD
 - Hide this item for Unification: The RV Cloud Account used by the subscription
+=======
+- The Redis Cloud Pro Account used by the subscription
+>>>>>>> e408c81... Update view-edit-subscription.md
 - Cloud network details (To edit the details, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
 
 In the Security section, you can [define access](#defining-access-to-your-subscription)
-to your VPC.
+to your Redis Cloud Pro account.
 
 In the Payment Information section, you can see:
 
@@ -40,8 +44,8 @@ databases.
 
 ## Defining Access to your Subscription
 
-After you create a Redis Enterprise VPC (RV) subscription, you can configure VPC
-peering and a CIDR whitelist to allow more secure access to your VPC.
+After you create a Redis Cloud Pro subscription, you can configure VPC
+peering and a CIDR whitelist to allow more secure access to your account.
 
 - [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) -
     Allow unresticted network access between two VPCs.
@@ -53,13 +57,13 @@ peering and a CIDR whitelist to allow more secure access to your VPC.
 A VPC peering connection is a networking connection between two VPCs that enables you
 to route traffic between them using private IP addresses. Instances in either VPC can
 communicate with each other as if they are within the same network. You can connect your
-VPC in the RV subscription to the VPC of your application. Then your application can
-connect securely to your RV database using VPC Peering to optimize the performance of your application.
+VPC in the Redis Cloud Pro subscription to the VPC of your application. Then your application can
+connect securely to your Redis Cloud Pro database using VPC Peering to optimize the performance of your application.
 
-The VPC peering configuration requires you to initiate VPC peering on your RV subcription
+The VPC peering configuration requires you to initiate VPC peering on your Redis Cloud Pro subcription
 and accept the VPC peering request for the AWS VPC that you want to peer with.
 
-1. To peer your VPC with another VPC:
+1. To peer Redis Cloud Pro VPC with another VPC:
     1. In **Subscriptions**, click on the subscription use for VPC peering.
     1. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the details of the VPC to peer with, including:
@@ -83,17 +87,17 @@ and accept the VPC peering request for the AWS VPC that you want to peer with.
     1. Go to **Routes** and click on **Edit Routes**.
     1. To add a route, click **Add Route**.
     1. In the Destination field, enter the Requester VPC CIDRs shown when you accepted the peering request.
-        This is the RV VPC CIDR address, to which your application's VPC will connect
+        This is the Redis Cloud Pro VPC CIDR address, to which your application's VPC will connect
     1. In the Target field, select **Peering Connection** and select the relevant Peering ID.
     1. Click **Save Routes** and **Close**.
 
-Now the VPC Peering request is accepted. Its status in the VPC Peering tab in the RV subscription is updated to 'Peer Established'.
-Also, the Route Table in your peered VPC is updated to accept connections to the RV VPC. Now you are ready to start using the VPC Peering.
+Now the VPC Peering request is accepted. Its status in the VPC Peering tab in the Redis Cloud Pro subscription is updated to 'Peer Established'.
+Also, the Route Table in your peered VPC is updated to accept connections to the Redis Cloud Pro VPC. Now you are ready to start using the VPC Peering.
 
 ### CIDR Whitelist
 
 The CIDR whitelist defines a range of IP addresses and AWS security groups that control inbound
-and outbound traffic to the RV VPC. When you manage the CIDR whitelist with security groups you
+and outbound traffic to the Redis Cloud Pro VPC. When you manage the CIDR whitelist with security groups you
 can easily use the same security groups to manage access to your application.
 
 To define the CIDR whitelist:
