@@ -5,20 +5,25 @@ weight: $weight
 alwaysopen: false
 categories: ["RV"]
 ---
+<<<<<<< HEAD
 
 Hide all the below content for Unification:
 
 Redis Enterprise VPC (RV) automatically manages your cluster and
 provisions instances when needed. In order for RV to be able to manager AWS 
+=======
+If you are interested in running Redis Cloud Pro on your own AWS infrustructure, Redis Cloud Pro can automatically manage your cluster and
+provision instances when needed. In order for Redis Cloud Pro to be able to manage AWS 
+>>>>>>> fce1c6c... Update creating-aws-user-redis-enterprise-vpc.md
 resources, you must have an AWS account that is separate from your AWS
 application account and a user on that separate AWS account.
 
 Within that new AWS account, you need to create an **instance role** and
 a user with a specific **policy**. The user requires both **UI console access** 
-and an **Access Key** so that RV can programmatically create
+and an **Access Key** so that Redis Cloud Pro can programmatically create
 and manage AWS resources on your behalf. After you create the user,
 generate an Access Key for the user and save the key in a secure location. 
-These keys are required when you create an RV account.
+These keys are required when you create an Redis Cloud Pro account.
 
 For more about creating an AWS user, see the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
