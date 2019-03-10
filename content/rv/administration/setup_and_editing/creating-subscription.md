@@ -57,8 +57,8 @@ For a new subscription, you will need to provide the following:
     Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 1. Select an existing or [Create a new Cloud
     Account]({{< relref "/rv/administration/setup_and_editing/creating-cloud-account.md" >}})
-    for RV to use.
-1. Select your subscription networking options:
+    for RV to use. Hide this item for Unification
+1. Select your subscription networking options: Hide this item for Unification
    - **New VPC** - this will create a new VPC and provision your
         subscription in it. Please provide the required Deployment CIDR
         - This is an IPv4 subnet, in[CIDR
@@ -83,7 +83,7 @@ For a new subscription, you will need to provide the following:
         encrypted EBS volumes to your instances.
 
 Once you have made your selections, click **Continue** to finalize your
-subscription. RV will authenticate the credentials with AWS and proceed
+subscription.  Hide the following sentence for Unification: RV will authenticate the credentials with AWS and proceed
 to the next step.
 
 ### Sizing
@@ -137,10 +137,10 @@ database(s). The subscription will show a "Pending" status and take
 approximately ten to fifteen minutes to create. You will receive an
 email once your databases are ready to use.
 
-Once provisioning is complete, if it was deployed in a new VPC, please
+Once provisioning is complete, Hide the following sentence for Unification (in curly beackets): {if it was deployed in a new VPC,} please
 set up a peer between your **application VPC** and **RV VPC**. To find
-out what your RV VPC is, either go to **View subscription** or check the
-**AWS console**. To better understand how to set up VPC peering see [View and Edit a Subscription]
+out what your RV VPC is, either go to **View subscription** Hide the following sentence for Unification (in curly beackets): {or check the
+**AWS console**}. To better understand how to set up VPC peering see [View and Edit a Subscription]
 ({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md" >}}).
 
 Once the peering was established please define the relevant routing
