@@ -5,7 +5,7 @@ weight: 40
 alwaysopen: false
 categories: ["RV"]
 ---
-Redis Enterprise VPC (RV) provides a straightforward dashboard that
+Redis Cloud Pro provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on
 the Metrics tab of a selected database. Use the scroll bar at the top to
 change between time intervals: last minute, five minutes, hour, day,
