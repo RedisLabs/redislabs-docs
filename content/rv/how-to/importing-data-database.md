@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RV"]
 ---
-You can import an existing dataset into your Redis Enterprise VPC
+You can import an existing dataset into your Redis Cloud Pro
 instance. This article lists the steps required to share your dataset
-with Redis Enterprise VPC.
+with Redis Cloud Pro.
 
 You can import a dataset from an existing Redis server or an RDB file
 from various sources detailed below.
@@ -25,7 +25,7 @@ import completes.
 
 To import a dataset from any publicly available Redis server, simply
 enter the following information in the Import Dataset dialog of your
-Redis Enterprise VPC instance and click the "Import" button when done:
+Redis Cloud Pro instance and click the "Import" button when done:
 
 1. Enter the hostname or the public IP address of the source Redis
     server in the **Redis Hostname/IP Address** box.
@@ -36,7 +36,7 @@ Redis Enterprise VPC instance and click the "Import" button when done:
 
 ## Import a Dataset from a RDB File
 
-You can import any standard RDB to your Redis Enterprise VPC instance.
+You can import any standard RDB to your Redis Cloud Pro instance.
 Both uncompressed and compressed (with a .gz suffix) RDB files are
 acceptable.
 
