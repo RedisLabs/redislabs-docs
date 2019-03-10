@@ -9,8 +9,7 @@ The security controls for your database are:
 
 ## Access Control by Source IP/Subnet
 
-The number of source IP rules that you can add depends on the Redis
-Enterprise VPC plan that you purchased. For example, the 1GB plan allows
+The number of source IP rules that you can add depends on the Redis Cloud Pro plan that you purchased. For example, the 1GB plan allows
 up to 8 source IP authentication rules. These rules can contain either
 IP or [CIDR
 notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
@@ -18,7 +17,7 @@ notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_nota
 ![Source
 IP/Subnet](/images/rv/source_ip_subnet-1.png?width=600&height=102)
 
-In case you require more source IP rules than your current RV plan
+In case you require more source IP rules than your current Redis Cloud Pro plan
 entitles you to, you can see the different plans and the maximum number
 of source IP rules that they support [here](https://redislabs.com/pricing).
 
