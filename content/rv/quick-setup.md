@@ -1,35 +1,33 @@
 ---
-Title: Quick Setup of Redis Enterprise VPC
+Title: Quick Setup of Redis Cloud Pro
 description: 
 weight: 10
 alwaysopen: false
 categories: ["RV"]
 ---
-The steps for creating a simple Redis Enterprise VPC (RV) deployment are
+The steps for creating a simple Redis Cloud Pro deployment are
 as follows:
 
-1. Sign up for an RV account
-1. Create a dedicated AWS account/User for RV - hide this item for unification (do not remove, only hide)
+1. Sign up for a Redis Cloud Pro account
 1. Create a new RV subscription
 1. Create a new database definition
 1. Connect to your database
+* If you are intereseted in running Redis Cloud Pro instances on your own AWS account, please contact Redis Labs Support team to enable this functionality. More information about running Redis Cloud Pro on you own AWS account can be found here.
 
-## Step 1: Sign up for Redis Enterprise VPC account
+## Step 1: Sign up for Redis Cloud Pro account
 
-If you do not already have one, sign up for a [Redis Enterprise VPC
-account](https://app.redislabs.com/#/sign-up/vpc).
-If you already have an account, sign in to [Redis Enterprise
-VPC](https://app.redislabs.com/#/login?).
+If you do not already have one, sign up for a [Redis Cloud Pro Account](https://app.redislabs.com/#/sign-up/vpc).
+If you already have an account, sign in to [Redis Cloud Pro](https://app.redislabs.com/#/login?).
 
+<<<<<<< HEAD
 ## Step 2: Create an AWS account for RV to use - hide 'Step 2' section for unification
+=======
+>>>>>>> 02954f6... Update quick-setup.md
 
-RV requires a dedicated AWS account to perform operations on your
-behalf. Inside of that account, [create an AWS user in IAM]({{< relref "/rv/how-to/creating-aws-user-redis-enterprise-vpc.md" >}}).
-
-## Step 3: Create a new RV subscription
+## Step 2: Create a new Redis Cloud Pro subscription
 
 Add a new subscription to your account, if you do not already have one.
-If you do have an existing RV subscription, then proceed to Step 4.
+If you do have an existing Redis Cloud Pro subscription, then proceed to Step 3.
 
 ![new_subscription](/images/rv/new_subscription.png?width=800&height=406)
 
@@ -40,21 +38,23 @@ For a new subscription, you will need to provide the following:
 1. Whether you want to use [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database
+<<<<<<< HEAD
 1. The Cloud Account to be used. Use the AWS user created above in Step
     #2 for setting up your RV Cloud Account - hide this step for unification
+=======
+>>>>>>> 02954f6... Update quick-setup.md
 1. Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
-    that you would like RV to use. For a standard deployment, you can
+    that you would like Redis Cloud Pro to use. For a standard deployment, you can
     specify 10.0.1.0/24. Later on, you will have to create a VPC peering
     link to your application, therefore, please make sure that the CIDR
     you provide does not conflict with your application VPC CIDR.
 
 Once your selections are made, click **Continue** to finalize your
-subscription. RV will authenticate the credentials with AWS, then
-proceed to the next step.
+subscription. 
 
-## Step 4: Create the database definition
+## Step 3: Create the database definition
 
 Next, define the databases to provision. Each row in the table
 represents a group of databases that share the same specification.
@@ -70,7 +70,7 @@ To start with a single database, provide the following details:
 
 Optionally, you can specify replication and a data persistence policy
 for your database, then enter the quantity of databases to create
-multiple databases on your RV subscription with the provided settings.
+multiple databases on your Redis Cloud Pro subscription with the provided settings.
 
 Once selections are made, save the settings entered row by clicking on
 the **Add** button. You can add more rows by clicking on the plus
@@ -80,7 +80,7 @@ button.
 
 Once done with all databases, click on **Continue**.
 
-Behind the scenes, RV is performing a few operations based on your
+Behind the scenes, Redis Cloud Pro is performing a few operations based on your
 inputs:
 
 - Calculating the necessary resources
@@ -91,9 +91,10 @@ inputs:
 e.g. your inputs, AWS response times, etc.
 
 Once planning is complete, please review the presented subscription and
-database information. Either select **Free Trial** or provide a payment
-method by selecting an existing one or click on the **+** button to add
+database information. 
+Provide a payment method by selecting an existing one or click on the **+** button to add
 a new one.
+A $100 creadit will be assigned to the new subscription for a free trial.
 
 ![review_create](/images/rv/review_create.png?width=800&height=594)
 
@@ -103,7 +104,7 @@ take ten to fifteen minutes to construct the infrastructure using the
 generated optimization plan. You will receive an email once your
 databases are ready to use.
 
-## Step 5: Connect to your database
+## Step 4: Connect to your database
 
 Using the menu, navigate to the Databases page. Select one of the
 databases and select the Configuration tab and look for the database
@@ -184,13 +185,12 @@ and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Enterprise
-    VPC]({{< relref "/rv/concepts/data-persistence.md" >}})
-1. [Securing Your Redis Enterprise VPC
+1. [Data Persistence with Redis Cloud Pro]({{< relref "/rv/concepts/data-persistence.md" >}})
+1. [Securing Your Redis Cloud Pro
     Database]({{< relref "/rv/administration/configuration/securing-your-database.md" >}})
 1. [Creating
     Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
-1. [Redis Enterprise Cloud Database
+1. [Redis Cloud Pro Database
     Backups]({{< relref "/rv/administration/configuration/backups.md" >}})
-1. [Monitoring Redis Enterprise VPC
+1. [Monitoring Redis Cloud Pro
     Performance]({{< relref "/rv/administration/configuration/monitoring-performance.md" >}}).
