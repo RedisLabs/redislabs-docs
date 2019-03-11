@@ -49,7 +49,7 @@ That said, the following Redis features are not applicable in the context of our
     - [LATENCY RESET](http://redis.io/commands/LATENCY-RESET)
     - [LATENCY GRAPH](http://redis.io/commands/LATENCY-GRAPH)
     - [LATENCY DOCTOR](http://redis.io/commands/LATENCY-DOCTOR)
-- Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Enterprise Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list will result in an error:
+- Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list will result in an error:
     - hash-max-ziplist-entries
     - hash-max-ziplist-value
     - list-max-ziplist-entries
@@ -83,16 +83,8 @@ Absolutely! Redis Cloud Pro offers a comprehensive suite of [high-availability](
 Absolutely! There is no lock-in with Redis Cloud. With a click of button, you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice. Free plans do not include this capability.
 {{% /expand%}}
 
-<<<<<<< HEAD
-{{%expand "What is the difference between Redis Enterprise VPC and Redis Enterprise Cloud?" %}}
-Redis Enterprise VPC and Redis Enterprise Cloud are both fully-managed Redis services operated by Redis Labs, however Hide the sentence in curly brackets for Unification: {Redis Enterprise VPC runs in your own AWS Virtual Private Cloud (VPC) on dedicated and secure instances, while Redis Enterprise Cloud runs on instances owned by Redis Labs’ AWS account. In addition,} Redis Enterprise VPC offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB. Running Redis in a fully-automated manner with 24/7 expert support over Redis Enterprise VPC is lower in cost than managing your own Redis instances on the cloud.
-{{% /expand%}}
-
-{{%expand "Why should I run Redis Enterprise VPC on Flash?" %}}
-Redis Labs’ Redis on Flash technology enables you to run Redis on high IOPS SSD instances with high throughput and the same sub-millisecond latencies as RAM-based Redis. The economic benefit is dramatic: the cost of cloud instances required to support your database can be slashed by up to 70%, while maintaining the same blazing fast performance. As your data grows, and your processing needs increase, you can achieve cost-effective high speed operational and analytic processing with the versatility of Redis and the cost efficiency of Flash memory. If your dataset is larger than 500GB, running Redis in a fully-automated manner with 24/7 expert support over Redis Enterprise VPC is lower in cost than managing your own Redis instances on the cloud.
-=======
 {{%expand "What is the difference between Redis Cloud Pro and Redis Cloud Essentials?" %}}
-Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, which run on instances owned by Redis Labs’ AWS account. Compared to Redis Cloud Essentials, Redis Cloud Pro offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB. Running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud Pro is lower in cost than managing your own Redis instances on the cloud.
+Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, however Redis Cloud Pro runs on a dedicated VPC and offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB, as well as Active-Active Geo Distribution, Active-Passive Geo Distribution, Modules integration and more enterprise features. Running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud Pro is lower in cost than managing your own Redis instances on the cloud.
 {{% /expand%}}
 
 {{%expand "Why should I run Redis Cloud Pro on Flash?" %}}
