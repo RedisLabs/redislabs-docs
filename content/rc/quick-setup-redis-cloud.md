@@ -1,5 +1,5 @@
 ---
-Title: Quick Setup of Redis Enterprise Cloud
+Title: Quick Setup of Redis Cloud Essentials
 description: 
 weight: 10
 alwaysopen: false
@@ -7,14 +7,14 @@ categories: ["RC"]
 ---
 The steps here are super simple and go as follows:
 
-1. Sign up for a Redis Enterprise Cloud account
+1. Sign up for a Redis Cloud Essentials account
 1. Create a new subscription
 1. Setup a database
 1. Connect to your Database
 
 {{< youtube I9sPna1OOUg >}}
 
-## Step 1: Sign up for Redis Enterprise Cloud account
+## Step 1: Sign up for Redis Cloud Essentials account
 
 If you do not already have one, [sign up for a Redis Enterprise Cloud
 account](https://app.redislabs.com/#/sign-up/cloud?).
@@ -149,11 +149,11 @@ and you are done.
 
 1. [Data Persistence with Redis Enterprise
     Cloud]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
-1. [Securing Your Redis Enterprise Cloud
+1. [Securing Your Redis Cloud Essentials
     Database]({{< relref "/rc/administration/configure/security.md" >}}).
 1. [Creating a
     database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
-1. [Redis Enterprise Cloud Database
+1. [Redis Cloud Essentials Database
     Backups]({{< relref "/rc/administration/configure/backups.md" >}}).
-1. [Monitoring Redis Enterprise Cloud
+1. [Monitoring Redis Cloud Essentials
     Performance]({{< relref "/rc/administration/configure/monitoring-alerting-metrics.md" >}}).
