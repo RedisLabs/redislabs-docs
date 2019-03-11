@@ -1,5 +1,5 @@
 ---
-Title: Securing Your Redis Enterprise Cloud Database
+Title: Securing Your Redis Cloud Essentials Database
 description: 
 weight: $weight
 alwaysopen: false
