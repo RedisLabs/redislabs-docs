@@ -1,11 +1,11 @@
 ---
-Title: Importing Data Into Your Redis Enterprise Cloud Database
+Title: Importing Data Into Your Redis Cloud Essentials Database
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
-You can import an existing dataset into your Redis Enterprise Cloud
+You can import an existing dataset into your Redis Cloud Essentials
 instance from an existing Redis server or an RDB file.
 
 In order to import a sharded database that has multiple RDB files you must first
@@ -19,7 +19,7 @@ import completes.{{% /note %}}
 
 To import a dataset from any publicly available Redis server:
 
-1. In the RC management console, go to the database that you want to import into.
+1. In the Redis Cloud Essentials management console, go to the database that you want to import into.
 1. Click **Import**.
 1. In the Source Type field, select **Redis**.
 1. In the Redis Hostname/IP Address field, enter the hostname or the public IP address
@@ -31,7 +31,7 @@ To import a dataset from any publicly available Redis server:
 
 ## Import a Dataset from a RDB File
 
-You can import any standard RDB to your Redis Enterprise Cloud instance.
+You can import any standard RDB to your Redis Cloud Essentials instance.
 Both uncompressed and compressed (with a .gz suffix) RDB files are
 valid.
 
@@ -39,7 +39,7 @@ valid.
 
 To import an RDB file that is stored in an FTP or HTTP server:
 
-1. In the RC management console, go to the database that you want to import into.
+1. In the Redis Cloud Essentials management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **FTP** or **HTTP**.
@@ -57,7 +57,7 @@ To import an RDB file that is stored in an FTP or HTTP server:
 
 ### RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
 
-Before you import the RDB file through the RC management console, you must go to the AWS 
+Before you import the RDB file through the Redis Cloud Essentials management console, you must go to the AWS 
 management console and share the file.
 
 To share and import an RDB file that is stored in an AWS S3 bucket:
@@ -70,7 +70,7 @@ To share and import an RDB file that is stored in an AWS S3 bucket:
     1. In the Account field, enter: `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
     1. In the Read object column, select **Yes**.
     1. Click **Save**.
-1. In the RC management console, go to the database that you want to import into.
+1. In the Redis Cloud Essentials management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **AWS S3**.
@@ -84,7 +84,7 @@ To share and import an RDB file that is stored in an AWS S3 bucket:
 
 ### RDB File from a Google Cloud Storage (GCS) Bucket
 
-Before you import the RDB file through the RC console, you must go to the Google
+Before you import the RDB file through the Redis Cloud Essentials console, you must go to the Google
 Cloud Platform (GCP) console and share the file.
 
 To share and import an RDB file that is stored in a GCS bucket:
@@ -100,7 +100,7 @@ To share and import an RDB file that is stored in a GCS bucket:
        - In the Name field of the new item, enter: `service@garantiadata.com`
        - In the Access field of the new item, select **Reader**.
     1. Click **Save**.
-1. In the RC management console, go to the database that you want to import into.
+1. In the Redis Cloud Essentials management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **Google Cloud Storage**.
@@ -115,7 +115,7 @@ To share and import an RDB file that is stored in a GCS bucket:
 
 To import an RDB file that is stored in an ABS container:
 
-1. In the RC management console, go to the database that you want to import into.
+1. In the Redis Cloud Essentials management console, go to the database that you want to import into.
 1. Click **Import**.
 1. Enter the details for the RDB file:
     - Source Type - Select **Azure Blob Storage**.
