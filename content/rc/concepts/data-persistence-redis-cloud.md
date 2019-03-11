@@ -1,13 +1,13 @@
 ---
-Title: Data Persistence with Redis Enterprise Cloud
+Title: Data Persistence with Redis Cloud Essentials
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
-Redis Enterprise Cloud (RC) supports persisting your data to disk on a
+Redis Cloud Essentials supports persisting your data to disk on a
 per-database basis and in multiple ways. Unlike a few cloud provider's
-Redis offerings, RC has two options for persistence, Append Only File
+Redis offerings, Redis Cloud Essentials has two options for persistence, Append Only File
 (AOF) and Snapshot (RDB), and in addition, data-persistence is always
 performed over a persistent storage that is attached to the cloud
 instance (e.g. AWS EBS). This makes sure that no data is lost in case of a node
@@ -43,7 +43,7 @@ master.
 
 ## Options for Configuring Data Persistence
 
-There are five options for persistence in Redis Enterprise Cloud:
+There are five options for persistence in Redis Cloud Essentials:
 
 | ** Options** | ** Description** |
 |------------|-----------------|
