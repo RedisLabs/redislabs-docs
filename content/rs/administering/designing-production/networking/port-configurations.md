@@ -21,8 +21,6 @@ update your firewall with the port for that new database endpoint.
 |------------|-----------------|-----------------|
 | ICMP | * | For connectivity checking between nodes |
 | TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal cluster usage |
-| UCP | 53 | For accessing DNS/mDNS functionality in the cluster |
-| UCP | 5353 | For accessing DNS/mDNS functionality in the cluster |
 | TCP | 8001 | For application to access the RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8443 | For secure (https) access to the management web UI |
 | TCP | 8444, 9080 | For nginx \<-\>cnm_http/cm communications on the same host only. Ports are bound to loopback adapter. |
@@ -31,6 +29,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8080, 9443 | Used to expose the REST API, including cluster management and node bootstrap |
 | TCP | 10000-19999 | For exposing databases externally |
 | TCP | 20000-29999 | For internal communications with database shards |
+| UDP | 53, 5353 | For accessing DNS/mDNS functionality in the cluster |
 
 ## Changing the Management Web UI Port
 
