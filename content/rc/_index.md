@@ -1,15 +1,15 @@
 ---
-Title: Redis Enterprise Cloud (RC)
+Title: Redis Cloud Essentials
 description: 
 weight: 20
 alwaysopen: false
 categories: ["RC"]
 ---
-Redis Enterprise Cloud (RC) is a managed, serverless,
+Redis Cloud Essentials is a managed, serverless,
 Database-as-a-Service (DBaaS) offering.
 
-RC is based on the proven Redis
-Enterprise technology. With RC, developers can select a supported cloud
+It is based on the proven Redis
+Enterprise technology. With Redis Cloud Essentials, developers can select a supported cloud
 provider such as Amazon Web Services (AWS), Google Cloud, Microsoft
 Azure or IBM SoftLayer and create enterprise-grade Redis databases that
 are fully compatible with the open-source Redis clients.
