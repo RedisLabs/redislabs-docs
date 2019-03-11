@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 This page contains events, alerts, and logs from the activities,
-databases, and subscriptions in your Redis Enterprise Cloud account. You
+databases, and subscriptions in your Redis Cloud Essentials account. You
 can sort by any of the column headers, search through the system logs,
 as well as export all logs as a CSV file for use in other systems and
 programs.
