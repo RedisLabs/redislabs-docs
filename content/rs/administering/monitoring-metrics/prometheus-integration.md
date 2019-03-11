@@ -5316,40 +5316,40 @@ These are the metrics available:
 |  listener_cmd_set_max | Highest value of number of memcached SET commands sent to the DB |
 |  listener_cmd_touch | Number of memcached TOUCH commands sent to the DB |
 |  listener_cmd_touch_max | Highest value of number of memcached TOUCH commands sent to the DB |
-|  listener_conns | Number of clients connected to endpoints |
-|  listener_egress_bytes | Rate of outgoing network traffic to endpoint (bytes/sec) |
-|  listener_egress_bytes_max | Highest value of rate of outgoing network traffic to endpoint (bytes/sec) |
-|  listener_ingress_bytes | Rate of incoming network traffic to endpoint (bytes/sec) |
-|  listener_ingress_bytes_max | Highest value of rate of incoming network traffic to endpoint (bytes/sec) |
+|  listener_conns | Number of clients connected to the endpoint |
+|  listener_egress_bytes | Rate of outgoing network traffic to the endpoint (bytes/sec) |
+|  listener_egress_bytes_max | Highest value of rate of outgoing network traffic to the endpoint (bytes/sec) |
+|  listener_ingress_bytes | Rate of incoming network traffic to the endpoint (bytes/sec) |
+|  listener_ingress_bytes_max | Highest value of rate of incoming network traffic to the endpoint (bytes/sec) |
 |  listener_last_req_time | Time of last command sent to the DB |
 |  listener_last_res_time | Time of last response sent from the DB |
 |  listener_max_connections_exceeded | Number of times the Number of clients connected to the db at the same time has exeeded the max limit |
 |  listener_max_connections_exceeded_max | Highest value of number of times the Number of clients connected to the db at the same time has exeeded the max limit |
 |  listener_monitor_sessions_count | Number of client connected in monitor mode to the endpoint |
-|  listener_other_req | Rate of other (non read/write) requests on endpoint (ops/sec) |
-|  listener_other_req_max | Highest value of rate of other (non read/write) requests on endpoint (ops/sec) |
-|  listener_other_res | Rate of other (non read/write) responses on endpoint (ops/sec) |
-|  listener_other_res_max | Highest value of rate of other (non read/write) responses on endpoint (ops/sec) |
+|  listener_other_req | Rate of other (non read/write) requests on the endpoint (ops/sec) |
+|  listener_other_req_max | Highest value of rate of other (non read/write) requests on the endpoint (ops/sec) |
+|  listener_other_res | Rate of other (non read/write) responses on the endpoint (ops/sec) |
+|  listener_other_res_max | Highest value of rate of other (non read/write) responses on the endpoint (ops/sec) |
 |  listener_other_started_res | Number of responses sent from the DB of type "other" |
 |  listener_other_started_res_max | Highest value of number of responses sent from the DB of type "other" |
-|  listener_read_req | Rate of read requests on endpoint (ops/sec) |
-|  listener_read_req_max | Highest value of rate of read requests on endpoint (ops/sec) |
-|  listener_read_res | Rate of read responses on endpoint (ops/sec) |
-|  listener_read_res_max | Highest value of rate of read responses on endpoint (ops/sec) |
+|  listener_read_req | Rate of read requests on the endpoint (ops/sec) |
+|  listener_read_req_max | Highest value of rate of read requests on the endpoint (ops/sec) |
+|  listener_read_res | Rate of read responses on the endpoint (ops/sec) |
+|  listener_read_res_max | Highest value of rate of read responses on the endpoint (ops/sec) |
 |  listener_read_started_res | Number of responses sent from the DB of type "read" |
 |  listener_read_started_res_max | Highest value of number of responses sent from the DB of type "read" |
-|  listener_total_connections_received | Rate of new client connections to endpoint (connections/sec) |
-|  listener_total_connections_received_max | Highest value of rate of new client connections to endpoint (connections/sec) |
-|  listener_total_req | Request rate handled by endpoint (ops/sec) |
-|  listener_total_req_max | Highest value of rate of all requests on endpoint (ops/sec) |
-|  listener_total_res | Rate of all responses on endpoint (ops/sec) |
-|  listener_total_res_max | Highest value of rate of all responses on endpoint (ops/sec) |
+|  listener_total_connections_received | Rate of new client connections to the endpoint (connections/sec) |
+|  listener_total_connections_received_max | Highest value of rate of new client connections to the endpoint (connections/sec) |
+|  listener_total_req | Request rate handled by the endpoint (ops/sec) |
+|  listener_total_req_max | Highest value of rate of all requests on the endpoint (ops/sec) |
+|  listener_total_res | Rate of all responses on the endpoint (ops/sec) |
+|  listener_total_res_max | Highest value of rate of all responses on the endpoint (ops/sec) |
 |  listener_total_started_res | Number of responses sent from the DB of all types |
 |  listener_total_started_res_max | Highest value of number of responses sent from the DB of all types |
-|  listener_write_req | Rate of write requests on endpoint (ops/sec) |
-|  listener_write_req_max | Highest value of rate of write requests on endpoint (ops/sec) |
-|  listener_write_res | Rate of write responses on endpoint (ops/sec) |
-|  listener_write_res_max | Highest value of rate of write responses on endpoint (ops/sec) |
+|  listener_write_req | Rate of write requests on the endpoint (ops/sec) |
+|  listener_write_req_max | Highest value of rate of write requests on the endpoint (ops/sec) |
+|  listener_write_res | Rate of write responses on the endpoint (ops/sec) |
+|  listener_write_res_max | Highest value of rate of write responses on the endpoint (ops/sec) |
 |  listener_write_started_res | Number of responses sent from the DB of type "write" |
 |  listener_write_started_res_max | Highest value of number of responses sent from the DB of type "write" |
 
@@ -5392,7 +5392,7 @@ These are the metrics available:
 |  redis_process_start_time_seconds | Shard Start time of the process since unix epoch in seconds. |
 |  redis_process_virtual_memory_bytes | Shard virtual memory in bytes |
 |  redis_rdb_bgsave_in_progress | Indication if bgsave is currently in progress |
-|  redis_rdb_last_cow_size | Last bgwave (or SYNC fork) used CopyOnWrite memory |
+|  redis_rdb_last_cow_size | Last bgsave (or SYNC fork) used CopyOnWrite memory |
 |  redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
 |  redis_up | Shard is up and running |
 |  redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |
