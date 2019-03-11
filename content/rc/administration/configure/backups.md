@@ -1,11 +1,11 @@
 ---
-Title: Redis Enterprise Cloud Database Backups
+Title: Redis Cloud Essentials Database Backups
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
-You can back up your Redis Enterprise Cloud (RC) databases to a storage
+You can back up your Redis Cloud Essentials databases to a storage
 bucket of your choosing. This article explains how to create a cloud
 storage bucket and grant permissions to use it for scheduled and
 on-demand backups. Alternatively, you may use an FTP server to store
@@ -57,7 +57,7 @@ name is *backups-bucket*, you should use the following path:
 ## Google Cloud Storage (GCS)
 
 There are two ways to backup to Google Cloud Storage and which you use
-depends on the Redis version your database has in Redis Enterprise Cloud. To
+depends on the Redis version your database has in Redis Cloud Essentials. To
 identify the version go to the configuration page of the database you
 wish to backup.
 
@@ -179,9 +179,9 @@ Where:
 - *port*: the port number of the server, if needed.
 - *path*: the backups path, if needed.
 
-### Can I export my Redis data from Redis Enterprise Cloud?
+### Can I export my Redis data from Redis Cloud Essentials?
 
-Absolutely! There is no lock-in with Redis Enterprise Cloud. Using the
+Absolutely! There is no lock-in with Redis Cloud Essentials. Using the
 instructions on this page, you can export your latest RDB backup file
 from your cloud storage, FTP or HTTP server to any Redis server of your
 choice (paid subscriptions only).
