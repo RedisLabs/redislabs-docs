@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 To configure your subscription so you can use SSL/TLS with your Redis
-Enterprise Cloud (RC) database, please contact support. To speed up this
+Enterprise Cloud database, please contact support. To speed up this
 process, provide the agent with the Account ID and subscription number
 where you desire SSL service.
 
@@ -25,7 +25,7 @@ the Web UI and look in the title.
 
 ## Setting Up Your Database
 
-Using SSL/TLS requires setup of both your Redis Enterprise Cloud
+Using SSL/TLS requires setup of both your Redis Cloud Essentials
 database and your application, as described below.
 
 1. Login to your account and navigate to the **Database** page in the
@@ -64,7 +64,7 @@ connections.
 
 This procedure describes the steps required to install and configure
 [stunnel](https://stunnel.org), an open-source secure proxy, to connect
-to an SSL-enabled Redis Enterprise Cloud database.
+to an SSL-enabled Redis Cloud Essentials database.
 
 Important: This procedure is only required if you are **NOT** using an
 SSL/TLS enabled Redis client.
@@ -293,7 +293,7 @@ localhost:
 
 `[redislabs] client = yes accept = 127.0.0.1:6379 connect = host:port`
 
-### Testing Secure Connectivity to a Redis Enterprise Cloud Resource
+### Testing Secure Connectivity to a Redis Cloud Essentials Resource
 
 You can test the connection from your client using redis-cli, for
 example::
