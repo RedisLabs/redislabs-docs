@@ -1,5 +1,5 @@
 ---
-Title: Setup and Editing of Redis Enterprise Cloud Resources
+Title: Setup and Editing of Redis Cloud Essentials Resources
 description: 
 weight: $weight
 alwaysopen: false
