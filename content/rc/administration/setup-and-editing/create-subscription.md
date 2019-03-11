@@ -1,11 +1,11 @@
 ---
-Title: Creating a Redis Enterprise Cloud Subscription
+Title: Creating a Redis Cloud Essentials Subscription
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
-A Redis Enterprise Cloud subscription consists of a selected cloud
+A Redis Cloud Essentials subscription consists of a selected cloud
 provider (and respective region, e.g. "Azure - US Central"),
 architectural model, memory limit and feature set. You can have multiple
 subscriptions in different providers and regions, all easily managed
