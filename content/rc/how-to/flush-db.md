@@ -1,5 +1,5 @@
 ---
-Title: Flushing Databases on Redis Enterprise Cloud
+Title: Flushing Databases on Redis Cloud Essentials
 description: 
 weight: $weight
 alwaysopen: false
@@ -11,7 +11,7 @@ There are times where you want to delete all database data.
 includes all data in memory and persisted to disk. We recommend that you
 [backup your database]({{< relref "/rc/administration/configure/backups.md" >}}) first.{{% /warning %}}
 
-### flushall for Redis Enterprise Cloud Databases
+### flushall for Redis Cloud Essentials Databases
 
 You can flush a database from the command line with the redis-cli command or with
 your favorite Redis client.
