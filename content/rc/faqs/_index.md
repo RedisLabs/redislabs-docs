@@ -5,7 +5,7 @@ weight: 70
 alwaysopen: false
 categories: ["RC"]
 ---
-Here are some frequently asked questions about Redis Enterprise Cloud.
+Here are some frequently asked questions about Redis Cloud Essentials.
 
 <!-- Also in RS and RV -->
 {{%expand "What exactly is Redis Enterprise?" %}}
@@ -49,7 +49,7 @@ That said, the following Redis features are not applicable in the context of our
     - [LATENCY RESET](http://redis.io/commands/LATENCY-RESET)
     - [LATENCY GRAPH](http://redis.io/commands/LATENCY-GRAPH)
     - [LATENCY DOCTOR](http://redis.io/commands/LATENCY-DOCTOR)
-- Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Enterprise Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list will result in an error:
+- Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Cloud Essentials. Attempts to get or set a configuration parameter that isn’t included in the following list will result in an error:
     - hash-max-ziplist-entries
     - hash-max-ziplist-value
     - list-max-ziplist-entries
@@ -83,11 +83,11 @@ We also offer custom plans with SSL authentication and encryption — [contact u
 
 <!-- Also in RV -->
 {{%expand "Is my data safe and always available?" %}}
-Absolutely! Redis Enterprise Cloud offers a comprehensive suite of [high-availability](https://redislabs.com/blog/high-availability-for-in-memory-cloud-datastores) provisions, including in-memory replication (within the same data center or across data centers), persistent storage and backups. Read here for more info.
+Absolutely! Redis Cloud Essentials offers a comprehensive suite of [high-availability](https://redislabs.com/blog/high-availability-for-in-memory-cloud-datastores) provisions, including in-memory replication (within the same data center or across data centers), persistent storage and backups. Read here for more info.
 {{% /expand%}}
 
-{{%expand "Can I export my Redis data from Redis Enterprise Cloud?" %}}
-Absolutely! There is no lock-in with Redis Enterprise Cloud. With a click of button, you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice. Free plans do not include this capability.
+{{%expand "Can I export my Redis data from Redis Cloud Essentials?" %}}
+Absolutely! There is no lock-in with Redis Cloud Essentials. With a click of button, you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice. Free plans do not include this capability.
 {{% /expand%}}
 
 {{%expand "Can my Redis database grow infinitely?" %}}
@@ -101,5 +101,5 @@ The mapping process lets us unambiguously identify your availability zone, so we
 {{% /expand%}}
 
 {{%expand "Will my dataset/setup/endpoints be affected if I upgrade or downgrade my subscription?" %}}
-No. Any changes you make to your Redis Enterprise Cloud subscription are purely administrative and do not affect service to your application in any way. You can downgrade or upgrade your subscription at any time with no downtime or performance impact.
+No. Any changes you make to your Redis Cloud Essentials subscription are purely administrative and do not affect service to your application in any way. You can downgrade or upgrade your subscription at any time with no downtime or performance impact.
 {{% /expand%}}
