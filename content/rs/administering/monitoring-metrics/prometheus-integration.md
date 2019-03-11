@@ -5262,7 +5262,7 @@ These are the metrics available:
 | Metric | Description |
 |  ------ | :------ |
 |  node_avg_latency | Average latency of requests handled by endpoints on node (micro-sec); returned only when there is traffic |
-|  node_conns | Number of clients connected to endpoints on node |
+|  node_conns | Number of clients connected to endpoint on node |
 |  node_cpu_idle | CPU idle time portion (0-1, multiply by 100 to get percent) |
 |  node_cpu_idle_max | Highest value of CPU idle time portion (0-1, multiply by 100 to get percent) |
 |  node_cpu_idle_median | Average value of CPU idle time portion (0-1, multiply by 100 to get percent) |
@@ -5392,7 +5392,7 @@ These are the metrics available:
 |  redis_process_start_time_seconds | Shard Start time of the process since unix epoch in seconds. |
 |  redis_process_virtual_memory_bytes | Shard virtual memory in bytes |
 |  redis_rdb_bgsave_in_progress | Indication if bgsave is currently in progress |
-|  redis_rdb_last_cow_size | Last bgwave (or SYNC fork) used CopyOnWrite memory |
+|  redis_rdb_last_cow_size | Last bgsave (or SYNC fork) used CopyOnWrite memory |
 |  redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
 |  redis_up | Shard is up and running |
 |  redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |
