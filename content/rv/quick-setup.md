@@ -9,7 +9,7 @@ The steps for creating a simple Redis Cloud Pro deployment are
 as follows:
 
 1. Sign up for a Redis Cloud Pro account
-1. Create a new RV subscription
+1. Create a new Redis Cloud Pro subscription
 1. Create a new database definition
 1. Connect to your database
 * If you are intereseted in running Redis Cloud Pro instances on your own AWS account, please contact Redis Labs Support team to enable this functionality. More information about running Redis Cloud Pro on you own AWS account can be found here.
@@ -18,11 +18,6 @@ as follows:
 
 If you do not already have one, sign up for a [Redis Cloud Pro Account](https://app.redislabs.com/#/sign-up/vpc).
 If you already have an account, sign in to [Redis Cloud Pro](https://app.redislabs.com/#/login?).
-
-<<<<<<< HEAD
-## Step 2: Create an AWS account for RV to use - hide 'Step 2' section for unification
-=======
->>>>>>> 02954f6... Update quick-setup.md
 
 ## Step 2: Create a new Redis Cloud Pro subscription
 
@@ -40,7 +35,7 @@ For a new subscription, you will need to provide the following:
     or pure RAM Redis database
 <<<<<<< HEAD
 1. The Cloud Account to be used. Use the AWS user created above in Step
-    #2 for setting up your RV Cloud Account - hide this step for unification
+    #2 for setting up your Redis Cloud Pro Cloud Account - hide this step for unification
 =======
 >>>>>>> 02954f6... Update quick-setup.md
 1. Please provide the required Deployment CIDR - this is an IPv4
