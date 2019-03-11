@@ -1,11 +1,11 @@
 ---
-Title: Monitoring Redis Enterprise Cloud Performance
+Title: Monitoring Redis Cloud Essentials Performance
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
-Redis Enterprise Cloud (RC) provides a straightforward dashboard that
+Redis Cloud Essentials provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on
 the Metrics tab of a selected database. Use the scroll bar at the top to
 change between time intervals: last minute, five minutes, hour, day,
