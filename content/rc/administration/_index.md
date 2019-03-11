@@ -5,7 +5,7 @@ weight: 30
 alwaysopen: false
 categories: ["RC"]
 ---
-While there is very little configuration of Redis Enterprise Cloud
+While there is very little configuration of Redis Cloud Essentials
 required, there are some things that you can and may want to do to
 tailor a database to your use case.
 
