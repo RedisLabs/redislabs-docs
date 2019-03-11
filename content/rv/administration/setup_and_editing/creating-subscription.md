@@ -32,8 +32,6 @@ Creating a subscription is a four-step process:
 For a new subscription, you will need to provide the following:
 
 1. A subscription name
-1. Your cloud provider (currently only AWS is supported; other cloud
-    providers will be added in the future)
 1. The cloud region (e.g. "us-west-2") you want your databases to be
     created in. This should be in the same region as the applications
     that will be connecting as you will be using AWS' [VPC
@@ -107,11 +105,10 @@ email once your databases are ready to use.
 
 Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To find
 out what your Redis Cloud Pro VPC is, either go to **View subscription**. To better understand how to set up VPC peering see [View and Edit a Subscription]
-=======
+
 Once provisioning is complete, if it was deployed in a new VPC, please
 set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To find
 out what your Redis Cloud Pro VPC is, either go to **View subscription**. To better understand how to set up VPC peering see [View and Edit a Subscription]
->>>>>>> eb2de7e... Update creating-subscription.md
 ({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md" >}}).
 
 Once the peering was established please define the relevant routing
