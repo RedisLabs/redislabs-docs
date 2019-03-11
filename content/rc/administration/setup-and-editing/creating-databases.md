@@ -1,5 +1,5 @@
 ---
-Title: Creating Databases on Redis Enterprise Cloud (RC)
+Title: Creating Databases on  Redis Cloud Essentials
 description: 
 weight: $weight
 alwaysopen: false
@@ -7,7 +7,7 @@ categories: ["RC"]
 ---
 Once you have a
 [subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}),
-creating a Redis database in Redis Enterprise Cloud is simple with the
+creating a Redis database in Redis Cloud Essentials is simple with the
 steps below.
 
 **Note**: You can have as many databases as you desire, up to the limit
