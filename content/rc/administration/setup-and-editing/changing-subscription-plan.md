@@ -1,5 +1,5 @@
 ---
-Title: Changing Redis Enterprise Cloud Subscription Plans
+Title: Changing Redis Cloud Essentials Plans
 description: 
 weight: $weight
 alwaysopen: false
