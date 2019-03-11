@@ -1,5 +1,5 @@
 ---
-Title: Deleting Redis Enterprise Cloud (RC) Databases
+Title: Deleting Redis Cloud Essentials Databases
 description: 
 weight: $weight
 alwaysopen: false
@@ -13,7 +13,7 @@ Note: Only users defined as Owners on the team can delete a database.
 
 ### Steps
 
-1. Navigate to the "Databases" page from the RC menu
+1. Navigate to the "Databases" page from the Redis Cloud Essentials menu
 1. Click on the database you wish to delete from the list of your
     databases.
 1. Click on the trash can icon next to "View Database."
