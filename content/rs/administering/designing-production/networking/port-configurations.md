@@ -28,7 +28,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8444, 9080 | For nginx \<-\>cnm_http/cm communications on the same host only. Ports are bound to loopback adapter. |
 | TCP | 9081 | For CRDB management |
 | TCP | 8070, 8071 | For metrics exported and managed by nginx |
-| TCP | 8080, 9443 | Fo expose the REST API for cluster management |
+| TCP | 8080, 9443 | Used to expose the REST API, including cluster management and node bootstrap |
 | TCP | 10000-19999 | For exposing databases externally |
 | TCP | 20000-29999 | For internal communications with database shards |
 
