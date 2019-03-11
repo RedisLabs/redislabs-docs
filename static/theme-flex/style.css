@@ -867,7 +867,7 @@ article section.page pre .copy-to-clipboard {
   top: 0;
   width: 28px;
   height: 29px;
-  z-index: 1000;
+  z-index: 500;
 }
 article section.page pre[class*="language-"] {
   background-color: #333;
