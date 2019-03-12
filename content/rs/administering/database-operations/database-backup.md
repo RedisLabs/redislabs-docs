@@ -87,7 +87,7 @@ To backup to a local mount point:
 
 1. Connect to the terminal of the RS server.
 1. Mount the remote storage to a local mount point.
-    
+
     For example:
 
     ```src
