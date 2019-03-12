@@ -2534,9 +2534,8 @@ button.hamburger.hamburger--spring {
   }
 
   article > aside {
-    display: none; }
-
-
+    display: none;
+  }
 
   article > section.page {
     margin: 0 0;
@@ -2589,7 +2588,19 @@ button.hamburger.hamburger--spring {
 
   article img {
     margin-left: -1rem;
-    margin-right: -1rem; } }
+    margin-right: -1rem;
+  }
+
+  article section.page table {
+    display: block;
+    overflow-y: auto;    
+  }
+
+  article section.page table td {
+    font-size: 11px;
+    line-height: 11px;
+  }
+}
 
 i.icon-icons_plus, i.icon-icons_minus {
   font-size: 12px;
