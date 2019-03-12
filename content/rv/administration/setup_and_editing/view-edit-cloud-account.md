@@ -6,7 +6,6 @@ alwaysopen: false
 categories: ["RV"]
 ---
 
-Hide all content below:
 
 To view or edit your existing cloud accounts please select **Cloud
 Accounts** from the right side menu.
@@ -26,6 +25,6 @@ In edit mode please enter or update the following details:
     the AWS console (e.g.
     https://<YOUR-ACCOUNT-ID-WITHOUT-HYPHENS>.signin.aws.amazon.com/console)
 
-You can delete your Redis Cloud Pro Cloud Account from our system by clicking on the
+You can delete your Cloud Account from the system by clicking on the
 **Delete** button. Please note, you can only delete a Cloud Account if
 it has no active subscription related to it.
