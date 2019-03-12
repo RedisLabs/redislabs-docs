@@ -67,7 +67,7 @@ support via online helpdesk or phone.
 
 ### Encryption and authentication
 
-Meet your security goals without compromising performance using RV's
+Meet your security goals without compromising performance using Redis Could Pro's
 fully encrypted SSL connections, and apply multi-level authentication
 mechanisms such as:
 
