@@ -89,5 +89,4 @@ Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services
 
 {{%expand "Why should I run Redis Cloud Pro on Flash?" %}}
 Redis Labs’ Redis on Flash technology enables you to run Redis on high IOPS SSD instances with high throughput and the same sub-millisecond latencies as RAM-based Redis. The economic benefit is dramatic: the cost of cloud instances required to support your database can be slashed by up to 70%, while maintaining the same blazing fast performance. As your data grows, and your processing needs increase, you can achieve cost-effective high speed operational and analytic processing with the versatility of Redis and the cost efficiency of Flash memory. If your dataset is larger than 500GB, running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud Pro is lower in cost than managing your own Redis instances on the cloud.
->>>>>>> f776a90... Update _index.md
 {{% /expand%}}
