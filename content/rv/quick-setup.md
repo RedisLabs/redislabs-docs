@@ -33,11 +33,6 @@ For a new subscription, you will need to provide the following:
 1. Whether you want to use [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database
-<<<<<<< HEAD
-1. The Cloud Account to be used. Use the AWS user created above in Step
-    #2 for setting up your Redis Cloud Pro Cloud Account - hide this step for unification
-=======
->>>>>>> 02954f6... Update quick-setup.md
 1. Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
