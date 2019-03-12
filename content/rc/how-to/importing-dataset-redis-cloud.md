@@ -127,6 +127,3 @@ To import an RDB file that is stored in an ABS container:
         - `url` - URL of the storage account
         - `container` - Name of the container, if needed
         - `filename` - Filename of the RDB file, including the .gz suffix if the file is compressed
-        
- lets use account number rather then account name to authenticate S3 bucket , for the purpose of uniformity
-        
