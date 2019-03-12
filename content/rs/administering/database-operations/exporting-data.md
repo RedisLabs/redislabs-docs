@@ -5,11 +5,33 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Using the Export option, you can back up a database at any time to an
-FTP server, Amazon S3, or OpenStack Object Storage ("Swift"). Other
-cloud storage options, such as Azure Geo-Redundant Storage, SoftLayer
-Object Storage, and Google Cloud Storage will be added in a future
-release. You cannot back up to the local machine.
+You can [schedule backups]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
+of a specific database to make sure you always have valid backups.
+You can also export the data from a specific database at any time.
+
+You can export a database to these locations:
+
+- FTP server
+- SFTP server
+- Amazon S3
+- Local mount point
+- OpenStack Swift (Object Storage)
+
+Other cloud storage options, such as Azure Geo-Redundant Storage,
+SoftLayer Object Storage and Google Cloud Storage are planned for a
+future release.
+
+The backup process creates compressed (.gz) RDB files that you can [import into a database]
+({{< relref "/rs/administering/database-operations/importing-data.md" >}}).
+If you backup a database configured for database clustering,
+RS copies a backup file for each shard to the specified backup location.
+
+{{% note %}}
+Make sure that you have enough space available in your storage location.
+If there is not enough space in the backup location, the backup fails.
+{{% /note %}}
+
+## Exporting Data From a Database
 
 To export data from a database:
 
@@ -20,20 +42,76 @@ To export data from a database:
     email notifications about the import process.
 1. Click **Export**.
 
-### FTP location
+### FTP server
 
-To export to FTP, you must ensure permissions to read and write to the
-FTP location. If needed, you can specify the username and password for
-the FTP location as part of the path with the following structure: 
+Before you configure backups to an FTP server, make sure that:
+
+- The RS instance has network connectivity to the FTP server.
+- The user that you specify in the FTP server location has read and write priviledges.
+
+To backup to an FTP server, enter the FTP server location in the format:
+
+```src
 ftp://user:password@host:port/path/
+```
 
-### Amazon S3 or OpenStack Swift location
+For example: `ftp://username:password@10.1.1.1:22/home/backups/
 
-To export to Amazon S3 or OpenStack Swift, you only need to select the
-location type and enter the details in relevant fields. Ensure first
-that you have all these details from your platform.
+### SFTP server
 
-For example, here is the data necessary to export to AWS S3.
+Before you configure backups to an SFTP server, make sure that:
 
-![Export from Redis Enterprise to Amazon
-S3](/images/rs/export_amazon_s3.png?width=700&height=578)
+- The RS instance has network connectivity to the SFTP server.
+- The user that you specify in the SFTP server location has read and write priviledges.
+- The RS server and SFTP server have the correct TLS certificates. You can select either:
+    - **Use the cluster auto generated key** - Go to settings and copy the **Cluster SSH Public Key**
+        to the SFTP server.
+    - **Use a custom key** - Generate a TLS key pair for the SFTP server and copy the private key to
+        the **SSH Private Key** box.
+
+To backup to an FTP server, enter the FTP server location in the format:
+
+```src
+sftp://user:password@host:port/path/
+```
+
+For example: `ftp://username:password@10.1.1.1:22/home/backups/
+
+### Amazon S3
+
+Before you configure backups to OpenStack Swift, make sure that you have:
+
+- Path in the format: `s3://bucketname/foldername/`
+- Access key ID
+- Secret access key
+
+### Local mount point
+
+To backup to a local mount point:
+
+1. Connect to the terminal of the RS server.
+1. Mount the remote storage to a local mount point.
+
+    For example:
+
+    ```src
+    sudo mount fs.efs.us-east-1.amazonaws.com:/ /home/efs
+    ```
+
+1. In the path for the backup location, enter the mount point.
+
+    For example:
+
+    ```src
+    `/home/efs`
+    ```
+
+### OpenStack Swift
+
+Before you configure backups to OpenStack Swift, make sure that you have:
+
+- Storage URL in the format: `https://openstack_url/v1`
+- Container
+- Prefix (Optional)
+- User
+- Key
