@@ -2590,7 +2590,9 @@ button.hamburger.hamburger--spring {
     margin-left: -1rem;
     margin-right: -1rem;
   }
+}
 
+@media (max-width: 1366px) {
   article section.page table {
     display: block;
     overflow-y: auto;    
