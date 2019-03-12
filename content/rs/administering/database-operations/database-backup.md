@@ -1,51 +1,113 @@
 ---
-Title: Periodic Backups
+Title: Scheduled Backups
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can back up your dataset to an FTP server, Amazon S3, or OpenStack
-Object Storage ("Swift"), periodically, or ad-hoc. You cannot back up to
-the local machine.
+You can manually [export your data]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
+from a specific database at any time.
+You can also schedule backups of your databases to make sure you always have valid backups.
+The backup process can be scheduled for every 1, 4, 12 or 24 hours from the time that you save the backup configuration.
+
+You can schedule backups to these locations:
+
+- FTP server
+- SFTP server
+- Amazon S3
+- Local mount point
+- OpenStack Swift (Object Storage)
 
 Other cloud storage options, such as Azure Geo-Redundant Storage,
-SoftLayer Object Storage and Google Cloud Storage will be added in a
+SoftLayer Object Storage and Google Cloud Storage are planned for a
 future release.
 
-The backup process creates compressed (.gz) RDB files.
+The backup process creates compressed (.gz) RDB files that you can [import into a database]
+({{< relref "/rs/administering/database-operations/importing-data.md" >}}).
+If you backup a database configured for database clustering,
+RS copies a backup file for each shard to the specified backup location.
 
-**Note**: It is your responsibility to manage the backup location; Redis
-Enterprise Software does not delete old backups or monitor the amount of
-space left in the folder.
+{{% note %}}
+Make sure that you have enough space available in your storage location.
+If there is not enough space in the backup location, the backup fails.
+{{% /note %}}
 
-### FTP location
+## Configuring Scheduled Backups
 
-Backing up to FTP requires permissions to read and write to the FTP
-location. If needed, you can specify the username and password for the
-FTP location as part of the path with the following structure:
-ftp://user:password\@host:port/path/
+To schedule backups for a database:
 
-### Amazon S3 or OpenStack Swift location
+1. Go to: **databases**
+1. Click on the database that you want to configure backups for.
+1. In **configuration**, select **Periodic backup**.
+1. Select an interval for the backups to run either every **1**, **4**, **12** or **24** hours.
+1. Select one of the available storage types.
+1. Enter the details for the selected storage type.
 
-To backup to Amazon S3 or OpenStack Swift, select the location type and
-enter the details in relevant fields. Make sure first that you have all
-these details from your selected platform.
+### FTP server
 
-### Periodic backup
+Before you schedule backups to an FTP server, make sure that:
 
-You can configure the database to be periodically backed up to a chosen
-location. If you do so, specify the interval of how often to back up the
-database: every 4, 12, or 24 hours.
+- The RS instance has network connectivity to the FTP server.
+- The user that you specify in the FTP server location has read and write priviledges.
 
-### Ad-hoc backup - Export
+To backup to an FTP server, enter the FTP server location in the format:
 
-You can, at any time, backup any database as described in [Exporting
-data from a
-database]({{< relref "/rs/administering/database-operations/exporting-data.md" >}}).
+```src
+ftp://user:password@host:port/path/
+```
 
-### Backup of a sharded database
+For example: `ftp://username:password@10.1.1.1:22/home/backups/
 
-If you backup a database configured for database clustering, the system
-creates a backup file for each shard, and places all these backup files
-in the specified backup location.
+### SFTP server
+
+Before you schedule backups to an SFTP server, make sure that:
+
+- The RS instance has network connectivity to the SFTP server.
+- The user that you specify in the SFTP server location has read and write priviledges.
+
+To backup to an FTP server, enter the FTP server location in the format:
+
+```src
+sftp://user:password@host:port/path/
+```
+
+For example: `ftp://username:password@10.1.1.1:22/home/backups/
+
+### Amazon S3
+
+Before you schedule backups to OpenStack Swift, make sure that you have:
+
+- Path in the format: `s3://bucketname/foldername/`
+- Access key ID
+- Secret access key
+
+### Local mount point
+
+To backup to a local mount point:
+
+1. Connect to the terminal of the RS server.
+1. Mount the remote storage to a local mount point.
+    
+    For example:
+
+    ```src
+    sudo mount fs.efs.us-east-1.amazonaws.com:/ /home/efs
+    ```
+
+1. In the path for the scheduled backup, enter the mount point.
+
+    For example:
+
+    ```src
+    `/home/efs`
+    ```
+
+### OpenStack Swift
+
+Before you schedule backups to OpenStack Swift, make sure that you have:
+
+- Storage URL in the format: `https://openstack_url/v1`
+- Container
+- Prefix (Optional)
+- User
+- Key
