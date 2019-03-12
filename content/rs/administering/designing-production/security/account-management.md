@@ -134,7 +134,7 @@ To add a user to the cluster:
 1. For the email alerts, click **Edit** and select the alerts that the user receives.
     You can select:
     - Receive alerts for databases - The alerts that are enabled for the selected databases are sent to
-      the user. You can either select all databases,or you can select **Customize** and select the
+      the user. You can either select all databases, or you can select **Customize** and select the
       individual databases to send alerts for.
     - Receive cluster alerts - The alerts that are enabled for the cluster are send to the user.
 
@@ -150,21 +150,19 @@ delete the user and re-add it.
 ## Creating users for use with LDAP authentication
 
 To have a user authenticate with LDAP, you must have [LDAP integration
-enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}),
-and then create a new user via the REST API call like this:
+enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}).
+Then, create a new **external** user in the web UI.
+
+You can also create an external with the REST API with this syntax:
 
 ```src
-curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://:8080/v1/users -d "{\"auth_method\": \"external\", \"name\": \"\", \"role\": \"\"}"
+curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
 ```
 
-For the user-role, put in one of the following roles:
+For the user role, enter either:
 
 - admin
 - cluster_member
 - db_viewer
 - db_member
 - cluster_viewer
-
-**Note**: At this time, there is no way to convert an existing account
-to use LDAP. You must delete the existing and create a new account to
-use.
