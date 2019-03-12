@@ -17,7 +17,7 @@ The steps here are super simple and go as follows:
 ## Step 1: Sign up for Redis Enterprise Cloud account
 
 If you do not already have one, [sign up for a Redis Enterprise Cloud
-account](https://app.redislabs.com/#/sign-up/tabs/redis-cloud?product=redis-cloud).
+account](https://app.redislabs.com/#/sign-up/cloud?).
 
 If you already have an account, [sign in to Redis Enterprise
 Cloud](https://app.redislabs.com/#/login?).
