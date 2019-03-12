@@ -6,14 +6,10 @@ alwaysopen: false
 categories: ["RV"]
 ---
 
-Remove all content below:
-An Redis Cloud Pro Cloud Account contains all necessary credentials and information
-for an account with your cloud provider. This Cloud Account enables Redis Cloud Pro
-to create, manage, and monitor Cloud resources automatically on your
-behalf.
+A Redis Cloud Pro Cloud Account which runs on your cloud infrastructure will need all necessary credentials and information
+of your cloud account. This Cloud Account enables Redis Cloud Pro to create, manage, and monitor Cloud resources automatically on your behalf.
 
-Once a Cloud Account is set up you can reuse it with several
-subscriptions.
+Once a Cloud Account is set up you can reuse it with several subscriptions.
 
 ## Create a new Cloud Account
 
