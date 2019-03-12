@@ -41,7 +41,7 @@ latency.
     tab
 1. Press the **Map your AWS Zones** button
 1. Enter the Access Key ID and Secret Access Key for an [unprivileged
-    AWS user](#unprivileged-user).
+    AWS user](#unprivileged-user-creation).
 1. Press on **Map Zones** button.
 
 Allow the process a few minutes to complete as it maps the availability
