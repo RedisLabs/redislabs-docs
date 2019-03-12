@@ -45,7 +45,7 @@ To schedule backups for a database:
 
 ### FTP server
 
-Before you schedule backups to an FTP server, make sure that:
+Before you configure backups to an FTP server, make sure that:
 
 - The RS instance has network connectivity to the FTP server.
 - The user that you specify in the FTP server location has read and write priviledges.
@@ -60,10 +60,15 @@ For example: `ftp://username:password@10.1.1.1:22/home/backups/
 
 ### SFTP server
 
-Before you schedule backups to an SFTP server, make sure that:
+Before you configure backups to an SFTP server, make sure that:
 
 - The RS instance has network connectivity to the SFTP server.
 - The user that you specify in the SFTP server location has read and write priviledges.
+- The RS server and SFTP server have the correct TLS certificates. You can select either:
+    - **Use the cluster auto generated key** - Go to settings and copy the **Cluster SSH Public Key**
+        to the SFTP server.
+    - **Use a custom key** - Generate a TLS key pair for the SFTP server and copy the private key to
+        the **SSH Private Key** box.
 
 To backup to an FTP server, enter the FTP server location in the format:
 
@@ -75,7 +80,7 @@ For example: `ftp://username:password@10.1.1.1:22/home/backups/
 
 ### Amazon S3
 
-Before you schedule backups to OpenStack Swift, make sure that you have:
+Before you configure backups to OpenStack Swift, make sure that you have:
 
 - Path in the format: `s3://bucketname/foldername/`
 - Access key ID
@@ -94,7 +99,7 @@ To backup to a local mount point:
     sudo mount fs.efs.us-east-1.amazonaws.com:/ /home/efs
     ```
 
-1. In the path for the scheduled backup, enter the mount point.
+1. In the path for the backup location, enter the mount point.
 
     For example:
 
@@ -104,7 +109,7 @@ To backup to a local mount point:
 
 ### OpenStack Swift
 
-Before you schedule backups to OpenStack Swift, make sure that you have:
+Before you configure backups to OpenStack Swift, make sure that you have:
 
 - Storage URL in the format: `https://openstack_url/v1`
 - Container
