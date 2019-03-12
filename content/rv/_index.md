@@ -51,7 +51,7 @@ and hosts your database on optimal cloud instances.
 
 ### Hybrid deployment and geo-region replication
 
-Efficiently replicate Redis databases between Redis Enterprise VPC and
+Efficiently replicate Redis databases between Redis Cloud Pro and
 Redis Enterprise Software or across cloud regions, with built-in
 compression and WAN optimization technologies. Create multi-region,
 multi-cloud or hybrid (on-premises and cloud) Redis Enterprise
