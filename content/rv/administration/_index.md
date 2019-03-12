@@ -5,7 +5,7 @@ weight: 50
 alwaysopen: false
 categories: ["RV"]
 ---
-While there is very little configuration of Redis Enterprise VPC
+While there is very little configuration of Redis Cloud Pro
 required, there are some tasks that you can and may want to perform to
 tailor your subscription and databases to your needs.
 
