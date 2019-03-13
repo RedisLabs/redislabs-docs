@@ -33,7 +33,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     1. Enter the name, email, and password for the user, select the **Admin** role, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
 1. To make sure that there is network connectivity between the participating clusters,
-    telent on port 8080 from each participating cluster to each of the other participating clusters.
+    telnet on port 8080 from each participating cluster to each of the other participating clusters.
 
     ```src
     $ telnet <target FQDN> 8080
