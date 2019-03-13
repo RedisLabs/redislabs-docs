@@ -5,58 +5,46 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-CRDBs span multiple Redis Enterprise Software (RS) clusters. Overview of
-the steps to create a CRDB:
+[Conflict-Free Replicated Databases]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
+The participating clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
+Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) to all of the instances.
 
-1. Create a service account on each cluster as an admin.
-1. Confirm network is setup.
-1. Connect to one of your clusters and configure a new CRDB.
-1. Test writing to one cluster and reading from a different cluster.
+## Overview of the Steps to Create a CRDB
+
+1. **Create a service account** - On each participating cluster, create a dedicated user account with the Admin role.
+1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
+1. **Create CRDB** - Connect to one of your clusters and create a new CRDB.
+1. **Add participating clusters** - Add the participating clusters to the CRDB with the user credentials for the service account.
+1. **Confirm CRDB Synchronization** - Test writing to one cluster and reading from a different cluster.
 
 ## Prerequisites
 
 - Two or more machines with the same version of RS installed
-- Networking and cluster FQDN name resolution between all clusters
+- Network connectivity and cluster FQDN name resolution between all participating clusters
 - [Network time service]({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 
-## Step 1 - Create a Service Account
+## Creating a CRDB
 
-A local account with the Admin role is highly recommended on each
-cluster that will host a CRDB. While you could use a user account, it is
-recommended to have a separate admin account (known as a "service
-account") that will only used by the clusters to connect between
-clusters when orchestration is necessary. To do this, go to **settings
--\> team** and click the plus icon on the lower left to add an account.
+1. To create service accounts, on each participating cluster:
 
-![Service Account
-Creation](/images/rs/image8.png?width=1000&height=490)
+    1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+        By default, the address is: `https://<RS_address>:8443`
+    1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
+    1. Enter the name, email, and password for the user, select the **Admin** role, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-This service account will be used when the CRDB is created, but also on
-an ongoing basis by the clusters to help manage the CRDB.
+1. To make sure that there is network connectivity between the participating clusters,
+    telent on port 8080 from each participating cluster to each of the other participating clusters.
 
-## Step 2 - Confirm network is setup
+    ```src
+    $ telnet <target FQDN> 8080
+    ```
 
-The CRDB creation process assumes the required secured network
-configurations are in place. If you have not already done so, please see
-Network Configurations. If the configurations are set up, let's confirm
-the connectivity we need. First, we need to check that the necessary
-ports are open from each cluster node to the proxy and admin ports on
-the other clusters that are to host the CRDB. This test should be done
-from every node in each Participating Cluster to each node in the other
-Participating Clusters.
+1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+    By default, the address is: `https://<RS_address>:8443`
 
-```src
-$ telnet <target FQDN> 8080
-```
+    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
-## Step 3 - Create a CRDB
-
-Direct your browser to the web UI of one of the RS clusters that will
-host the CRDB. Under the databases tab, choose the Redis database with
-Deployment type set to Geo-Distributed.
-
-![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
-
+1. Go to the 
 There are some key differences in the creation process between CRDBs and
 standard Redis database creation.
 
