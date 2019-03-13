@@ -3,7 +3,7 @@ Title: Creating a Cloud Account
 description: 
 weight: 10
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 
 A Redis Cloud Pro Cloud Account which runs on your cloud infrastructure will need all necessary credentials and information

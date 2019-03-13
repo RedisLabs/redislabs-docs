@@ -3,7 +3,7 @@ Title: Billing History
 description: 
 weight: 80
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 This page contains a list of purchases, changes, and payments for the
 subscriptions you have in your account. If you have a question about

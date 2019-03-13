@@ -3,7 +3,7 @@ Title: Usage Reports
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 You can view the number of gigabytes used by this Redis Cloud Essentials
 account. You are able to filter the data by subscription, database, and

@@ -3,7 +3,7 @@ Title: Securing Your Database
 description: 
 weight: 10
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 The security controls for your database are:
 

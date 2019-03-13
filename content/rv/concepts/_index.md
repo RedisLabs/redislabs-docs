@@ -3,7 +3,7 @@ Title: Concepts
 description: 
 weight: 30
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 This section of pages contains content that describes the main concepts
 that Redis Cloud Pro is built around.

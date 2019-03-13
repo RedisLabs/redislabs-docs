@@ -3,7 +3,7 @@ Title: Billing History
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 This page contains a list of purchases, changes, and payments for the
 subscriptions you have in your Redis Cloud Essentials account. If you

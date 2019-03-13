@@ -3,7 +3,7 @@ Title: Data Eviction Policies
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 For each database, you can choose from these six supported data eviction
 policies:

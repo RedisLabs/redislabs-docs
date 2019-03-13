@@ -3,7 +3,7 @@ Title: Quick Setup of Redis Cloud Essentials
 description: 
 weight: 10
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 The steps here are super simple and go as follows:
 

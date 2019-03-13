@@ -3,7 +3,7 @@ Title: Creating a Redis Cloud Essentials Subscription
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 A Redis Cloud Essentials subscription consists of a selected cloud
 provider (and respective region, e.g. "Azure - US Central"),

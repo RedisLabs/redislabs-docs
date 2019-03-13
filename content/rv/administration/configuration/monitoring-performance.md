@@ -3,7 +3,7 @@ Title: Monitoring Performance
 description: 
 weight: 40
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 Redis Cloud Pro provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on

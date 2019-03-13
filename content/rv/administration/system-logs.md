@@ -3,7 +3,7 @@ Title: System Logs
 description: 
 weight: 60
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 This page contains events, alerts, and logs from the activities,
 databases, and subscriptions in your account. You can sort by any of the

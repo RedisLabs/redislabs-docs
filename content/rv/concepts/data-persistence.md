@@ -3,7 +3,7 @@ Title: Data Persistence
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 Redis Cloud Pro supports persisting your data to disk on a
 per-database basis and in multiple ways. Unlike a few cloud provider's

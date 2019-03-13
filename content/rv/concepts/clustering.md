@@ -3,7 +3,7 @@ Title: Clustering Redis Databases
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 While it is a design decision that Redis is a (mostly) single-threaded
 process and this does keep it extremely performant yet simple, there are

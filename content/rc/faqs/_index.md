@@ -3,7 +3,7 @@ Title: FAQs
 description: 
 weight: 70
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 Here are some frequently asked questions about Redis Cloud Essentials.
 

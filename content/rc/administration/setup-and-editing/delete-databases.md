@@ -3,7 +3,7 @@ Title: Deleting Redis Cloud Essentials Databases
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 Deleting a database is just as easy as creating one. Make sure that you
 are truly done with the database as once you delete the database, it

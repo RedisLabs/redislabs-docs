@@ -3,7 +3,7 @@ Title: Administration
 description: 
 weight: 50
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 While there is very little configuration of Redis Cloud Pro
 required, there are some tasks that you can and may want to perform to

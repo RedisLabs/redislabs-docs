@@ -3,7 +3,7 @@ Title: Redis Cloud Pro
 description: 
 weight: 30
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 
 Redis Cloud Pro delivers a cost-effective, fully managed

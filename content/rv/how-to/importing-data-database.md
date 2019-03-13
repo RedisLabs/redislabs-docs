@@ -3,7 +3,7 @@ Title: Importing Data Into Your Database
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 You can import an existing dataset into your Redis Cloud Pro
 instance. This article lists the steps required to share your dataset

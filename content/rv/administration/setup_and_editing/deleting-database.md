@@ -3,7 +3,7 @@ Title: Deleting a Database
 description: 
 weight: 70
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 Deleting a database is just as easy as creating one. Make sure that you
 are truly done with the database, as once you delete the database it

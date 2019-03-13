@@ -3,7 +3,7 @@ Title: Importing Data Into Your Redis Cloud Essentials Database
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 You can import an existing dataset into your Redis Cloud Essentials
 instance from an existing Redis server or an RDB file.

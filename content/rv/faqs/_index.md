@@ -3,7 +3,7 @@ Title: FAQs
 description: 
 weight: 90
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 Here are some frequently asked questions about Redis Cloud Pro.
 

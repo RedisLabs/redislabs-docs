@@ -3,7 +3,7 @@ Title: Quick Setup of Redis Cloud Pro
 description: 
 weight: 10
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 The steps for creating a simple Redis Cloud Pro deployment are
 as follows:

@@ -3,7 +3,7 @@ Title: Member of multiple accounts
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 It is possible for you to be a member of multiple accounts in Redis
 Enterprise Cloud. For example, you created your own account, but your

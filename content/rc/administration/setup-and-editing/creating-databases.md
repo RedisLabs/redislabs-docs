@@ -3,7 +3,7 @@ Title: Creating Databases on  Redis Cloud Essentials
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 Once you have a
 [subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}),

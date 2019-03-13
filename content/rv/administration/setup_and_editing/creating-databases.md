@@ -3,7 +3,7 @@ Title: Creating a Database
 description: 
 weight: 50
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 Once you have a subscription, you can easily create a database in Redis Cloud Pro by following these steps:
 

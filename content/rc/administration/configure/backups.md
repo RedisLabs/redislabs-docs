@@ -3,7 +3,7 @@ Title: Redis Cloud Essentials Database Backups
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 You can back up your Redis Cloud Essentials databases to a storage
 bucket of your choosing. This article explains how to create a cloud

@@ -3,7 +3,7 @@ Title: Securing Your Redis Cloud Essentials Database
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 The security controls for your database are:
 

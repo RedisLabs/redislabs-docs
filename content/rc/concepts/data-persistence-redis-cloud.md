@@ -3,7 +3,7 @@ Title: Data Persistence with Redis Cloud Essentials
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 Redis Cloud Essentials supports persisting your data to disk on a
 per-database basis and in multiple ways. Unlike a few cloud provider's

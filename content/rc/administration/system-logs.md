@@ -3,7 +3,7 @@ Title: System Logs
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 This page contains events, alerts, and logs from the activities,
 databases, and subscriptions in your Redis Cloud Essentials account. You

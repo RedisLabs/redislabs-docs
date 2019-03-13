@@ -3,7 +3,7 @@ Title: Monitoring Redis Cloud Essentials Performance
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 Redis Cloud Essentials provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on

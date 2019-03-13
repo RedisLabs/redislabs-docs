@@ -3,7 +3,7 @@ title: Securing Connections with SSL/TLS
 description: 
 weight: 25
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 To configure your subscription so you can use SSL/TLS with your Redis
 Enterprise Cloud database, please contact support. To speed up this

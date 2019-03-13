@@ -3,7 +3,7 @@ Title: Creating an AWS User
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 
 

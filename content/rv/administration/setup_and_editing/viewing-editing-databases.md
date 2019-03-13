@@ -3,7 +3,7 @@ Title: View and Edit a Database
 description: 
 weight: 60
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 To view your database, select **Databases** from the menu. You will see
 a list of your databases grouped by Subscription.

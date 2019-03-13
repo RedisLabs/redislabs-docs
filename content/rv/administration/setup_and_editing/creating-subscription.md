@@ -3,7 +3,7 @@ Title: Creating a Subscription
 description: 
 weight: 30
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 A Redis Cloud Pro subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural

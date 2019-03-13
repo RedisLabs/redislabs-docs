@@ -3,7 +3,7 @@ Title: Database Backups
 description: 
 weight: 70
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 You can back up your Redis Cloud Pro databases to a storage bucket
 of your choosing. This article explains how to create a cloud storage

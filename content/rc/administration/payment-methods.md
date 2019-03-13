@@ -3,7 +3,7 @@ Title: Payment Methods
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 On this page, you can view and edit your account's existing payment
 methods, as well as add new ones to your Redis Cloud Essentials account.

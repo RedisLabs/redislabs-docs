@@ -3,7 +3,7 @@ Title: View and Edit a Subscription
 description: 
 weight: 40
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
 After you create a subscription, you can view the subscription details and
 change some of them, including:
