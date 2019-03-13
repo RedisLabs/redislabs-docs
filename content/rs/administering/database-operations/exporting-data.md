@@ -87,6 +87,8 @@ Before you configure backups to OpenStack Swift, make sure that you have:
 
 ### Local mount point
 
+Before you configure backups to an local mount point server, make sure that the redislabs user has permissions to write to the mount point.
+
 To backup to a local mount point:
 
 1. Connect to the terminal of the RS server.
