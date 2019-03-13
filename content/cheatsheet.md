@@ -202,6 +202,14 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 {{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
 
+## Embed Video
+
+To embed a video, use the `video` shortcode with the location of the video and a video title.
+
+```{{< video "/images/video/location.mp4" "Video title" >}}```
+
+{{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
+
 ## Other Shortcodes
 
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
