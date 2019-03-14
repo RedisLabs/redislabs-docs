@@ -31,7 +31,9 @@
   </button>
 
   <div class="reveal large" id="navModal">
-    {{ partial "navigation.html" . }}
+    <nav class="modal_navigation" role="navigation">
+      {{ partial "navigation.html" . }}
+    </nav>
   </div>
 </header>
 <a id="top"></a>

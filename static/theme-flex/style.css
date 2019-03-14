@@ -1536,6 +1536,12 @@ nav.main_navigation {
   /* background: #28323f; */
   width: 100%;
 }
+nav.main_navigation ul.no-bullet li {
+  line-height: 1.6rem;
+}
+nav.modal_navigation ul.no-bullet li {
+  line-height: 1.1rem;
+}
 footer #navModal {
   /* width: 100%; */
   /* left: 0; */
