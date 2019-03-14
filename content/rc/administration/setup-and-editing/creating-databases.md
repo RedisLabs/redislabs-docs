@@ -14,8 +14,7 @@ steps below.
 of your subscription or the subscription plan size, whichever comes
 first.
 
-1. Select **Databases** from the top right menu in Redis Enterprise
-    Cloud.
+1. Select **Databases** from the top right menu in Redis Cloud Essentials.
 1. Click on the plus sign to add a database to a subscription.
 1. Enter a **Database Name** that is up to 40 characters long.
     (Required)
@@ -42,8 +41,7 @@ first.
     Security Groups that you would like to use.
 1. If you have contacted support to enable SSL/TLS certificates, you
     can add SSL Client Authentication to your database here. For
-    specific information on this process, see [Securing Redis Enterprise
-    Cloud Connections with
+    specific information on this process, see [Securing Redis Cloud Essentials Connections with
     SSL/TLS]({{< relref "/rc/securing-redis-cloud-connections.md" >}}).
 1. For more advanced options, click on **More Options**.
 1. Choose a [Data Eviction
@@ -51,8 +49,7 @@ first.
     or accept the default.
 1. If you would like periodic backups of your database, enter the path
     to storage here. For specific information visit [Configuring
-    Database Backups for Redis Enterprise
-    Cloud]({{< relref "/rc/administration/configure/backups.md" >}}).
+    Database Backups for Redis Cloud Essentials]({{< relref "/rc/administration/configure/backups.md" >}}).
 1. You can add **Alert Settings** to your database so that you and your
     team can be alerted when thresholds are passed.
 1. Click **Activate**.
