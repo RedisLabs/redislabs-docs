@@ -99,7 +99,7 @@ You must configure the mount point for each node that you want to backup.
     For example:
 
     ```src
-    sudo mount fs.efs.us-east-1.amazonaws.com:/ /home/efs
+    sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
     ```
 
 1. In the path for the backup location, enter the mount point.
