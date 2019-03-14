@@ -16,8 +16,8 @@ The roles and permissions available in RS are:
   <tr>
     <th></th>
     <th colspan="5">Database</th>
-    <th colspan="3">Nodes</th>
-    <th colspan="5">Cluster</th>
+    <th colspan="2">Nodes</th>
+    <th colspan="4">Cluster</th>
   </tr>
   <tr>
     <td align="center"></td>
@@ -117,23 +117,23 @@ To add a user to the cluster:
     - external - Authenticates with an external LDAP server
 
     {{% expand "How do I create an external user?" %}}
-    To have a user authenticate with LDAP, you must have [LDAP integration
-    enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}). 
-    Then, create a new **external** user in the web UI.
+To have a user authenticate with LDAP, you must have [LDAP integration
+enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}). 
+Then, create a new **external** user in the web UI.
 
-    You can also create an external with the REST API with this syntax:
+You can also create an external with the REST API with this syntax:
 
-    ```src
-    curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
-    ```
+```src
+curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
+```
 
-    For the user role, enter either:
+For the user role, enter either:
 
-    - `db_viewer` - DB viewer
-    - `db_member` - DB member
-    - `cluster_viewer` - Cluster viewer
-    - `cluster_member` - Cluster member
-    - `admin` - Admin
+- `db_viewer` - DB viewer
+- `db_member` - DB member
+- `cluster_viewer` - Cluster viewer
+- `cluster_member` - Cluster member
+- `admin` - Admin
     {{% /expand %}}
 
 1. For the email alerts, click **Edit** and select the alerts that the user receives.
