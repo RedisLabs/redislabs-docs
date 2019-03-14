@@ -20,9 +20,10 @@ want to see Reads/sec on the left and Writes/sec on the right, click on
 the left side of the Read/sec mini-graph and the right side of the
 Writes/sec mini-graph.
 
-For a quick tour of what you get, watch this video.
+<!-- Video out of date
+For a quick tour of what you get, watch this video. -->
 
-{{< youtube GYpVYilv5u4 >}}
+<!-- {{< youtube GYpVYilv5u4 >}} -->
 
 ## Definition of Each Metric
 
