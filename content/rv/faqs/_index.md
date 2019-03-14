@@ -71,7 +71,7 @@ Redis Cloud Pro features the following access control mechanisms:
 - Source IP/Subnet ACL
 - Security Group ACL
 
-If you are using Redis Cloud Pro on your own AWS infrastructure and deploying it on the same VPC as your application servers, we use a special set of AWS security permissions to limit access to only the instances required for running the RCP clusters. When deploying Redis Cloud Pro on a different VPC from your application servers or under a different AWS account of yours, all the operational aspects of managing Redis Cloud Pro are completely isolated from your application.
+If you are using Redis Cloud Pro on your own AWS infrastructure and deploying it on the same VPC as your application servers, we use a special set of AWS security permissions to limit access to only the instances required for running the Redis Cloud Pro clusters. When deploying Redis Cloud Pro on a different VPC from your application servers or under a different AWS account of yours, all the operational aspects of managing Redis Cloud Pro are completely isolated from your application.
 {{% /expand%}}
 
 <!-- Also in RC -->
