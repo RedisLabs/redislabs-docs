@@ -35,12 +35,12 @@ If there is not enough space in the backup location, the backup fails.
 
 To schedule periodic backups for a database:
 
-1. Go to: **databases**
-1. Click on the database that you want to configure backups for.
+1. In **databases**, click on the database that you want to configure backups for.
 1. In **configuration**, select **Periodic backup**.
 1. Select an interval for the backups to run either every **1**, **4**, **12** or **24** hours.
 1. Select one of the available storage types.
 1. Enter the details for the selected storage type.
+1. To save the database configuration, click **Update**.
 
 ### FTP server
 
