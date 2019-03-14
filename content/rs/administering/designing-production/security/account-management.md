@@ -142,7 +142,7 @@ For the user role, enter either:
       the user. You can either select all databases, or you can select **Customize** and select the
       individual databases to send alerts for.
       All databases includes existing and future databases.
-    - Receive cluster alerts - The alerts that are enabled for the cluster are send to the user.
+    - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 
     {{% expand "How do I select email alerts?" %}}![Select email alerts](/images/rs/add-user-email-alerts.gif "Select email alerts"){{% /expand %}}
 
