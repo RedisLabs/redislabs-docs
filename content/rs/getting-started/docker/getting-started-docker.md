@@ -46,7 +46,7 @@ To pull and start the Redis Enterprise Software Docker container, run this
 Note: On Windows, make sure Docker is configured to run Linux-based containers.
 
 ```src
-$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis
+$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
 The Docker container with RS runs on your localhost with port 8443 open for HTTPS 
