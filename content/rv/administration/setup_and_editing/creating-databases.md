@@ -84,6 +84,7 @@ When activation is completed, creates the database. During this process you can 
 - An orange spinning icon on the top right to turn to a green checkmark
 - The **Endpoint** of the new database
 
-Here is a video tutorial that shows this process:
+<!-- Video out of date
+Here is a video tutorial that shows this process: -->
 
-{{< youtube Z8KgtMsyNx0 >}}
+<!-- {{< youtube Z8KgtMsyNx0 >}} -->
