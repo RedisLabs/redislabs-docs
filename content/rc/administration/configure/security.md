@@ -9,9 +9,7 @@ The security controls for your database are:
 
 ## Access Control by Source IP/Subnet
 
-The number of source IP rules that you can add depends on the Redis
-Enterprise Cloud plan that you purchased. For example, the 1GB plan
-allows up to 8 source IP authentication rules. These rules can contain
+The number of source IP rules that you can add depends on the Redis Cloud Essentials plan that you purchased. For example, the 1GB plan allows up to 8 source IP authentication rules. These rules can contain
 either IP or [CIDR
 notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
 
