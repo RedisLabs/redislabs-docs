@@ -96,7 +96,8 @@ crossed.
 
 Use as many database connections as you want.
 
-If you'd rather watch an overview of Redis Cloud Pro, watch the below
-video:
+<!-- Video out of date -->
+<!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
+video: -->
 
-{{< youtube_start y3tvS2kCl5I 76 >}}
+<!-- {{< youtube_start y3tvS2kCl5I 76 >}} -->
