@@ -8,8 +8,7 @@ categories: ["RC Essentials"]
 Redis Cloud Essentials is a managed, serverless,
 Database-as-a-Service (DBaaS) offering.
 
-It is based on the proven Redis
-Enterprise technology. With Redis Cloud Essentials, developers can select a supported cloud
+It is based on the proven Redis Enterprise technology. With Redis Cloud Essentials, developers can select a supported cloud
 provider such as Amazon Web Services (AWS), Google Cloud, Microsoft
 Azure or IBM SoftLayer and create enterprise-grade Redis databases that
 are fully compatible with the open-source Redis clients.
@@ -35,7 +34,7 @@ provides true high availability for Redis deployments, safeguarding
 against all possible failure scenarios by utilizing efficient diskless
 in-memory replication across racks, zones, data-centers and regions,
 instant automatic failover, persistence (AOF or snapshot), backups and
-disaster recovery. Redis Enterprise Cloud has demonstrated resilience
+disaster recovery. Redis Cloud Essentials has demonstrated resilience
 over many years, providing hundreds of thousands of databases with
 continuous operation while withstanding hundreds of cloud outages, all
 without data loss or interruption of service.
@@ -56,8 +55,7 @@ page. Enjoy our 24/7 support via online helpdesk or phone.
 
 ### Encryption and authentication
 
-Meet your security goals without compromising performance using Redis
-Enterprise Cloud's fully encrypted SSL connections, and apply
+Meet your security goals without compromising performance using Redis Cloud Essentials' fully encrypted SSL connections, and apply
 multi-level authentication mechanisms such as:
 
 - IP whitelist
