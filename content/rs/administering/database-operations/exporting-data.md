@@ -17,9 +17,8 @@ You can export a database to these locations:
 - Local mount point
 - OpenStack Swift (Object Storage)
 
-Other cloud storage options, such as Azure Geo-Redundant Storage,
-SoftLayer Object Storage and Google Cloud Storage are planned for a
-future release.
+Other cloud storage options, including Azure Geo-Redundant Storage and Google Cloud Storage,
+are planned for a future release.
 
 The backup process creates compressed (.gz) RDB files that you can [import into a database]
 ({{< relref "/rs/administering/database-operations/importing-data.md" >}}).
@@ -87,17 +86,19 @@ Before you configure backups to OpenStack Swift, make sure that you have:
 
 ### Local mount point
 
-Before you configure backups to an local mount point server, make sure that the redislabs user has permissions to write to the mount point.
+To backup to a local mount point for a node:
 
-To backup to a local mount point:
+{{% note %}}
+You must configure the mount point for each node that you want to backup.
+{{% /note %}}
 
-1. Connect to the terminal of the RS server.
+1. Connect to the terminal of the RS server that the node is running on.
 1. Mount the remote storage to a local mount point.
 
     For example:
 
     ```src
-    sudo mount fs.efs.us-east-1.amazonaws.com:/ /home/efs
+    sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
     ```
 
 1. In the path for the backup location, enter the mount point.
