@@ -31,9 +31,7 @@ multiple slots. This division of the key space, known as sharding, is
 achieved by hashing the keys' names, or parts of these (key hash tags),
 in order to obtain the slot in which a key should reside.
 
-Even while employing multiple Redis processes, the use of a Redis
-Enterprise Cloud cluster is nearly transparent to the application that
-uses it. The cluster is accessible via a single endpoint that
+Even while employing multiple Redis processes, the use of a Redis Cloud Essentials cluster is nearly transparent to the application that uses it. The cluster is accessible via a single endpoint that
 automatically routes all operations to the relevant shards, without the
 complexity of a cluster-aware Redis client. This allows applications to
 benefit from using the cluster without performing any code changes, even
