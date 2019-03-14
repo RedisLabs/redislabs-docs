@@ -87,9 +87,13 @@ Before you configure backups to OpenStack Swift, make sure that you have:
 
 ### Local mount point
 
-To backup to a local mount point:
+To backup to a local mount point for a node:
 
-1. Connect to the terminal of the RS server.
+{{% note %}}
+You must configure the mount point for each node that you want to backup.
+{{% /note %}}
+
+1. Connect to the terminal of the RS server that the node is running on.
 1. Mount the remote storage to a local mount point.
 
     For example:
