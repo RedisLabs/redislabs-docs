@@ -516,6 +516,10 @@ section a {
   margin: 0 auto;
   padding: 20px 0 30px 0;
   font-size: 14px;
+  color: #a2a8a8;
+}
+.btm_footer ul .source-org {
+  text-transform: uppercase;
 }
 .main-content-bottom {
   margin-top: 90px;
