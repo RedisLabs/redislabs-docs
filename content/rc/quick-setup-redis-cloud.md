@@ -19,8 +19,7 @@ The steps here are super simple and go as follows:
 If you do not already have one, [sign up for a Redis Enterprise Cloud
 account](https://app.redislabs.com/#/sign-up/cloud?).
 
-If you already have an account, [sign in to Redis Enterprise
-Cloud](https://app.redislabs.com/#/login?).
+If you already have an account, [sign in to Redis Cloud Essentials](https://app.redislabs.com/#/login?).
 
 ## Step 2: Create a new subscription
 
@@ -147,8 +146,7 @@ and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Enterprise
-    Cloud]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
+1. [Data Persistence with Redis Cloud Essentials]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
 1. [Securing Your Redis Cloud Essentials
     Database]({{< relref "/rc/administration/configure/security.md" >}}).
 1. [Creating a
