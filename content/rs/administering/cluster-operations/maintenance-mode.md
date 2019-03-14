@@ -5,8 +5,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When you need to do hardware or operating system maintenance on an RS server,
-it is important that you move all of the shards on that server to another node to avoid the risk of data loss.
+When you need to do hardware or operating system maintenance on a server that hosts an RS node,
+it is important that you move all of the shards on that node to another node to avoid the risk of data loss.
 You can use maintenance mode to handle this process simply and efficiently.
 
 ## Turning Maintenance Mode ON
@@ -15,7 +15,7 @@ When you turn maintenance mode on, RS:
 
 1. Checks whether shutdown of the node causes quorum loss. If so, maintenance mode is not turned on.
 1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on node at that time.
-1. Marks the node as a quorum node to prevent shards from migrating into the node.
+1. Marks the node as a quorum node to prevent shards and endpoints from migrating into the node.
 1. Migrates shards to other nodes and binds endpoints to other nodes.
 
 {{% note %}}
@@ -29,7 +29,40 @@ To turn maintenance mode on, on one of the nodes in the cluster run:
 $ rladmin node <node_id> maintenance_mode on
 ```
 
-After all of the shards are moved from the node, it is safe to do maintenance on the server.
+After all of the shards and endpoints are moved from the node, it is safe to do maintenance on the server if there are enough nodes up to maintain the quorum.
+
+### Cluster status with maintentance
+
+For example, for when you have a 3 node cluster with 4 shards, the status of the cluster is:
+
+```src
+redislabs@rp1_node1:/opt$ rladmin status
+CLUSTER NODES:
+NODE:ID   ROLE     ADDRESS       EXTERNAL_ADDRESS     HOSTNAME    SHARDS
+*node:1   master   172.17.0.2                         rp1_node1   2/100
+node:2    slave    172.17.0.4                         rp3_node1   2/100
+node:3    slave    172.17.0.3                         rp2_node1   0/100
+```
+
+When you turn on maintenance mode for node 2, RS takes a snapshot and then moves the shards and endpoints from node 2 to another node. In our example, they are moved to node 3.
+
+The node in maintenance mode shows that 0/0 shards are on the node because no shards can be accepted on node 2. A node in quorum_only mode also shows 0/0 shards.
+
+```src
+redislabs@rp1_node1:/opt$ rladmin node 2 maintenance_mode on
+Performing maintenance_on action on node:2: 0%
+created snapshot NodeSnapshot<name=maintenance_mode_2019-03-14_09-50-59,time=None,node_uid=2>
+
+node:2 will not accept any more shards
+Performing maintenance_on action on node:2: 100%
+OK
+redislabs@rp1_node1:/opt$ rladmin status
+CLUSTER NODES:
+NODE:ID   ROLE     ADDRESS       EXTERNAL_ADDRESS     HOSTNAME    SHARDS
+*node:1   master   172.17.0.2                         rp1_node1   2/100
+node:2    slave    172.17.0.4                         rp3_node1   0/0  
+node:3    slave    172.17.0.3                         rp2_node1   2/100
+```
 
 ### Prevent slave shard migration
 
@@ -38,7 +71,7 @@ you can turn maintenance mode on without migrating the slave shards.
 
 {{% warning %}}
 If you prevent slave shard migration, the slave shards are kept on the node during maintenance.
-If the node fails, the master shards will not have slave shards for data redundancy.
+If the maintenance node fails, the master shards will not have slave shards for data redundancy.
 {{% /warning %}}
 
 To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
