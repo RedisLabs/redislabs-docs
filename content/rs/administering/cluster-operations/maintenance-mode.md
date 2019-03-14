@@ -107,6 +107,11 @@ $ rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
 ```
 
 We recommend that you use the earliest snapshot available because it contains the original state of the node.
+You can see the list of available snapshots with the command:
+
+```src
+$ rladmin node <node_id> snapshot list
+```
 
 ### Skipping shard restoration
 
