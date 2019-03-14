@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/account-management/
 ---
-To give each user only the permissions that they need for their work with the cluster,
-RS lets you assign a role to each user.
-You can manage users and roles in **settings** > **team**, or with the REST API.
+To give each team member only the permissions that they need for their work with the cluster,
+RS lets you assign a role to each team member.
+You can manage team members and roles in **settings** > **team**, or with the REST API.
 
 The roles and permissions available in RS are:
 
@@ -25,13 +25,11 @@ The roles and permissions available in RS are:
     <td align="center">View<br>config</td>
     <td align="center">View<br>redis<br>password</td>
     <td align="center">Edit config</td>
-    <td align="center">Clear<br>slow log</td>
+    <td align="center">Reset<br>slow log</td>
     <td class="cat-boundary" align="center">View metrics</td>
     <td align="center">View<br>config</td>
-    <td align="center">Edit<br>config</td>
     <td class="cat-boundary" align="center">View metrics</td>
     <td align="center">View<br>config</td>
-    <td align="center">Edit<br>config</td>
     <td align="center">View logs</td>
     <td align="center">View<br>and edit<br>settings</td>
   </tr>
@@ -44,9 +42,7 @@ The roles and permissions available in RS are:
     <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"></td>
     <td align="center"></td>
-    <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"></td>
-    <td align="center"></td>
     <td align="center"></td>
     <td align="center"></td>
     <td align="center"></td>
@@ -60,9 +56,7 @@ The roles and permissions available in RS are:
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td class="cat-boundary" align="center" align="center"></td>
     <td align="center"></td>
-    <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"></td>
-    <td align="center"></td>
     <td align="center"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
@@ -76,10 +70,8 @@ The roles and permissions available in RS are:
     <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
-    <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
-    <td align="center"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
   </tr>
@@ -92,10 +84,8 @@ The roles and permissions available in RS are:
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
-    <td align="center"></td>
     <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
-    <td align="center"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"></td>
   </tr>
@@ -108,9 +98,7 @@ The roles and permissions available in RS are:
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td class="cat-boundary" align="center" align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
-    <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
     <td align="center"><img src="../../../../images/icon_logo/icon_check_black.png#no-click" alt="V"></td>
@@ -128,14 +116,32 @@ To add a user to the cluster:
     - internal - Authenticates with RS
     - external - Authenticates with an external LDAP server
 
-      To have a user authenticate with LDAP, you must first [enable LDAP integration]({{< relref
-      "/rs/administering/security/ldap-integration.md" >}}).
+    {{% expand "How do I create an external user?" %}}
+    To have a user authenticate with LDAP, you must have [LDAP integration
+    enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}). 
+    Then, create a new **external** user in the web UI.
+
+    You can also create an external with the REST API with this syntax:
+
+    ```src
+    curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
+    ```
+
+    For the user role, enter either:
+
+    - `db_viewer` - DB viewer
+    - `db_member` - DB member
+    - `cluster_viewer` - Cluster viewer
+    - `cluster_member` - Cluster member
+    - `admin` - Admin
+    {{% /expand %}}
 
 1. For the email alerts, click **Edit** and select the alerts that the user receives.
     You can select:
     - Receive alerts for databases - The alerts that are enabled for the selected databases are sent to
       the user. You can either select all databases, or you can select **Customize** and select the
       individual databases to send alerts for.
+      All databases includes existing and future databases.
     - Receive cluster alerts - The alerts that are enabled for the cluster are send to the user.
 
     {{% expand "Show me how..." %}}![Select email alerts](/images/rs/add-user-email-alerts.gif "Select email alerts"){{% /expand %}}
@@ -146,23 +152,3 @@ To add a user to the cluster:
 To edit the name, password, role or email alerts of a user, hover over the user and click ![Edit]
 (/images/rv/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
 delete the user and re-add it.
-
-## Creating users for use with LDAP authentication
-
-To have a user authenticate with LDAP, you must have [LDAP integration
-enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}).
-Then, create a new **external** user in the web UI.
-
-You can also create an external with the REST API with this syntax:
-
-```src
-curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
-```
-
-For the user role, enter either:
-
-- admin
-- cluster_member
-- db_viewer
-- db_member
-- cluster_viewer
