@@ -117,8 +117,8 @@ groups on your application account and Redis Cloud Pro account.
 For more information and pricing, please go
 [here](https://redislabs.com/pricing/redis-cloud-private/).
 
-If you'd rather watch an overview of Redis Cloud Pro, watch the below
-video:
+<!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
+video: -->
 
-This video is out of date- decide if to leave it on the documentation or remove it.
-{{< youtube_start y3tvS2kCl5I 76 >}}
+<!-- This video is out of date
+{{< youtube_start y3tvS2kCl5I 76 >}} -->
