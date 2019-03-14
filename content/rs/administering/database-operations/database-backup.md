@@ -107,7 +107,7 @@ You must configure the mount point for each node that you want to backup.
     For example:
 
     ```src
-    `/home/efs`
+    `/mnt/Public`
     ```
 
 ### OpenStack Swift
