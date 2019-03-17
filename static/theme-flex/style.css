@@ -516,6 +516,10 @@ section a {
   margin: 0 auto;
   padding: 20px 0 30px 0;
   font-size: 14px;
+  color: #a2a8a8;
+}
+.btm_footer ul .source-org {
+  text-transform: uppercase;
 }
 .main-content-bottom {
   margin-top: 90px;
@@ -1535,6 +1539,12 @@ nav.main_navigation {
   /* display: flex; */
   /* background: #28323f; */
   width: 100%;
+}
+nav.main_navigation ul.no-bullet li {
+  line-height: 1.6rem;
+}
+nav.modal_navigation ul.no-bullet li {
+  line-height: 1.1rem;
 }
 footer #navModal {
   /* width: 100%; */
