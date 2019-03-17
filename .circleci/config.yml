@@ -110,10 +110,18 @@ jobs:
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
                 command: aws configure set default.s3.signature_version s3v4
-            # Deploy to the S3 bucket corresponding to the current branch
+            # Declare target location for baseURL and deployment location and deploy to the S3 bucket corresponding to the current branch
             - run:
                 name: Deploy to S3
-                command: aws s3 sync public s3://docs.redislabs.com/${CIRCLE_BRANCH} --delete --acl public-read --size-only
+                command: |
+                    #set aws S3 target location to branch_name
+                    export LOCATION=${CIRCLE_BRANCH}
+                    # Delete contents of staging/branch_name
+                    aws s3 rm s3://docs.redislabs.com/$LOCATION/ --recursive
+                    # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0
+                    # Deploy all other files to the S3 bucket corresponding to the current branch
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --exclude "*.html" --exclude "*.css"
 
 workflows:
   version: 2
