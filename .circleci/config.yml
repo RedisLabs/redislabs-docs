@@ -77,7 +77,7 @@ jobs:
                     else
                         export LOCATION=staging/${CIRCLE_BRANCH} ;
                     fi
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read # --size-only
 
     # Deploy for -build to push to /{version} without -build and rs only
     deploy-prod:
@@ -96,7 +96,7 @@ jobs:
                 name: Deploy to S3
                 command:  |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --size-only --exclude "*rv/*" --exclude "*rc/*"
+                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --exclude "*rv/*" --exclude "*rc/*" # --size-only
 
     # Deploy for -build to push to /{version} without -build
     deploy-latest:
@@ -117,9 +117,9 @@ jobs:
                     #set aws S3 target location to branch_name
                     export LOCATION=${CIRCLE_BRANCH}
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0 # --size-only
                     # Deploy all other files to the S3 bucket corresponding to the current branch
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --size-only --exclude "*.html" --exclude "*.css"
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" # --size-only
 
 workflows:
   version: 2
