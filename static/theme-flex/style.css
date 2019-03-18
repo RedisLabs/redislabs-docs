@@ -2606,7 +2606,7 @@ i.icon-icons_plus, i.icon-icons_minus {
 
 .main-content ol > li > ol > li > ol > li > ol  {list-style-type: lower-alpha;}
 
-/* No click / link on small icons */
+/* no-click turns off border and click event on small icons */
 a[href*="#no-click"], img[src*="#no-click"] {
   border: none !important;
   cursor: default;
