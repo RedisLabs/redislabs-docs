@@ -207,14 +207,21 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes.
 
 Syntax for embedding a markdown partial:
+
 ```
 {{ </* embed-md "/partials/rbac-table.md"  */>}}
 ```
 
+{{< embed-md "/partials/rbac-table.md" >}}
+
 Syntax for embedding an HTML partial:
+
 ```
 {{ </* embed-html "/partials/sample-table.html" */>}}
 ```
+
+{{< embed-html "/partials/sample-table.html" >}}
+
 ## Embed Video
 
 To embed a video, use the `video` shortcode with the location of the video and a video title.
