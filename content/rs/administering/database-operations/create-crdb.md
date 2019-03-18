@@ -42,44 +42,36 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
     By default, the address is: `https://<RS_address>:8443`
 
+1. In **databases**, click ![Add](/images/rs/icon_add.png#no-click "Add").
+
+    If you do not have any databases on the node, you are prompted to create a database.
+
+1. In the **Deployment** box, select **Geo-Distributed**.
+
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
-1. Go to the 
-There are some key differences in the creation process between CRDBs and
-standard Redis database creation.
+1. Enter the name of the new CRDB and select from the options:
 
-- Intra-cluster Replication is highly recommended for each Participating Cluster in production use. The intercluster replication process, called syncer, is most efficient when it reads from slaves and not masters.
-- The eviction policy can only be set to noeviction for CRDBs.
-- In [Participating Clusters](#participating-clusters) you must define
-    the clusters that will host member CRDBs and the admin user account
-    to connect to each cluster.
-
-    Note: Make sure you add the cluster you are currently on as a
-    participating cluster.
-
-- In the **Database clustering** option, you can either:
+    - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
+        The intercluster synchronization is most efficient when it reads from slave shards.
+    - [Participating Clusters](#participating-clusters) - You must specify the URL of the clusters that you want to
+        host CRDB instances and the admin user account to connect to each cluster.
+        - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
+        - For each cluster, enter the URL for the cluster (`https://<cluster_URL>:8080`),
+            and enter the credentials for the service account that you created.
+    - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
-    - Make sure the Database clustering is enabled and select the number of shards 
-    that you want to have in the database. When database clustering is enabled, 
-    databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). 
-    You can increase the number of shards in the database at any time. 
-    - Clear the **Database clustering** option to use only one shard and so 
-    that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-    limitations do not apply.
-    
-    Note: You cannot enable or disable database clustering after the CRDB is created.
+        - Make sure the Database clustering is enabled and select the number of shards 
+        that you want to have in the database. When database clustering is enabled, 
+        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+        You can increase the number of shards in the database at any time. 
+        - If you must use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        without the limitations, clear the **Database clustering** option to use only one shard.
 
-## Participating Clusters
-
-A CRDB is a global database made up of separate databases spanning
-multiple clusters, when creating a new CRDB you must configure which
-clusters are to host members of the CRDB. On the **Participating
-Clusters** list, add two or more clusters using the **+** icon. For each
-cluster, use the service account and password created earlier for the
-admin account. Make sure to use port 8080 for this configuration, then
-click Activate to create your new Conflict-Free Replicated Database.
-
-![crdb-activate](/images/rs/crdb-activate.png)
+    {{% note %}}
+- The eviction policy can only be set to **noeviction** for CRDBs.
+- You cannot enable or disable database clustering after the CRDB is created.
+    {{% /note %}}
 
 **Causal Consistency**
 
