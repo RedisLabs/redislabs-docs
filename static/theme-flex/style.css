@@ -2662,7 +2662,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
 
 @supports (-ms-ime-align: auto) {
   /* MS Edge styles */
-  article section.page .highlight {
+  article section.page .main-content .highlight {
     position: relative;    
   }
   article section.page pre {
