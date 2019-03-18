@@ -2629,36 +2629,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
 .autocomplete-suggestion > .context {
   display: block !important;
 }
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* IE10+ CSS styles go here */
-  header .logo img {
-    width: 163px;
-  }
-  article > aside .menu {
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-  }
-  article > aside .menu > .dd-item {
-    order: 2;
-  }
-  article > aside .menu > .dd-item.parent {
-    order: 1;
-    flex: 1 0 auto;
-  }
-  article section.page .highlight {
-    display: inline-block;    
-    max-width: 800px;
-    position: relative;
-  }
-  article section.page pre {
-    display: -ms-grid;
-    display: grid;
-    max-width: 700px;
-    width: 700px;    
-    position: static;
-  }
-}
 
 @supports (-ms-ime-align: auto) {
   /* MS Edge styles */
