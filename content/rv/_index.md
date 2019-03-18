@@ -7,7 +7,7 @@ categories: ["RC Pro"]
 ---
 
 Redis Cloud Pro delivers a cost-effective, fully managed
-Database-as-a-Service (DBaaS) offering hosted on your Cloud account.
+Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
 
 Redis Cloud Pro is based on the proven Redis Enterprise technology, serving thousands of
 customers of our [Redis Enterprise
