@@ -1679,6 +1679,8 @@ ul.no-bullet li {
 .nav-column a {
   color: #a2a8a8;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 .nav-column h6 {
