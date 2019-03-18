@@ -119,9 +119,9 @@ To make an image appear on the next line in a list:
 ## Expanding Blocks
 
 ```md
-{{%expand "How do you make expanding blocks?" %}}
+{{%/* expand "How do you make expanding blocks?" */%}}
 This is how you make expanding blocks.
-{{% /expand%}}
+{{%/* /expand */%}}
 ```
 
 {{%expand "How do you make expanding blocks?" %}}
@@ -133,22 +133,22 @@ This is how you make expanding blocks.
 ### Defining an excerpt
 
 ```
-{{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+{{%/* excerpt */%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
 to an RS proxy on the node hosting the master shard for the data being
-operated on.{{% /excerpt%}}
+operated on.{{%/* /excerpt */%}}
 ```
 
-{{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+{{% excerpt %}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
 to an RS proxy on the node hosting the master shard for the data being
-operated on.{{% /excerpt%}}
+operated on.{{% /excerpt %}}
 
 ### Including an excerpt
 
-``` {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}} ```
+`{{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}`
 
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 
@@ -206,7 +206,7 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 To embed a video, use the `video` shortcode with the location of the video and a video title.
 
-```{{< video "/images/video/location.mp4" "Video title" >}}```
+`{{</* video "/images/<path>/<video>.mp4" "Video title" */>}}`
 
 {{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
 
