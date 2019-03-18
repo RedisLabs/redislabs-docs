@@ -4,6 +4,8 @@ description: Syntax instructions for markdown formatting
 favorite_food: ice cream
 draft: false
 ---
+Here you can find examples of style and formatting elements that you can use in your pages.
+
 ## Tabbed paragraphs
 
 A tabbed paragraph create scrolling code blocks like this:
@@ -117,9 +119,9 @@ To make an image appear on the next line in a list:
 ## Expanding Blocks
 
 ```md
-{{%expand "How do you make expanding blocks?" %}}
+{{%/* expand "How do you make expanding blocks?" */%}}
 This is how you make expanding blocks.
-{{% /expand%}}
+{{%/* /expand */%}}
 ```
 
 {{%expand "How do you make expanding blocks?" %}}
@@ -131,22 +133,22 @@ This is how you make expanding blocks.
 ### Defining an excerpt
 
 ```
-{{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+{{%/* excerpt */%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
 to an RS proxy on the node hosting the master shard for the data being
-operated on.{{% /excerpt%}}
+operated on.{{%/* /excerpt */%}}
 ```
 
-{{%excerpt%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+{{% excerpt %}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
 to an RS proxy on the node hosting the master shard for the data being
-operated on.{{% /excerpt%}}
+operated on.{{% /excerpt %}}
 
 ### Including an excerpt
 
-``` {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}} ```
+`{{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}`
 
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 
@@ -199,3 +201,17 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 **Output**:
 
 {{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
+
+## Embed Video
+
+To embed a video, use the `video` shortcode with the location of the video and a video title.
+
+`{{</* video "/images/<path>/<video>.mp4" "Video title" */>}}`
+
+{{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
+
+## Other Shortcodes
+
+- [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
+- [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)
+- [Children](https://learn.netlify.com/en/shortcodes/children/)
