@@ -67,7 +67,7 @@ To share and import an RDB file that is stored in an AWS S3 bucket:
 1. Navigate to the file, select the RDB file and click **Permissions**.
 1. Add access permissions to our service:
     1. Click **Add account**.
-    1. In the Account field, enter: `service@garantiadata.com`
+    1. In the Account field, enter: `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
     1. In the Read object column, select **Yes**.
     1. Click **Save**.
 1. In the RC management console, go to the database that you want to import into.
