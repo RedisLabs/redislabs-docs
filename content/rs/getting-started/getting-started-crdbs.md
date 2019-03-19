@@ -121,7 +121,8 @@ http://localhost:8443 and cluster 2 at http://localhost:8445.
     local testing we created the scale-minimized deployment using two
     local clusters running on the same host.
 
-## Step 4: Connect to your member Redis CRDBs
+<!-- Also in getting-started-crdbs.md -->
+## Step 4: Test the Connection to your Member Redis CRDBs
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
