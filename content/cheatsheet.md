@@ -184,7 +184,7 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 **Syntax**:
 
-` {{%/* note */%}}Make sure you have enough disk space.{{%/* note */%}} `
+` {{%/* note */%}}Make sure you have enough disk space.{{%/* /note */%}} `
 
 **Output**:
 
@@ -196,7 +196,7 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 **Syntax**:
 
-` {{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* warning */%}} `
+` {{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* /warning */%}} `
 
 **Output**:
 
@@ -209,7 +209,7 @@ A partial markdown or HTML file can be included in other files using the **embed
 Syntax for embedding a markdown partial:
 
 ```
-{{ </* embed-md "sample.md"  */>}}
+{{</* embed-md "sample.md"  */>}}
 ```
 
 {{< embed-html "sample.md" >}}
@@ -217,7 +217,7 @@ Syntax for embedding a markdown partial:
 Syntax for embedding an HTML partial:
 
 ```
-{{ </* embed-html "sample-table.html" */>}}
+{{</* embed-html "sample-table.html" */>}}
 ```
 
 {{< embed-html "sample.html" >}}
