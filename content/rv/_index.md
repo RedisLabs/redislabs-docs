@@ -13,7 +13,7 @@ Redis Cloud Pro is based on the proven Redis Enterprise technology, serving thou
 customers of our [Redis Enterprise
 Cloud]({{< relref "/rc/_index.md" >}}) and [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) products. With Redis Cloud Pro,
-you can deploy quickly on Amazon Web Services (AWS) and create Redis
+you can deploy quickly on major public clouds and create Redis
 databases that are fully compatible with the open-source Redis databases
 contained on Redis Labs' cloud infrastrucure.
 
