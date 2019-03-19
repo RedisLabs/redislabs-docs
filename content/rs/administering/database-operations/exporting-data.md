@@ -41,6 +41,7 @@ To export data from a database:
     email notifications about the import process.
 1. Click **Export**.
 
+<!-- Also in database-backup.md -->
 ### FTP server
 
 Before you configure backups to an FTP server, make sure that:
@@ -51,10 +52,10 @@ Before you configure backups to an FTP server, make sure that:
 To backup to an FTP server, enter the FTP server location in the format:
 
 ```src
-ftp://user:password@host:port/path/
+ftp://user:password@host<:custom_port>/path/
 ```
 
-For example: `ftp://username:password@10.1.1.1:22/home/backups/
+For example: `ftp://username:password@10.1.1.1/home/backups/`
 
 ### SFTP server
 
@@ -65,32 +66,34 @@ Before you configure backups to an SFTP server, make sure that:
 - The RS server and SFTP server have the correct TLS certificates. You can select either:
     - **Use the cluster auto generated key** - Go to settings and copy the **Cluster SSH Public Key**
         to the SFTP server.
-    - **Use a custom key** - Generate a TLS key pair for the SFTP server and copy the private key to
-        the **SSH Private Key** box.
+    - **Use a custom key** - Generate a TLS key pair for the SFTP server, copy the private key to
+        the **SSH Private Key** box, and copy the public key to the SFTP server.
 
 To backup to an FTP server, enter the FTP server location in the format:
 
 ```src
-sftp://user:password@host:port/path/
+sftp://user:password@host:<:custom_port>/path/
 ```
 
-For example: `ftp://username:password@10.1.1.1:22/home/backups/
+For example: `sftp://username:password@10.1.1.1/home/backups/`
 
 ### Amazon S3
 
-Before you configure backups to OpenStack Swift, make sure that you have:
+Before you configure backups to Amazon S3, make sure that you have:
 
-- Path in the format: `s3://bucketname/foldername/`
+- Path in the format: `s3://bucketname/path/`
 - Access key ID
 - Secret access key
 
 ### Local mount point
 
-To backup to a local mount point for a node:
+Before you configure backups to a local mount point, make sure that:
 
-{{% note %}}
-You must configure the mount point for each node that you want to backup.
-{{% /note %}}
+- The node has network connectivity to the destination server of the mount point.
+- The `redislabs:redislabs` user has read and write priviledges on the local mount point
+and on the destination server.
+
+To backup to a local mount point for a node:
 
 1. Connect to the terminal of the RS server that the node is running on.
 1. Mount the remote storage to a local mount point.
@@ -106,7 +109,7 @@ You must configure the mount point for each node that you want to backup.
     For example:
 
     ```src
-    `/home/efs`
+    /mnt/Public
     ```
 
 ### OpenStack Swift

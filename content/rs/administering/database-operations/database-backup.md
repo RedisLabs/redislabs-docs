@@ -27,8 +27,9 @@ If you backup a database configured for database clustering,
 RS copies a backup file for each shard to the specified backup location.
 
 {{% note %}}
-Make sure that you have enough space available in your storage location.
+- Make sure that you have enough space available in your storage location.
 If there is not enough space in the backup location, the backup fails.
+- The backup configuration only applies to the node it is configured on.
 {{% /note %}}
 
 ## Scheduling Periodic Backups
@@ -42,6 +43,7 @@ To schedule periodic backups for a database:
 1. Enter the details for the selected storage type.
 1. To save the database configuration, click **Update**.
 
+<!-- Also in exporting-data.md -->
 ### FTP server
 
 Before you configure backups to an FTP server, make sure that:
@@ -94,10 +96,6 @@ Before you configure backups to a local mount point, make sure that:
 and on the destination server.
 
 To backup to a local mount point for a node:
-
-{{% note %}}
-You must configure the mount point for each node that you want to backup.
-{{% /note %}}
 
 1. Connect to the terminal of the RS server that the node is running on.
 1. Mount the remote storage to a local mount point.
