@@ -29,7 +29,7 @@ applications.
 
 ### Significant Cost Saving
 
-For datasets larger than 500GB, running Redis on Flash delivers high
+For datasets larger than 50GB, running Redis on Flash delivers high
 throughput with the same sub-millisecond latencies of Redis on RAM,
 while cutting the cost of your cloud resources by over 70%.
 
