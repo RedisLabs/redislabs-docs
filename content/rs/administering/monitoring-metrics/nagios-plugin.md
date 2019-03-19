@@ -21,11 +21,8 @@ alerts.
 The full list of alerts can be found in the plugin package itself (in
 "/rlec_obj/rlec_services.cfg" file, more details below).
 
-RS Nagios plugin support API password retrieval from Gnome keyring,
-KWallet, Windows credential vault, Mac OS X Keychain, if present, or
-otherwise Linux Secret Service compatible password store. With no
-keyring service available, the password is saved with base64 encoding,
-under the user home directory.
+RS Nagios plugin support API password retrieval from keyring compatible password store. With no
+keyring service available, the password is saved with base64 encoding.
 
 ## Configuring the Nagios plugin
 
@@ -99,7 +96,7 @@ below.
 
 1. Under the "/etc" folder:
     1. "rlec_resource.cfg " ­ holds global variables definitions for
-        the user and password to use to connect to RS. You should update
+        the user and base64 password file location (if used instead of keyring) to use to connect to RS. You should update
         the variables to the relevant user and password for your
         deployment.
     1. "rlec_local " folder
