@@ -55,7 +55,7 @@ Enterprise VPC by following these steps:
                 the generated certificate.
             - Paste the certificate for your client.
             For more information, see [Securing Redis Client Connections]
-            ({{< relref "/rs/administering/security/client-connections.md" >}})
+            ({{< relref "/rs/administering/designing-production/security/client-connections.md" >}})
     1. Choose a **Data Eviction Policy** or accept the default. For more information,
         see [Data Eviction Policies]({{< relref "/rv/concepts/data-eviction-policies.md" >}}).
     1. Enable **Periodic Backups** and specify the [database backup]
