@@ -75,7 +75,7 @@ To backup to an FTP server, enter the FTP server location in the format:
 sftp://user:password@host:port/path/
 ```
 
-For example: `ftp://username:password@10.1.1.1:22/home/backups/
+For example: `sftp://username:password@10.1.1.1:22/home/backups/
 
 ### Amazon S3
 
