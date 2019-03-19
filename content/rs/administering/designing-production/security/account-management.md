@@ -118,7 +118,7 @@ To add a user to the cluster:
 
     {{% expand "How do I create an external user?" %}}
 To have a user authenticate with LDAP, you must have [LDAP integration
-enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}). 
+enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}). 
 Then, create a new **external** user in the web UI.
 
 You can also create an external with the REST API with this syntax:
