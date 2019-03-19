@@ -41,7 +41,7 @@ For a new subscription, you will need to provide the following:
     link to your application, therefore, please make sure that the CIDR
     you provide does not conflict with your application VPC CIDR.
 
-Once your selections are made, click **Continue** to finalize your
+Once your selections are made, click **Next** to finalize your
 subscription. 
 
 ## Step 3: Create the database definition
