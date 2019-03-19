@@ -11,12 +11,7 @@
       <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
  
       {{ $style := resources.Get "theme-flex/style.css"  | resources.Fingerprint }}
-      <link href="{{$style.RelPermalink}}" rel="stylesheet">     
-
-      {{ `<!--[if IE]>-->` | safeHTML }}
-            <link href="{{"theme-flex/ie-style.css" | relURL}}" rel="stylesheet">
-      {{ `<![endif]-->` | safeHTML }}
-
+      <link href="{{$style.RelPermalink}}" rel="stylesheet">
       <link href="{{"css/bootstrap.min.css" | relURL}}" rel="stylesheet">
       <link href="{{"css/foundation-icons.css" | relURL}}" rel="stylesheet">
       <script src="{{"theme-flex/modernizr-custom.js" | relURL}}"></script>
