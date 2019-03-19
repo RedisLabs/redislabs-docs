@@ -12,7 +12,7 @@ as follows:
 1. Create a new Redis Cloud Pro subscription
 1. Create a new database definition
 1. Connect to your database
-* If you are intereseted in running Redis Cloud Pro instances on your own AWS account, please contact Redis Labs Support team to enable this functionality. More information about running Redis Cloud Pro on you own AWS account can be found here.
+* If you are interested in running Redis Cloud Pro instances on your own AWS account, please contact Redis Labs [Support team](https://redislabs.com/company/support) to enable this functionality. More information about running Redis Cloud Pro on your own AWS account can be found [here](/rv/how-to/creating-cloud-account/).
 
 ## Step 1: Sign up for Redis Cloud Pro account
 
