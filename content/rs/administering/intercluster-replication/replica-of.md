@@ -200,29 +200,14 @@ communications between source and destination clusters utilizing TLS 1.2
 based encryption. To enable this encryption, proceed through the
 following steps:
 
-**ReplicaOf's Source Database:**
+{{%excerpt-include filename="rs/administering/designing-production/security/tls-configuration.md" %}}
 
-1. Edit and mark **SSL Authentication** for the source Database of the
-    ReplicaOf, and choose when SSL is required:
-   - **SSL for Replication Only **enforce SSL for the communication
-        between the source and the destination of the ReplicaOf
-   - **SSL for All Communications **enforce SSL for both- application
-        communication as well as ReplicaOf communication:
-        ![Replic-of
-        Encryption](/images/rs/Screen-Shot-2018-03-29-at-10.17.59-PM.png?width=1728&height=316)
-        Replic-of Encryption
-        1. From the *destination cluster*, copy the "Syncer Certificate"
-    (located under **settings**-\> **general**) and paste it as SSL
-    certificate for the source Database:
-    ![Replica-of Encryption -
-    certificate](/images/rs/Screen-Shot-2018-03-29-at-10.32.01-PM.png?width=1650&height=350)
-    Replica-of Encryption - certificate
-1. Save the certificate and **Update** the database changes.
+### Configuring TLS for Replica Of on the destination database
 
-**ReplicaOf's Destination Database:**
+To enable TLS for Replica Of in the destintation database:
 
 1. Edit the 'Replica of' section of the destination Database to point
-    the source Database and press the 'Enable SSL Authentication' icon:
+    the source Database and press the 'Enable TLS Authentication' icon:
     ![Replica-of
     Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png?width=1608&height=178)
     Replica-of Destination

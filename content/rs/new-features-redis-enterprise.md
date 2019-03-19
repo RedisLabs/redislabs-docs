@@ -77,4 +77,4 @@ accounts can be used for administering resources on the cluster via
 command line, Rest API, or Web UI.
 
 For more information see [LDAP
-Integration]({{< relref "/rs/administering/security/ldap-integration.md" >}}).
+Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
