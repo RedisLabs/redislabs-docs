@@ -52,6 +52,11 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
 1. Enter the name of the new CRDB and select from the options:
 
+    {{% note %}}
+- The eviction policy can only be set to **noeviction** for CRDBs.
+- You cannot enable or disable database clustering after the CRDB is created.
+    {{% /note %}}
+
     - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
         The intercluster synchronization is most efficient when it reads from slave shards.
     - [Participating Clusters](#participating-clusters) - You must specify the URL of the clusters that you want to
@@ -65,53 +70,129 @@ Every instance of a CRDB can receive write operations, and all operations are [s
         that you want to have in the database. When database clustering is enabled, 
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
         You can increase the number of shards in the database at any time. 
-        - If you must use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-        without the limitations, clear the **Database clustering** option to use only one shard.
+        - Clear the **Database clustering** option to use only one shard so that you 
+        can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        without the limitations.
+    - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
+        specific key is maintained across all CRDB instances. To enable Causal Consistency for an existing
+        CRDB, use the REST API.
+    - **SSL Authentication** - You can enable SSL for communications between
+        Participating Clusters. After you create the CRDB, you can enable SSL for the data
+        access operations from applications just like regular Redis Enterprise databases.
 
-    {{% note %}}
-- The eviction policy can only be set to **noeviction** for CRDBs.
-- You cannot enable or disable database clustering after the CRDB is created.
-    {{% /note %}}
+        SSL for data access operations is a local setting on each
+        cluster that only impacts the specific CRDB instance you are editing and
+        does not apply automatically to all CRDB instances.
 
-**Causal Consistency**
+<!-- Also in getting-started-crdbs.md -->
+## Test the Connection to your Member Redis CRDBs
 
-Causal Consistency in a CRDB guarantees that the order of operations on a 
-specific key is maintained across all CRDB instances. You can enable Causal
-Consistency during the CRDB creation process. If you have an existing
-CRDB and would like to enable Causal Consistency, use the
-REST API or the crdb-cli tool.
+With the Redis database created, you are ready to connect to your
+database to store data. You can use one of the following ways to test
+connectivity to your database:
 
-**Secure Authentication**
+- Connect with redis-cli, the built-in command-line tool
+- Connect with a _Hello World_ application written in Python
 
-When creating a new CRDB, you can enable TLS for the bi-directional
-replication established between all participating clusters. TLS mode for
-bidirectional replication is a global setting that applies to all
-replication traffic that is between all Participating Clusters. TLS
-Authentication is only available as an option at the time of creating
-CRDBs. It is not an option that can be updated later. If you have an
-existing CRDB and would like to use TLS, you need to create a new CRDB
-and migrate your data over.
+Remember we have two member CRDBs that are available for connections and
+concurrent reads and writes. The member CRDBs are using bi-directional
+replication to for the global CRDB.
 
-At creation time, TLS can only be enabled for communications between
-Participating Clusters. After creating the CRDB instances on each
-Participating Cluster, you can individually enable TLS also for the data
-access operations from applications just like regular Redis Enterprise
-databases.
-Enabling TLS for data access operation is a **local setting** on each
-cluster that only impacts the specific CRDB instance you are editing and
-is not a global setting for all CRDB instances.
+![CRDB Diagram](/images/rs/image3.png?width=930&height=543)
 
-![crdb-tls-config](/images/rs/crdb-tls-config.png "crdb-tls-config")
+### Connecting Using redis-cli
 
-Once activated, the Redis Enterprise Software cluster will authenticate
-and communicate with each of the listed Participating Clusters on your
-behalf via Rest API and the service account. RS will create a member
-database on each cluster, join it to the CRDB, and start replication.
-If you view any Participating Cluster individually, you should see the
-new database created as a member of the CRDB.
+redis-cli is a simple command-line tool to interact with redis database.
 
-## Step 4 - Test Read and Write
+1. To switch your context into the RS container of node 1 in cluster 1, run:
 
-If you would like to test connectivity and replication, see
-the [the CRDB Quick
-Start]({{< relref "/rs/getting-started/getting-started-crdbs.md#test-connectivity" >}}).
+    ```src
+    $ docker exec -it rp1_node1 bash
+    ```
+
+1. To use redis-cli on port 12000, run:
+
+    ```src
+    $ redis-cli -p 12000
+    ```
+
+1.  Store and retrieve a key in the database to test the connection with these 
+    commands:
+    
+    - `set key1 123`
+    - `get key1`
+
+    The output of the command looks like this:
+
+    ```src
+    127.0.0.1:12000> set key1 123
+    OK
+    127.0.0.1:12000> get key1
+    "123"
+    ```
+1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
+   RS container of node 1 in cluster 1.
+1. To see that the key replicated to cluster 2, repeat the steps to switch your 
+   context into the RS container of node 1 in cluster 2, run the redis-cli and 
+   retrieve key1.
+
+    The output of the commands looks like this:
+    ```src
+    $ docker exec -it rp2_node1 bash
+    $ redis-cli -p 12000
+    127.0.0.1:12000> get key1
+    "123"
+    ```
+
+### Connecting Using _Hello World_ Application in Python
+
+A simple python application running on the host machine can also connect
+to the database.
+
+Note: Before you continue, you must have python and 
+[redis-py](https://github.com/andymccurdy/redis-py#installation)
+(python library for connecting to Redis) configured on the host machine
+running the container.
+
+1. In the command-line terminal, create a new file called "redis_test.py"
+
+    ```src
+    $ vi redis_test.py
+    ```
+
+1. Paste this code into the "redis_test.py" file.
+
+    This application stores a value in key1 in cluster 1, gets that value from 
+    key1 in cluster 1, and gets the value from key1 in cluster 2.
+
+    ```py
+    import redis
+
+    rp1 = redis.StrictRedis(host='localhost', port=12000, db=0)
+    rp2 = redis.StrictRedis(host='localhost', port=12002, db=0)
+
+    print ("set key1 123 in cluster 1")
+    print (rp1.set('key1', '123'))
+    print ("get key1 cluster 1")
+    print (rp1.get('key1'))
+
+    print ("get key1 from cluster 2")
+    print (rp2.get('key1'))
+    ```
+
+1. To run the "redis_test.py" application, run:
+
+    ```src
+    $ python redis_test.py
+    ```
+
+    If the connection is successful, the output of the application looks like:
+
+    ```src
+    set key1 123 in cluster 1
+    True
+    get key1 cluster 1
+    b'123'
+    get key1 from cluster 2
+    b'123'
+    ```
