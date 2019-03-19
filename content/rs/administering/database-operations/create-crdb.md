@@ -101,27 +101,27 @@ Consistency during the CRDB creation process. If you have an existing
 CRDB and would like to enable Causal Consistency, use the
 REST API or the crdb-cli tool.
 
-**SSL Authentication**
+**Secure Authentication**
 
-When creating a new CRDB, you can enable SSL for the bi-directional
-replication established between all participating clusters. SSL mode for
+When creating a new CRDB, you can enable TLS for the bi-directional
+replication established between all participating clusters. TLS mode for
 bidirectional replication is a global setting that applies to all
-replication traffic that is between all Participating Clusters. SSL
+replication traffic that is between all Participating Clusters. TLS
 Authentication is only available as an option at the time of creating
 CRDBs. It is not an option that can be updated later. If you have an
-existing CRDB and would like to use SSL, you need to create a new CRDB
+existing CRDB and would like to use TLS, you need to create a new CRDB
 and migrate your data over.
 
-At creation time, SSL can only be enabled for communications between
+At creation time, TLS can only be enabled for communications between
 Participating Clusters. After creating the CRDB instances on each
-Participating Cluster, you can individually enable SSL also for the data
+Participating Cluster, you can individually enable TLS also for the data
 access operations from applications just like regular Redis Enterprise
 databases.
-Enabling SSL for data access operation is a **local setting** on each
+Enabling TLS for data access operation is a **local setting** on each
 cluster that only impacts the specific CRDB instance you are editing and
 is not a global setting for all CRDB instances.
 
-![crdb-ssl](/images/rs/crdb-ssl.png)
+![crdb-tls-config](/images/rs/crdb-tls-config.png "crdb-tls-config")
 
 Once activated, the Redis Enterprise Software cluster will authenticate
 and communicate with each of the listed Participating Clusters on your

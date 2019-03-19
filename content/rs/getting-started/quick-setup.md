@@ -79,7 +79,7 @@ Then click **Next** button.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
 
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
 certificate on the node, and proceed through the browser warning.
 
 ## Step 3: Create a Database

@@ -25,7 +25,7 @@ To enable receiving email alerts:
 1. Add the relevant users to the Team page, and make sure that the
     checkbox Email Alerts is selected (for additional details, refer to
     [Managing
-    users]({{< relref "/rs/administering/security/account-management.md" >}}).
+    users]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}).
 1. Configure the email server settings on the General page (for
     additional details, refer to [Managing general
     settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}}).
