@@ -63,7 +63,7 @@ email for the login and a password.
 
     ![image9](/images/rs/image9.png?width=1000&height=611)
 
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
     certificate on the node, and proceed through the browser warning.
 
 Repeat the same operations for cluster 2 with these differences:

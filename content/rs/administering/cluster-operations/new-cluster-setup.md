@@ -30,7 +30,7 @@ To create a cluster:
     installed RS on a machine with IP address 10.0.1.34, then navigate
     to https://10.0.1.34:8443.
 
-    **Note:** The RS management UI uses a self-signed SSL encryption.
+    **Note:** The RS management UI uses a self-signed SSL/TLS encryption.
     For additional details, refer to [Updating SSL
     certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 
@@ -83,7 +83,7 @@ To create a cluster:
 1. If you purchased a cluster key, use the **Cluster authentication**
     page to enter the key. Otherwise, you get the trial license by
     default. Read the product Terms and Conditions and click **Next.**
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
     certificate on the node, and proceed, and proceed through the browser warning.
 1. Use the **Set admin credentials** page to enter the credentials of
     the cluster administrator. These credentials are required in order

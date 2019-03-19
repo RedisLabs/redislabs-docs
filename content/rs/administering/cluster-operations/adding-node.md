@@ -19,7 +19,7 @@ After you install the first node, you can add more nodes to the cluster.
     the clocks first.
 
 - You must [update the DNS records]({{< relref
-    "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" 
+    "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md"
     >}}) each time a node is added or replaced.
 
 ## Adding a node to an existing Cluster

@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/designing-production/security/account-management/
 ---
 You can view and update the cluster users in the cluster **Settings > team** page.
 
@@ -46,7 +47,7 @@ the UI or through the users API.
 ## Creating users for use with LDAP authentication
 
 To have a user authenticate with LDAP, you must have [LDAP integration
-enabled]({{< relref "/rs/administering/security/ldap-integration.md" >}}),
+enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}),
 and then create a new user via the REST API call like this:
 
 ```src

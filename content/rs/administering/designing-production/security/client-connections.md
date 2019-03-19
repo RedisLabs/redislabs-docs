@@ -4,51 +4,43 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/designing-production/security/client-connections/
 ---
 If you configure it, Redis Enterprise Software (RS) can
 use industry-standard encryption to protect your data in transit between
-a Redis client and RS. This is commonly referred to as transport layer
-security (TLS) or secure socket layer (SSL) technology. While SSL is a
-common industry term, RS actually supports the more secure TLS standard,
-but you will see both names used interchangeably here and in RS. Just
-know that it is TLS. For more about TLS version info, please see the
-bottom of this page.
+a Redis client and RS. For this purpose, RS uses transport layer
+security (TLS) protocol, which is the more secure successor to SSL.
 
-To enable SSL/TLS you must configure the RS cluster nodes, the database,
+To enable TLS you must configure the RS cluster nodes, the database,
 and the client, as detailed below.
 
 ### Configuration of the RS nodes
 
 By default, each cluster node has a different set of self-signed
-certificates. These certificates can be replaced with your own
-certificate, preferably a certificate issued by an intermediate
-certificate authority (CA). For additional details, refer to [Updating
-SSL/TLS
-certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+certificates. These certificates can be [replaced with your own
+certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}),
+preferably a certificate issued by an intermediate certificate authority (CA).
 
 ### Configuration of the database
 
-To encrypt the connection to the database endpoint with SSL, enter the
-contents the client certificate
-to the **SSL client authentication** field.
+To encrypt the connection to the database endpoint with TLS, enter the
+contents the client certificate to the **TLS** field.
 
-**Note**: Once SSL/TLS encryption is enabled for the database endpoint,
-the database will not accept non-SSL connections.
+**Note**: Once TLS encryption is enabled for the database endpoint,
+the database will not accept TLS connections. TLS encryption can
+significantly impact database throughput and latency.
 
-**Note**: SSL/TLS encryption can significantly impact database
-throughput and latency.
-
-### Adding SSL/TLS CA signed certificates to the proxy
+### Adding TLS CA signed certificates to the proxy
 
 #### Background
 
-1. The proxy is responsible for terminating the SSL/TLS connection
+1. The proxy is responsible for terminating the TLS connection
 1. Server certificate and key are located on
     /etc/opt/redislabs:proxy_cert.pem - server certificate
     thatproxy_key.pem - server certificate key\*any update on these
     require a proxy restart
-1. Enabling of SSL/TLS is done via "ssl authentication" field in the
-    UI. You are required to add a client-side certificate as a SSL/TLS
+1. Enabling of TLS is done via "ssl authentication" field in the
+    UI. You are required to add a client-side certificate as a TLS
     connection is done via client certificate authentication (not just
     server side authentication).
 
@@ -62,7 +54,7 @@ throughput and latency.
     with the name "redislabs.com" the certificate should be for
     "redis-\*.redislabs.com".
 
-1. Add the SSL/TLS client certificates in the UI including CA
+1. Add the TLS client certificates in the UI including CA
     certificates and any intermediate certificates by chaining the
     certificate into one file (you can use a cat command to chain the
     certs).
@@ -73,12 +65,12 @@ throughput and latency.
 
 ### Client configuration
 
-To connect to a database configured with SSL/TLS encryption, either use
+To connect to a database configured with TLS encryption, either use
 one of the Redis clients that inherently support SSL encryption, or use
 any Redis client and create a secured tunnel between the client machine
 and the RS nodes.
 
-To learn which clients inherently support SSL/TLS, refer to this [blog
+To learn which clients inherently support TLS, refer to this [blog
 post](https://redislabs.com/blog/secure-redis-ssl-added-to-redsmin-and-clients).
 
 To create a secure tunnel between the client machine and the RS nodes,
@@ -99,7 +91,7 @@ When using a certificate issued by an intermediate certificate authority
 (CA) on the cluster nodes, make sure that the CA root certificate is
 installed on the client machines.
 
-#### Example how to secure client connection with SSL/TLS using stunnel
+#### Example how to secure client connection with TLS using stunnel
 
 The instructions below explain how to use stunnel for setting up a
 secure tunnel between a client machine and the RS nodes when the client
@@ -124,8 +116,8 @@ certificates, and a self-signed certificate on the client machine.
 3. Copy the RS nodes certificates from all nodes to the client machine.
     The certificates are saved in a file named proxy_cert.pem, which is
     stored in /etc/opt/redislabs in each node. For additional details,
-    refer to [Updating SSL/TLS
-    certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+    refer to [Updating TLS certificates]
+    ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 4. Rename the certificate files fetched from the RS nodes as
     certsvr.pem. For example: certsvr1.pem, certsvr2.pem.
 5. Create a single file for all of the server certificates on the
