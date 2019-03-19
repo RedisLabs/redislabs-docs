@@ -39,8 +39,7 @@ Achieve high availability for your Redis databases, with continuous
 operation, no human intervention and zero operational effort. Redis
 Labs' proven technology provides true high availability for Redis
 deployments, safeguarding against all possible failure scenarios by
-utilizing efficient diskless in-memory replication across racks, zones,
-datacenters, and regions; instant automatic failover; persistence (AOF
+utilizing efficient diskless in-memory replication across multiple availability zones and regions; instant automatic failover; persistence (AOF
 or snapshot); backups and disaster recovery.
 
 ### Predictable high performance
