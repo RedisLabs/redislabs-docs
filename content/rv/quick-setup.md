@@ -36,7 +36,7 @@ For a new subscription, you will need to provide the following:
 1. Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
-    that you would like Redis Cloud Pro to use. For a standard deployment, you can
+    that you would like Redis Cloud Pro to use for this subscription. For a standard deployment, you can
     specify 10.0.1.0/24. Later on, you will have to create a VPC peering
     link to your application, therefore, please make sure that the CIDR
     you provide does not conflict with your application VPC CIDR.
