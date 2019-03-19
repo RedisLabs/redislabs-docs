@@ -6,60 +6,62 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/account-management/
 ---
-To give each team member only the permissions that they need for their work with the cluster,
-RS lets you assign a role to each team member.
-You can manage team members and roles in **settings** > **team**, or with the REST API.
+You can view and update the cluster users in the cluster **Settings > team** page.
 
-The roles and permissions available in RS are:
+## User Roles
 
-{{< embed-html "account-role-table.html" >}}
+The user roles included in Role Based Access Control (RBAC) are:
 
-## Adding a user
+|  **Role** | **Description** | **Details** |
+|  ------ | ------ | ------ |
+|  **Admin** | Has full access to the system |  |
+|  **DB Viewer** | Allowed to view DB configuration/metrics. All Node/Cluster information and settings are unavailable | Can view info about all databases on the cluster<br/><br/>Cannot view info about nodes and cluster<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
+|  **Cluster Viewer** | Allowed to view Cluster and DB configuration/metrics. | Can view all info about Cluster, nodes and databases.<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
+|  **DB Member** | Allowed to view and edit DB configuration. All Node/Cluster information and settings are unavailable | Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view info about nodes and cluster<br/><br/>Cannot view cluster settings outside of changing own password |
+|  **Cluster Member** | Allowed to view Node/DB information and edit DB configurations | Can view info about nodes and cluster<br/><br/>Can create databases<br/><br/>Can view db metrics<br/><br/>Can edit database configurations<br/><br/>Can clear slowlog<br/><br/>Can view logs<br/><br/>Cannot view cluster settings outside of changing own password |
 
-To add a user to the cluster:
+All roles apply to both the UI and API levels.
 
-1. Go to: **settings** > **team**
-1. Click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Enter the name, email and password of the new user and select the role to assign to the user.
-1. Select the type of user:
-    - internal - Authenticates with RS
-    - external - Authenticates with an external LDAP server
+You can assign users with these roles through Settings -\> team page in
+the UI or through the users API.
 
-    {{% expand "How do I create an external user?" %}}
+## Adding a User
+
+**To add a user:**
+
+1. Click the + (plus) sign at the bottom of the table.
+1. Enter the name, email and password of the new user.
+1. Select which Role the user should have
+1. Indicate whether the user will receive email alerts.
+1. Click **Save** icon.
+
+    ![useradd](/images/rs/useradd-300x101.png)
+
+## Updating a User
+
+**To update a user:**
+
+1. Click the **Edit** icon at the far right of the user row.
+1. Edit the user details or delete the user.
+
+## Creating users for use with LDAP authentication
+
 To have a user authenticate with LDAP, you must have [LDAP integration
-enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
-Then, create a new **external** user in the web UI.
-
-{{% comment %}}
-You can also create an external with the REST API with this syntax:
+enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}),
+and then create a new user via the REST API call like this:
 
 ```src
-curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
+curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://:8080/v1/users -d "{\"auth_method\": \"external\", \"name\": \"\", \"role\": \"\"}"
 ```
 
-For the user role, enter either:
+For the user-role, put in one of the following roles:
 
-- `db_viewer` - DB viewer
-- `db_member` - DB member
-- `cluster_viewer` - Cluster viewer
-- `cluster_member` - Cluster member
-- `admin` - Admin
-{{% /comment %}}
-    {{% /expand %}}
+- admin
+- cluster_member
+- db_viewer
+- db_member
+- cluster_viewer
 
-1. For the email alerts, click **Edit** and select the alerts that the user receives.
-    You can select:
-    - Receive alerts for databases - The alerts that are enabled for the selected databases are sent to
-      the user. You can either select all databases, or you can select **Customize** and select the
-      individual databases to send alerts for.
-      All databases includes existing and future databases.
-    - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
-
-    {{% expand "How do I select email alerts?" %}}![Select email alerts](/images/rs/add-user-email-alerts.gif "Select email alerts"){{% /expand %}}
-
-    Then, click **Save**.
-1. Click ![Save](/images/rv/icon_save.png#no-click "Save").
-
-To edit the name, password, role or email alerts of a user, hover over the user and click ![Edit]
-(/images/rv/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
-delete the user and re-add it.
+**Note**: At this time, there is no way to convert an existing account
+to use LDAP. You must delete the existing and create a new account to
+use.
