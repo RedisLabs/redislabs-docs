@@ -204,23 +204,23 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 ## Embedding a partial
 
-A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes.
+A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials should be placed in `layouts/partials/embeds` directory.
 
 Syntax for embedding a markdown partial:
 
 ```
-{{ </* embed-md "/partials/rbac-table.md"  */>}}
+{{ </* embed-md "sample.md"  */>}}
 ```
 
-{{< embed-md "/partials/rbac-table.md" >}}
+{{< embed-html "sample.md" >}}
 
 Syntax for embedding an HTML partial:
 
 ```
-{{ </* embed-html "/partials/sample-table.html" */>}}
+{{ </* embed-html "sample-table.html" */>}}
 ```
 
-{{< embed-html "/partials/sample-table.html" >}}
+{{< embed-html "sample.html" >}}
 
 ## Embed Video
 
