@@ -84,7 +84,7 @@ Once planning is complete, please review the presented subscription and
 database information. 
 Provide a payment method by selecting an existing one or click on the **+** button to add
 a new one.
-A $100 creadit will be assigned to the new subscription for a free trial.
+A $100 credit will be assigned to the new subscription for a free trial.
 
 ![review_create](/images/rv/review_create.png?width=800&height=594)
 
