@@ -48,7 +48,7 @@ To schedule periodic backups for a database:
 
 Before you configure backups to an FTP server, make sure that:
 
-- The RS instance has network connectivity to the FTP server.
+- The RS cluster has network connectivity to the FTP server.
 - The user that you specify in the FTP server location has read and write priviledges.
 
 To backup to an FTP server, enter the FTP server location in the format:
@@ -63,15 +63,15 @@ For example: `ftp://username:password@10.1.1.1/home/backups/`
 
 Before you configure backups to an SFTP server, make sure that:
 
-- The RS instance has network connectivity to the SFTP server.
+- The RS cluster has network connectivity to the SFTP server.
 - The user that you specify in the SFTP server location has read and write priviledges.
 - The RS server and SFTP server have the correct TLS certificates. You can select either:
-    - **Use the cluster auto generated key** - Go to settings and copy the **Cluster SSH Public Key**
+    - **Use the cluster auto generated key** - Go to **settings** and copy the **Cluster SSH Public Key**
         to the SFTP server.
     - **Use a custom key** - Generate a TLS key pair for the SFTP server, copy the private key to
         the **SSH Private Key** box, and copy the public key to the SFTP server.
 
-To backup to an FTP server, enter the FTP server location in the format:
+To backup to an SFTP server, enter the SFTP server location in the format:
 
 ```src
 sftp://user:password@host:<:custom_port>/path/
