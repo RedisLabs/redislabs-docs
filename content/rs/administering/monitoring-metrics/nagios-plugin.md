@@ -10,8 +10,8 @@ objects and alerts. The RS alerts can be related to the cluster, nodes,
 or databases.
 
 The alerts that can be monitored via Nagios are the same alerts that can
-be configured in the RS UI in the Settings ­\> Alerts page, or the
-specific Database ­\> Configuration page.
+be configured in the RS UI in the Settings > Alerts page, or the
+specific Database > Configuration page.
 
 All alert configurations (active / not active, setting thresholds, etc')
 can only be done through the RS UI, they cannot be configured in Nagios.
@@ -21,8 +21,8 @@ alerts.
 The full list of alerts can be found in the plugin package itself (in
 "/rlec_obj/rlec_services.cfg" file, more details below).
 
-RS Nagios plugin support API password retrieval from keyring compatible password store. With no
-keyring service available, the password is saved with base64 encoding.
+RS Nagios plugin supports API password retrieval from keyring compatible password store. If no
+keyring service is available, the password is saved with base64 encoding.
 
 ## Configuring the Nagios plugin
 
