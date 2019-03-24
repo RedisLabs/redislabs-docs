@@ -20,7 +20,8 @@ and then click on the name of the Subscription you wish to view.
 When you view a subscription, you can see:
 
 - Subscription name (To edit the name, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
-- Cloud network details (To edit the details, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
+- Cloud provider details
+- Memory type (RAM / RAM + Flash)
 
 In the Security section, you can [define access](#defining-access-to-your-subscription)
 to your Redis Cloud Pro account.
@@ -44,7 +45,7 @@ peering and a CIDR whitelist to allow more secure access to your account.
 - [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) -
     Allow unresticted network access between two VPCs.
 - [CIDR whitelist](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html) -
-    Limit network access between the VPCs to the specified CIDR blocks and security groups.
+    Limit network access between the VPCs to the specified CIDR blocks and security groups (for customers running Redis Cloud Pro on their own cloud infratsructure).
 
 ### VPC Peering
 
