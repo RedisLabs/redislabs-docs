@@ -1,9 +1,9 @@
 ---
-Title: Changing Redis Enterprise Cloud Subscription Plans
+Title: Changing Redis Cloud Essentials Plans
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 It is very easy to upgrade or downgrade your subscription at any time,
 all with no downtime.

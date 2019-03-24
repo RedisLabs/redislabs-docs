@@ -3,9 +3,9 @@ Title: Account and Team Settings
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
-On this page, you can view settings for your Redis Enterprise Cloud (RC)
+On this page, you can view settings for your Redis Cloud Essentials
 account and team. You can add or edit your VAT ID, account's Time Zone,
 and New Relic license key.
 

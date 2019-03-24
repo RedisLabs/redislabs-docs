@@ -3,7 +3,7 @@ title: Setup
 description: 
 weight: 50
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 
 {{%allchildren style="h2" description="true"%}}

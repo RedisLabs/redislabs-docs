@@ -1,33 +1,38 @@
 ---
-Title: Quick Setup of Redis Enterprise Cloud
+Title: Quick Setup of Redis Cloud Essentials
 description: 
 weight: 10
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 The steps here are super simple and go as follows:
 
-1. Sign up for a Redis Enterprise Cloud account
+1. Sign up for a Redis Cloud Essentials account
 1. Create a new subscription
 1. Setup a database
 1. Connect to your Database
 
 {{< youtube I9sPna1OOUg >}}
 
-## Step 1: Sign up for Redis Enterprise Cloud account
+## Step 1: Sign up for Redis Cloud Essentials account
 
 If you do not already have one, [sign up for a Redis Enterprise Cloud
 account](https://app.redislabs.com/#/sign-up/cloud?).
 
-If you already have an account, [sign in to Redis Enterprise
-Cloud](https://app.redislabs.com/#/login?).
+If you already have an account, [sign in to Redis Cloud Essentials](https://app.redislabs.com/#/login?).
 
 ## Step 2: Create a new subscription
 
 Add a new subscription to your account, if you do not already have one.
 If you have an existing subscription, then proceed to Step 3.
 
-For a new subscription, you will need to select the following:
+To create a new Redis Cloud Essentials subscription do the following:
+1. Select 'Cloud (Hosted)' from the dropdown on the top of the page
+1. Select 'Subscriptions' from the sidebar
+1. If you have existing subscriptions- click on the '+' icon. If you don't have existing subsctiptions- proceed to the next step
+1. Click on the 'Select' button inside the 'Essentials' box
+
+New subscription details page will be opened. You will need to select the following:
 
 1. The cloud and region you desire your database(s) to be created in
 1. A subscription name
@@ -141,13 +146,12 @@ and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Enterprise
-    Cloud]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
-1. [Securing Your Redis Enterprise Cloud
+1. [Data Persistence with Redis Cloud Essentials]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
+1. [Securing Your Redis Cloud Essentials
     Database]({{< relref "/rc/administration/configure/security.md" >}}).
 1. [Creating a
     database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
-1. [Redis Enterprise Cloud Database
+1. [Redis Cloud Essentials Database
     Backups]({{< relref "/rc/administration/configure/backups.md" >}}).
-1. [Monitoring Redis Enterprise Cloud
+1. [Monitoring Redis Cloud Essentials
     Performance]({{< relref "/rc/administration/configure/monitoring-alerting-metrics.md" >}}).

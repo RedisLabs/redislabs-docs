@@ -3,10 +3,10 @@ Title: Billing History
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 This page contains a list of purchases, changes, and payments for the
-subscriptions you have in your Redis Enterprise Cloud account. If you
+subscriptions you have in your Redis Cloud Essentials account. If you
 have a question about billing, please be sure to supply the reference
 number from this list when contacting Redis Labs support team.
 

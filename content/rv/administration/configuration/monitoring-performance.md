@@ -3,9 +3,9 @@ Title: Monitoring Performance
 description: 
 weight: 40
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
-Redis Enterprise VPC (RV) provides a straightforward dashboard that
+Redis Cloud Pro provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on
 the Metrics tab of a selected database. Use the scroll bar at the top to
 change between time intervals: last minute, five minutes, hour, day,
@@ -20,9 +20,10 @@ want to see Reads/sec on the left and Writes/sec on the right, click on
 the left side of the Read/sec mini-graph and the right side of the
 Writes/sec mini-graph.
 
-For a quick tour of what you get, watch this video.
+<!-- Video out of date
+For a quick tour of what you get, watch this video. -->
 
-{{< youtube GYpVYilv5u4 >}}
+<!-- {{< youtube GYpVYilv5u4 >}} -->
 
 ## Definition of Each Metric
 

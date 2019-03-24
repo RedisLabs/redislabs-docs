@@ -1,11 +1,11 @@
 ---
-Title: Creating a Redis Enterprise Cloud Subscription
+Title: Creating a Redis Cloud Essentials Subscription
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
-A Redis Enterprise Cloud subscription consists of a selected cloud
+A Redis Cloud Essentials subscription consists of a selected cloud
 provider (and respective region, e.g. "Azure - US Central"),
 architectural model, memory limit and feature set. You can have multiple
 subscriptions in different providers and regions, all easily managed
@@ -15,7 +15,8 @@ from a single console.
 
 1. Navigate to Subscriptions using the menu in the top right corner of
     the page.
-1. Click on the plus sign below the Subscriptions section of the page.
+1. If you have existing subscriptions, click on the plus sign below the Subscriptions section of the page. Otherwise, proceed to next step.
+1. Click on the 'Select' button inside the 'Essentials' box to create a new 'Redis Cloud Essentials' subscription
 1. Select your preferred Cloud Provider and region for your databases
     to be created in.
 1. Create a subscription name. It will appear in the list of

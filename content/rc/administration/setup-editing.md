@@ -1,9 +1,9 @@
 ---
-Title: Setup and Editing of Redis Enterprise Cloud Resources
+Title: Setup and Editing of Redis Cloud Essentials Resources
 description: 
 weight: $weight
 alwaysopen: false
-categories: ["RC"]
+categories: ["RC Essentials"]
 ---
 - [Creating a
     Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}})

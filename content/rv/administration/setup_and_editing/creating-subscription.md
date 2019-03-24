@@ -3,24 +3,14 @@ Title: Creating a Subscription
 description: 
 weight: 30
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
-A Redis Enterprise VPC (RV) subscription consists of a selected cloud
+A Redis Cloud Pro subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural
 model, memory limit and feature set. You can have multiple subscriptions
 in different providers and regions, all easily managed from a single
 console.
 
-Prerequisites:
-
-- AWS Account - RV is deployed into your AWS environment under a
-    special account you create specifically for it.
-- Cloud Account - RV relies on a user in AWS' Identity and Account
-    Management (IAM) with specific privileges in order to create,
-    maintain, and manage your RV cluster and databases. See "[Creating
-    an AWS user for Redis Enterprise
-    VPC]({{< relref "/rv/how-to/creating-aws-user-redis-enterprise-vpc.md" >}})"
-    for help creating this user and the necessary roles, policies, etc.
 
 ## Create a New Subscription
 
@@ -29,7 +19,7 @@ Creating a subscription is a four-step process:
 1. Setup - Select the general settings and input the required
     credentials for the cloud user account.
 2. Sizing - Describe the specification of the databases you want to
-    provision. After this step, RV will calculate the optimal
+    provision. After this step, Redis Cloud Pro will calculate the optimal
     configuration and required infrastructure.
 3. Review and Create - You will be presented with the required
     infrastructure and the subscription price. Enter your payment method
@@ -42,8 +32,6 @@ Creating a subscription is a four-step process:
 For a new subscription, you will need to provide the following:
 
 1. A subscription name
-1. Your cloud provider (currently only AWS is supported; other cloud
-    providers will be added in the future)
 1. The cloud region (e.g. "us-west-2") you want your databases to be
     created in. This should be in the same region as the applications
     that will be connecting as you will be using AWS' [VPC
@@ -55,26 +43,6 @@ For a new subscription, you will need to provide the following:
 1. Select whether you want the subscription to support databases with
     the ability to span RAM only or [RAM + Flash
     Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
-1. Select an existing or [Create a new Cloud
-    Account]({{< relref "/rv/administration/setup_and_editing/creating-cloud-account.md" >}})
-    for RV to use.
-1. Select your subscription networking options:
-   - **New VPC** - this will create a new VPC and provision your
-        subscription in it. Please provide the required Deployment CIDR
-        - This is an IPv4 subnet, in[CIDR
-        notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)[,
-        that you would like RV to use. The subnet should be /24 in size.
-        Later on, you will have to create a VPC peering link to your
-        application, therefore, please make sure that the CIDR you
-        provide does not conflict with your application VPC
-        CIDR.
-   - **Existing VPC** - this will provision your subscription in an
-        already existing VPC. With this option, you can provision your
-        subscription in the VPC as your application and in that way save
-        on the cost and latency that comes with VPC peering.
-        Please provide the required
-        Deployment CIDR and the VPC ID in which the subscription should
-        be deployed.
 1. Advanced Options
     1. You can select the exact Availability Zone(s) in which your
         subscription will be deployed. Select one for single AZ or three
@@ -82,9 +50,7 @@ For a new subscription, you will need to provide the following:
     1. You can enable data at rest encryption. This will attach
         encrypted EBS volumes to your instances.
 
-Once you have made your selections, click **Continue** to finalize your
-subscription. RV will authenticate the credentials with AWS and proceed
-to the next step.
+Once you have made your selections, click **Continue** to finalize your subscription.
 
 ### Sizing
 
@@ -137,19 +103,22 @@ database(s). The subscription will show a "Pending" status and take
 approximately ten to fifteen minutes to create. You will receive an
 email once your databases are ready to use.
 
+Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To find
+out what your Redis Cloud Pro VPC is, either go to **View subscription**. To better understand how to set up VPC peering see [View and Edit a Subscription]
+
 Once provisioning is complete, if it was deployed in a new VPC, please
-set up a peer between your **application VPC** and **RV VPC**. To find
-out what your RV VPC is, either go to **View subscription** or check the
-**AWS console**. To better understand how to set up VPC peering see [View and Edit a Subscription]
+set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To find
+out what your Redis Cloud Pro VPC is, either go to **View subscription**. To better understand how to set up VPC peering see [View and Edit a Subscription]
 ({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md" >}}).
 
 Once the peering was established please define the relevant routing
-groups on your application account and RV account.
+groups on your application account and Redis Cloud Pro account.
 
 For more information and pricing, please go
 [here](https://redislabs.com/pricing/redis-cloud-private/).
 
-If you'd rather watch an overview of Redis Cloud VPC, watch the below
-video:
+<!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
+video: -->
 
-{{< youtube_start y3tvS2kCl5I 76 >}}
+<!-- This video is out of date
+{{< youtube_start y3tvS2kCl5I 76 >}} -->

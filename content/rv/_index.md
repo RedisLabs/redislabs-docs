@@ -1,20 +1,21 @@
 ---
-Title: Redis Enterprise VPC (RV)
+Title: Redis Cloud Pro
 description: 
 weight: 30
 alwaysopen: false
-categories: ["RV"]
+categories: ["RC Pro"]
 ---
-Redis Enterprise VPC (RV) delivers a cost-effective, fully managed
-Database-as-a-Service (DBaaS) offering hosted on your Cloud account.
 
-RV is based on the proven Redis Enterprise technology, serving thousands of
+Redis Cloud Pro delivers a cost-effective, fully managed
+Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
+
+Redis Cloud Pro is based on the proven Redis Enterprise technology, serving thousands of
 customers of our [Redis Enterprise
 Cloud]({{< relref "/rc/_index.md" >}}) and [Redis Enterprise
-Software]({{< relref "/rs/_index.md" >}}) products. With RV,
-you can deploy quickly on Amazon Web Services (AWS) and create Redis
+Software]({{< relref "/rs/_index.md" >}}) products. With Redis Cloud Pro,
+you can deploy quickly on major public clouds and create Redis
 databases that are fully compatible with the open-source Redis databases
-contained solely in your Amazon Virtual Private Cloud (VPC).
+contained on Redis Labs' cloud infrastrucure.
 
 ## Features
 
@@ -28,7 +29,7 @@ applications.
 
 ### Significant Cost Saving
 
-For datasets larger than 500GB, running Redis on Flash delivers high
+For datasets larger than 50GB, running Redis on Flash delivers high
 throughput with the same sub-millisecond latencies of Redis on RAM,
 while cutting the cost of your cloud resources by over 70%.
 
@@ -38,8 +39,7 @@ Achieve high availability for your Redis databases, with continuous
 operation, no human intervention and zero operational effort. Redis
 Labs' proven technology provides true high availability for Redis
 deployments, safeguarding against all possible failure scenarios by
-utilizing efficient diskless in-memory replication across racks, zones,
-datacenters, and regions; instant automatic failover; persistence (AOF
+utilizing efficient diskless in-memory replication across multiple availability zones and regions; instant automatic failover; persistence (AOF
 or snapshot); backups and disaster recovery.
 
 ### Predictable high performance
@@ -50,7 +50,7 @@ and hosts your database on optimal cloud instances.
 
 ### Hybrid deployment and geo-region replication
 
-Efficiently replicate Redis databases between Redis Enterprise VPC and
+Efficiently replicate Redis databases between Redis Cloud Pro and
 Redis Enterprise Software or across cloud regions, with built-in
 compression and WAN optimization technologies. Create multi-region,
 multi-cloud or hybrid (on-premises and cloud) Redis Enterprise
@@ -66,7 +66,7 @@ support via online helpdesk or phone.
 
 ### Encryption and authentication
 
-Meet your security goals without compromising performance using RV's
+Meet your security goals without compromising performance using Redis Could Pro's
 fully encrypted SSL connections, and apply multi-level authentication
 mechanisms such as:
 
@@ -95,7 +95,8 @@ crossed.
 
 Use as many database connections as you want.
 
-If you'd rather watch an overview of Redis Cloud VPC, watch the below
-video:
+<!-- Video out of date -->
+<!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
+video: -->
 
-{{< youtube_start y3tvS2kCl5I 76 >}}
+<!-- {{< youtube_start y3tvS2kCl5I 76 >}} -->
