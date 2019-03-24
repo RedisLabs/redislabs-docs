@@ -65,6 +65,7 @@ and accept the VPC peering request for the AWS VPC that you want to peer with.
         - AWS Account ID
         - AWS Region
         - AWS VPC ID
+        - VPC CIDR
     1. Click **Initiate Peering**.
         A VPC Peering request is automatically created and appears in the VPC Peering tab until
         it is accepted by the VPC that you want to peer with.
