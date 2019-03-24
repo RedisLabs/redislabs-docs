@@ -9,8 +9,8 @@ Redis Cloud Essentials is a managed, serverless,
 Database-as-a-Service (DBaaS) offering.
 
 It is based on the proven Redis Enterprise technology. With Redis Cloud Essentials, developers can select a supported cloud
-provider such as Amazon Web Services (AWS), Google Cloud, Microsoft
-Azure or IBM SoftLayer and create enterprise-grade Redis databases that
+provider such as Amazon Web Services (AWS), Google Cloud or Microsoft
+Azure and create enterprise-grade Redis databases that
 are fully compatible with the open-source Redis clients.
 
 Take advantage of the tremendous expertise of the team that develops
