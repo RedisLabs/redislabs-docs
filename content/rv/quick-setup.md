@@ -68,7 +68,7 @@ To start with a single database:
 
 ![add_database](/images/rv/add_database.png?width=800&height=444)
 
-When you finish with all databases, click on **Next**.
+When you finish with all databases, click **Next**.
 
 Behind the scenes, Redis Cloud Pro is performing a few operations based on your
 inputs:
@@ -77,26 +77,28 @@ inputs:
 - Crafting a plan for an optimized cloud infrastructure based on those
     calculations
 
-**Note**: Plan creation may take a little time based on a your inputs.
+{{% note %}}
+Plan creation may take a little time based on a your inputs.
+{{% /note %}}
 
-Once planning is complete, please review the presented subscription and
+After planning is complete, review the presented subscription and
 database information. This includes the expected infrastructure and shard prices.
-Provide a payment method by selecting an existing one or click on the **+** button to add
+Provide a payment method by selecting an existing one or click **+** to add
 a new one.
 A $100 credit will be assigned to the new subscription for a free trial.
 
 ![review_create](/images/rv/review_create.png?width=800&height=594)
 
-Select the **Continue** button to create the subscription and deploy the
-database(s). The subscription will display a "Pending" status and may
-take ten to fifteen minutes to construct the infrastructure using the
-generated optimization plan. You will receive an email once your
+Click **Continue** to create the subscription and deploy the
+databases. The subscription shows a "Pending" status and may
+take 10-15 minutes to build the infrastructure with the
+generated optimization plan. You will receive an email when your
 databases are ready to use.
 
 ## Step 4: Connect to your database
 
-Using the menu, navigate to the Databases page. Select one of the
-databases and select the Configuration tab and look for the database
+In the menu, go to the Databases page. Select one of the
+databases, select the Configuration tab, and look for the database
 endpoint.
 
 ![connect_to_database](/images/rv/connect_to_database.png?width=800&height=599)
@@ -116,8 +118,10 @@ PING
 +PONG
 ```
 
-Note: We recommend loading the redis-cli command-line utility for future
+{{% note %}}
+We recommend loading the redis-cli command-line utility for future
 use as you will use it for other things.
+{{% /note %}}
 
 ### Using redis-cli
 
@@ -133,7 +137,7 @@ favorite package manager or by installing Redis locally.
 
 ### Using Python
 
-Once you have tested the connection to your Redis database, you can
+After you test the connection to your Redis database, you can
 start reading and writing data. The following code snippet writes the
 value bar to the Redis key "foo", reads it back, and then prints it.
 This snippet is written in Python, but you can use your favorite
@@ -147,7 +151,7 @@ not have it already.
 $ sudo pip install redis
 ```
 
-Next copy and paste this into a file named
+Next, copy and paste this into a file named
 **example_redis.py**:
 
 ```python
@@ -168,9 +172,8 @@ $ python example_redis.py
 bar
 ```
 
-With that simple test complete, if you have existing code or an app that
-uses Redis, just change the host, port, password and SSL certificates
-and you are done.
+With that simple test complete, you change the host, port, password and SSL certificates
+in any existing code or apps that use Redis and you are done.
 
 ## More Information
 
