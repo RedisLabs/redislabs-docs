@@ -2672,7 +2672,10 @@ a[href*="#no-click"], img[src*="#no-click"] {
         display: grid;
         max-width: 700px;
         width: 700px;
-        position: static;
+        position: relative;
+    }
+    article section.page .main-content-left .panel {
+      max-width: 99%;
     }
 }
 
@@ -2694,6 +2697,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
         word-break: break-all;
     }
     .main-content-left {
+        max-width: 95%;
         flex: 1;
     }
     nav#toc {
