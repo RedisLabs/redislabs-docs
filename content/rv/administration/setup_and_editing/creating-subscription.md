@@ -16,8 +16,7 @@ console.
 
 Creating a subscription is a four-step process:
 
-1. Setup - Select the general settings and input the required
-    credentials for the cloud user account.
+1. Setup - Select the general settings of the cloud subscription.
 2. Sizing - Describe the specification of the databases you want to
     provision. After this step, Redis Cloud Pro will calculate the optimal
     configuration and required infrastructure.
