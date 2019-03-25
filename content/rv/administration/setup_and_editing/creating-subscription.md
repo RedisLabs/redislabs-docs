@@ -31,7 +31,10 @@ Creating a subscription is a four-step process:
 
 For a new subscription, you will need to provide the following:
 
-1. A subscription name
+1. A subscription name.
+1. Select whether you want the subscription to support databases with
+    the ability to span RAM only or [RAM + Flash
+    Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 1. The cloud region (e.g. "us-west-2") you want your databases to be
     created in. This should be in the same region as the applications
     that will be connecting as you will be using AWS' [VPC
@@ -40,17 +43,17 @@ For a new subscription, you will need to provide the following:
     Availability Zones for better high availability. To work optimally,
     make sure the selected region contains at least three availability
     zones.
-1. Select whether you want the subscription to support databases with
-    the ability to span RAM only or [RAM + Flash
-    Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 1. Advanced Options
-    1. You can select the exact Availability Zone(s) in which your
-        subscription will be deployed. Select one for single AZ or three
-        for multi-AZ.
-    1. You can enable data at rest encryption. This will attach
+    1. You can enter the required Deployment CIDR.
+    The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)
+    an IPv4 subnet that you want Redis Cloud Pro to use for this subscription.
+    For a standard deployment, you can specify 10.0.1.0/24. Make sure that the CIDR
+    you provide does not conflict with your application VPC CIDR to avoid problems
+    when you peer the VPC to your.
+    1. You can enable Persistent Storage Encryption. This will attach
         encrypted EBS volumes to your instances.
 
-Once you have made your selections, click **Continue** to finalize your subscription.
+Once you have made your selections, click **Next**.
 
 ### Sizing
 
@@ -72,29 +75,25 @@ For each row, select the following:
     will consume twice the amount of memory)
 1. Data persistence - Select the relevant data persistence policy for
     your database.
+1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
 1. Throughput - You can define your estimated **total throughput** you
     expect from your database by either specifying the required ops/sec
     or number of shards needed.
-1. Data persistence - Select the relevant data persistence policy for
-    your database.
 1. Modules - You can select which Redis Module you want to load to
     your database. In case you select 'RediSearch' please provide the
     estimated number of documents you are going to index.
-1. Enter the number of databases with these settings that you would
+1. Click **Save** and enter the number of databases with these settings that you would
     like to provision.
 
-Once complete, save the settings by clicking the **Add** button. Add
-more rows by clicking the **+** button.
+Once complete, you can add more rows by clicking the **+** button.
 
-Once done, click the **Continue** button. The system may take a moment
+Once done, click the **Next** button. The system may take a moment
 to calculate the optimized cloud infrastructure based on your inputs.
 
 ### Review and Create
 
 Once planning is complete, please review the subscription and database
-information presented. Then select an existing payment method or click
-on the **+** button to add a new payment method or select our 14-days
-unlimited free trial option.
+information presented, which includes the expected infrastructure and shard prices. Then select an existing payment method or click on the **+** button to add a new payment method. A $100 credit will be assigned to the new subscription for a free trial.
 
 ### Provisioning
 
@@ -103,13 +102,7 @@ database(s). The subscription will show a "Pending" status and take
 approximately ten to fifteen minutes to create. You will receive an
 email once your databases are ready to use.
 
-Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To find
-out what your Redis Cloud Pro VPC is, either go to **View subscription**. To better understand how to set up VPC peering see [View and Edit a Subscription]
-
-Once provisioning is complete, if it was deployed in a new VPC, please
-set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To find
-out what your Redis Cloud Pro VPC is, either go to **View subscription**. To better understand how to set up VPC peering see [View and Edit a Subscription]
-({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md" >}}).
+Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]
 
 Once the peering was established please define the relevant routing
 groups on your application account and Redis Cloud Pro account.
