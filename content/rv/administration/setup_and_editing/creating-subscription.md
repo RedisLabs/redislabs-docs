@@ -16,7 +16,7 @@ console.
 
 Creating a subscription is a four-step process:
 
-1. Setup - Select the general settings of the cloud subscription.
+1. Setup - configure the general settings of the new subscription.
 2. Sizing - Describe the specification of the databases you want to
     provision. After this step, Redis Cloud Pro will calculate the optimal
     configuration and required infrastructure.
@@ -62,16 +62,16 @@ specifications.
 
 For each row, select the following:
 
-1. Name - Give the database a name
+1. Name - Give the database a name.
 1. Protocol - Select the relevant database type, either Redis or
-    Memcached
+    Memcached.
 1. The estimated **Memory Limit** of your database. The minimum value
     is 0.1GB.
 1. If you selected to have a Redis on Flash subscription,
     provide your data average item size if you know it.
 1. Replication - Enables instant failover by keeping a standby,
     in-memory slave replica (note: by checking this option, your dataset
-    will consume twice the amount of memory)
+    will consume twice the amount of memory).
 1. Data persistence - Select the relevant data persistence policy for
     your database.
 1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
@@ -101,7 +101,7 @@ database(s). The subscription will show a "Pending" status and take
 approximately ten to fifteen minutes to create. You will receive an
 email once your databases are ready to use.
 
-Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]
+Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription](https://docs.redislabs.com/staging/Unification-patch-1/rv/administration/setup_and_editing/view-edit-subscription/).
 
 Once the peering was established please define the relevant routing
 groups on your application account and Redis Cloud Pro account.
