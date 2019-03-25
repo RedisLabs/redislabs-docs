@@ -159,7 +159,7 @@ Where:
 - *storage_account_access_key:* the primary access key to the
     storage account
 - *storage_account_name:* the storage account name
-- *url:* the URL of of the storage account.
+- *url:* the URL of the storage account.
 - *container_name:* the name of the container, if needed.
 - *path*: the backups path, if needed.
 
