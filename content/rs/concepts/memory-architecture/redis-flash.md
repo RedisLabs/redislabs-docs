@@ -147,5 +147,5 @@ additional details, refer to [Creating a new
 database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
 When Redis on Flash is enabled, additional settings and
-[metrics](redis-enterprise-documentation/administering/monitoring-metrics/definitions/#redis-flash-metrics)
+[metrics]( redis-enterprise-documentation/administering/monitoring-metrics/definitions/#redis-flash-metrics )
 are available in the system.
