@@ -65,6 +65,7 @@ subscription.
 
 After the subscription has been created, you can set up a database under the subscription. 
 To set up a new database: 
+
 1. Open the sidebar and click on 'Databases'. 
 1. Select your subscription and expand it.
 1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page will open.
