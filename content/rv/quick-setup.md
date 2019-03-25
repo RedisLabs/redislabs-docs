@@ -22,24 +22,25 @@ If you already have an account, sign in to [Redis Cloud Pro](https://app.redisla
 ## Step 2: Create a new Redis Cloud Pro subscription
 
 Add a new subscription to your account, if you do not already have one.
-If you do have an existing Redis Cloud Pro subscription, then proceed to Step 3.
 
 ![new_subscription](/images/rv/new_subscription.png?width=800&height=406)
 
 For a new subscription, you will need to provide the following:
 
 1. A subscription name
-1. The cloud region in which you want your databases to be created
 1. Whether you want to use [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database
+1. The cloud region in which you want your databases to be created
+1. Whether you want to use Multi-AZ for in-memory replication to another availability zone in the same region
 1. Please provide the required Deployment CIDR - this is an IPv4
     subnet with /24 subnet mask, in [CIDR
     notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation),
     that you would like Redis Cloud Pro to use for this subscription. For a standard deployment, you can
     specify 10.0.1.0/24. Later on, you will have to create a VPC peering
     link to your application, therefore, please make sure that the CIDR
-    you provide does not conflict with your application VPC CIDR.
+    you provide does not conflict with your application VPC CIDR
+    1. Whether you want Persistent Storage Encription
 
 Once your selections are made, click **Next** to finalize your
 subscription. 
@@ -52,23 +53,25 @@ represents a group of databases that share the same specification.
 To start with a single database, provide the following details:
 
 1. Database name
+1. Protocol (Redis or Memcached)
 1. Dataset size - The estimated size of your data. You can specify 1GB
-    for a small database.
+    for a small database
+1. Define if you want to have database replication (note that when enabling the database will consume twice the amount of memory)
+1. Select [data persistence] (/Unification-patch-1/rv/concepts/data-persistence/) type
+1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/) 
 1. Throughput - The estimated total throughput you expect from your
     database. You can specify 10,000 ops/sec to start with a small
-    deployment.
+    deployment
+1. If you want to use Modules, select the Module you are unterested in
 
-Optionally, you can specify replication and a data persistence policy
-for your database, then enter the quantity of databases to create
-multiple databases on your Redis Cloud Pro subscription with the provided settings.
+Enter the quantity of databases to create multiple databases on your Redis Cloud Pro subscription with the provided settings.
 
-Once selections are made, save the settings entered row by clicking on
-the **Add** button. You can add more rows by clicking on the plus
+Once selections are made, save the settings by clicking on the **Save** button. You can add more rows by clicking on the plus
 button.
 
 ![add_database](/images/rv/add_database.png?width=800&height=444)
 
-Once done with all databases, click on **Continue**.
+Once done with all databases, click on **Next**.
 
 Behind the scenes, Redis Cloud Pro is performing a few operations based on your
 inputs:
@@ -77,11 +80,10 @@ inputs:
 - Crafting a plan for an optimized cloud infrastructure based on those
     calculations
 
-**Note**: Plan creation may take a little time base on a few factors,
-e.g. your inputs, AWS response times, etc.
+**Note**: Plan creation may take a little time based on a your inputs.
 
 Once planning is complete, please review the presented subscription and
-database information. 
+database information. This includes the expected infrastructure and shard prices.
 Provide a payment method by selecting an existing one or click on the **+** button to add
 a new one.
 A $100 credit will be assigned to the new subscription for a free trial.
