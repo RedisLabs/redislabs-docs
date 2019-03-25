@@ -50,5 +50,8 @@ from a single console.
         accommodates unlimited database scaling. You can estimate your
         costs using the usage calculator that appears at the bottom of
         the page when you select this plan.
-1. Click the "continue" button to [create a
+
+1. Once you have made your selections, click **Continue** to review pricing, set payment method and finalize your
+subscription.
+1. Create a new database under the subscription. To learn how, please see [create a
     database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
