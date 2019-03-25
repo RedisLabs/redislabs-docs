@@ -17,7 +17,7 @@ Take advantage of the tremendous expertise of the team that develops
 open source Redis and relieve your operations team of any hassle related
 to managing and operating your mission-critical Redis deployments.
 
-## Features 
+## Features
 
 ### Infinite and seamless scalability
 
