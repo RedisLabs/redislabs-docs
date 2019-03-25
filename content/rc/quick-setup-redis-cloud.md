@@ -56,7 +56,7 @@ You can consider a quick overview of each tier's features upon
 selection. For more specific information, see [Creating a
 Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}).
 
-Once you have made your selections, click **Continue** to review prcing, set payment method and finalize your
+Once you have made your selections, click **Continue** to review pricing, set payment method and finalize your
 subscription.
 
 ![new_sub](/images/rc/new_sub.png?width=600&height=466)
