@@ -46,11 +46,13 @@ To pull and start the Redis Enterprise Software Docker container, run this
 Note: On Windows, make sure Docker is configured to run Linux-based containers.
 
 ```src
-$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis
+$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
 The Docker container with RS runs on your localhost with port 8443 open for HTTPS 
-connections and with port 12000 open for redis client connections.
+connections, 9443 for REST API connections, and port 12000 open for redis client connections.
+You can publish other [ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+with `-p <host_port>:<container_port>`.
 
 <!-- Also in quick-start.md -->
 ## Step 3: Setup a Cluster
