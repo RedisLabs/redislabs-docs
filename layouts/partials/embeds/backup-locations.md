@@ -51,14 +51,15 @@ and on the destination server.
 
 To backup to a local mount point for a node:
 
-1. Connect to the terminal of the RS server that the node is running on.
-1. Mount the remote storage to a local mount point.
+1. On each node in the cluster, create the mount point:
+    1. Connect to the terminal of the RS server that the node is running on.
+    1. Mount the remote storage to a local mount point.
 
-    For example:
+        For example:
 
-    ```src
-    sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
-    ```
+        ```src
+        sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
+        ```
 
 1. In the path for the backup location, enter the mount point.
 
