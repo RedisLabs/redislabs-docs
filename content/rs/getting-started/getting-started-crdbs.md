@@ -47,13 +47,13 @@ click the **Setup** button on the page to get started.
     Note: Depending on your browser, you may see a certificate error. Continue to 
     the website.
 
-    ![image4](/images/rs/image4.png?width=1000&height=611)
+    ![rs-setup](/images/rs/rs-setup.png)
 
 1. On the **node configuration** page, select your default settings and
 provide a cluster FQDN, for example `cluster1.local`. Then click
 **Next** button.
 
-    ![image5](/images/rs/image5.png?width=1000&height=611)
+    ![node-config](/images/rs/node-config.png)
 
 1. If you don't have a license key, click the **Next** button to try the
 trial version of the product.
@@ -61,7 +61,7 @@ trial version of the product.
 1. On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-    ![image9](/images/rs/image9.png?width=1000&height=611)
+    ![set-admin-credentials](/images/rs/set-admin-credentials.png)
 
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
     certificate on the node, and proceed through the browser warning.
@@ -135,7 +135,7 @@ Remember we have two member CRDBs that are available for connections and
 concurrent reads and writes. The member CRDBs are using bi-directional
 replication to for the global CRDB.
 
-![CRDB Diagram](/images/rs/image3.png?width=930&height=543)
+![crdb-diagram](/images/rs/crdb-diagram.png)
 
 ### Connecting Using redis-cli
 

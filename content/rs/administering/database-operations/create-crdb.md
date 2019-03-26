@@ -32,9 +32,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the name, email, and password for the user, select the **Admin** role, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    {{% expand "Show me how..." %}}
-{{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
-    {{% /expand %}}
+    ![Service Account Creation](/images/rs/create-service-account.png)
 
 1. To make sure that there is network connectivity between the participating clusters,
     telnet on port 8080 from each participating cluster to each of the other participating clusters.
@@ -102,7 +100,7 @@ Remember we have two member CRDBs that are available for connections and
 concurrent reads and writes. The member CRDBs are using bi-directional
 replication to for the global CRDB.
 
-![CRDB Diagram](/images/rs/image3.png?width=930&height=543)
+![crdb-diagram](/images/rs/crdb-diagram.png)
 
 ### Connecting Using redis-cli
 
