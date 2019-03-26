@@ -2662,7 +2662,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
         flex: 1 0 auto;
     }
     article section.page .main-content .highlight {
-        display: block;
+        /* display: block; */
         max-width: 100%;
         position: relative;
         margin-bottom: 5px;
