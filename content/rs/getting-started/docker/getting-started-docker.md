@@ -50,7 +50,9 @@ $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12
 ```
 
 The Docker container with RS runs on your localhost with port 8443 open for HTTPS 
-connections and with port 12000 open for redis client connections.
+connections, 9443 for REST API connections, and port 12000 open for redis client connections.
+You can publish other [ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+with `-p <host_port>:<container_port>`.
 
 <!-- Also in quick-start.md -->
 ## Step 3: Setup a Cluster
