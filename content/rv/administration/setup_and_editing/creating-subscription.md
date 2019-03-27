@@ -51,7 +51,7 @@ For a new subscription, you will need to provide the following:
     1. You can enable Persistent Storage Encryption. This will attach
         encrypted EBS volumes to your instances.
 
-Once you have made your selections, click **Next**.
+After you select the options that you want, click **Next**.
 
 ### Sizing
 
