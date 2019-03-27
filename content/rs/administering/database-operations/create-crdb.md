@@ -121,59 +121,80 @@ redis-cli is a simple command-line tool to interact with redis database.
 1.  Store and retrieve a key in the database to test the connection with these 
     commands:
     
-    Note: You cannot enable or disable database clustering after the CRDB is created.
+    - `set key1 123`
+    - `get key1`
 
-## Participating Clusters
+    The output of the command looks like this:
 
-A CRDB is a global database made up of separate databases spanning
-multiple clusters, when creating a new CRDB you must configure which
-clusters are to host members of the CRDB. On the **Participating
-Clusters** list, add two or more clusters using the **+** icon. For each
-cluster, use the service account and password created earlier for the
-admin account. Make sure to use port 8080 for this configuration, then
-click Activate to create your new Conflict-Free Replicated Database.
+    ```src
+    127.0.0.1:12000> set key1 123
+    OK
+    127.0.0.1:12000> get key1
+    "123"
+    ```
+1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
+   RS container of node 1 in cluster 1.
+1. To see that the key replicated to cluster 2, repeat the steps to switch your 
+   context into the RS container of node 1 in cluster 2, run the redis-cli and 
+   retrieve key1.
 
-![crdb-activate](/images/rs/crdb-activate.png)
+    The output of the commands looks like this:
+    ```src
+    $ docker exec -it rp2_node1 bash
+    $ redis-cli -p 12000
+    127.0.0.1:12000> get key1
+    "123"
+    ```
 
-**Causal Consistency**
+### Connecting Using _Hello World_ Application in Python
 
-Causal Consistency in a CRDB guarantees that the order of operations on a 
-specific key is maintained across all CRDB instances. You can enable Causal
-Consistency during the CRDB creation process. If you have an existing
-CRDB and would like to enable Causal Consistency, use the
-REST API or the crdb-cli tool.
+A simple python application running on the host machine can also connect
+to the database.
 
-**Secure Authentication**
+Note: Before you continue, you must have python and 
+[redis-py](https://github.com/andymccurdy/redis-py#installation)
+(python library for connecting to Redis) configured on the host machine
+running the container.
 
-When creating a new CRDB, you can enable TLS for the bi-directional
-replication established between all participating clusters. TLS mode for
-bidirectional replication is a global setting that applies to all
-replication traffic that is between all Participating Clusters. TLS
-Authentication is only available as an option at the time of creating
-CRDBs. It is not an option that can be updated later. If you have an
-existing CRDB and would like to use TLS, you need to create a new CRDB
-and migrate your data over.
+1. In the command-line terminal, create a new file called "redis_test.py"
 
-At creation time, TLS can only be enabled for communications between
-Participating Clusters. After creating the CRDB instances on each
-Participating Cluster, you can individually enable TLS also for the data
-access operations from applications just like regular Redis Enterprise
-databases.
-Enabling TLS for data access operation is a **local setting** on each
-cluster that only impacts the specific CRDB instance you are editing and
-is not a global setting for all CRDB instances.
+    ```src
+    $ vi redis_test.py
+    ```
 
-![crdb-tls-config](/images/rs/crdb-tls-config.png "crdb-tls-config")
+1. Paste this code into the "redis_test.py" file.
 
-Once activated, the Redis Enterprise Software cluster will authenticate
-and communicate with each of the listed Participating Clusters on your
-behalf via Rest API and the service account. RS will create a member
-database on each cluster, join it to the CRDB, and start replication.
-If you view any Participating Cluster individually, you should see the
-new database created as a member of the CRDB.
+    This application stores a value in key1 in cluster 1, gets that value from 
+    key1 in cluster 1, and gets the value from key1 in cluster 2.
 
-## Step 4 - Test Read and Write
+    ```py
+    import redis
 
-If you would like to test connectivity and replication, see
-the [the CRDB Quick
-Start]({{< relref "/rs/getting-started/getting-started-crdbs.md#test-connectivity" >}}).
+    rp1 = redis.StrictRedis(host='localhost', port=12000, db=0)
+    rp2 = redis.StrictRedis(host='localhost', port=12002, db=0)
+
+    print ("set key1 123 in cluster 1")
+    print (rp1.set('key1', '123'))
+    print ("get key1 cluster 1")
+    print (rp1.get('key1'))
+
+    print ("get key1 from cluster 2")
+    print (rp2.get('key1'))
+    ```
+
+1. To run the "redis_test.py" application, run:
+
+    ```src
+    $ python redis_test.py
+    ```
+
+    If the connection is successful, the output of the application looks like:
+
+    ```src
+    set key1 123 in cluster 1
+    True
+    get key1 cluster 1
+    b'123'
+    get key1 from cluster 2
+    b'123'
+    ```
