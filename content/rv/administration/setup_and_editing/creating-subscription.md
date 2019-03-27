@@ -16,7 +16,7 @@ console.
 
 Creating a subscription is a four-step process:
 
-1. Setup - configure the general settings of the new subscription.
+1. Setup - Configure the general settings of the new subscription.
 2. Sizing - Describe the specification of the databases you want to
     provision. After this step, Redis Cloud Pro will calculate the optimal
     configuration and required infrastructure.
@@ -32,8 +32,7 @@ For a new subscription, you will need to provide the following:
 
 1. A subscription name.
 1. Select whether you want the subscription to support databases with
-    the ability to span RAM only or [RAM + Flash
-    Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
+    RAM only or [RAM + Flash Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 1. The cloud region (e.g. "us-west-2") you want your databases to be
     created in. This should be in the same region as the applications
     that will be connecting as you will be using AWS' [VPC
