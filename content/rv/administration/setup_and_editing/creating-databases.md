@@ -44,6 +44,8 @@ Once you have a subscription, you can easily create a database in Redis Cloud Pr
         between the VPC that this database is on and the VPC that the destination
         database is on.{{% /note %}}
 
+        [Comment - Allegra]: Please also mention the Replica-of UI alerts (not email alerts), that appear on the UI in case of error. You can find them here: https://redislabs.atlassian.net/browse/RED-18388
+
     1. In **Access Control & Security**, you can:
         - Set the **Redis Password** for the database.
             We recommend that you use a complex password and not leave the password blank.
