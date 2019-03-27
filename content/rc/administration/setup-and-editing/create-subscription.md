@@ -15,8 +15,10 @@ from a single console.
 
 1. Navigate to Subscriptions using the menu in the top right corner of
     the page.
-1. If you have existing subscriptions, click on the plus sign below the Subscriptions section of the page. Otherwise, proceed to next step.
-1. Click on the 'Select' button inside the 'Essentials' box to create a new 'Redis Cloud Essentials' subscription
+1. If you have existing subscriptions, click on the plus sign below the
+    Subscriptions section of the page. Otherwise, proceed to next step.
+1. Click on the 'Select' button inside the 'Essentials' box to create a
+    new 'Redis Cloud Essentials' subscription.
 1. Select your preferred Cloud Provider and region for your databases
     to be created in.
 1. Create a subscription name. It will appear in the list of
@@ -51,6 +53,7 @@ from a single console.
         costs using the usage calculator that appears at the bottom of
         the page when you select this plan.
 
-1. After you select the options that you want, click **Continue** to review pricing, set payment method and finalize your
-subscription.
-1. [Create a new database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}) under the subscription.
+1. After you select the options that you want, click **Continue** to
+    review pricing, set payment method and finalize your subscription.
+1. [Create a new database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}})
+    under the subscription.
