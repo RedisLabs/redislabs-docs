@@ -45,7 +45,7 @@ peering and a CIDR whitelist to allow more secure access to your account.
 - [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html) -
     Allow unresticted network access between two VPCs.
 - [CIDR whitelist](https://docs.aws.amazon.com/vpc/latest/peering/peering-configurations-partial-access.html) -
-    Limit network access between the VPCs to the specified CIDR blocks and security groups (for customers running Redis Cloud Pro on their own cloud infratsructure).
+    Customers running Redis Cloud Pro on their own cloud infratsructure can limit the network access between the VPCs to the specified CIDR blocks and security groups.
 
 ### VPC Peering
 
