@@ -5,12 +5,12 @@ weight: 10
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-The steps here are super simple and go as follows:
+To quickly setup Redis Cloud Essentials:
 
-1. Sign up for a Redis Cloud Essentials account
-1. Create a new subscription
-1. Setup a database
-1. Connect to your Database
+1. Sign up for a Redis Cloud Essentials account.
+1. Create a new subscription.
+1. Setup a database.
+1. Connect to your Database.
 
 {{< youtube I9sPna1OOUg >}}
 
@@ -24,13 +24,14 @@ If you already have an account, [sign in to Redis Cloud Essentials](https://app.
 ## Step 2: Create a new subscription
 
 Add a new subscription to your account, if you do not already have one.
-If you have an existing subscription, then proceed to Step 3.
+If you have an existing subscription, then go to Step 3.
 
 To create a new Redis Cloud Essentials subscription do the following:
-1. Select 'Redis Engterprise Cloud' from the dropdown on the top of the page
-1. Select 'Subscriptions' from the sidebar
-1. If you have existing subscriptions- click on the '+' icon. If you don't have existing subsctiptions- proceed to the next step
-1. Click on the 'Select' button inside the 'Essentials' box
+
+1. Select 'Redis Enterprise Cloud' from the dropdown on the top of the page.
+1. Select 'Subscriptions' from the sidebar.
+1. If you have existing subscriptions- click on the '+' icon. If you don't have existing subsctiptions, proceed to the next step.
+1. Click on the 'Select' button inside the 'Essentials' box.
 
 New subscription details page will be opened. You will need to select the following:
 
@@ -41,7 +42,7 @@ New subscription details page will be opened. You will need to select the follow
         applications when the authoritative version of the data is
         stored in another database. Cache plans do not include
         replication or data persistence so failures may result in an
-        empty cache
+        empty cache.
    - Standard plans can have a diverse set of features including
         in-memory replication, auto-failover, data persistence, and
         backups. Selecting this option will double the memory size of
@@ -56,8 +57,8 @@ You can consider a quick overview of each tier's features upon
 selection. For more specific information, see [Creating a
 Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}).
 
-Once you have made your selections, click **Continue** to review pricing, set payment method and finalize your
-subscription.
+After you select the options that you want, click **Continue** to
+review pricing, set payment method and finalize your subscription.
 
 ![new_sub](/images/rc/new_sub.png?width=600&height=466)
 
