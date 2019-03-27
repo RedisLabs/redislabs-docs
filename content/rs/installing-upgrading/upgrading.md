@@ -120,3 +120,25 @@ a result:
     usually takes longer than an RDB file.
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
+
+## Upgrading CRDB
+
+
+
+1. After you upgrade your existing nodes in your cluster to RS 5.4.2, the status of your existing CRDB  will be displayed as ‘OLD CRDB PROTOCOL VERSION’.
+
+
+
+    Note that the shard status can also show that an ‘OLD REDIS VERSION’ is used. After you upgrade the database, the new Redis version is used and the status is be ‘OK’.
+
+1. To upgrade the CRDB and its protocol, run: `rladmin upgrade db <db_name>`
+
+
+
+1. Read the WARNING message carefully and confirm.
+
+
+
+The upgrade is done, and the specific CRDB instance uses the new CRDB protocol version.
+
+Note that you can use the keep_crdt_protocol_version parameter to upgrade the database without upgrading the CRDB protocol version and continue using the old version. We only recommend this in consultation with Support.
