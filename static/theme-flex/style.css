@@ -2692,7 +2692,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
     article section.page p>code,
     article section.page li code,
     article section.page table code {
-        display: block;
+        /* display: block; */
         max-width: 100%;
         word-break: break-all;
     }
