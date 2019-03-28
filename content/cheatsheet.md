@@ -116,6 +116,20 @@ To make an image appear on the next line in a list:
 1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
+### Image
+
+image ...
+
+**Syntax**:
+
+```
+{{%/* image filename="/images/rs/rp_stack.png" */%}}
+```
+
+**Output**:
+
+{{% image filename="/images/rs/rp_stack.png" %}}
+
 ## Expanding Blocks
 
 ```md
@@ -148,7 +162,9 @@ operated on.{{% /excerpt %}}
 
 ### Including an excerpt
 
-`{{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}`
+```
+{{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}
+```
 
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 
@@ -160,7 +176,9 @@ Info boxes give background information that does not prevent proper use of the p
 
 **Syntax**:
 
-` {{%/* info */%}}After you do this the first time, it gets easier.{{%/* /info */%}} `
+```
+{{%/* info */%}}After you do this the first time, it gets easier.{{%/* /info */%}}
+```
 
 **Output**:
 
@@ -172,7 +190,9 @@ Tips give additional information for improved use of the product.
 
 **Syntax**:
 
-` {{%/* tip */%}}Eating on time prevents hunger.{{%/* /tip */%}} `
+```
+{{%/* tip */%}}Eating on time prevents hunger.{{%/* /tip */%}}
+```
 
 **Output**:
 
@@ -184,11 +204,27 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 **Syntax**:
 
-` {{%/* note */%}}Make sure you have enough disk space.{{%/* /note */%}} `
+```
+{{%/* note */%}}Make sure you have enough disk space.{{%/* /note */%}}
+```
 
 **Output**:
 
 {{% note %}}Make sure you have enough disk space.{{% /note %}}
+
+### Alert
+
+Alerts suggest that users think carefully ...
+
+**Syntax**:
+
+```
+{{%/* alert */%}}Are you sure?{{%/* /alert */%}}
+```
+
+**Output**:
+
+{{% alert %}}Are you sure?{{% /alert %}}
 
 ### Warning
 
@@ -196,11 +232,170 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 **Syntax**:
 
-` {{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* /warning */%}} `
+```
+{{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* /warning */%}}
+```
 
 **Output**:
 
 {{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
+
+### Label
+
+Label displays a label. The type parameter can be passed to the shortcode in order to display the label in a different color, eg. **success** for a green label, **warning** for orange, **info** for blue and **danger** for red.
+
+**Syntax**:
+
+```
+{{%/* label type="info" */%}}This is a label{{%/* /label */%}}
+```
+
+**Output**:
+
+{{% label type="info" %}}This is a label{{% /label %}}
+
+### Allchildren
+
+Allchildren ...
+
+**Syntax**:
+
+```
+{{%/* allchildren style="h2" description="true" */%}}
+```
+
+**Output**:
+
+{{%allchildren style="h2" description="true"%}}
+
+### Anchor Link
+
+Anchor Link links to another part of the page, ie. the anchor link.
+
+**Syntax**:
+
+```
+{{%/* anchorlink anchor="example" */%}}Go to example{{%/* /anchorlink */%}}
+```
+
+**Output**:
+
+{{% anchorlink anchor="example" %}}Go to example{{% /anchorlink %}}
+
+### Button
+
+Button displays a button. The theme parameter can be passed to the shortcode in order to display the button in a different color, eg. **success** for a green button, **warning** for orange, **info** for blue and **danger** for red.
+
+**Syntax**:
+
+```
+{{%/* button theme="success" */%}}Click here{{%/* /button */%}}
+```
+
+**Output**:
+
+{{% button theme="success" %}}Click here{{% /button %}}
+
+### Code
+
+Code ...
+
+**Syntax**:
+
+```
+{{%/* code */%}}var x = 123;{{%/* /code */%}}
+```
+
+**Output**:
+
+{{% code %}}var x = 123;{{% /code %}}
+
+### Icon
+
+icon ...
+
+**Syntax**:
+
+```
+{{%/* icon "fa-calendar" */%}}
+```
+
+**Output**:
+
+{{% icon "fa-calendar" %}}
+
+### Emoticon
+
+emoticon ...
+
+**Syntax**:
+
+```
+{{%/* emoticon name="thumbs-up" */%}}{{%/* /emoticon */%}}
+```
+
+**Output**:
+
+{{% emoticon name="thumbs-up" %}}{{% /emoticon %}}
+
+### Header
+
+header description ...
+
+**Syntax**:
+
+```
+{{%/* header */%}} The menu of this page {{%/* /header */%}}
+```
+
+**Output**:
+
+{{% header %}} The menu of this page {{% /header %}}
+
+### Recently updated
+-> works but articles have no dates, the shortcode can be updated to not show the date
+recently-updated description ...
+
+**Syntax**:
+
+```
+{{%/* recently-updated */%}} Example text {{%/* /recently-updated */%}}
+```
+
+**Output**:
+
+{{% recently-updated %}}
+Example text
+{{% /recently-updated %}}
+
+### TOC
+toc description ...
+
+**Syntax**:
+
+```
+{{%/* toc */%}}
+```
+
+**Output**:
+
+{{% toc %}}
+
+### Well
+well description ...
+
+**Syntax**:
+
+``` 
+{{%/* well */%}} Inside a well {{%/* /well */%}} 
+```
+
+**Output**:
+
+
+{{% well %}}
+Inside a well
+{{% /well %}}
 
 ## Embedding a partial
 
@@ -235,3 +430,13 @@ To embed a video, use the `video` shortcode with the location of the video and a
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
 - [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)
 - [Children](https://learn.netlify.com/en/shortcodes/children/)
+
+
+<!-- to test more:
+- attachmentlink
+- attachments 
+- mermaid
+- pagelink
+- pagetreesearch
+Done until: userlink
+-->

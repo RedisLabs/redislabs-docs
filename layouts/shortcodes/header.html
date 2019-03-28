@@ -1,0 +1,16 @@
+<div class="well">
+	<strong>Menu</strong><br/>
+	{{.Inner}}
+
+	<div><strong>On this page</strong></div>
+	{{.Page.TableOfContents}}
+	<div><strong>Linked pages</strong></div>
+	<ul>
+		{{ range sort .Page.Sections }}
+			<li><a href="{{.URL}}" >{{ .Title }}</a></li>
+		{{ end }}
+		{{ range sort .Page.Pages }}
+			<li><a href="{{.URL}}" >{{ .Title }}</a></li>
+		{{ end }}
+	</ul>
+</div>
