@@ -108,18 +108,18 @@ requirements in CRDBs.
 Below is a table of the primary data types and their support levels,
 followed by descriptions:
 
-|  **Data Type** | **Support Level** |
+| **Data Type** | **Support Level** |
 |------------|-----------------|
-|  Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
-|  Geo | Supported; With limitations of [sorted sets]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) and [redis geo](https://redis.io/commands/GEOADD) |
-|  Hashes | [Supported]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}); Hash fields are treated as strings or counters |
-|  Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
-|  Lists | [Supported]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
-|  Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
-|  Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
-|  Sorted Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
-|  Bitsets | Not currently supported |
-|  Streams | Not currently supported |
+| Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Geo | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+| Hashes | [Supported]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}); Hash fields are treated as strings or counters |
+| Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Lists | [Supported]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
+| Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
+| Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
+| Sorted Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+| Bitsets | Not currently supported |
+| Streams | Not currently supported |
 
 ### Other Data Types
 
