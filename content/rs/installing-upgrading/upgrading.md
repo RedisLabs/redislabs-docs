@@ -50,12 +50,6 @@ upgrade.
 $ sudo ./install.sh
 ```
 
-{{% note %}}Make sure that you answer Y to these questions:
-
-- At the beginning of the upgrade process - `Do you want to enable upgrade mode now [Y/N]?`
-- At the end of the upgrade process - `Do you want to disable upgrade mode now [Y/N]?`
-{{% /note %}}
-
 The node upgrade process restarts the services running RS, which causes
 a short interruption to connections to the proxy, node and databases.
 
