@@ -25,7 +25,7 @@ to the new version.
 {{% warning %}}Using features from the newer version before all nodes are upgraded
 can produce unexpected results or cause failures in the cluster.{{% /warning %}}
 
-## Upgrading nodes
+## Upgrading Nodes
 
 Upgrading the nodes' software requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
@@ -72,7 +72,7 @@ If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
-## Upgrading databases
+## Upgrading Databases
 
 Some RS upgrades add support for new Redis versions. In these cases,
 Redis Labs recommends that you upgrade the databases to the new Redis
@@ -123,22 +123,16 @@ a result:
 
 ## Upgrading CRDB
 
+When you upgrade from RS 5.4.0 or lower to 5.4.2 or higher, the upgrade includes fundamental changes in the CRDB protocol so you must upgrade your CRDBs to use the new CRDB capabilities.
 
+After you [upgrade your existing nodes](#upgrading-nodes) in your cluster to RS 5.4.2, the status of your existing CRDB is displayed with ‘OLD CRDB PROTOCOL VERSION’. The shard status shows that an ‘OLD REDIS VERSION’ is used. After you upgrade the CRDB, the new Redis version is used and the status is updated accordingly.
 
-1. After you upgrade your existing nodes in your cluster to RS 5.4.2, the status of your existing CRDB  will be displayed as ‘OLD CRDB PROTOCOL VERSION’.
+To upgrade a CRDB instance:
 
-
-
-    Note that the shard status can also show that an ‘OLD REDIS VERSION’ is used. After you upgrade the database, the new Redis version is used and the status is be ‘OK’.
-
-1. To upgrade the CRDB and its protocol, run: `rladmin upgrade db <db_name>`
-
-
+1. Run: `rladmin upgrade db <db_name>`
 
 1. Read the WARNING message carefully and confirm.
 
-
-
 The upgrade is done, and the specific CRDB instance uses the new CRDB protocol version.
 
-Note that you can use the keep_crdt_protocol_version parameter to upgrade the database without upgrading the CRDB protocol version and continue using the old version. We only recommend this in consultation with Support.
+You can use the `keep_crdt_protocol_version` option to upgrade the database without upgrading the CRDB protocol version and continue using the old version. We only recommend this in consultation with Support.
