@@ -81,8 +81,8 @@ List:
 |  t7 | RPOP L => z | RPOP L => z |
 
 **Explanation**:
-At t1, the operation pushes elements x, y, z to List L. At3, the
-sequential pops behaves as expected from a queue. At 7, the concurrent
+At t1, the operation pushes elements x, y, z to List L. At t3, the
+sequential pops behave as expected from a queue. At t7, the concurrent
 pop in both instances might show the same result. The instance was not
 able to sync regarding the z removal so, from the point of view of each
 instance, z is located in the List and can be popped. After syncing,
