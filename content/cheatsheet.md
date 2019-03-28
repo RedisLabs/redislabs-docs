@@ -240,7 +240,7 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 {{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
 
-### Label
+## Label
 
 Label displays a label. The type parameter can be passed to the shortcode in order to display the label in a different color, eg. **success** for a green label, **warning** for orange, **info** for blue and **danger** for red.
 
@@ -254,7 +254,7 @@ Label displays a label. The type parameter can be passed to the shortcode in ord
 
 {{% label type="info" %}}This is a label{{% /label %}}
 
-### Allchildren
+## Allchildren
 
 Allchildren ...
 
@@ -268,7 +268,21 @@ Allchildren ...
 
 {{%allchildren style="h2" description="true"%}}
 
-### Anchor Link
+## Children
+
+Children ...
+
+**Syntax**:
+
+```
+{{%/* children style="h2" description="true" */%}}
+```
+
+**Output**:
+
+{{%children style="h2" description="true"%}}
+
+## Anchor Link
 
 Anchor Link links to another part of the page, ie. the anchor link.
 
@@ -282,7 +296,7 @@ Anchor Link links to another part of the page, ie. the anchor link.
 
 {{% anchorlink anchor="example" %}}Go to example{{% /anchorlink %}}
 
-### Button
+## Button
 
 Button displays a button. The theme parameter can be passed to the shortcode in order to display the button in a different color, eg. **success** for a green button, **warning** for orange, **info** for blue and **danger** for red.
 
@@ -296,7 +310,7 @@ Button displays a button. The theme parameter can be passed to the shortcode in 
 
 {{% button theme="success" %}}Click here{{% /button %}}
 
-### Code
+## Code
 
 Code ...
 
@@ -310,7 +324,7 @@ Code ...
 
 {{% code %}}var x = 123;{{% /code %}}
 
-### Icon
+## Icon
 
 icon ...
 
@@ -324,7 +338,7 @@ icon ...
 
 {{% icon "fa-calendar" %}}
 
-### Emoticon
+## Emoticon
 
 emoticon ...
 
@@ -338,7 +352,7 @@ emoticon ...
 
 {{% emoticon name="thumbs-up" %}}{{% /emoticon %}}
 
-### Header
+## Header
 
 header description ...
 
@@ -352,7 +366,7 @@ header description ...
 
 {{% header %}} The menu of this page {{% /header %}}
 
-### Recently updated
+## Recently updated
 -> works but articles have no dates, the shortcode can be updated to not show the date
 recently-updated description ...
 
@@ -368,7 +382,7 @@ recently-updated description ...
 Example text
 {{% /recently-updated %}}
 
-### TOC
+## TOC
 toc description ...
 
 **Syntax**:
@@ -381,7 +395,7 @@ toc description ...
 
 {{% toc %}}
 
-### Well
+## Well
 well description ...
 
 **Syntax**:
@@ -425,6 +439,34 @@ To embed a video, use the `video` shortcode with the location of the video and a
 
 {{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
 
+### YouTube
+
+## YouTube
+YouTube description ...
+
+**Syntax**:
+
+``` 
+{{%/* youtube Bi1T3toQfF4 */%}}
+```
+
+**Output**:
+
+{{% youtube Bi1T3toQfF4 %}}
+
+## Start from time
+YouTube start description ...
+
+**Syntax**:
+
+``` 
+{{%/* youtube_start Bi1T3toQfF4 10 */%}}
+```
+
+**Output**:
+
+{{% youtube_start Bi1T3toQfF4 10 %}}
+
 ## Other Shortcodes
 
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
@@ -434,6 +476,7 @@ To embed a video, use the `video` shortcode with the location of the video and a
 
 <!-- to test more:
 - attachmentlink
+- children
 - attachments 
 - mermaid
 - pagelink
