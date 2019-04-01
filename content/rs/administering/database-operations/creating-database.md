@@ -5,22 +5,23 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can create as many databases as you wish in the cluster, so long as
-you do not exceed the available memory or the number of shards you
-purchased with your subscription.
+You can create Redis databases that are sharded and distributed across a single RS cluster.
+These databases can use Redis Enterprise features like:
 
-There are two types of Redis databases that can be created in RS.
+1. [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+1. [High availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
+1. [Data persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
+1. [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
-1. Traditional Redis databases that are sharded and distributed across
-    a single RS cluster. The detailed instructions are covered below.
-1. [Conflict-Free Replicated Database
-    (CRDB)]({{< relref "/rs/administering/database-operations/create-crdb.md" >}})
-    which is used to create a Geo-Distributed Active-Active Redis
-    database.
+You can create databases according to the number of shards in your subscription and the memory available on the machine.
 
-## Creating a new database in the UI
+{{% note %}}
+To create databases that are designed to be hosted in distributed locations, see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
+{{% /note %}}
 
-To create a new database in the UI:
+## Creating a New Database
+
+To create a new database:
 
 1. On the **Databases** page, click the + (plus) sign below the table.
     The buttons of the various database types that can be created will
