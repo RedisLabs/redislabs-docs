@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+db_type: database
 ---
 You can create Redis databases that are sharded and distributed across a single RS cluster.
 These databases can use Redis Enterprise features like:
@@ -16,79 +17,97 @@ These databases can use Redis Enterprise features like:
 You can create databases according to the number of shards in your subscription and the memory available on the machine.
 
 {{% note %}}
-To create databases that are designed to be hosted in distributed locations, see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
+To create databases that are designed to be hosted in distributed locations,
+see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
 {{% /note %}}
 
-## Creating a New Database
+## Creating a New Redis Database
 
 To create a new database:
 
-1. On the **Databases** page, click the + (plus) sign below the table.
-    The buttons of the various database types that can be created will
-    appear.
+1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the {{< field "db_type" >}}.
 
-    **Note**: If no databases exist, the new database buttons are
-    displayed upon entering the page.
+    By default, the address is: `https://<RS_address>:8443`
 
-1. Select the type of database to create: a **Redis** database or a
-    **Memcached** database.
+1. In **databases**, click ![Add](/images/rs/icon_add.png#no-click "Add").
 
-    If the nodes in your cluster are [Flash-enabled]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
-    you can opt to select **Runs on** as either **RAM** or **Flash**.
+    If you do not have any databases on the node, you are prompted to create a database.
 
-    Select your **Deployment** as **Single Region** or
-    [**Geo-Distributed**]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}).
+<!-- {{< embed-md "create-db.md" >}} -->
 
-    ![new_databases](/images/rs/new_databases.png?width=584&height=599)
-1. Enter a **name** for the database.
-    The database name must comply with the following rules:
+1. Click **Next** to create a single-region deployment.
 
-   - Length: up to 63 characters.
-   - Characters: only letters, digits and hyphen ('-') are allowed.
-   - Start with a letter and end with a letter or digit.
+    ![new_databases](/images/rs/new_databases.png)
 
-    **Note**: The database name is case-insensitive, i.e. uppercase and
-    lowercase letter are treated exactly the same.
+1. Enter the mandatory details of the new {{< field "db_type" >}}:
 
-1. Set the [**memory limit**]({{< relref "/rs/administering/database-operations/memory-limit.md" >}})
-    of the database. The application displays the total amount of memory
-    available in the cluster.
+    - **Name** - The {{< field "db_type" >}} name requirements are:
 
-    **Note:** If you create a Redis Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
-    or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
-    for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
+        - Maximum of 63 characters
+        - Only letter, number or hyphen (-) characters
+        - Starts with a letter; ends with a letter or digit.
 
-    **Note:** The name and the memory limit are the only mandatory
-    parameters.
+        {{% note %}}
+The database name is not case-sensitive
+        {{% /note %}}
 
-1. Specify whether to enable [**replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}).
+    - **Memory limit** - The [memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}) includes all database replicas and shards,
+        including slave shards in database replication and database shards in database clustering.
+        If the total size of the database in the cluster reaches the memory limit,
+        then the data eviction policy for the database is enforced.
 
-    **Note**: Enabling **replication** affects the total database size,
-    as explained in [Database memory
-    limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
+        {{% note %}}
+If you create a Redis Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
+for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
+        {{% /note %}}
 
-    1. If the cluster is configured to support rack-zone awareness,
-        once you enable replication you can also choose whether to
-        enable [**rack-zone awareness**]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
-        for the database.
+1. Select from the basic {{< field "db_type" >}} options:
 
-1. Specify whether to enable [**data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}),
-    and if so, what type to use.
-1. Next, you can specify **security** settings:
-   - If you are creating a Redis database, enter a Redis password.
-   - If you are creating a Memcached database, enter a username and
-        password for SASL Authentication.
-1. If you would like to define the port number that will be part of the
-    endpoint used to connect to the database, you can insert it in the
-    **endpoint port number** field. If you do not define it the system
-    will allocate a randomly selected free port.
+    - **Replication** - We recommend that you use intra-cluster replication to create slave shards for each database.
 
-    **Note**: You cannot change the [port number]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
-    after the database is created.
+        If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
+        you can also enable rack-zone awareness for the database.
 
-1. Select whether to enable [**database clustering**]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
-    If you enable clustering, select the number of database shards. For a Redis
-    database, select also the hashing policy.
+    - **Redis Modules** - You can enable a [Redis module]({{< relref "/rs/developing/modules/_index.md" >}}) for the database.
+
+    - **Data persistence** - To protect against loss of data stored in RAM,
+        you can enable [data persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
+        and select to store a copy of the data on disk with snapshots or Append Only File.
+
+    - **Password** - To protect your database from unauthorized connections,
+        enter a Redis password. Then, use the password in you application connections
+        to the database.
+
+        {{% note %}}
+If you are creating a Memcached database, enter a username and password for SASL Authentication.
+        {{% /note %}}
+
+1. Select from the advanced {{< field "db_type" >}} options:
+
+    - **Endpoint port number** - You can define the port number that clients use to connect to the database,
+        or a port is randomly selected.
+
+        {{% note %}}
+You cannot change the [port number]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
+after the database is created.
+        {{% /note %}}
+
+    - **Database clustering** - You can either:
+        - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+            and select the number of shards that you want to have in the database.
+            When database clustering is enabled, databases are subject to limitations on
+            [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+            You can increase the number of shards in the database at any time.
+
+            You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#standard-hashing-policy" >}})
+            or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#custom-hashing-policy" >}})
+            to define where keys are located in the clustered database.
+
+        - Clear the **Database clustering** option to use only one shard so that you 
+        can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        without the limitations.
+
 1. Set the [**data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}).
     This policy is applied when the total size of the database reaches
     its memory limit.
