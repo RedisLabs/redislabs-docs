@@ -81,6 +81,20 @@ def hello_world():
   print "Hello World!"
 ```
 
+## Code
+
+Code can be displayed using the code shortcode as well.
+
+**Syntax**:
+
+```
+{{%/* code */%}}var x = 123;{{%/* /code */%}}
+```
+
+**Output**:
+
+{{% code %}}var x = 123;{{% /code %}}
+
 ## Tables
 
 **Syntax**:
@@ -116,9 +130,9 @@ To make an image appear on the next line in a list:
 1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
-### Image
+### Image shortcode
 
-image ...
+Images can also be added using the **image** shortcode.
 
 **Syntax**:
 
@@ -129,6 +143,43 @@ image ...
 **Output**:
 
 {{% image filename="/images/rs/rp_stack.png" %}}
+
+
+## Adding a video
+
+To embed a video, use the `video` shortcode with the location of the video and a video title.
+
+`{{</* video "/images/<path>/<video>.mp4" "Video title" */>}}`
+
+{{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
+
+### YouTube
+
+#### Default
+Embed YouTube video.
+
+**Syntax**:
+
+``` 
+{{%/* youtube Bi1T3toQfF4 */%}}
+```
+
+**Output**:
+
+{{% youtube Bi1T3toQfF4 %}}
+
+#### Start from time
+Embed YouTube video and start playback from specific timestamp.
+
+**Syntax**:
+
+``` 
+{{%/* youtube_start Bi1T3toQfF4 10 */%}}
+```
+
+**Output**:
+
+{{% youtube_start Bi1T3toQfF4 10 %}}
 
 ## Expanding Blocks
 
@@ -254,9 +305,9 @@ Label displays a label. The type parameter can be passed to the shortcode in ord
 
 {{% label type="info" %}}This is a label{{% /label %}}
 
-## Allchildren
+## All children
 
-Allchildren ...
+Allchildren displays all the child pages of current page.
 
 **Syntax**:
 
@@ -266,21 +317,8 @@ Allchildren ...
 
 **Output**:
 
-{{%allchildren style="h2" description="true"%}}
+See example [here](/rc/administration).
 
-## Children
-
-Children ...
-
-**Syntax**:
-
-```
-{{%/* children style="h2" description="true" */%}}
-```
-
-**Output**:
-
-{{%children style="h2" description="true"%}}
 
 ## Anchor Link
 
@@ -289,12 +327,12 @@ Anchor Link links to another part of the page, ie. the anchor link.
 **Syntax**:
 
 ```
-{{%/* anchorlink anchor="example" */%}}Go to example{{%/* /anchorlink */%}}
+{{%/* anchorlink anchor="example" */%}}An example anchor{{%/* /anchorlink */%}}
 ```
 
 **Output**:
 
-{{% anchorlink anchor="example" %}}Go to example{{% /anchorlink %}}
+{{% anchorlink anchor="example" %}}An example anchor{{% /anchorlink %}}
 
 ## Button
 
@@ -310,23 +348,9 @@ Button displays a button. The theme parameter can be passed to the shortcode in 
 
 {{% button theme="success" %}}Click here{{% /button %}}
 
-## Code
-
-Code ...
-
-**Syntax**:
-
-```
-{{%/* code */%}}var x = 123;{{%/* /code */%}}
-```
-
-**Output**:
-
-{{% code %}}var x = 123;{{% /code %}}
-
 ## Icon
 
-icon ...
+Icon displays one of the icons available in Bootstraps **Glyphicon** pack. List of icons available can be found [here](https://getbootstrap.com/docs/3.3/components/#glyphicons).
 
 **Syntax**:
 
@@ -340,7 +364,7 @@ icon ...
 
 ## Emoticon
 
-emoticon ...
+Emoticon displays one of the following icons: *thumbs-up*, *thumbs-down*, *information*, *tick*, *cross*, *warning*, *smile*, *sad*, *cheeky*, *laugh*, *wink*.
 
 **Syntax**:
 
@@ -354,7 +378,7 @@ emoticon ...
 
 ## Header
 
-header description ...
+Header displays the menu of current page along with a title.
 
 **Syntax**:
 
@@ -367,23 +391,22 @@ header description ...
 {{% header %}} The menu of this page {{% /header %}}
 
 ## Recently updated
--> works but articles have no dates, the shortcode can be updated to not show the date
-recently-updated description ...
+This shortcode can be used to display recently updated articles.
 
 **Syntax**:
 
 ```
-{{%/* recently-updated */%}} Example text {{%/* /recently-updated */%}}
+{{%/* recently-updated */%}} Recently updated articles {{%/* /recently-updated */%}}
 ```
 
 **Output**:
 
 {{% recently-updated %}}
-Example text
+Recently updated articles
 {{% /recently-updated %}}
 
 ## TOC
-toc description ...
+This shortcode displays the table of contents of current page.
 
 **Syntax**:
 
@@ -396,7 +419,7 @@ toc description ...
 {{% toc %}}
 
 ## Well
-well description ...
+Well displays content inside a container.
 
 **Syntax**:
 
@@ -431,55 +454,8 @@ Syntax for embedding an HTML partial:
 
 {{< embed-html "sample.html" >}}
 
-## Embed Video
-
-To embed a video, use the `video` shortcode with the location of the video and a video title.
-
-`{{</* video "/images/<path>/<video>.mp4" "Video title" */>}}`
-
-{{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
-
-### YouTube
-
-## YouTube
-YouTube description ...
-
-**Syntax**:
-
-``` 
-{{%/* youtube Bi1T3toQfF4 */%}}
-```
-
-**Output**:
-
-{{% youtube Bi1T3toQfF4 %}}
-
-## Start from time
-YouTube start description ...
-
-**Syntax**:
-
-``` 
-{{%/* youtube_start Bi1T3toQfF4 10 */%}}
-```
-
-**Output**:
-
-{{% youtube_start Bi1T3toQfF4 10 %}}
-
 ## Other Shortcodes
 
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
 - [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)
 - [Children](https://learn.netlify.com/en/shortcodes/children/)
-
-
-<!-- to test more:
-- attachmentlink
-- children
-- attachments 
-- mermaid
-- pagelink
-- pagetreesearch
-Done until: userlink
--->
