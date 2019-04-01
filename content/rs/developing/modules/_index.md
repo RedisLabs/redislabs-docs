@@ -10,8 +10,8 @@ RHEL/CentOS 6.x
 
 ## Redis Labs Packaged Modules
 
-There are three modules Redis Labs has developed, certified, and
-packaged for use with Redis Enterprise Software (RS) clusters. They are:
+Redis Labs develops, certifies, and packages modules for use with Redis Enterprise
+Software (RS) clusters. The available modules are:
 
 - ReBloom
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
