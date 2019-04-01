@@ -47,10 +47,10 @@ database and your application, as described below.
             the textbox.
         1. This will also trigger an automatic download of a zip
             archive with the following contents:
-            1. `garantia_user.crt` - the certificate's public key.
-            1. `garantia_user_private.key` - the certificate's private
+            1. `redislabs_user.crt` - the certificate's public key.
+            1. `redislabs_user_private.key` - the certificate's private
                 key.
-            1. `garantia_ca.pem` - the service's certification
+            1. `redislabs_ca.pem` - the service's certification
                 authority.
 1. Click the **Update** button to apply the changes to your resource.
 
@@ -83,15 +83,15 @@ below) instead of your resource's endpoint.
     ```
 
 1. Copy all certificate files to /etc/stunnel.
-    1. `garantia_user.crt` - the certificate's public key.
-    1. `garantia_user_private.key` - the certificate's private key.
-    1. `garantia_ca.pem` - the service's certification authority.
+    1. `redislabs_user.crt` - the certificate's public key.
+    1. `redislabs_user_private.key` - the certificate's private key.
+    1. `redislabs_ca.pem` - the service's certification authority.
 1. Change the permissions of the private key:
 
     ```src
-    $ chown root:root /etc/stunnel/garantia_user_private.key
+    $ chown root:root /etc/stunnel/redislabs_user_private.key
 
-    $ chmod 0600 /etc/stunnel/garantia_user_private.key
+    $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
 
 1. Create a configuration file named /etc/stunnel/redislabs.conf as
@@ -115,15 +115,15 @@ below) instead of your resource's endpoint.
     ```
 
 1. Copy all certificate files to `/etc/stunnel`.
-    1. `garantia_user.crt` - the certificate's public key.
-    1. `garantia_user_private.key` - the certificate's private key.
-    1. `garantia_ca.pem` - the service's certification authority.
+    1. `redislabs_user.crt` - the certificate's public key.
+    1. `redislabs_user_private.key` - the certificate's private key.
+    1. `redislabs_ca.pem` - the service's certification authority.
 1. Change the permissions of the private key:
 
     ```src
-    $ chown root:root /etc/stunnel/garantia_user_private.key
+    $ chown root:root /etc/stunnel/redislabs_user_private.key
 
-    $ chmod 0600 /etc/stunnel/garantia_user_private.key
+    $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
 
 1. Create a configuration file named /etc/stunnel/stunnel.conf as shown
@@ -287,7 +287,7 @@ Use the following stunnel configuration file to have your client open
 secure connections to your Redis Labs resources via port 6379 of your
 localhost:
 
-`cert = /etc/stunnel/garantia_user.crt key = /etc/stunnel/garantia_user_private.key cafile = /etc/stunnel/garantia_ca.pem verify = 2 delay = yes`
+`cert = /etc/stunnel/redislabs_user.crt key = /etc/stunnel/redislabs_user_private.key cafile = /etc/stunnel/redislabs_ca.pem verify = 2 delay = yes`
 
 `[redislabs] client = yes accept = 127.0.0.1:6379 connect = host:port`
 
