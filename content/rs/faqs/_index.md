@@ -276,3 +276,40 @@ To retrieve your password, navigate to the OpenShift management console, select 
 Retrieve your password by selecting “Reveal Secret.”
 ![openshift-password-retrieval]( /images/rs/openshift-password-retrieval.png )
 {{% /expand%}}
+
+{{%expand "What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml?" %}}
+
+The scc.yaml file is defined like this:
+
+```yaml
+kind: SecurityContextConstraints
+
+apiVersion: v1
+
+metadata:
+
+name: redis-enterprise-scc
+
+allowPrivilegedContainer: false
+
+allowedCapabilities:
+
+- SYS_RESOURCE
+
+runAsUser:
+
+type: RunAsAny
+
+seLinuxContext:
+
+type: RunAsAny
+```
+
+The SYS_RESOURCE capability is required by the Redis Labs Enterprise Cluster (RLEC) container so that RLEC can set correct OOM scores to its processes inside the container.
+Also, some of the RLEC services must be able to increase default resource limits, especially the number of open file descriptors.
+
+While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file.
+
+The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/rs/getting-started/k8s-openshift.md#step-3-prepare-your-yaml-files" >}}).
+
+{{% /expand%}}
