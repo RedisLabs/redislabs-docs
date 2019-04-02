@@ -32,8 +32,12 @@ Unexpected behaviors/issues found in this release will be addressed in future re
 
 This preview version is not supported for networks that are isolated from the internet.
 
-## Install Instructions
+## Installation Instructions
 
-After you [install RS 5.5]({{< relref "/rs/getting-started/quick-setup.md" >}}), you must run a script on each node to install the modules.
+To setup a node that can host databases with multiple modules:
 
-To install the modules, run: `sudo ./install-modules.sh`
+1. [Install RS 5.5]({{< relref "/rs/getting-started/quick-setup.md" >}})
+1. To install the modules, run: `sudo ./install-modules.sh`
+1. Either:
+    - Setup the node as the [first node in the cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}
+    - [Join the node to an existing cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}
