@@ -28,7 +28,7 @@ RS 5.5 lets you create Redis databases with multiple Redis modules.
 
 This preview version is a standalone version and is not supported for production environments.
 You cannot upgrade to it from a lower version or upgrade from it to a higher version.
-Unexpected behaviors found in this released can be planned for resolution in later releases.
+Unexpected behaviors/issues found in this release will be addressed in future releases.
 
 This preview version is not supported for networks that are isolated from the internet.
 
