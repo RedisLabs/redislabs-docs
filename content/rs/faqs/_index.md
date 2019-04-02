@@ -305,7 +305,7 @@ seLinuxContext:
 type: RunAsAny
 ```
 
-The SYS_RESOURCE capability is required by the Redis Labs Enterprise Cluster (RLEC) container so that for RLEC can set correct OOM scores to its processes inside the container.
+The SYS_RESOURCE capability is required by the Redis Labs Enterprise Cluster (RLEC) container so that RLEC can set correct OOM scores to its processes inside the container.
 Also, some of the RLEC services must be able to increase default resource limits, especially the number of open file descriptors.
 
 While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file.
