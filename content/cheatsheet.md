@@ -87,7 +87,7 @@ Code can be displayed using the code shortcode as well.
 
 **Syntax**:
 
-```
+```src
 {{%/* code */%}}var x = 123;{{%/* /code */%}}
 ```
 
@@ -130,21 +130,6 @@ To make an image appear on the next line in a list:
 1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
-### Image shortcode
-
-Images can also be added using the **image** shortcode.
-
-**Syntax**:
-
-```
-{{%/* image filename="/images/rs/rp_stack.png" */%}}
-```
-
-**Output**:
-
-{{% image filename="/images/rs/rp_stack.png" %}}
-
-
 ## Adding a video
 
 To embed a video, use the `video` shortcode with the location of the video and a video title.
@@ -155,31 +140,31 @@ To embed a video, use the `video` shortcode with the location of the video and a
 
 ### YouTube
 
-#### Default
+##### Default
 Embed YouTube video.
 
 **Syntax**:
 
-``` 
+```src
 {{%/* youtube Bi1T3toQfF4 */%}}
 ```
 
 **Output**:
 
-{{% youtube Bi1T3toQfF4 %}}
+{{< youtube Bi1T3toQfF4 >}}
 
-#### Start from time
+##### Start from time
 Embed YouTube video and start playback from specific timestamp.
 
 **Syntax**:
 
-``` 
-{{%/* youtube_start Bi1T3toQfF4 10 */%}}
+```src 
+{{</* youtube_start Bi1T3toQfF4 10 */>}}
 ```
 
 **Output**:
 
-{{% youtube_start Bi1T3toQfF4 10 %}}
+{{< youtube_start Bi1T3toQfF4 10 >}}
 
 ## Expanding Blocks
 
@@ -213,7 +198,7 @@ operated on.{{% /excerpt %}}
 
 ### Including an excerpt
 
-```
+```src
 {{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}
 ```
 
@@ -227,7 +212,7 @@ Info boxes give background information that does not prevent proper use of the p
 
 **Syntax**:
 
-```
+```src
 {{%/* info */%}}After you do this the first time, it gets easier.{{%/* /info */%}}
 ```
 
@@ -241,7 +226,7 @@ Tips give additional information for improved use of the product.
 
 **Syntax**:
 
-```
+```src
 {{%/* tip */%}}Eating on time prevents hunger.{{%/* /tip */%}}
 ```
 
@@ -255,7 +240,7 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 **Syntax**:
 
-```
+```src
 {{%/* note */%}}Make sure you have enough disk space.{{%/* /note */%}}
 ```
 
@@ -263,27 +248,13 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 {{% note %}}Make sure you have enough disk space.{{% /note %}}
 
-### Alert
-
-Alerts suggest that users think carefully ...
-
-**Syntax**:
-
-```
-{{%/* alert */%}}Are you sure?{{%/* /alert */%}}
-```
-
-**Output**:
-
-{{% alert %}}Are you sure?{{% /alert %}}
-
 ### Warning
 
 Warnings suggest that users think carefully before doing steps that can cause irresversible data loss.
 
 **Syntax**:
 
-```
+```src
 {{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* /warning */%}}
 ```
 
@@ -297,7 +268,7 @@ Label displays a label. The type parameter can be passed to the shortcode in ord
 
 **Syntax**:
 
-```
+```src
 {{%/* label type="info" */%}}This is a label{{%/* /label */%}}
 ```
 
@@ -311,7 +282,7 @@ Allchildren displays all the child pages of current page.
 
 **Syntax**:
 
-```
+```src
 {{%/* allchildren style="h2" description="true" */%}}
 ```
 
@@ -319,83 +290,12 @@ Allchildren displays all the child pages of current page.
 
 See example [here](/rc/administration).
 
-
-## Anchor Link
-
-Anchor Link links to another part of the page, ie. the anchor link.
-
-**Syntax**:
-
-```
-{{%/* anchorlink anchor="example" */%}}An example anchor{{%/* /anchorlink */%}}
-```
-
-**Output**:
-
-{{% anchorlink anchor="example" %}}An example anchor{{% /anchorlink %}}
-
-## Button
-
-Button displays a button. The theme parameter can be passed to the shortcode in order to display the button in a different color, eg. **success** for a green button, **warning** for orange, **info** for blue and **danger** for red.
-
-**Syntax**:
-
-```
-{{%/* button theme="success" */%}}Click here{{%/* /button */%}}
-```
-
-**Output**:
-
-{{% button theme="success" %}}Click here{{% /button %}}
-
-## Icon
-
-Icon displays one of the icons available in Bootstraps **Glyphicon** pack. List of icons available can be found [here](https://getbootstrap.com/docs/3.3/components/#glyphicons).
-
-**Syntax**:
-
-```
-{{%/* icon "fa-calendar" */%}}
-```
-
-**Output**:
-
-{{% icon "fa-calendar" %}}
-
-## Emoticon
-
-Emoticon displays one of the following icons: *thumbs-up*, *thumbs-down*, *information*, *tick*, *cross*, *warning*, *smile*, *sad*, *cheeky*, *laugh*, *wink*.
-
-**Syntax**:
-
-```
-{{%/* emoticon name="thumbs-up" */%}}{{%/* /emoticon */%}}
-```
-
-**Output**:
-
-{{% emoticon name="thumbs-up" %}}{{% /emoticon %}}
-
-## Header
-
-Header displays the menu of current page along with a title.
-
-**Syntax**:
-
-```
-{{%/* header */%}} The menu of this page {{%/* /header */%}}
-```
-
-**Output**:
-
-{{% header %}} The menu of this page {{% /header %}}
-
 ## Recently updated
 This shortcode can be used to display recently updated articles.
 
 **Syntax**:
 
-```
+```src
 {{%/* recently-updated */%}} Recently updated articles {{%/* /recently-updated */%}}
 ```
 
@@ -405,25 +305,12 @@ This shortcode can be used to display recently updated articles.
 Recently updated articles
 {{% /recently-updated %}}
 
-## TOC
-This shortcode displays the table of contents of current page.
-
-**Syntax**:
-
-```
-{{%/* toc */%}}
-```
-
-**Output**:
-
-{{% toc %}}
-
 ## Well
 Well displays content inside a container.
 
 **Syntax**:
 
-``` 
+```src 
 {{%/* well */%}} Inside a well {{%/* /well */%}} 
 ```
 
@@ -440,7 +327,7 @@ A partial markdown or HTML file can be included in other files using the **embed
 
 Syntax for embedding a markdown partial:
 
-```
+```src
 {{</* embed-md "sample.md"  */>}}
 ```
 
@@ -448,7 +335,7 @@ Syntax for embedding a markdown partial:
 
 Syntax for embedding an HTML partial:
 
-```
+```src
 {{</* embed-html "sample-table.html" */>}}
 ```
 
