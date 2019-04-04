@@ -29,7 +29,7 @@ To add a user to the cluster:
 To have a user authenticate with LDAP, you must have [LDAP integration
 enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}). 
 Then, create a new **external** user in the web UI.
-
+<!-- 
 You can also create an external with the REST API with this syntax:
 
 ```src
@@ -42,7 +42,7 @@ For the user role, enter either:
 - `db_member` - DB member
 - `cluster_viewer` - Cluster viewer
 - `cluster_member` - Cluster member
-- `admin` - Admin
+- `admin` - Admin -->
     {{% /expand %}}
 
 1. For the email alerts, click **Edit** and select the alerts that the user receives.
