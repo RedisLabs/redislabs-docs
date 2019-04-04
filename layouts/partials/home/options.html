@@ -1,77 +1,124 @@
 <section class="home-options">
-    <div class="home-options__option">
-        <div class="home-options__option__icon">
-            <img src="./theme-flex/img/icn-cloud-no-circle-2.svg" alt="Cloud Essentials Icon">
-            <a href="/rc" class="opener"></a>
+    <div class="home-options-row">
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="./theme-flex/img/icn-cloud-no-circle-2.svg" alt="Cloud Essentials Icon">
+                <a href="/rc" class="--opener"></a>
+            </div>
+            <h5>Cloud Essentials</h5>
+            <p>Fully-managed, hosted Redis Enterprise database-as-a-service within major public clouds.</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rc">Overview</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rc/concepts/">Concepts</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/rc/quick-setup-redis-cloud/">Getting Started</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rc/administration/">Administrator
+                            Guide</a></li>
+                </section>
+            </ul>
         </div>
-        <h5>Cloud Essentials</h5>
-        <p>Fully-managed, hosted Redis Enterprise database-as-a-service within major public clouds.</p>
-        <ul>
-            <li><a href="/rc">Overview</a></li>
-            <li><a href="/rc/quick-setup-redis-cloud/">Getting Started</a></li>
-            <li><a href="/rc/concepts/">Concepts</a></li>
-            <li><a href="/rc/administration/">Administrator Guide</a></li>
-        </ul>
+
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="./theme-flex/img/icn-vpc-no-circle-2.svg" alt="Cloud Pro Icon">
+                <a href="/rv" class="--opener"></a>
+            </div>
+            <h5>Cloud Pro</h5>
+            <p>On top of Cloud Essentials, with Pro you get VPC, Redis modules, CRDB, Redis on Flash, and more.</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv">Overview</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv/concepts/">Concepts</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv/quick-setup/">Getting
+                            Started</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv/administration">Administrator
+                            Guide</a></li>
+                </section>
+            </ul>
+        </div>
+
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="./theme-flex/img/icn-software-no-circle-2.svg" alt="Software Icon">
+                <a href="/rs" class="--opener"></a>
+            </div>
+            <h5>Software</h5>
+            <p>Fully-featured Redis Enterprise for any cloud or data center, delivered as software, container, or AWS
+                AMI.</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs">Overview</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/concepts">Architecture
+                            Guide</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/getting-started">Getting
+                            Started</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rs/administering">Administrator
+                            Guide</a></li>
+                </section>
+            </ul>
+        </div>
     </div>
 
-    <div class="home-options__option">
-        <div class="home-options__option__icon">
-            <img src="./theme-flex/img/icn-vpc-no-circle-2.svg" alt="Cloud Pro Icon">
-            <a href="/rv" class="opener"></a>
-        </div>
-        <h5>Cloud Pro</h5>
-        <p>On top of Cloud Essentials, with Pro you get VPC, Redis modules, CRDB, Redis on Flash, and more.</p>
-        <ul>
-            <li><a href="/rv">Overview</a></li>
-            <li><a href="/rv/quick-setup/">Getting Started</a></li>
-            <li><a href="/rv/concepts/">Concepts</a></li>
-            <li><a href="/rv/administration">Administrator Guide</a></li>
-        </ul>
-    </div>
+    <div class="home-options-row">
+        <div class="home-options__option pt-20">
+            <div class="home-options__option__icon">
+                <img src="./theme-flex/img/ico-multimodel-2.svg" alt="Modules Icon">
+                <a href="https://redislabs.com/redis-enterprise/redis-modules/" class="--opener"></a>
+            </div>
+            <h5>Modules</h5>
+            <p>Redis Modules are add-ons that extend Redis to cover most of the popular use cases in many industries.
+            </p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://redislabs.com/redis-enterprise/redis-modules/">Overview</a></li>
 
-    <div class="home-options__option">
-        <div class="home-options__option__icon">
-            <img src="./theme-flex/img/icn-software-no-circle-2.svg" alt="Software Icon">
-            <a href="/rs" class="opener"></a>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://oss.redislabs.com/rejson/">ReJSON</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://oss.redislabs.com/redisearch/">Redisearch</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://oss.redislabs.com/redisgraph/">RedisGraph</a></li>
+                    <!-- <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://oss.redislabs.com/rebloom/">ReBloom</a></li> -->
+                </section>
+            </ul>
         </div>
-        <h5>Software</h5>
-        <p>Fully-featured Redis Enterprise for any cloud or data center, delivered as software, container, or AWS AMI.</p>
-        <ul>
-            <li><a href="/rs">Overview</a></li>
-            <li><a href="/rs/getting-started">Getting Started</a></li>
-            <li><a href="/rs/concepts">Architecture Guide</a></li>
-            <li><a href="/rs/administering">Administrator Guide</a></li>
-        </ul>
-    </div>
 
-    <div class="home-options__option">
+        <div class="home-options__option pt-20">
             <div class="home-options__option__icon">
                 <img src="./images/icon_logo/platforms_icon.png" alt="Platform Icon">
                 <a href="/platforms" class="--opener"></a>
             </div>
             <h5>Platforms</h5>
             <p>Redis Enterprise deployed on containerized software platforms and integrated with our partners.</p>
+            <hr>
             <ul>
-                <li><a href="/platforms">Overview</a></li>
-                <li><a href="/platforms/getting-started-kubernetes">Getting Started</a></li>
-                <li><a href="/rs/kubernetes-architecture">Architecture Guide</a></li>
-                <li><a href="/rs/kubernetes-admin">Administrator Guide</a></li>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/rs/kubernetes-architecture">Kubernetes</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/platforms">Pivotal PCF</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/rs/kubernetes-architecture">RedHat OpenShift</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="/rs/kubernetes-admin">Marketplaces</a></li>
+                </section>
             </ul>
         </div>
-
-    <div class="home-options__option">
-        <div class="home-options__option__icon">
-            <img src="./theme-flex/img/ico-multimodel-2.svg" alt="Modules Icon">
-            <a href="https://redislabs.com/redis-enterprise/redis-modules/" class="opener"></a>
-        </div>
-        <h5>Modules</h5>
-        <p>Redis Modules are add-ons that extend Redis to cover most of the popular use cases in many industries.</p>
-        <ul>
-            <li><a href="https://redislabs.com/redis-enterprise/redis-modules/">Overview</a></li>
-            <li><a href="https://oss.redislabs.com/redisearch/">Redisearch</a></li>
-            <li><a href="https://oss.redislabs.com/rejson/">ReJSON</a></li>
-            <li><a href="https://oss.redislabs.com/rebloom/">ReBloom</a></li>
-            <li><a href="https://oss.redislabs.com/redisgraph/">RedisGraph</a></li>
-        </ul>
     </div>
 </section>
