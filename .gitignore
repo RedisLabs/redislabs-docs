@@ -20,5 +20,4 @@ Thumbs.db
 # MacOS files
 .DS_Store
 
-# Generated resource files
 /resources
