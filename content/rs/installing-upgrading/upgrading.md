@@ -125,6 +125,10 @@ a result:
 
 When you upgrade from RS 5.4.0 or lower to 5.4.2 or higher, the upgrade includes fundamental changes in the CRDB protocol so you must upgrade your CRDBs to use the new CRDB capabilities.
 
+CRDB protocol is backward-compatible, which means that RS 5.4.2 CRDB instances that use the new protocol can understand write-operations that come from instances on nodes with RS versions below 5.4.2. However, the protocol is not forward-compatible, so CRDB instances with the old protocol cannot understand write-operations of instances with the newer protocol version.
+As a result, after you upgrade the CRDB protocol on one instance, instances that were not upgraded yet cannot receive write updates from the upgraded instance. The upgraded instance receives updates from upgraded and non-upgraded instances.
+Therefore, we highly recommend that you upgrade all instances of a specific CRDB within a reasonable time frame and avoid temporary inconsistencies between the instances.
+
 After you [upgrade your existing nodes](#upgrading-nodes) in your cluster to RS 5.4.2, the status of your existing CRDB is displayed with ‘OLD CRDB PROTOCOL VERSION’. The shard status shows that an ‘OLD REDIS VERSION’ is used. After you upgrade the CRDB, the new Redis version is used and the status is updated accordingly.
 
 To upgrade a CRDB instance:
