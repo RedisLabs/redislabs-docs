@@ -32,7 +32,7 @@ failure](/images/rs/node-failure.png?width=600&height=152)
     different node - one with sufficient memory.
 
 **Note**: If there is a faulty node in the cluster to which you are
-adding a node, RP will enforce using the new node to replace the faulty
+adding a node, RS will enforce using the new node to replace the faulty
 one.
 
 **Note**: If you are using the DNS NS record based connection approach,

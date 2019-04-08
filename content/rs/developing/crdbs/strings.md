@@ -8,7 +8,7 @@ categories: ["RS"]
 Strings have particular unique characteristics in a CRDB. First off,
 they are the only data type that Last Write Wins (LWW) applies to. As
 part of that, a wall-clock timestamp (OS Time) is in the metadata of any
-operation on a String. If RP cannot determine the order of operations,
+operation on a String. If RS cannot determine the order of operations,
 the value with the higher timestamp wins. This is the only case where OS
 time is used to resolve a conflict.
 
