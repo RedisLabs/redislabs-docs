@@ -108,21 +108,22 @@ requirements in CRDBs.
 Below is a table of the primary data types and their support levels,
 followed by descriptions:
 
-|  **Data Type** | **Support Level** |
+| **Data Type** | **Support Level** |
 |------------|-----------------|
-|  Float Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
-|  Hashes | Supported. Hash fields are treated as strings or counters. [See detailed information]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}) |
-|  Integer Counters | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
-|  Lists | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
-|  Sets | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
-|  Strings | Supported, [see detailed information]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
-|  Sorted Sets | Supported, [See detailed information]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
-|  Bitsets | Not currently supported |
-|  Streams | Not currently supported |
+| Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Geo | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+| Hashes | [Supported]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}); Hash fields are treated as strings or counters |
+| Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Lists | [Supported]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
+| Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
+| Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
+| Sorted Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+| Bitsets | Not currently supported |
+| Streams | Not currently supported |
 
 ### Other Data Types
 
-Bitmap, Bitfields, Hyperloglog and Geo data types and operations are
+Bitmap, Bitfields, and Hyperloglog data types and operations are
 not currently supported in this version of
 CRDBs.
 
@@ -213,7 +214,7 @@ troubleshooting information (applicable to support etc.):
 |   | crdt_gc_collected | Number of tombstones garbaged collected successfully. |
 |   | crdt_gc_gvc_min | The minimal globally observed vector clock, as computed locally from all received observed clocks. |
 |   | crdt_stale_released_with_merge | Indicates last stale flag transition was a result of a complete full sync. |
-|  **CRDT Replicas** | A list of crdt_replica<uid> entries, each describes the known state of a remote instance with the following fields: |  |
+|  **CRDT Replicas** | A list of crdt_replica \<uid> entries, each describes the known state of a remote instance with the following fields: |  |
 |   | config_version | Last configuration version reported. |
 |   | shards | Number of shards. |
 |   | slots | Total number of hash slots. |
