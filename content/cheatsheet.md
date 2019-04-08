@@ -48,11 +48,26 @@ Output:
 
 ### Text formatting
 
+**Text styles**
+
 | **Style** | **Syntax** | **Output** |
 |-------------|----------------|-------------
 | Emphasized text | \*emphasized\* | *emphasized* |
 | Bold text | \*\*bold\*\* | **bold** |
-| Inline code | \`print "hello world!"\` | `print "hello world!"` |
+
+**Comments**
+
+Text in the comments shortcode is not published in the output.
+
+Syntax:
+
+```src
+{{%/* comment */%}}Do not publish!{{%/* /comment */%}}
+```
+
+Ouput:
+
+{{% comment %}}Do not publish!{{% /comment %}}
 
 ### Code formatting
 
