@@ -58,7 +58,7 @@ your Pivotal Cloud Foundry environment to get started.
     ![Redis Enterprise for PCF syslog configuration](/images/rs/syslog_disable.png?width=800&height=557)
 1. **Stemcell** Upload the proper stemcell requested on the page.
 
-**Note**: It is important to ensure the capacity used for RP cluster
+**Note**: It is important to ensure the capacity used for RS cluster
 nodes meet the minimum HW specification requirements for Redis
 Enterprise Software. See the [minimum HW
 specifications]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
