@@ -805,6 +805,9 @@ article section.page table td {
   font-size: 14px;
   line-height: 20px;
 }
+article section.page table td.cat-boundary {
+  border-left: black solid 1px
+}
 article section.page table td:first-child code {
   background-color: transparent;
   padding: 0; }
@@ -2531,9 +2534,8 @@ button.hamburger.hamburger--spring {
   }
 
   article > aside {
-    display: none; }
-
-
+    display: none;
+  }
 
   article > section.page {
     margin: 0 0;
@@ -2586,7 +2588,21 @@ button.hamburger.hamburger--spring {
 
   article img {
     margin-left: -1rem;
-    margin-right: -1rem; } }
+    margin-right: -1rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  article section.page table {
+    display: block;
+    overflow-y: auto;    
+  }
+
+  article section.page table td {
+    font-size: 11px;
+    line-height: 11px;
+  }
+}
 
 i.icon-icons_plus, i.icon-icons_minus {
   font-size: 12px;
