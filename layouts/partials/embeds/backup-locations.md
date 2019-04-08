@@ -1,6 +1,6 @@
 ### FTP server
 
-Before you configure backups to an FTP server, make sure that:
+Before you specify to backup to an FTP server, make sure that:
 
 - The RS cluster has network connectivity to the FTP server.
 - The user that you specify in the FTP server location has read and write priviledges.
@@ -15,7 +15,7 @@ For example: `ftp://username:password@10.1.1.1/home/backups/`
 
 ### SFTP server
 
-Before you configure backups to an SFTP server, make sure that:
+Before you specify to backup to an SFTP server, make sure that:
 
 - The RS cluster has network connectivity to the SFTP server.
 - The user that you specify in the SFTP server location has read and write priviledges.
@@ -35,7 +35,7 @@ For example: `sftp://username:password@10.1.1.1/home/backups/`
 
 ### Amazon S3
 
-Before you configure backups to Amazon S3, make sure that you have:
+Before you specify to backup to Amazon S3, make sure that you have:
 
 - Path in the format: `s3://bucketname/path/`
 - Access key ID
@@ -43,7 +43,7 @@ Before you configure backups to Amazon S3, make sure that you have:
 
 ### Local mount point
 
-Before you configure backups to a local mount point, make sure that:
+Before you specify to backup to a local mount point, make sure that:
 
 - The node has network connectivity to the destination server of the mount point.
 - The `redislabs:redislabs` user has read and write priviledges on the local mount point
@@ -67,7 +67,7 @@ To backup to a local mount point for a node:
 
 ### OpenStack Swift
 
-Before you configure backups to OpenStack Swift, make sure that you have:
+Before you specify to backup to OpenStack Swift, make sure that you have:
 
 - Storage URL in the format: `https://<openstack_url>/v1`
 - Container
