@@ -31,7 +31,7 @@ Redis Enterprise Software typically gets 2 major releases every year but the pro
 End-of-Life for a given Major release occurs 18 months after the formal release of
 that version.
 
-| Release Date – Full Support Starts for RS | End of Life (EOL)  |
+| RS Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
 | 5.4 – December 2018                       | June 30, 2020      |
 | 5.2 – June 2018                           | December 31, 2019  |
