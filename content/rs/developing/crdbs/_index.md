@@ -111,7 +111,7 @@ followed by descriptions:
 | **Data Type** | **Support Level** |
 |------------|-----------------|
 | Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
-| Geo | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+| Geospatial | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
 | Hashes | [Supported]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}); Hash fields are treated as strings or counters |
 | Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
 | Lists | [Supported]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
