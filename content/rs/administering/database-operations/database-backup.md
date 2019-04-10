@@ -1,51 +1,46 @@
 ---
-Title: Periodic Backups
+Title: Scheduled Backups
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can back up your dataset to an FTP server, Amazon S3, or OpenStack
-Object Storage ("Swift"), periodically, or ad-hoc. You cannot back up to
-the local machine.
+You can manually [export your data]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
+from a specific database at any time.
+You can also schedule backups of your databases to make sure you always have valid backups.
+The backup process can be scheduled for every 1, 4, 12 or 24 hours from the time that you save the backup configuration.
 
-Other cloud storage options, such as Azure Geo-Redundant Storage,
-SoftLayer Object Storage and Google Cloud Storage will be added in a
-future release.
+You can schedule backups to these locations:
 
-The backup process creates compressed (.gz) RDB files.
+- FTP server
+- SFTP server
+- Amazon S3
+- Local mount point
+- OpenStack Swift (Object Storage)
 
-**Note**: It is your responsibility to manage the backup location; Redis
-Enterprise Software does not delete old backups or monitor the amount of
-space left in the folder.
+Other cloud storage options, including Azure Geo-Redundant Storage and Google Cloud Storage,
+are planned for a future release.
 
-### FTP location
+The backup process creates compressed (.gz) RDB files that you can [import into a database]
+({{< relref "/rs/administering/database-operations/importing-data.md" >}}).
+If you backup a database configured for database clustering,
+RS copies a backup file for each shard to the specified backup location.
 
-Backing up to FTP requires permissions to read and write to the FTP
-location. If needed, you can specify the username and password for the
-FTP location as part of the path with the following structure:
-ftp://user:password\@host:port/path/
+{{% note %}}
+- Make sure that you have enough space available in your storage location.
+If there is not enough space in the backup location, the backup fails.
+- The backup configuration only applies to the node it is configured on.
+{{% /note %}}
 
-### Amazon S3 or OpenStack Swift location
+## Scheduling Periodic Backups
 
-To backup to Amazon S3 or OpenStack Swift, select the location type and
-enter the details in relevant fields. Make sure first that you have all
-these details from your selected platform.
+To schedule periodic backups for a database:
 
-### Periodic backup
+1. In **databases**, click on the database that you want to configure backups for.
+1. In **configuration**, select **Periodic backup**.
+1. Select an interval for the backups to run either every **1**, **4**, **12** or **24** hours.
+1. Select one of the available storage types.
+1. Enter the details for the selected storage type.
+1. To save the database configuration, click **Update**.
 
-You can configure the database to be periodically backed up to a chosen
-location. If you do so, specify the interval of how often to back up the
-database: every 4, 12, or 24 hours.
-
-### Ad-hoc backup - Export
-
-You can, at any time, backup any database as described in [Exporting
-data from a
-database]({{< relref "/rs/administering/database-operations/exporting-data.md" >}}).
-
-### Backup of a sharded database
-
-If you backup a database configured for database clustering, the system
-creates a backup file for each shard, and places all these backup files
-in the specified backup location.
+{{< embed-md "backup-locations.md" >}}
