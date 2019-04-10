@@ -25,7 +25,7 @@ to the new version.
 {{% warning %}}Using features from the newer version before all nodes are upgraded
 can produce unexpected results or cause failures in the cluster.{{% /warning %}}
 
-## Upgrading nodes
+## Upgrading Nodes
 
 Upgrading the nodes' software requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
@@ -72,7 +72,7 @@ If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
-## Upgrading databases
+## Upgrading Databases
 
 Some RS upgrades add support for new Redis versions. In these cases,
 Redis Labs recommends that you upgrade the databases to the new Redis
@@ -120,3 +120,23 @@ a result:
     usually takes longer than an RDB file.
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
+
+## Upgrading CRDB
+
+When you upgrade from RS 5.4.0 or lower to 5.4.2 or higher, the upgrade includes fundamental changes in the CRDB protocol so you must upgrade your CRDBs to use the new CRDB capabilities.
+
+CRDB protocol is backward-compatible, which means that RS 5.4.2 CRDB instances that use the new protocol can understand write-operations that come from instances on nodes with RS versions below 5.4.2. However, the protocol is not forward-compatible, so CRDB instances with the old protocol cannot understand write-operations of instances with the newer protocol version.
+As a result, after you upgrade the CRDB protocol on one instance, instances that were not upgraded yet cannot receive write updates from the upgraded instance. The upgraded instance receives updates from upgraded and non-upgraded instances.
+Therefore, we highly recommend that you upgrade all instances of a specific CRDB within a reasonable time frame and avoid temporary inconsistencies between the instances.
+
+After you [upgrade your existing nodes](#upgrading-nodes) in your cluster to RS 5.4.2, the status of your existing CRDB is displayed with ‘OLD CRDB PROTOCOL VERSION’. The shard status shows that an ‘OLD REDIS VERSION’ is used. After you upgrade the CRDB, the new Redis version is used and the status is updated accordingly.
+
+To upgrade a CRDB instance:
+
+1. Run: `rladmin upgrade db <db_name>`
+
+1. Read the WARNING message carefully and confirm.
+
+The upgrade is done, and the specific CRDB instance uses the new CRDB protocol version.
+
+You can use the `keep_crdt_protocol_version` option to upgrade the database without upgrading the CRDB protocol version and continue using the old version. We only recommend this in consultation with Support.
