@@ -33,7 +33,7 @@ sftp://user:password@host:<:custom_port>/path/
 
 For example: `sftp://username:password@10.1.1.1/home/backups/`
 
-### Amazon S3
+### AWS S3
 
 Before you specify to backup to Amazon S3, make sure that you have:
 

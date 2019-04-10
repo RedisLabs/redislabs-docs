@@ -5,11 +5,15 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can import [backup files]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
-of a specific database to restore data.
+You can import [export]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
+or [backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}})
+files of a specific database to restore data.
+You can either import from a single file or from multiple files,
+such as when you want to import from a backup of a sharded database.
 
 You can import data from these locations:
 
+- HTTP server
 - FTP server
 - SFTP server
 - Amazon S3
@@ -71,7 +75,7 @@ sftp://user:password@host:<:custom_port>/path/filename.rdb
 
 For example: `sftp://username:password@10.1.1.1/home/backups/backup.rdb`
 
-### Amazon S3
+### AWS S3
 
 Before you import from Amazon S3, make sure that you have:
 
