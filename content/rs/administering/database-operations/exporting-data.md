@@ -5,11 +5,32 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Using the Export option, you can back up a database at any time to an
-FTP server, Amazon S3, or OpenStack Object Storage ("Swift"). Other
-cloud storage options, such as Azure Geo-Redundant Storage, SoftLayer
-Object Storage, and Google Cloud Storage will be added in a future
-release. You cannot back up to the local machine.
+You can [schedule backups]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
+of a specific database to make sure you always have valid backups.
+You can also export the data from a specific database at any time.
+
+You can export a database to these locations:
+
+- FTP server
+- SFTP server
+- Amazon S3
+- Local mount point
+- OpenStack Swift (Object Storage)
+
+Other cloud storage options, including Azure Geo-Redundant Storage and Google Cloud Storage,
+are planned for a future release.
+
+The backup process creates compressed (.gz) RDB files that you can [import into a database]
+({{< relref "/rs/administering/database-operations/importing-data.md" >}}).
+If you backup a database configured for database clustering,
+RS copies a backup file for each shard to the specified backup location.
+
+{{% note %}}
+Make sure that you have enough space available in your storage location.
+If there is not enough space in the backup location, the backup fails.
+{{% /note %}}
+
+## Exporting Data From a Database
 
 To export data from a database:
 
@@ -20,20 +41,4 @@ To export data from a database:
     email notifications about the import process.
 1. Click **Export**.
 
-### FTP location
-
-To export to FTP, you must ensure permissions to read and write to the
-FTP location. If needed, you can specify the username and password for
-the FTP location as part of the path with the following structure: 
-ftp://user:password@host:port/path/
-
-### Amazon S3 or OpenStack Swift location
-
-To export to Amazon S3 or OpenStack Swift, you only need to select the
-location type and enter the details in relevant fields. Ensure first
-that you have all these details from your platform.
-
-For example, here is the data necessary to export to AWS S3.
-
-![Export from Redis Enterprise to Amazon
-S3](/images/rs/export_amazon_s3.png?width=700&height=578)
+{{< embed-md "backup-locations.md" >}}

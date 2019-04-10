@@ -5,17 +5,24 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can import data into a Redis Enterprise Software database from an
-HTTP location, FTP server, Amazon S3, or OpenStack Object Storage
-("Swift").
+You can import [export]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
+or [backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}})
+files of a specific database to restore data.
+You can either import from a single file or from multiple files,
+such as when you want to import from a backup of a sharded database.
 
-You can either import from a single file, or from multiple files in case
-you are importing from a backup of a sharded database. For additional
-details, refer to the Backup of a sharded database section in [Database
-backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
+You can import data from these locations:
 
-Note: Importing data via this method will erase all existing content in
-the database.
+- HTTP server
+- FTP server
+- SFTP server
+- Amazon S3
+- Local mount point
+- OpenStack Swift (Object Storage)
+
+{{% warning %}}
+Importing data erases all existing content in the database.
+{{% /warning %}}
 
 ## Importing data into a database
 
@@ -28,22 +35,84 @@ To import data into a database:
     email notifications about the import process.
 1. Click **Import**.
 
-### FTP location
+### HTTP server
 
-To import from FTP, you must ensure permissions to read from the FTP
-location.
+To import RDB files from an HTTP server, enter the path to the files. You must enter
+each path on a separate line.
 
-If needed, you can specify the username and password for the FTP
-location as part of the path with the following structure:
-ftp://user:password\@host:port/path/
+### FTP server
 
-### Amazon S3 or OpenStack Swift location
+Before you specify to import from an FTP server, make sure that:
 
-To import a database to Amazon S3 or OpenStack Swift, you need to simply
-select the location type and enter the details in the relevant fields.
-Ensure first that you have all these details from your platform.
+- The RS cluster has network connectivity to the FTP server.
+- The user that you specify in the FTP server location has read priviledges.
 
-Below is an example of the screen to import from AWS S3.
+To import an RDB file from an FTP server, enter the FTP server location in the format:
 
-![Import data from AWS S3 into Redis
-Enterprise](/images/rs/import_amazon_s3.png?width=700&height=648)
+```src
+ftp://user:password@host<:custom_port>/path/filename.rdb
+```
+
+For example: `ftp://username:password@10.1.1.1/home/backups/backup.rdb`
+
+### SFTP server
+
+Before you specify to import from an SFTP server, make sure that:
+
+- The RS cluster has network connectivity to the SFTP server.
+- The user that you specify in the SFTP server location has read priviledges.
+- The RS server and SFTP server have the correct TLS certificates. You can select either:
+    - **Use the cluster auto generated key** - Go to **settings** and copy the **Cluster SSH Public Key**
+        to the SFTP server.
+    - **Use a custom key** - Generate a TLS key pair for the SFTP server, copy the private key to
+        the **SSH Private Key** box, and copy the public key to the SFTP server.
+
+To import from an SFTP server, enter the SFTP server location in the format:
+
+```src
+sftp://user:password@host:<:custom_port>/path/filename.rdb
+```
+
+For example: `sftp://username:password@10.1.1.1/home/backups/backup.rdb`
+
+### AWS S3
+
+Before you import from Amazon S3, make sure that you have:
+
+- Path in the format: `s3://bucketname/path/filename.rdb`
+- Access key ID
+- Secret access key
+
+### Local mount point
+
+Before you specify to import from a local mount point, make sure that:
+
+- The node has network connectivity to the destination server of the mount point.
+- The `redislabs:redislabs` user has read priviledges on the local mount point
+and on the destination server.
+
+To specify to import from a local mount point on a node:
+
+1. Create the mount point:
+    1. Connect to the terminal of the RS server that the node is running on.
+    1. Mount the remote storage to a local mount point.
+
+        For example:
+
+        ```src
+        sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
+        ```
+
+1. In the path for the backup location, enter the mount point.
+
+    For example: `/mnt/Public/backup.rbd`
+
+### OpenStack Swift
+
+Before you specify to import from OpenStack Swift, make sure that you have:
+
+- Storage URL in the format: `https://<openstack_url>/v1`
+- Container
+- Prefix (Optional)
+- User
+- Key
