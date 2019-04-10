@@ -47,7 +47,7 @@ or HTTP server, enter the file's full URL in the **Import Dataset**
 dialog's **RDB File Path** field. Use the following standard pattern to
 provide the file's URL:
 
-`<protocol>://[username][:password]@[:port]/[path/]filename.rdb[.gz]`
+`<protocol>://[username][:password]@[hostname][:port]/[path/]filename.rdb[.gz]`
 
 Where:
 
