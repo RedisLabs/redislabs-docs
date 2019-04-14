@@ -387,7 +387,7 @@ section a {
 
 .home-options__option hr {
   border-color: #000;
-  margin: 20px auto;
+  margin: 30px auto 20px;
   width: 85%;
 }
 
@@ -398,6 +398,10 @@ section a {
 
 .home-options__option__icon img {
   width: 100px;
+}
+
+.home-options__option__icon img.sized-down {
+  height: 90px;
 }
 
 .home-options__option__icon a.opener {
@@ -413,7 +417,7 @@ section a {
   font-size: 1.75rem;
   font-style: normal;
   font-weight: 400;
-  margin: 15px 0 20px 0;
+  margin: 8px 0 12px 0;
 }
 
 .home-options__option p {
