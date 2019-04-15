@@ -30,7 +30,7 @@ can produce unexpected results or cause failures in the cluster.{{% /warning %}}
 
 ## Upgrading Nodes
 
-Upgrading the nodes' software requires installing the [RS installation
+Upgrading the software on a node requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
 on all of the machines on which RS is installed.
 
@@ -98,13 +98,12 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
 
 **To upgrade your database:**
 
-1. Make sure that all of the nodes in the RS cluster have been upgraded,
-    as described in Upgrading nodes section above. Otherwise, you will
-    not be able to upgrade the databases.
+1. Make sure that all of the nodes in the RS cluster are [upgraded](#upgrading-nodes).
+    You cannot upgrade databases before all of the nodes in the cluster are upgraded.
 1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
     on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
 
-During the database upgrade process, the database will be restarted. As
+During the database upgrade process, the database is restarted. As
 a result:
 
 - For databases that have [replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
@@ -141,10 +140,20 @@ it automatically receives any missing write-operations.
 
 To upgrade a CRDB instance:
 
-1. Run: `rladmin upgrade db <db_name>`
+1. Upgrade the node where the CRDB instance is located.
 
-1. Read the WARNING message carefully and confirm.
+    If you run `rladmin status`,
+    the status if the CRDB instances on the node indicates that an `OLD CRDB PROTOCOL VERSION` is used.  
+    ![crdb-upgrade-node](/images/rs/crdb-upgrade-node.png)
 
-The upgrade is done, and the specific CRDB instance uses the new CRDB protocol version.
+1. To upgrade the CRDB and its protocol, run: `rladmin upgrade db <crdb_name>`
+
+    This warning is shown:  
+    ![crdb-upgrade-protocol](/images/rs/crdb-upgrade-protocol.png)
+
+1. Read the warning message carefully and confirm.
+
+The upgrade is done, and the specific CRDB instance uses the new CRDB protocol version.  
+    ![crdb-upgrade-done](/images/rs/crdb-upgrade-done.png)
 
 You can use the `keep_crdt_protocol_version` option to upgrade the database without upgrading the CRDB protocol version and continue using the old version. We only recommend this in consultation with Support.
