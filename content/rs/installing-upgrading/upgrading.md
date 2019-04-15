@@ -16,9 +16,9 @@ including the [5.4 upgrade notes]({{< relref "/rs/release-notes/rs-5-4-december-
 
 Version requirements:
 
-- To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above
-- To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above
-- To upgrade your cluster to v5.0, your cluster must first be on 4.4.2 or above
+- To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above.
+- To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above.
+- To upgrade your cluster to v5.0, your cluster must first be on 4.4.2 or above.
 
 A Redis Enterprise Software cluster upgrade is considered to be
 "ongoing" when nodes within a cluster have mixed versions. The upgrade
@@ -123,7 +123,7 @@ When you upgrade from RS 5.4.0 or lower to 5.4.2 or higher,
 the upgrade includes fundamental changes in the CRDB protocol so you must upgrade your CRDBs to use the new CRDB capabilities. This is an exceptional case and no similar upgrades are expected.
 
 CRDB protocol is backward-compatible,
-which means that RS 5.4.2 CRDB instances that use the new protocol can understand write-operations that come from instances on nodes with RS versions below 5.4.2.
+which means that RS 5.4.2 CRDB instances that use the new protocol can understand write-operations that come from instances on clusters installed with RS versions below 5.4.2.
 However, the protocol is not forward-compatible,
 so CRDB instances with the old protocol cannot understand write-operations of instances with the newer protocol version.
 As a result, after you upgrade the CRDB protocol on one instance,
@@ -140,10 +140,10 @@ it automatically receives any missing write-operations.
 
 To upgrade a CRDB instance:
 
-1. Upgrade the node where the CRDB instance is located.
+1. [Upgrade the nodes in the cluster](#upgrading-nodes) where the CRDB instance is located.
 
     If you run `rladmin status`,
-    the status if the CRDB instances on the node indicates that an `OLD CRDB PROTOCOL VERSION` is used.  
+    the status if the CRDB instances on the node indicates that an `OLD REDIS VERSION` and an `OLD CRDB PROTOCOL VERSION` are used.  
     ![crdb-upgrade-node](/images/rs/crdb-upgrade-node.png)
 
 1. To upgrade the CRDB and its protocol, run: `rladmin upgrade db <crdb_name>`
@@ -156,4 +156,8 @@ To upgrade a CRDB instance:
 The upgrade is done, and the specific CRDB instance uses the new CRDB protocol version.  
     ![crdb-upgrade-done](/images/rs/crdb-upgrade-done.png)
 
-You can use the `keep_crdt_protocol_version` option to upgrade the database without upgrading the CRDB protocol version and continue using the old version. We only recommend this in consultation with Support.
+{{% note %}}
+You can use the `keep_crdt_protocol_version` option to upgrade the database
+without upgrading the CRDB protocol version and continue using the old version.
+If you use this option, make sure that you upgrade the CRDB protocol soon after with the ‘rladmin upgrade db’ command.
+{{% /note %}}
