@@ -24,20 +24,39 @@ time (t2) wins over the update at t1.
 |  t5 | — Sync — | — Sync — |
 |  t6 |  | SET key1 “d” |
 
-In CRDB, as in Redis itself, string type is implicitly and dynamically typed. Besides string
+String type in Redis is implicitly and dynamically typed. Besides string
 command like APPEND, It is overloaded with numeric and bitfield command
-as well like INCR and SETBIT. String type
+as well like INCR and SETBIT. However, bitfield, numeric, float vs pure
+string data behave differently in CRDBs. In standard Redis, string type
 checks the stored value dynamically to decide which commands can operate
 on the value. For example, you can first set a string key to "abc" use
 the APPEND command and SET the same key to 7 and use INCR to update it
 to 8.
 
+In CRDTs the initial type of the value is identified by the method used
+to create the value. To create a counter value, you can use INCR, DECR,
+INCRBY, DECRBY. However, in CRDTs the type of the value does not
+dynamically change after creation. So if a string key is initialized
+using the SET or MSET method, even if the value is set to a numeric
+value, numeric commands like INCR return an error.
+
 Please note that bitfield methods like SETBIT are not supported in CRDBs
 in this version.
 
+To initialize a key as pure string, simply use the SET command. With the
+value, you can use APPEND, GET, GETRANGE, GETSET, MGET, MSET, MSETNX,
+PSETEX, SET, SETEX, SETNX, SETRANGE, STRLEN methods. Once a string value
+is initialized using SET command, bitfield or numeric commands no longer
+work on the string data and return the following generic type mismatch
+error
+
+*(error) WRONGTYPE Operation against a key holding the wrong kind of
+value*
+
 ### String Data Type with Counter Value in CRDBs
 
-Counters can be used to implement
+While traditional Redis does not have an explicit counter type, Redis
+Enterprise Software's CRDBs does. Counters can be used to implement
 distributed counters. This can be useful when counting total views of an
 article or image, or when counting social interactions like "retweets"
 or "likes" of an article in a CRDB distributed to multiple geographies.
@@ -60,6 +79,14 @@ concurrent writes.
 |  t7 |  | INCRBY key1 6 |
 |  t8 | — Sync — | — Sync — |
 |  t9 | GET key1<br/>13 | GET key1<br/>13 |
+
+It is important to note that counter values are created through the
+INCR, INCRBY, DECR and DECRBY commands and only these commands can be
+used to change counter values. Using other string commands return the
+following generic type mismatch error
+
+*(error) WRONGTYPE Operation against a key holding the wrong kind of
+value*
 
 Note: CRDB supports 59-bit counters. This limitation is to protect from
 overflowing a counter in a concurrent operation.
