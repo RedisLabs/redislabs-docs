@@ -93,7 +93,7 @@ differences:
     section.
 - As conflict handling rules differ between data types, some commands
     have slightly different requirements in CRDBs vs standard Redis
-    databases. (ex: String type)
+    databases.
 
 ## Data Types
 
