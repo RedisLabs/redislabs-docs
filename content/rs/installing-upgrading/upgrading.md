@@ -9,7 +9,10 @@ aliases: /rs/administering/installing-upgrading/upgrading/
 To complete the upgrade process you must upgrade the Redis Enterprise Software (RS)
 software on each of the nodes and then upgrade each of the databases in the cluster.
 
-{{% warning %}}Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}), including the [5.4 upgrade notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md#upgrade" >}}).{{% /warning %}}
+{{% warning %}}
+Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}),
+including the [5.4 upgrade notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md#upgrade" >}}).
+{{% /warning %}}
 
 Version requirements:
 
@@ -114,3 +117,34 @@ a result:
     usually takes longer than an RDB file.
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
+
+## Upgrading CRDBs
+
+When you upgrade from RS 5.4.0 or lower to 5.4.2 or higher,
+the upgrade includes fundamental changes in the CRDB protocol so you must upgrade your CRDBs to use the new CRDB capabilities. This is an exceptional case and no similar upgrades are expected.
+
+CRDB protocol is backward-compatible,
+which means that RS 5.4.2 CRDB instances that use the new protocol can understand write-operations that come from instances on nodes with RS versions below 5.4.2.
+However, the protocol is not forward-compatible,
+so CRDB instances with the old protocol cannot understand write-operations of instances with the newer protocol version.
+As a result, after you upgrade the CRDB protocol on one instance,
+instances that were not upgraded yet cannot receive write updates from the upgraded instance.
+The upgraded instance receives updates from upgraded and non-upgraded instances.
+
+{{% note %}}
+We highly recommend that you upgrade all instances of a specific CRDB within a reasonable time frame
+to avoid temporary inconsistencies between the instances.
+{{% /note %}}
+
+After you upgrade an instance to use the new protocol version,
+it automatically receives any missing write-operations.
+
+To upgrade a CRDB instance:
+
+1. Run: `rladmin upgrade db <db_name>`
+
+1. Read the WARNING message carefully and confirm.
+
+The upgrade is done, and the specific CRDB instance uses the new CRDB protocol version.
+
+You can use the `keep_crdt_protocol_version` option to upgrade the database without upgrading the CRDB protocol version and continue using the old version. We only recommend this in consultation with Support.
