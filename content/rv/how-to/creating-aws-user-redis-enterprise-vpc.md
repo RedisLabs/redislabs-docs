@@ -7,7 +7,7 @@ categories: ["RC Pro"]
 ---
 
 
-Redis Cloud Pro automatically manages your cluster and provisions instances when needed. In order for Redis Cloud Pro to be able to manager AWS resources, you must have an AWS account that is separate from your AWS application account and a user on that separate AWS account.
+Redis Cloud Pro automatically manages your cluster and provisions instances when needed. In order for Redis Cloud Pro to be able to manage AWS resources, you must have an AWS account that is separate from your AWS application account and a user on that separate AWS account.
 
 Within that new AWS account, you need to create an **instance role** and
 a user with a specific **policy**. The user requires both **UI console access** 
