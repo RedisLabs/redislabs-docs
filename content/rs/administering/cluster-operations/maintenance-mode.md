@@ -16,6 +16,8 @@ When you turn maintenance mode on, RS:
 1. Checks whether shutdown of the node causes quorum loss. If so, maintenance mode is not turned on.
 1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on node at that time.
 1. Marks the node as a quorum node to prevent shards and endpoints from migrating into the node.
+    The maintenance node entry in the rladmin status output is colored yellow to indicate that it cannot accept shard migration, just as a quorum_only node.
+    ![maintenance_mode](/images/rs/maintenance_mode.png)
 1. Migrates shards to other nodes and binds endpoints to other nodes, if space is available on other nodes.
 
 {{% note %}}
