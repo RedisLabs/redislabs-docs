@@ -32,8 +32,8 @@
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
         {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/"))}} menu-root {{end}}
         ">
-        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") }}
-          <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") }}
+          <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
         {{- if eq .URL .RelPermalink }}
@@ -44,7 +44,7 @@
             <div class="children">
           {{end}}
 
-              {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }}                
+              {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") }}          
                 <div class="menu-divider"></div>
                 
                 <span class="SideMenuToggle expander">
@@ -55,6 +55,7 @@
                   <i class="fa fa-angle-double-down fa-lg expand-all-icon"></i>
                   <i class="fa fa-angle-double-up fa-lg collapse-all-icon"></i>
                 </span>                
+
               {{- else}}
                 <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
 
