@@ -1,6 +1,6 @@
 <div class="expand">
-    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'icon-icons_minus' : 'icon-icons_plus';});});">
-        <i class="icon-icons_plus"></i>
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fa fa-chevron-down' : 'fa fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fa fa-chevron-right"></i>
         <span>
         {{$expandMessage := T "Expand-title"}}
         {{ if .IsNamedParams }}
@@ -11,6 +11,6 @@
         </span>
     </div>
     <div class="expand-content" style="display: none;">
-        {{.Inner | safeHTML}}
+{{.Inner | safeHTML}}
     </div>
 </div>

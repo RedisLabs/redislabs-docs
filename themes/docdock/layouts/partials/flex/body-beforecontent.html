@@ -5,14 +5,14 @@
   <div class="burger"><a href="javascript:void(0);" style="font-size:15px;">&#9776;</a></div>
   {{- with .Site.Menus.shortcuts}}
     <nav class="shortcuts">
-    {{- range sort . "Weight"}}
-    <li class="" role="">
-        <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}}target="_blank"{{end}} rel="noopener">
-            {{safeHTML .Name}}
-        </a>
-    </li>
-    {{- end}}
-</nav>
+        {{- range sort . "Weight"}}
+            <li class="" role="">
+                <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}}target="_blank"{{end}} rel="noopener">
+                  {{safeHTML .Name}}
+                </a>
+            </li>
+        {{- end}}
+    </nav>
   {{- end}}
 </header>
 <article>
@@ -20,9 +20,9 @@
     <ul class="menu">
       {{- if not .Site.Params.disableHomeIcon}}
           <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
-              <a href="{{"/" | relLangURL}}">
-                <i class="fa fa-fw fa-home"></i>
-              </a>
+          <a href="{{"/" | relLangURL}}">
+            <i class="fa fa-fw fa-home"></i>
+          </a>
           </li>
       {{- end}}
 
@@ -46,7 +46,7 @@
     </div>
 
     {{- if not .Site.Params.disableSearch}}
-      <div class="search-container">
+      <div>
         <div class="searchbox">
           <input data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
         </div>
@@ -66,7 +66,3 @@
     
 
     {{if not .IsHome}}<h1>{{.Title}}</h1>{{end}}
-
-    <div class="chevrons">
-      {{ partial "next-prev-page.html" . }}
-    </div>

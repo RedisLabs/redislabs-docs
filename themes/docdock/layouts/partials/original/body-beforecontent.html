@@ -118,3 +118,11 @@
     <h1>{{.Title}}</h1>
   {{end}}
 
+{{define "breadcrumb"}}
+{{ if .page.Parent}}
+{{$value := (printf "<a href='%s'>%s</a> > %s" .page.Parent.URL .page.Parent.Title .value)}}
+{{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
+{{else}}
+ {{.value|safeHTML}}
+{{end}}
+{{end}}

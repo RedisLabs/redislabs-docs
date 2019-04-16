@@ -4,7 +4,8 @@ jQuery(document).ready(function() {
         $( this ).parent().parent().children('ul').toggle() ;
         return false;
     });
-    
+
+
 
     // Images
     // Execute actions on images generated from Markdown pages
@@ -49,11 +50,12 @@ jQuery(document).ready(function() {
 	// Clipboard
 	// Add link button for every
     var text, clip = new Clipboard('.anchor');
-    $("h1,h2,h1~h2,h1~h3,h1~h4,h1~h5,h1~h6,h2~h3,h3~h4,h4~h5").append(function (index, html) {
+    $("h1~h2,h1~h3,h1~h4,h1~h5,h1~h6").append(function (index, html) {
         var element = $(this);
         var url = document.location.origin + document.location.pathname;
         var link = url + "#" + element[0].id;
-        return " <span class='anchor' data-clipboard-text='" + link + "'>"  +
+        return " <span class='anchor' data-clipboard-text='" + link + "'>" +
+            "<i class='fa fa-link fa-lg'></i>" +
             "</span>";
     });
 
@@ -77,19 +79,19 @@ jQuery(document).ready(function() {
             $('ul.menu').removeClass('searched');
             items.css('display', 'block');
             sessionStorage.removeItem('search-value');
-            // $("article").unhighlight({ element: 'mark' })
+            $("article").unhighlight({ element: 'mark' })
             return;
         }
 
         sessionStorage.setItem('search-value', value);
-        // $("article").unhighlight({ element: 'mark' }).highlight(value, { element: 'mark' });
+        $("article").unhighlight({ element: 'mark' }).highlight(value, { element: 'mark' });
 
         if (ajax && ajax.abort) ajax.abort();
 
         jQuery('[data-search-clear]').on('click', function() {
             jQuery('[data-search-input]').val('').trigger('input');
             sessionStorage.removeItem('search-input');
-            // $("article").unhighlight({ element: 'mark' })
+            $("article").unhighlight({ element: 'mark' })
         });
     });
 
@@ -104,7 +106,7 @@ jQuery(document).ready(function() {
         sessionStorage.removeItem('search-value');
         var searchedElem = $('article').find(':contains(' + searchValue + ')').get(0);
         searchedElem && searchedElem.scrollIntoView();
-        // $("article").highlight(searchValue, { element: 'mark' });
+        $("article").highlight(searchValue, { element: 'mark' });
     }
 
     // clipboard
@@ -140,7 +142,7 @@ jQuery(document).ready(function() {
                 clipInit = true;
             }
 
-            code.before('<span class="copy-to-clipboard" title="Copy to clipboard"><span class="icon-icons_Copy" aria-hidden="true"></span></span>');
+            code.before('<span class="copy-to-clipboard" title="Copy to clipboard"><span class="fa fa-clipboard" aria-hidden="true"></span></span>');
             $('.copy-to-clipboard').on('mouseleave', function() {
                 $(this).attr('aria-label', null).removeClass('tooltipped tooltipped-s tooltipped-w');
             });
@@ -175,79 +177,79 @@ $(function() {
         root: 'article'
     });
 });
-// jQuery.extend({
-//     highlight: function(node, re, nodeName, className) {
-//         if (node.nodeType === 3) {
-//             var match = node.data.match(re);
-//             if (match && !$(node.parentNode).hasClass("mermaid")) {
-//                 var highlight = document.createElement(nodeName || 'span');
-//                 highlight.className = className || 'highlight';
-//                 var wordNode = node.splitText(match.index);
-//                 wordNode.splitText(match[0].length);
-//                 var wordClone = wordNode.cloneNode(true);
-//                 highlight.appendChild(wordClone);
-//                 wordNode.parentNode.replaceChild(highlight, wordNode);
-//                 return 1; //skip added node in parent
-//             }
-//         } else if ((node.nodeType === 1 && node.childNodes) && // only element nodes that have children
-//             !/(script|style)/i.test(node.tagName) && // ignore script and style nodes
-//             !(node.tagName === nodeName.toUpperCase() && node.className === className)) { // skip if already highlighted
-//             for (var i = 0; i < node.childNodes.length; i++) {
-//                 i += jQuery.highlight(node.childNodes[i], re, nodeName, className);
-//             }
-//         }
-//         return 0;
-//     }
-// });
+jQuery.extend({
+    highlight: function(node, re, nodeName, className) {
+        if (node.nodeType === 3) {
+            var match = node.data.match(re);
+            if (match && !$(node.parentNode).hasClass("mermaid")) {
+                var highlight = document.createElement(nodeName || 'span');
+                highlight.className = className || 'highlight';
+                var wordNode = node.splitText(match.index);
+                wordNode.splitText(match[0].length);
+                var wordClone = wordNode.cloneNode(true);
+                highlight.appendChild(wordClone);
+                wordNode.parentNode.replaceChild(highlight, wordNode);
+                return 1; //skip added node in parent
+            }
+        } else if ((node.nodeType === 1 && node.childNodes) && // only element nodes that have children
+            !/(script|style)/i.test(node.tagName) && // ignore script and style nodes
+            !(node.tagName === nodeName.toUpperCase() && node.className === className)) { // skip if already highlighted
+            for (var i = 0; i < node.childNodes.length; i++) {
+                i += jQuery.highlight(node.childNodes[i], re, nodeName, className);
+            }
+        }
+        return 0;
+    }
+});
 
-// jQuery.fn.unhighlight = function(options) {
-//     var settings = {
-//         className: 'highlight',
-//         element: 'span'
-//     };
-//     jQuery.extend(settings, options);
+jQuery.fn.unhighlight = function(options) {
+    var settings = {
+        className: 'highlight',
+        element: 'span'
+    };
+    jQuery.extend(settings, options);
 
-//     return this.find(settings.element + "." + settings.className).each(function() {
-//         var parent = this.parentNode;
-//         parent.replaceChild(this.firstChild, this);
-//         parent.normalize();
-//     }).end();
-// };
+    return this.find(settings.element + "." + settings.className).each(function() {
+        var parent = this.parentNode;
+        parent.replaceChild(this.firstChild, this);
+        parent.normalize();
+    }).end();
+};
 
-// jQuery.fn.highlight = function(words, options) {
-//     var settings = {
-//         className: 'highlight',
-//         element: 'span',
-//         caseSensitive: false,
-//         wordsOnly: false
-//     };
-//     jQuery.extend(settings, options);
+jQuery.fn.highlight = function(words, options) {
+    var settings = {
+        className: 'highlight',
+        element: 'span',
+        caseSensitive: false,
+        wordsOnly: false
+    };
+    jQuery.extend(settings, options);
 
-//     if (!words) { return; }
+    if (!words) { return; }
 
-//     if (words.constructor === String) {
-//         words = [words];
-//     }
-//     words = jQuery.grep(words, function(word, i) {
-//         return word != '';
-//     });
-//     words = jQuery.map(words, function(word, i) {
-//         return word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
-//     });
-//     if (words.length == 0) { return this; }
-//     ;
+    if (words.constructor === String) {
+        words = [words];
+    }
+    words = jQuery.grep(words, function(word, i) {
+        return word != '';
+    });
+    words = jQuery.map(words, function(word, i) {
+        return word.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+    });
+    if (words.length == 0) { return this; }
+    ;
 
-//     var flag = settings.caseSensitive ? "" : "i";
-//     var pattern = "(" + words.join("|") + ")";
-//     if (settings.wordsOnly) {
-//         pattern = "\\b" + pattern + "\\b";
-//     }
-//     var re = new RegExp(pattern, flag);
+    var flag = settings.caseSensitive ? "" : "i";
+    var pattern = "(" + words.join("|") + ")";
+    if (settings.wordsOnly) {
+        pattern = "\\b" + pattern + "\\b";
+    }
+    var re = new RegExp(pattern, flag);
 
-//     return this.each(function() {
-//         jQuery.highlight(this, re, settings.element, settings.className);
-//     });
-// };
+    return this.each(function() {
+        jQuery.highlight(this, re, settings.element, settings.className);
+    });
+};
 
 
 // Get Parameters from some url
@@ -268,8 +270,8 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
     }
 };
 
-// // Burger icon click toggle header menu on small devices
-// $('.burger').on('click', function(e){
-//     $('#shortcuts').toggleClass("responsive") ;
-//     e.preventDefault();
-// });
+// Burger icon click toggle header menu on small devices
+$('.burger').on('click', function(e){
+    $('#shortcuts').toggleClass("responsive") ;
+    e.preventDefault();
+});
