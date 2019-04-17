@@ -5,21 +5,6 @@ weight: 25
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-To configure your subscription so you can use SSL/TLS with your Redis Cloud Essentials database, please contact support. To speed up this process, provide the agent with the Account ID and subscription number
-where you desire SSL service.
-
-**Note:** Be aware that you will incur additional monthly costs by
-enabling SSL.
-
-To find your account number, go to the "Settings" page in the Web UI and
-look for "Account Number":
-
-![account_number](/images/rc/account_number.png?width=600&height=265)
-
-For your subscription number, please go to the "Subscriptions" page of
-the Web UI and look in the title.
-
-![subscriptions2](/images/rc/subscriptions2.png?width=600&height=248)
 
 ## Setting Up Your Database
 
