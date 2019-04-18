@@ -273,9 +273,16 @@ Use the following stunnel configuration file to have your client open
 secure connections to your Redis Labs resources via port 6379 of your
 localhost:
 
-`cert = /etc/stunnel/redislabs_user.crt key = /etc/stunnel/redislabs_user_private.key cafile = /etc/stunnel/redislabs_ca.pem verify = 2 delay = yes`
+`cert = /etc/stunnel/redislabs_user.crt
+key = /etc/stunnel/redislabs_user_private.key
+cafile = /etc/stunnel/redislabs_ca.pem
+verify = 2
+delay = yes`
 
-`[redislabs] client = yes accept = 127.0.0.1:6379 connect = host:port`
+`[redislabs] client = yes
+accept = 127.0.0.1:6379
+connect = host:port`
+
 
 ### Testing Secure Connectivity to a Redis Cloud Essentials Resource
 
