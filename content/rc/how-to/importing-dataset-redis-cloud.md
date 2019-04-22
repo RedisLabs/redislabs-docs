@@ -28,6 +28,8 @@ To import a dataset from any publicly available Redis server:
     is not the default value `6379`.
 1. If the source Redis server has a password, enter it in the
     Password field.
+    
+** Please note import from another RedisLabs DB on Redis Essentials is not supported.
 
 ## Import a Dataset from a RDB File
 
