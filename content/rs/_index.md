@@ -4,8 +4,12 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
+markup: "mmark"
 ---
+
 ## Hot Topics
+
+{.hot-topics-table}
 | [Getting Started]({{< relref "/rs/getting-started/_index.md" >}}) | [Installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) | [Administration]({{< relref "/rs/administering/_index.md" >}}) | [Concepts]({{< relref "/rs/concepts/_index.md" >}}) |
 | ----- | ----- | ----- | ----- |
 | [RS in Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) | [Installing RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) | [Creating a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) | [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) |

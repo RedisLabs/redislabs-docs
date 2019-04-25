@@ -2425,6 +2425,57 @@ button.hamburger.hamburger--spring {
   /* display:none */
 }
 
+/* Hot topics table */
+h2#hot-topics {
+  width: 150px;
+  margin: 0 auto;
+  background: #fff;
+  z-index: 111;
+  position: relative;
+  text-align: center;
+}
+
+h2#hot-topics::before {
+  height: 0;
+  margin: 0;
+}
+
+h2#hot-topics span.anchor {
+  display: none;
+}
+
+article section.page table.hot-topics-table {
+  border: 1px solid #5d6876;
+  margin-top: -15px;
+}
+
+article section.page table.hot-topics-table thead tr {
+  border: none;
+}
+
+article section.page table.hot-topics-table th {
+  text-align: left;
+  padding: 40px 20px 0 20px;
+}
+
+article section.page table.hot-topics-table th a {
+  text-decoration: underline;
+}
+
+article section.page table.hot-topics-table td {
+  border-bottom: none;
+  padding: 7px 20px 0 20px;
+}
+
+article section.page table.hot-topics-table td a {
+  color: #354253;
+  text-decoration: underline;
+}
+
+article section.page table.hot-topics-table tbody tr:last-of-type td {
+  padding-bottom: 40px;
+}
+
 
 @media (max-width: 1024px) {
   section {
