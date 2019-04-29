@@ -7,7 +7,7 @@ categories: ["RS"]
 markup: "mmark"
 ---
 
-## Hot Topics
+#### Hot Topics
 
 {.hot-topics-table}
 | [Getting Started]({{< relref "/rs/getting-started/_index.md" >}}) | [Installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) | [Administration]({{< relref "/rs/administering/_index.md" >}}) | [Concepts]({{< relref "/rs/concepts/_index.md" >}}) |
