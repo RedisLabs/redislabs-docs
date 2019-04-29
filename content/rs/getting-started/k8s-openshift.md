@@ -19,11 +19,11 @@ Prerequisites:
 - Log in to your OpenShift account as a super admin (so you have access to all the default projects).
 - Create a new project, fill in the name and other details for the project and hit “Create.”  
   
-  ![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image1.png)
+  ![getting-started-kubernetes-openshift-image1]( /images/rs/getting-started-kubernetes-openshift-image1.png )
 
 - Click on “admin” (upper right corner) and then “Copy Login.”  
 
-  ![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image4.png)
+  ![getting-started-kubernetes-openshift-image4]( /images/rs/getting-started-kubernetes-openshift-image4.png )
 
 - Paste the *login* command into your shell; it should look something like this:
 
@@ -125,7 +125,7 @@ You should receive the following response:
 
 Now, run kubectl get deployment and verify that your redis-enterprise-operator deployment is running. A Typical response will look like this:
 
-![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image2.png)
+![getting-started-kubernetes-openshift-image2]( /images/rs/getting-started-kubernetes-openshift-image2.png )
 
 - [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml)
 
@@ -235,15 +235,15 @@ Next, create your database.
 
 - Open a browser window and navigate to localhost:8443
 
-  ![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image5.png)
+  ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
 - In order to retrieve your password, navigate to the OpenShift management console, select your project name, go to    Resources-\>Secrets-\>your_cluster_name
 - Retrieve your password by selecting “Reveal Secret.”  
   
-  ![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image3.png)
+  ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
   
 - Follow the interface’s [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
 *Note: In order to conduct the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You will see two newly created services representing the database along with their IP and port information, similar to the screenshot below.*
 
-![](https://redislabs.com/wp-content/uploads/2018/09/getting-started-kubernetes-openshift-image6.png)
+![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )
