@@ -383,6 +383,7 @@ section a {
   padding-top: 10px;
   text-align: center;
   width: 327px;
+  min-height: 394px;  
 }
 
 .home-options__option hr {
@@ -401,12 +402,7 @@ section a {
 }
 
 .home-options__option__icon img.platforms-icon {
-  width: 150px;
-  margin-top: -40px;
-}
-
-.home-options__option__icon img.sized-down {
-  height: 90px;
+  width: 97px;
 }
 
 .home-options__option__icon a.opener {
@@ -432,6 +428,7 @@ section a {
   margin: 0 auto;
   padding: 0 10px 0 10px;
   width: 90%;
+  height: 33%;  
 }
 
 .home-options__option ul {
