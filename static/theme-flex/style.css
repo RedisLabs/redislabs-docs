@@ -2426,18 +2426,18 @@ button.hamburger.hamburger--spring {
 }
 
 /* Hot topics table */
-h2#hot-topics {
+h4#hot-topics {
   background: #fff;
   font-size: 1.7rem;
   margin: 0 auto;
   position: relative;
   text-align: center;
-  top: -3px;
+  top: -7px;
   width: 175px;
   z-index: 111;
 }
 
-h2#hot-topics::before {
+h4#hot-topics::before {
   display: inline-block;
   height: 0;
   margin: 0px 5px 0 0;
@@ -2446,7 +2446,7 @@ h2#hot-topics::before {
   position: relative;
 }
 
-h2#hot-topics span.anchor {
+h4#hot-topics span.anchor {
   display: none;
 }
 
