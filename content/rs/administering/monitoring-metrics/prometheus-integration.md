@@ -5282,7 +5282,7 @@ These are the metrics available:
 |  node_egress_bytes_min | Lowest value of rate of outgoing network traffic to node (bytes/sec) |
 |  node_ephemeral_storage_avail | Disk space available to RLEC processes on configured ephemeral disk (bytes) |
 |  node_ephemeral_storage_free | Free disk space on configured ephemeral disk (bytes) |
-|  node_free_memory | Free memory in node (bytes) |
+|  node_free_memory  |  Free memory in node (bytes) |
 |  node_ingress_bytes | Rate of incoming network traffic to node (bytes/sec) |
 |  node_ingress_bytes_max | Highest value of rate of incoming network traffic to node (bytes/sec) |
 |  node_ingress_bytes_median | Average value of rate of incoming network traffic to node (bytes/sec) |
