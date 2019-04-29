@@ -141,11 +141,6 @@ Redis Enterprise databases, CRDB data persistence options include AOF
 (Append-Only File) data persistence and
 snapshot.
 
-For CRDB instances, it's **highly
-recommended** to use the Snapshot mechanism over AOF, since recovering
-from AOF requires much more extra available
-memory.
-
 ### Syncer process
 
 Each node in a cluster containing a CRDB Instance hosts a process called
