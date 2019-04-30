@@ -2433,17 +2433,20 @@ h4#hot-topics {
   position: relative;
   text-align: center;
   top: -7px;
-  width: 175px;
+  width: 200px;
   z-index: 111;
+  padding-left: 25px;
 }
 
 h4#hot-topics::before {
-  display: inline-block;
-  height: 0;
+  display: block;
+  height: 1px;
   margin: 0px 5px 0 0;
   content: url('./img/icons_Hot-topics-2.svg');
-  top: 2px;
+  top: 0;
   position: relative;
+  width: 24px;
+  left: 5px;
 }
 
 h4#hot-topics span.anchor {
@@ -2462,7 +2465,8 @@ article section.page table.hot-topics-table thead tr {
 
 article section.page table.hot-topics-table th {
   text-align: left;
-  padding: 40px 20px 0 20px;
+  padding: 40px 20px 0 50px;
+  font-size: 16px;  
 }
 
 article section.page table.hot-topics-table th a {
@@ -2471,7 +2475,7 @@ article section.page table.hot-topics-table th a {
 
 article section.page table.hot-topics-table td {
   border-bottom: none;
-  padding: 7px 20px 0 20px;
+  padding: 12px 20px 0 50px;
 }
 
 article section.page table.hot-topics-table td a {
@@ -2483,24 +2487,39 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   padding-bottom: 40px;
 }
 
-@media (max-width: 1376px) {
-  article section.page table td {    
-    font-size: 13px;
+@media (max-width: 1366px) {
+  article section.page table.hot-topics-table {
+  display: table;    
   }
 
   article section.page table.hot-topics-table td {
-    padding: 7px 10px 0 20px;
+    font-size: 14px;
+    line-height: 20px;    
   }
 }
+
 
 @media (max-width: 1250px) {
   article section.page table.hot-topics-table th {
     padding: 40px 20px 0 13px;
+    font-size: 13px;
   }
 
   article section.page table.hot-topics-table td {
     padding: 7px 0px 0 13px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  article section.page table.hot-topics-table th {
+    font-size: 12px;
+    padding: 40px 18px 0 10px;
+  }
+
+  article section.page table.hot-topics-table td {
+    padding: 7px 0px 0 10px;
+    font-size: 11px;
   }  
 }
 
