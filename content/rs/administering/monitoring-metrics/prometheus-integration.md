@@ -5262,6 +5262,7 @@ These are the metrics available:
 | Metric | Description |
 |  ------ | :------ |
 |  node_avg_latency | Average latency of requests handled by endpoints on node (micro-sec); returned only when there is traffic |
+|  node_available_memory | Amount of free memory in node (bytes) that is available for database provisioning |
 |  node_conns | Number of clients connected to endpoints on node |
 |  node_cpu_idle | CPU idle time portion (0-1, multiply by 100 to get percent) |
 |  node_cpu_idle_max | Highest value of CPU idle time portion (0-1, multiply by 100 to get percent) |
