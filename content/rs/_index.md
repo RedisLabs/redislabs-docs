@@ -7,15 +7,6 @@ categories: ["RS"]
 markup: "mmark"
 ---
 
-#### Hot Topics
-
-{.hot-topics-table}
-| [Getting Started]({{< relref "/rs/getting-started/_index.md" >}}) | [Installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) | [Administration]({{< relref "/rs/administering/_index.md" >}}) | [Concepts]({{< relref "/rs/concepts/_index.md" >}}) |
-| ----- | ----- | ----- | ----- |
-| [RS in Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) | [Installing RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) | [Creating a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) | [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) |
-| [Quick RS installation]({{< relref "/rs/getting-started/quick-setup.md" >}}) | [DNS configuration]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) | [Securing client connections]({{< relref "/rs/administering/security/client-connections.md" >}}) | [RS on Kubernetes]({{< relref "/rs/concepts/kubernetes-architecture/_index.md" >}}) |
-| [Quick ReJSON setup]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}}) | [Configure AWS instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}}) | [Setting up a new cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) | [Clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) |
-
 ## What is Redis Enterprise Software?
 
 Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](https://redislabs.com/why-redis/redis-enterprise/), which is used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.
