@@ -97,17 +97,18 @@ screen](/images/rs/getstarted-createdatabase.png)
 
 1. Click **Show advanced options** and, in the **Endpoint port number**,
 enter `12000` for the port number.
+
     If port 12000 is not available, enter any available port number between 10000 to 19999
     and connect to the database with that port number.
 
- 1. Click **Activate** to create your database
+1. Click **Activate** to create your database
 
 <!-- Also in crdbs.md -->
-    {{% note %}}
+{{% note %}}
 If you cannot activate the database because of a memory limitation, 
 make sure that Docker has enough memory allocated in the Advanced section 
 of Docker Settings.
-    {{% /note %}}
+{{% /note %}}
     
 The database configuration is shown.
 When you see a green check mark, the database is activated and ready for you to use.
