@@ -26,13 +26,13 @@ function _setSelectedVersion(ver) {
   if(ver) {
     var i = document.getElementById('version-select-' + ver);
     if(i) {
-      i.classList.toggle('--selected-version');
+      i.classList.toggle('selected-version');
     }
   }  
 }
   
 function _openVersionSelector() {
-    document.getElementById('versionSelector').classList.toggle('--open');
+    document.getElementById('versionSelector').classList.toggle('open');
 }
 
 window.onclick = function(e) {
@@ -40,8 +40,8 @@ window.onclick = function(e) {
     var d = document.getElementsByClassName('menu__version-selector');
     var i;
     for (i = 0; i < d.length; i++) {
-      if (d[i].classList.contains('--open')) {
-        d[i].classList.remove('--open');
+      if (d[i].classList.contains('open')) {
+        d[i].classList.remove('open');
       }
     }
   }
