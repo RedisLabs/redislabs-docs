@@ -1,7 +1,7 @@
 ---
-Title: Connect to Cloud API using CURL
+Title: Enable your Account to use API
 description: 
-weight: 40
+weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
 ---

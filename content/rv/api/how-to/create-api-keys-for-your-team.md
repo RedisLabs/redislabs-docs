@@ -1,5 +1,5 @@
 ---
-Title: Create and assign API Keys for your team members
+Title: Create API Keys for your team
 description: 
 weight: 20
 alwaysopen: false
