@@ -79,7 +79,7 @@ If the maintenance node fails, the master shards will not have slave shards for 
 To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode on keep_slave_shards
+$ rladmin node <node_id> maintenance_mode on dont_migrate_slave_shards
 ```
 
 ## Turning Maintenance Mode OFF
@@ -128,5 +128,5 @@ you can turn maintenance mode off and prevent the shards and endpoints from movi
 To skip shard restoration, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode off skip_shards_restore
+$ rladmin node <node_id> maintenance_mode off dont_restore_shards
 ```
