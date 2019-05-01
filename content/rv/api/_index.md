@@ -1,5 +1,5 @@
 ---
-Title: REST API
+Title: API
 description: 
 weight: 80
 alwaysopen: false
