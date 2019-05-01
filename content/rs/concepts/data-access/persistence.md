@@ -74,7 +74,7 @@ Now that you know the available options, to assist in making a decision
 on which option is right for your use case, here is a table about the
 two:
 
-|  ** AOF Append Only File)** | ** RDB (Snapshot)** |
+|  ** AOF Append (Only File)** | ** RDB (Snapshot)** |
 |------------|-----------------|
 |  More resource intensive | Less resource intensive |
 |  Provides better durability (recover the latest point in time) | Less durable |
