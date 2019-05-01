@@ -23,15 +23,15 @@ The API exposes programmatic access for the following features:
 * **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
 
 
-### API features include:
+### API features include
 
-* Standard REST API (accessible using any HTTP client / programming language)
+* Standard REST API (accessible using [any HTTP client / programming language]({{< relref  "/rv/api/how-to/using-curl.md" >}}))
 * Supports OpenAPI 2.0 standard
 * Exposes [Swagger user interface](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html)
 * Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200) guidelines
 * Secure [authentication and authorization]({{< relref  "/rv/api/concepts/authentication-and-authorization.md" >}})
-* Restrict API usage to specific source IP addresses / ranges
 * Support for multiple personal [API Keys]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
+* Restrict API usage to specific source IP addresses / ranges
 
 
 **NOTE: The content in this article refers to a BETA release and is therefore liable to change**
