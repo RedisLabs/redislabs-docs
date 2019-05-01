@@ -118,7 +118,11 @@ To get started with custom monitoring:
     1. Click **Import**.
     1. Copy one of the configurations into the **Paste JSON** field.
         {{%expand "database.json" %}}
+
+```json
 {{% embed-code "database.json" %}}
+```
+
         {{% /expand%}}
     1. In the Import options, select the `redis-enterprise` datasource and click **Import**.
 
