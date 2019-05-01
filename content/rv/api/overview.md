@@ -13,22 +13,23 @@ Redis Labs Pro API follows the principles of the REST architectural style to exp
 
 The API exposes programmatic access for the following features:
 
-* **Full lifecycle management** of Redis Labs Pro [Subscriptions and Databases]({{< relref  "/rv/api/how-to/create-and-manage-subscriptions.md" >}})
-* Auditing lifecycle actions (create, update, delete) using [System Log]({{< relref  "/rv/api/how-to/view-auditing-using-system-log.md" >}})
+* [**Full lifecycle management**]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md" >}}) of Redis Labs Pro Subscriptions and Databases
+* [**System Log**]({{< relref  "/rv/api/how-to/view-auditing-using-system-log.md" >}}) for auditing lifecycle actions (create, update, delete) using 
 * [**Metrics and statistics information**]({{< relref  "/rv/api/concepts/metrics.md" >}}) on provisioned databases and clusters 
 * [**Hosting cloud provider credentials**]({{< relref  "/rv/api/how-to/create-and-manage-cloud-accounts.md" >}}) definition and management
 * **Backup & import databases** from various sources (e.g. AWS S3, FTP etc.)
-* **Redis Modules** definitions
+* **Redis Modules**
 * **Alerts settings** 
 * **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
 
 
 ### API features include:
 
-* Secure [authentication and authorization]({{< relref  "/rv/api/concepts/authentication-and-authorization.md" >}})
+* Standard REST API (accessing using any HTTP client / programming language)
 * Full support for OpenAPI 2.0 and [Swagger user interface](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html)
+* Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200)
+* Secure [authentication and authorization]({{< relref  "/rv/api/concepts/authentication-and-authorization.md" >}})
 * Support for multiple personal [API Keys]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
-
 
 
 
