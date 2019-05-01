@@ -30,6 +30,7 @@ The API exposes programmatic access for the following features:
 * Exposes [Swagger user interface](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html)
 * Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200) guidelines
 * Secure [authentication and authorization]({{< relref  "/rv/api/concepts/authentication-and-authorization.md" >}})
+* Restrict API usage to specific source IP addresses / ranges
 * Support for multiple personal [API Keys]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
 
 
