@@ -166,6 +166,7 @@ To enable TLS for CRDB and client communication for a CRDB:
     select **Require TLS for all communications**.
 
     ![crdb-tls-all](/images/rs/crdb-tls-all.png "crdb-tls-all")
+    /images/rs/crdb-tls-all.png is showing "TLS for CRDB communication only"
 
     By default, client authentication is enforced so you must enter the certificates
     of the clients that connect to the database. The certificates for the participating
