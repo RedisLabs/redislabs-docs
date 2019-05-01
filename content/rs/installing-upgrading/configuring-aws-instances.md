@@ -73,8 +73,7 @@ When configuring the Security Group:
     all instances that are part of the cluster. This will make sure that
     all nodes are able to communicate with each other. If you would not
     like to open all TCP ports and instead define specific ports and
-    ports ranges, refer to Machine ports configuration for a
-    comprehensive list of ports being used.
+    ports ranges, refer to [Network port configuration]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) for a comprehensive list of ports being used.
 
 After successfully launching the instances, setup the cluster as
 described in [Initial setup - creating a new
