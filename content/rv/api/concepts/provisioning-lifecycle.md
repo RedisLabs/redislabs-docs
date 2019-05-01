@@ -1,5 +1,5 @@
 ---
-Title: Redis Cloud Pro provisioning lifecycle
+Title: Provisioning lifecycle
 description: 
 weight: 20
 alwaysopen: false

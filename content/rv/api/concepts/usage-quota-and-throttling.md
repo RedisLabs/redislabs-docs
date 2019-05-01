@@ -1,5 +1,5 @@
 ---
-Title: Cloud API usage quota and throttling 
+Title: API usage quota and throttling 
 description: 
 weight: 50
 alwaysopen: false
