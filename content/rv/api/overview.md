@@ -1,6 +1,6 @@
 ---
 Title: API Overview
-description: BETA release information - liable to change
+description: 
 weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
@@ -32,7 +32,7 @@ The API exposes programmatic access for the following features:
 * Support for multiple personal [API Keys]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
 
 
-
+**NOTE: The content in this article refers to a BETA release and is therefore liable to change**
 
 
 
