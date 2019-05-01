@@ -71,6 +71,27 @@ Ouput:
 
 ### Code formatting
 
+**Embedded code snippets**
+
+Code snippets that need to pass automation must be located in `/static/code`
+and included in the article with:
+
+~~~src
+```json
+{{</* embed-code "sample.json" */>}}
+```
+~~~
+
+If the code snippet is more than 30 lines, add it within an expanding block:
+
+~~~src
+{{%/* expand */%}}
+```json
+{{</* embed-code "sample.json" */>}}
+```
+{{%/* /expand */%}}
+~~~
+
 **Code blocks**
 
 To add code blocks of a specific language, e.g. python, type this:
@@ -229,7 +250,7 @@ This is how you make expanding blocks.
 
 Syntax:
 
-```
+```md
 {{%/* excerpt */%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly
