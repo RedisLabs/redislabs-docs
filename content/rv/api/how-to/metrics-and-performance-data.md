@@ -1,5 +1,5 @@
 ---
-Title: Query metrics and performance data
+Title: Metrics and performance data
 description: 
 weight: 80
 alwaysopen: false
