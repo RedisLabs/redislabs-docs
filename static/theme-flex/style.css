@@ -2475,7 +2475,8 @@ article section.page table.hot-topics-table th a {
 
 article section.page table.hot-topics-table td {
   border-bottom: none;
-  padding: 12px 20px 0 50px;
+  padding: 9px 20px 0 50px;
+  line-height: 14px;
 }
 
 article section.page table.hot-topics-table td a {
