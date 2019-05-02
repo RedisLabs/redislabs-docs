@@ -64,7 +64,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     - [Participating Clusters](#participating-clusters) - You must specify the URL of the clusters that you want to
         host CRDB instances and the admin user account to connect to each cluster.
         - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
-        - For each cluster, enter the URL for the cluster (`https://<cluster_URL>:8080`),
+        - For each cluster, enter the URL for the cluster (`http://<cluster_URL>:8080`),
             and enter the credentials for the service account that you created.
     - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
