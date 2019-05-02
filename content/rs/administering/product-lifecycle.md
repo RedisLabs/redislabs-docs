@@ -62,7 +62,7 @@ that version.
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.4 – August 2018                         | February 28, 2020  |
+| 1.4 – August 2018                         | -                  |
 | 1.2 – June 2018                           | December 31, 2019  |
 | 1.1 – April 2018                          | October 31, 2019   |
 | 1.0 – November 2017                       | May 31, 2019       |
@@ -72,7 +72,7 @@ that version.
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.2 – April 2019                          | December 31, 2020  |
+| 1.2 – April 2019                          | -                  |
 | 1.0 – November 2018                       | May 31, 2020       |
 
 
@@ -80,12 +80,12 @@ that version.
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.0 – November 2017                       | May 31, 2019       |
+| 1.0 – November 2017                       | -                  |
 
 
 #### RedisBloom
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.1 – February 2019                       | August 31, 2020    |
+| 1.1 – February 2019                       | -                  |
 | 1.0 – September 2017                      | March 31, 2019     |
