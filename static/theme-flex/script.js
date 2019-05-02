@@ -4,7 +4,12 @@ jQuery(document).ready(function() {
         $( this ).parent().parent().children('ul').toggle() ;
         return false;
     });
-    
+        
+    jQuery('.SideMenuToggle').on('click', function() {
+        $('.active.menu-root').children('ul').find('.fa.category-icon').toggleClass("fa-angle-right fa-angle-down") ;
+        $('.active.menu-root').children('ul').find('li').children('ul').toggle();
+        return false;
+    });    
 
     // Images
     // Execute actions on images generated from Markdown pages

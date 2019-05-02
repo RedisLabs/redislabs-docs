@@ -200,7 +200,7 @@ article > aside section {
 
 /* Expand/Collapse Menu */
 article > aside .menu .dd-item.active.menu-root.menu-collapsed > ul {
-  display: none;
+  display: block;
 }
 
 article > aside .menu .dd-item.active.menu-root.menu-expanded > ul {
