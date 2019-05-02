@@ -9,3 +9,8 @@ categories: ["RC Pro"]
 
 Test Bash reference:
 
+{{% expand %}}
+```bash
+{{< embed-code "/static/code/rv/api/10-create-subscription.sh" >}}
+```
+{{% /expand %}}
