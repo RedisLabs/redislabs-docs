@@ -2800,10 +2800,23 @@ a[href*="#no-click"], img[src*="#no-click"] {
     }
 }
 
+@media all and (max-width: 1540px) {
+  .searchcontainer,
+  .chevrons,
+  article section.page h1:first-of-type,
+  article section.page table.hot-topics-table,
+  .hot-topics-title-wrapper
+   {
+      width: 96%;
+  }
+}
+
 @media all and (-ms-high-contrast: none) and (max-width: 1400px) {
     .searchcontainer,
     .chevrons,
-    article section.page h1:first-of-type {
+    article section.page h1:first-of-type,
+    article section.page table.hot-topics-table,
+    .hot-topics-title-wrapper{
         width: 95%;
     }
     article section.page .main-content .highlight pre {
