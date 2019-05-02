@@ -1528,7 +1528,7 @@ button.close-button {
   padding-right: 10px;
 }
 .main-content-right {
-  min-width: 300px;
+  min-width: 340px;
 }
 article > aside .menu > li.parent {
   grid-area: 1;
