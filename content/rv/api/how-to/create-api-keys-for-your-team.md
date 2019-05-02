@@ -24,3 +24,5 @@ Fill in the secret key properties:
 Click the button labeled 'Generate API Key'. A pop-up windows will appear specifying the secret key was successfully created. The secret value of the key is displayed for the first and only time.
 The secret value should be used as a parameter for all API requests.
 Convey this value to the recipient user in a secured manner.
+
+This value cannot be retrieved or regenerated later on.
