@@ -13,3 +13,5 @@ Initially, API access to your account is disabled. In order to enable such acces
 1. Click the button labeled "Generate" next to the label of the property.
 
 The generated hash is the API access key, needed as a parameter in all API calls. 
+
+The access key can always be retrieved by an account owner. It should be regarded as an account level secret, not shared with users not belonging to the account.
