@@ -67,13 +67,12 @@ When configuring the Security Group:
     rule for port 53 to allow access to the databases' endpoints by
     using the DNS resolving mechanism. For additional details, refer to
     DNS.
-- If you would like to create a cluster that has multiple nodes all
-    running as instances on AWS, you need to define a security group
-    that has an All TCP rule for all ports, 0 - 65535, and add it to
-    all instances that are part of the cluster. This will make sure that
-    all nodes are able to communicate with each other. If you would not
-    like to open all TCP ports and instead define specific ports and
-    ports ranges, refer to [Network port configuration]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) for a comprehensive list of ports being used.
+- To create a cluster that has multiple nodes all running as instances on AWS,
+    you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
+    and add it to all instances that are part of the cluster.
+    This will make sure that all nodes are able to communicate with each other.
+    To limit the number of open ports, you can open just the [ports used by RS]
+    ({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
 After successfully launching the instances, setup the cluster as
 described in [Initial setup - creating a new
