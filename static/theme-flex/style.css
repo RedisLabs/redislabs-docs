@@ -198,6 +198,31 @@ article > aside .menu .dd-item div i.category-icon:hover {
 article > aside section {
   margin: 2rem 0rem; }
 
+/* Expand/Collapse Menu */
+article > aside .menu .dd-item.active.menu-root.menu-collapsed > ul {
+  display: none;
+}
+
+article > aside .menu .dd-item.active.menu-root.menu-expanded > ul {
+  display: block;
+}
+
+article > aside .menu .dd-item.active.menu-root.menu-collapsed .expand-all-title, article > aside .menu .dd-item.active.menu-root.menu-collapsed .expand-all-icon {
+  display: inline-block;
+}
+
+article > aside .menu .dd-item.active.menu-root.menu-collapsed .collapse-all-title, article > aside .menu .dd-item.active.menu-root.menu-collapsed .collapse-all-icon {
+  display: none;
+}
+
+article > aside .menu .dd-item.active.menu-root.menu-expanded .expand-all-title, article > aside .menu .dd-item.active.menu-root.menu-expanded .expand-all-icon {
+  display: none;
+}
+
+article > aside .menu .dd-item.active.menu-root.menu-expanded .collapse-all-title, article > aside .menu .dd-item.active.menu-root.menu-expanded .collapse-all-icon {
+  display: inline-block;
+}
+
 /*!
  * facette-docs - Facette project documentation
  * Website: http://docs.facette.io/

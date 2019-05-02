@@ -1,5 +1,7 @@
 {{- $currentNode := . }}
 {{- $showvisitedlinks := .Site.Params.showVisitedLinks -}}
+{{- $isMenuRoot := or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") -}}
+<h1>{{$isMenuRoot}}</h1>
 
 {{- if eq .Site.Params.ordersectionsby "title"}}
   {{- range .Site.Home.Sections.ByTitle}}
@@ -14,6 +16,7 @@
 <!-- templates -->
 {{- define "section-tree-nav" }}
 {{- $showvisitedlinks := .showvisitedlinks }}
+{{- $isMenuRoot := .isMenuRoot }}
 {{- $currentNode := .currentnode }}
  {{- with .sect}}
   {{- if and .IsSection (or (not .Params.hidden) $.showhidden)}}
@@ -24,9 +27,10 @@
         {{- if eq .URL $currentNode.URL}} active{{end}}
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
         {{- if ne $numberOfPages 0 }} haschildren{{end}}
+        {{- if eq $isMenuRoot true }} menu-root menu-collapsed {{end}}
         ">
         {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") }}
-          <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
+          <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
         {{- end}}
 
         {{- if eq .URL .RelPermalink }}
@@ -37,8 +41,17 @@
             <div class="children">
           {{end}}
 
-              {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }}
-                <div class="menu-divider"></div>                                
+              {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") }}                
+                <div class="menu-divider"></div>
+                
+                <span class="SideMenuToggle expander">
+                  <a class="expander-title">
+                    <span class="SideMenuExpanderTitle expand-all-title" onclick="_expandMenu()">Expand all</span>
+                    <span class="SideMenuExpanderTitle collapse-all-title" onclick="_collapseMenu()">Collapse all</span>
+                  </a>
+                  <i class="fa fa-angle-double-down fa-lg category-icon expand-all-icon" onclick="_expandMenu()"></i>
+                  <i class="fa fa-angle-double-down fa-lg category-icon collapse-all-icon" onclick="_collapseMenu()"></i>
+                </span>                
               {{- else}}
                 <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
 
