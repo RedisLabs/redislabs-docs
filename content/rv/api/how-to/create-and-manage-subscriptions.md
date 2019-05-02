@@ -11,6 +11,6 @@ Test Bash reference:
 
 {{% expand %}}
 ```bash
-{{< embed-code "/rv/api/10-create-subscription.sh" >}}
+{{< embed-code "/static/code/rv/api/10-create-subscription.sh" >}}
 ```
 {{% /expand %}}
