@@ -2623,6 +2623,7 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     display: none;
   }
   .searchcontainer {
+    width: 99% !important;
     margin: 1rem 0 1rem 0;
   }
   nav.shortcuts li:last-child {
@@ -2684,6 +2685,7 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
 
   .nav-select {
     display: block;
+    width: 99%;
     /* margin-left: -10px; */
     /* margin-right: -10px; */
   }
@@ -2695,6 +2697,10 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     margin-left: -1rem;
     margin-right: -1rem;
   }
+
+  article section.page table.hot-topics-table, .hot-topics-title-wrapper {
+      width: 99% !important;
+  }  
 }
 
 @media (max-width: 1366px) {
