@@ -21,4 +21,6 @@ After adding the subnet you can add more subnets or click 'OK' button to finish.
 
 1. Click the 'Manage IPs' button associated with the key. A pop-up window appears
 1. Click the red trashcan icon indicating 'Delete'
-1. An approve message appears, click 'Delete' in order to permanently delete the key
+
+No confirmation pop-up appears for deleting subnets.
+After deleting the subnet you can delete more subnets or click 'OK' button to finish.
