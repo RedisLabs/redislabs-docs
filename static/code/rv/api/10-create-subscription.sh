@@ -1,12 +1,12 @@
-TASK_ID=$(curl -X POST "https://$HOST/subscriptions" \
+TASK_ID=$(curl -s -X POST "https://$HOST/subscriptions" \
     --header "Content-Type: application/json" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
     -H "x-api-secret-key: $SECRET_KEY" \
     -d '
 {
-  "name": "My new subscription 10",
-  "dryRun": false,
+  "name": "My new subscription 12",
+  "dryRun": true,
   "paymentMethodId": 8240,
   "memoryStorage": "RAM",
   "persistentStorageEncryption": true,
@@ -49,8 +49,8 @@ TASK_ID=$(curl -X POST "https://$HOST/subscriptions" \
           "parameters": {}
         }
       ],
-      "quantity": 1,
-      "averageItemSizeInBytes": 1024
+      "quantity": 3,
+      "averageItemSizeInBytes": 1000000
     }
   ]
 }
@@ -58,18 +58,28 @@ TASK_ID=$(curl -X POST "https://$HOST/subscriptions" \
 
 echo "TASK_ID=$TASK_ID"
 
-sleep 5 # seconds
 
-curl -X GET "https://$HOST/tasks/$TASK_ID" \
+STATUS=""
+
+while [ "$STATUS" != "processing-completed" ]
+do
+    sleep 3 # seconds   
+    STATUS=$(curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
+    -H "accept: application/json" \
+    -H "x-api-key: $ACCOUNT_KEY" \
+    -H "x-api-secret-key: $SECRET_KEY" \
+    | jq -r .status)
+    echo "STATUS=$STATUS"
+done
+
+curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
     -H "x-api-secret-key: $SECRET_KEY" \
     | jq -r .status
 
-sleep 5 # seconds
-
-curl -X GET "https://$HOST/tasks/$TASK_ID" \
+curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
     -H "x-api-secret-key: $SECRET_KEY" \
-    | jq 
+    | jq -r .response
