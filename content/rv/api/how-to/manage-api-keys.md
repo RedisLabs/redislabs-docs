@@ -5,10 +5,17 @@ weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-API requests must be performed from IP subnets that are specified as allowed subnets to this key.
-Considering that, a newly created secret key does not yet provide API access to the system.
+## Delete a secret key
+
+1. Navigate to 'Settings' menu
+1. Click 'Cloud API Keys' tab
+1. Click the red icon on the right, indicating 'Delete'
+1. A confirmation pop-up appears, click 'Delete' to confirm delete or 'Cancel' to keep the secret key
 
 ## Add a new allowed subnet
+
+API requests must be performed from IP subnets that are specified as allowed subnets to this key.
+Considering that, a newly created secret key does not yet provide API access to the system.
 
 1. Click the 'Manage IPs' button associated with the key. A pop-up window appears
 1. Click the plus button indicating 'Add new whitelist subnet'
