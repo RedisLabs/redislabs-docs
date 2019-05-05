@@ -8,7 +8,7 @@ categories: ["RC Pro"]
 API requests must be performed from IP subnets that are specified as allowed subnets to this key.
 Considering that, a newly created secret key does not yet provide API access to the system.
 
-Add a new allowed subnet:
+## Add a new allowed subnet
 
 1. Click the 'Manage IPs' button associated with the key. A pop-up window appears
 1. Click the plus button indicating 'Add new whitelist subnet'
@@ -16,3 +16,9 @@ Add a new allowed subnet:
 1. Click the right icon, indicating 'Save'
 
 After adding the subnet you can add more subnets or click 'OK' button to finish.
+
+## Delete an allowed subnet
+
+1. Click the 'Manage IPs' button associated with the key. A pop-up window appears
+1. Click the red trashcan icon indicating 'Delete'
+1. An approve message appears, click 'Delete' in order to permanently delete the key
