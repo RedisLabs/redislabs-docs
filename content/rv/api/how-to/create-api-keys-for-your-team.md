@@ -19,7 +19,8 @@ Creating API keys can only be done by account owners, for account owners:
     1. User Name: from the dropdown, select the user associated with the key (API requests using this key will be authorized and audited to this user)
     1. API Key Name: a descriptive name for the key (two keys associated with the same user must have different names). Key names must comply with the following constraints:
         1. Number of characters between 10 and 50
-        1. Two
+        1. Allowed characters are: Letters, digits, hyphens ('-') and underscores ('_')
+        1. Spaces are forbidden
 1. Click the button labeled 'Generate API Key. A pop-up window will appear specifying the secret key was successfully created. Copy the secret key value and store it in a safe location.
 
 ## Keeping the secret value of the key
