@@ -33,24 +33,24 @@ You can run the **create subscription** script using a command line `bash path/s
 {{% embed-code "rv/api/10-create-subscription.sh" %}}
 ```
 
-**Notes:**
+### **Notes:**
 
-##Step 1
+#### Step 1
 
 Executes a `POST` request to `subscriptions` with the defined parameters and a JSON body located within a separate JSON file.
 
 The POST response is a JSON document that contains the `taskId`, which is stored in a variable called `TASK_ID` that is used later to track the progress of the request's processing.
 
-## Step 2
+#### Step 2
 
 Query the API for the status of the subscription creation request, identified by the `taskId` (whose value is stored in the `$TASK_IS` variable).
 
-## Step 3
+#### Step 3
 
 As soon as the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`), print the `response` , including the `resourceId` (which in this case is a Subscription Id).
 
 
-# Create subscription request JSON body
+### Create subscription request JSON body
 
 The created subscription is defined by a JSON document that is sent as the body of the `POST subscriptions` request.
 
