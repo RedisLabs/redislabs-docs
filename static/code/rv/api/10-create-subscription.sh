@@ -1,15 +1,20 @@
+
+echo "Step 1: Post a request to create a subscription"
+
 TASK_ID=$(curl -s -X POST "https://$HOST/subscriptions" \
     --header "Content-Type: application/json" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
     -H "x-api-secret-key: $SECRET_KEY" \
-    --data-binary "@./static/code/rv/api/100-create-subscription-basic.json" \
+    --data-binary "@./static/code/rv/api/create-subscription-basic.json" \
     | jq -r .taskId )
 
 echo "TASK_ID=$TASK_ID"
 
-STATUS="received"
 
+echo "Step 2: wait for processing completion"
+
+STATUS="received"
 while [ "$STATUS" != "processing-completed" ]
 do
     sleep 3 # seconds   
@@ -21,8 +26,9 @@ do
     echo "STATUS=$STATUS"
 done
 
-echo "Response: "
+echo "Step 3: print the response, containing the create resource Id (which in this case is a newly created subscription Id)"
 
+echo "Response: "
 curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
