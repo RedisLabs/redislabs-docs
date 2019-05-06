@@ -25,9 +25,14 @@ The following Linux shell script sends a `POST /subscriptions` and waits until f
 {{% embed-code "rv/api/05-set-variables.sh" %}}
 ```
 
-### Run the subscription creation script
+### Subscription creation script
 
 You can run the **create subscription** script using a command line `bash path/script-name.sh`.
+
+Below is the sample script that you can use as a reference to calling the API operation to create a subscriptions. The script contains 3 primary steps that are explained below.
+
+Note that the script relies on the pre-requisite variable to be set (see above).
+
 
 ```shell
 {{% embed-code "rv/api/10-create-subscription.sh" %}}
@@ -50,7 +55,7 @@ Query the API for the status of the subscription creation request, identified by
 As soon as the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`), print the `response` , including the `resourceId` (which in this case is a Subscription Id).
 
 
-#### Create subscription request JSON body
+### subscription request JSON body
 
 The created subscription is defined by a JSON document that is sent as the body of the `POST subscriptions` request.
 
@@ -61,6 +66,15 @@ In the example above, that JSON document is stored in the `create-subscription-b
 {{% embed-code "rv/api/create-subscription-basic.json" %}}
 ```
 
+#### **Notes:**
+
+* **To use the sample JSON document in your own Account, you must modify the following parameters:**
+    * **`paymentMethodId`** - Specify a payment method that is defined for your account. You can lookup the payment method identifier using the `GET /payment-methods` API operation.
+    * **`cloudAccountId`** - Specify a cloud account that is defined for your account. You can lookup the cloud accounts identifiers using the `GET /cloud-accounts` API operation.(or use `"cloudAccountId: 1` to specify that you wish to use Redis Labs internal resources)
+* The JSON document contain 2 primary segments: Subscription specification, and Databases specification
+* When creating a subscription, you must specify one or more databases.
+
+    
 
 
 
