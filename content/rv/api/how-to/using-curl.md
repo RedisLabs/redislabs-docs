@@ -16,11 +16,11 @@ The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is us
 
 * **Open the [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) page in a browser**
 
-![swagger-authorize-and-try-now](static/images/rv/api/swagger-authorize-and-try-now.png)
+![swagger-authorize-and-try-now](/images/rv/api/swagger-authorize-and-try-now.png)
 
 * **Click on the `Authorize` button.** An "Available Authorizations"  dialog box appears, expecting two headers values that will be used for user authentication in all Swagger interactions
 
-![swagger-authorizations](static/images/rv/api/swagger-authorizations.png)
+![swagger-authorizations](/images/rv/api/swagger-authorizations.png)
 
 * **Insert the API Key values:** 
     * paste the [Account Key]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) into the `x-api-key` header textbox and click `Authorize`
@@ -32,22 +32,22 @@ The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is us
 
 * After performing an authorization in the Swaager UI (you can tell that you have entered the authorization keys when the lock icon appears as a closed lock)
 
-![swagger-closed-lock](static/images/rv/api/swagger-closed-lock.png)
+![swagger-closed-lock](/images/rv/api/swagger-closed-lock.png)
 
 * Open a category and select an API operation (for example, the `Account` category and the `GET /payment-methods` operation)
 
-![swagger-payment-methods-try-it-now](static/images/rv/api/swagger-payment-methods-try-it-now.png)
+![swagger-payment-methods-try-it-now](/images/rv/api/swagger-payment-methods-try-it-now.png)
 
 * Click on `Try it out` and `Execute`
 
 * the response is displayed in the `Responses` section of the UI
 
-![swagger-query-results](static/images/rv/api/swagger-query-results.png)
+![swagger-query-results](/images/rv/api/swagger-query-results.png)
 
 * Note that the results also contain an example of a `cURL` command that illustrates how the API query can be formed in a stabdard command line using `cURL`
 
 
-## Generating a client in your favorite programming language
+## Generating or writing an API client
 
 Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) you can generate an API HTTP client in a variety of programming languages, or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
 
