@@ -17,8 +17,8 @@ limit. You can select any of the following:
 |  allkeys-random | Randomly evicts keys out of all keys |
 |  volatile-lru | Evicts the least recently used keys out of all keys with an "expire" field set |
 |  volatile-lfu | Evicts the least frequently used keys out of all keys with an "expire" field set |
-|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
 |  volatile-random | Randomly evicts keys with an "expire" field set |
+|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
 
 One mechanism to avoid this, but still keep performance is to use [Redis
 on
