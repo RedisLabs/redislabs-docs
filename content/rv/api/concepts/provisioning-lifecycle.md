@@ -22,15 +22,9 @@ The API uses two phases in order to perform various operations:
 
 During this phase, the request is received, evaluated, planned and executed.
 
-Assuming all steps of this phase complete succssfully, TODO DDC
+When received, the response to the request includes a "`taskId`" that can be used to track the progress of the request's processing.
 
-### Phase #2: Provisioning the request's resources
-
-
-
-
-
-## Asynchrounous operations using Tasks
+#### Tracking requests using Tasks
 
 When requesting a an asyncronous operation (such as "create", "update" and "delete" operations) the response includes a "`taskId`" - a unique identifier that tracks the progress of the requested operation and reports its status.
 
@@ -52,6 +46,36 @@ You can also query the status of all active (or recently completed) tasks in you
 {{% embed-code "rv/api/30-get-all-tasks.sh" %}}
 ```
 
-## Processing 
+#### Task Id states
 
-When sending an API request for an asynchronous operation, 
+During the processing of a request, the task transitions between the following states:
+
+* **received** - initial state
+* **processing-in-progress** - request is being processed by a dedicated worker 
+* **processing-completed** - request processing completed successfully. A "`response`" segment is included with the task status JSON response (will include a "`resourceId`" in the case of a request to create a resource like Subscription of Database)
+* **processing-error** - request processing failed, with a detailed cause / reason included in the task status JSON response
+
+
+### Phase #2: Provisioning the request's resources
+
+When the processing phase completes successfully (with the task in the "`processing-completed`" status), the provisioning phase begins.
+
+During the provisioning phase, the API infrastructure orechestrates the construction of all infrastructure and resources requested (explicitly or implicitly) in the request.
+
+The provisioning phase may require several minutes to complete. You can track progress of the provisioning phase by querying the resource identifier.
+
+For example, when provisioning a new subscription, use the following `cURL` command to query the status of the subscription (replacing the "`{subscription-id}`" URI parameter with the resource identifier received when the task reported "`processing-completed`" at the end of the processing phase)
+
+```shell
+{{% embed-code "rv/api/40-get-subscription-by-id.sh" %}}
+```
+
+#### Provisioning states
+
+During the provisioning of a resource (i.e. a subscription, database, cloud account etc.), the resource transitions between the following states:
+
+* **pending** - provisionign in progress
+* **active** - provisionign completed successfully
+* **deleting** - de-provisionign and deletion in progress
+* **error** - an error ocurred during the provisioning phase (with relevant information displayed)
+
