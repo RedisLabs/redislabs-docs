@@ -8,7 +8,7 @@ TASK_ID=$(curl -s -X POST "https://$HOST/subscriptions" \
 
 echo "TASK_ID=$TASK_ID"
 
-STATUS=""
+STATUS="received"
 
 while [ "$STATUS" != "processing-completed" ]
 do
@@ -27,4 +27,7 @@ curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
     -H "x-api-secret-key: $SECRET_KEY" \
-    | jq -r .response
+    | jq -r .
+
+
+
