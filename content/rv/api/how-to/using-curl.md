@@ -12,7 +12,7 @@ You can access and use the API using a variety of tools:
 
 The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is useful for initial introduction and learning about API operations, models and simulated usage via a web based user interface
 
-#### Authenticating in the Swagger User Interface
+### Authenticating in the Swagger User Interface
 
 * **Open the [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) page in a browser**
 
@@ -28,7 +28,7 @@ The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is us
     * click `Close`
     * **NOTE:** refreshing or re-opening the Swagger UI page will cause the authorizations to be lost, and the keys will need to be re-inserted into the 
 
-#### Calling API operations with the Swagger User Interface
+### Calling API operations with the Swagger User Interface
 
 * After performing an authorization in the Swaager UI (you can tell that you have entered the authorization keys when the lock icon appears as a closed lock)
 
@@ -38,13 +38,26 @@ The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is us
 
 ![swagger-payment-methods-try-it-now](/images/rv/api/swagger-payment-methods-try-it-now.png)
 
-* Click on `Try it out` and `Execute`
+* Click on "`Try it out`" and "`Execute`"
 
 * the response is displayed in the `Responses` section of the UI
+* Note that the results also contain an example of a `cURL` command that illustrates how the API query can be formed in a stabdard command line using `cURL`
 
 ![swagger-query-results](/images/rv/api/swagger-query-results.png)
 
-* Note that the results also contain an example of a `cURL` command that illustrates how the API query can be formed in a stabdard command line using `cURL`
+#### Setting parameters in an API operations
+
+* When an API operation requires URI parameters (such as "get subscription by subscriptin id") the parameters are displayed in the UI as follows:
+
+![swagger-parameters](/images/rv/api/swagger-parameters.png)
+
+* For API operations that require a JSON request body, you can use the **model display** to review the expected JSON structure and parameters 
+
+![swagger-post-body-model](/images/rv/api/swagger-post-body-model.png)
+
+* For API operations that require a JSON request body, you can use the "`Try it now`" sample JSON created by Swagger as a base template that you can edit and execute
+
+![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
 
 ## Generating or writing an API client
