@@ -15,7 +15,7 @@ Cloud]({{< relref "/rc/_index.md" >}}) and [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) products. With Redis Cloud Pro,
 you can deploy quickly on major public clouds and create Redis
 databases that are fully compatible with the open-source Redis databases
-contained on Redis Labs' cloud infrastrucure.
+contained on Redis Labs' cloud infrastructure.
 
 ## Features
 
