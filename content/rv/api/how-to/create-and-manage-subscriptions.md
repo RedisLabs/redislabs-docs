@@ -54,6 +54,9 @@ Query the API for the status of the subscription creation request, identified by
 
 As soon as the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`), print the `response` , including the `resourceId` (which in this case is a Subscription Id).
 
+At this point, if the processing phase completed successfully, the subscription is visible in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status, indicating that it is being provisioned.
+
+You can continue tracking the created subscription throughout its provisioning phase until it reaches the "`active`" state using the "`GET /subscriptions/{subscriptionId}`" API operation.
 
 ### Subscription JSON body
 
@@ -69,8 +72,8 @@ In the example above, that JSON document is stored in the `create-subscription-b
 #### **Notes:**
 
 * **To use the sample JSON document in your own Account, you must modify the following parameters:**
-    * **`paymentMethodId`** - Specify a payment method that is defined for your account. You can lookup the payment method identifier using the `GET /payment-methods` API operation.
-    * **`cloudAccountId`** - Specify a cloud account that is defined for your account. You can lookup the cloud accounts identifiers using the `GET /cloud-accounts` API operation.(or use `"cloudAccountId: 1` to specify that you wish to use Redis Labs internal resources)
+    * **`paymentMethodId`** - Specify a payment method that is defined for your account. You can lookup the payment method identifier using the "`GET /payment-methods`" API operation.
+    * **`cloudAccountId`** - Specify a cloud account that is defined for your account. You can lookup the cloud accounts identifiers using the "`GET /cloud-accounts`" API operation.(or use "`"cloudAccountId": 1`" to specify that you wish to use Redis Labs internal resources)
 * The JSON document contain 2 primary segments: Subscription specification, and Databases specification
 * When creating a subscription, you must specify one or more databases.
 
