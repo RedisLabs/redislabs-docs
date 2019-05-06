@@ -21,17 +21,13 @@ The following Linux shell script sends a `POST /subscriptions` and waits until f
 
 * Define the expected variables needed to use the API:
 
-```shell
-{{% embed-code "rv/api/05-set-variables.sh" %}}
-```
+
 
 ## Run the subscription creation script
 
 You can run the **create subscription** script using a command line `bash path/script-name.sh`.
 
-```shell
-{{% embed-code "rv/api/10-create-subscription.sh" %}}
-```
+
 
 **Notes:**
 
