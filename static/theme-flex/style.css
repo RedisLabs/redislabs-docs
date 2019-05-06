@@ -2465,7 +2465,7 @@ article section.page table.hot-topics-table thead tr {
 
 article section.page table.hot-topics-table th {
   text-align: left;
-  padding: 40px 20px 0 50px;
+  padding: 40px 20px 6px 50px;
   font-size: 16px;  
 }
 
@@ -2476,7 +2476,7 @@ article section.page table.hot-topics-table th a {
 article section.page table.hot-topics-table td {
   border-bottom: none;
   padding: 9px 20px 0 50px;
-  line-height: 14px;
+  line-height: 16px;
 }
 
 article section.page table.hot-topics-table td a {
@@ -2495,7 +2495,7 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
 
   article section.page table.hot-topics-table td {
     font-size: 14px;
-    line-height: 20px;    
+    line-height: 14px;
   }
 }
 
@@ -2504,11 +2504,13 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   article section.page table.hot-topics-table th {
     padding: 40px 20px 0 13px;
     font-size: 13px;
+    line-height: 13px;
   }
 
   article section.page table.hot-topics-table td {
     padding: 7px 0px 0 13px;
     font-size: 12px;
+    line-height: 13px;
   }
 }
 
@@ -2516,11 +2518,13 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   article section.page table.hot-topics-table th {
     font-size: 12px;
     padding: 40px 18px 0 10px;
+    line-height: 12px;
   }
 
   article section.page table.hot-topics-table td {
     padding: 7px 0px 0 10px;
     font-size: 11px;
+    line-height: 12px;
   }  
 }
 
@@ -2528,6 +2532,7 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   article section.page table.hot-topics-table th {
     padding: 40px 0px 0 10px;
     font-size: 13px;
+    line-height: 14px;
   }
 }
 
