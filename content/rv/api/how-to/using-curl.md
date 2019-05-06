@@ -12,7 +12,7 @@ You can access and use the API using a variety of tools:
 
 The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is useful for initial introduction and learning about API operations, models and simulated usage via a web based user interface
 
-### Authenticating in the Swagger User Interface
+### Authenticating
 
 * **Open the [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) page in a browser**
 
@@ -28,7 +28,7 @@ The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is us
     * click `Close`
     * **NOTE:** refreshing or re-opening the Swagger UI page will cause the authorizations to be lost, and the keys will need to be re-inserted into the 
 
-### Calling API operations with the Swagger User Interface
+### Calling API operations
 
 * After performing an authorization in the Swaager UI (you can tell that you have entered the authorization keys when the lock icon appears as a closed lock)
 
@@ -60,7 +60,7 @@ The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is us
 ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
 
-## Generating or writing an API client
+## Creating an API client
 
 Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) you can generate an API HTTP client in a variety of programming languages, or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
 
@@ -71,12 +71,12 @@ Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) you can gener
 * If any issues are encountered while interacting with the API, the raw HTTP call (URI, body and parameters) will be required by Redis Labs ltd. personnel in order to provide support and assistance.
 
 
-## Using the `cURL` command-line HTTP client
+## Using the `cURL` HTTP client
 
 `cURL` is a popular command line tool used to perform HTTP requests, in an ad-hoc manner, or within shell scripts (mostly Linux Bash). For an introduction to `cURL` see "[How to start using cURL and why: a hands-on introduction](https://medium.freecodecamp.org/how-to-start-using-cURL-and-why-a-hands-on-introduction-ea1c913caaaa)"
 
 
-**The official API documentation uses `cURL` and Linux shell scripts to provide examples on using the API.**
+**This API documentation uses `cURL` and Linux shell scripts to provide examples on using the API.**
 
 For example, a standard API call to get System Log information looks like this in `cURL`:
 
