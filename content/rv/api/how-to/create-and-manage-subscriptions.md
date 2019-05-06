@@ -8,3 +8,7 @@ categories: ["RC Pro"]
 
 
 Test Bash reference:
+
+```shell
+{{% embed-code "rv/api/10-create-subscription.sh" %}}
+```
