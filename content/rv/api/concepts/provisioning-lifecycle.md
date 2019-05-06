@@ -62,7 +62,7 @@ When the processing phase completes successfully (with the task in the "`process
 
 During the provisioning phase, the API infrastructure orechestrates the construction of all infrastructure and resources requested (explicitly or implicitly) in the request.
 
-The provisioning phase may require several minutes to complete. You can track progress of the provisioning phase by querying the resource identifier.
+The provisioning phase may require several minutes to complete. You can track the progress of the provisioning phase by querying the resource identifier.
 
 For example, when provisioning a new subscription, use the following `cURL` command to query the status of the subscription (replacing the "`{subscription-id}`" URI parameter with the resource identifier received when the task reported "`processing-completed`" at the end of the processing phase)
 
