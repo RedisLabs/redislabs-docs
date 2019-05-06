@@ -8,7 +8,7 @@ categories: ["RC Pro"]
 
 This articles describes how to create a subscription using `cURL` commands. 
 
-For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl/#using-the-curl-http-client" >}})".
+For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
 
 
 # Create a subscription
@@ -21,13 +21,17 @@ The following Linux shell script sends a `POST /subscriptions` and waits until f
 
 * Define the expected variables needed to use the API:
 
-
+```shell
+{{% embed-code "rv/api/05-set-variables.sh" %}}
+```
 
 ## Run the subscription creation script
 
 You can run the **create subscription** script using a command line `bash path/script-name.sh`.
 
-
+```shell
+{{% embed-code "rv/api/10-create-subscription.sh" %}}
+```
 
 **Notes:**
 
@@ -51,6 +55,12 @@ As soon as the status changes from `processing-in-progress` to `processing-compl
 The created subscription is defined by a JSON document that is sent as the body of the `POST subscriptions` request.
 
 In the example above, that JSON document is stored in the `create-subscription-basic.json` file:
+
+
+```shell
+{{% embed-code "rv/api/create-subscription-basic.json" %}}
+```
+
 
 
 
