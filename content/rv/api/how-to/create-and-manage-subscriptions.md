@@ -55,7 +55,7 @@ Query the API for the status of the subscription creation request, identified by
 As soon as the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`), print the `response` , including the `resourceId` (which in this case is a Subscription Id).
 
 
-### subscription request JSON body
+### Subscription JSON body
 
 The created subscription is defined by a JSON document that is sent as the body of the `POST subscriptions` request.
 
