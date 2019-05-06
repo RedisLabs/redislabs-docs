@@ -17,7 +17,9 @@ Creating API keys can only be done by account owners, for account owners:
 1. To create a new key, click the button labeled 'Add new API secret key'
 1. Fill in the secret key properties:
     1. User Name: from the dropdown, select the user associated with the key (API requests using this key will be authorized and audited to this user)
-    1. API Key Name: a descriptive name for the key (two keys associated with the same user must have different names). TODO: Uriah - add API Key naming limitations
+    1. API Key Name: a descriptive name for the key (two keys associated with the same user must have different names). Key names must comply with the following constraints:
+        1. One
+        1. Two
 1. Click the button labeled 'Generate API Key. A pop-up window will appear specifying the secret key was successfully created. Copy the secret key value and store it in a safe location.
 
 ## Keeping the secret value of the key
