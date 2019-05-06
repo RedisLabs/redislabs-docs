@@ -36,8 +36,8 @@ You can track the status of a specific task by querying its "`taskId`" status:
 
 In the above sample, the "`$TASK_ID`" variable holds the value of "`taskId`". For example:
 
-```shell
-TASK_ID=16627469-f35b-41ed-9128-7d753b642d63
+```bash
+TASK_ID=166d7f69-f35b-41ed-9128-7d753b642d63
 ```
 
 You can also query the status of all active (or recently completed) tasks in your account:
