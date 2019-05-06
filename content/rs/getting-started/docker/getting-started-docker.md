@@ -90,15 +90,28 @@ certificate on the node, and proceed through the browser warning.
 
     ![Redis Enterprise Software create database](/images/rs/getstarted-newdatabase.png)
 
-1. Enter a database name such as `database1` and click **Activate** to create your database.
+1. Enter a database name such as `database1`.
 
     ![Redis Enterprise Software configure new database
 screen](/images/rs/getstarted-createdatabase.png)
 
+1. Click **Show advanced options** and, in the **Endpoint port number**,
+enter `12000` for the port number.
+
+    If port 12000 is not available, enter any available port number between 10000 to 19999
+    and connect to the database with that port number.
+
+1. Click **Activate** to create your database
+
 <!-- Also in crdbs.md -->
-Note: If you cannot activate the database because of a memory limitation, 
+{{% note %}}
+If you cannot activate the database because of a memory limitation, 
 make sure that Docker has enough memory allocated in the Advanced section 
 of Docker Settings.
+{{% /note %}}
+    
+The database configuration is shown.
+When you see a green check mark, the database is activated and ready for you to use.
 
 You now have a Redis database!
 
@@ -122,10 +135,10 @@ $ docker exec -it rp bash
 ```
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
-to port 12000 and store and retrieve a key in database1
+to the database port number, and store and retrieve a key in database1.
 
 ```src
-$ sudo /opt/redislabs/bin/redis-cli -p 12000
+$ /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:16653> set key1 123
 OK
 127.0.0.1:16653> get key1

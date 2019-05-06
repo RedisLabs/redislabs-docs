@@ -31,13 +31,13 @@ updates to other participating clusters and other member CRDBs.
 |  ------: | :------: | :------: |
 |  t1 | INCRBY key1 7 |  |
 |  t2 |  | INCRBY key1 3 |
-|  t3 | GET key1 7 | GET key1 3 |
+|  t3 | GET key1<br/>7 | GET key1<br/>3 |
 |  t4 | — Sync — | — Sync — |
-|  t5 | GET key1 10 | GET key1 10 |
+|  t5 | GET key1<br/>10 | GET key1<br/>10 |
 |  t6 | DECRBY key1 3 |  |
 |  t7 |  | INCRBY key1 6 |
 |  t8 | — Sync — | — Sync — |
-|  t9 | GET key1 13 | GET key1 13 |
+|  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
 Databases provide various approaches to address some of these concerns
 
