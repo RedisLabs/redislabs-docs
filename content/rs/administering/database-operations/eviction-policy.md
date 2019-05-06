@@ -17,7 +17,8 @@ limit. You can select any of the following:
 |  volatile-lru | Evicts the least recently used keys out of all keys with an "expire" field set |
 |  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
 |  volatile-random | Randomly evicts keys with an "expire" field set |
-
+|  allkeys-lfu |
+|  volatile-lfu |
 One mechanism to avoid this, but still keep performance is to use [Redis
 on
 Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
