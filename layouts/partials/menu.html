@@ -1,31 +1,36 @@
 {{- $currentNode := . }}
 {{- $showvisitedlinks := .Site.Params.showVisitedLinks -}}
+{{- $isParentRoot := eq .Parent .FirstSection -}}
+<strong>JELIIII ::: {{$isParentRoot}}</strong>
 
 {{- if eq .Site.Params.ordersectionsby "title"}}
   {{- range .Site.Home.Sections.ByTitle}}
-  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
+  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isParentRoot" $isParentRoot}}
   {{- end}}
 {{- else}}
   {{- range .Site.Home.Sections.ByWeight}}
-  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks}}
+  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isParentRoot" $isParentRoot}}
   {{- end}}
 {{- end}}
 
 <!-- templates -->
-{{- define "section-tree-nav" }}
+{{- define "section-tree-nav"}}
 {{- $showvisitedlinks := .showvisitedlinks }}
+{{- $isParentRoot := .isParentRoot }}
 {{- $currentNode := .currentnode }}
  {{- with .sect}}
   {{- if and .IsSection (or (not .Params.hidden) $.showhidden)}}
     {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
-    {{- safeHTML .Params.head}}
+    {{- safeHTML .Params.head}}    
     <li data-nav-id="{{.URL}}" class="dd-item
-        {{- if .IsAncestor $currentNode}} parent{{end}}
-        {{- if eq .URL $currentNode.URL}} active{{end}}
+        {{- if .IsAncestor $currentNode}} parent{{end -}}
+        {{- if eq .URL $currentNode.URL}} active{{end -}}
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
-        {{- if ne $numberOfPages 0 }} haschildren{{end}}
-        {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/")) }} menu-root menu-collapsed {{end}}
+        {{- if ne $numberOfPages 0 }} haschildren{{end -}}
+        {{- if (or $isParentRoot (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/")))}} menu-collapsed {{else}} menu-expanded{{end -}}
+        {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/"))}} menu-root {{end}}
         ">
+        <!-- TODO: figure out why menu-collapsed condition is true on 3rd level items -->
         {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") }}
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
         {{- end}}
@@ -46,8 +51,8 @@
                     <span class="SideMenuExpanderTitle expand-all-title">Expand all</span>
                     <span class="SideMenuExpanderTitle collapse-all-title">Collapse all</span>
                   </a>
-                  <i class="fa fa-angle-double-down fa-lg category-icon expand-all-icon"></i>
-                  <i class="fa fa-angle-double-down fa-lg category-icon collapse-all-icon"></i>
+                  <i class="fa fa-angle-double-down fa-lg expand-all-icon"></i>
+                  <i class="fa fa-angle-double-up fa-lg collapse-all-icon"></i>
                 </span>                
               {{- else}}
                 <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
@@ -77,14 +82,14 @@
           {{- range $pages.ByTitle }}
             {{- if and .Params.hidden (not $.showhidden) }}
             {{- else}}
-            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks }}
+            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isParentRoot" $isParentRoot }}
             {{- end}}
           {{- end}}
         {{- else}}
           {{- range $pages.ByWeight }}
             {{- if and .Params.hidden (not $.showhidden) }}
             {{- else}}
-            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks }}
+            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isParentRoot" $isParentRoot }}
             {{- end}}
           {{- end}}
         {{- end}}

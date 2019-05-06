@@ -6,8 +6,10 @@ jQuery(document).ready(function() {
     });
         
     jQuery('.SideMenuToggle').on('click', function() {
-        $('.active.menu-root').children('ul').find('.fa.category-icon').toggleClass("fa-angle-right fa-angle-down") ;
-        $('.active.menu-root').children('ul').find('li').children('ul').toggle();
+        $('article > aside .menu .dd-item.parent.menu-root').toggleClass("menu-expanded");
+
+        $('.parent.menu-root').children('ul').find('.fa.category-icon').toggleClass("fa-angle-right fa-angle-down") ;
+        $('.parent.menu-root').children('ul').find('li').children('ul').toggle();
         return false;
     });    
 
