@@ -71,14 +71,11 @@ by performing the following steps:
 1. To initiate the installation in the CLI, run the following command:
 
     ```src
-    $ sudo ./install.sh -s /var/run/redislabs
+    $ sudo ./install.sh
     ```
 
     Note: You must either be the root user or have access to sudo to the
     root user to run the install process.
-
-    The -s switch is to tell install.sh to locate the Linux socket files
-    in /var/run/redislabs instead of the default, which is /tmp.
 
 1. During the installation process, enter the requested input each time
     you are prompted to do so.
