@@ -14,8 +14,8 @@ echo "TASK_ID=$TASK_ID"
 
 echo "Step 2: wait for processing completion"
 
-STATUS="received"
-while [ "$STATUS" != "processing-completed" ]
+STATUS=
+while [ "$STATUS" != 'processing-completed' ] || [ "$STATUS" != 'processing-error' ]
 do
     sleep 3 # seconds   
     STATUS=$(curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
@@ -26,7 +26,7 @@ do
     echo "STATUS=$STATUS"
 done
 
-echo "Step 3: print the response, containing the create resource Id (which in this case is a newly created subscription Id)"
+echo "Step 3: print the response, containing the create resource Id"
 
 echo "Response: "
 curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
