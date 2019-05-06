@@ -88,7 +88,7 @@ curl -s -X GET "https://$HOST/logs" \
     * **`$HOST`** - the URI of the Redis Labs API. i.e. `api-beta1-qa.redislabs.com/beta1`
     * **`$ACCOUNT_KEY`** - the Account key value (see "[Enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})")
     * **`$SECRET_KEY`** - the perosnal secret key value (see "[Create API Keys for your team]({{< relref  "/rv/api/how-to/create-api-keys-for-your-team.md" >}})")
-1. The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command line processor, and it will display only the raw output (`-r`) or the root element (`.`)
+1. The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
 1. You can set the variables using a shell commands like the following:
 
 
