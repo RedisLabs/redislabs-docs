@@ -57,10 +57,4 @@ The created subscription is defined by a JSON document that is sent as the body 
 In the example above, that JSON document is stored in the `create-subscription-basic.json` file:
 
 
-```shell
-{{% embed-code "rv/api/create-subscription-basic.json" %}}
-```
-
-
-
 

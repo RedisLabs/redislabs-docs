@@ -1,5 +1,5 @@
 ---
-Title: Using the API with Swagger and cURL
+Title: Using the API
 description: 
 weight: 40
 alwaysopen: false
