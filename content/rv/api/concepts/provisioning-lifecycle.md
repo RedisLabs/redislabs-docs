@@ -79,3 +79,5 @@ During the provisioning of a resource (i.e. a subscription, database, cloud acco
 * **deleting** - de-provisionign and deletion in progress
 * **error** - an error ocurred during the provisioning phase (with relevant information displayed)
 
+
+![processing-and-provisioning](/images/rv/api/processing-and-provisioning.png)
