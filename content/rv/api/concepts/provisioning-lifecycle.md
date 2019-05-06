@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 
-## Type of API operations
+## Types of API operations
 
 The API performs various operations on underlying resources that include multiple servers, services and related infrastructure. As a result, these operations may take several minutes to complete. 
 
@@ -18,7 +18,7 @@ For operations that do not create or modify resources (that is, mainly `GET` ope
 
 The API uses two phases in order to perform various operations:
 
-### Phase #1: Processing the request
+### Phase #1: Processing
 
 During this phase, the request is received, evaluated, planned and executed.
 
@@ -56,7 +56,7 @@ During the processing of a request, the task transitions between the following s
 * **processing-error** - request processing failed, with a detailed cause / reason included in the task status JSON response
 
 
-### Phase #2: Provisioning the request's resources
+### Phase #2: Provisioning
 
 When the processing phase completes successfully (with the task in the "`processing-completed`" status), the provisioning phase begins.
 
