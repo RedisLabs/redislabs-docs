@@ -1,0 +1,1695 @@
+{
+    "annotations": {
+        "list": [
+        {
+            "builtIn": 1,
+            "datasource": "-- Grafana --",
+            "enable": true,
+            "hide": true,
+            "iconColor": "rgba(0, 211, 255, 1)",
+            "name": "Annotations & Alerts",
+            "type": "dashboard"
+        }
+        ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 6,
+    "iteration": 1542896609510,
+    "links": [
+        {
+        "icon": "external link",
+        "includeVars": true,
+        "keepTime": true,
+        "tags": [
+            "RLEC"
+        ],
+        "targetBlank": true,
+        "type": "dashboards"
+        }
+    ],
+    "panels": [
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 0
+        },
+        "id": 23,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+        ],
+        "decimals": null,
+        "format": "short",
+        "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+        },
+        "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 0,
+            "y": 1
+        },
+        "id": 5,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+            {
+            "name": "value to text",
+            "value": 1
+            },
+            {
+            "name": "range to text",
+            "value": 2
+            }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+            {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+            }
+        ],
+        "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+        },
+        "tableColumn": "",
+        "targets": [
+            {
+            "expr": "count(count_values(\"bdb\", redis_used_memory{cluster=\"$cluster\", node=\"$node\"}))",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "",
+            "metric": "",
+            "refId": "A",
+            "step": 3600
+            }
+        ],
+        "thresholds": "",
+        "title": "# BDBs",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+            {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+            }
+        ],
+        "valueName": "current"
+        },
+        {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+        ],
+        "decimals": null,
+        "format": "short",
+        "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": false
+        },
+        "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 4,
+            "y": 1
+        },
+        "id": 7,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+            {
+            "name": "value to text",
+            "value": 1
+            },
+            {
+            "name": "range to text",
+            "value": 2
+            }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+            {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+            }
+        ],
+        "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+        },
+        "tableColumn": "",
+        "targets": [
+            {
+            "expr": "count(redis_used_memory{cluster=\"$cluster\", node=\"$node\"})",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "",
+            "metric": "",
+            "refId": "A",
+            "step": 3600
+            }
+        ],
+        "thresholds": "",
+        "title": "# Shards",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+            {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+            }
+        ],
+        "valueName": "current"
+        },
+        {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+        ],
+        "decimals": 2,
+        "format": "percentunit",
+        "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+        },
+        "gridPos": {
+            "h": 5,
+            "w": 6,
+            "x": 8,
+            "y": 1
+        },
+        "id": 9,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+            {
+            "name": "value to text",
+            "value": 1
+            },
+            {
+            "name": "range to text",
+            "value": 2
+            }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+            {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+            }
+        ],
+        "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+        },
+        "tableColumn": "",
+        "targets": [
+            {
+            "expr": "1-node_cpu_idle{node=\"$node\",cluster=\"$cluster\"}",
+            "format": "time_series",
+            "intervalFactor": 1,
+            "legendFormat": "",
+            "metric": "",
+            "refId": "A",
+            "step": 1800
+            }
+        ],
+        "thresholds": "70,85",
+        "title": "CPU Utilization",
+        "type": "singlestat",
+        "valueFontSize": "70%",
+        "valueMaps": [
+            {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+            }
+        ],
+        "valueName": "current"
+        },
+        {
+        "cacheTimeout": null,
+        "colorBackground": false,
+        "colorValue": false,
+        "colors": [
+            "rgba(245, 54, 54, 0.9)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(50, 172, 45, 0.97)"
+        ],
+        "decimals": null,
+        "format": "bytes",
+        "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+        },
+        "gridPos": {
+            "h": 5,
+            "w": 6,
+            "x": 14,
+            "y": 1
+        },
+        "id": 10,
+        "interval": null,
+        "links": [],
+        "mappingType": 1,
+        "mappingTypes": [
+            {
+            "name": "value to text",
+            "value": 1
+            },
+            {
+            "name": "range to text",
+            "value": 2
+            }
+        ],
+        "maxDataPoints": 100,
+        "nullPointMode": "connected",
+        "nullText": null,
+        "postfix": "",
+        "postfixFontSize": "50%",
+        "prefix": "",
+        "prefixFontSize": "50%",
+        "rangeMaps": [
+            {
+            "from": "null",
+            "text": "N/A",
+            "to": "null"
+            }
+        ],
+        "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+        },
+        "tableColumn": "",
+        "targets": [
+            {
+            "expr": "node_available_memory{cluster=\"$cluster\",node=\"$node\"}",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "refId": "A",
+            "step": 3600
+            }
+        ],
+        "thresholds": "",
+        "title": "Free RAM",
+        "type": "singlestat",
+        "valueFontSize": "80%",
+        "valueMaps": [
+            {
+            "op": "=",
+            "text": "N/A",
+            "value": "null"
+            }
+        ],
+        "valueName": "current"
+        },
+        {
+        "content": "<b style=\"font-size: 20pt\">$version<b>",
+        "gridPos": {
+            "h": 5,
+            "w": 4,
+            "x": 20,
+            "y": 1
+        },
+        "id": 14,
+        "links": [],
+        "mode": "html",
+        "title": "Node version",
+        "type": "text"
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 6
+        },
+        "id": 24,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "decimals": 2,
+        "fill": 1,
+        "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 7
+        },
+        "id": 3,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "1- node_cpu_idle{cluster=\"$cluster\", node=\"$node\"}",
+            "format": "time_series",
+            "intervalFactor": 1,
+            "legendFormat": "CPU usage ",
+            "refId": "A",
+            "step": 120
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "CPU Usage on node",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "percentunit",
+            "label": "percents",
+            "logBase": 1,
+            "max": "1.5",
+            "min": "0",
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 15
+        },
+        "id": 25,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "description": "display the egress and ingress traffic on the node's NIC",
+        "fill": 1,
+        "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 16
+        },
+        "id": 4,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "repeat": null,
+        "seriesOverrides": [
+            {
+            "alias": "/Ingress.*/",
+            "yaxis": 2
+            }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "node_ingress_bytes{cluster=\"$cluster\", node=\"$node\"}",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "Ingress for node {{node}}",
+            "metric": "",
+            "refId": "A",
+            "step": 240
+            },
+            {
+            "expr": "node_egress_bytes{cluster=\"$cluster\", node=\"$node\"}",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "egress for node {{node}}",
+            "metric": "",
+            "refId": "B",
+            "step": 240
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Node $node In/Out Traffic",
+        "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "transparent": false,
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+            "max"
+            ]
+        },
+        "yaxes": [
+            {
+            "format": "Bps",
+            "label": "Egress bytes/sec ",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            },
+            {
+            "format": "Bps",
+            "label": "Ingress bytes/sec ",
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 24
+        },
+        "id": 26,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 25
+        },
+        "id": 12,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": false,
+            "rightSide": true,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null as zero",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+            {
+            "alias": "/Ingress.*/",
+            "yaxis": 2
+            }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "topk(10, listener_egress_bytes{node=\"$node\", cluster=\"$cluster\"})",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "legendFormat": "Egress listener {{listener}} for {{bdb}}",
+            "refId": "A",
+            "step": 240
+            },
+            {
+            "expr": "topk(10, listener_ingress_bytes{node=\"$node\", cluster=\"$cluster\"})",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "legendFormat": "Ingress listener {{listener}} for {{bdb}}",
+            "refId": "B",
+            "step": 240
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Top 10 listeners Egress/Ingrees",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "Bps",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            },
+            {
+            "format": "Bps",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 32
+        },
+        "id": 27,
+        "panels": [],
+        "repeat": null,
+        "title": "BIGSTORE IOPS",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 33
+        },
+        "id": 1,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null as zero",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "topk(10, redis_used_memory{cluster=\"$cluster\", node=\"$node\"})",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "redis:{{redis}}, bdb:{{bdb}},  role:{{role}}",
+            "metric": "",
+            "refId": "A",
+            "step": 240
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Top 10 shards by used memory",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "bytes",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 42
+        },
+        "id": 28,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 0,
+            "y": 43
+        },
+        "id": 11,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null as zero",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "topk(10, listener_conns{cluster=\"$cluster\", node=\"$node\"})",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "listener {{listener}} for  bdb {{bdb}}",
+            "metric": "",
+            "refId": "A",
+            "step": 600
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Top 10 active listeners by connections",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "ops",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 9,
+            "w": 12,
+            "x": 12,
+            "y": 43
+        },
+        "id": 17,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null as zero",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "topk(10, listener_total_req{cluster=\"$cluster\", node=\"$node\"})",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "listener {{listener}} for  bdb {{bdb}}",
+            "metric": "",
+            "refId": "A",
+            "step": 600
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Top 10 active listeners by requests",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "ops",
+            "label": "",
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 52
+        },
+        "id": 29,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 53
+        },
+        "id": 6,
+        "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": true,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "count(redis_used_memory{cluster=\"$cluster\", node=\"$node\"}) by (bdb)",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "legendFormat": "bdb:{{bdb}}",
+            "refId": "A",
+            "step": 600
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "#Shards per BDB",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 12,
+            "y": 53
+        },
+        "id": 8,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "node_available_memory{cluster=\"$cluster\",node=\"$node\"}",
+            "format": "time_series",
+            "hide": false,
+            "intervalFactor": 2,
+            "legendFormat": "available memory",
+            "metric": "",
+            "refId": "A",
+            "step": 600
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Available Memory",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "bytes",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": "0",
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 60
+        },
+        "id": 30,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 61
+        },
+        "id": 13,
+        "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "max": false,
+            "min": false,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null as zero",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "redis_used_memory{cluster=\"$cluster\", node=\"$node\"}",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "legendFormat": "redis:{{redis}}, bdb:{{bdb}},  role:{{role}}",
+            "metric": "redis_used_memory",
+            "refId": "A",
+            "step": 240
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Size of shards on node (Ability for sorting like by size)",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "bytes",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": false
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 71
+        },
+        "id": 31,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 1,
+        "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 72
+        },
+        "id": 16,
+        "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": false,
+            "min": true,
+            "show": true,
+            "sort": "current",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null as zero",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": true,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "(delta(redis_process_cpu_system_seconds_total{node=\"$node\",cluster=\"$cluster\"}[60s]) + delta(redis_process_cpu_user_seconds_total{node=\"$node\",cluster=\"$cluster\"}[60s]))/60*100",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "legendFormat": "shard: {{redis}} role: {{role}} bdb: {{bdb}}",
+            "refId": "A",
+            "step": 240
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "Shard's CPU on Node",
+        "tooltip": {
+            "shared": true,
+            "sort": 2,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "percent",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 79
+        },
+        "id": 32,
+        "panels": [],
+        "repeat": null,
+        "title": "ROF metrics",
+        "type": "row"
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 80
+        },
+        "id": 33,
+        "panels": [],
+        "repeat": null,
+        "title": "ROF metrics",
+        "type": "row"
+        },
+        {
+        "collapsed": false,
+        "gridPos": {
+            "h": 1,
+            "w": 24,
+            "x": 0,
+            "y": 81
+        },
+        "id": 34,
+        "panels": [],
+        "repeat": null,
+        "title": "Dashboard Row",
+        "type": "row"
+        },
+        {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "fill": 6,
+        "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 82
+        },
+        "id": 22,
+        "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "rightSide": true,
+            "show": false,
+            "total": false,
+            "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 5,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [
+            {
+            "alias": "/.*cow.*/",
+            "fill": 0
+            },
+            {
+            "alias": "/.*mem.*/",
+            "fill": 8
+            }
+        ],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
+            {
+            "expr": "redis_rdb_last_cow_size{node=\"$node\",cluster=\"$cluster\"}",
+            "format": "time_series",
+            "hide": false,
+            "interval": "",
+            "intervalFactor": 2,
+            "legendFormat": "shard last RDB cow - redis: {{redis}}",
+            "refId": "A",
+            "step": 240
+            },
+            {
+            "expr": "redis_aof_last_cow_size{node=\"$node\",cluster=\"$cluster\"}",
+            "format": "time_series",
+            "hide": false,
+            "interval": "",
+            "intervalFactor": 2,
+            "legendFormat": "shard last AOF cow - redis: {{redis}}",
+            "refId": "B",
+            "step": 240
+            },
+            {
+            "expr": "redis_mem_aof_buffer{node=\"$node\",cluster=\"$cluster\"}",
+            "format": "time_series",
+            "intervalFactor": 2,
+            "legendFormat": "shard aofrw buffers - redis: {{redis}}",
+            "refId": "C",
+            "step": 240
+            },
+            {
+            "expr": "redis_mem_clients_slaves{node=\"$node\",cluster=\"$cluster\"}",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 2,
+            "legendFormat": "shard salve buffers - redis: {{redis}}",
+            "refId": "D",
+            "step": 240
+            }
+        ],
+        "thresholds": [],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "fork memory",
+        "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+        },
+        "yaxes": [
+            {
+            "format": "bytes",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            },
+            {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+            }
+        ],
+        "yaxis": {
+            "align": false,
+            "alignLevel": null
+        }
+        }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 16,
+    "style": "dark",
+    "tags": [
+        "RLEC"
+    ],
+    "templating": {
+        "list": [
+        {
+            "allValue": null,
+            "hide": 0,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "cluster",
+            "options": [],
+            "query": "label_values(node_up,cluster)",
+            "refresh": 1,
+            "regex": "",
+            "skipUrlSync": false,
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+        },
+        {
+            "allValue": null,
+            "current": {
+            "text": "1",
+            "value": "1"
+            },
+            "hide": 0,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "node",
+            "options": [],
+            "query": "label_values(node_up{cluster=\"$cluster\"}, node)",
+            "refresh": 1,
+            "regex": "",
+            "skipUrlSync": false,
+            "sort": 3,
+            "tagValuesQuery": "",
+            "tags": [],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+        },
+        {
+            "allValue": null,
+            "current": {
+            "text": "5.2.0-14",
+            "value": "5.2.0-14"
+            },
+            "hide": 2,
+            "includeAll": false,
+            "label": null,
+            "multi": false,
+            "name": "version",
+            "options": [],
+            "query": "label_values(node_up{cluster=\"$cluster\",node=\"$node\"}, cnm_version)",
+            "refresh": 1,
+            "regex": "",
+            "skipUrlSync": false,
+            "sort": 0,
+            "tagValuesQuery": "",
+            "tags": [],
+            "tagsQuery": "",
+            "type": "query",
+            "useTags": false
+        }
+        ]
+    },
+    "time": {
+        "from": "now-2d",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+        ],
+        "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+        ]
+    },
+    "timezone": "utc",
+    "title": "Node Dashboard",
+    "version": 1
+}
