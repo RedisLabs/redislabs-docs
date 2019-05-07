@@ -57,11 +57,11 @@ After you complete the authorization in the Swagger UI, execute an API operation
 1. Click **Try it out** and **Execute**.
 
     The API response is shown in the **Responses** section of the API operation.
-    The results include an example of how you to execute the same operation in a standard command-line utility using `curl`.
+    The results include an example of how you to execute the same operation in a standard command-line utility using `cURL`.
 
     ![swagger-query-results](/images/rv/api/swagger-query-results.png)
 
-#### Setting parameters in API operations
+#### Inputs for operations in Swagger
 
 Some API operations require input, such as:
 
@@ -82,13 +82,19 @@ you can enter the values for the parameters.
 
 ## Creating an API client
 
-Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) you can generate an API HTTP client in a variety of programming languages, or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
+Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/),
+you can generate an API HTTP client in a variety of programming languages,
+or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
 
 ## Using the `cURL` HTTP client
 
-`cURL` is a popular command line tool used to perform HTTP requests, in an ad-hoc manner, or within shell scripts (mostly Linux Bash). For an introduction to `cURL` see "[How to start using cURL and why: a hands-on introduction](https://medium.freecodecamp.org/how-to-start-using-cURL-and-why-a-hands-on-introduction-ea1c913caaaa)"
+`cURL` is a popular command line tool used to perform HTTP requests,
+either as individual commands or within shell scripts (mostly Linux Bash).
+For an introduction to `cURL`, see [How to start using cURL and why: a hands-on introduction](https://medium.freecodecamp.org/how-to-start-using-cURL-and-why-a-hands-on-introduction-ea1c913caaaa).
 
-**This API documentation uses `cURL` and Linux shell scripts to provide examples on using the API.**
+{{% info %}}
+We use `cURL` and Linux shell scripts to provide examples on using the API.
+{{% /info %}}
 
 For example, a standard API call to get System Log information looks like this in `cURL`:
 
@@ -100,15 +106,15 @@ curl -s -X GET "https://$HOST/logs" \
     | jq -r .
 ```
 
-**Notes on the above example:**
+- The example expects several variables to be set in the Linux shell:
 
-1. The example expects several variables to be set in the Linux shell:
-    * **`$HOST`** - the URI of the Redis Labs API. i.e. `api-beta1-qa.redislabs.com/beta1`
-    * **`$ACCOUNT_KEY`** - the Account key value (see "[Enable your Account to use API]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})")
-    * **`$SECRET_KEY`** - the perosnal secret key value (see "[Create API Keys for your team]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}})")
-1. The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
-1. You can set the variables using shell commands like the following:
+    - **$HOST** - The URI of the Redis Labs API (`api-beta1-qa.redislabs.com/beta1`)
+    - **$ACCOUNT_KEY** - The [Account key value]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
+    - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}})
 
-```shell
+- The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
+- You can set the variables using shell commands like the following:
+
+    ```shell
 {{% embed-code "rv/api/05-set-variables.sh" %}}
-```
+    ```
