@@ -1,0 +1,9 @@
+{
+  "accessKeyId": "****",
+  "accessSecretKey": "****",
+  "consolePassword": "****",
+  "consoleUsername": "me@mycompany.com",
+  "name": "My new Cloud Account",
+  "provider": "AWS",
+  "signInLoginUrl": "https://<aws-account-identifier>.signin.aws.amazon.com/console"
+}
