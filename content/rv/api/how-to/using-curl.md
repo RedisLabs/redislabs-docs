@@ -10,6 +10,7 @@ You can access and use the API with:
 
 - The Swagger user interface
 - An API client
+- The cURL HTTP client
 
 ## Swagger User Interface
 
