@@ -120,7 +120,21 @@ To get started with custom monitoring:
         {{%expand "database.json" %}}
 
 ```json
-{{% embed-code "database.json" %}}
+{{% embed-code "/rs/database.json" %}}
+```
+
+        {{% /expand%}}
+        {{%expand "node.json" %}}
+
+```json
+{{% embed-code "/rs/node.json" %}}
+```
+
+        {{% /expand%}}
+        {{%expand "cluster.json" %}}
+
+```json
+{{% embed-code "/rs/cluster.json" %}}
 ```
 
         {{% /expand%}}
