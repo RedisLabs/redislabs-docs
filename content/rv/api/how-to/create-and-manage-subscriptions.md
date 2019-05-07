@@ -15,7 +15,7 @@ For an introduction to using `cURL` with API operations, see "[Using the cURL HT
 
 The API operation that creates a subscription is `POST /subscriptions`.
 
-The following Linux shell script sends a `POST /subscriptions` and waits until for a subscription Id. When the subscription Id is received, the **processing phase** is completed and the subscription is in the **provisioning phase** (in the `pending` status).  
+The following Linux shell script sends a `POST /subscriptions` and waits for a subscription Id. When the subscription Id is received, the **processing phase** is completed and the subscription is in the **provisioning phase** (in the `pending` status).  
 
 ### Pre-requisites
 
@@ -29,7 +29,7 @@ The following Linux shell script sends a `POST /subscriptions` and waits until f
 
 You can run the **create subscription** script using a command line `bash path/script-name.sh`.
 
-Below is the sample script that you can use as a reference to calling the API operation to create a subscriptions. The script contains 3 primary steps that are explained below.
+Below is the sample script that you can use as a reference to calling the API operation to create a subscription. The script contains 3 primary steps that are explained below.
 
 Note that the script relies on the pre-requisite variable to be set (see above).
 
