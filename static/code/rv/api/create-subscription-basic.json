@@ -37,12 +37,7 @@
           "by": "operations-per-second",
           "value": 10000
         },
-        "modules": [
-          {
-            "databaseModuleName": "ReJSON",
-            "parameters": {}
-          }
-        ],
+        "modules": null,
         "quantity": 1,
         "averageItemSizeInBytes": 1000000
       }
