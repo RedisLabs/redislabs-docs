@@ -200,8 +200,23 @@ article > aside section {
 
 /* Expand/Collapse Menu */
 .SideMenuToggle {
+  left: 20px;
+  position: absolute;
+  top: 30px;
   display: flex;
-  margin-left: 20px;
+}
+
+.SideMenuToggle:hover {
+  cursor: pointer;
+  color: #b62411 !important;
+}
+
+.SideMenuToggle:hover i.fa {
+  color: #b62411 !important;
+}
+
+article > aside .menu .dd-item div a.expander-title {
+  padding: 5px 0 0 5px;
 }
 
 article > aside .menu .dd-item.parent.menu-root.menu-collapsed > ul {
