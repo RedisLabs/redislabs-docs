@@ -10,19 +10,21 @@ categories: ["RC Pro"]
 
 The API performs various operations on underlying resources that include multiple servers, services and related infrastructure. As a result, these operations may take several minutes to complete. 
 
-Therefore, for lengthy operations that modify resources (that is, mainly "create", "update" and "delete" operations) the API uses asynchronous processing and provisioning (or de-provisioning) of requests. 
+The API uses **asynchronous processing and provisioning** (or de-provisioning) of requests.  for lengthy operations that modify resources (that is, mainly "create", "update" and "delete" operations). When perfoming these operations, the API responds to the request with a task identifier that can be used to track the progress of the request through the various phases of the asynchronous operation.
 
-For operations that do not create or modify resources (that is, mainly `GET` operations), the API uses standard REST request-response in a synchronous manner.
+The API uses **synchronous standard HTTP request-response** for operations that do not create or modify resources (that is, mainly `GET` operations), 
 
 ## Asynchrounous operations
 
-The API uses two phases in order to perform various operations:
+The API uses two phases in response to a request that requires asynchronus processing:
+
+![processing-and-provisioning](/images/rv/api/processing-and-provisioning.png)
 
 ### Phase 1 - Processing
 
 During this phase, the request is received, evaluated, planned and executed.
 
-When received, the response to the request includes a "`taskId`" that can be used to track the progress of the request's processing.
+The response to the API REST request includes a "`taskId`" that can be used to track the progress of the request's processing.
 
 #### Tracking requests using Tasks
 
@@ -80,4 +82,3 @@ During the provisioning of a resource (i.e. a subscription, database, cloud acco
 * **error** - an error ocurred during the provisioning phase (with relevant information displayed)
 
 
-![processing-and-provisioning](/images/rv/api/processing-and-provisioning.png)
