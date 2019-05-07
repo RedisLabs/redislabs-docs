@@ -6,11 +6,19 @@ jQuery(document).ready(function() {
     });
         
     jQuery('.SideMenuToggle').on('click', function() {
-        $('article > aside .menu .dd-item.parent.menu-root').toggleClass("menu-expanded");
+        var $menu = $('article > aside .menu .dd-item.parent.menu-root');
+        if($menu[0].classList.value.includes('menu-expanded')) {
+            // menu is expanded, collapse it
+            $('.parent.menu-root').children('ul').find('.fa.category-icon').removeClass('fa-angle-down').addClass('fa-angle-right');
+            $menu.removeClass('menu-expanded').addClass('menu-collapsed');
+            $('.parent.menu-root').children('ul').find('li').children('ul').toggle(false);
+            return false;
+        }
 
-        $('.parent.menu-root').children('ul').find('.fa.category-icon').toggleClass("fa-angle-right fa-angle-down") ;
-        $('.parent.menu-root').children('ul').find('li').children('ul').toggle();
-        return false;
+        // menu is collapsed, expand it
+        $('.parent.menu-root').children('ul').find('.fa.category-icon').removeClass('fa-angle-right').addClass('fa-angle-down');
+        $menu.removeClass('menu-collapsed').addClass('menu-expanded');
+        $('.parent.menu-root').children('ul').find('li').children('ul').toggle(true);
     });    
 
     // Images
