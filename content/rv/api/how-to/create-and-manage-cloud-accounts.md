@@ -22,7 +22,7 @@ The following Linux shell script sends a `POST /cloud-accounts` and waits for a 
 * Define the expected variables needed to use the API:
 
 ```shell
-{{% embed-code "rv/api/05-set-variables.sh" %}}
+{{% embed-code "rv/api/05-set-variables.sh" "rv/api/60-cloud-account-set-variables.sh" %}}
 ```
 
 ### Cloud account creation script
