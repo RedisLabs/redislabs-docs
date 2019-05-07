@@ -61,31 +61,32 @@ After you complete the authorization in the Swagger UI, execute an API operation
 
     ![swagger-query-results](/images/rv/api/swagger-query-results.png)
 
-#### Setting parameters in an API operations
+#### Setting parameters in API operations
 
-When an API operation requires URI parameters, such as "get subscription by subscription id,
+Some API operations require input, such as:
+
+- **Parameters** - When an API operation requires URI parameters, such as "get subscription by subscription id,
 you can enter the values for the parameters.
 
-![swagger-parameters](/images/rv/api/swagger-parameters.png)
+    ![swagger-parameters](/images/rv/api/swagger-parameters.png)
 
-For API operations that require a JSON request body, you can use the **model display** to review the expected JSON structure and parameters.
+- **JSON Request Body** - For API operations that require a JSON request body, you can either:
 
-![swagger-post-body-model](/images/rv/api/swagger-post-body-model.png)
+    - Use the **model display** to write the request based on the expected JSON structure and parameters.
 
-For API operations that require a JSON request body, you can use the "`Try it now`" sample JSON created by Swagger as a base template that you can edit and execute.
+        ![swagger-post-body-model](/images/rv/api/swagger-post-body-model.png)
 
-![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
+    - Use the **Try it now** sample JSON created by Swagger as a base template that you can edit and execute.
 
+        ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
 ## Creating an API client
 
 Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) you can generate an API HTTP client in a variety of programming languages, or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
 
-
 ## Using the `cURL` HTTP client
 
 `cURL` is a popular command line tool used to perform HTTP requests, in an ad-hoc manner, or within shell scripts (mostly Linux Bash). For an introduction to `cURL` see "[How to start using cURL and why: a hands-on introduction](https://medium.freecodecamp.org/how-to-start-using-cURL-and-why-a-hands-on-introduction-ea1c913caaaa)"
-
 
 **This API documentation uses `cURL` and Linux shell scripts to provide examples on using the API.**
 
@@ -111,9 +112,3 @@ curl -s -X GET "https://$HOST/logs" \
 ```shell
 {{% embed-code "rv/api/05-set-variables.sh" %}}
 ```
-
-
-
-
-
-
