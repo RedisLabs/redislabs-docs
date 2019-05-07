@@ -38,3 +38,34 @@ Note that the script relies on the pre-requisite variable to be set (see above).
 ```shell
 {{% embed-code "rv/api/50-create-cloud-account.sh" %}}
 ```
+
+#### **Notes:**
+
+##### Step 1
+
+Executes a `POST` request to `cloud-accounts` with the defined parameters and a JSON body located within a separate JSON file.
+
+The POST response is a JSON document that contains the `taskId`, which is stored in a variable called `TASK_ID` that is used later to track the progress of the request's processing.
+
+##### Step 2
+
+Query the API for the status of the cloud account creation request, identified by the `taskId` (whose value is stored in the `$TASK_IS` variable).
+
+##### Step 3
+
+As soon as the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`), print the `response` , including the `resourceId` (which in this case is a Cloud account Id).
+
+At this point, if the processing phase completed successfully, the cloud account is visible in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status, indicating that it is being provisioned.
+
+You can continue tracking the created cloud account throughout its provisioning phase until it reaches the "`active`" state using the "`GET /cloud-accounts/{cloudAccountId}`" API operation.
+
+### Cloud account JSON body
+
+The created cloud account is defined by a JSON document that is sent as the body of the `POST cloud-accounts` request.
+
+In the example above, that JSON document is stored in the `create-cloud-account-basic.json` file:
+
+
+```shell
+{{% embed-code "rv/api/create-cloud-account-basic.json" %}}
+```
