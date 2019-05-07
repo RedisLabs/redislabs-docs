@@ -6,71 +6,96 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 
-You can access and use the API using a variety of tools:
+You can access and use the API with:
+
+- The Swagger user interface
+- An API client
+- The cURL HTTP client
 
 ## Swagger User Interface
 
-The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is useful for initial introduction and learning about API operations, models and simulated usage via a web based user interface
+The [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) is useful for initial introduction
+and for learning about API operations, models and simulated usage.
 
-### Authenticating
+### Authenticating to Swagger
 
-* **Open the [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) page in a browser**
+To authenticate to the Swagger UI:
 
-![swagger-authorize-and-try-now](/images/rv/api/swagger-authorize-and-try-now.png)
+1. Open the [Swagger UI](https://api-beta1-qa.redislabs.com/beta1/swagger-ui.html) page in a browser.
 
-* **Click on the `Authorize` button.** An "Available Authorizations"  dialog box appears, expecting two headers values that will be used for user authentication in all Swagger interactions
+    ![swagger-authorize-and-try-now](/images/rv/api/swagger-authorize-and-try-now.png)
 
-![swagger-authorizations](/images/rv/api/swagger-authorizations.png)
+1. Click on the `Authorize` button.
 
-* **Insert the API Key values:** 
-    * paste the [Account Key]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) into the `x-api-key` header textbox and click `Authorize`
-    * paste the [Secret Key]({{< relref  "/rv/api/how-to/create-api-keys-for-your-team.md" >}}) into the `x-api-secret-key` header textbox and click `Authorize`
-    * click `Close`
-    * **NOTE:** refreshing or re-opening the Swagger UI page will cause the authorizations to be lost, and the keys will need to be re-inserted into the 
+    The **Available Authorizations** box is shown with the headers and values that are used for authentication in all API interactions with Swagger.
 
-### Calling API operations
+    ![swagger-authorizations](/images/rv/api/swagger-authorizations.png)
 
-* After performing an authorization in the Swaager UI (you can tell that you have entered the authorization keys when the lock icon appears as a closed lock)
+1. Insert the API Key values:
+
+    1. Enter the [Account Key]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) as the `x-api-key` value and click **Authorize**.
+    1. Enter the [Secret Key]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}}) as the `x-api-secret-key` value and click **Authorize**.
+    1. Click **Close**.
+
+    {{% note %}}
+The key values are not saved when you refresh the page.
+    {{% /note %}}
+
+When authorization is successful the lock icon appears as a closed lock.
 
 ![swagger-closed-lock](/images/rv/api/swagger-closed-lock.png)
 
-* Open a category and select an API operation (for example, the `Account` category and the `GET /payment-methods` operation)
+### Calling API operations
 
-![swagger-payment-methods-try-it-now](/images/rv/api/swagger-payment-methods-try-it-now.png)
+After you complete the authorization in the Swagger UI, execute an API operation:
 
-* Click on "`Try it out`" and "`Execute`"
+1. Open an action category and select an API operation.
 
-* the response is displayed in the `Responses` section of the UI
-* Note that the results also contain an example of a `cURL` command that illustrates how the API query can be formed in a stabdard command line using `cURL`
+    For example, in the `Account` category select the `GET /payment-methods` operation.
 
-![swagger-query-results](/images/rv/api/swagger-query-results.png)
+    ![swagger-payment-methods-try-it-now](/images/rv/api/swagger-payment-methods-try-it-now.png)
 
-#### Setting parameters in an API operations
+1. Click **Try it out** and **Execute**.
 
-* When an API operation requires URI parameters (such as "get subscription by subscriptin id") the parameters are displayed in the UI as follows:
+    The API response is shown in the **Responses** section of the API operation.
+    The results include an example of how you to execute the same operation in a standard command-line utility using `cURL`.
 
-![swagger-parameters](/images/rv/api/swagger-parameters.png)
+    ![swagger-query-results](/images/rv/api/swagger-query-results.png)
 
-* For API operations that require a JSON request body, you can use the **model display** to review the expected JSON structure and parameters 
+#### Inputs for operations in Swagger
 
-![swagger-post-body-model](/images/rv/api/swagger-post-body-model.png)
+Some API operations require input, such as:
 
-* For API operations that require a JSON request body, you can use the "`Try it now`" sample JSON created by Swagger as a base template that you can edit and execute
+- **Parameters** - When an API operation requires URI parameters, such as "get subscription by subscription id,
+you can enter the values for the parameters.
 
-![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
+    ![swagger-parameters](/images/rv/api/swagger-parameters.png)
 
+- **JSON Request Body** - For API operations that require a JSON request body, you can either:
+
+    - Use the **model display** to write the request based on the expected JSON structure and parameters.
+
+        ![swagger-post-body-model](/images/rv/api/swagger-post-body-model.png)
+
+    - Use the **Try it now** sample JSON created by Swagger as a base template that you can edit and execute.
+
+        ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
 ## Creating an API client
 
-Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/) you can generate an API HTTP client in a variety of programming languages, or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
-
+Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/),
+you can generate an API HTTP client in a variety of programming languages,
+or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
 
 ## Using the `cURL` HTTP client
 
-`cURL` is a popular command line tool used to perform HTTP requests, in an ad-hoc manner, or within shell scripts (mostly Linux Bash). For an introduction to `cURL` see "[How to start using cURL and why: a hands-on introduction](https://medium.freecodecamp.org/how-to-start-using-cURL-and-why-a-hands-on-introduction-ea1c913caaaa)"
+`cURL` is a popular command line tool used to perform HTTP requests,
+either as individual commands or within shell scripts (mostly Linux Bash).
+For an introduction to `cURL`, see [How to start using cURL and why: a hands-on introduction](https://medium.freecodecamp.org/how-to-start-using-cURL-and-why-a-hands-on-introduction-ea1c913caaaa).
 
-
-**This API documentation uses `cURL` and Linux shell scripts to provide examples on using the API.**
+{{% info %}}
+We use `cURL` and Linux shell scripts to provide examples on using the API.
+{{% /info %}}
 
 For example, a standard API call to get System Log information looks like this in `cURL`:
 
@@ -82,21 +107,15 @@ curl -s -X GET "https://$HOST/logs" \
     | jq -r .
 ```
 
-**Notes on the above example:**
+- The example expects several variables to be set in the Linux shell:
 
-1. The example expects several variables to be set in the Linux shell:
-    * **`$HOST`** - the URI of the Redis Labs API. i.e. `api-beta1-qa.redislabs.com/beta1`
-    * **`$ACCOUNT_KEY`** - the Account key value (see "[Enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})")
-    * **`$SECRET_KEY`** - the perosnal secret key value (see "[Create API Keys for your team]({{< relref  "/rv/api/how-to/create-api-keys-for-your-team.md" >}})")
-1. The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
-1. You can set the variables using shell commands like the following:
+    - **$HOST** - The URI of the Redis Labs API (`api-beta1-qa.redislabs.com/beta1`)
+    - **$ACCOUNT_KEY** - The [Account key value]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
+    - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}})
 
-```shell
+- The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
+- You can set the variables using shell commands like the following:
+
+    ```shell
 {{% embed-code "rv/api/05-set-variables.sh" %}}
-```
-
-
-
-
-
-
+    ```
