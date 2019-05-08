@@ -32,7 +32,6 @@
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
         {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/"))}} menu-root {{end}}
         ">
-        <!-- TODO: figure out why menu-collapsed condition is true on 3rd level items -->
         {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") }}
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
         {{- end}}
