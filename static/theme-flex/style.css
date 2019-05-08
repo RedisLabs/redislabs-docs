@@ -2819,6 +2819,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
   .hot-topics-title-wrapper
    {
       width: 96%;
+      margin-left: 0;
   }
 }
 
