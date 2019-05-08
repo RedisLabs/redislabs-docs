@@ -4,7 +4,22 @@ jQuery(document).ready(function() {
         $( this ).parent().parent().children('ul').toggle() ;
         return false;
     });
-    
+        
+    jQuery('.SideMenuToggle').on('click', function() {
+        var $menu = $('article > aside .menu .dd-item.parent.menu-root');
+        if($menu[0].classList.value.includes('menu-expanded')) {
+            // menu is expanded, collapse it
+            $('.parent.menu-root').children('ul').find('.fa.category-icon').removeClass('fa-angle-down').addClass('fa-angle-right');
+            $menu.removeClass('menu-expanded').addClass('menu-collapsed');
+            $('.parent.menu-root').children('ul').find('li').children('ul').toggle(false);
+            return false;
+        }
+
+        // menu is collapsed, expand it
+        $('.parent.menu-root').children('ul').find('.fa.category-icon').removeClass('fa-angle-right').addClass('fa-angle-down');
+        $menu.removeClass('menu-collapsed').addClass('menu-expanded');
+        $('.parent.menu-root').children('ul').find('li').children('ul').toggle(true);
+    });    
 
     // Images
     // Execute actions on images generated from Markdown pages
