@@ -1528,7 +1528,7 @@ button.close-button {
   padding-right: 10px;
 }
 .main-content-right {
-  min-width: 300px;
+  min-width: 340px;
 }
 article > aside .menu > li.parent {
   grid-area: 1;
@@ -2425,6 +2425,116 @@ button.hamburger.hamburger--spring {
   /* display:none */
 }
 
+/* Hot topics table */
+h4#hot-topics {
+  background: #fff;
+  font-size: 1.7rem;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: -7px;
+  width: 200px;
+  z-index: 111;
+  padding-left: 25px;
+}
+
+h4#hot-topics::before {
+  display: block;
+  height: 1px;
+  margin: 0px 5px 0 0;
+  content: url('./img/icons_Hot-topics-2.svg');
+  top: 0;
+  position: relative;
+  width: 24px;
+  left: 5px;
+}
+
+h4#hot-topics span.anchor {
+  display: none;
+}
+
+article section.page table.hot-topics-table {
+  border: 1px solid #5d6876;
+  margin-top: -15px;
+  width: 99%;
+}
+
+article section.page table.hot-topics-table thead tr {
+  border: none;
+}
+
+article section.page table.hot-topics-table th {
+  text-align: left;
+  padding: 40px 20px 6px 50px;
+  font-size: 16px;  
+}
+
+article section.page table.hot-topics-table th a {
+  text-decoration: underline;
+}
+
+article section.page table.hot-topics-table td {
+  border-bottom: none;
+  padding: 9px 20px 0 50px;
+  line-height: 16px;
+}
+
+article section.page table.hot-topics-table td a {
+  color: #354253;
+  text-decoration: underline;
+}
+
+article section.page table.hot-topics-table tbody tr:last-of-type td {
+  padding-bottom: 40px;
+}
+
+@media (max-width: 1366px) {
+  article section.page table.hot-topics-table {
+  display: table;    
+  }
+
+  article section.page table.hot-topics-table td {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+
+@media (max-width: 1250px) {
+  article section.page table.hot-topics-table th {
+    padding: 40px 20px 0 13px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  article section.page table.hot-topics-table td {
+    padding: 7px 0px 0 13px;
+    font-size: 12px;
+    line-height: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  article section.page table.hot-topics-table th {
+    font-size: 12px;
+    padding: 40px 18px 0 10px;
+    line-height: 12px;
+  }
+
+  article section.page table.hot-topics-table td {
+    padding: 7px 0px 0 10px;
+    font-size: 11px;
+    line-height: 12px;
+  }  
+}
+
+@media (max-width: 550px) {
+  article section.page table.hot-topics-table th {
+    padding: 40px 0px 0 10px;
+    font-size: 13px;
+    line-height: 14px;
+  }
+}
 
 @media (max-width: 1024px) {
   section {
@@ -2518,6 +2628,7 @@ button.hamburger.hamburger--spring {
     display: none;
   }
   .searchcontainer {
+    width: 99% !important;
     margin: 1rem 0 1rem 0;
   }
   nav.shortcuts li:last-child {
@@ -2579,6 +2690,7 @@ button.hamburger.hamburger--spring {
 
   .nav-select {
     display: block;
+    width: 99%;
     /* margin-left: -10px; */
     /* margin-right: -10px; */
   }
@@ -2590,6 +2702,10 @@ button.hamburger.hamburger--spring {
     margin-left: -1rem;
     margin-right: -1rem;
   }
+
+  article section.page table.hot-topics-table, .hot-topics-title-wrapper {
+      width: 99% !important;
+  }  
 }
 
 @media (max-width: 1366px) {
@@ -2695,10 +2811,24 @@ a[href*="#no-click"], img[src*="#no-click"] {
     }
 }
 
+@media all and (max-width: 1540px) {
+  .searchcontainer,
+  .chevrons,
+  article section.page h1:first-of-type,
+  article section.page table.hot-topics-table,
+  .hot-topics-title-wrapper
+   {
+      width: 96%;
+      margin-left: 0;
+  }
+}
+
 @media all and (-ms-high-contrast: none) and (max-width: 1400px) {
     .searchcontainer,
     .chevrons,
-    article section.page h1:first-of-type {
+    article section.page h1:first-of-type,
+    article section.page table.hot-topics-table,
+    .hot-topics-title-wrapper{
         width: 95%;
     }
     article section.page .main-content .highlight pre {
