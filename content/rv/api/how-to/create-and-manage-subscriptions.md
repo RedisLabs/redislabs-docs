@@ -27,6 +27,7 @@ The following Linux shell script sends a `POST /subscriptions` and waits for a s
 
 ### Subscription creation script
 
+First you need jq to be installed on your machine. sudo apt install jq
 You can run the **create subscription** script using a command line `bash path/script-name.sh`.
 
 Below is the sample script that you can use as a reference to calling the API operation to create a subscription. The script contains 3 primary steps that are explained below.
