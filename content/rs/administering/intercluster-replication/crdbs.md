@@ -48,7 +48,7 @@ Before configuring a CRDB, you will need:
     Enterprise Software.
 - Confirm that a network time service is configured and running on
     each node in all clusters. See [Network Time
-    Service](#network-time).
+    Service](#network-time-service-ntp-or-chrony).
 
 ### CRDB Current Limitations
 

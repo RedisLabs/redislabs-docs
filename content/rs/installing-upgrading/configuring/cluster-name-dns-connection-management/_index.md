@@ -136,7 +136,7 @@ DNS configuration either.
 To administer the cluster you do need to know the IP address of at least
 one of the nodes in the cluster. Once you have the IP address, you can
 simply connect to port number 8443 (for example:
-https://10.0.0.12:8443). However, as the topology of the cluster changes
+[https://10.0.0.12:8443](https://10.0.0.12:8443)). However, as the topology of the cluster changes
 and node with the given IP address is removed, you will need to remember
 the IP address of another node participating in this cluster to connect
 to the admin console and manage the cluster.
