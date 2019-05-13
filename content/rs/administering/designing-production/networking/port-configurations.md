@@ -31,7 +31,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 10000-19999 | For exposing databases externally |
 | TCP | 20000-29999 | For internal communications with database shards |
 | UDP | 53, 5353 | For accessing DNS/mDNS functionality in the cluster |
- 
+
 ## Changing the Management Web UI Port
 
 If for any reason you want to use a custom port for the RS Web UI
