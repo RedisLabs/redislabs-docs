@@ -102,18 +102,12 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
     You cannot upgrade databases before all of the nodes in the cluster are upgraded.
 1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
     on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
-    This command upgrades all DB shards at the same time. When upgrading a large number of
-    high volume shards, it is recommended to limit the number of concurrent shards to upgrade with
-    the parallel_shards_upgrade <number of concurrent shards to upgrade> option.
-    It is also possible to preserve the original shard roles placement after upgrade, with
-    the preserve_roles option. `rladmin upgrade db <db-name> parallel_shards_upgrade 2 preserve_roles`
-    
 
 During the database upgrade process, the database is restarted. As
 a result:
 
 - For databases that have [replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
-    enabled, a failover occurs prior to restarting the database to make sure that
+    enabled, a failover is done before the master database restarts to make sure that
     there is no downtime.
 - For databases that do not have replication enabled and persistence
     enabled, some downtime occurs while the database is restarting. The
