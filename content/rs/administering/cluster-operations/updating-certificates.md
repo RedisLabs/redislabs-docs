@@ -10,6 +10,7 @@ the following traffic:
 
 - Management UI
 - REST API
+- Metrics Exporter
 - Connections between clients and the database endpoint
 - Synchronization between databases for ReplicaOf and CRDB
 
