@@ -204,6 +204,7 @@ article > aside section {
   position: absolute;
   top: 30px;
   display: flex;
+  width: 50%;
 }
 
 .SideMenuToggle:hover {

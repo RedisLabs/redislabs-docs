@@ -1,13 +1,44 @@
 jQuery(document).ready(function() {
     jQuery('.category-icon').on('click', function() {
-        $( this ).toggleClass("fa-angle-down fa-angle-right") ;
-        $( this ).parent().parent().children('ul').toggle() ;
+        $( this ).toggleClass("fa-angle-down fa-angle-right");
+        var x = $( this ).parent().parent().children('ul')
+        x.toggle();
+
+        if (x[0].style.display == 'block') {
+            x[0].classList.add("menu-ul-expanded");
+        } else {
+            x[0].classList.remove("menu-ul-expanded");
+        }
+
+        setMenuExpansion();
         return false;
     });
+
+    function setMenuExpansion() {
+        var $menu = $('article > aside .menu .dd-item.parent.menu-root');
+        var ulChildren = $('.parent.menu-root').children('ul').children('li').children('ul');        
+        var hasExpandedChildren = false;
+        ulChildren.each(function() {
+            if($(this).css("display") == "block") {
+                hasExpandedChildren = true;
+                return false;
+            }
+        });
+
+        if(hasExpandedChildren > 0) {
+            // has expanded children, set to "collapse all"            
+            $menu.removeClass('menu-collapsed').addClass('menu-expanded');                                        
+            return;
+        } else {
+            // no expanded children, set to "expand all"
+            $menu.removeClass('menu-expanded').addClass('menu-collapsed');            
+            return;
+        }
+    }
         
     jQuery('.SideMenuToggle').on('click', function() {
         var $menu = $('article > aside .menu .dd-item.parent.menu-root');
-        if($menu[0].classList.value.includes('menu-expanded')) {
+        if($menu[0].classList.contains('menu-expanded')) {
             // menu is expanded, collapse it
             $('.parent.menu-root').children('ul').find('.fa.category-icon').removeClass('fa-angle-down').addClass('fa-angle-right');
             $menu.removeClass('menu-expanded').addClass('menu-collapsed');
