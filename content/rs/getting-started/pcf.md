@@ -99,7 +99,7 @@ You now have a Redis database on Redis Enterprise Software!
 You must use the BOSH Backup and Restore (BBR) command-line tool 
 to backup and restore your PCF deployment. These backup and restore instructions 
 apply specifically to your Redis Enterprise for PCF deployment. For more about 
-deployment backup and restore, see the [PCF documentation](https://docs.pivotal.io/pivotalcf/latest/customizing/backup-restore/index.html).
+deployment backup and restore, see the [PCF documentation](https://docs.pivotal.io/pivotalcf/customizing/backup-restore/index.html).
 
 ### Installing the BBR Command-Line Tool
 

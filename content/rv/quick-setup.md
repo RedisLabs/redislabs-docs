@@ -57,7 +57,7 @@ To start with a single database:
 1. Enter the dataset size - The estimated size of your data. You can specify 1GB
     for a small database.
 1. Define if you want to have database replication (note that when enabling the database will consume twice the amount of memory).
-1. Select [data persistence] (/Unification-patch-1/rv/concepts/data-persistence/) policy.
+1. Select [data persistence] (/rv/concepts/data-persistence/) policy.
 1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
 1. Throughput - You can define your estimated total throughput you expect from your database by either specifying the required ops/sec or number of shards needed.
 1. Modules - You can select which Redis Module you want to load to your database. In case you select 'RediSearch' please provide the estimated number of documents you are going to index.
