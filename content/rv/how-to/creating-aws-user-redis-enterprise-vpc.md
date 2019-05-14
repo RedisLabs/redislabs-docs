@@ -5,8 +5,6 @@ weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
-
 Redis Cloud Pro automatically manages your cluster and provisions instances when needed. In order for Redis Cloud Pro to be able to manage AWS resources, you must have an AWS account that is separate from your AWS application account and a user on that separate AWS account.
 
 Within that new AWS account, you need to create an **instance role** and
@@ -15,6 +13,15 @@ and an **Access Key** so that Redis Cloud Pro can programmatically create
 and manage AWS resources on your behalf. After you create the user,
 generate an Access Key for the user and save the key in a secure location. 
 These keys are required when you create an Redis Cloud Pro account.
+
+{{% warning %}}
+We use the provided credentials to configure your AWS environment and provision required resources.
+
+We cannot operate or manage your database if you do these actions:
+
+1. Manually change the configurations of provisioned resources, such as security groups
+2. Manually stop or terminate provisioned instances
+{{% /warning %}}
 
 For more about creating an AWS user, see the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
@@ -255,13 +262,3 @@ Last, create a user and attach the policy you created:
 1. Click **Next: Review**.
 1. Click **Create user**.
 1. Download the user credentials and store them in a secure location.
-
-
-## Important
-
-We will use the provided credentials to provision the necessary resources and configure your AWS environment.
-Please refrain from:
-1. Making manual configuration changes to provisioned resources (such as security group)
-2. Manually stopping/terminating provisioned instances
-
-Performing any of the above will deny us from operating and managing your database.
