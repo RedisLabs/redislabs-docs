@@ -255,3 +255,13 @@ Last, create a user and attach the policy you created:
 1. Click **Next: Review**.
 1. Click **Create user**.
 1. Download the user credentials and store them in a secure location.
+
+
+## Important
+
+We will use the provided credentials to provision the necessary resources and configure your AWS environment.
+Please refrain from:
+1. Making manual configuration changes to provisioned resources (such as security group)
+2. Manually stopping/terminating provisioned instances
+
+Performing any of the above will deny us from operating and managing your database.
