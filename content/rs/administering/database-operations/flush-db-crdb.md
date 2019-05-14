@@ -83,7 +83,7 @@ To flush a CRDB with the REST API:
 1. To find the ID of the CRDB, run:
 
     ```src
-    curl -v -u <user>@<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs/
+    curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
     ```
 
 1. To flush the CRDB, run:
