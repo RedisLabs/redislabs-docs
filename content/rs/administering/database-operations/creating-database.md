@@ -108,7 +108,7 @@ after the database is created.
         - Clear the **Database clustering** option to use only one shard so that you 
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
-    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}} -
+    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
@@ -139,11 +139,10 @@ There are a few simple ways to check connectivity to your database:
 
 ### Testing Database Connectivity with Telnet
 
-As a quick smoke test, telnet to your endpoint and port for the database
-you wish to test. Then do the redis PING command.
+As a quick smoke test, telnet to your endpoint and port for the database.
+Then run the redis PING command.
 
-Using the URL based connection method, you should see something like
-this:
+Using the URL-based connection method, the result looks like:
 
 ```src
 $ telnet redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 19836
@@ -157,12 +156,10 @@ PING
 
 ### Testing Database Connectivity with redis-cli
 
-You can find redis-cli utility on each node in Redis Enterprise Software
-cluster with the rest of the utilities. For information about directory
-locations please refer to the installation page.
+The redis-cli utility is installed on each node in RS cluster with the rest of the utilities.
 
-Using the URL based connection method, you can provide the database
-endpoint URL and port number as follows:
+Using the URL-based connection method, you can connect the database
+endpoint URL and port number. The result looks like:
 
 ```src
 $ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com  
@@ -173,14 +170,13 @@ PONG
 
 ### Testing Database Connectivity with Simple Application
 
-You can also use a simple application to test connectivity to your
-database. The following section details a simple IP based connection
-approach with a python app using the discovery service that is compliant
-with Redis Sentinel API. In the IP based connection method, you do not
-need to remember the port number for the database but simply remember
-the database name. In this method, we simply use the discovery service
-that listens on port 8001 on all nodes of the cluster to discover the
-endpoint for the database named "db1"
+You can also use a simple application to test connectivity to your database.
+Here is a simple python app  the connects to the database by IP address.
+The app uses the discovery service that is compliant with Redis Sentinel API.
+
+In the IP-based connection method, you do only need the database name, not the port number.
+Here we simply use the discovery service that listens on port 8001 on all nodes of the cluster
+to discover the endpoint for the database named "db1".
 
 ```src
 from redis.sentinel import Sentinel
@@ -205,9 +201,8 @@ print r.set('foo', 'bar')
 print r.get('foo')
 ```
 
-In the URL based connection method, you do need to provide the endpoint
-and the port number remember the port number for the database you like
-to connect to.
+In the URL-based connection method, you need to specify the endpoint
+and the port number for your database.
 
 ```src
 import redis
