@@ -9,12 +9,13 @@ db_type: database
 You can create Redis databases that are sharded and distributed across a single RS cluster.
 These databases can use Redis Enterprise features like:
 
-1. [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
-1. [High availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
-1. [Data persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
-1. [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
+- [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+- [High availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
+- [Data persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
+- [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
-You can create databases according to the number of shards in your subscription and the memory available on the machine.
+You can create databases according to the number of shards in your subscription
+and the memory available on the machine.
 
 {{% note %}}
 To create databases that are designed to be hosted in distributed locations,
@@ -33,7 +34,7 @@ To create a new database:
 
     If you do not have any databases on the node, you are prompted to create a database.
 
-<!-- {{< embed-md "create-db.md" >}} -->
+    <!-- {{</* embed-md "create-db.md" */>}} -->
 
 1. Click **Next** to create a single-region deployment.
 
@@ -107,23 +108,21 @@ after the database is created.
         - Clear the **Database clustering** option to use only one shard so that you 
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
-
-1. Set the [**data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}).
-    This policy is applied when the total size of the database reaches
-    its memory limit.
-1. If you would like the database to be a [**replica of**]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
-    one or more databases, you can define the source databases with which this
-    database will synchronize on an ongoing basis.
-1. If you would like to [encrypt the connection to the database endpoint]
-    ({{< relref "/rs/administering/designing-production/security/client-connections.md" >}})
-    with TLS encryption, you have to enter the contents of the client certificate
-    to the **TLS** field.
-1. Specify whether to perform a **periodic back up** of the database.
-    For additional details, refer to [Database
-    backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
-    If you specify periodic backup, set the interval and specify the
-    backup location parameters, as appropriate.
-1. Configure [**database alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}).
+    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}} -
+    By default, when the total size of the database reaches its memory limit the database evicts keys
+    according to the least recently used keys out of all keys with an "expire" field set
+    in order to make room for new keys. You can select a different data eviction policy.
+    - [**Replica of**]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}) -
+    You can make this database a repository for keys in other databases.
+    - [**TLS**]
+    ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+    You can require TLS encryption and authentication for all communications,
+    TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
+    - [**Periodic backup**]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) -
+    You can configure periodic backups of the database, including the interval and backup location parameters.
+    - [**Alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}) -
+    You can select alerts to show in the database status and configure their thresholds.
+    You can also select to send the alerts by email to [relevant users]({{ relref "/rs/administering/designing-production/security/account-management.md" }}).
 1. Click **Activate**.
 
 ## Simple Connectivity Test
