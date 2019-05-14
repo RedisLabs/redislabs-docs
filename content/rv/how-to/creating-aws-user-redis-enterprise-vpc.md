@@ -19,8 +19,8 @@ We use the provided credentials to configure your AWS environment and provision 
 
 We cannot operate or manage your database if you do these actions:
 
-1. Manually change the configurations of provisioned resources, such as security groups
-2. Manually stop or terminate provisioned instances
+- Manually change the configurations of provisioned resources, such as security groups
+- Manually stop or terminate provisioned instances
 {{% /warning %}}
 
 For more about creating an AWS user, see the [AWS documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
