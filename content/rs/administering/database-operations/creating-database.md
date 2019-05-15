@@ -58,23 +58,23 @@ The database name is not case-sensitive
         then the data eviction policy for the database is enforced.
 
         {{% note %}}
-If you create a Redis Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+If you create a [Redis Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
 for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         {{% /note %}}
 
 1. Select from the basic {{< field "db_type" >}} options:
 
-    - **Replication** - We recommend that you use intra-cluster replication to create slave shards for each database.
+    - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
 
         If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.
 
-    - **Redis Modules** - You can enable a [Redis module]({{< relref "/rs/developing/modules/_index.md" >}}) for the database.
+    - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - You can enable a Redis module for the database.
 
-    - **Data persistence** - To protect against loss of data stored in RAM,
-        you can enable [data persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
-        and select to store a copy of the data on disk with snapshots or Append Only File.
+    - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
+        To protect against loss of data stored in RAM,
+        you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File.
 
     - **Password** - To protect your database from unauthorized connections,
         enter a Redis password. Then, use the password in you application connections
@@ -105,24 +105,30 @@ after the database is created.
             or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#custom-hashing-policy" >}})
             to define where keys are located in the clustered database.
 
-        - Clear the **Database clustering** option to use only one shard so that you 
-        can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-        without the limitations.
+        - Clear the **Database clustering** option to use only one shard so that you
+            can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+            without the limitations.
+
     - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
-    By default, when the total size of the database reaches its memory limit the database evicts keys
-    according to the least recently used keys out of all keys with an "expire" field set
-    in order to make room for new keys. You can select a different data eviction policy.
+        By default, when the total size of the database reaches its memory limit the database evicts keys
+        according to the least recently used keys out of all keys with an "expire" field set
+        in order to make room for new keys. You can select a different data eviction policy.
+
     - [**Replica of**]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}) -
-    You can make this database a repository for keys in other databases.
+        You can make this database a repository for keys in other databases.
+
     - [**TLS**]
-    ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
-    You can require TLS encryption and authentication for all communications,
-    TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
+        ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+        You can require TLS encryption and authentication for all communications,
+        TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
+
     - [**Periodic backup**]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) -
-    You can configure periodic backups of the database, including the interval and backup location parameters.
+        You can configure periodic backups of the database, including the interval and backup location parameters.
+
     - [**Alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}) -
-    You can select alerts to show in the database status and configure their thresholds.
-    You can also select to send the alerts by email to [relevant users]({{ relref "/rs/administering/designing-production/security/account-management.md" }}).
+        You can select alerts to show in the database status and configure their thresholds.
+        You can also select to send the alerts by email to [relevant users]({{ relref "/rs/administering/designing-production/security/account-management.md" }}).
+
 1. Click **Activate**.
 
 ## Simple Connectivity Test
