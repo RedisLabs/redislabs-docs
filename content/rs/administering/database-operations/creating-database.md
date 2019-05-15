@@ -70,7 +70,15 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.
 
-    - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - You can enable a Redis module for the database.
+    - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - When you create a new database, you can enable multiple Redis modules to the database.
+
+        To add a module to the database:
+
+        1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
+        1. Select the module that you want to add.
+        1. If you want the module to use a custom configuration,
+        click **Add configuration** and paste the custom configuration.
+        1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
