@@ -24,6 +24,7 @@ Before you specify to backup to an SFTP server, make sure that:
         to the SFTP server.
     - **Use a custom key** - Generate a TLS key pair for the SFTP server, copy the private key to
         the **SSH Private Key** box, and copy the public key to the SFTP server.
+    - The key shoud be added to ~/.ssh/authorized_keys of the user used for backup on SFTP server.
 
 To backup to an SFTP server, enter the SFTP server location in the format:
 
@@ -48,6 +49,7 @@ Before you specify to backup to a local mount point, make sure that:
 - The node has network connectivity to the destination server of the mount point.
 - The `redislabs:redislabs` user has read and write priviledges on the local mount point
 and on the destination server.
+- Periodic backup doesn't include rotation functionality. It's your responsibility to enforce and maintain backup retention policy.
 
 To backup to a local mount point for a node:
 
