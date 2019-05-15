@@ -131,6 +131,9 @@ after the database is created.
 
 1. Click **Activate**.
 
+1. If you did not specify a port number for the database,
+    note the port number shown in the Endpoint field of the database **configuration**.
+
 ## Simple Connectivity Test
 
 Once the database is created, you can find the endpoint and port for the
