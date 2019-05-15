@@ -13,7 +13,7 @@ In this quick setup guide, we take you through the steps to run RS in a Docker c
 
 - To test RS in a Linux-based, development environment, go to the
   [Quick Setup of Redis Enterprise Software]({{< relref "/rs/getting-started/quick-setup.md" >}}).
-- To install RS on Linux in a production environment, follow the complete instuctions 
+- To install RS on Linux in a production environment, follow the complete instuctions
   in [installing RS] ({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
 
 Before you start, you must install the [Docker engine](https://www.docker.com/get-started)
@@ -31,7 +31,7 @@ To get started with a single Redis Enterprise Software container:
 
 ## Step 1: Install Docker Engine
 
-Go to the Docker installation page for your operating system for detailed instructions 
+Go to the Docker installation page for your operating system for detailed instructions
 about installing Docker Engine:
 
 - [Linux](https://docs.docker.com/install/#supported-platforms)
@@ -49,7 +49,7 @@ Note: On Windows, make sure Docker is configured to run Linux-based containers.
 $ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
-The Docker container with RS runs on your localhost with port 8443 open for HTTPS 
+The Docker container with RS runs on your localhost with port 8443 open for HTTPS
 connections, 9443 for REST API connections, and port 12000 open for redis client connections.
 You can publish other [ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 with `-p <host_port>:<container_port>`.
@@ -62,7 +62,7 @@ the Redis Enterprise Software web console.
 
     Note:
 
-    - Depending on your browser, you may see a certificate error. You can safely 
+    - Depending on your browser, you may see a certificate error. You can safely
     continue to the web console.
     - If you see an error from nginx, try again after a few minutes.
 
@@ -70,7 +70,7 @@ the Redis Enterprise Software web console.
 
     ![Redis Enterprise Software Setup](/images/rs/getstarted-setup.png?width=600)
 
-1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`. 
+1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`.
 Then click **Next** button.
 
     ![Redis Enterprise Software node configuration](/images/rs/getstarted-nodeconfig.png?width=600)
@@ -109,7 +109,7 @@ If you cannot activate the database because of a memory limitation,
 make sure that Docker has enough memory allocated in the Advanced section 
 of Docker Settings.
 {{% /note %}}
-    
+
 The database configuration is shown.
 When you see a green check mark, the database is activated and ready for you to use.
 
