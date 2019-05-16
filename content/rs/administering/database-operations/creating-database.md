@@ -94,40 +94,40 @@ You cannot change the [port number]({{< relref "/rs/administering/designing-prod
 after the database is created.
         {{% /note %}}
 
-    - **Database clustering** - You can either:
-        - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-            and select the number of shards that you want to have in the database.
-            When database clustering is enabled, databases are subject to limitations on
-            [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
-            You can increase the number of shards in the database at any time.
+- **Database clustering** - You can either:
+    - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        and select the number of shards that you want to have in the database.
+        When database clustering is enabled, databases are subject to limitations on
+        [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+        You can increase the number of shards in the database at any time.
 
-            You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#standard-hashing-policy" >}})
-            or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#custom-hashing-policy" >}})
-            to define where keys are located in the clustered database.
+        You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#standard-hashing-policy" >}})
+        or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#custom-hashing-policy" >}})
+        to define where keys are located in the clustered database.
 
-        - Clear the **Database clustering** option to use only one shard so that you
-            can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-            without the limitations.
+    - Clear the **Database clustering** option to use only one shard so that you
+        can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+        without the limitations.
 
-    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
-        By default, when the total size of the database reaches its memory limit the database evicts keys
-        according to the least recently used keys out of all keys with an "expire" field set
-        in order to make room for new keys. You can select a different data eviction policy.
+- [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
+    By default, when the total size of the database reaches its memory limit the database evicts keys
+    according to the least recently used keys out of all keys with an "expire" field set
+    in order to make room for new keys. You can select a different data eviction policy.
 
-    - [**Replica of**]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}) -
-        You can make this database a repository for keys in other databases.
+- [**Replica of**]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}) -
+    You can make this database a repository for keys in other databases.
 
-    - [**TLS**]
-        ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
-        You can require TLS encryption and authentication for all communications,
-        TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
+- [**TLS**]
+    ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+    You can require TLS encryption and authentication for all communications,
+    TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-    - [**Periodic backup**]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) -
-        You can configure periodic backups of the database, including the interval and backup location parameters.
+- [**Periodic backup**]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) -
+    You can configure periodic backups of the database, including the interval and backup location parameters.
 
-    - [**Alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}) -
-        You can select alerts to show in the database status and configure their thresholds.
-        You can also select to send the alerts by email to [relevant users]({{ relref "/rs/administering/designing-production/security/account-management.md" }}).
+- [**Alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}) -
+    You can select alerts to show in the database status and configure their thresholds.
+    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}).
 
 1. Click **Activate**.
 
