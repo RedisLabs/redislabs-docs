@@ -26,6 +26,26 @@ future sessions.{{% /note %}}
 
 {{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
 
+- For Redis Enterprise version 5.4.0 and above use rladmin
+
+    ```bash
+
+    rladmin> cluster certificate set <cert_name> certificate_file <cert> key_file <key>
+
+    ```
+    Where:
+
+    - cert_name - The name of the certificate to replace:
+        - For management UI: `cm`
+        - For REST API: `api`
+        - For database endpoint: `proxy`
+        - For syncer: `syncer`
+    - key - The absolute location of the private key in pem format (without a password)
+      
+    - cert - The absolute location of the certificate in pem format
+    
+    {{% tip %}}If converted from a pfx file the resultant pem file might contain additional data like Bag attributes and stuff. Please make sure to keep only the lines starting with -----BEGIN CERTIFICATE----- and ending with -----END CERTIFICATE----- or starting with -----BEGIN PRIVATE KEY----- and ending with -----END PRIVATE KEY-----{{% /tip %}}
+    
 - Use the REST API to replace the certificate:
 
     ```bash
