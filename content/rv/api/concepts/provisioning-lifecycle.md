@@ -8,77 +8,80 @@ categories: ["RC Pro"]
 
 ## Types of API operations
 
-The API performs various operations on underlying resources that include multiple servers, services and related infrastructure. As a result, these operations may take several minutes to complete. 
+The API can run operations on basic resources, such as multiple servers, services and related infrastructure.
+As a result, these operations can take several minutes to complete.
 
-The API uses **asynchronous processing and provisioning** (or de-provisioning) of requests.  for lengthy operations that modify resources (that is, mainly "create", "update" and "delete" operations). When perfoming these operations, the API responds to the request with a task identifier that can be used to track the progress of the request through the various phases of the asynchronous operation.
+Operations that modify resources, including CREATE, UPDATE and DELETE operations, can take time to process.
+The API asynchronously processes and provisions these operations to improve performance.
+The API responds to the request with a task identifier that you can use to track the progress of the request through the phases of the asynchronous operation.
 
-The API uses **synchronous standard HTTP request-response** for operations that do not create or modify resources (that is, mainly `GET` operations), 
+For operations that do not create or modify resources, such as GET operations, the API uses synchronous standard HTTP request-response.
 
-## Asynchrounous operations
+## Asynchronous operations
 
-The API uses two phases in response to a request that requires asynchronus processing:
+The API uses two phases in response to a request that requires asynchronous processing: Processing and Provisioning.
 
 ![processing-and-provisioning](/images/rv/api/processing-and-provisioning.png)
 
-### Phase 1 - Processing
+### Task Processing
 
 During this phase, the request is received, evaluated, planned and executed.
 
-The response to the API REST request includes a "`taskId`" that can be used to track the progress of the request's processing.
+#### Tracking requests using tasks
 
-#### Tracking requests using Tasks
+When you request an asyncronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.
+The `taskID` is a unique identifier that tracks the progress of the requested operation and reports its status.
 
-When requesting a an asyncronous operation (such as "create", "update" and "delete" operations) the response includes a "`taskId`" - a unique identifier that tracks the progress of the requested operation and reports its status.
-
-You can track the status of a specific task by querying its "`taskId`" status:
+You can query the `taskId` to track the status of a specific task:
 
 ```shell
 {{% embed-code "rv/api/20-get-task-id.sh" %}}
 ```
 
-In the above sample, the "`$TASK_ID`" variable holds the value of "`taskId`". For example:
+In this example, the `$TASK_ID` variable holds the value of `taskId`. For example:
 
 ```bash
 TASK_ID=166d7f69-f35b-41ed-9128-7d753b642d63
 ```
 
-You can also query the status of all active (or recently completed) tasks in your account:
+You can also query the status of all active tasks or the recently completed tasks in your account:
 
 ```shell
 {{% embed-code "rv/api/30-get-all-tasks.sh" %}}
 ```
 
-#### Task Id states
+#### Task ID states
 
-During the processing of a request, the task transitions between the following states:
+During the processing of a request, the task moves through these states:
 
-* **received** - initial state
-* **processing-in-progress** - request is being processed by a dedicated worker 
-* **processing-completed** - request processing completed successfully. A "`response`" segment is included with the task status JSON response (will include a "`resourceId`" in the case of a request to create a resource like Subscription of Database)
-* **processing-error** - request processing failed, with a detailed cause / reason included in the task status JSON response
+- `received` - Request is received.
+- `processing-in-progress` - A dedicated worker is processing the request.
+- `processing-completed` - Request processing succeeded.
+    A `response` segment is included with the task status JSON response.
+    The response includes a `resourceId` for each resource that the request creates, such as Subscription of Database.
+- `processing-error` - Request processing failed.
+    A detailed cause or reason is included in the task status JSON response.
 
+### Task Provisioning
 
-### Phase 2 - Provisioning
+When the processing phase succeeds and the task is in the `processing-completed` state, the provisioning phase starts.
+During the provisioning phase, the API orchestrates all of infrastructure, resources, and dependencies required by the request.
 
-When the processing phase completes successfully (with the task in the "`processing-completed`" status), the provisioning phase begins.
+The provisioning phase may require several minutes to complete. You can query the resource identifier to track the progress of the provisioning phase.
 
-During the provisioning phase, the API infrastructure orechestrates the construction of all infrastructure and resources requested (explicitly or implicitly) in the request.
-
-The provisioning phase may require several minutes to complete. You can track the progress of the provisioning phase by querying the resource identifier.
-
-For example, when provisioning a new subscription, use the following `cURL` command to query the status of the subscription (replacing the "`{subscription-id}`" URI parameter with the resource identifier received when the task reported "`processing-completed`" at the end of the processing phase)
+For example, when you provision a new subscription, use this `cURL` command to query the status of the subscription:
 
 ```shell
 {{% embed-code "rv/api/40-get-subscription-by-id.sh" %}}
 ```
 
+Where the `{subscription-id}` is the ID that you receive when the task is in the `processing-completed` state.
+
 #### Provisioning states
 
-During the provisioning of a resource (i.e. a subscription, database, cloud account etc.), the resource transitions between the following states:
+During the provisioning of a resource, such as a subscription, database, or cloud account, the resource transitions through these states:
 
-* **pending** - provisionign in progress
-* **active** - provisionign completed successfully
-* **deleting** - de-provisionign and deletion in progress
-* **error** - an error ocurred during the provisioning phase (with relevant information displayed)
-
-
+- `pending` - Provisioning is in progress.
+- `active` - Provisionign completed successfully.
+- `deleting` - De-provisioning and deletion is in progress.
+- `error` - An error ocurred during the provisioning phase, including the details of the error.
