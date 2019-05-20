@@ -60,6 +60,7 @@ Apply the file:
 ```src
  $ oc apply -f scc.yaml  
 ```
+
 You should receive the following response:
 
   `securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured`  
@@ -76,6 +77,7 @@ The rbac (Role-Based Access Control) yaml defines who can access which resources
 ```src
  $ kubectl apply -f rbac.yaml  
 ```
+
 You should receive the following response:
 
   `role.rbac.authorization.k8s.io/redis-enterprise-operator created
@@ -92,6 +94,7 @@ To apply it, run:
 ```src
  $ kubectl apply -f sb_rbac.yaml  
 ```
+
 You should receive the following response:
 
   `clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
@@ -105,6 +108,7 @@ To apply it, run:
 ```src
  $ kubectl apply -f crd.yaml  
 ```
+
 You should receive the following response:
 
   `customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com     configured`
@@ -120,6 +124,7 @@ To apply the operator.yaml, run:
 ```src
  $ kubectl apply -f operator.yaml
 ```
+
 You should receive the following response:
 
   `deployment.apps/redis-enterprise-operator created`
@@ -193,6 +198,7 @@ Once you have your_cluster_name yaml set, you need to apply it to create your Re
 ```src
  $ kubectl apply -f your_cluster_name.yaml
 ```
+
 Run kubectl get rec and verify that creation was successful (rec is a shortcut for “RedisEnterpriseClusters”).
 
 You should receive a response similar to the following:
@@ -207,6 +213,7 @@ To check the cluster status, type the following:
 ```src
  $ kubectl get pod
 ```
+
 You should receive a response similar to the following:
 
 |                                    |       |         |          |     |

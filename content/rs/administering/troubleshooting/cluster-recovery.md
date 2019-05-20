@@ -101,6 +101,7 @@ Example:
 ```src
 $ rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1
 ```
+
 Once the command execution is complete, this node will replace the node
 with ID 1 from the old cluster.
 

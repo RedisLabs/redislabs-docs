@@ -167,6 +167,7 @@ redis-cli is a simple command-line tool to interact with redis database.
     127.0.0.1:12000> get key1
     "123"
     ```
+
 1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
    RS container of node 1 in cluster 1.
 1. To see that the key replicated to cluster 2, repeat the steps to switch your 

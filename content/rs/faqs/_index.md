@@ -183,6 +183,7 @@ Create a port forwarding rule to expose the cluster UI port. For example, when t
 ```src
 $ kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:8443
 ```
+
 Connect to the UI by pointing your browser to `https://localhost:8443`
 {{% /expand%}}
 
@@ -202,6 +203,7 @@ For example, run:
 ```src
 $ kubectl get secrets
 ```
+
 A possible response may look like this:
 
 | NAME | TYPE | DATA | AGE |
@@ -213,6 +215,7 @@ To retrieve the secret run:
 ```src
 $ kubectl get secret redis-enterprise-cluster -o yaml
 ```
+
 A possible response may look like this:
 
 ```yaml
