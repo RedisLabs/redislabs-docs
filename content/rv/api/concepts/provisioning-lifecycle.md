@@ -1,5 +1,5 @@
 ---
-Title: Processing & Provisioning lifecycle
+Title: Processing & Provisioning Lifecycle
 description: 
 weight: 20
 alwaysopen: false
