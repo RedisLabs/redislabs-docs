@@ -1,13 +1,13 @@
 ---
 Title: Getting Started with Active-Active (CRDB) on OpenShift with Route-Based Ingress
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 In this guide, we'll set up a [CRDB]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}})
 (conflict-free replicated database) deployment with Active-Active replication
-spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator 
+spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator
 and OpenShift Route.
 
 ## Overview
@@ -62,11 +62,11 @@ and apply it using `kubectl apply -f <cluster.yaml>`:
       - apiIngressUrl:  api2.cluster2.<openshift.department.organization.com>
         authSecret: cluster2_secret
         dbIngressSuffix: -cluster2.<openshift.department.organization.com>
-        fqdn: <cluster2_name>.<cluster2_namespace>.svc.cluster.local 
+        fqdn: <cluster2_name>.<cluster2_namespace>.svc.cluster.local
       - apiIngressUrl:  api3.cluster3.<openshift.department.organization.com>
         authSecret: cluster2_secret
         dbIngressSuffix: -cluster3.<openshift.department.organization.com>
-        fqdn: <cluster3_name>.<cluster3_namespace>.svc.cluster.local 
+        fqdn: <cluster3_name>.<cluster3_namespace>.svc.cluster.local
 ```
 
 This block is added to the Service Broker config map when the REC spec changes, and
@@ -80,13 +80,13 @@ The elements of the section are:
 
 - **dbIngressSuffix** - The suffix of the db route name. The resulting host is
 `<db-name><db ingress suffix>`. This is used by the Redis Enterprise Syncer to
-sync data between the databases. 
+sync data between the databases.
 
 - **fqdn** - The FQDN of the Kubernetes cluster where the pattern is `<cluster_name>.
 <cluster_namespace>.svc.cluster.local`. (Remember that the RS cluster name is set in the REC spec).
 
 - **authSecret** - The Kubernetes secret name that contains the username and password
-to access this cluster. 
+to access this cluster.
 
 We need to create a secret to reference from authSecret based on the cluster admin credentials
 that were automatically created when the clusters were created. To do this,

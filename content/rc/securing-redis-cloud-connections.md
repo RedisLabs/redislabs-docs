@@ -1,6 +1,6 @@
 ---
 title: Securing Connections with SSL/TLS
-description: 
+description:
 weight: 25
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -177,7 +177,7 @@ below) instead of your resource's endpoint.
 
     }
 
-    
+
 
     stop() {
 
@@ -203,7 +203,7 @@ below) instead of your resource's endpoint.
 
     }
 
-    
+
 
     case "$1" in
 

@@ -1,6 +1,6 @@
 ---
 Title: Disk Sizing for Heavy Write Scenarios
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -31,6 +31,6 @@ disk space they would require in this scenario:
 | Required disk space (GB) | 73 | 191 | 328 | 723 |
 
 For disk size requirements in standard usage scenarios, refer to the
-[Hardware 
+[Hardware
 requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 section.

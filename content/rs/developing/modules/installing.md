@@ -1,6 +1,6 @@
 ---
 Title: Installing a Module
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -46,7 +46,7 @@ to the newest versions.
 1. Click on the **+** sign, if necessary, then **create database**
 1. On the create database screen, check the box for Redis Modules and
     select the module you want to use for this database.
-    
+
     ![select_module](/images/rs/select_module.png?width=794&height=554)
 1. Click **Show advanced options** and put **12544** for the port.
 1. Click the **activate** button

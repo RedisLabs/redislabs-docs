@@ -1,6 +1,6 @@
 ---
 Title: Uninstalling Redis Enterprise Software
-description: 
+description:
 weight: 70
 alwaysopen: false
 categories: ["RS"]

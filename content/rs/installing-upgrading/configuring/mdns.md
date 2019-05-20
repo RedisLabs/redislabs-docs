@@ -1,6 +1,6 @@
 ---
 Title: Client prerequisites for mDNS
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

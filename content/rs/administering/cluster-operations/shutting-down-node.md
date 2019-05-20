@@ -1,6 +1,6 @@
 ---
 Title: Shutting Down a Node
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

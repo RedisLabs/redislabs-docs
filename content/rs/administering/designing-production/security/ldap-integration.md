@@ -1,6 +1,6 @@
 ---
 Title: Integrating LDAP Authentication
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -33,7 +33,7 @@ other trusted network.
 If you are using LDAP over SSL, then make the following changes to saslauthd.conf:
 
 1. Replace ldap:// in the URL with ldaps://.
-2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
+2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt
 
 ## Configuring the saslauthd Service
 
@@ -49,11 +49,11 @@ $ vi /tmp/saslauthd.conf
 
 You must specify the URIs for the LDAP servers you will be
 authenticating with. You can specify multiple LDAP servers by listing
-them separated by a space. 
+them separated by a space.
 
-If you are using LDAP over SSL/TLS, then 
+If you are using LDAP over SSL/TLS, then
 1. Replace ldap:// in the URL with ldaps://.
-2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
+2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt
  SSL/TLS in other articles
 
 ```src

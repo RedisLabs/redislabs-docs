@@ -1,6 +1,6 @@
 ---
 Title: Software Product Lifecycle
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -9,7 +9,7 @@ You can view the Redis Enterprise Software subscription agreement [here](https:/
 This Product Lifecycle should fully reflect our subscription agreement.
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
-## Redis Enterprise 
+## Redis Enterprise
 ### Release numbering
 
 Redis Labs uses a four-place numbering scheme to designate released versions of its products.
@@ -52,7 +52,7 @@ The format is “Major1.Major2.Minor”.
 - The Minor section of the version number represents quality improvements and fixes to
     existing capabilities. We increment the minor number when many quality improvements
     are added to the release.
-    
+
 ### End-of-Life Schedule
 
 End-of-Life for a given Major release occurs 18 months after the formal release of

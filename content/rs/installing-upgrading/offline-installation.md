@@ -1,6 +1,6 @@
 ---
 Title: Offline Installation
-description: 
+description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]

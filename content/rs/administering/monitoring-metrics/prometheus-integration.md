@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Software Integration with Prometheus
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -14,7 +14,7 @@ From Redis Enterprise Software version 5.0.2 and higher, you can connect your Pr
 
 In each cluster, the metrics_exporter component listens on port 8070 and serves as a Prometheus scraping endpoint for obtaining metrics.
 
-## Quick Start 
+## Quick Start
 
 To get started with custom monitoring:
 
@@ -106,7 +106,7 @@ To get started with custom monitoring:
 
     NOTES:
 
-    - If the network port is not accessible to the Grafana server, 
+    - If the network port is not accessible to the Grafana server,
     select the 'Browser' option from the Access menu.
     - In a testing environment, you can select 'Skip TLS verification'.
 
@@ -140,7 +140,7 @@ To get started with custom monitoring:
         {{% /expand%}}
     1. In the Import options, select the `redis-enterprise` datasource and click **Import**.
 
-The dashboards that you create from the configurations are sample dashboards. 
+The dashboards that you create from the configurations are sample dashboards.
 For more information about configuring dashboards, see the [Grafana documentation](http://docs.grafana.org).
 
 ## Metrics

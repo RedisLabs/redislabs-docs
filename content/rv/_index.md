@@ -1,6 +1,6 @@
 ---
 Title: Redis Cloud Pro
-description: 
+description:
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]

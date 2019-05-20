@@ -1,6 +1,6 @@
 ---
 Title: Redis on Flash Quick Start Tutorial
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -75,7 +75,7 @@ email for the login and a password.
 
 ![RP-SetupScreen4](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
 
-Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
+Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
 ## Step 3: Create a Database

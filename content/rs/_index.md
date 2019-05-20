@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Software (RS)
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]

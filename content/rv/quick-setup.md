@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of Redis Cloud Pro
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
@@ -124,7 +124,7 @@ use as you will use it for other things.
 ### Using redis-cli
 
 ```src
-$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 
+$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
@@ -154,7 +154,7 @@ Next, copy and paste this into a file named
 
 ```python
 #import the library
-import redis 
+import redis
 # Create connection object
 r = redis.Redis(host='pub-redis-10382.us-west-2-1.1.ec2.garantiadata.com', port=10382)
 # set a value for the foo object

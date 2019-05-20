@@ -1,6 +1,6 @@
 ---
 Title: Benchmark a Redis on Flash Enabled Database
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -124,7 +124,7 @@ database. Here is an example of how to populate N items, each of them
 500 Bytes in size:
 
 ```src
-$ memtier_benchmark -s $DB_HOST -p $DB_PORT --hide-histogram 
+$ memtier_benchmark -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-maximum=$N -n allkeys -d 500 --key-pattern=P:P --ratio=1:0
 ```
 
@@ -151,8 +151,8 @@ the RS Web UI.
 ### With replication
 
 ```src
-$ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram 
---key-minimum=27250000 --key-maximum=47750000 -n allkeys 
+$ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
+--key-minimum=27250000 --key-maximum=47750000 -n allkeys
 --key-pattern=P:P --ratio=0:1
 ```
 
@@ -163,8 +163,8 @@ million items in RAM:
 ### Without replication
 
 ```src
-$ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram 
---key-minimum=54500000 --key-maximum=95500000 -n allkeys 
+$ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
+--key-minimum=54500000 --key-maximum=95500000 -n allkeys
 --key-pattern=P:P --ratio=0:1
 ```
 
@@ -180,9 +180,9 @@ writing down the test results.
 #### With replication
 
 ```src
-$ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=11 -c 20 -t 1 
--d 500 --key-maximum=75000000 --key-pattern=G:G --key-stddev=5125000 
---ratio=1:1 --distinct-client-seed --randomize --test-time=600 
+$ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=11 -c 20 -t 1
+-d 500 --key-maximum=75000000 --key-pattern=G:G --key-stddev=5125000
+--ratio=1:1 --distinct-client-seed --randomize --test-time=600
 --run-count=1 --out-file=test.out
 ```
 
@@ -191,9 +191,9 @@ Here is the command for 150 million items:
 #### Without replication
 
 ```src
-$ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=24 -c 20 -t 1 
--d 500 --key-maximum=150000000 --key-pattern=G:G --key-stddev=10250000 
---ratio=1:1 --distinct-client-seed --randomize --test-time=600 
+$ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=24 -c 20 -t 1
+-d 500 --key-maximum=150000000 --key-pattern=G:G --key-stddev=10250000
+--ratio=1:1 --distinct-client-seed --randomize --test-time=600
 --run-count=1 --out-file=test.out
 ```
 

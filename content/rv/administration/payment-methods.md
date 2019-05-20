@@ -1,6 +1,6 @@
 ---
 Title: Payment Methods
-description: 
+description:
 weight: 50
 alwaysopen: false
 categories: ["RC Pro"]

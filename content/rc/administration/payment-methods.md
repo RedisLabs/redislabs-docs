@@ -1,6 +1,6 @@
 ---
 Title: Payment Methods
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

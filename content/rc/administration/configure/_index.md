@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: 
+description:
 weight: 50
 alwaysopen: false
 categories: ["RC Essentials"]

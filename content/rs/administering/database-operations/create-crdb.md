@@ -1,6 +1,6 @@
 ---
 Title: Create a Geo-Replicated Conflict-free Replicated Database (CRDB)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -72,11 +72,11 @@ Every instance of a CRDB can receive write operations, and all operations are [s
             and enter the credentials for the service account that you created.
     - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
-        - Make sure the Database clustering is enabled and select the number of shards 
-        that you want to have in the database. When database clustering is enabled, 
+        - Make sure the Database clustering is enabled and select the number of shards
+        that you want to have in the database. When database clustering is enabled,
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
-        You can increase the number of shards in the database at any time. 
-        - Clear the **Database clustering** option to use only one shard so that you 
+        You can increase the number of shards in the database at any time.
+        - Clear the **Database clustering** option to use only one shard so that you
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
     - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
@@ -122,9 +122,9 @@ redis-cli is a simple command-line tool to interact with redis database.
     $ redis-cli -p 12000
     ```
 
-1.  Store and retrieve a key in the database to test the connection with these 
+1.  Store and retrieve a key in the database to test the connection with these
     commands:
-    
+
     - `set key1 123`
     - `get key1`
 
@@ -137,10 +137,10 @@ redis-cli is a simple command-line tool to interact with redis database.
     "123"
     ```
 
-1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
+1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the
    RS container of node 1 in cluster 1.
-1. To see that the key replicated to cluster 2, repeat the steps to switch your 
-   context into the RS container of node 1 in cluster 2, run the redis-cli and 
+1. To see that the key replicated to cluster 2, repeat the steps to switch your
+   context into the RS container of node 1 in cluster 2, run the redis-cli and
    retrieve key1.
 
     The output of the commands looks like this:
@@ -156,7 +156,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and 
+Note: Before you continue, you must have python and
 [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
 running the container.
@@ -169,7 +169,7 @@ running the container.
 
 1. Paste this code into the "redis_test.py" file.
 
-    This application stores a value in key1 in cluster 1, gets that value from 
+    This application stores a value in key1 in cluster 1, gets that value from
     key1 in cluster 1, and gets the value from key1 in cluster 2.
 
     ```py

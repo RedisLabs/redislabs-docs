@@ -1,6 +1,6 @@
 ---
 Title: Updating database configuration
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

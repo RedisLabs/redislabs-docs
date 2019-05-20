@@ -1,6 +1,6 @@
 ---
 Title: Developing with Hashes in a CRDB
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

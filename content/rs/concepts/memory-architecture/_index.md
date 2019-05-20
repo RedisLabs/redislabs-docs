@@ -1,6 +1,6 @@
 ---
 Title: Memory Architecture in Redis Enterprise Software
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

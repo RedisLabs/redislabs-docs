@@ -1,6 +1,6 @@
 ---
 Title: Data Persistence with Redis Cloud Essentials
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

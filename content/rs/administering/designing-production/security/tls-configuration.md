@@ -1,6 +1,6 @@
 ---
 Title: Configuring TLS Authentication and Encryption
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -51,7 +51,7 @@ To enable TLS for Replica Of communication only on the source database:
 
     ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
 
-1. Select the communication that you want to secure: 
+1. Select the communication that you want to secure:
     - For a new database - **Require TLS for Replica Of communications only** is
     selected by default.
     - For an existing database that is configured to **Require TLS for all
@@ -78,7 +78,7 @@ To enable TLS for Replica Of communication only on the source database:
     clients can connect to your database without authentication.
 
     To encrypt Replica Of synchronization traffic, you must also [configure encryption
-    for the destination database]({{< relref 
+    for the destination database]({{< relref
     "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 
 ### Configuring TLS for all communication on the source database

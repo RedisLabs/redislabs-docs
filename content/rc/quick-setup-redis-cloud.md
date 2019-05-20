@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of Redis Cloud Essentials
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -64,10 +64,10 @@ review pricing, set payment method and finalize your subscription.
 
 ## Step 3: Set up a database
 
-After the subscription has been created, you can set up a database under the subscription. 
-To set up a new database: 
+After the subscription has been created, you can set up a database under the subscription.
+To set up a new database:
 
-1. Open the sidebar and click on 'Databases'. 
+1. Open the sidebar and click on 'Databases'.
 1. Select your subscription and expand it.
 1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page will open.
 1. Give your database a name.
@@ -102,7 +102,7 @@ use as you will use it for other things.
 ### Using redis-cli
 
 ```src
-$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 
+$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG

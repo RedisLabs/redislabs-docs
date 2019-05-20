@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Software Compatibility with Open Source Redis
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

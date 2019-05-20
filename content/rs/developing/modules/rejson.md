@@ -1,6 +1,6 @@
 ---
 Title: Developing Applications with ReJSON
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

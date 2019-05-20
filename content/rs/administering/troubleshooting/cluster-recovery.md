@@ -1,6 +1,6 @@
 ---
 Title: Cluster Recovery
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

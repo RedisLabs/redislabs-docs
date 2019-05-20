@@ -1,6 +1,6 @@
 ---
 Title: Synchronizing cluster node clocks
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

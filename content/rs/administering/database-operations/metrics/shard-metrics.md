@@ -1,6 +1,6 @@
 ---
 Title: Shards metrics
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

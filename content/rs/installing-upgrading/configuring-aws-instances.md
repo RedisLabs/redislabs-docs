@@ -1,6 +1,6 @@
 ---
 Title: Configuring AWS Instances for Redis Enterprise Software
-description: 
+description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]

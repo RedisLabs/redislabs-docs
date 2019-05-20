@@ -1,6 +1,6 @@
 ---
 Title: Monitoring Redis Cloud Essentials Performance
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

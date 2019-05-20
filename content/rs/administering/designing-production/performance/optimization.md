@@ -1,6 +1,6 @@
 ---
 Title: Performance Optimization
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

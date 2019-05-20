@@ -185,7 +185,7 @@ Output:
 To make an image appear on the next line in a list:
 
 1. Write your instruction.
-1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
+1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
 ### Adding a video
@@ -218,7 +218,7 @@ Embed YouTube video and start playback from specific timestamp.
 
 Syntax:
 
-```src 
+```src
 {{</* youtube_start Bi1T3toQfF4 10 */>}}
 ```
 
@@ -384,8 +384,8 @@ Well displays content inside a container.
 
 Syntax:
 
-```src 
-{{%/* well */%}} Inside a well {{%/* /well */%}} 
+```src
+{{%/* well */%}} Inside a well {{%/* /well */%}}
 ```
 
 Ouput:

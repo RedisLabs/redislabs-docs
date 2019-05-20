@@ -1,6 +1,6 @@
 ---
 Title: Benchmarking Redis Enterprise
-description: 
+description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]

@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of Redis Enterprise Software (RS)
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
@@ -9,7 +9,7 @@ In this quick setup guide, we take you through the steps to install RS in a Linu
 
 - To run RS in a Docker container on Linux, Windows, or MacOS, go to the
   [Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
-- To install RS on Linux in a production environment, follow the complete instuctions 
+- To install RS on Linux in a production environment, follow the complete instuctions
   in [installing RS] ({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
 
 The steps to set up a Redis Enterprise Software (RS) cluster with a
@@ -37,7 +37,7 @@ the current directory.
 $ sudo ./install.sh -y
 ```
 
-{{% note %}}When port 53 is in use, the installation fails. This is known to happen in 
+{{% note %}}When port 53 is in use, the installation fails. This is known to happen in
 default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
 To workaround this issue, change the system configuration to make this port available
 before running RS installation.
@@ -60,7 +60,7 @@ the Redis Enterprise Software web console.
 
     Note:
 
-    - Depending on your browser, you may see a certificate error. You can safely 
+    - Depending on your browser, you may see a certificate error. You can safely
     continue to the web console.
     - If you see an error from nginx, try again after a few minutes.
 
@@ -68,7 +68,7 @@ the Redis Enterprise Software web console.
 
     ![Redis Enterprise Software Setup](/images/rs/getstarted-setup.png?width=600)
 
-1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`. 
+1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`.
 Then click **Next** button.
 
     ![Redis Enterprise Software node configuration](/images/rs/getstarted-nodeconfig.png?width=600)
@@ -79,7 +79,7 @@ Then click **Next** button.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
 
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
 ## Step 3: Create a Database
@@ -158,7 +158,7 @@ b'123'
 
 ## Next steps
 
-Now you have a Redis Enterprise cluster ready to go. You can connect to it with 
-a [redis client](https://redis.io/clients) to start loading it with data or 
+Now you have a Redis Enterprise cluster ready to go. You can connect to it with
+a [redis client](https://redis.io/clients) to start loading it with data or
 you can use the [memtier_benchmark Quick Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
 to check the cluster performance.

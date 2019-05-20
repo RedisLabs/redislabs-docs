@@ -1,6 +1,6 @@
 ---
 Title: Private and Public Endpoints on Redis Enterprise Software (RS)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

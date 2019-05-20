@@ -1,6 +1,6 @@
 ---
 Title: Hardware requirements
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

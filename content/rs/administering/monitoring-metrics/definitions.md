@@ -1,6 +1,6 @@
 ---
 Title: Metrics Definitions
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

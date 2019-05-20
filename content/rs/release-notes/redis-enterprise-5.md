@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Pack 5.0 Release Notes (November 2017)
-description: 
+description:
 weight: 93
 alwaysopen: false
 categories: ["RS"]

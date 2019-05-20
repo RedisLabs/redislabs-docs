@@ -1,6 +1,6 @@
 ---
 Title: Setup and Editing of Redis Cloud Essentials Resources
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

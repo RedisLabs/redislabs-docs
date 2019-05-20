@@ -1,6 +1,6 @@
 ---
 Title: Change Location of Socket Files
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -15,7 +15,7 @@ We made this change because some customers have maintenance procedures that dele
 `/tmp` directory.
 
 When you upgrade from a RS version lower than 5.2.2 to 5.2.2 and higher, the socket files
-are not moved to the new location by default. During [installation]({{< relref 
+are not moved to the new location by default. During [installation]({{< relref
 "/rs/installing-upgrading/downloading-installing.md" >}}) you can specify a custom location
 for the socket files, but after installation you must use this procedure to move the socket files.
 

@@ -1,6 +1,6 @@
 ---
 Title: RedisGraph Quick Start Tutorial
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -25,7 +25,7 @@ For this quick start, you will need the following:
 
 After you load RedisGraph, you can interact with it using redis-cli.
 
-Here we'll quickly create a small graph representing a subset of motorcycle riders and teams 
+Here we'll quickly create a small graph representing a subset of motorcycle riders and teams
 taking part in the MotoGP league. Once created, we'll start querying our data.
 
 ### With `redis-cli`

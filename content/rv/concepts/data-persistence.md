@@ -1,6 +1,6 @@
 ---
 Title: Data Persistence
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]

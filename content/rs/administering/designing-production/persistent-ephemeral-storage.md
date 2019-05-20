@@ -1,6 +1,6 @@
 ---
 Title: Persistent and ephemeral storage
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

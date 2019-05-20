@@ -1,6 +1,6 @@
 ---
 Title: Creating Databases on  Redis Cloud Essentials
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -29,7 +29,7 @@ first.
 1. If this is a **Pay-as-You-Go** subscription, you will see [Database
     Clustering]({{< relref "/rc/concepts/clustering-redis-cloud.md" >}})
     as an option.
-1. Enter a **password** to secure your database. 
+1. Enter a **password** to secure your database.
 1. Enter a **Source IP/Subnet** that you would like to require source
     traffic to originate (e.g. your application server). The information
     is either a specific source IPv4 address or a source subnet in [CIDR

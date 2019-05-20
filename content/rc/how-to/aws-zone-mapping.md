@@ -1,6 +1,6 @@
 ---
 Title: AWS Zone Mapping
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

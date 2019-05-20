@@ -1,6 +1,6 @@
 ---
 Title: Importing Data into Redis Enterprise
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

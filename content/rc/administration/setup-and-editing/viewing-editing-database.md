@@ -1,6 +1,6 @@
 ---
 Title: Viewing and Editing Databases
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

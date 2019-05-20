@@ -1,6 +1,6 @@
 ---
 Title: RLEC 0.99.5-11 Release Notes (January 5, 2015)
-description: 
+description:
 weight:
 alwaysopen: false
 categories: ["RS"]

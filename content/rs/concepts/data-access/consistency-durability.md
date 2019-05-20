@@ -1,6 +1,6 @@
 ---
 Title: Consistency and Durability
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

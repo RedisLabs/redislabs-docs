@@ -1,6 +1,6 @@
 ---
 Title: Installing the Setup Package
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]

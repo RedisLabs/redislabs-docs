@@ -1,6 +1,6 @@
 ---
-Title: Getting Started with Redis Enterprise Software using Docker 
-description: 
+Title: Getting Started with Redis Enterprise Software using Docker
+description:
 weight: $weight
 alwaysopen: false
 aliases:
@@ -40,7 +40,7 @@ about installing Docker Engine:
 
 ## Step 2: Run the Container
 
-To pull and start the Redis Enterprise Software Docker container, run this 
+To pull and start the Redis Enterprise Software Docker container, run this
 `docker run` command in the terminal or command-line for your operating system.
 
 Note: On Windows, make sure Docker is configured to run Linux-based containers.
@@ -81,7 +81,7 @@ Then click **Next** button.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
 
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
 ## Step 4: Create a Database
@@ -105,8 +105,8 @@ enter `12000` for the port number.
 
 <!-- Also in crdbs.md -->
 {{% note %}}
-If you cannot activate the database because of a memory limitation, 
-make sure that Docker has enough memory allocated in the Advanced section 
+If you cannot activate the database because of a memory limitation,
+make sure that Docker has enough memory allocated in the Advanced section
 of Docker Settings.
 {{% /note %}}
 
@@ -185,7 +185,7 @@ b'123'
 
 ## Next steps
 
-Now you have a Redis Enterprise cluster ready to go. You can connect to it with 
-a [redis client](https://redis.io/clients) to start loading it with data or 
+Now you have a Redis Enterprise cluster ready to go. You can connect to it with
+a [redis client](https://redis.io/clients) to start loading it with data or
 you can use the [memtier_benchmark Quick Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
 to check the cluster performance.

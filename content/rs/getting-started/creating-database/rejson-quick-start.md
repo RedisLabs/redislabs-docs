@@ -1,6 +1,6 @@
 ---
 Title: ReJSON Quick Start Tutorial
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

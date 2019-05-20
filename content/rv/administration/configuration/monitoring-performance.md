@@ -1,6 +1,6 @@
 ---
 Title: Monitoring Performance
-description: 
+description:
 weight: 40
 alwaysopen: false
 categories: ["RC Pro"]

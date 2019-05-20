@@ -1,6 +1,6 @@
 ---
 Title: Configuring AWS Route53
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

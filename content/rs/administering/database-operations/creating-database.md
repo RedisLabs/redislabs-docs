@@ -1,6 +1,6 @@
 ---
 Title: Creating a Redis Enterprise Software (RS) database
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -186,7 +186,7 @@ Using the URL-based connection method, you can connect the database
 endpoint URL and port number. The result looks like:
 
 ```src
-$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com  
+$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG

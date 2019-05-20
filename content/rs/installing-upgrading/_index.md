@@ -1,6 +1,6 @@
 ---
 Title: Installing and Upgrading
-description: 
+description:
 weight: 35
 alwaysopen: false
 categories: ["RS"]

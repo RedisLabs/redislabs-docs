@@ -1,6 +1,6 @@
 ---
 Title: Developing with Redis Modules in Redis Enterprise Software (RS)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -84,8 +84,8 @@ $ pip install ramp-packer
 ### Wrap the Custom Module Using Ramp Utility
 
 ```src
-$ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com" 
--A "x86_64" -d "My Module" -h "https://www.mymodule.com/" -l "LicenseType" 
+$ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
+-A "x86_64" -d "My Module" -h "https://www.mymodule.com/" -l "LicenseType"
 -r "4.0.2"
 ```
 

@@ -68,7 +68,7 @@ redislabs@rp1_node1:/opt$ rladmin status
 CLUSTER NODES:
 NODE:ID   ROLE     ADDRESS       EXTERNAL_ADDRESS     HOSTNAME    SHARDS
 *node:1   master   172.17.0.2                         rp1_node1   2/100
-node:2    slave    172.17.0.4                         rp3_node1   0/0  
+node:2    slave    172.17.0.4                         rp3_node1   0/0
 node:3    slave    172.17.0.3                         rp2_node1   2/100
 ```
 

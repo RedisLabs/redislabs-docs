@@ -1,11 +1,11 @@
 ---
 Title: Supported Clients and Web Browsers
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can configure Redis Enterprise Software (RS) programmatically with client libraries 
+You can configure Redis Enterprise Software (RS) programmatically with client libraries
 or manually with the RS Web Console.
 
 ## Redis Client Libraries

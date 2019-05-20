@@ -1,6 +1,6 @@
 ---
 Title: Securing Your Redis Cloud Essentials Database
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
