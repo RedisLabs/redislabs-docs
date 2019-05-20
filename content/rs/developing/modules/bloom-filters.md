@@ -41,7 +41,7 @@ set to 1. This looks fairly similar to how buckets in a hash table are
 mapped. To check if an item is present or not, the hash is computed and
 the filter sees if the corresponding bit is set or not.
 
-![rebloom-hash1](/images/rs/rebloom-hash.png)
+![rebloom-hash1](/images/rs/rebloom-hash1.png)
 
 Of course, this is subject to collisions. If a collision occurs, the
 filter will return a false positive - indicating that the entry is

@@ -38,7 +38,7 @@ title has a weight of 5.0.
 
 Now add some data to this index. We will add an object which key will be
 doc1 and then adds a title of "hello world", body of "my favorite
-object", and url of "https://redislabs.com/" to the object as follows:
+object", and url of [https://redislabs.com/](https://redislabs.com/) to the object as follows:
 
 ```src
 127.0.0.1:12544> FT.ADD myIdx doc1 1.0 FIELDS title "hello world" body "My first object" url "https://redislabs.com/"

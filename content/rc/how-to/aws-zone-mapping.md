@@ -82,8 +82,27 @@ To do this:
 1. Create a new user in your AWS account **where your application is
     hosted**.
 1. Create access keys for that user.
-1. Give the user [this IAM
-    policy](/images/rc/zone-mapping-user-policy.json_.txt).
+1. Give the user this IAM policy:
+
+    ```json
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "RLZoneMapping",
+                "Effect": "Allow",
+                "Action": [
+                    "ec2:DescribeRegions",
+                    "ec2:DescribeReservedInstancesOfferings"
+                ],
+                "Resource": [
+                    "*"
+                ]
+            }
+        ]
+    }
+
+    ```
 
 If you are unfamiliar on how to create a new user in AWS, please see
 their documentation on the topic.

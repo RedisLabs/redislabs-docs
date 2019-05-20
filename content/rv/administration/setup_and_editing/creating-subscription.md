@@ -106,7 +106,7 @@ Once the peering was established please define the relevant routing
 groups on your application account and Redis Cloud Pro account.
 
 For more information and pricing, please go
-[here](https://redislabs.com/pricing/redis-cloud-private/).
+[here](https://redislabs.com/redis-enterprise/pro/pricing/).
 
 <!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
 video: -->
