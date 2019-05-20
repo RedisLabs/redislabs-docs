@@ -48,7 +48,10 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
     If you do not have any databases on the node, you are prompted to create a database.
 
-1. In the **Deployment** box, select **Geo-Distributed**.
+1. In the **Deployment** box, select **Geo-Distributed** and click **Activate** to create a CRDB on RAM.
+
+    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+    in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
