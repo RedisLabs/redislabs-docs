@@ -36,7 +36,10 @@ To create a new database:
 
     <!-- {{</* embed-md "create-db.md" */>}} -->
 
-1. Click **Next** to create a single-region deployment.
+1. Click **Next** to create a single-region deployment on RAM.
+
+    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+    in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![new_databases](/images/rs/new_databases.png)
 
