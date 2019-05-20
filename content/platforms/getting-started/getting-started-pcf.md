@@ -1,7 +1,7 @@
 ---
 Title: Getting Started with Redis Enterprise Software for Pivotal Cloud Foundry (PCF)
 description: 
-weight: 40
+weight: $weight
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/pcf/

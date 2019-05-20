@@ -1,7 +1,7 @@
 ---
 Title: Administering Kubernetes
 description: 
-weight: 40
+weight: 90
 alwaysopen: false
 categories: ["Platforms"]
 ---

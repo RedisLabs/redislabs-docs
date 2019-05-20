@@ -1,7 +1,7 @@
 ---
 Title: Kubernetes Architecture
 description: 
-weight: 40
+weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/
