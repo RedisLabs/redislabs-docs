@@ -23,8 +23,7 @@ Before you specify to backup to an SFTP server, make sure that:
     - **Use the cluster auto generated key** - Go to **settings** and copy the **Cluster SSH Public Key**
         to the SFTP server.
     - **Use a custom key** - Generate a TLS key pair for the SFTP server, copy the private key to
-        the **SSH Private Key** box, and copy the public key to the SFTP server.
-    - The key shoud be added to ~/.ssh/authorized_keys of the user used for backup on SFTP server.
+        the **SSH Private Key** box, and copy the public key to location required by the SFTP server.
 
 To backup to an SFTP server, enter the SFTP server location in the format:
 
