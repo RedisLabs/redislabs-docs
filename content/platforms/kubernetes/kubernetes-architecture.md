@@ -1,5 +1,5 @@
 ---
-Title: Redis Labs Kubernetes Architecture – Overview
+Title: Redis Labs Kubernetes Architecture
 description: 
 weight: 30
 alwaysopen: false

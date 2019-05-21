@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise K8s Operator-based deployments – Overview
+Title: Redis Enterprise Kubernetes Operator-based Architecture
 description: 
 weight: 40
 alwaysopen: false
