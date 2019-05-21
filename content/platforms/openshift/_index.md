@@ -1,9 +1,10 @@
 ---
 Title: Getting Started with Kubernetes and OpenShift
 description: 
-weight: 50
+weight: 60
 alwaysopen: false
-categories: ["RS"]
+categories: ["Platforms"]
+aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
 ---
 These are the steps required to set up a Redis Enterprise Software
 Cluster with OpenShift.

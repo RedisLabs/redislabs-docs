@@ -1,9 +1,10 @@
 ---
-Title: Sizing and scaling a Redis Enterprise Cluster Kubernetes deployment
+Title: Sizing and Scaling a Redis Enterprise Cluster Kubernetes Deployment
 description: 
 weight: 40
 alwaysopen: false
-categories: ["RS"]
+categories: ["Platforms"]
+aliases: /rs/administering/kubernetes/sizing-scaling-redis-enterprise-cluster-kubernetes-deployment/
 ---
 The following article reviews the mechanism and methods available for sizing 
 and scaling a Redis Enterprise Cluster deployment.
@@ -108,4 +109,4 @@ Then, apply the file by running:
     kubectl apply – f redis-enterprise-cluster.yaml
 
 For Persistent Storage sizing, please refer to [Kubernetes Operator Deployment – Persistent Volumes]
-({{< relref "rs/administering/kubernetes/kubernetes-operator-deployment-persistent-volumes.md" >}}).
+({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}).
