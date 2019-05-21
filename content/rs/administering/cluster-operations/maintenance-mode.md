@@ -16,8 +16,8 @@ When you turn maintenance mode on, RS:
 1. Checks whether shutdown of the node causes quorum loss in the current cluster state. If so, maintenance mode is not turned on.
 
     {{% warning %}}
-If you enable maintenance mode for the majority of nodes in a cluster and simultaneously restart them,
-the quorum is lost and it may result data loss.
+Maintenance mode does not protect against quorum loss. If you enable maintenance mode for the majority of nodes in a cluster and simultaneously restart them,
+the quorum is lost and it can result data loss.
     {{% /warning %}}
 
 1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on node at that time.
