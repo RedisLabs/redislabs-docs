@@ -9,7 +9,7 @@ categories: ["RS"]
 The participating clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
 Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) to all of the instances.
 
-## Overview of the Steps to Create a CRDB
+## Steps to Create a CRDB
 
 1. **Create a service account** - On each participating cluster, create a dedicated user account with the Admin role.
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
