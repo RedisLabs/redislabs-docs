@@ -9,6 +9,7 @@ Here are some frequently asked questions about Redis Cloud Pro.
 
 <!-- Also in RS and RC -->
 {{%expand "What is Redis Pro?" %}}
+Redis Pro is a SaaS offering of Redis Enterprise.
 
 <!-- Also in RS and RC -->
 {{%expand "What exactly is Redis Enterprise?" %}}
