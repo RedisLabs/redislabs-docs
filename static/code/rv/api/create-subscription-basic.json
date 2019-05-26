@@ -27,8 +27,6 @@
       {
         "name": "Redis-database-example",
         "protocol": "redis",
-        "provider": "AWS",
-        "region": "us-east-1",
         "memoryLimitInGb": 10,
         "supportOSSClusterApi": true,
         "dataPersistence": "none",
