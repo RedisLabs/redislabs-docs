@@ -51,7 +51,8 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create a CRDB on RAM.
 
     If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
-    in **Runs on** you can select **Flash** so that your database uses Flash memory.
+    in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
+    for the best performance during the initial CRDB sync of a new replica.
 
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
