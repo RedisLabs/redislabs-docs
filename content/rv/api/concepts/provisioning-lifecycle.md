@@ -62,6 +62,12 @@ During the processing of a request, the task moves through these states:
 - `processing-error` - Request processing failed.
     A detailed cause or reason is included in the task status JSON response.
 
+
+    {{% note %}}
+A task that reaches the `received` state cannot be cancelled and it will await completion (i.e. processing and provisioning). If you wish to undo an operation that was performed by a task, perform a compensating action (for example: delete a subscription that was created unintentionally)
+    {{% /note %}}
+
+
 ### Task Provisioning
 
 When the processing phase succeeds and the task is in the `processing-completed` state, the provisioning phase starts.
@@ -85,3 +91,5 @@ During the provisioning of a resource, such as a subscription, database, or clou
 - `active` - Provisionign completed successfully.
 - `deleting` - De-provisioning and deletion is in progress.
 - `error` - An error ocurred during the provisioning phase, including the details of the error.
+
+
