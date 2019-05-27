@@ -178,7 +178,7 @@ PING
 +PONG
 ```
 
-### Testing Database Connectivity with redis-cli
+### Testing Database Connectivity with redis-cli {#testing-database-connectivity-with-rediscli}
 
 The redis-cli utility is installed on each node in RS cluster with the rest of the utilities.
 

@@ -102,7 +102,7 @@ to backup and restore your PCF deployment. These backup and restore instructions
 apply specifically to your Redis Enterprise for PCF deployment. For more about
 deployment backup and restore, see the [PCF documentation](https://docs.pivotal.io/pivotalcf/customizing/backup-restore/index.html).
 
-### Installing the BBR Command-Line Tool
+### Installing the BBR Command-Line Tool {#installing-the-bbr-commandline-tool}
 
 To install the BBR command-line tool:
 

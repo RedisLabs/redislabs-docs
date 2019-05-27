@@ -24,8 +24,7 @@ Related topics:
 - You can use the REST API to [update the server TLS certificates and TLS protocol version]
   ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 - To encrypt Replica Of synchronization traffic, you must also [configure encryption
-  for the destination database]({{< relref
-  "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+  for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 
 ## Authentication for Databases
 
@@ -79,8 +78,7 @@ To enable TLS for Replica Of communication only on the source database:
     clients can connect to your database without authentication.
 
     To encrypt Replica Of synchronization traffic, you must also [configure encryption
-    for the destination database]({{< relref
-    "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+    for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 
 ### Configuring TLS for all communication on the source database
 
@@ -121,8 +119,7 @@ To enable TLS for Replica Of and client communication on the source database:
     clients can connect to your database without authentication.
 
     To encrypt Replica Of synchronization traffic, you must also [configure encryption
-    for the destination database]({{< relref
-    "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+    for the destination database]({{< relref "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
 {{% /excerpt %}}
 
 ## Authentication for CRDBs

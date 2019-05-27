@@ -32,7 +32,7 @@ connect to the RS endpoint proxy where the master shard is located.
 [Learn more about the Cluster API
 implementation]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).
 
-### Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB)
+### Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-databases-crdb}
 
 Developing globally distributed applications can be challenging, as
 developers have to think about race conditions and complex combinations

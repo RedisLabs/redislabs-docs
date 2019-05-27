@@ -44,7 +44,7 @@ database and your application, as described below.
 enabled, your database will no longer accept regular, non-SSL
 connections.
 
-## Setting up your application if you are not using an SSL/TLS enabled client library
+## Setting up your application if you are not using an SSL/TLS enabled client library {#setting-up-your-application-if-you-are-not-using-an-ssltls-enabled-client-library}
 
 This procedure describes the steps required to install and configure
 [stunnel](https://stunnel.org), an open-source secure proxy, to connect
@@ -58,7 +58,7 @@ section below that's relevant to your client's OS. Once done, configure
 your client to connect to stunnel (i.e. 127.0.0.1:6379 in the examples
 below) instead of your resource's endpoint.
 
-## OS-Specific Instructions for Setting Up stunnel
+## OS-Specific Instructions for Setting Up stunnel {#osspecific-instructions-for-setting-up-stunnel}
 
 ### Ubuntu 12.04
 

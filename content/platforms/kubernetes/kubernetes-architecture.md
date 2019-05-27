@@ -23,7 +23,7 @@ Operator allows Redis Labs to maintain a unified deployment solution across all 
 
 ![kubernetes-overview-unified-deployment]( /images/rs/kubernetes-overview-unified-deployment.png )
 
-## Network-attached persistent storage
+## Network-attached persistent storage {#networkattached-persistent-storage}
 
 Kubernetes and cloud-native environments require that storage volumes be network-attached to the compute instances, to guarantee data durability. Otherwise, if using local storage,  data may be lost in a Pod failure event. See the figure below:
 

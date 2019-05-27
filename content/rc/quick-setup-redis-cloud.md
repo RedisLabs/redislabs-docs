@@ -99,7 +99,7 @@ PING
 Note: We recommend loading the redis-cli command-line utility for future
 use as you will use it for other things.
 
-### Using redis-cli
+### Using redis-cli {#using-rediscli}
 
 ```src
 $ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com

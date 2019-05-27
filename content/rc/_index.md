@@ -46,7 +46,7 @@ Take advantage of the best performance in the industry using
 Redis Enterprise Technology that enhances Redis with numerous
 optimizations and hosts your database on the strongest cloud instances.
 
-### 24/7 Monitoring and Support
+### 24/7 Monitoring and Support {#247-monitoring-and-support}
 
 Reap benefits from the tremendous operational expertise of the team that
 develops and maintains open-source Redis and the professionals who

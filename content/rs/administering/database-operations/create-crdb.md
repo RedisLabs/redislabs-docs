@@ -67,7 +67,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
     - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
         The intercluster synchronization is most efficient when it reads from slave shards.
-    - [Participating Clusters](#participating-clusters) - You must specify the URL of the clusters that you want to
+    - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host CRDB instances and the admin user account to connect to each cluster.
         - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
         - For each cluster, enter the URL for the cluster (`http://<cluster_URL>:8080`),
@@ -108,7 +108,7 @@ replication to for the global CRDB.
 
 ![crdb-diagram](/images/rs/crdb-diagram.png)
 
-### Connecting Using redis-cli
+### Connecting Using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with redis database.
 

@@ -183,7 +183,7 @@ will:
 - Expire it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
 
-## Out-of-Memory (OOM)
+## Out-of-Memory (OOM) {#outofmemory-oom}
 
 If a member CRDB is in an out of memory situation, that member is marked
 "inconsistent" by RS, the member stops responding to user traffic, and

@@ -28,7 +28,7 @@ The format is “Major1.Major2.Minor-Build”.
 
 Redis Enterprise Software typically gets 2 major releases every year but the product shipping cycles may vary.
 
-### End-of-Life Schedule
+### End-of-Life Schedule {#endoflife-schedule}
 
 End-of-Life for a given Major release occurs 18 months after the formal release of
 that version.

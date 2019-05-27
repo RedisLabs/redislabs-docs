@@ -49,7 +49,7 @@ Take advantage of the best performance in the industry using Redis
 Enterprise Technology that enhances Redis with numerous optimizations
 and hosts your database on optimal cloud instances.
 
-### Hybrid deployment and geo-region replication
+### Hybrid deployment and geo-region replication {#hybrid-deployment-and-georegion-replication}
 
 Efficiently replicate Redis databases between Redis Cloud Pro and
 Redis Enterprise Software or across cloud regions, with built-in
@@ -58,7 +58,7 @@ multi-cloud or hybrid (on-premises and cloud) Redis Enterprise
 Deployments that accelerate your applications and require zero time to
 recover.
 
-### 24/7 Monitoring and support
+### 24/7 Monitoring and support {#247-monitoring-and-support}
 
 Reap benefits from the tremendous operational expertise of the team that
 develops and maintains open-source Redis and the professionals who
@@ -76,7 +76,7 @@ mechanisms such as:
 - Redis password
 - Data at rest encryption for compliance and security
 
-### Fully-automated service
+### Fully-automated service {#fullyautomated-service}
 
 Forget instances, clusters, scaling, data persistence/high availability
 settings and failure recovery.
