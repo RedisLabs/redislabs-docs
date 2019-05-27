@@ -27,24 +27,24 @@ To link to another page in the content directory:
 Syntax:
 
 ```md
-[Redis Enterprise VPC Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
+[Redis Cloud Pro Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
 ```
 
 Output:
 
-[Redis Enterprise VPC Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
+[Redis Cloud Pro Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
 
 To link to an anchor on another page in the content directory:
 
 Syntax:
 
 ```md
-`[Sign up for Redis Enterprise VPC]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" */>}})`
+`[Sign up for Redis Cloud Pro]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
 ```
 
 Output:
 
-[Sign up for Redis Enterprise VPC]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" >}})
+[Sign up for Redis Cloud Pro]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
 
 ### Text formatting
 
@@ -70,6 +70,27 @@ Ouput:
 {{% comment %}}Do not publish!{{% /comment %}}
 
 ### Code formatting
+
+**Embedded code snippets**
+
+Code snippets that need to pass automation must be located in `/static/code`
+and included in the article with:
+
+~~~src
+```json
+{{</* embed-code "sample.json" */>}}
+```
+~~~
+
+If the code snippet is more than 30 lines, add it within an expanding block:
+
+~~~src
+{{%/* expand */%}}
+```json
+{{</* embed-code "sample.json" */>}}
+```
+{{%/* /expand */%}}
+~~~
 
 **Code blocks**
 
@@ -229,7 +250,7 @@ This is how you make expanding blocks.
 
 Syntax:
 
-```
+```md
 {{%/* excerpt */%}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
 provides a simple mechanism for cluster-aware Redis clients to learn
 and know the cluster topology. This enables clients to connect directly

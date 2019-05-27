@@ -107,7 +107,7 @@ During the database upgrade process, the database is restarted. As
 a result:
 
 - For databases that have [replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
-    enabled, a failover occurs prior to restarting the database to make sure that
+    enabled, a failover is done before the master database restarts to make sure that
     there is no downtime.
 - For databases that do not have replication enabled and persistence
     enabled, some downtime occurs while the database is restarting. The

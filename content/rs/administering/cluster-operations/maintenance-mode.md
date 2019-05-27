@@ -13,7 +13,13 @@ You can use maintenance mode to handle this process simply and efficiently.
 
 When you turn maintenance mode on, RS:
 
-1. Checks whether shutdown of the node causes quorum loss. If so, maintenance mode is not turned on.
+1. Checks whether shutdown of the node causes quorum loss in the current cluster state. If so, maintenance mode is not turned on.
+
+    {{% warning %}}
+Maintenance mode does not protect against quorum loss. If you enable maintenance mode for the majority of nodes in a cluster and restart them simultaneously,
+the quorum is lost and it can result data loss.
+    {{% /warning %}}
+
 1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on node at that time.
 1. Marks the node as a quorum node to prevent shards and endpoints from migrating into the node.
     The maintenance node entry in the rladmin status output is colored yellow to indicate that it cannot accept shard migration, just as a quorum_only node.
@@ -79,7 +85,7 @@ If the maintenance node fails, the master shards will not have slave shards for 
 To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode on keep_slave_shards
+$ rladmin node <node_id> maintenance_mode on dont_migrate_slave_shards
 ```
 
 ## Turning Maintenance Mode OFF
@@ -105,7 +111,7 @@ If there are multiple snapshots, you can restore a specified snapshot when you t
 To specify a snapshot when you turn maintenance mode off, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
+$ rladmin node <node_id> maintenance_mode off restore_from_snapshot <snapshot_name>
 ```
 
 {{% note %}}
@@ -128,5 +134,5 @@ you can turn maintenance mode off and prevent the shards and endpoints from movi
 To skip shard restoration, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode off skip_shards_restore
+$ rladmin node <node_id> maintenance_mode off dont_restore_shards
 ```

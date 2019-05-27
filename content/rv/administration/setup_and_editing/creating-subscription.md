@@ -100,13 +100,13 @@ database(s). The subscription will show a "Pending" status and take
 approximately ten to fifteen minutes to create. You will receive an
 email once your databases are ready to use.
 
-Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription](https://docs.redislabs.com/staging/Unification-patch-1/rv/administration/setup_and_editing/view-edit-subscription/).
+Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md" >}}).
 
 Once the peering was established please define the relevant routing
 groups on your application account and Redis Cloud Pro account.
 
 For more information and pricing, please go
-[here](https://redislabs.com/pricing/redis-cloud-private/).
+[here](https://redislabs.com/redis-enterprise/pro/pricing/).
 
 <!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
 video: -->

@@ -1,5 +1,5 @@
 ---
-Title: Quick Setup of a Redis on Flash Database
+Title: Redis on Flash Quick Start Tutorial
 description: 
 weight: $weight
 alwaysopen: false

@@ -27,7 +27,7 @@ To encrypt the connection to the database endpoint with TLS, enter the
 contents the client certificate to the **TLS** field.
 
 **Note**: Once TLS encryption is enabled for the database endpoint,
-the database will not accept TLS connections. TLS encryption can
+the database will not accept unsecured connections. TLS encryption can
 significantly impact database throughput and latency.
 
 ### Adding TLS CA signed certificates to the proxy

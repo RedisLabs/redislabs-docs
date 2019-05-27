@@ -4,6 +4,7 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
+markup: "mmark"
 ---
 
 Redis Cloud Pro delivers a cost-effective, fully managed
@@ -15,7 +16,7 @@ Cloud]({{< relref "/rc/_index.md" >}}) and [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) products. With Redis Cloud Pro,
 you can deploy quickly on major public clouds and create Redis
 databases that are fully compatible with the open-source Redis databases
-contained on Redis Labs' cloud infrastrucure.
+contained on Redis Labs' cloud infrastructure.
 
 ## Features
 
@@ -33,7 +34,7 @@ For datasets larger than 50GB, running Redis on Flash delivers high
 throughput with the same sub-millisecond latencies of Redis on RAM,
 while cutting the cost of your cloud resources by over 70%.
 
-### True high-availability
+### True high availability
 
 Achieve high availability for your Redis databases, with continuous
 operation, no human intervention and zero operational effort. Redis

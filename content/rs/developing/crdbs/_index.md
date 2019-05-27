@@ -110,10 +110,10 @@ followed by descriptions:
 
 | **Data Type** | **Support Level** |
 |------------|-----------------|
-| Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#string-data-type-with-counter-value-in-crdbs" >}}) |
 | Geospatial | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
 | Hashes | [Supported]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}); Hash fields are treated as strings or counters |
-| Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#string-data-type-with-counter-value-in-crdbs" >}}) |
 | Lists | [Supported]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
 | Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
 | Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |

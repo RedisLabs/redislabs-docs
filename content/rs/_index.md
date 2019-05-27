@@ -4,7 +4,9 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
+markup: "mmark"
 ---
+
 ## What is Redis Enterprise Software?
 
 Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](https://redislabs.com/why-redis/redis-enterprise/), which is used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.
@@ -60,7 +62,7 @@ failures. Auto-failover is carried out within a few seconds.
 
 {{< youtube qIZuW_8bPtQ >}}
 
-### Built-in data persistence, backups, and replication
+### Built-in data persistence, backups and replication
 
 RS enables the use of Redis AOF (Append-Only File) every second or on
 every write, or (RDB) snapshots of your dataset every 1, 6, or 12 hours
