@@ -353,6 +353,7 @@ section a {
   width: 700px !important;
   margin-left: -5px !important;
   max-width: 100% !important;
+  max-height: 285px;
 }
 
 .home-hero .searchcontainer ::placeholder {
@@ -402,7 +403,8 @@ section a {
 }
 
 .home-options__option__icon img.platforms-icon {
-  width: 97px;
+  width: 90px;
+  margin-top: 6px;
 }
 
 .home-options__option__icon a.opener {
