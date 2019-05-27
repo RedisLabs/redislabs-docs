@@ -54,7 +54,7 @@ You can also query the status of all active tasks or the recently completed task
 
 During the processing of a request, the task moves through these states:
 
-- `received` - Request is received.
+- `received` - Request is received and awaits processing.
 - `processing-in-progress` - A dedicated worker is processing the request.
 - `processing-completed` - Request processing succeeded.
     A `response` segment is included with the task status JSON response.
