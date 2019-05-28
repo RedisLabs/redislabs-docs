@@ -79,6 +79,8 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         1. If you want the module to use a custom configuration,
         click **Add configuration** and enter the custom configuration.
         1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
+        
+        {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
