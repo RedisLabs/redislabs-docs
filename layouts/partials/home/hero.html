@@ -9,17 +9,18 @@
                 placeholder="{{T "Search-placeholder"}}">
         </div>
         <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-        <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>        
+        <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
         <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
 
         <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
     </div>
 </section>
 
-<script>
-    (function() {
-        setTimeout(function() {
-            $('.autocomplete-suggestions ').addClass('home-search-autocomplete');
-        }, 300);
-    })();
-</script>
+<style>
+    .autocomplete-suggestions {
+        width: 700px !important;
+        margin-left: -5px !important;
+        max-width: 100% !important;
+        max-height: 285px;
+    }
+</style>

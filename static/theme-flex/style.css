@@ -349,13 +349,6 @@ section a {
   font-size: 18px;
 }
 
-.autocomplete-suggestions.home-search-autocomplete {
-  width: 700px !important;
-  margin-left: -5px !important;
-  max-width: 100% !important;
-  max-height: 285px;
-}
-
 .home-hero .searchcontainer ::placeholder {
   color: #a7a7a7;
   font-weight: 500;
