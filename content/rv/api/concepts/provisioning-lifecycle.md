@@ -58,7 +58,7 @@ During the processing of a request, the task moves through these states:
 - `processing-in-progress` - A dedicated worker is processing the request.
 - `processing-completed` - Request processing succeeded.
     A `response` segment is included with the task status JSON response.
-    The response includes a `resourceId` for each resource that the request creates, such as Subscription of Database.
+    The response includes a `resourceId` for each resource that the request creates, such as Subscription or Database ID.
 - `processing-error` - Request processing failed.
     A detailed cause or reason is included in the task status JSON response.
 
@@ -71,7 +71,7 @@ A task that reaches the `received` state cannot be cancelled and it will await c
 ### Task Provisioning
 
 When the processing phase succeeds and the task is in the `processing-completed` state, the provisioning phase starts.
-During the provisioning phase, the API orchestrates all of infrastructure, resources, and dependencies required by the request.
+During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request.
 
 The provisioning phase may require several minutes to complete. You can query the resource identifier to track the progress of the provisioning phase.
 
