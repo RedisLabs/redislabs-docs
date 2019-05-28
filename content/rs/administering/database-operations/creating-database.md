@@ -77,7 +77,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
         1. Select the module that you want to add.
         1. If you want the module to use a custom configuration,
-        click **Add configuration** and enter the custom configuration.
+        click **Add configuration** and enter the optional custom configuration.
         1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
         
         {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
