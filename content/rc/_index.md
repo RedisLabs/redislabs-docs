@@ -4,7 +4,6 @@ description:
 weight: 20
 alwaysopen: false
 categories: ["RC Essentials"]
-markup: "mmark"
 ---
 Redis Cloud Essentials is a managed, serverless,
 Database-as-a-Service (DBaaS) offering.

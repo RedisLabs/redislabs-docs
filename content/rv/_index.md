@@ -4,7 +4,6 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
-markup: "mmark"
 ---
 
 Redis Cloud Pro delivers a cost-effective, fully managed
