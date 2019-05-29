@@ -349,12 +349,6 @@ section a {
   font-size: 18px;
 }
 
-.autocomplete-suggestions.home-search-autocomplete {
-  width: 700px !important;
-  margin-left: -5px !important;
-  max-width: 100% !important;
-}
-
 .home-hero .searchcontainer ::placeholder {
   color: #a7a7a7;
   font-weight: 500;
@@ -366,13 +360,13 @@ section a {
   flex-direction: column;
   margin: 0 auto;
   padding-bottom: 6.5rem;
-  width: 1020px;
-}
-
-.home-options-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  width: 1076px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: stretch;  
 }
 
 .home-options__option {
@@ -384,6 +378,10 @@ section a {
   text-align: center;
   width: 327px;
   min-height: 394px;  
+}
+
+.home-options__option:first-of-type {
+  transform: translateY(7px);
 }
 
 .home-options__option hr {
@@ -402,7 +400,8 @@ section a {
 }
 
 .home-options__option__icon img.platforms-icon {
-  width: 97px;
+  width: 90px;
+  margin-top: 6px;
 }
 
 .home-options__option__icon a.opener {
@@ -428,7 +427,7 @@ section a {
   margin: 0 auto;
   padding: 0 10px 0 10px;
   width: 90%;
-  height: 33%;  
+  height: 126px;  
 }
 
 .home-options__option ul {
@@ -467,16 +466,10 @@ section a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1076px){
   .home-options {
-    display: block;
-    text-align: center; 
     width: 85%;
   }
-
-  .home-options-row {
-    display: inline;    
-  }  
 
   .home-options__option {
     display: inline-block;
@@ -526,12 +519,6 @@ section a {
   .home-options__option ul section {
     padding-left: 0;
     padding-right: 0;
-  }
-}
-
-@media screen and (max-width: 450px){
-  .home-options-row {
-    display: grid;
   }
 }
 
