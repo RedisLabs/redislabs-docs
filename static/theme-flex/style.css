@@ -381,7 +381,7 @@ section a {
 }
 
 .home-options__option:first-of-type {
-  transform: translateY(7px);
+  transform: translateY(8px);
 }
 
 .home-options__option hr {
@@ -401,7 +401,8 @@ section a {
 
 .home-options__option__icon img.platforms-icon {
   width: 88px;
-  margin-top: 6px;
+  margin-top: 8px;
+  transform: translateY(1px);
 }
 
 .home-options__option__icon a.opener {
