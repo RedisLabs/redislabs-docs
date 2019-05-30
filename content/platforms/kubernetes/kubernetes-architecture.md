@@ -5,6 +5,7 @@ weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-architecture-overview
+         /rs/concepts/kubernetes-architecture/
 ---
 Redis Labs bases its Kubernetes architecture on the several vital concepts.
 
