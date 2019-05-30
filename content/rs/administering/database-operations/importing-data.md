@@ -70,7 +70,7 @@ Before you specify to import from an SFTP server, make sure that:
 To import from an SFTP server, enter the SFTP server location in the format:
 
 ```src
-sftp://user:password@host:<:custom_port>/path/filename.rdb
+sftp://user:password@host<:custom_port>/path/filename.rdb
 ```
 
 For example: `sftp://username:password@10.1.1.1/home/backups/backup.rdb`
