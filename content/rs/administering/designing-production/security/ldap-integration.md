@@ -114,8 +114,10 @@ cluster.
 
 ### Step 4: Create an RS User to Authenticate with LDAP
 
-To have a user authenticate with LDAP, you can create a new user via
-the REST API like this:
+You can [create an external RS user]({{< relref "/rs/administering/designing-production/security/account-management.md" >}})
+with LDAP authentication in the web UI.
+
+To create an external user with LDAP authentication in the REST API:
 
 ```src
 $ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted \
@@ -123,7 +125,7 @@ $ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted \
 -d "{\"auth_method\": \"external\", \"name\": \"<internal-user-name>\", \"role\": \"<user-role>\"}"
 ```
 
-For the user-role, put in one of the following roles:
+For the user-role, enter one of these roles:
 
 - admin
 - cluster_member
