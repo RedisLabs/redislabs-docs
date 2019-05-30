@@ -55,6 +55,11 @@ After you install RS on the nodes for the new cluster,
 you can run recovery process from the [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
 command-line interface (CLI).
 
+{{% note %}}
+Before you run the recovery process on the machines from the original cluster with Redis processes running on the machine,
+make sure to kill all Redis processes.
+{{% /note %}}
+
 To recover the cluster:
 
 1. To recover the cluster configuration on the first node of the new cluster, from the rladmin CLI run:
@@ -128,15 +133,7 @@ To recover the cluster:
     of the old node. You can also change the value of the rack ID by
     providing a different value and using the override_rack_id flag.
 
-<<<<<<< HEAD
-Example:
-
-```src
-rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecret replace_node 2
-```
-=======
     For example:
->>>>>>> First commit of rewrite
 
     ```src
     rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecret replace_node 2
@@ -147,60 +144,44 @@ rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecr
 
     {{% note %}}
 Make sure that you update your [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
- with the IP addresses of the new nodes.
+with the IP addresses of the new nodes.
     {{% /note %}}
 
-   1. To recover the databases:
-      1. Databases configured with persistent storage are recovered
+1. To see which databases are recoverable, run:
 
-After recovering all of the nodes in the cluster you can now recover the
-databases. Databases that did not have persistence configured are
-recovered with the same configuration they had in the old cluster, but
-will not contain any data. Databases that had persistence configured are
-recovered with the same configuration they had in the old cluster, and
-their entire data intact. The data recovery is carried out from the
-persistence files located in the persistent storage drives, which were
-mounted to the nodes in the old cluster and are now mounted to the new
-nodes.
+    ```src
+    $ rladmin recover list
+    ```
 
-By default, the database recovery process looks for the database
-persistence files in the persistence storage location configured for the
-node. If the persistence files of the databases from the old cluster are
-not stored in the new node's persistence storage location (which is
-recommended for the recovery process), you must first map the recovery
-path of each node to the location of the old persistence files. To do
-so, run the `node <id> recovery_path set` command in rladmin. The
-persistence files for each database are located in the persistent
-storage path of the nodes from the old cluster, under the /redis
-directory.
+    The status for each database can be either ready for recovery or missing files.
+    An indication of missing files in any of the databases can be caused by:
 
-You can view which databases are recoverable by running:
+    - The recovery path of the nodes has not been set appropriately
+    - An issue with the persistence files, such as: no permission to read the files, missing files, or corrupted files
 
-```src
-rladmin recover list
-```
+    If the the command indicates that there are missing files,
+    make sure that the recovery path is set correctly on all of the nodes in the cluster.
+    If that does not resolve the issues, [contact Redis Labs Support](mailto:support@redislabs.com).
 
-The status for each database can be either ready for recovery or missing
-files. An indication of missing files in any of the databases may result
-from either of the following:
+1. After you recover all of the nodes, you can either recover all of the databases at once or each database individually:
 
-- The recovery path of the nodes has not been set appropriately
-- There is some issue with the persistence files (for example: lack of
-    permissions to read the files, missing files, or corrupted files)
+    - To recover all of the databases, run: `rladmin recover all`
+    - To recover a single databases, run: `rladmin recover db <database_id|name>`
 
-First, make sure that the recovery path is set correctly on all of the
-nodes in the cluster. If that does not resolve the issues, [contact our
-support team](mailto:support@redislabs.com).
+    All databases are recovered with the same configuration they had in the old cluster.
+    Databases that did not have persistence configured are recovered without any data,
+    and databases that had persistence configured are recovered with the data from the last persistence state.
 
-To recover all of the databases, run the command `rladmin recover all`.
+    The data recovery is carried out from the persistence files located in the persistent storage drives,
+    which were mounted to the nodes in the old cluster and are now mounted to the new nodes.
 
-To recover the databases one by one, run the command `rladmin recover db <id|name>`.
+    {{% note %}}
+If the persistence files of the databases from the old cluster are not stored in the persistence storage location of the new node,
+you must first map the recovery path of each node to the location of the old persistence files.
+To do this, run the `node <id> recovery_path set` command in rladmin.
+The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
+    {{% /note %}}  
 
-After recovering the databases, you can run `rladmin status`
-to verify that the recovered databases are now active.
+1. To verify that the recovered databases are now active, run: `rladmin status`
 
-**Note**: If you are running the recovery process on the same machines
-that were used for the original cluster and there are still Redis
-processes running on the machine the database recovery process will
-fail. Make sure to kill all Redis processes before attempting to run the
-recovery process.
+After the cluster is recovered, make sure that your redis clients can successfully connect to the cluster.
