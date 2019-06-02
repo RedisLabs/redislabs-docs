@@ -12,7 +12,7 @@ categories: ["RC Pro"]
 When creating or updating a database, you can specify the `periodicBackupPath` parameter. Setting this parameter enables periodic and on-demand backup operations for the specific database. For details on how to define a path for periodic backups, see "[Database Backups
 ](/rv/administration/configuration/backups/)".
 
-The API operation for performing on-demand backup is `/subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
+The API operation for performing on-demand backup is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
 
 On-demand database backup is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
