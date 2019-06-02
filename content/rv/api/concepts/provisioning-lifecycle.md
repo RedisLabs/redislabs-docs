@@ -92,9 +92,9 @@ During the provisioning of a resource, such as a subscription, database, or clou
 - `deleting` - De-provisioning and deletion is in progress.
 - `error` - An error ocurred during the provisioning phase, including the details of the error.
 
-### Concurrent processing limitations
+### Processing limitations
 
-The following limitations apply for asynchronous operations:
+The following limitations apply to asynchronous operations:
 
 * For each account, only one operation is **processed** concurrently. When multiple tasks are sent, they will be received and processed one after the other. 
 * The provisioning phase can be performed in parallel. 
@@ -103,6 +103,7 @@ The following limitations apply for asynchronous operations:
     * When the first task starts processing it will be moved to the `processing-in-progress` state. 
     * When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on.  
     * Typically, the processing phase is much faster than the provisioning phase, and multiple tasks will be in provisioned concurrently.
+
 
     {{% note %}}
 Concurrent processing limitations apply per account. Separate accounts will be processed (and provisioned) separately, each according to its own task processing order.
