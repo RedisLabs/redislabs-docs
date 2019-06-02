@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 
-This articles describes how to create a subscription using `cURL` commands. 
+This articles describes how to create and manage a subscription using `cURL` commands. 
 
 For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
 
@@ -27,12 +27,11 @@ The following Linux shell script sends a `POST /subscriptions` and waits for a s
 
 ### Subscription creation script
 
-First you need jq to be installed on your machine. sudo apt install jq
 You can run the **create subscription** script using a command line `bash path/script-name.sh`.
 
 Below is the sample script that you can use as a reference to calling the API operation to create a subscription. The script contains 3 primary steps that are explained below.
 
-Note that the script relies on the pre-requisite variable to be set (see above).
+Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON conmmand-line processor)
 
 
 ```shell
