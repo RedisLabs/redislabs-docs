@@ -1,4 +1,3 @@
-
 echo "Step 1: Post a request to create a subscription"
 
 TASK_ID=$(curl -s -X POST "https://$HOST/subscriptions" \
