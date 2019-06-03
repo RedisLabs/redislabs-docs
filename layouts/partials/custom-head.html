@@ -1,8 +1,7 @@
-{{ if eq (getenv "HUGO_ENV") "production" }}
+<!-- Test on staging -->
   {{ with .Site.Params.googleTagManager }}
     {{ partial "gtm-head" . | safeHTML }}
   {{ end }}
   {{ with .Site.Params.googleAnalytics }}
     {{ partial "ga-head" . | safeHTML }}
   {{ end }}
-{{ end }}
