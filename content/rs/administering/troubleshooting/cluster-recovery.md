@@ -163,7 +163,7 @@ with the IP addresses of the new nodes.
     make sure that the recovery path is set correctly on all of the nodes in the cluster.
     If that does not resolve the issues, [contact Redis Labs Support](mailto:support@redislabs.com).
 
-1. After you recover all of the nodes, you can either recover all of the databases at once or each database individually:
+1. After you recover all of the nodes, you can either recover the databases all at once or specify the database to recover:
 
     - To recover all of the databases, run: `rladmin recover all`
     - To recover a single databases, run: `rladmin recover db <database_id|name>`
