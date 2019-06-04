@@ -9,8 +9,7 @@ aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
 There are some special considerations that are important when installing
 and running Redis Enterprise Software (RS) on an AWS instances.
 
-Storage Considerations
-======================
+## Storage Considerations
 
 AWS instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
@@ -43,8 +42,7 @@ this feature could be critical to use:
     this case, the provisioned IOPS should be on the nodes used as
     slaves in the cluster.
 
-Instance Types
-==============
+## Instance Types
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
@@ -55,8 +53,7 @@ and some are not. If you are using persistent storage, you should use an
 instance type that is, if disk drain rate matters to your database
 implementation.
 
-Security
-========
+## Security
 
 When configuring the Security Group:
 
