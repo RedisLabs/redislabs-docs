@@ -65,13 +65,13 @@ by performing the following steps:
 1. Extract the package by running the following command in the CLI:
 
     ```src
-    $ tar vxf <tarfile name>
+    tar vxf <tarfile name>
     ```
 
 1. To initiate the installation in the CLI, run the following command:
 
     ```src
-    $ sudo ./install.sh
+    sudo ./install.sh
     ```
 
     Note: You must either be the root user or have access to sudo to the

@@ -38,7 +38,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     telnet on port 8080 from each participating cluster to each of the other participating clusters.
 
     ```src
-    $ telnet <target FQDN> 8080
+    telnet <target FQDN> 8080
     ```
 
 1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
@@ -113,13 +113,13 @@ redis-cli is a simple command-line tool to interact with redis database.
 1. To switch your context into the RS container of node 1 in cluster 1, run:
 
     ```src
-    $ docker exec -it rp1_node1 bash
+    docker exec -it rp1_node1 bash
     ```
 
 1. To use redis-cli on port 12000, run:
 
     ```src
-    $ redis-cli -p 12000
+    redis-cli -p 12000
     ```
 
 1.  Store and retrieve a key in the database to test the connection with these
@@ -164,7 +164,7 @@ running the container.
 1. In the command-line terminal, create a new file called "redis_test.py"
 
     ```src
-    $ vi redis_test.py
+    vi redis_test.py
     ```
 
 1. Paste this code into the "redis_test.py" file.
@@ -190,7 +190,7 @@ running the container.
 1. To run the "redis_test.py" application, run:
 
     ```src
-    $ python redis_test.py
+    python redis_test.py
     ```
 
     If the connection is successful, the output of the application looks like:

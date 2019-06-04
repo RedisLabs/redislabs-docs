@@ -13,13 +13,13 @@ system CLI:
 - In Ubuntu:
 
     ```src
-    $ sudo apt-get purge redislabs
+    sudo apt-get purge redislabs
     ```
 
 - In CentOS / RHEL:
 
     ```src
-    $ sudo yum remove redislabs
+    sudo yum remove redislabs
     ```
 
 After you confirm the uninstallation, the uninstall process runs and

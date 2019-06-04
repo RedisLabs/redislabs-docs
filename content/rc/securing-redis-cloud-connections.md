@@ -65,7 +65,7 @@ below) instead of your resource's endpoint.
 1. Install stunnel:
 
     ```src
-    $ apt-get install stunnel
+    apt-get install stunnel
     ```
 
 1. Copy all certificate files to /etc/stunnel.
@@ -89,7 +89,7 @@ below) instead of your resource's endpoint.
 1. Start the stunnel service:
 
     ```src
-    $ service stunnel4 start
+    service stunnel4 start
     ```
 
 ### CentOS 6.5
@@ -97,7 +97,7 @@ below) instead of your resource's endpoint.
 1. Install stunnel:
 
     ```src
-    $ yum install stunnel
+    yum install stunnel
     ```
 
 1. Copy all certificate files to `/etc/stunnel`.
