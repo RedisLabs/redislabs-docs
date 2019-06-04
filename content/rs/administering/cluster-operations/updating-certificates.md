@@ -30,7 +30,7 @@ future sessions.{{% /note %}}
 
     ```bash
 
-    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": <key>, "certificate": <cert> }' https://<cluster_address>:9443/v1/cluster/update_cert
+    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
 
     ```
  
