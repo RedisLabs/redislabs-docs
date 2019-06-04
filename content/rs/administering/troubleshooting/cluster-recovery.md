@@ -33,6 +33,7 @@ Before you start cluster recovery, you must:
     - At least the same memory available on each node
     - The same [RS version]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
     - No cluster configuration (Do not setup the cluster nodes)
+
     The cluster recovery may fail if these requirements are not met.
 - Mount the persistent storage drives of the old cluster to the new nodes.
     These drives contain the cluster configuration backup files and
@@ -49,7 +50,7 @@ If you decide to use the persistent storage drives of the old cluster nodes,
 make sure that you backup all files on the old persistent storage drives to another location.
 {{% /note %}}
 
-## Running the Cluster Recovery Process
+## Recovering the Cluster and Databases
 
 After you install RS on the nodes for the new cluster,
 you can run recovery process from the [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
@@ -68,27 +69,27 @@ To recover the cluster:
     cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
     ```
 
-    Where:
+    {{% expand "Command syntax" %}}
+`<filename>` - The full path of the old cluster configuration file in the persistent storage.
+The cluster configuration file is /css/ccs-redis.rdb.
+The file exists on the persistent storage drive of all nodes and all copies are identical.
 
-    `<filename>` - The full path of the old cluster configuration file in the persistent storage.
-    The cluster configuration file is /css/ccs-redis.rdb.
-    The file exists on the persistent storage drive of all nodes and all copies are identical.
+`<node_uid>` - The id of the node, in this case `1`.
 
-    `<node_uid>` - The id of the node, in this case `1`.
+`<persistent_path>` (optional) - The location of the [persistent storage ]
+({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+in the new node.
 
-    `<persistent_path>` (optional) - The location of the [persistent storage ]
-    ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
-    in the new node.
+`<ephemeral_path>` (optional) - The location of the [ephemeral storage]
+({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+in the new node.
 
-    `<ephemeral_path>` (optional) - The location of the [ephemeral storage]
-    ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
-    in the new node.
-
-    `<rack_id>` - optional. If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
-    was enabled in the cluster,
-    you can use this parameter to override the rack ID value that was
-    set for the node with ID 1, with a new rack ID. Otherwise, the node
-    will get the same rack ID as the original node.
+`<rack_id>` - optional. If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
+was enabled in the cluster,
+you can use this parameter to override the rack ID value that was
+set for the node with ID 1, with a new rack ID. Otherwise, the node
+will get the same rack ID as the original node.
+    {{% /expand %}}
 
     For example:
 
@@ -106,32 +107,32 @@ To recover the cluster:
         username <username> password <password> replace_node <node_id>
     ```
 
-    Where
+    {{% expand "Command syntax" %}}
+`nodes` - The IP address of a node in the cluster that this node is joining.
 
-    `nodes` - The IP address of a node in the cluster that this node is joining.
+`name` - The [FQDN name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+of the cluster this node is joining.
 
-    `name` - The [FQDN name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
-    of the cluster this node is joining.
+`username` - The email address of the cluster administrator.
 
-    `username` - The email address of the cluster administrator.
+`password` - The password of the cluster administrator.
 
-    `password` - The password of the cluster administrator.
+`replace_node` - The ID of the node that this node replaces from the old cluster.
 
-    `replace_node` - The ID of the node that this node replaces from the old cluster.
+`persistent_path` (optional) - The location of the [persistent storage]
+({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+in the new node.
 
-    `persistent_path` (optional) - The location of the [persistent storage]
-    ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
-    in the new node.
+`ephemeral_path` (optional) - The location of the [ephemeral storage]
+({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+in the new node.
 
-    `ephemeral_path` (optional) - The location of the [ephemeral storage]
-    ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
-    in the new node.
-
-    `rack_id` (optional) - If [rack-zone awareness]
-    ({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
-    use this parameter to set the rack ID to be the same as the rack ID
-    of the old node. You can also change the value of the rack ID by
-    providing a different value and using the override_rack_id flag.
+`rack_id` (optional) - If [rack-zone awareness]
+({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
+use this parameter to set the rack ID to be the same as the rack ID
+of the old node. You can also change the value of the rack ID by
+providing a different value and using the override_rack_id flag.
+    {{% /expand %}}
 
     For example:
 
