@@ -120,7 +120,7 @@ by performing the following steps:
         should run:
 
         ```src
-        $ sudo /opt/redislabs/sbin/prepare_flash.sh
+        sudo /opt/redislabs/sbin/prepare_flash.sh
         ```
 
         This command finds all the unformatted disks, RAIDs and mounts
@@ -128,7 +128,7 @@ by performing the following steps:
         You can verify the configuration by running:
 
         ```src
-        $ sudo lsblk
+        sudo lsblk
         ```
 
 1. Open a web browser and go to the Web UI to complete the cluster
