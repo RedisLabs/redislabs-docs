@@ -122,7 +122,7 @@ redis-cli is a simple command-line tool to interact with redis database.
     redis-cli -p 12000
     ```
 
-1.  Store and retrieve a key in the database to test the connection with these
+1. Store and retrieve a key in the database to test the connection with these
     commands:
 
     - `set key1 123`
