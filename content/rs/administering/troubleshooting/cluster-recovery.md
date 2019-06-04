@@ -17,12 +17,15 @@ These files are stored in the [persistence storage location]
 
 The cluster recovery process includes:
 
-1. Install RS on the nodes of the new cluster.
-1. Recover the cluster configuration on the first node in the new cluster.
-1. Join the remaining nodes to the new cluster.
-1. Restore the database configurations.
-1. If [data persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}) was configured,
-    recover the data into the databases.
+1. Recover the cluster.
+   1. Install RS on the nodes of the new cluster.
+   1. Mount to the new nodes the storage that holds the cluster configuration and persistent storage of the original cluster.
+   1. Recover the cluster configuration on the first node in the new cluster.
+   1. Join the remaining nodes to the new cluster.
+1. Recover the databases.
+   1. Identify recoverable databases.
+   1. Restore the database configurations.
+   1. Verify that the databases are active.
 
 ## Prerequisites
 
@@ -155,10 +158,10 @@ with the IP addresses of the new nodes.
     ```
 
     The status for each database can be either ready for recovery or missing files.
-    An indication of missing files in any of the databases can be caused by:
+    An indication of missing files in any of the databases can result from:
 
-    - The recovery path of the nodes has not been set appropriately
-    - An issue with the persistence files, such as: no permission to read the files, missing files, or corrupted files
+    - The recovery path of the nodes not set appropriately
+    - Cannot read the persistence files, such as: no permission to read the files, missing files, or corrupted files
 
     If the the command indicates that there are missing files,
     make sure that the recovery path is set correctly on all of the nodes in the cluster.
@@ -169,15 +172,17 @@ with the IP addresses of the new nodes.
     - To recover all of the databases, run: `rladmin recover all`
     - To recover a single databases, run: `rladmin recover db <database_id|name>`
 
-    All databases are recovered with the same configuration they had in the old cluster.
-    Databases that did not have persistence configured are recovered without any data,
-    and databases that had persistence configured are recovered with the data from the last persistence state.
-
-    The data recovery is carried out from the persistence files located in the persistent storage drives,
+    All databases are recovered with the same configuration they had in the old cluster. The data recovery is carried out from the persistence files located in the persistent storage drives,
     which were mounted to the nodes in the old cluster and are now mounted to the new nodes.
 
+    - If AOF or snapshot is available, the data is restored from the AOF or snapshot. CRDB instances are then synced with the other participating clusters to update with data changed since the AOF or snapshot (fast CRDB sync).
+
+        If AOF or snapshot is available for a CRDB but you want to get all of the data from the other participating clusters (slow CRDB sync), use: recover db only_configuration <db_name>
+
+    - If AOF or snapshot is not available, the database is restored empty. CRDB instances are synced with the other participating clusters (slow CRDB sync).
+
     {{% note %}}
-If the persistence files of the databases from the old cluster are not stored in the persistence storage location of the new node,
+If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
 you must first map the recovery path of each node to the location of the old persistence files.
 To do this, run the `node <id> recovery_path set` command in rladmin.
 The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
