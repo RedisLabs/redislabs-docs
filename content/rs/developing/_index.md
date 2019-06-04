@@ -1,6 +1,6 @@
 ---
 Title: Developing for Redis Enterprise
-description: 
+description:
 weight: 60
 alwaysopen: false
 categories: ["RS"]

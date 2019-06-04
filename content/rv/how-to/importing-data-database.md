@@ -1,6 +1,6 @@
 ---
 Title: Importing Data Into Your Database
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]

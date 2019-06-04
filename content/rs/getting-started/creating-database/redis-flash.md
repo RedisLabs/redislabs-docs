@@ -1,6 +1,6 @@
 ---
 Title: Redis on Flash Quick Start Tutorial
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -31,14 +31,14 @@ site](https://app.redislabs.com/#/sign-up/software?direct=true). Once
 you have the bits on a Linux based OS, you need to untar the image
 
 ```src
-$ tar -vxf <downloaded tar file name>
+tar -vxf <downloaded tar file name>
 ```
 
 Once the tar command completes, you will find a new install.sh script in
 the current directory.
 
 ```src
-$ sudo ./install.sh -y
+sudo ./install.sh -y
 ```
 
 ### Docker-based installation
@@ -47,7 +47,7 @@ If you prefer, you can also simply run the Redis Enterprise Software
 Docker container on Windows, macOS, and Linux
 
 ```src
-$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
+docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
 ## Step 2: Setup a Cluster and Enable Redis on Flash
@@ -75,7 +75,7 @@ email for the login and a password.
 
 ![RP-SetupScreen4](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
 
-Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
+Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
 ## Step 3: Create a Database
@@ -131,7 +131,7 @@ In the command-line Terminal, create a new file called
 **redis_test.py**
 
 ```src
-$ vi redis_test.py
+vi redis_test.py
 ```
 
 Paste the following into a file named **redis_test.py**.
@@ -150,7 +150,7 @@ Run "redis_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
 ```src
-$ python redis_test.py
+python redis_test.py
 ```
 
 The output should look like the following screen if the connection is

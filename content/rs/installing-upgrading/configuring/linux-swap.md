@@ -1,6 +1,6 @@
 ---
 Title: Configuring Swap in Linux for Redis Enterprise Software (RS)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

@@ -87,7 +87,7 @@ a service in PCF Apps Manager.
     choices of Services.
 
     ![apps_manager_add_service-1](/images/rs/apps_manager_add_service-1.png?width=800&height=635)
-    
+
 1. Select a plan from the list for the proper sized cluster for Redis
     Enterprise and then click the **Select Plan** button.
 1. Type in the name of the service as **Instance Name**. Click the
@@ -97,9 +97,9 @@ You now have a Redis database on Redis Enterprise Software!
 
 ## Backup and Restore
 
-You must use the BOSH Backup and Restore (BBR) command-line tool 
-to backup and restore your PCF deployment. These backup and restore instructions 
-apply specifically to your Redis Enterprise for PCF deployment. For more about 
+You must use the BOSH Backup and Restore (BBR) command-line tool
+to backup and restore your PCF deployment. These backup and restore instructions
+apply specifically to your Redis Enterprise for PCF deployment. For more about
 deployment backup and restore, see the [PCF documentation](https://docs.pivotal.io/pivotalcf/customizing/backup-restore/index.html).
 
 ### Installing the BBR Command-Line Tool
@@ -125,9 +125,9 @@ Pivotal recommends that you run a daily backup.
 
 Before you configure a backup process you must have:
 
-- BBR user credentials - Find the values for `bbr_user` and `bbr_user_pass` in the Ops Manager file: 
+- BBR user credentials - Find the values for `bbr_user` and `bbr_user_pass` in the Ops Manager file:
 https://<host>/api/v0/deployed/director/credentials/uaa_bbr_client_credentials
-- Deployment name - On the Ops Manager, find the deployment name that begins 
+- Deployment name - On the Ops Manager, find the deployment name that begins
     with `redis-enterprise-` in the output of the command:
 
     ```src
@@ -136,8 +136,8 @@ https://<host>/api/v0/deployed/director/credentials/uaa_bbr_client_credentials
 
 To backup your Redis Enterprise for PCF deployment:
 
-1. Run the backup command: 
-   
+1. Run the backup command:
+
     ```src
     BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> releases/bbr deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> backup
     ```
@@ -158,7 +158,7 @@ To backup your Redis Enterprise for PCF deployment:
 To restore a Redis Enterprise for PCF deployment:
 
 1. On the new PCF Foundation, install a redis-enterprise tile with the same configuration of the original tile.
-   
+
     Caution: A different cluster name or number of machines than the original tile causes errors in the restore.
 
 1. In the cluster configuration tab, check the **Recovery Mode** checkbox and click **Apply change**.
@@ -170,21 +170,21 @@ To restore a Redis Enterprise for PCF deployment:
     ```src
     BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> restore --artifact-path=<archive_path>
     ```
-    
+
     For example:
-    
+
     `BOSH_CLIENT_SECRET=sSvt2-_ykNHOX_0BW1_LImYlJdVEMDew bbr deployment --debug --target 10.0.16.5 --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username bbr_client --deployment redis-enterprise-4614f7015e079299ba4c restore --artifact-path=redis-enterprise-0b094c96bab6f58bb133_20180326T125355Z`
 
 1. Connect to one of the cluster machines with SSH.
 1. To see that all of the nodes are connected, run: `rladmin status extra all`
 1. On each node, set the [cluster recovery]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) source path to the cluster backup file:
-    
+
     ```src
     rladmin node <node_id> recovery_path set <import_path>
     ```
-    
+
     For example:
-    
+
     `rladmin node 1 recovery_path set /var/vcap/store/redis/redis/`
 
     `rladmin node 2 recovery_path set /var/vcap/store/redis/redis/`
@@ -192,7 +192,7 @@ To restore a Redis Enterprise for PCF deployment:
     `rladmin node 3 recovery_path set /var/vcap/store/redis/redis/`
 
 1. To verify that database recovery is ready, run: `rladmin recover list`
-    
+
     Make sure there are no errors in the command output.
 
 1. To start database recovery, run:

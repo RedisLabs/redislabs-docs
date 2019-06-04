@@ -1,6 +1,6 @@
 ---
 Title: Creating a Cloud Account
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
@@ -28,4 +28,4 @@ Please enter the following details:
 1. AWS Console password - Redis Cloud Pro AWS UI console user's password
 1. IAM Users sign-in link - This is the link you use to log into the
     AWS console (e.g.
-    https://<YOUR-ACCOUNT-ID-WITHOUT-HYPHENS>.signin.aws.amazon.com/console)
+    https://\<YOUR-ACCOUNT-ID-WITHOUT-HYPHENS>.signin.aws.amazon.com/console)

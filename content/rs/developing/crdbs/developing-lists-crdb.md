@@ -1,6 +1,6 @@
 ---
 Title: Developing with Lists in a CRDB
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

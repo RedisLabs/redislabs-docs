@@ -10,7 +10,7 @@ Just to get you started, here is a simple explanation of how to contribute.
 ## Getting to the Source
 
 1. Find a page with something to edit.
-  
+
     Contributions can be anything from a simple typo or grammar error to an entire How To guide.
 
 1. On that page, click **Edit on GitHub**.

@@ -1,6 +1,6 @@
 ---
 Title: Redis on Flash
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

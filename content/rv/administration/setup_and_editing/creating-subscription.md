@@ -1,6 +1,6 @@
 ---
 Title: Creating a Subscription
-description: 
+description:
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
@@ -10,7 +10,6 @@ provider (and respective region, e.g. "AWS - US-West-2"), architectural
 model, memory limit and feature set. You can have multiple subscriptions
 in different providers and regions, all easily managed from a single
 console.
-
 
 ## Create a New Subscription
 

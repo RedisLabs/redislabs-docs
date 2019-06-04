@@ -1,6 +1,6 @@
 ---
 Title: DNS Setup
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -60,43 +60,40 @@ The FQDN must always comply with the IETF's [RFC
 952](http://tools.ietf.org/html/rfc952) standard and section 2.1 of the
 [RFC 1123](http://tools.ietf.org/html/rfc1123) standard.
 
-## Naming the cluster FQDN
+## Naming the Cluster FQDN
 
 You have two options for naming the cluster FQDN:
 
-### 1. DNS
+### DNS
 
 Use this option if you already have your own domain, would like to make
 the cluster part of your domain and are able to update the DNS.
 
-Choosing this option requires you to make sure that the cluster and at
-least one node (preferably all nodes) in the cluster are correctly
-configured in the DNS with the appropriate NS entries.
+1. Make sure that the cluster and at least one node (preferably all nodes) in the cluster are correctly
+    configured in the DNS with the appropriate NS entries.
 
-#### For example:
+    For example:
 
-- Your domain is: mydomain.com
-- You would like to name the Redis Enterprise Software cluster:
-    redislabscluster
-- You have two nodes in the cluster:
-  - node1 with IP 1.1.1.1
-  - node2 with IP 2.2.2.2
+        - Your domain is: mydomain.com
+        - You would like to name the Redis Enterprise Software cluster:
+            redislabscluster
+        - You have two nodes in the cluster:
+           - node1 with IP 1.1.1.1
+           - node2 with IP 2.2.2.2
 
-#### Then
+1. In the FQDN field, enter the value: redislabscluster.mydomain.com, and
+    add the following records in the DNS for mydomain.com:
 
-In the FQDN field, enter the value: redislabscluster.mydomain.com, and
-add the following records in the DNS for mydomain.com:
+    ```src
+    redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com
+                                                node2.redislabscluster.mydomain.com
 
-```src
-  redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com
-                                             node2.redislabscluster.mydomain.com
+    node1.redislabscluster.mydomain.com   A    1.1.1.1
 
-  node1.redislabscluster.mydomain.com   A    1.1.1.1
+    node2.redislabscluster.mydomain.com   A    2.2.2.2
+    ```
 
-  node2.redislabscluster.mydomain.com   A    2.2.2.2
-```
-
-### 2. Zero-configuration using mDNS (Development option only)
+### Zero-configuration using mDNS (Development option only)
 
 Note: mDNS is not supported for use with production environments and
 should only be used in dev/test environments.
@@ -112,14 +109,9 @@ nodes.
 Configuring the cluster to support mDNS requires you to assign the
 cluster a .local name.
 
-#### For example:
+For example, if you want to name the Redis Enterprise Software cluster: redislabscluster
 
-You would like to name the Redis Enterprise Software cluster:
-redislabscluster
-
-#### Then
-
-In the FQDN field, enter the value redislabscluster.local
+1. In the FQDN field, enter the value: redislabscluster.local
 
 When using the DNS or mDNS option, failover can be done transparently
 and the DNS is updated automatically to point to the IP of the new

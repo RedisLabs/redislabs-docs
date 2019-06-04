@@ -1,6 +1,6 @@
 ---
 Title: Data Eviction Policies
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

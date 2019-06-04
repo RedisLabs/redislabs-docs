@@ -1,6 +1,6 @@
 ---
 Title: Getting Started with Redis Enterprise CRDBs (conflict-free replicated databases)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 aliases: /rs/getting-started/creating-database/crdbs/
@@ -15,7 +15,7 @@ clusters for test and development environments. Here are the steps:
 - Step 3: Create a new Redis Enterprise CRDB
 - Step 4: Test connectivity to the CRDB
 
-To run a CRDB on installations from the [RS download package]({{< relref "/rs/getting-started/quick-setup.md" >}}), 
+To run a CRDB on installations from the [RS download package]({{< relref "/rs/getting-started/quick-setup.md" >}}),
 setup two RS installations and continue from Step 2.
 
 Note: This getting started guide is for development or demonstration environments.
@@ -27,15 +27,15 @@ To setup CRDB in a production environment, use the instuctions for
 To spin up two RS containers, run these commands:
 
 ```src
-$ docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
+docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
 ```src
-$ docker run -d --cap-add sys_resource -h rp2_node1 --name rp2_node1 -p 8445:8443 -p 9445:9443 -p 12002:12000 redislabs/redis
+docker run -d --cap-add sys_resource -h rp2_node1 --name rp2_node1 -p 8445:8443 -p 9445:9443 -p 12002:12000 redislabs/redis
 ```
 
-The **-p** options map the web UI port (8443), REST API port (9443), and 
-database access port differently for each container to make sure that all 
+The **-p** options map the web UI port (8443), REST API port (9443), and
+database access port differently for each container to make sure that all
 containers can be accessed from the host OS that is running the containers.
 
 ## Step 2: Setup Two Clusters
@@ -44,7 +44,7 @@ containers can be accessed from the host OS that is running the containers.
 host machine to see the Redis Enterprise Software web console. Simply
 click the **Setup** button on the page to get started.
 
-    Note: Depending on your browser, you may see a certificate error. Continue to 
+    Note: Depending on your browser, you may see a certificate error. Continue to
     the website.
 
     ![rs-setup](/images/rs/rs-setup.png)
@@ -63,7 +63,7 @@ email for the login and a password.
 
     ![set-admin-credentials](/images/rs/set-admin-credentials.png)
 
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
     certificate on the node, and proceed through the browser warning.
 
 Repeat the same operations for cluster 2 with these differences:
@@ -83,7 +83,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
 1. In **create database**, click the **show advanced option** and:
-    
+
     1. For the **database name**, enter: `database1`
     1. For the **endpoint port number**, enter: `12000`
     1. In the **participating clusters** list, add the address and admin credentials for:
@@ -92,14 +92,14 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     <!-- Also in create-crdb.md -->
     1. In the **Database clustering** option, either:
 
-        - Make sure the Database clustering is enabled and select the number of shards 
-        that you want to have in the database. When database clustering is enabled, 
-        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}). 
-        You can increase the number of shards in the database at any time. 
-        - Clear the **Database clustering** option to use only one shard and so 
+        - Make sure the Database clustering is enabled and select the number of shards
+        that you want to have in the database. When database clustering is enabled,
+        databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+        You can increase the number of shards in the database at any time.
+        - Clear the **Database clustering** option to use only one shard and so
         that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         limitations do not apply.
-        
+
         Note: You cannot enable or disable database clustering after the CRDB is created.
 
 1. Click **Activate** to create your CRDB.
@@ -107,8 +107,8 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     ![crdb-activate](/images/rs/crdb-activate.png)
 
     <!-- Also in getting-started-docker.md -->
-    Note: If you cannot activate the database because of a memory limitation, 
-    make sure that Docker has enough memory allocated in the Advanced section 
+    Note: If you cannot activate the database because of a memory limitation,
+    make sure that Docker has enough memory allocated in the Advanced section
     of Docker Settings.
 
 1. After the CRDB is created, you can now visit each cluster 1 at
@@ -144,18 +144,18 @@ redis-cli is a simple command-line tool to interact with redis database.
 1. To switch your context into the RS container of node 1 in cluster 1, run:
 
     ```src
-    $ docker exec -it rp1_node1 bash
+    docker exec -it rp1_node1 bash
     ```
 
 1. To use redis-cli on port 12000, run:
 
     ```src
-    $ redis-cli -p 12000
+    redis-cli -p 12000
     ```
 
-1.  Store and retrieve a key in the database to test the connection with these 
+1. Store and retrieve a key in the database to test the connection with these
     commands:
-    
+
     - `set key1 123`
     - `get key1`
 
@@ -167,13 +167,15 @@ redis-cli is a simple command-line tool to interact with redis database.
     127.0.0.1:12000> get key1
     "123"
     ```
-1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
+
+1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the
    RS container of node 1 in cluster 1.
-1. To see that the key replicated to cluster 2, repeat the steps to switch your 
-   context into the RS container of node 1 in cluster 2, run the redis-cli and 
+1. To see that the key replicated to cluster 2, repeat the steps to switch your
+   context into the RS container of node 1 in cluster 2, run the redis-cli and
    retrieve key1.
 
     The output of the commands looks like this:
+
     ```src
     $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000
@@ -186,7 +188,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and 
+Note: Before you continue, you must have python and
 [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
 running the container.
@@ -194,12 +196,12 @@ running the container.
 1. In the command-line terminal, create a new file called "redis_test.py"
 
     ```src
-    $ vi redis_test.py
+    vi redis_test.py
     ```
 
 1. Paste this code into the "redis_test.py" file.
 
-    This application stores a value in key1 in cluster 1, gets that value from 
+    This application stores a value in key1 in cluster 1, gets that value from
     key1 in cluster 1, and gets the value from key1 in cluster 2.
 
     ```py
@@ -220,7 +222,7 @@ running the container.
 1. To run the "redis_test.py" application, run:
 
     ```src
-    $ python redis_test.py
+    python redis_test.py
     ```
 
     If the connection is successful, the output of the application looks like:

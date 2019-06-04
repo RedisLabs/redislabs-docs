@@ -1,6 +1,6 @@
 ---
 Title: Creating a Redis Cloud Essentials Subscription
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

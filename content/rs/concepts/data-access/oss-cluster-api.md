@@ -1,6 +1,6 @@
 ---
 Title: OSS Cluster API Architecture
-description: 
+description:
 weight: $weight
 alwaysopen: false
 aliases: /rs/concepts/data-access/cluster-api/
@@ -21,7 +21,7 @@ needs to go directly to another node in the cluster to interact directly
 with the data for the query. This process can dramatically reduce access
 times and latency, but also offers near-linear scalability.
 
-When combined with the other RS high availability features, 
+When combined with the other RS high availability features,
 this solution provides high performance and low latency, all
 while giving applications the ability to cope with topology
 changes, including add node, remove node, and node failover.

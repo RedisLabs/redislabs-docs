@@ -1,6 +1,6 @@
 ---
 Title: Installing the Setup Package
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
@@ -46,11 +46,11 @@ instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}
     before running RS installation.
 
     {{% expand "Example steps to resolve the port 53 conflict:" %}}
- 1. Run: `sudo vi /etc/systemd/resolved.conf`
- 1. Add `DNSStubListener=no` as the last line in the file and save the file.
- 1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
- 1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
- 1. Run: `sudo service systemd-resolved restart`
+1. Run: `sudo vi /etc/systemd/resolved.conf`
+1. Add `DNSStubListener=no` as the last line in the file and save the file.
+1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
+1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
+1. Run: `sudo service systemd-resolved restart`
     {{% /expand %}}
 
 ## Installation Procedure
@@ -65,13 +65,13 @@ by performing the following steps:
 1. Extract the package by running the following command in the CLI:
 
     ```src
-    $ tar vxf <tarfile name>
+    tar vxf <tarfile name>
     ```
 
 1. To initiate the installation in the CLI, run the following command:
 
     ```src
-    $ sudo ./install.sh
+    sudo ./install.sh
     ```
 
     Note: You must either be the root user or have access to sudo to the
@@ -83,7 +83,7 @@ by performing the following steps:
     1. The install finishes up with rlcheck make testing the
         installation out and confirming the installation passed.
 
-        ```
+        ```src
         2017-04-24 10:54:12 [!] Installation is complete!
         2017-04-24 10:54:12 [?] Would you like to run rlcheck to
         verify proper configuration? [Y/N]? Y
@@ -120,7 +120,7 @@ by performing the following steps:
         should run:
 
         ```src
-        $ sudo /opt/redislabs/sbin/prepare_flash.sh
+        sudo /opt/redislabs/sbin/prepare_flash.sh
         ```
 
         This command finds all the unformatted disks, RAIDs and mounts
@@ -128,7 +128,7 @@ by performing the following steps:
         You can verify the configuration by running:
 
         ```src
-        $ sudo lsblk
+        sudo lsblk
         ```
 
 1. Open a web browser and go to the Web UI to complete the cluster

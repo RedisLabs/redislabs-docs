@@ -1,6 +1,6 @@
 ---
 Title: Developing Applications with RedisGraph
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -10,12 +10,12 @@ RedisGraph is the first queryable [Property Graph](https://github.com/opencypher
 Primary features:
 
 - Based on the [Property Graph Model](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc)
-  - Nodes (vertices) and Relationships (edges) that may have attributes
-  - Nodes that can be labeled
-  - Relationships have a relationship type
+    - Nodes (vertices) and Relationships (edges) that may have attributes
+    - Nodes that can be labeled
+    - Relationships have a relationship type
 - Graphs represented as sparse adjacency matrices
 - [Cypher](http://www.opencypher.org/) as query language
-  - Cypher queries translated into linear algebra expressions
+    - Cypher queries translated into linear algebra expressions
 
 ## Developing with RedisGraph
 
@@ -24,7 +24,7 @@ Before using RedisGraph, you should familiarize yourself with its commands and s
 
 After you load RedisGraph, you can interact with it using redis-cli.
 
-Here we'll quickly create a small graph representing a subset of motorcycle riders and teams 
+Here we'll quickly create a small graph representing a subset of motorcycle riders and teams
 taking part in the MotoGP league. Once created, we'll start querying our data.
 
 ### With `redis-cli`

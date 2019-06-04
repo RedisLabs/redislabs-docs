@@ -1,6 +1,6 @@
 ---
 Title: FAQs
-description: 
+description:
 weight: 70
 alwaysopen: false
 categories: ["RS"]
@@ -114,14 +114,14 @@ The number of databases is unlimited. The limiting factor is the
 available memory in the cluster, and the number of shards in the
 subscription.
 
-Note that the impact of the specific database configuration on the 
+Note that the impact of the specific database configuration on the
 number of shards it consumes. For example:
 
-- Enabling database replication, without enabling database clustering, 
+- Enabling database replication, without enabling database clustering,
   creates two shards: a master shard and a slave shard.
-- Enabling database clustering creates as many database shards as you 
+- Enabling database clustering creates as many database shards as you
   configure.
-- Enabling both database replication and database clustering creates 
+- Enabling both database replication and database clustering creates
   double the number of database shards you configure.
 {{% /expand%}}
 
@@ -165,6 +165,7 @@ Run the following:
 kubectl get rec
 kubectl describe rec my-cluster-name
 ```
+
 {{% /expand%}}
 
 {{%expand "How is using Redis Enterprise Operator superior to using Helm Charts?" %}}
@@ -181,8 +182,9 @@ While Helm Charts help automate multi-resource deployments, they do not provide 
 Create a port forwarding rule to expose the cluster UI port. For example, when the default port 8443 is used, run:
 
 ```src
-$ kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:8443
+kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:8443
 ```
+
 Connect to the UI by pointing your browser to `https://localhost:8443`
 {{% /expand%}}
 
@@ -200,8 +202,9 @@ To retrieve, first, find the secret by retrieving secrets and locating one of ty
 For example, run:
 
 ```src
-$ kubectl get secrets
+kubectl get secrets
 ```
+
 A possible response may look like this:
 
 | NAME | TYPE | DATA | AGE |
@@ -211,8 +214,9 @@ A possible response may look like this:
 To retrieve the secret run:
 
 ```src
-$ kubectl get secret redis-enterprise-cluster -o yaml
+kubectl get secret redis-enterprise-cluster -o yaml
 ```
+
 A possible response may look like this:
 
 ```yaml
@@ -264,8 +268,9 @@ type: Opaque
 ```
 
 Next, decode, for example, the password field. Run:
+
 ```src
-   $ echo "Q2h5N1BBY28=" | base64 –-decode
+echo "Q2h5N1BBY28=" | base64 –-decode
 ```
 
 {{% /expand%}}

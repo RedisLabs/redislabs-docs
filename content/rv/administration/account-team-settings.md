@@ -1,6 +1,6 @@
 ---
 Title: Account and Team Settings
-description: 
+description:
 weight: 40
 alwaysopen: false
 categories: ["RC Pro"]

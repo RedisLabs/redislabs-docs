@@ -1,6 +1,6 @@
 ---
 Title: Geo-Distributed Active-Active Redis Applications with Conflict-free Replicated Databases (CRDB)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

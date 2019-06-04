@@ -1,6 +1,6 @@
 ---
 Title: Developing with Sets in a CRDB
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

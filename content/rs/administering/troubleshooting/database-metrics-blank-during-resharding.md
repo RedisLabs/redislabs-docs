@@ -1,6 +1,6 @@
 ---
 Title: Database metrics are blank during resharding
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

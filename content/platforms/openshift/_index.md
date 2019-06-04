@@ -18,22 +18,22 @@ Prerequisites:
 ## Step 1: Login
 
 - Log in to your OpenShift account as a super admin (so you have access to all the default projects).
-- Create a new project, fill in the name and other details for the project and hit “Create.”  
-  
+- Create a new project, fill in the name and other details for the project and hit “Create.”
+
   ![getting-started-kubernetes-openshift-image1]( /images/rs/getting-started-kubernetes-openshift-image1.png )
 
-- Click on “admin” (upper right corner) and then “Copy Login.”  
+- Click on “admin” (upper right corner) and then “Copy Login.”
 
   ![getting-started-kubernetes-openshift-image4]( /images/rs/getting-started-kubernetes-openshift-image4.png )
 
 - Paste the *login* command into your shell; it should look something like this:
 
-  oc login https://your-cluster.acme.com –token=your$login$token  
+  oc login https://your-cluster.acme.com –token=your$login$token
 
 - Next, verify that you are using the newly created project. Type:
 
-```src 
- $ oc login https://your-cluster.acme.com –token=your$login$token  
+```src
+ $ oc login https://your-cluster.acme.com –token=your$login$token
 ```
 
 This will shift to your project rather than the default project (you can verify the project you’re currently using with the *oc project* command).
@@ -58,15 +58,16 @@ The scc ([Security Context Constraint](https://docs.openshift.com/enterprise/3.0
 
 Apply the file:
 ```src
- $ oc apply -f scc.yaml  
+ $ oc apply -f scc.yaml
 ```
+
 You should receive the following response:
 
-  `securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured`  
+  `securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured`
 
 Now you need to bind the scc to your project by typing:
 ```src
- $ oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name  
+ $ oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name
 ```
 (If you do not remember your project name, run “oc project”)
 
@@ -74,24 +75,26 @@ Now you need to bind the scc to your project by typing:
 
 The rbac (Role-Based Access Control) yaml defines who can access which resources. We need this to allow our Operator application to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). Therefore, we strongly recommend **not** changing anything in this yaml file. To apply it, type:
 ```src
- $ kubectl apply -f rbac.yaml  
+ $ kubectl apply -f rbac.yaml
 ```
+
 You should receive the following response:
 
   `role.rbac.authorization.k8s.io/redis-enterprise-operator created
-  serviceaccount/redis-enterprise-operator created  
+  serviceaccount/redis-enterprise-operator created
   rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
 
 - [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/sb_rbac.yaml)
 
-If you’re deploying a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker. 
+If you’re deploying a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker.
 
 We strongly recommend **not** changing anything in this yaml file.
 
 To apply it, run:
 ```src
- $ kubectl apply -f sb_rbac.yaml  
+ $ kubectl apply -f sb_rbac.yaml
 ```
+
 You should receive the following response:
 
   `clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
@@ -103,8 +106,9 @@ The next step applies crd.yaml, creating a [CustomResourceDefinition](https://ku
 
 To apply it, run:
 ```src
- $ kubectl apply -f crd.yaml  
+ $ kubectl apply -f crd.yaml
 ```
+
 You should receive the following response:
 
   `customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com     configured`
@@ -120,6 +124,7 @@ To apply the operator.yaml, run:
 ```src
  $ kubectl apply -f operator.yaml
 ```
+
 You should receive the following response:
 
   `deployment.apps/redis-enterprise-operator created`
@@ -158,12 +163,12 @@ This specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/st
 
 For example:
 
-  limits  
-  cpu: “2000m”  
-  memory: 4Gi  
+  limits
+  cpu: “2000m”
+  memory: 4Gi
   requests
 
-  cpu: “2000m”  
+  cpu: “2000m”
   memory: 4Gi
 
 The default (if unspecified) is 2 cores (2000m) and 4GB (4Gi).
@@ -173,15 +178,15 @@ The default (if unspecified) is 2 cores (2000m) and 4GB (4Gi).
 
 This specifies [persistence](https://redislabs.com/redis-features/persistence) for the Service Broker with an “enabled/disabled” flag. The default is “false.”
 
-  persistentSpec:  
+  persistentSpec:
   storageClassName: “gp2“
 
 - redisEnterpriseImageSpec: This configuration controls the Redis Enterprise version used, and where it is fetched from. We always recommend running the current GA version.
 
 [imagePullPolicy](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/builds_and_image_streams.html#image-pull-policy):
-IfNotPresent 
-Repository: redislabs/redis 
-versionTag: 5.2.0-14–  
+IfNotPresent
+Repository: redislabs/redis
+versionTag: 5.2.0-14–
 
 The version tag, as it appears on your repository (e.g. on [DockerHub](https://hub.docker.com/r/redislabs/redis/)).
 
@@ -193,12 +198,13 @@ Once you have your_cluster_name yaml set, you need to apply it to create your Re
 ```src
  $ kubectl apply -f your_cluster_name.yaml
 ```
+
 Run kubectl get rec and verify that creation was successful (rec is a shortcut for “RedisEnterpriseClusters”).
 
 You should receive a response similar to the following:
 
 `NAME AGE`
-  
+
   `Your_cluster_name 17s`
 
 Your Cluster will be ready shortly—typically within a few minutes.
@@ -207,6 +213,7 @@ To check the cluster status, type the following:
 ```src
  $ kubectl get pod
 ```
+
 You should receive a response similar to the following:
 
 |                                    |       |         |          |     |
@@ -239,10 +246,10 @@ Next, create your database.
   ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
 - In order to retrieve your password, navigate to the OpenShift management console, select your project name, go to    Resources-\>Secrets-\>your_cluster_name
-- Retrieve your password by selecting “Reveal Secret.”  
-  
+- Retrieve your password by selecting “Reveal Secret.”
+
   ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
-  
+
 - Follow the interface’s [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
 *Note: In order to conduct the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You will see two newly created services representing the database along with their IP and port information, similar to the screenshot below.*

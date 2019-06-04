@@ -1,6 +1,6 @@
 ---
 Title: Creating an AWS User
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]
@@ -8,10 +8,10 @@ categories: ["RC Pro"]
 Redis Cloud Pro automatically manages your cluster and provisions instances when needed. In order for Redis Cloud Pro to be able to manage AWS resources, you must have an AWS account that is separate from your AWS application account and a user on that separate AWS account.
 
 Within that new AWS account, you need to create an **instance role** and
-a user with a specific **policy**. The user requires both **UI console access** 
+a user with a specific **policy**. The user requires both **UI console access**
 and an **Access Key** so that Redis Cloud Pro can programmatically create
 and manage AWS resources on your behalf. After you create the user,
-generate an Access Key for the user and save the key in a secure location. 
+generate an Access Key for the user and save the key in a secure location.
 These keys are required when you create an Redis Cloud Pro account.
 
 {{% warning %}}
@@ -128,7 +128,7 @@ Now create a policy to assign to the user:
 
 1. In AWS IAM console, go to **Policies** > **Create policy**.
 1. In the **JSON** tab, paste the contents of the redislabsIAMUserRestrictedPolicy.json policy file.
-    
+
     {{%expand "View RedislabsIAMUserRestrictedPolicy.json" %}}
     {
         "Version": "2012-10-17",

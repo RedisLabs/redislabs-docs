@@ -1,6 +1,6 @@
 ---
 Title: Developing with Bloom Filters
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

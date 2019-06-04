@@ -1,6 +1,6 @@
 ---
 Title: Testing client connectivity
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -63,7 +63,7 @@ In the command-line Terminal, create a new file called
 **redis_test.py**
 
 ```src
-$ vi redis_test.py
+vi redis_test.py
 ```
 
 Paste the following into a file named **redis_test.py**.
@@ -82,7 +82,7 @@ Run "redis_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
 ```src
-$ python redis_test.py
+python redis_test.py
 ```
 
 The output should look like the following screen if the connection is

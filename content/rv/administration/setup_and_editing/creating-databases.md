@@ -1,6 +1,6 @@
 ---
 Title: Creating a Database
-description: 
+description:
 weight: 50
 alwaysopen: false
 categories: ["RC Pro"]

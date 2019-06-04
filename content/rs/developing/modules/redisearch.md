@@ -1,6 +1,6 @@
 ---
 Title: Developing Fast Search and Query with In-Memory Indexing
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

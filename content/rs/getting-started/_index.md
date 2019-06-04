@@ -1,6 +1,6 @@
 ---
 Title: Getting Started with Redis Enterprise Software (RS)
-description: 
+description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]

@@ -1,6 +1,6 @@
 ---
 Title: Database Persistence with Redis Enterprise Software
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -74,7 +74,7 @@ Now that you know the available options, to assist in making a decision
 on which option is right for your use case, here is a table about the
 two:
 
-|  ** Append Only File (AOF)** | ** Snapshot (RDB)** |
+|  **Append Only File (AOF)** | **Snapshot (RDB)** |
 |------------|-----------------|
 |  More resource intensive | Less resource intensive |
 |  Provides better durability (recover the latest point in time) | Less durable |
@@ -104,5 +104,5 @@ case, you can disable data-persistence on the master shards using the
 following *rladmin* command:
 
 ```src
-$ rladmin tune db db: master_persistence disabled
+rladmin tune db db: master_persistence disabled
 ```

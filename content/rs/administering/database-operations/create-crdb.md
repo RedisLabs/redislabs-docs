@@ -1,6 +1,6 @@
 ---
 Title: Create a Geo-Replicated Conflict-free Replicated Database (CRDB)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -38,7 +38,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     telnet on port 8080 from each participating cluster to each of the other participating clusters.
 
     ```src
-    $ telnet <target FQDN> 8080
+    telnet <target FQDN> 8080
     ```
 
 1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
@@ -59,8 +59,10 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 1. Enter the name of the new CRDB and select from the options:
 
     {{% note %}}
+
 - The eviction policy can only be set to **noeviction** for CRDBs.
 - You cannot enable or disable database clustering after the CRDB is created.
+
     {{% /note %}}
 
     - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
@@ -72,11 +74,11 @@ Every instance of a CRDB can receive write operations, and all operations are [s
             and enter the credentials for the service account that you created.
     - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
-        - Make sure the Database clustering is enabled and select the number of shards 
-        that you want to have in the database. When database clustering is enabled, 
+        - Make sure the Database clustering is enabled and select the number of shards
+        that you want to have in the database. When database clustering is enabled,
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
-        You can increase the number of shards in the database at any time. 
-        - Clear the **Database clustering** option to use only one shard so that you 
+        You can increase the number of shards in the database at any time.
+        - Clear the **Database clustering** option to use only one shard so that you
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
     - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
@@ -113,18 +115,18 @@ redis-cli is a simple command-line tool to interact with redis database.
 1. To switch your context into the RS container of node 1 in cluster 1, run:
 
     ```src
-    $ docker exec -it rp1_node1 bash
+    docker exec -it rp1_node1 bash
     ```
 
 1. To use redis-cli on port 12000, run:
 
     ```src
-    $ redis-cli -p 12000
+    redis-cli -p 12000
     ```
 
-1.  Store and retrieve a key in the database to test the connection with these 
+1. Store and retrieve a key in the database to test the connection with these
     commands:
-    
+
     - `set key1 123`
     - `get key1`
 
@@ -136,13 +138,15 @@ redis-cli is a simple command-line tool to interact with redis database.
     127.0.0.1:12000> get key1
     "123"
     ```
-1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
+
+1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the
    RS container of node 1 in cluster 1.
-1. To see that the key replicated to cluster 2, repeat the steps to switch your 
-   context into the RS container of node 1 in cluster 2, run the redis-cli and 
+1. To see that the key replicated to cluster 2, repeat the steps to switch your
+   context into the RS container of node 1 in cluster 2, run the redis-cli and
    retrieve key1.
 
     The output of the commands looks like this:
+
     ```src
     $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000
@@ -155,7 +159,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and 
+Note: Before you continue, you must have python and
 [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
 running the container.
@@ -163,12 +167,12 @@ running the container.
 1. In the command-line terminal, create a new file called "redis_test.py"
 
     ```src
-    $ vi redis_test.py
+    vi redis_test.py
     ```
 
 1. Paste this code into the "redis_test.py" file.
 
-    This application stores a value in key1 in cluster 1, gets that value from 
+    This application stores a value in key1 in cluster 1, gets that value from
     key1 in cluster 1, and gets the value from key1 in cluster 2.
 
     ```py
@@ -189,7 +193,7 @@ running the container.
 1. To run the "redis_test.py" application, run:
 
     ```src
-    $ python redis_test.py
+    python redis_test.py
     ```
 
     If the connection is successful, the output of the application looks like:

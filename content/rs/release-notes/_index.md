@@ -1,8 +1,8 @@
 ---
 Title: Release Notes
-description: 
+description:
 weight: 90
 alwaysopen: false
 categories: ["RS"]
 ---
-{{%allchildren style="h2" sort="Weight"%}}  
+{{%allchildren style="h2" sort="Weight"%}}

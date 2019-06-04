@@ -1,6 +1,6 @@
 ---
 Title: Importing Data Into Your Redis Cloud Essentials Database
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -57,7 +57,7 @@ To import an RDB file that is stored in an FTP or HTTP server:
 
 ### RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
 
-Before you import the RDB file through the Redis Cloud Essentials management console, you must go to the AWS 
+Before you import the RDB file through the Redis Cloud Essentials management console, you must go to the AWS
 management console and share the file.
 
 To share and import an RDB file that is stored in an AWS S3 bucket:

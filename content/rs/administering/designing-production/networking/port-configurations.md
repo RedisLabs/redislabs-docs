@@ -1,6 +1,6 @@
 ---
 Title: Network port configurations
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -24,7 +24,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal cluster usage |
 | TCP | 8001 | For application to access the RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8443 | For secure (https) access to the management web UI |
-| TCP | 8444, 9080 | For nginx <->cnm_http/cm communications on the same host only. Ports are bound to loopback adapter. |
+| TCP | 8444, 9080 | For nginx \<-> cnm_http/cm communications on the same host only. Ports are bound to loopback adapter. |
 | TCP | 9081 | For CRDB management |
 | TCP | 8070, 8071 | For metrics exported and managed by nginx |
 | TCP | 8080, 9443 | Used to expose the REST API, including cluster management and node bootstrap |
@@ -49,5 +49,5 @@ cluster you must specify the custom port, in the format:
 To change the default port for the RS Web UI, on any node in the cluster run:
 
 ```src
-$ rladmin cluster config cm_port <new-port>
+rladmin cluster config cm_port <new-port>
 ```

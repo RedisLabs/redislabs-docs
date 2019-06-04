@@ -1,6 +1,6 @@
 ---
 Title: Upgrading a Module in Redis Enterprise Software
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

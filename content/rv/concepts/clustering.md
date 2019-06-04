@@ -1,6 +1,6 @@
 ---
 Title: Clustering Redis Databases
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]

@@ -1,6 +1,6 @@
 ---
 Title: Concepts behind Redis Cloud Essentials
-description: 
+description:
 weight: 20
 alwaysopen: false
 categories: ["RC Essentials"]

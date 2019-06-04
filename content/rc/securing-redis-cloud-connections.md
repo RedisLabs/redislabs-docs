@@ -1,6 +1,6 @@
 ---
 title: Securing Connections with SSL/TLS
-description: 
+description:
 weight: 25
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -65,7 +65,7 @@ below) instead of your resource's endpoint.
 1. Install stunnel:
 
     ```src
-    $ apt-get install stunnel
+    apt-get install stunnel
     ```
 
 1. Copy all certificate files to /etc/stunnel.
@@ -76,7 +76,6 @@ below) instead of your resource's endpoint.
 
     ```src
     $ chown root:root /etc/stunnel/redislabs_user_private.key
-
     $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
 
@@ -89,7 +88,7 @@ below) instead of your resource's endpoint.
 1. Start the stunnel service:
 
     ```src
-    $ service stunnel4 start
+    service stunnel4 start
     ```
 
 ### CentOS 6.5
@@ -97,7 +96,7 @@ below) instead of your resource's endpoint.
 1. Install stunnel:
 
     ```src
-    $ yum install stunnel
+    yum install stunnel
     ```
 
 1. Copy all certificate files to `/etc/stunnel`.
@@ -108,7 +107,6 @@ below) instead of your resource's endpoint.
 
     ```src
     $ chown root:root /etc/stunnel/redislabs_user_private.key
-
     $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
 
@@ -177,7 +175,7 @@ below) instead of your resource's endpoint.
 
     }
 
-    
+
 
     stop() {
 
@@ -203,7 +201,7 @@ below) instead of your resource's endpoint.
 
     }
 
-    
+
 
     case "$1" in
 
@@ -257,13 +255,9 @@ below) instead of your resource's endpoint.
 
     ```src
     $ chown root:root /etc/init.d/stunnel
-
     $ chmod 0755 /etc/init.d/stunnel
-
     $ chkconfig --add /etc/init.d/stunnel
-
     $ stunnel /etc/stunnel/redislabs.conf
-
     $ service stunnel start
     ```
 
@@ -283,12 +277,11 @@ delay = yes`
 accept = 127.0.0.1:6379
 connect = host:port`
 
-
 ### Testing Secure Connectivity to a Redis Cloud Essentials Resource
 
 You can test the connection from your client using redis-cli, for
 example::
 
 ```src
-$ redis-cli -h <hostname> -p <portnumber> PING
+redis-cli -h <hostname> -p <portnumber> PING
 ```
