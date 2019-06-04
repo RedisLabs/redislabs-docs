@@ -1,5 +1,5 @@
 ---
-Title: ReBloom Quick Start Tutorial
+Title: RedisBloom Quick Start Tutorial
 description:
 weight: $weight
 alwaysopen: false
@@ -9,16 +9,16 @@ For this quick start, you will need the following:
 
 - [A Redis Enterprise Software cluster with set up already
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
-- Any redis-cli or ReBloom enabled client
+- Any redis-cli or RedisBloom enabled client
 
 ### Create a new database that uses the Module
 
 1. Navigate to **databases** tab
 1. Click on the **+** sign, if necessary, then **create database**
 1. On the create database screen, check the box for Redis Modules and
-    select the ReBloom module you want to use for this database.
+    select the RedisBloom module you want to use for this database.
 
-    ![rebloom_database](/images/rs/rebloom_database.png?width=797&height=556)
+    ![redisbloom_database](/images/rs/redisbloom_database.png?width=797&height=556)
 1. Click **Show advanced options** and put **12544** for the port.
 1. Click the **Activate** button
 
