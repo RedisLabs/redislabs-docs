@@ -11,7 +11,6 @@ model, memory limit and feature set. You can have multiple subscriptions
 in different providers and regions, all easily managed from a single
 console.
 
-
 ## Create a New Subscription
 
 Creating a subscription is a four-step process:
