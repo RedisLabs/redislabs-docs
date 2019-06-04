@@ -2,6 +2,13 @@
 {{if .Params.categories}}
 {{if eq (index .Params.categories 0) "RS"}}
 <script>
+// Setup GA Event tracking
+setTimeout(function(){
+  window.ga('create', 'UA-92003007-1', {
+      'clientId': window.ga.getAll()[0].get('clientId')
+  });  
+}, 400);
+
 (function () {
   var pa = window.location.pathname.split('/');
   var pv = pa[1]; // latest, 5.4 or 5.2
