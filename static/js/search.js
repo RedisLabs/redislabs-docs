@@ -65,7 +65,13 @@ function _trackSearch(query) {
         eventCategory: 'TEST Search', // remove TEST before merge
         eventAction: 'input',
         eventLabel: 'Main Search',
-        eventValue: query
+        eventValue: query,
+        hitCallback: function() {
+            console.log('GA Event sent');
+         },
+        hitCallbackFail: function () {
+           console.log('GA Event not sent');
+        }        
     });    
 }
 
