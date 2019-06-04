@@ -1,6 +1,6 @@
 ---
-Title: Cluster Recovery
-description:
+Title: Database Recovery
+description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -17,11 +17,15 @@ These files are stored in the [persistence storage location]
 
 The cluster recovery process includes:
 
-1. Install RS on the nodes of the new cluster.
-1. Mount to the new nodes the storage that holds the cluster configuration and persistent storage of the original cluster.
-1. Recover the cluster configuration on the first node in the new cluster.
-1. Join the remaining nodes to the new cluster.
-1. [Recover the databases]({{< relref "/rs/administrating/troubleshooting/database-recovery.md" >}}).
+1. Recover the cluster.
+   1. Install RS on the nodes of the new cluster.
+   1. Mount to the new nodes the storage that holds the cluster configuration and persistent storage of the original cluster.
+   1. Recover the cluster configuration on the first node in the new cluster.
+   1. Join the remaining nodes to the new cluster.
+1. Recover the databases.
+   1. Identify recoverable databases.
+   1. Restore the database configurations.
+   1. Verify that the databases are active.
 
 ## Prerequisites
 
@@ -51,33 +55,18 @@ make sure that you backup all files on the old persistent storage drives to anot
 
 ## Recovering the Cluster and Databases
 
-1. Install [RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) on the servers
-    for the new cluster nodes. Do not configure the cluster, also called cluster setup.
-
-    The new servers must have the same basic hardware and software configuration as the original servers, including:
-
-    - The same number of nodes
-    - At least the same memory available on each node
-    - The same RS version
-
-    {{% note %}}
-The cluster recovery can fail if these requirements are not met.
-    {{% /note %}}
-1. Mount the persistent storage drives of the old cluster to the new nodes.
-    These drives contain the cluster configuration backup files and
-    database persistence files.
-    {{% note %}}
-Make sure that the user redislabs has permissions to access the storage location
-of the configuration and persistence files on each of the nodes.
-    {{% /note %}}
-If you use local persistent storage, place all the recovery files on each of the cluster nodes.
-1. To recover the cluster with the configuration from the original cluster,
-    from [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}}) command-line interface (CLI) of the :
+After you install RS on the nodes for the new cluster,
+you can run recovery process from the [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+command-line interface (CLI).
 
 {{% note %}}
 Before you run the recovery process on the machines from the original cluster with Redis processes running on the machine,
 make sure to kill all Redis processes.
 {{% /note %}}
+
+To recover the cluster:
+
+1. To recover the cluster configuration on the first node of the new cluster, from the rladmin CLI run:
 
     ```src
     cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
