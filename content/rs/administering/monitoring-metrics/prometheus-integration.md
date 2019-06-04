@@ -81,6 +81,7 @@ To get started with custom monitoring:
                 links:
                     - prometheus-server:prometheus
         ```
+
     1. To start the containers, run: `docker-compose up -d`
     1. To check that all the containers are up, run: `docker ps`
     1. In your browser, login to Prometheus at http://localhost:9090 to make sure the server is running.

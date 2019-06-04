@@ -36,7 +36,7 @@ and the upgrade process is complete.
 To trigger an upgrade, first determine whether an Operator upgrade is required.
 If so, make sure to apply and verify that an Operator upgrade has completed deploying before upgrading the cluster.
 
-Edit the image value in your <operator>.yaml file,
+Edit the image value in your \<operator>.yaml file,
 known by the default name operator.yaml:
 
 ```src
@@ -49,7 +49,9 @@ known by the default name operator.yaml:
 
 After editing the operator.yaml file, apply it by running:
 
-    kubectl apply -f operator.yaml
+```src
+kubectl apply -f operator.yaml
+```
 
 Verify that the Operator deployment has successfully completed by running the following command and verifying that it has achieved Ready status:
 
@@ -57,7 +59,7 @@ Verify that the Operator deployment has successfully completed by running the fo
     kubectl get pod/redis-enterprise-operator-*-*
 ```
 
-Once the Operator is up and running with the upgraded image, edit the image value in your <my-cluster-name>.yaml file,
+Once the Operator is up and running with the upgraded image, edit the image value in your \<my-cluster-name>.yaml file,
 known by the default name redis-enterprise-cluster.yaml:
 
 ```src

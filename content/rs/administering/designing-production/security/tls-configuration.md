@@ -39,6 +39,7 @@ You can also specify that authentication is not enforced for traffic received fr
 clusters or clients.
 
 {{% excerpt %}}
+
 ### Configuring TLS for Replica Of communication only on the source database
 
 To enable TLS for Replica Of communication only on the source database:

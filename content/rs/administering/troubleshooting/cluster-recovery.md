@@ -98,6 +98,7 @@ The command has the following parameters:
     will get the same rack ID as the original node.
 
 Example:
+
 ```src
 rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1
 ```
@@ -145,6 +146,7 @@ parameters:
     providing a different value and using the override_rack_id flag.
 
 Example:
+
 ```src
 rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecret replace_node 2
 ```

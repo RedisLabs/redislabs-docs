@@ -165,6 +165,7 @@ Run the following:
 kubectl get rec
 kubectl describe rec my-cluster-name
 ```
+
 {{% /expand%}}
 
 {{%expand "How is using Redis Enterprise Operator superior to using Helm Charts?" %}}
@@ -267,8 +268,9 @@ type: Opaque
 ```
 
 Next, decode, for example, the password field. Run:
+
 ```src
-   $ echo "Q2h5N1BBY28=" | base64 –-decode
+echo "Q2h5N1BBY28=" | base64 –-decode
 ```
 
 {{% /expand%}}

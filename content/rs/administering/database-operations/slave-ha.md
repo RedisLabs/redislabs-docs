@@ -72,7 +72,7 @@ Slave shard migration is based on priority so that, in the case of limited memor
 
     To assign priority to a database, run:
 
-    ```
+    ```src
     rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
     ```
 
@@ -94,13 +94,13 @@ To configure this grace period from rladmin, run:
 
 - For the cluster:
 
-    ```
+    ```src
     rladmin tune cluster slave_ha_cooldown_period <time_in_seconds>
     ```
 
 - For all databases in the cluster:
 
-    ```
+    ```src
     rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
     ```
 

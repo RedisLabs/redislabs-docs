@@ -76,7 +76,6 @@ below) instead of your resource's endpoint.
 
     ```src
     $ chown root:root /etc/stunnel/redislabs_user_private.key
-
     $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
 
@@ -108,7 +107,6 @@ below) instead of your resource's endpoint.
 
     ```src
     $ chown root:root /etc/stunnel/redislabs_user_private.key
-
     $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
 
@@ -257,13 +255,9 @@ below) instead of your resource's endpoint.
 
     ```src
     $ chown root:root /etc/init.d/stunnel
-
     $ chmod 0755 /etc/init.d/stunnel
-
     $ chkconfig --add /etc/init.d/stunnel
-
     $ stunnel /etc/stunnel/redislabs.conf
-
     $ service stunnel start
     ```
 
@@ -282,7 +276,6 @@ delay = yes`
 `[redislabs] client = yes
 accept = 127.0.0.1:6379
 connect = host:port`
-
 
 ### Testing Secure Connectivity to a Redis Cloud Essentials Resource
 

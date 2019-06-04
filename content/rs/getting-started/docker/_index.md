@@ -22,3 +22,4 @@ of common topologies:
   **Topology #3:** You may also run multi-node RS Cluster with multiple RS containers each deployed to its own host machine. This topology minimizes interference between RS containers, so it performs more predictably than Topology #2.
 
   ![0](/images/rs/0.png?width=780&height=380)
+  

@@ -59,8 +59,10 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 1. Enter the name of the new CRDB and select from the options:
 
     {{% note %}}
+
 - The eviction policy can only be set to **noeviction** for CRDBs.
 - You cannot enable or disable database clustering after the CRDB is created.
+
     {{% /note %}}
 
     - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
@@ -144,6 +146,7 @@ redis-cli is a simple command-line tool to interact with redis database.
    retrieve key1.
 
     The output of the commands looks like this:
+
     ```src
     $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000

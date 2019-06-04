@@ -20,7 +20,7 @@ To edit the configuration of a database:
     database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 1. Click Update.
 
-**Updating CRDB configuration**
+## Updating CRDB configuration
 
 A Conflict-Free Replicated Database (CRDB) is a global database that
 spans multiple Redis Enterprise clusters called
@@ -34,7 +34,7 @@ Changes done to "Memory limit", "Data persistence", "Redis password",
 to the local CRDB instance and not applied to all Participating
 Clusters.
 
-**Participating Clusters**
+## Participating Clusters
 
 If the CRDB topology needs to change, you can add and remove
 Participating Clusters of a CRDB. Use the Participating Clusters list to
@@ -66,7 +66,7 @@ Participating Cluster is removed, all updates received by remaining CRDB
 Instances from the removed CRDB instance, are
 rejected.
 
-**TLS Authentication and Encryption**
+## TLS Authentication and Encryption
 
 To prevent unauthorized access to your data, you can configure RS to secure
 communications with TLS protocol (the more secure successor to SSL). When you create

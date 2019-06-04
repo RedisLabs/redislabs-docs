@@ -100,35 +100,42 @@ certificates, and a self-signed certificate on the client machine.
 
 1. Install stunnel version 5 or higher on the client machine. Older
     versions of stunnel do not support the TLS protocol.
-2. Create a self-signed certificate on the client machine:
+1. Create a self-signed certificate on the client machine:
 
-    1. Generate a private key by running the following commands:sudo su
-        --
+    1. Generate a private key by running the following commands:
+
+        ```src
+        sudo su
         openssl genrsa -out /etc/stunnel/keyclient.pem 4096
-    2. Generate a client certificate by running the following
-        commands:openssl req -new -x509 -key /etc/stunnel/keyclient.pem
+        ```
+
+    1. Generate a client certificate by running the following commands:
+
+        ```src
+        openssl req -new -x509 -key /etc/stunnel/keyclient.pem
         -out
         /etc/stunnel/cert.pem -days 1826
+        ```
 
     When prompted, enter the appropriate configuration details for the
     certificate.
 
-3. Copy the RS nodes certificates from all nodes to the client machine.
+1. Copy the RS nodes certificates from all nodes to the client machine.
     The certificates are saved in a file named proxy_cert.pem, which is
     stored in /etc/opt/redislabs in each node. For additional details,
     refer to [Updating TLS certificates]
     ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-4. Rename the certificate files fetched from the RS nodes as
+1. Rename the certificate files fetched from the RS nodes as
     certsvr.pem. For example: certsvr1.pem, certsvr2.pem.
-5. Create a single file for all of the server certificates on the
+1. Create a single file for all of the server certificates on the
     client machine, by running the following command from the OS CLI.
     For example:cat /etc/stunnel/certsvr1.pem
     /etc/stunnel/certsvr2.pem \> /etc/stunnel/servercerts.pem
-6. Configure stunnel for the connection to RS by using the steps below:
+1. Configure stunnel for the connection to RS by using the steps below:
     1. Create a redislabs.conf file in /etc/stunnel folder.
-    2. Make sure that the certificates that have been generated exist in
+    1. Make sure that the certificates that have been generated exist in
         the following folder: /etc/stunnel.
-    3. Edit the redislabs.conf content to look as follows:cert =
+    1. Edit the redislabs.conf content to look as follows:cert =
         /etc/stunnel/cert.pem
         key = /etc/stunnel/keyclient.pem
         cafile = /etc/stunnel/servercerts.pem
@@ -146,11 +153,11 @@ certificates, and a self-signed certificate on the client machine.
         secure tunnel to the database endpoint configured in the connect
         parameter.
 
-7. Copy the contents of the client certificate from cert.pem and enter
+1. Copy the contents of the client certificate from cert.pem and enter
     them in the **SSL Client Authentication** field, in the RS UI, of
     the database you would like to secure. When done, be sure to save
     the change.
-8. Start the stunnel service by running the following command:service
+1. Start the stunnel service by running the following command:service
     stunnel restart
 
     **Note**: Any change made to the stunnel configuration requires
@@ -160,7 +167,7 @@ certificates, and a self-signed certificate on the client machine.
     properly. The log file is created under the root folder within the
     configuration mentioned above.
 
-9. Test the connection to the Redis database from the client machine.
+1. Test the connection to the Redis database from the client machine.
     You can use redis-cli to run commands on the client machine, and the
     commands will be redirected from the local machine's port 6379 to
     the RS database endpoint. Note that the connection to the Redis
@@ -181,7 +188,9 @@ in transit between a Redis client and a Redis Enterprise cluster, use
 the REST API or the following rladmin
 command:
 
-    rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
+```src
+rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
+src
 
 Note that if a client supports an older TLS version, the communication
 will not be allowed.

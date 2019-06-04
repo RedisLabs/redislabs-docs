@@ -31,7 +31,7 @@ site](https://app.redislabs.com/#/sign-up/software?direct=true). Once
 you have the bits on a Linux based OS, you need to untar the image
 
 ```src
-$ tar -vxf <downloaded tar file name>
+tar -vxf <downloaded tar file name>
 ```
 
 Once the tar command completes, you will find a new install.sh script in

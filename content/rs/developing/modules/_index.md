@@ -89,9 +89,7 @@ $ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
 -r "4.0.2"
 ```
 
-Go to [the
-ramp ](https://github.com/RedisLabs/RAMP)github[page](https://github.com/RedisLabs/RAMP)
+Go to [the ramp](https://github.com/RedisLabs/RAMP) github [page](https://github.com/RedisLabs/RAMP)
 for more information each command line switch in ramp.
 
-To deploy the packaged module, see [Installing a
-Module]({{< relref "/rs/developing/modules/installing.md" >}}).
+To deploy the packaged module, see [Installing a Module]({{< relref "/rs/developing/modules/installing.md" >}}).

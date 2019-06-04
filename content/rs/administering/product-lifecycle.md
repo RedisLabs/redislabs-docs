@@ -10,7 +10,8 @@ This Product Lifecycle should fully reflect our subscription agreement.
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
 ## Redis Enterprise
-### Release numbering
+
+### Release Numbering
 
 Redis Labs uses a four-place numbering scheme to designate released versions of its products.
 The format is “Major1.Major2.Minor-Build”.
@@ -40,7 +41,8 @@ that version.
 | 4.5 – May 2017                            | November 30, 2018  |
 
 ## Redis Enterprise Modules
-### Release numbering
+
+### Modules Release Numbering
 
 Redis Labs uses a three-place numbering scheme to designate released versions of its Redis Enterprise Modules.
 The format is “Major1.Major2.Minor”.
@@ -53,7 +55,7 @@ The format is “Major1.Major2.Minor”.
     existing capabilities. We increment the minor number when many quality improvements
     are added to the release.
 
-### End-of-Life Schedule
+### Modules End-of-Life Schedule
 
 End-of-Life for a given Major release occurs 18 months after the formal release of
 that version.
@@ -67,7 +69,6 @@ that version.
 | 1.1 – April 2018                          | October 31, 2019   |
 | 1.0 – November 2017                       | May 31, 2019       |
 
-
 #### RedisGraph
 
 | Release Date | End of Life (EOL)  |
@@ -75,13 +76,11 @@ that version.
 | 1.2 – April 2019                          | -                  |
 | 1.0 – November 2018                       | May 31, 2020       |
 
-
 #### RedisJSON
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
 | 1.0 – November 2017                       | -                  |
-
 
 #### RedisBloom
 

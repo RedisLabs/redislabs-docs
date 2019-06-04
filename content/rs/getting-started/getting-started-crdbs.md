@@ -175,6 +175,7 @@ redis-cli is a simple command-line tool to interact with redis database.
    retrieve key1.
 
     The output of the commands looks like this:
+
     ```src
     $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000

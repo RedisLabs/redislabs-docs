@@ -71,7 +71,7 @@ To set up a new database:
 1. Select your subscription and expand it.
 1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page will open.
 1. Give your database a name.
-1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials] (https://docs.redislabs.com/staging/Unification-patch-1/rc/administration/setup-and-editing/creating-databases/).
+1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
 1. Click the **Activate** button to create your database.
 
 Note: the Endpoint displayed on this page is very important because it

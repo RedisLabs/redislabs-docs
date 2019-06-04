@@ -69,7 +69,7 @@ in messages log file.
     below.
 - \%msg:::drop­last­lf%n ­ removes duplicated log entries
 
-#### Log entry structure
+### Log entry structure
 
 The log entries have the following basic structure:
 event_log\[\]:{\<list of key value pairs in any order\>}
@@ -82,38 +82,38 @@ event_log\[\]:{\<list of key value pairs in any order\>}
     specific event. The key­values pairs can appear in any order. Some
     key­value pairs will
     always appear, and some appear depending on the specific event.
-  - **Key­value pairs that will always appear:**
-        -   "type" A unique code­name identifying the event logged. For
+    - **Key­value pairs that will always appear:**
+        - "type" A unique code­name identifying the event logged. For
             the list of
             codenames relevant for this purpose please review the event
             code­name
             column in the Mapping UI events and alerts to log entries
             section below.
-        -   "object" has the format of "\[:\]". Defines the
+        - "object" has the format of "\[:\]". Defines the
             object type, and id if relevant, of the object this event is
             related to. For
             example cluster, node with id, bdb with id, etc'.
-        -   "time" unix time, can be ignored in this context.
-  - **Key­value pairs that might appear depending on the specific
+        - "time" unix time, can be ignored in this context.
+    - **Key­value pairs that might appear depending on the specific
         entry:**
-        -   "state" boolean with value true or false. This is relevant
+        - "state" boolean with value true or false. This is relevant
             only for
             entries from category alert. True means that the alert is
             on. False means
             that the alert is off.
-        -   "global_threshold" a value of a threshold for alerts
+        - "global_threshold" a value of a threshold for alerts
             related to the
             "cluster"or "node"objects.
-        -   "threshold" a value of a threshold for alerts related to the
+        - "threshold" a value of a threshold for alerts related to the
             "bdb"
             object.
 
-#### Log entry samples
+### Log entry samples
 
 Below are examples of log entries that include the rsyslog configuration
 mentioned above that add the severity, timestamp and machine name.
 
-#### Ephemeral storage passed threshold
+### Ephemeral storage passed threshold
 
 **Alert on" log entry sample:**
 daemon.warning:Jun1414:49:20node1event_log\[3464\]:{"storage_util":
@@ -341,7 +341,7 @@ false,"time":1434365471,"disk":705667072,"type":
 | Not all nodes in the cluster are running the same Redis Labs Enterprise Cluster version | inconsistent_rl_sw | cluster | alert | true: warning</br>false: info |
 | Not all databases are running the same open source version | inconsistent_redis_sw | cluster | alert | true: warning</br>false: info | |
 
-#### Database related events
+### Database related events
 
 | **Event as shown in the UI** | **Event code-­name** | **Object type** | **Category** | **Severity** | **Notes** |
 |------------|-----------------|------------|-----------------|------------|-----------------|
