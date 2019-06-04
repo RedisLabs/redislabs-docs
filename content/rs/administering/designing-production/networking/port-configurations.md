@@ -49,5 +49,5 @@ cluster you must specify the custom port, in the format:
 To change the default port for the RS Web UI, on any node in the cluster run:
 
 ```src
-$ rladmin cluster config cm_port <new-port>
+rladmin cluster config cm_port <new-port>
 ```

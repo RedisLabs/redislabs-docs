@@ -34,7 +34,7 @@ Once the tar command completes, install RS with the install.sh script in
 the current directory.
 
 ```src
-$ sudo ./install.sh -y
+sudo ./install.sh -y
 ```
 
 {{% note %}}When port 53 is in use, the installation fails. This is known to happen in

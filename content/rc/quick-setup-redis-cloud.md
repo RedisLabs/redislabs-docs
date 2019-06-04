@@ -124,7 +124,7 @@ You first need to install the Redis client library for Python if you do
 not have it already.
 
 ```src
-$ sudo pip install redis
+sudo pip install redis
 ```
 
 Next copy and paste this into a file named

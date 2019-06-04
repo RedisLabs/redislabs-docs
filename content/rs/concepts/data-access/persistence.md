@@ -104,5 +104,5 @@ case, you can disable data-persistence on the master shards using the
 following *rladmin* command:
 
 ```src
-$ rladmin tune db db: master_persistence disabled
+rladmin tune db db: master_persistence disabled
 ```

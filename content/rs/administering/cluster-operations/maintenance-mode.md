@@ -34,7 +34,7 @@ As usual, the cluster elects a new master node when the master node is restarted
 To turn maintenance mode on, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode on
+rladmin node <node_id> maintenance_mode on
 ```
 
 After all of the shards and endpoints are moved from the node, it is safe to do maintenance on the server if there are enough nodes up to maintain the quorum.
@@ -85,7 +85,7 @@ If the maintenance node fails, the master shards will not have slave shards for 
 To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode on dont_migrate_slave_shards
+rladmin node <node_id> maintenance_mode on dont_migrate_slave_shards
 ```
 
 ## Turning Maintenance Mode OFF
@@ -100,7 +100,7 @@ When you turn maintenance mode off, RS:
 To turn maintenance mode off after you finish the server maintenance, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode off
+rladmin node <node_id> maintenance_mode off
 ```
 
 ### Specifying a snapshot
@@ -111,7 +111,7 @@ If there are multiple snapshots, you can restore a specified snapshot when you t
 To specify a snapshot when you turn maintenance mode off, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode off restore_from_snapshot <snapshot_name>
+rladmin node <node_id> maintenance_mode off restore_from_snapshot <snapshot_name>
 ```
 
 {{% note %}}
@@ -123,7 +123,7 @@ we recommend that you use the snapshot from the initial attempt because it conta
 You can see the list of available snapshots with the command:
 
 ```src
-$ rladmin node <node_id> snapshot list
+rladmin node <node_id> snapshot list
 ```
 
 ### Skipping shard restoration
@@ -134,5 +134,5 @@ you can turn maintenance mode off and prevent the shards and endpoints from movi
 To skip shard restoration, on one of the nodes in the cluster run:
 
 ```src
-$ rladmin node <node_id> maintenance_mode off dont_restore_shards
+rladmin node <node_id> maintenance_mode off dont_restore_shards
 ```

@@ -44,7 +44,7 @@ the LDAP server.
 ### Step 1: Configure LDAP options in config file
 
 ```src
-$ vi /tmp/saslauthd.conf
+vi /tmp/saslauthd.conf
 ```
 
 You must specify the URIs for the LDAP servers you will be

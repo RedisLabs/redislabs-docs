@@ -113,7 +113,7 @@ policy for a database called "db1" with an endpoint id "1:1" to "All
 Master Shards" proxy policy.
 
 ```src
-$ rladmin bind db db1 endpoint 1:1 policy all-master-shards
+rladmin bind db db1 endpoint 1:1 policy all-master-shards
 ```
 
 Note: you can find the endpoint id for the endpoint argument by running
@@ -126,7 +126,7 @@ If you want to reapply the policy after topology changes, such as node restarts,
 failovers and migrations, run this command to reset the policy:
 
 ```src
-$ rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards||all-nodes>
+rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards||all-nodes>
 ```
 
 This is not required with single policies.

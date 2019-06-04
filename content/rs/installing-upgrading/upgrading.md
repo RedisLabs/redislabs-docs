@@ -50,7 +50,7 @@ Just like for a new installation, you must sudo or be root to do the
 upgrade.
 
 ```src
-$ sudo ./install.sh
+sudo ./install.sh
 ```
 
 The node upgrade process restarts the services running RS, which causes

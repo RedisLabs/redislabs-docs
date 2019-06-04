@@ -41,12 +41,12 @@ You can enable it by using the ***rladmin suffix add*** command.
 To add an internal FQDN/IP to a cluster:
 
 ```src
-$ rladmin suffix add name <node1.internal.clustername.domain.com> internal
+rladmin suffix add name <node1.internal.clustername.domain.com> internal
 ```
 
 To add an internal FQDN/IP to a cluster, but signal to the cluster there
 is slave for DNS:
 
 ```src
-$ rladmin suffix add name <node2.internal.clustername.domain.com> internal slave 10.0.1.1
+rladmin suffix add name <node2.internal.clustername.domain.com> internal slave 10.0.1.1
 ```

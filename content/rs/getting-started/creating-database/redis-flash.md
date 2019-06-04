@@ -38,7 +38,7 @@ Once the tar command completes, you will find a new install.sh script in
 the current directory.
 
 ```src
-$ sudo ./install.sh -y
+sudo ./install.sh -y
 ```
 
 ### Docker-based installation
@@ -47,7 +47,7 @@ If you prefer, you can also simply run the Redis Enterprise Software
 Docker container on Windows, macOS, and Linux
 
 ```src
-$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
+docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
 ## Step 2: Setup a Cluster and Enable Redis on Flash
@@ -131,7 +131,7 @@ In the command-line Terminal, create a new file called
 **redis_test.py**
 
 ```src
-$ vi redis_test.py
+vi redis_test.py
 ```
 
 Paste the following into a file named **redis_test.py**.
@@ -150,7 +150,7 @@ Run "redis_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
 ```src
-$ python redis_test.py
+python redis_test.py
 ```
 
 The output should look like the following screen if the connection is

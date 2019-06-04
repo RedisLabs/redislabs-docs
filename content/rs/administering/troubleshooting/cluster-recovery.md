@@ -99,7 +99,7 @@ The command has the following parameters:
 
 Example:
 ```src
-$ rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1
+rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1
 ```
 
 Once the command execution is complete, this node will replace the node
@@ -146,7 +146,7 @@ parameters:
 
 Example:
 ```src
-$ rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecret replace_node 2
+rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecret replace_node 2
 ```
 
 Repeat these steps to replace all of the nodes in the old cluster.
@@ -184,7 +184,7 @@ directory.
 You can view which databases are recoverable by running:
 
 ```src
-$ rladmin recover list
+rladmin recover list
 ```
 
 The status for each database can be either ready for recovery or missing

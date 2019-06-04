@@ -290,5 +290,5 @@ You can test the connection from your client using redis-cli, for
 example::
 
 ```src
-$ redis-cli -h <hostname> -p <portnumber> PING
+redis-cli -h <hostname> -p <portnumber> PING
 ```

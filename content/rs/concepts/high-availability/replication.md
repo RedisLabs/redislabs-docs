@@ -45,7 +45,7 @@ any given time.
 The recommended sequential replication configuration is two, i.e.:
 
 ```src
-$ rladmin tune cluster max_redis_forks 1 max_slave_full_syncs 1
+rladmin tune cluster max_redis_forks 1 max_slave_full_syncs 1
 ```
 
 Note: This means that at any given time, only one master and one slave

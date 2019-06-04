@@ -58,7 +58,7 @@ require six steps:
 ### Get the Module from Github
 
 ```src
-$ git clone https://github.com/account/myModule.git
+git clone https://github.com/account/myModule.git
 ```
 
 ### Compile the Module
@@ -66,7 +66,7 @@ $ git clone https://github.com/account/myModule.git
 To compile the module just run:
 
 ```src
-$ cd myModule/;make
+cd myModule/;make
 ```
 
 ### Install ramp-packer Utility
@@ -78,7 +78,7 @@ to be installed into Redis Enterprise.
 Run the next command to install ramp-packer:
 
 ```src
-$ pip install ramp-packer
+pip install ramp-packer
 ```
 
 ### Wrap the Custom Module Using Ramp Utility
