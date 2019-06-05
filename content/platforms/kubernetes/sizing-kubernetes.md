@@ -31,7 +31,7 @@ Set the number of cluster nodes during deployment
 by editing the redis-enterprise-cluster.yaml file and
 applying the file by running:
 
-    kubectl apply – f redis-enterprise-cluster.yaml
+    kubectl apply -f redis-enterprise-cluster.yaml
 
 ### Scaling out
 
@@ -45,7 +45,7 @@ edit the redis-enterprise-cluster.yaml file with the following:
 
 To apply the new cluster configuration run:
 
-    kubectl apply – f redis-enterprise-cluster.yaml
+    kubectl apply -f redis-enterprise-cluster.yaml
 
 ### Sizing compute resources
 
@@ -80,7 +80,7 @@ Set the compute resources for cluster nodes during deployment
 by editing the redis-enterprise-cluster.yaml file and
 applying the file by running:
 
-    kubectl apply – f redis-enterprise-cluster.yaml
+    kubectl apply -f redis-enterprise-cluster.yaml
 
 ### Scaling up node compute resources
 
@@ -105,7 +105,7 @@ redisEnterpriseNodeResources:
 
 Then, apply the file by running:
 
-    kubectl apply – f redis-enterprise-cluster.yaml
+    kubectl apply -f redis-enterprise-cluster.yaml
 
 For Persistent Storage sizing, please refer to [Kubernetes Operator Deployment – Persistent Volumes]
 ({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}).
