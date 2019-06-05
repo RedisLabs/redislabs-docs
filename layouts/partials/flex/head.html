@@ -4,7 +4,7 @@
             {{- partial "noindex" . | safeHTML -}}
       {{ end }}
       {{- partial "canonical-url" . | safeHTML -}}
-      {{ .Hugo.Generator }}
+      {{ hugo.Generator }}
       <title>{{ .Title }} | {{ .Site.Title }}</title>
       <link rel="shortcut icon" href="{{"/images/icon_logo/favicon-32x32.png" | relURL}}" type="image/x-icon" />
       <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">

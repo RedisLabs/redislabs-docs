@@ -3,7 +3,7 @@
 {{- $isParentRoot := eq .Parent .FirstSection -}}
 {{- $numOfChildren := (add (len .Pages) (len .Sections)) -}}
 {{- $shouldCollapse := and $isParentRoot (eq $numOfChildren 0) -}}
-{{- $isCollapsed := (or $shouldCollapse (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/"))) -}}
+{{- $isCollapsed := (or $shouldCollapse (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/"))) -}}
 
 {{- if eq .Site.Params.ordersectionsby "title"}}
   {{- range .Site.Home.Sections.ByTitle}}
@@ -24,27 +24,27 @@
   {{- if and .IsSection (or (not .Params.hidden) $.showhidden)}}
     {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
     {{- safeHTML .Params.head}}    
-    <li data-nav-id="{{.URL}}" class="dd-item
+    <li data-nav-id="{{.RelPermalink}}" class="dd-item
         {{- if .IsAncestor $currentNode}} parent{{end -}}
-        {{- if eq .URL $currentNode.URL}} active{{end -}}
+        {{- if eq .Permalink $currentNode.Permalink}} active{{end -}}
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
         {{- if ne $numberOfPages 0 }} haschildren{{end -}}
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
-        {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/"))}} menu-root {{end}}
+        {{- if (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/"))}} menu-root {{end}}
         ">
         {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") }}
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
-        {{- if eq .URL .RelPermalink }}
+        {{- if eq .RelPermalink .RelPermalink }}
           <!-- Child items -->          
-          {{if or (eq .URL "/rs/") }}
+          {{if or (eq .RelPermalink "/rs/") }}
             <div class="children has-version-selector">
           {{else}}
             <div class="children">
           {{end}}
 
-              {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") }}          
+              {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") }}          
                 <div class="menu-divider"></div>
                 
                 <span class="SideMenuToggle expander">
@@ -100,8 +100,8 @@
     </li>
   {{- else}}
     {{- if not .Params.Hidden }}
-      <li data-nav-id="{{.URL}}" class="dd-item
-     {{- if eq .URL $currentNode.URL}} active{{end -}}
+      <li data-nav-id="{{.RelPermalink}}" class="dd-item
+     {{- if eq .RelPermalink $currentNode.Permalink}} active{{end -}}
       ">
         <div>
           <a href="{{ .RelPermalink}}">
