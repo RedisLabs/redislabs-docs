@@ -2,7 +2,7 @@
     "name": "my new subscription",
     "dryRun": false,
     "paymentMethodId": 8240,
-    "memoryStorage": "RAM",
+    "memoryStorage": "ram",
     "persistentStorageEncryption": true,
     "cloudProviders": [
       {
@@ -37,7 +37,7 @@
         },
         "modules": null,
         "quantity": 1,
-        "averageItemSizeInBytes": 1000000
+        "averageItemSizeInBytes": 10000
       }
     ]
 }
