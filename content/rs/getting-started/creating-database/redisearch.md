@@ -13,12 +13,14 @@ For this quick start, you will need the following:
 
 ### Create a new database that uses the Module
 
-1. Navigate to **databases** tab
-1. Click on the **+** sign, if necessary, then **create database**
-1. On the create database screen, check the box for Redis Modules and
-    select the module you want to use for this database.
+1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Select the RediSearch module.
+1. If you want the module to use a custom configuration,
+click **Add configuration** and enter the optional custom configuration.
+1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    ![select_module](/images/rs/select_module.png?width=794&height=554)
+    {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
+
 1. Click **Show advanced options** and put **12544** for the port.
 1. Click the **Activate** button
 
