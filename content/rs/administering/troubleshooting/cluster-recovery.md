@@ -32,7 +32,6 @@ The cluster recovery process includes:
 
 - Before you run the recovery process on the machines from the original cluster with Redis processes running on the machine,
 make sure to kill all Redis processes.
-{{% /note %}}
 
 - We recommend that you allocate new persistent storage drives for the new cluster nodes.
 If you decide to use the persistent storage drives of the old cluster nodes,
