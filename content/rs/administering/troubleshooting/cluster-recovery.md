@@ -21,7 +21,7 @@ The cluster recovery process includes:
 1. Mount to the new nodes the storage that holds the cluster configuration and persistent storage of the original cluster.
 1. Recover the cluster configuration on the first node in the new cluster.
 1. Join the remaining nodes to the new cluster.
-1. [Recover the databases]({{< relref "/rs/administrating/troubleshooting/database-recovery.md" >}}).
+1. [Recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
 
 ## Prerequisites
 
