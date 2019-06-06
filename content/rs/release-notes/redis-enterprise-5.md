@@ -118,7 +118,7 @@ Support for additional Redis commands and features:
 
 ## Important Fixes
 
-### 5.0.0-31
+### 5.0.0-31 {#5-0-031}
 
 - RP9299 - Issue with reliability of metric ingress
 - RP9680 - Redis Enterprise Pack starting before /etc/rc.local script
