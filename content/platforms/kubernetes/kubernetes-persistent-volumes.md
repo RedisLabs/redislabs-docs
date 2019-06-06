@@ -1,5 +1,5 @@
 ---
-Title: Deploying Kubernetes with Persistant Volumes in Operator-based Architecture
+Title: Deploying Kubernetes with Persistent Volumes in Operator-based Architecture
 description: 
 weight: 40
 alwaysopen: false
