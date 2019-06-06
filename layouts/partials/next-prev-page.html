@@ -34,9 +34,11 @@
 
     
 {{- if not $.Site.Params.disableNavChevron -}}
+        {{ if .File }}
         <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a></div>
         <!--<a class="nav-spacer"></a>-->
+        {{ end }}
     {{- with ($.Scratch.Get "prevPage") -}}
         <div class="nav-links"><a class="nav-prev-next" href="{{.Permalink}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
     {{ end -}}
