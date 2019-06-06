@@ -1,6 +1,6 @@
 ---
-Title: Testing client connectivity
-description:
+Title: Testing Client Connectivity
+description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

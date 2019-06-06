@@ -1,6 +1,6 @@
 ---
-Title: Creating a support package
-description:
+Title: Creating a Support Package
+description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

@@ -1,6 +1,6 @@
 ---
-Title: Database metrics are blank during resharding
-description:
+Title: Database Metrics Not Collected During Resharding
+description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
