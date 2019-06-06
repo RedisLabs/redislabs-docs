@@ -1,11 +1,6 @@
 ---
-<<<<<<< HEAD
-Title: Cluster Recovery
-description:
-=======
 Title: Recovering a Failed Cluster
 description: 
->>>>>>> Finish draft
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
