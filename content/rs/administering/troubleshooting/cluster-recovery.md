@@ -162,43 +162,4 @@ Make sure that you update your [DNS records]({{< relref "/rs/installing-upgradin
 with the IP addresses of the new nodes.
     {{% /note %}}
 
-1. To see which databases are recoverable, run:
-
-    ```src
-    $ rladmin recover list
-    ```
-
-    The status for each database can be either ready for recovery or missing files.
-    An indication of missing files in any of the databases can result from:
-
-    - The recovery path of the nodes not set appropriately
-    - Cannot read the persistence files, such as: no permission to read the files, missing files, or corrupted files
-
-    If the the command indicates that there are missing files,
-    make sure that the recovery path is set correctly on all of the nodes in the cluster.
-    If that does not resolve the issues, [contact Redis Labs Support](mailto:support@redislabs.com).
-
-1. After you recover all of the nodes, you can either recover the databases all at once or specify the database to recover:
-
-    - To recover all of the databases, run: `rladmin recover all`
-    - To recover a single databases, run: `rladmin recover db <database_id|name>`
-
-    All databases are recovered with the same configuration they had in the old cluster. The data recovery is carried out from the persistence files located in the persistent storage drives,
-    which were mounted to the nodes in the old cluster and are now mounted to the new nodes.
-
-    - If AOF or snapshot is available, the data is restored from the AOF or snapshot. CRDB instances are then synced with the other participating clusters to update with data changed since the AOF or snapshot (fast CRDB sync).
-
-        If AOF or snapshot is available for a CRDB but you want to get all of the data from the other participating clusters (slow CRDB sync), use: recover db only_configuration <db_name>
-
-    - If AOF or snapshot is not available, the database is restored empty. CRDB instances are synced with the other participating clusters (slow CRDB sync).
-
-    {{% note %}}
-If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
-you must first map the recovery path of each node to the location of the old persistence files.
-To do this, run the `node <id> recovery_path set` command in rladmin.
-The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
-    {{% /note %}}  
-
-1. To verify that the recovered databases are now active, run: `rladmin status`
-
-After the cluster is recovered, make sure that your redis clients can successfully connect to the cluster.
+After the cluster is recovered, you must [recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
