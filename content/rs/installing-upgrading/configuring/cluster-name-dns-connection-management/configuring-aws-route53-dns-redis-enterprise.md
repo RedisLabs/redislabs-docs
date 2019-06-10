@@ -20,7 +20,7 @@ zone (either the whole domain or a sub-zone) defined in AWS Route53.
 
 ## How does Redis Enterprise Software achieve failover?
 
-When your application wants to connect to a RS database in a a three node
+When your application wants to connect to a RS database in a three node
 Redis Enterprise Software cluster, it connects to any node
 in this cluster using its fully qualified domain name (FQDN), for
 example "node1.mycluster.enterprise.com". It needs to know the IP address
