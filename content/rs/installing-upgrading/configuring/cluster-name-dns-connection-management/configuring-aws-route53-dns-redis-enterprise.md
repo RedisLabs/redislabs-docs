@@ -20,10 +20,10 @@ zone (either the whole domain or a sub-zone) defined in AWS Route53.
 
 ## How does Redis Enterprise Software achieve failover?
 
-If you have a three node Redis Enterprise Software cluster. When your
-application wants to connect to a RS database, it connects to any node
+When your application wants to connect to a RS database in a three node
+Redis Enterprise Software cluster, it connects to any node
 in this cluster using its fully qualified domain name (FQDN), for
-example, node1.mycluster.enterprise.com. It needs to know the IP address
+example "node1.mycluster.enterprise.com". It needs to know the IP address
 associated with this name and asks the top-level nameservers (.com) for
 the list of name servers in charge of enterprise.com. Then, it asks
 these name server (one after each other in case of failure) for the name
@@ -35,7 +35,7 @@ by the resolver, a system library.
 
 Your name servers are in charge of enterprise.com. So, they are able to
 give the name servers in charge of your cluster. RS embeds a name server
-in each node. the nodes are in charge of the cluster zone resolution and
+in each node. The nodes are in charge of the cluster zone resolution and
 are able to give the IP address of any node in the cluster. When
 everything is working, whichever is the top-level nameserver asked, it
 gives the list of name servers for your enterprise domain, then
@@ -72,7 +72,7 @@ If you would like to watch a video on the process, here you go.
 
 The first step is to connect your browser to AWS and to login into the
 administration interface. Then, you have to go in the *Services* menu at
-the top of the page and clic on the *Route53* menu item:
+the top of the page and click on the *Route53* menu item:
 
 ![01-ServicesRoute53-en](/images/rs/01-ServicesRoute53-en.png?width=600&height=837)
 
@@ -84,7 +84,7 @@ or for one of its sub-domains. So, you should have at least one zone in
 ![02-Route53HostedZones-en](/images/rs/02-Route53HostedZones-en.png?width=600&height=237)
 
 *Route53* is now displaying the list of the zones that you defined. You
-need to clic on the zone in which you want to define your cluster,
+need to click on the zone in which you want to define your cluster,
 *demo-rlec.redislabs.com* in my case:
 
 ![03-HostedZoneSelection-en](/images/rs/03-HostedZoneSelection-en.png?width=600&height=206)
@@ -92,8 +92,8 @@ need to clic on the zone in which you want to define your cluster,
 ## Nameserver records creation
 
 The next step is to create the record that returns the IP address of
-your cluster's name servers, ie one of your cluster's nodes. To create
-the first name server IP address resolution record, you need to clic on
+the name servers in your cluster, that is one of the nodes. To create
+the first name server IP address resolution record, you need to click on
 the *Create Record Set* blue button at the top of the list:
 
 ![04-CreateRecordSet-en](/images/rs/04-CreateRecordSet-en.png?width=600&height=189)
@@ -104,7 +104,7 @@ connect to the cluster. This kind of record is an *A* record type and
 associates an IP address to a name. To avoid the whole resolving process
 each time that a name is requested, the results are cached in the
 forwarding DNS and in the application's resolver library. Given that the
-IP address associated with a node can change when thoe related hardware
+IP address associated with a node can change when the related hardware
 fails, the information needs to expire quickly, otherwise, the node
 fails, the name servers reflects the failover, but they are not queried
 again and the local resolver still returns the IP of the failed node.
@@ -126,8 +126,8 @@ the *Create* button at the bottom of the right panel:
 
 ![05-NS1Configuration-en](/images/rs/05-NS1Configuration-en.png?width=400&height=802)
 
-You want (and need) to have all your cluster nodes acting asname
-servers, soyou have to repeat these steps for all your nodes and you
+You want (and need) to have all your cluster nodes acting as name
+servers, so you have to repeat these steps for all your nodes and you
 should get a list of *A* records in *Route53* interface:
 
 ![06-NSList-en](/images/rs/06-NSList-en.png?width=600&height=133)
@@ -142,7 +142,7 @@ Here, the idea is to provide the list of the cluster nameserver's names
 to the resolvers and the forwarding DNS, so that they will be able to
 resolve the IP address of one of them and query it for node's IP. To
 achieve that, we have to define a new record in *Route53*, an *NS*
-record for Name Server record. So, once again, we will clic on the
+record for Name Server record. So, once again, we will click on the
 button to *Create \[a\] Record Set* and we will enter the relevant
 information in the right panel.
 
@@ -158,7 +158,7 @@ DNS, we would have to create one NS record for each item, but
 \*Route53\* takes care of that for us. I also have the habit to end
 these records with a final dot, it is not a typo, because some other DNS
 require it and it does not seem to be an issue with \*Route53\*. At the
-end, we can clic on the \*Create\* button:
+end, we can click on the \*Create\* button:
 
 ![07-NSRecord-en](/images/rs/07-NSRecord-en.png?width=400&height=817)
 
