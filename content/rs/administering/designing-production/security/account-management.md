@@ -55,7 +55,7 @@ For the user role, enter either:
       All databases includes existing and future databases.
     - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 
-    {{% expand "How do I select email alerts?" %}}![Select email alerts](/images/rs/add-user-email-alerts.gif "Select email alerts"){{% /expand %}}
+    {{% expand "How do I select email alerts?" %}}![Select email alerts](/images/rs/add-user-email-alerts.mp4 "Select email alerts"){{% /expand %}}
 
     Then, click **Save**.
 1. Click ![Save](/images/rv/icon_save.png#no-click "Save").
