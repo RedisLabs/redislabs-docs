@@ -20,10 +20,10 @@ zone (either the whole domain or a sub-zone) defined in AWS Route53.
 
 ## How does Redis Enterprise Software achieve failover?
 
-If you have a three node Redis Enterprise Software cluster, when your
-application wants to connect to a RS database, it connects to any node
+When your application wants to connect to a RS database in a a three node
+Redis Enterprise Software cluster, it connects to any node
 in this cluster using its fully qualified domain name (FQDN), for
-example, node1.mycluster.enterprise.com. It needs to know the IP address
+example "node1.mycluster.enterprise.com". It needs to know the IP address
 associated with this name and asks the top-level nameservers (.com) for
 the list of name servers in charge of enterprise.com. Then, it asks
 these name server (one after each other in case of failure) for the name
@@ -92,7 +92,7 @@ need to click on the zone in which you want to define your cluster,
 ## Nameserver records creation
 
 The next step is to create the record that returns the IP address of
-your cluster's name servers, i.e. one of your cluster's nodes. To create
+the name servers in your cluster, that is one of the nodes. To create
 the first name server IP address resolution record, you need to click on
 the *Create Record Set* blue button at the top of the list:
 
