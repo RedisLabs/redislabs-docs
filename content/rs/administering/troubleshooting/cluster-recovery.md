@@ -6,41 +6,46 @@ alwaysopen: false
 categories: ["RS"]
 ---
 When a cluster fails,
-you must recover the database with its previous cluster configuration, databases and data.
-To recover the cluster to the state that it was in before the failure,
-you must create a new cluster that has the same node configuration as the original cluster.
+you must use the cluster configuration file and database data to recover the cluster.
 
-Cluster recovery requires the cluster configuration backup files and database persistence files
-that are created by the cluster.
-These files are stored in the [persistence storage location]
+Cluster failure is caused by:
+
+- A hardware or software failure causes the cluster to be unresponsive to client requests or administrative actions.
+- More than half of the cluster nodes lose connection with the cluster, resulting in quorum loss.
+
+Cluster recovery requires you to restore the cluster configuration (ccs-redis.rdb) and database persistence files
+to a new cluster.
+These files are stored in the [persistent storage location]
 ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
 The cluster recovery process includes:
 
 1. Install RS on the nodes of the new cluster.
-1. Mount to the new nodes the storage that holds the cluster configuration and persistent storage of the original cluster.
+1. Mount the persistent storage from the original cluster to the new nodes of the new cluster.
 1. Recover the cluster configuration on the first node in the new cluster.
 1. Join the remaining nodes to the new cluster.
 1. [Recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
 
 ## Prerequisites
 
-- Before you run the recovery process on the machines from the original cluster with Redis processes running on the machine,
-make sure to kill all Redis processes.
-
-- We recommend that you allocate new persistent storage drives for the new cluster nodes.
-If you decide to use the persistent storage drives of the old cluster nodes,
-make sure that you backup all files on the old persistent storage drives to another location.
+- We recommend that you recover the cluster to clean nodes.
+    If you use the original nodes,
+    make sure there are no Redis processes running on any nodes in the new cluster.
+- We recommend that you use clean the persistent storage drives for the new cluster.
+    If you use the original storage drives,
+    make sure that you backup the files on the original storage drives to a safe location.
 
 ## Recovering the Cluster
 
-1. Install [RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) on the servers
-    for the new cluster nodes. Do not configure the cluster, also called cluster setup.
+1. (Optional) If you want to recover the cluster to the original cluster nodes, uninstall RS from the nodes.
+
+1. Install [RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) on the new cluster nodes.
+   Do not configure the cluster nodes (`rladmin cluster create` in the CLI or **Setup** in the Web UI).
 
     The new servers must have the same basic hardware and software configuration as the original servers, including:
 
     - The same number of nodes
-    - At least the same memory available on each node
+    - At least the same amount of memory
     - The same RS version
 
     {{% note %}}
@@ -58,7 +63,7 @@ of the configuration and persistence files on each of the nodes.
 
     If you use local persistent storage, place all the recovery files on each of the cluster nodes.
 
-1. To recover the cluster with the configuration from the original cluster,
+1. To recover the cluster configuration from the original cluster to the first node in the new cluster,
     from the [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}}) command-line interface (CLI):
 
     ```src
@@ -68,7 +73,7 @@ of the configuration and persistence files on each of the nodes.
     {{% expand "Command syntax" %}}
 `<filename>` - The full path of the old cluster configuration file in the persistent storage.
 The cluster configuration file is /css/ccs-redis.rdb.
-The file exists on the persistent storage drive of all nodes and all copies are identical.
+The file is located on the persistent storage drive for each node in the original cluster and all copies are identical.
 
 `<node_uid>` - The id of the node, in this case `1`.
 
@@ -80,7 +85,7 @@ in the new node.
 ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`<rack_id>` - optional. If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
+`<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
 was enabled in the cluster,
 you can use this parameter to override the rack ID value that was
 set for the node with ID 1, with a new rack ID. Otherwise, the node
@@ -93,10 +98,10 @@ will get the same rack ID as the original node.
     rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1 rack_id 5
     ```
 
-    When the recovery succeeds,
-    this node is configured as the node with ID 1 from the old cluster.
+    When the recovery command succeeds,
+    this node is configured as the node from the old cluster that has ID 1.
 
-1. To join the remaining servers to the recovered cluster, from the rladmin CLI of each new node run:
+1. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
 
     ```src
     cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>

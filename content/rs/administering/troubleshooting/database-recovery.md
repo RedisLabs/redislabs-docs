@@ -92,4 +92,4 @@ The persistence files for each database are located in the persistent storage pa
 
 1. To verify that the recovered databases are now active, run: `rladmin status`
 
-After the databases are recovered, make sure that your redis clients can successfully connect to the cluster.
+After the databases are recovered, make sure that your redis clients can successfully connect to the databases.
