@@ -35,11 +35,6 @@ After you prepare the cluster that hosts the database,
 you can run the recovery process from the [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
 command-line interface (CLI).
 
-{{% note %}}
-Before you run the recovery process on the machines from the original cluster with Redis processes running on the machine,
-make sure to kill all Redis processes.
-{{% /note %}}
-
 To recover the database:
 
 1. If you are recovering the databases to a new cluster, mount the persistent storage drives of the old cluster to the new nodes.
