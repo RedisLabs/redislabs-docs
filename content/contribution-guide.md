@@ -20,7 +20,7 @@ Just to get you started, here is a simple explanation of how to contribute.
     If you don't have an account, it is easy and free to open one.
 
 Here's what this process looks like:
-![click-link-and-login-to-github](/images/site/click-link-and-login-to-github.gif)
+![click-link-and-login-to-github](/images/site/click-link-and-login-to-github.mp4)
 
 ## Make the Change
 
@@ -35,7 +35,7 @@ Here's what this process looks like:
     You can use the [markdown cheatsheet]({{< relref "cheatsheet.md" >}}) for help with more complex editing.
 
 Here's what this process looks like:
-![fork-repo-and-change-text](/images/site/fork-repo-and-change-text.gif)
+![fork-repo-and-change-text](/images/site/fork-repo-and-change-text.mp4)
 
 ## Propose the Change
 
@@ -47,7 +47,7 @@ Here's what this process looks like:
 1. Click **Propose file change**.
 
 Here's what this process looks like:
-![propose-file-change](/images/site/propose-file-change.gif)
+![propose-file-change](/images/site/propose-file-change.mp4)
 
 ## Open a Pull Request
 
@@ -72,6 +72,6 @@ Here's what this process looks like:
     Maybe we'll even write back!
 
 Here's what this process looks like:
-![review-and-create-PR](/images/site/review-and-create-PR.gif)
+![review-and-create-PR](/images/site/review-and-create-PR.mp4)
 
 Your contributions will help every Redis Labs customer get the most out of Redis products, and they'll have you to thank for it!
