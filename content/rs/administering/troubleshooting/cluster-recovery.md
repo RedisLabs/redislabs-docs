@@ -21,7 +21,7 @@ These files are stored in the [persistent storage location]
 The cluster recovery process includes:
 
 1. Install RS on the nodes of the new cluster.
-1. Mount the persistent storage from the original cluster to the new nodes of the new cluster.
+1. Mount the persistent storage from the original cluster to the nodes of the new cluster.
 1. Recover the cluster configuration on the first node in the new cluster.
 1. Join the remaining nodes to the new cluster.
 1. [Recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
