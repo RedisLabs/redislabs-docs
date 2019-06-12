@@ -13,7 +13,7 @@ Prerequisites:
 
 1. An [OpenShift cluster installed](https://docs.openshift.com/enterprise/3.0/install_config/install/quick_install.html) with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher
-1. The [OpenShift cli installed](https://www.rubix.nl/blogs/how-install-and-run-openshift-origin-your-mac-os-x/)
+1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/latest/cli_reference/getting-started-cli.html)
 
 ## Step 1: Login
 
