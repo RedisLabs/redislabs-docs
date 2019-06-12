@@ -64,14 +64,11 @@ function _trackSearch(query) {
         hitType: 'event',
         eventCategory: 'TEST Search', // remove TEST before merge
         eventAction: 'input',
-        eventLabel: 'Main Search',
-        eventValue: query,
+        eventLabel: query,
+        eventValue: 1,
         hitCallback: function() {
             console.log('GA Event sent');
-         },
-        hitCallbackFail: function () {
-           console.log('GA Event not sent');
-        }        
+        }
     });    
 }
 
