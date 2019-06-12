@@ -4,7 +4,6 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
-markup: "mmark"
 ---
 
 ## What is Redis Enterprise Software?
@@ -27,7 +26,7 @@ Redis on Flash offers the unique ability to have a very large Redis database but
 
 [Learn more about Redis on Flash.]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 
-## Geo-Distributed Active-Active Conflict-free Replicated Redis Databases (CRDB)
+## Geo-Distributed Active-Active Conflict-free Replicated Redis Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-redis-databases-crdb}
 
 Developing globally distributed applications can be challenging, as developers have to think about race conditions and complex combinations of events under geo-failovers and cross-region write conflicts. CRDBs simplify the development of such applications by directly using built-in smarts for handling conflicting writes based on the data type in use. Instead of depending on simplistic “last-writer-wins” conflict resolution, geo-distributed CRDBs combine techniques defined in CRDT (conflict-free replicated data types) research with Redis types to provide smart and automatic conflict resolution based on the data type's intent.
 
@@ -62,7 +61,7 @@ failures. Auto-failover is carried out within a few seconds.
 
 {{< youtube qIZuW_8bPtQ >}}
 
-### Built-in data persistence, backups and replication
+### Built-in data persistence, backups and replication {#builtin-data-persistence-backups-and-replication}
 
 RS enables the use of Redis AOF (Append-Only File) every second or on
 every write, or (RDB) snapshots of your dataset every 1, 6, or 12 hours
@@ -71,7 +70,7 @@ periodically or ad-hoc to an FTP server or AWS S3. Other cloud storage
 options, such as Azure Geo-Redundant Storage, SoftLayer Object Storage,
 and Google Cloud Storage, will be added in a future release.
 
-### Predictable high-performance
+### Predictable high-performance {#predictable-highperformance}
 
 Datasets are processed by multiple cores to guarantee the best
 performance. In addition, RS uses advanced mechanisms to guarantee
@@ -86,7 +85,7 @@ in a dedicated process and in a non-blocking manner.
 
 Use as many database connections as you want.
 
-### Full-featured management UI
+### Full-featured management UI {#fullfeatured-management-ui}
 
 RS provides a full-featured and easy-to-use management user interface
 (UI) for setting up, configuring and monitoring the cluster and each
@@ -99,7 +98,7 @@ level.
 RS's fully-managed solution takes care of all your database scaling,
 data-persistence tuning, shards migration and auto-failover needs.
 
-### 24/7 support
+### 24/7 support {#247-support}
 
 Paying customers enjoy our premium 24/7 support through Redis Labs online
 or phone support services.

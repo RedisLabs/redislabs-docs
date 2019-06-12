@@ -34,7 +34,7 @@ When creating or editing a Redis database on Redis Cloud Pro, the
 system will automatically calculate the number of shards needed based on
 the database memory limit and required throughput.
 
-## Multi-Key Operations
+## Multi-Key Operations {#multikey-operations}
 
 Operations on multiple keys in a sharded Redis Cloud Pro cluster
 are supported with the following limitations:

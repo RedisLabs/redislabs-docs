@@ -226,7 +226,7 @@ Ouput:
 
 {{< youtube_start Bi1T3toQfF4 10 >}}
 
-## Single-Sourcing
+## Single-Sourcing {#singlesourcing}
 
 ### Expanding blocks
 

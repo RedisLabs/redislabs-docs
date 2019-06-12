@@ -23,7 +23,7 @@ Starting from RS 5.4, [Redis Graph](https://oss.redislabs.com/redisgraph/), a ne
 
 RedisGraph is the first queryable [Property Graph](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc) database to use [sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix) to represent the [adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) in graphs and [linear algebra](http://faculty.cse.tamu.edu/davis/GraphBLAS.html) to query the graph.
 
-### Active-Active Redis (CRDB) - Creation in non-clustering mode
+### Active-Active Redis (CRDB) - Creation in non-clustering mode {#activeactive-redis-crdb-creation-in-nonclustering-mode}
 
 In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}) in a non-clustering mode. As a result, the following creation options are allowed:
 

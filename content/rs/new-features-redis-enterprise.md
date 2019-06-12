@@ -8,7 +8,7 @@ categories: ["RS"]
 Below are detailed a few of the major features of this release of Redis
 Enterprise Software along with bug fixes and patches.
 
-## Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB)
+## Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-databases-crdb}
 
 Developing globally distributed applications can be challenging, as
 developers have to think about race conditions and complex combinations

@@ -50,7 +50,7 @@ For the test environment, there are three required tasks:
 1. Preparing the flash memory
 1. Setup the load generation tool
 
-### Creating a three-node RS cluster
+### Creating a three-node RS cluster {#creating-a-threenode-rs-cluster}
 
 For this performance test, you will need at least a three-node RS
 cluster. All tests in the example scenarios on this page are performed

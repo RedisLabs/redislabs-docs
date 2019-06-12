@@ -137,7 +137,7 @@ replication to for the global CRDB.
 
 ![crdb-diagram](/images/rs/crdb-diagram.png)
 
-### Connecting Using redis-cli
+### Connecting Using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with redis database.
 

@@ -42,7 +42,7 @@ if they were not designed to use it beforehand.
 
 ![subscription-selection-2](/images/rc/subscription-selection-2.png?width=600&height=221)
 
-## Multi-Key Operations
+## Multi-Key Operations {#multikey-operations}
 
 Operations on multiple keys in a sharded Redis Cloud Essentials cluster
 are supported with the following limitations:

@@ -89,9 +89,7 @@ can be Redis databases that are not part of an RS.
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
-    compression]({{< relref
-    "/rs/administering/intercluster-replication/replica-of.md#data-compression-for-replica-of"
-    >}}) section.
+    compression]({{< relref "/rs/administering/intercluster-replication/replica-of.md#data-compression-for-replica-of">}}) section.
 - When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:
     redis://:\[redis password\]@\[hostname\]:\[port\] where the password
