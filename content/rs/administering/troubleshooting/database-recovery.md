@@ -8,7 +8,9 @@ categories: ["RS"]
 When a cluster fails or a database is corrupted,
 you must recover the databases with their previous configuration and data.
 
-Database recovery requires the database persistence files that are created by the cluster.
+The configuration of the database is recovered during cluster recovery.
+To restore the data that was in the failed databases in the cluster to the databases in the new cluster
+you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
 These files are stored in the [persistence storage location]
 ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
