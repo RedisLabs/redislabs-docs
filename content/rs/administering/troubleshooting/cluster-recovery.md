@@ -13,8 +13,10 @@ Cluster failure is caused by:
 - A hardware or software failure causes the cluster to be unresponsive to client requests or administrative actions.
 - More than half of the cluster nodes lose connection with the cluster, resulting in quorum loss.
 
-Cluster recovery requires you to restore the cluster configuration (ccs-redis.rdb) and database persistence files
-to a new cluster.
+To recover a cluster and re-create it as it was before the failure
+you must restore the cluster configuration (ccs-redis.rdb) to the cluster nodes.
+To restore the data that was in the failed databases in the cluster to the databases in the new cluster
+you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
 These files are stored in the [persistent storage location]
 ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
@@ -87,9 +89,8 @@ in the new node.
 
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
 was enabled in the cluster,
-you can use this parameter to override the rack ID value that was
-set for the node with ID 1, with a new rack ID. Otherwise, the node
-will get the same rack ID as the original node.
+you can use this parameter to override the rack ID value that was set for the node with ID 1 with a new rack ID.
+Otherwise, the node will get the same rack ID as the original node.
     {{% /expand %}}
 
     For example:
