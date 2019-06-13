@@ -27,7 +27,7 @@
       {
         "name": "Redis-database-example",
         "protocol": "redis",
-        "memoryLimitInGb": 10,
+        "memoryLimitInMb": 1024,
         "supportOSSClusterApi": true,
         "dataPersistence": "none",
         "replication": true,
