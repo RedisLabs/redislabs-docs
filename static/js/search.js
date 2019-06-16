@@ -62,14 +62,14 @@ function search(query) {
 function _trackSearch(query) {
     window.ga('send', {
         hitType: 'event',
-        eventCategory: 'TEST Search', // remove TEST before merge
+        eventCategory: 'Search',
         eventAction: 'input',
         eventLabel: query,
         eventValue: 1,
         hitCallback: function() {
             console.log('GA Event sent');
         }
-    });    
+    });
 }
 
 // Let's get started
@@ -97,7 +97,7 @@ $( document ).ready(function() {
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '" ' +
+                'data-uri="'+ item.uri + '?search=' + term + '"' +
                 'data-context="' + item.context + '">' +
                     '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
                     '<div class="context">' + (item.context || '') +'</div>' +
