@@ -1,6 +1,6 @@
 ---
-Title: Network configuration
-description:
+Title: Nodes on Different VLANs
+description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

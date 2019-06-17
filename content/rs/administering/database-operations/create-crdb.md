@@ -9,7 +9,7 @@ categories: ["RS"]
 The participating clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
 Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) to all of the instances.
 
-## Overview of the Steps to Create a CRDB
+## Steps to Create a CRDB
 
 1. **Create a service account** - On each participating cluster, create a dedicated user account with the Admin role.
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
@@ -67,6 +67,10 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
     - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
         The intercluster synchronization is most efficient when it reads from slave shards.
+    - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
+        To protect against loss of data stored in RAM,
+        you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
+        AOF provides the fastest and most reliable method for instance failure recovery.
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host CRDB instances and the admin user account to connect to each cluster.
         - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
