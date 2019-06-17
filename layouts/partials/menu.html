@@ -3,15 +3,16 @@
 {{- $isParentRoot := eq .Parent .FirstSection -}}
 {{- $numOfChildren := (add (len .Pages) (len .Sections)) -}}
 {{- $shouldCollapse := and $isParentRoot (eq $numOfChildren 0) -}}
-{{- $isCollapsed := (or $shouldCollapse (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/"))) -}}
+{{- $isCollapsed := (or $shouldCollapse (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/"))) -}}
+{{- $currentURL := .Permalink -}}
 
 {{- if eq .Site.Params.ordersectionsby "title"}}
   {{- range .Site.Home.Sections.ByTitle}}
-  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed}}
+  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed "currentURL" $currentURL}}
   {{- end}}
 {{- else}}
   {{- range .Site.Home.Sections.ByWeight}}
-  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed}}
+  {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed "currentURL" $currentURL}}
   {{- end}}
 {{- end}}
 
@@ -19,32 +20,33 @@
 {{- define "section-tree-nav"}}
 {{- $showvisitedlinks := .showvisitedlinks }}
 {{- $isCollapsed := .isCollapsed }}
+{{- $currentURL := .currentURL }}
 {{- $currentNode := .currentnode }}
  {{- with .sect}}
   {{- if and .IsSection (or (not .Params.hidden) $.showhidden)}}
     {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
-    {{- safeHTML .Params.head}}    
-    <li data-nav-id="{{.URL}}" class="dd-item
+    {{- safeHTML .Params.head}}
+    <li data-nav-id="{{.RelPermalink}}" class="dd-item
         {{- if .IsAncestor $currentNode}} parent{{end -}}
-        {{- if eq .URL $currentNode.URL}} active{{end -}}
+        {{- if eq $currentURL .Permalink}} active{{end -}}
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
         {{- if ne $numberOfPages 0 }} haschildren{{end -}}
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
-        {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/"))}} menu-root {{end}}
+        {{- if (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/"))}} menu-root {{end}}
         ">
         {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") }}
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
-        {{- if eq .URL .RelPermalink }}
+        {{- if eq .RelPermalink .RelPermalink }}
           <!-- Child items -->          
-          {{if or (eq .URL "/rs/") }}
+          {{if or (eq .RelPermalink "/rs/") }}
             <div class="children has-version-selector">
           {{else}}
             <div class="children">
           {{end}}
 
-              {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") }}          
+              {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") }}          
                 <div class="menu-divider"></div>
                 
                 <span class="SideMenuToggle expander">
@@ -84,14 +86,14 @@
           {{- range $pages.ByTitle }}
             {{- if and .Params.hidden (not $.showhidden) }}
             {{- else}}
-            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed }}
+            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed "currentURL" $currentURL }}
             {{- end}}
           {{- end}}
         {{- else}}
           {{- range $pages.ByWeight }}
             {{- if and .Params.hidden (not $.showhidden) }}
             {{- else}}
-            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed }}
+            {{- template "section-tree-nav" dict "sect" . "currentnode" $currentNode "showvisitedlinks" $showvisitedlinks "isCollapsed" $isCollapsed "currentURL" $currentURL }}
             {{- end}}
           {{- end}}
         {{- end}}
@@ -100,8 +102,8 @@
     </li>
   {{- else}}
     {{- if not .Params.Hidden }}
-      <li data-nav-id="{{.URL}}" class="dd-item
-     {{- if eq .URL $currentNode.URL}} active{{end -}}
+      <li data-nav-id="{{.RelPermalink}}" class="dd-item
+     {{- if eq $currentURL .Permalink}} active{{end -}}
       ">
         <div>
           <a href="{{ .RelPermalink}}">
