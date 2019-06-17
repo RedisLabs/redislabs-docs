@@ -25,10 +25,10 @@ To add a user to the cluster:
     - internal - Authenticates with RS
     - external - Authenticates with an external LDAP server
 
-{{%expand "How do I create an external user?" %}}
-  To have a user authenticate with LDAP, you must have [LDAP integration enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
-  Then, create a user with the user type **external**.
-{{% /expand%}}
+    {{%expand "How do I create an external user?" %}}
+To have a user authenticate with LDAP, you must have [LDAP integration enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
+Then, create a user with the user type **external**.
+    {{% /expand%}}
 
 {{% comment %}}
 You can also create an external with the REST API with this syntax:
@@ -44,7 +44,7 @@ For the user role, enter either:
 - `cluster_viewer` - Cluster viewer
 - `cluster_member` - Cluster member
 - `admin` - Admin
-{{% /comment %}}    
+{{% /comment %}}
 
 1. For the email alerts, click **Edit** and select the alerts that the user receives.
     You can select:
