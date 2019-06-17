@@ -71,7 +71,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
         AOF provides the fastest and most reliable method for instance failure recovery.
-    - [Participating Clusters](#participating-clusters) - You must specify the URL of the clusters that you want to
+    - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host CRDB instances and the admin user account to connect to each cluster.
         - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
         - For each cluster, enter the URL for the cluster (`http://<cluster_URL>:8080`),

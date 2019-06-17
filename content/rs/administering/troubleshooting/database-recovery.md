@@ -8,8 +8,8 @@ categories: ["RS"]
 When a cluster fails or a database is corrupted,
 you must recover the databases with their previous configuration and data.
 
-The configuration of the database is recovered during cluster recovery.
-To restore the data that was in the failed databases in the cluster to the databases in the new cluster
+The configuration of the databases is recovered during cluster recovery.
+To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
 These files are stored in the [persistence storage location]
 ({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
@@ -18,18 +18,18 @@ The database recovery process includes:
 
 1. If the cluster failed, [recover the cluster]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
 1. Identify recoverable databases.
-1. Restore the database configurations.
+1. Restore the database data.
 1. Verify that the databases are active.
 
 ## Prerequisites
 
 - Before you start database recovery, make sure that the cluster that hosts the database is healthy.
-In the case of a cluster failure,
-you must [recover the cluster]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) before you recover the databases.
+    In the case of a cluster failure,
+    you must [recover the cluster]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) before you recover the databases.
 
 - We recommend that you allocate new persistent storage drives for the new cluster nodes.
-If you decide to use the persistent storage drives of the old cluster nodes,
-make sure that you backup all files on the old persistent storage drives to another location.
+    If you use the original storage drives,
+    make sure that you backup all files on the old persistent storage drives to another location.
 
 ## Recovering the Databases
 
@@ -39,15 +39,15 @@ command-line interface (CLI).
 
 To recover the database:
 
-1. If you are recovering the databases to a new cluster, mount the persistent storage drives of the old cluster to the new nodes.
-    These drives contain the database configuration backup files and persistence files.
+1. Mount the persistent storage drives with the recovery files to the new nodes.
+    These drives must contain the cluster configuration backup files and database persistence files.
 
     {{% note %}}
 Make sure that the user redislabs has permissions to access the storage location
 of the configuration and persistence files on each of the nodes.
     {{% /note %}}
 
-    If you use local persistent storage, place all the recovery files on each of the cluster nodes.
+    If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
 1. To see which databases are recoverable, run:
 
@@ -58,19 +58,19 @@ of the configuration and persistence files on each of the nodes.
     The status for each database can be either ready for recovery or missing files.
     An indication of missing files in any of the databases can result from:
 
-    - The recovery path of the nodes not set appropriately
+    - The storage location is not found
     - Cannot read the persistence files, such as: no permission to read the files, missing files, or corrupted files
 
-    If the the command indicates that there are missing files,
+    If the output shows that there are missing files,
     make sure that the recovery path is set correctly on all of the nodes in the cluster.
-    If that does not resolve the issues, [contact Redis Labs Support](mailto:support@redislabs.com).
+    If that does not resolve the issues, contact [Redis Labs Support](mailto:support@redislabs.com).
 
 1. You can either recover the databases all at once or specify the database to recover:
 
     - To recover all of the databases, run: `rladmin recover all`
     - To recover a single databases, run: `rladmin recover db <database_id|name>`
 
-    All databases are recovered with the same configuration they had in the old cluster.
+    All databases are recovered with the same data that they had in the old cluster.
     The data is recovered from the persistence files located in the persistent storage drives
     that you mounted to the nodes.
 
