@@ -129,7 +129,7 @@ You should receive the following response:
 
   `deployment.apps/redis-enterprise-operator created`
 
-Now, run kubectl get deployment and verify that your redis-enterprise-operator deployment is running. A Typical response will look like this:
+Now, run `kubectl get deployment` and verify that your redis-enterprise-operator deployment is running. A Typical response will look like this:
 
 ![getting-started-kubernetes-openshift-image2]( /images/rs/getting-started-kubernetes-openshift-image2.png )
 
@@ -233,7 +233,7 @@ In order to create your database, we will log in to the Redis Enterprise UI.
 
 - First, apply port forwarding to your Cluster:
 ```src
- $ kubectl port-forward your_cluster_name-0 8443:8443
+$ kubectl port-forward your_cluster_name-0 8443:8443
 ```
 *Note: your_cluster_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.*
 
