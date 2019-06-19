@@ -82,4 +82,4 @@ The concept section consists of:
 - 2-4 paragraphs in the section or subsection
 - 2-4 sentences in each paragraph
 - 10-15 words in each sentence section
-- A sentneces are divided into sections by commas.
+- A sentences are divided into sections by commas
