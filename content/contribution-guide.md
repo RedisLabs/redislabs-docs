@@ -3,75 +3,83 @@ title: Contribution Guide
 description: How to contribute to the Redis Labs documentation
 draft: false
 ---
-Redis Labs documentation is an open source project and we welcome contributions of all types.
+Redis Labs documentation is an open source project and we welcome edits of all types.
 
-Just to get you started, here is a simple explanation of how to contribute.
+Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
-## Getting to the Source
+## Branches vs. Forks
 
-1. Find a page with something to edit.
+The redislabs-docs repository is public but only members of the repository can create new branches in the repo.
+New branches in the repo are automatically built into staging sites at: http://docs.redislabs.com/staging/<branch>
+After every commit to a branch, the site is re-built within about 1 minute so you can see the live updates.
 
-    Contributions can be anything from a simple typo or grammar error to an entire How To guide.
+If you are not a member of the repository, you can fork the repository to a branch in your account.
 
-1. On that page, click **Edit on GitHub**.
+After you commit your changes to the public repo or your forked repo,
+you can open a pull request to submit your changes for consideration.
 
-1. Enter your GitHub credentials.
+## Adding Pages
 
-    If you don't have an account, it is easy and free to open one.
+Every article in the docs is an individual markdown file.
+To add a new article in the docs, you must add a markdown file in the hierarchy of the content directory.
 
-Here's what this process looks like:
-{{< video "/images/site/click-link-and-login-to-github.mp4" "click-link-and-login-to-github" >}}
+The markdown file must include these metadata in the header of the file:
 
-## Make the Change
+- `Title:` - The title of the article
+- `description:` - A short description of the article (Currently not used)
+- `weight:` - A number that indicates the location of the article among the articles in the directory (0 is top)
+- `alwaysopen: false` - The article is by default hidden in the table of contents in the directory
+- `categories:` - The product that the article relates to: `RC Essentials`, `RC Pro`, `RS`, `Platforms`
 
-1. Fork the repository.
+For example:
 
-    A fork is a copy of the entire contents of the documentation site that is stored in your account.
+```yaml
+---
+Title: Usage Reports
+description:
+weight: 70
+alwaysopen: false
+categories: ["RC Pro"]
+---
+```
 
-1. In the source file of the page, edit the text as you like.
+## Adding Sections
 
-    Don't worry. This is your copy of the file, so you can't do much damage.
+To add a section to the docs, you must add a directory with a `_index.md` file.
+The `_index.md` file is the landing page for the section that should contain the main information for the section.
+If you do not have an article that can serve as the landing page for the section,
+you can use the `children` shortcode to show all of the sub-topics for the section.
 
-    You can use the [markdown cheatsheet]({{< relref "cheatsheet.md" >}}) for help with more complex editing.
+## Writing an Article
 
-Here's what this process looks like:
-{{< video "/images/site/fork-repo-and-change-text.mp4" "fork-repo-and-change-text" >}}
+The structure of an article is:
 
-## Propose the Change
+- Concepts
+- Prerequisites (if necessary)
+- Informational notices (if necessary)
+- Procedure
 
-1. When you finish with your changes, scroll down to the bottom of the page.
-1. Enter a meaningful name for the change that you made.
+Every article must relate to only one procedure,
+and the concepts must explain any background information that is needed to know when and why to use the procedure.
 
-    The default is "Update <filename>" but we like a little more detail than that if you can.
+### Writing tone
 
-1. Click **Propose file change**.
+We use a friendly but functional tone.
+Use simple language in your writing so that it is easy for non-English speakers to understand your writing.
+At the same time, do not skip words just to save space.
 
-Here's what this process looks like:
-{{< video "/images/site/propose-file-change.mp4" "propose-file-change" >}}
+Here are some examples:
 
-## Open a Pull Request
+|  Text type | Wrong                                       | Correct                                | Explanation                                           |
+| --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
+| Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
+| Prodedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
 
-1. Review your changes.
+### Writing structure
 
-    You can see the before and after of the file. If you see a mistake or want to add to the change, just go back.
+The concept section consists of:
 
-2. Click **Create pull request**.
-
-    A pull request is a recommendation that includes the changes that you made. We are notified of all request and can review or change the request before we include it in the documentation.
-
-3. Enter a meaningful name for the pull request.
-
-    By default the pull request has the same name as your file change, which is usually fine.
-
-4. Click **Create pull request**.
-
-    Now your pull request is in our system and ready for us to handle.
-
-5. You can add information in the comments box to help us understand why you think the change is important.
-
-    Maybe we'll even write back!
-
-Here's what this process looks like:
-{{< video "/images/site/review-and-create-PR.mp4" "review-and-create-PR" >}}
-
-Your contributions will help every Redis Labs customer get the most out of Redis products, and they'll have you to thank for it!
+- 2-4 paragraphs in the section or subsection
+- 2-4 sentences in each paragraph
+- 10-15 words in each sentence section
+- A sentneces are divided into sections by commas.
