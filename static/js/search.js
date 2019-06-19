@@ -97,7 +97,7 @@ $( document ).ready(function() {
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '?search=' + term + '"' +
+                'data-uri="'+ item.uri + '?s=' + term + '"' +
                 'data-context="' + item.context + '">' +
                     '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
                     '<div class="context">' + (item.context || '') +'</div>' +
