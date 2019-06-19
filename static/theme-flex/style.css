@@ -2961,7 +2961,20 @@ a[href*="#no-click"], img[src*="#no-click"] {
         padding-left: 60px;
         padding-right: 30px;
     }
+}
+
+#articleFeedbackModal {
+  display: none;
+  position: fixed;
+  top: 100px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 100px;
+  z-index: 9999;
+  box-shadow: 0px 3px 3px #eee;  
+}
 
 /* Helpers */
 .pt-20 {
   padding-top: 20px;
+}

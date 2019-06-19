@@ -235,3 +235,26 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
         return undefined;
     }
 };
+
+function setArticleFeedback(kind) {
+    showArticleFeedbackModal();
+    window.ga('send', {
+        hitType: 'event',
+        eventCategory: 'Article feedback', // remove TEST before merge
+        eventAction: 'vote',
+        eventLabel: kind,
+        eventValue: 1,
+        hitCallback: function() {
+            console.log('GA Event sent');
+            showArticleFeedbackModal();
+        }
+    }); 
+}
+
+function showArticleFeedbackModal() {
+    $('#articleFeedbackModal').show();
+}
+
+function hideArticleFeedbackModal() {
+    $('#articleFeedbackModal').hide();
+}

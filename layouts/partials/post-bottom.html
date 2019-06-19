@@ -1,9 +1,11 @@
 <div class="post-bottom">
 {{- if not $.Site.Params.disableNavChevron -}}
     <div class="extra-links-gooter">
+        {{ if .File }}
         <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a>
         </div>
+        {{ end }}
         <div class="go-top-link">
                 <a href="#top" class="got-to-top">Top&nbsp;<i class="icon-Top"></i></a>
         </div>
@@ -22,4 +24,9 @@
         </div>
     {{- end }}
 {{- end -}}
+</div>
+
+<div id="articleFeedbackModal">
+    <b>Thank you for feedback</b>
+    <span onclick="hideArticleFeedbackModal()">CLOSE IT</span>
 </div>
