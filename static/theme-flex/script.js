@@ -253,8 +253,10 @@ function setArticleFeedback(kind) {
 
 function showArticleFeedbackModal() {
     $('#articleFeedbackModal').show();
+    $('#backdrop').show();
 }
 
 function hideArticleFeedbackModal() {
     $('#articleFeedbackModal').hide();
+    $('#backdrop').hide();
 }
