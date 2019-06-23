@@ -6,3 +6,5 @@
 {{%expand "A Shortcode" %}}
 Inside an embedded markdown file.
 {{% /expand%}}
+
+{{% tip %}}Another shortcode inside an embedded file.{{% /tip %}}
