@@ -292,8 +292,6 @@ Syntax:
 
 Output:
 
-AUtput
-
 {{< embed-md "sample.md" >}}
 
 Embed an HTML partial
