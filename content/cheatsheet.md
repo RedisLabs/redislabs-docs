@@ -294,7 +294,7 @@ Output:
 
 AUtput
 
-{{< embed-md-alt "sample.md" >}}
+{{< embed-md "sample.md" >}}
 
 Embed an HTML partial
 

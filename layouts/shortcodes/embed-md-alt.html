@@ -1,3 +1,0 @@
-{{ $_hugo_config := `{ "version": 1 }` }}
-{{$file := .Get 0}}
-{{- printf "./content/embeds/%s" $file  | readFile | markdownify -}}
