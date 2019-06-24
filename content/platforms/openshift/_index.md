@@ -33,7 +33,7 @@ Prerequisites:
 - Next, verify that you are using the newly created project. Type:
 
 ```src
- $ oc login https://your-cluster.acme.com –token=your$login$token
+ $ oc project <your project name>
 ```
 
 This will shift to your project rather than the default project (you can verify the project you’re currently using with the *oc project* command).
