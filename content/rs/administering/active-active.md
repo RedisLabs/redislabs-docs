@@ -1,19 +1,17 @@
 ---
-Title: Administering CRDBs
+Title: Active-Active Geo-Distributed Redis (CRDB)
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/intercluster-replication/crdbs/
 ---
-Conflict Free Replicated Databases (CRDBs) provide a simple and
-effective way to replicate your data between one or more Redis
-Enterprise Software (RS) clusters.
+In Redis Enterprise, active-active geo-distribution is based on CRDT technology.
+The Redis Enterprise implementation of CRDT is called Conflict-Free Replicated Database (CRDB).
+With CRDBs, applications can read and write to the same data set from different geographical locations
+seamlessly and with latency less than 1 ms.
 
-Common uses for CRDBs include disaster recovery, geographically
-redundant applications, and keeping data closer to your user's
-locations. MMR is always multi-directional amongst clusters configured
-in the CRDB. For unidirectional replication, see the [ReplicaOf]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
-capabilities in Redis Enterprise Software.
+CRDBs also provide disaster recovery, geographically redundant applications, and accelerated data access for geographically distributed users.
 
 Note: CRDBs do not replicate the entire database, only the data. Any
 database configurations, Lua scripts, etc. are outside the scope of
@@ -63,7 +61,7 @@ Before configuring a CRDB, you will need:
     mDNS(development only).
 1. A CRDB on Redis 5 can use Redis on Flash.
 1. While similar to
-    [ReplicaOf]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}),
+    [ReplicaOf]({{< relref "/rs/administering/active-passive.md" >}}),
     CRDBs are not compatible with that feature. ReplicaOf is a one-way
     replication, while CRDB utilize multi-master replication.
 1. [OSS cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) is not supported

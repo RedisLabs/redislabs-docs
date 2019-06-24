@@ -26,6 +26,6 @@ sudo /etc/network/if-up.d/ntpdate
 ```
 
 If you are using Geo-Replication, it is critical to use [Network Time Service (ntpd)]
-({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time-service-ntp-or-chrony" >}})
+({{< relref "/rs/administering/active-active.md#network-time-service-ntp-or-chrony" >}})
 to synchronize OS clocks consistent across clusters as well. Certain aspects of conflict
 resolution are achieved using OS time.

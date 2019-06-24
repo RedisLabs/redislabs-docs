@@ -25,5 +25,5 @@ manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).
 
 Note: [Active-Active Geo-Replicated
-CRDBs]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}})
+CRDBs]({{< relref "/rs/administering/active-active.md" >}})
 will always operate in noeviction mode.

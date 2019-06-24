@@ -1,29 +1,23 @@
 ---
-Title: Unidirectional Replication with Replica of
+Title: Active-Passive Geo-Distributed Redis (Replica-Of)
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/intercluster-replication/replica-of/
 ---
-**Replica Of** is a feature of Redis Enterprise Software (RS) where an
-administrator designates a database to be a replica (destination) of one
-or more databases (sources). Once you have done so and the initial data
-load from source to destination is completed, all write commands are
-synchronized from the source(s) to the destination. This allows you to
-keep a database (destination) that is an exact replica of a database.
+In Redis Enterprise, active-passive geo-distribution provides applications read-only access
+to replicas of the data set from different geographical locations.
+The Redis Enterprise implementation of active-passive replication is called Replica Of.
 
-ReplicaOf is uni-directional replication between databases, either
-within a cluster or between clusters. It should not be confused with
-[Geo-Replication via
-CRDBs]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}),
-which is bi-directional replication between N+1 databases on separate,
-possibly geo-located, clusters.
+In Replica Of, an administrator designates a database as a replica (destination) of one or more databases (sources).
+After the initial data load from source to destination is completed,
+all write commands are synchronized from the sources to the destination.
+Replica Of lets you distribute the read load of your application across multiple databases or
+synchronize the database, either within RS or external to RS, to another database.
 
-This configuration can be very useful, for example, if you would like to
-distribute the read load of your application across multiple databases.
-In addition, this feature can be used for carrying out a one-time
-synchronization of a database, either within RS or external to RS, to
-another database.
+[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/active-active.md" >}})
+provides these benefits and also provides write access to all of the database replicas.
 
 **Warning:** Configuring a database as a replica of the database that it replicates
 creates a cyclical replication and is not supported.
@@ -89,7 +83,7 @@ can be Redis databases that are not part of an RS.
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
     refer to the ["Replica of" data
-    compression]({{< relref "/rs/administering/intercluster-replication/replica-of.md#data-compression-for-replica-of">}}) section.
+    compression]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) section.
 - When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:
     redis://:\[redis password\]@\[hostname\]:\[port\] where the password
