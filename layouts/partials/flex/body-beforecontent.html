@@ -103,6 +103,7 @@
 
       <div class="chevrons">
         {{ partial "next-prev-page.html" . }}
+        <button onclick="getInternalContent({{ .Params.pageID }})">LOAD INTERNAL</button>
       </div>
       {{end}}
 

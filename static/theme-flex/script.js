@@ -282,3 +282,20 @@ $(function() {
         showPageFeedback();
     }
 });
+var getInternalContent = function(page) {                
+    function getContent(url){
+        var result = null;
+        $.ajax( { url: url, 
+                  type: 'get', 
+                  dataType: 'html',
+                  async: false,
+                  success: function(data) { result = data; } 
+                }
+        );
+        FileReady = true;
+        return result;
+    }
+
+    var markdown_source = getContent('https://raw.githubusercontent.com/RedisLabs/redislabs-docs/master/content/rs/getting-started/quick-setup.md');    
+    console.log("MARKDOWN :: ", markdown_source)
+}
