@@ -8,9 +8,6 @@ categories: ["RS"]
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 For more information, see [Redis OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).
 
-These multi-key commands are not allowed with OSS cluster API:
-DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
-
 Note: The OSS Cluster API setting is not cluster-wide.
 The setting only applies to the specified database.
 
