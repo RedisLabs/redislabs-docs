@@ -5,44 +5,31 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-[Redis](https://redislabs.com/redis-features/redis) is (mostly) a
-single-threaded process. This is a design decision that allows it to be
-extremely performant while keeping its implementation simple. However,
-the downside of that architectural choice is that Redis cannot be easily
-scaled. A single Redis process is ultimately bound by the CPU core on
-which it is running, as well as the amount of memory the server has.
+Open source [Redis](https://redislabs.com/redis-features/redis) is a single-threaded process
+to provide speed and simplicity.
+A single Redis process is bound by the CPU core that it is running on and available memory on the server.
 
-To overcome these limitations, Redis Enterprise Software (RS) supports
-database clustering. A database cluster is a set of Redis processes, in
-which each process manages a subset of the database's keyspace. This
-allows you to overcome scaling challenges through horizontal scaling by
-using the RAM resources of multiple cores and multiple servers.
+Redis Enterprise Software (RS) supports database clustering to allow customers
+to spread the load of a Redis process over multiple cores and the RAM of multiple servers.
+A database cluster is a set of Redis processes where each process manages a subset of the database keyspace.
 
-In a Redis database cluster, the keyspace is partitioned into hash
-slots. At any given time a slot resides on and is managed by, a single
-node. Each node that belongs to a Redis database cluster can manage
-multiple slots. This division of the key space, a.k.a. sharding, is
-achieved by hashing the keys' names, or parts of these (key hash tags),
-to obtain the slot where a key should reside.
+In an RS cluster, the keyspace is partitioned into database shards.
+At any moment a shard resides on a single node and is managed by that node.
+Each node in a Redis database cluster can manage multiple shards.
+The key space in the shards is divided into hash slots.
+The slot of a key is determined by a hash of the key name or part of the key name.
 
-Despite running multiple Redis processes, database clustering is nearly
-transparent to the application using it. The database cluster is
-accessible through a single endpoint that automatically routes all
-operations to the relevant shards, without requiring a cluster-aware
-Redis client. This allows applications to benefit from using the
-database clustering without performing any code changes, even if they
-were not designed beforehand to use it.
+Database clustering is transparent to the Redis client that connects to the database.
+The Redis client accesses the database through a single endpoint that automatically routes all operations to the relevant shards.
+You can connect an application to a single Redis process or a clustered database without any difference in the application logic.
 
-## Abbreviations
+## Terminology
 
-Tag / Hash Tag
-A part of the key that is used in the hash calculation.
+In clustering, these terms are commonly used:
 
-Slot / Hash Slot
-The result of the hash calculation.
-
-Shard
-Redis process that is part of the Redis clustered database.
+- Tag or Hash Tag - A part of the key that is used in the hash calculation.
+- Slot or Hash Slot - The result of the hash calculation.
+- Shard - Redis process that is part of the Redis clustered database.
 
 ## When to use sharding
 
