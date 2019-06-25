@@ -163,7 +163,7 @@ the following limitations:
 - **Multi-key commands**: Redis offers several commands that accept
     multiple keys as arguments. In a clustered database, most multi-key
     commands are not allowed across tags. The following multi-key
-    commands **are allowed** across tags: DEL, MSET, MGET, KEYS, HMGET,
+    commands **are allowed** across tags: DEL, UNLINK, MSET, MGET, KEYS, HMGET,
     HMSET, FLUSHALL, EXISTS.
 
     **Note**: When using these commands in a sharded setup, the command
