@@ -80,20 +80,16 @@ that i used for the example command above:
 
 ## Examples
 
-An example of upgrading the version of RediSearch to 10017.0 would
+An example of upgrading the version of RediSearch to 10017 would
 be:
-
-$ rladmin upgrade module db_name
-MyAwesomeDB module_name ft version 10017.0
-module_args
-
+```
+$ rladmin upgrade module db_name MyAwesomeDB module_name ft version 10017 module_args "PARTITIONS AUTO"
+```
 An example of upgrading ReBloom:
-
-$ rladmin upgrade module db_name MyDB
-module_name bf version 10100.0 module_args
-""
-
+```
+$ rladmin upgrade module db_name MyDB module_name bf version 10100 module_args ""
+```
 An example of upgrading ReJSON:
-
-$ rladmin upgrade module db_name MyDB module_name ReJSON version
-10002.0 module_args ""
+```
+$ rladmin upgrade module db_name MyDB module_name ReJSON version 10002 module_args ""
+```
