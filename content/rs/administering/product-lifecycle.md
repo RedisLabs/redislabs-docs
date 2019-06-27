@@ -86,5 +86,12 @@ that version.
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.1 – February 2019                       | -                  |
+| 2.0 – June 2019                           | -                  |
+| 1.1 – February 2019                       | August 31, 2020    |
 | 1.0 – September 2017                      | March 31, 2019     |
+
+#### RedisTimeSeries
+
+| Release Date | End of Life (EOL)  |
+| ----------------------------------------- | ------------------ |
+| 1.0 – June 2019                           | -                  |
