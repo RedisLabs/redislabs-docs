@@ -77,3 +77,9 @@ weight = 70
 name = "<label>Get Started</label>"
 url = "https://redislabs.com/get-started/"
 weight = 80
+
+[permalinks]
+categories = "/"
+
+[taxonomies]
+
