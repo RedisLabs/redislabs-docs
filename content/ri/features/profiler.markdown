@@ -1,0 +1,21 @@
+---
+layout: docs
+title:  Profiler
+description: Profiler Details
+date:  2018-06-14 03:49:29 +0530
+category: docs
+permalink: docs/features/profiler/
+pageTitle: Profiler
+---
+
+RDBTools Profiler runs Redis ```MONITOR``` command, which analyzes every command sent to the redis instance. It parses the output of the MONITOR command and generates a summarized view. All the commands sent to the redis instance will be monitored for the duration of the profiling.
+
+Profiler gives information about the number of commands processed, commands/second and number of connected clients. It also gives information about top prefixes, top keys and top commands.
+
+**Start profiling** - Starts the profiling.
+<br/>
+**Stop Profiling** - Stops the profiler i.e. the monitor command.
+
+<img src="/img/documentation/profile.png"/>
+
+**Note**: Running monitor command is dangerous to the performance of your production server, hence the profiler is run for a maximum time of 5 minutes, if the user has not stopped it in between. This is to avoid overload on the server.
