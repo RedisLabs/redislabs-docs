@@ -55,7 +55,7 @@ The cluster recovery process includes:
 The cluster recovery can fail if these requirements are not met.
     {{% /note %}}
 
-1. Mount the persistent storage drives with the recovery files to the new nodes.
+3. Mount the persistent storage drives with the recovery files to the new nodes.
     These drives must contain the cluster configuration backup files and database persistence files.
 
     {{% note %}}
@@ -65,7 +65,7 @@ of the configuration and persistence files on each of the nodes.
 
     If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
-1. To recover the cluster configuration from the original cluster to the first node in the new cluster,
+4. To recover the cluster configuration from the original cluster to the first node in the new cluster,
     from the [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}}) command-line interface (CLI):
 
     ```src
@@ -102,7 +102,7 @@ Otherwise, the node will get the same rack ID as the original node.
     When the recovery command succeeds,
     this node is configured as the node from the old cluster that has ID 1.
 
-1. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
+5. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
 
     ```src
     cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
