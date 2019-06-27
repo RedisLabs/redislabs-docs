@@ -107,6 +107,11 @@ To specify to import from a local mount point on a node:
 
     For example: `/mnt/Public/backup.rbd`
 
+In order to use this option, the storage needs to be mounted in the same path on all cluster nodes.
+The import source folder needs to be owned by the redislabs user with write permissions.
+
+Local storage can also be used, however, since the import source folders on various nodes are not synchronised, the imported files need to be copied manually to all nodes.
+
 ### OpenStack Swift
 
 Before you specify to import from OpenStack Swift, make sure that you have:
