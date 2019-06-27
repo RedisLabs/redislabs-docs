@@ -240,10 +240,10 @@ function setArticleFeedback(kind) {
     showArticleFeedbackModal();
     window.ga('send', {
         hitType: 'event',
-        eventCategory: 'Article feedback', // remove TEST before merge
+        eventCategory: 'Article feedback',
         eventAction: 'vote',
-        eventLabel: kind,
-        eventValue: 1,
+        eventLabel: window.location.pathname,
+        eventValue: kind,
         hitCallback: function() {
             console.log('GA Event sent');
             showArticleFeedbackModal();

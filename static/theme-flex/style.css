@@ -2965,14 +2965,28 @@ a[href*="#no-click"], img[src*="#no-click"] {
 
 #articleFeedbackModal {
   display: none;
-  position: fixed;
-  top: 25%;
-  left: 45%;
   background: #fff;
   border: 1px solid #eee;
-  padding: 100px;
+  height: 150px;
+  left: 45%;
+  padding-top: 45px;
+  position: fixed;
+  text-align: center;
+  top: 25%;
+  width: 350px;
   z-index: 9999;
-  box-shadow: 0px 3px 3px #eee;  
+}
+
+#articleFeedbackModal .fa {
+  font-size: 23px;  
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+#articleFeedbackModal .fa:hover {
+  cursor: pointer;
+  color: #1c1d22;
 }
 
 #backdrop {
@@ -2987,6 +3001,11 @@ a[href*="#no-click"], img[src*="#no-click"] {
 .post-feedback .fa {
   font-size: 22px;
   margin: 0 5px;
+}
+
+.post-feedback .fa:hover {
+  cursor: pointer;
+  color: #2a2b30;
 }
 
 /* Helpers */
