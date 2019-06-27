@@ -47,7 +47,7 @@ For example, the following command would replace the cm certificate with the pri
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
    ```
 
-## How to update SSL/TLS certificates
+## How to update SSL/TLS certificates in earlier version of RS
 
 {{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
 
