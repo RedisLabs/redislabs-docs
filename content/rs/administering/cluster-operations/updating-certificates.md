@@ -15,9 +15,12 @@ Redis Enterprise Software (RS) uses self-signed certificates in its out of the b
 
 These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
 
-{{% note %}} Self-signed certificates will cause browsers and other clients to display an untrusted connection notification.   Updated your certificate following the instructions below with a certificate signed by a certificate authority trusted by your organization in order to prevent these alerts. 
-
-These alerts can also be suppressed by adding an exception within your browser to trust this site. {% /note %}}
+{{% note %}}When using the default self-signed certificates, an untrusted
+connection notification will appear in the management UI. If you do not
+update the self-signed certificate with your own certificate, depending
+on the browser you use, you might be able to allow the connection for
+this specific session, or add an exception to make this site trusted in
+future sessions.{{% /note %}}
 
 ## How to update TLS certificates in RS 5.4.x and Later
 
