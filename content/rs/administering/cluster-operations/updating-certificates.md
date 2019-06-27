@@ -36,12 +36,12 @@ There are 5 different types of certificates that can be replaced starting in RS 
 
 The below command syntax can be used to replace certificates substituting the below variables:
 
-- <certificate-type> - the type of certificate you want to replace
-- <key-file-name> - the name of your non-password protected key file.
-- <certificate-file-name> - the name of your certificate file
+- certificate-type - The type of certificate you want to replace
+- key-file-name - The name of your non-password protected key file.
+- certificate-file-name - The name of your certificate file
 
-   ```bash
-rladmin cluster certificate set <certificate-type> certificate_file <certificate-file-name>.pem key_file <key-file-name>.pem
+    ```bash
+ rladmin cluster certificate set <certificate-type> certificate_file <certificate-file-name>.pem key_file <key-file-name>.pem
     ```
 
 For example, the following command would replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem"
