@@ -6,12 +6,12 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/intercluster-replication/crdbs/
 ---
-In Redis Enterprise, active-active geo-distribution is based on CRDT technology.
+In Redis Enterprise, active-active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
 The Redis Enterprise implementation of CRDT is called Conflict-Free Replicated Database (CRDB).
 With CRDBs, applications can read and write to the same data set from different geographical locations
-seamlessly and with latency less than 1 ms.
+seamlessly and with latency less than 1 ms, without changing the way the application connects to the database.
 
-CRDBs also provide disaster recovery, geographically redundant applications, and accelerated data access for geographically distributed users.
+CRDBs also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
 Note: CRDBs do not replicate the entire database, only the data. Any
 database configurations, Lua scripts, etc. are outside the scope of
