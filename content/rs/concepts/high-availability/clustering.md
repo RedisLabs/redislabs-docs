@@ -149,8 +149,8 @@ the following limitations:
 
 - **Multi-key commands**: Redis offers several commands that accept
     multiple keys as arguments. In a clustered database, most multi-key
-    commands are not allowed across tags. The following multi-key
-    commands **are allowed** across tags: DEL, MSET, MGET, EXISTS, UNLINK, 
+    commands are not allowed across slots. The following multi-key
+    commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, 
     TOUCH. In addition, commands that affect all keys or keys that match a 
     specified pattern are allowed in a clustered database, for 
     example: FLUSHDB, FLUSHALL, KEYS.
@@ -159,8 +159,8 @@ the following limitations:
     is distributed across multiple shards and the responses from all
     shards are combined into a single response.
 
-    All other multi-key commands are **not allowed** across tags and if
-    used across tags will return an error.
+    All other multi-key commands are **not allowed** across slots and if
+    used across slots will return an error.
     Examples of such commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH,
     MSETNX, RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE,
     SORT, SUNION, XREAD, XREADGROUP, ZINTERSTORE, ZUNIONSTORE.
@@ -169,9 +169,9 @@ the following limitations:
     STORE and STOREDIST option can only be used when all affected keys
     reside in the same slot.
 - **Transactions**: All operations within a WATCH / MULTI / EXEC block
-    should be performed on keys that have the same tag.
-- **Lua scripts**: All keys used by a Lua script must have the same
-    tag and must be provided as arguments to the EVAL / EVALSHA commands
+    should be performed on keys that are mapped to the same slot.
+- **Lua scripts**: All keys used by a Lua script must be mapped to the same
+    slot and must be provided as arguments to the EVAL / EVALSHA commands
     (as per the Redis specification). Using keys in a Lua script that
     were not provided as arguments might violate the sharding concept
     but will not result in the proper violation error being returned.
