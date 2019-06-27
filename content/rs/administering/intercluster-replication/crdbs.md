@@ -61,7 +61,7 @@ Before configuring a CRDB, you will need:
 1. Access to CRDBs does not work with IP based connection management
     via the Discovery Service, it requires the setup and use of FQDNs or
     mDNS(development only).
-1. A CRDB cannot utilize Redis on Flash.
+1. A CRDB on Redis 5 can use Redis on Flash.
 1. While similar to
     [ReplicaOf]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}),
     CRDBs are not compatible with that feature. ReplicaOf is a one-way

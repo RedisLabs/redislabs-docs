@@ -54,6 +54,10 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial CRDB sync of a new replica.
 
+    {{% note %}}
+You must select **Redis 5** as the Redis version to use CRDB and RoF.
+    {{% /note %}}
+
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
 1. Enter the name of the new CRDB and select from the options:
