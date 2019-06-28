@@ -26,7 +26,7 @@ future sessions.{{% /note %}}
 
 You can replace an existing certificate on the cluster leveraging the rladmin command-line utility.
 
-There are 5 different types of certificates that can be replaced starting in RS version 5.4.x. These should be replaced
+There are 5 different types of certificates that can be replaced starting in RS version 5.4.x. These may be replaced leveraging the below command.
 
 - API - This is the certificate used by the API
 - CM  - This is the certificate used by the management user interface or the cluster manager. It is also used for the sentinel discovery service if you are using sentinel
@@ -92,73 +92,80 @@ There are two primary locations and one optional location that you may need to m
 To set the minimum TLS version to use within these paths use the REST API or the following rladmin
 commands:
 
-- For the management path you can set the below configurations:
-	- Minimum TLS Protocol
-		- Default TLS Protocols: TLSv1.0
-		- Syntax: rladmin cluster config cluster config min_control_TLS_version <TLS Version>
-		- TLS versions may be configured with the following options:
-			- TLSv1: 1
-   			- TLSv1.1: 1.1
-			- TLSv1.2: 1.2
-		- The below example uses TLS 1.2 
+**For the management path you can set the below configurations:**
+
+How to set the minimum TLS protocol:
+
+- Default TLS Protocols: TLSv1.0
+- Syntax: rladmin cluster config cluster config min_control_TLS_version <TLS Version>
+- TLS versions may be configured with the following options:
+	- TLSv1: 1
+   	- TLSv1.1: 1.1
+	- TLSv1.2: 1.2
+	- The below example uses TLS 1.2 
 				
-    ```bash
+```bash
     rladmin cluster config min_control_TLS_version 1.2
-    ```
-	- TLS Ciphers
-        	- Default TLS Protocols: HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
-		- Syntax: rladmin cluster config cipher_suites '<openssl cipher list>'
-		- Redis Enterprise Software uses openssl to implement TLS. Lists of availible configurations can be found here: https://www.openssl.org/docs/manmaster/man1/ciphers.html
-		- The below example uses the Mozilla intermediate compatibility cipher list found here: ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
+ ```
 
-    ```bash
-    rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
-    ```
+TLS Ciphers
 
-- For the data path you can set the below configurations:
+- Default TLS Protocols: HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
+- Syntax: rladmin cluster config cipher_suites '<openssl cipher list>'
+- Redis Enterprise Software uses openssl to implement TLS. Lists of availible configurations can be found here: https://www.openssl.org/docs/manmaster/man1/ciphers.html
+- The below example uses the Mozilla intermediate compatibility cipher list.
 
-        - Minimum TLS Protocol
-                - Default TLS Protocols: TLSv1.0
-                - Syntax: rladmin cluster config cluster config min_data_TLS_version <TLS Version>
-                - TLS versions may be configured with the following options:
-                        - TLSv1: 1
-                        - TLSv1.1: 1.1
-                        - TLSv1.2: 1.2
-                - The below example uses TLS 1.2
-    
-    ```bash
-    rladmin cluster config min_data_TLS_version 1.2
-    ```
+```bash
+rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
+```
 
-- If you use Sentinel for discovery instead of DNS you can set the below configuration:
- 	
-	- Require TLS
-		- Default: Not Set
-		- Syntaxt: rladmin cluster config sentinel_ssl_policy <ssl_policy>
-		- The ssl_policy may be set with the following options
-			- allowed - sentinel will allow both SSL and non-SSL connections
-			- required - sentinel will allow only SSL connections
-			- disabled - sentinel will allow only non-SSL connections
-		- The below example requires SSL in Sentinel
 
-	- Set Minimum TLS Version for Sentinel
-		- Default: Not Set
-		- Syntaxt: rladmin cluster config sentinel_ssl_policy min_data_TLS_version <TLS Version>
-		- TLS versions may be configured with the following options:
-                        - TLSv1: 1
-                        - TLSv1.1: 1.1
-                        - TLSv1.2: 1.2
-                - The below example uses TLS 1.2
+**For the data path you can set the below configurations:**
 
-    ```bash
-    rladmin cluster config sentinel_ssl_policy required min_data_TLS_version 1.2
-    ```
-	- The sentinel service needs to be restarted in order for your changes to take effect. You can do this with the following commands:
+How to set the  minimum TLS protocol:
 
-    ```bash
-    supervisorctl restart sentinel_service
-    ```
-- 
+- Default TLS Protocols: TLSv1.0
+- Syntax: rladmin cluster config cluster config min_data_TLS_version <TLS Version>
+- TLS versions may be configured with the following options:
+	- TLSv1: 1
+	- TLSv1.1: 1.1
+	- TLSv1.2: 1.2
+- The below example uses TLS 1.2
+
+```bash
+rladmin cluster config min_data_TLS_version 1.2
+```    
+
+**If you use Sentinel for discovery instead of DNS you can set the below configuration:**
+
+How to require TLS:
+
+- Default: Not Set
+- Syntaxt: rladmin cluster config sentinel_ssl_policy <ssl_policy>
+- The ssl_policy may be set with the following options
+	- allowed - sentinel will allow both SSL and non-SSL connections
+	- required - sentinel will allow only SSL connections
+	- disabled - sentinel will allow only non-SSL connections
+- The below example requires SSL in Sentinel
+
+How to set minimum TLS version for Sentinel:
+- Default: Not Set
+- Syntaxt: rladmin cluster config sentinel_ssl_policy min_data_TLS_version <TLS Version>
+- TLS versions may be configured with the following options:
+	- TLSv1: 1
+	- TLSv1.1: 1.1
+	- TLSv1.2: 1.2
+- The below example uses TLS 1.2
+
+```bash
+rladmin cluster config sentinel_ssl_policy required min_data_TLS_version 1.2
+```
+
+- The sentinel service needs to be restarted in order for your changes to take effect. You can do this with the following commands:
+
+```bash
+supervisorctl restart sentinel_service
+```
 
 After you set the minimum TLS version, RS does not accept communications with
 TLS versions older than the specified version.
