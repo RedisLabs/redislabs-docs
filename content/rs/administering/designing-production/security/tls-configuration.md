@@ -5,13 +5,11 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To prevent unauthorized access to your data, RS databases support the TLS protocol
-(the more secure successor to SSL) that includes:
+To prevent unauthorized access to your data, RS databases support mutual TLS authentication (mTLS) this enables the following capabilites:
 
 - Encryption - Makes sure that the traffic can only be read by the sender and
   recipient.
-- Authentication - The server or client makes sure that it communicates with an
-  authorized entity.
+- Authentication - The server and client verify the identity of the communication. The server will reject communication if the client does not properly authenticate.
 
 When you enable TLS for a database or CRDB, encryption is enforced on either all
 communications or only communications between clusters, and RS sends its certificate
@@ -21,7 +19,7 @@ received from clusters or clients.
 
 Related topics:
 
-- You can use the REST API to [update the server TLS certificates and TLS protocol version]
+- You can use the REST API and the rladmin utility to [update the server TLS certificates and TLS protocol version]
   ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 - To encrypt Replica Of synchronization traffic, you must also [configure encryption
   for the destination database]({{< relref
