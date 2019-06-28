@@ -282,20 +282,42 @@ $(function() {
         showPageFeedback();
     }
 });
+function renderInternalContent(content) {
+    var converter = new showdown.Converter();
+    $('#internalContent .article').html(converter.makeHtml(content));
+    $('#internalContent').show();
+}
+
+function fetchInternalContent(url){
+    toggleInternalContentLoader('on');
+    var result = null;
+    $.ajax( { url: url, 
+              type: 'get', 
+              dataType: 'html',
+              async: true,
+              success: function(data) {
+                  toggleInternalContentLoader('off');
+                  renderInternalContent(data);
+                } 
+            }
+    );
+    FileReady = true;
+    return result;
+}
+
 var getInternalContent = function(page) {                
-    function getContent(url){
-        var result = null;
-        $.ajax( { url: url, 
-                  type: 'get', 
-                  dataType: 'html',
-                  async: false,
-                  success: function(data) { result = data; } 
-                }
-        );
-        FileReady = true;
-        return result;
+    var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/RedisLabs/redislabs-docs/master/content/rs/getting-started/quick-setup.md');            
+}
+
+var hideInternalContent = function() {
+    $('#internalContent').css('display', 'none');
+}
+
+var toggleInternalContentLoader = function(state)  {
+    if(state === 'on') {
+        $('#internalContentLoader').show();
+        return;
     }
 
-    var markdown_source = getContent('https://raw.githubusercontent.com/RedisLabs/redislabs-docs/master/content/rs/getting-started/quick-setup.md');    
-    console.log("MARKDOWN :: ", markdown_source)
+    $('#internalContentLoader').hide();
 }

@@ -3047,3 +3047,68 @@ a[href*="#no-click"], img[src*="#no-click"] {
 .pt-20 {
   padding-top: 20px;
 }
+
+/* Internal Page Content */
+.edit-link__action {
+  display: inline-block;
+}
+
+.edit-link__action.-internal {
+  font-size: 14px;
+  margin-left: 15px;
+  transform: translateY(-5px);
+}
+
+.edit-link__action.-internal:hover {
+  color: #b62411;
+}
+
+.edit-link__action.-internal i {
+  font-size: 17px;
+  margin-top: -2px;
+  margin-right: 3px;
+}
+
+#internalContentLoader {
+  display: none;
+  height: 4px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+  background-color: #cca9a4;
+}
+
+#internalContentLoader:before{
+  display: block;
+  position: absolute;
+  content: "";
+  left: -200px;
+  width: 200px;
+  height: 4px;
+  background-color: #b62411;
+  animation: loading 2s linear infinite;
+}
+
+@keyframes loading {
+    from {left: -200px; width: 30%;}
+    50% {width: 30%;}
+    70% {width: 70%;}
+    80% { left: 50%;}
+    95% {left: 120%;}
+    to {left: 100%;}
+}
+
+#internalContent {
+  display: none;
+  background: #fff;
+  height: 100%;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  padding: 50px;
+  z-index: 1000;
+}

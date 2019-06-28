@@ -102,8 +102,7 @@
       {{- end}}
 
       <div class="chevrons">
-        {{ partial "next-prev-page.html" . }}
-        <button onclick="getInternalContent({{ .Params.pageID }})">LOAD INTERNAL</button>
+        {{ partial "next-prev-page.html" . }}        
       </div>
       {{end}}
 
@@ -117,6 +116,11 @@
 
       {{if not .IsHome}}
         <h1>{{.Title}}</h1>
+        <div id="internalContentLoader"></div>
+        <div id="internalContent">
+          <i class="fa fa-close" onclick="hideInternalContent()"></i>
+          <div class="article"></div>
+        </div>
 
         {{if eq .RelPermalink "/rs/"}}
           {{ partial "rs-hot-topics-table.html" . }}

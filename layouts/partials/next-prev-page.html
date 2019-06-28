@@ -34,8 +34,26 @@
 
     
 {{- if not $.Site.Params.disableNavChevron -}}
+<<<<<<< HEAD
         <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a></div>
+=======
+        {{ if .File }}
+        <div class="edit-link">
+            <div class="edit-link__action">
+                <a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank">
+                    <i class="icon-Edit"></i>
+                    <span>{{T "Edit-this-page"}}</span>
+                </a>
+            </div>
+
+            <div class="edit-link__action -internal">
+                <button onclick="getInternalContent({{ .Params.pageID }})">
+                    <i class="fa fa-folder-o"></i> Show Internal
+                </button>
+            </div>
+        </div>
+>>>>>>> Move content loader button to top.
         <!--<a class="nav-spacer"></a>-->
     {{- with ($.Scratch.Get "prevPage") -}}
         <div class="nav-links"><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
