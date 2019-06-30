@@ -18,6 +18,24 @@ RS's architecture completely decouples the data path from the cluster
 management in order to optimize the operations of each of these
 components.
 
+{{< tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" >}}
+{{< tab tabNum="1" >}}
+
+**Tab 1 Content**
+
+{{< /tab >}}
+{{< tab tabNum="2" >}}
+
+**Tab 2 Content**
+
+{{< /tab >}}
+{{< tab tabNum="3" >}}
+
+**Tab 3 Content**
+
+{{< /tab >}}
+{{< /tabs >}}
+
 ### Data path
 
 The data path is based on multiple zero-latency, multi-threaded proxies
