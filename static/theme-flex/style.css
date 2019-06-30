@@ -3049,6 +3049,14 @@ a[href*="#no-click"], img[src*="#no-click"] {
 }
 
 /* Internal Page Content */
+#internalLoader {
+  display: none;
+}
+
+#internalToggle:hover {
+  cursor: pointer;
+}
+
 .edit-link__action {
   display: inline-block;
 }

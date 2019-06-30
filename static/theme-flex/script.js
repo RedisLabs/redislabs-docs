@@ -218,6 +218,31 @@ $(function() {
     });
 });
 
+var toggleInternalLogin = function() {
+    var isLoggedIn = localStorage.getItem('auth_token');
+    
+    if(isLoggedIn) {        
+        localStorage.removeItem('auth_token');
+        $('#internalToggle').html('Internal Login')
+    } else {
+        localStorage.setItem('auth_token', 'abc123');
+        $('#internalToggle').html('Internal Logout')
+    }
+
+    window.location.reload();
+}
+
+var handleInternalLoader = function() {
+    var isLoggedIn = localStorage.getItem('auth_token');
+
+    if(isLoggedIn) {        
+        $('#internalLoader').css('display', 'inline-block');
+        $('#internalToggle').html('Internal Logout')        
+    }
+}
+
+handleInternalLoader();
+
 // Get Parameters from some url
 var getUrlParameter = function getUrlParameter(sPageURL) {
     var url = sPageURL.split('?');
@@ -291,22 +316,31 @@ function renderInternalContent(content) {
 function fetchInternalContent(url){
     toggleInternalContentLoader('on');
     var result = null;
-    $.ajax( { url: url, 
-              type: 'get', 
-              dataType: 'html',
-              async: true,
-              success: function(data) {
-                  toggleInternalContentLoader('off');
-                  renderInternalContent(data);
-                } 
-            }
-    );
+    $.ajax({
+        url: url, 
+        type: 'get', 
+        dataType: 'html',
+        async: true,
+        success: function(data) {
+            toggleInternalContentLoader('off');
+            renderInternalContent(data);
+        },
+        error: function() {
+            toggleInternalContentLoader('off');
+            alert("Error loading internal content");
+        }
+    });
     FileReady = true;
     return result;
 }
 
-var getInternalContent = function(page) {                
-    var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/RedisLabs/redislabs-docs/master/content/rs/getting-started/quick-setup.md');            
+var getInternalContent = function(page) {            
+    var isLoggedIn = localStorage.getItem('auth_token');
+    
+    if(!isLoggedIn) return;
+
+    // var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/RedisLabs/redislabs-docs/master/content/rs/getting-started/quick-setup.md');
+    var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/HarunD/internal-md-experiment/master/README.md?token=AANKDT4CO6YSBYEGE4JYFJK5DB62Y');
 }
 
 var hideInternalContent = function() {
