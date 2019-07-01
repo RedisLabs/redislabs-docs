@@ -9,7 +9,6 @@ RedisTimeSeries is a Redis Module adding a Time Series data structure to Redis.
 
 ## Features
 
-- Quick inserts (50K samples per sec)
 - Query by start time and end-time
 - Query by labels sets
 - Aggregated queries (Min, Max, Avg, Sum, Range, Count, First, Last) for any time bucket
@@ -70,11 +69,24 @@ In your redis-server run: `loadmodule redistimeseries.so`
 
 For more information about modules, go to the [redis official documentation](https://redis.io/topics/modules-intro).
 
+#### Create a new database that uses the Module
+
+1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Select the RedisTimeSeries module.
+1. If you want the module to use a custom configuration,
+click **Add configuration** and enter the optional custom configuration.
+1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
+
+    {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
+
+1. Click **Show advanced options** and put **12544** for the port.
+1. Click the **Activate** button
+
 ## Give it a try
 
 After you setup RedisTimeSeries, you can interact with it using redis-cli.
 
-Here we'll create a time series representing sensor temperature measurements. 
+Here we'll create a time series representing sensor temperature measurements.
 After you create the time series, you can send temperature measurements.
 Then you can query the data for a time range on some aggregation rule.
 
