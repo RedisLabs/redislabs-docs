@@ -5,11 +5,11 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To prevent unauthorized access to your data, RS databases support mutual TLS authentication (mTLS) this enables the following capabilites:
+To prevent unauthorized access to your data, RS databases support mutual TLS authentication (mTLS) that includes:
 
-- Encryption - Makes sure that the traffic can only be read by the sender and
-  recipient.
-- Authentication - The server and client verify the identity of the communication. The server will reject communication if the client does not properly authenticate.
+- Encryption - Makes sure that the traffic can only be read by the sender and recipient.
+- Authentication - The server and client verify the identity of the communication.
+    The server rejects communication if the client does not properly authenticate.
 
 When you enable TLS for a database or CRDB, encryption is enforced on either all
 communications or only communications between clusters, and RS sends its certificate
