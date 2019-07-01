@@ -59,20 +59,7 @@ RedisTimeSeries comes with several integrations into existing time series tools.
 
 Furthermore, we also created direct integrations for [Grafana](https://github.com/RedisTimeSeries/grafana-redistimeseries) and [Telegraph](https://github.com/RedisTimeSeries/telegraf). [This repository](https://github.com/RedisTimeSeries/prometheus-demos) contains a docker-compose setup of RedisTimeSeries, its remote write adaptor, Prometheus and [Grafana](https://grafana.com/). It also comes with a set of data generators and pre-built Grafana dashboards.
 
-## Benchmark
-
-To demonstrate the full power of our newly GA RedisTimeSeries module, we benchmarked it against three common techniques for handling time series data. We used a client-server setup with two separate machines in order to compare the performance of Sorted Sets, Streams and RedisTimeSeries for ingestion, query time and memory consumption. 
-
-Specifically, our setup included:
-
-*   Client and server: AWS c5.18xl
-*   Redis Enterprise version 5.4.4-7
-*   A Redis Enterprise database with 16 shards and 48 proxy threads
-*   A data set with: 
-    *   4,000 devices, 10 metrics per device
-    *   Each metric is a CPU measurement
-    *   10,800 samples per metric (every 10 seconds for 30 hours)
-    *   43,200,000 samples in total
+## Time Series Modelling Approaches with Redis
 
 ### Data modelling approaches
 
