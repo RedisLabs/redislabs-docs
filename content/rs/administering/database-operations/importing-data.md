@@ -105,7 +105,7 @@ To specify to import from a local mount point on a node:
 
 1. In the path for the backup location, enter the mount point.
 
-    For example: `/mnt/Public/backup.rbd`
+    For example: `/mnt/Public/backup.rdb`
 
 In order to use this option, the storage needs to be mounted in the same path on all cluster nodes.
 The import source folder needs to be owned by the redislabs user with write permissions.
