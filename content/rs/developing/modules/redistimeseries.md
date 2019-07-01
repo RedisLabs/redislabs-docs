@@ -7,6 +7,22 @@ categories: ["RI"]
 ---
 RedisTimeSeries is a Redis module developed by Redis Labs to enhance your experience managing time series data with Redis.
 
+## Features
+
+- Query by start time and end-time
+- Query by labels sets
+- Aggregated queries (Min, Max, Avg, Sum, Range, Count, First, Last) for any time bucket
+- Configurable max retention period
+- Compaction/Roll-ups - automatically updated aggregated timeseries
+- labels index - each key has labels which will allows query by labels
+
+## Memory model
+
+A time series is a linked list of memory chunks.
+Each chunk has a predefined size of samples.
+Each sample is a tuple of the time and the value of 128 bits,
+64 bits for the timestamp and 64 bits for the value.
+
 ## RedisTimeSeries capabilities
 
 In RedisTimeSeries, we introduce a new data type that uses chunks of memory of fixed size for time series samples, indexed by the same Radix Tree implementation as Redis Streams. With Streams, you can create [a capped stream](https://redis.io/commands/xadd), effectively limiting the number of messages by count. In RedisTimeSeries, you can apply a retention policy in milliseconds. This is better for time series use cases, because they are typically interested in the data during a given time window, rather than a fixed number of samples.
@@ -34,7 +50,7 @@ RedisTimeSeries does this indexing for you based on `field value` pairs (a.k.a l
 When you need to query a time series, it’s cumbersome to stream all raw data points if you’re only interested in, say, an average over a given time interval. RedisTimeSeries follows the Redis philosophy to only transfer the minimum required data to ensure lowest latency. Below is an example of aggregation query over time buckets of 5,000 milliseconds with an [aggregation function](https://oss.redislabs.com/redistimeseries/commands/#tsrange):  
 
 ```src
-    127.0.0.1:6379> TS.RANGE temperature:3:32 1548149180000 1548149210000 AGGREGATION avg 5000
+    127.0.0.1:12543> TS.RANGE temperature:3:32 1548149180000 1548149210000 AGGREGATION avg 5000
     1) 1) (integer) 1548149180000
        2) "26.199999999999999"
     2) 1) (integer) 1548149185000
@@ -107,7 +123,7 @@ As can be seen, the two approaches of using Sorted Sets yield very different thr
 The read query we used in this benchmark queried a single time series and aggregated it in one-hour time buckets by keeping the maximum observed CPU percentage in each bucket. The time range we considered in the query was exactly one hour, so a single maximum value was returned. For RedisTimeSeries, this is out of the box functionality (as discussed earlier).  
 
 ```src
-    TS.RANGE cpu_usage_user{1340993056} 1451606390000 1451609990000 AGGREGATION max 3600000
+    127.0.0.1:12543> TS.RANGE cpu_usage_user{1340993056} 1451606390000 1451609990000 AGGREGATION max 3600000
 ```
 
 For the Redis Streams and Sorted Sets approaches, we created [the following LUA scripts](https://gist.github.com/itamarhaber/0107020b91c71cb52e57e9a9c890c24e). The client once again had 8 threads and 50 connections each. Since we executed the same query, only a single shard was hit, and in all four cases this shard maxed out at 100% CPU.

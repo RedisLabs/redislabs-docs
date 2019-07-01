@@ -43,7 +43,6 @@ $ redis-cli --raw -p 12543
 Run these commands:
 
 ```sh
-$ redis-cli
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
 1) (empty list or set)
 2) 1) Labels added: 2
