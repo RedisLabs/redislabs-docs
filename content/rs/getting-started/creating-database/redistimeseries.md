@@ -41,7 +41,7 @@ You can either get RedisTimeSeries setup in a Docker container or on your own ma
 To quickly try out RedisTimeSeries, launch an instance using docker:
 
 ```sh
-docker run -p 6379:6379 -it --rm redislabs/redistimeseries
+docker run -p 12543:12543 -it --rm redislabs/redistimeseries
 ```
 
 ### Build and Run it yourself
@@ -77,9 +77,9 @@ For more information about modules, go to the [redis official documentation](htt
 click **Add configuration** and enter the optional custom configuration.
 1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
+    For example:
     {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-1. Click **Show advanced options** and put **12544** for the port.
 1. Click the **Activate** button
 
 ## Give it a try
@@ -92,15 +92,24 @@ Then you can query the data for a time range on some aggregation rule.
 
 ### With `redis-cli`
 
+Connect to redis using --raw to maintain file formatting.
+
+```src
+$ redis-cli --raw -p 12543
+127.0.0.1:12543>
+```
+
+Run these commands:
+
 ```sh
 $ redis-cli
-127.0.0.1:6379> TS.CREATE temperature RETENTION 60 LABELS sensor_id 2 area_id 32
+127.0.0.1:12543> TS.CREATE temperature RETENTION 60 LABELS sensor_id 2 area_id 32
 OK
-127.0.0.1:6379> TS.ADD temperature:3:11 1548149181 30
+127.0.0.1:12543> TS.ADD temperature:3:11 1548149181 30
 OK
-127.0.0.1:6379> TS.ADD temperature:3:11 1548149191 42
+127.0.0.1:12543> TS.ADD temperature:3:11 1548149191 42
 OK
-127.0.0.1:6379>  TS.RANGE temperature:3:11 1548149180 1548149210 AGGREGATION avg 5
+127.0.0.1:12543>  TS.RANGE temperature:3:11 1548149180 1548149210 AGGREGATION avg 5
 1) 1) (integer) 1548149180
    2) "30"
 2) 1) (integer) 1548149190

@@ -19,9 +19,9 @@ For this quick start, you will need the following:
 click **Add configuration** and enter the optional custom configuration.
 1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
+    For example:
     {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-1. Click **Show advanced options** and put **12543** for the port.
 1. Click the **Activate** button
 
 ## Quick start with redis-cli
@@ -31,13 +31,14 @@ it is. The first ReJSON command to try out is JSON.SET, which sets a
 Redis key with a JSON value. All JSON values can be used, for example a
 string:
 
-Connect to redis using --raw so we can read the json correctly.
-Otherwise the quotes are "escaped" and formatting is not ideal.
+Connect to redis using --raw to maintain file formatting.
 
 ```src
 $ redis-cli --raw -p 12543
 127.0.0.1:12543>
 ```
+
+Run these commands:
 
 Add a simple document
 

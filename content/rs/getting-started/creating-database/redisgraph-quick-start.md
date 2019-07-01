@@ -19,9 +19,9 @@ For this quick start, you will need the following:
 click **Add configuration** and enter the optional custom configuration.
 1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
+    For example:
     {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-1. Click **Show advanced options** and enter `12544` for the **Endpoint port number**.
 1. Click **Activate**.
 
 ## Give it a try
@@ -33,9 +33,18 @@ taking part in the MotoGP league. Once created, we'll start querying our data.
 
 ### With `redis-cli`
 
+Connect to redis using --raw to maintain file formatting.
+
+```src
+$ redis-cli --raw -p 12543
+127.0.0.1:12543>
+```
+
+Run these commands:
+
 ```sh
 $ redis-cli
-127.0.0.1:6379> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
 1) (empty list or set)
 2) 1) Labels added: 2
    2) Nodes created: 6
@@ -48,7 +57,7 @@ Now that our MotoGP graph is created, we can start asking questions. For example
 Who's riding for team Yamaha?
 
 ```sh
-127.0.0.1:6379> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team) WHERE t.name = 'Yamaha' RETURN r,t"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team) WHERE t.name = 'Yamaha' RETURN r,t"
 1) 1) 1) "r.name"
       2) "t.name"
    2) 1) "Valentino Rossi"
@@ -59,7 +68,7 @@ Who's riding for team Yamaha?
 How many riders represent team Ducati?
 
 ```sh
-127.0.0.1:6379> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
 1) 1) 1) "count(r)"
    2) 1) "1.000000"
 2) 1) "Query internal execution time: 0.129000 milliseconds"
