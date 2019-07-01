@@ -7,8 +7,8 @@ categories: ["RS"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates in its out of the box configuration to ensure the product is secure by default. This self-signed certificate is used to establish encryption-in-transit for the following traffic:
 
-- RS Management User Interface (UI)
-- RS's REST API
+- Management User Interface (UI)
+- REST API
 - Connections between clients and database endpoints
 - Synchronization between databases for ReplicaOf and CRDB
 - Discovery Services
