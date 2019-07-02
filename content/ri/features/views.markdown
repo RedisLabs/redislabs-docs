@@ -21,14 +21,14 @@ The data is displayed in a table initially with 100 records. Clicking on show mo
 
 **Add Column** - Add column allows you to add your customized column via ```Json Path``` or ```Lua Script```. The newly added column get added to your existing view.
 
-<img src="/img/documentation/add_column.png"/>
+![add_column](/images/ri/add_column.png)
 
 **Show/Hide Columns** - The views can have multiple columns in order to see few particular columns, you can use show/hide columns which will temporarily hide few columns.
 
-<img src="/img/documentation/show_hide_columns.png"/>
+![show_hide_columns](/images/ri/show_hide_columns.png)
 
 **Save View** - The views consisting of default as well as custom columns can be saved for future reference. You can further edit the custom created columns in the saved views.
 
-<img src="/img/documentation/saved_views.png"/>
+![saved_views](/images/ri/saved_views.png)
 
 **Export** - Every saved view consisting of default and custom created columns can be exported into various formats like - csv, html, json, xls

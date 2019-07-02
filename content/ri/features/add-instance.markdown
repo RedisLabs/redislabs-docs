@@ -13,11 +13,11 @@ nextStep:
 
 Now, we will connect Rdbtools to a Redis Server. Let's start by connecting to redis server running on localhost.
 
-<img src="/img/documentation/add_redisinstance_localhost.png"/>
+![add_redisinstance_localhost](/images/ri/add_redisinstance_localhost.png)
 
 If the connection is successful, you should start seeing statistics for this redis server.
 
-<img src="/img/documentation/instance_overview_page.png"/>
+![instance_overview_page](/images/ri/instance_overview_page.png)
 
 **Note:**
 1. Rdbtools can only connect to redis servers that your redis-cli can connect to. If Rdbtools cannot connect to your redis server, check if you can connect using `redis-cli`

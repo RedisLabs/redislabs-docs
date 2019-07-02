@@ -35,4 +35,4 @@ In addition, you can add some additional flags to the docker run command:
 
 If everything worked, you should see a message "Running RDBtools on localhost:8001" in the terminal.
 
-<img src="/img/documentation/local_installation_docker_run_successful.png"/>
+![local_installation_docker_run_successful](/images/ri/local_installation_docker_run_successful.png)

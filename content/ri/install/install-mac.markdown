@@ -15,6 +15,4 @@ pageTitle: Redis GUI Client for Mac
 * Launch the app to start rdbtools webserver in background
 * Open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RDBTools Redis GUI for Mac.
 
-<img src="/img/documentation/install/rdbtools-for-mac.png" alt="Redis GUI Client for Mac"/>
-<br/>
-
+![rdbtools-for-mac](/images/ri/rdbtools-for-mac.png)

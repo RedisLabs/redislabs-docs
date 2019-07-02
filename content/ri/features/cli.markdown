@@ -10,5 +10,5 @@ pageTitle: RDBTools Features - CLI
 
 RDBTools CLI lets you run commands against a redis server. You don't need to remember the syntax - the integrated help shows you all the arguments and validates your command as you type. 
 
-<img src="/img/documentation/cli.png"/>
+![cli](/images/ri/cli.png)
 <br/><br/>

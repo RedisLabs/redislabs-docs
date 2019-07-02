@@ -14,7 +14,7 @@ RDBTools Cluster Management provides you with a GUI to manage your Redis Cluster
 2. **Master-Replica Layout** - This view contains masters along with their replicas. This view contains information about slots ranges, host, port, etc for both master and replica.
 3. **Physical Layout** - This view gives you a representation of your server i.e. it groups all nodes according to the physical server they reside in.
 
-<img src="/img/home/cluster-management.png">
+![cluster-management](/images/ri/cluster-management.png)
 
 Cluster Management not only gives you a representation of your cluster but also helps you administer your cluster by using the following actions - 
 1. **Cluster Rebalance** - Cluster Rebalance helps you migrate all slots according to slot percentages amongst cluster nodes.

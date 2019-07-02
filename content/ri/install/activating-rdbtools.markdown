@@ -21,10 +21,10 @@ After installation is complete, you should point your browser to <a href="http:/
 
 If you have purchased a license, activate it now. If you do not have a license, you can start a free trial by entering your email address. You will receive a license key in your email.
 
-<img src="/img/documentation/activate_license.png"/>
+![activate_license](/images/ri/activate_license.png)
 
-<img src="/img/documentation/activate_license_popup.png"/>
+![activate_license_popup](/images/ri/activate_license_popup.png)
 
 Finally, you should be redirected to the add instance page where the redis instance can be added. In case, if you want to revisit your current license plan summary, got ot license page from the menu in the header.
 
-<img src="/img/documentation/license_plan_summary.png"/>
+![license_plan_summary](/images/ri/license_plan_summary.png)

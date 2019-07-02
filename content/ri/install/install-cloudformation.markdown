@@ -32,9 +32,9 @@ Launch a CloudFormation stack with RDBTools preinstalled using our template:
     - **VPC** - Select the VPC in which  you want to launch this instance.
     - **Subnet** - Choose a public subnet so that you can connect to RDBTools over http(s). This subnet must have network connectivity to ElastiCache.
 
-	<img style="height:auto; box-shadow: 1.3px 2.2px 5.4px 0.1px rgba(0, 18, 39, 0.2);" src="/img/blogs/create-stack.png"/>
+	![create-stack](/images/ri/create-stack.png)
 
 3. Once stack is created, you can navigate to Stack list and click on the website URL 
    under output section in order to get started with RDBTools.
 
-	<img style="height:auto; box-shadow: 1.3px 2.2px 5.4px 0.1px rgba(0, 18, 39, 0.2);" src="/img/blogs/stack-output.png"/>
+	![stack-output](/images/ri/stack-output.png)

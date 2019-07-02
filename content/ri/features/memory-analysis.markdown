@@ -20,11 +20,11 @@ Navigte to Memory Analysis > Overview, and then click the "Analyze Now" button. 
 
 Choose the offline analysis approach if you have a RDB Backup file that you want to analyze. We will proceed with online analysis in this document.
 
-<img src="/img/documentation/online_memory_analysis.png"/>
+![online_memory_analysis](/images/ri/online_memory_analysis.png)
 
 Memory analysis can take several minutes, and largely depends on the size of your data.
 
-<img src="/img/documentation/snapshot_processing_screen.png"/>
+![snapshot_processing_screen](/images/ri/snapshot_processing_screen.png)
 
 
 Once memory analysis completes, you will see various statistics about memory consumption under Memory Analysis. The overview page gives you a high level breakup of memory usage.
@@ -33,22 +33,22 @@ Once memory analysis completes, you will see various statistics about memory con
 ## **Memory Overview**
 Memory overview gives you an overview of your redis instance through graphical representation. Memory breakup by datatype show the overall size and count distribution of keys based on datatype. Expiry analysis gives a overview of how your keys configured to get expired. There could be few keys which will never expire.
 
-<img src="/img/documentation/memory_overview.png"/>
+![memory_overview](/images/ri/memory_overview.png)
 
 ## **Keyspace Summary**
 Keyspace Summary identifies the top key patterns from the set of keys in decending order of memory. This will help you identify which key patterns are consuming most of your memory and what are the top keys for that pattern. You can add your own key patterns in order to identify their memory usage and the top keys for that key pattern.
 
-<img src="/img/documentation/keyspace_summary.png"/>
+![keyspace_summary](/images/ri/keyspace_summary.png)
 
 ## **Recommendations**
 RDBTools provide recommendations on how you can save your memory. The recommendation are specially curated according to your Redis instance. These recommendations have been formed based on industry standards and our own experiences.
 
-<img src="/img/documentation/memory_recommendations.png"/>
+![memory_recommendations](/images/ri/memory_recommendations.png)
 
 ## **Memory Analyzer**
 Memory Analyzer lets you search a key or key patterns and get related information regarding it with other stats. You can apply various filters and aggregations using our advance filters feature.
 
-<img src="/img/documentation/memory_usage_by_key.png"/>
+![memory_usage_by_key](/images/ri/memory_usage_by_key.png)
 
 ## How Memory Analysis Works
 
