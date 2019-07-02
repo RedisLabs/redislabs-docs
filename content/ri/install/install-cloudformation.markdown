@@ -25,15 +25,15 @@ Launch a CloudFormation stack with RDBTools preinstalled using our template:
     <br/>
 
 1. Fill the form to create stack.
-    - **Stack Name** - You can give any logical name to your CloudFormation stack, by default it    								 is RDBTools.
+    - **Stack Name** - You can give any logical name to your CloudFormation stack, by default it is RDBTools.
     - **InstanceType** - Choose instance type, by default it is t2.medium.
     - **KeyName** - Select an existing EC2 KeyPair so that you can SSH to the instance.
     - **VPC** - Select the VPC in which  you want to launch this instance.
     - **Subnet** - Choose a public subnet so that you can connect to RDBTools over http(s). This subnet must have network connectivity to ElastiCache.
 
-	![create-stack](/images/ri/create-stack.png)
+    ![create-stack](/images/ri/create-stack.png)
 
-1. Once stack is created, you can navigate to Stack list and click on the website URL 
+1. Once stack is created, you can navigate to Stack list and click on the website URL
    under output section in order to get started with RDBTools.
 
-	![stack-output](/images/ri/stack-output.png)
+    ![stack-output](/images/ri/stack-output.png)

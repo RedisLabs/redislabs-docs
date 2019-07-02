@@ -80,8 +80,9 @@ Finally, we can now install RDBTools. Run the following command
 
 This command will download and run the RDBTools docker image and expose it as a web page on port 80.
 
-Find the IP Address of your EC2 instances, and a launch your browser to http://<EC2 IP Address>. You should see the RDBTools create account page. Follow the steps to activate your free or paid license.
+Find the IP Address of your EC2 instances, and a launch your browser to `http://<EC2 IP Address>`. You should see the RDBTools create account page. Follow the steps to activate your free or paid license.
 
 Summary
 ------
+
 In this guide, we installed RDBTools on an EC2 instance running Docker. As a next step, you should now add an ElastiCache Redis Instance and then run the memory analysis.

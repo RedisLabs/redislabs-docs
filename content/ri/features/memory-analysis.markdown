@@ -57,6 +57,7 @@ Memory Analyzer lets you search a key or key patterns and get related informatio
 Here's a brief description of what goes on under the hood when you analyze a snapshot:
 When the `analyze-memory` button is clicked, it connects to the redis instance and takes a point-in-time snapshot of the database.
 This can be done in two ways:
+
   1. Using the <a href="https://redis.io/commands/sync" target="blank">SYNC</a> command.
      This is the preferred approach and is used if possible.
      Redis has a `SYNC` command that slaves use to synchronize with the master.
