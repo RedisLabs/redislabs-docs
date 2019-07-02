@@ -33,10 +33,10 @@ taking part in the MotoGP league. Once created, we'll start querying our data.
 
 ### With `redis-cli`
 
-Connect to redis using --raw to maintain file formatting.
+Connect to redis.
 
 ```src
-$ redis-cli --raw -p 12543
+$ redis-cli -p 12543
 127.0.0.1:12543>
 ```
 

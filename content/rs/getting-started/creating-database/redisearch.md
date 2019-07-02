@@ -32,10 +32,10 @@ In this example, we have four things we input, the title, body, url, and
 value. In this example, we have three TEXT and one NUMERIC values. The
 title has a weight of 5.0.
 
-Connect to redis using --raw to maintain file formatting.
+Connect to redis.
 
 ```src
-$ redis-cli --raw -p 12543
+$ redis-cli -p 12543
 127.0.0.1:12543>
 ```
 

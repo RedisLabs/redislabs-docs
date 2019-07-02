@@ -30,10 +30,10 @@ click **Add configuration** and enter the optional custom configuration.
 
 You can play with it a bit using redis-cli:
 
-Connect to redis using --raw to maintain file formatting.
+Connect to redis.
 
 ```src
-$ redis-cli --raw -p 12543
+$ redis-cli -p 12543
 127.0.0.1:12543>
 ```
 
