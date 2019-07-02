@@ -7,11 +7,7 @@ category: docs
 permalink: docs/features/views/
 pageTitle: Views
 ---
-
-<br/>
 **NOTE:** These instructions are outdated. New documentation is on the way.
-<br/>
-<br/>
 
 Rdbtools Views are a visual representation of your real time data in your Redis instance based on the datatype.
 

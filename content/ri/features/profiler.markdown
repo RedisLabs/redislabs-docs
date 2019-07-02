@@ -13,7 +13,7 @@ RDBTools Profiler runs Redis ```MONITOR``` command, which analyzes every command
 Profiler gives information about the number of commands processed, commands/second and number of connected clients. It also gives information about top prefixes, top keys and top commands.
 
 **Start profiling** - Starts the profiling.
-<br/>
+
 **Stop Profiling** - Stops the profiler i.e. the monitor command.
 
 ![profile](/images/ri/profile.png)

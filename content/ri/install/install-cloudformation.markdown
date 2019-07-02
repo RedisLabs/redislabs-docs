@@ -14,7 +14,7 @@ Launch a CloudFormation stack with RDBTools preinstalled using our template:
 
 1. Select your desired region below and click **Launch** to go to the CloudFormation launch page with our template selected.
 
-   <form target="_blank" action="{{site.aws_template_url}}{{site.docker_image_version}}+&+stackName=Rdbtools">
+   <!-- <form target="_blank" action="{{site.aws_template_url}}{{site.docker_image_version}}+&+stackName=Rdbtools">
         <select name="region" class="aws-region-select">
             {% for region in site.data.aws-regions %}
             <option value="{{region.value}}">{{region.name}}</option>
@@ -22,7 +22,7 @@ Launch a CloudFormation stack with RDBTools preinstalled using our template:
         </select>
         <input id ="launch-aws-button" type="submit" value="Launch" class="aws_launch_btn"/>
     </form>
-    <br/>
+    <br/> -->
 
 1. Fill the form to create stack.
     - **Stack Name** - You can give any logical name to your CloudFormation stack, by default it is RDBTools.

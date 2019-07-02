@@ -11,6 +11,7 @@ altTag: How RDBTools Works
 Here's a brief description of what goes on under the hood when you analyze a snapshot:
 When the `analyze-memory` button is clicked, it connects to the redis instance and takes a point-in-time snapshot of the database.
 This can be done in two ways:
+
   1. Using the [SYNC](https://redis.io/commands/sync) command.
      This is the preferred approach and is used if possible.
      Redis has a `SYNC` command that slaves use to synchronize with the master.
