@@ -25,7 +25,6 @@ If the connection is successful, you should start seeing statistics for this red
 1. On mac and windows, if localhost does not work, try `host.docker.internal` as the server name.
 1. On linux, if localhost does not work, restart docker with the `--network host` flag in the docker run command.
 
-
 ## Connecting to ElastiCache
 
 If you want to work with ElastiCache Redis instances with RDBTools, you have two options:
@@ -43,7 +42,6 @@ If you want to add and work with an ElastiCache Redis instance but you're runnin
 	-i ~/.ssh/rdbtools-dev.pem <ec2_endpoint>
 	```
 		
-
 1. Go to Add Instance in Rdbtools and add an instance with host=localhost, port=8765, 
    name=your_instance_name
 

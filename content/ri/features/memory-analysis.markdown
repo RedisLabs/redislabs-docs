@@ -26,9 +26,7 @@ Memory analysis can take several minutes, and largely depends on the size of you
 
 ![snapshot_processing_screen](/images/ri/snapshot_processing_screen.png)
 
-
 Once memory analysis completes, you will see various statistics about memory consumption under Memory Analysis. The overview page gives you a high level breakup of memory usage.
-
 
 ## Memory Overview
 

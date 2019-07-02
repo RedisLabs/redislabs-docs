@@ -7,7 +7,6 @@ category: docs
 permalink: docs/
 pageTitle: Rdbtools Documentation
 ---
-
 Choose the topic you need help with:
 
 - [Installing RDBTools](/docs/install)

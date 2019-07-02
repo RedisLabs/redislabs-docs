@@ -10,7 +10,6 @@ nextStep:
     title: Activating RDBTools
     href: /docs/install/activating/
 ---
-
 Launch a CloudFormation stack with RDBTools preinstalled using our template:
 
 1. Select your desired region below and click **Launch** to go to the CloudFormation launch page with our template selected.

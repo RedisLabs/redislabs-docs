@@ -26,7 +26,6 @@ Next, we will run the Rdbtools container. The easiest way is to run the followin
 {% endhighlight %}
 and then point your browser to <a href="http://localhost:8001" target="_blank">http://localhost:8001</a>.
 
-
 In addition, you can add some additional flags to the docker run command:
 
 1. You can add the `-it` flag to see the logs and view the progress

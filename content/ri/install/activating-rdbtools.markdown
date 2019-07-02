@@ -10,7 +10,6 @@ nextStep:
     title: Adding a Redis Instance
     href: /docs/add-instance/
 ---
-
 After you install RDBTools you'll need to activate it to start using RDBTools, unless you purchaced it through the AWS Marketplace. If you purchased RDBTools through the AWS marketplace, you are already using a fully activated version of RDBTools and no further activation is required.
 
 <br/>

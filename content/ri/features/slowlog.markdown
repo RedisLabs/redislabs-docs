@@ -12,5 +12,4 @@ RDBTools Slowlog is a list of slow operations for your redis instance. These can
 
 **Clear Slowlog** - Clear slowlog clears all the slowlog entries from your redis server.
 
-
 ![slowlog](/images/ri/slowlog.png)

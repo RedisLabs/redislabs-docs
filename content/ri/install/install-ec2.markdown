@@ -11,7 +11,6 @@ nextStep:
     title: Activating RDBTools
     href: /docs/install/activating/
 ---
-
 In this guide, we will install RDBTools on an AWS EC2 instance. You will need access to the AWS Console, and must have the ability to launch EC2 instances. At the end of this guide, you will be able to manage ElastiCache Redis instances using RDBTools.
 
 As an alternative, you can also use our 1-click cloudformation launch wizard to automatically perform these steps for you.
@@ -48,7 +47,6 @@ Next, we will launch an EC2 instance.
     * Incoming traffic is allowed on port 22 only during installation
 1. Review and launch the ec2 instance
 
-
 Step 3: Verify Permissions & Connectivity
 ----------
 
@@ -61,7 +59,6 @@ Next, we will verify the EC2 instance has the required IAM permissions, and can 
 1. Next, find the hostname an ElastiCache instance you wish to analyze, and run the command `echo info | nc <redis host> 6379`
 1. If you see some details about the ElastiCache redis instance, you can proceed to the next step
 1. If you cannot connect to redis, you should review your VPC, subnet, and security group settings.
-
 
 Step 4: Install Docker on EC2
 -------

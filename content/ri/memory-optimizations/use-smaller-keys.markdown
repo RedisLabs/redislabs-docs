@@ -15,7 +15,6 @@ Redis keys can play a devil in increasing the memory consumption for your Redis 
 
 In a well written application, switching to shorter keys usually involves updating a few constant strings in the application code.
 
-
 You will have to identify, all the big keys in your Redis Instance and shorten it by removing extra characters from it. You can achieve this in two ways:
 
 1. You can identify the big keys in your Redis Instance by using Rdbtools. This will give you details about all the keys and a way to sort your data based on the length of keys.
