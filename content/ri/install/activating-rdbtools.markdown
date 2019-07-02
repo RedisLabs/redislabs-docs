@@ -12,11 +12,7 @@ nextStep:
 ---
 After you install RDBTools you'll need to activate it to start using RDBTools, unless you purchaced it through the AWS Marketplace. If you purchased RDBTools through the AWS marketplace, you are already using a fully activated version of RDBTools and no further activation is required.
 
-<br/>
-
-After installation is complete, you should point your browser to <a href="http://localhost:8001">http://localhost:8001</a>. Note that this URL might be different, depending on how you installed RDBTools (whether you installed it locally, or on a remote server). Please refer to the installation instructions for your chosed install method for the exact URL you should visit. 
-
-<br/>
+After installation is complete, you should point your browser to [http://localhost:8001](http://localhost:8001). Note that this URL might be different, depending on how you installed RDBTools (whether you installed it locally, or on a remote server). Please refer to the installation instructions for your chosed install method for the exact URL you should visit.
 
 If you have purchased a license, activate it now. If you do not have a license, you can start a free trial by entering your email address. You will receive a license key in your email.
 
