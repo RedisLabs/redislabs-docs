@@ -51,5 +51,5 @@ click **Add configuration** and enter the optional custom configuration.
 
     {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-1. Click **Show advanced options** and put **12544** for the port.
+1. Click **Show advanced options** and put **12543** for the port.
 1. Click the **activate** button
