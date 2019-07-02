@@ -12,8 +12,8 @@ altTag: Combine Smaller Strings to Hashes
 Strings data type has an overhead of about about 90 bytes on a 64 bit machine. In other words, calling set foo bar uses about 96 bytes, of which 90 bytes is overhead. You should use the String data type only if:
 
 1. The value is at least greater than 100 bytes
-2. You are storing encoded data in the string - JSON encoded or Protocol buffer
-3. You are using the string data type as an array or a bitset
+1. You are storing encoded data in the string - JSON encoded or Protocol buffer
+1. You are using the string data type as an array or a bitset
 
 If you are not doing any of the above, then use **Hashes**.
 

@@ -17,8 +17,9 @@ Bloom filters aren't natively supported, but you will find several solutions on 
 
 ## Trade Offs
 Following are the Trade Offs of using HyperLogLog:
+
 1. The results that are achieved from HyperLogLog are not 100% accurate, they have an approximate standard error of 0.81%.
-2. Hyperloglog will only tell you the unique count. It cannot tell you the elements in the set.
+1. Hyperloglog will only tell you the unique count. It cannot tell you the elements in the set.
 
 For example, if you want to maintain how many unique ipaddresses made an API call today. HyperLogLog will tell you
 `46966 unique IPs for today`.

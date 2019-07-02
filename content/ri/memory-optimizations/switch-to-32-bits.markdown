@@ -10,9 +10,10 @@ altTag: Switch to 32 bits
 ---
 
 Redis gives you the following statistics for a 64-bit machine.
+
 1. An empty instance uses ~ 3MB of memory.
-2. 1 Million small Keys -> String Value pairs use ~ 85MB of memory.
-3. 1 Million Keys -> Hash value, representing an object with 5 fields, use ~ 160 MB of memory.
+1. 1 Million small Keys -> String Value pairs use ~ 85MB of memory.
+1. 1 Million Keys -> Hash value, representing an object with 5 fields, use ~ 160 MB of memory.
 
 64-bit will have more memory available as compared to a 32-bit machine. But if you are sure that your data size will not exceed 3 GB then storing in 32 bits is a good option.
 

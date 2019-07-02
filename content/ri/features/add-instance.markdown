@@ -28,8 +28,9 @@ If the connection is successful, you should start seeing statistics for this red
 ## Connecting to ElastiCache
 
 If you want to work with ElastiCache Redis instances with RDBTools, you have two options:
+
 1. [Install RDBTools on an EC2 instance](/docs/install/ec2/) that has access to the ElastiCache Redis instance.
-2. Create a SSH tunnel through an EC2 instance that can access the ElastiCahe Redis instance.
+1. Create a SSH tunnel through an EC2 instance that can access the ElastiCahe Redis instance.
 
 ### Using an SSH Tunnel
 
@@ -42,7 +43,7 @@ If you want to add and work with an ElastiCache Redis instance but you're runnin
 	```
 		
 
-2. Go to Add Instance in Rdbtools and add an instance with host=localhost, port=8765, 
+1. Go to Add Instance in Rdbtools and add an instance with host=localhost, port=8765, 
    name=your_instance_name
 
-3. You are now connected to your elasticache instance and can start using it locally.
+1. You are now connected to your elasticache instance and can start using it locally.

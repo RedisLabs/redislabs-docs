@@ -12,7 +12,7 @@ RDBTools Memory analysis help you analyze your redis instance and helps in reduc
 
 1. **online mode** - In this mode, RDBTools downloads a rdb file from your connected redis instance and analyzed it to create a temp file with all the keys and meta data required for analysis. In case, there is a master-slave connection, rdbtools downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
 
-2. **offline mode** - In this mode, RDBTools analyzies your redis backup files. These files can either be present i your system or on s3. RDBTools accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RDBTools should have ReadOnly permission to your s3 bucket where the files are stored.
+1. **offline mode** - In this mode, RDBTools analyzies your redis backup files. These files can either be present i your system or on s1. RDBTools accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RDBTools should have ReadOnly permission to your s3 bucket where the files are stored.
 
 ## Running Memory Analysis on an Instance
 
@@ -59,7 +59,7 @@ This can be done in two ways:
      This is the preferred approach and is used if possible.
      Redis has a `SYNC` command that slaves use to synchronize with the master.
      Our agent pretends to be a slave and sends the `SYNC` command to the instance, which responds with all its data as it would to a slave trying to synchronize with it.
-  2. Using the <a href="https://redis.io/commands/dump" target="blank">DUMP</a> command.
+  1. Using the <a href="https://redis.io/commands/dump" target="blank">DUMP</a> command.
      Cloud providers do not support the `SYNC` command, so that approach won't work.
      But they do support the `DUMP` command.
      This command serializes the value of a key in a redis-specific format and returns it.

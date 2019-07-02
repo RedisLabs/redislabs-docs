@@ -15,7 +15,7 @@ This can be done in two ways:
      This is the preferred approach and is used if possible.
      Redis has a `SYNC` command that slaves use to synchronize with the master.
      Our agent pretends to be a slave and sends the `SYNC` command to the instance, which responds with all its data as it would to a slave trying to synchronize with it.
-  2. Using the <a href="https://redis.io/commands/dump" target="blank">DUMP</a> command.
+  1. Using the <a href="https://redis.io/commands/dump" target="blank">DUMP</a> command.
      Cloud providers do not support the `SYNC` command, so that approach won't work.
      But they do support the `DUMP` command.
      This command serializes the value of a key in a redis-specific format and returns it.

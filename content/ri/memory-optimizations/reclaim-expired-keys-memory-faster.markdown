@@ -14,17 +14,19 @@ When you set an expiry on a key, redis does not expire it at that instant. Inste
 If there are only a few keys that have expired and redis hasn't deleted them - it is fine. It's only a problem when a large number of keys haven't expired.
 
 ## How to Detect if Memory is not Reclaimed After Expiry
+
 1. Run the `INFO` command and find the total_memory_used and sum of all the keys for all the databases.
-2. Then take a Redis Dump(RDB) and find out the total memory and total number of keys.
+1. Then take a Redis Dump(RDB) and find out the total memory and total number of keys.
 
 Looking at the difference you can clearly point out that lot of memory is still not reclaimed for the keys that have expired.
 
 ## How to Reclaim expired Keys Memory Faster
 You can follow one of these three steps to reclaim the memory:
+
 1. Restart your redis-server
-2. Increase memorysamples in redis conf. (default is 5, max is 10) so that expired keys are reclaimed faster.
-3. You can setup a cron job that will run scan command after an interval which will help in reclaiming the memory of the expired keys.
-4. Alternatively, Increasing the expiry of keys will also help.
+1. Increase memorysamples in redis conf. (default is 5, max is 10) so that expired keys are reclaimed faster.
+1. You can setup a cron job that will run scan command after an interval which will help in reclaiming the memory of the expired keys.
+1. Alternatively, Increasing the expiry of keys will also help.
 
 ## Trade Offs
 If we increase the memorysamples config, it will expire the keys faster, but it will cost more CPU cycles, which will increase latency of commands. Secondly, increasing the expiry of keys will help but that will require significant changes to application logic.

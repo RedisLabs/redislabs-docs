@@ -16,8 +16,9 @@ In a well written application, switching to shorter keys usually involves updati
 
 
 You will have to identify, all the big keys in your Redis Instance and shorten it by removing extra characters from it. You can achieve this in two ways:
+
 1. You can identify the big keys in your Redis Instance by using Rdbtools. This will give you details about all the keys and a way to sort your data based on the length of keys.
-2. Alternatively, you can run the command `redis-cli --bigkeys`
+1. Alternatively, you can run the command `redis-cli --bigkeys`
 
 Advantage of using Rdbtools is that it will give you the big keys from the whole dataset whereas the big keys commands run over a certain set of records and return the big keys from that set, hence it is difficult to identify the big keys from the whole dataset using big keys.
 
