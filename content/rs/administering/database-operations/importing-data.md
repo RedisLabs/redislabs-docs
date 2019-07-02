@@ -90,6 +90,9 @@ Before you specify to import from a local mount point, make sure that:
 - The node has network connectivity to the destination server of the mount point.
 - The `redislabs:redislabs` user has read priviledges on the local mount point
 and on the destination server.
+- You must mount the storage in the same path on all cluster nodes.
+    You can also use local storage but you must copy the imported files manually to all nodes
+    because the import source folders on the nodes are not synchronised.
 
 To specify to import from a local mount point on a node:
 
@@ -106,11 +109,6 @@ To specify to import from a local mount point on a node:
 1. In the path for the backup location, enter the mount point.
 
     For example: `/mnt/Public/backup.rdb`
-
-In order to use this option, the storage needs to be mounted in the same path on all cluster nodes.
-The import source folder needs to be owned by the redislabs user with write permissions.
-
-Local storage can also be used, however, since the import source folders on various nodes are not synchronised, the imported files need to be copied manually to all nodes.
 
 ### OpenStack Swift
 
