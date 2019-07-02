@@ -13,6 +13,7 @@ Redis Hash consists of Fields and their values. Like values, field name also con
 To reduce memory usage, you can use smaller field names.
 
 ## What do We Mean By Compress Field Names
+
 Referring to the previous example in convert hashes to list, we had a hash having user details.
 {% highlight bash %}
 hmset user:123 id 123 firstname Bob lastname Lee

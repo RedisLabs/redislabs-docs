@@ -30,22 +30,26 @@ Memory analysis can take several minutes, and largely depends on the size of you
 Once memory analysis completes, you will see various statistics about memory consumption under Memory Analysis. The overview page gives you a high level breakup of memory usage.
 
 
-## **Memory Overview**
+## Memory Overview
+
 Memory overview gives you an overview of your redis instance through graphical representation. Memory breakup by datatype show the overall size and count distribution of keys based on datatype. Expiry analysis gives a overview of how your keys configured to get expired. There could be few keys which will never expire.
 
 ![memory_overview](/images/ri/memory_overview.png)
 
-## **Keyspace Summary**
+## Keyspace Summary
+
 Keyspace Summary identifies the top key patterns from the set of keys in decending order of memory. This will help you identify which key patterns are consuming most of your memory and what are the top keys for that pattern. You can add your own key patterns in order to identify their memory usage and the top keys for that key pattern.
 
 ![keyspace_summary](/images/ri/keyspace_summary.png)
 
-## **Recommendations**
+## Recommendations
+
 RDBTools provide recommendations on how you can save your memory. The recommendation are specially curated according to your Redis instance. These recommendations have been formed based on industry standards and our own experiences.
 
 ![memory_recommendations](/images/ri/memory_recommendations.png)
 
-## **Memory Analyzer**
+## Memory Analyzer
+
 Memory Analyzer lets you search a key or key patterns and get related information regarding it with other stats. You can apply various filters and aggregations using our advance filters feature.
 
 ![memory_usage_by_key](/images/ri/memory_usage_by_key.png)

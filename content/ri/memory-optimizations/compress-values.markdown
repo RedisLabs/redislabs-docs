@@ -23,12 +23,15 @@ Redis and clients are typically IO bound and the IO costs are typically at least
  Compressing strings requires code changes. Some libraries can transparently compress objects, you would only need to configure your library. In other cases, you might have to compress the data manually.
 
 ## Advantages
+
 Compressing strings can save you anywhere between 30-50% memory. By compressing strings, you also reduce the network bandwidth between your application and redis databases.
 
 ## Trade Offs
+
 Compressing/Decompressing requires your application to do extra work. This tradeoff is usually worth it. If you are concerned about additional CPU load, switch to a faster algorithm like snappy or LZO.
 
 ## When to Avoid Compression
+
 Compression should not be followed blindly, there are times when compression will not help you reduce your memory, rather will increase your CPU utilization. There are few cases when compression should be avoided:
 
 1. For shorter Strings it's likely a waste of time. Short strings generally don't compress much, so the gain would be too small.

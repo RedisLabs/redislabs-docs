@@ -16,6 +16,7 @@ If your set contains a very large number of elements, and you are only using the
 Bloom filters aren't natively supported, but you will find several solutions on top of redis. If you are only using the set to count number of unique elements - like unique ip addresses, unique pages visited by a user etc - then switching to hyperloglog will save significant memory.
 
 ## Trade Offs
+
 Following are the Trade Offs of using HyperLogLog:
 
 1. The results that are achieved from HyperLogLog are not 100% accurate, they have an approximate standard error of 0.81%.

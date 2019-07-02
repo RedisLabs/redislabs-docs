@@ -18,6 +18,7 @@ List-compression-depth: 0,1,2 (0 by default)
 A configuration change in redis.conf `list-compression-depth=1` will help you achieve compression.
 
 ## What is compression-depth
+
 Compression depth is the number of list nodes from each end of the list to leave untouched before we start compressing inner nodes.
 
 Example:
@@ -27,6 +28,7 @@ Example:
 1. A depth=3 starts compression after head->next->next and before tail->prev->prev, etc.
 
 ## Trade Offs
+
 For small values (for example 40 bytes per list entry here), compression has very little performance impact. When using 40 byte values with a max ziplist size of 8k, that's around 200 individual elements per ziplist. You only pay the extra "compression overhead" cost when a new ziplist gets created (in this case, once every 200 inserts).
 
 For larger values (for example 1024 bytes per list entry here), compression does have a noticeable performance impact, but Redis is still operating at over 150,000 operations per second for all good values of ziplist size (-2). When using 1024 byte values with a max ziplist size of 8k, that works out to 7 elements per ziplist. In this case, you pay the extra compression overhead once every seven inserts. That's why the performance is slightly less in the 1024 byte element case.

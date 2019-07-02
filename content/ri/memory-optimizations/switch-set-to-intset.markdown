@@ -17,6 +17,7 @@ You can either use enums in your programming language, or you can use a redis ha
 This encoding is extremely memory efficient. By default, the value of set-max-intset-entries is 512, but you can set this value in redis.conf.
 
 ## Trade Offs
+
 By increasing the value of set-max-intset-entries, latency increases in set operations, and CPU utilization is also increased on your redis server. You can check this by running this command before and after making this change.
 {% highlight bash %}
 Run `info commandstats`

@@ -12,6 +12,7 @@ altTag: Use Smaller Keys
 Redis keys can play a devil in increasing the memory consumption for your Redis instances. In general, you should always prefer descriptive keys but if you have a large dataset having millions of keys then these large keys can eat a lot of your money.
 
 ## How to Convert to Smaller Keys
+
 In a well written application, switching to shorter keys usually involves updating a few constant strings in the application code.
 
 
@@ -23,6 +24,7 @@ You will have to identify, all the big keys in your Redis Instance and shorten i
 Advantage of using Rdbtools is that it will give you the big keys from the whole dataset whereas the big keys commands run over a certain set of records and return the big keys from that set, hence it is difficult to identify the big keys from the whole dataset using big keys.
 
 ## Advantages
+
 Let's take an example:
 Suppose you have 100,000,000 keys name like
 {% highlight bash %}
@@ -36,4 +38,5 @@ my-des-lg-kn (12 characters)
 You save 16 characters by shortening your key i.e. 16 bytes which will let you save **1,000,000,000*16 = 1.6GB of RAM Memory !**
 
 ## Trade Offs
+
 Large Keys were more descriptive then shortened keys, hence when reading through your database you may find the keys less relatable, but the memory and cost savings are much efficient as compared to this pain.

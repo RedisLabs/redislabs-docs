@@ -18,4 +18,5 @@ Redis 4.0 is the latest version that has been launched. It contains various big 
 1. Faster Redis Cluster key creation.
 
 ## Trade Offs
+
 Redis 4.0 is still not a stable release but is a very battle tested release, so Redis 3.2 is a better pick for critical applications till Redis 4.0 matures more in next few months.

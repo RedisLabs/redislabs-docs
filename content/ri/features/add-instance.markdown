@@ -20,6 +20,7 @@ If the connection is successful, you should start seeing statistics for this red
 ![instance_overview_page](/images/ri/instance_overview_page.png)
 
 **Note:**
+
 1. Rdbtools can only connect to redis servers that your redis-cli can connect to. If Rdbtools cannot connect to your redis server, check if you can connect using `redis-cli`
 1. On mac and windows, if localhost does not work, try `host.docker.internal` as the server name.
 1. On linux, if localhost does not work, restart docker with the `--network host` flag in the docker run command.

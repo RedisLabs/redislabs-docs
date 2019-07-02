@@ -24,15 +24,18 @@ Now, Redis 2.6 will store this internally as a Zip List; you can confirm by runn
 Now, if you create a second user, the keys will be duplicated. If you have a million users, well, its a big waste repeating the keys again. To get around this, we can borrow a concept from Python - NamedTuples.
 
 ## How does NamedTuple Work
+
 A NamedTuple is simply a read-only list, but with some magic to make that list look like a dictionary. Your application needs to maintain a mapping from field names to indexes,like
 `"firstname" => 0, "lastname" => 1 and so on`.
 
 Then, you simply create a list instead of a hash, like- `lpush user:123 Bob Lee CA bob_lee`. With the right abstractions in your application, you can save significant memory.
 
 ## Trade Offs
+
 The only tradeoffs are related to code complexity. Redis internally uses the same encoding (ziplist) for small hashes and small lists, so there is no performance impact when you switch to a list. However, if you have more than 512 fields in your hash, this approach is not recommended.
 
 ## When to Avoid Converting List to Hash
+
 Following are the situations when conversion of list to hash should be avoided:
 
 1. When you have less than 50,000 objects.

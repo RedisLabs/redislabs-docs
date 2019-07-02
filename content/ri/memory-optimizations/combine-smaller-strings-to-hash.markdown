@@ -18,6 +18,7 @@ Strings data type has an overhead of about about 90 bytes on a 64 bit machine. I
 If you are not doing any of the above, then use **Hashes**.
 
 ## How to convert Strings to Hashes
+
 Suppose we have to store the number of comments on the posts of a user, we can have a key names like `user:{userId}:post:{postId}:comments`.
 
 This way we have a key per post for each user. So now if we neet to find the total number of comments for whole appilication we can do
@@ -33,15 +34,18 @@ Redis::hmset("user:{$userId}:comments", "post:1", 20, "post:2", 50);
 This will build a Redis hash with two fields post:1 and post:2 holding the values 20 and 50.
 
 ## Advantages
+
 Combining small strings to Hashes will reduce the memory used and in return save a cost.
 
 Hashes can be encoded efficiently in a very small memory space, so Redis makers recommend that we use hashes whenever possible since "a few keys use a lot more memory than a single key containing a hash with a few fields", a key represents a Redis Object holds a lot more information than just its value, on the other hand a hash field only hold the value assigned, thus why it's much more efficient.
 
 ## Trade Offs
+
 Performance comes with a cost. By converting the strings to hash, we will be saving on a lot of memory because it saves only the string value and no extra information like: `idle time`, `expiration`, `object reference count`, and `encoding` related to it.
 But if we want the key with the expiration value, we can't associate it with a hash structure as expiration is not available.
 
 ## When to Avoid Combining Strings to Hashes
+
 The decision depends on the number of strings, if it less than 1 million and the memory consumption is not high, then conversion will not effect much and there will be no point in increasing the complexity of code.
 
 But if the strings are more than 1 million and the memory consumption is high then this approach should definitely be followed.

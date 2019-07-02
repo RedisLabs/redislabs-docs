@@ -21,6 +21,7 @@ If there are only a few keys that have expired and redis hasn't deleted them - i
 Looking at the difference you can clearly point out that lot of memory is still not reclaimed for the keys that have expired.
 
 ## How to Reclaim expired Keys Memory Faster
+
 You can follow one of these three steps to reclaim the memory:
 
 1. Restart your redis-server
@@ -29,4 +30,5 @@ You can follow one of these three steps to reclaim the memory:
 1. Alternatively, Increasing the expiry of keys will also help.
 
 ## Trade Offs
+
 If we increase the memorysamples config, it will expire the keys faster, but it will cost more CPU cycles, which will increase latency of commands. Secondly, increasing the expiry of keys will help but that will require significant changes to application logic.
