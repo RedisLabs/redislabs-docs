@@ -27,7 +27,7 @@ It can span your database across RAM + Flash Memory and intelligently
 manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).
 
-Note: [Geo-Replicated
+Note: [Geo-Distributed
 CRDBs]({{< relref "/rs/administering/active-active.md" >}})
 will always operate in noeviction mode.
 

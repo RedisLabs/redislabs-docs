@@ -1,5 +1,5 @@
 ---
-Title: Create a Geo-Replicated Conflict-free Replicated Database (CRDB)
+Title: Create a Geo-Distributed Conflict-free Replicated Database (CRDB)
 description:
 weight: $weight
 alwaysopen: false
