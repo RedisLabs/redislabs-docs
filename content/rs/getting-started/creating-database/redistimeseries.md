@@ -34,7 +34,7 @@ Then you can query the data for a time range on some aggregation rule.
 
 ### With `redis-cli`
 
-Connect to redis using --raw to maintain file formatting.
+Connect to redis.
 
 ```src
 $ redis-cli -p 12543
