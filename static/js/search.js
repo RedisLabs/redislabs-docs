@@ -50,12 +50,26 @@ function initLunr() {
  * @return {Array}  results
  */
 function search(query) {
+    _trackSearch(query);
     // Find the item in our index corresponding to the lunr one to have more info
     return lunrIndex.search(query).map(function(result) {
             return pagesIndex.filter(function(page) {
                 return page.uri === result.ref;
             })[0];
         });
+}
+
+function _trackSearch(query) {
+    window.ga('send', {
+        hitType: 'event',
+        eventCategory: 'Search',
+        eventAction: 'input',
+        eventLabel: query,
+        eventValue: 1,
+        hitCallback: function() {
+            console.log('GA Event sent');
+        }
+    });
 }
 
 // Let's get started
@@ -83,7 +97,7 @@ $( document ).ready(function() {
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '" ' +
+                'data-uri="'+ item.uri + '?s=' + term + '"' +
                 'data-context="' + item.context + '">' +
                     '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
                     '<div class="context">' + (item.context || '') +'</div>' +
