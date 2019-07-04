@@ -53,9 +53,11 @@ window.onclick = function(e) {
 <script>
 // Setup GA Event tracking
 setTimeout(function(){
-  window.ga('create', 'UA-92003007-1', {
-      'clientId': window.ga.getAll()[0].get('clientId')
-  });  
+  if(window.ga) {
+    window.ga('create', 'UA-92003007-1', {
+        'clientId': window.ga.getAll()[0].get('clientId')
+    });  
+  }
 }, 400);
 </script>
 

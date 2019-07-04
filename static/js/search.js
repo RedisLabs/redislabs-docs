@@ -60,16 +60,18 @@ function search(query) {
 }
 
 function _trackSearch(query) {
-    window.ga('send', {
-        hitType: 'event',
-        eventCategory: 'Search',
-        eventAction: 'input',
-        eventLabel: query,
-        eventValue: 1,
-        hitCallback: function() {
-            console.log('GA Event sent');
-        }
-    });
+    if(window.ga) {
+        window.ga('send', {
+            hitType: 'event',
+            eventCategory: 'Search',
+            eventAction: 'input',
+            eventLabel: query,
+            eventValue: 1,
+            hitCallback: function() {
+                console.log('GA Event sent');
+            }
+        });
+    }
 }
 
 // Let's get started
