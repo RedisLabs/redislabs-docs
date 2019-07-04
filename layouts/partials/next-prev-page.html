@@ -7,7 +7,7 @@
 {{- define "menu-nextprev" -}}
     {{- $currentNode := .currentnode -}}
     {{- if ne .menu.Params.hidden true -}}
-        {{- if hasPrefix $currentNode.Permalink .menu.Permalink -}}
+        {{- if hasPrefix $currentNode.URL .menu.URL -}}
             {{- $currentNode.Scratch.Set "NextPageOK" "OK" -}}
             {{- $currentNode.Scratch.Set "prevPage" ($currentNode.Scratch.Get "prevPageTmp") -}}
         {{- else -}}
@@ -34,16 +34,14 @@
 
     
 {{- if not $.Site.Params.disableNavChevron -}}
-        {{ if .File }}
         <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a></div>
         <!--<a class="nav-spacer"></a>-->
-        {{ end }}
     {{- with ($.Scratch.Get "prevPage") -}}
-        <div class="nav-links"><a class="nav-prev-next" href="{{.Permalink}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
+        <div class="nav-links"><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
     {{ end -}}
     {{- with ($.Scratch.Get "nextPage") -}}
-        <a class="nav-prev-next" href="{{.Permalink}}" title="{{.Title}}" style="margin-right: 0px;"><i class="icon-ArrowRight"></i></a></div>
+        <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="icon-ArrowRight"></i></a></div>
     {{- end }}
 {{- end -}}
 </div>
