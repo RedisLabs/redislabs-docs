@@ -43,7 +43,7 @@ The cluster recovery process includes:
 
 1. Install [RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) on the new cluster nodes.
 
-   Do not configure the cluster nodes (`rladmin cluster create` in the CLI or **Setup** in the Web UI).
+    Do not configure the cluster nodes (`rladmin cluster create` in the CLI or **Setup** in the Web UI).
 
     The new servers must have the same basic hardware and software configuration as the original servers, including:
 
