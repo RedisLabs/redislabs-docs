@@ -12,7 +12,9 @@ Here you can find procedures that were used in previous releases.
 
 ## Before 5.4.4 
 
-Procedures have been updated in 5.4.4 to leverage the rladmin command. The below API command can still be leveraged to update certificates in current versions.
+Procedures have been updated in 5.4.4 to leverage command line utilities that remove the need to configure the certificate with end of line characters.
+
+The below API command can still be leveraged to update certificates in current versions.
 
 {{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
 
