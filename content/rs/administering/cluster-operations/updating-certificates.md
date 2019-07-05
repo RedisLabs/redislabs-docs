@@ -22,7 +22,7 @@ on the browser you use, you might be able to allow the connection for
 this specific session, or add an exception to make this site trusted in
 future sessions.{{% /note %}}
 
-## How to update TLS certificates in RS 5.4.x and Later
+## How to update TLS certificates
 
 You can replace an existing certificate on the cluster leveraging the rladmin command-line utility.
 
@@ -47,37 +47,10 @@ The below command syntax can be used to replace certificates substituting the be
 For example, the following command would replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem"
 
    ```bash
+   
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
+
    ```
-
-## How to update SSL/TLS certificates in earlier version of RS
-
-{{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
-
-- Use the REST API to replace the certificate:
-
-    ```bash
-
-    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
-
-    ```
-
-    Where:
-
-    - cert_name - The name of the certificate to replace:
-        - For management UI: `cm`
-        - For REST API: `api`
-        - For database endpoint: `proxy`
-        - For syncer: `syncer`
-    - key - The contents of the *_key.pem file
-
-    {{% tip %}}The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call. You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.{{% /tip %}}
-
-    - cert - The contents of the *_cert.pem file
-
-    The certificate is copied automatically to all nodes in the cluster.
-
-When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
 ## TLS Protocol and Cipher Configuration
 
