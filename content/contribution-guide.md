@@ -45,12 +45,19 @@ categories: ["RC Pro"]
 
 ## Adding Sections
 
-To add a section to the docs, you must add a directory with a `_index.md` file.
+To add a section to the docs that will include multiple articles, you must add a directory with a `_index.md` file.
 The `_index.md` file is the landing page for the section that should contain the main information for the section.
-If you do not have an article that can serve as the landing page for the section,
+
+Start the article with the header information as shown above
+and fill the body with information that is relevant to all articles in the section.
+If you do not have content that can serve as the landing page for the section,
 you can use the `children` shortcode to show all of the sub-topics for the section.
 
-## Writing an Article
+```src
+{{%/* children style="h2" description="true" */%}}
+```
+
+## Writing an Article Content
 
 The structure of an article is:
 
@@ -61,6 +68,53 @@ The structure of an article is:
 
 Every article must relate to only one procedure,
 and the concepts must explain any background information that is needed to know when and why to use the procedure.
+
+### Writing structure
+
+- The concept section consists of:
+    - 2-4 paragraphs in the section or subsection
+    - 2-4 sentences in each paragraph
+    - 10-15 words in each sentence section
+    - Break lines at logical sentence breaks (end of sentence, comma)
+- The prerequisites are listed as bullet points
+- List notes and warnings before the procedure
+- For procedures:
+    - No more than 10 steps
+    - Sub-procedures must be one step with multiple sub-steps
+
+        {{% expand "For example:" %}}
+
+        1. To create service accounts, on each participating cluster:
+
+            1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+                By default, the address is: `https://<RS_address>:8443`
+            1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
+            1. Enter the name, email, and password for the user, select the **Admin** role,
+                and click ![Save](/images/rs/icon_save.png#no-click "Save").
+
+            ![Service Account Creation](/images/rs/create-service-account.png)
+
+        1. To make sure that there is network connectivity between the participating clusters,
+            telnet on port 8080 from each participating cluster to each of the other participating clusters.
+
+            ```src
+            telnet <target FQDN> 8080
+            ```
+
+        {{% /expand %}}
+
+### Writing guidelines
+
+- Lead the sentence with the subject
+- Use “must” instead of - needs, wants, has to, desire, ...
+- Subject and verb must agree in number - blueprint exists, blueprints exist
+- Don’t start a sentence with “also”
+- Instead of writing “In this section” write what is in the section:
+    - Incorrect - `In this section detailed description of available development tools, like built-in features, widget objects, functions, templating mechanism and available libraries is provided.`
+    - Correct - `The widget development tools include built-in features, widget objects, functions, templating mechanism and available libraries.`
+- Link from text itself instead of “see …”. For example:
+    - Incorrect - `Using the React Utility is the recommended method, and it requires a build operation. You must use the build system described in [Widget building]({{< relref "rs/_index.md" >}}) section.`
+    - Correct - `Using the React Utility is the recommended method, and it requires a build operation in the [widget build system]({{< relref "rs/_index.md" >}}).`
 
 ### Writing tone
 
@@ -74,12 +128,3 @@ Here are some examples:
 | --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
 | Prodedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
-
-### Writing structure
-
-The concept section consists of:
-
-- 2-4 paragraphs in the section or subsection
-- 2-4 sentences in each paragraph
-- 10-15 words in each sentence section
-- A sentences are divided into sections by commas
