@@ -1,11 +1,11 @@
 ---
-Title: Create a Geo-Replicated Conflict-free Replicated Database (CRDB)
+Title: Create a Geo-Distributed Conflict-free Replicated Database (CRDB)
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-[Conflict-Free Replicated Databases]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
+[Conflict-Free Replicated Databases]({{< relref "/rs/administering/active-active.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
 The participating clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
 Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) to all of the instances.
 
@@ -21,7 +21,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
 - Two or more machines with the same version of RS installed
 - Network connectivity and cluster FQDN name resolution between all participating clusters
-- [Network time service]({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
+- [Network time service]({{< relref "/rs/administering/active-active.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 
 ## Creating a CRDB
 

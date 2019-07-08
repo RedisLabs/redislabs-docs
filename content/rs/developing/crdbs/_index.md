@@ -1,5 +1,5 @@
 ---
-Title: Developing Applications with Geo-replicated CRDBs on Redis Enterprise Software (RS)
+Title: Developing Applications with Geo-Distributed CRDBs on Redis Enterprise Software (RS)
 description:
 weight: $weight
 alwaysopen: false
