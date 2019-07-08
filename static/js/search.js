@@ -50,26 +50,12 @@ function initLunr() {
  * @return {Array}  results
  */
 function search(query) {
-    _trackSearch(query);
     // Find the item in our index corresponding to the lunr one to have more info
     return lunrIndex.search(query).map(function(result) {
             return pagesIndex.filter(function(page) {
                 return page.uri === result.ref;
             })[0];
         });
-}
-
-function _trackSearch(query) {
-    window.ga('send', {
-        hitType: 'event',
-        eventCategory: 'Search',
-        eventAction: 'input',
-        eventLabel: query,
-        eventValue: 1,
-        hitCallback: function() {
-            console.log('GA Event sent');
-        }
-    });
 }
 
 // Let's get started
