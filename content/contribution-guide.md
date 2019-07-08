@@ -10,7 +10,7 @@ Just to get you started, here is a simple explanation of how to contribute conte
 ## Branches vs. Forks
 
 The redislabs-docs repository is public but only members of the repository can create new branches in the repo.
-New branches in the repo are automatically built into staging sites at: http://docs.redislabs.com/staging/<branch>
+New branches in the repo are automatically built into staging sites at: `http://docs.redislabs.com/staging/<branch>`
 After every commit to a branch, the site is re-built within about 1 minute so you can see the live updates.
 
 If you are not a member of the repository, you can fork the repository to a branch in your account.
