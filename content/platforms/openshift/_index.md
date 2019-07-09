@@ -45,7 +45,10 @@ This will shift to your project rather than the default project (you can verify 
 ```src
 git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
 ```
-*Note: For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_rhel.yaml files.*
+
+{{% note %}}
+For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_rhel.yaml files.
+{{% /note %}}
 
 Specifically for the redis-enterprise-cluster yaml file, you may also download and edit one of the following examples: [simple](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/simple.yaml), [persistent](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/persistent.yaml), [service broker](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/with_service_broker.yaml), [service broker RHEL](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/examples/with_service_broker_rhel.yaml) (for RHEL images) or use the one provided in the repository.
 
@@ -245,9 +248,11 @@ In order to create your database, we will log in to the Redis Enterprise UI.
 ```src
 kubectl port-forward your_cluster_name-0 8443:8443
 ```
-*Note: your_cluster_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.*
 
-*Note: The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in RedHat Openshift documentation.](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types)*
+{{% note %}}
+- your_cluster_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.
+- The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types).
+{{% /note %}}
 
 Next, create your database.
 
@@ -262,6 +267,8 @@ Next, create your database.
 
 - Follow the interface’s [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
-*Note: In order to conduct the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You will see two newly created services representing the database along with their IP and port information, similar to the screenshot below.*
+{{% note %}}
+In order to conduct the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You will see two newly created services representing the database along with their IP and port information, similar to the screenshot below.
+{{% /note %}}
 
 ![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )
