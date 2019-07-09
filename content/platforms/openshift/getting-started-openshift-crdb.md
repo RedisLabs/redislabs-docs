@@ -174,7 +174,7 @@ To do a basic validation test of database replication:
 1. Connect to one of the cluster pods using the following command:
 
 	```src
-	$ oc exec -it <your-cluster1-name>-0 bash
+	oc exec -it <your-cluster1-name>-0 bash
 	```
 
 1. At the prompt, launch the redis CLI:
@@ -200,7 +200,7 @@ To do a basic validation test of database replication:
 on the other cluster.
 
 	```src
-	$ oc exec -it <your-cluster2-name>-0 bash
+	oc exec -it <your-cluster2-name>-0 bash
 	$redis-cli -h <your database2 hostname> -p <your database2 port> -a <your database2 password>
 	```
 
