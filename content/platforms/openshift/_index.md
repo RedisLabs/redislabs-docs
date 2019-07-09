@@ -28,12 +28,14 @@ Prerequisites:
 
 - Paste the *login* command into your shell; it should look something like this:
 
-  oc login https://your-cluster.acme.com –token=your$login$token
+```src
+ oc login https://your-cluster.acme.com –token=your$login$token
+```
 
 - Next, verify that you are using the newly created project. Type:
 
 ```src
- $ oc project <your project name>
+ oc project <your project name>
 ```
 
 This will shift to your project rather than the default project (you can verify the project you’re currently using with the *oc project* command).
