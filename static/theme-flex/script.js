@@ -236,27 +236,31 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
     }
 };
 
-function setArticleFeedback(kind) {
-    showArticleFeedbackModal();
-    window.ga('send', {
-        hitType: 'event',
-        eventCategory: 'Article feedback',
-        eventAction: 'vote',
-        eventLabel: window.location.pathname,
-        eventValue: kind,
-        hitCallback: function() {
-            console.log('GA Event sent');
-            showArticleFeedbackModal();
-        }
-    }); 
+function setPageFeedback(kind) {
+    setFeedbackMessage();
+
+    if (window.ga) {
+        window.ga('send', {
+            hitType: 'event',
+            eventCategory: 'Article feedback',
+            eventAction: 'vote',
+            eventLabel: window.location.pathname,
+            eventValue: kind,
+            hitCallback: function() {
+                console.log('GA Event sent');
+                setFeedbackMessage();
+            }
+        });
+    }
 }
 
-function showArticleFeedbackModal() {
-    $('#articleFeedbackModal').show();
-    $('#backdrop').show();
+function setFeedbackMessage() {
+    $('.page-feedback').html('Thanks for the feedback!');
+    setTimeout(function() {
+        $('.page-feedback').hide();
+    }, 5000);
 }
 
-function hideArticleFeedbackModal() {
-    $('#articleFeedbackModal').hide();
-    $('#backdrop').hide();
+function hidePageFeedback() {
+    $('.page-feedback').hide();
 }
