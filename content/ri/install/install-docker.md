@@ -16,7 +16,9 @@ In this walkthrough, we will install RDBTools on [Docker](https://www.docker.com
 
 The first step is to [install docker for your operating system](https://docs.docker.com/install/). You should be able to run the `docker version` command in a terminal window without any errors.
 
-Note: On windows and Mac, please install docker version 18.03 or higher. You can `docker version` to find out your docker version.
+{{% note %}}
+On windows and Mac, please install docker version 18.03 or higher. You can `docker version` to find out your docker version.
+{{% /note %}}
 
 ## II. Run Rdbtools Docker Image
 

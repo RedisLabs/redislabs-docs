@@ -25,4 +25,6 @@ The ziplist implementation in Redis achieves itssmall memory size by storing onl
 
 This brevity comes at a cost because more time is required for changing the size and retrieving the entry. Hence, there is an increase in latency and possibly increase in CPU utilization on your redis server.
 
-**Note: Similarly, for sorted sets can also be converted to ziplist, but the only differnce is that zset-max-ziplist-entries is 128 which is less that what is there for hashes.
+{{% note %}}
+Similarly, for sorted sets can also be converted to ziplist, but the only differnce is that zset-max-ziplist-entries is 128 which is less that what is there for hashes.
+{{% /note %}}
