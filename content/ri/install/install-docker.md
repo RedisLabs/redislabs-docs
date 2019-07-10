@@ -10,11 +10,11 @@ nextStep:
     title: Activating RDBTools
     href: /docs/install/activating/
 ---
-In this walkthrough, we will install RDBTools on [Docker](https://www.docker.com/){:target="_blank"}. Note that this installation is for developer machines. We have a separate guide for installing [Rdbtools on AWS](/docs/rdbtools-docker-installation-ec2/).
+In this walkthrough, we will install RDBTools on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [Rdbtools on AWS](/docs/rdbtools-docker-installation-ec2/).
 
 ## I. Install Docker
 
-The first step is to [install docker for your operating system](https://docs.docker.com/install/){:target="_blank"}. You should be able to run the `docker version` command in a terminal window without any errors.
+The first step is to [install docker for your operating system](https://docs.docker.com/install/). You should be able to run the `docker version` command in a terminal window without any errors.
 
 Note: On windows and Mac, please install docker version 18.03 or higher. You can `docker version` to find out your docker version.
 
