@@ -22,8 +22,7 @@
           </div>
       </div>
       <div class="main-content-bottom">
-          {{ partial "post-bottom" . }}
-          {{ partial "page-feedback" . }}
+          {{ partial "post-bottom" . }}          
       </div>
     {{end}}
     {{ partial "flex/body-aftercontent" . }}
@@ -33,5 +32,8 @@
 
     {{ partial "custom-footer" . }}
 
+    {{if not .IsHome}}
+      {{ partial "page-feedback" . }}
+    {{ end }}
   </body>
 </html>

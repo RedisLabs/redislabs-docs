@@ -3004,6 +3004,31 @@ a[href*="#no-click"], img[src*="#no-click"] {
   cursor: pointer;
 }
 
+.page-feedback__chevron-down{
+  position: relative;
+  display: inline-block;
+  top: -8px;
+}
+.page-feedback__chevron-down:hover {
+  cursor: pointer;
+}
+.page-feedback__chevron-down:before,
+.page-feedback__chevron-down:after{
+  position: absolute;
+  display: block;
+  content: "";
+  border: 6px solid transparent;
+}
+
+.page-feedback__chevron-down:before{
+  top:0;
+  border-top-color:#fff;
+}
+.page-feedback__chevron-down:after{
+  top: -1px;
+  border-top-color: #364252;
+}
+
 /* Helpers */
 .pt-20 {
   padding-top: 20px;
