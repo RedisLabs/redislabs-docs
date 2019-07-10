@@ -8,7 +8,6 @@ permalink: docs/memory-optimizations/switch-to-bloom-filter-or-hyperloglog/
 pageTitle: Switch to bloom filter or hyperloglog
 altTag: Switch to bloom filter or hyperloglog
 ---
-
 Unique items can be difficult to count. Usually this means storing every unique item then recalling this information somehow. With Redis, this can be accomplished by using a set and a single command, however both the storage and time complexity of this with very large sets is prohibitive. HyperLogLog provides a probabilistic alternative.
 
 If your set contains a very large number of elements, and you are only using the set for existence checks or to eliminate duplicates - then you will benefit by using a bloom filter.

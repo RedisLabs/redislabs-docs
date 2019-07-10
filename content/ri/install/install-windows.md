@@ -5,9 +5,7 @@ description: Redis GUI Client for Windows
 category: docs
 permalink: docs/install/windows/
 pageTitle: Redis GUI Client for Windows
-
 ---
-
 ### Install Redis GUI for Windows
 
 - Download [rdbtools-win-{{site.docker_image_version}}.exe]({{site.windows_dl_link}})

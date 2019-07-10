@@ -8,7 +8,6 @@ permalink: docs/memory-optimizations/upgrade-redis-version/
 pageTitle: Upgrade Redis Version
 altTag: Upgrade Redis Version
 ---
-
 Redis 4.0 is the latest version that has been launched. It contains various big improvements compared to the previous versions.
 
 1. It supports mixed RDB+AOF Format.

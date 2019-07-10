@@ -6,9 +6,7 @@ date:  2018-07-20 03:49:29 +0530
 category: docs
 permalink: docs/install/linux/
 pageTitle: Redis GUI Client for Linux
-
 ---
-
 ### Install Redis GUI for Linux
 
 RDBTools is a single, self-contained binary that starts a web-server on port 8001.

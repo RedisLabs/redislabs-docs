@@ -8,7 +8,6 @@ permalink: docs/memory-optimizations/avoid-dynamic-lua-script/
 pageTitle: Avoid Dynamic Lua Script
 altTag: Avoid Dynamic Lua Scripts
 ---
-
 Refrain from generating dynamic scripts, which can cause your Lua cache to grow and get out of control.
 Memory is consumed as we have scripts loaded. The memory consumption are because of the following factors.
 

@@ -8,7 +8,6 @@ permalink: docs/memory-optimizations/convert-to-list-instead-of-hash/
 pageTitle: Convert to a List Instead of Hash
 altTag: Convert to a List Instead of Hash
 ---
-
 A Redis Hash stores field names and values. If you have thousands of small hash objects with similar field names, the memory used by field names adds up. To prevent this, consider using a list instead of a hash. The field names become indexes into the list.
 
 While this may save memory, you should only use this approach if you have thousands of hashes, and if each of those hashes have similar fields. Also see COMPRESS_FIELD_NAMES for another way to reduce memory used by field names.

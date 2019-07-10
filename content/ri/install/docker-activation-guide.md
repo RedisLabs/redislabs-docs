@@ -8,7 +8,6 @@ permalink: docs/installation/activating-rdbtools/
 pageTitle: Activating Rdbtools
 altTag: Activating Rdbtools
 ---
-
 To start using Rdbtools activate your license by following the mentioned steps:
 
 1. Go to `http://ip_docker_installed`

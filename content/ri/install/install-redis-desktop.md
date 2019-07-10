@@ -5,14 +5,11 @@ description: Redis Desktop Client for Mac, Windows and Linux
 date:  2018-07-20 03:49:29 +0530
 category: docs
 permalink: docs/install/redis-desktop-mac-win-linux/
-pageTitle: Redis Desktop GUI Client 
-
+pageTitle: Redis Desktop GUI Client
 ---
+RDBTools is a full-featured Desktop GUI client for Windows, Linux and Mac.
 
-RDBTools is a full-featured Desktop GUI client for Windows, Linux and Mac. 
-<br/>
-
-RDBTools offers the following features - 
+RDBTools offers the following features -
 
 * Easy to use browser based interface to search keys, view and edit data
 * Only GUI tool to support Redis Cluster

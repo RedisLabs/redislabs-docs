@@ -7,7 +7,6 @@ category: docs
 permalink: docs/features/memory-analysis/
 pageTitle: Memory Analysis
 ---
-
 RDBTools Memory analysis help you analyze your redis instance and helps in reducing memory usage and improving application performance. Analysis can be done in two ways:
 
 1. **online mode** - In this mode, RDBTools downloads a rdb file from your connected redis instance and analyzed it to create a temp file with all the keys and meta data required for analysis. In case, there is a master-slave connection, rdbtools downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.

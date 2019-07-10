@@ -8,7 +8,6 @@ permalink: docs/memory-optimizations/convert-hashtable-to-ziplist-for-hashes/
 pageTitle: Convert Hashtable to Ziplist for Hashes
 altTag: Convert Hashtable to Ziplist for Hashes
 ---
-
 Hashes have two types of encoding- HashTable and Ziplist. The decision of storing in which of the data structures in done based on the two configurations Redis provides - `hash-max-ziplist-entries` and `hash-max-ziplist-values`.
 
 By default the redis conf has these settings as:

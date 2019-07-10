@@ -7,7 +7,6 @@ category: docs
 permalink: docs/features/cluster-management/
 pageTitle: RDBTools Features - Cluster Management
 ---
-
 RDBTools Cluster Management provides you with a GUI to manage your Redis Cluster with ease. Cluster Management comes with three different views to analyze your cluster architecture.
 
 1. **Master Layout** - This view only contains information about the masters present in the Redis Cluster. The information present is - slot ranges, host, port and few metrics gathered from redis INFO Command.
@@ -16,7 +15,8 @@ RDBTools Cluster Management provides you with a GUI to manage your Redis Cluster
 
 ![cluster-management](/images/ri/cluster-management.png)
 
-Cluster Management not only gives you a representation of your cluster but also helps you administer your cluster by using the following actions - 
+Cluster Management not only gives you a representation of your cluster but also helps you administer your cluster by using the following actions -
+
 1. **Cluster Rebalance** - Cluster Rebalance helps you migrate all slots according to slot percentages amongst cluster nodes.
 1. **Manual Resharding** - Manual Resharding asks for source and destination nodes with slot ranges. Using this you can migrate the specified slot range from source to destination node in just a few clicks.
 1. **Add Node to Cluster**- Cluster Management allows you to add a new node to your cluster as a master. The node should be empty and should have cluster enabled.

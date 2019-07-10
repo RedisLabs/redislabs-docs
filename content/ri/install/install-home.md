@@ -7,7 +7,6 @@ category: docs
 permalink: docs/install/
 pageTitle: Installing RDBTools
 ---
-
 We offer various ways to install RDBTools:
 
 - [Mac](/docs/install/mac/)

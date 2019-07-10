@@ -8,7 +8,6 @@ permalink: docs/memory-optimizations/use-smaller-keys/
 pageTitle: Use Smaller Keys
 altTag: Use Smaller Keys
 ---
-
 Redis keys can play a devil in increasing the memory consumption for your Redis instances. In general, you should always prefer descriptive keys but if you have a large dataset having millions of keys then these large keys can eat a lot of your money.
 
 ## How to Convert to Smaller Keys

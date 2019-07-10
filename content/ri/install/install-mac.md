@@ -6,9 +6,7 @@ date:  2018-07-20 03:49:29 +0530
 category: docs
 permalink: docs/install/mac/
 pageTitle: Redis GUI Client for Mac
-
 ---
-
 ### Install Redis GUI for Mac
 
 * Download the [latest Mac installer]({{site.mac_dl_link}})
