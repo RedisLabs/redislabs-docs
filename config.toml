@@ -41,6 +41,13 @@ enableGitInfo = true
 googleAnalytics = "UA-92003007-1"
 googleTagManager = "GTM-TKZ6J9R"
 
+mac_dl_link = "https://binaries.rdbtools.com/v0.9.40.1/rdbtools-mac-v0.9.40.1.dmg"
+linux_dl_link = "https://binaries.rdbtools.com/v0.9.40.1/rdbtools-linux64-v0.9.40.1"
+windows_dl_link = "https://binaries.rdbtools.com/v0.9.40.1/rdbtools-win-v0.9.40.1.msi"
+docker_command = "docker run -v rdbtools:/db -p 8001:8001 rdbtools/rdbtools"
+docker_image_version = "v0.9.40.1"
+aws_template_url = "https://console.aws.amazon.com/cloudformation/home?#/stacks/create/review?templateURL=https://s3.amazonaws.com/cf-templates-15mti4h67cldi-us-east-1/cf-docker-compose-no-IAM-rdbtools-version-all-parameter-required&param_RdbtoolsVersion= "
+
 [blackfriday]
 hrefTargetBlank = false
 smartypants = false

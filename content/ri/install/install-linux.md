@@ -12,7 +12,7 @@ pageTitle: Redis GUI Client for Linux
 RedisInsight is a single, self-contained binary that starts a web-server on port 8001.
 
 ```bash
-wget -O rdbtools "{{ site.linux_dl_link }}" \
+wget -O rdbtools "{{< param linux_dl_link >}}" \
     && sudo mv ./rdbtools /usr/local/bin/ \
     && sudo chmod +x /usr/local/bin/rdbtools
 

@@ -9,7 +9,7 @@ pageTitle: Redis GUI Client for Mac
 ---
 ### Install Redis GUI for Mac
 
-* Download the [latest Mac installer]({{site.mac_dl_link}})
+* Download the [latest Mac installer]({{< param mac_dl_link >}})
 * Launch the app to start rdbtools webserver in background
 * Open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RedisInsight Redis GUI for Mac.
 

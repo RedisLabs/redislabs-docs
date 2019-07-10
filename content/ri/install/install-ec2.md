@@ -73,10 +73,11 @@ Next, we will install Docker on the EC2 instance. Run the following commands:
 1. To verify, run `docker ps`. You should see some output without having to run sudo
 
 Step 5: Run RedisInsight Docker Container
+-------
 
 Finally, we can now install RedisInsight. Run the following command
 
-`docker run -v rdbtools:/db -p 80:8001 rdbtools/rdbtools:{{site.docker_image_version}}`
+`docker run -v rdbtools:/db -p 80:8001 rdbtools/rdbtools:{{< param docker_image_version >}}`
 
 This command will download and run the RedisInsight docker image and expose it as a web page on port 80.
 
