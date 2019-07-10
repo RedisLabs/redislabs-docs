@@ -1,14 +1,14 @@
 ---
 layout: docs
-title:  Activating Rdbtools
-description: Activating Rdbtools
+title:  Activating RedisInsight
+description: Activating RedisInsight
 date:  2018-06-05 03:49:29 +0530
 category: docs
 permalink: docs/installation/activating-rdbtools/
-pageTitle: Activating Rdbtools
-altTag: Activating Rdbtools
+pageTitle: Activating RedisInsight
+altTag: Activating RedisInsight
 ---
-To start using Rdbtools activate your license by following the mentioned steps:
+To start using RedisInsight activate your license by following the mentioned steps:
 
 1. Go to `http://ip_docker_installed`
 1. Create an admin account by putting username and password.

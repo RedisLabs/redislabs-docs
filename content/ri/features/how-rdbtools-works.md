@@ -1,12 +1,12 @@
 ---
 layout: docs
-title:  How Rdbtools Works
-description: How Rdbtools Works
+title:  How RedisInsight Works
+description: How RedisInsight Works
 date:  2018-03-26 16:49:29 +0530
 category: docs
 permalink: docs/how-rdbtools-works/
 pageTitle: How Memory Analysis Works
-altTag: How RDBTools Works
+altTag: How RedisInsight Works
 ---
 Here's a brief description of what goes on under the hood when you analyze a snapshot:
 When the `analyze-memory` button is clicked, it connects to the redis instance and takes a point-in-time snapshot of the database.
@@ -27,4 +27,4 @@ This can be done in two ways:
 
  After the RSNAP file is completely generated, it is uploaded to our servers where further analysis is done to generate recommendations. We have over 20 recommendations at this point which give you simple advice on how to optimize your redis database.
 
- So that's a very brief overview of what happens under the hood at Rdbtools. We are constantly working on improving our process and we've had quite a bit of back and forth about the exact mechanism of the entire process. It goes without saying that the process will keep evolving and might even look very different in the near future. We'll try to keep this page updated with all significant changes, so check back here or follow our blog to stay updated.
+ So that's a very brief overview of what happens under the hood at RedisInsight. We are constantly working on improving our process and we've had quite a bit of back and forth about the exact mechanism of the entire process. It goes without saying that the process will keep evolving and might even look very different in the near future. We'll try to keep this page updated with all significant changes, so check back here or follow our blog to stay updated.

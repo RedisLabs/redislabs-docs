@@ -7,19 +7,19 @@ category: docs
 permalink: docs/install/redis-desktop-mac-win-linux/
 pageTitle: Redis Desktop GUI Client
 ---
-RDBTools is a full-featured Desktop GUI client for Windows, Linux and Mac.
+RedisInsight is a full-featured Desktop GUI client for Windows, Linux and Mac.
 
-RDBTools offers the following features -
+RedisInsight offers the following features -
 
 * Easy to use browser based interface to search keys, view and edit data
 * Only GUI tool to support Redis Cluster
 * Supports SSL/TLS based connections
 * Run Memory Analysis
 
-Install RDBTools on your Desktop
+Install RedisInsight on your Desktop
 
 * For Windows, download [rdbtools-win-{{site.docker_image_version}}.exe]({{site.windows_dl_link}}) and double-click to start webserver
 * For Mac, download [rdbtools-mac-{{site.docker_image_version}}.dmg]({{site.mac_dl_link | replace: '<version>', site.docker_image_version}}) and launch app to start webserver
 * For Linux, [download rdbtools binary](/docs/install/linux/) and execute to start webserver
 
-Once the web server starts, open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RDBTools.
+Once the web server starts, open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RedisInsight.

@@ -1,17 +1,17 @@
 ---
 layout: docs
 title:  Memory Analysis
-description: RDBTools Features - Memory Analysis Details
+description: RedisInsight Features - Memory Analysis Details
 date:  2018-06-14 03:49:29 +0530
 category: docs
 permalink: docs/features/memory-analysis/
 pageTitle: Memory Analysis
 ---
-RDBTools Memory analysis help you analyze your redis instance and helps in reducing memory usage and improving application performance. Analysis can be done in two ways:
+RedisInsight Memory analysis help you analyze your redis instance and helps in reducing memory usage and improving application performance. Analysis can be done in two ways:
 
-1. **online mode** - In this mode, RDBTools downloads a rdb file from your connected redis instance and analyzed it to create a temp file with all the keys and meta data required for analysis. In case, there is a master-slave connection, rdbtools downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
+1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzed it to create a temp file with all the keys and meta data required for analysis. In case, there is a master-slave connection, rdbtools downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
 
-1. **offline mode** - In this mode, RDBTools analyzies your redis backup files. These files can either be present i your system or on s1. RDBTools accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RDBTools should have ReadOnly permission to your s3 bucket where the files are stored.
+1. **offline mode** - In this mode, RedisInsight analyzies your redis backup files. These files can either be present i your system or on s1. RedisInsight accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RedisInsight should have ReadOnly permission to your s3 bucket where the files are stored.
 
 ## Running Memory Analysis on an Instance
 
@@ -41,7 +41,7 @@ Keyspace Summary identifies the top key patterns from the set of keys in decendi
 
 ## Recommendations
 
-RDBTools provide recommendations on how you can save your memory. The recommendation are specially curated according to your Redis instance. These recommendations have been formed based on industry standards and our own experiences.
+RedisInsight provide recommendations on how you can save your memory. The recommendation are specially curated according to your Redis instance. These recommendations have been formed based on industry standards and our own experiences.
 
 ![memory_recommendations](/images/ri/memory_recommendations.png)
 
@@ -72,4 +72,4 @@ This can be done in two ways:
 
  After the RSNAP file is completely generated, it is uploaded to our servers where further analysis is done to generate recommendations. We have over 20 recommendations at this point which give you simple advice on how to optimize your redis database.
 
- So that's a very brief overview of what happens under the hood at RDBTools. We are constantly working on improving our process and we've had quite a bit of back and forth about the exact mechanism of the entire process. It goes without saying that the process will keep evolving and might even look very different in the near future. We'll try to keep this page updated with all significant changes, so check back here or follow our blog to stay updated.
+ So that's a very brief overview of what happens under the hood at RedisInsight. We are constantly working on improving our process and we've had quite a bit of back and forth about the exact mechanism of the entire process. It goes without saying that the process will keep evolving and might even look very different in the near future. We'll try to keep this page updated with all significant changes, so check back here or follow our blog to stay updated.

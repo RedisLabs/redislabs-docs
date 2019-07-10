@@ -9,7 +9,7 @@ pageTitle: Redis GUI Client for Linux
 ---
 ### Install Redis GUI for Linux
 
-RDBTools is a single, self-contained binary that starts a web-server on port 8001.
+RedisInsight is a single, self-contained binary that starts a web-server on port 8001.
 
 ```bash
 wget -O rdbtools "{{ site.linux_dl_link }}" \
@@ -19,4 +19,4 @@ wget -O rdbtools "{{ site.linux_dl_link }}" \
 rdbtools
 ```
 
-Once the web server starts, open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RDBTools Redis GUI for Linux
+Once the web server starts, open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RedisInsight Redis GUI for Linux

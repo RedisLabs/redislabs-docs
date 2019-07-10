@@ -1,13 +1,13 @@
 ---
 layout: docs
-title:  RDBTools Features - Cluster Management
-description: Rdbtools Features - GUI to Manage Redis Cluster
+title:  RedisInsight Features - Cluster Management
+description: RedisInsight Features - GUI to Manage Redis Cluster
 date:  2018-10-12 03:49:29 +0530
 category: docs
 permalink: docs/features/cluster-management/
-pageTitle: RDBTools Features - Cluster Management
+pageTitle: RedisInsight Features - Cluster Management
 ---
-RDBTools Cluster Management provides you with a GUI to manage your Redis Cluster with ease. Cluster Management comes with three different views to analyze your cluster architecture.
+RedisInsight Cluster Management provides you with a GUI to manage your Redis Cluster with ease. Cluster Management comes with three different views to analyze your cluster architecture.
 
 1. **Master Layout** - This view only contains information about the masters present in the Redis Cluster. The information present is - slot ranges, host, port and few metrics gathered from redis INFO Command.
 1. **Master-Replica Layout** - This view contains masters along with their replicas. This view contains information about slots ranges, host, port, etc for both master and replica.

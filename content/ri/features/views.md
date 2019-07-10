@@ -11,7 +11,7 @@ pageTitle: Views
 These instructions are outdated. New documentation is on the way.
 {{% /note %}}
 
-Rdbtools Views are a visual representation of your real time data in your Redis instance based on the datatype.
+RedisInsight Views are a visual representation of your real time data in your Redis instance based on the datatype.
 
 Views allows you to search for key or key pattern from your connected redis instance. Based on the searched term a preview of the available views are displayed varying on the datatypes. Click on any of the views to proceed.
 

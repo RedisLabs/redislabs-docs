@@ -1,16 +1,16 @@
 ---
 layout: docs
-title:  Installing RDBTools on Docker
-description: Installing RDBTools on Docker
+title:  Installing RedisInsight on Docker
+description: Installing RedisInsight on Docker
 date:  2018-06-05 03:49:29 +0530
 category: docs
 permalink: docs/install/docker/
-pageTitle: Installing RDBTools on Docker
+pageTitle: Installing RedisInsight on Docker
 nextStep:
-    title: Activating RDBTools
+    title: Activating RedisInsight
     href: /docs/install/activating/
 ---
-In this walkthrough, we will install RDBTools on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [Rdbtools on AWS](/docs/rdbtools-docker-installation-ec2/).
+In this walkthrough, we will install RedisInsight on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [RedisInsight on AWS](/docs/rdbtools-docker-installation-ec2/).
 
 ## I. Install Docker
 
@@ -20,9 +20,9 @@ The first step is to [install docker for your operating system](https://docs.doc
 On windows and Mac, please install docker version 18.03 or higher. You can `docker version` to find out your docker version.
 {{% /note %}}
 
-## II. Run Rdbtools Docker Image
+## II. Run RedisInsight Docker Image
 
-Next, we will run the Rdbtools container. The easiest way is to run the following command:
+Next, we will run the RedisInsight container. The easiest way is to run the following command:
 
 ```bash
 {{site.docker_command}}:{{site.docker_image_version}}
