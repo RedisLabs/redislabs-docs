@@ -3,7 +3,7 @@ layout: docs
 title:  Installing RedisInsight
 description: Instructions for installing RedisInsight
 date:  2018-07-20 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/install/
 pageTitle: Installing RedisInsight
 ---

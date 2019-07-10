@@ -3,7 +3,7 @@ layout: docs
 title: Convert Hashtable to Ziplist for Hashes
 description: Convert Hashtable to Ziplist for Hases
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/convert-hashtable-to-ziplist-for-hashes/
 pageTitle: Convert Hashtable to Ziplist for Hashes
 altTag: Convert Hashtable to Ziplist for Hashes

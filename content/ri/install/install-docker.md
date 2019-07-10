@@ -3,7 +3,7 @@ layout: docs
 title:  Installing RedisInsight on Docker
 description: Installing RedisInsight on Docker
 date:  2018-06-05 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/install/docker/
 pageTitle: Installing RedisInsight on Docker
 nextStep:

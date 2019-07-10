@@ -3,7 +3,7 @@ layout: docs
 title:  Switch to bloom filter or hyperloglog
 description: Switch to bloom filter or hyperloglog
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/switch-to-bloom-filter-or-hyperloglog/
 pageTitle: Switch to bloom filter or hyperloglog
 altTag: Switch to bloom filter or hyperloglog

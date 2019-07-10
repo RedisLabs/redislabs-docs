@@ -3,7 +3,7 @@ layout: docs
 title:  RedisInsight Features - Cluster Management
 description: RedisInsight Features - GUI to Manage Redis Cluster
 date:  2018-10-12 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/features/cluster-management/
 pageTitle: RedisInsight Features - Cluster Management
 ---

@@ -3,7 +3,7 @@ layout: docs
 title:  RedisInsight Features - Slowlog
 description: RedisInsight Features - Slowlog Details
 date:  2018-06-14 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/features/slowlog/
 pageTitle: RedisInsight Features - Slowlog
 ---

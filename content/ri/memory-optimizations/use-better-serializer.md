@@ -3,7 +3,7 @@ layout: docs
 title:  Use Better Serializer
 description: Use Better Serializer
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/use-better-serializer/
 pageTitle: Use Better Serializer
 altTag: Use Better Serializer

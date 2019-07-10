@@ -3,7 +3,7 @@ layout: docs
 title:  RedisInsight Features - CLI
 description: RedisInsight Features - CLI Details
 date:  2018-06-14 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/features/cli/
 pageTitle: RedisInsight Features - CLI
 ---

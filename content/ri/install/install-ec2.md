@@ -3,7 +3,7 @@ layout: docs
 title:  Install RedisInsight on AWS EC2
 description: Install RedisInsight on AWS EC2
 date:  2018-06-05 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/install/ec2/
 pageTitle: Install RedisInsight on AWS EC2
 altTag: Install RedisInsight on AWS EC2

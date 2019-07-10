@@ -3,7 +3,7 @@ layout: docs
 title: Compress Field Names
 description: Compress Field Names
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/compress-field-names/
 pageTitle: Compress Field Names
 altTag: Compress Field Names

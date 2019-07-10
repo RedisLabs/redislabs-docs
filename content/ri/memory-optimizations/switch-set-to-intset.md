@@ -3,7 +3,7 @@ layout: docs
 title:  Switch from Set to Intset
 description: Switch from Set to Intset
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/switch-from-set-to-intset/
 pageTitle: Switch from Set to Intset for Numeric IDs
 altTag: Switch from Set to Intset for Numeric IDs

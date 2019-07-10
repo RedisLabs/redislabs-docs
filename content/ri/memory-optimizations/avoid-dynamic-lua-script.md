@@ -3,7 +3,7 @@ layout: docs
 title: Avoid Dynamic Lua Script
 description: Avoid Dynamic Lua Script
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/avoid-dynamic-lua-script/
 pageTitle: Avoid Dynamic Lua Script
 altTag: Avoid Dynamic Lua Scripts

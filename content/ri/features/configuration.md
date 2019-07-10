@@ -3,7 +3,7 @@ layout: docs
 title:  RedisInsight Features - Configuration
 description: RedisInsight Fetaures - Configuration Details
 date:  2018-06-14 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/features/configuration/
 pageTitle: RedisInsight Features - Configuration
 ---

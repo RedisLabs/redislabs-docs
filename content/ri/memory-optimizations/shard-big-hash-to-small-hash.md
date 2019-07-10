@@ -3,7 +3,7 @@ layout: docs
 title:  Shard Big Hashes to Small Hashes
 description: Shard big hashes to smalll hashes
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/shard-big-hashes-to-small-hashes/
 pageTitle: Shard Big Hashes to Small Hashes
 altTag: Shard Big Hashes to Small Hashes

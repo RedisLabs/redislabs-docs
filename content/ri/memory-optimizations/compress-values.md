@@ -3,7 +3,7 @@ layout: docs
 title:  Compress Values
 description: Compress Values
 date:  2018-03-26 16:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/memory-optimizations/compress-values/
 pageTitle: Compress Strings Before Storing them in Redis
 altTag: Compress Values

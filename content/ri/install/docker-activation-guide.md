@@ -3,7 +3,7 @@ layout: docs
 title:  Activating RedisInsight
 description: Activating RedisInsight
 date:  2018-06-05 03:49:29 +0530
-category: docs
+categories: ["RI"]
 permalink: docs/installation/activating-rdbtools/
 pageTitle: Activating RedisInsight
 altTag: Activating RedisInsight
