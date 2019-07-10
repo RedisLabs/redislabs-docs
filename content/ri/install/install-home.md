@@ -9,6 +9,7 @@ pageTitle: Installing RDBTools
 ---
 
 We offer various ways to install RDBTools:
+
 - [Mac](/docs/install/mac/)
 - [Linux](/docs/install/linux/)
 - [Docker](/docs/install/docker/)
