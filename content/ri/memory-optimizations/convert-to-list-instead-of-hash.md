@@ -13,10 +13,11 @@ A Redis Hash stores field names and values. If you have thousands of small hash 
 While this may save memory, you should only use this approach if you have thousands of hashes, and if each of those hashes have similar fields. Also see COMPRESS_FIELD_NAMES for another way to reduce memory used by field names.
 
 Let's take an Example, Suppose you want to stire user details in Redis. You will do something like this:
-{% highlight bash %}
+
+```bash
 hmset user:123 id 123 firstname Bob lastname Lee
 location CA twitter bob_lee
-{% endhighlight %}
+```
 
 Now, Redis 2.6 will store this internally as a Zip List; you can confirm by running debug object user:123 and look at the encoding field. In this encoding, key value pairs are stored sequentially, so the user object we created above would roughly look like this ``["firstname", "Bob", "lastname", "Lee", "location", "CA", "twitter", "bob_lee"]``
 

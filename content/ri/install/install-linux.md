@@ -11,12 +11,12 @@ pageTitle: Redis GUI Client for Linux
 
 RDBTools is a single, self-contained binary that starts a web-server on port 8001.
 
-{% highlight bash %}
+```bash
 wget -O rdbtools "{{ site.linux_dl_link }}" \
     && sudo mv ./rdbtools /usr/local/bin/ \
     && sudo chmod +x /usr/local/bin/rdbtools
 
 rdbtools
-{% endhighlight %}
+```
 
 Once the web server starts, open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RDBTools Redis GUI for Linux

@@ -11,15 +11,16 @@ altTag: Compress Values
 Redis and clients are typically IO bound and the IO costs are typically at least 2 orders of magnitude in respect to the rest of the request/reply sequence. Redis by default does not compress any value that is stored in it, hence it becomes important to compress your data before storing in Redis.This will help in reducing the payload which will in return give you higher throughput, lower latency and higher savings in your cost.
 
 ## How to Compress Strings
- There are several compression algorithms to choose from, each with it's own tradeoffs.
- 
- 1. Snappy by google aims for very high speeds and reasonable compression.
- 1. LZO compresses fast and decompresses faster.
- 1. Others such as Gzip are more widely available.
 
- GZIP compression uses more CPU resources than Snappy or LZO, but provides a higher compression ratio. GZip is often a good choice for cold data, which is accessed infrequently. Snappy or LZO are a better choice for hot data, which is accessed frequently.
+There are several compression algorithms to choose from, each with it's own tradeoffs.
 
- Compressing strings requires code changes. Some libraries can transparently compress objects, you would only need to configure your library. In other cases, you might have to compress the data manually.
+1. Snappy by google aims for very high speeds and reasonable compression.
+1. LZO compresses fast and decompresses faster.
+1. Others such as Gzip are more widely available.
+
+GZIP compression uses more CPU resources than Snappy or LZO, but provides a higher compression ratio. GZip is often a good choice for cold data, which is accessed infrequently. Snappy or LZO are a better choice for hot data, which is accessed frequently.
+
+Compressing strings requires code changes. Some libraries can transparently compress objects, you would only need to configure your library. In other cases, you might have to compress the data manually.
 
 ## Advantages
 

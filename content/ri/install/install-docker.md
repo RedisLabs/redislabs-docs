@@ -21,9 +21,11 @@ Note: On windows and Mac, please install docker version 18.03 or higher. You can
 ## II. Run Rdbtools Docker Image
 
 Next, we will run the Rdbtools container. The easiest way is to run the following command:
-{% highlight bash %}
+
+```bash
 {{site.docker_command}}:{{site.docker_image_version}}
-{% endhighlight %}
+```
+
 and then point your browser to [http://localhost:8001](http://localhost:8001).
 
 In addition, you can add some additional flags to the docker run command:

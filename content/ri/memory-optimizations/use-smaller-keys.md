@@ -25,13 +25,16 @@ Advantage of using Rdbtools is that it will give you the big keys from the whole
 
 Let's take an example:
 Suppose you have 100,000,000 keys name like
-{% highlight bash %}
+
+```bash
 my-descriptive-large-keyname (28 characters)
-{% endhighlight %}
+```
+
 Now if you shorten the key name like
-{% highlight bash %}
+
+```bash
 my-des-lg-kn (12 characters)
-{% endhighlight %}
+```
 
 You save 16 characters by shortening your key i.e. 16 bytes which will let you save **1,000,000,000*16 = 1.6GB of RAM Memory !**
 

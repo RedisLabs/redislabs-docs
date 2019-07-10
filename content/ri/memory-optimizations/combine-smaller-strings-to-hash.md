@@ -21,14 +21,16 @@ If you are not doing any of the above, then use **Hashes**.
 Suppose we have to store the number of comments on the posts of a user, we can have a key names like `user:{userId}:post:{postId}:comments`.
 
 This way we have a key per post for each user. So now if we neet to find the total number of comments for whole appilication we can do
-{% highlight bash %}
+
+```bash
 Redis::mget("user:{$userId}:post:1", "user:{$userId}:post:2", ...);
-{% endhighlight %}
+```
 
 For converting this to Hash you can do something like this-
-{% highlight bash %}
+
+```bash
 Redis::hmset("user:{$userId}:comments", "post:1", 20, "post:2", 50);
-{% endhighlight %}
+```
 
 This will build a Redis hash with two fields post:1 and post:2 holding the values 20 and 50.
 
