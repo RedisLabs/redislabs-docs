@@ -1,5 +1,5 @@
 ---
-Title: RedisInsight FAQs
+Title: FAQs
 description:
 weight: $weight
 alwaysopen: false
@@ -62,6 +62,7 @@ In the offline mode, Rdbtools downloads a RDB file from a S3 bucket you specify.
 
 {{% expand "What is the overhead of offline memory analysis on redis server?" %}}
 Zero overhead, since we do not need to connect to your redis server
+{{% /expand %}}
 
 {{% expand "How is memory used by a key calculated?" %}}
 We look at the internal structures redis needs to allocate to store the key and determine the memory consumption. We also account for allocator overheads, as well as differences between redis versions.
