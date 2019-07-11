@@ -1,13 +1,13 @@
 ---
 Title: Getting Started with Redis Enterprise Software using Kubernetes
-description: 
+description:
 weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
-Kubernetes provides simpler orchestration with containers and has been widely adapted. It is simple to get a Redis Enterprise cluster on Kubernetes with the new Redis Enterprise Docker container.
+Kubernetes provides simpler orchestration with containers and has been widely adapted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
 
 ## What is Redis Enterprise?
 
@@ -27,15 +27,13 @@ We will go through 4 steps to set up our cluster with Redis Enterprise:
 - Step 3: Setup Redis Enterprise cluster
 - Step 4: Create a Redis database and test your connectivity
 
-_Note: The deployment is deliberately simplified and is great for getting started with Kubernetes and Redis Enterprise fast. It certainly isn't intended for production use._
-
 ### Requirements
 
 The steps below were performed using the latest [Google Cloud sdk](https://cloud.google.com/sdk/) and [kubectl tool](https://kubernetes.io/docs/tasks/kubectl/install/) on MacOS. There may be slight differences in detailed instructions with another operating system.
 
 ## Step 1: Create a Kubernetes cluster on Google Cloud
 
-Lets first get your commandline environment set up.
+Let's first get your CLI environment set up.
 
 - First authenticate to your Google Cloud environment.
 
