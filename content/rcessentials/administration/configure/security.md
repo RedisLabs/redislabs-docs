@@ -14,7 +14,7 @@ either IP or [CIDR
 notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
 
 ![Source
-IP/Subnet](/images/rc/source_ip_subnet-1.png?width=600&height=102)
+IP/Subnet](/images/rcessentials/source_ip_subnet-1.png?width=600&height=102)
 
 In case you require more source IP rules than your current REC
 plan entitles you to, you can see the different plans and the maximum
@@ -28,7 +28,7 @@ Configuration =\> Edit =\> Access Control & Security.
 ## Securing Connection to Your Database with SSL/TLS
 
 There is a [dedicated
-page]({{< relref "/rc/securing-redis-cloud-connections.md" >}})
+page]({{< relref "/rcessentials/securing-redis-cloud-connections.md" >}})
 on this topic with steps you need to achieve this.
 
 ## Redis Password
@@ -40,7 +40,7 @@ One feature often overlooked is the little eye icon on the right side of
 form field that can be used to view the password.
 
 ![redis
-password](/images/rc/redis_password.png?width=600&height=42)
+password](/images/rcessentials/redis_password.png?width=600&height=42)
 
 ## AWS Security groups
 

@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC Essentials"]
 ---
 Once you have a
-[subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}),
+[subscription]({{< relref "/rcessentials/administration/setup-and-editing/create-subscription.md" >}}),
 creating a Redis database in Redis Cloud Essentials is simple with the
 steps below.
 
@@ -24,7 +24,7 @@ first.
     that by enabling this feature, your database consumes twice as
     much memory in your subscription.
 1. Select your preferred [Data
-    Persistence]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}})
+    Persistence]({{< relref "/rcessentials/concepts/data-persistence-redis-cloud.md" >}})
     option.
 1. If this is a **Pay-as-You-Go** subscription, you see [Database
     Clustering]({{< relref "/rc/concepts/clustering-redis-cloud.md" >}})
@@ -41,14 +41,14 @@ first.
 1. If you have contacted support to enable SSL/TLS certificates, you
     can add SSL Client Authentication to your database here. For
     specific information on this process, see [Securing Redis Cloud Essentials Connections with
-    SSL/TLS]({{< relref "/rc/securing-redis-cloud-connections.md" >}}).
+    SSL/TLS]({{< relref "/rcessentials/securing-redis-cloud-connections.md" >}}).
 1. For more advanced options, click on **More Options**.
 1. Choose a [Data Eviction
-    Policy]({{< relref "/rc/concepts/data-eviction-policies.md" >}})
+    Policy]({{< relref "/rcessentials/concepts/data-eviction-policies.md" >}})
     or accept the default.
 1. If you would like periodic backups of your database, enter the path
     to storage here. For specific information visit [Configuring
-    Database Backups for Redis Cloud Essentials]({{< relref "/rc/administration/configure/backups.md" >}}).
+    Database Backups for Redis Cloud Essentials]({{< relref "/rcessentials/administration/configure/backups.md" >}}).
 1. You can add **Alert Settings** to your database so that you and your
     team can be alerted when thresholds are passed.
 1. Click **Activate**.

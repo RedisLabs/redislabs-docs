@@ -19,7 +19,7 @@ and then click on the name of the Subscription you want to view.
 
 When you view a subscription, you can see:
 
-- Subscription name (To edit the name, click ![Edit](/images/rv/icon_edit.png#no-click "Edit"))
+- Subscription name (To edit the name, click ![Edit](/images/rcpro/icon_edit.png#no-click "Edit"))
 - Cloud provider details
 - Memory type (RAM/RAM + Flash)
 
@@ -135,7 +135,7 @@ To define the CIDR whitelist:
     - Security Group:
         1. For the type, select **Security Group**.
         1. For the value, enter the ID of the AWS security group to grant access to.
-1. Click ![Save](/images/rv/icon_save.png#no-click "Save").
+1. Click ![Save](/images/rcpro/icon_save.png#no-click "Save").
 1. Either:
    1. Add more whitelist entries - Click ![Add](/images/rs/icon_add.png#no-click "Add").
    1. Apply the changes to the whitelist - Click **Apply all changes**.

@@ -26,7 +26,7 @@ steps:
     1. To create a new bucket:
         1. Click the **Create Bucket** button.
         1. Enter a **name** and **region** for the bucket.
-            ![new-bucket](/images/rc/new-bucket.png?width=600&height=678)
+            ![new-bucket](/images/rcessentials/new-bucket.png?width=600&height=678)
         1. Click the **Next** button.
         1. Set any bucket properties to your company's standards.
         1. On the Set permissions page, click the **Add account**
@@ -35,7 +35,7 @@ steps:
             `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
         1. Check read/write boxes for **Objects** and **Object permissions**,
             then click **Save**.
-            ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)
+            ![add_s3_user](/images/rcessentials/add_s3_user.png?width=600&height=698)
         1. Click the **Create bucket** button.
     1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
@@ -43,7 +43,7 @@ steps:
             section enter the below information.
         1. In the Account field enter:
             `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-            ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)
+            ![add_user_existing](/images/rcessentials/add_user_existing.png?width=700&height=175)
         1. Select the **permissions** that you need and click **Save**.
 
 Once your bucket's permissions are set, you can use it with your
@@ -63,13 +63,13 @@ console](https://developers.google.com/console/) subscriptions, to use a GCS buc
 1. Click on the three dot button (1) on your relevant bucket name and
     choose **Edit bucket permissions** (2).
     ![GCS bucket
-    permissions](/images/rc/bucket-perm1.png?width=800&height=493)
+    permissions](/images/rcessentials/bucket-perm1.png?width=800&height=493)
 1. Under **Add members**, enter:
     `service@redislabs-prod-clusters.iam.gserviceaccount.com`
 1. For the role, select **Storage Legacy -\> Storage Legacy Bucket
     Writer**.
     ![Google Cloud Storage
-    Permissions](/images/rc/gcs-permissions.jpg?width=800&height=606)
+    Permissions](/images/rcessentials/gcs-permissions.jpg?width=800&height=606)
 1. Click on the **Add** button.
 
 Once your bucket's permissions are set, you can use it with your

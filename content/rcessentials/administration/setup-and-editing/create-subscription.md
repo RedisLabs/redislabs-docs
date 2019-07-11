@@ -55,5 +55,5 @@ from a single console.
 
 1. After you select the options that you want, click **Continue** to
     review pricing, set payment method and finalize your subscription.
-1. [Create a new database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}})
+1. [Create a new database]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}})
     under the subscription.

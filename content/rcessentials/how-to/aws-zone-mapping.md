@@ -46,24 +46,24 @@ and by that reducing unnecessary latency.
 Allow the process a few minutes to complete as it maps the availability
 zones. Once complete, you see this:
 
-![zone-mapping](/images/rc/zone-mapping.png?width=600&height=359)
+![zone-mapping](/images/rcessentials/zone-mapping.png?width=600&height=359)
 
 When the process is complete, the next time you go to create a new
 subscription, the drop down for "Cloud" has the zone letter in
 it.
 
-![after_zone_mapping](/images/rc/after_zone_mapping.png?width=600&height=192)
+![after_zone_mapping](/images/rcessentials/after_zone_mapping.png?width=600&height=192)
 
 For existing subscriptions in Redis Cloud Essentials, you now see the Availability Zone
 they are using. To reduce the latency described above:
 
 1. [Create a new
-    subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}) in
+    subscription]({{< relref "/rcessentials/administration/setup-and-editing/create-subscription.md" >}}) in
     the correct AZ
 1. [Create a new
-    database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}})
+    database]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}})
 1. [Migrate your
-    data]({{< relref "/rc/how-to/importing-dataset-redis-cloud.md" >}})
+    data]({{< relref "/rcessentials/how-to/importing-dataset-redis-cloud.md" >}})
     over to the new database.
 
 While simple, this causes some downtime. If downtime is not an

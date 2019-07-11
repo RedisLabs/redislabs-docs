@@ -58,10 +58,10 @@ For the user role, enter either:
     {{% expand "How do I select email alerts?" %}}{{< video "/images/rs/add-user-email-alerts.mp4" "Select email alerts" >}}{{% /expand %}}
 
     Then, click **Save**.
-1. Click ![Save](/images/rv/icon_save.png#no-click "Save").
+1. Click ![Save](/images/rcpro/icon_save.png#no-click "Save").
 
 To edit the name, password, role or email alerts of a user, hover over the user and click ![Edit]
-(/images/rv/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
+(/images/rcpro/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
 delete the user and re-add it.
 
 ### Resetting user passwords

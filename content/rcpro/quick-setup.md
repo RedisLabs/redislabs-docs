@@ -13,7 +13,7 @@ The steps for creating a simple Redis Cloud Pro deployment are:
 1. Connect to your database.
 
 {{% note %}}
-If you are interested in running Redis Cloud Pro instances on your own [AWS account](/rv/how-to/creating-cloud-account/), contact Redis Labs [Support team](https://redislabs.com/company/support) to enable this functionality.
+If you are interested in running Redis Cloud Pro instances on your own [AWS account](/rcpro/how-to/creating-cloud-account/), contact Redis Labs [Support team](https://redislabs.com/company/support) to enable this functionality.
 {{% /note %}}
 
 ## Step 1: Sign up for Redis Cloud Pro account
@@ -26,7 +26,7 @@ If you already have an account, sign in to [Redis Cloud Pro](https://app.redisla
 
 Add a new subscription to your account, if you do not already have one.
 
-![new_subscription](/images/rv/new_subscription.png?width=800&height=406)
+![new_subscription](/images/rcpro/new_subscription.png?width=800&height=406)
 
 For a new subscription:
 
@@ -63,7 +63,7 @@ To start with a single database:
 1. Modules - You can select which Redis Module you want to load to your database. In case you select 'RediSearch' please provide the estimated number of documents you are going to index.
 1. Click **Save** and enter the number of databases with these settings that you would like to provision. To add more rows, click the plus.
 
-![add_database](/images/rv/add_database.png?width=800&height=444)
+![add_database](/images/rcpro/add_database.png?width=800&height=444)
 
 When you finish with all databases, click **Next**.
 
@@ -84,7 +84,7 @@ Provide a payment method by selecting an existing one or click **+** to add
 a new one.
 A $100 credit is assigned to the new subscription for a free trial.
 
-![review_create](/images/rv/review_create.png?width=800&height=594)
+![review_create](/images/rcpro/review_create.png?width=800&height=594)
 
 Click **Continue** to create the subscription and deploy the
 databases. The subscription shows a "Pending" status and may
@@ -98,7 +98,7 @@ In the menu, go to the Databases page. Select one of the
 databases, select the Configuration tab, and look for the database
 endpoint.
 
-![connect_to_database](/images/rv/connect_to_database.png?width=800&height=599)
+![connect_to_database](/images/rcpro/connect_to_database.png?width=800&height=599)
 
 ### Using Telnet
 
@@ -173,12 +173,12 @@ in any existing code or apps that use Redis and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Cloud Pro]({{< relref "/rv/concepts/data-persistence.md" >}})
+1. [Data Persistence with Redis Cloud Pro]({{< relref "/rcpro/concepts/data-persistence.md" >}})
 1. [Securing Your Redis Cloud Pro
-    Database]({{< relref "/rv/administration/configuration/securing-your-database.md" >}})
+    Database]({{< relref "/rcpro/administration/configuration/securing-your-database.md" >}})
 1. [Creating
     Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
 1. [Redis Cloud Pro Database
-    Backups]({{< relref "/rv/administration/configuration/backups.md" >}})
+    Backups]({{< relref "/rcpro/administration/configuration/backups.md" >}})
 1. [Monitoring Redis Cloud Pro
-    Performance]({{< relref "/rv/administration/configuration/monitoring-performance.md" >}}).
+    Performance]({{< relref "/rcpro/administration/configuration/monitoring-performance.md" >}}).

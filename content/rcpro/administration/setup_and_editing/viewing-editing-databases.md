@@ -24,7 +24,7 @@ title of the page:
 
 To Edit a database, click on the pencil icon.
 
-![view_database2](/images/rv/view_database2.png?width=600&height=338)
+![view_database2](/images/rcpro/view_database2.png?width=600&height=338)
 
 ## Edit a Database
 

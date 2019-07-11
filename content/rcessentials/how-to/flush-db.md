@@ -9,7 +9,7 @@ There are times where you want to delete all database data.
 
 {{% warning title="Data Loss Warning" %}} The flush command deletes ALL of the data in the database. This
 includes all data in memory and persisted to disk. We recommend that you
-[backup your database]({{< relref "/rc/administration/configure/backups.md" >}}) first.{{% /warning %}}
+[backup your database]({{< relref "/rcessentials/administration/configure/backups.md" >}}) first.{{% /warning %}}
 
 ### flushall for Redis Cloud Essentials Databases
 

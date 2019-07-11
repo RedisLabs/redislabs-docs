@@ -55,12 +55,12 @@ New subscription details page is opened. You must select the following:
 
 You can consider a quick overview of each tier's features upon
 selection. For more specific information, see [Creating a
-Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}).
+Subscription]({{< relref "/rcessentials/administration/setup-and-editing/create-subscription.md" >}}).
 
 After you select the options that you want, click **Continue** to
 review pricing, set payment method and finalize your subscription.
 
-![new_sub](/images/rc/new_sub.png?width=600&height=466)
+![new_sub](/images/rcessentials/new_sub.png?width=600&height=466)
 
 ## Step 3: Set up a database
 
@@ -71,13 +71,13 @@ To set up a new database:
 1. Select your subscription and expand it.
 1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page opens.
 1. Give your database a name.
-1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
+1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}}).
 1. Click the **Activate** button to create your database.
 
 Note: the Endpoint shown on this page is very important because it
 is your entry point to this database.
 
-![rc-view-database-endpoint](/images/rc/rc-view-database-endpoint.png?width=600&height=409)
+![rc-view-database-endpoint](/images/rcessentials/rc-view-database-endpoint.png?width=600&height=409)
 
 ## Step 4: Reading and Writing Data
 
@@ -153,12 +153,12 @@ and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Cloud Essentials]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}}).
+1. [Data Persistence with Redis Cloud Essentials]({{< relref "/rcessentials/concepts/data-persistence-redis-cloud.md" >}}).
 1. [Securing Your Redis Cloud Essentials
-    Database]({{< relref "/rc/administration/configure/security.md" >}}).
+    Database]({{< relref "/rcessentials/administration/configure/security.md" >}}).
 1. [Creating a
-    database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
+    database]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}}).
 1. [Redis Cloud Essentials Database
-    Backups]({{< relref "/rc/administration/configure/backups.md" >}}).
+    Backups]({{< relref "/rcessentials/administration/configure/backups.md" >}}).
 1. [Monitoring Redis Cloud Essentials
-    Performance]({{< relref "/rc/administration/configure/monitoring-alerting-metrics.md" >}}).
+    Performance]({{< relref "/rcessentials/administration/configure/monitoring-alerting-metrics.md" >}}).

@@ -13,4 +13,4 @@ it shows you all the accounts you are a member of and allow you to
 quickly switch between each. The rights you have for each account are
 dictated by the role you are assigned by each account's owner.
 
-![account_multiple_teams](/images/rc/account_multiple_teams.png?width=399&height=622)
+![account_multiple_teams](/images/rcessentials/account_multiple_teams.png?width=399&height=622)

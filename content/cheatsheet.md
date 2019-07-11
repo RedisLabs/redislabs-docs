@@ -27,24 +27,24 @@ To link to another page in the content directory:
 Syntax:
 
 ```md
-[Redis Cloud Pro Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
+[Redis Cloud Pro Quick Setup]({{</* relref  "/rcpro/quick-setup.md" */>}})`
 ```
 
 Output:
 
-[Redis Cloud Pro Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
+[Redis Cloud Pro Quick Setup]({{< relref  "/rcpro/quick-setup.md" >}})
 
 To link to an anchor on another page in the content directory:
 
 Syntax:
 
 ```md
-`[Sign up for Redis Cloud Pro]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
+`[Sign up for Redis Cloud Pro]({{</* relref "/rcpro/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
 ```
 
 Output:
 
-[Sign up for Redis Cloud Pro]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
+[Sign up for Redis Cloud Pro]({{< relref "/rcpro/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
 
 ### Text formatting
 
@@ -427,7 +427,7 @@ Syntax:
 
 Ouput:
 
-See example [here](/rc/administration).
+See example [here](/rcessentials/administration).
 
 ### Recently updated
 This shortcode can be used to display recently updated articles.

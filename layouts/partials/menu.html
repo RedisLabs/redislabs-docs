@@ -3,7 +3,11 @@
 {{- $isParentRoot := eq .Parent .FirstSection -}}
 {{- $numOfChildren := (add (len .Pages) (len .Sections)) -}}
 {{- $shouldCollapse := and $isParentRoot (eq $numOfChildren 0) -}}
+<<<<<<< HEAD
 {{- $isCollapsed := (or $shouldCollapse (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") (eq .URL "/ri/"))) -}}
+=======
+{{- $isCollapsed := (or $shouldCollapse (or (eq .URL "/rs/") (eq .URL "/rcessentials/") (eq .URL "/rcpro/") (eq .URL "/platforms/"))) -}}
+>>>>>>> Rename RC directories
 
 {{- if eq .Site.Params.ordersectionsby "title"}}
   {{- range .Site.Home.Sections.ByTitle}}
@@ -30,9 +34,15 @@
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
         {{- if ne $numberOfPages 0 }} haschildren{{end -}}
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
+<<<<<<< HEAD
         {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") (eq .URL "/ri/"))}} menu-root {{end}}
         ">
         {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") }}
+=======
+        {{- if (or (eq .URL "/rs/") (eq .URL "/rcessentials/") (eq .URL "/rcpro/") (eq .URL "/platforms/"))}} menu-root {{end}}
+        ">
+        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rcessentials/") (eq .RelPermalink "/rcpro/") (eq .RelPermalink "/platforms/") }}
+>>>>>>> Rename RC directories
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
@@ -44,7 +54,11 @@
             <div class="children">
           {{end}}
 
+<<<<<<< HEAD
               {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") (eq .URL "/ri/") }}          
+=======
+              {{- if or (eq .URL "/rs/") (eq .URL "/rcessentials/") (eq .URL "/rcpro/") (eq .URL "/platforms/") }}          
+>>>>>>> Rename RC directories
                 <div class="menu-divider"></div>
                 
                 <span class="SideMenuToggle expander">

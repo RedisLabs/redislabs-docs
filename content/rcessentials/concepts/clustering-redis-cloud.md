@@ -40,7 +40,7 @@ if they were not designed to use it beforehand.
 **Note:** Redis Cloud Essentials clustering is only available in the
 "Pay-As-You-Go" subscription.
 
-![subscription-selection-2](/images/rc/subscription-selection-2.png?width=600&height=221)
+![subscription-selection-2](/images/rcessentials/subscription-selection-2.png?width=600&height=221)
 
 ## Multi-Key Operations {#multikey-operations}
 

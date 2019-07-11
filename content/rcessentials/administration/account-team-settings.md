@@ -14,7 +14,7 @@ account]({{< relref "/rc/securing-redis-cloud-connections.md" >}}),
 you are prompted to supply the downloadable Redis Labs CA
 Certificate from this page.
 
-![settings](/images/rc/settings.png?width=1000&height=782)
+![settings](/images/rcessentials/settings.png?width=1000&height=782)
 
 ## Team Management
 
@@ -35,7 +35,7 @@ You can easily add a new team member to your account. Click on the
 side of the form to edit an existing team member.
 
 ![Team settings on Redis Enterprise
-Cloud](/images/rc/settings_team.png?width=1000&height=454)
+Cloud](/images/rcessentials/settings_team.png?width=1000&height=454)
 
 ### Delete a Team Member
 
@@ -45,4 +45,4 @@ appears over the right side of the line to edit. Then click on the
 trashcan icon. Click Delete button to confirm.
 
 ![Delete existing team
-member](/images/rc/team-settings2.jpg?width=800&height=302)
+member](/images/rcessentials/team-settings2.jpg?width=800&height=302)

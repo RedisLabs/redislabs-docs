@@ -15,7 +15,7 @@ Once a Cloud Account is set up you can reuse it with several subscriptions.
 
 To create a Redis Cloud Pro Cloud Account, please select **Cloud Accounts** from the
 right side menu. Please follow [our
-instructions]({{< relref "/rv/how-to/creating-aws-user-redis-enterprise-vpc.md" >}})
+instructions]({{< relref "/rcpro/how-to/creating-aws-user-redis-enterprise-vpc.md" >}})
 on how to set up a user for Redis Cloud Pro to use on your AWS account.
 To create a new Cloud Account, click on the '**+**' button.
 

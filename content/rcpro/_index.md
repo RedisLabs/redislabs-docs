@@ -10,7 +10,7 @@ Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
 
 Redis Cloud Pro is based on the proven Redis Enterprise technology, serving thousands of
 customers of our [Redis Enterprise
-Cloud]({{< relref "/rc/_index.md" >}}) and [Redis Enterprise
+Cloud]({{< relref "/rcessentials/_index.md" >}}) and [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) products. With Redis Cloud Pro,
 you can deploy quickly on major public clouds and create Redis
 databases that are fully compatible with the open-source Redis databases
