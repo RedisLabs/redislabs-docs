@@ -1,11 +1,11 @@
 ---
-Title: Redis Cloud Essentials
+Title: Redis Cloud Essentials (RC Essentials)
 description:
 weight: 20
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-Redis Cloud Essentials is a managed, serverless,
+Redis Cloud Essentials (RC Essentials) is a managed, serverless,
 Database-as-a-Service (DBaaS) offering.
 
 It is based on the proven Redis Enterprise technology. With Redis Cloud Essentials, developers can select a supported cloud
@@ -55,7 +55,7 @@ page. Enjoy our 24/7 support via online helpdesk or phone.
 
 ### Encryption and authentication
 
-Meet your security goals without compromising performance using Redis Cloud Essentials' fully encrypted SSL connections, and apply
+Use fully encrypted SSL connections in Redis Cloud Essentials to meet your security goals without compromising performance, and apply
 multi-level authentication mechanisms such as:
 
 - IP whitelist

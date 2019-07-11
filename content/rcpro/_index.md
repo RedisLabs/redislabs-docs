@@ -1,12 +1,11 @@
 ---
-Title: Redis Cloud Pro
+Title: Redis Cloud Pro (RC Pro)
 description:
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
-Redis Cloud Pro delivers a cost-effective, fully managed
+Redis Cloud Pro (RC Pro) delivers a cost-effective, fully managed
 Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
 
 Redis Cloud Pro is based on the proven Redis Enterprise technology, serving thousands of
