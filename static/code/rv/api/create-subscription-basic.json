@@ -1,23 +1,14 @@
 {
-    "name": "my new subscription",
-    "dryRun": false,
+    "name": "Basic subscription example",
     "paymentMethodId": 8240,
-    "memoryStorage": "ram",
-    "persistentStorageEncryption": true,
     "cloudProviders": [
       {
-        "provider": "AWS",
-        "cloudAccountId": 7033,
+        "cloudAccountId": 9837,
         "regions": [
           {
             "region": "us-east-1",
-            "multipleAvailabilityZones": false,
-            "preferredAvailabilityZones": [
-              "us-east-1b"
-            ],
             "networking": {
-              "deploymentCIDR": "10.0.0.0/24",
-              "vpcId": null
+              "deploymentCIDR": "10.0.0.0/24"
             }
           }
         ]
@@ -26,18 +17,7 @@
     "databases": [
       {
         "name": "Redis-database-example",
-        "protocol": "redis",
-        "memoryLimitInMb": 1024,
-        "supportOSSClusterApi": true,
-        "dataPersistence": "none",
-        "replication": true,
-        "throughputMeasurement": {
-          "by": "operations-per-second",
-          "value": 10000
-        },
-        "modules": null,
-        "quantity": 1,
-        "averageItemSizeInBytes": 10000
+        "memoryLimitInMb": 1024
       }
     ]
 }
