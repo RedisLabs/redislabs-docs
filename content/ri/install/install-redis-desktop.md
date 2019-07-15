@@ -22,4 +22,4 @@ Install RedisInsight on your Desktop
 * For Mac, download [rdbtools-mac-{{< param docker_image_version >}}.dmg]({{ param mac_dl_link | replace: '<version>', param docker_image_version}}) and launch app to start webserver
 * For Linux, [download rdbtools binary](/docs/install/linux/) and execute to start webserver
 
-Once the web server starts, open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RedisInsight.
+Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and follow onscreen instructions to activate RedisInsight.

@@ -19,4 +19,4 @@ wget -O rdbtools "{{< param linux_dl_link >}}" \
 rdbtools
 ```
 
-Once the web server starts, open [{{site.siteUrl}}]({{site.siteUrl}}) and follow onscreen instructions to activate RedisInsight Redis GUI for Linux
+Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and follow onscreen instructions to activate RedisInsight Redis GUI for Linux
