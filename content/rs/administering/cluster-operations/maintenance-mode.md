@@ -39,7 +39,7 @@ rladmin node <node_id> maintenance_mode on
 
 After all of the shards and endpoints are moved from the node, it is safe to do maintenance on the server if there are enough nodes up to maintain the quorum.
 
-### Cluster status with maintentance
+### Cluster status with maintenance
 
 For example, for when you have a 3 node cluster with 4 shards, the status of the cluster is:
 
