@@ -41,8 +41,7 @@ enableGitInfo = true
 googleAnalytics = "UA-92003007-1"
 googleTagManager = "GTM-TKZ6J9R"
 
-# Redis Insights variables
-mac_dl_link = "https://binaries.rdbtools.com/v0.9.40.1/rdbtools-mac-v0.9.40.1.dmg"
+mac_dl_link = "https://binaries.rdbtools.com/version/rdbtools-mac-version.dmg"
 linux_dl_link = "https://binaries.rdbtools.com/v0.9.40.1/rdbtools-linux64-v0.9.40.1"
 windows_dl_link = "https://binaries.rdbtools.com/v0.9.40.1/rdbtools-win-v0.9.40.1.msi"
 docker_command = "docker run -v rdbtools:/db -p 8001:8001 rdbtools/rdbtools"
