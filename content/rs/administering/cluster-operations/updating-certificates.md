@@ -7,11 +7,11 @@ categories: ["RS"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates in its out of the box configuration to ensure the product is secure by default. This self-signed certificate is used to establish encryption-in-transit for the following traffic:
 
-- RS Management User Interface (UI)
-- RS's REST API
+- Management User Interface (UI)
+- REST API
 - Connections between clients and database endpoints
 - Synchronization between databases for ReplicaOf and CRDB
-- Discovery Services 
+
 
 These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
 
@@ -49,35 +49,6 @@ For example, the following command would replace the cm certificate with the pri
    ```bash
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
    ```
-
-## How to update SSL/TLS certificates in earlier version of RS
-
-{{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
-
-- Use the REST API to replace the certificate:
-
-    ```bash
-
-    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
-
-    ```
-
-    Where:
-
-    - cert_name - The name of the certificate to replace:
-        - For management UI: `cm`
-        - For REST API: `api`
-        - For database endpoint: `proxy`
-        - For syncer: `syncer`
-    - key - The contents of the *_key.pem file
-
-    {{% tip %}}The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call. You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.{{% /tip %}}
-
-    - cert - The contents of the *_cert.pem file
-
-    The certificate is copied automatically to all nodes in the cluster.
-
-When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
 ## TLS Protocol and Cipher Configuration
 
