@@ -8,5 +8,5 @@ pageTitle: RedisInsight Documentation
 ---
 Choose the topic you need help with:
 
-- [Installing RedisInsight](/docs/install)
-- [Using RedisInsight](/docs/add-instance)
+- [Installing RedisInsight]({{< relref "/ri/install/_index.md" >}})
+- [Using RedisInsight]({{< relref "/ri/features/add-instance.md" >}})
