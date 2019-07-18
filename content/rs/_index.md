@@ -10,13 +10,15 @@ categories: ["RS"]
 
 Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](https://redislabs.com/why-redis/redis-enterprise/), which is used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.
 
-You can install RS in your environment of choice, whether for an on-premises data-center or your preferred cloud platform. You have full control of your data, clusters, databases, and configuration.
+You can install RS in your production environment of choice, whether for an on-premises data-center or your preferred cloud platform.
+For testing, you can also use pre-installed Docker containers.
+Either way, you have full control of your data, clusters, databases, and configuration.
 
 Note: The previous name of Redis Enterprise Software (RS) was “Redis Labs Enterprise Cluster” (RLEC).
 
 ## What are the benefits of using RS?
 
-RS’s architecture supports multiple threaded Redis databases created for multiple users across the same cluster infrastructure while keeping the databases completely isolated from one another. In addition, RS gives you the flexibility to run your Redis database in multiple configurations to accommodate your specific performance and availability needs.
+The RS architecture supports multiple threaded Redis databases created for multiple users across the same cluster infrastructure while keeping the databases completely isolated from one another. In addition, RS gives you the flexibility to run your Redis database in multiple configurations to accommodate your specific performance and availability needs.
 
 [Learn more about Redis Enterprise Software architecture.]({{< relref "/rs/concepts/_index.md" >}})
 
