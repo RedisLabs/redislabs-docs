@@ -28,7 +28,7 @@ If the connection is successful, you should start seeing statistics for this red
 
 If you want to work with ElastiCache Redis instances with RedisInsight, you have two options:
 
-1. [Install RedisInsight on an EC2 instance](/docs/install/ec2/) that has access to the ElastiCache Redis instance.
+1. [Install RedisInsight on an EC2 instance]({{< relref "/ri/install/install-ec2.md" >}}) that has access to the ElastiCache Redis instance.
 1. Create a SSH tunnel through an EC2 instance that can access the ElastiCahe Redis instance.
 
 ### Using an SSH Tunnel

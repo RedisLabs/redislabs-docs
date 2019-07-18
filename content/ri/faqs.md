@@ -87,7 +87,7 @@ First, this will work only if you have RedisInsight running on your local comput
 {{% /expand %}}
 
 {{% expand "How do I connect to AWS Elasticache?" %}}
-You must install RedisInsight inside your VPC, either on an EC2 instance, or using ECS or Fargate. See [EC2 Installation Instructions](/docs/rdbtools-docker-installation-ec2/)
+You must install RedisInsight inside your VPC, either on an EC2 instance, or using ECS or Fargate. See [EC2 Installation Instructions]({{< relref "/ri/install/install-ec2.md" >}})
 {{% /expand %}}
 
 {{% expand "What are the memory limits on your license terms?" %}}
