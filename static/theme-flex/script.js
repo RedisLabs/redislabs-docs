@@ -339,8 +339,7 @@ var getInternalContent = function(page) {
     
     if(!isLoggedIn) return;
 
-    // var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/RedisLabs/redislabs-docs/master/content/rs/getting-started/quick-setup.md');
-    var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/HarunD/internal-md-experiment/master/README.md?token=AANKDT4CO6YSBYEGE4JYFJK5DB62Y');
+    var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/HarunD/internal-md-experiment/master/README.md?token=ACESSTOKEN');
 }
 
 var hideInternalContent = function() {
