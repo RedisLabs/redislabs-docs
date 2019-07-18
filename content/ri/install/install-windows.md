@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  Redis GUI Client for Windows
-description: Redis GUI Client for Windows
+weight: 10
 categories: ["RI"]
 permalink: docs/install/windows/
 pageTitle: Redis GUI Client for Windows

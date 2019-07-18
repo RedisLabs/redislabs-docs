@@ -1,8 +1,8 @@
 ---
 layout: docs
 title:  Installing RedisInsight via AWS CloudFormation
-description: Instructions for Installing RedisInsight via AWS CloudFormation
 date:  2018-07-20 03:49:29 +0530
+weight: 60
 categories: ["RI"]
 permalink: docs/install/cloudformation/
 pageTitle: Installing RedisInsight via AWS CloudFormation

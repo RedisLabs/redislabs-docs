@@ -1,8 +1,8 @@
 ---
 layout: docs
 title:  Activating RedisInsight
-description: Instructions for activating RedisInsight after installation
 date:  2018-07-20 03:49:29 +0530
+weight: 70
 categories: ["RI"]
 permalink: docs/install/activating/
 pageTitle: Activating RedisInsight

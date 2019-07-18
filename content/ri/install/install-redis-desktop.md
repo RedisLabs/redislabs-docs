@@ -1,8 +1,8 @@
 ---
 layout: docs
 title:  Redis Desktop Client for Mac, Windows and Linux
-description: Redis Desktop Client for Mac, Windows and Linux
 date:  2018-07-20 03:49:29 +0530
+weight: 5
 categories: ["RI"]
 permalink: docs/install/redis-desktop-mac-win-linux/
 pageTitle: Redis Desktop GUI Client

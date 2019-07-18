@@ -1,8 +1,8 @@
 ---
 layout: docs
 title: Enable Compression for List
-description: Enable Compression for Internal Nodes within a List
 date:  2018-03-26 16:49:29 +0530
+weight: 130
 categories: ["RI"]
 permalink: docs/memory-optimizations/enable-compression-for-list/
 pageTitle: Enable Compression for Internal Nodes within a List

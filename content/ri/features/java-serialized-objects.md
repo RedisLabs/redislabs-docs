@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  View Java Serialized Objects in Redis
-description: View Cached Java Serialized Objects | Redis GUI
+weight: 40
 categories: ["RI"]
 permalink: docs/features/view-java-serialized-objects/
 pageTitle: View Java Serialized Objects

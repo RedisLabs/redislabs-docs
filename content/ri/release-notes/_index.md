@@ -1,5 +1,5 @@
 ---
-Title: RedisInsight Release Notes
+Title: Release Notes
 description:
 weight: 90
 alwaysopen: false

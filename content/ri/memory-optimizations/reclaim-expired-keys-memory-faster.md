@@ -1,8 +1,8 @@
 ---
 layout: docs
 title: Reclaim Expired Keys Memory Faster
-description: Reclaim Expired Keys Memory Faster
 date:  2018-03-26 16:49:29 +0530
+weight: 140
 categories: ["RI"]
 permalink: docs/memory-optimizations/reclaim-expired-keys-memory-faster/
 pageTitle: Reclaim Expired Keys Memory Faster

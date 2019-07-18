@@ -1,8 +1,8 @@
 ---
 layout: docs
 title:  How RedisInsight Works
-description: How RedisInsight Works
 date:  2018-03-26 16:49:29 +0530
+weight: 5
 categories: ["RI"]
 permalink: docs/how-rdbtools-works/
 pageTitle: How Memory Analysis Works

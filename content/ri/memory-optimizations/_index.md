@@ -1,5 +1,5 @@
 ---
-Title: RedisInsight Memory Optimization
+Title: Memory Optimization
 description:
 weight: 70
 alwaysopen: false

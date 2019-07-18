@@ -1,8 +1,8 @@
 ---
 layout: docs
 title:  Adding a Redis instance
-description: Instructions for adding a Redis instance
 date:  2018-07-20 03:49:29 +0530
+weight: 10
 categories: ["RI"]
 permalink: docs/add-instance/
 pageTitle: Adding a Redis instance

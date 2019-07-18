@@ -1,8 +1,8 @@
 ---
 layout: docs
 title: Convert to a List Instead of Hash
-description: Convert to a List Instead of Hash
 date:  2018-03-26 16:49:29 +0530
+weight: 110
 categories: ["RI"]
 permalink: docs/memory-optimizations/convert-to-list-instead-of-hash/
 pageTitle: Convert to a List Instead of Hash
