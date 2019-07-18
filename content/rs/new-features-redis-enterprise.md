@@ -57,12 +57,12 @@ In addition, Redis Enterprise Software provides the ability to load and
 use custom modules from [redismodules.com](http://redismodules.com/) or
 of your own creation.
 
-## Support for Docker in Production
+## Support for Docker
 
 Deploying and running your Redis Enterprise Software cluster on Docker
-containers is now officially supported in production systems and
+containers is supported in development systems and
 available to pull from Docker hub. With the official image, you can
-easily and quickly deploy several containers to start running a scalable
+easily and quickly test several containers to build the scalable
 and highly available cluster Redis Enterprise Software is famous for.
 
 For more information go to [quick start with Redis Enterprise Software

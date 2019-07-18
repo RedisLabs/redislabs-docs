@@ -43,8 +43,8 @@ sudo ./install.sh -y
 
 ### Docker-based installation {#dockerbased-installation}
 
-If you prefer, you can also simply run the Redis Enterprise Software
-Docker container on Windows, macOS, and Linux
+For testing purposes, you run the Redis Enterprise Software
+Docker container on Windows, MacOS, and Linux.
 
 ```src
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest

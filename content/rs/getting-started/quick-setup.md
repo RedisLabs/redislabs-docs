@@ -5,12 +5,8 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-In this quick setup guide, we take you through the steps to install RS in a Linux environment to test its capabilities.
-
-- To run RS in a Docker container on Linux, Windows, or MacOS, go to the
-  [Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
-- To install RS on Linux in a production environment, follow the complete instuctions
-  in [installing RS] ({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
+In this quick setup guide, we take you through the steps to install RS in a Linux environment to test its capabilities. To run RS in a Docker container for development or testing purposes, go to the
+[Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
 
 The steps to set up a Redis Enterprise Software (RS) cluster with a
 single node are super simple and go as follows:

@@ -120,13 +120,7 @@ replication to for the global CRDB.
 
 redis-cli is a simple command-line tool to interact with redis database.
 
-1. To switch your context into the RS container of node 1 in cluster 1, run:
-
-    ```src
-    docker exec -it rp1_node1 bash
-    ```
-
-1. To use redis-cli on port 12000, run:
+1. To use redis-cli on port 12000 from the node 1 terminal, run:
 
     ```src
     redis-cli -p 12000
@@ -147,16 +141,12 @@ redis-cli is a simple command-line tool to interact with redis database.
     "123"
     ```
 
-1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the
-   RS container of node 1 in cluster 1.
-1. To see that the key replicated to cluster 2, repeat the steps to switch your
-   context into the RS container of node 1 in cluster 2, run the redis-cli and
+1. Enter the terminal of node 1 in cluster 2, run the redis-cli, and
    retrieve key1.
 
     The output of the commands looks like this:
 
     ```src
-    $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000
     127.0.0.1:12000> get key1
     "123"
