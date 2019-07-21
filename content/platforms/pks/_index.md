@@ -236,33 +236,33 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
 
     - AWS - *gp2.yaml* <!-- Ben - I can't seem to make the code in the code blocks indent properly on Hugo. Please help, indentation is crucial here.  -->
 
-    ```src
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    metadata:
-        name: gp2
-    mountOptions:
-        - debug
-    parameters:
-        type: gp2
-    provisioner: kubernetes.io/aws-ebs
-    reclaimPolicy: Retain
-    ```
+        ```src
+        apiVersion: storage.k8s.io/v1
+        kind: StorageClass
+        metadata:
+            name: gp2
+        mountOptions:
+            - debug
+        parameters:
+            type: gp2
+        provisioner: kubernetes.io/aws-ebs
+        reclaimPolicy: Retain
+        ```
 
     - GCP - *standard.yaml*
 
-    ```src
-    apiVersion: storage.k8s.io/v1
-    kind: StorageClass
-    metadata:
-        name: standard
-    mountOptions:
-        - debug
-    parameters:
-        type: pd-standard
-    provisioner: kubernetes.io/gce-pd
-    reclaimPolicy: Retain
-    ```
+        ```src
+        apiVersion: storage.k8s.io/v1
+        kind: StorageClass
+        metadata:
+            name: standard
+        mountOptions:
+            - debug
+        parameters:
+            type: pd-standard
+        provisioner: kubernetes.io/gce-pd
+        reclaimPolicy: Retain
+        ```
 
 1. Create the appropriate yaml file to you IaS and apply it:
 
@@ -279,46 +279,55 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
 
     You will use the storage class name you have just created in the next step, editing the Redis Enterprise Cluster (REC) yaml.
 
-    1. [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml) - Defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_pks_cluster.yaml to keep things tidy, but this isn’t a mandatory step. This yaml **must** be edited, however, to reflect the specific configurations of your Cluster. Here are the only fields you **must** review before you apply the REC yaml:
-        - `name:` “your_cluster_name” (e.g. “re-cluster”). You can keep the default name or choose your own
-        - `nodes:` The number of nodes in the cluster, 3 by default (In order to evaluate cluster functionality, must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
-<!-- - uiServiceType: service_type
-Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.need to spin off to its own article, no need to provide too many options; rather, remove barriers to adoption--->
-        - `username:` \<your_email@your_domain.your_suffix\> - use an accessible email if evaluating alerting or use the default or any other properly formatted address.
-        <!-- - persistentSpec: enabled: \<false/true\>
-        Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
-        we now default to using persistence-->
-        - `storageClassName:` “<span style="color: #ff0000;">your storage class name from the previous step</span>“
-        - `redisEnterpriseNodeResources:` The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constraint, the minimum workable limits for basic testing are 2 CPU and 3Gb. For development and production, please use the guidelines in the [Hardware Requirements article]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-            - limits – specifies the max resources for a Redis node
-            - requests – specifies the minimum resources for a Redis node
-        - `enforceIPv4: true` - Add this line under `spec:` at the same indentation (2 spaces) as 'nodes'. This indicates to the REC deployment to not attempt to bind to IPv6, which is currently not supported on PKS clusters.
-        - `redisEnterpriseImageSpec`: This configuration controls the Redis Enterprise version used, and where it is fetched from. The GitHub repository yaml contains the latest image tag from [DockerHub](https://hub.docker.com/r/redislabs/redis/). If omitted, the Operator will default to the compatible image version and pull it from DockerHub. This configuration should stay as-is in most circumstances, unless the image used is pulled from a private repository. <!--- Ben - again, need to preserve indentation, within the block code ---> Here is an example of the edited REC yaml file:
-        ```
-        apiVersion: "app.redislabs.com/v1alpha1"
-        kind: "RedisEnterpriseCluster"
-         metadata:
-           name: "rec-pks"
-         spec:
-           enforceIPv4: true
-           nodes: 3
-           persistentSpec:
-             enabled: true
-             storageClassName: "standard" # ! edit according to infrastructure
-           uiServiceType: LoadBalancer
-           username: "demo@redislabs.com"
-           redisEnterpriseNodeResources:
-             limits:
-               cpu: "2000m"
-               memory: 3Gi
-             requests:
-               cpu: "2000m"
-               memory: 3Gi
-           redisEnterpriseImageSpec:
-             imagePullPolicy:  IfNotPresent
-             repository:       redislabs/redis
-             versionTag:       5.4.2-27
-        ```
+    [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml) - Defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_pks_cluster.yaml to keep things tidy, but this isn’t a mandatory step. This yaml **must** be edited, however, to reflect the specific configurations of your Cluster.
+
+    Here are the only fields you **must** review before you apply the REC yaml:
+
+    - `name`: “your_cluster_name” (e.g. “re-cluster”). You can keep the default name or choose your own.
+    - `nodes`: The number of nodes in the cluster, 3 by default (In order to evaluate cluster functionality, must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
+
+    <!-- - uiServiceType: service_type
+    Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.need to spin off to its own article, no need to provide too many options; rather, remove barriers to adoption--->
+
+    - `username`: \<your_email@your_domain.your_suffix\> - use an accessible email if evaluating alerting or use the default or any other properly formatted address.
+
+    <!-- - persistentSpec: enabled: \<false/true\>
+    Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
+    we now default to using persistence-->
+    - `storageClassName:` “<span style="color: #ff0000;">your storage class name from the previous step</span>“
+    - `redisEnterpriseNodeResources:` The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constraint, the minimum workable limits for basic testing are 2 CPU and 3Gb. For development and production, please use the guidelines in the [Hardware Requirements article]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
+        - limits – specifies the max resources for a Redis node
+        - requests – specifies the minimum resources for a Redis node
+    - `enforceIPv4: true` - Add this line under `spec:` at the same indentation (2 spaces) as 'nodes'. This indicates to the REC deployment to not attempt to bind to IPv6, which is currently not supported on PKS clusters.
+    - `redisEnterpriseImageSpec`: This configuration controls the Redis Enterprise version used, and where it is fetched from. The GitHub repository yaml contains the latest image tag from [DockerHub](https://hub.docker.com/r/redislabs/redis/). If omitted, the Operator will default to the compatible image version and pull it from DockerHub. This configuration should stay as-is in most circumstances, unless the image used is pulled from a private repository. <!--- Ben - again, need to preserve indentation, within the block code --->
+
+    Here is an example of the edited REC yaml file:
+
+    ```src
+    apiVersion: "app.redislabs.com/v1alpha1"
+    kind: "RedisEnterpriseCluster"
+    metadata:
+    name: "rec-pks"
+    spec:
+    enforceIPv4: true
+    nodes: 3
+    persistentSpec:
+        enabled: true
+        storageClassName: "standard" # ! edit according to infrastructure
+    uiServiceType: LoadBalancer
+    username: "demo@redislabs.com"
+    redisEnterpriseNodeResources:
+        limits:
+        cpu: "2000m"
+        memory: 3Gi
+        requests:
+        cpu: "2000m"
+        memory: 3Gi
+    redisEnterpriseImageSpec:
+        imagePullPolicy:  IfNotPresent
+        repository:       redislabs/redis
+        versionTag:       5.4.2-27
+    ```
 
 ## Step 4: Create your Cluster
 
