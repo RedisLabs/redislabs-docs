@@ -255,12 +255,32 @@ function setPageFeedback(kind) {
 }
 
 function setFeedbackMessage() {
-    $('.page-feedback').html('Thanks for the feedback!');
+    $('#page-feedback-open').html('Thanks for the feedback!');
     setTimeout(function() {
         $('.page-feedback').hide();
     }, 5000);
 }
 
 function hidePageFeedback() {
-    $('.page-feedback').hide();
+    $('#page-feedback-open').hide();
+    $('#page-feedback-closed').show();
+    localStorage.setItem('is-page-feedback-visible', 'yes');
 }
+
+function showPageFeedback() {
+    $('#page-feedback-closed').hide();
+    $('#page-feedback-open').show();
+    localStorage.setItem('is-page-feedback-visible', 'no');
+}
+
+$(function() {
+    $('.page-feedback').show();
+    var isPageFeedbackVisible = localStorage.getItem('is-page-feedback-visible');
+    setTimeout(function() {
+        if(isPageFeedbackVisible == 'no') {
+            hidePageFeedback();
+        } else {
+            showPageFeedback();
+        }
+    }, 300);
+});
