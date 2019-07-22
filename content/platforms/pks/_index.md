@@ -294,7 +294,7 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
     <!-- - persistentSpec: enabled: \<false/true\>
     Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
     we now default to using persistence-->
-    - `storageClassName:` “<span style="color: #ff0000;">your storage class name from the previous step</span>“
+    - `storageClassName:` Your storage class name from the previous step
     - `redisEnterpriseNodeResources:` The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constraint, the minimum workable limits for basic testing are 2 CPU and 3Gb. For development and production, please use the guidelines in the [Hardware Requirements article]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
         - limits – specifies the max resources for a Redis node
         - requests – specifies the minimum resources for a Redis node
