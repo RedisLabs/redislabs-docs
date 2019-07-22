@@ -240,11 +240,11 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
         apiVersion: storage.k8s.io/v1
         kind: StorageClass
         metadata:
-            name: gp2
+          name: gp2
         mountOptions:
-            - debug
+          - debug
         parameters:
-            type: gp2
+          type: gp2
         provisioner: kubernetes.io/aws-ebs
         reclaimPolicy: Retain
         ```
@@ -255,11 +255,11 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
         apiVersion: storage.k8s.io/v1
         kind: StorageClass
         metadata:
-            name: standard
+          name: standard
         mountOptions:
-            - debug
+          - debug
         parameters:
-            type: pd-standard
+          type: pd-standard
         provisioner: kubernetes.io/gce-pd
         reclaimPolicy: Retain
         ```
@@ -306,27 +306,27 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
     ```src
     apiVersion: "app.redislabs.com/v1alpha1"
     kind: "RedisEnterpriseCluster"
-    metadata:
-    name: "rec-pks"
-    spec:
-    enforceIPv4: true
-    nodes: 3
-    persistentSpec:
-        enabled: true
-        storageClassName: "standard" # ! edit according to infrastructure
-    uiServiceType: LoadBalancer
-    username: "demo@redislabs.com"
-    redisEnterpriseNodeResources:
-        limits:
-        cpu: "2000m"
-        memory: 3Gi
-        requests:
-        cpu: "2000m"
-        memory: 3Gi
-    redisEnterpriseImageSpec:
-        imagePullPolicy:  IfNotPresent
-        repository:       redislabs/redis
-        versionTag:       5.4.2-27
+     metadata:
+       name: "rec-pks"
+     spec:
+       enforceIPv4: true
+       nodes: 3
+       persistentSpec:
+         enabled: true
+         storageClassName: "standard" # ! edit according to infrastructure
+       uiServiceType: LoadBalancer
+       username: "demo@redislabs.com"
+       redisEnterpriseNodeResources:
+         limits:
+           cpu: "2000m"
+           memory: 3Gi
+         requests:
+           cpu: "2000m"
+           memory: 3Gi
+       redisEnterpriseImageSpec:
+         imagePullPolicy:  IfNotPresent
+         repository:       redislabs/redis
+         versionTag:       5.4.2-27
     ```
 
 ## Step 4: Create your Cluster
