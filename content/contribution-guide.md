@@ -7,13 +7,28 @@ Redis Labs documentation is an open source project and we welcome edits of all t
 
 Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
+## Edit in GitHub vs. Open an Issue
+
+If you see a problem on a page, either with content or formatting, and you think you can fix it,
+you can click on the *Edit on GitHub* link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
+
+If you see a problem on a page but you don't know how to fix it,
+go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a *New Issue*.
+
+{{% note %}}
+If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
+{{% /note %}}
+
 ## Branches vs. Forks
 
 The redislabs-docs repository is public but only members of the repository can create new branches in the repo.
 New branches in the repo are automatically built into staging sites at: `http://docs.redislabs.com/staging/<branch>`
 After every commit to a branch, the site is re-built within about 1 minute so you can see the live updates.
 
-If you are not a member of the repository, you can fork the repository to a branch in your account.
+If you are not a member of the repository, you can fork the repository to a branch in your account
+and make your changes on your private branch.
+**You must** use a new branch for every change.
+If the changes that you make resolve two separate issues, make two separate PRs.
 
 After you commit your changes to the public repo or your forked repo,
 you can open a pull request to submit your changes for consideration.
