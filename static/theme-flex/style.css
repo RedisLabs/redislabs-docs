@@ -3017,6 +3017,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
   display: inline-block;
   top: 7px;
   margin-left: 6px;
+  cursor: pointer;
 }
 
 .chevron::before {

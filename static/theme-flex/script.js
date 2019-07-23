@@ -264,23 +264,21 @@ function setFeedbackMessage() {
 function hidePageFeedback() {
     $('#page-feedback-open').hide();
     $('#page-feedback-closed').show();
-    localStorage.setItem('is-page-feedback-visible', 'yes');
+    localStorage.setItem('is-page-feedback-visible', 'no');
 }
 
 function showPageFeedback() {
     $('#page-feedback-closed').hide();
     $('#page-feedback-open').show();
-    localStorage.setItem('is-page-feedback-visible', 'no');
+    localStorage.setItem('is-page-feedback-visible', 'yes');
 }
 
 $(function() {
     $('.page-feedback').show();
     var isPageFeedbackVisible = localStorage.getItem('is-page-feedback-visible');
-    setTimeout(function() {
-        if(isPageFeedbackVisible == 'no') {
-            hidePageFeedback();
-        } else {
-            showPageFeedback();
-        }
-    }, 300);
+    if(isPageFeedbackVisible == 'no') {
+        hidePageFeedback();
+    } else {
+        showPageFeedback();
+    }
 });
