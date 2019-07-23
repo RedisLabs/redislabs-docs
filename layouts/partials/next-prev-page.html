@@ -50,6 +50,8 @@
                     </div>
                 </div>
                 <!--<a class="nav-spacer"></a>-->
+                {{ end -}}
+                
             {{- with ($.Scratch.Get "prevPage") -}}
                 <div class="nav-links"><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
             {{ end -}}
