@@ -1,65 +1,61 @@
 <div id="navigation">
-<!-- Next prev page -->
-{{- $currentNode := . -}}
-
-{{- template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode -}}
-
-{{- define "menu-nextprev" -}}
-    {{- $currentNode := .currentnode -}}
-    {{- if ne .menu.Params.hidden true -}}
-        {{- if hasPrefix $currentNode.URL .menu.URL -}}
-            {{- $currentNode.Scratch.Set "NextPageOK" "OK" -}}
-            {{- $currentNode.Scratch.Set "prevPage" ($currentNode.Scratch.Get "prevPageTmp") -}}
-        {{- else -}}
-            {{- if eq ($currentNode.Scratch.Get "NextPageOK") "OK" -}}
-                {{- $currentNode.Scratch.Set "NextPageOK" nil -}}
-                {{- $currentNode.Scratch.Set "nextPage" .menu -}}
+        <!-- Next prev page -->
+        {{- $currentNode := . -}}
+        
+        {{- template "menu-nextprev" dict "menu" .Site.Home "currentnode" $currentNode -}}
+        
+        {{- define "menu-nextprev" -}}
+            {{- $currentNode := .currentnode -}}
+            {{- if ne .menu.Params.hidden true -}}
+                {{- if hasPrefix $currentNode.URL .menu.URL -}}
+                    {{- $currentNode.Scratch.Set "NextPageOK" "OK" -}}
+                    {{- $currentNode.Scratch.Set "prevPage" ($currentNode.Scratch.Get "prevPageTmp") -}}
+                {{- else -}}
+                    {{- if eq ($currentNode.Scratch.Get "NextPageOK") "OK" -}}
+                        {{- $currentNode.Scratch.Set "NextPageOK" nil -}}
+                        {{- $currentNode.Scratch.Set "nextPage" .menu -}}
+                    {{- end -}}
+                {{- end -}}
+                {{- $currentNode.Scratch.Set "prevPageTmp" .menu -}}
+        
+                    {{- $currentNode.Scratch.Set "pages" .menu.Pages -}}
+                    {{- if .menu.IsHome -}}
+                        {{- $currentNode.Scratch.Set "pages" .menu.Sections -}}
+                    {{- else if .menu.Sections -}}
+                        {{- $currentNode.Scratch.Set "pages" (.menu.Pages | union .menu.Sections) -}}
+                    {{- end -}}
+                    {{- $pages := ($currentNode.Scratch.Get "pages") -}}
+        
+                    {{- range $pages.ByWeight -}}
+                        {{- template "menu-nextprev" dict "menu" . "currentnode" $currentNode -}}
+                    {{- end -}}
             {{- end -}}
         {{- end -}}
-        {{- $currentNode.Scratch.Set "prevPageTmp" .menu -}}
-
-            {{- $currentNode.Scratch.Set "pages" .menu.Pages -}}
-            {{- if .menu.IsHome -}}
-                {{- $currentNode.Scratch.Set "pages" .menu.Sections -}}
-            {{- else if .menu.Sections -}}
-                {{- $currentNode.Scratch.Set "pages" (.menu.Pages | union .menu.Sections) -}}
-            {{- end -}}
-            {{- $pages := ($currentNode.Scratch.Get "pages") -}}
-
-            {{- range $pages.ByWeight -}}
-                {{- template "menu-nextprev" dict "menu" . "currentnode" $currentNode -}}
-            {{- end -}}
-    {{- end -}}
-{{- end -}}
-
-    
-{{- if not $.Site.Params.disableNavChevron -}}
-<<<<<<< HEAD
-        <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
-            <span>{{T "Edit-this-page"}}</span></a></div>
-=======
-        {{ if .File }}
-        <div class="edit-link">
-            <div class="edit-link__action">
-                <a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank">
-                    <i class="icon-Edit"></i>
-                    <span>{{T "Edit-this-page"}}</span>
-                </a>
-            </div>
-
-            <div id="internalLoader" class="edit-link__action -internal">
-                <button onclick="getInternalContent({{ .Params.pageID }})">
-                    <i class="fa fa-folder-o"></i> Show Internal
-                </button>
-            </div>
+        
+            
+        {{- if not $.Site.Params.disableNavChevron -}}
+                {{ if .File }}
+                <div class="edit-link">
+                    <div class="edit-link__action">
+                        <a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank">
+                            <i class="icon-Edit"></i>
+                            <span>{{T "Edit-this-page"}}</span>
+                        </a>
+                    </div>
+        
+                    <div class="edit-link__action -internal">
+                        <button onclick="getInternalContent({{ .Params.pageID }})">
+                            <i class="fa fa-folder-o"></i> Show Internal
+                        </button>
+                    </div>
+                </div>
+                <!--<a class="nav-spacer"></a>-->
+            {{- with ($.Scratch.Get "prevPage") -}}
+                <div class="nav-links"><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
+            {{ end -}}
+            {{- with ($.Scratch.Get "nextPage") -}}
+                <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="icon-ArrowRight"></i></a></div>
+            {{- end }}
+        {{- end -}}
         </div>
->>>>>>> Move content loader button to top.
-        <!--<a class="nav-spacer"></a>-->
-    {{- with ($.Scratch.Get "prevPage") -}}
-        <div class="nav-links"><a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
-    {{ end -}}
-    {{- with ($.Scratch.Get "nextPage") -}}
-        <a class="nav-prev-next" href="{{.URL}}" title="{{.Title}}" style="margin-right: 0px;"><i class="icon-ArrowRight"></i></a></div>
-    {{- end }}
-{{- end -}}
-</div>
+        
