@@ -9,22 +9,20 @@ Here you can find procedures that were used in previous releases.
 
 ## Updating SSL/TLS certificates for Previous Releases
 
-
-## Before 5.4.4 
+### Before 5.4.4
 
 Procedures have been updated in 5.4.4 to leverage command line utilities that remove the need to configure the certificate with end of line characters.
-
 The below API command can still be leveraged to update certificates in current versions.
 
-{{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
+{{% warning %}}
+The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.
+{{% /warning %}}
 
-- Use the REST API to replace the certificate:
+To replace a certificate from the REST API, run:
 
-    ```bash
-
-    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
-
-    ```
+```bash
+curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+```
 
     Where:
 
@@ -35,7 +33,10 @@ The below API command can still be leveraged to update certificates in current v
         - For syncer: `syncer`
     - key - The contents of the *_key.pem file
 
-    {{% tip %}}The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call. You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.{{% /tip %}}
+    {{% tip %}}
+    The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
+    You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
+    {{% /tip %}}
 
     - cert - The contents of the *_cert.pem file
 
