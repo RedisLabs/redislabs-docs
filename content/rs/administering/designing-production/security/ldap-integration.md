@@ -44,7 +44,7 @@ the LDAP server.
 ### Step 1: Configure LDAP options in config file
 
 ```src
-vi /tmp/saslauthd.conf
+vi /opt/redislabs/config/saslauthd.conf
 ```
 
 You must specify the URIs for the LDAP servers you will be
@@ -89,7 +89,7 @@ ldap_bind_dn: cn=admin,dc=company,dc=com
 ### Step 2: Distribute saslauthd.conf to all nodes in the cluster
 
 ```src
-$ sudo /opt/redislabs/bin/rladmin cluster config saslauthd_ldap_conf /tmp/saslauthd.conf
+$ sudo /opt/redislabs/bin/rladmin cluster config saslauthd_ldap_conf /opt/redislabs/config/saslauthd.conf
 Cluster configured successfully
 ```
 
