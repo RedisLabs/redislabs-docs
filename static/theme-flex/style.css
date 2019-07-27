@@ -3067,6 +3067,10 @@ a[href*="#no-click"], img[src*="#no-click"] {
   transform: translateY(-5px);
 }
 
+.edit-link__action.-internal:focus, .edit-link__action.-internal button:focus {
+  outline: none;
+}
+
 .edit-link__action.-internal:hover {
   color: #b62411;
 }
@@ -3112,11 +3116,26 @@ a[href*="#no-click"], img[src*="#no-click"] {
 #internalContent {
   display: none;
   background: #fff;
+  border: 2px solid #bb3727;
   height: 100%;
   left: 0;
+  margin-left: 25%;
   overflow-y: auto;
+  padding: 50px;
   position: fixed;
   top: 0;
-  padding: 50px;
+  width: 50%;
   z-index: 1000;
+}
+
+#internalContent .closeContent {
+  font-size: 25px;  
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+
+#internalContent .closeContent:hover {
+  color: #8d8d8d;  
+  cursor: pointer;
 }

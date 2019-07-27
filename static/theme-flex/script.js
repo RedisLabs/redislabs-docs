@@ -313,7 +313,8 @@ function renderInternalContent(content) {
     $('#internalContent').show();
 }
 
-function fetchInternalContent(url){
+function fetchInternalContent(pageID){
+    var url = 'https://api.github.com/repos/HarunD/internal-md-experiment/contents/README.md';
     toggleInternalContentLoader('on');
     var result = null;
     $.ajax({
@@ -321,6 +322,10 @@ function fetchInternalContent(url){
         type: 'get', 
         dataType: 'html',
         async: true,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "token ACCESS_TOKEN");
+            xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
+        },        
         success: function(data) {
             toggleInternalContentLoader('off');
             renderInternalContent(data);
@@ -339,7 +344,7 @@ var getInternalContent = function(page) {
     
     if(!isLoggedIn) return;
 
-    var markdown_source = fetchInternalContent('https://raw.githubusercontent.com/HarunD/internal-md-experiment/master/README.md?token=ACESSTOKEN');
+    var markdown_source = fetchInternalContent(page);
 }
 
 var hideInternalContent = function() {
