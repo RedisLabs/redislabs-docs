@@ -5,15 +5,14 @@ weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-You can back up your Redis Cloud Essentials databases to a storage
-bucket of your choosing. This article explains how to create a cloud
-storage bucket and grant permissions to use it for scheduled and
-on-demand backups. Alternatively, you may use an FTP server to store
-your backups instead.
+You can run scheduled and on-demand backups of your Redis Cloud Essentials databases
+to a remote storage location. Schedule backups run every 24 hours.
 
-Note: Backups are only available for paid plans. If you are free plan
-user, you must upgrade your subscription to a paid plan (zero downtime)
-in order to utilize this feature.
+{{% note %}}
+Backups are only available for paid subscriptions. Customers with
+free subscriptions must upgrade to a paid subscriptions to use this feature.
+Subscription upgrade does not cause downtime.
+{{% /note %}}
 
 ## Amazon Simple Storage Service (AWS S3)
 
@@ -63,42 +62,6 @@ wish to backup.
 
 ![Identify the redis
 version](/images/rc/backups-version1.png?width=800&height=448)
-
-### For Redis versions prior to 3.2.x
-
-To use a GCS bucket for storing your resources' backups, follow these
-steps in your [Google Cloud Platform (GCP)
-console](https://developers.google.com/console/):
-
-1. Access your GCP project by:
-    1. Creating a new project using the **NEW PROJECT** button, or
-    1. Opening an existing project by clicking it.
-1. Select **Cloud Storage** in the left-hand menu to open the Storage
-    browser and view your buckets.
-1. Navigate to your bucket's permissions page:
-    1. To create a new bucket:
-        1. Click the **NEW BUCKET** button.
-        1. Enter a name for the bucket.
-        1. Click the **Create** button.
-        1. Navigate one level up and out of the newly created bucket.
-        1. Continue to step 3.2.
-    1. To use an existing bucket, select it using the left-most
-        checkmark control and click the **Bucket Permissions** button.
-1. At your bucket's permissions page, add another permission by
-    entering the following information at the bottom of the page:
-    1. In the left-most dropbox, make sure that the value *User* is
-        selected.
-    1. Next, enter `service@garantiadata.com`.
-    1. Set the permission to *Writer*.
-    1. Click the **Add** and then the **Save** buttons to apply your
-        changes.
-
-Once your bucket's permissions are set, you can use it with your
-resource by setting its **Backup Path** to the path of your GCS bucket
-and clicking the **Activate** button. For example, if your backups
-bucket's name is backups-bucket, you should use the following path:
-
-`gs://backups-bucket`
 
 ### For Redis versions greater than 3.2.x
 

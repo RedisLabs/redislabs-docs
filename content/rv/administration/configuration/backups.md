@@ -5,15 +5,14 @@ weight: 70
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-You can back up your Redis Cloud Pro databases to a storage bucket
-of your choosing. This article explains how to create a cloud storage
-bucket and grant permissions to use it for scheduled and on-demand
-backups. Alternatively, you may use an FTP server to store your backups
-instead.
+You can run scheduled and on-demand backups of your Redis Cloud Pro databases
+to a remote storage location. Schedule backups run every 24 hours.
 
-**Note**: Backups are only available for paid plans. If you are free
-plan user, you must upgrade your subscription to a paid plan (zero
-downtime) in order to utilize this feature.
+{{% note %}}
+Backups are only available for paid subscriptions. Customers with
+free subscriptions must upgrade to a paid subscriptions to use this feature.
+Subscription upgrade does not cause downtime.
+{{% /note %}}
 
 ## Amazon Simple Storage Service (AWS S3)
 
@@ -47,8 +46,6 @@ steps:
             ![add_user_existing](/images/rv/add_user_existing.png?width=700&height=175)
         1. Check read/write boxes for various** permissions**, then
             click the **Save** button
-
-\>
 
 Once your bucket's permissions are set, you can use it with your
 resource by setting its **Backup Path** to the path of your S3 bucket
