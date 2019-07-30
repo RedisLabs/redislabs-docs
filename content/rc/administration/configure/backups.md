@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC Essentials"]
 ---
 You can run scheduled and on-demand backups of your Redis Cloud Essentials databases
-to a remote storage location. Schedule backups run every 24 hours.
+to a remote storage location. Scheduled backups run every 24 hours.
 
 {{% note %}}
 Backups are only available for paid subscriptions. Customers with
@@ -55,15 +55,8 @@ name is *backups-bucket*, you should use the following path:
 
 ## Google Cloud Storage (GCS)
 
-There are two ways to backup to Google Cloud Storage and which you use
-depends on the Redis version your database has in Redis Cloud Essentials. To
-identify the version go to the configuration page of the database you
-wish to backup.
-
-![Identify the redis
-version](/images/rc/backups-version1.png?width=800&height=448)
-
-### For Redis versions greater than 3.2.x
+For [Google Cloud Platform (GCP)
+console](https://developers.google.com/console/) subscriptions, to use a GCS bucket for storing your resources' backups:
 
 1. Login to your account on Google Cloud Platform
 1. Navigate to **Storage -\> Browser**
@@ -82,12 +75,9 @@ version](/images/rc/backups-version1.png?width=800&height=448)
 Once your bucket's permissions are set, you can use it with your
 resource by setting its **Backup Path** to the path of your GCS bucket
 and clicking the **Activate** button. For example, if your backups
-bucket's name is backups-bucket, you should use the following path:
+bucket's name is backups-bucket, use the path:
 
 `gs://backups-bucket`
-
-Note: Backup to GCS locations is only available for Google Cloud
-Platform subscriptions.
 
 ## Azure Blob Storage (ABS)
 

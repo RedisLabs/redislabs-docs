@@ -6,13 +6,7 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 You can run scheduled and on-demand backups of your Redis Cloud Pro databases
-to a remote storage location. Schedule backups run every 24 hours.
-
-{{% note %}}
-Backups are only available for paid subscriptions. Customers with
-free subscriptions must upgrade to a paid subscriptions to use this feature.
-Subscription upgrade does not cause downtime.
-{{% /note %}}
+to a remote storage location. Scheduled backups run every 24 hours.
 
 ## Amazon Simple Storage Service (AWS S3)
 
@@ -56,42 +50,29 @@ name is *backups-bucket*, you should use the following path:
 
 ## Google Cloud Storage (GCS)
 
-To use a GCS bucket for storing your resources' backups, follow these
-steps in your [Google Cloud Platform (GCP)
-console](https://developers.google.com/console/):
+For [Google Cloud Platform (GCP)
+console](https://developers.google.com/console/) subscriptions, to use a GCS bucket for storing your resources' backups:
 
-1. Access your GCP project by:
-    1. Creating a new project using the **NEW PROJECT** button, or
-    1. Opening an existing project by clicking it.
-1. Select **Cloud Storage** in the left-hand menu to open the Storage
-    browser and view your buckets.
-1. Navigate to your bucket's permissions page:
-    1. To create a new bucket:
-        1. Click the **NEW BUCKET** button.
-        1. Enter a name for the bucket.
-        1. Click the **Create** button.
-        1. Navigate one level up and out of the newly created bucket.
-        1. Continue to step 3.2.
-    1. To use an existing bucket, select it using the left-most
-        checkmark control and click the **Bucket Permissions** button.
-1. At your bucket's permissions page, add another permission by
-    entering the following information at the bottom of the page:
-    1. In the left-most drop-box, make sure that the value *User* is
-        selected.
-    1. Next, enter `service@garantiadata.com`.
-    1. Set the permission to *Writer*.
-    1. Click the **Add** and then the **Save** buttons to apply your
-        changes.
+1. Login to your account on Google Cloud Platform
+1. Navigate to **Storage -\> Browser**
+1. Click on the three dot button (1) on your relevant bucket name and
+    choose **Edit bucket permissions** (2).
+    ![GCS bucket
+    permissions](/images/rc/bucket-perm1.png?width=800&height=493)
+1. Under **Add members**, enter:
+    `service@redislabs-prod-clusters.iam.gserviceaccount.com`
+1. For the role, select **Storage Legacy -\> Storage Legacy Bucket
+    Writer**.
+    ![Google Cloud Storage
+    Permissions](/images/rc/gcs-permissions.jpg?width=800&height=606)
+1. Click on the **Add** button.
 
 Once your bucket's permissions are set, you can use it with your
 resource by setting its **Backup Path** to the path of your GCS bucket
-and clicking the **Apply** button. For example, if your backups bucket's
-name is backups-bucket, you should use the following path:
+and clicking the **Activate** button. For example, if your backups
+bucket's name is backups-bucket, use the path:
 
 `gs://backups-bucket`
-
-Please note, backup to GCS locations is only available for Google Cloud
-Platform subscriptions.
 
 ## Azure Blob Storage (ABS)
 
