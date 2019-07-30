@@ -39,7 +39,7 @@ updates to other participating clusters and other member CRDBs.
 |  t8 | — Sync — | — Sync — |
 |  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
-Databases provide various approaches to address some of these concerns
+Databases provide various approaches to address some of these concerns:
 
 - Active-Passive Geo-distributed deployments: With active-passive
     distributions, all writes go to an active cluster. Redis Enterprise
@@ -190,6 +190,13 @@ If a member CRDB is in an out of memory situation, that member is marked
 the syncer initiates full reconciliation with other peers in the CRDB.
 
 ## INFO
+
+The INFO command shows these statistics differently for CRDBs:
+
+- DBSIZE (in `shard-cli info`) reports key header instances, not unique keys.
+- The keys count in DBSIZE (in `shard-cli info`) can be less than Expires (in `bdb-cli info`)
+  because expires are not always removed when a key becomes a tombstone.
+- The Expires average TTL (in `bdb-cli info`) is computed for local expires only.
 
 The INFO command has an additional crdt section which provides advanced
 troubleshooting information (applicable to support etc.):
