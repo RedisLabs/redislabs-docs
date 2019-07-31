@@ -420,9 +420,9 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
     apiVersion: v1
     data:
-    license: ""
-    password: ZGdlaWw3Cg==
-    username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
+        license: ""
+        password: ZGdlaWw3Cg==
+        username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
     kind: Secret
     ```
 
