@@ -23,6 +23,9 @@
       <script src="{{"theme-flex/custom.js" | relURL}}"></script>
       <script type="text/javascript">
             var baseurl = "{{.Site.BaseURL}}";
+            if(window.location.pathname.includes('/embeds')) {
+                  window.location.pathname = '/';
+            }            
       </script>
       {{ partial "custom-head.html" . }}
       

@@ -292,7 +292,7 @@ Syntax:
 
 Output:
 
-{{< embed-html "sample.md" >}}
+{{< embed-md "sample.md" >}}
 
 Embed an HTML partial
 
