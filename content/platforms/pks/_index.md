@@ -286,14 +286,14 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
     - `name`: “your_cluster_name” (e.g. “re-cluster”). You can keep the default name or choose your own.
     - `nodes`: The number of nodes in the cluster, 3 by default (In order to evaluate cluster functionality, must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
 
-    <!-- - uiServiceType: service_type
-    Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.need to spin off to its own article, no need to provide too many options; rather, remove barriers to adoption--->
+    - uiServiceType: service_type
+    Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.
 
     - `username`: \<your_email@your_domain.your_suffix\> - use an accessible email if evaluating alerting or use the default or any other properly formatted address.
 
-    <!-- - persistentSpec: enabled: \<false/true\>
+    - persistentSpec: enabled: \<false/true\>
     Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
-    we now default to using persistence-->
+
     - `storageClassName:` Your storage class name from the previous step
     - `redisEnterpriseNodeResources:` The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constraint, the minimum workable limits for basic testing are 2 CPU and 3Gb. For development and production, please use the guidelines in the [Hardware Requirements article]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
         - limits – specifies the max resources for a Redis node
