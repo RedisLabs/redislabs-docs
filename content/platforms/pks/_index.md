@@ -234,35 +234,35 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
 
     In order to create a storage class, determine the type of IaS your PKS cluster is running on, and consult the table in the [Kubernetes Storage Classes article](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) to determine which provisioner to use. Below, please find two examples of yaml files you can use for popular IaS providers:
 
-    - AWS - *gp2.yaml* <!-- Ben - I can't seem to make the code in the code blocks indent properly on Hugo. Please help, indentation is crucial here.  -->
+    - AWS - *gp2.yaml*
 
-        ```src
-        apiVersion: storage.k8s.io/v1
-        kind: StorageClass
-        metadata:
-          name: gp2
-        mountOptions:
-          - debug
-        parameters:
-          type: gp2
-        provisioner: kubernetes.io/aws-ebs
-        reclaimPolicy: Retain
-        ```
+      ```src
+      apiVersion: storage.k8s.io/v1
+      kind: StorageClass
+      metadata:
+        name: gp2
+      mountOptions:
+        - debug
+      parameters:
+        type: gp2
+      provisioner: kubernetes.io/aws-ebs
+      reclaimPolicy: Retain
+      ```
 
     - GCP - *standard.yaml*
 
-        ```src
-        apiVersion: storage.k8s.io/v1
-        kind: StorageClass
-        metadata:
-          name: standard
-        mountOptions:
-          - debug
-        parameters:
-          type: pd-standard
-        provisioner: kubernetes.io/gce-pd
-        reclaimPolicy: Retain
-        ```
+      ```src
+      apiVersion: storage.k8s.io/v1
+      kind: StorageClass
+      metadata:
+        name: standard
+      mountOptions:
+        - debug
+      parameters:
+        type: pd-standard
+      provisioner: kubernetes.io/gce-pd
+      reclaimPolicy: Retain
+      ```
 
 1. Create the appropriate yaml file to you IaS and apply it:
 
