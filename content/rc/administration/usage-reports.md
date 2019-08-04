@@ -1,6 +1,6 @@
 ---
 Title: Usage Reports
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

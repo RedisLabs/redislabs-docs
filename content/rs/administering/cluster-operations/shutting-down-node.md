@@ -1,6 +1,6 @@
 ---
 Title: Shutting Down a Node
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -19,7 +19,7 @@ command-line-interface (CLI) and wait for it to finish before shutting
 down the machine:
 
 ```src
-$ sudo supervisorctl stop all
+sudo supervisorctl stop all
 ```
 
 Note: You should only shut down one node at a time.

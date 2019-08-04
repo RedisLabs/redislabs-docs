@@ -1,6 +1,6 @@
 ---
 Title: Updating database configuration
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -20,7 +20,7 @@ To edit the configuration of a database:
     database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 1. Click Update.
 
-**Updating CRDB configuration**
+## Updating CRDB configuration
 
 A Conflict-Free Replicated Database (CRDB) is a global database that
 spans multiple Redis Enterprise clusters called
@@ -34,7 +34,7 @@ Changes done to "Memory limit", "Data persistence", "Redis password",
 to the local CRDB instance and not applied to all Participating
 Clusters.
 
-**Participating Clusters**
+## Participating Clusters
 
 If the CRDB topology needs to change, you can add and remove
 Participating Clusters of a CRDB. Use the Participating Clusters list to
@@ -66,14 +66,14 @@ Participating Cluster is removed, all updates received by remaining CRDB
 Instances from the removed CRDB instance, are
 rejected.
 
-**TLS Authentication and Encryption**
+## TLS Authentication and Encryption
 
 To prevent unauthorized access to your data, you can configure RS to secure
 communications with TLS protocol (the more secure successor to SSL). When you create
 CRDBs, you can specify TLS in two ways:
 
-1. [Require TLS for All Communications]({{ relref "/rs/administering/designing-production/security/tls-configuration/#configuring-tls-for-replica-of-communication-only-on-the-source-database" }}) -
+1. [Require TLS for All Communications]({{< relref "/rs/administering/designing-production/security/tls-configuration.md#configuring-tls-for-replica-of-communication-only-on-the-source-database" >}}) -
     This configures the CRDB to support TLS for both data access operations performed
     on the database as well as inter-cluster CRDB communications.
-1. [Require TLS for CRDB Communications Only]({{ relref "/rs/administering/designing-production/security/tls-configuration/#configuring-tls-for-all-communication-on-the-source-database" }}) -
+1. [Require TLS for CRDB Communications Only]({{< relref "/rs/administering/designing-production/security/tls-configuration.md#configuring-tls-for-all-communication-on-the-source-database" >}}) -
     This configures the CRDB to support TLS for only inter-cluster CRDB communications.

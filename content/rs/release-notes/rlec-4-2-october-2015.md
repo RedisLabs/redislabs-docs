@@ -1,6 +1,6 @@
 ---
 Title: RLEC 4.2.1-30 Release Notes (October 18, 2015)
-description: 
+description:
 weight: 97
 alwaysopen: false
 categories: ["RS"]
@@ -37,13 +37,13 @@ before running through the upgrade process.
     enhanced to support creating a database that is a replica of
     multiple source databases. For additional details, refer to the
     [Replica
-    of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
+    of]({{< relref "/rs/administering/active-passive.md" >}})
     section.
 - Cross cluster Replica of - the Replica of feature now supports
     defining a database that is a replica of databases that belong to a
     different RLEC cluster. For additional details, refer to the
     [Replica
-    of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
+    of]({{< relref "/rs/administering/active-passive.md" >}})
     section.
 - Multi-IP support - on a node that has multiple IPs, enables the
     administrator to specify which IP address is used for internal

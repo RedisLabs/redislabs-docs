@@ -1,6 +1,6 @@
 ---
 Title: Changing Redis Cloud Essentials Plans
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

@@ -1,5 +1,5 @@
 ---
-Title: Network configuration
+Title: Nodes on Different VLANs
 description: 
 weight: $weight
 alwaysopen: false

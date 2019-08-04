@@ -1,6 +1,6 @@
 ---
 Title: Eviction policies
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -13,10 +13,12 @@ limit. You can select any of the following:
 |------------|-----------------|
 |  noeviction | Returns an error if the memory limit has been reached when trying to insert more data |
 |  allkeys-lru | Evicts the least recently used keys out of all keys |
+|  allkeys-lfu | Evicts the least frequently used keys out of all keys |
 |  allkeys-random | Randomly evicts keys out of all keys |
 |  volatile-lru | Evicts the least recently used keys out of all keys with an "expire" field set |
-|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
+|  volatile-lfu | Evicts the least frequently used keys out of all keys with an "expire" field set |
 |  volatile-random | Randomly evicts keys with an "expire" field set |
+|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
 
 One mechanism to avoid this, but still keep performance is to use [Redis
 on
@@ -25,8 +27,8 @@ It can span your database across RAM + Flash Memory and intelligently
 manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).
 
-Note: [Geo-Replicated
-CRDBs]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}})
+Note: [Geo-Distributed
+CRDBs]({{< relref "/rs/administering/active-active.md" >}})
 will always operate in noeviction mode.
 
 Warning: Some redis Modules do not fully support eviction or all

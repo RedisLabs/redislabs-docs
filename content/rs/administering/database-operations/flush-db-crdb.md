@@ -1,6 +1,6 @@
 ---
 Title: Flushing Databases on Redis Enterprise Software
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -19,13 +19,13 @@ your favorite Redis client.
 Here is how to do it using redis-cli:
 
 ```src
-$ redis-cli -h <hostname> -p <portnumber> -a <password> flushall
+redis-cli -h <hostname> -p <portnumber> -a <password> flushall
 ```
 
 Example:
 
 ```src
-$ redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
+redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 ```
 
 ### Flushing Redis Enterprise Software CRDBs
@@ -83,7 +83,7 @@ To flush a CRDB with the REST API:
 1. To find the ID of the CRDB, run:
 
     ```src
-    curl -v -u <user>@<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs/
+    curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
     ```
 
 1. To flush the CRDB, run:

@@ -198,6 +198,52 @@ article > aside .menu .dd-item div i.category-icon:hover {
 article > aside section {
   margin: 2rem 0rem; }
 
+/* Expand/Collapse Menu */
+.SideMenuToggle {
+  left: 20px;
+  position: absolute;
+  top: 30px;
+  display: flex;
+  width: 50%;
+}
+
+.SideMenuToggle:hover {
+  cursor: pointer;
+  color: #b62411 !important;
+}
+
+.SideMenuToggle:hover i.fa {
+  color: #b62411 !important;
+}
+
+article > aside .menu .dd-item div a.expander-title {
+  padding: 5px 0 0 5px;
+}
+
+article > aside .menu .dd-item.parent.menu-root.menu-collapsed > ul {
+  display: block;
+}
+
+article > aside .menu .dd-item.parent.menu-root.menu-expanded > ul {
+  display: block;
+}
+
+article > aside .menu .dd-item.parent.menu-root.menu-collapsed .expand-all-title, article > aside .menu .dd-item.parent.menu-root.menu-collapsed .expand-all-icon {
+  display: inline-block;
+}
+
+article > aside .menu .dd-item.parent.menu-root.menu-collapsed .collapse-all-title, article > aside .menu .dd-item.parent.menu-root.menu-collapsed .collapse-all-icon {
+  display: none;
+}
+
+article > aside .menu .dd-item.parent.menu-root.menu-expanded .expand-all-title, article > aside .menu .dd-item.parent.menu-root.menu-expanded .expand-all-icon {
+  display: none;
+}
+
+article > aside .menu .dd-item.parent.menu-root.menu-expanded .collapse-all-title, article > aside .menu .dd-item.parent.menu-root.menu-expanded .collapse-all-icon {
+  display: inline-block;
+}
+
 /*!
  * facette-docs - Facette project documentation
  * Website: http://docs.facette.io/
@@ -269,40 +315,79 @@ section a {
 
 /* Home */
 .home-hero {
-  padding: 2.75rem 0 1.5rem 0;
-  background-image: url(./img/bg-poly-white-1.jpg);
-  background-size: cover;
-  border-bottom: 1px solid #e5e5e5;
+  padding-top: 5rem;
 }
 
 .home-hero h1 {
-  color: #dc382d;
-  font-size: 3.3rem;
-  line-height: 1.4;  
-  margin-bottom: 1.5rem;
+  color: #bf2810;
+  font-size: 4rem;
+  line-height: 4rem;
+  margin-bottom: 1rem;
   text-align: center;
   text-transform: none;
 }
 
 .home-hero p {
   color: #5f5f5f;
-  font-size: 2.25rem;
-  font-weight: 300;
+  font-size: 1.75rem;
   text-align: center;
+  font-weight: 500;
+}
+
+.home-hero .searchcontainer {
+  margin: 50px auto;
+  padding: 8px 5px;
+  width: 700px;
+  max-width: 100%;
+}
+
+.home-hero .searchcontainer .searchicon {
+  color: #aaaaaa;
+  font-weight: 600;
+  left: 14px;
+  top: 16px;
+  font-size: 18px;
+}
+
+.home-hero .searchcontainer ::placeholder {
+  color: #a7a7a7;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .home-options {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 0 auto;
-  padding-top: 5rem;
   padding-bottom: 6.5rem;
-  width: 1020px;
+  width: 1076px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: baseline;
+	align-content: stretch;  
 }
 
 .home-options__option {
-  flex: 1;    
+  border-radius: 5px;  
+  border: 1px solid #eee;
+  margin: 15px;
+  min-width: 327px;
+  padding-top: 10px;
   text-align: center;
+  width: 327px;
+  min-height: 394px;  
+}
+
+.home-options__option:first-of-type {
+  transform: translateY(8px);
+}
+
+.home-options__option hr {
+  border-color: #000;
+  margin: 30px auto 20px;
+  width: 85%;
 }
 
 .home-options__option__icon {
@@ -312,6 +397,12 @@ section a {
 
 .home-options__option__icon img {
   width: 100px;
+}
+
+.home-options__option__icon img.platforms-icon {
+  width: 88px;
+  margin-top: 8px;
+  transform: translateY(1px);
 }
 
 .home-options__option__icon a.opener {
@@ -324,55 +415,67 @@ section a {
 
 .home-options__option h5 {
   color: #3d5051;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-style: normal;
-  font-weight: 700;
-  margin: 30px 0 20px 0;
+  font-weight: 400;
+  margin: 8px 0 12px 0;
 }
 
 .home-options__option p {
   color: #5f5f5f;
-  font-size: 1.25rem;
-  /* font-weight: 300; */
+  font-size: 1.05rem;
   line-height: 1.5;
   margin: 0 auto;
   padding: 0 10px 0 10px;
-  width: 75%;
+  width: 90%;
+  height: 126px;  
 }
 
 .home-options__option ul {
   font-size: 1.15rem;
   list-style-type: none;
-  padding-left: 30%;
+  margin: 0 auto;
+  padding: 5px 0 20px 0;
   text-align: left;
+  width: 85%;
+}
+
+.home-options__option ul section {
+  display: flex;
+  color: #c82f0e;
 }
 
 .home-options__option ul li {
+  display: inline-block;
+  flex: 1;
+  font-size: 14px;
   line-height: 1.5;
-  padding-left: 2rem;
   position: relative;  
 }
 
-.home-options__option ul li a:hover {  
+.home-options__option li section i {
+  color: #c82f0e;
+}
+
+.home-options__option ul section li a {
+  color: #c82f0e;
+  padding-left: 4px;
+}
+
+.home-options__option ul section li a:hover {  
   color: #3d5051;
   text-decoration: none;
 }
 
-.home-options__option ul li::before {
-  content: "";
-  display: block;
-  position: absolute;
-  background: url(./img/ico-check-mark.svg);
-  background-repeat: no-repeat;
-  left: 0;
-  top: .375rem;
-  width: 1.175rem;
-  height: 1.588rem;
-}
-
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1076px){
   .home-options {
-    width: 860px;
+    width: 85%;
+  }
+
+  .home-options__option {
+    display: inline-block;
+    margin: 10px;
+    padding-top: 10px !important;
   }
 }
 
@@ -386,13 +489,13 @@ section a {
     width: 98%;
   }
 
-  .home-options {
-    flex-direction: column;
+  .home-hero .searchcontainer {
     width: 100%;
   }
 
   .home-options__option {
     margin-bottom: 40px;
+    padding-top: 10px !important;
   }
 
   .home-options__option p {
@@ -400,17 +503,30 @@ section a {
   }
 
   .home-options__option ul {
-    padding-left: 25%;
+    padding-left: 0;
   }
+
+  .home-options__option ul section {
+    padding-left: 0;
+    padding-right: 0;
+  }  
 }
 
 @media screen and (min-width: 450px) and (max-width: 860px){
-  .home-options__option p {
-    width: 50%;
+  .home-options__option ul {
+    padding-left: 0;
   }
 
-  .home-options__option ul {
-    padding-left: 40%;
+  .home-options__option ul section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 753px){
+  .home-hero .searchcontainer, .autocomplete-suggestions.home-search-autocomplete {
+    width: 89vw !important;
+    margin: 0 auto;
   }
 }
 
@@ -1528,7 +1644,7 @@ button.close-button {
   padding-right: 10px;
 }
 .main-content-right {
-  min-width: 300px;
+  min-width: 340px;
 }
 article > aside .menu > li.parent {
   grid-area: 1;
@@ -1927,10 +2043,6 @@ article > aside .menu > li > .children {
 article > aside .menu > li.parent > .children {
   display: flex;
   position: relative;
-  padding-top: 30px;
-}
-
-article > aside .menu > li.parent > .children.has-version-selector {
   padding-top: 60px;
 }
 
@@ -2425,6 +2537,115 @@ button.hamburger.hamburger--spring {
   /* display:none */
 }
 
+/* Hot topics table */
+h4#hot-topics {
+  background: #fff;
+  font-size: 1.7rem;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  top: -7px;
+  width: 200px;
+  padding-left: 25px;
+}
+
+h4#hot-topics::before {
+  display: block;
+  height: 1px;
+  margin: 0px 5px 0 0;
+  content: url('./img/icons_Hot-topics-2.svg');
+  top: 0;
+  position: relative;
+  width: 24px;
+  left: 5px;
+}
+
+h4#hot-topics span.anchor {
+  display: none;
+}
+
+article section.page table.hot-topics-table {
+  border: 1px solid #5d6876;
+  margin-top: -15px;
+  width: 99%;
+}
+
+article section.page table.hot-topics-table thead tr {
+  border: none;
+}
+
+article section.page table.hot-topics-table th {
+  text-align: left;
+  padding: 40px 20px 6px 50px;
+  font-size: 16px;  
+}
+
+article section.page table.hot-topics-table th a {
+  text-decoration: underline;
+}
+
+article section.page table.hot-topics-table td {
+  border-bottom: none;
+  padding: 9px 20px 0 50px;
+  line-height: 16px;
+}
+
+article section.page table.hot-topics-table td a {
+  color: #354253;
+  text-decoration: underline;
+}
+
+article section.page table.hot-topics-table tbody tr:last-of-type td {
+  padding-bottom: 40px;
+}
+
+@media (max-width: 1366px) {
+  article section.page table.hot-topics-table {
+  display: table;    
+  }
+
+  article section.page table.hot-topics-table td {
+    font-size: 14px;
+    line-height: 14px;
+  }
+}
+
+
+@media (max-width: 1250px) {
+  article section.page table.hot-topics-table th {
+    padding: 40px 20px 0 13px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  article section.page table.hot-topics-table td {
+    padding: 7px 0px 0 13px;
+    font-size: 12px;
+    line-height: 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  article section.page table.hot-topics-table th {
+    font-size: 12px;
+    padding: 40px 18px 0 10px;
+    line-height: 12px;
+  }
+
+  article section.page table.hot-topics-table td {
+    padding: 7px 0px 0 10px;
+    font-size: 11px;
+    line-height: 12px;
+  }  
+}
+
+@media (max-width: 550px) {
+  article section.page table.hot-topics-table th {
+    padding: 40px 0px 0 10px;
+    font-size: 13px;
+    line-height: 14px;
+  }
+}
 
 @media (max-width: 1024px) {
   section {
@@ -2518,6 +2739,7 @@ button.hamburger.hamburger--spring {
     display: none;
   }
   .searchcontainer {
+    width: 99% !important;
     margin: 1rem 0 1rem 0;
   }
   nav.shortcuts li:last-child {
@@ -2579,6 +2801,7 @@ button.hamburger.hamburger--spring {
 
   .nav-select {
     display: block;
+    width: 99%;
     /* margin-left: -10px; */
     /* margin-right: -10px; */
   }
@@ -2590,6 +2813,10 @@ button.hamburger.hamburger--spring {
     margin-left: -1rem;
     margin-right: -1rem;
   }
+
+  article section.page table.hot-topics-table, .hot-topics-title-wrapper {
+      width: 99% !important;
+  }  
 }
 
 @media (max-width: 1366px) {
@@ -2695,10 +2922,24 @@ a[href*="#no-click"], img[src*="#no-click"] {
     }
 }
 
+@media all and (max-width: 1540px) {
+  .searchcontainer,
+  .chevrons,
+  article section.page h1:first-of-type,
+  article section.page table.hot-topics-table,
+  .hot-topics-title-wrapper
+   {
+      width: 96%;
+      margin-left: 0;
+  }
+}
+
 @media all and (-ms-high-contrast: none) and (max-width: 1400px) {
     .searchcontainer,
     .chevrons,
-    article section.page h1:first-of-type {
+    article section.page h1:first-of-type,
+    article section.page table.hot-topics-table,
+    .hot-topics-title-wrapper{
         width: 95%;
     }
     article section.page .main-content .highlight pre {
@@ -2720,4 +2961,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
         padding-left: 60px;
         padding-right: 30px;
     }
-}
+
+/* Helpers */
+.pt-20 {
+  padding-top: 20px;

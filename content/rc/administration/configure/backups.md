@@ -1,19 +1,18 @@
 ---
 Title: Redis Cloud Essentials Database Backups
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-You can back up your Redis Cloud Essentials databases to a storage
-bucket of your choosing. This article explains how to create a cloud
-storage bucket and grant permissions to use it for scheduled and
-on-demand backups. Alternatively, you may use an FTP server to store
-your backups instead.
+You can run scheduled and on-demand backups of your Redis Cloud Essentials databases
+to a remote storage location. Scheduled backups run every 24 hours.
 
-Note: Backups are only available for paid plans. If you are free plan
-user, you must upgrade your subscription to a paid plan (zero downtime)
-in order to utilize this feature.
+{{% note %}}
+Backups are only available for paid subscriptions. Customers with
+free subscriptions must upgrade to a paid subscriptions to use this feature.
+Subscription upgrade does not cause downtime.
+{{% /note %}}
 
 ## Amazon Simple Storage Service (AWS S3)
 
@@ -34,13 +33,13 @@ steps:
             button.
         1. In the Account field enter:
             `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-        1. Check read/write boxes for **Objects** and **Object permissions**, 
+        1. Check read/write boxes for **Objects** and **Object permissions**,
             then click **Save**.
             ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)
         1. Click the **Create bucket** button.
     1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
-        1. Click **Add account** in the **Access for other AWS accounts** 
+        1. Click **Add account** in the **Access for other AWS accounts**
             section enter the below information.
         1. In the Account field enter:
             `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
@@ -56,51 +55,8 @@ name is *backups-bucket*, you should use the following path:
 
 ## Google Cloud Storage (GCS)
 
-There are two ways to backup to Google Cloud Storage and which you use
-depends on the Redis version your database has in Redis Cloud Essentials. To
-identify the version go to the configuration page of the database you
-wish to backup.
-
-![Identify the redis
-version](/images/rc/backups-version1.png?width=800&height=448)
-
-### For Redis versions prior to 3.2.x
-
-To use a GCS bucket for storing your resources' backups, follow these
-steps in your [Google Cloud Platform (GCP)
-console](https://developers.google.com/console/):
-
-1. Access your GCP project by:
-    1. Creating a new project using the **NEW PROJECT** button, or
-    1. Opening an existing project by clicking it.
-1. Select **Cloud Storage** in the left-hand menu to open the Storage
-    browser and view your buckets.
-1. Navigate to your bucket's permissions page:
-    1. To create a new bucket:
-        1. Click the **NEW BUCKET** button.
-        1. Enter a name for the bucket.
-        1. Click the **Create** button.
-        1. Navigate one level up and out of the newly created bucket.
-        1. Continue to step 3.2.
-    1. To use an existing bucket, select it using the left-most
-        checkmark control and click the **Bucket Permissions** button.
-1. At your bucket's permissions page, add another permission by
-    entering the following information at the bottom of the page:
-    1. In the left-most dropbox, make sure that the value *User* is
-        selected.
-    1. Next, enter `service@garantiadata.com`.
-    1. Set the permission to *Writer*.
-    1. Click the **Add** and then the **Save** buttons to apply your
-        changes.
-
-Once your bucket's permissions are set, you can use it with your
-resource by setting its **Backup Path** to the path of your GCS bucket
-and clicking the **Activate** button. For example, if your backups
-bucket's name is backups-bucket, you should use the following path:
-
-`gs://backups-bucket`
-
-### For Redis versions greater than 3.2.x
+For [Google Cloud Platform (GCP)
+console](https://developers.google.com/console/) subscriptions, to use a GCS bucket for storing your resources' backups:
 
 1. Login to your account on Google Cloud Platform
 1. Navigate to **Storage -\> Browser**
@@ -119,12 +75,9 @@ bucket's name is backups-bucket, you should use the following path:
 Once your bucket's permissions are set, you can use it with your
 resource by setting its **Backup Path** to the path of your GCS bucket
 and clicking the **Activate** button. For example, if your backups
-bucket's name is backups-bucket, you should use the following path:
+bucket's name is backups-bucket, use the path:
 
 `gs://backups-bucket`
-
-Note: Backup to GCS locations is only available for Google Cloud
-Platform subscriptions.
 
 ## Azure Blob Storage (ABS)
 

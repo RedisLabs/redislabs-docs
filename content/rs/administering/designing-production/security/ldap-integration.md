@@ -1,6 +1,6 @@
 ---
 Title: Integrating LDAP Authentication
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -33,7 +33,7 @@ other trusted network.
 If you are using LDAP over SSL, then make the following changes to saslauthd.conf:
 
 1. Replace ldap:// in the URL with ldaps://.
-2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
+2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt
 
 ## Configuring the saslauthd Service
 
@@ -44,16 +44,17 @@ the LDAP server.
 ### Step 1: Configure LDAP options in config file
 
 ```src
-$ vi /tmp/saslauthd.conf
+vi /tmp/saslauthd.conf
 ```
 
 You must specify the URIs for the LDAP servers you will be
 authenticating with. You can specify multiple LDAP servers by listing
-them separated by a space. 
+them separated by a space.
 
-If you are using LDAP over SSL/TLS, then 
+If you are using LDAP over SSL/TLS, then:
+
 1. Replace ldap:// in the URL with ldaps://.
-2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt 
+2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt
  SSL/TLS in other articles
 
 ```src
@@ -114,8 +115,10 @@ cluster.
 
 ### Step 4: Create an RS User to Authenticate with LDAP
 
-To have a user authenticate with LDAP, you can create a new user via
-the REST API like this:
+You can [create an external RS user]({{< relref "/rs/administering/designing-production/security/account-management.md" >}})
+with LDAP authentication in the web UI.
+
+To create an external user with LDAP authentication in the REST API:
 
 ```src
 $ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted \
@@ -123,7 +126,7 @@ $ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted \
 -d "{\"auth_method\": \"external\", \"name\": \"<internal-user-name>\", \"role\": \"<user-role>\"}"
 ```
 
-For the user-role, put in one of the following roles:
+For the user-role, enter one of these roles:
 
 - admin
 - cluster_member

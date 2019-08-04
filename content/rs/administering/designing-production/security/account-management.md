@@ -1,6 +1,6 @@
 ---
 Title: Account Management
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -28,7 +28,7 @@ To add a user to the cluster:
     {{% expand "How do I create an external user?" %}}
 To have a user authenticate with LDAP, you must have [LDAP integration
 enabled]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
-Then, create a new **external** user in the web UI.
+Then, create a user with the user type **external**.
 
 {{% comment %}}
 You can also create an external with the REST API with this syntax:
@@ -55,7 +55,7 @@ For the user role, enter either:
       All databases includes existing and future databases.
     - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 
-    {{% expand "How do I select email alerts?" %}}![Select email alerts](/images/rs/add-user-email-alerts.gif "Select email alerts"){{% /expand %}}
+    {{% expand "How do I select email alerts?" %}}{{< video "/images/rs/add-user-email-alerts.mp4" "Select email alerts" >}}{{% /expand %}}
 
     Then, click **Save**.
 1. Click ![Save](/images/rv/icon_save.png#no-click "Save").

@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of Redis Cloud Pro
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
@@ -57,7 +57,7 @@ To start with a single database:
 1. Enter the dataset size - The estimated size of your data. You can specify 1GB
     for a small database.
 1. Define if you want to have database replication (note that when enabling the database will consume twice the amount of memory).
-1. Select [data persistence] (/Unification-patch-1/rv/concepts/data-persistence/) policy.
+1. Select [data persistence] (/rv/concepts/data-persistence/) policy.
 1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
 1. Throughput - You can define your estimated total throughput you expect from your database by either specifying the required ops/sec or number of shards needed.
 1. Modules - You can select which Redis Module you want to load to your database. In case you select 'RediSearch' please provide the estimated number of documents you are going to index.
@@ -121,10 +121,10 @@ We recommend loading the redis-cli command-line utility for future
 use as you will use it for other things.
 {{% /note %}}
 
-### Using redis-cli
+### Using redis-cli {#using-rediscli}
 
 ```src
-$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 
+$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
@@ -146,7 +146,7 @@ You first need to install the Redis client library for Python if you do
 not have it already.
 
 ```src
-$ sudo pip install redis
+sudo pip install redis
 ```
 
 Next, copy and paste this into a file named
@@ -154,7 +154,7 @@ Next, copy and paste this into a file named
 
 ```python
 #import the library
-import redis 
+import redis
 # Create connection object
 r = redis.Redis(host='pub-redis-10382.us-west-2-1.1.ec2.garantiadata.com', port=10382)
 # set a value for the foo object

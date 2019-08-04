@@ -1,6 +1,6 @@
 ---
 Title: Synchronizing cluster node clocks
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -22,10 +22,10 @@ operating system. For example, in Ubuntu, the following command can be
 used to synchronize a server's clock to an NTP server:
 
 ```src
-$ sudo /etc/network/if-up.d/ntpdate
+sudo /etc/network/if-up.d/ntpdate
 ```
 
-If you are using Geo-Replication, it is critical to use [Network Time Service (ntpd)]
-({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time-service-ntp-or-chrony" >}})
+If you are using [geo-distributed CRDBs]({{< relref "/rs/concepts/intercluster-replication.md" >}}), it is critical to use [Network Time Service (ntpd)]
+({{< relref "/rs/administering/active-active.md#network-time-service-ntp-or-chrony" >}})
 to synchronize OS clocks consistent across clusters as well. Certain aspects of conflict
 resolution are achieved using OS time.

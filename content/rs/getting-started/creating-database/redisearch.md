@@ -1,6 +1,6 @@
 ---
 Title: RediSearch Quick Start Tutorial
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -13,13 +13,15 @@ For this quick start, you will need the following:
 
 ### Create a new database that uses the Module
 
-1. Navigate to **databases** tab
-1. Click on the **+** sign, if necessary, then **create database**
-1. On the create database screen, check the box for Redis Modules and
-    select the module you want to use for this database.
+1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Select the RediSearch module.
+1. If you want the module to use a custom configuration,
+click **Add configuration** and enter the optional custom configuration.
+1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    ![select_module](/images/rs/select_module.png?width=794&height=554)
-1. Click **Show advanced options** and put **12544** for the port.
+    For example:
+    {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
+
 1. Click the **Activate** button
 
 ## Creating Indexes
@@ -30,18 +32,27 @@ In this example, we have four things we input, the title, body, url, and
 value. In this example, we have three TEXT and one NUMERIC values. The
 title has a weight of 5.0.
 
+Connect to redis.
+
 ```src
-127.0.0.1:12544> FT.CREATE myIdx SCHEMA title TEXT WEIGHT 5.0 body TEXT url TEXT value NUMERIC
+$ redis-cli -p 12543
+127.0.0.1:12543>
+```
+
+Run this command:
+
+```src
+127.0.0.1:12543> FT.CREATE myIdx SCHEMA title TEXT WEIGHT 5.0 body TEXT url TEXT value NUMERIC
 ```
 
 ### Add info to test index
 
 Now add some data to this index. We will add an object which key will be
 doc1 and then adds a title of "hello world", body of "my favorite
-object", and url of "https://redislabs.com/" to the object as follows:
+object", and url of [https://redislabs.com/](https://redislabs.com/) to the object as follows:
 
 ```src
-127.0.0.1:12544> FT.ADD myIdx doc1 1.0 FIELDS title "hello world" body "My first object" url "https://redislabs.com/"
+127.0.0.1:12543> FT.ADD myIdx doc1 1.0 FIELDS title "hello world" body "My first object" url "https://redislabs.com/"
 OK
 ```
 
@@ -50,7 +61,7 @@ OK
 Do a search on this index for any object with the word "first":
 
 ```src
-127.0.0.1:12544> FT.SEARCH myIdx "first" LIMIT 0 10
+127.0.0.1:12543> FT.SEARCH myIdx "first" LIMIT 0 10
 1) (integer) 1
 2) "doc1"
 3) 1) "title"
@@ -66,7 +77,7 @@ Do a search on this index for any object with the word "first":
 Now that we are done with it, we can drop the index.
 
 ```src
-127.0.0.1:12544> FT.DROP myIdx
+127.0.0.1:12543> FT.DROP myIdx
 OK
 ```
 
@@ -75,13 +86,13 @@ OK
 Let's add a suggestion for the search engine to use
 
 ```src
-127.0.0.1:12544> FT.SUGADD autocomplete "hello world" 100
+127.0.0.1:12543> FT.SUGADD autocomplete "hello world" 100
 "(integer)" 1
 ```
 
 Make sure the suggestion is there:
 
 ```src
-127.0.0.1:12544> FT.SUGGET autocomplete "he"
+127.0.0.1:12543> FT.SUGGET autocomplete "he"
 1) "hello world"
 ```

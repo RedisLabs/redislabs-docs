@@ -1,6 +1,6 @@
 ---
 Title: Redis on Flash
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -131,7 +131,7 @@ prerequisites:
 - Have ephemeral and persistent flash memory mounted on Redis
     Enterprise Software nodes with the proper disk size, per the [Redis
     on Flash memory
-    guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements.md#production-environment-reqs.md" >}}).
+    guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements.md#production-environment-hardware-requirements" >}}).
 - Have all [hardware
     requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
     in place.

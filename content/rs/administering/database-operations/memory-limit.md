@@ -1,6 +1,6 @@
 ---
 Title: Database memory limits in Redis Enterprise Software
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

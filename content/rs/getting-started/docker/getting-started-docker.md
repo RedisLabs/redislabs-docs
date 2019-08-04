@@ -1,6 +1,6 @@
 ---
-Title: Getting Started with Redis Enterprise Software using Docker 
-description: 
+Title: Getting Started with Redis Enterprise Software using Docker
+description:
 weight: $weight
 alwaysopen: false
 aliases:
@@ -10,16 +10,15 @@ aliases:
 categories: ["RS"]
 ---
 In this quick setup guide, we take you through the steps to run RS in a Docker container to test its capabilities.
-
-- To test RS in a Linux-based, development environment, go to the
-  [Quick Setup of Redis Enterprise Software]({{< relref "/rs/getting-started/quick-setup.md" >}}).
-- To install RS on Linux in a production environment, follow the complete instuctions 
-  in [installing RS] ({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
+To install RS in a Linux-based development environment, go to the
+[Quick Setup of Redis Enterprise Software]({{< relref "/rs/getting-started/quick-setup.md" >}}).
 
 Before you start, you must install the [Docker engine](https://www.docker.com/get-started)
 on Windows, MacOS or Linux-based operating systems.
 
-Note: Windows and MacOS are currently only supported for development and testing environments.
+{{% note %}}
+Docker containers are currently only supported for development and testing environments.
+{{% /note %}}
 
 To get started with a single Redis Enterprise Software container:
 
@@ -31,7 +30,7 @@ To get started with a single Redis Enterprise Software container:
 
 ## Step 1: Install Docker Engine
 
-Go to the Docker installation page for your operating system for detailed instructions 
+Go to the Docker installation page for your operating system for detailed instructions
 about installing Docker Engine:
 
 - [Linux](https://docs.docker.com/install/#supported-platforms)
@@ -40,16 +39,16 @@ about installing Docker Engine:
 
 ## Step 2: Run the Container
 
-To pull and start the Redis Enterprise Software Docker container, run this 
+To pull and start the Redis Enterprise Software Docker container, run this
 `docker run` command in the terminal or command-line for your operating system.
 
 Note: On Windows, make sure Docker is configured to run Linux-based containers.
 
 ```src
-$ docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
+docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
-The Docker container with RS runs on your localhost with port 8443 open for HTTPS 
+The Docker container with RS runs on your localhost with port 8443 open for HTTPS
 connections, 9443 for REST API connections, and port 12000 open for redis client connections.
 You can publish other [ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 with `-p <host_port>:<container_port>`.
@@ -62,7 +61,7 @@ the Redis Enterprise Software web console.
 
     Note:
 
-    - Depending on your browser, you may see a certificate error. You can safely 
+    - Depending on your browser, you may see a certificate error. You can safely
     continue to the web console.
     - If you see an error from nginx, try again after a few minutes.
 
@@ -70,7 +69,7 @@ the Redis Enterprise Software web console.
 
     ![Redis Enterprise Software Setup](/images/rs/getstarted-setup.png?width=600)
 
-1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`. 
+1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`.
 Then click **Next** button.
 
     ![Redis Enterprise Software node configuration](/images/rs/getstarted-nodeconfig.png?width=600)
@@ -81,7 +80,7 @@ Then click **Next** button.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
 
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
 ## Step 4: Create a Database
@@ -105,11 +104,11 @@ enter `12000` for the port number.
 
 <!-- Also in crdbs.md -->
 {{% note %}}
-If you cannot activate the database because of a memory limitation, 
-make sure that Docker has enough memory allocated in the Advanced section 
+If you cannot activate the database because of a memory limitation,
+make sure that Docker has enough memory allocated in the Advanced section
 of Docker Settings.
 {{% /note %}}
-    
+
 The database configuration is shown.
 When you see a green check mark, the database is activated and ready for you to use.
 
@@ -123,7 +122,7 @@ database. You can test connectivity to your database with:
 - redis-cli - the built-in command-line tool
 - A _Hello World_ application using Python
 
-### Connecting Using redis-cli
+### Connecting Using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with Redis database.
 
@@ -131,7 +130,7 @@ Use "docker exec" to switch your context into the Redis Enterprise
 Software container
 
 ```src
-$ docker exec -it rp bash
+docker exec -it rp bash
 ```
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
@@ -185,7 +184,7 @@ b'123'
 
 ## Next steps
 
-Now you have a Redis Enterprise cluster ready to go. You can connect to it with 
-a [redis client](https://redis.io/clients) to start loading it with data or 
+Now you have a Redis Enterprise cluster ready to go. You can connect to it with
+a [redis client](https://redis.io/clients) to start loading it with data or
 you can use the [memtier_benchmark Quick Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
 to check the cluster performance.

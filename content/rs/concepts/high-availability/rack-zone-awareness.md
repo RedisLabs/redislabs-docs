@@ -1,6 +1,6 @@
 ---
 Title: Rack-zone awareness in Redis Enterprise Software
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -29,7 +29,7 @@ and endpoint migration, and database failover.
 To benefit from rack-zone awareness, you need to configure it at the
 cluster, node and database levels.
 
-## Cluster/node configuration
+## Cluster/node configuration {#clusternode-configuration}
 
 In order for the cluster to support rack-zone awareness, you need to
 enable it when initially creating the cluster. Afterwards, every time

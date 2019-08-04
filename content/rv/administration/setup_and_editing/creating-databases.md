@@ -1,6 +1,6 @@
 ---
 Title: Creating a Database
-description: 
+description:
 weight: 50
 alwaysopen: false
 categories: ["RC Pro"]
@@ -36,7 +36,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud Pr
         - Select **Use external endpoint** to let clients connect to the OSS cluster
             API throught the external endpoint.
     1. By default, **Replica Of** is disabled. You can enable [Replica Of]
-        ({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
+        ({{< relref "/rs/administering/active-passive.md" >}})
         and select the endpoint of a database to hold a copy of the data.
 
         {{% note %}}You must configure [VPC Peering]

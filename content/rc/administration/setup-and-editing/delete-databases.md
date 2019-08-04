@@ -1,6 +1,6 @@
 ---
 Title: Deleting Redis Cloud Essentials Databases
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

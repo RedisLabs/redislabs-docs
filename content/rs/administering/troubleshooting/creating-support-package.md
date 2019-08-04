@@ -1,5 +1,5 @@
 ---
-Title: Creating a support package
+Title: Creating a Support Package
 description: 
 weight: $weight
 alwaysopen: false

@@ -1,6 +1,6 @@
 ---
 Title: Configuring Redis Cloud Pro Resources
-description: 
+description:
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]

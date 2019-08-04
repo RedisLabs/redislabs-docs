@@ -27,24 +27,24 @@ To link to another page in the content directory:
 Syntax:
 
 ```md
-[Redis Enterprise VPC Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
+[Redis Cloud Pro Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
 ```
 
 Output:
 
-[Redis Enterprise VPC Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
+[Redis Cloud Pro Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
 
 To link to an anchor on another page in the content directory:
 
 Syntax:
 
 ```md
-`[Sign up for Redis Enterprise VPC]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" */>}})`
+`[Sign up for Redis Cloud Pro]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
 ```
 
 Output:
 
-[Sign up for Redis Enterprise VPC]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-enterprise-vpc-account" >}})
+[Sign up for Redis Cloud Pro]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
 
 ### Text formatting
 
@@ -185,7 +185,7 @@ Output:
 To make an image appear on the next line in a list:
 
 1. Write your instruction.
-1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.  
+1. Add 2 spaces at the end of the line and put the image on the next line with a tab indentation.
     ![Redis Enterrpise Cluster]( /images/rs/rp_stack.png )
 
 ### Adding a video
@@ -218,7 +218,7 @@ Embed YouTube video and start playback from specific timestamp.
 
 Syntax:
 
-```src 
+```src
 {{</* youtube_start Bi1T3toQfF4 10 */>}}
 ```
 
@@ -226,7 +226,7 @@ Ouput:
 
 {{< youtube_start Bi1T3toQfF4 10 >}}
 
-## Single-Sourcing
+## Single-Sourcing {#singlesourcing}
 
 ### Expanding blocks
 
@@ -292,7 +292,7 @@ Syntax:
 
 Output:
 
-{{< embed-html "sample.md" >}}
+{{< embed-md "sample.md" >}}
 
 Embed an HTML partial
 
@@ -384,8 +384,8 @@ Well displays content inside a container.
 
 Syntax:
 
-```src 
-{{%/* well */%}} Inside a well {{%/* /well */%}} 
+```src
+{{%/* well */%}} Inside a well {{%/* /well */%}}
 ```
 
 Ouput:

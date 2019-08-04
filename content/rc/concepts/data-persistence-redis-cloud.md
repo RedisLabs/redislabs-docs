@@ -1,6 +1,6 @@
 ---
 Title: Data Persistence with Redis Cloud Essentials
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -45,7 +45,7 @@ master.
 
 There are five options for persistence in Redis Cloud Essentials:
 
-| ** Options** | ** Description** |
+| **Options** | **Description** |
 |------------|-----------------|
 | None | Data is not persisted to disk at all. |
 | Append Only File (AoF) | Data is fsynced to disk every second. |
@@ -63,7 +63,7 @@ then you need to identify the best type for your use case.
 
 Use these details to determine which options best meet your needs:
 
-| ** AOF (Append Only File)** | ** RDB (Snapshot)** |
+| **AOF (Append Only File)** | **RDB (Snapshot)** |
 |------------|-----------------|
 | More resource intensive | Less resource intensive |
 | Provides better durability (recover latest point in time) | Less durable |

@@ -1,6 +1,6 @@
 ---
 Title: System Logs
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]

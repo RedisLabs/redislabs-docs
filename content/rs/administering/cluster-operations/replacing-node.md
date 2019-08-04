@@ -1,6 +1,6 @@
 ---
 Title: Replacing a node
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

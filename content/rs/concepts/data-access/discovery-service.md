@@ -1,6 +1,6 @@
 ---
 Title: Discovery Service
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

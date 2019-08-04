@@ -1,6 +1,6 @@
 ---
 Title: Causal Consistency in a Conflict-free Replicated Database (CRDB)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

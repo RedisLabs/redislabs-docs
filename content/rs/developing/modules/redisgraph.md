@@ -1,6 +1,6 @@
 ---
 Title: Developing Applications with RedisGraph
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -10,12 +10,12 @@ RedisGraph is the first queryable [Property Graph](https://github.com/opencypher
 Primary features:
 
 - Based on the [Property Graph Model](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc)
-  - Nodes (vertices) and Relationships (edges) that may have attributes
-  - Nodes that can be labeled
-  - Relationships have a relationship type
+    - Nodes (vertices) and Relationships (edges) that may have attributes
+    - Nodes that can be labeled
+    - Relationships have a relationship type
 - Graphs represented as sparse adjacency matrices
 - [Cypher](http://www.opencypher.org/) as query language
-  - Cypher queries translated into linear algebra expressions
+    - Cypher queries translated into linear algebra expressions
 
 ## Developing with RedisGraph
 
@@ -24,14 +24,13 @@ Before using RedisGraph, you should familiarize yourself with its commands and s
 
 After you load RedisGraph, you can interact with it using redis-cli.
 
-Here we'll quickly create a small graph representing a subset of motorcycle riders and teams 
+Here we'll quickly create a small graph representing a subset of motorcycle riders and teams
 taking part in the MotoGP league. Once created, we'll start querying our data.
 
 ### With `redis-cli`
 
 ```sh
-$ redis-cli
-127.0.0.1:6379> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
 1) (empty list or set)
 2) 1) Labels added: 2
    2) Nodes created: 6
@@ -44,7 +43,7 @@ Now that our MotoGP graph is created, we can start asking questions. For example
 Who's riding for team Yamaha?
 
 ```sh
-127.0.0.1:6379> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team) WHERE t.name = 'Yamaha' RETURN r,t"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team) WHERE t.name = 'Yamaha' RETURN r,t"
 1) 1) 1) "r.name"
       2) "t.name"
    2) 1) "Valentino Rossi"
@@ -55,7 +54,7 @@ Who's riding for team Yamaha?
 How many riders represent team Ducati?
 
 ```sh
-127.0.0.1:6379> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
+127.0.0.1:12543> GRAPH.QUERY MotoGP "MATCH (r:Rider)-[:rides]->(t:Team {name:'Ducati'}) RETURN count(r)"
 1) 1) 1) "count(r)"
    2) 1) "1.000000"
 2) 1) "Query internal execution time: 0.129000 milliseconds"

@@ -1,6 +1,6 @@
 ---
 Title: View and Edit a Database
-description: 
+description:
 weight: 60
 alwaysopen: false
 categories: ["RC Pro"]

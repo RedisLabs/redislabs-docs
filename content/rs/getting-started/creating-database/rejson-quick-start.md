@@ -1,6 +1,6 @@
 ---
 Title: ReJSON Quick Start Tutorial
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -13,13 +13,15 @@ For this quick start, you will need the following:
 
 ### Create a new database that uses the Module
 
-1. Navigate to **databases** tab
-1. Click on the **+** sign, if necessary, then **create database**
-1. On the create database screen, check the box for Redis Modules and
-    select the module you want to use for this database.
+1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Select the ReJSON module.
+1. If you want the module to use a custom configuration,
+click **Add configuration** and enter the optional custom configuration.
+1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    ![select_module](/images/rs/select_module.png?width=794&height=554)
-1. Click **Show advanced options** and put **12543** for the port.
+    For example:
+    {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
+
 1. Click the **Activate** button
 
 ## Quick start with redis-cli
@@ -29,13 +31,14 @@ it is. The first ReJSON command to try out is JSON.SET, which sets a
 Redis key with a JSON value. All JSON values can be used, for example a
 string:
 
-Connect to redis using --raw so we can read the json correctly.
-Otherwise the quotes are "escaped" and formatting is not ideal.
+Connect to redis using --raw to maintain file formatting.
 
 ```src
 $ redis-cli --raw -p 12543
 127.0.0.1:12543>
 ```
+
+Run these commands:
 
 Add a simple document
 

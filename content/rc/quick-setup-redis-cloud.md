@@ -1,6 +1,6 @@
 ---
 Title: Quick Setup of Redis Cloud Essentials
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -64,14 +64,14 @@ review pricing, set payment method and finalize your subscription.
 
 ## Step 3: Set up a database
 
-After the subscription has been created, you can set up a database under the subscription. 
-To set up a new database: 
+After the subscription has been created, you can set up a database under the subscription.
+To set up a new database:
 
-1. Open the sidebar and click on 'Databases'. 
+1. Open the sidebar and click on 'Databases'.
 1. Select your subscription and expand it.
 1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page will open.
 1. Give your database a name.
-1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials] (https://docs.redislabs.com/staging/Unification-patch-1/rc/administration/setup-and-editing/creating-databases/).
+1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
 1. Click the **Activate** button to create your database.
 
 Note: the Endpoint displayed on this page is very important because it
@@ -99,10 +99,10 @@ PING
 Note: We recommend loading the redis-cli command-line utility for future
 use as you will use it for other things.
 
-### Using redis-cli
+### Using redis-cli {#using-rediscli}
 
 ```src
-$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 
+$ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
@@ -124,7 +124,7 @@ You first need to install the Redis client library for Python if you do
 not have it already.
 
 ```src
-$ sudo pip install redis
+sudo pip install redis
 ```
 
 Next copy and paste this into a file named

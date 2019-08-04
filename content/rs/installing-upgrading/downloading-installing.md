@@ -1,16 +1,16 @@
 ---
 Title: Installing the Setup Package
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/downloading-installing/
 ---
-The first thing you need to decide is how you will deploy Redis
-Enterprise Software. If on-premise or in the cloud and you want to
-install it yourself, you will need to download the package. If on docker
-or through an AMI, there are other instructions than this page for that.
-Regardless, navigate to the [Redis Labs download
+The first thing you need to choose the platform to run Redis
+Enterprise Software on. If on-premise or in the cloud and you want to
+install it yourself, you will need to download the package. For Amazon AWS, there are other instructions to setup an AMI image.
+You can also run RS in a Docker container for testing purposes.
+Navigate to the [Redis Labs download
 page](https://app.redislabs.com/#/sign-up/software?direct=true) and
 select one of the following options:
 
@@ -20,7 +20,7 @@ select one of the following options:
 - **AMI** - Click the **AWS AMI** button for the option you would
     like to use in order to launch an instance on Amazon Web Services
     (AWS).
-- **Docker** - Go
+- **Docker** (For testing purposes only) - Go
     [here]({{< relref "/rs/getting-started/docker/_index.md" >}})
     for the install guide and skip this page.
 
@@ -46,11 +46,11 @@ instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}
     before running RS installation.
 
     {{% expand "Example steps to resolve the port 53 conflict:" %}}
- 1. Run: `sudo vi /etc/systemd/resolved.conf`
- 1. Add `DNSStubListener=no` as the last line in the file and save the file.
- 1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
- 1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
- 1. Run: `sudo service systemd-resolved restart`
+1. Run: `sudo vi /etc/systemd/resolved.conf`
+1. Add `DNSStubListener=no` as the last line in the file and save the file.
+1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
+1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
+1. Run: `sudo service systemd-resolved restart`
     {{% /expand %}}
 
 ## Installation Procedure
@@ -65,20 +65,17 @@ by performing the following steps:
 1. Extract the package by running the following command in the CLI:
 
     ```src
-    $ tar vxf <tarfile name>
+    tar vxf <tarfile name>
     ```
 
 1. To initiate the installation in the CLI, run the following command:
 
     ```src
-    $ sudo ./install.sh -s /var/run/redislabs
+    sudo ./install.sh
     ```
 
     Note: You must either be the root user or have access to sudo to the
     root user to run the install process.
-
-    The -s switch is to tell install.sh to locate the Linux socket files
-    in /var/run/redislabs instead of the default, which is /tmp.
 
 1. During the installation process, enter the requested input each time
     you are prompted to do so.
@@ -86,7 +83,7 @@ by performing the following steps:
     1. The install finishes up with rlcheck make testing the
         installation out and confirming the installation passed.
 
-        ```
+        ```src
         2017-04-24 10:54:12 [!] Installation is complete!
         2017-04-24 10:54:12 [?] Would you like to run rlcheck to
         verify proper configuration? [Y/N]? Y
@@ -123,7 +120,7 @@ by performing the following steps:
         should run:
 
         ```src
-        $ sudo /opt/redislabs/sbin/prepare_flash.sh
+        sudo /opt/redislabs/sbin/prepare_flash.sh
         ```
 
         This command finds all the unformatted disks, RAIDs and mounts
@@ -131,7 +128,7 @@ by performing the following steps:
         You can verify the configuration by running:
 
         ```src
-        $ sudo lsblk
+        sudo lsblk
         ```
 
 1. Open a web browser and go to the Web UI to complete the cluster

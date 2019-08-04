@@ -1,6 +1,6 @@
 ---
 Title: New Cluster Setup
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -45,45 +45,45 @@ To create a cluster:
         path.
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-        
+
     1. Enter a path for **Ephemeral storage**, or leave the default
         path.
         For additional details, refer to [Persistent and ephemeral
         storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-   
+
     1. If you want to enable Redis on Flash, select the **Enable flash
         storage support** checkbox and enter the path to the Flash
         storage that should be used as RAM extension.
         For additional details, refer to [Redis Enterprise
         Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
-        
+
     1. If your machine is configured to have multiple IP addresses, the
         section **IP Addresses Usage** is displayed. Use the **IP
         Addresses Usage** section to assign a single IPv4 type address
         for internal traffic and multiple IPv4/IPv6 type addresses for
         external traffic. For additional details, refer to Multi-IP &
         IPv6.
-        
+
     1. In Cluster configuration, select **Create new cluster**.
-   
+
     1. In **Cluster name (FQDN)**, enter a unique name for the
         cluster.
         For guidelines, refer to [How to set the cluster
         name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
-        
+
     1. Choose whether to **Enable private & public endpoints support**.
         For additional details, refer to Private & Public Endpoints.
-        
+
     1. Choose whether to **Enable rack-zone awareness**. Enabling
         rack-zone awareness requires setting the **Rack-zone ID** for
         the node. For additional details, refer to [Rack-zone
         awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
-        
+
     1. Click **Next**.
 1. If you purchased a cluster key, use the **Cluster authentication**
     page to enter the key. Otherwise, you get the trial license by
     default. Read the product Terms and Conditions and click **Next.**
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS 
+1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
     certificate on the node, and proceed, and proceed through the browser warning.
 1. Use the **Set admin credentials** page to enter the credentials of
     the cluster administrator. These credentials are required in order

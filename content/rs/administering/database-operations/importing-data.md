@@ -1,6 +1,6 @@
 ---
 Title: Importing Data into Redis Enterprise
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -70,7 +70,7 @@ Before you specify to import from an SFTP server, make sure that:
 To import from an SFTP server, enter the SFTP server location in the format:
 
 ```src
-sftp://user:password@host:<:custom_port>/path/filename.rdb
+sftp://user:password@host<:custom_port>/path/filename.rdb
 ```
 
 For example: `sftp://username:password@10.1.1.1/home/backups/backup.rdb`
@@ -90,6 +90,9 @@ Before you specify to import from a local mount point, make sure that:
 - The node has network connectivity to the destination server of the mount point.
 - The `redislabs:redislabs` user has read priviledges on the local mount point
 and on the destination server.
+- You must mount the storage in the same path on all cluster nodes.
+    You can also use local storage but you must copy the imported files manually to all nodes
+    because the import source folders on the nodes are not synchronised.
 
 To specify to import from a local mount point on a node:
 
@@ -105,7 +108,7 @@ To specify to import from a local mount point on a node:
 
 1. In the path for the backup location, enter the mount point.
 
-    For example: `/mnt/Public/backup.rbd`
+    For example: `/mnt/Public/backup.rdb`
 
 ### OpenStack Swift
 

@@ -1,6 +1,6 @@
 ---
 Title: Multi-IP and IPv6
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

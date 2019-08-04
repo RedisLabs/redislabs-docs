@@ -1,6 +1,6 @@
 ---
 Title: Flushing Databases on Redis Cloud Essentials
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -19,11 +19,11 @@ your favorite Redis client.
 Here is how to do it using redis-cli:
 
 ```src
-$ redis-cli -h <hostname> -p <portnumber> -a <password> flushall
+redis-cli -h <hostname> -p <portnumber> -a <password> flushall
 ```
 
 Example:
 
 ```src
-$ redis-cli -h redis-12345.c24.us-east-mz-1.ec2.cloud.redislabs.com -p 12345 -a xyz flushall
+redis-cli -h redis-12345.c24.us-east-mz-1.ec2.cloud.redislabs.com -p 12345 -a xyz flushall
 ```

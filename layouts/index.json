@@ -1,5 +1,6 @@
 [{{ range $index, $page := .Site.Pages }}
 {{- if ne $page.Type "json" -}}
+{{- if ne (replace .File.Dir "/" "") "embeds" -}}
 {{- if and $index (gt $index 0) -}},{{- end }}
 {
     "uri": "{{ $page.Permalink }}",
@@ -9,5 +10,6 @@
     "content": {{$page.Plain | jsonify}},
     "categories": [{{ range $cindex, $category := $page.Params.categories }}{{ if $cindex }}, {{ end }}"{{ $category| htmlEscape }}"{{ end }}]	
 }
+{{- end -}}
 {{- end -}}
 {{- end -}}]

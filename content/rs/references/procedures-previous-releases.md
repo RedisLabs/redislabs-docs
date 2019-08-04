@@ -1,6 +1,6 @@
 ---
 Title: Procedures for Previous Releases
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -12,8 +12,8 @@ Here you can find procedures that were used in previous releases.
 ### For version 5.0.2
 
 {{% warning %}}If the SSL/TLS certificate/s were configured in RS 5.0.2 without using
-the REST API, but by updating the certificate/s on the disk, contact [Redis Labs support
-(https://support.redislabs.com) before you upgrade the cluster to a later version
+the REST API, but by updating the certificate/s on the disk, contact [Redis Labs support](https://support.redislabs.com)
+before you upgrade the cluster to a later version
 as certificates are overwritten during upgrade.{{% /warning %}}
 
 To update a certificate in the cluster, [upgrade the cluster]

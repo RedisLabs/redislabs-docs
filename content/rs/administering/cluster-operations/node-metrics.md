@@ -1,6 +1,6 @@
 ---
 Title: Viewing node metrics
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

@@ -1,15 +1,15 @@
 ---
-Title: Create a Geo-Replicated Conflict-free Replicated Database (CRDB)
-description: 
+Title: Create a Geo-Distributed Conflict-free Replicated Database (CRDB)
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-[Conflict-Free Replicated Databases]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
+[Conflict-Free Replicated Databases]({{< relref "/rs/administering/active-active.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
 The participating clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
 Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) to all of the instances.
 
-## Overview of the Steps to Create a CRDB
+## Steps to Create a CRDB
 
 1. **Create a service account** - On each participating cluster, create a dedicated user account with the Admin role.
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
@@ -21,7 +21,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
 - Two or more machines with the same version of RS installed
 - Network connectivity and cluster FQDN name resolution between all participating clusters
-- [Network time service]({{< relref "/rs/administering/intercluster-replication/crdbs.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
+- [Network time service]({{< relref "/rs/administering/active-active.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 
 ## Creating a CRDB
 
@@ -38,7 +38,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     telnet on port 8080 from each participating cluster to each of the other participating clusters.
 
     ```src
-    $ telnet <target FQDN> 8080
+    telnet <target FQDN> 8080
     ```
 
 1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
@@ -48,31 +48,45 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
     If you do not have any databases on the node, you are prompted to create a database.
 
-1. In the **Deployment** box, select **Geo-Distributed**.
+1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create a CRDB on RAM.
+
+    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+    in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
+    for the best performance during the initial CRDB sync of a new replica.
+
+    {{% note %}}
+You must select **Redis 5** as the Redis version to use CRDB and RoF.
+    {{% /note %}}
 
     ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
 1. Enter the name of the new CRDB and select from the options:
 
     {{% note %}}
+
 - The eviction policy can only be set to **noeviction** for CRDBs.
 - You cannot enable or disable database clustering after the CRDB is created.
+
     {{% /note %}}
 
     - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
         The intercluster synchronization is most efficient when it reads from slave shards.
-    - [Participating Clusters](#participating-clusters) - You must specify the URL of the clusters that you want to
+    - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
+        To protect against loss of data stored in RAM,
+        you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
+        AOF provides the fastest and most reliable method for instance failure recovery.
+    - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host CRDB instances and the admin user account to connect to each cluster.
         - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
         - For each cluster, enter the URL for the cluster (`http://<cluster_URL>:8080`),
             and enter the credentials for the service account that you created.
     - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
-        - Make sure the Database clustering is enabled and select the number of shards 
-        that you want to have in the database. When database clustering is enabled, 
+        - Make sure the Database clustering is enabled and select the number of shards
+        that you want to have in the database. When database clustering is enabled,
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
-        You can increase the number of shards in the database at any time. 
-        - Clear the **Database clustering** option to use only one shard so that you 
+        You can increase the number of shards in the database at any time.
+        - Clear the **Database clustering** option to use only one shard so that you
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
     - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
@@ -102,25 +116,19 @@ replication to for the global CRDB.
 
 ![crdb-diagram](/images/rs/crdb-diagram.png)
 
-### Connecting Using redis-cli
+### Connecting Using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with redis database.
 
-1. To switch your context into the RS container of node 1 in cluster 1, run:
+1. To use redis-cli on port 12000 from the node 1 terminal, run:
 
     ```src
-    $ docker exec -it rp1_node1 bash
+    redis-cli -p 12000
     ```
 
-1. To use redis-cli on port 12000, run:
-
-    ```src
-    $ redis-cli -p 12000
-    ```
-
-1.  Store and retrieve a key in the database to test the connection with these 
+1. Store and retrieve a key in the database to test the connection with these
     commands:
-    
+
     - `set key1 123`
     - `get key1`
 
@@ -132,15 +140,13 @@ redis-cli is a simple command-line tool to interact with redis database.
     127.0.0.1:12000> get key1
     "123"
     ```
-1. Enter `exit` to exit the redis-cli context and enter `exit` again to exit the 
-   RS container of node 1 in cluster 1.
-1. To see that the key replicated to cluster 2, repeat the steps to switch your 
-   context into the RS container of node 1 in cluster 2, run the redis-cli and 
+
+1. Enter the terminal of node 1 in cluster 2, run the redis-cli, and
    retrieve key1.
 
     The output of the commands looks like this:
+
     ```src
-    $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000
     127.0.0.1:12000> get key1
     "123"
@@ -151,7 +157,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and 
+Note: Before you continue, you must have python and
 [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
 running the container.
@@ -159,12 +165,12 @@ running the container.
 1. In the command-line terminal, create a new file called "redis_test.py"
 
     ```src
-    $ vi redis_test.py
+    vi redis_test.py
     ```
 
 1. Paste this code into the "redis_test.py" file.
 
-    This application stores a value in key1 in cluster 1, gets that value from 
+    This application stores a value in key1 in cluster 1, gets that value from
     key1 in cluster 1, and gets the value from key1 in cluster 2.
 
     ```py
@@ -185,7 +191,7 @@ running the container.
 1. To run the "redis_test.py" application, run:
 
     ```src
-    $ python redis_test.py
+    python redis_test.py
     ```
 
     If the connection is successful, the output of the application looks like:

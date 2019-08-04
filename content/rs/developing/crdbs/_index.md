@@ -1,6 +1,6 @@
 ---
-Title: Developing Applications with Geo-replicated CRDBs on Redis Enterprise Software (RS)
-description: 
+Title: Developing Applications with Geo-Distributed CRDBs on Redis Enterprise Software (RS)
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -110,10 +110,10 @@ followed by descriptions:
 
 | **Data Type** | **Support Level** |
 |------------|-----------------|
-| Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#string-data-type-with-counter-value-in-crdbs" >}}) |
 | Geospatial | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
 | Hashes | [Supported]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}); Hash fields are treated as strings or counters |
-| Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#counters" >}}) |
+| Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings.md#string-data-type-with-counter-value-in-crdbs" >}}) |
 | Lists | [Supported]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
 | Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
 | Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
@@ -183,7 +183,7 @@ will:
 - Expire it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
 
-## Out-of-Memory (OOM)
+## Out-of-Memory (OOM) {#outofmemory-oom}
 
 If a member CRDB is in an out of memory situation, that member is marked
 "inconsistent" by RS, the member stops responding to user traffic, and

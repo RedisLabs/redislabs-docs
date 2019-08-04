@@ -1,6 +1,6 @@
 ---
 Title: Redis Cloud Essentials
-description: 
+description:
 weight: 20
 alwaysopen: false
 categories: ["RC Essentials"]
@@ -26,7 +26,7 @@ instances) without any downtime or limitation of Redis commands. Upgrade
 or downgrade by simply changing plan settings, without downtime and
 without needing to move your dataset between cloud instances.
 
-### True high-availability
+### True high availability
 
 Enjoy high availability for your Redis databases, with continuous
 operation and zero operational effort. Redis Labs' proven technology
@@ -45,7 +45,7 @@ Take advantage of the best performance in the industry using
 Redis Enterprise Technology that enhances Redis with numerous
 optimizations and hosts your database on the strongest cloud instances.
 
-### 24/7 Monitoring and Support
+### 24/7 Monitoring and Support {#247-monitoring-and-support}
 
 Reap benefits from the tremendous operational expertise of the team that
 develops and maintains open-source Redis and the professionals who
@@ -53,7 +53,7 @@ manage hundreds of thousands of Redis databases daily. Monitor all your
 resources in real-time on the [Status](https://status.redislabs.com/)
 page. Enjoy our 24/7 support via online helpdesk or phone.
 
-### Encryption and authentication
+### Encryption and authentication
 
 Meet your security goals without compromising performance using Redis Cloud Essentials' fully encrypted SSL connections, and apply
 multi-level authentication mechanisms such as:
@@ -69,7 +69,7 @@ Forget instances, clusters, scaling, data persistence/high availability
 settings and failure recovery. Select a plan and end your operational
 worries!
 
-### Multiple dedicated databases in one plan
+### Multiple dedicated databases in one plan
 
 Utilize multiple databases in a single plan, each running in a
 dedicated process and in a non-blocking

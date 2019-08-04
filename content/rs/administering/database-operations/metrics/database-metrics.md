@@ -1,6 +1,6 @@
 ---
 Title: Database metrics
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

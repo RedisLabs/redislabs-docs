@@ -1,6 +1,6 @@
 ---
 Title: Change Location of Socket Files
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -15,7 +15,7 @@ We made this change because some customers have maintenance procedures that dele
 `/tmp` directory.
 
 When you upgrade from a RS version lower than 5.2.2 to 5.2.2 and higher, the socket files
-are not moved to the new location by default. During [installation]({{< relref 
+are not moved to the new location by default. During [installation]({{< relref
 "/rs/installing-upgrading/downloading-installing.md" >}}) you can specify a custom location
 for the socket files, but after installation you must use this procedure to move the socket files.
 
@@ -24,7 +24,7 @@ To change the location of the socket files:
 1. On each node in the cluster, run:
 
     ```src
-    $ sudo rlutil create_socket_path socket_path=/var/opt/redislabs/run
+    sudo rlutil create_socket_path socket_path=/var/opt/redislabs/run
     ```
 
 1. Identify the master node:
@@ -33,7 +33,7 @@ To change the location of the socket files:
 1. On the master node, run:
 
     ```src
-    $ sudo rlutil set_socket_path socket_path=/var/opt/redislabs/run
+    sudo rlutil set_socket_path socket_path=/var/opt/redislabs/run
     ```
 
     Now the master node points to the new socket file location.
@@ -42,7 +42,7 @@ To change the location of the socket files:
 1. To restart RS, on each node in the cluster one at a time run:
 
     ```src
-    $ sudo service rlec_supervisor restart
+    sudo service rlec_supervisor restart
     ```
 
     Now all nodes point to the new socket file location.
@@ -55,5 +55,5 @@ Database restart can cause interruptions in data traffic.
 1. To restart the databases, for each database in the cluster run:
 
     ```src
-    $ rladmin restart db <db name>
+    rladmin restart db <db name>
     ```

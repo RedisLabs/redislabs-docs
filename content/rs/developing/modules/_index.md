@@ -1,6 +1,6 @@
 ---
 Title: Developing with Redis Modules in Redis Enterprise Software (RS)
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -58,7 +58,7 @@ require six steps:
 ### Get the Module from Github
 
 ```src
-$ git clone https://github.com/account/myModule.git
+git clone https://github.com/account/myModule.git
 ```
 
 ### Compile the Module
@@ -66,7 +66,7 @@ $ git clone https://github.com/account/myModule.git
 To compile the module just run:
 
 ```src
-$ cd myModule/;make
+cd myModule/;make
 ```
 
 ### Install ramp-packer Utility
@@ -78,20 +78,18 @@ to be installed into Redis Enterprise.
 Run the next command to install ramp-packer:
 
 ```src
-$ pip install ramp-packer
+pip install ramp-packer
 ```
 
 ### Wrap the Custom Module Using Ramp Utility
 
 ```src
-$ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com" 
--A "x86_64" -d "My Module" -h "https://www.mymodule.com/" -l "LicenseType" 
+$ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
+-A "x86_64" -d "My Module" -h "https://www.mymodule.com/" -l "LicenseType"
 -r "4.0.2"
 ```
 
-Go to [the
-ramp ](https://github.com/RedisLabs/RAMP)github[page](https://github.com/RedisLabs/RAMP)
+Go to [the ramp](https://github.com/RedisLabs/RAMP) github [page](https://github.com/RedisLabs/RAMP)
 for more information each command line switch in ramp.
 
-To deploy the packaged module, see [Installing a
-Module]({{< relref "/rs/developing/modules/installing.md" >}}).
+To deploy the packaged module, see [Installing a Module]({{< relref "/rs/developing/modules/installing.md" >}}).

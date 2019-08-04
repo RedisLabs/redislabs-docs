@@ -1,6 +1,6 @@
 ---
 Title: Configuring TLS Authentication and Encryption
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -24,8 +24,7 @@ Related topics:
 - You can use the REST API to [update the server TLS certificates and TLS protocol version]
   ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 - To encrypt Replica Of synchronization traffic, you must also [configure encryption
-  for the destination database]({{< relref
-  "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+  for the destination database]({{< relref "/rs/administering/active-passive.md#encryption" >}}).
 
 ## Authentication for Databases
 
@@ -39,6 +38,7 @@ You can also specify that authentication is not enforced for traffic received fr
 clusters or clients.
 
 {{% excerpt %}}
+
 ### Configuring TLS for Replica Of communication only on the source database
 
 To enable TLS for Replica Of communication only on the source database:
@@ -51,7 +51,7 @@ To enable TLS for Replica Of communication only on the source database:
 
     ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
 
-1. Select the communication that you want to secure: 
+1. Select the communication that you want to secure:
     - For a new database - **Require TLS for Replica Of communications only** is
     selected by default.
     - For an existing database that is configured to **Require TLS for all
@@ -78,8 +78,7 @@ To enable TLS for Replica Of communication only on the source database:
     clients can connect to your database without authentication.
 
     To encrypt Replica Of synchronization traffic, you must also [configure encryption
-    for the destination database]({{< relref 
-    "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+    for the destination database]({{< relref "/rs/administering/active-passive.md#encryption" >}}).
 
 ### Configuring TLS for all communication on the source database
 
@@ -120,8 +119,7 @@ To enable TLS for Replica Of and client communication on the source database:
     clients can connect to your database without authentication.
 
     To encrypt Replica Of synchronization traffic, you must also [configure encryption
-    for the destination database]({{< relref
-    "/rs/administering/intercluster-replication/replica-of.md#encryption" >}}).
+    for the destination database]({{< relref "/rs/administering/active-passive.md#encryption" >}}).
 {{% /excerpt %}}
 
 ## Authentication for CRDBs

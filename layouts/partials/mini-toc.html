@@ -13,7 +13,8 @@
       {{ $headerLevel := index (findRE "[1-3]" . 1) 0 }}
       {{ $headerLevel := len (seq $headerLevel) }}
 
-      {{ $anchorID := ($header | plainify | htmlEscape | urlize) }}
+      {{ $anchorIDraw := ($header | plainify | htmlEscape | replaceRE "[/-]" "") }}
+      {{ $anchorID := ($anchorIDraw | anchorize)}}
 
       {{ if ne $i 0 }}
         {{ $prevHeaderLevel := index (findRE "[1-3]" (index $headers (sub $i 1)) 1) 0 }}

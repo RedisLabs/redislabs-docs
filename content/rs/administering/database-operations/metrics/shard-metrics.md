@@ -1,6 +1,6 @@
 ---
 Title: Shards metrics
-description: 
+description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -9,7 +9,7 @@ You can choose which resource(s) and metric(s) are shown in each of the
 two detailed graphs at the top of the page, as follows:
 
 - Below the top two graphs there are two groups of smaller graphs:
-  - The first group displays all available **resources**: the
+    - The first group displays all available **resources**: the
         database itself, and each of the database shards. These can be
         master shards, slave shards (if [Database
         replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) is
@@ -23,7 +23,7 @@ two detailed graphs at the top of the page, as follows:
         clustered database.
         Note that corresponding master / slave shards in a clustered
         database have the same hash slot.
-  - The second group displays all available **metrics**, such as
+    - The second group displays all available **metrics**, such as
         operations per second and used memory.
 - In each of the **resources **graphs, you can click the left arrow to
     display that resource in the top left graph, and the right arrow to

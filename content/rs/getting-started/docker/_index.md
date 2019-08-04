@@ -1,13 +1,13 @@
 ---
 Title: Working with Redis Enterprise Software (RS) with Docker Containers
-description: 
+description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
 ---
-You can run Redis Enterprise Software on Docker containers on 
-[Linux, Windows, or MacOS]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}). 
-The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/redis/) 
+For testing purposes, you can run Redis Enterprise Software on Docker containers on
+[Linux, Windows, or MacOS]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
+The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/redis/)
 represents a node in an RS Cluster. When deploying RS using Docker, there are a couple
 of common topologies:
 
@@ -22,3 +22,4 @@ of common topologies:
   **Topology #3:** You may also run multi-node RS Cluster with multiple RS containers each deployed to its own host machine. This topology minimizes interference between RS containers, so it performs more predictably than Topology #2.
 
   ![0](/images/rs/0.png?width=780&height=380)
+  
