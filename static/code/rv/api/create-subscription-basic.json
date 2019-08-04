@@ -17,7 +17,7 @@
     "databases": [
       {
         "name": "Redis-database-example",
-        "memoryLimitInMb": 1024
+        "memoryLimitInGb": 1.1
       }
     ]
 }
