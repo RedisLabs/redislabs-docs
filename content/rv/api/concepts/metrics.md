@@ -9,7 +9,7 @@ categories: ["RC Pro"]
 Metrics API provides programmatic access to database usage and performance data.
 The data exposed by the Metrics API resembles but is not identical to the Database Metrics tab in the Redis Labs web application.
 
-### Metric spans & intervals
+### Metric spans and intervals
 
 Metrics API data is provided per database, based on a specified (or default) metric time span parameter that specifies a requested time range. This metric span parametr indicates the requested time period covered by the data points in the Metrics API response.
 
