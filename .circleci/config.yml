@@ -24,6 +24,11 @@ jobs:
                     fi
                     echo ${LOCATION}
                     hugo -v --baseURL //docs.redislabs.com/$LOCATION
+            - run:
+                name: Remove unnecessary directories
+                command: |
+                    cd public
+                    rm -rf embeds categories
             - persist_to_workspace:
                 root: .
                 paths:
