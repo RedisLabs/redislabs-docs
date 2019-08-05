@@ -28,7 +28,7 @@ jobs:
                 name: Remove unnecessary directories
                 command: |
                     cd public
-                    rm -rf embeds categories
+                    rm -rf embeds categories revealjs
             - persist_to_workspace:
                 root: .
                 paths:
@@ -60,7 +60,7 @@ jobs:
                 name: Remove unnecessary directories
                 command: |
                     cd public
-                    rm -rf embeds categories
+                    rm -rf embeds categories revealjs
             - persist_to_workspace:
                 root: .
                 paths:
