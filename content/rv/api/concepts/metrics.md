@@ -87,8 +87,8 @@ A metric data point contains the following properties:
 
 | Property | Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |---|---|
-| Category | Each data point is collected and reported within the context of a measurement topic called "category". Each category has a specified measurement scale (for example: milliseconds, megabytes or percentage) |
-| Value | The value of the data point, defined in the specified measurement scale of the data point's category  |
+| Category | Each data point is collected and reported within the context of a measurement topic called "category". Each category has a specified measurement unit (for example: milliseconds, megabytes or percentage) |
+| Value | The value of the data point, defined in the specified measurement unit of the data point's category  |
 | Timestamp | The exact time in which the data point was collected, defined in ISO-8601 date format, in the UTX timezone (for example: `2019-03-15T14:26:02Z`) |
 
 For example, the data points related to the `conns` category (number of connections) will be displayed as follows:
