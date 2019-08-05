@@ -38,6 +38,77 @@ For example:
 * Starting with a subsequent calls (for a `1minute` metric span for the same database) a few seconds later, the collected data will start accumulating and will appear in the Metrics API response.
 * If no additional requests are made during a period of 5 minutes or more (for a `1minute` metric span for the same database), the high frequency data collection will be terminated and any qubsequent requests will be considered as a first request to this database's `1minute` metric span
 
+### Metric categories
+
+The data points collected and reported by the Metrics API are grouped in categories. Each category contains the data points collected for the specific category measurement:
+
+| Category | Description |
+|---|---|
+| other-req | Other requests |
+| conns | Number of connections |
+| big-fetch-flash |  |
+| write-hits | Write hits ratio (%) |
+| values-in-flash | Number of values in Flash database |
+| read-hits | Read hits ratio (%) |
+| avg-read-latency | Average read latency (ms) |
+| no-of-keys | Number of keys |
+| write-req | Write requests per second |
+| read-req | Write requests per second |
+| big-write-ram |  |
+| avg-latency | Average latency (ms) |
+| bigstore-hits |  |
+| big-fetch-ram |  |
+| mem-frag-ratio | Memory fragmentation ratio |
+| big-io-ratio-flash |  |
+| bigstore-overwrites |  |
+| expired-objects | Expired objects per second |
+| ram-overwrites |  |
+| big-io-ratio-redis |  |
+| used-ram | Used RAM (mb) |
+| values-in-ram |  |
+| other-latency |  |
+| evicted-objects |  |
+| used-flash |  |
+| ram-overhead |  |
+| avg-write-latency |  |
+| ram-hits |  |
+| disk-frag-ratio |  |
+| mem-size-calculated |  |
+| big-write-flash |  |
+| big-del-ram |  |
+| big-del-flash |  |
 
 
+### Metric data points
+
+
+A metric data point contains the following properties:
+
+| Property | Description |
+|---|---|
+| Category | Each data point is collected and reported within the context of a measurement topic called "category". Each category has a specified measurement scale (for example: milliseconds, megabytes or percentage) |
+| Value | The value of the data point, defined in the specified measurement scale of the data point's category  |
+| Timestamp | The exact time in which the data point was collected, defined in ISO-8601 date format, in the UTX timezone (for example: `2019-03-15T14:26:02Z`) |
+
+For example, the data points related to the `conns` category (number of connections) will be displayed as follows:
+
+```
+   {
+      "name": "conns",
+      "data": [
+        {
+          "value": 7,
+          "timeStamp": "2019-08-05T16:02:22Z"
+        },
+        {
+          "value": 9,
+          "timeStamp": "2019-08-05T16:02:32Z"
+        },
+        {
+          "value": 8,
+          "timeStamp": "2019-08-05T16:02:42Z"
+        }
+      ]
+    },
+```
 
