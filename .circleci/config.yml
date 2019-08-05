@@ -56,6 +56,11 @@ jobs:
                 command: |
                     export VERSION=${CIRCLE_BRANCH/-build/}
                     HUGO_ENV=production hugo -v --baseURL //docs.redislabs.com/$VERSION
+            - run:
+                name: Remove unnecessary directories
+                command: |
+                    cd public
+                    rm -rf embeds categories
             - persist_to_workspace:
                 root: .
                 paths:
