@@ -13,7 +13,7 @@ The data exposed by the Metrics API resembles but is not identical to the Databa
 
 Metrics API data is provided per database, based on a specified (or default) metric time span parameter that specifies a requested time range. This metric span parametr indicates the requested time period covered by the data points in the Metrics API response.
 
-| Metric Span | Description <img width=500/> | On demand |
+| Metric Span | Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | On demand |
 |---|---|---|
 | 1minute  | Metric data points collected every 10 seconds for a duration of 1 minute | Yes |
 | 5minutes  | Metric data points collected every 1 minute for a duration of 5 minutes | Yes |
@@ -43,7 +43,7 @@ For example:
 
 The data points collected and reported by the Metrics API are grouped in categories. Each category contains the data points collected for the specific category measurement:
 
-| Category | Description <img width=500/> |
+| Category | Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |---|---|
 | other-req | Other requests |
 | conns | Number of connections |
@@ -85,7 +85,7 @@ The data points collected and reported by the Metrics API are grouped in categor
 
 A metric data point contains the following properties:
 
-| Property | Description |
+| Property | Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 |---|---|
 | Category | Each data point is collected and reported within the context of a measurement topic called "category". Each category has a specified measurement scale (for example: milliseconds, megabytes or percentage) |
 | Value | The value of the data point, defined in the specified measurement scale of the data point's category  |
