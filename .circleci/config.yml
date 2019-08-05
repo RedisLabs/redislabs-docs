@@ -60,11 +60,7 @@ jobs:
                 name: Remove unnecessary directories
                 command: |
                     cd public
-<<<<<<< HEAD
                     rm -rf embeds categories revealjs tags
-=======
-                    rm -rf embeds categories revealjs
->>>>>>> 7e52707c43c4822c1532434a52bc82f0b1ec48d8
             - persist_to_workspace:
                 root: .
                 paths:
