@@ -66,7 +66,7 @@ The data points collected and reported by the Metrics API are grouped in categor
 | ram-overwrites |  |
 | big-io-ratio-redis |  |
 | used-ram | Used RAM (mb) |
-| values-in-ram |  |
+| values-in-ram | Number of values stored in RAM |
 | other-latency |  |
 | evicted-objects |  |
 | used-flash |  |
