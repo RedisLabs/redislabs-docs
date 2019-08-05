@@ -34,6 +34,7 @@ The data point collection interval is a best-effort and must not be relied on as
 The `1minute` and `5minutes` metric spans are defined as "high frequency" and are therefore collected "on demand". This means that they are collected only when requested, and for a duration of no more than 5 minutes since previous request. 
 
 For example:
+
 * on first request for a `1minute` metric span, the Metrics API operation returns an empty data points array. This is because the first call triggers the action of collecting high frequency metrics data for this metric span, but does not contain any previouslt collected data points
 * Starting with a subsequent calls (for a `1minute` metric span for the same database) a few seconds later, the collected data will start accumulating and will appear in the Metrics API response.
 * If no additional requests are made during a period of 5 minutes or more (for a `1minute` metric span for the same database), the high frequency data collection will be terminated and any qubsequent requests will be considered as a first request to this database's `1minute` metric span
