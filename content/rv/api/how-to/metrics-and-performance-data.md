@@ -6,13 +6,15 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 
-The Metrics query API operation `GET /subscriptions/{subscription-id}/databases/{subscription-id}/metrics?metricSpan={metric-span}`.
+The Metrics query API operation:
+
+`GET /subscriptions/{subscription-id}/databases/{database-id}/metrics?metricSpan={metric-span}`.
 
 The query accepts 3 parameters:
 
-* `SUBSCRIPTION_ID` - Required. The subscription identifier of the database who's metric data will be queried
-* `DATABASE_ID` - Required. The database identifier of a database belonging to the subscription identifier specified in the previous parameter.
-* `METRIC_SPAN` - Optional. Defines the requested time span to be covered by the query. Default value is `1hour`. For a list of supported values see "[Metric spans and intervals]({{< relref  "/rv/api/concepts#metric-spans-and-intervals" >}})"
+* `subscription-id` - Required. The subscription identifier of the database who's metric data will be queried
+* `database-id` - Required. The database identifier of a database belonging to the subscription identifier specified in the previous parameter.
+* `metric-span` - Optional. Defines the requested time span to be covered by the query. Default value is `1hour`. For a list of supported values see "[Metric spans and intervals]({{< relref  "/rv/api/concepts/metrics#metric-spans-and-intervals" >}})"
 
 
 {{% note %}}

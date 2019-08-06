@@ -24,9 +24,9 @@ Metrics API data is provided per database, based on a specified (or default) met
 | 1year  | Metric data points collected every month for a duration of 1 year | No |
 
 
-    {{% note %}}
+{{% note %}}
 The data point collection interval is a best-effort and must not be relied on as absolute and unvarying: The exact interval between one data point and the next may vary and the interval values may change.
-    {{% /note %}}
+{{% /note %}}
 
 
 ### High frequency on-demand metric spans
