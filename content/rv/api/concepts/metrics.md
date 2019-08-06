@@ -13,19 +13,19 @@ The data exposed by the Metrics API resembles but is not identical to the Databa
 
 Metrics API data is provided per database, based on a specified (or default) metric time span parameter that specifies a requested time range. This metric span parameter indicates the requested time period covered by the data points in the Metrics API response.
 
-| Metric Span | Description | On demand |
+| Metric Span | Data duration | Data point interval | Data point collection |
 |---|---|---|
-| 1minute  | Metric data points collected every 10 seconds for a duration of 1 minute | Yes |
-| 5minutes  | Metric data points collected every 1 minute for a duration of 5 minutes | Yes |
-| 1hour  | Metric data points collected every 5 minutes seconds for a duration of 1 hour | No |
-| 1day  | Metric data points collected every 1 hour for a duration of 1 day | No |
-| 1week  | Metric data points collected every day for a duration of 1 week | No |
-| 1month  | Metric data points collected every day for a duration of 1 month | No |
-| 1year  | Metric data points collected every month for a duration of 1 year | No |
+| 1minute  | 1 minute | 10 seconds | on-demand |
+| 5minutes  | 5 minutes | 1 minute | on-demand |
+| 1hour  | 1 hour | 5 minutes | continuous |
+| 1day  | 1 day | 1 hour | continuous |
+| 1week  | 1 week | 1 day | continuous |
+| 1month  | 1 month | 1 day | continuous |
+| 1year  | 1 year | 1 month | continuous |
 
 
 {{% note %}}
-The data point collection interval is a best-effort and must not be relied on as absolute and unvarying: The exact interval between one data point and the next may vary and the interval values may change.
+The data point interval represents a best-effort. It must not be relied upon as an absolute or unvarying interval. The exact interval between one data point and the next may vary and the interval values may change.
 {{% /note %}}
 
 
