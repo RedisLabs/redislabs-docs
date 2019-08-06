@@ -95,7 +95,7 @@ For example, the data points related to the `conns` category (number of connecti
 
 ```
    {
-      "name": "conns",
+      "name": "count-connections",
       "data": [
         {
           "value": 7,
