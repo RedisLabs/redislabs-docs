@@ -115,4 +115,5 @@ For example, the data points related to the `count-connections` category (number
 
 ### Usage example
 
-See "[HOWTO: Query metrics and usage statistics]({{< relref  "rv/api/how-to/metrics-and-performance-data#metrics-query-example" >}}"
+See "[Query metrics and usage statistics]({{< relref  "rv/api/how-to/metrics-and-performance-data#metrics-query-example" >}})"
+
