@@ -85,13 +85,13 @@ The data points collected and reported by the Metrics API are grouped in categor
 
 A metric data point contains the following properties:
 
-| Property | Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| Property | Description |
 |---|---|
 | Category | Each data point is collected and reported within the context of a measurement topic called "category". Each category has a specified measurement unit (for example: milliseconds, megabytes or percentage) |
 | Value | The value of the data point, defined in the specified measurement unit of the data point's category  |
 | Timestamp | The exact time in which the data point was collected, defined in ISO-8601 date format, in the UTC timezone (for example: `2019-03-15T14:26:02Z`) |
 
-For example, the data points related to the `conns` category (number of connections) will be displayed as follows:
+For example, the data points related to the `count-connections` category (number of connections) will be displayed as follows:
 
 ```
    {
@@ -113,3 +113,6 @@ For example, the data points related to the `conns` category (number of connecti
     },
 ```
 
+### Usage example
+
+See "[HOWTO: Query metrics and usage statistics]({{< relref  "rv/api/how-to/metrics-and-performance-data#metrics-query-example" >}}"
