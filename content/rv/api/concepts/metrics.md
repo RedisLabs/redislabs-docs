@@ -35,8 +35,8 @@ The `1minute` and `5minutes` metric spans are defined as "high frequency" and ar
 
 For example:
 
-* on first request for a `1minute` metric span, the Metrics API operation returns an empty data points array. This is because the first call triggers the action of collecting high frequency metrics data for this metric span, but does not contain any previouslt collected data points
-* Starting with a subsequent calls (for a `1minute` metric span for the same database) a few seconds later, the collected data will start accumulating and will appear in the Metrics API response.
+* on first request for a `1minute` metric span, the Metrics API operation returns an empty data points array. This is because the first call triggers the action of collecting high frequency metrics data for this metric span, but does not contain any previously collected data points
+* Starting with any subsequent call (for a `1minute` metric span for the same database) a few seconds later, the collected data starts accumulating and will appear in the Metrics API response.
 * If no additional requests are made during a period of 5 minutes or more (for a `1minute` metric span for the same database), the high frequency data collection will be terminated and any qubsequent requests will be considered as a first request to this database's `1minute` metric span
 
 ### Metric categories
