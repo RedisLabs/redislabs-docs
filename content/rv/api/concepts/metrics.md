@@ -14,7 +14,7 @@ The data exposed by the Metrics API resembles but is not identical to the Databa
 Metrics API data is provided per database, based on a specified (or default) metric time span parameter that specifies a requested time range. This metric span parameter indicates the requested time period covered by the data points in the Metrics API response.
 
 | Metric Span | Data duration | Data point interval | Data point collection |
-|---|---|---|
+|---|---|---|---|
 | 1minute  | 1 minute | 10 seconds | on-demand |
 | 5minutes  | 5 minutes | 1 minute | on-demand |
 | 1hour  | 1 hour | 5 minutes | continuous |
