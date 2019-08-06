@@ -48,9 +48,9 @@ The duration of the import process varies based on the size of the data to be im
 Database import is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
 
-    {{% note %}}
+{{% note %}}
 Importing data into an existing database will overwrite any existing values.
-    {{% /note %}}
+{{% /note %}}
    
 
 

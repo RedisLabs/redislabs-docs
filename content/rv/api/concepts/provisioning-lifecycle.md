@@ -62,9 +62,9 @@ During the processing of a request, the task moves through these states:
     A detailed cause or reason is included in the task status JSON response.
 
 
-    {{% note %}}
+{{% note %}}
 A task that reaches the `received` state cannot be cancelled and it will await completion (i.e. processing and provisioning). If you wish to undo an operation that was performed by a task, perform a compensating action (for example: delete a subscription that was created unintentionally)
-    {{% /note %}}
+{{% /note %}}
 
 
 ### Task Provisioning
