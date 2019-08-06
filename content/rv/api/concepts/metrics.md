@@ -13,7 +13,7 @@ The data exposed by the Metrics API resembles but is not identical to the Databa
 
 Metrics API data is provided per database, based on a specified (or default) metric time span parameter that specifies a requested time range. This metric span parameter indicates the requested time period covered by the data points in the Metrics API response.
 
-| Metric Span | Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | On demand |
+| Metric Span | Description | On demand |
 |---|---|---|
 | 1minute  | Metric data points collected every 10 seconds for a duration of 1 minute | Yes |
 | 5minutes  | Metric data points collected every 1 minute for a duration of 5 minutes | Yes |
@@ -43,41 +43,41 @@ For example:
 
 The data points collected and reported by the Metrics API are grouped in categories. Each category contains the data points collected for the specific category measurement:
 
-| Category | Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| Category | Description |
 |---|---|
-| other-req | Other requests |
-| conns | Number of connections |
-| big-fetch-flash |  |
-| write-hits | Write hits ratio (%) |
-| values-in-flash | Number of values in Flash database |
-| read-hits | Read hits ratio (%) |
-| avg-read-latency | Average read latency (ms) |
-| no-of-keys | Number of keys |
-| write-req | Write requests per second |
-| read-req | Write requests per second |
-| big-write-ram |  |
-| avg-latency | Average latency (ms) |
-| bigstore-hits |  |
-| big-fetch-ram |  |
-| mem-frag-ratio | Memory fragmentation ratio |
-| big-io-ratio-flash |  |
-| bigstore-overwrites |  |
-| expired-objects | Expired objects per second |
-| ram-overwrites |  |
-| big-io-ratio-redis |  |
-| used-ram | Used RAM (mb) |
-| values-in-ram | Number of values stored in RAM |
-| other-latency |  |
-| evicted-objects |  |
-| used-flash |  |
-| ram-overhead |  |
-| avg-write-latency |  |
-| ram-hits |  |
-| disk-frag-ratio |  |
-| mem-size-calculated |  |
-| big-write-flash |  |
-| big-del-ram |  |
-| big-del-flash |  |
+| bigstore-hits | |
+| bigstore-overwrites | |
+| count-connections | |
+| count-keys | number of keys in the database |
+| disk-fragmentation-ratio | |
+| evicted-objects | number of evicted objects |
+| expired-objects | number of expired objects |
+| flash-big-del | |
+| flash-big-fetch | |
+| flash-big-io-ratio | |
+| flash-big-write | |
+| flash-used | |
+| hits-ram | |
+| hits-read | |
+| hits-write | |
+| latency-average | average latency for all requests (in milliseconds) |
+| latency-average-read | average latency for read requests (in milliseconds) |
+| latency-average-write | average latency for write requests (in milliseconds) |
+| latency-other | average latency for requests that are not read or write (in milliseconds) |
+| memory-fragmentation-ratio | |
+| memory-size-calculated | |
+| ram-big-delete | |
+| ram-big-fetch | |
+| ram-big-write | |
+| ram-overhead | |
+| ram-overwrites | |
+| ram-used | |
+| redis-big-io-ratio | |
+| requests-other | number of requests that are not read or write |
+| requests-read | number of read requests |
+| requests-write | number of write requests |
+| values-in-flash | |
+| values-in-ram | |
 
 
 ### Metric data points
