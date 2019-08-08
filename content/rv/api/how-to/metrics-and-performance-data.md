@@ -12,9 +12,9 @@ The Metrics query API operation:
 
 The query accepts 3 parameters:
 
-* `subscription-id` - Required. The subscription identifier of the database who's metric data will be queried
-* `database-id` - Required. The database identifier of a database belonging to the subscription identifier specified in the previous parameter.
-* `metric-span` - Optional. Defines the requested time span to be covered by the query. Default value is `1hour`. For a list of supported values see "[Metric spans and intervals]({{< relref  "/rv/api/concepts/metrics#metric-spans-and-intervals" >}})"
+- `subscription-id` - Required. The subscription identifier of the database who's metric data will be queried
+- `database-id` - Required. The database identifier of a database belonging to the subscription identifier specified in the previous parameter.
+- `metric-span` - Optional. Defines the requested time span to be covered by the query. Default value is `1hour`. For a list of supported values see "[Metric spans and intervals]({{< relref  "/rv/api/concepts/metrics#metric-spans-and-intervals" >}})"
 
 
 {{% note %}}
