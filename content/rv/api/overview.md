@@ -5,7 +5,6 @@ weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 Redis Labs Pro API follows the principles of the REST architectural style to expose programmatic access to Redis Labs Pro features and capabilities.
 
 

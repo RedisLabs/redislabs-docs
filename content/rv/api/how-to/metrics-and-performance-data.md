@@ -5,7 +5,6 @@ weight: 80
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 The Metrics query API operation:
 
 `GET /subscriptions/{subscription-id}/databases/{database-id}/metrics?metricSpan={metric-span}`.

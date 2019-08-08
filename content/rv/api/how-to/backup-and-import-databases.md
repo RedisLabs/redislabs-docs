@@ -6,7 +6,6 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 
-
 ## Backup a database
 
 When creating or updating a database, you can specify the (optional) `periodicBackupPath` parameter. Setting this parameter enables periodic and on-demand backup operations for the specific database. For details on how to define a path for periodic backups, see "[Database Backups

@@ -5,7 +5,6 @@ weight: 20
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 ## Types of API operations
 
 The API can run operations involving many resources (such as multiple servers, services and related infrastructure). Such operations include CREATE, UPDATE and DELETE operations on Subscriptions, Databases and other entities.

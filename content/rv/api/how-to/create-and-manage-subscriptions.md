@@ -5,7 +5,6 @@ weight: 60
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 This article describes how to create and manage a subscription using `cURL` commands. 
 
 For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".

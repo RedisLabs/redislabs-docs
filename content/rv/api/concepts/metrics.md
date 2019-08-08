@@ -5,7 +5,6 @@ weight: 40
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 Metrics API provides programmatic access to database usage and performance data.
 The data exposed by the Metrics API resembles but is not identical to the Database Metrics tab in the Redis Labs web application.
 

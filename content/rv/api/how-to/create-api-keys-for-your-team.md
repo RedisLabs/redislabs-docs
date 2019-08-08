@@ -5,7 +5,6 @@ weight: 20
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 API access requires each API request to include 2 parameters:
 
 1. **Account key** - available via the 'Settings -> Account' menu. See [Enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
