@@ -9,7 +9,6 @@ This article describes how to create and manage a subscription using `cURL` comm
 
 For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
 
-
 ## Create a subscription
 
 The API operation that creates a subscription is `POST /subscriptions`.
@@ -31,7 +30,6 @@ You can run the **create subscription** script using a command line `bash path/s
 Below is the sample script that you can use as a reference to calling the API operation to create a subscription. The script contains 3 primary steps that are explained below.
 
 Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON command-line processor)
-
 
 ```shell
 {{% embed-code "rv/api/10-create-subscription.sh" %}}
@@ -63,7 +61,6 @@ The created subscription is defined by a JSON document that is sent as the body 
 
 In the example above, that JSON document is stored in the `create-subscription-basic.json` file:
 
-
 ```shell
 {{% embed-code "rv/api/create-subscription-basic.json" %}}
 ```
@@ -76,8 +73,3 @@ In the example above, that JSON document is stored in the `create-subscription-b
 - The JSON document contain 2 primary segments: Subscription specification, and Databases specification
 - When creating a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file
 - you can copy-and-paste the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html). For details, see "[Using API with the Swagger User Interface]({{< relref  "/rv/api/how-to/using-curl#swagger-user-interface" >}})"
-
-    
-
-
-

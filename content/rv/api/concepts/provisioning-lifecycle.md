@@ -60,11 +60,9 @@ During the processing of a request, the task moves through these states:
 - `processing-error` - Request processing failed.
     A detailed cause or reason is included in the task status JSON response.
 
-
 {{% note %}}
 A task that reaches the `received` state cannot be cancelled and it will await completion (i.e. processing and provisioning). If you wish to undo an operation that was performed by a task, perform a compensating action (for example: delete a subscription that was created unintentionally)
 {{% /note %}}
-
 
 ### Task Provisioning
 
@@ -106,9 +104,6 @@ The following limitations apply to asynchronous operations:
     - When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on.  
     - Typically, the processing phase is much faster than the provisioning phase, and multiple tasks will be in provisioned concurrently.
 
-
     {{% note %}}
 Concurrent processing limitations apply per account. Separate accounts will be processed (and provisioned) separately, each according to its own task processing order.
     {{% /note %}}
-   
-

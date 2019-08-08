@@ -9,7 +9,6 @@ This articles describes how to create and manage a cloud account using `cURL` or
 
 For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
 
-
 ## Create a cloud account
 
 The API operation that creates a cloud account is `POST /cloud-accounts`.
@@ -33,7 +32,6 @@ You can run the **create cloud account** script using a command line `bash path/
 Below is the sample script that you can use as a reference to calling the API operation to create a cloud account. The script contains 3 primary steps that are explained below.
 
 Note that the script relies on the pre-requisite variable to be set (see above).
-
 
 ```shell
 {{% embed-code "rv/api/50-create-cloud-account.sh" %}}
@@ -64,7 +62,6 @@ You can continue tracking the created cloud account throughout its provisioning 
 The created cloud account is defined by a JSON document that is sent as the body of the `POST cloud-accounts` request.
 
 In the example above, that JSON document is stored in the `create-cloud-account-basic.json` file:
-
 
 ```shell
 {{% embed-code "rv/api/create-cloud-account-basic.json" %}}

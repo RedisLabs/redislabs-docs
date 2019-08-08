@@ -23,7 +23,6 @@ On-demand database backup is an asynchronous operation. For details see "[Provis
 {{% embed-code "rv/api/07-set-variables-with-subscription-and-database-id.sh" %}}
 ```
 
-
 ### Database backup script
 
 ```shell
@@ -46,14 +45,10 @@ The duration of the import process varies based on the size of the data to be im
 
 Database import is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
-
 {{% note %}}
 Importing data into an existing database will overwrite any existing values.
 {{% /note %}}
    
-
-
-
 ### Pre-requisites
 
 - Import database requires that you specify the Subscription Id and Database Id of the destination database 
@@ -69,13 +64,11 @@ Importing data into an existing database will overwrite any existing values.
 {{% embed-code "rv/api/13-import-database.sh" %}}
 ```
 
-
 ### Database import JSON body
 
 The database import operation is defined by a JSON document that is sent as the body of the API request.
 
 In the example above, that JSON document is stored in the `import-database-s3.json` file:
-
 
 ```shell
 {{% embed-code "rv/api/import-database-s3.json" %}}

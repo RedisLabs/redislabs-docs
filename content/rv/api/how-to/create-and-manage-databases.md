@@ -9,7 +9,6 @@ This article describes how to create and manage a database using `cURL` commands
 
 For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
 
-
 ## Create a database
 
 The API operation that creates a database is `POST /subscriptions/{subscription-id}/databases`.
@@ -20,7 +19,6 @@ Creating a database is an asynchronous operation. For details see "[Provisioning
 
 The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a database Id. When the database Id is received, the **processing phase** is completed and the database (as well as the subscription that contains it) is in the **provisioning phase** (in the `pending` status).  
 
-
 ### Pre-requisites
 
 - Define the expected variables needed to use the API:
@@ -29,7 +27,6 @@ The following Linux shell script sends a `POST /subscriptions/{subscription-id}/
 {{% embed-code "rv/api/06-set-variables-with-subscription-id.sh" %}}
 ```
 
-
 ### Database creation script
 
 You can run the **create database** script using a command line `bash path/script-name.sh`.
@@ -37,7 +34,6 @@ You can run the **create database** script using a command line `bash path/scrip
 Below is the sample script that you can use as a reference to calling the API operation to create a database. 
 
 Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON command-line processor)
-
 
 ```shell
 {{% embed-code "rv/api/11-create-database.sh" %}}
@@ -48,7 +44,6 @@ Note that the script relies on the pre-requisite variables to be set (see above)
 The created database is defined by a JSON document that is sent as the body of the API request.
 
 In the example above, that JSON document is stored in the `create-database-basic.json` file:
-
 
 ```shell
 {{% embed-code "rv/api/create-database-basic.json" %}}

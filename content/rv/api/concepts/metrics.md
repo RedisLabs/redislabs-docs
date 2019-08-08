@@ -22,11 +22,9 @@ Metrics API data is provided per database, based on a specified (or default) met
 | 1month  | 1 month | 1 day | continuous |
 | 1year  | 1 year | 1 month | continuous |
 
-
 {{% note %}}
 The data point interval represents a best-effort. It must not be relied upon as an absolute or unvarying interval. The exact interval between one data point and the next may vary and the interval values may change.
 {{% /note %}}
-
 
 ### High frequency on-demand metric spans
 
@@ -78,9 +76,7 @@ The data points collected and reported by the Metrics API are grouped in categor
 | values-in-flash | |
 | values-in-ram | |
 
-
 ### Metric data points
-
 
 A metric data point contains the following properties:
 
@@ -115,4 +111,3 @@ For example, the data points related to the `count-connections` category (number
 ### Usage example
 
 See "[Query metrics and usage statistics]({{< relref  "rv/api/how-to/metrics-and-performance-data#metrics-query-example" >}})"
-

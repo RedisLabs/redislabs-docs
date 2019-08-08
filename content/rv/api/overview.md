@@ -7,7 +7,6 @@ categories: ["RC Pro"]
 ---
 Redis Labs Pro API follows the principles of the REST architectural style to expose programmatic access to Redis Labs Pro features and capabilities.
 
-
 ### Supported Redis Labs Pro features
 
 The API exposes programmatic access for the following features:
@@ -21,7 +20,6 @@ The API exposes programmatic access for the following features:
 - **Alerts settings** 
 - **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
 
-
 ### API features include
 
 - Standard REST API (accessible using [any HTTP client / programming language]({{< relref  "/rv/api/how-to/using-curl.md" >}}))
@@ -32,9 +30,4 @@ The API exposes programmatic access for the following features:
 - Support for multiple personal [API Keys]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
 - Restrict API usage to specific source IP addresses / ranges
 
-
 **NOTE: The content in this article refers to a BETA release and is therefore liable to change**
-
-
-
-
