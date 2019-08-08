@@ -90,3 +90,20 @@ The above respons example, note the following changes:
 * `status` value if `"processing-completed"`
 * `response` field contains the resource identifier of the resource impacted by this task (in this case: a newly created subscription)
 * The `links` array contains an additional link titled `getSubscriptionInformation` that with the URI that links to the newly created subscription. Using this link it is possible to continue querying the subscription status as it is being provisioned (as described in the [Processing & Provisioning Lifecycle]({{< relref  "rv/api/concepts/provisioning-lifecycle">}})")
+
+
+### Listing tasks
+
+The list of recently submitted & completed tasks for the current account can be queried using the API operation `GET /tasks`.
+
+This API operation returns a list of tasks for the current account, sorted by descending status update (i.e. most recently updated tasks appear first).
+
+
+```
+curl -s -X GET "https://$HOST/tasks" \
+    -H "accept: application/json" \
+    -H "x-api-key: $ACCOUNT_KEY" \
+    -H "x-api-secret-key: $SECRET_KEY"
+```
+
+The result returns all the tasks submitted during the past 10 days.
