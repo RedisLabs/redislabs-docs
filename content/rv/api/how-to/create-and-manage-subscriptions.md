@@ -1,11 +1,11 @@
 ---
 Title: Create and manage Subscriptions
-description: This article describes how to create and manage a subscription using `cURL` commands. 
+description: This article describes how to create and manage a subscription using `cURL` commands.
 weight: 60
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-This article describes how to create and manage a subscription using `cURL` commands. 
+This article describes how to create and manage a subscription using `cURL` commands.
 
 For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
 
@@ -13,7 +13,7 @@ For an introduction to using `cURL` with API operations, see "[Using the cURL HT
 
 The API operation that creates a subscription is `POST /subscriptions`.
 
-The following Linux shell script sends a `POST /subscriptions` and waits for a subscription Id. When the subscription Id is received, the **processing phase** is completed and the subscription is in the **provisioning phase** (in the `pending` status).  
+The following Linux shell script sends a `POST /subscriptions` and waits for a subscription Id. When the subscription Id is received, the **processing phase** is completed and the subscription is in the **provisioning phase** (in the `pending` status). 
 
 ### Pre-requisites
 

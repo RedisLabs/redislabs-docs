@@ -1,6 +1,6 @@
 ---
 Title: API Overview
-description: 
+description:
 weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
@@ -12,12 +12,12 @@ Redis Labs Pro API follows the principles of the REST architectural style to exp
 The API exposes programmatic access for the following features:
 
 - [**Full lifecycle management**]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md" >}}) of Redis Labs Pro Subscriptions and Databases
-- [**System Log**]({{< relref  "/rv/api/how-to/view-auditing-using-system-log.md" >}}) for auditing lifecycle actions (create, update, delete) using 
-- [**Metrics and statistics information**]({{< relref  "/rv/api/concepts/metrics.md" >}}) on provisioned databases and clusters 
+- [**System Log**]({{< relref  "/rv/api/how-to/view-auditing-using-system-log.md" >}}) for auditing lifecycle actions (create, update, delete) using
+- [**Metrics and statistics information**]({{< relref  "/rv/api/concepts/metrics.md" >}}) on provisioned databases and clusters
 - [**Hosting cloud provider credentials**]({{< relref  "/rv/api/how-to/create-and-manage-cloud-accounts.md" >}}) definition and management
 - **Backup & import databases** from various sources (e.g. AWS S3, FTP etc.)
 - **Redis Modules**
-- **Alerts settings** 
+- **Alerts settings**
 - **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
 
 ### API features include

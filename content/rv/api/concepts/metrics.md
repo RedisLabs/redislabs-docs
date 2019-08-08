@@ -28,7 +28,7 @@ The data point interval represents a best-effort. It must not be relied upon as 
 
 ### High frequency on-demand metric spans
 
-The `1minute` and `5minutes` metric spans are defined as "high frequency" and are therefore collected "on demand". This means that they are collected only when requested, and for a duration of no more than 5 minutes since previous request. 
+The `1minute` and `5minutes` metric spans are defined as "high frequency" and are therefore collected "on demand". This means that they are collected only when requested, and for a duration of no more than 5 minutes since previous request.
 
 For example:
 

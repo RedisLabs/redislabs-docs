@@ -67,7 +67,7 @@ A task that reaches the `received` state cannot be cancelled and it will await c
 ### Task Provisioning
 
 When the processing phase succeeds and the task is in the `processing-completed` state, the provisioning phase starts.
-During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request. 
+During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request.
 
     {{% note %}}
 The term "provisioning" refers to all infrastructure changes required in order to apply the request. This includes provisioning new or additional infrastructure, but (depending on the nature of the request) may also include de-provisioning (or releasing) currently used infrastructure.
@@ -96,12 +96,12 @@ During the provisioning of a resource (such as a subscription, database or cloud
 
 The following limitations apply to asynchronous operations:
 
-- For each account, only one operation is **processed** concurrently. When multiple tasks are sent for the same account, they will be received and processed one after the other. 
-- The provisioning phase can be performed in parallel. 
-- For example: 
+- For each account, only one operation is **processed** concurrently. When multiple tasks are sent for the same account, they will be received and processed one after the other.
+- The provisioning phase can be performed in parallel.
+- For example:
     - Concurrently sending 10 "create database" tasks will cause each task to be in the `received` state, awaiting processing.
-    - When the first task starts processing it will be moved to the `processing-in-progress` state. 
-    - When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on.  
+    - When the first task starts processing it will be moved to the `processing-in-progress` state.
+    - When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on. 
     - Typically, the processing phase is much faster than the provisioning phase, and multiple tasks will be in provisioned concurrently.
 
     {{% note %}}

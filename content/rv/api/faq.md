@@ -1,6 +1,6 @@
 ---
 Title: Frequently Asked Questions
-description: 
+description:
 weight: 40
 alwaysopen: false
 categories: ["RC Pro"]
