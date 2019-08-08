@@ -92,7 +92,7 @@ The above respons example, note the following changes:
 * The `links` array contains an additional link titled `getSubscriptionInformation` that with the URI that links to the newly created subscription. Using this link it is possible to continue querying the subscription status as it is being provisioned (as described in the [Processing & Provisioning Lifecycle]({{< relref  "rv/api/concepts/provisioning-lifecycle">}})")
 
 
-### Listing tasks
+### Tasks list
 
 The list of recently submitted & completed tasks for the current account can be queried using the API operation `GET /tasks`.
 
