@@ -27,7 +27,7 @@ When calling an API operation that is processed asynchronously using a task, the
   "timestamp": "2019-08-08T09:07:39.826Z",
   "_links": {
     "task": {
-      "href": "https://api-beta1-qa.redislabs.com/beta1/tasks/f3ec0e7b-0548-46e3-82f3-1977012ec738",
+      "href": "https://api-beta1.redislabs.com/beta1/tasks/f3ec0e7b-0548-46e3-82f3-1977012ec738",
       "title": "getTaskStatusUpdates",
       "type": "GET"
     }
