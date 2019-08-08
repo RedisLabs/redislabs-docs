@@ -1,6 +1,6 @@
 ---
 Title: Using the API
-description: 
+description: How to use the API with various tols (especially with `cURL`)
 weight: 40
 alwaysopen: false
 categories: ["RC Pro"]
