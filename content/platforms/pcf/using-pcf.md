@@ -20,7 +20,7 @@ This topic describes how to use Redis Enterprise Software (RS) for PCF.
 
 1. Log in using the Administrator email account and password you specified in the tile configuration.
 
-1. Navigate to the "**settings**" tab and then general.
+1. Navigate to the "**settings**" tab and then **general**.
 
 1. Paste the license key you received from Redis Labs into the "**Cluster key**" form field and click the "**Save**" button.
 
