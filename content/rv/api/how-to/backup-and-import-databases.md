@@ -1,6 +1,6 @@
 ---
 Title: Backup & import databases
-description: 
+description: When creating or updating a database, you can specify the backup path parameter. The import API operation allows importing from various source types and specified locations
 weight: 72
 alwaysopen: false
 categories: ["RC Pro"]

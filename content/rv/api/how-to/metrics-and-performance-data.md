@@ -1,6 +1,6 @@
 ---
 Title: Query metrics and usage statistics
-description: 
+description: Using the Metrics API operation to query database usage and statistics information
 weight: 80
 alwaysopen: false
 categories: ["RC Pro"]

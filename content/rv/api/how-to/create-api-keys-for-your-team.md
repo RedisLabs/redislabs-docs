@@ -1,10 +1,11 @@
 ---
 Title: Create API Keys for your team
-description: 
+description: How to use the Redis Labs web application to create and manage API Keys for your Account's team owners
 weight: 20
 alwaysopen: false
 categories: ["RC Pro"]
 ---
+
 API access requires each API request to include 2 parameters:
 
 1. **Account key** - available via the 'Settings -> Account' menu. See [Enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})

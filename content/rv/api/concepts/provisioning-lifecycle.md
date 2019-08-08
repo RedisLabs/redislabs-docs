@@ -1,6 +1,6 @@
 ---
 Title: Processing & Provisioning Lifecycle
-description: 
+description: API requests follow specific lifecycle phases and states, based on the operation's complexity and length of execution.
 weight: 20
 alwaysopen: false
 categories: ["RC Pro"]
