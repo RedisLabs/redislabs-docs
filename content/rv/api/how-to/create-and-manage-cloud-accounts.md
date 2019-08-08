@@ -1,6 +1,6 @@
 ---
 Title: Create and manage Cloud Accounts
-description: 
+description: Cloud accounts specifies which account to use when creating and modifying infrastructure resources
 weight: 50
 alwaysopen: false
 categories: ["RC Pro"]

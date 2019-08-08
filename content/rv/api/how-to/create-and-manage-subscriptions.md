@@ -1,6 +1,6 @@
 ---
 Title: Create and manage Subscriptions
-description: 
+description: This article describes how to create and manage a subscription using `cURL` commands. 
 weight: 60
 alwaysopen: false
 categories: ["RC Pro"]

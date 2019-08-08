@@ -1,6 +1,6 @@
 ---
 Title: Create and manage Databases
-description: 
+description: This article describes how to create and manage a database using `cURL` commands. 
 weight: 70
 alwaysopen: false
 categories: ["RC Pro"]

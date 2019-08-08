@@ -1,6 +1,6 @@
 ---
 Title: Auditing using System Log
-description: 
+description: Using the Redis Labs system log to track and audit actions performed in the account
 weight: 100
 alwaysopen: false
 categories: ["RC Pro"]
