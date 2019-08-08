@@ -19,7 +19,7 @@ The following Linux shell script sends a `POST /cloud-accounts` and waits for a 
 
 ### Pre-requisites
 
-* Define the expected variables needed to use the API:
+- Define the expected variables needed to use the API:
 
 ```shell
 {{% embed-code "rv/api/05-set-variables.sh" %}}

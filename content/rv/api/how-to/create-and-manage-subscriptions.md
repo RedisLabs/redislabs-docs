@@ -19,7 +19,7 @@ The following Linux shell script sends a `POST /subscriptions` and waits for a s
 
 ### Pre-requisites
 
-* Define the expected variables needed to use the API:
+- Define the expected variables needed to use the API:
 
 ```shell
 {{% embed-code "rv/api/05-set-variables.sh" %}}
@@ -71,12 +71,12 @@ In the example above, that JSON document is stored in the `create-subscription-b
 
 #### **Notes:**
 
-* **To use the sample JSON document in your own Account, you must modify the following parameters:**
-    * **`paymentMethodId`** - Specify a payment method that is defined for your account. You can lookup the payment method identifier using the "`GET /payment-methods`" API operation.
-    * **`cloudAccountId`** - Specify a cloud account that is defined for your account. You can lookup the cloud accounts identifiers using the "`GET /cloud-accounts`" API operation.(or use "`"cloudAccountId": 1`" to specify that you wish to use Redis Labs internal resources)
-* The JSON document contain 2 primary segments: Subscription specification, and Databases specification
-* When creating a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file
-* you can copy-and-paste the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html). For details, see "[Using API with the Swagger User Interface]({{< relref  "/rv/api/how-to/using-curl#swagger-user-interface" >}})"
+- **To use the sample JSON document in your own Account, you must modify the following parameters:**
+    - **`paymentMethodId`** - Specify a payment method that is defined for your account. You can lookup the payment method identifier using the "`GET /payment-methods`" API operation.
+    - **`cloudAccountId`** - Specify a cloud account that is defined for your account. You can lookup the cloud accounts identifiers using the "`GET /cloud-accounts`" API operation.(or use "`"cloudAccountId": 1`" to specify that you wish to use Redis Labs internal resources)
+- The JSON document contain 2 primary segments: Subscription specification, and Databases specification
+- When creating a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file
+- you can copy-and-paste the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html). For details, see "[Using API with the Swagger User Interface]({{< relref  "/rv/api/how-to/using-curl#swagger-user-interface" >}})"
 
     
 

@@ -18,7 +18,7 @@ On-demand database backup is an asynchronous operation. For details see "[Provis
 
 ### Pre-requisites
 
-* Define the expected variables needed to use the API:
+- Define the expected variables needed to use the API:
 
 ```shell
 {{% embed-code "rv/api/07-set-variables-with-subscription-and-database-id.sh" %}}
@@ -57,8 +57,8 @@ Importing data into an existing database will overwrite any existing values.
 
 ### Pre-requisites
 
-* Import database requires that you specify the Subscription Id and Database Id of the destination database 
-* Define the expected variables needed to use the API:
+- Import database requires that you specify the Subscription Id and Database Id of the destination database 
+- Define the expected variables needed to use the API:
 
 ```shell
 {{% embed-code "rv/api/07-set-variables-with-subscription-and-database-id.sh" %}}

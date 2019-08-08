@@ -24,7 +24,7 @@ The following Linux shell script sends a `POST /subscriptions/{subscription-id}/
 
 ### Pre-requisites
 
-* Define the expected variables needed to use the API:
+- Define the expected variables needed to use the API:
 
 ```shell
 {{% embed-code "rv/api/06-set-variables-with-subscription-id.sh" %}}
@@ -55,13 +55,13 @@ In the example above, that JSON document is stored in the `create-database-basic
 {{% embed-code "rv/api/create-database-basic.json" %}}
 ```
 
-* The JSON body contains only the most basic, required parameters in order to create a database: 
-    * Database name (unique name per subscription and may contain only alphanumeric characters and hyphens)
-    * Maxmium database size in GB
-    * Database password
-* There are many additional parameters and settings that can be defined on database creation. 
-    * For details on database parameters and options, see [Swagger OpenAPI documentation](https://api-beta.redislabs.com/beta1/swagger-ui.html#/Databases)
-    * Select `POST Create database`
-    * Under `Database definition` click on the `Model` options
+- The JSON body contains only the most basic, required parameters in order to create a database: 
+    - Database name (unique name per subscription and may contain only alphanumeric characters and hyphens)
+    - Maxmium database size in GB
+    - Database password
+- There are many additional parameters and settings that can be defined on database creation. 
+    - For details on database parameters and options, see [Swagger OpenAPI documentation](https://api-beta.redislabs.com/beta1/swagger-ui.html#/Databases)
+    - Select `POST Create database`
+    - Under `Database definition` click on the `Model` options
 
 ![swagger-database-create-documentation](/images/rv/api/swagger-database-create-documentation.png)
