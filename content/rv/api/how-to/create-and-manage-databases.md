@@ -37,7 +37,7 @@ You can run the **create database** script using a command line `bash path/scrip
 
 Below is the sample script that you can use as a reference to calling the API operation to create a database. 
 
-Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON conmmand-line processor)
+Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON command-line processor)
 
 
 ```shell
@@ -57,7 +57,7 @@ In the example above, that JSON document is stored in the `create-database-basic
 
 - The JSON body contains only the most basic, required parameters in order to create a database: 
     - Database name (unique name per subscription and may contain only alphanumeric characters and hyphens)
-    - Maxmium database size in GB
+    - Maximum database size in GB
     - Database password
 - There are many additional parameters and settings that can be defined on database creation. 
     - For details on database parameters and options, see [Swagger OpenAPI documentation](https://api-beta.redislabs.com/beta1/swagger-ui.html#/Databases)

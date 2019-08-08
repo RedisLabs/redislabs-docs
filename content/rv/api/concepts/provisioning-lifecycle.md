@@ -28,7 +28,7 @@ During this phase, the request is received, evaluated, planned and executed.
 
 #### Tracking requests using tasks
 
-When you request an asyncronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.
+When you request an asynchronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.
 The `taskId` is a unique identifier that allows you to track the progress of the requested operation and get information on its status.
 
 You can query the `taskId` to track the status of a specific task:
@@ -55,7 +55,7 @@ During the processing of a request, the task moves through these states:
 
 - `received` - Request is received and awaits processing.
 - `processing-in-progress` - A dedicated worker is processing the request.
-- `processing-completed` - Request processing succeeded and the request is being provisioned (or de-provisioned, depdending on the specific request).
+- `processing-completed` - Request processing succeeded and the request is being provisioned (or de-provisioned, depending on the specific request).
     A `response` segment is included with the task status JSON response.
     The response includes a `resourceId` for each resource that the request creates, such as Subscription or Database ID.
 - `processing-error` - Request processing failed.
@@ -73,7 +73,7 @@ When the processing phase succeeds and the task is in the `processing-completed`
 During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request. 
 
     {{% note %}}
-The term "provisioning" refers to all infrastructure changes required in order to apply the request. This includes provisioning new or additional infrastructure, but (depdending on the nature of the request) may also include de-provisioning (or releasing) currently used infrastructure.
+The term "provisioning" refers to all infrastructure changes required in order to apply the request. This includes provisioning new or additional infrastructure, but (depending on the nature of the request) may also include de-provisioning (or releasing) currently used infrastructure.
     {{% /note %}}
 
 The provisioning phase may require several minutes to complete. You can query the resource identifier to track the progress of the provisioning phase.
@@ -91,7 +91,7 @@ Where the `{subscription-id}` is the resource ID that you receive when the task 
 During the provisioning of a resource (such as a subscription, database or cloud account) the resource transitions through these states:
 
 - `pending` - Provisioning is in progress.
-- `active` - Provisionign completed successfully.
+- `active` - Provisioning completed successfully.
 - `deleting` - De-provisioning and deletion is in progress.
 - `error` - An error ocurred during the provisioning phase, including the details of the error.
 

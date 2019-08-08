@@ -10,7 +10,7 @@ A Task is an API operation that is performed asynchronously (since its completio
 
 Examples of API operations that use Tasks are subscription and database creation, update and deletion. In essence, all of the create / update / delete API operations (`POST`, `PUT` and `DELETE`) rely on Tasks, and some of the query operations (`GET`) also rely on tasks.
 
-A task is identified using a `taskId` - a universally unique identifier (UUID) that idenfities the specific task, and contains contentual and status data on the API operation performed by the task.
+A task is identified using a `taskId` - a universally unique identifier (UUID) that identities the specific task, and contains contextual and status data on the API operation performed by the task.
 
 For a detailed description on how Tasks fit into the API processing and provisioning lifecycle, see "[Asynchronous operations]({{< relref  "rv/api/concepts/provisioning-lifecycle#asynchronous-operations">}})"
 
@@ -37,7 +37,7 @@ When calling an API operation that is processed asynchronously using a task, the
 
 The response contains the following information:
 
-- `taskId` - a universally unique identifier (UUID) that idenfities the specific task 
+- `taskId` - a universally unique identifier (UUID) that identities the specific task 
 - `commandType` - a string description that identifies the request (AKA "command") type
 - `status` - the status of the task. For a list of supported status values for tasks, see "[Asynchronous operations]({{< relref  "rv/api/concepts/provisioning-lifecycle#asynchronous-operations">}})"
 - `description` - a description of the status and its meaning
@@ -85,7 +85,7 @@ An example of a response to the above `getTaskStatusUpdates` request:
 }
 ```
 
-The above respons example, note the following changes: 
+The above response example, note the following changes: 
 
 - `status` value if `"processing-completed"`
 - `response` field contains the resource identifier of the resource impacted by this task (in this case: a newly created subscription)

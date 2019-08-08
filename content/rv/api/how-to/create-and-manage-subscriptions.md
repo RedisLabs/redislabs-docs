@@ -31,7 +31,7 @@ You can run the **create subscription** script using a command line `bash path/s
 
 Below is the sample script that you can use as a reference to calling the API operation to create a subscription. The script contains 3 primary steps that are explained below.
 
-Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON conmmand-line processor)
+Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON command-line processor)
 
 
 ```shell
