@@ -5,7 +5,6 @@ weight: 20
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 API access requires each API request to include 2 parameters:
 
 1. **Account key** - available via the 'Settings -> Account' menu. See [Enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
@@ -30,7 +29,4 @@ When generating a secret key, the secret value of the key is displayed for the f
 
 That the value of the secret key cannot be retrieved later on. If lost or compromised - delete the key and generate a new key.
 
-The secret value should be used as a parameter for all API requests by the user associated with the key, and by no one else. 
-
-
-
+The secret value should be used as a parameter for all API requests by the user associated with the key, and by no one else.

@@ -5,7 +5,6 @@ weight: 40
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 Metrics API provides programmatic access to database usage and performance data.
 The data exposed by the Metrics API resembles but is not identical to the Database Metrics tab in the Redis Labs web application.
 
@@ -23,21 +22,19 @@ Metrics API data is provided per database, based on a specified (or default) met
 | 1month  | 1 month | 1 day | continuous |
 | 1year  | 1 year | 1 month | continuous |
 
-
 {{% note %}}
 The data point interval represents a best-effort. It must not be relied upon as an absolute or unvarying interval. The exact interval between one data point and the next may vary and the interval values may change.
 {{% /note %}}
 
-
 ### High frequency on-demand metric spans
 
-The `1minute` and `5minutes` metric spans are defined as "high frequency" and are therefore collected "on demand". This means that they are collected only when requested, and for a duration of no more than 5 minutes since previous request. 
+The `1minute` and `5minutes` metric spans are defined as "high frequency" and are therefore collected "on demand". This means that they are collected only when requested, and for a duration of no more than 5 minutes since previous request.
 
 For example:
 
 - on first request for a `1minute` metric span, the Metrics API operation returns an empty data points array. This is because the first call triggers the action of collecting high frequency metrics data for this metric span, but does not contain any previously collected data points
 - Starting with any subsequent call (for a `1minute` metric span for the same database) a few seconds later, the collected data starts accumulating and will appear in the Metrics API response.
-- If no additional requests are made during a period of 5 minutes or more (for a `1minute` metric span for the same database), the high frequency data collection will be terminated and any qubsequent requests will be considered as a first request to this database's `1minute` metric span
+- If no additional requests are made during a period of 5 minutes or more (for a `1minute` metric span for the same database), the high frequency data collection will be terminated and any subsequent requests will be considered as a first request to this database's `1minute` metric span
 
 ### Metric categories
 
@@ -79,9 +76,7 @@ The data points collected and reported by the Metrics API are grouped in categor
 | values-in-flash | |
 | values-in-ram | |
 
-
 ### Metric data points
-
 
 A metric data point contains the following properties:
 
@@ -116,4 +111,3 @@ For example, the data points related to the `count-connections` category (number
 ### Usage example
 
 See "[Query metrics and usage statistics]({{< relref  "rv/api/how-to/metrics-and-performance-data#metrics-query-example" >}})"
-

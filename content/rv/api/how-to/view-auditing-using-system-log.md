@@ -5,7 +5,6 @@ weight: 100
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-
 The Redis Labs system log collects and reports on actions performed on various entities in the account. These entities include the account itself, users, API Keys, subscriptions, databases, accounts, payment methods and more. For each entity, various lifecycle events are logged in the system log.
 
 You can view the system log in the Redis Labs web UI by selecting `Menu` and then `System Log`. This will display the system log entries for the current account.
