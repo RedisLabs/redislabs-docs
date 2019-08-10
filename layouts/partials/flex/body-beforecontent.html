@@ -116,12 +116,6 @@
 
       {{if not .IsHome}}
         <h1>{{.Title}}</h1>
-        <div id="internalContentLoader"></div>
-        <div id="internalContent">
-          <i class="fa fa-close closeContent" onclick="hideInternalContent()"></i>
-          <div class="article"></div>
-        </div>
-
         {{if eq .RelPermalink "/rs/"}}
           {{ partial "rs-hot-topics-table.html" . }}
         {{end}}        

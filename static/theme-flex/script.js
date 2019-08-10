@@ -1,4 +1,11 @@
 jQuery(document).ready(function() {
+    var ii = jQuery('.internal-invoker');
+    if(ii && localStorage.getItem('auth_token')) {
+        ii.css('display', 'inline-block');
+    } else {
+        ii.hide();
+    }
+
     jQuery('.category-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-down fa-angle-right");
         var x = $( this ).parent().parent().children('ul')
@@ -226,7 +233,7 @@ var toggleInternalLogin = function() {
         $('#internalToggle').html('Internal Login')
     } else {
         localStorage.setItem('auth_token', 'abc123');
-        $('#internalToggle').html('Internal Logout')
+        $('#internalToggle').html('Internal Log out')
     }
 
     window.location.reload();
@@ -323,7 +330,7 @@ function fetchInternalContent(pageID){
         dataType: 'html',
         async: true,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token ACCESS_TOKEN");
+            xhr.setRequestHeader("Authorization", "token INT_ACC_TOKEN");
             xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
         },        
         success: function(data) {

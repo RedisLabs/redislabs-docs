@@ -14,6 +14,14 @@
     {{if not .IsHome}}
       <div class="main-content">
           <div class="main-content-left">
+            <div id="internalContentLoader"></div>
+            <div id="internalContent">
+              <span class="title">
+                <i class="fa fa-folder-o"></i> Internal
+              </span>
+              <i class="fa fa-close closeContent" onclick="hideInternalContent()"></i>
+              <div class="article"></div>
+            </div>            
             {{ block "main" . }}
             {{ end }}
           </div>
