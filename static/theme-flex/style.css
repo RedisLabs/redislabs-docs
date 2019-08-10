@@ -1503,10 +1503,6 @@ li.menu__item.menu__title {
 li.menu__item.menu__title:first-child {
   margin-top: 0;
 }
-
-.panel-info .panel-heading:before {
-}
-
 nav.shortcuts li:last-child a label {
   color: #b62411;
   opacity: 1;
@@ -1560,6 +1556,9 @@ div#navigation a {
   opacity: 1;
   top: 300px;
 }
+.highlight + .panel.panel-primary, .highlight + .alert {
+  margin-top: 1.3rem;
+}
 .panel.panel-primary.panel-warning i, .panel.panel-primary.panel-caution i {
   color: #b62411;
 }
@@ -1573,12 +1572,6 @@ nav#toc ul > li > ul {
 
 nav#toc > ul > li {
   padding-bottom: 10px;
-}
-.panel-heading {
-  /* text-indent: -9999px; */
-}
-
-.panel-info .panel-heading:before {
 }
 
 .youtube-container {
@@ -2965,3 +2958,4 @@ a[href*="#no-click"], img[src*="#no-click"] {
 /* Helpers */
 .pt-20 {
   padding-top: 20px;
+}
