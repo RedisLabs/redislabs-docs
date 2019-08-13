@@ -3022,14 +3022,14 @@ a[href*="#no-click"], img[src*="#no-click"] {
   left: 0.15em;
   position: relative;
   top: 0.15em;
-  transform: rotate(-45deg);
+  transform: rotate(-135deg);
   vertical-align: top;
   width: 0.6em;
 }
 
 .chevron.down:before {
 	top: 0;
-	transform: rotate(135deg);
+	transform: rotate(45deg);
 }
 
 /* Helpers */
