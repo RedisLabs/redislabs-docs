@@ -235,3 +235,50 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
         return undefined;
     }
 };
+
+function setPageFeedback(kind) {
+    setFeedbackMessage();
+
+    if (window.ga) {
+        window.ga('send', {
+            hitType: 'event',
+            eventCategory: 'Article feedback',
+            eventAction: 'vote',
+            eventLabel: window.location.pathname,
+            eventValue: kind,
+            hitCallback: function() {
+                console.log('GA Event sent');
+                setFeedbackMessage();
+            }
+        });
+    }
+}
+
+function setFeedbackMessage() {
+    $('#page-feedback-open').html('Thanks for the feedback!');
+    setTimeout(function() {
+        $('.page-feedback').hide();
+    }, 5000);
+}
+
+function hidePageFeedback() {
+    $('#page-feedback-open').hide();
+    $('#page-feedback-closed').show();
+    localStorage.setItem('is-page-feedback-visible', 'no');
+}
+
+function showPageFeedback() {
+    $('#page-feedback-closed').hide();
+    $('#page-feedback-open').show();
+    localStorage.setItem('is-page-feedback-visible', 'yes');
+}
+
+$(function() {
+    $('.page-feedback').show();
+    var isPageFeedbackVisible = localStorage.getItem('is-page-feedback-visible');
+    if(isPageFeedbackVisible == 'no') {
+        hidePageFeedback();
+    } else {
+        showPageFeedback();
+    }
+});
