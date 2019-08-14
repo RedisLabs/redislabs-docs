@@ -1,6 +1,6 @@
 ---
 Title: Using the API
-description: How to use the API with various tols (especially with `cURL`)
+description: How to use the API with various tools (especially with `cURL`)
 weight: 40
 alwaysopen: false
 categories: ["RC Pro"]
@@ -116,5 +116,5 @@ curl -s -X GET "https://$HOST/logs" \
 - You can set the variables using shell commands like the following:
 
     ```shell
-{{% embed-code "rv/api/05-set-variables.sh" %}}
+    {{% embed-code "rv/api/05-set-variables.sh" %}}
     ```

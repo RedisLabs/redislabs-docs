@@ -11,7 +11,7 @@ Examples of API operations that use Tasks are subscription and database creation
 
 A task is identified using a `taskId` - a universally unique identifier (UUID) that identities the specific task, and contains contextual and status data on the API operation performed by the task.
 
-For a detailed description on how Tasks fit into the API processing and provisioning lifecycle, see "[Asynchronous operations]({{< relref  "rv/api/concepts/provisioning-lifecycle#asynchronous-operations">}})"
+For a detailed description on how Tasks fit into the API processing and provisioning lifecycle, see [Asynchronous operations]({{< relref "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}}).
 
 ### Task information
 
@@ -38,7 +38,7 @@ The response contains the following information:
 
 - `taskId` - a universally unique identifier (UUID) that identities the specific task
 - `commandType` - a string description that identifies the request (AKA "command") type
-- `status` - the status of the task. For a list of supported status values for tasks, see "[Asynchronous operations]({{< relref  "rv/api/concepts/provisioning-lifecycle#asynchronous-operations">}})"
+- `status` - the status of the task. For a list of supported status values for tasks, see "[Asynchronous operations]({{< relref "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations">}})"
 - `description` - a description of the status and its meaning
 - `timestamp` - a time indicator in ISO-8601 date format, in the UTC timezone
 - `_links` - URI links to resources related to the task (by default: a link to itself; additional links are added based on context of response)
@@ -88,7 +88,7 @@ The above response example, note the following changes:
 
 - `status` value if `"processing-completed"`
 - `response` field contains the resource identifier of the resource impacted by this task (in this case: a newly created subscription)
-- The `links` array contains an additional link titled `getSubscriptionInformation` that with the URI that links to the newly created subscription. Using this link it is possible to continue querying the subscription status as it is being provisioned (as described in the [Processing & Provisioning Lifecycle]({{< relref  "rv/api/concepts/provisioning-lifecycle">}})")
+- The `links` array contains an additional link titled `getSubscriptionInformation` that with the URI that links to the newly created subscription. Using this link it is possible to continue querying the subscription status as it is being provisioned (as described in the [Processing & Provisioning Lifecycle]({{< relref "/rv/api/concepts/provisioning-lifecycle.md" >}}))
 
 ### Tasks list
 

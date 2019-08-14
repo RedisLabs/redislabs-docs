@@ -13,9 +13,9 @@ For an introduction to using `cURL` with API operations, see "[Using the cURL HT
 
 The API operation that creates a subscription is `POST /subscriptions`.
 
-The following Linux shell script sends a `POST /subscriptions` and waits for a subscription Id. When the subscription Id is received, the **processing phase** is completed and the subscription is in the **provisioning phase** (in the `pending` status). 
+The following Linux shell script sends a `POST /subscriptions` and waits for a subscription Id. When the subscription Id is received, the **processing phase** is completed and the subscription is in the **provisioning phase** (in the `pending` status).
 
-### Pre-requisites
+### Prerequisites
 
 - Define the expected variables needed to use the API:
 
@@ -65,9 +65,9 @@ In the example above, that JSON document is stored in the `create-subscription-b
 {{% embed-code "rv/api/create-subscription-basic.json" %}}
 ```
 
-#### **Notes:**
+#### Notes
 
-- **To use the sample JSON document in your own Account, you must modify the following parameters:**
+- To use the sample JSON document in your own Account, you must modify the following parameters:
     - **`paymentMethodId`** - Specify a payment method that is defined for your account. You can lookup the payment method identifier using the "`GET /payment-methods`" API operation.
     - **`cloudAccountId`** - Specify a cloud account that is defined for your account. You can lookup the cloud accounts identifiers using the "`GET /cloud-accounts`" API operation.(or use "`"cloudAccountId": 1`" to specify that you wish to use Redis Labs internal resources)
 - The JSON document contain 2 primary segments: Subscription specification, and Databases specification

@@ -101,7 +101,7 @@ The following limitations apply to asynchronous operations:
 - For example:
     - Concurrently sending 10 "create database" tasks will cause each task to be in the `received` state, awaiting processing.
     - When the first task starts processing it will be moved to the `processing-in-progress` state.
-    - When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on. 
+    - When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on.
     - Typically, the processing phase is much faster than the provisioning phase, and multiple tasks will be in provisioned concurrently.
 
     {{% note %}}

@@ -15,7 +15,7 @@ The API operation for performing on-demand backup is `POST /subscriptions/{subsc
 
 On-demand database backup is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
-### Pre-requisites
+### Prerequisites for Backups
 
 - Define the expected variables needed to use the API:
 
@@ -38,8 +38,9 @@ You can import data into an existing database from multiple storage sources, inc
 The API operation for performing on-demand backup is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/import`.
 
 For an import operation to be successful:
-   * The source URI must be accessible to the importing database (e.g. located in a publicly accessible S3 path)
-   * The data format must be Redis compatible (e.g. the output of a database backup operation).
+
+- The source URI must be accessible to the importing database (e.g. located in a publicly accessible S3 path)
+- The data format must be Redis compatible (e.g. the output of a database backup operation).
 
 The duration of the import process varies based on the size of the data to be imported and the network bandwidth between the data source and the importing database.
 
@@ -49,7 +50,7 @@ Database import is an asynchronous operation. For details see "[Provisioning lif
 Importing data into an existing database will overwrite any existing values.
 {{% /note %}}
   
-### Pre-requisites
+### Prerequisites for Importing
 
 - Import database requires that you specify the Subscription Id and Database Id of the destination database
 - Define the expected variables needed to use the API:

@@ -12,7 +12,7 @@ API access requires each API request to include 2 parameters:
 
 Creating API keys can only be done by account owners, for account owners:
 
-1. In https://app.redislabs.com, navigate to 'Settings' menu, and select the 'Cloud API Keys' tab.
+1. In <https://app.redislabs.com>, navigate to 'Settings' menu, and select the 'Cloud API Keys' tab.
 1. If the 'Cloud API Keys' is not displayed - make sure you [enabled your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
 1. To create a new key, click the button labeled 'Add new API secret key'
 1. Fill in the secret key properties:
@@ -21,7 +21,7 @@ Creating API keys can only be done by account owners, for account owners:
         1. Number of characters between 10 and 50
         1. Allowed characters are: Letters, digits, hyphens ('-') and underscores ('_')
         1. Spaces are forbidden
-1. Click the button labeled 'Generate API Key. A pop-up window will appear specifying the secret key was successfully created. Copy the secret key value and store it in a safe location.
+1. Click the button labeled 'Generate API Key. A popup window will appear specifying the secret key was successfully created. Copy the secret key value and store it in a safe location.
 
 ## Keeping the secret value of the key
 
