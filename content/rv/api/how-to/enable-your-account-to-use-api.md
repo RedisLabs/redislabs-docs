@@ -1,6 +1,6 @@
 ---
 Title: Enable your Account to use API
-description: Enabling an Account to use API using the Redis Labs web application
+description: Enabling an Account to use API using the Redis Labs web UI
 weight: 10
 alwaysopen: false
 categories: ["RC Pro"]

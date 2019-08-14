@@ -1,6 +1,6 @@
 ---
 Title: Manage API Keys
-description: Managing API Keys using the Redis Labs web application
+description: Managing API Keys using the Redis Labs web UI
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
