@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 All data is stored and managed exclusively in either RAM or RAM + Flash
 Memory ([Redis on
-Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}))
 and therefore, is at risk of being lost upon a process or server
 failure. As Redis Enterprise Software is not
 just a caching solution, but also a full-fledged database,
@@ -25,12 +25,11 @@ database if the database process fails for any reason. It is not a
 replacement for backups, but something you do in addition to backups.
 Data persistence is optional and can be set to none if desired.
 
-AOF writes the latest 'write' commands into a file every second. As a
-comparison, AOF resembles a traditional RDBMS's redo log, if you are
-familiar with those. This file can be 'replayed' in order to recover
-from a crash.
+AOF writes the latest 'write' commands into a file every second, it 
+resembles a traditional RDBMS's redo log, if you are familiar with that. 
+This file can later be 'replayed' in order to recover from a crash.
 
-A snapshot (RDB) on the hand, is performed every one, six, or twelve
+A snapshot (RDB) on the other hand, is performed every one, six, or twelve
 hours. The snapshot is a dump of the data and while there is a potential
 of losing up to one hour of data, it is dramatically faster to recover
 from a snapshot compared to AOF recovery.
@@ -40,13 +39,12 @@ configured either at time of database creation or by editing an existing
 database's configuration. While the persistence model can be changed
 dynamically, just know that it can take time for your database to switch
 from one persistence model to the other. It will depend on what you are
-switching from and to, but also the size of your database.
+switching from and to, but also on the size of your database.
 
 Note: For performance reasons, if you are going to be using AOF, it is
 highly recommended to make sure replication is enabled for that database
 as well. When these two features are enabled, persistence will be
-performed on the database slave and not take away performance wise from
-the master.
+performed on the database slave and not impact performance on the master.
 
 ## Options for Configuring Data Persistence
 
@@ -84,7 +82,7 @@ two:
 ## Data Persistence and Redis on Flash
 
 If you are enabling data persistence for databases running on Redis
-Enterprise Flash, by default both master and slave shard will be
+Enterprise Flash, by default both master and slave shards will be
 configured to write to disk. This is unlike a standard Redis Enterprise
 Software database where only the slave shards persist to disk. This
 master and slave dual data persistence with replication is done to
