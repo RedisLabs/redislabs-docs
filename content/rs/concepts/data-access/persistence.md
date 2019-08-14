@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 All data is stored and managed exclusively in either RAM or RAM + Flash
 Memory ([Redis on
-Flash])({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}))
 and therefore, is at risk of being lost upon a process or server
 failure. As Redis Enterprise Software is not
 just a caching solution, but also a full-fledged database,
@@ -18,7 +18,7 @@ data to disk on a per-database basis and in multiple ways.
 There are two options for persistence:
 
 1. Append Only File (AOF) - A continuous writing of data to disk
-2. Snapshot (RDB) - An automatic periodic snapshot writing to disk
+1. Snapshot (RDB) - An automatic periodic snapshot writing to disk
 
 Data persistence, via either mechanism, is used solely to rehydrate the
 database if the database process fails for any reason. It is not a
