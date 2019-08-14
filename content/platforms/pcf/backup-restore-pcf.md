@@ -60,9 +60,8 @@ To backup your Redis Enterprise for PCF deployment:
 
     You can remove the --debug flag to reduce the command output.
 
-    The backup is saved in the directory named with `<deployment_name>_<date>`, for example:
-
-    `redis-enterprise-b25242b578838c375ba1_20180312T135418Z`
+    The backup is saved in the directory named with `<deployment_name>_<date>`,
+    for example: `redis-enterprise-b25242b578838c375ba1_20180312T135418Z`
 
 1. Copy this backup archive from the Ops Manager machine to a dedicated storage location.
 

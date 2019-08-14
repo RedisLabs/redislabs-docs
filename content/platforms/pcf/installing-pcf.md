@@ -14,9 +14,11 @@ This topic describes how to install and configure Redis Enterprise for Pivotal C
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
+    ![Import button](/images/platforms/pcf_import-product_tile.png)
+
 1. Under the **Import a Product** button, click **+** next to the version number of Redis Enterprise for PCF. This adds the tile to your staging area.
 
-    ![Import button](./images/platforms/pcf_add-to-dash_tile.png)
+    ![Import button](/images/platforms/pcf_add-to-dash_tile.png)
 
 ## Configure and Deploy Redis Enterprise for PCF
 
@@ -32,7 +34,7 @@ This topic describes how to install and configure Redis Enterprise for Pivotal C
 
     A banner appears at the top of the page indicating changes have been successfully applied.
 
-    ![Import button](./images/pcf_config-success_tile.png)
+    ![Import button](/images/platforms/pcf_config-success_tile.png)
 
 1. Navigate to the **Cluster Configuration** section on the left navigation bar and enter the following details:
 
@@ -43,7 +45,7 @@ This topic describes how to install and configure Redis Enterprise for Pivotal C
    - **Admin Email**: Provide an email for the account that will have full administrative privileges to the new Redis Enterprise cluster.
    - **Admin account password**: Provide the password for the administrative account.
    - Optionally, for production clusters, you can also provide a static IP address of a set of static IP addresses (comma-separated) to use for cluster nodes. You can also enabled Multiple Availability Zone (Rack) awareness.
-   - Save your changes by clicking **Save**.<br />![Import button](./images/pcf_rp_config_full_screen2.png)
+   - Save your changes by clicking **Save**.
 
     ![Import button](/images/platforms/pcf_rp_config_full_screen2.png)
 
@@ -57,21 +59,21 @@ This topic describes how to install and configure Redis Enterprise for Pivotal C
     You can optionally add, remove or edit plans or choose to keep pre-configured plans.
     Save your changes by clicking **Save**.
 
-1. Optionally, Navigate to the **Loggregator** section on the left navigation bar.
+1. Optionally, navigate to the **Loggregator** section on the left navigation bar.
 
     You can check the box to *enable exposing cluster metric* if you would like to enable Loggregator functionality.
     You can also set the *Metrics scrape interval* in seconds.
     The default is 15 second.
     Save your changes by clicking **Save**.
 
-    ![Import button](./images/pcf_rc_loggregator.png)
+    ![Import button](/images/platforms/pcf_rc_loggregator.png)
 
 1. Navigate to the **Resource Config** section on the left navigation bar.
 
     Ensure there are resources assigned to the required resources for Redis Enterprise.
     If you chose to enable metric export to **Loggregator**  in the previous step, you must ensure that exactly 1 *loggregator-agent* instance is configured.
 
-    ![Import button](./images/pcf_resource_config.png)
+    ![Import button](/images/platforms/pcf_resource_config.png)
 
     {{% note %}}
 Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum hardware specification requirements]
@@ -82,7 +84,7 @@ Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum ha
 
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to deploy Redis Enterprise for PCF tile.
 
-    ![Import button](./images/post-install-dashboard.png)
+    ![Import button](/images/platforms/post-install-dashboard.png)
 
 1. Optionally, double-click the tile, and then click the **Status** tab to view the state of the cluster nodes under the jobs named **redis-pack-node** and **redis-pack-service-broker**.
 
