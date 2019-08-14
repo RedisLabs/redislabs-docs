@@ -88,7 +88,7 @@ A metric data point contains the following properties:
 
 For example, the data points related to the `count-connections` category (number of connections) will be displayed as follows:
 
-```
+```json
    {
       "name": "count-connections",
       "data": [

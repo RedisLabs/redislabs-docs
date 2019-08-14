@@ -17,7 +17,7 @@ For a detailed description on how Tasks fit into the API processing and provisio
 
 When calling an API operation that is processed asynchronously using a task, the response to the request will include a Task status response:
 
-```
+```json
 {
   "taskId": "f3ec0e7b-0548-46e3-82f3-1977012ec738",
   "commandType": "subscriptionCreateRequest",
@@ -51,7 +51,7 @@ The above example contains the link with the title `getTaskStatusUpdates`. The U
 
 For example, the following request returns the updated status of the task identifier (using the value in the `$TASK_ID` environment variable):
 
-```
+```bash
 curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
@@ -60,7 +60,7 @@ curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
 
 An example of a response to the above `getTaskStatusUpdates` request:
 
-```
+```json
 {
   "taskId": "36d4b04d-72d4-4404-8600-a223120a553e",
   "commandType": "subscriptionCreateRequest",
@@ -96,7 +96,7 @@ The list of recently submitted & completed tasks for the current account can be 
 
 This API operation returns a list of tasks for the current account, sorted by descending status update (i.e. most recently updated tasks appear first).
 
-```
+```bash
 curl -s -X GET "https://$HOST/tasks" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
