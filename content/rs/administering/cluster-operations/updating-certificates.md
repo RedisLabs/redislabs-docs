@@ -82,7 +82,7 @@ For example:
 rladmin cluster config min_control_TLS_version 1.2
 ```
 
-### TLS protocol for the data path
+### TLS protocol for the data path and discovery service
 
 To set the minimum TLS protocol for the data path:
 
@@ -99,25 +99,22 @@ For example:
 rladmin cluster config min_data_TLS_version 1.2
 ```
 
-### TLS protocol for the discovery service
+For your changes to take effect on the discovery service, restart the service with the command:
 
-To require TLS for the discovery service:
+```src
+supervisorctl restart sentinel_service
+```
 
-- Default: Not Set
+### Enabling TLS for the discovery service
+
+To enable TLS for the discovery service:
+
+- Default: Allows both TLS and non-TLS connections
 - Syntax: `rladmin cluster config sentinel_ssl_policy <ssl_policy>`
 - ssl_policy values available:
     - `allowed` - Allows both TLS and non-TLS connections
     - `required` - Allows only TLS connections
     - `disabled` - Allows only non-TLS connections
-
-To set minimum TLS version for the discovery service:
-
-- Default: Not Set
-- Syntax: `rladmin cluster config sentinel_ssl_policy min_data_TLS_version <TLS_Version>`
-- TLS versions may be configured with the following options:
-    - For TLSv1 - 1
-    - For TLSv1.1 - 1.1
-    - For TLSv1.2 - 1.2
 
 For example:
 
@@ -125,7 +122,7 @@ For example:
 rladmin cluster config sentinel_ssl_policy required min_data_TLS_version 1.2
 ```
 
-For your changes to take effect, restart the server with the command:
+For your changes to take effect on the discovery service, restart the service with the command:
 
 ```src
 supervisorctl restart sentinel_service
