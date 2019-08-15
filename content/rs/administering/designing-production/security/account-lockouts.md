@@ -9,8 +9,11 @@ aliases: /rs/administering/designing-production/security/rate-limiting/
 
 To help reduce the liklihood of a brute force attack on a client Redis Enterprise Software (RS) implements rate limting features to allow customers to align with organziational policies. This allows an organization to set rules around locking out users if they repeatedly fail to login to the control plane of the cluster. 
 
-**Note:** Enterprise customers frequently will implement similar features in their enterprise LDAP. For enterprise customers who leverage an LDAP server these features may act as a defense in depth strategy or not be implemented at all as desired.
+**Important Note:** Enterprise customers frequently leverage LDAP in order to set rate limiting for login failures. This feature does not apply to external authentication. Rate limiting for external authentication should be set using policies defined by your LDAP provider.
 
+## Unlocking Locked Out Users
+
+Login attempts that are blocked because a user is locked out will be logging in the cluster logs. If a user is locked out of Redis Enterprise you can unlock a user having an admin reset their password. 
 
 ## Account Lockout Strategies
 
@@ -74,6 +77,3 @@ Where the below command sets the lockout reset to 1 hour:
 rladmin tune cluster login_lockout_counter_reset_after 1:00:00
 ```
 
-## Unlocking Locked Out Users
-
-Login attempts that are blocked because a user is locked out will be logging in the cluster logs. If a user is locked out of Redis Enterprise you can unlock a user having an admin reset their password. 
