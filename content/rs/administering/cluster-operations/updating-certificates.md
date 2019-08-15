@@ -30,7 +30,7 @@ future sessions.{{% /note %}}
 
 - Use the REST API to replace the certificate:
 
-    ```bash
+    ```src
 
     curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
 
@@ -78,7 +78,7 @@ To set the minimum TLS protocol for the management path:
 
 For example:
 
-```bash
+```src
 rladmin cluster config min_control_TLS_version 1.2
 ```
 
@@ -96,7 +96,7 @@ To set the minimum TLS protocol for the data path:
 
 For example:
 
-```bash
+```src
 rladmin cluster config min_data_TLS_version 1.2
 ```
 
@@ -122,13 +122,13 @@ To set minimum TLS version for Sentinel:
 
 For example:
 
-```bash
+```src
 rladmin cluster config sentinel_ssl_policy required min_data_TLS_version 1.2
 ```
 
 For your changes to take effect, restart the server with the command:
 
-```bash
+```src
 supervisorctl restart sentinel_service
 ```
 
@@ -142,10 +142,10 @@ When you set the TLS ciphers, the new TLS ciphers are used for all TLS communica
 To set the TLS ciphers:
 
 - Default TLS Protocols: HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
-- Syntax: `rladmin cluster config cipher_suites <`openssl_cipher_list`>`
+- Syntax: `rladmin cluster config cipher_suites 'openssl_cipher_list'`
 - Redis Enterprise Software uses openssl to implement TLS (Lists of available configurations)[<https://www.openssl.org/docs/manmaster/man1/ciphers.html>]
 - The below example uses the Mozilla intermediate compatibility cipher list
 
-```bash
+```src
 rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
 ```
