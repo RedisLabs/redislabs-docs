@@ -8,6 +8,7 @@
 
 ## REWRITE DEFAULTS
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteRule /rc http://localhost:1313/rcessentials
+    RewriteEngine On
+    RewriteRule /rc /rcessentials
+    RewriteRule /rv /rcpro
 </IfModule>
