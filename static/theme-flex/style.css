@@ -1559,6 +1559,17 @@ div#navigation a {
 .highlight + .panel.panel-primary, .highlight + .alert {
   margin-top: 1.3rem;
 }
+.highlight .language-src::-webkit-scrollbar {
+  height: 5px;
+}
+.highlight .language-src::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  height: 5px;
+  background: transparent;  
+}
+.highlight:hover .language-src::-webkit-scrollbar-thumb {
+  background: #ababab;
+}
 .panel.panel-primary.panel-warning i, .panel.panel-primary.panel-caution i {
   color: #b62411;
 }
