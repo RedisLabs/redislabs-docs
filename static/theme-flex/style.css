@@ -366,18 +366,18 @@ section a {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: baseline;
-	align-content: stretch;  
+	align-content: stretch;
 }
 
 .home-options__option {
-  border-radius: 5px;  
+  border-radius: 5px;
   border: 1px solid #eee;
   margin: 15px;
   min-width: 327px;
   padding-top: 10px;
   text-align: center;
   width: 327px;
-  min-height: 394px;  
+  min-height: 394px;
 }
 
 .home-options__option:first-of-type {
@@ -391,7 +391,7 @@ section a {
 }
 
 .home-options__option__icon {
-  height: 90px;  
+  height: 90px;
   position: relative;
 }
 
@@ -409,7 +409,7 @@ section a {
   height: 100%;
   left: 28%;
   position: absolute;
-  top: 0;  
+  top: 0;
   width: 140px;
 }
 
@@ -428,7 +428,7 @@ section a {
   margin: 0 auto;
   padding: 0 10px 0 10px;
   width: 90%;
-  height: 126px;  
+  height: 126px;
 }
 
 .home-options__option ul {
@@ -450,7 +450,7 @@ section a {
   flex: 1;
   font-size: 14px;
   line-height: 1.5;
-  position: relative;  
+  position: relative;
 }
 
 .home-options__option li section i {
@@ -462,7 +462,7 @@ section a {
   padding-left: 4px;
 }
 
-.home-options__option ul section li a:hover {  
+.home-options__option ul section li a:hover {
   color: #3d5051;
   text-decoration: none;
 }
@@ -509,7 +509,7 @@ section a {
   .home-options__option ul section {
     padding-left: 0;
     padding-right: 0;
-  }  
+  }
 }
 
 @media screen and (min-width: 450px) and (max-width: 860px){
@@ -876,13 +876,13 @@ article section.page h1 {
   margin-top: 3.5rem; }
 article section.page h2 {
   margin-top: 2.5rem;
-}  
+}
 article section.page h2::before, article section.page h3::before {
   content:"";
   display:block;
   height: 60px; /* header height*/
   margin: -60px 0 0;
-} 
+}
 article section.page table {
   width: 100%;
   margin-bottom: 2em;
@@ -1810,7 +1810,7 @@ ul.no-bullet li {
   color: #a2a8a8;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .nav-column h6 {
@@ -1973,7 +1973,7 @@ article > aside .menu .menu__version-selector button {
 }
 
 article > aside .menu .menu__version-selector button span.menu__version-selector__toggler {
-  display: none;  
+  display: none;
   font-size: 8px;
   transform: translateY(-1px) translateX(4px);
 }
@@ -1987,7 +1987,7 @@ article > aside .menu .menu__version-selector span.menu__version-selector__toggl
 }
 
 article > aside .menu .menu__version-selector .menu__version-selector__list {
-  background: #f7f7f7;  
+  background: #f7f7f7;
   border: 1px solid #dfdfdf;
   border-top: none;
   display: none;
@@ -2002,8 +2002,8 @@ article > aside .menu .menu__version-selector .menu__version-selector__list a {
   color: #868484;
   display: block;
   padding-left: 10px;
-  width: 100%;  
-}    
+  width: 100%;
+}
 
 article > aside .menu .menu__version-selector .menu__version-selector__list a:hover {
   color: #000;
@@ -2019,7 +2019,7 @@ article > aside .menu .menu__version-selector.open {
 }
 
 article > aside .menu .menu__version-selector.open .menu__version-selector__toggler.opener {
-  display: none;  
+  display: none;
 }
 
 article > aside .menu .menu__version-selector.open .menu__version-selector__toggler.closer {
@@ -2033,7 +2033,7 @@ article > aside .menu .menu__version-selector.open .menu__version-selector__list
 article > aside .menu > li .menu-divider {
   border-top: 1px solid #5d6876;
   height: 1px;
-  left: 20px;  
+  left: 20px;
   margin-left: 0 !important;
   position: absolute;
   top: 10px;
@@ -2581,7 +2581,7 @@ article section.page table.hot-topics-table thead tr {
 article section.page table.hot-topics-table th {
   text-align: left;
   padding: 40px 20px 6px 50px;
-  font-size: 16px;  
+  font-size: 16px;
 }
 
 article section.page table.hot-topics-table th a {
@@ -2605,7 +2605,7 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
 
 @media (max-width: 1366px) {
   article section.page table.hot-topics-table {
-  display: table;    
+  display: table;
   }
 
   article section.page table.hot-topics-table td {
@@ -2640,7 +2640,7 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     padding: 7px 0px 0 10px;
     font-size: 11px;
     line-height: 12px;
-  }  
+  }
 }
 
 @media (max-width: 550px) {
@@ -2820,13 +2820,13 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
 
   article section.page table.hot-topics-table, .hot-topics-title-wrapper {
       width: 99% !important;
-  }  
+  }
 }
 
 @media (max-width: 1366px) {
   article section.page table {
     display: block;
-    overflow-y: auto;    
+    overflow-y: auto;
   }
 
   article section.page table td {
@@ -2880,7 +2880,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
 @supports (-ms-ime-align: auto) {
   /* MS Edge styles */
   article section.page .main-content .highlight {
-    position: relative;    
+    position: relative;
   }
   article section.page pre {
     display: -ms-grid;
@@ -3048,6 +3048,48 @@ a[href*="#no-click"], img[src*="#no-click"] {
   padding-top: 20px;
 }
 
+/* Internal Docs Login */
+#internalDocsLoginDialog {
+  -ms-transform: translateY(-50%);
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  display: none;
+  height: 150px;
+  left: 50%;
+  margin: 0;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 300px;
+}
+
+#internalDocsLoginDialog p {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+#internalDocsLoginDialog .abcRioButton {
+  margin: 0 auto;
+}
+
+#internalDocsLoginDialog i {
+  color: #585858;
+  font-size: 18px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+#internalDocsLoginDialog i:hover {
+  color: #000;
+  cursor: pointer;
+}
+
 /* Internal Page Content */
 #internalLoader {
   display: none;
@@ -3135,13 +3177,13 @@ a[href*="#no-click"], img[src*="#no-click"] {
 }
 
 #internalContent .closeContent {
-  font-size: 16px;  
+  font-size: 16px;
   position: absolute;
   right: 30px;
   top: 22px
 }
 
 #internalContent .closeContent:hover {
-  color: #8d8d8d;  
+  color: #8d8d8d;
   cursor: pointer;
 }

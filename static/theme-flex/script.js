@@ -225,18 +225,51 @@ $(function() {
     });
 });
 
+var onSignIn = function(googleUser) {
+    var profile = googleUser.getBasicProfile();
+
+    if(!isProfileAllowed(profile)) {
+        alert("Email address not allowed.");
+        hideInternalDocsLoginDialog();
+        handleGoogleSignOut();
+        return;
+    }
+
+    if(!localStorage.getItem('auth_token')) {
+        localStorage.setItem('auth_token', 'abc123');
+        window.location.reload();
+    }
+}
+
+var isProfileAllowed = function(profile) {
+    var e = profile.getEmail();
+
+    return /@redislabs.com\s*$/.test(e);
+}
+
 var toggleInternalLogin = function() {
     var isLoggedIn = localStorage.getItem('auth_token');
     
     if(isLoggedIn) {        
         localStorage.removeItem('auth_token');
-        $('#internalToggle').html('Internal Login')
-    } else {
-        localStorage.setItem('auth_token', 'abc123');
-        $('#internalToggle').html('Internal Log out')
+        $('#internalToggle').html('Internal Docs Login');
+        handleGoogleSignOut();
+        window.location.reload();
+        return;
     }
+    
+    $('#internalDocsLoginDialog').show();
+}
 
-    window.location.reload();
+var handleGoogleSignOut = function() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });    
+}
+
+var hideInternalDocsLoginDialog = function() {
+    $('#internalDocsLoginDialog').hide(); 
 }
 
 var handleInternalLoader = function() {
@@ -244,7 +277,7 @@ var handleInternalLoader = function() {
 
     if(isLoggedIn) {        
         $('#internalLoader').css('display', 'inline-block');
-        $('#internalToggle').html('Internal Logout')        
+        $('#internalToggle').html('Internal Docs Logout')        
     }
 }
 
