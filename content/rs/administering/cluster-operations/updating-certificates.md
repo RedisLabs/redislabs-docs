@@ -41,8 +41,10 @@ The below command syntax can be used to replace certificates substituting the be
 - certificate-file-name - The name of your certificate file
 
     ```bash
+    
  rladmin cluster certificate set <certificate-type> certificate_file <certificate-file-name>.pem key_file <key-file-name>.pem
-    ```
+   
+   ```
 
 For example, the following command would replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem"
 
