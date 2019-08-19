@@ -22,36 +22,38 @@ on the browser you use, you might be able to allow the connection for
 this specific session, or add an exception to make this site trusted in
 future sessions.{{% /note %}}
 
-## How to update SSL/TLS certificates
+## How to update TLS certificates
 
-**For versions 5.2.0 and above:** ([Procedures for previous releases](https://docs.redislabs.com/5.2/rs/references/procedures-previous-releases/))
+You can replace an existing certificate on the cluster leveraging the rladmin command-line utility.
 
-{{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
+There are 5 different types of certificates that can be replaced starting in RS version 5.4.x. These may be replaced leveraging the below command.
 
-- Use the REST API to replace the certificate:
+- API - This is the certificate used by the API
+- CM  - This is the certificate used by the management user interface or the cluster manager. It is also used for the sentinel discovery service if you are using sentinel
+- Proxy  - This is the certificate used to establish communication between a client and the databases
+- Syncer  - This is the certificate used to encrypt replication between clusters
+- Metrics_Exporter - This is the certificate used by Prometheus.
 
-    ```src
+The below command syntax can be used to replace certificates substituting the below variables:
 
-    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+- certificate-type - The type of certificate you want to replace
+- key-file-name - The name of your non-password protected key file.
+- certificate-file-name - The name of your certificate file
 
+    ```bash
+ rladmin cluster certificate set <certificate-type> certificate_file <certificate-file-name>.pem key_file <key-file-name>.pem
     ```
 
-    Where:
+For example, the following command would replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem"
 
-    - cert_name - The name of the certificate to replace:
-        - For management UI: `cm`
-        - For REST API: `api`
-        - For database endpoint: `proxy`
-        - For syncer: `syncer`
-    - key - The contents of the *_key.pem file
+   ```bash
+   
+rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 
-    {{% tip %}}The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call. You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.{{% /tip %}}
+   ```
+   
+   When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
-    - cert - The contents of the *_cert.pem file
-
-    The certificate is copied automatically to all nodes in the cluster.
-
-When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
 ## TLS Protocol and Ciphers
 
