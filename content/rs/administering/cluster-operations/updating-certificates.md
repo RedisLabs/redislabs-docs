@@ -26,7 +26,7 @@ future sessions.{{% /note %}}
 
 You can replace an existing certificate on the cluster leveraging the rladmin command-line utility.
 
-There are 5 different types of certificates that can be replaced starting in RS version 5.4.x. These may be replaced leveraging the below command.
+There are 5 different types of certificates that can be replaced starting in RS version 5.4.x. These may be replaced leveraging the below commands where the below certificate types are availible to change:
 
 - API - This is the certificate used by the API
 - CM  - This is the certificate used by the management user interface or the cluster manager. It is also used for the sentinel discovery service if you are using sentinel
