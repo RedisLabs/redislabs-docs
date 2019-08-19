@@ -18,7 +18,7 @@ must set these restrictions in the LDAP service.
 
 ## User Login Lockout
 
-The user login lockout parameters are:
+The parameters for the user login lockout are:
 
 - **Login Lockout Threshold** - The number of failed login attempts allowed before the user account is locked. (Default: 5)
 - **Login Lockout Counter Reset** - The amount of time during which failed login attempts are counted. (Default: 15 minutes)
