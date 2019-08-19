@@ -40,19 +40,17 @@ The below command syntax can be used to replace certificates substituting the be
 - key-file-name - The name of your non-password protected key file.
 - certificate-file-name - The name of your certificate file
 
-    ```bash
-    
+
+```src
  rladmin cluster certificate set <certificate-type> certificate_file <certificate-file-name>.pem key_file <key-file-name>.pem
-   
-   ```
+```
 
 For example, the following command would replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem"
 
-   ```bash
-   
-rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 
-   ```
+```src
+rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
+```
    
    When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
