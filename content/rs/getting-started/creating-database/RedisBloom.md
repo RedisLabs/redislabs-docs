@@ -14,7 +14,7 @@ For this quick start, you will need the following:
 ### Create a new database that uses the Module
 
 1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Select the ReBloom module.
+1. Select the RedisBloom module.
 1. If you want the module to use a custom configuration,
 click **Add configuration** and enter the optional custom configuration.
 1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
