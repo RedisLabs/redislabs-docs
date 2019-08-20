@@ -1,5 +1,5 @@
 ---
-Title: ReBloom Quick Start Tutorial
+Title: RedisBloom Quick Start Tutorial
 description:
 weight: $weight
 alwaysopen: false
@@ -9,12 +9,12 @@ For this quick start, you will need the following:
 
 - [A Redis Enterprise Software cluster with set up already
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
-- Any redis-cli or ReBloom enabled client
+- Any redis-cli or RedisBloom enabled client
 
 ### Create a new database that uses the Module
 
 1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Select the ReBloom module.
+1. Select the RedisBloom module.
 1. If you want the module to use a custom configuration,
 click **Add configuration** and enter the optional custom configuration.
 1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
@@ -77,7 +77,7 @@ case:
 
 ## Using Cuckoo filters in Redis Enterprise Software
 
-Cuckoo filters can also be used as part of the ReBloom module.
+Cuckoo filters can also be used as part of the RedisBloom module.
 You can play with it using redis-cli:
 
 ```src
