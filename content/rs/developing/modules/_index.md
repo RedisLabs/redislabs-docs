@@ -20,9 +20,9 @@ Software (RS) clusters. The available modules are:
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
-- ReJSON
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}})
-    - [Developing with ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+- RedisJSON
+    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisjson-quick-start.md" >}})
+    - [Developing with RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
 - RediSearch Enterprise
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     - [Developing with RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})

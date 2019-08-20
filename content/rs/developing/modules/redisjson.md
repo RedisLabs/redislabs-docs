@@ -1,20 +1,20 @@
 ---
-Title: Developing Applications with ReJSON
+Title: Developing Applications with RedisJSON
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Applications developed with the open source version of ReJSON are 100%
-compatible with ReJSON in Redis Enterprise Software (RS).
+Applications developed with the open source version of RedisJSON are 100%
+compatible with RedisJSON in Redis Enterprise Software (RS).
 
-## ReJSON Path Syntax
+## RedisJSON Path Syntax
 
-Since there is no standard for JSON path syntax, ReJSON implements its
-own. ReJSON's syntax is a subset of common best practices and resembles
+Since there is no standard for JSON path syntax, RedisJSON implements its
+own. RedisJSON's syntax is a subset of common best practices and resembles
 JSONPath not by accident.
 
-Paths always begin at the root of a ReJSON value. The root is denoted by
+Paths always begin at the root of a RedisJSON value. The root is denoted by
 the period character (.). For paths referencing the root's children,
 prefixing the path with the root is optional.
 
@@ -38,7 +38,7 @@ and so on.'
 By definition, a JSON key can be any valid JSON String. Paths, on the
 other hand, are traditionally based on JavaScript's (and in Java in
 turn) variable naming conventions. Therefore, while it is possible to
-have ReJSON store objects containing arbitrary key names, accessing
+have RedisJSON store objects containing arbitrary key names, accessing
 these keys via a path will only be possible if they respect these naming
 syntax rules:
 Names must begin with a letter, a dollar ($) or an underscore (_)
@@ -61,7 +61,7 @@ version.
 
 ## Example
 
-Log into the ReJSON enabled database with redis-cli and the --raw switch
+Log into the RedisJSON enabled database with redis-cli and the --raw switch
 so we can see the raw output:
 
 ```src
@@ -102,7 +102,7 @@ As you can see, you can easily traverse the document structure by path
 to get only the data you want, when you need it. You could also use this
 to increment or another operation on this object.
 
-## ReJSON Commands
+## RedisJSON Commands
 
-For the authoritative list of ReJSON commands, please go
-[here](http://rejson.io/).
+For the authoritative list of RedisJSON commands, please go
+[here](http://redisjson.io/).
