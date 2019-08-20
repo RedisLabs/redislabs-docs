@@ -13,9 +13,9 @@ RHEL/CentOS 6.x
 Redis Labs develops, certifies, and packages modules for use with Redis Enterprise
 Software (RS) clusters. The available modules are:
 
-- ReBloom
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
-    - [Developing with ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+- RedisBloom
+    - [Quick Start]({{< relref "/rs/getting-started/creating-database/RedisBloom.md" >}})
+    - [Developing with RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 - RedisGraph
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)

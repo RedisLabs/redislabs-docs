@@ -77,7 +77,7 @@ case:
 
 ## Using Cuckoo filters in Redis Enterprise Software
 
-Cuckoo filters can also be used as part of the ReBloom module.
+Cuckoo filters can also be used as part of the RedisBloom module.
 You can play with it using redis-cli:
 
 ```src

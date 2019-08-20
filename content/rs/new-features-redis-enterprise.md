@@ -36,7 +36,7 @@ Enterprise is known for.
 
 Redis Labs developed and certified these modules for use with Redis Enterprise Software (RS):
 
-- [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+- [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
       filters are probabilistic data structures that do a very good job at
       quickly determining if something is contained within a set.

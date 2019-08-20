@@ -67,7 +67,7 @@ Redis Enterprise Pack (RS). The modules are:
 - [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
     - Now you have the convenience JSON as a built-in data type and
       easily able to address nested data via a path.
-- [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+- [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
       filters are probabilistic data structures that do a very good job at
       quickly determining if something is contained within a set.

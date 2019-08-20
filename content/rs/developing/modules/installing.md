@@ -12,7 +12,7 @@ Enterprise Software (RS). There are two types
     the [Redis Enterprise downloads
     page](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo). For more specific
     information on each module:
-    1. [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
     1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})

@@ -41,7 +41,7 @@ set to 1. This looks fairly similar to how buckets in a hash table are
 mapped. To check if an item is present or not, the hash is computed and
 the filter sees if the corresponding bit is set or not.
 
-![rebloom-hash1](/images/rs/rebloom-hash1.png)
+![RedisBloom-hash1](/images/rs/rebloom-hash1.png)
 
 Of course, this is subject to collisions. If a collision occurs, the
 filter will return a false positive - indicating that the entry is
@@ -61,7 +61,7 @@ The actual value of *bpe* is determined at the time the filter is
 created. Generally the more bits per element, the lower the likelihood
 of false positives.
 
-![rebloom-hash3](/images/rs/rebloom-hash3.png)
+![RedisBloom-hash3](/images/rs/rebloom-hash3.png)
 
 In the example above, all three bits would need to be set in order for
 the filter to return a positive result.
@@ -148,7 +148,7 @@ consumes less memory but may not be ideal for large filters:
 
 ### Benchmarks, Speed and Implementation
 
-Rebloom uses a modified version of
+RedisBloom uses a modified version of
 [libloom](https://github.com/jvirkki/libbloom), with some additional
 enhancements:
 
@@ -170,7 +170,7 @@ enhancements:
 | redablooms     | 20k/s          | 7k/s           |
 | lua            | 29k/s          | 25k/s          |
 | bloomd         | 250k/s         | 200k/s         |
-| rebloom        | 400k/s         | 440k/s         |
+| RedisBloom        | 400k/s         | 440k/s         |
 
 Once all was done, I benchmarked it and compared it to some other
 implementations. I wrote this filter initially because a [previous
@@ -179,7 +179,7 @@ slow](https://github.com/RedisLabsModules/redablooms/issues/4). Compared
 to a Lua implementation which yielded 30k/sec, redablooms was slower
 with 20k/sec.
 
-Running the equivalent command with rebloom:
+Running the equivalent command with RedisBloom:
 
 ```src
  mnunberg@mbp15III ~/Source/rebloom $ redis-benchmark -e -r 100000000 -n 1000000 -c 20 bf.add test __rand_int__
@@ -200,7 +200,7 @@ With pipelining and perhaps modifying the thread count, it would have
 been possible to get even nicer numbers, but a fair benchmark is an
 apples-to-apples comparison.
 
-I compared bloomd's own benchmark to an equivalent rebloom command set.
+I compared bloomd's own benchmark to an equivalent RedisBloom command set.
 Bloomd by default uses an initial capacity of 100k and an error ratio of
 1/10k, or 0.0001. Its benchmark program simply sets 1,000,000 items and
 then reads them. It uses fire-and-forget semantics when setting items so
@@ -218,7 +218,7 @@ mnunberg@mbp15III ~/Source/bloomd $ ./bench
 So we get 1M sets in 4 seconds, or 250K op/s, and 1M reads in 6 seconds,
 or 166K ops/sec.
 
-The equivalent with rebloom:
+The equivalent with RedisBloom:
 
 ```src
  mnunberg@mbp15III ~/Source/rebloom $ redis-cli del test; redis-cli bf.reserve test 0.0001 100000; redis-benchmark -e -r 1000000 -l -n 1000000 -P 100 -c 1 bf.add test __rand_int__
@@ -238,7 +238,7 @@ I let this loop for a while because unlike the bloomd benchmark which
 uses sequential keys, redis-bench uses random IDs. this means that there
 would be a greater chance for collision.
 
-Rebloom performs at 370k/s, or about 50% faster than bloomd.
+RedisBloom performs at 370k/s, or about 50% faster than bloomd.
 
 For reading:
 
