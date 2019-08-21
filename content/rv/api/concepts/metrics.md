@@ -6,11 +6,12 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 Metrics API provides programmatic access to database usage and performance data.
-The data exposed by the metrics API resembles but is not identical to the data exposed by the database metrics in the Redis Labs web UI.
+The metrics API shows data that similar to the data that the Redis Labs web UI shows in the database metrics.
 
-### Metric spans and intervals
+## Metric spans and intervals
 
-Metrics API data is provided per database based on a specified (or default) metric time span parameter that specifies a requested time range. This metric span parameter indicates the requested time period covered by the data points in the mmetrics APIresponse.
+Metrics API data shows the data for the database that you request and the metric span that you request.
+The metric span determines the time period for the data points in the metrics API response.
 
 | Metric Span | Data duration | Data point interval | Data point collection |
 |---|---|---|---|
@@ -26,67 +27,31 @@ Metrics API data is provided per database based on a specified (or default) metr
 The data point interval represents a best-effort and is not an absolute or unvarying interval. The exact interval between one data point and the next may vary and the interval values may change.
 {{% /note %}}
 
-### High frequency on-demand metric spans
+### High frequency, on-demand metric spans
 
-The `1minute` and `5minutes` metric spans are defined as "high frequency" and are therefore collected "on demand". This means that they are collected only when requested, and for a duration of no more than 5 minutes since the previous request.
+The `1minute` and `5minutes` metric spans are high frequency intervals that require on-demand collection.
+The API request collects the data since the last request (up to 5 minutes) only when you request it.
 
 For example:
 
-- At the first request for a `1minute` metric span, the metrics API operation returns an empty data-points array. This is because the first call triggers the action of collecting high frequency metrics data for this metric span, but does not contain any previously collected data points.
-- Starting with any subsequent call (for a `1minute` metric span for the same database) a few seconds later, the collected data starts accumulating and appears in the metrics API response.
-- If no additional requests are made during a period of 5 minutes or more (for a `1minute` metric span for the same database), the high frequency data collection are terminated and any subsequent requests are considered as a first request to the `1minute` metric span for that database.
+- At the first request for a `1minute` metric span, the metrics API operation returns an empty data-points array.
+    This is because the first request triggers the collection of high-frequency metrics data for this metric span,
+    but does not contain any previously collected data points.
+- The next `1minute` request to the database within 5 minutes shows the metrics collected since the last request.
+- Any break in requests to the database for more than 5 minutes stops the data collection.
+    The next `1minute` request to the database starts the data collection again.
 
-### Metric categories
-
-The data points collected and reported by the metrics API are grouped in categories. Each category contains the data points collected for the specific category measurement:
-
-| Category | Description |
-|---|---|
-| bigstore-hits | |
-| bigstore-overwrites | |
-| count-connections | |
-| count-keys | Number of keys in the database |
-| disk-fragmentation-ratio | |
-| evicted-objects | Number of evicted objects |
-| expired-objects | Number of expired objects |
-| flash-big-del | |
-| flash-big-fetch | |
-| flash-big-io-ratio | |
-| flash-big-write | |
-| flash-used | |
-| hits-ram | |
-| hits-read | |
-| hits-write | |
-| latency-average | Average latency for all requests (in milliseconds) |
-| latency-average-read | Average latency for read requests (in milliseconds) |
-| latency-average-write | Average latency for write requests (in milliseconds) |
-| latency-other | Average latency for requests that are not read or write (in milliseconds) |
-| memory-fragmentation-ratio | |
-| memory-size-calculated | |
-| ram-big-delete | |
-| ram-big-fetch | |
-| ram-big-write | |
-| ram-overhead | |
-| ram-overwrites | |
-| ram-used | |
-| redis-big-io-ratio | |
-| requests-other | Number of requests that are not read or write |
-| requests-read | Number of read requests |
-| requests-write | Number of write requests |
-| values-in-flash | |
-| values-in-ram | |
-
-### Metric data points
+## Metric data points
 
 A metric data point contains these properties:
 
 | Property | Description |
 |---|---|
-| Category | Each data point is collected and reported within the context of a measurement topic called a "category". Each category has a specified measurement unit, for example: milliseconds, megabytes, percentage |
-| Value | The value of the data point, defined in the specified measurement unit of the category for the data point |
-| Timestamp | The exact time at which the data point was collected, defined in ISO-8601 date format and in the UTC timezone (for example: `2019-03-15T14:26:02Z`) |
+| Category | Each data point is shown in a category and with the measurement unit for that category, for example: milliseconds, megabytes, percentage |
+| Value | The value of the data point, defined with the measurement unit of the category for the data point |
+| Timestamp | The exact collection time for the data point in ISO-8601 date format and in the UTC timezone, for example: 2019-03-15T14:26:02Z |
 
-For example, the data points related to the `count-connections` category (number of connections) are displayed as:
+For example, a request for data points in the `count-connections` (number of connections) category returns:
 
 ```json
    {
@@ -108,6 +73,48 @@ For example, the data points related to the `count-connections` category (number
     },
 ```
 
-### Usage example
+## Metric Categories
 
-See [Query metrics and usage statistics]({{< relref  "/rv/api/how-to/metrics-and-performance-data.md#metrics-query-example" >}}).
+Data points are shown divided into these categories:
+
+| Category | Description | Units |
+|---|---|---|
+| bigstore-hits | | |
+| bigstore-overwrites | | |
+| count-connections | | |
+| count-keys | Number of keys in the database | | |
+| disk-fragmentation-ratio | | |
+| evicted-objects | Number of evicted objects | |
+| expired-objects | Number of expired objects | |
+| flash-big-del | | |
+| flash-big-fetch | | |
+| flash-big-io-ratio | | |
+| flash-big-write | | |
+| flash-used | | |
+| hits-ram | | |
+| hits-read | | |
+| hits-write | | |
+| latency-average | Average latency for all requests | milliseconds |
+| latency-average-read | Average latency for read requests | milliseconds |
+| latency-average-write | Average latency for write requests | milliseconds |
+| latency-other | Average latency for requests that are not read or write | milliseconds |
+| memory-fragmentation-ratio | | |
+| memory-size-calculated | | |
+| ram-big-delete | | |
+| ram-big-fetch | | |
+| ram-big-write | | |
+| ram-overhead | | |
+| ram-overwrites | | |
+| ram-used | | |
+| redis-big-io-ratio | | |
+| requests-other | Number of requests that are not read or write | |
+| requests-read | Number of read requests | |
+| requests-write | Number of write requests | |
+| values-in-flash | | |
+| values-in-ram | | |
+
+## Usage Example
+
+```shell
+{{% embed-code "rv/api/70-query-metrics.sh" %}}
+```
