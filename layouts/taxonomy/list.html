@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{if .Content}}
+{{ .Content }}
+{{else }}
+{{ $paginator := .Paginator }}
+
+{{ range $index, $page := $paginator.Pages }}
+    <article class="post {{ .Section }}">
+        <section class="post-excerpt">
+            <a href="{{.RelPermalink}}">{{ .Title }}</a></p>
+        </section>
+        <footer class="footline" >
+            
+            {{if .Params.tags }}  
+                {{ range $index, $tag := .Params.tags }}
+                    <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+                {{ end }}
+            {{end}}
+    
+        </footer>
+    </article>
+{{ end }}
+
+<div style="margin-bottom:2rem"></div>
+
+{{ partial "pagination.html" $paginator }}
+
+{{end}}
+{{end}}

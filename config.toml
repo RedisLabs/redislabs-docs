@@ -79,3 +79,4 @@ url = "https://redislabs.com/get-started/"
 weight = 80
 
 [taxonomies]
+    tag = "tags"
