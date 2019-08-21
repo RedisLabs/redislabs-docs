@@ -10,13 +10,13 @@ Just to get you started, here is a simple explanation of how to contribute conte
 ## Edit in GitHub vs. Open an Issue
 
 If you see a problem on a page, either with content or formatting, and you think you can fix it,
-you can click on the *Edit on GitHub* link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
+you can click on the *Edit on GitHub- link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
 
 If you see a problem on a page but you don't know how to fix it,
 go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a *New Issue*.
 
 {{% note %}}
-If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
+If you do not have the information to enter into the issue, **DO NOT*- open a new blank issue.
 {{% /note %}}
 
 ## Branches vs. Forks
@@ -27,7 +27,7 @@ After every commit to a branch, the site is re-built within about 1 minute so yo
 
 If you are not a member of the repository, you can fork the repository to a branch in your account
 and make your changes on your private branch.
-**You must** use a new branch for every change.
+**You must*- use a new branch for every change.
 If the changes that you make resolve two separate issues, make two separate PRs.
 
 After you commit your changes to the public repo or your forked repo,
@@ -69,10 +69,10 @@ If you do not have content that can serve as the landing page for the section,
 you can use the `children` shortcode to show all of the sub-topics for the section.
 
 ```src
-{{%/* children style="h2" description="true" */%}}
+{{%/- children style="h2" description="true" */%}}
 ```
 
-## Writing an Article Content
+## Writing Article Content
 
 The structure of an article is:
 
@@ -103,8 +103,8 @@ and the concepts must explain any background information that is needed to know 
 
             1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
                 By default, the address is: `https://<RS_address>:8443`
-            1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
-            1. Enter the name, email, and password for the user, select the **Admin** role,
+            1. Go to **settings > team*- and click ![Add](/images/rs/icon_add.png#no-click "Add").
+            1. Enter the name, email, and password for the user, select the **Admin*- role,
                 and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
             ![Service Account Creation](/images/rs/create-service-account.png)
@@ -125,11 +125,17 @@ and the concepts must explain any background information that is needed to know 
 - Subject and verb must agree in number - blueprint exists, blueprints exist
 - Don’t start a sentence with “also”
 - Instead of writing “In this section” write what is in the section:
-    - Incorrect - `In this section detailed description of available development tools, like built-in features, widget objects, functions, templating mechanism and available libraries is provided.`
-    - Correct - `The widget development tools include built-in features, widget objects, functions, templating mechanism and available libraries.`
+    - Incorrect - `In this section detailed description of available development tools, like built-in features, widget objects, functions, template mechanism and available libraries is provided.`
+    - Correct - `The widget development tools include built-in features, widget objects, functions, template mechanism and available libraries.`
 - Link from text itself instead of “see …”. For example:
     - Incorrect - `Using the React Utility is the recommended method, and it requires a build operation. You must use the build system described in [Widget building]({{< relref "rs/_index.md" >}}) section.`
     - Correct - `Using the React Utility is the recommended method, and it requires a build operation in the [widget build system]({{< relref "rs/_index.md" >}}).`
+- Terminology for APIs:
+    - Your code calls an API, which usually returns something.
+    - A call to a REST API sends an HTTP Request to the API URL and the server that hosts that URL usually returns an HTTP Response.
+    - The Request and the Response usually consist of Headers and a Body. Query and Form parameters can also be part of the Request.
+    - The Request Method determines the action that the Server should perform to process the Request.
+    - The CRUD actions are what the server does when it processes the POST, GET, PATCH/PUT, DELETE methods.
 
 ### Writing tone
 
@@ -142,4 +148,4 @@ Here are some examples:
 |  Text type | Wrong                                       | Correct                                | Explanation                                           |
 | --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
-| Prodedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
+| Procedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
