@@ -5,29 +5,46 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-The cluster license key enables features and capacity within Redis
-Enterprise Software. A key can be added, or updated at any time in a
-cluster's life cycle. The absence of a key means the cluster is in trial
-mode.
+The cluster key (or license) enables features and capacity within Redis Enterprise Software.
+You can add or update a cluster key at any time in a cluster lifecycle.
+When the cluster does not have a cluster key, the cluster is in trial mode.
 
 ## Trial Mode
 
-A cluster without a key is running in trial mode. Trial mode is limited
-to thirty days and a total of four shards, including master and slave
+Trial mode is limited to thirty days and a total of four shards, including master and slave
 shards. Any new installation starts its thirty-day clock from the day
 the cluster setup was done (with the first cluster node provisioned).
 This mode allows all features to be enabled, including Redis on Flash,
 during the trial period.
 
+## Viewing the Cluster Key
+
+You can see the cluster key either:
+
+- Web UI - Go to: **settings** > **general**
+
+    The cluster key string is shown.
+- REST API - GET `https://localhost:9443/v1/license`
+
+    The REST API response includes:
+    - license - The cluster key string
+    - expired - If the cluster key is expired (True or False)
+    - activation_date - The date of the cluster key activation
+    - expiration_date - The date of the cluster key expiration
+    - shards_limit - The number of shards allowed by the cluster key
+    - features - RS features enabled by the cluster key, such as bigstore (RoF)
+
 ## Adding or Updating a Cluster Key
 
-A key can be input into the cluster either using rladmin during cluster
-setup or afterward through the web UI. In the web UI, go to **Settings
--\> General** and paste your cluster key into the form field for it.
-Click the **Save** button.
+{{% note %}}
+After you add a cluster key, you cannot remove the key to return the cluster to trial mode.
+{{% /note %}}
 
-**Note**: Once a key is added, you can not remove or revert the cluster
-to trial mode, but the key can be updated.
+You can add a cluster key to the cluster either:
+
+- During cluster setup using the web UI or CLI
+- After cluster setup using the web UI -
+    Go to **settings** > **general**, paste your cluster key into the **cluster key** field, and click the **Save** button.
 
 An existing cluster key can be updated at any time provided the new
 cluster license key is valid. If saving of a new cluster key fails, the
@@ -36,22 +53,19 @@ existing key stays in effect.
 
 ## Expired Cluster Key
 
-If the current date is not between the start and end date embedded in
-the key, the key has expired.
+When the license is expired:
 
-When the license has expired, you cannot do the following operations:
+- You cannot do these actions:
 
-- Change database settings including security and config options
-- Add/Remove new database
-- Upgrade database to a new version
-- Add/Remove new node
+    - Change database settings including security and configuration options
+    - Add/remove a database
+    - Upgrade a database to a new version
+    - Add/remove a node
 
-You can perform the following operations even if your key fails to
-update:
+- You can do these actions:
 
-- View the UI: cluster, node and database settings, metrics at any
-    resolutions (sec to min to hour etc)
-- Change cluster settings including license key, security for admins
-    and cluster alerts.
-- over when a node fails and explicitly migrate shard between nodes
-- Upgrade node to a new version
+    - Login to the web UI and view settings and metrics at all resolutions
+        for the cluster, nodes and databases
+    - Change cluster settings including license key, security for administrators, and cluster alerts
+    - Failover when a node fails and explicitly migrate shard between nodes
+    - Upgrade node to a new RS version
