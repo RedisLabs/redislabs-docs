@@ -1,5 +1,5 @@
 ---
-Title: Memory Mangement with Redis Enterprise Software (RS)
+Title: Memory Management with Redis Enterprise Software (RS)
 description:
 weight: $weight
 alwaysopen: false
@@ -15,7 +15,7 @@ The behavior depends on the [eviction policy]({{< relref "/rs/administering/data
 set on each database by the administrator.
 
 RoF [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
-manages memory in a different way so that Flash memory (SSDs) can also be used
+manages memory in a different way so that Flash memory (SSD) can also be used
 to store data.
 
 ## What happens when Redis Enterprise Software is low on RAM?
@@ -25,7 +25,7 @@ If a node is low on RAM, RS follows this order of priority:
 1. If there are other nodes available, RS migrates shards to other nodes.
 2. If the eviction policy allows eviction, RS causes shards to release memory,
 which can result in data loss.
-3. If the eviction poilcy does not allow eviction, RS sends
+3. If the eviction policy does not allow eviction, RS sends
 out of memory (OOM) responses.
 4. If shards cannot free memory, RS relies on the OS processes to kill slaves,
 but tries to avoid killing masters.
