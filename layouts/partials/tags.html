@@ -1,0 +1,8 @@
+<!-- layouts/partials/tags.html -->
+
+{{ $taxonomy := "tags" }}
+{{if .Params.tags }}  
+{{ range $index, $tag := .Params.tags }}
+    <a class="label label-default" href="{{$.Site.BaseURL}}tags/{{ $tag | urlize }}/">{{ $tag }}</a>
+{{ end }}
+{{end}}
