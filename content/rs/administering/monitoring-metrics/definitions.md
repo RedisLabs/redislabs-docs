@@ -21,7 +21,7 @@ available.
 | Fork CPU usage | Database, Shard | CPU usage of Redis child forks (for replication, BGSAVA...) |  |
 | Free disk space | Cluster, Node | Remaining unused disk space |  |
 | Free ephemeral disk space | Cluster, Node | Remaining unused disk space on the ephemeral path |  |
-| Free RAM | Cluster, Node | Remaining unused RAM memory |  |
+| Free RAM | Cluster, Node | RAM available for system use |  |
 | Hit ratio | Database, Shard | Calculated as number of ops on existing keys out of the total number of ops | `number_of_ops_on_exsiting_keys` / `total_ops` |
 | Incoming traffic | Cluster, Node, Database | Total incoming traffic (in bytes/sec) to the database |  |
 | Incoming traffic compressed | CRDB | Total incoming compressed traffic (in bytes/sec) to the database |  |
