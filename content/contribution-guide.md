@@ -69,7 +69,7 @@ If you do not have content that can serve as the landing page for the section,
 you can use the `children` shortcode to show all of the sub-topics for the section.
 
 ```src
-{{%/- children style="h2" description="true" */%}}
+{{%/* children style="h2" description="true" */%}}
 ```
 
 ## Writing Article Content
