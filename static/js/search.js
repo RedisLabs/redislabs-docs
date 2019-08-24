@@ -13,30 +13,33 @@ function initLunr() {
     // First retrieve the index file
     $.getJSON(baseurl +"index.json")
         .done(function(index) {
-            pagesIndex =   index;
-            // Set up lunrjs by declaring the fields we use
-            // Also provide their boost level for the ranking
-            lunrIndex = new lunr.Index
-            lunrIndex.ref("uri");
-            lunrIndex.field('title', {
-                boost: 15
-            });
-            lunrIndex.field('tags', {
-                boost: 10
-            });
-            lunrIndex.field("content", {
-                boost: 5
-            });
-            lunrIndex.field("categories", {
-                boost: 1
-            });            
+            $.getJSON(baseurl +"index_internal.json")
+                .done(function(indexInternal) {
+                    pagesIndex = index.concat(indexInternal);
+                    console.log("EVO GAAA ::: ", pagesIndex)
+                    // Set up lunrjs by declaring the fields we use
+                    // Also provide their boost level for the ranking
+                    lunrIndex = new lunr.Index
+                    lunrIndex.ref("uri");
+                    lunrIndex.field('title', {
+                        boost: 15
+                    });
+                    lunrIndex.field('tags', {
+                        boost: 10
+                    });
+                    lunrIndex.field("content", {
+                        boost: 5
+                    });
+                    lunrIndex.field("categories", {
+                        boost: 1
+                    });            
 
-            // Feed lunr with each file and let lunr actually index them
-            pagesIndex.forEach(function(page) {
-                lunrIndex.add(page);
-            });
-            lunrIndex.pipeline.remove(lunrIndex.stemmer)
-        })
+                    // Feed lunr with each file and let lunr actually index them
+                    pagesIndex.forEach(function(page) {
+                        lunrIndex.add(page);
+                    });
+                    lunrIndex.pipeline.remove(lunrIndex.stemmer)
+        })})
         .fail(function(jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
             console.error("Error getting Hugo index file:", err);
