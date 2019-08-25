@@ -3157,7 +3157,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
 }
 
 #internalContent {
-  border: 1px solid #eee;
+  border: 2px solid #b62311;
   display: none;
   padding: 60px 30px 20px 30px;
   position: relative;

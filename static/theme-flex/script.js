@@ -1,9 +1,18 @@
 jQuery(document).ready(function() {
     var ii = jQuery('.internal-invoker');
-    if(ii && localStorage.getItem('auth_token')) {
+    var hasToken = localStorage.getItem('auth_token');
+
+    if(ii && hasToken) {
         ii.css('display', 'inline-block');
     } else {
         ii.hide();
+    }
+
+    if(hasToken) {
+        var si = (location.search.split('si=')[1] || '').split('&')[0];
+        if(si && si === 'true') {
+            getInternalContent(location.pathname.slice(0, -1) + '.md');
+        }
     }
 
     jQuery('.category-icon').on('click', function() {
@@ -353,8 +362,8 @@ function renderInternalContent(content) {
     $('#internalContent').show();
 }
 
-function fetchInternalContent(pageID){
-    var url = 'https://api.github.com/repos/HarunD/internal-md-experiment/contents/README.md';
+function showInternalContent(path){
+    var url = 'https://api.github.com/repos/HarunD/internal-md-experiment/contents/content' + path;
     toggleInternalContentLoader('on');
     var result = null;
     $.ajax({
@@ -363,7 +372,7 @@ function fetchInternalContent(pageID){
         dataType: 'html',
         async: true,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token b323b8f5193c10bc475acf5573ba666fd9d88d70");
+            xhr.setRequestHeader("Authorization", "token acc_token");
             xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
         },        
         success: function(data) {
@@ -372,19 +381,24 @@ function fetchInternalContent(pageID){
         },
         error: function() {
             toggleInternalContentLoader('off');
-            alert("Error loading internal content");
+            console.error("Error loading internal content");
+            renderInternalContent("No internal content for this page could be loaded.");
         }
     });
     FileReady = true;
     return result;
 }
 
-var getInternalContent = function(page) {            
+var getInternalContent = function(path) {    
     var isLoggedIn = localStorage.getItem('auth_token');
     
     if(!isLoggedIn) return;
 
-    var markdown_source = fetchInternalContent(page);
+    if(!path) {
+        path = location.pathname.slice(0, -1) + '.md';
+    }    
+
+    var markdown_source = showInternalContent(path);
 }
 
 var hideInternalContent = function() {

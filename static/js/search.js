@@ -10,40 +10,77 @@ function initLunr() {
         baseurl = baseurl+'/'
     };
 
+    var internalIndex = null;
+    var hasToken = localStorage.getItem('auth_token');
+
+    if(hasToken) {
+        internalIndex = buildInternalIndex();
+    }
+
     // First retrieve the index file
     $.getJSON(baseurl +"index.json")
         .done(function(index) {
-            $.getJSON(baseurl +"index_internal.json")
-                .done(function(indexInternal) {
-                    pagesIndex = index.concat(indexInternal);
-                    console.log("EVO GAAA ::: ", pagesIndex)
-                    // Set up lunrjs by declaring the fields we use
-                    // Also provide their boost level for the ranking
-                    lunrIndex = new lunr.Index
-                    lunrIndex.ref("uri");
-                    lunrIndex.field('title', {
-                        boost: 15
-                    });
-                    lunrIndex.field('tags', {
-                        boost: 10
-                    });
-                    lunrIndex.field("content", {
-                        boost: 5
-                    });
-                    lunrIndex.field("categories", {
-                        boost: 1
-                    });            
+            if(hasToken && internalIndex) {
+                index = index.concat(internalIndex);
+            }
 
-                    // Feed lunr with each file and let lunr actually index them
-                    pagesIndex.forEach(function(page) {
-                        lunrIndex.add(page);
-                    });
-                    lunrIndex.pipeline.remove(lunrIndex.stemmer)
-        })})
+            pagesIndex = index;
+            // Set up lunrjs by declaring the fields we use
+            // Also provide their boost level for the ranking
+            lunrIndex = new lunr.Index
+            lunrIndex.ref("uri");
+            lunrIndex.field('title', {
+                boost: 15
+            });
+            lunrIndex.field('tags', {
+                boost: 10
+            });
+            lunrIndex.field("content", {
+                boost: 5
+            });
+            lunrIndex.field("categories", {
+                boost: 1
+            });
+            lunrIndex.field("description", {
+                boost: 0
+            });        
+
+            // Feed lunr with each file and let lunr actually index them
+            pagesIndex.forEach(function(page) {
+                lunrIndex.add(page);
+            });
+            lunrIndex.pipeline.remove(lunrIndex.stemmer)
+        })
         .fail(function(jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
             console.error("Error getting Hugo index file:", err);
         });
+}
+
+// Build the index of internal docs
+function buildInternalIndex() {
+    var url = 'https://api.github.com/repos/HarunD/internal-md-experiment/contents/index.json';
+    var internalIndex = null;
+
+    $.ajax({
+        url: url, 
+        type: 'get', 
+        dataType: 'html',
+        async: false,
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "token b323b8f5193c10bc475acf5573ba666fd9d88d70");
+            xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
+        },        
+        success: function(data) {
+            internalIndex = JSON.parse(data);
+        },
+        error: function(error) {
+            console.log("Error getting internal index: ", error);
+            return null;
+        }
+    });   
+    
+    return internalIndex;
 }
 
 /**
@@ -83,10 +120,16 @@ $( document ).ready(function() {
                 item.context = len > 1? '...' + text[0].trim() + '...' : null;
             }
             item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
+
+            var uri = item.uri + '?s=' + term;
+            if(item.description === 'internal_content') {                
+                uri = uri.replace('content', '').replace('.md', '') + '&si=true';
+            }
+
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '?s=' + term + '"' +
+                'data-uri="'+ uri + '"' +
                 'data-context="' + item.context + '">' +
                     '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
                     '<div class="context">' + (item.context || '') +'</div>' +
