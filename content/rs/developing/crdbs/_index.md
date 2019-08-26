@@ -189,14 +189,19 @@ If a member CRDB is in an out of memory situation, that member is marked
 "inconsistent" by RS, the member stops responding to user traffic, and
 the syncer initiates full reconciliation with other peers in the CRDB.
 
-## INFO
+## CRDB Key Counts
 
-The INFO command shows these statistics differently for CRDBs:
+Keys are counted differently for CRDBs:
 
-- DBSIZE (in `shard-cli info`) reports key header instances, not unique keys.
-- The keys count in DBSIZE (in `shard-cli info`) can be less than Expires (in `bdb-cli info`)
-  because expires are not always removed when a key becomes a tombstone.
+- DBSIZE (in `shard-cli dbsize`) reports key header instances
+    that represent multiple potential values of a key before a replication conflict is resolved.
+- expired_keys (in `bdb-cli info`) can be more than the keys count in DBSIZE (in `shard-cli dbsize`) 
+    because expires are not always removed when a key becomes a tombstone.
+    A tombstone is a key that is logically deleted but still takes memory
+    until it is collected by the garbage collector.
 - The Expires average TTL (in `bdb-cli info`) is computed for local expires only.
+
+## INFO
 
 The INFO command has an additional crdt section which provides advanced
 troubleshooting information (applicable to support etc.):
