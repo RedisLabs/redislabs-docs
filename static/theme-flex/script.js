@@ -236,7 +236,7 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
     }
 };
 
-function setPageFeedback(kind, category, pageTitle) {
+function setPageFeedback(kind, pageTitle, category) {
     setFeedbackMessage(kind, category, pageTitle);
 
     if (window.ga) {
