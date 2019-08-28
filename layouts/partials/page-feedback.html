@@ -7,7 +7,6 @@
         <span class="page-feedback__option" onclick="setPageFeedback(0, {{ htmlEscape .Title}}, {{if .Params.categories}}{{ index .Params.categories 0}}{{end}})">
             No
         </span>
-
         <i class="chevron down" onclick="hidePageFeedback()"></i>
     </div>
     <div id="page-feedback-closed">
