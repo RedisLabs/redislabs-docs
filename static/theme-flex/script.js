@@ -258,7 +258,7 @@ function setFeedbackMessage(kind, category, pageTitle) {
         $('#page-feedback-open').html('Thanks for the feedback!');
     } else {
         $('#page-feedback-open')
-        .html('Consider opening a GitHub <a style="text-decoration: underline;cursor:pointer;" href="https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=&labels=&template=documentation-bug-report.md&title='+ category + ' - ' + pageTitle +'" target="_blank" rel="noopener noreferrer">issue</a>.');
+        .html('Thanks for your feedback! You can help improve the page by opening a <a style="text-decoration: underline;cursor:pointer;" href="https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=&labels=&template=documentation-bug-report.md&title='+ category + ' - ' + pageTitle +'" target="_blank" rel="noopener noreferrer">GitHub issue</a>.');
     }
     setTimeout(function() {
         $('.page-feedback').hide();
