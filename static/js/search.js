@@ -68,7 +68,7 @@ function buildInternalIndex() {
         dataType: 'html',
         async: false,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token b323b8f5193c10bc475acf5573ba666fd9d88d70");
+            xhr.setRequestHeader("Authorization", "token ACC_TOKEN");
             xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
         },        
         success: function(data) {
