@@ -1,10 +1,10 @@
 <div class="page-feedback">
     <div id="page-feedback-open">
         Was this page helpful?
-        <span class="page-feedback__option" onclick="setPageFeedback(1)">
+        <span class="page-feedback__option" onclick="setPageFeedback(1, {{ index .Params.categories 0}}, {{ htmlEscape .Title}})">
             Yes
         </span>
-        <span class="page-feedback__option" onclick="setPageFeedback(0)">
+        <span class="page-feedback__option" onclick="setPageFeedback(0, {{ index .Params.categories 0}}, {{ htmlEscape .Title}})">
             No
         </span>
 

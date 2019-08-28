@@ -236,8 +236,8 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
     }
 };
 
-function setPageFeedback(kind) {
-    setFeedbackMessage();
+function setPageFeedback(kind, category, pageTitle) {
+    setFeedbackMessage(kind, category, pageTitle);
 
     if (window.ga) {
         window.ga('send', {
@@ -247,15 +247,19 @@ function setPageFeedback(kind) {
             eventLabel: window.location.pathname,
             eventValue: kind,
             hitCallback: function() {
-                console.log('GA Event sent');
                 setFeedbackMessage();
             }
         });
     }
 }
 
-function setFeedbackMessage() {
-    $('#page-feedback-open').html('Thanks for the feedback!');
+function setFeedbackMessage(kind, category, pageTitle) {
+    if(kind === 1) {
+        $('#page-feedback-open').html('Thanks for the feedback!');
+    } else {
+        $('#page-feedback-open')
+        .html('Consider opening a GitHub <a style="text-decoration: underline;cursor:pointer;" href="https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=&labels=&template=documentation-bug-report.md&title='+ category + ' - ' + pageTitle +'" target="_blank" rel="noopener noreferrer">issue</a>.');
+    }
     setTimeout(function() {
         $('.page-feedback').hide();
     }, 5000);
