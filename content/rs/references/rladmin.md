@@ -1,5 +1,5 @@
 ---
-Title: The rladmin Command-Line Interface (CLI)
+Title: The RS Command-Line Interface (rladmin)
 description:
 weight: $weight
 alwaysopen: false
