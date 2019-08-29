@@ -44,7 +44,7 @@ upgrade to this version.
 - rlcheck installation verification utility added to facilitate
     checking node health. For additional details, refer to [rlcheck
     Installation Verification
-    Utility]({{< relref "/rs/references/cli-reference/rlcheck.md" >}}).
+    Utility]({{< relref "/rs/references/rlcheck.md" >}}).
 - Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
     For additional details, refer to [Initial setup - creating a new
