@@ -241,6 +241,7 @@ var onSignIn = function(googleUser) {
         alert("Email address not allowed.");
         hideInternalDocsLoginDialog();
         handleGoogleSignOut();
+        toggleInternalLogin();
         return;
     }
 
@@ -379,7 +380,10 @@ function showInternalContent(path){
             toggleInternalContentLoader('off');
             renderInternalContent(data);
         },
-        error: function() {
+        error: function(error) {
+            if(error.status == 401) {
+                toggleInternalLogin();
+            }
             toggleInternalContentLoader('off');
             console.error("Error loading internal content");
             renderInternalContent("No internal content for this page could be loaded.");

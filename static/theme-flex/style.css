@@ -3050,26 +3050,25 @@ a[href*="#no-click"], img[src*="#no-click"] {
 
 /* Internal Docs Login */
 #internalDocsLoginDialog {
-  -ms-transform: translateY(-50%);
   background-color: #eee;
   border-radius: 3px;
   border: 1px solid #ccc;
   display: none;
-  height: 150px;
   left: 50%;
   margin: 0;
   position: fixed;
   top: 50%;
   transform: translateY(-50%) translateX(-50%);
   width: 300px;
+  padding: 50px 26px;
 }
 
 #internalDocsLoginDialog p {
   color: #000;
   font-size: 1.2rem;
   font-weight: 400;
-  margin-bottom: 10px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 0;
   text-align: center;
 }
 
