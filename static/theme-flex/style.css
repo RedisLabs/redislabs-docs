@@ -3306,6 +3306,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
 .page .main-content .tab-content .tab-pane {
   padding: 15px 0;
   font-size: 16px;
+  display: block;
 }
 
 /* Expand shortcode control */
