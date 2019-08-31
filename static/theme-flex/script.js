@@ -116,7 +116,18 @@ jQuery(document).ready(function() {
         var url = document.location.origin + document.location.pathname;
         var link = url + "#" + element[0].id;
         return " <span class='anchor' data-clipboard-text='" + link + "'>"  +
-            "</span>";
+            "</span>" + `
+            <span class="anchor internal" onclick="getInternalContent(null,'`+ element[0].id +`')">
+                <i class="fa fa-folder-o"></i>
+            </span>
+            <div id="internalContent_`+ element[0].id +`" class="internal-content-section">
+                <span class="title">
+                    <i class="fa fa-folder-o"></i> Internal
+                    <i class="fa fa-close closeContent" onclick="hideInternalContent('`+ element[0].id +`')"></i>                    
+                </span>                
+                <div class="article"></div>
+            </div>
+            `;
     });
 
     $(".anchor").on('mouseleave', function (e) {
@@ -237,7 +248,7 @@ $(function() {
 var onSignIn = function(googleUser) {
     var profile = googleUser.getBasicProfile();
 
-    if(!isProfileAllowed(profile)) {
+    if(isProfileAllowed(profile)) {
         alert("Email address not allowed.");
         hideInternalDocsLoginDialog();
         handleGoogleSignOut();
@@ -357,13 +368,19 @@ $(function() {
         showPageFeedback();
     }
 });
-function renderInternalContent(content) {
+function renderInternalContent(content, options) {
     var converter = new showdown.Converter();
-    $('#internalContent .article').html(converter.makeHtml(content));
-    $('#internalContent').show();
+    if(!options || !options.specificSection) {
+        $('#internalContent .article').html(converter.makeHtml(content));
+        $('#internalContent').show();
+    } else if (options.specificSection && options.sectionID) {
+        var id = '#internalContent_' + options.sectionID;
+        $(id + ' .article').html(converter.makeHtml(content));
+        $(id).show();
+    }    
 }
 
-function showInternalContent(path){
+function showInternalContent(path, options){
     var url = 'https://api.github.com/repos/HarunD/internal-md-experiment/contents/content' + path;
     toggleInternalContentLoader('on');
     var result = null;
@@ -378,7 +395,7 @@ function showInternalContent(path){
         },        
         success: function(data) {
             toggleInternalContentLoader('off');
-            renderInternalContent(data);
+            renderInternalContent(data, options);
         },
         error: function(error) {
             if(error.status == 401) {
@@ -386,26 +403,35 @@ function showInternalContent(path){
             }
             toggleInternalContentLoader('off');
             console.error("Error loading internal content");
-            renderInternalContent("No internal content for this page could be loaded.");
+            renderInternalContent("No internal content for this page could be loaded.", options);
         }
     });
     FileReady = true;
     return result;
 }
 
-var getInternalContent = function(path) {    
+var getInternalContent = function(path, id) {    
     var isLoggedIn = localStorage.getItem('auth_token');
     
     if(!isLoggedIn) return;
 
-    if(!path) {
-        path = location.pathname.slice(0, -1) + '.md';
-    }    
+    if(id) {
+        path = location.pathname.slice(0, -1) + '_' + id + '.md';
+        showInternalContent(path, {specificSection: true, sectionID: id});        
+    }
 
-    var markdown_source = showInternalContent(path);
+    if(!path && !id) {
+        path = location.pathname.slice(0, -1) + '.md';
+        showInternalContent(path);
+    }    
 }
 
-var hideInternalContent = function() {
+var hideInternalContent = function(id) {
+    if(id) {
+        $('#internalContent_' + id).css('display', 'none');
+        return;
+    }
+
     $('#internalContent').css('display', 'none');
 }
 

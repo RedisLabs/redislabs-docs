@@ -1375,6 +1375,40 @@ div.notices {
   top: -2px;
 }
 
+.anchor.internal {
+  background-image: none;
+  display: inline;
+  font-size: 18px;
+  margin-left: 2px;
+}
+
+.internal-content-section {  
+  border: 2px solid #b62311;
+  display: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.internal-content-section .title {
+  border-bottom: 1px solid #eee;
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.internal-content-section .title .closeContent {
+  color: #b8b8b8;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.internal-content-section .title .closeContent:hover {
+  color: #595959;  
+  cursor: pointer;
+}
 
 div.notices p {
   padding: 0px;
