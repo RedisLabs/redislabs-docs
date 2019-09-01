@@ -1,5 +1,5 @@
 ---
-Title: ReJSON Quick Start Tutorial
+Title: RedisJSON Quick Start Tutorial
 description:
 weight: $weight
 alwaysopen: false
@@ -9,12 +9,12 @@ For this quick start, you will need the following:
 
 - [A Redis Enterprise Software cluster with set up already
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
-- Any redis-cli or ReJSON enabled client
+- Any redis-cli or RedisJSON enabled client
 
 ### Create a new database that uses the Module
 
 1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Select the ReJSON module.
+1. Select the RedisJSON module.
 1. If you want the module to use a custom configuration,
 click **Add configuration** and enter the optional custom configuration.
 1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
@@ -27,7 +27,7 @@ click **Add configuration** and enter the optional custom configuration.
 ## Quick start with redis-cli
 
 These examples will use redis-cli as the Redis client to show how easy
-it is. The first ReJSON command to try out is JSON.SET, which sets a
+it is. The first RedisJSON command to try out is JSON.SET, which sets a
 Redis key with a JSON value. All JSON values can be used, for example a
 string:
 

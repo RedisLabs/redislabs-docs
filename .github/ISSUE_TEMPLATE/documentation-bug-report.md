@@ -7,13 +7,13 @@ assignees: ''
 
 ---
 
-**Current behavior** (A concise description of what you found)
+**Current behavior** (A short description of what you found)
 
 
-**Expected behavior** (A concise description of what you expected to find)
+**Expected behavior** (A short description of what you expected to find)
 
 
-**Screenshots** (If applicable, add screenshots of the problem)
+**Screenshots** (Paste or drag-and-drop a screenshot)
 
 
 **Additional context** (Add any other information)

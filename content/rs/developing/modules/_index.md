@@ -13,16 +13,16 @@ RHEL/CentOS 6.x
 Redis Labs develops, certifies, and packages modules for use with Redis Enterprise
 Software (RS) clusters. The available modules are:
 
-- ReBloom
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/rebloom.md" >}})
-    - [Developing with ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+- RedisBloom
+    - [Quick Start]({{< relref "/rs/getting-started/creating-database/RedisBloom.md" >}})
+    - [Developing with RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
 - RedisGraph
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/)
-- ReJSON
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/rejson-quick-start.md" >}})
-    - [Developing with ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+- RedisJSON
+    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisjson-quick-start.md" >}})
+    - [Developing with RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
 - RediSearch Enterprise
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
     - [Developing with RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})

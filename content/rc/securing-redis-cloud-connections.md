@@ -5,7 +5,9 @@ weight: 25
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-SSL/TLS support is included in all Redis Cloud Pro paid plans.
+In Redis Cloud Essentials, SSL/TLS support is a paid option. To enable it, contact [Support](https://support.redislabs.com).
+SSL/TLS support is included in all Redis Cloud Pro paid plans. 
+
 
 ## Setting Up Your Database
 
