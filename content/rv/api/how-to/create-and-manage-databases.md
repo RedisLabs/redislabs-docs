@@ -17,9 +17,9 @@ A database is created within an existing (or a newly created) subscription. When
 
 Creating a database is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
-The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a database Id. When the database Id is received, the **processing phase** is completed and the database (as well as the subscription that contains it) is in the **provisioning phase** (in the `pending` status). 
+The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a database Id. When the database Id is received, the **processing phase** is completed and the database (as well as the subscription that contains it) is in the **provisioning phase** (in the `pending` status).
 
-### Pre-requisites
+### Prerequisites
 
 - Define the expected variables needed to use the API:
 

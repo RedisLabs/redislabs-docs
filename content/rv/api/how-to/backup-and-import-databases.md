@@ -1,6 +1,7 @@
 ---
-Title: Backup & import databases
-description: When creating or updating a database, you can specify the backup path parameter. The import API operation allows importing from various source types and specified locations
+Title: Databases Backup and Import
+description: When you create or update a database, you can specify the backup path.
+    The import API operation lets you import data from various source types and specified locations.
 weight: 72
 alwaysopen: false
 categories: ["RC Pro"]
@@ -8,16 +9,16 @@ categories: ["RC Pro"]
 
 ## Backup a database
 
-When creating or updating a database, you can specify the (optional) `periodicBackupPath` parameter. Setting this parameter enables periodic and on-demand backup operations for the specific database. For details on how to define a path for periodic backups, see "[Database Backups
-](/rv/administration/configuration/backups/)".
+When you create or update a database, you can specify the (optional) `periodicBackupPath` parameter
+with a [backup path](/rv/administration/configuration/backups/).
+This parameter enables periodic and on-demand backup operations for the specified database.
 
-The API operation for performing on-demand backup is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
+The API operation for on-demand backups is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
+On-demand database backup is an [asynchronous operation]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
-On-demand database backup is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
+### Prerequisites for Backups
 
-### Pre-requisites
-
-- Define the expected variables needed to use the API:
+Before you enables backups, you must define the variables that the API requires:
 
 ```shell
 {{% embed-code "rv/api/07-set-variables-with-subscription-and-database-id.sh" %}}
@@ -29,36 +30,38 @@ On-demand database backup is an asynchronous operation. For details see "[Provis
 {{% embed-code "rv/api/12-backup-database.sh" %}}
 ```
 
-The backup database API does not require a body. It relies on and requires that the `periodicBackupPath` be set to a valid path with available storage capacity to store the backup files for the specific database.
+The backup database API does not require a body.
+Instead, the `periodicBackupPath` must be set to a valid path with available storage capacity to store the backup files for the specific database.
 
 ## Import a database
 
-You can import data into an existing database from multiple storage sources, including S3, Redis, FTP etc.
+You can import data into an existing database from multiple storage sources, including AWS S3, Redis, FTP.
+Database import is an [asynchronous operation]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
 The API operation for performing on-demand backup is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/import`.
 
-For an import operation to be successful:
-   * The source URI must be accessible to the importing database (e.g. located in a publicly accessible S3 path)
-   * The data format must be Redis compatible (e.g. the output of a database backup operation).
+The requirements for data import are:
 
-The duration of the import process varies based on the size of the data to be imported and the network bandwidth between the data source and the importing database.
+- The URI of the data.
+    - The source URI must be accessible to the importing database.
+    - The data format must be a redis backup file or a redis database.
+- The subscription ID and database ID of the destination database.
 
-Database import is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
+The duration of the import process varies based on the amount of data imported and the network bandwidth between the data source and the importing database.
 
-{{% note %}}
-Importing data into an existing database will overwrite any existing values.
-{{% /note %}}
+{{% warning %}}
+Importing data into an existing database overwrites any existing values.
+{{% /warning %}}
   
-### Pre-requisites
+### Database import script
 
-- Import database requires that you specify the Subscription Id and Database Id of the destination database
-- Define the expected variables needed to use the API:
+Before you import the data, you must set the import variables:
 
 ```shell
 {{% embed-code "rv/api/07-set-variables-with-subscription-and-database-id.sh" %}}
 ```
 
-### Database import script
+To import the data, run:
 
 ```shell
 {{% embed-code "rv/api/13-import-database.sh" %}}

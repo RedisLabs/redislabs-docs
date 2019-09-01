@@ -15,7 +15,7 @@ The API operation that creates a cloud account is `POST /cloud-accounts`.
 
 The following Linux shell script sends a `POST /cloud-accounts` and waits for a cloud account Id. When the cloud account Id is received, the **processing phase** is completed.
 
-### Pre-requisites
+### Prerequisites
 
 - Define the expected variables needed to use the API:
 
