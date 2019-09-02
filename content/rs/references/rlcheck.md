@@ -13,9 +13,7 @@ The output of rlcheck shows information specific to the host that you run it on.
 
 To open the rladmin CLI:
 
-1. Login to the RS host with an account that is either:
-    - a member of the **redislabs** OS group
-    - change user to root with command: `sudo su --`
+1. Login to the RS host with an account that is a member of the **redislabs** OS group.
 
 1. Run: `rlcheck`
 
