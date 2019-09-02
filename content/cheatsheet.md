@@ -184,6 +184,8 @@ Output:
 
 ### Tabs
 
+Source: (https://github.com/rvanhorn/hugo-dynamic-tabs)
+
 Syntax:
 ```
 {{%/* tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" */%}}
