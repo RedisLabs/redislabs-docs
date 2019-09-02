@@ -21,11 +21,10 @@ For example, with the rladmin CLI you can:
 
 To open the rladmin CLI:
 
-1. Login to the RS host with an account that is either:
-    - a member of the **redislabs** OS group
-    - change user to root with command: `sudo su --`
+1. Login to the RS host with an account that is a member of the **redislabs** OS group.
 
     If you are a non-root user, you must add `/opt/redislabs/bin/` to your PATH environment variables
+
 1. Run: `rladmin`
 
     {{% note %}}
