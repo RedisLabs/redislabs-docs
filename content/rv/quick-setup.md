@@ -61,7 +61,6 @@ To start with a single database:
 1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
 1. Throughput - You can define your estimated total throughput you expect from your database by either specifying the required ops/sec or number of shards needed.
 1. Modules - You can select which Redis Module you want to load to your database. In case you select 'RediSearch' please provide the estimated number of documents you are going to index.
-1. Enter the quantity of databases to create multiple databases on your Redis Cloud Pro subscription with the provided settings.
 1. Click **Save** and enter the number of databases with these settings that you would like to provision. To add more rows, click the plus.
 
 ![add_database](/images/rv/add_database.png?width=800&height=444)
