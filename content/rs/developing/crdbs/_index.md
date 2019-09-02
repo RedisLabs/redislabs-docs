@@ -39,7 +39,7 @@ updates to other participating clusters and other member CRDBs.
 |  t8 | — Sync — | — Sync — |
 |  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
-Databases provide various approaches to address some of these concerns:
+Databases provide various approaches to address some of these concerns
 
 - Active-Passive Geo-distributed deployments: With active-passive
     distributions, all writes go to an active cluster. Redis Enterprise
@@ -188,18 +188,6 @@ will:
 If a member CRDB is in an out of memory situation, that member is marked
 "inconsistent" by RS, the member stops responding to user traffic, and
 the syncer initiates full reconciliation with other peers in the CRDB.
-
-## CRDB Key Counts
-
-Keys are counted differently for CRDBs:
-
-- DBSIZE (in `shard-cli dbsize`) reports key header instances
-    that represent multiple potential values of a key before a replication conflict is resolved.
-- expired_keys (in `bdb-cli info`) can be more than the keys count in DBSIZE (in `shard-cli dbsize`) 
-    because expires are not always removed when a key becomes a tombstone.
-    A tombstone is a key that is logically deleted but still takes memory
-    until it is collected by the garbage collector.
-- The Expires average TTL (in `bdb-cli info`) is computed for local expires only.
 
 ## INFO
 
