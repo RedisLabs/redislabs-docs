@@ -1,13 +1,12 @@
 <div class="page-feedback">
     <div id="page-feedback-open">
         Was this page helpful?
-        <span class="page-feedback__option" onclick="setPageFeedback(1)">
+        <span class="page-feedback__option" onclick="setPageFeedback(1, {{ htmlEscape .Title}}, {{if .Params.categories}}{{ index .Params.categories 0}}{{end}})">
             Yes
         </span>
-        <span class="page-feedback__option" onclick="setPageFeedback(0)">
+        <span class="page-feedback__option" onclick="setPageFeedback(0, {{ htmlEscape .Title}}, {{if .Params.categories}}{{ index .Params.categories 0}}{{end}})">
             No
         </span>
-
         <i class="chevron down" onclick="hidePageFeedback()"></i>
     </div>
     <div id="page-feedback-closed">
