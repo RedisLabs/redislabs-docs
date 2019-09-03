@@ -35,7 +35,7 @@ The dry-run create subscription request behaves similarly to standard create sub
 | Update database  | Modifies the database as requested | Processes the request, and evaluates whether the database modification requires additional resources. The cost evaluation report applies to the subscription as a whole, including the impact (if any) of modifying the existing database (for example, additional resources may be needed for a resized database). Note the cost evaluation is performed **without** actually modifying the database (or any changes to the existing subscription of its existing resources) |
 
 
-| Metric Span | Data duration | Data point interval | Data point collection |
+| Metric Span | `Data duration` | Data point interval | Data point collection |
 |---|---|---|---|
 | 1minute  | 1 minute | 10 seconds | on-demand |
 | 5minutes  | 5 minutes | 1 minute | on-demand |
