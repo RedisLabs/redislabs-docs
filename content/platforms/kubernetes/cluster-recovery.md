@@ -40,9 +40,9 @@ To recover a cluster on Kubernetes:
     kubeclt exec -it <pod-name> rladmin recover all
     ```
 
-    This command recovers the data for all nodes in the cluster based on the cluster configuration in pod-0
+    This command recovers the data for all nodes in the cluster based on the cluster configuration in pod-0.
 
-    If you want to recover based on the cluster configuration on another pod, copy the cluster configuration (ccs.rdb) to pod-0.
+    If you want to recover based on the cluster configuration on another pod, copy the cluster configuration (/var/opt/redislabs/persist/ccs/ccs-redis.rdb) to pod-0.
 
 1. If you are using sentinel discovery service, you must restart the sentinel_service on the master. To do this, log into the master pod and run:
 
