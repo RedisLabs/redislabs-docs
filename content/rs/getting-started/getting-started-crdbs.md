@@ -87,8 +87,8 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     1. For the **database name**, enter: `database1`
     1. For the **endpoint port number**, enter: `12000`
     1. In the **participating clusters** list, add the address and admin credentials for:
-        - `http://cluster1.local:8080` - the cluster you are currently connected to
-        - `http://cluster2.local:8080` - the other cluster
+        - `https://cluster1.local:9443` - the cluster you are currently connected to
+        - `https://cluster2.local:9445` - the other cluster
     <!-- Also in create-crdb.md -->
     1. In the **Database clustering** option, either:
 
@@ -112,7 +112,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     of Docker Settings.
 
 1. After the CRDB is created, you can now visit each cluster 1 at
-http://localhost:8443 and cluster 2 at http://localhost:8445.
+https://localhost:8443 and cluster 2 at https://localhost:8445.
 
 1. Make sure that each cluster has a CRDB member database with the name `database1`.
 
