@@ -1,33 +1,51 @@
 ---
-Title: Cluster Recovery in Kubernetes
+Title: Redis Enterprise Cluster Recovery for Kubernetes
 description: 
 weight: 40
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/cluster-recovery
 ---
+When a Redis Enterprise cluster loses contact with more than half of its nodes either because of failed nodes or network split,
+the cluster stops responding to client connections.
+When this happens, you must recover the cluster to restore the connections.
 
-## Cluster Recovery
-If the cluster losses a majority of its nodes (e.g. from nodes crashing or network split), the cluster will not responde. Recovering the cluster requires performing the following steps:
+You can also do cluster recovery to reset cluster nodes to troubleshoot issues, or in a case of active/passive failover.
 
-1. Edit the rec resource, and set the clusterRecovery flag to true, for example by running
+{{% note %}}
+To recover the cluster data, you must store the cluster data on [persistent disks]({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}) so that the data is not lost during recovery.
+{{% /note %}}
 
-> kubectl patch rec \<cluster-name\> --type merge --patch '{"spec":{"clusterRecovery":true}}'
+## Recovering a Cluster on Kubernetes
 
-2. Wait for the cluster to recover, i.e. wait for the cluster to reach the Running state. You can see this by running:
+To recover a cluster on Kubernetes:
 
-> watch "kubectl describe rec | grep State"
+1. To edit the rec resource and set the clusterRecovery flag to true, run:
 
-3. Recover the data by running the following command from within any cluster pod
+    ```src
+    kubectl patch rec <cluster-name> --type merge --patch '{"spec":{"clusterRecovery":true}}'
+    ```
 
-> kubeclt exec -it \<pod-name\> rladmin recover all 
+1. Wait for the cluster to recover until it is in the Running state.
 
-### Notes:
+    To see the state of the cluster, run:
 
-1. For cluster recovery to work, we must be using persistent disks, otherwise there is no way to recvoer the cluster.
+    ```src
+    watch "kubectl describe rec | grep State"
+    ```
 
-2. If you want to restore a cluster from any ccs other than pod-0, you must copy the rdb file to pod-0 and recover from there.
+1. To recover the cluster data, for any cluster pod run:
 
-3. If you are using sentinel, you must restart the sentinel_service on the master by logging into the maste pod and running:
+    ```src
+    kubeclt exec -it <pod-name> rladmin recover all
+    ```
 
-> supervisorctl restart sentinel_service
+    This command recovers the data for all nodes in the cluster based on the cluster configuration in pod-0
+
+    If you want to recover based on the cluster configuration on another pod, copy the cluster configuration (ccs.rdb) to pod-0.
+
+1. If you are using sentinel discovery service, you must restart the sentinel_service on the master. To do this, log into the master pod and run:
+
+    ```src
+    supervisorctl restart sentinel_service
+    ```
