@@ -12,15 +12,15 @@ If the cluster losses a majority of its nodes (e.g. from nodes crashing or netwo
 
 1. Edit the rec resource, and set the clusterRecovery flag to true, for example by running
 
-> kubectl patch rec <cluster-name> --type merge --patch '{"spec":{"clusterRecovery":true}}'
+> kubectl patch rec \<cluster-name\> --type merge --patch '{"spec":{"clusterRecovery":true}}'
 
-2. Wait for the cluster to recover, i.e. wait for all the pods to reach a Running status. Tip, to see the progress of the cluster run:
+2. Wait for the cluster to recover, i.e. wait for the cluster to reach the Running state. You can see this by running:
 
-> watch kubectl get pod
+> watch "kubectl describe rec | grep State"
 
 3. Recover the data by running the following command from within any cluster pod
 
-> rladmin recover all 
+> kubeclt exec -it \<pod-name\> rladmin recover all 
 
 ### Notes:
 
