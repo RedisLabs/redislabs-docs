@@ -8,11 +8,11 @@ categories: ["RS"]
 Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 The self-signed certificates is used to establish encryption-in-transit for the following traffic:
 
-- Management User Interface (UI)
-- REST API
-- Connections between clients and database endpoints
-- Synchronization between databases for ReplicaOf and CRDB
-- Discovery Services
+- Management Web UI (CM) - The certificate for connections to the management web UI
+- REST API - The certificate for REST API calls
+- Proxy - The certificate for connections between clients and database endpoints
+- Syncer - The certificate for synchronization between databases for ReplicaOf and CRDB
+- Metrics exporter - The certificate to export metrics to Prometheus
 
 These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
@@ -25,13 +25,7 @@ When you update the certificates, the new certificate replaces the same certific
 
 ## How to update TLS certificates
 
-The certificates that you can replace are:
-
-- API - The certificate used by the API
-- CM - The certificate used by the management user interface or the cluster manager and the Sentinel discovery service
-- Proxy - The certificate used to establish communication between a client and the databases
-- Syncer - The certificate used to encrypt replication traffic between clusters
-- Metrics exporter - The certificate used by Prometheus
+You can use either the rladmin CLI or the REST API to update the certificates.
 
 ### Using the CLI
 
@@ -50,7 +44,7 @@ Where:
     - For syncer: `syncer`
     - For metrics exporter: `metrics_exporter`
 - cert-file-name - The name of your certificate file
-- key-file-name - The name of your non-password protected key file
+- key-file-name - The name of your key file
 
 For example, to replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem":
 
@@ -81,7 +75,7 @@ Where:
     You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
     {{% /tip %}}
 
-- certificate - The contents of the *_cert.pem file
+- cert - The contents of the *_cert.pem file
 
 When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
