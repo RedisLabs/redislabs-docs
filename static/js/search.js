@@ -32,8 +32,10 @@ function initLunr() {
             });            
 
             // Feed lunr with each file and let lunr actually index them
-            pagesIndex.forEach(function(page) {
-                lunrIndex.add(page);
+            pagesIndex.forEach(function(page) {            
+                if(!page.uriRel.startsWith('/embeds')) {
+                    lunrIndex.add(page);
+                }                
             });
             lunrIndex.pipeline.remove(lunrIndex.stemmer)
         })
