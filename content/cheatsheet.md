@@ -163,13 +163,13 @@ Ouput:
 | cell 1x1  | cell 1x2  | cell 1x3  |
 | cell 2x1  | cell 2x2  | cell 2x3  |
 
-### Tables in CSV
-The first parameter is the name of the CSV file located in */static/tables* directory and the second is the number of columns in the table.
+### Tables from CSV
+The first parameter when using this shortcode is the name of the CSV file located in */static/tables* directory and the second is the number of columns in the table.
 
 Syntax:
-`{{</* table-csv "test_table.csv" 2 */>}}`
+`{{</* table-csv "test_table.csv" 3 */>}}`
 
-{{< table-csv "test_table.csv" 2 >}}
+{{< table-csv "test_table.csv" 3 >}}
 
 ## Images and Videos
 
