@@ -77,5 +77,5 @@ The node is added to the cluster. You can see it in the list of nodes in the
 cluster.
 
 {{% tip %}}We recommend that you run the [rlcheck utility]({{< relref
-"/rs/references/cli-reference/rlcheck.md" >}}) to verify that the node is functioning
+"/rs/references/rlcheck.md" >}}) to verify that the node is functioning
 properly.{{% /tip %}}
