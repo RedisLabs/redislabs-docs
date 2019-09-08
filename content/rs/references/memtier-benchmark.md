@@ -173,9 +173,9 @@ Where:
 |  **Parameter** | **Description** |
 |------------|-----------------|
 |  Access pattern (--key-pattern) and standard deviation (--key-stddev) | Controls the RAM Hit ratio after the centralization process is complete |
-|  Number of threads\ | Controls how many connections are opened to the database, whereby the number of connections is the number of threads multiplied by the number of connections per thread (-t) and number of clients per thread (-c) |
-|  Number of threads\ | Pipelining allows you to send multiple requests without waiting for each individual response (-t) and number of clients per thread (-c) |
-|  Number of threads\ | A value of 1:1 means that you have the same number of write operations as read operations (-t) and number of clients per thread (-c) |
+|  Number of threads (-t and -c)\ | Controls how many connections are opened to the database, whereby the number of connections is the number of threads multiplied by the number of connections per thread (-t) and number of clients per thread (-c) |
+|  Pipelining (--pipeline)\ | Pipelining allows you to send multiple requests without waiting for each individual response (-t) and number of clients per thread (-c) |
+|  Read\write ratio (--ratio)\ | A value of 1:1 means that you have the same number of write operations as read operations (-t) and number of clients per thread (-c) |
 
 ## Test Results
 
