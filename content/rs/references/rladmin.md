@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/references/cli-reference/rladmin/
 ---
 Redis Enterprise Software (RS) includes rladmin, a command-line interface (CLI)
 that you can use to do advanced administrative tasks.
