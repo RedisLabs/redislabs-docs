@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/references/cli-reference/memtier-benchmark/
 ---
 Redis on Flash (RoF) on Redis Enterprise Software (RS) lets you use more cost-effective Flash memory as a RAM extension for your database.
 But what does the performance look like as compared to an all-RAM RS database?

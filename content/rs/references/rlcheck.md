@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/references/cli-reference/rlcheck/
 ---
 rlcheck is a utility that runs various health checks on an Redis Enterprise Software (RS) node and alerts on any issues found.
 This utility can be useful to confirm a successful installation or to verify that the node is functioning properly.
