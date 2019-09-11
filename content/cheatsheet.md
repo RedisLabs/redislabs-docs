@@ -161,7 +161,7 @@ Ouput:
 | heading 1 | heading 2 | heading 3 |
 | :-----| :-----: |-----: |
 | cell 1x1  | cell 1x2  | cell 1x3  |
-| cell 2x1  | cell 2x2  | cell 2x3  |
+| cell 2x1  | cell 2x2  | cell 2x3  |t
 
 ### Tables from CSV
 The first parameter when using this shortcode is the name of the CSV file located in */static/tables* directory and the second is the number of columns in the table.
@@ -173,13 +173,9 @@ File:
 
 ```csv
 Name,Description,Detail
-a,ad,aad
-b,bd,bbd
-c,cd,ccd
-d,dd,ddd
-e,ed,eed
-f,fd,ffd
-g,gd,ggd
+cell 1x1,cell 1x2,cell 1x3
+cell 2x1,cell 2x2,cell 2x3
+cell 3x1,cell 3x2,cell 3x3
 ```
 
 Output:
