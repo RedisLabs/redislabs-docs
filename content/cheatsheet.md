@@ -169,6 +169,21 @@ The first parameter when using this shortcode is the name of the CSV file locate
 Syntax:
 `{{</* table-csv "test_table.csv" 3 */>}}`
 
+File:
+
+```csv
+Name,Description,Detail
+a,ad,aad
+b,bd,bbd
+c,cd,ccd
+d,dd,ddd
+e,ed,eed
+f,fd,ffd
+g,gd,ggd
+```
+
+Output:
+
 {{< table-csv "test_table.csv" 3 >}}
 
 ## Images and Videos
