@@ -4,23 +4,27 @@
 {{ $columnCount := .Get 1 }}
 
 <table>
-    {{ range $i, $r := $data }}
-    {{ if eq $i 0 }}
-    <tr>
-        {{ range $k := seq $columnCount }}
-        {{ $a := sub $k 1 }}
-        <th>{{ index $r $a}}</th>
+    <thead>
+        {{ range $i, $r := $data }}
+        {{ if eq $i 0 }}
+        <tr>
+            {{ range $k := seq $columnCount }}
+            {{ $a := sub $k 1 }}
+            <th>{{ index $r $a}}</th>
+            {{ end }}
+        </tr>
         {{ end }}
-    </tr>
-    {{ end }}
+    </thead>
 
-    {{ if gt $i 0 }}
-    <tr>
-        {{ range $kr := seq $columnCount }}
-        {{ $ar := sub $kr 1 }}
-        <td>{{ index $r $ar }}</td>
+    <tbody>
+        {{ if gt $i 0 }}
+        <tr>
+            {{ range $kr := seq $columnCount }}
+            {{ $ar := sub $kr 1 }}
+            <td align='center'>{{ index $r $ar }}</td>
+            {{ end }}
+        </tr>
         {{ end }}
-    </tr>
-    {{ end }}
-    {{ end }}
+        {{ end }}
+    </tbody>
 </table>
