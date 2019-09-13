@@ -111,12 +111,18 @@ jQuery(document).ready(function() {
 	// Clipboard
 	// Add link button for every
     var text, clip = new Clipboard('.anchor');
+    var isLoggedIn = localStorage.getItem('auth_token');
+    
     $("h1,h2,h1~h2,h1~h3,h1~h4,h1~h5,h1~h6,h2~h3,h3~h4,h4~h5").append(function (index, html) {
         var element = $(this);
         var url = document.location.origin + document.location.pathname;
         var link = url + "#" + element[0].id;
-        return " <span class='anchor' data-clipboard-text='" + link + "'>"  +
-            "</span>" + `
+
+        var clipElement = " <span class='anchor' data-clipboard-text='" + link + "'>"  +
+        "</span>";
+
+        if(isLoggedIn) {
+            clipElement += `
             <span class="anchor internal" onclick="getInternalContent(null,'`+ element[0].id +`')">
                 <i class="fa fa-folder-o"></i>
             </span>
@@ -128,6 +134,9 @@ jQuery(document).ready(function() {
                 <div class="article"></div>
             </div>
             `;
+        }
+
+        return clipElement;
     });
 
     $(".anchor").on('mouseleave', function (e) {
