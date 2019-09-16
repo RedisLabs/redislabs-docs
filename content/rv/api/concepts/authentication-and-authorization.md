@@ -22,7 +22,7 @@ The account key is used to identify a specific Redis Labs account on which an AP
 For details on how to create and access the account key, see [Enable your Account to use API]({{< relref "/rv/api/how-to/enable-your-account-to-use-api" >}})
 
 {{% note %}}
-Account key should be regarded as an account level secret, and should not be shared with persons who are not authorized members to the account.
+Account key should be regarded as an account level secret, and should not be shared with persons who are not authorized members in the account.
 {{% /note %}}
 
 The account key is generated once per account, and cannot be modified or removed after it is generated. If you wish to make any modifications to the account key (i.e. delete or generate a new account key) please contact Redis Labs support.

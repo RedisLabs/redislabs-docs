@@ -16,4 +16,4 @@ In order to enable an account to use API, follow these steps:
 
 The generated string is the API access key, needed as a parameter in all API calls.
 
-The access key can always be retrieved by an account owner. It should be regarded as an account level secret, not shared with persons who are not authorized members to the account.
+The access key can always be retrieved by an account owner. It should be regarded as an account level secret, not shared with persons who are not authorized members in the account.
