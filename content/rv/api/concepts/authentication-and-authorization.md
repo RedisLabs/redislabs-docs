@@ -40,7 +40,7 @@ When generating a secret key, the secret value of the key is displayed for the f
 
 The account and secret API keys are used to authenticate every API operation request. They must be added as HTTP request headers to each request.
 
-For an example of how to define an HTTP request with the API keys added as HTTP headers, see [Using the cURL HTTP client]({{< relref "/rv/api/how-to/using-curl/#using-the-curl-http-client" >}})
+For an example of how to define an HTTP request with the API keys added as HTTP headers, see [Using the cURL HTTP client]({{< relref "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})
 
 
 ## Authorization using the API keys
@@ -49,7 +49,7 @@ When sending an API operation request, you must make sure the following requirem
 
 1. Both the account and secret keys are valid and properly defined in the HTTP request headers
 1. The secret key is associated with the same account as the account key
-1. If source IP limitations is defined for the specific secret key, the API request must originate from an IP address that is within the allowed source IP range (see [Manage API Keys - Add a new allowed subnet]({{< relref "/rv/api/how-to/manage-api-keys/#add-a-new-allowed-subnet" >}}) )
+1. If source IP limitations is defined for the specific secret key, the API request must originate from an IP address that is within the allowed source IP range (see [Manage API Keys - Add a new allowed subnet]({{< relref "/rv/api/how-to/manage-api-keys#add-a-new-allowed-subnet" >}}) )
 
 ## Additional information
 
