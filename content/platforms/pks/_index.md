@@ -471,6 +471,11 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
         1. Use `localhost` followed by port number 8443 in your browser address bar: `https://localhost:8443`
 
+            {{% warning %}}
+Do not change the default admin user password in the Redis Enterprise web UI.
+Changing the admin password impacts the proper operation of the K8s deployment.
+            {{% /warning %}}
+
 1. Login to the Web UI by using the username defined in your REC yaml and the password you've previously decoded.
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
