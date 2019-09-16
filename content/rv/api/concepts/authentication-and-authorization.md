@@ -10,10 +10,10 @@ categories: ["RC Pro"]
 
 All API operations require authentication using a set of 2 API Keys: 
 
-| Key name | HTTP Header name | Description | 
+|Key name|HTTP Header name|Description|
 |---|---|---|
-| Account Key | `x-api-key` | Account level key assigned to all users in the Redis Labs account | 
-| Secret Key | `x-api-secret-key` | Personal key associated with a specific user | 
+|Account Key|`x-api-key`|Account level key assigned to all users in the Redis Labs account|
+|Secret Key|`x-api-secret-key`|Personal key associated with a specific user|
 
 ### Account key
 
@@ -21,9 +21,9 @@ The account key is used to identify a specific Redis Labs account on which an AP
 
 For details on how to create and access the account key, see [Enable your Account to use API]({{< relref "/rv/api/how-to/enable-your-account-to-use-api" >}})
 
-    {{% note %}}
+{{% note %}}
 Account key should be regarded as an account level secret, and should not be shared with persons who are not authorized members to the account.
-    {{% /note %}}
+{{% /note %}}
 
 The account key is generated once per account, and cannot be modified or removed after it is generated. If you wish to make any modifications to the account key (i.e. delete or generate a new account key) please contact Redis Labs support.
 
