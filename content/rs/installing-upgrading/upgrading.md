@@ -62,7 +62,7 @@ more than one node at a time**.
 {{% /warning %}}
 
 To make sure that the node is functioning properly, run [`rlcheck`]
-({{< relref "/rs/references/cli-reference/rlcheck.md" >}}) and `rladmin status extra all`
+({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
 on the node both before and after the upgrade.
 
 If you have the RS management UI open in the browser while you are
@@ -86,7 +86,7 @@ command in the rladmin CLI and set it to the previous Redis version supported.
 **To check whether your Redis database versions match the latest Redis
 version supported by RS:**
 
-- In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}}),
+- In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
     run the status command.
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
@@ -100,7 +100,7 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
 
 1. Make sure that all of the nodes in the RS cluster are [upgraded](#upgrading-nodes).
     You cannot upgrade databases before all of the nodes in the cluster are upgraded.
-1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+1. In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}})
     on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
 
 During the database upgrade process, the database is restarted. As

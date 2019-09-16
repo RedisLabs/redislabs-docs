@@ -5,51 +5,77 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software (RS) uses self-signed certificates to encrypt
-the following traffic:
+Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
+The self-signed certificates is used to establish encryption-in-transit for the following traffic:
 
-- Management UI
-- REST API
-- Connections between clients and the database endpoint
-- Synchronization between databases for ReplicaOf and CRDB
+- Management Web UI (CM) - The certificate for connections to the management web UI
+- REST API - The certificate for REST API calls
+- Proxy - The certificate for connections between clients and database endpoints
+- Syncer - The certificate for synchronization between databases for ReplicaOf and CRDB
+- Metrics exporter - The certificate to export metrics to Prometheus
 
-These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
+These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
-{{% note %}}When using the default self-signed certificates, an untrusted
-connection notification will appear in the management UI. If you do not
-update the self-signed certificate with your own certificate, depending
-on the browser you use, you might be able to allow the connection for
-this specific session, or add an exception to make this site trusted in
-future sessions.{{% /note %}}
+When you use the default self-signed certificates, an untrusted connection notification is shown in the web UI.
+Depending on the browser you use, you can allow the connection for each session or add an exception to make the site trusted in future sessions.
 
-## How to update SSL/TLS certificates
+{{% warning %}}
+When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
+{{% /warning %}}
 
-**For versions 5.2.0 and above:** ([Procedures for previous releases]({{< relref "/rs/references/procedures-previous-releases.md#Updating-SSL/TLS-certificates-for-Previous-Releases" >}}))
+## How to update TLS certificates
 
-{{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
+You can use either the rladmin CLI or the REST API to update the certificates.
 
-- Use the REST API to replace the certificate:
+### Using the CLI
 
-    ```src
+To replace certificates using the rladmin CLI, run:
 
-    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+```src
+ rladmin cluster certificate set <cert-name> certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
+```
 
-    ```
+Where:
 
-    Where:
+- cert-type - The type of certificate you want to replace:
+    - For management UI: `cm`
+    - For REST API: `api`
+    - For database endpoint: `proxy`
+    - For syncer: `syncer`
+    - For metrics exporter: `metrics_exporter`
+- cert-file-name - The name of your certificate file
+- key-file-name - The name of your key file
 
-    - cert_name - The name of the certificate to replace:
-        - For management UI: `cm`
-        - For REST API: `api`
-        - For database endpoint: `proxy`
-        - For syncer: `syncer`
-    - key - The contents of the *_key.pem file
+For example, to replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem":
 
-    {{% tip %}}The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call. You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.{{% /tip %}}
+```src
+rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
+```
 
-    - cert - The contents of the *_cert.pem file
+### Using the REST API
 
-    The certificate is copied automatically to all nodes in the cluster.
+To replace a certificate using the REST API, run:
+
+```src
+curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_type>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+```
+
+Where:
+
+- cert_type - The name of the certificate to replace:
+    - For management UI: `cm`
+    - For REST API: `api`
+    - For database endpoint: `proxy`
+    - For syncer: `syncer`
+    - For metrics exporter: `metrics_exporter`
+- key - The contents of the *_key.pem file
+
+    {{% tip %}}
+    The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
+    You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
+    {{% /tip %}}
+
+- cert - The contents of the *_cert.pem file
 
 When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
