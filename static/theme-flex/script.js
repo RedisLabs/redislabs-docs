@@ -257,13 +257,13 @@ $(function() {
 var onSignIn = function(googleUser) {
     var profile = googleUser.getBasicProfile();
 
-    if(isProfileAllowed(profile)) {
-        alert("Email address not allowed.");
-        hideInternalDocsLoginDialog();
-        handleGoogleSignOut();
-        toggleInternalLogin();
-        return;
-    }
+    // if(isProfileAllowed(profile)) {
+    //     alert("Email address not allowed.");
+    //     hideInternalDocsLoginDialog();
+    //     handleGoogleSignOut();
+    //     toggleInternalLogin();
+    //     return;
+    // }
 
     if(!localStorage.getItem('auth_token')) {
         localStorage.setItem('auth_token', 'abc123');
