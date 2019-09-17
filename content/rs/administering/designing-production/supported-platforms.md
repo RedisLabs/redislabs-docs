@@ -28,3 +28,5 @@ functioning.
 Note: Cloning of servers/VMs/instances with Redis Enterprise Software
 already install/deployed, is **NOT** supported. It must be a fresh
 install of RS each time.
+
+{{% note %}}For Kubernetes, Pivotal Platform (PCF) and other orchestration and cloud environments see the [Platform documentation page]({{< relref "/platforms" >}}). {{% /note %}}
