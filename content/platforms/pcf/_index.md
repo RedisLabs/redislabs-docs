@@ -1,5 +1,5 @@
 ---
-Title: Getting Started with Redis Enterprise Software for Pivotal Cloud Foundry (PCF)
+Title: Getting Started with Redis Enterprise Software for Pivotal Platform (formerly Pivotal Cloud Foundry - PCF)
 description: 
 weight: 90
 alwaysopen: false
@@ -7,9 +7,9 @@ categories: ["Platforms"]
 aliases: /rs/getting-started/pcf/
          /platforms/pcf/installing-pcf/
 ---
-This topic describes how to install and configure Redis Enterprise for Pivotal Cloud Foundry (PCF).
+This topic describes how to install and configure Redis Enterprise for Pivotal Platform.
 
-## Install Redis Enterprise for PCF
+## Install Redis Enterprise for Pivotal Platform
 
 1. Sign in to PivNet and download the product file from [Pivotal Network](https://network.pivotal.io/products/redis-enterprise-pack) to your local machine.
 
@@ -17,11 +17,11 @@ This topic describes how to install and configure Redis Enterprise for Pivotal C
 
     ![Import button](/images/platforms/pcf_import-product_tile.png)
 
-1. Under the **Import a Product** button, click **+** next to the version number of Redis Enterprise for PCF. This adds the tile to your staging area.
+1. Under the **Import a Product** button, click **+** next to the version number of Redis Enterprise for Pivotal Platform. This adds the tile to your staging area.
 
     ![Import button](/images/platforms/pcf_add-to-dash_tile.png)
 
-## Configure and Deploy Redis Enterprise for PCF
+## Configure and Deploy Redis Enterprise for Pivotal Platform
 
 1. Click the newly imported tile.
 
@@ -83,7 +83,7 @@ Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum ha
 
 1. Click **Save**.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to deploy Redis Enterprise for PCF tile.
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to deploy Redis Enterprise for Pivotal Platform tile.
 
     ![Import button](/images/platforms/post-install-dashboard.png)
 
