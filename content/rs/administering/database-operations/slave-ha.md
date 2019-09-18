@@ -78,7 +78,7 @@ Slave shard migration is based on priority so that, in the case of limited memor
 
 1. CRDBs - The CRDB synchronization uses slave shards to synchronize between the replicas.
 1. Database size - It is easier and more efficient to move slave shards of smaller databases.
-1. Database UID - The slave shards of databases with a higher UID is moved first.
+1. Database UID - The slave shards of databases with a higher UID are moved first.
 
 ### Cooldown Periods
 

@@ -1,73 +1,173 @@
 ---
-title: Updating SSL/TLS certificates
+title: Updating SSL/TLS Certificates
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software (RS) uses self-signed certificates to encrypt
-the following traffic:
+Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
+The self-signed certificates is used to establish encryption-in-transit for the following traffic:
 
-- Management UI
-- REST API
-- Connections between clients and the database endpoint
-- Synchronization between databases for ReplicaOf and CRDB
+- Management Web UI (CM) - The certificate for connections to the management web UI
+- REST API - The certificate for REST API calls
+- Proxy - The certificate for connections between clients and database endpoints
+- Syncer - The certificate for synchronization between databases for ReplicaOf and CRDB
+- Metrics exporter - The certificate to export metrics to Prometheus
 
-These self-signed certificates are generated on the first node of each RS installation. These certificates are then copied to all other nodes added to the cluster.
+These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
-{{% note %}}When using the default self-signed certificates, an untrusted
-connection notification will appear in the management UI. If you do not
-update the self-signed certificate with your own certificate, depending
-on the browser you use, you might be able to allow the connection for
-this specific session, or add an exception to make this site trusted in
-future sessions.{{% /note %}}
+When you use the default self-signed certificates, an untrusted connection notification is shown in the web UI.
+Depending on the browser you use, you can allow the connection for each session or add an exception to make the site trusted in future sessions.
 
-## How to update SSL/TLS certificates
+{{% warning %}}
+When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
+{{% /warning %}}
 
-{{% warning %}}The new certificate replaces the equivalent certificate on all nodes in the cluster. Existing certificates are overwritten.{{% /warning %}}
+## How to update TLS certificates
 
-- Use the REST API to replace the certificate:
+You can use either the rladmin CLI or the REST API to update the certificates.
 
-    ```bash
+### Using the CLI
 
-    curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+To replace certificates using the rladmin CLI, run:
 
-    ```
+```src
+ rladmin cluster certificate set <cert-name> certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
+```
 
-    Where:
+Where:
 
-    - cert_name - The name of the certificate to replace:
-        - For management UI: `cm`
-        - For REST API: `api`
-        - For database endpoint: `proxy`
-        - For syncer: `syncer`
-    - key - The contents of the *_key.pem file
+- cert-type - The type of certificate you want to replace:
+    - For management UI: `cm`
+    - For REST API: `api`
+    - For database endpoint: `proxy`
+    - For syncer: `syncer`
+    - For metrics exporter: `metrics_exporter`
+- cert-file-name - The name of your certificate file
+- key-file-name - The name of your key file
 
-    {{% tip %}}The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call. You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.{{% /tip %}}
+For example, to replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem":
 
-    - cert - The contents of the *_cert.pem file
+```src
+rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
+```
 
-    The certificate is copied automatically to all nodes in the cluster.
+### Using the REST API
+
+To replace a certificate using the REST API, run:
+
+```src
+curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_type>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+```
+
+Where:
+
+- cert_type - The name of the certificate to replace:
+    - For management UI: `cm`
+    - For REST API: `api`
+    - For database endpoint: `proxy`
+    - For syncer: `syncer`
+    - For metrics exporter: `metrics_exporter`
+- key - The contents of the *_key.pem file
+
+    {{% tip %}}
+    The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
+    You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
+    {{% /tip %}}
+
+- cert - The contents of the *_cert.pem file
 
 When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
-## TLS version
+## TLS Protocol and Ciphers
 
-To set the minimum TLS version that can be used for encrypting various
-flows, use the REST API or the following rladmin
-commands:
+TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with. You can change the TLS protocols and ciphers to improve the security posture of your RS cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
-- For the management UI and REST API:
+The communications for which you can modify TLS protocols and ciphers are:
 
-    ```bash
-    rladmin> cluster config min_control_TLS_version <version, e.g. 1.2>
-    ```
+- Management path - The TLS configuration for cluster administration using the web UI and API.
+- Data path - The TLS configuration for the communication between the applications and the databases.
+- Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}).
 
-- For data path encryption:
+You can configure the TLS protocols and ciphers with the rladmin commands shown here, or with the REST API.
 
-    ```bash
-    rladmin> cluster config min_data_TLS_version <version, e.g. 1.2>
-    ```
+### TLS protocol for the management path
+
+To set the minimum TLS protocol for the management path:
+
+- Default TLS Protocols: TLSv1.0
+- Syntax: `rladmin cluster config cluster config min_control_TLS_version <TLS_Version>`
+- TLS versions available:
+    - For TLSv1 - 1
+    - For TLSv1.1 - 1.1
+    - For TLSv1.2 - 1.2
+
+For example:
+
+```src
+rladmin cluster config min_control_TLS_version 1.2
+```
+
+### TLS protocol for the data path and discovery service
+
+To set the minimum TLS protocol for the data path:
+
+- Default TLS Protocols: TLSv1.0
+- Syntax: `rladmin cluster config cluster config min_data_TLS_version <TLS_Version>`
+- TLS versions available:
+    - For TLSv1 - 1
+    - For TLSv1.1 - 1.1
+    - For TLSv1.2 - 1.2
+
+For example:
+
+```src
+rladmin cluster config min_data_TLS_version 1.2
+```
+
+For your changes to take effect on the discovery service, restart the service with the command:
+
+```src
+supervisorctl restart sentinel_service
+```
+
+### Enabling TLS for the discovery service
+
+To enable TLS for the discovery service:
+
+- Default: Allows both TLS and non-TLS connections
+- Syntax: `rladmin cluster config sentinel_ssl_policy <ssl_policy>`
+- ssl_policy values available:
+    - `allowed` - Allows both TLS and non-TLS connections
+    - `required` - Allows only TLS connections
+    - `disabled` - Allows only non-TLS connections
+
+For example:
+
+```src
+rladmin cluster config sentinel_ssl_policy required min_data_TLS_version 1.2
+```
+
+For your changes to take effect on the discovery service, restart the service with the command:
+
+```src
+supervisorctl restart sentinel_service
+```
 
 After you set the minimum TLS version, RS does not accept communications with
 TLS versions older than the specified version.
+
+### Cipher Configuration
+
+When you set the TLS ciphers, the new TLS ciphers are used for management communications only.
+
+To set the TLS ciphers:
+
+- Default TLS Protocols: HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
+- Syntax: `rladmin cluster config cipher_suites '<openssl_cipher_list>'`
+    - Redis Enterprise Software uses openssl to implement TLS ([List of available configurations](https://www.openssl.org/docs/manmaster/man1/ciphers.html))
+- The below example uses the Mozilla intermediate compatibility cipher list
+
+```src
+rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
+```

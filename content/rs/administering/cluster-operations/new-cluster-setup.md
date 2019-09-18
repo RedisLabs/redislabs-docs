@@ -105,7 +105,7 @@ by carrying out the following tests:
 
 - Run *rlcheck* on the node. For additional details, refer to [rlcheck
     Installation Verification
-    Utility]({{< relref "/rs/references/cli-reference/rlcheck.md" >}}).
+    Utility]({{< relref "/rs/references/rlcheck.md" >}}).
 - Test connectivity to the database. For additional details, refer to
     [Testing Client
     Connectivity]({{< relref "/rs/administering/troubleshooting/testing-client-connectivity.md" >}}).

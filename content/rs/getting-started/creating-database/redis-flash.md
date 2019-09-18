@@ -41,10 +41,10 @@ the current directory.
 sudo ./install.sh -y
 ```
 
-### Docker-based installation
+### Docker-based installation {#dockerbased-installation}
 
-If you prefer, you can also simply run the Redis Enterprise Software
-Docker container on Windows, macOS, and Linux
+For testing purposes, you run the Redis Enterprise Software
+Docker container on Windows, MacOS, and Linux.
 
 ```src
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
@@ -103,7 +103,7 @@ connectivity to your database:
 - Connecting with redis-cli, the built-in command-line tool
 - Connecting with a _Hello World_ application using Python
 
-### Connecting Using redis-cli
+### Connecting Using redis-cli {#connecting-using-rediscli}
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1

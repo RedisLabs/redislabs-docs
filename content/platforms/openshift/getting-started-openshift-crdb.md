@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In this guide, we'll set up a [CRDB]({{< relref "/rs/administering/intercluster-replication/crdbs.md" >}})
+In this guide, we'll set up a [CRDB]({{< relref "/rs/administering/active-active.md" >}})
 (conflict-free replicated database) deployment with Active-Active replication
 spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator
 and OpenShift Route.
@@ -174,7 +174,7 @@ To do a basic validation test of database replication:
 1. Connect to one of the cluster pods using the following command:
 
 	```src
-	$ oc exec -it <your-cluster1-name>-0 bash
+	oc exec -it <your-cluster1-name>-0 bash
 	```
 
 1. At the prompt, launch the redis CLI:
@@ -200,7 +200,7 @@ To do a basic validation test of database replication:
 on the other cluster.
 
 	```src
-	$ oc exec -it <your-cluster2-name>-0 bash
+	oc exec -it <your-cluster2-name>-0 bash
 	$redis-cli -h <your database2 hostname> -p <your database2 port> -a <your database2 password>
 	```
 

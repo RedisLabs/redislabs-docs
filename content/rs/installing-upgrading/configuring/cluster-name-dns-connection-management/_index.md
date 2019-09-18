@@ -93,7 +93,7 @@ the cluster part of your domain and are able to update the DNS.
     node2.redislabscluster.mydomain.com   A    2.2.2.2
     ```
 
-### Zero-configuration using mDNS (Development option only)
+### Zero-configuration using mDNS (Development option only) {#zeroconfiguration-using-mdns-development-option-only}
 
 Note: mDNS is not supported for use with production environments and
 should only be used in dev/test environments.

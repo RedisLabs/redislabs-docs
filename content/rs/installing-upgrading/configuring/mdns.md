@@ -17,7 +17,7 @@ resolving databases' endpoints, are met. These configurations and
 perquisites are needed on the client machines, as well as on the
 machines you are using as Redis Enterprise Software (RS) nodes if you
 are using the [Replica
-of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
+of]({{< relref "/rs/administering/active-passive.md" >}})
 feature.
 
 First, make sure that the machines acting as clients and the machines

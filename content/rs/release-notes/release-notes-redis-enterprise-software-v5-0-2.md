@@ -37,7 +37,7 @@ page
 
 - Redis Enterprise Modules are installed with Redis Enterprise
     Software by default
-- ReBloom and RediSearch Enterprise have been updated to newer
+- RedisBloom and RediSearch Enterprise have been updated to newer
     versions
 
 ### Other

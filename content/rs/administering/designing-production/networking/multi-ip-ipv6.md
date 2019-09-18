@@ -32,7 +32,7 @@ addresses for external traffic.
 
 If at a later stage you would like to update the IP address allocation,
 run the relevant commands in [rladmin command-line interface
-(CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}}).
+(CLI)]({{< relref "/rs/references/rladmin.md" >}}).
 
 If you need to update the internal IP address in the OS, you must remove
 that node from the RS cluster, make the IP change, and then add the node

@@ -12,9 +12,9 @@ Enterprise Software (RS). There are two types
     the [Redis Enterprise downloads
     page](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo). For more specific
     information on each module:
-    1. [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
-    1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+    1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
     1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 1. Custom packaged modules - For instructions on packing up any module
     from redismodules.com, see [Developing with
@@ -51,5 +51,5 @@ click **Add configuration** and enter the optional custom configuration.
 
     {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-1. Click **Show advanced options** and put **12544** for the port.
+1. Click **Show advanced options** and put **12543** for the port.
 1. Click the **activate** button
