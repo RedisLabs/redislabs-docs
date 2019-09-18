@@ -11,7 +11,7 @@ These are the steps required to set up a Redis Enterprise Cluster with Kubernete
 Prerequisites:
 
 - A [PKS environment installed](https://docs.pivotal.io/runtimes/pks/1-4/installing.html)
-  on PCF version 2.4.6 or above, and PKS version 1.3.3 or above.
+  on Pivotal Platform (formerly Pivotal Cloud Foundry - PCF) 2.4.6 or above, and PKS version 1.3.3 or above.
 - A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create)
   with at least three nodes that each meet the [minimum system requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
   according to your development or production environment. <!-- Reference a future article that will cover k8s cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
