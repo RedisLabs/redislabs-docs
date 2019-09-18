@@ -37,13 +37,13 @@ before running through the upgrade process.
     enhanced to support creating a database that is a replica of
     multiple source databases. For additional details, refer to the
     [Replica
-    of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
+    of]({{< relref "/rs/administering/active-passive.md" >}})
     section.
 - Cross cluster Replica of - the Replica of feature now supports
     defining a database that is a replica of databases that belong to a
     different RLEC cluster. For additional details, refer to the
     [Replica
-    of]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}})
+    of]({{< relref "/rs/administering/active-passive.md" >}})
     section.
 - Multi-IP support - on a node that has multiple IPs, enables the
     administrator to specify which IP address is used for internal
@@ -81,7 +81,7 @@ before running through the upgrade process.
 - rladmin command-line-interface can only be run under user root or
     redislabs. For additional details, refer to the [rladmin
     command-line
-    interface (CLI)]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+    interface (CLI)]({{< relref "/rs/references/rladmin.md" >}})
     section.
 - Import / export / backup to/from Amazon S3 requires supplying the
     credentials per usage instance; it does not use central cloud

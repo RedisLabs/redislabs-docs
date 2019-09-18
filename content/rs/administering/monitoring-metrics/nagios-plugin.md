@@ -134,7 +134,7 @@ below.
             to show in the UI.
         1. "_RLECID " should be the database's internal id that can
             be retrieved from
-            [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+            [rladmin]({{< relref "/rs/references/rladmin.md" >}})
             status command output.
     1. "nodes.cfg " ­ holds configuration details of the nodes in the
         cluster. The "define host" section should be duplicated for
@@ -146,7 +146,7 @@ below.
             IP address of the node, or to the IP address itself.
         1. "_RLECID " should be the node's internal id that can be
             retrieved
-            from [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+            from [rladmin]({{< relref "/rs/references/rladmin.md" >}})
             status command output.
     1. Under the "/rlec_obj" folder:
         1. "rlec_cmd.cfg" ­ holds configuration details of how to

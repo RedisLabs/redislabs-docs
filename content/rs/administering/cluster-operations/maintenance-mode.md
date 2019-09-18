@@ -20,7 +20,7 @@ Maintenance mode does not protect against quorum loss. If you enable maintenance
 the quorum is lost and it can result data loss.
     {{% /warning %}}
 
-1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on node at that time.
+1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on the node at that time.
 1. Marks the node as a quorum node to prevent shards and endpoints from migrating into the node.
     The maintenance node entry in the rladmin status output is colored yellow to indicate that it cannot accept shard migration, just as a quorum_only node.
     ![maintenance_mode](/images/rs/maintenance_mode.png)
@@ -39,9 +39,9 @@ rladmin node <node_id> maintenance_mode on
 
 After all of the shards and endpoints are moved from the node, it is safe to do maintenance on the server if there are enough nodes up to maintain the quorum.
 
-### Cluster status with maintentance
+### Cluster status with maintenance
 
-For example, for when you have a 3 node cluster with 4 shards, the status of the cluster is:
+For example, when you have a 3 node cluster with 4 shards, the status of the cluster is:
 
 ```src
 redislabs@rp1_node1:/opt$ rladmin status
@@ -85,7 +85,7 @@ If the maintenance node fails, the master shards will not have slave shards for 
 To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
 
 ```src
-rladmin node <node_id> maintenance_mode on dont_migrate_slave_shards
+rladmin node <node_id> maintenance_mode on keep_slave_shards
 ```
 
 ## Turning Maintenance Mode OFF
@@ -111,7 +111,7 @@ If there are multiple snapshots, you can restore a specified snapshot when you t
 To specify a snapshot when you turn maintenance mode off, on one of the nodes in the cluster run:
 
 ```src
-rladmin node <node_id> maintenance_mode off restore_from_snapshot <snapshot_name>
+rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
 ```
 
 {{% note %}}
@@ -120,7 +120,7 @@ When you re-run the command,
 we recommend that you use the snapshot from the initial attempt because it contains the original state of the node.
 {{% /note %}}
 
-You can see the list of available snapshots with the command:
+To see the list of available snapshots, run:
 
 ```src
 rladmin node <node_id> snapshot list
@@ -131,8 +131,8 @@ rladmin node <node_id> snapshot list
 If you do not want to change the distribution of shards and endpoints in the cluster when you turn maintenance mode off,
 you can turn maintenance mode off and prevent the shards and endpoints from moving back to the node.
 
-To skip shard restoration, on one of the nodes in the cluster run:
+To turn maintenance mode off and skip shard restoration, on one of the nodes in the cluster run:
 
 ```src
-rladmin node <node_id> maintenance_mode off dont_restore_shards
+rladmin node <node_id> maintenance_mode off skip_shards_restore
 ```

@@ -121,9 +121,7 @@ with LDAP authentication in the web UI.
 To create an external user with LDAP authentication in the REST API:
 
 ```src
-$ curl -k -L -v -u "<your_admin_acct>:<your_pword>" --location-trusted \
--H "Content-Type: application/json" -X POST http://<your-res-cluster>:8080/v1/users \
--d "{\"auth_method\": \"external\", \"name\": \"<internal-user-name>\", \"role\": \"<user-role>\"}"
+$ curl -k -L -v -u "<your_admin_account>:<your_password>" -H "Content-Type: application/json" -X POST https://<your_redis_cluster_fqdn>:9443/v1/users -d '{"auth_method":"external", "name":"<username>", "role":"<user_role>"}'
 ```
 
 For the user-role, enter one of these roles:

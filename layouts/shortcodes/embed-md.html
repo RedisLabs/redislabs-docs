@@ -1,2 +1,5 @@
 {{$file := .Get 0}}
-{{printf "./layouts/partials/embeds/%s" $file  | readFile | markdownify}}
+{{ $page := .Site.GetPage $file }}
+{{ with $page }}
+  {{ .Content }}
+{{ end }}

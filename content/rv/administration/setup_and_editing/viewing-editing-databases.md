@@ -8,8 +8,6 @@ categories: ["RC Pro"]
 To view your database, select **Databases** from the menu. You will see
 a list of your databases grouped by Subscription.
 
-![databases_main](/images/rv/databases_main.png?width=600&height=366)
-
 In this view, you see pertinent information about each database and some
 of its features. Since a Subscription can have multiple databases, you
 can add one to a Subscription by clicking on the "+" button below each

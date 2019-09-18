@@ -17,9 +17,9 @@ fixes.
     page](https://redislabs.com/products/redis-pack/downloads/).
     For more specific information on developing with each module
     see:
-    1. [ReBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
-    1. [ReJSON]({{< relref "/rs/developing/modules/rejson.md" >}})
+    1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
     1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
 1. Custom packaged modules - For instructions on packing up any
     module from [redismodules.com](http://redismodules.com)
@@ -80,20 +80,16 @@ that i used for the example command above:
 
 ## Examples
 
-An example of upgrading the version of RediSearch to 10017.0 would
+An example of upgrading the version of RediSearch to 10017 would
 be:
-
-$ rladmin upgrade module db_name
-MyAwesomeDB module_name ft version 10017.0
-module_args
-
-An example of upgrading ReBloom:
-
-$ rladmin upgrade module db_name MyDB
-module_name bf version 10100.0 module_args
-""
-
-An example of upgrading ReJSON:
-
-$ rladmin upgrade module db_name MyDB module_name ReJSON version
-10002.0 module_args ""
+```
+$ rladmin upgrade module db_name MyAwesomeDB module_name ft version 10017 module_args "PARTITIONS AUTO"
+```
+An example of upgrading RedisBloom:
+```
+$ rladmin upgrade module db_name MyDB module_name bf version 10100 module_args ""
+```
+An example of upgrading RedisJSON:
+```
+$ rladmin upgrade module db_name MyDB module_name ReJSON version 10002 module_args ""
+```

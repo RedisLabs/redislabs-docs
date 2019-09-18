@@ -127,7 +127,7 @@ after the database is created.
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-- [**Replica of**]({{< relref "/rs/administering/intercluster-replication/replica-of.md" >}}) -
+- [**Replica of**]({{< relref "/rs/administering/active-passive.md" >}}) -
     You can make this database a repository for keys in other databases.
 
 - [**TLS**]
@@ -178,7 +178,7 @@ PING
 +PONG
 ```
 
-### Testing Database Connectivity with redis-cli
+### Testing Database Connectivity with redis-cli {#testing-database-connectivity-with-rediscli}
 
 The redis-cli utility is installed on each node in RS cluster with the rest of the utilities.
 

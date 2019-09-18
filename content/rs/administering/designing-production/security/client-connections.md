@@ -190,7 +190,7 @@ command:
 
 ```src
 rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
-src
+```
 
 Note that if a client supports an older TLS version, the communication
 will not be allowed.

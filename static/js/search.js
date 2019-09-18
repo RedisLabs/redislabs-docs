@@ -32,8 +32,10 @@ function initLunr() {
             });            
 
             // Feed lunr with each file and let lunr actually index them
-            pagesIndex.forEach(function(page) {
-                lunrIndex.add(page);
+            pagesIndex.forEach(function(page) {            
+                if(!page.uriRel.startsWith('/embeds')) {
+                    lunrIndex.add(page);
+                }                
             });
             lunrIndex.pipeline.remove(lunrIndex.stemmer)
         })
@@ -83,7 +85,7 @@ $( document ).ready(function() {
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '" ' +
+                'data-uri="'+ item.uri + '?s=' + term + '"' +
                 'data-context="' + item.context + '">' +
                     '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
                     '<div class="context">' + (item.context || '') +'</div>' +

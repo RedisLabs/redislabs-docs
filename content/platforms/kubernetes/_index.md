@@ -7,8 +7,11 @@ categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
-Kubernetes provides simpler orchestration with containers and has been widely adapted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
+Kubernetes provides simpler orchestration with containers and has been widely adopted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
 
+{{%allchildren style="h2" description="true"%}}
+
+{{% comment %}}
 ## What is Redis Enterprise?
 
 Redis is the most popular database used with Docker containers. Redis Enterprise (Redise) extends open source Redis and delivers stable high performance, linear scaling and high availability with significant operational savings.
@@ -162,3 +165,4 @@ To test the connection to the database, we will use the _redis-cli_ tool. Here i
 Note: To clean up the deployment you can simply delete the cluster using the following command line
 
     gcloud container clusters delete cluster-1
+{{% /comment %}}

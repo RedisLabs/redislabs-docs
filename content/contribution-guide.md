@@ -3,75 +3,149 @@ title: Contribution Guide
 description: How to contribute to the Redis Labs documentation
 draft: false
 ---
-Redis Labs documentation is an open source project and we welcome contributions of all types.
+Redis Labs documentation is an open source project and we welcome edits of all types.
 
-Just to get you started, here is a simple explanation of how to contribute.
+Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
-## Getting to the Source
+## Edit in GitHub vs. Open an Issue
 
-1. Find a page with something to edit.
+If you see a problem on a page, either with content or formatting, and you think you can fix it,
+you can click on the *Edit on GitHub- link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
 
-    Contributions can be anything from a simple typo or grammar error to an entire How To guide.
+If you see a problem on a page but you don't know how to fix it,
+go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a *New Issue*.
 
-1. On that page, click **Edit on GitHub**.
+{{% note %}}
+If you do not have the information to enter into the issue, **DO NOT*- open a new blank issue.
+{{% /note %}}
 
-1. Enter your GitHub credentials.
+## Branches vs. Forks
 
-    If you don't have an account, it is easy and free to open one.
+The redislabs-docs repository is public but only members of the repository can create new branches in the repo.
+New branches in the repo are automatically built into staging sites at: `http://docs.redislabs.com/staging/<branch>`
+After every commit to a branch, the site is re-built within about 1 minute so you can see the live updates.
 
-Here's what this process looks like:
-{{< video "/images/site/click-link-and-login-to-github.mp4" "click-link-and-login-to-github" >}}
+If you are not a member of the repository, you can fork the repository to a branch in your account
+and make your changes on your private branch.
+**You must*- use a new branch for every change.
+If the changes that you make resolve two separate issues, make two separate PRs.
 
-## Make the Change
+After you commit your changes to the public repo or your forked repo,
+you can open a pull request to submit your changes for consideration.
 
-1. Fork the repository.
+## Adding Pages
 
-    A fork is a copy of the entire contents of the documentation site that is stored in your account.
+Every article in the docs is an individual markdown file.
+To add a new article in the docs, you must add a markdown file in the hierarchy of the content directory.
 
-1. In the source file of the page, edit the text as you like.
+The markdown file must include these metadata in the header of the file:
 
-    Don't worry. This is your copy of the file, so you can't do much damage.
+- `Title:` - The title of the article
+- `description:` - A short description of the article (Currently not used)
+- `weight:` - A number that indicates the location of the article among the articles in the directory (0 is top)
+- `alwaysopen: false` - The article is by default hidden in the table of contents in the directory
+- `categories:` - The product that the article relates to: `RC Essentials`, `RC Pro`, `RS`, `Platforms`
 
-    You can use the [markdown cheatsheet]({{< relref "cheatsheet.md" >}}) for help with more complex editing.
+For example:
 
-Here's what this process looks like:
-{{< video "/images/site/fork-repo-and-change-text.mp4" "fork-repo-and-change-text" >}}
+```yaml
+---
+Title: Usage Reports
+description:
+weight: 70
+alwaysopen: false
+categories: ["RC Pro"]
+---
+```
 
-## Propose the Change
+## Adding Sections
 
-1. When you finish with your changes, scroll down to the bottom of the page.
-1. Enter a meaningful name for the change that you made.
+To add a section to the docs that will include multiple articles, you must add a directory with a `_index.md` file.
+The `_index.md` file is the landing page for the section that should contain the main information for the section.
 
-    The default is "Update <filename>" but we like a little more detail than that if you can.
+Start the article with the header information as shown above
+and fill the body with information that is relevant to all articles in the section.
+If you do not have content that can serve as the landing page for the section,
+you can use the `children` shortcode to show all of the sub-topics for the section.
 
-1. Click **Propose file change**.
+```src
+{{%/* children style="h2" description="true" */%}}
+```
 
-Here's what this process looks like:
-{{< video "/images/site/propose-file-change.mp4" "propose-file-change" >}}
+## Writing Article Content
 
-## Open a Pull Request
+The structure of an article is:
 
-1. Review your changes.
+- Concepts
+- Prerequisites (if necessary)
+- Informational notices (if necessary)
+- Procedure
 
-    You can see the before and after of the file. If you see a mistake or want to add to the change, just go back.
+Every article must relate to only one procedure,
+and the concepts must explain any background information that is needed to know when and why to use the procedure.
 
-2. Click **Create pull request**.
+### Writing structure
 
-    A pull request is a recommendation that includes the changes that you made. We are notified of all request and can review or change the request before we include it in the documentation.
+- The concept section consists of:
+    - 2-4 paragraphs in the section or subsection
+    - 2-4 sentences in each paragraph
+    - 10-15 words in each sentence section
+    - Break lines at logical sentence breaks (end of sentence, comma)
+- The prerequisites are listed as bullet points
+- List notes and warnings before the procedure
+- For procedures:
+    - No more than 10 steps
+    - Sub-procedures must be one step with multiple sub-steps
 
-3. Enter a meaningful name for the pull request.
+        {{% expand "For example:" %}}
 
-    By default the pull request has the same name as your file change, which is usually fine.
+        1. To create service accounts, on each participating cluster:
 
-4. Click **Create pull request**.
+            1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+                By default, the address is: `https://<RS_address>:8443`
+            1. Go to **settings > team*- and click ![Add](/images/rs/icon_add.png#no-click "Add").
+            1. Enter the name, email, and password for the user, select the **Admin*- role,
+                and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    Now your pull request is in our system and ready for us to handle.
+            ![Service Account Creation](/images/rs/create-service-account.png)
 
-5. You can add information in the comments box to help us understand why you think the change is important.
+        1. To make sure that there is network connectivity between the participating clusters,
+            telnet on port 8080 from each participating cluster to each of the other participating clusters.
 
-    Maybe we'll even write back!
+            ```src
+            telnet <target FQDN> 8080
+            ```
 
-Here's what this process looks like:
-{{< video "/images/site/review-and-create-PR.mp4" "review-and-create-PR" >}}
+        {{% /expand %}}
 
-Your contributions will help every Redis Labs customer get the most out of Redis products, and they'll have you to thank for it!
+### Writing guidelines
+
+- Lead the sentence with the subject
+- Use “must” instead of - needs, wants, has to, desire, ...
+- Subject and verb must agree in number - blueprint exists, blueprints exist
+- Don’t start a sentence with “also”
+- Instead of writing “In this section” write what is in the section:
+    - Incorrect - `In this section detailed description of available development tools, like built-in features, widget objects, functions, template mechanism and available libraries is provided.`
+    - Correct - `The widget development tools include built-in features, widget objects, functions, template mechanism and available libraries.`
+- Link from text itself instead of “see …”. For example:
+    - Incorrect - `Using the React Utility is the recommended method, and it requires a build operation. You must use the build system described in [Widget building]({{< relref "rs/_index.md" >}}) section.`
+    - Correct - `Using the React Utility is the recommended method, and it requires a build operation in the [widget build system]({{< relref "rs/_index.md" >}}).`
+- Terminology for APIs:
+    - Your code calls an API, which usually returns something.
+    - A call to a REST API sends an HTTP Request to the API URL and the server that hosts that URL usually returns an HTTP Response.
+    - The Request and the Response usually consist of Headers and a Body. Query and Form parameters can also be part of the Request.
+    - The Request Method determines the action that the Server should perform to process the Request.
+    - The CRUD actions are what the server does when it processes the POST, GET, PATCH/PUT, DELETE methods.
+
+### Writing tone
+
+We use a friendly but functional tone.
+Use simple language in your writing so that it is easy for non-English speakers to understand your writing.
+At the same time, do not skip words just to save space.
+
+Here are some examples:
+
+|  Text type | Wrong                                       | Correct                                | Explanation                                           |
+| --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
+| Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
+| Procedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |

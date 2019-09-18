@@ -97,7 +97,7 @@ To share and import an RDB file that is stored in a GCS bucket:
     1. Click **Add item**.
     1. Enter the user details and access:
        - In the Entity field of the new item, select **User**.
-       - In the Name field of the new item, enter: `service@garantiadata.com`
+       - In the Name field of the new item, enter: `service@redislabs-prod-clusters.iam.gserviceaccount.com`
        - In the Access field of the new item, select **Reader**.
     1. Click **Save**.
 1. In the Redis Cloud Essentials management console, go to the database that you want to import into.
