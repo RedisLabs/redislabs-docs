@@ -241,3 +241,81 @@ RLEC PSP definitions are controlled with role-based access control (RBAC).
 A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account
 and allows that account to create pods with the PSP shown above.
 {{% /expand%}}
+
+{{%expand "How do I apply a Redis Enterprise license with a Kubernetes secret?" %}}
+A Redis Enterprise Cluster Kubernetes Operator deployment will have an Opaque Secret with the same name as the `cluster-name`. Running:
+
+```src
+$ kubectl get secret redis-enterprise -o yaml
+```
+
+Will produce a response like this for a cluster without a license applied:
+
+```yaml
+apiVersion: v1
+data:
+  license: ""
+  password: ZVZWcUYxd2E=
+  username: YWRtaW5AZXhhbXBsZS5jb20=
+kind: Secret
+metadata:
+  creationTimestamp: "2019-07-25T07:14:50Z"
+  labels:
+    app: redis-enterprise
+    redis.io/cluster: redis-enterprise
+  name: redis-enterprise
+  namespace: default
+  ownerReferences:
+  - apiVersion: app.redislabs.com/v1alpha1
+    blockOwnerDeletion: true
+    controller: true
+    kind: RedisEnterpriseCluster
+    name: redis-enterprise
+    uid: e2b349ce-aeab-11e9-80c8-31045af0004c
+  resourceVersion: "23175356"
+  selfLink: /api/v1/namespaces/default/secrets/redis-enterprise
+  uid: e499c8b2-aeab-11e9-80c8-31045af0004c
+type: Opaque
+```
+
+You can apply a licnese key received from Redis Labs by encoding it in base64 and patching the `cluster-name` Secret to place the encoded license in the license field.
+
+Here's one way of accomplishing this:
+1. Take the license key that is provided in the following form and paste it in a file we'll call license.key:
+
+```src
+----- LICENSE START -----
+AMBAXiuGiMvKOnKAuuZSBVB3uR06mhsSrUWPNYFJbEcJVY00ULo+v+GRro8d
+IYNEhpu9IB5fpbdBzO67HGHlhglHGLhgLHKGytYTbKUvoRSA5VVoyZhvHemz
+PIGEwbCLtmSTQBnQs1re9hI2KhuznGtkmPkxEonteXmWwk8v3xVFtvo7wzIR
+la9pzk7e3KYE2pBxzWfuS+7BN<MUOyuo89NBVVdX97PweZ4zM4DVUn/q/gM0
+LWHW9W/DK7IPYpZDZTS0is2RURbYL7/WBSmoQCNEHhUI4RHiNUjKlkr4Pr5Q
+6XjIFVYtxUbniYd2uGGzg3d22DnwzexQGaYBjMHB+g==
+----- LICENSE END -----
+```
+
+1. Base64 encode and remove white spaces:
+
+```src
+cat license.key | base64 | tr -d " \t\n\r"
+LS0tLS0gTElDRU5TRSBTVEFSVCAtLS0tLQpBTUJBWGl1R2lNdktPbktBdXVaU0JWQjN1UjA2bWhzU3JVV1BOWUZKYkVjSlZZMDBVTG8rditHUnJvOGQKSVlORWhwdTlJQjVmcGJkQnpPNjdIR0hsaGdsSEdMaGdMSEtHeXRZVGJLVXZvUlNBNVZWb3laaHZIZW16ClBJR0V3YkNMdG1TVFFCblFzMXJlOWhJMktodXpuR3RrbVBreEVvbnRlWG1Xd2s4djN4VkZ0dm83d3pJUgpsYTlwems3ZTNLWUUycEJ4eldmdVMrN0JOPE1VT3l1bzg5TkJWVmRYOTdQd2VaNHpNNERWVW4vcS9nTTAKTFdIVzlXL0RLN0lQWXBaRFpUUzBpczJSVVJiWUw3L1dCU21vUUNORUhoVUk0UkhpTlVqS2xrcjRQcjVRCjZYaklGVll0eFVibmlZZDJ1R0d6ZzNkMjJEbnd6ZXhRR2FZQmpNSEIrZz09Ci0tLS0tIExJQ0VOU0UgRU5EIC0tLS0tIAo=
+```
+
+1. Create a patch yaml file we'll call license.yaml and paste the license key in the license field under `data:` like this:
+
+```src
+data:
+  license: LS0tLS0gTElDRU5TRSBTVEFSVCAtLS0tLQpBTUJBWGl1R2lNdktPbktBdXVaU0JWQjN1UjA2bWhzU3JVV1BOWUZKYkVjSlZZMDBVTG8rditHUnJvOGQKSVlORWhwdTlJQjVmcGJkQnpPNjdIR0hsaGdsSEdMaGdMSEtHeXRZVGJLVXZvUlNBNVZWb3laaHZIZW16ClBJR0V3YkNMdG1TVFFCblFzMXJlOWhJMktodXpuR3RrbVBreEVvbnRlWG1Xd2s4djN4VkZ0dm83d3pJUgpsYTlwems3ZTNLWUUycEJ4eldmdVMrN0JOPE1VT3l1bzg5TkJWVmRYOTdQd2VaNHpNNERWVW4vcS9nTTAKTFdIVzlXL0RLN0lQWXBaRFpUUzBpczJSVVJiWUw3L1dCU21vUUNORUhoVUk0UkhpTlVqS2xrcjRQcjVRCjZYaklGVll0eFVibmlZZDJ1R0d6ZzNkMjJEbnd6ZXhRR2FZQmpNSEIrZz09Ci0tLS0tIExJQ0VOU0UgRU5EIC0tLS0tIAo=
+```
+
+1. Patch the Secret like this:
+
+```src
+kubectl patch secret redis-enterprise --type merge --patch "$(cat license.yaml)"
+secret/redis-enterprise patched
+```
+
+The same process can be followed for updating an expired license.
+
+For more information see [Cluster License Keys documentation]({{< relref "/rs/administering/cluster-operations/settings/license-keys/" >}})
+{{% /expand%}}
