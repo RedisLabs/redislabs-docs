@@ -75,8 +75,6 @@ Repeat the same operations for cluster 2 with these differences:
 Now we have two Redis Enterprise Software clusters with FQDNs
 **cluster1.local** and **cluster2.local**.
 
-Important Note: The cluster must be able to fully resolve DNS of each of the clusters and the databases that it is connecting to. Without this resolution the cluster will fail to connect successfully.
-
 ## Step 3: Create a Redis CRDB
 
 1. After you login to cluster1.local, select the Redis database and deployment type
