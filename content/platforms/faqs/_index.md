@@ -317,5 +317,5 @@ secret/redis-enterprise patched
 
 The same process can be followed for updating an expired license.
 
-For more information see [Cluster License Keys documentation]({{< relref "/rs/administering/cluster-operations/settings/license-keys/" >}})
+For more information see [Cluster License Keys documentation]({{< relref "/rs/administering/cluster-operations/settings/license-keys.md" >}})
 {{% /expand%}}
