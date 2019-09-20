@@ -6,6 +6,8 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/cluster-recovery
 ---
+## Overview
+
 When a Redis Enterprise cluster loses contact with more than half of its nodes either because of failed nodes or network split,
 the cluster stops responding to client connections.
 When this happens, you must recover the cluster to restore the connections.
@@ -13,7 +15,8 @@ When this happens, you must recover the cluster to restore the connections.
 You can also perform cluster recovery to reset cluster nodes, to troubleshoot issues, or in a case of active/passive failover.
 
 {{% note %}}
-To recover the cluster data, you must store the cluster data on [persistent disks]({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}) so that the data is not lost during recovery.
+To support cluster recovery, the cluster must have been [deployed using persistence]({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}).<br>
+To support database data recovery, databases must have been [configured using persistence]({{< relref "//rs/concepts/data-access/persistence.md" >}}).
 {{% /note %}}
 
 ## Recovering a Cluster on Kubernetes
