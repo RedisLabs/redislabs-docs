@@ -59,7 +59,7 @@ function initLunr() {
 
 // Build the index of internal docs
 function buildInternalIndex() {
-    var url = 'https://api.github.com/repos/HarunD/internal-md-experiment/contents/index.json';
+    var url = 'https://api.github.com/repos/RedisLabs/internal-docs/contents/index.json';
     var internalIndex = null;
 
     $.ajax({
@@ -68,7 +68,7 @@ function buildInternalIndex() {
         dataType: 'html',
         async: false,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token ACC_TOKEN");
+            xhr.setRequestHeader("Authorization", "token IC_ACC_TOKEN");
             xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
         },        
         success: function(data) {

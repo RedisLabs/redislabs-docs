@@ -1,18 +1,33 @@
 jQuery(document).ready(function() {
+    var isLoggedIn = localStorage.getItem('auth_token');
     var ii = jQuery('.internal-invoker');
-    var hasToken = localStorage.getItem('auth_token');
 
-    if(ii && hasToken) {
+
+    if(ii && isLoggedIn) {
         ii.css('display', 'inline-block');
     } else {
         ii.hide();
     }
 
-    if(hasToken) {
+    if(isLoggedIn) {
         var si = (location.search.split('si=')[1] || '').split('&')[0];
         if(si && si === 'true') {
             getInternalContent(location.pathname.slice(0, -1) + '.md');
         }
+    }
+
+    if(isLoggedIn) {
+        getInternalContent(); // Get the internal docs for the main section
+
+        $("h1,h2,h1~h2,h1~h3,h1~h4,h1~h5,h1~h6,h2~h3,h3~h4,h4~h5").append(function (index, html) {
+             // Get the internal docs for subsections
+            var element = $(this);
+            var id = element[0].id;
+            if(id) {
+                var path = location.pathname.slice(0, -1) + '_' + id + '.md';
+                showInternalContent(path, {specificSection: true, sectionID: id});
+            }
+        });
     }
 
     jQuery('.category-icon').on('click', function() {
@@ -110,8 +125,7 @@ jQuery(document).ready(function() {
 
 	// Clipboard
 	// Add link button for every
-    var text, clip = new Clipboard('.anchor');
-    var isLoggedIn = localStorage.getItem('auth_token');
+    var text, clip = new Clipboard('.anchor');    
     
     $("h1,h2,h1~h2,h1~h3,h1~h4,h1~h5,h1~h6,h2~h3,h3~h4,h4~h5").append(function (index, html) {
         var element = $(this);
@@ -121,7 +135,7 @@ jQuery(document).ready(function() {
         var clipElement = " <span class='anchor' data-clipboard-text='" + link + "'>"  +
         "</span>";
 
-        if(isLoggedIn) {
+        if(isLoggedIn && element[0].id) {
             clipElement += `
             <span class="anchor internal" onclick="getInternalContent(null,'`+ element[0].id +`')">
                 <i class="fa fa-folder-o"></i>
@@ -390,7 +404,7 @@ function renderInternalContent(content, options) {
 }
 
 function showInternalContent(path, options){
-    var url = 'https://api.github.com/repos/HarunD/internal-md-experiment/contents/content' + path;
+    var url = 'https://api.github.com/repos/RedisLabs/internal-docs/contents/content' + path;
     toggleInternalContentLoader('on');
     var result = null;
     $.ajax({
@@ -399,7 +413,7 @@ function showInternalContent(path, options){
         dataType: 'html',
         async: true,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token ACC_TOKEN");
+            xhr.setRequestHeader("Authorization", "token IC_ACC_TOKEN");
             xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
         },        
         success: function(data) {
@@ -411,8 +425,7 @@ function showInternalContent(path, options){
                 toggleInternalLogin();
             }
             toggleInternalContentLoader('off');
-            console.error("Error loading internal content");
-            renderInternalContent("No internal content for this page could be loaded.", options);
+            renderInternalContent("No internal content for this section available.", options);
         }
     });
     FileReady = true;
@@ -426,7 +439,7 @@ var getInternalContent = function(path, id) {
 
     if(id) {
         path = location.pathname.slice(0, -1) + '_' + id + '.md';
-        showInternalContent(path, {specificSection: true, sectionID: id});        
+        showInternalContent(path, {specificSection: true, sectionID: id});
     }
 
     if(!path && !id) {
