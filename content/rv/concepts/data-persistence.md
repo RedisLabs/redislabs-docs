@@ -48,7 +48,8 @@ There are five options for persistence in Redis Cloud Pro:
 |  **Options** | **Description** |
 |------------|-----------------|
 |  None | Data is not persisted to disk at all. |
-|  Append Only File (AoF) | Data is fsynced to disk every second. |
+|  Append Only File (AoF) every write | Data is fsynced to disk every write. |
+|  Append Only File (AoF) every 1 second | Data is fsynced to disk every second. |
 |  Snapshot every 1 hour | A snapshot of the database is created every hour. |
 |  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
 |  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
