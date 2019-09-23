@@ -36,7 +36,7 @@ Before configuring a CRDB, you must:
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (8080) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
 
-### CRDB Current Limitations
+## CRDB Current Limitations
 
 1. RS is limited to five Participating Clusters or CRDB Instances per CRDB.
 1. An existing database cannot modified to be a CRDB.
@@ -49,7 +49,7 @@ Before configuring a CRDB, you must:
     ReplicaOf is a one-way replication, while CRDB utilize multi-master replication.
 1. [OSS cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) is not supported with CRDB.
 
-### Network Time Service (NTP or Chrony)
+## Network Time Service (NTP or Chrony)
 
 For CRDBs, you must use a time service like NTP or Chrony.
 This is critical to minimize time drift both intercluster and intracluster for CRDBs on an ongoing basis.
@@ -74,13 +74,13 @@ Do you want to set up NTP time synchronization now [Y/N]? Y
 2017-10-30 11:24:19 [.] Making sure NTP is installed and time is set.
 ```
 
-### Network Configurations
+## Network Configurations
 
 RS assumes that networking between the clusters is already configured when you create a CRDB.
 For security purposes, recommend that you configure a secure VPN between all clusters that host a CRDB instance.
 The setup of the CRDB fails if there is no connectivity between the clusters.
 
-### Network Ports
+## Network Ports
 
 For initial configuration and ongoing maintenance of a CRDB, every nude must have access to the REST API ports of every other node.
 You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
@@ -93,11 +93,43 @@ The endpoint port that you configure when you create the CRDB is the endpoint po
 You can set the data persistence configuration, including AOF (Append-Only File) data persistence and snapshot,
 for each participating cluster.
 
-### Syncer process
+## Syncer process
 
 Each node in a cluster containing a CRDB instance hosts a process called syncer.
-The syncer process synchronizes data from other instances of the CRDB as follows:
+The syncer process:
 
-- The syncer connects to the other cluster proxy.
-- The syncer reads data from that database.
-- The syncer writes the data to the master shard of that database.
+1. Connects to the other cluster proxy
+1. Reads data from that database
+1. Writes the data to the master shard of that database
+
+This process is also used in the [open-source redis replication](https://redis.io/topics/replication).
+
+The Master at the top of the master-slaves tree has a replication ID.
+This replication ID is identical for all slaves in that tree.
+When a new master is appointed, the replication ID changes but a partial sync from the previous ID is still possible.
+In a partial sync, the backlog of operations since the offset are transferred as raw operations.
+In a full sync, the data from the master is transferred to the slave as an RDB file which is followed by a partial sync.
+
+Partial synchronization requires a backlog large enough to store the data operations until connection is restored.
+
+### Syncer in Active-Active Replication (CRDB)
+
+In the case of a CRDB:
+
+- Multiple past replication IDs and offsets are stored to allow for multiple syncs
+- The Active-Active backlog is also sent to the slave during a full sync
+- Full sync triggers heavy data transfers between geo-replicated CRDB instances
+
+The synchronization scenarios in CRDB are:
+
+- Failover - The master-slave sync is partial
+- Slave restart/crash - The master-slave sync is full
+- Slave migration - The master-slave sync is full
+- Master migrate - Failover and slave migration is partial sync
+- Master migrate + preserve_roles - Failover, slave migration and failover again is partial sync
+
+### Syncer in Active-Passive Replication (Replica Of)
+
+In Replica Of, the master node does not transfer the replication backlog to its slave.
+Whenever a synchronization is necessary, the slave has no backlog and can only do a full sync.
+But, in a controlled failover the demoted master still has the replication backlog and when the syncer can do a partial sync.
