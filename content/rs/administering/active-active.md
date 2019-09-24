@@ -102,9 +102,9 @@ The syncer process:
 1. Reads data from that database
 1. Writes the data to the master shard of that database
 
-This process is also used in the [open-source redis replication](https://redis.io/topics/replication).
+Some replication capabilities are also included in [open source redis](https://redis.io/topics/replication).
 
-The Master at the top of the master-slaves tree has a replication ID.
+The Master at the top of the master-slaves tree creates a replication ID.
 This replication ID is identical for all slaves in that tree.
 When a new master is appointed, the replication ID changes but a partial sync from the previous ID is still possible.
 In a partial sync, the backlog of operations since the offset are transferred as raw operations.
@@ -118,9 +118,12 @@ In the case of a CRDB:
 
 - Multiple past replication IDs and offsets are stored to allow for multiple syncs
 - The Active-Active backlog is also sent to the slave during a full sync
-- Full sync triggers heavy data transfers between geo-replicated CRDB instances
 
-The synchronization scenarios in CRDB are:
+{{% warning %}}
+Full sync triggers heavy data transfers between geo-replicated CRDB instances.
+{{% /warning %}}
+
+The scenarios in which CRDB uses partial synchronization:
 
 - Failover - The master-slave sync is partial
 - Slave restart/crash - The master-slave sync is full
