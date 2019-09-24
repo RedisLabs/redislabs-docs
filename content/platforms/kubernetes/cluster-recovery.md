@@ -14,6 +14,13 @@ When this happens, you must recover the cluster to restore the connections.
 
 You can also perform cluster recovery to reset cluster nodes, to troubleshoot issues, or in a case of active/passive failover.
 
+The cluster recovery for Kubernetes automates these recovery steps:
+
+1. Recreates a fresh Redis Enterprise cluster
+1. Mounts the persistent storage with the recovery files from the original cluster to the nodes of the new cluster
+1. Recovers the cluster configuration on the first node in the new cluster
+1. Joins the remaining nodes to the new cluster.
+
 {{% note %}}
 To support cluster recovery, the cluster must have been [deployed using persistence]({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}).<br>
 To support database data recovery, databases must have been [configured using persistence]({{< relref "//rs/concepts/data-access/persistence.md" >}}).
