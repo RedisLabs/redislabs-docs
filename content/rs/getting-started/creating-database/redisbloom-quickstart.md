@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/getting-started/creating-database/redisbloom/
 ---
 For this quick start, you will need the following:
 

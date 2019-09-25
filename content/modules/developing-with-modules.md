@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["Modules"]
+aliases: /rs/developing/modules/
 ---
 Note: Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x
 

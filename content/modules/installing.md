@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["Modules"]
+aliases: /rs/developing/modules/installing/
 ---
 Redis modules are dedicated and optimized engines for specific data models.
 You can use either:
