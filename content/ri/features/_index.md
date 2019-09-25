@@ -1,5 +1,5 @@
 ---
-title: Features
+Title: Features
 description:
 weight: 30
 alwaysopen: false

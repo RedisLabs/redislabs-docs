@@ -1,5 +1,5 @@
 ---
-title: Convert Hashtable to Ziplist for Hashes
+Title: Convert Hashtable to Ziplist for Hashes
 date:  2018-03-26 16:49:29 +0530
 weight: 100
 categories: ["RI"]memory-optimizations/convert-hashtable-to-ziplist-for-hashes/

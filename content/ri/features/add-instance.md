@@ -1,10 +1,10 @@
 ---
-title:  Adding a Redis instance
+Title:  Adding a Redis instance
 date:  2018-07-20 03:49:29 +0530
 weight: 10
 categories: ["RI"]add-instance/
 nextStep:
-    title: Memory Analysis
+    Title: Memory Analysis
     href: /docs/features/memory-analysis/
 ---
 Now, we will connect RedisInsight to a Redis Server. Let's start by connecting to redis server running on localhost.

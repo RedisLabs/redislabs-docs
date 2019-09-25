@@ -1,5 +1,5 @@
 ---
-title:  Redis GUI Client for Windows
+Title:  Redis GUI Client for Windows
 weight: 10
 categories: ["RI"]install/windows/
 ---

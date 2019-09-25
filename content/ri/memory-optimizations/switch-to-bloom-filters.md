@@ -1,5 +1,5 @@
 ---
-title:  Switch to bloom filter or hyperloglog
+Title:  Switch to bloom filter or hyperloglog
 date:  2018-03-26 16:49:29 +0530
 weight: 80
 categories: ["RI"]memory-optimizations/switch-to-bloom-filter-or-hyperloglog/

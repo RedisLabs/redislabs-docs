@@ -1,10 +1,10 @@
 ---
-title:  Installing RedisInsight on Docker
+Title:  Installing RedisInsight on Docker
 date:  2018-06-05 03:49:29 +0530
 weight: 40
 categories: ["RI"]install/docker/
 nextStep:
-    title: Activating RedisInsight
+    Title: Activating RedisInsight
     href: /docs/install/activating/
 ---
 In this walkthrough, we will install RedisInsight on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [RedisInsight on AWS](/docs/rdbtools-docker-installation-ec2/).

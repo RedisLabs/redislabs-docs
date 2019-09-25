@@ -1,5 +1,5 @@
 ---
-title: Avoid Dynamic Lua Script
+Title: Avoid Dynamic Lua Script
 date:  2018-03-26 16:49:29 +0530
 weight: 130
 categories: ["RI"]memory-optimizations/avoid-dynamic-lua-script/

@@ -1,5 +1,5 @@
 ---
-title: Convert to a List Instead of Hash
+Title: Convert to a List Instead of Hash
 date:  2018-03-26 16:49:29 +0530
 weight: 110
 categories: ["RI"]memory-optimizations/convert-to-list-instead-of-hash/

@@ -1,5 +1,5 @@
 ---
-title:  Memory Analysis
+Title:  Memory Analysis
 date:  2018-06-14 03:49:29 +0530
 weight: 20
 categories: ["RI"]features/memory-analysis/

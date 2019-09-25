@@ -1,10 +1,10 @@
 ---
-title:  Installing RedisInsight via AWS CloudFormation
+Title:  Installing RedisInsight via AWS CloudFormation
 date:  2018-07-20 03:49:29 +0530
 weight: 60
 categories: ["RI"]install/cloudformation/
 nextStep:
-    title: Activating RedisInsight
+    Title: Activating RedisInsight
     href: /docs/install/activating/
 ---
 Launch a CloudFormation stack with RedisInsight preinstalled using our template:

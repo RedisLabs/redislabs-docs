@@ -1,5 +1,5 @@
 ---
-title:  Compress Values
+Title:  Compress Values
 date:  2018-03-26 16:49:29 +0530
 weight: 10
 categories: ["RI"]memory-optimizations/compress-values/

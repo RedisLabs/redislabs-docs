@@ -1,5 +1,5 @@
 ---
-title:  View Java Serialized Objects in Redis
+Title:  View Java Serialized Objects in Redis
 weight: 40
 categories: ["RI"]features/view-java-serialized-objects/
 ---

@@ -1,5 +1,5 @@
 ---
-title:  Use Smaller Keys
+Title:  Use Smaller Keys
 date:  2018-03-26 16:49:29 +0530
 weight: 20
 categories: ["RI"]memory-optimizations/use-smaller-keys/

@@ -1,10 +1,10 @@
 ---
-title:  Activating RedisInsight
+Title:  Activating RedisInsight
 date:  2018-07-20 03:49:29 +0530
 weight: 70
 categories: ["RI"]install/activating/
 nextStep:
-    title: Adding a Redis Instance
+    Title: Adding a Redis Instance
     href: /docs/add-instance/
 ---
 After you install RedisInsight you'll need to activate it to start using RedisInsight, unless you purchaced it through the AWS Marketplace. If you purchased RedisInsight through the AWS marketplace, you are already using a fully activated version of RedisInsight and no further activation is required.

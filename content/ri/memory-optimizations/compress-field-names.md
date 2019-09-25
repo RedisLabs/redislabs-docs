@@ -1,5 +1,5 @@
 ---
-title: Compress Field Names
+Title: Compress Field Names
 date:  2018-03-26 16:49:29 +0530
 weight: 120
 categories: ["RI"]memory-optimizations/compress-field-names/

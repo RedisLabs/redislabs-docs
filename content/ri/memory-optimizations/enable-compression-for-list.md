@@ -1,5 +1,5 @@
 ---
-title: Enable Compression for List
+Title: Enable Compression for List
 date:  2018-03-26 16:49:29 +0530
 weight: 130
 categories: ["RI"]memory-optimizations/enable-compression-for-list/
