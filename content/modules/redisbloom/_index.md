@@ -1,9 +1,9 @@
 ---
-Title: Developing with Bloom Filters
+Title: RedisBloom
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
 ---
 A Bloom filter is a probabilistic data structure which provides an
 efficient way to verify that an entry is certainly *not* in a set. This
@@ -96,77 +96,6 @@ the current filter. Hashes still only need to be computed once, however.
 
 When creating a Bloom filter - even a scalable one, it's important to
 have a good idea of how many items it is expected to contain. A filter
-whose initial layer can only contain a small number of elements 
-degrades performance significantly because it takes more layers to
+whose initial layer can only contain a small number of elements will
+degrade performance significantly because it will take more layers to
 reach a larger capacity.
-
-## Using Bloom filters in Redis Enterprise Software (RS)
-
-The first thing you need is to download, install the package into the RS
-cluster, and then create a database that uses the module. For this, see
-[Installing a
-Module]({{< relref "/rs/developing/modules/installing.md" >}}).
-
-### Trying It Out
-
-You can play with it a bit using redis-cli:
-
-```src
- 127.0.0.1:6379> BF.ADD bloom mark
- 1) (integer) 1
- 127.0.0.1:6379> BF.ADD bloom redis
- 1) (integer) 1
- 127.0.0.1:6379> BF.EXISTS bloom mark
- (integer) 1
- 127.0.0.1:6379> BF.EXISTS bloom redis
- (integer) 1
- 127.0.0.1:6379> BF.EXISTS bloom nonexist
- (integer) 0
- 127.0.0.1:6379> BF.EXISTS bloom que?
- (integer) 0
- 127.0.0.1:6379>
- 127.0.0.1:6379> BF.MADD bloom elem1 elem2 elem3
- 1) (integer) 1
- 2) (integer) 1
- 3) (integer) 1
- 127.0.0.1:6379> BF.MEXISTS bloom elem1 elem2 elem3
- 1) (integer) 1
- 2) (integer) 1
- 3) (integer) 1
-```
-
-You can also create a custom Bloom filter. The *BF.ADD* command creates
-a new Bloom filter suitable for a small-ish number of items. This
-consumes less memory but may not be ideal for large filters:
-
-```src
- 127.0.0.1:6379> BF.RESERVE largebloom 0.0001 1000000
- OK
- 127.0.0.1:6379> BF.ADD largebloom mark
- 1) (integer) 1
-```
-
-### Debugging Bloom filters
-
-Finally, I added a BF.DEBUG command, to see exactly how the filter is
-being utilized:
-
-```src
- 127.0.0.1:6379> BF.DEBUG test
- 1) "size:987949"
- 2) "bytes:239627 bits:1917011 hashes:14 capacity:100000 size:100000 ratio:0.0001"
- 3) "bytes:551388 bits:4411101 hashes:16 capacity:200000 size:200000 ratio:2.5e-05"
- 4) "bytes:1319180 bits:10553436 hashes:19 capacity:400000 size:400000 ratio:3.125e-06"
- 5) "bytes:3215438 bits:25723497 hashes:23 capacity:800000 size:287949 ratio:1.95313e-07"
-```
-
-This outputs the total number of elements as the first result, and then
-a list of details for each filter in the chain. As you can see, whenever
-a new filter is added, its capacity grows exponentially and the
-strictness for errors increases.
-
-Note that this filter chain also uses a total of 5MB. This is still much
-more space efficient than alternative solutions, since we're still at
-about 5 bytes per element, and the uppermost filter is only at about 12%
-utilization. Had the initial capacity been greater, more space would
-have been saved and lookups would have been quicker.

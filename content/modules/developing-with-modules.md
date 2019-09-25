@@ -3,10 +3,9 @@ Title: Developing with Redis Modules in Redis Enterprise Software (RS)
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
 ---
-Note: Modules are not supported in Redis Enterprise Software on
-RHEL/CentOS 6.x
+Note: Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x
 
 ## Redis Labs Packaged Modules
 
@@ -14,8 +13,8 @@ Redis Labs develops, certifies, and packages modules for use with Redis Enterpr
 Software (RS) clusters. The available modules are:
 
 - RedisBloom
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/RedisBloom.md" >}})
-    - [Developing with RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisbloom-quickstart.md" >}})
+    - [Developing with RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
 - RedisGraph
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
@@ -32,10 +31,11 @@ Enterprise modules are pre-installed with RS.
 - To download later versions of these modules, go to: [Redis Enterprise downloads
 page](https://redislabs.com/products/redis-pack/downloads/)
 - To upgrade the modules, go to: [Upgrading a
-Module]({{< relref "/rs/developing/modules/upgrading.md" >}})
+Module]({{< relref "/modules/upgrading.md" >}})
 
-Warning: Redis Labs does not and cannot support third party modules or
-databases created with them.
+{{% warning %}}
+Redis Labs does not and cannot support third party modules or databases created with them.
+{{% /warning %}}
 
 ## Packaging Non-Certified Modules
 
@@ -55,7 +55,7 @@ require six steps:
 1. Deploy the custom module to the cluster using the web UI
 1. Create a database that utilizes the module
 
-### Get the Module from Github
+### Get the Module from GitHub
 
 ```src
 git clone https://github.com/account/myModule.git
@@ -92,4 +92,4 @@ $ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
 Go to [the ramp](https://github.com/RedisLabs/RAMP) github [page](https://github.com/RedisLabs/RAMP)
 for more information each command line switch in ramp.
 
-To deploy the packaged module, see [Installing a Module]({{< relref "/rs/developing/modules/installing.md" >}}).
+To deploy the packaged module, see [Installing a Module]({{< relref "/modules/installing.md" >}}).

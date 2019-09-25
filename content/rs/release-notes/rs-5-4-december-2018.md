@@ -71,7 +71,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 ### Upgrade
 
-- Before you upgrade a database with the RediSearch module to Redis 5.0, you must [upgrade the RediSearch module on that DB]({{< relref "/rs/developing/modules/upgrading.md" >}}) to 1.4.2 or higher. We recommend that you upgrade the RediSearch module before you upgrade the cluster to RS 5.4.
+- Before you upgrade a database with the RediSearch module to Redis 5.0, you must [upgrade the RediSearch module on that DB]({{< relref "/modules/upgrading.md" >}}) to 1.4.2 or higher. We recommend that you upgrade the RediSearch module before you upgrade the cluster to RS 5.4.
 - Node upgrade fails if SSL certificates were configured in version 5.0.2 and above by updating the certificates on the disk instead of using the new API. For assistance with this issue, please contact support.
 
 ### Cluster API

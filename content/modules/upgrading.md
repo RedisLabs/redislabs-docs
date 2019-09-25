@@ -3,7 +3,7 @@ Title: Upgrading a Module in Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
 ---
 As modules are upgraded, you need to load them into Redis
 Enterprise to get the new features and/or
@@ -17,7 +17,7 @@ fixes.
     page](https://redislabs.com/download-center/modules/).
     For more specific information on developing with each module
     see:
-    1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+    1. [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
     1. [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
