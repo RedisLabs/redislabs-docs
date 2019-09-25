@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Combine Smaller Strings to Hashes
 date:  2018-03-26 16:49:29 +0530
 weight: 60
-categories: ["RI"]
-permalink: docs/memory-optimizations/combine-smaller-strings-to-hashes/
+categories: ["RI"]memory-optimizations/combine-smaller-strings-to-hashes/
 pageTitle: Combine Smaller Strings to Hashes
 altTag: Combine Smaller Strings to Hashes
 ---

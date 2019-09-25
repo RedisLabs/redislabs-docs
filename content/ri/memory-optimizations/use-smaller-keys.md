@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Use Smaller Keys
 date:  2018-03-26 16:49:29 +0530
 weight: 20
-categories: ["RI"]
-permalink: docs/memory-optimizations/use-smaller-keys/
+categories: ["RI"]memory-optimizations/use-smaller-keys/
 pageTitle: Use Smaller Keys
 altTag: Use Smaller Keys
 ---

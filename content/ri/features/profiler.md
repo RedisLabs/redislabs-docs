@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Profiler
 date:  2018-06-14 03:49:29 +0530
 weight: 60
-categories: ["RI"]
-permalink: docs/features/profiler/
+categories: ["RI"]features/profiler/
 pageTitle: Profiler
 ---
 RedisInsight Profiler runs Redis ```MONITOR``` command, which analyzes every command sent to the redis instance. It parses the output of the MONITOR command and generates a summarized view. All the commands sent to the redis instance will be monitored for the duration of the profiling.

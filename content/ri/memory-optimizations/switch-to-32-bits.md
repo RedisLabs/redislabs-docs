@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Switch to 32 Bits
 date:  2018-03-26 16:49:29 +0530
 weight: 30
-categories: ["RI"]
-permalink: docs/memory-optimizations/switch-to-32-bits/
+categories: ["RI"]memory-optimizations/switch-to-32-bits/
 pageTitle: Switch to 32 bits
 altTag: Switch to 32 bits
 ---

@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Activating RedisInsight on Docker
 date:  2018-06-05 03:49:29 +0530
 weight: 80
-categories: ["RI"]
-permalink: docs/installation/activating-rdbtools/
+categories: ["RI"]installation/activating-rdbtools/
 pageTitle: Activating RedisInsight
 altTag: Activating RedisInsight
 ---

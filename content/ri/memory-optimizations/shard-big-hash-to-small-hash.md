@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Shard Big Hashes to Small Hashes
 date:  2018-03-26 16:49:29 +0530
 weight: 90
-categories: ["RI"]
-permalink: docs/memory-optimizations/shard-big-hashes-to-small-hashes/
+categories: ["RI"]memory-optimizations/shard-big-hashes-to-small-hashes/
 pageTitle: Shard Big Hashes to Small Hashes
 altTag: Shard Big Hashes to Small Hashes
 ---

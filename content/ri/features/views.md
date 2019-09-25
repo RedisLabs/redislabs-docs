@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Views
 date:  2018-06-14 03:49:29 +0530
 weight: 50
-categories: ["RI"]
-permalink: docs/features/views/
+categories: ["RI"]features/views/
 pageTitle: Views
 ---
 {{% note %}}

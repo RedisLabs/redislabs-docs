@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Redis GUI Client for Linux
 date:  2018-07-20 03:49:29 +0530
 weight: 30
-categories: ["RI"]
-permalink: docs/install/linux/
+categories: ["RI"]install/linux/
 pageTitle: Redis GUI Client for Linux
 ---
 ### Install Redis GUI for Linux

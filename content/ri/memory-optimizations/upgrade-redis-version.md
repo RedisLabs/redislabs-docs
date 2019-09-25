@@ -1,10 +1,8 @@
 ---
-layout: docs
 title:  Upgrade Redis Version
 date:  2018-03-26 16:49:29 +0530
 weight: 40
-categories: ["RI"]
-permalink: docs/memory-optimizations/upgrade-redis-version/
+categories: ["RI"]memory-optimizations/upgrade-redis-version/
 pageTitle: Upgrade Redis Version
 altTag: Upgrade Redis Version
 ---
