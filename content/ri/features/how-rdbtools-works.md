@@ -1,6 +1,6 @@
 ---
-Title:  How RedisInsight Works
-date:  2018-03-26 16:49:29 +0530
+Title: How RedisInsight Works
+date: 2018-03-26 16:49:29 +0530
 weight: 5
 categories: ["RI"]
 path: how-rdbtools-works/

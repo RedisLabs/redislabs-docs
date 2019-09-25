@@ -1,6 +1,7 @@
 ---
-Title:  View Java Serialized Objects in Redis
+Title: View Java Serialized Objects in Redis
 weight: 40
+alwaysopen: false
 categories: ["RI"]
 path: features/view-java-serialized-objects/
 ---

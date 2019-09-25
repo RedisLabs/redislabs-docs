@@ -1,6 +1,6 @@
 ---
-Title:  Activating RedisInsight on Docker
-date:  2018-06-05 03:49:29 +0530
+Title: Activating RedisInsight on Docker
+date: 2018-06-05 03:49:29 +0530
 weight: 80
 categories: ["RI"]
 path: installation/activating-rdbtools/

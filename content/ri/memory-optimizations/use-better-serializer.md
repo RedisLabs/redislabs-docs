@@ -1,6 +1,6 @@
 ---
-Title:  Use Better Serializer
-date:  2018-03-26 16:49:29 +0530
+Title: Use Better Serializer
+date: 2018-03-26 16:49:29 +0530
 weight: 50
 categories: ["RI"]
 path: memory-optimizations/use-better-serializer/

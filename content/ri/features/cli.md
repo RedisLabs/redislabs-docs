@@ -1,6 +1,6 @@
 ---
-Title:  CLI
-date:  2018-06-14 03:49:29 +0530
+Title: CLI
+date: 2018-06-14 03:49:29 +0530
 weight: 80
 categories: ["RI"]
 path: features/cli/

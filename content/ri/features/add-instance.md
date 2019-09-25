@@ -1,6 +1,6 @@
 ---
-Title:  Adding a Redis instance
-date:  2018-07-20 03:49:29 +0530
+Title: Adding a Redis instance
+date: 2018-07-20 03:49:29 +0530
 weight: 10
 categories: ["RI"]
 path: add-instance/

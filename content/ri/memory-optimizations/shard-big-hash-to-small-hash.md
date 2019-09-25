@@ -1,6 +1,6 @@
 ---
-Title:  Shard Big Hashes to Small Hashes
-date:  2018-03-26 16:49:29 +0530
+Title: Shard Big Hashes to Small Hashes
+date: 2018-03-26 16:49:29 +0530
 weight: 90
 categories: ["RI"]
 path: memory-optimizations/shard-big-hashes-to-small-hashes/

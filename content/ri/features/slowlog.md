@@ -1,6 +1,6 @@
 ---
-Title:  Slowlog
-date:  2018-06-14 03:49:29 +0530
+Title: Slowlog
+date: 2018-06-14 03:49:29 +0530
 weight: 70
 categories: ["RI"]
 path: features/slowlog/

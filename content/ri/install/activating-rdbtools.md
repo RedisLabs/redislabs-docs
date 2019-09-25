@@ -1,6 +1,6 @@
 ---
-Title:  Activating RedisInsight
-date:  2018-07-20 03:49:29 +0530
+Title: Activating RedisInsight
+date: 2018-07-20 03:49:29 +0530
 weight: 70
 categories: ["RI"]
 path: install/activating/

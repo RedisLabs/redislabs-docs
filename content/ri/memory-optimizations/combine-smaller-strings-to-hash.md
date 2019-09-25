@@ -1,6 +1,6 @@
 ---
-Title:  Combine Smaller Strings to Hashes
-date:  2018-03-26 16:49:29 +0530
+Title: Combine Smaller Strings to Hashes
+date: 2018-03-26 16:49:29 +0530
 weight: 60
 categories: ["RI"]
 path: memory-optimizations/combine-smaller-strings-to-hashes/

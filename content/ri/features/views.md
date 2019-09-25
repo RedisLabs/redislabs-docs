@@ -1,6 +1,6 @@
 ---
-Title:  Views
-date:  2018-06-14 03:49:29 +0530
+Title: Views
+date: 2018-06-14 03:49:29 +0530
 weight: 50
 categories: ["RI"]
 path: features/views/

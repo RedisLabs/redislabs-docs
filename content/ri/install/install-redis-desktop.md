@@ -1,6 +1,6 @@
 ---
-Title:  Redis Desktop Client for Mac, Windows and Linux
-date:  2018-07-20 03:49:29 +0530
+Title: Redis Desktop Client for Mac, Windows and Linux
+date: 2018-07-20 03:49:29 +0530
 weight: 5
 categories: ["RI"]
 path: install/redis-desktop-mac-win-linux/

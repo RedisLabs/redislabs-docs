@@ -1,6 +1,6 @@
 ---
-Title:  Upgrade Redis Version
-date:  2018-03-26 16:49:29 +0530
+Title: Upgrade Redis Version
+date: 2018-03-26 16:49:29 +0530
 weight: 40
 categories: ["RI"]
 path: memory-optimizations/upgrade-redis-version/

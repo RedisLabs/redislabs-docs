@@ -1,6 +1,6 @@
 ---
-Title:  Switch from Set to Intset
-date:  2018-03-26 16:49:29 +0530
+Title: Switch from Set to Intset
+date: 2018-03-26 16:49:29 +0530
 weight: 70
 categories: ["RI"]
 path: memory-optimizations/switch-from-set-to-intset/

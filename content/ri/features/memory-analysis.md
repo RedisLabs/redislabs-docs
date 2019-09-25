@@ -1,6 +1,6 @@
 ---
-Title:  Memory Analysis
-date:  2018-06-14 03:49:29 +0530
+Title: Memory Analysis
+date: 2018-06-14 03:49:29 +0530
 weight: 20
 categories: ["RI"]
 path: features/memory-analysis/

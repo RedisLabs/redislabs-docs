@@ -1,6 +1,6 @@
 ---
-Title:  Installing RedisInsight via AWS CloudFormation
-date:  2018-07-20 03:49:29 +0530
+Title: Installing RedisInsight via AWS CloudFormation
+date: 2018-07-20 03:49:29 +0530
 weight: 60
 categories: ["RI"]
 path: install/cloudformation/

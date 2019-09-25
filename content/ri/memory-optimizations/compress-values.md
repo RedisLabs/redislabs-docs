@@ -1,6 +1,6 @@
 ---
-Title:  Compress Values
-date:  2018-03-26 16:49:29 +0530
+Title: Compress Values
+date: 2018-03-26 16:49:29 +0530
 weight: 10
 categories: ["RI"]
 path: memory-optimizations/compress-values/
