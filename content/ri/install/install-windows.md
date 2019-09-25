@@ -1,7 +1,8 @@
 ---
 Title:  Redis GUI Client for Windows
 weight: 10
-categories: ["RI"]install/windows/
+categories: ["RI"]
+path: install/windows/
 ---
 ### Install Redis GUI for Windows
 

@@ -2,7 +2,8 @@
 Title:  Activating RedisInsight
 date:  2018-07-20 03:49:29 +0530
 weight: 70
-categories: ["RI"]install/activating/
+categories: ["RI"]
+path: install/activating/
 nextStep:
     Title: Adding a Redis Instance
     href: /docs/add-instance/

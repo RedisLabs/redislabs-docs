@@ -2,7 +2,8 @@
 Title: Enable Compression for List
 date:  2018-03-26 16:49:29 +0530
 weight: 130
-categories: ["RI"]memory-optimizations/enable-compression-for-list/
+categories: ["RI"]
+path: memory-optimizations/enable-compression-for-list/
 altTag: Enable Compression for Internal Nodes within a List
 ---
 List is just a link list of arrays, where none of the arrays are compressed. By default, redis does not compress elements inside a list. However, if you use long lists, and mostly access elements from the head and tail only, then you can enable compression.

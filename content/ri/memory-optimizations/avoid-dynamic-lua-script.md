@@ -2,7 +2,8 @@
 Title: Avoid Dynamic Lua Script
 date:  2018-03-26 16:49:29 +0530
 weight: 130
-categories: ["RI"]memory-optimizations/avoid-dynamic-lua-script/
+categories: ["RI"]
+path: memory-optimizations/avoid-dynamic-lua-script/
 altTag: Avoid Dynamic Lua Scripts
 ---
 Refrain from generating dynamic scripts, which can cause your Lua cache to grow and get out of control.

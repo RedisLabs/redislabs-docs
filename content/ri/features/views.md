@@ -2,7 +2,8 @@
 Title:  Views
 date:  2018-06-14 03:49:29 +0530
 weight: 50
-categories: ["RI"]features/views/
+categories: ["RI"]
+path: features/views/
 ---
 {{% note %}}
 These instructions are outdated. New documentation is on the way.

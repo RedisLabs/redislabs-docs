@@ -2,7 +2,8 @@
 Title:  Switch to bloom filter or hyperloglog
 date:  2018-03-26 16:49:29 +0530
 weight: 80
-categories: ["RI"]memory-optimizations/switch-to-bloom-filter-or-hyperloglog/
+categories: ["RI"]
+path: memory-optimizations/switch-to-bloom-filter-or-hyperloglog/
 altTag: Switch to bloom filter or hyperloglog
 ---
 Unique items can be difficult to count. Usually this means storing every unique item then recalling this information somehow. With Redis, this can be accomplished by using a set and a single command, however both the storage and time complexity of this with very large sets is prohibitive. HyperLogLog provides a probabilistic alternative.

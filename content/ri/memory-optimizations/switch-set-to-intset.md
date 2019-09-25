@@ -2,7 +2,8 @@
 Title:  Switch from Set to Intset
 date:  2018-03-26 16:49:29 +0530
 weight: 70
-categories: ["RI"]memory-optimizations/switch-from-set-to-intset/
+categories: ["RI"]
+path: memory-optimizations/switch-from-set-to-intset/
 altTag: Switch from Set to Intset for Numeric IDs
 ---
 Sets that contain only integers are extremely efficient memory wise. If your set contains strings, try to use integers by mapping string identifiers to integers.

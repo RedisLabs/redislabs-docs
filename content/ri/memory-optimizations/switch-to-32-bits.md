@@ -2,7 +2,8 @@
 Title:  Switch to 32 Bits
 date:  2018-03-26 16:49:29 +0530
 weight: 30
-categories: ["RI"]memory-optimizations/switch-to-32-bits/
+categories: ["RI"]
+path: memory-optimizations/switch-to-32-bits/
 altTag: Switch to 32 bits
 ---
 Redis gives you the following statistics for a 64-bit machine.

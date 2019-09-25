@@ -2,7 +2,8 @@
 Title: Reclaim Expired Keys Memory Faster
 date:  2018-03-26 16:49:29 +0530
 weight: 140
-categories: ["RI"]memory-optimizations/reclaim-expired-keys-memory-faster/
+categories: ["RI"]
+path: memory-optimizations/reclaim-expired-keys-memory-faster/
 altTag: Reclaim Expired Keys Memory Faster
 ---
 When you set an expiry on a key, redis does not expire it at that instant. Instead, it uses a [randomized algorithm](https://redis.io/commands/expire) to find out keys that should be expired. Since this algorithm is random, there are chances that redis will not expire keys. This means that redis will consume memory to hold keys that have already expired. The moment the key is accessed, it will be deleted.

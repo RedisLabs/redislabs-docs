@@ -1,7 +1,8 @@
 ---
 Title:  View Java Serialized Objects in Redis
 weight: 40
-categories: ["RI"]features/view-java-serialized-objects/
+categories: ["RI"]
+path: features/view-java-serialized-objects/
 ---
 RedisInsight GUI for redis detects java serialized objects and converts them to a nicely formatted JSON object, along with the fully qualified class name.
 

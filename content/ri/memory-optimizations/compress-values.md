@@ -2,7 +2,8 @@
 Title:  Compress Values
 date:  2018-03-26 16:49:29 +0530
 weight: 10
-categories: ["RI"]memory-optimizations/compress-values/
+categories: ["RI"]
+path: memory-optimizations/compress-values/
 altTag: Compress Values
 ---
 Redis and clients are typically IO bound and the IO costs are typically at least 2 orders of magnitude in respect to the rest of the request/reply sequence. Redis by default does not compress any value that is stored in it, hence it becomes important to compress your data before storing in Redis.This will help in reducing the payload which will in return give you higher throughput, lower latency and higher savings in your cost.

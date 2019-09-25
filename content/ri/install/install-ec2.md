@@ -2,7 +2,8 @@
 Title:  Install RedisInsight on AWS EC2
 date:  2018-06-05 03:49:29 +0530
 weight: 50
-categories: ["RI"]install/ec2/
+categories: ["RI"]
+path: install/ec2/
 altTag: Install RedisInsight on AWS EC2
 nextStep:
     Title: Activating RedisInsight

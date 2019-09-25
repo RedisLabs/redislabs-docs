@@ -2,7 +2,8 @@
 Title:  Adding a Redis instance
 date:  2018-07-20 03:49:29 +0530
 weight: 10
-categories: ["RI"]add-instance/
+categories: ["RI"]
+path: add-instance/
 nextStep:
     Title: Memory Analysis
     href: /docs/features/memory-analysis/

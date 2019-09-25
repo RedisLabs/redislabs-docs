@@ -2,7 +2,8 @@
 Title:  Slowlog
 date:  2018-06-14 03:49:29 +0530
 weight: 70
-categories: ["RI"]features/slowlog/
+categories: ["RI"]
+path: features/slowlog/
 ---
 RedisInsight Slowlog is a list of slow operations for your redis instance. These can be used to troubleshoot performance issues. Each entry in the list displays the command, duration and timestamp. Any transaction that exceeds `slowlog-log-slower-than` microseconds will be recorded up to a maximum of `slowlog-max-len` after which older entries will be discarded.
 

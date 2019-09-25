@@ -2,7 +2,8 @@
 Title:  Activating RedisInsight on Docker
 date:  2018-06-05 03:49:29 +0530
 weight: 80
-categories: ["RI"]installation/activating-rdbtools/
+categories: ["RI"]
+path: installation/activating-rdbtools/
 altTag: Activating RedisInsight
 ---
 To start using RedisInsight activate your license by following the mentioned steps:

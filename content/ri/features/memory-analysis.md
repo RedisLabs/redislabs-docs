@@ -2,7 +2,8 @@
 Title:  Memory Analysis
 date:  2018-06-14 03:49:29 +0530
 weight: 20
-categories: ["RI"]features/memory-analysis/
+categories: ["RI"]
+path: features/memory-analysis/
 ---
 RedisInsight Memory analysis help you analyze your redis instance and helps in reducing memory usage and improving application performance. Analysis can be done in two ways:
 

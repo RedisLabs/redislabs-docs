@@ -2,7 +2,8 @@
 Title:  Upgrade Redis Version
 date:  2018-03-26 16:49:29 +0530
 weight: 40
-categories: ["RI"]memory-optimizations/upgrade-redis-version/
+categories: ["RI"]
+path: memory-optimizations/upgrade-redis-version/
 altTag: Upgrade Redis Version
 ---
 Redis 4.0 is the latest version that has been launched. It contains various big improvements compared to the previous versions.

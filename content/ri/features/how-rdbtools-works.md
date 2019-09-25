@@ -2,7 +2,8 @@
 Title:  How RedisInsight Works
 date:  2018-03-26 16:49:29 +0530
 weight: 5
-categories: ["RI"]how-rdbtools-works/
+categories: ["RI"]
+path: how-rdbtools-works/
 altTag: How RedisInsight Works
 ---
 Here's a brief description of what goes on under the hood when you analyze a snapshot:
