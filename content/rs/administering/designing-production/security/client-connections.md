@@ -46,8 +46,8 @@ significantly impact database throughput and latency.
 
 #### Installing CA signed certificates high-level steps
 
-1. Replace the RS server certificates on all nodes and key with the CA
-    signed certificate and restart proxy. Detailed guidelines on how to perform this step can be found [here](https://docs.redislabs.com/latest/rs/administering/cluster-operations/updating-certificates/).
+1. [Replace the RS server certificates](https://docs.redislabs.com/latest/rs/administering/cluster-operations/updating-certificates/) on all nodes and key
+    with the CA signed certificate and restart proxy.
 
     Note: A certificate for the databases' endpoint should be assigned
     for the same domain as the cluster name. For example, for a cluster
