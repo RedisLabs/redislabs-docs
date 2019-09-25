@@ -298,11 +298,12 @@ var toggleInternalLogin = function() {
         localStorage.removeItem('auth_token');
         $('#internalToggle').html('Internal Docs Login');
         handleGoogleSignOut();
-        window.location.reload();
+        // window.location.reload();
         return;
     }
     
-    $('#internalDocsLoginDialog').show();
+    localStorage.setItem('location_after_login', window.location.pathname);
+    window.location.pathname = "/login.html";
 }
 
 var handleGoogleSignOut = function() {
@@ -413,7 +414,7 @@ function showInternalContent(path, options){
         dataType: 'html',
         async: true,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token IC_ACC_TOKEN");
+            xhr.setRequestHeader("Authorization", "token IC_dce93d270ec0894e2e1d28a3b52c006366e8061e");
             xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
         },        
         success: function(data) {
