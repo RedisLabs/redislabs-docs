@@ -3,7 +3,6 @@ title:  Redis GUI Client for Mac
 date:  2018-07-20 03:49:29 +0530
 weight: 20
 categories: ["RI"]install/mac/
-pageTitle: Redis GUI Client for Mac
 ---
 ### Install Redis GUI for Mac
 

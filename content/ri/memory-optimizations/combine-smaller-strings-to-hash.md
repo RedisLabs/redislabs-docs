@@ -3,7 +3,6 @@ title:  Combine Smaller Strings to Hashes
 date:  2018-03-26 16:49:29 +0530
 weight: 60
 categories: ["RI"]memory-optimizations/combine-smaller-strings-to-hashes/
-pageTitle: Combine Smaller Strings to Hashes
 altTag: Combine Smaller Strings to Hashes
 ---
 Strings data type has an overhead of about about 90 bytes on a 64 bit machine. In other words, calling set foo bar uses about 96 bytes, of which 90 bytes is overhead. You should use the String data type only if:

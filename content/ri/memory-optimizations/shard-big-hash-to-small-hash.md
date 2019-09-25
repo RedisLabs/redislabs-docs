@@ -3,7 +3,6 @@ title:  Shard Big Hashes to Small Hashes
 date:  2018-03-26 16:49:29 +0530
 weight: 90
 categories: ["RI"]memory-optimizations/shard-big-hashes-to-small-hashes/
-pageTitle: Shard Big Hashes to Small Hashes
 altTag: Shard Big Hashes to Small Hashes
 ---
 If you have a hash with large number of key, value pairs, and if each key, value pair is small enough - break it into smaller hashes to save memory. To shard a HASH table, we need to choose a method of partitioning our data.

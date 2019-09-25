@@ -3,7 +3,6 @@ title:  Installing RedisInsight on Docker
 date:  2018-06-05 03:49:29 +0530
 weight: 40
 categories: ["RI"]install/docker/
-pageTitle: Installing RedisInsight on Docker
 nextStep:
     title: Activating RedisInsight
     href: /docs/install/activating/
