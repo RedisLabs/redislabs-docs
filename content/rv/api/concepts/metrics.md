@@ -77,41 +77,34 @@ For example, a request for data points in the `count-connections` (number of con
 
 Data points are shown divided into these categories:
 
-| Category | Description | Units |
-|---|---|---|
-| bigstore-hits | | |
-| bigstore-overwrites | | |
-| count-connections | | |
-| count-keys | Number of keys in the database | | |
-| disk-fragmentation-ratio | | |
-| evicted-objects | Number of evicted objects | |
-| expired-objects | Number of expired objects | |
-| flash-big-del | | |
-| flash-big-fetch | | |
-| flash-big-io-ratio | | |
-| flash-big-write | | |
-| flash-used | | |
-| hits-ram | | |
-| hits-read | | |
-| hits-write | | |
-| latency-average | Average latency for all requests | milliseconds |
-| latency-average-read | Average latency for read requests | milliseconds |
-| latency-average-write | Average latency for write requests | milliseconds |
-| latency-other | Average latency for requests that are not read or write | milliseconds |
-| memory-fragmentation-ratio | | |
-| memory-size-calculated | | |
-| ram-big-delete | | |
-| ram-big-fetch | | |
-| ram-big-write | | |
-| ram-overhead | | |
-| ram-overwrites | | |
-| ram-used | | |
-| redis-big-io-ratio | | |
-| requests-other | Number of requests that are not read or write | |
-| requests-read | Number of read requests | |
-| requests-write | Number of write requests | |
-| values-in-flash | | |
-| values-in-ram | | |
+| Category | Description | Units | Redis on RAM | Redis on Flash | Essentials 
+|---|---|---|---|---|---|
+|**count-connections**|Number of open connections|count|*|*|*|
+|**count-keys**|Number of keys in the database|count|*|*|*|
+|**evicted-objects**|Number of evicted objects|count|*|*|*|
+|**expired-objects**|Number of expired objects|count|*|*|*|
+|**flash-used**|Flash storage used by Redis-on-Flash database|bytes|*|||
+|**fragmentation-ratio-disk**|Flash storage fragmentation ratio|percentage|*|||
+|**fragmentation-ratio-memory**|RAM fragmentation ratio|percentage|*|*|*|
+|**hits-flash**|Requests found in Flash|percentage|*|||
+|**hits-ram**|Requests found in RAM|percentage|*|||
+|**hits-read**|Read requests found in Redis database|percentage|*|*|*|
+|**hits-write**|Write requests found in Redis database|percentage|*|*|*|
+|**latency-average**|Average latency for all requests|milliseconds|*|*|*|
+|**latency-average-read**|Average latency for read requests|milliseconds|*|*|*|
+|**latency-average-write**|Average latency for write requests|milliseconds|*|*|*|
+|**latency-other**|Average latency for requests that are not read or write|milliseconds|*|*|*|
+|**memory-size-calculated**|Total size of Redis database|bytes|*|*|*|
+|**ram-flash-ratio**|Ratio between RAM and Flash access|percentage|*|||
+|**ram-overhead**|The percentage of RAM used for storing everything rather than pure values. I.e. keys, Redis dictionary and other key/value overheads|bytes|*|||
+|**ram-used**|RAM used by Redis-on-Flash database|bytes|*|||
+|**requests-other**|Number of requests that are not read or write|ops/sec|*|*|*|
+|**requests-read**|Number of read requests|ops/sec|*|*|*|
+|**requests-total**|Total number of requests|ops/sec|*|*|*|
+|**requests-write**|Number of write requests|ops/sec|*|*|*|
+|**values-in-flash**|Number of values stored in Flash|count|*|||
+|**values-in-ram**|Number of values stored in RAM|count|*|||
+
 
 ## Usage Example
 
