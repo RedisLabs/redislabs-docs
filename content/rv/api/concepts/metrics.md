@@ -70,7 +70,7 @@ For example, a request for data points in the `count-connections` (number of con
           "timeStamp": "2019-08-05T16:02:42Z"
         }
       ]
-    },
+    }
 ```
 
 ## Metric Categories
