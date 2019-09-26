@@ -7,7 +7,7 @@ categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
-Kubernetes provides simpler orchestration with containers and has been widely adapted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
+Kubernetes provides simpler orchestration with containers and has been widely adopted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
 
 {{%allchildren style="h2" description="true"%}}
 

@@ -23,13 +23,25 @@ Yes, one Operator per namespace, each managing a single Redis Enterprise Cluster
 Each Redis Enterprise Cluster can run multiple databases while maintaining high capacity and performance.
 {{% /expand%}}
 
-{{%expand "How Can I see the CRDs (Custom Resource Definitions) created for my cluster?" %}}
+{{%expand "How can I see the CRDs (Custom Resource Definitions) created for my cluster?" %}}
 Run the following:
 
 ```src
 kubectl get rec
 kubectl describe rec my-cluster-name
 ```
+
+{{% /expand%}}
+
+{{%expand "How can I change the cluster admin user password?" %}}
+The cluster admin user password is created by the Operator during the deployment of the Redis Enterprise cluster and is stored in a Kubernetes secret.
+
+{{% warning %}}
+Do not change the default admin user password in the Redis Enterprise web UI.
+Changing the admin password impacts the proper operation of the K8s deployment.
+{{% /warning %}}
+
+If you must use a different admin password, create an additional user with admin privileges and configure with the new password.
 
 {{% /expand%}}
 
@@ -138,6 +150,11 @@ Next, decode, for example, the password field. Run:
 echo "Q2h5N1BBY28=" | base64 –-decode
 ```
 
+{{% warning %}}
+Do not change the default admin user password in the Redis Enterprise web UI.
+Changing the admin password impacts the proper operation of the K8s deployment.
+{{% /warning %}}
+
 {{% /expand%}}
 
 {{%expand "How to retrieve the username/password for a Redis Enterprise Cluster through the OpenShift Console?" %}}
@@ -145,9 +162,15 @@ To retrieve your password, navigate to the OpenShift management console, select 
 
 Retrieve your password by selecting “Reveal Secret.”
 ![openshift-password-retrieval]( /images/rs/openshift-password-retrieval.png )
+
+{{% warning %}}
+Do not change the default admin user password in the Redis Enterprise web UI.
+Changing the admin password impacts the proper operation of the K8s deployment.
+{{% /warning %}}
+
 {{% /expand%}}
 
-{{%expand "What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml?" %}}
+{{%expand "What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml and the Pod Security Policy (PSP) yaml?" %}}
 
 The scc.yaml file is defined like this:
 
@@ -175,11 +198,46 @@ seLinuxContext:
 type: RunAsAny
 ```
 
+([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/scc.yaml))
+
+The psp.yaml file is defined like this:
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: redis-enterprise-psp
+spec:
+  privileged: false
+  allowPrivilegeEscalation: true
+  allowedCapabilities:
+    - SYS_RESOURCE
+    - NET_RAW
+  runAsUser:
+    rule: MustRunAsNonRoot
+  fsGroup:
+    rule: MustRunAs
+    ranges:
+    - min: 1001
+      max: 1001
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  volumes:
+    - '*'
+```
+
+([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/psp.yaml))
+
 The SYS_RESOURCE capability is required by the Redis Labs Enterprise Cluster (RLEC) container so that RLEC can set correct OOM scores to its processes inside the container.
 Also, some of the RLEC services must be able to increase default resource limits, especially the number of open file descriptors.
 
-While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file.
+While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
 
 The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/openshift/_index.md#step-3-prepare-your-yaml-files" >}}).
 
+RLEC PSP definitions are controlled with role-based access control (RBAC).
+A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account
+and allows that account to create pods with the PSP shown above.
 {{% /expand%}}

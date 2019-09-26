@@ -38,7 +38,7 @@ Before configuring a CRDB, you will need:
 - Configure the network so that all nodes in each cluster are able to
     connect to the Proxy (you can choose which port you want and then
     set the proxy to run on it when you create the CRDB) and cluster's
-    admin port (8080) on all destination clusters over the network and
+    admin port (9443) on all destination clusters over the network and
     vice versa.
 - If the CRDB spans a WAN, establish a VPN between each of the
     cluster's networks before setting up a CRDB.

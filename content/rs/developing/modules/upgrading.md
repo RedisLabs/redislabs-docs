@@ -59,24 +59,16 @@ it:
     ![rladmin_status-1](/images/rs/rladmin_status-1.png?width=1000&height=214)
 
 1. Run the rladmin command
-    $ rladmin upgrade module db_name
-    \<your_db_name\> module_name \<module_name\> version
-    \<new_module_version_num\> module_args \<module
-    arguments\>
+
+    `$ rladmin upgrade module db_name
+    <your_db_name> module_name <module_name> version
+    <new_module_version_num> module_args <module
+    arguments>
+    `
 
     Note: When this is done, it will
     restart the database shards and thus cause downtime for this
     database across the cluster.
-
-Each module package is a zip file. Inside the zip file is a JSON file
-and it will contain the information necessary for the above rladmin
-command for the module_name and version information necessary. The
-specific data points must be entered exactly as you see it in that JSON
-file. The necessary data should be at the end of the JSON document. For
-example, here is the information for the RediSearch Enterprise module
-that i used for the example command above:
-
-![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
 
 ## Examples
 
@@ -93,3 +85,13 @@ An example of upgrading RedisJSON:
 ```
 $ rladmin upgrade module db_name MyDB module_name ReJSON version 10002 module_args ""
 ```
+
+Each module package is a zip file. Inside the zip file is a JSON file
+and it will contain the information necessary for the above rladmin
+command for the module_name and version information necessary. The
+specific data points must be entered exactly as you see it in that JSON
+file. The necessary data should be at the end of the JSON document. For
+example, here is the information for the RediSearch Enterprise module
+that i used for the example command above:
+
+![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)

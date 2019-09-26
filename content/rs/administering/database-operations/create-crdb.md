@@ -35,10 +35,10 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     ![Service Account Creation](/images/rs/create-service-account.png)
 
 1. To make sure that there is network connectivity between the participating clusters,
-    telnet on port 8080 from each participating cluster to each of the other participating clusters.
+    telnet on port 9443 from each participating cluster to each of the other participating clusters.
 
     ```src
-    telnet <target FQDN> 8080
+    telnet <target FQDN> 9443
     ```
 
 1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
@@ -78,7 +78,7 @@ You must select **Redis 5** as the Redis version to use CRDB and RoF.
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host CRDB instances and the admin user account to connect to each cluster.
         - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
-        - For each cluster, enter the URL for the cluster (`http://<cluster_URL>:8080`),
+        - For each cluster, enter the URL for the cluster (`https://<cluster_URL>:9443`),
             and enter the credentials for the service account that you created.
     - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->

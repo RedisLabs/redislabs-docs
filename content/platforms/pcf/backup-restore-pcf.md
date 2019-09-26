@@ -1,14 +1,14 @@
 ---
-Title: Backup and Restore for Redis Enterprise Software on Pivotal Cloud Foundry (PCF)
+Title: Backup and Restore for Redis Enterprise Software on Pivotal Platform
 description: 
 weight: 90
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/pcf/
 ---
-This topic describes how to backup and restore Redis Enterprise for Pivotal Cloud Foundry (PCF).
+This topic describes how to backup and restore Redis Enterprise for Pivotal Platform (formerly Pivotal Cloud Foundry - PCF).
 
-You must use the BOSH Backup and Restore (BBR) command-line tool to backup and restore your PCF deployment. These backup and restore instructions apply specifically to your Redis Enterprise for PCF deployment.
+You must use the BOSH Backup and Restore (BBR) command-line tool to backup and restore your Pivotal Platform deployment. These backup and restore instructions apply specifically to your Redis Enterprise for Pivotal Platform deployment.
 
 ## Installing the BBR Command-Line Tool
 
@@ -27,7 +27,7 @@ To install the BBR command-line tool:
 
 The bbr tool is extracted to `/releases/bbr`.
 
-## Backup Redis Enterprise for PCF
+## Backup Redis Enterprise for Pivotal Platform
 
 Pivotal recommends that you run a daily backup.
 
@@ -46,7 +46,7 @@ with `redis-enterprise-` in the output of the command:
     bosh -e cf deployments
     ```
 
-To backup your Redis Enterprise for PCF deployment:
+To backup your Redis Enterprise for Pivotal Platform deployment:
 
 1. Run the backup command:
 
@@ -65,11 +65,11 @@ To backup your Redis Enterprise for PCF deployment:
 
 1. Copy this backup archive from the Ops Manager machine to a dedicated storage location.
 
-## Restore Redis Enterprise for PCF
+## Restore Redis Enterprise for Pivotal Platform
 
-To restore a Redis Enterprise for PCF deployment:
+To restore a Redis Enterprise for Pivotal Platform deployment:
 
-1. On the new PCF Foundation, install a redis-enterprise tile with the same configuration of the original tile.
+1. On the new Pivotal Platform Foundation, install a redis-enterprise tile with the same configuration of the original tile.
 
     {{% note %}}
 A different cluster name or number of machines than the original tile causes errors in the restore.
