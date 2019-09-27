@@ -109,11 +109,9 @@ a result:
 - For databases that have [replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
     enabled, a failover is done before the master database restarts to make sure that
     there is no downtime.
-- For databases that do not have replication enabled and persistence
-    enabled, some downtime occurs while the database is restarting. The
-    type of persistence chosen for this database is a variable in the
-    time it will take for a database to come back up. For example, AOF
-    usually takes longer than an RDB file.
+- For databases without replication but with persistence
+    enabled, some downtime occurs while the database is restarting as during the restart, data will need to be restored from the persistence file. 
+    The amount of downtime will vary based on the persistence type. For example, AOF usually takes longer than an RDB file.
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
