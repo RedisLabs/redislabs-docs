@@ -1,7 +1,7 @@
 ---
 Title: Archived RDBTools Release Notes
 description:
-weight: 90
+weight: 0
 alwaysopen: false
 categories: ["RI"]
 ---
