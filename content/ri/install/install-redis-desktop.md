@@ -14,10 +14,6 @@ RedisInsight offers the following features -
 * Supports SSL/TLS based connections
 * Run Memory Analysis
 
-Install RedisInsight on your Desktop
+[Download](https://redislabs.com/redis-enterprise-visualization/redis-insight/) RedisInsight for Desktop here.
 
-* For Windows, download [rdbtools-win-{{< param docker_image_version >}}.exe]({{< param windows_dl_link >}}) and double-click to start webserver
-* For Mac, download [rdbtools-mac-{{< param docker_image_version >}}.dmg]({{< replace "version" >}}{{< param mac_dl_link >}}#_#{{< param docker_image_version >}}{{< /replace >}}) and launch app to start webserver
-* For Linux, [download rdbtools binary](/docs/install/linux/) and execute to start webserver
-
-Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and follow onscreen instructions to activate RedisInsight.
+Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
