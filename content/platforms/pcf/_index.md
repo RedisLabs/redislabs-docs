@@ -49,7 +49,8 @@ This topic describes how to install and configure Redis Enterprise for Pivotal C
    - Save your changes by clicking **Save**.
 
     {{% note %}}
-Only use the **Cluster Recovery** option to recover a cluster.
+Make sure that the **Cluster Recovery** option is not selected during installation.
+This option is only for when you recover a cluster.
     {{% /note %}}
 
     ![Import button](/images/platforms/pcf_rp_config_full_screen2.png)
