@@ -37,7 +37,7 @@ If you want to add and work with an ElastiCache Redis instance but you're runnin
 
     ```bash
     ssh -f -N -L8765:<elasticache_endpoint> \
-    -i ~/.ssh/rdbtools-dev.pem <ec2_endpoint>
+    -i ~/.ssh/redisinsight-dev.pem <ec2_endpoint>
     ```
 
 1. Go to Add Instance in RedisInsight and add an instance with host=localhost, port=8765,
