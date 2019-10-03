@@ -10,16 +10,21 @@ Here are some frequently asked questions about Redis Enterprise Software.
 ## General
 
 {{% expand "What is RedisInsight?" %}}
-RDBTool is a browser based management interface for Redis. It lets you do the following -
+RedisInsight is a browser based GUI for Redis. It lets you do the following -
 
-- View real time metrics from redis
-- Analyze memory used by redis by keys or key patterns, by expiry, by data types or or the internal encoding
-- Filter keys by number of elements or by memory, and identify top keys
-- Profile redis to list keys or commands redis is executing
-- Create tabular views from your redis keys and export data in different formats
-- Perform CRUD operations using the web based CLI
-- View and modify redis configuration
-- View list of clients and kill specific clients
+- Browse
+  - View real time metrics from redis
+  - Create tabular views from your redis keys and export data in different formats
+  - Perform CRUD operations using the web based CLI
+  - Visualise and update data from [Streams](https://redis.io/commands#stream), [RedisGraph](redisgraph.io), [RediSearch](redisearch.io) and [RedisTimeSeries](redistimeseries.io).
+- Analyse
+  - Analyze memory used by redis by keys or key patterns, by expiry, by data types or or the internal encoding
+  - Filter keys by number of elements or by memory, and identify top keys
+  - Profile redis to list keys or commands redis is executing
+- Bulk Actions
+- Configure
+  - View and modify redis configuration
+  - View list of clients and kill specific clients
 {{% /expand %}}
 
 {{% expand "What problem does RedisInsight solve?" %}}
@@ -27,19 +32,19 @@ RedisInsight lets you reduce memory used by redis, which usually translates to a
 {{% /expand %}}
 
 {{% expand "How does RedisInsight compare with the open source redis-rdb-tools?" %}}
-We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and will continue to support the open source version. The open source version is meant to be a library and command line utility. It is a fundamental building block for the paid version of RedisInsight. The paid version has a convenient web based interface, and provides recommendations, aggregation and filtering capabilities.
+We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and will continue to support the open source version. The open source version is meant to be a library and command line utility. It is a fundamental building block for RedisInsight. RedisInsight is free to use but is closed source.
 {{% /expand %}}
 
 {{% expand "What versions of Redis does RedisInsight support?" %}}
-Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you wish to use RedisInsight for Redis Cluster, send us an email at support@rdbtools.com and we can try to accommodate your use case.
+Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you wish to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
 {{% /expand %}}
 
 {{% expand "Do you support Redis Labs Enterprise Version?" %}}
-Yes, we support Redis Labs Enterprise version.
+Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 {{% /expand %}}
 
 {{% expand "What cloud providers do you support?" %}}
-We support AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you deploy the docker container on a host that has network access to your cloud based redis server. Send us an email at support@rdbtools.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
+We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinishg@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
 {{% /expand %}}
 
 ## Memory Analysis
