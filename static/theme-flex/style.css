@@ -12,15 +12,16 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 57px;
+  height: 69px;
   left: 0;
   line-height: 3.5rem;
   margin-bottom: 0;
-  padding: 0 20px;
+  padding: 13px 1.25rem;
   position: fixed;
   right: 0;
   top: 0;
   z-index: 999;
+  transition: all .3s ease-in-out;
 }
 header:after {
   content: '';
@@ -38,7 +39,9 @@ header .logo * {
   display: block;
 }
 header .logo img {
-  height: 40.2292px;
+  width: 144px !important;
+  padding-top: 4px;
+  margin-left: 5px;
   /* margin-right: .5rem; */
   /* margin-bottom: 2rem; */
   /* margin-top: 2rem; */
@@ -52,10 +55,25 @@ header nav.shortcuts {
   display: flex;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-content: flex-start;
   list-style-type: none;
   position: relative;
+  margin-left: 30px;
   width: auto;}
+header nav.shortcuts-right {
+  justify-content: flex-end;
+}
+header nav.shortcuts-right li:last-child {
+  background: white;
+  border-radius: 4px;
+  margin-left: 18px;  
+  transition: background 200ms ease-in-out;
+}
+header nav.shortcuts-right li:last-child a label {
+  color: #b62411;
+  opacity: 1;
+  font-size: 14px;
+}
 header nav.shortcuts li .fa {
   font-size: 1.5rem;
   margin-right: 0.3rem; }
@@ -84,6 +102,8 @@ header nav.shortcuts li a label {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: opacity 200ms ease-in-out;
+  font-size: 18px;
+  margin: 0 5px;  
 }
 header nav.shortcuts li a label:hover {
   opacity: 1;
@@ -664,9 +684,6 @@ ul.footer-action .social a {
 
 .social img {
   width: 27px;
-}
-nav.shortcuts li:last-child:hover {
-  background: #e1e1e1;
 }
 .social {
   display: flex;
@@ -1477,12 +1494,6 @@ nav#toc.fixed-pos {
   color: white;
   background: #354253;
 }
-nav.shortcuts li:last-child {
-  background: white;
-  border-radius: 4px;
-  transition: background 200ms ease-in-out;
-  margin-left: 18px;
-}
 .panel-heading {
   /* text-indent: -9999px; */
   font-weight: 700;
@@ -1502,11 +1513,6 @@ li.menu__item.menu__title {
 
 li.menu__item.menu__title:first-child {
   margin-top: 0;
-}
-nav.shortcuts li:last-child a label {
-  color: #b62411;
-  opacity: 1;
-  font-size: 14px;
 }
 ol li ul li {
   margin-top: 10px;

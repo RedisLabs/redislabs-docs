@@ -1,4 +1,14 @@
 jQuery(document).ready(function() {
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        var header = $('#header');
+        if(scroll > 40) {
+            header.css('height', '50px');
+        } else {
+            header.css('height', '70px');
+        }
+    });
+
     jQuery('.category-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-down fa-angle-right");
         var x = $( this ).parent().parent().children('ul')

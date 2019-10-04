@@ -68,14 +68,4 @@ name = "<label>Blog</label>"
 url = "https://redislabs.com/blog/"
 weight = 50
 
-[[menu.shortcuts]]
-name = "<label>Login</label>"
-url = "https://app.redislabs.com/#/login"
-weight = 70
-
-[[menu.shortcuts]]
-name = "<label>Get Started</label>"
-url = "https://redislabs.com/get-started/"
-weight = 80
-
 [taxonomies]

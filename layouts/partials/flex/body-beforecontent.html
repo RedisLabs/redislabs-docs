@@ -3,7 +3,7 @@
     {{ partial "gtm-body" . | safeHTML }}
   {{ end }}
 {{ end }}
-<header>
+<header id="header">
   <div class="logo">
     {{ partial "header.html" . }}
   </div>
@@ -18,6 +18,19 @@
         {{- end}}
     </nav>
   {{- end}}
+
+  <nav class="shortcuts shortcuts-right">
+    <li class="" role="">
+        <a href="https://app.redislabs.com/#/login" rel="noopener">
+          <label>Login</label>
+        </a>
+    </li>  
+    <li class="" role="">
+      <a href="https://redislabs.com/get-started/" rel="noopener">
+        <label>Get Started</label>
+      </a>
+    </li>
+  </nav>
   <button class="hamburger hamburger--spring hamburger-desktop" type="button">
     <span class="hamburger-box">
       <span class="hamburger-inner">Menu</span>
