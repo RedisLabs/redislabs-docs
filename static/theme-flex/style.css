@@ -58,7 +58,8 @@ header nav.shortcuts {
   justify-content: flex-start;
   list-style-type: none;
   position: relative;
-  margin-left: 30px;
+  margin-left: 40px;
+  padding-top: 10px;
   width: auto;}
 header nav.shortcuts-right {
   justify-content: flex-end;
@@ -73,6 +74,50 @@ header nav.shortcuts-right li:last-child a label {
   color: #b62411;
   opacity: 1;
   font-size: 14px;
+}
+header nav.shortcuts li {
+  position: relative;
+}
+header nav.shortcuts li .submenu-wrapper {
+  display: none;
+  background-image: url('./img/bg-poly-white-1.jpg');
+  background-attachment: fixed;
+  background-position: left top;
+  background-size: cover;
+  color: #3d5051;
+  font-weight: 700;
+  cursor: default;
+  text-transform: uppercase;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  padding: 20px 20px 25px;  
+}
+header nav.shortcuts li .submenu-wrapper a {
+  color: #3d5051;
+  cursor: default;
+  font-weight: 700;
+  padding-left: 5px;
+  text-transform: uppercase;  
+}
+header nav.shortcuts li .submenu-wrapper .submenu {
+  max-width: 1145px;
+  margin: 0 auto;
+}
+header nav.shortcuts li .submenu-wrapper .submenu .submenu-list > li {
+  float: left;  
+  width: 20%;
+}
+header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li {
+  width: 100%;
+}
+header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a {
+  text-transform: none;
+  font-weight: 400;  
+}
+header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a:hover {
+  background: #fff;
+  cursor: pointer;
 }
 header nav.shortcuts li .fa {
   font-size: 1.5rem;
@@ -90,8 +135,8 @@ header nav.shortcuts li a {
   height: 2.9rem;
   padding: 0 .5rem;
 }
-header nav.shortcuts li a label {
-  opacity: .75;
+header nav.shortcuts li {
+  opacity: 1;
   display: inline-block;
   margin: 0 12px;
   text-transform: uppercase;
@@ -103,9 +148,9 @@ header nav.shortcuts li a label {
   -moz-osx-font-smoothing: grayscale;
   transition: opacity 200ms ease-in-out;
   font-size: 18px;
-  margin: 0 5px;  
+  margin: 0 15px 0 5px;
 }
-header nav.shortcuts li a label:hover {
+header nav.shortcuts li a:hover {
   opacity: 1;
 }
 

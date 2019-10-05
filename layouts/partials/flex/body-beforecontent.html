@@ -8,15 +8,162 @@
     {{ partial "header.html" . }}
   </div>
   {{- with .Site.Menus.shortcuts}}
-    <nav class="shortcuts">
-        {{- range sort . "Weight"}}
-            <li class="" role="">
-                <a href="{{.URL}}" {{if eq $.Site.Params.menushortcutsnewtab true}} target="_blank"{{end}} rel="noopener">
-                  {{safeHTML .Name}}
-                </a>
-            </li>
-        {{- end}}
-    </nav>
+  <nav class="shortcuts">
+      <li class="" role="">
+        <label>Products</label>
+        <div class="submenu-wrapper">
+          <ul class="vertical menu submenu is-dropdown-submenu first-sub" data-submenu="" aria-hidden="true" role="menu" style="">
+            <div class="row align-center">
+                <div class="small-12 columns submenu-list">
+                    <li id="menu-item-49314"
+                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49314 is-dropdown-submenu-parent opens-right"
+                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Redis Enterprise"
+                        data-is-click="false"><a>Redis Enterprise</a>
+                        <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
+                            <div class="row align-center">
+                                <div class="small-12 columns submenu-list__children">
+                                    <li id="menu-item-49429"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49429"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/">Advantages</a></li>
+                                    <li id="menu-item-49430"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49430"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/data-structures/">Data
+                                            structures</a></li>
+                                    <li id="menu-item-49431"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49431"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/modules/">Modules</a>
+                                    </li>
+                                    <li id="menu-item-49441"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49441"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/multi-model/">Multi-model</a>
+                                    </li>
+                                    <li id="menu-item-49628"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49628"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/technology/">Technology</a>
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li id="menu-item-49315"
+                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49315 is-dropdown-submenu-parent opens-right"
+                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Deployment"><a>Deployment</a>
+                        <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
+                            <div class="row align-center">
+                                <div class="small-12 columns submenu-list__children">
+                                    <li id="menu-item-49463"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49463"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise-deployment/">Selection
+                                            guide</a></li>
+                                    <li id="menu-item-50774"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50774"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise-cloud/">Cloud</a></li>
+                                    <li id="menu-item-50289"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50289"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise-software/">Software</a>
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li id="menu-item-49316"
+                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49316 is-dropdown-submenu-parent opens-right"
+                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Modules"><a>Modules</a>
+                        <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
+                            <div class="row align-center">
+                                <div class="small-12 columns submenu-list__children">
+                                    <li id="menu-item-49449"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49449"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/redis-search/">RediSearch</a>
+                                    </li>
+                                    <li id="menu-item-49450"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49450"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/redis-graph/">RedisGraph</a>
+                                    </li>
+                                    <li id="menu-item-49451"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49451"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/redis-json/">RedisJSON</a>
+                                    </li>
+                                    <li id="menu-item-49452"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49452"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/redis-time-series/">RedisTimeSeries</a>
+                                    </li>
+                                    <li id="menu-item-49454"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49454"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/redis-bloom/">RedisBloom</a>
+                                    </li>
+                                    <li id="menu-item-49439"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49439"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/redis-edge/">RedisEdge</a>
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li id="menu-item-49317"
+                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49317 is-dropdown-submenu-parent opens-right"
+                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Visualization">
+                        <a>Visualization</a>
+                        <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
+                            <div class="row align-center">
+                                <div class="small-12 columns submenu-list__children">
+                                    <li id="menu-item-49436"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49436"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redisinsight/">RedisInsight</a></li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li id="menu-item-49319"
+                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49319 is-dropdown-submenu-parent opens-right"
+                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="More"><a>More</a>
+                        <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
+                            <div class="row align-center">
+                                <div class="small-12 columns submenu-list__children">
+                                    <li id="menu-item-50448"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50448"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/connectors/">Connectors</a>
+                                    </li>
+                                    <li id="menu-item-50449"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50449"
+                                        role="menuitem"><a
+                                            href="https://dev-redislabs.pantheonsite.io/redis-enterprise/clients/">Clients</a>
+                                    </li>
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                </div>
+            </div>
+          </ul>          
+        </div>
+      </li>
+      <li class="" role="">
+        <label>Solutions</label>
+      </li>
+      <li class="" role="">
+        <label>Customers</label>
+      </li>
+      <li class="" role="">
+        <label>Learn</label>
+      </li>
+  </nav>
   {{- end}}
 
   <nav class="shortcuts shortcuts-right">

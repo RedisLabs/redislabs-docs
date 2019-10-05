@@ -9,6 +9,14 @@ jQuery(document).ready(function() {
         }
     });
 
+    $("nav.shortcuts li").hover(
+        function() {
+            $(this).children('.submenu-wrapper').css('display', 'inline-block');
+        }, function() {
+            $(this).children('.submenu-wrapper').css('display', 'none');
+        }
+    );    
+
     jQuery('.category-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-down fa-angle-right");
         var x = $( this ).parent().parent().children('ul')
