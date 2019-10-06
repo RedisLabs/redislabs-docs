@@ -80,17 +80,21 @@ the cluster part of your domain and are able to update the DNS.
         - You have two nodes in the cluster:
            - node1 with IP 1.1.1.1
            - node2 with IP 2.2.2.2
+           - node3 with IP 3.3.3.3
 
 1. In the FQDN field, enter the value: redislabscluster.mydomain.com, and
     add the following records in the DNS for mydomain.com:
 
     ```src
     redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com
-                                                node2.redislabscluster.mydomain.com
+                                               node2.redislabscluster.mydomain.com
+                                               node3.redislabscluster.mydomain.com 
 
     node1.redislabscluster.mydomain.com   A    1.1.1.1
 
     node2.redislabscluster.mydomain.com   A    2.2.2.2
+    
+    node3.redislabscluster.mydomain.com   A    3.3.3.3
     ```
 
 ### Zero-configuration using mDNS (Development option only) {#zeroconfiguration-using-mdns-development-option-only}
