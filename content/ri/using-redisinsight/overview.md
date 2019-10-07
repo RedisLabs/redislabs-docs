@@ -1,7 +1,7 @@
 ---
 Title: Performance Metrics
 date: 2018-06-14 03:49:29 +0530
-weight: 30
+weight: 20
 alwaysopen: false
 categories: ["RI"]
 path: features/overview/

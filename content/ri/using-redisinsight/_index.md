@@ -1,5 +1,5 @@
 ---
-Title: Features
+Title: Using RedisInsight
 description:
 weight: 30
 alwaysopen: false

@@ -1,7 +1,7 @@
 ---
 Title: Cluster Management
 date: 2018-10-12 03:49:29 +0530
-weight: 100
+weight: 30
 categories: ["RI"]
 path: features/cluster-management/
 ---
