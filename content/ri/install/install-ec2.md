@@ -41,7 +41,7 @@ Next, we will launch an EC2 instance.
    * Assign the IAM role that you created in Step 1
 1. Under the storage section, ensure at least 100 GiB storage
 1. Under security group, ensure that:
-    * Incoming traffic is allowed on port 80 and 443
+    * Incoming traffic is allowed on port 8001
     * Incoming traffic is allowed on port 22 only during installation
 1. Review and launch the ec2 instance
 
@@ -75,11 +75,13 @@ Step 5: Run RedisInsight Docker Container
 
 Finally, we can now install RedisInsight. Run the following command
 
-`docker run -v rdbtools:/db -p 80:8001 rdbtools/rdbtools:{{< param docker_image_version >}}`
+```bash
+{{< param docker_command >}}
+```
 
-This command will download and run the RedisInsight docker image and expose it as a web page on port 80.
+This command will download and run the RedisInsight docker image and expose it as a web page on port 8001.
 
-Find the IP Address of your EC2 instances, and a launch your browser to `http://<EC2 IP Address>`. You should see the RedisInsight create account page. Follow the steps to activate your free or paid license.
+Find the IP Address of your EC2 instances, and a launch your browser to `http://<EC2 IP Address>:8001`. You should see the Databases page of RedisInsight. Accept the EULA and start using RedisInsight.
 
 Summary
 ------
