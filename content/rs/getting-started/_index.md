@@ -11,7 +11,7 @@ offered with Redis Enterprise Software.
 
 {{%allchildren style="h2" description="true"%}}
 
-If you are looking for Redis Enterprise in a fully managed Database as a
-Service (DBaaS), please see [Redis Enterprise
-Cloud]({{< relref "/rc/_index.md" >}}) or [Redis Enterprise
-VPC]({{< relref "/rv/_index.md" >}}).
+To use Redis Enterprise as a fully managed Database as a Service (DBaaS), use:
+
+- [Redis Cloud Essentials]({{< relref "/rc/_index.md" >}})
+- [Redis Cloud Pro]({{< relref "/rv/_index.md" >}})
