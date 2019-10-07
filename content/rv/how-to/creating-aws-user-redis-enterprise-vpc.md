@@ -237,6 +237,12 @@ Now create a policy to assign to the user:
                         "ec2:ResourceTag/RedisLabsIdentifier": "Redislabs-VPC"
                     }
                 }
+            },
+            {
+                "Sid": "Support",
+                "Effect": "Allow",
+                "Action": "support:*",
+                "Resource": "*"
             }
         ]
     }
