@@ -26,11 +26,12 @@ sideContainersSpec:
 
     volumeMounts:
     - name: redis-enterprise-storage
-      mountPath: /logs
+      mountPath: /home/logs
+      subPath: logs
 ```
 
 Now the logs can be accessed from in the side card. For example by running
 
-```kubectl exec -it -c busybox <pod-name> tail /logs/logs/supervisord.log```
+```kubectl exec -it -c busybox <pod-name> tail home/logs/supervisord.log```
 
 The user has total control of this container and can digest the logs and send them in what ever format he wishes.
