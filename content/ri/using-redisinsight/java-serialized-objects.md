@@ -5,7 +5,7 @@ alwaysopen: false
 categories: ["RI"]
 path: features/view-java-serialized-objects/
 ---
-RedisInsight GUI for redis detects java serialized objects and converts them to a nicely formatted JSON object, along with the fully qualified class name.
+RedisInsight detects java serialized objects and converts them to a nicely formatted JSON object, along with the fully qualified class name.
 
 ![java-serialized-objects](/images/ri/java-serialized-objects.png)
 
