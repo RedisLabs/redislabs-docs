@@ -23,7 +23,7 @@ On windows and Mac, please install docker version 18.03 or higher. You can `dock
 Next, we will run the RedisInsight container. The easiest way is to run the following command:
 
 ```bash
-{{< param docker_command >}}:{{< param docker_image_version >}}
+{{< param docker_command >}}
 ```
 
 and then point your browser to [http://localhost:8001](http://localhost:8001).
