@@ -8,7 +8,7 @@ nextStep:
     Title: Activating RedisInsight
     href: /docs/install/activating/
 ---
-In this walkthrough, we will install RedisInsight on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [RedisInsight on AWS](/docs/rdbtools-docker-installation-ec2/).
+In this walkthrough, we will install RedisInsight on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [RedisInsight on AWS]({{< relref "/ri/install/install-ec2.md" >}}).
 
 ## I. Install Docker
 
@@ -34,6 +34,10 @@ In addition, you can add some additional flags to the docker run command:
 1. On Linux, you can add `--network host`. This will make it easy to work with redis running on your local machine.
 1. To analyze RDB Files stored in S3, you can add the access key and secret access key as environment variables using the `-e` flag. For example: `-e AWS_ACCESS_KEY=<aws access key> -e AWS_SECRET_KEY=<aws secret access key>`
 
-If everything worked, you should see a message "Running RDBtools on localhost:8001" in the terminal.
+If everything worked, you should see the following output in the terminal:
 
-![local_installation_docker_run_successful](/images/ri/local_installation_docker_run_successful.png)
+```
+Starting webserver...
+Visit http://0.0.0.0:8001 in your web browser.
+Press CTRL-C to exit.
+```

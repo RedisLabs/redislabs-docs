@@ -7,7 +7,7 @@ path: features/memory-analysis/
 ---
 RedisInsight Memory analysis help you analyze your redis instance and helps in reducing memory usage and improving application performance. Analysis can be done in two ways:
 
-1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzed it to create a temp file with all the keys and meta data required for analysis. In case, there is a master-slave connection, rdbtools downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
+1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzed it to create a temp file with all the keys and meta data required for analysis. In case, there is a master-slave connection, RedisInsight downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
 
 1. **offline mode** - In this mode, RedisInsight analyzies your redis backup files. These files can either be present i your system or on s1. RedisInsight accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RedisInsight should have ReadOnly permission to your s3 bucket where the files are stored.
 
