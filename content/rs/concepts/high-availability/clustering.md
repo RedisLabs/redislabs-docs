@@ -149,21 +149,15 @@ the following limitations:
 
 - **Multi-key commands**: Redis offers several commands that accept
     multiple keys as arguments. In a clustered database, most multi-key
-    commands are not allowed across slots. The following multi-key
-    commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, 
-    TOUCH. In addition, commands that affect all keys or keys that match a 
-    specified pattern are allowed in a clustered database, for 
-    example: FLUSHDB, FLUSHALL, KEYS.
+    commands are not allowed across tags. The following multi-key
+    commands **are allowed** across tags: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
+
+    Commands that affect all keys or keys that match a specified pattern are allowed
+    in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS
 
     **Note**: When using these commands in a sharded setup, the command
     is distributed across multiple shards and the responses from all
     shards are combined into a single response.
-
-    All other multi-key commands are **not allowed** across slots and if
-    used across slots will return an error.
-    Examples of such commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH,
-    MSETNX, RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE,
-    SORT, SUNION, XREAD, XREADGROUP, ZINTERSTORE, ZUNIONSTORE.
 
 - **Geo commands**: In GEORADIUS/GEOREADIUSBYMEMBER commands, the
     STORE and STOREDIST option can only be used when all affected keys

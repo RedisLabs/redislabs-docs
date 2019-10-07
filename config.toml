@@ -41,6 +41,13 @@ enableGitInfo = true
 googleAnalytics = "UA-92003007-1"
 googleTagManager = "GTM-TKZ6J9R"
 
+mac_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-mac.dmg"
+linux_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-linux64"
+windows_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-win.msi"
+docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight"
+
+siteURL = "http://127.0.0.1:8001"
+
 [blackfriday]
 hrefTargetBlank = false
 smartypants = false
