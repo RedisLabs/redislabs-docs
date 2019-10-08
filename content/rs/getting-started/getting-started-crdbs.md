@@ -88,7 +88,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     1. For the **endpoint port number**, enter: `12000`
     1. In the **participating clusters** list, add the address and admin credentials for:
         - `https://cluster1.local:9443` - the cluster you are currently connected to
-        - `https://cluster2.local:9445` - the other cluster
+        - `https://cluster2.local:9443` - the other cluster
     <!-- Also in create-crdb.md -->
     1. In the **Database clustering** option, either:
 
