@@ -1,5 +1,5 @@
 ---
-Title: Redis Labs Kubernetes Architecture
+Title: Redis Enterprise Kubernetes Logs
 description: 
 weight: 30
 alwaysopen: false
@@ -9,12 +9,12 @@ aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-logs
 ---
 
 ## Logs
-Each redis-enterprise container stores it's logs under `/var/opt/redislabs/log`.
+Each redis-enterprise container stores its logs under `/var/opt/redislabs/log`.
 When using persistent storage this path is automatically mounted to the
 `redis-enterprise-storage` volume.
 This volume can easily be accessed by a sidecar, i.e. a container residing on the same pod.
 
-For example, in the rec spec you can add a side container, such as a busybox, and mount the logs to there
+For example, in the REC (Redis Enterprise Cluster) spec you can add a sidecar container, such as a busybox, and mount the logs to there:
 ```yaml
 sideContainersSpec:
   - name: busybox
@@ -34,4 +34,4 @@ Now the logs can be accessed from in the side card. For example by running
 
 ```kubectl exec -it -c busybox <pod-name> tail home/logs/supervisord.log```
 
-The user has total control of this container and can digest the logs and send them in what ever format he wishes.
+The sidecar container is user determined and can be used to format, process and logs and share logs in the desired format and protocol.
