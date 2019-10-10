@@ -43,7 +43,6 @@ Before configuring a CRDB, you must:
     To move existing data to a CRDB you must create a new CRDB and migrate your data.
 1. CRDBs do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 1. CRDBs require FQDNs or mDNS (development only). Discovery Service is not supported with CRDBs.
-1. Only CRDB on Redis 5 can use Redis on Flash.
 1. CRDBs are not compatible with [Replica Of]({{< relref "/rs/administering/active-passive.md" >}}).
 
     ReplicaOf is a one-way replication, while CRDB utilize multi-master replication.
