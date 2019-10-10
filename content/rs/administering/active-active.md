@@ -125,14 +125,14 @@ Full sync triggers heavy data transfers between geo-replicated CRDB instances.
 
 The scenarios in which CRDB updates to other instances use partial synchronization are:
 
-- Failover of master to slave node
-- Restart or crash of slave node that requires sync from master
-- Migrate slave node to another node
-- Migrate master node to another node as a slave using failover and slave migration
-- Migrate master node and preserve roles using failover, slave migration, and second failover to return node to master
+- Failover of master shard to slave shard
+- Restart or crash of slave shard that requires sync from master
+- Migrate slave shard to another node
+- Migrate master shard to another node as a slave using failover and slave migration
+- Migrate master shard and preserve roles using failover, slave migration, and second failover to return shard to master
 
 {{% note %}}
-Synchronization of data from the master database to the slave database is always a full synchronization.
+Synchronization of data from the master shard to the slave shard is always a full synchronization.
 {{% /note %}}
 
 ### Syncer in Active-Passive Replication (Replica Of)
