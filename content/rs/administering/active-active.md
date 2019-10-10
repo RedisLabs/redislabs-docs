@@ -16,7 +16,7 @@ CRDBs also provide disaster recovery and accelerated data read-access for geogra
 {{% note %}}
 CRDBs do not replicate the entire database, only the data.
 Database configurations, Lua scripts, and other configurations are not replicated.
-{{% note %}}
+{{% /note %}}
 
 ## Considerations for Conflict-free Replicated Databases (CRDBs) {#considerations-for-conflictfree-replicated-databases-crdbs}
 
