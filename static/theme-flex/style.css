@@ -64,6 +64,25 @@ header nav.shortcuts {
 header nav.shortcuts-right {
   justify-content: flex-end;
 }
+header nav.shortcuts li {
+  opacity: 1;
+  display: inline-block;
+  margin: 0 12px;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: opacity 200ms ease-in-out;
+  font-size: 18px;
+  margin: 0 15px 0 5px;
+  position: relative;  
+}
+header nav.shortcuts li a:hover {
+  opacity: 1;
+}
 header nav.shortcuts-right li:last-child {
   background: white;
   border-radius: 4px;
@@ -74,12 +93,17 @@ header nav.shortcuts-right li:last-child a label {
   color: #b62411;
   opacity: 1;
   font-size: 14px;
+  height: 40px;
+  line-height: 45px;  
 }
-header nav.shortcuts li {
-  position: relative;
+header nav.shortcuts label {
+  opacity: 0.75; 
+  font-size: 1.2rem;
 }
 header nav.shortcuts li .submenu-wrapper {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  background: #eee;
   background-image: url('./img/bg-poly-white-1.jpg');
   background-attachment: fixed;
   background-position: left top;
@@ -88,16 +112,50 @@ header nav.shortcuts li .submenu-wrapper {
   font-weight: 700;
   cursor: default;
   text-transform: uppercase;
-  position: fixed;
-  width: 100%;
-  left: 0px;
-  padding: 0 20px 5px;  
+  position: absolute;
+  left: 0;
+  top: 57px;
+  padding: 0 20px 5px;
+
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  
+  -webkit-box-shadow: 0 5px 10px 1px rgba(0,0,0,.2);
+  box-shadow: 0 5px 10px 1px rgba(0,0,0,.2);  
 }
+header nav.shortcuts li .submenu-wrapper.products {
+  width: 1000px;
+}
+
+header nav.shortcuts .submenu-wrapper .arrow_box {
+  position: absolute;
+  left: 40px;
+	background: #f3f3f3;
+}
+
+header nav.shortcuts .submenu-wrapper .arrow_box:after {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(72, 213, 115, 0);
+  border-bottom-color: #f3f3f3;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
 header nav.shortcuts li .submenu-wrapper a {
   color: #3d5051;
   cursor: default;
   font-weight: 700;
-  padding-left: 5px;
+  padding-left: 10px;
   text-transform: uppercase;  
 }
 header nav.shortcuts li .submenu-wrapper .submenu {
@@ -117,16 +175,23 @@ header nav.shortcuts li .submenu-wrapper .submenu:before{
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
 }
+header nav.shortcuts li .submenu-wrapper .submenu .submenu-list {
+  align-items: stretch;
+  justify-content: space-between;
+  display: flex;
+  padding: 15px 0 25px 0;
+}
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list > li {
-  float: left;  
-  width: 20%;
+  flex: 0 1 auto;
+  padding: 0;
+  margin: 0;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li {
   display: inline-block;
   float: left;  
-  height: 35px;
+  height: 30px;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 11px;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a {
   color: #5f5f5f;
@@ -134,10 +199,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
   padding: 5px;
   border-radius: 5px;
   text-transform: none;
-  font-size: 1.4rem;
-  display: inline-block; 
-  display: flex;
-  width: 160px;
+  font-size: 1.2rem;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a:hover {
   background: #fff;
@@ -161,24 +223,6 @@ header nav.shortcuts li a {
   display: flex;
   height: 2.9rem;
   padding: 0 .5rem;
-}
-header nav.shortcuts li {
-  opacity: 1;
-  display: inline-block;
-  margin: 0 12px;
-  text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  transition: opacity 200ms ease-in-out;
-  font-size: 18px;
-  margin: 0 15px 0 5px;
-}
-header nav.shortcuts li a:hover {
-  opacity: 1;
 }
 
 .main-content {

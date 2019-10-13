@@ -11,9 +11,11 @@ jQuery(document).ready(function() {
 
     $("nav.shortcuts li").hover(
         function() {
-            $(this).children('.submenu-wrapper').css('display', 'inline-block');
+            $(this).children('.submenu-wrapper').css('visibility', 'visible');
+            $(this).children('.submenu-wrapper').css('opacity', 1);
         }, function() {
-            $(this).children('.submenu-wrapper').css('display', 'none');
+            $(this).children('.submenu-wrapper').css('visibility', 'hidden');
+            $(this).children('.submenu-wrapper').css('opacity', 0);
         }
     );    
 
