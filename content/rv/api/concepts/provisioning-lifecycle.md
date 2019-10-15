@@ -66,9 +66,9 @@ A task that reaches the `received` state cannot be cancelled and it will await c
 When the processing phase succeeds and the task is in the `processing-completed` state, the provisioning phase starts.
 During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request.
 
-    {{% note %}}
+{{% note %}}
 The term "provisioning" refers to all infrastructure changes required in order to apply the request. This includes provisioning new or additional infrastructure, but (depending on the nature of the request) may also include de-provisioning (or releasing) currently used infrastructure.
-    {{% /note %}}
+{{% /note %}}
 
 The provisioning phase may require several minutes to complete. You can query the resource identifier to track the progress of the provisioning phase.
 
