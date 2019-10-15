@@ -67,7 +67,7 @@ When the processing phase succeeds and the task is in the `processing-completed`
 During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request.
 
 {{% note %}}
-The term "provisioning" refers to all infrastructure changes required in order to apply the request. This includes provisioning new or additional infrastructure, but (depending on the nature of the request) may also include de-provisioning (or releasing) currently used infrastructure.
+The term "provisioning" refers to all infrastructure changes required in order to apply the request. This includes provisioning new or additional infrastructure.
 {{% /note %}}
 
 The provisioning phase may require several minutes to complete. You can query the resource identifier to track the progress of the provisioning phase.
