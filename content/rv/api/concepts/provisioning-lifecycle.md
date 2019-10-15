@@ -25,9 +25,9 @@ During this phase, the request is received, evaluated, planned and executed.
 ### Tracking requests using tasks
 
 When you request an asynchronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.
-The `taskId` is a unique identifier that allows you to track the progress of the requested operation and get information on its status.
+The `taskId` is a unique identifier that allows you to track the progress of the requested operation and get information on its state.
 
-You can query the `taskId` to track the status of a specific task:
+You can query the `taskId` to track the state of a specific task:
 
 ```shell
 {{% embed-code "rv/api/20-get-task-id.sh" %}}
@@ -39,7 +39,7 @@ In this example, the `$TASK_ID` variable is set to hold the value of `taskId`. F
 TASK_ID=166d7f69-f35b-41ed-9128-7d753b642d63
 ```
 
-You can also query the status of all active tasks or recently completed tasks in your account:
+You can also query the state of all active tasks or recently completed tasks in your account:
 
 ```shell
 {{% embed-code "rv/api/30-get-all-tasks.sh" %}}
@@ -80,7 +80,7 @@ For example, when you provision a new subscription, use this `cURL` command to q
 
 Where the `{subscription-id}` is the resource ID that you receive when the task is in the `processing-completed` state.
 
-### Provisioning statuses
+### Provisioning status values
 
 During the provisioning of a resource (such as a subscription, database or cloud account) the resource transitions through these states:
 
@@ -94,13 +94,14 @@ During the provisioning of a resource (such as a subscription, database or cloud
 The following limitations apply to asynchronous operations:
 
 - For each account, only one operation is **processed** concurrently. When multiple tasks are sent for the same account, they will be received and processed one after the other.
-- The provisioning phase can be performed in parallel.
+- The provisioning phase can be performed in parallel, under certain limitations:
+    - Subscription creation / updating / deletion: no more than three subscriptions can be modified (i.e. be in a non-active state) at the same time.
+    - Database Creation in an existing subscription: Creating a new database within an existing subscription may cause the subscription state to change from `active` to `pending` during the provisioning of the database (such a change may be caused by the database size requiring cluster resizing, updating cluster metadata etc.)
+
 - For example:
-    - Concurrently sending 10 "create database" tasks will cause each task to be in the `received` state, awaiting processing.
+    - Concurrently sending multiple "create database" tasks will cause each task to be in the `received` state, awaiting processing.
     - When the first task starts processing it will be moved to the `processing-in-progress` state.
     - When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on.
     - Typically, the processing phase is much faster than the provisioning phase, and multiple tasks will be in provisioned concurrently.
+    - If the creation of the database requires an update to the subscription, the subscription state will be set to `pending`. Therefore, when creating multiple databases one after the other, it is recommended to check the subscription state after the processing phase of each database create request. If the subscription is in the `pending` state you must await the completion of the subscription changes (i.e. subscription state returns to `active` state)
 
-    {{% note %}}
-Concurrent processing limitations apply per account. Separate accounts will be processed (and provisioned) separately, each according to its own task processing order.
-    {{% /note %}}
