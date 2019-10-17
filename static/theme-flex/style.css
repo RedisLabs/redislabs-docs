@@ -129,7 +129,12 @@ header nav.shortcuts li .submenu-wrapper {
 header nav.shortcuts li .submenu-wrapper.products {
   width: 1000px;
 }
-
+header nav.shortcuts li .submenu-wrapper.solutions {
+  width: 500px;
+}
+header nav.shortcuts li .submenu-wrapper.learn {
+  width: 900px;
+}
 header nav.shortcuts .submenu-wrapper .arrow_box {
   position: absolute;
   left: 40px;
@@ -182,7 +187,9 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list {
   padding: 15px 0 25px 0;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list > li {
-  flex: 0 1 auto;
+  display: flex;
+  flex-basis: 0;
+  flex-grow: 1;
   padding: 0;
   margin: 0;
 }
