@@ -34,7 +34,7 @@ Then, create a user with the user type **external**.
 You can also create an external with the REST API with this syntax:
 
 ```src
-curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
+curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST https://<RS_server_address>:9443/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
 ```
 
 For the user role, enter either:
@@ -87,7 +87,7 @@ Note: This password complexity profile will only apply to new users. Users who h
 To enable this password complexity profile, run the below command:
 
 ```src
-curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator-user-email>:<password>" -d '{"password_complexity":true}' https://localhost:9443/v1/cluster
+curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator-user-email>:<password>" -d '{"password_complexity":true}' https://<RS_server_address>:9443/v1/cluster
 ```
 
 ### Setting Local User Password Expiration
@@ -95,6 +95,6 @@ curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/jso
 Password expiration is also a frequent requirement to meet the complaince and contractual obligations of our users organizations. To force an expiration of a local users password you can run the below command where <number_of_days> may be subtituted for your organizational requirements. To disable this requirement, set <number_of_days> to 0.
 
 ```src
-curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://localhost:9443/v1/cluster
+curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://<RS_server_address>:9443/v1/cluster
 ```
 
