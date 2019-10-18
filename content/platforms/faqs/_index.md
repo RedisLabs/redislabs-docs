@@ -238,8 +238,8 @@ Note that the NET_RAW capability requirement in PSP has been removed as of relea
 Note that the allowPrivilegeEscalation is set to 'false' by default as of release 5.4.6-1183.
 These changes better align the deployment with container and Kubernetes security best practices.
 
-{{% note% }}
+{{% note %}}
 Removing NET_RAW blocks 'ping' from being used on the solution containers.
-{{% /note% }}
+{{% /note %}}
 
 {{% /expand%}}
