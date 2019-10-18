@@ -27,7 +27,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8444, 9080 | For nginx <-> cnm_http/cm traffic (Internal use) |
 | TCP | 9081 | For CRDB management (Internal use) |
 | TCP | 8070, 8071 | For metrics exported and managed by nginx |
-| TCP | 8080, 9443 | REST API traffic, including cluster management and node bootstrap |
+| TCP | 9443 | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Database traffic |
 | TCP | 20000-29999 | Database shards traffic (Internal use) |
 | UDP | 53, 5353 | DNS/mDNS traffic (Internal use) |
