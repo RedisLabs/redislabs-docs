@@ -95,6 +95,6 @@ curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/jso
 Password expiration is also a frequent requirement to meet the complaince and contractual obligations of our users organizations. To force an expiration of a local users password you can run the below command where <number_of_days> may be subtituted for your organizational requirements. To disable this requirement, set <number_of_days> to 0.
 
 ```src
-curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "jamie.scott@uconn.edu:password" -d '{"password_expiration_duration":<number_of_days>}' https://localhost:9443/v1/cluster
+curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://localhost:9443/v1/cluster
 ```
 
