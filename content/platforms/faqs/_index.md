@@ -176,26 +176,20 @@ The scc.yaml file is defined like this:
 
 ```yaml
 kind: SecurityContextConstraints
-
-apiVersion: v1
-
+apiVersion: security.openshift.io/v1
 metadata:
-
-name: redis-enterprise-scc
-
+  name: redis-enterprise-scc
 allowPrivilegedContainer: false
-
 allowedCapabilities:
-
-- SYS_RESOURCE
-
+  - SYS_RESOURCE
 runAsUser:
-
-type: RunAsAny
-
+  type: MustRunAs
+  uid: 1001
+FSGroup:
+  type: MustRunAs
+  ranges: 1001,1001
 seLinuxContext:
-
-type: RunAsAny
+  type: RunAsAny
 ```
 
 ([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/scc.yaml))
@@ -209,10 +203,9 @@ metadata:
   name: redis-enterprise-psp
 spec:
   privileged: false
-  allowPrivilegeEscalation: true
+  allowPrivilegeEscalation: false
   allowedCapabilities:
     - SYS_RESOURCE
-    - NET_RAW
   runAsUser:
     rule: MustRunAsNonRoot
   fsGroup:
@@ -240,4 +233,13 @@ The RLEC SCC definitions are only applied to the project namespace when you appl
 RLEC PSP definitions are controlled with role-based access control (RBAC).
 A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account
 and allows that account to create pods with the PSP shown above.
+
+Note that the NET_RAW capability requirement in PSP has been removed as of release 5.4.6-1183. 
+Note that the allowPrivilegeEscalation is set to 'false' by default as of release 5.4.6-1183.
+These changes better align the deployment with container and Kubernetes security best practices.
+
+{{% note% }}
+Removing NET_RAW blocks 'ping' from being used on the solution containers.
+{{% /note% }}
+
 {{% /expand%}}
