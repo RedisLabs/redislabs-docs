@@ -90,7 +90,7 @@ To enable this password complexity profile, run the below command:
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator-user-email>:<password>" -d '{"password_complexity":true}' https://localhost:9443/v1/cluster
 ```
 
-## Setting Local User Password Expiration
+### Setting Local User Password Expiration
 
 Password expiration is also a frequent requirement to meet the complaince and contractual obligations of our users organizations. To force an expiration of a local users password you can run the below command where <number_of_days> may be subtituted for your organizational requirements. To disable this requirement, set <number_of_days> to 0.
 
