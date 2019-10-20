@@ -27,7 +27,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8444, 9080 | For nginx <-> cnm_http/cm traffic (Internal use) |
 | TCP | 9081 | For CRDB management (Internal use) |
 | TCP | 8070, 8071 | For metrics exported and managed by nginx |
-| TCP | 9443 | REST API traffic, including cluster management and node bootstrap |
+| TCP | 9443, 8080 (Deprecated) | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Database traffic |
 | TCP | 20000-29999 | Database shards traffic (Internal use) |
 | UDP | 53, 5353 | DNS/mDNS traffic (Internal use) |
@@ -51,3 +51,12 @@ To change the default port for the RS Web UI, on any node in the cluster run:
 ```src
 rladmin cluster config cm_port <new-port>
 ```
+
+## Turning off HTTP support
+
+Some of our customers want to be able to harden our web UI by turning off HTTP support by default. This will ensure that no traffic will be sent to an unencrypted port, forcing encryption in transit via HTTP.
+
+```src
+rladmin cluster config http_support disabled
+```
+
