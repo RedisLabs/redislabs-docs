@@ -54,9 +54,9 @@ rladmin cluster config cm_port <new-port>
 
 ## Turning off HTTP support
 
-Some of our customers want to be able to harden our web UI by turning off HTTP support by default. This will block traffic that is sent to the unencrypted API endpoint by disabling it. Any scripts or proxy configurations leveraging the HTTP API will need to be migrated to the encrypted API endpoint in order to continue functioning after this configuration.
+Some of our customers want to be able to harden their deployments by turning off our HTTP API endpoint support, which is supported by default. This will block traffic that is sent to the unencrypted API endpoint by disabling it. Any scripts or proxy configurations leveraging the HTTP API will need to be migrated to the encrypted API endpoint in order to continue functioning after this configuration.
 
-To disable HTTP support run the following command:
+To disable HTTP API support run the following command:
 
 ```src
 rladmin cluster config http_support disabled
