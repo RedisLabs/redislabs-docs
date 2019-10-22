@@ -60,3 +60,19 @@ Where:
 - *path*: the path to the file, if needed.
 - *filename*: the filename of the RDB file, optionally compressed and
     with the *.gz* suffix.
+    
+##Import a Dataset From Cloud Storage
+
+Redis Labs offers support to import datasets from cloud object storage options in Google Cloud Platform, Amazon Web Services, and Microsoft Azure.
+
+Note: In order to successfully authenticate to to Azure, you must provide an account access key and account name.
+
+In order to import from Azure Blob Storage use the following standard pattern:
+`abs://:storage_account_access_key@storage_account_name/container_name/blob_name.rdb`
+
+In order to import from Google Cloud Storage, use the following standard pattern:
+`gs://bucket-name/path/filename.rdb`
+
+In order to import from Amazon's S3 Service, use the following standard pattern:
+
+`s3://bucketname/foldername/filename.rdb`
