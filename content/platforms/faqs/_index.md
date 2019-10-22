@@ -234,12 +234,11 @@ RLEC PSP definitions are controlled with role-based access control (RBAC).
 A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account
 and allows that account to create pods with the PSP shown above.
 
-Note that the NET_RAW capability requirement in PSP has been removed as of release 5.4.6-1183. 
-Note that the allowPrivilegeEscalation is set to 'false' by default as of release 5.4.6-1183.
-These changes better align the deployment with container and Kubernetes security best practices.
-
 {{% note %}}
-Removing NET_RAW blocks 'ping' from being used on the solution containers.
+- Removing NET_RAW blocks 'ping' from being used on the solution containers.
+- These changes were made as of release 5.4.6-1183 to better align the deployment with container and Kubernetes security best practices:
+    - The NET_RAW capability requirement in PSP was removed.
+    - The allowPrivilegeEscalation is set to 'false' by default.
 {{% /note %}}
 
 {{% /expand%}}
