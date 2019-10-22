@@ -80,7 +80,7 @@ For example, when you provision a new subscription, use this `cURL` command to q
 
 Where the `{subscription-id}` is the resource ID that you receive when the task is in the `processing-completed` state.
 
-### Provisioning status values
+### Provisioning state values
 
 During the provisioning of a resource (such as a subscription, database or cloud account) the resource transitions through these states:
 
@@ -94,14 +94,17 @@ During the provisioning of a resource (such as a subscription, database or cloud
 The following limitations apply to asynchronous operations:
 
 - For each account, only one operation is **processed** concurrently. When multiple tasks are sent for the same account, they will be received and processed one after the other.
-- The provisioning phase can be performed in parallel, under certain limitations:
-    - Subscription creation / updating / deletion: no more than three subscriptions can be modified (i.e. be in a non-active state) at the same time.
-    - Database Creation in an existing subscription: Creating a new database within an existing subscription may cause the subscription state to change from `active` to `pending` during the provisioning of the database (such a change may be caused by the database size requiring cluster resizing, updating cluster metadata etc.)
+- The provisioning phase can be performed in parallel except:
+    - Subscription creation, update and deletion: You cannot change (make non-active) more than three subscriptions at the same time.
+    - Database creation in an existing subscription: This can cause the subscription state to change from `active` to `pending`
+    during  database provisioning in cases such as database sizing that requires cluster resizing or updating cluster metadata.
 
 - For example:
     - Concurrently sending multiple "create database" tasks will cause each task to be in the `received` state, awaiting processing.
     - When the first task starts processing it will be moved to the `processing-in-progress` state.
     - When that first task is completed (either `processing-completed` or `processing-error`) the second task will start processing, and so on.
     - Typically, the processing phase is much faster than the provisioning phase, and multiple tasks will be in provisioned concurrently.
-    - If the creation of the database requires an update to the subscription, the subscription state will be set to `pending`. Therefore, when creating multiple databases one after the other, it is recommended to check the subscription state after the processing phase of each database create request. If the subscription is in the `pending` state you must await the completion of the subscription changes (i.e. subscription state returns to `active` state)
+    - If the creation of the database requires an update to the subscription, the subscription state is set to `pending`.
+    When you create multiple databases one after the other, we recommend that you check the subscription state after the processing phase of each database create request.
+    If the subscription is in `pending` state you must wait for the subscription changes to complete and the subscription state to return to `active`.
 
