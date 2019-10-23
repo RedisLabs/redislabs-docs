@@ -64,6 +64,14 @@ To edit the name, password, role or email alerts of a user, hover over the user 
 (/images/rv/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
 delete the user and re-add it.
 
+### Resetting user passwords
+
+To reset a user password from the CLI, run:
+
+`rladmin cluster reset_password <username>`
+
+You are asked to enter and confirm the new password.
+
 ## Setting Local Password Policies
 
 RS supports enforcement for password complexity and expiration.
