@@ -27,7 +27,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8444, 9080 | For nginx <-> cnm_http/cm traffic (Internal use) |
 | TCP | 9081 | For CRDB management (Internal use) |
 | TCP | 8070, 8071 | For metrics exported and managed by nginx |
-| TCP | 9443 (Reccomended), 8080 (Not reccomended) | REST API traffic, including cluster management and node bootstrap |
+| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Database traffic |
 | TCP | 20000-29999 | Database shards traffic (Internal use) |
 | UDP | 53, 5353 | DNS/mDNS traffic (Internal use) |
@@ -41,7 +41,7 @@ use by another process.
 
 {{% note %}}
 After you change the RS Web UI port, when you add a new node to the
-cluster you must specify the custom port, in the format:
+cluster you must connect to the web UI with the custom port number:
 
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
 {{% /note%}}
@@ -54,11 +54,13 @@ rladmin cluster config cm_port <new-port>
 
 ## Turning off HTTP support
 
-Some of our customers want to be able to harden their deployments by turning off our HTTP API endpoint support, which is supported by default. This will block traffic that is sent to the unencrypted API endpoint by disabling it. Any scripts or proxy configurations leveraging the HTTP API will need to be migrated to the encrypted API endpoint in order to continue functioning after this configuration.
+To harden deployments, you can disable the HTTP support for API enpoints that is supported by default.
+Before you disable HTTP support, make sure that you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint
+to prevent broken connections.
+After you disable HTTP support, traffic sent to the unencrypted API endpoint is blocked.
 
-To disable HTTP API support run the following command:
+To disable HTTP support for API endpoints, run:
 
 ```src
 rladmin cluster config http_support disabled
 ```
-
