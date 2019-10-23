@@ -127,18 +127,28 @@ header nav.shortcuts li .submenu-wrapper {
   box-shadow: 0 5px 10px 1px rgba(0,0,0,.2);  
 }
 header nav.shortcuts li .submenu-wrapper.products {
-  width: 1000px;
+  left: -5px;
+  position: fixed;
+  top: 70px;
+  width: 100%;
 }
 header nav.shortcuts li .submenu-wrapper.solutions {
   width: 500px;
 }
+header nav.shortcuts li .submenu-wrapper.customers {
+  width: 220px;
+}
 header nav.shortcuts li .submenu-wrapper.learn {
-  width: 900px;
+  width: 780px;
 }
 header nav.shortcuts .submenu-wrapper .arrow_box {
   position: absolute;
   left: 40px;
 	background: #f3f3f3;
+}
+
+header nav.shortcuts li .submenu-wrapper.products .arrow_box {
+  left: 250px;
 }
 
 header nav.shortcuts .submenu-wrapper .arrow_box:after {
@@ -198,7 +208,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
   float: left;  
   height: 30px;
   width: 100%;
-  margin-bottom: 11px;
+  margin-bottom: 6px;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a {
   color: #5f5f5f;
@@ -214,6 +224,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list .submenu-section-title {
   padding-left: 10px;
+  color: #6e7878;
 }
 header nav.shortcuts li .fa {
   font-size: 1.5rem;
