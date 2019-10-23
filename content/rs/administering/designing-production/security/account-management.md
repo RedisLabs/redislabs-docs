@@ -14,7 +14,7 @@ The roles and permissions available in RS are:
 
 {{< embed-html "account-role-table.html" >}}
 
-## Adding a user
+## Adding a User
 
 To add a user to the cluster:
 
@@ -66,13 +66,15 @@ delete the user and re-add it.
 
 ## Setting Local Password Policies
 
-Many of our users require a password policy to meet their contractual & compliance obligations as well as to meet their organizational policies. Redis Labs reccomends that LDAP be used to query users in an external identity provider, such as Active Directory to meet the granular password complexity and compliance needs of your organization. Instructions on how to setup LDAP to your external identity provider may be found in our documentation for [LDAP integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
+RS supports enforcement for password complexity and expiration.
+
+To enforce a more advanced password policy that meets your contractual and compliance requirements and your organizational policies,
+we recommend that you use [LDAP integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) with an external identity provider, such as Active Directory.
 
 ### Setting up local password complexity
 
-Redis Enterprise Software comes with a build in password complexity enforcement profile that will meet most organizational needs. This profile enforces the below password complexity requirements for all new users. 
-
-#### Password Complexity Rules:
+RS lets you enforce a password complexity profile that meets most organizational needs.
+The password complexity profile is defined by:
 
 - At least 8 characters
 - At least one uppercase character
@@ -82,19 +84,23 @@ Redis Enterprise Software comes with a build in password complexity enforcement 
 - Does not contain the User ID or reverse of the User ID
 - No more than 3 repeating characters
 
-Note: This password complexity profile will only apply to new users. Users who have been previously added will have to change their password for this profile to take effect.
+{{% note %}}
+The password complexity profile applies to when a new user is added or an existing user changes their password.
+{{% /note %}}
 
-To enable this password complexity profile, run the below command:
+To enforce the password complexity profile, run:
 
 ```src
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator-user-email>:<password>" -d '{"password_complexity":true}' https://<RS_server_address>:9443/v1/cluster
 ```
 
-### Setting Local User Password Expiration
+### Setting local user password expiration
 
-Password expiration is also a frequent requirement to meet the complaince and contractual obligations of our users organizations. To force an expiration of a local users password you can run the below command where <number_of_days> may be subtituted for your organizational requirements. To disable this requirement, set <number_of_days> to 0.
+RS lets you enforce password expiration to meet your compliance and contractual requirements.
+To enforce an expiration of a local users password after a specified number of days, run:
 
 ```src
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://<RS_server_address>:9443/v1/cluster
 ```
 
+To disable password expiration, set the number of days to `0`.
