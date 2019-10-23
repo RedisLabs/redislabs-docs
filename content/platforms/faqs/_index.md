@@ -177,25 +177,33 @@ The scc.yaml file is defined like this:
 ```yaml
 kind: SecurityContextConstraints
 
-apiVersion: v1
+apiVersion: security.openshift.io/v1
 
 metadata:
 
-name: redis-enterprise-scc
-
+  name: redis-enterprise-scc
+  
 allowPrivilegedContainer: false
 
 allowedCapabilities:
 
-- SYS_RESOURCE
-
+  - SYS_RESOURCE
+  
 runAsUser:
 
-type: RunAsAny
+  type: MustRunAs
+  
+  uid: 1001
+  
+FSGroup:
 
+  type: MustRunAs
+  
+  ranges: 1001,1001
+  
 seLinuxContext:
 
-type: RunAsAny
+  type: RunAsAny
 ```
 
 ([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/scc.yaml))
@@ -209,10 +217,9 @@ metadata:
   name: redis-enterprise-psp
 spec:
   privileged: false
-  allowPrivilegeEscalation: true
+  allowPrivilegeEscalation: false
   allowedCapabilities:
     - SYS_RESOURCE
-    - NET_RAW
   runAsUser:
     rule: MustRunAsNonRoot
   fsGroup:
