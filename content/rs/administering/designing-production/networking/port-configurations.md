@@ -1,5 +1,5 @@
 ---
-Title: Network port configurations
+Title: Network Port Configurations
 description:
 weight: $weight
 alwaysopen: false
