@@ -75,7 +75,7 @@ Redis Enterprise Pack (RS). The modules are:
 #### Custom Modules
 
 In addition, Redis Enterprise Pack provides the ability to load and use
-custom modules from [redismodules.com](http://redismodules.com/) or of
+custom [Redis modules](https://redislabs.com/community/redis-modules-hub/) or of
 your own creation.
 
 ## Support for Docker

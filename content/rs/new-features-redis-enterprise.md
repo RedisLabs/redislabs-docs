@@ -54,7 +54,7 @@ Redis Labs developed and certified these modules for use with Redis Enterprise S
 ### Custom Modules
 
 In addition, Redis Enterprise Software provides the ability to load and
-use custom modules from [redismodules.com](http://redismodules.com/) or
+use custom [Redis modules](https://redislabs.com/community/redis-modules-hub/) or
 of your own creation.
 
 ## Support for Docker
