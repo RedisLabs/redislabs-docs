@@ -16,7 +16,7 @@ RedisInsight is a browser based GUI for Redis. It lets you do the following -
   - View real time metrics from redis
   - Create tabular views from your redis keys and export data in different formats
   - Perform CRUD operations using the web based CLI
-  - Visualise and update data from [Streams](https://redis.io/commands#stream), [RedisGraph](redisgraph.io), [RediSearch](redisearch.io) and [RedisTimeSeries](redistimeseries.io).
+  - Visualise and update data from [Streams](https://redis.io/topics/streams-intro), [RedisGraph](https://redisgraph.io), [RediSearch](https://redisearch.io) and [RedisTimeSeries](https://redistimeseries.io).
 - Analyse
   - Analyze memory used by redis by keys or key patterns, by expiry, by data types or or the internal encoding
   - Filter keys by number of elements or by memory, and identify top keys
