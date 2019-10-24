@@ -7,8 +7,9 @@ path: install/docker/
 nextStep:
     Title: Activating RedisInsight
     href: /docs/install/activating/
+aliases: /ri/install/install-docker/
 ---
-In this walkthrough, we will install RedisInsight on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [RedisInsight on AWS]({{< relref "/ri/install/install-ec2.md" >}}).
+In this walkthrough, we will install RedisInsight on [Docker](https://www.docker.com/). Note that this installation is for developer machines. We have a separate guide for installing [RedisInsight on AWS]({{< relref "/ri/installing/install-ec2.md" >}}).
 
 ## I. Install Docker
 

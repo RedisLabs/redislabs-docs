@@ -4,6 +4,7 @@ date: 2018-07-20 03:49:29 +0530
 weight: 5
 categories: ["RI"]
 path: install/redis-desktop-mac-win-linux/
+aliases: /ri/install/install-redis-desktop/
 ---
 RedisInsight is a full-featured Desktop GUI client for Windows, Linux and Mac.
 
