@@ -10,14 +10,17 @@ nextStep:
 ---
 Now, we will connect RedisInsight to a Redis Server. Let's start by connecting to redis server running on localhost.
 
-![add_redisinstance_localhost](/images/ri/add_redisinstance_localhost.png)
+![add_redis_instance_localhost](/images/ri/add_redis_instance_localhost.png)
 
 If the connection is successful, you should start seeing statistics for this redis server.
 
 ![instance_overview_page](/images/ri/instance_overview_page.png)
 
 {{% note %}}
-1. RedisInsight can only connect to redis servers that your redis-cli can connect to. If RedisInsight cannot connect to your redis server, check if you can connect using `redis-cli`
+Troubleshooting:
+
+1. RedisInsight can only connect to redis servers that your redis-cli can connect to.
+    If RedisInsight cannot connect to your redis server, check if you can connect using `redis-cli`
 1. On mac and windows, if localhost does not work, try `host.docker.internal` as the server name.
 1. On linux, if localhost does not work, restart docker with the `--network host` flag in the docker run command.
 {{% /note %}}
@@ -26,8 +29,8 @@ If the connection is successful, you should start seeing statistics for this red
 
 If you want to work with ElastiCache Redis instances with RedisInsight, you have two options:
 
-1. [Install RedisInsight on an EC2 instance]({{< relref "/ri/install/install-ec2.md" >}}) that has access to the ElastiCache Redis instance.
-1. Create a SSH tunnel through an EC2 instance that can access the ElastiCahe Redis instance.
+1. [Install RedisInsight on an EC2 instance]({{< relref "/ri/installing/install-ec2.md" >}}) that has access to the ElastiCache Redis instance.
+1. Create a SSH tunnel through an EC2 instance that can access the ElastiCache Redis instance.
 
 ### Using an SSH Tunnel
 

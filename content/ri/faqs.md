@@ -13,18 +13,18 @@ Here are some frequently asked questions about Redis Enterprise Software.
 RedisInsight is a browser based GUI for Redis. It lets you do the following -
 
 - Browse
-  - View real time metrics from redis
-  - Create tabular views from your redis keys and export data in different formats
-  - Perform CRUD operations using the web based CLI
-  - Visualise and update data from [Streams](https://redis.io/commands#stream), [RedisGraph](redisgraph.io), [RediSearch](redisearch.io) and [RedisTimeSeries](redistimeseries.io).
+    - View real time metrics from redis
+    - Create tabular views from your redis keys and export data in different formats
+    - Perform CRUD operations using the web based CLI
+    - Visualize and update data from [Streams](https://redis.io/topics/streams-intro), [RedisGraph](https://redisgraph.io), [RediSearch](https://redisearch.io) and [RedisTimeSeries](https://redistimeseries.io).
 - Analyse
-  - Analyze memory used by redis by keys or key patterns, by expiry, by data types or or the internal encoding
-  - Filter keys by number of elements or by memory, and identify top keys
-  - Profile redis to list keys or commands redis is executing
+    - Analyze memory used by redis by keys or key patterns, by expiry, by data types or or the internal encoding
+    - Filter keys by number of elements or by memory, and identify top keys
+    - Profile redis to list keys or commands redis is executing
 - Bulk Actions
 - Configure
-  - View and modify redis configuration
-  - View list of clients and kill specific clients
+    - View and modify redis configuration
+    - View list of clients and kill specific clients
 {{% /expand %}}
 
 {{% expand "What problem does RedisInsight solve?" %}}
@@ -44,7 +44,7 @@ Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 {{% /expand %}}
 
 {{% expand "What cloud providers do you support?" %}}
-We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinishg@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
+We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinsight@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
 {{% /expand %}}
 
 ## Memory Analysis
@@ -58,7 +58,7 @@ In online mode, RedisInsight connects to your redis server, downloads the entire
 {{% /expand %}}
 
 {{% expand "What is the overhead of online memory analysis on redis server?" %}}
-The overhead is mimimal. If SYNC command is supported, the overhead is the same as connecting a slave for a short duration. If SYNC command is disabled, we run the  SCAN command followed by DUMP in a pipeline. Neither approach blocks your redis server.
+The overhead is minimal. If SYNC command is supported, the overhead is the same as connecting a slave for a short duration. If SYNC command is disabled, we run the  SCAN command followed by DUMP in a pipeline. Neither approach blocks your redis server.
 {{% /expand %}}
 
 {{% expand "What is offline mode of memory analysis?" %}}
@@ -92,7 +92,7 @@ First, this will work only if you have RedisInsight running on your local comput
 {{% /expand %}}
 
 {{% expand "How do I connect to AWS Elasticache?" %}}
-You must install RedisInsight inside your VPC, either on an EC2 instance, or using ECS or Fargate. See [EC2 Installation Instructions]({{< relref "/ri/install/install-ec2.md" >}})
+You must install RedisInsight inside your VPC, either on an EC2 instance, or using ECS or Fargate. See [EC2 Installation Instructions]({{< relref "/ri/installing/install-ec2.md" >}})
 {{% /expand %}}
 
 {{% expand "What are the memory limits on your license terms?" %}}

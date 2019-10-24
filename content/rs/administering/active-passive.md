@@ -46,7 +46,7 @@ For a quick overview of ReplicaOf capabilities watch this quick video.
 
 {{< youtube AG-XGn7BQkQ >}}
 
-## Replica of sources
+## Replica of Sources
 
 RS has a security mechanism in which an internal admin password is
 assigned to each database. This password helps protect the database from
@@ -105,7 +105,7 @@ restarted from scratch for all the source databases.
 [Client prerequisites for
 mDNS]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}).
 
-## Replication process
+## Replication Process
 
 When a database is defined as a replica of another database, all its
 existing data is deleted and replaced by data that is loaded from the
@@ -196,7 +196,7 @@ following steps:
 
 ### Configuring TLS for Replica Of on the destination database
 
-To enable TLS for Replica Of in the destintation database:
+To enable TLS for Replica Of in the destination database:
 
 1. Edit the 'Replica of' section of the destination Database to point
     the source Database and press the 'Enable TLS Authentication' icon:
@@ -213,7 +213,7 @@ To enable TLS for Replica Of in the destintation database:
 3. Press the **Continue** button, save the certificate and **Update**
     the database changes.
 
-## Data compression for Replica Of
+## Data Compression for Replica Of
 
 When the *Replica of* is defined across different Redis Enterprise
 Software clusters, it may be beneficial to compress the data that flows

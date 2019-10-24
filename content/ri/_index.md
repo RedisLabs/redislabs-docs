@@ -8,5 +8,5 @@ categories: ["RI"]
 ---
 Choose the topic you need help with:
 
-- [Installing RedisInsight]({{< relref "/ri/install/_index.md" >}})
+- [Installing RedisInsight]({{< relref "/ri/installing/_index.md" >}})
 - [Using RedisInsight]({{< relref "/ri/using-redisinsight/add-instance.md" >}})
