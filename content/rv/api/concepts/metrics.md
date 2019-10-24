@@ -18,10 +18,10 @@ The metric span determines the time period for the data points in the metrics AP
 | 1minute  | 1 minute | 10 seconds | on-demand |
 | 5minutes  | 5 minutes | 1 minute | on-demand |
 | 1hour  | 1 hour | 5 minutes | continuous |
-| 1day  | 1 day | 1 hour | continuous |
-| 1week  | 1 week | 1 day | continuous |
-| 1month  | 1 month | 1 day | continuous |
-| 1year  | 1 year | 1 month | continuous |
+| 1day  | 1 day | 15 minutes | continuous |
+| 1week  | 1 week | 1 hour | continuous |
+| 1month  | 1 month | 12 hours | continuous |
+| 1year  | 1 year | 7 days | continuous |
 
 {{% note %}}
 The data point interval represents a best-effort and is not an absolute or unvarying interval. The exact interval between one data point and the next may vary and the interval values may change.
@@ -79,32 +79,31 @@ Data points are shown divided into these categories:
 
 | Category | Description | Units | Redis on RAM | Redis on Flash | Essentials 
 |---|---|---|---|---|---|
-|**count-connections**|Number of open connections|count|*|*|*|
-|**count-keys**|Number of keys in the database|count|*|*|*|
-|**evicted-objects**|Number of evicted objects|count|*|*|*|
-|**expired-objects**|Number of expired objects|count|*|*|*|
-|**flash-used**|Flash storage used by Redis-on-Flash database|bytes|*|||
-|**fragmentation-ratio-disk**|Flash storage fragmentation ratio|percentage|*|||
-|**fragmentation-ratio-memory**|RAM fragmentation ratio|percentage|*|*|*|
-|**hits-flash**|Requests found in Flash|percentage|*|||
-|**hits-ram**|Requests found in RAM|percentage|*|||
-|**hits-read**|Read requests found in Redis database|percentage|*|*|*|
-|**hits-write**|Write requests found in Redis database|percentage|*|*|*|
-|**latency-average**|Average latency for all requests|milliseconds|*|*|*|
-|**latency-average-read**|Average latency for read requests|milliseconds|*|*|*|
-|**latency-average-write**|Average latency for write requests|milliseconds|*|*|*|
-|**latency-other**|Average latency for requests that are not read or write|milliseconds|*|*|*|
-|**memory-size-calculated**|Total size of Redis database|bytes|*|*|*|
-|**ram-flash-ratio**|Ratio between RAM and Flash access|percentage|*|||
-|**ram-overhead**|The percentage of RAM used for storing everything rather than pure values. I.e. keys, Redis dictionary and other key/value overheads|bytes|*|||
-|**ram-used**|RAM used by Redis-on-Flash database|bytes|*|||
-|**requests-other**|Number of requests that are not read or write|ops/sec|*|*|*|
-|**requests-read**|Number of read requests|ops/sec|*|*|*|
-|**requests-total**|Total number of requests|ops/sec|*|*|*|
-|**requests-write**|Number of write requests|ops/sec|*|*|*|
-|**values-in-flash**|Number of values stored in Flash|count|*|||
-|**values-in-ram**|Number of values stored in RAM|count|*|||
-
+|**count-connections**|Number of open connections in the database|count|Y|Y|Y|
+|**count-keys**|Number of keys in the database|count|Y|Y|Y|
+|**evicted-objects**|Number of evicted objects|count|Y|Y|Y|
+|**expired-objects**|Number of expired objects|count|Y|Y|Y|
+|**flash-used**|Flash storage used by Redis-on-Flash database|bytes|Y|||
+|**fragmentation-ratio-disk**|Flash storage fragmentation ratio|percentage|Y|||
+|**fragmentation-ratio-memory**|RAM fragmentation ratio|percentage|Y|Y|Y|
+|**hits-flash**|Requests found in Flash|percentage|Y|||
+|**hits-ram**|Requests found in RAM|percentage|Y|||
+|**hits-read**|Read requests found in Redis database|percentage|Y|Y|Y|
+|**hits-write**|Write requests found in Redis database|percentage|Y|Y|Y|
+|**latency-average**|Average latency for all requests|microseconds|Y|Y|Y|
+|**latency-average-read**|Average latency for read requests|microseconds|Y|Y|Y|
+|**latency-average-write**|Average latency for write requests|microseconds|Y|Y|Y|
+|**latency-other**|Average latency for requests that are not read or write|microseconds|Y|Y|Y|
+|**memory-size-calculated**|Total size of Redis database|bytes|Y|Y|Y|
+|**ram-flash-ratio**|Ratio between RAM and Flash access|percentage|Y|||
+|**ram-overhead**|The percentage of RAM used for storing everything rather than pure values. I.e. keys, Redis dictionary and other key/value overheads|bytes|Y|||
+|**ram-used**|RAM used by Redis-on-Flash database|bytes|Y|||
+|**requests-other**|Number of requests that are not read or write|ops/sec|Y|Y|Y|
+|**requests-read**|Number of read requests|ops/sec|Y|Y|Y|
+|**requests-total**|Total number of requests|ops/sec|Y|Y|Y|
+|**requests-write**|Number of write requests|ops/sec|Y|Y|Y|
+|**values-in-flash**|Number of values stored in Flash|count|Y|||
+|**values-in-ram**|Number of values stored in RAM|count|Y|||
 
 ## Usage Example
 
