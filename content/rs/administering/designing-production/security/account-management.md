@@ -74,7 +74,6 @@ To make sure your user accounts are secured and not misused, RS supports enforce
 
 - Password complexity
 - Password expiration
-- Account lock timeout
 - Account lock on failed attempts
 
 To enforce a more advanced password policy that meets your contractual and compliance requirements and your organizational policies,
@@ -113,10 +112,6 @@ curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/jso
 ```
 
 To disable password expiration, set the number of days to `0`.
-
-### Account inactivity timeout
-
-To prevent unauthorized access to the RS web UI, the active user is logged out automatically after 10 minutes of inactivity.
 
 ### Account lock on failed attempts
 
