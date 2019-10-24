@@ -88,3 +88,5 @@ rladmin tune cluster login_lockout_duration 3600
 
 Before the lockout duration ends,
 an administrator can change the user password in order to manually unlock the user account.
+
+{{< embed-md "reset-password.md" >}}
