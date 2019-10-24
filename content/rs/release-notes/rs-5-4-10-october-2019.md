@@ -38,8 +38,10 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
 - The following new GA releases of Redis Modules are bundled in RS 5.4.10:
     - RedisBloom, version 2.0.3
-    - RedisSearch, version 1.4.13
+    - RedisSearch, version 1.4.17
     - RedisJson, version 1.0.4
+    - RedisGraph, version 1.2.2
+    - RedisTimeSeries, version 1.0.3
 - Version 5.0.5 of Redis OSS, along with a fix to a corruption related to the HyperLogLog (that is part of [Redis 5.0.6](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES)) are merged into RS 5.4.10.
 - Using REST API, you can retrieve various license details such as activation date, expiration date,and the number of licensed shards. To get these details, run:
 
@@ -88,7 +90,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
 - The API for removing a node is updated in RS 5.4.2 or higher. The API call must include json data and the "Content-Type: application/json" header. For example:
 
-    `curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:passsword https://localhost:9443/v1/nodes/3/actions/remove --data "{}"`
+    `curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"`
 
 ### Redis Commands
 
