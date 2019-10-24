@@ -48,6 +48,11 @@ This topic describes how to install and configure Redis Enterprise for Pivotal P
    - Optionally, for production clusters, you can also provide a static IP address of a set of static IP addresses (comma-separated) to use for cluster nodes. You can also enabled Multiple Availability Zone (Rack) awareness.
    - Save your changes by clicking **Save**.
 
+    {{% note %}}
+Make sure that the **Cluster Recovery** option is not selected during installation.
+This option is only for when you recover a cluster.
+    {{% /note %}}
+
     ![Import button](/images/platforms/pcf_rp_config_full_screen2.png)
 
 1. Navigate to the **Routing Configuration** section on the left navigation bar.

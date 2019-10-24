@@ -62,7 +62,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud Pr
     1. Choose a **Module** to use with the database. If you
         select 'RediSearch', enter the estimated number of documents
         you want to index. If you select 'RedisGraph', calculate the
-        required resources with the [sizing calculator](https://redislabs.com/redis-enterprise/redis-modules/redis-enterprise-modules/redisgraph/redisgraph-calculator/).
+        required resources with the [sizing calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/).
     1. In **Alert Settings**, select the alerts that you want sent to you and
         your team when the specified threshold is passed.
 1. Click **Activate**.

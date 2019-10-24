@@ -19,6 +19,12 @@ spec should include a *persistentSpec* section, in the
 
 Persistence storage is a requirement for this deployment type.
 
+{{% note %}}
+For **production deployments** of Redis Enterprise Cluster on Kubenetes,
+the Redis Enterprise Cluster (REC) must be deployed with persistence enabled.
+The REC deployment files in the [Kubernetes documentation](https://github.com/RedisLabs/redis-enterprise-k8s-docs) contain this declaration by default.
+{{% /note %}}
+
 ## Volume Size
 
 *volumeSize* is an optional definition. By default, if the definition is
@@ -29,6 +35,11 @@ requirements]({{< relref "/rs/administering/designing-production/hardware-requir
 
 To explicitly specify the persistent storage size, use the *volumeSize*
 property as described in the example above.
+
+{{% note %}}
+We recommed that you omit the volumeSize definition from the REC declaration
+so that the Redis Enterprise Cluster deployment on Kubenetes use the default volume size.
+{{% /note %}}
 
 ## Storage Class Name
 

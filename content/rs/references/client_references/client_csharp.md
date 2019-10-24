@@ -5,7 +5,7 @@ weight:
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis with C# you will need a C# Redis client. In following sections, we will demonstrate the use of [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis), General purpose Redis client. Additional C# clients for Redis can be found under the [C# section](http://redis.io/clients#C#) of the Redis Clients page.
+In order to use Redis with C# you will need a C# Redis client. In following sections, we will demonstrate the use of [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis), General purpose Redis client. Additional C# clients for Redis can be found under the [C# section](http://redis.io/clients#c) of the Redis Clients page.
 
 ## Installing StackExchange.Redis
 

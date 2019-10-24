@@ -1,5 +1,5 @@
 ---
-Title: Network port configurations
+Title: Network Port Configurations
 description:
 weight: $weight
 alwaysopen: false
@@ -27,7 +27,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8444, 9080 | For nginx <-> cnm_http/cm traffic (Internal use) |
 | TCP | 9081 | For CRDB management (Internal use) |
 | TCP | 8070, 8071 | For metrics exported and managed by nginx |
-| TCP | 8080, 9443 | REST API traffic, including cluster management and node bootstrap |
+| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Database traffic |
 | TCP | 20000-29999 | Database shards traffic (Internal use) |
 | UDP | 53, 5353 | DNS/mDNS traffic (Internal use) |
@@ -41,7 +41,7 @@ use by another process.
 
 {{% note %}}
 After you change the RS Web UI port, when you add a new node to the
-cluster you must specify the custom port, in the format:
+cluster you must connect to the web UI with the custom port number:
 
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
 {{% /note%}}
@@ -50,4 +50,17 @@ To change the default port for the RS Web UI, on any node in the cluster run:
 
 ```src
 rladmin cluster config cm_port <new-port>
+```
+
+## Disabling HTTP support for API Endpoints
+
+To harden deployments, you can disable the HTTP support for API enpoints that is supported by default.
+Before you disable HTTP support, make sure that you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint
+to prevent broken connections.
+After you disable HTTP support, traffic sent to the unencrypted API endpoint is blocked.
+
+To disable HTTP support for API endpoints, run:
+
+```src
+rladmin cluster config http_support disabled
 ```
