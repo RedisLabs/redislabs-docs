@@ -34,7 +34,7 @@ Then, create a user with the user type **external**.
 You can also create an external with the REST API with this syntax:
 
 ```src
-curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
+curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST https://<RS_server_address>:9443/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
 ```
 
 For the user role, enter either:
