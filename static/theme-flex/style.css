@@ -1461,9 +1461,8 @@ footer {
 }
 
 footer #inner-footer {
-  max-width: 85%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 75%;
+  margin-left: 345.5px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row wrap;
@@ -1476,7 +1475,7 @@ footer #inner-footer .large-12 {
 }
 
 footer #inner-footer .column {
-  flex: 0 0 20%;
+  flex: 0 0 16%;
   max-width: 20%;  
 }
 
@@ -1491,7 +1490,7 @@ footer #inner-footer .column {
 .footer nav h6 {
   color: #fff;
   text-transform: uppercase;
-  font-size: 1.45rem;
+  font-size: 16px;
   margin-top: 10px;
 }
 
@@ -1501,7 +1500,7 @@ footer #inner-footer .column {
 
 .footer nav a {
   color: #a2a8a8;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.875rem;
 }
 
@@ -1541,7 +1540,7 @@ footer #inner-footer .column {
 }
 
 .footer .v-bottom {
-  max-width: 85%;
+  max-width: 65%;
   margin-left: auto;
   margin-right: auto;
   display: -ms-flexbox;
@@ -1558,7 +1557,7 @@ footer #inner-footer .column {
 .footer .v-bottom p {
   display: inline-block;
   margin-left: 20px;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.5;
   margin-bottom: 1rem;
   text-rendering: optimizeLegibility;    
@@ -1604,7 +1603,7 @@ ul.footer-action li a:hover {
 
 p.source-org.copyright {
   color: #a2a8a8;
-  font-weight: 300;
+  font-weight: 400;
 }
 div.notices {
   margin: 2rem 0;
