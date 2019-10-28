@@ -59,7 +59,6 @@ header nav.shortcuts {
   list-style-type: none;
   position: relative;
   margin-left: 40px;
-  padding-top: 10px;
   width: auto;}
 header nav.shortcuts-right {
   justify-content: flex-end;
@@ -94,11 +93,12 @@ header nav.shortcuts-right li:last-child a label {
   opacity: 1;
   font-size: 14px;
   height: 40px;
-  line-height: 45px;  
+  line-height: 45px;
+  margin-bottom: 4.25px;
 }
 header nav.shortcuts label {
   opacity: 0.75; 
-  font-size: 1.2rem;
+  font-size: 14.4px;
 }
 header nav.shortcuts li .submenu-wrapper {
   visibility: hidden;
@@ -242,7 +242,7 @@ header nav.shortcuts li a {
   display: -ms-flexbox;
   display: flex;
   height: 2.9rem;
-  padding: 0 .5rem;
+  padding: 12.8px 16px;
 }
 
 .main-content {
