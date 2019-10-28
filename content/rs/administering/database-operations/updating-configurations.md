@@ -5,43 +5,43 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can change the configuration of a Redis Enterprise Software
-database at any time.
+You can change the configuration of a Redis Enterprise Software database at any time.
 
 To edit the configuration of a database:
 
-1. Click the relevant database row on the Databases page. The selected
-    database page appears.
-1. Select the Configuration tab.
-1. Click Edit at the bottom of the page.
-1. The database settings appear. You can edit any of the configurable
-    parameters. For explanation, refer to
-    [Creating a new
-    database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
-1. Click Update.
+1. Go to **Database** and select the database that you want to edit.
+1. Go to **Configuration** and click **Edit** at the bottom of the page.
+    The database settings appear.
+1. Change the any of the [configurable database settings]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
-## Updating CRDB configuration
+    {{% note %}}
+For [CRDB instances](#updating-crdb-configuration), most database settings only apply to the instance that you are editing.
+    {{% /note %}}
 
-A Conflict-Free Replicated Database (CRDB) is a global database that
-spans multiple Redis Enterprise clusters called
-**Participating Clusters** and is made up
-of individual database instances. When creating a new CRDB you must
-configure which Participating Clusters are to host instances of the
-CRDB. However when updating database configurations with CRDB, most
-database settings only apply to the local CRDB instance configuration.
-Changes done to "Memory limit", "Data persistence", "Redis password",
-"Number of Shards", or "TLS Mode" and "Periodic backup" are only applied
-to the local CRDB instance and not applied to all Participating
-Clusters.
+1. Click **Update**.
+
+## Editing CRDB Configuration
+
+A Conflict-Free Replicated Database (CRDB) is a global database that spans multiple Redis Enterprise clusters
+The clusters that host instances of the CRDB are called participating clusters.
+When you create a CRDB you must specify the participating clusters that host the CRDB instances.
+
+When you edit the database configurations of a CRDB,
+most database settings only apply to the CRDB instance that you are editing, including:
+
+- Memory limit
+- Data persistence
+- Redis password
+- Number of shards
+- TLS mode
+- Periodic backup
 
 ## Participating Clusters
 
-If the CRDB topology needs to change, you can add and remove
-Participating Clusters of a CRDB. Use the Participating Clusters list to
-manage the changes to CRDB topology in the UI. You can make one or more
-changes at any one time to the Participating Cluster list. The changes
-you make to the list are committed when the database configuration is
-saved.
+If the CRDB topology needs to change, you can add and remove Participating Clusters of a CRDB.
+Use the Participating Clusters list to manage the changes to CRDB topology in the UI.
+You can make one or more changes at any one time to the Participating Cluster list.
+The changes you make to the list are committed when the database configuration is saved.
 
 ![pasted-image-0-1](/images/rs/pasted-image-0-1.png?width=1534&height=233)
 
