@@ -28,7 +28,7 @@ To Edit a database, click on the pencil icon.
 
 ## Edit a Database
 
-From the "View Database" page of the database you wish to edit, click on
+From the "View Database" page of the database you want to edit, click on
 the pencil icon to edit the database. This view allows you to edit the
 database settings just as they were when the database was created. For
 detailed descriptions of every field, read Create a Database.

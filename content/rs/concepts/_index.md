@@ -8,8 +8,8 @@ categories: ["RS"]
 A Redis Enterprise cluster is composed of identical nodes that are
 deployed within a data center or stretched across local availability
 zones. Redis Enterprise architecture is made up of a management path
-(depicted in the blue layer in Figure 1 below) and data access path
-(depicted in the red layer in Figure 1 below).
+(shown in the blue layer in Figure 1 below) and data access path
+(shown in the red layer in Figure 1 below).
 
 - Management path includes the cluster manager, proxy and secure REST
     API/UI for programmatic administration. In short, cluster manager is

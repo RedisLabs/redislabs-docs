@@ -8,7 +8,7 @@ categories: ["RS"]
 There are various reasons why you may want to remove a node in Redis
 Enterprise Software (RS):
 
-- You no longer need the extra capacity, meaning you wish to
+- You no longer need the extra capacity, meaning you want to
     permanently remove the node.
 - You would like to replace a faulty node with a healthy node.
 - You would like to replace a healthy node with a different node.
@@ -78,7 +78,7 @@ To remove a node:
 1. At any point, you can click the **Abort** button to stop the
     process. When aborted, the current internal action is completed, and
     then the process stops.
-1. Once the process finishes, the node is no longer displayed in
+1. Once the process finishes, the node is no longer shown in
     the UI.
 
 You can choose to receive email alerts related to this process, as

@@ -118,10 +118,9 @@ delay between the time when a command was executed on the source and
 when it is executed on the destination. This delay is referred to as the
 **Lag**.
 
-When a **synchronization error** occurs, then depending on the error
-type, **the process might stop**, or it might continue running on the
-assumption that the error automatically resolves. See more
-details below.
+When there is a **synchronization error**, **the process might stop** or
+it might continue running on the assumption that the error automatically
+resolves. The result depends on the error type. See more details below.
 
 In addition, **the user can manually stop the synchronization process**.
 
@@ -142,11 +141,11 @@ The replication process can have the following statuses:
     indicated as a time duration.
 - **Sync stopped** - indicates that the synchronization process is
     currently not running and the user needs to restart it in order for
-    it to continue running. This status occurs if the user stops the
+    it to continue running. This status happens if the user stops the
     process, or if certain errors arose that prevent synchronization
     from continuing without manual intervention. See more details below.
 
-The statuses above are displayed for the source database. In addition, a
+The statuses above are shown for the source database. In addition, a
 timestamp is shown on the source indicating when the last command from
 the source was executed on the destination.
 
@@ -172,7 +171,7 @@ and that stop the synchronization process include:
 - Error authenticating with the source database.
 - Cross slot violation error while executing a command on a sharded
     destination database.
-- Out-of-memory error that occurs on a source or on the destination
+- Out-of-memory error on a source or on the destination
     database.
 
 Example of an error that does not cause the synchronization process to

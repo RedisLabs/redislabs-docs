@@ -8,7 +8,7 @@ categories: ["RS"]
 Database replication provides a mechanism to ensure high availability.
 When replication is enabled, your dataset is replicated to a slave node,
 which is constantly synchronized with the master node. If the master
-node fails, an automatic failover occurs and the slave node is promoted
+node fails, an automatic failover happens and the slave node is promoted
 to be the new master node. When the old master node recovers, it becomes
 the slave node of the new master node. This auto-failover mechanism
 guarantees that data is served with minimal to no interruption.

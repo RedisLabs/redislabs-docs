@@ -115,7 +115,7 @@ rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
 ```
 
 {{% note %}}
-If an error occurs when you turn on maintenance mode, the snapshot is not deleted.
+If an error happens when you turn on maintenance mode, the snapshot is not deleted.
 When you re-run the command,
 we recommend that you use the snapshot from the initial attempt because it contains the original state of the node.
 {{% /note %}}

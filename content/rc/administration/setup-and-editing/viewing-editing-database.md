@@ -36,7 +36,7 @@ icons](/images/rc/view_database2.png?width=600&height=338)
 
 ## Edit a Database
 
-From the "View Database" page for the database you wish to edit, click
+From the "View Database" page for the database you want to edit, click
 on the pencil icon to edit the database. This view allows you to edit
 the database settings just as they were when the database was created.
 

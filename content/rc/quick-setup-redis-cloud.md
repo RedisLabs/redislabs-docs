@@ -74,7 +74,7 @@ To set up a new database:
 1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
 1. Click the **Activate** button to create your database.
 
-Note: the Endpoint displayed on this page is very important because it
+Note: the Endpoint shown on this page is very important because it
 is your entry point to this database.
 
 ![rc-view-database-endpoint](/images/rc/rc-view-database-endpoint.png?width=600&height=409)

@@ -133,7 +133,7 @@ Use the `TRUE` value to enable the feature.
 
 **Code shortcode**
 
-Code can be displayed like code fences using the code shortcode also.
+Code can be shown like code fences using the code shortcode also.
 
 Syntax:
 

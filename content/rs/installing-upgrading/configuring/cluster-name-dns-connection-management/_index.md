@@ -126,7 +126,7 @@ master.
 When you use IP based connection option, the FQDN does not need to have
 any special format because clients use IP addresses instead of
 hostnames to access the databases so you are free to choose whatever
-name you wish. Using the IP Based connection option does not require any
+name you want. Using the IP Based connection option does not require any
 DNS configuration either.
 
 To administer the cluster you do need to know the IP address of at least

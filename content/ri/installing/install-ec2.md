@@ -34,7 +34,7 @@ Next, launch an EC2 instance.
 1. Navigate to EC2 under AWS Console
 1. Click Launch Instance
 1. Choose 64 bit Amazon Linux AMI
-1. Choose at least a t2.medium instance. The size of the instance depends on the memory used by your ElastiCache instance that you wish to analyze
+1. Choose at least a t2.medium instance. The size of the instance depends on the memory used by your ElastiCache instance that you want to analyze
 1. Under Configure Instance:
    * Choose the VPC that has your ElastiCache instances
    * Choose a subnet that has network access to your ElastiCache instances
@@ -55,7 +55,7 @@ Next, verify the EC2 instance has the required IAM permissions, and can connect 
 1. Open a command prompt
 1. Run the command `aws s3 ls`. This should list S3 buckets
     1. If the `aws` command cannot be found, make sure your ec2 instance is based of amazon linux
-1. Next, find the hostname an ElastiCache instance you wish to analyze, and run the command `echo info | nc <redis host> 6379`
+1. Next, find the hostname an ElastiCache instance you want to analyze, and run the command `echo info | nc <redis host> 6379`
 1. If you see some details about the ElastiCache redis instance, you can proceed to the next step
 1. If you cannot connect to redis, you should review your VPC, subnet, and security group settings.
 

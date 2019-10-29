@@ -16,7 +16,7 @@ database and your application, as described below.
 
 1. Login to your account and navigate to the **Database** page in the
     top right menu.
-1. Select the database you wish to connect to and click the **Edit**
+1. Select the database you want to connect to and click the **Edit**
     button.
 1. Under the **Access Control & Security** section, make sure **SSL
     Client Authentication** is selected.

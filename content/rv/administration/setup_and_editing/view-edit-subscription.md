@@ -15,7 +15,7 @@ change some of them, including:
 ## Viewing Subscriptions
 
 To view the details of a subscription click "Subscriptions" in the menu,
-and then click on the name of the Subscription you wish to view.
+and then click on the name of the Subscription you want to view.
 
 When you view a subscription, you can see:
 
@@ -33,7 +33,7 @@ In the Payment Information section, you can see:
 
 To delete a subscription, click on the **Delete** button at the bottom
 of the form. You are prompted to confirm before your subscription is
-actually deleted. The delete only occurs if the subscription **does
+actually deleted. The delete only succeeds if the subscription **does
 not have any databases**. If it does, you must first delete the
 databases.
 

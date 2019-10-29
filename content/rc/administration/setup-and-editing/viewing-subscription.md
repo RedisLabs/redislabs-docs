@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC Essentials"]
 ---
 To view the details of a subscription click "Subscriptions" in the menu
-and then click on the name of the Subscription you wish to view.
+and then click on the name of the Subscription you want to view.
 
 There three things you can change about an existing subscription:
 
@@ -20,5 +20,5 @@ of the form. Go to Change a Subscription Plan to learn more.
 
 To delete a subscription, click on the "Delete" button at the bottom of
 the form. You are prompted to confirm before the actual delete. The
-delete only occurs if the subscription does not have any databases.
+delete only succeeds if the subscription does not have any databases.
 If it does, please delete the databases first.

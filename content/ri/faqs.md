@@ -36,7 +36,7 @@ We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and we
 {{% /expand %}}
 
 {{% expand "What versions of Redis does RedisInsight support?" %}}
-Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you wish to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
+Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
 {{% /expand %}}
 
 {{% expand "Do you support Redis Labs Enterprise Version?" %}}

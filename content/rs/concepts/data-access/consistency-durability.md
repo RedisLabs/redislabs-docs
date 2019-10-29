@@ -12,7 +12,7 @@ control the consistency and durability guarantees for the replicated and
 persisted database in RS.
 
 Any updates that are issued to the database are typically performed with
-the following flow depicted below;
+the following flow shown below;
 
 1. Application issues a write,
 1. Proxy communicates with the correct master "shard" in the system
@@ -34,7 +34,7 @@ Consistency](/images/rs/weak_consistency-300x161.png)
 With the new WAIT command, applications can ask to wait for
 acknowledgments only after replication or persistence is confirmed on
 the slave. The flow of a write operation with the WAIT command is
-depicted below:
+shown below:
 
 1. Application issues a write,
 1. Proxy communicates with the correct master "shard" in the system

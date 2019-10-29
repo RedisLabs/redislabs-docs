@@ -15,7 +15,7 @@ delete a database.
 Steps:
 
 1. Navigate to the **Databases** page from the Redis Cloud Pro menu
-1. Click on the database you wish to delete from the list of your
+1. Click on the database you want to delete from the list of your
     databases.
 1. Click on the trash can icon next to "View Database."
 1. A window is shown asking if you really want to delete your

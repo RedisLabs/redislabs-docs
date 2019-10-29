@@ -38,7 +38,7 @@ Unless you've installed Predis with Composer, you'll need to include the 2nd and
 
 ## Persistent Connections with Predis
 
-Predis supports the use of persistent connections, which are recommended practice to minimizeconnection management overhead. To enable persistent connections, use the `persistent` connection attribute as shown in the following snippet:
+Predis supports the use of persistent connections, which are recommended practice to minimize connection management overhead. To enable persistent connections, use the `persistent` connection attribute as shown in the following snippet:
 
     $redis = new Predis\Client(array(
         "scheme" => "tcp",

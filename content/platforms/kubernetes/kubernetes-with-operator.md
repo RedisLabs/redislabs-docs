@@ -62,7 +62,7 @@ The Operator creates the following resources:
 - Pod Disruption Budget
 - Optionally: a deployment for the Service Broker, including services and a PVC
 
-The following diagram depicts the high-level architecture of the Redis
+The following diagram shows the high-level architecture of the Redis
 Enterprise Operator:
 
 ![k8-high-level-architecture-diagram-of-redis-enterprise](/images/rs/k8-high-level-architecture-diagram-of-redis-enterprise.png)

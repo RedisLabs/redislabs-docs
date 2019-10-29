@@ -43,7 +43,7 @@ the filter sees if the corresponding bit is set or not.
 
 ![RedisBloom-hash1](/images/rs/rebloom-hash1.png)
 
-Of course, this is subject to collisions. If a collision occurs, the
+Of course, this is subject to collisions. If a collision happens, the
 filter returns a false positive - indicating that the entry is
 indeed found (note that a bloom filter never returns a false
 negative, that is, claim that something does not exist when it fact it
