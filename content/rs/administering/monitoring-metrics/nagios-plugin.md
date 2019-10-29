@@ -121,7 +121,7 @@ below.
         1. In the second "define host" section:
             1. The "host_name " in each entry must be unique.
             1. The "display_name" in each entry can be updated to a
-                user-friendly name that will show in Nagios UI.
+                user-friendly name that are shown in Nagios UI.
     1. "contacts.cfg " ­ holds configuration details who to send emails
         to. It should be updated to values relevant for your deployment.
         If this file already exists in your existing Nagios environment

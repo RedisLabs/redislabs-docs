@@ -19,6 +19,6 @@ To change the plan, click on "Change Subscription" button at the bottom
 of the form. Go to Change a Subscription Plan to learn more.
 
 To delete a subscription, click on the "Delete" button at the bottom of
-the form. You will be prompted to confirm before the actual delete. The
-delete will only occur if the subscription does not have any databases.
+the form. You are prompted to confirm before the actual delete. The
+delete only occurs if the subscription does not have any databases.
 If it does, please delete the databases first.

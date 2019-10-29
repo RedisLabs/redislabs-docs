@@ -73,7 +73,7 @@ Use the cf creates/delete/update-service commands or use the Pivotal Apps Manage
 1. Paste the license key you received from Redis Labs into the **Cluster key** form field and click the **Save** button.
 
     {{% note %}}
-In case your license is already expired, changes to the cluster configuration, such as a version upgrade, will result in cluster failure.
+If your license is already expired, changes to the cluster configuration, such as a version upgrade, cause cluster failure.
 Always apply a valid license key in advance of making such changes.
     {{% /note %}}
 

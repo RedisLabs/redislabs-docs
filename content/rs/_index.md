@@ -70,7 +70,7 @@ every write, or (RDB) snapshots of your dataset every 1, 6, or 12 hours
 to persistent storage. In addition, you can back up your dataset
 periodically or ad-hoc to an FTP server or AWS S3. Other cloud storage
 options, such as Azure Geo-Redundant Storage, SoftLayer Object Storage,
-and Google Cloud Storage, will be added in a future release.
+and Google Cloud Storage, are planned to be added in a future release.
 
 ### Predictable high-performance {#predictable-highperformance}
 

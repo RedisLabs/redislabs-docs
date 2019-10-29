@@ -60,7 +60,7 @@ categories: ["RC Pro"]
 
 ## Adding Sections
 
-To add a section to the docs that will include multiple articles, you must add a directory with a `_index.md` file.
+To add a section to the docs that includes multiple articles, you must add a directory with a `_index.md` file.
 The `_index.md` file is the landing page for the section that should contain the main information for the section.
 
 Start the article with the header information as shown above

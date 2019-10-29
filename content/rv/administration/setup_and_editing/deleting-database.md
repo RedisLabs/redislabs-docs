@@ -18,9 +18,9 @@ Steps:
 1. Click on the database you wish to delete from the list of your
     databases.
 1. Click on the trash can icon next to "View Database."
-1. A window will pop up asking if you really want to delete your
+1. A window is shown asking if you really want to delete your
     database. Click "Delete."
-1. You will be taken back to the main **Databases** page. The database,
+1. You are taken back to the main **Databases** page. The database,
     all of its data, and configurations is now deleted.
 
 **Note**: It is considered best practice that you create a backup of

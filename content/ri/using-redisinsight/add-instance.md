@@ -8,7 +8,7 @@ nextStep:
     Title: Memory Analysis
     href: /docs/features/memory-analysis/
 ---
-Now, we will connect RedisInsight to a Redis Server. Let's start by connecting to redis server running on localhost.
+Now, let's connect RedisInsight to a Redis Server. We can start by connecting to redis server running on localhost.
 
 ![add_redis_instance_localhost](/images/ri/add_redis_instance_localhost.png)
 

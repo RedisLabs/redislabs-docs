@@ -26,4 +26,4 @@ can be on Flash memory (SSD).
 
 Note: [Active-Active Geo-Distributed
 CRDBs]({{< relref "/rs/administering/active-active.md" >}})
-will always operate in noeviction mode.
+always operate in noeviction mode.

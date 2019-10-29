@@ -80,7 +80,7 @@ Databases provide various approaches to address some of these concerns
 Even though types and commands in CRDBs look identical to standard Redis
 types and commands, the underlying types in RS are enhanced to maintain
 more metadata to create the conflict-free data type experience. This
-section will detail what you need to know about developing with CRDBs on
+section explains what you need to know about developing with CRDBs on
 Redis Enterprise Software.
 
 ## Compatibility
@@ -172,15 +172,14 @@ TTL on key1 to an infinite time.
 
 The replica responsible for the "winning" expire value is also
 responsible to expire the key and propagate a DEL effect when this
-happens. A "losing" replica will from this point on not be responsible
+happens. A "losing" replica is from this point on not responsible
 for expiring the key, unless another EXPIRE command resets the TTL.
-Furthermore, a replica that is NOT the "owner" of the expired value
-will:
+Furthermore, a replica that is NOT the "owner" of the expired value:
 
-- Silently ignore the key if a user attempts to access it in READ
+- Silently ignores the key if a user attempts to access it in READ
     mode, e.g. treating it as if it was expired but not propagating a
     DEL.
-- Expire it (sending a DEL) before making any modifications if a user
+- Expires it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
 
 ## Out-of-Memory (OOM) {#outofmemory-oom}

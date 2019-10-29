@@ -11,7 +11,7 @@ and New Relic license key.
 
 When [setting up SSL/TLS for your
 account]({{< relref "/rc/securing-redis-cloud-connections.md" >}}),
-you will be prompted to supply the downloadable Redis Labs CA
+you are prompted to supply the downloadable Redis Labs CA
 Certificate from this page.
 
 ![settings](/images/rc/settings.png?width=1000&height=782)
@@ -19,7 +19,7 @@ Certificate from this page.
 ## Team Management
 
 To manage the team of people who have access to the account, click on
-the "Team" tab and you will be presented with the current list of team
+the "Team" tab and you are presented with the current list of team
 members on this account.
 
 Team members can have different roles to the account:

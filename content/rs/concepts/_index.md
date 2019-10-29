@@ -102,5 +102,5 @@ Redis Enterprise has two durability options:
     replicated-durability, Redis provides the WAIT command. WAIT makes sure that
     a write can wait for acknowledgment until multiple replicas
     confirm that write. This makes sure that a write confirmed with WAIT on
-    replicas will be durable even if a node catches on fire and never
+    replicas are durable even if a node catches on fire and never
     comes back to the cluster.

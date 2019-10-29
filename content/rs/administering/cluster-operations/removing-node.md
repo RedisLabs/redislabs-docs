@@ -23,8 +23,7 @@ any action.**
 
 Permanently removing a node means you are decreasing cluster capacity.
 Before trying to remove a node, make sure that the cluster has enough
-capacity for all resources without that node, otherwise you will not be
-able to remove the node.
+capacity for all resources without that node, otherwise you cannot remove the node.
 
 If there is not enough capacity in the cluster to facilitate removing
 the node, you can either delete databases or add another node instead of
@@ -38,8 +37,7 @@ on one of the other nodes in the cluster, initiates failover as needed,
 and only then removes the node.
 
 If a cluster has only two nodes (which is not recommended for production
-deployments) and some databases have replication enabled, you will not
-be able to remove a node.
+deployments) and some databases have replication enabled, you cannot remove a node.
 
 ## Replacing a faulty node
 
@@ -80,7 +78,7 @@ To remove a node:
 1. At any point, you can click the **Abort** button to stop the
     process. When aborted, the current internal action is completed, and
     then the process stops.
-1. Once the process finishes, the node will no longer be displayed in
+1. Once the process finishes, the node is no longer displayed in
     the UI.
 
 You can choose to receive email alerts related to this process, as

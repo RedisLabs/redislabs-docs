@@ -27,7 +27,7 @@ To encrypt the connection to the database endpoint with TLS, enter the
 contents the client certificate to the **TLS** field.
 
 **Note**: Once TLS encryption is enabled for the database endpoint,
-the database will not accept unsecured connections. TLS encryption can
+the database does not accept unsecured connections. TLS encryption can
 significantly impact database throughput and latency.
 
 ### Adding TLS CA signed certificates to the proxy
@@ -149,7 +149,7 @@ certificates, and a self-signed certificate on the client machine.
         value\] is the database endpoint as can be retrieved from RS.
 
         **Note**: The value for the accept parameter is the local IP and
-        port that will be used for redirecting the traffic through the
+        port that is used for redirecting the traffic through the
         secure tunnel to the database endpoint configured in the connect
         parameter.
 
@@ -169,7 +169,7 @@ certificates, and a self-signed certificate on the client machine.
 
 1. Test the connection to the Redis database from the client machine.
     You can use redis-cli to run commands on the client machine, and the
-    commands will be redirected from the local machine's port 6379 to
+    commands are redirected from the local machine's port 6379 to
     the RS database endpoint. Note that the connection to the Redis
     database is done through the local port; do not try to connect
     directly to the database endpoint.
@@ -178,7 +178,7 @@ certificates, and a self-signed certificate on the client machine.
 
 RS fully supports TLS v1.2, but the version of TLS used depends on the
 connecting Redis client. If the client supports TLS v1.2, that version
-will be used. If the client does not support TLS v1.2, you may end up
+is used. If the client does not support TLS v1.2, you may end up
 using an older TLS version against RS. Therefore it is considered best
 practice to stay current on your client libraries for the most up to
 date security.
@@ -193,4 +193,4 @@ rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
 ```
 
 Note that if a client supports an older TLS version, the communication
-will not be allowed.
+is not be allowed.

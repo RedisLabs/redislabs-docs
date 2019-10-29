@@ -10,7 +10,7 @@ nextStep:
     href: /docs/install/activating/
 aliases: /ri/install/install-ec2/
 ---
-In this guide, we will install RedisInsight on an AWS EC2 instance. You will need access to the AWS Console, and must have the ability to launch EC2 instances. At the end of this guide, you will be able to manage ElastiCache Redis instances using RedisInsight.
+This tutorial shows how to install RedisInsight on an AWS EC2 instance and manage ElastiCache Redis instances using RedisInsight. To complete this tutorial you must have access to the AWS Console and permissions to launch EC2 instances.
 
 As an alternative, you can also use our 1-click cloudformation launch wizard to automatically perform these steps for you.
 
@@ -21,7 +21,7 @@ RedisInsight needs read-only access to S3 and ElastiCache APIs. This is an optio
 
 1. Login to AWS Console, and navigate to IAM screen
 1. Create a new IAM Role
-1. Under *Select type of trusted entity*, choose EC2. In other words, the role we are creating will be used by an EC2 instance
+1. Under *Select type of trusted entity*, choose EC2. In other words, the role is used by an EC2 instance
 1. Assign the following permissions:
     * AmazonS3ReadOnlyAccess
     * AmazonElastiCacheReadOnlyAccess
@@ -29,7 +29,7 @@ RedisInsight needs read-only access to S3 and ElastiCache APIs. This is an optio
 Step 2: Launch EC2 Instance
 --------------
 
-Next, we will launch an EC2 instance.
+Next, launch an EC2 instance.
 
 1. Navigate to EC2 under AWS Console
 1. Click Launch Instance
@@ -49,7 +49,7 @@ Next, we will launch an EC2 instance.
 Step 3: Verify Permissions & Connectivity
 ----------
 
-Next, we will verify the EC2 instance has the required IAM permissions, and can connect to ElastiCache Redis instances.
+Next, verify the EC2 instance has the required IAM permissions, and can connect to ElastiCache Redis instances.
 
 1. SSH into the newly launched EC2 instance
 1. Open a command prompt
@@ -62,7 +62,7 @@ Next, we will verify the EC2 instance has the required IAM permissions, and can 
 Step 4: Install Docker on EC2
 -------
 
-Next, we will install Docker on the EC2 instance. Run the following commands:
+Next, install Docker on the EC2 instance. Run the following commands:
 
 1. `sudo yum update -y`
 1. `sudo yum install -y docker`
@@ -80,7 +80,7 @@ Finally, we can now install RedisInsight. Run the following command
 {{< param docker_command >}}
 ```
 
-This command will download and run the RedisInsight docker image and expose it as a web page on port 8001.
+This command downloads and runs the RedisInsight docker image and exposes it as a web page on port 8001.
 
 Find the IP Address of your EC2 instances, and a launch your browser to `http://<EC2 IP Address>:8001`. You should see the Databases page of RedisInsight. Accept the EULA and start using RedisInsight.
 

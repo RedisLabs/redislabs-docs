@@ -21,12 +21,12 @@ first.
 1. If this database is created in a standard subscription, choose to
     enable or disable Replication (default is "on"). Replication enables
     instant failover by keeping a standby, in-memory replica. Be aware
-    that by enabling this feature, your database will consume twice as
+    that by enabling this feature, your database consumes twice as
     much memory in your subscription.
 1. Select your preferred [Data
     Persistence]({{< relref "/rc/concepts/data-persistence-redis-cloud.md" >}})
     option.
-1. If this is a **Pay-as-You-Go** subscription, you will see [Database
+1. If this is a **Pay-as-You-Go** subscription, you see [Database
     Clustering]({{< relref "/rc/concepts/clustering-redis-cloud.md" >}})
     as an option.
 1. Enter a **password** to secure your database.

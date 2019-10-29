@@ -10,7 +10,7 @@ efficient way to verify that an entry is certainly *not* in a set. This
 makes it especially ideal when trying to search for items on
 expensive-to-access resources (such as over a network or disk): If I
 have a large on-disk database and I want to know if the key *foo* exists
-in it, I can query the Bloom filter first, which will tell me with a
+in it, I can query the Bloom filter first, which tells me with a
 certainty whether it potentially exists (and then the disk lookup can
 continue) or whether it does *not* exist, and in this case I can forego
 the expensive disk lookup and simply send a negative reply up the stack.
@@ -18,7 +18,7 @@ the expensive disk lookup and simply send a negative reply up the stack.
 While it's possible to use other data structures (such as a hash table)
 to perform this, Bloom filters are also especially useful in that they
 occupy very little space per element, typically counted in the number of
-*bits* (not bytes!). There will exist a percentage of false positives
+*bits* (not bytes!). There exists a percentage of false positives
 (which is controllable), but for an initial test of whether a key exists
 in a set, they provide excellent speed and most importantly excellent
 space efficiency.
@@ -44,8 +44,8 @@ the filter sees if the corresponding bit is set or not.
 ![RedisBloom-hash1](/images/rs/rebloom-hash1.png)
 
 Of course, this is subject to collisions. If a collision occurs, the
-filter will return a false positive - indicating that the entry is
-indeed found (note that a bloom filter will never return a false
+filter returns a false positive - indicating that the entry is
+indeed found (note that a bloom filter never returns a false
 negative, that is, claim that something does not exist when it fact it
 is present).
 
@@ -75,7 +75,7 @@ returning false positives is increased.
 ## Scalable Bloom filters
 
 Typically Bloom filters must be created with a foreknowledge of how many
-entries they will contain. The *bpe* number needs to be fixed, and
+entries they contain. The *bpe* number needs to be fixed, and
 likewise, the width of the bit array is also fixed.
 Unlike hash tables, Bloom filters cannot be "rebalanced" because there
 is no way to know *which* entries are part of the filter (the filter can
@@ -85,7 +85,7 @@ actually store the entries which *are* present).
 In order to allow Bloom filters to 'scale' and be able to accommodate
 more elements than they've been designed to, they may be stacked. Once a
 single Bloom filter reaches capacity, a new one is created atop it.
-Typically the new filter will have greater capacity than the previous
+Typically the new filter has greater capacity than the previous
 one in order to reduce the likelihood of needing to stack yet another
 filter.
 
@@ -96,8 +96,8 @@ the current filter. Hashes still only need to be computed once, however.
 
 When creating a Bloom filter - even a scalable one, it's important to
 have a good idea of how many items it is expected to contain. A filter
-whose initial layer can only contain a small number of elements will
-degrade performance significantly because it will take more layers to
+whose initial layer can only contain a small number of elements 
+degrades performance significantly because it takes more layers to
 reach a larger capacity.
 
 ## Using Bloom filters in Redis Enterprise Software (RS)

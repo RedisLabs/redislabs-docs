@@ -79,7 +79,7 @@ you can turn maintenance mode on without migrating the slave shards.
 
 {{% warning %}}
 If you prevent slave shard migration, the slave shards are kept on the node during maintenance.
-If the maintenance node fails, the master shards will not have slave shards for data redundancy and high availability.
+If the maintenance node fails, the master shards do not have slave shards for data redundancy and high availability.
 {{% /warning %}}
 
 To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:

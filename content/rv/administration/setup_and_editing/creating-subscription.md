@@ -17,9 +17,9 @@ Creating a subscription is a four-step process:
 
 1. Setup - Configure the general settings of the new subscription.
 2. Sizing - Describe the specification of the databases you want to
-    provision. After this step, Redis Cloud Pro will calculate the optimal
+    provision. After this step, Redis Cloud Pro calculates the optimal
     configuration and required infrastructure.
-3. Review and Create - You will be presented with the required
+3. Review and Create - You are shown the required
     infrastructure and the subscription price. Enter your payment method
     and you are pretty much done.
 4. Provisioning - Automatically set up the relevant infrastructure and
@@ -27,14 +27,14 @@ Creating a subscription is a four-step process:
 
 ### Setup
 
-For a new subscription, you will need to provide the following:
+For a new subscription, you need to provide the following:
 
 1. A subscription name.
 1. Select whether you want the subscription to support databases with
     RAM only or [RAM + Flash Memory]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 1. The cloud region (e.g. "us-west-2") you want your databases to be
     created in. This should be in the same region as the applications
-    that will be connecting as you will be using AWS' [VPC
+    that are connecting as you are using AWS' [VPC
     Peering](https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/Welcome.html).
 1. Multi-AZ - Select whether or not the cluster should span
     Availability Zones for better high availability. To work optimally,
@@ -47,14 +47,14 @@ For a new subscription, you will need to provide the following:
     For a standard deployment, you can specify 10.0.1.0/24. Make sure that the CIDR
     you provide does not conflict with your application VPC CIDR to avoid problems
     when you peer the VPC to your.
-    1. You can enable Persistent Storage Encryption. This will attach
+    1. You can enable Persistent Storage Encryption. This attaches
         encrypted EBS volumes to your instances.
 
 After you select the options that you want, click **Next**.
 
 ### Sizing
 
-Now you will have to define the databases you want to provision. Each
+Now you define the databases you want to provision. Each
 row in the table represents a group of databases that share the same
 specifications.
 
@@ -69,10 +69,10 @@ For each row, select the following:
     provide your data average item size if you know it.
 1. Replication - Enables instant failover by keeping a standby,
     in-memory slave replica (note: by checking this option, your dataset
-    will consume twice the amount of memory).
+    consumes twice the amount of memory).
 1. Data persistence - Select the relevant data persistence policy for
     your database.
-1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
+1. Define if the database supports [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
 1. Throughput - You can define your estimated **total throughput** you
     expect from your database by either specifying the required ops/sec
     or number of shards needed.
@@ -90,13 +90,13 @@ to calculate the optimized cloud infrastructure based on your inputs.
 ### Review and Create
 
 Once planning is complete, please review the subscription and database
-information presented, which includes the expected infrastructure and shard prices. Then select an existing payment method or click on the **+** button to add a new payment method. A $100 credit will be assigned to the new subscription for a free trial.
+information presented, which includes the expected infrastructure and shard prices. Then select an existing payment method or click on the **+** button to add a new payment method. A $100 credit is assigned to the new subscription for a free trial.
 
 ### Provisioning
 
 Select the "Continue" button to create the subscription and deploy the
-databases. The subscription will show a "Pending" status and take
-approximately ten to fifteen minutes to create. You will receive an
+databases. The subscription shows a "Pending" status and take
+approximately ten to fifteen minutes to create. You receive an
 email once your databases are ready to use.
 
 Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]({{< relref "/rv/administration/setup_and_editing/view-edit-subscription.md" >}}).

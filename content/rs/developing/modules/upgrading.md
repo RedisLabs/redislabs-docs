@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-As modules are upgraded, you will need to load them into Redis
+As modules are upgraded, you need to load them into Redis
 Enterprise to get the new features and/or
 fixes.
 
@@ -40,7 +40,7 @@ it:
     it.
 1. Go to the **databases** tab, then to
     the configuration section
-1. You will see in the page that an update is
+1. You see in the page that an update is
     available.
 
     ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
@@ -65,8 +65,8 @@ it:
     arguments>
     `
 
-    Note: When this is done, it will
-    restart the database shards and thus cause downtime for this
+    Note: When this is done, it
+    restarts the database shards and thus causes downtime for this
     database across the cluster.
 
 ## Examples
@@ -86,7 +86,7 @@ $ rladmin upgrade module db_name MyDB module_name ReJSON version 10002 module_ar
 ```
 
 Each module package is a zip file. Inside the zip file is a JSON file
-and it will contain the information necessary for the above rladmin
+and it contains the information necessary for the above rladmin
 command for the module_name and version information necessary. The
 specific data points must be entered exactly as you see it in that JSON
 file. The necessary data should be at the end of the JSON document. For

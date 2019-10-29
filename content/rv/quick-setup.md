@@ -56,9 +56,9 @@ To start with a single database:
 1. Select the protocol (Redis or Memcached).
 1. Enter the dataset size - The estimated size of your data. You can specify 1GB
     for a small database.
-1. Define if you want to have database replication (note that when enabling the database will consume twice the amount of memory).
+1. Define if you want to have database replication (note that when enabling the database consumes twice the amount of memory).
 1. Select [data persistence] (/rv/concepts/data-persistence/) policy.
-1. Define if the database will support [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
+1. Define if the database supports [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
 1. Throughput - You can define your estimated total throughput you expect from your database by either specifying the required ops/sec or number of shards needed.
 1. Modules - You can select which Redis Module you want to load to your database. In case you select 'RediSearch' please provide the estimated number of documents you are going to index.
 1. Click **Save** and enter the number of databases with these settings that you would like to provision. To add more rows, click the plus.
@@ -82,14 +82,14 @@ After planning is complete, review the presented subscription and
 database information. This includes the expected infrastructure and shard prices.
 Provide a payment method by selecting an existing one or click **+** to add
 a new one.
-A $100 credit will be assigned to the new subscription for a free trial.
+A $100 credit is assigned to the new subscription for a free trial.
 
 ![review_create](/images/rv/review_create.png?width=800&height=594)
 
 Click **Continue** to create the subscription and deploy the
 databases. The subscription shows a "Pending" status and may
 take 10-15 minutes to build the infrastructure with the
-generated optimization plan. You will receive an email when your
+generated optimization plan. You receive an email when your
 databases are ready to use.
 
 ## Step 4: Connect to your database
@@ -116,8 +116,7 @@ PING
 ```
 
 {{% note %}}
-We recommend loading the redis-cli command-line utility for future
-use as you will use it for other things.
+We recommend loading the redis-cli command-line utility to use it for other things.
 {{% /note %}}
 
 ### Using redis-cli {#using-rediscli}

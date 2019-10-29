@@ -12,7 +12,7 @@ and know the cluster topology. This enables clients to connect directly
 to an RS proxy on the node hosting the master shard for the data being
 operated on.{{% /excerpt%}} The result is that for all but the initial call to get the
 cluster topology or the call to reacquire the location of the master shard, the
-client will connect to the RS endpoint proxy where the master shard is
+client connects to the RS endpoint proxy where the master shard is
 located.
 
 For example, the initial connection from a client might be to cluster

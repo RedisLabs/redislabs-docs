@@ -90,7 +90,7 @@ in the new node.
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
 was enabled in the cluster,
 you can use this parameter to override the rack ID value that was set for the node with ID 1 with a new rack ID.
-Otherwise, the node will get the same rack ID as the original node.
+Otherwise, the node gets the same rack ID as the original node.
     {{% /expand %}}
 
     For example:

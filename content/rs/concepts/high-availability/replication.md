@@ -32,7 +32,7 @@ We recommend that you set the sequential replication feature using
 rladmin. This is due to the potential for relatively slow replication
 times that can occur with Redis on Flash enabled databases. In some
 cases, if sequential replication is not set up, there is a risk of an
-Out Of Memory (OOM) situation. While it will not cause data loss on the
+Out Of Memory (OOM) situation. While it does not cause data loss on the
 master shards, the replication to slave shards may not succeed as long
 as there is high write-rate traffic on the master and multiple
 replications at the same time.

@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 In the *Alerts* section of the Redis Enterprise Software database page,
-you can designate which database events will trigger alert
+you can designate which database events trigger alert
 notifications.
 
 For instructions on configuring alerts at the cluster level, refer to

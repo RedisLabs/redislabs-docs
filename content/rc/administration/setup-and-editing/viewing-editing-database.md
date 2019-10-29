@@ -5,8 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-To view your database, go to the Menu and click on "Databases". You will
-see a list of your databases grouped by
+To view your database, go to the Menu and click on "Databases". You see a list of your databases grouped by
 [Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}).
 
 ![Viewing databases in
@@ -18,7 +17,7 @@ some of its features. Since a
 can have multiple databases, you can add one to a Subscription by
 clicking on the **+** below each Subscription table.
 
-On the "View Database" page you will see four important icons next to
+On the "View Database" page you see four important icons next to
 the title of the page:
 
 - The pencil icon is for [editing the database](#edit-a-database)

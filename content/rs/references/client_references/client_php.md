@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-In order to use Redis with PHP you will need a PHP Redis client. In following sections, we will demonstrate the use of [Predis](https://github.com/nrk/predis), a flexible and feature-complete Redis client library for PHP >= 5.3. Additional PHP clients for Redis can be found under the [PHP section](http://redis.io/clients#PHP) of the Redis Clients page.
+In order to use Redis with PHP you need a PHP Redis client. In following sections, we demonstrate the use of [Predis](https://github.com/nrk/predis), a flexible and feature-complete Redis client library for PHP >= 5.3. Additional PHP clients for Redis can be found under the [PHP section](http://redis.io/clients#PHP) of the Redis Clients page.
 
 ## Installing Predis
 

@@ -32,8 +32,8 @@ In the Payment Information section, you can see:
 - The number of shards purchased and their cost
 
 To delete a subscription, click on the **Delete** button at the bottom
-of the form. You will be prompted to confirm before your subscription is
-actually deleted. The delete will only occur if the subscription **does
+of the form. You are prompted to confirm before your subscription is
+actually deleted. The delete only occurs if the subscription **does
 not have any databases**. If it does, you must first delete the
 databases.
 
@@ -102,7 +102,7 @@ and accept the VPC peering request for the AWS VPC that you want to peer with.
             1. To add a route, click **Add Route**.
             1. In the Destination field, enter the Requester VPC CIDRs shown when you accepted the peering request.
 
-               This is the Redis Cloud Pro VPC CIDR address, to which your application's VPC will connect
+               This is the Redis Cloud Pro VPC CIDR address, to which your application's VPC connect
 
             1. In the Target field, select **Peering Connection** and select the relevant Peering ID.
             1. Click **Save Routes** and **Close**.

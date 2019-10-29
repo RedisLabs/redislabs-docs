@@ -13,8 +13,8 @@ standard Redis databases must all be in RAM, Redis on Flash enables your
 Redis databases to span both RAM and dedicated flash memory
 (SSD). Whilst keys are always stored in RAM, RoF intelligently manages
 the location of their values (RAM vs Flash) in the database via a
-LRU-based (least-recently-used) mechanism. Hot values will be in RAM,
-but infrequently used, or warm values, will be ejected to flash memory.
+LRU-based (least-recently-used) mechanism. Hot values are stored in RAM,
+but infrequently used, or warm values, are ejected to flash memory.
 This enables you to have much larger datasets with RAM-like latency and
 performance, but at dramatically lower cost than an all-RAM database.
 
@@ -73,8 +73,8 @@ all values in RAM.
 ## Working Set Management
 
 Of your dataset, perhaps there is a subset of highly active objects
-considered the application's "working set." Redis on Flash will
-intelligently manage the location of the working set (RAM) and the
+considered the application's "working set." Redis on Flash 
+intelligently manages the location of the working set (RAM) and the
 infrequently accessed keys (flash memory), based on LRU
 (least-recently-used) on a per-object basis.
 
@@ -87,7 +87,7 @@ Enterprise Software databases in characteristics and features.
 ## Redis on Flash vs Disk Based Databases
 
 Flash memory can be SATA or NVMe based storage devices, but NVMe is
-where you will see the performance benefits. There are many databases in
+where you can see the performance benefits. There are many databases in
 the industry that are disk based. Disk-based databases use RAM to cache
 part of the data for fast access. However, this approach is different
 than extending RAM in a number of ways.

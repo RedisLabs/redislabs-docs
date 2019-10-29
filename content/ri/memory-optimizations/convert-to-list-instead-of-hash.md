@@ -10,16 +10,16 @@ A Redis Hash stores field names and values. If you have thousands of small hash 
 
 While this may save memory, you should only use this approach if you have thousands of hashes, and if each of those hashes have similar fields. Also see COMPRESS_FIELD_NAMES for another way to reduce memory used by field names.
 
-Let's take an Example, Suppose you want to stire user details in Redis. You will do something like this:
+Let's take an Example, Suppose you want to set user details in Redis. You do something like this:
 
 ```bash
 hmset user:123 id 123 firstname Bob lastname Lee
 location CA twitter bob_lee
 ```
 
-Now, Redis 2.6 will store this internally as a Zip List; you can confirm by running debug object user:123 and look at the encoding field. In this encoding, key value pairs are stored sequentially, so the user object we created above would roughly look like this ``["firstname", "Bob", "lastname", "Lee", "location", "CA", "twitter", "bob_lee"]``
+Now, Redis 2.6 stores this internally as a Zip List; you can confirm by running debug object user:123 and look at the encoding field. In this encoding, key value pairs are stored sequentially, so the user object we created above would roughly look like this ``["firstname", "Bob", "lastname", "Lee", "location", "CA", "twitter", "bob_lee"]``
 
-Now, if you create a second user, the keys will be duplicated. If you have a million users, well, its a big waste repeating the keys again. To get around this, we can borrow a concept from Python - NamedTuples.
+Now, if you create a second user, the keys are duplicated. If you have a million users, well, its a big waste repeating the keys again. To get around this, we can borrow a concept from Python - NamedTuples.
 
 ## How does NamedTuple Work
 

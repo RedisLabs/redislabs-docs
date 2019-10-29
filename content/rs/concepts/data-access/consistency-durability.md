@@ -53,8 +53,7 @@ the persistent storage.
 Consistency](/images/rs/strong_consistency-300x156.png)
 
 With the WAIT command, applications can have a guarantee that even under
-a node failure or node restart, an acknowledged write will be present in
-the system and will not be lost.
+a node failure or node restart, an acknowledged write is recorded.
 
 Please see the WAIT command for details on the new durability and
 consistency options.

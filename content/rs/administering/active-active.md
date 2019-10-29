@@ -26,7 +26,7 @@ in Redis Enterprise Software (RS), a global CRDB (gCRDB) and a CRDB
 Instance. There are N+1 CRDB Instances that make up a gCRDB, with each
 CRDB Instance on a RS cluster.
 
-Before configuring a CRDB, you will need:
+Before configuring a CRDB, you need:
 
 - All RS clusters hosting a CRDB must be [set up per the standard
     documentation]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
@@ -83,10 +83,10 @@ timestamps to resolve conflicts depending on circumstances.
 As part of the Redis Enterprise Software install, there is a procedure
 that checks if there is a network time service daemon installed,
 running, and configured to start on boot. When installing Redis
-Enterprise Software, the installation process will ask if you want to
-"tune the system". Answer yes to that and you will be prompted if you
+Enterprise Software, the installation process asks if you want to
+"tune the system". Answer yes to that and you are prompted if you
 would like to install/configure a network time service. Answer yes to
-that as well. The install will appear something like this.
+that as well. The install process is:
 
 ```src
 2017-10-30 11:24:07 [?] Do you want to automatically tune the system for best performance [Y/N]? Y
@@ -95,7 +95,7 @@ Do you want to set up NTP time synchronization now [Y/N]? Y
 2017-10-30 11:24:19 [.] Making sure NTP is installed and time is set.
 ```
 
-The installation will install if necessary and set the service to
+The installation installs if necessary and set the service to
 auto-start.
 
 ### Network Configurations
@@ -104,7 +104,7 @@ Redis Enterprise Software assumes that networking between the clusters
 is already configured when you create a CRDB. For security purposes, it
 is highly recommended that a secure VPN is configured between all
 clusters that are part of the CRDB. If it is not set up yet, the setup
-of the CRDB will immediately fail.
+of the CRDB immediately fails.
 
 The use of [DNS and
 FQDNs]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})

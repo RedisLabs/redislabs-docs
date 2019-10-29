@@ -45,9 +45,9 @@ IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv
 
 Having multiple proxies for a database can improve RS's ability for fast
 failover in case of proxy and/or node failure. With multiple proxies for
-a database, there will be no need for a client to wait for the cluster
-to spin up another proxy and a DNS change in most cases, the client will
-just use the next IP in the list to connect to another proxy.
+a database, there is no need for a client to wait for the cluster
+to spin up another proxy and a DNS change in most cases, the client
+just uses the next IP in the list to connect to another proxy.
 
 ## Proxy policies
 

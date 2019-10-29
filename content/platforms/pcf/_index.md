@@ -43,7 +43,7 @@ This topic describes how to install and configure Redis Enterprise for Pivotal P
     which is found under the Pivotal Application Service (PAS) in Ops Manager (PAS->Settings->Domains).
     For example, set the cluster name as `CLUSTERNAME.sys.redislabs.com` if your system domain is `sys.redislabs.com`.
     The cluster name specified, represents part of the connection string for Redis apps when connecting to Redis Enterprise databases using DNS-based connections.
-   - **Admin Email**: Provide an email for the account that will have full administrative privileges to the new Redis Enterprise cluster.
+   - **Admin Email**: Provide an email for the account that you want to have full administrative privileges to the new Redis Enterprise cluster.
    - **Admin account password**: Provide the password for the administrative account.
    - Optionally, for production clusters, you can also provide a static IP address of a set of static IP addresses (comma-separated) to use for cluster nodes. You can also enabled Multiple Availability Zone (Rack) awareness.
    - Save your changes by clicking **Save**.

@@ -92,8 +92,8 @@ Be aware of the behavior of Lists in CRDBs when using List as a stack
 or queue. As seen in the above example, two parallel RPOP operations
 performed by two different CRDB instances can get the same element in
 the case of a concurrent operation. Lists in CRDBs guarantee that each
-element will be POP-ed at least once, but cannot guarantee that each
-element will be POP-ed only once. Such behavior should be taken into
+element is POP-ed at least once, but cannot guarantee that each
+element is POP-ed only once. Such behavior should be taken into
 account when, for example, using Lists in CRDBs as building blocks for
 inter-process communication systems.
 

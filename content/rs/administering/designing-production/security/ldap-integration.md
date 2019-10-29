@@ -47,7 +47,7 @@ the LDAP server.
 vi /tmp/saslauthd.conf
 ```
 
-You must specify the URIs for the LDAP servers you will be
+You must specify the URIs for the LDAP servers you are
 authenticating with. You can specify multiple LDAP servers by listing
 them separated by a space.
 

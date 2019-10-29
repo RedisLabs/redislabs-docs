@@ -31,9 +31,9 @@ database and your application, as described below.
     1. Generate a Certificate:
         1. Use the **Generate Client Certificate** button to generate a
             client certificate.
-        1. The generated certificate's public key will be displayed in
+        1. The generated certificate's public key is shown in
             the textbox.
-        1. This will also trigger an automatic download of a zip
+        1. This also triggers an automatic download of a zip
             archive with the following contents:
             1. `redislabs_user.crt` - the certificate's public key.
             1. `redislabs_user_private.key` - the certificate's private
@@ -43,7 +43,7 @@ database and your application, as described below.
 1. Click the **Update** button to apply the changes to your resource.
 
 **Important**: Once SSL is
-enabled, your database will no longer accept regular, non-SSL
+enabled, your database no longer accepts regular, non-SSL
 connections.
 
 ## Setting up your application if you are not using an SSL/TLS enabled client library {#setting-up-your-application-if-you-are-not-using-an-ssltls-enabled-client-library}

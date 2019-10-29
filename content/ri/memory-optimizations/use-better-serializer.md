@@ -6,7 +6,7 @@ categories: ["RI"]
 path: memory-optimizations/use-better-serializer/
 altTag: Use Better Serializer
 ---
-Redis does not have any specific data type to store the serialized objects, they are stored as byte array in Redis. If we are using regular means of serializing our java,python and PHP objects, they can be of larger size which will impact the memory consumption and latency.
+Redis does not have any specific data type to store the serialized objects, they are stored as byte array in Redis. If we are using regular means of serializing our java,python and PHP objects, they can be of larger size which impacts the memory consumption and latency.
 
 ## Which Serializers to Use
 

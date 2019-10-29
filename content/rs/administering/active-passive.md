@@ -77,7 +77,7 @@ can be Redis databases that are not part of an RS.
     URL** link next to the Endpoint field. In addition, you can
     regenerate the internal admin password from the same UI. If you
     regenerate the internal admin password, any existing replica
-    destinations already configured will stop working until you update
+    destinations already configured stops working until you update
     them.
     - **Compression:** when a source database is located on a different
     Redis Enterprise Software cluster, there is also an option to enable
@@ -120,7 +120,7 @@ when it is executed on the destination. This delay is referred to as the
 
 When a **synchronization error** occurs, then depending on the error
 type, **the process might stop**, or it might continue running on the
-assumption that the error will be automatically resolved. See more
+assumption that the error automatically resolves. See more
 details below.
 
 In addition, **the user can manually stop the synchronization process**.
@@ -164,7 +164,7 @@ user intervention for their resolution. When such errors occur, the
 synchronization process is automatically stopped.
 
 For other errors, the synchronization process continues running on the
-assumption that the error will be automatically resolved.
+assumption that the error automatically resolves.
 
 Examples of errors that require user intervention for their resolution
 and that stop the synchronization process include:

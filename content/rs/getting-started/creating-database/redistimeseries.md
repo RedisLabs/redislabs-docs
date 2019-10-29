@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-For this quick start, you will need the following:
+For this quick start, you must have:
 
 - [A Redis Enterprise Software cluster with set up already
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
