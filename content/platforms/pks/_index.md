@@ -388,7 +388,7 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
     pod/rec-pks-services-rigger-585cbf5ff-5f2z5     1/1     Running   0          16m
     pod/redis-enterprise-operator-954b6c68c-bgwpr   1/1     Running   0          18m
 
-    NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
+    NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORTs                      AGE
     service/rec-pks      ClusterIP      None             <none>          9443/TCP,8001/TCP,8070/TCP   16m
     service/rec-pks-ui   LoadBalancer   10.100.200.101   53.128.131.29   8443:31459/TCP               16m
 
@@ -509,7 +509,7 @@ Changing the admin password impacts the proper operation of the K8s deployment.
         A typical response will list all database services in the cluster, for example:
 
         ```src
-        NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)     AGE
+        NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORTs     AGE
         pks-test            ClusterIP   10.100.200.52   <none>        14771/TCP   22m
         pks-test-headless   ClusterIP   None            <none>        14771/TCP   22m
         ```

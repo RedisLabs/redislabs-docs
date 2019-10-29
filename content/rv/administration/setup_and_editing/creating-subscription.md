@@ -95,7 +95,7 @@ information presented, which includes the expected infrastructure and shard pric
 ### Provisioning
 
 Select the "Continue" button to create the subscription and deploy the
-database(s). The subscription will show a "Pending" status and take
+databases. The subscription will show a "Pending" status and take
 approximately ten to fifteen minutes to create. You will receive an
 email once your databases are ready to use.
 

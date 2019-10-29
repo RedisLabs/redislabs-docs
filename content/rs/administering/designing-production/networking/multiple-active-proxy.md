@@ -141,4 +141,4 @@ proxy bindings to adhere to the defined policies. That said, the cluster
 attempts to prevent any existing client connections from being
 disconnected, and hence might not entirely enforce the policies. In such
 cases, you can enforce the policy using the appropriate rladmin
-command(s).
+commands.

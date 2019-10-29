@@ -98,6 +98,6 @@ account when, for example, using Lists in CRDBs as building blocks for
 inter-process communication systems.
 
 In that case, if the same element cannot be handled twice by the
-application(s), it's recommended that the POP operations be performed by
+applications, it's recommended that the POP operations be performed by
 one CRDB instance, whereas the PUSH operations can be performed by
 multiple CRDB instances.
