@@ -20,7 +20,7 @@ fixes.
     1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
-    1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    1. [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
 1. Custom packaged modules - For instructions on packing up any [Redis module](https://redislabs.com/community/redis-modules-hub/)
     to use in upgrades, see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
@@ -90,7 +90,7 @@ and it contains the information necessary for the above rladmin
 command for the module_name and version information necessary. The
 specific data points must be entered exactly as you see it in that JSON
 file. The necessary data should be at the end of the JSON document. For
-example, here is the information for the RediSearch Enterprise module
+example, here is the information for the RediSearch module
 that i used for the example command above:
 
 ![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
