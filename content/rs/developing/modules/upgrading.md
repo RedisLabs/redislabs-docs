@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 As modules are upgraded, you will need to load them into Redis
-Enterprise if you desire having the new features and/or
+Enterprise to get the new features and/or
 fixes.
 
 ## Acquiring the Packaged Modules

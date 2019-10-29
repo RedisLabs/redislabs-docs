@@ -23,7 +23,7 @@ There are two options for persistence:
 Data persistence, via either mechanism, is used solely to rehydrate the
 database if the database process fails for any reason. It is not a
 replacement for backups, but something you do in addition to backups.
-Data persistence is optional and can be set to none if desired.
+To disable data persistence, select **None**.
 
 AOF writes the latest 'write' commands into a file every second, it 
 resembles a traditional RDBMS's redo log, if you are familiar with that. 

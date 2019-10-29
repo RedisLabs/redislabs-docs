@@ -56,8 +56,7 @@ them.
 ![after_zone_mapping](/images/rc/after_zone_mapping.png?width=600&height=192)
 
 For existing subscriptions in Redis Cloud Essentials, you will now see the Availability Zone
-they are using. If you desire to remove the latency discussed before,
-you must
+they are using. To reduce the latency described above:
 
 1. [Create a new
     subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}) in

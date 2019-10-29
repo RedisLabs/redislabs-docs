@@ -35,7 +35,7 @@ To create a new Redis Cloud Essentials subscription do the following:
 
 New subscription details page will be opened. You will need to select the following:
 
-1. The cloud and region you desire your databases to be created in
+1. The cloud and region to create your databases in
 1. A subscription name
 1. One of three subscription plans:
    - Cache plans provide highly available, low-latency caching for

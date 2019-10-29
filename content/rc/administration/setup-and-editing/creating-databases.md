@@ -10,7 +10,7 @@ Once you have a
 creating a Redis database in Redis Cloud Essentials is simple with the
 steps below.
 
-**Note**: You can have as many databases as you desire, up to the limit
+**Note**: You can have as many databases as you want, up to the limit
 of your subscription or the subscription plan size, whichever comes
 first.
 

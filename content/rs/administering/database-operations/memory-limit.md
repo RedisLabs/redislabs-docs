@@ -63,5 +63,5 @@ will be able to store in the database is 3 GB.
 some updates might fail as they could cause the total database size to
 exceed the memory limit. For example, enabling replication doubles the
 existing database size, which may then exceed the memory limit. In these
-cases, you must update the memory limit before you can make the desired
+cases, you must update the memory limit before you can make the
 change.
