@@ -2877,6 +2877,15 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
 }
 
 @media (max-width: 900px) {
+  header nav.shortcuts {
+    display: none;
+  }
+
+  header nav.shortcuts.shortcuts-right {
+    display: block;
+    text-align: right;
+  }
+
   article section.page table.hot-topics-table th {
     font-size: 12px;
     padding: 40px 18px 0 10px;
@@ -2922,9 +2931,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     width: 0;
     min-width: auto;
   }
-  button.hamburger.hamburger--spring.hamburger-mobile {
+  /* button.hamburger.hamburger--spring.hamburger-mobile {
     display: inline-block;
-  }
+  } */
 
   button.hamburger.hamburger--spring.hamburger-desktop {
     display: none;
