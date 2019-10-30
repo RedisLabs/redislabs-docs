@@ -2958,6 +2958,8 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
   header .logo img {
     height: 32.2292px;
+    width: 130px !important;
+    padding-top: 0px;
   }
   .nav-links {
     display: flex;
@@ -3003,7 +3005,6 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
   nav.shortcuts li:last-child {
     /* display: none; */
-    height: 34px;
     line-height: 34px;
     margin-left: 0;
   }
@@ -3055,7 +3056,6 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   header > nav.shortcuts > li:last-child > a {
     display: inline-block;
     padding: 0;
-    margin: 0;
   }
 
   .nav-select {
