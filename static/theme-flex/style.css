@@ -70,12 +70,11 @@ header nav.shortcuts li {
   text-transform: uppercase;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: opacity 200ms ease-in-out;
-  font-size: 20px;
   margin: 0 15px 0 5px;
   position: relative;  
 }
@@ -216,7 +215,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
   padding: 5px;
   border-radius: 5px;
   text-transform: none;
-  font-size: 1.45rem;
+  font-size: 16px;
   opacity: 0.8;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a:hover {
