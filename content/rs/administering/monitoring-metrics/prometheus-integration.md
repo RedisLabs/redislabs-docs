@@ -256,7 +256,7 @@ These are the metrics available:
 
 | Metric | Description |
 |  ------ | :------ |
-|  listener_acc_latency | Accumulative latency of all types of commands on DB. This is the sum of the latencies of all commands, in order to get the (average) latency, it should be divided by listener_total_res. |
+|  listener_acc_latency | Sum of the latencies of all types of commands on DB. For the average latency, divide this statistic by listener_total_res. |
 |  listener_acc_latency_max | Highest value of accumulative latency of all types of commands on DB |
 |  listener_acc_other_latency | Accumulative latency of commands that are classified as "other" type on DB |
 |  listener_acc_other_latency_max | Highest value of accumulative latency of commands that are classified as "other" type on DB |
