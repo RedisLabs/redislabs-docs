@@ -8,7 +8,7 @@ categories: ["RS"]
 Database replication provides a mechanism to ensure high availability.
 When replication is enabled, your dataset is replicated to a slave node,
 which is constantly synchronized with the master node. If the master
-node fails, an automatic failover occurs and the slave node is promoted
+node fails, an automatic failover happens and the slave node is promoted
 to be the new master node. When the old master node recovers, it becomes
 the slave node of the new master node. This auto-failover mechanism
 guarantees that data is served with minimal to no interruption.
@@ -32,7 +32,7 @@ We recommend that you set the sequential replication feature using
 rladmin. This is due to the potential for relatively slow replication
 times that can occur with Redis on Flash enabled databases. In some
 cases, if sequential replication is not set up, there is a risk of an
-Out Of Memory (OOM) situation. While it will not cause data loss on the
+Out Of Memory (OOM) situation. While it does not cause data loss on the
 master shards, the replication to slave shards may not succeed as long
 as there is high write-rate traffic on the master and multiple
 replications at the same time.

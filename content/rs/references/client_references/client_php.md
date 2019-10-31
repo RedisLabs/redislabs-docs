@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-In order to use Redis with PHP you will need a PHP Redis client. In following sections, we will demonstrate the use of [Predis](https://github.com/nrk/predis), a flexible and feature-complete Redis client library for PHP >= 5.3. Additional PHP clients for Redis can be found under the [PHP section](http://redis.io/clients#PHP) of the Redis Clients page.
+In order to use Redis with PHP you need a PHP Redis client. In following sections, we demonstrate the use of [Predis](https://github.com/nrk/predis), a flexible and feature-complete Redis client library for PHP >= 5.3. Additional PHP clients for Redis can be found under the [PHP section](http://redis.io/clients#PHP) of the Redis Clients page.
 
 ## Installing Predis
 
@@ -38,7 +38,7 @@ Unless you've installed Predis with Composer, you'll need to include the 2nd and
 
 ## Persistent Connections with Predis
 
-Predis supports the use of persistent connections, which are recommended practice to minimizeconnection management overhead. To enable persistent connections, use the `persistent` connection attribute as shown in the following snippet:
+Predis supports the use of persistent connections, which are recommended practice to minimize connection management overhead. To enable persistent connections, use the `persistent` connection attribute as shown in the following snippet:
 
     $redis = new Predis\Client(array(
         "scheme" => "tcp",

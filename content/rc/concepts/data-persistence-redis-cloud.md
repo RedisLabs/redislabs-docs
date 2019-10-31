@@ -11,7 +11,7 @@ Redis offerings, Redis Cloud Essentials has two options for persistence, Append 
 (AOF) and Snapshot (RDB), and in addition, data-persistence is always
 performed over a persistent storage that is attached to the cloud
 instance (e.g. AWS EBS). This makes sure that no data is lost in case of a node
-failure event, as the new cloud instance will be attached to the
+failure event, as the new cloud instance is attached to the
 existing persistent storage volume.
 
 Data persistence, via AOF or snapshots, is used solely to restore the
@@ -32,14 +32,13 @@ Persistence can be configured either at the time of the database
 creation or by editing an existing database's configuration. While the
 persistence model can be changed dynamically, just know that it can take
 time for your database to switch from one persistence model to the
-other. It will depend on what you are switching from and to, as well as
+other. It depends on what you are switching from and to, as well as
 the size of your database.
 
 Note: For performance reasons, if you are going to be using AOF, it is
 highly recommended you make sure replication is enabled for that
-database as well. When these two features are enabled, persistence will
-be done on the slave instance and will not reduce the performance of the
-master.
+database as well. When these two features are enabled, persistence is done on the slave instance
+and does not reduce the performance of the master.
 
 ## Options for Configuring Data Persistence
 

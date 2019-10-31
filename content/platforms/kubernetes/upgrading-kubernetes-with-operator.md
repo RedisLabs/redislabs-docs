@@ -11,7 +11,7 @@ Redis Labs implements rolling updates for software upgrades in Kubernetes deploy
 Rolling updates allow deployments’ updates to take place with zero downtime
 by incrementally updating Pods’ Redis Enterprise Cluster instances with new ones.
 
-The following illustrations depict how a rolling update occurs:
+The following illustrations show how a rolling update is done:
 
 - Each hexagon represents a node
 - Each box represents a Pod

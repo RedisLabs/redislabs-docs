@@ -2,7 +2,7 @@ Yes we are. Not only are we are the home of Redis, but most of Redis’ core eng
 
 That said, the following Redis features are not applicable in the context of our service:
 
-- Shared databases aren’t supported in our service given their potential negative impact on performance. We recommend using dedicated databases instead ([read this post for more information](https://redislabs.com/blog/benchmark-shared-vs-dedicated-redis-instances/)). Therefore, the following commands are blocked and will produce an error when invoked:
+- Shared databases aren’t supported in our service given their potential negative impact on performance. We recommend using dedicated databases instead ([read this post for more information](https://redislabs.com/blog/benchmark-shared-vs-dedicated-redis-instances/)). Therefore, the following commands are blocked and show an error when used:
     - [MOVE](http://redis.io/commands/move)
     - [SELECT](http://redis.io/commands/select)
 - Data persistence and backups are managed from the service’s web interface, so the following commands are blocked:
@@ -15,7 +15,7 @@ That said, the following Redis features are not applicable in the context of our
     - [REPLCONF](http://redis.io/commands/REPLCONF)
     - [SLAVEOF](http://redis.io/commands/SLAVEOF)
     - [SYNC](http://redis.io/commands/SYNC)/[PSYNC](http://redis.io/commands/PSYNC)
-- Redis Labs clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and will produce an error when invoked.
+- Redis Labs clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
 - Redis Labs clustering technology allows [multiple active proxies](http://docs.redislabs.com/latest/rs/administering/designing-production/networking/multiple-active-proxy.md). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 - Commands that aren’t relevant for a hosted Redis service are blocked:
     - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
@@ -32,7 +32,7 @@ That said, the following Redis features are not applicable in the context of our
     - [LATENCY RESET](http://redis.io/commands/LATENCY-RESET)
     - [LATENCY GRAPH](http://redis.io/commands/LATENCY-GRAPH)
     - [LATENCY DOCTOR](http://redis.io/commands/LATENCY-DOCTOR)
-- Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list will result in an error:
+- Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list show an error when used:
     - hash-max-ziplist-entries
     - hash-max-ziplist-value
     - list-max-ziplist-entries

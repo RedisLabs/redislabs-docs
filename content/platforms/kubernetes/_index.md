@@ -16,14 +16,14 @@ Kubernetes provides simpler orchestration with containers and has been widely ad
 
 Redis is the most popular database used with Docker containers. Redis Enterprise (Redise) extends open source Redis and delivers stable high performance, linear scaling and high availability with significant operational savings.
 
-We will use the Docker container for 4.5 version of Redis Enterprise for the steps here. You can find more information on the container image on [Docker Hub](https://hub.docker.com/r/redislabs/redis/) and see details on how to deploy the container locally with Docker below:
+We use the Docker container for 4.5 version of Redis Enterprise for the steps here. You can find more information on the container image on [Docker Hub](https://hub.docker.com/r/redislabs/redis/) and see details on how to deploy the container locally with Docker below:
 
 - [Working with Redis Enterprise and Docker]({{< relref "/rs/getting-started/docker/_index.md" >}})
 - [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}})
 
 ## Deploying Redis Enterprise with Kubernetes on Google Cloud
 
-We will go through 4 steps to set up our cluster with Redis Enterprise:
+Here are the 4 steps to set up our cluster with Redis Enterprise:
 
 - Step 1: Create a Kubernetes cluster on Google Cloud
 - Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
@@ -42,7 +42,7 @@ Let's first get your CLI environment set up.
 
     gcloud auth login
 
-- Get the default project_ID set. Here is how you can list and set the project context to be used by upcoming commands. Note that you will get some random name like mine ("speedy-lattice-166011") if you have not explicitly specified an ID
+- Get the default project_ID set. Here is how you can list and set the project context to be used by upcoming commands. If you do not explicitly specify an ID, the containers are assigned a random ID, such as "speedy-lattice-166011".
 
     gcloud projects list
 
@@ -80,7 +80,7 @@ Connect to the Kubernetes cluster
 
     gcloud container clusters get-credentials cluster-1
 
-The output will read;
+The output shows;
 
     # Fetching cluster endpoint and auth data.
     # kubeconfig entry generated for cluster-1.
@@ -104,7 +104,7 @@ You can now see the list of container nodes deployed on the Kubernetes cluster. 
 
     kubectl get po
 
-The output will look something like this;
+The output looks something like this;
 
     NAME READY STATUS RESTARTS AGE
 
@@ -128,7 +128,7 @@ With this, let's provision the first node or the Redis Enterprise cluster.
 
     kubectl exec -it redispack-deployment-709212938-765lg "/opt/redislabs/bin/rladmin" cluster create name cluster.local username cihan@redislabs.com password redislabs123 flash_enabled
 
-We will need the ip address of the first node to be able to instruct the following nodes to join the cluster.
+We need the ip address of the first node to instruct the following nodes to join the cluster.
 
     kubectl exec -it redispack-deployment-709212938-765lg ifconfig | grep "inet addr"
 
@@ -140,13 +140,13 @@ In my case the output was 10.0.2.10. Lets add node 2 and 3 to the cluster
 
 ## Step 4: Create a Redis database and test your connectivity
 
-We are now ready to create the database and connect to it. The following curl command can be used to create a database on port 12000. the database will be named "sample-db".
+We are now ready to create the database and connect to it. The following curl command can be used to create a database on port 12000. The default database name is "sample-db".
 
     kubectl exec -it redispack-deployment-709212938-765lg bash
 
     # curl -k -u "cihan@redislabs.com:redislabs123" --request POST --url "https://localhost:9443/v1/bdbs" --header 'content-type: application/json' --data '{"name":"sample-db","type":"redis","memory_size":1073741824,"port":12000}'
 
-To test the connection to the database, we will use the _redis-cli_ tool. Here is a simple set followed by a get to validate the Redis deployment.
+To test the connection to the database, we use the _redis-cli_ tool. Here is a simple set followed by a get to validate the Redis deployment.
 
     kubectl exec -it redispack-deployment-709212938-765lg bash
 

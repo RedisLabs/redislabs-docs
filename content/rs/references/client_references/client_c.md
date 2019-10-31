@@ -5,7 +5,7 @@ weight:
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis with C you will need a C Redis client. In following sections, we will demonstrate the use of [hiredis](https://github.com/redis/hiredis), a simple C client for Redis. Additional C clients for Redis can be found under the [C section](http://redis.io/clients#C) of the Redis Clients page.
+In order to use Redis with C you need a C Redis client. In following sections, we demonstrate the use of [hiredis](https://github.com/redis/hiredis), a simple C client for Redis. Additional C clients for Redis can be found under the [C section](http://redis.io/clients#C) of the Redis Clients page.
 
 ## Installing hiredis
 

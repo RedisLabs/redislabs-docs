@@ -27,12 +27,12 @@ failure](/images/rs/node-failure.png?width=600&height=152)
 1. Make sure the new node has as much available memory as the faulty
     node.
 1. A message appears, informing you that the cluster has a faulty node
-    and that the new node will replace the faulty node.
+    and that the new node replaces the faulty node.
 1. If the new node has insufficient memory, you are prompted to add a
     different node - one with sufficient memory.
 
 **Note**: If there is a faulty node in the cluster to which you are
-adding a node, RS will enforce using the new node to replace the faulty
+adding a node, RS enforces using the new node to replace the faulty
 one.
 
 **Note**: If you are using the DNS NS record based connection approach,

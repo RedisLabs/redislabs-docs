@@ -12,12 +12,12 @@ Redis keys can play a devil in increasing the memory consumption for your Redis 
 
 In a well written application, switching to shorter keys usually involves updating a few constant strings in the application code.
 
-You will have to identify, all the big keys in your Redis Instance and shorten it by removing extra characters from it. You can achieve this in two ways:
+You have to identify, all the big keys in your Redis Instance and shorten it by removing extra characters from it. You can achieve this in two ways:
 
-1. You can identify the big keys in your Redis Instance by using RedisInsight. This will give you details about all the keys and a way to sort your data based on the length of keys.
+1. You can identify the big keys in your Redis Instance by using RedisInsight. This gives you details about all the keys and a way to sort your data based on the length of keys.
 1. Alternatively, you can run the command `redis-cli --bigkeys`
 
-Advantage of using RedisInsight is that it will give you the big keys from the whole dataset whereas the big keys commands run over a certain set of records and return the big keys from that set, hence it is difficult to identify the big keys from the whole dataset using big keys.
+Advantage of using RedisInsight is that it gives you the big keys from the whole dataset whereas the big keys commands run over a certain set of records and return the big keys from that set, hence it is difficult to identify the big keys from the whole dataset using big keys.
 
 ## Advantages
 
@@ -34,7 +34,7 @@ Now if you shorten the key name like
 my-des-lg-kn (12 characters)
 ```
 
-You save 16 characters by shortening your key i.e. 16 bytes which will let you save **1,000,000,000*16 = 1.6GB of RAM Memory !**
+You save 16 characters by shortening your key i.e. 16 bytes which lets you save **1,000,000,000*16 = 1.6GB of RAM Memory !**
 
 ## Trade Offs
 

@@ -19,7 +19,7 @@ Enterprise Software (RS). There are two types
 1. Custom packaged modules - For instructions on packing up any [Redis module](https://redislabs.com/community/redis-modules-hub/),
     see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
-Once you have acquired the package (it will be in zip format) proceed to
+Once you have acquired the package (it is in zip format) proceed to
 the next step of adding the module to Redis Enterprise Software.
 
 ## Add Module to the Cluster

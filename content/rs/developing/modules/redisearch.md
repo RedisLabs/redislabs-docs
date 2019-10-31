@@ -123,14 +123,14 @@ aspect. The enterprise version can work with multiple shards on a
 distributed cluster such as Redis Enterprise Software and the open
 source version is limited to using only one shard. When a RediSearch
 enabled database in Redis Enterprise Software is created, the number of
-partitions and shards the data will be spread across is set.
+partitions and shards the data is spread across is set.
 
 It is critical to understand that **this value can only be configured
 when creating the database**. That makes it imperative in a production
-cluster to set this value according to how many shards you will have. As
+cluster to set this value according to how many shards you have. As
 of RediSearch Enterprise 1.0.1, the default is **PARTITIONS AUTO**. So
-the value will be set by the cluster on your behalf and matched to the
-number of shards. Once you create the database, you will not be able to
+the value is set by the cluster on your behalf and matched to the
+number of shards. Once you create the database, you cannot
 edit this value or the number of shards the database has. If at a later
 point you need to expand the database with more shards, you must create
 a new database with the settings you need, then [replicate the

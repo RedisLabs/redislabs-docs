@@ -40,7 +40,7 @@ back into the cluster.
 
 When manually configuring an internal address for a node, make sure the
 address is valid and bound to an active interface on the node. Failure
-to do so will prevent the node from coming back online and rejoining the
+to do so prevents the node from coming back online and rejoining the
 cluster.
 
 When configuring external addresses, it is possible to list external

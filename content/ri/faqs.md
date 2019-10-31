@@ -32,11 +32,11 @@ RedisInsight lets you reduce memory used by redis, which usually translates to a
 {{% /expand %}}
 
 {{% expand "How does RedisInsight compare with the open source redis-rdb-tools?" %}}
-We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and will continue to support the open source version. The open source version is meant to be a library and command line utility. It is a fundamental building block for RedisInsight. RedisInsight is free to use but is closed source.
+We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and we continue to support the open source version. The open source version is meant to be a library and command line utility. It is a fundamental building block for RedisInsight. RedisInsight is free to use but is closed source.
 {{% /expand %}}
 
 {{% expand "What versions of Redis does RedisInsight support?" %}}
-Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you wish to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
+Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
 {{% /expand %}}
 
 {{% expand "Do you support Redis Labs Enterprise Version?" %}}
@@ -82,13 +82,13 @@ Key pattern is a grouping of related keys, for example users:*. RedisInsight can
 {{% /expand %}}
 
 {{% expand "How are key patterns generated?" %}}
-We assume that you use colon as a separator. If you use a non-standard separator, you will have to add key patterns manually.
+We assume that you use colon as a separator. If you use a non-standard separator, you have to add key patterns manually.
 {{% /expand %}}
 
 ## Connecting to Redis
 
 {{% expand "How do I connect to redis-server running on localhost?" %}}
-First, this will work only if you have RedisInsight running on your local computer. Depending on your docker version, you can use one of these host names instead of localhost - docker.for.mac.localhost, docker.for.win.localhost or host.docker.internal. If none of those host names work, find the ip address of your computer (usually starts with 192.x.x.x), and use that ip address instead of localhost.
+First, this works only if you have RedisInsight running on your local computer. Depending on your docker version, you can use one of these host names instead of localhost - docker.for.mac.localhost, docker.for.win.localhost or host.docker.internal. If none of those host names work, find the ip address of your computer (usually starts with 192.x.x.x), and use that ip address instead of localhost.
 {{% /expand %}}
 
 {{% expand "How do I connect to AWS Elasticache?" %}}
@@ -106,11 +106,11 @@ We run the `info` command and look at used_memory to determine the memory used b
 {{% /expand %}}
 
 {{% expand "What do you mean by perpetual license?" %}}
-Once you buy a license, you can use RedisInsight forever as long as you are within your usage limits. Additionally, you are eligible for software upgrades for 1 year from the date of purchase. After a year, you will no longer receive updates, but can continue to use the version of RedisInsight you last downloaded.
+Once you buy a license, you can use RedisInsight forever as long as you are within your usage limits. Additionally, you are eligible for software upgrades for 1 year from the date of purchase. After a year, you no longer receive updates, but can continue to use the version of RedisInsight you last downloaded.
 {{% /expand %}}
 
 {{% expand "How do I get my license key?" %}}
-Once you complete payment, you will receive an email with your license key.
+Once you complete payment, you receive an email with your license key.
 {{% /expand %}}
 
 ## Privacy and Security

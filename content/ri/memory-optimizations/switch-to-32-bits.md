@@ -12,9 +12,9 @@ Redis gives you the following statistics for a 64-bit machine.
 1. 1 Million small Keys -> String Value pairs use ~ 85MB of memory.
 1. 1 Million Keys -> Hash value, representing an object with 5 fields, use ~ 160 MB of memory.
 
-64-bit will have more memory available as compared to a 32-bit machine. But if you are sure that your data size will not exceed 3 GB then storing in 32 bits is a good option.
+64-bit has more memory available as compared to a 32-bit machine. But if you are sure that your data size does not exceed 3 GB then storing in 32 bits is a good option.
 
-64-bit systems will use considerably more memory than 32-bit systems to store the same keys, especially if the keys and values are small. This is because small keys will be allocated full 64 bits resulting in the wastage of the unused bits.
+64-bit systems use considerably more memory than 32-bit systems to store the same keys, especially if the keys and values are small. This is because small keys are allocated full 64 bits resulting in the wastage of the unused bits.
 
 ## Advantages
 

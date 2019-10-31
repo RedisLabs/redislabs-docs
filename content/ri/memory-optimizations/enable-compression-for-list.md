@@ -12,7 +12,7 @@ We have two configurations:
 List-max-ziplist-size: 8kb(default)
 List-compression-depth: 0,1,2 (0 by default)
 
-A configuration change in redis.conf `list-compression-depth=1` will help you achieve compression.
+A configuration change in redis.conf `list-compression-depth=1` helps you achieve compression.
 
 ## What is compression-depth
 

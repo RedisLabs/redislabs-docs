@@ -26,9 +26,9 @@ You create a database and:
 - Set the memory limit to 4 GB
 - Enable database replication in order to ensure high-availability
 
-The cluster will create 2 shards: a master and a slave. Each of the
-shards will have a maximum size of 2 GB. In this case, the maximum
-dataset size that you will be able to store in the database is 2 GB.
+The cluster creates 2 shards: a master and a slave. Each of the
+shards have a maximum size of 2 GB. In this case, the maximum
+dataset size that you can store in the database is 2 GB.
 
 ## Example 2
 
@@ -39,10 +39,10 @@ You create a database and:
     shards
 - Do not enable replication
 
-The cluster will create 3 shards. Each of these shards can have a
+The cluster creates 3 shards. Each of these shards can have a
 different size depending on the amount of data stored in it, as long as
 the total size across all shards does not exceed 6 GB. In this case, the
-maximum dataset size you will be able to store in the database is 6 GB.
+maximum dataset size you can store in the database is 6 GB.
 
 ## Example 3
 
@@ -53,15 +53,15 @@ You create a database and:
     shards
 - Enable database replication in order to ensure high-availability
 
-The cluster will create 6 shards in total - 3 master shards and 3 slave
+The cluster creates 6 shards in total - 3 master shards and 3 slave
 shards. Each of these shards can have a different size depending on the
 amount of data stored in it, as long as the total size across all master
 shards does not exceed 3 GB. In this case, the maximum dataset size you
-will be able to store in the database is 3 GB.
+can store in the database is 3 GB.
 
 **Note:** If you edit an existing database that already has data in it,
 some updates might fail as they could cause the total database size to
 exceed the memory limit. For example, enabling replication doubles the
 existing database size, which may then exceed the memory limit. In these
-cases, you must update the memory limit before you can make the desired
+cases, you must update the memory limit before you can make the
 change.

@@ -22,7 +22,7 @@ contained on Redis Labs' cloud infrastructure.
 ### Infinite and seamless scalability
 
 Grow your dataset to any size needed (beyond the largest cloud
-instances) without any downtime or limitation of Redis commands. We will
+instances) without any downtime or limitation of Redis commands. We
 automatically add or remove instances to your cluster to accommodate
 your fluctuating dataset size without any interruption to your
 applications.

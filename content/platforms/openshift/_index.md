@@ -38,7 +38,7 @@ Prerequisites:
  oc project <your project name>
 ```
 
-This will shift to your project rather than the default project (you can verify the project you’re currently using with the *oc project* command).
+This shifts to your project rather than the default project (you can verify the project you’re currently using with the *oc project* command).
 
 ## Step 2: Get deployment files
 
@@ -60,7 +60,7 @@ Let’s look at each yaml file to see what requires editing:
 
 - [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/scc.yaml)
 
-The scc ([Security Context Constraint](https://docs.openshift.com/enterprise/3.0/admin_guide/manage_scc.html)) yaml defines the cluster’s security context constraints, which we will apply to our project later on. We strongly recommend **not** changing anything in this yaml file.
+The scc ([Security Context Constraint](https://docs.openshift.com/enterprise/3.0/admin_guide/manage_scc.html)) yaml defines the cluster’s security context constraints. We strongly recommend **not** changing anything in this yaml file.
 
 Apply the file:
 
@@ -112,7 +112,7 @@ You should receive the following response:
 
 - [crd.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml)
 
-The next step applies crd.yaml, creating a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next. We strongly recommend **not** changing anything in this yaml file.
+The next step applies crd.yaml, creating a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator deployed next. We strongly recommend **not** changing anything in this yaml file.
 
 To apply it, run:
 
@@ -141,7 +141,7 @@ You should receive the following response:
 
   `deployment.apps/redis-enterprise-operator created`
 
-Now, run `kubectl get deployment` and verify that your redis-enterprise-operator deployment is running. A Typical response will look like this:
+Now, run `kubectl get deployment` and verify that your redis-enterprise-operator deployment is running. A Typical response looks like this:
 
 ![getting-started-kubernetes-openshift-image2]( /images/rs/getting-started-kubernetes-openshift-image2.png )
 
@@ -202,7 +202,7 @@ versionTag: 5.2.0-14–
 
 The version tag, as it appears on your repository (e.g. on [DockerHub](https://hub.docker.com/r/redislabs/redis/)).
 
-This is an optional configuration. If omitted, it will default to the latest version.
+This is an optional configuration. If omitted, it defaults to the latest version.
 
 ## Step 4: Create your Cluster
 
@@ -220,7 +220,7 @@ You should receive a response similar to the following:
 
   `Your_cluster_name 17s`
 
-Your Cluster will be ready shortly—typically within a few minutes.
+Your Cluster is ready shortly - typically within a few minutes.
 
 To check the cluster status, type the following:
 
@@ -243,7 +243,7 @@ Next, create your databases.
 
 ## Step 5: Create a database
 
-In order to create your database, we will log in to the Redis Enterprise UI.
+In order to create your database, login to the Redis Enterprise UI.
 
 - First, apply port forwarding to your Cluster:
 
@@ -275,7 +275,7 @@ Changing the admin password impacts the proper operation of the K8s deployment.
 - Follow the interface’s [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
 {{% note %}}
-In order to conduct the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You will see two newly created services representing the database along with their IP and port information, similar to the screenshot below.
+In order to do the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You see two newly created services representing the database along with their IP and port information, similar to the screenshot below.
 {{% /note %}}
 
 ![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )

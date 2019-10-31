@@ -42,8 +42,8 @@ The node role is shown in the output of the 'rladmin status
 nodes' command.
 {{% /warning %}}
 
-You will run install.sh from the directory where you untarred the media
-just like you do for a new install. The software will recognize this is
+You run install.sh from the directory where you untarred the media
+just like you do for a new install. The software recognizes this is
 an upgrade and proceed accordingly.
 
 Just like for a new installation, you must sudo or be root to do the

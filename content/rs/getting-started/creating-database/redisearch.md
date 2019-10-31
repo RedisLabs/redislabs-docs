@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-For this quick start, you will need the following:
+For this quick start, you must have:
 
 - [A Redis Enterprise Software cluster with set up already
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
@@ -27,7 +27,7 @@ click **Add configuration** and enter the optional custom configuration.
 ## Creating Indexes
 
 Let's create a new index called "myidx". When you define the index, you
-must pass in the structure of the data you will be adding to the index.
+must pass in the structure of the data you are adding to the index.
 In this example, we have four things we input, the title, body, url, and
 value. In this example, we have three TEXT and one NUMERIC values. The
 title has a weight of 5.0.
@@ -47,8 +47,8 @@ Run this command:
 
 ### Add info to test index
 
-Now add some data to this index. We will add an object which key will be
-doc1 and then adds a title of "hello world", body of "my favorite
+Now add some data to this index. Here we add an object with the key
+doc1 and then add a title of "hello world", body of "my favorite
 object", and url of [https://redislabs.com/](https://redislabs.com/) to the object as follows:
 
 ```src

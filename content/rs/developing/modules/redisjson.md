@@ -39,7 +39,7 @@ By definition, a JSON key can be any valid JSON String. Paths, on the
 other hand, are traditionally based on JavaScript's (and in Java in
 turn) variable naming conventions. Therefore, while it is possible to
 have RedisJSON store objects containing arbitrary key names, accessing
-these keys via a path will only be possible if they respect these naming
+these keys via a path is only possible if they respect these naming
 syntax rules:
 Names must begin with a letter, a dollar ($) or an underscore (_)
 character

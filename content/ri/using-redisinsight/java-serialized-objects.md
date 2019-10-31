@@ -9,7 +9,7 @@ RedisInsight detects java serialized objects and converts them to a nicely forma
 
 ![java-serialized-objects](/images/ri/java-serialized-objects.png)
 
-It doesn't matter what you store. Whether it is a hibernate object, or a user session or a plain old java object, RedisInsight will reverse engineer and show it to you nicely.
+It doesn't matter what you store. Whether it is a hibernate object, or a user session or a plain old java object, RedisInsight reverse-engineers and show it to you nicely.
 
 Just for fun, we tried out how such an object would look without the formatting. Total garbage.
 

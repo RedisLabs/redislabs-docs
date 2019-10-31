@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis with Ruby you will need a Ruby Redis client. In the following sections, we will demonstrate the use of [redis-rb](https://github.com/redis/redis-rb), a Ruby client library for Redis. Additional Ruby clients for Redis can be found under the [Ruby section](https://redis.io/clients#ruby) of the Redis Clients page.
+In order to use Redis with Ruby you need a Ruby Redis client. In the following sections, we demonstrate the use of [redis-rb](https://github.com/redis/redis-rb), a Ruby client library for Redis. Additional Ruby clients for Redis can be found under the [Ruby section](https://redis.io/clients#ruby) of the Redis Clients page.
 
 ## Installing redis-rb
 

@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 When enabling Causal Consistency in CRDBs, the order of operations on a
-specific key will be maintained across all CRDB
+specific key are maintained across all CRDB
 instances.
 
 For instance, if operations A and B were applied on the same key, and B
@@ -39,6 +39,6 @@ be set as illustrated in the figure below:
 Once enabled, additional operations to
 enable or disable can only be performed
 using the REST API or the crdb-cli tool. In this case, the updated CRDB
-behavior will take place only for commands
+behavior happens only for commands
 and operations received after the
 change.

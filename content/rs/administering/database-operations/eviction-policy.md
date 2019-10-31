@@ -29,7 +29,7 @@ can be on Flash memory (SSD).
 
 Note: [Geo-Distributed
 CRDBs]({{< relref "/rs/administering/active-active.md" >}})
-will always operate in noeviction mode.
+always operate in noeviction mode.
 
 Warning: Some redis Modules do not fully support eviction or all
 eviction types. Please see each module's documentation for more
