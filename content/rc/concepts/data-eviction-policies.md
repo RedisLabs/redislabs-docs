@@ -5,8 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-There are eight supported data eviction policies to choose from for each
-database. They are:
+For each database, you can choose from these data eviction policies:
 
 | **Options** | **Description** |
 |------------|-----------------|
