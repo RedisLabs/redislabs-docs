@@ -5,8 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-For each database, you can choose from these six supported data eviction
-policies:
+For each database, you can choose from these data eviction policies:
 
 |  **Options** | **Description** |
 |------------|-----------------|
