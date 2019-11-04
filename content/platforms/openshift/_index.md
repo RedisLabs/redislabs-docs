@@ -155,7 +155,7 @@ This yaml **must** be edited, however, to reflect the specific configurations of
 - nodes: number_of_nodes_in_the_cluster (Must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
 - uiServiceType: service_type
 
-Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.
+Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is LoadBalancer.
 
 - username: \<your_email@your_domain.your_suffix\>
 
