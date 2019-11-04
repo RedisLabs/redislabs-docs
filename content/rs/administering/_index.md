@@ -5,10 +5,12 @@ weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---
-This section covers everything you need to know to get up and running
-with RS.
+This section covers everything you need to know to get up and running with RS.
 
-You can also access cluster operations through the cluster REST API.
+{{% note %}}
+In addition to using the RS web UI to manage the cluster,
+you can also access cluster operations through the cluster REST API.
+
 To access the cluster REST API documentation, either:
 
 - Download the software package
@@ -21,5 +23,6 @@ To access the cluster REST API documentation, either:
     1. Change directory to '/opt'.
     1. Download and unarchive the rlec_rest_api.tar.gz package.
     1. Open the 'rlec_docs\html\index.html' file in a web browser.
+{{% /note %}}
 
 {{%allchildren style="h2" description="true"%}}
