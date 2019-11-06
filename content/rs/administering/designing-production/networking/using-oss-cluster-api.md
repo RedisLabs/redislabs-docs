@@ -8,7 +8,8 @@ categories: ["RS"]
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
 For more information, see [Redis OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}).
 
-Multi-key commands are only allowed when all keys are mapped to the same slot. That is when `CLUSTER KEYSLOT` reply is the same for all keys in the multi-key commnad.
+[Multi-key commands]({{< relref "/rc/concepts/clustering-redis-cloud.md#multikey-operations" >}}) are only allowed when all keys are mapped to the same slot.
+To verify this, make sure that the `CLUSTER KEYSLOT` reply is the same for all keys in the multi-key commnad.
 
 Note: The OSS Cluster API setting is not cluster-wide.
 The setting only applies to the specified database.
