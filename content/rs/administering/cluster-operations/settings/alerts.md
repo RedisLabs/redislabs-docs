@@ -30,5 +30,7 @@ To enable receiving email alerts:
     additional details, refer to [Managing general
     settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}}).
 
-Note: if you enable alerts on "Node Joined" and/or "Node removed", you
-must also enable "Receive email alerts" to actually be alerted to these.
+{{% note %}}
+If you enable alerts for "Node joined" or "Node removed" actions,
+you must also enable "Receive email alerts" so that the alerts are sent.
+{{% /note %}}
