@@ -31,6 +31,3 @@ the **Log **page, and can also be sent by **email**.
 1. Configure the email server settings on the **General** page (for
     additional details, refer to [general
     settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}})).
-
-Note: if you enable alerts on "Node Joined" and/or "Node removed", you
-must also enable "Receive email alerts" to actually be alerted to these.
