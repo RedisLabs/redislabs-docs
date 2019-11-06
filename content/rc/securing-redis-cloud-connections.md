@@ -4,7 +4,7 @@ description:
 weight: 25
 alwaysopen: false
 categories: ["RC"]
-aliases: /rc/securing-redis-cloud-connections/
+aliases: /rv/securing-redis-cloud-connections/
 ---
 In Redis Cloud Essentials, SSL/TLS support is a paid option. To enable it, contact [Support](https://support.redislabs.com).
 SSL/TLS support is included in all Redis Cloud Pro paid plans. 

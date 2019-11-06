@@ -3,7 +3,7 @@ Title: Account and Team Settings
 description:
 weight: 40
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 ---
 On this page you can view settings for your Redis Cloud Pro account and team.
 You can add or edit your VAT ID, the account Time Zone, and a new

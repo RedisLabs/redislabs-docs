@@ -3,43 +3,54 @@ Title: Database Backups
 description:
 weight: 70
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 ---
-You can run scheduled and on-demand backups of your Redis Cloud Pro databases
+You can run scheduled and on-demand backups of your Redis Cloud databases
 to a remote storage location. Scheduled backups run every 24 hours.
 
-## Amazon Simple Storage Service (AWS S3)
+{{% note %}}
+Backups are only available for paid subscriptions.
+Customers with free subscriptions must upgrade to a paid subscriptions to use backups.
+Subscription upgrade does not cause downtime.
+{{% /note %}}
+
+## Can I export my Redis data from Redis Cloud?
+
+Absolutely! There is no lock-in with Redis Cloud.
+Using the instructions on this page,
+you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice.
+
+## Backing Up to Amazon Simple Storage Service (AWS S3)
 
 To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
 steps:
 
-1. Select the **S3** service under **Services** -\> **Storage -\>
-    S3** to navigate to the **S3 Management Console**.
+1. Select the **S3** service under **Services** -> **Storage ->
+    **S3** to navigate to the **S3 Management Console**.
 1. Navigate to your bucket's permissions page:
     1. To create a new bucket:
-        1. Click the **+ Create Bucket** button
-        1. Enter a **name** and **region** for the bucket
+        1. Click the **Create Bucket** button.
+        1. Enter a **name** and **region** for the bucket.
             ![new-bucket](/images/rcpro/new-bucket.png?width=600&height=678)
         1. Click the **Next** button.
-        1. Set any bucket properties to your company's standards
-        1. On the Set permissions page, click the **+ Add account**
-            button
+        1. Set any bucket properties to your company's standards.
+        1. On the Set permissions page, click the **Add account** button.
         1. In the Account field enter:
             `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-        1. Check read/write boxes for **Objects** and **Object
-            permissions**, then click **Save**.
+        1. Check read/write boxes for **Objects** and **Object permissions**,
+            then click **Save**.
             ![add_s3_user](/images/rcpro/add_s3_user.png?width=600&height=698)
-        1. Click the **Create bucket** button
+        1. Click the **Create bucket** button.
     1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
-        1. Click **+ Add account** in the **Access for other AWS
-            accounts** section enter the below information
-        1. In the Account field enter:
-            `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-            ![add_user_existing](/images/rcpro/add_user_existing.png?width=700&height=175)
-        1. Check read/write boxes for various** permissions**, then
-            click the **Save** button
+        1. Click **Add account**
+        1. In the **Access for other AWS accounts** section enter the below information:
+           1. In the Account field enter:
+               `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
+               ![add_user_existing](/images/rcpro/add_user_existing.png?width=700&height=175)
+           1. Select the **permissions** that you need.
+        1. Click **Save**.
 
 Once your bucket's permissions are set, you can use it with your
 resource by setting its **Backup Path** to the path of your S3 bucket
@@ -48,13 +59,13 @@ name is *backups-bucket*, you should use the following path:
 
 `s3://backups-bucket`
 
-## Google Cloud Storage (GCS)
+## Backing Up to Google Cloud Storage (GCS)
 
 For [Google Cloud Platform (GCP)
 console](https://developers.google.com/console/) subscriptions, to use a GCS bucket for storing your resources' backups:
 
 1. Login to your account on Google Cloud Platform
-1. Navigate to **Storage -\> Browser**
+1. Navigate to **Storage -> Browser**
 1. Click on the three dot button (1) on your relevant bucket name and
     choose **Edit bucket permissions** (2).
     ![GCS bucket
@@ -74,7 +85,7 @@ bucket's name is backups-bucket, use the path:
 
 `gs://backups-bucket`
 
-## Azure Blob Storage (ABS)
+## Backing Up to Azure Blob Storage (ABS)
 
 To use an ABS container for storing your resources' backups, follow
 these steps in your [Microsoft Azure Management
@@ -83,10 +94,10 @@ Portal](https://manage.windowsazure.com/):
 1. Access your storage by clicking the left-hand **STORAGE** icon.
 1. Select the storage account:
     1. To create a new storage account:
-        1. Click the **+ NEW** button at the lower-left corner of the
+        1. Click the **NEW** button at the lower-left corner of the
             page.
         1. Verify that you've selected **DATA
-            SERVICES-\>STORAGE-\>QUICK CREATE** from the menu.
+            SERVICES->STORAGE->QUICK CREATE** from the menu.
         1. Enter the **URL** for your new storage account.
         1. Select a **LOCATION/AFFINITY GROUP** for the storage
             account.
@@ -111,7 +122,7 @@ Where:
 - *container_name:* the name of the container, if needed.
 - *path*: the backups path, if needed.
 
-## FTP Server
+## Backing Up to an FTP Server
 
 To store your resource backups on an FTP server, set its **Backup Path**
 using the following syntax:
@@ -126,10 +137,3 @@ Where:
 - *hostname*: the hostname or IP address of the server.
 - *port*: the port number of the server, if needed.
 - *path*: the backups path, if needed.
-
-### Can I export my Redis data from Redis Cloud Pro?
-
-Absolutely! There is no lock-in with Redis Cloud Pro. Using the
-instructions on this page, you can export your latest RDB backup file
-from your cloud storage, FTP or HTTP server to any Redis server of your
-choice (paid subscriptions only).
