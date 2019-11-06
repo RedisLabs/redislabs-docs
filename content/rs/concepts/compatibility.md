@@ -69,15 +69,5 @@ follows:
 
 ## Compatibility with Open Source Redis Cluster
 
-Redis Enterprise Software (RS) does not currently support Redis Cluster
-protocol as RS has its own clustering technology that moves the
-clustering, replication, sharding, HA, etc. from the client to the
-server side. If you have existing Redis clients and code, they work
-directly against a RS cluster with only a connection string change. You
-point a standard Redis client and code at a RS cluster, then scale the
-cluster as needed.
-
-For additional details regarding the RS architecture, refer to the
-[System
-architecture]({{< relref "/rs/concepts/_index.md" >}})
-section.
+Redis Enterprise Software (RS) supports [Redis OSS cluster
+protocol]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) if it is enabled for a database.
