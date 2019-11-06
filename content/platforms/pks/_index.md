@@ -14,7 +14,7 @@ Prerequisites:
   on Pivotal Platform (formerly Pivotal Cloud Foundry - PCF) 2.4.6 or above, and PKS version 1.3.3 or above.
 - A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create)
   with at least three nodes that each meet the [minimum system requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-  according to your development or production environment. <!-- Reference a future article that will cover k8s cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
+  according to your development or production environment. <!-- Reference a future article that will cover Kubernetes cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
 - The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher
 - The [PKS cli installed](https://docs.pivotal.io/runtimes/pks/1-4/installing-pks-cli.html)
 
@@ -188,7 +188,7 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
         ```
 
     - [operator.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/operator.yaml) -
-        The operator yaml file creates the operator deployment that is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise Cluster.
+        The operator yaml file creates the operator deployment that is responsible for managing the Kubernetes deployment and lifecycle of a Redis Enterprise Cluster.
         Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes, as pods.
         The yaml in the GitHub repository that you cloned contains the latest image tag representing the latest Operator version available.
         This yaml does not require any changes under most circumstances.
@@ -287,7 +287,7 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
     - `nodes`: The number of nodes in the cluster, 3 by default (In order to evaluate cluster functionality, must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
 
     - uiServiceType: service_type
-    Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.
+    Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [Kubernetes service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.
 
     - `username`: \<your_email@your_domain.your_suffix\> - use an accessible email if evaluating alerting or use the default or any other properly formatted address.
 
@@ -408,7 +408,7 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
 
 In order to create your database, login to the Redis Enterprise UI.
 
-1. First, determine you administrator password. It is stored in an opaque k8s secret named after the REC name. In this example:
+1. First, determine you administrator password. It is stored in an opaque Kubernetes secret named after the REC name. In this example:
 
     ```src
     kubectl get secret/rec-pks -o yaml
