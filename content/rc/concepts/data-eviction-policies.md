@@ -3,7 +3,7 @@ Title: Data Eviction Policies
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 ---
 For each database, you can choose from these data eviction policies:
 
@@ -18,13 +18,11 @@ For each database, you can choose from these data eviction policies:
 |  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of keys with an "expire" field set |
 |  no eviction | Returns error if memory limit has been reached when trying to insert more data |
 
-One mechanism to avoid this, but still keep performance is to use [Redis
-on
-Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
-It can span your database across RAM + Flash Memory and intelligently
-manage what data is hot and should be in RAM and what data is not and
-can be on Flash memory (SSD).
+Redis Cloud Pro supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+to prevent data eviction but maintain high performance.
+RoF can span your database across RAM and Flash Memory
+and intelligently manage hot data in RAM and cold data in Flash memory (SSD).
 
-Note: [Active-Active Geo-Distributed
-CRDBs]({{< relref "/rs/administering/active-active.md" >}})
-always operate in noeviction mode.
+{{% note %}}
+[Active-Active Geo-Distributed CRDBs]({{< relref "/rs/administering/active-active.md" >}}) always operates in noeviction mode.
+{{% /note %}}

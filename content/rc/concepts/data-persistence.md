@@ -3,16 +3,14 @@ Title: Data Persistence
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 ---
-Redis Cloud Pro supports persisting your data to disk on a
-per-database basis and in multiple ways. Unlike a few cloud provider's
-Redis offerings, Redis Cloud Pro has two options for persistence,
-Append Only File (AOF) and Snapshot (RDB), and in addition,
-data-persistence is always performed over a persistent storage that is
-attached to the cloud instance (e.g. AWS EBS). This makes sure that there is no data lost
-in case of a node failure event, as the new cloud instance is
-attached to the existing persistent storage volume.
+Redis Cloud supports persisting your data to disk on a per-database basis and in multiple ways.
+Unlike a few cloud provider's Redis offerings,
+Redis Cloud has two options for persistence, Append Only File (AOF) and Snapshot (RDB).
+Data-persistence is always performed over a persistent storage that is attached to the cloud instance (e.g. AWS EBS).
+This makes sure that there is no data lost in case of a node failure event
+because the new cloud instance will be attached to the existing persistent storage volume.
 
 Data persistence, via AOF or snapshots, is used solely to restore the
 database if it fails. This is necessary as Redis is an in-memory
@@ -43,16 +41,24 @@ master.
 
 ## Options for Configuring Data Persistence
 
-There are five options for persistence in Redis Cloud Pro:
+The options for persistence in Redis Cloud are:
 
-|  **Options** | **Description** |
+| **Options** | **Description** |
 |------------|-----------------|
+<<<<<<< HEAD
 |  None | Data is not persisted to disk at all. |
 |  Append Only File (AoF) every write | Data is fsynced to disk every write. |
 |  Append Only File (AoF) every 1 second | Data is fsynced to disk every second. |
 |  Snapshot every 1 hour | A snapshot of the database is created every hour. |
 |  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
 |  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
+=======
+| None | Data is not persisted to disk at all. |
+| Append Only File (AoF) | Data is fsynced to disk every second. |
+| Snapshot every 1 hour | A snapshot of the database is created every hour. |
+| Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
+| Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
+>>>>>>> Unify concepts, faq and identical procedures
 
 First, you should determine if you even need persistence at all.
 Persistence is used to recover from a catastrophic failure, so if the
@@ -64,8 +70,8 @@ then you need to identify the best type for your use case.
 
 Use these details to determine which options best meet your needs:
 
-|  **AOF (Append Only File)** | **RDB (Snapshot)** |
+| **AOF (Append Only File)** | **RDB (Snapshot)** |
 |------------|-----------------|
-|  More resource intensive | Less resource intensive |
-|  Provides better durability (recover latest point in time) | Less durable |
-|  Slower time to recover (Larger files) | Faster recovery time |
+| More resource intensive | Less resource intensive |
+| Provides better durability (recover latest point in time) | Less durable |
+| Slower time to recover (Larger files) | Faster recovery time |

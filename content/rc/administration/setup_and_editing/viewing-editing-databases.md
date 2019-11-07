@@ -1,34 +1,38 @@
 ---
-Title: View and Edit a Database
+Title: Viewing and Editing Databases
 description:
-weight: 60
+weight: $weight
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 ---
-To view your database, select **Databases** from the menu. You see
-a list of your databases grouped by Subscription.
+To view your database, go to the Menu and click on "Databases".
+Your databases are grouped by [subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}).
 
-In this view, you see pertinent information about each database and some
-of its features. Since a Subscription can have multiple databases, you
-can add one to a Subscription by clicking on the "+" button below each
-Subscription table.
+![Viewing databases in UI](/images/rcpro/databases_main.png)
 
-On the View Database page you see four important icons next to the
-title of the page:
+In this view you see the each database and some of its settings.
+Since a [subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}) can have multiple databases,
+you can add one to a subscription by clicking on the **+** below each subscription table.
 
-- The pencil icon is for editing the database
-- The trash can is for deleting the database
-- The arrow icon is for importing data into the database
-- The clock is for backing up the database (if backups are already
-    configured)
+When you select a database you can:
 
-To Edit a database, click on the pencil icon.
+![Viewing databases edit icons](/images/rcpro/view_database2.png?width=600&height=338)
 
-![view_database2](/images/rcpro/view_database2.png?width=600&height=338)
+- Click ![Edit](/images/rcpro/icon_edit.png#no-click "Edit") to [edit the database](#edit-a-database).
+    You can change the [database settings]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
+- Click the trash can to delete the database.
+- Click the arrow to [import data]({{< relref "/rc/how-to/importing-dataset-redis-cloud.md" >}}) into the database.
+- Click the clock to [backup the database]({{< relref "/rc/administration/configure/backups.md" >}}) if backups are already configured.
 
+Here is a video that shows how to edit a database:
+
+<<<<<<< HEAD
 ## Edit a Database
 
 From the "View Database" page of the database you want to edit, click on
 the pencil icon to edit the database. This view allows you to edit the
 database settings just as they were when the database was created. For
 detailed descriptions of every field, read Create a Database.
+=======
+{{< youtube nrN7rAr73co >}}
+>>>>>>> Unify concepts, faq and identical procedures
