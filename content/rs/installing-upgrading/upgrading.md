@@ -131,11 +131,8 @@ The upgraded instance receives updates from upgraded and non-upgraded instances.
 
 {{% note %}}
 We highly recommend that you upgrade all instances of a specific CRDB within a reasonable time frame
+and before you do global operations on this CRDB, like removing instances or adding new instances,
 to avoid temporary inconsistencies between the instances.
-{{% /note %}}
-
-{{% note %}}
-Until upgrading all instances of a specific CRDB, it's recommended to avoid performing global operations on this CRDB, like removing instance, adding new instance etc.
 {{% /note %}}
 
 After you upgrade an instance to use the new protocol version,
