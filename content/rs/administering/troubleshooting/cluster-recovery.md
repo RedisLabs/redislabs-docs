@@ -150,3 +150,6 @@ with the IP addresses of the new nodes.
     {{% /note %}}
 
 After the cluster is recovered, you must [recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
+
+<hr>
+*For Cluster recovery in Kubernetes Operator deployment, please see [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/cluster-recovery/" >}}).*
