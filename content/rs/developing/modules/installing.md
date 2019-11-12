@@ -15,7 +15,7 @@ Enterprise Software (RS). There are two types
     1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
-    1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    1. [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
 1. Custom packaged modules - For instructions on packing up any [Redis module](https://redislabs.com/community/redis-modules-hub/),
     see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 

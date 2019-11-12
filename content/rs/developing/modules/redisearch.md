@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-The RediSearch Enterprise Module combined with Redis Enterprise Software
+The RediSearch Module combined with Redis Enterprise Software
 (RS) provides a high performance, integrated query, and full-text search
 over efficient in-memory indexes under high-speed data update rates.
 
@@ -116,9 +116,9 @@ data by adding the NOSAVE modifier to the indexing command.
 
 ## Configuring
 
-### Partitioning and Shards In Regards to RediSearch Enterprise
+### Partitioning and Shards In Regards to RediSearch
 
-RediSearch Enterprise differs from its open source brother in one key
+RediSearch differs from its open source brother in one key
 aspect. The enterprise version can work with multiple shards on a
 distributed cluster such as Redis Enterprise Software and the open
 source version is limited to using only one shard. When a RediSearch

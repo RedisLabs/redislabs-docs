@@ -23,9 +23,9 @@ Software (RS) clusters. The available modules are:
 - RedisJSON
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisjson-quick-start.md" >}})
     - [Developing with RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
-- RediSearch Enterprise
+- RediSearch
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
-    - [Developing with RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    - [Developing with RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
 
 Enterprise modules are pre-installed with RS.
 
