@@ -55,7 +55,7 @@ This option is only for when you recover a cluster.
 
     ![Import button](/images/platforms/pcf_rp_config_full_screen2.png)
 
-1. Navigate to the **Routing** configuration section on the left navigation bar.
+1. Navigate to the **Routing** section on the left navigation bar.
 
     If you would like to enable TCP Routing, configure the fields in this section. Otherwise, select **Disable**.
     Save your changes by clicking **Save**.
