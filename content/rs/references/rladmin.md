@@ -64,15 +64,16 @@ In the rladmin CLI you can:
 
 Usage:
 
-    bind [db <db:id | name>] endpoint <id>
+    bind [db <db:id | name>] endpoint <id> 
     [ include | exclude ] proxy <id1 .. idN>
 
     bind [db <db:id | name>] endpoint <id> policy <single | all-master-shards | all-nodes>
 
 Configure a specific endpoint's binding to proxies or change its binding policy.
 
-Example: :
-    `insert example`
+Example:
+
+<!-- INSERT EXAMPLE -->
 
 ### cluster
 
