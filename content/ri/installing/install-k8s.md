@@ -1,5 +1,5 @@
 ---
-Title: Installing RedisInsight on k8s
+Title: Installing RedisInsight on Kubernetes
 date: 2018-06-05 03:49:29 +0530
 weight: 40
 categories: ["RI"]
@@ -9,12 +9,12 @@ nextStep:
     href: /docs/install/activating/
 aliases: /ri/install/install-k8s/
 ---
-In this walkthrough, we will install RedisInsight on [k8s](https://kubernetes.io/). 
+In this walkthrough, we will install RedisInsight on [Kubernetes](https://kubernetes.io/). 
 This is an easy way to use RedisInsight with a [Redis Enteprise K8s deployment](https://github.com/RedisLabs/redis-enterprise-k8s-docs).
 
 ## Create the RedisInsight deployment
 
-Below is an annotated yaml that will create a RedisInsight deployment in a k8s cluster.
+Below is an annotated yaml that will create a RedisInsight deployment in a K8s cluster.
 
 1. Create a new file redisinsight.yaml with the content below
 
