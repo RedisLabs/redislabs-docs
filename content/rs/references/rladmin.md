@@ -42,7 +42,7 @@ In the rladmin CLI you can:
 - Enter `help` followed by the name of a command for a detailed explanation of the command and its usage.
 - Press the Tab key for command completion.
 
-### rladmin usage
+## rladmin usage
 
 | Command                     | Description                                                             |
 | --------------------------- | ----------------------------------------------------------------------- |
@@ -60,7 +60,7 @@ In the rladmin CLI you can:
 | [**tune**](#tune)           | Tune system parameters                                                  |
 | [**upgrade**](#upgrade)     | Upgrade entity version                                                  |
 
-#### bind
+### bind
 
 Usage:
 
@@ -74,17 +74,17 @@ Configure a specific endpoint's binding to proxies or change its binding policy.
 Example: :
     `insert example`
 
-#### cluster
+### cluster
 
 Note: Only applies to nodes that are configured as part of a cluster
 
-##### cluster reset_password
+#### cluster reset_password
 
     cluster reset_password <user email>
 
 Changes the access password of a user whose e-mail address is provided.
 
-##### cluster config
+#### cluster config
 
     cluster config [cipher_suites cipher-suites-str ]
         [ipv6 <enabled/disabled>]
@@ -102,7 +102,7 @@ The following parameters are optional:
 | min_data_TLS_version    | The minimum version of TLS protocol which is supported at the data path.    |
 | sentinel_ssl_policy     | Define SSL policy for the Discovery Service: required/disabled/allowed      |
 
-#### failover
+### failover
 
 Usage:
 
@@ -115,7 +115,7 @@ When failing over shards, the slaves are verified to be in full sync before
 fail-over is performed, unless the optional immediate keyboard is
 specified.
 
-#### info
+### info
 
 Usage:
 
@@ -126,7 +126,7 @@ Usage:
 Show current tunable settings for a specific or all databases, proxies,
 cluster.
 
-#### migrate
+### migrate
 
 Usage:
 
@@ -170,7 +170,7 @@ options:
 | max_concurrent_migrations | maximum number of concurrent endpoint migrations (default is 1)                                                                    |
 | preserve_roles            | performs an additional fail-over in order to guarantee that the roles of masters are preserved.                                    |
 
-#### node
+### node
 
 Usage:
 
@@ -191,7 +191,7 @@ Enslaving all bound resources of a node is available using the 'enslave' command
 
 Handling node snapshots from the current node state (active endpoints and shards)may be done using the 'snapshot create', 'snapshot restore', 'snapshot list' and'snapdshot delete' commands.
 
-#### placement
+### placement
 
 Usage:
 
@@ -199,7 +199,7 @@ Usage:
 
 Configure shards placement policy for a given database.
 
-#### restart
+### restart
 
 Usage:
 
@@ -216,7 +216,7 @@ The **discard_data** optional flag indicates that the data can be discarded and 
 
 The **force_discard** optional flag indicates we force discard_data even if there is replication or persistence.
 
-#### status
+### status
 
 Usage:
 
@@ -261,7 +261,7 @@ e.g:
 
 issues_only: Filters out all the OK items from status.
 
-#### tune
+### tune
 
 Usage:
 
@@ -291,7 +291,7 @@ cannot relocate from any other node.
 a period after shard relocation in which slave high availability mechanism
 cannot relocate database from any other node.
 
-#### upgrade
+### upgrade
 
 Usage:
 
