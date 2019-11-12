@@ -8,6 +8,10 @@ categories: ["RS"]
 When a cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
+{{% note %}}
+For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/cluster-recovery.md" >}}).
+{{% /note %}}
+
 Cluster failure can be caused by:
 
 - A hardware or software failure that causes the cluster to be unresponsive to client requests or administrative actions.
@@ -150,6 +154,3 @@ with the IP addresses of the new nodes.
     {{% /note %}}
 
 After the cluster is recovered, you must [recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).
-
-<hr>
-*For Cluster recovery in Kubernetes Operator deployment, please see [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/cluster-recovery.md" >}}).*
