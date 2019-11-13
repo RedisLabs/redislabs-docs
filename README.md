@@ -64,4 +64,4 @@ To add a new section in the sidebar, you must add a directory and add an `_index
 
 ## Markdown
 
-For more information about markdown syntax for our docs, see the [cheatsheet](http://www.redislabs.com/docs/latest/cheatsheet).
+For more information about markdown syntax for our docs, see the [cheatsheet](https://docs.redislabs.com/latest/cheatsheet).
