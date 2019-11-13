@@ -9,7 +9,7 @@ This section covers everything you need to know to get up and running with RS.
 
 {{% note %}}
 In addition to using the RS web UI to manage the cluster,
-you can also access cluster operations through the cluster REST API.
+you can also do cluster operations with the cluster REST API.
 
 To access the cluster REST API documentation, either:
 
@@ -21,7 +21,7 @@ To access the cluster REST API documentation, either:
 - Open the HTML files in an installed RS node:
     1. Connect to the terminal of an RS node.
     1. Change directory to `/opt`.
-    1. Download and unarchive the rlec_rest_api.tar.gz package.
+    1. Copy the rlec_rest_api.tar.gz package to a host with a web browser and unarchive it.
     1. Open the `rlec_docs\html\index.html` file in a web browser.
 {{% /note %}}
 
