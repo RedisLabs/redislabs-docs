@@ -23,6 +23,11 @@ Creating API keys can only be done by account owners, for account owners:
         1. Spaces are forbidden
 1. Click the button labeled 'Generate API Key. A popup window will appear specifying the secret key was successfully created. Copy the secret key value and store it in a safe location.
 
+{{% note %}}
+The dropdown list of users will only contain users of the current account, in the Owner role. Note that the user must be fully activated (i.e. verified email address)
+{{% note %}}
+
+
 ## Keeping the secret value of the key
 
 When generating a secret key, the secret value of the key is displayed for the first and only time.
