@@ -30,7 +30,7 @@ sideContainersSpec:
       subPath: logs
 ```
 
-Now the logs can be accessed from in the side card. For example by running
+Now the logs can be accessed from in the sidecar. For example by running
 
 ```kubectl exec -it -c busybox <pod-name> tail home/logs/supervisord.log```
 
