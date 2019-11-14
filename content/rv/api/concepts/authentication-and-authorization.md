@@ -1,6 +1,6 @@
 ---
 Title: Authentication and Authorization
-description:
+description: How the API uses keys for authenticating users and authorizing API requests
 weight: 60
 alwaysopen: false
 categories: ["RC Pro"]
