@@ -35,7 +35,7 @@ Note that the script relies on the pre-requisite variables to be set (see above)
 {{% embed-code "rv/api/10-create-subscription.sh" %}}
 ```
 
-#### **Notes:**
+#### Notes on the subscription creation script
 
 ##### Step 1
 

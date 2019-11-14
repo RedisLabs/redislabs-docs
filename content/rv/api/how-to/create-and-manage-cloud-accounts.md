@@ -37,7 +37,7 @@ Note that the script relies on the pre-requisite variable to be set (see above).
 {{% embed-code "rv/api/50-create-cloud-account.sh" %}}
 ```
 
-#### **Notes:**
+#### Notes on the cloud account creation script
 
 ##### Step 1
 
