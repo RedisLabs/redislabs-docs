@@ -31,6 +31,3 @@ The RC Pro API includes these features:
 - Support for multiple personal [API Keys]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
 - Restrict API usage to specific source IP addresses / ranges
 
-{{% note %}}
-The content in this article refers to a BETA release and is therefore liable to change.
-{{% /note %}}
