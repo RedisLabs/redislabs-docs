@@ -1,6 +1,6 @@
 ---
 Title: View account information
-description:
+description: Get initial information on account parameters
 weight: 110
 alwaysopen: false
 categories: ["RC Pro"]
