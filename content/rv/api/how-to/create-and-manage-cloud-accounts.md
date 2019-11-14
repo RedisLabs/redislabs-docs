@@ -31,7 +31,7 @@ Before you use the API to create and manage cloud account, you must:
 
 The created cloud account is defined by a JSON document that is sent as the body of the `POST cloud-accounts` request.
 
-In the example above, that JSON document is stored in the `create-cloud-account-basic.json` file:
+In the example below, that JSON document is stored in the `create-cloud-account-basic.json` file:
 
 ```shell
 {{% embed-code "rv/api/create-cloud-account-basic.json" %}}
@@ -41,7 +41,7 @@ In the example above, that JSON document is stored in the `create-cloud-account-
 
 You can run the **create cloud account** script from the command line with: `bash path/script-name.sh`.
 
-Below is the sample script that you can use as a reference to calling the API operation to create a cloud account.
+Below is the sample script that you can use as a reference to call the API operation to create a cloud account.
 The script contains the steps that are explained below.
 
 ```shell
@@ -69,4 +69,5 @@ If the processing phase completed successfully, the cloud account is visible
 in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status.
 This status indicates that the cloud account is being provisioned.
 
-You can use the "`GET /cloud-accounts/{cloudAccountId}`" API operation to continue tracking the created cloud account until it reaches the `active` state.
+You can use the `GET /cloud-accounts/{cloudAccountId}` API operation to track the created cloud account
+until it changes to the `active` state.
