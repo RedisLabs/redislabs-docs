@@ -73,3 +73,7 @@ In the example above, that JSON document is stored in the `create-subscription-b
 - The JSON document contain 2 primary segments: Subscription specification, and Databases specification
 - When creating a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file
 - you can copy-and-paste the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html). For details, see "[Using API with the Swagger User Interface]({{< relref  "/rv/api/how-to/using-curl#swagger-user-interface" >}})"
+
+{{% note %}}
+The Swagger UI generates default JSON examples for `POST` and `PUT` operations. These default examples should not be relied on as-is and should be modified and verified based on your specific needs and account settings.
+{{% /note %}}
