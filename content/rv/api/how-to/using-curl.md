@@ -13,8 +13,7 @@ You can access and use the API with:
 
 ## Swagger User Interface
 
-The [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html) is useful for initial introduction
-and for learning about API operations, models and simulated usage.
+The [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models and simulated usage.
 
 ### Authenticating to Swagger
 
@@ -80,11 +79,10 @@ you can enter the values for the parameters.
 
         ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
-## Creating an API client
 
-Using [Swagger Codegen](https://swagger.io/tools/swagger-codegen/),
-you can generate an API HTTP client in a variety of programming languages,
-or roll-your-own client by wrapping the API REST calls in a programming language of your choice.
+{{% note %}}
+The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
+{{% /note %}}
 
 ## Using the `cURL` HTTP client
 
