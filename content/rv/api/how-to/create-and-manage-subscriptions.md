@@ -75,5 +75,5 @@ In the example above, that JSON document is stored in the `create-subscription-b
 - you can copy-and-paste the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html). For details, see "[Using API with the Swagger User Interface]({{< relref  "/rv/api/how-to/using-curl#swagger-user-interface" >}})"
 
 {{% note %}}
-The Swagger UI generates default JSON examples for `POST` and `PUT` operations. These default examples should not be relied on as-is and should be modified and verified based on your specific needs and account settings.
+The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
 {{% /note %}}
