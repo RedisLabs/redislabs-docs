@@ -60,8 +60,8 @@ It is recommended that removals are done when all Participating
 Clusters of the CRDB are online. However it is possible to remove
 offline Participating Clusters using forced removal. Participating
 Cluster removed forcefully may later resurrect back to life. However the
-forcefully removed Participating Cluster will be out of date on CRDB
-membership. Even though, it still thinks it is part of the CRDBonce a
+forcefully removed Participating Cluster are shown as out of date on CRDB
+membership. Even though, it still thinks it is part of the CRDB. After a
 Participating Cluster is removed, all updates received by remaining CRDB
 Instances from the removed CRDB instance, are
 rejected.

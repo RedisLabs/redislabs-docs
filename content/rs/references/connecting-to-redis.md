@@ -31,7 +31,7 @@ Connecting to a remote server can be challenging. Here’s a quick checklist for
 - Try disabling any security measures that your database may have been set up with (e.g. Source IP/Subnet lists, Security Groups, SSL, etc...).
 - Try using a command line tool to connect to the database from your server - it is possible that your host and/port are blocked by the network.
 - If you've managed to open a connection, try sending the `INFO` command and act on its reply or error message.
-- Redis Labs Redis databases only support connecting to the default database (0( and will block some administrative commands. For more information, refer to the following:
+- Redis Labs Redis databases only support connecting to the default database (0) and block some administrative commands. For more information, refer to the following:
     - Redis Labs Enterprise Cluster: [RLEC compatibility](/redis-enterprise-documentation/rlec-compatibility)
     - Redis Cloud FAQ: [Are you fully compatible with open source Redis](/faqs#are-you-fully-compatible-with-open-source-redis)
 

@@ -49,7 +49,7 @@ If you must use a different admin password, create an additional user with admin
 While Helm Charts help automate multi-resource deployments, they do not provide the lifecycle management and lack many of the benefits provided by the Operator:
 
 - Operators are a K8s standards while Helm is a proprietary tool
-    - Using Operators means the better packaging for different k8s deployments and distributions as Helm is not supported in a straightforward way everywhere
+    - Using Operators means the better packaging for different Kubernetes deployments and distributions as Helm is not supported in a straightforward way everywhere
 - Operators allow full control over the Redis Enterprise Cluster lifecycle
     - We’ve experienced difficulties managing state and lifecycle of the application through Helm as it essentially only allows to determine the resources being deployed, which is a problem when upgrading and evolve the Redis Enterprise Cluster settings
 - Operators support advanced flows which would otherwise require using an additional 3rd party

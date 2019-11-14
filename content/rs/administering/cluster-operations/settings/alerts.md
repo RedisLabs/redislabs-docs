@@ -29,3 +29,8 @@ To enable receiving email alerts:
 1. Configure the email server settings on the General page (for
     additional details, refer to [Managing general
     settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}}).
+
+{{% note %}}
+If you enable alerts for "Node joined" or "Node removed" actions,
+you must also enable "Receive email alerts" so that the alerts are sent.
+{{% /note %}}

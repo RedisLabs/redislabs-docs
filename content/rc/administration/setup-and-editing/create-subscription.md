@@ -21,7 +21,7 @@ from a single console.
     new 'Redis Cloud Essentials' subscription.
 1. Select your preferred Cloud Provider and region for your databases
     to be created in.
-1. Create a subscription name. It will appear in the list of
+1. Create a subscription name. It appears in the list of
     subscriptions so you can easily tell them apart.
 1. Select from three types of plans:
    - Cache plans do not include replication or persistence of data.
@@ -29,8 +29,8 @@ from a single console.
         available with no change to your endpoint.
    - Standard plans can have a diverse set of features including
         in-memory replication, auto-failover, data persistence, and
-        backups. Selecting this option will double the memory size of
-        your dataset.
+        backups. If you select this option, the memory size of
+        your dataset doubles.
    - Multi-AZ (Availability Zone) plans offer all the benefits of
         Standard plans, as well as auto-failover and in-memory
         replication to another availability zone. Memory size - select
@@ -46,7 +46,7 @@ from a single console.
         one-month period.
    - **Fixed size:** There are fixed-size subscription plans ranging
         from 100MB to 5GB. In these plans, the combined memory usage of
-        all databases using this plan will be capped by a fixed limit
+        all databases using this plan are capped by a fixed limit
         for which you pay a fixed amount each month.
    - **Pay-As-You-Go:** This plan makes all features available and
         accommodates unlimited database scaling. You can estimate your

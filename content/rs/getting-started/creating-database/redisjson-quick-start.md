@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-For this quick start, you will need the following:
+For this quick start, you must have:
 
 - [A Redis Enterprise Software cluster with set up already
     complete]({{< relref "/rs/getting-started/quick-setup.md" >}})
@@ -26,7 +26,7 @@ click **Add configuration** and enter the optional custom configuration.
 
 ## Quick start with redis-cli
 
-These examples will use redis-cli as the Redis client to show how easy
+These examples use redis-cli as the Redis client to show how easy
 it is. The first RedisJSON command to try out is JSON.SET, which sets a
 Redis key with a JSON value. All JSON values can be used, for example a
 string:

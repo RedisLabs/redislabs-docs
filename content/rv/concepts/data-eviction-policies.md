@@ -5,14 +5,15 @@ weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-For each database, you can choose from these six supported data eviction
-policies:
+For each database, you can choose from these data eviction policies:
 
 |  **Options** | **Description** |
 |------------|-----------------|
 |  allkeys-lru | Evicts the least recently used (LRU) keys out of all keys in the database |
+|  allkeys-lfu | Evicts the least frequently used keys out of all keys
 |  allkeys-random | Randomly evicts keys out of all keys in the database |
 |  volatile-lru (**default**) | Evicts the least recently used (LRU) keys out of keys with an "expire" field set |
+|  volatile-lfu | Evicts the least frequently used keys out of all keys with an "expire" field set
 |  volatile-random | Randomly evicts keys with an "expire" field set |
 |  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of keys with an "expire" field set |
 |  no eviction | Returns error if memory limit has been reached when trying to insert more data |
@@ -26,4 +27,4 @@ can be on Flash memory (SSD).
 
 Note: [Active-Active Geo-Distributed
 CRDBs]({{< relref "/rs/administering/active-active.md" >}})
-will always operate in noeviction mode.
+always operate in noeviction mode.

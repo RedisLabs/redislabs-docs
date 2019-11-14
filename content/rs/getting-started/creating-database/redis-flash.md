@@ -34,7 +34,7 @@ you have the bits on a Linux based OS, you need to untar the image
 tar -vxf <downloaded tar file name>
 ```
 
-Once the tar command completes, you will find a new install.sh script in
+Once the tar command completes, you can find a new install.sh script in
 the current directory.
 
 ```src
@@ -168,7 +168,7 @@ database or add a bunch of data for cluster testing,
 the [memtier_benchmark Quick
 Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) should
 help. However please note that to see the true performance and scale of
-Redis on Flash, you will need to tune your IO path and have the flash
+Redis on Flash, you must tune your IO path and have the flash
 path set to the mounted path of SSD or NVMe flash memory as that is what
 it is designed to run on. For more information, see [Redis on
 Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).

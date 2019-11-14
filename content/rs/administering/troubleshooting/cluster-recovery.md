@@ -8,6 +8,10 @@ categories: ["RS"]
 When a cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
+{{% note %}}
+For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/cluster-recovery.md" >}}).
+{{% /note %}}
+
 Cluster failure can be caused by:
 
 - A hardware or software failure that causes the cluster to be unresponsive to client requests or administrative actions.
@@ -90,7 +94,7 @@ in the new node.
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
 was enabled in the cluster,
 you can use this parameter to override the rack ID value that was set for the node with ID 1 with a new rack ID.
-Otherwise, the node will get the same rack ID as the original node.
+Otherwise, the node gets the same rack ID as the original node.
     {{% /expand %}}
 
     For example:

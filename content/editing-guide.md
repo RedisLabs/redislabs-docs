@@ -74,4 +74,4 @@ Here's what this process looks like:
 Here's what this process looks like:
 {{< video "/images/site/review-and-create-PR.mp4" "review-and-create-PR" >}}
 
-Your edits will help every Redis Labs customer get the most out of Redis products, and they'll have you to thank for it!
+Your edits improve the quality of the documentation and help every Redis Labs customer get the most out of Redis products!

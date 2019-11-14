@@ -58,7 +58,7 @@ implementation.
 When configuring the Security Group:
 
 - Define a custom TCP rule for port 8443 to allow web browser access
-    to the RS management UI from the IP address/ range you will use to
+    to the RS management UI from the IP address/ range you use to
     access the UI.
 - If you are using the DNS resolving option with RS, define a DNS UDP
     rule for port 53 to allow access to the databases' endpoints by
@@ -67,7 +67,7 @@ When configuring the Security Group:
 - To create a cluster that has multiple nodes all running as instances on AWS,
     you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
     and add it to all instances that are part of the cluster.
-    This will make sure that all nodes are able to communicate with each other.
+    This makes sure that all nodes are able to communicate with each other.
     To limit the number of open ports, you can open just the [ports used by RS]
     ({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 

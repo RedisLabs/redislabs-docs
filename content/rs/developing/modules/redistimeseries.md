@@ -14,7 +14,7 @@ RedisTimeSeries is a Redis module developed by Redis Labs to enhance your experi
 - Aggregated queries (Min, Max, Avg, Sum, Range, Count, First, Last) for any time bucket
 - Configurable max retention period
 - Compaction/Roll-ups - automatically updated aggregated timeseries
-- labels index - each key has labels which will allows query by labels
+- labels index - each key has labels which allows query by labels
 
 ## Memory model
 
@@ -33,7 +33,7 @@ In RedisTimeSeries, we introduce a new data type that uses chunks of memory of f
 | --- | --- |
 | ![TimeSeries-downsampling1](/images/rs/TimeSeries-downsampling1.png) | ![TimeSeries-downsampling2](/images/rs/TimeSeries-downsampling2.png) |
 
-If you want to keep all of your raw data points indefinitely, your data set will grow linearly over time. However, if your use case allows you to have less fine-grained data further back in time, downsampling can be applied. This allows you to keep fewer historical data points by aggregating raw data for a given time window using a given aggregation function. [RedisTimeSeries supports downsampling](https://oss.redislabs.com/redistimeseries/commands/#tscreaterule) with the following aggregations: avg, sum, min, max, range, count, first and last.  
+If you want to keep all of your raw data points indefinitely, your data set grows linearly over time. However, if your use case allows you to have less fine-grained data further back in time, downsampling can be applied. This allows you to keep fewer historical data points by aggregating raw data for a given time window using a given aggregation function. [RedisTimeSeries supports downsampling](https://oss.redislabs.com/redistimeseries/commands/#tscreaterule) with the following aggregations: avg, sum, min, max, range, count, first and last.  
 
 ### Secondary indexing
 
@@ -116,7 +116,7 @@ Ingestion details of each approach:
 
 All our ingestion operations were executed at sub-millisecond latency and, although both used the same Rax data structure, the RedisTimeSeries approach has slightly higher throughput than Redis Streams.
 
-As can be seen, the two approaches of using Sorted Sets yield very different throughput. This shows the value of always prototyping an approach against a specific use case. As we will see on query performance, the Sorted Set per Device comes with improved write throughput but at the expense of query performance. It’s a trade off between ingestion, query performance and flexibility (remember the data modeling remark we made earlier) for your use case.
+As can be seen, the two approaches of using Sorted Sets yield very different throughput. This shows the value of always prototyping an approach against a specific use case. As we see on query performance, the Sorted Set per Device comes with improved write throughput but at the expense of query performance. It’s a trade off between ingestion, query performance and flexibility (remember the data modeling remark we made earlier) for your use case.
 
 ### Read performance
 

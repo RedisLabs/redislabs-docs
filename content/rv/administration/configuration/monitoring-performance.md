@@ -69,7 +69,7 @@ these to.
 
 Note: The "Total size of datasets under this plan" metric is at the
 subscription plan level even though they are shown (for convenience) at
-the database level. If you set this alert in one database you will see
+the database level. If you set this alert in one database you can see that
 the value has changed in the other database configurations too. The
 exception to that is Pay-as-you-go plans. For "Number of connections
 reached," each database can have its own threshold. If you have multiple

@@ -6,7 +6,7 @@ categories: ["RI"]
 path: memory-optimizations/compress-values/
 altTag: Compress Values
 ---
-Redis and clients are typically IO bound and the IO costs are typically at least 2 orders of magnitude in respect to the rest of the request/reply sequence. Redis by default does not compress any value that is stored in it, hence it becomes important to compress your data before storing in Redis.This will help in reducing the payload which will in return give you higher throughput, lower latency and higher savings in your cost.
+Redis and clients are typically IO bound and the IO costs are typically at least 2 orders of magnitude in respect to the rest of the request/reply sequence. Redis by default does not compress any value that is stored in it, hence it becomes important to compress your data before storing in Redis. This helps in reducing the payload which in return gives you higher throughput, lower latency and higher savings in your cost.
 
 ## How to Compress Strings
 
@@ -30,7 +30,7 @@ Compressing/Decompressing requires your application to do extra work. This trade
 
 ## When to Avoid Compression
 
-Compression should not be followed blindly, there are times when compression will not help you reduce your memory, rather will increase your CPU utilization. There are few cases when compression should be avoided:
+Compression should not be followed blindly, there are times when compression does not help you reduce your memory, rather increases your CPU utilization. There are few cases when compression should be avoided:
 
 1. For shorter Strings it's likely a waste of time. Short strings generally don't compress much, so the gain would be too small.
 1. When the data isn't well structured, compression should be avoided. JSON and XML are good at compression as they have repeated characters and tags.

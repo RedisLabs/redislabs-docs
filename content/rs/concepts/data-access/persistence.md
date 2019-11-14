@@ -23,7 +23,7 @@ There are two options for persistence:
 Data persistence, via either mechanism, is used solely to rehydrate the
 database if the database process fails for any reason. It is not a
 replacement for backups, but something you do in addition to backups.
-Data persistence is optional and can be set to none if desired.
+To disable data persistence, select **None**.
 
 AOF writes the latest 'write' commands into a file every second, it 
 resembles a traditional RDBMS's redo log, if you are familiar with that. 
@@ -38,13 +38,13 @@ from a snapshot compared to AOF recovery.
 configured either at time of database creation or by editing an existing
 database's configuration. While the persistence model can be changed
 dynamically, just know that it can take time for your database to switch
-from one persistence model to the other. It will depend on what you are
+from one persistence model to the other. It depends on what you are
 switching from and to, but also on the size of your database.
 
 Note: For performance reasons, if you are going to be using AOF, it is
 highly recommended to make sure replication is enabled for that database
-as well. When these two features are enabled, persistence will be
-performed on the database slave and not impact performance on the master.
+as well. When these two features are enabled, persistence is
+performed on the database slave and does not impact performance on the master.
 
 ## Options for Configuring Data Persistence
 
@@ -82,7 +82,7 @@ two:
 ## Data Persistence and Redis on Flash
 
 If you are enabling data persistence for databases running on Redis
-Enterprise Flash, by default both master and slave shards will be
+Enterprise Flash, by default both master and slave shards are
 configured to write to disk. This is unlike a standard Redis Enterprise
 Software database where only the slave shards persist to disk. This
 master and slave dual data persistence with replication is done to

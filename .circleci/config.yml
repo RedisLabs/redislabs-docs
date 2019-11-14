@@ -127,9 +127,9 @@ jobs:
                     #set aws S3 target location to branch_name
                     export LOCATION=${CIRCLE_BRANCH}
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --cache-control max-age=0 # --size-only
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --include "*.js" --cache-control max-age=0 # --size-only
                     # Deploy all other files to the S3 bucket corresponding to the current branch
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" # --size-only
+                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" --exclude "*.js" # --size-only
 
 workflows:
   version: 2

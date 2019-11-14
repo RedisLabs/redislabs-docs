@@ -8,7 +8,7 @@ altTag: Switch from Set to Intset for Numeric IDs
 ---
 Sets that contain only integers are extremely efficient memory wise. If your set contains strings, try to use integers by mapping string identifiers to integers.
 
-You can either use enums in your programming language, or you can use a redis hash data structure to map values to integers. Once you switch to integers, Redis will use the IntSet encoding internally.
+You can either use enums in your programming language, or you can use a redis hash data structure to map values to integers. Once you switch to integers, Redis uses the IntSet encoding internally.
 
 This encoding is extremely memory efficient. By default, the value of set-max-intset-entries is 512, but you can set this value in redis.conf.
 

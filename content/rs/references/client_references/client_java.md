@@ -5,7 +5,7 @@ weight:
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis with Java you will need a Java Redis client. In following sections, we will demonstrate the use of [Lettuce](https://github.com/mp911de/lettuce/) and [Jedis](https://github.com/xetorthio/jedis). Additional Java clients for Redis can be found under the [Java section](http://redis.io/clients#Java) of the Redis Clients page.
+In order to use Redis with Java you need a Java Redis client. In following sections, we demonstrate the use of [Lettuce](https://github.com/mp911de/lettuce/) and [Jedis](https://github.com/xetorthio/jedis). Additional Java clients for Redis can be found under the [Java section](http://redis.io/clients#Java) of the Redis Clients page.
 
 ## Lettuce
 
@@ -84,7 +84,7 @@ Once your standalone-application exits, remember to shutdown Lettuce by using th
 
     client.shutdown();
 
-If you are using Spring and CDI, the frameworks will manage the resources for you and you do not have to close the client using the shutdown method.
+If you are using Spring and CDI, the frameworks manage the resources for you and you do not have to close the client using the shutdown method.
 
 ### Using SSL and Lettuce
 

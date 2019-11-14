@@ -8,7 +8,7 @@ aliases: /rs/administering/installing-upgrading/configuring/cluster-name-dns-con
 ---
 Redis Enterprise Software (RS) requires DNS to be properly configured to
 achieve high-availability (HA) and fail-over regardless of where it is
-installed. Here we will discuss doing this with AWS's Route53 service
+installed. Here we discuss doing this with AWS's Route53 service
 for DNS resolution.
 
 ## Prerequisites
@@ -44,19 +44,19 @@ name servers (the cluster nodes), and whichever is the node asked, it
 returns the IP address of the requested node name.
 
 If the cluster nameserver (node) asked is down, given the resolution
-process, the resolver will try to ask another name server (node) from
-the list and will get the requested IP address. That's the standard DNS
+process, the resolver tries to ask another name server (node) from
+the list and gets the requested IP address. That's the standard DNS
 resolution behavior, in few words.
 
 Now, when a cluster node dies, for whatever reason, the other nodes can
-not reach it anymore and will replace the IP address associated with his
+not reach it anymore and replaces the IP address associated with his
 name by the IP address of another node in the cluster's name servers. It
-means that the failed over IP address will never be returned anymore by
-the name servers to any requested FQDN, and that two of the FQDN will
+means that the failed over IP address is never returned anymore by
+the name servers to any requested FQDN, and that two of the FQDN
 have the same IP address. Basically, it means that whichever node FQDN
-your application is asking to resolve, it will always get the IP address
+your application is asking to resolve, it always gets the IP address
 of one node in the cluster that is healthy, up and running and the
-connection will succeed.
+connection succeeds.
 
 ## Configuration
 
@@ -98,7 +98,7 @@ the *Create Record Set* blue button at the top of the list:
 
 ![04-CreateRecordSet-en](/images/rs/04-CreateRecordSet-en.png?width=600&height=189)
 
-This record will **only** be used to resolve the IP address of the
+This record is **only** used to resolve the IP address of the
 cluster name server to query, it is **not** used by the application to
 connect to the cluster. This kind of record is an *A* record type and
 associates an IP address to a name. To avoid the whole resolving process
@@ -114,10 +114,10 @@ So, you need to enter the name used as the name server's name, despite
 that it could be different, I suggest that you use the node name. You
 need to enter its IP address, to set the TTL to something short, I'll
 set it to one minute. This is the maximum amount of time that the record
-will be kept in cache of the resolver and of the forwarding DNS. If the
-node goes down, the resolver will still use this value until the record
-expires in his cache, but as the node will not answer, the resolver will
-try the next name server in the list (he has the *A* record because he
+is kept in cache of the resolver and of the forwarding DNS. If the
+node goes down, the resolver still uses this value until the record
+expires in his cache, but as the node does not answer, the resolver
+tries the next name server in the list (he has the *A* record because he
 needed to know the IP of the first name server, and if he needed this
 IP, he already had the name server list).
 
@@ -139,18 +139,18 @@ of the cluster's name servers. That's the next point.
 ## Defining the nameserver list for a subzone
 
 Here, the idea is to provide the list of the cluster nameserver's names
-to the resolvers and the forwarding DNS, so that they will be able to
+to the resolvers and the forwarding DNS, so that they can
 resolve the IP address of one of them and query it for node's IP. To
 achieve that, we have to define a new record in *Route53*, an *NS*
-record for Name Server record. So, once again, we will click on the
-button to *Create \[a\] Record Set* and we will enter the relevant
+record for Name Server record. So, once again, we click on the
+button to *Create \[a\] Record Set* and we enter the relevant
 information in the right panel.
 
 The name is the name of the cluster, if your cluster nodes are
 nodeX.mycluster.enterprise.com, then the cluster name is
-mycluster.enterprise.com. Remember, the resolver will ask "who are the
+mycluster.enterprise.com. Remember, the resolver asks "who are the
 name servers for zone ". The name is the searched key, the record type
-is the field. In our case, the resolver will ask for the \`NS\` record
+is the field. In our case, the resolver asks for the \`NS\` record
 type to get the nameservers list of the clustername, so we have to
 choose this type. A short TTL, such as one minute, is a good idea here,
 too. And we have to enter the node name list in the text box. In other

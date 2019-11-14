@@ -27,8 +27,8 @@ $ sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
 ```
 
 The first command turns swap off immediately and the second command
-comments out the swap partition(s) configured in the OS so swap being
-off will survive a reboot.
+comments out the swap partitions configured in the OS so swap being
+off survives a reboot.
 
 If you are able to, it is best when you install/build the OS on the
 server/VM/instance to be used in your RS cluster, to simply not
