@@ -63,7 +63,7 @@ This step queries the API for the status of the cloud account creation request b
 
 When the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`),
 this step prints the `response`, including the `resourceId`.
-In this case the `resourceId` is a Cloud account ID.
+In this case the `resourceId` is a cloud account ID.
 
 If the processing phase completed successfully, the cloud account is visible
 in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status.
