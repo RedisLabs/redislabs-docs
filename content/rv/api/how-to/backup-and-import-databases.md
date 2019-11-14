@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 
-## Backup a database
+## Backup a Database
 
 When you create or update a database, you can specify the (optional) `periodicBackupPath` parameter
 with a [backup path](/rv/administration/configuration/backups/).
@@ -16,9 +16,9 @@ This parameter enables periodic and on-demand backup operations for the specifie
 The API operation for on-demand backups is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
 On-demand database backup is an [asynchronous operation]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
-### Prerequisites for Backups
+### Prerequisites for backups
 
-Before you enables backups, you must define the variables that the API requires:
+Before you enable backups, you must define the variables that the API requires:
 
 ```shell
 {{% embed-code "rv/api/07-set-variables-with-subscription-and-database-id.sh" %}}
@@ -33,7 +33,7 @@ Before you enables backups, you must define the variables that the API requires:
 The backup database API does not require a body.
 Instead, the `periodicBackupPath` must be set to a valid path with available storage capacity to store the backup files for the specific database.
 
-## Import a database
+## Import a Database
 
 You can import data into an existing database from multiple storage sources, including AWS S3, Redis, FTP.
 Database import is an [asynchronous operation]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
@@ -42,15 +42,15 @@ The API operation for performing on-demand backup is `POST /subscriptions/{subsc
 
 The requirements for data import are:
 
-- The URI of the data.
-    - The source URI must be accessible to the importing database.
-    - The data format must be a redis backup file or a redis database.
-- The subscription ID and database ID of the destination database.
+- The URI of the data
+    - The source URI must be accessible to the importing database
+    - The data format must be a redis backup file or a redis database
+- The subscription ID and database ID of the destination database
 
-The duration of the import process varies based on the amount of data imported and the network bandwidth between the data source and the importing database.
+The duration of the import process depends on the amount of data imported and the network bandwidth between the data source and the importing database.
 
 {{% warning %}}
-Importing data into an existing database overwrites any existing values.
+Data imported into an existing database overwrites any existing data.
 {{% /warning %}}
   
 ### Database import script
