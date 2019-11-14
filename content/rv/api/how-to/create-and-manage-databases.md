@@ -53,6 +53,10 @@ In the example above, that JSON document is stored in the `create-database-basic
     - Database name (unique name per subscription and may contain only alphanumeric characters and hyphens)
     - Maximum database size in GB
     - Database password
+
+
+### Additional database parameters
+
 - There are many additional parameters and settings that can be defined on database creation.
     - For details on database parameters and options, see [Swagger OpenAPI documentation](https://api-beta.redislabs.com/beta1/swagger-ui.html#/Databases)
     - Select `POST Create database`
