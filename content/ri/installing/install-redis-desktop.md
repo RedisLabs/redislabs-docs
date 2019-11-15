@@ -17,4 +17,14 @@ RedisInsight offers the following features -
 
 [Download](https://redislabs.com/redis-enterprise-visualization/redis-insight/) RedisInsight for Desktop here.
 
+Once downloaded, change the downloaded file into executable one with the following command:
+```
+chmod +x redisinsight-linux64-[version]
+```
+
+And finally to start the RedisInsight:
+```
+./redisinsight-linux64-[version]
+```
+
 Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
