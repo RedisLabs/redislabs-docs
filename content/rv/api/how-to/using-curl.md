@@ -13,13 +13,13 @@ You can access and use the API with:
 
 ## Swagger User Interface
 
-The [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models and simulated usage.
+The [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models and simulated usage.
 
 ### Authenticating to Swagger
 
 To authenticate to the Swagger UI:
 
-1. Open the [Swagger UI](https://api-beta1.redislabs.com/beta1/swagger-ui.html) page in a browser.
+1. Open the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) page in a browser.
 
     ![swagger-authorize-and-try-now](/images/rv/api/swagger-authorize-and-try-now.png)
 
@@ -106,7 +106,7 @@ curl -s -X GET "https://$HOST/logs" \
 
 - The example expects several variables to be set in the Linux shell:
 
-    - **$HOST** - The URI of the Redis Labs API (`api-beta1.redislabs.com/beta1`)
+    - **$HOST** - The URI of the Redis Labs API (`api.redislabs.com/v1`)
     - **$ACCOUNT_KEY** - The [Account key value]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
     - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}})
 

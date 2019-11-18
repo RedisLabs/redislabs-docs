@@ -35,7 +35,7 @@ the response to the request includes the task status and additional information 
   "timestamp": "2019-08-08T09:07:39.826Z",
   "_links": {
     "task": {
-      "href": "https://api-beta1.redislabs.com/beta1/tasks/f3ec0e7b-0548-46e3-82f3-1977012ec738",
+      "href": "https://api.redislabs.com/v1/tasks/f3ec0e7b-0548-46e3-82f3-1977012ec738",
       "title": "getTaskStatusUpdates",
       "type": "GET"
     }
@@ -83,12 +83,12 @@ The response to the `getTaskStatusUpdates` request shows:
   },
   "_links": {
     "resource": {
-      "href": "https://api-beta1.redislabs.com/beta1/subscriptions/77899",
+      "href": "https://api.redislabs.com/v1/subscriptions/77899",
       "title": "getSubscriptionInformation",
       "type": "GET"
     },
     "self": {
-      "href": "https://api-beta1.redislabs.com/beta1/tasks/36d4b04d-72d4-4404-8600-a223120a553e",
+      "href": "https://api.redislabs.com/v1/tasks/36d4b04d-72d4-4404-8600-a223120a553e",
       "type": "GET"
     }
   }

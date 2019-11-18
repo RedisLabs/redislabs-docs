@@ -25,9 +25,16 @@ The RC Pro API includes these features:
 
 - Standard REST API (accessible using [any HTTP client / programming language]({{< relref  "/rv/api/how-to/using-curl.md" >}}))
 - Supports OpenAPI 2.0 standard
-- Exposes [Swagger user interface](https://api-beta1.redislabs.com/beta1/swagger-ui.html)
+- Exposes [Swagger user interface](https://api.redislabs.com/v1/swagger-ui.html)
 - Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200) guidelines
 - Secure [authentication and authorization]({{< relref  "/rv/api/concepts/authentication-and-authorization.md" >}})
 - Support for multiple personal [API Keys]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
 - Restrict API usage to specific source IP addresses / ranges
 
+### Getting started
+
+1. [Enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
+1. [Create API Keys for your team]({{< relref  "/rv/api/how-to/create-api-keys-for-your-team.md" >}})
+1. [Introduction to using the API]({{< relref  "/rv/api/how-to/using-curl.md" >}})
+1. [The Processing and Provisioning Lifecycle]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md" >}})
+1. [Create and manage Subscriptions]({{< relref  "/rv/api/how-to/create-and-manage-subscriptions.md" >}})
