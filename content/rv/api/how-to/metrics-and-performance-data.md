@@ -1,26 +1,26 @@
 ---
-Title: Query metrics and usage statistics
-description: Using the Metrics API operation to query database usage and statistics information
+Title: Metrics and Usage Statistics
+description: Using the metrics API operation to query database usage and statistics information
 weight: 80
 alwaysopen: false
 categories: ["RC Pro"]
 draft: true
 ---
-The Metrics query API operation:
+You can get metrics and usage statistics for a database from the API operation:
 
 `GET /subscriptions/{subscription-id}/databases/{database-id}/metrics?metricSpan={metric-span}`.
 
-The query accepts 3 parameters:
-
-- `subscription-id` - Required. The subscription identifier of the database who's metric data will be queried
-- `database-id` - Required. The database identifier of a database belonging to the subscription identifier specified in the previous parameter.
-- `metric-span` - Optional. Defines the requested time span to be covered by the query. Default value is `1hour`. For a list of supported values see "[Metric spans and intervals]({{< relref  "/rv/api/concepts/metrics#metric-spans-and-intervals" >}})"
-
 {{% note %}}
-Metrics API operation supports Redis Labs Essentials databases as well as Redis Labs Pro databases.
+Redis Labs Essentials and Pro databases support metrics API requests.
 {{% /note %}}
 
-### Metrics query example
+The query accepts 3 parameters:
+
+- `subscription-id` (Required) - The relevant subscription ID for the database
+- `database-id` (Required) - The ID of the database
+- `metric-span` (Optional) - The [time span]({{< relref "/rv/api/concepts/metrics#metric-spans-and-intervals" >}}) for the query. The default time span is `1hour`.
+
+## Metrics Query Example
 
 ```shell
 {{% embed-code "rv/api/70-query-metrics.sh" %}}
