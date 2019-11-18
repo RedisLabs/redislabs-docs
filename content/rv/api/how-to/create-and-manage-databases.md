@@ -60,7 +60,7 @@ Below is the sample script that you can use as a reference to call the API opera
 
 There are many additional parameters and settings that can be defined on database creation:
 
-- Review the database parameters and options in the [Swagger OpenAPI documentation](https://api.redislabs.com/v1.redislabs.com/beta1/swagger-ui.html#/Databases).
+- Review the database parameters and options in the [Swagger OpenAPI documentation](https://api.redislabs.com/v1/swagger-ui.html#/Databases).
 - Select `POST Create database`.
 - Under `Database definition`, click on the `Model` options.
 
