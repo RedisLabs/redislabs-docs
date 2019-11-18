@@ -5,11 +5,12 @@ weight: 40
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-You can access and use the API with:
+You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](https://api.redislabs.com/v1/)) with any of the following tools:
 
 - The Swagger user interface
-- An API client
 - The cURL HTTP client
+- An HTTP client in any programming language
+
 
 ## Swagger User Interface
 

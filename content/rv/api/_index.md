@@ -34,7 +34,9 @@ The RC Pro API includes these features:
 ### Getting started
 
 1. [Enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
+1. [Authentication and Authorization]({{< relref  "/rv/api/concepts/authentication-and-authorization.md" >}})
 1. [Create API Keys for your team]({{< relref  "/rv/api/how-to/create-api-keys-for-your-team.md" >}})
-1. [Introduction to using the API]({{< relref  "/rv/api/how-to/using-curl.md" >}})
+1. [Using the API]({{< relref  "/rv/api/how-to/using-curl.md" >}})
 1. [The Processing and Provisioning Lifecycle]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md" >}})
 1. [Create and manage Subscriptions]({{< relref  "/rv/api/how-to/create-and-manage-subscriptions.md" >}})
+
