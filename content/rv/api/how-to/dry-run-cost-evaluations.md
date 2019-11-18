@@ -33,3 +33,48 @@ The dry-run create subscription request behaves similarly to standard create sub
 | **Update database** | Modifies the database as requested | Processes the request, and evaluates whether the database modification requires additional resources. The cost evaluation report applies to the subscription as a whole, including the impact (if any) of modifying the existing database (for example, additional resources may be needed for a resized database). Note the cost evaluation is performed **without** actually modifying the database (or any changes to the existing subscription or its existing resources) |
 
 
+### Example of a dry-run response
+
+Below is an example of the pricing response section of a dry-run request.
+
+```
+  "response": {
+    "resource": {
+      "pricing": [
+        {
+          "type": "Shards",
+          "quantity": 2,
+          "quantityMeasurement": "shards",
+          "pricePerUnit": 0.308,
+          "priceCurrency": "USD",
+          "pricePeriod": "hour"
+        },
+        {
+          "type": "EBS Volume",
+          "quantity": 71,
+          "quantityMeasurement": "GB"
+        },
+        {
+          "type": "c5.xlarge",
+          "quantity": 2,
+          "quantityMeasurement": "instances"
+        },
+        {
+          "type": "m5.large",
+          "quantity": 1,
+          "quantityMeasurement": "instances"
+        }
+      ]
+    }
+  }
+```
+
+The structure of the pricing response varies based on the Cloud Account used by the request:
+
+* When using a customer provided cloud account: the response includes pricing data for the shards, and a listing (without pricing data) of the resources required (storage & compute instances)
+* When using the Redis Labs internal cloud account (i.e. `cloudAccountId = 1`): the response includes pricing data for both shards and the resources required (storage & compute instances)
+
+
+
+{{% note %}}
+{{% /note %}}
