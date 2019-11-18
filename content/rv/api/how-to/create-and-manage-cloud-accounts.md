@@ -1,68 +1,73 @@
 ---
-Title: Create and manage Cloud Accounts
-description: Cloud accounts specifies which account to use when creating and modifying infrastructure resources
+Title: Create and Manage Cloud Accounts
+description: Cloud accounts specify which account to use when creating and modifying infrastructure resources.
 weight: 50
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-This articles describes how to create and manage a cloud account using `cURL` commands.
+You can use `cURL` commands to create and manage a cloud account
+with the [CURL HTTP client]({{< relref "/rv/api/how-to/using-curl#using-the-curl-http-client" >}}).
 
-For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
+## Create a Cloud Account
 
-## Create a cloud account
+The API operation that creates a cloud account is: `POST /cloud-accounts`
 
-The API operation that creates a cloud account is `POST /cloud-accounts`.
-
-The following Linux shell script sends a `POST /cloud-accounts` and waits for a cloud account Id. When the cloud account Id is received, the **processing phase** is completed.
+The following Linux shell script sends a `POST /cloud-accounts` and waits for a cloud account ID.
+When the cloud account ID is received, the processing phase runs.
 
 ### Prerequisites
 
+Before you use the API to create and manage cloud account, you must:
+
+- Install `jq` on your machine: `sudo apt install jq`
 - Define the expected variables needed to use the API:
 
-```shell
+    ```shell
 {{% embed-code "rv/api/05-set-variables.sh" %}}
 {{% embed-code "rv/api/60-cloud-account-set-variables.sh" %}}
-```
-
-### Cloud account creation script
-
-First you need jq to be installed on your machine. sudo apt install jq
-You can run the **create cloud account** script using a command line `bash path/script-name.sh`.
-
-Below is the sample script that you can use as a reference to calling the API operation to create a cloud account. The script contains 3 primary steps that are explained below.
-
-Note that the script relies on the pre-requisite variable to be set (see above).
-
-```shell
-{{% embed-code "rv/api/50-create-cloud-account.sh" %}}
-```
-
-#### Notes on the cloud account creation script
-
-##### Step 1
-
-Executes a `POST` request to `cloud-accounts` with the defined parameters and a JSON body located within a separate JSON file.
-
-The POST response is a JSON document that contains the `taskId`, which is stored in a variable called `TASK_ID` that is used later to track the progress of the request's processing.
-
-##### Step 2
-
-Query the API for the status of the cloud account creation request, identified by the `taskId` (whose value is stored in the `$TASK_IS` variable).
-
-##### Step 3
-
-As soon as the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`), print the `response` , including the `resourceId` (which in this case is a Cloud account Id).
-
-At this point, if the processing phase completed successfully, the cloud account is visible in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status, indicating that it is being provisioned.
-
-You can continue tracking the created cloud account throughout its provisioning phase until it reaches the "`active`" state using the "`GET /cloud-accounts/{cloudAccountId}`" API operation.
+    ```
 
 ### Cloud account JSON body
 
 The created cloud account is defined by a JSON document that is sent as the body of the `POST cloud-accounts` request.
 
-In the example above, that JSON document is stored in the `create-cloud-account-basic.json` file:
+In the example below, that JSON document is stored in the `create-cloud-account-basic.json` file:
 
 ```shell
 {{% embed-code "rv/api/create-cloud-account-basic.json" %}}
 ```
+
+### Cloud account creation script
+
+You can run the **create cloud account** script from the command line with: `bash path/script-name.sh`.
+
+Below is the sample script that you can use as a reference to call the API operation to create a cloud account.
+The script contains the steps that are explained below.
+
+```shell
+{{% embed-code "rv/api/50-create-cloud-account.sh" %}}
+```
+
+#### Step 1 of the cloud account creation script
+
+This step executes a `POST` request to `cloud-accounts` with the defined parameters and a JSON body located within a separate JSON file.
+
+The POST response is a JSON document that contains the `taskId`,
+which is stored in a variable called `TASK_ID` that is used later to track the progress of the request.
+
+#### Step 2 of the cloud account creation script
+
+This step queries the API for the status of the cloud account creation request based on the `taskId` stored in the `$TASK_IS` variable.
+
+#### Step 3 of the cloud account creation script
+
+When the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`),
+this step prints the `response`, including the `resourceId`.
+In this case the `resourceId` is a cloud account ID.
+
+If the processing phase completed successfully, the cloud account is visible
+in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status.
+This status indicates that the cloud account is being provisioned.
+
+You can use the `GET /cloud-accounts/{cloudAccountId}` API operation to track the created cloud account
+until it changes to the `active` state.

@@ -5,61 +5,63 @@ weight: 70
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-This article describes how to create and manage a database using `cURL` commands.
+You can use `cURL` commands to create and manage a cloud account
+with the [CURL HTTP client]({{< relref "/rv/api/how-to/using-curl#using-the-curl-http-client" >}}).
 
-For an introduction to using `cURL` with API operations, see "[Using the cURL HTTP client]({{< relref  "/rv/api/how-to/using-curl#using-the-curl-http-client" >}})".
+## Create a Database
 
-## Create a database
+The API operation that creates a database is: `POST /subscriptions/{subscription-id}/databases`
 
-The API operation that creates a database is `POST /subscriptions/{subscription-id}/databases`.
+The database is created in an existing or a newly created subscription.
+When a subscription is created, it is created with at least one database.
+You can add more databases to the subscription, and you can update or delete existing databases.
 
-A database is created within an existing (or a newly created) subscription. When a subscription is created, at least one database is created as well. Additional databases can be added to the subscription, and existing databases can be updated and deleted.
+Creating a database is an [asynchronous operation]({{< relref "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
 
-Creating a database is an asynchronous operation. For details see "[Provisioning lifecycle - Asynchronous operations]({{< relref  "/rv/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
-
-The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a database Id. When the database Id is received, the **processing phase** is completed and the database (as well as the subscription that contains it) is in the **provisioning phase** (in the `pending` status).
+The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a cloud account ID.
+When the cloud account ID is received, the processing phase is complete and the provisioning phase starts.
 
 ### Prerequisites
 
+- Install `jq` on your machine: `sudo apt install jq`
 - Define the expected variables needed to use the API:
 
-```shell
+    ```shell
 {{% embed-code "rv/api/06-set-variables-with-subscription-id.sh" %}}
-```
-
-### Database creation script
-
-You can run the **create database** script using a command line `bash path/script-name.sh`.
-
-Below is the sample script that you can use as a reference to calling the API operation to create a database.
-
-Note that the script relies on the pre-requisite variables to be set (see above), as well as on the `jq` tool (JSON command-line processor)
-
-```shell
-{{% embed-code "rv/api/11-create-database.sh" %}}
-```
+    ```
 
 ### Database JSON body
 
 The created database is defined by a JSON document that is sent as the body of the API request.
 
-In the example above, that JSON document is stored in the `create-database-basic.json` file:
+In the example below, that JSON document is stored in the `create-database-basic.json` file:
 
 ```shell
 {{% embed-code "rv/api/create-database-basic.json" %}}
 ```
 
-- The JSON body contains only the most basic, required parameters in order to create a database:
-    - Database name (unique name per subscription and may contain only alphanumeric characters and hyphens)
-    - Maximum database size in GB
-    - Database password
+The JSON body contains only the most basic, required parameters in order to create a database:
 
+- Database name - A unique name per subscription that can contain only alphanumeric characters and hyphens
+- Maximum database size in GB
+- Database password
+
+### Database creation script
+
+You can run the **create database** script from the command line with: `bash path/script-name.sh`
+
+Below is the sample script that you can use as a reference to call the API operation to create a database.
+
+```shell
+{{% embed-code "rv/api/11-create-database.sh" %}}
+```
 
 ### Additional database parameters
 
-- There are many additional parameters and settings that can be defined on database creation.
-    - For details on database parameters and options, see [Swagger OpenAPI documentation](https://api-beta.redislabs.com/beta1/swagger-ui.html#/Databases)
-    - Select `POST Create database`
-    - Under `Database definition` click on the `Model` options
+There are many additional parameters and settings that can be defined on database creation:
+
+- Review the database parameters and options in the [Swagger OpenAPI documentation](https://api-beta.redislabs.com/beta1/swagger-ui.html#/Databases).
+- Select `POST Create database`.
+- Under `Database definition`, click on the `Model` options.
 
 ![swagger-database-create-documentation](/images/rv/api/swagger-database-create-documentation.png)
