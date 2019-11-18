@@ -1,36 +1,39 @@
 ---
-Title: Performing cost evaluations
-description: How to evaluate the cost of a specific subscription or database (without impacting existing resources)
+Title: Evaluating Cost Before Deployment
+description: How to evaluate the cost of a specific subscription or database without changing existing resources.
 weight: 65
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-This article describes how to evaluate the cost of a specific subscription or database, without impacting any existing resources. 
+When you change your subscriptions and databases you also change the cost of your deployment.
+With a **dry-run request**, you can evaluate the impact that subscription and databases changes cause before you deploy these changes:
 
-This feature is referred to as a **dry-run request** and it is available for the following API operations:
+* Create subscription
+* Create a database
+* Update a database
 
-* Create Subscription
-* Create database (in an existing subscription)
-* Update database
+## Defining a dry-run request
 
-### Defining a dry-run request
+API operations that support dry-run requests accept the `dryRun` boolean parameter in the JSON request body.
 
-An API operation that supports dry-run requests accepts a `dryRun` boolean parameter in the JSON request body. Following is a create subscription request's JSON body that includes the `dryRun=true` parameter.
+For example, the JSON body of a create subscription request can include the `dryRun=true` parameter:
 
 ```shell
 {{% embed-code "rv/api/create-subscription-basic-dry-run.json" %}}
 ```
 
-### Executing a dry-run request
+## Executing a dry-run request
 
-The dry-run create subscription request behaves similarly to standard create subscription request. The only difference is that no changes are made to existing resources, and the result of a dry-run request processing is a cost evaluation report for the subscription.
-
+Dry-run requests behave like regular request except that no changes are made to existing resources.
+A dry-run request produces a cost evaluation report for the subscription.
 
 | API Operation | `dryRun=false` (default) | `dryRun=true` |
 |---|---|---|
-| **Create Subscription** | Creates a subscription without cost pre-evaluation | Processes the request, and returns a cost evaluation report of the planned subscription, **without** actually creating the subscription (or any impact to existing resources) |
-| **Create database** | Creates a new database in the subscription, without cost pre-evaluation | Processes the request, and returns a cost evaluation report for the existing subscription in which the database evaluation is performed. The cost evaluation report applies to the subscription as a whole, including the impact (if any) of adding an additional database (for example, additional resources may be needed for the new database). Note the cost evaluation is performed **without** actually creating the database (or any changes to the existing subscription or its existing resources) |
-| **Update database** | Modifies the database as requested | Processes the request, and evaluates whether the database modification requires additional resources. The cost evaluation report applies to the subscription as a whole, including the impact (if any) of modifying the existing database (for example, additional resources may be needed for a resized database). Note the cost evaluation is performed **without** actually modifying the database (or any changes to the existing subscription or its existing resources) |
+| **Create subscription** | Create a subscription | Returns a cost evaluation report of the planned subscription |
+| **Create database** | Creates a new database in the subscription | Returns a cost evaluation report for the relevant subscription |
+| **Update database** | Changes the specified database | Returns a cost evaluation report and evaluates whether the relevant subscription requires additional resources base on the database modification |
+
+
 
 
 ### Example of a dry-run response
@@ -74,7 +77,3 @@ The structure of the pricing response varies based on the Cloud Account used by 
 * When using a customer provided cloud account: the response includes pricing data for the shards, and a listing (without pricing data) of the resources required (storage & compute instances)
 * When using the Redis Labs internal cloud account (i.e. `cloudAccountId = 1`): the response includes pricing data for both shards and the resources required (storage & compute instances)
 
-
-
-{{% note %}}
-{{% /note %}}
