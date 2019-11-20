@@ -38,7 +38,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
 - The following new GA releases of Redis Modules are bundled in RS 5.4.10:
     - RedisBloom, version 2.0.3
-    - RedisSearch, version 1.4.17
+    - RedisSearch, version 1.4.18
     - RedisJson, version 1.0.4
     - RedisGraph, version 1.2.2
     - RedisTimeSeries, version 1.0.3
