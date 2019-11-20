@@ -1,9 +1,8 @@
 ---
 Title: Configuring VPC peering supprt in subscriptions
 description: A VPC peering connection is a networking connection between the application VPC and the Redis Labs Pro subscription VPC. It enables you to optimize application performance by routing traffic between them using private IP addresses.
-weight: 60
+weight: 65
 alwaysopen: false
-draft: true
 categories: ["RC Pro"]
 ---
 
