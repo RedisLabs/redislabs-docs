@@ -11,7 +11,6 @@ You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](ht
 - The cURL HTTP client
 - An HTTP client in any programming language
 
-
 ## Swagger User Interface
 
 The [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models and simulated usage.
@@ -24,7 +23,7 @@ To authenticate to the Swagger UI:
 
     ![swagger-authorize-and-try-now](/images/rv/api/swagger-authorize-and-try-now.png)
 
-1. Click on the `Authorize` button.
+1. Click `Authorize`.
 
     The **Available Authorizations** box is shown with the headers and values that are used for authentication in all API interactions with Swagger.
 
@@ -65,7 +64,7 @@ After you complete the authorization in the Swagger UI, execute an API operation
 
 Some API operations require input, such as:
 
-- **Parameters** - When an API operation requires URI parameters, such as "get subscription by subscription id,
+- **Parameters** - When an API operation requires URI parameters, such as "get subscription by subscription id",
 you can enter the values for the parameters.
 
     ![swagger-parameters](/images/rv/api/swagger-parameters.png)
@@ -79,7 +78,6 @@ you can enter the values for the parameters.
     - Use the **Try it now** sample JSON created by Swagger as a base template that you can edit and execute.
 
         ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
-
 
 {{% note %}}
 The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
@@ -111,7 +109,7 @@ curl -s -X GET "https://$HOST/logs" \
     - **$ACCOUNT_KEY** - The [Account key value]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
     - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}})
 
-- The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
+- The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command-line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
 - You can set the variables using shell commands like the following:
 
     ```shell

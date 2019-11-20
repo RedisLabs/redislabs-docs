@@ -8,9 +8,9 @@ categories: ["RC Pro"]
 When you change your subscriptions and databases you also change the cost of your deployment.
 With a **dry-run request**, you can evaluate the impact that subscription and databases changes cause before you deploy these changes:
 
-* Create subscription
-* Create a database
-* Update a database
+- Create subscription
+- Create a database
+- Update a database
 
 ## Defining a dry-run request
 
@@ -33,14 +33,11 @@ A dry-run request produces a cost evaluation report for the subscription.
 | **Create database** | Creates a new database in the subscription | Returns a cost evaluation report for the relevant subscription |
 | **Update database** | Changes the specified database | Returns a cost evaluation report and evaluates whether the relevant subscription requires additional resources base on the database modification |
 
-
-
-
 ### Example of a dry-run response
 
-Below is an example of the pricing response section of a dry-run request.
+Here is an example of the pricing response section of a dry-run request:
 
-```
+```json
   "response": {
     "resource": {
       "pricing": [
@@ -72,8 +69,7 @@ Below is an example of the pricing response section of a dry-run request.
   }
 ```
 
-The structure of the pricing response varies based on the Cloud Account used by the request:
+The structure of the pricing response depends on the cloud account used by the request:
 
-* When using a customer provided cloud account: the response includes pricing data for the shards, and a listing (without pricing data) of the resources required (storage & compute instances)
-* When using the Redis Labs internal cloud account (i.e. `cloudAccountId = 1`): the response includes pricing data for both shards and the resources required (storage & compute instances)
-
+- For a customer provided cloud account - The response includes pricing data for the shards, and a lists the resources required (storage & compute instances) without pricing data
+- For a Redis Labs internal cloud account (`cloudAccountId = 1`) - The response includes pricing data for both shards and the resources required (storage & compute instances)

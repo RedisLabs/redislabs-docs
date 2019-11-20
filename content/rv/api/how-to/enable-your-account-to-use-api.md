@@ -1,19 +1,27 @@
 ---
-Title: Enable your Account to use API
-description: Enabling an Account to use API using the Redis Labs web UI
+Title: Enable the API for your Account
+description: Enabling an account to use API using the Redis Labs web UI
 weight: 10
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-By default, account API usage is disabled.
+By default, the API is disabled for accounts.
 
-In order to enable an account to use API, follow these steps:
+{{% warning %}}
+Make sure that the access key is protected against unauthorized use. Anyone who sends an API request with the access key can make changes to your account.
+{{% /warning %}}
 
-1. Login to <https://app.redislabs.com> with a user that is an Owner of an account.
-1. Navigate to the "Settings" menu.
-1. In the "Account" tab, locate the property "Cloud API Access Key".
-1. Click the button labeled "Generate" next to the label of the property.
+To enable an account to use API:
 
-The generated string is the API access key, needed as a parameter in all API calls.
+1. Login to <https://app.redislabs.com> with a user that is an owner of an account.
+1. Go to the **Settings**.
+1. In the **Account** tab, locate the **Cloud API Access Key**.
+1. Click **Generate**.
 
-The access key can always be retrieved by an account owner. It should be regarded as an account level secret, not shared with persons who are not authorized members in the account.
+The generated string is the API access key that you need to include in all API calls.
+Account owners can see the access key in the account.
+
+You can also [manage usage of the API access key]({{< relref "/rv/api/how-to/manage-api-keys.md" >}}) including:
+
+- Delete the access key
+- Limit usage of the access key by network subnets

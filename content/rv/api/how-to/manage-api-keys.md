@@ -5,33 +5,41 @@ weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
 ---
-## Delete a secret key
+After you create the API access key, you can manage usage of the API access key including:
+
+- Delete the access key
+- Limit usage of the access key by network subnets
+
+## Delete a Secret Key
+
+To delete an access key:
 
 1. Go to: <https://app.redislabs.com>
-1. Make sure you are logged in as an account Owner.
-1. Navigate to 'Settings' menu.
-1. Click 'Cloud API Keys' tab (If the 'Cloud API Keys' is not displayed - make sure you [enabled your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}})).
-1. Click the 'Delete' icon.
-1. A confirmation popup appears, click 'Delete' to confirm delete or 'Cancel' to keep the secret key.
+1. Make sure you are logged in as an account owner.
+1. Go to: **Settings** > **Cloud API Keys**
 
-## Add a new allowed subnet
+    If **Cloud API Keys** is not shown, make sure you [enabled your Account to use API]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})).
+1. Click **Delete**.
+1. Confirm that you want to delete the access key.
 
-By default, API usage is allowed from all IP addresses (i.e. no source IP limitations)
+## Add an Allowed Subnet
 
-To limit API usage to a specified range/s of source IP addresses, follow these steps:
+By default, API access is allowed from all IP addresses.
 
-1. Navigate to the 'Settings' menu, 'Cloud API Keys' tab.
-1. Click the 'Manage IPs' button associated with the key. A popup window appears.
-1. Click the plus button indicating 'Add new whitelist subnet'
-1. In the text input area type in the subnet in CIDR format, **e.g.: 10.2.5.0/24** (for examples of CIDR format, see Wikipedia's [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation))
-1. Click the right icon, indicating 'Save'
+To limit API access to a specified range of source IP addresses:
 
-After adding the subnet you can add more subnets or click 'OK' button to finish.
+1. Go to: **Settings** > **Cloud API Keys**
+1. Click **Manage IPs** for the access key that you want to limit.
+1. Click ![Add](/images/rs/icon_add.png#no-click "Add") to add a new whitelist subnet.
+1. Enter the subnet in [CIDR format](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation), for example: `10.2.5.0/24`
+1. Save the subnet.
 
-## Delete an allowed subnet
+After you add the subnet, you can add more subnets or click **OK**.
 
-1. Click the 'Manage IPs' button associated with the key. A popup window appears
-1. Click the 'Delete' icon
+## Delete an Allowed Subnet
 
-No confirmation popup appears for deleting subnets.
-After deleting the subnet you can delete more subnets or click 'OK' button to finish.
+1. Go to: **Settings** > **Cloud API Keys**
+1. Click **Manage IPs** for the access key that you want to change.
+1. Delete the subnet that you want to disallow.
+
+After you delete the subnet, you can delete more subnets or click **OK**.
