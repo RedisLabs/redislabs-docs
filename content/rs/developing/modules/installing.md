@@ -53,7 +53,8 @@ click **Add configuration** and enter the optional custom configuration.
 1. Click **Show advanced options**:
     1. Enter the port: **12543**.
     1. Enter the configuration options for the module:
-    - RediSearch - You can find the configuration options in the [RediSearch documentation](https://oss.redislabs.com/redisearch/Configuring.html#redisearch_configuration_options)
-    - RedisGraph - You can specify the number of threads to distribute the RediSearch queries to: `THREAD_COUNT X`
-        By default, the thread count is the number of coresRediSearch uses the same number of cores on the node.
+        - RediSearch - You can find the configuration options in the [RediSearch documentation](https://oss.redislabs.com/redisearch/Configuring.html#redisearch_configuration_options).
+        - RedisGraph - You can specify the number of threads to distribute the RediSearch queries to: `THREAD_COUNT X`
+            By default, the thread count is the number of coresRediSearch uses the same number of cores on the node.
+        - RedisTimeSeries - You can find the configuration options in the [RedisTimeSeries documentation](https://oss.redislabs.com/redistimeseries/configuration/#redistimeseries-configuration-options).
 1. Click the **activate** button
