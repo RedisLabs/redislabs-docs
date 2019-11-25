@@ -79,7 +79,8 @@ of the configuration and persistence files on each of the nodes.
     {{% expand "Command syntax" %}}
 `<filename>` - The full path of the old cluster configuration file in the persistent storage.
 The cluster configuration file is /css/ccs-redis.rdb.
-The file is located on the persistent storage drive for each node in the original cluster and all copies are identical.
+Before you copy the ccs file, confirm that all of the ccs files on each node are identical.
+If the ccs files are not identical, contact Redis Labs Support for assistance.
 
 `<node_uid>` - The id of the node, in this case `1`.
 
