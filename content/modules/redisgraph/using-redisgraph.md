@@ -1,11 +1,11 @@
 ---
 Title: Using RedisGraph in Redis Enterprise Software (RS)
-description: 
+description:
 weight: 40
 alwaysopen: false
 categories: ["Modules"]
 ---
-To use RedisBloom, the first thing you need is to [download and install the package]({{< relref "/modules/installing.md" >}})
+To use RedisGraph, the first thing you need is to [download and install the package]({{< relref "/modules/installing.md" >}})
 into the RS cluster, and then create a database that uses the module.
 
 {{< embed-md "tryout-redisgraph.md" >}}

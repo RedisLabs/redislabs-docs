@@ -3,7 +3,7 @@ Title: RedisTimeSeries Quick Start Tutorial
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redistimeseries/
 ---
 For this quick start, you will need the following:

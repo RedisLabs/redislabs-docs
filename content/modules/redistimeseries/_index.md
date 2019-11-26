@@ -1,7 +1,7 @@
 ---
 Title: RedisTimeSeries
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/developing/modules/redistimeseries/

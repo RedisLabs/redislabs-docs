@@ -1,7 +1,7 @@
 ---
 Title: RedisJSON
 description:
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/developing/modules/redisjson/

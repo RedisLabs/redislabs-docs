@@ -3,7 +3,7 @@ Title: Modules Lifecycle
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
 ---
 You can view the Redis Enterprise Software subscription agreement [here](https://redislabs.com/company/terms-of-use#software).
 This lifecycle fully reflects our subscription agreement.
@@ -38,19 +38,6 @@ that version.
 | 1.1 – April 2018                          | October 31, 2019   |
 | 1.0 – November 2017                       | May 31, 2019       |
 
-### RedisGraph
-
-| Release Date | End of Life (EOL)  |
-| ----------------------------------------- | ------------------ |
-| 1.2 – April 2019                          | -                  |
-| 1.0 – November 2018                       | May 31, 2020       |
-
-### RedisJSON
-
-| Release Date | End of Life (EOL)  |
-| ----------------------------------------- | ------------------ |
-| 1.0 – November 2017                       | -                  |
-
 ### RedisBloom
 
 | Release Date | End of Life (EOL)  |
@@ -64,3 +51,16 @@ that version.
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
 | 1.0 – June 2019                           | -                  |
+
+### RedisGraph
+
+| Release Date | End of Life (EOL)  |
+| ----------------------------------------- | ------------------ |
+| 1.2 – April 2019                          | -                  |
+| 1.0 – November 2018                       | May 31, 2020       |
+
+### RedisJSON
+
+| Release Date | End of Life (EOL)  |
+| ----------------------------------------- | ------------------ |
+| 1.0 – November 2017                       | -                  |

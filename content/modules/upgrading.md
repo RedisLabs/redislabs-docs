@@ -13,17 +13,16 @@ fixes.
 ## Acquiring the Packaged Modules
 
 1. Redis Enterprise pre-packaged modules - To download the upgrades
-    to the modules, go to the [Redis
-    Enterprise downloads
-    page](https://redislabs.com/download-center/modules/).
+    to the modules, go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
     For more specific information on developing with each module
     see:
-    1. [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
-    1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
-    1. [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
     1. [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
+    1. [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
+    1. [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
+    1. [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
+    1. [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
 1. Custom packaged modules - For instructions on packing up any [Redis module](https://redislabs.com/community/redis-modules-hub/)
-    to use in upgrades, see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
+    to use in upgrades, see [Developing with Modules]({{< relref "/modules/_index.md" >}}).
 
 ## Deploying the Packaged Module into Redis Enterprise Software
 

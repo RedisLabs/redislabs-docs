@@ -10,10 +10,11 @@ Redis modules are dedicated and optimized engines for specific data models.
 You can use either:
 
 1. [Redis Labs pre-packaged modules](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo) - These modules are pre-packaged with RS:
+    - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
     - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
+    - [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
     - [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
     - [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-    - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
 1. [Custom packaged modules](https://redislabs.com/community/redis-modules-hub/) - These modules are developed by the Redis community.
 
     You can download and install these modules or [develop your own modules]({{< relref "/rs/developing/modules/_index.md" >}}).

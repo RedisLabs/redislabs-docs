@@ -3,7 +3,7 @@ Title: RedisJSON Quick Start Tutorial
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redisjson-quickstart/
 ---
 For this quick start, you must have:

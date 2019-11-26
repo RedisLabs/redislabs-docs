@@ -13,19 +13,25 @@ Note: Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x
 Redis Labs develops, certifies, and packages modules for use with Redis Enterprise
 Software (RS) clusters. The available modules are:
 
+- RediSearch
+    - [Quick Start]({{< relref "/modules/redisearch/redisearch-quickstart.md" >}})
+    - [Developing with RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
+    - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-search/redisearch-sizing-calculator/)
 - RedisBloom
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisbloom-quickstart.md" >}})
+    - [Quick Start]({{< relref "/modules/redisbloom/redisbloom-quickstart.md" >}})
     - [Developing with RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
-- RedisGraph
+- RedisTimeSeries
+    - [Quick Start]({{< relref "/modules/redistimeseries/redistimeseries-quickstart.md" >}})
+    - [Developing with RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
+    - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-time-series/time-series-calculator/)    
+- RedisGraph (Preview)
     - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
-- RedisJSON
+- RedisJSON (Preview)
     - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisjson-quickstart.md" >}})
     - [Developing with RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-- RediSearch
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch-quickstart.md" >}})
-    - [Developing with RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
+
 
 Enterprise modules are pre-installed with RS.
 

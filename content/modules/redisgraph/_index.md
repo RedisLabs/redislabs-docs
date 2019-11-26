@@ -1,7 +1,7 @@
 ---
 Title: RedisGraph
 description:
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/developing/modules/redisgraph/
