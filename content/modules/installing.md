@@ -10,11 +10,12 @@ Redis modules are dedicated and optimized engines for specific data models.
 You can use either:
 
 1. [Redis Labs pre-packaged modules](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo) - These modules are pre-packaged with RS:
-    1. [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
-    1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
-    1. [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-    1. [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
+    - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
+    - [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
+    - [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
+    - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
 1. [Custom packaged modules](https://redislabs.com/community/redis-modules-hub/) - These modules are developed by the Redis community.
+
     You can download and install these modules or [develop your own modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
 ## Add a Module to the Cluster
@@ -44,7 +45,7 @@ To create a database that uses a module:
         - RediSearch - You can find the configuration options in the [RediSearch documentation](https://oss.redislabs.com/redisearch/Configuring.html#redisearch_configuration_options).
         - RedisGraph - You can specify the number of threads to distribute the RediSearch queries to: `THREAD_COUNT X`
 
-            By default, the thread count is the same number of cores on the node.
+            By default, the thread count is the same as the number of cores on the node.
         - RedisTimeSeries - You can find the configuration options in the [RedisTimeSeries documentation](https://oss.redislabs.com/redistimeseries/configuration/#redistimeseries-configuration-options).
     1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
