@@ -5,14 +5,15 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When a cluster fails or a database is corrupted,
-you must recover the databases with their previous configuration and data.
+When a cluster fails or a database is corrupted, you must:
 
-The configuration of the databases is recovered during cluster recovery using the CCS files. It's a [separate process]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
+1. [Restore the cluster configuration]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}) from the CCS files
+1. Recover the databases with their previous configuration and data
+
 To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
 These files are stored in the [persistence storage location]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}). Don't attempt to use CCS files at this point, as you only need those once when [recovering the cluster]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
+({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     
 The database recovery process includes:
 
