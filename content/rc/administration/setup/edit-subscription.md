@@ -4,6 +4,8 @@ description:
 weight: 40
 alwaysopen: false
 categories: ["RC Pro"]
+aliases: /rv/administration/setup_and_editing/view-edit-subscription/
+         /rc/administration/setup/edit-subscription/
 ---
 After you create a subscription, you can view the subscription details and
 change some of them, including:

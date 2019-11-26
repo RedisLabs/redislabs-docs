@@ -4,6 +4,8 @@ description:
 weight: 50
 alwaysopen: false
 categories: ["RC Pro"]
+aliases: /rv/administration/setup_and_editing/create-databases/
+         /rc/administration/setup_and_editing/create-databases/
 ---
 Once you have a subscription, you can easily create a database in Redis Cloud Pro by following these steps:
 
@@ -24,7 +26,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud Pr
         If you do not require slave shards, for example in a caching database,
         disable replication.
     1. In **Data Persistence**, select when the data is saved to [persistent storage]
-        ({{< relref "/rcpro/concepts/data-persistence.md" >}}) :
+        ({{< relref "rc/concepts/data-persistence.md" >}}) :
         - None - Data is not persisted to disk at all.
         - Append Only File (AoF) one second - Data is fsynced to disk every second.
         - Snapshot every 1 hour - A snapshot of the database is created every hour.
@@ -40,7 +42,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud Pr
         and select the endpoint of a database to hold a copy of the data.
 
         {{% note %}}You must configure [VPC Peering]
-        ({{< relref "/rcpro/administration/setup_and_editing/view-edit-subscription.md#vpc-peering" >}})
+        ({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}})
         between the VPC that this database is on and the VPC that the destination
         database is on.{{% /note %}}
 
@@ -56,9 +58,9 @@ Once you have a subscription, you can easily create a database in Redis Cloud Pr
             For more information, see [Securing Redis Client Connections]
             ({{< relref "/rs/administering/designing-production/security/client-connections.md" >}})
     1. Choose a **Data Eviction Policy** or accept the default. For more information,
-        see [Data Eviction Policies]({{< relref "/rcpro/concepts/data-eviction-policies.md" >}}).
+        see [Data Eviction Policies]({{< relref "rc/concepts/data-eviction-policies.md" >}}).
     1. Enable **Periodic Backups** and specify the [database backup]
-        ({{< relref "/rcpro/administration/configuration/backups.md" >}}) location.
+        ({{< relref "/rc/administration/configuration/backups.md" >}}) location.
     1. Choose a **Module** to use with the database. If you
         select 'RediSearch', enter the estimated number of documents
         you want to index. If you select 'RedisGraph', calculate the

@@ -4,6 +4,8 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC Pro"]
+aliases: /rv/administration/setup_and_editing/create-subscription/
+         /rc/administration/setup_and_editing/create-subscription/
 ---
 A Redis Cloud Pro subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural
@@ -99,7 +101,7 @@ databases. The subscription shows a "Pending" status and take
 approximately ten to fifteen minutes to create. You receive an
 email once your databases are ready to use.
 
-Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]({{< relref "/rcpro/administration/setup_and_editing/view-edit-subscription.md" >}}).
+Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]({{< relref "/rc/administration/setup/edit-subscription.md" >}}).
 
 Once the peering was established please define the relevant routing
 groups on your application account and Redis Cloud Pro account.

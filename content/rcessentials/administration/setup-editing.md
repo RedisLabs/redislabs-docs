@@ -6,14 +6,14 @@ alwaysopen: false
 categories: ["RC Essentials"]
 ---
 - [Creating a
-    Subscription]({{< relref "/rcessentials/administration/setup-and-editing/create-subscription.md" >}})
+    Subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}})
 - [Viewing a
-    Subscription]({{< relref "/rcessentials/administration/setup-and-editing/viewing-subscription.md" >}})
+    Subscription]({{< relref "/rc/administration/setup/edit-subscription.md" >}})
 - [Changing Subscription
-    Plans]({{< relref "/rcessentials/administration/setup-and-editing/changing-subscription-plan.md" >}})
+    Plans]({{< relref "/rc/administration/setup/change-plan.md" >}})
 - [Creating a
-    Database]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}})
+    Database]({{< relref "/rc/administration/setup/create-database.md" >}})
 - [Viewing and Editing
-    Databases]({{< relref "/rcessentials/administration/setup-and-editing/viewing-editing-database.md" >}})
+    Databases]({{< relref "/rc/administration/setup/edit-database.md" >}})
 - [Deleting
-    Databases]({{< relref "/rcessentials/administration/setup-and-editing/delete-databases.md" >}})
+    Databases]({{< relref "/rc/administration/setup/delete-database.md" >}})

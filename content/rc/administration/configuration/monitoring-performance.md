@@ -5,6 +5,7 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/configuration/monitoring-performance/
+         /rc/administration/configuration/monitoring-performance/
 ---
 Redis Cloud provides a straightforward dashboard that
 gives you good visibility into each database. Metrics can be viewed on

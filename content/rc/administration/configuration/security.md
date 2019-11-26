@@ -4,6 +4,9 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/administration/configuration/securing-your-database/
+         /rv/administration/configuration/security/
+         /rc/administration/configuration/securing-your-database/
 ---
 The security controls for your database are:
 

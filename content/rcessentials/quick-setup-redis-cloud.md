@@ -55,7 +55,7 @@ New subscription details page is opened. You must select the following:
 
 You can consider a quick overview of each tier's features upon
 selection. For more specific information, see [Creating a
-Subscription]({{< relref "/rcessentials/administration/setup-and-editing/create-subscription.md" >}}).
+Subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}).
 
 After you select the options that you want, click **Continue** to
 review pricing, set payment method and finalize your subscription.
@@ -71,7 +71,7 @@ To set up a new database:
 1. Select your subscription and expand it.
 1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page opens.
 1. Give your database a name.
-1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}}).
+1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rc/administration/setup/create-database.md" >}}).
 1. Click the **Activate** button to create your database.
 
 Note: the Endpoint shown on this page is very important because it
@@ -153,12 +153,12 @@ and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Cloud Essentials]({{< relref "/rcessentials/concepts/data-persistence-redis-cloud.md" >}}).
+1. [Data Persistence with Redis Cloud Essentials]({{< relref "/rc/concepts/data-persistence.md" >}}).
 1. [Securing Your Redis Cloud Essentials
-    Database]({{< relref "/rcessentials/administration/configure/security.md" >}}).
+    Database]({{< relref "/rc/administration/configuration/security.md" >}}).
 1. [Creating a
-    database]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}}).
+    database]({{< relref "/rc/administration/setup/create-database.md" >}}).
 1. [Redis Cloud Essentials Database
-    Backups]({{< relref "/rcessentials/administration/configure/backups.md" >}}).
+    Backups]({{< relref "/rc/administration/configuration/backups.md" >}}).
 1. [Monitoring Redis Cloud Essentials
-    Performance]({{< relref "/rcessentials/administration/configure/monitoring-alerting-metrics.md" >}}).
+    Performance]({{< relref "/rc/administration/configuration/monitoring-performance.md" >}}).

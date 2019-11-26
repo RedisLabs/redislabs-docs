@@ -4,6 +4,7 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/quick-setup/
 ---
 The steps for creating a simple Redis Cloud Pro deployment are:
 
@@ -173,12 +174,12 @@ in any existing code or apps that use Redis and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Cloud Pro]({{< relref "/rcpro/concepts/data-persistence.md" >}})
+1. [Data Persistence with Redis Cloud Pro]({{< relref "rc/concepts/data-persistence.md" >}})
 1. [Securing Your Redis Cloud Pro
-    Database]({{< relref "/rcpro/administration/configuration/securing-your-database.md" >}})
+    Database]({{< relref "/rc/administration/configuration/security.md" >}})
 1. [Creating
     Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
 1. [Redis Cloud Pro Database
-    Backups]({{< relref "/rcpro/administration/configuration/backups.md" >}})
+    Backups]({{< relref "/rc/administration/configuration/backups.md" >}})
 1. [Monitoring Redis Cloud Pro
-    Performance]({{< relref "/rcpro/administration/configuration/monitoring-performance.md" >}}).
+    Performance]({{< relref "/rc/administration/configuration/monitoring-performance.md" >}}).

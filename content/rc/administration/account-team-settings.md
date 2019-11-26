@@ -9,7 +9,7 @@ On this page you can view settings for your Redis Cloud Pro account and team.
 You can add or edit your VAT ID, the account Time Zone, and a new
 Relic license key.
 
-When you set up [SSL/TLS]({{< relref "/rcessentials/securing-redis-cloud-connections.md" >}}) for your account,
+When you set up [SSL/TLS]({{< relref "/rc/securing-redis-cloud-connections.md" >}}) for your account,
 you must supply the downloadable Redis Labs CA Certificate from this page.
 
 ![settings](/images/rcpro/settings.png)

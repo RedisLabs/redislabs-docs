@@ -6,14 +6,14 @@ alwaysopen: false
 categories: ["RC Essentials"]
 ---
 To view your database, go to the Menu and click on "Databases". You see a list of your databases grouped by
-[Subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}).
+[Subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}).
 
 ![Viewing databases in
 UI](/images/rcessentials/databases_main.png?width=600&height=366)
 
 In this view, you have pertinent information about each database and
 some of its features. Since a
-[Subscription]({{< relref "/rcessentials/administration/setup-and-editing/create-subscription.md" >}})
+[Subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}})
 can have multiple databases, you can add one to a Subscription by
 clicking on the **+** below each Subscription table.
 
@@ -23,10 +23,10 @@ the title of the page:
 - The pencil icon is for [editing the database](#edit-a-database)
 - The trash can is for deleting the database
 - The arrow icon is for [importing
-    data]({{< relref "/rcessentials/how-to/importing-dataset-redis-cloud.md" >}})
+    data]({{< relref "/rc/how-to/importing-data.md" >}})
     into the database
 - The clock is for [backing up the
-    database]({{< relref "/rcessentials/administration/configure/backups.md" >}})
+    database]({{< relref "/rc/administration/configuration/backups.md" >}})
     (if backups are already configured)
 
 To Edit a database, click on the pencil icon.
@@ -43,4 +43,4 @@ the database settings just as they were when the database was created.
 {{< youtube nrN7rAr73co >}}
 
 For detailed descriptions of every field, read [Create a
-Database]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}}).
+Database]({{< relref "/rc/administration/setup/create-database.md" >}}).

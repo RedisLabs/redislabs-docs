@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RC Pro"]
+aliases: /rc/concepts/clustering-redis-cloud/
 ---
 Redis is mostly a single-threaded process to provide high performance and simple.
 To let you also take advantage of clustering,

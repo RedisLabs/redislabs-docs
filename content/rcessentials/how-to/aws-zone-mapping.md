@@ -58,12 +58,12 @@ For existing subscriptions in Redis Cloud Essentials, you now see the Availabili
 they are using. To reduce the latency described above:
 
 1. [Create a new
-    subscription]({{< relref "/rcessentials/administration/setup-and-editing/create-subscription.md" >}}) in
+    subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}) in
     the correct AZ
 1. [Create a new
-    database]({{< relref "/rcessentials/administration/setup-and-editing/creating-databases.md" >}})
+    database]({{< relref "/rc/administration/setup/create-database.md" >}})
 1. [Migrate your
-    data]({{< relref "/rcessentials/how-to/importing-dataset-redis-cloud.md" >}})
+    data]({{< relref "/rc/how-to/importing-data.md" >}})
     over to the new database.
 
 While simple, this causes some downtime. If downtime is not an
