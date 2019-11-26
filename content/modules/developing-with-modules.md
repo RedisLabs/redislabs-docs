@@ -25,13 +25,12 @@ Software (RS) clusters. The available modules are:
     - [Developing with RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-time-series/time-series-calculator/)    
 - RedisGraph (Preview)
-    - [Quick Start](https://oss.redislabs.com/redisgraph/#quickstart)
-    - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
+    - [Quick Start]({{< relref "/modules/redisgraph/redisgraph-quickstart.md" >}})
+    - [Developing with RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
 - RedisJSON (Preview)
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisjson-quickstart.md" >}})
+    - [Quick Start]({{< relref "/modules/redisjson/redisjson-quickstart.md" >}})
     - [Developing with RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-
 
 Enterprise modules are pre-installed with RS.
 
