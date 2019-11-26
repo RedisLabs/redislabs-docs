@@ -1,7 +1,7 @@
 ---
 Title: RediSearch
 description:
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/developing/modules/redisearch/

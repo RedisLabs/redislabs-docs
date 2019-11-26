@@ -1,7 +1,7 @@
 ---
-Title: RediSearch Release Notes
+Title: RediSearch v1.4 Release Notes
 description:
-weight: 1
+weight: 90
 alwaysopen: false
 categories: ["Modules"]
 ---

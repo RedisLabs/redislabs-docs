@@ -1,32 +1,11 @@
 ---
-Title: Installing a Module
+Title: Creating a database with modules in RS
 description:
-weight: $weight
+weight: 2
 alwaysopen: false
 categories: ["Modules"]
-aliases: /rs/developing/modules/installing/
+aliases: /modules/rs
 ---
-Redis modules are dedicated and optimized engines for specific data models.
-You can use either:
-
-1. [Redis Labs pre-packaged modules](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo) - These modules are pre-packaged with RS:
-    - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
-    - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
-    - [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
-    - [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
-    - [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-1. [Custom packaged modules](https://redislabs.com/community/redis-modules-hub/) - These modules are developed by the Redis community.
-
-    You can download and install these modules or [develop your own modules]({{< relref "/rs/developing/modules/_index.md" >}}).
-
-## Add a Module to the Cluster
-
-1. Login to the Redis Enterprise Software web UI.
-1. Go to: **settings** > **redis<sup>e</sup> modules**
-1. Click **Add Module** and browse to the module package that you want to install.
-    ![add_module](/images/rs/add_module.png)
-1. Make sure that the module name and version are correct and click **Upload**.
-    ![upload_module](/images/rs/upload_module.png)
 
 ## Create a Database that Uses a Module
 

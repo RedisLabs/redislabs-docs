@@ -1,7 +1,7 @@
 ---
 Title: RedisTimeSeries Release Notes
 description:
-weight: 90
+weight: 1
 alwaysopen: false
 categories: ["Modules"]
 ---
