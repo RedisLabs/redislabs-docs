@@ -5,7 +5,7 @@ weight: 40
 alwaysopen: false
 categories: ["Modules"]
 ---
-To use RedisGraph, the first thing you need is to [download and install the package]({{< relref "/modules/installing.md" >}})
+To use RedisGraph, the first thing you need is to [download and install the package]({{< relref "/modules/create-database-rs.md" >}})
 into the RS cluster, and then create a database that uses the module.
 
 {{< embed-md "tryout-redisgraph.md" >}}

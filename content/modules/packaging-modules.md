@@ -66,4 +66,4 @@ $ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
 Go to [the ramp](https://github.com/RedisLabs/RAMP) github [page](https://github.com/RedisLabs/RAMP)
 for more information each command line switch in ramp.
 
-To deploy the packaged module, see [Installing a Module]({{< relref "/modules/installing.md" >}}).
+To deploy the packaged module, see [Installing a Module]({{< relref "/modules/create-database-rs.md" >}}).

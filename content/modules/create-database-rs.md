@@ -13,7 +13,7 @@ aliases:
 
 {{% note %}}
 Before you create a database with a module,
-we recommend that you [upgrade the module]({{< relref "/modules/upgrading.md" >}}) to the latest version.
+we recommend that you [upgrade the module]({{< relref "/modules/upgrading-rs.md" >}}) to the latest version.
 {{% /note %}}
 
 To create a database that uses a module:
