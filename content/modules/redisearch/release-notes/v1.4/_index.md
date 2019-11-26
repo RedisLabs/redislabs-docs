@@ -1,5 +1,5 @@
 ---
-Title: RediSearch v1.4 Release Notes
+Title: v1.4
 description:
 weight: 90
 alwaysopen: false

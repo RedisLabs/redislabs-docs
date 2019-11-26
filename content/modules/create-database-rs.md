@@ -1,5 +1,5 @@
 ---
-Title: Creating a database with modules in RS
+Title: Creating a database with modules in Redis Enterprise Software
 description:
 weight: 2
 alwaysopen: false

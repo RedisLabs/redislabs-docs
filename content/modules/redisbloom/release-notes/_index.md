@@ -1,5 +1,5 @@
 ---
-Title: RedisBloom Release Notes
+Title: Release Notes
 description:
 weight: 1
 alwaysopen: false

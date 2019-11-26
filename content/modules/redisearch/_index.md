@@ -4,7 +4,9 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["Modules"]
-aliases: /rs/developing/modules/redisearch/
+aliases:
+  - /rs/developing/modules/redisearch/
+  - /modules/redisearch
 ---
 The RediSearch Module combined with Redis Enterprise Software
 (RS) provides a high performance, integrated query, and full-text search

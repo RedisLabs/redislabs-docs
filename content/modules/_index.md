@@ -32,9 +32,10 @@ The available modules are:
     - [Developing with RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
 
 
-## Community modules
+## Community and custom modules
 
-1. [Custom packaged modules](https://redislabs.com/community/redis-modules-hub/) - These modules are developed by the Redis community.
+[Custom packaged modules](https://redislabs.com/community/redis-modules-hub/) - These modules are developed by the Redis community.
+You can also [package your own custom module]({{< relref "/modules/packaging-modules.md" >}}).
 
 
 {{%allchildren style="h2" description="true"%}}

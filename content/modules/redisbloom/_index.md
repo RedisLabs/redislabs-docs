@@ -4,7 +4,9 @@ description:
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
-aliases: /rs/developing/modules/bloom-filters/
+aliases:
+  - /rs/developing/modules/bloom-filters/
+  - /modules/redisbloom
 ---
 A Bloom filter is a probabilistic data structure which provides an
 efficient way to verify that an entry is certainly *not* in a set. This
