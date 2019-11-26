@@ -20,8 +20,8 @@ fixes.
     see:
     1. [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
-    1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
-    1. [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    1. [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
+    1. [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
 1. Custom packaged modules - For instructions on packing up any [Redis module](https://redislabs.com/community/redis-modules-hub/)
     to use in upgrades, see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 

@@ -4,7 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/getting-started/creating-database/redisjson-quick-start/
+aliases: /rs/getting-started/creating-database/redisjson-quickstart/
 ---
 For this quick start, you must have:
 

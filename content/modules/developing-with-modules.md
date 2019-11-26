@@ -21,11 +21,11 @@ Software (RS) clusters. The available modules are:
     - [Developing with RedisGraph](https://oss.redislabs.com/redisgraph/#using-redisgraph)
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
 - RedisJSON
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisjson-quick-start.md" >}})
-    - [Developing with RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
+    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisjson-quickstart.md" >}})
+    - [Developing with RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
 - RediSearch
-    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch.md" >}})
-    - [Developing with RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    - [Quick Start]({{< relref "/rs/getting-started/creating-database/redisearch-quickstart.md" >}})
+    - [Developing with RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
 
 Enterprise modules are pre-installed with RS.
 

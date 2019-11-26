@@ -4,7 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/getting-started/creating-database/redisearch/
+aliases: /rs/getting-started/creating-database/redisearch-quickstart/
 ---
 For this quick start, you will need the following:
 

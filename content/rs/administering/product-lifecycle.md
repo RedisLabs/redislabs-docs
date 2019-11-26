@@ -9,7 +9,7 @@ You can view the Redis Enterprise Software subscription agreement [here](https:/
 This Product Lifecycle fully reflects our subscription agreement.
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
-Redis Enterprise modules follow the [modules lifecycle]({{< relref /modules/modules-lifecycle.md" >}}).
+Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).
 
 ## Release Numbering
 
