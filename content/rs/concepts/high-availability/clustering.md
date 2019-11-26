@@ -149,8 +149,8 @@ the following limitations:
 
 - **Multi-key commands**: Redis offers several commands that accept
     multiple keys as arguments. In a clustered database, most multi-key
-    commands are not allowed across tags. The following multi-key
-    commands **are allowed** across tags: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
+    commands are not allowed across slots. The following multi-key
+    commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
 
     Commands that affect all keys or keys that match a specified pattern are allowed
     in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS
@@ -171,4 +171,4 @@ the following limitations:
     but do not result in the proper violation error being returned.
 - **Renaming keys**: The use of the RENAME / RENAMENX commands is
     allowed only when the key's original and new values are mapped to
-    the same tag.
+    the same slot.
