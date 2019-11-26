@@ -4,7 +4,9 @@ description:
 weight: 2
 alwaysopen: false
 categories: ["Modules"]
-aliases: /modules/rs
+aliases:
+  - /modules/rs
+  - /rs/developing/modules/upgrading/
 ---
 
 ## Create a Database that Uses a Module

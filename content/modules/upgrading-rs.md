@@ -4,7 +4,9 @@ description:
 weight: 3
 alwaysopen: false
 categories: ["Modules"]
-aliases: /modules/upgrading/rs
+aliases:
+  - /modules/upgrading/rs
+  - /rs/developing/modules/upgrading/
 ---
 
 Note: Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x
