@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom Quick Start Tutorial
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redisbloom/

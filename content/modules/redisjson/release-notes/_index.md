@@ -1,7 +1,7 @@
 ---
 Title: Release Notes
 description:
-weight: 1
+weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---

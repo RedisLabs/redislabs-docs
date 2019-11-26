@@ -1,7 +1,7 @@
 ---
 Title: Using RediSearch in Redis Enterprise Software (RS)
 description:
-weight: 40
+weight: 30
 alwaysopen: false
 categories: ["Modules"]
 ---
