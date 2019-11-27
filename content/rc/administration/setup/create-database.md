@@ -7,9 +7,9 @@ categories: ["RC Pro"]
 aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
 ---
-Once you have a subscription, you can easily create a database in Redis Cloud Pro by following these steps:
+Once you have a subscription, you can easily create a database in Redis Cloud by following these steps:
 
-1. In the Redis Cloud Pro menu, click **Databases**.
+1. In the Redis Cloud menu, click **Databases**.
 1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Configure the database:
     1. Enter a **Database Name** that is up to 40 characters long.
@@ -69,7 +69,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud Pr
         your team when the specified threshold is passed.
 1. Click **Activate**.
 
-After you click **Activate**, Redis Cloud Pro:
+After you click **Activate**, Redis Cloud:
 
 - Calculates the number of shards needed for this database.
 - Calculate if is enough space to fit the database in the current infrastructure
@@ -77,9 +77,9 @@ After you click **Activate**, Redis Cloud Pro:
 - Checks that you have enough unused shards in your subscription.
 
 If a new infrastructure needs to be deployed, or more shards need to be
-purchased, Redis Cloud Pro shows you the additional instances/shards that you need for this
+purchased, Redis Cloud shows you the additional instances/shards that you need for this
 database and the cost of the additional resources. You can review this information
-and approve the additional resources. After you approve, Redis Cloud Pro activates the resources.
+and approve the additional resources. After you approve, Redis Cloud activates the resources.
 
 When activation is completed, creates the database. During this process you can see:
 

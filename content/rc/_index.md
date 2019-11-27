@@ -9,11 +9,11 @@ Redis Cloud is based on the proven Redis Enterprise technology, serving thousand
 customers of [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}).
 
-With Redis Cloud Essentials (RC Essentials),
+With Redis Cloud (RC),
 you can select a supported cloud provider such as Amazon Web Services (AWS), Google Cloud or Microsoft Azure
 and create enterprise-grade Redis databases that are fully compatible with the open-source Redis clients.
 
-With Redis Cloud Pro, you get all of that plus:
+With Redis Cloud, you get all of that plus:
 
 - A dedicated cloud environment
 - Full enterprise features
@@ -77,7 +77,7 @@ that develops and maintains open-source Redis
 and the professionals who manage hundreds of thousands of Redis databases daily.
 Enjoy our 24/7 support via online helpdesk or phone.
 
-The status of the RC Essentials infrastructure is in real-time on the [Status](https://status.redislabs.com/) page.
+The status of the RC infrastructure is in real-time on the [Status](https://status.redislabs.com/) page.
 
 ### Encryption and authentication
 
@@ -110,7 +110,7 @@ crossed.
 With high volume plans you can use as many database connections as you want.
 
 <!-- Video out of date -->
-<!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
+<!-- If you'd rather watch an overview of Redis Cloud, watch the below
 video: -->
 
 <!-- {{< youtube_start y3tvS2kCl5I 76 >}} -->

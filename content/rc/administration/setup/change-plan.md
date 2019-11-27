@@ -1,9 +1,9 @@
 ---
-Title: Changing Redis Cloud Essentials Plans
+Title: Changing Redis Cloud Plans
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/changing-subscription-plan/
 ---
 It is very easy to upgrade or downgrade your subscription at any time,

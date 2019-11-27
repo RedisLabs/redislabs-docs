@@ -36,11 +36,11 @@ complexity of a cluster-aware Redis client. This allows applications to
 benefit from using the cluster without performing any code changes, even
 if they were not designed to use it beforehand.
 
-When creating or editing a Redis database on Redis Cloud Pro, the
+When creating or editing a Redis database on Redis Cloud, the
 system automatically calculates the number of shards needed based on
 the database memory limit and required throughput.
 
-**Note:** For Redis Cloud Essentials, clustering is only available in the
+**Note:** For Redis Cloud, clustering is only available in the
 "Pay-As-You-Go" subscription.
 
 ![subscription-selection-2](/images/rcessentials/subscription-selection-2.png?width=600&height=221)
@@ -68,12 +68,12 @@ are supported with the following limitations:
     allowed only when both the key's original name and its new name are
     mapped to the same hash slot.
 1. **Variadic commands**: The use of (MGET, MSET, HMGET, HMSET, etc..)
-    and pipelining are supported with Redis Cloud Essentials cluster
+    and pipelining are supported with Redis Cloud cluster
     like if it were a non-cluster DB.
 
 ## Changing the Sharding Policy
 
-The clustering configuration of a Redis Cloud Pro instance can be
+The clustering configuration of a Redis Cloud instance can be
 changed. However, sharding policy changes trigger the deletion
 (i.e. FLUSHDB) of the data before they can be applied. These changes
 are:

@@ -5,7 +5,7 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 ---
-On this page you can view settings for your Redis Cloud Pro account and team.
+On this page you can view settings for your Redis Cloud account and team.
 You can add or edit your VAT ID, the account Time Zone, and a new
 Relic license key.
 

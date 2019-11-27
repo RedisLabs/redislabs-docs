@@ -60,14 +60,14 @@ You can downgrade or upgrade your subscription at any time with no downtime or p
 {{% /expand%}}
 
 {{%expand "What is the difference between Redis Cloud Pro and Redis Cloud Essentials?" %}}
-Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, however Redis Cloud Pro runs on a dedicated VPC and offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB, as well as Active-Active Geo Distribution, Active-Passive Geo Distribution, Modules integration and more enterprise features. Running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud Pro is lower in cost than managing your own Redis instances on the cloud.
+Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, however Redis Cloud runs on a dedicated VPC and offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB, as well as Active-Active Geo Distribution, Active-Passive Geo Distribution, Modules integration and more enterprise features. Running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud is lower in cost than managing your own Redis instances on the cloud.
 {{% /expand%}}
 
-{{%expand "Why should I run Redis Cloud Pro on Flash?" %}}
+{{%expand "Why should I run Redis Cloud on Flash?" %}}
 Redis Labs’ Redis on Flash technology enables you to run Redis on high IOPS SSD instances with high throughput and the same sub-millisecond latencies as RAM-based Redis.
 The economic benefit is dramatic:
 
 - The cost of cloud instances required to support your database can be slashed by up to 70%, while maintaining the same blazing fast performance.
 - As your data grows, and your processing needs increase, you can achieve cost-effective high speed operational and analytic processing with the versatility of Redis and the cost efficiency of Flash memory.
-- If your dataset is larger than 500GB, running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud Pro is lower in cost than managing your own Redis instances on the cloud.
+- If your dataset is larger than 500GB, running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud is lower in cost than managing your own Redis instances on the cloud.
 {{% /expand%}}

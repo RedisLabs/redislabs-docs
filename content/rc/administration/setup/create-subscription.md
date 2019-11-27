@@ -7,7 +7,7 @@ categories: ["RC Pro"]
 aliases: /rv/administration/setup_and_editing/create-subscription/
          /rc/administration/setup_and_editing/create-subscription/
 ---
-A Redis Cloud Pro subscription consists of a selected cloud
+A Redis Cloud subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural
 model, memory limit and feature set. You can have multiple subscriptions
 in different providers and regions, all easily managed from a single
@@ -19,7 +19,7 @@ Creating a subscription is a four-step process:
 
 1. Setup - Configure the general settings of the new subscription.
 2. Sizing - Describe the specification of the databases you want to
-    provision. After this step, Redis Cloud Pro calculates the optimal
+    provision. After this step, Redis Cloud calculates the optimal
     configuration and required infrastructure.
 3. Review and Create - You are shown the required
     infrastructure and the subscription price. Enter your payment method
@@ -45,7 +45,7 @@ For a new subscription, you need to provide the following:
 1. Advanced Options
     1. You can enter the required Deployment CIDR.
     The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)
-    an IPv4 subnet that you want Redis Cloud Pro to use for this subscription.
+    an IPv4 subnet that you want Redis Cloud to use for this subscription.
     For a standard deployment, you can specify 10.0.1.0/24. Make sure that the CIDR
     you provide does not conflict with your application VPC CIDR to avoid problems
     when you peer the VPC to your.
@@ -101,15 +101,15 @@ databases. The subscription shows a "Pending" status and take
 approximately ten to fifteen minutes to create. You receive an
 email once your databases are ready to use.
 
-Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud Pro VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]({{< relref "/rc/administration/setup/edit-subscription.md" >}}).
+Once provisioning is complete, please set up a peer between your **application VPC** and **Redis Cloud VPC**. To better understand how to set up VPC peering see [View and Edit a Subscription]({{< relref "/rc/administration/setup/edit-subscription.md" >}}).
 
 Once the peering was established please define the relevant routing
-groups on your application account and Redis Cloud Pro account.
+groups on your application account and Redis Cloud account.
 
 For more information and pricing, please go
 [here](https://redislabs.com/redis-enterprise/pro/pricing/).
 
-<!-- If you'd rather watch an overview of Redis Cloud Pro, watch the below
+<!-- If you'd rather watch an overview of Redis Cloud, watch the below
 video: -->
 
 <!-- This video is out of date
