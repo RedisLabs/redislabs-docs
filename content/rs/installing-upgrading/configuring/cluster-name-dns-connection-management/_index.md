@@ -77,7 +77,7 @@ the cluster part of your domain and are able to update the DNS.
         - Your domain is: mydomain.com
         - You would like to name the Redis Enterprise Software cluster:
             redislabscluster
-        - You have two nodes in the cluster:
+        - You have three nodes in the cluster:
            - node1 with IP 1.1.1.1
            - node2 with IP 2.2.2.2
            - node3 with IP 3.3.3.3
