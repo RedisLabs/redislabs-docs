@@ -1,8 +1,8 @@
 ---
 Title: How Tos
 description:
-weight: 40
+weight: 70
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC Pro"]
 ---
 {{%allchildren style="h2" description="true"%}}

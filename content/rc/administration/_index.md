@@ -1,12 +1,12 @@
 ---
 Title: Administration
 description:
-weight: 30
+weight: 50
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 ---
-While there is very little configuration of Redis Cloud Essentials
-required, there are some things that you can and may want to do to
-tailor a database to your use case.
+Redis Cloud manage most of the administration of your deployment automatically.
+
+You can manage these areas of your RC deployment:
 
 {{%allchildren style="h2" description="true"%}}

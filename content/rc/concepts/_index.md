@@ -1,11 +1,11 @@
 ---
-Title: Concepts behind Redis Cloud Essentials
+Title: Concepts
 description:
-weight: 20
+weight: 30
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 ---
 This section of pages contains content that describes the main concepts
-and architecture that you need to know about for Redis Cloud Essentials.
+that Redis Cloud is built around.
 
 {{%allchildren style="h2" description="true"%}}
