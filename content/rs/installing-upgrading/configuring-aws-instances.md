@@ -23,13 +23,13 @@ is configured to use this volume.
 
 Note: After installing the RS package on the instance (for additional
 details, refer to [Accessing and installing the setup
-package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
+package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}))
 and **before** running through the setup process (for additional
 details, refer to [Initial setup - creating a new
-cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}),
+cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
-chown redislabs:redislabs /\< ebs folder name \>
+`chown redislabs:redislabs /\< ebs folder name \>`
 
 Another feature that may be of importance to you is the use of
 Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a
@@ -50,7 +50,7 @@ requirements]({{< relref "/rs/administering/designing-production/hardware-requir
 
 In addition, some instance types are optimized for EBS backed volumes
 and some are not. If you are using persistent storage, you should use an
-instance type that is, if disk drain rate matters to your database
+instance type that is, especially if disk drain rate matters to your database
 implementation.
 
 ## Security
