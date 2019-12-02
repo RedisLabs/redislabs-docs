@@ -20,7 +20,7 @@ To access the cluster REST API documentation, either:
     1. Open the `rlec_docs\html\index.html` file in a web browser.
 - Open the HTML files in an installed RS node:
     1. Connect to the terminal of an RS node.
-    1. Change directory to `/opt`.
+    1. Change directory to the installation directory of RS, for example `/opt`.
     1. Copy the rlec_rest_api.tar.gz package to a host with a web browser and unarchive it.
     1. Open the `rlec_docs\html\index.html` file in a web browser.
 {{% /note %}}
