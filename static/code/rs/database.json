@@ -1865,7 +1865,7 @@
         "thresholds": [],
         "timeFrom": null,
         "timeShift": null,
-        "title": "IOPS",
+        "title": "Flash disk IOs",
         "tooltip": {
             "shared": true,
             "sort": 0,
