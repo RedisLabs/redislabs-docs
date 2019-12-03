@@ -31,6 +31,7 @@ To create a database that uses a module:
         - RedisTimeSeries - You can find the configuration options in the [RedisTimeSeries documentation](https://oss.redislabs.com/redistimeseries/configuration/#redistimeseries-configuration-options).
     1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
+    Here it is in action:
     {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
 1. Click **Show advanced options** and enter a port number for the database, such as: **12543**.

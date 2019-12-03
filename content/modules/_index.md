@@ -8,8 +8,9 @@ categories: ["Modules"]
 
 ## Redis Labs Modules
 
-Redis Labs develops, certifies, and packages modules for use with Redis Enterprise
-Software (RS) clusters and are also available on Redis Cloud Pro.
+Redis Labs develops, certifies, and packages modules for [Redis Enterprise
+Software (RS)]({{< relref "/rs" >}}) clusters and [Redis Cloud Pro]({{< relref "/rv" >}}).
+
 The available modules are:
 
 - RediSearch
@@ -22,7 +23,7 @@ The available modules are:
 - RedisTimeSeries
     - [Intro to RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redistimeseries/redistimeseries-quickstart.md" >}})
-    - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-time-series/time-series-calculator/)    
+    - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-time-series/time-series-calculator/)
 - RedisGraph (Preview)
     - [Intro to RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redisgraph/redisgraph-quickstart.md" >}})
@@ -31,8 +32,7 @@ The available modules are:
     - [Intro to RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redisjson/redisjson-quickstart.md" >}})
 
-
 ## Community and custom modules
 
-[Custom packaged modules](https://redislabs.com/community/redis-modules-hub/) - These modules are developed by the Redis community.
-You can also [package your own custom module]({{< relref "/modules/packaging-modules.md" >}}).
+[Custom modules](https://redislabs.com/community/redis-modules-hub/) are developed, packaged, and distributed by the Redis community.
+You can contribute to the Redis community with your own [custom module]({{< relref "/modules/packaging-modules.md" >}}).
