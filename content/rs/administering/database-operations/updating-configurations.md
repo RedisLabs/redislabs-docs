@@ -36,6 +36,8 @@ most database settings only apply to the CRDB instance that you are editing, inc
 - TLS mode
 - Periodic backup
 
+You can change the global configuration of the CRDB from the command-line with: `crdb-cli crdb update`
+
 ## Participating Clusters
 
 You can add and remove participating clusters of a CRDB to change the CRDB topology.
@@ -50,6 +52,7 @@ All of the existing participating clusters must be online and in a syncing state
 After you add new participating clusters to an existing CRDB,
 the new CRDB instance can accept connections and read operations.
 The new instance does not accept write operations until it is in the syncing state.
+New participating clusters create the CRDB instance based on the global CRDB configuration.
 
 All of the existing participating clusters must be online and in a syncing state when you remove an online participating clusters.
 If you must remove offline participating clusters, you can do this with forced removal.
