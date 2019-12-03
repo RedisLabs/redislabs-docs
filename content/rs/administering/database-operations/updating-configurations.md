@@ -22,7 +22,7 @@ For [CRDB instances](#updating-crdb-configuration), most database settings only 
 
 ## Editing CRDB Configuration
 
-A Conflict-Free Replicated Database (CRDB) is a global database that spans multiple Redis Enterprise clusters
+A Conflict-Free Replicated Database (CRDB) is a global database that spans multiple Redis Enterprise clusters.
 The clusters that host instances of the CRDB are called participating clusters.
 When you create a CRDB you must specify the participating clusters that host the CRDB instances.
 
@@ -38,39 +38,30 @@ most database settings only apply to the CRDB instance that you are editing, inc
 
 ## Participating Clusters
 
-If the CRDB topology needs to change, you can add and remove Participating Clusters of a CRDB.
-Use the Participating Clusters list to manage the changes to CRDB topology in the UI.
-You can make one or more changes at any one time to the Participating Cluster list.
+You can add and remove participating clusters of a CRDB to change the CRDB topology.
+Use the participating clusters list to manage the changes to CRDB topology in the UI.
+You can make multiple changes at once to the Participating Cluster list.
 The changes you make to the list are committed when the database configuration is saved.
 
 ![pasted-image-0-1](/images/rs/pasted-image-0-1.png?width=1534&height=233)
 
-When adding new Participating Clusters, a CRDB requires that all
-existing participating clusters are online and in a syncing state. If
-you need to remove one or more offline Participating Clusters, all
-remaining Participating Clusters need to be online and in a syncing
-state.
+All of the existing participating clusters must be online and in a syncing state when you add new participating clusters.
 
-After any new Participating Clusters are added to an existing CRDB, the
-new CRDB instance does allow connections and read operations, however it
-does not allow write operations until it catches up to the syncing
-state.
+After you add new participating clusters to an existing CRDB,
+the new CRDB instance can accept connections and read operations.
+The new instance does not accept write operations until it is in the syncing state.
 
-It is recommended that removals are done when all Participating
-Clusters of the CRDB are online. However it is possible to remove
-offline Participating Clusters using forced removal. Participating
-Cluster removed forcefully may later resurrect back to life. However the
-forcefully removed Participating Cluster will be out of date on CRDB
-membership. Even though, it still thinks it is part of the CRDBonce a
-Participating Cluster is removed, all updates received by remaining CRDB
-Instances from the removed CRDB instance, are
-rejected.
+All of the existing participating clusters must be online and in a syncing state when you remove an online participating clusters.
+If you must remove offline participating clusters, you can do this with forced removal.
+If a participating cluster that was removed forcefully returns attempts to re-join the cluster,
+it will have an out of date on CRDB membership.
+The joined participating clusters reject updates sent from the removed participating cluster.
 
 ## TLS Authentication and Encryption
 
-To prevent unauthorized access to your data, you can configure RS to secure
-communications with TLS protocol (the more secure successor to SSL). When you create
-CRDBs, you can specify TLS in two ways:
+To prevent unauthorized access to your data, you can configure RS to secure communications with TLS protocol
+(the more secure successor to SSL).
+When you create CRDBs, you can specify TLS in two ways:
 
 1. [Require TLS for All Communications]({{< relref "/rs/administering/designing-production/security/tls-configuration.md#configuring-tls-for-replica-of-communication-only-on-the-source-database" >}}) -
     This configures the CRDB to support TLS for both data access operations performed
