@@ -16,9 +16,8 @@ notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_nota
 ![Source
 IP/Subnet](/images/rc/source_ip_subnet-1.png?width=600&height=102)
 
-In case you require more source IP rules than your current REC
-plan entitles you to, you can see the different plans and the maximum
-number of source IP rules that they support [here](https://redislabs.com/pricing).
+If you need more source IP rules than your current REC plan includes,
+consider [changing to a plan](https://redislabs.com/redis-enterprise-cloud/essentials-pricing/) with more source IP rules.
 
 You may change your subscription at any time by going to Databases =\>
 Configuration =\> Edit =\> Access Control & Security.
