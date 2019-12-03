@@ -14,7 +14,7 @@ fixes.
 1. Redis Enterprise pre-packaged modules - To download the upgrades
     to the modules, go to the [Redis
     Enterprise downloads
-    page](https://redislabs.com/products/redis-pack/downloads/).
+    page](https://redislabs.com/download-center/modules/).
     For more specific information on developing with each module
     see:
     1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
