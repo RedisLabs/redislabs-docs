@@ -71,6 +71,8 @@ You must select **Redis 5** as the Redis version to use CRDB and RoF.
 
     - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
         The intercluster synchronization is most efficient when it reads from slave shards.
+    - **Redis password** - [Optional] A password to protect access to the database you're about to create
+    - **Endpoint port number** - [Mandatory] A free port in the range [10000,19999] to be used to form the database's endpoint
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
