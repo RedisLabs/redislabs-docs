@@ -6,7 +6,7 @@ categories: ["RI"]
 path: memory-optimizations/compress-field-names/
 altTag: Compress Field Names
 ---
-Redis Hash consists of Fields and their values. Like values, field name also consumes meory, so it is required to keep in mind while assigning field names. If you have a large number of hashes with similar field names, the memory adds up significantly.
+Redis Hash consists of Fields and their values. Like values, field name also consumes memory, so it is required to keep in mind while assigning field names. If you have a large number of hashes with similar field names, the memory adds up significantly.
 To reduce memory usage, you can use smaller field names.
 
 ## What do We Mean By Compress Field Names
