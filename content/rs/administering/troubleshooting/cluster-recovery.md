@@ -40,6 +40,9 @@ The cluster recovery process includes:
 - We recommend that you use clean persistent storage drives for the new cluster.
     If you use the original storage drives,
     make sure that you backup the files on the original storage drives to a safe location.
+- The cluster configuration file that you want to use as the configuration for the cluster.
+    The cluster configuration file is `/css/ccs-redis.rdb` on each of the nodes.
+    Copy the cluster configuration file from one of the nodes to the persistent storage that you want to connect to the first node.
 
 ## Recovering the Cluster
 
@@ -78,9 +81,7 @@ of the configuration and persistence files on each of the nodes.
 
     {{% expand "Command syntax" %}}
 `<filename>` - The full path of the old cluster configuration file in the persistent storage.
-The cluster configuration file is /css/ccs-redis.rdb.
-Before you copy the ccs file, confirm that all of the ccs files on each node are identical.
-If the ccs files are not identical, contact Redis Labs Support for assistance.
+The cluster configuration file is `/css/ccs-redis.rdb`.
 
 `<node_uid>` - The id of the node, in this case `1`.
 
