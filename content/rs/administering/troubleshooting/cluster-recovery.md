@@ -41,7 +41,7 @@ The cluster recovery process includes:
     If you use the original storage drives,
     make sure that you backup the files on the original storage drives to a safe location.
 - The cluster configuration file that you want to use as the configuration for the cluster.
-    The cluster configuration file is `/css/ccs-redis.rdb` on each of the nodes.
+    The cluster configuration file is `/css/ccs-redis.rdb` on the persistent storage for each node.
     Copy the cluster configuration file from one of the nodes to the persistent storage that you want to connect to the first node.
 
 ## Recovering the Cluster
