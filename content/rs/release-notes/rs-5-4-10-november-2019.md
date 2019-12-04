@@ -50,7 +50,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 ## Information
 
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle/).
-- When using Google Chrome browser on Catalina (new macOS) with self-signed certificate for the UI, the self-signed certificate should be updated to include extendedKeyUsage field (or contact [Support](support@redislabs.com)).
+- When using Google Chrome browser on Catalina (new macOS) with self-signed certificate for the UI generated after June 2019, the self-signed certificate should be updated to include extendedKeyUsage field (or contact [Support](support@redislabs.com)).
 
 ## Important Fixes
 
