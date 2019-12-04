@@ -50,6 +50,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 ## Information
 
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle/).
+- When using Google Chrome browser on Catalina (new macOS) with self-signed certificate for the UI, the self-signed certificate should be updated to include extendedKeyUsage field (or contact [Support](support@redislabs.com)).
 
 ## Important Fixes
 
@@ -66,12 +67,14 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 - RS30165 - Fixed failover scenario that did not take place during node restart
 - RS29250 - REST API documentation was updated to include the SFTP and Mount Point backup/export options
 - RS27327 - Improved the backup timing when using the database parameter of ‘backup_interval_offset’ through the REST API
+- RS33883 - HCSAN command in Active-Active Redis updated to return Integer instead of a String.
 - Fixed a limitation so Redis 5 and Redis 4 can be selected as the Redis version to use CRDB and RoF
 
 ## Known Limitations
 
 ### Upgrade
 
+- If upgrading an Active-Active Redis with active AOF from version RS 5.4.2 or earlier to a version RS 5.4.4 or later, users must perform BGREWRITEAOF command on all shards after the upgrade.
 - [RS 5.4.2]({{< relref "/rs/release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis (CRDB) capabilities
     that improve its compatibility with open source Redis.
     Now the string data-type in Active-Active Redis (CRDB) is implicitly and dynamically typed, just like open source Redis.
