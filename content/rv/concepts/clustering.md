@@ -31,7 +31,7 @@ benefit from using the cluster without performing any code changes, even
 if they were not designed to use it beforehand.
 
 When creating or editing a Redis database on Redis Cloud Pro, the
-system will automatically calculate the number of shards needed based on
+system automatically calculates the number of shards needed based on
 the database memory limit and required throughput.
 
 ## Multi-Key Operations {#multikey-operations}
@@ -60,7 +60,7 @@ are supported with the following limitations:
 ## Changing the Sharding Policy
 
 The clustering configuration of a Redis Cloud Pro instance can be
-changed. However, sharding policy changes will trigger the deletion
+changed. However, sharding policy changes trigger the deletion
 (i.e. FLUSHDB) of the data before they can be applied. These changes
 are:
 
@@ -103,9 +103,9 @@ key name patterns.
 
 To configure a custom hashing policy, enter regular expression (RegEx)
 rules that identify the substring in the key's name - hash tag - on
-which hashing will be done. The hashing tag is denoted in the RegEx by
+which hashing is done. The hashing tag is denoted in the RegEx by
 the use of the \`tag\` named subpattern. Different keys that have the
-same hash tag will be stored and managed in the same slot.
+same hash tag are stored and managed in the same slot.
 
 Once you enable the custom hashing policy, the Redis Cloud Pro's
 default RegEx rules that implement the standard hashing policy are:
@@ -124,10 +124,10 @@ their order to suit your application's requirements.
 1. RegEx rules are evaluated by their order.
 1. The first rule matched is used; strive to place common key name
     patterns at the beginning of the rule list.
-1. Key names that do not match any of the RegEx rules will trigger an
+1. Key names that do not match any of the RegEx rules trigger an
     error.
 1. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot as the
-    hash key will always be empty. When used, this should be the last
+    hash key is always empty. When used, this should be the last
     catch-all rule.
 1. The following flag is enabled in our regular expression parser:
    - **PCRE_ANCHORED:** the pattern is constrained to match only at

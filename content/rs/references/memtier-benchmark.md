@@ -57,10 +57,10 @@ For instructions on how to install RS and set up a cluster, go to either:
 
 For the tests we use a quorum node in the cluster to keep costs down on AWS instance usage,
 but still keep the minimum 3 nodes in the cluster that RS needs in case a node fails.
-The quorum node can be on a less powerful instance type (m4.large) as it will not have shards on it or take traffic.
+The quorum node can be on a less powerful instance type (m4.large) as it does not have shards on it or take traffic.
 
 The main reason to use a i3.2xlarge instance is to use NVMe SSDs.
-Those SSDs are what RoF will combine with RAM to host the database on.
+Those SSDs are what RoF combines with RAM to host the database on.
 If you run these tests in another environment (such as on-premise),
 you must use NVMe SSDs to see the performance benefits of RoF.
 

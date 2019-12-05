@@ -1,4 +1,24 @@
 jQuery(document).ready(function() {
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        var header = $('#header');
+        if(scroll > 40) {
+            header.css('height', '50px');
+        } else {
+            header.css('height', '70px');
+        }
+    });
+
+    $("nav.shortcuts li").hover(
+        function() {
+            $(this).children('.submenu-wrapper').css('visibility', 'visible');
+            $(this).children('.submenu-wrapper').css('opacity', 1);
+        }, function() {
+            $(this).children('.submenu-wrapper').css('visibility', 'hidden');
+            $(this).children('.submenu-wrapper').css('opacity', 0);
+        }
+    );    
+
     jQuery('.category-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-down fa-angle-right");
         var x = $( this ).parent().parent().children('ul')

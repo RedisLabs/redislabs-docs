@@ -47,7 +47,7 @@ the LDAP server.
 vi /tmp/saslauthd.conf
 ```
 
-You must specify the URIs for the LDAP servers you will be
+You must specify the URIs for the LDAP servers you are
 authenticating with. You can specify multiple LDAP servers by listing
 them separated by a space.
 
@@ -109,7 +109,7 @@ $ testsaslauthd -u user -p password
 With that return of "Success", we know that saslauthd is configured and
 connecting to the LDAP server.
 
-Note: If you are using Multi-Master Replication and wish to use LDAP for
+Note: If you are using Multi-Master Replication and want to use LDAP for
 administrators, the LDAP set up process must be performed on each
 cluster.
 

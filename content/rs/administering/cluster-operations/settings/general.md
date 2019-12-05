@@ -32,7 +32,7 @@ especially helpful if you have multiple clusters.
 
 You can set your time zone in the **Timezone** field. This is
 recommended in order to make sure that the date, time fields, and log
-entries are displayed in your preferred time zone.
+entries are shown in your preferred time zone.
 
 ## Configuring email server settings
 

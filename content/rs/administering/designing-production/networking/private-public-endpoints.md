@@ -31,7 +31,7 @@ To enable this configuration you need to:
     traffic in the node configuration so it can be used for private
     database endpoints.
 
-Once this configuration is in place, both sets of endpoints will be
+Once this configuration is in place, both sets of endpoints are
 available for the databases in the cluster.
 
 ## Modifying an Existing Cluster

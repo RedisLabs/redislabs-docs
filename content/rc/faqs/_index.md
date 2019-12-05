@@ -49,6 +49,6 @@ The same AWS availability zone name, when shown in different AWS accounts, does 
 The mapping process lets us unambiguously identify your availability zone, so we can serve your Redis data from the same physical zone, minimizing inter-zone latencies.
 {{% /expand%}}
 
-{{%expand "Will my dataset/setup/endpoints be affected if I upgrade or downgrade my subscription?" %}}
+{{%expand "Are my dataset/setup/endpoints be affected if I upgrade or downgrade my subscription?" %}}
 No. Any changes you make to your Redis Cloud Essentials subscription are purely administrative and do not affect service to your application in any way. You can downgrade or upgrade your subscription at any time with no downtime or performance impact.
 {{% /expand%}}

@@ -77,7 +77,7 @@ the cluster part of your domain and are able to update the DNS.
         - Your domain is: mydomain.com
         - You would like to name the Redis Enterprise Software cluster:
             redislabscluster
-        - You have two nodes in the cluster:
+        - You have three nodes in the cluster:
            - node1 with IP 1.1.1.1
            - node2 with IP 2.2.2.2
            - node3 with IP 3.3.3.3
@@ -105,7 +105,7 @@ should only be used in dev/test environments.
 mDNS (Multicast DNS) is a standard protocol that provides DNS-like name
 resolution and service discovery capabilities to machines on local
 networks with minimal to no configuration. Because not all clients
-support mDNS, ensure first that the clients that will be connecting to
+support mDNS, ensure first that the clients that are connecting to
 the cluster actually have mDNS support, and that the network
 infrastructure permits mDNS / multi-casting between them and the cluster
 nodes.
@@ -124,16 +124,16 @@ master.
 ## IP Based Connections
 
 When you use IP based connection option, the FQDN does not need to have
-any special format because clients will use IP addresses instead of
+any special format because clients use IP addresses instead of
 hostnames to access the databases so you are free to choose whatever
-name you wish. Using the IP Based connection option does not require any
+name you want. Using the IP Based connection option does not require any
 DNS configuration either.
 
 To administer the cluster you do need to know the IP address of at least
 one of the nodes in the cluster. Once you have the IP address, you can
 simply connect to port number 8443 (for example:
 [https://10.0.0.12:8443](https://10.0.0.12:8443)). However, as the topology of the cluster changes
-and node with the given IP address is removed, you will need to remember
+and node with the given IP address is removed, you need to remember
 the IP address of another node participating in this cluster to connect
 to the admin console and manage the cluster.
 

@@ -55,9 +55,9 @@ been set, you cannot disable database clustering or reduce the number of
 shards. You can only increase the number of shards by a multiple of the
 current number of shards. For example, if the current number of shards
 was 3, you can increase to 6, 9, 12 and so on. An exception to this is a
-RediSearch Enterprise enabled database. Once you configure the number of
+RediSearch enabled database. Once you configure the number of
 shards, you can no longer change that value. If you need to scale your
-RediSearch Enterprise enabled database, you must create a new database
+RediSearch enabled database, you must create a new database
 at the new required size and replicate the current database to the new
 one.
 
@@ -94,9 +94,9 @@ Expressions (PCRE) rules that describe the dataset's key name patterns.
 
 To configure a custom hashing policy, enter the regular expression
 (RegEx) rules that identify the substring in the key's name - hash tag
--- on which hashing will be done. The hashing tag is denoted in the
+-- on which hashing is done. The hashing tag is denoted in the
 RegEx by the use of the \`tag\` named subpattern. Different keys that
-have the same hash tag will be stored and managed in the same slot.
+have the same hash tag is stored and managed in the same slot.
 
 Once you enable the custom hashing policy, the following default RegEx
 rules are implemented. Update these rules to fit your specific logic:
@@ -115,10 +115,10 @@ their order to suit your application's requirements.
 2. RegEx rules are evaluated in their order and the first rule matched
     is used. Therefore, strive to place common key name patterns at the
     beginning of the rule list.
-3. Key names that do not match any of the RegEx rules will trigger an
+3. Key names that do not match any of the RegEx rules trigger an
     error.
 4. The '.\*(?\<tag\>)' RegEx rule forces keys into a single slot
-    because the hash key will always be empty. Therefore, when used,
+    because the hash key are always empty. Therefore, when used,
     this should be the last, catch-all rule.
 5. The following flag is enabled in the regular expression parser:
     PCRE_ANCHORED: the pattern is constrained to match only at the
@@ -149,8 +149,8 @@ the following limitations:
 
 - **Multi-key commands**: Redis offers several commands that accept
     multiple keys as arguments. In a clustered database, most multi-key
-    commands are not allowed across tags. The following multi-key
-    commands **are allowed** across tags: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
+    commands are not allowed across slots. The following multi-key
+    commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
 
     Commands that affect all keys or keys that match a specified pattern are allowed
     in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS
@@ -168,7 +168,7 @@ the following limitations:
     slot and must be provided as arguments to the EVAL / EVALSHA commands
     (as per the Redis specification). Using keys in a Lua script that
     were not provided as arguments might violate the sharding concept
-    but will not result in the proper violation error being returned.
+    but do not result in the proper violation error being returned.
 - **Renaming keys**: The use of the RENAME / RENAMENX commands is
     allowed only when the key's original and new values are mapped to
-    the same tag.
+    the same slot.

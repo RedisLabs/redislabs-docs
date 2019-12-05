@@ -5,50 +5,48 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Before you can install a module, it must be packaged to be used in Redis
-Enterprise Software (RS). There are two types
+Redis modules are dedicated and optimized engines for specific data models.
+You can use either:
 
-1. Redis Labs pre-packaged modules - To download these modules, go to
-    the [Redis Enterprise downloads
-    page](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo). For more specific
-    information on each module:
+1. [Redis Labs pre-packaged modules](https://redislabs.com/redis-enterprise/software/downloads/#tabTwo) - These modules are pre-packaged with RS:
     1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
-    1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
-1. Custom packaged modules - For instructions on packing up any [Redis module](https://redislabs.com/community/redis-modules-hub/),
-    see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
+    1. [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
+1. [Custom packaged modules](https://redislabs.com/community/redis-modules-hub/) - These modules are developed by the Redis community.
+    You can download and install these modules or [develop your own modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
-Once you have acquired the package (it will be in zip format) proceed to
-the next step of adding the module to Redis Enterprise Software.
+## Add a Module to the Cluster
 
-## Add Module to the Cluster
+1. Login to the Redis Enterprise Software web UI.
+1. Go to: **settings** > **redis<sup>e</sup> modules**
+1. Click **Add Module** and browse to the module package that you want to install.
+    ![add_module](/images/rs/add_module.png)
+1. Make sure that the module name and version are correct and click **Upload**.
+    ![upload_module](/images/rs/upload_module.png)
 
-1. Log into the Redis Enterprise Software web UI
-1. Navigate to the **settings** -\> **redis<sup>e</sup> modules**
-1. Click on **Add Module** button and navigate to where you downloaded
-    the module package
+## Create a Database that Uses a Module
 
-    ![add_module](/images/rs/add_module.png?width=800&height=318)
-1. Click on the **Upload** button and notice the name and version
+{{% note %}}
+Before you create a database with a module,
+we recommend that you [upgrade the module]({{< relref "/rs/developing/modules/upgrading.md" >}}) to the latest version.
+{{% /note %}}
 
-    ![upload_module](/images/rs/upload_module.png?width=800&height=321)
+To create a database that uses a module:
 
-### Create a new database that uses the Module
-
-Note: Before you create a new DB with modules,
-we recommend that you [upgrade the currently installed modules]({{< relref "/rs/developing/modules/upgrading.md" >}})
-to the newest versions.
-
-1. Go to **databases**.
-1. Click ![Add](/images/rs/icon_add.png#no-click "Add") and click **create database**.
-1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Select the module that you want to add.
-1. If you want the module to use a custom configuration,
-click **Add configuration** and enter the optional custom configuration.
-1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
+1. Go to: **databases**
+1. Click ![Add](/images/rs/icon_add.png#no-click "Add") and **create database**.
+1. Configure the database settings.
+1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add"):
+    1. Select the module that you want to add.
+    1. If you want the module to use a custom configuration, click **Add configuration** and enter the optional custom configuration.
+        - RediSearch - You can find the configuration options in the [RediSearch documentation](https://oss.redislabs.com/redisearch/Configuring.html#redisearch_configuration_options).
+        - RedisGraph - You can specify the number of threads to distribute the RediSearch queries to: `THREAD_COUNT X`
+            By default, the thread count is the number of coresRediSearch uses the same number of cores on the node.
+        - RedisTimeSeries - You can find the configuration options in the [RedisTimeSeries documentation](https://oss.redislabs.com/redistimeseries/configuration/#redistimeseries-configuration-options).
+    1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
     {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-1. Click **Show advanced options** and put **12543** for the port.
-1. Click the **activate** button
+1. Click **Show advanced options** and enter a port number for the database, such as: **12543**.
+1. Click **Activate**.

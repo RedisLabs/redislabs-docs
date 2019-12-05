@@ -52,7 +52,7 @@ When adding two different elements to a Sorted Set from different
 replicas (in this example, x with score 1.1 was added by Instance 1 to
 Sorted Set Z, and y with score 1.2 was added by Instance 2 to Sorted Set
 Z) in a non-concurrent manner (i.e. each operation happened separately
-and after both instances were in sync), the end result will be a Sorted
+and after both instances were in sync), the end result is a Sorted
 Set including both elements in each CRDB instance.
 Example of Sorted Set and Concurrent
 Add:
@@ -70,7 +70,7 @@ When concurrently adding an element x to a Sorted Set Z by two different
 CRDB instances (Instance 1 added score 1.1 and Instance 2 added score
 2.1), the CRDB implements Last Write Win (LWW) to determine the score of
 x. In this scenario, Instance 2 performed the ZADD operation at time
-t2\>t1 and therefore the CRDB will set the score 2.1 to
+t2\>t1 and therefore the CRDB sets the score 2.1 to
 x.
 
 Example of Sorted Set with Concurrent Add Happening at the Exact Same

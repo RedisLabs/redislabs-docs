@@ -16,4 +16,4 @@ So If you have to use dynamic scripting, then just use plain EVAL, as there’s 
 ## Things to Keep in Mind if Using Dynamic Lua Scripts
 
 1. Remember to track your Lua memory consumption and flush the cache periodically with a SCRIPT FLUSH.
-1. Do not hardcode and/or programmatically generate key names in your Lua scripts, because doing so will render them useless in a clustered Redis setup.
+1. Do not hardcode and/or programmatically generate key names in your Lua scripts because it makes them useless in a clustered Redis setup.

@@ -40,7 +40,7 @@ Enterprise Software (RS), but you may not deploy it in a production
 environment. In addition, the trial version allows a maximum of four
 shards and is limited to thirty (30) days of use after initial
 installation on the first server in the cluster. After the thirty day
-trial, the cluster will shift to read-only status. The free version does
+trial, the cluster shifts to read-only status. The free version does
 not provide the same support options as the paid version. Finally, no
 SLA is provided with the trial version. To continue operation of the
 cluster with full capabilities, you must purchase a [subscription
@@ -70,8 +70,8 @@ As explained in the open source [Redis FAQ](https://redis.io/topics/faq),
 under "What happens if Redis runs out of memory?":
 
 <blockquote>...[you] can use the "maxmemory" option in the config file to put a
-limit to the memory Redis can use. If this limit is reached Redis will
-start to reply with an error to write commands (but will continue to
+limit to the memory Redis can use. If this limit is reached Redis
+starts to reply with an error to write commands (but continues to
 accept read-only commands), or you can configure it to evict keys when
 the max memory limit is reached in the case you are using Redis for
 caching.</blockquote>

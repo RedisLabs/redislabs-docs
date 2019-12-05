@@ -33,9 +33,9 @@ To create a new Redis Cloud Essentials subscription do the following:
 1. If you have existing subscriptions- click on the '+' icon. If you don't have existing subsctiptions, proceed to the next step.
 1. Click on the 'Select' button inside the 'Essentials' box.
 
-New subscription details page will be opened. You will need to select the following:
+New subscription details page is opened. You must select the following:
 
-1. The cloud and region you desire your database(s) to be created in
+1. The cloud and region to create your databases in
 1. A subscription name
 1. One of three subscription plans:
    - Cache plans provide highly available, low-latency caching for
@@ -45,7 +45,7 @@ New subscription details page will be opened. You will need to select the follow
         empty cache.
    - Standard plans can have a diverse set of features including
         in-memory replication, auto-failover, data persistence, and
-        backups. Selecting this option will double the memory size of
+        backups. Selecting this option doubles the memory size of
         your dataset.
    - Multi-AZ (Availability Zone) plans offer all the benefits of
         Standard plans, as well as auto-failover and in-memory
@@ -69,12 +69,12 @@ To set up a new database:
 
 1. Open the sidebar and click on 'Databases'.
 1. Select your subscription and expand it.
-1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page will open.
+1. Click on the '+' icon under the subscription to create a new database. 'Create Database' page opens.
 1. Give your database a name.
 1. Fill-in the database settings. For more information please see [Creating Databases on Redis Cloud Essentials]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}}).
 1. Click the **Activate** button to create your database.
 
-Note: the Endpoint displayed on this page is very important because it
+Note: the Endpoint shown on this page is very important because it
 is your entry point to this database.
 
 ![rc-view-database-endpoint](/images/rc/rc-view-database-endpoint.png?width=600&height=409)
@@ -96,8 +96,7 @@ PING
 +PONG
 ```
 
-Note: We recommend loading the redis-cli command-line utility for future
-use as you will use it for other things.
+Note: We recommend loading the redis-cli command-line utility for efficiency.
 
 ### Using redis-cli {#using-rediscli}
 

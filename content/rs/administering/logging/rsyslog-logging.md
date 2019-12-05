@@ -23,7 +23,7 @@ down there might be various log entries added by different cluster
 components from various nodes with different descriptions, until the
 cluster gets to a final decision that the node is actually down. In
 other cases, similar entries might be added to the log and the cluster
-will eventually get to a decision that the node is
+eventually gets to a decision that the node is
 actually not down.
 
 In addition, some actions that might seem to the user as an atomic
@@ -32,7 +32,7 @@ several different events that take place in a sequence, and might also
 fail in the process.
 
 As a result, Redis Labs enabled that by default all logs entries that
-are shown in the log page in the management UI will also be written to
+are shown in the log page in the management UI are also written to
 syslog. Then rsyslog can be configured to monitor the syslog. All alerts
 are logged to syslog if the alerts are configured to be enabled, in
 addition to other log entries.
@@ -74,15 +74,14 @@ in messages log file.
 The log entries have the following basic structure:
 event_log\[\]:{\<list of key value pairs in any order\>}
 
-- event_log­ plain static text that will always show at the beginning
+- event_log­ plain static text is always shown at the beginning
     of the entry.
 - processid­ the id of the process the logging in running under.
 - listofkeyvaluepairsinanyorder­ a list of key value pairs describing
     the
     specific event. The key­values pairs can appear in any order. Some
-    key­value pairs will
-    always appear, and some appear depending on the specific event.
-    - **Key­value pairs that will always appear:**
+    key­value pairs are always shown, and some appear depending on the specific event.
+    - **Key­value pairs that always appear:**
         - "type" A unique code­name identifying the event logged. For
             the list of
             codenames relevant for this purpose please review the event

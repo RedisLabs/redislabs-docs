@@ -22,7 +22,7 @@ contained on Redis Labs' cloud infrastructure.
 ### Infinite and seamless scalability
 
 Grow your dataset to any size needed (beyond the largest cloud
-instances) without any downtime or limitation of Redis commands. We will
+instances) without any downtime or limitation of Redis commands. We
 automatically add or remove instances to your cluster to accommodate
 your fluctuating dataset size without any interruption to your
 applications.
@@ -66,7 +66,7 @@ support via online helpdesk or phone.
 
 ### Encryption and authentication
 
-Meet your security goals without compromising performance using Redis Could Pro's
+Meet your security goals without compromising performance using Redis Cloud Pro's
 fully encrypted SSL connections, and apply multi-level authentication
 mechanisms such as:
 

@@ -75,11 +75,9 @@ You must select **Redis 5** as the Redis version to use CRDB and RoF.
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
         AOF provides the fastest and most reliable method for instance failure recovery.
-    - **Participating Clusters** - You must specify the URL of the clusters that you want to
-        host CRDB instances and the admin user account to connect to each cluster.
-        - In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
-        - For each cluster, enter the URL for the cluster (`https://<cluster_URL>:9443`),
-            and enter the credentials for the service account that you created.
+
+    - **Redis password** - A password that clients must use to connect to the CRDB.
+    - **Endpoint port number** (Required) - The port in the range 10000-19999 that clients must use to connect to the CRDB.
     - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
         - Make sure the Database clustering is enabled and select the number of shards
@@ -89,10 +87,16 @@ You must select **Redis 5** as the Redis version to use CRDB and RoF.
         - Clear the **Database clustering** option to use only one shard so that you
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
+    - **Eviction policy** - The eviction policy for CRDBs is `noeviction`.
+    - **Participating Clusters** - You must specify the URL of the clusters that you want to
+        host CRDB instances and the admin user account to connect to each cluster.
+        1. In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
+        1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn_or_ip_address>:9443`),
+            enter the credentials for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
     - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
         specific key is maintained across all CRDB instances. To enable Causal Consistency for an existing
         CRDB, use the REST API.
-    - **SSL Authentication** - You can enable SSL for communications between
+    - **TLS** - You can enable TLS for communications between
         Participating Clusters. After you create the CRDB, you can enable SSL for the data
         access operations from applications just like regular Redis Enterprise databases.
 

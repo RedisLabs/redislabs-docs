@@ -23,13 +23,13 @@ is configured to use this volume.
 
 Note: After installing the RS package on the instance (for additional
 details, refer to [Accessing and installing the setup
-package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
+package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}))
 and **before** running through the setup process (for additional
 details, refer to [Initial setup - creating a new
-cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}),
+cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
-chown redislabs:redislabs /\< ebs folder name \>
+`chown redislabs:redislabs /\< ebs folder name \>`
 
 Another feature that may be of importance to you is the use of
 Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a
@@ -50,7 +50,7 @@ requirements]({{< relref "/rs/administering/designing-production/hardware-requir
 
 In addition, some instance types are optimized for EBS backed volumes
 and some are not. If you are using persistent storage, you should use an
-instance type that is, if disk drain rate matters to your database
+instance type that is, especially if disk drain rate matters to your database
 implementation.
 
 ## Security
@@ -58,7 +58,7 @@ implementation.
 When configuring the Security Group:
 
 - Define a custom TCP rule for port 8443 to allow web browser access
-    to the RS management UI from the IP address/ range you will use to
+    to the RS management UI from the IP address/ range you use to
     access the UI.
 - If you are using the DNS resolving option with RS, define a DNS UDP
     rule for port 53 to allow access to the databases' endpoints by
@@ -67,7 +67,7 @@ When configuring the Security Group:
 - To create a cluster that has multiple nodes all running as instances on AWS,
     you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
     and add it to all instances that are part of the cluster.
-    This will make sure that all nodes are able to communicate with each other.
+    This makes sure that all nodes are able to communicate with each other.
     To limit the number of open ports, you can open just the [ports used by RS]
     ({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 

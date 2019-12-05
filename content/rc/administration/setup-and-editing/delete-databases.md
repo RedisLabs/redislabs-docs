@@ -14,13 +14,12 @@ Note: Only users defined as Owners on the team can delete a database.
 ### Steps
 
 1. Navigate to the "Databases" page from the Redis Cloud Essentials menu
-1. Click on the database you wish to delete from the list of your
+1. Click on the database you want to delete from the list of your
     databases.
 1. Click on the trash can icon next to "View Database."
-1. A window will pop up asking if you really want to delete your
-    database. If so, click "Delete."
-1. You will be taken back to the main Databases page. The database, all
-    of its data, and configurations is now deleted.
+1. Confirm that you want to delete your database. If so, click "Delete."
+1. In Databases you see that the database with all
+    of its data and configurations is now deleted.
 
 Note: It is considered best practice that you [create a
 backup]({{< relref "/rc/administration/configure/backups.md" >}}) of your

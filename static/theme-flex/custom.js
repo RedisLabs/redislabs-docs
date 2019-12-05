@@ -121,6 +121,10 @@ jQuery('document').ready(function($) {
         }
 
         function MLMenu(el, options) {
+            if(!el) {
+                return;
+            }
+
             this.el = el;
             this.options = extend( {}, this.options );
             extend( this.options, options );

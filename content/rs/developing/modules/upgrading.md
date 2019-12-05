@@ -5,8 +5,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-As modules are upgraded, you will need to load them into Redis
-Enterprise if you desire having the new features and/or
+As modules are upgraded, you need to load them into Redis
+Enterprise to get the new features and/or
 fixes.
 
 ## Acquiring the Packaged Modules
@@ -14,13 +14,13 @@ fixes.
 1. Redis Enterprise pre-packaged modules - To download the upgrades
     to the modules, go to the [Redis
     Enterprise downloads
-    page](https://redislabs.com/products/redis-pack/downloads/).
+    page](https://redislabs.com/download-center/modules/).
     For more specific information on developing with each module
     see:
     1. [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
     1. [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     1. [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
-    1. [RediSearch Enterprise]({{< relref "/rs/developing/modules/redisearch.md" >}})
+    1. [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
 1. Custom packaged modules - For instructions on packing up any [Redis module](https://redislabs.com/community/redis-modules-hub/)
     to use in upgrades, see [Developing with Modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 
@@ -40,7 +40,7 @@ it:
     it.
 1. Go to the **databases** tab, then to
     the configuration section
-1. You will see in the page that an update is
+1. You see in the page that an update is
     available.
 
     ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
@@ -65,8 +65,8 @@ it:
     arguments>
     `
 
-    Note: When this is done, it will
-    restart the database shards and thus cause downtime for this
+    Note: When this is done, it
+    restarts the database shards and thus causes downtime for this
     database across the cluster.
 
 ## Examples
@@ -86,11 +86,11 @@ $ rladmin upgrade module db_name MyDB module_name ReJSON version 10002 module_ar
 ```
 
 Each module package is a zip file. Inside the zip file is a JSON file
-and it will contain the information necessary for the above rladmin
+and it contains the information necessary for the above rladmin
 command for the module_name and version information necessary. The
 specific data points must be entered exactly as you see it in that JSON
 file. The necessary data should be at the end of the JSON document. For
-example, here is the information for the RediSearch Enterprise module
+example, here is the information for the RediSearch module
 that i used for the example command above:
 
 ![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)

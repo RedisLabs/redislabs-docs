@@ -30,9 +30,8 @@ you may suffer from this issue.
 
 To overcome this issue, we came up with an automatic process that can
 map AZs that are designated to your AWS account and cross-reference them
-with our AZ. This will allow us to make sure your app and database will
-be co-located on the same physical AZ and by that reducing unnecessary
-latency.
+with our AZ. This allows us to make sure your app and database are co-located on the same physical AZ
+and by that reducing unnecessary latency.
 
 ## How to MAP Zones
 
@@ -45,19 +44,18 @@ latency.
 1. Press on **Map Zones** button.
 
 Allow the process a few minutes to complete as it maps the availability
-zones. Once complete, you will see this:
+zones. Once complete, you see this:
 
 ![zone-mapping](/images/rc/zone-mapping.png?width=600&height=359)
 
 When the process is complete, the next time you go to create a new
-subscription, the drop down for "Cloud" will have the zone letter in
-them.
+subscription, the drop down for "Cloud" has the zone letter in
+it.
 
 ![after_zone_mapping](/images/rc/after_zone_mapping.png?width=600&height=192)
 
-For existing subscriptions in Redis Cloud Essentials, you will now see the Availability Zone
-they are using. If you desire to remove the latency discussed before,
-you must
+For existing subscriptions in Redis Cloud Essentials, you now see the Availability Zone
+they are using. To reduce the latency described above:
 
 1. [Create a new
     subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}) in
@@ -68,7 +66,7 @@ you must
     data]({{< relref "/rc/how-to/importing-dataset-redis-cloud.md" >}})
     over to the new database.
 
-While simple, this will cause some downtime. If downtime is not an
+While simple, this causes some downtime. If downtime is not an
 option, [please contact
 support](mailto:support@redislabs.com?Subject=Zero%20Downtime%20DB%20Migration)
 for further assistance.
