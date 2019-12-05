@@ -17,20 +17,25 @@ The available modules are:
     - [Intro to RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redisearch/redisearch-quickstart.md" >}})
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-search/redisearch-sizing-calculator/)
+    - [Documentation](https://redisearch.io)
 - RedisBloom
     - [Intro to RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redisbloom/redisbloom-quickstart.md" >}})
+    - [Documentation](https://redisbloom.io)
 - RedisTimeSeries
     - [Intro to RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redistimeseries/redistimeseries-quickstart.md" >}})
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-time-series/time-series-calculator/)
+    - [Documentation](https://redistimeseries.io)
 - RedisGraph (Preview)
     - [Intro to RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redisgraph/redisgraph-quickstart.md" >}})
     - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
+    - [Documentation](https://redisgraph.io)
 - RedisJSON (Preview)
     - [Intro to RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
     - [Quick Start]({{< relref "/modules/redisjson/redisjson-quickstart.md" >}})
+    - [Documentation](https://redisjson.io)
 
 ## Community and custom modules
 
