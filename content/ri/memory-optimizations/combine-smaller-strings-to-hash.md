@@ -18,7 +18,7 @@ If you are not doing any of the above, then use **Hashes**.
 
 Suppose we have to store the number of comments on the posts of a user, we can have a key names like `user:{userId}:post:{postId}:comments`.
 
-This way we have a key per post for each user. So now if we neet to find the total number of comments for whole appilication we can do
+This way we have a key per post for each user. So now if we need to find the total number of comments for whole application we can do
 
 ```bash
 Redis::mget("user:{$userId}:post:1", "user:{$userId}:post:2", ...);
