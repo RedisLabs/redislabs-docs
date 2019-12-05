@@ -53,6 +53,10 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 - When you use Google Chrome browser on macOS Catalina to connect to the RS web UI with a self-signed certificate generated after June 2019,
     the self-signed certificate should be updated to include extendedKeyUsage field.
     For further assistance, contact [Redis Labs Support](support@redislabs.com).
+- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or earlier to version RS 5.4.4 or later:
+    - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
+    - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
+
 
 ## Important Fixes
 
@@ -76,8 +80,6 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
 ### Upgrade
 
-- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or earlier to version RS 5.4.4 or later,
-    you must run the BGREWRITEAOF command on all shards after the upgrade.
 - [RS 5.4.2]({{< relref "/rs/release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis (CRDB) capabilities
     that improve its compatibility with open source Redis.
     Now the string data-type in Active-Active Redis (CRDB) is implicitly and dynamically typed, just like open source Redis.
