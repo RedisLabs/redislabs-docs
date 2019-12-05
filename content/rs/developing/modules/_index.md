@@ -36,7 +36,7 @@ Module]({{< relref "/rs/developing/modules/upgrading.md" >}})
 
 Warning: Redis Labs does not and cannot support third party modules or
 databases created with them.
-Note: Enabling any module will render eviction policy to "noeviction".
+Note: Depending on the supported capabilities of the module, certain fields for the database will be disabled.
 
 ## Packaging Non-Certified Modules
 
