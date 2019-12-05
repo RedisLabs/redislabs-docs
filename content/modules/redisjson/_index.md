@@ -6,7 +6,6 @@ alwaysopen: false
 categories: ["Modules"]
 aliases:
   - /rs/developing/modules/redisjson/
-  - /modules/redisjson
 ---
 Applications developed with the open source version of RedisJSON are 100%
 compatible with RedisJSON in Redis Enterprise Software (RS).
