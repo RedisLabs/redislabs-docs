@@ -50,7 +50,7 @@ lowercase letters are treated exactly the same.
 ## Database configuration
 
 Once the cluster has been configured to support rack-zone awareness, and
-it includes nodes with at least two different rack-zone IDs, you can
+it includes nodes with at least three different rack-zone IDs, you can
 create a rack-zone aware database.
 
 Rack-zone awareness is only relevant for databases that have slave
