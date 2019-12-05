@@ -36,7 +36,7 @@ most database settings only apply to the CRDB instance that you are editing, inc
 - TLS mode
 - Periodic backup
 
-You can change the global configuration of the CRDB from the command-line with: `crdb-cli crdb update`
+You can change the global configuration of the CRDB from the command-line with the crdb-cli.
 
 ## Participating Clusters
 
