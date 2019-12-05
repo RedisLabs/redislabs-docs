@@ -57,7 +57,6 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
 
-
 ## Important Fixes
 
 - The titles of the ‘rladmin status nodes’ command output were updated from ‘RAM’ to ‘FREE_RAM’ (the amount of RAM in the node that is currently not used) and from ‘AVAILABLE_RAM’ to ‘PROVISIONAL_RAM’ (the amount of RAM in the node that can be provisioned).
