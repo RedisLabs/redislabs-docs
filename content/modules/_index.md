@@ -6,6 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+
 ## Redis Labs Modules
 
 Redis Labs develops, certifies, and packages modules for [Redis Enterprise
@@ -13,29 +14,106 @@ Software (RS)]({{< relref "/rs" >}}) clusters and [Redis Cloud Pro]({{< relref "
 
 The available modules are:
 
-- RediSearch
-    - [Intro to RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
-    - [Quick Start]({{< relref "/modules/redisearch/redisearch-quickstart.md" >}})
-    - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-search/redisearch-sizing-calculator/)
-    - [Documentation](https://redisearch.io)
-- RedisBloom
-    - [Intro to RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
-    - [Quick Start]({{< relref "/modules/redisbloom/redisbloom-quickstart.md" >}})
-    - [Documentation](https://redisbloom.io)
-- RedisTimeSeries
-    - [Intro to RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
-    - [Quick Start]({{< relref "/modules/redistimeseries/redistimeseries-quickstart.md" >}})
-    - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-time-series/time-series-calculator/)
-    - [Documentation](https://redistimeseries.io)
-- RedisGraph (Preview)
-    - [Intro to RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
-    - [Quick Start]({{< relref "/modules/redisgraph/redisgraph-quickstart.md" >}})
-    - [Deployment Sizing Calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
-    - [Documentation](https://redisgraph.io)
-- RedisJSON (Preview)
-    - [Intro to RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-    - [Quick Start]({{< relref "/modules/redisjson/redisjson-quickstart.md" >}})
-    - [Documentation](https://redisjson.io)
+<section class="home-options">
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="../theme-flex/img/ico-redisearch.svg" alt="RediSearch Icon" style="width:108px;transform: translateY(-2px);">
+                <a href="/modules/redisearch/" class="opener"></a>
+            </div>
+            <h5>RediSearch</h5>
+            <p>RediSearch is a source available Full-Text and Secondary Index engine over Redis.</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisearch/">Introduction</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisearch/release-notes/">Release Notes</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://redislabs.com/redis-enterprise/redis-search/redisearch-sizing-calculator/">Sizing Calculator</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="https://redisearch.io">Documentation</a></li>
+                </section>
+            </ul>
+        </div>
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="../theme-flex/img/ico-redisbloom.svg" alt="RedisBloom Icon">
+                <a href="/modules/redisbloom/" class="opener"></a>
+            </div>
+            <h5>RedisBloom</h5>
+            <p>RedisBloom module provides four datatypes, a Scalable Bloom Filter, a Cuckoo Filter,
+            a Count-Mins-Sketch, and a Top-K.</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisbloom/">Introduction</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisbloom/release-notes/">Release Notes</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisbloom/redisbloom-quickstart">Quick Start</a></li>           <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="https://redisbloom.io">Documentation</a></li>
+                </section>
+            </ul>
+        </div>
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="../theme-flex/img/ico-redistimeseries.svg" alt="RedisTimeSeries Icon" style="width:108px;transform: translateY(-2px);">
+                <a href="/modules/redistimeseries/" class="opener"></a>
+            </div>
+            <h5>RedisTimeSeries</h5>
+            <p>RedisTimeSeries is a Redis Module adding a Time Series data structure to Redis.</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redistimeseries/">Introduction</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redistimeseries/release-notes/">Release Notes</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://redislabs.com/redis-enterprise/redis-time-series/time-series-calculator/">Sizing Calculator</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="https://redistimeseries.io">Documentation</a></li>
+                </section>
+            </ul>
+        </div>
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="../theme-flex/img/ico-redisgraph.svg" alt="RedisGraph Icon" style="width:108px;transform: translateY(-2px);">
+                <a href="/modules/redisgraph/" class="opener"></a>
+            </div>
+            <h5>RedisGraph (Preview)</h5>
+            <p>RedisGraph is the first queryable Property Graph database to use sparse matrices to represent the adjacency matrix in graphs and linear algebra to query the graph.</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisgraph/">Introduction</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisgraph/release-notes/">Release Notes</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
+                            href="https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/">Sizing Calculator</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="https://redisgraph.io">Documentation</a></li>
+                </section>
+            </ul>
+        </div>
+        <div class="home-options__option">
+            <div class="home-options__option__icon">
+                <img src="../theme-flex/img/ico-redisjson.svg" alt="RedisJSON Icon">
+                <a href="/modules/redisjson/" class="opener"></a>
+            </div>
+            <h5>RedisJSON (Preview)</h5>
+            <p>RedisJSON is a Redis module that implements ECMA-404 The JSON Data Interchange Standard as a native data type. It allows storing, updating and fetching JSON values from Redis keys (documents).</p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisjson/">Introduction</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisjson/release-notes/">Release Notes</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/modules/redisjson/redisjson-quickstart">Quick Start</a></li>           <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="https://redisjson.io">Documentation</a></li>
+                </section>
+            </ul>
+        </div>
+
+</section>
 
 ## Community and custom modules
 
