@@ -1,5 +1,5 @@
 ---
-Title: Creating a database with modules in Redis Enterprise Software
+Title: Adding Modules to a Redis Enterprise Software Database
 description:
 weight: 2
 alwaysopen: false
@@ -8,18 +8,22 @@ aliases:
   - /modules/rs
   - /rs/developing/modules/upgrading/
 ---
+Modules add additional functionality to your databases for specific use cases.
+You can add modules to the database when you create the database or after the database is already created.
 
-## Create a Database that Uses a Module
+## Add Modules to a Database
 
 {{% note %}}
-Before you create a database with a module,
+Before you add a module to a database,
 we recommend that you [upgrade the module]({{< relref "/modules/upgrading-rs.md" >}}) to the latest version.
 {{% /note %}}
 
-To create a database that uses a module:
+To add modules to a database:
 
 1. Go to: **databases**
-1. Click ![Add](/images/rs/icon_add.png#no-click "Add") and **create database**.
+1. Either:
+    - Click on an existing database
+    - Click ![Add](/images/rs/icon_add.png#no-click "Add") and **create database**
 1. Configure the database settings.
 1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add"):
     1. Select the module that you want to add.
