@@ -6,21 +6,19 @@ alwaysopen: false
 categories: ["RS"]
 ---
 Database replication provides a mechanism to ensure high availability.
-When replication is enabled, your dataset is replicated to a slave node,
-which is constantly synchronized with the master node. If the master
-node fails, an automatic failover happens and the slave node is promoted
-to be the new master node. When the old master node recovers, it becomes
-the slave node of the new master node. This auto-failover mechanism
+When replication is enabled, your dataset is replicated to a slave shard,
+which is constantly synchronized with the master shard. If the master
+shard fails, an automatic failover happens and the slave shard is promoted
+to be the new master shard. When the old master shard recovers, it becomes
+the slave shard of the new master shard. This auto-failover mechanism
 guarantees that data is served with minimal to no interruption.
 
 You can tune your high availability configuration with:
 
 - [Rack/Zone
-Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) - When rack-zone awareness is used, there is additional and more advanced
-logic used for determining which nodes get designated as the master or
-slave.
+Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) - When rack-zone awareness is used additional logic ensures that master and slave shards never share the same rack, thus ensuring availability even under loss of an entire rack.
 - [High Availability for Slave Shards]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) - When high availability
-for slave shards is used, the slave is automatically migrated on node failover to maintain high availability.
+for slave shards is used, the slave is automatically migrated on master shard failure to maintain high availability.
 
 **Note**: Enabling replication has implications for the total database
 size, as explained in [Database memory
