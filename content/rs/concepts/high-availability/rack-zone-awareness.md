@@ -39,7 +39,7 @@ Note: rack-zone IDs are **case-insensitive** (uppercase and lowercase letter are
 
 ### Node layout
 
-Recall that the recommended minimum number of nodes in a RS deployment is three. For rack-zone awareness, these three nodes must be distributed across three *distinct* racks or zones.
+Recall that the recommended minimum number of nodes in a RS deployment is three. For high availability, these three nodes must be distributed across three *distinct* racks or zones.
 
 When using availability zones, note that all three zones should exist within the same *region* to avoid potential latency issues.
 
