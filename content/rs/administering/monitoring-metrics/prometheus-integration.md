@@ -58,8 +58,8 @@ To get started with custom monitoring:
           - targets: ["<cluster_name>:8070"]
     ```
 
-1. Setup your Prometheus and Grafana servers.
-    To setup Prometheus and Grafana on Docker containers:
+1. Set up your Prometheus and Grafana servers.
+    To set up Prometheus and Grafana on Docker containers:
     1. Create a _docker-compose.yml_ file with this yaml contents:
 
         ```yml

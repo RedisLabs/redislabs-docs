@@ -40,7 +40,7 @@ For the test environment, you must:
 
 1. Create a three-node RS cluster.
 1. Prepare the flash memory.
-1. Setup the load generation tool.
+1. Set up the load generation tool.
 
 ### Creating a three-node RS cluster {#creating-a-threenode-rs-cluster}
 
@@ -108,7 +108,7 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-maximum=$N -n allkeys -d 500 --key-pattern=P:P --ratio=1:0
 ```
 
-Setup a test database with these values:
+Set up a test database with these values:
 
 |  **Parameter** | **Description** |
 |  ------ | ------ |

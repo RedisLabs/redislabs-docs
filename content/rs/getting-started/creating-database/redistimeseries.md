@@ -26,7 +26,7 @@ click **Add configuration** and enter the optional custom configuration.
 
 ## Quick start with redis-cli
 
-After you setup RedisTimeSeries, you can interact with it using redis-cli.
+After you set up RedisTimeSeries, you can interact with it using redis-cli.
 
 Here we'll create a time series representing sensor temperature measurements.
 After you create the time series, you can send temperature measurements.

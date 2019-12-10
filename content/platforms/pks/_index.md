@@ -439,7 +439,7 @@ In order to create your database, login to the Redis Enterprise UI.
     ```
 
 1. There are two primary options for accessing the Web UI
-    - If your PKS cluster has loadbalancer service setup with a public IP you have access to or otherwise a routable IP address from your machine:
+    - If your PKS cluster has loadbalancer service set up with a public IP you have access to or otherwise a routable IP address from your machine:
 
         1. Determine that IP address:
 
@@ -456,7 +456,7 @@ In order to create your database, login to the Redis Enterprise UI.
         1. Enter the IP address followed by port number 8443 into your browser address bar: `https://53.128.131.29:8443`
 
     - If your PKS cluster does not have a routable IP address from your machine:
-        1. Setup port forwarding for port 8443 to one of you cluster pods:
+        1. Set up port forwarding for port 8443 to one of you cluster pods:
 
             ```src
             kubectl port-forward rec-pks-0 8443
@@ -514,7 +514,7 @@ Changing the admin password impacts the proper operation of the K8s deployment.
         pks-test-headless   ClusterIP   None            <none>        14771/TCP   22m
         ```
 
-    1. Setup port forwarding for the database port to one of you database services
+    1. Set up port forwarding for the database port to one of you database services
 
         ```src
         kubectl port-forward service/pks-test 14771
