@@ -66,15 +66,15 @@ delete the user and re-add it.
 
 ### Resetting user passwords
 
-To reset a user password from the CLI, run:
+{{< embed-md "reset-password.md" >}}
 
-`rladmin cluster reset_password <username>`
+## User Account Security
 
-You are asked to enter and confirm the new password.
+To make sure your user accounts are secured and not misused, RS supports enforcement of:
 
-## Setting Local Password Policies
-
-RS supports enforcement for password complexity and expiration.
+- Password complexity
+- Password expiration
+- Account lock on failed attempts
 
 To enforce a more advanced password policy that meets your contractual and compliance requirements and your organizational policies,
 we recommend that you use [LDAP integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) with an external identity provider, such as Active Directory.
@@ -112,3 +112,8 @@ curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/jso
 ```
 
 To disable password expiration, set the number of days to `0`.
+
+### Account lock on failed attempts
+
+To prevent unauthorized access to RS, you can [enforce account lockout]({{< relref "/rs/administering/designing-production/security/login-lockout.md" >}})
+after a specified number of failed login attempts.
