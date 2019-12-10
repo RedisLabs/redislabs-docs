@@ -11,15 +11,15 @@ replicated database) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
 - Step 1: Run two RS Docker containers
-- Step 2: Setup each container as a cluster
+- Step 2: Set up each container as a cluster
 - Step 3: Create a new Redis Enterprise CRDB
 - Step 4: Test connectivity to the CRDB
 
 To run a CRDB on installations from the [RS download package]({{< relref "/rs/getting-started/quick-setup.md" >}}),
-setup two RS installations and continue from Step 2.
+set up two RS installations and continue from Step 2.
 
 Note: This getting started guide is for development or demonstration environments.
-To setup CRDB in a production environment, use the instuctions for
+To set up CRDB in a production environment, use the instructions for
 [creating a CRDB]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
 
 ## Step 1: Run Two Containers

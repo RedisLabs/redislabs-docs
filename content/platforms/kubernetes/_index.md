@@ -27,7 +27,7 @@ Here are the 4 steps to set up our cluster with Redis Enterprise:
 
 - Step 1: Create a Kubernetes cluster on Google Cloud
 - Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
-- Step 3: Setup Redis Enterprise cluster
+- Step 3: Set up Redis Enterprise cluster
 - Step 4: Create a Redis database and test your connectivity
 
 ### Requirements
@@ -114,7 +114,7 @@ The output looks something like this;
 
     redispack-deployment-709212938-kcjd7 1/1 Running 0 7s
 
-## Step 3: Setup Redis Enterprise cluster
+## Step 3: Set up Redis Enterprise cluster
 
 We are now ready to create the Redis Enterprise cluster. There is one small change that needs to be done to the container to get networking to work properly: we need to change the css binding to 0.0.0.0. To do this, you need to run the following in each container with each iteration using the pods name from the _kubectl get po_ output above.
 

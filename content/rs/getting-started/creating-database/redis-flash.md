@@ -11,7 +11,7 @@ with a single node are simple and are as follows:
 
 - Step 1: Install Redis Enterprise Software or launch with Docker
     container
-- Step 2: Setup a Redis Enterprise Software cluster with Redis on
+- Step 2: Set up a Redis Enterprise Software cluster with Redis on
     Flash
 - Step 3: Create a new Redis on Flash database
 - Step 4: Connect to your new database
@@ -50,7 +50,7 @@ Docker container on Windows, MacOS, and Linux.
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
-## Step 2: Setup a Cluster and Enable Redis on Flash
+## Step 2: Set up a Cluster and Enable Redis on Flash
 
 Direct your browser to https://localhost:8443/ on the host machine to
 see the Redis Enterprise Software web console. Simply click the

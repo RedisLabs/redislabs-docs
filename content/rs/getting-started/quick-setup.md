@@ -12,7 +12,7 @@ The steps to set up a Redis Enterprise Software (RS) cluster with a
 single node are super simple and go as follows:
 
 - Step 1: Install Redis Enterprise Software
-- Step 2: Setup a Redis Enterprise Software cluster
+- Step 2: Set up a Redis Enterprise Software cluster
 - Step 3: Create a new Redis database
 - Step 4: Connect to your Redis database
 
@@ -49,7 +49,7 @@ before running RS installation.
 {{% /note %}}
 
 <!-- Also in getting-started-docker.md -->
-## Step 2: Setup a Cluster
+## Step 2: Set up a Cluster
 
 1. In the web browser on the host machine, go to https://localhost:8443 to see
 the Redis Enterprise Software web console.

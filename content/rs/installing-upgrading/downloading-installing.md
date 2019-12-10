@@ -8,7 +8,7 @@ aliases: /rs/administering/installing-upgrading/downloading-installing/
 ---
 The first thing you need to choose the platform to run Redis
 Enterprise Software on. If on-premise or in the cloud and you want to
-install it yourself, you need to download the package. For Amazon AWS, there are other instructions to setup an AMI image.
+install it yourself, you need to download the package. For Amazon AWS, there are other instructions to set up an AMI image.
 You can also run RS in a Docker container for testing purposes.
 Navigate to the [Redis Labs download
 page](https://app.redislabs.com/#/sign-up/software?direct=true) and

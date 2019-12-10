@@ -5,11 +5,11 @@ weight: 10
 alwaysopen: false
 categories: ["RC Essentials"]
 ---
-To quickly setup Redis Cloud Essentials:
+To quickly set up Redis Cloud Essentials:
 
 1. Sign up for a Redis Cloud Essentials account.
 1. Create a new subscription.
-1. Setup a database.
+1. Set up a database.
 1. Connect to your Database.
 
 {{< youtube I9sPna1OOUg >}}
