@@ -29,5 +29,3 @@ We are proud to announce that we doubled the number of probabilistic data struct
 
 - [Commands](https://oss.redislabs.com/redisbloom/CountMinSketch_Commands/)
 - [Algorithm](https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch)
-
-Big credits to @ashtul!
