@@ -35,4 +35,4 @@ categories: ["Modules"]
     - #[130](https://github.com/RedisBloom/RedisBloom/issues/130) Number of deletes wasn’t saved to RDB
   - General
     - #[117](https://github.com/RedisBloom/RedisBloom/issues/117) Using `RMUtil_RegisterWriteDenyOOMCmd`
-    - #[121](https://github
+    - #[121](https://github.com/RedisBloom/RedisBloom/issues/121) Moved `ReplicaVerbatim` to end of functions
