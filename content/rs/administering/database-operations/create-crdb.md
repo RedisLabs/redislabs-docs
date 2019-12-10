@@ -92,7 +92,7 @@ You must select **Redis 5** as the Redis version to use CRDB and RoF.
         host CRDB instances and the admin user account to connect to each cluster.
         1. In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
         1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn_or_ip_address>:9443`),
-            enter the credentials for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
+            enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
     - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
         specific key is maintained across all CRDB instances. To enable Causal Consistency for an existing
         CRDB, use the REST API.
