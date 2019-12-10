@@ -37,7 +37,7 @@ To replace certificates using the rladmin CLI, run:
 
 Where:
 
-- cert-type - The type of certificate you want to replace:
+- cert-name - The type of certificate you want to replace:
     - For management UI: `cm`
     - For REST API: `api`
     - For database endpoint: `proxy`
