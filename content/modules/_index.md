@@ -5,8 +5,9 @@ weight: 1
 alwaysopen: false
 categories: ["Modules"]
 ---
-Redis Labs develops, certifies, and packages modules for [redis](redis.io), [Redis Enterprise
-Software (RS)]({{< relref "/rs" >}}) clusters and [Redis Cloud Pro]({{< relref "/rv" >}}), including:
+Redis Labs develops and packages modules for redis.
+The modules listed here are supported with [Redis Enterprise Software (RS)]({{< relref "/rs" >}}) clusters and [Redis Cloud Pro (RC Pro)]({{< relref "/rv" >}}).
+Non-preview modules are bundled with RS and RC Pro.
 
 {{< embed-html "modules.html" >}}
 
