@@ -1,9 +1,11 @@
 ---
-Title: Developing Fast Search and Query with In-Memory Indexing
+Title: RediSearch
 description:
-weight: $weight
+weight: 10
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
+aliases:
+  - /rs/developing/modules/redisearch/
 ---
 The RediSearch Module combined with Redis Enterprise Software
 (RS) provides a high performance, integrated query, and full-text search
@@ -143,13 +145,9 @@ then the settings icon, the alter the number of partitions.
 
 ![redisearch_partitions](/images/rs/redisearch_partitions.png?width=700&height=119)
 
-### Other Configurations
+## More information
 
-For other configurations, please see the [RediSearch site on
-configuring](http://redisearch.io/Configuring/). To change these, please
-use the settings icon and add configurations there.
+You can find more information about RediSearch at:
 
-## RediSearch Commands
-
-For the authoritative list of RediSearch commands, please go
-[here](http://redisearch.io/).
+- [Configuring RediSearch](http://redisearch.io/Configuring/)
+- [RediSearch commands](http://redisearch.io/)

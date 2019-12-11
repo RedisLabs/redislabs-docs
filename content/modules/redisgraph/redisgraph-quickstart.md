@@ -1,21 +1,19 @@
 ---
-Title: Developing Applications with RedisGraph
+Title: RedisGraph Quick Start Tutorial
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
+aliases: /rs/getting-started/creating-database/redisgraph-quickstart//
 ---
-RedisGraph is the first queryable [Property Graph](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc) database to use [sparse matrices](https://en.wikipedia.org/wiki/Sparse_matrix) to represent the [adjacency matrix](https://en.wikipedia.org/wiki/Adjacency_matrix) in graphs and [linear algebra](http://faculty.cse.tamu.edu/davis/GraphBLAS.html) to query the graph.
+For this quick start, you will need the following:
 
-Primary features:
+- [A Redis Enterprise Software database with the RedisGraph module enabled]({{< relref "/modules/create-database-rs.md" >}})
+- OR
+- [A Redis Cloud Pro database with the RedisGraph module enabled](https://redislabs.com/redis-enterprise-cloud/)
+- redis-cli
 
-- Based on the [Property Graph Model](https://github.com/opencypher/openCypher/blob/master/docs/property-graph-model.adoc)
-    - Nodes (vertices) and Relationships (edges) that may have attributes
-    - Nodes that can be labeled
-    - Relationships have a relationship type
-- Graphs represented as sparse adjacency matrices
-- [Cypher](http://www.opencypher.org/) as query language
-    - Cypher queries translated into linear algebra expressions
+{{< embed-md "tryout-redisgraph.md" >}}
 
 ## Developing with RedisGraph
 

@@ -1,9 +1,11 @@
 ---
-Title: Developing Applications with RedisTimeSeries
+Title: RedisTimeSeries
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
-categories: ["RI"]
+categories: ["Modules"]
+aliases:
+  - /rs/developing/modules/redistimeseries/
 ---
 RedisTimeSeries is a Redis module developed by Redis Labs to enhance your experience managing time series data with Redis.
 

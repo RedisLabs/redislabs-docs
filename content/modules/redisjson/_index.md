@@ -1,9 +1,11 @@
 ---
-Title: Developing Applications with RedisJSON
+Title: RedisJSON
 description:
-weight: $weight
+weight: 40
 alwaysopen: false
-categories: ["RS"]
+categories: ["Modules"]
+aliases:
+  - /rs/developing/modules/redisjson/
 ---
 Applications developed with the open source version of RedisJSON are 100%
 compatible with RedisJSON in Redis Enterprise Software (RS).

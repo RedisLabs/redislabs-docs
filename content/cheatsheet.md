@@ -299,7 +299,7 @@ Output:
 
 **Embedding a partial**
 
-A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials should be placed in `layouts/partials/embeds` directory.
+A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials should be placed in `content/embeds` directory.
 
 Embed a markdown partial
 

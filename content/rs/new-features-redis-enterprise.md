@@ -36,7 +36,7 @@ Enterprise is known for.
 
 Redis Labs developed and certified these modules for use with Redis Enterprise Software (RS):
 
-- [RedisBloom]({{< relref "/rs/developing/modules/bloom-filters.md" >}})
+- [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
       filters are probabilistic data structures that do a very good job at
       quickly determining if something is contained within a set.
@@ -44,10 +44,10 @@ Redis Labs developed and certified these modules for use with Redis Enterprise S
     - RedisGraph is the first queryable Property Graph database to use sparse
       matrices to represent the adjacency matrix in graphs and linear algebra to query the graph.
       RedisGraph uses [Cypher](https://www.opencypher.org/) as its query language.
-- [RedisJSON]({{< relref "/rs/developing/modules/redisjson.md" >}})
+- [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
     - Now you have the convenience JSON as a built-in data type and easily
       able to address nested data via a path.
-- [RediSearch]({{< relref "/rs/developing/modules/redisearch.md" >}})
+- [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
     - This module turns RS into a supercharged distributed in-memory
       full-text indexing and search beast.
 
