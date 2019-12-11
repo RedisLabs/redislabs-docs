@@ -1,7 +1,7 @@
 ---
 Title: v1.0
 description:
-weight: 1
+weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
