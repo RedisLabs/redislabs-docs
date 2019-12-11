@@ -13,9 +13,9 @@ This is a maintenance release for version 1.4.
 This release improves overall stability and provides fixes for founded issues.
 
 - Bugfixes
-  - #[1000](https://github.com/RediSearch/RediSearch/issues/1000) - `FT.DEL` was not replicated to slave correctly
-  - #[1004](https://github.com/RediSearch/RediSearch/issues/1004) -  Memory leak on `TAG` array on certain situations
-  - #[1006](https://github.com/RediSearch/RediSearch/issues/1006) - Unexposed error on [conditional update `IF`](https://oss.redislabs.com/redisearch/Commands.html#ftadd) that caused the error message to leak
+    - #[1000](https://github.com/RediSearch/RediSearch/issues/1000) - `FT.DEL` was not replicated to slave correctly
+    - #[1004](https://github.com/RediSearch/RediSearch/issues/1004) -  Memory leak on `TAG` array on certain situations
+    - #[1006](https://github.com/RediSearch/RediSearch/issues/1006) - Unexposed error on [conditional update `IF`](https://oss.redislabs.com/redisearch/Commands.html#ftadd) that caused the error message to leak
 
 ## RediSearch v1.4.18 Release Notes
 
@@ -47,9 +47,11 @@ This is a maintenance release for version 1.4.
 This release improves overall stability and provides fixes for founded issues.
 
 Main Features:
+
 - #[883](https://github.com/RediSearch/RediSearch/issues/883) Forkgc optimizations - introduce new config parameter `FORK_GC_CLEAN_THRESHOLD`. RediSearch will only start to clean when the number of not cleaned documents is exceeding this threshold.
 
 Main Fixes:
+
 - #[848](https://github.com/RediSearch/RediSearch/issues/848) RediSearch will not crash when sorting on fields that don't exists in all documents.
 - #[884](https://github.com/RediSearch/RediSearch/issues/884) Fix wrong results on intersect iterator.
 
@@ -214,9 +216,9 @@ This release improves overall stability and provides fixes for founded issues .
 Main Fixes:
 
 1. Fixed memory leak on mempool destroy
-2. Fixed process crash when running with fork GC (preview)
-3. Fixed fork GC  (preview)  deadlock when using Tags
-4. Fixed memory leaks on index creation and deletion
+1. Fixed process crash when running with fork GC (preview)
+1. Fixed fork GC  (preview)  deadlock when using Tags
+1. Fixed memory leaks on index creation and deletion
 
 ## RediSearch v1.4.2 Release Notes
 

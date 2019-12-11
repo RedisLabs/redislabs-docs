@@ -11,37 +11,37 @@ This is a bug-fix release with some stability fixe, a few processing bug fixes, 
 
 ### Fixes
 
-* Fixed false positives in NOT iterator (5fe948e) 
+- Fixed false positives in NOT iterator (5fe948e)
 
-* Prevent crashing with uninitialized sorting vectors (96f2473)
+- Prevent crashing with uninitialized sorting vectors (96f2473)
 
-* Fixed overflow bug in triemap, and limited tag length to 4KB (09e682f)
+- Fixed overflow bug in triemap, and limited tag length to 4KB (09e682f)
 
-* Fixed false positives in intersects and negative intersects (4998772) 
+- Fixed false positives in intersects and negative intersects (4998772)
 
-* Fixed bug in union of id lists (b8e74ef3)
+- Fixed bug in union of id lists (b8e74ef3)
 
 ### New Features
 
-* Added support for tag prefix completions (137b346)
+- Added support for tag prefix completions (137b346)
 
 ## RediSearch v1.0.9 Release Notes
 
-This is a maintenance release from the 1.0 branch, that does not yet contain the aggregation engine that's already in master. It includes a few small fixes and API additions that were backported from master. 
+This is a maintenance release from the 1.0 branch, that does not yet contain the aggregation engine that's already in master. It includes a few small fixes and API additions that were backported from master.
 
 ### Changes
 
 #### 1. Hamming Distance Scoring
 
-RediSearch can now sort the search result by the inverse Hamming Distance between document payloads and the query payloads (provided they are both the same length). This can be used as a nearest neighbor search ranking when a feature vector is encoded as a bitmap and the distance metric is Hamming distance. 
+RediSearch can now sort the search result by the inverse Hamming Distance between document payloads and the query payloads (provided they are both the same length). This can be used as a nearest neighbor search ranking when a feature vector is encoded as a bitmap and the distance metric is Hamming distance.
 
 #### 2. Wildcard queries
 
 It's now possible to search for just `*`, scanning all the documents in the index. This is useful in conjunction with the Hamming Distance scorer.
 
-#### 3. Optional deletion of documents in FT.DEL 
+#### 3. Optional deletion of documents in FT.DEL
 
-Up until now, FT.DEL did not delete the Hash key containing the actual document. As of this version, you can call it with an optional DD (Delete Document) argument, and it will also delete the document. 
+Up until now, FT.DEL did not delete the Hash key containing the actual document. As of this version, you can call it with an optional DD (Delete Document) argument, and it will also delete the document.
 
 For example: `FT.DEL myIndex myDoc DD`.
 
