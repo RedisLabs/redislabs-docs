@@ -11,7 +11,7 @@ For this quick start tutorial, you need either:
 - Either:
     - [A Redis Enterprise Software database with the RedisBloom module enabled]({{< relref "/modules/create-database-rs.md" >}})
     - [A Redis Cloud Pro database with the RedisBloom module enabled](https://redislabs.com/redis-enterprise-cloud/)
-- redis-cli with access to a redis database
+- redis-cli with connectivity to a redis database
 
 {{< embed-md "tryout-redisbloom.md" >}}
 
