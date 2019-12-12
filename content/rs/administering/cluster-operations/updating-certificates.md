@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
-The self-signed certificates is used to establish encryption-in-transit for the following traffic:
+The self-signed certificates are used to establish encryption-in-transit for the following traffic:
 
 - Management Web UI (CM) - The certificate for connections to the management web UI
 - REST API - The certificate for REST API calls
@@ -37,7 +37,7 @@ To replace certificates using the rladmin CLI, run:
 
 Where:
 
-- cert-type - The type of certificate you want to replace:
+- cert-name - The name of certificate you want to replace:
     - For management UI: `cm`
     - For REST API: `api`
     - For database endpoint: `proxy`
@@ -57,12 +57,12 @@ rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 To replace a certificate using the REST API, run:
 
 ```src
-curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_type>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
+curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
 ```
 
 Where:
 
-- cert_type - The name of the certificate to replace:
+- cert_name - The name of the certificate to replace:
     - For management UI: `cm`
     - For REST API: `api`
     - For database endpoint: `proxy`
