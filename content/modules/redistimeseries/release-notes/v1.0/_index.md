@@ -1,7 +1,7 @@
 ---
 Title: v1.0
 description:
-weight: 1
+weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
@@ -59,6 +59,7 @@ TS.CREATE temperature RETENTION 60000 LABELS sensor_id 2 area_id 32
 ```
 
 #### Aggregation at read time
+
 When you need to query a time series, it’s cumbersome to stream all raw data points if you’re only interested in, say, an average over a given time interval. RedisTimeSeries follows the Redis philosophy to only transfer the minimum required data to ensure lowest latency. Below is an example of aggregation query over time buckets of 5,000 milliseconds with an [aggregation function](https://oss.redislabs.com/redistimeseries/commands/#tsrange):  
 
 ```src

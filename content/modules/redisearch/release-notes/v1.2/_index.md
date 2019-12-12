@@ -1,7 +1,7 @@
 ---
 Title: v1.2
 description:
-weight: 20
+weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---

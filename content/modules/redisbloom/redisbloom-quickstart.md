@@ -6,13 +6,12 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redisbloom/
 ---
+For this quick start tutorial, you need either:
 
-For this quick start, you will need the following:
-
-- [A Redis Enterprise Software database with the RedisBloom module enabled]({{< relref "/modules/create-database-rs.md" >}})
-- OR
-- [A Redis Cloud Pro database with the RedisBloom module enabled](https://redislabs.com/redis-enterprise-cloud/)
-- redis-cli
+- Either:
+    - [A Redis Enterprise Software database with the RedisBloom module enabled]({{< relref "/modules/create-database-rs.md" >}})
+    - [A Redis Cloud Pro database with the RedisBloom module enabled](https://redislabs.com/redis-enterprise-cloud/)
+- redis-cli with connectivity to a redis database
 
 {{< embed-md "tryout-redisbloom.md" >}}
 

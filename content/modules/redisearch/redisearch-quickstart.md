@@ -8,8 +8,9 @@ aliases: /rs/getting-started/creating-database/redisearch-quickstart/
 ---
 For this quick start tutorial, you need either:
 
-- [A Redis Enterprise Software database with the RediSearch module enabled]({{< relref "/modules/create-database-rs.md" >}})
-- [A Redis Cloud Pro database with the RediSearch module enabled](https://redislabs.com/redis-enterprise-cloud/)
-- redis-cli with access to a redis database
+- Either:
+    - [A Redis Enterprise Software database with the RediSearch module enabled]({{< relref "/modules/create-database-rs.md" >}})
+    - [A Redis Cloud Pro database with the RediSearch module enabled](https://redislabs.com/redis-enterprise-cloud/)
+- redis-cli with connectivity to a redis database
 
 {{< embed-md "tryout-redisearch.md" >}}

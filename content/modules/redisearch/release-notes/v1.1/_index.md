@@ -1,7 +1,7 @@
 ---
 Title: v1.1
 description:
-weight: 10
+weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
@@ -29,6 +29,6 @@ See [the full documentation on aggregations for more details](http://redisearch.
 
 ### Bug Fixes over 1.0.10
 
-* Fixed #[313](https://github.com/RediSearch/RediSearch/issues/313) - removed -mpopcnt compile flag.
+- Fixed #[313](https://github.com/RediSearch/RediSearch/issues/313) - removed -mpopcnt compile flag.
 
-* Fixed #[312](https://github.com/RediSearch/RediSearch/issues/312) - crash on highlighting
+- Fixed #[312](https://github.com/RediSearch/RediSearch/issues/312) - crash on highlighting
