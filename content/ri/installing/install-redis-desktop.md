@@ -28,3 +28,13 @@ And finally to start the RedisInsight:
 ```
 
 Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
+
+### Supported Operating Systems
+
+RedisInsight has been tested on the following operating systems:
+
+- Windows 10
+- Ubuntu 18.04
+- Mac OS 10.13 High Sierra
+
+For other versions of Windows, Mac and Ubuntu, or other Linux distributions, RedisInsight *should* work on them, but your milage may vary. Please write to redisinsight@redislabs.com to report any issues you encounter.
