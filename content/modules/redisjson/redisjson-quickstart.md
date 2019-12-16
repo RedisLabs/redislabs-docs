@@ -4,7 +4,7 @@ description:
 weight: 20
 alwaysopen: false
 categories: ["Modules"]
-aliases: /rs/getting-started/creating-database/redisjson-quickstart/
+aliases: /rs/getting-started/creating-database/redisjson-quick-start/
 ---
 For this quick start tutorial, you need either:
 

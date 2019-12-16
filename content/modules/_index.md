@@ -4,6 +4,7 @@ description:
 weight: 1
 alwaysopen: false
 categories: ["Modules"]
+aliases: /rs/developing/modules/
 ---
 Redis Labs develops and packages modules for redis.
 The modules listed here are supported with [Redis Enterprise Software (RS)]({{< relref "/rs" >}}) clusters and [Redis Cloud Pro (RC Pro)]({{< relref "/rv" >}}).

@@ -7,6 +7,7 @@ categories: ["Modules"]
 aliases:
   - /modules/rs
   - /rs/developing/modules/upgrading/
+  - /rs/developing/modules/installing/
 ---
 Modules add additional functionality to your databases for specific use cases.
 You can add modules to the database when you create the database or after the database is already created.
