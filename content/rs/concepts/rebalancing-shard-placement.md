@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software (RS) cluster offer a few master and slave
-shard placement policies that govern how shards of each database is
-distributed and placed both at creation and at resharding.
+Redis Enterprise Software (RS) cluster can use a master and slave
+shard placement policy to determine how shard distribution
+are distributed and placed both at creation and at resharding.
 
 ## Shard Placement
 
@@ -34,6 +34,7 @@ engage fewer system resources and a single or only a few of the proxies
 in the system for data access to this database.
 
 ![dense_placement_1-1](/images/rs/dense_placement_1-1.png?width=550&height=463)
+
 *Figure: Three node Redis Enterprise Cluster with two master shards in
 red
 and two slave shards in gray with a dense placement policy*
@@ -55,6 +56,7 @@ system resources and many proxies in the system for data access to this
 database.
 
 ![sparse_placement_1-1](/images/rs/sparse_placement_1-1.png?width=555&height=474)
+
 *Figure: Three node Redis Enterprise Cluster with two master shards in
 red
 and two slave shards in gray with sparse placement policy.*
