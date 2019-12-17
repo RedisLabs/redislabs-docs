@@ -8,15 +8,7 @@ aliases: /rs/concepts/rebalancing-shard-placement/
 ---
 {{< embed-md "shard-placement-intro.md"  >}}
 
-## Shard Placement Policy
-
-The shard placement policies are:
-
-- dense - Place as many shards as possible on the smallest number of nodes to reduce the latency between the proxy and the database shards.
-- sparse - Spread the shards across as many nodes in the cluster as possible to spread the traffic across cluster nodes.
-
-When you create a cluster, the default shard placement policy on the cluster is **dense**.
-The default policy is assigned to all databases that you create on the cluster.
+## Shard Placement Policies
 
 ### Dense Shard Placement Policy
 
@@ -29,7 +21,7 @@ the 2 master shards are hosted on one node and the 2 slave shards are hosted on 
 
 The dense policy helps to use less system resources and proxies for access to the database.
 
-![dense_placement_1-1](/images/rs/dense_placement_1-1.png?width=550&height=463)
+![dense_placement_1-1](/images/rs/dense_placement_1-1.png)
 
 *Figure: Three nodes with two master shards (red) and two slave shards (grey) with a dense placement policy*
 
