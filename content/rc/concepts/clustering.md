@@ -116,17 +116,10 @@ Compatible Regular Expressions (PCRE) rules that describe the dataset's
 key name patterns.
 
 To configure a custom hashing policy, enter regular expression (RegEx)
-<<<<<<< HEAD
-rules that identify the substring in the key's name - hash tag - on
-which hashing is done. The hashing tag is denoted in the RegEx by
-the use of the \`tag\` named subpattern. Different keys that have the
-same hash tag are stored and managed in the same slot.
-=======
 rules that identify the substring in the key's name - hashtag - on
 which hashing will be done. The hashing tag is denoted in the RegEx by
 the use of the \`tag\` named subpattern. Different keys that have the
 same hashtag will be stored and managed in the same slot.
->>>>>>> Unify concepts, faq and identical procedures
 
 Once you enable the custom hashing policy, the Redis Cloud's
 default RegEx rules that implement the standard hashing policy are:

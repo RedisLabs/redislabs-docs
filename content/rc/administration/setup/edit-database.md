@@ -26,13 +26,4 @@ When you select a database you can:
 
 Here is a video that shows how to edit a database:
 
-<<<<<<< HEAD
-## Edit a Database
-
-From the "View Database" page of the database you want to edit, click on
-the pencil icon to edit the database. This view allows you to edit the
-database settings just as they were when the database was created. For
-detailed descriptions of every field, read Create a Database.
-=======
 {{< youtube nrN7rAr73co >}}
->>>>>>> Unify concepts, faq and identical procedures

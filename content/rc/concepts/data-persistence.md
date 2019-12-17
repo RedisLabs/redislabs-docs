@@ -47,20 +47,12 @@ The options for persistence in Redis Cloud are:
 
 | **Options** | **Description** |
 |------------|-----------------|
-<<<<<<< HEAD
 |  None | Data is not persisted to disk at all. |
-|  Append Only File (AoF) every write | Data is fsynced to disk every write. |
+|  Append Only File (AoF) every write | (RC Pro only) Data is fsynced to disk every write. |
 |  Append Only File (AoF) every 1 second | Data is fsynced to disk every second. |
 |  Snapshot every 1 hour | A snapshot of the database is created every hour. |
 |  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
 |  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
-=======
-| None | Data is not persisted to disk at all. |
-| Append Only File (AoF) | Data is fsynced to disk every second. |
-| Snapshot every 1 hour | A snapshot of the database is created every hour. |
-| Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
-| Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
->>>>>>> Unify concepts, faq and identical procedures
 
 First, you should determine if you even need persistence at all.
 Persistence is used to recover from a catastrophic failure, so if the
