@@ -1,12 +1,21 @@
 ---
-Title: Installing the Redis Desktop Client
+Title: Installing the RedisInsight Desktop Client
 date: 2018-07-20 03:49:29 +0530
 weight: 5
 categories: ["RI"]
 path: install/redis-desktop-mac-win-linux/
 aliases: /ri/install/install-redis-desktop/
 ---
-RedisInsight is a full-featured Desktop GUI client for Windows, Linux and Mac.
+RedisInsight is a full-featured Desktop GUI client for:
+
+- Windows 10
+- Ubuntu 18.04
+- MacOS 10.13 High Sierra
+
+{{% note %}}
+For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
+We are happy to have your feedback about your experience at redisinsight@redislabs.com.
+{{% /note %}}
 
 RedisInsight offers the following features -
 
@@ -15,26 +24,17 @@ RedisInsight offers the following features -
 * Supports SSL/TLS based connections
 * Run Memory Analysis
 
-[Download](https://redislabs.com/redis-enterprise-visualization/redis-insight/) RedisInsight for Desktop here.
+To install RedisInsight:
 
-Once downloaded, change the downloaded file into executable one with the following command:
-```
-chmod +x redisinsight-linux64-[version]
-```
+1. [Download](https://redislabs.com/redis-enterprise-visualization/redis-insight/) RedisInsight for Desktop.
+1. For MacOS and Ubuntu, change the downloaded file into executable one with the following command:
 
-And finally to start the RedisInsight:
-```
-./redisinsight-linux64-[version]
-```
+    ```src
+    chmod +x redisinsight-linux64-[version]
+    ```
 
-Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
+1. Start the RedisInsight:
+    - Windows - Run the installer.
+    - MacOS and Ubuntu - Run: `/redisinsight-linux64-[version]`
 
-### Supported Operating Systems
-
-RedisInsight has been tested on the following operating systems:
-
-- Windows 10
-- Ubuntu 18.04
-- Mac OS 10.13 High Sierra
-
-For other versions of Windows, Mac and Ubuntu, or other Linux distributions, RedisInsight *should* work on them, but your milage may vary. Please write to redisinsight@redislabs.com to report any issues you encounter.
+1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
