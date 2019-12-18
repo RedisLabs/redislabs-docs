@@ -1,5 +1,5 @@
 ---
-Title: View and Edit a Subscription
+Title: Viewing and Editing a Subscription
 description:
 weight: 40
 alwaysopen: false
