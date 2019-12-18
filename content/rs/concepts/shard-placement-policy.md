@@ -12,12 +12,11 @@ aliases: /rs/concepts/rebalancing-shard-placement/
 
 ### Dense Shard Placement Policy
 
-In the dense policy, shards are placed on the same node
-as long as the node has enough available memory for the memory allocated to the database.
-When the node is not able to host all of the shards, some shards are moved to another node to maintain optimal node health.
+In the dense policy, the cluster places the database shards on as few nodes as possible,
+as long as the nodes have enough resources to support the database configuration.
 
-For example, for a database with 2 master and 2 slave shards on a cluster with three nodes and a dense shard placement policy,
-the 2 master shards are hosted on one node and the 2 slave shards are hosted on another node.
+For example, for a database with two master and two slave shards on a cluster with three nodes and a dense shard placement policy,
+the two master shards are hosted on one node and the two slave shards are hosted on another node.
 
 The dense policy helps to use less system resources and proxies for access to the database.
 
@@ -27,18 +26,17 @@ The dense policy helps to use less system resources and proxies for access to th
 
 ### Sparse Shard Placement Policy
 
-In the sparse policy, shards are placed on separate nodes
-to distribute the shards of a database across all available nodes.
+In the sparse policy, the cluster places shards on as many nodes as possible to distribute the shards of a database across all available nodes.
 When all nodes have database shards, the shards are distributed evenly across the nodes to maintain optimal node health.
 
-For example, for a database with 2 master and 2 slave shards on a cluster with three nodes and a sparse shard placement policy:
+For example, for a database with two master and two slave shards on a cluster with three nodes and a sparse shard placement policy:
 
 - Node 1 hosts one of the master shards
 - Node 2 hosts the slave for the first master shard
 - Node 3 hosts the second master shard
 - Node 1 hosts for the slave shard for master shard 2
 
-The dense policy helps to use less system resources and proxies for access to the database.
+The dense policy helps to use fewer system resources.
 
 ![sparse_placement_1-1](/images/rs/sparse_placement_1-1.png)
 
