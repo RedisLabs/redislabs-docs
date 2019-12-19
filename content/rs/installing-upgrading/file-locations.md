@@ -31,4 +31,7 @@ The default directories that Redis Enterprise Software uses for data and metadat
 | /etc/opt/redislabs | Default location for cluster manager configuration and certificates |
 | /tmp | Temporary files |
 
-You can specify different locations for the ephemeral and persistence storage [during cluster setup]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
+You can change these file locations for:
+
+- [Ephemeral and persistence storage]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) during cluster setup
+- [Socket files]({{< relref "/rs/installing-upgrading/configuring/change-location-socket-files.md" >}}) after cluster setup
