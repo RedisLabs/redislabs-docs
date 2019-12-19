@@ -21,7 +21,7 @@ To enable an account to use API:
 The generated string is the API access key that you need to include in all API calls.
 Account owners can see the access key in the account.
 
-You can also [manage usage of the API access key]({{< relref "/rv/api/how-to/manage-api-keys.md" >}}) including:
+You can also [manage usage of the API access key]({{< relref "/rc/api/how-to/manage-api-keys.md" >}}) including:
 
 - Delete the access key
 - Limit usage of the access key by network subnets
