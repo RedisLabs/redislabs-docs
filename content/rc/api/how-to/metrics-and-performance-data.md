@@ -3,7 +3,7 @@ Title: Metrics and Usage Statistics
 description: Using the metrics API operation to query database usage and statistics information
 weight: 80
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 draft: true
 ---
 You can get metrics and usage statistics for a database from the API operation:

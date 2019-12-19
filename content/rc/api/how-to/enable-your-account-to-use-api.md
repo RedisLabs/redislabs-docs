@@ -3,7 +3,7 @@ Title: Enable the API for your Account
 description: Enabling an account to use API using the Redis Labs web UI
 weight: 10
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 ---
 By default, the API is disabled for accounts.
 

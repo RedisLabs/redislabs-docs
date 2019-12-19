@@ -3,7 +3,7 @@ Title: Importing Data Into Your Database
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 aliases: /rc/how-to/importing-data/
          /rv/how-to/importing-dataset-redis-cloud/
          /rc/how-to/importing-data-database/

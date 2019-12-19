@@ -3,7 +3,7 @@ Title: Customizing a Subscription
 description:
 weight: 30
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 ---
 When you [create a Redis Cloud subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}),
 you can select **Build a Plan** to customize the subscription.

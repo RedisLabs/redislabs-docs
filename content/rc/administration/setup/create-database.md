@@ -3,7 +3,7 @@ Title: Creating a Database
 description:
 weight: 50
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
 ---

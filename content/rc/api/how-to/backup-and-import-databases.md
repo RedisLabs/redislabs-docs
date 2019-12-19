@@ -4,7 +4,7 @@ description: When you create or update a database, you can specify the backup pa
     The import API operation lets you import data from various source types and specified locations.
 weight: 72
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 ---
 
 ## Backup a Database

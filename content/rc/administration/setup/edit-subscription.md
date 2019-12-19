@@ -3,7 +3,7 @@ Title: Viewing and Editing a Subscription
 description:
 weight: 40
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 aliases: /rv/administration/setup_and_editing/view-edit-subscription/
          /rc/administration/setup/edit-subscription/
 ---

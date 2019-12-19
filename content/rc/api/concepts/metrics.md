@@ -3,7 +3,7 @@ Title: Metrics and usage statistics
 description: Metrics API provides programmatic access to database usage and performance data
 weight: 40
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 draft: true
 ---
 Metrics API provides programmatic access to database usage and performance data.

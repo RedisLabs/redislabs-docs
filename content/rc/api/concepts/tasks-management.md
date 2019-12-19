@@ -3,7 +3,7 @@ Title: Task Management
 description: A task is an API operation that is performed asynchronously because it exceeds the time allowed for the synchronous request/response model.
 weight: 30
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
 ---
 A task is an API operation that is performed asynchronously because it exceeds the time allowed for the synchronous request/response model.
 
