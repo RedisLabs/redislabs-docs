@@ -6,100 +6,61 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/quick-setup/
 ---
-The steps for creating a simple Redis Cloud Pro deployment are:
+When you create a Redis Cloud subscription, you must choose:
 
-1. Sign up for a Redis Cloud Pro account.
-1. Create a new Redis Cloud Pro subscription.
-1. Create a new database definition.
-1. Connect to your database.
+- A cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
+- The provider region
+- Redis Cloud service level:
+    - **Essentials** - For development environments and low-throughput applications
+    - **Pro** - For high-throughput applications, many databases or large datasets
+    - **Ultimate** - For a more complete support experience (Contact [Redis Labs Sales](https://redislabs.com/redis-enterprise-cloud/pricing/))
 
-{{% note %}}
-If you are interested in running Redis Cloud Pro instances on your own [AWS account](/rcpro/how-to/creating-cloud-account/), contact Redis Labs [Support team](https://redislabs.com/company/support) to enable this functionality.
-{{% /note %}}
+## Step 1: Create a New Subscription
 
-## Step 1: Sign up for Redis Cloud Pro account
+To create a new subscription:
 
-If you do not already have one, sign up for a [Redis Cloud Pro Account](https://app.redislabs.com/#/sign-up/vpc).
+1. In the Redis Cloud menu, click **Subscriptions**.
+1. At the bottom of the page, click ![Add](/images/rs/icon_add.png#no-click "Add").
+1. Select your subscription configuration:
+    1. Select a cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
+    1. Select the region that you want the subscription to use, for example: `us-central1`
+    1. In the Redis Cloud service levels, select the memory or throughput limit for your subscription.
+1. After you select a subscription configuration:
+    1. Review the subscription configuration.
+    1. Enter the IP range for the subscription in **Deployment CIDR**.
+    1. Enter your **Credit card** information.
+    1. Enter a name for the subscription.
+1. Click **Create**.
 
-If you already have an account, sign in to [Redis Cloud Pro](https://app.redislabs.com/#/login?).
+    The cluster for your selected subscription is created.
+    You can change the name and credit card information of the subscription after it is created.
 
-## Step 2: Create a new Redis Cloud Pro subscription
+{{< embed-md "create-subscription-next-steps.md"  >}}
 
-Add a new subscription to your account, if you do not already have one.
+## Step 2: Create a Database
 
-![new_subscription](/images/rcpro/new_subscription.png?width=800&height=406)
+After you create a subscription, you can create a database:
 
-For a new subscription:
-
-1. Enter a subscription name.
-1. Select if you want to use [Redis on
-    Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
-    or pure RAM Redis database.
-1. Select the cloud region in which you want your databases to be created.
-1. Select whether you want to use Multi-AZ for in-memory replication to another availability zone in the same region.
-1. Enter the required Deployment CIDR.
-    The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)
-    an IPv4 subnet that you want Redis Cloud Pro to use for this subscription.
-    For a standard deployment, you can specify 10.0.1.0/24. Make sure that the CIDR
-    you provide does not conflict with your application VPC CIDR to avoid problems
-    when you peer the VPC to your.
-1. Select whether you want Persistent Storage Encription.
-1. Click **Next** to finalize your subscription.
-
-## Step 3: Create the database definition
-
-Next, define the databases to provision. Each row in the table
-represents a group of databases that share the same specification.
-
-To start with a single database:
-
-1. Enter the database name.
+1. Enter a name for the database.
 1. Select the protocol (Redis or Memcached).
-1. Enter the dataset size - The estimated size of your data. You can specify 1GB
-    for a small database.
-1. Define if you want to have database replication (note that when enabling the database consumes twice the amount of memory).
-1. Select [data persistence] (/rv/concepts/data-persistence/) policy.
-1. Define if the database supports [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
-1. Throughput - You can define your estimated total throughput you expect from your database by either specifying the required ops/sec or number of shards needed.
-1. Modules - You can select which Redis Module you want to load to your database. In case you select 'RediSearch' please provide the estimated number of documents you are going to index.
-1. Click **Save** and enter the number of databases with these settings that you would like to provision. To add more rows, click the plus.
+1. Review the databases settings.
+1. Click **Activate**.
 
-![add_database](/images/rcpro/add_database.png?width=800&height=444)
+The database is in "Pending" status.
+When the databases is created, you can see the database settings, including:
 
-When you finish with all databases, click **Next**.
+- Endpoint - The address you use to connect to the database
+- Redis Password - The password you must use in your application connections to authenticate with the database
 
-Behind the scenes, Redis Cloud Pro is performing a few operations based on your
-inputs:
+To add more databases,
 
-- Calculating the necessary resources
-- Crafting a plan for an optimized cloud infrastructure based on those
-    calculations
+1. Go to **Databases**.
+1. Click on your subscription in the list of subscriptions.
+1. Click ![Add](/images/rs/icon_add.png#no-click "Add") and enter the databases settings.
 
-{{% note %}}
-Plan creation may take a little time based on a your inputs.
-{{% /note %}}
+## Step 3: Connect to your database
 
-After planning is complete, review the presented subscription and
-database information. This includes the expected infrastructure and shard prices.
-Provide a payment method by selecting an existing one or click **+** to add
-a new one.
-A $100 credit is assigned to the new subscription for a free trial.
-
-![review_create](/images/rcpro/review_create.png?width=800&height=594)
-
-Click **Continue** to create the subscription and deploy the
-databases. The subscription shows a "Pending" status and may
-take 10-15 minutes to build the infrastructure with the
-generated optimization plan. You receive an email when your
-databases are ready to use.
-
-## Step 4: Connect to your database
-
-In the menu, go to the Databases page. Select one of the
-databases, select the Configuration tab, and look for the database
-endpoint.
-
-![connect_to_database](/images/rcpro/connect_to_database.png?width=800&height=599)
+Now you can connect to the database with telnet, redis-cli, or an application.
 
 ### Using Telnet
 
@@ -174,12 +135,8 @@ in any existing code or apps that use Redis and you are done.
 
 ## More Information
 
-1. [Data Persistence with Redis Cloud Pro]({{< relref "rc/concepts/data-persistence.md" >}})
-1. [Securing Your Redis Cloud Pro
-    Database]({{< relref "/rc/administration/configuration/security.md" >}})
-1. [Creating
-    Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
-1. [Redis Cloud Pro Database
-    Backups]({{< relref "/rc/administration/configuration/backups.md" >}})
-1. [Monitoring Redis Cloud Pro
-    Performance]({{< relref "/rc/administration/configuration/monitoring-performance.md" >}}).
+- [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
+- [Securing Your Redis Cloud Database]({{< relref "/rc/administration/configuration/security.md" >}})
+- [Creating Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
+- [Redis Cloud Pro Database Backups]({{< relref "/rc/administration/configuration/backups.md" >}})
+- [Monitoring Redis Cloud Performance]({{< relref "/rc/administration/configuration/monitoring-performance.md" >}}).
