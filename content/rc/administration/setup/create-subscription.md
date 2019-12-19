@@ -10,12 +10,12 @@ aliases: /rv/administration/setup_and_editing/create-subscription/
 ---
 When you create a Redis Cloud subscription, you must choose:
 
-- A cloud provider: Amazon AWS, Microsoft Azure, Google Cloud Platform
+- A cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
 - The provider region
 - Redis Cloud service level:
-    - Essentials - Select high availability options and memory size limit
-    - Pro - Select memory size or throughput limit in standard Redis on RAM, or storage size limit in Redis on Flash (RoF)
-    - Ultimate - Contact [Redis Labs Support](https://redislabs.com/redis-enterprise-cloud/pricing/) for assistance.
+    - **Essentials** - For development environments and low-throughput applications
+    - **Pro** - For high-throughput applications, many databases or large datasets
+    - **Ultimate** - For a more complete support experience (Contact [Redis Labs Sales](https://redislabs.com/redis-enterprise-cloud/pricing/))
 
 ## Create a New Subscription
 
@@ -24,25 +24,20 @@ To create a new subscription:
 1. In the Redis Cloud menu, click **Subscriptions**.
 1. At the bottom of the page, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Select your subscription configuration:
-    1. Select a cloud provider: Amazon AWS, Microsoft Azure, Google Cloud Platform
+    1. Select a cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
     1. Select the region that you want the subscription to use, for example: `us-central1`
-    1. In the Redis Cloud service levels, select the subscriptions limits:
-        - Essentials:
-            - Select a high availability option: Off, [Replication]({{< relref "/rc/concepts/clustering.md" >}}), Multi-AZ
-            - Select the memory limit for your subscription
-        - Pro:
-            - For high throughput databases, select a throughput limit.
-            - For large datasets that require high throughput, select a memory limit.
-            - For very large datasets that can have lower throughput, select a memory limit for Redis on Flash (RoF).
-        - To customize your subscription:
-            - Click **Build a Plan** to [customize a Pro subscription]({{< relref "/rc/administration/setup/customize-pro.md" >}}).
-            - Click **Request Pricing** to customize an Ultimate subscription that includes annual payments, premium support, and customer success packages.
+    1. In the Redis Cloud service levels, select the memory or throughput limit for your subscription:
+        - Essentials - You can also select either [Replication]({{< relref "/rc/concepts/clustering.md" >}}) or Multi-Availability Zone (Multi-AZ)
+        - Pro - You can also select a subscription with [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) support
+        - Customize - You can:
+            - [**Build a Plan**]({{< relref "/rc/administration/setup/customize-pro.md" >}}) to follow a sizing process where you tell us your requirements and we give you a subscription that's just right for you.
+            - **Request Pricing** to customize an Ultimate subscription that includes annual payments, premium support, and customer success packages.
 1. After you select a subscription configuration:
     1. Review the subscription configuration.
-    1. For Pro subscriptions only:
-        1. If you want to host your subscription on multiple availability zones (multi-AZ) for high availability, enable **Multi-AZ**.
-            We recommend that you use a cloud region that has at least 3 availability zones.
-        1. If you want to attach encrypted EBS volumes to your instances so that the persistent storage for your subscription is encrypted, enable **Persistent Storage Encryption**.
+
+        For Pro subscriptions only:
+            1. Enable **Multi-AZ** to get improved high availability when multiple availability zones are available.
+            1. Enable **Persistent Storage Encryption** to attach encrypted EBS volumes to your instances so that the persistent storage for your subscription is encrypted.
     1. Enter the IP range for the subscription in **Deployment CIDR**.
     1. Enter your **Credit card** information.
     1. Enter a name for the subscription.
