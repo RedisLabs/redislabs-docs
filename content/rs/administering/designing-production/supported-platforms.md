@@ -21,6 +21,6 @@ Make sure your system meets these requirements:
 | RHEL/CentOS 6 |  6.7, 6.8, 6.9<br>Requires at least "Minimal Install" configuration. |
 | RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6<br>Requires at least "Minimal Install" configuration. For additional considerations, refer to [CentOS / RHEL 7 firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}). |
 | Oracle Linux | 6.7, 6.8, 6.9; 7.0, 7.1, 7.2, 7.3, 7.4, 7.5 |
-| Amazon Linux | All 64-bit Versions. Amazon Linux 2 is not supported. |
+| Amazon Linux | Version 1 |
 | Docker | Redis Enterprise Software Docker images are certified for Development and Testing only. |
 | Kubernetes, Pivotal Platform (PCF) and other orchestration and cloud environments | See the [Platform documentation]({{< relref "/platforms" >}}) |
