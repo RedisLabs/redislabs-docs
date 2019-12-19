@@ -3,10 +3,10 @@ You receive an email when your subscription is ready to use.
 
 ## Next Steps
 
-After the subscription is provisioned, you can [edit these subscription settings]({{< relref "/rc/administration/setup/edit-subscription.md" >}}):
+We recommend that you setup [VPC peering]({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}}) with your application VPC.
+VPC peering lets you route traffic between your VPCs using private IP addresses for improved security and performance.
+
+You can also [edit these subscription settings]({{< relref "/rc/administration/setup/edit-subscription.md" >}}) after the subscription is created:
 
 1. Subscription name
-1. Cloud account
-1. VPC peering
-1. CIDR whitelist
 1. Payment information
