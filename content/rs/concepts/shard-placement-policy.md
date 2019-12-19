@@ -12,8 +12,8 @@ aliases: /rs/concepts/rebalancing-shard-placement/
 
 ### Dense Shard Placement Policy
 
-In the dense policy, the cluster places the database shards on as few nodes as possible,
-as long as the nodes have enough resources to support the database configuration.
+In the dense policy, the cluster places the database shards on as few nodes as possible.
+When the node is not able to host all of the shards, some shards are moved to another node to maintain optimal node health.
 
 For example, for a database with two master and two slave shards on a cluster with three nodes and a dense shard placement policy,
 the two master shards are hosted on one node and the two slave shards are hosted on another node.
