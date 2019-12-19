@@ -31,8 +31,8 @@ To authenticate to the Swagger UI:
 
 1. Insert the API Key values:
 
-    1. Enter the [Account Key]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}}) as the `x-api-key` value and click **Authorize**.
-    1. Enter the [Secret Key]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}}) as the `x-api-secret-key` value and click **Authorize**.
+    1. Enter the [Account Key]({{< relref "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) as the `x-api-key` value and click **Authorize**.
+    1. Enter the [Secret Key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team.md" >}}) as the `x-api-secret-key` value and click **Authorize**.
     1. Click **Close**.
 
 {{% note %}}
@@ -106,8 +106,8 @@ curl -s -X GET "https://$HOST/logs" \
 - The example expects several variables to be set in the Linux shell:
 
     - **$HOST** - The URI of the Redis Labs API (`api.redislabs.com/v1`)
-    - **$ACCOUNT_KEY** - The [Account key value]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})
-    - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rv/api/how-to/create-api-keys-for-your-team.md" >}})
+    - **$ACCOUNT_KEY** - The [Account key value]({{< relref "/rc/api/how-to/enable-your-account-to-use-api.md" >}})
+    - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rc/api/how-to/create-api-keys-for-your-team.md" >}})
 
 - The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command-line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
 - You can set the variables using shell commands like the following:

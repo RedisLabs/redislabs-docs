@@ -8,7 +8,7 @@ categories: ["RC Pro"]
 API access requires each API request to include 2 parameters:
 
 1. **Account key** - Shown in the **Settings** > **Account**.
-    You must [enable your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}).
+    You must [enable your Account to use API]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}).
 1. **Secret key** - Created by account owners for their use or for other owners of the same account.
 
 ## Generating a Secret Key
@@ -17,7 +17,7 @@ For an account owner to create a key for themselves:
 
 1. In <https://app.redislabs.com>, navigate to **Settings**, and select **Cloud API Keys**.
 
-    If **Cloud API Keys** is not shown, make sure you [enabled your Account to use API]({{< relref  "/rv/api/how-to/enable-your-account-to-use-api.md" >}}).
+    If **Cloud API Keys** is not shown, make sure you [enabled your Account to use API]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}).
 1. To create a new key, click **Add new API secret key**.
 1. Enter the secret key properties:
     1. User Name - Select the user associated with the key.

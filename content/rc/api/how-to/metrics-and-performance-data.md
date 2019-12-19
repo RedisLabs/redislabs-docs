@@ -18,7 +18,7 @@ The query accepts 3 parameters:
 
 - `subscription-id` (Required) - The relevant subscription ID for the database
 - `database-id` (Required) - The ID of the database
-- `metric-span` (Optional) - The [time span]({{< relref "/rv/api/concepts/metrics#metric-spans-and-intervals" >}}) for the query. The default time span is `1hour`.
+- `metric-span` (Optional) - The [time span]({{< relref "/rc/api/concepts/metrics#metric-spans-and-intervals" >}}) for the query. The default time span is `1hour`.
 
 ## Metrics Query Example
 

@@ -18,7 +18,7 @@ To delete an access key:
 1. Make sure you are logged in as an account owner.
 1. Go to: **Settings** > **Cloud API Keys**
 
-    If **Cloud API Keys** is not shown, make sure you [enabled your Account to use API]({{< relref "/rv/api/how-to/enable-your-account-to-use-api.md" >}})).
+    If **Cloud API Keys** is not shown, make sure you [enabled your Account to use API]({{< relref "/rc/api/how-to/enable-your-account-to-use-api.md" >}})).
 1. Click **Delete**.
 1. Confirm that you want to delete the access key.
 

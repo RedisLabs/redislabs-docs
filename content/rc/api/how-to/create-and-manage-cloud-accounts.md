@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC Pro"]
 ---
 You can use `cURL` commands to create and manage a cloud account
-with the [CURL HTTP client]({{< relref "/rv/api/how-to/using-curl#using-the-curl-http-client" >}}).
+with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).
 
 ## Create a Cloud Account
 
