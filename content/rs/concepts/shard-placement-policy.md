@@ -12,8 +12,7 @@ aliases: /rs/concepts/rebalancing-shard-placement/
 
 ### Dense Shard Placement Policy
 
-In the dense policy, shards are placed on the same node
-as long as the node has enough available memory for the memory allocated to the database.
+In the dense policy, shards are placed on the same node as much as possible.
 When the node is not able to host all of the shards, some shards are moved to another node to maintain optimal node health.
 
 For example, for a database with 2 master and 2 slave shards on a cluster with three nodes and a dense shard placement policy,
@@ -27,7 +26,7 @@ The dense policy helps to use less system resources and proxies for access to th
 
 ### Sparse Shard Placement Policy
 
-In the sparse policy, shards are placed on separate nodes
+In the sparse policy, shards are placed on separate nodes as much as possible
 to distribute the shards of a database across all available nodes.
 When all nodes have database shards, the shards are distributed evenly across the nodes to maintain optimal node health.
 
