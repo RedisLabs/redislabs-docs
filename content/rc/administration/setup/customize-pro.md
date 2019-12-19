@@ -48,7 +48,20 @@ To customize a subscription you must:
     1. Set the quantity of each database size.
     1. Click **Next**.
     The system calculates the optimized cloud infrastructure based on your subscription settings.
-1. Review and Create - Review all of the subscription settings. Click ![Add](/images/rs/icon_add.png#no-click "Add") to change the Credit Card payment information.
+1. Review and Create - Review all of the subscription settings.
+    - Click ![Add](/images/rs/icon_add.png#no-click "Add") to change the Credit Card payment information.
 1. Click **Continue**.
+
+The subscription and database are created and a $100 credit is assigned to the new subscription for a free trial.
+
+To see the new databases:
+
+1. Go to **Databases**.
+1. Click on your subscription in the list of subscriptions.
+
+When the databases are created, you can see the database settings for each of them, including:
+
+- Endpoint - The address you use to connect to the database
+- Redis Password - The password you must use in your application connections to authenticate with the database
 
 {{< embed-md "create-subscription-next-steps.md"  >}}
