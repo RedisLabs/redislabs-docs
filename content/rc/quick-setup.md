@@ -48,12 +48,12 @@ After you create a subscription, you can create a database:
 1. Click **Activate**.
 
 The database is in "Pending" status.
-When the databases is created, you can see the database settings, including:
+When the database is created, you can see the database settings, including:
 
 - Endpoint - The address you use to connect to the database
 - Redis Password - The password you must use in your application connections to authenticate with the database
 
-To add more databases,
+To add more databases:
 
 1. Go to **Databases**.
 1. Click on your subscription in the list of subscriptions.
