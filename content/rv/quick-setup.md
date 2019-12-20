@@ -34,15 +34,15 @@ For a new subscription:
 1. Select if you want to use [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
     or pure RAM Redis database.
+1. Select which cloud provider (AWS or GCP) you wish to use
 1. Select the cloud region in which you want your databases to be created.
 1. Select whether you want to use Multi-AZ for in-memory replication to another availability zone in the same region.
 1. Enter the required Deployment CIDR.
     The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)
-    an IPv4 subnet that you want Redis Cloud Pro to use for this subscription.
+    denotes an IPv4 subnet that you want Redis Cloud Pro to use for this subscription.
     For a standard deployment, you can specify 10.0.1.0/24. Make sure that the CIDR
-    you provide does not conflict with your application VPC CIDR to avoid problems
-    when you peer the VPC to your.
-1. Select whether you want Persistent Storage Encription.
+    you provide does not overlap with your application's VPC CIDR.
+1. Select whether you want Persistent Storage Encryption.
 1. Click **Next** to finalize your subscription.
 
 ## Step 3: Create the database definition
@@ -54,9 +54,8 @@ To start with a single database:
 
 1. Enter the database name.
 1. Select the protocol (Redis or Memcached).
-1. Enter the dataset size - The estimated size of your data. You can specify 1GB
-    for a small database.
-1. Define if you want to have database replication (note that when enabling the database consumes twice the amount of memory).
+1. Enter the memory limit - This is the total size of master and slave (if replication is enabled) available to be used. 1GB can be used for a small db.
+1. Define if you want to have database replication (note that when enabling the database consumes twice the amount of memory - a 1GB memory limit will result in 0.5GB of usable data - 0.5GB in the master and 0.5GB in the slave).
 1. Select [data persistence] (/rv/concepts/data-persistence/) policy.
 1. Define if the database supports [OSS Cluster API] (/rs/concepts/data-access/oss-cluster-api/).
 1. Throughput - You can define your estimated total throughput you expect from your database by either specifying the required ops/sec or number of shards needed.
@@ -67,7 +66,7 @@ To start with a single database:
 
 When you finish with all databases, click **Next**.
 
-Behind the scenes, Redis Cloud Pro is performing a few operations based on your
+Behind the scenes, Redis Cloud Pro performs the following operations based on your
 inputs:
 
 - Calculating the necessary resources
