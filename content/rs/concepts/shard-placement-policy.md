@@ -6,6 +6,10 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/concepts/rebalancing-shard-placement/
 ---
+In Redis Enterprise Software (RS), the location of master and slave shards on the cluster nodes can impact the database and node performance.
+Master shards and their corresponding slave shards are always placed on separate nodes for data resiliency.
+The shard placement policy helps to maintain optimal performance and resiliency.
+
 {{< embed-md "shard-placement-intro.md"  >}}
 
 ## Shard Placement Policies
@@ -41,3 +45,7 @@ The dense policy helps to use fewer system resources.
 ![sparse_placement_1-1](/images/rs/sparse_placement_1-1.png)
 
 *Figure: Three nodes with two master shards (red) and two slave shards (grey) with a sparse placement policy*
+
+## Related Articles
+
+You can [configure the shard placement policy]({{< relref "/rs/administering/designing-production/performance/shard-placement.md" >}}) for each database.
