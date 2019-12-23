@@ -100,7 +100,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
 ### Discovery Service
 
-- When using [Redis Sentinel (Discovery Servive)]({{< relref "rs/concepts/data-access/discovery-service.md" >}}) you must make sure databases' names on the same cluster are different one from each other (unique name per database).
+- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), every database name must be unique across the cluster.
 
 ### Redis Commands
 
