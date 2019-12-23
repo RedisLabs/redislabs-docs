@@ -98,6 +98,10 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
     `curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"`
 
+### Discovery Service
+
+- When using [Redis Sentinel (Discovery Servive)]({{< relref "rs/concepts/data-access/discovery-service.md" >}}) you must make sure databases' names on the same cluster are different one from each other (unique name per database).
+
 ### Redis Commands
 
 - The capability of disabling specific Redis commands does not work on commands specific to Redis Modules.
