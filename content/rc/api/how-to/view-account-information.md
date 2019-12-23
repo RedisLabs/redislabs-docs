@@ -3,7 +3,8 @@ Title: View Account Information
 description: Get initial information on account parameters
 weight: 110
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/api/how-to/view-account-information/
 ---
 
 The root API operation returns information about the current account, user and API Key (as identified by the set of API Keys provided in the API request).

@@ -3,7 +3,8 @@ Title: Authentication and Authorization
 description: How the API uses keys for authenticating users and authorizing API requests
 weight: 60
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/api/concepts/authentication-and-authorization/
 ---
 All API operations require authentication using a set of 2 API Keys:
 

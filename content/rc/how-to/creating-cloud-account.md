@@ -3,21 +3,21 @@ Title: Creating a Cloud Account
 description:
 weight: 10
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/how-to/creating-cloud-account/
 ---
+A Redis Cloud cloud account which runs on your cloud infrastructure needs all necessary credentials and information
+of your cloud account. This cloud account enables Redis Cloud to create, manage, and monitor Cloud resources automatically on your behalf.
 
-A Redis Cloud Cloud Account which runs on your cloud infrastructure needs all necessary credentials and information
-of your cloud account. This Cloud Account enables Redis Cloud to create, manage, and monitor Cloud resources automatically on your behalf.
-
-Once a Cloud Account is set up you can reuse it with several subscriptions.
+Once a cloud account is set up you can reuse it with several subscriptions.
 
 ## Create a new Cloud Account
 
-To create a Redis Cloud Cloud Account, please select **Cloud Accounts** from the
+To create a Redis Cloud cloud account, please select **Cloud Accounts** from the
 right side menu. Please follow [our
 instructions]({{< relref "/rc/how-to/creating-aws-user-redis-enterprise-vpc.md" >}})
 on how to set up a user for Redis Cloud to use on your AWS account.
-To create a new Cloud Account, click on the '**+**' button.
+To create a new cloud account, click on the '**+**' button.
 
 Please enter the following details:
 

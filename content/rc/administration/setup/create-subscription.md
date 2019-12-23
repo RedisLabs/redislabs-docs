@@ -6,6 +6,7 @@ alwaysopen: false
 categories: ["RC Pro"]
 aliases: /rv/administration/setup_and_editing/create-subscription/
          /rc/administration/setup_and_editing/create-subscription/
+         /rc/administration/setup-and-editing/create-subscription/
 ---
 A Redis Cloud subscription consists of a selected cloud
 provider (and respective region, e.g. "AWS - US-West-2"), architectural

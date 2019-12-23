@@ -5,6 +5,7 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/quick-setup/
+        /rc/quick-setup-redis-cloud/
 ---
 The steps for creating a simple Redis Cloud Pro deployment are:
 

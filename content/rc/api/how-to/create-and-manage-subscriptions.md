@@ -3,7 +3,8 @@ Title: Create and manage Subscriptions
 description: This article describes how to create and manage a subscription using `cURL` commands.
 weight: 60
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/api/how-to/create-and-manage-subscriptions/
 ---
 You can use `cURL` commands to create and manage a subscriptions
 with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).

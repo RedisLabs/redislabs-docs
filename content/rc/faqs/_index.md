@@ -4,6 +4,7 @@ description:
 weight: 90
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/faqs/
 ---
 Here are some frequently asked questions about Redis Cloud.
 

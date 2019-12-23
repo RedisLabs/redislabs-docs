@@ -3,7 +3,8 @@ Title: Using the API
 description: How to use the API with various tools (especially with `cURL`)
 weight: 40
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/api/how-to/using-curl/
 ---
 You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](https://api.redislabs.com/v1/)) with any of the following tools:
 

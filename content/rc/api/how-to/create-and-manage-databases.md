@@ -3,7 +3,8 @@ Title: Create and manage Databases
 description: This article describes how to create and manage a database using `cURL` commands.
 weight: 70
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/api/how-to/create-and-manage-databases/
 ---
 You can use `cURL` commands to create and manage a cloud account
 with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).

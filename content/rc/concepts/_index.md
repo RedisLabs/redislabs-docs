@@ -4,6 +4,7 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/concepts/
 ---
 This section of pages contains content that describes the main concepts
 that Redis Cloud is built around.

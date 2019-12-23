@@ -4,6 +4,8 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/administration/configure/
+        /rv/administration/configuration/
 ---
 While there is very little configuration of Redis Cloud
 required, there are some things that you can and may want to do to

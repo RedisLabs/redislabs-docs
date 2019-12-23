@@ -4,6 +4,7 @@ description:
 weight: 80
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/administration/billing-history/
 ---
 This page contains a list of purchases, changes, and payments for the subscriptions you have in your Redis Cloud account.
 

@@ -4,6 +4,8 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/administration/setup-and-editing/viewing-editing-database/
+        /rv/administration/setup_and_editing/viewing-editing-databases/
 ---
 To view your database, go to the Menu and click on "Databases".
 Your databases are grouped by [subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}).

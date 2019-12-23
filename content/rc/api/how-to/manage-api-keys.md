@@ -3,7 +3,8 @@ Title: Manage API Keys
 description: Managing API Keys using the Redis Labs web UI
 weight: 30
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/api/how-to/manage-api-keys/
 ---
 After you create the API access key, you can manage usage of the API access key including:
 

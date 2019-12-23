@@ -5,6 +5,8 @@ weight: 70
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/configure/backups/
+        /rc/administration/configure/backups/
+        /rv/administration/configuration/backups/
 ---
 You can run scheduled and on-demand backups of your Redis Cloud databases
 to a remote storage location. Scheduled backups run every 24 hours.

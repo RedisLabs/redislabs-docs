@@ -3,7 +3,8 @@ Title: Evaluating Cost Before Deployment
 description: How to evaluate the cost of a specific subscription or database without changing existing resources.
 weight: 65
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["Cloud"]
+aliases: /rv/api/how-to/dry-run-cost-evaluations/
 ---
 When you change your subscriptions and databases you also change the cost of your deployment.
 With a **dry-run request**, you can evaluate the impact that subscription and databases changes cause before you deploy these changes:

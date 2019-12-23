@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/concepts/data-eviction-policies/
 ---
 For each database, you can choose from these data eviction policies:
 

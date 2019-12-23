@@ -4,6 +4,7 @@ description:
 weight: 50
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/administration/payment-methods/
 ---
 On this page you can view and edit the existing payment methods for your account, as well as add new ones to your account.
 
