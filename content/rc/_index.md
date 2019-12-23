@@ -4,6 +4,7 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/
 ---
 Redis Cloud is based on the proven Redis Enterprise technology, serving thousands of
 customers of [Redis Enterprise

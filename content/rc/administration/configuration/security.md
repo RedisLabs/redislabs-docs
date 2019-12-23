@@ -7,6 +7,7 @@ categories: ["RC"]
 aliases: /rv/administration/configuration/securing-your-database/
          /rv/administration/configuration/security/
          /rc/administration/configuration/securing-your-database/
+         /rc/administration/configure/security/
 ---
 The security controls for your database are:
 

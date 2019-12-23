@@ -4,6 +4,7 @@ description: How to use the Redis Labs web UI to create and manage API Keys for 
 weight: 20
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/how-to/create-api-keys-for-your-team/
 ---
 API access requires each API request to include 2 parameters:
 

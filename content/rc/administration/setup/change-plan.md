@@ -5,6 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/changing-subscription-plan/
+        /rc/administration/setup-and-editing/changing-subscription-plan/
 ---
 It is very easy to upgrade or downgrade your subscription at any time,
 all with no downtime.

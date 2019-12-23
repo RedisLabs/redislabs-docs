@@ -4,6 +4,7 @@ description: Using the Redis Labs system log to track and audit actions performe
 weight: 100
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/how-to/view-auditing-using-system-log/
 ---
 The Redis Labs system log collects and reports on actions performed on various entities in the account. These entities include the account itself, users, API Keys, subscriptions, databases, accounts, payment methods and more. For each entity, various lifecycle events are logged in the system log.
 

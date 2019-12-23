@@ -5,6 +5,7 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/quick-setup/
+        /rc/quick-setup-redis-cloud/
 ---
 When you create a Redis Cloud subscription, you must choose:
 

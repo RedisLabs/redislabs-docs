@@ -4,6 +4,8 @@ description:
 weight: 70
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/administration/setup-and-editing/delete-databases/
+        /rv/administration/setup_and_editing/deleting-database/
 ---
 Deleting a database is just as easy as creating one.
 Make sure that you are truly done with the database,

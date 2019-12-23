@@ -6,6 +6,7 @@ alwaysopen: false
 categories: ["Cloud"]
 aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
+         /rc/administration/setup-and-editing/creating-databases/
 ---
 Once you have a subscription, you can easily create a database in Redis Cloud by following these steps:
 

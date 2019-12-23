@@ -4,6 +4,7 @@ description: How the API uses keys for authenticating users and authorizing API 
 weight: 60
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/concepts/authentication-and-authorization/
 ---
 All API operations require authentication using a set of 2 API Keys:
 

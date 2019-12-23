@@ -4,6 +4,7 @@ description: API requests follow specific lifecycle phases and states, based on 
 weight: 20
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/concepts/provisioning-lifecycle/
 ---
 The RC Pro REST API can run operations that use many resources, including multiple servers, services and related infrastructure.
 These operations include CREATE, UPDATE and DELETE operations on Subscriptions, Databases and other entities.

@@ -6,6 +6,7 @@ alwaysopen: false
 categories: ["Cloud"]
 aliases: /rv/administration/setup_and_editing/create-subscription/
          /rc/administration/setup_and_editing/create-subscription/
+         /rc/administration/setup-and-editing/create-subscription/
 ---
 When you create a Redis Cloud subscription, you must choose:
 

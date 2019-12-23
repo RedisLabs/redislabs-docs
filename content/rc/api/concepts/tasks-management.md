@@ -4,6 +4,7 @@ description: A task is an API operation that is performed asynchronously because
 weight: 30
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/concepts/tasks-management/
 ---
 A task is an API operation that is performed asynchronously because it exceeds the time allowed for the synchronous request/response model.
 

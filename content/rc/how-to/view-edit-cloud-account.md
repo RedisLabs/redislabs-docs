@@ -4,6 +4,7 @@ description:
 weight: 20
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/how-to/view-edit-cloud-account/
 ---
 
 To view or edit your existing cloud accounts please select **Cloud

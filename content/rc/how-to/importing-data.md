@@ -4,9 +4,9 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["Cloud"]
-aliases: /rc/how-to/importing-data/
-         /rv/how-to/importing-dataset-redis-cloud/
+aliases: /rv/how-to/importing-dataset-redis-cloud/
          /rc/how-to/importing-data-database/
+         /rv/how-to/importing-data-database/
 ---
 You can import an existing dataset into your Redis Cloud
 instance. This article lists the steps required to share your dataset

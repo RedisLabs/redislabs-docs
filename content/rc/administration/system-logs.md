@@ -4,6 +4,7 @@ description:
 weight: 60
 alwaysopen: false
 categories: ["RC"]
+aliases: /rv/administration/system-logs/
 ---
 This page contains events, alerts, and logs from the activities, databases, and subscriptions in your account.
 You can sort by any of the column headers, search through the system logs.
