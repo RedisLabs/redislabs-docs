@@ -25,3 +25,5 @@ To configure RedisInsight with environment variables:
 The following environment variables can be set to configure RedisInsight:
 
 - `REDISINSIGHT_PORT` - By default, RedisInsight listens on port 8001. To have RedisInsight bind to a different port, set the `REDISINSIGHT_PORT` environment variable.
+
+- `REDISINSIGHT_HOST` - By default, RedisInsight binds to the IP address `0.0.0.0`. To have RedisInsight bind to a different host, set the `REDISINSIGHT_HOST` environment variable.
