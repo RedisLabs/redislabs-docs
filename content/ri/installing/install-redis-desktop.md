@@ -26,7 +26,7 @@ RedisInsight offers the following features -
 
 To install RedisInsight:
 
-1. [Download](https://redislabs.com/redis-insight/) RedisInsight for Desktop.
+1. [Download](https://redislabs.com/redisinsight/) RedisInsight for Desktop.
 1. Prepare the executable:
 
     - For Ubuntu - To make the downloaded file executable, run:
