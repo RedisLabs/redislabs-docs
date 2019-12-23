@@ -27,3 +27,7 @@ The following environment variables can be set to configure RedisInsight:
 - `REDISINSIGHT_PORT` - By default, RedisInsight listens on port 8001. To have RedisInsight bind to a different port, set the `REDISINSIGHT_PORT` environment variable.
 
 - `REDISINSIGHT_HOST` - By default, RedisInsight binds to the IP address `0.0.0.0`. To have RedisInsight bind to a different host, set the `REDISINSIGHT_HOST` environment variable.
+
+- `REDISINSIGHT_HOME_DIR` - By default, RedisInsight stores it's local database, log files, snapshot files, etc. in the `.redisinsight` directory in the user's home directory on desktop and in the `/db` directory inside the Docker container. To change this directory, set the `REDISINSIGHT_HOME_DIR` environment variable.
+
+- `LOG_DIR` - By default, RedisInsight stores it's log files directly inside the home directory (see `REDISINSIGHT_HOME_DIR`). To store the log files somewhere else, set the `LOG_DIR` environment variable.
