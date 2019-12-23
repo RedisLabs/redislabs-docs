@@ -5,6 +5,7 @@ description: When you create or update a database, you can specify the backup pa
 weight: 72
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/how-to/backup-and-import-databases/
 ---
 
 ## Backup a Database

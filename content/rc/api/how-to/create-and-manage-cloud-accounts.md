@@ -4,6 +4,7 @@ description: Cloud accounts specify which account to use when creating and modif
 weight: 50
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/how-to/create-and-manage-cloud-accounts/
 ---
 You can use `cURL` commands to create and manage a cloud account
 with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).

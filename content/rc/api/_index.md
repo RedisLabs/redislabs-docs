@@ -4,12 +4,13 @@ description:
 weight: 80
 alwaysopen: false
 categories: ["Cloud"]
+aliases: /rv/api/
 ---
 Redis Cloud Pro (RC Pro) API follows the principles of the REST architectural style to expose programmatic access to Redis Labs Pro features and capabilities.
 
-### Supported Redis Cloud Pro Features
+## Supported Redis Cloud Pro Features
 
-The API exposes programmatic access for management of :
+The API exposes programmatic access for management of:
 
 - [**Full lifecycle management**]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md" >}}) of Redis Labs Pro Subscriptions and Databases
 - [**System Log**]({{< relref  "/rc/api/how-to/view-auditing-using-system-log.md" >}}) for auditing lifecycle actions (create, update, delete) using
@@ -19,7 +20,7 @@ The API exposes programmatic access for management of :
 - **Alerts settings**
 - **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
 
-### API Features
+## API Features
 
 The RC Pro API includes these features:
 
@@ -31,7 +32,7 @@ The RC Pro API includes these features:
 - Support for multiple personal [API Keys]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
 - Restrict API usage to specific source IP addresses / ranges
 
-### Getting started
+## Getting started
 
 1. [Enable your Account to use API]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}})
 1. [Authentication and Authorization]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
