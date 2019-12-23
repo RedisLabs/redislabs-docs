@@ -5,6 +5,10 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
+In Redis Enterprise Software (RS), the location of master and slave shards on the cluster nodes can impact the database and node performance.
+Master shards and their corresponding slave shards are always placed on separate nodes for data resiliency.
+
+The [shard placement policy]({{< relref "/rs/concepts/shard-placement-policy.md" >}}) helps to maintain optimal performance and resiliency.
 {{< embed-md "shard-placement-intro.md"  >}}
 
 ## Default Shard Placement Policy
