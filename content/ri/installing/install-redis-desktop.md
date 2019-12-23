@@ -26,15 +26,20 @@ RedisInsight offers the following features -
 
 To install RedisInsight:
 
-1. [Download](https://redislabs.com/redis-enterprise-visualization/redis-insight/) RedisInsight for Desktop.
-1. For MacOS and Ubuntu, change the downloaded file into executable one with the following command:
+1. [Download](https://redislabs.com/redis-insight/) RedisInsight for Desktop.
+1. Prepare the executable:
+
+    - For Ubuntu - To make the downloaded file executable, run:
 
     ```src
-    chmod +x redisinsight-linux64-[version]
+    chmod +x redisinsight-<platform>-<version>
     ```
 
-1. Start the RedisInsight:
-    - Windows - Run the installer.
-    - MacOS and Ubuntu - Run: `/redisinsight-linux64-[version]`
+    - For Windows and Mac - Run the installer.
+
+1. Run RedisInsight:
+
+    - Windows - Open RedisInsight.
+    - MacOS and Ubuntu - Run: `/redisinsight-<platform>-<version>`
 
 1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
