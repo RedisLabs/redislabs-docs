@@ -81,7 +81,7 @@ The setup of the CRDB fails if there is no connectivity between the clusters.
 
 ## Network Ports
 
-For initial configuration and ongoing maintenance of a CRDB, every nude must have access to the REST API ports of every other node.
+For initial configuration and ongoing maintenance of a CRDB, every node must have access to the REST API ports of every other node.
 You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
 For synchronization, CRDBs operate over the standard endpoint ports.
