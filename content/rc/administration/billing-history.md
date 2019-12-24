@@ -11,4 +11,4 @@ This page contains a list of purchases, changes, and payments for the subscripti
 If you have a question about billing,
 make sure that you refer to the reference number from this list when you contact Redis Labs Support.
 
-![billing_history](/images/rcpro/billing_history.png)
+![billing_history](/images/rc/billing_history.png)

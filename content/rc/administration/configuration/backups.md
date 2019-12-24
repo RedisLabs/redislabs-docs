@@ -35,7 +35,7 @@ steps:
     1. To create a new bucket:
         1. Click the **Create Bucket** button.
         1. Enter a **name** and **region** for the bucket.
-            ![new-bucket](/images/rcpro/new-bucket.png?width=600&height=678)
+            ![new-bucket](/images/rc/new-bucket.png?width=600&height=678)
         1. Click the **Next** button.
         1. Set any bucket properties to your company's standards.
         1. On the Set permissions page, click the **Add account** button.
@@ -43,7 +43,7 @@ steps:
             `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
         1. Check read/write boxes for **Objects** and **Object permissions**,
             then click **Save**.
-            ![add_s3_user](/images/rcpro/add_s3_user.png?width=600&height=698)
+            ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)
         1. Click the **Create bucket** button.
     1. To use an existing bucket, click on the bucket and go to the
         **Permissions** tab
@@ -51,7 +51,7 @@ steps:
         1. In the **Access for other AWS accounts** section enter the below information:
            1. In the Account field enter:
                `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-               ![add_user_existing](/images/rcpro/add_user_existing.png?width=700&height=175)
+               ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)
            1. Select the **permissions** that you need.
         1. Click **Save**.
 
