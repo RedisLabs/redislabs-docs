@@ -14,7 +14,7 @@ RedisInsight is a full-featured Desktop GUI client for:
 
 {{% note %}}
 For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
-We are happy to have your feedback about your experience at redisinsight@redislabs.com.
+We are happy to receive any feedback at redisinsight@redislabs.com.
 {{% /note %}}
 
 RedisInsight offers the following features -
