@@ -14,7 +14,7 @@ account]({{< relref "/rc/securing-redis-cloud-connections.md" >}}),
 you are prompted to supply the downloadable Redis Labs CA
 Certificate from this page.
 
-![settings](/images/rcpro/settings.png?width=1000&height=782)
+![settings](/images/rcessentials/settings.png?width=1000&height=782)
 
 ## Team Management
 
@@ -31,4 +31,4 @@ Team members can have different roles to the account:
 - Viewer - Can view databases
 
 ![Team settings on Redis Enterprise
-Cloud](/images/rcpro/settings_team.png?width=1000&height=454)
+Cloud](/images/rcessentials/settings_team.png?width=1000&height=454)

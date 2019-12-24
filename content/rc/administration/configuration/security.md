@@ -17,7 +17,7 @@ The number of source IP rules that you can add depends on the Redis Cloud plan t
 For example, the 1GB plan allows up to 8 source IP authentication rules.
 These rules can contain either IP or [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation).
 
-![Source IP/Subnet](/images/rcpro/source_ip_subnet-1.png)
+![Source IP/Subnet](/images/rc/source_ip_subnet-1.png)
 
 In case you require more source IP rules than your current Redis Cloud plan entitles you to,
 you can upgrade to [another plan](https://redislabs.com/pricing) that supports the number of source IP rules that you need.
@@ -39,7 +39,7 @@ One feature often overlooked is the little eye icon on the right side of
 the form field that can be used to view the password.
 
 ![redis
-password](/images/rcpro/redis_password.png?width=600&height=42)
+password](/images/rc/redis_password.png?width=600&height=42)
 
 ## AWS Security groups
 

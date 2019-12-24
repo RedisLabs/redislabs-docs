@@ -13,7 +13,7 @@ Relic license key.
 When you set up [SSL/TLS]({{< relref "/rc/securing-redis-cloud-connections.md" >}}) for your account,
 you must supply the downloadable Redis Labs CA Certificate from this page.
 
-![settings](/images/rcpro/settings.png)
+![settings](/images/rc/settings.png)
 
 ## Team Management
 
@@ -22,7 +22,7 @@ the "Team" tab and you will be presented with the current list of team
 members on this account.
 
 - To add more team members, click ![Add](/images/rs/icon_add.png#no-click "Add").
-- To edit an existing team member, click ![Edit](/images/rcpro/icon_edit.png#no-click "Edit").
+- To edit an existing team member, click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
 
 Team members can have different roles to the account:
 
