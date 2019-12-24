@@ -8,23 +8,25 @@ aliases: /ri/install/install-redis-desktop/
 ---
 RedisInsight is a full-featured Desktop GUI client for Windows, Linux and Mac.
 
-RedisInsight offers the following features -
+RedisInsight offers the following features:
 
-* Easy to use browser based interface to search keys, view and edit data
+* Easy-to-use browser-based interface to search keys, view and edit data
 * Only GUI tool to support Redis Cluster
-* Supports SSL/TLS based connections
-* Run Memory Analysis
+* Support for SSL/TLS based connections
+* Memory Analysis
 
 [Download](https://redislabs.com/redis-enterprise-visualization/redis-insight/) RedisInsight for Desktop here.
 
-Once downloaded, change the downloaded file into executable one with the following command:
+On Linux, once downloaded, make the downloaded file executable with the following command:
 ```
 chmod +x redisinsight-linux64-[version]
 ```
 
-And finally to start the RedisInsight:
+And finally, start the RedisInsight installer as downloaded for your operating system:
 ```
 ./redisinsight-linux64-[version]
 ```
 
-Once the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
+On Windows, once the installer is completed, start RedisInsight via the Windows start menu.
+
+Once RedisInsight is running and starts its own web server, use your browser to open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
