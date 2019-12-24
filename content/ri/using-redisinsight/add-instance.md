@@ -31,7 +31,19 @@ Connecting to AWS ElastiCache can be particularly problematic since ElastiCache 
 
 If you want to work with ElastiCache Redis caches using RedisInsight, you have two options:
 
+1. If you are not using redis cluster, you can [setup an SSH Tunnel](https://userify.com/blog/howto-connect-redis-ec2-ssh-tunnel-elasticache/) between RedisInsight and your Elasticache instance. An SSH tunnel consists of an encrypted tunnel created through an SSH protocol connection.
+
+   - Run this command to create an ssh tunnel:
+
+     ```bash
+      ssh -f -N -L <local_port>:<elasticache_endpoint> -i <path_to_pem_file> <ec2_endpoint>
+      ```
+      
+   - Go to Add Instance in RedisInsight and add an instance with host=localhost, port=<local_port>,
+     name=your_instance_name
+
 1. [Install RedisInsight on an EC2 instance]({{< relref "/ri/installing/install-ec2.md" >}}) that's in the same VPC and has access to the ElastiCache Redis cache. 
-   This is the easiest option and yields the best performance.
+   This is option yields the best performance and works with Redis Cluster.
+
 1. [Set up a VPN to your AWS VPC using AWS VPN](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/accessing-elasticache.html#access-from-outside-aws). 
    You can then access the ElastiCache Redis cache using the private endpoint.
