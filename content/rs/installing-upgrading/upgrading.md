@@ -130,9 +130,8 @@ instances that were not upgraded yet cannot receive write updates from the upgra
 The upgraded instance receives updates from upgraded and non-upgraded instances.
 
 {{% note %}}
-To avoid temporary inconsistencies between the instances, we recommend that you:
-- Upgrade all instances of a specific CRDB within a reasonable time frame
-- Wait until all instances of the CRDB are upgrade before you do global operations on this CRDB, such as removing instances or adding new instances
+- Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
+- Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB such as removing instances and adding new instances.
 {{% /note %}}
 
 After you upgrade an instance to use the new protocol version,
