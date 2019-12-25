@@ -27,23 +27,27 @@ Troubleshooting:
 
 ## Connecting to ElastiCache
 
-If you want to work with ElastiCache Redis instances with RedisInsight, you have two options:
+Connecting to AWS ElastiCache can be particularly problematic since ElastiCache Redis caches cannot be accessed from outside the VPC, as they don't have public IP addresses assigned to them.
 
-1. [Install RedisInsight on an EC2 instance]({{< relref "/ri/installing/install-ec2.md" >}}) that has access to the ElastiCache Redis instance.
-1. Create a SSH tunnel through an EC2 instance that can access the ElastiCache Redis instance.
+If you want to work with ElastiCache Redis caches using RedisInsight, you can either:
 
-### Using an SSH Tunnel
+- If you are not using Redis Cluster, you can [setup an SSH Tunnel](https://userify.com/blog/howto-connect-redis-ec2-ssh-tunnel-elasticache/) between RedisInsight and your ElastiCache instance.
+    
+    An SSH tunnel consists of an encrypted tunnel created through an SSH protocol connection.
 
-If you want to add and work with an ElastiCache Redis instance but you're running RedisInsight outside AWS, you  can still connect to it through an EC2 instance that can access it. This can be done by creating a SSH tunnel. An SSH tunnel consists of an encrypted tunnel created through an SSH protocol connection. An SSH tunnel can be used to transfer unencrypted traffic over a network through an encrypted channel.
+    - Run this command to create an SSH tunnel:
 
-1. Run this command to create an ssh tunnel:
+        ```bash
+        ssh -f -N -L <local_port>:<elasticache_endpoint> -i <path_to_pem_file> <ec2_endpoint>
+        ```
 
-    ```bash
-    ssh -f -N -L8765:<elasticache_endpoint> \
-    -i ~/.ssh/redisinsight-dev.pem <ec2_endpoint>
-    ```
+    - Go to **Add Instance** in RedisInsight and add an instance with:
+        - host=localhost
+        - port=<local_port>
+        - name=your_instance_name
 
-1. Go to Add Instance in RedisInsight and add an instance with host=localhost, port=8765,
-   name=your_instance_name
+1. [Install RedisInsight on an EC2 instance]({{< relref "/ri/installing/install-ec2.md" >}}) that is in the same VPC and has access to the ElastiCache Redis cache. 
+    This is option yields the best performance and works with Redis Cluster.
 
-1. You are now connected to your elasticache instance and can start using it locally.
+1. [Set up a VPN to your AWS VPC using AWS VPN](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/accessing-elasticache.html#access-from-outside-aws). 
+    You can then access the ElastiCache Redis cache using the private endpoint.
