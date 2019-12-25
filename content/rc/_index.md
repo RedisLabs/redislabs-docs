@@ -6,13 +6,15 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/
 ---
-Redis Cloud is based on the proven Redis Enterprise technology, serving thousands of
-customers of [Redis Enterprise
-Software]({{< relref "/rs/_index.md" >}}).
+Redis Cloud delivers a cost-effective, fully managed
+Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
 
-With Redis Cloud (RC),
-you can select a supported cloud provider such as Amazon Web Services (AWS), Google Cloud or Microsoft Azure
-and create enterprise-grade Redis databases that are fully compatible with the open-source Redis clients.
+Redis Cloud is based on the proven Redis Enterprise technology,
+serving thousands of customers of our [Redis Enterprise
+Software]({{< relref "/rs/_index.md" >}}) products.
+With Redis Cloud, you can deploy quickly on major public clouds
+and create Redis databases that are fully compatible with
+the open-source Redis clients.
 
 With Redis Cloud, you get all of that plus:
 
@@ -30,13 +32,14 @@ to managing and operating your mission-critical Redis deployments.
 
 ### Infinite and seamless scalability
 
-Grow your dataset to any size needed (beyond the largest cloud
-instances) without any downtime or limitation of Redis commands.
+Grow your dataset to any size needed (beyond the largest cloud instances)
+without any downtime or limitation of Redis commands.
 Upgrade or downgrade by simply changing plan settings,
-without downtime and without needing to move your dataset between cloud instances.
+without downtime and without the need to move your dataset between cloud instances.
 
-With RC Pro, we automatically add or remove instances to your cluster
-to accommodate your fluctuating dataset size without any interruption to your applications.
+With Redis Cloud, we automatically add or remove instances to your cluster
+to accommodate your fluctuating dataset size without any interruption
+to your applications.
 
 ### Significant Cost Saving of Redis on Flash (RoF)
 
@@ -61,8 +64,9 @@ all without data loss or interruption of service.
 
 ### Predictable high performance
 
-Take advantage of the best performance in the industry using Redis Enterprise Technology
-that enhances Redis with numerous optimizations and hosts your database on optimal cloud instances.
+Take advantage of the best performance in the industry using Redis
+Enterprise Technology that enhances Redis with numerous optimizations
+and hosts your database on optimal cloud instances.
 
 ### Hybrid deployment and geo-region replication {#hybrid-deployment-and-georegion-replication}
 
@@ -93,7 +97,7 @@ and apply multi-level authentication mechanisms such as:
 
 ### Fully-automated service {#fullyautomated-service}
 
-No noeed to manager instances, clusters, scaling, data persistence, high availability settings, and failure recovery.
+No need to manager instances, clusters, scaling, data persistence, high availability settings, and failure recovery.
 
 ### Multiple dedicated databases in one plan
 
@@ -109,9 +113,3 @@ crossed.
 ### Unlimited database connection
 
 With high volume plans you can use as many database connections as you want.
-
-<!-- Video out of date -->
-<!-- If you'd rather watch an overview of Redis Cloud, watch the below
-video: -->
-
-<!-- {{< youtube_start y3tvS2kCl5I 76 >}} -->
