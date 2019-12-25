@@ -3,7 +3,7 @@ Title: Creating an AWS User
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 aliases: /rv/how-to/creating-aws-user-redis-enterprise-vpc/
 ---
 Redis Cloud automatically manages your cluster and provisions instances when needed. In order for Redis Cloud to be able to manage AWS resources, you must have an AWS account that is separate from your AWS application account and a user on that separate AWS account.

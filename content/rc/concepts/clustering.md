@@ -3,7 +3,7 @@ Title: Clustering Redis Databases
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 aliases: /rc/concepts/clustering-redis-cloud/
         /rv/concepts/clustering/
 ---

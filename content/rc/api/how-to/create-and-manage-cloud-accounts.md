@@ -3,7 +3,7 @@ Title: Create and Manage Cloud Accounts
 description: Cloud accounts specify which account to use when creating and modifying infrastructure resources.
 weight: 50
 alwaysopen: false
-categories: ["Cloud"]
+categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-cloud-accounts/
 ---
 You can use `cURL` commands to create and manage a cloud account

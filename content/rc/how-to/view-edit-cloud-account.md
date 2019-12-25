@@ -3,7 +3,7 @@ Title: View and Edit a Cloud Account
 description:
 weight: 20
 alwaysopen: false
-categories: ["Cloud"]
+categories: ["RC"]
 aliases: /rv/how-to/view-edit-cloud-account/
 ---
 

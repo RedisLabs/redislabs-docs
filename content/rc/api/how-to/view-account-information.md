@@ -3,7 +3,7 @@ Title: View Account Information
 description: Get initial information on account parameters
 weight: 110
 alwaysopen: false
-categories: ["Cloud"]
+categories: ["RC"]
 aliases: /rv/api/how-to/view-account-information/
 ---
 

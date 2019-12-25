@@ -3,7 +3,7 @@ Title: API
 description:
 weight: 80
 alwaysopen: false
-categories: ["Cloud"]
+categories: ["RC"]
 aliases: /rv/api/
 ---
 Redis Cloud Pro (RC Pro) API follows the principles of the REST architectural style to expose programmatic access to Redis Labs Pro features and capabilities.
