@@ -1,7 +1,7 @@
 ---
 Title: Getting Started with Kubernetes and OpenShift
 description: 
-weight: 60
+weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
