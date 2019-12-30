@@ -22,7 +22,7 @@ When the node is not able to host all of the shards, some shards are moved to an
 For example, for a database with two master and two slave shards on a cluster with three nodes and a dense shard placement policy,
 the two master shards are hosted on one node and the two slave shards are hosted on another node.
 
-The dense policy helps to use less system resources and proxies for access to the database.
+The dense policy spreads the data over fewer nodes to improve memory and disk utilization.
 
 ![dense_placement_1-1](/images/rs/dense_placement_1-1.png)
 
@@ -40,7 +40,7 @@ For example, for a database with two master and two slave shards on a cluster wi
 - Node 3 hosts the second master shard
 - Node 1 hosts for the slave shard for master shard 2
 
-The dense policy helps to use fewer system resources.
+The sparse policy spreads the data across more nodes to improve network utilization.
 
 ![sparse_placement_1-1](/images/rs/sparse_placement_1-1.png)
 
