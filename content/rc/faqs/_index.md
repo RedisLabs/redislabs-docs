@@ -61,7 +61,15 @@ You can downgrade or upgrade your subscription at any time with no downtime or p
 {{% /expand%}}
 
 {{%expand "What is the difference between Redis Cloud Pro and Redis Cloud Essentials?" %}}
-Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, however Redis Cloud runs on a dedicated VPC and offers Redis on Flash, the most cost effective and high performance choice for datasets larger than 500GB, as well as Active-Active Geo Distribution, Active-Passive Geo Distribution, Modules integration and more enterprise features. Running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud is lower in cost than managing your own Redis instances on the cloud.
+Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, however Redis Cloud Pro runs on a dedicated VPC and offers:
+
+- [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) - Recommended for datasets larger than 500GB
+- [Active-Active]({{< relref "/rs/administering/active-active.md" >}}) and [Active-Passive]({{< relref "/rs/administering/active-passive.md" >}} Geo Distribution
+- Integration with [modules]({{< relref "/modules/_index.md" >}})
+- Encryption of [persistence data]({{< relref "/rs/concepts/data-access/persistence.md" >}})
+- [Cloud API]({{< relref "/rc/api/_index.md" >}})
+
+Running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud is lower in cost than managing your own Redis instances on the cloud.
 {{% /expand%}}
 
 {{%expand "Why should I run Redis Cloud on Flash?" %}}
