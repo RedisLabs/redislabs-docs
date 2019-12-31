@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Cluster Recovery for Kubernetes
 description: 
-weight: 40
+weight: 70
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/cluster-recovery

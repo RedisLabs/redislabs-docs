@@ -1,7 +1,7 @@
 ---
 Title: Redis Labs Kubernetes Architecture
 description: 
-weight: 30
+weight: 20
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-architecture-overview

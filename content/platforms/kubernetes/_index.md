@@ -1,7 +1,7 @@
 ---
 Title: Getting Started with Redis Enterprise Software using Kubernetes
 description:
-weight: 30
+weight: 90
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/

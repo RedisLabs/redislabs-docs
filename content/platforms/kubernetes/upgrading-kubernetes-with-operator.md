@@ -1,7 +1,7 @@
 ---
 Title: Upgrading a Redis Enterprise Cluster in Operator-based Architecture
 description: 
-weight: 50
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/
