@@ -22,7 +22,7 @@ When the node is not able to host all of the shards, some shards are moved to an
 For example, for a database with two master and two slave shards on a cluster with three nodes and a dense shard placement policy,
 the two master shards are hosted on one node and the two slave shards are hosted on another node.
 
-The dense policy helps to use less system resources and proxies for access to the database.
+For Redis on RAM databases without the OSS cluster API enabled, use the dense policy to optimize performance.
 
 ![dense_placement_1-1](/images/rs/dense_placement_1-1.png)
 
@@ -40,7 +40,7 @@ For example, for a database with two master and two slave shards on a cluster wi
 - Node 3 hosts the second master shard
 - Node 1 hosts for the slave shard for master shard 2
 
-The dense policy helps to use fewer system resources.
+For Redis on RAM databases with OSS cluster API enabled and for Redis on Flash databases, use the sparse policy to optimize performance.
 
 ![sparse_placement_1-1](/images/rs/sparse_placement_1-1.png)
 
