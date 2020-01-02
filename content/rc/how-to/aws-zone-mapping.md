@@ -3,7 +3,7 @@ Title: AWS Zone Mapping
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 ---
 If you are looking to squeeze every drop of performance out of your
 Redis Cloud Essentials Database, then matching the AWS availability
@@ -58,10 +58,10 @@ For existing subscriptions in Redis Cloud Essentials, you now see the Availabili
 they are using. To reduce the latency described above:
 
 1. [Create a new
-    subscription]({{< relref "/rc/administration/setup-and-editing/create-subscription.md" >}}) in
+    subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}) in
     the correct AZ
 1. [Create a new
-    database]({{< relref "/rc/administration/setup-and-editing/creating-databases.md" >}})
+    database]({{< relref "/rc/administration/setup/create-database.md" >}})
 1. [Migrate your
     data]({{< relref "/rc/how-to/importing-dataset-redis-cloud.md" >}})
     over to the new database.
