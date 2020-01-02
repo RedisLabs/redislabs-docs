@@ -5,6 +5,23 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+
+# RediSearch 1.4.20 Release Notes
+
+Update urgency: Medium
+This is a maintenance release for version 1.4.
+
+This release improves overall stability and provides fixes for founded issues.
+
+- Improvements
+    - #[1020](https://github.com/RediSearch/RediSearch/issues/1020) Performance improvement on reading non [sortable fields](https://oss.redislabs.com/redisearch/Overview.html#sortable_fields).
+- Bugfixes
+    - #[1022](https://github.com/RediSearch/RediSearch/issues/1022) Illegal memory access by queries during `GC` run.
+    - #[1022](https://github.com/RediSearch/RediSearch/issues/1022) Recreating the index with the same name (delete+create) removed the index from cursor list.
+    - #[1022](https://github.com/RediSearch/RediSearch/issues/1022) Memory leak when performing `FT.AGGREGATE` on non existing index.
+    - #[1022](https://github.com/RediSearch/RediSearch/issues/1022) Potential data corruption during `GC` run.
+    - #[1025](https://github.com/RediSearch/RediSearch/issues/1025) Aliasing not working properply with `FT.AGGREGATE`.
+
 ## RediSearch 1.4.19 Release Notes
 
 Update urgency: Medium
