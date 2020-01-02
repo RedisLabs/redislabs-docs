@@ -75,6 +75,7 @@ To make sure your user accounts are secured and not misused, RS supports enforce
 - Password complexity
 - Password expiration
 - Account lock on failed attempts
+- Account inactivity timeout
 
 To enforce a more advanced password policy that meets your contractual and compliance requirements and your organizational policies,
 we recommend that you use [LDAP integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) with an external identity provider, such as Active Directory.
@@ -117,3 +118,7 @@ To disable password expiration, set the number of days to `0`.
 
 To prevent unauthorized access to RS, you can [enforce account lockout]({{< relref "/rs/administering/designing-production/security/login-lockout.md" >}})
 after a specified number of failed login attempts.
+
+### Session timeout
+
+When you log in to the Web UI, your account is automatically logged out after 15 minutes of inactivity.
