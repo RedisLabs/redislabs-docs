@@ -5,6 +5,7 @@ weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/setup_and_editing/create-subscription/
+         /rv/administration/setup_and_editing/creating-subscription/
          /rc/administration/setup_and_editing/create-subscription/
          /rc/administration/setup-and-editing/create-subscription/
 ---

@@ -5,6 +5,7 @@ weight: 50
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/setup_and_editing/create-databases/
+         /rv/administration/setup_and_editing/creating-databases/
          /rc/administration/setup_and_editing/create-databases/
          /rc/administration/setup-and-editing/creating-databases/
 ---
