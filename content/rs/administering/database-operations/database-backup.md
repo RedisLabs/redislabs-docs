@@ -17,6 +17,8 @@ You can schedule backups to these locations:
 - Amazon S3
 - Local mount point
 - OpenStack Swift (Object Storage)
+- Azure Blob Storage
+- Google Cloud Storage
 
 Other cloud storage options, including Azure Geo-Redundant Storage and Google Cloud Storage,
 are planned for a future release.
