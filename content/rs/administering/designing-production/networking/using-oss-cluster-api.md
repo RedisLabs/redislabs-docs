@@ -14,7 +14,6 @@ Before you enable Redis OSS Cluster API, make sure that:
 - The database uses the standard hashing policy.
 - The database proxy policy is `all-master-shards`.
 - The database proxy policy does not use node `include` or `exclude`.
-- The database is not a CRDB.
 
 When you enable Redis OSS Cluster API,
 [multi-key commands]({{< relref "/rc/concepts/clustering-redis-cloud.md#multikey-operations" >}}) are only allowed when all keys are mapped to the same slot.
