@@ -3,7 +3,7 @@ Title: Using flush_all for Memcached Cloud
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 ---
 Follow the instructions below to use flush_all.
 

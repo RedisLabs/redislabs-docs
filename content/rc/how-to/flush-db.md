@@ -3,7 +3,7 @@ Title: Flushing Databases on Redis Cloud Essentials
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 ---
 There are times where you want to delete all database data.
 
