@@ -1,13 +1,14 @@
 ---
-Title: Create a Geo-Distributed Conflict-free Replicated Database (CRDB)
+Title: Create an Active-Active Geo-Replicated Database (CRDB)
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/database-operations/create-crdb/
 ---
-[Conflict-Free Replicated Databases]({{< relref "/rs/administering/active-active.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
+[Active-Active Replicated Databases]({{< relref "/rs/administering/active-active.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
 The participating clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
-Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) to all of the instances.
+Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) conflict-free to all of the instances.
 
 ## Steps to Create a CRDB
 

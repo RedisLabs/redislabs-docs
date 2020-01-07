@@ -19,7 +19,7 @@ and the memory available on the machine.
 
 {{% note %}}
 To create databases that are designed to be hosted in distributed locations,
-see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
+see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
 {{% /note %}}
 
 ## Creating a New Redis Database
