@@ -138,4 +138,4 @@ Synchronization of data from the master shard to the slave shard is always a ful
 
 In Replica Of, the master node does not transfer the replication backlog to its slave.
 Whenever a synchronization is necessary, the slave has no backlog and can only do a full sync.
-But, in a controlled failover the demoted master still has the replication backlog and when the syncer can do a partial sync.
+But, in a controlled failover the demoted master still has the replication backlog, and when the syncer connects, it can do a partial sync.
