@@ -6,66 +6,89 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/intercluster-replication/replica-of/
 ---
-In Redis Enterprise, [active-passive geo-distribution]({{< relref "/rs/administering/active-passive.md" >}}) provides applications read-only access
-to replicas of the data set from different geographical locations.
-The Redis Enterprise implementation of active-passive replication is called Replica Of.
+[Active-Passive replicated databases]({{< relref "/rs/administering/active-passive.md" >}}) (also known as Replica Of) give applications read-only access
+to replicas of the data set in different geographical locations.
 
-Redis Enterprise Software has a security mechanism in which an internal admin password is
-assigned to each database. This password helps protect the database from
-being used as a replica source and is required in order to define
-another database as a replica target of this database.
+The source database can be located in the same cluster, in a different cluster, or in an OSS Redis database.
+Your applications can connect to the source database to write to the database and to the source or destination databases to read from the database.
 
-The source databases can be located in the same Redis Enterprise
-Software (RS) as the destination database, in a different RS, or they
-can be Redis databases that are not part of an RS.
+Replica Of can replicate:
 
-- When a source database is from within RS, the source URL has the
-    following format:
-    \[database name\]: redis://admin:\[internal database
-    password\]@\[database endpoint with port\] where the internal
-    database password is the password automatically assigned and
-    populated by RS. In the RS management UI, when you enter the textbox
-    to define a replica source from within the target database page, the
-    list of existing databases is shown with the appropriate URL,
-    including the internal admin password, already set up.
-- When a source database is from a different RS, the source URL has
-    the same exact format as indicated above (except for the
-    **\[database name\]:** prefix), but in this case, the URL does not
-    show up as an option in the UI. In order to configure the target
-    database as a replica of a database from a different RS, you need to
-    extract the source database URL, including the internal admin
-    password, from the source database. This can be done in the UI from
-    the source database page by clicking the **Get Replica of source
-    URL** link next to the Endpoint field. In addition, you can
-    regenerate the internal admin password from the same UI. If you
-    regenerate the internal admin password, any existing replica
-    destinations already configured stops working until you update
-    them.
-    - **Compression:** when a source database is located on a different
-    Redis Enterprise Software cluster, there is also an option to enable
-    compression of the data being replicated. For additional details,
-    refer to the ["Replica of" data
-    compression]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) section.
-- When a source database is external to a Redis Enterprise Software
-    cluster, the source URL has the following format:
-    redis://:\[redis password\]@\[hostname\]:\[port\] where the password
-    is the Redis password assigned by the user, represented with URL
-    encoding escape characters. If no password was defined for the
-    database, the following format should be used:
-    redis://hostname:port.
+- One-to-many - Configure multiple destinations as Replica Of one source database.
+- Many-to-one - Configure one destination as Replica Of multiple source databases.
 
-When multiple sources are defined there is no meaning to the order in
-which they are defined or presented.
+{{% note %}}
+When you add, remove, or edit Replica Of sources, the data is re-replicated from all source databases.
+{{% /note %}}
 
-If you make changes to the definition of the sources (such as editing,
-adding or deleting a source), then the synchronization process is
-restarted from scratch for all the source databases.
+## Configuring Replica Of
 
-**Note:** If you used the mDNS protocol when naming the cluster name
-(FQDN), make sure that the client mDNS perquisites are met in order for the
-*Replica of* feature to work. For additional details, refer to the
-[Client prerequisites for
-mDNS]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}).
+To configure a destination database as a Replica Of:
+
+1. Open the database settings:
+    1. For a new database, [create the database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) with its settings.
+    1. For an existing database:
+        1. Go to **databases**.
+        1. Click on the database and go to **configuration**.
+        1. Click **Edit**.
+1. Select **Replica of** to show the ![icon_add](/images/rs/icon_add.png "Add") icon.
+1. Click ![icon_add](/images/rs/icon_add.png "Add") to show the box for the source database endpoint.
+1. Enter the URL of the source database endpoint:
+
+    {{% note %}}
+The order of the Replica Of sources has no impact on replication.
+    {{% /note %}}
+
+    - For a source database in the same RS cluster - When you click on the box,
+    the available databases are shown in the correct format for the URL of the source endpoint:
+
+    ```src
+    redis://admin:<database_password>@<database_endpoint>:<database_port>
+    ```
+
+    You can select the database that you want to use as the source.
+
+    - For a source database in a different RS cluster:
+        1. Log in to the Web UI of the cluster that hosts the source database.
+        1. In **databases**, click on the database and go to **configuration**.
+        1. Under **Endpoint**, click on **Get Replica of source URL**.
+
+            ![Replica Of source URL](/images/rs/replicaof-source-url.png)
+
+        1. Click **Copy to Clipboard** to copy the URL of the source endpoint.
+
+            If you want a different internal password, you can click **Regenerate Password**.
+
+            {{% caution %}}
+If you regenerate the password, replication to existing destinations fails until you update their configuration with the new password.
+            {{% /caution %}}
+
+        1. In the destination database, paste the URL of the source endpoint in the **Replica Of** box, and click ![Save](/images/rs/icon_save.png#no-click "Save").
+
+        {{% note %}}
+For a source database on a different RS cluster, you can [compress the replication data]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) to save bandwidth.
+        {{% /note %}}
+
+    - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:
+
+        - If the database has a password -
+
+        ```src
+        redis://:<redis_password@<hostname>:<database_port>
+        ```
+
+        Where the password is the Redis password represented with URL encoding escape characters.
+
+        - If the database has no password -
+
+        ```src
+        redis://<hostname>:<database_port>
+        ```
+
+{{% note %}}
+If you used the mDNS protocol for the cluster name (FQDN),
+make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}) are met.
+{{% /note %}}
 
 ## Configuring TLS for Replica Of on the destination database
 
