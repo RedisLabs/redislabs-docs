@@ -6,11 +6,13 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/create-crdb/
 ---
-[Active-Active Replicated Databases]({{< relref "/rs/administering/active-active.md" >}}) (CRDBs) let you create replicated instances of your data between Redis Enterprise Software (RS) clusters.
+[Active-Active replicated databases]({{< relref "/rs/administering/active-active.md" >}}) (also known as CRDBs) give applications write access
+to replicas of the data set in different geographical locations.
+
 The participating clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
 Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) conflict-free to all of the instances.
 
-## Steps to Create a CRDB
+## Steps to Create an Active-Active Database
 
 1. **Create a service account** - On each participating cluster, create a dedicated user account with the Admin role.
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
