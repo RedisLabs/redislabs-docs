@@ -59,9 +59,9 @@ The order of the Replica Of sources has no impact on replication.
 
             If you want a different internal password, you can click **Regenerate Password**.
 
-            {{% caution %}}
+            {{% warning %}}
 If you regenerate the password, replication to existing destinations fails until you update their configuration with the new password.
-            {{% /caution %}}
+            {{% /warning %}}
 
         1. In the destination database, paste the URL of the source endpoint in the **Replica Of** box, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
