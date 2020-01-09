@@ -3,7 +3,7 @@
 To enable TLS for Replica Of communication only on the source database:
 
 1. In **databases**, either:
-    - Click ![icon_add](/images/rs/icon_add.png "Add") to create a new database.
+    - Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to create a new database.
     - Click on the database that you want to configure and at the bottom of the
     page click **edit**.
 1. Enable **TLS**.
@@ -24,7 +24,7 @@ To enable TLS for Replica Of communication only on the source database:
         1. Login to the cluster.
         1. Go to **Settings**.
         1. In the syncer certificates box, copy the entire text of the certificate.
-    1. Click ![icon_add](/images/rs/icon_add.png "Add") to open the certificate box.
+    1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to open the certificate box.
 
         ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png
         "Database TLS Configuration")
@@ -44,7 +44,7 @@ To enable TLS for Replica Of communication only on the source database:
 To enable TLS for Replica Of and client communication on the source database:
 
 1. In **databases**, either:
-    - Click ![icon_add](/images/rs/icon_add.png "Add")
+    - Click ![icon_add](/images/rs/icon_add.png#no-click "Add")
     to create a new database.
     - Click on the database that you want to configure and at the bottom of the
     database page click **edit**.
@@ -64,7 +64,7 @@ To enable TLS for Replica Of and client communication on the source database:
         1. Login to the cluster.
         1. Go to **Settings**.
         1. In the syncer certificates box, copy the entire text of the certificate.
-    1. Click ![icon_add](/images/rs/icon_add.png "Add")
+    1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add")
     to open the certificate box.
 
         ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png

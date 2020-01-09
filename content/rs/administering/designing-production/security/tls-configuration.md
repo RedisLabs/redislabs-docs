@@ -55,7 +55,7 @@ the TLS configuration.
 
 To enable TLS for CRDB communication only for a CRDB:
 
-1. In **databases**, click ![icon_add](/images/rs/icon_add.png "Add")
+1. In **databases**, click ![icon_add](/images/rs/icon_add.png#no-click "Add")
     to create a new CRDB.
 1. In **configuration**, at the bottom of the page click **edit**.
 1. Enable **TLS**.
@@ -69,7 +69,7 @@ are used automatically.
 
 To enable TLS for CRDB and client communication for a CRDB:
 
-1. In **databases**, click ![icon_add](/images/rs/icon_add.png "Add")
+1. In **databases**, click ![icon_add](/images/rs/icon_add.png#no-click "Add")
     to create a new CRDB.
 1. In **configuration**, at the bottom of the page click **edit**.
 1. Enable **TLS**.
@@ -88,7 +88,7 @@ To enable TLS for CRDB and client communication for a CRDB:
 
 1. To enter the client certificates:
     1. Copy the entire text of the client certificates.
-    1. Click ![icon_add](/images/rs/icon_add.png "Add")
+    1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add")
     to open the certificate box.
     1. Paste the text of the certificates in the box.
     1. Click ![icon_save](/images/rs/icon_save.png "Save")
