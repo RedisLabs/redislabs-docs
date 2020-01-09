@@ -7,10 +7,10 @@ categories: ["RS"]
 aliases: /rs/administering/intercluster-replication/replica-of/
 ---
 [Active-Passive replicated databases]({{< relref "/rs/administering/active-passive.md" >}}) (also known as Replica Of) give applications read-only access
-to replicas of the data set in different geographical locations.
+to replicas of the data that are hosted in different geographical locations.
 
 The source database can be located in the same cluster, in a different cluster, or in an OSS Redis database.
-Your applications can connect to the source database to write to the database and to the source or destination databases to read from the database.
+Your applications can connect to the source database to read and write data, or to the source or destination databases to read data.
 
 Replica Of can replicate:
 
@@ -31,8 +31,8 @@ To configure a destination database as a Replica Of:
         1. Go to **databases**.
         1. Click on the database and go to **configuration**.
         1. Click **Edit**.
-1. Select **Replica of** to show the ![icon_add](/images/rs/icon_add.png "Add") icon.
-1. Click ![icon_add](/images/rs/icon_add.png "Add") to show the box for the source database endpoint.
+1. Select **Replica of** to show the ![icon_add](/images/rs/icon_add.png#no-click "Add") icon.
+1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to show the box for the source database endpoint.
 1. Enter the URL of the source database endpoint:
 
     {{% note %}}
@@ -42,11 +42,11 @@ The order of the Replica Of sources has no impact on replication.
     - For a source database in the same RS cluster - When you click on the box,
     the available databases are shown in the correct format for the URL of the source endpoint:
 
-    ```src
-    redis://admin:<database_password>@<database_endpoint>:<database_port>
-    ```
+        ```src
+        redis://admin:<database_password>@<database_endpoint>:<database_port>
+        ```
 
-    You can select the database that you want to use as the source.
+        You can select the database that you want to use as the source.
 
     - For a source database in a different RS cluster:
         1. Log in to the Web UI of the cluster that hosts the source database.
@@ -73,17 +73,17 @@ For a source database on a different RS cluster, you can [compress the replicati
 
         - If the database has a password -
 
-        ```src
-        redis://:<redis_password@<hostname>:<database_port>
-        ```
+            ```src
+            redis://:<redis_password@<hostname>:<database_port>
+            ```
 
-        Where the password is the Redis password represented with URL encoding escape characters.
+            Where the password is the Redis password represented with URL encoding escape characters.
 
         - If the database has no password -
 
-        ```src
-        redis://<hostname>:<database_port>
-        ```
+            ```src
+            redis://<hostname>:<database_port>
+            ```
 
 {{% note %}}
 If you used the mDNS protocol for the cluster name (FQDN),
