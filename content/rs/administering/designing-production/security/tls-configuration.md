@@ -91,7 +91,7 @@ To enable TLS for CRDB and client communication for a CRDB:
     1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add")
     to open the certificate box.
     1. Paste the text of the certificates in the box.
-    1. Click ![icon_save](/images/rs/icon_save.png "Save")
+    1. Click ![icon_save](/images/rs/icon_save.png#no-click "Save")
     to save the certificates.
 
     ![crdb-tls-all-certs](/images/rs/crdb-tls-all-certs.png "crdb-tls-all-certs")

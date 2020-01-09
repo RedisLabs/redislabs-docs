@@ -30,7 +30,7 @@ To enable TLS for Replica Of communication only on the source database:
         "Database TLS Configuration")
 
     1. Paste the text of the certificates in the box.
-    1. Click ![icon_save](/images/rs/icon_save.png "Save")
+    1. Click ![icon_save](/images/rs/icon_save.png#no-click "Save")
     to save the certificates.
 
     You can also clear **Enforce client authentication** so that all clusters or
@@ -71,7 +71,7 @@ To enable TLS for Replica Of and client communication on the source database:
         "Database TLS Configuration")
 
     1. Paste the text of the certificates in the box.
-    1. Click ![icon_save](/images/rs/icon_save.png "Save")
+    1. Click ![icon_save](/images/rs/icon_save.png#no-click "Save")
     to save the certificates.
 
     You can also clear **Enforce client authentication** so that all clusters or
