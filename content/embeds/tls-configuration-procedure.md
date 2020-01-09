@@ -1,4 +1,6 @@
-### Configuring TLS for Replica Of communication only on the source database
+To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database](#configuring-tls-for-replica-of-traffic-on-the-destination-database).
+
+### Configuring encryption for only Replica Of communication on the source database
 
 To enable TLS for Replica Of communication only on the source database:
 
@@ -39,7 +41,7 @@ To enable TLS for Replica Of communication only on the source database:
     To encrypt Replica Of synchronization traffic, you must also [configure encryption
     for the destination database]({{< relref "/rs/administering/active-passive.md#encryption" >}}).
 
-### Configuring TLS for all communication on the source database
+### Configuring encryption for all communication on the source database
 
 To enable TLS for Replica Of and client communication on the source database:
 
@@ -76,6 +78,3 @@ To enable TLS for Replica Of and client communication on the source database:
 
     You can also clear **Enforce client authentication** so that all clusters or
     clients can connect to your database without authentication.
-
-    To encrypt Replica Of synchronization traffic, you must also [configure encryption
-    for the destination database]({{< relref "/rs/administering/active-passive.md#encryption" >}}).

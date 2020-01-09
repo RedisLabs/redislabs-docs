@@ -75,7 +75,7 @@ you can [compress the replication data]({{< relref "/rs/administering/active-pas
         - If the database has a password -
 
             ```src
-            redis://:<redis_password@<hostname>:<database_port>
+            redis://:<redis_password>@<hostname>:<database_port>
             ```
 
             Where the password is the Redis password represented with URL encoding escape characters.
@@ -91,7 +91,10 @@ If you used the mDNS protocol for the cluster name (FQDN),
 make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}) are met.
 {{% /note %}}
 
-## Configuring TLS for Replica Of on the destination database
+## Configuring TLS for Replica Of Traffic on the Destination Database
+
+When you enable TLS for Replica Of, the Replica Of synchronization traffic uses TLS certificates to authenticate the communication between the source and destination clusters.
+To encrypt the Replica Of synchronization traffic, you must also [configure encryption for the source database](#configuring-encryption-of-replica-of-traffic-on-the-source-database).
 
 To enable TLS for Replica Of in the destination database:
 
@@ -107,6 +110,6 @@ To enable TLS for Replica Of in the destination database:
 
 1. Click **Continue**, save the Replica Of endpoint, and click **Update** to save the changes.
 
-## Encryption of Replica Of
+## Configuring Encryption of Replica Of Traffic on the Source Database
 
 {{< embed-md "tls-configuration-procedure.md"  >}}
