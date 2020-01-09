@@ -13,7 +13,7 @@ Make sure your system meets these requirements:
 - Only 64-bit operating systems are supported.
 - You must install Redis Enterprise Software directly on the host, not through system cloning.
 - You must install on a clean host with no other applications running so that all RAM is allocated to the OS and RS only.
-- Linux distributions must be installed with "Minimal Install" configuration.
+- Linux distributions must be installed with at least "Minimal Install" configuration.
 {{% /note %}}
 
 | **Platform** | **Versions/Information** |
