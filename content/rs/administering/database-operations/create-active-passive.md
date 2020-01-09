@@ -95,7 +95,7 @@ make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrad
 
 To enable TLS for Replica Of in the destination database:
 
-1. Hover over the URL of the source endpoint and click (/images/rs/icon_unlocked.png#no-click "Unencrypted"):
+1. Hover over the URL of the source endpoint and click ![Unencrypted](/images/rs/icon_unlocked.png#no-click "Unencrypted"):
 
     ![Encrypt Replica-of](/images/rs/replicaof-unencrypted.png)
 
