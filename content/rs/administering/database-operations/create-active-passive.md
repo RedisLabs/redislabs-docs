@@ -66,7 +66,8 @@ If you regenerate the password, replication to existing destinations fails until
         1. In the destination database, paste the URL of the source endpoint in the **Replica Of** box, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
         {{% note %}}
-For a source database on a different RS cluster, you can [compress the replication data]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) to save bandwidth.
+For a source database on a different RS cluster,
+you can [compress the replication data]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) to save bandwidth.
         {{% /note %}}
 
     - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:
@@ -94,21 +95,18 @@ make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrad
 
 To enable TLS for Replica Of in the destination database:
 
-1. Edit the 'Replica of' section of the destination Database to point
-    the source Database and press the 'Enable TLS Authentication' icon:
-    ![Replica-of
-    Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png?width=1608&height=178)
-    Replica-of Destination
-2. From the *source cluster*, copy the "Proxy
-    Certificate" (located under **settings**-\> **general**) and paste
-    it as the **Source Cluster Certificate** for the destination
-    Database:
-    ![Replica-of Destination -
-    Certificate](/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png?width=1596&height=626)
-    Replica-of Destination - Certificate
-3. Press the **Continue** button, save the certificate and **Update**
-    the database changes.
+1. Hover over the URL of the source endpoint and click (/images/rs/icon_unlocked.png#no-click "Unencrypted"):
 
-## Encryption of Replica Of 
+    ![Encrypt Replica-of](/images/rs/replicaof-unencrypted.png)
+
+1. From the Web UI of the cluster that hosts the source database,
+    go to **settings** > **general** and copy the proxy certificate.
+1. Paste it as the **Source Cluster Certificate** for the destination database:
+
+    ![Replica-of Destination - Certificate](/images/rs/replicaof-certificate.png)
+
+1. Click **Continue**, save the Replica Of endpoint, and click **Update** to save the changes.
+
+## Encryption of Replica Of
 
 {{< embed-md "tls-configuration-procedure.md"  >}}
