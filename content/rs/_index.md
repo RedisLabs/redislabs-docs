@@ -36,7 +36,7 @@ Developing globally distributed applications can be challenging, as developers h
 
 ## Additional Features
 
-{{< tabs tabTotal="7" tabID="1" tabName1="Seamless scalability" tabName2="True high availability" tabName3="Data persistence, backups, replication" tabName4="Predictable high-performance" tabName5="Dedicated databases with unlimited connections and cluster scaling" tabName6="Full-featured management UI" tabName7="24/7 support">}}
+{{< tabs tabTotal="7" tabID="1" tabName1="Seamless scalability" tabName2="True high availability" tabName3="Data durability" tabName4="Predictable high-performance" tabName5="Dedicated databases" tabName6="Full management UI" tabName7="24/7 support">}}
 {{< tab tabNum="1" >}}
 
 With RS, a dataset can grow beyond the largest node in the cluster and
