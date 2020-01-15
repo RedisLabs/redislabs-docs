@@ -16,16 +16,13 @@ Once a cloud account is set up you can reuse it with several subscriptions.
 To create a Redis Cloud cloud account, please select **Cloud Accounts** from the
 right side menu. Please follow [our
 instructions]({{< relref "/rc/how-to/creating-aws-user-redis-enterprise-vpc.md" >}})
-on how to set up a user for Redis Cloud to use on your AWS account.
+on how to set up a user for Redis Cloud to use on your AWS account. The instructions below assume that you've followed those instructions exactly!
 To create a new cloud account, click on the '**+**' button.
 
 Please enter the following details:
 
-1. Account Name - Give the account a name so you could recognize it
+1. Account Name - Give the account a name so you can recognize it
 1. AWS_ACCESS_KEY_ID - Redis Cloud user's AWS access key
 1. AWS_SECRET_ACCESS_KEY - Redis Cloud user's AWS secret key
-1. AWS Console User - Redis Cloud AWS UI console user
-1. AWS Console password - Redis Cloud AWS UI console user's password
-1. IAM Users sign-in link - This is the link you use to log into the
-    AWS console (e.g.
-    https://\<YOUR-ACCOUNT-ID-WITHOUT-HYPHENS>.signin.aws.amazon.com/console)
+1. AWS Console User - `redislabs-user`
+1. AWS Console password - Password you assigned to the `redislabs-user` when you created that user
