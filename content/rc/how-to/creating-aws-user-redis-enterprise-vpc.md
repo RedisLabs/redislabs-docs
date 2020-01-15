@@ -8,6 +8,8 @@ aliases: /rv/how-to/creating-aws-user-redis-enterprise-vpc/
 ---
 Redis Cloud automatically manages your cluster and provisions instances when needed. In order for Redis Cloud to be able to manage AWS resources, you must have an AWS account that is separate from your AWS application account and a user on that separate AWS account.
 
+When you've finished these instructions you will have created a specific user `redislabs-user`, and saved their password, AWS Access Key ID and AWS Secret Access Key so that you can use these items to create a cloud account. 
+
 Within that new AWS account, you need to create an **instance role** and
 a user with a specific **policy**. The user requires both **UI console access**
 and an **Access Key** so that Redis Cloud can programmatically create
@@ -262,10 +264,10 @@ Last, create a user and attach the policy you created:
 1. Name it **redislabs-user** and select both **Programmatic
     access** and **AWS Management Console access**.
     ![select_access_type](/images/rc/select_access_type.png?width=700&height=393)
-1. Set a password or auto-generate one, and click **Next: Permissions**.
+1. Set a password or auto-generate one. **Save this password**. You'll need it to configure the Cloud Account within Subscription Manager. Click **Next: Permissions**.
 1. Select **Attach existing policies directly** and select
     **RedislabsIAMUserRestrictedPolicy** from the list.
     ![set_permissions](/images/rc/set_permissions.png?width=700&height=477)
 1. Click **Next: Review**.
 1. Click **Create user**.
-1. Download the user credentials and store them in a secure location.
+1. Download the user credentials (i.e. the json file with the AWS Access Key ID and the AWS Secret Key) and store them in a secure location. You'll need these to configure the Cloud Account within Subscription Manager.
