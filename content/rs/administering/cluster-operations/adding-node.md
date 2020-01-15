@@ -14,8 +14,8 @@ After you install the first node, you can add more nodes to the cluster.
     "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
 
     If the clock in the node you are trying to join to the cluster is not
-    synchronized with the nodes already in the cluster, the action will fail
-    and an error message will appear indicating that you must synchronize
+    synchronized with the nodes already in the cluster, the action fails
+    and an error message is shown indicating that you must synchronize
     the clocks first.
 
 - You must [update the DNS records]({{< relref
@@ -77,5 +77,5 @@ The node is added to the cluster. You can see it in the list of nodes in the
 cluster.
 
 {{% tip %}}We recommend that you run the [rlcheck utility]({{< relref
-"/rs/references/cli-reference/rlcheck.md" >}}) to verify that the node is functioning
+"/rs/references/rlcheck.md" >}}) to verify that the node is functioning
 properly.{{% /tip %}}

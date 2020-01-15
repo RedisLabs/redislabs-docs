@@ -19,7 +19,7 @@ In addition, RS can be optimized for two different environments:
 - Local-network environment
 - Cloud environment
 
-Depending on which configuration you choose, RS will use different
+Depending on which configuration you choose, RS uses different
 thresholds to make operation related decisions.
 
 The default configuration is for local-network environments. If you are

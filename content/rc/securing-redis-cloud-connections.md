@@ -3,20 +3,20 @@ title: Securing Connections with SSL/TLS
 description:
 weight: 25
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
+aliases: /rv/securing-redis-cloud-connections/
 ---
-In Redis Cloud Essentials, SSL/TLS support is a paid option. To enable it, contact [Support](https://support.redislabs.com).
-SSL/TLS support is included in all Redis Cloud Pro paid plans. 
-
+In Redis Cloud, SSL/TLS support is a paid option. To enable it, contact [Support](https://support.redislabs.com).
+SSL/TLS support is included in all Redis Cloud Pro paid plans.
 
 ## Setting Up Your Database
 
-Using SSL/TLS requires setup of both your Redis Cloud Essentials
+Using SSL/TLS requires setup of both your Redis Cloud
 database and your application, as described below.
 
 1. Login to your account and navigate to the **Database** page in the
     top right menu.
-1. Select the database you wish to connect to and click the **Edit**
+1. Select the database you want to connect to and click the **Edit**
     button.
 1. Under the **Access Control & Security** section, make sure **SSL
     Client Authentication** is selected.
@@ -31,9 +31,9 @@ database and your application, as described below.
     1. Generate a Certificate:
         1. Use the **Generate Client Certificate** button to generate a
             client certificate.
-        1. The generated certificate's public key will be displayed in
+        1. The generated certificate's public key is shown in
             the textbox.
-        1. This will also trigger an automatic download of a zip
+        1. This also triggers an automatic download of a zip
             archive with the following contents:
             1. `redislabs_user.crt` - the certificate's public key.
             1. `redislabs_user_private.key` - the certificate's private
@@ -43,14 +43,14 @@ database and your application, as described below.
 1. Click the **Update** button to apply the changes to your resource.
 
 **Important**: Once SSL is
-enabled, your database will no longer accept regular, non-SSL
+enabled, your database no longer accepts regular, non-SSL
 connections.
 
 ## Setting up your application if you are not using an SSL/TLS enabled client library {#setting-up-your-application-if-you-are-not-using-an-ssltls-enabled-client-library}
 
 This procedure describes the steps required to install and configure
 [stunnel](https://stunnel.org), an open-source secure proxy, to connect
-to an SSL-enabled Redis Cloud Essentials database.
+to an SSL-enabled Redis Cloud database.
 
 Important: This procedure is only required if you are **NOT** using an
 SSL/TLS enabled Redis client.
@@ -279,7 +279,7 @@ delay = yes`
 accept = 127.0.0.1:6379
 connect = host:port`
 
-### Testing Secure Connectivity to a Redis Cloud Essentials Resource
+### Testing Secure Connectivity to a Redis Cloud Resource
 
 You can test the connection from your client using redis-cli, for
 example::

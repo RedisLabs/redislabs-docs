@@ -46,7 +46,7 @@ For a quick overview of ReplicaOf capabilities watch this quick video.
 
 {{< youtube AG-XGn7BQkQ >}}
 
-## Replica of sources
+## Replica of Sources
 
 RS has a security mechanism in which an internal admin password is
 assigned to each database. This password helps protect the database from
@@ -77,7 +77,7 @@ can be Redis databases that are not part of an RS.
     URL** link next to the Endpoint field. In addition, you can
     regenerate the internal admin password from the same UI. If you
     regenerate the internal admin password, any existing replica
-    destinations already configured will stop working until you update
+    destinations already configured stops working until you update
     them.
     - **Compression:** when a source database is located on a different
     Redis Enterprise Software cluster, there is also an option to enable
@@ -105,7 +105,7 @@ restarted from scratch for all the source databases.
 [Client prerequisites for
 mDNS]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}).
 
-## Replication process
+## Replication Process
 
 When a database is defined as a replica of another database, all its
 existing data is deleted and replaced by data that is loaded from the
@@ -118,10 +118,9 @@ delay between the time when a command was executed on the source and
 when it is executed on the destination. This delay is referred to as the
 **Lag**.
 
-When a **synchronization error** occurs, then depending on the error
-type, **the process might stop**, or it might continue running on the
-assumption that the error will be automatically resolved. See more
-details below.
+When there is a **synchronization error**, **the process might stop** or
+it might continue running on the assumption that the error automatically
+resolves. The result depends on the error type. See more details below.
 
 In addition, **the user can manually stop the synchronization process**.
 
@@ -142,11 +141,11 @@ The replication process can have the following statuses:
     indicated as a time duration.
 - **Sync stopped** - indicates that the synchronization process is
     currently not running and the user needs to restart it in order for
-    it to continue running. This status occurs if the user stops the
+    it to continue running. This status happens if the user stops the
     process, or if certain errors arose that prevent synchronization
     from continuing without manual intervention. See more details below.
 
-The statuses above are displayed for the source database. In addition, a
+The statuses above are shown for the source database. In addition, a
 timestamp is shown on the source indicating when the last command from
 the source was executed on the destination.
 
@@ -164,7 +163,7 @@ user intervention for their resolution. When such errors occur, the
 synchronization process is automatically stopped.
 
 For other errors, the synchronization process continues running on the
-assumption that the error will be automatically resolved.
+assumption that the error automatically resolves.
 
 Examples of errors that require user intervention for their resolution
 and that stop the synchronization process include:
@@ -172,7 +171,7 @@ and that stop the synchronization process include:
 - Error authenticating with the source database.
 - Cross slot violation error while executing a command on a sharded
     destination database.
-- Out-of-memory error that occurs on a source or on the destination
+- Out-of-memory error on a source or on the destination
     database.
 
 Example of an error that does not cause the synchronization process to
@@ -196,7 +195,7 @@ following steps:
 
 ### Configuring TLS for Replica Of on the destination database
 
-To enable TLS for Replica Of in the destintation database:
+To enable TLS for Replica Of in the destination database:
 
 1. Edit the 'Replica of' section of the destination Database to point
     the source Database and press the 'Enable TLS Authentication' icon:
@@ -213,7 +212,7 @@ To enable TLS for Replica Of in the destintation database:
 3. Press the **Continue** button, save the certificate and **Update**
     the database changes.
 
-## Data compression for Replica Of
+## Data Compression for Replica Of
 
 When the *Replica of* is defined across different Redis Enterprise
 Software clusters, it may be beneficial to compress the data that flows

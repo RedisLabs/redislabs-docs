@@ -29,6 +29,25 @@ jQuery(document).ready(function() {
             }
         });
     }
+    $(window).scroll(function (event) {
+        var scroll = $(window).scrollTop();
+        var header = $('#header');
+        if(scroll > 40) {
+            header.css('height', '50px');
+        } else {
+            header.css('height', '70px');
+        }
+    });
+
+    $("nav.shortcuts li").hover(
+        function() {
+            $(this).children('.submenu-wrapper').css('visibility', 'visible');
+            $(this).children('.submenu-wrapper').css('opacity', 1);
+        }, function() {
+            $(this).children('.submenu-wrapper').css('visibility', 'hidden');
+            $(this).children('.submenu-wrapper').css('opacity', 0);
+        }
+    );    
 
     jQuery('.category-icon').on('click', function() {
         $( this ).toggleClass("fa-angle-down fa-angle-right");
@@ -346,8 +365,8 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
     }
 };
 
-function setPageFeedback(kind) {
-    setFeedbackMessage();
+function setPageFeedback(kind, pageTitle, category) {
+    setFeedbackMessage(kind, category, pageTitle);
 
     if (window.ga) {
         window.ga('send', {
@@ -357,15 +376,19 @@ function setPageFeedback(kind) {
             eventLabel: window.location.pathname,
             eventValue: kind,
             hitCallback: function() {
-                console.log('GA Event sent');
                 setFeedbackMessage();
             }
         });
     }
 }
 
-function setFeedbackMessage() {
-    $('#page-feedback-open').html('Thanks for the feedback!');
+function setFeedbackMessage(kind, category, pageTitle) {
+    if(kind === 1) {
+        $('#page-feedback-open').html('Thanks for the feedback!');
+    } else {
+        $('#page-feedback-open')
+        .html('Thanks for your feedback! You can help improve the page by opening a <a style="text-decoration: underline;cursor:pointer;" href="https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=&labels=&template=documentation-bug-report.md&title='+ category + ' - ' + pageTitle +'" target="_blank" rel="noopener noreferrer">GitHub issue</a>.');
+    }
     setTimeout(function() {
         $('.page-feedback').hide();
     }, 5000);

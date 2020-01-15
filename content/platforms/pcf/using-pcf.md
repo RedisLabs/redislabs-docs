@@ -1,12 +1,12 @@
 ---
-Title: Using Redis Enterprise Software on Pivotal Cloud Foundry (PCF)
+Title: Using Redis Enterprise Software on Pivotal Platform
 description: 
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/pcf/
 ---
-This topic describes how to use Redis Enterprise Software (RS) for PCF.
+This topic describes how to use Redis Enterprise Software (RS) for Pivotal Platform.
 
 ## Creating a Redis Enterprise Database instance via cf CLI and service broker using service plans
 
@@ -32,9 +32,9 @@ Available service plans are listed in either:
 
     ![Import button](/images/platforms/pcf_apps_service_plans.png)
 
-## Creating a Redis Enterprise Database instance via PCF Apps Manager
+## Creating a Redis Enterprise Database instance via Pivotal Platform Apps Manager
 
-1. From PCF Apps Manager go to Marketplace and select Redis Enterprise on PCF.
+1. From Pivotal Platform Apps Manager go to Marketplace and select Redis Enterprise on Pivotal Platform.
 
     ![Import button](/images/platforms/pcf_apps_marketplace.png)
 
@@ -73,8 +73,8 @@ Use the cf creates/delete/update-service commands or use the Pivotal Apps Manage
 1. Paste the license key you received from Redis Labs into the **Cluster key** form field and click the **Save** button.
 
     {{% note %}}
-In case your license is already expired, changes to the cluster configuration, such as a version upgrade, will result in cluster failure.
-Always apply a valid license key in advance of making such changes.
+If your license is already expired, changes to the cluster configuration, such as a version upgrade, cause cluster failure.
+Always apply a valid license key before making such changes.
     {{% /note %}}
 
 ## Connect to Redis Database Using redis-cli

@@ -14,7 +14,7 @@ The roles and permissions available in RS are:
 
 {{< embed-html "account-role-table.html" >}}
 
-## Adding a user
+## Adding a User
 
 To add a user to the cluster:
 
@@ -34,7 +34,7 @@ Then, create a user with the user type **external**.
 You can also create an external with the REST API with this syntax:
 
 ```src
-curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST http://<RS_server_address>:8080/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
+curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST https://<RS_server_address>:9443/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
 ```
 
 For the user role, enter either:
@@ -58,8 +58,62 @@ For the user role, enter either:
     {{% expand "How do I select email alerts?" %}}{{< video "/images/rs/add-user-email-alerts.mp4" "Select email alerts" >}}{{% /expand %}}
 
     Then, click **Save**.
-1. Click ![Save](/images/rv/icon_save.png#no-click "Save").
+1. Click ![Save](/images/rcpro/icon_save.png#no-click "Save").
 
 To edit the name, password, role or email alerts of a user, hover over the user and click ![Edit]
-(/images/rv/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
+(/images/rcpro/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
 delete the user and re-add it.
+
+### Resetting user passwords
+
+{{< embed-md "reset-password.md" >}}
+
+## User Account Security
+
+To make sure your user accounts are secured and not misused, RS supports enforcement of:
+
+- Password complexity
+- Password expiration
+- Account lock on failed attempts
+
+To enforce a more advanced password policy that meets your contractual and compliance requirements and your organizational policies,
+we recommend that you use [LDAP integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) with an external identity provider, such as Active Directory.
+
+### Setting up local password complexity
+
+RS lets you enforce a password complexity profile that meets most organizational needs.
+The password complexity profile is defined by:
+
+- At least 8 characters
+- At least one uppercase character
+- At least one lowercase character
+- At least one number (not first or last character)
+- At least one special character (not first or last character)
+- Does not contain the User ID or reverse of the User ID
+- No more than 3 repeating characters
+
+{{% note %}}
+The password complexity profile applies to when a new user is added or an existing user changes their password.
+{{% /note %}}
+
+To enforce the password complexity profile, run:
+
+```src
+curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator-user-email>:<password>" -d '{"password_complexity":true}' https://<RS_server_address>:9443/v1/cluster
+```
+
+### Setting local user password expiration
+
+RS lets you enforce password expiration to meet your compliance and contractual requirements.
+To enforce an expiration of a local users password after a specified number of days, run:
+
+```src
+curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://<RS_server_address>:9443/v1/cluster
+```
+
+To disable password expiration, set the number of days to `0`.
+
+### Account lock on failed attempts
+
+To prevent unauthorized access to RS, you can [enforce account lockout]({{< relref "/rs/administering/designing-production/security/login-lockout.md" >}})
+after a specified number of failed login attempts.

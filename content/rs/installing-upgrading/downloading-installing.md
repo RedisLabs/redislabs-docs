@@ -8,7 +8,7 @@ aliases: /rs/administering/installing-upgrading/downloading-installing/
 ---
 The first thing you need to choose the platform to run Redis
 Enterprise Software on. If on-premise or in the cloud and you want to
-install it yourself, you will need to download the package. For Amazon AWS, there are other instructions to setup an AMI image.
+install it yourself, you need to download the package. For Amazon AWS, there are other instructions to set up an AMI image.
 You can also run RS in a Docker container for testing purposes.
 Navigate to the [Redis Labs download
 page](https://app.redislabs.com/#/sign-up/software?direct=true) and
@@ -56,7 +56,7 @@ instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}
 ## Installation Procedure
 
 If you downloaded the .tar file installation package, install the
-package on a machine that will serve as one of the nodes in the cluster
+package on a machine that is one of the nodes in the cluster
 by performing the following steps:
 
 1. In the operating system command-line-interface (CLI), also referred
@@ -141,9 +141,9 @@ following methods to perform a "silent" installation that speeds the
 process:
 
 1. Run the install script with "-y" as a parameter (i.e. ./install.sh
-    -y), which will silently use "Y" as a default response to all
+    -y), which silently uses "Y" as a default response to all
     questions.
-    WARNING: By using the -y parameter you will fail to see any alerts
+    WARNING: By using the -y parameter you fail to see any alerts
     from the installer to the possible presence of DBs in Sync state.
     These alerts when in normal mode allow you to stop the upgrade if
     they find a DB in that state. Check that your DBs are not in this
@@ -176,7 +176,7 @@ potentially automated separately.
 During the interactive installation process, there questions asked to
 understand how much you want the process to try and configure the OS
 environment for optimal usage by Redis Enterprise. Each question and
-what they will do is below.
+what they do is below.
 
 ### Linux Swap
 
@@ -208,16 +208,16 @@ the risk or abort the install/upgrade.
 Do you want to automatically tune the system for best performance [Y/N]?
 ```
 
-The install process can run a script that will do environment changes on
-your behalf. If you answer yes to this question, the install will ask
+The install process can run a script that does environment changes on
+your behalf. If you answer yes to this question, the install asks
 more in-depth questions to best optimize the OS environment for running
 Redis Enterprise.
 
-If you answer no, you will manually have to tune the OS for running
+If you answer no, you manually have to tune the OS for running
 Redis Enterprise.
 
 It is recommended to answer 'Y' to this question and the remaining
-questions as they will streamline the configuration of the environment.
+questions as they streamline the configuration of the environment.
 
 If you would like to see specifically what is being done, please see
 /opt/redislabs/sbin/systune.sh on the node.
@@ -243,7 +243,7 @@ If a firewall is operating on the node the install process is running,
 the script can configure the firewall to open the correct [ports Redis
 Enterprise
 requires]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
-to operate. If not, you will have to open the necessary ports on your
+to operate. If not, you have to open the necessary ports on your
 own. If you need, there is specific information on [RHEL/CentOS firewall
 configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
 

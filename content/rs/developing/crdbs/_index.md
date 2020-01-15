@@ -39,7 +39,7 @@ updates to other participating clusters and other member CRDBs.
 |  t8 | — Sync — | — Sync — |
 |  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
-Databases provide various approaches to address some of these concerns
+Databases provide various approaches to address some of these concerns:
 
 - Active-Passive Geo-distributed deployments: With active-passive
     distributions, all writes go to an active cluster. Redis Enterprise
@@ -80,7 +80,7 @@ Databases provide various approaches to address some of these concerns
 Even though types and commands in CRDBs look identical to standard Redis
 types and commands, the underlying types in RS are enhanced to maintain
 more metadata to create the conflict-free data type experience. This
-section will detail what you need to know about developing with CRDBs on
+section explains what you need to know about developing with CRDBs on
 Redis Enterprise Software.
 
 ## Compatibility
@@ -172,15 +172,14 @@ TTL on key1 to an infinite time.
 
 The replica responsible for the "winning" expire value is also
 responsible to expire the key and propagate a DEL effect when this
-happens. A "losing" replica will from this point on not be responsible
+happens. A "losing" replica is from this point on not responsible
 for expiring the key, unless another EXPIRE command resets the TTL.
-Furthermore, a replica that is NOT the "owner" of the expired value
-will:
+Furthermore, a replica that is NOT the "owner" of the expired value:
 
-- Silently ignore the key if a user attempts to access it in READ
+- Silently ignores the key if a user attempts to access it in READ
     mode, e.g. treating it as if it was expired but not propagating a
     DEL.
-- Expire it (sending a DEL) before making any modifications if a user
+- Expires it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
 
 ## Out-of-Memory (OOM) {#outofmemory-oom}
@@ -188,6 +187,18 @@ will:
 If a member CRDB is in an out of memory situation, that member is marked
 "inconsistent" by RS, the member stops responding to user traffic, and
 the syncer initiates full reconciliation with other peers in the CRDB.
+
+## CRDB Key Counts
+
+Keys are counted differently for CRDBs:
+
+- DBSIZE (in `shard-cli dbsize`) reports key header instances
+    that represent multiple potential values of a key before a replication conflict is resolved.
+- expired_keys (in `bdb-cli info`) can be more than the keys count in DBSIZE (in `shard-cli dbsize`) 
+    because expires are not always removed when a key becomes a tombstone.
+    A tombstone is a key that is logically deleted but still takes memory
+    until it is collected by the garbage collector.
+- The Expires average TTL (in `bdb-cli info`) is computed for local expires only.
 
 ## INFO
 

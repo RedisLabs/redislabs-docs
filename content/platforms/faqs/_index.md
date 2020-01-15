@@ -23,7 +23,7 @@ Yes, one Operator per namespace, each managing a single Redis Enterprise Cluster
 Each Redis Enterprise Cluster can run multiple databases while maintaining high capacity and performance.
 {{% /expand%}}
 
-{{%expand "How Can I see the CRDs (Custom Resource Definitions) created for my cluster?" %}}
+{{%expand "How can I see the CRDs (Custom Resource Definitions) created for my cluster?" %}}
 Run the following:
 
 ```src
@@ -33,11 +33,23 @@ kubectl describe rec my-cluster-name
 
 {{% /expand%}}
 
+{{%expand "How can I change the cluster admin user password?" %}}
+The cluster admin user password is created by the Operator during the deployment of the Redis Enterprise cluster and is stored in a Kubernetes secret.
+
+{{% warning %}}
+Do not change the default admin user password in the Redis Enterprise web UI.
+Changing the admin password impacts the proper operation of the K8s deployment.
+{{% /warning %}}
+
+If you must use a different admin password, create an additional user with admin privileges and configure with the new password.
+
+{{% /expand%}}
+
 {{%expand "How is using Redis Enterprise Operator superior to using Helm Charts?" %}}
 While Helm Charts help automate multi-resource deployments, they do not provide the lifecycle management and lack many of the benefits provided by the Operator:
 
 - Operators are a K8s standards while Helm is a proprietary tool
-    - Using Operators means the better packaging for different k8s deployments and distributions as Helm is not supported in a straightforward way everywhere
+    - Using Operators means the better packaging for different Kubernetes deployments and distributions as Helm is not supported in a straightforward way everywhere
 - Operators allow full control over the Redis Enterprise Cluster lifecycle
     - We’ve experienced difficulties managing state and lifecycle of the application through Helm as it essentially only allows to determine the resources being deployed, which is a problem when upgrading and evolve the Redis Enterprise Cluster settings
 - Operators support advanced flows which would otherwise require using an additional 3rd party
@@ -138,6 +150,11 @@ Next, decode, for example, the password field. Run:
 echo "Q2h5N1BBY28=" | base64 –-decode
 ```
 
+{{% warning %}}
+Do not change the default admin user password in the Redis Enterprise web UI.
+Changing the admin password impacts the proper operation of the K8s deployment.
+{{% /warning %}}
+
 {{% /expand%}}
 
 {{%expand "How to retrieve the username/password for a Redis Enterprise Cluster through the OpenShift Console?" %}}
@@ -145,41 +162,83 @@ To retrieve your password, navigate to the OpenShift management console, select 
 
 Retrieve your password by selecting “Reveal Secret.”
 ![openshift-password-retrieval]( /images/rs/openshift-password-retrieval.png )
+
+{{% warning %}}
+Do not change the default admin user password in the Redis Enterprise web UI.
+Changing the admin password impacts the proper operation of the K8s deployment.
+{{% /warning %}}
+
 {{% /expand%}}
 
-{{%expand "What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml?" %}}
+{{%expand "What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml and the Pod Security Policy (PSP) yaml?" %}}
 
 The scc.yaml file is defined like this:
 
 ```yaml
 kind: SecurityContextConstraints
-
-apiVersion: v1
-
+apiVersion: security.openshift.io/v1
 metadata:
-
-name: redis-enterprise-scc
-
+  name: redis-enterprise-scc
 allowPrivilegedContainer: false
-
 allowedCapabilities:
-
-- SYS_RESOURCE
-
+  - SYS_RESOURCE
 runAsUser:
-
-type: RunAsAny
-
+  type: MustRunAs
+  uid: 1001
+FSGroup:
+  type: MustRunAs
+  ranges: 1001,1001
 seLinuxContext:
-
-type: RunAsAny
+  type: RunAsAny
 ```
+
+([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/scc.yaml))
+
+The psp.yaml file is defined like this:
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: PodSecurityPolicy
+metadata:
+  name: redis-enterprise-psp
+spec:
+  privileged: false
+  allowPrivilegeEscalation: false
+  allowedCapabilities:
+    - SYS_RESOURCE
+  runAsUser:
+    rule: MustRunAsNonRoot
+  fsGroup:
+    rule: MustRunAs
+    ranges:
+    - min: 1001
+      max: 1001
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  volumes:
+    - '*'
+```
+
+([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/psp.yaml))
 
 The SYS_RESOURCE capability is required by the Redis Labs Enterprise Cluster (RLEC) container so that RLEC can set correct OOM scores to its processes inside the container.
 Also, some of the RLEC services must be able to increase default resource limits, especially the number of open file descriptors.
 
-While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file.
+While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
 
 The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/openshift/_index.md#step-3-prepare-your-yaml-files" >}}).
+
+RLEC PSP definitions are controlled with role-based access control (RBAC).
+A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account
+and allows that account to create pods with the PSP shown above.
+
+{{% note %}}
+- Removing NET_RAW blocks 'ping' from being used on the solution containers.
+- These changes were made as of release 5.4.6-1183 to better align the deployment with container and Kubernetes security best practices:
+    - The NET_RAW capability requirement in PSP was removed.
+    - The allowPrivilegeEscalation is set to 'false' by default.
+{{% /note %}}
 
 {{% /expand%}}

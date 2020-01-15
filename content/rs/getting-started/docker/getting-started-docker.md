@@ -25,7 +25,7 @@ To get started with a single Redis Enterprise Software container:
 
 - Step 1: Install Docker Engine for your operating system
 - Step 2: Run the RS Docker container
-- Step 3: Setup a cluster
+- Step 3: Set up a cluster
 - Step 4: Create a new database
 - Step 5: Connect to your database
 
@@ -55,7 +55,7 @@ You can publish other [ports]({{< relref "/rs/administering/designing-production
 with `-p <host_port>:<container_port>`.
 
 <!-- Also in quick-start.md -->
-## Step 3: Setup a Cluster
+## Step 3: Set up a Cluster
 
 1. In the web browser on the host machine, go to https://localhost:8443 to see
 the Redis Enterprise Software web console.

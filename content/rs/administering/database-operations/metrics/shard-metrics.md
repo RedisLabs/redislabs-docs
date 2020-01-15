@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can choose which resource(s) and metric(s) are shown in each of the
+You can choose which resources and metrics are shown in each of the
 two detailed graphs at the top of the page, as follows:
 
 - Below the top two graphs there are two groups of smaller graphs:

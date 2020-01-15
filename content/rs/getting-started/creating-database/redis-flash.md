@@ -11,7 +11,7 @@ with a single node are simple and are as follows:
 
 - Step 1: Install Redis Enterprise Software or launch with Docker
     container
-- Step 2: Setup a Redis Enterprise Software cluster with Redis on
+- Step 2: Set up a Redis Enterprise Software cluster with Redis on
     Flash
 - Step 3: Create a new Redis on Flash database
 - Step 4: Connect to your new database
@@ -34,7 +34,7 @@ you have the bits on a Linux based OS, you need to untar the image
 tar -vxf <downloaded tar file name>
 ```
 
-Once the tar command completes, you will find a new install.sh script in
+Once the tar command completes, you can find a new install.sh script in
 the current directory.
 
 ```src
@@ -50,7 +50,7 @@ Docker container on Windows, MacOS, and Linux.
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
-## Step 2: Setup a Cluster and Enable Redis on Flash
+## Step 2: Set up a Cluster and Enable Redis on Flash
 
 Direct your browser to https://localhost:8443/ on the host machine to
 see the Redis Enterprise Software web console. Simply click the
@@ -168,7 +168,7 @@ database or add a bunch of data for cluster testing,
 the [memtier_benchmark Quick
 Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) should
 help. However please note that to see the true performance and scale of
-Redis on Flash, you will need to tune your IO path and have the flash
+Redis on Flash, you must tune your IO path and have the flash
 path set to the mounted path of SSD or NVMe flash memory as that is what
 it is designed to run on. For more information, see [Redis on
 Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).

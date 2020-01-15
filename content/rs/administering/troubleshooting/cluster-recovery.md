@@ -8,6 +8,10 @@ categories: ["RS"]
 When a cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
+{{% note %}}
+For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/cluster-recovery.md" >}}).
+{{% /note %}}
+
 Cluster failure can be caused by:
 
 - A hardware or software failure that causes the cluster to be unresponsive to client requests or administrative actions.
@@ -36,6 +40,8 @@ The cluster recovery process includes:
 - We recommend that you use clean persistent storage drives for the new cluster.
     If you use the original storage drives,
     make sure that you backup the files on the original storage drives to a safe location.
+- Identify the cluster configuration file that you want to use as the configuration for the recovered cluster.
+    The cluster configuration file is `/css/ccs-redis.rdb` on the persistent storage for each node.
 
 ## Recovering the Cluster
 
@@ -66,7 +72,7 @@ of the configuration and persistence files on each of the nodes.
     If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
 1. To recover the cluster configuration from the original cluster to the first node in the new cluster,
-    from the [rladmin]({{< relref "/rs/references/cli-reference/rladmin.md" >}}) command-line interface (CLI):
+    from the [rladmin]({{< relref "/rs/references/rladmin.md" >}}) command-line interface (CLI):
 
     ```src
     cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
@@ -74,8 +80,7 @@ of the configuration and persistence files on each of the nodes.
 
     {{% expand "Command syntax" %}}
 `<filename>` - The full path of the old cluster configuration file in the persistent storage.
-The cluster configuration file is /css/ccs-redis.rdb.
-The file is located on the persistent storage drive for each node in the original cluster and all copies are identical.
+The cluster configuration file is `/css/ccs-redis.rdb`.
 
 `<node_uid>` - The id of the node, in this case `1`.
 
@@ -90,7 +95,7 @@ in the new node.
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
 was enabled in the cluster,
 you can use this parameter to override the rack ID value that was set for the node with ID 1 with a new rack ID.
-Otherwise, the node will get the same rack ID as the original node.
+Otherwise, the node gets the same rack ID as the original node.
     {{% /expand %}}
 
     For example:

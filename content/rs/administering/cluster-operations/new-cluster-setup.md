@@ -58,7 +58,7 @@ To create a cluster:
         Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 
     1. If your machine is configured to have multiple IP addresses, the
-        section **IP Addresses Usage** is displayed. Use the **IP
+        section **IP Addresses Usage** is shown. Use the **IP
         Addresses Usage** section to assign a single IPv4 type address
         for internal traffic and multiple IPv4/IPv6 type addresses for
         external traffic. For additional details, refer to Multi-IP &
@@ -105,7 +105,7 @@ by carrying out the following tests:
 
 - Run *rlcheck* on the node. For additional details, refer to [rlcheck
     Installation Verification
-    Utility]({{< relref "/rs/references/cli-reference/rlcheck.md" >}}).
+    Utility]({{< relref "/rs/references/rlcheck.md" >}}).
 - Test connectivity to the database. For additional details, refer to
     [Testing Client
     Connectivity]({{< relref "/rs/administering/troubleshooting/testing-client-connectivity.md" >}}).

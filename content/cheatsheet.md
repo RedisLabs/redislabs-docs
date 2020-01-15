@@ -27,24 +27,24 @@ To link to another page in the content directory:
 Syntax:
 
 ```md
-[Redis Cloud Pro Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
+[Redis Cloud Quick Setup]({{</* relref  "/rc/quick-setup.md" */>}})`
 ```
 
 Output:
 
-[Redis Cloud Pro Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
+[Redis Cloud Quick Setup]({{< relref  "/rc/quick-setup.md" >}})
 
 To link to an anchor on another page in the content directory:
 
 Syntax:
 
 ```md
-`[Sign up for Redis Cloud Pro]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
+`[Sign up for Redis Cloud]({{</* relref "/rc/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
 ```
 
 Output:
 
-[Sign up for Redis Cloud Pro]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
+[Sign up for Redis Cloud]({{< relref "/rc/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
 
 ### Text formatting
 
@@ -133,7 +133,7 @@ Use the `TRUE` value to enable the feature.
 
 **Code shortcode**
 
-Code can be displayed like code fences using the code shortcode also.
+Code can be shown like code fences using the code shortcode also.
 
 Syntax:
 
@@ -161,7 +161,26 @@ Ouput:
 | heading 1 | heading 2 | heading 3 |
 | :-----| :-----: |-----: |
 | cell 1x1  | cell 1x2  | cell 1x3  |
-| cell 2x1  | cell 2x2  | cell 2x3  |
+| cell 2x1  | cell 2x2  | cell 2x3  |t
+
+### Tables from CSV
+The first parameter when using this shortcode is the name of the CSV file located in */static/tables* directory and the second is the number of columns in the table.
+
+Syntax:
+`{{</* table-csv "test_table.csv" 3 */>}}`
+
+File:
+
+```csv
+Name,Description,Detail
+cell 1x1,cell 1x2,cell 1x3
+cell 2x1,cell 2x2,cell 2x3
+cell 3x1,cell 3x2,cell 3x3
+```
+
+Output:
+
+{{< table-csv "test_table.csv" 3 >}}
 
 ## Images and Videos
 
@@ -280,7 +299,7 @@ Output:
 
 **Embedding a partial**
 
-A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials should be placed in `layouts/partials/embeds` directory.
+A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials should be placed in `content/embeds` directory.
 
 Embed a markdown partial
 
@@ -408,7 +427,7 @@ Syntax:
 
 Ouput:
 
-See example [here](/rc/administration).
+See example [here](/rcessentials/administration).
 
 ### Recently updated
 This shortcode can be used to display recently updated articles.

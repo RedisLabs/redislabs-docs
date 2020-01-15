@@ -54,13 +54,13 @@ Title: Usage Reports
 description:
 weight: 70
 alwaysopen: false
-categories: ["RC Pro"]
+categories: ["RC"]
 ---
 ```
 
 ## Adding Sections
 
-To add a section to the docs that will include multiple articles, you must add a directory with a `_index.md` file.
+To add a section to the docs that includes multiple articles, you must add a directory with a `_index.md` file.
 The `_index.md` file is the landing page for the section that should contain the main information for the section.
 
 Start the article with the header information as shown above
@@ -110,10 +110,10 @@ and the concepts must explain any background information that is needed to know 
             ![Service Account Creation](/images/rs/create-service-account.png)
 
         1. To make sure that there is network connectivity between the participating clusters,
-            telnet on port 8080 from each participating cluster to each of the other participating clusters.
+            telnet on port 9443 from each participating cluster to each of the other participating clusters.
 
             ```src
-            telnet <target FQDN> 8080
+            telnet <target FQDN> 9443
             ```
 
         {{% /expand %}}

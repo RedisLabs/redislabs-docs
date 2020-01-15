@@ -58,8 +58,8 @@ To get started with custom monitoring:
           - targets: ["<cluster_name>:8070"]
     ```
 
-1. Setup your Prometheus and Grafana servers.
-    To setup Prometheus and Grafana on Docker containers:
+1. Set up your Prometheus and Grafana servers.
+    To set up Prometheus and Grafana on Docker containers:
     1. Create a _docker-compose.yml_ file with this yaml contents:
 
         ```yml
@@ -256,14 +256,14 @@ These are the metrics available:
 
 | Metric | Description |
 |  ------ | :------ |
-|  listener_acc_latency | Accumulative latency of all types of commands on DB |
+|  listener_acc_latency | Accumulative latency (sum of the latencies) of all types of commands on DB. For the average latency, divide this value by listener_total_res. |
 |  listener_acc_latency_max | Highest value of accumulative latency of all types of commands on DB |
-|  listener_acc_other_latency | Accumulative latency of commands that are classified as "other" type on DB |
-|  listener_acc_other_latency_max | Highest value of accumulative latency of commands that are classified as "other" type on DB |
-|  listener_acc_read_latency | Accumulative latency of read type of commands on DB |
-|  listener_acc_read_latency_max | Highest value of accumulative latency of read type of commands on DB |
-|  listener_acc_write_latency | Accumulative latency of write type of commands on DB |
-|  listener_acc_write_latency_max | Highest value of accumulative latency of write type of commands on DB |
+|  listener_acc_other_latency | Accumulative latency (sum of the latencies) of commands that are type "other" on DB. For the average latency, divide this value by listener_other_res. |
+|  listener_acc_other_latency_max | Highest value of accumulative latency of commands that are type "other" on DB |
+|  listener_acc_read_latency | Accumulative latency (sum of the latencies) of commands that are type "read" on DB. For the average latency, divide this value by listener_read_res. |
+|  listener_acc_read_latency_max | Highest value of accumulative latency of commands that are type "read" on DB |
+|  listener_acc_write_latency | Accumulative latency (sum of the latencies) of commands that are type "write" on DB. For the average latency, divide this value by listener_write_res. |
+|  listener_acc_write_latency_max | Highest value of accumulative latency of commands that are type "write" on DB |
 |  listener_auth_cmds | Number of memcached AUTH commands sent to the DB |
 |  listener_auth_cmds_max | Highest value of number of memcached AUTH commands sent to the DB |
 |  listener_auth_errors | Number of error responses to memcached AUTH commands  |

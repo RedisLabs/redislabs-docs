@@ -42,8 +42,8 @@ The node role is shown in the output of the 'rladmin status
 nodes' command.
 {{% /warning %}}
 
-You will run install.sh from the directory where you untarred the media
-just like you do for a new install. The software will recognize this is
+You run install.sh from the directory where you untarred the media
+just like you do for a new install. The software recognizes this is
 an upgrade and proceed accordingly.
 
 Just like for a new installation, you must sudo or be root to do the
@@ -62,7 +62,7 @@ more than one node at a time**.
 {{% /warning %}}
 
 To make sure that the node is functioning properly, run [`rlcheck`]
-({{< relref "/rs/references/cli-reference/rlcheck.md" >}}) and `rladmin status extra all`
+({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
 on the node both before and after the upgrade.
 
 If you have the RS management UI open in the browser while you are
@@ -86,7 +86,7 @@ command in the rladmin CLI and set it to the previous Redis version supported.
 **To check whether your Redis database versions match the latest Redis
 version supported by RS:**
 
-- In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}}),
+- In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
     run the status command.
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
@@ -100,7 +100,7 @@ RS, Redis Labs recommends that you upgrade your Redis databases.
 
 1. Make sure that all of the nodes in the RS cluster are [upgraded](#upgrading-nodes).
     You cannot upgrade databases before all of the nodes in the cluster are upgraded.
-1. In the [rladmin CLI]({{< relref "/rs/references/cli-reference/rladmin.md" >}})
+1. In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}})
     on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
 
 During the database upgrade process, the database is restarted. As
@@ -109,11 +109,10 @@ a result:
 - For databases that have [replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
     enabled, a failover is done before the master database restarts to make sure that
     there is no downtime.
-- For databases that do not have replication enabled and persistence
-    enabled, some downtime occurs while the database is restarting. The
-    type of persistence chosen for this database is a variable in the
-    time it will take for a database to come back up. For example, AOF
-    usually takes longer than an RDB file.
+- For databases without replication but with persistence enabled,
+    the database is unavailable during the restart because data is restored from the persistence file.
+    The length of the downtime is different for each persistence option.
+    For example, AOF usually takes longer than an RDB file.
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
@@ -131,8 +130,8 @@ instances that were not upgraded yet cannot receive write updates from the upgra
 The upgraded instance receives updates from upgraded and non-upgraded instances.
 
 {{% note %}}
-We highly recommend that you upgrade all instances of a specific CRDB within a reasonable time frame
-to avoid temporary inconsistencies between the instances.
+- Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
+- Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
 {{% /note %}}
 
 After you upgrade an instance to use the new protocol version,

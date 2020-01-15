@@ -96,7 +96,7 @@ tasks.
 The cluster manager is designed in a way that is totally decoupled from
 the Redis operation. This enables RS to react in a much faster and
 accurate manner to failure events, so that, for example, a node failure
-event will trigger mass failover operations of all the master endpoints
+event triggers mass failover operations of all the master endpoints
 and master shards that are hosted on the failed node.
 
 In addition, this architecture guarantees that each Redis shard is only
@@ -107,8 +107,8 @@ the cluster manager itself does not affect the Redis operation.
 
 Some of the primary functionalities of the cluster manager include:
 
-- Deciding where shards will be created
-- Deciding when shards will be migrated and to where
+- Deciding where shards are created
+- Deciding when shards are migrated and to where
 - Monitoring database size
 - Monitoring databases and endpoints across all nodes
 - Running the database resharding process

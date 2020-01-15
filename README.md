@@ -2,7 +2,7 @@ _The master branch_ => [![CircleCI](https://circleci.com/gh/RedisLabs/redislabs-
 
 # Redis Labs Documentation Center
 
-The Redis Labs Documentation Center is built with [Hugo]( https://gohugo.io/ ) and is based on the [DocDock]( https://github.com/vjeantet/hugo-theme-docdock.git ) theme.
+The Redis Labs Documentation Center is built with [Hugo]( https://gohugo.io/ ) version 0.48 and is based on the [DocDock]( https://github.com/vjeantet/hugo-theme-docdock.git ) theme.
 
 ## Installing the Redis Labs Documentation Center
 
@@ -64,4 +64,4 @@ To add a new section in the sidebar, you must add a directory and add an `_index
 
 ## Markdown
 
-For more information about markdown syntax for our docs, see the [cheatsheet](http://www.redislabs.com/docs/latest/cheatsheet).
+For more information about markdown syntax for our docs, see the [cheatsheet](https://docs.redislabs.com/latest/cheatsheet).

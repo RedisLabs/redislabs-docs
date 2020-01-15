@@ -13,7 +13,7 @@ utilizes and manages memory, it is best to eliminate the likelihood of
 the OS swapping. If you would like to understand why, please read more
 on [how RS manages
 memory]({{< relref "/rs/concepts/memory-architecture/memory-management.md" >}})
-for best functionality and performance in the section below. The formal
+for best functionality and performance. The formal
 recommendation is to disable Linux swap completely in the OS.
 
 ## Disabling Swap
@@ -27,8 +27,8 @@ $ sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
 ```
 
 The first command turns swap off immediately and the second command
-comments out the swap partition(s) configured in the OS so swap being
-off will survive a reboot.
+comments out the swap partitions configured in the OS so swap being
+off survives a reboot.
 
 If you are able to, it is best when you install/build the OS on the
 server/VM/instance to be used in your RS cluster, to simply not

@@ -3,7 +3,7 @@ Title: Using flush_all for Memcached Cloud
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 ---
 Follow the instructions below to use flush_all.
 
@@ -11,7 +11,7 @@ Follow the instructions below to use flush_all.
 
 If your resource has SASL authentication enabled, you can't use nc
 command or telnet to run flush_all on your Memcached Enterprise Cloud
-resource. You will have to download a Memcached CLI client that supports
+resource. You have to download a Memcached CLI client that supports
 SASL. We recommend to use the bmemcached-CLI client, and the
 instructions here is for this client. This instruction refers to Ubuntu
 OS. Please make the necessary changes if you are using other Linux

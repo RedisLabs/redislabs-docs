@@ -35,7 +35,7 @@ database.
 
 The Discovery Service can return either the internal or external
 endpoint for a database. If you query the discovery service for the
-endpoint of a database named "db1", the Discovery Service will return
+endpoint of a database named "db1", the Discovery Service returns
 the external endpoint information by default. If only an internal
 endpoint exists with no external endpoint the default behavior is to
 return the internal endpoint. The "\@internal" is added to the end of

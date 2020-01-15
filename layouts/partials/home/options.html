@@ -1,10 +1,10 @@
 <section class="home-options">
-        <div class="home-options__option">
+        <div class="home-options__option" style="transform: translateY(10px);">
             <div class="home-options__option__icon">
-                <img src="./theme-flex/img/ico-cloud.svg" alt="Cloud Essentials Icon" style="width:108px;transform: translateY(-2px);">
+                <img src="./theme-flex/img/ico-cloud.svg" alt="Cloud Icon" style="width:108px;transform: translateY(-2px);">
                 <a href="/rc" class="opener"></a>
             </div>
-            <h5>Cloud Essentials</h5>
+            <h5>Cloud</h5>
             <p>Hosted and serverless DBaaS. The fastest way to deploy Redis Enterprise.</p>
             <hr>
             <ul>
@@ -21,35 +21,13 @@
             </ul>
         </div>
 
-        <div class="home-options__option">
-            <div class="home-options__option__icon">
-                <img src="./theme-flex/img/ico-cloud-pro.svg" alt="Cloud Pro Icon">
-                <a href="/rv" class="opener"></a>
-            </div>
-            <h5>Cloud Pro</h5>
-            <p>Hosted DBaaS in a dedicated VPC. Supports advanced capabilities like Active-Active Geo Distribution, Redis-on-Flash, Search, Graph or Document data models. Can be migrated to your own cloud account.</p>
-            <hr>
-            <ul>
-                <section>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv">Overview</a></li>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv/concepts/">Concepts</a></li>
-                </section>
-                <section>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv/quick-setup/">Getting
-                            Started</a></li>
-                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/rv/administration">Administrator
-                            Guide</a></li>
-                </section>
-            </ul>
-        </div>
-
-        <div class="home-options__option" style="transform: translateY(-3px);">
+        <div class="home-options__option" style="transform: translateY(-1px);">
             <div class="home-options__option__icon">
                 <img src="./theme-flex/img/ico-software.svg" alt="Software Icon" style="width: 94px; margin-top:3px;">
                 <a href="/rs" class="opener"></a>
             </div>
             <h5>Software</h5>
-            <p>Software you can install on any cloud or private data center. Includes all Redis Enterprise's advance capabilities. Downloadable software, in containers, on Pivotal CF, OpenShift or as AWS AMI.</p>
+            <p>Software you can install on any cloud or private data center as software, containers, Pivotal CF, OpenShift<br>or AWS AMI.</p>
             <hr>
             <ul>
                 <section>
@@ -66,10 +44,33 @@
             </ul>
         </div>
 
-        <div class="home-options__option pt-20">
+        <div class="home-options__option" style="transform: translateY(-15px);">
+            <div class="home-options__option__icon">
+                <img src="./theme-flex/img/ico-redisinsight.svg" alt="RedisInsight Icon" style="height: 70%; margin-top:20px;">
+                <a href="/ri" class="opener"></a>
+            </div>
+            <h5>RedisInsight</h5>
+            <p>RedisInsight is a cross-platform GUI for redis, with a focus on reducing memory usage and improving application performance.
+            </p>
+            <hr>
+            <ul>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/ri/installing">Installation
+                        Guide</a></li>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/ri/using-redisinsight">Using RedisInsight</a></li>
+                </section>
+                <section>
+                    <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/ri/memory-optimizations/">Optimize
+                        Memory</a></li>
+                        <li><i class="fa fa-angle-right fa-lg category-icon"></i><a href="/ri/faqs">FAQs</a></li>
+                </section>
+            </ul>
+        </div>
+
+        <div class="home-options__option">
             <div class="home-options__option__icon">
                 <img src="./theme-flex/img/ico-modules.svg" alt="Modules Icon" class="sized-down">
-                <a href="https://redislabs.com/redis-enterprise/redis-modules/" class="opener"></a>
+                <a href="/modules" class="opener"></a>
             </div>
             <h5>Modules</h5>
             <p>Redis Modules are add-ons that extend Redis to cover most of the popular<br> use cases in many
@@ -79,21 +80,21 @@
             <ul>
                 <section>
                     <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="https://redislabs.com/redis-enterprise/redis-modules/">Overview</a></li>
+                            href="/modules">Overview</a></li>
 
                     <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="https://oss.redislabs.com/rejson/">RedisJSON</a></li>
+                            href="/modules/redisjson/">RedisJSON</a></li>
                 </section>
                 <section>
                     <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="https://oss.redislabs.com/redisearch/">RediSearch</a></li>
+                            href="/modules/redisearch/">RediSearch</a></li>
                     <li><i class="fa fa-angle-right fa-lg category-icon"></i><a
-                            href="https://oss.redislabs.com/redisgraph/">RedisGraph</a></li>
+                            href="/modules/redisgraph/">RedisGraph</a></li>
                 </section>
             </ul>
         </div>
 
-        <div class="home-options__option pt-20" style="transform: translateY(-4.5px);">
+        <div class="home-options__option" style="transform: translateY(-4.5px);">
             <div class="home-options__option__icon">
                 <img src="./theme-flex/img/ico-platforms.svg" alt="Platforms Icon" class="platforms-icon">
                 <a href="/platforms" class="opener"></a>

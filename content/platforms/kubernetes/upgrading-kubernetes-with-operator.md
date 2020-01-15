@@ -1,7 +1,7 @@
 ---
 Title: Upgrading a Redis Enterprise Cluster in Operator-based Architecture
 description: 
-weight: 50
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/
@@ -11,7 +11,7 @@ Redis Labs implements rolling updates for software upgrades in Kubernetes deploy
 Rolling updates allow deployments’ updates to take place with zero downtime
 by incrementally updating Pods’ Redis Enterprise Cluster instances with new ones.
 
-The following illustrations depict how a rolling update occurs:
+The following illustrations show how a rolling update is done:
 
 - Each hexagon represents a node
 - Each box represents a Pod
@@ -58,6 +58,18 @@ Verify that the Operator deployment has successfully completed by running the fo
 ```src
     kubectl get pod/redis-enterprise-operator-*-*
 ```
+In order to get the operator instance id you may use the following command:
+
+```src
+    kubectl get pods
+    
+    NAME                                         READY     STATUS    RESTARTS   AGE
+    redis-enterprise-operator-6966cdff87-xsqzn   1/1       Running   0          1d
+    demo-0                                       2/2       Running   0          1d
+    demo-1                                       2/2       Running   0          1d
+    demo-2                                       2/2       Running   0          1d
+    demo-services-rigger-7cc944df49-q56sk        1/1       Running   0          1d
+```
 
 Once the Operator is up and running with the upgraded image, edit the image value in your \<my-cluster-name>.yaml file,
 known by the default name redis-enterprise-cluster.yaml:
@@ -79,5 +91,16 @@ After editing the redis-enterprise-cluster.yaml file, apply it by running:
 To view the status of the current rolling upgrade run:
 
 ```src
-    kubectl rollout status sts
+    kubectl rollout status sts/<statefulset name>
+    
+    statefulset rolling update complete 3 pods at revision <sts name>-67b79bc9cb...
+```
+
+In order to get the staetfulset name you may use the following command:
+
+```src
+    kubectl get sts
+    
+    NAME      DESIRED   CURRENT   AGE
+    demo      3         3         1d
 ```
