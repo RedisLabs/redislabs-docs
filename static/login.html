@@ -5,13 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google-signin-client_id"
+        content="338657327879-v4bskbp3sefa6h6qs8r3gf2adt8755v8.apps.googleusercontent.com">
     <title>Redis Labs Docs Login</title>
 </head>
 
 <body>
     <h1>Login</h1>
-    <p>To view internal content, sign with your Redis Labs Google Suite account.</p>
+    <p>To view internal content, sign in with your Redis Labs Google Suite account.</p>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <script>
+        function onSuccess(googleUser) {
+            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+            localStorage.setItem('auth_token', 'abc123');
+        }
+        function onFailure(error) {
+            console.log(error);
+        }
+        function renderButton() {
+            gapi.signin2.render('g-signin2', {
+                'scope': 'profile email',
+                'width': 240,
+                'height': 50,
+                'longtitle': true,
+                'onsuccess': onSuccess,
+                'onfailure': onFailure
+            });
+        }
+    </script>
+
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 
 </html>
