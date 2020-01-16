@@ -1,26 +1,71 @@
 ---
 Title: Upgrading a Redis Enterprise Cluster in Operator-based Architecture
-description: 
-weight: 10
+description:
+weight: 50
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/
 ---
 Redis Labs implements rolling updates for software upgrades in Kubernetes deployments.
 
-Rolling updates allow deployments’ updates to take place with zero downtime
-by incrementally updating Pods’ Redis Enterprise Cluster instances with new ones.
+## Upgrading Redis Enterprise in Operator
 
-The following illustrations show how a rolling update is done:
+1. Clone this repository, which contains the deployment files:
+
+```src
+git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
+```
+
+Example response:
+
+```src
+Cloning into 'redis-enterprise-k8s-docs'...
+remote: Enumerating objects: 37, done.
+remote: Counting objects: 100% (37/37), done.
+remote: Compressing objects: 100% (30/30), done.
+remote: Total 168 (delta 19), reused 9 (delta 7), pack-reused 131
+Receiving objects: 100% (168/168), 45.32 KiB | 7.55 MiB/s, done.
+Resolving deltas: 100% (94/94), done.
+```
+
+1. Apply the [bundle.yaml] file (https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml) - (or openshift.bundle.yaml file if running OpenShift)
+
+    {{% note %}}
+If you are not pulling images from Docker Hub, update the operator Image spec to point to your private repository.
+If you have made changes to the role, role binding, rbac or crd in the previous version you must merge them with the updated declarations in the new version files.
+    {{% /note %}}
+
+1. After the Operator and Services Rigger upgrades are complete:
+    1. Run `kubectl edit rec` in the namespace your Redis Enterprise Cluster is deployed in.
+    1. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag provided in the release documentation.
+
+    For example, in Operator release [5.4.10-8](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases/tag/5.4.10-8) the tag is `redislabs/redis:5.4.10-22` for the Ubuntu-based Redis Enterprise image.
+
+    1. Save the changes.
+        If your default text editor is vim then enter `<ESC>:wq` to save the file.
+
+The rolling upgrade of the cluster nodes' statefulSet starts.
+
+To see the status of the current rolling upgrade, run:
+
+```src
+kubectl rollout status sts
+```
+
+## How Does the Upgrade Work?
+
+Rolling updates allow you to update deployments with zero downtime
+by incrementally updating Redis Enterprise Cluster instances in the pods with new instances.
+
+These diagrams show how a rolling update works:
 
 - Each hexagon represents a node
-- Each box represents a Pod
+- Each box represents a pod
 
 ![kubernetes-rolling-updates]( /images/rs/kubernetes-rolling-updates.png )
 
-The Pods are updated one by one, in the diagram starting from left to right.
-Upgrade progresses to the next Pod only once the current Pod has completed
-the upgrade process successfully.
+The pods are updated one by one in the diagram, starting from left to right.
+Each pod is updated after the last one completes successfully.
 
 ![kubernetes-rolling-updates-newapp]( /images/rs/kubernetes-rolling-updates-newapp.png )
 
@@ -28,79 +73,6 @@ the upgrade process successfully.
 
 ![kubernetes-rolling-updates-done]( /images/rs/kubernetes-rolling updates-done.png )
 
-Updates to the Pods in the StatefulSet are performed in reverse ordinal order.
-The Kubernetes controller terminates each Pod and waits for it to transition to Running,
-and then to Ready, before updating the next Pod, until all Pods are updated
-and the upgrade process is complete.
-
-To trigger an upgrade, first determine whether an Operator upgrade is required.
-If so, make sure to apply and verify that an Operator upgrade has completed deploying before upgrading the cluster.
-
-Edit the image value in your \<operator>.yaml file,
-known by the default name operator.yaml:
-
-```src
-    spec:
-      serviceAccount:   redis-enterprise-operator
-      containers:
-        - name:         redis-enterprise-operator       #edit to reflect the repository that you utilize
-          image:        redislabs/operator:175_f2e2fb9  #edit to reflect the image tag you are upgrading to
-```
-
-After editing the operator.yaml file, apply it by running:
-
-```src
-kubectl apply -f operator.yaml
-```
-
-Verify that the Operator deployment has successfully completed by running the following command and verifying that it has achieved Ready status:
-
-```src
-    kubectl get pod/redis-enterprise-operator-*-*
-```
-In order to get the operator instance id you may use the following command:
-
-```src
-    kubectl get pods
-    
-    NAME                                         READY     STATUS    RESTARTS   AGE
-    redis-enterprise-operator-6966cdff87-xsqzn   1/1       Running   0          1d
-    demo-0                                       2/2       Running   0          1d
-    demo-1                                       2/2       Running   0          1d
-    demo-2                                       2/2       Running   0          1d
-    demo-services-rigger-7cc944df49-q56sk        1/1       Running   0          1d
-```
-
-Once the Operator is up and running with the upgraded image, edit the image value in your \<my-cluster-name>.yaml file,
-known by the default name redis-enterprise-cluster.yaml:
-
-```src
-    spec:
-      redisEnterpriseImageSpec:
-        imagePullPolicy:    IfNotPresent
-        repository:         redislabs/redis             #edit to reflect the repository that you utilize
-        versionTag:         5.2.2-22.rhel7-openshift    #edit to reflect the image tag you are upgrading to
-```
-
-After editing the redis-enterprise-cluster.yaml file, apply it by running:
-
-```src
-    kubectl apply -f redis-enterprise-cluster.yaml
-```
-
-To view the status of the current rolling upgrade run:
-
-```src
-    kubectl rollout status sts/<statefulset name>
-    
-    statefulset rolling update complete 3 pods at revision <sts name>-67b79bc9cb...
-```
-
-In order to get the staetfulset name you may use the following command:
-
-```src
-    kubectl get sts
-    
-    NAME      DESIRED   CURRENT   AGE
-    demo      3         3         1d
-```
+The pods in the StatefulSet are updated in reverse ordinal order.
+The Kubernetes controller terminates each pod and waits for it to transition to `Running` and then to `Ready`.
+The it updates the next pod until all pods are updated and the upgrade process is completed.
