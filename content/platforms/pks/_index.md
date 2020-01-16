@@ -75,43 +75,43 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
 
     1. Review the current namespaces:
 
-    ```src
-    kubectl get namespaces
-    ```
+        ```src
+        kubectl get namespaces
+        ```
 
-    Example of a response:
+        Example of a response:
 
-    ```src
-    NAME          STATUS   AGE
-    default       Active   14d
-    kube-public   Active   14d
-    kube-system   Active   14d
-    pks-system    Active   14d
-    ```
+        ```src
+        NAME          STATUS   AGE
+        default       Active   14d
+        kube-public   Active   14d
+        kube-system   Active   14d
+        pks-system    Active   14d
+        ```
 
     1. Create a new namespace with a unique name:
 
-    ```src
-    kubectl create namespace redis-enterprise
-    ```
+        ```src
+        kubectl create namespace redis-enterprise
+        ```
 
-    Example of a response:
+        Example of a response:
 
-    ```src
-    namespace/redis-enterprise created
-    ```
+        ```src
+        namespace/redis-enterprise created
+        ```
 
     1. Switch context to operate within the newly created namespace:
 
-    ```src
-    kubectl config set-context --current --namespace=redis-enterprise
-    ```
+        ```src
+        kubectl config set-context --current --namespace=redis-enterprise
+        ```
 
-    Example of a response:
+        Example of a response:
 
-    ```src
-    Context "pks-re-cluster" modified.
-    ```
+        ```src
+        Context "pks-re-cluster" modified.
+        ```
 
 <!---```
  $ kubectl current-context
