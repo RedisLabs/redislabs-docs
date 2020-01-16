@@ -233,8 +233,8 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
         [More information about persistent storage in Operator deployment.](https://docs.redislabs.com/latest/platforms/kubernetes/kubernetes-persistent-volumes/)
 
         {{% note %}}
-        You can omit the reclaimPolicy declaration in the yaml file, in case of error, for testing and development environments.
-        For production environments you must retain the Persistent Volume Claims (PVCs) when cluster persistent is used, in order to enable recovery.
+You can omit the reclaimPolicy declaration in the yaml file, in case of error, for testing and development environments.
+For production environments you must retain the Persistent Volume Claims (PVCs) when cluster persistent is used, in order to enable recovery.
         {{% /note %}}
 
         You will use the storage class name you have just created in the next step, editing the Redis Enterprise Cluster (REC) yaml.
