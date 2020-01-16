@@ -49,7 +49,7 @@ This causes a short interruption in the availability of this database across the
 When you upgrade the module for a database, you can either:
 
 - Specify the module arguments to replace the current arguments.
-- Not specify the module arguments to use the current argument.
+- Specify the 'keep_module_args' flag to use the current argument.
 
 1. Connect to the terminal of a node in the cluster
 1. Run `rladmin status` to list the databases on the node.
@@ -86,11 +86,11 @@ Here are some examples of module upgrades:
 - To upgrade RedisBloom to version 10100 and remove the current module arguments:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name bf version 10100 module_args ""
+    rladmin upgrade module db_name MyDB module_name bf version 10100 module_args " "
     ```
 
 - To upgrade RedisJSON to 10002 and use the current module arguments:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name ReJSON version 10002
+    rladmin upgrade module db_name MyDB module_name ReJSON version 10002 keep_module_args
     ```
