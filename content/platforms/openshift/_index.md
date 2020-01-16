@@ -1,6 +1,6 @@
 ---
 Title: Getting Started with Kubernetes and OpenShift
-description: 
+description:
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
@@ -11,9 +11,9 @@ Cluster with OpenShift.
 
 Prerequisites:
 
-1. An [OpenShift cluster installed](https://docs.openshift.com/enterprise/3.0/install_config/install/quick_install.html) with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher
-1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/latest/cli_reference/getting-started-cli.html)
+1. An [OpenShift cluster installed (3.x or 4.x)](https://docs.openshift.com/container-platform/3.11/welcome/index.html) with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
+1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
+1. The [OpenShift cli installed](https://docs.openshift.com/online/starter/cli_reference/openshift_cli/getting-started-cli.html#cli-installing-cli_cli-developer-commands)
 
 ## Step 1: Login
 
@@ -47,20 +47,20 @@ This will shift to your project rather than the default project (you can verify 
 ```src
 git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
 ```
-
+<!--
 {{% note %}}
 For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_rhel.yaml files.
 {{% /note %}}
-
-Specifically for the redis-enterprise-cluster yaml file, you may also download and edit one of the following examples: [simple](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/simple.yaml), [persistent](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/persistent.yaml), [service broker](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/examples/with_service_broker.yaml), [service broker RHEL](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/examples/with_service_broker_rhel.yaml) (for RHEL images) or use the one provided in the repository.
+-->
+Specifically for the custom resource (cr) yaml file, you may also download and edit one of the files in the [example folder.](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/examples)  
 
 ## Step 3: Prepare your yaml files
 
 Let’s look at each yaml file to see what requires editing:
 
-- [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/scc.yaml)
+- [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml)
 
-The scc ([Security Context Constraint](https://docs.openshift.com/enterprise/3.0/admin_guide/manage_scc.html)) yaml defines the cluster’s security context constraints, which we will apply to our project later on. We strongly recommend **not** changing anything in this yaml file.
+The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/3.11/welcome/index.html)) yaml defines the cluster’s security context constraints, which we will apply to our project later on. We strongly recommend **not** changing anything in this yaml file.
 
 Apply the file:
 
@@ -79,6 +79,38 @@ oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your
 ```
 (If you do not remember your project name, run “oc project”)
 
+- [openshift.bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift.bundle.yaml) -
+The bundle file includes several declarations:
+1. rbac (Role-Based Access Control) defines who can access which resources. The Operator application requires these definitions to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). These include declaration of rules, role and rolebinding.
+2. crd declaration, creating a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next
+3. operator deployment declaration, creates the operator deployment, which is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise Cluster. Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes, as pods. The yaml  contains the latest image tag representing the latest Operator version available.
+
+ This yaml should be applied as-is, without changes. To apply it:
+```
+$ kubectl apply -f openshift.bundle.yaml
+```
+You should receive the following response:
+```
+
+role.rbac.authorization.k8s.io/redis-enterprise-operator created
+serviceaccount/redis-enterprise-operator created
+rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
+customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com configured
+deployment.apps/redis-enterprise-operator created
+```
+
+1. Now, verify that your redis-enterprise-operator deployment is running:
+```
+$ kubectl get deployment -l name=redis-enterprise-operator
+```
+A typical response will look like this:
+```
+
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+redis-enterprise-operator   1/1     1            1           0m36s
+```
+
+<!--
 - [rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac.yaml)
 
 The rbac (Role-Based Access Control) yaml defines who can access which resources. We need this to allow our Operator application to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). Therefore, we strongly recommend **not** changing anything in this yaml file. To apply it, type:
@@ -92,8 +124,8 @@ You should receive the following response:
   `role.rbac.authorization.k8s.io/redis-enterprise-operator created
   serviceaccount/redis-enterprise-operator created
   rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
-
-- [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/sb_rbac.yaml)
+-->
+- [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/sb_rbac.yaml)
 
 If you’re deploying a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker.
 
@@ -109,7 +141,7 @@ You should receive the following response:
 
   `clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
   clusterrolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured`
-
+<!--
 - [crd.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml)
 
 The next step applies crd.yaml, creating a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next. We strongly recommend **not** changing anything in this yaml file.
@@ -146,10 +178,10 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 ![getting-started-kubernetes-openshift-image2]( /images/rs/getting-started-kubernetes-openshift-image2.png )
 
 - [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml)
+-->
+- The [redis-enterprise-cluster_rhel yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/redis-enterprise-cluster_rhel.yaml) defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_cluster_name.yaml to keep things tidy, but this isn’t a mandatory step.
 
-The mycluster yaml defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_cluster_name.yaml to keep things tidy, but this isn’t a mandatory step.
-
-This yaml **must** be edited, however, to reflect the specific configurations of your Cluster. Here are the main fields you should review and edit:
+This yaml can be edited to the required usecase, however, the sample provided can be used for test/dev and quick start purposes. Here are the main fields you may review and edit:
 
 - name: “your_cluster_name” (e.g. “demo-cluster”)
 - nodes: number_of_nodes_in_the_cluster (Must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
@@ -157,17 +189,9 @@ This yaml **must** be edited, however, to reflect the specific configurations of
 
 Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.
 
-- username: \<your_email@your_domain.your_suffix\>
-
-persistentSpec:
-
-enabled: \<false/true\>
-
-Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
-
 - storageClassName: “<span style="color: #ff0000;">gp2</span>“
 
-This specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. This is **mandatory** when persistence is enabled (for example, AWS uses “gp2” as a default and GKE uses “pd-standard” as a default).
+This specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. For example, AWS uses “gp2” as a default, GKE uses “standard” and Azure uses "default").
 
 - redisEnterpriseNodeResources: The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node.
 - limits – specifies the max resources for a Redis node
@@ -176,15 +200,17 @@ This specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/st
 For example:
 
   limits
-  cpu: “2000m”
+  cpu: “4000m”
   memory: 4Gi
   requests
 
-  cpu: “2000m”
+  cpu: “4000m”
   memory: 4Gi
 
-The default (if unspecified) is 2 cores (2000m) and 4GB (4Gi).
-
+The default (if unspecified) is 4 cores (4000m) and 4GB (4Gi).
+{{% note %}}
+Resource limits should equal requests. [Learn why.](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types).
+{{% /note %}}
 - serviceBrokerSpec –
 - enabled: \<false/true\>
 
@@ -193,16 +219,14 @@ This specifies [persistence](https://redislabs.com/redis-features/persistence) f
   persistentSpec:
   storageClassName: “gp2“
 
-- redisEnterpriseImageSpec: This configuration controls the Redis Enterprise version used, and where it is fetched from. We always recommend running the current GA version.
+- redisEnterpriseImageSpec: This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator will automatically use the matching RHEL image version for the release.
 
 [imagePullPolicy](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/builds_and_image_streams.html#image-pull-policy):
 IfNotPresent
 Repository: redislabs/redis
-versionTag: 5.2.0-14–
+versionTag: 5.2.10-22
 
 The version tag, as it appears on your repository (e.g. on [DockerHub](https://hub.docker.com/r/redislabs/redis/)).
-
-This is an optional configuration. If omitted, it will default to the latest version.
 
 ## Step 4: Create your Cluster
 
@@ -233,9 +257,9 @@ You should receive a response similar to the following:
 |                                    |       |         |          |     |
 | ---------------------------------- | ----- | ------- | -------- | --- |
 | NAME                               | READY | STATUS  | RESTARTS | AGE |
-| your_cluster_name-0              | 1/1   | Running | 0        | 1m  |
-| your_cluster_name-1              | 1/1   | Running | 0        | 1m  |
-| your_cluster_name-2              | 1/1   | Running | 0        | 1m  |
+| your_cluster_name-0              | 2/2   | Running | 0        | 1m  |
+| your_cluster_name-1              | 2/2   | Running | 0        | 1m  |
+| your_cluster_name-2              | 2/2   | Running | 0        | 1m  |
 | your_cluster_name-controller-x-x | 1/1   | Running | 0        | 1m  |
 | Redis-enterprise-operator-x-x      | 1/1   | Running | 0        | 5m  |
 
@@ -253,7 +277,7 @@ kubectl port-forward your_cluster_name-0 8443:8443
 
 {{% note %}}
 - your_cluster_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.
-- The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types).
+- The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html).
 {{% /note %}}
 
 Next, create your database.
