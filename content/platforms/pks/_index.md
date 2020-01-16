@@ -194,35 +194,36 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
             To create a storage class, determine the type of IaS your PKS cluster is running on and consult the table in the [Kubernetes Storage Classes article](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) to determine which provisioner to use.
 
             Two examples of yaml files you can use for popular IaS providers are:
-                - AWS - *gp2.yaml*
 
-                    ```src
-                    apiVersion: storage.k8s.io/v1
-                    kind: StorageClass
-                    metadata:
-                    name: gp2
-                    mountOptions:
-                    - debug
-                    parameters:
-                    type: gp2
-                    provisioner: kubernetes.io/aws-ebs
-                    reclaimPolicy: Retain
-                    ```
+            - AWS - *gp2.yaml*
 
-                - GCP - *standard.yaml*
+            ```src
+            apiVersion: storage.k8s.io/v1
+            kind: StorageClass
+            metadata:
+            name: gp2
+            mountOptions:
+            - debug
+            parameters:
+            type: gp2
+            provisioner: kubernetes.io/aws-ebs
+            reclaimPolicy: Retain
+            ```
 
-                    ```src
-                    apiVersion: storage.k8s.io/v1
-                    kind: StorageClass
-                    metadata:
-                    name: standard
-                    mountOptions:
-                    - debug
-                    parameters:
-                    type: pd-standard
-                    provisioner: kubernetes.io/gce-pd
-                    reclaimPolicy: Retain
-                    ```
+            - GCP - *standard.yaml*
+
+            ```src
+            apiVersion: storage.k8s.io/v1
+            kind: StorageClass
+            metadata:
+            name: standard
+            mountOptions:
+            - debug
+            parameters:
+            type: pd-standard
+            provisioner: kubernetes.io/gce-pd
+            reclaimPolicy: Retain
+            ```
 
         Create the appropriate yaml file for your IaS and apply it:
 
@@ -362,32 +363,36 @@ For production environments you must retain the Persistent Volume Claims (PVCs) 
 
 In order to create your database, you will log in to the Redis Enterprise UI.
 
- 1. First, determine you administrator password. It is stored in an opaque k8s secret named after the REC name. In this example:
- ```
- $ kubectl get secret/rec-pks
- ```
- A typical response will include the following lines:
- ```
+1. First, determine you administrator password. It is stored in an opaque k8s secret named after the REC name. In this example:
 
- apiVersion: v1
- data:
-   license: ""
-   password: ZGdlaWw3Cg==
-   username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
- kind: Secret
- ```
+    ```src
+    $ kubectl get secret/rec-pks
+    ```
 
- 1. Decode the password:
- ```
- $ echo 'ZGdlaWw3Cg==' | base64 --decode
- ```
- A typical response will include the following lines:
- ```
+    A typical response will include the following lines:
 
- dgeil7
- ```
+    ```src
+    apiVersion: v1
+    data:
+    license: ""
+    password: ZGdlaWw3Cg==
+    username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
+    kind: Secret
+    ```
 
- 1. There are two primary options for accessing the Web UI
+1. Decode the password:
+
+    ```src
+    echo 'ZGdlaWw3Cg==' | base64 --decode
+    ```
+
+    A typical response will include the following lines:
+
+    ```src
+    dgeil7
+    ```
+
+1. There are two primary options for accessing the Web UI:
     1. If your PKS cluster has loadbalacer service setup with a public IP you have access to or otherwise a routable IP address from your machine:
         - Determine that IP address:
 
@@ -420,19 +425,19 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
         - Use `localhost` followed by port number 8443 in your browser address bar: `https://localhost:8443`
 
- 1. Log in to the Web UI with the username defined in your REC yaml and the password.
+1. Log in to the Web UI with the username defined in your REC yaml and the password.
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
- 1. Follow the [instructions to create your database](http://localhost:1313/rs/administering/database-operations/creating-database/#creating-a-new-redis-database).
+1. Follow the [instructions to create your database](http://localhost:1313/rs/administering/database-operations/creating-database/#creating-a-new-redis-database).
 
     For example:
 
     1. In **databases**, click ![Add](/images/rs/icon_add.png#no-click "Add").
 
-      If you do not have any databases on the node, you are prompted to create a database.
+        If you do not have any databases on the node, you are prompted to create a database.
 
-      <!-- {{</* embed-md "create-db.md" */>}} -->
+        <!-- {{</* embed-md "create-db.md" */>}} -->
 
     1. Click **Next** to create a single-region deployment on RAM.
 
