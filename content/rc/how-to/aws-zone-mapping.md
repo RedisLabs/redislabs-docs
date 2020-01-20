@@ -12,7 +12,7 @@ you want to match the AWS availability zones of your application to your Redis C
 - If you have a Multi-AZ subscription,
 you do not need to map AWS zones.
 - AWS zone mapping is not yet supported for Redis Cloud Pro and Ultimate.
-{{% note %}}
+{{% /note %}}
 
 ## Why Do Zone Mapping?
 
