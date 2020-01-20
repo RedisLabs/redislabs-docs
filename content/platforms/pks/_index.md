@@ -10,10 +10,10 @@ These are the steps required to set up a Redis Enterprise Cluster with Kubernete
 
 Prerequisites:
 
-1. A [PKS environment installed](https://docs.pivotal.io/runtimes/pks/1-4/installing.html) on PCF version 2.4.6 or above and PKS version 1.3.3 or above.
-1. A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create) with at least three nodes, each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) in the case of a development environment. For production use-cases and large-scale POCs, use hardware recommendations for production environments. <!--- Reference a future article that will cover k8s cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
-1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher.
-1. The [PKS cli installed](https://docs.pivotal.io/runtimes/pks/1-4/installing-pks-cli.html).
+- A [PKS environment installed](https://docs.pivotal.io/runtimes/pks/1-4/installing.html) on PCF version 2.4.6 or above and PKS version 1.3.3 or above.
+- A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create) with at least three nodes, each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) in the case of a development environment. For production use-cases and large-scale POCs, use hardware recommendations for production environments. <!--- Reference a future article that will cover k8s cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
+- The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher.
+- The [PKS cli installed](https://docs.pivotal.io/runtimes/pks/1-4/installing-pks-cli.html).
 
 ## Step 1: Login and Prepare your PKS environment and PKS Cluster
 
