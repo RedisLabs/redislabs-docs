@@ -22,9 +22,9 @@ database through both the private and the public IP addresses.
 
 To enable this configuration you need to:
 
-- Ensure the IPs are already bound to the server/instance.
-- Enable support when the cluster is created, or
-    use rladmin for an existing cluster.
+- Make sure that the IPs are already bound to the server/instance.
+- Enable private and public endpoint support when the cluster is created, or
+    use rladmin to enable support for an existing cluster.
 - Configure public IP of the machine to be used for external traffic
     in the node configuration.
 - Configure private IP to be used for both internal and external
