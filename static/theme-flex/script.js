@@ -2,7 +2,6 @@ jQuery(document).ready(function() {
     var isLoggedIn = localStorage.getItem('auth_token');
     var ii = jQuery('.internal-invoker');
 
-
     if(ii && isLoggedIn) {
         ii.css('display', 'inline-block');
     } else {

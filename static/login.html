@@ -8,6 +8,8 @@
     <meta name="google-signin-client_id"
         content="338657327879-v4bskbp3sefa6h6qs8r3gf2adt8755v8.apps.googleusercontent.com">
     <title>Redis Labs Docs Login</title>
+
+    <script src="https://apis.google.com/js/platform.js"></script>
 </head>
 
 <body>
@@ -15,8 +17,10 @@
     <p>To view internal content, sign in with your Redis Labs Google Suite account.</p>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
 
+    <a href="/">Back to docs</a>
+
     <script>
-        function onSuccess(googleUser) {
+        function onSignIn(googleUser) {
             console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
             localStorage.setItem('auth_token', 'abc123');
         }
