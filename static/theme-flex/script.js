@@ -437,7 +437,7 @@ function showInternalContent(path, options){
         dataType: 'html',
         async: true,
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token IC_dce93d270ec0894e2e1d28a3b52c006366e8061e");
+            xhr.setRequestHeader("Authorization", "token ACC_TOKEN");
             xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
         },        
         success: function(data) {
