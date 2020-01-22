@@ -321,7 +321,7 @@ var toggleInternalLogin = function() {
     }
     
     localStorage.setItem('location_after_login', window.location.pathname);
-    window.location.pathname = "/login.html";
+    window.location.href = window.location.protocol + baseurl + 'login.html';
 }
 
 var handleGoogleSignOut = function() {
