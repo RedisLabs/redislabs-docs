@@ -44,7 +44,7 @@ The markdown file must include these metadata in the header of the file:
 - `description:` - A short description of the article (Currently not used)
 - `weight:` - A number that indicates the location of the article among the articles in the directory (0 is top)
 - `alwaysopen: false` - The article is by default hidden in the table of contents in the directory
-- `categories:` - The product that the article relates to: `RC Essentials`, `RC Pro`, `RS`, `Platforms`
+- `categories:` - The product that the article relates to: `RC`, `RS`, `Platforms`, `Modules`
 
 For example:
 
