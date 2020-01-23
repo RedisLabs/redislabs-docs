@@ -32,8 +32,8 @@ To configure an RS database to use the OSS Cluster API from the Web UI:
 The Redis OSS Cluster API setting applies to the specified database only, not to the entire cluster.
     {{% /note %}}
 1. Save the database:
+    - For an existing database, click **Update**.
     - For a new database, configure the database settings and click **Activate**.
-    - Click **Update**.
 
 ## Enabling OSS Cluster API Support from the Command Line
 
