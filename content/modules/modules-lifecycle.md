@@ -27,13 +27,14 @@ The format is “Major1.Major2.Minor”.
 ## Modules End-of-Life Schedule {#modules-endoflife-schedule}
 
 End-of-Life for a given Major release occurs 18 months after the formal release of
-that version.
+that version and at least 12 months after the release of its successor.
 
 ### RediSearch
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.4 – August 2018                         | -                  |
+| 1.6 – January 2020                        | -                  |
+| 1.4 – August 2018                         | December 31, 2020  |
 | 1.2 – June 2018                           | December 31, 2019  |
 | 1.1 – April 2018                          | October 31, 2019   |
 | 1.0 – November 2017                       | May 31, 2019       |
@@ -42,7 +43,8 @@ that version.
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 2.0 – June 2019                           | -                  |
+| 2.2 – December 2019                       | -                  |
+| 2.0 – June 2019                           | December 31, 2020  |
 | 1.1 – February 2019                       | August 31, 2020    |
 | 1.0 – September 2017                      | March 31, 2019     |
 
@@ -50,13 +52,15 @@ that version.
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.0 – June 2019                           | -                  |
+| 1.2 – January 2020                        | -                  |
+| 1.0 – June 2019                           | December 31, 2020  |
 
 ### RedisGraph
 
 | Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 1.2 – April 2019                          | -                  |
+| 2.0 – January 2020                        | -                  |
+| 1.2 – April 2019                          | December 31, 2020  |
 | 1.0 – November 2018                       | May 31, 2020       |
 
 ### RedisJSON
