@@ -49,7 +49,7 @@ The rolling upgrade of the cluster nodes' statefulSet starts.
 To see the status of the current rolling upgrade, run:
 
 ```src
-kubectl rollout status sts
+kubectl rollout status sts <REC_name>
 ```
 
 ## How Does the Upgrade Work?
@@ -75,4 +75,4 @@ Each pod is updated after the last one completes successfully.
 
 The pods in the StatefulSet are updated in reverse ordinal order.
 The Kubernetes controller terminates each pod and waits for it to transition to `Running` and then to `Ready`.
-The it updates the next pod until all pods are updated and the upgrade process is completed.
+Then it updates the next pod until all pods are updated and the upgrade process is completed.
