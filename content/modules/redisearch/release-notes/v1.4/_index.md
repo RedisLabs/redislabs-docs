@@ -6,6 +6,23 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## RediSearch 1.4.24 Release Notes
+
+Headlines:
+- This release improves overall stability and provides fixes for founded issues.
+
+Details:
+- Bugfixes:
+    - #[1031](https://github.com/RediSearch/RediSearch/issues/1031) Highlighting crahed when used with [`NOINDEX`](https://oss.redislabs.com/redisearch/Commands.html#field_options) fields.
+    - #[1038](https://github.com/RediSearch/RediSearch/issues/1038) Memory leak on cursor.
+    - #[1049](https://github.com/RediSearch/RediSearch/issues/1049) Crash on conversion error when freeing other indexed fields.
+    - Crash on using highlight with none index fields (not related to GAP issues).
+    - FILTER option was not working correctly with coordinator.
+    - Memory leak when cursor was combined with sorted fields.
+    - Memory leak when cursor timed out and cursor wasn't consumed.
+
+Note: We skipped a few versions. This is the successor of 1.4.20.
+
 ## RediSearch 1.4.20 Release Notes
 
 Update urgency: Medium
