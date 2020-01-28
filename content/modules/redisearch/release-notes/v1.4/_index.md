@@ -16,7 +16,7 @@ Details:
     - #[1031](https://github.com/RediSearch/RediSearch/issues/1031) Highlighting crahed when used with [`NOINDEX`](https://oss.redislabs.com/redisearch/Commands.html#field_options) fields.
     - #[1038](https://github.com/RediSearch/RediSearch/issues/1038) Memory leak on cursor.
     - #[1049](https://github.com/RediSearch/RediSearch/issues/1049) Crash on conversion error when freeing other indexed fields.
-    - Crash on using highlight with none index fields (not related to GAP issues).
+    - Crash on using highlight with none index fields.
     - FILTER option was not working correctly with coordinator.
     - Memory leak when cursor was combined with sorted fields.
     - Memory leak when cursor timed out and cursor wasn't consumed.
