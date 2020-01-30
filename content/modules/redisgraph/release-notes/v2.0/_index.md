@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-## RediSearch 2.0 GA (v2.0.1) Release Notes
+## RedisGraph 2.0 GA (v2.0.1) Release Notes
 
 This is the General Availability Release of RedisGraph 2.0 (v2.0.1)!
 
