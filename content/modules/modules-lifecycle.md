@@ -31,40 +31,20 @@ that version and at least 12 months after the release of its successor.
 
 ### RediSearch
 
-| Release Date | End of Life (EOL)  |
-| ----------------------------------------- | ------------------ |
-| 1.6 – January 2020                        | -                  |
-| 1.4 – August 2018                         | December 31, 2020  |
-| 1.2 – June 2018                           | December 31, 2019  |
-| 1.1 – April 2018                          | October 31, 2019   |
-| 1.0 – November 2017                       | May 31, 2019       |
+{{< table-csv "redisearch-lifecycle.csv" 2 >}}
 
 ### RedisBloom
 
-| Release Date | End of Life (EOL)  |
-| ----------------------------------------- | ------------------ |
-| 2.2 – December 2019                       | -                  |
-| 2.0 – June 2019                           | December 31, 2020  |
-| 1.1 – February 2019                       | August 31, 2020    |
-| 1.0 – September 2017                      | March 31, 2019     |
+{{< table-csv "redisbloom-lifecycle.csv" 2 >}}
 
 ### RedisTimeSeries
 
-| Release Date | End of Life (EOL)  |
-| ----------------------------------------- | ------------------ |
-| 1.2 – January 2020                        | -                  |
-| 1.0 – June 2019                           | December 31, 2020  |
+{{< table-csv "redistimeseries-lifecycle.csv" 2 >}}
 
 ### RedisGraph
 
-| Release Date | End of Life (EOL)  |
-| ----------------------------------------- | ------------------ |
-| 2.0 – January 2020                        | -                  |
-| 1.2 – April 2019                          | December 31, 2020  |
-| 1.0 – November 2018                       | May 31, 2020       |
+{{< table-csv "redisgraph-lifecycle.csv" 2 >}}
 
 ### RedisJSON
 
-| Release Date | End of Life (EOL)  |
-| ----------------------------------------- | ------------------ |
-| 1.0 – November 2017                       | -                  |
+{{< table-csv "redisjson-lifecycle.csv" 2 >}}
