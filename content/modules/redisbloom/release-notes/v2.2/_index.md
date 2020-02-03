@@ -8,7 +8,7 @@ categories: ["Modules"]
 ## RedisBloom v2.2.1 Release Notes
 
 Headlines:
-- This release improves overall stability and provides fixes for founded issues.
+- This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
 - Minor Enhancements:

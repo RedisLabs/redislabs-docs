@@ -9,7 +9,7 @@ categories: ["Modules"]
 ## RediSearch 1.4.24 Release Notes
 
 Headlines:
-- This release improves overall stability and provides fixes for founded issues.
+- This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
 - Bugfixes:
@@ -19,7 +19,7 @@ Details:
 ## RediSearch 1.4.23 Release Notes
 
 Headlines:
-- This release improves overall stability and provides fixes for founded issues.
+- This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
 - Bugfixes:
@@ -28,7 +28,7 @@ Details:
 ## RediSearch 1.4.22 Release Notes
 
 Headlines:
-- This release improves overall stability and provides fixes for founded issues.
+- This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
 - Bugfixes:
@@ -38,18 +38,18 @@ Details:
 ## RediSearch 1.4.21 Release Notes
 
 Headlines:
-- This release improves overall stability and provides fixes for founded issues.
+- This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
 - Bugfixes:
     - #[1031](https://github.com/RediSearch/RediSearch/issues/1031) Highlighting crashed when used with [`NOINDEX`](https://oss.redislabs.com/redisearch/Commands.html#field_options) fields.
 
 ## RediSearch 1.4.20 Release Notes
-Ok
+
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 - Improvements
     - #[1020](https://github.com/RediSearch/RediSearch/issues/1020) Performance improvement for reading fields that are not [sortable](https://oss.redislabs.com/redisearch/Overview.html#sortable_fields).
@@ -65,7 +65,7 @@ This release improves overall stability and provides fixes for found issues.
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 - Bugfixes
     - #[1000](https://github.com/RediSearch/RediSearch/issues/1000) - `FT.DEL` was not replicated to slave correctly
@@ -77,7 +77,7 @@ This release improves overall stability and provides fixes for found issues.
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 - Bug fixes
     - [#947](https://github.com/RediSearch/RediSearch/issues/947) Fix short read on FORK GC pipe that could result in a crash and potential data corruption
@@ -87,7 +87,7 @@ This release improves overall stability and provides fixes for found issues.
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 - Features:
     - #[779](https://github.com/RediSearch/RediSearch/issues/779) Added `to_number()` and `to_str()` functions for ambiguity reasons
@@ -99,7 +99,7 @@ This release improves overall stability and provides fixes for found issues.
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 Main Features:
 
@@ -115,7 +115,7 @@ Main Fixes:
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 Main Fixes:
 
@@ -128,7 +128,7 @@ Main Fixes:
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 Main Fixes:
 
@@ -139,7 +139,7 @@ Main Fixes:
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
@@ -152,7 +152,7 @@ Main Fixes:
 Update urgency: Medium
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Features:
 
@@ -180,7 +180,7 @@ Update urgency: Medium
 
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
@@ -192,7 +192,7 @@ Update urgency: Medium
 
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
@@ -216,7 +216,7 @@ Update urgency: Medium
 
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
@@ -228,7 +228,7 @@ Update urgency: Medium
 
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
@@ -241,7 +241,7 @@ Update urgency: Low
 
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
@@ -253,7 +253,7 @@ Update urgency: Low
 
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
@@ -266,7 +266,7 @@ Update urgency: Low
 
 This is a maintenance release for version 1.4.
 
-This release improves overall stability and provides fixes for found issues .
+This release improves overall stability and provides fixes for issues found after the previous release .
 
 Main Fixes:
 
