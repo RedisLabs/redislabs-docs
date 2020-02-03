@@ -11,9 +11,13 @@ RedisInsight Memory analysis help you analyze your redis instance and helps in r
 
 1. **offline mode** - In this mode, RedisInsight analyzes your redis backup files. These files can either be present in your system or on s3. RedisInsight accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RedisInsight should have ReadOnly permission to your s3 bucket where the files are stored.
 
-The s3 path needs to conform to the "path" style (the "Virtual Hosted" style is not supported):
-https://s3.<region>.amazonaws.com/<bucket name>/<object key name>
-For example: https://s3.us-east-1.amazonaws.com/my-bucket/mydb.rdb.tgz
+    The s3 path needs to use the path syntax and not the virtual hosted syntax:
+
+    ```src
+    https://s3.<region>.amazonaws.com/<bucket name>/<object key name>
+    ```
+
+    For example: https://s3.us-east-1.amazonaws.com/my-bucket/mydb.rdb.tgz
 
 ## Running Memory Analysis on an Instance
 
