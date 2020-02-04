@@ -15,13 +15,6 @@
       <div class="main-content">
           <div class="main-content-left">
             <div id="internalContentLoader"></div>
-            <div id="internalContent">
-              <span class="title">
-                <i class="fa fa-folder-o"></i> Internal
-              </span>
-              <i class="fa fa-close closeContent" onclick="hideInternalContent()"></i>
-              <div class="article"></div>
-            </div>            
             {{ block "main" . }}
             {{ end }}
           </div>
@@ -45,5 +38,8 @@
         {{ partial "page-feedback" . }}
         {{ end }}
     {{ end }}
+    
+    <!-- Needed for Google auth API -->
+    <div class="g-signin2" style="display:none;width:0;height:0;"></div>
   </body>
 </html>

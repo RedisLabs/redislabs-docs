@@ -1315,6 +1315,24 @@ h5:hover .anchor,
 h6:hover .anchor {
   visibility: visible; }
 
+h1 .anchor.internal {
+  color: #b62410;
+  font-size: 24px;
+  margin-left: -15px;
+}
+
+h1 .internal-content-section {
+  font-size: 17px;
+  padding-top: 15px;
+}
+
+h1 .internal-content-section p {
+  margin: 0;
+}
+
+h1:hover .anchor.internal {
+  visibility: visible; }
+
 iframe {
   border: 1px black solid;
 }
@@ -1633,6 +1651,9 @@ div.notices {
 }
 
 .internal-content-section {  
+  display: block;
+  text-align: left;
+  color: #000;  
   border: 2px solid #b62311;
   display: none;
   font-size: 16px;
@@ -3376,10 +3397,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
   display: none;
 }
 
-#internalToggle:hover {
-  cursor: pointer;
-}
-
 .edit-link__action {
   display: inline-block;
 }
@@ -3403,6 +3420,14 @@ a[href*="#no-click"], img[src*="#no-click"] {
   font-size: 17px;
   margin-top: -2px;
   margin-right: 3px;
+}
+
+#showInternalBtn {
+  display: none;
+}
+
+#hideInternalBtn {
+  display: inline-block;
 }
 
 #internalContentLoader {

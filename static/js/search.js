@@ -13,18 +13,19 @@ function initLunr() {
     var internalIndex = null;
     var hasToken = localStorage.getItem('auth_token');
 
-    if(hasToken) {
-        internalIndex = buildInternalIndex();
+    if(hasToken) {        
+        internalIndex = fetchInternalIndex();
     }
 
     // First retrieve the index file
     $.getJSON(baseurl +"index.json")
         .done(function(index) {
-            if(hasToken && internalIndex) {
+            if(hasToken && internalIndex) {                
                 index = index.concat(internalIndex);
             }
 
             pagesIndex = index;
+
             // Set up lunrjs by declaring the fields we use
             // Also provide their boost level for the ranking
             lunrIndex = new lunr.Index
@@ -43,11 +44,11 @@ function initLunr() {
             });
             lunrIndex.field("description", {
                 boost: 0
-            });        
+            });
 
             // Feed lunr with each file and let lunr actually index them
             pagesIndex.forEach(function(page) {            
-                if(!page.uriRel.startsWith('/embeds')) {
+                if((page.uriRel && !page.uriRel.startsWith('/embeds')) || page.description === 'internal_content') {
                     lunrIndex.add(page);
                 }                
             });
@@ -59,8 +60,8 @@ function initLunr() {
         });
 }
 
-// Build the index of internal docs
-function buildInternalIndex() {
+// Fetch the index of internal docs
+function fetchInternalIndex() {
     var url = 'https://api.github.com/repos/RedisLabs/internal-docs/contents/index.json';
     var internalIndex = null;
 

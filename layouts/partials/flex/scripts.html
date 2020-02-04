@@ -5,6 +5,8 @@
 (function () {
   var pa = window.location.pathname.split('/');
   var pv = pa[1]; // latest, 5.4 or 5.2
+  var v = '';
+  var d = '';
 
   if(pv == '5.4' || pv == 'latest') {
     v = '5.4';
@@ -72,3 +74,5 @@ window.onclick = function(e) {
 {{end}}
 
 <script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}"></script>
+
+<script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script> 

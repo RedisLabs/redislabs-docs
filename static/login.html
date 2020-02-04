@@ -9,20 +9,87 @@
         content="338657327879-v4bskbp3sefa6h6qs8r3gf2adt8755v8.apps.googleusercontent.com">
     <title>Redis Labs Docs Login</title>
 
-    <script src="https://apis.google.com/js/platform.js"></script>
+    <style>
+        body {
+            background: #f8f8f8;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        section {
+            background: #fff;
+            border: 1px solid #eee;
+            margin: 50px auto 0;
+            padding: 30px;
+            text-align: center;
+            width: 340px;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 0 auto 30px;
+            width: 90%;
+        }
+
+        .abcRioButtonLightBlue {
+            margin: 0 auto 20px;
+        }
+
+        button.logout {
+            background: transparent;
+            color: #6a6a6a;
+            font-size: 17px;
+            margin: 20px 0 15px 0;
+            padding: 4px 20px;
+        }
+
+        button.logout:hover {
+            cursor: pointer;
+            color: #000;
+        }
+
+        .back {
+            color: #6a6a6a;
+            display: block;
+            margin-top: 30px;
+            text-decoration: underline;
+        }
+
+        .back:hover {
+            color: #000;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Login</h1>
-    <p>To view internal content, sign in with your Redis Labs Google Suite account.</p>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <section>
+        <h1>Login</h1>
+        <p>To view internal content, sign in with your Redis Labs Google Suite account.</p>
+        <div id="g-signin2" data-onsuccess="onSignIn"></div>
 
-    <a href="/">Back to docs</a>
+        <div id="successMsg" style="display: none;">
+            You have successfully logged in
+            <button onclick="logout()" class="logout">Log out</button>
+        </div>
+
+        <span class="back" onclick="goBack()">Back to docs</span>
+    </section>
 
     <script>
+        function setSuccessMsg(state) {
+            if (state === 'show') {
+                document.getElementById('successMsg').style.display = 'block';
+                document.getElementById('g-signin2').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('successMsg').style.display = 'none';
+            document.getElementById('g-signin2').style.display = 'block';
+        }
         function onSignIn(googleUser) {
             console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
             localStorage.setItem('auth_token', 'abc123');
+            setSuccessMsg('show');
         }
         function onFailure(error) {
             console.log(error);
@@ -33,9 +100,22 @@
                 'width': 240,
                 'height': 50,
                 'longtitle': true,
-                'onsuccess': onSuccess,
+                'onsuccess': onSignIn,
                 'onfailure': onFailure
             });
+        }
+        function logout() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.disconnect();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+                localStorage.removeItem('auth_token');
+                setSuccessMsg('hide');
+            });
+        }
+        function goBack() {
+            var urlParams = new URLSearchParams(window.location.search);
+            window.location.href = urlParams.get('red');
         }
     </script>
 
