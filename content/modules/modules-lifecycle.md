@@ -26,8 +26,8 @@ The format is “Major1.Major2.Minor”.
 
 ## Modules End-of-Life Schedule {#modules-endoflife-schedule}
 
-End-of-Life for a given Major release occurs 18 months after the formal release of
-that version and at least 12 months after the release of its successor.
+End-of-Life for a given Major version is 18 months after the formal release of
+that version or 12 months after the release of the following version, whichever comes later.
 
 ### RediSearch
 
