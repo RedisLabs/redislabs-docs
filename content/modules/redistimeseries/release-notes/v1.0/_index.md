@@ -10,7 +10,7 @@ categories: ["Modules"]
 Update urgency: Medium
 This is a maintenance release for version 1.0.
 
-This release improves overall stability and provides fixes for founded issues.
+This release improves overall stability and provides fixes for issues found after the previous release.
 
 Main Features:
 
