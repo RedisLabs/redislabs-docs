@@ -5,6 +5,17 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisBloom v2.2.1 Release Notes
+
+Headlines:
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+- Minor Enhancements:
+    - Bloom
+        - #[179](https://github.com/RedisBloom/RedisBloom/issues/179) Allow storing filters with size over 4294967295 (UINT32_MAX). Now 64 bits.
+        - #[177](https://github.com/RedisBloom/RedisBloom/issues/177) Prevent passing both `EXPANSION` *and* `NONSCALING` parameters to `BF.RESERVE`.
+
 ## RedisBloom v2.2.0 Release Notes
 
 - Added functionality
