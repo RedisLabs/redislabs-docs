@@ -5,11 +5,15 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-In this quick setup guide, we take you through the steps to install RS in a Linux environment to test its capabilities. To run RS in a Docker container for development or testing purposes, go to the
-[Docker Quick Start Guide]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
+In this quick setup guide, we take you through the steps to install RS in a Linux environment to test its capabilities.
 
-The steps to set up a Redis Enterprise Software (RS) cluster with a
-single node are super simple and go as follows:
+In addition to this quick start guide you can:
+
+- Run [RS in a Docker container]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) for development or testing purposes.
+- Run a [custom RS installation]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) for production purposes.
+- Open [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) to access the RS services.
+
+The steps to set up a Redis Enterprise Software (RS) cluster with a single node are super simple and go as follows:
 
 - Step 1: Install Redis Enterprise Software
 - Step 2: Set up a Redis Enterprise Software cluster
@@ -18,9 +22,8 @@ single node are super simple and go as follows:
 
 ## Step 1: Install Redis Enterprise Software
 
-You can download the binaries from the [Redis Enterprise Software
-download
-site](https://app.redislabs.com/#/sign-up/software?direct=true) and copy the download package to machine with a Linux-based OS. To untar the image:
+You can download the binaries from the [Redis Enterprise Download Center](https://www.redislabs.com/download-center/)
+and copy the download package to machine with a Linux-based OS. To untar the image:
 
 ```src
 $ tar vxf <downloaded tar file name>
@@ -158,5 +161,3 @@ Now you have a Redis Enterprise cluster ready to go. You can connect to it with
 a [redis client](https://redis.io/clients) to start loading it with data or
 you can use the [memtier_benchmark Quick Start]({{< relref "/rs/getting-started/memtier-benchmark.md" >}})
 to check the cluster performance.
-
-Click here for the [full installation](https://docs.redislabs.com/latest/rs/installing-upgrading/downloading-installing/) of Redis Enterprise and [required network ports](https://docs.redislabs.com/latest/rs/administering/designing-production/networking/port-configurations/)
