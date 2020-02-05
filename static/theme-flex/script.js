@@ -26,15 +26,16 @@ jQuery(document).ready(function() {
         if(isLoggedIn) {            
             var sectionID = element[0].id;
             var contentURI = null;
+            var path = location.href.substr(location.href.lastIndexOf(baseurl)+baseurl.length);
 
             if(sectionID) {
-                contentURI = location.pathname.slice(0, -1) + '_' + sectionID + '.md';                
+                contentURI = path.slice(0, -1) + '_' + sectionID + '.md';                
             } else {
-                contentURI = location.pathname.slice(0, -1) + '.md';
+                contentURI = path.slice(0, -1) + '.md';
             }
 
             // Check if section has any internal docs content using the index            
-            var internal = internalIndex.find((item) => item.uri === 'content' + contentURI);
+            var internal = internalIndex.find((item) => item.uri === 'content/' + contentURI);
             var internalContentMarkdown = internal? internal.content : null;            
 
             if(internalContentMarkdown) {
@@ -350,9 +351,8 @@ var handleInternalLogin = function() {
         return;
     }
 
-    // Redirect to login page if not logged in
-    var redirectURL = window.location.protocol + baseurl + window.location.pathname.substring(1);
-    window.location.href = window.location.protocol + baseurl + 'login.html?red=' + redirectURL;
+    // Go to login page if not logged in
+    window.location.href = window.location.protocol + baseurl + 'login.html?red=' + location.href;
 }
 
 var handleGoogleSignOut = function() {
