@@ -53,35 +53,9 @@ connections, 9443 for REST API connections, and port 12000 open for redis client
 You can publish other [ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 with `-p <host_port>:<container_port>`.
 
-<!-- Also in quick-start.md -->
 ## Step 3: Set up a Cluster
 
-1. In the web browser on the host machine, go to https://localhost:8443 to see
-the Redis Enterprise Software web console.
-
-    Note:
-
-    - Depending on your browser, you may see a certificate error. You can safely
-    continue to the web console.
-    - If you see an error from nginx, try again after a few minutes.
-
-1. Click **Setup** to start the node configuration steps.
-
-    ![Redis Enterprise Software Setup](/images/rs/getstarted-setup.png?width=600)
-
-1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`.
-Then click **Next** button.
-
-    ![Redis Enterprise Software node configuration](/images/rs/getstarted-nodeconfig.png?width=600)
-
-1. Enter your license key, if you have one. If not, click the **Next** button to use the trial version.
-
-1. Enter an email and password for the admin account for the web console.
-
-    ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
-
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
-certificate on the node, and proceed through the browser warning.
+{{< embed-md "cluster-setup.md" >}}
 
 ## Step 4: Create a Database
 
