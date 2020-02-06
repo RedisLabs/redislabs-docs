@@ -18,8 +18,8 @@ You can create databases according to the number of shards in your subscription
 and the memory available on the machine.
 
 {{% note %}}
-To create databases that are designed to be hosted in distributed locations,
-see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
+To create a database that is hosted in geo-distributed locations,
+create an [Active-Active (CRDB)]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}) database.
 {{% /note %}}
 
 ## Creating a New Redis Database
