@@ -31,6 +31,13 @@ redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 ### Flushing Redis Enterprise Software CRDBs
 
 When you flush a CRDB, all of the replicas flush their data at the same time.
+
+#### From the web UI
+
+
+
+#### From the command line
+
 To flush data from a CRDB, use the flush command in the crdb-cli.
 
 1. To find the ID of the CRDB, run:
