@@ -25,17 +25,18 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8001 | Internal, External | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 8444, 9080 | Internal | For nginx <-> cnm_http/cm traffic  |
-| TCP | 9081 | Internal | For CRDB management  |
+| TCP | 9081 | Internal, Active-Active | For Active-Active management  |
 | TCP | 8070, 8071 | Internal, External | For metrics exported and managed by nginx |
-| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Geo Distribution | REST API traffic, including cluster management and node bootstrap |
-| TCP | 10000-19999 | Internal, External, Geo Distribution | Database traffic |
-| TCP | 20000-29999 | Internal | Database shards traffic  |
+| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
+| TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
+| TCP | 20000-29999 | Internal | Database shard traffic  |
 | UDP | 53, 5353 | Internal, External | DNS/mDNS traffic  |
 
-Please note that the following Connection Source values are used:
-Internal: traffic between cluster nodes
-External: traffic from client applications or external monitoring asources
-Geo Distribution: traffic between geo distributed Redis Enterprise clusters
+Connection sources are:
+
+- Internal - The traffic is from other cluster nodes
+- External - The traffic is from client applications or external monitoring resources
+- Active-Active - The traffic is from clusters that host Active-Active databases
 
 ## Changing the Management Web UI Port
 
