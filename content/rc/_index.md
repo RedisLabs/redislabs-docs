@@ -97,7 +97,7 @@ and apply multi-level authentication mechanisms such as:
 
 ### Fully-automated service {#fullyautomated-service}
 
-No need to manager instances, clusters, scaling, data persistence, high availability settings, and failure recovery.
+No need to manage instances, clusters, scaling, data persistence, high availability settings, and failure recovery.
 
 ### Multiple dedicated databases in one plan
 
