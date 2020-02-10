@@ -46,6 +46,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 - Using REST API, you can retrieve various license details such as activation date, expiration date,and the number of licensed shards. To get these details, run:
 
     `curl -v -u <user>:<password> https://localhost:9443/v1/license`
+- Updated PDNS version from 4.1.5 to 4.1.13.
 
 ## Information
 
