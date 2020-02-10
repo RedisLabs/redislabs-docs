@@ -27,12 +27,11 @@ You can see the cluster key either:
 - REST API - GET `https://localhost:9443/v1/license`
 
     The REST API response includes:
-    - license - The cluster key string
+    - license - The cluster's name (FQDN) in the key string
     - expired - If the cluster key is expired (True or False)
     - activation_date - The date of the cluster key activation
     - expiration_date - The date of the cluster key expiration
     - shards_limit - The number of shards allowed by the cluster key
-    - features - RS features enabled by the cluster key, such as bigstore (RoF)
 
 ## Adding or Updating a Cluster Key
 
