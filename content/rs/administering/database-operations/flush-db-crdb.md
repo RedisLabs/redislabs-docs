@@ -31,19 +31,19 @@ redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 
 ## Flushing Data from an Active-Active Database
 
-When you flush a CRDB, all of the replicas flush their data at the same time.
+When you flush an Active-Active (CRDB) database, all of the replicas flush their data at the same time.
 
-To flush data from a CRDB:
+To flush data from an Active-Active database:
 
 - Web UI
 
-    1. Go to **Database** and select the Active-Active database that you want to flush.
-    1. Go to **Configuration** and click **Flush** at the bottom of the page.
+    1. Go to **database** and select the Active-Active database that you want to flush.
+    1. Go to **configuration** and click **Flush** at the bottom of the page.
     1. Enter the name of the Active-Active database to confirm that you want to flush the data.
 
 - Command line
 
-    1. To find the ID of the CRDB, run:
+    1. To find the ID of the Active-Active database, run:
 
         ```src
         crdb-cli crdb list
@@ -59,7 +59,7 @@ To flush data from a CRDB:
         a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                3       cluster3.local
         ```
 
-    1. To flush the CRDB, run:
+    1. To flush the Active-Active database, run:
 
         ```src
         crdb-cli crdb flush --crdb-guid <CRDB_GUID>
@@ -90,13 +90,13 @@ To flush data from a CRDB:
 
 - REST API
 
-    1. To find the ID of the CRDB, run:
+    1. To find the ID of the Active-Active database, run:
 
         ```src
         curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
         ```
 
-    1. To flush the CRDB, run:
+    1. To flush the Active-Active database, run:
 
         ```src
         curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush
