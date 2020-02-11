@@ -9,9 +9,9 @@ Hashes are great for structured data that contain a map of fields and
 values. They are used for managing distributed user or app session
 state, user preferences, form data and so on. Hash fields contain string
 type and string types operate just like the standard Redis string types
-when it comes to CRDTs. Fields in hashes can be initialized as a string
+when it comes to CRDTs. **Fields in hashes can be initialized as a string
 using HSET or HMSET or can be used to initialize counter types that are
-numeric integers using HINCRBY or floats using HINCRBYFLOAT.
+numeric integers using HINCRBY or floats using HINCRBYFLOAT**. 
 
 Hashes in CRDBs behave the same and maintain additional metadata to
 achieve an "OR-Set" behavior to handle concurrent conflicting writes.
