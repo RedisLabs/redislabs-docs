@@ -33,6 +33,7 @@ on the value. For example, you can first set a string key to "abc" use
 the APPEND command and SET the same key to 7 and use INCR to update it
 to 8.
 
+- this was not changed as well due to 5.4.2... 
 In CRDTs the initial type of the value is identified by the method used
 to create the value. To create a counter value, you can use INCR, DECR,
 INCRBY, DECRBY. However, in CRDTs the type of the value does not
