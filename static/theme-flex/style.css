@@ -3351,47 +3351,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
   padding-top: 20px;
 }
 
-/* Internal Docs Login */
-#internalDocsLoginDialog {
-  background-color: #eee;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  display: none;
-  left: 50%;
-  margin: 0;
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  width: 300px;
-  padding: 50px 26px;
-}
-
-#internalDocsLoginDialog p {
-  color: #000;
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 20px;
-  margin-top: 0;
-  text-align: center;
-}
-
-#internalDocsLoginDialog .abcRioButton {
-  margin: 0 auto;
-}
-
-#internalDocsLoginDialog i {
-  color: #585858;
-  font-size: 18px;
-  position: absolute;
-  right: 10px;
-  top: 5px;
-}
-
-#internalDocsLoginDialog i:hover {
-  color: #000;
-  cursor: pointer;
-}
-
 /* Internal Page Content */
 #internalLoader {
   display: none;

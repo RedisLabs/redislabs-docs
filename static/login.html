@@ -76,7 +76,7 @@
     </section>
 
     <script>
-        function setSuccessMsg(state) {
+        var setSuccessMsg = function (state) {
             if (state === 'show') {
                 document.getElementById('successMsg').style.display = 'block';
                 document.getElementById('g-signin2').style.display = 'none';
@@ -86,15 +86,24 @@
             document.getElementById('successMsg').style.display = 'none';
             document.getElementById('g-signin2').style.display = 'block';
         }
-        function onSignIn(googleUser) {
-            console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-            localStorage.setItem('auth_token', 'abc123');
+        var isProfileAllowed = function (profile) {
+            var e = profile.getEmail();
+            return /@redislabs.com\s*$/.test(e);
+        }
+        var onSignIn = function (googleUser) {
+            var profile = googleUser.getBasicProfile();
+            if (isProfileAllowed(profile)) {
+                alert("Email address not valid.");
+                logout();
+                return;
+            }
+            localStorage.setItem('auth_token', createAuthToken());
             setSuccessMsg('show');
         }
-        function onFailure(error) {
+        var onFailure = function (error) {
             console.log(error);
         }
-        function renderButton() {
+        var renderButton = function () {
             gapi.signin2.render('g-signin2', {
                 'scope': 'profile email',
                 'width': 240,
@@ -104,7 +113,7 @@
                 'onfailure': onFailure
             });
         }
-        function logout() {
+        var logout = function () {
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.disconnect();
             auth2.signOut().then(function () {
@@ -113,9 +122,12 @@
                 setSuccessMsg('hide');
             });
         }
-        function goBack() {
+        var goBack = function () {
             var urlParams = new URLSearchParams(window.location.search);
             window.location.href = urlParams.get('red');
+        }
+        var createAuthToken = function () {
+            return Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
         }
     </script>
 

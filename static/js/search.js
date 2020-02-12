@@ -62,7 +62,7 @@ function initLunr() {
 
 // Fetch the index of internal docs
 function fetchInternalIndex() {
-    var url = 'https://api.github.com/repos/RedisLabs/internal-docs/contents/index.json';
+    var url = window.INT_DOCS_API;
     var internalIndex = null;
 
     $.ajax({
@@ -70,15 +70,11 @@ function fetchInternalIndex() {
         type: 'get', 
         dataType: 'html',
         async: false,
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token ACC_TOKEN");
-            xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
-        },        
         success: function(data) {
             internalIndex = JSON.parse(data);
         },
         error: function(error) {
-            console.log("Error getting internal index: ", error);
+            console.error("Error getting internal index: ", error);
             return null;
         }
     });   

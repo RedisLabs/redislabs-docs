@@ -176,6 +176,12 @@ jQuery(document).ready(function() {
     $('article a:not(:has(img)):not(.btn)').addClass('highlight');
 });
 
+$(function() {
+    $('a[rel="lightbox"]').featherlight({
+        root: 'article'
+    });
+});
+
 var handleScroll = function() {
     $(window).scroll(function (event) {
         var scroll = $(window).scrollTop();
@@ -310,36 +316,7 @@ var handleInternalDocs = function(isLoggedIn) {
     ii.hide();
 }
 
-$(function() {
-    $('a[rel="lightbox"]').featherlight({
-        root: 'article'
-    });
-});
-
-var onSignIn = function(googleUser) {
-    var profile = googleUser.getBasicProfile();
-
-    // if(isProfileAllowed(profile)) {
-    //     alert("Email address not allowed.");
-    //     hideInternalDocsLoginDialog();
-    //     handleGoogleSignOut();
-    //     handleInternalLogin();
-    //     return;
-    // }
-
-    if(!localStorage.getItem('auth_token')) {
-        localStorage.setItem('auth_token', 'abc123');
-        window.location.reload();
-    }
-}
-
-var isProfileAllowed = function(profile) {
-    var e = profile.getEmail();
-
-    return /@redislabs.com\s*$/.test(e);
-}
-
-var handleInternalLogin = function() {
+var handleInternalDocsLogin = function() {
     var isLoggedIn = localStorage.getItem('auth_token');
 
     if(isLoggedIn) {
@@ -362,10 +339,6 @@ var handleGoogleSignOut = function() {
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
-}
-
-var hideInternalDocsLoginDialog = function() {
-    $('#internalDocsLoginDialog').hide();
 }
 
 var handleInternalLoader = function() {
@@ -397,7 +370,7 @@ var getUrlParameter = function getUrlParameter(sPageURL) {
     }
 };
 
-function setPageFeedback(kind, pageTitle, category) {
+var setPageFeedback = function(kind, pageTitle, category) {
     setFeedbackMessage(kind, category, pageTitle);
 
     if (window.ga) {
@@ -414,7 +387,7 @@ function setPageFeedback(kind, pageTitle, category) {
     }
 }
 
-function setFeedbackMessage(kind, category, pageTitle) {
+var setFeedbackMessage = function(kind, category, pageTitle) {
     if(kind === 1) {
         $('#page-feedback-open').html('Thanks for the feedback!');
     } else {
@@ -426,13 +399,13 @@ function setFeedbackMessage(kind, category, pageTitle) {
     }, 5000);
 }
 
-function hidePageFeedback() {
+var hidePageFeedback = function() {
     $('#page-feedback-open').hide();
     $('#page-feedback-closed').show();
     localStorage.setItem('is-page-feedback-visible', 'no');
 }
 
-function showPageFeedback() {
+var showPageFeedback = function() {
     $('#page-feedback-closed').hide();
     $('#page-feedback-open').show();
     localStorage.setItem('is-page-feedback-visible', 'yes');
@@ -446,8 +419,9 @@ $(function() {
     } else {
         showPageFeedback();
     }
-});
-function renderInternalContent(content, options) {
+})
+
+var renderInternalContent = function(content, options) {
     var converter = new showdown.Converter();
     return converter.makeHtml(content);
     return;
@@ -459,57 +433,6 @@ function renderInternalContent(content, options) {
         $(id + ' .article').html(converter.makeHtml(content));
         $(id).show();
     }
-}
-
-var getInternalContent = function(path, id) {
-    var isLoggedIn = localStorage.getItem('auth_token');
-
-    if(!isLoggedIn) return;
-
-    if(id) {
-        pageFilePath = location.pathname.slice(0, -1) + '_' + id + '.md';
-        fetchInternalContent(pageFilePath, {specificSection: true, sectionID: id});
-    }
-
-    if(!path && !id) {
-        pageFilePath = location.pathname.slice(0, -1) + '.md';
-        fetchInternalContent(pageFilePath);
-    }
-}
-
-function fetchInternalContent(pageFilePath, options){
-    setInternalContentLoader('on');
-    var url = 'https://api.github.com/repos/RedisLabs/internal-docs/contents/content' + pageFilePath;
-    var result = null;
-
-    $.ajax({
-        url: url,
-        type: 'get',
-        dataType: 'html',
-        async: false,
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token ACC_TOKEN");
-            xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
-        },
-        success: function(data) {
-            setInternalContentLoader('off');
-            result = data;
-        },
-        error: function(error) {
-            setInternalContentLoader('off');
-            if(error.status == 404) {
-                return;
-            }
-
-            if(error.status == 401) {
-                localStorage.removeItem('auth_token');
-                return;
-            }
-        }
-    });
-
-    FileReady = true;
-    return result;
 }
 
 var showAllInternalContent = function() {
@@ -536,7 +459,7 @@ var toggleSectionInternalContent = function(id) {
     handleInternalMainControl('show');
 }
 
-handleInternalMainControl = function(intent) {
+var handleInternalMainControl = function(intent) {
     var internalAreas = $('.internal-content-area');
     if(!internalAreas || internalAreas.length === 0) {
         return;
@@ -580,8 +503,8 @@ var setInternalContentLoader = function(state)  {
 }
 
 // Fetch the index of internal docs
-function fetchInternalIndex() {
-    var url = 'https://api.github.com/repos/RedisLabs/internal-docs/contents/index.json';
+var fetchInternalIndex = function() {
+    var url = window.INT_DOCS_API;
     var internalIndex = null;
 
     $.ajax({
@@ -589,15 +512,11 @@ function fetchInternalIndex() {
         type: 'get', 
         dataType: 'html',
         async: false,
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "token ACC_TOKEN");
-            xhr.setRequestHeader("Accept", "application/vnd.github.v3.raw");
-        },        
         success: function(data) {
             internalIndex = JSON.parse(data);
         },
         error: function(error) {
-            console.log("Error getting internal index: ", error);
+            console.error("Error getting internal index: ", error);
             return null;
         }
     });   
