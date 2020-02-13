@@ -26,7 +26,7 @@ Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
 To deploy an upgraded package:
 
 1. In the Redis Enterprise web UI, go to the: **settings**
-1. In **redis<sup>e</sup> modules**, click **Add Module**.
+1. In **redis modules**, click **Add Module**.
 
     ![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
 
@@ -77,20 +77,20 @@ When you upgrade the module for a database, you can either:
 
 Here are some examples of module upgrades:
 
-- To upgrade the version of RediSearch to 10017 and replace the module arguments:
+- To upgrade the version of RediSearch to 1.6.7:
 
     ```src
-    rladmin upgrade module db_name MyAwesomeDB module_name ft version 10017 module_args "PARTITIONS AUTO"
+    rladmin upgrade module db_name MyAwesomeDB module_name ft version 10607 module_args "PARTITIONS AUTO"
     ```
 
-- To upgrade RedisBloom to version 10100 and remove the current module arguments:
+- To upgrade RedisBloom to version 2.2.1:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name bf version 10100 module_args " "
+    rladmin upgrade module db_name MyDB module_name bf version 20201 module_args ""
     ```
 
-- To upgrade RedisJSON to 10002 and use the current module arguments:
+- To upgrade RedisJSON to 1.0.4:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name ReJSON version 10002 keep_module_args
+    rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args ""
     ```
