@@ -22,7 +22,7 @@ Then click **Next** button.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
     
-    These credentials are also for the connections to the REST API.
+    These credentials are also used for connections to the REST API.
 
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
