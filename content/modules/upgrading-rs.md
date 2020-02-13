@@ -46,6 +46,11 @@ After you upgrade the module for a database, the database shards are restarted.
 This causes a short interruption in the availability of this database across the cluster.
 {{% /note %}}
 
+When you upgrade the module for a database, you can either:
+
+- Specify the module arguments to replace the current arguments.
+- Specify the 'keep_module_args' flag to use the current argument.
+
 1. Connect to the terminal of a node in the cluster
 1. Run `rladmin status` to list the databases on the node.
 1. Copy the name of the database that uses the module that you want to upgrade.
@@ -72,20 +77,20 @@ This causes a short interruption in the availability of this database across the
 
 Here are some examples of module upgrades:
 
-- To upgrade the version of RediSearch to 10017:
+- To upgrade the version of RediSearch to 10017 and replace the module arguments:
 
     ```src
     rladmin upgrade module db_name MyAwesomeDB module_name ft version 10017 module_args "PARTITIONS AUTO"
     ```
 
-- To upgrade RedisBloom to version 10100:
+- To upgrade RedisBloom to version 10100 and remove the current module arguments:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name bf version 10100 module_args ""
+    rladmin upgrade module db_name MyDB module_name bf version 10100 module_args " "
     ```
 
-- To upgrade RedisJSON to 10002:
+- To upgrade RedisJSON to 10002 and use the current module arguments:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name ReJSON version 10002 module_args ""
+    rladmin upgrade module db_name MyDB module_name ReJSON version 10002 keep_module_args
     ```
