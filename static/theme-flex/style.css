@@ -1016,7 +1016,7 @@ section.page {
   padding-right: 0;
 }
 article section.page h1:first-of-type {
-  margin: 1em auto;
+  margin: 4rem auto;
   text-align: left;
   color: #354253;
   font-weight: 700;
