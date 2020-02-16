@@ -33,7 +33,7 @@ Then, you simply create a list instead of a hash, like- `lpush user:123 Bob Lee 
 
 The only tradeoffs are related to code complexity. Redis internally uses the same encoding (ziplist) for small hashes and small lists, so there is no performance impact when you switch to a list. However, if you have more than 512 fields in your hash, this approach is not recommended.
 
-## When to Avoid Converting List to Hash
+## When to Avoid Converting Hash to List
 
 Following are the situations when conversion of list to hash should be avoided:
 
