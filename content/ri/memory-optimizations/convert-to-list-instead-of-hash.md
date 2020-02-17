@@ -35,7 +35,7 @@ The only tradeoffs are related to code complexity. Redis internally uses the sam
 
 ## When to Avoid Converting Hash to List
 
-Following are the situations when conversion of list to hash should be avoided:
+Following are the situations when conversion of hash to list should be avoided:
 
 1. When you have less than 50,000 objects.
 1. Your objects are not regular i.e. some users have lots of information, others very little.
