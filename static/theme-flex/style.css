@@ -1012,13 +1012,13 @@ section.page {
   box-sizing: border-box;
   padding: 2rem 3rem 0 27rem;
   max-width: 1420px;
-  margin: 0 auto;
+  margin: 0 1em;
   padding-right: 0;
 }
 article section.page h1:first-of-type {
-  margin: 5rem 0rem;
-  text-align: center;
-  color: #b62411;
+  margin: 4rem auto;
+  text-align: left;
+  color: #354253;
   font-weight: 700;
   font-size: 3rem;
   line-height: 3.45rem;
