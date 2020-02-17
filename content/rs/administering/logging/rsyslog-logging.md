@@ -50,8 +50,7 @@ Since rsyslog entries do not include the severity information by
 default, you can use the following instructions in order to log that
 information (in Ubuntu):
 Add the following line to /etc/rsyslog.conf
-$templateTraditionalFormatWithPRI,"%pri‐text%:%timegenerated%%HOSTNAME%
-%syslogtag%%msg:::drop‐last‐lf%n"
+$template TraditionalFormatWithPRI,"%pri-text%:%timegenerated%:%HOSTNAME%:%syslogtag%:%msg:::drop-last-lf%\n"
 
 And modify $ActionFileDefaultTemplate to use your new template
 $ActionFileDefaultTemplateTraditionalFormatWithPRI
