@@ -1,5 +1,5 @@
 ---
-Title: v2.2
+Title: RedisBloom Release Notes 2.2
 description:
 weight: 97
 alwaysopen: false
