@@ -1,5 +1,5 @@
 ---
-Title: Creating a Redis Enterprise Software (RS) database
+Title: Creating a Redis Enterprise Software (RS) Database
 description:
 weight: $weight
 alwaysopen: false
@@ -36,9 +36,9 @@ To create a new database:
 
     <!-- {{</* embed-md "create-db.md" */>}} -->
 
-1. Click **Next** to create a single-region deployment on RAM.
+1. Click **Next** to create a single-region, in-memory database.
 
-    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![new_databases](/images/rs/new_databases.png)
@@ -73,7 +73,9 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         If the cluster is configured to support [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}),
         you can also enable rack-zone awareness for the database.
 
-    - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - When you create a new database, you can enable multiple Redis modules to the database.
+    - [**Redis Modules**]({{< relref "/rs/developing/modules/_index.md" >}}) - When you create a new in-memory database,
+        you can enable multiple Redis modules to the database.
+        For RoF databases, you can add modules that support RoF.
 
         To add a module to the database:
 
