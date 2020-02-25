@@ -10,14 +10,21 @@ jQuery(document).ready(function() {
     var text, clip = new Clipboard('.anchor');
     var internalIndex = null;
     var internalContSectionCount = 0; //keep a count of sections that have internal content, so we hide the toggle button if there is no content
+    var pagePath = null;
 
     if(isLoggedIn) {
         internalIndex = fetchInternalIndex();
+        pagePath = location.href.substr(location.href.lastIndexOf(baseurl)+baseurl.length);
+
+        if(pagePath.includes('?s=')) {
+            // page opened from search results, so it contains some query params which are not needed, therefore cut them out
+            pagePath = pagePath.substring(0, pagePath.lastIndexOf('/')+1);            
+        }
     }
 
     $("h1,h2,h1~h2,h1~h3,h1~h4,h1~h5,h1~h6,h2~h3,h3~h4,h4~h5").append(function (index, html) {
         var element = $(this);
-        var url = document.location.origin + document.location.pathname;
+        var url = document.location.origin + document.location.path;
         var link = url + "#" + element[0].id;
 
         var clipElement = " <span class='anchor' data-clipboard-text='" + link + "'>"  +
@@ -26,12 +33,11 @@ jQuery(document).ready(function() {
         if(isLoggedIn) {            
             var sectionID = element[0].id;
             var contentURI = null;
-            var path = location.href.substr(location.href.lastIndexOf(baseurl)+baseurl.length);
 
             if(sectionID) {
-                contentURI = path.slice(0, -1) + '_' + sectionID + '.md';                
+                contentURI = pagePath.slice(0, -1) + '_' + sectionID + '.md';                
             } else {
-                contentURI = path.slice(0, -1) + '.md';
+                contentURI = pagePath.slice(0, -1) + '.md';
             }
 
             // Check if section has any internal docs content using the index            
