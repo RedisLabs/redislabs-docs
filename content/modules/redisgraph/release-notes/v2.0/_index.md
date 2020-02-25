@@ -11,14 +11,16 @@ categories: ["Modules"]
 This is the General Availability Release of RedisGraph 2.0 (v2.0.1)!
 
 Headlines:
+
 - Full Text Search (FTS) enabling Graph-aided Search.
 - Full graph response enabling visualisation.
 - Substantial amount of Cypher coverage.
 - Performance improvements of up to 4x compared to RedisGraph 1.2.
 
-(we will blog about this release soon including performance improvements results and the link here)
+(We will blog about this release soon including performance improvements results and the link here)
 
 Full details:
+
 - Major Features
     - #[339](https://github.com/RedisGraph/RedisGraph/issues/339) [Full Graph Response](https://oss.redislabs.com/redisgraph/result_structure/#top-level-members).  RedisGraph now allows to return Graph entities such as Nodes and Relationships.  This feature also enables graph visualisation.
     - #[558](https://github.com/RedisGraph/RedisGraph/issues/558) Indexing functionality replaced by [RediSearch](redisearch.io). This results in support for
@@ -79,4 +81,4 @@ Full details:
     - #[607](https://github.com/RedisGraph/RedisGraph/issues/607) All ops NULL-set variables in their free routines (memory).
     - #[893](https://github.com/RedisGraph/RedisGraph/issues/893) Preserve the children array order when replacing operations.
 
-note: the version inside Redis will be 20001 or 2.0.1 in semantic versioning.
+Note: the version inside Redis will be 20001 or 2.0.1 in semantic versioning.

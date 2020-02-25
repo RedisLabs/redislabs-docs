@@ -228,7 +228,7 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
         The default (if unspecified) is 4 cores (4000m) and 4GB (4Gi).
 
         {{% note %}}
-Resource limits should equal requests. [Learn why.](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types).
+Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
         {{% /note %}}
 
     - serviceBrokerSpec –

@@ -47,6 +47,8 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
     `curl -v -u <user>:<password> https://localhost:9443/v1/license`
 
+- Updated PDNS version from 4.1.5 to 4.1.13.
+
 ## Information
 
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle/).

@@ -11,6 +11,7 @@ categories: ["Modules"]
 This is the General Availability Release of RediSearch 1.6!
 
 Headlines:
+
 - Several performance improvements increasing full-text search queries up to 60% and aggregation queries up to 73%.
 - Support for Aliasing of indices.
 - Low-level API in C (and [Rust bindings](https://github.com/RediSearch/redisearch-api-rs)) to make RediSearch embeddable in other Redis modules. [RedisGraph](redisgraph.io) is the first GA consumer.

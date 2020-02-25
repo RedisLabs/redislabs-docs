@@ -9,9 +9,11 @@ categories: ["Modules"]
 ## RediSearch 1.4.24 Release Notes
 
 Headlines:
+
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
+
 - Bugfixes:
     - #[1038](https://github.com/RediSearch/RediSearch/issues/1038) Memory leak on cursor.
     - #[1049](https://github.com/RediSearch/RediSearch/issues/1049) Crash on conversion error when freeing other indexed fields.
@@ -19,18 +21,22 @@ Details:
 ## RediSearch 1.4.23 Release Notes
 
 Headlines:
+
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
+
 - Bugfixes:
     - Memory leak when cursor timed out and cursor wasn't consumed.
 
 ## RediSearch 1.4.22 Release Notes
 
 Headlines:
+
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
+
 - Bugfixes:
     - FILTER option was not working correctly with coordinator.
     - Memory leak when cursor was combined with sorted fields.
@@ -38,9 +44,11 @@ Details:
 ## RediSearch 1.4.21 Release Notes
 
 Headlines:
+
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
+
 - Bugfixes:
     - #[1031](https://github.com/RediSearch/RediSearch/issues/1031) Highlighting crashed when used with [`NOINDEX`](https://oss.redislabs.com/redisearch/Commands.html#field_options) fields.
 

@@ -1,7 +1,7 @@
 ---
 Title: v1.2
 description:
-weight:
+weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
@@ -10,6 +10,7 @@ categories: ["Modules"]
 This is the General Availability Release of RedisTimeSeries 1.2 (v1.2.2)!
 
 Headlines:
+
 - Compression added which can reduce memory up to 98% and improve read performance up to 50%.
 - Stable ingestion time independent of the number of the data points on a time-series.
 - Reviewed API with performance improvements and removed ambiguity.

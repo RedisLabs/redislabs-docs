@@ -73,9 +73,9 @@ Bulk insert supports ID specifying + relationships attributes
 - Multiple CREATE clauses
 - Multiple MATCH clauses
 - Bug fixes:
-- Replace operations appropriately when rewriting execution plan
-- Entity returned from datablock should have its internals cleared
-- Loaded triemap strings are not guaranteed space for a null terminator
+    - Replace operations appropriately when rewriting execution plan
+    - Entity returned from datablock should have its internals cleared
+    - Loaded triemap strings are not guaranteed space for a null terminator
 
 ## RedisGraph v1.0.2 Release Notes
 
