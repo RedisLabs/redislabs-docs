@@ -1,25 +1,26 @@
 ---
-Title: Database Alert Emails
+Title: Configuring Database Alerts
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can select alerts to log and receive emails about database status.
-You can also select alerts on cluster status in the [cluster alerts]]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
+For each database, you can enable alerts for database events, such as high memory usage or throughput.
 
-Some alerts can only be turned on or off, such as [Periodic backup failed]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
-Other alerts require that you set a threshold that triggers the notifiction, such as **Dataset size has reached a certain percentage of its limit**.
+You can also enable alerts for the cluster and nodes in the [cluster alerts]]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
 
-When you enable an alert, logs are shown in the **log** when the alert is triggered.
-Alert emails can also be sent to users according to their [user settings]
-({{< relref "/rs/administering/designing-production/security/account-management.md#adding-a-user" >}}).
+Configured alerts are shown:
+
+- As a warning indicator (![Warning](/images/rs/icon_warning.png#no-click "Warning") for the database
+- In the **log**
+- In emails, if you configure email alerts
 
 To enable alerts for a database:
 
-- In **configuration** for each database, click **show adavnced options** to see the database alerts and select the alerts that you want to get for the database.
+1. In **configuration** for each database, click **show adavnced options** to see the database alerts and select the alerts that you want to get for the database.
+2. Click **Update**.
 
 To enable alert emails:
 
 1. Configure the [email server settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}})).
-1. In **settings** > **team**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}) that the user receives.
+2. In **settings** > **team**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}) that the user receives.
