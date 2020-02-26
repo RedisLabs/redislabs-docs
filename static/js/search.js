@@ -100,6 +100,8 @@ function search(query) {
 // Let's get started
 initLunr();
 $( document ).ready(function() {
+    var internalBaseUrl = baseurl.substring(0, baseurl.length-1);
+
     var searchList = new autoComplete({
         /* selector for the search box element */
         selector: $("#search-by").get(0),
@@ -122,7 +124,7 @@ $( document ).ready(function() {
 
             var uri = item.uri + '?s=' + term;
             if(item.description === 'internal_content') {                
-                uri = uri.replace('content', '').replace('.md', '') + '&si=true';
+                uri = internalBaseUrl + uri.replace('content', '').replace('.md', '') + '&si=true';
             }
 
             return '<div class="autocomplete-suggestion" ' +
