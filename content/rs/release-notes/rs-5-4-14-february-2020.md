@@ -69,11 +69,11 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 ## Important Fixes
 
-RS23396 - Improved the disconnection mechanism in case of inactive UI session
-RS27924 - Added descriptive error messages in the UI console when validating the license
-RS29968 - Improved internal mechanism to better support high scale of clients connections
-RS35675 - Updated the upgrade process of Active-Active Redis databases to save causal consistency and encryption flags
-RS36922 - Fixed an issue in a specific cluster upgrade scenario from versions earlier than RS 5.4.0 to RS 5.4.0 or later
+- RS23396 - Improved the disconnection mechanism in case of inactive UI session
+- RS27924 - Added descriptive error messages in the UI console when validating the license
+- RS29968 - Improved internal mechanism to better support high scale of clients connections
+- RS35675 - Updated the upgrade process of Active-Active Redis databases to save causal consistency and encryption flags
+- RS36922 - Fixed an issue in a specific cluster upgrade scenario from versions earlier than RS 5.4.0 to RS 5.4.0 or later
 
 ## Known Limitations
 
