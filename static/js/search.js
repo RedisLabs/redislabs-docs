@@ -122,18 +122,34 @@ $( document ).ready(function() {
             }
             item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
 
-            var uri = item.uri + '?s=' + term;
-            if(item.description === 'internal_content') {                
-                uri = internalBaseUrl + uri.replace('content', '').replace('.md', '') + '&si=true';
+            // Set result item page URI
+            var URI = item.uri;
+            if(item.description === 'internal_content') {
+                URI = URI.replace('content', '').replace('.md', '');
+
+                if(URI.includes('_')) {
+                    // A URI to internal section within a page, remove the _ and text after it to make the URI work
+                    URI = URI.substring(0, URI.lastIndexOf('_'));
+                }
             }
+            
+            URI = URI + '?s=' + term; //Add search term to URI for easier tracking with Analytics
+
+            if(item.description === 'internal_content') {                
+                // Internal section, therefore append a query param which makes the internal content visible when resulting page is open
+                URI = internalBaseUrl + URI + '&si=true';
+            }
+
+            // Set item context, ie. preview of search result
+            var context = item.context? item.context : item.content.substring(0, 50) + '...';
 
             return '<div class="autocomplete-suggestion" ' +
                 'data-term="' + term + '" ' +
                 'data-title="' + item.title + '" ' +
-                'data-uri="'+ uri + '"' +
-                'data-context="' + item.context + '">' +
+                'data-uri="'+ URI + '"' +
+                'data-context="' + context + '">' +
                     '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
-                    '<div class="context">' + (item.context || '') +'</div>' +
+                    '<div class="context">' + context +'</div>' +
                 '</div>';
         },
         /* onSelect callback fires when a search suggestion is chosen */
