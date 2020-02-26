@@ -8,143 +8,154 @@ nextStep:
     Title: Memory Analysis
     href: /docs/features/memory-analysis/
 ---
+Before using any of the tools to work with your database, you must first add the database so RedisInsight can connect to it.
+Each of these database configurations requires specific steps to add them to RedisInsight:
 
-## Add a Redis Database
+- Standalone Redis
+- Redis cluster
+- Redis Sentinel
+- Redis with TLS authentication
+- Elasticache
 
-Before using any of the tools to work with your database, you must first add the database so RedisInsight can 
-connect to it. Follow the instructions below to add your database to RedisInsight.
+## Add a Standalone Redis Database
 
-### Add a Standalone Redis Database
+This is the simplest setup of a Redis database with just a single Redis server.
 
-This is the simplest setup of a Redis database: just a single Redis server. 
 To add a standalone Redis database to RedisInsight:
 
-1. click the **Add Redis Database** button in the home screen.
+1. When you open RedisInsight, click **Add Redis Database**.
 
-   ![instance_overview_page](/images/ri/add-database-button-screen.png)
+    ![instance_overview_page](/images/ri/add-database-button-screen.png)
 
-1. Select **Add Database** from the menu
+1. Select **Add Database**.
 
-   ![instance_overview_page](/images/ri/add-db-menu-screen.png)
-
-   A dialog will appear with a form for entering your database's details.
+    ![instance_overview_page](/images/ri/add-db-menu-screen.png)
 
 1. Enter the details for your database:
 
-   ![instance_overview_page](/images/ri/add-db-form-screen.png)
+    ![instance_overview_page](/images/ri/add-db-form-screen.png)
 
-   - **Name**: A nick-name for your Redis database. It could be anything, e.g. "my local redis"
-   - **Host**: The host your Redis database is available on. E.g. `redis.acme.com`. 
-               If your Redis server is running on your local machine, it would be `127.0.0.1` or `localhost`.
-   - **Port**: The port your Redis database is available on. The default port for Redis is `6379`.
-   - **Password**: The password, if any, for your Redis database. 
-                   If your database doesn't require a password, leave this field empty.
-   - **Use TLS**: If your Redis database uses TLS to connect with clients, select this option.
+    - **Name**: A name for your Redis database. It does not have to match the name of the database in the Redis cluster.
+    - **Host**: The hostname of your Redis database, for example `redis.acme.com`.
+       If your Redis server is running on your local machine, you can enter either `127.0.0.1` or `localhost`.
+    - **Port**: The port your Redis database is available on. The default port for Redis is `6379`.
+    - **Password**: The password, if any, for your Redis database.
+       If your database doesn't require a password, leave this field empty.
+    - **Use TLS**: If your Redis database uses TLS to connect with clients, select this option.
 
-   After entering the details for your database, click **Add Redis Database** to add the database to RedisInsight.
+    After you enter the details for your database, click **Add Redis Database** to add the database to RedisInsight.
 
-Your newly added database will appear in the databases page (the home page).
+Your newly added database is shown in the home screen.
 
 ![instance_overview_page](/images/ri/add-db-added-screen.png)
-   
-### Add a Redis Cluster Database
+
+## Add a Redis Cluster Database
 
 To add a [Redis Cluster](https://redis.io/topics/cluster-tutorial) database:
 
 1. Follow steps 1 - 2 in the [Add a Standalone Redis Database](#add-a-standalone-redis-database) section above.
 1. Enter the host, port and other details of your Redis Cluster database and click **Add Redis Database**.
-1. A form will appear asking to select the "seed nodes" of the cluster.
+1. Select the "seed nodes" of the cluster and click **Add Redis Database**.
 
-   ![instance_overview_page](/images/ri/add-db-cluster-seed-nodes-screen.png)
+    ![instance_overview_page](/images/ri/add-db-cluster-seed-nodes-screen.png)
 
-   For Redis Cluster databases, a set of "seed nodes" or "startup nodes" are provided to clients. 
-   To make sure that RedisInsight has the same view of the cluster as your application, select the 
-   same seed nodes that has been given to your application or any other client connecting to this Redis database. 
-   If you're unsure of which nodes to select, or if there are no other clients for the database yet, 
-   select all the nodes.
+    For Redis cluster databases, a set of "seed nodes" or "startup nodes" are provided to clients.
+    To make sure that RedisInsight has the same view of the cluster as your application,
+    select the same seed nodes that your application or any other client uses to connect to this Redis database.
+    If you don't know which node to select or if there are no other clients for the database yet,
+    select all of the nodes.
 
 ### Add a Redis Sentinel Database
 
-[Redis Sentinel](https://redis.io/topics/sentinel) is often used for HA deployments of Redis. 
-It provides automatic slave-to-master failover. 
-When using Sentinel, clients don't connect to the Redis database directly, as the current master may be different
-at different times, depending on whether a failover has happened or not. Instead, client's connect to the Sentinel
-instance and ask it for the address of the current master, and then connect to that master. If the connection fails,
-the Sentinel instance is queried again for the current master.
+[Redis Sentinel](https://redis.io/topics/sentinel) is often used for High Availability deployments of Redis.
+It provides automatic master-to-slave failover.
+When you use Sentinel, clients connect to the Sentinel instance to get the current topology of the databases.
+The client then connects to the current master.
+If the connection fails, the client queries the Sentinel instance again to find the current master.
 
-If you are using a Redis Sentinel setup, RedisInsight can connect to your database via the sentinel instance, 
-so if failovers happen, RedisInsight will still be connecting to the same server that other clients using the 
-Sentinel will.
+In this configuration, RedisInsight can connect to your database through the Sentinel instance.
+Then if a failover happens, RedisInsight changes the database connection just like any other client.
 
-To add a Redis database with a [Redis Sentinel](https://redis.io/topics/sentinel) setup:
+To add a Redis database with a [Redis Sentinel](https://redis.io/topics/sentinel) configuration:
 
-1. Follow steps 1 - 2 in the [Add a Standalone Redis Database](#add-a-standalone-redis-database) section above.
-1. Enter the host, port and other details of your **Redis Sentinel** instance and click **Add Redis Database**.
-1. A form will appear asking to select the database to add.
+1. When you open RedisInsight, click **Add Redis Database**.
 
-   ![instance_overview_page](/images/ri/add-db-sentinel-form-screen.png)
+    ![instance_overview_page](/images/ri/add-database-button-screen.png)
 
-   It's possible for a single set of Sentinel instances to monitor and manage the failover of several
-   different databases. Select the database that you want to add.
-   If your database requires a password, enter the password and click **Add Selected Database**.
+1. Select **Add Database**.
+
+    ![instance_overview_page](/images/ri/add-db-menu-screen.png)
+
+1. Enter the host, port and other details of your Redis Sentinel instance and click **Add Redis Database**.
+1. Select the database to add.
+
+    ![instance_overview_page](/images/ri/add-db-sentinel-form-screen.png)
+
+    A single set of Sentinel instances can monitor and manage the failover of multiple databases.
+    If your database requires a password, enter the password and click **Add Selected Database**.
 
 ### Add a Redis Database that uses TLS
 
-Some setups of Redis use SSL/TLS for network communication. To add a TLS-enabled Redis database:
+Some configurations of Redis use SSL/TLS for network communication.
 
-1. Follow steps 1 - 2 in the [Add a Standalone Redis Database](#add-a-standalone-redis-database) section above.
+To add a TLS-enabled Redis database:
+
+1. When you open RedisInsight, click **Add Redis Database**.
+
+    ![instance_overview_page](/images/ri/add-database-button-screen.png)
+
+1. Select **Add Database**.
+
+    ![instance_overview_page](/images/ri/add-db-menu-screen.png)
+
 1. Enter the host, port and password (if any) of your database.
-1. Check the **Use TLS** checkbox.
+1. Select **Use TLS**.
 
-   ![instance_overview_page](/images/ri/add-db-tls-screen.png)
-   
-1. This will reveal another option - **Requires TLS Client Authentication**.
-   Some flavours of Redis, such as [Redis Enterprise](https://redislabs.com/redis-enterprise/), 
-   support [TLS Mutual Authentication](https://en.wikipedia.org/wiki/Mutual_authentication), under
-   which the Redis server also verifies the identy of the client, like an application which uses
-   the Redis database or RedisInsight. If your database doesn't require TLS client authentication,
-   proceed to click **Add Redis Database** to add your database. Otherwise, check 
-   **Requires TLS Client Authentication** and proceed to the next step.
+    ![instance_overview_page](/images/ri/add-db-tls-screen.png)
 
-1. For the Redis database to verify the client, the client's TLS certificate and key need to be sent
-   to the Redis server when a connection is being made. Since RedisInsight is also a client to your Redis
-   database, the client certificate and private key need to be provided to RedisInsight.
+1. If your database requires TLS client authentication to do mutual authentication:
 
-   ![instance_overview_page](/images/ri/add-db-tls-client-auth-screen.png)
+    1. Select **Requires TLS Client Authentication**.
 
-   1. If you have already added a certificate-key pair previously, select it's name from the 
-      **Client Certificate** drop-down. Otherwise, select **Add New Certificate**.
-   1. Enter a name for your client certificate. This name will appear if you need to select a certificate
-      in the future.
-   1. Enter the text of the TLS certificate and private key in the next two fields.
+    Some implementations of Redis, such as [Redis Enterprise](https://redislabs.com/redis-enterprise/),
+    support [TLS Mutual Authentication](https://en.wikipedia.org/wiki/Mutual_authentication)
+    so that the Redis server also verifies the identity of the client.
+
+    1. Provide the client certificate and private key to RedisInsight.
+
+        ![instance_overview_page](/images/ri/add-db-tls-client-auth-screen.png)
+
+        - If you already have a certificate-key pair in RedisInsight, select it from the **Client Certificate** list.
+        - If you do not:
+            1. Select **Add New Certificate**.
+            1. Enter a name for your client certificate.
+            1. Enter the text of the TLS certificate and private key in the next two fields.
 
 1. Click **Add Redis Database** to add your database.
 
-
-
 ## Connecting to ElastiCache
 
-Connecting to AWS ElastiCache can be particularly problematic since ElastiCache Redis caches cannot be accessed from outside the VPC, as they don't have public IP addresses assigned to them.
+ElastiCache Redis caches cannot be accessed from outside the VPC, as they don't have public IP addresses assigned to them.
 
-If you want to work with ElastiCache Redis caches using RedisInsight, you can either:
+If you want to work with ElastiCache Redis caches with RedisInsight, you can either:
 
-- If you are not using Redis Cluster, you can [setup an SSH Tunnel](https://userify.com/blog/howto-connect-redis-ec2-ssh-tunnel-elasticache/) between RedisInsight and your ElastiCache instance.
-    
-    An SSH tunnel consists of an encrypted tunnel created through an SSH protocol connection.
+- If you are not using Redis Cluster, you can [setup an SSH Tunnel](https://userify.com/blog/howto-connect-redis-ec2-ssh-tunnel-elasticache/) between RedisInsight and your ElastiCache instance:
 
-    - Run this command to create an SSH tunnel:
+    1. To create an SSH tunnel, run:
 
         ```bash
         ssh -f -N -L <local_port>:<elasticache_endpoint> -i <path_to_pem_file> <ec2_endpoint>
         ```
 
-    - Go to **Add Instance** in RedisInsight and add an instance with:
+    2. Go to **Add Instance** in RedisInsight and add an instance with:
         - host=localhost
         - port=<local_port>
         - name=your_instance_name
 
-1. [Install RedisInsight on an EC2 instance]({{< relref "/ri/installing/install-ec2.md" >}}) that is in the same VPC and has access to the ElastiCache Redis cache. 
-    This is option yields the best performance and works with Redis Cluster.
+- [Install RedisInsight on an EC2 instance]({{< relref "/ri/installing/install-ec2.md" >}}) that is in the same VPC and has access to the ElastiCache Redis cache.
 
-1. [Set up a VPN to your AWS VPC using AWS VPN](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/accessing-elasticache.html#access-from-outside-aws). 
+    This is option gives the best performance and works with Redis Cluster.
+
+- [Set up a VPN to your AWS VPC using AWS VPN](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/accessing-elasticache.html#access-from-outside-aws).
+
     You can then access the ElastiCache Redis cache using the private endpoint.
