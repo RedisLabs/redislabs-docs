@@ -99,6 +99,10 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
     `curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"`
 
+### Discovery Service
+
+- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), every database name must be unique across the cluster.
+
 ### Redis Commands
 
 - The capability of disabling specific Redis commands does not work on commands specific to Redis Modules.
