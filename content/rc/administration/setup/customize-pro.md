@@ -19,7 +19,7 @@ To customize a subscription you must:
     1. Cloud Details - Configure the cloud that you want the subscription on:
         1. The cloud provider: Amazon AWS, Microsoft Azure, Google Cloud Platform
         1. The cloud region
-        1. 1. If you want to host your subscription on multiple availability zones (multi-AZ) for high availability, enable **Multi-AZ**.
+        1. If you want to host your subscription on multiple availability zones (multi-AZ) for high availability, enable **Multi-AZ**.
             We recommend that you use a cloud region that has at least 3 availability zones.
     1. Networking - Select the VPC and IP address range for the subscription:
         1. If you want to deploy your subscription for an existing VPC, select **In existing VPC** and enter the **VPC ID**.
