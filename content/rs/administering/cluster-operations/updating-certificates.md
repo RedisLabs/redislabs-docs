@@ -71,8 +71,8 @@ Where:
 - key - The contents of the *_key.pem file
 
     {{% tip %}}
-    The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
-    You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
+The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
+You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
     {{% /tip %}}
 
 - cert - The contents of the *_cert.pem file
