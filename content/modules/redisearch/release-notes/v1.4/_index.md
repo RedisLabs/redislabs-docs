@@ -5,6 +5,17 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 1.4.25 Release Notes
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+- Features:
+    - #[1051](https://github.com/RediSearch/RediSearch/issues/1051) Added support for updating tag fields on document updates with [`NOINDEX`](https://oss.redislabs.com/redisearch/Commands.html#field_options) fields.
+- Bugfixes:
+    - #[1051](https://github.com/RediSearch/RediSearch/issues/1051) `FORK GC` was not updating the unique sum of the numeric index.
 
 ## RediSearch 1.4.24 Release Notes
 
