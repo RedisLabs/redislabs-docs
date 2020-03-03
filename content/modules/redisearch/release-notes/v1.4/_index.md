@@ -5,7 +5,6 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-
 ## RediSearch 1.4.25 Release Notes
 
 Headlines:
