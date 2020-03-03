@@ -1,18 +1,18 @@
 ---
-Title: v1.0
+Title: RedisJSON 1.0 Release Notes
 description:
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisJSON v1.0.4 Release Notes
+## RedisJSON 1.0.4
 
-## RedisJSON v1.0.3 Release Notes
+## RedisJSON 1.0.3
 
 This release disables the cache by default, and allows an explicit `CACHE` `<ON|OFF>` module argument to enable it.
 
-## RedisJSON v1.0.2 Release Notes
+## RedisJSON 1.0.2
 
 This release contains some bug fixes over 1.0.2. It also includes some ci changes as well.
 
-## RedisJSON v1.0.1 Release Notes
+## RedisJSON 1.0.1

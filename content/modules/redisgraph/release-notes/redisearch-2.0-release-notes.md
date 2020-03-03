@@ -1,14 +1,14 @@
 ---
-Title: v2.0
+Title: RedisGraph 2.0 Release Notes
 description:
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
 
-## RedisGraph 2.0 GA (v2.0.1) Release Notes
+## RedisGraph 2.0 GA (2.0.1)
 
-This is the General Availability Release of RedisGraph 2.0 (v2.0.1)!
+This is the General Availability Release of RedisGraph 2.0 (2.0.1)!
 
 Headlines:
 
@@ -38,7 +38,7 @@ Full details:
         - #[730](https://github.com/RedisGraph/RedisGraph/issues/730) `UNION`
         - #[757](https://github.com/RedisGraph/RedisGraph/issues/757) `coalesce`
         - #[658](https://github.com/RedisGraph/RedisGraph/issues/658) Support for `COUNT DISTINCT`
-        - #[574](https://github.com/RedisGraph/RedisGraph/issues/574) with the array data support comes `IN`, `collect`, `head`,` range`, `reverse`, `size`, `tail`
+        - #[574](https://github.com/RedisGraph/RedisGraph/issues/574) with the array data support comes `IN`, `collect`, `head`,`range`, `reverse`, `size`, `tail`
         - #[624](https://github.com/RedisGraph/RedisGraph/issues/624) `randomUUID()`
         - #[632](https://github.com/RedisGraph/RedisGraph/issues/632) `IS NULL` and `IS NOT NULL`.
         - #[594](https://github.com/RedisGraph/RedisGraph/issues/594) Support dynamic inline properties for `CREATE` and `MERGE` patterns.

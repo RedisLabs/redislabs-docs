@@ -1,18 +1,18 @@
 ---
-Title: v1.2
+Title: RedisGraph 1.2 Release Notes
 description:
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph v1.2.2 Release Notes
+## RedisGraph 1.2.2
 
 Update urgency: Medium
 This is a maintenance release for version 1.2.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
 
-## RedisGraph v1.2.0 Release Notes
+## RedisGraph 1.2.0
 
 This is a major release for RedisGraph.
 Compared to previous release 1.0.15:

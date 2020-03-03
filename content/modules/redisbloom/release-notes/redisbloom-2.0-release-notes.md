@@ -1,11 +1,11 @@
 ---
-Title: RedisBloom Release Notes 2.0
+Title: RedisBloom 2.0 Release Notes
 description:
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisBloom v2.0.3 Release Notes
+## RedisBloom 2.0.3 Release Notes
 
 - Performance improvements:
     - #[95](https://github.com/RedisBloom/RedisBloom/issues/95) Top-K - Reduce checks on heap, now only checks if item count is larger than minimum in heap.
@@ -16,16 +16,14 @@ categories: ["Modules"]
     - #[89](https://github.com/RedisBloom/RedisBloom/issues/89) Module update broke rdb files
     - #[98](https://github.com/RedisBloom/RedisBloom/issues/98) Compilation for macOS
 
-## RedisBloom v2.0.0 Release Notes
+## RedisBloom 2.0.0 Release Notes
 
 We are proud to announce that we doubled the number of probabilistic data structures that are generally available in RedisBloom.  Full documentation is available on [redisbloom.io](redisbloom.io)
 
-#[70](https://github.com/RedisBloom/RedisBloom/issues/70) Top-K
+- #[70](https://github.com/RedisBloom/RedisBloom/issues/70) Top-K
+    - [Commands](https://oss.redislabs.com/redisbloom/TopK_Commands/)
+    - [Algorithm](https://www.usenix.org/conference/atc18/presentation/gong)
 
-- [Commands](https://oss.redislabs.com/redisbloom/TopK_Commands/)
-- [Algorithm](https://www.usenix.org/conference/atc18/presentation/gong)
-
-#[65](https://github.com/RedisBloom/RedisBloom/issues/65) Count-min Sketch
-
-- [Commands](https://oss.redislabs.com/redisbloom/CountMinSketch_Commands/)
-- [Algorithm](https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch)
+- #[65](https://github.com/RedisBloom/RedisBloom/issues/65) Count-min Sketch
+    - [Commands](https://oss.redislabs.com/redisbloom/CountMinSketch_Commands/)
+    - [Algorithm](https://en.wikipedia.org/wiki/Count%E2%80%93min_sketch)

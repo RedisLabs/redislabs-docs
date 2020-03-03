@@ -1,11 +1,11 @@
 ---
-Title: RedisBloom Release Notes 2.2
+Title: RedisBloom 2.2 Release Notes
 description:
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisBloom v2.2.1 Release Notes
+## RedisBloom 2.2.1 Release Notes
 
 Headlines:
 
@@ -18,12 +18,12 @@ Details:
         - #[179](https://github.com/RedisBloom/RedisBloom/issues/179) Allow storing filters with size over 4294967295 (UINT32_MAX). Now 64 bits.
         - #[177](https://github.com/RedisBloom/RedisBloom/issues/177) Prevent passing both `EXPANSION` *and* `NONSCALING` parameters to `BF.RESERVE`.
 
-## RedisBloom v2.2.0 Release Notes
+## RedisBloom 2.2.0 Release Notes
 
 - Added functionality
     - Bloom
         - #[149](https://github.com/RedisBloom/RedisBloom/issues/149) `BF.INFO` returns [details](https://oss.redislabs.com/redisbloom/Bloom_Commands/#bfinfo) about a specific bloom filter
-        - Scalable    
+        - Scalable
             - #[153](https://github.com/RedisBloom/RedisBloom/issues/153) [Ability to change](https://oss.redislabs.com/redisbloom/Bloom_Commands/#bfreserve) the `EXPANSION` rate. This means each subsequent sub-filter will be `expansion` times larger as the previous one.
             - #[160](https://github.com/RedisBloom/RedisBloom/issues/160) Optimise the scaling up of filter according to the [Scalable Bloom Filter](https://core.ac.uk/download/pdf/55607643.pdf) paper
             - #[161](https://github.com/RedisBloom/RedisBloom/issues/161) [Optional](https://oss.redislabs.com/redisbloom/Bloom_Commands/#bfreserve) `NONSCALING` argument to disable scaling.  (This saves space since less hash functions are used)
