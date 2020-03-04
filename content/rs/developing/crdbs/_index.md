@@ -43,7 +43,7 @@ Databases provide various approaches to address some of these concerns:
 
 - Active-Passive Geo-distributed deployments: With active-passive
     distributions, all writes go to an active cluster. Redis Enterprise
-    provides a "Replica Of" capability that provides a similar approach.
+    provides a Replica Of capability that provides a similar approach.
     This can be employed when the workload is heavily balanced towards
     read and very few writes. However, WAN performance and availability
     is quite flaky and traveling large distances for writes take away

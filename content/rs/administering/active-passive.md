@@ -42,7 +42,7 @@ replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 
-For a quick overview of ReplicaOf capabilities watch this quick video.
+For a quick overview of Replica Of capabilities watch this quick video.
 
 {{< youtube AG-XGn7BQkQ >}}
 
@@ -82,7 +82,7 @@ can be Redis databases that are not part of an RS.
     - **Compression:** when a source database is located on a different
     Redis Enterprise Software cluster, there is also an option to enable
     compression of the data being replicated. For additional details,
-    refer to the ["Replica of" data
+    refer to the [Replica Of data
     compression]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) section.
 - When a source database is external to a Redis Enterprise Software
     cluster, the source URL has the following format:
@@ -186,7 +186,7 @@ stop:
 
 ## Encryption
 
-ReplicaOf supports the ability to encrypt uni-directional replication
+Replica Of supports the ability to encrypt uni-directional replication
 communications between source and destination clusters utilizing TLS 1.2
 based encryption. To enable this encryption, proceed through the
 following steps:

@@ -39,7 +39,7 @@ clusters. Common uses for Active-Active databases include disaster recovery,
 geographically redundant applications, and keeping data closers to your
 user's locations. MMR is always multi-directional amongst the clusters
 configured in the Active-Active database. For unidirectional replication, please see the
-ReplicaOf capabilities in Redis Enterprise Software.
+Replica Of capabilities in Redis Enterprise Software.
 
 ## Example of synchronization
 

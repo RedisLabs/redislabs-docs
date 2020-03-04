@@ -145,7 +145,7 @@ Support for additional Redis commands and features:
     changed to 'update' and was grayed out.
 - RP15861 - Allow unix socket folder to be configurable at install
     time
-- RP16115 - TTL bug with ReplicaOf and import
+- RP16115 - TTL bug with Replica Of and import
 - RP16447 - DMC client connection reports incorrect number of
     connections to monitoring applications.
 - RP16481 - In some cases, resource_mgr uses incorrect directories

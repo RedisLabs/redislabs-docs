@@ -45,7 +45,7 @@ Before configuring a Active-Active database, you must:
 4. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
 5. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/administering/active-passive.md" >}}).
 
-    ReplicaOf is a one-way replication, while CRDB utilize multi-master replication.
+    Replica Of is a one-way replication, while CRDB utilize multi-master replication.
 1. [OSS cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) is not supported with CRDB.
 
 ## Network Time Service (NTP or Chrony)
