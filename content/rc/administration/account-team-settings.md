@@ -29,3 +29,13 @@ Team members can have different roles to the account:
 - **Owner** - Can view, create, and edit any settings in the account
 - **Member** - Can view, create, and edit databases.
 - **Viewer** - Can view databases
+
+## Multi Factor Authentication (MFA)
+
+### Using MFA
+
+Individual users are able to enable MFA for their accounts from their user profile as explained in this [blog post](https://redislabs.com/blog/redis-labs-adds-two-factor-authentication-enhance-account-security/). The `Team` tab under `Settings`, available to account owner users only, shows which users have MFA enabled.
+
+### Enforcing MFA
+
+Account owner users are able to require and enforce MFA for all account users in the `Account Settings` screen by switching the `MFA Enforcement` toggle to "on". Note that once MFA is enforced for all users, any user that logs in to Redis Cloud admin console will be forced to configure MFA before they can continue to any other screen. Consequently, Redis Labs advises to send out an email to your relevant users to notify them of this change beforehand.
