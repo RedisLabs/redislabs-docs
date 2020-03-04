@@ -25,7 +25,7 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8001 | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8443 | Secure (HTTPS) access to the management web UI |
 | TCP | 8444, 9080 | For nginx <-> cnm_http/cm traffic (Internal use) |
-| TCP | 9081 | For CRDB management (Internal use) |
+| TCP | 9081 | For Active-Active database management (Internal use) |
 | TCP | 8070, 8071 | For metrics exported and managed by nginx |
 | TCP | 9443 (Recommended), [8080](#turning-off-http-support) | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Database traffic |

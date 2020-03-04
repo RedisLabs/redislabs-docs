@@ -1,5 +1,5 @@
 ---
-Title: Developing Applications with Geo-Distributed CRDBs on Redis Enterprise Software (RS)
+Title: Developing Applications with Active-Active Databases on Redis Enterprise Software (RS)
 description:
 weight: $weight
 alwaysopen: false
@@ -11,23 +11,23 @@ conditions between updates to various sites, network, and cluster
 failures that could reorder the events and change the outcome of the
 updates performed across geo-distributed writes.
 
-CRDBs are geo-distributed databases that span multiple RS clusters.
-CRDBs depend on multi-master replication (MMR) and Conflict-free
+Active-Active databases are geo-distributed databases that span multiple RS clusters.
+Active-Active databases depend on multi-master replication (MMR) and Conflict-free
 Replicated Data Types (CRDTs) to power a simple development experience
-for geo-distributed applications. CRDBs allow developers to use existing
+for geo-distributed applications. Active-Active databases allow developers to use existing
 Redis data types and commands, but understand the developers intent and
 automatically handle conflicting concurrent writes to the same key
 across multiple geographies. For example, developers can simply use the
 INCR or INCRBY method in Redis in all instances of the geo-distributed
-application, and CRDBs handle the additive nature of INCR to reflect the
+application, and Active-Active databases handle the additive nature of INCR to reflect the
 correct final value. The following example displays a sequence of events
-over time : t1 to t9. This CRDB has two member CRDBs : member CRDB1 and
-member CRDB2. The local operations executing in each member CRDB is
-listed under the member CRDB name. The "Sync" even represent the moment
-where synchronization catches up to distribute all local member CRDB
-updates to other participating clusters and other member CRDBs.
+over time : t1 to t9. This Active-Active database has two member Active-Active databases : member Active-Active1 and
+member Active-Active2. The local operations executing in each member Active-Active database is
+listed under the member Active-Active database name. The "Sync" even represent the moment
+where synchronization catches up to distribute all local member Active-Active database
+updates to other participating clusters and other member Active-Active databases.
 
-|  **Time** | **Member CRDB1** | **Member CRDB2** |
+|  **Time** | **Member Active-Active1** | **Member Active-Active2** |
 |  ------: | :------: | :------: |
 |  t1 | INCRBY key1 7 |  |
 |  t2 |  | INCRBY key1 3 |
@@ -77,33 +77,33 @@ Databases provide various approaches to address some of these concerns:
     way to resolve conflicting writes, it comes at a cost of great
     complexity in the development of a solution.
 
-Even though types and commands in CRDBs look identical to standard Redis
+Even though types and commands in Active-Active databases look identical to standard Redis
 types and commands, the underlying types in RS are enhanced to maintain
 more metadata to create the conflict-free data type experience. This
-section explains what you need to know about developing with CRDBs on
+section explains what you need to know about developing with Active-Active databases on
 Redis Enterprise Software.
 
 ## Compatibility
 
-CRDBs act very much like a standard Redis database except a few
+Active-Active databases act very much like a standard Redis database except a few
 differences:
 
-- CRDBs in this version support all major Redis data types. See the
-    list of types supported in CRDBs under the Data Types
+- Active-Active databases in this version support all major Redis data types. See the
+    list of types supported in Active-Active databases under the Data Types
     section.
 - As conflict handling rules differ between data types, some commands
-    have slightly different requirements in CRDBs vs standard Redis
+    have slightly different requirements in Active-Active databases vs standard Redis
     databases. (ex: String type)
 
 ## Data Types
 
 Even though the data types and methods look identical in standard Redis
-and CRDBs, there are specific rules that govern the handling of
+and Active-Active databases, there are specific rules that govern the handling of
 conflicting concurrent writes to each type.
 
 From a developer's perspective, most supported datatypes work the same
 as standard Redis. However, a few methods also come with specific
-requirements in CRDBs.
+requirements in Active-Active databases.
 
 Below is a table of the primary data types and their support levels,
 followed by descriptions:
@@ -125,17 +125,17 @@ followed by descriptions:
 
 Bitmap, Bitfields, and Hyperloglog data types and operations are
 not currently supported in this version of
-CRDBs.
+Active-Active databases.
 
 ## Lua Scripts
 
-CRDB supports Lua scripts, but unlike standard Redis, Lua scripts always
+Active-Active database supports Lua scripts, but unlike standard Redis, Lua scripts always
 execute in effects replication mode. There is currently no way to
 execute them in script-replication mode.
 
 ## Eviction
 
-CRDBs always operate in no eviction mode. The reasoning is that if
+Active-Active databases always operate in no eviction mode. The reasoning is that if
 memory is low, eviction may not help (or even worse) until garbage
 collection takes place.
 
@@ -144,7 +144,7 @@ collection takes place.
 Expiration is supported with special multi-master semantics.
 
 If a key's expiration time is changed at the same time on different
-members of the CRDB, the longer extended time set via TTL on a key is
+members of the Active-Active database, the longer extended time set via TTL on a key is
 preserved. As an example:
 
 If this command was performed on key1 on cluster #1
@@ -167,7 +167,7 @@ And if this command was performed on key1 on cluster #3:
 127.0.0.1:6379> PERSIST key1
 ```
 
-It would win out of the three clusters hosting the CRDB as it sets the
+It would win out of the three clusters hosting the Active-Active database as it sets the
 TTL on key1 to an infinite time.
 
 The replica responsible for the "winning" expire value is also
@@ -184,13 +184,13 @@ Furthermore, a replica that is NOT the "owner" of the expired value:
 
 ## Out-of-Memory (OOM) {#outofmemory-oom}
 
-If a member CRDB is in an out of memory situation, that member is marked
+If a member Active-Active database is in an out of memory situation, that member is marked
 "inconsistent" by RS, the member stops responding to user traffic, and
-the syncer initiates full reconciliation with other peers in the CRDB.
+the syncer initiates full reconciliation with other peers in the Active-Active database.
 
-## CRDB Key Counts
+## Active-Active Database Key Counts
 
-Keys are counted differently for CRDBs:
+Keys are counted differently for Active-Active databases:
 
 - DBSIZE (in `shard-cli dbsize`) reports key header instances
     that represent multiple potential values of a key before a replication conflict is resolved.
@@ -207,11 +207,11 @@ troubleshooting information (applicable to support etc.):
 
 |  **Section** | **Field** | **Description** |
 |  ------ | ------ | ------ |
-|  **CRDT Context** | crdt_config_version | Currently active CRDB configuration version. |
+|  **CRDT Context** | crdt_config_version | Currently active Active-Active database configuration version. |
 |   | crdt_slots | Hash slots assigned and reported by this shard. |
 |   | crdt_replid | Unique Replica/Shard IDs. |
 |   | crdt_clock | Clock value of local vector clock. |
-|   | crdt_ovc | Locally observed CRDB vector clock. |
+|   | crdt_ovc | Locally observed Active-Active database vector clock. |
 |  **Peers** | A list of currently connected Peer Replication peers. This is similar to the slaves list reported by Redis. |  |
 |  **Backlogs** | A list of Peer Replication backlogs currently maintained. Typically in a full mesh topology only a single backlog is used for all peers, as the requested Ids are identical. |  |
 |  **CRDT Stats** | crdt_sync_full | Number of inbound full synchronization processes performed. |

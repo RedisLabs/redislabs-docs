@@ -8,21 +8,21 @@ categories: ["RS"]
 Below are detailed a few of the major features of this release of Redis
 Enterprise Software along with bug fixes and patches.
 
-## Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-databases-crdb}
+## Geo-Distributed Active-Active Conflict-free Replicated Databases {#geodistributed-activeactive-conflictfree-replicated-databases}
 
 Developing globally distributed applications can be challenging, as
 developers have to think about race conditions and complex combinations
-of events under geo-failovers and cross-region write conflicts. CRDBs
+of events under geo-failovers and cross-region write conflicts. Active-Active databases
 simplify developing such applications by directly using built-in smarts
 for handling conflicting writes based on the data type in use. Instead
 of depending on just simplistic "last-writer-wins" type conflict
-resolution, geo-distributed CRDBs combines techniques defined in CRDT
+resolution, geo-distributed Active-Active databases combines techniques defined in CRDT
 (conflict-free replicated data types) research with Redis types to
 provide smart and automatic conflict resolution based on the data type's
 intent.
 
 For more information, go here. For information, go to [Developing with
-CRDBs]({{< relref "/rs/developing/crdbs/_index.md" >}}).
+Active-Active databases]({{< relref "/rs/developing/active-active/_index.md" >}}).
 
 ## Redis Modules
 

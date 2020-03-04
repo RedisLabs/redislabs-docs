@@ -9,6 +9,10 @@ The eviction policy designates a data eviction method for Redis
 Enterprise Software (RS) to use when the database size reaches its
 limit. You can select any of the following:
 
+{{% note %}}
+[Active-Active Geo-Distributed databases]({{< relref "/rs/administering/active-active.md" >}}) (CRDBs) always operate in noeviction mode.
+{{% /note %}}
+
 | **Policy** | **Description** |
 |------------|-----------------|
 |  noeviction | Returns an error if the memory limit has been reached when trying to insert more data |
@@ -26,10 +30,6 @@ Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
 It can span your database across RAM + Flash Memory and intelligently
 manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).
-
-Note: [Geo-Distributed
-CRDBs]({{< relref "/rs/administering/active-active.md" >}})
-always operate in noeviction mode.
 
 Warning: Some redis Modules do not fully support eviction or all
 eviction types. Please see each module's documentation for more

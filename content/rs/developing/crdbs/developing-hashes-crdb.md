@@ -1,5 +1,5 @@
 ---
-Title: Developing with Hashes in a CRDB
+Title: Developing with Hashes in an Active-Active database
 description:
 weight: $weight
 alwaysopen: false
@@ -13,23 +13,23 @@ when it comes to CRDTs. Fields in hashes can be initialized as a string
 using HSET or HMSET or can be used to initialize counter types that are
 numeric integers using HINCRBY or floats using HINCRBYFLOAT.
 
-Hashes in CRDBs behave the same and maintain additional metadata to
+Hashes in Active-Active databases behave the same and maintain additional metadata to
 achieve an "OR-Set" behavior to handle concurrent conflicting writes.
-With the OR-Set behavior, writes to add new fields across multiple CRDB
+With the OR-Set behavior, writes to add new fields across multiple Active-Active database
 Instances are typically unioned except in cases of conflicts.
-Conflicting Instance writes can happen when a CRDB Instance deletes a
+Conflicting Instance writes can happen when an Active-Active database Instance deletes a
 field while the other adds the same field. In this case and observed
 remove rule is followed. That is, remove can only remove fields it has
 already seen and in all other cases element add/update wins.
 
 Field values behave just like CRDT strings. String values can be types
 string, counter integer based on the command used for initialization of
-the field value. See "String Data Type in CRDBs" and "String Data Type
-with Counter Value in CRDBs" for more details.
+the field value. See "String Data Type in Active-Active databases" and "String Data Type
+with Counter Value in Active-Active databases" for more details.
 
 Here is an example of an "add wins" case
 
-|  **Time** | **CRDB Instance1** | **CRDB Instance2** |
+|  **Time** | **Active-Active Instance1** | **Active-Active Instance2** |
 |  ------: | :------: | :------: |
 |  t1 | HSET key1 field1 “a” |  |
 |  t2 |  | HSET key1 field2 “b” |

@@ -215,7 +215,7 @@ To embed a video, use the `video` shortcode with the location of the video and a
 
 `{{</* video "/images/<path>/<video>.mp4" "Video title" */>}}`
 
-{{< video "/images/rs/crdb_service_account.mp4" "CRDB Service Account" >}}
+{{< video "/images/site/review-and-create-pr.mp4" "Review change and create a PR" >}}
 
 **YouTube**
 

@@ -11,7 +11,7 @@ The self-signed certificates are used to establish encryption-in-transit for the
 - Management Web UI (CM) - The certificate for connections to the management web UI
 - REST API - The certificate for REST API calls
 - Proxy - The certificate for connections between clients and database endpoints
-- Syncer - The certificate for synchronization between databases for ReplicaOf and CRDB
+- Syncer - The certificate for synchronization between databases for ReplicaOf and Active-Active replication
 - Metrics exporter - The certificate to export metrics to Prometheus
 
 These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.

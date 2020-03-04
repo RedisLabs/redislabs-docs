@@ -264,5 +264,5 @@ node.
 After you install RS, you must [create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
 or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) a cluster. Then you can:
 
-1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
-1. [Create an active/active database or CRDB]({{< relref "/rs/administering/database-operations/create-crdb.md" >}})
+1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+1. [Create an Active-Active database (CRDB)]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).

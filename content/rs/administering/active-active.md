@@ -7,53 +7,53 @@ categories: ["RS"]
 aliases: /rs/administering/intercluster-replication/crdbs/
 ---
 In Redis Enterprise, active-active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
-The Redis Enterprise implementation of CRDT is called Conflict-Free Replicated Database (CRDB).
-With CRDBs, applications can read and write to the same data set from different geographical locations seamlessly and with latency less than 1 ms,
+The Redis Enterprise implementation of CRDT is called a Active-Active conflict-free replicated database (CRDB).
+With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with latency less than 1 ms,
 without changing the way the application connects to the database.
 
-CRDBs also provide disaster recovery and accelerated data read-access for geographically distributed users.
+Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
 {{% note %}}
-CRDBs do not replicate the entire database, only the data.
+Active-Active databases do not replicate the entire database, only the data.
 Database configurations, Lua scripts, and other configurations are not replicated.
 {{% /note %}}
 
-## Considerations for Conflict-free Replicated Databases (CRDBs) {#considerations-for-conflictfree-replicated-databases-crdbs}
+## Considerations for Active-Active Databases {#considerations-for-conflictfree-replicated-databases}
 
-CRDBs are based on multi-master replication that is configured to run on each database.
-A CRDB is made up of instances of the data that are each stored on an RS cluster.
+Active-Active databases are based on multi-master replication that is configured to run on each database.
+A Active-Active database is made up of instances of the data that are each stored on an RS cluster.
 
-Before configuring a CRDB, you must:
+Before configuring a Active-Active database, you must:
 
-- If the CRDB spans a WAN, establish a VPN between each networks that hosts a cluster with a CDRB instance.
-- Setup [RS clusters]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) for each CRDB instance.
+- If the Active-Active database spans a WAN, establish a VPN between each networks that hosts a cluster with a CDRB instance.
+- Setup [RS clusters]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) for each Active-Active database instance.
 
     All clusters must have the same RS version.
 - Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.
 
-    CRDBs are not compatible with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) for inter-cluster communications,
+    Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) for inter-cluster communications,
     but are compatible with local application connections.
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
 
-## CRDB Current Limitations
+## Active-Active database Current Limitations
 
-1. RS is limited to five Participating Clusters or CRDB Instances per CRDB.
-1. An existing database cannot modified to be a CRDB.
-    To move existing data to a CRDB you must create a new CRDB and migrate your data.
-1. CRDBs do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
-1. CRDBs require FQDNs or mDNS (development only). Discovery Service is not supported with CRDBs.
-1. CRDBs are not compatible with [Replica Of]({{< relref "/rs/administering/active-passive.md" >}}).
+1. An Active-Active database cannot have more than five Participating Clusters or Active-Active database instances.
+2. An existing database cannot modified to be an Active-Active database.
+    To move existing data to an Active-Active database you must create a new Active-Active database and migrate your data.
+3. Active-Active databases do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
+4. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
+5. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/administering/active-passive.md" >}}).
 
     ReplicaOf is a one-way replication, while CRDB utilize multi-master replication.
 1. [OSS cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) is not supported with CRDB.
 
 ## Network Time Service (NTP or Chrony)
 
-For CRDBs, you must use a time service like NTP or Chrony.
-This is critical to minimize time drift both intercluster and intracluster for CRDBs on an ongoing basis.
+For Active-Active databases, you must use a time service like NTP or Chrony.
+This is critical to minimize time drift both intercluster and intracluster for Active-Active databases on an ongoing basis.
 
-There may be times that the OS system time is used for conflict resolution between CRDB Instances, although that rarely happens.
+There may be times that the OS system time is used for conflict resolution between Active-Active database instances, although that rarely happens.
 The built-in vector clocks tell RS the order of operations, or identifies that the data operations were concurrent.
 When there is no option to intelligently handle conflicting writes, OS timestamps are used in resolving the conflict.
 For example, in certain cases "string type" uses timestamps to resolve conflicts.
@@ -75,17 +75,17 @@ Do you want to set up NTP time synchronization now [Y/N]? Y
 
 ## Network Configurations
 
-RS assumes that networking between the clusters is already configured when you create a CRDB.
-For security purposes, recommend that you configure a secure VPN between all clusters that host a CRDB instance.
-The setup of the CRDB fails if there is no connectivity between the clusters.
+RS assumes that networking between the clusters is already configured when you create an Active-Active database.
+For security purposes, recommend that you configure a secure VPN between all clusters that host an Active-Active database instance.
+The setup of the Active-Active database fails if there is no connectivity between the clusters.
 
 ## Network Ports
 
-For initial configuration and ongoing maintenance of a CRDB, every node must have access to the REST API ports of every other node.
+For initial configuration and ongoing maintenance of an Active-Active database, every node must have access to the REST API ports of every other node.
 You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
-For synchronization, CRDBs operate over the standard endpoint ports.
-The endpoint port that you configure when you create the CRDB is the endpoint port of the proxy for that CRDB on each cluster.
+For synchronization, Active-Active databases operate over the standard endpoint ports.
+The endpoint port that you configure when you create the Active-Active database is the endpoint port of the proxy for that Active-Active database on each cluster.
 
 ### Data Persistence
 
@@ -94,7 +94,7 @@ for each participating cluster.
 
 ## Syncer process
 
-Each node in a cluster containing a CRDB instance hosts a process called syncer.
+Each node in a cluster containing an Active-Active database instance hosts a process called syncer.
 The syncer process:
 
 1. Connects to the other cluster proxy
@@ -111,18 +111,18 @@ In a full sync, the data from the master is transferred to the slave as an RDB f
 
 Partial synchronization requires a backlog large enough to store the data operations until connection is restored.
 
-### Syncer in Active-Active Replication (CRDB)
+### Syncer in Active-Active Replication
 
-In the case of a CRDB:
+In the case of an Active-Active database:
 
 - Multiple past replication IDs and offsets are stored to allow for multiple syncs
 - The Active-Active backlog is also sent to the slave during a full sync
 
 {{% warning %}}
-Full sync triggers heavy data transfers between geo-replicated CRDB instances.
+Full sync triggers heavy data transfers between geo-replicated Active-Active database instances.
 {{% /warning %}}
 
-The scenarios in which CRDB updates to other instances use partial synchronization are:
+The scenarios in which an Active-Active database updates to other instances use partial synchronization are:
 
 - Failover of master shard to slave shard
 - Restart or crash of slave shard that requires sync from master

@@ -24,8 +24,8 @@ available.
 | Free RAM | Cluster, Node | RAM available for system use |  |
 | Hit ratio | Database, Shard | Calculated as number of ops on existing keys out of the total number of ops | `number_of_ops_on_exsiting_keys` / `total_ops` |
 | Incoming traffic | Cluster, Node, Database | Total incoming traffic (in bytes/sec) to the database |  |
-| Incoming traffic compressed | CRDB | Total incoming compressed traffic (in bytes/sec) to the database |  |
-| Incoming traffic uncompressed | CRDB | Total incoming uncompressed traffic (in bytes/sec) to the database |  |
+| Incoming traffic compressed | Active-Active | Total incoming compressed traffic (in bytes/sec) to the database |  |
+| Incoming traffic uncompressed | Active-Active | Total incoming uncompressed traffic (in bytes/sec) to the database |  |
 | Latency | Database | Latency per operation | The graph shows average, min, max and last values are also shown |
 | Main Thread CPU usage | Database, Shard | Percent usage of the CPU by the main thread |  |
 | Memory limit | Database | Memory size limit of the database, enforced on `used_memory` | **Note** – used memory does not include:<br>1. Fragmentation ratio<br>2. Replication buffer – it is `auto_slavebuf_ratio` % of `used_memory`.The default `auto_slavebuf_ratio` is 10%. And there is `auto_slavebuf_min` and `auto_slavebuf_max` which are `64MB` and `2048MB` by default, it never exceeds these in both directions.<br>3. Lua memory limit which has 2 thresholds:<br>  - A Garbage Collection threshold triggered when Lua memory crosses 0.5GB<br>  - A hard 1GB the Lua is never exceeded |
@@ -34,8 +34,8 @@ available.
 | Other cmds/sec | Database | Number of other commands per second | For example: PING, AUTH, INFO |
 | Other commands latency | Database | Latency per other command | The graph shows average, min, max and last values are also shown |
 | Outgoing traffic | Cluster, Node, Database | Total outgoing traffic (in bytes/sec) from the database |  |
-| Pending writes max | CRDB | Maximum number of writes queued |  |
-| Pending writes min | CRDB | Minimum number of writes queued |  |
+| Pending writes max | Active-Active | Maximum number of writes queued |  |
+| Pending writes min | Active-Active | Minimum number of writes queued |  |
 | RAM fragmentation | Database, Shard | Ratio between the used (allocated) memory and the actual physical RAM that is used. |  |
 | Read misses/sec | Database, Shard | Number of read operations (per sec) on non-existing keys | This metric is more relevant for caching use cases. |
 | Reads latency | Database | Latency per read operation | The graph shows average, min, max and last values are also shown |

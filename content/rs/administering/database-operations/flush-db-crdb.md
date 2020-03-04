@@ -28,12 +28,12 @@ Example:
 redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 ```
 
-### Flushing Redis Enterprise Software CRDBs
+### Flushing Redis Enterprise Software Active-Active databases
 
-When you flush a CRDB, all of the replicas flush their data at the same time.
-To flush data from a CRDB, use the flush command in the crdb-cli.
+When you flush an Active-Active database (CRDB), all of the replicas flush their data at the same time.
+To flush data from an Active-Active database, use the flush command in the crdb-cli.
 
-1. To find the ID of the CRDB, run:
+1. To find the ID of the Active-Active database, run:
 
     ```src
     crdb-cli crdb list
@@ -49,7 +49,7 @@ To flush data from a CRDB, use the flush command in the crdb-cli.
     a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                3       cluster3.local
     ```
 
-1. To flush the CRDB, run:
+1. To flush the Active-Active database, run:
 
     ```src
     crdb-cli crdb flush --crdb-guid <CRDB_GUID>
@@ -78,15 +78,15 @@ To flush data from a CRDB, use the flush command in the crdb-cli.
     Status: finished
     ```
 
-To flush a CRDB with the REST API:
+To flush an Active-Active database with the REST API:
 
-1. To find the ID of the CRDB, run:
+1. To find the ID of the Active-Active database, run:
 
     ```src
     curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
     ```
 
-1. To flush the CRDB, run:
+1. To flush the Active-Active database, run:
 
     ```src
     curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush

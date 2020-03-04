@@ -28,11 +28,11 @@ Redis on Flash offers the unique ability to have a very large Redis database but
 
 [Learn more about Redis on Flash.]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 
-## Geo-Distributed Active-Active Conflict-free Replicated Redis Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-redis-databases-crdb}
+## Geo-Distributed Active-Active Conflict-free Replicated Redis Databases {#geodistributed-activeactive-conflictfree-replicated-redis-databases}
 
-Developing globally distributed applications can be challenging, as developers have to think about race conditions and complex combinations of events under geo-failovers and cross-region write conflicts. CRDBs simplify the development of such applications by directly using built-in smarts for handling conflicting writes based on the data type in use. Instead of depending on simplistic “last-writer-wins” conflict resolution, geo-distributed CRDBs combine techniques defined in CRDT (conflict-free replicated data types) research with Redis types to provide smart and automatic conflict resolution based on the data type's intent.
+Developing globally distributed applications can be challenging, as developers have to think about race conditions and complex combinations of events under geo-failovers and cross-region write conflicts. Active-Active databases simplify the development of such applications by directly using built-in smarts for handling conflicting writes based on the data type in use. Instead of depending on simplistic “last-writer-wins” conflict resolution, geo-distributed Active-Active databases combine techniques defined in CRDT (conflict-free replicated data types) research with Redis types to provide smart and automatic conflict resolution based on the data type's intent.
 
-[Learn more about CRDBs.]({{< relref "/rs/concepts/intercluster-replication.md" >}})
+[Learn more about Active-Active databases.]({{< relref "/rs/concepts/intercluster-replication.md" >}})
 
 ## Major Features
 

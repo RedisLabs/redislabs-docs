@@ -16,7 +16,7 @@ all write commands are synchronized from the sources to the destination.
 Replica Of lets you distribute the read load of your application across multiple databases or
 synchronize the database, either within RS or external to RS, to another database.
 
-[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/active-active.md" >}})
+[Active-Active geo-distribution (CRDB)]({{< relref "/rs/administering/active-active.md" >}})
 provides these benefits and also provides write access to all of the database replicas.
 
 **Warning:** Configuring a database as a replica of the database that it replicates

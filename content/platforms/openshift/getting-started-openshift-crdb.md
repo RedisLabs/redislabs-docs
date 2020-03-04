@@ -1,12 +1,12 @@
 ---
-Title: Getting Started with Active-Active (CRDB) on OpenShift with Route-Based Ingress
+Title: Getting Started with Active-Active on OpenShift with Route-Based Ingress
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In this guide, we'll set up a [CRDB]({{< relref "/rs/administering/active-active.md" >}})
-(conflict-free replicated database) deployment with Active-Active replication
+In this guide, we'll set up a [Active-Active]({{< relref "/rs/administering/active-active.md" >}})
+(also known as Conflict-free Replicated DataBase or CRDB) deployment with Active-Active replication
 spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator
 and OpenShift Route.
 

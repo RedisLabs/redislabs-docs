@@ -8,6 +8,10 @@ aliases: /rv/concepts/data-eviction-policies/
 ---
 For each database, you can choose from these data eviction policies:
 
+{{% note %}}
+[Active-Active Geo-Distributed databases]({{< relref "/rs/administering/active-active.md" >}}) (CRDBs) always operate in noeviction mode.
+{{% /note %}}
+
 |  **Options** | **Description** |
 |------------|-----------------|
 |  allkeys-lru | Evicts the least recently used (LRU) keys out of all keys in the database |
@@ -23,7 +27,3 @@ Redis Cloud supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-arch
 to prevent data eviction but maintain high performance.
 RoF can span your database across RAM and Flash Memory
 and intelligently manage hot data in RAM and cold data in Flash memory (SSD).
-
-{{% note %}}
-[Active-Active Geo-Distributed CRDBs]({{< relref "/rs/administering/active-active.md" >}}) always operates in noeviction mode.
-{{% /note %}}
