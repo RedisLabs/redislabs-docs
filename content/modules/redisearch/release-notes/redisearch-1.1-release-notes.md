@@ -1,11 +1,11 @@
 ---
-Title: v1.1
+Title: RediSearch 1.1 Release Notes
 description:
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch v1.1.0 Release Notes
+## RediSearch 1.1.0
 
 This is a major version (we almost named it 2.0), which includes months of work, mostly on the brand new aggregations engine.
 

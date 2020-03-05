@@ -1,13 +1,13 @@
 ---
-Title: v1.2
+Title: RedisTimeSeries 1.2 Release Notes
 description:
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisTimeSeries v1.2 GA (v1.2.2) Release Notes
+## RedisTimeSeries 1.2 GA (1.2.2)
 
-This is the General Availability Release of RedisTimeSeries 1.2 (v1.2.2)!
+This is the General Availability Release of RedisTimeSeries 1.2 (1.2.2)!
 
 Headlines:
 
@@ -48,7 +48,7 @@ Full details:
     - #[230](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/230) `TS.INFO` now [includes](https://oss.redislabs.com/redistimeseries/commands/#tsinfo) `total samples`, `memory usage`,`first time stamp`, ...
     - #[230](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/230) `MEMORY` calculates series memory footprint.
 
-- Bugfixes since v1.0.3
+- Bugfixes since 1.0.3
     - #[204](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/204) Module initialization params changed to 64 bits.
     - #[266](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/266) Memory leak in the aggregator context.
     - #[260](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/260) Better error messages.
