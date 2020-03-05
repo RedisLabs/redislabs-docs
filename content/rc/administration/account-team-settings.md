@@ -60,17 +60,16 @@ When you log in to the Redis Cloud Admin Console, you are sent an authentication
 To change the mobile phone number, click **Configure** for the text message code and enter the new mobile phone number.
 
 {{% note %}}
-We recommend that you also configure MFA for the Authenticator app as a second method of MFA.
+We recommend that you also configure MFA for an Authenticator app as a second method of MFA.
 If you cannot login to your account because of MFA, contact [Support](https://redislabs.com/company/contact/support/).
 
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
 {{% /note %}}
 
-#### Configuring MFA for the Authenticator App
+#### Configuring MFA for an Authenticator App
 
-After you configure MFA for text messages, you can also configure MFA for the Google Authenticator app.
-Then when you log in to the Redis Cloud Admin Console,
-you can select to use either an authentication code sent by text message or an authentication code shown in the Authenticator app for MFA.
+After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOPT) app such as Google Authenticator.
+Then when you log in to the Redis Cloud Admin Console, you can select to use either an authentication code sent by text message or an authentication code shown in the Authenticator app for MFA.
 
 To configure MFA for the Authenticator app:
 
@@ -92,11 +91,10 @@ You can deactivate MFA for your user account. To deactivate MFA, go to your prof
 ### Enforcing MFA for all User Accounts
 
 Account owner users can enforce MFA for all users in their account.
-After MFA is enforced for the account, all users are required to configure MFA the next time they log in to the Redis Cloud Admin Console,
-if MFA is not already enabled for the user account.
+After MFA is enforced for the account, all users are required to configure MFA the next time they log in to the Redis Cloud Admin Console, if MFA is not already enabled for the user account.
 
 When MFA is enforced, users cannot disable MFA for their account.
-When MFA is not enforced, users can enable MFA for their but they are not required to enable MFA.
+When MFA is not enforced, users can enable MFA for their account but they are not required to enable MFA.
 
 {{% tip %}}
 We recommend that you send an email to all the Redis Cloud Admin Console users to notify them of this change before you enforce MFA.
