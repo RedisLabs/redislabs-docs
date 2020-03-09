@@ -12,6 +12,7 @@ Headlines:
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
+
 - Features:
     - #[1051](https://github.com/RediSearch/RediSearch/issues/1051) Added support for updating tag fields on document updates with [`NOINDEX`](https://oss.redislabs.com/redisearch/Commands.html#field_options) fields.
 - Bugfixes:
