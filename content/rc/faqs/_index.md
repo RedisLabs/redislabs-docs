@@ -8,6 +8,9 @@ aliases: /rv/faqs/
 ---
 Here are some frequently asked questions about Redis Cloud.
 
+<div class="expand-parent">
+{{< expand-control >}}
+
 {{% expand "What exactly is Redis Enterprise?" %}}
 {{< embed-md "what-is-redis-enterprise.md"  >}}
 {{% /expand %}}
@@ -80,3 +83,4 @@ The economic benefit is dramatic:
 - As your data grows, and your processing needs increase, you can achieve cost-effective high speed operational and analytic processing with the versatility of Redis and the cost efficiency of Flash memory.
 - If your dataset is larger than 500GB, running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud is lower in cost than managing your own Redis instances on the cloud.
 {{% /expand%}}
+</div>
