@@ -28,13 +28,13 @@ These are the required parameters for any type of database.
 | Parameter     | Type   | Description         |
 |---------------|--------|---------------------|
 | name          | string | A nick name for the Redis database. Any string is valid |
-| dbType        | string | One of `"OSS_NON_CLUSTER"`, `"OSS_CLUSTER"` or `"OSS_SENTINEL"`. For any Redis Enterprise database, use `OSS_NON_CLUSTER` |
+| connectionType| string | One of `"STANDALONE"`, `"CLUSTER"` or `"SENTINEL"`. For any Redis Enterprise database (even with database clustering enabled), use `"STANDALONE"` |
 
-The remaining parameters depend on the database type.
+The remaining parameters depend on the connection type.
 
 ##### Standalone Database Parameters
 
-Standalone databases are added using `dbType: "OSS_NON_CLUSTER"`.
+Standalone databases are added using `connectionType: "STANDALONE"`.
 
 The following additional parameters are required for standalone databases.
 
@@ -51,7 +51,7 @@ The following additional parameters are required for standalone databases.
 ```json
 {
     "name": "QA Redis DB",
-    "dbType": "OSS_NON_CLUSTER",
+    "connectionType": "STANDALONE",
     "host": "redis.acme.com",
     "port": 6379
 }
@@ -59,7 +59,7 @@ The following additional parameters are required for standalone databases.
 
 ##### Redis Cluster Database Parameters
 
-Redis Cluster databases are added using `dbType: "OSS_CLUSTER"`.
+Redis Cluster databases are added using `connectionType: "CLUSTER"`.
 
 The following additional parameters are required for Redis Cluster databases.
 
@@ -75,7 +75,7 @@ The following additional parameters are required for Redis Cluster databases.
 ```json
 {
     "name": "QA Redis Cluster DB",
-    "dbType": "OSS_CLUSTER",
+    "connectionType": "CLUSTER",
     "seedNodes": [
         {
             "host": "redis-cluster-node-1.acme.com",
@@ -87,7 +87,7 @@ The following additional parameters are required for Redis Cluster databases.
 
 ##### Sentinel-Monitored Database Parameters
 
-Sentinel-monitored databases are added using `dbType: "OSS_SENTINEL"`.
+Sentinel-monitored databases are added using `connectionType: "SENTINEL"`.
 
 The following additional parameters are required for standalone databases.
 
@@ -107,7 +107,7 @@ The following additional parameters are required for standalone databases.
 ```json
 {
     "name": "QA Redis Sentinel DB",
-    "dbType": "OSS_SENTINEL",
+    "connectionType": "SENTINEL",
     "sentinelHost": "redis-sentinel.acme.com",
     "sentinelPort": 26379,
     "sentinelPassword": "sentinel-pass",
@@ -155,7 +155,7 @@ The client certificate and key details can be provided in two forms:
 ```json
 {
     "name": "Prod Redis Enterprise DB",
-    "dbType": "OSS_NON_CLUSTER",
+    "connectionType": "STANDALONE",
     "host": "redis-ent.acme.com",
     "port": 6379,
     "tls": {
