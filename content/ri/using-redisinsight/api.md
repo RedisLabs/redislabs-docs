@@ -161,25 +161,43 @@ The client certificate and key details can be provided in two forms:
 
 **Example**
 
-```json
-{
-    "name": "Prod Redis Enterprise DB",
-    "connectionType": "STANDALONE",
-    "host": "redis-ent.acme.com",
-    "port": 6379,
-    "tls": {
-        "useTls": true,
-        "clientAuth": true,
-        "clientCertificateKeyPair": {
-            "new": {
-                "name": "Prod client certificate",
-                "cert": "-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----",
-                "key": "-----BEGIN PRIVATE KEY-----...-----END PRIVATE KEY-----"
+1. Using an existing client certificate/key pair for a new database.
+    ```json
+    {
+        "name": "Prod Redis Enterprise DB",
+        "connectionType": "STANDALONE",
+        "host": "redis-ent.acme.com",
+        "port": 6379,
+        "tls": {
+            "useTls": true,
+            "clientAuth": true,
+            "clientCertificateKeyPair": {
+                "id": 6
             }
         }
     }
-}
-```
+    ```
+
+1. Creating a new client certificate/key pair while adding the database.
+    ```json
+    {
+        "name": "Prod Redis Enterprise DB",
+        "connectionType": "STANDALONE",
+        "host": "redis-ent.acme.com",
+        "port": 6379,
+        "tls": {
+            "useTls": true,
+            "clientAuth": true,
+            "clientCertificateKeyPair": {
+                "new": {
+                    "name": "Prod client certificate",
+                    "cert": "-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----",
+                    "key": "-----BEGIN PRIVATE KEY-----...-----END PRIVATE KEY-----"
+                }
+            }
+        }
+    }
+    ```
 
 
 ### Success Response
@@ -213,11 +231,44 @@ The name and ID is returned in the response body. The ID can be used to referenc
 when adding databases.
 
 **Code** : `201 Created`
+
 **Body** :
 ```json
 {
-    "id": 1,
-    "name": "VeriCert ACME Certificate"
+    "certificate": {
+        "id": 1,
+        "name": "VeriCert ACME Certificate"
+    }
+}
+```
+
+
+## Get Added TLS Certificate and Key Pairs
+
+Used to retrieve a list of [previously added](#add-tls-certificate-and-key-pair) TLS certificate and private key pair to use to connect to a Redis database.
+
+**URL** : `/api/tls-client-cert/`
+
+**Method** : `GET`
+
+**Auth required** : NO
+
+### Success Response
+
+A list of objects, each containing the client certificate's name and ID, is returned in the response body. 
+The ID can be used to reference this certificate/key pair when adding databases.
+
+**Code** : `200 OK`
+
+**Body** :
+```json
+{
+    "certificates": [
+        {
+            "id": 6,
+            "name": "VeriCert ACME Certificate"
+        }
+    ]
 }
 ```
 
