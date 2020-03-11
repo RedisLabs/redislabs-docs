@@ -1,13 +1,22 @@
 ---
-Title: RedisInsight REST API
+Title: Adding Databases Programmatically
 date: 2020-02-02 00:00:00 +0000
-weight: 1000
+weight: 15
 categories: ["RI"]
 path: api/
 nextStep:
     Title: Memory Analysis
     href: /docs/features/memory-analysis/
 ---
+
+If you have a lot of Redis databases or you are using RedisInsight as part of some automated workflow,
+you might want to add databases programmatically.
+
+Now this is possible using our experimental REST API. Below is the documentation for the endpoints 
+required to add databases.
+
+Note that this API should not be considered stable at this point and might change or break entirely in
+future releases. Do not rely on this API for production.
 
 ## Add Redis Database
 
