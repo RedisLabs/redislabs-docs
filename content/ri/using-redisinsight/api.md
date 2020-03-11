@@ -9,9 +9,9 @@ nextStep:
     href: /docs/features/memory-analysis/
 ---
 
-## Add Database API
+## Add Redis Database
 
-Used to collect a Token for a registered User.
+Used to add Redis databases to RedisInsight.
 
 **URL** : `/api/instance/`
 
@@ -42,7 +42,7 @@ The following additional parameters are required for standalone databases.
 |------------|--------|-----------------------------------------------------------------------|
 | host       | string | The hostname or IP address of your Redis database                     |
 | port       | number | The port your Redis datanase is listening on. It should be an integer |
-| password   | string | (optional) The password for your Redis datanase.                                     |
+| password   | string | (optional) The password for your Redis database.                      |
 | tls        | object | (optional) [TLS parameters for the database](#tls-parameters)         |
 
 
@@ -134,7 +134,7 @@ The following parameters can be used:
 
 The client certificate and key details can be provided in two forms:
 
-1. If the certificate and key has already been used for a database before, the ID of that certificate can be provided directly.
+1. If the certificate and key has already been used for a database before, or [has been added separately](#add-tls-certificate-and-key-pair), the ID of that certificate can be provided directly.
 
     | Parameter                | Type    | Description                                                   |
     |--------------------------|---------|---------------------------------------------------------------|
@@ -176,3 +176,39 @@ The client certificate and key details can be provided in two forms:
 ### Success Response
 
 **Code** : `201 Created`
+
+
+## Add TLS Certificate and Key Pair
+
+Used to add a new TLS certificate and private key pair to use to connect to a Redis database.
+
+**URL** : `/api/tls-client-cert/`
+
+**Method** : `POST`
+
+**Body Type**: JSON
+
+**Auth required** : NO
+
+### Parameters
+
+| Parameter  | Type   | Description                                                           |
+|------------|--------|-----------------------------------------------------------------------|
+| name       | string | The name of the new cert/key pair                                     |
+| cert       | string | The certificate string                                                |
+| key        | string | The private key string                                                |
+
+### Success Response
+
+The name and ID is returned in the response body. The ID can be used to reference this certificate/key pair
+when adding databases.
+
+**Code** : `201 Created`
+**Body** :
+```json
+{
+    "id": 1,
+    "name": "VeriCert ACME Certificate"
+}
+```
+
