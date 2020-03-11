@@ -22,7 +22,7 @@ future releases. Do not rely on this API for production.
 
 Used to add Redis databases to RedisInsight.
 
-**URL** : `/api/instance/`
+**URL** : `/api/db/`
 
 **Method** : `POST`
 
