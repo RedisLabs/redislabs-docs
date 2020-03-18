@@ -31,8 +31,8 @@ For example:
 You can enable slave HA using rladmin or using the REST API.
 Slave HA can be enabled or disabled at the cluster and database levels:
 
-- Enabled for the cluster - All databases in the cluster use slave HA
-- Enabled for the database - The specified database uses slave HA if it is also enabled for the cluster
+- For the cluster - By default, slave HA is enabled so that slave shards are automatically migrated for any database that has slave HA enabled.
+- For the database - By default, slave HA is disabled so that slave shards are not automatically migrated.
 
 By default, slave HA is disabled for the cluster and enabled for the databases so that:
 
