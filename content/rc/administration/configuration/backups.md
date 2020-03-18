@@ -29,7 +29,7 @@ To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
 steps:
 
-1. Select the **S3** service under **Services** -> **Storage ->
+1. Select the **S3** service under **Services** -> **Storage** ->
     **S3** to navigate to the **S3 Management Console**.
 1. Navigate to your bucket's permissions page:
     1. To create a new bucket:
