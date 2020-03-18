@@ -28,7 +28,7 @@ You may change your subscription at any time by going to Databases -> Configurat
 
 ## Securing Connection to Your Database with SSL/TLS
 
-You can [secure your database connections]]({{< relref "/rc/securing-redis-cloud-connections.md" >}}) with SSL/TLS.
+You can [secure your database connections]({{< relref "/rc/securing-redis-cloud-connections.md" >}}) with SSL/TLS.
 
 ## Redis Password
 
