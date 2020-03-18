@@ -477,7 +477,7 @@ Syntax:
 
 Ouput:
 
-See example [here](/rcessentials/administration).
+See example [here](/rc/administration).
 
 ### Recently updated
 
