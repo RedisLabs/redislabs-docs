@@ -3294,7 +3294,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
 /* Expand shortcode control */
 .expand-shortcode-control {
   display: inline-block;
-  font-weight: 700;
   margin-bottom: 10px;
 }
 
@@ -3304,5 +3303,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
 }
 
 .expand-shortcode-control i.fa-lg {
+  font-size: 20px;
   vertical-align: -2px;
 }
