@@ -29,17 +29,18 @@ For example:
 ## Configuring High Availability for Slave Shards
 
 You can enable slave HA using rladmin or using the REST API.
-Slave HA can be enabled or disabled at the cluster and database levels:
+Slave HA can be enabled or disabled at the cluster and database levels.
+When slave HA is enabled for both the cluster and the database,
+slave shards are automatically migrated to another node in the event of a master or slave shard failure.
 
-- For the cluster - By default, slave HA is enabled so that slave shards are automatically migrated for any database that has slave HA enabled.
-- For the database - By default, slave HA is disabled so that slave shards are not automatically migrated.
+By default, slave HA is enabled for the cluster and disabled for each database so that:
 
-By default, slave HA is disabled for the cluster and enabled for the databases so that:
+- To enable slave HA for a database in the cluster, enable slave HA for that database.
+- To disable slave HA for all databases in the cluster, disable slave HA for the cluster.
 
-- To enable slave HA for all databases in the cluster - Enable slave HA for the cluster
-- To enable slave HA for only specified databases in the cluster:
-    1. Enable slave HA for the cluster
-    2. Disable slave HA for the databases for which you do not want slave HA enabled
+{{% note %}}
+For Active-Active databases, slave HA is enabled for the database by default to make sure that slave shards are available for Active-Active replication.
+{{% /note %}}
 
 To enable slave HA for a cluster using rladmin, run:
 
@@ -55,7 +56,7 @@ You can see the current configuration options for slave HA with: `rladmin info c
 
 ### Grace Period
 
-By default, slave HA has a 15-minute grace period after node failure and before new slave shards are created.
+By default, slave HA has a 10-minute grace period after node failure and before new slave shards are created.
 To configure this grace period from rladmin, run:
 
     rladmin tune cluster slave_ha_grace_period <time_in_seconds>
@@ -86,7 +87,7 @@ After node failure, the cluster cooldown period prevents another slave migration
 database in the cluster until the cooldown period ends (Default: 1 hour).
 
 After a database is migrated with slave HA,
-it cannot go through another slave migration due to another node failure until the cooldown period for the database ends (Default: 24 hours).
+it cannot go through another slave migration due to another node failure until the cooldown period for the database ends (Default: 2 hours).
 
 To configure this grace period from rladmin, run:
 
