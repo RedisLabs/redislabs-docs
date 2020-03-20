@@ -9,4 +9,4 @@ aliases: /rv/administration/setup_and_editing/
         /rc/administration/setup-editing/
 ---
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}
