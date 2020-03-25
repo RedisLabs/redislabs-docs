@@ -29,17 +29,14 @@ For example:
 ## Configuring High Availability for Slave Shards
 
 Using rladmin or the REST API, slave HA is controlled on the database level and on the cluster level.
-On the database level, you can enable or disable slave HA for the database.
-On the cluster level, you can disable slave HA for the all of the databases in the cluster
-even if slave HA is enabled at the database level for some of the databases.
+You can enable or disable slave HA for a database or for the entire cluster.
 
 When slave HA is enabled for both the cluster and a database,
 slave shards for that database are automatically migrated to another node in the event of a master or slave shard failure.
+If slave HA is disabled at the cluster level,
+slave HA will not migrate slave shards even if slave HA is enabled for a database.
 
-By default, slave HA is enabled for the cluster and disabled for each database so that:
-
-- To enable slave HA for a database, enable slave HA for that database.
-- To enable slave HA for all databases in the cluster, enable slave HA for each database.
+By default, slave HA is enabled for the cluster and disabled for each database so that o enable slave HA for a database, enable slave HA for that database.
 
 {{% note %}}
 For Active-Active databases, slave HA is enabled for the database by default to make sure that slave shards are available for Active-Active replication.
