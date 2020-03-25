@@ -91,10 +91,10 @@ You must either be logged in as the root user or use sudo to run the install pro
     including the rlcheck installation verification.
 
     {{% note %}}
-    To install RS without answering the installation questions, you can:
+To install RS without answering the installation questions, either:
 
-    - Run `./install.sh -y` to answer yes to all of the questions.
-    - Use an [answer file](#installation-answer-file) to answer the installation questions.
+- Run `./install.sh -y` to answer yes to all of the questions.
+- Use an [answer file](#installation-answer-file) to answer the installation questions.
     {{% /note %}}
 
     After RS is successfully installed, the IP address of the RS web UI is shown:
@@ -179,7 +179,7 @@ To install RS with an answer file:
 If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
     {{% /note %}}
 
-2. Run the install script with `-c` and the path to the answer file.
+1. Run the install script with `-c` and the path to the answer file.
 
     For example:
 
