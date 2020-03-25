@@ -6,8 +6,8 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/
 ---
-To complete the upgrade process you must upgrade the Redis Enterprise Software (RS)
-software on each of the nodes and then upgrade each of the databases in the cluster.
+To upgrade the Redis Enterprise Software (RS) software on a cluster
+you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{% warning %}}
 Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}),
@@ -28,10 +28,10 @@ to the new version.
 {{% warning %}}Using features from the newer version before all nodes are upgraded
 can produce unexpected results or cause failures in the cluster.{{% /warning %}}
 
-## Upgrading nodes
+## Upgrading a Node
 
 Upgrading the software on a node requires installing the [RS installation
-package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
+package]({{< relref "/rs/installing-upgrading/_index.md" >}})
 on all of the machines on which RS is installed.
 
 {{% warning %}}You must upgrade the master node before you upgrade the other nodes.
@@ -69,7 +69,7 @@ If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
-## Upgrading databases
+## Upgrading a Database
 
 Some RS upgrades add support for new Redis versions. In these cases,
 Redis Labs recommends that you upgrade the databases to the new Redis

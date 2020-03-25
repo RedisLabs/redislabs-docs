@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/designing-production/supported-platforms/
 ---
 Redis Enterprise Software (RS) is supported on several operating systems, cloud environments, and virtual environments.
 
