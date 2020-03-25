@@ -1,268 +1,188 @@
 ---
-Title: Installing the Setup Package
+Title: Installing Redis Enterprise Software on Linux
 description:
-weight: 10
+weight: 35
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/installing-upgrading/downloading-installing/
+aliases: /rs/administering/installing-upgrading/
+        /rs/installing-upgrading/downloading-installing/
 ---
-The first thing you need to choose the platform to run Redis
-Enterprise Software on. If on-premise or in the cloud and you want to
-install it yourself, you need to download the package. For Amazon AWS, there are other instructions to set up an AMI image.
-You can also run RS in a Docker container for testing purposes.
-Navigate to the [Redis Labs download
-page](https://app.redislabs.com/#/sign-up/software?direct=true) and
-select one of the following options:
+To install Redis Enterprise Software (RS), you must first choose the [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
+In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS on these platforms:
 
-- **Installation package** - Click the **Download** button for the OS
-    you would like to use in order to download the .tar file
-    installation package.
-- **AMI** - Click the **AWS AMI** button for the option you would
-    like to use in order to launch an instance on Amazon Web Services
-    (AWS).
-- **Docker** (For testing purposes only) - Go
-    [here]({{< relref "/rs/getting-started/docker/_index.md" >}})
-    for the install guide and skip this page.
+- Amazon AWS AMI
+- [Docker container]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) (for development and testing only)
+- [Pivotal Cloud Foundry]({{ relref "/platforms/pcf/using-pcf.md" }})
+- [Kubernetes]({{< relref "/platforms/kubernetes/_index.md.md" >}})
 
-Note: If you are using the AMI option or installing the .tar file
-package on an AWS instance, review the guidelines in [Configuration of
-AWS
-instances]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}}).
+To access the installation package for any of these platforms:
+
+1. Go to the [Redis Labs download page](https://app.redislabs.com/#/sign-up/software?direct=true).
+1. Log in with your Redis Labs credentials or sign up for a new account.
+1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Download**.
+
+{{% note %}}
+Before you install the Linux package or AWS AMI on an AWS instance,
+review the [configuration requirements for AWS instances]
+({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}}).
+{{% /note %}}
+
+In this article we walk you through the process for installing the RS installation package for Linux.
 
 ## Prerequisites
 
-1. If you intend to use [Redis on
-    Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for your
-    databases, be familiar with the specifics of that feature and its
-    set of prerequisites, storage, and considerations.
-1. [Disable Linux
-    swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}})
-    on all nodes to be part of the cluster.
-1. Ensure you have root level access to each node, either directly or
-    via sudo.
-1. When port 53 is in use, the installation fails. This is known to happen in
+- If you want to use Redis on Flash (RoF) for your databases, review the [prerequisites, storage requirements, and other considerations]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
+    {{% expand "To prepare and format the flash memory:" %}}
+Run:
+
+```src
+sudo /opt/redislabs/sbin/prepare_flash.sh
+```
+
+This command finds all the unformatted disks and mounts them as RAID partitions in `/var/opt/redislabs/flash`.
+
+To verify the disk configuration, run:
+
+```src
+sudo lsblk
+```
+    {{% /expand %}}
+
+- [Disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
+- Make sure that you have root level access to each node, either directly or with sudo.
+- When port 53 is in use, the installation fails. This is known to happen in
     default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
     To workaround this issue, change the system configuration to make this port available
     before running RS installation.
 
     {{% expand "Example steps to resolve the port 53 conflict:" %}}
 1. Run: `sudo vi /etc/systemd/resolved.conf`
-1. Add `DNSStubListener=no` as the last line in the file and save the file.
-1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
-1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
-1. Run: `sudo service systemd-resolved restart`
+2. Add `DNSStubListener=no` as the last line in the file and save the file.
+3. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
+4. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
+5. Run: `sudo service systemd-resolved restart`
     {{% /expand %}}
 
-## Installation Procedure
+## Installing RS on Linux
 
-If you downloaded the .tar file installation package, install the
-package on a machine that is one of the nodes in the cluster
-by performing the following steps:
+After you download the .tar file installation package, install the
+package on one of the nodes in the cluster.
 
-1. In the operating system command-line-interface (CLI), also referred
-    to as Terminal, run the cd command to change the location to the
-    directory where you saved the .tar file.
-1. Extract the package by running the following command in the CLI:
+To install RS on Linux from the CLI:
+
+1. Copy the installation package to the node.
+1. On the node, change to the directory where the installation package is and extract the installation files:
 
     ```src
     tar vxf <tarfile name>
     ```
 
-1. To initiate the installation in the CLI, run the following command:
+1. To install RS, run:
 
     ```src
     sudo ./install.sh
     ```
 
-    Note: You must either be the root user or have access to sudo to the
-    root user to run the install process.
+    {{% note %}}
+You must either be logged in as the root user or use sudo to run the install process.
+    {{% /note %}}
 
-1. During the installation process, enter the requested input each time
-    you are prompted to do so.
-1. After installation has completed successfully
-    1. The install finishes up with rlcheck make testing the
-        installation out and confirming the installation passed.
+1. Follow the [installation prompts](#installation-questions) to complete the installation process,
+    including the rlcheck installation verification.
 
-        ```src
-        2017-04-24 10:54:12 [!] Installation is complete!
-        2017-04-24 10:54:12 [?] Would you like to run rlcheck to
-        verify proper configuration? [Y/N]? Y
-        2017-04-24 10:54:15 [$] executing:
-        '/opt/redislabs/bin/rlcheck
-        --suppress-tests=verify_bootstrap_status,verify_processes'
-        saving to file: /var/opt/redislabs/log/rlcheck.log
-        ##### Welcome to RedisLabs Enterprise Cluster settings
-        verification utility ####
-        Skipping test: verify_bootstrap_status
-        Skipping test: verify_processes
-        Running test: verify_dmcproxy
-        Verifying dmcproxy process...
-        PASS
-        Running test: verify_port_range
-        Verifying local port range...
-        PASS
-        Summary:
-        -------
-        ALL TESTS PASSED.
-        2017-04-24 10:54:15 [!] Please logout and login again to make
-        sure all environment changes are applied.
-        2017-04-24 10:54:15 [!] Point your browser at the following
-        URL to continue:
-        2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
-        ```
+    {{% note %}}
+    To install RS without answering the installation questions, you can:
 
-        Make sure to save this URL for when you go to configure the
-        cluster.
+    - Run `./install.sh -y` to answer yes to all of the questions.
+    - Use an [answer file](#installation-answer-file) to answer the installation questions.
+    {{% /note %}}
 
-    1. If you intend to create [Redis on
-        Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) enabled
-        databases, you must prepare and format the flash memory. You
-        should run:
+    After RS is successfully installed, the IP address of the RS web UI is shown:
 
-        ```src
-        sudo /opt/redislabs/sbin/prepare_flash.sh
-        ```
+    ```src
+    Summary:
+    -------
+    ALL TESTS PASSED.
+    2017-04-24 10:54:15 [!] Please logout and login again to make
+    sure all environment changes are applied.
+    2017-04-24 10:54:15 [!] Point your browser at the following
+    URL to continue:
+    2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
+    ```
 
-        This command finds all the unformatted disks, RAIDs and mounts
-        them under /var/opt/redislabs/flash
-        You can verify the configuration by running:
+RS is now installed on the node.
+Repeat this process for each node in the cluster and then:
 
-        ```src
-        sudo lsblk
-        ```
+1. [Create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
+or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an RS cluster.
+1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
-1. Open a web browser and go to the Web UI to complete the cluster
-    setup.
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}) database.
 
-### Silent Installations
+### Installation questions
 
-If you would like to automate the installation script, use either of the
-following methods to perform a "silent" installation that speeds the
-process:
+During the installation process, you must answer a few questions to configure the node for your environment.
+These installation questions are:
 
-1. Run the install script with "-y" as a parameter (i.e. ./install.sh
-    -y), which silently uses "Y" as a default response to all
-    questions.
-    WARNING: By using the -y parameter you fail to see any alerts
-    from the installer to the possible presence of DBs in Sync state.
-    These alerts when in normal mode allow you to stop the upgrade if
-    they find a DB in that state. Check that your DBs are not in this
-    state before possibly using this flag. Otherwise, do not use this
-    feature.
-1. Run the install script with "-c" and an answers file path as
-    parameters (i.e. ./install.sh --c \<answers and="" file="" name=""
-    path=""\>), thereby allowing the installation to use the answers
-    provided in your answers file. Here is sample content for the
-    answers file:
+- **Linux swap file** - `Swap is enabled. Do you want to proceed? [Y/N]?`
+
+    We recommend that you [disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) in the operating system configuration
+    to give RS control of the memory allocation.
+
+- **Automatic OS tuning** - `Do you want to automatically tune the system for best performance [Y/N]?`
+
+    To let the RS installation optimize the OS for Redis Enterprise, answer `Y`.
+    The installation process prompts you for additional information.
+
+    The `/opt/redislabs/sbin/systune.sh` file contains details about the tuning process.
+
+- **Network time** - `Do you want to set up NTP time synchronization now [Y/N]?`
+
+    Redis Enterprise requires that all nodes of the cluster have synchronized time.
+    You can either let the installation process configure NTP
+    or you can [configure NTP manually]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
+
+- **Firewall ports** - `Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?`
+
+    RS requires the node to have [specific network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) open.
+    You can either:
+
+    - Answer `Y` to let the installation process open these ports.
+    - Answer `N` and configure the firewall manually for [RHEL/CentOS firewall]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
+    - Answer `N` and configure the firewall on the node manually for your OS.
+
+- **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
+
+    We recommend that you run the rlckeck installation verification to make sure that the installation completed succesfully.
+    If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
+
+### Installation answer file
+
+To avoid answering the installation questions during the installation process,
+you can prepare an answer file and use it to do a silent installation.
+
+To install RS with an answer file:
+
+1. Prepare the answer file with the answers to the questions.
+
+    For example:
+
+    ```sh
+    ignore_swap=no
     systune=yes
     ntp=no
     firewall=no
     rlcheck=yes
+    ```
 
-Not all questions in install.sh can be automated with the answers file.
-The reason being is we want an admin to see what was detected and
-consciously agree to do or not to do something. An example is when
-install.sh detects that a shard of a DB is syncing right now. If that
-situation is detected, the admin needs to knowingly assume the risk of
-proceeding and not waiting.
+    {{% note %}}
+If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
+    {{% /note %}}
 
-Note: While `sudo ./install.sh -y` or using an answers file does not
-perform the steps necessary for Redis on Flash or creating a
-cluster. That part of each node's install still has to be done and
-potentially automated separately.
+2. Run the install script with `-c` and the path to the answer file.
 
-## Installation questions
+    For example:
 
-During the interactive installation process, there questions asked to
-understand how much you want the process to try and configure the OS
-environment for optimal usage by Redis Enterprise. Each question and
-what they do is below.
-
-### Linux Swap
-
-```src
-Swap is enabled. Do you want to proceed? [Y/N]?
-```
-
-Due to how Redis Enterprise manages memory on a node, Linux swap should
-be disabled in the operating system configuration. For more information
-on why and how to do this, please see [Swap in
-Linux]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}).
-
-### Shard is syncing
-
-Under some circumstances, a database shard may be syncing at the time
-you run the install script.
-
-```src
-shard:X of db:Y is now syncing. Do you want to continue the upgrade
-```
-
-This answer cannot be automatically answered 'Y' due to the sensitive
-nature of the operation it is warning about. An admin must either assume
-the risk or abort the install/upgrade.
-
-### Automatically Tuning the System
-
-```src
-Do you want to automatically tune the system for best performance [Y/N]?
-```
-
-The install process can run a script that does environment changes on
-your behalf. If you answer yes to this question, the install asks
-more in-depth questions to best optimize the OS environment for running
-Redis Enterprise.
-
-If you answer no, you manually have to tune the OS for running
-Redis Enterprise.
-
-It is recommended to answer 'Y' to this question and the remaining
-questions as they streamline the configuration of the environment.
-
-If you would like to see specifically what is being done, please see
-/opt/redislabs/sbin/systune.sh on the node.
-
-### Network Time Configuration
-
-```src
-Do you want to set up NTP time synchronization now [Y/N]?
-```
-
-Redis Enterprise requires that all nodes of the cluster have
-synchronized time. If you do not permit the script to configure this,
-then you must do this manually. For more information see [Syncing Node
-Clocks]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
-
-### Firewall Ports
-
-```src
-Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?
-```
-
-If a firewall is operating on the node the install process is running,
-the script can configure the firewall to open the correct [ports Redis
-Enterprise
-requires]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
-to operate. If not, you have to open the necessary ports on your
-own. If you need, there is specific information on [RHEL/CentOS firewall
-configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
-
-### Final Check
-
-```src
-Would you like to run rlcheck to verify proper configuration? [Y/N]?
-```
-
-This runs a final check to make sure everything has been done correctly.
-It is advisable to answer 'Y' on this. If
-you would like to see the contents of this script, it is installed
-to /opt/redislabs/bin/rlcheck on every Redis Enterprise
-node.
-
-## Next Steps
-
-After you install RS, you must [create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
-or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) a cluster. Then you can:
-
-1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
-1. [Create an active/active database or CRDB]({{< relref "/rs/administering/database-operations/create-crdb.md" >}})
+    ```sh
+    ./install.sh -c /home/answerfile
+    ```
