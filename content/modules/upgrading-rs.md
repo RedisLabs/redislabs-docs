@@ -19,7 +19,7 @@ Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
 
 - Redis Enterprise modules - To download the upgrades to the modules,
     go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
-- Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/_index.md" >}}).
+- Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
 ## Deploying the Packaged Module into Redis Enterprise Software
 
