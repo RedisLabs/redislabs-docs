@@ -19,7 +19,7 @@ To access the installation package for any of these platforms:
 
 1. Go to the [Redis Labs download page](https://app.redislabs.com/#/sign-up/software?direct=true).
 1. Log in with your Redis Labs credentials or sign up for a new account.
-1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Download**.
+1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
 
 {{% note %}}
 Before you install the Linux package or AWS AMI on an AWS instance,
