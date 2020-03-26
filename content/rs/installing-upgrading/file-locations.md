@@ -1,7 +1,7 @@
 ---
 Title: File Locations
 description:
-weight: 40
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/file-locations/

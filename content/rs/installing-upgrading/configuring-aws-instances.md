@@ -71,6 +71,7 @@ When configuring the Security Group:
     To limit the number of open ports, you can open just the [ports used by RS]
     ({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
-After successfully launching the instances, set up the cluster as
-described in [Initial setup - creating a new
-cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
+After successfully launching the instances:
+
+1. Install RS from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+2. [Set up the cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).

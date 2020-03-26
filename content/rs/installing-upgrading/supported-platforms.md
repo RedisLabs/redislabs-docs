@@ -1,7 +1,7 @@
 ---
 Title: Supported Platforms
 description:
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/supported-platforms/

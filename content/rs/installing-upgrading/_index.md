@@ -1,5 +1,5 @@
 ---
-Title: Installing Redis Enterprise Software on Linux
+Title: Installing Redis Enterprise Software
 description:
 weight: 35
 alwaysopen: false
@@ -10,7 +10,7 @@ aliases: /rs/administering/installing-upgrading/
 To install Redis Enterprise Software (RS), you must first choose the [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
 In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS on these platforms:
 
-- Amazon AWS AMI
+- [Amazon AWS AMI]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}})
 - [Docker container]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) (for development and testing only)
 - [Pivotal Cloud Foundry]({{ relref "/platforms/pcf/using-pcf.md" }})
 - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md.md" >}})
@@ -18,8 +18,8 @@ In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you 
 To access the installation package for any of these platforms:
 
 1. Go to the [Redis Labs download page](https://app.redislabs.com/#/sign-up/software?direct=true).
-1. Log in with your Redis Labs credentials or sign up for a new account.
-1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
+2. Log in with your Redis Labs credentials or sign up for a new account.
+3. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
 
 {{% note %}}
 Before you install the Linux package or AWS AMI on an AWS instance,
