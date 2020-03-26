@@ -86,17 +86,8 @@
             document.getElementById('successMsg').style.display = 'none';
             document.getElementById('g-signin2').style.display = 'block';
         }
-        var isProfileAllowed = function (profile) {
-            var e = profile.getEmail();
-            return /@redislabs.com\s*$/.test(e);
-        }
         var onSignIn = function (googleUser) {
             var profile = googleUser.getBasicProfile();
-            if (isProfileAllowed(profile)) {
-                alert("Email address not valid.");
-                logout();
-                return;
-            }
             localStorage.setItem('auth_token', createAuthToken());
             setSuccessMsg('show');
         }
