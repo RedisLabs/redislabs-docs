@@ -79,7 +79,7 @@ Before you choose to backup to OpenStack Swift, make sure that you have:
 
 ### Azure Blob Storage
 
-Before you choose to backup to OpenStack Swift, make sure that you have:
+Before you choose to backup to Azure Blob Storage, make sure that you have:
 
 - Storage location path in the format: `/container_name/[path/]/`
 - Account name
@@ -87,7 +87,7 @@ Before you choose to backup to OpenStack Swift, make sure that you have:
 
 ### Google Cloud Storage
 
-Before you choose to backup to OpenStack Swift, make sure that you have:
+Before you choose to backup to Google Cloud Storage, make sure that you have:
 
 - Storage location path in the format: `/bucket_name/[path/]/`
 - Client ID
