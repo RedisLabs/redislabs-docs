@@ -184,5 +184,5 @@ If you use `systune=yes`, the installation answers yes to all of the system tuni
     For example:
 
     ```sh
-    ./install.sh -c /home/answerfile
+    ./install.sh -c /home/user/answers
     ```
