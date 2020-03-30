@@ -133,6 +133,7 @@ During the installation you can specify the directories for the RS files to be i
 The files are installed in the `redislabs` directory in the path that you specify.
 
 {{% note %}}
+- Custom installation directories are supported on RedHat Enterprise Linux versions 6 and 7.
 - If a `redislabs` directory already exists in the path that you specify, the installation fails.
 - All nodes in a cluster must be installed with the same file locations.
 {{% /note %}}
@@ -158,7 +159,8 @@ During the installation you can specify the OS user and group that RS is install
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
 {{% note %}}
-You must create the user and group that you want to install with before you install RS.
+- Custom installation user is supported on RedHat Enterprise Linux versions 6 and 7.
+- You must create the user and group that you want to install with before you install RS.
 {{% /note %}}
 
 To install RS with a specified user and group, run:
