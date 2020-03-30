@@ -37,8 +37,9 @@ To create a new subscription:
     1. Review the subscription configuration.
 
         For Pro subscriptions only:
-            1. Enable **Multi-AZ** to get improved high availability when multiple availability zones are available.
-            1. Enable **Persistent Storage Encryption** to attach encrypted EBS volumes to your instances so that the persistent storage for your subscription is encrypted.
+
+        1. Enable **Multi-AZ** to get improved high availability when multiple availability zones are available.
+        1. Enable **Persistent Storage Encryption** to attach encrypted EBS volumes to your instances so that the persistent storage for your subscription is encrypted.
     1. Enter the IP range for the subscription in **Deployment CIDR**.
     1. Enter your **Credit card** information.
     1. Enter a name for the subscription.

@@ -1,11 +1,11 @@
 ---
-Title: v1.2
+Title: RediSearch 1.2 Release Notes
 description:
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch v1.2.0 Release Notes
+## RediSearch 1.2.0
 
 This version is the last version that I (@dvirsky) will be releasing, and it includes a lot of new cool features, and actually NO bug-fixes over 1.1.0! So long and thanks for all the fish!
 
@@ -22,7 +22,7 @@ FT.AGGREGATE idx "*"
    FILTER "@num < 100"
 ```
 
-See [http://redisearch.io/Aggregations/](http://redisearch.io/Aggregations/) for more details. 
+See [http://redisearch.io/Aggregations/](http://redisearch.io/Aggregations/) for more details.
 
 #### Query Attributes
 

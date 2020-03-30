@@ -19,14 +19,14 @@ Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
 
 - Redis Enterprise modules - To download the upgrades to the modules,
     go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
-- Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/_index.md" >}}).
+- Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
 ## Deploying the Packaged Module into Redis Enterprise Software
 
 To deploy an upgraded package:
 
 1. In the Redis Enterprise web UI, go to the: **settings**
-1. In **redis<sup>e</sup> modules**, click **Add Module**.
+1. In **redis modules**, click **Add Module**.
 
     ![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
 
@@ -45,6 +45,11 @@ To deploy an upgraded package:
 After you upgrade the module for a database, the database shards are restarted.
 This causes a short interruption in the availability of this database across the cluster.
 {{% /note %}}
+
+When you upgrade the module for a database, you can either:
+
+- Specify the module arguments to replace the current arguments.
+- Specify the 'keep_module_args' flag to use the current argument.
 
 1. Connect to the terminal of a node in the cluster
 1. Run `rladmin status` to list the databases on the node.
@@ -72,20 +77,20 @@ This causes a short interruption in the availability of this database across the
 
 Here are some examples of module upgrades:
 
-- To upgrade the version of RediSearch to 10017:
+- To upgrade the version of RediSearch to 1.6.7:
 
     ```src
-    rladmin upgrade module db_name MyAwesomeDB module_name ft version 10017 module_args "PARTITIONS AUTO"
+    rladmin upgrade module db_name MyAwesomeDB module_name ft version 10607 module_args "PARTITIONS AUTO"
     ```
 
-- To upgrade RedisBloom to version 10100:
+- To upgrade RedisBloom to version 2.2.1:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name bf version 10100 module_args ""
+    rladmin upgrade module db_name MyDB module_name bf version 20201 module_args ""
     ```
 
-- To upgrade RedisJSON to 10002:
+- To upgrade RedisJSON to 1.0.4:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name ReJSON version 10002 module_args ""
+    rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args ""
     ```

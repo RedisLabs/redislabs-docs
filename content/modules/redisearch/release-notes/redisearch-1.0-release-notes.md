@@ -1,11 +1,11 @@
 ---
-Title: v1.0
+Title: RediSearch 1.0 Release Notes
 description:
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch v1.0.10 Release Notes
+## RediSearch 1.0.10
 
 This is a bug-fix release with some stability fixe, a few processing bug fixes, and a few small additions:
 
@@ -25,7 +25,7 @@ This is a bug-fix release with some stability fixe, a few processing bug fixes, 
 
 - Added support for tag prefix completions (137b346)
 
-## RediSearch v1.0.9 Release Notes
+## RediSearch 1.0.9
 
 This is a maintenance release from the 1.0 branch, that does not yet contain the aggregation engine that's already in master. It includes a few small fixes and API additions that were backported from master.
 

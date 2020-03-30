@@ -1,33 +1,26 @@
 ---
-Title: Database alerting
+Title: Configuring Database Alerts
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In the *Alerts* section of the Redis Enterprise Software database page,
-you can designate which database events trigger alert
-notifications.
+For each database, you can enable alerts for database events, such as high memory usage or throughput.
 
-For instructions on configuring alerts at the cluster level, refer to
-[Managing cluster
-alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
+You can also enable alerts for the cluster and nodes in the [cluster alerts]]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
 
-Some alerts can only be turned on or off, such as **[Periodic
-backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}})
-failed**. Some alerts require setting a threshold, such as **Dataset
-size has reached a certain percentage of its limit**.
+Configured alerts are shown:
 
-Configured alerts appear in the database **Status **field, in
-the **Log **page, and can also be sent by **email**.
+- As a warning indicator (![Warning](/images/rs/icon_warning.png#no-click "Warning") for the database
+- In the **log**
+- In emails, if you configure email alerts
 
-**To enable receiving email alerts**:
+To enable alerts for a database:
 
-1. Select the checkbox at the bottom of the section.
-1. Add the relevant users on the **Team** page, and make sure that the
-    checkbox Email Alerts is selected (for additional details, refer to
-    [Account
-    Management]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}).
-1. Configure the email server settings on the **General** page (for
-    additional details, refer to [general
-    settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}})).
+1. In **configuration** for each database, click **show adavnced options** to see the database alerts and select the alerts that you want to get for the database.
+2. Click **Update**.
+
+To enable alert emails:
+
+1. Configure the [email server settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}})).
+2. In **settings** > **team**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}) that the user receives.

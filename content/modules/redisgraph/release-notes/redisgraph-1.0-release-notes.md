@@ -1,11 +1,11 @@
 ---
-Title: v1.0
+Title: RedisGraph 1.0 Release Notes
 description:
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph v1.0.15 Release Notes
+## RedisGraph 1.0.15
 
 - GraphBLAS 2.3.0 [release notes](https://github.com/RedisLabsModules/RedisGraph/pull/390#issuecomment-470620353)
 - WITH clause: Allows query parts to be chained together, piping the results from one to be used as starting points or criteria of the next. [ref p.78](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
@@ -16,34 +16,34 @@ categories: ["Modules"]
     - #[363](https://github.com/RedisGraph/RedisGraph/issues/363) Remove graph entity property when it is set to null
     - #[386](https://github.com/RedisGraph/RedisGraph/issues/386) Return updated values on queries that modify data
 
-## RedisGraph v1.0.14 Release Notes
+## RedisGraph 1.0.14
 
 license update, REDIS SOURCE AVAILABLE LICENSE AGREEMENT.
 
-## RedisGraph v1.0.13 Release Notes
+## RedisGraph 1.0.13
 
 Reuse attribute name to avoid duplication
 
-## RedisGraph v1.0.12 Release Notes
+## RedisGraph 1.0.12
 
 traverse direction optimization to reduce number of matrix transpose
 
-## RedisGraph v1.0.11 Release Notes
+## RedisGraph 1.0.11
 
 Removed OpenMP requirement
 Traverse from multiple nodes concurrently
 
-## RedisGraph v1.0.10 Release Notes
+## RedisGraph 1.0.10
 
 Update indices when MERGE create new entities
 
-## RedisGraph v1.0.9 Release Notes
+## RedisGraph 1.0.9
 
 Support for mixing MERGE and SET clauses
 Granular writer locking
 Fix graph serialization error in duplicate edge handling
 
-## RedisGraph v1.0.8 Release Notes
+## RedisGraph 1.0.8
 
 Index utilization when performing cartesian product
 
@@ -53,21 +53,21 @@ Allow serialization of NULL-valued properties
 
 Support for multiple relationship types
 
-## RedisGraph v1.0.7 Release Notes
+## RedisGraph 1.0.7
 
 Bulk-insert support unicode
 Bulk-insert better progress reporting
 Multiple relationship types
 
-## RedisGraph v1.0.5 Release Notes
+## RedisGraph 1.0.5
 
 Bulk insert supports ID specifying + relationships attributes
 
-## RedisGraph v1.0.4 Release Notes
+## RedisGraph 1.0.4
 
 - Compact GraphBLAS, using structural semiring
 
-## RedisGraph v1.0.3 Release Notes
+## RedisGraph 1.0.3
 
 - GraphBLAS 2.2
 - Multiple CREATE clauses
@@ -77,11 +77,11 @@ Bulk insert supports ID specifying + relationships attributes
     - Entity returned from datablock should have its internals cleared
     - Loaded triemap strings are not guaranteed space for a null terminator
 
-## RedisGraph v1.0.2 Release Notes
+## RedisGraph 1.0.2
 
 - Bug fix #[249](https://github.com/RedisGraph/RedisGraph/issues/249) reset operation within execution plan should propagate upwards
 
-## RedisGraph v1.0.1 Release Notes
+## RedisGraph 1.0.1
 
 - Resolved a number of memory leaks
 - Support '*' within RETURN clause
