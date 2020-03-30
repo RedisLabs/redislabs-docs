@@ -16,7 +16,7 @@ failure](/images/rs/node-failure.png?width=600&height=152)
 
 1. Acquire a new node that is identical to the old node, install and
     configure Redis Enterprise Software on it per the [install
-    instructions]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
+    instructions]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 
     Note: If you are using [Redis on
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}), you must

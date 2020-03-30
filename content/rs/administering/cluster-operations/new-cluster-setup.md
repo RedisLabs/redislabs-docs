@@ -14,7 +14,7 @@ capabilities are not enabled, such as database replication that provides high av
 
 To set up a new cluster, you must first [install the Redis Enterprise
 Software
-package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
+package]({{< relref "/rs/installing-upgrading/_index.md" >}})
 as described in the previous section and then set up the cluster as
 described below. After the cluster is created you can add multiple nodes
 to the cluster (for additional details, refer to [Joining a new node to

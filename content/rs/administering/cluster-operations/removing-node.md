@@ -89,5 +89,5 @@ alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}
 cluster, you must first
 [uninstall]({{< relref "/rs/installing-upgrading/uninstalling.md" >}})
 and
-[reinstall]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
+[reinstall]({{< relref "/rs/installing-upgrading/_index.md" >}})
 the software on that node.

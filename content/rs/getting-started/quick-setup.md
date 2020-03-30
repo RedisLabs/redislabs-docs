@@ -20,7 +20,7 @@ make sure that the necessary [network ports]({{< relref "/rs/administering/desig
 You can also get started with RS with:
 
 - [RS in a Docker container]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) for development or testing purposes
-- A [custom RS installation]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) for production purposes
+- A [custom RS installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) for production purposes
 
 ## Step 1: Install Redis Enterprise Software
 

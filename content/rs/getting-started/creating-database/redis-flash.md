@@ -18,7 +18,7 @@ with a single node are simple and are as follows:
 
 If you are looking for more detailed installation instructions you can
 visit the [installing and upgrading
-section]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
+section]({{< relref "/rs/installing-upgrading/_index.md" >}})
 of the technical documentation.
 
 ## Step 1: Install Redis Enterprise Software
