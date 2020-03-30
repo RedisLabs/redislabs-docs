@@ -65,8 +65,7 @@ sudo lsblk
 
 ## Installing RS on Linux
 
-After you download the .tar file installation package, install the
-package on one of the nodes in the cluster.
+After you download the .tar file installation package, install the package on one of the nodes in the cluster.
 
 To install RS on Linux from the CLI:
 
@@ -79,13 +78,22 @@ To install RS on Linux from the CLI:
 
 1. To install RS, run:
 
+    {{% note %}}
+- The RS files are installed in these [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}):
+    - Installation files - /opt/redislabs
+    - Configuration files - /etc/opt/redislabs
+    - Executable files - /var/opt/redislabs
+
+    You can also specify other directories for these files during the installation.
+- RS is installed and run under the redislabs user and redislabs group.
+
+    You can also specify a different user during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{% /note %}}
+
     ```src
     sudo ./install.sh
     ```
-
-    {{% note %}}
-You must either be logged in as the root user or use sudo to run the install process.
-    {{% /note %}}
 
 1. Follow the [installation prompts](#installation-questions) to complete the installation process,
     including the rlcheck installation verification.
@@ -118,6 +126,46 @@ or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) 
 1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}) database.
+
+### Custom installation directories
+
+During the installation you can specify the directories for the RS files to be installed in.
+The files are installed in the `redislabs` directory in the path that you specify.
+
+{{% note %}}
+- If a `redislabs` directory already exists in the path that you specify, the installation fails.
+- All nodes in a cluster must be installed with the same file locations.
+{{% /note %}}
+
+You can specify any or all of these file locations:
+
+| Files               | Installer flag | Example parameter | Example file location |
+| ------------------- | -------------- | ----------------- | --------------------- |
+| Installation files  | --install-dir  | /opt              | /opt/redislabs        |
+| Configuration files | --config-dir   | /etc/opt          | /etc/opt/redislabs    |
+| Executable files    | --var-dir      | /var/opt          | /var/opt/redislabs    |
+
+To install RS in specified file directories, run:
+
+```src
+sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
+```
+
+### Custom installation user and group
+
+By default, RS is installed with the user:group `redislabs:redislabs`.
+During the installation you can specify the OS user and group that RS is installed with and that owns all of the RS processes.
+If you specify the user only, then installation is run with the primary group that the user belongs to.
+
+{{% note %}}
+You must create the user and group that you want to install with before you install RS.
+{{% /note %}}
+
+To install RS with a specified user and group, run:
+
+```src
+sudo ./install.sh --os-user <user> --os-group <group>
+```
 
 ### Installation questions
 
