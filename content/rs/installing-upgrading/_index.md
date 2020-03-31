@@ -82,7 +82,7 @@ To install RS on Linux from the CLI:
 - The RS files are installed in these [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}):
     - Installation files - /opt/redislabs
     - Configuration files - /etc/opt/redislabs
-    - Executable files - /var/opt/redislabs
+    - Data and log files - /var/opt/redislabs
 
     You can also specify other directories for these files during the installation.
 - RS is installed and run under the redislabs user and redislabs group.
@@ -144,7 +144,7 @@ You can specify any or all of these file locations:
 | ------------------- | -------------- | ----------------- | --------------------- |
 | Installation files  | --install-dir  | /opt              | /opt/redislabs        |
 | Configuration files | --config-dir   | /etc/opt          | /etc/opt/redislabs    |
-| Executable files    | --var-dir      | /var/opt          | /var/opt/redislabs    |
+| Data and log files    | --var-dir      | /var/opt          | /var/opt/redislabs    |
 
 To install RS in specified file directories, run:
 
