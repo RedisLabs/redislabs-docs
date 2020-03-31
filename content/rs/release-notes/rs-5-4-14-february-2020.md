@@ -10,7 +10,7 @@ This release bundles OSS Redis 5.0.7 and includes new Redis Modules versions, se
 
 ## Overview
 
-Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) for upgrading to RS 5.4.14 from RS 5.0 and above.
+Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) for upgrading to RS 5.4.14 from RS 5.0.2 and above.
 
 ## New Features
 
