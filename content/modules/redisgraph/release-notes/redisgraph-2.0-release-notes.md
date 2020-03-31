@@ -5,7 +5,6 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-
 ## RedisGraph 2.0 GA (2.0.1)
 
 This is the General Availability Release of RedisGraph 2.0 (2.0.1)!
