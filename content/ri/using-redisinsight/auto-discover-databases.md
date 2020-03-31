@@ -1,77 +1,77 @@
 ---
-Title: Auto discover databases
+Title: Automatically Discovering Databases
 weight: 10
 categories: ["RI"]
 path: auto-discover-databases/
 ---
-This page lists the steps to be followed in order to automatically add on-premise Redis Enterprise and Redis Enterprise Cloud (Pro) databases.
+RedisInsight lets you automatically add Redis Enterprise Software and Redis Enterprise Cloud databases.
 
 {{% note %}}
-In case of auto discovering Redis Enterprise Cloud databases, RedisInsight currently only supports discovering those databases which are part of "PRO subscriptions".
+For auto-discovery, Redis Enterprise Cloud databases must be in a Pro subscription.
 {{% /note %}}
 
-## Auto discovering on-premise Redis Enterprise databases
+## Auto-discovery for Redis Enterprise Software
 
-Redis Enterprise (RE) databases can be automatically discovered and added in RedisInsight.
-In order to register RE databases, these steps need to be followed :
+To automatically discover and add Redis Enterprise Software (RS) databases to RedisInsight:
 
-- **Step 1**: Click on **ADD REDIS DATABASE**
+1. In RedisInsight, click **ADD REDIS DATABASE**.
 
-![re-step-1](/images/ri/re-step-1.png)
+    ![re-step-1](/images/ri/re-step-1.png)
 
-- **Step 2**: Click on **Automatically Discover Databases**.
+1. Click on **Automatically Discover Databases**.
 
-![re-step-2](/images/ri/rc-step-2.png)
+    ![re-step-2](/images/ri/rc-step-2.png)
 
-- **Step 3**: Choose **Redis Enterprise**.
+1. Select **Redis Enterprise**.
 
-![re-step-3](/images/ri/rc-step-3.png)
+    ![re-step-3](/images/ri/rc-step-3.png)
 
-- **Step 4**: Enter the connection details and click on **DISCOVER DATABASES**.
+1. Enter the connection details and click **DISCOVER DATABASES**.
 
-![re-step-4](/images/ri/re-step-4.png)
+    ![re-step-4](/images/ri/re-step-4.png)
 
-- **Step 5**: Select the databases which you want to add from the list and click on **ADD SELECTED DATABASES**.
+1. From the list of databases, select the databases that you want to add and click **ADD SELECTED DATABASES**.
 
-![re-step-5](/images/ri/re-step-5.png)
+    ![re-step-5](/images/ri/re-step-5.png)
 
-- **Step 6**: All the databases which were successfully added will be dislayed on the screen. Click on **VIEW DATABASES** in order to see them in the databases page.
+    All of the databases that were successfully added are dislayed on the screen. To see the databases in the Databases page, click **VIEW DATABASES**.
 
-## Auto discovering Redis Enterprise Cloud (Pro) databases
+## Auto-discovery for Redis Enterprise Cloud Databases
 
-Redis Enterprise Cloud (RC) databases can also be automatically discovered and added in RedisInsight.
-Below are the steps which needs to be followed in order to register them in RedisInsight :
+To automatically discover and add Redis Enterprise Cloud (RC) databases to RedisInsight:
 
-- **Step 1**: Click on **ADD REDIS DATABASE**
+1. In RedisInsight, click **ADD REDIS DATABASE**.
 
-![rc-step-1](/images/ri/re-step-1.png)
+    ![rc-step-1](/images/ri/re-step-1.png)
 
-- **Step 2**: Click on **Automatically Discover Databases**.
+1. Click on **Automatically Discover Databases**.
 
-![rc-step-2](/images/ri/rc-step-2.png)
+    ![rc-step-2](/images/ri/rc-step-2.png)
 
-- **Step 3**: Choose **Redis Enterprise Cloud**.
+1. Select **Redis Enterprise Cloud**.
 
-![rc-step-3](/images/ri/rc-step-3.png)
+    ![rc-step-3](/images/ri/rc-step-3.png)
 
-- **Step 4**: Enter the Account key and the Secret key associated with your Redis Enterprise Cloud account and click on **SUBMIT**.
+1. Enter the Account key and the Secret key associated with your Redis Enterprise Cloud account and click **SUBMIT**.
 
-![rc-step-4](/images/ri/rc-step-4.png)
+    ![rc-step-4](/images/ri/rc-step-4.png)
 
-- **Step 5**: A page showing information about your account will be displayed. If these details are not correct, click on **NOT MY ACCOUNT** in order to enter the correct credentials, else, click on **MY SUBSCRIPTIONS** in order to list all the subscriptions in your account.
+1. Verify the details for the account:
+    - If the account details match your account, click on **MY SUBSCRIPTIONS** to list all of the subscriptions in your account.
+    - If the account details do not match your account, click **NOT MY ACCOUNT** and enter the correct credentials.
 
-![rc-step-5](/images/ri/rc-step-5.png)
+    ![rc-step-5](/images/ri/rc-step-5.png)
 
-- **Step 6**: Select the subscriptions accordingly and click on **SHOW DATABASES**.
+1. Select the subscriptions that contain the databases that you want to add and click **SHOW DATABASES**.
 
-![rc-step-6](/images/ri/rc-step-6.png)
+    ![rc-step-6](/images/ri/rc-step-6.png)
 
-- **Step 7**: A page containing all the active databases in the selected subscriptions will be displayed. Choose the databases which you want to register and click on **REGISTER DATABASES**.
+1. From the list of active databases in the selected subscriptions, select the databases that you want to register and click **REGISTER DATABASES**.
 
-![rc-step-7](/images/ri/rc-step-7.png)
+    ![rc-step-7](/images/ri/rc-step-7.png)
 
-- **Step 8**: A page containing successfully added and failed to add databases would be displayed. If all databases were successfully added, you would see a message saying 'All selected databases added successfully'.
+    All of the databases that were successfully added are dislayed on the screen. If all of the databases were added successfully, **All selected databases added successfully** is shown.
 
-![rc-step-8](/images/ri/rc-step-8.png)
+    ![rc-step-8](/images/ri/rc-step-8.png)
 
-- **Step 9**: Click on **VIEW DATABASES** to see the auto discovered Redis Enterprise Cloud databases.
+1.  To see the automatically discovered databases in the Databases page, click **VIEW DATABASES**.
