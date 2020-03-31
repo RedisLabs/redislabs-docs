@@ -19,7 +19,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
     - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version 2.2.1 (updated, [release notes]({{< relref "/modules/redisbloom/release-notes/v2.2/_index.md" >}}))
     - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version 2.0.1 (updated, [release notes]({{< relref "/modules/redisgraph/release-notes/v2.0/_index.md" >}}))
     - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version 1.0.4
-    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/v1.4/_index.md" >}}))
+    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/redisearch-1.4-release-notes/#redisearch-1-4-25" >}}))
     - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version 1.2.3 (updated, [release notes]({{< relref "/modules/redistimeseries/release-notes/v1.2/_index.md" >}}))
 
 ## Additional Capabilities
