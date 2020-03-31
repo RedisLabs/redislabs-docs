@@ -161,6 +161,7 @@ If you specify the user only, then installation is run with the primary group th
 {{% note %}}
 - Custom installation user is supported on RedHat Enterprise Linux versions 6 and 7.
 - You must create the user and group that you want to install with before you install RS.
+- You can specify an LDAP user as the RS installation user.
 {{% /note %}}
 
 To install RS with a specified user and group, run:
