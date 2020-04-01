@@ -126,7 +126,7 @@ To add a TLS-enabled Redis database:
         ![instance_overview_page](/images/ri/add-db-tls-client-auth-screen.png)
 
         - If you already have a certificate-key pair in RedisInsight, select it from the **Client Certificate** list.
-        - If you do not:
+        - If you do not, create a certificate-key pair:
             1. Select **Add New Certificate**.
             1. Enter a name for your client certificate.
             1. Enter the text of the TLS certificate and private key in the next two fields.
@@ -147,14 +147,15 @@ If you want to work with ElastiCache Redis caches with RedisInsight, you can eit
         ssh -f -N -L <local_port>:<elasticache_endpoint> -i <path_to_pem_file> <ec2_endpoint>
         ```
 
-    2. Go to **Add Instance** in RedisInsight and add an instance with:
-        - host=localhost
-        - port=<local_port>
-        - name=your_instance_name
+    1. Go to **Add Instance** in RedisInsight and add an instance with:
+
+        - host - `<localhost>`
+        - port - `<local_port>`
+        - name - `<your_instance_name>`
 
 - [Install RedisInsight on an EC2 instance]({{< relref "/ri/installing/install-ec2.md" >}}) that is in the same VPC and has access to the ElastiCache Redis cache.
 
-    This is option gives the best performance and works with Redis Cluster.
+    This option gives the best performance and works with Redis Cluster.
 
 - [Set up a VPN to your AWS VPC using AWS VPN](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/accessing-elasticache.html#access-from-outside-aws).
 
