@@ -16,11 +16,11 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 - Version [5.0.7](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES) of OSS Redis is merged into RS 5.4.14.
 - The following GA releases of Redis Modules are bundled in RS 5.4.14:
-    - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version 2.2.1 (updated, [release notes]({{< relref "/modules/redisbloom/release-notes/v2.2/_index.md" >}}))
-    - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version 2.0.1 (updated, [release notes]({{< relref "/modules/redisgraph/release-notes/v2.0/_index.md" >}}))
-    - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version 1.0.4
-    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/v1.4/_index.md" >}}))
-    - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version 1.2.3 (updated, [release notes]({{< relref "/modules/redistimeseries/release-notes/v1.2/_index.md" >}}))
+    - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version 2.2.1 (updated, [release notes]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md#redisbloom-2-2-1)" >}}))
+    - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version 2.0.1 (updated, [release notes]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md#redisgraph-2-0-ga-2-0-1)" >}}))
+    - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version 1.0.4 (update, [release notes]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}}))
+    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/redisearch-1.4-release-notes.md#redisearch-1-4-25" >}}))
+    - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version 1.2.3 (updated, [release notes]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}))
 
 ## Additional Capabilities
 
