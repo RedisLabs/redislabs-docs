@@ -65,8 +65,7 @@ sudo lsblk
 
 ## Installing RS on Linux
 
-After you download the .tar file installation package, install the
-package on one of the nodes in the cluster.
+After you download the .tar file installation package, install the package on one of the nodes in the cluster.
 
 To install RS on Linux from the CLI:
 
@@ -79,13 +78,15 @@ To install RS on Linux from the CLI:
 
 1. To install RS, run:
 
+    {{% note %}}
+- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
+- RS is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{% /note %}}
+
     ```src
     sudo ./install.sh
     ```
-
-    {{% note %}}
-You must either be logged in as the root user or use sudo to run the install process.
-    {{% /note %}}
 
 1. Follow the [installation prompts](#installation-questions) to complete the installation process,
     including the rlcheck installation verification.
@@ -118,6 +119,70 @@ or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) 
 1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}) database.
+
+### Custom installation directories
+
+During the installation you can specify the directories for the RS files to be installed in.
+The files are installed in the `redislabs` directory in the path that you specify.
+
+{{% note %}}
+- Custom installation directories are supported on RedHat Enterprise Linux versions 6 and 7.
+- When you install with custom directories, the installation does not run as an RPM file.
+- If a `redislabs` directory already exists in the path that you specify, the installation fails.
+- All nodes in a cluster must be installed with the same file locations.
+{{% /note %}}
+
+You can specify any or all of these file locations:
+
+| Files               | Installer flag | Example parameter | Example file location |
+| ------------------- | -------------- | ----------------- | --------------------- |
+| Binaries files      | --install-dir  | /opt              | /opt/redislabs        |
+| Configuration files | --config-dir   | /etc/opt          | /etc/opt/redislabs    |
+| Data and log files  | --var-dir      | /var/opt          | /var/opt/redislabs    |
+
+{{% expand "These files are not in the custom directories:" %}}
+
+- OS files
+    - /etc/cron.d/redislabs
+    - /etc/firewalld/services
+    - /etc/firewalld/services/redislabs-clients.xml
+    - /etc/firewalld/services/redislabs.xml
+    - /etc/ld.so.conf.d/redislabs_ldconfig.conf.tmpl
+    - /etc/logrotate.d/redislabs
+    - /etc/profile.d/redislabs_env.sh
+    - /usr/lib/systemd/system/rlec_supervisor.service.tmpl
+    - /usr/share/selinux/mls/redislabs.pp
+    - /usr/share/selinux/targeted/redislabs.pp
+
+- Installation reference files
+    - /etc/opt/redislabs/redislabs_custom_install_version
+    - /etc/opt/redislabs/redislabs_env_config.sh
+{{% /expand %}}
+
+To install RS in specified file directories, run:
+
+```src
+sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
+```
+
+### Custom installation user and group
+
+By default, RS is installed with the user:group `redislabs:redislabs`.
+During the installation you can specify the OS user and group that RS is installed with and that owns all of the RS processes.
+If you specify the user only, then installation is run with the primary group that the user belongs to.
+
+{{% note %}}
+- Custom installation user is supported on RedHat Enterprise Linux versions 6 and 7.
+- When you install with custom directories, the installation does not run as an RPM file.
+- You must create the user and group that you want to install with before you install RS.
+- You can specify an LDAP user as the RS installation user.
+{{% /note %}}
+
+To install RS with a specified user and group, run:
+
+```src
+sudo ./install.sh --os-user <user> --os-group <group>
+```
 
 ### Installation questions
 
