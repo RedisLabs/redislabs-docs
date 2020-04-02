@@ -18,8 +18,8 @@ You can create databases according to the number of shards in your subscription
 and the memory available on the machine.
 
 {{% note %}}
-To create databases that are designed to be hosted in distributed locations,
-see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
+For databases with Active-Active replication for geo-distributed locations,
+[create an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
 {{% /note %}}
 
 ## Creating a New Redis Database
@@ -129,8 +129,8 @@ after the database is created.
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-- [**Replica of**]({{< relref "/rs/administering/active-passive.md" >}}) -
-    You can make this database a repository for keys in other databases.
+- [**Replica of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
+    You can make this database a repository for keys from other databases.
 
 - [**TLS**]
     ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
