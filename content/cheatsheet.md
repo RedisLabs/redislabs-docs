@@ -263,7 +263,39 @@ Output:
 This is how you make expanding blocks.
 {{% /expand%}}
 
+### Embedded partials
+
+A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials must be placed in `content/embeds` directory.
+
+Embed a markdown partial
+
+Syntax:
+
+```src
+{{</* embed-md "sample.md"  */>}}
+```
+
+Output:
+
+{{< embed-md "sample.md" >}}
+
+Embed an HTML partial
+
+Syntax:
+
+```src
+{{</* embed-html "sample-table.html" */>}}
+```
+
+Output:
+
+{{< embed-html "sample.html" >}}
+
 ### Excerpts
+
+{{% warning %}}
+In most cases, use embedded partials instead of excerpts.
+{{% /warning %}}
 
 **Defining an excerpt**
 
@@ -296,34 +328,6 @@ Syntax:
 Output:
 
 {{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
-
-**Embedding a partial**
-
-A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials should be placed in `content/embeds` directory.
-
-Embed a markdown partial
-
-Syntax:
-
-```src
-{{</* embed-md "sample.md"  */>}}
-```
-
-Output:
-
-{{< embed-md "sample.md" >}}
-
-Embed an HTML partial
-
-Syntax:
-
-```src
-{{</* embed-html "sample-table.html" */>}}
-```
-
-Output:
-
-{{< embed-html "sample.html" >}}
 
 ## Informative Notices
 
@@ -430,6 +434,7 @@ Ouput:
 See example [here](/rcessentials/administration).
 
 ### Recently updated
+
 This shortcode can be used to display recently updated articles.
 
 Syntax:
