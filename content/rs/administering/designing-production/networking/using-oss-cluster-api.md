@@ -86,6 +86,9 @@ To configure an RS Active-Active database to use the OSS Cluster API from the co
     ```sh
     crdb-cli crdb update --crdb_guid <guid> --oss-cluster true
     ```
+    {{% note %}}
+The Redis OSS Cluster API setting applies to the specified database only, not to the entire cluster.
+    {{% /note %}}
 
     {{% note %}}
 The Redis OSS Cluster API setting applies to all of the instances of the CRDB.
