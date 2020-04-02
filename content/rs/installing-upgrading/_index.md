@@ -8,7 +8,7 @@ aliases: /rs/administering/installing-upgrading/
         /rs/installing-upgrading/downloading-installing/
 ---
 To install Redis Enterprise Software (RS), you must first choose the [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
-In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS on these platforms:
+In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS with:
 
 - [Amazon AWS AMI]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}})
 - [Docker container]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) (for development and testing only)
@@ -18,8 +18,8 @@ In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you 
 To access the installation package for any of these platforms:
 
 1. Go to the [Redis Labs download page](https://app.redislabs.com/#/sign-up/software?direct=true).
-2. Log in with your Redis Labs credentials or sign up for a new account.
-3. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
+1. Log in with your Redis Labs credentials or sign up for a new account.
+1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
 
 {{% note %}}
 Before you install the Linux package or AWS AMI on an AWS instance,
@@ -39,7 +39,7 @@ Run:
 sudo /opt/redislabs/sbin/prepare_flash.sh
 ```
 
-This command finds all the unformatted disks and mounts them as RAID partitions in `/var/opt/redislabs/flash`.
+This command finds all of the unformatted disks and mounts them as RAID partitions in `/var/opt/redislabs/flash`.
 
 To verify the disk configuration, run:
 
@@ -49,23 +49,23 @@ sudo lsblk
     {{% /expand %}}
 
 - [Disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
-- Make sure that you have root level access to each node, either directly or with sudo.
+- Make sure that you have root-level access to each node, either directly or with sudo.
 - When port 53 is in use, the installation fails. This is known to happen in
     default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
-    To workaround this issue, change the system configuration to make this port available
-    before running RS installation.
+    To work around this issue, change the system configuration to make this port available
+    before running the RS installation.
 
     {{% expand "Example steps to resolve the port 53 conflict:" %}}
 1. Run: `sudo vi /etc/systemd/resolved.conf`
-2. Add `DNSStubListener=no` as the last line in the file and save the file.
-3. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
-4. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
-5. Run: `sudo service systemd-resolved restart`
+1. Add `DNSStubListener=no` as the last line in the file and save the file.
+1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
+1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
+1. Run: `sudo service systemd-resolved restart`
     {{% /expand %}}
 
 ## Installing RS on Linux
 
-After you download the .tar file installation package, install the
+After you download the tar file installation package, install the
 package on one of the nodes in the cluster.
 
 To install RS on Linux from the CLI:
@@ -84,11 +84,11 @@ To install RS on Linux from the CLI:
     ```
 
     {{% note %}}
-You must either be logged in as the root user or use sudo to run the install process.
+You must either be logged in as the root user or use `sudo` to run the install process.
     {{% /note %}}
 
-1. Follow the [installation prompts](#installation-questions) to complete the installation process,
-    including the rlcheck installation verification.
+1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
+    including the `rlcheck` installation verification.
 
     {{% note %}}
 To install RS without answering the installation questions, either:
@@ -111,10 +111,10 @@ To install RS without answering the installation questions, either:
     ```
 
 RS is now installed on the node.
-Repeat this process for each node in the cluster and then:
+Repeat this process for each node in the cluster. Then:
 
 1. [Create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
-or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an RS cluster.
+or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an existing RS cluster.
 1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}) database.
@@ -138,7 +138,7 @@ These installation questions are:
 
 - **Network time** - `Do you want to set up NTP time synchronization now [Y/N]?`
 
-    Redis Enterprise requires that all nodes of the cluster have synchronized time.
+    Redis Enterprise requires that all cluster nodes have synchronized time.
     You can either let the installation process configure NTP
     or you can [configure NTP manually]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
 
@@ -153,7 +153,7 @@ These installation questions are:
 
 - **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
 
-    We recommend that you run the rlckeck installation verification to make sure that the installation completed succesfully.
+    We recommend that you run the `rlckeck` installation verification to make sure that the installation completed succesfully.
     If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
 
 ### Installation answer file
@@ -163,7 +163,9 @@ you can prepare an answer file and use it to do a silent installation.
 
 To install RS with an answer file:
 
-1. Prepare the answer file with the answers to the questions.
+1. Prepare the answer file with the answers to the [installation questions](#installation-questions).
+
+    The answer file can contain any of the parameters for the installation questions and `yes` or `no` to indicate the answer for the question.
 
     For example:
 
