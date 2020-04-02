@@ -56,7 +56,7 @@ The cluster recovery process includes:
     - The same number of nodes
     - At least the same amount of memory
     - The same RS version
-    - The same installation paths
+    - The same installation user and paths
 
     {{% note %}}
 The cluster recovery can fail if these requirements are not met.
