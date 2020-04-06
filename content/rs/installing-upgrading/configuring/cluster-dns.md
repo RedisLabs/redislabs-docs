@@ -97,6 +97,10 @@ the cluster part of your domain and are able to update the DNS.
     
     node3.redislabscluster.mydomain.com   A    3.3.3.3
     ```
+    
+    {{% warning %}}
+Do not use the DNS name `ns<id>.redislabscluster.mydomain` for authoritative nameservers or for glue. This naming convention is reserved for internal use.
+    {{% /warning %}}
 
 ### Zero-configuration using mDNS (Development option only) {#zeroconfiguration-using-mdns-development-option-only}
 
