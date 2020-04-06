@@ -118,6 +118,7 @@ followed by descriptions:
 | Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
 | Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
 | Sorted Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+| HyperLogLog | [Supported]({{< relref "/rs/developing/crdbs/developing-hll-crdb.md" >}}) |
 | Bitsets | Not currently supported |
 | Streams | Not currently supported |
 
