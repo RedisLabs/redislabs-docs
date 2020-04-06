@@ -29,7 +29,6 @@ For example:
 1. If slave HA is enabled, a new slave shard is created on an available node.
 1. The data from the master shard is replicated to the new slave shard.
 
-
 ## Configuring High Availability for Slave Shards
 
 Using rladmin or the REST API, slave HA is controlled on the database level and on the cluster level.
