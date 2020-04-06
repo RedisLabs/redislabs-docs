@@ -55,7 +55,7 @@ $template TraditionalFormatWithPRI,"%pri-text%:%timegenerated%:%HOSTNAME%:%syslo
 And modify $ActionFileDefaultTemplate to use your new template
 $ActionFileDefaultTemplateTraditionalFormatWithPRI
 Make sure to save the changes and restart rsyslog in order for the
-changes to take effect. you can see the alerts and events under /var/log
+changes to take effect. You can see the alerts and events under /var/log
 in messages log file.
 
 **Command components:**
