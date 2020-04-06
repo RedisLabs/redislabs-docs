@@ -124,7 +124,7 @@ followed by descriptions:
 
 ### Other Data Types
 
-Bitmap, Bitfields, and Hyperloglog data types and operations are
+Bitmap and Bitfields, data types and operations are
 not currently supported in this version of
 CRDBs.
 
