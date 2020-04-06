@@ -23,16 +23,16 @@ Here is an example of a simple writes case:
 | t2   | --- sync ---      |                   |
 | t3   |                   | PFADD hll x       |
 | t4   | --- sync ---      |                   |
-| t5   | Pfcount hll --> 2 | Pfcount hll --> 2 |
+| t5   | PFCOUNT hll --> 2 | PFCOUNT hll --> 2 |
 
 Here is an example of a concurrent add case:
 
 | Time | Replica 1         | Replica 2         |
 | ---- | ----------------- | ----------------- |
 | t1   | PFADD hll x       | PFADD hll y       |
-| t2   | Pfcount hll --> 1 | Pfcount hll --> 1 |
+| t2   | PFCOUNT hll --> 1 | PFCOUNT hll --> 1 |
 | t3   | --- sync ---      |                   |
-| t4   | Pfcount hll --> 2 | Pfcount hll --> 2 |
+| t4   | PFCOUNT hll --> 2 | PFCOUNT hll --> 2 |
 
 ## The DEL-Wins Approach
 
@@ -53,11 +53,11 @@ Here is an example of a DEL-wins case:
 |      |                 |                 | \|  |      |                     |                     |
 | t1   | PFADD h e1      |                 | \|  | t1   | SADD s e1           |                     |
 | t2   | --- sync ---    |                 | \|  | t2   | --- sync ---        |                     |
-| t3   | Pfcount h --> 1 | Pfcount h --> 1 | \|  | t3   | SCARD s --> 1       | SCARD s --> 1       |
+| t3   | PFCOUNT h --> 1 | PFCOUNT h --> 1 | \|  | t3   | SCARD s --> 1       | SCARD s --> 1       |
 | t4   | PFADD h e2      | Del h           | \|  | t4   | SADD s e2           | Del S               |
-| t5   | Pfcount h --> 2 | Pfcount h --> 0 | \|  | t5   | SCARD s --> 2       | SCARD s --> 0       |
+| t5   | PFCOUNT h --> 2 | PFCOUNT h --> 0 | \|  | t5   | SCARD s --> 2       | SCARD s --> 0       |
 | t6   | --- sync ---    |                 | \|  | t6   | --- sync ---        |                     |
-| t7   | Pfcount h --> 0 | Pfcount h --> 0 | \|  | t7   | SCARD s --> 1       | SCARD s --> 1       |
+| t7   | PFCOUNT h --> 0 | PFCOUNT h --> 0 | \|  | t7   | SCARD s --> 1       | SCARD s --> 1       |
 | t8   | Exists h --> 0  | Exists h --> 0  | \|  | t8   | Exists s --> 1      | Exists s --> 1      |
 |      |                 |                 | \|  | t9   | SMEMBERS s --> {e2} | SMEMBERS s --> {e2} |
 
