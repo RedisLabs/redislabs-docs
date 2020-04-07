@@ -27,7 +27,7 @@ string, counter integer based on the command used for initialization of
 the field value. See "String Data Type in CRDBs" and "String Data Type
 with Counter Value in CRDBs" for more details.
 
-Here is an example of an "add wins" case
+Here is an example of an "add wins" case:
 
 |  **Time** | **CRDB Instance1** | **CRDB Instance2** |
 |  ------: | :------: | :------: |
