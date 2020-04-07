@@ -7,6 +7,9 @@ categories: ["RS"]
 ---
 Here are some frequently asked questions about Redis Enterprise Software.
 
+<div class="expand-parent">
+{{< expand-control >}}
+
 ## Features and Terminology
 
 <!-- Also in RC -->
