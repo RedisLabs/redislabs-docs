@@ -10,17 +10,17 @@ Here are some frequently asked questions about Redis Cloud.
 
 {{< expand-control >}}
 
-{{% expand "What exactly is Redis Enterprise?" %}}
+{{< expand "What exactly is Redis Enterprise?" >}}
 {{< embed-md "what-is-redis-enterprise.md"  >}}
-{{% /expand %}}
+{{< /expand >}}
 
-{{%expand "Are you fully compatible with open source Redis?" %}}
+{{< expand "Are you fully compatible with open source Redis?" >}}
 {{< embed-md "compatible-with-oss.md"  >}}
-{{% /expand %}}
+{{< /expand >}}
 
-{{%expand "How many Redis databases can I create and manage?" %}}
+{{< expand "How many Redis databases can I create and manage?" >}}
 {{< embed-md "how-many-databases-cloud.md"  >}}
-{{% /expand%}}
+{{< /expand >}}
 
 {{%expand "How can I control access to my resources?" %}}
 Redis Cloud features the following access control mechanisms:
@@ -82,4 +82,5 @@ The economic benefit is dramatic:
 - As your data grows, and your processing needs increase, you can achieve cost-effective high speed operational and analytic processing with the versatility of Redis and the cost efficiency of Flash memory.
 - If your dataset is larger than 500GB, running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud is lower in cost than managing your own Redis instances on the cloud.
 {{% /expand%}}
-</div>
+
+{{< /expand-control >}}
