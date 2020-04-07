@@ -7,6 +7,9 @@ categories: ["RI"]
 ---
 Here are some frequently asked questions about Redis Enterprise Software.
 
+<div class="expand-parent">
+{{< expand-control >}}
+
 ## General
 
 {{% expand "What is RedisInsight?" %}}
