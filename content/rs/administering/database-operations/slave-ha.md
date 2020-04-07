@@ -10,7 +10,13 @@ RS replicates your data to a slave node to make sure that your data is highly av
 If the slave node fails or if the master node fails and the slave is promoted to master,
 the remaining master node is a single point of failure.
 
-You can configure high availability for slave shards (slave HA) so that the cluster automatically migrates the slave shards to another available node.
+You can configure high availability for slave shards (slave HA) so that the cluster automatically migrates the slave shards to an available node.
+An available node is a node that:
+
+1. Meets slave migration requirements, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+1. Has enough available RAM to store the slave shard.
+1. Does not also contain the master shard.
+
 In practice, slave migration creates a new slave shard and replicates the data from the master shard to the new slave shard.
 For example:
 
@@ -20,11 +26,9 @@ For example:
     - Node:2 fails and the slave shard on node:3 is promoted to master.
     - Node:3 fails and the master shard is no longer replicated to the slave shard on the failed node.
 
-1. If slave HA is enabled, a new slave shard is created on an available node that does not hold the master shard.
-
-    All of the constraints of shard migration apply, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
-
+1. If slave HA is enabled, a new slave shard is created on an available node.
 1. The data from the master shard is replicated to the new slave shard.
+
 
 ## Configuring High Availability for Slave Shards
 
