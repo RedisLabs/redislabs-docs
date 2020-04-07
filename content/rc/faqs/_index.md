@@ -8,7 +8,6 @@ aliases: /rv/faqs/
 ---
 Here are some frequently asked questions about Redis Cloud.
 
-<div class="expand-parent">
 {{< expand-control >}}
 
 {{% expand "What exactly is Redis Enterprise?" %}}
