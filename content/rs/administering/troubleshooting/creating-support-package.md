@@ -19,7 +19,7 @@ To create a support package:
     confirm the action.
     The package is created and downloaded by your browser.
 
-{{%expand "The package creation failed with an error? You can't access the UI?" %}}
+{{%expand "Click here if the support package creation failed with an error or if you can't access the UI." %}}
 If package creation fails with `internal error` or if you cannot access the UI, create a support package for the cluster from the command-line:
 
 - On any one of the node in the cluster, run: `/opt/redislabs/bin/rladmin cluster debug_info`
