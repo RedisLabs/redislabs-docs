@@ -54,7 +54,7 @@ rladmin cluster config cm_port <new-port>
 
 ## Disabling HTTP support for API Endpoints
 
-To harden deployments, you can disable the HTTP support for API enpoints that is supported by default.
+To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.
 Before you disable HTTP support, make sure that you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint
 to prevent broken connections.
 After you disable HTTP support, traffic sent to the unencrypted API endpoint is blocked.
