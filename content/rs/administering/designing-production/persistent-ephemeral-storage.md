@@ -13,9 +13,19 @@ storage and an ephemeral storage path.
     e.g server logs, configurations, files. For example, if you choose
     any type of persistence for a database, then the persistence
     information is stored in this location.
+    
+    Each Redis Enterprise node should have a single Persistent Volume, 
+    mounted in the local file system:
+    The persistent volume has to be an external Storage Volume, 
+    connected via SAN, using EXT4/XFS file system. 
+    Note: When using AOF persistence, it is recommended to use flash technology
+    for the persistent volume.
+    
 - Ephemeral storage is optional. If defined, it is used by the cluster
     to store information that does not need to persist. This aids in
     optimization and helps to reduce the load on the persistent storage.
+    
+    Ephemeral storage is a locally attached volume, available in each node.
 
 Critical: **DO NOT** confuse persistent or ephemeral storage on this
 page with Redis persistence or AWS ephemeral drives used in other areas
