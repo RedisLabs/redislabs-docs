@@ -5,6 +5,29 @@ weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisTimeSeries 1.2.5
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[358](https://github.com/redistimeseries/redistimeseries/issues/358) [Wrong behaviour](https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!topic/redistimeseries/wH0R69e8lOs) in `TS.RANGE` due to shifting left.
+    - #[353](https://github.com/redistimeseries/redistimeseries/issues/353) Crash where the name of a time-series was already taken due to [auto-compaction](https://oss.redislabs.com/redistimeseries/configuration/#compaction_policy-policy).
+
+## RedisTimeSeries 1.2.3
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[338](https://github.com/redistimeseries/redistimeseries/issues/338) reverting #[319](https://github.com/redistimeseries/redistimeseries/issues/319).  Aggregation should happen on deterministic time buckets.
+
 ## RedisTimeSeries 1.2 GA (1.2.2)
 
 This is the General Availability Release of RedisTimeSeries 1.2 (1.2.2)!
