@@ -6,9 +6,12 @@
   var pa = window.location.pathname.split('/');
   var pv = pa[1]; // latest, 5.4 or 5.2
 
-  if(pv == '5.4' || pv == 'latest') {
+  if(pv == '5.6' || pv == 'latest') {
+    v = '5.6';
+    d = 'v5.6 (latest)';
+  } else if (pv == '5.4') {
     v = '5.4';
-    d = 'v5.4 (latest)';
+    d = 'v5.4';
   } else if (pv == '5.2') {
     v = '5.2';
     d = 'v5.2 (and below)';
