@@ -13,12 +13,11 @@ You can export a database to these locations:
 
 - FTP server
 - SFTP server
-- Amazon S3
+- Amazon AWS S3
 - Local mount point
 - OpenStack Swift (Object Storage)
-
-Other cloud storage options, including Azure Geo-Redundant Storage and Google Cloud Storage,
-are planned for a future release.
+- Azure Blob Storage
+- Google Cloud Storage
 
 The backup process creates compressed (.gz) RDB files that you can [import into a database]
 ({{< relref "/rs/administering/database-operations/importing-data.md" >}}).

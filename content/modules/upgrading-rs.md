@@ -49,7 +49,7 @@ This causes a short interruption in the availability of this database across the
 When you upgrade the module for a database, you can either:
 
 - Specify the module arguments to replace the current arguments.
-- Specify the 'keep_module_args' flag to use the current argument.
+- Specify the `keep_args` flag to use the current argument.
 
 1. Connect to the terminal of a node in the cluster
 1. Run `rladmin status` to list the databases on the node.
@@ -70,27 +70,31 @@ When you upgrade the module for a database, you can either:
 1. To upgrade the module for the database, run:
 
     ```src
-    rladmin upgrade module db_name <database_name> module_name <module_name> version <new_module_version_number> module_args <module arguments>
+    rladmin upgrade db <database_name> and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
     ```
+
+    - If you want to remove the existing module arguments, enter `""` without arguments.
+    - If you want to use the exisintg module arguments, enter `"keep_args"`
+    - If you want to update multiple modules, use the `and module` parameter for each module.
 
 ## Examples
 
 Here are some examples of module upgrades:
 
-- To upgrade the version of RediSearch to 1.6.7:
+- To upgrade the version of RediSearch to 1.6.7 and specify arguments:
 
     ```src
-    rladmin upgrade module db_name MyAwesomeDB module_name ft version 10607 module_args "PARTITIONS AUTO"
+    rladmin upgrade db <database_name> and module db_name MyAwesomeDB module_name ft version 10607 module_args "PARTITIONS AUTO"
     ```
 
-- To upgrade RedisBloom to version 2.2.1:
+- To upgrade RedisBloom to version 2.2.1 and remove arguments:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name bf version 20201 module_args ""
+    rladmin upgrade db <database_name> and module db_name MyDB module_name bf version 20201 module_args ""
     ```
 
-- To upgrade RedisJSON to 1.0.4:
+- To upgrade RedisJSON to 1.0.4 and keep existing arguments and RedisBloom to version 2.2.1 and remove arguments:
 
     ```src
-    rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args ""
+    rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args "keep_args" and module db_name MyDB module_name bf version 20201 module_args ""
     ```
