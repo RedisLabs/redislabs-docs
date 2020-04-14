@@ -5,6 +5,18 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisBloom 2.2.2
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor enhancements:
+    - Bloom
+        - #[180](https://github.com/redisbloom/redisbloom/issues/180) Removed the upper limit on Bloom Filter capacity.
+
 ## RedisBloom 2.2.1
 
 Headlines:
