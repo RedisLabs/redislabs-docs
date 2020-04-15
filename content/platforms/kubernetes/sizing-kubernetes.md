@@ -1,6 +1,8 @@
 ---
-Title: Sizing and Scaling a Redis Enterprise Cluster Kubernetes Deployment
-description: 
+Title: Sizing and Scaling a Redis Enterprise Cluster via the Operator
+description: There are a variety of methods and mechanisms for sizing and
+  scaling a Redis Enterprise cluster deployed with the operator. The sizing
+  follows guidelines similar to the hardware requirements for other deployments.
 weight: 50
 alwaysopen: false
 categories: ["Platforms"]
