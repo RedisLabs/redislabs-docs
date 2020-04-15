@@ -1,5 +1,5 @@
 ---
-Title: Getting Started with Kubernetes and OpenShift
+Title: Getting Started with OpenShift and Kubernetes
 description:
 weight: 60
 alwaysopen: false
