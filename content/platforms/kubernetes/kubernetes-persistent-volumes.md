@@ -1,5 +1,5 @@
 ---
-Title: Deploying with Persistent Volumes
+Title: Configuring Persistent Volumes
 description: A Redis Enterprise Cluster deployed with the operator should include
   a persistentSpec that defines the storage volume to be attached to each pod.
 weight: 40
