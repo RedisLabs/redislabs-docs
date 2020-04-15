@@ -1,6 +1,7 @@
 ---
-Title: Deploying Kubernetes with Persistent Volumes in Operator-based Architecture
-description: 
+Title: Deploying with Persistent Volumes
+description: A Redis Enterprise Cluster deployed with the operator should include
+  a persistentSpec that defines the storage volume to be attached to each pod.
 weight: 40
 alwaysopen: false
 categories: ["Platforms"]
