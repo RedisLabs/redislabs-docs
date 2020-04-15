@@ -1,6 +1,9 @@
 ---
-Title: Redis Enterprise Cluster Recovery for Kubernetes
-description: 
+Title: Cluster Recovery for Redis Enterprise on Kubernetes
+description: When a Redis Enterprise cluster loses contact with more than half
+  of its nodes either because of failed nodes or network split,
+  the cluster stops responding to client connections.
+  When this happens, you must recover the cluster to restore the connections.
 weight: 70
 alwaysopen: false
 categories: ["Platforms"]
