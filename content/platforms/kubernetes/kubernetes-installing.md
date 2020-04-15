@@ -47,15 +47,20 @@ implementation is published as a Docker container. The operator
 definitions are packaged as a single generic YAML file called
 [bundle.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
 
-The raw bundle can be downloaded via `curl`:
+You need to ensure you pull the correct version of the bundle. The version tags
+can be found by checking the [releases on Github](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
+or via the GitHub API.
+
+The bundle for the latest release can be downloaded via `curl` using the following:
 
 ```
 
-curl -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/v5.4.14-7/bundle.yaml
+VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep "tag_name" | sed -E 's/.*"([^"]+)".*/\1/'`
+curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
 
-*Note:* Make sure you have the correct release tag in the URL. In the above example,
-`v5.4.14-7` should be replaces with the desired version tag.
+or you can replace `VERSION` in the above with a specific release tag.
+
 
 If you inspect this YAML file, you will find definitions for the various items
 described in the previous section. Installing the operator is just a simple apply
