@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Logs on Kubernetes
-description: The cluster logs can be easily be access via sidecar deployments
+description: The cluster logs can be easily accessed via sidecar deployments
   that are described in the Redis Enterprise CRD
 weight: 60
 alwaysopen: false
