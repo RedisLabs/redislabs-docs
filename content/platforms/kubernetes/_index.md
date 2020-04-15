@@ -1,13 +1,15 @@
 ---
-Title: Getting Started with Redis Enterprise Software using Kubernetes
+Title: Getting Started with Redis Enterprise Software on Kubernetes
 description:
-weight: 90
+weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
-Kubernetes provides simpler orchestration with containers and has been widely adopted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
+[Kubernetes (K8s)](https://kubernetes.io) is an open-source system for automating deployment, scaling, and management of containerized applications. Kubernetes was started at an open source project in 2014, joined the [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) in [2016](https://www.cncf.io/cncf-kubernetes-project-journey/), "graduated" as a project in 2018, and has been widely adopted for container orchestration.
+
+The Redis Enterprise Operator is the simplest way to deploy a Redis Enterprise cluster on Kubernetes.
 
 {{%allchildren style="h2" description="true"%}}
 
