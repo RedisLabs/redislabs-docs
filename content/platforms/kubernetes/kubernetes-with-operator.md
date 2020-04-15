@@ -1,6 +1,7 @@
 ---
-Title: Redis Enterprise Kubernetes Operator-based Architecture
-description: 
+Title: The Redis Enterprise Operator
+description: The Redis Enterprise Operator is the fastest, most efficient way to
+  deploy and maintain a Redis Enterprise Cluster in Kubernetes.
 weight: 30
 alwaysopen: false
 categories: ["Platforms"]
