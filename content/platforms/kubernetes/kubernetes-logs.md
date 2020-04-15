@@ -1,6 +1,7 @@
 ---
-Title: Redis Enterprise Kubernetes Logs
-description: 
+Title: Redis Enterprise Logs on Kubernetes
+description: The cluster logs can be easily be access via sidecar deployments
+  that are described in the Redis Enterprise CRD
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
