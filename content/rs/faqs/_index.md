@@ -9,14 +9,15 @@ Here are some frequently asked questions about Redis Enterprise Software.
 
 ## Features and Terminology
 
+{{< expand-control >}}
 <!-- Also in RC -->
-{{% expand "What exactly is Redis Enterprise?" %}}
+{{< expand "What exactly is Redis Enterprise?" >}}
 {{< embed-md "what-is-redis-enterprise.md"  >}}
-{{% /expand %}}
+{{< /expand >}}
 
-{{%expand "Are you fully compatible with open source Redis?" %}}
+{{< expand "Are you fully compatible with open source Redis?" >}}
 {{< embed-md "compatible-with-oss.md"  >}}
-{{% /expand %}}
+{{< /expand >}}
 
 {{%expand "Can I keep my data safe and always available?" %}}
 Redis Enterprise Software offers a comprehensive suite of
@@ -58,12 +59,14 @@ RS cluster. You point your existing standard Redis client and code
 connection string at the RS cluster, then scale on the RS cluster as
 you need.
 {{% /expand%}}
+{{< /expand-control >}}
 
 ## Technical Capabilities
 
-{{%expand "How many Redis databases can I create and manage?" %}}
+{{< expand-control >}}
+{{< expand "How many Redis databases can I create and manage?" >}}
 {{< embed-md "how-many-databases-software.md"  >}}
-{{% /expand%}}
+{{< /expand >}}
 
 {{%expand "What happens when my database fills up?" %}}
 As explained in the open source [Redis FAQ](https://redis.io/topics/faq),
@@ -81,3 +84,4 @@ the management UI using the **Memory limit** property, as well as
 configure an eviction policy by setting it to any of the standard Redis
 behaviors, without interrupting database operations.
 {{% /expand%}}
+{{< /expand-control >}}

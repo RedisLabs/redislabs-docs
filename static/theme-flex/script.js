@@ -306,3 +306,94 @@ $(function() {
         showPageFeedback();
     }
 });
+
+// Expand and collapse control for expand shortcode
+function toggleExpand(el) {
+    if(!el || !el.parentElement || el.parentElement.className !== 'expand-parent') {
+        return;
+    }
+
+    var newIconClass, newLabel = null;
+    if(el.children[1].innerText === 'Expand all') {
+        newIconClass = 'fa fa-angle-double-up fa-lg';
+        newLabel = 'Collapse all';
+    } else {
+        newIconClass = 'fa fa-angle-double-down fa-lg';
+        newLabel = 'Expand all';
+    }
+
+    el.children[0].className = newIconClass; // Update the root control icon
+    el.children[1].innerText = newLabel; // Update the text of root control label
+    
+    var exNodes = el.parentElement.getElementsByClassName('expand');
+    if(!exNodes || exNodes.length === 0) {
+        return;
+    }    
+
+    var exNodesArr = Array.from(exNodes);
+
+    // Toggle expand items and update their icons
+    exNodesArr.forEach(function(element) {
+        var elChildren = element.children;
+        if(!elChildren || elChildren.length === 0) {
+            return;
+        }
+
+        // Update item control icon
+        if(elChildren[0] && elChildren[0].children && elChildren[0].children[0]) {
+            elChildren[0].children[0].className = (newLabel === 'Collapse all')? 'icon-icons_minus': 'icon-icons_plus';
+        }
+
+        // Update item control label
+        if(elChildren[1]) {
+            elChildren[1].style.display = (newLabel === 'Collapse all')? 'block' : 'none';
+        }
+    });    
+}
+
+function handleToggleExpandItem(el) {    
+    if(!el || !el.parentElement || !el.parentElement.parentElement || el.parentElement.parentElement.className !== 'expand-parent') {
+        return;
+    }
+
+    var exNodes = el.parentElement.parentElement.getElementsByClassName('expand');
+    if(!exNodes || exNodes.length === 0) {
+        return;
+    }    
+    
+    var exNodesArr = Array.from(exNodes);
+    var totalCount = exNodesArr.length;
+    var expandedCount = 0;
+    
+    // Count the number of expanded items
+    exNodesArr.forEach(function(element) {
+        var elChildren = element.children;
+        if(!elChildren || elChildren.length === 0) {
+            return;
+        }
+
+        if(elChildren[1] && elChildren[1].style.display !== 'none') {
+            expandedCount++;
+        }
+    });
+
+    var iconClass, label = null;
+    if(expandedCount === totalCount) {
+        iconClass = 'fa fa-angle-double-up fa-lg';
+        label = 'Collapse all';
+    }
+    if(expandedCount === 0) {
+        iconClass = 'fa fa-angle-double-down fa-lg';
+        label = 'Expand all';
+    }
+    
+    if(label) {
+        var elControl = el.parentElement.parentElement.querySelector('.expand-shortcode-control');
+        if(!elControl) {
+            return;
+        }
+
+        elControl.children[0].className = iconClass;
+        elControl.children[1].innerText = label;
+    }
+}

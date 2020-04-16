@@ -3290,3 +3290,19 @@ a[href*="#no-click"], img[src*="#no-click"] {
 	top: 0;
 	transform: rotate(45deg);
 }
+
+/* Expand shortcode control */
+.expand-shortcode-control {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.expand-shortcode-control:hover {
+  cursor: pointer;
+  color: #c82f0e;
+}
+
+.expand-shortcode-control i.fa-lg {
+  font-size: 20px;
+  vertical-align: -2px;
+}
