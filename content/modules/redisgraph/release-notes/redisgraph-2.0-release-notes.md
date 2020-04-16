@@ -62,8 +62,9 @@ Headlines:
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
+
 - Enhancement:
-    - [#[955](https://github.com/redisgraph/redisgraph/issues/955)](https://github.com/RedisGraph/RedisGraph/pull/955)  Switch OR,AND boolean semiring to ANY,PAIR.
+    - #[955](https://github.com/redisgraph/redisgraph/issues/955)  Switch OR,AND boolean semiring to ANY,PAIR.
 
 ## RedisGraph 2.0.2
 
@@ -74,16 +75,16 @@ Headlines:
 Details:
 
 - Improved error reporting:
-    - [#[925](https://github.com/redisgraph/redisgraph/issues/925)](https://github.com/RedisGraph/RedisGraph/pull/925) RediSearch query error reporting
-    - [#[919](https://github.com/redisgraph/redisgraph/issues/919)](https://github.com/RedisGraph/RedisGraph/pull/919) Added non existing entity runtime error
+    - #[925](https://github.com/redisgraph/redisgraph/issues/925) RediSearch query error reporting
+    - #[919](https://github.com/redisgraph/redisgraph/issues/919) Added non existing entity runtime error
 - Enhancements:
-    - [#[942](https://github.com/redisgraph/redisgraph/issues/942)](https://github.com/RedisGraph/RedisGraph/pull/942) Update GraphBLAS version (3.2.0)
-    - [#[922](https://github.com/redisgraph/redisgraph/issues/922)](https://github.com/RedisGraph/RedisGraph/pull/922) Filter tree compaction
-    - [#[906](https://github.com/redisgraph/redisgraph/issues/906)](https://github.com/RedisGraph/RedisGraph/pull/906) Optimize cartesian product
-    - [#[898](https://github.com/redisgraph/redisgraph/issues/898)](https://github.com/RedisGraph/RedisGraph/pull/898) Granular matrix locking
+    - #[942](https://github.com/redisgraph/redisgraph/issues/942) Update GraphBLAS version (3.2.0)
+    - #[922](https://github.com/redisgraph/redisgraph/issues/922) Filter tree compaction
+    - #[906](https://github.com/redisgraph/redisgraph/issues/906) Optimize cartesian product
+    - #[898](https://github.com/redisgraph/redisgraph/issues/898) Granular matrix locking
 - Bug fixes:
-    - [#[917](https://github.com/redisgraph/redisgraph/issues/917)](https://github.com/RedisGraph/RedisGraph/pull/917) [#[940](https://github.com/redisgraph/redisgraph/issues/940)](https://github.com/RedisGraph/RedisGraph/pull/940) Resolve memory leaks
-    - [938](https://github.com/RedisGraph/RedisGraph/pull/938) Label matrix should be fetch right before eval
+    - #[917](https://github.com/redisgraph/redisgraph/issues/917) #[940](https://github.com/redisgraph/redisgraph/issues/940) Resolve memory leaks
+    - #[938](https://github.com/RedisGraph/RedisGraph/pull/938) Label matrix should be fetch right before eval
 
 ## RedisGraph 2.0 GA (2.0.1)
 

@@ -25,7 +25,6 @@ Details:
     - #[1169](https://github.com/redisearch/redisearch/issues/1169) [FIRST_VALUE](https://oss.redislabs.com/redisearch/Aggregations.html#first_value) reducer crashed when value did not exist.
     - #[1159](https://github.com/redisearch/redisearch/issues/1159) Infinite loop on [`NOT`](https://oss.redislabs.com/redisearch/Query_Syntax.html#search_query_syntax) criteria tester.%
 
-
 ## RediSearch 1.6.11
 
 Headlines:

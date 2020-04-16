@@ -8,6 +8,7 @@ categories: ["Modules"]
 ## RediSearch 1.4.27
 
 Headlines:
+
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
 Details:
@@ -19,7 +20,6 @@ Details:
 - Bugfixes:
     - #[1110](https://github.com/redisearch/redisearch/issues/1110) Rare GC failure when accessing uninitialized variable.
     - #[1131](https://github.com/redisearch/redisearch/issues/1131) Crash on highlighting a search query where the document no longer exists.
-
 
 ## RediSearch 1.4.26
 
