@@ -268,7 +268,7 @@ For production environments you must retain the Persistent Volume Claims (PVCs) 
         Here is an example of the edited REC yaml file:
 
         ```src
-        apiVersion: "app.redislabs.com/v1alpha1"
+        apiVersion: "app.redislabs.com/v1"
         kind: "RedisEnterpriseCluster"
          metadata:
            name: "rec-pks"
