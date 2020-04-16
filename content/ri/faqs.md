@@ -7,7 +7,6 @@ categories: ["RI"]
 ---
 Here are some frequently asked questions about Redis Enterprise Software.
 
-
 ## General
 
 {{< expand-control >}}
