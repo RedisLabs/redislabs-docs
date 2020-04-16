@@ -87,11 +87,7 @@ To install RS on Linux from the CLI:
     ```src
     sudo ./install.sh
     ```
-
-    {{% note %}}
-You must either be logged in as the root user or use `sudo` to run the install process.
-    {{% /note %}}
-
+    
 1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
     including the `rlcheck` installation verification.
 
