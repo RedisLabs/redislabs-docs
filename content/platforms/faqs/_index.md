@@ -12,7 +12,7 @@ Here are some frequently asked questions about Redis Enterprise on integration p
 ## RS on Kubernetes
 
 {{< expand-control >}}
-{{%expand "What is an Operator?" %}}
+{{< expand "What is an Operator?" >}}
 An Operator is a [Kubernetes custom controller]( https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Please refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes/kubernetes-with-operator.md" >}}).
 {{< /expand >}}
 
