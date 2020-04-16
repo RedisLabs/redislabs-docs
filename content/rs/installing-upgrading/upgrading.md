@@ -10,8 +10,8 @@ To upgrade the Redis Enterprise Software (RS) software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{% warning %}}
-Before you upgrade, you must read the [RS 5.4 release notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md" >}}),
-including the [5.4 upgrade notes]({{< relref "/rs/release-notes/rs-5-4-december-2018.md#upgrade" >}}).
+Before you upgrade, you must read the [RS 5.6 release notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2019.md" >}}),
+including the [5.6 upgrade notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2020.md#upgrade-notes" >}}).
 {{% /warning %}}
 
 Version requirements:
@@ -35,20 +35,23 @@ Upgrading the software on a node requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/_index.md" >}})
 on all of the machines on which RS is installed.
 
-{{% warning %}}You must upgrade the master node before you upgrade the other nodes.
+{{% warning %}}
+- You must upgrade the master node before you upgrade the other nodes.
 We recommend that you plan to keep all nodes up until the upgrade is completed
-on all nodes.
-
-The node role is shown in the output of the 'rladmin status
+on all nodes. The node role is shown in the output of the 'rladmin status
 nodes' command.
+- You cannot change the installation path or user during upgrade.
 {{% /warning %}}
 
 You run install.sh from the directory where you untarred the media
 just like you do for a new install. The software recognizes this is
-an upgrade and proceed accordingly.
+an upgrade and proceeds accordingly.
 
 Just like for a new installation, you must sudo or be root to do the
 upgrade.
+
+To upgrade a node run:
+
 
 ```src
 sudo ./install.sh
@@ -84,8 +87,8 @@ you would like to change the default Redis version to the previous
 version supported, you should use the `tune cluster default_redis_version`
 command in the rladmin CLI and set it to the previous Redis version supported.
 
-**To check whether your Redis database versions match the latest Redis
-version supported by RS:**
+To check whether your Redis database versions match the latest Redis
+version supported by RS:
 
 - In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
     run the status command.
@@ -97,7 +100,7 @@ version supported by RS:**
 If the Redis database versions are older than the version supported by
 RS, Redis Labs recommends that you upgrade your Redis databases.
 
-**To upgrade your database:**
+To upgrade your database:
 
 1. Make sure that all of the nodes in the RS cluster are [upgraded](#upgrading-nodes).
     You cannot upgrade databases before all of the nodes in the cluster are upgraded.
