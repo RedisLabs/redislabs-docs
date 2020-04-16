@@ -381,7 +381,7 @@ Syntax:
 
 Output:
 
-{{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
+{{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
 
 ## Informative Notices
 
