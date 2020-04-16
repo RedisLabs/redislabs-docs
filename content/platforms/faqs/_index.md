@@ -7,8 +7,6 @@ categories: ["Platforms"]
 ---
 Here are some frequently asked questions about Redis Enterprise on integration platforms.
 
-
-
 ## RS on Kubernetes
 
 {{< expand-control >}}
