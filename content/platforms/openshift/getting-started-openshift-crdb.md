@@ -1,7 +1,9 @@
 ---
-Title: Getting Started with Active-Active (CRDB) on OpenShift with Route-Based Ingress
-description:
-weight: $weight
+Title: Using Active-Active (CRDB) on OpenShift with Route-Based Ingress
+description: This guide provides a step-by-step method for setting up CRDB
+  deployment with Active-Active replication that can span two Redis Enterprise
+  clusters running in OpenShift.
+weight: 70
 alwaysopen: false
 categories: ["RS"]
 ---
@@ -52,7 +54,7 @@ Copy this section of the REC spec and modify it for your environment. To apply i
 to every cluster that will participate in the CRDB deployment, edit the cluster yaml file
 and apply it using `kubectl apply -f <cluster.yaml>`:
 
-```yaml
+```src
    activeActive:
     apiIngressUrl:  api1.cluster1.<openshift.department.organization.com>
     dbIngressSuffix: -cluster1.<openshift.department.organization.com>
@@ -93,14 +95,18 @@ that were automatically created when the clusters were created. To do this,
 repeat the following process for each of the clusters involved:
 
 1. Login to the OpenShift cluster where your Redis Enterprise Cluster (REC) resides.
-1. To find the secret that holds the REC credentials, run: `kubectl get secrets`
-	
-	From the secrets listed, you’ll find one that is named after your REC and
-	of type Opaque, like this:
+1. To find the secret that holds the REC credentials, run:
 
-	```src
-	redis-enterprise-cluster            Opaque                  3       1d
-	```
+    ```sh
+    kubectl get secrets
+    ```
+
+ 	 From the secrets listed, you’ll find one that is named after your REC and
+ 	 of type Opaque, like this:
+
+	 ```src
+	 redis-enterprise-cluster            Opaque                  3       1d
+	 ```
 
 1. Copy the hashed password and username from the file and create a yaml file
 with that information in the following format:
@@ -118,13 +124,13 @@ with that information in the following format:
 
 1. Deploy the newly created secret yaml file in the other clusters:
 
-	```src
-	$ kubectl create -f crdb1-secret.yaml
+	```sh
+	kubectl create -f crdb1-secret.yaml
 	```
 
 	A typical response looks like:
 
-	```
+	```src
 	secret/crdb1-cred created
 	```
 
@@ -173,14 +179,14 @@ To do a basic validation test of database replication:
 
 1. Connect to one of the cluster pods using the following command:
 
-	```src
+	```sh
 	oc exec -it <your-cluster1-name>-0 bash
 	```
 
 1. At the prompt, launch the redis CLI:
 
-	```src
-	$ redis-cli -h <your database1 hostname> -p <your database1 port> -a <your database1 password>
+	```sh
+	redis-cli -h <your database1 hostname> -p <your database1 port> -a <your database1 password>
 	```
 
 1. Set some values and verify they have been set:
@@ -199,9 +205,9 @@ To do a basic validation test of database replication:
 1. Now, exit the CLI and the pod execution environment and login to the synched database
 on the other cluster.
 
-	```src
+	```sh
 	oc exec -it <your-cluster2-name>-0 bash
-	$redis-cli -h <your database2 hostname> -p <your database2 port> -a <your database2 password>
+	redis-cli -h <your database2 hostname> -p <your database2 port> -a <your database2 password>
 	```
 
 1. Retrieve the values you previously set or continue manipulating key:value pairs
