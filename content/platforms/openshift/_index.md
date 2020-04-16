@@ -1,11 +1,22 @@
 ---
 Title: Getting Started with Kubernetes and OpenShift
-description:
+description: Redis Enterprise is supported on OpenShift Kubernetes cluster deployments via
+  an operator that facilitates deploying and managing Redis Enterprise clusters.
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
 ---
+
+Redis Enterprise is supported on OpenShift Kubernetes cluster deployments via
+an operator. The operator is a software component that runs in your
+deployment namespace and facilitates deploying and managing
+Redis Enterprise clusters.
+
+{{%allchildren style="h2" description="true"%}}
+
+{{% comment %}}
+
 These are the steps required to set up a Redis Enterprise Software
 Cluster with OpenShift.
 
@@ -325,3 +336,5 @@ In order to conduct the Ping test through Telnet, you can create a new route to 
 {{% /note %}}
 
 ![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )
+
+{{% /comment %}}
