@@ -5,6 +5,32 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 1.4.27
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Features:
+    - #[1172](https://github.com/redisearch/redisearch/issues/1172) Added [`exists`](https://oss.redislabs.com/redisearch/Aggregations.html#list_of_string_apply_functions) function that can be used on conditional updates ([REPLACE PARTIAL](https://oss.redislabs.com/redisearch/Commands.html#ftadd)) to check if a field exists in the document.
+- Minor Enhancements:
+    - #[1172](https://github.com/redisearch/redisearch/issues/1172) Lazy evaluation of the right side of 'or'/'and' clauses in [IF condition](https://oss.redislabs.com/redisearch/Commands.html#parameters_1).
+- Bugfixes:
+    - #[1110](https://github.com/redisearch/redisearch/issues/1110) Rare GC failure when accessing uninitialized variable.
+    - #[1131](https://github.com/redisearch/redisearch/issues/1131) Crash on highlighting a search query where the document no longer exists.
+
+## RediSearch 1.4.26
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Fix rare `FORK GC` crash which caused by accessing uninitialized variable.
+
 ## RediSearch 1.4.25
 
 Headlines:

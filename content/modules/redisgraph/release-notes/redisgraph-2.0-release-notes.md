@@ -5,6 +5,87 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisGraph 2.0.10
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor Enhancements:
+    - #[1035](https://github.com/redisgraph/redisgraph/issues/1035) - RediSearch version [1.6.11](https://github.com/RediSearch/RediSearch/releases/tag/v1.6.11).
+- Bugfixes:
+    - #[1017](https://github.com/redisgraph/redisgraph/issues/1017), #[1019](https://github.com/redisgraph/redisgraph/issues/1019) - Algebraic expressions correctness.
+    - #[1020](https://github.com/redisgraph/redisgraph/issues/1020) - Support parameterised SKIP and LIMIT.
+
+## RedisGraph 2.0.9
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1028](https://github.com/redisgraph/redisgraph/issues/1028) Ensure proper placement of Index Scans when partially replacing Filter ops.
+
+## RedisGraph 2.0.8
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1023](https://github.com/redisgraph/redisgraph/issues/1023) Fix regression in checking argument counts to GRAPH endpoints.
+
+## RedisGraph 2.0.6
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- #[897](https://github.com/redisgraph/redisgraph/issues/897) GRAPH.SLOWLOG
+- #[1004](https://github.com/redisgraph/redisgraph/issues/1004) Re-enable GRAPH.PROFILE
+- #[917](https://github.com/redisgraph/redisgraph/issues/917), #[991](https://github.com/redisgraph/redisgraph/issues/991), #[940](https://github.com/redisgraph/redisgraph/issues/940), #[984](https://github.com/redisgraph/redisgraph/issues/984) Memory leak fixes
+- #[925](https://github.com/redisgraph/redisgraph/issues/925) Bug fix within RediSearch
+- #[1001](https://github.com/redisgraph/redisgraph/issues/1001) Bug fix label scan invalid range
+
+## RedisGraph 2.0.5
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Enhancement:
+    - #[955](https://github.com/redisgraph/redisgraph/issues/955)  Switch OR,AND boolean semiring to ANY,PAIR.
+
+## RedisGraph 2.0.2
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Improved error reporting:
+    - #[925](https://github.com/redisgraph/redisgraph/issues/925) RediSearch query error reporting
+    - #[919](https://github.com/redisgraph/redisgraph/issues/919) Added non existing entity runtime error
+- Enhancements:
+    - #[942](https://github.com/redisgraph/redisgraph/issues/942) Update GraphBLAS version (3.2.0)
+    - #[922](https://github.com/redisgraph/redisgraph/issues/922) Filter tree compaction
+    - #[906](https://github.com/redisgraph/redisgraph/issues/906) Optimize cartesian product
+    - #[898](https://github.com/redisgraph/redisgraph/issues/898) Granular matrix locking
+- Bug fixes:
+    - #[917](https://github.com/redisgraph/redisgraph/issues/917) #[940](https://github.com/redisgraph/redisgraph/issues/940) Resolve memory leaks
+    - #[938](https://github.com/RedisGraph/RedisGraph/pull/938) Label matrix should be fetch right before eval
+
 ## RedisGraph 2.0 GA (2.0.1)
 
 This is the General Availability Release of RedisGraph 2.0 (2.0.1)!

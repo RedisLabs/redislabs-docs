@@ -5,6 +5,80 @@ weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 1.6.12
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Features:
+    - #[1172](https://github.com/redisearch/redisearch/issues/1172) Added [`exists`](https://oss.redislabs.com/redisearch/Aggregations.html#list_of_string_apply_functions) function that can be used on conditional updates ([REPLACE PARTIAL](https://oss.redislabs.com/redisearch/Commands.html#ftadd)) to check if a field exists in the document.
+- Minor Enhancements:
+    - #[1172](https://github.com/redisearch/redisearch/issues/1172) Lazy evaluation of the right side of 'or'/'and' clauses in [IF condition](https://oss.redislabs.com/redisearch/Commands.html#parameters_1).
+    - #[1134](https://github.com/redisearch/redisearch/issues/1134) Remove hard limit on LIMIT when using FT.SEARCH.
+- Bugfixes:
+    - #[1124](https://github.com/redisearch/redisearch/issues/1124) NOINDEX tag fields could not be updated on UPDATE PARTIAL with no indexed fields.
+    - #[1120](https://github.com/redisearch/redisearch/issues/1120) Release loop in II_GetCriteriaTester which released the same criteria tester multiple times.
+    - #[1161](https://github.com/redisearch/redisearch/issues/1161) Case where setting [MAXDOCTABLESIZE](https://oss.redislabs.com/redisearch/Configuring.html#maxdoctablesize) had no effect.
+    - #[1169](https://github.com/redisearch/redisearch/issues/1169) [FIRST_VALUE](https://oss.redislabs.com/redisearch/Aggregations.html#first_value) reducer crashed when value did not exist.
+    - #[1159](https://github.com/redisearch/redisearch/issues/1159) Infinite loop on [`NOT`](https://oss.redislabs.com/redisearch/Query_Syntax.html#search_query_syntax) criteria tester.%
+
+## RediSearch 1.6.11
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1126](https://github.com/redisearch/redisearch/issues/1126) Memory leak introduced by queries for tag fields that have no results.
+
+## RediSearch 1.6.10
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+- This release fixes certain backwards compatibility issues compared to 1.4.  Although they are rare cases, it is recommended when upgrading to 1.6 to use this version or newer.
+
+Details:
+
+- Minor Enhancements:
+    - #[1062](https://github.com/redisearch/redisearch/issues/1062) Added Custom stopwords list in [`FT.INFO`](https://oss.redislabs.com/redisearch/Commands.html#ftinfo)
+- Fixed backwards incompatible issues:
+    - #[1075](https://github.com/redisearch/redisearch/issues/1075) Fields should always be returned to the user as a string.
+    - #[1074](https://github.com/redisearch/redisearch/issues/1074) Don't truncate possible integral values when printing.
+    - #[1065](https://github.com/redisearch/redisearch/issues/1065) Revert "Change how generated reducer aliases are made".
+- Bugfixes:
+    - #[1085](https://github.com/redisearch/redisearch/issues/1085) Min and max value on non leaf nodes in the numeric tree should not be updated.
+    - #[1106](https://github.com/redisearch/redisearch/issues/1106)  Pipe leak on `FORK GC` caused by closing the fork without holding the lock.
+    - #[1114](https://github.com/redisearch/redisearch/issues/1114)  PR #[986](https://github.com/redisearch/redisearch/issues/986) reverted the work from #[985](https://github.com/redisearch/redisearch/issues/985), #[989](https://github.com/redisearch/redisearch/issues/989). This PR reintroduces these features.
+
+## RediSearch 1.6.9
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1052](https://github.com/redisearch/redisearch/issues/1052) Remove wrong optimization on Quantile.
+    - #[1057](https://github.com/redisearch/redisearch/issues/1057) Memory pool did not release memory when certain limit was reached.
+
+## RediSearch 1.6.8
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1052](https://github.com/redisearch/redisearch/issues/1052) Remove wrong optimization on Quantile.
+    - #[1057](https://github.com/redisearch/redisearch/issues/1057) Memory pool did not release memory when certain limit was reached.
 
 ## RediSearch 1.6 GA (1.6.7)
 
