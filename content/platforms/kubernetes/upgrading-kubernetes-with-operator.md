@@ -46,11 +46,15 @@ If you have made changes to the role, role binding, rbac or crd in the previous 
 
 The rolling upgrade of the cluster nodes' statefulSet starts.
 
-To see the status of the current rolling upgrade, run:
+To see the status of the current rolling upgrade (replace redis-enterprise with the name in your RedisEnterpriseCluster object, run:
 
 ```src
-kubectl rollout status sts
+kubectl rollout status sts redis-enterprise
 ```
+
+If the rollout is not happening, take a look at the logs output from the operator
+```src
+
 
 ## How Does the Upgrade Work?
 
