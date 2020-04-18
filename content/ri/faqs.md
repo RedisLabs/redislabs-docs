@@ -48,8 +48,6 @@ Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinsight@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
 {{< /expand >}}
 
-{{< /expand-control >}}
-
 ## Memory Analysis
 
 {{< expand-control >}}
@@ -89,8 +87,6 @@ Key pattern is a grouping of related keys, for example users:*. RedisInsight can
 We assume that you use colon as a separator. If you use a non-standard separator, you have to add key patterns manually.
 {{< /expand >}}
 
-{{< /expand-control >}}
-
 ## Connecting to Redis
 
 {{< expand-control >}}
@@ -107,8 +103,6 @@ You must install RedisInsight inside your VPC, either on an EC2 instance, or usi
 Our licensing works on the sum of used memory on the redis instances you have added to RedisInsight. So if your license allows 15GB, you can add 5 redis instances using 3 GB RAM, or 1 redis server using 15 GB.
 {{< /expand >}}
 
-{{< /expand-control >}}
-
 ## License and Support
 
 {{< expand-control >}}
@@ -124,8 +118,6 @@ Once you buy a license, you can use RedisInsight forever as long as you are with
 {{< expand "How do I get my license key?" >}}
 Once you complete payment, you receive an email with your license key.
 {{< /expand >}}
-
-{{< /expand-control >}}
 
 ## Privacy and Security
 
