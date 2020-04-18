@@ -68,8 +68,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
     {{% /note %}}
 
-    - **Replication** - We recommend that you use intra-cluster replication to create slave shards in each CRDB instance.
-        The intercluster synchronization is most efficient when it reads from slave shards.
+    - **Replication** - Please enable intra-cluster replication to create slave shards in each CRDB instance. The intercluster synchronization is most efficient when it reads from slave shards and also supports Slave HA for redundancy. CRDB without slave shards isn’t recommended.
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
