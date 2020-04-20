@@ -10,7 +10,7 @@ To upgrade the Redis Enterprise Software (RS) software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{% warning %}}
-Before you upgrade, you must read the [RS 5.6 release notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2019.md" >}}),
+Before you upgrade, you must read the [RS 5.6 release notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2020.md" >}}),
 including the [5.6 upgrade notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2020.md#upgrade-notes" >}}).
 {{% /warning %}}
 
