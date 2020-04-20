@@ -11,6 +11,8 @@ aliases:
 We are constantly working to improve the modules.
 To get the latest features and fixes for a module, you must upgrade the module in Redis.
 
+We recommend that you test module upgrade commands in a test environment before you upgrade modules in a production environment. The module upgrade arguments are not validated during the upgrade process and incorrect arguments can cause unexpected downtime.
+
 {{% note %}}
 Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
 {{% /note %}}
