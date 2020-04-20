@@ -111,6 +111,9 @@ To specify to import from a local mount point on a node:
     For example: `/mnt/Public/backup.rdb`
 
 ### OpenStack Swift
+ {{% note %}}
+ Support of OpenStack Object Storage ("Swift") for backup, import and export location will end on November 30, 2020.
+ {{% /note %}}
 
 Before you specify to import from OpenStack Swift, make sure that you have:
 
