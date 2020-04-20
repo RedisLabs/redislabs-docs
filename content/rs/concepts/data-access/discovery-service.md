@@ -82,6 +82,10 @@ implements only the parts required to provide applications with easy
 High Availability, be compatible with the protocol, and not rely on DNS
 to derive which node in the cluster to communicate with.
 
+ {{% note %}}
+For Redis Sentinel, every database name must be unique across the cluster.
+ {{% /note %}}
+
 ## Redis client support
 
 You can find the recommended list of client libraries to use for
