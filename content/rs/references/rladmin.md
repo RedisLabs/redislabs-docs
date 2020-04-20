@@ -65,7 +65,7 @@ In the rladmin CLI you can:
 Usage:
 
     bind [db <db:id | name>] endpoint <id> 
-    [ include | exclude ] proxy <id1 .. idN>
+    [ include | exclude ] <id1 .. idN>
 
     bind [db <db:id | name>] endpoint <id> policy <single | all-master-shards | all-nodes>
 
