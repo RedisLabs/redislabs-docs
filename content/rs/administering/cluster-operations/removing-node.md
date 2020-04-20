@@ -68,7 +68,7 @@ replaced. For additional details, refer to
 
 ## Removing a node
 
-To remove a node:
+To remove a node using the web UI:
 
 1. Click **Remove** at the top of the **Node** page for the node to be
     removed.
@@ -80,6 +80,11 @@ To remove a node:
     then the process stops.
 1. Once the process finishes, the node is no longer shown in
     the UI.
+
+To remove a node using the REST API:
+
+The API for removing a node was updated in RS 5.4.2. The API call must include json data and the "Content-Type: application/json" header. For example:
+curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
 
 You can choose to receive email alerts related to this process, as
 described in [Managing cluster
