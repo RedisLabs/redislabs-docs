@@ -35,8 +35,9 @@ To install RedisInsight:
     chmod +x redisinsight-<platform>-<version>
     ```
 
-    - For Windows and Mac - Run the installer.
-    - On Mac, if you see a warning saying that '"redisinsight" can't be opened because Apple cannot check it for malicious software' and you still wish to run Redisinsight then you can use [this article from Apple](https://support.apple.com/en-gb/HT202491) to open it (in particular, the section saying "How to open an app that hasn’t been notarized or is from an unidentified developer" is likely most appropriate).
+    - For Windows and MacOS - Run the installer.
+    
+        For MacOS - If the operating system warns you that RedisInsight cannot be checked for malicious software, follow the instructions from [Apple support](https://support.apple.com/en-gb/HT202491) about how to open an app from an unidentified developer.
 
 1. Run RedisInsight:
 
