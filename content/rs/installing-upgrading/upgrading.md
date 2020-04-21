@@ -137,7 +137,7 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
     After you upgrade an instance to use the new protocol version,
     it automatically receives any missing write-operations.
 
-- **Feature set version** - RS 5.6 and higher include a new feature set version to support new Active-Active features.
+- **Feature set version** - RS 5.6.0 and higher include a new feature set version to support new Active-Active features.
     When you update the feature set version for an Actvie-Active database, the feature set version is updated for all of the database instances.
 
 To upgrade a CRDB instance:
