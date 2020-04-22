@@ -10,13 +10,13 @@ Just to get you started, here is a simple explanation of how to contribute conte
 ## Edit in GitHub vs. Open an Issue
 
 If you see a problem on a page, either with content or formatting, and you think you can fix it,
-you can click on the *Edit on GitHub- link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
+you can click on the **Edit on GitHub** link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
 
 If you see a problem on a page but you don't know how to fix it,
-go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a *New Issue*.
+go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a **New Issue**.
 
 {{% note %}}
-If you do not have the information to enter into the issue, **DO NOT*- open a new blank issue.
+If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
 {{% /note %}}
 
 ## Branches vs. Forks
@@ -27,7 +27,7 @@ After every commit to a branch, the site is re-built within about 1 minute so yo
 
 If you are not a member of the repository, you can fork the repository to a branch in your account
 and make your changes on your private branch.
-**You must*- use a new branch for every change.
+**You must** use a new branch for every change.
 If the changes that you make resolve two separate issues, make two separate PRs.
 
 After you commit your changes to the public repo or your forked repo,
@@ -76,6 +76,7 @@ you can use the `children` shortcode to show all of the sub-topics for the secti
 
 The structure of an article is:
 
+- A short description (2-4 sentences) of the article.
 - Concepts
 - Prerequisites (if necessary)
 - Informational notices (if necessary)
@@ -103,8 +104,8 @@ and the concepts must explain any background information that is needed to know 
 
             1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
                 By default, the address is: `https://<RS_address>:8443`
-            1. Go to **settings > team*- and click ![Add](/images/rs/icon_add.png#no-click "Add").
-            1. Enter the name, email, and password for the user, select the **Admin*- role,
+            1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
+            1. Enter the name, email, and password for the user, select the **Admin** role,
                 and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
             ![Service Account Creation](/images/rs/create-service-account.png)
@@ -120,6 +121,10 @@ and the concepts must explain any background information that is needed to know 
 
 ### Writing guidelines
 
+- We recommend that you use a markdown linter in your IDE to maintain good markdown syntax.
+- Format names of UI controls in bold - **OK**
+- Format commands and input text in code - `rladmin`
+- Introduce a procedure with the goal of the procedure and a colon (:) - To authenticate to the Swagger UI:
 - Lead the sentence with the subject
 - Use “must” instead of - needs, wants, has to, desire, ...
 - Subject and verb must agree in number - blueprint exists, blueprints exist
@@ -149,3 +154,81 @@ Here are some examples:
 | --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
 | Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
 | Procedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
+
+### Common syntax gotchas
+
+- Lists
+    - List procedures in numbered lists preceded with a blank line -
+
+        ```src
+        To add your name:
+
+        1. Click here.
+        1. Enter your name.
+        1. Click **OK**.
+        ```
+
+- List items in bulleted lists preceded with a blank line -
+
+        ```src
+        The ingredients are:
+
+        - Potatoes
+        - Chocolate
+        ```
+
+- To add more information about a step in a procedure, add a blank line and a tab before the sentence -
+
+        ```src
+        1. Click here.
+
+            Here means where you need to click.
+
+        1. Enter your name.
+        ```
+
+- When you list types of items, put the name of the item in bold followed by a dash (-) and then describe the item:
+
+        ```src
+        Some API operations require input, such as:
+
+        - **Parameters** - When an API operation requires URI parameters, such as "get subscription by subscription id,
+        you can enter the values for the parameters.
+
+        - **JSON Request Body** - For API operations that require a JSON request body, you can either:
+
+            - Use the **model display** to write the request based on the expected JSON structure and parameters.
+
+            - Use the **Try it now** sample JSON created by Swagger as a base template that you can edit and execute.
+        ```
+
+### Images and notices
+
+- Add images below text at the same tab level as the text -
+
+        ```src
+       The API response is shown in the **Responses** section of the API operation.
+       The results include an example of how you to execute the same operation in a standard command-line utility using `cURL`.
+
+       ![swagger-query-results](/images/rv/api/swagger-query-results.png)
+       ```
+
+- Use info boxes to add additional information and note boxes to add information that can avoid problems.
+
+        ```src
+        {{% info %}}
+        We use `cURL` and Linux shell scripts to provide examples on using the API.
+        {{% /info %}}
+
+        {{% note %}}
+        The key values are not saved when you refresh the page.
+        {{% /note %}}
+        ```
+
+- When you add info, note or warning boxes below indented text, you must indent the open and close tags and not indent the content.
+
+        ```src
+        {{% note %}}
+        The key values are not saved when you refresh the page.
+        {{% /note %}}
+        ```
