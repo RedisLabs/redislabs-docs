@@ -119,7 +119,7 @@ a result:
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
-## Upgrading Active-Active Databases
+## Upgrading Active-Active Databases {#upgrading-activeactive-databases}
 
 When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
@@ -160,8 +160,10 @@ To upgrade a CRDB instance:
     rladmin upgrade db <crdb_name>
     ```
 
-    This warning is shown:
+    If the protocol version is old, read the warning message carefully and confirm.
     ![crdb-upgrade-protocol](/images/rs/crdb-upgrade-protocol.png)
+
+    The CRDB instance uses the new Redis version and CRDB protocol version.
 
     {{% expand "To upgrade the CRDB instance without upgrading the protocol version:" %}}
 You can use the `keep_crdt_protocol_version` option to upgrade the database
@@ -171,11 +173,7 @@ If you use this option, make sure that you upgrade the CRDB protocol soon after 
 You must upgrade the CRDB protocol before you update the CRDB feature set version.
     {{% /expand %}}
 
-1. Read the warning message carefully and confirm.
-
-    The CRDB instance uses the new Redis version and CRDB protocol version.
-
-1. To update the feature set for each active-active database, after all of the CRDB instances are upgraded run:
+1. If the feature set version is old, you must upgrade all of the CRDB instances. Then, to update the feature set for each active-active database, run:
 
     ```src
     crdb-cli crdb update --crdb-guid <crdb_guid> --featureset-version yes
