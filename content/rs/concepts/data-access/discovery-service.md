@@ -84,10 +84,8 @@ to derive which node in the cluster to communicate with.
 
 ## Redis client support
 
-You can find the recommended list of client libraries to use for
-Discovery Service using the Redis Sentinel API on the [Supported clients and Web Browsers 
-page]({{< relref "/rs/administering/designing-production/supported-clients-browsers.md" >}}),
-under "Discovery Service" section.
+To use the discovery service, we recommend that you use [client libraries]({{< relref "/rs/administering/designing-production/supported-clients-browsers.md#discovery-service" >}})
+that support the Redis Sentinel API.
 
 Note: Redis Sentinel API can return endpoints for both master and slave
 endpoints. Discovery Service only supports master endpoints and does not
