@@ -8,7 +8,7 @@ categories: ["Platforms"]
 aliases:
 ---
 The OperatorHub is a feature of OpenShift 4.x that enables browsing a catalog
-of open-source and vendor provided operators. The operators available in the
+of open-source and vendor-provided operators. The operators available in the
 catalog can easily be installed via a few simple steps through the OpenShift
 administrative interface.
 
@@ -31,9 +31,13 @@ application workloads in your K8s cluster.
 The Redis Enterprise Operator can be installed into a single project (namespace)
 as follows:
 
-### Step 1: Login
+### Step 1: Log in
 
-1. Log in to your OpenShift account as a super admin.
+The operator is deployed into a project namespace. As such, you just need an
+account with sufficient access to your project or the ability to create a new
+project.
+
+1. Log in to your OpenShift account.
 1. If you don't current have a project available for deployment, navigate to **Projects**
    in the left navigation and selet **Create Project**.
 
@@ -46,10 +50,13 @@ as follows:
 
 ### Step 2: Navigate to database operators
 
+
 1. On the left navigation, select **Catalog**,
 2. Select **OperatorHub** under **Catalog**.
-3. Select **Database** in the *OperatorHub* view once it displays. This catalog
-   may take a few moments to display.
+3. Once the *OperatorHub* view displays there will be a list of categories on
+   the left and a list of operators on the right. You can search for
+   "Redis Enterprise" in the search dialog just below the
+   list of categories or select **Database** in the *OperatorHub*
 4. Make sure you have selected your project at the top following the "*Project:*" label.
 
 
@@ -57,7 +64,7 @@ as follows:
 
 ### Step 3: Find and select install
 
-Scroll through the various database operators and select the Redis Enterprise Operator.
+Either search for "Redis Enterprise" or scroll through the various database operators and select the Redis Enterprise Operator.
 
 ![K8S Operator Hub - select the Redis Enterprise Operator]( /images/rs/k8s-operatorhub-install-select-operator.png )
 
@@ -72,10 +79,13 @@ Lifecycle Management](https://docs.openshift.com/container-platform/4.3/operator
 operator, the subscription that provides this is only for a single project
 (namespace). You cannot select "All namespaces on the cluster".
 
+{{% note %}}
+
 You should change the "*Approval Strategy*"" from subscription from "*Automatic*" to
 "*Manual*" for production systems. This will guarantee the operator is only
 upgraded by approval. This will allow upgrades only during maintenance periods
 so you can control any possible downtime due to upgrades to operator-managed clusters.
+{{% /note %}}
 
 Click on **Subscribe** button to start the subscription for your project.
 
@@ -115,7 +125,7 @@ You can navigate from the install plan to the operator by selecting the
 After selected the operator, the view will show the installed version and
 catalog source along with other information. The link to the installed version
 will take to you to a view where you can find more information about the
-current version and create databases. The catalog source link will allow
+current version and create clusters. The catalog source link will allow
 you to view the subscription.
 
 ![K8S Operator Hub - installed version and source]( /images/rs/k8s-operatorhub-install-csv-sources.png )
