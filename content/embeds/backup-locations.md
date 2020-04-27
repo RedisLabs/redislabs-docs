@@ -35,9 +35,12 @@ For example: `sftp://username:password@10.1.1.1/home/backups/`
 
 ### AWS S3
 
-Before you choose to backup to Amazon S3, make sure that you have:
+Before you choose to backup to Amazon AWS S3, make sure that you have:
 
 - Storage location path in the format: `s3://bucketname/path/`
+
+    For AWS S3-compatible storage services, enter the location to the storage.
+
 - Access key ID
 - Secret access key
 
