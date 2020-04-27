@@ -41,10 +41,19 @@ available on the [Github project RedisLabs/redis-enterprise-k8s-docs](https://gi
 
 Here are the main fields you may want to review and edit:
 
-- `name`: “*your_cluster_name*”
+- `name`: “rec”
 
-    This is your own name that will be used by the operator to name various
+    This is the cluster name that will be used by the operator to name various
     resources in the Kubernetes cluster and also name the CRD.
+
+    {{% note %}}
+
+The name is currently restricted to the value "rec" in the current release due to the
+way that service accounts are created. There is a binding between the SCC
+and the service account. While this binding can be created manually, this is
+not a recommended practice.
+
+    {{% /note %}}
 
 - [`nodes`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): *nnn*
 

@@ -174,6 +174,13 @@ option in the management interface.
 
     Edit the YAML definition as appropriate. See [**Options for clusters**]({{< relref "cluster-options.md">}})
     section for more information.
+
+    {{% note %}}
+
+The name of the cluster must be "rec" for deployments from within the OLM. For more information, see the `name:` field description in [**Options for clusters**]({{< relref "cluster-options.md">}})
+
+    {{% /note %}}
+
 1. Select the **Create** button to create and deploy the cluster. You should
    see the name of your cluster listed.
 
