@@ -1,18 +1,17 @@
 ---
-Title: Account Management
+Title: User Management and Access Control
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/account-management/
 ---
-To give each team member only the permissions that they need for their work with the cluster,
-RS lets you assign a role to each team member.
-You can manage team members and roles in **settings** > **team**, or with the REST API.
+You can configure RS users with permissions for:
 
-The roles and permissions available in RS are:
+    - [Web UI access]({{< relref "/rs/administering/access-control/management-roles.md" >}}) - The areas of the cluster web UI that a user can access and edit.
+    - [Database connections]({{< relref "/rs/administering/access-control/access-control-lists.md" >}}) - Commands and keys that the user can use in database connections.
 
-{{< embed-html "account-role-table.html" >}}
+You can manage users and roles in **access control** or with the REST API.
 
 ## Adding a User
 
@@ -64,10 +63,6 @@ To edit the name, password, role or email alerts of a user, hover over the user 
 (/images/rcpro/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
 delete the user and re-add it.
 
-### Resetting user passwords
-
-{{< embed-md "reset-password.md" >}}
-
 ## User Account Security
 
 To make sure your user accounts are secured and not misused, RS supports enforcement of:
@@ -79,6 +74,10 @@ To make sure your user accounts are secured and not misused, RS supports enforce
 
 To enforce a more advanced password policy that meets your contractual and compliance requirements and your organizational policies,
 we recommend that you use [LDAP integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) with an external identity provider, such as Active Directory.
+
+### Resetting user passwords
+
+{{< embed-md "reset-password.md" >}}
 
 ### Setting up local password complexity
 
