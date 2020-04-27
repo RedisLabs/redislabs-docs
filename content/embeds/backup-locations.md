@@ -39,7 +39,7 @@ Before you choose to backup to Amazon AWS S3, make sure that you have:
 
 - Storage location path in the format: `s3://bucketname/path/`
 
-    For AWS S3-compatible storage services, enter the location to the storage.
+    For configuring AWS S3-compatible storage services with rladmin, contact [Redis Labs Support](https://support.redislabs.com).
 
 - Access key ID
 - Secret access key
