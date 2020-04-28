@@ -92,7 +92,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File.
 
     - **Default database access** - When you configure a password for your database,
-        all connections to the database must autheticate with the `AUTH <password>` command.
+        all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
         If you also configure an access control list, connections can specify other users for authentication
         and requests are allowed according to the Redis ACLs specified for that user.
 
