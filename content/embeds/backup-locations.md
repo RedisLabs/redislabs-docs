@@ -41,10 +41,7 @@ Before you choose to backup to Amazon AWS S3, make sure that you have:
 - Access key ID
 - Secret access key
 
-If you have a local AWS S3 service in your enviroment, is possible to configure it as your AWS S3 storage service using rladmin:
-`rladmin cluster config s3_url <hostname>`
-
-
+To connect to a locally-hosted AWS S3 location, run: `rladmin cluster config s3_url <hostname>`
 
 ### Local mount point
 
