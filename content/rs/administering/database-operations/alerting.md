@@ -23,4 +23,4 @@ To enable alerts for a database:
 To enable alert emails:
 
 1. Configure the [email server settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}})).
-2. In **settings** > **team**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}) that the user receives.
+2. In **settings** > **team**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}) that the user receives.

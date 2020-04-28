@@ -152,7 +152,7 @@ after the database is created.
 
 - [**Alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}) -
     You can select alerts to show in the database status and configure their thresholds.
-    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}).
+    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
 
 1. Click **Activate**.
 
