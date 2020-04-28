@@ -16,7 +16,7 @@ including the [5.6 upgrade notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2
 
 Version requirements:
 
-- To upgrade your cluster to v5.6, your cluster must first be on 5.0.2 or above.
+- To upgrade your cluster to v5.6, your cluster must first be on 5.0.2-30 or above.
 - To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above.
 - To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above.
 - To upgrade your cluster to v5.0, your cluster must first be on 4.4.2 or above.
