@@ -165,7 +165,7 @@ To set the TLS ciphers:
 
 - Default TLS Protocols: HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
 - Syntax: `rladmin cluster config cipher_suites '<openssl_cipher_list>'`
-    - Redis Enterprise Software uses openssl to implement TLS ([List of available configurations](https://www.openssl.org/docs/manmaster/man1/ciphers.html))
+    - Redis Enterprise Software uses openssl to implement TLS ([List of available configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html))
 - The below example uses the Mozilla intermediate compatibility cipher list
 
 ```src
