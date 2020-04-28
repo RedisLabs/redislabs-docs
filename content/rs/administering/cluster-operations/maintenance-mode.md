@@ -88,9 +88,9 @@ rladmin node <node_id> maintenance_mode on keep_slave_shards
 
 ### Demoting a master node in maintenance mode
 
-When you turn maintenance mode on for a master node in order to do maintenance that interrupts connectivitiy to the master node,
+When you turn maintenance mode on for a master node in order to do maintenance that interrupts connectivity to the master node,
 you can demote the master node so that another node becomes the master.
-When you demote the master node, the connectivity outage caused is shorter than the outage caused when the cluster detects that the master not available.
+When you demote the master node, it takes less time for the cluster to elect a new master than if the cluster detects that the master not available.
 
 To demote a master node when you turn on maintenance mode:
 
