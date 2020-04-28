@@ -8,8 +8,8 @@ aliases: /rs/administering/designing-production/security/account-management/
 ---
 You can create RS users and assign them to [roles]({{< relref "user-roles.md" >}}) with permissions for:
 
-    - Web UI access - The areas of the cluster web UI that a user can access and edit.
-    - Database connections - Commands and keys that the user can use in database connections.
+- Cluster management - The areas of the cluster web UI and API that a user can access and edit.
+- Database connections - Commands and keys that an authenticated user can use in database connections.
 
 You can manage users and roles in **access control** or with the REST API.
 
@@ -17,7 +17,7 @@ You can manage users and roles in **access control** or with the REST API.
 
 To add a user to the cluster:
 
-1. Go to: **settings** > **team**
+1. Go to: **access control**
 1. Click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Enter the name, email and password of the new user and select the role to assign to the user.
 1. Select the type of user:
