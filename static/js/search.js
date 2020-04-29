@@ -21,6 +21,9 @@ function initLunr() {
             lunrIndex.field('title', {
                 boost: 15
             });
+            lunrIndex.field('keywords', {
+                boost: 12
+            });            
             lunrIndex.field('tags', {
                 boost: 10
             });
