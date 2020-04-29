@@ -109,7 +109,7 @@ To add a TLS-enabled Redis database:
 
     ![instance_overview_page](/images/ri/add-db-menu-screen.png)
 
-1. Enter the host, port and password (if any) of your database.
+1. Enter the host, port and username (if your database is ACL enabled), password (if any) of your database.
 1. Select **Use TLS**.
 
     ![instance_overview_page](/images/ri/add-db-tls-screen.png)
