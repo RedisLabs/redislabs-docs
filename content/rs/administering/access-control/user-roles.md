@@ -5,14 +5,14 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In **access control** > **roles**, you can configure RS roles to assign to users with:
+In **access control** > **roles**, you can configure RS user roles to assign to users with:
 
-- Management roles that define user access to the RS web UI for the cluster
+- Management roles that define user access to the RS web UI and API for the cluster
 - Redis ACLs that define the commands and keys that users can access in database connections
 
 ## Cluster Management Roles
 
-Each user role is assigned a management role that defines the access the user with that role has in the RS web UI for the cluster.
+Each user role is assigned a management role that defines the access the user with that role has in the RS web UI and API for the cluster.
 
 The management roles are:
 
@@ -30,30 +30,32 @@ To assign a management role to a user role:
 
 ### User Roles for Database Connections Only
 
-To create a user role for users that cannot connect to the RS web UI, assign the **None** management role to the user role.
+To create a user role for users that cannot connect to the RS web UI and API, assign the **None** management role to the user role.
 
 ## Database Access Control
 
 To control user access to Redis database commands and keys,
-you must define Redis ACLs that specify the commands and keys that users can run.
+you must define Redis ACLs that specify the commands that users can run and keys that the commands can apply to.
 Then, in the user role, select the databases that the users can access and Redis ACL that controls user access to those databases.
+
+Explain command categories
 
 Redis ACLs are defined by a [Redis ACL syntax](https://redis.io/topics/acl#acl-rules) that lets you:
 
-- include commands and keys with the `+` and exclude commands and keys with the `-` prefix
-- define commands or command categories with the `@` prefix
+- include commands and categories with the `+` and exclude commands and categories with the `-` prefix
+- define categories with the `@` prefix
 - define keys or key patterns with the `~` prefix
 
 The predefined Redis ACLs are:
 
 - Full Access (+@all ~*) - All commands are allowed for all keys
 - Not Dangerous (+@all -@dangerous ~*) - All commands except for the "dangerous" command category are allowed for all keys
-- Read Only (+@read ~*) - Only the "read" command category are allowed for all keys
+- Read Only (+@read ~*) - Only the "read" command category is allowed for all keys
 
 To define database access control, you can:
 
-- Use the predefined user roles and add Redis ACLs to them.
-- Create new user roles and select the management roles and Redis ACLs that apply to the user roles.
+- Use the predefined user roles and add to them Redis ACLs for specific databases.
+- Create new user roles and select the management roles and Redis ACLs that apply to the user roles for specific databases.
 - Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
 ### Configuring Redis ACLs
