@@ -49,7 +49,7 @@ A-A cannot assign ACLs on creation
     In Redis:
     - These ACL subcommands are blocked: LOAD, SAVE, SETUSER, DELUSER, GENPASS, LOG
     - These ACL subcommands are allowed: LIST, USER, GETUSER, CAT, WHOAMI, HELP
-- The MULTI, EXEC, DISCARD commands will always be allowed, but commands within the MULTI will be enforced with ACLs.
+- The MULTI, EXEC, DISCARD commands are always allowed, but ACLs are enforced on MULTI subcommands.
 - External users cannot authenticate with databases.
 - When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 
