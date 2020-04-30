@@ -93,7 +93,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
     - **Default database access** - When you configure a password for your database,
         all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
-        If you also configure an access control list, connections can specify other users for authentication
+        If you also configure an access control list, connections can specify other users for authentication,
         and requests are allowed according to the Redis ACLs specified for that user.
 
         {{% note %}}
@@ -104,6 +104,8 @@ If you are creating a Memcached database, enter a username and password for SASL
 
     - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
         and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles.md#database-access-control" >}}) that apply to those connections.
+
+        To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
         1. Select the [role]({{ relref "/rs/administering/access-control/user-roles.md" }}) that you want to have access to the database.
