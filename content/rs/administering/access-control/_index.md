@@ -8,8 +8,8 @@ aliases: /rs/administering/designing-production/security/account-management/
 ---
 You can create RS users and assign them to [roles]({{< relref "user-roles.md" >}}) with permissions for:
 
-- Cluster management - The areas of the cluster web UI and API that a user can access and edit.
-- Database connections - Commands and keys that an authenticated user can use in database connections.
+- **Cluster management** - The areas of the cluster web UI and API that a user can access and edit.
+- **Database connections** - Commands and keys that an authenticated user can use in database connections.
 
 You can manage users and roles in **access control** or with the REST API.
 
