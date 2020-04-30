@@ -35,7 +35,7 @@ If you are not pulling images from Docker Hub, update the operator Image spec to
 If you have made changes to the role, role binding, rbac or crd in the previous version you must merge them with the updated declarations in the new version files.
     {{% /note %}}
 
-1. After the Operator and Services Rigger upgrades are complete:
+1. After the Operator upgrade is complete:
     1. Run `kubectl edit rec` in the namespace your Redis Enterprise Cluster is deployed in.
     1. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag provided in the release documentation.
 
