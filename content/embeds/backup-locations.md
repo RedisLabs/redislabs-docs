@@ -42,7 +42,7 @@ Before you choose to backup to Amazon AWS S3, make sure that you have:
 - Secret access key
 
 You can also connect to a storage service that uses the S3 protocol but is not hosted by Amazon AWS.
-The storage service must have a valid S3 certificate.
+The storage service must have a valid SSL certificate.
 To connect to an S3-compatible storage location, run: `rladmin cluster config s3_url <url>`
 
 ### Local mount point
