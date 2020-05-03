@@ -13,31 +13,26 @@ function initLunr() {
     // First retrieve the index file
     $.getJSON(baseurl +"index.json")
         .done(function(index) {
-            pagesIndex =   index;
+            pagesIndex = index;
             // Set up lunrjs by declaring the fields we use
             // Also provide their boost level for the ranking
-            lunrIndex = new lunr.Index
-            lunrIndex.ref("uri");
-            lunrIndex.field('title', {
-                boost: 15
-            });
-            lunrIndex.field('tags', {
-                boost: 10
-            });
-            lunrIndex.field("content", {
-                boost: 5
-            });
-            lunrIndex.field("categories", {
-                boost: 1
-            });            
-
-            // Feed lunr with each file and let lunr actually index them
-            pagesIndex.forEach(function(page) {            
-                if(!page.uriRel.startsWith('/embeds')) {
-                    lunrIndex.add(page);
-                }                
-            });
-            lunrIndex.pipeline.remove(lunrIndex.stemmer)
+            // lunrIndex = new lunr.Index
+            lunrIndex = lunr(function () {
+                this.ref('uri');
+                this.field('title');
+                this.field('tags');
+                this.field("content");
+                this.field("categories");
+    
+                // Feed lunr with each file and let lunr actually index them
+                pagesIndex.forEach(function(page) {            
+                    if(!page.uriRel.startsWith('/embeds')) {
+                        this.add(page);
+                    }                
+                }, this);
+                
+                this.pipeline.remove(this.stemmer);
+            })
         })
         .fail(function(jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
@@ -53,7 +48,7 @@ function initLunr() {
  */
 function search(query) {
     // Find the item in our index corresponding to the lunr one to have more info
-    return lunrIndex.search(query).map(function(result) {
+    return lunrIndex.search(`categories:["RS"] ${query}`).map(function(result) {
             return pagesIndex.filter(function(page) {
                 return page.uri === result.ref;
             })[0];
@@ -64,6 +59,7 @@ function search(query) {
 initLunr();
 $( document ).ready(function() {
     var searchList = new autoComplete({
+        delay: 750,
         /* selector for the search box element */
         selector: $("#search-by").get(0),
         /* source is the callback to perform the search */
