@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view the Redis Enterprise Software subscription agreement [here](https://redislabs.com/company/terms-of-use#software).
+You can view the Redis Enterprise Software subscription agreement [here](https://redislabs.com/wp-content/uploads/2019/11/redis-enterprise-software-subscription-agreement.pdf).
 This Product Lifecycle fully reflects our subscription agreement.
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
