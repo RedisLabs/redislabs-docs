@@ -9,9 +9,9 @@ A [Redis Stream](https://redis.io/topics/streams-intro) is a data structure that
 Each entry consists of:
 
 - An ID that is unique and monotonically increasing ID
-- The data that is a list of key-value pairs, but not a hash because there may be several pairs with the same “key”
+- The data that is a list of key-value pairs, but not a hash because there may be several pairs with the same "key"
 
-You can access the data (“read”) using XREAD or using consumer-groups and XREADGROUP.
+You can access the data ("read") using XREAD or using consumer-groups and XREADGROUP.
 
 ## Streams and Active-Active
 
@@ -60,7 +60,7 @@ For example:
 | t6   | XRANGE x - + --> [100-2] | XRANGE x - + --> [100-2] |
 
 Notice that the DEL in t4 only removes 100-1, which is an entry that already exists at the t4.
-It does not remove 100-2 because this entry was not yet “observed” in that location.
+It does not remove 100-2 because this entry was not yet "observed" in that location.
 
 ### ID uniqueness
 
@@ -77,7 +77,7 @@ There are 3 modes for XADD to help resolve this issue while being as compliant w
 
 1. Liberal: XADD has no syntax limitations.
     This mode can lead to duplicate IDs and is not recommended.
-1. Strict: XADD using “*” or only MS generates an ID with SEQ calculated using the location-ID to prevent duplicate IDs, but XADD with full-ID (MS-SEQ) fails.
+1. Strict: XADD using "*" or only MS generates an ID with SEQ calculated using the location-ID to prevent duplicate IDs, but XADD with full-ID (MS-SEQ) fails.
 1. Semi-strict: Similar to strict. XADD allows full-ID, but can create duplicate IDs.
 
 The default and recommended mode is strict to prevent duplicate IDs. A stream with duplicate IDs can cause:
@@ -166,13 +166,13 @@ Here is an example of a concurrent XADD case:
 OSS Redis uses one radix tree (rax) to hold the PEL (pending entries list) per group (global PEL) and one rax for each consumer (consumer PEL).
 The global PEL is a unification of all consumer PELs, which are disjointed.
 A Active-Active databases stream holds a radix tree per-writing location, both for global PEL and per-consumer PEL.
-XREADGROUP, with an ID different from the special “>”, iterates simultaneously on all of the PEL rax trees for the consumers.
+XREADGROUP, with an ID different from the special ">", iterates simultaneously on all of the PEL rax trees for the consumers.
 It returns the appropriate entry in each loop by comparing entry-IDs from the different rax trees.
 
 ### The DEL-wins approach
 
 In Active-Active databases, the DEL-wins approach is a way to auto-resolve conflicts.
-In case of concurrent operations, the delete operations “win” over the concurrent operation.
+In case of concurrent operations, the delete operations "win" over the concurrent operation.
 
 In this example, the DEL in t4 deletes both the observed g1 and the non-observed g2:
 
@@ -221,7 +221,7 @@ For example:
 | t8   | XPENDING x g1 - + --> [110-0]                     | XPENDING x g1 - + --> [] |
 
 Using XREADGROUP across instances can result in instances reading the same entries
-because CRDT Streams is designed to either handle “at least once” reads or have only one reader at a time.
+because CRDT Streams is designed to either handle "at least once" reads or have only one reader at a time.
 As shown in the previous example, Location 2 is not aware of any group-related activity and it seems that redirecting the XREADGROUP traffic from Location 1 to Location 2 results in reading the same entries that were already read.
 
 ### XREADGROUP redirection
@@ -251,7 +251,7 @@ This means that the XREADGROUP does not return already-acknowledged entries.
 
 ### Consumer groups SLA
 
-XREADGOUP does not “miss” entries, whereas XREAD can “miss” entries when used in a SCAN-like pattern with concurrent XADD operations.
+XREADGOUP does not "miss" entries, whereas XREAD can "miss" entries when used in a SCAN-like pattern with concurrent XADD operations.
 In traffic redirection, XREADGOUP can return entries that were read but not acknowledged.
 
 ## Comparing Streams in Active-Active Databases and Streams in OSS Redis
