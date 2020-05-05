@@ -77,7 +77,7 @@ There are 3 modes for XADD to help resolve this issue while being as compliant w
 
 1. Liberal: XADD has no syntax limitations.
     This mode can lead to duplicate IDs and is not recommended.
-1. Strict: XADD using "*" or only MS generates an ID with SEQ calculated using the location-ID to prevent duplicate IDs, but XADD with full-ID (MS-SEQ) fails.
+1. Strict: XADD using "\*" or only MS generates an ID with SEQ calculated using the location-ID to prevent duplicate IDs, but XADD with full-ID (MS-SEQ) fails.
 1. Semi-strict: Similar to strict. XADD allows full-ID, but can create duplicate IDs.
 
 The default and recommended mode is strict to prevent duplicate IDs. A stream with duplicate IDs can cause:
