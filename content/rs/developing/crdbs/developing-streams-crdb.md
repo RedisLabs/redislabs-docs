@@ -198,8 +198,9 @@ In this example, the XGROUP DESTROY in t4 affects both the observed g1 created i
 
 ### Consumer groups issues
 
-In consumer groups, every XREADGROUP and every XACK can change the state of a group or consumer.
+In consumer groups, every XREADGROUP and every XACK can change the state of a group or consumer,
 but this cross-location replication is slow and bandwidth is limited.
+
 To maintain consumer groups in Active-Active databases with optimal performance:
 
 1. Group existence (CREATE/DESTROY) is replicated.
@@ -219,13 +220,14 @@ For example:
 | t7   | XINFO CONSUMERS x -> [Alice]                      | XINFO CONSUMERS x -> []  |
 | t8   | XPENDING x g1 - + --> [110-0]                     | XPENDING x g1 - + --> [] |
 
-As you can see, Location 2 seems to be completely unaware of any group-related activity and it seems that redirecting the XREADGROUP traffic from Location 1 to Location 2 will result in reading the same entries that were already read.
-Given that the usage pattern is standard (Every entry that was read using XREADGROUP is acknowledged with XACK after processing it) we have a way to tackle this issue.
-
-Note that using XREADGROUP across instances can result in instances reading the same entries because CRDT Streams is designed to handle “at least once” reads (or have only one reader at a time).
+Using XREADGROUP across instances can result in instances reading the same entries
+because CRDT Streams is designed to either handle “at least once” reads or have only one reader at a time.
+As shown in the previous example, Location 2 is not aware of any group-related activity and it seems that redirecting the XREADGROUP traffic from Location 1 to Location 2 results in reading the same entries that were already read.
 
 ### XREADGROUP redirection
 
+Because every entry that was read using XREADGROUP is acknowledged with XACK after processing it,
+we modify the XACK redirection to improve performance.
 To limit the number of messages that are re-read and the cross-location traffic,
 we replicate XACK messages only when all of the read entries are acknowledged.
 
