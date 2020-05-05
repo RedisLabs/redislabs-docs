@@ -226,10 +226,9 @@ As shown in the previous example, Location 2 is not aware of any group-related a
 
 ### XREADGROUP redirection
 
-Because every entry that was read using XREADGROUP is acknowledged with XACK after processing it,
-we modify the XACK redirection to improve performance.
-To limit the number of messages that are re-read and the cross-location traffic,
-we replicate XACK messages only when all of the read entries are acknowledged.
+If the usage pattern is such that every entry that was read using XREADGROUP is acknowledged with XACK after processing it,
+we can limit the number of messages that are re-read while maintaining a low-rate of the cross-location traffic.
+To do this, we replicate XACK messages only when all of the read entries are acknowledged.
 
 For example:
 
