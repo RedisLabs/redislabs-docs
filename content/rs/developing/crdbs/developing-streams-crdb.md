@@ -166,7 +166,7 @@ Here is an example of a concurrent XADD case:
 OSS Redis uses one radix tree (rax) to hold the PEL (pending entries list) per group (global PEL) and one rax for each consumer (consumer PEL).
 The global PEL is a unification of all consumer PELs, which are disjointed.
 A Active-Active databases stream holds a radix tree per-writing location, both for global PEL and per-consumer PEL.
-XREADGROUP, with an id different from the special “>”, iterates simultaneously on all of the PEL rax trees for the consumers.
+XREADGROUP, with an ID different from the special “>”, iterates simultaneously on all of the PEL rax trees for the consumers.
 It returns the appropriate entry in each loop by comparing entry-IDs from the different rax trees.
 
 ### The DEL-wins approach
