@@ -16,6 +16,9 @@ Enterprise Software (RS):
 The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
 
+You can choose to receive email alerts related to this process, as
+described in [Managing cluster alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
+
 **Make sure to read through these explanations thoroughly before taking
 any action.**
 
@@ -81,18 +84,14 @@ To remove a node using the web UI:
 1. Once the process finishes, the node is no longer shown in
     the UI.
 
-To remove a node using the REST API:
+To remove a node using the REST API, use the `/v1/nodes/3/actions/remove` endpoint with the JSON data and the "Content-Type: application/json" header.
 
-The API for removing a node was updated in RS 5.4.2. The API call must include json data and the "Content-Type: application/json" header. For example:
+For example:
+
+```src
 curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
+```
 
-You can choose to receive email alerts related to this process, as
-described in [Managing cluster
-alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
-
-**Note**: Once you remove a node, if you need to add it back to a
-cluster, you must first
-[uninstall]({{< relref "/rs/installing-upgrading/uninstalling.md" >}})
-and
-[reinstall]({{< relref "/rs/installing-upgrading/_index.md" >}})
-the software on that node.
+**Note**: If you need to add a removed node back to the cluster,
+you must [uninstall]({{< relref "/rs/installing-upgrading/uninstalling.md" >}})
+and [reinstall]({{< relref "/rs/installing-upgrading/_index.md" >}}) the software on that node.
