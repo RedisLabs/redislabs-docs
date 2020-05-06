@@ -88,12 +88,13 @@ To use Redis Sentinel, every database name must be unique across the cluster.
 
 ## Redis client support
 
-You can find the recommended list of client libraries to use for
-Discovery Service using the Redis Sentinel API on the [hardware and
-software requirements
-page]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}),
-under "Client" section.
+We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
-Note: Redis Sentinel API can return endpoints for both master and slave
-endpoints. Discovery Service only supports master endpoints and does not
+{{< embed-md "discover-clients.md" >}}
+
+{{% note %}}
+Redis Sentinel API can return endpoints for both master and slave
+endpoints.
+Discovery Service only supports master endpoints and does not
 support returning slave endpoints for a database.
+{{% /note %}}
