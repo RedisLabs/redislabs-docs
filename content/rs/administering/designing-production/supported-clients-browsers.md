@@ -18,7 +18,7 @@ listed on Redis.io](https://redis.io/clients).
 
 We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
-{{< embed-md "discover-clients.md" >}}
+{{< embed-md "discovery-clients.md" >}}
 
 ## Web Browsers
 
