@@ -19,9 +19,15 @@ function initLunr() {
             // lunrIndex = new lunr.Index
             lunrIndex = lunr(function () {
                 this.ref('uri');
-                this.field('title');
-                this.field('tags');
-                this.field("content");
+                this.field('title', {
+                    boost: 15
+                });
+                this.field('tags', {
+                    boost: 10
+                });
+                this.field("content", {
+                    boost: 5
+                });
                 this.field("categories");
     
                 // Feed lunr with each file and let lunr actually index them
@@ -47,19 +53,20 @@ function initLunr() {
  * @return {Array}  results
  */
 function search(query) {
-    // Find the item in our index corresponding to the lunr one to have more info
-    return lunrIndex.search(`categories:["RS"] ${query}`).map(function(result) {
-            return pagesIndex.filter(function(page) {
-                return page.uri === result.ref;
-            })[0];
-        });
+    var results = lunrIndex.search(`categories:RS ${query}`);
+
+    return results.map(function(result) {
+        return pagesIndex.filter(function(page) {
+            return page.uri === result.ref;
+        })[0];
+    })    
 }
 
 // Let's get started
 initLunr();
 $( document ).ready(function() {
     var searchList = new autoComplete({
-        delay: 750,
+        delay: 550,
         /* selector for the search box element */
         selector: $("#search-by").get(0),
         /* source is the callback to perform the search */
