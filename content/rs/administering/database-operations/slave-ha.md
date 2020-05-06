@@ -30,7 +30,8 @@ For example:
 1. The data from the master shard is replicated to the new slave shard.
 
 {{% note %}}
-Slave HA follows all prerequisites of slave migration, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}). In order to start slave shards that reside on a failed node, on new node/s, the new node/s should have enough DRAM to hold these shards. Otherwise, the slave shards cannot be started.
+- Slave HA follows all prerequisites of slave migration, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+- If there is not enough DRAM on the target node to hold the slave shards, the migrated slave shards cannot be started.
 {{% /note %}}
 
 ## Configuring High Availability for Slave Shards
