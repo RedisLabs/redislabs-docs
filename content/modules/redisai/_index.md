@@ -53,7 +53,7 @@ In broad strokes, RedisAI looks like this:
 +-----------------------------------------------------------------------------+
 ```
 
-### How RedisAI Works
+## How RedisAI Works
 
 RedisAI bundles together best-of-breed technologies for delivering stable and performant computation graph serving.
 Every DL/ML framework ships with a runtime for executing the models developed with it, and the common practice for serving these is building a simple server around them.
@@ -70,7 +70,7 @@ It also makes it a perfect choice for deploying DL/ML models in production and a
 
 Furthermore, RedisAI is also an optimal testbed for models as it allows the parallel execution of multiple computation graphs and, in future versions, assessing their respective performance in real-time.
 
-#### Data Structures
+## Data Structures
 
 RedisAI provides the following data structures:
 
@@ -78,7 +78,7 @@ RedisAI provides the following data structures:
 - **Model**: Represents a computation graph by one of the supported DL/ML framework backends
 - **Script**: Represents a [TorchScript](https://pytorch.org/docs/stable/jit.html) program
 
-#### DL/ML Backends
+## DL/ML Backends
 
 RedisAI supports the following DL/ML identifiers and respective backend libraries:
 
