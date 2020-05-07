@@ -31,7 +31,7 @@ For example:
 
 {{% note %}}
 - Slave HA follows all prerequisites of slave migration, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
-- If there is not enough DRAM on the target node to hold the slave shards, the migrated slave shards cannot be started.
+- Slave HA migrates as many shards as is possible based on available DRAM in the target node. When no DRAM is available, slave HA stops migrating slave shards.
 {{% /note %}}
 
 ## Configuring High Availability for Slave Shards
