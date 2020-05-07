@@ -61,7 +61,7 @@ The VPC peering configuration requires you to initiate VPC peering on your Redis
 and accept the VPC peering request for the AWS VPC that you want to peer with.
 
 1. To peer Redis Cloud VPC with another VPC:
-    1. In **Subscriptions**, click on the subscription use for VPC peering.
+    1. In **Subscriptions**, click on the subscription for VPC peering.
     1. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the VPC peering details:
 
@@ -124,7 +124,7 @@ can easily use the same security groups to manage access to your application.
 
 To define the CIDR whitelist:
 
-1. In **Subscriptions**, click on the subscription use for VPC peering.
+1. In **Subscriptions**, click on the subscription for VPC peering.
 1. Go to: **Security** > **CIDR Whitelist**
 1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png#no-click "Add")
    to create a CIDR whitelist. Otherwise, click ![Add](/images/rs/icon_add.png#no-click "Add")
