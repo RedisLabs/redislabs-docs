@@ -77,6 +77,48 @@ spec:
      cloud.google.com/gke-nodepool: 'high-memory'
 ```
 
+## Using node taints
+
+Additionally, any number of node taints can be used via a set of tolerations
+to control Redis Enterprise cluster node pod scheduling. The cluster specification can specify a list
+of pod tolerations to be used via the `podTolerations` property. The value is
+a list of [K8s tolerations](https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/#concepts).
+
+For example, in the scenario where the cluster has a single node pool,
+node taints can be used to control the allowed workloads for a node. A
+set of nodes can be reserved for the Redis Enterprise cluster by adding
+taints to the node (e.g., nodes n1, n2, n3)
+
+```sh
+kubectl taint nodes n1 db=rec:NoSchedule
+kubectl taint nodes n2 db=rec:NoSchedule
+kubectl taint nodes n3 db=rec:NoSchedule
+```
+
+This will disable the ability to schedule any pods onto the nodes unless they
+can tolerate the taint `db=rec`.
+
+The toleration for this taint can then be added to the cluster
+specification:
+
+```yaml
+apiVersion: app.redislabs.com/v1
+kind: RedisEnterpriseCluster
+metadata:
+  name: rec
+spec:
+  size: 3
+  podTolerations:
+  - key: db
+    operator: Equal     
+    value: rec
+    effect: NoSchedule
+```
+
+A set of taints can be used to handle more complex use cases. For example, a
+`role=test` or `role=dev` taint could be used to further qualify a node as
+dedicated for testing versus development workloads.
+
 ## Using pod anti-affinity
 
 By default, the Redis Enterprise node pods are schedule to avoid being placed
