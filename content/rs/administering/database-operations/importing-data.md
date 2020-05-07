@@ -80,7 +80,6 @@ Before you import from Amazon S3, make sure that you have:
 
 You can also connect to a storage service that uses the S3 protocol but is not hosted by Amazon AWS. The storage service must have a valid SSL certificate. To connect to an S3-compatible storage location, run: `rladmin cluster config s3_url <url>`
 
-
 ### Local mount point
 
 Before you specify to import from a local mount point, make sure that:
