@@ -121,3 +121,18 @@ after a specified number of failed login attempts.
 ### Session timeout
 
 When you log in to the Web UI, your account is automatically logged out after 15 minutes of inactivity.
+
+If you want to change duration of inactivity that causes the timeout:
+
+- From rladmin, run: `rladmin cluster config cm_session_timeout_minutes <minutes>`
+
+- From the REST API, run:
+
+```src
+curl --request PUT \
+  --url https://localhost:9443/v1/cluster \
+  --header 'content-type: application/json' \
+  --data '{
+	"cm_session_timeout_minutes": <minutes>
+}'
+```
