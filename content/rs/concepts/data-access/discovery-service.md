@@ -92,7 +92,7 @@ To use Redis Sentinel, every database name must be unique across the cluster.
 
 We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
-{{< embed-md "discover-clients.md" >}}
+{{< embed-md "discovery-clients.md" >}}
 
 {{% note %}}
 Redis Sentinel API can return endpoints for both master and slave
