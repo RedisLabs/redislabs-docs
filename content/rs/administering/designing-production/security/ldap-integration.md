@@ -34,18 +34,29 @@ To set saslauthd to use LDAP Authentication:
 To provide the LDAP configuration information:
 
 1. Edit the configuration file located at /etc/opt/redislabs/saslauthd.conf or the installation directory of your choice during initial configuration.
-1. Provide the following information associated with each variable
+2. Provide the following information associated with each variable
 
-1. ldap_servers: the ldap servers that you authenticate against and the port to use 
+3. ldap_servers: the ldap servers that you authenticate against and the port to use 
 
 - Port 389 is standardly used for unencrypted LDAP connections
 - Port 636 is standardly used for encrypted LDAP connections and is strongly recommended.
 
-2. Ldap_tls_cacert_file (optional): The path to your CA Certificates. This is required for encrypted LDAP connections only.
-3. ldap_filter: the filter used to search for users
-4. ldap_bind_dn: The distinguished name for the user that will be used to authenticate to the LDAP server.
-5. ldap_password : The password used for the user specified in ldap_bind_dn
+4. Ldap_tls_cacert_file (optional): The path to your CA Certificates. This is required for encrypted LDAP connections only.
+5. ldap_filter: the filter used to search for users
+6. ldap_bind_dn: The distinguished name for the user that will be used to authenticate to the LDAP server.
+7. ldap_password : The password used for the user specified in ldap_bind_dn
 
+An example configuration for your reference may be found below:
+
+```src
+ldap_servers: ldaps://ldap1.mydomain.com:636 ldap://ldap2.mydomain.com:636
+ldap_tls_cacert_file: /path/to/your/CARootCert.crt
+ldap_search_base: ou=coolUsers,dc=company,dc=com
+ldap_search_base: ou=coolUsers,dc=company,dc=com
+ldap_filter: (sAMAccountName=%u)
+ldap_bind_dn: cn=admin,dc=company,dc=com
+ldap_password: secretSquirrel
+```
 
 Finally, import the saslauthd configuration into Redis Enterprise using the below command:
 
@@ -62,18 +73,5 @@ In order for these changes to take effect, you must restart services.
 
 ```src
 sudo supervisorctl restart saslauthd
-```
-
-An example configuration for your reference may be found below:
-
-
-```src
-ldap_servers: ldaps://ldap1.mydomain.com:636 ldap://ldap2.mydomain.com:636
-ldap_tls_cacert_file: /path/to/your/CARootCert.crt
-ldap_search_base: ou=coolUsers,dc=company,dc=com
-ldap_search_base: ou=coolUsers,dc=company,dc=com
-ldap_filter: (sAMAccountName=%u)
-ldap_bind_dn: cn=admin,dc=company,dc=com
-ldap_password: secretSquirrel
 ```
 
