@@ -1028,6 +1028,15 @@ article section.page h1 {
 article section.page h2 {
   margin-top: 2.5rem;
 }
+article section.page h3 {
+  font-size: 1.6rem;
+}
+article section.page h4 {
+  font-size: 1.4rem;
+}
+article section.page h5 {
+  font-size: 1.2rem;
+}
 article section.page h2::before, article section.page h3::before {
   content:"";
   display:block;

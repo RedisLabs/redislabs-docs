@@ -1,24 +1,26 @@
 ---
-Title: Write-Behind and Read-Through Caching
+Title: Write-Behind Caching
 description:
-weight: 20
+weight: 50
 alwaysopen: false
 categories: ["Modules"]
 ---
 
-## Read-Through and Write-Behind Caching Defined
+## Write-Behind and Read-Through Caching Defined
 
-Write-behind and read-through caching are caching strategies in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed.
+Write-behind and read-through caching are caching strategies in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis Labs currently supports write-behind caching for both Redis Cloud and Redis Enterprise. However, recipes for read-through caching are being developed.
 
-### Read-Through Caching
-
-1. Your application reads from the cache. If there's a cache hit, the data is returned.
-1. If there's cache miss, the cache retrieves the data from your backing database (think Oracle, PostgreSQL, etc.). The data is then stored in the cache and returned.
+Here's how these caching patterns work:
 
 ### Write-Behind Caching
 
 1. Your application uses the cache for reads and writes.
 1. The cache syncs any changed data to the backing database asynchronously.
+
+### Read-Through Caching
+
+1. Your application reads from the cache. If there's a cache hit, the data is returned.
+1. If there's cache miss, the cache retrieves the data from your backing database (think Oracle, PostgreSQL, etc.). The data is then stored in the cache and returned.
 
 ## Write-Behind Caching with RedisGears
 
