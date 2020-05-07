@@ -5,8 +5,8 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 ---
-Role-Based Access Control (RBAC) lets you scale your Redis deployments while simplifying the complexity of managing data access for a cluster with many databases, users, and access control lists.
-With RBAC, you can create a role for data access and apply it to many users to define their access to multiple databases in the cluster.
+Role-Based Access Control (RBAC) lets you scale your Redis deployments while simplifying the complexity of managing data access for a subscription with many databases, users, and access control lists.
+With RBAC, you can create a role for data access and apply it to many users to define their access to multiple databases in the subscription.
 
 In **Data Access Control** > **Roles**, you can configure data access roles with Redis ACLs that define the commands and keys that users can access in database connections
 
@@ -18,7 +18,7 @@ A-A cannot assign ACLs on creation
 
 {{% note %}}
 
-- Redis ACLs can only be configured in the cluster web UI or API.
+- Redis ACLs can only be configured in the RC web UI.
     In Redis:
     - These ACL subcommands are blocked: LOAD, SAVE, SETUSER, DELUSER, GENPASS, LOG
     - These ACL subcommands are allowed: LIST, USER, GETUSER, CAT, WHOAMI, HELP
@@ -31,7 +31,7 @@ A-A cannot assign ACLs on creation
 
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 A command category is a predefined, named set of commands that perform a function, for example `read` commands or `dangerous` commands.
-You can also define Redis ACLs with module commands for any modules that are loaded on the cluster.
+You can also define Redis ACLs with module commands for any modules that are loaded on the subscription.
 If you run a command on multiple databases including databases where the command is not allowed by ACLs or the command does not exist,
 the command succeeds where possible.
 
