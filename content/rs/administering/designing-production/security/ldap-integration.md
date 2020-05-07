@@ -37,8 +37,10 @@ To provide the LDAP configuration information:
 1. Provide the following information associated with each variable
 
 1. ldap_servers: the ldap servers that you authenticate against and the port to use 
-  1. Port 389 is standardly used for unencrypted LDAP connections
-  1. Port 636 is standardly used for encrypted LDAP connections and is strongly recommended.
+
+- Port 389 is standardly used for unencrypted LDAP connections
+- Port 636 is standardly used for encrypted LDAP connections and is strongly recommended.
+
 2. Ldap_tls_cacert_file (optional): The path to your CA Certificates. This is required for encrypted LDAP connections only.
 3. ldap_filter: the filter used to search for users
 4. ldap_bind_dn: The distinguished name for the user that will be used to authenticate to the LDAP server.
