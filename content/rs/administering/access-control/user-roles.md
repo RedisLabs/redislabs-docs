@@ -55,8 +55,8 @@ Redis Modules do not have a command category, but may be configured using their 
 
 **In Redis Enterprise, you can:**
 
-- **Include commands and categorie**s with the + prefix for commands or +@ prefix for a categories
-- **Exclude commands and categories** with the - prefix for commands or -@ prefix for a categories
+- **Include commands and categorie**s with the + prefix for commands or +@ prefix for a category
+- **Exclude commands and categories** with the - prefix for commands or -@ prefix for a category
 - **Include keys or key patterns** with the ~ prefix
 
 **To define database access control, you can either:**
