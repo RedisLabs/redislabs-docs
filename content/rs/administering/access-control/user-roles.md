@@ -38,9 +38,6 @@ To create a user role that only has access to the database, assign the user the 
 
 ACLs allow you to control what level of access each user has in Redis. With ACLs, you can specify which commands specific users can execute and which keys they can access. This allows for much better security practices: you can restrict any given user’s access to the least level of privilege needed.
 
-In open source Redis, you define ACLs on a per-user basis. Redis Enterprise improves upon this by letting you create roles, each with a specific set of permissions. For example, you might have a role for read-only users and another role for your site reliability engineers. You can then associate these roles with the appropriate Redis users. This is known as role-based access control, or RBAC.
-
-
 {{% note %}}
 There are several important differences with Redis Enterprise you should be aware of:
 
