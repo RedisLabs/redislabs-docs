@@ -49,7 +49,7 @@ To provide the LDAP configuration information:
 An example configuration for your reference may be found below:
 
 ```src
-ldap_servers: ldaps://ldap1.mydomain.com:636 ldap://ldap2.mydomain.com:636
+ldap_servers: ldaps://ldap1.mydomain.com:636 ldaps://ldap2.mydomain.com:636
 ldap_tls_cacert_file: /path/to/your/CARootCert.crt
 ldap_search_base: ou=coolUsers,dc=company,dc=com
 ldap_search_base: ou=coolUsers,dc=company,dc=com
