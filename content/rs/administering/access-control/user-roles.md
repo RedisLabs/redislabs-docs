@@ -5,83 +5,76 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Role-Based Access Control (RBAC) lets you scale your Redis deployments while simplifying the complexity of managing a cluster with many databases, users, and access control lists.
-With RBAC, you can create a role and apply it to many users to define their access to multiple databases in the cluster.
 
-In **access control** > **roles**, you can configure RS user roles with:
+## Role-Based Access Control
 
-- **Management roles** that define user access to the RS web UI and API for the cluster
-- **Data access control** with Redis ACLs that define the commands and keys that users can access in database connections
+In open source Redis, you define ACLs on a per-user basis. Redis Enterprise improves upon this by letting you create roles, each with a specific set of permissions. For example, you might have a role for read-only users and another role for your site reliability engineers. You can then associate these roles with the appropriate Redis users. This is known as role-based access control, or RBAC.
 
-## Cluster Management Roles
+RBAC lets you set permissions for your databases and for the Redis Enterprise management console itself, providing a complete security-management solution for your cluster. 
 
-Each user role is assigned a management role that defines the access the user with that role has in the RS web UI and API for the cluster.
+### What is RBAC good for?**
 
-The management roles are:
+Role-Based Access Control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.
+
+### Configuring Roles & Users
+
+In **access control > roles**, you can configure user roles with:
+
+- Management roles that define user access to the Admin UI and API for the cluster
+- Data access controls with Redis ACLs that define the commands and keys that users can access in database connections
+- The databases that you would like each user to be able to access.
+
+### Management Roles
+
+Redis Enterprise comes with the following roles for the admin console:
 
 {{< embed-html "account-role-table.html" >}}
 
-### Assigning Management Roles to a User Role
-
-To assign a management role to a user role:
-
-1. In **access control** > **roles**:
-    - Edit an existing role - Hover over a role and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - Create a new role - Click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Select the management role for the user role.
-1. Click **Save**.
-
-### User Roles for Database Connections Only
-
-To create a user role for users that cannot connect to the RS web UI and API, assign the **None** management role to the user role.
-
-## Database Access Control
-
-To control user access to Redis database commands and keys,
-you must define Redis ACLs that specify the commands that users can run and keys that the commands can apply to.
-Then, in the user role, select the databases that the users can access and Redis ACL that controls user access to those databases.
-
-A-A cannot assign ACLs on creation
-
 {{% note %}}
-
-- Redis ACLs can only be configured in the cluster web UI or API.
-    In Redis:
-    - These ACL subcommands are blocked: LOAD, SAVE, SETUSER, DELUSER, GENPASS, LOG
-    - These ACL subcommands are allowed: LIST, USER, GETUSER, CAT, WHOAMI, HELP
-- The MULTI, EXEC, DISCARD commands are always allowed, but ACLs are enforced on MULTI subcommands.
-- External users cannot authenticate with databases.
-- When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
-
+To create a user role that only has access to the database, assign the user the management role **None**
 {{% /note %}}
 
-### Redis ACL command syntax
+### Database Access Controls
 
-Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
-A command category is a predefined, named set of commands that perform a function, for example `read` commands or `dangerous` commands.
-You can also define Redis ACLs with module commands for any modules that are loaded on the cluster.
-If you run a command on multiple databases including databases where the command is not allowed by ACLs or the command does not exist,
-the command succeeds where possible.
+ACLs allow you to control what level of access each user has in Redis. With ACLs, you can specify which commands specific users can execute and which keys they can access. This allows for much better security practices: you can restrict any given user’s access to the least level of privilege needed.
 
-A Redis ACL syntax lets you:
+In open source Redis, you define ACLs on a per-user basis. Redis Enterprise improves upon this by letting you create roles, each with a specific set of permissions. For example, you might have a role for read-only users and another role for your site reliability engineers. You can then associate these roles with the appropriate Redis users. This is known as role-based access control, or RBAC.
 
-- Include commands and categories with the `+` or exclude commands and categories with the `-` prefix
-- Define categories with the `@` prefix
-- Define keys or key patterns with the `~` prefix
 
-The predefined Redis ACLs are:
+{{% note %}}
+There are several important differences with Redis Enterprise you should be aware of:
 
-- Full Access (`+@all ~*`) - All commands are allowed for all keys
-- Not Dangerous (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
-- Read Only (`+@read ~*`) - Only the "read" command category is allowed for all keys
+1. The ACL subcommands LOAD, SAVE, SETUSER, DELUSER, GENPASS and LOG are blocked
+2. The MULTI, EXEC, DISCARD commands are always allowed, but ACLs are enforced within a transaction
+3. When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
+4. Active-Active cannot assign ACLs on creation.
+{{% /note %}}
 
-To define database access control, you can either:
+#### Redis ACL command syntax
 
-- Use the predefined user roles and add to them Redis ACLs for specific databases.
-- Create new user roles and select the management roles and Redis ACLs that apply to the user roles for specific databases.
+Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys. Redis Enterprise only allows the configuration of commands, command categories and allowed keys. 
+
+Redis Modules do not have a command category, but may be configured using their standard command name with Redis ACL syntax.
+
+**In Redis Enterprise, you can:**
+
+- **Include commands and categorie**s with the + prefix for commands or +@ prefix for a categories
+- **Exclude commands and categories** with the - prefix for commands or -@ prefix for a categories
+- **Include keys or key patterns** with the ~ prefix
+
+**To define database access control, you can either:**
+
+- Use the predefined Redis ACLs
+- Create custom Redis ACLs
 - Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
-### Configuring Redis ACLs
+#### Predefined Redis ACLs
+
+1. **Full Access** - All commands are allowed on all keys
+2. **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance are allowed on keys
+3. **Read Only** - Only read only commands are allowed on keys.
+
+#### Creating Custom Redis ACLs
 
 To configure a Redis ACL that you can assign to a user role:
 
@@ -99,11 +92,12 @@ To configure a Redis ACL that you can assign to a user role:
         1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the keys.
             - You can enter multiple definitions of keys.
         1. Click **Submit**.
+        
 1. Click **Save**.
 
-### Assigning Redis ACLs to a User Role
+### Configuring Roles
 
-To assign Redis ACLs to a user role:
+To configure a role:
 
 1. In **access control** > **roles**:
     - Edit an existing role - Hover over a role and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
@@ -119,4 +113,4 @@ To assign Redis ACLs to a user role:
 
 1. Click **Update**.
 
-Users that are assigned to the user role can access the databases according to the Redis ACL definitions.
+
