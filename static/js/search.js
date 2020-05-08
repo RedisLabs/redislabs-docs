@@ -46,6 +46,30 @@ function initLunr() {
         });
 }
 
+function getCurrentProductCategory() {
+    if(!window.location.pathname) {
+        return null;
+    }
+
+    var urlParams = window.location.pathname.split('/');
+    if(!urlParams || urlParams.length < 3) {
+        return null;
+    }
+
+    return urlParams[1];
+}
+
+function isCategorySearchable(cat) {
+    if(!cat) {
+        return false;
+    }
+
+    return ['RS', 'RC', 'RI', 'MODULES', 'PLATFORMS'].includes(cat.toUpperCase());
+}
+
+var currentCategory = getCurrentProductCategory();
+var isCurrentCategorySearchable = isCategorySearchable(currentCategory);
+
 /**
  * Trigger a search in lunr and transform the result
  *
@@ -53,13 +77,35 @@ function initLunr() {
  * @return {Array}  results
  */
 function search(query) {
-    var results = lunrIndex.search(`categories:RS ${query}`);
-
-    return results.map(function(result) {
+    var results = lunrIndex.search(query);
+    var r = results.map(function(result) {
         return pagesIndex.filter(function(page) {
             return page.uri === result.ref;
         })[0];
-    })    
+    });
+    
+    if(!r || r.length < 2 || !isCurrentCategorySearchable) {
+        return r;
+    }
+
+    var cat = currentCategory.toUpperCase();
+    
+    r.sort((a, b) => {
+        var aCat = (a.categories && a.categories.length > 0)? a.categories[0].toUpperCase() : '';
+        var bCat = (b.categories && b.categories.length > 0)? b.categories[0].toUpperCase() : '';
+
+        if(aCat === cat && bCat !== cat) {
+            return -1;
+        }
+
+        if(aCat !== cat && bCat === cat) {
+            return 1;
+        }
+
+        return 0;
+    });
+
+    return r;
 }
 
 // Let's get started
