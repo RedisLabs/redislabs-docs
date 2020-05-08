@@ -92,3 +92,36 @@ gears-cli --host <host>
           example.py
           REQUIREMENTS rgsync
 ```
+
+### Secret Management
+
+You may not want to store database credentials in your RedisGears functions. To avoid this, you can store these credentials in-memory as module parameters and then reference them from your functions.
+
+The code below show how to references these in-memory credentials when creating a backing database connection.
+
+```py
+def User():
+	return configGet('MySqlUser')
+def Password():
+	return configGet('MySqlPassword')
+def DB():
+	return configGet('MySqlDB')
+
+connection = MySqlConnection(User, Password, DB)
+```
+
+Notice that for each credential, we define a Python function that returns the specified module parameter. We then provide each function reference when we instantiate `MySqlConnection`.
+
+This code references three parameters: `MySqlUser`, `MySqlPassword`, and `MySqlDB`. In Redis Enterprise, you can set these parameters using the `rladmin` tool. The command to set these parameters takes the following form:
+
+```sh
+rladmin> tune db [DB-NAME] module_name rg module_config_params "[PARAM-NAME] [PARAM-VALUE]"
+```
+
+To set the `MySqlPassword` parameter to "Password123!" on a database named "user-api", you would run the this `rladmin` command:
+
+```sh
+rladmin> tune db user-api module_name rg module_config_params "MySqlPassword Password123!"
+```
+
+Once a connection is successfully established, RedisGears will not attempt to reconnect until a disconnect occurs. This means that updates to the parameters that store the secrets will not take effect immediately, but they will be used for all subsequent connection attempts.
