@@ -12,7 +12,7 @@ In open source Redis, you define ACLs on a per-user basis. Redis Enterprise impr
 
 RBAC lets you set permissions for your databases and for the Redis Enterprise management console itself, providing a complete security-management solution for your cluster. 
 
-### What is RBAC good for?**
+### What is RBAC good for?
 
 Role-Based Access Control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.
 
@@ -102,15 +102,13 @@ To configure a role:
 1. In **access control** > **roles**:
     - Edit an existing role - Hover over a role and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
     - Create a new role - Click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. In the Redis ACLs section:
-    - Edit a Redis ACL assignment - Hover over a Redis ACL assignment and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
+1. Add a cluster management role
     - Create a Redis ACL assignment - Click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Select the databases that the Redis ACL applies to.
-1. Select the [Redis ACL](#configuring-redis-acls) that define the access to commands and keys.
+1. Select the databases that the Redis ACLs for the role
 1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    You can click ![Add](/images/rs/icon_add.png#no-click "Add") to assign a Redis ACL to another database.
+    You can click ![Add](/images/rs/icon_add.png#no-click "Add") to assign modify the databases assigned to the role.
 
-1. Click **Update**.
+1. Click **Update** to save the role.
 
 
