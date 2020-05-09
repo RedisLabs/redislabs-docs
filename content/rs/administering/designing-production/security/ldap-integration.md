@@ -7,10 +7,10 @@ categories: ["RS"]
 aliases: /rs/administering/designing-production/security/ldap-integration/
 ---
 
-Redis Enterprise can integrate with your identity provider using LDAP Authentication. 
+Redis Enterprise can integrate with your identity provider using LDAP authentication. 
 
 {{% note %}}
-LDAP Authentication is not yet supported for Redis ACL Users. LDAP Authentication is only supported for the control plane.
+LDAP authentication is not yet supported for Redis ACL Users. LDAP authentication is only supported for the control plane.
 {{% /note %}}
 
 The following steps should be used when configuring LDAP:
