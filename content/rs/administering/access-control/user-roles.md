@@ -18,11 +18,11 @@ Role-Based Access Control allows you to scale your Redis deployments while minim
 
 ### Configuring Roles & Users
 
-In **access control > roles**, you can configure user roles with:
+In **access control > roles**, you can configure various types of user roles. For example:
 
-- Management roles that define user access to the Admin UI and API for the cluster
-- Data access controls with Redis ACLs that define the commands and keys that users can access in database connections
-- The databases that you would like each user to be able to access.
+- Management roles that define user access to the Admin UI and cluster API
+- Data access controls with Redis ACLs that define the commands and keys that users can access when connecting to databases
+- The databases that you would like each user to be able to access
 
 ### Management Roles
 
