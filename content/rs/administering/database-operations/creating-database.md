@@ -66,7 +66,7 @@ or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
 for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         {{% /note %}}
 
-1. Select from the basic {{< field "db_type" >}} options:
+1. Configure the {{< field "db_type" >}} options that you want for the database:
 
     - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
 
@@ -91,15 +91,27 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File.
 
-    - **Password** - To protect your database from unauthorized connections,
-        enter a Redis password. Then, use the password in you application connections
-        to the database.
+    - **Default database access** - When you configure a password for your database,
+        all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
+        If you also configure an access control list, connections can specify other users for authentication,
+        and requests are allowed according to the Redis ACLs specified for that user.
 
         {{% note %}}
 If you are creating a Memcached database, enter a username and password for SASL Authentication.
         {{% /note %}}
 
-1. Select from the advanced {{< field "db_type" >}} options:
+1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
+
+    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
+        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles.md#database-access-control" >}}) that apply to those connections.
+
+        To define an access control list:
+
+        1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
+        1. Select the [role]({{ relref "/rs/administering/access-control/user-roles.md" }}) that you want to have access to the database.
+        1. Select the [ACL]({{ relref "/rs/administering/access-control/user-roles.md#database-access-control" }}) that you want the role to have in the database.
+        1. Click **Save** to save the ACL.
+        1. Click **Update** to save the changes to the database.
 
     - **Endpoint port number** - You can define the port number that clients use to connect to the database,
         or a port is randomly selected.
@@ -142,7 +154,7 @@ after the database is created.
 
 - [**Alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}) -
     You can select alerts to show in the database status and configure their thresholds.
-    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}).
+    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
 
 1. Click **Activate**.
 

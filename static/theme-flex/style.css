@@ -3100,10 +3100,11 @@ i.icon-icons_plus, i.icon-icons_minus {
   display: flex;
   align-items: start;
   margin-bottom: 12px;
+  color: #b62410;
 }
 
 .expand-label > span:hover {
-  color: #b62410;
+  text-decoration: underline;
 }
 
 .main-content-left > ol > li > ol {list-style: lower-alpha;}
@@ -3295,11 +3296,12 @@ a[href*="#no-click"], img[src*="#no-click"] {
 .expand-shortcode-control {
   display: inline-block;
   margin-bottom: 10px;
+  color: #c82f0e;
 }
 
 .expand-shortcode-control:hover {
   cursor: pointer;
-  color: #c82f0e;
+  text-decoration: underline;
 }
 
 .expand-shortcode-control i.fa-lg {

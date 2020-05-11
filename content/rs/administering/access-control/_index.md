@@ -1,24 +1,23 @@
 ---
-Title: Account Management
+Title: User Management and Access Control
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/account-management/
 ---
-To give each team member only the permissions that they need for their work with the cluster,
-RS lets you assign a role to each team member.
-You can manage team members and roles in **settings** > **team**, or with the REST API.
+You can create RS users and assign them to [roles]({{< relref "user-roles.md" >}}) with permissions for:
 
-The roles and permissions available in RS are:
+- **Cluster management** - The areas of the cluster web UI and API that a user can access and edit.
+- **Database connections** - Commands and keys that an authenticated user can use in database connections.
 
-{{< embed-html "account-role-table.html" >}}
+You can manage users and roles in **access control** or with the REST API.
 
 ## Adding a User
 
 To add a user to the cluster:
 
-1. Go to: **settings** > **team**
+1. Go to: **access control**
 1. Click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Enter the name, email and password of the new user and select the role to assign to the user.
 1. Select the type of user:
@@ -58,15 +57,11 @@ For the user role, enter either:
     {{% expand "How do I select email alerts?" %}}{{< video "/images/rs/add-user-email-alerts.mp4" "Select email alerts" >}}{{% /expand %}}
 
     Then, click **Save**.
-1. Click ![Save](/images/rcpro/icon_save.png#no-click "Save").
+1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
 
 To edit the name, password, role or email alerts of a user, hover over the user and click ![Edit]
-(/images/rcpro/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
+(/images/rs/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
 delete the user and re-add it.
-
-### Resetting user passwords
-
-{{< embed-md "reset-password.md" >}}
 
 ## User Account Security
 
@@ -79,6 +74,10 @@ To make sure your user accounts are secured and not misused, RS supports enforce
 
 To enforce a more advanced password policy that meets your contractual and compliance requirements and your organizational policies,
 we recommend that you use [LDAP integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) with an external identity provider, such as Active Directory.
+
+### Resetting user passwords
+
+{{< embed-md "reset-password.md" >}}
 
 ### Setting up local password complexity
 
