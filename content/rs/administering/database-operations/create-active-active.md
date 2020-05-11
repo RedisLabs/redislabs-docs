@@ -70,7 +70,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
     - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all CRDB databases use replication for best intercluster synchronization performance.
         When replication is enabled, every CRDB master shard is replicated to a corresponding slave shard. The slave shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
-        We also recommend that you enable [slave HA]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) to enable that the slave shards are highly-available for this synchronization.
+        We also recommend that you enable [slave HA]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) to ensure that the slave shards are highly-available for this synchronization.
 
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
