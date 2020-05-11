@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redisearch/
 ---
-For this quick start tutorial, you need either:
+For this quick start tutorial, you need:
 
 - Either:
     - [A Redis Enterprise Software database with the RediSearch module enabled]({{< relref "/modules/create-database-rs.md" >}})

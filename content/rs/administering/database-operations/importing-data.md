@@ -11,15 +11,6 @@ files of a specific database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a sharded database.
 
-You can import data from these locations:
-
-- HTTP server
-- FTP server
-- SFTP server
-- Amazon S3
-- Local mount point
-- OpenStack Swift (Object Storage)
-
 {{% warning %}}
 Importing data erases all existing content in the database.
 {{% /warning %}}
@@ -34,6 +25,10 @@ To import data into a database:
 1. Select **Receive email notification on success/failure**, if you want to receive
     email notifications about the import process.
 1. Click **Import**.
+
+## Supported Storage Services
+
+The storage services that are supported for import are:
 
 ### HTTP server
 
@@ -53,7 +48,7 @@ To import an RDB file from an FTP server, enter the FTP server location in the f
 ftp://user:password@host<:custom_port>/path/filename.rdb
 ```
 
-For example: `ftp://username:password@10.1.1.1/home/backups/backup.rdb`
+For example: `ftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 
 ### SFTP server
 
@@ -73,15 +68,17 @@ To import from an SFTP server, enter the SFTP server location in the format:
 sftp://user:password@host<:custom_port>/path/filename.rdb
 ```
 
-For example: `sftp://username:password@10.1.1.1/home/backups/backup.rdb`
+For example: `sftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 
 ### AWS S3
 
 Before you import from Amazon S3, make sure that you have:
 
-- Path in the format: `s3://bucketname/path/filename.rdb`
+- Path in the format: `s3://bucketname/path/<filename>.rdb`
 - Access key ID
 - Secret access key
+
+You can also connect to a storage service that uses the S3 protocol but is not hosted by Amazon AWS. The storage service must have a valid SSL certificate. To connect to an S3-compatible storage location, run: `rladmin cluster config s3_url <url>`
 
 ### Local mount point
 
@@ -108,14 +105,36 @@ To specify to import from a local mount point on a node:
 
 1. In the path for the backup location, enter the mount point.
 
-    For example: `/mnt/Public/backup.rdb`
+    For example: `/mnt/Public/<filename>.rdb`
 
 ### OpenStack Swift
 
+{{% note %}}
+Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
+{{% /note %}}
+
 Before you specify to import from OpenStack Swift, make sure that you have:
 
-- Storage URL in the format: `https://<openstack_url>/v1`
+- Storage URL in the format: `https://<openstack_url>/v1/<filename>.rdb`
 - Container
 - Prefix (Optional)
 - User
 - Key
+
+### Azure Blob Storage
+
+Before you choose to backup to OpenStack Swift, make sure that you have:
+
+- Storage location path in the format: `/container_name/[path/]/<filename>.rdb`
+- Account name
+- Account key
+
+### Google Cloud Storage
+
+Before you choose to backup to OpenStack Swift, make sure that you have:
+
+- Storage location path in the format: `/bucket_name/[path/]/<filename>.rdb`
+- Client ID
+- Client email
+- Private key ID
+- Private key

@@ -35,11 +35,15 @@ For example: `sftp://username:password@10.1.1.1/home/backups/`
 
 ### AWS S3
 
-Before you choose to backup to Amazon S3, make sure that you have:
+Before you choose to backup to Amazon AWS S3, make sure that you have:
 
 - Storage location path in the format: `s3://bucketname/path/`
 - Access key ID
 - Secret access key
+
+You can also connect to a storage service that uses the S3 protocol but is not hosted by Amazon AWS.
+The storage service must have a valid SSL certificate.
+To connect to an S3-compatible storage location, run: `rladmin cluster config s3_url <url>`
 
 ### Local mount point
 
@@ -68,6 +72,10 @@ To backup to a local mount point for a node:
     For example: `/mnt/Public`
 
 ### OpenStack Swift
+
+{{% note %}}
+Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
+{{% /note %}}
 
 Before you choose to backup to OpenStack Swift, make sure that you have:
 

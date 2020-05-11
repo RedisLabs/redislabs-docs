@@ -1,8 +1,9 @@
 ---
-Title: What's new in Redis Enterprise Software 5.x?
+Title: What's new in Redis Enterprise Software 6.x?
 description:
 weight: 20
 alwaysopen: false
+draft: true
 categories: ["RS"]
 ---
 Below are detailed a few of the major features of this release of Redis
