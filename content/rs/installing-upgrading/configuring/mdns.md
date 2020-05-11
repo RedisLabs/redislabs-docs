@@ -44,9 +44,9 @@ To prepare a client or node for mDNS:
         ```
 
 1. If you are using [mDNS with IPv6 addresses]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}),
-    update to the `/etc/nsswitch.conf` file:
+    update the hosts line in `/etc/nsswitch.conf`to:
 
-    ```src
-    - Update the hosts line to: hosts: files mdns4_minimal
-        \[NOTFOUND=return\] mdns
+    ```yaml
+    hosts: files mdns4_minimal
+    \[NOTFOUND=return\] mdns
     ```
