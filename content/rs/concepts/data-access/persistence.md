@@ -11,7 +11,7 @@ Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}))
 and therefore, is at risk of being lost upon a process or server
 failure. As Redis Enterprise Software is not
 just a caching solution, but also a full-fledged database,
-[persistence](https://redislabs.com/redis-features/persistence) to disk
+[persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting
 data to disk on a per-database basis and in multiple ways.
 
@@ -34,7 +34,7 @@ hours. The snapshot is a dump of the data and while there is a potential
 of losing up to one hour of data, it is dramatically faster to recover
 from a snapshot compared to AOF recovery.
 
-[Persistence](https://redislabs.com/redis-features/persistence) can be
+[Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be
 configured either at time of database creation or by editing an existing
 database's configuration. While the persistence model can be changed
 dynamically, just know that it can take time for your database to switch

@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view the Redis Enterprise Software subscription agreement [here](https://redislabs.com/company/terms-of-use#software).
+You can view the Redis Enterprise Software subscription agreement [here](https://redislabs.com/wp-content/uploads/2019/11/redis-enterprise-software-subscription-agreement.pdf).
 This Product Lifecycle fully reflects our subscription agreement.
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
@@ -35,6 +35,7 @@ that version.
 
 | RS Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
+| 6.0 – May 2020                            | November 30, 2021  |
 | 5.6 – April 2020                          | October 31, 2021  |
 | 5.4 – December 2018                       | December 31, 2020  |
 | 5.2 – June 2018                           | December 31, 2019  |

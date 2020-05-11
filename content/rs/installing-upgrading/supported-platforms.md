@@ -25,5 +25,22 @@ Make sure your system meets these requirements:
 | Oracle Linux 6 | Based on the corresponding RHEL version |
 | Oracle Linux 7 | Based on the corresponding RHEL version |
 | Amazon Linux | Version 1 |
-| Docker | Redis Enterprise Software Docker images are certified for Development and Testing only. |
+| Docker | [Docker images]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
 | Kubernetes, Pivotal Platform (PCF) and other orchestration and cloud environments | See the [Platform documentation]({{< relref "/platforms" >}}) |
+
+## VMware
+
+Redis Enterprise is compatible with VMware.
+
+However, when deploying on VMware, you must carefully configure your memory, CPU,
+network, and storage settings to ensure optimal Redis Enterprise performance.
+
+You also need to ensure that each Redis Enterprise shard is pinned to a specific ESX/ESXi host by setting the appropriate affinity rules.
+
+If you must manually migrate a virtual machine to another host, please ensure that you follow the best practices for shard maintenance, and contact support if you have questions.
+
+## VMware Limitations
+
+Please note that Redis Enterprise is not compatible with VMware VMotion at this time. To use Redis Enterprise on VMware, you must disable VMotion.
+
+In addition, VMware snapshotting is unsupported. Redis Enterprise cluster manages state dynamically. We don't support VMware snapshotting because a VM restored from a snapshot might not have the correct node and cluster state.

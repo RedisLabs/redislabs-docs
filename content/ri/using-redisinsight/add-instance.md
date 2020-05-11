@@ -39,6 +39,7 @@ To add a standalone Redis database to RedisInsight:
     - **Host**: The hostname of your Redis database, for example `redis.acme.com`.
        If your Redis server is running on your local machine, you can enter either `127.0.0.1` or `localhost`.
     - **Port**: The port your Redis database is available on. The default port for Redis is `6379`.
+    - **Username**: The username, if your database is ACL enabled, otherwise leave this field empty.
     - **Password**: The password, if any, for your Redis database.
        If your database doesn't require a password, leave this field empty.
     - **Use TLS**: If your Redis database uses TLS to connect with clients, select this option.
@@ -108,7 +109,7 @@ To add a TLS-enabled Redis database:
 
     ![instance_overview_page](/images/ri/add-db-menu-screen.png)
 
-1. Enter the host, port and password (if any) of your database.
+1. Enter the host, port and username (if your database is ACL enabled), password (if any) of your database.
 1. Select **Use TLS**.
 
     ![instance_overview_page](/images/ri/add-db-tls-screen.png)
