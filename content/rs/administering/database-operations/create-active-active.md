@@ -57,7 +57,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial CRDB sync of a new replica.
 
-    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+    ![new_geo-distributed](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
 1. Enter the name of the new CRDB and select from the options:
 
@@ -68,17 +68,37 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
     {{% /note %}}
 
-    - **Replication** - We recommend that all CRDB databases use replication for best intercluster synchronization performance.
+    - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all CRDB databases use replication for best intercluster synchronization performance.
         Replication creates a slave shard for each CRDB instance and uses those slave shards to synchronize data between the instances
         so that the master shards are dedicated to client requests.
         We also recommend that you use [slave HA]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) to make sure that slave shards are available for synchronization.
+
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
         AOF provides the fastest and most reliable method for instance failure recovery.
 
-    - **Redis password** - A password that clients must use to connect to the CRDB.
+    - **Default database access** - When you configure a password for your database,
+        all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
+        If you also configure an access control list, connections can specify other users for authentication,
+        and requests are allowed according to the Redis ACLs specified for that user.
+
+1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
+
+    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
+        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles.md#database-access-control" >}}) that apply to those connections.
+        You can only configure access control after the Active-Active database is created.
+
+        To define an access control list:
+
+        1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
+        1. Select the [role]({{ relref "/rs/administering/access-control/user-roles.md" }}) that you want to have access to the database.
+        1. Select the [ACL]({{ relref "/rs/administering/access-control/user-roles.md#database-access-control" }}) that you want the role to have in the database.
+        1. Click **Save** to save the ACL.
+        1. Click **Update** to save the changes to the database.
+
     - **Endpoint port number** (Required) - The port in the range 10000-19999 that clients must use to connect to the CRDB.
+
     - In the **Database clustering** option, you can either:
 <!-- Also in crdbs.md -->
         - Make sure the Database clustering is enabled and select the number of shards
@@ -88,15 +108,19 @@ Every instance of a CRDB can receive write operations, and all operations are [s
         - Clear the **Database clustering** option to use only one shard so that you
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
+
     - **Eviction policy** - The eviction policy for CRDBs is `noeviction`.
+
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host CRDB instances and the admin user account to connect to each cluster.
         1. In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
         1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn_or_ip_address>:9443`),
             enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
+
     - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
         specific key is maintained across all CRDB instances. To enable Causal Consistency for an existing
         CRDB, use the REST API.
+
     - **TLS** - You can enable TLS for communications between
         Participating Clusters. After you create the CRDB, you can enable SSL for the data
         access operations from applications just like regular Redis Enterprise databases.
