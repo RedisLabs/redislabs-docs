@@ -12,7 +12,7 @@ aliases: /rv/how-to/importing-dataset-redis-cloud/
 You can import an existing dataset into your Redis Cloud instance from an existing Redis server or an RDB file.
 
 In order to import a sharded database that has multiple RDB files you must first merge the files into a single RDB.
-For assistance, contact [support](https://redislabs.com/support).
+For assistance, contact [Support](https://support.redislabs.com).
 
 {{% note %}}
 Expired keys are not imported.
