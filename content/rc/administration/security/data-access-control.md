@@ -51,7 +51,7 @@ To define database access control, you can either:
 
 - Use the predefined data access roles and add Redis ACLs to them for specific databases.
 - Create new data access roles and select the management roles and Redis ACLs that apply to the roles for specific databases.
-- Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+- Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rc/administration/setup/create-database.md)" >}}).
 
 ## Configuring Redis ACLs
 
@@ -59,17 +59,21 @@ To configure a Redis ACL that you can assign to a data access role:
 
 1. In **Data Access ~Control** > **Redis ACLs**:
     - Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - Create a new Redis ACL - Click ![Add](/images/rs/icon_add.png#no-click "Add").
+    - Create a new Redis ACL - Click ![Add](/images/rc/icon_add.png#no-click "Add").
 1. Enter a descriptive name for the Redis ACL.
 1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) of the command.
-    <!-- - Click **Need Assistance** to use the form to build the command:
-        1. For the commands, select to include or exclude the command or category.
-        1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the commands.
-            - You can enter multiple definitions of commands or categories.
-            - All entries in the Commands/Categories column apply to the keys defined in the Keys column.
-        1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the keys.
-            - You can enter multiple definitions of keys.
-        1. Click **Submit**. -->
+    - Click **Rule Builder** to use the form to build the command:
+
+        ![ACL_builder](/images/rc/acl_builder.png "ACL_builder")
+
+        1. For the commands:
+            1. Select to include or exclude the command or category.
+            1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the commands.
+                - To add more command definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
+                - All entries in the Commands/Categories column apply to the keys defined in the Keys column.
+        1. For the keys, enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the keys.
+            - To add more key definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
+        1. Click **Submit**.
 1. Click **Save**.
 
 ## Assigning Redis ACLs to a User Role
@@ -84,9 +88,9 @@ To assign Redis ACLs to a data access role:
     - Create a Redis ACL association - Click ![Add](/images/rc/icon_add.png#no-click "Add").
 1. Select the databases that the Redis ACL applies to.
 1. Select the [Redis ACL](#configuring-redis-acls) that define the access to commands and keys.
-1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
+1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
 
-    You can click ![Add](/images/rs/icon_add.png#no-click "Add") to assign a Redis ACL to another database.
+    You can click ![Add](/images/rc/icon_add.png#no-click "Add") to assign a Redis ACL to another database.
 
 1. Click **Save**.
 
@@ -103,4 +107,4 @@ To assign users to a data access role:
 
     You can also change the user password.
 
-1. Click ![Save](/images/rs/icon_save.png#no-click "Save").
+1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
