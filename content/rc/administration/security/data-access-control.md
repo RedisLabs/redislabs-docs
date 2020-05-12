@@ -30,8 +30,8 @@ Then, in the data access role, select the databases that the users can access an
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 A command category is a predefined, named set of commands that perform a function, for example `read` commands or `dangerous` commands.
 You can also define Redis ACLs with module commands for any modules that are loaded on the subscription.
-If you run a command on multiple databases, including databases where the command is not allowed by ACLs or the command does not exist,
-the command succeeds where possible.
+<!-- If you run a command on multiple databases, including databases where the command is not allowed by ACLs or the command does not exist,
+the command succeeds where possible. -->
 
 The Redis ACL syntax lets you:
 
@@ -60,9 +60,6 @@ To configure a Redis ACL that you can assign to a data access role:
     - Create a new Redis ACL - Click ![Add](/images/rc/icon_add.png#no-click "Add").
 1. Enter a descriptive name for the Redis ACL.
 1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) of the command or click **Rule Builder** to use the form to build the command:
-
-    ![ACL_builder](/images/rc/acl_builder.png "ACL_builder")
-
     1. For the commands:
         1. Select to include or exclude the command or category.
         1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the commands.
@@ -70,7 +67,7 @@ To configure a Redis ACL that you can assign to a data access role:
             - All entries in the Commands/Categories column apply to the keys defined in the Keys column.
     1. For the keys, enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the keys.
         - To add more key definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
-    1. Click **Submit**.
+    1. Click **Save Rule**.
 1. Click **Save**.
 
 ## Assigning Redis ACLs to a User Role
