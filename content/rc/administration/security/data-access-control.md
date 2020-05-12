@@ -29,9 +29,8 @@ Then, in the data access role, select the databases that the users can access an
 
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 A command category is a predefined, named set of commands that perform a function, for example `read` commands or `dangerous` commands.
-You can also define Redis ACLs with module commands for any modules that are loaded on the subscription.
-<!-- If you run a command on multiple databases, including databases where the command is not allowed by ACLs or the command does not exist,
-the command succeeds where possible. -->
+You can also define Redis ACLs with module commands for any modules that are loaded on the subscription,
+but they can only be used for databases that support those modules.
 
 The Redis ACL syntax lets you:
 
