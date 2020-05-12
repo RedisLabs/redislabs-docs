@@ -151,12 +151,12 @@ Here is an example of a simple XGROUP case:
 | t4   | --- sync ---                | --- sync ---                |
 | t5   | XINFO GROUPS x --> [g1, g2] | XINFO GROUPS x --> [g1, g2] |
 
-Here is an example of a concurrent XADD case:
+Here is an example of a concurrent XADD case: // There is no XADD in this example.... (and I think there should be!)
 
 | Time | Location 1                  | Location 2                  |
 | ---- | --------------------------- | --------------------------- |
 | t1   | XGROUP CREATE x g1 0        | XGROUP CREATE x g2 0        |
-| t2   | --- sync ---                | --- sync ---                |
+| t2   | --- sync ---                | --- sync ---                | // I think this line should be removed
 | t3   | XINFO GROUPS x --> [g1]     | XINFO GROUPS x --> [g2]     |
 | t4   | --- sync ---                | --- sync ---                |
 | t5   | XINFO GROUPS x --> [g1, g2] | XINFO GROUPS x --> [g1, g2] |
@@ -165,7 +165,7 @@ Here is an example of a concurrent XADD case:
 
 OSS Redis uses one radix tree (rax) to hold the PEL (pending entries list) per group (global PEL) and one rax for each consumer (consumer PEL).
 The global PEL is a unification of all consumer PELs, which are disjointed.
-A Active-Active databases stream holds a radix tree per-writing location, both for global PEL and per-consumer PEL.
+An Active-Active databases stream holds a radix tree per-writing location, both for global PEL and per-consumer PEL.
 XREADGROUP, with an ID different from the special ">", iterates simultaneously on all of the PEL rax trees for the consumers.
 It returns the appropriate entry in each loop by comparing entry-IDs from the different rax trees.
 
@@ -228,7 +228,7 @@ As shown in the previous example, Location 2 is not aware of any group-related a
 
 If the usage pattern is such that every entry that was read using XREADGROUP is acknowledged with XACK after processing it,
 we can limit the number of messages that are re-read while maintaining a low-rate of the cross-location traffic.
-To do this, we replicate XACK messages only when all of the read entries are acknowledged.
+To do this, we replicate XACK messages only when all of the read entries are acknowledged. // I'm not sure this is correct...
 
 For example:
 
@@ -243,7 +243,7 @@ For example:
 | t7   | --- sync ---                                                    | --- sync --- | 110-0 and its preceding entries (none) were acknowledged. We replicate an XACK effect for 110-0.                |
 | t8   | XACK g1 130-0                                                   |              |                                                                                                                 |
 | t9   | --- sync ---                                                    | --- sync --- | 130-0 was acknowledged, but not its preceding entries (120-0). We DO NOT replicate an XACK effect for 130-0     |
-| t10  | XACK g1 130-0                                                   |              |                                                                                                                 |
+| t10  | XACK g1 120-0                                                   |              |                                                                                                                 |
 | t11  | --- sync ---                                                    | --- sync --- | 120-0 and its preceding entries (110-0 through 130-0) were acknowledged. We replicate an XACK effect for 130-0. |
 
 In this scenario, if we redirect the XREADGROUP traffic from Location 1 to Location 2 we do not re-read entries 110-0, 120-0 and 130-0.
