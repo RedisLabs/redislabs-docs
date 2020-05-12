@@ -16,7 +16,7 @@ Then, in the data access role, select the databases that the users can access an
 
 {{% note %}}
 
-- Redis ACLs can only be configured in the RC web UI.
+- Redis ACLs can only be configured in the Redis Cloud Admin Console.
     In Redis:
     - These ACL subcommands are blocked: LOAD, SAVE, SETUSER, DELUSER, GENPASS, LOG
     - These ACL subcommands are allowed: LIST, USER, GETUSER, CAT, WHOAMI, HELP
