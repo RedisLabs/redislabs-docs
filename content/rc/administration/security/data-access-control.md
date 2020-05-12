@@ -55,7 +55,7 @@ To define database access control, you can either:
 
 To configure a Redis ACL that you can assign to a data access role:
 
-1. In **Data Access ~Control** > **Redis ACLs**:
+1. In **Data Access Control** > **Redis ACLs**:
     - Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
     - Create a new Redis ACL - Click ![Add](/images/rc/icon_add.png#no-click "Add").
 1. Enter a descriptive name for the Redis ACL.
