@@ -14,8 +14,6 @@ To control user access to Redis database commands and keys,
 you must define Redis ACLs that specify the commands that users can run and keys that the commands can apply to.
 Then, in the data access role, select the databases that the users can access and Redis ACL that controls user access to those databases.
 
-A-A cannot assign ACLs on creation
-
 {{% note %}}
 
 - Redis ACLs can only be configured in the RC web UI.
