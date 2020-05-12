@@ -61,7 +61,7 @@ To change the mobile phone number, click **Configure** for the text message code
 
 {{% note %}}
 We recommend that you also configure MFA for an Authenticator app as a second method of MFA.
-If you cannot login to your account because of MFA, contact [Support](https://redislabs.com/company/contact/support/).
+If you cannot login to your account because of MFA, contact [Support](https://support.redislabs.com).
 
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
 {{% /note %}}
