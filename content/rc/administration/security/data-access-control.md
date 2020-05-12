@@ -51,7 +51,7 @@ To define database access control, you can either:
 
 - Use the predefined data access roles and add Redis ACLs to them for specific databases.
 - Create new data access roles and select the management roles and Redis ACLs that apply to the roles for specific databases.
-- Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rc/administration/setup/create-database.md)" >}}).
+- Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rc/administration/setup/create-database.md" >}}).
 
 ## Configuring Redis ACLs
 
@@ -61,19 +61,18 @@ To configure a Redis ACL that you can assign to a data access role:
     - Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
     - Create a new Redis ACL - Click ![Add](/images/rc/icon_add.png#no-click "Add").
 1. Enter a descriptive name for the Redis ACL.
-1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) of the command.
-    - Click **Rule Builder** to use the form to build the command:
+1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) of the command or click **Rule Builder** to use the form to build the command:
 
-        ![ACL_builder](/images/rc/acl_builder.png "ACL_builder")
+    ![ACL_builder](/images/rc/acl_builder.png "ACL_builder")
 
-        1. For the commands:
-            1. Select to include or exclude the command or category.
-            1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the commands.
-                - To add more command definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
-                - All entries in the Commands/Categories column apply to the keys defined in the Keys column.
-        1. For the keys, enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the keys.
-            - To add more key definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
-        1. Click **Submit**.
+    1. For the commands:
+        1. Select to include or exclude the command or category.
+        1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the commands.
+            - To add more command definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
+            - All entries in the Commands/Categories column apply to the keys defined in the Keys column.
+    1. For the keys, enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the keys.
+        - To add more key definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
+    1. Click **Submit**.
 1. Click **Save**.
 
 ## Assigning Redis ACLs to a User Role
