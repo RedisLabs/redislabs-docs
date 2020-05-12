@@ -8,7 +8,7 @@ categories: ["RS"]
 A [Redis Stream](https://redis.io/topics/streams-intro) is a data structure that acts like an append-only log.
 Each entry consists of:
 
-- An ID that is unique and monotonically increasing ID
+- An ID that is unique and monotonically increasing
 - The data that is a list of key-value pairs, but not a hash because there may be several pairs with the same "key"
 
 You can access the data ("read") using XREAD or using consumer-groups and XREADGROUP.
