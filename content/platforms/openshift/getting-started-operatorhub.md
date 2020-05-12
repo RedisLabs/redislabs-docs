@@ -30,22 +30,24 @@ application workloads in your K8s cluster.
 
 The Redis Enterprise node pods must run with certain privileges that are set in
 OpenShift via a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth)
-that grants the pod various rights such as the ability to change system limits and run as a particular user.
-At minimum, this security context constraint must be installed into the cluster
-as it is used by the OperatorHub install. Without this constraint installed, the operator
-will not be able to create Redis Enterprise clusters.
+that grants the pod various rights such as the ability to change system limits or run as a particular user.
+At minimum, the security context constraint for the operator
+[(scc.yaml)](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)
+must be installed into the cluster as it is used by the OperatorHub install. Without
+this constraint installed, the operator will not be able to create Redis Enterprise clusters.
 
-This security context constraint only needs to be **installed once** and **must not be deleted**.
+The security context constraint for the operator only needs to be **installed once** and **must not be deleted**.
 
 The constraint [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml)
-can be downloaded and installed by:
+can be downloaded and installed by a *cluster administrator* by:
 
 ```sh
 curl -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml
 oc apply -f scc.yaml
 ```
 
-Once installed, the OperatorHub will handle automatic the use of the constraint.
+Once installed, the OperatorHub will automatically the use of the constraint for
+Redis Enterprise node pods.
 
 {{% note %}}
 **Known Limitation:** The automatic use of the security constraint is limited. The
