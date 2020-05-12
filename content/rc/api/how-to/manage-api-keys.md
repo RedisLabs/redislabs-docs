@@ -1,6 +1,6 @@
 ---
 Title: Manage API Keys
-description: Managing API Keys using the Redis Labs web UI
+description: Managing API Keys using the Redis Cloud Admin Console
 weight: 30
 alwaysopen: false
 categories: ["RC"]
