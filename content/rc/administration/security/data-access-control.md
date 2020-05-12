@@ -1,14 +1,14 @@
 ---
-title: Data Access Control
+title: Role-Based Access Control for Data Connections
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
 ---
-Role-Based Access Control (RBAC) lets you scale your Redis deployments while simplifying the complexity of managing data access for a subscription with many databases, users, and access control lists.
+Role-Based Access Control (RBAC) lets you scale your Redis deployments while simplifying the management of data access for a subscription with many databases, users, and access control lists.
 With RBAC, you can create a role for data access and apply it to many users to define their access to multiple databases in the subscription.
 
-In **Data Access Control** > **Roles**, you can configure data access roles with Redis ACLs that define the commands and keys that users can access in database connections
+In **Data Access Control > Roles**, you can configure data access roles with Redis ACLs that define the commands and keys that users can access in database connections
 
 To control user access to Redis database commands and keys,
 you must define Redis ACLs that specify the commands that users can run and keys that the commands can apply to.
@@ -32,10 +32,10 @@ A-A cannot assign ACLs on creation
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 A command category is a predefined, named set of commands that perform a function, for example `read` commands or `dangerous` commands.
 You can also define Redis ACLs with module commands for any modules that are loaded on the subscription.
-If you run a command on multiple databases including databases where the command is not allowed by ACLs or the command does not exist,
+If you run a command on multiple databases, including databases where the command is not allowed by ACLs or the command does not exist,
 the command succeeds where possible.
 
-A Redis ACL syntax lets you:
+The Redis ACL syntax lets you:
 
 - Include commands and categories with the `+` or exclude commands and categories with the `-` prefix
 - Define categories with the `@` prefix
@@ -49,7 +49,7 @@ The predefined Redis ACLs are:
 
 To define database access control, you can either:
 
-- Use the predefined data access roles and add to them Redis ACLs for specific databases.
+- Use the predefined data access roles and add Redis ACLs to them for specific databases.
 - Create new data access roles and select the management roles and Redis ACLs that apply to the roles for specific databases.
 - Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
