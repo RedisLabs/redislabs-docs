@@ -11,8 +11,8 @@ you must upgrade each of the nodes and then upgrade each of the databases in the
 
 {{% warning %}}
 
-- Before you upgrade, you must read the [RS 5.6 release notes]({{< relref "/rs/release-notes/rs-6-0-0-may-2020.md" >}}),
-including the [5.6 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-0-may-2020.md#upgrade" >}}).
+- Before you upgrade, you must read the [RS 6.0 release notes]({{< relref "/rs/release-notes/rs-6-0-0-may-2020.md" >}}),
+including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-0-may-2020.md#upgrade" >}}).
 - You must read the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for every version that you upgrade to.
 
 {{% /warning %}}
@@ -48,6 +48,7 @@ We recommend that you plan to keep all nodes up until the upgrade is completed
 on all nodes. The node role is shown in the output of the 'rladmin status
 nodes' command.
 - You cannot change the installation path or user during upgrade.
+- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of updating them through the API. For assistance with this issue, contact [Support](https://support.redislabs.com).
 
 {{% /warning %}}
 
