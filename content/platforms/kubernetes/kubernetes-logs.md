@@ -4,7 +4,7 @@ description:
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
-keywords: ["kubernetes"]
+# keywords: ["kubernetes"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-logs
          /rs/concepts/logs/
 ---
