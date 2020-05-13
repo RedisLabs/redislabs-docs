@@ -9,54 +9,54 @@ aliases:
 ---
 The OperatorHub is a feature of OpenShift 4.x that enables browsing a catalog
 of open-source and vendor-provided operators. The operators available in the
-catalog can easily be installed via a few simple steps through the OpenShift
+catalog can easily be installed using a few simple steps through the OpenShift
 administrative interface.
 
-While you can install the operator via the Command-Line Interface (CLI), the
+You can install the operator using the Command-Line Interface (CLI), but the
 OperatorHub is an easy way to help you to manage the operator and apply
 upgrades. It also provides an easy way to create clusters.
 
 The overall process is:
 
-1. Install the operator via the OperatorHub
-2. Create clusters via a Custom Resource Definition (CRD) via the Operator view
-   in the OperatorHub
-3. Create databases via Redis Enterprise
+1. Install the operator using the OperatorHub.
+2. Create clusters with a Custom Resource Definition (CRD) from the Operator view
+   in the OperatorHub.
+3. Create databases in Redis Enterprise.
 
-This will result in databases exposed as Kubernetes services accessible by other
+Now the databases are exposed as Kubernetes services accessible by other
 application workloads in your K8s cluster.
 
 ## Preparing the cluster
 
 The Redis Enterprise node pods must run with certain privileges that are set in
-OpenShift via a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth)
-that grants the pod various rights such as the ability to change system limits or run as a particular user.
+OpenShift using a [Security Context Constraint](https://docs.openshift.com/container-platform/4.4/authentication/managing-security-context-constraints.html#security-context-constraints-about_configuring-internal-oauth)
+that grants the pod various rights, such as the ability to change system limits or run as a particular user.
 At minimum, the security context constraint for the operator
 [(scc.yaml)](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)
-must be installed into the cluster as it is used by the OperatorHub install. Without
-this constraint installed, the operator will not be able to create Redis Enterprise clusters.
+must be installed into the cluster as it is used by the OperatorHub installer. Without
+this constraint installed, the operator cannot create Redis Enterprise clusters.
 
-The security context constraint for the operator only needs to be **installed once** and **must not be deleted**.
+The security context constraint for the operator needs to be **installed only once** and **must not be deleted**.
 
 The constraint [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml)
-can be downloaded and installed by a *cluster administrator* by:
+can be downloaded and installed by a cluster administrator with the commands:
 
 ```sh
 curl -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml
 oc apply -f scc.yaml
 ```
 
-Once installed, the OperatorHub will automatically the use of the constraint for
+After the constraint is installed, the OperatorHub automatically uses the constraint for
 Redis Enterprise node pods.
 
 {{% note %}}
-**Known Limitation:** The automatic use of the security constraint is limited. The
+**Known Limitation** - The automatic use of the security constraint is limited. The
 Redis Enterprise must be named `rec` for the constraint to be used automatically. This
-limitation may be removed in the future. **It is strongly recommended that you use the cluster name `rec` when deploying via
+limitation may be removed in the future. **We recommended that you use the cluster name `rec` when deploying with
 the OperatorHub.**
 
-If you require the name to be different, you must grant the SCC to the project
-namespace (e.g., `my-project`) as you would for OpenShift 3.x:
+If you require a different name, you must grant the SCC to the project
+namespace (e.g., `my-project`) as in OpenShift 3.x:
 
 ```sh
 oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:my-project
