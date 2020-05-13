@@ -65,9 +65,8 @@ You can migrate resources by using the *rladmin* command-line interface
 (CLI). For guidelines, refer to [*rladmin* command line interface
 (CLI)]({{< relref "/rs/references/rladmin.md" >}}).
 
-**Note**: The DNS records must be updated each time a node is added or
-replaced. For additional details, refer to
-[DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+**Note**: The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) must be updated each time a node is added or
+replaced.
 
 ## Removing a node
 

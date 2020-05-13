@@ -73,8 +73,7 @@ important to upgrade the nodes one by one, and **not attempt to upgrade
 more than one node at a time**.
 {{% /warning %}}
 
-To make sure that the node is functioning properly, run [`rlcheck`]
-({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
+To make sure that the node is functioning properly, run [`rlcheck`]({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
 on the node both before and after the upgrade.
 
 If you have the RS management UI open in the browser while you are
