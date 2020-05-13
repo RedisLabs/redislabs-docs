@@ -121,14 +121,13 @@ Here is an example of creating two consumer groups concurrently:
 | Time | Region 1                  | Region 2                  |
 | ---- | --------------------------- | --------------------------- |
 | _t1_   | `XGROUP CREATE x g1 0`        | `XGROUP CREATE x g2 0`        |
-| _t2_   | _— Sync —_                | — Sync —                |
-| _t3_   | `XINFO GROUPS x` <br/>**→ [g1]**     | `XINFO GROUPS x` <br/>**→ [g2]**     |
-| _t4_   | _— Sync —_                | — Sync —                |
-| _t5_   | `XINFO GROUPS x` <br/>**→ [g1, g2]** | `XINFO GROUPS x` <br/>**→ [g1, g2]** |
+| _t2_   | `XINFO GROUPS x` <br/>**→ [g1]**     | `XINFO GROUPS x` <br/>**→ [g2]**     |
+| _t3_   | _— Sync —_                | — Sync —                |
+| _t4_   | `XINFO GROUPS x` <br/>**→ [g1, g2]** | `XINFO GROUPS x` <br/>**→ [g1, g2]** |
 
 
 {{% note %}}
-OSS Redis uses one radix tree (`rax`) to hold the global pending entries list and another `rax` for each consumer's PEL.
+Open source Redis uses one radix tree (`rax`) to hold the global pending entries list and another `rax` for each consumer's PEL.
 The global PEL is a unification of all consumer PELs, which are disjoint.
 
 An Active-Active database stream maintains a global PEL and a per-consumer PEL for each region.
@@ -210,7 +209,7 @@ For example:
 | _t7_   | _— Sync —_                                                    | _— Sync —_ | 110-0 and its preceding entries (none) were acknowledged. We replicate an XACK effect for 110-0.                |
 | _t8_   | `XACK g1 130-0`                                                   |              |                                                                                                                 |
 | _t9_   | _— Sync —_                                                    | _— Sync —_ | 130-0 was acknowledged, but not its preceding entries (120-0). We DO NOT replicate an XACK effect for 130-0     |
-| _t10_  | `XACK g1 130-0`                                                   |              |                                                                                                                 |
+| _t10_  | `XACK g1 120-0`                                                   |              |                                                                                                                 |
 | _t11_  | _— Sync —_                                                    | _— Sync —_ | 120-0 and its preceding entries (110-0 through 130-0) were acknowledged. We replicate an XACK effect for 130-0. |
 
 In this scenario, if we redirect the XREADGROUP traffic from Region 1 to Region 2 we do not re-read entries 110-0, 120-0 and 130-0.
@@ -221,25 +220,25 @@ This means that the XREADGROUP does not return already-acknowledged entries.
 Unlike XREAD, XREADGOUP will never skip stream entries.
 In traffic redirection, XREADGROUP may return entries that have been read but not acknowledged.
 
-## Comparing Streams in Active-Active Databases and Streams in Open Source Redis
+## Comparing Streams in Active-Active Databases with Streams in Open Source Redis
 
-### Stream entries limitations
+### Stream command notes
 
-In Active-Active databases:
-
-1. XADD with a full ID can fail in default strict mode.
-1. When used as an iterator, XREAD may skip entries.
+1. XADD with a full ID will fail when using the _strict_ default ID generation mode.
+1. XREAD may skip entries when iterating a stream that is concurrently written to from more than one region.
 1. XSETID fails when the new ID is less than current ID.
 
-### Consumer groups limitations
+### Consumer group notes
 
-Consumer groups are not replicated with the exception of:
+The following consumer group operations are replicated:
 
 1. Consecutive XACK operations
-1. XGROUP CREATE and XGROUP DESTROY
+1. Consumer group creation and deletion (that is, XGROUP CREATE and XGROUP DESTROY)
 
-Other limitations are:
+All other consumer group metadata is not replicated.
 
-1. XGROUP SETID, DELCONSUMER are not replicated.
+A few other notes:
+
+1. XGROUP SETID and DELCONSUMER are not replicated.
 1. Consumers exist locally (XREADGROUP creates a consumer implicitly).
-1. RENAME of a stream deletes all consumer group information.
+1. Renaming a stream (using RENAME) deletes all consumer group information.
