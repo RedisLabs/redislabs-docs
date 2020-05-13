@@ -106,7 +106,7 @@ rlutil crdb_config_set bdb=1 conf_keyword=xadd-strict-id-uniqueness conf_value=n
 
 ### Iterating a stream with XREAD
 
-Normally, you can use XREAD to iterate over the entries in a Redis Stream. However, with an Active-Active database, XREAD may skip entries. This can happen when multiple regions write to the same stream.
+In open source Redis and in non-Active-Active databases, you can use XREAD to iterate over the entries in a Redis Stream. However, with an Active-Active database, XREAD may skip entries. This can happen when multiple regions write to the same stream.
 
 In the example below, XREAD skips entry `115-0`.
 
