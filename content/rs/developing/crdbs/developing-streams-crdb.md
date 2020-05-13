@@ -69,14 +69,17 @@ Because Active-Active databases replicate asynchronously, it's possible to creat
 | _t2_   | _— Sync —_                    | _— Sync —_                    |
 | _t3_   | `XRANGE x - +`<br/> **→ [100-1, 100-1]** | `XRANGE x - +`<br/> **→ [100-1, 100-1]** |
 
-In this scenario, two entries with the ID `100-1` are added at _t1_. After syncing, the streams contains two entries with the same ID.
+In this scenario, two entries with the ID `100-1` are added at _t1_. After syncing, the stream `x` contains two entries with the same ID.
 
-To prevent duplicate IDs and to comply with the original Redis streams design, Active-Active databases provide three ID generation modes for XADD:
+{{% note %}}
+Stream IDs in open source Redis consist of two integers separated by a dash ('-'). When the server generates the ID, the first integer is the current time in milliseconds, and the second integer is a sequence number. So, the format for stream IDs is MS-SEQ.
+{{% /note %}}
 
-1. **Strict**: In _strict_ mode, XADD allows server-generated IDs (using the '`*`' ID specifier) or IDs consisting only of the millisecond (MS) portion. In this second case, the ID's sequence number will be calculated using the database's location ID to prevent duplicate IDs in the stream. Strict mode rejects full IDs (that is, IDs containing both milliseconds and a sequence number).
-1. **Semi-strict**: In _semi-strict_ mode, XADD permits everything from _strict_ mode but also allows full IDs. This means that duplicate IDs are possible.
-1. **Liberal**: XADD has no syntax limitations.
-    This mode can lead to duplicate IDs and is not recommended.
+To prevent duplicate IDs and to comply with the original Redis streams design, Active-Active databases provide three ID modes for XADD:
+
+1. **Strict**: In _strict_ mode, XADD allows server-generated IDs (using the '`*`' ID specifier) or IDs consisting only of the millisecond (MS) portion. When the millisecond portion of the ID is provided, the ID's sequence number is calculated using the database's region ID. This prevents duplicate IDs in the stream. Strict mode rejects full IDs (that is, IDs containing both milliseconds and a sequence number).
+1. **Semi-strict**: _Semi-strict_ mode is just like _strict_ mode except that it allows full IDs (MS-SEQ). Because it allows full IDs, duplicate IDs are possible in this mode.
+1. **Liberal**: XADD has no syntax limitations. This mode may lead to duplicate IDs.
 
 The default and recommended mode is _strict_, which prevents duplicate IDs. A stream with duplicate IDs can cause:
 
