@@ -39,7 +39,7 @@ If you have made changes to the role, role binding, rbac or crd in the previous 
     1. Run `kubectl edit rec` in the namespace your Redis Enterprise Cluster is deployed in.
     1. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag provided in the release documentation.
 
-    For example, in Operator release [5.4.10-8](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases/tag/5.4.10-8) the tag is `redislabs/redis:5.4.10-22` for the Ubuntu-based Redis Enterprise image.
+    For example, in Operator release [5.4.10-8](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases/tag/5.4.10-8) the tag is `5.4.10-22` for the Ubuntu-based Redis Enterprise image.
 
     1. Save the changes.
         If your default text editor is vim then enter `<ESC>:wq` to save the file.
