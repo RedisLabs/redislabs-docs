@@ -19,10 +19,10 @@ We are happy to receive any feedback at redisinsight@redislabs.com.
 
 RedisInsight offers the following features -
 
-* Easy to use browser based interface to search keys, view and edit data
-* Only GUI tool to support Redis Cluster
-* Supports SSL/TLS based connections
-* Run Memory Analysis
+- Easy to use browser based interface to search keys, view and edit data
+- Only GUI tool to support Redis Cluster
+- Supports SSL/TLS based connections
+- Run Memory Analysis
 
 To install RedisInsight:
 
@@ -31,11 +31,14 @@ To install RedisInsight:
 
     - For Ubuntu - To make the downloaded file executable, run:
 
-    ```src
-    chmod +x redisinsight-<platform>-<version>
-    ```
+        ```src
+        chmod +x redisinsight-<platform>-<version>
+        ```
 
-    - For Windows and Mac - Run the installer.
+    - For Windows and MacOS - Run the installer.
+
+        If MacOS warns you that RedisInsight cannot be checked for malicious software,
+        follow the instructions from [Apple support](https://support.apple.com/en-gb/HT202491) about how to open an app from an unidentified developer.
 
 1. Run RedisInsight:
 

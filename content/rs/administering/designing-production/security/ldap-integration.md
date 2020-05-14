@@ -115,7 +115,7 @@ cluster.
 
 ### Step 4: Create an RS User to Authenticate with LDAP
 
-You can [create an external RS user]({{< relref "/rs/administering/designing-production/security/account-management.md" >}})
+You can [create an external RS user]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}})
 with LDAP authentication in the web UI.
 
 To create an external user with LDAP authentication in the REST API:

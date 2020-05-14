@@ -57,7 +57,7 @@ are supported with the following limitations:
     These commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH, MSETNX,
     RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE, SORT,
     SUNION, ZINTERSTORE, ZUNIONSTORE.
-1. **Geo commands:** In GEORADIUS/GEOREADIUSBYMEMBER commands, the
+1. **Geo commands:** In GEORADIUS/GEORADIUSBYMEMBER commands, the
     STORE and STOREDIST options can only be used when all affected keys
     reside in the same slot.
 1. **Transactions:** All operations within a WATCH/MULTI/EXEC block

@@ -49,7 +49,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
         database is on.{{% /note %}}
 
     1. In **Access Control & Security**, you can:
-        - Set the **Redis Password** for the database.
+        - Enable the **Default User** for the database.
             We recommend that you use a complex password and not leave the password blank.
         - Specify the **Source IP/Subnet** addresses that your database receives
             traffic from, for example your application server.

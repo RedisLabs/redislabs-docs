@@ -6,7 +6,7 @@ categories: ["RI"]
 path: install/configure/
 aliases: /ri/install/configure/
 ---
-You can configure RedisInsight with system environment vairables.
+You can configure RedisInsight with system environment variables.
 
 To configure RedisInsight with environment variables:
 

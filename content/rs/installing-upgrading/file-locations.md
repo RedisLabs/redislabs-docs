@@ -1,7 +1,7 @@
 ---
 Title: File Locations
 description:
-weight: 40
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/file-locations/
@@ -28,6 +28,7 @@ The default directories that Redis Enterprise Software uses for data and metadat
 |------------|-----------------|
 | /var/opt/redislabs | Default storage location for the cluster data, system logs, backups and ephemeral, persisted data |
 | /var/opt/redislabs/log | System logs for Redis Enterprise Software |
+| /var/opt/redislabs/run | Socket files for Redis Enterprise Software |
 | /etc/opt/redislabs | Default location for cluster manager configuration and certificates |
 | /tmp | Temporary files |
 

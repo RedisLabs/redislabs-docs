@@ -7,7 +7,7 @@ categories: ["RC"]
 draft: true
 ---
 Metrics API provides programmatic access to database usage and performance data.
-The metrics API shows data that similar to the data that the Redis Labs web UI shows in the database metrics.
+The metrics API shows data that similar to the data that the Redis Cloud Admin Console shows in the database metrics.
 
 ## Metric spans and intervals
 

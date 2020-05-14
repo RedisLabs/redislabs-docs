@@ -27,9 +27,9 @@ After you install the first node, you can add more nodes to the cluster.
 To add a node in Redis Enterprise Software (RS):
 
 1. [Install the RS installation package]({{< relref
-    "/rs/installing-upgrading/downloading-installing.md" >}}) on a clean installation
+    "/rs/installing-upgrading/_index.md" >}}) on a clean installation
     of a [supported operating system]({{< relref
-    "/rs/administering/designing-production/supported-platforms.md" >}}).
+    "/rs/installing-upgrading/supported-platforms.md" >}}).
 1. To connect to the RS management UI of the new RS installation, go to:
     https://\<URL or IP address>:8443
 
