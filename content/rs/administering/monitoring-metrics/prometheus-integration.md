@@ -178,6 +178,7 @@ These are the metrics available:
 | bdb_main_thread_cpu_user_max | Highest value of % cores utilization in user mode for all redis shard main threads of this database |
 | bdb_mem_frag_ratio | RAM fragmentation ratio (RSS / allocated RAM) |
 | bdb_mem_size_lua | Redis lua scripting heap size (bytes) |
+| bdb_memory_limit | Configured RAM limit for the database |
 | bdb_monitor_sessions_count | Number of client connected in monitor mode to the DB |
 | bdb_no_of_keys | Number of keys in DB |
 | bdb_other_req | Rate of other (non read/write) requests on DB (ops/sec) |
@@ -206,6 +207,7 @@ These are the metrics available:
 | bdb_total_req_max | Highest value of rate of all requests on DB (ops/sec) |
 | bdb_total_res | Rate of all responses on DB (ops/sec) |
 | bdb_total_res_max | Highest value of rate of all responses on DB (ops/sec) |
+| bdb_up | Database is up and running |
 | bdb_used_memory | Memory used by db (in bigredis this includes flash) (bytes) |
 | bdb_write_hits | Rate of write operations accessing an existing key (ops/sec) |
 | bdb_write_hits_max | Highest value of rate of write operations accessing an existing key (ops/sec) |
@@ -215,16 +217,21 @@ These are the metrics available:
 | bdb_write_req_max | Highest value of rate of write requests on DB (ops/sec) |
 | bdb_write_res | Rate of write responses on DB (ops/sec) |
 | bdb_write_res_max | Highest value of rate of write responses on DB (ops/sec) |
-| bdb_memory_limit | Configured RAM limit for the database |
 | no_of_expires | Current number of volatile keys in the database |
-| bdb_up | Database is up and running |
 
 ### Node Metrics
 
 | Metric | Description |
 | ------ | :------ |
-| node_avg_latency | Average latency of requests handled by endpoints on node (micro-sec); returned only when there is traffic |
+| node_available_flash | Available flash in node (bytes) |
+| node_available_flash_no_overbooking | Available flash in node (bytes), without taking into account overbooking |
 | node_available_memory | Amount of free memory in node (bytes) that is available for database provisioning |
+| node_available_memory_no_overbooking | Available ram in node (bytes) without taking into account overbooking |
+| node_avg_latency | Average latency of requests handled by endpoints on node (micro-sec); returned only when there is traffic |
+| node_bigstore_free | Sum of free space of back-end flash (used by flash DB's [BigRedis]) on all cluster nodes (bytes); returned only when BigRedis is enabled |
+| node_bigstore_iops | Rate of i/o operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (ops/sec); returned only when BigRedis is enabled |
+| node_bigstore_kv_ops | Rate of value read/write operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (ops/sec); returned only when BigRedis is enabled |
+| node_bigstore_throughput | Throughput i/o operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (bytes/sec); returned only when BigRedis is enabled |
 | node_conns | Number of clients connected to endpoints on node |
 | node_cpu_idle | CPU idle time portion (0-1, multiply by 100 to get percent) |
 | node_cpu_idle_max | Highest value of CPU idle time portion (0-1, multiply by 100 to get percent) |
@@ -252,19 +259,12 @@ These are the metrics available:
 | node_ingress_bytes_min | Lowest value of rate of incoming network traffic to node (bytes/sec) |
 | node_persistent_storage_avail | Disk space available to RLEC processes on configured persistent disk (bytes) |
 | node_persistent_storage_free | Free disk space on configured persistent disk (bytes) |
+| node_provisional_flash | Amount of flash available for new shards on this node, taking into account overbooking, max redis servers, reserved flash and provision and migration thresholds (bytes) |
+| node_provisional_flash_no_overbooking | Amount of flash available for new shards on this node, without taking into account overbooking, max redis servers, reserved flash and provision and migration thresholds (bytes) |
+| node_provisional_memory | Amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases |
+| node_provisional_memory_no_overbooking | Amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases, without taking into account overbooking |
 | node_total_req | Request rate handled by endpoints on node (ops/sec) |
 | node_up | Node is part of the cluster and is connected |
-| node_bigstore_kv_ops | Rate of value read/write operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (ops/sec); returned only when BigRedis is enabled |
-| node_bigstore_iops | Rate of i/o operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (ops/sec); returned only when BigRedis is enabled |
-| node_bigstore_throughput | Throughput i/o operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (bytes/sec); returned only when BigRedis is enabled |
-| node_bigstore_free | Sum of free space of back-end flash (used by flash DB's [BigRedis]) on all cluster nodes (bytes); returned only when BigRedis is enabled |
-| node_provisional_memory | Amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases |
-| node_available_flash | Available flash in node (bytes) |
-| node_provisional_flash | Amount of flash available for new shards on this node, taking into account overbooking, max redis servers, reserved flash and provision and migration thresholds (bytes) |
-| node_available_memory_no_overbooking | Available ram in node (bytes) without taking into account overbooking |
-| node_provisional_memory_no_overbooking | Amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases, without taking into account overbooking |
-| node_available_flash_no_overbooking | Available flash in node (bytes), without taking into account overbooking |
-| node_provisional_flash_no_overbooking | Amount of flash available for new shards on this node, without taking into account overbooking, max redis servers, reserved flash and provision and migration thresholds (bytes) |
 
 ### Proxy Metrics
 
@@ -327,6 +327,17 @@ These are the metrics available:
 | listener_write_started_res | Number of responses sent from the DB of type "write" |
 | listener_write_started_res_max | Highest value of number of responses sent from the DB of type "write" |
 
+### Replication Metrics
+
+| bdb_replicaof_syncer_ingress_bytes | Rate of compressed incoming network traffic to Replica Of DB (bytes/sec) |
+| bdb_replicaof_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to Replica Of DB (bytes/sec) |
+| bdb_replicaof_syncer_local_ingress_lag_time |  |
+| bdb_replicaof_syncer_status |  |
+| bdb_crdt_syncer_ingress_bytes | Rate of compressed incoming network traffic to CRDB (bytes/sec) |
+| bdb_crdt_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to CRDB (bytes/sec) |
+| bdb_crdt_syncer_local_ingress_lag_time |  |
+| bdb_crdt_syncer_status |  |
+
 ### Shard Metrics
 
 | Metric | Description |
@@ -345,15 +356,22 @@ These are the metrics available:
 | redis_db0_expires | Total count of volatile keys |
 | redis_db0_keys | Total key count |
 | redis_evicted_keys | Keys evicted so far (since restart) |
+| redis_expire_cycle_cpu_milliseconds | The cumulative amount of time spent on active expiry cycles |
 | redis_expired_keys | Keys expired so far (since restart) |
 | redis_forwarding_state | Shard forwarding state (on or off) |
+| redis_keyspace_read_hits | Rate of read operations accessing an existing keyspace (ops/sec) |
+| redis_keyspace_read_misses | Rate of read operations accessing an non-existing keyspace (ops/sec) |
+| redis_keyspace_write_hits | Rate of write operations accessing an existing keyspace (ops/sec) |
+| redis_keyspace_write_misses | Rate of write operations accessing an non-existing keyspace (ops/sec) |
 | redis_master_link_status | Indicates if the slave is connected to its master |
-| redis_maxmemory | Current memory limit configured by redis_mgr according to db memory limits |
+| redis_master_sync_in_progress | The master shard is synchronizing (1 true | 0 false) |
 | redis_max_process_mem | Current memory limit configured by redis_mgr according to node free memory |
+| redis_maxmemory | Current memory limit configured by redis_mgr according to db memory limits |
 | redis_mem_aof_buffer | Current size of AOF buffer |
 | redis_mem_clients_normal | Current memory used for input and output buffers of non-slave clients |
 | redis_mem_clients_slaves | Current memory used for input and output buffers of slave clients |
 | redis_mem_fragmentation_ratio | Memory fragmentation ratio (1.3 means 30% overhead) |
+| redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error. |
 | redis_mem_replication_backlog | Size of replication backlog |
 | redis_process_cpu_system_seconds_total | Shard Process system CPU time spent in seconds. |
 | redis_process_cpu_usage_percent | Shard Process cpu usage precentage |
@@ -370,21 +388,3 @@ These are the metrics available:
 | redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
 | redis_up | Shard is up and running |
 | redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |
-| redis_master_sync_in_progress | The master shard is synchronizing (1 true | 0 false) |
-| redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error. |
-| redis_keyspace_read_hits | Rate of read operations accessing an existing keyspace (ops/sec) |
-| redis_keyspace_read_misses | Rate of read operations accessing an non-existing keyspace (ops/sec) |
-| redis_keyspace_write_hits | Rate of write operations accessing an existing keyspace (ops/sec) |
-| redis_keyspace_write_misses | Rate of write operations accessing an non-existing keyspace (ops/sec) |
-| redis_expire_cycle_cpu_milliseconds | The cumulative amount of time spent on active expiry cycles |
-
-### Replication Metrics
-
-| bdb_replicaof_syncer_ingress_bytes | Rate of compressed incoming network traffic to Replica Of DB (bytes/sec) |
-| bdb_replicaof_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to Replica Of DB (bytes/sec) |
-| bdb_replicaof_syncer_local_ingress_lag_time |  |
-| bdb_replicaof_syncer_status |  |
-| bdb_crdt_syncer_ingress_bytes | Rate of compressed incoming network traffic to CRDB (bytes/sec) |
-| bdb_crdt_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to CRDB (bytes/sec) |
-| bdb_crdt_syncer_local_ingress_lag_time |  |
-| bdb_crdt_syncer_status |  |
