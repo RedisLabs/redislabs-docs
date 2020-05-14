@@ -12,23 +12,23 @@ Redis Labs implements rolling updates for software upgrades in Kubernetes deploy
 
 1. Clone this repository, which contains the deployment files:
 
-```src
-git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
-```
+    ```src
+    git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
+    ```
 
-Example response:
+    Example response:
 
-```src
-Cloning into 'redis-enterprise-k8s-docs'...
-remote: Enumerating objects: 37, done.
-remote: Counting objects: 100% (37/37), done.
-remote: Compressing objects: 100% (30/30), done.
-remote: Total 168 (delta 19), reused 9 (delta 7), pack-reused 131
-Receiving objects: 100% (168/168), 45.32 KiB | 7.55 MiB/s, done.
-Resolving deltas: 100% (94/94), done.
-```
+    ```src
+    Cloning into 'redis-enterprise-k8s-docs'...
+    remote: Enumerating objects: 37, done.
+    remote: Counting objects: 100% (37/37), done.
+    remote: Compressing objects: 100% (30/30), done.
+    remote: Total 168 (delta 19), reused 9 (delta 7), pack-reused 131
+    Receiving objects: 100% (168/168), 45.32 KiB | 7.55 MiB/s, done.
+    Resolving deltas: 100% (94/94), done.
+    ```
 
-1. Apply the [bundle.yaml] file (https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml) - (or openshift.bundle.yaml file if running OpenShift)
+1. Apply the [bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml), or the openshift.bundle.yaml file if you are running OpenShift.
 
     {{% note %}}
 If you are not pulling images from Docker Hub, update the operator Image spec to point to your private repository.
