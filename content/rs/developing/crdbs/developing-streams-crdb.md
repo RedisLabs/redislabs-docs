@@ -79,7 +79,7 @@ To prevent duplicate IDs and to comply with the original Redis streams design, A
 
 1. **Strict**: In _strict_ mode, XADD allows server-generated IDs (using the '`*`' ID specifier) or IDs consisting only of the millisecond (MS) portion. When the millisecond portion of the ID is provided, the ID's sequence number is calculated using the database's region ID. This prevents duplicate IDs in the stream. Strict mode rejects full IDs (that is, IDs containing both milliseconds and a sequence number).
 1. **Semi-strict**: _Semi-strict_ mode is just like _strict_ mode except that it allows full IDs (MS-SEQ). Because it allows full IDs, duplicate IDs are possible in this mode.
-1. **Standard**: XADD allows any monotonically asceding ID. When given the millisecond portion of the ID, the sequence number will be set to `0`. This mode may lead to duplicate IDs.
+1. **Liberal**: XADD allows any monotonically ascending ID. When given the millisecond portion of the ID, the sequence number will be set to `0`. This mode may lead to duplicate IDs.
 
 The default and recommended mode is _strict_, which prevents duplicate IDs. It's generally important to avoid duplicate IDs because:
 
@@ -98,7 +98,7 @@ Set _semi-strict_ mode:
 rlutil crdb_config_set bdb=1 conf_keyword=xadd-strict-id-uniqueness conf_value=semi
 ```
 
-Set _standard_ mode:
+Set _liberal_ mode:
 ```sh
 rlutil crdb_config_set bdb=1 conf_keyword=xadd-strict-id-uniqueness conf_value=no
 ```
