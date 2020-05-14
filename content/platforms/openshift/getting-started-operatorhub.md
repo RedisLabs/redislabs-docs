@@ -172,12 +172,12 @@ option in the management interface.
 
     ![K8S - create rec via operator]( /images/rs/k8s-operator-rec-create-yaml.png )
 
-    Edit the YAML definition as appropriate. See [**Options for clusters**]({{< relref "cluster-options.md">}})
+    Edit the YAML definition as appropriate. See [**Options for clusters**]({{< relref "/platforms/kubernetes/cluster-options.md">}})
     section for more information.
 
     {{% note %}}
 
-The name of the cluster must be "rec" for deployments from within the OLM. For more information, see the `name:` field description in [**Options for clusters**]({{< relref "cluster-options.md">}})
+The name of the cluster must be "rec" for deployments from within the OLM. For more information, see the `name:` field description in [**Options for clusters**]({{< relref "/platforms/kubernetes/cluster-options.md">}})
 
     {{% /note %}}
 
