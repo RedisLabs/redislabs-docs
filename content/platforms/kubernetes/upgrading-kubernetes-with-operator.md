@@ -49,7 +49,7 @@ The rolling upgrade of the cluster nodes' statefulSet starts.
 To see the status of the current rolling upgrade, run:
 
 ```src
-kubectl rollout status sts
+kubectl rollout status sts <REC_name>
 ```
 
 ## How Does the Upgrade Work?
