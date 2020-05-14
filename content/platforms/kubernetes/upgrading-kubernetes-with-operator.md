@@ -75,4 +75,6 @@ Each pod is updated after the last one completes successfully.
 
 The pods in the StatefulSet are updated in reverse ordinal order.
 The Kubernetes controller terminates each pod and waits for it to transition to `Running` and then to `Ready`.
-The it updates the next pod until all pods are updated and the upgrade process is completed.
+
+After a pod is updated, the next pod is terminated and updated.
+After all of the pods are updated, the upgrade process is complete.
