@@ -35,7 +35,7 @@ etc.
 Redis Enterprise works with all existing standard clients; it does not require you to use any special clients.
 {{< /expand>}}
 
-{{< expand "What am I allowed to do with the trial version?" >}}
+{{% expand "What am I allowed to do with the trial version?" %}}
 You can use, experience and administer the full capabilities of Redis
 Enterprise Software (RS), but you may not deploy it in a production
 environment. In addition, the trial version allows a maximum of four
@@ -46,7 +46,7 @@ not provide the same support options as the paid version. Finally, no
 SLA is provided with the trial version. To continue operation of the
 cluster with full capabilities, you must purchase a [subscription
 cluster key from Redis Labs](https://redislabs.com/pricing).
-{{< /expand>}}
+{{% /expand %}}
 
 {{< expand "What are the Redis Enterprise Software (RS) payment schedule and terms?" >}}
 Contact us at <sales@redislabs.com> to learn about RS pricing.
@@ -68,7 +68,7 @@ you need.
 {{< embed-md "how-many-databases-software.md"  >}}
 {{< /expand >}}
 
-{{< expand "What happens when my database fills up?" >}}
+{{% expand "What happens when my database fills up?" %}}
 As explained in the open source [Redis FAQ](https://redis.io/topics/faq),
 under "What happens if Redis runs out of memory?":
 

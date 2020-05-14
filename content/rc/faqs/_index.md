@@ -22,7 +22,7 @@ Here are some frequently asked questions about Redis Cloud.
 {{< embed-md "how-many-databases-cloud.md"  >}}
 {{< /expand >}}
 
-{{< expand "How can I control access to my resources?" >}}
+{{% expand "How can I control access to my resources?" %}}
 Redis Cloud features the following access control mechanisms:
 
 - Password authentication
@@ -33,12 +33,12 @@ If you use Redis Cloud on your own AWS infrastructure and deploy it on the same 
 we use a special set of AWS security permissions to limit access to only the instances required for running the Redis Cloud clusters.
 When deploying Redis Cloud on a different VPC from your application servers or under a different AWS account of yours,
 all the operational aspects of managing Redis Cloud are completely isolated from your application.
-{{< /expand >}}
+{{% /expand %}}
 
-{{< expand "Is my data safe and always available?" >}}
+{{% expand "Is my data safe and always available?" %}}
 Absolutely! Redis Cloud offers a comprehensive suite of [high-availability](https://redislabs.com/blog/high-availability-for-in-memory-cloud-datastores) provisions,
 including in-memory replication (within the same data center or across data centers), persistent storage on EBS and backups to S3 or any file server.
-{{< /expand >}}
+{{% /expand %}}
 
 {{< expand "Can I export my Redis data from Redis Cloud?" >}}
 Absolutely! There is no lock-in with Redis Cloud. With a click of button, you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice. Free plans do not include this capability.
@@ -62,7 +62,7 @@ No. Any changes you make to your Redis Cloud subscription are purely administrat
 You can downgrade or upgrade your subscription at any time with no downtime or performance impact.
 {{< /expand >}}
 
-{{< expand "What is the difference between Redis Cloud Pro and Redis Cloud Essentials?" >}}
+{{% expand "What is the difference between Redis Cloud Pro and Redis Cloud Essentials?" %}}
 Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, however Redis Cloud Pro runs on a dedicated VPC and offers:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) - Recommended for datasets larger than 500GB
@@ -72,9 +72,9 @@ Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services
 - [Cloud API]({{< relref "/rc/api/_index.md" >}})
 
 Running Redis in a fully-automated manner with 24/7 expert support over Redis Cloud is lower in cost than managing your own Redis instances on the cloud.
-{{< /expand >}}
+{{% /expand %}}
 
-{{< expand "Why should I run Redis Cloud on Flash?" >}}
+{{% expand "Why should I run Redis Cloud on Flash?" %}}
 Redis Labs’ Redis on Flash technology enables you to run Redis on high IOPS SSD instances with high throughput and the same sub-millisecond latencies as RAM-based Redis.
 The economic benefit is dramatic:
 

@@ -26,7 +26,7 @@ RedisInsight is a browser based GUI for Redis. It lets you do the following -
 - Configure
     - View and modify redis configuration
     - View list of clients and kill specific clients
-{{< /expand >}}
+{{% /expand %}}
 
 {{< expand "What problem does RedisInsight solve?" >}}
 RedisInsight lets you reduce memory used by redis, which usually translates to a proportional cost reduction. It also helps you identify common latency issues, and perform routine administrative tasks on your redis server.
@@ -47,6 +47,8 @@ Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 {{< expand "What cloud providers do you support?" >}}
 We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinsight@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
 {{< /expand >}}
+
+{{< /expand-control >}}
 
 ## Memory Analysis
 
@@ -87,6 +89,8 @@ Key pattern is a grouping of related keys, for example users:*. RedisInsight can
 We assume that you use colon as a separator. If you use a non-standard separator, you have to add key patterns manually.
 {{< /expand >}}
 
+{{< /expand-control >}}
+
 ## Connecting to Redis
 
 {{< expand-control >}}
@@ -95,13 +99,15 @@ We assume that you use colon as a separator. If you use a non-standard separator
 First, this works only if you have RedisInsight running on your local computer. Depending on your docker version, you can use one of these host names instead of localhost - docker.for.mac.localhost, docker.for.win.localhost or host.docker.internal. If none of those host names work, find the ip address of your computer (usually starts with 192.x.x.x), and use that ip address instead of localhost.
 {{< /expand >}}
 
-{{< expand "How do I connect to AWS Elasticache?" >}}
+{{% expand "How do I connect to AWS Elasticache?" %}}
 You must install RedisInsight inside your VPC, either on an EC2 instance, or using ECS or Fargate. See [EC2 Installation Instructions]({{< relref "/ri/installing/install-ec2.md" >}})
-{{< /expand >}}
+{{% /expand %}}
 
 {{< expand "What are the memory limits on your license terms?" >}}
 Our licensing works on the sum of used memory on the redis instances you have added to RedisInsight. So if your license allows 15GB, you can add 5 redis instances using 3 GB RAM, or 1 redis server using 15 GB.
 {{< /expand >}}
+
+{{< /expand-control >}}
 
 ## License and Support
 
@@ -109,7 +115,7 @@ Our licensing works on the sum of used memory on the redis instances you have ad
 
 {{< expand "How do you calculate used memory?" >}}
 We run the `info` command and look at used_memory to determine the memory used by redis.
-{{< /expand >}}
+{{% /expand %}}
 
 {{< expand "What do you mean by perpetual license?" >}}
 Once you buy a license, you can use RedisInsight forever as long as you are within your usage limits. Additionally, you are eligible for software upgrades for 1 year from the date of purchase. After a year, you no longer receive updates, but can continue to use the version of RedisInsight you last downloaded.
@@ -118,6 +124,8 @@ Once you buy a license, you can use RedisInsight forever as long as you are with
 {{< expand "How do I get my license key?" >}}
 Once you complete payment, you receive an email with your license key.
 {{< /expand >}}
+
+{{< /expand-control >}}
 
 ## Privacy and Security
 

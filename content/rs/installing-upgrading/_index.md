@@ -72,17 +72,17 @@ To install RS on Linux from the CLI:
 1. Copy the installation package to the node.
 1. On the node, change to the directory where the installation package is and extract the installation files:
 
-    ```src
-    tar vxf <tarfile name>
-    ```
+```src
+tar vxf <tarfile name>
+```
 
 1. To install RS, run:
 
-    {{% note %}}
+    {{< note >}}
 - The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
 - RS is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
 - You must either be logged in as the root user or use sudo to run the install process.
-    {{% /note %}}
+    {{< /note >}}
 
     ```src
     sudo ./install.sh
@@ -91,12 +91,12 @@ To install RS on Linux from the CLI:
 1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
     including the `rlcheck` installation verification.
 
-    {{% note %}}
+    {{< note >}}
 To install RS without answering the installation questions, either:
 
 - Run `./install.sh -y` to answer yes to all of the questions.
 - Use an [answer file](#installation-answer-file) to answer the installation questions.
-    {{% /note %}}
+    {{< /note >}}
 
     After RS is successfully installed, the IP address of the RS web UI is shown:
 
