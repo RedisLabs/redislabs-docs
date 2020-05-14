@@ -66,9 +66,7 @@ instruction pipelining even if not instructed to do so by the client.
 
 Each database is served by a database endpoint that is part of and
 managed by the proxies. The endpoint oversees forwarding Redis
-operations to specific database shards. If database replication is
-enabled, each database has two endpoints: a master endpoint and a slave
-endpoint.
+operations to specific database shards.
 
 If the master shard fails and the slave shard is promoted to master, the
 master endpoint is updated to point to the new master shard.

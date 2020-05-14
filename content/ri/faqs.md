@@ -7,8 +7,10 @@ categories: ["RI"]
 ---
 Here are some frequently asked questions about Redis Enterprise Software.
 
+
 ## General
 
+{{< expand-control >}}
 {{% expand "What is RedisInsight?" %}}
 RedisInsight is a browser based GUI for Redis. It lets you do the following -
 
@@ -47,8 +49,11 @@ Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinsight@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
 {{% /expand %}}
 
+{{< /expand-control >}}
+
 ## Memory Analysis
 
+{{< expand-control >}}
 {{% expand "How long does the memory analysis take?" %}}
 This depends on how large your dataset and the host on which you are running your docker container. Empirically, expect 30s per GB of RAM analyzed.
 {{% /expand %}}
@@ -85,7 +90,11 @@ Key pattern is a grouping of related keys, for example users:*. RedisInsight can
 We assume that you use colon as a separator. If you use a non-standard separator, you have to add key patterns manually.
 {{% /expand %}}
 
+{{< /expand-control >}}
+
 ## Connecting to Redis
+
+{{< expand-control >}}
 
 {{% expand "How do I connect to redis-server running on localhost?" %}}
 First, this works only if you have RedisInsight running on your local computer. Depending on your docker version, you can use one of these host names instead of localhost - docker.for.mac.localhost, docker.for.win.localhost or host.docker.internal. If none of those host names work, find the ip address of your computer (usually starts with 192.x.x.x), and use that ip address instead of localhost.
@@ -99,7 +108,11 @@ You must install RedisInsight inside your VPC, either on an EC2 instance, or usi
 Our licensing works on the sum of used memory on the redis instances you have added to RedisInsight. So if your license allows 15GB, you can add 5 redis instances using 3 GB RAM, or 1 redis server using 15 GB.
 {{% /expand %}}
 
+{{< /expand-control >}}
+
 ## License and Support
+
+{{< expand-control >}}
 
 {{% expand "How do you calculate used memory?" %}}
 We run the `info` command and look at used_memory to determine the memory used by redis.
@@ -113,7 +126,11 @@ Once you buy a license, you can use RedisInsight forever as long as you are with
 Once you complete payment, you receive an email with your license key.
 {{% /expand %}}
 
+{{< /expand-control >}}
+
 ## Privacy and Security
+
+{{< expand-control >}}
 
 {{% expand "Who has access to my redis servers?" %}}
 We provide RedisInsight as a docker container that you install and run on your hardware or cloud account. We do not have any ability to connect to your installation of RedisInsight or look at data within your redis servers.
@@ -126,3 +143,5 @@ We recommend installing HTTPS, whitelisting IP addresses that have access to Red
 {{% expand "What information do you collect about my installation?" %}}
 We use google analytics so that we can understand how customers use the software. Per google analytics terms and conditions, we do not track any personally identifiable information.
 {{% /expand %}}
+
+{{< /expand-control >}}

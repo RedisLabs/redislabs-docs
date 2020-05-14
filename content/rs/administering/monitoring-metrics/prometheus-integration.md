@@ -334,7 +334,7 @@ These are the metrics available:
 |  redis_expired_keys | Keys expired so far (since restart) |
 |  redis_forwarding_state | Shard forwarding state (on or off) |
 |  redis_master_link_status | Indicates if the slave is connected to its master |
-|  redis_max_memory | Current memory limit configured by redis_mgr according to db memory limits |
+|  redis_maxmemory | Current memory limit configured by redis_mgr according to db memory limits |
 |  redis_max_process_mem | Current memory limit configured by redis_mgr according to node free memory |
 |  redis_mem_aof_buffer | Current size of AOF buffer |
 |  redis_mem_clients_normal | Current memory used for input and output buffers of non-slave clients |

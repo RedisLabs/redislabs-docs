@@ -6,9 +6,15 @@
   var pa = window.location.pathname.split('/');
   var pv = pa[1]; // latest, 5.4 or 5.2
 
-  if(pv == '5.4' || pv == 'latest') {
+  if(pv == '6.0' || pv == 'latest') {
+    v = '6.0';
+    d = 'v6.0 (latest)';
+  } else if (pv == '5.6') {
+    v = '5.6';
+    d = 'v5.6';
+  } else if (pv == '5.4') {
     v = '5.4';
-    d = 'v5.4 (latest)';
+    d = 'v5.4';
   } else if (pv == '5.2') {
     v = '5.2';
     d = 'v5.2 (and below)';
@@ -62,7 +68,7 @@ window.onclick = function(e) {
 </script>
 
 <script src="{{"js/clipboard.min.js" | relURL}}"></script>
-
+<script src="{{"js/bootstrap.min.js" | relURL}}"></script>
 <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
 <script src="{{"js/featherlight.min.js" | relURL}}"></script>
 

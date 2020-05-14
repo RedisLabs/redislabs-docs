@@ -1,22 +1,23 @@
 ---
-Title: Flushing Databases on Redis Enterprise Software
+Title: Flushing Database Data
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-There are times where you want to delete all database data.
+To delete the data in a database without deleting the database configuration,
+you can flush the data from the database.
 
-{{% warning title="Data Loss Warning" %}} The flush command deletes ALL of the data in the database. This
-includes all data in memory and persisted to disk. We recommend that you
-[backup your database]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) first.{{% /warning %}}
+{{% warning title="Data Loss Warning" %}}
+The flush command deletes ALL in-memory and persistence data in the database.
+We recommend that you [backup your database]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) before you flush the data.
+{{% /warning %}}
 
-### flushall for Redis Enterprise Software Databases
+## Flushing Data from a Database
 
-You can flush a database from the command line with the redis-cli command or with
-your favorite Redis client.
+From the command line, you can flush a database with the redis-cli command or with your favorite Redis client.
 
-Here is how to do it using redis-cli:
+To flush data from a database with the redis-cli, run:
 
 ```src
 redis-cli -h <hostname> -p <portnumber> -a <password> flushall
@@ -28,74 +29,83 @@ Example:
 redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 ```
 
-### Flushing Redis Enterprise Software CRDBs
+## Flushing Data from an Active-Active Database
 
-When you flush a CRDB, all of the replicas flush their data at the same time.
-To flush data from a CRDB, use the flush command in the crdb-cli.
+When you flush an Active-Active (CRDB) database, all of the replicas flush their data at the same time.
 
-1. To find the ID of the CRDB, run:
+To flush data from an Active-Active database:
 
-    ```src
-    crdb-cli crdb list
-    ```
+- Web UI
 
-    For example:
+    1. Go to **database** and select the Active-Active database that you want to flush.
+    1. Go to **configuration** and click **Flush** at the bottom of the page.
+    1. Enter the name of the Active-Active database to confirm that you want to flush the data.
 
-    ```src
-    $ crdb-cli crdb list
-    CRDB-GUID                                NAME                 REPL-ID CLUSTER-FQDN
-    a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                1       cluster1.local
-    a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                2       cluster2.local
-    a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                3       cluster3.local
-    ```
+- Command line
 
-1. To flush the CRDB, run:
+    1. To find the ID of the Active-Active database, run:
 
-    ```src
-    crdb-cli crdb flush --crdb-guid <CRDB_GUID>
-    ```
+        ```src
+        crdb-cli crdb list
+        ```
 
-    The command output contains the task ID of the flush task, for example:
+        For example:
 
-    ```src
-    $ crdb-cli crdb flush --crdb-guid a16fe643-4a7b-4380-a5b2-96109d2e8bca
-    Task 63239280-d060-4639-9bba-fc6a242c19fc created
-      ---> Status changed: queued -> started
-    ```
+        ```src
+        $ crdb-cli crdb list
+        CRDB-GUID                                NAME                 REPL-ID CLUSTER-FQDN
+        a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                1       cluster1.local
+        a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                2       cluster2.local
+        a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                3       cluster3.local
+        ```
 
-1. To check the status of the flush task, run:
+    1. To flush the Active-Active database, run:
 
-    ```src
-    crdb-cli task status --task-id <Task-ID>
-    ```
+        ```src
+        crdb-cli crdb flush --crdb-guid <CRDB_GUID>
+        ```
 
-    For example:
+        The command output contains the task ID of the flush task, for example:
 
-    ```src
-    $ crdb-cli task status --task-id 63239280-d060-4639-9bba-fc6a242c19fc
-    Task-ID: 63239280-d060-4639-9bba-fc6a242c19fc
-    CRDB-GUID: -
-    Status: finished
-    ```
+        ```src
+        $ crdb-cli crdb flush --crdb-guid a16fe643-4a7b-4380-a5b2-96109d2e8bca
+        Task 63239280-d060-4639-9bba-fc6a242c19fc created
+        ---> Status changed: queued -> started
+        ```
 
-To flush a CRDB with the REST API:
+    1. To check the status of the flush task, run:
 
-1. To find the ID of the CRDB, run:
+        ```src
+        crdb-cli task status --task-id <Task-ID>
+        ```
 
-    ```src
-    curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
-    ```
+        For example:
 
-1. To flush the CRDB, run:
+        ```src
+        $ crdb-cli task status --task-id 63239280-d060-4639-9bba-fc6a242c19fc
+        Task-ID: 63239280-d060-4639-9bba-fc6a242c19fc
+        CRDB-GUID: -
+        Status: finished
+        ```
 
-    ```src
-    curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush
-    ```
+- REST API
 
-    The command output contains the task ID of the flush task.
+    1. To find the ID of the Active-Active database, run:
 
-1. To check the status of the flush task, run:
+        ```src
+        curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
+        ```
 
-    ```src
-    curl -v -u <username>:<password> https://<cluster-fqdn>:9443/v1/crdb_tasks/<task-id>
-    ```
+    1. To flush the Active-Active database, run:
+
+        ```src
+        curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush
+        ```
+
+        The command output contains the task ID of the flush task.
+
+    1. To check the status of the flush task, run:
+
+        ```src
+        curl -v -u <username>:<password> https://<cluster-fqdn>:9443/v1/crdb_tasks/<task-id>
+        ```

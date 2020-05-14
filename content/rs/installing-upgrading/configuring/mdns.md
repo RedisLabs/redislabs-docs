@@ -1,17 +1,16 @@
 ---
-Title: Client prerequisites for mDNS
+Title: Client Prerequisites for mDNS
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/mdns/
 ---
-**Note:** mDNS is **not** supported for use with production environments
-and should only be used in dev/test environments.
+{{% note %}}
+mDNS is only supported for development and testing environments.
+{{% /note %}}
 
-If you choose to use the mDNS protocol when setting the cluster name
-(for details, refer [How to set the cluster
-name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
+If you choose to use the mDNS protocol when [setting the cluster name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
 make sure that the configurations and prerequisites, which are required for
 resolving databases' endpoints, are met. These configurations and
 perquisites are needed on the client machines, as well as on the

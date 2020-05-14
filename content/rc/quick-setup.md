@@ -36,7 +36,18 @@ To create a new subscription:
     The cluster for your selected subscription is created.
     You can change the name and credit card information of the subscription after it is created.
 
-{{< embed-md "create-subscription-next-steps.md"  >}}
+The subscription shows a "Pending" status and takes approximately 10 to 15 minutes to provision.
+You receive an email when your subscription is ready to use.
+
+### Next Steps
+
+We recommend that you setup [VPC peering]({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}}) with your application VPC.
+VPC peering lets you route traffic between your VPCs using private IP addresses for improved security and performance.
+
+You can also [edit these subscription settings]({{< relref "/rc/administration/setup/edit-subscription.md" >}}) after the subscription is created:
+
+1. Subscription name
+1. Payment information
 
 ## Step 2: Create a Database
 
@@ -137,7 +148,7 @@ in any existing code or apps that use Redis and you are done.
 ## More Information
 
 - [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
-- [Securing Your Redis Cloud Database]({{< relref "/rc/administration/configuration/security.md" >}})
+- [Securing Your Redis Cloud Database]({{< relref "/rc/administration/security/_index.md" >}})
 - [Creating Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
 - [Redis Cloud Pro Database Backups]({{< relref "/rc/administration/configuration/backups.md" >}})
 - [Monitoring Redis Cloud Performance]({{< relref "/rc/administration/configuration/monitoring-performance.md" >}}).

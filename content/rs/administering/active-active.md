@@ -39,14 +39,10 @@ Before configuring a CRDB, you must:
 ## CRDB Current Limitations
 
 1. RS is limited to five Participating Clusters or CRDB Instances per CRDB.
-1. An existing database cannot modified to be a CRDB.
-    To move existing data to a CRDB you must create a new CRDB and migrate your data.
+1. An existing database cannot be changed into a CRDB. To move data from an existing database to a CRDB you must create a new CRDB and migrate the data.
 1. CRDBs do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 1. CRDBs require FQDNs or mDNS (development only). Discovery Service is not supported with CRDBs.
 1. CRDBs are not compatible with [Replica Of]({{< relref "/rs/administering/active-passive.md" >}}).
-
-    ReplicaOf is a one-way replication, while CRDB utilize multi-master replication.
-1. [OSS cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) is not supported with CRDB.
 
 ## Network Time Service (NTP or Chrony)
 

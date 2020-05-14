@@ -6,6 +6,15 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
 ---
+
+Redis Enterprise is supported on OpenShift Kubernetes cluster deployments via
+an operator. The operator is a software component that runs in your
+deployment namespace and facilitates deploying and managing
+Redis Enterprise clusters.
+
+{{%allchildren style="h2" description="true"%}}
+
+{{% comment %}}
 These are the steps required to set up a Redis Enterprise Software
 Cluster with OpenShift.
 
@@ -228,7 +237,7 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
         The default (if unspecified) is 4 cores (4000m) and 4GB (4Gi).
 
         {{% note %}}
-Resource limits should equal requests. [Learn why.](https://docs.openshift.com/container-platform/3.9/architecture/networking/routes.html#route-types).
+Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
         {{% /note %}}
 
     - serviceBrokerSpec –
@@ -325,3 +334,5 @@ In order to conduct the Ping test through Telnet, you can create a new route to 
 {{% /note %}}
 
 ![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )
+
+{{% /comment %}}

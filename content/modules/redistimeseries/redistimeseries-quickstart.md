@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redistimeseries/
 ---
-For this quick start tutorial, you need either:
+For this quick start tutorial, you need:
 
 - Either:
     - [A Redis Enterprise Software database with the RedisTimeSeries module enabled]({{< relref "/modules/create-database-rs.md" >}})
