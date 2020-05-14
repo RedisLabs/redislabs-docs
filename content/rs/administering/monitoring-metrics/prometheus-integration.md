@@ -209,23 +209,15 @@ These are the metrics available:
 | bdb_used_memory | Memory used by db (in bigredis this includes flash) (bytes) |
 | bdb_write_hits | Rate of write operations accessing an existing key (ops/sec) |
 | bdb_write_hits_max | Highest value of rate of write operations accessing an existing key (ops/sec) |
-| bdb_write_misses | Rate of write operations accessing a non- existing key (ops/sec) |
-| bdb_write_misses_max | Highest value of rate of write operations accessing a non- existing key (ops/sec) |
+| bdb_write_misses | Rate of write operations accessing a non-existing key (ops/sec) |
+| bdb_write_misses_max | Highest value of rate of write operations accessing a non-existing key (ops/sec) |
 | bdb_write_req | Rate of write requests on DB (ops/sec) |
 | bdb_write_req_max | Highest value of rate of write requests on DB (ops/sec) |
 | bdb_write_res | Rate of write responses on DB (ops/sec) |
 | bdb_write_res_max | Highest value of rate of write responses on DB (ops/sec) |
-| bdb_replicaof_syncer_ingress_bytes |  |
-| bdb_replicaof_syncer_ingress_bytes_decompressed |  |
-| bdb_replicaof_syncer_local_ingress_lag_time |  |
-| bdb_replicaof_syncer_status |  |
-| bdb_crdt_syncer_ingress_bytes |  |
-| bdb_crdt_syncer_ingress_bytes_decompressed |  |
-| bdb_crdt_syncer_local_ingress_lag_time |  |
-| bdb_crdt_syncer_status |  |
-| bdb_memory_limit |  |
-| no_of_expires |  |
-| bdb_up |  |
+| bdb_memory_limit | Configured RAM limit for the database |
+| no_of_expires | Current number of volatile keys in the database |
+| bdb_up | Database is up and running |
 
 ### Node Metrics
 
@@ -262,17 +254,17 @@ These are the metrics available:
 | node_persistent_storage_free | Free disk space on configured persistent disk (bytes) |
 | node_total_req | Request rate handled by endpoints on node (ops/sec) |
 | node_up | Node is part of the cluster and is connected |
-| node_bigstore_kv_ops |  |
-| node_bigstore_iops |  |
-| node_bigstore_throughput |  |
-| node_bigstore_free |  |
-| node_provisional_memory |  |
-| node_available_flash |  |
-| node_provisional_flash |  |
-| node_available_memory_no_overbooking |  |
-| node_provisional_memory_no_overbooking |  |
-| node_available_flash_no_overbooking |  |
-| node_provisional_flash_no_overbooking |  |
+| node_bigstore_kv_ops | Rate of value read/write operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (ops/sec); returned only when BigRedis is enabled |
+| node_bigstore_iops | Rate of i/o operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (ops/sec); returned only when BigRedis is enabled |
+| node_bigstore_throughput | Throughput i/o operations against back-end flash for all shards which are part of a flash based DB (BigRedis) in cluster (bytes/sec); returned only when BigRedis is enabled |
+| node_bigstore_free | Sum of free space of back-end flash (used by flash DB's [BigRedis]) on all cluster nodes (bytes); returned only when BigRedis is enabled |
+| node_provisional_memory | Amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases |
+| node_available_flash | Available flash in node (bytes) |
+| node_provisional_flash | Amount of flash available for new shards on this node, taking into account overbooking, max redis servers, reserved flash and provision and migration thresholds (bytes) |
+| node_available_memory_no_overbooking | Available ram in node (bytes) without taking into account overbooking |
+| node_provisional_memory_no_overbooking | Amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases, without taking into account overbooking |
+| node_available_flash_no_overbooking | Available flash in node (bytes), without taking into account overbooking |
+| node_provisional_flash_no_overbooking | Amount of flash available for new shards on this node, without taking into account overbooking, max redis servers, reserved flash and provision and migration thresholds (bytes) |
 
 ### Proxy Metrics
 
@@ -378,10 +370,21 @@ These are the metrics available:
 | redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
 | redis_up | Shard is up and running |
 | redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |
-| redis_master_sync_in_progress |  |
-| redis_mem_not_counted_for_evict |  |
-| redis_keyspace_read_hits |  |
-| redis_keyspace_read_misses |  |
-| redis_keyspace_write_hits |  |
-| redis_keyspace_write_misses |  |
-| redis_expire_cycle_cpu_milliseconds |  |
+| redis_master_sync_in_progress | The master shard is synchronizing (1 true | 0 false) |
+| redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error. |
+| redis_keyspace_read_hits | Rate of read operations accessing an existing keyspace (ops/sec) |
+| redis_keyspace_read_misses | Rate of read operations accessing an non-existing keyspace (ops/sec) |
+| redis_keyspace_write_hits | Rate of write operations accessing an existing keyspace (ops/sec) |
+| redis_keyspace_write_misses | Rate of write operations accessing an non-existing keyspace (ops/sec) |
+| redis_expire_cycle_cpu_milliseconds | The cumulative amount of time spent on active expiry cycles |
+
+### Replication Metrics
+
+| bdb_replicaof_syncer_ingress_bytes | Rate of compressed incoming network traffic to Replica Of DB (bytes/sec) |
+| bdb_replicaof_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to Replica Of DB (bytes/sec) |
+| bdb_replicaof_syncer_local_ingress_lag_time |  |
+| bdb_replicaof_syncer_status |  |
+| bdb_crdt_syncer_ingress_bytes | Rate of compressed incoming network traffic to CRDB (bytes/sec) |
+| bdb_crdt_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to CRDB (bytes/sec) |
+| bdb_crdt_syncer_local_ingress_lag_time |  |
+| bdb_crdt_syncer_status |  |
