@@ -1320,6 +1320,7 @@ iframe {
 }
 .panel-body {
   display: inline;
+  font-style: normal;
 }
 .tooltipped {
   position: relative; }
