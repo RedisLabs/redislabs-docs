@@ -139,43 +139,60 @@ The database controller maintains these connection values in the secret. An
 application can use this secret in a variety of ways. A simple way is to map
 them to environment variables in a deployment pod.
 
-For example, we can setup a test pod to access a database `redb/mydb`:
+For example, we can deploy a guestbook demonstration application
+and have it connect to our database by adding the connection parameters as
+environment variables:
 
 ```yaml
-apiVersion: v1
-kind: Pod
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
-  name: database-client
+  name: guestbook
 spec:
-  containers:
-    - name: test-container
-      image: redis
-      command: [ "sleep" ]
-      args: [ "300" ]
-      env:
-      - name: REDIS_PORT
-        valueFrom:
-          secretKeyRef:
-            name: redb-mydb
-            key: port
-      - name: REDIS_HOST
-        valueFrom:
-          secretKeyRef:
-            name: redb-mydb
-            key: service_name
-      - name: REDIS_AUTH
-        valueFrom:
-          secretKeyRef:
-            name: redb-mydb
-            key: password
+  replicas: 1
+  selector:
+    matchLabels:
+      app: guestbook
+      name: guestbook
+  template:
+    metadata:
+      labels:
+        app: guestbook
+        name: guestbook
+    spec:
+      containers:
+        - name: guestbook
+          image: roeyredislabs/guestbook:latest
+          imagePullPolicy: Always
+          env:
+          - name: REDIS_PORT
+            valueFrom:
+              secretKeyRef:
+                name: redb-mydb
+                key: port
+          - name: REDIS_HOST
+            valueFrom:
+              secretKeyRef:
+                name: redb-mydb
+                key: service_name
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: redb-mydb
+                key: password
+          ports:
+            - name: guestbook
+              containerPort: 80
 
 ```
 
-Then we can connect to our database via exec:
+We can then forward the application pod (the name will be specific to your deployment):
 
 ```sh
-kubectl exec -it database-client -- /bin/bash -c "redis-cli -h \$REDIS_HOST -p \$REDIS_PORT -a \$REDIS_AUTH"
+kubectl port-forward guestbook-667fcbf6f6-gztjv 8080:80
 ```
+
+and then open our browser to `http://localhost:8080/` to view the demonstration.
 
 
 ## Options for databases
