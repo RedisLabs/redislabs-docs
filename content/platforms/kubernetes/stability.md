@@ -16,7 +16,7 @@ correctly for the desired outcome.
 ## Guaranteeing quality of service
 
 When Kubernetes creates a pod it assigns it one of three [quality of service
-classes(https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/)]:
+classes](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/):
 Guaranteed, Burstable, and Best Effort. For Redis Enterprise node
 pods we want all the pods to be assigned the Guaranteed class.
 
