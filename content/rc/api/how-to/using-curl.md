@@ -81,7 +81,7 @@ you can enter the values for the parameters.
         ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
 {{% warning %}}
-The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is. You should refer to the examples provided in the documentation, and use them instead.
+The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is. Use the [how-to articles]({{< relref "https://docs.redislabs.com/latest/rc/how-to.md" >}}) for more  examples of Cloud API operations.
 {{% /warning %}}
 
 ## Using the `cURL` HTTP client
