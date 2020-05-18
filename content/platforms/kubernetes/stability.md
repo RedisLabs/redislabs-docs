@@ -68,34 +68,31 @@ You can also [disable preemption entirely](https://kubernetes.io/docs/concepts/c
 
 ## Managing eviction thresholds
 
-Eviction thresholds are typically managed by kubelet arguments and your ability
-to set them may depend on your K8s platform. On OpenShift, these are in the
-[config file](https://docs.openshift.com/container-platform/3.11/admin_guide/out_of_resource_handling.html#out-of-resource-create-config).
-On GKE, these are [managed settings](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#node_allocatable).
+Eviction thresholds are typically managed by kubelet arguments.
+You can set the thresholds:
 
-We recommend:
+- On OpenShift - In the [config file](https://docs.openshift.com/container-platform/3.11/admin_guide/out_of_resource_handling.html#out-of-resource-create-config).
+- On GKE - In the [managed settings](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#node_allocatable).
 
- * Set high a [soft eviction threshold](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/#soft-eviction-thresholds)
-   relative to the [hard eviction threshold](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/#hard-eviction-thresholds).
-   The high soft threshold mean the node condition will change earlier, alerting the administrator.
- * Set `eviction-max-pod-grace-period high` enough to allow RS pods to migrate redis databases itself, before being force killed.
- * The `eviction-soft-grace-period` should be set high enough for the administrator (or a k8s auto-scaling mechanism) to scale k8s up or out.
+We recommend that you:
+
+ * Set the [soft eviction threshold](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/#soft-eviction-thresholds)
+   to be higher than the [hard eviction threshold](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/#hard-eviction-thresholds).
+   The high soft threshold makes the node condition change earlier, and alerts the administrator.
+ * Set `eviction-max-pod-grace-period` high enough to allow the RS pods to migrate the Redis databases before the pods are force killed.
+ * Set the `eviction-soft-grace-period` high enough that the administrator (or a k8s auto-scaling mechanism) scales k8s up or out.
 
 ## Monitoring for memory & disk usage
 
-We recommend monitoring node for MemoryPressure and DiskPressure. When both of
-these conditions are true, then an [eviction threshold](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/#eviction-thresholds)
-has been met and pod eviction is immanent.
+We recommend that you monitor the node for MemoryPressure and DiskPressure.
+When both of these conditions are true, then an [eviction threshold](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/#eviction-thresholds)
+is met and the pod is evicted.
 
-The following can be used to retrieve the flags:
-
-```sh
-kubectl get nodes -o jsonpath='{range .items[*]}name:{.metadata.name}{"\t"}MemoryPressure:{.status.conditions[?(@.type == "MemoryPressure")].status}{"\t"}DiskPressure:{.status.conditions[?(@.type == "DiskPressure")].status}{"\n"}{end}'
-```
-
-The output might be something like:
+To retrieve the flags, run the command:
 
 ```sh
+$kubectl get nodes -o jsonpath='{range .items[*]}name:{.metadata.name}{"\t"}MemoryPressure:{.status.conditions[?(@.type == "MemoryPressure")].status}{"\t"}DiskPressure:{.status.conditions[?(@.type == "DiskPressure")].status}{"\n"}{end}'
+
 name:gke-55d1ac88-213c	MemoryPressure:False	DiskPressure:False
 name:gke-55d1ac88-vrpp	MemoryPressure:False	DiskPressure:False
 name:gke-7253cc19-42g0	MemoryPressure:False	DiskPressure:False
