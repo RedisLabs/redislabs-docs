@@ -331,12 +331,12 @@ These are the metrics available:
 
 | bdb_replicaof_syncer_ingress_bytes | Rate of compressed incoming network traffic to Replica Of DB (bytes/sec) |
 | bdb_replicaof_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to Replica Of DB (bytes/sec) |
-| bdb_replicaof_syncer_local_ingress_lag_time |  |
-| bdb_replicaof_syncer_status |  |
+| bdb_replicaof_syncer_local_ingress_lag_time | Lag time between the source and the destination for Replica Of traffic (ms) |
+| bdb_replicaof_syncer_status | Syncer status for Replica Of traffic; 0 = in-sync, 1 = syncing, 2 = out of sync |
 | bdb_crdt_syncer_ingress_bytes | Rate of compressed incoming network traffic to CRDB (bytes/sec) |
 | bdb_crdt_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to CRDB (bytes/sec) |
-| bdb_crdt_syncer_local_ingress_lag_time |  |
-| bdb_crdt_syncer_status |  |
+| bdb_crdt_syncer_local_ingress_lag_time | Lag time between the source and the destination (ms) for CRDB traffic |
+| bdb_crdt_syncer_status | Syncer status for CRDB traffic; 0 = in-sync, 1 = syncing, 2 = out of sync |
 
 ### Shard Metrics
 
