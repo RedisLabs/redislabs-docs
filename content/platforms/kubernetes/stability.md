@@ -12,35 +12,46 @@ Here are some ways that you can configure the Redis Enterprise node pods to main
 
 ## Guaranteed Quality of Service
 
-At pod creations, Kubernetes assigns the pod one of three [quality of service classes](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/):
+A running pod has a quality of service measure assigned by that is
+one of three [quality of service classes](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/):
 Guaranteed, Burstable, and Best Effort.
-You can assign the Guaranteed class to the Redis Enterprise node pods.
+You can assure the Guaranteed class is assigned to the Redis Enterprise node pods
+by following the right guidelines.
 
-To assign a quality of service class:
+To achieve a Guaranteed quality of service class:
 
  * Every container in the pod must have a memory limit and a memory request, and they must be the same.
  * Every container in the pod must have a CPU limit and a CPU request, and they must be the same.
 
-These requirements are met in the default version of your Redis Enterprise cluster CRD,
-if you did not change the `redisEnterpriseNodeResources`.
-Otherwise, you must set the limits and requests to the same value for memory and CPU.
+If resources limits and requests not specified in the Redis Enterprise CRD,
+these requirements are met in the default version created by the operator. of your Redis Enterprise cluster CRD,
+Otherwise, you must set the limits and requests to the same value for memory and CPU in the `redisEnterpriseNodeResources`
+section of the CRD.
 
 Sidecar containers also impact the quality of service class assignment for the pod.
 
-To can check the quality of service class for your Redis Enterprise node pod when it is running, run:
+To can check the quality of service class of any running Redis Enterprise node pod, run:
 
 ```sh
-kubectl get pod rec-0 --o yaml | grep qosClass
+kubectl get pod rec-0 --o jsonpath="{.status.qosClass}"
 ```
+
+where `rec-0` is the name of one of the pods associated with the Redis Enterprise cluster.
 
 ## Using Priority to Protect from Preemption
 
 When a Redis Enterprise node pod is scheduled, it can be assigned a
 [priority class](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/)
-with the `priorityClassName` property.
-If you assign a high priority value, the deployment of other applications cannot preempt a Redis Enterprise node pod.
+with the `priorityClassName` property. This property value is the name of
+a priority class that must already exist within the cluster.
 
-You must assign a priority class for the cluster with a high value:
+A sufficiently high priority will prevent other workloads with a lower
+priority from preempting the scheduling of Redis Enterprise Nodes. Similarly,
+a high value may also prevent eviction when lower priority workloads
+are deployed on the same cluster.
+
+The successful use of this strategy involves first creating a
+priority class with a very large priority value:
 
 ```yaml
 apiVersion: scheduling.k8s.io/v1
@@ -52,7 +63,7 @@ globalDefault: false
 description: "This priority class should be used for Redis Enterprise pods only."
 ```
 
-When the Redis Enterprise cluster is created, you can refer to the priority class by name:
+Then, you refer to the priority class by name in your Redis Enterprise cluster CRD:
 
 ```yaml
 apiVersion: app.redislabs.com/v1
@@ -64,7 +75,7 @@ spec:
   priorityClassName: "redis-enterprise-priority"
 ```
 
-You can also [disable preemption entirely](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#how-to-disable-preemption).
+Alternatively, you can also [disable preemption entirely](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#how-to-disable-preemption).
 
 ## Managing eviction thresholds
 
