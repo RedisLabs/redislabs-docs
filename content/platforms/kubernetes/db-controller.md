@@ -71,22 +71,10 @@ namespace as your cluster. For example:
 1. Check for the status of your database:
 
     ```sh
-    kubectl get redb/mydb -o yaml
+    kubectl get redb/mydb -o jsonpath="{.status.status}"
     ```
 
     Once the status is `active`, the database is ready for use.
-
-{{% note %}}
-The `jq` tool is a useful tool for checking the status via the json output:
-
-```sh
-kubectl get redb/mydb -o json | jq .status.status
-```
-
-which will output the status value from all the JSON returned.
-
-{{% /note %}}
-
 
 ### Modifying databases
 
@@ -105,7 +93,7 @@ kubectl edit:
 3. Monitor the status to see when the changes become effective:
 
     ```sh
-    kubectl get redb/mydb -o yaml
+    kubectl get redb/mydb -o jsonpath="{.status.status}"
     ```
 
     Once the status is `active`, the database is again ready for use.
@@ -256,7 +244,7 @@ The value is a keyword with the following values:
 
 ### `rackAware`
 
-A boolean indicating whether the database should be rack aware (see ["Rack-zone awareness in Redis Enterprise Software"](https://docs.redislabs.com/latest/rs/concepts/high-availability/rack-zone-awareness/)). The default is `false`.
+A boolean indicating whether the database should be rack aware (see ["Rack-zone awareness in Redis Enterprise Software"](https://docs.redislabs.com/latest/rs/concepts/high-availability/rack-zone-awareness/)). The default is the cluster setting.
 
 ### `redisEnterpriseCluster`
 
