@@ -8,11 +8,14 @@ description: Redis Enterprise cluster pods can be scheduled to only be placed
 categories: ["Platforms"]
 aliases:
 ---
-Kubernetes deployments can have pods with different allocations of processing and memory resources.
-To make sure that your Redis Enterprise cluster nodes have the necessary resources,
-the Redis Enterprise operator can use the CRD to schedule the distribution of the nodes.
 
-A Redis Enterprise cluster has a StatefulSet which manages the Redis Enterprise cluster node pods.
+Many K8s cluster deployments have different kinds of nodes that have
+different CPU and memory resources available for scheduling cluster workloads.
+The Redis Enterprise operator has various abilities to control the scheduling
+Redis Enterprise cluster node pods through properties specified in the
+Redis Enterprise cluster CRD.
+
+A Redis Enterprise cluster is deployed as a StatefulSet which manages the Redis Enterprise cluster node pods.
 The scheduler chooses a node to deploy a new Redis Enterprise cluster node pod on when:
 
 - The cluster is created
@@ -47,7 +50,7 @@ spec:
      memory: high
 ```
 
-Then, when the operator creates the StatefulSet associated with the pod, the nodeSelector 
+Then, when the operator creates the StatefulSet associated with the pod, the nodeSelector
 section is part of the pod specification. When the scheduler attempts to
 create new pods, it needs to satisfy the node selection constraints.
 
@@ -55,11 +58,11 @@ create new pods, it needs to satisfy the node selection constraints.
 ## Using node pools
 
 A node pool is a common part of the underlying infrastructure of the Kubernetes cluster deployment and provider.
-Often, node pools are similarly-configured classes of nodes, for example nodes with the same allocated amount of memory and CPU).
+Often, node pools are similarly-configured classes of nodes such as nodes with the same allocated amount of memory and CPU.
 Implementors often label these nodes with a consistent set of labels.
 
 On Google Kubernetes Engine (GKE), all node pools have the label `cloud.google.com/gke-nodepool` with a value of the name used during configuration.
-On Microsoft Azure Kubernetes System (AKS), you can create node pools with a specific set of labels.
+On Microsoft Azure Kubernetes System (AKS), you can create node pools with a specific set of labels. Other managed cluster services may have similar labeling schemes.
 
 You can use the `nodeSelector` section to request a specific node pool by label values. For example, on GKE:
 
@@ -108,7 +111,7 @@ spec:
 ```
 
 A set of taints can also handle more complex use cases.
-For example, a `role=test` or `role=dev` taint can designate a node as dedicated for testing or development workloads.
+For example, a `role=test` or `role=dev` taint can be used to designate a node as dedicated for testing or development workloads via pod tolerations.
 
 ## Using pod anti-affinity
 
@@ -146,7 +149,9 @@ spec:
       topologyKey: kubernetes.io/hostname
 ```
 
-or you can add `local/role: database` to prevent Redis Enterprise nodes from being scheduled with other databases:
+or you can prevent Redis Enterprise nodes from being schedule with other workloads.
+For example, if all database workloads have the label 'local/role: database', you
+can use this label to avoid scheduling two databases on the same node:
 
 ```yaml
 apiVersion: app.redislabs.com/v1
@@ -192,7 +197,7 @@ ip-10-0-x-c.eu-central-1.compute.internal    eu-central-1b
 ip-10-0-x-d.eu-central-1.compute.internal    eu-central-1b
 ```
 
-You can configure the CRD to use another value to represent the rack-zone:
+You can configure the node label to read for the rack zone by setting the `rackAwarenessNodeLabel` property:
 
 ```yaml
 apiVersion: app.redislabs.com/v1
@@ -205,6 +210,5 @@ spec:
 ```
 
 {{% note %}}
-When you use the `rackAwarenessNodeLabel`, the operator changes the `topologyKey` for the pod anti-affinity rule to the label value used.
-If you use `rackAwarenessNodeLabel` and `podAntiAffinity` together, make sure that the resulting `topologyKey` is as expected.
+When you use the `rackAwarenessNodeLabel` property, the operator will change the topologyKey for the anti-affinity rule to the label name used unless you have specified the `podAntiAffinity` property as well. If you use `rackAwarenessNodeLabel` and `podAntiAffinity` together, you must make sure that the `topologyKey` in your pod anti-affinity rule is set to the node label name.
 {{% /note %}}
