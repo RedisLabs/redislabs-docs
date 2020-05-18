@@ -5,7 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-From Redis Enterprise Software version 5.0.2 and higher, you can connect your Prometheus or Grafana server to your Redis Enterprise cluster in order to collect and display metrics data. Metrics are exposed at the node, database, shard and proxy levels.
+To collect and display metrics data from your databases and other cluster components,
+you can connect your Prometheus or Grafana server to your Redis Enterprise cluster.
+Metrics are exposed at the node, database, shard and proxy levels.
 
 - Prometheus ([https://prometheus.io/](https://prometheus.io/)) is an open-source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 - Grafana ([https://grafana.com/](https://grafana.com/)) is an open-source, feature-rich metrics dashboard and graph editor that can process Prometheus data.
@@ -105,13 +107,14 @@ To get started with custom monitoring:
         - URL: `http://<your prometheus address>:9090`
         - Access: `Server`
 
-    NOTES:
-
-    - If the network port is not accessible to the Grafana server,
-    select the 'Browser' option from the Access menu.
-    - In a testing environment, you can select 'Skip TLS verification'.
-
     ![prometheus-connection](/images/rs/prometheus-connection.png?width=500)
+
+    {{% note %}}
+
+- If the network port is not accessible to the Grafana server, select the **Browser** option from the Access menu.
+- In a testing environment, you can select **Skip TLS verification**.
+
+    {{% /note %}}
 
 1. Add dashboards for cluster, node, and database metrics.
     To add preconfigured dashboards:
