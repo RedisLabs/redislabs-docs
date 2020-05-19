@@ -5,7 +5,7 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisBloom 2.2.2
+## RedisBloom 2.2.2 (March 2020)
 
 Headlines:
 
@@ -17,7 +17,7 @@ Details:
     - Bloom
         - #[180](https://github.com/redisbloom/redisbloom/issues/180) Removed the upper limit on Bloom Filter capacity.
 
-## RedisBloom 2.2.1
+## RedisBloom 2.2.1 (January 2020)
 
 Headlines:
 
@@ -30,7 +30,7 @@ Details:
         - #[179](https://github.com/RedisBloom/RedisBloom/issues/179) Allow storing filters with size over 4294967295 (UINT32_MAX). Now 64 bits.
         - #[177](https://github.com/RedisBloom/RedisBloom/issues/177) Prevent passing both `EXPANSION` *and* `NONSCALING` parameters to `BF.RESERVE`.
 
-## RedisBloom 2.2.0
+## RedisBloom 2.2.0 (December 2019)
 
 - Added functionality
     - Bloom
