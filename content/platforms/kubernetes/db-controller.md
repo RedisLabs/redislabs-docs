@@ -1,5 +1,5 @@
 ---
-Title: Managing databases in Kubernetes
+Title: Managing Redis Enterprise Databases in Kubernetes
 description: The database controller provides the ability to create, manage,
   and use databases via a database custom resource.
 weight: 35
@@ -35,8 +35,12 @@ kubectl apply -f smalldb.yaml
 ```
 
 The database controller recognizes the new custom resource and validates the specification.
-If the database specification is valid, the controller creates the database on the specified Redis Enterprise cluster.
-The database is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
+If the database specification is valid, the controller combines the values specified in
+the custom resource with default values and uses the full specification to create the
+database on the specified Redis Enterprise cluster. This allows a user to specify the
+minimum desired state.
+
+Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster. If the database custom resource is deleted, the database is deleted from the cluster and its services are also deleted.
 
 ## Database Lifecycle
 
@@ -189,7 +193,11 @@ These options include options that you can change and options that are created b
 
 A string containing the name of a secret that contains the desired database password.
 
-The default value is the database name (`metadata.name`) with "redb-" as a prefix.
+If you do not specify a secret name, a secret is created for you with the name
+constructed from the database name (`metadata.name`) with "`redb-`" as a prefix.
+
+If you specify a secret name, you must create the secret before you create the
+database resource.
 
 To create your own database password in the secret, run:
 
@@ -197,7 +205,7 @@ To create your own database password in the secret, run:
  kubectl create secret generic mydb --from-literal=password=<password>
  ```
 
-where <password> is your desired password in plain text.
+where \<password> is your desired password in plain text.
 
 In the database custom resource, the value is just secret name. In this example,
 the name is `mydb`:
@@ -207,15 +215,16 @@ the name is `mydb`:
  ```
 
 When the database is created, the secret is updated to include the port and service name for the database
-but the password will remain the same.
+but the password will remain the same. If you did not create the secret, it is
+also updated with the generated database password.
 
 ### `enforceClientAuthentication`
 
-A boolean that indicates whether client authentication should be enforced (default: `true`).
+A boolean that indicates whether [client authentication]({{< relref "/rs/administering/designing-production/security/client-connections.md">}}) should be enforced (default: `true`).
 
 ### `evictionPolicy`
 
-An [eviction policy](https://docs.redislabs.com/latest/rs/administering/database-operations/eviction-policy/) (default: `volitile-lru`)
+An [eviction policy]({{< relref "/rs/administering/database-operations/eviction-policy.md">}}) (default: `volitile-lru`)
 
 ### `memorySize`
 
@@ -224,7 +233,7 @@ suffixed with a unit. For example, values like 1GB, 250MB, etc.
 
 ### `persistence`
 
-The value for the [database persistence](https://docs.redislabs.com/latest/rs/concepts/data-access/persistence/) setting.
+The value for the [database persistence]({{< relref "/rs/concepts/data-access/persistence.md">}}) setting.
 
 The value is a keyword with the values:
 
@@ -239,7 +248,7 @@ The value is a keyword with the values:
 
 ### `rackAware`
 
-A boolean that indicates whether the database is [rack-zone aware](https://docs.redislabs.com/latest/rs/concepts/high-availability/rack-zone-awareness/) (default: the cluster setting)
+A boolean that indicates whether the database is [rack-zone aware]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md">}}) (default: the cluster setting)
 
 ### `redisEnterpriseCluster`
 
@@ -255,17 +264,17 @@ redisEnterpriseCluster:
 
 ### `replication`
 
-A boolean that indicates whether in-memory database replication is enabled (default: `false`).
+A boolean that indicates whether in-memory [database replication](({{< relref "/rs/concepts/high-availability/replication.md">}})) is enabled (default: `false`).
 
 When enabled, the database has a replica shard for every master.
 
-### `sharedCount`
+### `shardCount`
 
-The number of database shards (default: `1`).
+The number of [database shards](({{< relref "/rs/concepts/high-availability/clustering.md">}})) (default: `1`).
 
 ### `tlsMode`
 
-Controls SSL authentication and encryption for connections to the database.
+Controls SSL [authentication and encryption]({{< relref "/rs/administering/designing-production/security/tls-configuration.md">}}) for connections to the database.
 
 | Value | Description |
 | ----- | ----------- |
