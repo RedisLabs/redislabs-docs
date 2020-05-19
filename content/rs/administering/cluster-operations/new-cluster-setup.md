@@ -16,10 +16,8 @@ To set up a new cluster, you must first [install the Redis Enterprise
 Software
 package]({{< relref "/rs/installing-upgrading/_index.md" >}})
 as described in the previous section and then set up the cluster as
-described below. After the cluster is created you can add multiple nodes
-to the cluster (for additional details, refer to [Joining a new node to
-a
-cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
+described below. After the cluster is created you can [add multiple nodes
+to the cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 
 ## Creating a cluster
 
@@ -30,9 +28,7 @@ To create a cluster:
     installed RS on a machine with IP address 10.0.1.34, then navigate
     to https://10.0.1.34:8443.
 
-    **Note:** The RS management UI uses a self-signed SSL/TLS encryption.
-    For additional details, refer to [Updating SSL
-    certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+    **Note:** The RS management UI uses a [self-signed SSL/TLS encryption]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 
     **Note:** If the machine has both an internal IP address and an
     external IP address, use the external IP address to access the setup
@@ -41,28 +37,21 @@ To create a cluster:
 1. Click **Setup**.
 1. In the Node Configuration page that appears:
 
-    1. Enter a path for **Persistent storage**, or leave the default
+    1. Enter a path for [**Persistent storage**]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}), or leave the default
         path.
-        For additional details, refer to [Persistent and ephemeral
-        storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
-    1. Enter a path for **Ephemeral storage**, or leave the default
+    1. Enter a path for [**Ephemeral storage**]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}), or leave the default
         path.
-        For additional details, refer to [Persistent and ephemeral
-        storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
     1. If you want to enable Redis on Flash, select the **Enable flash
-        storage support** checkbox and enter the path to the Flash
-        storage that should be used as RAM extension.
-        For additional details, refer to [Redis Enterprise
-        Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
+        storage support** checkbox and enter the path to the [Flash
+        storage]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}). that should be used as RAM extension.
 
     1. If your machine is configured to have multiple IP addresses, the
         section **IP Addresses Usage** is shown. Use the **IP
         Addresses Usage** section to assign a single IPv4 type address
-        for internal traffic and multiple IPv4/IPv6 type addresses for
-        external traffic. For additional details, refer to Multi-IP &
-        IPv6.
+        for internal traffic and multiple IPv4/[IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}) type addresses for
+        external traffic.
 
     1. In Cluster configuration, select **Create new cluster**.
 
@@ -71,13 +60,11 @@ To create a cluster:
         For guidelines, refer to [How to set the cluster
         name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 
-    1. Choose whether to **Enable private & public endpoints support**.
-        For additional details, refer to Private & Public Endpoints.
+    1. Choose whether to [**Enable private & public endpoints support**]({{< relref "/rs/administering/designing-production/networking/private-public-endpoints.md" >}}).
 
-    1. Choose whether to **Enable rack-zone awareness**. Enabling
+    1. Choose whether to [**Enable rack-zone awareness**]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}). Enabling
         rack-zone awareness requires setting the **Rack-zone ID** for
-        the node. For additional details, refer to [Rack-zone
-        awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+        the node.
 
     1. Click **Next**.
 1. If you purchased a cluster key, use the **Cluster authentication**
@@ -103,12 +90,8 @@ cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
 It is highly advisable to verify that the node is functioning properly,
 by carrying out the following tests:
 
-- Run *rlcheck* on the node. For additional details, refer to [rlcheck
-    Installation Verification
-    Utility]({{< relref "/rs/references/rlcheck.md" >}}).
-- Test connectivity to the database. For additional details, refer to
-    [Testing Client
-    Connectivity]({{< relref "/rs/administering/troubleshooting/testing-client-connectivity.md" >}}).
+- Run [`rlcheck`]({{< relref "/rs/references/rlcheck.md" >}}) on the node.
+- [Test connectivity]({{< relref "/rs/administering/troubleshooting/testing-client-connectivity.md" >}}) to the database.
 
 Topics
 

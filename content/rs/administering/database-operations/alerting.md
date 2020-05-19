@@ -11,7 +11,7 @@ You can also enable alerts for the cluster and nodes in the [cluster alerts]]({{
 
 Configured alerts are shown:
 
-- As a warning indicator (![Warning](/images/rs/icon_warning.png#no-click "Warning") for the database
+- As a warning icon (![Warning](/images/rs/icon_warning.png#no-click "Warning") for the database
 - In the **log**
 - In emails, if you configure email alerts
 

@@ -45,14 +45,12 @@ databases for data access, there are 2 options:
 ## URL Based Connections and How to set up Cluster Name (FQDN)
 
 The Fully Qualified Domain Name (FQDN) is the unique cluster identifier
-that enables clients to connect to the different components that are
+that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) that are
 part of the Redis Enterprise Software (RS). The FQDN is a crucial
 component of the high-availability mechanism in RS because it is used by
 the internal DNS to enable the automatic and transparent failover of
 nodes, databases shards, and endpoints, by automatically updating their
-IP addresses. For additional details on these components and their
-roles, refer to [System
-architecture]({{< relref "/rs/concepts/_index.md" >}}).
+IP addresses.
 
 Note: Setting the cluster's FQDN is a one-time operation. Once the FQDN
 is set it cannot be updated.

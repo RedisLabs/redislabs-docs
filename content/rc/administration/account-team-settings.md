@@ -7,14 +7,14 @@ categories: ["RC"]
 aliases: /rv/administration/account-team-settings/
 ---
 On this page you can view settings for your Redis Cloud account and team.
-You can:
+You can also:
 
 - Add or edit your VAT ID
 - Change the account Time Zone
 - Add a new Relic license key
 - Configure Multi-Factor Authentication (MFA)
 
-When you set up [SSL/TLS]({{< relref "/rc/securing-redis-cloud-connections.md" >}}) for your account,
+When you set up [SSL/TLS]({{< relref "/rc/administration/security/securing-redis-cloud-connections.md" >}}) for your account,
 you must enter the downloadable Redis Labs CA Certificate from this page.
 
 ![settings](/images/rc/settings.png)
@@ -61,7 +61,7 @@ To change the mobile phone number, click **Configure** for the text message code
 
 {{% note %}}
 We recommend that you also configure MFA for an Authenticator app as a second method of MFA.
-If you cannot login to your account because of MFA, contact [Support](https://redislabs.com/company/contact/support/).
+If you cannot login to your account because of MFA, contact [Support](https://support.redislabs.com).
 
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
 {{% /note %}}
