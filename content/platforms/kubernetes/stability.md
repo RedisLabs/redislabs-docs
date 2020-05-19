@@ -12,25 +12,25 @@ Here are some ways that you can configure the Redis Enterprise node pods to main
 
 ## Guaranteed Quality of Service
 
-A running pod has a quality of service measure assigned by that is
+A running pod has a quality of service measure assigned to it that is
 one of three [quality of service classes](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/):
 Guaranteed, Burstable, and Best Effort.
 You can assure the Guaranteed class is assigned to the Redis Enterprise node pods
 by following the right guidelines.
 
-To achieve a Guaranteed quality of service class:
+To get a Guaranteed quality of service class assigned:
 
  * Every container in the pod must have a memory limit and a memory request, and they must be the same.
  * Every container in the pod must have a CPU limit and a CPU request, and they must be the same.
 
-If resources limits and requests not specified in the Redis Enterprise CRD,
+If resources limits and requests are not specified in the Redis Enterprise CRD,
 these requirements are met in the default version created by the operator. of your Redis Enterprise cluster CRD,
 Otherwise, you must set the limits and requests to the same value for memory and CPU in the `redisEnterpriseNodeResources`
 section of the CRD.
 
 Sidecar containers also impact the quality of service class assignment for the pod.
 
-To can check the quality of service class of any running Redis Enterprise node pod, run:
+To check the quality of service class of any running Redis Enterprise node pod, run:
 
 ```sh
 kubectl get pod rec-0 --o jsonpath="{.status.qosClass}"
