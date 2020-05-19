@@ -1,13 +1,14 @@
 ---
 Title: Securing Your Database
 description:
-weight: 10
+weight: 25
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/configuration/securing-your-database/
          /rv/administration/configuration/security/
          /rc/administration/configuration/securing-your-database/
          /rc/administration/configure/security/
+         /rc/administration/configuration/security/
 ---
 The security controls for your database are:
 
@@ -22,24 +23,29 @@ These rules can contain either IP or [CIDR notation](https://en.wikipedia.org/wi
 In case you require more source IP rules than your current Redis Cloud plan entitles you to,
 you can upgrade to [another plan](https://redislabs.com/pricing) that supports the number of source IP rules that you need.
 
-You may change your subscription at any time by going to Databases -> Configuration -> Edit -> Access Control & Security.
+You may change your subscription at any time by going to **Databases > Configuration > Edit > Access Control & Security**.
 
-**Note:** Only the account owner can change the subscription.
+{{% note %}}
+Only the account owner can change the subscription.
+{{% /note %}}
 
 ## Securing Connection to Your Database with SSL/TLS
 
-You can [secure your database connections]({{< relref "/rc/securing-redis-cloud-connections.md" >}}) with SSL/TLS.
+You can [secure your database connections]({{< relref "/rc/administration/security/securing-redis-cloud-connections.md" >}}) with SSL/TLS.
 
-## Redis Password
+## Default User
 
-We recommend that you add a password for your database.
-This password is only for access to the data in the database, and not for database or cluster administration.
+The [default user]({{< relref "/rc/administration/setup/create-database.md" >}}) for your database, which is enabled by default,
+requires all connections to the database to use the [AUTH command](https://redis.io/commands/auth) to authenticate with the default user password.
+If you enable data access control, database connections can use any of the configured users.
 
-One feature often overlooked is the little eye icon on the right side of
-the form field that can be used to view the password.
+You can click on ![icon_view](/images/rc/icon_view.png#no-click "View") to see the password in plain text.
 
-![redis
-password](/images/rc/redis_password.png?width=600&height=42)
+## Data Access Control
+
+You can [create users with ACLs]({{< relref "/rc/administration/security/data-access-control.md" >}}) that limit the commands and keys that each user can access for specific databases.
+When your client authenticates with one of these users,
+only the defined commands and keys are allowed.
 
 ## AWS Security groups
 

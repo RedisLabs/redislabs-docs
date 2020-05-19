@@ -15,21 +15,14 @@ AWS instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. Therefore, when you
 set up an instance make sure that it has a properly sized EBS backed volume
-connected. Later, when setting up RS on the instance, make sure that the
-persistence storage (for additional details, refer to [Persistent and
-ephemeral
-storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
-is configured to use this volume.
+connected. Later, when setting up RS on the instance, make sure that [the
+persistence storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
-Note: After installing the RS package on the instance (for additional
-details, refer to [Accessing and installing the setup
-package]({{< relref "/rs/installing-upgrading/_index.md" >}}))
-and **before** running through the setup process (for additional
-details, refer to [Initial setup - creating a new
-cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})),
+Note: After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}})) on the instance
+and **before** running through [the setup process]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
-`chown redislabs:redislabs /\< ebs folder name \>`
+`chown redislabs:redislabs /< ebs folder name>`
 
 Another feature that may be of importance to you is the use of
 Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a
@@ -62,14 +55,12 @@ When configuring the Security Group:
     access the UI.
 - If you are using the DNS resolving option with RS, define a DNS UDP
     rule for port 53 to allow access to the databases' endpoints by
-    using the DNS resolving mechanism. For additional details, refer to
-    DNS.
+    using the [DNS resolving mechanism]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
 - To create a cluster that has multiple nodes all running as instances on AWS,
     you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
     and add it to all instances that are part of the cluster.
     This makes sure that all nodes are able to communicate with each other.
-    To limit the number of open ports, you can open just the [ports used by RS]
-    ({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+    To limit the number of open ports, you can open just the [ports used by RS]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
 After successfully launching the instances:
 

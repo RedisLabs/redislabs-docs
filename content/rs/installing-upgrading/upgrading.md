@@ -10,8 +10,11 @@ To upgrade the Redis Enterprise Software (RS) software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{% warning %}}
-Before you upgrade, you must read the [RS 5.6 release notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2020.md" >}}),
-including the [5.6 upgrade notes]({{< relref "/rs/release-notes/rs-5-6-0-april-2020.md#upgrade-notes" >}}).
+
+- Before you upgrade, you must read the [RS 6.0 release notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md" >}}),
+including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md#upgrade" >}}).
+- You must read the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for every version that you upgrade to.
+
 {{% /warning %}}
 
 Version requirements:
@@ -23,13 +26,14 @@ Version requirements:
 - To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above.
 - To upgrade your cluster to v5.0, your cluster must first be on 4.4.2 or above.
 
-A Redis Enterprise Software cluster upgrade is considered to be
-"ongoing" when nodes within a cluster have mixed versions. The upgrade
-is only considered complete when all nodes of the cluster are upgraded
-to the new version.
+The upgrade process for a Redis Enterprise Software cluster is "ongoing" when the nodes in the cluster have mixed versions.
+The upgrade is only considered complete when all of the nodes are upgraded to the new version.
 
-{{% warning %}}Using features from the newer version before all nodes are upgraded
-can produce unexpected results or cause failures in the cluster.{{% /warning %}}
+{{% warning %}}
+
+Using features from the newer version before all nodes are upgraded can produce unexpected results or cause failures in the cluster.
+
+{{% /warning %}}
 
 ## Upgrading a Node
 
@@ -38,11 +42,14 @@ package]({{< relref "/rs/installing-upgrading/_index.md" >}})
 on all of the machines on which RS is installed.
 
 {{% warning %}}
+
 - You must upgrade the master node before you upgrade the other nodes.
 We recommend that you plan to keep all nodes up until the upgrade is completed
 on all nodes. The node role is shown in the output of the 'rladmin status
 nodes' command.
 - You cannot change the installation path or user during upgrade.
+- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of updating them through the API. For assistance with this issue, contact [Support](https://support.redislabs.com).
+
 {{% /warning %}}
 
 You run install.sh from the directory where you untarred the media
@@ -66,8 +73,7 @@ important to upgrade the nodes one by one, and **not attempt to upgrade
 more than one node at a time**.
 {{% /warning %}}
 
-To make sure that the node is functioning properly, run [`rlcheck`]
-({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
+To make sure that the node is functioning properly, run [`rlcheck`]({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
 on the node both before and after the upgrade.
 
 If you have the RS management UI open in the browser while you are
@@ -132,8 +138,10 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
     The upgraded instance receives updates from upgraded and non-upgraded instances.
 
     {{% note %}}
+
 - Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
 - Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
+
     {{% /note %}}
 
     After you upgrade an instance to use the new protocol version,
