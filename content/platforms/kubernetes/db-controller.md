@@ -37,10 +37,11 @@ kubectl apply -f smalldb.yaml
 The database controller recognizes the new custom resource and validates the specification.
 If the database specification is valid, the controller combines the values specified in
 the custom resource with default values and uses the full specification to create the
-database on the specified Redis Enterprise cluster. This allows a user to specify the
-minimum desired state.
+database on the specified Redis Enterprise cluster.
+This lets a user specify the minimum desired state.
 
-Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster. If the database custom resource is deleted, the database is deleted from the cluster and its services are also deleted.
+Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
+If the database custom resource is deleted, the database is deleted from the cluster and its services are also deleted.
 
 ## Database Lifecycle
 
@@ -215,7 +216,7 @@ the name is `mydb`:
  ```
 
 When the database is created, the secret is updated to include the port and service name for the database
-but the password will remain the same. If you did not create the secret, it is
+but the password does not change. If you did not create the secret, it is
 also updated with the generated database password.
 
 ### `enforceClientAuthentication`

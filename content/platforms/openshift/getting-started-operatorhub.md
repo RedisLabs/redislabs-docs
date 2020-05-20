@@ -91,12 +91,11 @@ project.
 
 1. On the left navigation, select **Catalog**,
 2. Select **OperatorHub** under **Catalog**.
-3. Once the *OperatorHub* view displays there will be a list of categories on
+3. After the OperatorHub view is shown, there is a list of categories on
    the left and a list of operators on the right. You can search for
    "Redis Enterprise" in the search dialog just below the
-   list of categories or select **Database** in the *OperatorHub*
+   list of categories or select **Database** in the OperatorHub.
 4. Make sure you have selected your project at the top following the "*Project:*" label.
-
 
 ![K8S Operator Hub - Navigate the catalog to databases]( /images/rs/k8s-operatorhub-install-navigate-catalog.png )
 
@@ -112,7 +111,7 @@ Then select the **Install** button.
 
 ### Step 4: Create the operator subscription
 
-When using the *OperatorHub*, a deployed operator is maintained by [OpenShift's Operator
+When using the OperatorHub, a deployed operator is maintained by [OpenShift's Operator
 Lifecycle Management](https://docs.openshift.com/container-platform/4.3/operators/olm-adding-operators-to-cluster.html#olm-installing-from-operatorhub-using-web-console_olm-adding-operators-to-a-cluster). For the Redis Enterprise
 operator, the subscription that provides this is only for a single project
 (namespace). You cannot select "All namespaces on the cluster".
@@ -120,8 +119,8 @@ operator, the subscription that provides this is only for a single project
 {{% note %}}
 
 You should change the "*Approval Strategy*"" from subscription from "*Automatic*" to
-"*Manual*" for production systems. This will guarantee the operator is only
-upgraded by approval. This will allow upgrades only during maintenance periods
+"*Manual*" for production systems. This guarantees that the operator is only
+upgraded by approval. This allows upgrades only during maintenance periods
 so you can control any possible downtime due to upgrades to operator-managed clusters.
 {{% /note %}}
 
@@ -130,28 +129,28 @@ Click on **Subscribe** button to start the subscription for your project.
 ![K8S Operator Hub - subscribe to the Redis Enterprise Operator]( /images/rs/k8s-operatorhub-install-subscribe.png )
 
 Once you have done so, the subscription should be shown. After a few moments,
-it will update with the installation status. If you selected "*Manual*", you should
+it updates with the installation status. If you selected "*Manual*", you should
 see a "*requires approval*" link.
 
 ![K8S Operator Hub - subscribed but install requires approval]( /images/rs/k8s-operatorhub-install-subscribed.png )
 
 ### Step 5: Preview and approve install plan
 
-Clicking on the "*requires approval*" link will bring you to a view of the install
+Clicking on the "*requires approval*" link brings you to a view of the install
 plan that requires approval. Select the **Preview Install Plan** button to preview
 the install plan.
 
 ![K8S Operator Hub - preview install plan]( /images/rs/k8s-operatorhub-install-preview-install-plan.png )
 
-This will change the view to show an **Approve** and **Deny** button. Below these
-buttons the view will have changed to enumerate the various resources being
+This changes the view to show an **Approve** and **Deny** button. Below these
+buttons the view is changed to show the resources being
 installed into your namespace. Select the **Approve** button to install the
 operator.
 
 ![K8S Operator Hub - preview install plan]( /images/rs/k8s-operatorhub-install-approve-install-plan.png )
 
-After the approval, the choice dialog will disappear and the status of the
-resources installed will be updated.
+After the approval, the choice dialog disappears and the status of the
+resources installed is updated.
 
 ### Step 6: Return to the operator
 
@@ -160,11 +159,10 @@ You can navigate from the install plan to the operator by selecting the
 
 ![K8S Operator Hub - navigate back]( /images/rs/k8s-operatorhub-install-navigate-back.png )
 
-After selected the operator, the view will show the installed version and
-catalog source along with other information. The link to the installed version
-will take to you to a view where you can find more information about the
-current version and create clusters. The catalog source link will allow
-you to view the subscription.
+After selected the operator, the view shows the installed version and
+catalog source along with other information. The link to the installed version takes to you to a view where you can find more information about the
+current version and create clusters. The catalog source link lets
+you view the subscription.
 
 ![K8S Operator Hub - installed version and source]( /images/rs/k8s-operatorhub-install-csv-sources.png )
 
@@ -224,7 +222,7 @@ The name of the cluster must be "rec" for deployments from within the OLM. For m
 
     ![K8S - created rec via operator]( /images/rs/k8s-operator-rec-after-create.png )
 
-    and clicking on the name will show the more details of the cluster:
+    and clicking on the name shows more details of the cluster:
 
     ![K8S - created rec via operator details]( /images/rs/k8s-operator-rec-after-create-details.png )
 
@@ -233,7 +231,7 @@ The name of the cluster must be "rec" for deployments from within the OLM. For m
 
 ### Step 1: Access the Redis Enterprise UI
 
-In order to create your database, we will log in to the Redis Enterprise UI. When
+You can create your database from the Redis Enterprise UI. When
 the cluster is created, a login is generated using the `username` specified
 in the cluster CRD (e.g., `demo@redislabs.com`) and a password generated by
 the operator. The generated password is stored in a Kubernetes secret. You must
@@ -256,7 +254,7 @@ retrieve this password value as part of this procedure.
     login information for later use.
 
 1. Click on **Pods** under **Workloads** (in the same section as **Secrets**) and
-   you will see the pods associated with the cluster. These will all be suffixed
+   you see the pods associated with the cluster. These are all suffixed
    with a number starting at "0" (e.g., rec-0). Each of these pods has an
    instance of the Redis Enterprise UI running within it on port 8843.
 
@@ -283,7 +281,7 @@ retrieve this password value as part of this procedure.
 ### Step 2: Create your database
 
 Once you are logged into your Redis Enterprise cluster, creating a database is
-exactly the same as any other deployment. Follow the [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}). Once created, the operator will discover the database and
+exactly the same as any other deployment. Follow the [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}). Once created, the operator discovers the database and
 create additional Kubernetes services for application workload access to the
 database.
 
@@ -291,10 +289,10 @@ database.
 
 ### Step 3: Inspect your database services
 
-Once you have created your database via Redis Enterprise, the operator will
-detect the change and create Kubernetes services that expose the database. The
+Once you have created your database via Redis Enterprise, the operator
+detects the change and create Kubernetes services that expose the database. The
 databases are named according to the database name. For example, if you
-called your database "`test`", kubectl will show these services:
+called your database "`test`", kubectl shows these services:
 
 ```sh
 % kubectl get services

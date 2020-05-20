@@ -7,8 +7,8 @@ categories: ["Platforms"]
 aliases:
 ---
 
-A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD). The
-default format is a YAML definition that will look something like the follow:
+A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD).
+The default format is a YAML definition, for example:
 
 ```text
 apiVersion: app.redislabs.com/v1
@@ -35,52 +35,53 @@ spec:
     versionTag: 5.4.14-31.rhel7-openshift
 ```
 
-This default may be useful for quick-start purposes for test or development. You
-can edit this for the required deployment use case. The full reference is
-available on the [Github project RedisLabs/redis-enterprise-k8s-docs](https://github.com/RedisLabs/redis-enterprise-k8s-docs).
+This example may be useful to get started with a test or development deployment.
+You can modify it for your required deployment use case.
+This file and other references are available in the [RedisLabs/redis-enterprise-k8s-docs](https://github.com/RedisLabs/redis-enterprise-k8s-docs) GitHub repository.
 
-Here are the main fields you may want to review and edit:
+Here are the main fields for you to review and edit:
 
-- `name`: “rec”
+- `name`: `rec`
 
-    This is the cluster name that will be used by the operator to name various
+    This is the cluster name that the operator uses to name various
     resources in the Kubernetes cluster and also name the CRD.
 
     {{% note %}}
 
-The name is currently restricted to the value "rec" in the current release due to the
-way that service accounts are created. There is a binding between the SCC
-and the service account. While this binding can be created manually, this is
-not a recommended practice.
+The name is restricted to the value "rec" in the current release because of the way that service accounts are created.
+There is a binding between the SCC and the service account.
+You can create this binding manually, but we do not recommend it.
 
     {{% /note %}}
 
-- [`nodes`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): *nnn*
+- [`nodes`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): `nnn`
 
-    This [must be an odd number](https://redislabs.com/redis-enterprise/technology/highly-available-redis/) of at least 3 or greater.
-- [`uiServiceType`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): *service_type*
+    This [must be an odd number](https://redislabs.com/redis-enterprise/technology/highly-available-redis/) that is 3 or higher.
+- [`uiServiceType`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): `service_type`
 
-    This controls how the Redis Enterprise UI is exposed on the cluster. The *service_type* must be either `ClusterIP` or `LoadBalancer` (defaults to `ClusterIP`). This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/).
+    This controls how the Redis Enterprise UI is exposed on the cluster.
+    The service_type must be either `ClusterIP` or `LoadBalancer` (default: `ClusterIP`).
+    This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/).
 
 - [`persistentSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#persistentconfigurationspec):
 
-    You may way to add a `storageClassName` that specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. For example, AWS uses “gp2” as a default, GKE uses “standard” and Azure uses "default").
+    You can add a `storageClassName` that specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. For example, AWS uses “gp2” as a default, GKE uses “standard” and Azure uses "default".
 
-    Also, adding a `volumeSize` allows you to control the size of the persistent volume attached to the Redis Enterprise pods.
+    Also, adding a `volumeSize` lets you control the size of the persistent volume attached to the Redis Enterprise pods.
 
     ```yaml
     persistentSpec:
       enabled: true
       volumeSize: "10Gi"
-      storageClassName: "gp2"    
+      storageClassName: "gp2"
     ```
 
 - [`redisEnterpriseNodeResources`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec):
 
-    The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node (see `limits` and `requests` below).
+    The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node (see `limits` and `requests`).
 
     {{% note %}}
-Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
+We recommend that resource limits equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
     {{% /note %}}
 
     - [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec):
@@ -123,7 +124,7 @@ Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/
 
 - [`redisEnterpriseImageSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#imagespec):
 
-    This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator will automatically use the matching RHEL image version for the release.
+    This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator automatically uses the matching RHEL image version for the release.
 
     The value is structured as follows with the [policy values from OpenShift](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/builds_and_image_streams.html#image-pull-policy):
 
@@ -133,4 +134,4 @@ Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/
     versionTag: 5.2.10-22
     ```
 
-    The version tag is as it appears on your repository (e.g., on [DockerHub](https://hub.docker.com/r/redislabs/redis/)).
+    The version tag is as it appears on your repository, for example on [DockerHub](https://hub.docker.com/r/redislabs/redis/).
