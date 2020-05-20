@@ -1320,6 +1320,7 @@ iframe {
 }
 .panel-body {
   display: inline;
+  font-style: normal;
 }
 .tooltipped {
   position: relative; }
@@ -1732,6 +1733,7 @@ nav#toc.fixed-pos {
   font-weight: 700;
   margin-right: 3px;
   display: inline;
+  font-style: normal;
 }
 .extra-links-gooter a {
   display: block;
