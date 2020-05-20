@@ -94,7 +94,7 @@ We recommend that you:
  * Set `eviction-max-pod-grace-period` high enough to allow the RS pods to migrate the Redis databases before the pods are force killed.
  * Set the `eviction-soft-grace-period` high enough that the administrator (or a k8s auto-scaling mechanism) scales k8s up or out.
 
-## Monitoring for memory & disk usage
+## Monitoring for memory and disk usage
 
 We recommend that you monitor the node for MemoryPressure and DiskPressure.
 When both of these conditions are true, then an [eviction threshold](https://kubernetes.io/docs/tasks/administer-cluster/out-of-resource/#eviction-thresholds)
