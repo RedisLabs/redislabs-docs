@@ -1,5 +1,5 @@
 ---
-Title: Managing pod stability
+Title: Managing Pod Stability
 description: You can use quality of service, priority class, eviction thresholds and resource monitoring
     to maintain cluster node pod stability.
 weight: 90
@@ -7,6 +7,7 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases:
 ---
+
 Kubernetes clusters manage the allocation of system resources and can evict pods to release system resources.
 Here are some ways that you can configure the Redis Enterprise node pods to maintain pod stability:
 
