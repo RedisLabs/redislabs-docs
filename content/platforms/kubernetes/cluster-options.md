@@ -6,11 +6,10 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases:
 ---
-
 A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD).
-The default format is a YAML definition, for example:
+The default format is a YAML definition such as:
 
-```text
+```yaml
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
@@ -89,13 +88,14 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
         The max resources for a Redis node (similar to pod limits).
 
         For example:
+
         ```yaml
         limits:
           cpu: “4000m”
           memory: 4Gi
         ```
 
-        The default (if unspecified) is 4 cores (4000m) and 4GB (4Gi).
+        The default is 4 cores (4000m) and 4GB (4Gi).
 
     - [`requests`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec):
 
@@ -109,8 +109,7 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
           memory: 4Gi
         ```
 
-        The default (if unspecified) is 4 cores (4000m) and 4GB (4Gi).
-
+        The default is 4 cores (4000m) and 4GB (4Gi).
 
 - [`serviceBrokerSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#servicebrokerspec):
 
@@ -128,10 +127,10 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
 
     The value is structured as follows with the [policy values from OpenShift](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/builds_and_image_streams.html#image-pull-policy):
 
-    ```
+    ```yaml
     imagePullPolicy: IfNotPresent
     Repository: redislabs/redis
     versionTag: 5.2.10-22
     ```
 
-    The version tag is as it appears on your repository, for example on [DockerHub](https://hub.docker.com/r/redislabs/redis/).
+    The version tag is as it appears on your repository, such as in [DockerHub](https://hub.docker.com/r/redislabs/redis/).
