@@ -19,7 +19,7 @@ To add a user to the cluster:
 
 1. Go to: **access control**
 1. Click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Enter the name, email and password of the new user and select the role to assign to the user.
+1. Enter the name, email and password of the new user and select the [role]({{< relref "user-roles.md" >}}) to assign to the user.
 1. Select the type of user:
     - internal - Authenticates with RS
     - external - Authenticates with an external LDAP server
