@@ -18,7 +18,7 @@ you can give LDAP users access to the RS web UI according to the permissions tha
 
 To configure LDAP authentication for RS web UI users on a running cluster:
 
-1. To configure `saslauthd` to use LDAP Authentication:
+1. Configure `saslauthd` to use LDAP Authentication:
     1. Edit the `/etc/default/saslauthd`, and change the `MECHANISMS` variable to `MECHANISMS="ldap"`.
     1. Edit the `saslauthd.conf` configuration file in the installation directory (default: `/etc/opt/redislabs/saslauthd.conf`)
         and enter the values for these fields:
@@ -47,5 +47,5 @@ To configure LDAP authentication for RS web UI users on a running cluster:
     rladmin cluster config saslauthd_ldap_conf /etc/opt/redislabs/saslauthd.conf
     ```
 
-1. To restart the `saslauthd` service, run: `sudo supervisorctl restart saslauthd`
+1. Restart the `saslauthd` service, run: `sudo supervisorctl restart saslauthd`
 1. [Create LDAP users]({{< relref "/rs/administering/access-control/_index.md#adding-a-user" >}}) as `external` users in the RS web UI.
