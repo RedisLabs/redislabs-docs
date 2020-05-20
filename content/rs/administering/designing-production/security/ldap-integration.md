@@ -27,7 +27,7 @@ To leverage LDAP authentication, the associated user must be created as an exter
 
 To set `saslauthd` to use LDAP Authentication:
 
-- Edit the `saslauthd` file located in `/etc/default`, and change the `MECHANISM`S variable to `MECHANISMS="ldap"`.
+- Edit the `saslauthd` file located in `/etc/default`, and change the `MECHANISMS` variable to `MECHANISMS="ldap"`.
 
 ### Provide the LDAP Configuration
 
@@ -64,7 +64,7 @@ rladmin cluster config saslauthd_ldap_conf /etc/opt/redislabs/saslauthd.conf
 For new server installations, be sure that your cluster set up before configuring LDAP.
 {{% /note %}}
 
-For these changes to take effect (or to recycle `saslauthd`), you must restart your services.
+For these changes to take effect, you must restart your services.
 
 ```src
 sudo supervisorctl restart saslauthd
