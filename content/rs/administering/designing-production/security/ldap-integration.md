@@ -7,8 +7,7 @@ categories: ["RS"]
 aliases: /rs/administering/designing-production/security/ldap-integration/
 ---
 Redis Enterprise Software (RS) can integrate with your identity provider using LDAP authentication.
-After you configure the LDAP connection,
-you can give LDAP users access to the RS web UI according to the permissions that you assign.
+After you configure the LDAP connection, you can give LDAP users access to the RS web UI according to the permissions that you assign.
 
 `saslauthd` is the process that handles LDAP authentication requests to RS.
 
@@ -18,10 +17,9 @@ you can give LDAP users access to the RS web UI according to the permissions tha
 
 To configure LDAP authentication for RS web UI users on a running cluster:
 
-1. To configure `saslauthd` to use LDAP Authentication:
+1. Configure `saslauthd` to use LDAP Authentication:
     1. Edit the `/etc/default/saslauthd`, and change the `MECHANISMS` variable to `MECHANISMS="ldap"`.
-    1. Edit the `saslauthd.conf` configuration file in the installation directory (default: `/etc/opt/redislabs/saslauthd.conf`)
-        and enter the values for these fields:
+    1. Edit the `saslauthd.conf` configuration file in the installation directory (default: `/etc/opt/redislabs/saslauthd.conf`) and enter the values for these fields:
 
         - `ldap_servers`: the ldap servers that you authenticate against and the port to use. Port 389 is standard for unencrypted LDAP connections, while port 636 is standard for encrypted LDAP connections (strongly recommended).
         - `ldap_tls_cacert_file` (optional): The path to your CA Certificates. This is required for encrypted LDAP connections only.
@@ -35,7 +33,6 @@ To configure LDAP authentication for RS web UI users on a running cluster:
         ldap_servers: ldaps://ldap1.mydomain.com:636 ldaps://ldap2.mydomain.com:636
         ldap_tls_cacert_file: /path/to/your/CARootCert.crt
         ldap_search_base: ou=coolUsers,dc=company,dc=com
-        ldap_search_base: ou=coolUsers,dc=company,dc=com
         ldap_filter: (sAMAccountName=%u)
         ldap_bind_dn: cn=admin,dc=company,dc=com
         ldap_password: secretSquirrel
@@ -47,5 +44,5 @@ To configure LDAP authentication for RS web UI users on a running cluster:
     rladmin cluster config saslauthd_ldap_conf /etc/opt/redislabs/saslauthd.conf
     ```
 
-1. To restart the `saslauthd` service, run: `sudo supervisorctl restart saslauthd`
+1. Restart the `saslauthd` service for the changes to take effect: `sudo supervisorctl restart saslauthd`
 1. [Create LDAP users]({{< relref "/rs/administering/access-control/_index.md#adding-a-user" >}}) as `external` users in the RS web UI.
