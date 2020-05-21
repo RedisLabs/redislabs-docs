@@ -13,7 +13,7 @@ As of v1.0.0, code for RedisGears must be written in Python. However, an interna
 
 ## Getting Started with RedisGears
 
-RedisGears is implemented by a Redis module. To use RedisGears, you'll need to make sure that your Redis deployment has the module installed. [Redis Cloud](https://redislabs.com/redis-enterprise-cloud/) and [Redis Enterprise](https://docs.redislabs.com/latest/rs/) both support the module natively. If you're running Redis Enterprise on-premises, see the [RedisGears installation docs]({{< relref "/modules/redisgears/redisgears-installation.md" >}}) for all the relevant details.
+RedisGears is implemented by a Redis module. To use RedisGears, you'll need to make sure that your Redis deployment has the module installed. [Redis Cloud](https://redislabs.com/redis-enterprise-cloud/) and [Redis Enterprise](https://docs.redislabs.com/latest/rs/) both support the module natively.
 
 If you're running open source Redis, you'll also need to [install the module](https://oss.redislabs.com/redisgears/quickstart.html) before using it.
 
