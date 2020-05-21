@@ -3,6 +3,7 @@ Title: RedisGears Installation
 description:
 weight: 50
 alwaysopen: false
+draft: true
 categories: ["Modules"]
 ---
 
