@@ -36,15 +36,22 @@ To create a user role that only has access to the database, assign the user the 
 
 ### Database Access Controls
 
-ACLs allow you to control what level of access each user has in Redis. With ACLs, you can specify which commands specific users can execute and which keys they can access. This allows for much better security practices: you can restrict any given user’s access to the least level of privilege needed.
+Redis ACLs allow you to control what level of access each role and user have in Redis. With Redis ACLs, you can specify which commands specific roles and users can execute and which keys they can access. This allows for much better security practices: you can restrict any given user’s access to the least level of privilege needed.
 
 {{% note %}}
 There are several important differences with Redis Enterprise you should be aware of:
 
 1. The ACL subcommands LOAD, SAVE, SETUSER, DELUSER, GENPASS and LOG are blocked
 2. The MULTI, EXEC, DISCARD commands are always allowed, but ACLs are enforced within a transaction
-3. When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
-4. Active-Active cannot assign ACLs on creation.
+3. Active-Active databases cannot assign ACLs on creation.
+{{% /note %}}
+
+{{% note %}}
+Using ACL for keys restriction can conflict when performing multi-key commands on multi-slot key. 
+When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
+Per database, it is possible to configure whether multi-key commands on multi-slot key are allowed or not using:
+`rladmin tune db db:id mkms <enabled/disabled>`
+Additional multi-keys commands restrictions such as when using OSS Cluster mode or in Active-Active databases will apply even when the `mkms` setting is enabled.
 {{% /note %}}
 
 #### Redis ACL command syntax
