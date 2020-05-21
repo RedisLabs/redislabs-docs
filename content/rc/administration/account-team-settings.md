@@ -68,7 +68,7 @@ If your mobile phone is lost or stolen, make sure that you update the MFA config
 
 #### Configuring MFA for an Authenticator App
 
-After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOPT) app such as Google Authenticator.
+After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOTP) app such as Google Authenticator.
 Then when you log in to the Redis Cloud Admin Console, you can select to use either an authentication code sent by text message or an authentication code shown in the Authenticator app for MFA.
 
 To configure MFA for the Authenticator app:
