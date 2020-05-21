@@ -59,6 +59,9 @@ Additional multi-keys commands restrictions such as when using OSS Cluster mode 
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys. Redis Enterprise only allows the configuration of commands, command categories and allowed keys. 
 
 Redis Modules do not have a command category, but may be configured using their standard command name with Redis ACL syntax.
+{{% note %}}
+Module's internal processes are not retricted by the Redis ACLs to allow their proper functioning.
+{{% /note %}}
 
 **In Redis Enterprise, you can:**
 
