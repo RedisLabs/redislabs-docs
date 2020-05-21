@@ -5,7 +5,7 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGears 1.0.0
+## RedisAI 1.0.0
 
 Supported Backends:
 
