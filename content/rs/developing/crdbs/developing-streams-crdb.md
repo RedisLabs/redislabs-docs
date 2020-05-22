@@ -15,25 +15,48 @@ You add entries to a stream with the XADD command. You access stream entries usi
 
 ## Streams and Active-Active
 
-Streams are synchronized across the instances of an Active-Active database. In the example below, we write to a stream from two regions. Notice that after syncing, both database instances have identical streams:
+Active-Active databases allow you to write to the same logical stream from more than one region.
+Streams are synchronized across the regions of an Active-Active database.
 
-| Time | Region 1                      | Region 2                      |
-| ---- | ------------------------------- | ------------------------------- |
-| _t1_   | `XADD x 100-1 f1 v1`              |                                 |
-| _t2_  | _— Sync —_                    | _— Sync —_                    |
-| _t3_   |                                 | `XADD x 100-2 f1 v1`              |
-| _t4_   | _— Sync —_                    | _— Sync —_                    |
-| _t5_   | `XRANGE x - +` <br/>**→ [100-1, 100-2]** | `XRANGE x - +` <br/>**→ [100-1, 100-2]** |
+In the example below, we write to a stream concurrently from two regions. Notice that after syncing, both regions have identical streams:
 
-The same is true for concurrent writes to the same stream across regions:
+<table style='width: auto;'>
+<thead>
+<tr>
+<th>Time</th>
+<th>Region 1</th>
+<th>Region 2</th>
+</tr>
+</thead>
 
-| Time | Region 1                      | Region 2                      |
-| ---- | ------------------------------- | ------------------------------- |
-| _t1_   | `XADD x 100-1 f1 v1`              | `XADD x 100-2 f1 v1`              |
-| _t2_   | `XRANGE x - +` <br/>**→ [100-1]**        | `XRANGE x - +` <br/>**→ [100-2]**        |
-| _t3_   | _— Sync —_                    | _— Sync —_                    |
-| _t4_   | `XRANGE x - +` <br/>**→ [100-1, 100-2]** | `XRANGE x - + <br/>**→ [100-1, 100-2]** |
+<tbody>
+<tr>
+<td><em>t1</em></td>
+<td><code>XADD messages * text hello</code></td>
+<td><code>XADD messages * text goodbye</code></td>
+</tr>
 
+<tr>
+<td><em>t4</em></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100]</strong></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-3700]</strong></td>
+</tr>
+
+<tr>
+<td><em>t3</em></td>
+<td><em>— Sync —</em></td>
+<td><em>— Sync —</em></td>
+</tr>
+
+<tr>
+<td><em>t4</em></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100, 1589929246795-3700]</strong></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100, 1589929246795-3700]</strong></td>
+</tr>
+</tbody>
+</table>
+
+Notice also that the synchronized streams contain no duplicate IDs. As long as you allow the database to generate your stream IDs, you'll never have more than one stream entry with the same ID.
 
 {{% note %}}
 Open source Redis uses one radix tree (referred to as `rax` in the code base) to implement each stream. However, Active-Active databases implement a single logical stream using one `rax` per region.
@@ -41,27 +64,73 @@ Each region adds entries only to its associated `rax` (but can remove entries fr
 This means that XREAD and XREADGROUP iterate simultaneously over all `rax` trees and return the appropriate entry by comparing the entry IDs from each `rax`.
 {{% /note %}}
 
-### The observed-remove approach
+### Conflict resolution
 
-The observed-remove approach is a way to automatically resolve conflicts in Active-Active databases.
+Active-Active databases use an "observed-remove" approach to automatically resolve potential conflicts.
+
 With this approach, a delete only affects the locally observable data.
 
 In the example below, a stream, `x`, is created at _t1_. At _t3_, the stream exists in two regions.
 
-| Time | Region 1               | Region 2               |
-| ---- | ------------------------ | ------------------------ |
-| _t1_   | `XADD x 100-1 f1 v1`       |                          |
-| _t2_   | _— Sync —_             | _— Sync —_             |
-| _t3_   | `XRANGE x - +` <br/>**→ [100-1]** | `XRANGE x - +` <br/>**→ [100-1]** |
-| _t4_   | `DEL x`                    | `XADD x 100-2 f1 v1`       |
-| _t5_   | _— Sync —_             | _— Sync —_             |
-| _t6_   | `XRANGE x - +`<br/> **→ [100-2]** | `XRANGE x - +` <br/>**→ [100-2]** |
+<table style='width: 100%;'>
+<thead>
+<tr>
+<th>Time</th>
+<th>Region 1</th>
+<th>Region 2</th>
+</tr>
+</thead>
 
-At _t4_, the stream is deleted from Region 1. At the same time, the entry `100-2` is added to the same stream at Region 2. After the sync, at _t6_, the entry `100-2` exists in both regions. This is because that entry was not visible when the local stream was deleted at _t4_.
+<tbody>
+<tr>
+<td><em>t1</em></td>
+<td><code>XADD messages * text hello</code></td>
+<td></td>
+</tr>
 
-### Preserving ID uniqueness
+<tr>
+<td><em>t2</em></td>
+<td><em>— Sync —</em></td>
+<td><em>— Sync —</em></td>
+</tr>
 
-Because Active-Active databases replicate asynchronously, it's possible to create streams with duplicate IDs:
+<tr>
+<td><em>t3</em></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100]</strong></code></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100]</strong></code></td>
+</tr>
+
+
+<tr>
+<td><em>t4</em></td>
+<td><code>DEL messages</code></strong></td>
+<td><code>XADD messages * text goodbye</code></td>
+</tr>
+
+<tr>
+<td><em>t5</em></td>
+<td><em>— Sync —</em></td>
+<td><em>— Sync —</em></td>
+</tr>
+
+
+<tr>
+<td><em>t6</em></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-3700]</strong></code></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-3700]</strong></code></td>
+</tr>
+
+
+</tbody>
+</table>
+
+At _t4_, the stream is deleted from Region 1. At the same time, an entry with ID ending in `3700` is added to the same stream at Region 2. After the sync, at _t6_, the entry with ID ending in `3700` exists in both regions. This is because that entry was not visible when the local stream was deleted at _t4_.
+
+### ID generation modes
+
+Usually, you should allow Redis streams generate its own stream entry IDs. You do this by specifying `*` as the ID in calls to XADD. However, you _can_ provide your own custom ID when adding entries to a stream, and this is where you need to be careful.
+
+Because Active-Active databases replicate asynchronously, providing your own IDs can create streams with duplicate IDs. This can occur when your write to the same stream from multiple regions.
 
 | Time | Region 1                      | Region 2                      |
 | ---- | ------------------------------- | ------------------------------- |
@@ -79,30 +148,30 @@ To prevent duplicate IDs and to comply with the original Redis streams design, A
 
 1. **Strict**: In _strict_ mode, XADD allows server-generated IDs (using the '`*`' ID specifier) or IDs consisting only of the millisecond (MS) portion. When the millisecond portion of the ID is provided, the ID's sequence number is calculated using the database's region ID. This prevents duplicate IDs in the stream. Strict mode rejects full IDs (that is, IDs containing both milliseconds and a sequence number).
 1. **Semi-strict**: _Semi-strict_ mode is just like _strict_ mode except that it allows full IDs (MS-SEQ). Because it allows full IDs, duplicate IDs are possible in this mode.
-1. **Liberal**: XADD allows any monotonically ascending ID. When given the millisecond portion of the ID, the sequence number will be set to `0`. This mode may lead to duplicate IDs.
+1. **Liberal**: XADD allows any monotonically ascending ID. When given the millisecond portion of the ID, the sequence number will be set to `0`. This mode may also lead to duplicate IDs.
 
-The default and recommended mode is _strict_, which prevents duplicate IDs. It's generally important to avoid duplicate IDs because:
+The default and recommended mode is _strict_, which prevents duplicate IDs
 
-1. XDEL, XCLAIM, and other commands may affect more than one entry when duplicate IDs are present
-1. Entries with duplicate IDs may be removed if a database is exported or renamed
+{{% warning %}}
+Why do you want to prevent duplicate IDs? First, XDEL, XCLAIM, and other commands can affect more than one entry when duplicate IDs are present in a stream. Second, duplicate entries may be removed if a database is exported or renamed.
+{{% /warning %}}
 
-To change XADD's ID mode, use the `rlutil` command-line utility:
+To change XADD's ID generation mode, use the `rladmin` command-line utility:
 
 Set _strict_ mode:
 ```sh
-rlutil crdb_config_set bdb=1 conf_keyword=xadd-strict-id-uniqueness conf_value=yes
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode strict
 ```
 
 Set _semi-strict_ mode:
 ```sh
-rlutil crdb_config_set bdb=1 conf_keyword=xadd-strict-id-uniqueness conf_value=semi
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode semi-strict
 ```
 
 Set _liberal_ mode:
 ```sh
-rlutil crdb_config_set bdb=1 conf_keyword=xadd-strict-id-uniqueness conf_value=no
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode liberal
 ```
-
 
 ### Iterating a stream with XREAD
 
@@ -115,19 +184,19 @@ In the example below, XREAD skips entry `115-0`.
 | _t1_   | `XADD x 110 f1 v1`                                   | `XADD x 115 f1 v1`                                   |
 | _t2_   | `XADD x 120 f1 v1`                                   |                                                    |
 | _t3_   | `XADD x 130 f1 v1`                                   |                                                    |
-| _t4_   | `XREAD COUNT 2 STREAMS x 0` <br/>**→ [110-0, 120-0]**       |                                                    |
+| _t4_   | `XREAD COUNT 2 STREAMS x 0` <br/>**→ [110-2700, 120-2700]**       |                                                    |
 | _t5_   | _— Sync —_                                       | _— Sync —_                                       |
-| _t6_   | `XREAD COUNT 2 STREAMS x 120` <br/>**→ [130-0]**            |                                                    |
-| _t7_   | `XREAD STREAMS x 0` <br/>**→[110-0, 115-0, 120-0, 130-0]** | `XREAD STREAMS x 0` <br/>**→[110-0, 115-0, 120-0, 130-0]** |
+| _t6_   | `XREAD COUNT 2 STREAMS x 120` <br/>**→ [130-2700]            |                                                    |
+| _t7_   | `XREAD STREAMS x 0` <br/>**→[110-2700, 115-3900, 120-2700, 130-2700]** | `XREAD STREAMS x 0` <br/>**→[110-0, 115-0, 120-0, 130-0]** |
 
 
 You can use XREAD to reliably consume a stream only if all writes to the stream originate from a single region. Otherwise, you should use XREADGROUP, which always guarantees reliable stream consumption.
 
-## Consumer groups in Active-Active databases
+## Consumer groups
 
 Active-Active databases fully support consumer groups with Redis Streams.
 
-Here is an example of a using XGROUP with an active-active database:
+Here's an example of a using XGROUP with an Active-Active database:
 
 | Time | Region 1                  | Region 2                  |
 | ---- | --------------------------- | --------------------------- |
@@ -157,19 +226,19 @@ XREADGROUP, when given an ID different from the special ">" ID, iterates simulta
 It returns the next entry by comparing entry IDs from the different PELs.
 {{% /note %}}
 
-### The DEL-wins approach
+### Conflict resolution
 
-The DEL-wins approach is a way to auto-resolve conflicts.
+The "delete wins" approach is a way to automatically resolve conflicts with consumer groups.
 In case of concurrent operations, the delete operations "win" over the concurrent operation.
 
-In this example, the DEL at _t4_ deletes both the observed g1 and the non-observed g2:
+In this example, the DEL at _t4_ deletes both the observed `group1` and the non-observed `group2`:
 
 | Time | Region 1              | Region 2              |
 | ---- | ----------------------- | ----------------------- |
-| _t1_   | `XGROUP CREATE x g1 0`    |                         |
+| _t1_   | `XGROUP CREATE x group1 0`    |                         |
 | _t2_   | _— Sync —_            | _— Sync —_            |
-| _t3_   | `XINFO GROUPS x` <br/>**→ [g1]** | `XINFO GROUPS x` <br/>**→ [g1]** |
-| _t4_   | `DEL x                   | `XGROUP CREATE x g2 0`    |
+| _t3_   | `XINFO GROUPS x` <br/>**→ [group1]** | `XINFO GROUPS x` <br/>**→ [group1]** |
+| _t4_   | `DEL x                   | `XGROUP CREATE x group2 0`    |
 | _t5_   | _— Sync —_            | _— Sync —_            |
 | _t6_   | `EXISTS x` <br/>**→ 0** | `EXISTS x` <br/>**→  0**          |
 
@@ -184,7 +253,7 @@ In this example, the XGROUP DESTROY at _t4_ affects both the observed `g1` creat
 | _t5_   | _— Sync —_            | _— Sync —            | — Sync —          |
 | _t6_   | `EXISTS x` <br/>**→  0**          | `EXISTS x` <br/>**→ 0**          | `EXISTS x` <br/>**→  0**    |
 
-### Consumer groups issues
+### Group replication
 
 Calls to XREADGROUP and XACK change the state of a group or consumer. However, it is not efficient to replicate every change to a consumer or group.
 
@@ -198,26 +267,22 @@ For example:
 
 | Time | Region 1                                        | Region 2               |
 | ---- | ------------------------------------------------- | ------------------------ |
-| _t1_   | `XADD x 110-0 f1 v1`                                |                          |
-| _t2_   | `XGROUP CREATE x g1 0`                              |                          |
-| _t3_   | `XREADGROUP GROUP g1 Alice STREAMS x >` <br/>**→ [110-0]** |                          |
+| _t1_   | `XADD messages 110 text hello`                                |                          |
+| _t2_   | `XGROUP CREATE messages group1 0`                              |                          |
+| _t3_   | `XREADGROUP GROUP group1 Alice STREAMS messages >` <br/>**→ [110-2700]** |                          |
 | _t4_   | _— Sync —_                                      | _— Sync —_             |
-| _t5_   | `XRANGE x - +` <br/>**→ [110-0]**                          | XRANGE x - + <br/>**→ [110-0]** |
-| _t6_   | `XINFO GROUPS x` <br/>**→ [g1]**                            | XINFO GROUPS x <br/>**→ [g1]**   |
-| _t7_   | `XINFO CONSUMERS x` <br/>**→ [Alice]**                      | XINFO CONSUMERS x <br/>**→ []**  |
-| _t8_   | `XPENDING x g1 - +` <br/>**→ [110-0]**                     | XPENDING x g1 - + <br/>**→ []** |
+| _t5_   | `XRANGE messages - +` <br/>**→ [110-2700]**                          | XRANGE messages - + <br/>**→ [110-2700]** |
+| _t6_   | `XINFO GROUPS messages` <br/>**→ [g1]**                            | XINFO GROUPS messages <br/>**→ [g1]**   |
+| _t7_   | `XINFO CONSUMERS messages` <br/>**→ [Alice]**                      | XINFO CONSUMERS messages <br/>**→ []**  |
+| _t8_   | `XPENDING messages group1 - +` <br/>**→ [110-0]**                     | XPENDING messages group1 - + <br/>**→ []** |
 
 Using XREADGROUP across instances can result in instances reading the same entries.
 This is due to the fact that Active-Active Streams is designed for at-least-once reads or a single consumer.
 As shown in the previous example, Region 2 is not aware of any group-related activity, so redirecting the XREADGROUP traffic from Region 1 to Region 2 results in reading entries that have already been read.
 
-### XREADGROUP redirection
+### Replication performance optimizations
 
-If every stream entry read using XREADGROUP is acknowledged with XACK after processing it,
-we can limit the number of messages that are re-read while maintaining a low rate of the cross-location traffic.
-To do this, we replicate XACK messages only when all of the read entries are acknowledged.
-
-For example:
+Consumers acknowledge messages using the XACK command. Each ack effectively records the last consumed message. This can result in a lot of cross-region traffic. To reduce this traffic, we replicate XACK messages only when all of the read entries are acknowledged.
 
 | Time | Region 1                                                      | Region 2   | Explanation                                                                                                     |
 | ---- | --------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------- |
@@ -236,7 +301,7 @@ For example:
 In this scenario, if we redirect the XREADGROUP traffic from Region 1 to Region 2 we do not re-read entries 110-0, 120-0 and 130-0.
 This means that the XREADGROUP does not return already-acknowledged entries.
 
-### Consumer group guarantees
+### Guarantees
 
 Unlike XREAD, XREADGOUP will never skip stream entries.
 In traffic redirection, XREADGROUP may return entries that have been read but not acknowledged.
