@@ -23,20 +23,16 @@ To create a support package:
     The package is created and downloaded by your browser.
 
 {{%expand "The package creation failed with an error? You can't access the UI?" %}}
-If package creation fails with `internal error` or if you cannot access the UI, create a support package for the cluster from the command-line with:
+If package creation fails with `internal error` or if you cannot access the UI, create a support package for the cluster from the command-line on any of the nodes in the cluster with the command: `/opt/redislabs/bin/rladmin cluster debug_info`
 
-- On any one of the nodes in the cluster, run: `/opt/redislabs/bin/rladmin cluster debug_info`
+- If `rladmin cluster debug_info` fails for lack of space in the `/tmp` directory, you can:
 
-    - If `rladmin cluster debug_info` fails for lack of space in the `/tmp` directory, you can:
+    1. Change the storage location where the support package is saved: `rladmin cluster config debuginfo_path <path>`
 
-        1. Change the storage location where the support package is saved: `rladmin cluster config debuginfo_path <path>`
+        The `redislabs` user must have write access to the storage location.
+    1. On any one of the node in the cluster, run: `rladmin cluster debug_info`
 
-            The `redislabs` user must have write access to the storage location.
-        1. On any one of the node in the cluster, run: `rladmin cluster debug_info`
-
-    - If `rladmin cluster debug_info` fails for another reason, you can create a support package for the cluster from the command-line with:
-
-        - On each node of the cluster, run: `/opt/redislabs/bin/debuginfo`
+- If `rladmin cluster debug_info` fails for another reason, you can create a support package for the cluster from the command-line on each node in the cluster with the command: `/opt/redislabs/bin/debuginfo`
 
 Upload the tar archive to [Redis Labs Support](https://support.redislabs.com). The path to the archive is shown in the command output.
 {{% /expand%}}
