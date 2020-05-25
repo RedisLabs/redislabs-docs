@@ -23,7 +23,6 @@ That said, the following Redis features are not applicable in the context of our
     - [OBJECT](http://redis.io/commands/OBJECT)
     - [SHUTDOWN](http://redis.io/commands/SHUTDOWN)
     - [CLIENT PAUSE](http://redis.io/commands/CLIENT-PAUSE)
-    - [WAIT](http://redis.io/commands/WAIT)
     - [COMMAND INFO](http://redis.io/commands/COMMAND-INFO)
     - [COMMAND COUNT](http://redis.io/commands/COMMAND-COUNT)
     - [COMMAND GETKEYS](http://redis.io/commands/COMMAND-GETKEYS)
