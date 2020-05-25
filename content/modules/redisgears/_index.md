@@ -21,6 +21,6 @@ To get stated with RedisGears, see our [RedisGears Quick Start Tutorial]({{< rel
 
 ## Write-Behind Caching Patterns
 
-Redis users typically implement caching by using the look-aside pattern. However, with RedisGears, you can implement write-behind and read-through caching strategies, as well.
+Redis users typically implement caching by using the look-aside pattern. However, with RedisGears, you can implement write-behind caching strategies, as well.
 
 Redis Labs publishes RedisGears recipes to support write-behind. You can learn how to use these recipes in our [write-behind caching]({{< relref "/modules/redisgears/write-behind.md" >}}) guide.
