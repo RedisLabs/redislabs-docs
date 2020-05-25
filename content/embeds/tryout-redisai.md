@@ -1,17 +1,17 @@
 ## Getting Started
 
-The easiest way to get a standalone Redis server with RedisAI bootstrapped locally is to use the official RedisAI Docker container image:
+<!-- The easiest way to get a standalone Redis server with RedisAI bootstrapped locally is to use the official RedisAI Docker container image:
 
 ```src
 docker run -d --name redisai -p 6379:6379 redisai/redisai:latest
-```
+``` -->
 
-Once the server is up, you can connect to it using any [Redis client](https://redis.io/clients). Better yet, some languages already have client implementations for RedisAI - the list can be found at the [Clients page](clients.md). RedisAI clients wrap the core API and simplify the interaction with the module.
+You can connect to RedisAI using any [Redis client](https://redis.io/clients). Better yet, some languages already have client implementations for RedisAI - the list can be found at the [Clients page](clients.md). RedisAI clients wrap the core API and simplify the interaction with the module.
 
 We'll begin by using the official [`redis-cli`](https://redis.io/topics/rediscli) Redis client. If you have it locally installed feel free to use that, but it is also available from the container:
 
 ```src
-docker exec -it redisai redis-cli
+redis-cli
 ```
 
 ## Using RedisAI Tensors
@@ -31,7 +31,7 @@ AI.TENSORSET tA FLOAT 2 VALUES 2 3
 Copy the command to your cli and hit the `<ENTER>` on your keyboard to execute it. It should look as follows:
 
 ```src
-$ docker exec -it redisgears redis-cli
+$ redis-cli
 127.0.0.1:6379> AI.TENSORSET tA FLOAT 2 VALUES 2 3
 OK
 ```
@@ -84,7 +84,7 @@ This is a great way to inspect a graph and find out node names for inputs and ou
 redis-cli doesn't provide a way to read files' contents, so to load the model with it we'll use the command line and output pipes:
 
 ```src
-$ cat graph.pb | docker exec -i redisai redis-cli -x \
+$ cat graph.pb | redis-cli -x \
             AI.MODELSET mymodel TF CPU INPUTS a b OUTPUTS c
 OK
 ```
@@ -173,7 +173,7 @@ def multiply(a, b):
 Assuming that the script is stored in the 'myscript.py' file it can be uploaded via command line and the `AI.SCRIPTSET` command as follows:
 
 ```src
-cat myscript.py | docker exec -i redisai redis-cli -x AI.SCRIPTSET myscript CPU
+cat myscript.py | redis-cli -x AI.SCRIPTSET myscript CPU
 ```
 
 This will store the PyTorch Script from 'myscript.py' under the 'myscript' key and will associate it with the CPU device for execution. Once loaded, the script can be run with the following:
