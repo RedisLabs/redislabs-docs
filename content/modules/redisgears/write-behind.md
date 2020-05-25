@@ -12,8 +12,6 @@ Write-behind caching is a caching strategy in which the cache layer itself conne
 
 Here's how these caching patterns work:
 
-### Write-Behind Caching
-
 1. Your application uses the cache for reads and writes.
 1. The cache syncs any changed data to the backing database asynchronously.
 
