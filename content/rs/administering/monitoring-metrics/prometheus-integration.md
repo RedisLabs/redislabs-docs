@@ -332,6 +332,8 @@ These are the metrics available:
 
 ### Replication Metrics
 
+| Metric | Description |
+| ------ | :------ |
 | bdb_replicaof_syncer_ingress_bytes | Rate of compressed incoming network traffic to Replica Of DB (bytes/sec) |
 | bdb_replicaof_syncer_ingress_bytes_decompressed | Rate of decompressed incoming network traffic to Replica Of DB (bytes/sec) |
 | bdb_replicaof_syncer_local_ingress_lag_time | Lag time between the source and the destination for Replica Of traffic (ms) |
