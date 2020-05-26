@@ -194,19 +194,7 @@ You can use XREAD to reliably consume a stream only if all writes to the stream 
 
 ## Consumer groups
 
-Active-Active databases fully support consumer groups with Redis Streams.
-
-Here's an example of a using XGROUP with an Active-Active database:
-
-| Time | Region 1                  | Region 2                  |
-| ---- | --------------------------- | --------------------------- |
-| _t1_   | `XGROUP CREATE x g1 0`        |                             |
-| _t2_   | _— Sync —_                | _— Sync —_                |
-| _t3_   |                             | `XGROUP CREATE x g2 0`        |
-| _t4_   | _— Sync —_                | _— Sync —_                |
-| _t5_   | `XINFO GROUPS x` <br/>**→ [g1, g2]** | `XINFO GROUPS x` <br/>**→ [g1, g2]** |
-
-Here is an example of creating two consumer groups concurrently:
+Active-Active databases fully support consumer groups with Redis Streams. Here is an example of creating two consumer groups concurrently:
 
 | Time | Region 1                  | Region 2                  |
 | ---- | --------------------------- | --------------------------- |
@@ -222,14 +210,14 @@ The global PEL is a unification of all consumer PELs, which are disjoint.
 
 An Active-Active database stream maintains a global PEL and a per-consumer PEL for each region.
 
-XREADGROUP, when given an ID different from the special ">" ID, iterates simultaneously over all of the PELs for all consumers.
+When given an ID different from the special ">" ID, XREADGROUP iterates simultaneously over all of the PELs for all consumers.
 It returns the next entry by comparing entry IDs from the different PELs.
 {{% /note %}}
 
 ### Conflict resolution
 
 The "delete wins" approach is a way to automatically resolve conflicts with consumer groups.
-In case of concurrent operations, the delete operations "win" over the concurrent operation.
+In case of concurrent consumer group operations, a delete will "win" over other concurrent operations on the same group.
 
 In this example, the DEL at _t4_ deletes both the observed `group1` and the non-observed `group2`:
 
@@ -255,7 +243,7 @@ In this example, the XGROUP DESTROY at _t4_ affects both the observed `g1` creat
 
 ### Group replication
 
-Calls to XREADGROUP and XACK change the state of a group or consumer. However, it is not efficient to replicate every change to a consumer or group.
+Calls to XREADGROUP and XACK change the state of a group or consumer. However, it's not efficient to replicate every change to a consumer or group.
 
 To maintain consumer groups in Active-Active databases with optimal performance:
 
@@ -306,12 +294,14 @@ This means that the XREADGROUP does not return already-acknowledged entries.
 Unlike XREAD, XREADGOUP will never skip stream entries.
 In traffic redirection, XREADGROUP may return entries that have been read but not acknowledged.
 
-## Comparing Streams in Active-Active Databases with Streams in Open Source Redis
+## Summary
 
-### Stream command notes
+With Active-Active streams, you can write to the same logical stream from multiple regions. As a result, the behavior of Active-Active streams differs somewhat from the behavior you get with open source Redis. This is summarized below:
 
-1. XADD with a full ID will fail when using the _strict_ default ID generation mode.
-1. XREAD may skip entries when iterating a stream that is concurrently written to from more than one region.
+### Stream commands
+
+1. When using the _strict_ ID generation mode, XADD does not permit full stream entry IDs (that is, an ID containing both MS and SEQ).
+1. XREAD may skip entries when iterating a stream that is concurrently written to from more than one region. For reliable stream iteration, use XREADGROUP instead.
 1. XSETID fails when the new ID is less than current ID.
 
 ### Consumer group notes
