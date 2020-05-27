@@ -35,8 +35,8 @@ Team members can have different roles to the account:
 - **Viewer** - Can view all databases and thier configuration (including database secrets)
 
 ### Team Management for GCP Marketplace customers
-If you subscribed to Redis Cloud using GCP Marketplace, the team managment will be done in the GCP console under the IAM section.
-To grant access to a particular GCP user, a special role must be assign to the user.
+If you subscribed to Redis Cloud using GCP Marketplace, team management will be done in the GCP console under the IAM section.
+To grant access to a particular GCP user, a special role must be assigned to the user.
 The roles are:
 - **Viewer** - serviceusage.serviceUsageViewer and redisenterprisecloud.viewer
 - **Owner** - serviceusage.serviceUsageViewer and redisenterprisecloud.admin
