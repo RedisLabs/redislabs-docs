@@ -5,14 +5,14 @@ weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph 1.2.2
+## RedisGraph 1.2.2 (May 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.2.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
 
-## RedisGraph 1.2.0
+## RedisGraph 1.2.0 (April 2019)
 
 This is a major release for RedisGraph.
 Compared to previous release 1.0.15:
