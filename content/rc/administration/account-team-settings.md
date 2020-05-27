@@ -31,8 +31,8 @@ members on this account.
 Team members can have different roles to the account:
 
 - **Owner** - Can view, create, and edit any settings in the account
-- **Member** - Can view, create, and edit databases.
-- **Viewer** - Can view all databases and thier configuration (including database secrets)
+- **Member** - Can view, create, and edit databases
+- **Viewer** - Can view all databases and their configurations (including database secrets)
 
 ### Team Management for GCP Marketplace customers
 
