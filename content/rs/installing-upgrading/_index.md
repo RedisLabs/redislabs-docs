@@ -10,7 +10,7 @@ aliases: /rs/administering/installing-upgrading/
 To install Redis Enterprise Software (RS), you must first choose the [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
 In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS with:
 
-- [Amazon AWS AMI]({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}})
+- [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
 - [Docker container]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) (for development and testing only)
 - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
 - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
@@ -24,7 +24,7 @@ To access the installation package for any of these platforms:
 {{% note %}}
 Before you install the Linux package or AWS AMI on an AWS instance,
 review the [configuration requirements for AWS instances]
-({{< relref "/rs/installing-upgrading/configuring-aws-instances.md" >}}).
+({{< relref "configuring-aws-instances.md" >}}).
 {{% /note %}}
 
 In this article we walk you through the process for installing the RS installation package for Linux.
@@ -72,17 +72,17 @@ To install RS on Linux from the CLI:
 1. Copy the installation package to the node.
 1. On the node, change to the directory where the installation package is and extract the installation files:
 
-    ```src
-    tar vxf <tarfile name>
-    ```
+```src
+tar vxf <tarfile name>
+```
 
 1. To install RS, run:
 
-    {{% note %}}
+    {{< note >}}
 - The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
 - RS is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
 - You must either be logged in as the root user or use sudo to run the install process.
-    {{% /note %}}
+    {{< /note >}}
 
     ```src
     sudo ./install.sh
@@ -91,12 +91,12 @@ To install RS on Linux from the CLI:
 1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
     including the `rlcheck` installation verification.
 
-    {{% note %}}
+    {{< note >}}
 To install RS without answering the installation questions, either:
 
 - Run `./install.sh -y` to answer yes to all of the questions.
 - Use an [answer file](#installation-answer-file) to answer the installation questions.
-    {{% /note %}}
+    {{< /note >}}
 
     After RS is successfully installed, the IP address of the RS web UI is shown:
 

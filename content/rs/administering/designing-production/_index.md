@@ -9,4 +9,4 @@ The information in the section discusses important topics you need to
 know about when designing your Redis Enterprise Software cluster for a
 production deployment.
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}

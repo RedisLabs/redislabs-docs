@@ -6,4 +6,4 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/
 ---
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}

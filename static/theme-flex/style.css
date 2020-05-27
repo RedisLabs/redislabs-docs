@@ -1197,6 +1197,18 @@ nav#toc ul li {
   color: #b62411;
   font-size: 1rem;
 }
+
+@media screen and (max-width: 1325px){
+  .main-content-right {
+    min-width: 0 !important;
+  }
+
+  nav#toc {
+    width: auto !important;
+    padding-left: 10px !important;
+  }
+}
+
 .nav-links-footer a {
   color: #354253;
 }
@@ -3292,7 +3304,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
 .chevron.down:before {
 	top: 0;
 	transform: rotate(45deg);
-  }
 }
 
 /* Helpers */
@@ -3326,6 +3337,13 @@ a[href*="#no-click"], img[src*="#no-click"] {
   cursor: pointer;
   font-weight: 600;
   text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .page .main-content nav .nav-tabs .nav-item {
+    font-size: 12px;
+    padding: 3px;
+  }
 }
 
 .page .main-content .tab-content {  
