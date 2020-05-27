@@ -42,7 +42,7 @@ To grant Redis Cloud access to a GCP user, assign one of these roles to the user
 - **Viewer** - serviceusage.serviceUsageViewer and redisenterprisecloud.viewer
 - **Owner** - serviceusage.serviceUsageViewer and redisenterprisecloud.admin
 
-Users must log in using SSO to Redis Cloud at least once for them to be listed as part of the team.
+Users must log in using SSO to Redis Cloud at least once for them to be added to the team.
 
 ## Multi-Factor Authentication (MFA)
 
