@@ -10,4 +10,4 @@ Enterprise Software (RS).
 
 Topics:
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}
