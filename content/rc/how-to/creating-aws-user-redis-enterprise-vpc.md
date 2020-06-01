@@ -254,8 +254,8 @@ Last, create a user and attach the policy you created:
 
 1. In AWS IAM console, go to **Users** > select **Add user**.
     ![add_user](/images/rc/add_user.png?width=700&height=751)
-1. Name it **redislabs-user** and only **Programmatic
-    access**.
+1. Name it **redislabs-user** and check only the **Programmatic
+    access** checkbox.
 1. Set a password or auto-generate one, and click **Next: Permissions**.
 1. Select **Attach existing policies directly** and select
     **RedislabsIAMUserRestrictedPolicy** from the list.
@@ -264,16 +264,17 @@ Last, create a user and attach the policy you created:
 1. Click **Create user**.
 1. Download the user credentials and store them in a secure location.
 
-## Step 5: Create the Role
+## Step 5: Create the Console Access Role
 
 Last, create a user and attach the policy you created:
 
 1. In AWS IAM console, go to **Roles** > select **Create role**.
 1. Select the **Another AWS account**
 1. Under **Account ID** enter account number **168085023892** (account belonging to Redis Cloud)
-1. Under Option **do not** check Require external ID, but **do** check **Require MFA**
+1. Under Options, **do** check the **Require MFA** checkbox, but **do not** check Require external ID
 1. Click **Next: Permissions**
 1. Attach the policy **RedisLabsIAMUserRestrictedPolicy** to the role
-1. Click **Next: Review** and then **Create role**
+1. Click **Next: Review**
+1. Name the role **redislabs-role** and then click **Create role**
 
 
