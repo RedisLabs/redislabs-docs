@@ -256,7 +256,6 @@ Last, create a user and attach the policy you created:
     ![add_user](/images/rc/add_user.png?width=700&height=751)
 1. Name it **redislabs-user** and only **Programmatic
     access**.
-    ![select_access_type](/images/rc/select_access_type.png?width=700&height=393)
 1. Set a password or auto-generate one, and click **Next: Permissions**.
 1. Select **Attach existing policies directly** and select
     **RedislabsIAMUserRestrictedPolicy** from the list.
