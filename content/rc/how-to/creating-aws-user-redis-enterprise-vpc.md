@@ -6,14 +6,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/how-to/creating-aws-user-redis-enterprise-vpc/
 ---
-Redis Cloud automatically manages your cluster and provisions instances when needed. In order for Redis Cloud to be able to manage AWS resources, you must have an AWS account that is separate from your AWS application account and a user on that separate AWS account.
+Normally, the infrastructure of your Redis Cloud subscriptions on AWS is created in dedicated AWS accounts that are managed on your behalf. Redis Cloud Ultimate cutomers only may choose to have this infrastructure created on their own AWS accounts. These accounts should be separate from any AWS application accounts and there are some IAM roles and policies that need to be created for Redis Cloud to be able to manage the infrastructure for you.
 
-Within that new AWS account, you need to create an **instance role** and
-a user with a specific **policy**. The user requires both **UI console access**
-and an **Access Key** so that Redis Cloud can programmatically create
-and manage AWS resources on your behalf. After you create the user,
-generate an Access Key for the user and save the key in a secure location.
-These keys are required when you create an Redis Cloud account.
+Within that new AWS account, you need to create an **instance role**, a user with an **Access Key** and a role providing **AWS console access** so that Redis Cloud can programmatically create and manage AWS resources on your behalf. After you create the user, generate an Access Key for the user and save the key in a secure location. These keys are required when you create an Redis Cloud account.
 
 {{% warning %}}
 We use the provided credentials to configure your AWS environment and provision required resources.
@@ -259,8 +254,8 @@ Last, create a user and attach the policy you created:
 
 1. In AWS IAM console, go to **Users** > select **Add user**.
     ![add_user](/images/rc/add_user.png?width=700&height=751)
-1. Name it **redislabs-user** and select both **Programmatic
-    access** and **AWS Management Console access**.
+1. Name it **redislabs-user** and only **Programmatic
+    access**.
     ![select_access_type](/images/rc/select_access_type.png?width=700&height=393)
 1. Set a password or auto-generate one, and click **Next: Permissions**.
 1. Select **Attach existing policies directly** and select
@@ -269,3 +264,17 @@ Last, create a user and attach the policy you created:
 1. Click **Next: Review**.
 1. Click **Create user**.
 1. Download the user credentials and store them in a secure location.
+
+## Step 5: Create the Role
+
+Last, create a user and attach the policy you created:
+
+1. In AWS IAM console, go to **Roles** > select **Create role**.
+1. Select the **Another AWS account**
+1. Under **Account ID** enter account number **168085023892** (account belonging to Redis Cloud)
+1. Under Option **do not** check Require external ID, but **do** check **Require MFA**
+1. Click **Next: Permissions**
+1. Attach the policy **RedisLabsIAMUserRestrictedPolicy** to the role
+1. Click **Next: Review** and then **Create role**
+
+
