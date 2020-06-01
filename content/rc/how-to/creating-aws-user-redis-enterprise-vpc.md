@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/how-to/creating-aws-user-redis-enterprise-vpc/
 ---
-Normally, the infrastructure of your Redis Cloud subscriptions on AWS is created in dedicated AWS accounts that are managed on your behalf. Redis Cloud Ultimate cutomers only may choose to have this infrastructure created on their own AWS accounts. These accounts should be separate from any AWS application accounts and there are some IAM roles and policies that need to be created for Redis Cloud to be able to manage the infrastructure for you.
+Normally, the infrastructure of your Redis Cloud subscriptions on AWS is created in dedicated AWS accounts that are managed on your behalf. Redis Cloud Ultimate cutomers only may choose to have this infrastructure created on their own AWS accounts. These accounts should be separate from any AWS application accounts and there are some IAM entities that need to be created for Redis Cloud to be able to manage the infrastructure for you.
 
-Within that new AWS account, you need to create an **instance role**, a user with an **Access Key** and a role providing **AWS console access** so that Redis Cloud can programmatically create and manage AWS resources on your behalf. After you create the user, generate an Access Key for the user and save the key in a secure location. These keys are required when you create an Redis Cloud account.
+Within that new AWS account, you need to create an **instance role**, a user with an **access key** and a role providing **AWS console access** so that Redis Cloud can programmatically create and manage AWS resources on your behalf. After you create the user, generate an Access Key for the user and save the key in a secure location. These keys are required when you create an Redis Cloud account.
 
 {{% warning %}}
 We use the provided credentials to configure your AWS environment and provision required resources.
@@ -104,7 +104,7 @@ First, create a policy to use for the new instance role:
 1. Enter **RedisLabsInstanceRolePolicy** as the policy name and click **Create Policy**.
     ![review_role_policy](/images/rc/review_role_policy.png?width=700&height=270)
 
-## Step 2: Create the Role
+## Step 2: Create the Service Role
 
 Now create the role that uses the policy:
 
@@ -248,7 +248,7 @@ Now create a policy to assign to the user:
 1. Enter `RedislabsIAMUserRestrictedPolicy` as the policy name and click **Create Policy**.
     ![review_user_policy](/images/rc/review_user_policy.png?width=700&height=292)
 
-## Step 4: Create the User
+## Step 4: Create the Programmatic Access User
 
 Last, create a user and attach the policy you created:
 
