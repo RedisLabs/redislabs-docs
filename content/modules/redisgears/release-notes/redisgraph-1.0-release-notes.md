@@ -24,12 +24,6 @@ Bugfixes (compared to RC1):
 - #[311](https://github.com/RedisGears/RedisGears/issues/311) Fix out-of-order reply in certain situations.
 - #[321](https://github.com/RedisGears/RedisGears/issues/321) Return error when unknown argument is given.
 
-Compiled binaries:
-
-- [Boinic](http://redismodules.s3.amazonaws.com/redisgears/redisgears.linux-bionic-x64.1.0.0.zip)
-- [Xenial](http://redismodules.s3.amazonaws.com/redisgears/redisgears.linux-xenial-x64.1.0.0.zip)
-- [Centos](http://redismodules.s3.amazonaws.com/redisgears/redisgears.linux-centos7-x64.1.0.0.zip)
-
 {{% note %}}
 - The version inside Redis will be 10000 or 1.0.0 in semantic versioning.
 - This version requires the Redis version to be 6.0 and above.

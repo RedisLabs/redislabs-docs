@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-## Write-Behind Caching Defined
+## Write-Behind Caching
 
-Write-behind caching is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then updates the backing database as needed. Redis Labs currently supports write-behind caching for both Redis Cloud and Redis Enterprise.
+Write-behind is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis Labs currently supports write-behind caching in [Redis Enterprise Software]({{< relref "/rs" >}}). 
 
 Here's how these caching patterns work:
 
@@ -93,9 +93,9 @@ gears-cli --host <host>
 
 ### Secret Management
 
-You may not want to store database credentials in your RedisGears functions. To avoid this, you can store these credentials in-memory as module parameters and then reference them from your functions.
+You may not want to store database credentials in your RedisGears functions. To avoid this, you can pass these credentials as module parameters and then reference them from your functions.
 
-The code below show how to references these in-memory credentials when creating a backing database connection.
+The code below shows how to reference these credentials when creating a backing database connection.
 
 ```py
 def User():
