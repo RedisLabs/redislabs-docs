@@ -33,24 +33,6 @@ If the changes that you make resolve two separate issues, make two separate PRs.
 After you commit your changes to the public repo or your forked repo,
 you can open a pull request to submit your changes for consideration.
 
-## Serving the Docs Site Locally
-
-After you clone the repository to your local machine, you can serve the site locally with Hugo and then browse to http://localhost:1313 to see how it looks.
-
-The Redis Labs documentation site does not run on the latest version of [Hugo](http://gohugo.io).
-You can go to the readme page of the redislabs-docs repository to find the version of Hugo that is currently supported.
-
-To run an older version of Hugo on your local machine:
-
-1. Go to the [Hugo releases](https://github.com/gohugoio/hugo/releases) and find the release version you want.
-1. Download your selected binary — by default, it goes to your Downloads folder.
-1. In terminal, navigate to: /usr/local/bin
-1. Create a directory for this version of Hugo and name it something sensible, like “hugo-0.57.2”.
-1. In your terminal, cd to your newly created Hugo-version folder, and run: `tar zxf ~/Downloads/<hugo_archive>`
-1. Confirm it’s working from the command line now: `./hugo version`
-1. Make a shell config file alias, for example: `alias hugo57='/usr/local/bin/hugo-0.57.2/hugo'`
-1. Go to your redislabs-docs repo and use the alias to build the docs, for example: `hugo57 serve`
-
 ## Adding Pages
 
 Every article in the docs is an individual markdown file.

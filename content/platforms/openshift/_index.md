@@ -12,7 +12,7 @@ an operator. The operator is a software component that runs in your
 deployment namespace and facilitates deploying and managing
 Redis Enterprise clusters.
 
-{{< allchildren style="h2" description="true" >}}
+{{%allchildren style="h2" description="true"%}}
 
 {{% comment %}}
 These are the steps required to set up a Redis Enterprise Software

@@ -19,23 +19,23 @@ Here are some frequently asked questions about Redis Enterprise Software.
 {{< embed-md "compatible-with-oss.md"  >}}
 {{< /expand >}}
 
-{{< expand "Can I keep my data safe and always available?" >}}
+{{%expand "Can I keep my data safe and always available?" %}}
 Redis Enterprise Software offers a comprehensive suite of
 high-availability provisions, including in-memory replication,
 persistent storage, and backups.
-{{< /expand>}}
+{{% /expand%}}
 
-{{< expand "What do you mean by the term Shard?" >}}
+{{%expand "What do you mean by the term Shard?" %}}
 A shard is any type of provisioned Redis instance, such as a master
 copy, slave copy, database shard that is part of a clustered database,
 etc.
-{{< /expand>}}
+{{% /expand%}}
 
-{{< expand "What client can I use to connect to the databases in Redis Enterprise?" >}}
+{{%expand "What client can I use to connect to the databases in Redis Enterprise?" %}}
 Redis Enterprise works with all existing standard clients; it does not require you to use any special clients.
-{{< /expand>}}
+{{% /expand%}}
 
-{{% expand "What am I allowed to do with the trial version?" %}}
+{{%expand "What am I allowed to do with the trial version?" %}}
 You can use, experience and administer the full capabilities of Redis
 Enterprise Software (RS), but you may not deploy it in a production
 environment. In addition, the trial version allows a maximum of four
@@ -46,19 +46,19 @@ not provide the same support options as the paid version. Finally, no
 SLA is provided with the trial version. To continue operation of the
 cluster with full capabilities, you must purchase a [subscription
 cluster key from Redis Labs](https://redislabs.com/pricing).
-{{% /expand %}}
+{{% /expand%}}
 
-{{< expand "What are the Redis Enterprise Software (RS) payment schedule and terms?" >}}
+{{%expand "What are the Redis Enterprise Software (RS) payment schedule and terms?" %}}
 Contact us at <sales@redislabs.com> to learn about RS pricing.
-{{< /expand>}}
+{{% /expand%}}
 
-{{< expand "What client can I use to connect to the databases in Redis Enterprise Software?" >}}
+{{%expand "What client can I use to connect to the databases in Redis Enterprise Software?" %}}
 Redis Enterprise Software (RS) works with any standard Redis client.
 Use your existing Redis client and code, as they work directly against a
 RS cluster. You point your existing standard Redis client and code
 connection string at the RS cluster, then scale on the RS cluster as
 you need.
-{{< /expand>}}
+{{% /expand%}}
 {{< /expand-control >}}
 
 ## Technical Capabilities
@@ -68,7 +68,7 @@ you need.
 {{< embed-md "how-many-databases-software.md"  >}}
 {{< /expand >}}
 
-{{% expand "What happens when my database fills up?" %}}
+{{%expand "What happens when my database fills up?" %}}
 As explained in the open source [Redis FAQ](https://redis.io/topics/faq),
 under "What happens if Redis runs out of memory?":
 
@@ -83,5 +83,5 @@ You can set the **maxmemory** value of each Redis Enterprise Software databas
 the management UI using the **Memory limit** property, as well as
 configure an eviction policy by setting it to any of the standard Redis
 behaviors, without interrupting database operations.
-{{< /expand>}}
+{{% /expand%}}
 {{< /expand-control >}}
