@@ -5,7 +5,7 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisTimeSeries 1.0.3
+## RedisTimeSeries 1.0.3 (September 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.0.
@@ -29,7 +29,7 @@ Main Performance improvements:
 - #[3651](https://github.com/RedisTimeSeries/RedisTimeSeries/commit/3651ef8eb65b390e333053b91a64617fc2382f6e) Do not use `_union` if there's only 1 leaf in the index
 - #[0a68](https://github.com/RedisTimeSeries/RedisTimeSeries/commit/0a68d4eca95108595ac7dfbae68d3f0371e41470) Make _difference faster by iterating over the left dict (which is always smaller)
 
-## RedisTimeSeries 1.0.1
+## RedisTimeSeries 1.0.1 (July 2019)
 
 Update urgency: Minor
 This is a maintenance release for version 1.0.

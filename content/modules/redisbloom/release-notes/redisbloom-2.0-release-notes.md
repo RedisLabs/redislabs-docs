@@ -5,7 +5,7 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisBloom 2.0.3
+## RedisBloom 2.0.3 (July 2019)
 
 - Performance improvements:
     - #[95](https://github.com/RedisBloom/RedisBloom/issues/95) Top-K - Reduce checks on heap, now only checks if item count is larger than minimum in heap.
@@ -16,7 +16,7 @@ categories: ["Modules"]
     - #[89](https://github.com/RedisBloom/RedisBloom/issues/89) Module update broke rdb files
     - #[98](https://github.com/RedisBloom/RedisBloom/issues/98) Compilation for macOS
 
-## RedisBloom 2.0.0
+## RedisBloom 2.0.0 (June 2019)
 
 We are proud to announce that we doubled the number of probabilistic data structures that are generally available in RedisBloom.  Full documentation is available on [redisbloom.io](redisbloom.io)
 

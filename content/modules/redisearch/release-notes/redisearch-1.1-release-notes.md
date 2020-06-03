@@ -5,7 +5,7 @@ weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 1.1.0
+## RediSearch 1.1.0 (April 2018)
 
 This is a major version (we almost named it 2.0), which includes months of work, mostly on the brand new aggregations engine.
 
