@@ -80,12 +80,14 @@ RedisAI provides the following data structures:
 
 ## DL/ML Backends
 
-RedisAI supports the following DL/ML identifiers and respective backend libraries:
+RedisAI supports DL/ML identifiers and their respective backend libraries, including:
 
 - **TF**: The TensorFlow backend
 - **TFLITE**: The TensorFlow Lite backend
 - **TORCH**: The PyTorch backend
 - **ONNX**: ONNXRuntime backend
+
+A complete list of supported backends is in the [release notes for each version]({{< relref "/modules/redisai/release-notes/_index.md" >}}).
 
 Backend libraries are dynamically loaded as needed, but can also be loaded during booting or at runtime.
 Refer to these pages for more information on loading backends:
