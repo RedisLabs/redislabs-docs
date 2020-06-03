@@ -37,9 +37,9 @@ In the example below, we write to a stream concurrently from two regions. Notice
 </tr>
 
 <tr>
-<td><em>t4</em></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100]</strong></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-3700]</strong></td>
+<td><em>t2</em></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-1]</strong></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-2]</strong></td>
 </tr>
 
 <tr>
@@ -50,8 +50,8 @@ In the example below, we write to a stream concurrently from two regions. Notice
 
 <tr>
 <td><em>t4</em></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100, 1589929246795-3700]</strong></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100, 1589929246795-3700]</strong></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-1, 1589929246795-2]</strong></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-1, 1589929246795-2]</strong></td>
 </tr>
 </tbody>
 </table>
@@ -96,8 +96,8 @@ In the example below, a stream, `x`, is created at _t1_. At _t3_, the stream exi
 
 <tr>
 <td><em>t3</em></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100]</strong></code></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2100]</strong></code></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-1]</strong></code></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2]</strong></code></td>
 </tr>
 
 
@@ -116,8 +116,8 @@ In the example below, a stream, `x`, is created at _t1_. At _t3_, the stream exi
 
 <tr>
 <td><em>t6</em></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-3700]</strong></code></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-3700]</strong></code></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-2]</strong></code></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929246795-2]</strong></code></td>
 </tr>
 
 
@@ -128,7 +128,7 @@ At _t4_, the stream is deleted from Region 1. At the same time, an entry with ID
 
 ### ID generation modes
 
-Usually, you should allow Redis streams generate its own stream entry IDs. You do this by specifying `*` as the ID in calls to XADD. However, you _can_ provide your own custom ID when adding entries to a stream, and this is where you need to be careful.
+Usually, you should allow Redis streams generate its own stream entry IDs. You do this by specifying `*` as the ID in calls to XADD. However, you _can_ provide your own custom ID when adding entries to a stream.
 
 Because Active-Active databases replicate asynchronously, providing your own IDs can create streams with duplicate IDs. This can occur when your write to the same stream from multiple regions.
 
@@ -160,17 +160,17 @@ To change XADD's ID generation mode, use the `rladmin` command-line utility:
 
 Set _strict_ mode:
 ```sh
-rladmin> tune db crdb crdt_xadd_id_uniqueness_mode strict
+rladmin> tune myCRDB crdb crdt_xadd_id_uniqueness_mode strict
 ```
 
 Set _semi-strict_ mode:
 ```sh
-rladmin> tune db crdb crdt_xadd_id_uniqueness_mode semi-strict
+rladmin> tune myCRDB crdb crdt_xadd_id_uniqueness_mode semi-strict
 ```
 
 Set _liberal_ mode:
 ```sh
-rladmin> tune db crdb crdt_xadd_id_uniqueness_mode liberal
+rladmin> tune myCRDB crdb crdt_xadd_id_uniqueness_mode liberal
 ```
 
 ### Iterating a stream with XREAD
@@ -184,10 +184,10 @@ In the example below, XREAD skips entry `115-0`.
 | _t1_   | `XADD x 110 f1 v1`                                   | `XADD x 115 f1 v1`                                   |
 | _t2_   | `XADD x 120 f1 v1`                                   |                                                    |
 | _t3_   | `XADD x 130 f1 v1`                                   |                                                    |
-| _t4_   | `XREAD COUNT 2 STREAMS x 0` <br/>**→ [110-2700, 120-2700]**       |                                                    |
+| _t4_   | `XREAD COUNT 2 STREAMS x 0` <br/>**→ [110-1, 120-1]**       |                                                    |
 | _t5_   | _— Sync —_                                       | _— Sync —_                                       |
-| _t6_   | `XREAD COUNT 2 STREAMS x 120` <br/>**→ [130-2700]            |                                                    |
-| _t7_   | `XREAD STREAMS x 0` <br/>**→[110-2700, 115-3900, 120-2700, 130-2700]** | `XREAD STREAMS x 0` <br/>**→[110-0, 115-0, 120-0, 130-0]** |
+| _t6_   | `XREAD COUNT 2 STREAMS x 120` <br/>**→ [130-1]            |                                                    |
+| _t7_   | `XREAD STREAMS x 0` <br/>**→[110-1, 115-3900, 120-1, 130-1]** | `XREAD STREAMS x 0` <br/>**→[110-0, 115-0, 120-0, 130-0]** |
 
 
 You can use XREAD to reliably consume a stream only if all writes to the stream originate from a single region. Otherwise, you should use XREADGROUP, which always guarantees reliable stream consumption.
@@ -243,7 +243,7 @@ In this example, the XGROUP DESTROY at _t4_ affects both the observed `g1` creat
 
 ### Group replication
 
-Calls to XREADGROUP and XACK change the state of a group or consumer. However, it's not efficient to replicate every change to a consumer or group.
+Calls to XREADGROUP and XACK change the state of a consumer group or consumer. However, it's not efficient to replicate every change to a consumer or consumer group.
 
 To maintain consumer groups in Active-Active databases with optimal performance:
 
@@ -257,16 +257,16 @@ For example:
 | ---- | ------------------------------------------------- | ------------------------ |
 | _t1_   | `XADD messages 110 text hello`                                |                          |
 | _t2_   | `XGROUP CREATE messages group1 0`                              |                          |
-| _t3_   | `XREADGROUP GROUP group1 Alice STREAMS messages >` <br/>**→ [110-2700]** |                          |
+| _t3_   | `XREADGROUP GROUP group1 Alice STREAMS messages >` <br/>**→ [110-1]** |                          |
 | _t4_   | _— Sync —_                                      | _— Sync —_             |
-| _t5_   | `XRANGE messages - +` <br/>**→ [110-2700]**                          | XRANGE messages - + <br/>**→ [110-2700]** |
+| _t5_   | `XRANGE messages - +` <br/>**→ [110-1]**                          | XRANGE messages - + <br/>**→ [110-1]** |
 | _t6_   | `XINFO GROUPS messages` <br/>**→ [g1]**                            | XINFO GROUPS messages <br/>**→ [g1]**   |
 | _t7_   | `XINFO CONSUMERS messages` <br/>**→ [Alice]**                      | XINFO CONSUMERS messages <br/>**→ []**  |
 | _t8_   | `XPENDING messages group1 - +` <br/>**→ [110-0]**                     | XPENDING messages group1 - + <br/>**→ []** |
 
-Using XREADGROUP across instances can result in instances reading the same entries.
+Using XREADGROUP across regions can result in regions reading the same entries.
 This is due to the fact that Active-Active Streams is designed for at-least-once reads or a single consumer.
-As shown in the previous example, Region 2 is not aware of any group-related activity, so redirecting the XREADGROUP traffic from Region 1 to Region 2 results in reading entries that have already been read.
+As shown in the previous example, Region 2 is not aware of any consumer group activity, so redirecting the XREADGROUP traffic from Region 1 to Region 2 results in reading entries that have already been read.
 
 ### Replication performance optimizations
 
@@ -292,7 +292,7 @@ This means that the XREADGROUP does not return already-acknowledged entries.
 ### Guarantees
 
 Unlike XREAD, XREADGOUP will never skip stream entries.
-In traffic redirection, XREADGROUP may return entries that have been read but not acknowledged.
+In traffic redirection, XREADGROUP may return entries that have been read but not acknowledged. It may also even return entries that have already been acknowledged.
 
 ## Summary
 
