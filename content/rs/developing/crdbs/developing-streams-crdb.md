@@ -177,7 +177,7 @@ rladmin> tune myCRDB crdb crdt_xadd_id_uniqueness_mode liberal
 
 In open source Redis and in non-Active-Active databases, you can use XREAD to iterate over the entries in a Redis Stream. However, with an Active-Active database, XREAD may skip entries. This can happen when multiple regions write to the same stream.
 
-In the example below, XREAD skips entry `115-0`.
+In the example below, XREAD skips entry `115-2`.
 
 | Time | Region 1                                         | Region 2                                         |
 | ---- | -------------------------------------------------- | -------------------------------------------------- |
@@ -186,8 +186,8 @@ In the example below, XREAD skips entry `115-0`.
 | _t3_   | `XADD x 130 f1 v1`                                   |                                                    |
 | _t4_   | `XREAD COUNT 2 STREAMS x 0` <br/>**→ [110-1, 120-1]**       |                                                    |
 | _t5_   | _— Sync —_                                       | _— Sync —_                                       |
-| _t6_   | `XREAD COUNT 2 STREAMS x 120` <br/>**→ [130-1]            |                                                    |
-| _t7_   | `XREAD STREAMS x 0` <br/>**→[110-1, 115-3900, 120-1, 130-1]** | `XREAD STREAMS x 0` <br/>**→[110-0, 115-0, 120-0, 130-0]** |
+| _t6_   | `XREAD COUNT 2 STREAMS x 120` <br/>**→ [130-1]**            |                                                    |
+| _t7_   | `XREAD STREAMS x 0` <br/>**→[110-1, 115-2, 120-1, 130-1]** | `XREAD STREAMS x 0` <br/>**→[110-1, 115-2, 120-1, 130-1]** |
 
 
 You can use XREAD to reliably consume a stream only if all writes to the stream originate from a single region. Otherwise, you should use XREADGROUP, which always guarantees reliable stream consumption.
@@ -262,7 +262,7 @@ For example:
 | _t5_   | `XRANGE messages - +` <br/>**→ [110-1]**                          | XRANGE messages - + <br/>**→ [110-1]** |
 | _t6_   | `XINFO GROUPS messages` <br/>**→ [g1]**                            | XINFO GROUPS messages <br/>**→ [g1]**   |
 | _t7_   | `XINFO CONSUMERS messages` <br/>**→ [Alice]**                      | XINFO CONSUMERS messages <br/>**→ []**  |
-| _t8_   | `XPENDING messages group1 - +` <br/>**→ [110-0]**                     | XPENDING messages group1 - + <br/>**→ []** |
+| _t8_   | `XPENDING messages group1 - +` <br/>**→ [110-1]**                     | XPENDING messages group1 - + <br/>**→ []** |
 
 Using XREADGROUP across regions can result in regions reading the same entries.
 This is due to the fact that Active-Active Streams is designed for at-least-once reads or a single consumer.
