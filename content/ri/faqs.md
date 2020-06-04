@@ -115,11 +115,11 @@ Our licensing works on the sum of used memory on the redis instances you have ad
 {{< expand-control >}}
 
 {{% expand "Is RedisInsight a free tool?" %}}
-Yes, RedisInsight is available as a non-commercial, free of charge tool. You can find more information about the terms of use in the licence terms.
+Yes, RedisInsight is available as a non-commercial, free of charge tool. You can review the terms of use in the [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
 {{% /expand %}}
 
 {{% expand "Where can I find the licence terms of RedisInsight?" %}}
-You can find the licence terms of RedisInsight on the following page: https://redislabs.com/legal/
+See the official [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
 {{% /expand %}}
 
 
