@@ -117,16 +117,8 @@ Our licensing works on the sum of used memory on the redis instances you have ad
 Yes, RedisInsight is available as a non-commercial, free of charge tool. You can review the terms of use in the [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
 {{% /expand %}}
 
-{{< expand "How do you calculate used memory?" >}}
-We run the `info` command and look at used_memory to determine the memory used by redis.
-{{% /expand %}}
-
-{{< expand "What do you mean by perpetual license?" >}}
-Once you buy a license, you can use RedisInsight forever as long as you are within your usage limits. Additionally, you are eligible for software upgrades for 1 year from the date of purchase. After a year, you no longer receive updates, but can continue to use the version of RedisInsight you last downloaded.
-{{< /expand >}}
-
-{{< expand "How do I get my license key?" >}}
-Once you complete payment, you receive an email with your license key.
+{{% expand "Where can I find the licence terms of RedisInsight?" %}}
+See the official [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
 {{< /expand >}}
 
 {{< /expand-control >}}
