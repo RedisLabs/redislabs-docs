@@ -7,7 +7,6 @@ categories: ["RI"]
 ---
 Here are some frequently asked questions about Redis Enterprise Software.
 
-
 ## General
 
 {{< expand-control >}}
@@ -38,7 +37,7 @@ We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and we
 {{% /expand %}}
 
 {{% expand "What versions of Redis does RedisInsight support?" %}}
-Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
+Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an [email](mailto:redisinsight@redislabs.com) and we can try to accommodate your use case.
 {{% /expand %}}
 
 {{% expand "Do you support Redis Labs Enterprise Version?" %}}
@@ -46,7 +45,7 @@ Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 {{% /expand %}}
 
 {{% expand "What cloud providers do you support?" %}}
-We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinsight@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
+We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an [email](mailto:redisinsight@redislabs.com) if you would like to use RedisInsight on a cloud provider that we haven't listed.
 {{% /expand %}}
 
 {{< /expand-control >}}
