@@ -68,10 +68,10 @@ sudo ./install.sh
 The node upgrade process restarts the services running RS, which causes
 a short interruption to connections to the proxy, node and databases.
 
-{{% warning %}}In order to ensure cluster and databases' availability, it is
+{{< warning >}}In order to ensure cluster and databases' availability, it is
 important to upgrade the nodes one by one, and **not attempt to upgrade
 more than one node at a time**.
-{{% /warning %}}
+{{< /warning >}}
 
 To make sure that the node is functioning properly, run [`rlcheck`]({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
 on the node both before and after the upgrade.
@@ -137,12 +137,12 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
     instances that were not upgraded yet cannot receive write updates from the upgraded instance.
     The upgraded instance receives updates from upgraded and non-upgraded instances.
 
-    {{% note %}}
+    {{< note >}}
 
 - Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
 - Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
 
-    {{% /note %}}
+    {{< /note >}}
 
     After you upgrade an instance to use the new protocol version,
     it automatically receives any missing write-operations.
