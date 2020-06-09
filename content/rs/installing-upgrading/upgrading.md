@@ -188,12 +188,12 @@ You must upgrade the CRDB protocol before you update the CRDB feature set versio
     ```src
     crdb-cli crdb update --crdb-guid <crdb_guid> --featureset-version yes
     ```
-You can retrieve <crdb_guid> by using the following command:
+You can retrieve the <crdb_guid> with the following command:
 
     ```src
     crdb-cli crdb list
     ```
- CRDB-GUID is shown on the first column in the response - you can match the correct GUID based on the cluster FDQN listed in the last column:
+CRDB-GUID is shown in the first column of the response. You can find the GUID you need by matching it with the cluster's fully qualitied domain domain name (CLUSTER-FDQN) listed in the last column:
  
      ```src
     CRDB-GUID                             NAME    REPL-ID  CLUSTER-FQDN
