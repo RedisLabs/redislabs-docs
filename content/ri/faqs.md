@@ -36,17 +36,17 @@ RedisInsight lets you reduce memory used by redis, which usually translates to a
 We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and we continue to support the open source version. The open source version is meant to be a library and command line utility. It is a fundamental building block for RedisInsight. RedisInsight is free to use but is closed source.
 {{< /expand >}}
 
-{{< expand "What versions of Redis does RedisInsight support?" >}}
-Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
-{{< /expand >}}
+{{% expand "What versions of Redis does RedisInsight support?" %}}
+Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an [email](mailto:redisinsight@redislabs.com) and we can try to accommodate your use case.
+{{% /expand %}}
 
 {{< expand "Do you support Redis Labs Enterprise Version?" >}}
 Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 {{< /expand >}}
 
-{{< expand "What cloud providers do you support?" >}}
-We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinsight@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
-{{< /expand >}}
+{{% expand "What cloud providers do you support?" %}}
+We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an [email](mailto:redisinsight@redislabs.com) if you would like to use RedisInsight on a cloud provider that we haven't listed.
+{{% /expand %}}
 
 {{< /expand-control >}}
 
@@ -113,16 +113,12 @@ Our licensing works on the sum of used memory on the redis instances you have ad
 
 {{< expand-control >}}
 
-{{< expand "How do you calculate used memory?" >}}
-We run the `info` command and look at used_memory to determine the memory used by redis.
+{{% expand "Is RedisInsight a free tool?" %}}
+Yes, RedisInsight is available as a non-commercial, free of charge tool. You can review the terms of use in the [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
 {{% /expand %}}
 
-{{< expand "What do you mean by perpetual license?" >}}
-Once you buy a license, you can use RedisInsight forever as long as you are within your usage limits. Additionally, you are eligible for software upgrades for 1 year from the date of purchase. After a year, you no longer receive updates, but can continue to use the version of RedisInsight you last downloaded.
-{{< /expand >}}
-
-{{< expand "How do I get my license key?" >}}
-Once you complete payment, you receive an email with your license key.
+{{% expand "Where can I find the licence terms of RedisInsight?" %}}
+See the official [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
 {{< /expand >}}
 
 {{< /expand-control >}}
