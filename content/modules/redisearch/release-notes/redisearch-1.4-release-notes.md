@@ -5,7 +5,7 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 1.4.27
+## RediSearch 1.4.27 (April 2020)
 
 Headlines:
 
@@ -21,7 +21,7 @@ Details:
     - #[1110](https://github.com/redisearch/redisearch/issues/1110) Rare GC failure when accessing uninitialized variable.
     - #[1131](https://github.com/redisearch/redisearch/issues/1131) Crash on highlighting a search query where the document no longer exists.
 
-## RediSearch 1.4.26
+## RediSearch 1.4.26 (March 2020)
 
 Headlines:
 
@@ -31,7 +31,7 @@ Details:
 
 - Fix rare `FORK GC` crash which caused by accessing uninitialized variable.
 
-## RediSearch 1.4.25
+## RediSearch 1.4.25 (March 2020)
 
 Headlines:
 
@@ -44,7 +44,7 @@ Details:
 - Bugfixes:
     - #[1051](https://github.com/RediSearch/RediSearch/issues/1051) `FORK GC` was not updating the unique sum of the numeric index.
 
-## RediSearch 1.4.24
+## RediSearch 1.4.24 (January 2020)
 
 Headlines:
 

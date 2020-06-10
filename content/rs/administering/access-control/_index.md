@@ -19,7 +19,7 @@ To add a user to the cluster:
 
 1. Go to: **access control**
 1. Click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Enter the name, email and password of the new user and select the role to assign to the user.
+1. Enter the name, email and password of the new user and select the [role]({{< relref "user-roles.md" >}}) to assign to the user.
 1. Select the type of user:
     - internal - Authenticates with RS
     - external - Authenticates with an external LDAP server
@@ -121,3 +121,18 @@ after a specified number of failed login attempts.
 ### Session timeout
 
 When you log in to the Web UI, your account is automatically logged out after 15 minutes of inactivity.
+
+If you want to change duration of inactivity that causes the timeout:
+
+- From rladmin, run: `rladmin cluster config cm_session_timeout_minutes <minutes>`
+
+- From the REST API, run:
+
+```src
+curl --request PUT \
+  --url https://localhost:9443/v1/cluster \
+  --header 'content-type: application/json' \
+  --data '{
+	"cm_session_timeout_minutes": <minutes>
+}'
+```

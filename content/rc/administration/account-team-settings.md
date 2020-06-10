@@ -7,14 +7,14 @@ categories: ["RC"]
 aliases: /rv/administration/account-team-settings/
 ---
 On this page you can view settings for your Redis Cloud account and team.
-You can:
+You can also:
 
 - Add or edit your VAT ID
 - Change the account Time Zone
 - Add a new Relic license key
 - Configure Multi-Factor Authentication (MFA)
 
-When you set up [SSL/TLS]({{< relref "/rc/securing-redis-cloud-connections.md" >}}) for your account,
+When you set up [SSL/TLS]({{< relref "/rc/administration/security/securing-redis-cloud-connections.md" >}}) for your account,
 you must enter the downloadable Redis Labs CA Certificate from this page.
 
 ![settings](/images/rc/settings.png)
@@ -31,8 +31,18 @@ members on this account.
 Team members can have different roles to the account:
 
 - **Owner** - Can view, create, and edit any settings in the account
-- **Member** - Can view, create, and edit databases.
-- **Viewer** - Can view databases
+- **Member** - Can view, create, and edit databases
+- **Viewer** - Can view all databases and their configurations (including database secrets)
+
+### Team Management for GCP Marketplace customers
+
+If you subscribed to Redis Cloud using GCP Marketplace, you can manage your team from the IAM section of the GCP console.
+To grant Redis Cloud access to a GCP user, assign one of these roles to the user:
+
+- **Viewer** - serviceusage.serviceUsageViewer and redisenterprisecloud.viewer
+- **Owner** - serviceusage.serviceUsageViewer and redisenterprisecloud.admin
+
+Users must log in using SSO to Redis Cloud at least once for them to be added to the team.
 
 ## Multi-Factor Authentication (MFA)
 
@@ -61,14 +71,14 @@ To change the mobile phone number, click **Configure** for the text message code
 
 {{% note %}}
 We recommend that you also configure MFA for an Authenticator app as a second method of MFA.
-If you cannot login to your account because of MFA, contact [Support](https://redislabs.com/company/contact/support/).
+If you cannot login to your account because of MFA, contact [Support](https://support.redislabs.com).
 
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
 {{% /note %}}
 
 #### Configuring MFA for an Authenticator App
 
-After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOPT) app such as Google Authenticator.
+After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOTP) app such as Google Authenticator.
 Then when you log in to the Redis Cloud Admin Console, you can select to use either an authentication code sent by text message or an authentication code shown in the Authenticator app for MFA.
 
 To configure MFA for the Authenticator app:

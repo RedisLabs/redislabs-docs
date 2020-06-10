@@ -5,7 +5,7 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph 2.0.10
+## RedisGraph 2.0.10 (March 2020)
 
 Headlines:
 
@@ -19,7 +19,7 @@ Details:
     - #[1017](https://github.com/redisgraph/redisgraph/issues/1017), #[1019](https://github.com/redisgraph/redisgraph/issues/1019) - Algebraic expressions correctness.
     - #[1020](https://github.com/redisgraph/redisgraph/issues/1020) - Support parameterised SKIP and LIMIT.
 
-## RedisGraph 2.0.9
+## RedisGraph 2.0.9 (March 2020)
 
 Headlines:
 
@@ -30,7 +30,7 @@ Details:
 - Bugfixes:
     - #[1028](https://github.com/redisgraph/redisgraph/issues/1028) Ensure proper placement of Index Scans when partially replacing Filter ops.
 
-## RedisGraph 2.0.8
+## RedisGraph 2.0.8 (March 2020)
 
 Headlines:
 
@@ -41,7 +41,7 @@ Details:
 - Bugfixes:
     - #[1023](https://github.com/redisgraph/redisgraph/issues/1023) Fix regression in checking argument counts to GRAPH endpoints.
 
-## RedisGraph 2.0.6
+## RedisGraph 2.0.6 (March 2020)
 
 Headlines:
 
@@ -55,7 +55,7 @@ Details:
 - #[925](https://github.com/redisgraph/redisgraph/issues/925) Bug fix within RediSearch
 - #[1001](https://github.com/redisgraph/redisgraph/issues/1001) Bug fix label scan invalid range
 
-## RedisGraph 2.0.5
+## RedisGraph 2.0.5 (February 2020)
 
 Headlines:
 
@@ -66,7 +66,7 @@ Details:
 - Enhancement:
     - #[955](https://github.com/redisgraph/redisgraph/issues/955)  Switch OR,AND boolean semiring to ANY,PAIR.
 
-## RedisGraph 2.0.2
+## RedisGraph 2.0.2 (February 2020)
 
 Headlines:
 
@@ -86,7 +86,7 @@ Details:
     - #[917](https://github.com/redisgraph/redisgraph/issues/917) #[940](https://github.com/redisgraph/redisgraph/issues/940) Resolve memory leaks
     - #[938](https://github.com/RedisGraph/RedisGraph/pull/938) Label matrix should be fetch right before eval
 
-## RedisGraph 2.0 GA (2.0.1)
+## RedisGraph 2.0 GA (2.0.1 - January 2020)
 
 This is the General Availability Release of RedisGraph 2.0 (2.0.1)!
 

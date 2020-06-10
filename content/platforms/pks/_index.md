@@ -374,7 +374,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 1. First, determine you administrator password. It is stored in an opaque k8s secret named after the REC name. In this example:
 
     ```src
-    kubectl get secret/rec-pks
+    kubectl get secret/rec-pks -o yaml
     ```
 
     A typical response will include the following lines:
@@ -382,9 +382,9 @@ In order to create your database, you will log in to the Redis Enterprise UI.
     ```src
     apiVersion: v1
     data:
-    license: ""
-    password: ZGdlaWw3Cg==
-    username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
+      license: ""
+      password: ZGdlaWw3Cg==
+      username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
     kind: Secret
     ```
 

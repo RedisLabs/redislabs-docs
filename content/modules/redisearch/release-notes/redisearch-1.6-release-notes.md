@@ -5,7 +5,7 @@ weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 1.6.12
+## RediSearch 1.6.12 (April 2020)
 
 Headlines:
 
@@ -25,7 +25,7 @@ Details:
     - #[1169](https://github.com/redisearch/redisearch/issues/1169) [FIRST_VALUE](https://oss.redislabs.com/redisearch/Aggregations.html#first_value) reducer crashed when value did not exist.
     - #[1159](https://github.com/redisearch/redisearch/issues/1159) Infinite loop on [`NOT`](https://oss.redislabs.com/redisearch/Query_Syntax.html#search_query_syntax) criteria tester.%
 
-## RediSearch 1.6.11
+## RediSearch 1.6.11 (March 2020)
 
 Headlines:
 
@@ -36,7 +36,7 @@ Details:
 - Bugfixes:
     - #[1126](https://github.com/redisearch/redisearch/issues/1126) Memory leak introduced by queries for tag fields that have no results.
 
-## RediSearch 1.6.10
+## RediSearch 1.6.10 (March 2020)
 
 Headlines:
 
@@ -56,7 +56,7 @@ Details:
     - #[1106](https://github.com/redisearch/redisearch/issues/1106)  Pipe leak on `FORK GC` caused by closing the fork without holding the lock.
     - #[1114](https://github.com/redisearch/redisearch/issues/1114)  PR #[986](https://github.com/redisearch/redisearch/issues/986) reverted the work from #[985](https://github.com/redisearch/redisearch/issues/985), #[989](https://github.com/redisearch/redisearch/issues/989). This PR reintroduces these features.
 
-## RediSearch 1.6.9
+## RediSearch 1.6.9 (February 2020)
 
 Headlines:
 
@@ -68,7 +68,7 @@ Details:
     - #[1052](https://github.com/redisearch/redisearch/issues/1052) Remove wrong optimization on Quantile.
     - #[1057](https://github.com/redisearch/redisearch/issues/1057) Memory pool did not release memory when certain limit was reached.
 
-## RediSearch 1.6.8
+## RediSearch 1.6.8 (February 2020)
 
 Headlines:
 
@@ -80,7 +80,7 @@ Details:
     - #[1052](https://github.com/redisearch/redisearch/issues/1052) Remove wrong optimization on Quantile.
     - #[1057](https://github.com/redisearch/redisearch/issues/1057) Memory pool did not release memory when certain limit was reached.
 
-## RediSearch 1.6 GA (1.6.7)
+## RediSearch 1.6 GA (1.6.7 - January 2020)
 
 This is the General Availability Release of RediSearch 1.6!
 

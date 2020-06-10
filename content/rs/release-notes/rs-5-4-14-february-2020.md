@@ -63,7 +63,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle).
 - Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS web UI.
     If you use a self-signed certificate that does not include this field, [update the self-signed certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or earlier to version RS 5.4.4 or later:
+- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or lower to version RS 5.4.4 or higher:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
 
@@ -73,7 +73,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 - RS27924 - Added descriptive error messages in the UI console when validating the license
 - RS29968 - Improved internal mechanism to better support high scale of clients connections
 - RS35675 - Updated the upgrade process of Active-Active Redis databases to save causal consistency and encryption flags
-- RS36922 - Fixed an issue in a specific cluster upgrade scenario from versions earlier than RS 5.4.0 to RS 5.4.0 or later
+- RS36922 - Fixed an issue in a specific cluster upgrade scenario from versions earlier than RS 5.4.0 to RS 5.4.0 or higher
 
 ## Known Limitations
 

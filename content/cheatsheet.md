@@ -138,12 +138,12 @@ Code can be shown like code fences using the code shortcode also.
 Syntax:
 
 ```src
-{{%/* code */%}}var x = 123;{{%/* /code */%}}
+{{</* code */>}}var x = 123;{{</* /code */>}}
 ```
 
 Ouput:
 
-{{% code %}}var x = 123;{{% /code %}}
+{{< code >}}var x = 123;{{< /code >}}
 
 ### Tables
 
@@ -181,6 +181,52 @@ cell 3x1,cell 3x2,cell 3x3
 Output:
 
 {{< table-csv "test_table.csv" 3 >}}
+
+### Tabs
+
+Source: https://github.com/rvanhorn/hugo-dynamic-tabs
+
+Syntax:
+```
+{{%/* tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" */%}}
+  {{%/* tab tabNum="1" */%}}
+
+  Tab 1 Content
+
+  {{%/* /tab */%}}
+  {{%/* tab tabNum="2" */%}}
+
+  Tab 2 Content
+
+  {{%/* /tab */%}}
+  {{%/* tab tabNum="3" */%}}
+
+  Tab 3 Content
+
+  {{%/* /tab */%}}
+{{%/* /tabs */%}}
+```
+
+Output:
+
+{{< tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" >}}
+  {{< tab tabNum="1" >}}
+
+  **Tab 1 Content**  
+  Content in the first tab
+
+  {{< /tab >}}
+  {{< tab tabNum="2" >}}
+
+  **Tab 2 Content**
+
+  {{< /tab >}}
+  {{< tab tabNum="3" >}}
+
+  **Tab 3 Content**
+
+  {{< /tab >}}
+{{< /tabs >}}
 
 ## Images and Videos
 
@@ -224,7 +270,7 @@ Embed YouTube video.
 Syntax:
 
 ```src
-{{%/* youtube Bi1T3toQfF4 */%}}
+{{</* youtube Bi1T3toQfF4 */>}}
 ```
 
 Ouput:
@@ -252,16 +298,16 @@ Ouput:
 Syntax:
 
 ```md
-{{%/* expand "How do you make expanding blocks?" */%}}
+{{</* expand "How do you make expanding blocks?" */>}}
 This is how you make expanding blocks.
-{{%/* /expand */%}}
+{{</* /expand */>}}
 ```
 
 Output:
 
-{{%expand "How do you make expanding blocks?" %}}
+{{< expand "How do you make expanding blocks?" >}}
 This is how you make expanding blocks.
-{{% /expand%}}
+{{< /expand >}}
 
 ### Embedded partials
 
@@ -271,25 +317,33 @@ Embed a markdown partial
 
 Syntax:
 
-```src
-{{</* embed-md "sample.md"  */>}}
+```md
+{{</* excerpt */>}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+provides a simple mechanism for cluster-aware Redis clients to learn
+and know the cluster topology. This enables clients to connect directly
+to an RS proxy on the node hosting the master shard for the data being
+operated on.{{</* /excerpt */>}}
 ```
 
 Output:
 
-{{< embed-md "sample.md" >}}
+{{< excerpt >}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+provides a simple mechanism for cluster-aware Redis clients to learn
+and know the cluster topology. This enables clients to connect directly
+to an RS proxy on the node hosting the master shard for the data being
+operated on.{{< /excerpt >}}
 
 Embed an HTML partial
 
 Syntax:
 
 ```src
-{{</* embed-html "sample-table.html" */>}}
+{{</* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */>}}
 ```
 
 Output:
 
-{{< embed-html "sample.html" >}}
+{{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
 
 ### Excerpts
 
@@ -327,7 +381,7 @@ Syntax:
 
 Output:
 
-{{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
+{{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
 
 ## Informative Notices
 
@@ -338,12 +392,12 @@ Info boxes give background information that does not prevent proper use of the p
 Syntax:
 
 ```src
-{{%/* info */%}}After you do this the first time, it gets easier.{{%/* /info */%}}
+{{</* info */>}}After you do this the first time, it gets easier.{{</* /info */>}}
 ```
 
 Ouput:
 
-{{% info %}}After you do this the first time, it gets easier.{{% /info %}}
+{{< info >}}After you do this the first time, it gets easier.{{< /info >}}
 
 **Tip**
 
@@ -352,12 +406,12 @@ Tips give additional information for improved use of the product.
 Syntax:
 
 ```src
-{{%/* tip */%}}Eating on time prevents hunger.{{%/* /tip */%}}
+{{</* tip */%}}Eating on time prevents hunger.{{</* /tip */>}}
 ```
 
 Ouput:
 
-{{% tip %}}Eating on time prevents hunger.{{% /tip %}}
+{{< tip >}}Eating on time prevents hunger.{{< /tip >}}
 
 **Note**
 
@@ -366,12 +420,12 @@ Notes suggest steps that prevent errors that do not cause data loss.
 Syntax:
 
 ```src
-{{%/* note */%}}Make sure you have enough disk space.{{%/* /note */%}}
+{{</* note */%}}Make sure you have enough disk space.{{</* /note */>}}
 ```
 
 Ouput:
 
-{{% note %}}Make sure you have enough disk space.{{% /note %}}
+{{< note >}}Make sure you have enough disk space.{{< /note >}}
 
 **Warning**
 
@@ -380,12 +434,12 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 Syntax:
 
 ```src
-{{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* /warning */%}}
+{{</* warning */>}}Backup your data before erasing the hard disk!{{</* /warning */>}}
 ```
 
 Ouput:
 
-{{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
+{{< warning >}}Backup your data before erasing the hard disk!{{< /warning >}}
 
 **Label** (Not used)
 
@@ -394,12 +448,12 @@ Label displays a label. The type parameter can be passed to the shortcode in ord
 Syntax:
 
 ```src
-{{%/* label type="info" */%}}This is a label{{%/* /label */%}}
+{{</* label type="info" */>}}This is a label{{</* /label */>}}
 ```
 
 Ouput:
 
-{{% label type="info" %}}This is a label{{% /label %}}
+{{< label type="info" >}}This is a label{{< /label >}}
 
 **Well**
 
@@ -408,14 +462,14 @@ Well displays content inside a container.
 Syntax:
 
 ```src
-{{%/* well */%}} Inside a well {{%/* /well */%}}
+{{</* well */>}} Inside a well {{</* /well */>}}
 ```
 
 Ouput:
 
-{{% well %}}
+{{< well >}}
 Inside a well
-{{% /well %}}
+{{< /well >}}
 
 ## Contents Lists
 
@@ -426,12 +480,12 @@ Allchildren displays all the child pages of current page.
 Syntax:
 
 ```src
-{{%/* allchildren style="h2" description="true" */%}}
+{{</* allchildren style="h2" description="true" */>}}
 ```
 
 Ouput:
 
-See example [here](/rcessentials/administration).
+See example [here](/rc/administration).
 
 ### Recently updated
 
@@ -440,14 +494,14 @@ This shortcode can be used to display recently updated articles.
 Syntax:
 
 ```src
-{{%/* recently-updated */%}} Recently updated articles {{%/* /recently-updated */%}}
+{{</* recently-updated */>}} Recently updated articles {{</* /recently-updated */>}}
 ```
 
 Ouput:
 
-{{% recently-updated %}}
+{{< recently-updated >}}
 Recently updated articles
-{{% /recently-updated %}}
+{{< /recently-updated >}}
 
 ## Other Shortcodes
 

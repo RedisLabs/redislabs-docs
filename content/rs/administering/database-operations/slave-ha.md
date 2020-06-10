@@ -29,6 +29,10 @@ For example:
 1. If slave HA is enabled, a new slave shard is created on an available node.
 1. The data from the master shard is replicated to the new slave shard.
 
+{{% note %}}
+- Slave HA follows all prerequisites of slave migration, such as [rack-awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}).
+- Slave HA migrates as many shards as possible based on available DRAM in the target node. When no DRAM is available, slave HA stops migrating slave shards to that node.
+{{% /note %}}
 
 ## Configuring High Availability for Slave Shards
 

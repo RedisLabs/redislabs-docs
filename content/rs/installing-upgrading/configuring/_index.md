@@ -8,4 +8,4 @@ aliases: /rs/administering/installing-upgrading/configuring/
 ---
 This section contains instructions for additional configuration of your OS and Redis Enterprise Software installation.
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}

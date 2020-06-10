@@ -16,7 +16,6 @@ function initLunr() {
             pagesIndex = index;
             // Set up lunrjs by declaring the fields we use
             // Also provide their boost level for the ranking
-            // lunrIndex = new lunr.Index
             lunrIndex = lunr(function () {
                 this.ref('uri');
                 this.field('title', {

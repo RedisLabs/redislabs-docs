@@ -34,9 +34,10 @@ Developing globally distributed applications can be challenging, as developers h
 
 [Learn more about CRDBs.]({{< relref "/rs/concepts/intercluster-replication.md" >}})
 
-## Major Features
+## Additional Features
 
-### Seamless scalability
+{{< tabs tabTotal="7" tabID="1" tabName1="Seamless scalability" tabName2="True high availability" tabName3="Data durability" tabName4="Predictable high-performance" tabName5="Dedicated databases" tabName6="Full management UI" tabName7="24/7 support">}}
+{{< tab tabNum="1" >}}
 
 With RS, a dataset can grow beyond the largest node in the cluster and
 be processed by any number of cores. By creating a Redis cluster and
@@ -49,7 +50,8 @@ button. Scaling, upgrades, and downgrades do not incur any downtime.
 
 {{< youtube 6iVpOg8V5lQ >}}
 
-### True high availability
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
 In addition to replicating a database within the same data center, you
 can also replicate a dataset across data-centers and across regions to
@@ -63,7 +65,8 @@ failures. Auto-failover is carried out within a few seconds.
 
 {{< youtube qIZuW_8bPtQ >}}
 
-### Built-in data persistence, backups and replication {#builtin-data-persistence-backups-and-replication}
+{{< /tab >}}
+{{< tab tabNum="3" >}}
 
 RS enables the use of Redis AOF (Append-Only File) every second or on
 every write, or (RDB) snapshots of your dataset every 1, 6, or 12 hours
@@ -72,22 +75,25 @@ periodically or ad-hoc to an FTP server or AWS S3. Other cloud storage
 options, such as Azure Geo-Redundant Storage, SoftLayer Object Storage,
 and Google Cloud Storage, are planned to be added in a future release.
 
-### Predictable high-performance {#predictable-highperformance}
+{{< /tab >}}
+{{< tab tabNum="4" >}}
 
 Datasets are processed by multiple cores to guarantee the best
 performance. In addition, RS uses advanced mechanisms to guarantee
 high-performance, even during intensive disk-access scenarios.
 
-### Multiple dedicated databases
+{{< /tab >}}
+{{< tab tabNum="5" >}}
 
-You can run multiple databases over a single RS deployment, each running
-in a dedicated process and in a non-blocking manner.
-
-### Unlimited database connections
-
+You can run multiple databases over a single RS deployment,
+each running in a dedicated process and in a non-blocking manner.
 Use as many database connections as you want.
 
-### Full-featured management UI {#fullfeatured-management-ui}
+RS's fully-managed solution takes care of all your database scaling,
+data-persistence tuning, shards migration and auto-failover needs.
+
+{{< /tab >}}
+{{< tab tabNum="6" >}}
 
 RS provides a full-featured and easy-to-use management user interface
 (UI) for setting up, configuring and monitoring the cluster and each
@@ -95,12 +101,11 @@ database. In addition, RS provides configurable alert notifications for
 important events at the single database level as well as the cluster
 level.
 
-### Cluster automation
-
-RS's fully-managed solution takes care of all your database scaling,
-data-persistence tuning, shards migration and auto-failover needs.
-
-### 24/7 support {#247-support}
+{{< /tab >}}
+{{< tab tabNum="7" >}}
 
 Paying customers enjoy our premium 24/7 support through Redis Labs online
 or phone support services.
+
+{{< /tab >}}
+{{< /tabs >}}

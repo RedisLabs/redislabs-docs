@@ -5,14 +5,19 @@ weight: 3
 alwaysopen: false
 categories: ["Modules"]
 aliases:
-  - /modules/upgrading/rs
-  - /rs/developing/modules/upgrading/
+    - /modules/upgrading/rs
+    - /rs/developing/modules/upgrading/
 ---
 We are constantly working to improve the modules.
 To get the latest features and fixes for a module, you must upgrade the module in Redis.
 
 {{% note %}}
-Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
+
+- Modules are not supported in Redis Enterprise Software on RHEL/CentOS 6.x.
+- We recommend that you test module upgrade commands in a test environment before you upgrade modules in a production environment. The module upgrade arguments are not validated during the upgrade process and incorrect arguments can cause unexpected downtime.
+- Upgrading a cluster with a single node does not load the new modules that are bundled with the new cluster version.
+- Before you upgrade a database with RediSearch Module to Redis 5.0, you must upgrade the RediSearch Module to version 1.4.2 or above.
+
 {{% /note %}}
 
 ## Getting the Packaged Modules

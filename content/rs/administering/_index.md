@@ -25,4 +25,4 @@ To access the cluster REST API documentation, either:
     1. Open the `rlec_docs\html\index.html` file in a web browser.
 {{% /note %}}
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}
