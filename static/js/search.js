@@ -21,13 +21,16 @@ function initLunr() {
                 this.field('title', {
                     boost: 15
                 });
+                this.field('keywords', {
+                    boost: 12
+                });                
                 this.field('tags', {
                     boost: 10
                 });
-                this.field("content", {
+                this.field('content', {
                     boost: 5
                 });
-                this.field("categories");
+                this.field('categories');
     
                 // Feed lunr with each file and let lunr actually index them
                 pagesIndex.forEach(function(page) {            
