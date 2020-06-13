@@ -58,6 +58,14 @@ function getCurrentProductCategory() {
         return null;
     }
 
+    if(urlParams[1] === 'latest') {
+        return urlParams[2];
+    }
+
+    if(urlParams[1] === 'staging') {
+        return urlParams[3];
+    }
+
     return urlParams[1];
 }
 
