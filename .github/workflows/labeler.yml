@@ -1,0 +1,4 @@
+# Add 'infrastructure' label to any file changes 
+infrastructure:
+  - layouts/*
+  - static/*
