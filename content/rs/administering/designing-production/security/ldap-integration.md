@@ -11,9 +11,9 @@ After you configure the LDAP connection, you can give LDAP users access to the R
 
 `saslauthd` is the process that handles LDAP authentication requests to RS.
 
-{{% note %}}
+{{< note >}}
 LDAP authentication is not yet supported for Redis ACL Users.
-{{% /note %}}
+{{< /note >}}
 
 To configure LDAP authentication for RS web UI users on a running cluster:
 

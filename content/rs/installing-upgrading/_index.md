@@ -21,11 +21,11 @@ To access the installation package for any of these platforms:
 1. Log in with your Redis Labs credentials or sign up for a new account.
 1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
 
-{{% note %}}
+{{< note >}}
 Before you install the Linux package or AWS AMI on an AWS instance,
 review the [configuration requirements for AWS instances]
 ({{< relref "configuring-aws-instances.md" >}}).
-{{% /note %}}
+{{< /note >}}
 
 In this article we walk you through the process for installing the RS installation package for Linux.
 
@@ -72,9 +72,9 @@ To install RS on Linux from the CLI:
 1. Copy the installation package to the node.
 1. On the node, change to the directory where the installation package is and extract the installation files:
 
-```src
-tar vxf <tarfile name>
-```
+    ```src
+    tar vxf <tarfile name>
+    ```
 
 1. To install RS, run:
 
@@ -111,11 +111,11 @@ To install RS without answering the installation questions, either:
     2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
     ```
 
-RS is now installed on the node.
-Repeat this process for each node in the cluster. Then:
+    RS is now installed on the node.
+    Repeat this process for each node in the cluster.
 
 1. [Create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
-or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an existing RS cluster.
+    or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an existing RS cluster.
 1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}) database.
@@ -125,12 +125,12 @@ or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) 
 During the installation you can specify the directories for the RS files to be installed in.
 The files are installed in the `redislabs` directory in the path that you specify.
 
-{{% note %}}
+{{< note >}}
 - Custom installation directories are supported on RedHat Enterprise Linux versions 6 and 7.
 - When you install with custom directories, the installation does not run as an RPM file.
 - If a `redislabs` directory already exists in the path that you specify, the installation fails.
 - All nodes in a cluster must be installed with the same file locations.
-{{% /note %}}
+{{< /note >}}
 
 You can specify any or all of these file locations:
 
@@ -171,12 +171,12 @@ By default, RS is installed with the user:group `redislabs:redislabs`.
 During the installation you can specify the OS user and group that RS is installed with and that owns all of the RS processes.
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
-{{% note %}}
+{{< note >}}
 - Custom installation user is supported on RedHat Enterprise Linux versions 6 and 7.
 - When you install with custom directories, the installation does not run as an RPM file.
 - You must create the user and group that you want to install with before you install RS.
 - You can specify an LDAP user as the RS installation user.
-{{% /note %}}
+{{< /note >}}
 
 To install RS with a specified user and group, run:
 
@@ -230,7 +230,7 @@ To install RS with an answer file:
 
 1. Prepare the answer file with the answers to the [installation questions](#installation-questions).
 
-    The answer file can contain any of the parameters for the installation questions and `yes` or `no` to indicate the answer for the question.
+    The answer file can contain any of the parameters for the installation questions and indicate the answer for the question with `yes` or `no`.
 
     For example:
 
@@ -242,9 +242,9 @@ To install RS with an answer file:
     rlcheck=yes
     ```
 
-    {{% note %}}
-If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
-    {{% /note %}}
+    {{< note >}}
+    If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
+    {{< /note >}}
 
 1. Run the install script with `-c` and the path to the answer file.
 

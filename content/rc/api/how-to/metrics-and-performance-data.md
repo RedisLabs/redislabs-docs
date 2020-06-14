@@ -10,9 +10,9 @@ You can get metrics and usage statistics for a database from the API operation:
 
 `GET /subscriptions/{subscription-id}/databases/{database-id}/metrics?metricSpan={metric-span}`.
 
-{{% note %}}
+{{< note >}}
 Redis Labs Essentials and Pro databases support metrics API requests.
-{{% /note %}}
+{{< /note >}}
 
 The query accepts 3 parameters:
 

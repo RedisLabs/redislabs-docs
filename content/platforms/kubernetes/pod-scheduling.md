@@ -209,6 +209,6 @@ spec:
   rackAwarenessNodeLabel: failure-domain.beta.kubernetes.io/zone
 ```
 
-{{% note %}}
+{{< note >}}
 When you use the `rackAwarenessNodeLabel` property, the operator will change the topologyKey for the anti-affinity rule to the label name used unless you have specified the `podAntiAffinity` property as well. If you use `rackAwarenessNodeLabel` and `podAntiAffinity` together, you must make sure that the `topologyKey` in your pod anti-affinity rule is set to the node label name.
-{{% /note %}}
+{{< /note >}}

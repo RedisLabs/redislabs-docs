@@ -8,9 +8,9 @@ categories: ["RS"]
 When a cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
-{{% note %}}
+{{< note >}}
 For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/kubernetes-cluster-recovery.md" >}}).
-{{% /note %}}
+{{< /note >}}
 
 Cluster failure can be caused by:
 
@@ -58,17 +58,17 @@ The cluster recovery process includes:
     - The same RS version
     - The same installation user and paths
 
-    {{% note %}}
+    {{< note >}}
 The cluster recovery can fail if these requirements are not met.
-    {{% /note %}}
+    {{< /note >}}
 
 1. Mount the persistent storage drives with the recovery files to the new nodes.
     These drives must contain the cluster configuration backup files and database persistence files.
 
-    {{% note %}}
+    {{< note >}}
 Make sure that the user redislabs has permissions to access the storage location
 of the configuration and persistence files on each of the nodes.
-    {{% /note %}}
+    {{< /note >}}
 
     If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
@@ -150,9 +150,9 @@ providing a different value and using the `override_rack_id` flag.
     You can run the `rladmin status` command to verify that the recovered nodes are now active,
     and that the databases are pending recovery.
 
-    {{% note %}}
+    {{< note >}}
 Make sure that you update your [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
 with the IP addresses of the new nodes.
-    {{% /note %}}
+    {{< /note >}}
 
 After the cluster is recovered, you must [recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).

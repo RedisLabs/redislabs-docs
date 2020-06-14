@@ -36,9 +36,9 @@ To authenticate to the Swagger UI:
     1. Enter the [Secret Key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team.md" >}}) as the `x-api-secret-key` value and click **Authorize**.
     1. Click **Close**.
 
-{{% note %}}
+{{< note >}}
 The key values are not saved when you refresh the page.
-{{% /note %}}
+{{< /note >}}
 
 When authorization is successful the lock icon appears as a closed lock.
 

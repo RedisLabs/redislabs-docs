@@ -10,9 +10,9 @@ and need to contact Redis Labs support for assistance, you can create a
 support package that gathers all essential information to help us debug
 your issues.
 
-{{% note %}}
+{{< note >}}
 The process of creating the support package can take several minutes and generates load on the system.
-{{% /note %}}
+{{< /note >}}
 
 ## Creating a support package
 

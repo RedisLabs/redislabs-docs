@@ -84,9 +84,9 @@ implements only the parts required to provide applications with easy
 High Availability, be compatible with the protocol, and not rely on DNS
 to derive which node in the cluster to communicate with.
 
-{{% note %}}
+{{< note >}}
 To use Redis Sentinel, every database name must be unique across the cluster.
-{{% /note %}}
+{{< /note >}}
 
 ## Redis Client Support
 
@@ -94,9 +94,9 @@ We recommend these clients that are tested for use with the [Discovery Service]
 
 {{< embed-md "discovery-clients.md" >}}
 
-{{% note %}}
+{{< note >}}
 Redis Sentinel API can return endpoints for both master and slave
 endpoints.
 Discovery Service only supports master endpoints and does not
 support returning slave endpoints for a database.
-{{% /note %}}
+{{< /note >}}

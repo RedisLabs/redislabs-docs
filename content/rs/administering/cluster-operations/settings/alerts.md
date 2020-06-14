@@ -16,10 +16,10 @@ Configured alerts are shown:
 - In the **log**
 - In emails, if you configure email alerts
 
-{{% note %}}
+{{< note >}}
 If you enable alerts for "Node joined" or "Node removed" actions,
 you must also enable "Receive email alerts" so that the alerts are sent.
-{{% /note %}}
+{{< /note >}}
 
 To enable alerts for a cluster:
 

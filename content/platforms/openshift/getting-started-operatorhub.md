@@ -48,7 +48,7 @@ oc apply -f scc.yaml
 After the constraint is installed, the OperatorHub automatically uses the constraint for
 Redis Enterprise node pods.
 
-{{% note %}}
+{{< note >}}
 **Known Limitation** - The automatic use of the security constraint is limited. The
 Redis Enterprise must be named `rec` for the constraint to be used automatically. This
 limitation may be removed in the future. **We recommended that you use the cluster name `rec` when deploying with
@@ -61,7 +61,7 @@ namespace (e.g., `my-project`) as in OpenShift 3.x:
 oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:my-project
 ```
 
-{{% /note %}}
+{{< /note >}}
 
 ## Install the Operator
 
@@ -105,10 +105,10 @@ When you use the OperatorHub, a deployed operator is maintained by the [OpenShif
 Lifecycle Management](https://docs.openshift.com/container-platform/4.3/operators/olm-adding-operators-to-cluster.html#olm-installing-from-operatorhub-using-web-console_olm-adding-operators-to-a-cluster).
 The Redis Enterprise subscription that provides this is only for a single project. You cannot select **All namespaces on the cluster**.
 
-{{% note %}}
+{{< note >}}
 We recommend that you change the Approval Strategy of the subscription from **Automatic** to **Manual** for production systems so that the operator is only upgraded by approval.
 Then you can upgrade during maintenance periods to limit downtime due to upgrades to operator-managed clusters.
-{{% /note %}}
+{{< /note >}}
 
 - Click **Subscribe** to start the subscription for your project.
 
@@ -191,9 +191,9 @@ The CRD for a Redis Enterprise cluster in YAML format is shown.
 
 1. Edit [the YAML definition]({{< relref "cluster-options.md">}}).
 
-    {{% note %}}
+    {{< note >}}
 The name of the cluster must be "rec" for deployments from within the OLM. For more information, see the `name:` field description in [**Options for clusters**]({{< relref "cluster-options.md">}}).
-    {{% /note %}}
+    {{< /note >}}
 
 1. Click **Create** to create and deploy the cluster.
 
@@ -237,10 +237,10 @@ the operator. The generated password is stored in a Kubernetes secret.
 
     Where `rec-0` is replaced with of the pods associated with your Redis Entperise cluster.
 
-    {{% note %}}
+    {{< note >}}
 - rec-0 is one of your cluster pods. Consider running the port-forward command in the background.
 - The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/4.3/dev_guide/routes.html).
-    {{% /note %}}
+    {{< /note >}}
 
 1. In a browser, go to localhost:8443 to open the Redis Enterprise web UI:
 

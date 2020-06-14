@@ -38,7 +38,8 @@ the current directory.
 sudo ./install.sh -y
 ```
 
-{{% note %}}When port 53 is in use, the installation fails. This is known to happen in
+{{< note >}}
+When port 53 is in use, the installation fails. This is known to happen in
 default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
 To workaround this issue, change the system configuration to make this port available
 before running RS installation.
@@ -51,7 +52,7 @@ before running RS installation.
 1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
 1. Run: `sudo service systemd-resolved restart`
 {{% /expand %}}
-{{% /note %}}
+{{< /note >}}
 
 ## Step 2: Set up a Cluster
 

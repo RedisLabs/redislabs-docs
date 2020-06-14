@@ -57,10 +57,10 @@ the quorum is lost and it can result data loss.
     ![maintenance_mode](/images/rs/maintenance_mode.png)
 1. Migrates shards to other nodes and binds endpoints to other nodes, if space is available on other nodes.
 
-{{% note %}}
+{{< note >}}
 If the node is the master node in the cluster, maintenance mode does not demote the node.
 As usual, the cluster elects a new master node when the master node is restarted.
-{{% /note %}}
+{{< /note >}}
 
 To turn maintenance mode on, on one of the nodes in the cluster run:
 
@@ -124,11 +124,11 @@ To specify a snapshot when you turn maintenance mode off, on one of the nodes in
 rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
 ```
 
-{{% note %}}
+{{< note >}}
 If an error happens when you turn on maintenance mode, the snapshot is not deleted.
 When you re-run the command,
 we recommend that you use the snapshot from the initial attempt because it contains the original state of the node.
-{{% /note %}}
+{{< /note >}}
 
 To see the list of available snapshots, run:
 

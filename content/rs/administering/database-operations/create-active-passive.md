@@ -17,9 +17,9 @@ Replica Of can replicate:
 - One-to-many - Configure multiple destinations as Replica Of one source database.
 - Many-to-one - Configure one destination as Replica Of multiple source databases.
 
-{{% note %}}
+{{< note >}}
 When you add, remove, or edit Replica Of sources, the data is re-replicated from all source databases.
-{{% /note %}}
+{{< /note >}}
 
 ## Configuring Replica Of
 
@@ -35,9 +35,9 @@ To configure a destination database as a Replica Of:
 1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to show the box for the source database endpoint.
 1. Enter the URL of the source database endpoint:
 
-    {{% note %}}
+    {{< note >}}
 The order of the Replica Of sources has no impact on replication.
-    {{% /note %}}
+    {{< /note >}}
 
     - For a source database in the same RS cluster - When you click on the box,
     the available databases are shown in the correct format for the URL of the source endpoint:
@@ -65,10 +65,10 @@ If you regenerate the password, replication to existing destinations fails until
 
         1. In the destination database, paste the URL of the source endpoint in the **Replica Of** box, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-        {{% note %}}
+        {{< note >}}
 For a source database on a different RS cluster,
 you can [compress the replication data]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) to save bandwidth.
-        {{% /note %}}
+        {{< /note >}}
 
     - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:
 
@@ -86,10 +86,10 @@ you can [compress the replication data]({{< relref "/rs/administering/active-pas
             redis://<hostname>:<database_port>
             ```
 
-{{% note %}}
+{{< note >}}
 If you used the mDNS protocol for the cluster name (FQDN),
 make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}) are met.
-{{% /note %}}
+{{< /note >}}
 
 ## Configuring TLS for Replica Of Traffic on the Destination Database
 

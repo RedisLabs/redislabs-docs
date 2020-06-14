@@ -27,9 +27,9 @@ The `/logs` API operation accepts the following parameters:
 - `offset` - The starting point for the results.  The default value of `0` starts with the latest log entry. A value of `11` skips the first 10 entries and retrieves entries starting with the 11 and older.
 - `limit` - The maximum number of entries to return per request. Default value is `100`.
 
-{{% note %}}
+{{< note >}}
 The system log returns information for the entire account. It reports log entries for all types of entities, including Redis Labs Essentials and Redis Labs Pro subscriptions, databases and related entities.
-{{% /note %}}
+{{< /note >}}
 
 ### Request results
 

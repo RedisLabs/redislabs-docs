@@ -28,13 +28,13 @@ The backup process creates compressed (.gz) RDB files that you can [import into 
 If you backup a database configured for database clustering,
 RS copies a backup file for each shard to the specified backup location.
 
-{{% note %}}
+{{< note >}}
 
 - Make sure that you have enough space available in your storage location.
-If there is not enough space in the backup location, the backup fails.
+    If there is not enough space in the backup location, the backup fails.
 - The backup configuration only applies to the node it is configured on.
 
-{{% /note %}}
+{{< /note >}}
 
 ## Scheduling Periodic Backups
 

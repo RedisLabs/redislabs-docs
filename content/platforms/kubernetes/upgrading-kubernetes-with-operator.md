@@ -30,10 +30,10 @@ Redis Labs implements rolling updates for software upgrades in Kubernetes deploy
 
 1. Apply the [bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml), or the openshift.bundle.yaml file if you are running OpenShift.
 
-    {{% note %}}
+    {{< note >}}
 If you are not pulling images from Docker Hub, update the operator Image spec to point to your private repository.
 If you have made changes to the role, role binding, rbac or crd in the previous version you must merge them with the updated declarations in the new version files.
-    {{% /note %}}
+    {{< /note >}}
 
 1. After the Operator upgrade is complete:
     1. Run `kubectl edit rec` in the namespace your Redis Enterprise Cluster is deployed in.

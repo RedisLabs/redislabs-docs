@@ -43,10 +43,12 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
         ({{< relref "/rs/administering/active-passive.md" >}})
         and select the endpoint of a database to hold a copy of the data.
 
-        {{% note %}}You must configure [VPC Peering]
-        ({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}})
-        between the VPC that this database is on and the VPC that the destination
-        database is on.{{% /note %}}
+        {{< note >}}
+You must configure [VPC Peering]
+({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}})
+between the VPC that this database is on and the VPC that the destination
+database is on.
+        {{< /note >}}
 
     1. In **Access Control & Security**, you can:
         - Enable the **Default User** for the database.

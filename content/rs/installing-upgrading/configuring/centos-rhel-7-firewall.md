@@ -25,7 +25,7 @@ for example by means of an external firewall, EC2 Classic security groups.
 You can use firewalld configuration tools such as **firewall-cmd** (command line) or **firewall-config** (UI)
 to create more specific firewall policies that allow these two services through the firewall, as necessary.
 
-{{% note %}}
+{{< note >}}
 If databases are created with non-standard [RS ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}),
 you need to explicitly configure firewalld to make sure those ports are not blocked.
-{{% /note %}}
+{{< /note >}}

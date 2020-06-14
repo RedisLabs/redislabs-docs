@@ -45,13 +45,13 @@ Here are the main fields for you to review and edit:
     This is the cluster name that the operator uses to name various
     resources in the Kubernetes cluster and also name the CRD.
 
-    {{% note %}}
+    {{< note >}}
 
 The name is restricted to the value "rec" in the current release because of the way that service accounts are created.
 There is a binding between the SCC and the service account.
 You can create this binding manually, but we do not recommend it.
 
-    {{% /note %}}
+    {{< /note >}}
 
 - [`nodes`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): `nnn`
 
@@ -79,9 +79,9 @@ You can create this binding manually, but we do not recommend it.
 
     The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node (see `limits` and `requests`).
 
-    {{% note %}}
-We recommend that resource limits equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
-    {{% /note %}}
+    {{< note >}}
+    We recommend that resource limits equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
+    {{< /note >}}
 
     - [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec):
 

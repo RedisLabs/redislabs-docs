@@ -61,12 +61,12 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 
 1. Enter the name of the new CRDB and select from the options:
 
-    {{% note %}}
+    {{< note >}}
 
 - The eviction policy can only be set to **noeviction** for CRDBs.
 - You cannot enable or disable database clustering after the CRDB is created.
 
-    {{% /note %}}
+    {{< /note >}}
 
     - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all CRDB databases use replication for best intercluster synchronization performance.
         When replication is enabled, every CRDB master shard is replicated to a corresponding slave shard. The slave shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.

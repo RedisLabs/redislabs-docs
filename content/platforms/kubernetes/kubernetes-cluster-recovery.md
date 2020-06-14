@@ -35,9 +35,18 @@ To recover a cluster on Kubernetes:
     kubectl patch rec <cluster-name> --type merge --patch '{"spec":{"clusterRecovery":true}}'
     ```
 
-    {{% note %}}
-    {{< embed-md "force-delete-pods.md" >}}
-    {{% /note %}}
+    {{< note >}}
+    In some cases, pods do not terminate when the statefulSet is scaled down as part of the cluster recovery.
+    If pods are stuck in `terminating` or `crashLoopBack` and do not terminate gracefully, cluster recovery can pause.
+
+    To work around this, delete the pods manually with:
+
+    ```src
+    kubectl delete pods <pod> --grace-period=0 --force
+    ```
+
+    When the last pod is manually deleted, the recovery process resumes.
+    {{< /note >}}
 
 1. Wait for the cluster to recover until it is in the Running state.
 

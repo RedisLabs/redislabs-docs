@@ -15,9 +15,9 @@ This tutorial shows how to install RedisInsight on [Docker](https://www.docker.c
 
 The first step is to [install docker for your operating system](https://docs.docker.com/install/). You should be able to run the `docker version` command in a terminal window without any errors.
 
-{{% note %}}
-On windows and Mac, please install docker version 18.03 or higher. You can `docker version` to find out your docker version.
-{{% /note %}}
+{{< note >}}
+On Windows and Mac, please install docker version 18.03 or higher. You can `docker version` to find out your docker version.
+{{< /note >}}
 
 ## II. Run RedisInsight Docker Image
 

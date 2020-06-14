@@ -13,10 +13,10 @@ without changing the way the application connects to the database.
 
 CRDBs also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
-{{% note %}}
+{{< note >}}
 CRDBs do not replicate the entire database, only the data.
 Database configurations, Lua scripts, and other configurations are not replicated.
-{{% /note %}}
+{{< /note >}}
 
 ## Considerations for Conflict-free Replicated Databases (CRDBs) {#considerations-for-conflictfree-replicated-databases-crdbs}
 
@@ -126,9 +126,9 @@ The scenarios in which CRDB updates to other instances use partial synchronizati
 - Migrate master shard to another node as a slave using failover and slave migration
 - Migrate master shard and preserve roles using failover, slave migration, and second failover to return shard to master
 
-{{% note %}}
+{{< note >}}
 Synchronization of data from the master shard to the slave shard is always a full synchronization.
-{{% /note %}}
+{{< /note >}}
 
 ### Syncer in Active-Passive Replication (Replica Of)
 

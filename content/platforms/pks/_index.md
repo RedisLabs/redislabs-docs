@@ -65,11 +65,11 @@ Prerequisites:
     Kubernetes master is running at http...
     ```
 
-    {{% note %}}
+    {{< note >}}
 While you can use the Kubernetes default namespace, it is a best practice to use a separate namespace if you are sharing the cluster with others.
 The Operator deployment deploys and runs one Redis Enterprise Cluster in one Kubernetes namespace.
 In order to run multiple Redis Enterprise Clusters, deploy each one in its own namespace.
-    {{% /note %}}
+    {{< /note >}}
 
 1. Create a namespace for your deployment:
 
@@ -235,10 +235,10 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
 
             [More information about persistent storage in Operator deployment.](https://docs.redislabs.com/latest/platforms/kubernetes/kubernetes-persistent-volumes/)
 
-        {{% note %}}
+        {{< note >}}
 You can omit the reclaimPolicy declaration in the yaml file, in case of error, for testing and development environments.
 For production environments you must retain the Persistent Volume Claims (PVCs) when cluster persistent is used, in order to enable recovery.
-        {{% /note %}}
+        {{< /note >}}
 
         You will use the storage class name you have just created in the next step, editing the Redis Enterprise Cluster (REC) yaml.
 
