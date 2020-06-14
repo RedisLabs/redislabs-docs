@@ -11,9 +11,9 @@ files of a specific database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a sharded database.
 
-{{% warning %}}
+{{< warning >}}
 Importing data erases all existing content in the database.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Importing data into a database
 

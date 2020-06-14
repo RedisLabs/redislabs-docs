@@ -114,9 +114,9 @@ In the case of a CRDB:
 - Multiple past replication IDs and offsets are stored to allow for multiple syncs
 - The Active-Active backlog is also sent to the slave during a full sync
 
-{{% warning %}}
+{{< warning >}}
 Full sync triggers heavy data transfers between geo-replicated CRDB instances.
-{{% /warning %}}
+{{< /warning >}}
 
 The scenarios in which CRDB updates to other instances use partial synchronization are:
 

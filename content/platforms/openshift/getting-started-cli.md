@@ -92,9 +92,9 @@ Let’s look at each yaml file to see what requires editing:
     - crd declaration creates a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource that the k8s API server can use and the operator can manage in other deployments.
     - operator deployment declaration creates the operator deployment that is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise Cluster. Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes as pods. The yaml contains the latest image tag representing the latest Operator version available.
 
-    {{% warning %}}
+    {{< warning >}}
 Changes to this file can cause unexpected results.
-    {{% /warning %}}
+    {{< /warning >}}
 
     1. Apply the yaml file with:
 
@@ -145,9 +145,9 @@ rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
 
     If you deploy a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker.
 
-    {{% warning %}}
+    {{< warning >}}
 Changes to this file can cause unexpected results.
-    {{% /warning %}}
+    {{< /warning >}}
 
     - Apply the yaml file with:
 
@@ -317,10 +317,10 @@ To create your database:
 
 1. To get your password from the OpenShift management console, go `Resources > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
 
-    {{% warning %}}
+    {{< warning >}}
 Do not change the default admin user password in the Redis Enterprise web UI.
 Changing the admin password can cause unextpected results in your K8s deployment.
-    {{% /warning %}}
+    {{< /warning >}}
 
     ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
 

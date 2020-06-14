@@ -320,10 +320,10 @@ In order to create your database, we will log in to the Redis Enterprise UI.
 - In order to retrieve your password, navigate to the OpenShift management console, select your project name, go to    Resources-\>Secrets-\>your_cluster_name
 - Retrieve your password by selecting “Reveal Secret.”
 
-    {{% warning %}}
+    {{< warning >}}
 Do not change the default admin user password in the Redis Enterprise web UI.
 Changing the admin password impacts the proper operation of the K8s deployment.
-    {{% /warning %}}
+    {{< /warning >}}
 
     ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
 

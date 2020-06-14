@@ -19,9 +19,9 @@ These self-signed certificates are generated on the first node of each RS instal
 When you use the default self-signed certificates, an untrusted connection notification is shown in the web UI.
 Depending on the browser you use, you can allow the connection for each session or add an exception to make the site trusted in future sessions.
 
-{{% warning %}}
+{{< warning >}}
 When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
-{{% /warning %}}
+{{< /warning >}}
 
 ## How to update TLS certificates
 

@@ -347,9 +347,9 @@ Output:
 
 ### Excerpts
 
-{{% warning %}}
+{{< warning >}}
 In most cases, use embedded partials instead of excerpts.
-{{% /warning %}}
+{{< /warning >}}
 
 **Defining an excerpt**
 

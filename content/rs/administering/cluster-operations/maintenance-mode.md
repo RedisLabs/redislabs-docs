@@ -46,10 +46,10 @@ When you turn maintenance mode on, RS:
 
 1. Checks whether shutdown of the node causes quorum loss in the current cluster state. If so, maintenance mode is not turned on.
 
-    {{% warning %}}
+    {{< warning >}}
 Maintenance mode does not protect against quorum loss. If you enable maintenance mode for the majority of nodes in a cluster and restart them simultaneously,
 the quorum is lost and it can result data loss.
-    {{% /warning %}}
+    {{< /warning >}}
 
 1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on the node at that time.
 1. Marks the node as a quorum node to prevent shards and endpoints from migrating into the node.
@@ -75,10 +75,10 @@ After all of the shards and endpoints are moved from the node, it is safe to do 
 If you do not have enough resources in other cluster nodes to migrate all of the shards to other nodes,
 you can turn maintenance mode on without migrating the slave shards.
 
-{{% warning %}}
+{{< warning >}}
 If you prevent slave shard migration, the slave shards are kept on the node during maintenance.
 If the maintenance node fails, the master shards do not have slave shards for data redundancy and high availability.
-{{% /warning %}}
+{{< /warning >}}
 
 To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
 

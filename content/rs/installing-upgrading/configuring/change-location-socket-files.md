@@ -48,9 +48,9 @@ To change the location of the socket files:
     Now all nodes point to the new socket file location.
     To update the location for the databases in the cluster, you must restart each database.
 
-    {{% warning %}}
+    {{< warning >}}
 Database restart can cause interruptions in data traffic.
-    {{% /warning %}}
+    {{< /warning >}}
 
 1. To restart the databases, for each database in the cluster run:
 
