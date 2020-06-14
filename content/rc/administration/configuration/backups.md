@@ -23,7 +23,7 @@ Absolutely! There is no lock-in with Redis Cloud.
 Using the instructions on this page,
 you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice.
 
-## Backing Up to Amazon Simple Storage Service (AWS S3)
+## Backing Up to Amazon Simple Storage Service (AWS S3) 
 
 To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
