@@ -82,8 +82,7 @@ This topic describes how to install and configure Redis Enterprise for Pivotal P
     ![Import button](/images/platforms/pcf_resource_config.png)
 
     {{< note >}}
-Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum hardware specification requirements]
-({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) for Redis Enterprise.
+Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum hardware specification requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) for Redis Enterprise.
     {{< /note >}}
 
 1. Click **Save**.

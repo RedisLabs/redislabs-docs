@@ -7,8 +7,7 @@ categories: ["RS"]
 ---
 In **settings** > **alerts**, you can enable alerts for node or cluster events, such as high memory usage or throughput.
 
-You can also enable alerts for databases in the [database configuration]
-({{< relref "/rs/administering/database-operations/alerting.md" >}}).
+You can also enable alerts for databases in the [database configuration]({{< relref "/rs/administering/database-operations/alerting.md" >}}).
 
 Configured alerts are shown:
 

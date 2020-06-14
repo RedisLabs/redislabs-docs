@@ -144,8 +144,7 @@ after the database is created.
 - [**Replica of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
-- [**TLS**]
-    ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+- [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 

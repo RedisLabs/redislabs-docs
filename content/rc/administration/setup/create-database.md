@@ -27,8 +27,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
     1. **Replication** is enabled by default so that each shard has a slave shard.
         If you do not require slave shards, for example in a caching database,
         disable replication.
-    1. In **Data Persistence**, select when the data is saved to [persistent storage]
-        ({{< relref "rc/concepts/data-persistence.md" >}}) :
+    1. In **Data Persistence**, select when the data is saved to [persistent storage]({{< relref "rc/concepts/data-persistence.md" >}}) :
         - None - Data is not persisted to disk at all.
         - Append Only File (AoF) one second - Data is fsynced to disk every second.
         - Snapshot every 1 hour - A snapshot of the database is created every hour.
@@ -39,13 +38,11 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
             to expose the cluster topology to your application.
         - Select **Use external endpoint** to let clients connect to the OSS cluster
             API throught the external endpoint.
-    1. By default, **Replica Of** is disabled. You can enable [Replica Of]
-        ({{< relref "/rs/administering/active-passive.md" >}})
+    1. By default, **Replica Of** is disabled. You can enable [Replica Of]({{< relref "/rs/administering/active-passive.md" >}})
         and select the endpoint of a database to hold a copy of the data.
 
         {{< note >}}
-You must configure [VPC Peering]
-({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}})
+You must configure [VPC Peering]({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}})
 between the VPC that this database is on and the VPC that the destination
 database is on.
         {{< /note >}}
@@ -59,12 +56,10 @@ database is on.
             - **Generate Client Certificate** and configure your client to use
                 the generated certificate.
             - Paste the certificate for your client.
-            For more information, see [Securing Redis Client Connections]
-            ({{< relref "/rs/administering/designing-production/security/client-connections.md" >}})
+            For more information, see [Securing Redis Client Connections]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}})
     1. Choose a **Data Eviction Policy** or accept the default. For more information,
         see [Data Eviction Policies]({{< relref "rc/concepts/data-eviction-policies.md" >}}).
-    1. Enable **Periodic Backups** and specify the [database backup]
-        ({{< relref "/rc/administration/configuration/backups.md" >}}) location.
+    1. Enable **Periodic Backups** and specify the [database backup]({{< relref "/rc/administration/configuration/backups.md" >}}) location.
     1. Choose a **Module** to use with the database. If you
         select 'RediSearch', enter the estimated number of documents
         you want to index. If you select 'RedisGraph', calculate the

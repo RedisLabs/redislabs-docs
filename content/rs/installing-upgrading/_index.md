@@ -23,8 +23,7 @@ To access the installation package for any of these platforms:
 
 {{< note >}}
 Before you install the Linux package or AWS AMI on an AWS instance,
-review the [configuration requirements for AWS instances]
-({{< relref "configuring-aws-instances.md" >}}).
+review the [configuration requirements for AWS instances]({{< relref "configuring-aws-instances.md" >}}).
 {{< /note >}}
 
 In this article we walk you through the process for installing the RS installation package for Linux.

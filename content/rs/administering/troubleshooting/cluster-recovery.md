@@ -21,8 +21,7 @@ To recover a cluster and re-create it as it was before the failure
 you must restore the cluster configuration (ccs-redis.rdb) to the cluster nodes.
 To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
-These files are stored in the [persistent storage location]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
+These files are stored in the [persistent storage location]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
 The cluster recovery process includes:
 
@@ -85,12 +84,10 @@ The cluster configuration file is `/css/ccs-redis.rdb`.
 
 `<node_uid>` - The id of the node, in this case `1`.
 
-`<persistent_path>` (optional) - The location of the [persistent storage ]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`<persistent_path>` (optional) - The location of the [persistent storage ]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`<ephemeral_path>` (optional) - The location of the [ephemeral storage]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`<ephemeral_path>` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
@@ -126,16 +123,13 @@ of the cluster this node is joining.
 
 `replace_node` - The ID of the node that this node replaces from the old cluster.
 
-`persistent_path` (optional) - The location of the [persistent storage]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`persistent_path` (optional) - The location of the [persistent storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`ephemeral_path` (optional) - The location of the [ephemeral storage]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`ephemeral_path` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`rack_id` (optional) - If [rack-zone awareness]
-({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
+`rack_id` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
 use this parameter to set the rack ID to be the same as the rack ID
 of the old node. You can also change the value of the rack ID by
 providing a different value and using the `override_rack_id` flag.
