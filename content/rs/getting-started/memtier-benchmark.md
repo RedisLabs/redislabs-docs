@@ -15,7 +15,7 @@ Prerequisites:
 - A database created
 
 If you need a quick setup for the prerequisites, please [go
-here]({{< relref "/rs/getting-started/quick-setup.md" >}}).
+here]({{< relref "/rs/getting-started/_index.md" >}}).
 
 It is recommended to run memtier_benchmark on a separate node that is
 not part of the cluster being tested. If you run it on a node of the

@@ -52,7 +52,7 @@ You can run all of these tests on Amazon AWS with these hosts:
 
 For instructions on how to install RS and set up a cluster, go to either:
 
-- [Quick Setup]({{< relref "/rs/getting-started/quick-setup.md" >}}) for a test installation
+- [Quick Setup]({{< relref "/rs/getting-started/_index.md" >}}) for a test installation
 - [Install and Upgrade]({{< relref "/rs/installing-upgrading/_index.md" >}}) for a production installation
 
 For the tests we use a quorum node in the cluster to keep costs down on AWS instance usage,
