@@ -5,7 +5,7 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisAI 1.0.0
+## RedisAI 1.0.0 (May 2020)
 
 Supported Backends:
 
