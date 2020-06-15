@@ -1,13 +1,14 @@
 ---
-Title: Getting Started with Redis Enterprise CRDBs (conflict-free replicated databases)
+Title: Getting Started with Redis Enterprise Active-Active Databases
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
 aliases: /rs/getting-started/creating-database/crdbs/
+         /rs/getting-started/getting-started-crdbs/
 categories: ["RS"]
 ---
-In this guide, we'll set up a CRDB (conflict-free
-replicated database) spanning across two Redis Enterprise Software
+In this guide, we'll set up an Active-Active database, also known as CRDB (Conflict-free
+Replicated DataBase) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
 - Step 1: Run two RS Docker containers
@@ -18,9 +19,11 @@ clusters for test and development environments. Here are the steps:
 To run a CRDB on installations from the [RS download package]({{< relref "/rs/getting-started/quick-setup.md" >}}),
 set up two RS installations and continue from Step 2.
 
-Note: This getting started guide is for development or demonstration environments.
+{{< note >}}
+This getting started guide is for development or demonstration environments.
 To set up CRDB in a production environment, use the instructions for
 [creating a CRDB]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
+{{< /note >}}
 
 ## Step 1: Run Two Containers
 

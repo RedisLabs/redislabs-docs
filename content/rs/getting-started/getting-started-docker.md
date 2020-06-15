@@ -1,24 +1,37 @@
 ---
 Title: Getting Started with Redis Enterprise Software using Docker
 description:
-weight: $weight
+weight: 40
 alwaysopen: false
 aliases:
     - /rs/getting-started/docker/windows/
     - /rs/getting-started/docker/linux/
     - /rs/getting-started/docker/macos/
+    - /rs/getting-started/docker/getting-started-docker/
+    - /rs/getting-started/docker/
 categories: ["RS"]
 ---
-In this quick setup guide, we take you through the steps to run RS in a Docker container to test its capabilities.
-To install RS in a Linux-based development environment, go to the
-[Quick Setup of Redis Enterprise Software]({{< relref "/rs/getting-started/quick-setup.md" >}}).
+For testing purposes, you can run Redis Enterprise Software on Docker containers on
+[Linux, Windows, or MacOS]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}).
+The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/redis/)
+represents a node in an RS Cluster. When deploying RS using Docker, there are a couple
+of common topologies:
 
-Before you start, you must install the [Docker engine](https://www.docker.com/get-started)
-on Windows, MacOS or Linux-based operating systems.
+**Topology #1:** The simplest topology is to run a single-node RS Cluster with a single container in a single host machine. This is best for local development or functional testing. Obviously, single-node clusters come with limited functionality in a few ways. For instance, in a single-node topology, RS can't replicate to slave shards or provide any protection for failures. Simply follow the instruction in the Getting Started pages for Windows, macOS and Linux to build your development environment.
 
-{{< note >}}
+![0-2](/images/rs/0-2.png?width=255&height=378)
+
+**Topology #2:** You may also run multi-node RS Cluster with multiple RS containers deployed to a single host machine. This topology is similar to the Topology #1 except that you run a multi-node cluster to develop and test against. The result is a system that is scale-minimized but similar to your production Redis Enterprise Software deployment. It is important to note that this topology isn't ideal for performance-sensitive systems. In this topology, containers may interfere with each other under load. In addition, even though the RS cluster provides replication to protect against failures  the cluster cannot protect you against the failure of the single host (because all nodes reside on the same physical host). With all this, Topology #2 (or other hybrid deployment methods in which you put multiple RS nodes in containers on the same physical host) is not recommended if you are looking for predictable performance or high availability.
+
+![Docker Redis Enterprise Software Cluster](/images/rs/0-1.png?width=777&height=380)
+
+**Topology #3:** You may also run multi-node RS Cluster with multiple RS containers each deployed to its own host machine. This topology minimizes interference between RS containers, so it performs more predictably than Topology #2.
+
+![0](/images/rs/0.png?width=780&height=380)
+
+{{% note %}}
 Docker containers are currently only supported for development and testing environments.
-{{< /note >}}
+{{% /note %}}
 
 To get started with a single Redis Enterprise Software container:
 
@@ -77,11 +90,11 @@ enter `12000` for the port number.
 1. Click **Activate** to create your database
 
 <!-- Also in crdbs.md -->
-{{< note >}}
+{{% note %}}
 If you cannot activate the database because of a memory limitation,
 make sure that Docker has enough memory allocated in the Advanced section
 of Docker Settings.
-{{< /note >}}
+{{% /note %}}
 
 The database configuration is shown.
 When you see a green check mark, the database is activated and ready for you to use.
