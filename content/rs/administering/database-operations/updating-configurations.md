@@ -14,9 +14,9 @@ To edit the configuration of a database:
     The database settings appear.
 1. Change the any of the [configurable database settings]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
-    {{% note %}}
+    {{< note >}}
 For [CRDB instances](#updating-crdb-configuration), most database settings only apply to the instance that you are editing.
-    {{% /note %}}
+    {{< /note >}}
 
 1. Click **Update**.
 

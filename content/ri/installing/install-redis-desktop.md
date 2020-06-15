@@ -12,10 +12,10 @@ RedisInsight is a full-featured Desktop GUI client for:
 - Ubuntu 18.04
 - MacOS 10.13 High Sierra
 
-{{% note %}}
+{{< note >}}
 For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
 We are happy to receive any feedback at redisinsight@redislabs.com.
-{{% /note %}}
+{{< /note >}}
 
 RedisInsight offers the following features -
 

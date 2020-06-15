@@ -8,10 +8,10 @@ categories: ["RS"]
 To delete the data in a database without deleting the database configuration,
 you can flush the data from the database.
 
-{{% warning title="Data Loss Warning" %}}
+{{< warning title="Data Loss Warning" >}}
 The flush command deletes ALL in-memory and persistence data in the database.
 We recommend that you [backup your database]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) before you flush the data.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Flushing Data from a Database
 

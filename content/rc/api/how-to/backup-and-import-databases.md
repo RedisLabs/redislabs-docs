@@ -50,9 +50,9 @@ The requirements for data import are:
 
 The duration of the import process depends on the amount of data imported and the network bandwidth between the data source and the importing database.
 
-{{% warning %}}
+{{< warning >}}
 Data imported into an existing database overwrites any existing data.
-{{% /warning %}}
+{{< /warning >}}
   
 ### Database import script
 

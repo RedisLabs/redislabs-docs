@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/mdns/
 ---
-{{% note %}}
+{{< note >}}
 mDNS is only supported for development and testing environments.
-{{% /note %}}
+{{< /note >}}
 
 If you choose to use the mDNS protocol when [you set the cluster name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
 make sure that the configurations and prerequisites for resolving database endpoints are met on the client machines.

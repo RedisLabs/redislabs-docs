@@ -49,9 +49,9 @@ git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
 ```
 
 <!--
-{{% note %}}
+{{< note >}}
 For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_rhel.yaml files.
-{{% /note %}}
+{{< /note >}}
 -->
 
 Specifically for the custom resource (cr) yaml file, you can also download and edit one of the files in the [example folder](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/examples).
@@ -92,9 +92,9 @@ Let’s look at each yaml file to see what requires editing:
     - crd declaration creates a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource that the k8s API server can use and the operator can manage in other deployments.
     - operator deployment declaration creates the operator deployment that is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise Cluster. Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes as pods. The yaml contains the latest image tag representing the latest Operator version available.
 
-    {{% warning %}}
+    {{< warning >}}
 Changes to this file can cause unexpected results.
-    {{% /warning %}}
+    {{< /warning >}}
 
     1. Apply the yaml file with:
 
@@ -145,9 +145,9 @@ rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
 
     If you deploy a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker.
 
-    {{% warning %}}
+    {{< warning >}}
 Changes to this file can cause unexpected results.
-    {{% /warning %}}
+    {{< /warning >}}
 
     - Apply the yaml file with:
 
@@ -229,9 +229,9 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 
         The default is 4 cores (4000m) and 4GB (4Gi).
 
-        {{% note %}}
+        {{< note >}}
 [Resource limits should equal requests](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service).
-        {{% /note %}}
+        {{< /note >}}
 
     - serviceBrokerSpec –
     - enabled: \<false/true\>
@@ -304,10 +304,10 @@ To create your database:
     kubectl port-forward your_cluster_name-0 8443:8443
     ```
 
-    {{% note %}}
+    {{< note >}}
 - your_cluster_name-0 is one of your cluster pods. Consider running the port-forward command in the background.
 - The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html).
-    {{% /note %}}
+    {{< /note >}}
 
     Next, create your database.
 
@@ -317,17 +317,17 @@ To create your database:
 
 1. To get your password from the OpenShift management console, go `Resources > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
 
-    {{% warning %}}
+    {{< warning >}}
 Do not change the default admin user password in the Redis Enterprise web UI.
 Changing the admin password can cause unextpected results in your K8s deployment.
-    {{% /warning %}}
+    {{< /warning >}}
 
     ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
 
 1. Continue with the [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
-{{% note %}}
+{{< note >}}
 To conduct the Ping test through Telnet, you can create a new route to the new database port as described above for the UI port. After you create your database, go to the Openshift management console, select your project name, and go to `Applications > Services`. Two new services are shown that represent the database along with their IP and port information, similar to the screenshot below.
-{{% /note %}}
+{{< /note >}}
 
 ![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )

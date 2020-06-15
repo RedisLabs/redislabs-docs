@@ -11,10 +11,10 @@ RS includes user login restrictions.
 You can customize the restrictions to align with the security policy of your organization.
 Every failed login is shown in the logs.
 
-{{% note %}}
+{{< note >}}
 Customers, such as large organizations, that use LDAP to manage external authentication
 must set these restrictions in the LDAP service.
-{{% /note %}}
+{{< /note >}}
 
 ## User Login Lockout
 

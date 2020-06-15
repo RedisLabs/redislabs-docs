@@ -89,9 +89,9 @@ PING
 +PONG
 ```
 
-{{% note %}}
+{{< note >}}
 We recommend loading the redis-cli command-line utility to use it for other things.
-{{% /note %}}
+{{< /note >}}
 
 ### Using redis-cli {#using-rediscli}
 

@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-{{% note %}}
+{{< note >}}
 [Redis Geospatial (Geo)](https://redis.io/commands/GEOADD) is based on Sorted Sets, so the same CRDB development instructions apply to Geo.
-{{% /note %}}
+{{< /note >}}
 
 Similar to Redis Sets, Redis Sorted Sets are non-repeating collections
 of Strings. The difference between the two is that every member of a

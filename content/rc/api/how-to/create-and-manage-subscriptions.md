@@ -82,6 +82,6 @@ To use the sample JSON document in your own account, you must modify these param
 - When you create a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file.
 - You can [copy-and-paste]({{< relref  "/rc/api/how-to/using-curl#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
 
-{{% note %}}
+{{< note >}}
 The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
-{{% /note %}}
+{{< /note >}}

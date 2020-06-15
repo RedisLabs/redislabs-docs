@@ -19,14 +19,14 @@ In the new AWS account, you need to create:
 
 Make sure that you save the access key in a secure location so that you can enter the key when you create the Redis Cloud account.
 
-{{% warning %}}
+{{< warning >}}
 We use the provided credentials to configure your AWS environment and provision required resources.
 
 To make sure that we can manage your AWS resources, you must not:
 
 - Manually change the configurations of provisioned resources, such as security groups
 - Manually stop or terminate provisioned instances
-{{% /warning %}}
+{{< /warning >}}
 
 For more about creating an AWS user, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 

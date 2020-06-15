@@ -14,12 +14,12 @@ You can add modules to the database when you create the database or after the da
 
 ## Add Modules to a Database
 
-{{% note %}}
+{{< note >}}
 - Before you add a module to a database,
     we recommend that you [upgrade the module]({{< relref "/modules/upgrading-rs.md" >}}) to the latest version.
 - After you add a module to the database,
     certain database fields for the database are disabled according to the supported capabilities of the module.
-{{% /note %}}
+{{< /note >}}
 
 To add modules to a database:
 

@@ -25,9 +25,9 @@ you can upgrade to [another plan](https://redislabs.com/pricing) that supports t
 
 You may change your subscription at any time by going to **Databases > Configuration > Edit > Access Control & Security**.
 
-{{% note %}}
+{{< note >}}
 Only the account owner can change the subscription.
-{{% /note %}}
+{{< /note >}}
 
 ## Securing Connection to Your Database with SSL/TLS
 

@@ -23,18 +23,17 @@ You can schedule backups to these locations:
 Other cloud storage options, including Azure Geo-Redundant Storage and Google Cloud Storage,
 are planned for a future release.
 
-The backup process creates compressed (.gz) RDB files that you can [import into a database]
-({{< relref "/rs/administering/database-operations/importing-data.md" >}}).
+The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/database-operations/importing-data.md" >}}).
 If you backup a database configured for database clustering,
 RS copies a backup file for each shard to the specified backup location.
 
-{{% note %}}
+{{< note >}}
 
 - Make sure that you have enough space available in your storage location.
-If there is not enough space in the backup location, the backup fails.
+    If there is not enough space in the backup location, the backup fails.
 - The backup configuration only applies to the node it is configured on.
 
-{{% /note %}}
+{{< /note >}}
 
 ## Scheduling Periodic Backups
 

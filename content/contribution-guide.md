@@ -15,9 +15,9 @@ you can click on the **Edit on GitHub** link, [edit the page, and submit the cha
 If you see a problem on a page but you don't know how to fix it,
 go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a **New Issue**.
 
-{{% note %}}
+{{< note >}}
 If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
-{{% /note %}}
+{{< /note >}}
 
 ## Branches vs. Forks
 
@@ -238,15 +238,15 @@ Here are some examples:
         We use `cURL` and Linux shell scripts to provide examples on using the API.
         {{% /info %}}
 
-        {{% note %}}
+        {{< note >}}
         The key values are not saved when you refresh the page.
-        {{% /note %}}
+        {{< /note >}}
         ```
 
 - When you add info, note or warning boxes below indented text, you must indent the open and close tags and not indent the content.
 
         ```src
-        {{% note %}}
+        {{< note >}}
         The key values are not saved when you refresh the page.
-        {{% /note %}}
+        {{< /note >}}
         ```

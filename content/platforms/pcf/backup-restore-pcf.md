@@ -71,17 +71,17 @@ To restore a Redis Enterprise for Pivotal Platform deployment:
 
 1. On the new Pivotal Platform Foundation, install a redis-enterprise tile with the same configuration of the original tile.
 
-    {{% note %}}
+    {{< note >}}
 A different cluster name or number of machines than the original tile causes errors in the restore.
-    {{% /note %}}
+    {{< /note >}}
 
 1. In the cluster configuration tab, check the **Recovery Mode** checkbox and click **Apply change**.
 1. Copy the backup archive to the Ops Manager.
 1. Run the restore command to recover the cluster:
 
-    {{% note %}}
+    {{< note >}}
 This command does not recover databases.
-    {{% /note %}}
+    {{< /note >}}
 
     ```src
     BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> restore --artifact-path=<archive_path>

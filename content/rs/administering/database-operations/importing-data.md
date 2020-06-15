@@ -11,9 +11,9 @@ files of a specific database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a sharded database.
 
-{{% warning %}}
+{{< warning >}}
 Importing data erases all existing content in the database.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Importing data into a database
 
@@ -109,9 +109,9 @@ To specify to import from a local mount point on a node:
 
 ### OpenStack Swift
 
-{{% note %}}
+{{< note >}}
 Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
-{{% /note %}}
+{{< /note >}}
 
 Before you specify to import from OpenStack Swift, make sure that you have:
 

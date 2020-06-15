@@ -35,9 +35,9 @@ You can see the cluster key either:
 
 ## Adding or Updating a Cluster Key
 
-{{% note %}}
+{{< note >}}
 After you add a cluster key, you cannot remove the key to return the cluster to trial mode.
-{{% /note %}}
+{{< /note >}}
 
 You can add a cluster key to the cluster either:
 

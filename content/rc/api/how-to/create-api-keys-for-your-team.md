@@ -35,9 +35,9 @@ For an account owner to create a key for themselves:
     A popup window is shown that shows that the secret key was successfully created.
 1. Copy the secret key value and store it in a safe location.
 
-{{% note %}}
+{{< note >}}
 The dropdown list of users only contains users of the current account in the owner role who completed email address verification.
-{{% /note %}}
+{{< /note >}}
 
 ## Using the Secret Key
 

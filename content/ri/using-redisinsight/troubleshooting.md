@@ -21,8 +21,8 @@ To get detailed information about errors in RedisInsight, you can review the log
 - **Windows**: In the `C:\Users\<your-username>\.redisinsight` directory.
 - **Linux**: In the `/home/<your-username>/.redisinsight` directory.
 
-{{% note %}}
+{{< note >}}
 You can install RedisInsight on operating systems that are not officially supported, but it may not behave as expected.
-{{% /note %}}
+{{< /note >}}
 
 We are happy to receive your feedback at redisinsight@redislabs.com.

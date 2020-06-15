@@ -24,9 +24,9 @@ The metric span determines the time period for the data points in the metrics AP
 | 1month  | 1 month | 12 hours | continuous |
 | 1year  | 1 year | 7 days | continuous |
 
-{{% note %}}
+{{< note >}}
 The data point interval represents a best-effort and is not an absolute or unvarying interval. The exact interval between one data point and the next may vary and the interval values may change.
-{{% /note %}}
+{{< /note >}}
 
 ### High frequency, on-demand metric spans
 

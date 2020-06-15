@@ -6,9 +6,9 @@ path: auto-discover-databases/
 ---
 RedisInsight lets you automatically add Redis Enterprise Software and Redis Enterprise Cloud databases.
 
-{{% note %}}
+{{< note >}}
 For auto-discovery, Redis Enterprise Cloud databases must be in a Pro subscription.
-{{% /note %}}
+{{< /note >}}
 
 ## Auto-discovery for Redis Enterprise Software
 

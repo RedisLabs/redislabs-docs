@@ -12,10 +12,10 @@ But what does the performance look like as compared to an all-RAM RS database?
 The simple scenarios on this page show you how you can get performance results with the free RS trial version.
 If you would like assistance with your evaluation or need to test a larger cluster, we'd be happy to help.
 
-{{% note %}}
+{{< note >}}
 memtier_benchmark is included with Redis Enterprise Software in /opt/redislabs/bin/.
 To benchmark another database provider, you can get [memtier_benchmark on GitHub](https://github.com/RedisLabs/memtier_benchmark).
-{{% /note %}}
+{{< /note >}}
 
 ## Benchmark and Performance Test Considerations
 

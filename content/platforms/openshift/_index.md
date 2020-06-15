@@ -58,9 +58,9 @@ git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
 ```
 
 <!--
-{{% note %}}
+{{< note >}}
 For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_rhel.yaml files.
-{{% /note %}}
+{{< /note >}}
 -->
 
 Specifically for the custom resource (cr) yaml file, you may also download and edit one of the files in the [example folder.](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/examples)  
@@ -236,9 +236,9 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 
         The default (if unspecified) is 4 cores (4000m) and 4GB (4Gi).
 
-        {{% note %}}
+        {{< note >}}
 Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
-        {{% /note %}}
+        {{< /note >}}
 
     - serviceBrokerSpec –
     - enabled: \<false/true\>
@@ -306,10 +306,10 @@ In order to create your database, we will log in to the Redis Enterprise UI.
     kubectl port-forward your_cluster_name-0 8443:8443
     ```
 
-    {{% note %}}
+    {{< note >}}
 - your_cluster_name-0 is one of your cluster pods. You may consider running the port-forward command in the background.
 - The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html).
-    {{% /note %}}
+    {{< /note >}}
 
     Next, create your database.
 
@@ -320,18 +320,18 @@ In order to create your database, we will log in to the Redis Enterprise UI.
 - In order to retrieve your password, navigate to the OpenShift management console, select your project name, go to    Resources-\>Secrets-\>your_cluster_name
 - Retrieve your password by selecting “Reveal Secret.”
 
-    {{% warning %}}
+    {{< warning >}}
 Do not change the default admin user password in the Redis Enterprise web UI.
 Changing the admin password impacts the proper operation of the K8s deployment.
-    {{% /warning %}}
+    {{< /warning >}}
 
     ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
 
 - Follow the interface’s [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
-{{% note %}}
+{{< note >}}
 In order to conduct the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You will see two newly created services representing the database along with their IP and port information, similar to the screenshot below.
-{{% /note %}}
+{{< /note >}}
 
 ![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )
 

@@ -46,7 +46,7 @@ instead of the default port (8443), you can change the port. Before you
 change the RS Web UI port, make sure that the new port is not in
 use by another process.
 
-{{% note %}}
+{{< note >}}
 After you change the RS Web UI port, when you add a new node to the
 cluster you must connect to the web UI with the custom port number:
 

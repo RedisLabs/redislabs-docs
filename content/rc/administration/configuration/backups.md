@@ -11,11 +11,11 @@ aliases: /rv/administration/configure/backups/
 You can run scheduled and on-demand backups of your Redis Cloud databases
 to a remote storage location. Scheduled backups run every 24 hours.
 
-{{% note %}}
+{{< note >}}
 Backups are only available for paid subscriptions.
 Customers with free subscriptions must upgrade to a paid subscriptions to use backups.
 Subscription upgrade does not cause downtime.
-{{% /note %}}
+{{< /note >}}
 
 ## Can I export my Redis data from Redis Cloud?
 

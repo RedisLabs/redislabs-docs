@@ -8,11 +8,11 @@ categories: ["RC"]
 To get top performance from your Redis Cloud Essentials database,
 you want to match the AWS availability zones of your application to your Redis Cloud Essentials database.
 
-{{% note %}}
+{{< note >}}
 - If you have a Multi-AZ subscription,
 you do not need to map AWS zones.
 - AWS zone mapping is not yet supported for Redis Cloud Pro and Ultimate.
-{{% /note %}}
+{{< /note >}}
 
 ## Why Do Zone Mapping?
 

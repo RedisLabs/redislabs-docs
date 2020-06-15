@@ -19,8 +19,7 @@ All create, update, and delete API operations (`POST`, `PUT` and `DELETE`) and s
 
 After you request an asynchronous operation, the operations returns a `taskId` that identities the specific task, and contains contextual and status data on the API operation performed by the task.
 
-Tasks are part of the API [processing and provisioning lifecycle]
-({{< relref "/rc/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}}).
+Tasks are part of the API [processing and provisioning lifecycle]({{< relref "/rc/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}}).
 
 ### Task information
 

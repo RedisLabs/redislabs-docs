@@ -11,7 +11,7 @@ There are times where you want to delete all database data.
 The flush command deletes ALL of the data in the database.
 This includes all data in memory and persisted to disk.
 We recommend that you [backup your database]({{< relref "/rc/administration/configuration/backups.md" >}}) before you flush the data.
-{{% /warning %}}
+{{< /warning >}}
 
 ## flushall for Redis Cloud Databases
 

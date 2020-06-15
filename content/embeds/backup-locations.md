@@ -73,9 +73,9 @@ To backup to a local mount point for a node:
 
 ### OpenStack Swift
 
-{{% note %}}
+{{< note >}}
 Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
-{{% /note %}}
+{{< /note >}}
 
 Before you choose to backup to OpenStack Swift, make sure that you have:
 

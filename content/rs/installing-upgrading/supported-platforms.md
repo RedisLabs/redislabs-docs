@@ -8,14 +8,14 @@ aliases: /rs/administering/designing-production/supported-platforms/
 ---
 Redis Enterprise Software (RS) is supported on several operating systems, cloud environments, and virtual environments.
 
-{{% note %}}
+{{< note >}}
 Make sure your system meets these requirements:
 
 - Only 64-bit operating systems are supported.
 - You must install Redis Enterprise Software directly on the host, not through system cloning.
 - You must install on a clean host with no other applications running so that all RAM is allocated to the OS and RS only.
 - Linux distributions must be installed with at least "Minimal Install" configuration.
-{{% /note %}}
+{{< /note >}}
 
 | **Platform** | **Versions/Information** |
 |------------|-----------------|

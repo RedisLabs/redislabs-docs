@@ -7,9 +7,9 @@ categories: ["Modules"]
 aliases: /modules/packaging
 ---
 
-{{% warning %}}
+{{< warning >}}
 Redis Labs does not and cannot support third party modules or databases created with them.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Packaging Non-Certified Modules
 

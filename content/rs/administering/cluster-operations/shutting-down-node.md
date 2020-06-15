@@ -16,10 +16,10 @@ To gracefully stop RS and make sure that data is saved,
 we recommended that you stop the RS processes so that RS saves the data to disk.
 Then you can stop the node without risk of delay or data loss.
 
-{{% note %}}
+{{< note >}}
 To avoid risk of data loss and cluster instability,
 we recommend that at most only one node in the cluster be down at any time.
-{{% /note %}}
+{{< /note >}}
 
 To stop the RS processes, run:
 

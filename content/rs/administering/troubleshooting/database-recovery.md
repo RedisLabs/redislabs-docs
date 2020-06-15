@@ -12,8 +12,7 @@ When a cluster fails or a database is corrupted, you must:
 
 To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
-These files are stored in the [persistence storage location]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
+These files are stored in the [persistence storage location]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
     
 The database recovery process includes:
 
@@ -43,10 +42,10 @@ To recover the database:
 1. Mount the persistent storage drives with the recovery files to the new nodes.
     These drives must contain the cluster configuration backup files and database persistence files.
 
-    {{% note %}}
+    {{< note >}}
 Make sure that the user redislabs has permissions to access the storage location
 of the configuration and persistence files on each of the nodes.
-    {{% /note %}}
+    {{< /note >}}
 
     If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
@@ -81,12 +80,12 @@ of the configuration and persistence files on each of the nodes.
 
     - If AOF or snapshot is not available, the database is restored empty. CRDB instances are synced with the other participating clusters (slow CRDB sync).
 
-    {{% note %}}
+    {{< note >}}
 If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
 you must first map the recovery path of each node to the location of the old persistence files.
 To do this, run the `node <id> recovery_path set` command in rladmin.
 The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
-    {{% /note %}}  
+    {{< /note >}}  
 
 1. To verify that the recovered databases are now active, run: `rladmin status`
 

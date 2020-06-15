@@ -27,10 +27,10 @@ storage and ephemeral storage paths.
     
     Ephemeral storage must be a locally attached volume on each node.
 
-{{% note %}}
+{{< note >}}
 Persistent and ephemeral storage discussed here is not related
 to Redis persistence or AWS ephemeral drives.
-{{% /note %}}
+{{< /note >}}
 
 For disk size requirements, see:
 

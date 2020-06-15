@@ -92,9 +92,9 @@ The password complexity profile is defined by:
 - Does not contain the User ID or reverse of the User ID
 - No more than 3 repeating characters
 
-{{% note %}}
+{{< note >}}
 The password complexity profile applies to when a new user is added or an existing user changes their password.
-{{% /note %}}
+{{< /note >}}
 
 To enforce the password complexity profile, run:
 

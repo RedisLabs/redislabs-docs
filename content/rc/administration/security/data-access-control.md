@@ -14,7 +14,7 @@ To control user access to Redis database commands and keys,
 you must define Redis ACLs that specify the commands that users can run and keys that the commands can apply to.
 Then, in the data access role, select the databases that the users can access and Redis ACL that controls user access to those databases.
 
-{{% note %}}
+{{< note >}}
 
 - Redis ACLs can only be configured in the Redis Cloud Admin Console.
     In Redis:
@@ -23,7 +23,7 @@ Then, in the data access role, select the databases that the users can access an
 - The MULTI, EXEC, DISCARD commands are always allowed, but ACLs are enforced on MULTI subcommands.
 - When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 
-{{% /note %}}
+{{< /note >}}
 
 ## Redis ACL command syntax
 

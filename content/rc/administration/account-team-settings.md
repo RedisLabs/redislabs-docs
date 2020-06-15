@@ -69,12 +69,12 @@ When you log in to the Redis Cloud Admin Console, you are sent an authentication
 
 To change the mobile phone number, click **Configure** for the text message code and enter the new mobile phone number.
 
-{{% note %}}
+{{< note >}}
 We recommend that you also configure MFA for an Authenticator app as a second method of MFA.
 If you cannot login to your account because of MFA, contact [Support](https://support.redislabs.com).
 
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
-{{% /note %}}
+{{< /note >}}
 
 #### Configuring MFA for an Authenticator App
 

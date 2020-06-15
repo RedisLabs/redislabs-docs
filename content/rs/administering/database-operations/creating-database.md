@@ -17,10 +17,10 @@ These databases can use Redis Enterprise features like:
 You can create databases according to the number of shards in your subscription
 and the memory available on the machine.
 
-{{% note %}}
+{{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
 [create an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
-{{% /note %}}
+{{< /note >}}
 
 ## Creating a New Redis Database
 
@@ -51,20 +51,20 @@ To create a new database:
         - Only letter, number or hyphen (-) characters
         - Starts with a letter; ends with a letter or digit.
 
-        {{% note %}}
+        {{< note >}}
 The database name is not case-sensitive
-        {{% /note %}}
+        {{< /note >}}
 
     - **Memory limit** - The [memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}) includes all database replicas and shards,
         including slave shards in database replication and database shards in database clustering.
         If the total size of the database in the cluster reaches the memory limit,
         then the data eviction policy for the database is enforced.
 
-        {{% note %}}
+        {{< note >}}
 If you create a [Redis Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
 for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
-        {{% /note %}}
+        {{< /note >}}
 
 1. Configure the {{< field "db_type" >}} options that you want for the database:
 
@@ -96,9 +96,9 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         If you also configure an access control list, connections can specify other users for authentication,
         and requests are allowed according to the Redis ACLs specified for that user.
 
-        {{% note %}}
+        {{< note >}}
 If you are creating a Memcached database, enter a username and password for SASL Authentication.
-        {{% /note %}}
+        {{< /note >}}
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
@@ -116,10 +116,10 @@ If you are creating a Memcached database, enter a username and password for SASL
     - **Endpoint port number** - You can define the port number that clients use to connect to the database,
         or a port is randomly selected.
 
-        {{% note %}}
+        {{< note >}}
 You cannot change the [port number]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 after the database is created.
-        {{% /note %}}
+        {{< /note >}}
 
 - **Database clustering** - You can either:
     - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
@@ -144,8 +144,7 @@ after the database is created.
 - [**Replica of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
-- [**TLS**]
-    ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+- [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 

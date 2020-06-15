@@ -109,12 +109,12 @@ To get started with custom monitoring:
 
     ![prometheus-connection](/images/rs/prometheus-connection.png?width=500)
 
-    {{% note %}}
+    {{< note >}}
 
 - If the network port is not accessible to the Grafana server, select the **Browser** option from the Access menu.
 - In a testing environment, you can select **Skip TLS verification**.
 
-    {{% /note %}}
+    {{< /note >}}
 
 1. Add dashboards for cluster, node, and database metrics.
     To add preconfigured dashboards:
