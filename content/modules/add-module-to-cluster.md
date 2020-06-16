@@ -1,7 +1,7 @@
 ---
 Title: Adding a Module to a Cluster
 description:
-weight: 10
+weight: 4
 alwaysopen: false
 categories: ["Modules"]
 aliases:
