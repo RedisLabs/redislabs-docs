@@ -5,8 +5,11 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-On the **Database > Metrics** page you can view detailed real-time
-graphs of various database metrics, as well as shard-related metrics.
+You can use the metrics that measurement the performance of your clusters, nodes, databases and shards
+to keep an eye on the performance of your databases.
+In the management console, you can either see the real-time metrics or configure alerts to send you notifications based on alert parameters.
+
+You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example [using Prometheus and Grafana]({{< relref "/rs/administering/monitoring-metrics/prometheus-integration.md" >}}).
 
 ## Cluster metrics
 
