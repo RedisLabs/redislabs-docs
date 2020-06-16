@@ -42,7 +42,6 @@ steps:
             1. In the Account field enter:
                 `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
             1. Select the **Write objects**, **Read bucket permissions**, and **Write bucket permissions**, and click **Save**.
-                    ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)
     - For an existing bucket, click on the S3 bucket and go to the **Permissions** tab.
         1. Click **Add account**.
         1. In the **Access for other AWS accounts** section, enter:
