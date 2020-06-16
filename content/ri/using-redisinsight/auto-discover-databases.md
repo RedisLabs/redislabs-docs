@@ -52,7 +52,7 @@ To automatically discover and add Redis Enterprise Cloud (RC) databases to Redis
 
     ![rc-step-3](/images/ri/rc-step-3.png)
 
-1. Enter the [Account Key](https://docs.redislabs.com/latest/rc/api/concepts/authentication-and-authorization/#account-key) and the [Secret key](https://docs.redislabs.com/latest/rc/api/concepts/authentication-and-authorization/#secret-key) associated with your Redis Enterprise Cloud account and click **SUBMIT**.
+1. Enter the [Account Key]({{< relref "/rc/api/concepts/authentication-and-authorization.md#account-key" >}}) and the [Secret key]({{< relref "/rc/api/concepts/authentication-and-authorization.md#secret-key" >}}) associated with your Redis Enterprise Cloud account and click **SUBMIT**.
 
     ![rc-step-4](/images/ri/rc-step-4.png)
 
