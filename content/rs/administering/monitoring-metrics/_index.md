@@ -1,5 +1,5 @@
 ---
-Title: Monitoring and Metrics
+Title: Monitoring with Metrics and Alerts
 description:
 weight: $weight
 alwaysopen: false
@@ -11,92 +11,65 @@ In the management console, you can either see the real-time metrics or configure
 
 You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example [using Prometheus and Grafana]({{< relref "/rs/administering/monitoring-metrics/prometheus-integration.md" >}}).
 
-## Cluster metrics
+Make sure you read the [definition of each metric]({{< relref "/rs/administering/monitoring-metrics/definitions.md" >}})
+so that you understand exactly what it represents.
 
-On the **Cluster > Metrics** page you can view detailed real-time
-graphs of various metrics for the entire cluster, as well as specific
-nodes.
+## Real-time Metrics
 
-You can choose which resources and metric to display in each of the two
-detailed graphs at the top of the page, as follows:
+You can see the metrics of the cluster in:
 
-- Below the top two graphs there are two groups of smaller graphs:
-    - The first group displays all available **resources**: the
-        cluster itself, and each of the cluster nodes.
-    - The second group displays all available **metrics**, such as CPU
-        utilization and operations per second.
-- In each of the **resources** graphs, clicking the left arrow
-    displays that resource in the top left graph. Clicking the right
-    arrow displays that resource in the top right graph.
-- In each of the **metrics** graphs, you can choose which metric to
-    display for the two selected resources.
+- **Cluster > Metrics**, including individual nodes
+- **Node > Metrics**
+- **Database > Metrics**, including individual shards
+- **Shards > Metrics**
 
-Thus, you can compare the same metric for two different resources.
+The scale selector at the top of the page allows you to set the scale of the graphs' X-axis (time).
 
-In addition, the scale selector at the top of the page allows you to set
-the scale of the graphs' X-axis (time).
+You can choose which metrics graph to display in the two large graphs at the top of the page:
 
-If you need, there is a [definition of each
-metric]({{< relref "/rs/administering/monitoring-metrics/definitions.md" >}}).
+1. Hover over the graph you want to show in a large graph.
+1. Click on the right or left arrow to choose which side to show the graph.
 
-## Node metrics
+We recommend that you show two similar metrics in the top graphs so you can compare them side-by-side.
 
-On the **Node > Metrics** page you can view detailed graphs of various
-node metrics in real-time.
+## Cluster Alerts
 
-You can choose which metrics are shown in each of the two graphs at the
-top of the page, as follows:
+In **settings** > **alerts**, you can enable alerts for node or cluster events, such as high memory usage or throughput.
 
-- Below the top two graphs there is a group of smaller graphs that
-    displays all available **metrics**, such as CPU utilization and
-    operations per second.
-- In each of the bottom graphs, clicking the left arrow displays that
-    metric in the top left graph, while clicking the right arrow
-    displays that metric in the top right graph.
+Configured alerts are shown:
 
-In addition, the scale selector at the top of the page allows you to set
-the scale of the graphs' X-axis (time).
+- As a warning icon (![Warning](/images/rs/icon_warning.png#no-click "Warning")) for the node and cluster
+- In the **log**
+- In email notifications, if you configure [email alerts](#sending-alerts-by-email)
 
-## Database metrics
+{{< note >}}
+If you enable alerts for "Node joined" or "Node removed" actions,
+you must also enable "Receive email alerts" so that the alerts are sent.
+{{< /note >}}
 
-You can choose which metrics are shown in each of the two detailed
-graphs at the top of the page, as follows:
+To enable alerts for a cluster:
 
-- Below the top two graphs there is a group of smaller graphs that
-    display all available metrics, such as CPU utilization and
-    operations per second.
-- In each of the bottom graphs, you can click the left arrow to
-    display that metric in the top left graph, and the right arrow to
-    display that metric in the top right graph.
+- In **settings** > **alerts**, select the alerts that you want to show for the cluster and click **Save**.
 
-In addition, the scale selector at the top of the page allows you to set
-the scale of the graphs' X-axis (time).
+## Database Alerts
 
-## Shards metrics
+For each database, you can enable alerts for database events, such as high memory usage or throughput.
 
-You can choose which resources and metrics are shown in each of the
-two detailed graphs at the top of the page, as follows:
+Configured alerts are shown:
 
-- Below the top two graphs there are two groups of smaller graphs:
-    - The first group displays all available **resources**: the
-        database itself, and each of the database shards. These can be
-        master shards, slave shards (if [Database
-        replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) is
-        enabled), or shards that take part of a clustered database (for
-        additional details, refer to [Database
-        clustering]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
-        The shard name refers to the shard role (whether master or
-        slave).
-        Each small shard graph also lists the node it is located on, and
-        the hash slot to which it is mapped, if it is part of a
-        clustered database.
-        Note that corresponding master / slave shards in a clustered
-        database have the same hash slot.
-    - The second group displays all available **metrics**, such as
-        operations per second and used memory.
-- In each of the metrics and resources graphs, you can click the left arrow to
-    display that metric in the top left graph, and the right arrow to
-    display that metric in the top right graph.
+- As a warning icon (![Warning](/images/rs/icon_warning.png#no-click "Warning") for the database
+- In the **log**
+- In emails, if you configure [email alerts](#sending-alerts-by-email)
 
-In addition, the scale selector at the top of the page allows you to set
-the scale of the graphs' X-axis (time).
+To enable alerts for a database:
+
+1. In **configuration** for each database, click **show adavnced options** to see the database alerts and select the alerts that you want to get for the database.
+2. Click **Update**.
+
+## Sending Alerts by Email
+
+To send cluster or database alerts by email:
+
+1. In **settings** > **alerts**, select **Receive email alerts** at the bottom of the page.
+1. Configure the [email server settings]({{< relref "/rs/administering/cluster-operations/settings/_index.md" >}}).
+1. In **access control**, select for each user [the database and cluster alerts]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}) that you want the user to receive.
