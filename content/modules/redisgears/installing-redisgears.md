@@ -1,0 +1,141 @@
+---
+Title: Installing RedisGears 
+description:
+weight: 60
+alwaysopen: false
+categories: ["Modules"]
+---
+Before you can use RedisGears, you have to install the RedisGears module on your RS cluster.
+
+## Minimum Requirements
+
+- Redis Enterprise 6.0.0 or later
+- The [cluster is setup]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) and all of the nodes are joined to the cluster
+
+{{< note >}}
+For installing on Redis Enterprise Kubernetes deployments or Docker containers, you must use Ubuntu 18.04.4 LTS as the base OS because the RedisGears binaries are built using the binaries for that OS by [default](https://github.com/RedisLabs/redis-enterprise-k8s-docs#basic-installation), unless the RedisGears release specifies that there is also support for RHEL 7 docker images.
+{{< /note >}}
+
+## Installing RedisGears
+
+### Step 1: Install RedisGears dependencies
+
+On each node in the Redis Enterprise cluster:
+
+1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module - Dependencies Package from the Redis Enterprise Software section of the Downloads page.
+1. Copy the dependencies package to a node in your cluster.
+1. Run these commands as root:
+
+    ```src
+    # source /etc/opt/redislabs/redislabs_env_config.sh
+    # mkdir -p $modulesdatadir/rg/10000/deps/
+    # tar -xvf /home/ubuntu/redisgears-dependencies.linux-bionic-x64.1.0.0.tgz -C $modulesdatadir/rg/10000/deps
+    # chown -R $osuser $modulesdatadir/rg
+    ```
+
+{{< note >}}
+You must also run these commands on new nodes before you join the node to the cluster.
+{{< /note >}}
+
+### Step 2: Install the RedisGears module
+
+1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module.
+1. In the RS admin console, [add the RedisGears module]({{< relref "/modules/add-module-to-cluster.md" >}}) to the cluster.
+
+### Step 3: Create a Database and Verify the Installation
+
+1. Create a Redis Enterprise database [with the RedisGears module]({{< relref "/modules/add-module-to-database.md" >}}).
+1. To see that the database was created successfully and shards are running, run: `rladmin status`
+1. To see that RedisGears is running correctly, run: `redis-cli RG.PYEXECUTE "GearsBuilder().run()"`
+
+## Install the Write-Behind Recipe
+
+The Write-Behind recipe comes with two types of dependencies:
+
+- Drivers to connect to the backend database
+- Python libraries for the RedisGears Functions
+
+In most cases all of these can be provisioned to RedisGears before the Functions are uploaded.
+However, root access for the driver on the host is required in some cases, for example with Oracle drivers.
+
+### Step 1: Install Oracle driver (Optional)
+
+[Download the driver](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) and follow the installation instructions on the download page.
+
+### Step 2: Import requirements
+
+1. Install [Python 3](https://www.python.org/downloads/).
+1. To install the gears-cli, run: `pip install gears-cli`
+1. Download [rgsync offline package](https://docs.google.com/document/d/1xiNEi6O_BIHgyUDfhTqic0zD_DPJCSmIVzjWlCn-hCE/edit#heading=h.thlygbs3qwmo).
+1. Import the requirements:
+
+    ```src
+    # gears-cli import-requirements \
+        --host HOST [ --port PORT ] --password PASSWORD \
+        --requirements-path rgsync-99.99.99.linux-bionic-x64.zip
+    ```
+
+    {{< note >}}
+You can be more efficient and import only the requirements you need, but rgync is always required and can be combined with one or more of these packages according to your OS:
+
+- redisgears-requirement-v1-snowflake-sqlalchemy-linux-<os>-x64.zip
+- redisgears-requirement-v1-PyMySQL-linux-<os>-x64.zip
+- redisgears-requirement-v1-cx-Oracle-linux-<os>-x64.zip
+- redisgears-requirement-v1-cassandra-driver-linux-<os>-x64.zip
+
+This list can be different or more extensive in newer versions.
+    {{< /note >}}
+
+1. To verify the requirements were imported successfully, run: `RG.PYDUMPREQ`
+
+    This command returns a list of all available requirements.
+
+### Step 3: Register the Functions
+
+The following is a RedisGears recipe that shows how to use the Write Behind pattern to map data from Redis Hashes to MySQL tables.
+The recipe maps all Redis Hashes with the prefix `person:<id>` to the MySQL table persons, with `<id>` being the primary key and mapped to the person_id column.
+Similarly, it maps all Hashes with the prefix `car:<id>` to the cars table.
+
+```src
+from rgsync import RGWriteBehind
+from rgsync.Connectors import MySqlConnector, MySqlConnection
+
+'''
+Create MySQL connection object
+'''
+connection = MySqlConnection('demouser', 'Password123!', 'localhost:3306/test')
+
+'''
+Create MySQL persons connector
+persons - MySQL table to put the data
+person_id - primary key
+'''
+personConnector = MySqlConnector(connection, 'persons', 'person_id')
+
+personsMappings = {
+	'first_name':'first',
+	'last_name':'last',
+	'age':'age'
+}
+
+RGWriteBehind(GB, keysPrefix='person', mappings=personsMappings, connector=personsConnector, name='PersonsWriteBehind', version='99.99.99')
+
+'''
+Create MySQL car connector
+cars - MySQL table to put the data
+car_id - primary key
+'''
+carConnector = MySqlConnector(connection, 'cars', 'car_id')
+
+carsMappings = {
+	'id':'id',
+	'color':'color'
+}
+
+RGWriteBehind(GB, keysPrefix='cars', mappings=carsMappings, connector=carsConnector, name='CarsWriteBehind', version='99.99.99')
+```
+
+Go to the [rgsync website](https://pypi.org/project/rgsync/) to get the replication options and the configuration options for the database and mapping.
+
+1. Create a python file with the configuration mapping according to your specific needs.
+1. Create a file with the configuration mapping according to your specific needs: `gears-cli --host <host> --port <post> --password <password> <yourfile>.py`
