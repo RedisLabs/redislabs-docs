@@ -47,7 +47,6 @@ steps:
         1. In the **Access for other AWS accounts** section, enter:
             1. In the Account field enter:
                 `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-                ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)
             1. Select the **permissions** that you need.
         1. Click **Save**.
 
