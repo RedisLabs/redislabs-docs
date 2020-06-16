@@ -29,53 +29,31 @@ To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
 steps:
 
-1. Select the **S3** service under **Services** -> **Storage** ->
-    **S3** to navigate to the **S3 Management Console**.
-1. Navigate to your bucket's permissions page:
-    1. To create a new bucket:
-       1. Click the **Create Bucket** button.
-        1. Enter a **name** and **region** for the bucket.
-            ![new-bucket](/images/rc/new-bucket.png?width=600&height=678)
-        1. Click the **Next** button.
-        1. Set any bucket properties to your company's standards.
-        1. Click the **Next** button.
-        1. Set Public access properties according to your company's standards.
-        1. Click the **Next** button.
-        1. Review the properties and click Create bucket button.
-        1. Search your bucket and click on the bucket name.
-        1. Move to Permissions tab and click on Access Control List section.
-        1. On the access for other AWS accounts section, click the **Add account** button.
-        1. In the Account field enter:
-            `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-        1. Check read/write boxes for **Objects** and **bucket permissions**,
-            then click **Save**.
-            ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)
-        1. Click the **Create bucket** button.
-    1. To use an existing bucket, click on the bucket and go to the
-        **Permissions** tab
-        1. Click **Add account**
-        1. In the **Access for other AWS accounts** section enter the below information:
-           1. In the Account field enter:
-               `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-               ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)
-           1. Select the **permissions** that you need.
-        1. Click **Save**.
-    1. To use an existing bucket, click on the bucket and go to the
-        **Permissions** tab
-        1. Click **Add account**
-        1. In the **Access for other AWS accounts** section enter the below information:
-           1. In the Account field enter:
-               `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
-               ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)
-           1. Select the **permissions** that you need.
+1. Go to the AWS S3 Management Console in: **Services > Storage > S3**
+1. Configure the permissions for your S3 bucket:
+    - For a new bucket:
+        1. Click **Create Bucket**.
+        1. Enter a name and region for the bucket and click **Next**.
+        1. Set the bucket properties that are required by your company standards, and click **Next**.
+        1. Set Public access properties according to your company standards, and click **Next**.
+        1. Review the properties, and click **Create bucket**.
+        1. Find your bucket in the bucket list, and click on the bucket name.
+        1. In **Permissions > Access Control**, click **Add account**:
+            1. In the Account field enter:
+                `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
+            1. Select the **Write objects**, **Read bucket permissions**, and **Write bucket permissions**, and click **Save**.
+                    ![add_s3_user](/images/rc/add_s3_user.png?width=600&height=698)
+    - For an existing bucket, click on the S3 bucket and go to the **Permissions** tab.
+        1. Click **Add account**.
+        1. In the **Access for other AWS accounts** section, enter:
+            1. In the Account field enter:
+                `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
+                ![add_user_existing](/images/rc/add_user_existing.png?width=700&height=175)
+            1. Select the **permissions** that you need.
         1. Click **Save**.
 
-Once your bucket's permissions are set, you can use it with your
-resource by setting its **Backup Path** to the path of your S3 bucket
-and clicking the **Apply** button. For example, if your backups bucket's
-name is *backups-bucket*, you should use the following path:
-
-`s3://backups-bucket`
+After the permissions are set for your bucket, set the **Backup Path** to the path of your S3 bucket
+and click **Apply**. For example, if the name of your bucket is *backups-bucket*, use the path: `s3://backups-bucket`
 
 ## Backing Up to Google Cloud Storage (GCS)
 
