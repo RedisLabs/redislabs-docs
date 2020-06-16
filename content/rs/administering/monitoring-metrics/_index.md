@@ -5,9 +5,6 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-<<<<<<< HEAD
-{{< allchildren style="h2" description="true" />}}
-=======
 On the **Database > Metrics** page you can view detailed real-time
 graphs of various database metrics, as well as shard-related metrics.
 
@@ -103,4 +100,3 @@ two detailed graphs at the top of the page, as follows:
 
 In addition, the scale selector at the top of the page allows you to set
 the scale of the graphs' X-axis (time).
->>>>>>> Merge metrics
