@@ -1,12 +1,13 @@
 ---
-Title: Upgrading a Module in Redis Enterprise Software
+Title: Adding a Module to a Cluster
 description:
-weight: 3
+weight: 10
 alwaysopen: false
 categories: ["Modules"]
 aliases:
-    - /modules/upgrading/rs
+    - /modules/upgrading/rs/
     - /rs/developing/modules/upgrading/
+    - /modules/upgrading-rs/
 ---
 We are constantly working to improve the modules.
 To get the latest features and fixes for a module, you must upgrade the module in Redis.
@@ -26,7 +27,7 @@ To get the latest features and fixes for a module, you must upgrade the module i
     go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
 - Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
-## Deploying the Packaged Module into Redis Enterprise Software
+## Adding a Module to Redis Enterprise Software Cluster
 
 To deploy an upgraded package:
 

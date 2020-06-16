@@ -1,13 +1,15 @@
 ---
-Title: Adding Modules to a Redis Enterprise Software Database
+Title: Adding Modules to a Database
 description:
-weight: 2
+weight: 8
 alwaysopen: false
 categories: ["Modules"]
 aliases:
   - /modules/rs
   - /rs/developing/modules/upgrading/
   - /rs/developing/modules/installing/
+  - /modules/create-database-rs/
+
 ---
 Modules add additional functionality to your databases for specific use cases.
 You can add modules to the database when you create the database or after the database is already created.
@@ -16,7 +18,7 @@ You can add modules to the database when you create the database or after the da
 
 {{< note >}}
 - Before you add a module to a database,
-    we recommend that you [upgrade the module]({{< relref "/modules/upgrading-rs.md" >}}) to the latest version.
+    we recommend that you [upgrade the module]({{< relref "/modules/add-module-to-cluster.md" >}}) to the latest version.
 - After you add a module to the database,
     certain database fields for the database are disabled according to the supported capabilities of the module.
 {{< /note >}}

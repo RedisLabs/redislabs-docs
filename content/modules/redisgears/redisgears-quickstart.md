@@ -7,10 +7,10 @@ categories: ["Modules"]
 ---
 For this quick start tutorial, you'll need one of the following:
 
-- [A Redis Enterprise Software]({{< relref "/modules/create-database-rs.md" >}}) database with the RedisGears module enabled,
-- A Redis database with the RedisGears module installed
-
-You'll also need to use the `redis-cli` command-line tool to connect to one of these Redis databases.
+- Either:
+    - A Redis Enterprise Software database [with the RedisGears module]({{< relref "/modules/add-module-to-database.md" >}})
+    - A OSS Redis database with the RedisGears module
+- redis-cli with connectivity to a redis database
 
 ## RedisGears Basics
 
