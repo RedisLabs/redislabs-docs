@@ -91,10 +91,7 @@ two detailed graphs at the top of the page, as follows:
         database have the same hash slot.
     - The second group displays all available **metrics**, such as
         operations per second and used memory.
-- In each of the **resources **graphs, you can click the left arrow to
-    display that resource in the top left graph, and the right arrow to
-    display that resource in the top right graph.
-- In each of the **metrics **graphs, you can click the left arrow to
+- In each of the metrics and resources graphs, you can click the left arrow to
     display that metric in the top left graph, and the right arrow to
     display that metric in the top right graph.
 
