@@ -60,7 +60,10 @@ However, root access for the driver on the host is required in some cases, for e
 
 ### Step 1: Install Oracle driver (Optional)
 
-[Download the driver](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) and follow the installation instructions on the download page.
+If you want to do write-behind with an Oracle database:
+
+1. [Download the Oracle driver](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html).
+1. On each RS node in the cluster, follow the installation instructions on the download page for the Oracle driver.
 
 ### Step 2: Import requirements
 
