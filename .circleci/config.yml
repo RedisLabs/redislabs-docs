@@ -24,7 +24,7 @@ jobs:
                         export LOCATION=staging/${CIRCLE_BRANCH} ;
                     fi
                     echo ${LOCATION}
-                    hugo -v --baseURL //docs.redislabs.com/$LOCATION --minify
+                    hugo -v --baseURL //docs.redislabs.com/$LOCATION
             - run:
                 name: Remove generated directories that are not needed
                 command: |
