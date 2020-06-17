@@ -1,7 +1,7 @@
 ---
 Title: Write-Behind Caching
 description:
-weight: 50
+weight: 70
 alwaysopen: false
 categories: ["Modules"]
 ---
