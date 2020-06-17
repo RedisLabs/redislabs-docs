@@ -93,8 +93,8 @@ To get started with custom monitoring:
 1. Configure the Grafana datasource:
     1. Login to Grafana. If you installed Grafana locally, go to http://localhost:3000 and login with:
 
-     - Username: admin
-     - Password: secret
+        - Username: admin
+        - Password: secret
 
     1. In the Grafana configuration menu, select **Data Sources**.
 
