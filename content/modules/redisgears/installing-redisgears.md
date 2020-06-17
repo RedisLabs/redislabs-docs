@@ -12,10 +12,6 @@ Before you can use RedisGears, you have to install the RedisGears module on your
 - Redis Enterprise 6.0.0 or later
 - The [cluster is setup]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) and all of the nodes are joined to the cluster
 
-{{< note >}}
-For installing on Redis Enterprise Kubernetes deployments or Docker containers, you must use Ubuntu 18.04.4 LTS as the base OS because the RedisGears binaries are built using the binaries for that OS by [default](https://github.com/RedisLabs/redis-enterprise-k8s-docs#basic-installation), unless the RedisGears release specifies that there is also support for RHEL 7 docker images.
-{{< /note >}}
-
 ## Installing RedisGears
 
 ### Step 1: Install RedisGears dependencies
@@ -44,9 +40,11 @@ You must also run these commands on new nodes before you join the node to the cl
 
 ### Step 3: Create a Database and Verify the Installation
 
-1. Create a Redis Enterprise database [with the RedisGears module]({{< relref "/modules/add-module-to-database.md" >}}).
-1. To see that the database was created successfully and shards are running, run: `rladmin status`
-1. To see that RedisGears is running correctly, run: `redis-cli RG.PYEXECUTE "GearsBuilder().run()"`
+1. Create a Redis Enterprise database [with the RedisGears module enabled]({{< relref "/modules/add-module-to-database.md" >}}).
+1. From the CLI of a node in the cluster, check that the database was created successfully and shards are running with: `rladmin status`
+1. From the CLI of a node or of a client that is connected to the database, check that RedisGears is running correctly with: `redis-cli RG.PYEXECUTE "GearsBuilder().run()"`
+
+    To connect to the database from a client, run: `redis-cli -h <FQDN_of_node> -p <host> [-a <password>]`
 
 ## Install the Write-Behind Recipe
 
@@ -68,8 +66,8 @@ If you want to do write-behind with an Oracle database:
 ### Step 2: Import requirements
 
 1. Install [Python 3](https://www.python.org/downloads/).
-1. To install the gears-cli, run: `pip install gears-cli`
-1. Download [rgsync offline package](https://docs.google.com/document/d/1xiNEi6O_BIHgyUDfhTqic0zD_DPJCSmIVzjWlCn-hCE/edit#heading=h.thlygbs3qwmo).
+1. To install the [gears-cli](https://pypi.org/project/gears-cli/), run: `pip install gears-cli`
+1. Download [rgsync offline package](https://redislabs.com/download-center/modules/).
 1. Import the requirements:
 
     ```src
@@ -79,17 +77,19 @@ If you want to do write-behind with an Oracle database:
     ```
 
     {{< note >}}
-You can be more efficient and import only the requirements you need, but rgync is always required and can be combined with one or more of these packages according to your OS:
+You can be more efficient and import only the requirements you need, but rgync is always required and can be combined with one or more of these packages according to your backend database:
 
-- redisgears-requirement-v1-snowflake-sqlalchemy-linux-<os>-x64.zip
-- redisgears-requirement-v1-PyMySQL-linux-<os>-x64.zip
-- redisgears-requirement-v1-cx-Oracle-linux-<os>-x64.zip
-- redisgears-requirement-v1-cassandra-driver-linux-<os>-x64.zip
+- redisgears-requirement-v1-snowflake-sqlalchemy-linux-\<os>-x64.zip
+- redisgears-requirement-v1-PyMySQL-linux-\<os>-x64.zip
+- redisgears-requirement-v1-cx-Oracle-linux-\<os>-x64.zip
+- redisgears-requirement-v1-cassandra-driver-linux-\<os>-x64.zip
 
 This list can be different or more extensive in newer versions.
     {{< /note >}}
 
-1. To verify the requirements were imported successfully, run: `RG.PYDUMPREQ`
+1. From the CLI of a node or of a client that is connected to the database, check that the requirements were imported successfully with: `redis-cli RG.PYDUMPREQ`
+
+    To connect to the database from a client, run: `redis-cli -h <FQDN_of_node> -p <host> [-a <password>]`
 
     This command returns a list of all available requirements.
 
@@ -141,4 +141,8 @@ RGWriteBehind(GB, keysPrefix='cars', mappings=carsMappings, connector=carsConnec
 Go to the [rgsync website](https://pypi.org/project/rgsync/) to get the replication options and the configuration options for the database and mapping.
 
 1. Create a python file with the configuration mapping according to your specific needs.
-1. Create a file with the configuration mapping according to your specific needs: `gears-cli --host <host> --port <post> --password <password> <yourfile>.py`
+1. Run gears-cli with your custom file:
+
+    ```src
+    gears-cli --host <host> --port <post> --password <password> <yourfile>.py
+    ```
