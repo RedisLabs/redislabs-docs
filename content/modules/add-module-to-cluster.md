@@ -52,10 +52,7 @@ After you upgrade the module for a database, the database shards are restarted.
 This causes a short interruption in the availability of this database across the cluster.
 {{< /note >}}
 
-When you upgrade the module for a database, you can either:
-
-- Specify the module arguments to replace the current arguments.
-- Specify the `keep_args` flag to use the current argument.
+To upgrade a module that is installed on a cluster:
 
 1. Connect to the terminal of a node in the cluster
 1. Run `rladmin status` to list the databases on the node.

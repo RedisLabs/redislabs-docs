@@ -8,7 +8,7 @@ categories: ["Modules"]
 
 ## Write-Behind Caching
 
-Write-behind is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis Labs currently supports write-behind caching in [Redis Enterprise Software]({{< relref "/rs" >}}). 
+Write-behind is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis Labs currently supports write-behind caching in [Redis Enterprise Software]({{< relref "/rs" >}}).
 
 Here's how these caching patterns work:
 
@@ -122,4 +122,6 @@ To set the `MySqlPassword` parameter to "Password123!" on a database named "user
 rladmin> tune db user-api module_name rg module_config_params "MySqlPassword Password123!"
 ```
 
-Once a connection is successfully established, RedisGears will not attempt to reconnect until a disconnect occurs. This means that updates to the parameters that store the secrets will not take effect immediately, but they will be used for all subsequent connection attempts.
+Once a connection is successfully established, RedisGears will not attempt to reconnect until a disconnect occurs.
+This means that updates to the parameters that store the secrets will not take effect immediately,
+but they will be used for all subsequent connection attempts.
