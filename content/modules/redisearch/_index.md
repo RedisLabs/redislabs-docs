@@ -148,4 +148,4 @@ You can find more information about RediSearch at:
 
 - [Configuring RediSearch](http://redisearch.io/Configuring/)
 - [RediSearch commands](http://redisearch.io/)
-  - Note: the `FT.ADDHASH` command is not supported when RediSearch is running in Redis Enterprise
+  - Note: the `FT.ADDHASH` command is not supported in Redis Enterprise
