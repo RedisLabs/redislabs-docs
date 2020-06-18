@@ -106,8 +106,8 @@ After MFA is enforced for the account, all users that do not have MFA enabled ar
 - When you enable MFA enforcement, users cannot disable MFA for their account.
 - When you disable MFA enforcement, users can disable MFA for their account.
 
-{{% tip %}}
+{{< tip >}}
 We recommend that you send an email to all the Redis Cloud Admin Console users to notify them of this change before you enable MFA enforcement.
-{{% /tip %}}
+{{< /tip >}}
 
 To enable MFA enforcement for all user accounts, the account owner must enable **MFA enforcement** in **Settings** > **Account**.

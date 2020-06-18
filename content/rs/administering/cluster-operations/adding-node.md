@@ -36,10 +36,10 @@ To add a node in Redis Enterprise Software (RS):
     For example, if you installed RS on a machine with IP address 10.0.1.34,
     go to `https://10.0.1.34:8443`.
 
-    {{% tip %}}The RS management UI uses SSL encryption with a default certificate.
+    {{< tip >}}The RS management UI uses SSL encryption with a default certificate.
     You can also [replace the TLS certificate]({{< relref
     "/rs/administering/cluster-operations/updating-certificates.md" >}}) with a
-    custom certificate.{{% /tip %}}
+    custom certificate.{{< /tip >}}
 
 1. To start configuring RS, click **Setup**.
 1. Configure the RS network and storage settings:
@@ -76,6 +76,6 @@ To add a node in Redis Enterprise Software (RS):
 The node is added to the cluster. You can see it in the list of nodes in the
 cluster.
 
-{{% tip %}}We recommend that you run the [rlcheck utility]({{< relref
+{{< tip >}}We recommend that you run the [rlcheck utility]({{< relref
 "/rs/references/rlcheck.md" >}}) to verify that the node is functioning
-properly.{{% /tip %}}
+properly.{{< /tip >}}
