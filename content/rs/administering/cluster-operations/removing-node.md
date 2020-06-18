@@ -8,16 +8,14 @@ categories: ["RS"]
 There are various reasons why you may want to remove a node in Redis
 Enterprise Software (RS):
 
-- You no longer need the extra capacity, meaning you want to
-    permanently remove the node.
+- You no longer need the extra capacity, meaning you want to permanently remove the node.
 - You would like to replace a faulty node with a healthy node.
 - You would like to replace a healthy node with a different node.
 
 The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
 
-You can choose to receive email alerts related to this process, as
-described in [Managing cluster alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
+You can configure [email alerts from the cluster]({{< relref "/rs/administering/monitoring-metrics.md#cluster-alerts" >}}) to notify you of cluster changes, including when a node is removed.
 
 **Make sure to read through these explanations thoroughly before taking
 any action.**
