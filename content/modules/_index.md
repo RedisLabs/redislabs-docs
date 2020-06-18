@@ -14,4 +14,4 @@ Non-preview modules are bundled with RS and RC Pro.
 
 [Custom modules](https://redislabs.com/community/redis-modules-hub/) are developed, packaged, and distributed by the Redis community.
 You can contribute to the Redis community with your own custom module
-and [package the module]({{< relref "/modules/packaging-modules.md" >}}) for [use with RS]({{< relref "/modules/create-database-rs.md" >}}).
+and [package the module]({{< relref "/modules/packaging-modules.md" >}}) to [use it with Redis Enterprise]({{< relref "/modules/add-module-to-database.md" >}}).

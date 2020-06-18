@@ -1,12 +1,13 @@
 ---
-Title: Upgrading a Module in Redis Enterprise Software
+Title: Adding a Module to a Cluster
 description:
-weight: 3
+weight: 4
 alwaysopen: false
 categories: ["Modules"]
 aliases:
-    - /modules/upgrading/rs
+    - /modules/upgrading/rs/
     - /rs/developing/modules/upgrading/
+    - /modules/upgrading-rs/
 ---
 We are constantly working to improve the modules.
 To get the latest features and fixes for a module, you must upgrade the module in Redis.
@@ -26,7 +27,7 @@ To get the latest features and fixes for a module, you must upgrade the module i
     go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
 - Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
-## Deploying the Packaged Module into Redis Enterprise Software
+## Adding a Module to Redis Enterprise Software Cluster
 
 To deploy an upgraded package:
 
@@ -51,10 +52,7 @@ After you upgrade the module for a database, the database shards are restarted.
 This causes a short interruption in the availability of this database across the cluster.
 {{< /note >}}
 
-When you upgrade the module for a database, you can either:
-
-- Specify the module arguments to replace the current arguments.
-- Specify the `keep_args` flag to use the current argument.
+To upgrade a module that is installed on a cluster:
 
 1. Connect to the terminal of a node in the cluster
 1. Run `rladmin status` to list the databases on the node.
