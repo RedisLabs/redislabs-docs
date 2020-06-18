@@ -132,7 +132,7 @@ We provide RedisInsight as a docker container that you install and run on your h
 {{< /expand >}}
 
 {{< expand "How can I secure my RedisInsight installation?" >}}
-We recommend installing HTTPS, whitelisting IP addresses that have access to RedisInsight and/or making it available within your VPN/internal network. Additionally, choose a strong admin password.
+We recommend installing HTTPS, whitelisting IP addresses that have access to RedisInsight and/or making it available within your VPN/internal network. Additionally, make sure you use a strong admin password for your database.
 {{< /expand >}}
 
 {{< expand "What information do you collect about my installation?" >}}
