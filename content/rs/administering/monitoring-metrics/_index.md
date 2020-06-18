@@ -64,7 +64,7 @@ Configured alerts are shown:
 To enable alerts for a database:
 
 1. In **configuration** for each database, click **show adavnced options** to see the database alerts and select the alerts that you want to get for the database.
-2. Click **Update**.
+1. Click **Update**.
 
 ## Sending Alerts by Email
 
