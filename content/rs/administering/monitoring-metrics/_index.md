@@ -57,7 +57,7 @@ For each database, you can enable alerts for database events, such as high memor
 
 Configured alerts are shown:
 
-- As a warning icon (![Warning](/images/rs/icon_warning.png#no-click "Warning") for the database
+- As a warning icon (![Warning](/images/rs/icon_warning.png#no-click "Warning")) for the database
 - In the **log**
 - In emails, if you configure [email alerts](#sending-alerts-by-email)
 
