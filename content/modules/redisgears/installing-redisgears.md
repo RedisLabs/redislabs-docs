@@ -24,13 +24,15 @@ On each node in the Redis Enterprise cluster:
 
     ```src
     # source /etc/opt/redislabs/redislabs_env_config.sh
-    # mkdir -p $modulesdatadir/rg/10000/deps/
-    # tar -xvf /home/ubuntu/redisgears-dependencies.linux-bionic-x64.1.0.0.tgz -C $modulesdatadir/rg/10000/deps
+    # mkdir -p $modulesdatadir/rg/<versionnumeric>/deps/
+    # tar -xvf /home/ubuntu/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<versionnumeric>/deps
     # chown -R $osuser $modulesdatadir/rg
     ```
 
 {{< note >}}
-You must also run these commands on new nodes before you join the node to the cluster.
+- `<version>` is of the form `x.y.z`
+- `<versionnumeric>` is an integer = `10000*x + 100*y + z`
+- You must also run these commands on new nodes before you join the node to the cluster.
 {{< /note >}}
 
 ### Step 2: Install the RedisGears module
