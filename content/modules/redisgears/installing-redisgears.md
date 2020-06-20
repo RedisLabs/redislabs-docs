@@ -25,7 +25,7 @@ On each node in the Redis Enterprise cluster:
     ```src
     # source /etc/opt/redislabs/redislabs_env_config.sh
     # mkdir -p $modulesdatadir/rg/<versionnumeric>/deps/
-    # tar -xvf /home/ubuntu/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<versionnumeric>/deps
+    # tar -xvf /path/to/deps/file/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<versionnumeric>/deps
     # chown -R $osuser $modulesdatadir/rg
     ```
 
