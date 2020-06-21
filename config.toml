@@ -45,6 +45,7 @@ mac_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-
 linux_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-linux64"
 windows_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-win.msi"
 docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight"
+docker_db_volume_permission = "chown -R 1001 redisinsight"
 
 siteURL = "http://127.0.0.1:8001"
 
