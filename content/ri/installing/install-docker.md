@@ -29,7 +29,8 @@ Next, run the RedisInsight container. The easiest way is to run the following co
 
 and then point your browser to [http://localhost:8001](http://localhost:8001).
 
-**Note:** Make sure the directory you pass as a volume to the container has necessary permissions for the container to access it. For example, if you have run the previous command and got a permission error, run the following command:
+{{< note >}}
+Make sure the directory you pass as a volume to the container has necessary permissions for the container to access it. For example, if you have run the previous command and got a permission error, run the following command:
 
 ```bash
 {{< param docker_db_volume_permission >}}
@@ -48,3 +49,4 @@ Starting webserver...
 Visit http://0.0.0.0:8001 in your web browser.
 Press CTRL-C to exit.
 ```
+{{< /note >}}
