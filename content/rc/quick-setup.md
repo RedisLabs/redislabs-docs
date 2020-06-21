@@ -79,7 +79,7 @@ Now you can connect to the database with telnet, redis-cli, or an application.
 As a quick smoke test, telnet to your assigned endpoint and port. Then
 enter the Redis PING command. You should see something like this:
 
-```src
+```sh
 # telnet redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 19836
 Trying 54.89.217.184...
 Connected to redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com.
@@ -95,7 +95,7 @@ We recommend loading the redis-cli command-line utility to use it for other thin
 
 ### Using redis-cli {#using-rediscli}
 
-```src
+```sh
 $ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
@@ -117,7 +117,7 @@ language (for examples in other languages, go
 You first need to install the Redis client library for Python if you do
 not have it already.
 
-```src
+```sh
 sudo pip install redis
 ```
 
@@ -137,7 +137,7 @@ print(r.get('foo'))
 
 Now run the code:
 
-```src
+```sh
 $ python example_redis.py
 bar
 ```

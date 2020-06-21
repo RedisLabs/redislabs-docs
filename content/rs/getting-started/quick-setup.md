@@ -27,14 +27,14 @@ You can also get started with RS with:
 You can download the binaries from the [Redis Enterprise Download Center](https://www.redislabs.com/download-center/)
 and copy the download package to machine with a Linux-based OS. To untar the image:
 
-```src
+```sh
 tar vxf <downloaded tar file name>
 ```
 
 Once the tar command completes, install RS with the install.sh script in
 the current directory.
 
-```src
+```sh
 sudo ./install.sh -y
 ```
 
@@ -85,7 +85,7 @@ redis-cli is a simple command-line tool to interact with Redis database.
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1
 
-```src
+```sh
 $ sudo /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:16653> set key1 123
 OK
@@ -118,13 +118,13 @@ redis-py](https://github.com/andymccurdy/redis-py).
 
 1. Run the redis_test.py application to store and retrieve a key:
 
-    ```src
+    ```sh
     python.exe redis_test.py
     ```
 
 If the connection is successful, the output of the application looks like this:
 
-```src
+```sh
 set key1 123
 True
 get key1

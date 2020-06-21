@@ -32,7 +32,7 @@ Then, create a user with the user type **external**.
 {{% comment %}}
 You can also create an external with the REST API with this syntax:
 
-```src
+```sh
 curl -k -L -v -u ":" --location-trusted -H "Content-Type: application/json" -X POST https://<RS_server_address>:9443/v1/users -d "{"auth_method": "external", "name": "<username>", "role": "<user_role>"}"
 ```
 
@@ -98,7 +98,7 @@ The password complexity profile applies to when a new user is added or an existi
 
 To enforce the password complexity profile, run:
 
-```src
+```sh
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator-user-email>:<password>" -d '{"password_complexity":true}' https://<RS_server_address>:9443/v1/cluster
 ```
 
@@ -107,7 +107,7 @@ curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/jso
 RS lets you enforce password expiration to meet your compliance and contractual requirements.
 To enforce an expiration of a local users password after a specified number of days, run:
 
-```src
+```sh
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://<RS_server_address>:9443/v1/cluster
 ```
 
@@ -128,7 +128,7 @@ If you want to change duration of inactivity that causes the timeout:
 
 - From the REST API, run:
 
-```src
+```sh
 curl --request PUT \
   --url https://localhost:9443/v1/cluster \
   --header 'content-type: application/json' \

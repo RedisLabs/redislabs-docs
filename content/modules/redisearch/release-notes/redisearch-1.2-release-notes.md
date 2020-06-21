@@ -15,7 +15,7 @@ This version is the last version that I (@dvirsky) will be releasing, and it inc
 
 As an addition to the aggregation API in `FT.AGGREGATE`, it is possible to do post-index filtering of the pipeline, using the `FILTER` keyword. e.g.:
 
-```src
+```sh
 FT.AGGREGATE idx "*"
    GROUPBY 1 @foo
      REDUCE count 0 AS num
@@ -30,7 +30,7 @@ It is now possible to apply specific query modifying attributes to specific clau
 
 The syntax is `(foo bar) => { $attribute: value; $attribute:value; ...}`, e.g:
 
-```src
+```sh
 (foo bar) => { $weight: 2.0; $slop: 1 }
 ~(bar baz) => { $weight: 0.5; }
 ```
@@ -51,7 +51,7 @@ Notice that each query term needs to be wrapped independently, and that we limit
 
 It is now possible to update documents (`FT.ADD ... REPLACE [PARTIAL]`) only if a certain condition is met regarding the document's state **before** the updates. So for example, if our document has a timestamp field, and we would like to update its title only if the timestamp is below a certain value, we can do the following:
 
-```src
+```sh
 FT.ADD myIndex myDoc 1.0
    REPLACE PARTIAL
    IF "@timestamp < 12313134523"

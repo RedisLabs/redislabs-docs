@@ -12,13 +12,13 @@ Redis Labs implements rolling updates for software upgrades in Kubernetes deploy
 
 1. Clone this repository, which contains the deployment files:
 
-    ```src
+    ```sh
     git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
     ```
 
     Example response:
 
-    ```src
+    ```sh
     Cloning into 'redis-enterprise-k8s-docs'...
     remote: Enumerating objects: 37, done.
     remote: Counting objects: 100% (37/37), done.
@@ -48,7 +48,7 @@ The rolling upgrade of the cluster nodes' statefulSet starts.
 
 To see the status of the current rolling upgrade, run:
 
-```src
+```sh
 kubectl rollout status sts <REC_name>
 ```
 

@@ -44,7 +44,7 @@ Before you specify to import from an FTP server, make sure that:
 
 To import an RDB file from an FTP server, enter the FTP server location in the format:
 
-```src
+```sh
 ftp://user:password@host<:custom_port>/path/filename.rdb
 ```
 
@@ -64,7 +64,7 @@ Before you specify to import from an SFTP server, make sure that:
 
 To import from an SFTP server, enter the SFTP server location in the format:
 
-```src
+```sh
 sftp://user:password@host<:custom_port>/path/filename.rdb
 ```
 
@@ -99,7 +99,7 @@ To specify to import from a local mount point on a node:
 
         For example:
 
-        ```src
+        ```sh
         sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
         ```
 

@@ -16,7 +16,7 @@ This topic describes how to use Redis Enterprise Software (RS) for Pivotal Platf
 
     For example:
 
-    ```src
+    ```sh
     # cf create-service redislabs small-redis redis2
     Creating service instance redis2 in org RedisLabs  space space1 as admin...
     OK
@@ -87,20 +87,20 @@ To connect to Redis Database, do the following:
 
 1. Change to the `/opt/redislabs/bin` directory and run `redis-cli` to connect to port 12000 and to the database-endpoint that is reported in the database properties after you created the database.
 
-    ```src
+    ```sh
     sudo /opt/redislabs/bin/redis-cli -p 12000 -h database-endpoint
     ```
 
 1. To store and retrieve a key in `database1`, run the following commands:
 
-    ```src
+    ```sh
     set key1 123
     get key1
     ```
 
 For example:
 
-```src
+```sh
 127.0.0.1:16653> set key1 123
 
 OK

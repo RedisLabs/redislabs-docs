@@ -84,7 +84,7 @@ the cluster part of your domain and are able to update the DNS.
 1. In the FQDN field, enter the value: redislabscluster.mydomain.com, and
     add the following records in the DNS for mydomain.com:
 
-    ```src
+    ```sh
     redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com
                                                node2.redislabscluster.mydomain.com
                                                node3.redislabscluster.mydomain.com 

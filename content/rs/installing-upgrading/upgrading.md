@@ -61,7 +61,7 @@ upgrade.
 
 To upgrade a node run:
 
-```src
+```sh
 sudo ./install.sh
 ```
 
@@ -166,7 +166,7 @@ To upgrade a CRDB instance:
 
 1. To upgrade each CRDB instance including the Redis version and CRDB protocol version, run:
 
-    ```src
+    ```sh
     rladmin upgrade db <crdb_name>
     ```
 
@@ -185,19 +185,19 @@ You must upgrade the CRDB protocol before you update the CRDB feature set versio
 
 1. If the feature set version is old, you must upgrade all of the CRDB instances. Then, to update the feature set for each active-active database, run:
 
-    ```src
+    ```sh
     crdb-cli crdb update --crdb-guid <crdb_guid> --featureset-version yes
     ```
 
     You can retrieve the `crdb_guid` with the following command:
 
-    ```src
+    ```sh
     crdb-cli crdb list
     ```
 
     Look for the fully qualified domain name (CLUSTER-FDQN) of your cluster and use the associated GUID:
 
-    ```src
+    ```sh
     CRDB-GUID                             NAME    REPL-ID  CLUSTER-FQDN
     700140c5-478e-49d7-ad3c-64d517ddc486  aatest  1        aatest1.example.com
     700140c5-478e-49d7-ad3c-64d517ddc486  aatest  2        aatest2.example.com

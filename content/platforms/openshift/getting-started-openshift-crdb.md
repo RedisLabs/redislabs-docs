@@ -98,7 +98,7 @@ repeat the following process for each of the clusters involved:
 	From the secrets listed, you’ll find one that is named after your REC and
 	of type Opaque, like this:
 
-	```src
+	```sh
 	redis-enterprise-cluster            Opaque                  3       1d
 	```
 
@@ -118,7 +118,7 @@ with that information in the following format:
 
 1. Deploy the newly created secret yaml file in the other clusters:
 
-	```src
+	```sh
 	$ kubectl create -f crdb1-secret.yaml
 	```
 
@@ -173,19 +173,19 @@ To do a basic validation test of database replication:
 
 1. Connect to one of the cluster pods using the following command:
 
-	```src
+	```sh
 	oc exec -it <your-cluster1-name>-0 bash
 	```
 
 1. At the prompt, launch the redis CLI:
 
-	```src
+	```sh
 	$ redis-cli -h <your database1 hostname> -p <your database1 port> -a <your database1 password>
 	```
 
 1. Set some values and verify they have been set:
 
-	```src
+	```sh
 	> set keymaster Vinz
 	OK
 	> set gatekeeper Zuul
@@ -199,7 +199,7 @@ To do a basic validation test of database replication:
 1. Now, exit the CLI and the pod execution environment and login to the synched database
 on the other cluster.
 
-	```src
+	```sh
 	oc exec -it <your-cluster2-name>-0 bash
 	$redis-cli -h <your database2 hostname> -p <your database2 port> -a <your database2 password>
 	```
@@ -207,7 +207,7 @@ on the other cluster.
 1. Retrieve the values you previously set or continue manipulating key:value pairs
 and observe the 2-way synchronization, for example:
 
-	```src
+	```sh
 	> get keymaster
 	"Vinz"
 	> get gatekeeper

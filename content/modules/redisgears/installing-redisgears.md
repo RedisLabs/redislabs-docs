@@ -22,7 +22,7 @@ On each node in the Redis Enterprise cluster:
 1. Copy the dependencies package to a node in your cluster.
 1. Run these commands as root:
 
-    ```src
+    ```sh
     # source /etc/opt/redislabs/redislabs_env_config.sh
     # mkdir -p $modulesdatadir/rg/10000/deps/
     # tar -xvf /home/ubuntu/redisgears-dependencies.linux-bionic-x64.1.0.0.tgz -C $modulesdatadir/rg/10000/deps
@@ -70,7 +70,7 @@ If you want to do write-behind with an Oracle database:
 1. Download [rgsync offline package](https://redislabs.com/download-center/modules/).
 1. Import the requirements:
 
-    ```src
+    ```sh
     # gears-cli import-requirements \
         --host HOST [ --port PORT ] --password PASSWORD \
         --requirements-path rgsync-99.99.99.linux-bionic-x64.zip
@@ -99,7 +99,7 @@ The following is a RedisGears recipe that shows how to use the Write Behind patt
 The recipe maps all Redis Hashes with the prefix `person:<id>` to the MySQL table persons, with `<id>` being the primary key and mapped to the person_id column.
 Similarly, it maps all Hashes with the prefix `car:<id>` to the cars table.
 
-```src
+```sh
 from rgsync import RGWriteBehind
 from rgsync.Connectors import MySqlConnector, MySqlConnection
 
@@ -143,6 +143,6 @@ Go to the [rgsync website](https://pypi.org/project/rgsync/) to get the replicat
 1. Create a python file with the configuration mapping according to your specific needs.
 1. Run gears-cli with your custom file:
 
-    ```src
+    ```sh
     gears-cli --host <host> --port <post> --password <password> <yourfile>.py
     ```

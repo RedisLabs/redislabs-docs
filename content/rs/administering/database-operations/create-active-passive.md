@@ -42,7 +42,7 @@ The order of the Replica Of sources has no impact on replication.
     - For a source database in the same RS cluster - When you click on the box,
     the available databases are shown in the correct format for the URL of the source endpoint:
 
-        ```src
+        ```sh
         redis://admin:<database_password>@<database_endpoint>:<database_port>
         ```
 
@@ -74,7 +74,7 @@ you can [compress the replication data]({{< relref "/rs/administering/active-pas
 
         - If the database has a password -
 
-            ```src
+            ```sh
             redis://:<redis_password>@<hostname>:<database_port>
             ```
 
@@ -82,7 +82,7 @@ you can [compress the replication data]({{< relref "/rs/administering/active-pas
 
         - If the database has no password -
 
-            ```src
+            ```sh
             redis://<hostname>:<database_port>
             ```
 

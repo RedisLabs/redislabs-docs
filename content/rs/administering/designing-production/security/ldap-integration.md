@@ -29,7 +29,7 @@ To configure LDAP authentication for RS web UI users on a running cluster:
 
         For example:
 
-        ```src
+        ```sh
         ldap_servers: ldaps://ldap1.mydomain.com:636 ldaps://ldap2.mydomain.com:636
         ldap_tls_cacert_file: /path/to/your/CARootCert.crt
         ldap_search_base: ou=coolUsers,dc=company,dc=com
@@ -40,7 +40,7 @@ To configure LDAP authentication for RS web UI users on a running cluster:
 
 1. Import the `saslauthd` configuration into RS with the command:
 
-    ```src
+    ```sh
     rladmin cluster config saslauthd_ldap_conf /etc/opt/redislabs/saslauthd.conf
     ```
 

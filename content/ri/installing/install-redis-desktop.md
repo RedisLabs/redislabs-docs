@@ -31,7 +31,7 @@ To install RedisInsight:
 
     - For Ubuntu - To make the downloaded file executable, run:
 
-        ```src
+        ```sh
         chmod +x redisinsight-<platform>-<version>
         ```
 

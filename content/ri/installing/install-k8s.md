@@ -52,13 +52,13 @@ spec:
 
 1. Create the RedisInsight deployment
 
-```src
+```sh
 kubectl apply -f redisinsight.yaml
 ```
 
 1. Once the deployment has been successfully applied and the deployment complete, access RedisInsight. This can be accomplished by exposing the deployment as a K8s Service or by using port forwarding, as in the example below:
 
-```src
+```sh
 kubectl port-forward deployment/redisinsight 8001
 ```
 

@@ -72,7 +72,7 @@ To upgrade a module that is installed on a cluster:
 
 1. To upgrade the module for the database, run:
 
-    ```src
+    ```sh
     rladmin upgrade db <database_name> and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
     ```
 
@@ -86,18 +86,18 @@ Here are some examples of module upgrades:
 
 - To upgrade the version of RediSearch to 1.6.7 and specify arguments:
 
-    ```src
+    ```sh
     rladmin upgrade db <database_name> and module db_name MyAwesomeDB module_name ft version 10607 module_args "PARTITIONS AUTO"
     ```
 
 - To upgrade RedisBloom to version 2.2.1 and remove arguments:
 
-    ```src
+    ```sh
     rladmin upgrade db <database_name> and module db_name MyDB module_name bf version 20201 module_args ""
     ```
 
 - To upgrade RedisJSON to 1.0.4 and keep existing arguments and RedisBloom to version 2.2.1 and remove arguments:
 
-    ```src
+    ```sh
     rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args "keep_args" and module db_name MyDB module_name bf version 20201 module_args ""
     ```

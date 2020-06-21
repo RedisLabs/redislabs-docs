@@ -13,7 +13,7 @@ RedisInsight Memory analysis help you analyze your redis instance and helps in r
 
     The s3 path needs to use the path syntax and not the virtual hosted syntax:
 
-    ```src
+    ```sh
     https://s3.<region>.amazonaws.com/<bucket name>/<object key name>
     ```
 

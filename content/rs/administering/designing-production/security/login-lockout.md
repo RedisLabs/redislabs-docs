@@ -28,7 +28,7 @@ By default, after 5 failed login attempts within 15 minutes, the user account is
 
 You can view the user login restrictions for your cluster with:
 
-```src
+```sh
 rladmin info cluster | grep login_lockout
 ```
 
@@ -40,7 +40,7 @@ You can customize the user lockout parameters with from rladmin.
 
 You can set the login lockout threshold with the command:
 
-```src
+```sh
 rladmin tune cluster login_lockout_threshold <login_lockout_threshold>
 ```
 
@@ -49,7 +49,7 @@ the account is not locked out after failed login attempts, and the cluster setti
 
 For example, to set the lockout threshold to 10 failed login attempts.
 
-```src
+```sh
 rladmin tune cluster login_lockout_threshold 10
 ```
 
@@ -57,13 +57,13 @@ rladmin tune cluster login_lockout_threshold 10
 
 You can set the login lockout reset in seconds with the command:
 
-```src
+```sh
 rladmin tune cluster login_lockout_counter_reset_after <login_lockout_counter_reset_after>
 ```
 
 For example, to set the lockout reset to 1 hour:
 
-```src
+```sh
 rladmin tune cluster login_lockout_counter_reset_after 3600
 ```
 
@@ -71,7 +71,7 @@ rladmin tune cluster login_lockout_counter_reset_after 3600
 
 You can set the login lockout duration in seconds with the command:
 
-```src
+```sh
 rladmin tune cluster login_lockout_duration <login_lockout_duration>
 ```
 
@@ -80,7 +80,7 @@ the account must be manually unlocked by an administrator, and the cluster setti
 
 For example, to set the lockout duration to 1 hour:
 
-```src
+```sh
 rladmin tune cluster login_lockout_duration 3600
 ```
 

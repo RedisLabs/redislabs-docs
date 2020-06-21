@@ -50,7 +50,7 @@ Software Discovery Service you can connect to port 8001 with redis-cli
 utility and execute "SENTINEL masters". Following is a sample output
 from one of the nodes of a Redis Enterprise Software cluster:
 
-```src
+```sh
 $ ./redis-cli -p 8001
 127.0.0.1:8001> SENTINEL masters
 1) 1) "name"

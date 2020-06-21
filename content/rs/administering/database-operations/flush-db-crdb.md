@@ -19,13 +19,13 @@ From the command line, you can flush a database with the redis-cli command or wi
 
 To flush data from a database with the redis-cli, run:
 
-```src
+```sh
 redis-cli -h <hostname> -p <portnumber> -a <password> flushall
 ```
 
 Example:
 
-```src
+```sh
 redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 ```
 
@@ -45,13 +45,13 @@ To flush data from an Active-Active database:
 
     1. To find the ID of the Active-Active database, run:
 
-        ```src
+        ```sh
         crdb-cli crdb list
         ```
 
         For example:
 
-        ```src
+        ```sh
         $ crdb-cli crdb list
         CRDB-GUID                                NAME                 REPL-ID CLUSTER-FQDN
         a16fe643-4a7b-4380-a5b2-96109d2e8bca     crdb1                1       cluster1.local
@@ -61,13 +61,13 @@ To flush data from an Active-Active database:
 
     1. To flush the Active-Active database, run:
 
-        ```src
+        ```sh
         crdb-cli crdb flush --crdb-guid <CRDB_GUID>
         ```
 
         The command output contains the task ID of the flush task, for example:
 
-        ```src
+        ```sh
         $ crdb-cli crdb flush --crdb-guid a16fe643-4a7b-4380-a5b2-96109d2e8bca
         Task 63239280-d060-4639-9bba-fc6a242c19fc created
         ---> Status changed: queued -> started
@@ -75,13 +75,13 @@ To flush data from an Active-Active database:
 
     1. To check the status of the flush task, run:
 
-        ```src
+        ```sh
         crdb-cli task status --task-id <Task-ID>
         ```
 
         For example:
 
-        ```src
+        ```sh
         $ crdb-cli task status --task-id 63239280-d060-4639-9bba-fc6a242c19fc
         Task-ID: 63239280-d060-4639-9bba-fc6a242c19fc
         CRDB-GUID: -
@@ -92,13 +92,13 @@ To flush data from an Active-Active database:
 
     1. To find the ID of the Active-Active database, run:
 
-        ```src
+        ```sh
         curl -v -u <user>:<password> -X GET https://<cluster-fqdn>:9443/v1/crdbs
         ```
 
     1. To flush the Active-Active database, run:
 
-        ```src
+        ```sh
         curl -v -u <username>:<password> -X PUT https://<cluster-fqdn>:9443/v1/crdbs/<guid>/flush
         ```
 
@@ -106,6 +106,6 @@ To flush data from an Active-Active database:
 
     1. To check the status of the flush task, run:
 
-        ```src
+        ```sh
         curl -v -u <username>:<password> https://<cluster-fqdn>:9443/v1/crdb_tasks/<task-id>
         ```

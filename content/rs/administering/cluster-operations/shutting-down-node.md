@@ -23,7 +23,7 @@ we recommend that at most only one node in the cluster be down at any time.
 
 To stop the RS processes, run:
 
-```src
+```sh
 sudo supervisorctl stop all
 ```
 

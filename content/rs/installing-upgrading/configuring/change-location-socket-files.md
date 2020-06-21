@@ -23,7 +23,7 @@ To change the location of the socket files:
 
 1. On each node in the cluster, run:
 
-    ```src
+    ```sh
     sudo rlutil create_socket_path socket_path=/var/opt/redislabs/run
     ```
 
@@ -32,7 +32,7 @@ To change the location of the socket files:
     1. Find the node that has the **master** role.
 1. On the master node, run:
 
-    ```src
+    ```sh
     sudo rlutil set_socket_path socket_path=/var/opt/redislabs/run
     ```
 
@@ -41,7 +41,7 @@ To change the location of the socket files:
 
 1. To restart RS, on each node in the cluster one at a time run:
 
-    ```src
+    ```sh
     sudo service rlec_supervisor restart
     ```
 
@@ -54,6 +54,6 @@ Database restart can cause interruptions in data traffic.
 
 1. To restart the databases, for each database in the cluster run:
 
-    ```src
+    ```sh
     rladmin restart db <db name>
     ```

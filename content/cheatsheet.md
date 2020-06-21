@@ -61,7 +61,7 @@ Text in the comments shortcode is not published in the output.
 
 Syntax:
 
-```src
+```sh
 {{%/* comment */%}}Do not publish!{{%/* /comment */%}}
 ```
 
@@ -137,7 +137,7 @@ Code can be shown like code fences using the code shortcode also.
 
 Syntax:
 
-```src
+```sh
 {{</* code */>}}var x = 123;{{</* /code */>}}
 ```
 
@@ -269,7 +269,7 @@ Embed YouTube video.
 
 Syntax:
 
-```src
+```sh
 {{</* youtube Bi1T3toQfF4 */>}}
 ```
 
@@ -283,7 +283,7 @@ Embed YouTube video and start playback from specific timestamp.
 
 Syntax:
 
-```src
+```sh
 {{</* youtube_start Bi1T3toQfF4 10 */>}}
 ```
 
@@ -337,7 +337,7 @@ Embed an HTML partial
 
 Syntax:
 
-```src
+```sh
 {{</* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */>}}
 ```
 
@@ -375,7 +375,7 @@ operated on.{{% /excerpt %}}
 
 Syntax:
 
-```src
+```sh
 {{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}
 ```
 
@@ -391,7 +391,7 @@ Info boxes give background information that does not prevent proper use of the p
 
 Syntax:
 
-```src
+```sh
 {{</* info */>}}After you do this the first time, it gets easier.{{</* /info */>}}
 ```
 
@@ -405,7 +405,7 @@ Tips give additional information for improved use of the product.
 
 Syntax:
 
-```src
+```sh
 {{</* tip */%}}Eating on time prevents hunger.{{</* /tip */>}}
 ```
 
@@ -419,7 +419,7 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 Syntax:
 
-```src
+```sh
 {{</* note */%}}Make sure you have enough disk space.{{</* /note */>}}
 ```
 
@@ -433,7 +433,7 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 Syntax:
 
-```src
+```sh
 {{</* warning */>}}Backup your data before erasing the hard disk!{{</* /warning */>}}
 ```
 
@@ -447,7 +447,7 @@ Label displays a label. The type parameter can be passed to the shortcode in ord
 
 Syntax:
 
-```src
+```sh
 {{</* label type="info" */>}}This is a label{{</* /label */>}}
 ```
 
@@ -461,7 +461,7 @@ Well displays content inside a container.
 
 Syntax:
 
-```src
+```sh
 {{</* well */>}} Inside a well {{</* /well */>}}
 ```
 
@@ -479,7 +479,7 @@ Allchildren displays all the child pages of current page.
 
 Syntax:
 
-```src
+```sh
 {{</* allchildren style="h2" description="true" */>}}
 ```
 
@@ -493,7 +493,7 @@ This shortcode can be used to display recently updated articles.
 
 Syntax:
 
-```src
+```sh
 {{</* recently-updated */>}} Recently updated articles {{</* /recently-updated */>}}
 ```
 

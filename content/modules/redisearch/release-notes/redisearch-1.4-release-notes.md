@@ -348,7 +348,7 @@ In this release the garbage collection mechanism was improved in terms of effici
 
 The improved collection mechanism is currently **experimental*- and is not enabled by default. Enabling the new garbage collection mechanism requires setting the `GC_POLICY` configuration option to `FORK` at load time, for example:
 
-```src
+```sh
 redis-server --loadmodule ./redisearch.so GC_POLICY FORK
 ```
 

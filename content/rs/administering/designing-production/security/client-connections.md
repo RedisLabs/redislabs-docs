@@ -104,14 +104,14 @@ certificates, and a self-signed certificate on the client machine.
 
     1. Generate a private key by running the following commands:
 
-        ```src
+        ```sh
         sudo su
         openssl genrsa -out /etc/stunnel/keyclient.pem 4096
         ```
 
     1. Generate a client certificate by running the following commands:
 
-        ```src
+        ```sh
         openssl req -new -x509 -key /etc/stunnel/keyclient.pem
         -out
         /etc/stunnel/cert.pem -days 1826
@@ -187,7 +187,7 @@ in transit between a Redis client and a Redis Enterprise cluster, use
 the REST API or the following rladmin
 command:
 
-```src
+```sh
 rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
 ```
 

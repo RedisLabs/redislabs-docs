@@ -22,7 +22,7 @@ not part of the cluster being tested. If you run it on a node of the
 cluster, be mindful that it affects the performance of both the
 cluster and memtier_benchmark.
 
-```src
+```sh
 /opt/redislabs/bin/memtier_benchmark -s $DB_HOST -p $DB_PORT -a $DB_PASSWORD -t 4 -R --ratio=1:1
 ```
 
@@ -37,7 +37,7 @@ Enterprise database and generates a load doing the following:
 If you need to populate a database with some test data for a proof of
 concept, or failover testing, etc. here is an example for you.
 
-```src
+```sh
 /opt/redislabs/bin/memtier_benchmark -s $DB_HOST -p $DB_PORT -a $DB_PASSWORD -R -n allkeys -d 500 --key-pattern=P:P --ratio=1:0
 ```
 

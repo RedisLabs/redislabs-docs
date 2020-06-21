@@ -23,13 +23,13 @@ To prepare a client or node for mDNS:
 
     - For Ubuntu:
 
-        ```src
+        ```sh
         apt-get install libnss-mdns
         ```
 
     - For RHEL/CentOS 6.x:
 
-        ```src
+        ```sh
         $ rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
         $ yum install nss-mdns
         $ service avahi-daemon start
@@ -37,7 +37,7 @@ To prepare a client or node for mDNS:
 
     - For RHEL/CentOS 7:
 
-        ```src
+        ```sh
         $ rpm -ivh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-12.noarch.rpm
         $ yum install nss-mdns
         $ service avahi-daemon start

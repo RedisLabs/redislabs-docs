@@ -67,7 +67,7 @@ below) instead of your resource's endpoint.
 
 1. Install stunnel:
 
-    ```src
+    ```sh
     apt-get install stunnel
     ```
 
@@ -77,7 +77,7 @@ below) instead of your resource's endpoint.
     1. `redislabs_ca.pem` - the service's certification authority.
 1. Change the permissions of the private key:
 
-    ```src
+    ```sh
     $ chown root:root /etc/stunnel/redislabs_user_private.key
     $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
@@ -90,7 +90,7 @@ below) instead of your resource's endpoint.
     changing the line that says ENABLED=0 to ENABLED=1.
 1. Start the stunnel service:
 
-    ```src
+    ```sh
     service stunnel4 start
     ```
 
@@ -98,7 +98,7 @@ below) instead of your resource's endpoint.
 
 1. Install stunnel:
 
-    ```src
+    ```sh
     yum install stunnel
     ```
 
@@ -108,7 +108,7 @@ below) instead of your resource's endpoint.
     1. `redislabs_ca.pem` - the service's certification authority.
 1. Change the permissions of the private key:
 
-    ```src
+    ```sh
     $ chown root:root /etc/stunnel/redislabs_user_private.key
     $ chmod 0600 /etc/stunnel/redislabs_user_private.key
     ```
@@ -119,7 +119,7 @@ below) instead of your resource's endpoint.
 1. Configure stunnel to run as a daemon by creating the following
     /etc/init.d/stunnel file:
 
-    ```src
+    ```sh
     #!/bin/bash
 
     #
@@ -256,7 +256,7 @@ below) instead of your resource's endpoint.
     Then run the following commands to set file permissions and starting
     the service correctly:
 
-    ```src
+    ```sh
     $ chown root:root /etc/init.d/stunnel
     $ chmod 0755 /etc/init.d/stunnel
     $ chkconfig --add /etc/init.d/stunnel
@@ -285,6 +285,6 @@ connect = host:port`
 You can test the connection from your client using redis-cli, for
 example::
 
-```src
+```sh
 redis-cli -h <hostname> -p <portnumber> PING
 ```
