@@ -242,7 +242,7 @@ To install RS with an answer file:
     ```
 
     {{< note >}}
-    If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
+If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
     {{< /note >}}
 
 1. Run the install script with `-c` and the path to the answer file.
