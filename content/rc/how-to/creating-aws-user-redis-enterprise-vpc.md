@@ -10,7 +10,7 @@ In most Redis Cloud deployments, the infrastructure of your Redis Cloud subscrip
 In Redis Cloud Ultimate, you can choose to have this infrastructure on your own AWS accounts.
 You'll want these accounts to be separate from any AWS application accounts,
 and you'll need to create some dedicated IAM entities to let us manage the infrastructure for you.
-
+ 
 In the new AWS account, you need to create:
 
 - An **instance role**
@@ -30,6 +30,278 @@ To make sure that we can manage your AWS resources, you must not:
 
 For more about creating an AWS user, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
+# Using CloudFormation
+The simplest method to create the necessary resources is to use CloudFormation and the following template. The outputs of this template can be copied/pasted directly and used to configure your RedisCloud account.
+
+{{%expand "View RedisLabsCloudFormationTemplate.yaml" %}}
+AWSTemplateFormatVersion: 2010-09-09
+Description: |
+  A template to construct all the necessary resources to enable RedisCloud to manage clusters in your AWS
+  account, as per https://docs.redislabs.com/latest/rc/how-to/creating-aws-user-redis-enterprise-vpc/
+  
+Resources:
+  RedisLabsClusterNodeRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument: 
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+              - ec2.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Description: Role used by EC2 instances managed by RedisLabs 
+      Policies:
+        - PolicyDocument: |
+            {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Sid": "EC2",
+                  "Effect": "Allow",
+                  "Action": [
+                    "ec2:DescribeAvailabilityZones",
+                    "ec2:DescribeRegions",
+                    "ec2:DescribeSecurityGroups",
+                    "ec2:DescribeTags",
+                    "ec2:DescribeVolumes"
+                  ],
+                  "Resource": "*"
+                },
+                {
+                  "Sid": "EC2Tagged",
+                  "Effect": "Allow",
+                  "Action": [
+                    "ec2:AuthorizeSecurityGroupEgress",
+                    "ec2:AuthorizeSecurityGroupIngress",
+                    "ec2:DeleteSecurityGroup",
+                    "ec2:RevokeSecurityGroupEgress",
+                    "ec2:RevokeSecurityGroupIngress"
+                  ],
+                  "Resource": "*",
+                  "Condition": {
+                    "StringEquals": {
+                      "ec2:ResourceTag/RedisLabsIdentifier": "Redislabs-VPC"
+                    }
+                  }
+                },
+                {
+                  "Sid": "EBSVolumeActions",
+                  "Effect": "Allow",
+                  "Action": [
+                    "ec2:AttachVolume",
+                    "ec2:CreateVolume",
+                    "ec2:CreateTags",
+                    "ec2:DescribeTags"
+                  ],
+                  "Resource": "*"
+                },
+                {
+                  "Sid": "S3Object",
+                  "Effect": "Allow",
+                  "Action": [
+                    "s3:PutObject",
+                    "s3:PutObjectAcl",
+                    "s3:GetObject",
+                    "s3:GetObjectAcl",
+                    "s3:DeleteObject",
+                    "s3:ListBucket",
+                    "s3:GetBucketLocation"
+                  ],
+                  "Resource": "*"
+                },
+                {
+                  "Sid": "IAM",
+                  "Effect": "Allow",
+                  "Action": [
+                    "iam:GetPolicy",
+                    "iam:ListPolicies"
+                  ],
+                  "Resource": "*"
+                }
+              ]
+            }
+          PolicyName: RedisLabsInstanceRolePolicy
+      Tags:
+        - Key: UsedBy
+          Value: RedisLabs
+
+  RedislabsIAMUserRestrictedPolicy:
+    Type: "AWS::IAM::ManagedPolicy"
+    Properties:
+      Description: Policy used by RedisLabs users
+      PolicyDocument: |
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+              {
+                  "Sid": "Ec2DescribeAll",
+                  "Effect": "Allow",
+                  "Action": "ec2:Describe*",
+                  "Resource": "*"
+              },
+              {
+                  "Sid": "CloudWatchReadOnly",
+                  "Effect": "Allow",
+                  "Action": [
+                      "cloudwatch:Describe*",
+                      "cloudwatch:Get*",
+                      "cloudwatch:List*"
+                  ],
+                  "Resource": "*"
+              },
+              {
+                  "Sid": "IamUserOperations",
+                  "Effect": "Allow",
+                  "Action": [
+                      "iam:GetUser",
+                      "iam:GetUserPolicy",
+                      "iam:ChangePassword"
+                  ],
+                  "Resource": "arn:aws:iam::*:user/${aws:username}"
+              },
+              {
+                  "Sid": "RolePolicyUserReadActions",
+                  "Action": [
+                      "iam:GetRole",
+                      "iam:GetPolicy",
+                      "iam:ListUsers",
+                      "iam:ListPolicies",
+                      "iam:ListRolePolicies",
+                      "iam:ListAttachedRolePolicies",
+                      "iam:ListInstanceProfiles",
+                      "iam:ListInstanceProfilesForRole",
+                      "iam:SimulatePrincipalPolicy"
+                  ],
+                  "Effect": "Allow",
+                  "Resource": "*"
+              },
+              {
+                  "Sid": "KeyPairActions",
+                  "Effect": "Allow",
+                  "Action": [
+                      "ec2:CreateKeyPair",
+                      "ec2:DeleteKeyPair",
+                      "ec2:ImportKeyPair"
+                  ],
+                  "Resource": "*"
+              },
+              {
+                  "Sid": "CreateInstancesVolumesAndTags",
+                  "Effect": "Allow",
+                  "Action": [
+                      "ec2:CreateVolume",
+                      "ec2:AttachVolume",
+                      "ec2:StartInstances",
+                      "ec2:RunInstances",
+                      "ec2:CreateTags"
+                  ],
+                  "Resource": "*"
+              },
+              {
+                  "Sid": "PassRlClusterNodeRole",
+                  "Effect": "Allow",
+                  "Action": "iam:PassRole",
+                  "Resource": "arn:aws:iam::*:role/redislabs-cluster-node-role"
+              },
+              {
+                  "Sid": "NetworkAccess",
+                  "Effect": "Allow",
+                  "Action": [
+                      "ec2:*Vpc*",
+                      "ec2:*VpcPeering*",
+                      "ec2:*Subnet*",
+                      "ec2:*Gateway*",
+                      "ec2:*Vpn*",
+                      "ec2:*Route*",
+                      "ec2:*Address*",
+                      "ec2:*SecurityGroup*",
+                      "ec2:*NetworkAcl*",
+                      "ec2:*DhcpOptions*"
+                  ],
+                  "Resource": "*"
+              },
+              {
+                  "Sid": "DeleteInstancesVolumesAndTagsWithIdentiferTag",
+                  "Effect": "Allow",
+                  "Action": [
+                      "ec2:RebootInstances",
+                      "ec2:StopInstances",
+                      "ec2:TerminateInstances",
+                      "ec2:DeleteVolume",
+                      "ec2:DetachVolume",
+                      "ec2:DeleteTags"
+                  ],
+                  "Resource": "*",
+                  "Condition": {
+                      "StringEquals": {
+                          "ec2:ResourceTag/RedisLabsIdentifier": "Redislabs-VPC"
+                      }
+                  }
+              },
+              {
+                  "Sid": "Support",
+                  "Effect": "Allow",
+                  "Action": "support:*",
+                  "Resource": "*"
+              }
+          ]
+        }
+
+
+  RedisLabsUser:
+    Type: "AWS::IAM::User"
+    Properties:
+      ManagedPolicyArns:
+        - !Ref RedislabsIAMUserRestrictedPolicy
+      Tags:
+        - Key: UsedBy
+          Value: RedisLabs
+
+  RedisLabsUserAccessKey:
+    Type: "AWS::IAM::AccessKey"
+    Properties:
+      UserName: !Ref RedisLabsUser
+
+
+  RedisLabsCrossAccountRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument: |
+        {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": "arn:aws:iam::168085023892:root"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {}
+            }
+          ]
+        }
+      Description: String
+      ManagedPolicyArns:
+        - !Ref RedislabsIAMUserRestrictedPolicy
+      Tags:
+        - Key: UsedBy
+          Value: RedisLabs
+  
+Outputs:
+  AwsSecretAccessKey:
+    Description: The AWS secret access key for the programmatic user
+    Value: !Sub ${RedisLabsUserAccessKey.SecretAccessKey}
+  AwsAccessKey:
+    Description: The AWS access key for the programmatic user
+    Value: !Sub ${RedisLabsUserAccessKey}
+  IamRoleName:
+    Description: The name of the console role with access to the console
+    Value: !Ref RedisLabsCrossAccountRole
+
+# Using the AWS Console
 ## Step 1: Create the IAM Instance Policy
 
 First, create a policy to use for the new instance role:
