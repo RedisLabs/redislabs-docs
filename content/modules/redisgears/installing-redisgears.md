@@ -24,14 +24,14 @@ On each node in the Redis Enterprise cluster:
 
     ```src
     # source /etc/opt/redislabs/redislabs_env_config.sh
-    # mkdir -p $modulesdatadir/rg/<versionnumeric>/deps/
-    # tar -xvf /path/to/deps/file/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<versionnumeric>/deps
+    # mkdir -p $modulesdatadir/rg/<version_integer>/deps/
+    # tar -xvf /<path>/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<version_integer>/deps
     # chown -R $osuser $modulesdatadir/rg
     ```
 
 {{< note >}}
-- `<version>` is of the form `x.y.z`
-- `<versionnumeric>` is an integer = `10000*x + 100*y + z`
+- `<version_>` - The version number in the format `x.y.z`.
+- `<version_integer>` - The version number in integer format `xxyyzz` or you can calculate it as `10000*x + 100*y + z`.
 - You must also run these commands on new nodes before you join the node to the cluster.
 {{< /note >}}
 
