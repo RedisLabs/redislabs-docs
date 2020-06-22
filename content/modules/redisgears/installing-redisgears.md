@@ -30,7 +30,7 @@ On each node in the Redis Enterprise cluster:
     ```
 
 {{< note >}}
-- `<version_>` - The version number in the format `x.y.z`.
+- `<version>` - The version number in the format `x.y.z`.
 - `<version_integer>` - The version number in integer format `xxyyzz` or you can calculate it as `10000*x + 100*y + z`.
 - You must also run these commands on new nodes before you join the node to the cluster.
 {{< /note >}}
