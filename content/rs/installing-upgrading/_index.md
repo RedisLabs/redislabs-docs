@@ -61,6 +61,7 @@ sudo lsblk
 1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
 1. Run: `sudo service systemd-resolved restart`
     {{% /expand %}}
+- By default, Redis can utilize local ports up to port 29999 (see [Network Port Configurations]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})). To prevent a possible port conflict during services startup where the OS might use one of the Redis ports, it's recommended to restrict the OS from using Redis ports range. This can be done by setting net.ipv4.ip_local_port_range to have a value of '30000 65535' in /etc/sysctl.conf.
 
 ## Installing RS on Linux
 
