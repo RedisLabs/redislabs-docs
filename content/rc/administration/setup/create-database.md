@@ -14,40 +14,36 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
 1. In the Redis Cloud menu, click **Databases**.
 1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Configure the database:
-    - Enter a **Database Name** that is up to 40 characters long.
-    - Protocol - Select whether the database uses **Redis** or **Memcached**.
-    - Enter a **Memory Limit**. Please take in mind that replication is
+    - **Name** - Enter a **Database Name** that is up to 40 characters long.
+    - **Protocol** - Select whether the database uses **Redis** or **Memcached**.
+    - **Memory** - Enter a **Memory Limit**. Please take in mind that replication is
         on.
-    - If your database uses [Redis on
-        Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
-        enter the average item size(in bytes). This helps us optimaize your database.
-    - In **Throughput by**, select the definition of thoughput as:
-    - Ops/sec - Enter the required **Max Throughput** between 1000 and 10000000.
-    - Shards - Enter the number of **Shards** you require for the database.
-    - **Replication** is enabled by default so that each shard has a slave shard.
-        If you do not require slave shards, for example in a caching database,
-        disable replication.
-    - In **Data Persistence**, select when the data is saved to [persistent storage]({{< relref "rc/concepts/data-persistence.md" >}}) :
+    - **Redis on Flash** - If your database uses [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+        enter the average item size (in bytes). This helps us optimize your database.
+    - **Throughput** - In **Throughput by**, select the definition of throughput as:
+        - Ops/sec - Enter the required **Max Throughput** between 1000 and 10000000.
+        - Shards - Enter the number of **Shards** you require for the database.
+    - **Replication** - By default, each shard has a slave shard.
+        If you do not require slave shards, for example in a caching database, disable replication.
+    - **Data Persistence** - Select when the data is saved to [persistent storage]({{< relref "rc/concepts/data-persistence.md" >}}) :
         - None - Data is not persisted to disk at all.
         - Append Only File (AoF) one second - Data is fsynced to disk every second.
         - Snapshot every 1 hour - A snapshot of the database is created every hour.
         - Snapshot every 6 hours - A snapshot of the database is created every 6 hours.
         - Snapshot every 12 hours - A snapshot of the database is created every 12 hours.
-    - By default, **OSS Cluster API** is disabled. You can:
+    - **OSS Cluster API** - You can:
         - Enable [OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}})
             to expose the cluster topology to your application.
-        - Select **Use external endpoint** to let clients connect to the OSS cluster
-            API throught the external endpoint.
-    - By default, **Replica Of** is disabled. You can enable [Replica Of]({{< relref "/rs/administering/active-passive.md" >}})
+        - Select **Use external endpoint** to let clients connect to the OSS cluster API throught the external endpoint.
+    - **Replica Of** - You can enable [Replica Of]({{< relref "/rs/administering/active-passive.md" >}})
         and select the endpoint of a database to hold a copy of the data.
 
         {{< note >}}
 You must configure [VPC Peering]({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}})
-between the VPC that this database is on and the VPC that the destination
-database is on.
+between the VPC that this database is on and the VPC that the destination database is on.
         {{< /note >}}
 
-    - In **Access Control & Security**, you can:
+    - [**Access Control & Security**]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}}) - You can:
         - Enable the **Default User** for the database.
             We recommend that you use a complex password and not leave the password blank.
         - Specify the **Source IP/Subnet** addresses that your database receives
@@ -56,18 +52,15 @@ database is on.
             - **Generate Client Certificate** and configure your client to use
                 the generated certificate.
             - Paste the certificate for your client.
-            For more information, see [Securing Redis Client Connections]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}})
-    - Choose a **Data Eviction Policy** or accept the default. For more information,
-        see [Data Eviction Policies]({{< relref "rc/concepts/data-eviction-policies.md" >}}).
-    - Enable **Periodic Backups** and specify the [database backup]({{< relref "/rc/administration/configuration/backups.md" >}}) location.
-    - Enable **Modules** and select the module to use with the database.
+    - **Data Eviction Policy** - Select a policy for evicting data when the memory limit is reached.
+    - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/administration/configuration/backups.md" >}}) location.
+    - **Modules** - Enable modules and select the module to use with the database.
 
         - For RedisGraph, use the [sizing calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
             to calculate the required resources.
         - For RediSearch on a Redis Cloud Pro subscription, enter the estimated number of documents you want to index.
 
-    - In **Alert Settings**, select the alerts that you want sent to you and
-        your team when the specified threshold is passed.
+    - **Alert Settings** - Select the alerts that you want sent to you and your team when the specified threshold is passed.
 1. Click **Activate**.
 
 After you click **Activate**, Redis Cloud:
