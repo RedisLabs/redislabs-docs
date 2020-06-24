@@ -31,24 +31,24 @@ To link to another page in the content directory:
 Syntax:
 
 ```md
-[Redis Cloud Quick Setup]({{</* relref  "/rc/quick-setup.md" */>}})`
+[Redis Cloud Quick Start]({{</* relref  "/rc/rc-quickstart.md" */>}})`
 ```
 
 Output:
 
-[Redis Cloud Quick Setup]({{< relref  "/rc/quick-setup.md" >}})
+[Redis Cloud Quick Start]({{< relref  "/rc/rc-quickstart.md" >}})
 
 To link to an anchor on another page in the content directory:
 
 Syntax:
 
 ```md
-`[Sign up for Redis Cloud]({{</* relref "/rc/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
+`[Sign up for Redis Cloud]({{</* relref "/rc/rc-quickstart.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
 ```
 
 Output:
 
-[Sign up for Redis Cloud]({{< relref "/rc/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
+[Sign up for Redis Cloud]({{< relref "/rc/rc-quickstart.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
 
 ### Text formatting
 
