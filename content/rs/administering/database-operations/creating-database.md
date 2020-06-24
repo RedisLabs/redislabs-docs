@@ -221,7 +221,7 @@ from redis.sentinel import Sentinel
 # with IP based connections, a list of known node IP addresses is constructed
 # to allow connection even if any one of the nodes in the list is unavailable.
 sentinel_list = [
-(10.0.0.44', 8001),
+('10.0.0.44', 8001),
 ('10.0.0.45', 8001),
 ('10.0.0.45', 8001)
 ]
