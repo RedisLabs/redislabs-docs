@@ -13,9 +13,11 @@ For this quick start tutorial, you need:
     - A Redis Cloud Pro database [with the RedisBloom module](https://redislabs.com/redis-enterprise-cloud/)
 - redis-cli with connectivity to a redis database
 
+You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
+
 {{< embed-md "tryout-redisbloom.md" >}}
 
-### Debugging Bloom filters
+## Debugging Bloom filters
 
 Finally, I added a BF.DEBUG command, to see exactly how the filter is
 being utilized:

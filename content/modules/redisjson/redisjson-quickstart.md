@@ -9,9 +9,11 @@ aliases: /rs/getting-started/creating-database/redisjson-quick-start/
 For this quick start tutorial, you need:
 
 - Either:
+    - A Redis Cloud database [with the RedisJSON module]({{< relref "/rc/administration/setup/create-database.md" >}})
     - A Redis Enterprise Software database [with the RedisJSON module]({{< relref "/modules/add-module-to-database.md" >}})
-    - A Redis Cloud Pro database [with the RedisJSON module](https://redislabs.com/redis-enterprise-cloud/)
 - redis-cli with connectivity to a redis database
+
+You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
 
 ## Quick start with redis-cli
 
