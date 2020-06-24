@@ -45,7 +45,7 @@ kind: RedisEnterpriseCluster
 metadata:
   name: rec
 spec:
-  size: 3
+  nodes: 3
   nodeSelector:
      memory: high
 ```
@@ -72,7 +72,7 @@ kind: RedisEnterpriseCluster
 metadata:
   name: rec
 spec:
-  size: 3
+  nodes: 3
   nodeSelector:
      cloud.google.com/gke-nodepool: 'high-memory'
 ```
@@ -102,7 +102,7 @@ kind: RedisEnterpriseCluster
 metadata:
   name: rec
 spec:
-  size: 3
+  nodes: 3
   podTolerations:
   - key: db
     operator: Equal     
@@ -139,7 +139,7 @@ kind: RedisEnterpriseCluster
 metadata:
   name: rec
 spec:
-  size: 3
+  nodes: 3
   podAntiAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
     - labelSelector:
@@ -159,7 +159,7 @@ kind: RedisEnterpriseCluster
 metadata:
   name: rec
 spec:
-  size: 3
+  nodes: 3
   extraLabels:
      local/role: database
   podAntiAffinity:
@@ -205,7 +205,7 @@ kind: RedisEnterpriseCluster
 metadata:
   name: example-redisenterprisecluster
 spec:
-  size: 3
+  nodes: 3
   rackAwarenessNodeLabel: failure-domain.beta.kubernetes.io/zone
 ```
 
