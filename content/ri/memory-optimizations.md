@@ -144,7 +144,7 @@ Similarly, for sorted sets can also be converted to ziplist, but the only differ
 A Redis Hash stores field names and values. If you have thousands of small hash objects with similar field names, the memory used by field names adds up. To prevent this, consider using a list instead of a hash. The field names become indexes into the list.
 
 While this may save memory, you should only use this approach if you have thousands of hashes, and if each of those hashes have similar fields.
-[Compressed Field Names]({{< relref "/ri/memory-optimizations/compress-field-names.md" >}}) are another way to reduce memory used by field names.
+[Compressed Field Names](#compress-field-names) are another way to reduce memory used by field names.
 
 Let's take an example. Suppose you want to set user details in Redis. You do something like this:
 
