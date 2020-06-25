@@ -5,7 +5,9 @@ weight: 70
 alwaysopen: false
 categories: ["RI"]
 ---
-While RedisInsight can monitor the health of your databases, here are some tips to increase memory efficiency in Redis:
+While RedisInsight can monitor the health of your databases, here are some tips to increase memory efficiency in Redis.
+
+To get the best performance out of your databases, make sure you are using the latest Redis version.
 
 ## Avoid Dynamic Lua Script
 
@@ -306,20 +308,6 @@ For example, if you want to maintain how many unique ipaddresses made an API cal
 `46966 unique IPs for today`.
 
 But if you want `Show me those 46966 IP Addresses` — it cannot show you. For that, you need to maintain all the IP Addresses in a set
-
-## Upgrade Redis Version
-
-Redis 4.0 is the latest version that has been launched. It contains various big improvements compared to the previous versions.
-
-1. It supports mixed RDB+AOF Format.
-1. Improvement in memory usage and performance.
-1. New **Memory** Command has been introduced.
-1. Active Memory Defragmentation.
-1. Faster Redis Cluster key creation.
-
-### Trade Offs
-
-Redis 4.0 is still not a stable release but is a very battle tested release, so Redis 3.2 is a better pick for critical applications till Redis 4.0 matures more in next few months.
 
 ## Use Better Serializer
 
