@@ -89,7 +89,7 @@ You can be more efficient and import only the requirements you need, but rgync i
 This list can be different or more extensive in newer versions.
     {{< /note >}}
 
-1. From the CLI of a node or of a client that is connected to the database, check that the requirements were imported successfully with: `redis-cli RG.PYDUMPREQ`
+1. From the CLI of a node or of a client that is connected to the database, check that the requirements were imported successfully with: `redis-cli RG.PYDUMPREQS`
 
     To connect to the database from a client, run: `redis-cli -h <FQDN_of_node> -p <host> [-a <password>]`
 
@@ -123,7 +123,7 @@ personsMappings = {
 	'age':'age'
 }
 
-RGWriteBehind(GB, keysPrefix='person', mappings=personsMappings, connector=personsConnector, name='PersonsWriteBehind', version='99.99.99')
+RGWriteBehind(GB, keysPrefix='person', mappings=personsMappings, connector=personConnector, name='PersonsWriteBehind', version='99.99.99')
 
 '''
 Create MySQL car connector
@@ -137,7 +137,7 @@ carsMappings = {
 	'color':'color'
 }
 
-RGWriteBehind(GB, keysPrefix='cars', mappings=carsMappings, connector=carsConnector, name='CarsWriteBehind', version='99.99.99')
+RGWriteBehind(GB, keysPrefix='cars', mappings=carsMappings, connector=carConnector, name='CarsWriteBehind', version='99.99.99')
 ```
 
 Go to the [rgsync website](https://pypi.org/project/rgsync/) to get the replication options and the configuration options for the database and mapping.
