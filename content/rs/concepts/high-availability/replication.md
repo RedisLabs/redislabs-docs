@@ -42,7 +42,7 @@ any given time.
 
 The recommended sequential replication configuration is two, i.e.:
 
-```src
+```sh
 rladmin tune cluster max_redis_forks 1 max_slave_full_syncs 1
 ```
 

@@ -12,6 +12,6 @@ By default, the files are in: `/opt/redislabs`, `/etc/opt/redislabs`, `/var/opt/
 
 To uninstall RS from a node, run:
 
-```src
+```sh
 rl_uninstall.sh
 ```

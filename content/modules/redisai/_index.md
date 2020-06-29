@@ -17,7 +17,7 @@ Before diving into RedisAI please make sure that you are familiar with the basic
 
 In broad strokes, RedisAI looks like this:
 
-```src
+```sh
 +-----------------------------------------------------------------------------+
 | SERVER                                                                      |
 | +-------------------------------------------------------------------------+ |

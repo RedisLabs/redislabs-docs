@@ -7,7 +7,7 @@ Before you choose to backup to an FTP server, make sure that:
 
 To backup to an FTP server, enter the FTP server location in the format:
 
-```src
+```sh
 ftp://user:password@host<:custom_port>/path/
 ```
 
@@ -27,7 +27,7 @@ Before you choose to backup to an SFTP server, make sure that:
 
 To backup to an SFTP server, enter the SFTP server location in the format:
 
-```src
+```sh
 sftp://user:password@host:<:custom_port>/path/
 ```
 
@@ -63,7 +63,7 @@ To backup to a local mount point for a node:
 
         For example:
 
-        ```src
+        ```sh
         sudo mount -t nfs 192.168.10.204:/DataVolume/Public /mnt/Public
         ```
 

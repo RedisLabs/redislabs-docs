@@ -26,11 +26,11 @@ To set up CRDB in a production environment, use the instructions for
 
 To spin up two RS containers, run these commands:
 
-```src
+```sh
 docker run -d --cap-add sys_resource -h rp1_node1 --name rp1_node1 -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
-```src
+```sh
 docker run -d --cap-add sys_resource -h rp2_node1 --name rp2_node1 -p 8445:8443 -p 9445:9443 -p 12002:12000 redislabs/redis
 ```
 
@@ -143,13 +143,13 @@ redis-cli is a simple command-line tool to interact with redis database.
 
 1. To switch your context into the RS container of node 1 in cluster 1, run:
 
-    ```src
+    ```sh
     docker exec -it rp1_node1 bash
     ```
 
 1. To use redis-cli on port 12000, run:
 
-    ```src
+    ```sh
     redis-cli -p 12000
     ```
 
@@ -161,7 +161,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 
     The output of the command looks like this:
 
-    ```src
+    ```sh
     127.0.0.1:12000> set key1 123
     OK
     127.0.0.1:12000> get key1
@@ -176,7 +176,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 
     The output of the commands looks like this:
 
-    ```src
+    ```sh
     $ docker exec -it rp2_node1 bash
     $ redis-cli -p 12000
     127.0.0.1:12000> get key1
@@ -195,7 +195,7 @@ running the container.
 
 1. In the command-line terminal, create a new file called "redis_test.py"
 
-    ```src
+    ```sh
     vi redis_test.py
     ```
 
@@ -221,13 +221,13 @@ running the container.
 
 1. To run the "redis_test.py" application, run:
 
-    ```src
+    ```sh
     python redis_test.py
     ```
 
     If the connection is successful, the output of the application looks like:
 
-    ```src
+    ```sh
     set key1 123 in cluster 1
     True
     get key1 cluster 1

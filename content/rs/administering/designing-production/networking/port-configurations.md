@@ -55,7 +55,7 @@ cluster you must connect to the web UI with the custom port number:
 
 To change the default port for the RS Web UI, on any node in the cluster run:
 
-```src
+```sh
 rladmin cluster config cm_port <new-port>
 ```
 
@@ -68,6 +68,6 @@ After you disable HTTP support, traffic sent to the unencrypted API endpoint is 
 
 To disable HTTP support for API endpoints, run:
 
-```src
+```sh
 rladmin cluster config http_support disabled
 ```

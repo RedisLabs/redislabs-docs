@@ -31,7 +31,7 @@ You can use either the rladmin CLI or the REST API to update the certificates.
 
 To replace certificates using the rladmin CLI, run:
 
-```src
+```sh
  rladmin cluster certificate set <cert-name> certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
 ```
 
@@ -48,7 +48,7 @@ Where:
 
 For example, to replace the cm certificate with the private key "key.pem" and the certificate file "cluster.pem":
 
-```src
+```sh
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 ```
 
@@ -56,7 +56,7 @@ rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 
 To replace a certificate using the REST API, run:
 
-```src
+```sh
 curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d '{ "name": "<cert_name>", "key": "<key>", "certificate": "<cert>" }' https://<cluster_address>:9443/v1/cluster/update_cert
 ```
 
@@ -104,7 +104,7 @@ To set the minimum TLS protocol for the management path:
 
 For example:
 
-```src
+```sh
 rladmin cluster config min_control_TLS_version 1.2
 ```
 
@@ -121,13 +121,13 @@ To set the minimum TLS protocol for the data path:
 
 For example:
 
-```src
+```sh
 rladmin cluster config min_data_TLS_version 1.2
 ```
 
 For your changes to take effect on the discovery service, restart the service with the command:
 
-```src
+```sh
 supervisorctl restart sentinel_service
 ```
 
@@ -144,13 +144,13 @@ To enable TLS for the discovery service:
 
 For example:
 
-```src
+```sh
 rladmin cluster config sentinel_ssl_policy required min_data_TLS_version 1.2
 ```
 
 For your changes to take effect on the discovery service, restart the service with the command:
 
-```src
+```sh
 supervisorctl restart sentinel_service
 ```
 
@@ -168,6 +168,6 @@ To set the TLS ciphers:
     - Redis Enterprise Software uses openssl to implement TLS ([List of available configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html))
 - The below example uses the Mozilla intermediate compatibility cipher list
 
-```src
+```sh
 rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
 ```

@@ -34,7 +34,7 @@ In this article we walk you through the process for installing the RS installati
     {{% expand "To prepare and format the flash memory:" %}}
 Run:
 
-```src
+```sh
 sudo /opt/redislabs/sbin/prepare_flash.sh
 ```
 
@@ -42,7 +42,7 @@ This command finds all of the unformatted disks and mounts them as RAID partitio
 
 To verify the disk configuration, run:
 
-```src
+```sh
 sudo lsblk
 ```
     {{% /expand %}}
@@ -71,7 +71,7 @@ To install RS on Linux from the CLI:
 1. Copy the installation package to the node.
 1. On the node, change to the directory where the installation package is and extract the installation files:
 
-    ```src
+    ```sh
     tar vxf <tarfile name>
     ```
 
@@ -83,7 +83,7 @@ To install RS on Linux from the CLI:
 - You must either be logged in as the root user or use sudo to run the install process.
     {{< /note >}}
 
-    ```src
+    ```sh
     sudo ./install.sh
     ```
 
@@ -99,7 +99,7 @@ To install RS without answering the installation questions, either:
 
     After RS is successfully installed, the IP address of the RS web UI is shown:
 
-    ```src
+    ```sh
     Summary:
     -------
     ALL TESTS PASSED.
@@ -160,7 +160,7 @@ You can specify any or all of these file locations:
 
 To install RS in specified file directories, run:
 
-```src
+```sh
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ```
 
@@ -179,7 +179,7 @@ If you specify the user only, then installation is run with the primary group th
 
 To install RS with a specified user and group, run:
 
-```src
+```sh
 sudo ./install.sh --os-user <user> --os-group <group>
 ```
 
@@ -242,7 +242,7 @@ To install RS with an answer file:
     ```
 
     {{< note >}}
-    If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
+If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
     {{< /note >}}
 
 1. Run the install script with `-c` and the path to the answer file.

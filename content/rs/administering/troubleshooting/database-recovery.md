@@ -51,7 +51,7 @@ of the configuration and persistence files on each of the nodes.
 
 1. To see which databases are recoverable, run:
 
-    ```src
+    ```sh
     rladmin recover list
     ```
 

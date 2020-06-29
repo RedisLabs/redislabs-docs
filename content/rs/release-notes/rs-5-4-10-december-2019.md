@@ -27,7 +27,7 @@ To keep RS secure and keep our internal libraries up-to-date, starting from RS 5
 
 When you install or upgrade RS 5.4.10 on RHEL 7 with older version of OpenSLL, the installation fails with the error:
 
-```src
+```sh
 Error: Package: redislabs-5.4.10-1.rhel7.x86_64 (/redislabs-5.4.10-1.rhel7.x86_64)
         Requires: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
 ```

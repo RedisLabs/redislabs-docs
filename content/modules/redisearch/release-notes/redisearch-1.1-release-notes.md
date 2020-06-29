@@ -17,7 +17,7 @@ Aggregations are a way to process the results of a search query, group, sort and
 
 For example, indexing a web-server's logs, we can create report for unique users by hour. Suppose our schema includes the **SORTABLE** fields `timestamp` (Unix-timestamp) and `userId`:
 
-```src
+```sh
 FT.AGGREGATE idx "*"
    APPLY hour(@timestamp) AS hour
    GROUPBY 1 @hour

@@ -80,7 +80,7 @@ Slave HA migrates slave shards for databases according to this order of priority
 
     To assign priority to a database, run:
 
-    ```src
+    ```sh
 rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
     ```
 
@@ -101,13 +101,13 @@ To configure this grace period from rladmin, run:
 
 - For the cluster:
 
-    ```src
+    ```sh
 rladmin tune cluster slave_ha_cooldown_period <time_in_seconds>
     ```
 
 - For all databases in the cluster:
 
-    ```src
+    ```sh
 rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
     ```
 

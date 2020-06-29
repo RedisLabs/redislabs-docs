@@ -62,7 +62,7 @@ The RS installation checks if there is a network time service installed, running
 
 For example:
 
-```src
+```sh
 2017-10-30 11:24:07 [?] Do you want to automatically tune the system for best performance [Y/N]? Y
 2017-10-30 11:24:15 [?] Cluster nodes must have their system time synchronized.
 Do you want to set up NTP time synchronization now [Y/N]? Y

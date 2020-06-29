@@ -31,34 +31,34 @@ To recover a cluster on Kubernetes:
 
 1. Edit the rec resource to set the clusterRecovery flag to true, run:
 
-    ```src
+    ```sh
     kubectl patch rec <cluster-name> --type merge --patch '{"spec":{"clusterRecovery":true}}'
     ```
 
     {{< note >}}
-    In some cases, pods do not terminate when the statefulSet is scaled down as part of the cluster recovery.
-    If pods are stuck in `terminating` or `crashLoopBack` and do not terminate gracefully, cluster recovery can pause.
+In some cases, pods do not terminate when the statefulSet is scaled down as part of the cluster recovery.
+If pods are stuck in `terminating` or `crashLoopBack` and do not terminate gracefully, cluster recovery can pause.
 
-    To work around this, delete the pods manually with:
+To work around this, delete the pods manually with:
 
-    ```src
-    kubectl delete pods <pod> --grace-period=0 --force
-    ```
+```sh
+kubectl delete pods <pod> --grace-period=0 --force
+```
 
-    When the last pod is manually deleted, the recovery process resumes.
+When the last pod is manually deleted, the recovery process resumes.
     {{< /note >}}
 
 1. Wait for the cluster to recover until it is in the Running state.
 
     To see the state of the cluster, run:
 
-    ```src
+    ```sh
     watch "kubectl describe rec | grep State"
     ```
 
 1. To recover the cluster data, once the cluster is in Running state, for any cluster pod run:
 
-    ```src
+    ```sh
     kubectl exec -it <pod-name> rladmin recover all
     ```
 
@@ -68,6 +68,6 @@ To recover a cluster on Kubernetes:
 
 1. If you are using sentinel discovery service, you must restart the sentinel_service on the master. To do this, log into the master pod and run:
 
-    ```src
+    ```sh
     supervisorctl restart sentinel_service
     ```

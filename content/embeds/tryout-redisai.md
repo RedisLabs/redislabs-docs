@@ -2,7 +2,7 @@
 
 <!-- The easiest way to get a standalone Redis server with RedisAI bootstrapped locally is to use the official RedisAI Docker container image:
 
-```src
+```sh
 docker run -d --name redisai -p 6379:6379 redisai/redisai:latest
 ``` -->
 
@@ -10,7 +10,7 @@ You can connect to RedisAI using any [Redis client](https://redis.io/clients). B
 
 We'll begin by using the official [`redis-cli`](https://redis.io/topics/rediscli) Redis client. If you have it locally installed feel free to use that, but it is also available from the container:
 
-```src
+```sh
 redis-cli
 ```
 
@@ -24,13 +24,13 @@ Creating new RedisAI tensors is done with the [`AI.TENSORSET` command](https://o
 
 We can create the RedisAI Tensor with the key name 'tA' with the following command:
 
-```src
+```sh
 AI.TENSORSET tA FLOAT 2 VALUES 2 3
 ```
 
 Copy the command to your cli and hit the `<ENTER>` on your keyboard to execute it. It should look as follows:
 
-```src
+```sh
 $ redis-cli
 127.0.0.1:6379> AI.TENSORSET tA FLOAT 2 VALUES 2 3
 OK
@@ -42,7 +42,7 @@ The `VALUES` argument tells RedisAI that the tensor's data will be given as a se
 
 The Redis key 'tA' now stores a RedisAI Tensor. We can verify that using standard Redis commands such as [`EXISTS`](https://redis.io/commands/exists) and [`TYPE`](https://redis.io/commands/type):
 
-```src
+```sh
 127.0.0.1:6379> EXISTS tA
 (integer) 1
 127.0.0.1:6379> TYPE tA
@@ -53,7 +53,7 @@ Using `AI.TENSORSET` with the same key name, as long as it already stores a Redi
 
 RedisAI Tensors are used as inputs and outputs in the execution of models and scripts. For reading the data from a RedisAI Tensor value there is the [`AI.TENSORGET` command](https://oss.redislabs.com/redisai/commands#aitensorget):
 
-```src
+```sh
 127.0.0.1:6379> AI.TENSORGET tA VALUES
 1) INT8
 2) 1) (integer) 2
@@ -71,7 +71,7 @@ In our examples, we'll use one of the graphs that RedisAI uses in its tests, nam
 
 Use a web browser or the command line to download 'graph.pb':
 
-```src
+```sh
 wget https://github.com/RedisAI/RedisAI/raw/master/test/test_data/graph.pb
 ```
 
@@ -83,7 +83,7 @@ This is a great way to inspect a graph and find out node names for inputs and ou
 
 redis-cli doesn't provide a way to read files' contents, so to load the model with it we'll use the command line and output pipes:
 
-```src
+```sh
 $ cat graph.pb | redis-cli -x \
             AI.MODELSET mymodel TF CPU INPUTS a b OUTPUTS c
 OK
@@ -110,19 +110,19 @@ The model stored at 'mymodel' expects two input tensors so we'll use the previou
 
 with the following command:
 
-```src
+```sh
 AI.TENSORSET tB FLOAT 2 VALUES 3 5
 ```
 
 The model can now be run with the [`AI.MODELRUN` command](https://oss.redislabs.com/redisai/commands#aimodelrun) as follows:
 
-```src
+```sh
 AI.MODELRUN mymodel INPUTS tA tB OUTPUTS tResult
 ```
 
 For example:
 
-```src
+```sh
 127.0.0.1:6379> AI.TENSORSET tA FLOAT 2 VALUES 2 3
 OK
 127.0.0.1:6379> AI.TENSORSET tB FLOAT 2 VALUES 3 5
@@ -137,7 +137,7 @@ The inputs for the example are the tensors stored under the 'tA' and 'tB' keys. 
 
 For example:
 
-```src
+```sh
 127.0.0.1:6379> AI.TENSORGET tModel VALUES
 1) FLOAT
 2) 1) (integer) 2
@@ -172,19 +172,19 @@ def multiply(a, b):
 
 Assuming that the script is stored in the 'myscript.py' file it can be uploaded via command line and the `AI.SCRIPTSET` command as follows:
 
-```src
+```sh
 cat myscript.py | redis-cli -x AI.SCRIPTSET myscript CPU
 ```
 
 This will store the PyTorch Script from 'myscript.py' under the 'myscript' key and will associate it with the CPU device for execution. Once loaded, the script can be run with the following:
 
-```src
+```sh
 AI.SCRIPTRUN myscript multiply INPUTS tA tB OUTPUTS tScript
 ```
 
 For example:
 
-```src
+```sh
 127.0.0.1:6379> AI.TENSORSET tA FLOAT 2 VALUES 2 3
 OK
 127.0.0.1:6379> AI.TENSORSET tB FLOAT 2 VALUES 3 5

@@ -27,7 +27,7 @@ Each Redis Enterprise Cluster can run multiple databases while maintaining high 
 {{% expand "How can I see the CRDs (Custom Resource Definitions) created for my cluster?" %}}
 Run the following:
 
-```src
+```sh
 kubectl get rec
 kubectl describe rec my-cluster-name
 ```
@@ -59,7 +59,7 @@ While Helm Charts help automate multi-resource deployments, they do not provide 
 {{% expand "How to connect to the Redis Enterprise Cluster UI?" %}}
 Create a port forwarding rule to expose the cluster UI port. For example, when the default port 8443 is used, run:
 
-```src
+```sh
 kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:8443
 ```
 
@@ -79,7 +79,7 @@ To retrieve, first, find the secret by retrieving secrets and locating one of ty
 
 For example, run:
 
-```src
+```sh
 kubectl get secrets
 ```
 
@@ -91,7 +91,7 @@ A possible response may look like this:
 
 To retrieve the secret run:
 
-```src
+```sh
 kubectl get secret redis-enterprise-cluster -o yaml
 ```
 
@@ -147,7 +147,7 @@ type: Opaque
 
 Next, decode, for example, the password field. Run:
 
-```src
+```sh
 echo "Q2h5N1BBY28=" | base64 –-decode
 ```
 

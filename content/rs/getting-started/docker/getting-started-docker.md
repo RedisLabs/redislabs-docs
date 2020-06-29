@@ -44,7 +44,7 @@ To pull and start the Redis Enterprise Software Docker container, run this
 
 Note: On Windows, make sure Docker is configured to run Linux-based containers.
 
-```src
+```sh
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
 ```
 
@@ -103,14 +103,14 @@ redis-cli is a simple command-line tool to interact with Redis database.
 Use "docker exec" to switch your context into the Redis Enterprise
 Software container
 
-```src
+```sh
 docker exec -it rp bash
 ```
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to the database port number, and store and retrieve a key in database1.
 
-```src
+```sh
 $ /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:16653> set key1 123
 OK
@@ -143,13 +143,13 @@ redis-py](https://github.com/andymccurdy/redis-py).
 
 1. Run the redis_test.py application to store and retrieve a key:
 
-    ```src
+    ```sh
     python.exe redis_test.py
     ```
 
 If the connection is successful, the output of the application looks like this:
 
-```src
+```sh
 set key1 123
 True
 get key1

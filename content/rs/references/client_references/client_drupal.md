@@ -18,7 +18,7 @@ Follow these steps to install Redis as a cache for Drupal:
 
 To configure Drupal to use Redis as a cache, append the following lines to your `settings.php` file with the specified changes:
 
-```src
+```sh
     $conf['redis_client_interface'] = 'Predis';
     $conf['redis_client_host'] = 'hostname';
     $conf['redis_client_port'] = port;

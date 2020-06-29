@@ -74,7 +74,7 @@ of the configuration and persistence files on each of the nodes.
 1. To recover the cluster configuration from the original cluster to the first node in the new cluster,
     from the [rladmin]({{< relref "/rs/references/rladmin.md" >}}) command-line interface (CLI):
 
-    ```src
+    ```sh
     cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
     ```
 
@@ -98,7 +98,7 @@ Otherwise, the node gets the same rack ID as the original node.
 
     For example:
 
-    ```src
+    ```sh
     rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1 rack_id 5
     ```
 
@@ -107,7 +107,7 @@ Otherwise, the node gets the same rack ID as the original node.
 
 1. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
 
-    ```src
+    ```sh
     cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
     ```
 
@@ -137,7 +137,7 @@ providing a different value and using the `override_rack_id` flag.
 
     For example:
 
-    ```src
+    ```sh
     rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecret replace_node 2
     ```
 

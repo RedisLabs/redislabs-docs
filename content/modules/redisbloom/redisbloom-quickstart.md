@@ -20,7 +20,7 @@ For this quick start tutorial, you need:
 Finally, I added a BF.DEBUG command, to see exactly how the filter is
 being utilized:
 
-```src
+```sh
  127.0.0.1:6379> BF.DEBUG test
  1) "size:987949"
  2) "bytes:239627 bits:1917011 hashes:14 capacity:100000 size:100000 ratio:0.0001"

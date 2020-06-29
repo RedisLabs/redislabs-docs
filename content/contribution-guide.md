@@ -86,7 +86,7 @@ and fill the body with information that is relevant to all articles in the secti
 If you do not have content that can serve as the landing page for the section,
 you can use the `children` shortcode to show all of the sub-topics for the section.
 
-```src
+```sh
 {{%/* children style="h2" description="true" */%}}
 ```
 
@@ -131,7 +131,7 @@ and the concepts must explain any background information that is needed to know 
         1. To make sure that there is network connectivity between the participating clusters,
             telnet on port 9443 from each participating cluster to each of the other participating clusters.
 
-            ```src
+            ```sh
             telnet <target FQDN> 9443
             ```
 
@@ -178,7 +178,7 @@ Here are some examples:
 - Lists
     - List procedures in numbered lists preceded with a blank line -
 
-        ```src
+        ```sh
         To add your name:
 
         1. Click here.
@@ -188,7 +188,7 @@ Here are some examples:
 
 - List items in bulleted lists preceded with a blank line -
 
-        ```src
+        ```sh
         The ingredients are:
 
         - Potatoes
@@ -197,7 +197,7 @@ Here are some examples:
 
 - To add more information about a step in a procedure, add a blank line and a tab before the sentence -
 
-        ```src
+        ```sh
         1. Click here.
 
             Here means where you need to click.
@@ -207,7 +207,7 @@ Here are some examples:
 
 - When you list types of items, put the name of the item in bold followed by a dash (-) and then describe the item:
 
-        ```src
+        ```sh
         Some API operations require input, such as:
 
         - **Parameters** - When an API operation requires URI parameters, such as "get subscription by subscription id,
@@ -224,7 +224,7 @@ Here are some examples:
 
 - Add images below text at the same tab level as the text -
 
-        ```src
+        ```sh
        The API response is shown in the **Responses** section of the API operation.
        The results include an example of how you to execute the same operation in a standard command-line utility using `cURL`.
 
@@ -233,7 +233,7 @@ Here are some examples:
 
 - Use info boxes to add additional information and note boxes to add information that can avoid problems.
 
-        ```src
+        ```sh
         {{% info %}}
         We use `cURL` and Linux shell scripts to provide examples on using the API.
         {{% /info %}}
@@ -245,7 +245,7 @@ Here are some examples:
 
 - When you add info, note or warning boxes below indented text, you must indent the open and close tags and not indent the content.
 
-        ```src
+        ```sh
         {{< note >}}
         The key values are not saved when you refresh the page.
         {{< /note >}}

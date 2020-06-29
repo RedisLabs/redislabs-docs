@@ -103,7 +103,7 @@ We recommend that you use a separate database for each test case with these requ
 The memtier_benchmark load generation tool populates the database.
 To populate the database with N items of 500 Bytes each in size, on the load generation instance run:
 
-```src
+```sh
 $ memtier_benchmark -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-maximum=$N -n allkeys -d 500 --key-pattern=P:P --ratio=1:0
 ```
@@ -123,7 +123,7 @@ Set up a test database with these values:
 
 To create about 20.5 million items in RAM for your highly available clustered database with 75 million items, run:
 
-```src
+```sh
 $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-minimum=27250000 --key-maximum=47750000 -n allkeys
 --key-pattern=P:P --ratio=0:1
@@ -135,7 +135,7 @@ You can see the **Values in RAM** metric on the **metrics** page of your databas
 
 To create 41 million items in RAM without replication enabled and 150 million items, run:
 
-```src
+```sh
 $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-minimum=54500000 --key-maximum=95500000 -n allkeys
 --key-pattern=P:P --ratio=0:1
@@ -151,7 +151,7 @@ We recommend that you do a dry run and double check the RAM Hit Ratio on the **m
 
 To test RoF with an 85% RAM Hit Ratio, run:
 
-```src
+```sh
 $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=11 -c 20 -t 1
 -d 500 --key-maximum=75000000 --key-pattern=G:G --key-stddev=5125000
 --ratio=1:1 --distinct-client-seed --randomize --test-time=600
@@ -162,7 +162,7 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=11 -c 20 -t 1
 
 Here is the command for 150 million items:
 
-```src
+```sh
 $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=24 -c 20 -t 1
 -d 500 --key-maximum=150000000 --key-pattern=G:G --key-stddev=10250000
 --ratio=1:1 --distinct-client-seed --randomize --test-time=600

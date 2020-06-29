@@ -28,13 +28,13 @@ Prerequisites:
 
 1. Paste the `login` command into your shell, for example:
 
-    ```src
+    ```sh
     oc login https://your-cluster.acme.com –token=your$login$token
     ```
 
 1. To verify that you are using the newly created project, run:
 
-    ```src
+    ```sh
     oc project <your project name>
     ```
 
@@ -44,7 +44,7 @@ This shifts to your project rather than the default project. You can confirm tha
 
 Clone Kubernetes docs repository to get the deployment files:
 
-```src
+```sh
 git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
 ```
 
@@ -66,19 +66,19 @@ Let’s look at each yaml file to see what requires editing:
 
     1. Apply the file:
 
-        ```src
+        ```sh
         oc apply -f scc.yaml
         ```
 
         You should receive the following response:
 
-        ```src
+        ```sh
         securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured
         ```
 
     1. To bind the scc to your project, run:
 
-        ```src
+        ```sh
         oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name
         ```
 
@@ -98,13 +98,13 @@ Changes to this file can cause unexpected results.
 
     1. Apply the yaml file with:
 
-        ```src
+        ```sh
         kubectl apply -f openshift.bundle.yaml
         ```
 
         The command returns a confirmation response such as:
 
-        ```src
+        ```sh
         role.rbac.authorization.k8s.io/redis-enterprise-operator created
         serviceaccount/redis-enterprise-operator created
         rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
@@ -114,13 +114,13 @@ Changes to this file can cause unexpected results.
 
     1. To verify that your redis-enterprise-operator deployment is running, run:
 
-        ```src
+        ```sh
         kubectl get deployment -l name=redis-enterprise-operator
         ```
 
         A typical response will look like this:
 
-        ```src
+        ```sh
         NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
         redis-enterprise-operator   1/1     1            1           0m36s
         ```
@@ -130,7 +130,7 @@ Changes to this file can cause unexpected results.
 
 The rbac (Role-Based Access Control) yaml defines who can access which resources. We need this to allow our Operator application to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). Therefore, we strongly recommend **not** changing anything in this yaml file. To apply it, type:
 
-```src
+```sh
 kubectl apply -f rbac.yaml
 ```
 
@@ -151,13 +151,13 @@ Changes to this file can cause unexpected results.
 
     - Apply the yaml file with:
 
-    ```src
+    ```sh
     kubectl apply -f sb_rbac.yaml
     ```
 
     The command returns a confirmation response such as:
 
-    ```src
+    ```sh
     clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
     clusterrolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured
     ```
@@ -169,7 +169,7 @@ The next step applies crd.yaml, creating a [CustomResourceDefinition](https://ku
 
 To apply it, run:
 
-```src
+```sh
 kubectl apply -f crd.yaml
 ```
 
@@ -186,7 +186,7 @@ image:redislabs/operator:tag
 
 To apply the operator.yaml, run:
 
-```src
+```sh
 kubectl apply -f operator.yaml
 ```
 
@@ -217,7 +217,7 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 
         For example:
 
-        ```src
+        ```sh
         limits
         cpu: “4000m”
         memory: 4Gi
@@ -238,14 +238,14 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 
         This specifies [persistence](https://redislabs.com/redis-features/persistence) for the Service Broker with an “enabled/disabled” flag. The default is “false.”
 
-        ```src
+        ```sh
         persistentSpec:
         storageClassName: “gp2“
         ```
 
     - redisEnterpriseImageSpec: This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator automatically uses the matching RHEL image version for the release.
 
-        ```src
+        ```sh
         [imagePullPolicy](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/builds_and_image_streams.html#image-pull-policy):
         IfNotPresent
         Repository: redislabs/redis
@@ -260,7 +260,7 @@ After you set up the your_cluster_name yaml:
 
 1. Apply it to create your Redis Enterprise Cluster:
 
-    ```src
+    ```sh
     kubectl apply -f your_cluster_name.yaml
     ```
 
@@ -268,7 +268,7 @@ After you set up the your_cluster_name yaml:
 
     The command returns a confirmation response such as:
 
-    ```src
+    ```sh
     NAME AGE
 
     Your_cluster_name 17s
@@ -278,7 +278,7 @@ Your Cluster will be ready shortly, typically within a few minutes.
 
 To check the cluster status, run:
 
-```src
+```sh
 kubectl get pod
 ```
 
@@ -300,7 +300,7 @@ To create your database:
 
 1. Apply port forwarding to your Cluster:
 
-    ```src
+    ```sh
     kubectl port-forward your_cluster_name-0 8443:8443
     ```
 

@@ -181,7 +181,7 @@ Then run the redis PING command.
 
 Using the URL-based connection method, the result looks like:
 
-```src
+```sh
 $ telnet redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 19836
 Trying 54.89.217.184…
 Connected to redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com.
@@ -198,7 +198,7 @@ The redis-cli utility is installed on each node in RS cluster with the rest of t
 Using the URL-based connection method, you can connect the database
 endpoint URL and port number. The result looks like:
 
-```src
+```sh
 $ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
@@ -215,7 +215,7 @@ In the IP-based connection method, you do only need the database name, not the p
 Here we simply use the discovery service that listens on port 8001 on all nodes of the cluster
 to discover the endpoint for the database named "db1".
 
-```src
+```sh
 from redis.sentinel import Sentinel
 
 # with IP based connections, a list of known node IP addresses is constructed
@@ -241,7 +241,7 @@ print r.get('foo')
 In the URL-based connection method, you need to specify the endpoint
 and the port number for your database.
 
-```src
+```sh
 import redis
 
 # the URL provided to redis. Redis method comes from the database configuration

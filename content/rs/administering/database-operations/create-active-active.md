@@ -40,7 +40,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 1. To make sure that there is network connectivity between the participating clusters,
     telnet on port 9443 from each participating cluster to each of the other participating clusters.
 
-    ```src
+    ```sh
     telnet <target FQDN> 9443
     ```
 
@@ -150,7 +150,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 
 1. To use redis-cli on port 12000 from the node 1 terminal, run:
 
-    ```src
+    ```sh
     redis-cli -p 12000
     ```
 
@@ -162,7 +162,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 
     The output of the command looks like this:
 
-    ```src
+    ```sh
     127.0.0.1:12000> set key1 123
     OK
     127.0.0.1:12000> get key1
@@ -174,7 +174,7 @@ redis-cli is a simple command-line tool to interact with redis database.
 
     The output of the commands looks like this:
 
-    ```src
+    ```sh
     $ redis-cli -p 12000
     127.0.0.1:12000> get key1
     "123"
@@ -192,7 +192,7 @@ running the container.
 
 1. In the command-line terminal, create a new file called "redis_test.py"
 
-    ```src
+    ```sh
     vi redis_test.py
     ```
 
@@ -218,13 +218,13 @@ running the container.
 
 1. To run the "redis_test.py" application, run:
 
-    ```src
+    ```sh
     python redis_test.py
     ```
 
     If the connection is successful, the output of the application looks like:
 
-    ```src
+    ```sh
     set key1 123 in cluster 1
     True
     get key1 cluster 1

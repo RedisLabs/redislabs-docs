@@ -87,7 +87,7 @@ To remove a node using the REST API, use the `/v1/nodes/3/actions/remove` endpoi
 
 For example:
 
-```src
+```sh
 curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
 ```
 
