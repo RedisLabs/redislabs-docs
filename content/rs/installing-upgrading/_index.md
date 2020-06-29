@@ -62,6 +62,9 @@ sudo lsblk
 1. Run: `sudo service systemd-resolved restart`
     {{% /expand %}}
 
+- Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})).
+    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 30000 65535'.
+
 ## Installing RS on Linux
 
 After you download the .tar file installation package, install the package on one of the nodes in the cluster.
