@@ -14,18 +14,17 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
 1. In the Redis Cloud menu, click **Databases**.
 1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Configure the database:
-    - **Name** - Enter a **Database Name** that is up to 40 characters long.
+    - **Name** - Enter a name for the database. (Up to 40 characters long)
     - **Protocol** - Select whether the database uses **Redis** or **Memcached**.
-    - **Memory** - Enter a **Memory Limit**. Please take in mind that replication is
-        on.
+    - **Memory** - Enter a memory limit for the database. If replication is on, the database limit includes the memory of the slave shards.
     - **Redis on Flash** - If your database uses [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
-        enter the average item size (in bytes). This helps us optimize your database.
+        enter the average data structure size (in bytes). This helps us optimize your database.
     - **Throughput** - In **Throughput by**, select the definition of throughput as:
         - Ops/sec - Enter the required **Max Throughput** between 1000 and 10000000.
         - Shards - Enter the number of **Shards** you require for the database.
     - **Replication** - By default, each shard has a slave shard.
-        If you do not require slave shards, for example in a caching database, disable replication.
-    - **Data Persistence** - Select when the data is saved to [persistent storage]({{< relref "rc/concepts/data-persistence.md" >}}) :
+        If you do not require slave shards, disable replication.
+    - **Data Persistence** - Select when and how the data is saved to [persistent storage]({{< relref "rc/concepts/data-persistence.md" >}}) :
         - None - Data is not persisted to disk at all.
         - Append Only File (AoF) one second - Data is fsynced to disk every second.
         - Snapshot every 1 hour - A snapshot of the database is created every hour.
@@ -56,12 +55,12 @@ between the VPC that this database is on and the VPC that the destination databa
     - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/administration/configuration/backups.md" >}}) location.
     - **Modules** - Enable modules and select the module to use with the database.
 
-        - For applications with high-throughput, use a Redis Cloud Pro subscription.
+        - For applications that require high-throughput, use a Redis Cloud Pro subscription.
         - For RedisGraph, use the [sizing calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
             to calculate the required resources.
         - For RediSearch on a Redis Cloud Pro subscription, enter the estimated number of documents you want to index.
 
-    - **Alert Settings** - Select the alerts that you want sent to you and your team when the specified threshold is passed.
+    - **Alert Settings** - Select the alerts that you want sent to you and your team when the specified threshold is exceeded.
 1. Click **Activate**.
 
 After you click **Activate**, Redis Cloud:
