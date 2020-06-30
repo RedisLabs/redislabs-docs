@@ -1,14 +1,13 @@
 ---
-Title: Metrics Definitions
+Title: RS Admin Console Metrics
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/monitoring-metrics/definitions/
 ---
-Redis Enterprise Software includes many useful metrics give you
-a detailed picture of what is going on in the cluster, node, database,
-and shard. For Redis on Flash (ROF) databases, additional metrics are
-available.
+Redis Enterprise Software (RS) includes metrics that show the performance of the cluster, node, database, and shard.
+For Redis on Flash (ROF) databases, additional metrics are available.
 
 ## Standard Metrics
 

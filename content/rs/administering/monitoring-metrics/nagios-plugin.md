@@ -1,7 +1,7 @@
 ---
 title: Nagios plugin for Redis Enterprise Software
 description:
-weight: $weight
+weight: 90
 alwaysopen: false
 categories: ["RS"]
 ---

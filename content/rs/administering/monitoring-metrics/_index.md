@@ -11,7 +11,7 @@ In the management console, you can either see the real-time metrics or configure
 
 You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example [using Prometheus and Grafana]({{< relref "/rs/administering/monitoring-metrics/prometheus-integration.md" >}}).
 
-Make sure you read the [definition of each metric]({{< relref "/rs/administering/monitoring-metrics/definitions.md" >}})
+Make sure you read the [definition of each metric]({{< relref "/rs/administering/monitoring-metrics/console-metrics-definitions.md" >}})
 so that you understand exactly what it represents.
 
 ## Real-time Metrics
