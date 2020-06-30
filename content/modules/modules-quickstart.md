@@ -17,9 +17,9 @@ The modules that are currently available are:
 - [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
 
 {{< note >}}
-Modules are currently available as a public preview in AWS region ap-south-1.
+Modules are currently available as a public preview in AWS region `ap-south-1`.
 They will be available in other providers and regions after the public preview period is finished.
-{{< note >}}
+{{< /note >}}
 
 The steps for getting up and running with a database that has a module enabled are:
 
