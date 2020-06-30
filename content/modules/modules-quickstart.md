@@ -16,6 +16,11 @@ The modules that are currently available are:
 - [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
 - [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
 
+{{< note >}}
+Modules are currently available as a public preview in AWS region ap-south-1.
+They will be available in other providers and regions after the public preview period is finished.
+{{< note >}}
+
 The steps for getting up and running with a database that has a module enabled are:
 
 1. Create a new subscription.
@@ -29,8 +34,9 @@ To create a new subscription:
 1. In the Redis Cloud menu, click **Subscriptions**.
 1. At the bottom of the page, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Select your subscription configuration:
-    1. Select a cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
-    1. Select the region that you want the subscription to use, for example: **us-central1**
+    1. For the cloud provider, select **Amazon AWS**.
+    <!-- , **Microsoft Azure**, **Google Cloud Platform** -->
+    1. For the region that you want the subscription to use, select **ap-south-1**.
     1. In the Redis Cloud service levels, select the Redis Cloud Essentials **30MB/1 Database** level.
     1. Enter a name for the subscription.
 1. Click **Create**.
