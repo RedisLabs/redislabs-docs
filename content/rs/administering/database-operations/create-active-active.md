@@ -228,7 +228,7 @@ running the container.
     set key1 123 in cluster 1
     True
     get key1 cluster 1
-    123
+    b'123'
     get key1 from cluster 2
-    123
+    b'123'
     ```
