@@ -10,42 +10,59 @@ function initLunr() {
         baseurl = baseurl+'/'
     };
 
-    // First retrieve the index file
+    var ic = getIndexCache();
+
+    if(ic) {
+        processIndex(ic);
+        return;
+    }
+
     $.getJSON(baseurl +"index.json")
         .done(function(index) {
-            pagesIndex = index;
-            // Set up lunrjs by declaring the fields we use
-            // Also provide their boost level for the ranking
-            lunrIndex = lunr(function () {
-                this.ref('uri');
-                this.field('title', {
-                    boost: 15
-                });
-                this.field('keywords', {
-                    boost: 12
-                });                
-                this.field('tags', {
-                    boost: 10
-                });
-                this.field('content', {
-                    boost: 5
-                });
-                this.field('categories');
-    
-                // Feed lunr with each file and let lunr actually index them
-                pagesIndex.forEach(function(page) {            
-                    if(!page.uriRel.startsWith('/embeds')) {
-                        this.add(page);
-                    }                
-                }, this);
-                
-                this.pipeline.remove(this.stemmer);
-            })
+            setIndexCache(index);
+            processIndex(index);
         })
         .fail(function(jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
             console.error("Error getting Hugo index file:", err);
         });
+}
+
+function setIndexCache(li) {
+    sessionStorage.setItem('_rld_lunr_index_', JSON.stringify(li));
+}
+
+function getIndexCache() {
+    var i = sessionStorage.getItem('_rld_lunr_index_');
+    return i? JSON.parse(i) : null;
+}
+
+function processIndex(index) {
+    pagesIndex = index;
+    lunrIndex = lunr(function () {
+        this.ref('uri');
+        this.field('title', {
+            boost: 15
+        });
+        this.field('keywords', {
+            boost: 12
+        });
+        this.field('tags', {
+            boost: 10
+        });
+        this.field('content', {
+            boost: 5
+        });
+        this.field('categories');
+
+        pagesIndex.forEach(function(page) {
+            if(!page.uriRel.startsWith('/embeds')) {
+                this.add(page);
+            }
+        }, this);
+        
+        this.pipeline.remove(this.stemmer);
+    });
 }
 
 function getCurrentProductCategory() {

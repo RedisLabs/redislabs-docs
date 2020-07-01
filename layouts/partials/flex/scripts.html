@@ -67,14 +67,20 @@ window.onclick = function(e) {
   }, 400);
 </script>
 
-<script src="{{"js/clipboard.min.js" | relURL}}"></script>
-<script src="{{"js/bootstrap.min.js" | relURL}}"></script>
+<script src="{{"theme-flex/modernizr-custom.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/classie.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/polyfills.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/jquery.nice-select.min.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/custom.js" | relURL}}" defer></script>
+
+<script src="{{"js/clipboard.min.js" | relURL}}" defer></script>
+<script src="{{"js/bootstrap.min.js" | relURL}}" defer></script>
 <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
-<script src="{{"js/featherlight.min.js" | relURL}}"></script>
+<script src="{{"js/featherlight.min.js" | relURL}}" defer></script>
 
 {{if eq .Site.Params.highlightClientSide true}}
-<script src="{{"js/highlight.pack.js" | relURL}}"></script>
+<script src="{{"js/highlight.pack.js" | relURL}}" defer></script>
 <script>hljs.initHighlightingOnLoad();</script>
 {{end}}
 
-<script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}"></script>
+<script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}" defer></script>

@@ -239,7 +239,7 @@ $(function() {
 });
 
 // Get Parameters from some url
-var getUrlParameter = function getUrlParameter(sPageURL) {
+function getUrlParameter(sPageURL) {
     var url = sPageURL.split('?');
     var obj = {};
     if (url.length == 2) {
