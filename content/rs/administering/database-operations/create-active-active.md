@@ -99,7 +99,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     - **Endpoint port number** (Required) - The port in the range 10000-19999 that clients must use to connect to the CRDB.
 
     - In the **Database clustering** option, you can either:
-<!-- Also in crdbs.md -->
+
         - Make sure the Database clustering is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
