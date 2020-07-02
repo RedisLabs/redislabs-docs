@@ -11,6 +11,6 @@ RedisInsight detects java serialized objects and converts them to a nicely forma
 
 It doesn't matter what you store. Whether it is a hibernate object, or a user session or a plain old java object, RedisInsight reverse-engineers and show it to you nicely.
 
-Just for fun, we tried out how such an object would look without the formatting. Total garbage.
+Just for fun, we tried out how such an object would look without the formatting.
 
 ![java-serialized-objects-noprettyprint](/images/ri/java-serialized-objects-noprettyprint.png)
