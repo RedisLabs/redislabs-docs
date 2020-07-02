@@ -11,7 +11,7 @@ To install Redis Enterprise Software (RS), you must first choose the [supported 
 In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS with:
 
 - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
-- [Docker container]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}}) (for development and testing only)
+- [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
 - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
 - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
 
