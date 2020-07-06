@@ -77,7 +77,7 @@ To upgrade a module that is installed on a cluster:
     ```
 
     - If you want to remove the existing module arguments, enter `""` without arguments.
-    - If you want to use the exisintg module arguments, enter `"keep_args"`
+    - If you want to use the existing module arguments, enter `"keep_args"`
     - If you want to update multiple modules, use the `and module` parameter for each module.
 
 ## Examples
