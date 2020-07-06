@@ -179,3 +179,9 @@ which shard/s the command refers.
 
 The source and destination can have different shard counts and functions
 for placement of keys.
+
+### Syncer in Active-Passive Replication (Replica Of)
+
+In Replica Of, the master node does not transfer the replication backlog to its slave.
+Whenever a synchronization is necessary, the slave has no backlog and can only do a full sync.
+But, in a controlled failover the demoted master still has the replication backlog, and when the syncer connects, it can do a partial sync.
