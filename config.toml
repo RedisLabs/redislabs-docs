@@ -77,3 +77,6 @@ url = "https://redislabs.com/blog/"
 weight = 50
 
 [taxonomies]
+
+[markup.goldmark.renderer]
+  unsafe = true
