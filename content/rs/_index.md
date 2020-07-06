@@ -62,10 +62,8 @@ Use Redis AOF (Append-Only File) every second or on
 every write. Run Redis RDB snapshots every 1, 6, or 12 hours
 to persistent storage.
 
-In addition, you can back up your dataset
-periodically or ad-hoc to an FTP server or AWS S3. Other cloud storage
-options, such as Azure Geo-Redundant Storage, SoftLayer Object Storage,
-and Google Cloud Storage, are planned to be added in a future release.
+Back up your database periodically or ad-hoc to an FTP server or AWS S3.
+Other cloud storage options, such as Azure Geo-Redundant Storage, SoftLayer Object Storage, and Google Cloud Storage, are planned to be added in a future release.
 
 {{< /tab >}}
 {{< tab tabNum="4" >}}
@@ -77,7 +75,7 @@ performance.
 {{< tab tabNum="5" >}}
 
 You can run multiple databases on a single Redis Enterprise Cluster.
-Each database runs with its own dedicated process in a non-blocking manner.
+Each database runs with its own dedicated processes in a non-blocking manner.
 
 {{< /tab >}}
 {{< tab tabNum="6" >}}
