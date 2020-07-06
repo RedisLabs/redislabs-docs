@@ -131,9 +131,3 @@ The scenarios in which an Active-Active database updates to other instances use 
 {{< note >}}
 Synchronization of data from the master shard to the slave shard is always a full synchronization.
 {{< /note >}}
-
-### Syncer in Active-Passive Replication (Replica Of)
-
-In Replica Of, the master node does not transfer the replication backlog to its slave.
-Whenever a synchronization is necessary, the slave has no backlog and can only do a full sync.
-But, in a controlled failover the demoted master still has the replication backlog, and when the syncer connects, it can do a partial sync.
