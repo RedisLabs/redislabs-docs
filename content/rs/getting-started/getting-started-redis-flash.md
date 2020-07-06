@@ -1,13 +1,15 @@
 ---
-Title: Redis on Flash Quick Start Tutorial
+Title: Getting Started with Redis on Flash (RoF)
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/getting-started/creating-database/redis-flash/
+         /rs/getting-started/creating-database/
 ---
 The steps to set up a Redis Enterprise Software cluster using [Redis on
 Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
-with a single node are simple and are as follows:
+with a single node are:
 
 - Step 1: Install Redis Enterprise Software or launch with Docker
     container

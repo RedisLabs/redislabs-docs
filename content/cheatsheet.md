@@ -6,6 +6,10 @@ draft: false
 ---
 Here you can find examples of style and formatting elements that you can use in your pages.
 
+{{< note >}}
+% is used when the inner content of the shortcode is markdown, and < is used when the inner content is HTML.
+{{< /note >}}
+
 ## Basic Content Formatting
 
 ### Tabbed paragraphs
