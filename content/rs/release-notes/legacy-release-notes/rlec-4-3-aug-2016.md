@@ -96,7 +96,7 @@ upgrade to this version.
 - RLEC-7737 - issue where in a specific scenario after node restarts,
     a database with replication both master and slave shards are
     reported as down
-- RLEC-7712 - in some cases, the Replica of process may fail when
+- RLEC-7712 - in some cases, the Replica Of process may fail when
     Redis password is set
 - RLEC-7726 - node object "avg_latency" statistic is not returned in
     the REST API
@@ -134,22 +134,22 @@ upgrade to this version.
     properly when the cluster that needs to be recovered does not have a
     node with ID 1.**Workaround**: If you encounter this issue please
     contact support at: <support@redislabs.com>
-- **Issue**: In the *Replica of* process, if the target database does
+- **Issue**: In the Replica Of process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on the target database might not be in sync with
-    the source database, although the status of the *Replica of* process
+    the source database, although the status of the Replica Of process
     indicates that it is.**Workaround**: You must manually stop and
     restart the synchronization process in order to ensure the databases
     are in sync.
-- **Issue**: In the *Replica of* process, if the source database is
-    resharded while the *Replica of* process is active, the
+- **Issue**: In the Replica Of process, if the source database is
+    resharded while the Replica Of process is active, the
     synchronization process will fail.**Workaround**: You must manually
     stop and restart the synchronization process after the resharding of
     the source database is done.
-- **Issue**: In the *Replica of* process, if there is very high
-    traffic on the database the *Replica of* process might be restarted
+- **Issue**: In the Replica Of process, if there is very high
+    traffic on the database the Replica Of process might be restarted
     frequently due to the "slave buffer" being exceeded. In this case
-    you will often see the status of the *Replica of* process display as
+    you will often see the status of the Replica Of process display as
     "Syncing".**Workaround**: You must manually increase the "slave
     buffer" size through rladmin. In order to find the appropriate
     buffer size please contact support at: <support@redislabs.com>
