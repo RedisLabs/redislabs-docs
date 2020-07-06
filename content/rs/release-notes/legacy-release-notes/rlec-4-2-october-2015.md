@@ -33,13 +33,13 @@ before running through the upgrade process.
     alert when node available disk space is lower than the needed disk
     space for AOF rewrite purposes, and when node performance is
     degraded due to reaching disk I/O limits.
-- Replica of support for multiple sources - the Replica of feature is
+- Replica Of support for multiple sources - the Replica Of feature is
     enhanced to support creating a database that is a replica of
     multiple source databases. For additional details, refer to the
     [Replica
     of]({{< relref "/rs/administering/active-passive.md" >}})
     section.
-- Cross cluster Replica of - the Replica of feature now supports
+- Cross cluster Replica Of - the Replica Of feature now supports
     defining a database that is a replica of databases that belong to a
     different RLEC cluster. For additional details, refer to the
     [Replica
@@ -120,10 +120,10 @@ before running through the upgrade process.
 - Fix erroneous entries in the Log page.
 - Sometimes a wrong value is reported in the UI for node used
     ephemeral storage space.
-- Sometime the wrong Replica of Lag value is reported in the UI.
+- Sometime the wrong Replica Of Lag value is reported in the UI.
 - RLEC-6875 - email server settings not working when using port 587.
 - RLEC-5498 - Improve rladmin response time when a node is down.
-- Validation of Replica of source definition did not fail in the UI
+- Validation of Replica Of source definition did not fail in the UI
     and would only fail in runtime if it was using the Cluster Name
     (FQDN) and the FQDN was not properly configured in the DNS.
 - Various improvements to error messages reported by rladmin.
@@ -166,14 +166,14 @@ before running through the upgrade process.
     yum install policycoreutils-python
     semanage fcontext -a -t var_log_t '/var/opt/redislabs/log(/.\*)?'
     restsorecon -R /var/opt/redislabs/log
-- **Issue**: In the Replica of process, if the target database does
+- **Issue**: In the Replica Of process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on target database might not be in sync with the
-    source database, although the status of the Replica of process
+    source database, although the status of the Replica Of process
     indicates it is.**Workaround**: You need to manually stop and
     restart the synchronization process in order to ensure the databases
     are in sync.
-- **Issue**: In the Replica of process, if the source database is
+- **Issue**: In the Replica Of process, if the source database is
     resharded while the replica of process is active, the
     synchronization process will fail.**Workaround**: You need to
     manually stop and restart the synchronization process after
