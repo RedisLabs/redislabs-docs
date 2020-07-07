@@ -10,19 +10,19 @@ Here are some frequently asked questions about Redis Enterprise on integration p
 ## RS on Kubernetes
 
 {{< expand-control >}}
-{{< expand "What is an Operator?" >}}
+{{% expand "What is an Operator?" %}}
 An Operator is a [Kubernetes custom controller]( https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Please refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes/kubernetes-with-operator.md" >}}).
 {{% /expand %}}
 
-{{< expand "Does Redis Enterprise Operator support multiple clusters per namespace?" >}}
+{{% expand "Does Redis Enterprise Operator support multiple clusters per namespace?" %}}
 The Redis Enterprise Operator may only deploy a single Redis Enterprise Cluster per namespace. Each Redis Enterprise Cluster can run multiple databases while maintaining high capacity and performance.
-{{< /expand >}}
+{{% /expand %}}
 
-{{< expand "Do I need to deploy a Redis Enterprise Operator per namespace?" >}}
+{{% expand "Do I need to deploy a Redis Enterprise Operator per namespace?" %}}
 Yes, one Operator per namespace, each managing a single Redis Enterprise Cluster.
 
 Each Redis Enterprise Cluster can run multiple databases while maintaining high capacity and performance.
-{{< /expand >}}
+{{% /expand %}}
 
 {{% expand "How can I see the CRDs (Custom Resource Definitions) created for my cluster?" %}}
 Run the following:
@@ -242,6 +242,6 @@ and allows that account to create pods with the PSP shown above.
     - The allowPrivilegeEscalation is set to 'false' by default.
 {{< /note >}}
 
-{{< /expand >}}
+{{% /expand %}}
 
 {{< /expand-control >}}
