@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-## What is Redis Enterprise Software?
+## What is Redis Enterprise?
 
 [Redis Enterprise](https://redislabs.com/redis-enterprise/) is a robust, in-memory database platform built by same people who develop open source Redis.
 It maintains the simplicity and high performance of Redis and adds many enterprise-grade capabilities, including:
@@ -16,9 +16,13 @@ It maintains the simplicity and high performance of Redis and adds many enterpri
 - Redis on Flash to support large datasets while minimizing infrastructure costs
 - 99.999% uptime
 
+### Software vs. Cloud
+
+Redis Enterprise is available as software and as a hosted [cloud service]({{< relref "/rc/_index.md" >}}).
+
 You can run Redis Enterprise Software (RS) in an on-premises data center or on your preferred cloud platform. RS also works with [various container orchestrations systems]({{< relref "/platforms/_index.md" >}}), such as Kubernetes. See our docs on [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}}), [Openshift]({{< relref "/platforms/openshift/_index.md" >}}), [PKS]({{< relref "/platforms/pks/_index.md" >}}), and [PCF]({{< relref "/platforms/pcf/_index.md" >}}) for more details.
 
-For development and testing purposes, you can also run RS using [Docker containers]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
+For development and testing, you can also run RS using [Docker containers]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
 
 If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benfits of RS on all major public clouds.
 
@@ -44,7 +48,7 @@ This lowers costs while maintaining similar performance to completely RAM-based 
 
 ## Additional Features
 
-{{< tabs tabTotal="7" tabID="1" tabName1="Linear Scalability" tabName2="High Availability" tabName3="Data Durability" tabName4="High Performance" tabName5="Dedicated Databases" tabName6="Management UI" tabName7="24/7 support">}}
+{{< tabs tabTotal="7" tabID="1" tabName1="Linear Scalability" tabName2="High Availability" tabName3="Data Durability" tabName4="High Performance" tabName5="Dedicated Databases" tabName6="User Interface" tabName7="24/7 Support">}}
 {{< tab tabNum="1" >}}
 
 With RS, a dataset can grow beyond the size of the largest node in the cluster and be processed by any number of cores.
@@ -55,7 +59,7 @@ You can dynamically scale your Redis databases increasing their memory limits or
 {{< /tab >}}
 {{< tab tabNum="2" >}}
 
-In addition to replicating a database within the same data center, you can also replicate a dataset across data-centers and across regions.
+In addition to replicating a database within the same data center, you can also replicate a dataset across data centers and across regions.
 This provides high availability, disaster recovery, and performance improvements for globally-distributed applications.
 
 If a node fails, the data is seamlessly served from a replacement node in the cluster without human intervention.
@@ -86,13 +90,13 @@ Each database runs with its own dedicated processes in a non-blocking manner.
 {{< /tab >}}
 {{< tab tabNum="6" >}}
 
-Redis Enterprise provides a full-featured UI for setting up, configuring, and monitoring the clusters and its databases.
+Redis Enterprise provides a full-featured UI for setting up, configuring, and monitoring the cluster and its databases.
 The UI also allows you configure alerts for events at the database and cluster levels.
 
 {{< /tab >}}
 {{< tab tabNum="7" >}}
 
-Redis Labs provides [24/7 support(https://redislabs.com/redis-enterprise-deployment/support/) to users of Redis Enterprise Software and Cloud.
+Redis Labs provides [24/7 support](https://redislabs.com/redis-enterprise-deployment/support/) to users of Redis Enterprise Software and Cloud.
 
 {{< /tab >}}
 {{< /tabs >}}
