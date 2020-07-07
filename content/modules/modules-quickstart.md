@@ -43,12 +43,14 @@ To create a new subscription:
     1. In the Redis Cloud menu, click **Subscriptions**.
     1. At the bottom of the page, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Select your subscription configuration:
-    1. For the cloud provider, select **Amazon AWS**.
+    1. For the cloud provider, make sure that **Amazon AWS** is selected.
     <!-- , **Microsoft Azure**, **Google Cloud Platform** -->
     1. For the region that you want the subscription to use, select **ap-south-1**.
     1. In the Redis Cloud service levels, select the Redis Cloud Essentials **30MB/1 Database** level.
     1. Enter a name for the subscription.
 1. Click **Create**.
+
+    ![new-free-cloud-subscription](/images/rc/new-free-cloud-subscription.png)
 
 The subscription shows a "Pending" status and takes a few minutes to provision.
 You receive an email when your subscription is ready to use.
@@ -61,6 +63,8 @@ After you create a subscription, you can create a database:
 1. Enable the modules and select the module you want to use.
 1. Click **Activate**.
 
+    ![new-cloud-database-modules](/images/rc/new-cloud-database-modules.png)
+
 The database is in "Pending" status.
 When the database is created, you can see the database settings, including:
 
@@ -69,7 +73,7 @@ When the database is created, you can see the database settings, including:
 
 ## Step 3: Connect to your database
 
-Now you can connect to the database with telnet, redis-cli, or an application.
+Now you can connect to the database with telnet, redis-cli, an application or [RedisInsight](https://redislabs.com/redisinsight/).
 
 To get started with the modules, go to the quick start guide for the module that you enabled:
 
