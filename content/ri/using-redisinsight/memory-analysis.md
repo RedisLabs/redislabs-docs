@@ -35,7 +35,7 @@ Once memory analysis completes, you can see various statistics about memory cons
 
 ## Memory Overview
 
-Memory overview gives you an overview of your redis instance through graphical representation. Memory breakup by datatype shows the overall size and count distribution of keys based on datatype. Expiry analysis gives a overview of how your keys are configured to expire. There could be a few keys which never expire.
+Memory overview gives you an overview of your redis instance through graphical representation. Memory breakup by data type shows the overall size and count distribution of keys based on each data type. Expiry analysis gives a overview of how your keys are configured to expire. There could be a few keys which never expire.
 
 ![memory_overview](/images/ri/memory_overview.png)
 

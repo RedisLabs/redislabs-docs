@@ -101,7 +101,7 @@ Even though the data types and methods look identical in standard Redis
 and CRDBs, there are specific rules that govern the handling of
 conflicting concurrent writes to each type.
 
-From a developer's perspective, most supported datatypes work the same
+From a developer's perspective, most supported data types work the same
 as standard Redis. However, a few methods also come with specific
 requirements in CRDBs.
 
