@@ -20,7 +20,7 @@ Run this command:
 ```
 
 {{< note >}}
-In a database in a Redis Cloud Essentials subscription, you need to tag the index key and the document key so that they are stored on the same shard:
+For databases in a Redis Cloud Essentials subscription, you need to tag the index key and the document key so that they are stored on the same shard:
 
 ```sh
 FT.CREATE {idx} ...
