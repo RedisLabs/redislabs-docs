@@ -58,11 +58,11 @@ In the example below, we write to a stream concurrently from two regions. Notice
 
 Notice also that the synchronized streams contain no duplicate IDs. As long as you allow the database to generate your stream IDs, you'll never have more than one stream entry with the same ID.
 
-{{% note %}}
+{{< note >}}
 Open source Redis uses one radix tree (referred to as `rax` in the code base) to implement each stream. However, Active-Active databases implement a single logical stream using one `rax` per region.
 Each region adds entries only to its associated `rax` (but can remove entries from all `rax` trees).
 This means that XREAD and XREADGROUP iterate simultaneously over all `rax` trees and return the appropriate entry by comparing the entry IDs from each `rax`.
-{{% /note %}}
+{{< /note >}}
 
 ### Conflict resolution
 
@@ -140,9 +140,9 @@ Because Active-Active databases replicate asynchronously, providing your own IDs
 
 In this scenario, two entries with the ID `100-1` are added at _t1_. After syncing, the stream `x` contains two entries with the same ID.
 
-{{% note %}}
+{{< note >}}
 Stream IDs in open source Redis consist of two integers separated by a dash ('-'). When the server generates the ID, the first integer is the current time in milliseconds, and the second integer is a sequence number. So, the format for stream IDs is MS-SEQ.
-{{% /note %}}
+{{< /note >}}
 
 To prevent duplicate IDs and to comply with the original Redis streams design, Active-Active databases provide three ID modes for XADD:
 
@@ -204,7 +204,7 @@ Active-Active databases fully support consumer groups with Redis Streams. Here i
 | _t4_   | `XINFO GROUPS x` <br/>**→ [g1, g2]** | `XINFO GROUPS x` <br/>**→ [g1, g2]** |
 
 
-{{% note %}}
+{{< note >}}
 Open source Redis uses one radix tree (`rax`) to hold the global pending entries list and another `rax` for each consumer's PEL.
 The global PEL is a unification of all consumer PELs, which are disjoint.
 
@@ -212,7 +212,7 @@ An Active-Active database stream maintains a global PEL and a per-consumer PEL f
 
 When given an ID different from the special ">" ID, XREADGROUP iterates simultaneously over all of the PELs for all consumers.
 It returns the next entry by comparing entry IDs from the different PELs.
-{{% /note %}}
+{{< /note >}}
 
 ### Conflict resolution
 

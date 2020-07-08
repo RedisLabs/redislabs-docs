@@ -89,12 +89,12 @@ $ cat graph.pb | redis-cli -x \
 OK
 ```
 
-{{% note %}}
+{{< note >}}
 For practical purposes, you are encouraged to use a programmatic Redis or RedisAI client in the language of your choice for interacting with RedisAI. Refer to the following pages for further information:
 
 * [Redis clients page](https://redis.io/clients)
 * [RedisAI clients page](https://oss.redislabs.com/redisai/clients)
-{{% /note %}}
+{{< /note >}}
 
 Like most commands, `AI.MODELSET`'s first argument is a key's name, which is 'mymodel' in the example. The next two arguments are the model's DL/ML backend and the device it will be executed on. 'graph.pb' in the example is a TensorFlow graph and is denoted by `TF` argument. The model will be executed on the CPU as instructed by the `CPU` argument.
 
