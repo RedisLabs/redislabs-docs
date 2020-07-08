@@ -1,7 +1,7 @@
 ---
 Title: FAQs
 description:
-weight: $weight
+weight: 80
 alwaysopen: false
 categories: ["RI"]
 ---

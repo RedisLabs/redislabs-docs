@@ -1,7 +1,7 @@
 ---
 Title: Release Notes
 description:
-weight: 90
+weight: 70
 alwaysopen: false
 categories: ["RI"]
 ---
