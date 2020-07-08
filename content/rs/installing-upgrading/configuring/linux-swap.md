@@ -23,7 +23,7 @@ must have sudo access or be root to run the following command:
 
 ```sh
 $ sudo swapoff -a
-$ sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
+$ sudo sed -i.bak '/ swap / s/^(.*)$/#\1/g' /etc/fstab
 ```
 
 The first command turns swap off immediately and the second command
