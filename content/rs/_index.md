@@ -73,8 +73,10 @@ Failover typically completes within a few seconds.
 {{< /tab >}}
 {{< tab tabNum="3" >}}
 
-Use Redis AOF (Append-Only File) every second or on every write.
-Run Redis RDB snapshots every 1, 6, or 12 hours to persistent storage.
+RS enables the use of Redis AOF (Append-Only File) every second or on
+every write, or (RDB) snapshots of your dataset every 1, 6, or 12 hours
+to persistent storage. In addition, you can back up your dataset
+periodically or on-demand to an FTP server, network storage or cloud storage service.
 
 {{< /tab >}}
 {{< tab tabNum="4" >}}
