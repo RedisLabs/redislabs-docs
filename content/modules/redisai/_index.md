@@ -11,9 +11,9 @@ RedisAI both simplifies the deployment and serving of graphs by leveraging on Re
 
 This introduction is intended to present the core concepts it uses and the functionality it provides.
 
-{{% note %}}
+{{< note >}}
 Before diving into RedisAI please make sure that you are familiar with the basic concepts of machine learning and Redis.
-{{% /note %}}
+{{< /note >}}
 
 In broad strokes, RedisAI looks like this:
 

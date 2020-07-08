@@ -29,9 +29,9 @@ of common topologies:
 
 ![0](/images/rs/0.png?width=780&height=380)
 
-{{% note %}}
+{{< note >}}
 Docker containers are currently only supported for development and testing environments.
-{{% /note %}}
+{{< /note >}}
 
 To get started with a single Redis Enterprise Software container:
 
@@ -90,11 +90,11 @@ enter `12000` for the port number.
 1. Click **Activate** to create your database
 
 <!-- Also in crdbs.md -->
-{{% note %}}
+{{< note >}}
 If you cannot activate the database because of a memory limitation,
 make sure that Docker has enough memory allocated in the Advanced section
 of Docker Settings.
-{{% /note %}}
+{{< /note >}}
 
 The database configuration is shown.
 When you see a green check mark, the database is activated and ready for you to use.
