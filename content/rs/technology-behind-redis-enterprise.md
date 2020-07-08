@@ -6,13 +6,13 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-Redis Enterprise was built to simplify operations while providing seamless scalability, top performance, and high availability.
+Redis Enterprise is designed to simplify operations while providing seamless scalability, top performance, and high availability.
 
 Here are some of the features and design decisions that make this possible.
 
-## Data access and cluster management
+## Data Access and Cluster Management
 
-A Redis Enterprise Cluster separates data access from cluster
+A Redis Enterprise cluster separates data access from cluster
 management. This decoupled architecture results in increased reliability,
 top performance, and simplified operations.
 
@@ -26,18 +26,18 @@ In addition, the proxies understand Memcached's text and binary protocols. Appli
 
 ### Cluster management
 
-This cluster manager consists of a number of software components that monitor
+The cluster manager consists of a number of software components that monitor
 and configure the many Redis instances that make up a cluster.
 
 The cluster manager handles resharding, rebalancing, auto-failover,
 rack-awareness, database provisioning, resource management, data
 persistence configuration, backup, and recovery.
 
-## High performance and availability
+## High Performance and Availability
 
 Redis Enterprise uses several techniques to optimize performance and availability.
 
-- The cluster is a shared-nothing architecture, which increases reliability and availability, and makes it easy to add and remove nodes.
+- The cluster uses a shared-nothing architecture, which increases reliability and availability and makes it easy to add and remove nodes.
 - The proxy implements just-in-time pipelining, connection pooling, and multiplexing.
 - Redis instances have improved AOF data persistence and optimized rewrite
     algorithms.
@@ -49,7 +49,7 @@ Redis Enterprise uses several techniques to optimize performance and availabilit
 
 You can read more about these features in our [architecture guide]({{< relref "/rs/concepts/_index.md" >}}).
 
-## Operational simplicity
+## Operational Simplicity
 
 Redis Enteprise simplifies and automates many tasks including provisioning new databases, updating database configuration,
 resharding existing databases, and rebalancing shards across cluster
@@ -64,10 +64,10 @@ or decreases.
 
 ### Monitoring and alerting
 
-Monitoring and alerting are built-in and configurable. You can use the included dashboards to monitor your cluster, and you can easily [integrate with Nagios, Prometheus, and Grafana]({{< relref "/rs/administering/monitoring-metrics/_index.md" >}}).
+Monitoring and alerting are built-in and configurable. You can use the included dashboards to monitor your cluster, and you can also [integrate with Nagios, Prometheus, and Grafana]({{< relref "/rs/administering/monitoring-metrics/_index.md" >}}).
 
 
-### UI, APIs, and CLIs
+### Admin Console, APIs, and CLIs
 
-You can administer a Redis Enterprise Software Cluster using the web-based UI,
-the cluster REST API, and various CLI-based tools. Once the cluster is up and running, you don't need any special experience or knowledge to create, manage, and monitor your databases and cluster nodes.
+You can administer a Redis Enterprise Software cluster using the web-based admin console,
+the cluster REST API, and various CLI-based tools.
