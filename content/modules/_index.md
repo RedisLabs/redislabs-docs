@@ -8,7 +8,8 @@ aliases: /rs/developing/modules/
 ---
 Redis Labs develops and packages modules for redis.
 The modules listed here are supported with [Redis Enterprise Software (RS)]({{< relref "/rs" >}}) clusters and [Redis Cloud Pro (RC Pro)]({{< relref "/rc" >}}).
-Non-preview modules are bundled with RS and RC Pro.
+
+Each module has its own quick start guide to help you get up and running quickly.
 
 {{< embed-html "modules.html" >}}
 

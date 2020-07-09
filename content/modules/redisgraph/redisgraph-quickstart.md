@@ -9,8 +9,10 @@ aliases: /rs/getting-started/creating-database/redisgraph-quick-start/
 For this quick start tutorial, you need:
 
 - Either:
+    - A Redis Cloud database [with the RedisGraph module]({{< relref "/rc/administration/setup/create-database.md" >}})
+
+        You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
     - A Redis Enterprise Software database [with the RedisGraph module]({{< relref "/modules/add-module-to-database.md" >}})
-    - A Redis Cloud Pro database [with the RedisGraph module](https://redislabs.com/redis-enterprise-cloud/)
 - redis-cli with connectivity to a redis database
 
 {{< embed-md "tryout-redisgraph.md" >}}

@@ -1,11 +1,12 @@
 ---
-Title: Quick Setup of Redis Cloud Pro
+Title: Redis Cloud Quick Start
 description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/quick-setup/
-        /rc/quick-setup-redis-cloud/
+         /rc/quick-setup-redis-cloud/
+         /rc/quick-setup/
 ---
 When you create a Redis Cloud subscription, you must choose:
 

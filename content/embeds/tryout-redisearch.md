@@ -19,6 +19,15 @@ Run this command:
 127.0.0.1:12543> FT.CREATE myIdx SCHEMA title TEXT WEIGHT 5.0 body TEXT url TEXT value NUMERIC
 ```
 
+{{< note >}}
+For databases in a Redis Cloud Essentials subscription, you need to tag the index key and the document key so that they are stored on the same shard:
+
+```sh
+FT.CREATE {idx} ...
+FT.ADD {idx} {idx}:docid ...
+```
+{{< /note >}}
+
 ### Add info to test index
 
 Now add some data to this index. Here we add an object with the key

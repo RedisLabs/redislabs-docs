@@ -1,4 +1,4 @@
-### Trying It Out
+## Trying It Out
 
 You can play with it a bit using redis-cli:
 
