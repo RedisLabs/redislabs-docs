@@ -29,10 +29,13 @@ other = "Attachments"
 other = "Oh no; it's a 404!"
 
 [message-404]
-other = "You can use the Search or look in the menu to find what you were looking for. You can also help us by [reporting how you got here](https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=bmansheim&labels=bug&template=got-a-404-.md&title=Got+a+404)."
+other = "You can use the Search or look in the menu to find what you were looking for."
+
+[new-issue-404]
+other = "You can also help us by "
 
 [Go-to-homepage]
-other = "Go to the Redis Labs Documentation Center"
+other = "Back to the docs homepage"
 
 [Edit-this-page]
 other = "Edit on GitHub"
