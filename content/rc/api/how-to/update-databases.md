@@ -31,8 +31,8 @@ The following update database JSON request specifies two source databases for th
 ```json
 {
   "replicaOf": [
-    "redis://redis-19385.c9854.us-east-1-mz.ec2.cloud.rlrcp.com:19385"
-    , "redis://redis-19072.internal.c9854.us-east-1-mz.ec2.cloud.rlrcp.com:19072"
+    "redis://redis-12345.c9876.us-east-1-mz.ec2.cloud.rlrcp.com:12345"
+    , "redis://redis-54321.internal.c9876.us-east-1-mz.ec2.cloud.rlrcp.com:54321"
   ]
 }
 ```
@@ -56,8 +56,8 @@ You can remove a source database from the `replicaOf` list by simply issuing an 
 ```json
 {
   "replicaOf": [
-    "redis://redis-19385.c9854.us-east-1-mz.ec2.cloud.rlrcp.com:19385"
-    , "redis://redis-19072.internal.c9854.us-east-1-mz.ec2.cloud.rlrcp.com:19072"
+    "redis://redis-12345.c9876.us-east-1-mz.ec2.cloud.rlrcp.com:12345"
+    , "redis://redis-54321.internal.c9876.us-east-1-mz.ec2.cloud.rlrcp.com:54321"
   ]
 }
 ```
@@ -67,7 +67,7 @@ You can remove a source database from the `replicaOf` list by simply issuing an 
 ```json
 {
   "replicaOf": [
-    "redis://redis-19385.c9854.us-east-1-mz.ec2.cloud.rlrcp.com:19385"
+    "redis://redis-12345.c9876.us-east-1-mz.ec2.cloud.rlrcp.com:12345"
   ]
 }
 ```
