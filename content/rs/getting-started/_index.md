@@ -129,7 +129,7 @@ If the connection is successful, the output of the application looks like this:
 set key1 123
 True
 get key1
-"123"
+123
 ```
 
 ## Next steps
