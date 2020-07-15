@@ -162,7 +162,7 @@ successful.
 set key1 123
 True
 get key1
-"123"
+123
 ```
 
 Now that you have a database, if you'd like to generate load against the
