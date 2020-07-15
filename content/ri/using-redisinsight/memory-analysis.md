@@ -7,9 +7,17 @@ path: features/memory-analysis/
 ---
 RedisInsight Memory analysis help you analyze your redis instance and helps in reducing memory usage and improving application performance. Analysis can be done in two ways:
 
-1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzed it to create a temp file with all the keys and meta data required for analysis. In case, there is a master-slave connection, RedisInsight downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
+1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzes it to create a temp file with all the keys and meta data required for analysis. In case there is a master-slave connection, RedisInsight downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
 
-1. **offline mode** - In this mode, RedisInsight analyzes your redis backup files. These files can either be present i your system or on s1. RedisInsight accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RedisInsight should have ReadOnly permission to your s3 bucket where the files are stored.
+1. **offline mode** - In this mode, RedisInsight analyzes your redis backup files. These files can either be present in your system or on s3. RedisInsight accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RedisInsight should have ReadOnly permission to your s3 bucket where the files are stored.
+
+    The s3 path needs to use the path syntax and not the virtual hosted syntax:
+
+    ```sh
+    https://s3.<region>.amazonaws.com/<bucket name>/<object key name>
+    ```
+
+    For example: https://s3.us-east-1.amazonaws.com/my-bucket/mydb.rdb.tgz
 
 ## Running Memory Analysis on an Instance
 
@@ -27,7 +35,7 @@ Once memory analysis completes, you can see various statistics about memory cons
 
 ## Memory Overview
 
-Memory overview gives you an overview of your redis instance through graphical representation. Memory breakup by datatype show the overall size and count distribution of keys based on datatype. Expiry analysis gives a overview of how your keys configured to get expired. There could be few keys which never expire.
+Memory overview gives you an overview of your redis instance through graphical representation. Memory breakup by data type shows the overall size and count distribution of keys based on each data type. Expiry analysis gives a overview of how your keys are configured to expire. There could be a few keys which never expire.
 
 ![memory_overview](/images/ri/memory_overview.png)
 
@@ -39,7 +47,7 @@ Keyspace Summary identifies the top key patterns from the set of keys in decendi
 
 ## Recommendations
 
-RedisInsight provide recommendations on how you can save your memory. The recommendation are specially curated according to your Redis instance. These recommendations have been formed based on industry standards and our own experiences.
+RedisInsight provide recommendations on how you can save your memory. The recommendations are specially curated according to your Redis instance. These recommendations have been formed based on industry standards and our own experiences.
 
 ![memory_recommendations](/images/ri/memory_recommendations.png)
 

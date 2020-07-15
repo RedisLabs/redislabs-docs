@@ -10,45 +10,42 @@ These are the steps required to set up a Redis Enterprise Cluster with Kubernete
 
 Prerequisites:
 
-- A [PKS environment installed](https://docs.pivotal.io/runtimes/pks/1-4/installing.html)
-  on Pivotal Platform (formerly Pivotal Cloud Foundry - PCF) 2.4.6 or above, and PKS version 1.3.3 or above.
-- A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create)
-  with at least three nodes that each meet the [minimum system requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-  according to your development or production environment. <!-- Reference a future article that will cover Kubernetes cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
-- The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher
-- The [PKS cli installed](https://docs.pivotal.io/runtimes/pks/1-4/installing-pks-cli.html)
+- A [PKS environment installed](https://docs.pivotal.io/runtimes/pks/1-4/installing.html) on PCF version 2.4.6 or above and PKS version 1.3.3 or above.
+- A [PKS cluster](https://docs.pivotal.io/runtimes/pks/1-4/create-cluster.html#create) with at least three nodes, each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) in the case of a development environment. For production use-cases and large-scale POCs, use hardware recommendations for production environments. <!--- Reference a future article that will cover k8s cluster node requirements that include provisions for Services Rigger, Operator and cluster nodes -->
+- The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher.
+- The [PKS cli installed](https://docs.pivotal.io/runtimes/pks/1-4/installing-pks-cli.html).
 
-## Step 1: Login and prepare your PKS environment and PKS cluster
+## Step 1: Login and Prepare your PKS environment and PKS Cluster
 
-1. Login to PKS and into your PKS cluster:
+1. Log in to PKS and your PKS cluster:
 
-    ```src
+    ```sh
     pks login -a PKS-API -u USERNAME -k
     ```
 
 1. Find the cluster you created by listing the available clusters:
 
-    ```src
+    ```sh
     pks clusters
     ```
 
     Example of a response:
 
-    ```src
-    Name      Plan Name  UUID                                  Status     Action   
-    cluster1  dev        d8g7s9g9-789a-789a-879a-ad8f798s7dfs  succeeded  CREATE   
-    cluster2  prod       s7f9sadf-sfd9-as8d-45af-a9s8d7f3niuy  succeeded  CREATE   
+    ```sh
+    Name      Plan Name  UUID                                  Status     Action
+    cluster1  dev        d8g7s9g9-789a-789a-879a-ad8f798s7dfs  succeeded  CREATE
+    cluster2  prod       s7f9sadf-sfd9-as8d-45af-a9s8d7f3niuy  succeeded  CREATE
     ```
 
 1. Change the context to your target cluster:
 
-    ```src
+    ```sh
     pks get-credentials CLUSTER-NAME
     ```
 
     Example of a response:
 
-    ```src
+    ```sh
     Fetching credentials for cluster pks-re-cluster
     Context set for cluster pks-re-cluster.
 
@@ -58,36 +55,33 @@ Prerequisites:
 
 1. Confirm you can access your cluster using the Kubernetes CLI:
 
-    ```src
+    ```sh
     kubectl cluster-info
     ```
 
     Example of a response:
 
-    ```src
+    ```sh
     Kubernetes master is running at http...
     ```
 
-    Next, create a namespace where you want to deploy the Redis Enterprise Cluster.
-    If you are sharing the cluster with others,
-    we recommend that you use a separate namespace instead of the Kubernetes default namespace.
-
-    {{% note %}}
+    {{< note >}}
+While you can use the Kubernetes default namespace, it is a best practice to use a separate namespace if you are sharing the cluster with others.
 The Operator deployment deploys and runs one Redis Enterprise Cluster in one Kubernetes namespace.
 In order to run multiple Redis Enterprise Clusters, deploy each one in its own namespace.
-    {{% /note %}}
+    {{< /note >}}
 
 1. Create a namespace for your deployment:
 
     1. Review the current namespaces:
 
-        ```src
+        ```sh
         kubectl get namespaces
         ```
 
         Example of a response:
 
-        ```src
+        ```sh
         NAME          STATUS   AGE
         default       Active   14d
         kube-public   Active   14d
@@ -95,52 +89,51 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
         pks-system    Active   14d
         ```
 
-    1. Create a new namespace using a unique name:
+    1. Create a new namespace with a unique name:
 
-        ```src
+        ```sh
         kubectl create namespace redis-enterprise
         ```
 
         Example of a response:
 
-        ```src
+        ```sh
         namespace/redis-enterprise created
         ```
 
     1. Switch context to operate within the newly created namespace:
 
-        ```src
+        ```sh
         kubectl config set-context --current --namespace=redis-enterprise
         ```
 
         Example of a response:
 
-        ```src
+        ```sh
         Context "pks-re-cluster" modified.
         ```
 
-        <!--
-        ```
-        kubectl current-context
-        ```
-        Example of a response:
+<!---```
+ $ kubectl current-context
+ ```
+ Example of a response:
+ ```
 
-        ```
-        Context "pks-re-cluster" modified.
-        ```
-        -->
+ Context "pks-re-cluster" modified.
+ ```
+-->
 
-## Step 2: Get and prepare deployment files
+## Step 2: Get and Prepare Deployment Files
 
-1. Clone the repository that contains the deployment files:
+1. Clone this repository, which contains the deployment files:
 
-    ```src
+    ```sh
     git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
     ```
 
     Example of a response:
 
-    ```src
+    ```sh
     Cloning into 'redis-enterprise-k8s-docs'...
     remote: Enumerating objects: 37, done.
     remote: Counting objects: 100% (37/37), done.
@@ -150,208 +143,179 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
     Resolving deltas: 100% (94/94), done.
     ```
 
-    Let’s look at each yaml file to understand what it does and edit it for your specific deployment, if necessary:
+1. Edit the yaml files for your specific deployment, if necessary:
 
-    - [rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac.yaml) -
-        The rbac (Role-Based Access Control) yaml defines who can access which resources.
-        The Operator application requires these definitions to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace).
-        This yaml should be applied as-is, without changes. To apply it:
+    - [bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml) - The bundle file includes several declarations:
+        - `rbac` (Role-Based Access Control) defines who can access specified resources. The Operator application requires these definitions to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). These include declaration of rules, role and rolebinding.
+        - `crd` creates a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next.
+        - `operator` creates the operator deployment that is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise Cluster. Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes, as pods. The yaml contains the latest image tag representing the latest Operator version available.
 
-        ```src
-        kubectl apply -f rbac.yaml
+        This yaml file is commonly not necessary to edit.
+
+        1. To apply this yaml file, run:
+
+            ```sh
+            kubectl apply -f bundle.yaml
+            ```
+
+            After the yaml is applied you receive the response:
+
+            ```sh
+            role.rbac.authorization.k8s.io/redis-enterprise-operator created
+            serviceaccount/redis-enterprise-operator created
+            rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
+            customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com configured
+            deployment.apps/redis-enterprise-operator created
+            ```
+
+        1. Verify that your redis-enterprise-operator deployment is running:
+
+            ```sh
+            kubectl get deployment -l name=redis-enterprise-operator
+            ```
+
+            A typical response looks like:
+
+            ```sh
+            NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+            redis-enterprise-operator   1/1     1            1           0m36s
+            ```
+
+        1. Create a storage class. The Redis Enterprise Cluster deployment dynamically provisions Persistent Volume Claims (PVCs) for use with cluster persistent storage needs. In order to create dynamic PVCs, the Kubernetes cluster must have a storage class defined. Determine whether a storage class is defined on your PKS cluster:
+
+            ```sh
+            kubectl get storageclasses
+            ```
+
+            Since PKS does not automatically provision storage classes, and if you, or the cluster administrator, did not provision storage classes then the response will be:
+
+            ```sh
+            No resources found.
+            ```
+
+            To create a storage class, determine the type of IaS your PKS cluster is running on and consult the table in the [Kubernetes Storage Classes article](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) to determine which provisioner to use.
+
+            Two examples of yaml files you can use for popular IaS providers are:
+
+            - AWS - *gp2.yaml*
+
+            ```sh
+            apiVersion: storage.k8s.io/v1
+            kind: StorageClass
+            metadata:
+            name: gp2
+            mountOptions:
+            - debug
+            parameters:
+            type: gp2
+            provisioner: kubernetes.io/aws-ebs
+            reclaimPolicy: Retain
+            ```
+
+            - GCP - *standard.yaml*
+
+            ```sh
+            apiVersion: storage.k8s.io/v1
+            kind: StorageClass
+            metadata:
+            name: standard
+            mountOptions:
+            - debug
+            parameters:
+            type: pd-standard
+            provisioner: kubernetes.io/gce-pd
+            reclaimPolicy: Retain
+            ```
+
+        1. Create the appropriate yaml file for your IaS and apply it:
+
+            ```sh
+            kubectl apply -f <your-storage-class.yaml>
+            ```
+
+            [More information about persistent storage in Operator deployment.](https://docs.redislabs.com/latest/platforms/kubernetes/kubernetes-persistent-volumes/)
+
+        {{< note >}}
+You can omit the reclaimPolicy declaration in the yaml file, in case of error, for testing and development environments.
+For production environments you must retain the Persistent Volume Claims (PVCs) when cluster persistent is used, in order to enable recovery.
+        {{< /note >}}
+
+        You will use the storage class name you have just created in the next step, editing the Redis Enterprise Cluster (REC) yaml.
+
+    - [app_v1_redisenterprisecluster_cr.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/5.4.10-8/crds/app_v1_redisenterprisecluster_cr.yaml) - Defines the configuration of the newly created resource: Redis Enterprise Cluster.
+        This yaml could be renamed your_pks_cluster.yaml to keep things tidy, but this isn’t a mandatory step. This yaml **must** be edited, however, to reflect the specific configurations of your cluster. Here are the only fields you **must** review before you apply the REC yaml:
+
+        - `name` - “your_cluster_name” (e.g. “re-cluster”). You can keep the default name or choose your own
+        in the `spec:` section.
+        - `nodes` - The number of nodes in the cluster, 3 by default (In order to evaluate cluster functionality, must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
+
+        <!-- - uiServiceType: service_type 
+        Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.need to spin off to its own article, no need to provide too many options; rather, remove barriers to adoption--->
+
+        - `username` - <your_email_address> - use an accessible email if evaluating alerting or use the default or any other properly formatted address. If not specified the default username is demo@redislabs.com
+
+        <!--- - persistentSpec: enabled: \<false/true\>
+        Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
+        we now default to using persistence-->
+
+        - `storageClassName` - Your storage class name from the previous step.
+        - `redisEnterpriseNodeResources` - The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constrained, the minimum workable limits for basic testing are 2 CPU and 3GB. For development and production, see the [minimum hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+            - limits – specifies the max resources for a Redis node
+            - requests – specifies the minimum resources for a Redis node
+        - `enforceIPv4: true` - Add this line under `spec:` at the same indentation (2 spaces) as 'nodes'. This indicates to the REC deployment to not attempt to bind to IPv6, which is currently not supported on PKS clusters.
+        - `redisEnterpriseImageSpec` - This configuration controls the Redis Enterprise version used, and where it is fetched from. The GitHub repository yaml contains the latest image tag from [DockerHub](https://hub.docker.com/r/redislabs/redis/). If omitted, the Operator will default to the compatible image version and pull it from DockerHub. This configuration should stay as-is in most circumstances, unless the image used is pulled from a private repository.
+
+        Here is an example of the edited REC yaml file:
+
+        ```sh
+        apiVersion: "app.redislabs.com/v1"
+        kind: "RedisEnterpriseCluster"
+         metadata:
+           name: "rec-pks"
+         spec:
+           enforceIPv4: true
+           nodes: 3
+           persistentSpec:
+             enabled: true
+             storageClassName: "standard" # ! edit according to infrastructure
+           uiServiceType: LoadBalancer
+           username: "demo@redislabs.com"
+           redisEnterpriseNodeResources:
+             limits:
+               cpu: "2000m"
+               memory: 3Gi
+             requests:
+               cpu: "2000m"
+               memory: 3Gi
+           redisEnterpriseImageSpec:
+             imagePullPolicy:  IfNotPresent
+             repository:       redislabs/redis
+             versionTag:       5.4.10-22
         ```
 
-        You should receive the following response:
-
-        ```src
-        role.rbac.authorization.k8s.io/redis-enterprise-operator created
-        serviceaccount/redis-enterprise-operator created
-        rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
-        ```
-
-    - [crd.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml) -
-    The crd.yaml creates a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions)
-    for your Redis Enterprise Cluster resource.
-    This provides another API resource to be handled by the Kubernetes API server and managed by the operator.
-    This yaml does not require any changes.
-
-        To apply it:
-
-        ```src
-        kubectl apply -f crd.yaml
-        ```
-
-        You should receive the following response:
-
-        ```src
-        customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com configured
-        ```
-
-    - [operator.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/operator.yaml) -
-        The operator yaml file creates the operator deployment that is responsible for managing the Kubernetes deployment and lifecycle of a Redis Enterprise Cluster.
-        Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes, as pods.
-        The yaml in the GitHub repository that you cloned contains the latest image tag representing the latest Operator version available.
-        This yaml does not require any changes under most circumstances.
-
-        To apply it:
-
-        ```src
-        kubectl apply -f operator.yaml
-        ```
-
-        You should receive the following response:
-
-        ```src
-        deployment.apps/redis-enterprise-operator created
-        ```
-
-1. Now, verify that your redis-enterprise-operator deployment is running:
-
-    ```src
-    kubectl get deployment -l name=redis-enterprise-operator
-    ```
-
-    A typical response looks like this:
-
-    ```src
-    NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
-    redis-enterprise-operator   1/1     1            1           0m36s
-    ```
-
-1. Next, we'll create a storage class. The Redis Enterprise Cluster deployment dynamically provisions Persistent Volume Claims (PVCs) for use with cluster persistent storage needs.
-   In order to create dynamic PVCs, the Kubernetes cluster must have a storage class defined.
-   Determine whether a storage class is defined on your PKS cluster:
-
-    ```src
-    kubectl get storageclasses
-    ```
-
-    Since PKS does not automatically provision storage classes, and if you or the cluster administrator did not provision storage classes then the response is:
-
-    ```src
-    No resources found.
-    ```
-
-    In order to create a storage class, determine the type of IaS your PKS cluster is running on, and consult the table in the [Kubernetes Storage Classes article](https://kubernetes.io/docs/concepts/storage/storage-classes/#provisioner) to determine which provisioner to use. Below, please find two examples of yaml files you can use for popular IaS providers:
-
-    - AWS - *gp2.yaml*
-
-      ```src
-      apiVersion: storage.k8s.io/v1
-      kind: StorageClass
-      metadata:
-        name: gp2
-      mountOptions:
-        - debug
-      parameters:
-        type: gp2
-      provisioner: kubernetes.io/aws-ebs
-      reclaimPolicy: Retain
-      ```
-
-    - GCP - *standard.yaml*
-
-      ```src
-      apiVersion: storage.k8s.io/v1
-      kind: StorageClass
-      metadata:
-        name: standard
-      mountOptions:
-        - debug
-      parameters:
-        type: pd-standard
-      provisioner: kubernetes.io/gce-pd
-      reclaimPolicy: Retain
-      ```
-
-1. Create the appropriate yaml file to you IaS and apply it:
-
-    ```src
-    kubectl apply -f <your-storage-class.yaml>
-    ```
-
-    [More information about persistent storage in Operator deployment.](https://docs.redislabs.com/latest/platforms/kubernetes/kubernetes-persistent-volumes/)
-
-    {{% note %}}
-You can ommit the reclaimPolicy declaration in the yaml file, in case of error, for testing and development environments.
-For production environments, make sure that Persistent Volume Claims (PVCs) are retained when cluster persistent is used in order to enable recovery.
-    {{% /note %}}
-
-    You use the storage class name you have just created in editing the Redis Enterprise Cluster (REC) yaml.
-
-    [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml) - Defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_pks_cluster.yaml to keep things tidy, but this isn’t a mandatory step. This yaml **must** be edited, however, to reflect the specific configurations of your Cluster.
-
-    Here are the only fields you **must** review before you apply the REC yaml:
-
-    - `name`: “your_cluster_name” (e.g. “re-cluster”). You can keep the default name or choose your own.
-    - `nodes`: The number of nodes in the cluster, 3 by default (In order to evaluate cluster functionality, must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
-
-    - uiServiceType: service_type
-    Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [Kubernetes service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.
-
-    - `username`: \<your_email@your_domain.your_suffix\> - use an accessible email if evaluating alerting or use the default or any other properly formatted address.
-
-    - persistentSpec: enabled: \<false/true\>
-    Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
-
-    - `storageClassName:` Your storage class name from the previous step
-    - `redisEnterpriseNodeResources:` The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constraint, the minimum workable limits for basic testing are 2 CPU and 3Gb. For development and production, please use the guidelines in the [Hardware Requirements article]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-        - limits – specifies the max resources for a Redis node
-        - requests – specifies the minimum resources for a Redis node
-    - `enforceIPv4: true` - Add this line under `spec:` at the same indentation (2 spaces) as 'nodes'. This indicates to the REC deployment to not attempt to bind to IPv6, which is currently not supported on PKS clusters.
-    - `redisEnterpriseImageSpec`: This configuration controls the Redis Enterprise version used, and where it is fetched from. The GitHub repository yaml contains the latest image tag from [DockerHub](https://hub.docker.com/r/redislabs/redis/). If omitted, the Operator defaults to the compatible image version and pull it from DockerHub. This configuration should stay as-is in most circumstances, unless the image used is pulled from a private repository. <!--- Ben - again, need to preserve indentation, within the block code --->
-
-    Here is an example of the edited REC yaml file:
-
-    ```src
-    apiVersion: "app.redislabs.com/v1alpha1"
-    kind: "RedisEnterpriseCluster"
-     metadata:
-       name: "rec-pks"
-     spec:
-       enforceIPv4: true
-       nodes: 3
-       persistentSpec:
-         enabled: true
-         storageClassName: "standard" # ! edit according to infrastructure
-       uiServiceType: LoadBalancer
-       username: "demo@redislabs.com"
-       redisEnterpriseNodeResources:
-         limits:
-           cpu: "2000m"
-           memory: 3Gi
-         requests:
-           cpu: "2000m"
-           memory: 3Gi
-       redisEnterpriseImageSpec:
-         imagePullPolicy:  IfNotPresent
-         repository:       redislabs/redis
-         versionTag:       5.4.2-27
-    ```
-
-## Step 4: Create your Cluster
+## Step 3: Create your Cluster
 
 1. Once you have `your_pks_cluster.yaml` file set, you need to apply it to create your Redis Enterprise Cluster:
 
-    ```src
-    kubectl apply -f your_cluster_name.yaml
+    ```sh
+    $ kubectl apply -f your_cluster_name.yaml
     ```
 
-    A typical response looks like this:
+    A typical response looks like:
 
-    ```src
+    ```sh
     redisenterprisecluster.app.redislabs.com/rec-pks created
     ```
 
-1. To track the creation of the cluster nodes, track the creation of the StatefulSet, which is named the same as the cluster name you've provided in the `your_pks_cluster.yaml` file. In the example above it is `rec-pks`:
+1. To track the creation of the cluster nodes, track the creation of the StatefulSet, which will be names the same as the cluster name you provided in the `your_pks_cluster.yaml` file. In the example above it is `rec-pks`:
 
-    ```src
+    ```sh
     kubectl rollout status sts/rec-pks
     ```
 
-    A typical response looks like this:
+    A typical response looks like:
 
-    ```src
+    ```sh
     Waiting for 3 pods to be ready...
     Waiting for 2 pods to be ready...
     Waiting for 1 pods to be ready...
@@ -360,27 +324,26 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
 
 1. Verify `rec` creation was successful:
 
-    ```src
+    ```sh
     kubectl get rec
     ```
 
-    A typical response looks like this:
+    A typical response looks like:
 
-    ```src
+    ```sh
     NAME      AGE
     rec-pks   7m
     ```
 
 1. Verify all the pods and deployments are available and running:
 
-    ```src
+    ```sh
     kubectl get all
     ```
 
-    A typical response looks like this:
+    A typical response looks like:
 
-    ```src
-
+    ```sh
     NAME                                            READY   STATUS    RESTARTS   AGE
     pod/rec-pks-0                                   1/1     Running   0          16m
     pod/rec-pks-1                                   1/1     Running   0          14m
@@ -388,9 +351,9 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
     pod/rec-pks-services-rigger-585cbf5ff-5f2z5     1/1     Running   0          16m
     pod/redis-enterprise-operator-954b6c68c-bgwpr   1/1     Running   0          18m
 
-    NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORTs                      AGE
+    NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)                      AGE
     service/rec-pks      ClusterIP      None             <none>          9443/TCP,8001/TCP,8070/TCP   16m
-    service/rec-pks-ui   LoadBalancer   10.100.200.101   53.128.131.29   8443:31459/TCP               16m
+    service/rec-pks-ui   ClusterIP      10.100.200.101   <none>          8443:31459/TCP               16m
 
     NAME                                        READY   UP-TO-DATE   AVAILABLE   AGE
     deployment.apps/rec-pks-services-rigger     1/1     1            1           16m
@@ -404,84 +367,80 @@ For production environments, make sure that Persistent Volume Claims (PVCs) are 
     statefulset.apps/rec-pks   3/3     16m
     ```
 
-## Step 5: Create a database
+## Step 4: Create a database
 
-In order to create your database, login to the Redis Enterprise UI.
+In order to create your database, you will log in to the Redis Enterprise UI.
 
-1. First, determine you administrator password. It is stored in an opaque Kubernetes secret named after the REC name. In this example:
+1. First, determine you administrator password. It is stored in an opaque k8s secret named after the REC name. In this example:
 
-    ```src
+    ```sh
     kubectl get secret/rec-pks -o yaml
     ```
 
-    A typical response includes the following lines:
+    A typical response will include the following lines:
 
-    ```src
-
+    ```sh
     apiVersion: v1
     data:
-        license: ""
-        password: ZGdlaWw3Cg==
-        username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
+      license: ""
+      password: ZGdlaWw3Cg==
+      username: YWRtaW5AcmVkaXNsYWJzLmNvbQ==
     kind: Secret
     ```
 
 1. Decode the password:
 
-    ```src
+    ```sh
     echo 'ZGdlaWw3Cg==' | base64 --decode
     ```
 
-    A typical response includes the following lines:
+    A typical response will include the following lines:
 
-    ```src
+    ```sh
     dgeil7
     ```
 
-1. There are two primary options for accessing the Web UI
-    - If your PKS cluster has loadbalancer service set up with a public IP you have access to or otherwise a routable IP address from your machine:
+1. There are two primary options for accessing the Web UI:
+    1. If your PKS cluster has a load balancer service setup with a public IP you have access to or otherwise a routable IP address from your machine:
+        - Determine that IP address:
 
-        1. Determine that IP address:
-
-            ```src
+            ```sh
             kubectl get service/rec-pks-ui
             ```
 
-            A typical response includes the following lines:
+            A typical response will include the following lines:
 
-            ```src
+            ```sh
             service/rec-pks-ui   LoadBalancer   10.100.200.101   53.128.131.29   8443:31459/TCP               16m
             ```
 
-        1. Enter the IP address followed by port number 8443 into your browser address bar: `https://53.128.131.29:8443`
+        - Enter the IP address followed by port number 8443 into your browser address bar: `https://53.128.131.29:8443`
 
-    - If your PKS cluster does not have a routable IP address from your machine:
-        1. Set up port forwarding for port 8443 to one of you cluster pods:
+    1. If your PKS cluster does not have a routable IP address from your machine:
 
-            ```src
+        - Setup port forwarding for port 8443 to one of you cluster pods:
+
+            ```sh
             kubectl port-forward rec-pks-0 8443
             ```
 
-            A typical response includes the following lines:
+            A typical response will include the following lines:
 
-            ```src
+            ```sh
             Forwarding from 127.0.0.1:8443 -> 8443
             Forwarding from [::1]:8443 -> 8443
             ```
 
-        1. Use `localhost` followed by port number 8443 in your browser address bar: `https://localhost:8443`
+        - Use `localhost` followed by port number 8443 in your browser address bar: `https://localhost:8443`
 
-            {{% warning %}}
-Do not change the default admin user password in the Redis Enterprise web UI.
-Changing the admin password impacts the proper operation of the K8s deployment.
-            {{% /warning %}}
-
-1. Login to the Web UI by using the username defined in your REC yaml and the password you've previously decoded.
+1. Log in to the Web UI with the username defined in your REC yaml and the password.
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
-1. Follow the [instructions in the UI to create your database](http://localhost:1313/rs/administering/database-operations/creating-database/#creating-a-new-redis-database).
-    For example, a basic setup would follow these steps:
+1. Follow the [instructions to create your database](http://localhost:1313/rs/administering/database-operations/creating-database/#creating-a-new-redis-database).
+
+    For example:
+
     1. In **databases**, click ![Add](/images/rs/icon_add.png#no-click "Add").
 
         If you do not have any databases on the node, you are prompted to create a database.
@@ -499,114 +458,114 @@ Changing the admin password impacts the proper operation of the K8s deployment.
         - **Password** -enter a password and record it for the next steps.
         - Click **Activate**.
 
-1. Do a simple database connectivity test using Telnet.
-    1. Find the Kubernetes services automatically created for your Redis Enterprise database
+    1. Test the database connectivity test using Telnet:
 
-        ```src
-        kubectl get service -l app=redis-enterprise-bdb
-        ```
+        1. Find the Kubernetes services automatically created for your Redis Enterprise database:
 
-        A typical response lists all database services in the cluster, for example:
+            ```sh
+            kubectl get service -l app=redis-enterprise-bdb
+            ```
 
-        ```src
-        NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORTs     AGE
-        pks-test            ClusterIP   10.100.200.52   <none>        14771/TCP   22m
-        pks-test-headless   ClusterIP   None            <none>        14771/TCP   22m
-        ```
+            A typical response will list all database services in the cluster, for example:
 
-    1. Set up port forwarding for the database port to one of you database services
+            ```sh
+            NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)     AGE
+            pks-test            ClusterIP   10.100.200.52   <none>        14771/TCP   22m
+            pks-test-headless   ClusterIP   None            <none>        14771/TCP   22m
+            ```
 
-        ```src
-        kubectl port-forward service/pks-test 14771
-        ```
+        1. Set up port forwarding for the database port to one of your database services:
 
-        A typical response lists all database services in the cluster, for example:
+            ```sh
+            kubectl port-forward service/pks-test 14771
+            ```
 
-        ```src
-        Forwarding from 127.0.0.1:14771 -> 14771
-        Forwarding from [::1]:14771 -> 14771
-        ```
+            A typical response will list all database services in the cluster, for example:
 
-    1. Connect to your database via Telnet with the database password you've recorded earlier with the *AUTH* command and test some basic Redis commands, as shown below:
+            ```sh
+            Forwarding from 127.0.0.1:14771 -> 14771
+            Forwarding from [::1]:14771 -> 14771
+            ```  
 
-        ```src
-        telnet 127.0.0.1 14771
-        ```
+        1. Connect to your database via Telnet and test some basic Redis commands with the database password:
 
-        ```src
-        Connected to localhost.
-        Escape character is '^]'.
-        auth cdef2843d3e0
-        +OK
-        ping
-        +PONG
-        get *
-        $-1
-        set foo bar
-        +OK
-        get foo
-        $3
-        bar
-        ^]
-        telnet> ^C
-        $
-        ```  
+            ```sh
+            $ telnet 127.0.0.1 14771
 
-## Step 5: Cleaning up
+            Connected to localhost.
+            Escape character is '^]'.
+            auth cdef2843d3e0
+            +OK
+            ping
+            +PONG
+            get *
+            $-1
+            set foo bar
+            +OK
+            get foo
+            $3
+            bar
+            ^]
+            telnet> ^C
+            $
+            ```
+
+## Step 5: Cleaning Up
 
 To remove the Redis Enterprise Cluster from your PKS deployment:
 
-1. [Delete any databases]({{< relref "/rs/administering/database-operations/deleting-database.md" >}}).
-1. Delete the REC custom resource. This removes the cluster nodes' pods and all related services and deployments, except for the Operator deployment itself.
+1. [Delete]({{< relref "/rs/administering/database-operations/deleting-database.md" >}}) any databases you created.
 
-    ```src
+1. Delete the REC custom resource. This removes the pods on the cluster nodes and all related services and deployments, except for the Operator deployment itself.
+
+    ```sh
     kubectl delete rec rec-pks
-
     ```
-    A typical response looks like this:
 
-    ```src
+    A typical response looks like:
+
+    ```sh
     redisenterprisecluster.app.redislabs.com "rec-pks" deleted
     ```
 
 1. Delete the Operator deployment:
 
-    ```src
+    ```sh
     kubectl delete deployment -l name=redis-enterprise-operator
     ```
 
-    A typical response looks like this:
+    A typical response looks like:
 
-    ```src
+    ```sh
     deployment.extensions "redis-enterprise-operator" deleted
     ```
 
 1. Verify that all resources have been removed:
 
-    ```src
+    ```sh
     kubectl get all
     ```
 
-    A typical response looks like this:
+    A typical response looks like:
 
-    ```src
+    ```sh
     No resources found.
     ```
 
 1. Delete the namespace you've created in step 1-5:
 
-    ```src
+    ```sh
     kubectl delete namespace redis-enterprise
     ```
 
-    A typical response looks like this:
+    A typical response looks like:
 
-    ```src
+    ```sh
     namespace "redis-enterprise" deleted.
     ```
 
 1. Optionally, switch to the default namespace:
 
-    ```src
+    ```sh
     kubectl config set-context --current --namespace default
     ```

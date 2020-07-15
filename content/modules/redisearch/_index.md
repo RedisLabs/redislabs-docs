@@ -25,9 +25,6 @@ data:
 - Indexing new data stored in Redis: If you want to keep all data and
     index in Redis, this is the best approach. Do this using the ADD
     command.
-- Indexing existing data in Redis hashes: If you have your data stored
-    in hashes, that is the most convenient way to index your data. Do
-    this through ADDHASH command.
 - Index data that is stored in another database: If you already have
     the data in another database and all you want is a fast, lightweight
     in-memory index, this can reduce the data redundancy.
@@ -143,7 +140,7 @@ If you need to create a database that has a PARTITIONS value that is not
 AUTO, this is not typical, you select the **Redis Modules** checkbox,
 then the settings icon, the alter the number of partitions.
 
-![redisearch_partitions](/images/rs/redisearch_partitions.png?width=700&height=119)
+<!-- ![redisearch_partitions](/images/rs/redisearch_partitions.png) -->
 
 ## More information
 
@@ -151,3 +148,4 @@ You can find more information about RediSearch at:
 
 - [Configuring RediSearch](http://redisearch.io/Configuring/)
 - [RediSearch commands](http://redisearch.io/)
+    - Note: the `FT.ADDHASH` command is not supported in Redis Enterprise

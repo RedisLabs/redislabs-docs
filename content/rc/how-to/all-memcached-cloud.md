@@ -3,7 +3,7 @@ Title: Using flush_all for Memcached Cloud
 description:
 weight: $weight
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
 ---
 Follow the instructions below to use flush_all.
 
@@ -17,7 +17,7 @@ instructions here is for this client. This instruction refers to Ubuntu
 OS. Please make the necessary changes if you are using other Linux
 flavor.
 
-```src
+```sh
 $ wget https://github.com/RedisLabs/bmemcached-cli/archive/master.zip
 $ sudo apt-get install unzip python-pip
 $ unzip master.zip -d bmemcached-cli
@@ -29,13 +29,13 @@ $ sudo pip install . -r requirements.pip
 Now you can run the flush_all command using the bmemcached-cli. The
 usage is simple:
 
-```src
+```sh
 bmemcached-cli [user]:[password]@[host]:[port]
 ```
 
 usage example:
 
-```src
+```sh
 $ bmemcached-cli memcached-app123:x298k37@pub-memcache-1010.us-east-1-3.4.ec2.garantiadata.com:1010
 ([B]memcached) flush_all
 True
@@ -44,7 +44,7 @@ exit
 
 ## flush_all for Memcached Enterprise Cloud Databases
 
-```src
+```sh
 $ telnet memcached-12345.c69.us-east-1-2.ec2.cloud.redislabs.com 12345
 Trying 54.165.69.88...
 Connected to memcached-12345.c69.us-east-1-2.ec2.cloud.redislabs.com.

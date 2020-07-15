@@ -1,17 +1,17 @@
-### Trying It Out
+## Trying It Out
 
 You can play with it a bit using redis-cli:
 
 Connect to redis.
 
-```src
+```sh
 $ redis-cli -p 12543
 127.0.0.1:12543>
 ```
 
 Run these commands:
 
-```src
+```sh
  127.0.0.1:12543> BF.ADD bloom kirk
  1) (integer) 1
  127.0.0.1:12543> BF.ADD bloom redis
@@ -40,7 +40,7 @@ a new Bloom filter suitable for a small-ish number of items. This
 consumes less memory but may not be ideal for large filters. In that
 case:
 
-```src
+```sh
  127.0.0.1:12543> BF.RESERVE largebloom 0.0001 1000000
  OK
  127.0.0.1:12543> BF.ADD largebloom kirk
@@ -52,7 +52,7 @@ case:
 Cuckoo filters can also be used as part of the RedisBloom module.
 You can play with it using redis-cli:
 
-```src
+```sh
 127.0.0.1:12543> CF.ADD cuckoo redis
 (integer) 1
 127.0.0.1:12543> CF.EXISTS newcuckoo redis

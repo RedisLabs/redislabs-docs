@@ -1,5 +1,5 @@
 ---
-Title: Configuring Swap in Linux for Redis Enterprise Software (RS)
+Title: Configuring Swap for Linux
 description:
 weight: $weight
 alwaysopen: false
@@ -21,7 +21,7 @@ recommendation is to disable Linux swap completely in the OS.
 To disable the swap in the OS of an existing server/VM/instance, you
 must have sudo access or be root to run the following command:
 
-```src
+```sh
 $ sudo swapoff -a
 $ sudo sed -i.bak '/ swap / s/^(.*)$/#1/g' /etc/fstab
 ```

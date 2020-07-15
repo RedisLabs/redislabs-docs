@@ -11,10 +11,8 @@ database.
 
 To test client connectivity:
 
-1. Create a Redis database and get the database's endpoint, which
-    contains the cluster name (FQDN). For additional details, refer to
-    [Creating a new
-    database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+1. [Create a Redis database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) and get the database endpoint, which
+    contains the cluster name (FQDN).
 1. Try to connect to the database endpoint from your client of choice,
     and execute commands against the database.
 1. If the database does not respond, try to connect to the database
@@ -40,7 +38,7 @@ connectivity to your database:
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1
 
-```src
+```sh
 # sudo /opt/redislabs/bin/redis-cli -p 12000
 127.0.0.1:16653> set key1 123
 OK
@@ -62,13 +60,13 @@ redis-py](https://github.com/andymccurdy/redis-py).
 In the command-line Terminal, create a new file called
 **redis_test.py**
 
-```src
+```sh
 vi redis_test.py
 ```
 
 Paste the following into a file named **redis_test.py**.
 
-```src
+```sh
 import redis
 
 r = redis.StrictRedis(host='localhost', port=12000, db=0)
@@ -81,16 +79,16 @@ print(r.get('key1'))
 Run "redis_test.py" application to connect to the database and store
 and retrieve a key using the command-line.
 
-```src
+```sh
 python redis_test.py
 ```
 
 The output should look like the following screen if the connection is
 successful.
 
-```src
+```sh
 set key1 123
 True
 get key1
-b'123'
+123
 ```

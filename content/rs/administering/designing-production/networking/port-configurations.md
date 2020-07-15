@@ -17,20 +17,27 @@ update your firewall with the port for that new database endpoint.
 
 ## Ports and port ranges used by Redis Enterprise Software
 
-| Protocol | Port | Description |
-|------------|-----------------|-----------------|
-| ICMP | * | For connectivity checking between nodes |
-| TCP | 1968 | Proxy traffic (Internal use) |
-| TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Cluster traffic (Internal use) |
-| TCP | 8001 | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
-| TCP | 8443 | Secure (HTTPS) access to the management web UI |
-| TCP | 8444, 9080 | For nginx <-> cnm_http/cm traffic (Internal use) |
-| TCP | 9081 | For CRDB management (Internal use) |
-| TCP | 8070, 8071 | For metrics exported and managed by nginx |
-| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | REST API traffic, including cluster management and node bootstrap |
-| TCP | 10000-19999 | Database traffic |
-| TCP | 20000-29999 | Database shards traffic (Internal use) |
-| UDP | 53, 5353 | DNS/mDNS traffic (Internal use) |
+| Protocol | Port | Connection Source | Description |
+|------------|-----------------|-----------------|-----------------|
+| ICMP | * | Internal | For connectivity checking between nodes |
+| TCP | 1968 | Internal | Proxy traffic |
+| TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal | Cluster traffic |
+| TCP | 8001 | Internal, External | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
+| TCP | 8002, 8004 | Internal | System health monitoring |
+| TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
+| TCP | 8444, 9080 | Internal | For nginx <-> cnm_http/cm traffic |
+| TCP | 9081 | Internal, Active-Active | For Active-Active management |
+| TCP | 8070, 8071 | Internal, External | For metrics exported and managed by nginx |
+| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
+| TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
+| TCP | 20000-29999 | Internal | Database shard traffic |
+| UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
+
+Connection sources are:
+
+- Internal - The traffic is from other cluster nodes
+- External - The traffic is from client applications or external monitoring resources
+- Active-Active - The traffic is from clusters that host Active-Active databases
 
 ## Changing the Management Web UI Port
 
@@ -39,7 +46,7 @@ instead of the default port (8443), you can change the port. Before you
 change the RS Web UI port, make sure that the new port is not in
 use by another process.
 
-{{% note %}}
+{{< note >}}
 After you change the RS Web UI port, when you add a new node to the
 cluster you must connect to the web UI with the custom port number:
 
@@ -48,19 +55,19 @@ cluster you must connect to the web UI with the custom port number:
 
 To change the default port for the RS Web UI, on any node in the cluster run:
 
-```src
+```sh
 rladmin cluster config cm_port <new-port>
 ```
 
 ## Disabling HTTP support for API Endpoints
 
-To harden deployments, you can disable the HTTP support for API enpoints that is supported by default.
+To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.
 Before you disable HTTP support, make sure that you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint
 to prevent broken connections.
 After you disable HTTP support, traffic sent to the unencrypted API endpoint is blocked.
 
 To disable HTTP support for API endpoints, run:
 
-```src
+```sh
 rladmin cluster config http_support disabled
 ```

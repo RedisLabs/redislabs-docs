@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Kubernetes Operator-based Architecture
 description: 
-weight: 40
+weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/k8s-operator-based-deployments

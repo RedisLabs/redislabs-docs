@@ -13,10 +13,10 @@ without changing the way the application connects to the database.
 
 CRDBs also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
-{{% note %}}
+{{< note >}}
 CRDBs do not replicate the entire database, only the data.
 Database configurations, Lua scripts, and other configurations are not replicated.
-{{% /note %}}
+{{< /note >}}
 
 ## Considerations for Conflict-free Replicated Databases (CRDBs) {#considerations-for-conflictfree-replicated-databases-crdbs}
 
@@ -39,14 +39,10 @@ Before configuring a CRDB, you must:
 ## CRDB Current Limitations
 
 1. RS is limited to five Participating Clusters or CRDB Instances per CRDB.
-1. An existing database cannot modified to be a CRDB.
-    To move existing data to a CRDB you must create a new CRDB and migrate your data.
+1. An existing database cannot be changed into a CRDB. To move data from an existing database to a CRDB you must create a new CRDB and migrate the data.
 1. CRDBs do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 1. CRDBs require FQDNs or mDNS (development only). Discovery Service is not supported with CRDBs.
 1. CRDBs are not compatible with [Replica Of]({{< relref "/rs/administering/active-passive.md" >}}).
-
-    ReplicaOf is a one-way replication, while CRDB utilize multi-master replication.
-1. [OSS cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) is not supported with CRDB.
 
 ## Network Time Service (NTP or Chrony)
 
@@ -66,7 +62,7 @@ The RS installation checks if there is a network time service installed, running
 
 For example:
 
-```src
+```sh
 2017-10-30 11:24:07 [?] Do you want to automatically tune the system for best performance [Y/N]? Y
 2017-10-30 11:24:15 [?] Cluster nodes must have their system time synchronized.
 Do you want to set up NTP time synchronization now [Y/N]? Y
@@ -81,7 +77,7 @@ The setup of the CRDB fails if there is no connectivity between the clusters.
 
 ## Network Ports
 
-For initial configuration and ongoing maintenance of a CRDB, every nude must have access to the REST API ports of every other node.
+For initial configuration and ongoing maintenance of a CRDB, every node must have access to the REST API ports of every other node.
 You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
 For synchronization, CRDBs operate over the standard endpoint ports.
@@ -118,9 +114,9 @@ In the case of a CRDB:
 - Multiple past replication IDs and offsets are stored to allow for multiple syncs
 - The Active-Active backlog is also sent to the slave during a full sync
 
-{{% warning %}}
+{{< warning >}}
 Full sync triggers heavy data transfers between geo-replicated CRDB instances.
-{{% /warning %}}
+{{< /warning >}}
 
 The scenarios in which CRDB updates to other instances use partial synchronization are:
 
@@ -130,12 +126,12 @@ The scenarios in which CRDB updates to other instances use partial synchronizati
 - Migrate master shard to another node as a slave using failover and slave migration
 - Migrate master shard and preserve roles using failover, slave migration, and second failover to return shard to master
 
-{{% note %}}
+{{< note >}}
 Synchronization of data from the master shard to the slave shard is always a full synchronization.
-{{% /note %}}
+{{< /note >}}
 
 ### Syncer in Active-Passive Replication (Replica Of)
 
 In Replica Of, the master node does not transfer the replication backlog to its slave.
 Whenever a synchronization is necessary, the slave has no backlog and can only do a full sync.
-But, in a controlled failover the demoted master still has the replication backlog and when the syncer can do a partial sync.
+But, in a controlled failover the demoted master still has the replication backlog, and when the syncer connects, it can do a partial sync.

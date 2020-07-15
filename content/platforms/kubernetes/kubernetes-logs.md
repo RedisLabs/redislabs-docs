@@ -1,9 +1,10 @@
 ---
 Title: Redis Enterprise Kubernetes Logs
 description: 
-weight: 30
+weight: 60
 alwaysopen: false
 categories: ["Platforms"]
+# keywords: ["kubernetes"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-logs
          /rs/concepts/logs/
 ---
@@ -32,6 +33,6 @@ sideContainersSpec:
 
 Now the logs can be accessed from in the sidecar. For example by running
 
-```kubectl exec -it -c busybox <pod-name> tail home/logs/supervisord.log```
+```kubectl exec -it <pod-name> -c busybox tail home/logs/supervisord.log```
 
 The sidecar container is user determined and can be used to format, process and share logs in a specified format and protocol.

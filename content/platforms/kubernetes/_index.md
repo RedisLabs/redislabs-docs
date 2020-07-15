@@ -1,7 +1,7 @@
 ---
 Title: Getting Started with Redis Enterprise Software using Kubernetes
 description:
-weight: 30
+weight: 90
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
@@ -9,7 +9,7 @@ aliases: /rs/getting-started/getting-started-kubernetes/
 ---
 Kubernetes provides simpler orchestration with containers and has been widely adopted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}
 
 {{% comment %}}
 ## What is Redis Enterprise?
@@ -19,7 +19,7 @@ Redis is the most popular database used with Docker containers. Redis Enterprise
 We use the Docker container for 4.5 version of Redis Enterprise for the steps here. You can find more information on the container image on [Docker Hub](https://hub.docker.com/r/redislabs/redis/) and see details on how to deploy the container locally with Docker below:
 
 - [Working with Redis Enterprise and Docker]({{< relref "/rs/getting-started/docker/_index.md" >}})
-- [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}})
+- [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/getting-started-docker.md" >}})
 
 ## Deploying Redis Enterprise with Kubernetes on Google Cloud
 
@@ -91,7 +91,7 @@ And finally start the Kubernetes proxy:
 
 ## Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
 
-You now need to feed the container yaml file to provision Redis Enterprise cluster. You can download a sample [container yaml file](https://docs.redislabs.com/latest/rs/getting-started/redis-enterprise.yaml).
+You now need to feed the container yaml file to provision Redis Enterprise cluster. You can download a sample [container yaml file](https://docs.redislabs.com/latest/platforms/kubernetes/redis-enterprise.yaml).
 
     kubectl apply -f redis-enterprise.yaml
 

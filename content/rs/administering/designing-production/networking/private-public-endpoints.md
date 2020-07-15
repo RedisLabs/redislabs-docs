@@ -22,9 +22,9 @@ database through both the private and the public IP addresses.
 
 To enable this configuration you need to:
 
-- The IPs must already be bound to the server/instance.
-- Enable support when the cluster is created for a new cluster or
-    using rladmin for an existing cluster.
+- Make sure that the IPs are already bound to the server/instance.
+- Enable private and public endpoint support when the cluster is created, or
+    use rladmin to enable support for an existing cluster.
 - Configure public IP of the machine to be used for external traffic
     in the node configuration.
 - Configure private IP to be used for both internal and external
@@ -40,13 +40,13 @@ You can enable it by using the ***rladmin suffix add*** command.
 
 To add an internal FQDN/IP to a cluster:
 
-```src
-rladmin suffix add name <node1.internal.clustername.domain.com> internal
+```sh
+rladmin suffix add name <internal.clustername.domain.com> internal
 ```
 
 To add an internal FQDN/IP to a cluster, but signal to the cluster there
 is slave for DNS:
 
-```src
-rladmin suffix add name <node2.internal.clustername.domain.com> internal slave 10.0.1.1
+```sh
+rladmin suffix add name <internal.clustername.domain.com> internal slave 10.0.1.1
 ```

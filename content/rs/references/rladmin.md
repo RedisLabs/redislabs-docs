@@ -28,10 +28,10 @@ To open the rladmin CLI:
 
 1. Run: `rladmin`
 
-    {{% note %}}
+    {{< note >}}
 If the CLI does not recognize the rladmin command,
 you run this command to load the needed configuration first: `bash -l`
-    {{% /note %}}
+    {{< /note >}}
 
 ## Command Syntax Help
 

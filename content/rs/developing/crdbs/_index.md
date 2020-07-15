@@ -101,7 +101,7 @@ Even though the data types and methods look identical in standard Redis
 and CRDBs, there are specific rules that govern the handling of
 conflicting concurrent writes to each type.
 
-From a developer's perspective, most supported datatypes work the same
+From a developer's perspective, most supported data types work the same
 as standard Redis. However, a few methods also come with specific
 requirements in CRDBs.
 
@@ -118,12 +118,13 @@ followed by descriptions:
 | Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
 | Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
 | Sorted Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
+| HyperLogLog | [Supported]({{< relref "/rs/developing/crdbs/developing-hll-crdb.md" >}}) |
+| Streams | [Supported]({{< relref "/rs/developing/crdbs/developing-streams-crdb.md" >}}) |
 | Bitsets | Not currently supported |
-| Streams | Not currently supported |
 
 ### Other Data Types
 
-Bitmap, Bitfields, and Hyperloglog data types and operations are
+Bitmap and Bitfields, data types and operations are
 not currently supported in this version of
 CRDBs.
 
@@ -149,13 +150,13 @@ preserved. As an example:
 
 If this command was performed on key1 on cluster #1
 
-```src
+```sh
 127.0.0.1:6379> EXPIRE key1 10
 ```
 
 And if this command was performed on key1 on cluster #2
 
-```src
+```sh
 127.0.0.1:6379> EXPIRE key1 50
 ```
 
@@ -163,7 +164,7 @@ The EXPIRE command setting the key to 50 would win.
 
 And if this command was performed on key1 on cluster #3:
 
-```src
+```sh
 127.0.0.1:6379> PERSIST key1
 ```
 

@@ -27,7 +27,7 @@ To keep RS secure and keep our internal libraries up-to-date, starting from RS 5
 
 When you install or upgrade RS 5.4.10 on RHEL 7 with older version of OpenSLL, the installation fails with the error:
 
-```src
+```sh
 Error: Package: redislabs-5.4.10-1.rhel7.x86_64 (/redislabs-5.4.10-1.rhel7.x86_64)
         Requires: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
 ```
@@ -47,12 +47,14 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
     `curl -v -u <user>:<password> https://localhost:9443/v1/license`
 
+- Updated PDNS version from 4.1.5 to 4.1.13.
+
 ## Information
 
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle/).
 - Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS web UI.
     If you use a self-signed certificate that does not include this field, [update the self-signed certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or earlier to version RS 5.4.4 or later:
+- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or lower to version RS 5.4.4 or higher:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
 
@@ -84,7 +86,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
     To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower,
     you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading.md#upgrading-crdbs" >}}).
 - Before you upgrade a database with RediSearch Module to Redis 5.0,
-    you must [upgrade the RediSearch Module]({{< relref "/modules/upgrading-rs.md" >}}) to version 1.4.2 or above.
+    you must [upgrade the RediSearch Module]({{< relref "/modules/add-module-to-cluster.md" >}}) to version 1.4.2 or above.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above
     by manually updating the certificates on the disk instead of [updating them through the API]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
     For assistance with this issue, contact Support.
@@ -97,6 +99,10 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 - The API for removing a node is updated in RS 5.4.2 or higher. The API call must include json data and the "Content-Type: application/json" header. For example:
 
     `curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"`
+
+### Discovery Service
+
+- For [Redis Sentinel (Discovery Service)]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), every database name must be unique across the cluster.
 
 ### Redis Commands
 

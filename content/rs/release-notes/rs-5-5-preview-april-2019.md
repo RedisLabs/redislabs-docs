@@ -36,7 +36,7 @@ This preview version is not supported for networks that are isolated from the in
 
 To set up a cluster with nodes that can host databases with multiple modules, you must follow this procedure on each node in the cluster:
 
-1. [Install RS 5.5]({{< relref "/rs/getting-started/quick-setup.md" >}}).
+1. [Install RS 5.5]({{< relref "/rs/getting-started/_index.md" >}}).
 1. To install the modules, run: `sudo ./install-modules.sh`
 1. Either:
     - Set up the node as the [first node in the cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).

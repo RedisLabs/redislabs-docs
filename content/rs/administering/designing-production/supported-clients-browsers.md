@@ -16,20 +16,9 @@ listed on Redis.io](https://redis.io/clients).
 
 ### Discovery Service
 
-For the [Discovery
-Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) which
-utilizes the Redis Sentinel API, the following clients are tested and
-recommended:
+We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
-- [Redis-py](https://github.com/andymccurdy/redis-py) (Python redis
-    client)
-- [HiRedis](https://github.com/redis/hiredis) (C redis client)
-- [Jedis](https://github.com/xetorthio/jedis) (Java redis client)
-- [Ioredis](https://github.com/luin/ioredis) (NodeJS redis client)
-
-If you need to use other clients with the Discovery Service, perhaps
-look at [Sentinel Tunnel](https://github.com/RedisLabs/sentinel_tunnel),
-a utility published by Redis Labs for this purpose.
+{{< embed-md "discovery-clients.md" >}}
 
 ## Web Browsers
 

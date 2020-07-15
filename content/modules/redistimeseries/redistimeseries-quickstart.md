@@ -6,11 +6,13 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redistimeseries/
 ---
-For this quick start tutorial, you need either:
+For this quick start tutorial, you need:
 
 - Either:
-    - [A Redis Enterprise Software database with the RedisTimeSeries module enabled]({{< relref "/modules/create-database-rs.md" >}})
-    - [A Redis Cloud Pro database with the RedisTimeSeries module enabled](https://redislabs.com/redis-enterprise-cloud/)
+    - A Redis Cloud database [with the RedisTimeSeries module]({{< relref "/rc/administration/setup/create-database.md" >}})
+
+        You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
+    - A Redis Enterprise Software database [with the RedisTimeSeries module]({{< relref "/modules/add-module-to-database.md" >}})
 - redis-cli with connectivity to a redis database
 
 {{< embed-md "tryout-redistimeseries.md" >}}

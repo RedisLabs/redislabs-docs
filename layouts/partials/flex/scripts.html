@@ -6,9 +6,15 @@
   var pa = window.location.pathname.split('/');
   var pv = pa[1]; // latest, 5.4 or 5.2
 
-  if(pv == '5.4' || pv == 'latest') {
+  if(pv == '6.0' || pv == 'latest') {
+    v = '6.0';
+    d = 'v6.0 (latest)';
+  } else if (pv == '5.6') {
+    v = '5.6';
+    d = 'v5.6';
+  } else if (pv == '5.4') {
     v = '5.4';
-    d = 'v5.4 (latest)';
+    d = 'v5.4';
   } else if (pv == '5.2') {
     v = '5.2';
     d = 'v5.2 (and below)';
@@ -61,14 +67,20 @@ window.onclick = function(e) {
   }, 400);
 </script>
 
-<script src="{{"js/clipboard.min.js" | relURL}}"></script>
+<script src="{{"theme-flex/modernizr-custom.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/classie.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/polyfills.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/jquery.nice-select.min.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/custom.js" | relURL}}" defer></script>
 
+<script src="{{"js/clipboard.min.js" | relURL}}" defer></script>
+<script src="{{"js/bootstrap.min.js" | relURL}}" defer></script>
 <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
-<script src="{{"js/featherlight.min.js" | relURL}}"></script>
+<script src="{{"js/featherlight.min.js" | relURL}}" defer></script>
 
 {{if eq .Site.Params.highlightClientSide true}}
-<script src="{{"js/highlight.pack.js" | relURL}}"></script>
+<script src="{{"js/highlight.pack.js" | relURL}}" defer></script>
 <script>hljs.initHighlightingOnLoad();</script>
 {{end}}
 
-<script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}"></script>
+<script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}" defer></script>

@@ -7,9 +7,9 @@ categories: ["Modules"]
 aliases: /modules/packaging
 ---
 
-{{% warning %}}
+{{< warning >}}
 Redis Labs does not and cannot support third party modules or databases created with them.
-{{% /warning %}}
+{{< /warning >}}
 
 ## Packaging Non-Certified Modules
 
@@ -31,7 +31,7 @@ require six steps:
 
 ### Get the Module from GitHub
 
-```src
+```sh
 git clone https://github.com/account/myModule.git
 ```
 
@@ -39,7 +39,7 @@ git clone https://github.com/account/myModule.git
 
 To compile the module just run:
 
-```src
+```sh
 cd myModule/;make
 ```
 
@@ -51,13 +51,13 @@ to be installed into Redis Enterprise.
 
 Run the next command to install ramp-packer:
 
-```src
+```sh
 pip install ramp-packer
 ```
 
 ### Wrap the Custom Module Using Ramp Utility
 
-```src
+```sh
 $ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
 -A "x86_64" -d "My Module" -h "https://www.mymodule.com/" -l "LicenseType"
 -r "4.0.2"
@@ -66,4 +66,4 @@ $ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"
 Go to [the ramp](https://github.com/RedisLabs/RAMP) github [page](https://github.com/RedisLabs/RAMP)
 for more information each command line switch in ramp.
 
-To deploy the packaged module, see [Installing a Module]({{< relref "/modules/create-database-rs.md" >}}).
+To deploy the packaged module, see [Installing a Module]({{< relref "/modules/add-module-to-database.md" >}}).
