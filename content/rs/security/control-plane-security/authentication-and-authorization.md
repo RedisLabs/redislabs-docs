@@ -1,5 +1,5 @@
 ---
-Title: Control Plane Security
+Title: Authentication and Authorization
 description:
 weight: 10
 alwaysopen: false

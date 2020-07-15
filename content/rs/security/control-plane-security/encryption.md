@@ -1,5 +1,5 @@
 ---
-Title: Control Plane Security
+Title: Encryption
 description:
 weight: 10
 alwaysopen: false
