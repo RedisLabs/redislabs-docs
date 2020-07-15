@@ -71,7 +71,7 @@ Each pod is updated after the last one completes successfully.
 
 ![kubernetes-rolling-updates-newcluster](/images/rs/kubernetes-rolling-updates-newcluster.png?width=500)
 
-![kubernetes-rolling-updates-done](/images/rs/kubernetes-rolling updates-done.png?width=500)
+![kubernetes-rolling-updates-done](/images/rs/kubernetes-rolling-updates-done.png?width=500)
 
 The pods in the StatefulSet are updated in reverse ordinal order.
 The Kubernetes controller terminates each pod and waits for it to transition to `Running` and then to `Ready`.
