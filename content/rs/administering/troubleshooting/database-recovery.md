@@ -74,11 +74,11 @@ of the configuration and persistence files on each of the nodes.
     The data is recovered from the persistence files located in the persistent storage drives
     that you mounted to the nodes.
 
-    - If AOF or snapshot is available, the data is restored from the AOF or snapshot. CRDB instances are then synced with the other participating clusters to update with data changed since the AOF or snapshot (fast CRDB sync).
+    - If AOF or snapshot is available, the data is restored from the AOF or snapshot. Active-Active database instances are then synced with the other participating clusters to update with data changed since the AOF or snapshot (fast Active-Active sync).
 
-        If AOF or snapshot is available for a CRDB but you want to get all of the data from the other participating clusters (slow CRDB sync), use: `recover db only_configuration <db_name>`
+        If AOF or snapshot is available for an Active-Active database but you want to get all of the data from the other participating clusters (slow Active-Active sync), use: `recover db only_configuration <db_name>`
 
-    - If AOF or snapshot is not available, the database is restored empty. CRDB instances are synced with the other participating clusters (slow CRDB sync).
+    - If AOF or snapshot is not available, the database is restored empty. Active-Active database instances are synced with the other participating clusters (slow Active-Active sync).
 
     {{< note >}}
 If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,

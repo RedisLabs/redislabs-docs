@@ -1,11 +1,11 @@
 ---
-Title: Developing with Strings in a CRDB
+Title: Developing with Strings in an Active-Active database
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Strings have particular unique characteristics in a CRDB. First off,
+Strings have particular unique characteristics in an Active-Active database. First off,
 they are the only data type that Last Write Wins (LWW) applies to. As
 part of that, a wall-clock timestamp (OS Time) is in the metadata of any
 operation on a String. If Redis Enterprise Software (RS) cannot determine the order of operations,
@@ -27,7 +27,7 @@ time (t2) wins over the update at t1.
 String type in Redis is implicitly and dynamically typed. Besides string
 command like APPEND, It is overloaded with numeric and bitfield command
 as well like INCR and SETBIT. However, bitfield, numeric, float vs pure
-string data behave differently in CRDBs. In standard Redis, string type
+string data behave differently in Active-Active databases. In standard Redis, string type
 checks the stored value dynamically to decide which commands can operate
 on the value. For example, you can first set a string key to "abc" use
 the APPEND command and SET the same key to 7 and use INCR to update it
@@ -40,7 +40,7 @@ dynamically change after creation. So if a string key is initialized
 using the SET or MSET method, even if the value is set to a numeric
 value, numeric commands like INCR return an error.
 
-Please note that bitfield methods like SETBIT are not supported in CRDBs
+Please note that bitfield methods like SETBIT are not supported in Active-Active databases
 in this version.
 
 To initialize a key as pure string, simply use the SET command. With the
@@ -53,17 +53,17 @@ error
 *(error) WRONGTYPE Operation against a key holding the wrong kind of
 value*
 
-### String Data Type with Counter Value in CRDBs
+### String Data Type with Counter Value in Active-Active databases
 
 While traditional Redis does not have an explicit counter type, Redis
-Enterprise Software's CRDBs does. Counters can be used to implement
+Enterprise Software's Active-Active databases does. Counters can be used to implement
 distributed counters. This can be useful when counting total views of an
 article or image, or when counting social interactions like "retweets"
-or "likes" of an article in a CRDB distributed to multiple geographies.
+or "likes" of an article in an Active-Active database distributed to multiple geographies.
 
 On conflicting writes, counters accumulate the total counter operations
-across all member CRDBs in each sync. Here is an example of how counter
-values can be initialized and maintained across two member CRDBs. With
+across all member Active-Active databases in each sync. Here is an example of how counter
+values can be initialized and maintained across two member Active-Active databases. With
 each sync, the counter value accumulates the private increment and
 decrements of each site and maintain an accurate counter across
 concurrent writes.
@@ -88,5 +88,5 @@ following generic type mismatch error
 *(error) WRONGTYPE Operation against a key holding the wrong kind of
 value*
 
-Note: CRDB supports 59-bit counters. This limitation is to protect from
+Note: Active-Active databases support 59-bit counters. This limitation is to protect from
 overflowing a counter in a concurrent operation.

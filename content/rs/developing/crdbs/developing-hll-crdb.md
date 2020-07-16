@@ -1,5 +1,5 @@
 ---
-Title: Developing with HyperLogLog in a CRDB
+Title: Developing with HyperLogLog in an Active-Active database
 description:
 weight: $weight
 alwaysopen: false
@@ -61,9 +61,9 @@ Here is an example of a DEL-wins case:
 | t8   | Exists h --> 0  | Exists h --> 0  | \|  | t8   | Exists s --> 1      | Exists s --> 1      |
 |      |                 |                 | \|  | t9   | SMEMBERS s --> {e2} | SMEMBERS s --> {e2} |
 
-## HLL in CRDBs versus HLL in Open Source Redis
+## HLL in Active-Active databases versus HLL in Open Source Redis
 
-In CRDBs, we implemented HLL within the CRDT on the basis of the Redis implementation with a few exceptions:
+In Active-Active databases, we implemented HLL within the CRDT on the basis of the Redis implementation with a few exceptions:
 
 - Redis keeps the HLL data structure as an encoded string object
     such that you can potentially run any string request can on a key that contains an HLL. In CRDT, only get and set are supported for HLL.

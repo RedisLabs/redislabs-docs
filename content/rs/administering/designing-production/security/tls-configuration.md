@@ -13,10 +13,10 @@ To prevent unauthorized access to your data, Redis Enterprise Software (RS) data
 - Authentication - The server or client makes sure that it communicates with an
   authorized entity.
 
-When you enable TLS for a database or CRDB, encryption is enforced on either all
+When you enable TLS for a database or Active-Active database, encryption is enforced on either all
 communications or only communications between clusters, and RS sends its certificate
-to clusters and clients for authentication to the database or CRDB. You can also
-configure a database or CRDB to require authentication with a certificate for traffic
+to clusters and clients for authentication to the database or Active-Active database. You can also
+configure a database or Active-Active database to require authentication with a certificate for traffic
 received from clusters or clients.
 
 Related topics:
@@ -37,24 +37,24 @@ clusters or clients.
 
 {{< embed-md "tls-configuration-procedure.md"  >}}
 
-## Authentication for CRDBs
+## Authentication for Active-Active Databases
 
-When you create a new CRDB, you can configure authentication for CRDB synchronization
-traffic only or for all communications, including CRDB synchronization traffic and
+When you create a new Active-Active database, you can configure authentication for Active-Active synchronization
+traffic only or for all communications, including Active-Active synchronization traffic and
 data traffic between the database and the clients.
 
 You can also specify that authentication is not enforced for traffic received from
 clusters and clients.
 
-Note: You cannot enable or disable TLS after the CRDB is created, but you can change
+Note: You cannot enable or disable TLS after the Active-Active database is created, but you can change
 the TLS configuration.
 
-### Configuring TLS for CRDB communication only
+### Configuring TLS for Active-Active communication only
 
-To enable TLS for CRDB communication only for a CRDB:
+To enable TLS for Active-Active communication only for an Active-Active database:
 
 1. In **databases**, click ![icon_add](/images/rs/icon_add.png#no-click "Add")
-    to create a new CRDB.
+    to create a new Active-Active database.
 1. In **configuration**, at the bottom of the page click **edit**.
 1. Enable **TLS**.
 
@@ -63,19 +63,19 @@ To enable TLS for CRDB communication only for a CRDB:
 Client authentication is enforced and the certificates for the participating clusters
 are used automatically.
 
-### Configuring TLS for CRDB and client communication
+### Configuring TLS for Active-Active and client communication
 
-To enable TLS for CRDB and client communication for a CRDB:
+To enable TLS for Active-Active and client communication for an Active-Active database:
 
 1. In **databases**, click ![icon_add](/images/rs/icon_add.png#no-click "Add")
-    to create a new CRDB.
+    to create a new Active-Active database.
 1. In **configuration**, at the bottom of the page click **edit**.
 1. Enable **TLS**.
 
     ![crdb-tls-config-enable](/images/rs/crdb-tls-config-enable.png "crdb-tls-config-enable")
 
-1. After you create the CRDB on all participating clusters, on the participating clusters
-    for which you want to require TLS for all communications, edit the CRDB instance and
+1. After you create the Active-Active database on all participating clusters, on the participating clusters
+    for which you want to require TLS for all communications, edit the Active-Active database instance and
     select **Require TLS for all communications**.
 
     ![crdb-tls-all](/images/rs/crdb-tls-all.png "crdb-tls-all")

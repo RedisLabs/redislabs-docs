@@ -1,5 +1,5 @@
 ---
-Title: Developing with Lists in a CRDB
+Title: Developing with Lists in an Active-Active Database
 description:
 weight: $weight
 alwaysopen: false
@@ -12,9 +12,9 @@ Lists can be used to easily implement queues (using LPUSH and RPOP, for
 example) and stacks (using LPUSH and LPOP, for
 example).
 
-Lists in CRDBs are just the same as regular Redis Lists. Please see the
-following examples to get familiar with Lists' behavior in a
-CRDB.
+Lists in Active-Active databases are just the same as regular Redis Lists. Please see the
+following examples to get familiar with Lists' behavior in an
+Active-Active database.
 
 Simple Lists
 example:
@@ -88,16 +88,16 @@ able to sync regarding the z removal so, from the point of view of each
 instance, z is located in the List and can be popped. After syncing,
 both lists are empty.
 
-Be aware of the behavior of Lists in CRDBs when using List as a stack
+Be aware of the behavior of Lists in Active-Active databases when using List as a stack
 or queue. As seen in the above example, two parallel RPOP operations
-performed by two different CRDB instances can get the same element in
-the case of a concurrent operation. Lists in CRDBs guarantee that each
+performed by two different Active-Active database instances can get the same element in
+the case of a concurrent operation. Lists in Active-Active databases guarantee that each
 element is POP-ed at least once, but cannot guarantee that each
 element is POP-ed only once. Such behavior should be taken into
-account when, for example, using Lists in CRDBs as building blocks for
+account when, for example, using Lists in Active-Active databases as building blocks for
 inter-process communication systems.
 
 In that case, if the same element cannot be handled twice by the
 applications, it's recommended that the POP operations be performed by
-one CRDB instance, whereas the PUSH operations can be performed by
-multiple CRDB instances.
+one Active-Active database instance, whereas the PUSH operations can be performed by
+multiple instances.

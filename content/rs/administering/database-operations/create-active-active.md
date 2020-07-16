@@ -6,19 +6,19 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/create-crdb/
 ---
-[Active-Active replicated databases]({{< relref "/rs/administering/active-active.md" >}}) (also known as CRDBs) give applications write access
+[Active-Active geo-replicated databases]({{< relref "/rs/administering/active-active.md" >}}) (formerly known as CRDBs) give applications write access
 to replicas of the data set in different geographical locations.
 
 The participating Redis Enterprise Software (RS) clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
-Every instance of a CRDB can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) conflict-free to all of the instances.
+Every instance of an Active-Active database can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) conflict-free to all of the instances.
 
 ## Steps to Create an Active-Active Database
 
 1. **Create a service account** - On each participating cluster, create a dedicated user account with the Admin role.
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
-1. **Create CRDB** - Connect to one of your clusters and create a new CRDB.
-1. **Add participating clusters** - Add the participating clusters to the CRDB with the user credentials for the service account.
-1. **Confirm CRDB Synchronization** - Test writing to one cluster and reading from a different cluster.
+1. **Create Active-Active database** - Connect to one of your clusters and create a new Active-Active database.
+1. **Add participating clusters** - Add the participating clusters to the Active-Active database with the user credentials for the service account.
+1. **Confirm Active-Active database Synchronization** - Test writing to one cluster and reading from a different cluster.
 
 ## Prerequisites
 
@@ -26,11 +26,11 @@ Every instance of a CRDB can receive write operations, and all operations are [s
 - Network connectivity and cluster FQDN name resolution between all participating clusters
 - [Network time service]({{< relref "/rs/administering/active-active.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 
-## Creating a CRDB
+## Creating an Active-Active database
 
 1. To create service accounts, on each participating cluster:
 
-    1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+    1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the Active-Active database.
         By default, the address is: `https://<RS_address>:8443`
     1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the name, email, and password for the user, select the **Admin** role, and click ![Save](/images/rs/icon_save.png#no-click "Save").
@@ -44,32 +44,32 @@ Every instance of a CRDB can receive write operations, and all operations are [s
     telnet <target FQDN> 9443
     ```
 
-1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the Active-Active database.
     By default, the address is: `https://<RS_address>:8443`
 
 1. In **databases**, click ![Add](/images/rs/icon_add.png#no-click "Add").
 
     If you do not have any databases on the node, you are prompted to create a database.
 
-1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create a CRDB on RAM.
+1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create an Active-Active database on RAM.
 
     If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
-    for the best performance during the initial CRDB sync of a new replica.
+    for the best performance during the initial Active-Active database sync of a new replica.
 
     ![new_geo-distributed](/images/rs/new_geo-distrbuted.png?width=600&height=608)
 
-1. Enter the name of the new CRDB and select from the options:
+1. Enter the name of the new Active-Active database and select from the options:
 
     {{< note >}}
 
-- The eviction policy can only be set to **noeviction** for CRDBs.
-- You cannot enable or disable database clustering after the CRDB is created.
+- The eviction policy can only be set to **noeviction** for Active-Active databases.
+- You cannot enable or disable database clustering after the Active-Active database is created.
 
     {{< /note >}}
 
-    - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all CRDB databases use replication for best intercluster synchronization performance.
-        When replication is enabled, every CRDB master shard is replicated to a corresponding slave shard. The slave shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
+    - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all Active-Active database use replication for best intercluster synchronization performance.
+        When replication is enabled, every Active-Active database master shard is replicated to a corresponding slave shard. The slave shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
         We also recommend that you enable [slave HA]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) to ensure that the slave shards are highly-available for this synchronization.
 
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
@@ -96,7 +96,7 @@ Every instance of a CRDB can receive write operations, and all operations are [s
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
-    - **Endpoint port number** (Required) - The port in the range 10000-19999 that clients must use to connect to the CRDB.
+    - **Endpoint port number** (Required) - The port in the range 10000-19999 that clients must use to connect to the Active-Active database.
 
     - In the **Database clustering** option, you can either:
 
@@ -108,28 +108,28 @@ Every instance of a CRDB can receive write operations, and all operations are [s
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
 
-    - **Eviction policy** - The eviction policy for CRDBs is `noeviction`.
+    - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
-        host CRDB instances and the admin user account to connect to each cluster.
+        host instances of an Active-Active database and the admin user account to connect to each cluster.
         1. In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
         1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn_or_ip_address>:9443`),
             enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    - **Causal Consistency** - Causal Consistency in a CRDB guarantees that the order of operations on a
-        specific key is maintained across all CRDB instances. To enable Causal Consistency for an existing
-        CRDB, use the REST API.
+    - **Causal Consistency** - Causal Consistency in an Active-Active database guarantees that the order of operations on a
+        specific key is maintained across all instances of an Active-Active database. To enable Causal Consistency for an existing
+        Active-Active database, use the REST API.
 
     - **TLS** - You can enable TLS for communications between
-        Participating Clusters. After you create the CRDB, you can enable SSL for the data
+        Participating Clusters. After you create the Active-Active database, you can enable SSL for the data
         access operations from applications just like regular Redis Enterprise databases.
 
         SSL for data access operations is a local setting on each
-        cluster that only impacts the specific CRDB instance you are editing and
-        does not apply automatically to all CRDB instances.
+        cluster that only impacts the specific instance of the Active-Active database you are editing and
+        does not apply automatically to all instances of an Active-Active database.
 
 <!-- Also in getting-started-crdbs.md -->
-## Test the Connection to your Member Redis CRDBs
+## Test the Connection to your Member Redis Active-Active databases
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
@@ -138,11 +138,11 @@ connectivity to your database:
 - Connect with redis-cli, the built-in command-line tool
 - Connect with a _Hello World_ application written in Python
 
-Remember we have two member CRDBs that are available for connections and
-concurrent reads and writes. The member CRDBs are using bi-directional
-replication to for the global CRDB.
+Remember we have two member Active-Active databases that are available for connections and
+concurrent reads and writes. The member Active-Active databases are using bi-directional
+replication to for the global Active-Active database.
 
-![crdb-diagram](/images/rs/crdb-diagram.png)
+![Active-Active-diagram](/images/rs/crdb-diagram.png)
 
 ### Connecting Using redis-cli {#connecting-using-rediscli}
 

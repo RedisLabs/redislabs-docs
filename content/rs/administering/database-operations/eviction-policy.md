@@ -27,8 +27,7 @@ It can span your database across RAM + Flash Memory and intelligently
 manage what data is hot and should be in RAM and what data is not and
 can be on Flash memory (SSD).
 
-Note: [Geo-Distributed
-CRDBs]({{< relref "/rs/administering/active-active.md" >}})
+Note: [Active-Active databases]({{< relref "/rs/administering/active-active.md" >}})
 always operate in noeviction mode.
 
 Warning: Some redis Modules do not fully support eviction or all
