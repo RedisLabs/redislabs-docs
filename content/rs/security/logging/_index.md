@@ -68,3 +68,11 @@ Below describes what the log rotation this configuration policy puts into effect
 {{< note >}}
 For large scale deployments, it may be nessesary to rotate logs at quicker intervals, such as hourly. This can be done through a cronjob or external vendor solutions.
 {{< /note >}}
+
+## Setting Log Timestamps
+
+Redis Enterprise allows you to configure log timestamps. To configure log timestamps:
+
+1. In **Settings** > **General** navigate to the timezone section.
+1. Select the timezone for the logs based on your location
+

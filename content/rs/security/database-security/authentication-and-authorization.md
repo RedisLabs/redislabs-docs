@@ -122,3 +122,6 @@ To disable the default user:
 {{< note >}}
 Redis Labs reccomends disabling the default user when using ACLs with your database and backwards compatibility is not required.
 {{< /note >}}
+
+![default](/images/rs/default-user.png#no-click "default")
+

@@ -59,15 +59,3 @@ If you must remove offline participating clusters, you can do this with forced r
 If a participating cluster that was removed forcefully returns attempts to re-join the cluster,
 it will have an out of date on Active-Active database membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
-
-## TLS authentication and encryption
-
-To prevent unauthorized access to your data, you can configure RS to secure communications with TLS protocol
-(the more secure successor to SSL).
-When you create Active-Active databases, you can specify TLS in two ways:
-
-1. [Require TLS for All Communications]({{< relref "/rs/administering/designing-production/security/tls-configuration#configuring-tls-for-replica-of-communication-only-on-the-source-database" >}}) -
-    This configures the Active-Active database to support TLS for both data access operations performed
-    on the database as well as inter-cluster Active-Active database communications.
-1. [Require TLS for CRDB Communications Only]({{< relref "/rs/administering/designing-production/security/tls-configuration#configuring-tls-for-all-communication-on-the-source-database" >}}) -
-    This configures the Active-Active database to support TLS for only inter-cluster Active-Active database communications.

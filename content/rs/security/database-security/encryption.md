@@ -117,12 +117,36 @@ To replace the syncer certificate use the rladmin command line utility:
 ```sh
  rladmin cluster certificate set syncer certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
 ```
+## Configuring TLS Protocols
+
+TLS protocols that impact the data path impact client to server communications and the discovery service.  
+
+Syntax: rladmin cluster config cluster config min_data_TLS_version <TLS_Version>
+TLS versions available:
+
+- For TLSv1 - 1
+- For TLSv1.1 - 1.1
+- For TLSv1.2 - 1.2
+
+{{< note >}}
+TLSv1.2 is generally recommended as the minimum TLS version for encrypted communications.
+{{< /note >}}
+
+For example:
+
+```sh
+rladmin cluster config min_data_TLS_version 1.2
+```
+
+For your changes to take effect on the discovery service, restart the service with the command:
+
+```sh
+supervisorctl restart sentinel_service
+```
+
 
 ## Client Side Encryption
 Client side encryption may be used to help encrypt data through its lifecycle. This comes with some limitations. Operations that must operate on the data, such as increments, comparisons, and searches will not function properly. Client side encryption is used to help protect data in use.
 
 You can write client side encryption logic directly in your own application or use functions built into clients such as the Java Lettuce cipher codec.
-
-
-
 
