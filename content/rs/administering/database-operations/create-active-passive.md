@@ -31,7 +31,7 @@ To configure a destination database as a Replica Of:
         1. Go to **databases**.
         1. Click on the database and go to **configuration**.
         1. Click **Edit**.
-1. Select **Replica of** to show the ![icon_add](/images/rs/icon_add.png#no-click "Add") icon.
+1. Select **Replica Of** to show the ![icon_add](/images/rs/icon_add.png#no-click "Add") icon.
 1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to show the box for the source database endpoint.
 1. Enter the URL of the source database endpoint:
 
@@ -51,7 +51,7 @@ The order of the Replica Of sources has no impact on replication.
     - For a source database in a different RS cluster:
         1. Log in to the Web UI of the cluster that hosts the source database.
         1. In **databases**, click on the database and go to **configuration**.
-        1. Under **Endpoint**, click on **Get Replica of source URL**.
+        1. Under **Endpoint**, click on **Get Replica Of source URL**.
 
             ![Replica Of source URL](/images/rs/replicaof-source-url.png)
 

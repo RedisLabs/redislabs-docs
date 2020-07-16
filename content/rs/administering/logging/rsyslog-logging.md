@@ -348,5 +348,5 @@ false,"time":1434365471,"disk":705667072,"type":
 | Throughput is lower than RPS (requests per second) | low_throughput | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
 | Latency is higher than msec | high_latency | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
 | Periodic backup has been delayed for longer than minutes | backup_delayed | bdb | alert | true: warning</br>false: info | Has threshold parameter in the data: section of the log entry. |
-| Replica of ­database unable to sync with source | syncer_connection_error</br>syncer_general_error | bdb | alert | error</br>error |
-| Replica of ­ sync lag is higher than seconds | high_syncer_lag | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
+| Replica Of ­database unable to sync with source | syncer_connection_error</br>syncer_general_error | bdb | alert | error</br>error |
+| Replica Of sync lag is higher than seconds | high_syncer_lag | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
