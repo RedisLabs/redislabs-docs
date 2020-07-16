@@ -1,5 +1,5 @@
 ---
-Title: Create an Active-Active Geo-Replicated Database (CRDB)
+Title: Create an Active-Active Geo-Replicated Database
 description:
 weight: $weight
 alwaysopen: false
@@ -7,10 +7,10 @@ categories: ["RS"]
 aliases: /rs/administering/database-operations/create-crdb/
 ---
 [Active-Active geo-replicated databases]({{< relref "/rs/administering/active-active.md" >}}) (formerly known as CRDBs) give applications write access
-to replicas of the data set in different geographical locations.
+to replicas of the dataset in different geographical locations.
 
 The participating Redis Enterprise Software (RS) clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
-Every instance of an Active-Active database can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) conflict-free to all of the instances.
+Every instance of an Active-Active database can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication.md#example-of-synchronization" >}}) to all of the instances without conflict.
 
 ## Steps to Create an Active-Active Database
 
@@ -116,12 +116,13 @@ Every instance of an Active-Active database can receive write operations, and al
         1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn_or_ip_address>:9443`),
             enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
-    - **Causal Consistency** - Causal Consistency in an Active-Active database guarantees that the order of operations on a
-        specific key is maintained across all instances of an Active-Active database. To enable Causal Consistency for an existing
-        Active-Active database, use the REST API.
+    - **[Causal Consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}})** -
+        Causal Consistency in an Active-Active database guarantees that the order of operations
+        on a specific key is maintained across all instances of an Active-Active database.
+        To enable Causal Consistency for an existing Active-Active database, use the REST API.
 
-    - **TLS** - You can enable TLS for communications between
-        Participating Clusters. After you create the Active-Active database, you can enable SSL for the data
+    - **TLS** - You can enable TLS for communications between Participating Clusters.
+        After you create the Active-Active database, you can enable SSL for the data
         access operations from applications just like regular Redis Enterprise databases.
 
         SSL for data access operations is a local setting on each
