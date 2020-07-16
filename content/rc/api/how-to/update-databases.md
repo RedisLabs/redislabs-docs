@@ -16,7 +16,7 @@ This API operation follows the same [provisioning lifecycle]({{< relref "/rc/api
 
 The primary component of a database update request is the JSON request body that contains the details of the requested database changes.
 
-The complete set of JSON elements accepted by the database update API operation can be viewed in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) (use the "Model" display as described in the article [Using the API - Inputs for operations in Swagger ]({{< relref "/rc/api/how-to/using-curl.md/#inputs-for-operations-in-swagger" >}}) )
+The complete set of JSON elements accepted by the database update API operation can be viewed in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) (use the "Model" display as described in the article [Using the API - Inputs for operations in Swagger ]({{< relref "/rc/api/how-to/using-curl.md#inputs-for-operations-in-swagger" >}}) )
 
 Following are several examples of database updates JSON requests. 
 
