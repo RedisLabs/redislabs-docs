@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 When you enable [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) for your database,
-RS replicates your data to a slave node to make sure that your data is highly available.
+Redis Enterprise Software (RS) replicates your data to a slave node to make sure that your data is highly available.
 If the slave node fails or if the master node fails and the slave is promoted to master,
 the remaining master node is a single point of failure.
 
@@ -115,6 +115,6 @@ rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
 
 The following alerts are sent during slave HA activation:
 
-- Shard migration begins after the grace period
-- Shard migration fails because there is no available node (Sent hourly)
-- Shard migration is delayed because of the cooldown period
+- Shard migration begins after the grace period.
+- Shard migration fails because there is no available node (Sent hourly).
+- Shard migration is delayed because of the cooldown period.
