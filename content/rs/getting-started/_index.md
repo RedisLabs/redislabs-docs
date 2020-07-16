@@ -1,13 +1,13 @@
 ---
-Title: Getting Started with Redis Enterprise Software (RS)
+title: Getting Started with Redis Enterprise Software
 description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/getting-started/quick-setup/
 ---
-In this quick setup guide, we take you through the steps to install RS on a Linux host to test its capabilities.
-The steps to set up a Redis Enterprise Software (RS) cluster with a single node are super simple and go as follows:
+In this quick setup guide, we take you through the steps to install Redis Enterprise Software (RS) on a Linux host to test its capabilities.
+The steps to set up a RS cluster with a single node are super simple and go as follows:
 
 - Step 1: Install Redis Enterprise Software
 - Step 2: Set up a Redis Enterprise Software cluster

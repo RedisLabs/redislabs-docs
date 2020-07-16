@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-You can use Redis OSS Cluster API along with other RS high availability
+You can use Redis OSS Cluster API along with other Redis Enterprise Software (RS) high availability
 to get high performance with low latency
 and let applications stay current with cluster topology changes, including add node, remove node, and node failover.
 

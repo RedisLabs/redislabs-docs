@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 You can import [export]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
 or [backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}})
-files of a specific database to restore data.
+files of a specific Redis Enterprise Software (RS) database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a sharded database.
 

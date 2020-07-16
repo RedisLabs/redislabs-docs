@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-The cluster key (or license) enables features and capacity within Redis Enterprise Software.
+The cluster key (or license) enables features and capacity within Redis Enterprise Software (RS).
 You can add or update a cluster key at any time in a cluster lifecycle.
 When the cluster does not have a cluster key, the cluster is in trial mode.
 

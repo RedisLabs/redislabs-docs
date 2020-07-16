@@ -69,5 +69,5 @@ follows:
 
 ## Compatibility with Open Source Redis Cluster
 
-Redis Enterprise Software (RS) supports [Redis OSS cluster
+RS supports [Redis OSS cluster
 protocol]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) if it is enabled for a database.

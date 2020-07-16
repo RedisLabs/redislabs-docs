@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To prevent unauthorized access to your data, RS databases support the TLS protocol
+To prevent unauthorized access to your data, Redis Enterprise Software (RS) databases support the TLS protocol
 (the more secure successor to SSL) that includes:
 
 - Encryption - Makes sure that the traffic can only be read by the sender and

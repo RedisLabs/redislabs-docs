@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When a cluster fails,
+When a Redis Enterprise Software (RS) cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
 {{< note >}}

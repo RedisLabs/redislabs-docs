@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 Rack-zone awareness is a Redis Enterprise feature that helps to ensure high-availability in the event of a rack or zone failure.
 
-When you enable rack-zone awareness in a cluster, you assign
+When you enable rack-zone awareness in a Redis Enterprise Software (RS) cluster, you assign
 a rack-zone ID to each node. This ID is used to map the node to a
 physical rack or logical zone. The cluster can then ensure that master shards, corresponding slave shards, and associated endpoints are placed on nodes in different racks/zones.
 

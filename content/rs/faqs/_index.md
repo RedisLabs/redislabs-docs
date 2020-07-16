@@ -5,7 +5,7 @@ weight: 70
 alwaysopen: false
 categories: ["RS"]
 ---
-Here are some frequently asked questions about Redis Enterprise Software.
+Here are some frequently asked questions about Redis Enterprise Software (RS).
 
 ## Features and Terminology
 
@@ -48,12 +48,12 @@ cluster with full capabilities, you must purchase a [subscription
 cluster key from Redis Labs](https://redislabs.com/pricing).
 {{% /expand %}}
 
-{{< expand "What are the Redis Enterprise Software (RS) payment schedule and terms?" >}}
+{{< expand "What are the RS payment schedule and terms?" >}}
 Contact us at <sales@redislabs.com> to learn about RS pricing.
 {{< /expand>}}
 
 {{< expand "What client can I use to connect to the databases in Redis Enterprise Software?" >}}
-Redis Enterprise Software (RS) works with any standard Redis client.
+RS works with any standard Redis client.
 Use your existing Redis client and code, as they work directly against a
 RS cluster. You point your existing standard Redis client and code
 connection string at the RS cluster, then scale on the RS cluster as

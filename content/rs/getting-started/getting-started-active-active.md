@@ -11,7 +11,7 @@ In this guide, we'll set up an Active-Active database, also known as CRDB (Confl
 Replicated DataBase) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
-- Step 1: Run two RS Docker containers
+- Step 1: Run two Redis Enterprise Software (RS) Docker containers
 - Step 2: Set up each container as a cluster
 - Step 3: Create a new Redis Enterprise CRDB
 - Step 4: Test connectivity to the CRDB

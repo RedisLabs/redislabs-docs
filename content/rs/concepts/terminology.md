@@ -1,11 +1,11 @@
 ---
-Title: Terminology in Redis Enterprise Software (RS)
+title: Terminology in Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Here are explanations of some of the terms used in RS.
+Here are explanations of some of the terms used in Redis Enterprise Software (RS).
 
 ## Node
 

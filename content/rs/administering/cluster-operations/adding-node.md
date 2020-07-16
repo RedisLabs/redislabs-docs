@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When you install RS on the first node of a cluster, you create the new cluster.
+When you install Redis Enterprise Software (RS) on the first node of a cluster, you create the new cluster.
 After you install the first node, you can add more nodes to the cluster.
 
 ## Prerequisites
@@ -24,7 +24,7 @@ After you install the first node, you can add more nodes to the cluster.
 
 ## Adding a node to an existing Cluster
 
-To add a node in Redis Enterprise Software (RS):
+To add a node in RS:
 
 1. [Install the RS installation package]({{< relref
     "/rs/installing-upgrading/_index.md" >}}) on a clean installation
