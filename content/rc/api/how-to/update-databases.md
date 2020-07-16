@@ -9,24 +9,23 @@ aliases: /rv/api/how-to/update-databases/
 
 The API operation that updates an existing database is: `PUT /subscriptions/{subscription-id}/databases/{database-id}`
 
-This API operation follows the same [provisioning lifecycle]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}) principles demonstrated in the article "[create and manage databases]({{< relref "/rc/api/how-to/create-and-manage-databases.md" >}})".
-
+This API operation uses the same [provisioning lifecycle]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}) as the [create and manage databases]({{< relref "/rc/api/how-to/create-and-manage-databases.md" >}}) operation.
 
 ## Database update request JSON body
 
 The primary component of a database update request is the JSON request body that contains the details of the requested database changes.
 
-The complete set of JSON elements accepted by the database update API operation can be viewed in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) (use the "Model" display as described in the article [Using the API - Inputs for operations in Swagger ]({{< relref "/rc/api/how-to/using-curl.md#inputs-for-operations-in-swagger" >}}) )
+You can see [the complete set of JSON elements]({{< relref "/rc/api/how-to/using-curl.md#inputs-for-operations-in-swagger" >}}) accepted by the database update API operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
 
-Following are several examples of database updates JSON requests. 
+Here are several examples of JSON requests to update a database:
 
-### Add / remove ReplicaOf
+### Add or Remove Replica Of
 
-Setting one or more source Redis databases will cause the updated database to be a replica of the specified Redis databases.
+Setting one or more source Redis databases configures the updated database as a Replica Of destination database for the specified Redis databases.
 
 #### Add a source database
 
-The following update database JSON request specifies two source databases for the updated database:
+The following JSON request specifies two source databases for the updated database:
 
 ```json
 {
@@ -37,21 +36,20 @@ The following update database JSON request specifies two source databases for th
 }
 ```
 
-* The `replicaOf` array contains one or more URIs with the format: `redis://user:password@host:port`
-* If the URI provided is a Redis Labs Cloud instance, only host and port should be provided (exmaple: `["redis://endpoint1:6379', "redis://endpoint2:6380"]`)
+- The `replicaOf` array contains one or more URIs with the format: `redis://user:password@host:port`
+- If the URI provided is a Redis Labs Cloud instance, only provide the host and port (example: `["redis://endpoint1:6379', "redis://endpoint2:6380"]`)
 
 {{< warning >}}
-If a source database is already defined for a specific database, and the goal is to add an additional source database, both source databases URIs (existing source and new additional source) must be included in the database updates JSON request. 
+If a source database is already defined for a specific database, and the goal is to add an additional source database, the source databases URI for the existing source must be included in the database updates JSON request.
 {{< /warning >}}
-
 
 #### Remove a source database
 
-You can remove a source database from the `replicaOf` list by simply issuing an update database JSON request that does not include the specific source database URI.
+To remove a source database from the `replicaOf` list, submit a JSON request that does not include the specific source database URI.
 
 ##### Example:
 
-* Given a database that has two defined source databases:
+Given a database that has two defined source databases:
 
 ```json
 {
@@ -62,7 +60,7 @@ You can remove a source database from the `replicaOf` list by simply issuing an 
 }
 ```
 
-* The folllowing update database JSON request will remove one of the two source databases:
+- You can use this JSON request to remove one of the two source databases:
 
 ```json
 {
@@ -72,11 +70,10 @@ You can remove a source database from the `replicaOf` list by simply issuing an 
 }
 ```
 
-* The following update database JSON request will remove all source databases:
+- You can use this JSON request to remove all source databases:
 
 ```json
 {
   "replicaOf": []
 }
 ```
-
