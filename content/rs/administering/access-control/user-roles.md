@@ -8,7 +8,7 @@ categories: ["RS"]
 Role-Based Access Control (RBAC) lets you scale your Redis deployments while simplifying the complexity of managing a cluster with many databases, users, and access control lists.
 With RBAC, you can create a role and apply it to many users to define their access to multiple databases in the cluster.
 
-In **access control** > **roles**, you can configure RS user roles with:
+In **access control** > **roles**, you can configure Redis Enterprise Software (RS) user roles with:
 
 - **Management roles** that define user access to the RS web UI and API for the cluster
 - **Data access control** with Redis ACLs that define the commands and keys that users can access in database connections

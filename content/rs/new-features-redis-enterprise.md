@@ -6,8 +6,8 @@ alwaysopen: false
 draft: true
 categories: ["RS"]
 ---
-Below are detailed a few of the major features of this release of Redis
-Enterprise Software along with bug fixes and patches.
+Below are detailed a few of the major features of this release of Redis Enterprise Software (RS)
+along with bug fixes and patches.
 
 ## Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-databases-crdb}
 
@@ -35,7 +35,7 @@ Enterprise is known for.
 
 ### Redis Labs Modules
 
-Redis Labs developed and certified these modules for use with Redis Enterprise Software (RS):
+Redis Labs developed and certified these modules for use with RS:
 
 - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom

@@ -1,5 +1,5 @@
 ---
-Title: Developing Applications with Geo-Distributed CRDBs on Redis Enterprise Software (RS)
+title: Developing Applications with Geo-Distributed CRDBs on Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
@@ -11,7 +11,7 @@ conditions between updates to various sites, network, and cluster
 failures that could reorder the events and change the outcome of the
 updates performed across geo-distributed writes.
 
-CRDBs are geo-distributed databases that span multiple RS clusters.
+CRDBs are geo-distributed databases that span multiple Redis Enterprise Software (RS) clusters.
 CRDBs depend on multi-master replication (MMR) and Conflict-free
 Replicated Data Types (CRDTs) to power a simple development experience
 for geo-distributed applications. CRDBs allow developers to use existing

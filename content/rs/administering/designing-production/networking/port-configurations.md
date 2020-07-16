@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To make sure that RS servers can pass necessary communications between them,
+To make sure that Redis Enterprise Software (RS) servers can pass necessary communications between them,
 we recommend that all RS servers have all of the ports listed here open
 between them.
 

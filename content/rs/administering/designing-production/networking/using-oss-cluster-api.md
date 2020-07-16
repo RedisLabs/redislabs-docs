@@ -21,7 +21,7 @@ To verify that your database meets this requirement, make sure that the `CLUSTER
 
 ## Enabling OSS Cluster API Support from the Web UI
 
-To configure an RS database to use the OSS Cluster API from the Web UI:
+To configure an Redis Enterprise Software (RS) database to use the OSS Cluster API from the Web UI:
 
 1. Go to: **databases**
 1. Either:

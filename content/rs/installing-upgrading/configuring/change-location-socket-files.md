@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/change-location-socket-files/
 ---
-There are two default locations for the socket files:
+There are two default locations for the socket files in Redis Enterprise Software (RS):
 
 - `/tmp` - In clean installations of RS version lower than 5.2.2
 - `/var/opt/redislabs/run` - In clean installations of RS version 5.2.2 and higher

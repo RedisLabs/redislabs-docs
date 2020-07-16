@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When you need to do hardware or operating system maintenance on a server that hosts an RS node,
+When you need to do hardware or operating system maintenance on a server that hosts an Redis Enterprise Software (RS) node,
 it is important that you move all of the shards on that node to another node to protect the data.
 You can use maintenance mode to handle this process simply and efficiently.
 

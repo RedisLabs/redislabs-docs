@@ -1,5 +1,5 @@
 ---
-Title: Viewing cluster metrics on Redis Enterprise Software (RS)
+title: Viewing cluster metrics on Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false

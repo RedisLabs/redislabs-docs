@@ -9,7 +9,7 @@ aliases: /rs/administering/intercluster-replication/replica-of/
 [Active-Passive replicated databases]({{< relref "/rs/administering/active-passive.md" >}}) (also known as Replica Of) give applications read-only access
 to replicas of the data that are hosted in different geographical locations.
 
-The source database can be located in the same cluster, in a different cluster, or in an OSS Redis database.
+The source database can be located in the same Redis Enterprise Software (RS) cluster, in a different cluster, or in an OSS Redis database.
 Your applications can connect to the source database to read and write data, or to the source or destination databases to read data.
 
 Replica Of can replicate:

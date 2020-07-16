@@ -1,11 +1,11 @@
 ---
-Title: Memory Management with Redis Enterprise Software (RS)
+title: Memory Management with Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-RS manages node memory so that data is entirely in RAM for improved database performance.
+Redis Enterprise Software (RS) manages node memory so that data is entirely in RAM for improved database performance.
 RS is designed to handle memory management to optimize database performance - better than OS memory management.
 If not enough RAM is available, RS prevents adding more data into the databases.
 

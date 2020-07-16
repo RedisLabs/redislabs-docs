@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can change the configuration of a Redis Enterprise Software database at any time.
+You can change the configuration of a Redis Enterprise Software (RS) database at any time.
 
 To edit the configuration of a database:
 

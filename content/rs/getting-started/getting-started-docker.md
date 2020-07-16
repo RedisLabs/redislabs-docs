@@ -11,7 +11,7 @@ aliases:
     - /rs/getting-started/docker/
 categories: ["RS"]
 ---
-For testing purposes, you can run Redis Enterprise Software on Docker containers on
+For testing purposes, you can run Redis Enterprise Software (RS) on Docker containers on
 [Linux, Windows, or MacOS]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
 The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/redis/)
 represents a node in an RS Cluster. When deploying RS using Docker, there are a couple
