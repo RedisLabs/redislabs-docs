@@ -241,11 +241,11 @@ The value is a keyword with the values:
 | Value | Description |
 | ----- | ----------- |
 | disabled | Data is not persisted (default) |
-| AofEverySecond | Data is synced to disk every second |
-| AofAlways | Data is synced to disk with every write. |
-| SnapshotEveryHour | A snapshot of the database is created every hour |
-| SnapshotEvery6Hour | A snapshot of the database is created every 6 hours. |
-| SnapshotEvery12Hour | A snapshot of the database is created every 12 hours. |
+| aofEverySecond | Data is synced to disk every second |
+| aofAlways | Data is synced to disk with every write. |
+| snapshotEvery1Hour | A snapshot of the database is created every hour |
+| snapshotEvery6Hour | A snapshot of the database is created every 6 hours. |
+| snapshotEvery12Hour | A snapshot of the database is created every 12 hours. |
 
 ### `rackAware`
 
