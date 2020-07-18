@@ -42,7 +42,7 @@ You must configure [VPC Peering]({{< relref "/rc/administration/setup/edit-subsc
 between the VPC that this database is on and the VPC that the destination database is on.
         {{< /note >}}
 
-    - [**Access Control & Security**]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}}) - You can:
+    - **Access Control & Security**
         - Enable the **Default User** for the database.
             We recommend that you use a complex password and not leave the password blank.
         - Specify the **Source IP/Subnet** addresses that your database receives

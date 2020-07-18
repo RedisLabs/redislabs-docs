@@ -1,7 +1,7 @@
 ---
 Title: Redis Cloud Security Shared Responsibility Model
 description:
-weight: 30
+weight: 11
 alwaysopen: false
 categories: ["RC"]
 ---

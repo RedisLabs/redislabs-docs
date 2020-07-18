@@ -1,12 +1,11 @@
 ---
-Title: Redis Cloud Authentication and Authorization
+Title: Authentication and Authorization
 description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
 ---
 
-# Redis Cloud Authentication and Authorization
-Disabling the Default User
-Creating Users
-Managing Roles
+## Password Security
+
+## Role-Based Access Control

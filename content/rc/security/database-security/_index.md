@@ -1,7 +1,7 @@
 ---
-Title: Redis Cloud Database Security
+Title: Securing Redis Databases
 description:
-weight: 30
+weight: 13
 alwaysopen: false
 categories: ["RC"]
 ---

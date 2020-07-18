@@ -1,9 +1,21 @@
 ---
-Title: Redis Cloud Admin Console Security
+Title: Securing the Admin Console
 description:
-weight: 30
+weight: 12
 alwaysopen: false
 categories: ["RC"]
 ---
 
-# Redis Cloud Security
+The Redis Cloud admin console provides several security features
+
+
+Teams
+
+Multi-Factor authentication
+
+## Password Security
+Password must be between 8 and 128 characters, with at least one uppercase letter (A-Z), one lowercase letter (a-z), one number (0-9), and one special character (!, @, #, $, %, ^, &, *, (, ), _, +, -, “, ’, <, =, >, \, -, :, ; /, ?, [, ], {, }, `, ~, |)
+
+(length >= 8) && (length <= 128) && password.match(/[a-z]/g) &&
+  password.match(/[A-Z]/g) && password.match(/[0-9]/g) &&
+  password.match(/[!@#$%^&*()\_\+\-\"\' ,.<=>\-:;/?\\\[\]\{|\}`~]/g);

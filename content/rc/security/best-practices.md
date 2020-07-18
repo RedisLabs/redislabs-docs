@@ -1,7 +1,7 @@
 ---
 Title: Cloud Security Best Practices
 description:
-weight: 30
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
