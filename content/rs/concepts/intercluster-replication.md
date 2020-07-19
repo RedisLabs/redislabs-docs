@@ -1,5 +1,5 @@
 ---
-Title: Geo-Distributed Active-Active Redis Applications (formerly known as CRDB)
+Title: Geo-Distributed Active-Active Redis Applications
 description:
 weight: $weight
 alwaysopen: false
@@ -11,7 +11,7 @@ of events under geo-failovers and cross-region write conflicts. Active-Active da
 simplify developing such applications by directly using built-in smarts
 for handling conflicting writes based on the data type in use. Instead
 of depending on just simplistic "last-writer-wins" type conflict
-resolution, geo-distributed Active-Active databases combines techniques defined in CRDT
+resolution, geo-distributed Active-Active databases (formerly known as CRDBs) combines techniques defined in CRDT
 (conflict-free replicated data types) research with Redis types to
 provide smart and automatic conflict resolution based on the data types
 intent.

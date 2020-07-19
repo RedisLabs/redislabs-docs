@@ -1,5 +1,5 @@
 ---
-title: Developing Applications with Active-Active Databases (formerly known as CRDB)
+title: Developing Applications with Active-Active Databases
 description:
 weight: $weight
 alwaysopen: false
@@ -11,7 +11,7 @@ conditions between updates to various sites, network, and cluster
 failures that could reorder the events and change the outcome of the
 updates performed across geo-distributed writes.
 
-Active-Active databases are geo-distributed databases that span multiple Redis Enterprise Software (RS) clusters.
+Active-Active databases (formerly known as CRDB) are geo-distributed databases that span multiple Redis Enterprise Software (RS) clusters.
 Active-Active databases depend on multi-master replication (MMR) and Conflict-free
 Replicated Data Types (CRDTs) to power a simple development experience
 for geo-distributed applications. Active-Active databases allow developers to use existing
