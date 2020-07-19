@@ -5,14 +5,14 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In this guide, we'll set up a [CRDB]({{< relref "/rs/administering/active-active.md" >}})
-(conflict-free replicated database) deployment with Active-Active replication
+In this guide, we'll set up an [Active-Active database]({{< relref "/rs/administering/active-active.md" >}})
+(formerly known as CRDB) deployment with Active-Active replication
 spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator
 and OpenShift Route.
 
 ## Overview
 
-A CRDB deployment requires connectivity between different Kubernetes clusters.
+An Active-Active deployment requires connectivity between different Kubernetes clusters.
 A router is the most common way to allow such external access. A [router]
 (https://docs.openshift.com/container-platform/3.5/architecture/core_concepts/routes.html#architecture-core-concepts-routes)
 is configured to accept requests external to the cluster and proxy them into the
@@ -28,28 +28,28 @@ The default router in OpenShift is HAProxy, which is a free, very fast and relia
 offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
 
 The Redis Enterprise Operator uses the routes mechanism to expose 2 inter-cluster services:
-the Redis Enterprise Cluster API service and the DB service that exposes the CRDB.
-Both services are used during the creation and management of a CRDB deployment.
+the Redis Enterprise Cluster API service and the DB service that exposes the Active-Active database.
+Both services are used during the creation and management of an Active-Active deployment.
 The routes are configured with TLS passthrough.
 
 **Note**: Routes should have unique hostnames across a Kubernetes cluster.
 
-## Steps for creating a CRDB deployment with Service Broker
+## Steps for creating an Active-Active deployment with Service Broker
 
-Before you create a CRDB deployment with Service Broker, you must create a cluster
+Before you create an Active-Active deployment with Service Broker, you must create a cluster
 using the REC custom resource, with a Service Broker deployment as covered in
 [Getting Started with Kubernetes and Openshift]({{< relref "/platforms/openshift/_index.md" >}}), while noting the following:
 
 1. Make sure you use the latest versions of the deployment files available on GitHub.
-1. Deploy nodes with at least 6GB of RAM in order to accommodate the CRDB plan's 5GB database size.
+1. Deploy nodes with at least 6GB of RAM in order to accommodate the Active-Active database plan's 5GB database size.
 1. Make sure you follow the instructions to deploy the Redis Enterprise Service Broker.
 
-The peerClusters section in the spec is used for creating a CRDB with the Service Broker.
+The peerClusters section in the spec is used for creating an Active-Active with the Service Broker.
 
 Note: This is only relevant for OpenShift deployments, which support Service Brokers natively.
 
 Copy this section of the REC spec and modify it for your environment. To apply it
-to every cluster that will participate in the CRDB deployment, edit the cluster yaml file
+to every cluster that will participate in the Active-Active database deployment, edit the cluster yaml file
 and apply it using `kubectl apply -f <cluster.yaml>`:
 
 ```yaml
@@ -72,7 +72,7 @@ and apply it using `kubectl apply -f <cluster.yaml>`:
 This block is added to the Service Broker config map when the REC spec changes, and
 it triggers a restart of the Service Broker pod to pass the peer clusters configuration
 to the service broker. Once the Service Broker pod restarts, you can select the
-CRDB plan from the OS service catalog UI.
+Active-Active database plan from the OS service catalog UI.
 
 The elements of the section are:
 
@@ -149,7 +149,7 @@ then select **Add to Project > Browse Catalog**.
 
 	![openshift-crdb-plan]( /images/rs/openshift-crdb-plan.png )
 
-1. Then, to deploy a CRDB database on the clusters you’ve previously configured,
+1. Then, to deploy an Active-Active database on the clusters you’ve previously configured,
 select the **geo-distributed-redis** plan radio button and click **Next**.
 
 	![openshift-crdb-configuration]( /images/rs/openshift-crdb-configuration.png )
@@ -159,7 +159,7 @@ and click **Create**.
 
 	![openshift-crdb-binding]( /images/rs/openshift-crdb-binding.png )
 
-The CRDB connected databases are now created with the specified binding, if you selected a binding.
+The Active-Active database connected databases are now created with the specified binding, if you selected a binding.
 
 ![openshift-crdb-results]( /images/rs/openshift-crdb-results.png )
 
@@ -167,7 +167,7 @@ You can view the binding by following the link to the secret.
 
 ![openshift-crdb-secret]( /images/rs/openshift-crdb-secret.png )
 
-## Validating CRDB Deployment
+## Validating Active-Active database Deployment
 
 To do a basic validation test of database replication:
 
