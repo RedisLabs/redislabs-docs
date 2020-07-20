@@ -1,7 +1,8 @@
 ---
-Title: Getting Started for 4.x and the OperatorHub
+Title: Getting Started with the OperatorHub on OpenShift 4.x
 description: OpenShift 4.x provides the OperatorHub where you can install the
- Redis Enterprise Operator from the administrator user interface.
+ Redis Enterprise Operator from the administrator user interface. Alternatively,
+ can install the operator and cluster with the CLI.
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
