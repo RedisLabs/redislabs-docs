@@ -91,8 +91,8 @@ Every instance of a CRDB can receive write operations, and all operations are [s
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [role]({{ relref "/rs/administering/access-control/user-roles.md" }}) that you want to have access to the database.
-        1. Select the [ACL]({{ relref "/rs/administering/access-control/user-roles.md#database-access-control" }}) that you want the role to have in the database.
+        1. Select the [roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
+        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles.md#database-access-control" >}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
