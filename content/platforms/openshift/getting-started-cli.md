@@ -1,6 +1,7 @@
 ---
-Title: Getting Started for 3.x and CLI tools
-description:
+Title: Getting Started with the CLI tools
+description: The operator and cluster can be installed via CLI tools
+  OpenShift 3.x or 4.x.
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
