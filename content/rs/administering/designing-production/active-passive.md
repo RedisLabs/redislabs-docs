@@ -18,7 +18,7 @@ synchronize the database, either within Redis Enterprise or external to Redis En
 
 You can create Active-Active databases on Redis Enterprise Software or Redis Cloud.
 
-[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/active-active.md" >}})
+[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/designing-production/active-active.md" >}})
 provides these benefits and also provides write access to all of the database replicas.
 
 {{< warning >}}

@@ -31,7 +31,7 @@ Before configuring an Active-Active database, you must:
 - Setup [RS clusters]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) for each Active-Active database instance.
 
     All clusters must have the same RS version.
-- Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) for connections to the cluster.
+- Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.
 
     Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) for inter-cluster communications,
     but are compatible with local application connections.

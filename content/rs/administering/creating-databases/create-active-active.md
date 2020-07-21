@@ -24,7 +24,11 @@ Every instance of an Active-Active database can receive write operations, and al
 
 - Two or more machines with the same version of RS installed
 - Network connectivity and cluster FQDN name resolution between all participating clusters
+<<<<<<< HEAD:content/rs/administering/database-operations/create-active-active.md
 - [Network time service]({{< relref "/rs/administering/active-active#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
+=======
+- [Network time service]({{< relref "/rs/administering/designing-production/active-active.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
+>>>>>>> Co-locating creating database articles; move Replication articles to designing-production:content/rs/administering/creating-databases/create-active-active.md
 
 ## Creating an Active-Active database
 

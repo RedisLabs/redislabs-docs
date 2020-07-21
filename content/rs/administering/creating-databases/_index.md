@@ -5,7 +5,7 @@ weight: 30
 alwaysopen: false
 categories: ["RS"]
 db_type: database
-aliases: /rs/administering/creating-database.md
+aliases: /rs/administering/creating-databases/_index.md
 ---
 You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
 These databases can use Redis Enterprise features like:
@@ -20,7 +20,7 @@ and the memory available on the machine.
 
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
-[create an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
+[create an Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
 {{< /note >}}
 
 ## Creating a New Redis Database
@@ -142,7 +142,7 @@ after the database is created.
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-- [**Replica Of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
+- [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
 - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
