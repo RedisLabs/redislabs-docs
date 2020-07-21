@@ -11,7 +11,7 @@ database.
 
 To test client connectivity:
 
-1. [Create a Redis database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) and get the database endpoint, which
+1. [Create a Redis database]({{< relref "/rs/administering/creating-database.md" >}}) and get the database endpoint, which
     contains the cluster name (FQDN).
 1. Try to connect to the database endpoint from your client of choice,
     and execute commands against the database.

@@ -116,9 +116,9 @@ To install RS without answering the installation questions, either:
     RS is now installed on the node.
     Repeat this process for each node in the cluster.
 
-1. [Create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
-    or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an existing RS cluster.
-1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
+1. [Create a database]({{< relref "/rs/administering/creating-database.md" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}) database.
 

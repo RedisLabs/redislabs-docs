@@ -26,7 +26,7 @@ When you add, remove, or edit Replica Of sources, the data is re-replicated from
 To configure a destination database as a Replica Of:
 
 1. Open the database settings:
-    1. For a new database, [create the database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) with its settings.
+    1. For a new database, [create the database]({{< relref "/rs/administering/creating-database.md" >}}) with its settings.
     1. For an existing database:
         1. Go to **databases**.
         1. Click on the database and go to **configuration**.

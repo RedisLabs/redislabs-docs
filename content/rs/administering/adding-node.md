@@ -1,9 +1,10 @@
 ---
-Title: Adding a Node to an Existing Cluster
+Title: Adding a Cluster Node
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/cluster-operations/adding-node/
 ---
 When you install Redis Enterprise Software (RS) on the first node of a cluster, you create the new cluster.
 After you install the first node, you can add more nodes to the cluster.
