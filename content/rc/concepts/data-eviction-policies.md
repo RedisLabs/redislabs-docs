@@ -25,5 +25,5 @@ RoF can span your database across RAM and Flash Memory
 and intelligently manage hot data in RAM and cold data in Flash memory (SSD).
 
 {{< note >}}
-[Active-Active Geo-Distributed CRDBs]({{< relref "/rs/administering/active-active.md" >}}) always operates in noeviction mode.
+[Active-Active Geo-Distributed CRDBs]({{< relref "/rs/administering/designing-production/active-active.md" >}}) always operates in noeviction mode.
 {{< /note >}}
