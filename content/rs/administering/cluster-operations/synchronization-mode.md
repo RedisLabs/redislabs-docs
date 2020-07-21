@@ -1,5 +1,5 @@
 ---
-Title: Centralized and Distributed Synchronization for Replicated Databases
+Title: Distributed Synchronization for Replicated Databases
 description:
 weight: $weight
 alwaysopen: false
