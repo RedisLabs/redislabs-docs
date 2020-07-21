@@ -1,10 +1,15 @@
 ---
+<<<<<<< HEAD:content/rs/administering/database-operations/creating-database.md
 title: Creating a Redis Enterprise Software Database
+=======
+Title: Creating a Redis Enterprise Software Database
+>>>>>>> Rearrange administration section:content/rs/administering/creating-database.md
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 db_type: database
+aliases: /rs/administering/creating-database.md
 ---
 You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
 These databases can use Redis Enterprise features like:

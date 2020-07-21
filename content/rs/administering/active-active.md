@@ -25,10 +25,15 @@ You can create Active-Active databases on Redis Enterprise Software (RS) or Redi
 Active-Active databases are based on multi-master replication that is configured to run on each database.
 An Active-Active database is made up of instances of the data that are each stored on an RS cluster.
 
+<<<<<<< HEAD
 Before configuring an Active-Active database, you must:
 
 - If the Active-Active database spans a WAN, establish a VPN between each networks that hosts a cluster with an instance.
 - Setup [RS clusters]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) for each Active-Active database instance.
+=======
+- If the CRDB spans a WAN, establish a VPN between each networks that hosts a cluster with a CDRB instance.
+- Setup [RS clusters]({{< relref "/rs/administering/new-cluster-setup.md" >}}) for each CRDB instance.
+>>>>>>> Rearrange administration section
 
     All clusters must have the same RS version.
 - Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.

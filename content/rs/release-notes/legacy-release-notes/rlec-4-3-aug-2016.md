@@ -48,7 +48,7 @@ upgrade to this version.
 - Added the ability to allow the user to configure how machine IP
     addresses are used in Node Configuration setup in the management UI.
     For additional details, refer to [Initial setup - creating a new
-    cluster.]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
+    cluster.]({{< relref "/rs/administering/new-cluster-setup.md" >}})
 - Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
     SSL]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}}).

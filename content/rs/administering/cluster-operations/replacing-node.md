@@ -1,5 +1,5 @@
 ---
-Title: Replacing a node
+Title: Replacing a Faulty Cluster Node
 description:
 weight: $weight
 alwaysopen: false
@@ -23,7 +23,7 @@ failure](/images/rs/node-failure.png?width=600&height=152)
     make sure the required flash storage is set up on this new node.
 
 1. Add a new node, as described in [adding a new node to a
-    cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
+    cluster]({{< relref "/rs/administering/adding-node.md" >}}).
 1. Make sure the new node has as much available memory as the faulty
     node.
 1. A message appears, informing you that the cluster has a faulty node

@@ -325,7 +325,7 @@ Changing the admin password can cause unextpected results in your K8s deployment
 
     ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
 
-1. Continue with the [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+1. Continue with the [instructions to create your database]({{< relref "/rs/administering/creating-database.md" >}}).
 
 {{< note >}}
 To conduct the Ping test through Telnet, you can create a new route to the new database port as described above for the UI port. After you create your database, go to the Openshift management console, select your project name, and go to `Applications > Services`. Two new services are shown that represent the database along with their IP and port information, similar to the screenshot below.

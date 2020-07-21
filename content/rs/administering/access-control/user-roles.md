@@ -77,7 +77,7 @@ To define database access control, you can either:
 
 - Use the predefined user roles and add to them Redis ACLs for specific databases.
 - Create new user roles and select the management roles and Redis ACLs that apply to the user roles for specific databases.
-- Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+- Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rs/administering/creating-database.md" >}}).
 
 ### Configuring Redis ACLs
 
