@@ -251,7 +251,7 @@ the operator. The generated password is stored in a Kubernetes secret.
 
 ### Step 2: Create your database
 
-Continue with the [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}). After you create a database, the operator discovers the database and
+Continue with the [instructions to create your database]({{< relref "/rs/administering/creating-database.md" >}}). After you create a database, the operator discovers the database and
 creates additional Kubernetes services for application workload access to the
 database.
 
