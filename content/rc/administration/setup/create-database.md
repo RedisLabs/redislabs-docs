@@ -33,7 +33,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
     - **OSS Cluster API** - You can:
         - Enable [OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}})
             to expose the cluster topology to your application.
-        - Select **Use external endpoint** to let clients connect to the OSS cluster API throught the external endpoint.
+        - Select **Use external endpoint** to let clients connect to the OSS cluster API through the external endpoint.
     - **Replica Of** - You can enable [Replica Of]({{< relref "/rs/administering/active-passive.md" >}})
         and select the endpoint of a database to hold a copy of the data.
 

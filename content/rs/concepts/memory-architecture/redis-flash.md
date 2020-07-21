@@ -144,7 +144,7 @@ prerequisites:
 Once these requirements are met, both Redis of Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
-database]({{< relref "/rs/administering/creating-database.md" >}}).
+database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
 When Redis on Flash is enabled, additional settings and
 [metrics]({{< relref "/rs/administering/monitoring-metrics/console-metrics-definitions.md#redis-on-flash-metrics" >}})

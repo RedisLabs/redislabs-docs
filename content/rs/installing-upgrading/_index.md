@@ -118,9 +118,9 @@ To install RS without answering the installation questions, either:
 
 1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
     or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
-1. [Create a database]({{< relref "/rs/administering/creating-database.md" >}}).
+1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}) database.
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
 ### Custom installation directories
 

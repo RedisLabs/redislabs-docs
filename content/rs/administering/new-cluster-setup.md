@@ -84,7 +84,7 @@ UI appears.
 
 You can now access any of the management capabilities. To create a
 database, refer to [Creating a new
-database]({{< relref "/rs/administering/creating-database.md" >}}),
+database]({{< relref "/rs/administering/creating-databases/_index.md" >}}),
 or add another node to this cluster, refer to [Joining a new node to a
 cluster]({{< relref "/rs/administering/adding-node.md" >}}).
 
