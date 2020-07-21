@@ -1,5 +1,5 @@
 ---
-Title: Cluster Maintenance Operations
+Title: Cluster Maintenance
 description:
 weight: $weight
 alwaysopen: false
