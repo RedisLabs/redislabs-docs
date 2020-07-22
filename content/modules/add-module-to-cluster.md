@@ -45,7 +45,7 @@ To deploy an upgraded package:
 
     ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
-## Upgrading the Module for the Database
+## Upgrading Modules for the Database
 
 {{< note >}}
 After you upgrade the module for a database, the database shards are restarted.
@@ -70,7 +70,7 @@ To upgrade a module that is installed on a cluster:
 
     ![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
 
-1. To upgrade the module for the database, run:
+1. To upgrade modules for the database, run:
 
     ```sh
     rladmin upgrade db <database_name> and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
@@ -79,6 +79,7 @@ To upgrade a module that is installed on a cluster:
     - If you want to remove the existing module arguments, enter `module_args ""` without arguments.
     - If you want to use the existing module arguments, enter `module_args keep_args`
     - If you want to update multiple modules, use the `and module` parameter for each module.
+    - If you want to upgrade the database to use the latest version of Redis and the latest version of the modules used by the database, use the `latest_with_modules` parameter.
 
 ## Examples
 
@@ -96,8 +97,13 @@ Here are some examples of module upgrades:
     rladmin upgrade db <database_name> and module db_name MyDB module_name bf version 20201 module_args ""
     ```
 
-- To upgrade RedisJSON to 1.0.4 and keep existing arguments and RedisBloom to version 2.2.1 and remove arguments:
+- To upgrade RedisJSON to 1.0.4 with the existing arguments, and upgrade RedisBloom to version 2.2.1 and remove arguments:
 
     ```sh
     rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args keep_args and module db_name MyDB module_name bf version 20201 module_args ""
     ```
+
+- To upgrade the database to use the latest version of Redis and to use the latest version of the modules that are  by the database:
+
+    ```sh
+    
