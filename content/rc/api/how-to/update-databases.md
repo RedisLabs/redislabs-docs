@@ -79,6 +79,6 @@ Given a database that has two defined source databases:
 }
 ```
 
-#### Viewing database ReplicaOf information
+#### Viewing database Replica Of information
 
-The API operation `GET /subscriptions/{subscription-id}/databases/{database-id}` returns information on a specific database, including the ReplicaOf endpoints defined for the specific database.
+The API operation `GET /subscriptions/{subscription-id}/databases/{database-id}` returns information on a specific database, including the Replica Of endpoints defined for the specific database.

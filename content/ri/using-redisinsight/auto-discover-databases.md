@@ -4,7 +4,7 @@ weight: 10
 categories: ["RI"]
 path: auto-discover-databases/
 ---
-RedisInsight lets you automatically add Redis Enterprise Software and Redis Enterprise Cloud databases.
+RedisInsight lets you automatically add Redis Enterprise Software (RS) and Redis Enterprise Cloud databases.
 
 {{< note >}}
 For auto-discovery, Redis Enterprise Cloud databases must be in a Pro subscription.
@@ -12,7 +12,7 @@ For auto-discovery, Redis Enterprise Cloud databases must be in a Pro subscripti
 
 ## Auto-discovery for Redis Enterprise Software
 
-To automatically discover and add Redis Enterprise Software (RS) databases to RedisInsight:
+To automatically discover and add RS databases to RedisInsight:
 
 1. In RedisInsight, click **ADD REDIS DATABASE**.
 

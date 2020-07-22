@@ -27,8 +27,8 @@ page
 
 ### CRDBs
 
-- The ability to add and remove Participating Clusters from a CRDB
-- Communications between Participating Clusters can be encrypted using
+- The ability to add and remove participating clusters from a CRDB
+- Communications between participating clusters can be encrypted using
     SSL/TLS
 - Imports can be done to an existing database without flushing the
     existing data beforehand.

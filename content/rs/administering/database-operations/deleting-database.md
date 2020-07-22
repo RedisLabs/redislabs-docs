@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To delete a database in Redis Enterprise Software (RS):
+To delete a database in Redis Enterprise Software:
 
 1. Click the relevant database row in the **Databases** page. The
     selected database page appears.

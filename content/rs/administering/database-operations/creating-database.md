@@ -141,7 +141,7 @@ after the database is created.
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-- [**Replica of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
+- [**Replica Of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
 - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -

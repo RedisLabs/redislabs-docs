@@ -1,11 +1,11 @@
 ---
-Title: ReplicaOf Repeatedly Fails
+Title: Replica Of Repeatedly Fails
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-There might be instances in which the Replica of process repeatedly
+There might be instances in which the Replica Of process repeatedly
 fails and restarts itself on Redis Enterprise Software (RS). This can
 result from the Redis "client-output-buffer-limit" setting on the source
 database being configured to a relatively small value, which causes the

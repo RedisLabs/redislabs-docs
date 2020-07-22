@@ -31,7 +31,7 @@ redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 
 ## Flushing Data from an Active-Active Database
 
-When you flush an Active-Active (CRDB) database, all of the replicas flush their data at the same time.
+When you flush an Active-Active database (formerly known as CRDB), all of the replicas flush their data at the same time.
 
 To flush data from an Active-Active database:
 

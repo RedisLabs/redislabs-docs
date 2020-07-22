@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 You can manually [export your data]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
-from a specific database at any time.
+from a specific Redis Enterprise Software (RS) database at any time.
 You can also schedule backups of your databases to make sure you always have valid backups.
 The backup process can be scheduled for every 1, 4, 12 or 24 hours from the time that you save the backup configuration.
 

@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/file-locations/
 ---
-To make sure that Redis Enterprise Software (RS) functions properly, make sure that you handle the files in the application directories with care.
+To make sure that Redis Enterprise Software functions properly, make sure that you handle the files in the application directories with care.
 
 ## Application Directories
 
