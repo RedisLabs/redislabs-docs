@@ -28,7 +28,7 @@ Cluster Management not only gives you a representation of your cluster but also 
 
 ## Compatibility {#cluster-management-compatibility}
 
-RedisInsight Cluster Management capabilities are available with [OSS Redis Clusters](https://redis.io/topics/cluster-tutorial) and Redis Enterprise Software who have [OSS Cluster API]({{< relref "rs/concepts/data-access/oss-cluster-api.md" >}}) enabled. 
+RedisInsight Cluster Management capabilities are available for [OSS Redis Clusters](https://redis.io/topics/cluster-tutorial) and for Redis Enterprise Software clusters that have the [OSS Cluster API]({{< relref "rs/concepts/data-access/oss-cluster-api.md" >}}) enabled. 
 
 For more about working with the OSS Cluster API on Redis Enterprise Software, see [Using the OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}).
 
