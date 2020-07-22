@@ -9,7 +9,8 @@ aliases: /rv/administration/configure/backups/
         /rv/administration/configuration/backups/
 ---
 You can run scheduled and on-demand backups of your Redis Cloud databases
-to a remote storage location. Scheduled backups run every 24 hours.
+to a remote storage location. In Redis Cloud Essentials, a scheduled backups run every 24 hours;
+in Redis Cloud Pro, you can choose the backup interval and time.
 
 {{< note >}}
 Backups are only available for paid subscriptions.
