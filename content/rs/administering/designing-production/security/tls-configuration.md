@@ -22,8 +22,7 @@ received from clusters or clients.
 Related topics:
 
 - You can use the REST API to [update the server TLS certificates and TLS protocol version]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-- To encrypt Replica Of synchronization traffic, you must also [configure encryption
-  for the destination database]({{< relref "/rs/administering/active-passive.md#encryption" >}}).
+- To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/database-operations/create-active-passive.md#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
 
 ## Authentication for Databases
 
