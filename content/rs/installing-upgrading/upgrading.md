@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/
 ---
-To upgrade the Redis Enterprise Software (RS) software on a cluster,
+To upgrade the Redis Enterprise Software (RS) on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{< warning >}}
