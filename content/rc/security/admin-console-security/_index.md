@@ -1,5 +1,5 @@
 ---
-Title: Securing the Admin Console
+Title: Cloud Admin Console Security
 description:
 weight: 12
 alwaysopen: false

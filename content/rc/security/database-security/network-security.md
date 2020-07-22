@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-Redis Cloud supports two categories of network security: [IP Restrictions](#ip-and-subnet-restructions) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as indicated in the table below:
+Redis Cloud supports two types of network security: [IP Restrictions](#ip-and-subnet-restructions) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as indicated in the table below:
 
 <table>
 <tbody>
