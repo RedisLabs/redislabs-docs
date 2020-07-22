@@ -8,7 +8,7 @@ categories: ["RS"]
 To avoid problems with internal cluster communications that can impact your data integrity,
 make sure that the clocks on all of the cluster nodes are synchronized using Chrony and/or NTP.
 
-When you install Redis Enterprise Software (RS),
+When you install Redis Enterprise Software,
 the install script checks if Chrony or NTP is running.
 If they are not, the installation process asks for permission to configure a scheduled Cron job.
 This should make sure that the node's clock is always synchronized.
@@ -22,6 +22,6 @@ For example, in Ubuntu, the following command can be used to synchronize a serve
 sudo /etc/network/if-up.d/ntpdate
 ```
 
-If you are using [geo-distributed Active-Active databases]({{< relref "/rs/concepts/intercluster-replication.md" >}}),
+If you are using [Active-Active databases]({{< relref "/rs/concepts/intercluster-replication.md" >}}),
 you must use [Network Time Service (ntpd)]({{< relref "/rs/administering/active-active.md#network-time-service-ntp-or-chrony" >}})
 to synchronize OS clocks consistent across clusters to handle conflict resolution according to the OS time.

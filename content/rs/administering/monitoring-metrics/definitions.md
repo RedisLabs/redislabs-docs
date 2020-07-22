@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise Software (RS) includes many useful metrics give you
+Redis Enterprise Software includes many useful metrics give you
 a detailed picture of what is going on in the cluster, node, database,
 and shard. For Redis on Flash (ROF) databases, additional metrics are
 available.

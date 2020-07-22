@@ -1,12 +1,12 @@
 ---
-Title: Exporting Data from Redis Enterprise
+Title: Exporting Data
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 You can [schedule backups]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
-of a specific database to make sure you always have valid backups.
+of a specific Redis Enterprise Software (RS) database to make sure you always have valid backups.
 You can also export the data from a specific database at any time.
 
 You can export a database to these locations:

@@ -121,7 +121,7 @@ Every instance of an Active-Active database can receive write operations, and al
         on a specific key is maintained across all instances of an Active-Active database.
         To enable Causal Consistency for an existing Active-Active database, use the REST API.
 
-    - **TLS** - You can enable TLS for communications between Participating Clusters.
+    - **TLS** - You can enable TLS for communications between participating clusters.
         After you create the Active-Active database, you can enable SSL for the data
         access operations from applications just like regular Redis Enterprise databases.
 

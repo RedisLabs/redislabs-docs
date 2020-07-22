@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 Developing globally distributed applications can be challenging, as
 developers have to think about race conditions and complex combinations
-of events under geo-failovers and cross-region write conflicts. Active-Active databases
+of events under geo-failovers and cross-region write conflicts. In Redis Enterprise Software (RS), Active-Active databases
 simplify developing such applications by directly using built-in smarts
 for handling conflicting writes based on the data type in use. Instead
 of depending on just simplistic "last-writer-wins" type conflict

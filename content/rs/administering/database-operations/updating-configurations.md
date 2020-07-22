@@ -22,7 +22,7 @@ For [Active-Active database instances](#updating-crdb-configuration), most datab
 
 ## Editing Active-Active Database Configuration
 
-An Active-Active database (formerly known as CRDB) is a global database that spans multiple Redis Enterprise clusters.
+An Active-Active database (formerly known as CRDB) is a database that spans multiple Redis Enterprise clusters.
 The clusters that host instances of the Active-Active database are called participating clusters.
 When you create an Active-Active database you must specify the participating clusters that host the Active-Active database instances.
 
@@ -42,7 +42,7 @@ You can change the global configuration of the Active-Active database from the c
 
 You can add and remove participating clusters of an Active-Active database to change the Active-Active topology.
 Use the participating clusters list to manage the changes to Active-Active topology in the UI.
-You can make multiple changes at once to the Participating Cluster list.
+You can make multiple changes at once to the list of participating clusters.
 The changes you make to the list are committed when the database configuration is saved.
 
 ![pasted-image-0-1](/images/rs/pasted-image-0-1.png?width=1534&height=233)

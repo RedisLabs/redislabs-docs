@@ -27,7 +27,7 @@ An Active-Active database is made up of instances of the data that are each stor
 
 Before configuring an Active-Active database, you must:
 
-- If the Active-Active database spans a WAN, establish a VPN between each networks that hosts a cluster with a CDRB instance.
+- If the Active-Active database spans a WAN, establish a VPN between each networks that hosts a cluster with an instance.
 - Setup [RS clusters]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) for each Active-Active database instance.
 
     All clusters must have the same RS version.
@@ -40,7 +40,7 @@ Before configuring an Active-Active database, you must:
 
 ## Active-Active Database Current Limitations
 
-1. RS is limited to five Participating Clusters or instances in an Active-Active database.
+1. RS is limited to five participating clusters or instances in an Active-Active database.
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database you must create a new Active-Active database and migrate the data.
 1. Active-Active databases do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 1. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
