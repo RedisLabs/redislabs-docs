@@ -44,7 +44,7 @@ replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 
-For a quick overview of ReplicaOf capabilities watch this quick video.
+For a quick overview of Replica Of capabilities watch this quick video.
 
 {{< youtube AG-XGn7BQkQ >}}
 
@@ -129,7 +129,7 @@ stop:
 
 ## Encryption
 
-ReplicaOf supports the ability to encrypt uni-directional replication
+Replica Of supports the ability to encrypt uni-directional replication
 communications between source and destination clusters utilizing TLS 1.2
 based encryption.
 

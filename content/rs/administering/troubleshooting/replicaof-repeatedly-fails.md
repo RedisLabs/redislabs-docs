@@ -1,5 +1,5 @@
 ---
-Title: ReplicaOf Repeatedly Fails
+Title: Replica Of Repeatedly Fails
 description:
 weight: $weight
 alwaysopen: false

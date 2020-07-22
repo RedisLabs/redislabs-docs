@@ -37,4 +37,4 @@ RediSearch Enterprise, which is installed with Redis Enterprise Software by defa
 ## Known Limitations
 
 - When updating the general settings of a cluster, the ‘username’ and ‘password’ fields in the email server settings cannot be left empty. In case one wants to update the general settings and prefer to leave the ‘username’ and ‘password’ fields empty, the REST API should be used.
-- An issue prevents the user from defining ‘min_data_TLS_version’ on the source cluster when working with ReplicaOf or CRDB.
+- An issue prevents the user from defining ‘min_data_TLS_version’ on the source cluster when working with Replica Of or CRDB.
