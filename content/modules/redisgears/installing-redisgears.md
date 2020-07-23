@@ -32,7 +32,7 @@ On each node in the Redis Enterprise cluster:
 {{< note >}}
 - `<version>` - The version number in the format `x.y.z`.
 - `<version_integer>` - The version number in integer format `xxyyzz` or you can calculate it as `10000*x + 100*y + z`.
-- You must also run these commands on new nodes before that need to join an existing cluster.
+- You must also run these commands on new nodes before you join them to an existing cluster.
 {{< /note >}}
 
 ### Step 2: Install the RedisGears module
