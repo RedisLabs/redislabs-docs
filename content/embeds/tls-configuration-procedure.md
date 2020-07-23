@@ -1,4 +1,4 @@
-To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/database-operations/create-active-passive.md#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
+To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/database-operations/create-active-passive#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
 
 ### Configuring encryption for only Replica Of communication on the source database
 
