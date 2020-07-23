@@ -215,7 +215,7 @@ rules:
     verbs: ["list", "get", "watch"]
 ```
 
-and can be applied by:
+and it can be applied by:
 
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rack_awareness/rack_aware_cluster_role.yaml
@@ -238,13 +238,13 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-and can be applied by:
+and it can be applied by:
 
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rack_awareness/rack_aware_cluster_role_binding.yaml
 ```
 
-One both the cluster role and the binding have been applied, you can configure Redis Enterprise clusters to use rack awareness labels.
+When both the cluster role and the binding are applied, you can configure Redis Enterprise clusters to use rack awareness labels.
 
 ### Configuring rack awareness
 
