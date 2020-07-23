@@ -31,7 +31,7 @@ spec:
   redisEnterpriseImageSpec:
     imagePullPolicy: IfNotPresent
     repository: redislabs/redis
-    versionTag: 5.4.14-31.rhel7-openshift
+    versionTag: 6.0.6-39.rhel7-openshift
 ```
 
 This example may be useful to get started with a test or development deployment.
@@ -91,7 +91,7 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
 
         ```yaml
         limits:
-          cpu: “4000m”
+          cpu: "4000m"
           memory: 4Gi
         ```
 
@@ -105,7 +105,7 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
 
         ```yaml
         requests:
-          cpu: “4000m”
+          cpu: "4000m"
           memory: 4Gi
         ```
 
@@ -130,7 +130,7 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
     ```yaml
     imagePullPolicy: IfNotPresent
     Repository: redislabs/redis
-    versionTag: 5.2.10-22
+    versionTag: 6.0.6-39
     ```
 
     The version tag is as it appears on your repository, such as in [DockerHub](https://hub.docker.com/r/redislabs/redis/).
