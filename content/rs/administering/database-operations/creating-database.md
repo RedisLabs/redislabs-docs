@@ -103,13 +103,13 @@ If you are creating a Memcached database, enter a username and password for SASL
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
     - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles.md#database-access-control" >}}) that apply to those connections.
+        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that apply to those connections.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
         1. Select the [role]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
-        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles.md#database-access-control" >}}) that you want the role to have in the database.
+        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -128,8 +128,8 @@ after the database is created.
         [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
 
-        You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#standard-hashing-policy" >}})
-        or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#custom-hashing-policy" >}})
+        You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering#standard-hashing-policy" >}})
+        or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}})
         to define where keys are located in the clustered database.
 
     - Clear the **Database clustering** option to use only one shard so that you

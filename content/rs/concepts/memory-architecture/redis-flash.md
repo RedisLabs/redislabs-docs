@@ -131,7 +131,7 @@ prerequisites:
 - Have ephemeral and persistent flash memory mounted on Redis
     Enterprise Software nodes with the proper disk size, per the [Redis
     on Flash memory
-    guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements.md#production-environment-hardware-requirements" >}}).
+    guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements#production-environment-hardware-requirements" >}}).
 - Have all [hardware
     requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
     in place.
@@ -147,5 +147,5 @@ additional details, refer to [Creating a new
 database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
 
 When Redis on Flash is enabled, additional settings and
-[metrics]({{< relref "/rs/administering/monitoring-metrics/definitions.md#redis-on-flash-metrics" >}})
+[metrics]({{< relref "/rs/administering/monitoring-metrics/definitions#redis-on-flash-metrics" >}})
 are available in the system.

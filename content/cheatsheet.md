@@ -43,12 +43,12 @@ To link to an anchor on another page in the content directory:
 Syntax:
 
 ```md
-`[Sign up for Redis Cloud]({{</* relref "/rc/rc-quickstart.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
+`[Sign up for Redis Cloud]({{</* relref "/rc/rc-quickstart#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
 ```
 
 Output:
 
-[Sign up for Redis Cloud]({{< relref "/rc/rc-quickstart.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
+[Sign up for Redis Cloud]({{< relref "/rc/rc-quickstart#step-1-sign-up-for-redis-cloud-pro-account" >}})
 
 ### Text formatting
 

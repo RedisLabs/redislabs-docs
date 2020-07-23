@@ -15,7 +15,7 @@ with a [backup path](/rv/administration/configuration/backups/).
 This parameter enables periodic and on-demand backup operations for the specified database.
 
 The API operation for on-demand backups is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
-On-demand database backup is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
+On-demand database backup is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}})".
 
 ### Prerequisites for backups
 
@@ -37,7 +37,7 @@ Instead, the `periodicBackupPath` must be set to a valid path with available sto
 ## Import a Database
 
 You can import data into an existing database from multiple storage sources, including AWS S3, Redis, FTP.
-Database import is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
+Database import is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}})".
 
 The API operation for performing on-demand backup is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/import`.
 

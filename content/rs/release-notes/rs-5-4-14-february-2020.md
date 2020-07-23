@@ -16,10 +16,10 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 - Version [5.0.7](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES) of OSS Redis is merged into RS 5.4.14.
 - The following GA releases of Redis Modules are bundled in RS 5.4.14:
-    - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version 2.2.1 (updated, [release notes]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md#redisbloom-2-2-1)" >}}))
-    - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version 2.0.1 (updated, [release notes]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md#redisgraph-2-0-ga-2-0-1)" >}}))
+    - [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version 2.2.1 (updated, [release notes]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md#redisbloom-221-january-2020)" >}}))
+    - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version 2.0.1 (updated, [release notes]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md#redisgraph-20-ga-201---january-2020)" >}}))
     - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version 1.0.4 (update, [release notes]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}}))
-    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/redisearch-1.4-release-notes.md#redisearch-1-4-25" >}}))
+    - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/redisearch-1.4-release-notes.md#redisearch-1425-march-2020" >}}))
     - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version 1.2.3 (updated, [release notes]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}))
 
 ## Additional Capabilities
@@ -84,7 +84,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
     that improve its compatibility with open source Redis.
     Now the string data-type in Active-Active Redis (CRDB) is implicitly and dynamically typed, just like open source Redis.
     To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower,
-    you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading.md#upgrading-crdbs" >}}).
+    you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
 - Before you upgrade a database with RediSearch Module to Redis 5.0,
     you must [upgrade the RediSearch Module]({{< relref "/modules/add-module-to-cluster.md" >}}) to version 1.4.2 or above.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above
