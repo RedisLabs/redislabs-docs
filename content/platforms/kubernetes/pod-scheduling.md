@@ -197,6 +197,57 @@ ip-10-0-x-c.eu-central-1.compute.internal    eu-central-1b
 ip-10-0-x-d.eu-central-1.compute.internal    eu-central-1b
 ```
 
+### Enabling the cluster role
+
+For the operator to read the cluster node information you must setup a cluster role for the operator and then bind it to the service account.
+
+The cluster role is:
+
+```yaml
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: redis-enterprise-operator
+rules:
+  # needed for rack awareness
+  - apiGroups: [""]
+    resources: ["nodes"]
+    verbs: ["list", "get", "watch"]
+```
+
+and can be applied by:
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rack_awareness/rack_aware_cluster_role.yaml
+```
+
+The binding is typically to the `redis-enterprise-operator` service account:
+
+```yaml
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: redis-enterprise-operator
+subjects:
+- kind: ServiceAccount
+  namespace: NAMESPACE_OF_SERVICE_ACCOUNT
+  name: redis-enterprise-operator
+roleRef:
+  kind: ClusterRole
+  name: redis-enterprise-operator
+  apiGroup: rbac.authorization.k8s.io
+```
+
+and can be applied by:
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rack_awareness/rack_aware_cluster_role_binding.yaml
+```
+
+One both the cluster role and the binding have been applied, you can configure Redis Enterprise clusters to use rack awareness labels.
+
+### Configuring rack awareness
+
 You can configure the node label to read for the rack zone by setting the `rackAwarenessNodeLabel` property:
 
 ```yaml
