@@ -20,20 +20,23 @@ On each node in the Redis Enterprise cluster:
 
 1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module - Dependencies Package from the Redis Enterprise Software section of the Downloads page.
 1. Copy the dependencies package to a node in your cluster.
-1. Run these commands as root:
 
-    ```sh
-    # source /etc/opt/redislabs/redislabs_env_config.sh
-    # mkdir -p $modulesdatadir/rg/<version_integer>/deps/
-    # tar -xvf /<path>/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<version_integer>/deps
-    # chown -R $osuser $modulesdatadir/rg
-    ```
+1. Save and Run this script as root:
+cat install_rg_dependencies.sh
+if [[ $# -eq 0 ]] ; then
+    echo 'Please pass the RedisGears Module Dependencies Package with absolute path'
+    exit 1
+fi
 
-{{< note >}}
-- `<version>` - The version number in the format `x.y.z`.
-- `<version_integer>` - The version number in integer format `xxyyzz` or you can calculate it as `10000*x + 100*y + z`.
-- You must also run these commands on new nodes before you join them to an existing cluster.
-{{< /note >}}
+x=$(echo $1 | egrep -o '.{5,9}$' | cut -c 1)
+y=$(echo $1 | egrep -o '.{5,9}$' | cut -c 3)
+z=$(echo $1 | egrep -o '.{5,9}$' | cut -c 5)
+let version_integer="10000*$x + 100*$y + $z"
+
+source /etc/opt/redislabs/redislabs_env_config.sh
+mkdir -p $modulesdatadir/rg/$version_integer/deps/
+tar -xvf $1 -C $modulesdatadir/rg/$version_integer/deps
+chown -R $osuser $modulesdatadir/rg
 
 ### Step 2: Install the RedisGears module
 
