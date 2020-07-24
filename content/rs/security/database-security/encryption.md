@@ -12,11 +12,10 @@ To prevent unauthorized access to your data, Redis Enterprise databases support 
 1. Authentication - The server makes sure that it communicates with an authorized entity.
 
 ## Client certificate authentication
-**Certificate authentication is availible for:**
+**Certificate authentication is available for:**
 
 1. Client to server communications - traffic from your Redis client to your database.
-1. Replication and synchronization traffic - When you configure ReplicaOf for a database, synchronization traffic flows between the primary instance of the database and the replica instance of the database. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
-
+1. Replication and synchronization traffic - When you configure `Replica Of` for a database, synchronization traffic flows between the primary instance of the database and the replica instance of the database. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
 
 **To configure TLS Authentication:**
 
@@ -31,12 +30,11 @@ To prevent unauthorized access to your data, Redis Enterprise databases support 
     ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
 
 1. Select if you would like authentication enforced. By deselecting this option you enforce encryption without authentication.
-1. Enter the certificates authorized to authenticate. 
+1. Enter the certificates authorized to authenticate.
 1. Copy the syncer certificate from the cluster settings tab. The syncer certificate is used to facilitate encrypted replication and synchronization traffic.
 1. Click Add  ![Add](/images/rs/icon_add.png#no-click "Add") to configure certificates.
 1. Paste the syncer certificate into the certificate box.
-        ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png
-        "Database TLS Configuration")
+        ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
 1. Save the certificates. ![icon_save](/images/rs/icon_save.png#no-click "Save")
 1. Repeat for any client certificates you would like to be able to authenticate to your database.
 
@@ -47,9 +45,9 @@ Note: There are two considerations for replication authentication you should be 
 2. When using CRDB, the syncer certificate for each cluster must be configured on the database.
 {{< /note >}}
 
-## Certificate Authentication for CRDBs
+## Certificate Authentication for Active-Active Databases
 
-When you create a new CRDB, you can configure authentication for CRDB traffic using the same proccess for as replication traffic. 
+When you create a new CRDB, you can configure authentication for traffic between active-active databases using the same process for as replication traffic.
 {{< note >}}
 You cannot enable or disable TLS after the CRDB is created, but you can change
 the TLS configuration.
@@ -74,7 +72,7 @@ data traffic between the database and the clients.
 ## Installing your own certificates
 Redis Enterprise Software uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 
-If using a self-signed certificate is not the right solution for you, you can import a CA signed certificate to Redis Enterprise. 
+If using a self-signed certificate is not the right solution for you, you can import a certificate signed by a certificate authority of your choice.
 
 The certificates that help facilitate encrypted traffic to the database and within the cluster are the syncer certificate and the proxy certificate.
 
@@ -84,7 +82,6 @@ The certificates that help facilitate encrypted traffic to the database and with
 {{< warning >}}
 When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
 {{< /warning >}}
-
 
 **Step 1:** Create a private key
 
@@ -98,7 +95,7 @@ openssl req -new -key <key-file-name>.pem -out <key-file-name>.csr
 ```
 
 {{< note >}}
-You will be prompted for a Country Name, State or Province Name, Locality Name, Organization Name, Organizational Unit and Common Name. You will need to check with your security team or certificate authority on the right values for your organization. The database fqdn is typically used as the common name for the certificate. 
+You will be prompted for a Country Name, State or Province Name, Locality Name, Organization Name, Organizational Unit and Common Name. You will need to check with your security team or certificate authority on the right values for your organization. The database fqdn is typically used as the common name for the certificate.
 {{< /note >}}
 
 **Step 3:** Sign the private using your certificate authority
@@ -149,4 +146,3 @@ supervisorctl restart sentinel_service
 Client side encryption may be used to help encrypt data through its lifecycle. This comes with some limitations. Operations that must operate on the data, such as increments, comparisons, and searches will not function properly. Client side encryption is used to help protect data in use.
 
 You can write client side encryption logic directly in your own application or use functions built into clients such as the Java Lettuce cipher codec.
-

@@ -9,7 +9,7 @@ categories: ["RS"]
 ## Deployment Architecture
 
 ### Network Security
-Redis Enterprise is a database software and strongly reccomended to be deployed within a trusted network. Redis Enterprise ports should not be accessible to the public internet. Redis Enterprise should be deployed inside a VPC, VNET or generally behind a firewall that restricts access from the outside world. 
+Redis Enterprise Software (RS) is a database. As such, we strongly recommend that you deployed it on a trusted network. RS database ports should not be accessible to the public internet. Redis Enterprise should be deployed inside a VPC, VNET or generally behind a firewall that restricts access from the outside world. 
 
 ### Deploy an odd number of 3 or more nodes
 Redis is an available and partition tolerant database. We recommend that Redis Enterprise be deployed in a cluster of an odd number of 3 or more nodes so that you are able to successfully failover in the event of a failure.
@@ -20,9 +20,9 @@ We recognize that our customers will frequently maintain reboot schedules. There
 
 
 ## Anti-virus Exclusions
-To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy. 
+To ensure that anti-virus solutions that scan files or intercept processes to protect memory do not interfere with Redis Enterprise software, customers should ensure that anti-virus exclusions are implemented across all nodes in their Redis Enterprise cluster in a consistent policy.
 
-If you are replacing your existing antivirus solution or installing/supporting Redis Enterprise, please ensure the below paths are excluded.  For antivirus solutions that intercept processes, binary files may have to be excluded directly depending on the requirements of your anti-virus vendor. 
+If you are replacing your existing antivirus solution or installing/supporting Redis Enterprise, please ensure the below paths are excluded.  For antivirus solutions that intercept processes, binary files may have to be excluded directly depending on the requirements of your anti-virus vendor.
 
 
 | **Path** | **Description** |
@@ -32,5 +32,3 @@ If you are replacing your existing antivirus solution or installing/supporting R
 | /opt/redislabs/config | System configuration files |
 | /opt/redislabs/lib | System library files |
 | /opt/redislabs/sbin | System binaries for tweaking provisioning |
-
-

@@ -5,7 +5,8 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-Redis Enterprise comes with an easy to use user interface to help you configure your deployment. The control plane consists of a website based user interface and a REST API used to automating tasks. This section details the configurable parameters that you can use to help secure the control plane and the API.
+
+Redis Enterprise Software (RS) includes an admin console and a REST API to manage your deployment. 
 
 ## Role Based Access Control
 
@@ -13,7 +14,7 @@ Redis Enterprise includes five pre-built roles to help users who need limited ac
 
 1. **DB Viewer** - Read any settings for databases
 1. **DB Member** - Administer databases
-1. **Cluster Viewer** - Read any cluster setting
+1. **Cluster Viewer** - Read any cluster settings
 1. **Cluster Member** - Administrator the cluster
 1. **Admin** - Full cluster access
 
@@ -29,7 +30,7 @@ To add a user to the cluster:
 1. Enter the name, email and password of the new user and select the role to assign to the user.
 1. Select the internal user type
 1. For email alerts, click "Edit" and select the alerts that the user should receive. You can select:
-      
+
 	  - Receive alerts for databases - The alerts that are enabled for the selected databases will be sent to the user. You can either select "All databases", or you can select "Customize" and select the individual databases to send alerts for.
         - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 
@@ -45,38 +46,44 @@ Redis Enterprise supports the following user account security settings:
 1. User Lockouts
 1. Account inactivity timeout
 
-To enforce a more advanced password policy, we recommend that you use a LDAP integration with an external identity provider, such as Active Directory. 
+To enforce a more advanced password policy, we recommend that you use LDAP integration with an external identity provider, such as Active Directory.
 
-### Setting up password complexity
+### Enabling the password complexity profile
 
-Redis Enterprise Software provides an optional password complexity profile that meets most organizational needs. When enabled, this password profile requires the following:
-1. At least 8 characters
-1. At least one uppercase character
-1. At least one lowercase character
-1. At least one number (not first or last character)
-1. At least one special character (not first or last character)
-1. Does not contain the User ID or reverse of the User ID
-1. No more than 3 repeating characters
+Redis Enterprise Software provides an optional password complexity profile
+ that meets most organizational needs. When enabled, this password profile requires the following:
+
+* At least 8 characters
+* At least one uppercase character
+* At least one lowercase character
+* At least one number (not first or last character)
+* At least one special character (not first or last character)
+
+In addition, the password:
+
+* may not contain the user ID or reverse of the user ID
+* may not have more than three repeating characters
 
 {{< note >}}
-The password complexity profile applies when a new user is added or an existing user changes their password. This profile does not apply to external users using an external identity provider.
+The password complexity profile applies when a new user is added or an existing user changes their password. This profile does not apply to users authenticated through an external identity provider.
 {{< /note >}}
 
-To enforce the password complexity profile, you need to use the REST API. Here's a curl command to enable password complexity:
+To enable the password complexity profile, run the following `curl` command against the REST API:
 
 ```sh
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator-user-email>:<password>" -d '{"password_complexity":true}' https://<RS_server_address>:9443/v1/cluster
 ```
-To disable the password complexity requirement, run the above command, but set "password_complexity" to "false".
+To disable the password complexity requirement, run the same command, but set "password_complexity" to "false".
 
-### Setting up user password expiration
+### Enabling password expiration
 
-To enforce an expiration of a local users password after a specified number of days, run the following command:
+To enforce an expiration of a user's password after a specified number of days, run the following command:
 
 ```sh
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://<RS_server_address>:9443/v1/cluster
 ```
-To disable password expiration, set the number of days to 0.
+
+To disable password expiration, set the number of days to `0`.
 
 ## User Login Lockout
 
@@ -93,7 +100,7 @@ You can view the user login restrictions for your cluster with:
 ```sh
 rladmin info cluster | grep login_lockout
 ```
-### Changing the Login Lockout Threshold 
+### Changing the Login Lockout Threshold
 
 You can set the login lockout threshold with the command:
 
@@ -107,7 +114,7 @@ rladmin tune cluster login_lockout_threshold 10
 
 Setting the lockout threshold to 0 disables account lockout. In this case, the cluster settings show: login_lockout_threshold: disabled
 
-### Changing the Login Lockout Counter Reset 
+### Changing the Login Lockout Counter Reset
 You can set the login lockout reset counter in seconds with the command:
 
 ```sh
@@ -118,7 +125,7 @@ To set the lockout reset to 1 hour, run:
 ```sh
 rladmin tune cluster login_lockout_counter_reset_after 3600
 ```
-### Changing the Login Lockout Duration 
+### Changing the Login Lockout Duration
 
 You can set the login lockout duration in seconds with the command:
 
@@ -130,10 +137,10 @@ For example, to set the lockout duration to 1 hour use the command:
 
 ```sh
 rladmin tune cluster login_lockout_duration 3600
-``` 
+```
 If you set the lockout duration to 0, then the account can be unlocked only when an administrator changes the account's password. In this case, the cluster settings show: login_lockout_duration: admin-release
- 
-#### Unlocking Locked User Accounts 
+
+#### Unlocking Locked User Accounts
 
 To unlock a user account or reset a user password from the CLI, run:
 
@@ -141,7 +148,7 @@ To unlock a user account or reset a user password from the CLI, run:
 rladmin cluster reset_password <username>
 ```
 
-### Session timeout 
+### Session timeout
 
 The Redis Enterprise admin console supports session timeouts. By default, users are automatically logged out after 15 minutes of inactivity.
 
@@ -168,7 +175,7 @@ There following steps should be used when configuring LDAP:
 1. Restart saslauthd service
 1. Configure LDAP users
 
-### Configuring the saslauthd Service 
+### Configuring the saslauthd Service
 
 Saslauthd is a process that handles authentication requests on behalf of Redis Enterprise to LDAP.  There are two steps to configuring this process:
 
@@ -181,7 +188,7 @@ Saslauthd is a process that handles authentication requests on behalf of Redis E
 	- In this file change the MECHANISMS variable to MECHANISMS=”ldap”
 
 **To provide the LDAP configuration information:**
-   
+
 1. Edit the configuration file located at /etc/opt/redislabs/saslauthd.conf or the installation directory of your choice during initial configuration.
 1. Provide the following information associated with each variable
 	- ldap_servers: the ldap servers that you authenticate against and the port to use
@@ -190,7 +197,7 @@ Saslauthd is a process that handles authentication requests on behalf of Redis E
 			- Port 389 is standardly used for unencrypted LDAP connections
 			- Port 636 is standardly used for encrypted LDAP connections and is strongly recommended.
 		- **Ldap_tls_cacert_file (optional):** The path to your CA Certificates. This is required for encrypted LDAP connections only.
-		- **ldap_filter:** the filter used to search for users 
+		- **ldap_filter:** the filter used to search for users
 		- **ldap_bind_dn:** The distinguished name for the user that will be used to authenticate to the LDAP server.
     		- **ldap_password:** The password used for the user specified in ldap_bind_dn
 1. Import the saslauthd configuration into Redis Enterprise using the below command
@@ -220,4 +227,3 @@ ldap_password: secretSquirrel
 ### Setting up LDAP users in Redis Enterprise
 
 To set up an LDAP user, simply select an external account type when configuring the user following the procedure to configure users.
-

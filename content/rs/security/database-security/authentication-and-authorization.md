@@ -5,10 +5,11 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
+
 # Role Based Access Control
 Role-based access control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.
 
-Roles may be configured using standard or custom templates for database permissions that are based on the Redis ACL syntax. Redis Enterprise allows you to restrict database operations by command, command category, and key pattern. 
+Roles may be configured using standard or custom templates for database permissions that are based on the Redis ACL syntax. Redis Enterprise allows you to restrict database operations by command, command category, and key pattern.
 Keys are typically restricted based on a namespace using a glob style wildcard.
 
 The role CacheReader demonstrated below has been given the acl rule "+get ~cache:*". Users in this role can access a key prefixed with “cached:” and the get command only. This would allow them to access the key cached:foo with the command get but not give them access to the set command. This role would not be able to access the key ‘foo’ because it is not prefixed with ‘cached:’ as you can see below.
@@ -19,11 +20,11 @@ To learn more on Redis command and key restrictions visit the [Redis documentati
 
 ## Configuring Redis ACLs
 
-#### Redis ACL command syntax 
-Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys. 
+#### Redis ACL command syntax
+Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 
 {{< note >}}
-Redis Enterprise Modules are not currently assigned a command category. 
+Redis Enterprise Modules are not currently assigned a command category.
 {{< /note >}}
 
 **Redis Enterprise allows you to:**
@@ -44,7 +45,7 @@ Redis Enterprise Modules are not currently assigned a command category.
 - **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance.
 - **Read Only** - Only read-only commands are allowed on keys.
 
-## Configuring Redis ACLs 
+## Configuring Redis ACLs
 
 **To configure a Redis ACL rule that you can assign to a user role:**
 
@@ -55,7 +56,7 @@ In **access control** > **redis acls**:
 
 1. Enter a descriptive name for the Redis ACL. This will be used to reference the ACL rule to the role.
 1. Define the ACL rule
-1. Select Save 
+1. Select Save
 
 {{< video "/images/rs/new-redis-acl-rule.mp4" "Create a new Redis ACL Rule" >}}
 
@@ -74,6 +75,7 @@ In **access control** > **roles**, you can configure user roles with:
 
 - **Management roles** - Management roles define user access to the UI and API of the cluster
 - **Data access controls** - Data access controls define the permissions each role has to each database in the cluster.
+
 #### Defining roles for database access
 To create a user role for users that cannot connect to the Redis Enterprise control plane, assign the "**None**" management role to the user role.
 {{< note >}}
@@ -106,7 +108,7 @@ To add a user to the cluster:
 1. For email alerts, click "Edit" and select the alerts that the user should receive. You can select:
 	- Receive alerts for databases - The alerts that are enabled for the selected databases will be sent to the user. You can either select "All databases", or you can select "Customize" and select the individual databases to send alerts for.
 	- Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
-1. Select the save icon. 
+1. Select the save icon.
 {{< video "/images/rs/new-user-add.mp4" "Create a new user" >}}
 
 
@@ -124,4 +126,3 @@ Redis Labs reccomends disabling the default user when using ACLs with your datab
 {{< /note >}}
 
 ![default](/images/rs/default-user.png#no-click "default")
-
