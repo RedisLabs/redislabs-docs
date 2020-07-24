@@ -6,7 +6,10 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-The Redis Cloud admin console provides several security features
+The Redis Cloud admin console provides several security features. These include:
+
+* Multi-factor authentication
+
 
 
 Teams

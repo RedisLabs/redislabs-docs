@@ -1,12 +1,12 @@
 ---
-Title: Authentication
+Title: User Management
 description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
 
-## Team Management
+## User Management
 
 To manage the team of people who have access to the account, click on
 the "Team" tab and you will be presented with the current list of team
@@ -21,7 +21,7 @@ Team members can have different roles to the account:
 - **Member** - Can view, create, and edit databases
 - **Viewer** - Can view all databases and their configurations (including database secrets)
 
-### Team Management for GCP Marketplace customers
+### User and Team Management for GCP Marketplace customers
 
 If you subscribed to Redis Cloud using GCP Marketplace, you can manage your team from the IAM section of the GCP console.
 To grant Redis Cloud access to a GCP user, assign one of these roles to the user:

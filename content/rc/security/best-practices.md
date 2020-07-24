@@ -1,9 +1,9 @@
 ---
-Title: Cloud Security Best Practices
+Title: Redis Cloud Security
 description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
 
-# Redis Cloud Security Best Practices
+## Features and Best Practices

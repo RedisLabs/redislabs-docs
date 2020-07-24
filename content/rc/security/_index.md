@@ -4,6 +4,7 @@ description:
 weight: 51
 alwaysopen: false
 categories: ["RC"]
+aliases: "/rc/administration/security"
 ---
 
 Redis Cloud provides a number of features to ensure the security of your cloud
@@ -24,4 +25,4 @@ is disabled by default. When you enable the API, you can then manage the API key
 
 ## Database Security
 
-Redis Cloud
+You can secure your databases running
