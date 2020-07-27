@@ -17,13 +17,6 @@ For not supported operating system version, you can install RedisInsight for the
 We are happy to receive any feedback at redisinsight@redislabs.com.
 {{< /note >}}
 
-RedisInsight offers the following features -
-
-- Easy to use browser based interface to search keys, view and edit data
-- Only GUI tool to support Redis Cluster
-- Supports SSL/TLS based connections
-- Run Memory Analysis
-
 To install RedisInsight:
 
 1. [Download](https://redislabs.com/redisinsight/) RedisInsight for Desktop.
@@ -37,8 +30,15 @@ To install RedisInsight:
 
     - For Windows and MacOS - Run the installer.
 
-        If MacOS warns you that RedisInsight cannot be checked for malicious software,
-        follow the instructions from [Apple support](https://support.apple.com/en-gb/HT202491) about how to open an app from an unidentified developer.
+        Both Windows and MacOS packagings are getting signed and notarized.
+        
+        {{< /note >}}
+        Since RedisInsight 1.6.3, on MacOS 10.14.x, some users have reported issues getting the application installed properly. 
+        Please if you encounter this issue let us know at redisinsight@redislabs.com, we would like to track this issue. 
+        You can still proceed with the installation by following these instructions: 
+        1. Move the package to the Desktop and then hold Control and click the file to launch the installer. 
+        2. When the message appears, click "Continue".
+        {{< /note >}}
 
 1. Run RedisInsight:
 
