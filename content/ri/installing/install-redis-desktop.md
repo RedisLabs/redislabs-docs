@@ -37,7 +37,7 @@ To install RedisInsight:
         If you encounter this, please let us know at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
         You can still proceed with the installation by following these instructions: 
         1. Move the package to the Desktop and then hold Control and click the file to launch the installer. 
-        2. A warning message will be displayed saying MacOS cannot check the application properly, you can click the button "Open". 
+        2. A warning message will be displayed saying MacOS cannot check the application properly. To proceeed, click "Open". 
         {{< /note >}}
 
 1. Run RedisInsight:
