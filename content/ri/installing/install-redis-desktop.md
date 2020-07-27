@@ -30,7 +30,7 @@ To install RedisInsight:
 
     - For Windows and MacOS - Run the installer.
 
-        Both Windows and MacOS packagings are signed and notarized.
+        Both the Windows and MacOS packages are signed and notarized.
         
         {{< /note >}}
         Since RedisInsight 1.6.3, on MacOS 10.14.x, some users have reported issues installing the application installed. 
