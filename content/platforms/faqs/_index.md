@@ -229,7 +229,7 @@ Also, some of the RLEC services must be able to increase default resource limits
 
 While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
 
-The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/openshift/_index.md#step-3-prepare-your-yaml-files" >}}).
+The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/openshift/getting-started-cli#step-3-prepare-your-yaml-files" >}}).
 
 RLEC PSP definitions are controlled with role-based access control (RBAC).
 A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account
