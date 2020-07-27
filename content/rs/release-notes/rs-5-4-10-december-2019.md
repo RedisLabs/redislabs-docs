@@ -17,7 +17,7 @@ Follow these [instructions](https://docs.redislabs.com/latest/rs/installing-upgr
 
 ### Synchronization mechanism in A-A Redis and Replica-of
 
-RS 5.4.10 incorporates the improved [Redis synchronization mechanism]({{< relref "/rs/administering/active-active.md#syncer-process" >}}) ([PSYNC2](https://redis.io/topics/replication)) for Active-Active Redis (CRDB) and Replica-of.
+RS 5.4.10 incorporates the improved [Redis synchronization mechanism]({{< relref "/rs/administering/active-active#syncer-process" >}}) ([PSYNC2](https://redis.io/topics/replication)) for Active-Active Redis (CRDB) and Replica-of.
 
 As a result, failure scenarios in any A-A replica (and the source database of Replica-of), require only partial synchronization between the cross-region replicas instead of full synchronization that can be costly in time and bandwidth.
 
@@ -84,7 +84,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
     that improve its compatibility with open source Redis.
     Now the string data-type in Active-Active Redis (CRDB) is implicitly and dynamically typed, just like open source Redis.
     To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower,
-    you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading.md#upgrading-crdbs" >}}).
+    you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
 - Before you upgrade a database with RediSearch Module to Redis 5.0,
     you must [upgrade the RediSearch Module]({{< relref "/modules/add-module-to-cluster.md" >}}) to version 1.4.2 or above.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above

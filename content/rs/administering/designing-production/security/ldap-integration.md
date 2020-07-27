@@ -45,4 +45,4 @@ To configure LDAP authentication for RS web UI users on a running cluster:
     ```
 
 1. Restart the `saslauthd` service for the changes to take effect: `sudo supervisorctl restart saslauthd`
-1. [Create LDAP users]({{< relref "/rs/administering/access-control/_index.md#adding-a-user" >}}) as `external` users in the RS web UI.
+1. [Create LDAP users]({{< relref "/rs/administering/access-control#adding-a-user" >}}) as `external` users in the RS web UI.

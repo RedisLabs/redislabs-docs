@@ -12,7 +12,7 @@ you must upgrade each of the nodes and then upgrade each of the databases in the
 {{< warning >}}
 
 - Before you upgrade, you must read the [RS 6.0 release notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md" >}}),
-including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md#upgrade" >}}).
+including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}}).
 - You must read the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for every version that you upgrade to.
 
 {{< /warning >}}
