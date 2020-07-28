@@ -1,5 +1,5 @@
 ---
-Title: Prometheus Metrics
+Title: Metrics in Prometheus
 description:
 weight: 45
 alwaysopen: false

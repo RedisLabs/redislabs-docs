@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can use the metrics that measurement the performance of your clusters, nodes, databases and shards
+You can use the metrics that measure the performance of your Redis Enterprise Software (RS) clusters, nodes, databases and shards
 to keep an eye on the performance of your databases.
-In the management console, you can either see the real-time metrics or configure alerts to send you notifications based on alert parameters.
+In the RS admin console, you can see the real-time metrics and you can configure alerts that send notifications based on alert parameters.
 
 You can also access the metrics and configure alerts through the REST API so that you can integrate the RS metrics into your monitoring environment, for example [using Prometheus and Grafana]({{< relref "/rs/administering/monitoring-metrics/prometheus-integration.md" >}}).
 
@@ -23,9 +23,9 @@ You can see the metrics of the cluster in:
 - **Database > Metrics**, including individual shards
 - **Shards > Metrics**
 
-The scale selector at the top of the page allows you to set the scale of the graphs' X-axis (time).
+The scale selector at the top of the page allows you to set the X-axis (time) scale of the graph.
 
-You can choose which metrics graph to display in the two large graphs at the top of the page:
+To choose which metrics to display in the two large graphs at the top of the page:
 
 1. Hover over the graph you want to show in a large graph.
 1. Click on the right or left arrow to choose which side to show the graph.
@@ -44,7 +44,7 @@ Configured alerts are shown:
 
 {{< note >}}
 If you enable alerts for "Node joined" or "Node removed" actions,
-you must also enable "Receive email alerts" so that the alerts are sent.
+you must also enable "Receive email alerts" so that the notifications are sent.
 {{< /note >}}
 
 To enable alerts for a cluster:
