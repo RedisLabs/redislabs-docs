@@ -1,5 +1,5 @@
 ---
-title: Nagios plugin for Redis Enterprise Software
+title: Redis Enterprise Software Integration with Nagios
 description:
 weight: 90
 alwaysopen: false
