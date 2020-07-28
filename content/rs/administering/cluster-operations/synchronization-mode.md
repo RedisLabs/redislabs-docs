@@ -31,7 +31,7 @@ To configure distributed synchronization:
     db:1        db        endpoint:1:1              node:1        all-master-shards                   No
     ```
 
-    If the proxy policy is `single`, configure the policy to `all-nodes` or `all-master-shards` according to your needs with the command:
+    If the proxy policy (also known as a role) is `single`, configure the policy to `all-nodes` or `all-master-shards` according to your needs with the command:
 
     ```sh
     rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
