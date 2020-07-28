@@ -4,6 +4,7 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/monitoring-metrics/prometheus-integration/
 ---
 To collect and display metrics data from your databases and other cluster components,
 you can connect your Prometheus or Grafana server to your Redis Enterprise cluster.

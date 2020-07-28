@@ -5,6 +5,12 @@ weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/monitoring-metrics/definitions/
+         /rs/administering/database-operations/metrics/database-metrics/
+         /rs/administering/database-operations/metrics/
+         /rs/administering/monitoring-metrics/definitions/
+         /rs/administering/database-operations/metrics/shard-metrics/
+         /rs/administering/cluster-operations/cluster-metrics/
+         /rs/administering/cluster-operations/node-metrics/
 ---
 The Redis Enterprise Software (RS) admin console shows metrics with information about the performance of the cluster, node, database, and shard.
 For Redis on Flash (ROF) databases, additional metrics are available.

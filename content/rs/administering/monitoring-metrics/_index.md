@@ -4,6 +4,8 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/database-operations/alerting/
+         /rs/administering/cluster-operations/settings/alerts/
 ---
 You can use the metrics that measure the performance of your Redis Enterprise Software (RS) clusters, nodes, databases and shards
 to keep an eye on the performance of your databases.
