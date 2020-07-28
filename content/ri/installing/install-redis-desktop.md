@@ -31,13 +31,13 @@ To install RedisInsight:
     - For Windows and MacOS - Run the installer.
 
         Both the Windows and MacOS packages are signed and notarized.
-        
-        {{< /note >}}
-        Since RedisInsight 1.6.3, on MacOS 10.14.x, some users have reported issues installing the application installed. 
-        If you encounter this, please let us know at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
-        You can still proceed with the installation by following these instructions: 
-        1. Move the package to the Desktop and then hold Control and click the file to launch the installer. 
-        2. A warning message will be displayed saying MacOS cannot check the application properly. To proceeed, click "Open". 
+
+        {{< note >}}
+Since RedisInsight 1.6.3, some  on MacOS 10.14.x users have reported issues installing the application.
+If you encounter this, please let us know at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
+A workaround for this issue is:
+1. Move the package to the Desktop and left-click on the file while pressing the Control key.
+1. A warning message is shown that MacOS cannot check the application properly. To proceeed, click "Open".
         {{< /note >}}
 
 1. Run RedisInsight:
