@@ -77,16 +77,16 @@ To upgrade a module that is installed on a cluster:
     - `rladmin status modules all` - Shows all of the modules available on the cluster
         and the modules used by databases.
 
-1. To upgrade modules for the database, run:
+1. To upgrade a database to the latest version of Redis
+    and its modules to the latest version without changing the module arguments, run:
 
     ```sh
-    rladmin upgrade db <database_name | database_ID> and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
+    rladmin upgrade db < database_name | database_ID > latest_with_modules
     ```
 
-    - To upgrade the database to use the latest version of Redis and the latest version of the modules used by the database without changing the module arguments,
-        use the `latest_with_modules` parameter.
     - To upgrade the modules without upgrading the database to the latest Redis version, use `keep_redis_version` after you specify the database.
-    - For the modules arguments you can either use:
+    - If you want to specify the modules to upgrade, use `and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>" ]` for each module.
+        For the modules arguments you can either use:
         - `module_args "<module_arguments>"` to replace the existing module arguments.
         - `module_args ""` without arguments to remove the existing module arguments.
         - `module_args keep_args` to use the existing module arguments.
@@ -95,6 +95,12 @@ To upgrade a module that is installed on a cluster:
 ## Examples
 
 Here are some examples of module upgrades:
+
+- To upgrade keep the current version of Redis and use the latest version of the modules that are used by the database:
+
+    ```sh
+    rladmin upgrade db shopping_cart keep_redis_version latest_with_modules
+    ```
 
 - To upgrade the database to the latest Redis version and upgrade RediSearch to 1.6.7 with the specified arguments:
 
@@ -118,10 +124,4 @@ Here are some examples of module upgrades:
 
     ```sh
     rladmin upgrade db shopping_cart latest_with_modules
-    ```
-
-- To upgrade keep the current version of Redis and use the latest version of the modules that are used by the database:
-
-    ```sh
-    rladmin upgrade db shopping_cart keep_redis_version latest_with_modules
     ```
