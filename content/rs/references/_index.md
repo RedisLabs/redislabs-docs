@@ -1,5 +1,5 @@
 ---
-Title: Developer References
+Title: Reference
 description:
 weight: 80
 alwaysopen: false
