@@ -37,7 +37,7 @@ that version.
 | ----------------------------------------- | ------------------ |
 | 6.0 – May 2020                            | November 30, 2021  |
 | 5.6 – April 2020                          | October 31, 2021  |
-| 5.4 – December 2018                       | December 31, 2020  |
+| 5.4 – December 2018                       | December 31, 2019  |
 | 5.2 – June 2018                           | December 31, 2019  |
 | 5.0 – November 2017                       | May 31, 2019       |
 | 4.5 – May 2017                            | November 30, 2018  |
