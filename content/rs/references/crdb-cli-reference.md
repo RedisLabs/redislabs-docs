@@ -133,7 +133,7 @@ crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance f
 
 The `crdb list` command shows all Active-Active databases that the cluster participates in.
 Each database is represented with a unique GUID, the name of the database, an instance ID, and the FQDN of the cluster that hosts the instance.
-You use the CRDB-GUID and REPL-ID in other commands, such as [add-instance](#Adding-an-instance-to-an-Active-Active-Database) and [remove-instance](#Removing-an-instance-from-an-Active-Active-Database).
+You use the CRDB-GUID and REPL-ID in other commands, such as [add-instance](#adding-an-instance-to-an-activeactive-database) and [remove-instance](#removing-an-instance-from-an-activeactive-database).
 
 ```sh
 crdb-cli crdb list
@@ -174,13 +174,13 @@ The configuration options that you can update are:
 |Flag and argument| Argument type| Description|
 |---|---|---|
 |`memory-size <ram_limit>`|string| Maximum memory in bytes| kilobytes (kb)| or gigabytes (gb)|
-|`causal-consistency <true/false>`|boolean| Database updates are applied to all instances in the order they were received|
-|`encryption <true/false>`| binary| Enable encryption|
+|`causal-consistency <true | false>`|boolean| Database updates are applied to all instances in the order they were received|
+|`encryption <true | false>`| binary| Enable encryption|
 |`compression (0-6)`| integer| The level of compression of data: 0=Compression disabled| 1=Low compression and resource load| 6=High compression and resource load (Default: 3)|
 |`credentials id=<instance_id>,username=<username>,password=<password>`|string|Update the credentials for the participating cluster|
-|`featureset-version <true/false>`|boolean|Update to latest FeatureSet version|
-|`oss-cluster <true/false>`|boolean|Enable or disable OSS cluster mode|
-|`bigstore <true/false>`|boolean|Use Redis on Flash to add flash memory to the database|
+|`featureset-version <true | false>`|boolean|Update to latest FeatureSet version|
+|`oss-cluster <true | false>`|boolean|Enable or disable OSS cluster mode|
+|`bigstore <true | false>`|boolean|Use Redis on Flash to add flash memory to the database|
 |`bigstore-ram-size <ram_limit>`|string|RAM limit for RoF database (bytes, MB, or GB)|
 |`with-module <module_name>`|text|The name of the module to add to the database|
 |`force`|no arguments|Increase the configuration version even if there are no configuration changes|
@@ -223,18 +223,19 @@ If the data in your database is important, make sure you back it up before you d
 
 Active-Active instance operations affect the placement of database instances on participating clusters, but do not change the configuration or data in the database.
 
-### Adding an instance to an Active-Active Database {#Adding-an-instance-to-an-Active-Active-Database}
+### Adding an instance to an Active-Active Database {#adding-an-instance-to-an-activeactive-database}
 
 The `crdb add-instance` command lets you add instances to an existing Active-Active database in order to host the database on additional clusters.
 This creates a read-write copy of the database on the specified cluster.
 
 When you add an instance to an Active-Active database, you must specify:
 
-Flag and argument, Argument type, Description
-`crdb-guid <guid-id>`, string, The ID of the Active-Active database that you want to add the instance to
-`instance fqdn=<cluster_fqdn>,username=<username>,password=<password>`, strings, The connection information for the participating cluster that will host the new instance
+|Flag and argument| Argument type| Description|
+|---|---|---|
+|`crdb-guid <guid-id>`| string| The ID of the Active-Active database that you want to add the instance to|
+|`instance fqdn=<cluster_fqdn>,username=<username>,password=<password>`| strings| The connection information for the participating cluster that will host the new instance|
 
-### Removing an instance from an Active-Active Database {#Removing-an-instance-from-an-Active-Active-Database}
+### Removing an instance from an Active-Active Database {#removing-an-instance-from-an-activeactive-database}
 
 The `remove-instance` command deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
 
