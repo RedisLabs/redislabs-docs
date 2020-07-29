@@ -199,9 +199,9 @@ ip-10-0-x-d.eu-central-1.compute.internal    eu-central-1b
 
 ### Enabling the cluster role
 
-For the operator to read the cluster node information you must setup a cluster role for the operator and then bind it to the service account.
+For the operator to read the cluster node information, you must create a cluster role for the operator and then bind the role to the service account.
 
-The cluster role is:
+Here's a cluster role:
 
 ```yaml
 kind: ClusterRole
@@ -215,7 +215,7 @@ rules:
     verbs: ["list", "get", "watch"]
 ```
 
-and it can be applied by:
+And here's how to apply the role:
 
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rack_awareness/rack_aware_cluster_role.yaml
@@ -238,13 +238,13 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-and it can be applied by:
+and it can be applied by running:
 
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rack_awareness/rack_aware_cluster_role_binding.yaml
 ```
 
-When both the cluster role and the binding are applied, you can configure Redis Enterprise clusters to use rack awareness labels.
+Once the cluster role and the binding have been applied, you can configure Redis Enterprise clusters to use rack awareness labels.
 
 ### Configuring rack awareness
 
