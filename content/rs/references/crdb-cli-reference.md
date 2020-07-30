@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 An [Active-Active database]({{< relref "/rs/administering/active-active.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
 replicates your dataset across multiple, geographically distributed regions and allows read-write access in all locations.
-Active-Active databases are ideal for disaster recovery and for distributed applications that require the fastest response times.
+Active-Active databases are ideal for distributed applications that require the fastest response times, and also for disaster recovery.
 
 The Active-Active database on an individual cluster is called an **instance**.
 Each cluster that hosts an instance is called a **participating cluster**.
@@ -74,7 +74,7 @@ crdb-cli crdb create --name <name> /
 [--with-module <module_name>]
 ```
 
-After you run the command, the response shows the GUID of the task and the GUID of the Active-Active database that was created:
+After you run the command, the response shows the globally unique identifier (GUID) of the task and the GUID of the Active-Active database that was created:
 
 ```sh
 Task 2b3d62c6-395b-4679-87b1-eef006ad4a38 created
@@ -99,7 +99,7 @@ The `crdb create` command supports several additional options:
 |---|---|---|
 |`no-wait`| no arguments| Prevents CRDB-CLI from running another command before this command finishes|
 |`compression (0-6)`| integer| The level of data compression: 0=Compression disabled| 1=Low compression and resource load| 6=High compression and resource load (Default: 3)|
-|`causal-consistency true`| boolean| Applies updates to all instances in the order they were received|
+|`causal-consistency true`| boolean| [Causal consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}}) applies updates to all instances in the order they were received|
 |`password <password>`| string| Password for access to the database|
 |`replication true`| boolean| Enables [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})| where every master shard replicates to a replica shard (We recommend that you use replication so that active-active database synchronization traffic is off-loaded to the slave shard)|
 |`encryption true`| boolean| Enable encryption|
@@ -150,8 +150,12 @@ e7ef4552-3705-4790-9f30-6a8e9f4bef28  shopping-cart  2        cluster2.local
 
 ### Updating the configuration of an Active-Active database
 
-The `crdb update` command lets you change the configuration of an existing Active-Active database.
+The `crdb update` command lets you change the configuration of the Active-Active instances of an existing Active-Active database.
 This command requires the CRDB-GUID of the database.
+
+{{< note >}}
+If you want to change the configuration of the local instance only, you can change the configuration from `rladmin`.
+{{< /note >}}
 
 The syntax for the command is:
 
