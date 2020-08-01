@@ -92,7 +92,7 @@ enter `12000` for the port number.
 <!-- Also in crdbs.md -->
 {{< note >}}
 If you cannot activate the database because of a memory limitation,
-make sure that Docker has enough memory allocated in the Advanced section
+make sure that Docker has enoughee memory allocated in the Advanced section
 of Docker Settings.
 {{< /note >}}
 
