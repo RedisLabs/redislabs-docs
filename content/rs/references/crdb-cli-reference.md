@@ -6,8 +6,8 @@ alwaysopen: false
 categories: ["RS"]
 ---
 An [Active-Active database]({{< relref "/rs/administering/active-active.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
-replicates your dataset across multiple, geographically distributed regions and allows read-write access in all locations.
-Active-Active databases are ideal for distributed applications that require the fastest response times, and also for disaster recovery.
+replicates your dataset across Redis Enterprise Software (RS) clusters that that are in geographically distributed regions.
+Active-Active databases allow read-write access in all locations so they are ideal for distributed applications that require the fastest response times, and also for disaster recovery.
 
 The Active-Active database on an individual cluster is called an **instance**.
 Each cluster that hosts an instance is called a **participating cluster**.
@@ -17,7 +17,14 @@ Each instance is responsible for updating the instances residing on other partic
 Write conflicts are resolved using [CRDTs]({{< relref "/rs/administering/active-active.md" >}}).
 
 To programmatically maintain an Active-Active database and its instances, you can use the CRDB-CLI command-line tool.
-With CRDB-CLI you can:
+
+## Using the crdb-cli
+
+To use the CRDB-CLI tool, you must log in to the terminal of an RS host with an account that is a member of the **redislabs** OS group.
+If you log in with a non-root user, you must add `/opt/redislabs/bin/` to your PATH environment variables.
+
+The syntax of CRDB-CLI is: `crdb-cli <command> <arguments>`.
+CRDB-CLI commands let you:
 
 - Create, list, update, flush, or delete an Active-Active database
 - Add or remove an instance of the Active-Active database on a specific cluster
