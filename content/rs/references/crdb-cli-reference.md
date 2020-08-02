@@ -20,7 +20,7 @@ To programmatically maintain an Active-Active database and its instances, you ca
 
 ## Using the crdb-cli
 
-To use the CRDB-CLI tool, you must log in to the terminal of an RS host with an account that is a member of the **redislabs** OS group.
+To use the CRDB-CLI tool, you must log in to the terminal of an RS host with a user that belongs to the group that RS was installed with (Default: **redislabs**).
 If you log in with a non-root user, you must add `/opt/redislabs/bin/` to your PATH environment variables.
 
 The syntax of CRDB-CLI is: `crdb-cli <command> <arguments>`.
