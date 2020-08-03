@@ -23,7 +23,7 @@ Here is an example of a simple write case:
 | t2   | --- sync ---      |                   |
 | t3   |                   | PFADD hll x       |
 | t4   | --- sync ---      |                   |
-| t5   | PFCOUNT hll --> 2 | PFCOUNT hll --> 2 |
+| t5   | PFCOUNT hll --> 1 | PFCOUNT hll --> 1 |
 
 Here is an example of a concurrent add case:
 
