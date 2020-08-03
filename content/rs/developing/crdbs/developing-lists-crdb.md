@@ -48,7 +48,7 @@ Insertions:
 **Explanation**:
 Instance 1 added an element y1 after x, and then Instance 2 added
 element y2 after x. The final List contains all three elements: x is the
-first element, after it y1 and then y2. After syncing, the Active-Active database resolved the conflict by arbitrarily (but consistently across all Active-Active database instances) giving precedence to Instance 1
+first element, after it y1 and then y2. After syncing, the Active-Active database resolved the conflict by arbitrarily (but consistently across all Active-Active database instances) giving precedence to Instance 1.
 
 Example of Deleting a List while Pushing a New
 Element:
