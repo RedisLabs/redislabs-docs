@@ -77,3 +77,5 @@ In the example above, that JSON document is stored in the `import-database-s3.js
 ```shell
 {{% embed-code "rv/api/import-database-s3.json" %}}
 ```
+
+<<Valid Values - "sourceType" & "importFromUri">>
