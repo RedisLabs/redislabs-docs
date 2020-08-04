@@ -20,12 +20,13 @@ Run this command:
 ```
 
 {{< note >}}
-For databases in a Redis Cloud Essentials subscription, you need to tag the index key and the document key so that they are stored on the same shard:
+For databases in a Redis Cloud Essentials subscription, you need to add the index name, as a tag, to the document key to make sure that the index and the documents are located on the same shard:
 
 ```sh
-FT.CREATE {idx} ...
-FT.ADD {idx} {idx}:docid ...
+FT.CREATE myIdx ...
+FT.ADD myIdx {myIdx}:docid ...
 ```
+
 {{< /note >}}
 
 ### Add info to test index
