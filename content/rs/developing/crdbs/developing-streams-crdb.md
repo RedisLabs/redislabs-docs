@@ -97,7 +97,7 @@ In the example below, a stream, `x`, is created at _t1_. At _t3_, the stream exi
 <tr>
 <td><em>t3</em></td>
 <td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-1]</strong></code></td>
-<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-2]</strong></code></td>
+<td><code>XRANGE messages - +</code> <br/><strong>→ [1589929244828-1]</strong></code></td>
 </tr>
 
 
@@ -160,17 +160,17 @@ To change XADD's ID generation mode, use the `rladmin` command-line utility:
 
 Set _strict_ mode:
 ```sh
-rladmin> tune myCRDB crdb crdt_xadd_id_uniqueness_mode strict
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode strict
 ```
 
 Set _semi-strict_ mode:
 ```sh
-rladmin> tune myCRDB crdb crdt_xadd_id_uniqueness_mode semi-strict
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode semi-strict
 ```
 
 Set _liberal_ mode:
 ```sh
-rladmin> tune myCRDB crdb crdt_xadd_id_uniqueness_mode liberal
+rladmin> tune db crdb crdt_xadd_id_uniqueness_mode liberal
 ```
 
 ### Iterating a stream with XREAD
@@ -186,7 +186,7 @@ In the example below, XREAD skips entry `115-2`.
 | _t3_   | `XADD x 130 f1 v1`                                   |                                                    |
 | _t4_   | `XREAD COUNT 2 STREAMS x 0` <br/>**→ [110-1, 120-1]**       |                                                    |
 | _t5_   | _— Sync —_                                       | _— Sync —_                                       |
-| _t6_   | `XREAD COUNT 2 STREAMS x 120` <br/>**→ [130-1]**            |                                                    |
+| _t6_   | `XREAD COUNT 2 STREAMS x 120-1` <br/>**→ [130-1]**            |                                                    |
 | _t7_   | `XREAD STREAMS x 0` <br/>**→[110-1, 115-2, 120-1, 130-1]** | `XREAD STREAMS x 0` <br/>**→[110-1, 115-2, 120-1, 130-1]** |
 
 
@@ -226,7 +226,7 @@ In this example, the DEL at _t4_ deletes both the observed `group1` and the non-
 | _t1_   | `XGROUP CREATE x group1 0`    |                         |
 | _t2_   | _— Sync —_            | _— Sync —_            |
 | _t3_   | `XINFO GROUPS x` <br/>**→ [group1]** | `XINFO GROUPS x` <br/>**→ [group1]** |
-| _t4_   | `DEL x                   | `XGROUP CREATE x group2 0`    |
+| _t4_   | `DEL x`                   | `XGROUP CREATE x group2 0`    |
 | _t5_   | _— Sync —_            | _— Sync —_            |
 | _t6_   | `EXISTS x` <br/>**→ 0** | `EXISTS x` <br/>**→  0**          |
 
@@ -261,8 +261,8 @@ For example:
 | _t4_   | _— Sync —_                                      | _— Sync —_             |
 | _t5_   | `XRANGE messages - +` <br/>**→ [110-1]**                          | XRANGE messages - + <br/>**→ [110-1]** |
 | _t6_   | `XINFO GROUPS messages` <br/>**→ [g1]**                            | XINFO GROUPS messages <br/>**→ [g1]**   |
-| _t7_   | `XINFO CONSUMERS messages` <br/>**→ [Alice]**                      | XINFO CONSUMERS messages <br/>**→ []**  |
-| _t8_   | `XPENDING messages group1 - +` <br/>**→ [110-1]**                     | XPENDING messages group1 - + <br/>**→ []** |
+| _t7_   | `XINFO CONSUMERS messages group1` <br/>**→ [Alice]**                      | XINFO CONSUMERS messages group1 <br/>**→ []**  |
+| _t8_   | `XPENDING messages group1 - + 1` <br/>**→ [110-1]**                     | XPENDING messages group1 - + 1<br/>**→ []** |
 
 Using XREADGROUP across regions can result in regions reading the same entries.
 This is due to the fact that Active-Active Streams is designed for at-least-once reads or a single consumer.
@@ -279,11 +279,11 @@ Consumers acknowledge messages using the XACK command. Each ack effectively reco
 | _t3_   | `XADD x 130-0 f1 v1`                                              |              |                                                                                                                 |
 | _t4_   | `XGROUP CREATE x g1 0`                                            |              |                                                                                                                 |
 | _t5_   | `XREADGROUP GROUP g1 Alice STREAMS x >` <br/>**→ [110-0, 120-0, 130-0]** |              |                                                                                                                 |
-| _t6_   | `XACK g1 110-0`                                                   |              |                                                                                                                 |
+| _t6_   | `XACK x g1 110-0`                                                   |              |                                                                                                                 |
 | _t7_   | _— Sync —_                                                    | _— Sync —_ | 110-0 and its preceding entries (none) were acknowledged. We replicate an XACK effect for 110-0.                |
-| _t8_   | `XACK g1 130-0`                                                   |              |                                                                                                                 |
+| _t8_   | `XACK x g1 130-0`                                                   |              |                                                                                                                 |
 | _t9_   | _— Sync —_                                                    | _— Sync —_ | 130-0 was acknowledged, but not its preceding entries (120-0). We DO NOT replicate an XACK effect for 130-0     |
-| _t10_  | `XACK g1 120-0`                                                   |              |                                                                                                                 |
+| _t10_  | `XACK x g1 120-0`                                                   |              |                                                                                                                 |
 | _t11_  | _— Sync —_                                                    | _— Sync —_ | 120-0 and its preceding entries (110-0 through 130-0) were acknowledged. We replicate an XACK effect for 130-0. |
 
 In this scenario, if we redirect the XREADGROUP traffic from Region 1 to Region 2 we do not re-read entries 110-0, 120-0 and 130-0.
