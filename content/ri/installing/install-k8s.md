@@ -10,7 +10,7 @@ nextStep:
 aliases: /ri/install/install-k8s/
 ---
 In this walkthrough, we will install RedisInsight on [Kubernetes](https://kubernetes.io/). 
-This is an easy way to use RedisInsight with a [Redis Enteprise K8s deployment](https://github.com/RedisLabs/redis-enterprise-k8s-docs).
+This is an easy way to use RedisInsight with a [Redis Enterprise K8s deployment](https://github.com/RedisLabs/redis-enterprise-k8s-docs).
 
 ## Create the RedisInsight deployment
 
