@@ -55,9 +55,9 @@ node external_addr \[ add \| remove \]
 
 Where:
 
-- addr - is the internal address (can be used only when the node is
+- addr - the internal address (can be used only when the node is
     offline)
-- external_addr - are the external addresses
+- external_addr - external addresses
 
 **Note:** While [Joining a new node to a
 cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}})
