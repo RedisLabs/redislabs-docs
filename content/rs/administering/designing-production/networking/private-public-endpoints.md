@@ -13,7 +13,7 @@ can have both:
 
 - A private IP address that can be used only from within the internal
     network
-- Public IP address(es) that can be used from the public network
+- Public IP addresses that can be used from the public network
     (Internet)
 
 In this case, it is possible to configure Redis Enterprise Software to

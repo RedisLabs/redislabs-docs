@@ -23,7 +23,7 @@ follows:
     blocked and produce an error when executed:
     - MOVE
     - SELECT
-- Because data persistency and backups are managed from RS's
+- Because data persistence and backups are managed from RS's
     management UI, the following commands are blocked:
     - BGREWRITEAOF
     - BGSAVE

@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 db_type: database
 ---
-You can create Redis databases that are sharded and distributed across a single Redis Enterprise Software (RS) cluster.
+You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
 These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})

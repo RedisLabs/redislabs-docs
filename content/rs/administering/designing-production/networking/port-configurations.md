@@ -51,7 +51,7 @@ After you change the RS Web UI port, when you add a new node to the
 cluster you must connect to the web UI with the custom port number:
 
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
-{{% /note%}}
+{{% /note %}}
 
 To change the default port for the RS Web UI, on any node in the cluster run:
 

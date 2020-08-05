@@ -21,7 +21,7 @@ To configure LDAP authentication for RS web UI users on a running cluster:
     1. Edit the `/etc/default/saslauthd`, and change the `MECHANISMS` variable to `MECHANISMS="ldap"`.
     1. Edit the `saslauthd.conf` configuration file in the installation directory (default: `/etc/opt/redislabs/saslauthd.conf`) and enter the values for these fields:
 
-        - `ldap_servers`: the ldap servers that you authenticate against and the port to use. Port 389 is standard for unencrypted LDAP connections, while port 636 is standard for encrypted LDAP connections (strongly recommended).
+        - `ldap_servers`: the LDAP servers that you authenticate against and the port to use. Port 389 is standard for unencrypted LDAP connections, while port 636 is standard for encrypted LDAP connections (strongly recommended).
         - `ldap_tls_cacert_file` (optional): The path to your CA Certificates. This is required for encrypted LDAP connections only.
         - `ldap_filter`: The filter used to search for users
         - `ldap_bind_dn`: The distinguished name for the user that will be used to authenticate to the LDAP server

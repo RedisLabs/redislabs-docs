@@ -35,7 +35,7 @@ map](/images/rs/crdbs.png?width=800&height=569)
 
 Active-Active databases replicate data between multiple Redis Enterprise Software
 clusters. Common uses for Active-Active databases include disaster recovery,
-geographically redundant applications, and keeping data closers to your
+geographically redundant applications, and keeping data closer to your
 user's locations. MMR is always multi-directional amongst the clusters
 configured in the Active-Active database. For unidirectional replication, please see the
 Replica Of capabilities in Redis Enterprise Software.

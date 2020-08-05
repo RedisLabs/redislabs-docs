@@ -9,7 +9,7 @@ You can import [export]({{< relref "/rs/administering/database-operations/export
 or [backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}})
 files of a specific Redis Enterprise Software (RS) database to restore data.
 You can either import from a single file or from multiple files,
-such as when you want to import from a backup of a sharded database.
+such as when you want to import from a backup of a clustered database.
 
 {{< warning >}}
 Importing data erases all existing content in the database.
@@ -40,7 +40,7 @@ each path on a separate line.
 Before you specify to import from an FTP server, make sure that:
 
 - The RS cluster has network connectivity to the FTP server.
-- The user that you specify in the FTP server location has read priviledges.
+- The user that you specify in the FTP server location has read privileges.
 
 To import an RDB file from an FTP server, enter the FTP server location in the format:
 
@@ -55,7 +55,7 @@ For example: `ftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 Before you specify to import from an SFTP server, make sure that:
 
 - The RS cluster has network connectivity to the SFTP server.
-- The user that you specify in the SFTP server location has read priviledges.
+- The user that you specify in the SFTP server location has read privileges.
 - The RS server and SFTP server have the correct TLS certificates. You can select either:
     - **Use the cluster auto generated key** - Go to **settings** and copy the **Cluster SSH Public Key**
         to the SFTP server.
@@ -85,11 +85,11 @@ You can also connect to a storage service that uses the S3 protocol but is not h
 Before you specify to import from a local mount point, make sure that:
 
 - The node has network connectivity to the destination server of the mount point.
-- The `redislabs:redislabs` user has read priviledges on the local mount point
+- The `redislabs:redislabs` user has read privileges on the local mount point
 and on the destination server.
 - You must mount the storage in the same path on all cluster nodes.
     You can also use local storage but you must copy the imported files manually to all nodes
-    because the import source folders on the nodes are not synchronised.
+    because the import source folders on the nodes are not synchronized.
 
 To specify to import from a local mount point on a node:
 

@@ -24,11 +24,7 @@ time (t2) wins over the update at t1.
 |  t5 | — Sync — | — Sync — |
 |  t6 |  | SET key1 “d” |
 
-
-
-Please note that bitfield methods like SETBIT are not supported in Active-Active databases
-in this version.
-
+Bitfield methods like SETBIT are not supported in Active-Active databases.
 
 ### String Data Type with Counter Value in Active-Active databases
 
@@ -54,7 +50,6 @@ concurrent writes.
 |  t7 |  | INCRBY key1 6 |
 |  t8 | — Sync — | — Sync — |
 |  t9 | GET key1<br/>13 | GET key1<br/>13 |
-
 
 Note: Active-Active databases support 59-bit counters. This limitation is to protect from
 overflowing a counter in a concurrent operation.

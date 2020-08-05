@@ -15,7 +15,7 @@ StackExchange.Redis' installation instructions are given in the ["Installation" 
 
 ## Opening a Connection to Redis Using StackExchange.Redis
 
-The following code creates a connection to Redis using  StackExchange.Redis:
+The following code creates a connection to Redis using StackExchange.Redis:
 
     using StackExchange.Redis;
     

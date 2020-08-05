@@ -31,7 +31,7 @@ all-RAM Redis Enterprise Software deployment.
 
 Unlike standard Redis Enterprise Software installations, implementing
 Redis on Flash requires pre-planning around memory and overall sizing.
-There are a few critical recommendations
+There are a few critical recommendations:
 
 - The flash memory should be local to the server/VM/instance/container
     as opposed to network attached.
