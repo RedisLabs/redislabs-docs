@@ -124,7 +124,7 @@ The output of the above code should be:
 
 ## Jedis
 
-Jedis is a small and sane Redis Java client.
+Jedis is a small but complete Redis Java client.
 
 ### Installing Jedis
 
