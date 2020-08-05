@@ -14,7 +14,7 @@ To get the best performance out of your databases, make sure you are using the l
 ### Avoid Dynamic Lua Script
 
 Refrain from generating dynamic scripts, which can cause your Lua cache to grow and get out of control.
-Memory is consumed as we have scripts loaded. The memory consumption are because of the following factors.
+Memory is consumed as we have scripts loaded. The memory consumption is because of the following factors.
 
 1. Memory used by the server.lua_scripts dictionary holding original text
 1. memory used internally by Lua to keep the compiled byte-code.
