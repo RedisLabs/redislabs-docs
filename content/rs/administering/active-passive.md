@@ -186,8 +186,20 @@ which shard/s the command refers.
 The source and destination can have different shard counts and functions
 for placement of keys.
 
-### Syncer in Active-Passive Replication (Replica Of)
+### Synchronization in Active-Passive Replication
 
-In Replica Of, the master node does not transfer the replication backlog to its slave.
-Whenever a synchronization is necessary, the slave has no backlog and can only do a full sync.
-But, in a controlled failover the demoted master still has the replication backlog, and when the syncer connects, it can do a partial sync.
+In Active-Passive databases, one cluster hosts the source database that receives read-write operations
+and the other clusters host destination databases that receive synchronization updates from the source database.
+
+When there is a significant difference between the source and destination databases,
+the destination database flushes all of the data from its memory and starts synchronizing the data again.
+This process is called a **full sync**.
+
+For example, if the database updates for the destination databases
+that are stored by the destination database in a synchronization backlog exceed their allocated memory,
+the source database starts a full sync.
+
+{{% warning %}}
+To avoid a full sync in a disaster recovery scenario,
+make sure that you disable **Replica Of** before you direct clients to the destination database.
+{{% /warning %}}
