@@ -1,5 +1,5 @@
 ---
-Title: User Management
+Title: User management
 description:
 weight: 10
 alwaysopen: false

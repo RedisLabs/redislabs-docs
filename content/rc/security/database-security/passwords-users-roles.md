@@ -1,13 +1,14 @@
 ---
-Title: Passwords, Users, and Roles
+Title: Passwords, users, and roles
 description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
 
-All Redis Cloud databases require either [password-based authentication](#password-based-authentication) or [role-based access control](#role-based-access-control).
-Role-based access control allows you to define multiple users with fine-grained authorization features.
+All Redis Cloud databases require either [password-based authentication](#password-based-authentication) or
+[role-based access control](#role-based-access-control). Role-based access control allows you to define multiple
+users with fine-grained authorization features.
 
 To use role-based access control, you need a Redis Cloud database supporting version 6.0.0 and above. You
 can check your database's Redis version by navigating to the **View Database** screen...
@@ -18,7 +19,7 @@ can check your database's Redis version by navigating to the **View Database** s
 
 ![Redis Version Compliance](/images/rc/redis-version-compliance.png "Redis Version Compliance")
 
-## Password-based Authentication {#passwordbased-authentication}
+## Password-based authentication {#passwordbased-authentication}
 
 Password-based authentication is a basic but essential Redis security feature. When you create a Redis Cloud database,
 your database is given a randomly generated password. You can see this password on the **View Database** screen.
@@ -38,7 +39,7 @@ AUTH 4kTtH2ddXfN2sFmXE6sowOLukxiaJhN8n
 
 See your Redis client's documentation for specifics on how to provide your password when connecting.
 
-### Changing the Password
+### Changing the password
 
 To change your Redis database password:
 
@@ -54,7 +55,7 @@ To change your Redis database password:
 
 ![Cancel/Update](/images/rc/cancel-update.png "Cancel Update")
 
-## Role-Based Access Control {#rolebased-access-control}
+## Role-Based access control {#rolebased-access-control}
 
 Role-based access control (RBAC) is an access-control mechanism that allows you to define *roles* with specific sets of *permissions*. You can then assign *users* to these roles
 to provide appropriate levels of access.
@@ -62,7 +63,7 @@ to provide appropriate levels of access.
 RBAC effectively lets you implement the [principle of least privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege). For example, you can provide
 read-only access to an application whose only job is to display Redis data. Similarly, you can prevent new developers from running dangerous administrative commands.
 
-### Setting Up RBAC
+### Setting up RBAC
 
 To set up RBAC, first navigate to the **Data Access Control** screen.
 
@@ -94,7 +95,7 @@ run within the transaction block are subject to RBAC permissions.
 
 When you run multi-key commands on multi-slot keys, the return value is `failure` but the command runs on the keys that are allowed.
 
-### Defining Permissions
+### Defining permissions
 
 To define permissions, go to the **Redis ACLs** tab of the **Data Access Control** page.
 
@@ -163,7 +164,7 @@ To define database access control, you can either:
 - Create new data access roles and select the management roles and Redis ACLs that apply to the roles for specific databases.
 - Assign roles and Redis ACLs to a database in the access control list section of the [database configuration]({{< relref "/rc/administration/setup/create-database.md" >}}).
 
-### Configuring Permissions using Redis ACLs
+### Configuring permissions using Redis ACLs
 
 To configure a Redis ACL that you can assign to a data access role:
 
@@ -182,7 +183,7 @@ To configure a Redis ACL that you can assign to a data access role:
     1. Click **Save Rule**.
 1. Click **Save**.
 
-### Assigning Permissions to a Role
+### Assigning permissions to a role
 
 To assign Redis ACLs to a data access role:
 
@@ -202,7 +203,7 @@ To assign Redis ACLs to a data access role:
 
 Users that are assigned to the role can access the databases according to the Redis ACL definitions.
 
-### Assigning a Role to a User
+### Assigning a role to a user
 
 To assign a role to a user:
 

@@ -1,12 +1,12 @@
 ---
-Title: Network Security
+Title: Network security
 description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
 ---
 
-Redis Cloud supports two types of network security: [IP Restrictions](#ip-and-subnet-restructions) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as indicated in the table below:
+Redis Cloud supports two types of network security: [IP Restrictions](#ip) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as indicated in the table below:
 
 <table>
 <tbody>
@@ -34,13 +34,13 @@ Redis Cloud supports two types of network security: [IP Restrictions](#ip-and-su
 </table>
 <p>&nbsp;</p>
 
-## IP and Subnet Restrictions {#ip}
+## IP and subnet restrictions {#ip}
 
 You can restrict database access to a configurable
 set of source IP addresses and subnets. This is roughly equivalent
 to using [iptables](https://en.wikipedia.org/wiki/Iptables) to limit access to a host.
 
-### Adding Restrictions
+### Adding restrictions
 
 To restrict a database to a specific set of source IP addresses or subnets:
 
@@ -60,7 +60,7 @@ To restrict a database to a specific set of source IP addresses or subnets:
 
 ![Add](/images/rc/source-ip-subnet.png "Source IP / Subnet")
 
-## Virtual Private Clouds
+## Virtual private clouds
 
 A [Virtual Private Cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC) is an isolated set of resources within a [public cloud](https://en.wikipedia.org/wiki/Cloud_computing#Public_cloud), usually having its own subnets and VLAN.
 
@@ -72,7 +72,7 @@ How you create these connections, and the features supported, varies somewhat by
 
 Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you must either [create a VPC peering connection](#creating-a-vpc-peering-connection) or [deploy your subscription in your own VPC](#deploying-in-your-own-vpc).
 
-#### Creating a VPC Peering Connection
+#### Creating a VPC peering connection
 
 Below are instructions for creating a VPC peering connection for AWS. One you've created this connection, you may also want to consider [configuring a CIDR whitelist] to allow connection only from specific IP address blocks or security groups.
 
@@ -117,7 +117,7 @@ Once your VPC peering request is accepted, the status in your subscription's **V
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
 please don't hesitate to [contact support](https://redislabs.com/company/contact/support/).
 
-#### Configuring a CIDR Whitelist
+#### Configuring a CIDR whitelist
 
 The **CIDR whitelist** defines a range of IP addresses and/or AWS security groups permitted to access
 databases in the Redis Cloud VPC.
