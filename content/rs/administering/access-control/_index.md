@@ -51,7 +51,7 @@ For the user role, enter either:
     - Receive alerts for databases - The alerts that are enabled for the selected databases are sent to
       the user. You can either select all databases, or you can select **Customize** and select the
       individual databases to send alerts for.
-      All databases includes existing and future databases.
+      All databases include existing and future databases.
     - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 
     {{% expand "How do I select email alerts?" %}}{{< video "/images/rs/add-user-email-alerts.mp4" "Select email alerts" >}}{{% /expand %}}
@@ -105,7 +105,7 @@ curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/jso
 ### Setting local user password expiration
 
 RS lets you enforce password expiration to meet your compliance and contractual requirements.
-To enforce an expiration of a local users password after a specified number of days, run:
+To enforce an expiration of a local user password after a specified number of days, run:
 
 ```sh
 curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password_expiration_duration":<number_of_days>}' https://<RS_server_address>:9443/v1/cluster

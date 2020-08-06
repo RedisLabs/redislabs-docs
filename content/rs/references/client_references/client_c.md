@@ -13,7 +13,7 @@ Download the latest [hiredis release](https://github.com/redis/hiredis/releases)
 
 ## Opening a Connection to Redis Using hiredis
 
-The following code creates a connection to Redis using  hiredis' synchronous API:
+The following code creates a connection to Redis using the hiredis synchronous API:
 
     #include "hiredis.h"
 

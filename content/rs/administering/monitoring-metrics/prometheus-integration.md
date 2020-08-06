@@ -122,7 +122,7 @@ To get started with custom monitoring:
     1. In the Grafana dashboards menu, select **Manage**.
     1. Click **Import**.
     1. Copy one of the configurations into the **Paste JSON** field.
-        {{%expand "database.json" %}}
+        {{% expand "database.json" %}}
 
 ```json
 {{% embed-code "/rs/database.json" %}}

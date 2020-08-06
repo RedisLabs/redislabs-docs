@@ -9,7 +9,7 @@ In order to use Redis with Java you need a Java Redis client. In following secti
 
 ## Lettuce
 
-Lettuce is a scalable thread-safe Redis client providing both synchronous and asynchronous connections.
+Lettuce is a thread-safe Redis client providing both synchronous and asynchronous connections.
 
 ### Installing Lettuce
 
@@ -124,7 +124,7 @@ The output of the above code should be:
 
 ## Jedis
 
-Jedis is a blazingly small and sane Redis Java client.
+Jedis is a simple, complete, thread-safe Java client for Redis.
 
 ### Installing Jedis
 

@@ -220,7 +220,7 @@ These installation questions are:
 
 - **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
 
-    We recommend that you run the `rlckeck` installation verification to make sure that the installation completed succesfully.
+    We recommend that you run the `rlckeck` installation verification to make sure that the installation completed successfully.
     If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
 
 ### Installation answer file

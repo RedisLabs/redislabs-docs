@@ -53,7 +53,7 @@ nodes' command.
 {{< /warning >}}
 
 You run install.sh from the directory where you untarred the media
-just like you do for a new install. The software recognizes this is
+just like you do for a new installation. The software recognizes this is
 an upgrade and proceeds accordingly.
 
 Just like for a new installation, you must sudo or be root to do the

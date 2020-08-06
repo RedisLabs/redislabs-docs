@@ -80,7 +80,7 @@ the top of the page and click on the *Route53* menu item:
 Then, I assume that you already have registered a domain, and that you
 defined *Route53* as the primary/master name server for the whole domain
 or for one of its sub-domains. So, you should have at least one zone in
-*Route53*. Clic on the *Hosted zones* link to open it:
+*Route53*. Click on the *Hosted zones* link to open it:
 
 ![02-Route53HostedZones-en](/images/rs/02-Route53HostedZones-en.png?width=600&height=237)
 
@@ -203,7 +203,7 @@ demo.francois.demo-rlec.redislabs.com. 3409 IN NS ns3.demo.francois.demo-rlec.re
 ;; MSG SIZE  rcvd: 120
 ```
 
-You can see that the name were changed to ns?. This answer does not come
+You can see that the name are given a prefix of `ns-`. This answer does not come
 from *Route53* but from the cluster nameservers themselves.
 
 Now you can either install and configure your nodes, if not already

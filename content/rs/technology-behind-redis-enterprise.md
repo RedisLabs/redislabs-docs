@@ -51,7 +51,7 @@ You can read more about these features in our [architecture guide]({{< relref "/
 
 ## Operational Simplicity
 
-Redis Enteprise simplifies and automates many tasks including provisioning new databases, updating database configuration,
+Redis Enterprise simplifies and automates many tasks including provisioning new databases, updating database configuration,
 resharding existing databases, and rebalancing shards across cluster
 nodes.
 
