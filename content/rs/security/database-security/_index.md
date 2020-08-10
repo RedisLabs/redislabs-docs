@@ -1,7 +1,7 @@
 ---
-Title: Database Security
+Title: Database security
 description:
-weight: 10
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 ---

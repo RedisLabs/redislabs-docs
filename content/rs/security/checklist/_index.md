@@ -1,7 +1,7 @@
 ---
-Title: Security Checklist
+Title: Security checklist
 description:
-weight: 10
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 ---
@@ -45,13 +45,13 @@ If your organization is not able to use an LDAP integration, Redis Enterprise co
 Session timeouts help to ensure that if a users session is ever compromised that the Redis Enterprise control plane will only be availible for the duration of the session lifetime. As a result a session timeout makes the tradeoff between usability and security. A session will only be availible for a set amount of time prior to a user being required to re-authenticate. By default, Redis Enterprise has a session timeout of 15 minutes, which meets most security guidelines. If you would like to configure the session timeout to meet your organizations policies visit our [session timeout documentation]({{< relref "/rs/security/database-security/authentication-and-authorization.md#session-timeout" >}}).
 
 ### Require HTTPS for API Endpoints
-Redis Enterprise comes with an API that users are able to use to automate frequent manual tasks. This API is availible in both an encrypted and unencrypted endpoint for backwards compatibility. You can disable the unencrypted endpoint if its not in use without any impact. To disable the unencrypted API endpoint visit our documentation on [requiring HTTPS]({{< relref "/rs/security/control-plane-security/encryption.md#requiring-https-for-api-endpoints" >}}).
+Redis Enterprise comes with an API that users are able to use to automate frequent manual tasks. This API is availible in both an encrypted and unencrypted endpoint for backwards compatibility. You can disable the unencrypted endpoint if its not in use without any impact. To disable the unencrypted API endpoint visit our documentation on [requiring HTTPS]({{< relref "/rs/security/admin-console-security/encryption.md#requiring-https-for-api-endpoints" >}}).
 
 ### Configuring Transport Layer Security
-A common compliance requirement is to set a minimum version of TLS. This helps to ensure that only secure versions of TLS are allowed when accessing the cluster. For more information about configuring TLSvisit our [TLS configuration guidance]({{< relref "rs/security/control-plane-security/encryption.md#tls-configuration" >}})
+A common compliance requirement is to set a minimum version of TLS. This helps to ensure that only secure versions of TLS are allowed when accessing the cluster. For more information about configuring TLSvisit our [TLS configuration guidance]({{< relref "rs/security/admin-console-security/encryption.md#tls-configuration" >}})
 
 ### Installing your own certificates
-Redis Enterprise comes with self-signed certificates by default, however, many organizations require the use of specific CA signed certificates.  To learn how to install your own certificates visit [requiring HTTPS]({{< relref "/rs/security/control-plane-security/encryption.md#requiring-https-for-api-endpoints" >}})
+Redis Enterprise comes with self-signed certificates by default, however, many organizations require the use of specific CA signed certificates.  To learn how to install your own certificates visit [requiring HTTPS]({{< relref "/rs/security/admin-console-security/encryption.md#requiring-https-for-api-endpoints" >}})
 
 # Database Security
 

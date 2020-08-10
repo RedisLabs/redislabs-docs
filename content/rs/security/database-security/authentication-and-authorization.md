@@ -1,5 +1,5 @@
 ---
-Title: Authentication and Authorization
+Title: Authentication and authorization
 description:
 weight: 10
 alwaysopen: false

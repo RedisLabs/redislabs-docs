@@ -1,7 +1,7 @@
 ---
-Title: LDAP Authentication
+Title: LDAP authentication
 description:
-weight: 10
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 ---

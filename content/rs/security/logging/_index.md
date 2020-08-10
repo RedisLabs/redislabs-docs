@@ -1,7 +1,7 @@
 ---
 Title: Logging
 description:
-weight: 10
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---
