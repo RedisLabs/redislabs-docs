@@ -694,7 +694,6 @@ section a {
   -ms-flex: 1;
   flex: 1;
   background-color: #f7f7f7;
-  overflow: hidden;
   position: relative;
 }
 
@@ -703,6 +702,21 @@ section a {
   position: absolute;
   top: 10px;
   left: 10px;
+  z-index: 10;
+}
+
+.algolia-autocomplete {
+  width: 100%;
+}
+
+.algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu {
+  left: 0 !important;
+  top: 105% !important;
+  max-width: 100% !important;
+}
+
+.algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu:before {
+  left: 48px !important;
 }
 
 .searchbox {

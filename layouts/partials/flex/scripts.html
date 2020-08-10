@@ -84,3 +84,13 @@ window.onclick = function(e) {
 {{end}}
 
 <script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}" defer></script>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript">
+  docsearch({
+    apiKey: 'ALGOLIA_DS_API_KEY',
+    indexName: 'redislabs',
+    inputSelector: '#algolia-search-input',
+    debug: false
+  });
+</script>

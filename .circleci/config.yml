@@ -13,6 +13,10 @@ jobs:
             - run:
                 name: Set "Edit in GitHub" link for the specified branch in the hugo config
                 command: sed -i s/branch/${CIRCLE_BRANCH}/g config.toml
+            # Set Algolia DocSearch API key from environment variable
+            - run:
+                name: Set Algolia DocSearch API key
+                command: sed -i s/ALGOLIA_DS_API_KEY/${ALGOLIA_DS_API_KEY}/g layouts/partials/flex/scripts.html
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
@@ -52,6 +56,10 @@ jobs:
                     else
                         sed -i s/branch/${CIRCLE_BRANCH}/g config.toml ;
                     fi
+            # Set Algolia DocSearch API key from environment variable
+            - run:
+                name: Set Algolia DocSearch API key
+                command: sed -i s/ALGOLIA_DS_API_KEY/${ALGOLIA_DS_API_KEY}/g layouts/partials/flex/scripts.html                  
             - run:
                 name: Build site files (HTML, CSS, images) with the baseURL for the specified branch, including Google snippets (production)
                 command: |

@@ -136,41 +136,41 @@ function search(query) {
 }
 
 // Let's get started
-initLunr();
+// initLunr();
 $( document ).ready(function() {
-    var searchList = new autoComplete({
-        delay: 550,
-        /* selector for the search box element */
-        selector: $("#search-by").get(0),
-        /* source is the callback to perform the search */
-        source: function(term, response) {
-            response(search(term));
-        },
-        /* renderItem displays individual search results */
-        renderItem: function(item, term) {
-            var numContextWords = 3;
-            var regEx = "(?:\\s?(?:[\\w\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]+)\\s?){0";
-            var text = item.content.match(
-                regEx+numContextWords+"}" +
-                    term+regEx+numContextWords+"}");
-            if(text && text.length > 0) {
-                var len = text[0].split(' ').length;
-                item.context = len > 1? '...' + text[0].trim() + '...' : null;
-            }
-            item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
-            return '<div class="autocomplete-suggestion" ' +
-                'data-term="' + term + '" ' +
-                'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '?s=' + term + '"' +
-                'data-context="' + item.context + '">' +
-                    '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
-                    '<div class="context">' + (item.context || '') +'</div>' +
-                '</div>';
-        },
-        /* onSelect callback fires when a search suggestion is chosen */
-        onSelect: function(e, term, item) {
-            console.log(item.getAttribute('data-val'));
-            location.href = item.getAttribute('data-uri');
-        }
-    });
+    // var searchList = new autoComplete({
+    //     delay: 550,
+    //     /* selector for the search box element */
+    //     selector: $("#search-by").get(0),
+    //     /* source is the callback to perform the search */
+    //     source: function(term, response) {
+    //         response(search(term));
+    //     },
+    //     /* renderItem displays individual search results */
+    //     renderItem: function(item, term) {
+    //         var numContextWords = 3;
+    //         var regEx = "(?:\\s?(?:[\\w\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]+)\\s?){0";
+    //         var text = item.content.match(
+    //             regEx+numContextWords+"}" +
+    //                 term+regEx+numContextWords+"}");
+    //         if(text && text.length > 0) {
+    //             var len = text[0].split(' ').length;
+    //             item.context = len > 1? '...' + text[0].trim() + '...' : null;
+    //         }
+    //         item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
+    //         return '<div class="autocomplete-suggestion" ' +
+    //             'data-term="' + term + '" ' +
+    //             'data-title="' + item.title + '" ' +
+    //             'data-uri="'+ item.uri + '?s=' + term + '"' +
+    //             'data-context="' + item.context + '">' +
+    //                 '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
+    //                 '<div class="context">' + (item.context || '') +'</div>' +
+    //             '</div>';
+    //     },
+    //     /* onSelect callback fires when a search suggestion is chosen */
+    //     onSelect: function(e, term, item) {
+    //         console.log(item.getAttribute('data-val'));
+    //         location.href = item.getAttribute('data-uri');
+    //     }
+    // });
 });
