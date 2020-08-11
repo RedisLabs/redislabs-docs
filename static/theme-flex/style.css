@@ -695,6 +695,7 @@ section a {
   flex: 1;
   background-color: #f7f7f7;
   position: relative;
+  max-width: 700px;
 }
 
 .searchicon {
@@ -817,6 +818,7 @@ section a {
   background: white;
   position: relative;
   z-index: 1;
+  max-width: 700px;
 }
 .btm_footer ul li {
   list-style-type: none;
