@@ -1030,7 +1030,7 @@ section.page {
   padding-right: 0;
 }
 article section.page h1:first-of-type {
-  margin: 5rem 0rem;
+  margin: 2.5rem 0rem 2.5rem 0;
   text-align: left;
   color: #354253;
   font-weight: 700;
@@ -3211,6 +3211,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
   .hot-topics-title-wrapper
    {
       width: 96%;
+      max-width: 700px;
       margin-left: 0;
   }
 }
