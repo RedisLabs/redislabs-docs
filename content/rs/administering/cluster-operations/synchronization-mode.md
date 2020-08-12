@@ -8,7 +8,7 @@ categories: ["RS"]
 Replicated databases, including those that use [Active-Passive]({{< relref "/rs/administering/active-passive.md" >}}) and [Active-Active]({{< relref "/rs/administering/active-active.md" >}}) replication,
 use proxy endpoints to synchronize database changes with the databases on the other participating clusters.
 To improve the throughput and lower the latency for synchronization traffic,
-you can configure a replicated database to use distributed synchronization where any available proxy endpoint can manage synchronication traffic.
+you can configure a replicated database to use distributed synchronization where any available proxy endpoint can manage synchronization traffic.
 
 Every database by default has one proxy endpoint that manages client and synchronization communication with the database shards,
 and that proxy endpoint is used for database synchronization.
