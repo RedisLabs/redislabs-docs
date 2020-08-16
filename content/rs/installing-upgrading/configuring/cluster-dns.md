@@ -151,4 +151,4 @@ page](https://redislabs.com/resources/how-to-redis-enterprise/).
 You can find a simple example of URL and IP Based connection in the
 "Testing Connectivity to your Database" section on the ["Creating a new
 database"
-page]({{< relref "/rs/administering/database-operations/creating-database#simple-connectivity-test" >}}).
+page]({{< relref "/rs/administering/creating-database#simple-connectivity-test" >}}).
