@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/create-crdb/
 ---
-[Active-Active geo-replicated databases]({{< relref "/rs/administering/active-active.md" >}}) (formerly known as CRDBs) give applications write access
+[Active-Active geo-replicated databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) (formerly known as CRDBs) give applications write access
 to replicas of the dataset in different geographical locations.
 
 The participating Redis Enterprise Software (RS) clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
@@ -25,7 +25,7 @@ Every instance of an Active-Active database can receive write operations, and al
 - Two or more machines with the same version of RS installed
 - Network connectivity and cluster FQDN name resolution between all participating clusters
 <<<<<<< HEAD:content/rs/administering/creating-databases/create-active-active.md
-- [Network time service]({{< relref "/rs/administering/active-active#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
+- [Network time service]({{< relref "/rs/administering/designing-production/active-active#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 =======
 - [Network time service]({{< relref "/rs/administering/designing-production/active-active.md#network-time-service-ntp-or-chrony" >}}) listener (ntpd) configured and running on each node in all clusters
 >>>>>>> Co-locating creating database articles; move Replication articles to designing-production:content/rs/administering/creating-databases/create-active-active.md

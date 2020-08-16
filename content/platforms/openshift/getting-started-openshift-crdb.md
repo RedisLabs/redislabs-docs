@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In this guide, we'll set up an [Active-Active database]({{< relref "/rs/administering/active-active.md" >}})
+In this guide, we'll set up an [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}})
 (formerly known as CRDB) deployment with Active-Active replication
 spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator
 and OpenShift Route.
