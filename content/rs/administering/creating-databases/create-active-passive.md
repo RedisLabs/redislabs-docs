@@ -67,7 +67,7 @@ If you regenerate the password, replication to existing destinations fails until
 
         {{< note >}}
 For a source database on a different RS cluster,
-you can [compress the replication data]({{< relref "/rs/administering/active-passive#data-compression-for-replica-of">}}) to save bandwidth.
+you can [compress the replication data]({{< relref "/rs/administering/designing-production/active-passive#data-compression-for-replica-of">}}) to save bandwidth.
         {{< /note >}}
 
     - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:

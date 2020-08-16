@@ -4,7 +4,7 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/cluster-operations/new-cluster-setup/
+aliases: /rs/administering/new-cluster-setup/
 ---
 A Redis Enterprise Software (RS) cluster typically consists of several
 nodes. For production deployments, Redis Labs recommends an uneven
