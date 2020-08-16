@@ -200,6 +200,7 @@ that are stored by the destination database in a synchronization backlog exceed 
 the source database starts a full sync.
 
 {{% warning %}}
-To avoid a full sync in a disaster recovery scenario,
+When you failover to the destination database for write operations,
 make sure that you disable **Replica Of** before you direct clients to the destination database.
+This avoids a full sync that can overwrite your data.
 {{% /warning %}}
