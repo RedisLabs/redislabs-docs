@@ -64,8 +64,7 @@ follows:
     - LATENCY RESET
     - LATENCY GRAPH
     - LATENCY DOCTOR
-- The following commands are not yet supported
-   - STRALGO LCS
+- STRALGO LCS is not yet supported
 - Lastly, only a subset of Redis configuration settings (via CONFIG
     GET/SET) is applicable to RS. Attempts to get or set a
     configuration parameter that is not included in the following list
