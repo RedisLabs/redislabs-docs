@@ -1,4 +1,4 @@
-<!-- Version selector -->
+<!-- RS version selector -->
 {{if .Params.categories}}
 {{if eq (index .Params.categories 0) "RS"}}
 <script>
@@ -54,7 +54,58 @@ window.onclick = function(e) {
 }</script>
 {{end}}
 {{end}}
-<!-- /Version selector -->
+<!-- /RS version selector -->
+
+<!-- Platforms version selector -->
+{{if .Params.categories}}
+{{if eq (index .Params.categories 0) "Platforms"}}
+<script>
+(function () {
+  var pa = window.location.pathname.split('/');
+  var pv = pa[1]; // 6.x, 5.x
+
+  if(pv == '6.0' || pv == 'latest') {
+    v = '6.x';
+    d = 'v6.x (latest)';
+  } else if (pv == '5.6') {
+    v = '5.x';
+    d = 'v5.x';
+  }
+  _setVersion(v, d);
+  _setSelectedVersion(v);
+})();
+
+function _setVersion(ver, displayName) {
+  document.getElementById('versionSelectorValue').innerText = displayName;
+}
+
+function _setSelectedVersion(ver) {
+  if(ver) {
+    var i = document.getElementById('version-select-' + ver);
+    if(i) {
+      i.classList.toggle('selected-version');
+    }
+  }
+}
+
+function _openVersionSelector() {
+    document.getElementById('versionSelector').classList.toggle('open');
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.version-selector-control')) {
+    var d = document.getElementsByClassName('menu__version-selector');
+    var i;
+    for (i = 0; i < d.length; i++) {
+      if (d[i].classList.contains('open')) {
+        d[i].classList.remove('open');
+      }
+    }
+  }
+}</script>
+{{end}}
+{{end}}
+<!-- /Platforms version selector -->
 
 <script>
   // Set up GA Event tracking
