@@ -21,7 +21,7 @@ Here is an example of a simple write case:
 | ---- | ----------------- | ----------------- |
 | t1   | PFADD hll x       |                   |
 | t2   | --- sync ---      |                   |
-| t3   |                   | PFADD hll x       |
+| t3   |                   | PFADD hll y       |
 | t4   | --- sync ---      |                   |
 | t5   | PFCOUNT hll --> 1 | PFCOUNT hll --> 1 |
 
