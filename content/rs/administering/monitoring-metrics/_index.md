@@ -1,7 +1,7 @@
 ---
 Title: Monitoring with Metrics and Alerts
 description:
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/alerting/

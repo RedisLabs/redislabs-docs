@@ -1,12 +1,11 @@
 ---
-Title: Settings
+Title: Cluster Settings
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view and set various cluster settings in the **Settings \>
-General** page.
+You can view and set various cluster settings in the **Settings > General** page.
 
 ## Entering a Cluster Key
 

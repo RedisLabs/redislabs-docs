@@ -1,7 +1,7 @@
 ---
 Title: User Management and Access Control
 description:
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/account-management/

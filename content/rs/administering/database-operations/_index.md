@@ -1,7 +1,7 @@
 ---
 Title: Database Maintenance
 description:
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 ---
