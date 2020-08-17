@@ -76,8 +76,8 @@ To upgrade a module that is installed on a cluster:
     rladmin upgrade db <database_name> and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
     ```
 
-    - If you want to remove the existing module arguments, enter `""` without arguments.
-    - If you want to use the existing module arguments, enter `"keep_args"`
+    - If you want to remove the existing module arguments, enter `module_args ""` without arguments.
+    - If you want to use the existing module arguments, enter `module_args keep_args`
     - If you want to update multiple modules, use the `and module` parameter for each module.
 
 ## Examples
@@ -99,5 +99,5 @@ Here are some examples of module upgrades:
 - To upgrade RedisJSON to 1.0.4 and keep existing arguments and RedisBloom to version 2.2.1 and remove arguments:
 
     ```sh
-    rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args "keep_args" and module db_name MyDB module_name bf version 20201 module_args ""
+    rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args keep_args and module db_name MyDB module_name bf version 20201 module_args ""
     ```
