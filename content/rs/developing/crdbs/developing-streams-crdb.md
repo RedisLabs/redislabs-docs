@@ -198,10 +198,10 @@ Active-Active databases fully support consumer groups with Redis Streams. Here i
 
 | Time | Region 1                  | Region 2                  |
 | ---- | --------------------------- | --------------------------- |
-| _t1_   | `XGROUP CREATE x g1 0`        | `XGROUP CREATE x g2 0`        |
-| _t2_   | `XINFO GROUPS x` <br/>**→ [g1]**     | `XINFO GROUPS x` <br/>**→ [g2]**     |
+| _t1_   | `XGROUP CREATE x group1 0`        | `XGROUP CREATE x g2 0`        |
+| _t2_   | `XINFO GROUPS x` <br/>**→ [group1]**     | `XINFO GROUPS x` <br/>**→ [g2]**     |
 | _t3_   | _— Sync —_                | — Sync —                |
-| _t4_   | `XINFO GROUPS x` <br/>**→ [g1, g2]** | `XINFO GROUPS x` <br/>**→ [g1, g2]** |
+| _t4_   | `XINFO GROUPS x` <br/>**→ [group1, g2]** | `XINFO GROUPS x` <br/>**→ [group1, g2]** |
 
 
 {{< note >}}
@@ -230,14 +230,14 @@ In this example, the DEL at _t4_ deletes both the observed `group1` and the non-
 | _t5_   | _— Sync —_            | _— Sync —_            |
 | _t6_   | `EXISTS x` <br/>**→ 0** | `EXISTS x` <br/>**→  0**          |
 
-In this example, the XGROUP DESTROY at _t4_ affects both the observed `g1` created in Region 1 and the non-observed `g1` created in Region 3:
+In this example, the XGROUP DESTROY at _t4_ affects both the observed `group1` created in Region 1 and the non-observed `group1` created in Region 3:
 
 | time | Region 1              | Region 2              | Region 3            |
 | ---- | ----------------------- | ----------------------- | --------------------- |
-| _t1_   | `XGROUP CREATE x g1 0`    |                         |                       |
+| _t1_   | `XGROUP CREATE x group1 0`    |                         |                       |
 | _t2_   | _— Sync —_            | _— Sync —_            |                       |
-| _t3_   | `XINFO GROUPS x` <br/>**→ [g1]** | `XINFO GROUPS x` <br/>**→  [g1]** | `XINFO GROUPS x` <br/>**→  []** |
-| _t4_   |                         | `XGROUP DESTROY x g1`     | `XGROUP CREATE x g1 0` |
+| _t3_   | `XINFO GROUPS x` <br/>**→ [group1]** | `XINFO GROUPS x` <br/>**→  [group1]** | `XINFO GROUPS x` <br/>**→  []** |
+| _t4_   |                         | `XGROUP DESTROY x group1`     | `XGROUP CREATE x group1 0` |
 | _t5_   | _— Sync —_            | _— Sync —            | — Sync —          |
 | _t6_   | `EXISTS x` <br/>**→  0**          | `EXISTS x` <br/>**→ 0**          | `EXISTS x` <br/>**→  0**    |
 
@@ -260,7 +260,7 @@ For example:
 | _t3_   | `XREADGROUP GROUP group1 Alice STREAMS messages >` <br/>**→ [110-1]** |                          |
 | _t4_   | _— Sync —_                                      | _— Sync —_             |
 | _t5_   | `XRANGE messages - +` <br/>**→ [110-1]**                          | XRANGE messages - + <br/>**→ [110-1]** |
-| _t6_   | `XINFO GROUPS messages` <br/>**→ [g1]**                            | XINFO GROUPS messages <br/>**→ [g1]**   |
+| _t6_   | `XINFO GROUPS messages` <br/>**→ [group1]**                            | XINFO GROUPS messages <br/>**→ [group1]**   |
 | _t7_   | `XINFO CONSUMERS messages group1` <br/>**→ [Alice]**                      | XINFO CONSUMERS messages group1 <br/>**→ []**  |
 | _t8_   | `XPENDING messages group1 - + 1` <br/>**→ [110-1]**                     | XPENDING messages group1 - + 1<br/>**→ []** |
 
@@ -277,13 +277,13 @@ Consumers acknowledge messages using the XACK command. Each ack effectively reco
 | _t1_   | `XADD x 110-0 f1 v1`                                              |              |                                                                                                                 |
 | _t2_   | `XADD x 120-0 f1 v1`                                              |              |                                                                                                                 |
 | _t3_   | `XADD x 130-0 f1 v1`                                              |              |                                                                                                                 |
-| _t4_   | `XGROUP CREATE x g1 0`                                            |              |                                                                                                                 |
-| _t5_   | `XREADGROUP GROUP g1 Alice STREAMS x >` <br/>**→ [110-0, 120-0, 130-0]** |              |                                                                                                                 |
-| _t6_   | `XACK x g1 110-0`                                                   |              |                                                                                                                 |
+| _t4_   | `XGROUP CREATE x group1 0`                                            |              |                                                                                                                 |
+| _t5_   | `XREADGROUP GROUP group1 Alice STREAMS x >` <br/>**→ [110-0, 120-0, 130-0]** |              |                                                                                                                 |
+| _t6_   | `XACK x group1 110-0`                                                   |              |                                                                                                                 |
 | _t7_   | _— Sync —_                                                    | _— Sync —_ | 110-0 and its preceding entries (none) were acknowledged. We replicate an XACK effect for 110-0.                |
-| _t8_   | `XACK x g1 130-0`                                                   |              |                                                                                                                 |
+| _t8_   | `XACK x group1 130-0`                                                   |              |                                                                                                                 |
 | _t9_   | _— Sync —_                                                    | _— Sync —_ | 130-0 was acknowledged, but not its preceding entries (120-0). We DO NOT replicate an XACK effect for 130-0     |
-| _t10_  | `XACK x g1 120-0`                                                   |              |                                                                                                                 |
+| _t10_  | `XACK x group1 120-0`                                                   |              |                                                                                                                 |
 | _t11_  | _— Sync —_                                                    | _— Sync —_ | 120-0 and its preceding entries (110-0 through 130-0) were acknowledged. We replicate an XACK effect for 130-0. |
 
 In this scenario, if we redirect the XREADGROUP traffic from Region 1 to Region 2 we do not re-read entries 110-0, 120-0 and 130-0.

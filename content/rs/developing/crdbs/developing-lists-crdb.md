@@ -46,9 +46,9 @@ Insertions:
 |  t7 | LRANGE L 0 -1 => x y1 y2 | LRANGE L 0 -1 => x y1 y2 |
 
 **Explanation**:
-Instance 1 added an element y1 after x, and then Instance 2 added
-element y2 after x. The final List contains all three elements: x is the
-first element, after it y1 and then y2. After syncing, the Active-Active database resolved the conflict by arbitrarily (but consistently across all Active-Active database instances) giving precedence to Instance 1.
+Instance 1 added an element y1 after x, and then Instance 2 added element y2 after x.
+The final List contains all three elements: x is the first element, after it y1 and then y2.
+The Active-Active database resolves the conflict arbitrarily but applies the resolution consistently across all Active-Active database instances.
 
 Example of Deleting a List while Pushing a New
 Element:
