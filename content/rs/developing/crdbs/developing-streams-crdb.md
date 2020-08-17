@@ -198,10 +198,10 @@ Active-Active databases fully support consumer groups with Redis Streams. Here i
 
 | Time | Region 1                  | Region 2                  |
 | ---- | --------------------------- | --------------------------- |
-| _t1_   | `XGROUP CREATE x group1 0`        | `XGROUP CREATE x g2 0`        |
-| _t2_   | `XINFO GROUPS x` <br/>**→ [group1]**     | `XINFO GROUPS x` <br/>**→ [g2]**     |
+| _t1_   | `XGROUP CREATE x group1 0`        | `XGROUP CREATE x group2 0`        |
+| _t2_   | `XINFO GROUPS x` <br/>**→ [group1]**     | `XINFO GROUPS x` <br/>**→ [group2]**     |
 | _t3_   | _— Sync —_                | — Sync —                |
-| _t4_   | `XINFO GROUPS x` <br/>**→ [group1, g2]** | `XINFO GROUPS x` <br/>**→ [group1, g2]** |
+| _t4_   | `XINFO GROUPS x` <br/>**→ [group1, group2]** | `XINFO GROUPS x` <br/>**→ [group1, group2]** |
 
 
 {{< note >}}
