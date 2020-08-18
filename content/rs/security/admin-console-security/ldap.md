@@ -9,33 +9,19 @@ categories: ["RS"]
 Redis Enterprise Software supports Lightweight Directory Access Protocol (LDAP) admin console users.
 
 {{< note >}}
-LDAP access is not yet available for database access, but this is planned for a future release.
+Known Limitations:
+- LDAP access is not yet available for database access, but this is planned for a future release.
+- This proccess does not apply when running Redis Enterprise on Kubernetes.
 {{< /note >}}
 
 ## Enabling LDAP
 
 To enable LDAP:
 
-1. Configure the `saslauthd` service
 1. Import the `saslauthd` configuration
 1. Restart `saslauthd` service
 1. Configure LDAP users
 
-### Configuring the saslauthd Service
-
-`saslauthd` is a process that handles authentication requests on behalf of Redis Enterprise Software to LDAP.  There are two steps to configuring this process:
-
-1. Modify the mechanisms configuration to LDAP
-1. Provide the LDAP configuration information
-
-**To modify the mechanisms configuration:**
-
-1. Open the files `/etc/default/saslauthd` file
-2. Find the `MECHANISMS` variable, and change it to:
-
-```sh
-MECHANISMS=”ldap”
-```
 
 **To provide the LDAP configuration information:**
 
@@ -50,14 +36,14 @@ MECHANISMS=”ldap”
 		- **ldap_filter:** the filter used to search for users
 		- **ldap_bind_dn:** The distinguished name for the user that will be used to authenticate to the LDAP server.
     		- **ldap_password:** The password used for the user specified in ldap_bind_dn
-1. Import the saslauthd configuration into Redis Enterprise using the below command
+1. Import the saslauthd configuration into Redis Enterprise using the below command. This will distribute the configuration to all nodes in the cluster.
 ```sh
 rladmin cluster config saslauthd_ldap_conf <path_to_saslauthd.conf>
 ```
 {{< note >}}
 If this is a new server installation, for this command to work, a cluster must be set up already.
 {{< /note >}}
-1. If this is a new server installation, for this command to work, a cluster must be set up already.
+1. Restart `saslauthd` 
 ```sh
 sudo supervisorctl restart saslauthd
 ```
