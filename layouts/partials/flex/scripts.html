@@ -1,3 +1,39 @@
+<!-- Common code for version selectors -->
+{{if .Params.categories}}
+{{if or (eq (index .Params.categories 0) "RS") (eq (index .Params.categories 0) "Platforms")}}
+<script>
+  function _setVersion(ver, displayName) {
+  document.getElementById('versionSelectorValue').innerText = displayName;
+}
+
+function _setSelectedVersion(ver) {
+  if(ver) {
+    var i = document.getElementById('version-select-' + ver);
+    if(i) {
+      i.classList.toggle('selected-version');
+    }
+  }
+}
+
+function _openVersionSelector() {
+    document.getElementById('versionSelector').classList.toggle('open');
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.version-selector-control')) {
+    var d = document.getElementsByClassName('menu__version-selector');
+    var i;
+    for (i = 0; i < d.length; i++) {
+      if (d[i].classList.contains('open')) {
+        d[i].classList.remove('open');
+      }
+    }
+  }
+}
+</script>
+{{end}}
+{{end}}
+
 <!-- RS version selector -->
 {{if .Params.categories}}
 {{if eq (index .Params.categories 0) "RS"}}
@@ -23,35 +59,7 @@
   _setVersion(v, d);
   _setSelectedVersion(v);
 })();
-
-function _setVersion(ver, displayName) {
-  document.getElementById('versionSelectorValue').innerText = displayName;
-}
-
-function _setSelectedVersion(ver) {
-  if(ver) {
-    var i = document.getElementById('version-select-' + ver);
-    if(i) {
-      i.classList.toggle('selected-version');
-    }
-  }
-}
-
-function _openVersionSelector() {
-    document.getElementById('versionSelector').classList.toggle('open');
-}
-
-window.onclick = function(e) {
-  if (!e.target.matches('.version-selector-control')) {
-    var d = document.getElementsByClassName('menu__version-selector');
-    var i;
-    for (i = 0; i < d.length; i++) {
-      if (d[i].classList.contains('open')) {
-        d[i].classList.remove('open');
-      }
-    }
-  }
-}</script>
+</script>
 {{end}}
 {{end}}
 <!-- /RS version selector -->
@@ -74,35 +82,7 @@ window.onclick = function(e) {
   _setVersion(v, d);
   _setSelectedVersion(v);
 })();
-
-function _setVersion(ver, displayName) {
-  document.getElementById('versionSelectorValue').innerText = displayName;
-}
-
-function _setSelectedVersion(ver) {
-  if(ver) {
-    var i = document.getElementById('version-select-' + ver);
-    if(i) {
-      i.classList.toggle('selected-version');
-    }
-  }
-}
-
-function _openVersionSelector() {
-    document.getElementById('versionSelector').classList.toggle('open');
-}
-
-window.onclick = function(e) {
-  if (!e.target.matches('.version-selector-control')) {
-    var d = document.getElementsByClassName('menu__version-selector');
-    var i;
-    for (i = 0; i < d.length; i++) {
-      if (d[i].classList.contains('open')) {
-        d[i].classList.remove('open');
-      }
-    }
-  }
-}</script>
+</script>
 {{end}}
 {{end}}
 <!-- /Platforms version selector -->
