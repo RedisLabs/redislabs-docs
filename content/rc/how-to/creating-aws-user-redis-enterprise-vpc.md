@@ -10,7 +10,7 @@ In most Redis Cloud deployments, the infrastructure of your Redis Cloud subscrip
 In Redis Cloud Ultimate, you can choose to have this infrastructure on your own AWS accounts.
 You'll want these accounts to be separate from any AWS application accounts,
 and you'll need to create some dedicated IAM entities to let us manage the infrastructure for you.
- 
+
 In the new AWS account, you need to create:
 
 - An **instance role**
@@ -30,7 +30,8 @@ To make sure that we can manage your AWS resources, you must not:
 
 For more about creating an AWS user, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
-# Using CloudFormation
+## Using CloudFormation
+
 The simplest method to create the necessary resources is to use CloudFormation and the following template. The outputs of this template can be copied/pasted directly and used to configure your RedisCloud account.
 
 {{% expand "View RedisLabsCloudFormationTemplate.yaml" %}}
@@ -251,7 +252,6 @@ The simplest method to create the necessary resources is to use CloudFormation a
           ]
         }
 
-
   RedisLabsUser:
     Type: "AWS::IAM::User"
     Properties:
@@ -265,7 +265,6 @@ The simplest method to create the necessary resources is to use CloudFormation a
     Type: "AWS::IAM::AccessKey"
     Properties:
       UserName: !Ref RedisLabsUser
-
 
   RedisLabsCrossAccountRole:
     Type: "AWS::IAM::Role"
@@ -304,8 +303,9 @@ Outputs:
   ```
 {{% /expand %}}
 
-# Using the AWS Console
-## Step 1: Create the IAM Instance Policy
+## Using the AWS Console
+
+### Step 1: Create the IAM Instance Policy
 
 First, create a policy to use for the new instance role:
 
@@ -388,7 +388,7 @@ First, create a policy to use for the new instance role:
 1. Validate it and press **Review Policy**.
 1. Enter **RedisLabsInstanceRolePolicy** as the policy name and click **Create Policy**.
 
-## Step 2: Create the Service Role
+### Step 2: Create the Service Role
 
 Now create the role that uses the policy:
 
@@ -401,7 +401,7 @@ Now create the role that uses the policy:
     select it, and click **Next: Review**.
 1. Name the role `redislabs-cluster-node-role` and click **Create Role**.
 
-## Step 3: Create the User Policy
+### Step 3: Create the User Policy
 
 Now create a policy to assign to the user:
 
@@ -532,7 +532,7 @@ Now create a policy to assign to the user:
 1. Validate the policy and click **Review Policy**.
 1. Enter `RedislabsIAMUserRestrictedPolicy` as the policy name and click **Create Policy**.
 
-## Step 4: Create the Programmatic Access User
+### Step 4: Create the Programmatic Access User
 
 Create a user and attach the policy you created:
 
@@ -547,7 +547,7 @@ Create a user and attach the policy you created:
 1. Click **Create user**.
 1. Download the user credentials and store them in a secure location.
 
-## Step 5: Create the Console Access Role
+### Step 5: Create the Console Access Role
 
 Last, create a role and attach the policy you created:
 
