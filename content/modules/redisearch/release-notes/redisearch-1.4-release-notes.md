@@ -5,6 +5,19 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 1.4.28 (May 2020)
+
+This is a maintenance release for version 1.4.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1218](https://github.com/RediSearch/RediSearch/pull/1218) Potential crash when running [without concurrency](https://oss.redislabs.com/redisearch/1.4/Configuring.html#safemode) and using the [cursor API](https://oss.redislabs.com/redisearch/1.4/Aggregations.html#cursor_api).
+
 ## RediSearch 1.4.27 (April 2020)
 
 Headlines:
