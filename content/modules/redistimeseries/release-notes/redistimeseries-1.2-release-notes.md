@@ -5,6 +5,32 @@ weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisTimeSeries 1.2.7 (June 2020)
+
+This is a maintenance release for version 1.2.
+
+Details:
+
+- Bugfixes:
+
+    - #[414](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/414) Crash when a query had an empty label `(foo,)`
+
+## RedisTimeSeries 1.2.6 (May 2020)
+
+This is a maintenance release for version 1.2.
+
+Details:
+
+- Minor enhancements:
+
+    - #[403](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/403) Support for multi-value filtering in `TS.MGET` and `TS.MRANGE`.
+
+- Bugfixes:
+
+    - #[378](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/378) Using `snprintf` to ensure the same precision of floating-point value replies.
+    - #[374](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/374) `TS.RANGE` crashed when COUNT argument was missing.
+    - #[395](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/395) Check minimum compatible Redis version at module load time.
+
 ## RedisTimeSeries 1.2.5 (March 2020)
 
 Headlines:
