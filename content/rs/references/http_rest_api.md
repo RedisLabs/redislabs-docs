@@ -3650,7 +3650,7 @@ categories: ["RS"]
             </li>
             <li>‘recovery’ - not relevant, intended for future use.</li>
         </ul>
-        <img src="..images/rs/graphviz-670bbb07fd7e9618b3ed315d2ab0c99b16e3e0fb.png" alt="digraph bdb_status {
+        <img src="..images/rs/diagram-bdb-status.png" alt="digraph bdb_status {
 pending -&gt; active;
 pending -&gt; &quot;creation-failed&quot;;
 active -&gt; &quot;active-change-pending&quot;;
@@ -3717,7 +3717,7 @@ recovery;
                 </dl>
             </li>
         </ul>
-        <img src="..images/rs/graphviz-1afaf34d7ea281023cccf5e0e3a6c61da5f3a013.png" alt="digraph bdb_replica_sync {
+        <img src="..images/rs/diagram-bdb-replica-sync.png" alt="digraph bdb_replica_sync {
 disabled -&gt; enabled;
 enabled -&gt; stopped;
 enabled -&gt; paused;
@@ -3778,7 +3778,7 @@ stopped -&gt; enabled;
                 </dl>
             </li>
         </ul>
-        <img src="..images/rs/graphviz-da1250127777c2330823f1348260152a0eaa9bad.png" alt="digraph bdb_replica_sources_status {
+        <img src="..images/rs/diagram-bdb-replica-sources-status.png" alt="digraph bdb_replica_sources_status {
 &quot;out-of-sync&quot; -&gt; syncing;
 syncing -&gt; &quot;in-sync&quot;;
 syncing -&gt; &quot;out-of-sync&quot;;
@@ -5181,7 +5181,7 @@ syncing -&gt; &quot;out-of-sync&quot;;
         actions and query their status without explicitly <cite>task_id</cite> handles. This is
         described in detail on a per-request basis.</p>
     <p>Action life-cycle is based on the following status and status transitions:</p>
-    <img src="..images/rs/graphviz-f62c695810a6a3b8a94c77db07ac9f5643f0ff0f.png" alt="digraph status {
+    <img src="..images/rs/diagram-task-id-status.png" alt="digraph status {
 queued -&gt; cancelled;
 queued -&gt; starting;
 starting -&gt; running;
