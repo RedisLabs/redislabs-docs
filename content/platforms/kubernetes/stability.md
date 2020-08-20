@@ -11,7 +11,7 @@ aliases:
 Kubernetes clusters manage the allocation of system resources and can evict pods to release system resources.
 Here are some ways that you can configure the Redis Enterprise node pods to maintain pod stability:
 
-## Guaranteed Quality of Service
+## Guaranteed quality of Service
 
 A running pod has a quality of service measure assigned to it that is
 one of three [quality of service classes](https://kubernetes.io/docs/tasks/configure-pod-container/quality-service-pod/):
@@ -39,7 +39,7 @@ kubectl get pod rec-0 --o jsonpath="{.status.qosClass}"
 
 where `rec-0` is the name of one of the pods associated with the Redis Enterprise cluster.
 
-## Using Priority to Protect from Preemption
+## Using priority to Protect from Preemption
 
 When a Redis Enterprise node pod is scheduled, it can be assigned a
 [priority class](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/)

@@ -60,7 +60,7 @@ The Redis OSS Cluster API setting applies to the specified database only, not to
 
 To disable OSS Cluster API with rladmin, run: `rladmin tune db <database name or ID> oss_cluster disable`
 
-## Managing OSS Cluster API Support for Active-Active databases from the Command Line
+## Managing OSS Cluster API Support for Active-Active databases from the command line
 
 To configure an RS Active-Active database (formerly known as CRDB) to use the OSS Cluster API from the command line:
 

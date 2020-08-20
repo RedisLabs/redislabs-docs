@@ -8,7 +8,7 @@ aliases: /rv/api/
 ---
 Redis Cloud Pro (RC Pro) API follows the principles of the REST architectural style to expose programmatic access to Redis Labs Pro features and capabilities.
 
-## Supported Redis Cloud Pro Features
+## Supported Redis Cloud Pro features
 
 The API exposes programmatic access for management of:
 

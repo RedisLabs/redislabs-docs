@@ -43,7 +43,7 @@ This lets a user specify the minimum desired state.
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
 If the database custom resource is deleted, the database is deleted from the cluster and its services are also deleted.
 
-## Database Lifecycle
+## Database lifecycle
 
 ### Creating databases
 

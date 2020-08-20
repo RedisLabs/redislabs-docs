@@ -51,7 +51,7 @@ To run an older version of Hugo on your local machine:
 1. Make a shell config file alias, for example: `alias hugo57='/usr/local/bin/hugo-0.57.2/hugo'`
 1. Go to your redislabs-docs repo and use the alias to build the docs, for example: `hugo57 serve`
 
-## Adding Pages
+## Adding pages
 
 Every article in the docs is an individual markdown file.
 To add a new article in the docs, you must add a markdown file in the hierarchy of the content directory.
@@ -76,7 +76,7 @@ categories: ["RC"]
 ---
 ```
 
-## Adding Sections
+## Adding sections
 
 To add a section to the docs that includes multiple articles, you must add a directory with a `_index.md` file.
 The `_index.md` file is the landing page for the section that should contain the main information for the section.
@@ -90,7 +90,7 @@ you can use the `children` shortcode to show all of the sub-topics for the secti
 {{%/* children style="h2" description="true" */%}}
 ```
 
-## Writing Article Content
+## Writing article Content
 
 The structure of an article is:
 

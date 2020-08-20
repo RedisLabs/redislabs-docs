@@ -95,7 +95,7 @@ differences:
     have slightly different requirements in Active-Active databases vs standard Redis
     databases. (ex: String type)
 
-## Data Types
+## Data types
 
 Even though the data types and methods look identical in standard Redis
 and Active-Active databases, there are specific rules that govern the handling of
@@ -122,13 +122,13 @@ followed by descriptions:
 | Streams | [Supported]({{< relref "/rs/developing/crdbs/developing-streams-crdb.md" >}}) |
 | Bitsets | Not currently supported |
 
-### Other Data Types
+### Other data types
 
 Bitmap and Bitfields, data types and operations are
 not currently supported in this version of
 Active-Active databases.
 
-## Lua Scripts
+## Lua scripts
 
 Active-Active databases support Lua scripts, but unlike standard Redis, Lua scripts always
 execute in effects replication mode. There is currently no way to

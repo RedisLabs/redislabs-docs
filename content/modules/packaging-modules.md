@@ -11,7 +11,7 @@ aliases: /modules/packaging
 Redis Labs does not and cannot support third party modules or databases created with them.
 {{< /warning >}}
 
-## Packaging Non-Certified Modules
+## Packaging non-certified modules
 
 In addition to the ones Redis Labs packages and certifies, there are
 other modules that can be installed and extend Redis databases in Redis

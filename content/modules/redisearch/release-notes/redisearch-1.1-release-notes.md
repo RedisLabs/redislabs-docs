@@ -13,7 +13,7 @@ This is a major version (we almost named it 2.0), which includes months of work,
 
 Aggregations are a way to process the results of a search query, group, sort and transform them - and extract analytic insights from them. Much like aggregation queries in other databases and search engines, they can be used to create analytics report, or to perform Faceted Search style queries.
 
-#### Example Aggregation Request
+#### Example aggregation request
 
 For example, indexing a web-server's logs, we can create report for unique users by hour. Suppose our schema includes the **SORTABLE** fields `timestamp` (Unix-timestamp) and `userId`:
 
@@ -27,7 +27,7 @@ FT.AGGREGATE idx "*"
 
 See [the full documentation on aggregations for more details](http://redisearch.io/Aggregations/)
 
-### Bug Fixes over 1.0.10
+### Bug fixes over 1.0.10
 
 - Fixed #[313](https://github.com/RediSearch/RediSearch/issues/313) - removed -mpopcnt compile flag.
 

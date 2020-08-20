@@ -18,7 +18,7 @@ upgrade instructions before beginning the upgrade process.
 You can upgrade to RS 5.0 from RS 4.4.2 and above. If you have a version
 older than this, you must first upgrade to at least 4.4.2.
 
-## New Features
+## New features
 
 ### Support for Redis Cluster API
 
@@ -48,7 +48,7 @@ intent.
 For more information, go here. For information, go to [Developing with
 CRDBs]({{< relref "/rs/developing/crdbs/_index.md" >}}).
 
-### Redis Modules
+### Redis modules
 
 Redis Modules enable you to extend the functionality of Redis Enterprise
 Pack. One can add new data types, capabilities, etc. to tailor the
@@ -56,7 +56,7 @@ cluster to a specific use case or need. Once installed, modules benefit
 from the high performance, scalability, and high availability that Redis
 Enterprise is known for.
 
-#### Redis Labs' Modules
+#### Redis Labs modules
 
 There are three modules Redis Labs has developed and certified with
 Redis Enterprise Pack (RS). The modules are:
@@ -72,7 +72,7 @@ Redis Enterprise Pack (RS). The modules are:
       filters are probabilistic data structures that do a very good job at
       quickly determining if something is contained within a set.
 
-#### Custom Modules
+#### Custom modules
 
 In addition, Redis Enterprise Pack provides the ability to load and use
 custom [Redis modules](https://redislabs.com/community/redis-modules-hub/) or of
@@ -116,7 +116,7 @@ Support for additional Redis commands and features:
 - Modules are not supported in Redis Enterprise Pack 5.0 for
     RHEL/CentOS 6.x
 
-## Important Fixes
+## Important fixes
 
 ### 5.0.0-31 {#5-0-031}
 

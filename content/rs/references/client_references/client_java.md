@@ -164,7 +164,7 @@ To adapt this example to your code, make sure that you replace the following val
 - In line 6, the second argument to `Jedis` should be your database's port
 - In line 7, the argument to `auth` should be your database's password
 
-### Connection Pooling with Jedis
+### Connection pooling with Jedis
 
 Jedis isn't thread-safe, and the same Jedis instance shouldn't be used from different threads. To overcome the overhead of multiple Jedis instances and connection maintenance, use `JedisPool`. To use JedisPool you'll have to have `Apache Commons Pool 2.3` available - download it  [here]( http://commons.apache.org/proper/commons-pool/download_pool.cgi) or add the following Maven dependency:
 

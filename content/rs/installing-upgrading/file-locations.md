@@ -8,7 +8,7 @@ aliases: /rs/administering/installing-upgrading/file-locations/
 ---
 To make sure that Redis Enterprise Software functions properly, make sure that you handle the files in the application directories with care.
 
-## Application Directories
+## Application directories
 
 The directories that Redis Enterprise Software installs into are:
 

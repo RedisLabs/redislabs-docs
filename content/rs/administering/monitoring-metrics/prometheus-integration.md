@@ -17,7 +17,7 @@ Metrics are exposed at the node, database, shard and proxy levels.
 
 In each cluster, the metrics_exporter component listens on port 8070 and serves as a Prometheus scraping endpoint for obtaining metrics.
 
-## Quick Start
+## Quick start
 
 To get started with custom monitoring:
 

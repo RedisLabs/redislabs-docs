@@ -59,7 +59,7 @@ To change the default port for the RS Web UI, on any node in the cluster run:
 rladmin cluster config cm_port <new-port>
 ```
 
-## Disabling HTTP support for API Endpoints
+## Disabling HTTP support for API endpoints
 
 To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.
 Before you disable HTTP support, make sure that you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint

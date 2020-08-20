@@ -85,7 +85,7 @@ are:
 1. Deleting rules from the custom hashing policy.
 1. Disabling clustering for the database.
 
-### Standard Hashing Policy
+### Standard hashing Policy
 
 When using the standard hashing policy, a Redis Cloud cluster
 behaves like the standard, open-source Redis cluster, and hashing is
@@ -107,7 +107,7 @@ hand, not using a hashtag in the key's name results in a
 If your application does not perform multi-key operations, you don't
 need to construct key names with hashtags.
 
-### Custom Hashing Policy
+### Custom hashing Policy
 
 A Redis Cloud  cluster can be configured to use a custom hashing
 policy. A custom hashing policy is required when different keys need to
@@ -133,7 +133,7 @@ default RegEx rules that implement the standard hashing policy are:
 You can modify existing rules, add new ones, delete rules or change
 their order to suit your application's requirements.
 
-### Custom Hashing Policy Notes and Limitations
+### Custom hashing Policy Notes and Limitations
 
 1. You can define up to 32 RegEx rules, each up to 256 characters.
 1. RegEx rules are evaluated by their order.

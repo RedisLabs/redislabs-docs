@@ -157,7 +157,7 @@ supervisorctl restart sentinel_service
 After you set the minimum TLS version, RS does not accept communications with
 TLS versions older than the specified version.
 
-### Cipher Configuration
+### Cipher configuration
 
 When you set the TLS ciphers, the new TLS ciphers are used for management communications only.
 

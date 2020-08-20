@@ -19,7 +19,7 @@ you must enter the downloadable Redis Labs CA Certificate from this page.
 
 ![settings](/images/rc/settings.png)
 
-## Team Management
+## Team management
 
 To manage the team of people who have access to the account, click on
 the "Team" tab and you will be presented with the current list of team
@@ -34,7 +34,7 @@ Team members can have different roles to the account:
 - **Member** - Can view, create, and edit databases
 - **Viewer** - Can view all databases and their configurations (including database secrets)
 
-### Team Management for GCP Marketplace customers
+### Team management for GCP Marketplace customers
 
 If you subscribed to Redis Cloud using GCP Marketplace, you can manage your team from the IAM section of the GCP console.
 To grant Redis Cloud access to a GCP user, assign one of these roles to the user:
@@ -76,7 +76,7 @@ If you cannot login to your account because of MFA, contact [Support](https://su
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
 {{< /note >}}
 
-#### Configuring MFA for an Authenticator App
+#### Configuring MFA for an authenticator app
 
 After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOTP) app such as Google Authenticator.
 Then when you log in to the Redis Cloud Admin Console, you can select to use either an authentication code sent by text message or an authentication code shown in the Authenticator app for MFA.
@@ -98,7 +98,7 @@ If you do MFA with the Authenticator app, you must open the Authenticator app an
 
 You can deactivate MFA for your user account. To deactivate MFA, go to your profile, click **Multi-Factor Authentication**, and click **Deactivate**.
 
-### Enforcing MFA for all User Accounts
+### Enforcing MFA for all user accounts
 
 Account owner users can enable MFA enforcement for all users in their account.
 After MFA is enforced for the account, all users that do not have MFA enabled are required to configure MFA the next time they log in to the Redis Cloud Admin Console.

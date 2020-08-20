@@ -28,7 +28,7 @@ Make sure that you have enough space available in your storage location.
 If there is not enough space in the backup location, the backup fails.
 {{< /note >}}
 
-## Exporting Data From a Database
+## Exporting data from a database
 
 To export data from a database:
 

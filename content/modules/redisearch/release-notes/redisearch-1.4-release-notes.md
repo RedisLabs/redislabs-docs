@@ -353,7 +353,7 @@ This release improves overall stability and focuses on performance improvements 
 - New: Runtime Configuration
 - Change: Unlimited Autocomplete Results
 
-### Garbage Collector
+### Garbage collector
 
 RediSearch employs a garbage collector that removes deleted documents from the internal data structures.
 
@@ -365,11 +365,11 @@ The improved collection mechanism is currently **experimental*- and is not enabl
 redis-server --loadmodule ./redisearch.so GC_POLICY FORK
 ```
 
-### Runtime Configuration
+### Runtime configuration
 
 RediSearch's [configuration](https://oss.redislabs.com/redisearch/Configuring/) is applied via arguments passed to the module at load time. This release introduces the new [`FT.CONFIG`  command](https://oss.redislabs.com/redisearch/Commands/#ftconfig) that allows to retrieve the current configuration as well as change it during runtime.
 
-### Unlimited Autocomplete Results
+### Unlimited autocomplete results
 
 This version removes the limit of 10 results from `FT.SUGGET` - you can set the `MAX num` as high as needed.
 

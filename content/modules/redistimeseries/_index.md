@@ -77,7 +77,7 @@ RedisTimeSeries comes with several integrations into existing time series tools.
 
 Furthermore, we also created direct integrations for [Grafana](https://github.com/RedisTimeSeries/grafana-redistimeseries) and [Telegraph](https://github.com/RedisTimeSeries/telegraf). [This repository](https://github.com/RedisTimeSeries/prometheus-demos) contains a docker-compose setup of RedisTimeSeries, its remote write adaptor, Prometheus and [Grafana](https://grafana.com/). It also comes with a set of data generators and pre-built Grafana dashboards.
 
-## Time Series Modelling Approaches with Redis
+## Time series Modelling Approaches with Redis
 
 ### Data modelling approaches
 
@@ -134,7 +134,7 @@ For the Redis Streams and Sorted Sets approaches, we created [the following LUA 
 
 This is where you can see the real power of having dedicated data structure for a given use case with a toolbox that runs alongside it. RedisTimeSeries just blows all other approaches out of the water, and is the only one to achieve sub-millisecond response times.
 
-### Memory Utilization
+### Memory utilization
 
 In both the Redis Streams and Sorted Set approaches, the samples were kept as a string, while in RedisTimeSeries it was a double. In this specific data set, we chose a CPU measurement with rounded integer values between 0-100, which thus consumes two bytes of memory as a string. In RedisTimeSeries, however, each metric had 64-bit precision.
 

@@ -52,7 +52,7 @@ To see the status of the current rolling upgrade, run:
 kubectl rollout status sts <REC_name>
 ```
 
-## How Does the Upgrade Work?
+## How does the Upgrade Work?
 
 Rolling updates allow you to update deployments with zero downtime
 by incrementally updating Redis Enterprise Cluster instances in the pods with new instances.

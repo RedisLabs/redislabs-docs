@@ -20,7 +20,7 @@ The query accepts 3 parameters:
 - `database-id` (Required) - The ID of the database
 - `metric-span` (Optional) - The [time span]({{< relref "/rc/api/concepts/metrics#metric-spans-and-intervals" >}}) for the query. The default time span is `1hour`.
 
-## Metrics Query Example
+## Metrics query Example
 
 ```shell
 {{% embed-code "rv/api/70-query-metrics.sh" %}}

@@ -18,13 +18,13 @@ plus support for creation of Redis databases with multiple modules and support f
 - RedisTimeSeries (Preview Version)
 - RedisGears (Preview Version)
 
-## New Features
+## New features
 
 RS 5.5 lets you create Redis databases with multiple Redis modules.
 
 {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-## Preview Considerations
+## Preview considerations
 
 This preview version is a standalone version and is not supported for production environments.
 You cannot upgrade to it from a lower version or upgrade from it to a higher version.
@@ -32,7 +32,7 @@ Unexpected behaviors/issues found in this release will be addressed in future re
 
 This preview version is not supported for networks that are isolated from the internet.
 
-## Installation Instructions
+## Installation instructions
 
 To set up a cluster with nodes that can host databases with multiple modules, you must follow this procedure on each node in the cluster:
 

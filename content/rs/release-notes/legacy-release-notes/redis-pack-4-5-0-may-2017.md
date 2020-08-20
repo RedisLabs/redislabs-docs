@@ -12,9 +12,9 @@ You can upgrade to this version from any 4.4 version. If you have a
 version older than 4.4 you must first upgrade to 4.4 or higher, and only
 then upgrade to this version.
 
-## New Features
+## New features
 
-### The New Discovery Service with Support for Redis Sentinel API
+### The new discovery service with supportfor Redis Sentinel API
 
 The Discovery Service provides an IP-based connection management service
 used when connecting to Redis Enterprise Pack databases. When used in
@@ -32,7 +32,7 @@ side by side in a given cluster where some clients can use Discovery
 Service based connection while others can use DNS name resolution when
 connecting to databases.
 
-### Building Large Databases with RAM and Flash Memory in Redis on Flash v2.0
+### Building large databaseswith RAM and Flash Memory in Redis on Flash v2.0
 
 With Redis Enterprise Pack 4.5, Redis on Flash v2 is production
 ready. RFv2 brings performance, reliability, and stability enhancements
@@ -59,7 +59,7 @@ Support for additional Redis commands and features:
 
 Support has been added RHEL 7.3 with this version.
 
-## Important Fixes
+## Important fixes
 
 - RP10106 - SSL Certificate should not need to be signed with a
     stronger hashing algorithm to be accepted

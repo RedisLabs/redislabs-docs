@@ -162,7 +162,7 @@ after the database is created.
 
     ![database-port](/images/rs/database-port.png)
 
-## Simple Connectivity Test
+## Simple connectivity test
 
 Once the database is created, you can find the endpoint and port for the
 database in the web UI on the configuration page of each database. It is
@@ -174,7 +174,7 @@ There are a few simple ways to check connectivity to your database:
 - Redis_cli
 - Using a simple application
 
-### Testing Database Connectivity with Telnet
+### Testing database connectivity with Telnet
 
 As a quick smoke test, telnet to your endpoint and port for the database.
 Then run the redis PING command.
@@ -191,7 +191,7 @@ PING
 +PONG
 ```
 
-### Testing Database Connectivity with redis-cli {#testing-database-connectivity-with-rediscli}
+### Testing database connectivity with redis cli {#testing-database-connectivity-with-rediscli}
 
 The redis-cli utility is installed on each node in RS cluster with the rest of the utilities.
 
@@ -205,7 +205,7 @@ redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
 ```
 
-### Testing Database Connectivity with Simple Application
+### 
 
 You can also use a simple application to test connectivity to your database.
 Here is a simple python app  the connects to the database by IP address.

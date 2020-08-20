@@ -91,7 +91,7 @@ If you used the mDNS protocol for the cluster name (FQDN),
 make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}) are met.
 {{< /note >}}
 
-## Configuring TLS for Replica Of Traffic on the Destination Database
+## Configuring TLS for Replica Of traffic on the destination database
 
 When you enable TLS for Replica Of, the Replica Of synchronization traffic uses TLS certificates to authenticate the communication between the source and destination clusters.
 To encrypt the Replica Of synchronization traffic, you must also [configure encryption for the source database](#configuring-encryption-of-replica-of-traffic-on-the-source-database).
@@ -110,6 +110,6 @@ To enable TLS for Replica Of in the destination database:
 
 1. Click **Continue**, save the Replica Of endpoint, and click **Update** to save the changes.
 
-## Configuring Encryption of Replica Of Traffic on the Source Database
+## Configuring Encryption of Replica Of traffic on the source database
 
 {{< embed-md "tls-configuration-procedure.md"  >}}

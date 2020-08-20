@@ -11,7 +11,7 @@ project and employs it inside of RS. As a rule, Redis Labs adheres to
 the open source's specifications and makes every effort to update
 RS with the latest version of Redis.
 
-## Redis Commands
+## Redis commands
 
 Any standard Redis client can be used with RS. That said, some of
 Redis functionality is not applicable in the context of RS, as

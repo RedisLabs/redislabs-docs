@@ -109,7 +109,7 @@ database. You can test connectivity to your database with:
 - redis-cli - the built-in command-line tool
 - A _Hello World_ application using Python
 
-### Connecting Using redis-cli {#connecting-using-rediscli}
+### Connecting using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with Redis database.
 
@@ -131,7 +131,7 @@ OK
 "123"
 ```
 
-### Connecting Using _Hello World_ Application in Python
+### Connecting using _Hello World_ application in Python
 
 A simple python application running on the **host machine**, not the
 container, can also connect to database1.

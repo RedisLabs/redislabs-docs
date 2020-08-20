@@ -26,7 +26,7 @@ time (t2) wins over the update at t1.
 
 Bitfield methods like SETBIT are not supported in Active-Active databases.
 
-### String Data Type with Counter Value in Active-Active databases
+### String data type with counter value in Active-Active databases
 
 Counters can be used to implement distributed counters. This can be useful when counting total views of an
 article or image, or when counting social interactions like "retweets"

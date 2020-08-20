@@ -25,7 +25,7 @@ the Redis Enterprise Cluster (REC) must be deployed with persistence enabled.
 The REC deployment files in the [Kubernetes documentation](https://github.com/RedisLabs/redis-enterprise-k8s-docs) contain this declaration by default.
 {{< /note >}}
 
-## Volume Size
+## Volume size
 
 *volumeSize* is an optional definition. By default, if the definition is
 omitted, Operator allocates five times (5x) the amount of memory (RAM)
@@ -41,7 +41,7 @@ We recommed that you omit the volumeSize definition from the REC declaration
 so that the Redis Enterprise Cluster deployment on Kubenetes use the default volume size.
 {{< /note >}}
 
-## Storage Class Name
+## Storage class Name
 
 *storageClassName* determines the Storage Class resource, which is
 defined by the Kubernetes cluster administrator, to be used for

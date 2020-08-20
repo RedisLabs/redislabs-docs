@@ -32,7 +32,7 @@ RS copies a backup file for each shard to the specified backup location.
 
 {{< /note >}}
 
-## Scheduling Periodic Backups
+## Scheduling periodic backups
 
 To schedule periodic backups for a database:
 

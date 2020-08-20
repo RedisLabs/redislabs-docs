@@ -91,7 +91,7 @@ gears-cli --host <host>
           REQUIREMENTS rgsync
 ```
 
-### Secret Management
+### Secret management
 
 You may not want to store database credentials in your RedisGears functions. To avoid this, you can pass these credentials as module parameters and then reference them from your functions.
 

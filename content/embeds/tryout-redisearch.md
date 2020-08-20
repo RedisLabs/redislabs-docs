@@ -1,4 +1,4 @@
-## Creating Indexes
+## Creating indexes
 
 Let's create a new index called "myidx". When you define the index, you
 must pass in the structure of the data you are adding to the index.

@@ -21,7 +21,7 @@ This is a bug-fix release with some stability fixe, a few processing bug fixes, 
 
 - Fixed bug in union of id lists (b8e74ef3)
 
-### New Features
+### New features
 
 - Added support for tag prefix completions (137b346)
 

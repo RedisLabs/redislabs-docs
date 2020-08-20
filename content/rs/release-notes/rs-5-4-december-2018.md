@@ -11,13 +11,13 @@ Redis Enterprise Software (RS) 5.4 is now available. RS 5.4 adds support for Red
 
 You can upgrade to RS 5.4 from RS 5.0 and above according to the [upgrade instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}). If you have a version older than 5.0, you should first upgrade to version 5.2 (or at least 5.0).
 
-## New Features
+## New features
 
 ### Redis 5.0 GA - Redis Streams
 
 RS 5.4 adds support for Redis 5.0 (GA version- 5.0.2), which introduces the new [Redis Streams](https://redis.io/topics/streams-intro) data type. Redis Streams models a log data structure in-memory and implements additional powerful operations, such as Consumer Groups.
 
-### Redis Graph Module
+### Redis graph module
 
 Starting from RS 5.4, [Redis Graph](https://oss.redislabs.com/redisgraph/), a new Redis Enterprise Module that introduces the world's fastest graph database, is an integral part of Redis Enterprise package.
 
@@ -30,7 +30,7 @@ In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/admin
 1. Clustering mode - Creates a CRDB that consists of any number of shards in a clustering mode and is subject to [multi-key commands limitations]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
 1. Non-clustering mode - Creates a CRDB that consists of one shard only in a non-clustering mode so that [multi-key command limitations]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) do not apply.
 
-### High Availability for Replica (Slave)* Shards
+### High availability for replica (slave) shards
 
 When [slave high availability]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) is enabled and a master shard fails, a replica shard is automatically promoted to a master shard to maintain data availability. This creates a single point of failure until a new replica shard is manually created.
 
@@ -38,15 +38,15 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 *_Please note that just as is the case with the Redis open-source project, Redis Labs is in the process of changing the "master-slave" terminology to "master-replica" everywhere, including within our documentation._
 
-## Additional Capabilities
+## Additional capabilities
 
 - Support for new operating systems- Ubuntu 18.04 and RHEL 7.6.
 
-## Product Version Lifecycle
+## Product version lifecycle
 
 - The End of Life (EOL) for Redis Enterprise Software 4.5.X was November 30th, 2018, in accordance with our [published policy]({{< relref "/rs/administering/product-lifecycle.md" >}}). We recommend that customers with version 4.5 or below upgrade to the latest version.
 
-## Important Fixes
+## Important fixes
 
 - RS23616 - Fixed a failure when updating the memory limit of RoF database.
 - RS22871 - Fixed a certificate verify failure after nodes upgrade.
@@ -63,7 +63,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 - RS18875 - Added the ability to upgrade database gradually, few shards at a time.
 - RS15207 - Fixed a failure during re-shard operation.
 
-## Known Limitations
+## Known limitations
 
 ### Installation
 
@@ -78,7 +78,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 - Removed the deprecated argument `backup_path` from cluster API. To create or update BDBs, please use `backup_location`.
 
-### Redis Commands
+### Redis commands
 
 - The capability of disabling specific Redis commands does not work on Redis Module specific commands.
 - The CLIENT ID command cannot guarantee incremental IDs between clients that connect to different nodes under multi proxy policies.

@@ -20,7 +20,7 @@ With RedisGears, **batch processing** means processing the data already stored i
 
 The examples below assume an empty Redis database.
 
-## Batch Processing
+## Batch processing
 
 Let's start with the simplest example. From the `redis-cli`, run the following command:
 
@@ -72,7 +72,7 @@ $ redis-cli rg.pyexecute "`cat wordcount.py`"
 
 The results here show the number of occurences of each word in all of our strings. So, we've effectively processed the data in our Redis database all at once, in a batch.
 
-## Event Processing
+## Event processing
 
 You may have noticed that all of the RedisGears functions above end with a call to `run()`. This indicates that the function should be run immediately on the data in the Redis database. But what if you want to process data as it arrives in Redis? In that case, your functions will end with a call to `register()`, which will store the function and apply it as events occur in Redis.
 
@@ -133,6 +133,6 @@ redis.cloud:6379> GET age:maximum
 "21"
 ```
 
-## Next Steps
+## Next steps
 
 You should now have a basic idea of how to run RedisGears functions for batch and event processing. But there's a lot more to RedisGears than this. To better understand it, see the [RedisGears tutorial](https://oss.redislabs.com/redisgears/intro.html). If you're interested in write-behind caching, see our [write-behind caching]({{< relref "/modules/redisgears/write-behind.md" >}}) overview.

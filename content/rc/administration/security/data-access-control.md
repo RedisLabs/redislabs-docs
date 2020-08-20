@@ -69,7 +69,7 @@ To configure a Redis ACL that you can assign to a data access role:
     1. Click **Save Rule**.
 1. Click **Save**.
 
-## Assigning Redis ACLs to a User Role
+## Assigning Redis ACLs to a user role
 
 To assign Redis ACLs to a data access role:
 
@@ -89,7 +89,7 @@ To assign Redis ACLs to a data access role:
 
 Users that are assigned to the role can access the databases according to the Redis ACL definitions.
 
-## Assigning Users to a User Role
+## Assigning users to a User Role
 
 To assign users to a data access role:
 

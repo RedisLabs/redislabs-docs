@@ -13,12 +13,12 @@ RS 5.2.2 is a minor version that includes important fixes and minor enhancements
 
 If you are upgrading from a previous version, make sure to review the upgrade instructions before beginning the upgrade process. You can upgrade to RS 5.2.2 from RS 4.5 and above. If you have a version older than 4.5, you should first upgrade to version 5.0 (or at least 4.5).
 
-## New Capabilities
+## New capabilities
 
 Support for Redis version 4.0.10
 RediSearch Enterprise, which is installed with Redis Enterprise Software by default, has been updated to a newer version (1.4.0)
 
-## Important Fixes
+## Important fixes
 
 - RED-21080 – Fixed the memory limit calculation for RoF databases
 - RED-20825 – Updated the ‘RAM limit’ of RoF databases to a range between 10% and 100%
@@ -34,7 +34,7 @@ RediSearch Enterprise, which is installed with Redis Enterprise Software by defa
 - RED-21936 – Improved handling of CRDB configuration update when URL parameter was supplied at creation time
 - RED-19760 – Added the capability to control the minimum TLS version that can be used for encrypting the Discovery Service data
 
-## Known Limitations
+## Known limitations
 
 - When updating the general settings of a cluster, the ‘username’ and ‘password’ fields in the email server settings cannot be left empty. In case one wants to update the general settings and prefer to leave the ‘username’ and ‘password’ fields empty, the REST API should be used.
 - An issue prevents the user from defining ‘min_data_TLS_version’ on the source cluster when working with Replica Of or CRDB.

@@ -34,7 +34,7 @@ To choose which metrics to display in the two large graphs at the top of the pag
 
 We recommend that you show two similar metrics in the top graphs so you can compare them side-by-side.
 
-## Cluster Alerts
+## Cluster alerts
 
 In **settings** > **alerts**, you can enable alerts for node or cluster events, such as high memory usage or throughput.
 
@@ -53,7 +53,7 @@ To enable alerts for a cluster:
 
 - In **settings** > **alerts**, select the alerts that you want to show for the cluster and click **Save**.
 
-## Database Alerts
+## Database alerts
 
 For each database, you can enable alerts for database events, such as high memory usage or throughput.
 
@@ -68,7 +68,7 @@ To enable alerts for a database:
 1. In **configuration** for each database, click **show advanced options** to see the database alerts and select the alerts that you want to get for the database.
 1. Click **Update**.
 
-## Sending Alerts by Email
+## Sending alerts by email
 
 To send cluster or database alerts by email:
 

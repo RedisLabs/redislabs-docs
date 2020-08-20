@@ -7,12 +7,12 @@ categories: ["Modules"]
 ---
 Before you can use RedisGears, you have to install the RedisGears module on your RS cluster.
 
-## Minimum Requirements
+## Minimum requirements
 
 - Redis Enterprise 6.0.0 or later
 - The [cluster is setup]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) and all of the nodes are joined to the cluster
 
-## Installing RedisGears
+## Installing redisGears
 
 ### Step 1: Install RedisGears dependencies
 

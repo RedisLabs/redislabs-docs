@@ -12,7 +12,7 @@ aliases: /rv/administration/configuration/securing-your-database/
 ---
 The security controls for your database are:
 
-## Access Control by Source IP/Subnet
+## Access control by source IP/subnet
 
 The number of source IP rules that you can add depends on the Redis Cloud plan that you purchased.
 For example, the 1GB plan allows up to 8 source IP authentication rules.
@@ -29,11 +29,11 @@ You may change your subscription at any time by going to **Databases > Configura
 Only the account owner can change the subscription.
 {{< /note >}}
 
-## Securing Connection to Your Database with SSL/TLS
+## Securing connections to your database with SSL/TLS
 
 You can [secure your database connections]({{< relref "/rc/administration/security/securing-redis-cloud-connections.md" >}}) with SSL/TLS.
 
-## Default User
+## Default user
 
 The [default user]({{< relref "/rc/administration/setup/create-database.md" >}}) for your database, which is enabled by default,
 requires all connections to the database to use the [AUTH command](https://redis.io/commands/auth) to authenticate with the default user password.
@@ -41,7 +41,7 @@ If you enable data access control, database connections can use any of the confi
 
 You can click on ![icon_view](/images/rc/icon_view.png#no-click "View") to see the password in plain text.
 
-## Data Access Control
+## Data access control
 
 You can [create users with ACLs]({{< relref "/rc/administration/security/data-access-control.md" >}}) that limit the commands and keys that each user can access for specific databases.
 When your client authenticates with one of these users,

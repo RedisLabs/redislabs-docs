@@ -34,7 +34,7 @@ The Redis Enterprise Software trial version lets you use up to 4 Redis shards wi
 - 1 non-replicated clustered database with 4 master shards
 - 1 highly available and clustered database with 2 master shards and 2 slave shards
 
-## Test Environment and RS Cluster Setup
+## Test environment and RS cluster setup
 
 For the test environment, you must:
 
@@ -78,7 +78,7 @@ We recommend that you use a relatively powerful instance to avoid bottlenecks at
 
 For these tests, the load generation host uses a c4.8xlarge instance type.
 
-## Database Configuration Parameters
+## Database configuration parameters
 
 ### Create a Redis on Flash test database
 
@@ -96,7 +96,7 @@ We recommend that you use a separate database for each test case with these requ
 |  Number of (master) shards | 2 | 4 | Shards are distributed as follows:<br/>- With replication: 1 master shard and 1 slave shard on each node<br/>- Without replication: 2 master shards on each node |
 |  Other parameters | Default | Default | Keep the default values for the other configuration parameters. |
 
-## Data Population
+## Data population
 
 ### Populate the benchmark dataset
 
@@ -141,7 +141,7 @@ $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-pattern=P:P --ratio=0:1
 ```
 
-## Test Runs
+## Test runs
 
 ### Generate load
 
@@ -178,7 +178,7 @@ Where:
 |  Pipelining (--pipeline)\ | Pipelining allows you to send multiple requests without waiting for each individual response (-t) and number of clients per thread (-c) |
 |  Read\write ratio (--ratio)\ | A value of 1:1 means that you have the same number of write operations as read operations (-t) and number of clients per thread (-c) |
 
-## Test Results
+## Test results
 
 ### Monitor the test results
 

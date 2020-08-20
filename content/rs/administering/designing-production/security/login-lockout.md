@@ -16,7 +16,7 @@ Customers, such as large organizations, that use LDAP to manage external authent
 must set these restrictions in the LDAP service.
 {{< /note >}}
 
-## User Login Lockout
+## User login lockout
 
 The parameters for the user login lockout are:
 
@@ -84,7 +84,7 @@ For example, to set the lockout duration to 1 hour:
 rladmin tune cluster login_lockout_duration 3600
 ```
 
-## Unlocking Locked User Accounts
+## Unlocking locked user accounts
 
 Before the lockout duration ends,
 an administrator can change the user password in order to manually unlock the user account.

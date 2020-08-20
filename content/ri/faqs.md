@@ -50,7 +50,7 @@ We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. 
 
 {{< /expand-control >}}
 
-## Memory Analysis
+## Memory analysis
 
 {{< expand-control >}}
 {{% expand "How long does the memory analysis take?" %}}

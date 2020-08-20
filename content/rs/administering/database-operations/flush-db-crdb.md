@@ -13,7 +13,7 @@ The flush command deletes ALL in-memory and persistence data in the database.
 We recommend that you [backup your database]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) before you flush the data.
 {{< /warning >}}
 
-## Flushing Data from a Database
+## Flushing data from a database
 
 From the command line, you can flush a database with the redis-cli command or with your favorite Redis client.
 
@@ -29,7 +29,7 @@ Example:
 redis-cli -h redis-12345.cluster.local -p 12345 -a xyz flushall
 ```
 
-## Flushing Data from an Active-Active Database
+## Flushing data from an Active-Active database
 
 When you flush an Active-Active database (formerly known as CRDB), all of the replicas flush their data at the same time.
 

@@ -10,7 +10,7 @@ aliases: /rv/securing-redis-cloud-connections/
 In Redis Cloud, SSL/TLS support is a paid option. To enable it, contact [Support](https://support.redislabs.com).
 SSL/TLS support is included in all Redis Cloud Pro paid plans.
 
-## Setting Up Your Database
+## Setting up Your Database
 
 Using SSL/TLS requires setup of both your Redis Cloud
 database and your application, as described below.
@@ -280,7 +280,7 @@ delay = yes`
 accept = 127.0.0.1:6379
 connect = host:port`
 
-### Testing Secure Connectivity to a Redis Cloud Resource
+### secure connectivity to a Redis Cloud resource
 
 You can test the connection from your client using redis-cli, for
 example::

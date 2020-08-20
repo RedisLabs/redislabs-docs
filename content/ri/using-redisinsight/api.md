@@ -18,7 +18,7 @@ required to add databases.
 Note that this API should not be considered stable at this point and might change or break entirely in
 future releases. Do not rely on this API for production.
 
-## Add Redis Database
+## Add Redis database
 
 Used to add Redis databases to RedisInsight.
 
@@ -41,7 +41,7 @@ These are the required parameters for any type of database.
 
 The remaining parameters depend on the connection type.
 
-##### Standalone Database Parameters
+##### Standalone database parameters
 
 Standalone databases are added using `connectionType: "STANDALONE"`.
 
@@ -66,7 +66,7 @@ The following additional parameters are required for standalone databases.
 }
 ```
 
-##### Redis Cluster Database Parameters
+##### Redis cluster database parameters
 
 Redis Cluster databases are added using `connectionType: "CLUSTER"`.
 
@@ -199,13 +199,11 @@ The client certificate and key details can be provided in two forms:
     }
     ```
 
-
-### Success Response
+### Success response
 
 **Code** : `201 Created`
 
-
-## Add TLS Certificate and Key Pair
+## Add TLS certificate and key pair
 
 Used to add a new TLS certificate and private key pair to use to connect to a Redis database.
 
@@ -225,7 +223,7 @@ Used to add a new TLS certificate and private key pair to use to connect to a Re
 | cert       | string | The certificate string                                                |
 | key        | string | The private key string                                                |
 
-### Success Response
+### Success response
 
 The name and ID is returned in the response body. The ID can be used to reference this certificate/key pair
 when adding databases.
@@ -233,6 +231,7 @@ when adding databases.
 **Code** : `201 Created`
 
 **Body** :
+
 ```json
 {
     "certificate": {
@@ -242,8 +241,7 @@ when adding databases.
 }
 ```
 
-
-## Get Added TLS Certificate and Key Pairs
+## Get added TLS certificate and key pairs
 
 Used to retrieve a list of [previously added](#add-tls-certificate-and-key-pair) TLS certificate and private key pair to use to connect to a Redis database.
 
@@ -253,7 +251,7 @@ Used to retrieve a list of [previously added](#add-tls-certificate-and-key-pair)
 
 **Auth required** : NO
 
-### Success Response
+### Success response
 
 A list of objects, each containing the client certificate's name and ID, is returned in the response body. 
 The ID can be used to reference this certificate/key pair when adding databases.

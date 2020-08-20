@@ -36,7 +36,7 @@ Unless you've installed Predis with Composer, you'll need to include the 2nd and
 - In line 9, `port` should be your database's port
 - In line 10, `password` should be your database's password
 
-## Persistent Connections with Predis
+## Persistent connections with Predis
 
 Predis supports the use of persistent connections, which are recommended practice to minimize connection management overhead. To enable persistent connections, use the `persistent` connection attribute as shown in the following snippet:
 

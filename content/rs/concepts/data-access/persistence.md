@@ -79,7 +79,7 @@ two:
 |  Slower time to recover (Larger files) | Faster recovery time |
 |  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
 
-## Data Persistence and Redis on Flash
+## Data persistence and Redis on Flash
 
 If you are enabling data persistence for databases running on Redis
 Enterprise Flash, by default both master and slave shards are

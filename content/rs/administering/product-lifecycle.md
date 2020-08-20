@@ -11,7 +11,7 @@ However, for any discrepancy between the two policies, the subscription agreemen
 
 Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).
 
-## Release Numbering
+## Release numbering
 
 Redis Labs uses a four-place numbering scheme to designate released versions of its products.
 The format is “Major1.Major2.Minor-Build”.

@@ -71,13 +71,13 @@ Do you want to set up NTP time synchronization now [Y/N]? Y
 2017-10-30 11:24:19 [.] Making sure NTP is installed and time is set.
 ```
 
-## Network Configurations
+## Network configurations
 
 RS assumes that networking between the clusters is already configured when you create an Active-Active database.
 For security purposes, we recommend that you configure a secure VPN between all clusters that host an instance of an Active-Active database.
 The setup of the Active-Active database fails if there is no connectivity between the clusters.
 
-## Network Ports
+## Network ports
 
 For initial configuration and ongoing maintenance of an Active-Active database, every node must have access to the REST API ports of every other node.
 You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
@@ -85,7 +85,7 @@ You must also open ports for [VPNs and Security groups]({{< relref "/rs/administ
 For synchronization, Active-Active databases operate over the standard endpoint ports.
 The endpoint port that you configure when you create the Active-Active database is the endpoint port of the proxy for that Active-Active database on each cluster.
 
-### Data Persistence
+### Data persistence
 
 You can set the data persistence configuration, including AOF (Append-Only File) data persistence and snapshot,
 for each participating cluster.

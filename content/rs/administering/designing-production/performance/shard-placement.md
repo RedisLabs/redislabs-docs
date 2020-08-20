@@ -11,7 +11,7 @@ The [shard placement policy]({{< relref "/rs/concepts/shard-placement-policy.md"
 
 {{< embed-md "shard-placement-intro.md"  >}}
 
-## Default Shard Placement Policy
+## Default shard placement policy
 
 When you create a new cluster, the cluster configuration has a `dense` default shard placement policy.
 When you create a database, this default policy is applied to the new database.
@@ -26,7 +26,7 @@ To change the default shard placement policy so that new databases are created w
 tune cluster default_shards_placement [ dense | sparse ]
 ```
 
-## Shard Placement Policy for a Database
+## Shard placement policy for a database
 
 To see the shard placement policy for a database in `rladmin status`.
 

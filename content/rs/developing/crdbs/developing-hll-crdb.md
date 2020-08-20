@@ -34,7 +34,7 @@ Here is an example of a concurrent add case:
 | t3   | --- sync ---      |                   |
 | t4   | PFCOUNT hll --> 2 | PFCOUNT hll --> 2 |
 
-## The DEL-Wins Approach
+## The DEL-wins approach
 
 Other collections in the Redis-CRDT implementation use the observed remove method to resolve conflicts.
 The CRDT-HLL uses the DEL-wins method.

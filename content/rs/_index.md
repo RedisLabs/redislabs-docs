@@ -46,7 +46,7 @@ Geo-distributed Active-Active databases combine [conflict-free replicated data t
 Standard Redis databases keep all of their data in RAM; Redis on Flash databases distribute data across RAM and dedicated flash memory (SSD).
 This lowers costs while maintaining similar performance to completely RAM-based databases.
 
-## Additional Features
+## Additional features
 
 {{< tabs tabTotal="7" tabID="1" tabName1="Linear Scalability" tabName2="High Availability" tabName3="Data Durability" tabName4="High Performance" tabName5="Dedicated Databases" tabName6="User Interface" tabName7="24/7 Support">}}
 {{< tab tabNum="1" >}}

@@ -92,7 +92,7 @@ has its limitations: it doesn't support exact phrase search, it has a
 big memory overhead, and can be very slow with big records
 intersections.
 
-## Storing Documents
+## Storing documents
 
 The RediSearch engine indexes "documents", which are a list of
 field-value pairs. The index knows how to index each field, but that's

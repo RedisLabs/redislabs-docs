@@ -41,7 +41,7 @@ With Redis Cloud, we automatically add or remove instances to your cluster
 to accommodate your fluctuating dataset size without any interruption
 to your applications.
 
-### Significant Cost Saving of Redis on Flash (RoF)
+### Significant cost saving of Redis on Flash (RoF)
 
 For datasets larger than 50GB,
 running Redis on Flash delivers high throughput with the same sub-millisecond latencies of Redis on RAM,

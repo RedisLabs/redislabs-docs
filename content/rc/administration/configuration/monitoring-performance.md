@@ -81,7 +81,7 @@ appropriately on your own. For example, if you have two databases,
 configuring an alert for when each database reaches 80% can surpass your
 number of subscriptions.
 
-## Changing Alert Email Recipients
+## Changing alert Email Recipients
 
 Any member of the account team can receive alert emails.
 

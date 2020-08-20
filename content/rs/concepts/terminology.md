@@ -25,7 +25,7 @@ which helps to achieve high availability.
 A node is made up of several components, as detailed below, and works
 together with the other cluster nodes.
 
-## Redis Instance - Shard
+## Redis instance (shard)
 
 As indicated above, each node serves as a container for hosting multiple
 database instances, referred to as "shards".

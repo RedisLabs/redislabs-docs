@@ -27,7 +27,7 @@ To adapt this example to your code, make sure that you replace the following val
 - In line 1, the first part of the string argument to `Connect` should be your database's endpoint
 - In line 1, the second part of the string argument to `Connect` should be your database's password
 
-## Connection Pooling with StackExchange.Redis
+## Connection pooling with StackExchange.Redis
 
 While StackExchange.Redis does not provide direct means for conventional connection pooling, we recommend you **share and reuse** the ConnectionMultiplexer object. The ConnectionMultiplexer object should not be created per operation - it is to be created only once at the beginning and reused for the duration of the run. ConnectionMultiplexer is thread-safe so it can be safely shared between threads. For more information, refer to StackExchange.Redis’ [Basic Usage document](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md).
 
@@ -57,7 +57,7 @@ StackExchange.Redis is the first Redis client that natively supported SSL. The f
 - In line 7, the string argument should be your database's password
 - In line 11, replace with the path to your .pfx file
 
-### Converting Certificates from .key to .pfx Format
+### Converting certificates from .key to .pfx format
 
 To easily convert a .key certificate to .pfx format use OpenSSL:
 

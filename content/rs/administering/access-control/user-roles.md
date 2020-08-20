@@ -13,7 +13,7 @@ In **access control** > **roles**, you can configure Redis Enterprise Software (
 - **Management roles** that define user access to the RS web UI and API for the cluster
 - **Data access control** with Redis ACLs that define the commands and keys that users can access in database connections
 
-## Cluster Management Roles
+## Cluster management roles
 
 Each user role is assigned a management role that defines the access the user with that role has in the RS web UI and API for the cluster.
 
@@ -21,7 +21,7 @@ The management roles are:
 
 {{< embed-html "account-role-table.html" >}}
 
-### Assigning Management Roles to a User Role
+### Assigning management roles to a user role
 
 To assign a management role to a user role:
 
@@ -31,11 +31,11 @@ To assign a management role to a user role:
 1. Select the management role for the user role.
 1. Click **Save**.
 
-### User Roles for Database Connections Only
+### User roles for database connections only
 
 To create a user role for users that cannot connect to the RS web UI and API, assign the **None** management role to the user role.
 
-## Database Access Control
+## Database access control
 
 To control user access to Redis database commands and keys,
 you must define Redis ACLs that specify the commands that users can run and keys that the commands can apply to.
@@ -99,7 +99,7 @@ To configure a Redis ACL that you can assign to a user role:
         1. Click **Submit**.
 1. Click **Save**.
 
-### Assigning Redis ACLs to a User Role
+### Assigning Redis ACLs to a user role
 
 To assign Redis ACLs to a user role:
 

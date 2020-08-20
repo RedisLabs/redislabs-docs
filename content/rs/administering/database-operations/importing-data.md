@@ -26,7 +26,7 @@ To import data into a database:
     email notifications about the import process.
 1. Click **Import**.
 
-## Supported Storage Services
+## Supported storage services
 
 The storage services that are supported for import are:
 

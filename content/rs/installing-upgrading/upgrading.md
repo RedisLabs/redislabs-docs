@@ -127,7 +127,7 @@ a result:
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
-## Upgrading Active-Active Databases {#upgrading-activeactive-databases}
+## Upgrading Active-Active databases {#upgrading-activeactive-databases}
 
 When you upgrade an Active-Active database, you can also upgrade:
 

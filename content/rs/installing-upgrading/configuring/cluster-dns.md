@@ -21,7 +21,7 @@ other DNS server except for the one included with the RS installation.
 The existence of another DNS server on the same machine might cause
 unexpected and erroneous behavior.
 
-## Cluster Name (FQDN) and Connection Management
+## Cluster name (FQDN) and connection management
 
 When connecting to the cluster for administration or connecting to
 databases for data access, there are 2 options:

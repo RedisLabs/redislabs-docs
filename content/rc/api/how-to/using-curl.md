@@ -12,7 +12,7 @@ You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](ht
 - The cURL HTTP client
 - An HTTP client in any programming language
 
-## Swagger User Interface
+## Swagger user Interface
 
 The [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models and simulated usage.
 

@@ -9,9 +9,9 @@ While RedisInsight can monitor the health of your databases, here are some tips 
 
 To get the best performance out of your databases, make sure you are using the latest version of [Redis](https://redis.io).
 
-## Developer Best Practices
+## Developer best practices
 
-### Avoid Dynamic Lua Script
+### Avoid dynamic Lua script
 
 Refrain from generating dynamic scripts, which can cause your Lua cache to grow and get out of control.
 Memory is consumed as we have scripts loaded. The memory consumption is because of the following factors.
@@ -41,7 +41,7 @@ Redis gives you the following statistics for a 64-bit machine.
 
 Switching to 32-bit from 64-bit machine can substantialy reduce the cost of the machine used and can optimize the usage of memory.
 
-#### Trade Offs
+#### Trade offs
 
 For the 32-bit Redis variant, any key name larger than 32 bits requires the key to span to multiple bytes, thereby increasing the memory usage.
 
@@ -49,7 +49,7 @@ For the 32-bit Redis variant, any key name larger than 32 bits requires the key 
 
 If your data size is expected to increase more than 3 GB then you should avoid switching.
 
-### Reclaim Expired Keys Memory Faster
+### Reclaim expired keys memory faster
 
 When you set an expiry on a key, redis does not expire it at that instant. Instead, it uses a [randomized algorithm](https://redis.io/commands/expire) to find out keys that should be expired. Since this algorithm is random, there are chances that the keys are not expired. This means that redis consumes memory to hold keys that have already expired. The moment the key is accessed, it is deleted.
 
@@ -71,15 +71,15 @@ You can follow one of these three steps to reclaim the memory:
 1. You can set up a cron job that runs the scan command after an interval which helps in reclaiming the memory of the expired keys.
 1. Alternatively, Increasing the expiry of keys also helps.
 
-#### Trade Offs
+#### Trade offs
 
 If we increase the memorysamples config, it expires the keys faster, but it costs more CPU cycles, which increases latency of commands. Secondly, increasing the expiry of keys helps but that requires significant changes to application logic.
 
-### Use Better Serializer
+### Use better serializer
 
 Redis does not have any specific data type to store the serialized objects, they are stored as byte array in Redis. If we are using regular means of serializing our java,python and PHP objects, they can be of larger size which impacts the memory consumption and latency.
 
-#### Which Serializers to Use
+#### Which serializers to use
 
 Instead of default serializer of your programming language (java serialzed objects, python pickle, PHP serialize etc), switch to a better library. There are various libraries like - Protocol Buffers, MessagePack etc.
 
@@ -91,13 +91,13 @@ As said by Salvatore Sanfilippo, creater of Redis
 
 `Redis scripting has support for MessagePack because it is a fast and compact serialization format with a simple to implement specification. I liked it so much that I implemented a MessagePack C extension for Lua just to include it into Redis.`
 
-##### Protocol Buffers
+##### Protocol buffers
 
 Protocol buffers, usually referred as Protobuf, is a protocol developed by Google to allow serialization and deserialization of structured data. Google developed it with the goal to provide a better way, compared to XML, to make systems communicate. So they focused on making it simpler, smaller, faster and more maintainable then XML.
 
-## Data Modeling Recommendations
+## Data modeling recommendations
 
-### Combine Smaller Strings to Hashes
+### Combine smaller strings to hashes
 
 Strings data type has an overhead of about 90 bytes on a 64 bit machine. In other words, calling set foo bar uses about 96 bytes, of which 90 bytes is overhead. You should use the String data type only if:
 
@@ -131,7 +131,7 @@ Combining small strings to Hashes reduces the memory used and in return save a c
 
 Hashes can be encoded efficiently in a very small memory space, so Redis makers recommend that we use hashes whenever possible since "a few keys use a lot more memory than a single key containing a hash with a few fields", a key represents a Redis Object holds a lot more information than just its value, on the other hand a hash field only hold the value assigned, thus why it's much more efficient.
 
-#### Trade Offs
+#### Trade offs
 
 Performance comes with a cost. By converting the strings to hash, we conserve memory because it saves only the string value and no extra information like: `idle time`, `expiration`, `object reference count`, and `encoding` related to it.
 But if we want the key with the expiration value, we can't associate it with a hash structure as expiration is not available.
@@ -142,7 +142,7 @@ The decision depends on the number of strings, if it less than 1 million and the
 
 But if the strings are more than 1 million and the memory consumption is high then this approach should definitely be followed.
 
-### Convert Hashtable to Ziplist for Hashes
+### Convert hashtable to ziplist for hashes
 
 Hashes have two types of encoding- HashTable and Ziplist. The decision of storing in which of the data structures in done based on the two configurations Redis provides - `hash-max-ziplist-entries` and `hash-max-ziplist-values`.
 
@@ -153,11 +153,11 @@ By default the redis conf has these settings as:
 
 So if any value for a key exceeds the two configurations it is stored automatically as a Hashtable instead of a Ziplist. It is observed that HashTable consumes almost double the memory as compared to Ziplist so in order to save your memory you can increase the two configurations and convert your hashtables to ziplist.
 
-#### Why Ziplist Uses Less Memory
+#### Why ziplist uses less memory
 
 The ziplist implementation in Redis achieves itssmall memory size by storing only three pieces of data per entry; the first is the length of the previous entry, second is the length of current entry and third is the stored data. Therefore, ziplists consumes less memory.
 
-#### Trade Offs
+#### Trade offs
 
 This brevity comes at a cost because more time is required for changing the size and retrieving the entry. Hence, there is an increase in latency and possibly increase in CPU utilization on your redis server.
 
@@ -173,7 +173,7 @@ You can either use enums in your programming language, or you can use a redis ha
 
 This encoding is extremely memory efficient. By default, the value of set-max-intset-entries is 512, but you can set this value in redis.conf.
 
-#### Trade Offs
+#### Trade offs
 
 By increasing the value of set-max-intset-entries, latency increases in set operations, and CPU utilization is also increased on your redis server. You can check this by running this command before and after making this change.
 
@@ -181,7 +181,7 @@ By increasing the value of set-max-intset-entries, latency increases in set oper
 Run `info commandstats`
 ```
 
-### Use Smaller Keys
+### Use smaller keys
 
 Redis keys can play a devil in increasing the memory consumption for your Redis instances. In general, you should always prefer descriptive keys but if you have a large dataset having millions of keys then these large keys can eat a lot of your money.
 
@@ -213,7 +213,7 @@ my-des-lg-kn (12 characters)
 
 You save 16 characters by shortening your key i.e. 16 bytes which lets you save **1,000,000,000*16 = 1.6GB of RAM Memory !**
 
-#### Trade Offs
+#### Trade offs
 
 Large Keys were more descriptive then shortened keys, hence when reading through your database you may find the keys less relatable, but the memory and cost savings are much efficient as compared to this pain.
 
@@ -242,7 +242,7 @@ A NamedTuple is simply a read-only list, but with some magic to make that list l
 
 Then, you simply create a list instead of a hash, like- `lpush user:123 Bob Lee CA bob_lee`. With the right abstractions in your application, you can save significant memory.
 
-#### Trade Offs
+#### Trade offs
 
 The only tradeoffs are related to code complexity. Redis internally uses the same encoding (ziplist) for small hashes and small lists, so there is no performance impact when you switch to a list. However, if you have more than 512 fields in your hash, this approach is not recommended.
 
@@ -253,13 +253,13 @@ Following are the situations when conversion of hash to list should be avoided:
 1. When you have less than 50,000 objects.
 1. Your objects are not regular i.e. some users have lots of information, others very little.
 
-### Shard Big Hashes to Small Hashes
+### Shard big hashes to small hashes
 
 If you have a hash with large number of key, value pairs, and if each key, value pair is small enough - break it into smaller hashes to save memory. To shard a HASH table, we need to choose a method of partitioning our data.
 
 Hashes themselves have keys which can be used for partitioning the keys into different shards. The number of shards are determined by the total number of keys we want to store and the shard size. Using this and the hash value we can determine the shard ID in which the key resides.
 
-#### How Sharding Happens
+#### How sharding happens
 
 - **Numeric Keys** - For Numeric keys, keys are assigned to a shard ID based on their numeric key value (keeping numerically similar keys in the same shard).
 
@@ -271,7 +271,7 @@ You should be consistent about the `total no. of expected elements` and the `sha
 
 If you were to change any one the values, you should have a process for moving your data from the old datashards to the new data shards (this is generally known as resharding).
 
-#### Trade Off
+#### Trade offs
 
 The only trade off of converting big hashes to small hashes is that it increase the complexity in your code.
 
@@ -283,7 +283,7 @@ If your set contains a very large number of elements, and you are only using the
 
 Bloom filters aren't natively supported, but you can find several solutions on top of redis. If you are only using the set to count number of unique elements - like unique ip addresses, unique pages visited by a user etc - then switching to hyperloglog saves significant memory.
 
-#### Trade Offs
+#### Trade offs
 
 Following are the Trade Offs of using HyperLogLog:
 
@@ -295,9 +295,9 @@ For example, if you want to maintain how many unique ipaddresses made an API cal
 
 But if you want `Show me those 46966 IP Addresses` — it cannot show you. For that, you need to maintain all the IP Addresses in a set
 
-## Data Compression Methods
+## Data compression methods
 
-### Compress Field Names
+### Compress field names
 
 Redis Hash consists of Fields and their values. Like values, field name also consumes memory, so it is required to keep in mind while assigning field names. If you have a large number of hashes with similar field names, the memory adds up significantly.
 To reduce memory usage, you can use smaller field names.
@@ -314,7 +314,7 @@ location CA twitter bob_lee
 In this case- firstname, lastname, location, twitter are all field names which could have been shortened to:
 `fn, ln, loc, etc`. By doing this, you could have saved some memory that was been used by the field names.
 
-### Compress Values
+### Compress values
 
 Redis and clients are typically IO bound and the IO costs are typically at least 2 orders of magnitude in respect to the rest of the request/reply sequence. Redis by default does not compress any value that is stored in it, hence it becomes important to compress your data before storing in Redis. This helps in reducing the payload which in return gives you higher throughput, lower latency and higher savings in your cost.
 
@@ -334,7 +334,7 @@ Compressing strings requires code changes. Some libraries can transparently comp
 
 Compressing strings can save you anywhere between 30-50% memory. By compressing strings, you also reduce the network bandwidth between your application and redis databases.
 
-#### Trade Offs
+#### Trade offs
 
 Compressing/Decompressing requires your application to do extra work. This tradeoff is usually worth it. If you are concerned about additional CPU load, switch to a faster algorithm like snappy or LZO.
 
@@ -345,7 +345,7 @@ Compression should not be followed blindly, there are times when compression doe
 1. For shorter Strings it's likely a waste of time. Short strings generally don't compress much, so the gain would be too small.
 1. When the data isn't well structured, compression should be avoided. JSON and XML are good at compression as they have repeated characters and tags.
 
-### Enable Compression for List
+### Enable compression for list
 
 List is just a link list of arrays, where none of the arrays are compressed. By default, redis does not compress elements inside a list. However, if you use long lists, and mostly access elements from the head and tail only, then you can enable compression.
 
@@ -365,7 +365,7 @@ Example:
 1. A depth=2 means never compress head or head->next or tail or tail->prev.
 1. A depth=3 starts compression after head->next->next and before tail->prev->prev, etc.
 
-#### Trade Offs
+#### Trade offs
 
 For small values (for example 40 bytes per list entry here), compression has very little performance impact. When using 40 byte values with a max ziplist size of 8k, that's around 200 individual elements per ziplist. You only pay the extra "compression overhead" cost when a new ziplist gets created (in this case, once every 200 inserts).
 

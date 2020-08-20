@@ -140,7 +140,7 @@ replication to for the global Active-Active database.
 
 ![crdb-diagram](/images/rs/crdb-diagram.png)
 
-### Connecting Using redis-cli {#connecting-using-rediscli}
+### Connecting using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with redis database.
 
@@ -186,7 +186,7 @@ redis-cli is a simple command-line tool to interact with redis database.
     "123"
     ```
 
-### Connecting Using _Hello World_ Application in Python
+### Connecting using _Hello World_ application in Python
 
 A simple python application running on the host machine can also connect
 to the database.

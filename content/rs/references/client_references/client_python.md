@@ -35,7 +35,7 @@ To adapt this example to your code, make sure that you replace the following val
 - In line 5, `port` should be set to your database's port
 - In line 6, `password` should be set to your database's password
 
-## Connection Pooling with redis-py
+## Connection pooling with redis-py
 
 redis-py provides a connection pooling mechanism as explained in the [Connection Pools section](https://github.com/andymccurdy/redis-py#connection-pools) of its README file. Since connection pooling is enabled by default, no special actions are required to use it.
 
