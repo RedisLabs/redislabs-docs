@@ -33,3 +33,4 @@ RedisInsight Cluster Management capabilities are available for [OSS Redis Cluste
 For more about working with the OSS Cluster API on Redis Enterprise Software, see [Using the OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}).
 
 
+RedisInsight Cluster Management tool for TLS databases is not supported on Windows because of the lack of OpenSSL library on the platform. If you still want use the tool for TLS databases on Windows, kindly install RedisInsight using [Docker]({{< relref "ri/installing/install-docker.md" >}}).
