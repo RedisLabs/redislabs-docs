@@ -113,7 +113,7 @@ Every instance of an Active-Active database can receive write operations, and al
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.
         1. In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
-        1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn_or_ip_address>:9443`),
+        1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn>:9443`),
             enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
     - **[Causal Consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}})** -
