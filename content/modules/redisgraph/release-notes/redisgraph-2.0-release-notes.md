@@ -5,6 +5,95 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisGraph 2.0.19 (August 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor updates:
+    - #[1229](https://github.com/RedisGraph/RedisGraph/pull/1229) Upgrade [RediSearch](https://oss.redislabs.com/redisearch/) dependency to 1.8.2
+- Performance enhancements:
+    - #[1218](https://github.com/RedisGraph/RedisGraph/pull/1218) Enable parameters support for ID-based entity retrieval
+    - #[1242](https://github.com/RedisGraph/RedisGraph/pull/1242) Improve update logic, update RediSearch indices only once per update
+    - #[1226](https://github.com/RedisGraph/RedisGraph/pull/1226) Let RediSearch perform document deletion when replacing a document
+- Bug Fixes:
+    - #[1223](https://github.com/RedisGraph/RedisGraph/pull/1223) Resolve race condition in accessing/updating attribute maps.
+    - #[1196](https://github.com/RedisGraph/RedisGraph/pull/1196) Enable RediSearch [Garbage Collection](https://oss.redislabs.com/redisearch/Overview/#index_garbage_collection)
+
+## RedisGraph 2.0.15 (June 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bug Fixes:
+    - #[1159](https://github.com/RedisGraph/RedisGraph/pull/1159) `IN` operator didn't result in an index array lookup with parameterised array (`IN $param`).
+
+## RedisGraph 2.0.14 (June 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bug Fixes:
+    - #[1157](https://github.com/RedisGraph/RedisGraph/pull/1157) Index search not using query parameters.
+
+## RedisGraph 2.0.13 (June 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Enhancements:
+    - #[1118](https://github.com/RedisGraph/RedisGraph/pull/1118) Added module [configuration](https://oss.redislabs.com/redisgraph/2.0/configuration/) parameters for the number of threads in OpenMP and concurrent queries.
+    - #[1121](https://github.com/RedisGraph/RedisGraph/pull/1121) [RediSearch](https://github.com/RedisGraph/RedisGraph/blob/v2.0.13/redisearch.io) v1.8.1
+
+## RedisGraph 2.0.12 (May 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Enhancements:
+    - #[1103](https://github.com/RedisGraph/RedisGraph/pull/1103) RediSearch 1.8. This upgrade will reduce the resources required for Garbage Collection of indices inside RedisGraph.
+
+## RedisGraph 2.0.11 (April 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor Enhancements:
+    - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056) Added `DISTINCT` support for paths and arrays.
+- Minor Bugfixes:
+    - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056 Streamlined logic for uniquing entities.
+    - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056 Enabled comparison routine for paths.
+
 ## RedisGraph 2.0.10 (March 2020)
 
 Headlines:

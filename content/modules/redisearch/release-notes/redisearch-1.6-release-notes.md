@@ -5,6 +5,19 @@ weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 1.6.13 (May 2020)
+
+This is a maintenance release for version 1.6.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1186](https://github.com/RediSearch/RediSearch/pull/1186) #[1188](https://github.com/RediSearch/RediSearch/pull/1188) incorrect values for `inverted_sz_mb` and `num_records` in `FT.INFO` command.
+
 ## RediSearch 1.6.12 (April 2020)
 
 Headlines:
