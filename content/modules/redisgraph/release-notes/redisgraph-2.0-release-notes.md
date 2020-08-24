@@ -5,6 +5,26 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisGraph 2.0.19 (August 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor updates:
+    - #[1229](https://github.com/RedisGraph/RedisGraph/pull/1229) Upgrade [RediSearch](https://oss.redislabs.com/redisearch/) dependency to 1.8.2
+- Performance enhancements:
+    - #[1218](https://github.com/RedisGraph/RedisGraph/pull/1218) Enable parameters support for ID-based entity retrieval
+    - #[1242](https://github.com/RedisGraph/RedisGraph/pull/1242) Improve update logic, update RediSearch indices only once per update
+    - #[1226](https://github.com/RedisGraph/RedisGraph/pull/1226) Let RediSearch perform document deletion when replacing a document
+- Bug Fixes:
+    - #[1223](https://github.com/RedisGraph/RedisGraph/pull/1223) Resolve race condition in accessing/updating attribute maps.
+    - #[1196](https://github.com/RedisGraph/RedisGraph/pull/1196) Enable RediSearch [Garbage Collection](https://oss.redislabs.com/redisearch/Overview/#index_garbage_collection)
+
 ## RedisGraph 2.0.15 (June 2020)
 
 This is a maintenance release for version 2.0.
