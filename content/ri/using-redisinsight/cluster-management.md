@@ -5,9 +5,6 @@ weight: 30
 categories: ["RI"]
 path: features/cluster-management/
 ---
-
-## Cluster Management Introduction {#cluster-management-intro}
-
 RedisInsight Cluster Management provides you with a GUI to manage your Redis Cluster with ease. Cluster Management comes with three different views to analyze your cluster architecture.
 
 1. **Master Layout** - This view only contains information about the masters present in the Redis Cluster. The information present is - slot ranges, host, port and few metrics gathered from redis INFO Command.
@@ -15,6 +12,8 @@ RedisInsight Cluster Management provides you with a GUI to manage your Redis Clu
 1. **Physical Layout** - This view gives you a representation of your server i.e. it groups all nodes according to the physical server they reside in.
 
 ![cluster-management](/images/ri/cluster-management.png)
+
+## Cluster Management actions
 
 Cluster Management not only gives you a representation of your cluster but also helps you administer your cluster by using the following actions -
 
@@ -26,11 +25,15 @@ Cluster Management not only gives you a representation of your cluster but also 
 1. **Make a node Replica of Master** - Cluster management includes a feature to make the selected node replica of a master. If the node is already a replica, no work is required. If the node is a master, then that should be empty i.e. - no hash slots and keys.
 1. **Cluster Health Monitoring & Alerts** - Cluster Management constantly runs health checks for your cluster and returns alerts if there is any issue with the cluster. It also provides alerts if the master and slave are on the same server. The alerts for the cluster can be fixed by using the Fix Cluster feature.
 
-## Compatibility {#cluster-management-compatibility}
+## Compatibility
 
 RedisInsight Cluster Management capabilities are available for [OSS Redis Clusters](https://redis.io/topics/cluster-tutorial) and for Redis Enterprise Software clusters that have the [OSS Cluster API]({{< relref "rs/concepts/data-access/oss-cluster-api.md" >}}) enabled. 
 
 For more about working with the OSS Cluster API on Redis Enterprise Software, see [Using the OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}).
 
+{{% note %}}
 
-RedisInsight Cluster Management tool for TLS databases is not supported on Windows because of the lack of OpenSSL library on the platform. If you still want use the tool for TLS databases on Windows, kindly install RedisInsight using [Docker]({{< relref "ri/installing/install-docker.md" >}}).
+RedisInsight Cluster Management tool for TLS databases is not supported on Microsoft Windows because Windows does not include the OpenSSL library.
+You can run RedisInsight using [Docker]({{< relref "ri/installing/install-docker.md" >}}) on Windows to manage TLS databases.
+
+{{% /note %}}
