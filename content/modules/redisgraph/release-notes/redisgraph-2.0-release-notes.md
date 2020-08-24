@@ -91,7 +91,7 @@ Details:
 - Minor Enhancements:
     - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056) Added `DISTINCT` support for paths and arrays.
 - Minor Bugfixes:
-    - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056)Streamlined logic for uniquing entities.
+    - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056) Streamlined logic for uniquing entities.
     - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056) Enabled comparison routine for paths.
 
 ## RedisGraph 2.0.10 (March 2020)
