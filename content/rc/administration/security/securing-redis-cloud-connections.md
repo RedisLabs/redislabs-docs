@@ -280,7 +280,7 @@ delay = yes`
 accept = 127.0.0.1:6379
 connect = host:port`
 
-### secure connectivity to a Redis Cloud resource
+### Testing secure connectivity to a Redis Cloud resource
 
 You can test the connection from your client using redis-cli, for
 example::

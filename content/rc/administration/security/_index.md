@@ -12,7 +12,7 @@ aliases: /rv/administration/configuration/securing-your-database/
 ---
 The security controls for your database are:
 
-## Access control by source IP/subnet
+## Access control by source IP or subnet
 
 The number of source IP rules that you can add depends on the Redis Cloud plan that you purchased.
 For example, the 1GB plan allows up to 8 source IP authentication rules.
