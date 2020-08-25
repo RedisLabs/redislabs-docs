@@ -20,7 +20,7 @@ The directories that Redis Enterprise Software installs into are:
 | /opt/redislabs/lib | System library files |
 | /opt/redislabs/sbin | System binaries for tweaking provisioning |
 
-## Configuration and Data Directories
+## Configuration and data directories
 
 The default directories that Redis Enterprise Software uses for data and metadata are:
 

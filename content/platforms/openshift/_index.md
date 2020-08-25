@@ -257,7 +257,7 @@ Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/
 
         The version tag, as it appears on your repository (e.g. on [DockerHub](https://hub.docker.com/r/redislabs/redis/)).
 
-## Step 4: Create your Cluster
+## Step 4: Create your cluster
 
 Once you have your_cluster_name yaml set, you need to apply it to create your Redis Enterprise Cluster:
 

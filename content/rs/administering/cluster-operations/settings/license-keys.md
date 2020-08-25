@@ -17,7 +17,7 @@ the cluster setup was done (with the first cluster node provisioned).
 This mode allows all features to be enabled, including Redis on Flash,
 during the trial period.
 
-## Viewing the Cluster Key
+## Viewing the cluster key
 
 You can see the cluster key either:
 
@@ -33,7 +33,7 @@ You can see the cluster key either:
     - expiration_date - The date of the cluster key expiration
     - shards_limit - The number of shards allowed by the cluster key
 
-## Adding or Updating a Cluster Key
+## Adding or updating a cluster key
 
 {{< note >}}
 After you add a cluster key, you cannot remove the key to return the cluster to trial mode.

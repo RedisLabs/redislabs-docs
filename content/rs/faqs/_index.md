@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 Here are some frequently asked questions about Redis Enterprise Software (RS).
 
-## Features and Terminology
+## Features and terminology
 
 {{< expand-control >}}
 <!-- Also in RC -->

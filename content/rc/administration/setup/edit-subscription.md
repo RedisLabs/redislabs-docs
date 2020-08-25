@@ -39,7 +39,7 @@ actually deleted. The delete only succeeds if the subscription **does
 not have any databases**. If it does, you must first delete the
 databases.
 
-## Defining access to your Subscription
+## Defining access to your subscription
 
 After you create a Redis Cloud subscription, you can configure VPC
 peering and a CIDR whitelist to allow more secure access to your account.

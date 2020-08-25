@@ -17,7 +17,7 @@ When you create a Redis Cloud subscription, you must choose:
     - **Pro** - For high-throughput applications, many databases or large datasets
     - **Ultimate** - For a more complete support experience (Contact [Redis Labs Sales](https://redislabs.com/redis-enterprise-cloud/pricing/))
 
-## Step 1: Create a New Subscription
+## Step 1: Create a new subscription
 
 To create a new subscription:
 
@@ -50,7 +50,7 @@ You can also [edit these subscription settings]({{< relref "/rc/administration/s
 1. Subscription name
 1. Payment information
 
-## Step 2: Create a Database
+## Step 2: Create a database
 
 After you create a subscription, you can create a database:
 

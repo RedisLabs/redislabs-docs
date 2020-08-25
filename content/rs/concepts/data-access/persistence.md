@@ -46,7 +46,7 @@ highly recommended to make sure replication is enabled for that database
 as well. When these two features are enabled, persistence is
 performed on the database slave and does not impact performance on the master.
 
-## Options for Configuring Data Persistence
+## Options for configuring data persistence
 
 There are six options for persistence in Redis Enterprise Software:
 

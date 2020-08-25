@@ -15,13 +15,13 @@ Follow these [instructions](https://docs.redislabs.com/latest/rs/installing-upgr
 
 ## New features
 
-### Synchronization mechanism in A-A Redis and Replica-of
+### Synchronization mechanism in Active-Active Redis and Replica-of
 
 RS 5.4.10 incorporates the improved [Redis synchronization mechanism]({{< relref "/rs/administering/active-active#syncer-process" >}}) ([PSYNC2](https://redis.io/topics/replication)) for Active-Active Redis (CRDB) and Replica-of.
 
 As a result, failure scenarios in any A-A replica (and the source database of Replica-of), require only partial synchronization between the cross-region replicas instead of full synchronization that can be costly in time and bandwidth.
 
-### RS on RHEL 7 Supports OpenSSL 1.0.2 and up
+### RS on RHEL 7 supports OpenSSL 1.0.2 and up
 
 To keep RS secure and keep our internal libraries up-to-date, starting from RS 5.4.10 our RHEL 7 installations require a minimum of OpenSSL 1.0.2.
 

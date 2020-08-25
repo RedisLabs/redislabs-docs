@@ -23,7 +23,7 @@ Lettuce's installation instructions are given in the ["Binaries/Download"](https
 
 You can also download the latest Lettuce release from the GitHub repository: [https://github.com/mp911de/lettuce/wiki/Download](https://github.com/mp911de/lettuce/wiki/Download)
 
-### Opening a Connection to Redis using Lettuce
+### Opening a connection to Redis using Lettuce
 
 The following code creates a connection to Redis using Lettuce:
 
@@ -105,7 +105,7 @@ For an added security measure, you can secure the connection using SSL connectio
         }
     }
 
-### Reading and Writing Data with Lettuce
+### Reading and writing data with Lettuce
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value bar to the Redis key foo, reads it back, and prints it:
 
@@ -143,7 +143,7 @@ You can also download the latest [Jedis release](https://github.com/xetorthio/je
     $ cd jedis
     ~/jedis$ make package
 
-### Opening a Connection to Redis Using Jedis
+### Opening a connection to Redis using Jedis
 
 The following code creates a connection to Redis using Jedis:
 
@@ -225,7 +225,7 @@ Once your application exits, remember to dispose of the `JedisPool` by using the
 
 Jedis does not support SSL connections natively. For an added security measure, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis) or this [Jedis fork](https://github.com/RedisLabs/jedis) that has been added with SSL support.
 
-## Reading and Writing Data with Jedis
+## Reading and writing data with Jedis
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

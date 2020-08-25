@@ -12,7 +12,7 @@ This is a maintenance release for version 1.0.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
 
-Main Features:
+Main features:
 
 - #[143](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/143) Standard Deviation for Aggregations
 - #[163](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/163) `TS.RANGE` and `TS.MRANGE` can limit results via optional `COUNT` flag

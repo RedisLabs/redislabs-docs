@@ -20,7 +20,7 @@ The API exposes programmatic access for management of:
 - **Alerts settings**
 - **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
 
-## API Features
+## API features
 
 The RC Pro API includes these features:
 

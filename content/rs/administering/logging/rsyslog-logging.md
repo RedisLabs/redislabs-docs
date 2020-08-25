@@ -318,7 +318,7 @@ false,"time":1434365471,"disk":705667072,"type":
 
 ## Mapping UI events and alerts to log entries
 
-### Cluster / Node related events
+### Cluster and node related events
 
 | **Event as shown in the UI** | **Event code­name** | **Object type** | **Category** | **Severity** | **Notes** |
 |------------|-----------------|------------|-----------------|------------|-----------------|

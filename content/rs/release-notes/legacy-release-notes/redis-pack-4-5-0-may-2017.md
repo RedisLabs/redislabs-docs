@@ -32,7 +32,7 @@ side by side in a given cluster where some clients can use Discovery
 Service based connection while others can use DNS name resolution when
 connecting to databases.
 
-### Building large databaseswith RAM and Flash Memory in Redis on Flash v2.0
+### Building large databases with RAM and Flash memory in Redis on Flash v2.0
 
 With Redis Enterprise Pack 4.5, Redis on Flash v2 is production
 ready. RFv2 brings performance, reliability, and stability enhancements
@@ -49,7 +49,7 @@ infrequently used, while warm values will be ejected to flash memory.
 This enables you to have much larger datasets with RAM-like latency and
 performance, but at dramatically lower cost than an all-RAM database.
 
-### Additional Capabilities
+### Additional capabilities
 
 Support for additional Redis commands and features:
 

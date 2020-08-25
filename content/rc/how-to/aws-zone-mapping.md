@@ -28,7 +28,7 @@ To mitigate for this latency overhead, you can automatically map AZs that are de
 with the AZs in your Redis Cloud account.
 This makes sure that your application and database are co-located on the same physical AZ.
 
-## How to MAP Zones
+## How to map zones
 
 1. [Log in](https://app.redislabs.com/#/login) to your Redis Cloud Essentials account.
 1. Go to **settings** > **account**.

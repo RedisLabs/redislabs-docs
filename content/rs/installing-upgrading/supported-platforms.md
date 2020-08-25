@@ -39,7 +39,7 @@ You also need to ensure that each Redis Enterprise shard is pinned to a specific
 
 If you must manually migrate a virtual machine to another host, please ensure that you follow the best practices for shard maintenance, and contact support if you have questions.
 
-## VMware Limitations
+## VMware limitations
 
 Please note that Redis Enterprise is not compatible with VMware VMotion at this time. To use Redis Enterprise on VMware, you must disable VMotion.
 

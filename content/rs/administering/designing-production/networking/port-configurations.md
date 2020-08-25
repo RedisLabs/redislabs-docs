@@ -39,7 +39,7 @@ Connection sources are:
 - External - The traffic is from client applications or external monitoring resources
 - Active-Active - The traffic is from clusters that host Active-Active databases
 
-## Changing the Management Web UI Port
+## Changing the management web UI port
 
 If for any reason you want to use a custom port for the RS Web UI
 instead of the default port (8443), you can change the port. Before you

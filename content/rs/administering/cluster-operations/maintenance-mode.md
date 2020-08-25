@@ -98,7 +98,7 @@ To demote a master node when you turn on maintenance mode:
 rladmin node <node_id> maintenance_mode on demote_node
 ```
 
-## Turning Maintenance Mode OFF
+## Turning maintenance mode OFF
 
 When you turn maintenance mode off, RS:
 

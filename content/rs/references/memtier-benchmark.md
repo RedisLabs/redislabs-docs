@@ -17,7 +17,7 @@ memtier_benchmark is included with Redis Enterprise Software in /opt/redislabs/b
 To benchmark another database provider, you can get [memtier_benchmark on GitHub](https://github.com/RedisLabs/memtier_benchmark).
 {{< /note >}}
 
-## Benchmark and Performance Test Considerations
+## Benchmark and performance test considerations
 
 For our testing, let's configure a Redis Enterprise Software cluster with the trial version
 and use memtier_benchmark to evaluate the performance of a Redis on Flash enabled database in these scenarios:
@@ -64,12 +64,12 @@ Those SSDs are what RoF combines with RAM to host the database on.
 If you run these tests in another environment (such as on-premise),
 you must use NVMe SSDs to see the performance benefits of RoF.
 
-## Preparing the Flash Memory
+## Preparing the flash memory
 
 After you install RS on the nodes,
 the flash memory attached to the i3.2xlarge instances must be prepared and formatted with the `/opt/redislabs/sbin/prepare_flash.sh` script.
 
-## Setting up the Load Generation Tool
+## Setting up the load generation tool
 
 The memtier_benchmark load generator tool generates the load on the RoF databases.
 To use this tool, install RS on a dedicated instance that is not part of the RS cluster
@@ -117,7 +117,7 @@ Set up a test database with these values:
 |  Number of items<br/>(–key-maximum) | With replication: 75 Million<br/>Without replication: 150 Million |
 |  Item size<br/>(-d) | 500 Bytes |
 
-## Centralize the Keyspace
+## Centralize the keyspace
 
 ### With replication
 

@@ -12,7 +12,7 @@ to replicas of the dataset in different geographical locations.
 The participating Redis Enterprise Software (RS) clusters that host the instances can be in [distributed geographic locations]({{< relref "/rs/concepts/intercluster-replication.md" >}}).
 Every instance of an Active-Active database can receive write operations, and all operations are [synchronized]({{< relref "/rs/concepts/intercluster-replication#example-of-synchronization" >}}) to all of the instances without conflict.
 
-## Steps to Create an Active-Active Database
+## Steps to create an Active-Active database
 
 1. **Create a service account** - On each participating cluster, create a dedicated user account with the Admin role.
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
@@ -130,7 +130,7 @@ Every instance of an Active-Active database can receive write operations, and al
         does not apply automatically to all instances of an Active-Active database.
 
 <!-- Also in getting-started-crdbs.md -->
-## Test the Connection to your Member Redis Active-Active databases
+## Test the connection to your member Redis Active-Active databases
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test

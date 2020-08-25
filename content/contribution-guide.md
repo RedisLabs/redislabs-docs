@@ -33,7 +33,7 @@ If the changes that you make resolve two separate issues, make two separate PRs.
 After you commit your changes to the public repo or your forked repo,
 you can open a pull request to submit your changes for consideration.
 
-## Serving the Docs Site Locally
+## Serving the docs site locally
 
 After you clone the repository to your local machine, you can serve the site locally with Hugo and then browse to http://localhost:1313 to see how it looks.
 
@@ -90,7 +90,7 @@ you can use the `children` shortcode to show all of the sub-topics for the secti
 {{%/* children style="h2" description="true" */%}}
 ```
 
-## Writing article Content
+## Writing article content
 
 The structure of an article is:
 

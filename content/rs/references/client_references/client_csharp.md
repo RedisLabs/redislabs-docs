@@ -72,7 +72,7 @@ Sometimes you need to use a 3rd-party library, such as when running a session on
 - `SERedis_ClientCertPfxPath should` be set to the path of your .pfx file
 - `SERedis_ClientCertPassword` should be set to the password of your .pfx file
 
-## Reading and Writing Data with StackExchange.Redis
+## Reading and writing data with StackExchange.Redis
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

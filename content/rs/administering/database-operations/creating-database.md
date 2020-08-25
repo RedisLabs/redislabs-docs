@@ -22,7 +22,7 @@ For databases with Active-Active replication for geo-distributed locations,
 [create an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
 {{< /note >}}
 
-## Creating a New Redis Database
+## Creating a new redis database
 
 To create a new database:
 

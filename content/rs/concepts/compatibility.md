@@ -81,7 +81,7 @@ follows:
     - zset-max-ziplist-entries
     - zset-max-ziplist-value
 
-## Compatibility with Open Source Redis Cluster
+## Compatibility with Open Source Redis cluster
 
 RS supports [Redis OSS cluster
 protocol]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}}) if it is enabled for a database.

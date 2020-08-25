@@ -94,7 +94,7 @@ The following additional parameters are required for Redis Cluster databases.
 }
 ```
 
-##### Sentinel-Monitored Database Parameters
+##### Sentinel-monitored database parameters
 
 Sentinel-monitored databases are added using `connectionType: "SENTINEL"`.
 
@@ -127,7 +127,7 @@ The following additional parameters are required for standalone databases.
 }
 ```
 
-#### TLS Parameters
+#### TLS parameters
 
 TLS parameters can be used to specify how RedisInsight should connect to the Redis database over TLS.
 
@@ -139,7 +139,7 @@ The following parameters can be used:
 | clientAuth               | boolean | Whether TLS client authentication is required by the database |
 | clientCertificateKeyPair | object  | (optional) [The details of the client certificate and private key used to connect to the Redis database](#tls-client-certificate-and-key). If client authentication is not required, this has to be provided |
 
-##### TLS Client Certificate and Key
+##### TLS client certificate and key
 
 The client certificate and key details can be provided in two forms:
 

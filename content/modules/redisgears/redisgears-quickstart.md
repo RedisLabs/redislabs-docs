@@ -12,7 +12,7 @@ For this quick start tutorial, you'll need one of the following:
     - An OSS Redis database with the RedisGears module
 - redis-cli with connectivity to a redis database
 
-## RedisGears Basics
+## RedisGears basics
 
 In this quick start guide, we'll see how to use RedisGears to perform batch processing and event processing.
 

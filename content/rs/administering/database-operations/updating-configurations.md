@@ -60,7 +60,7 @@ If a participating cluster that was removed forcefully returns attempts to re-jo
 it will have an out of date on Active-Active database membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
 
-## TLS Authentication and Encryption
+## TLS authentication and encryption
 
 To prevent unauthorized access to your data, you can configure RS to secure communications with TLS protocol
 (the more secure successor to SSL).

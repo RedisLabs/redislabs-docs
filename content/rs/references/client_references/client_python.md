@@ -18,7 +18,7 @@ You can also download the latest [redis-py release](https://github.com/andymccur
     cd redis-py
     ~/redis-py$ sudo python setup.py install
 
-## Opening a Connection to Redis Using redis-py
+## Opening a connection to Redis using redis-py
 
 The following code creates a connection to Redis using redis-py:
 
@@ -50,7 +50,7 @@ redis-py is the second Redis client that natively supported SSL. Use the `SSLCon
         ssl_cert_reqs='required',
         ssl_ca_certs='path_to_ca_cert')
 
-## Reading and Writing Data with redis-py
+## Reading and writing data with redis-py
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

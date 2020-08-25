@@ -7,7 +7,7 @@ categories: ["RC"]
 ---
 Follow the instructions below to use flush_all.
 
-## flush_all for SASL Protected Memcached Enterprise Cloud Databases
+## flush_all for SASL protected Memcached Enterprise cloud databases
 
 If your resource has SASL authentication enabled, you can't use nc
 command or telnet to run flush_all on your Memcached Enterprise Cloud
@@ -42,7 +42,7 @@ True
 exit
 ```
 
-## flush_all for Memcached Enterprise Cloud Databases
+## flush_all for Memcached Enterprise cloud databases
 
 ```sh
 $ telnet memcached-12345.c69.us-east-1-2.ec2.cloud.redislabs.com 12345

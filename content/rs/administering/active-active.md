@@ -38,7 +38,7 @@ Before configuring an Active-Active database, you must:
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
 
-## Active-Active Database Current Limitations
+## Active-Active database current limitations
 
 1. RS is limited to five participating clusters or instances in an Active-Active database.
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database you must create a new Active-Active database and migrate the data.

@@ -34,7 +34,7 @@ To enable this configuration you need to:
 Once this configuration is in place, both sets of endpoints are
 available for the databases in the cluster.
 
-## Modifying an Existing Cluster
+## Modifying an existing cluster
 
 You can enable it by using the ***rladmin suffix add*** command.
 

@@ -26,6 +26,7 @@ For databases in a Redis Cloud Essentials subscription, you need to tag the inde
 FT.CREATE {idx} ...
 FT.ADD {idx} {idx}:docid ...
 ```
+
 {{< /note >}}
 
 ### Add info to test index
@@ -39,7 +40,7 @@ object", and url of [https://redislabs.com/](https://redislabs.com/) to the obje
 OK
 ```
 
-### Search the Index
+### Search the index
 
 Do a search on this index for any object with the word "first":
 
@@ -55,7 +56,7 @@ Do a search on this index for any object with the word "first":
 6) "https://redislabs.com/"
 ```
 
-### Drop the Index
+### Drop the index
 
 Now that we are done with it, we can drop the index.
 
@@ -64,7 +65,7 @@ Now that we are done with it, we can drop the index.
 OK
 ```
 
-### Auto-Complete and Search Engine Suggestions
+### Auto-complete and search engine suggestions
 
 Let's add a suggestion for the search engine to use
 

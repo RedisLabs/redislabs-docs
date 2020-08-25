@@ -31,7 +31,7 @@ Supported Backends:
 - PyTorch 1.5
 - ONXXRuntime 1.2.0
 
-New Features:
+New features:
 
 - [#241](https://github.com/RedisAI/RedisAI/pull/241), [#270](https://github.com/RedisAI/RedisAI/pull/270) auto-batching support. Requests from multiple clients can be automatically and transparently batched in a single request for increased CPU/GPU efficiency during serving.
 - [#322](https://github.com/RedisAI/RedisAI/pull/322) Add [AI.DAGRUN](https://oss.redislabs.com/redisai/commands/#aidagrun). With the new AI.DAGRUN (DAG as in direct acycilc graph) command we support the prescription of combinations of other AI.* commands in a single execution pass, where intermediate keys are never materialised to Redis.

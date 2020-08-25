@@ -89,7 +89,7 @@ To assign Redis ACLs to a data access role:
 
 Users that are assigned to the role can access the databases according to the Redis ACL definitions.
 
-## Assigning users to a User Role
+## Assigning users to a user role
 
 To assign users to a data access role:
 

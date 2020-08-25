@@ -16,7 +16,7 @@ You can also access the metrics and configure alerts through the REST API so tha
 Make sure you read the [definition of each metric]({{< relref "/rs/administering/monitoring-metrics/console-metrics-definitions.md" >}})
 so that you understand exactly what it represents.
 
-## Real-time Metrics
+## Real-time metrics
 
 You can see the metrics of the cluster in:
 

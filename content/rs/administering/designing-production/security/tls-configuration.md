@@ -24,7 +24,7 @@ Related topics:
 - You can use the REST API to [update the server TLS certificates and TLS protocol version]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 - To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/database-operations/create-active-passive#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
 
-## Authentication for Databases
+## Authentication for databases
 
 When you configure Replica Of for a database, synchronization traffic flows between the
 source and destination databases. You can
@@ -37,7 +37,7 @@ clusters or clients.
 
 {{< embed-md "tls-configuration-procedure.md"  >}}
 
-## Authentication for Active-Active Databases
+## Authentication for Active-Active databases
 
 When you create a new Active-Active database, you can configure authentication for Active-Active synchronization
 traffic only or for all communications, including Active-Active synchronization traffic and

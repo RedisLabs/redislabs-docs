@@ -20,12 +20,12 @@ Memory is consumed as we have scripts loaded. The memory consumption is because 
 1. memory used internally by Lua to keep the compiled byte-code.
 So If you have to use dynamic scripting, then just use plain EVAL, as there’s no point in loading them first.
 
-#### Things to Keep in Mind if Using Dynamic Lua Scripts
+#### Things to keep in mind if using dynamic Lua scripts
 
 1. Remember to track your Lua memory consumption and flush the cache periodically with a SCRIPT FLUSH.
 1. Do not hardcode and/or programmatically generate key names in your Lua scripts because it makes them useless in a clustered Redis setup.
 
-### Switch to 32 Bits
+### Switch to 32-bits
 
 Redis gives you the following statistics for a 64-bit machine.
 
@@ -45,7 +45,7 @@ Switching to 32-bit from 64-bit machine can substantialy reduce the cost of the 
 
 For the 32-bit Redis variant, any key name larger than 32 bits requires the key to span to multiple bytes, thereby increasing the memory usage.
 
-#### When to Avoid Switching to 32 bit
+#### When to avoid switching to 32 bit
 
 If your data size is expected to increase more than 3 GB then you should avoid switching.
 
@@ -107,7 +107,7 @@ Strings data type has an overhead of about 90 bytes on a 64 bit machine. In othe
 
 If you are not doing any of the above, then use **Hashes**.
 
-#### How to convert Strings to Hashes
+#### How to convert strings to hashes
 
 Suppose we have to store the number of comments on the posts of a user, we can have a key names like `user:{userId}:post:{postId}:comments`.
 
@@ -136,7 +136,7 @@ Hashes can be encoded efficiently in a very small memory space, so Redis makers 
 Performance comes with a cost. By converting the strings to hash, we conserve memory because it saves only the string value and no extra information like: `idle time`, `expiration`, `object reference count`, and `encoding` related to it.
 But if we want the key with the expiration value, we can't associate it with a hash structure as expiration is not available.
 
-#### When to Avoid Combining Strings to Hashes
+#### When to avoid combining strings to hashes
 
 The decision depends on the number of strings, if it less than 1 million and the memory consumption is not high, the conversion is not effected much and there is no point in increasing the complexity of code.
 
@@ -185,7 +185,7 @@ Run `info commandstats`
 
 Redis keys can play a devil in increasing the memory consumption for your Redis instances. In general, you should always prefer descriptive keys but if you have a large dataset having millions of keys then these large keys can eat a lot of your money.
 
-#### How to Convert to Smaller Keys
+#### How to convert to smaller keys
 
 In a well written application, switching to shorter keys usually involves updating a few constant strings in the application code.
 
@@ -217,7 +217,7 @@ You save 16 characters by shortening your key i.e. 16 bytes which lets you save 
 
 Large Keys were more descriptive then shortened keys, hence when reading through your database you may find the keys less relatable, but the memory and cost savings are much efficient as compared to this pain.
 
-### Convert to a List Instead of Hash
+### Convert to a list instead of hash
 
 A Redis Hash stores field names and values. If you have thousands of small hash objects with similar field names, the memory used by field names adds up. To prevent this, consider using a list instead of a hash. The field names become indexes into the list.
 
@@ -235,7 +235,7 @@ Now, Redis 2.6 stores this internally as a Zip List; you can confirm by running 
 
 Now, if you create a second user, the keys are duplicated. If you have a million users, well, its a big waste repeating the keys again. To get around this, we can borrow a concept from Python - NamedTuples.
 
-#### How does NamedTuple Work
+#### How does NamedTuple work
 
 A NamedTuple is simply a read-only list, but with some magic to make that list look like a dictionary. Your application needs to maintain a mapping from field names to indexes,like
 `"firstname" => 0, "lastname" => 1 and so on`.
@@ -246,7 +246,7 @@ Then, you simply create a list instead of a hash, like- `lpush user:123 Bob Lee 
 
 The only tradeoffs are related to code complexity. Redis internally uses the same encoding (ziplist) for small hashes and small lists, so there is no performance impact when you switch to a list. However, if you have more than 512 fields in your hash, this approach is not recommended.
 
-#### When to Avoid Converting Hash to List
+#### When to avoid converting hash to list
 
 Following are the situations when conversion of hash to list should be avoided:
 
@@ -265,7 +265,7 @@ Hashes themselves have keys which can be used for partitioning the keys into dif
 
 - **Non-Numeric Keys** - For Non-Numeric keys, CRC32 checksum is used. CRC32 is used in this case because it returns a simple integer without additional work and is fast to calculate (much faster than MD5 or SHA1 hashes).
 
-#### Things to Keep in Mind
+#### Things to keep in mind
 
 You should be consistent about the `total no. of expected elements` and the `shard size` while sharding because these two information are required to keep the number of shards down. Ideally, you should not change the values as this changes the number of shards.
 
@@ -302,7 +302,7 @@ But if you want `Show me those 46966 IP Addresses` — it cannot show you. For t
 Redis Hash consists of Fields and their values. Like values, field name also consumes memory, so it is required to keep in mind while assigning field names. If you have a large number of hashes with similar field names, the memory adds up significantly.
 To reduce memory usage, you can use smaller field names.
 
-#### What do We Mean By Compress Field Names
+#### What do we mean by compress field names
 
 Referring to the previous example in convert hashes to list, we had a hash having user details.
 
@@ -318,7 +318,7 @@ In this case- firstname, lastname, location, twitter are all field names which c
 
 Redis and clients are typically IO bound and the IO costs are typically at least 2 orders of magnitude in respect to the rest of the request/reply sequence. Redis by default does not compress any value that is stored in it, hence it becomes important to compress your data before storing in Redis. This helps in reducing the payload which in return gives you higher throughput, lower latency and higher savings in your cost.
 
-#### How to Compress Strings
+#### How to compress strings
 
 There are several compression algorithms to choose from, each with it's own tradeoffs.
 
@@ -338,7 +338,7 @@ Compressing strings can save you anywhere between 30-50% memory. By compressing 
 
 Compressing/Decompressing requires your application to do extra work. This tradeoff is usually worth it. If you are concerned about additional CPU load, switch to a faster algorithm like snappy or LZO.
 
-#### When to Avoid Compression
+#### When to avoid compression
 
 Compression should not be followed blindly, there are times when compression does not help you reduce your memory, rather increases your CPU utilization. There are few cases when compression should be avoided:
 

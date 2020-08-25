@@ -36,7 +36,7 @@ To automatically discover and add RS databases to RedisInsight:
 
     All of the databases that were successfully added are dislayed on the screen. To see the databases in the Databases page, click **VIEW DATABASES**.
 
-## Auto-discovery for Redis Enterprise Cloud Databases
+## Auto-discovery for Redis Enterprise Cloud databases
 
 To automatically discover and add Redis Enterprise Cloud (RC) databases to RedisInsight:
 

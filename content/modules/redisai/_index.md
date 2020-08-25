@@ -78,7 +78,7 @@ RedisAI provides the following data structures:
 - **Model**: Represents a computation graph by one of the supported DL/ML framework backends
 - **Script**: Represents a [TorchScript](https://pytorch.org/docs/stable/jit.html) program
 
-## DL/ML Backends
+## DL/ML backends
 
 RedisAI supports DL/ML identifiers and their respective backend libraries, including:
 

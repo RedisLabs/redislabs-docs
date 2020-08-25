@@ -115,7 +115,7 @@ data by adding the NOSAVE modifier to the indexing command.
 
 ## Configuring
 
-### Partitioning and Shards In Regards to RediSearch
+### Partitioning and shards in regards to RediSearch
 
 RediSearch differs from its open source brother in one key
 aspect. The enterprise version can work with multiple shards on a

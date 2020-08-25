@@ -69,7 +69,7 @@ and highly available cluster Redis Enterprise Software is famous for.
 For more information go to [quick start with Redis Enterprise Software
 on Docker.]({{< relref "/rs/getting-started/docker/_index.md" >}})
 
-## LDAP Integration
+## LDAP integration
 
 As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Software can now use either built-in

@@ -8,7 +8,7 @@ categories: ["RC"]
 aliases: /rv/api/how-to/backup-and-import-databases/
 ---
 
-## Backup a Database
+## Backup a database
 
 When you create or update a database, you can specify the (optional) `periodicBackupPath` parameter
 with a [backup path](/rv/administration/configuration/backups/).
@@ -34,7 +34,7 @@ Before you enable backups, you must define the variables that the API requires:
 The backup database API does not require a body.
 Instead, the `periodicBackupPath` must be set to a valid path with available storage capacity to store the backup files for the specific database.
 
-## Import a Database
+## Import a database
 
 You can import data into an existing database from multiple storage sources, including AWS S3, Redis, FTP.
 Database import is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}})".

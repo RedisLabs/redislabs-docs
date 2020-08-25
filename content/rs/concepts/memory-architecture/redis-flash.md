@@ -84,7 +84,7 @@ Just like all-RAM databases, RoF is compatible with existing Redis
 applications. Databases that employ RoF are identical to all-RAM Redis
 Enterprise Software databases in characteristics and features.
 
-## Redis on Flash vs Disk Based Databases
+## Redis on Flash vs disk-based databases
 
 Flash memory can be SATA or NVMe based storage devices, but NVMe is
 where you can see the performance benefits. There are many databases in

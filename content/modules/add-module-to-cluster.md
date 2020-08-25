@@ -21,13 +21,13 @@ To get the latest features and fixes for a module, you must upgrade the module i
 
 {{< /note >}}
 
-## Getting the Packaged Modules
+## Getting the packaged modules
 
 - Redis Enterprise modules - To download the upgrades to the modules,
     go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
 - Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
-## Adding a Module to Redis Enterprise Software Cluster
+## Adding a module to Redis Enterprise Software cluster
 
 To deploy an upgraded package:
 
@@ -45,7 +45,7 @@ To deploy an upgraded package:
 
     ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
-## Upgrading the Module for the Database
+## Upgrading the module for the database
 
 {{< note >}}
 After you upgrade the module for a database, the database shards are restarted.

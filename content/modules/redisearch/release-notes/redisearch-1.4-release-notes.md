@@ -160,7 +160,7 @@ This is a maintenance release for version 1.4.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
 
-Main Features:
+Main features:
 
 - #[883](https://github.com/RediSearch/RediSearch/issues/883) Forkgc optimizations - introduce new config parameter `FORK_GC_CLEAN_THRESHOLD`. RediSearch will only start to clean when the number of not cleaned documents is exceeding this threshold.
 
@@ -213,7 +213,7 @@ This is a maintenance release for version 1.4.
 
 This release improves overall stability and provides fixes for issues found after the previous release .
 
-Main Features:
+Main features:
 
 - #[741](https://github.com/RediSearch/RediSearch/issues/741) Allow Chinese tokenizing to recognise \-escape for punctuations
 

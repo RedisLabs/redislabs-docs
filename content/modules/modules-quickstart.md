@@ -30,7 +30,7 @@ The steps for getting up and running with a database that has a module enabled a
 1. Create a new database with the module enabled.
 1. Connect to the database.
 
-## Step 1: Create a New Subscription
+## Step 1: Create a new subscription
 
 To create a new subscription:
 
@@ -55,7 +55,7 @@ To create a new subscription:
 The subscription shows a "Pending" status and takes a few minutes to provision.
 You receive an email when your subscription is ready to use.
 
-## Step 2: Create a Database with a Module Enabled
+## Step 2: Create a database with a module enabled
 
 After you create a subscription, you can create a database:
 

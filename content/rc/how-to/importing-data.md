@@ -19,7 +19,7 @@ Expired keys are not imported.
 As a result, the number of keys in the source and destination databases can be different after the import is complete.
 {{< /note >}}
 
-## Import a Dataset from a Redis Server
+## Import a dataset from a Redis server
 
 To import a dataset from any publicly available Redis server:
 
@@ -32,12 +32,12 @@ To import a dataset from any publicly available Redis server:
     - Password - Enter the password, if required by the Redis database.
 1. Click **Import**.
 
-## Import a Dataset from an RDB File
+## Import a dataset from an RDB File
 
 You can import any standard RDB to your Redis Cloud instance.
 Both uncompressed and compressed (with a .gz suffix) RDB files are valid.
 
-### RDB File from an FTP or HTTP Server
+### RDB file from an FTP or HTTP server
 
 To import an RDB file that is stored in an FTP or HTTP server:
 
@@ -59,7 +59,7 @@ To import an RDB file that is stored in an FTP or HTTP server:
 
 1. Click **Import**.
 
-### RDB File From an Amazon Simple Storage Service (AWS S3) Bucket
+### RDB file from an Amazon Simple Storage Service (AWS S3) bucket
 
 Before you import the RDB file through the Redis Cloud Essentials management console, you must share the file from the AWS management console.
 
@@ -87,7 +87,7 @@ To share and import an RDB file that is stored in an AWS S3 bucket:
 
 1. Click **Import**.
 
-### RDB File from a Google Cloud Storage (GCS) Bucket
+### RDB file from a Google Cloud Storage (GCS) bucket
 
 Before you import the RDB file through the Redis Cloud Essentials console, you must share the file from the Google Cloud Platform (GCP) console.
 
@@ -117,7 +117,7 @@ To share and import an RDB file that is stored in a GCS bucket:
 
 1. Click **Import**.
 
-### RDB File from an Azure Blob Storage (ABS) Container
+### RDB file from an Azure Blob Storage (ABS) container
 
 To import an RDB file that is stored in an ABS container:
 

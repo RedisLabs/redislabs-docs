@@ -52,7 +52,7 @@ For Redis on Flash (ROF) databases, additional metrics are available.
 | Writes latency | Database | Latency per write operation |  |
 | Writes/sec | Database | Number of total writes per second | For example: SET |
 
-## Redis on Flash Metrics
+## Redis on Flash metrics
 
 | Metric | Components measured | Description |
 | ------ | ------ | ------ |

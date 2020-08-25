@@ -31,7 +31,7 @@ This is a maintenance release from the 1.0 branch, that does not yet contain the
 
 ### Changes
 
-#### 1. Hamming Distance Scoring
+#### 1. Hamming distance scoring
 
 RediSearch can now sort the search result by the inverse Hamming Distance between document payloads and the query payloads (provided they are both the same length). This can be used as a nearest neighbor search ranking when a feature vector is encoded as a bitmap and the distance metric is Hamming distance.
 

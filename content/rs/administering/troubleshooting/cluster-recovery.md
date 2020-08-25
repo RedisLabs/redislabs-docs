@@ -42,7 +42,7 @@ The cluster recovery process includes:
 - Identify the cluster configuration file that you want to use as the configuration for the recovered cluster.
     The cluster configuration file is `/css/ccs-redis.rdb` on the persistent storage for each node.
 
-## Recovering the Cluster
+## Recovering the cluster
 
 1. (Optional) If you want to recover the cluster to the original cluster nodes, uninstall RS from the nodes.
 

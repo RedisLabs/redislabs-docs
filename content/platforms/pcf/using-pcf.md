@@ -8,7 +8,7 @@ aliases: /rs/getting-started/pcf/
 ---
 This topic describes how to use Redis Enterprise Software (RS) for Pivotal Platform.
 
-## Creating a Redis Enterprise Database instance via cf CLI and service broker using service plans
+## Creating a Redis Enterprise database instance via cf CLI and service broker using service plans
 
 1. Perform 'cf login' to your foundation.
 
@@ -32,7 +32,7 @@ Available service plans are listed in either:
 
     ![Import button](/images/platforms/pcf_apps_service_plans.png)
 
-## Creating a Redis Enterprise Database instance via Pivotal Platform Apps Manager
+## Creating a Redis Enterprise database instance via Pivotal Platform Apps Manager
 
 1. From Pivotal Platform Apps Manager go to Marketplace and select Redis Enterprise on Pivotal Platform.
 
@@ -47,7 +47,7 @@ Available service plans are listed in either:
     ![Import button](/images/platforms/pcf_apps_config_create.png)
     ![Import button](/images/platforms/pcf_ops_service_plan_created.png)
 
-## Accessing the Redis Enterprise Cluster UI
+## Accessing the Redis Enterprise cluster UI
 
 1. Connect to the Redis Enterprise Admin Console by placing the **Cluster Management Console Subdomain** in the host part of the following URL: `https://[Cluster Management Console Subdomain].[System Domain]`.
 
@@ -60,7 +60,7 @@ Do not create or delete databases through the Redis Enterprise Cluster UI.
 Use the cf creates/delete/update-service commands or use the Pivotal Apps Manager web UI to create and manage databases through available plans.
     {{< /note >}}
 
-## Installing a License Key in an Existing Cluster
+## Installing a license key in an existing cluster
 
 1. Connect to the Redis Enterprise UI per the instructions above.
 
@@ -77,7 +77,7 @@ If your license is already expired, changes to the cluster configuration, such a
 Always apply a valid license key before making such changes.
     {{< /note >}}
 
-## Connect to Redis Database Using redis-cli
+## Connect to Redis database using redis-cli
 
 `redis-cli` is a simple command-line tool for interacting with Redis Database.
 

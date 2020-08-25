@@ -13,7 +13,7 @@ You can create Redis Enterprise Software (RS) users and assign them to [roles]({
 
 You can manage users and roles in **access control** or with the REST API.
 
-## Adding a User
+## Adding a user
 
 To add a user to the cluster:
 

@@ -110,6 +110,6 @@ To enable TLS for Replica Of in the destination database:
 
 1. Click **Continue**, save the Replica Of endpoint, and click **Update** to save the changes.
 
-## Configuring Encryption of Replica Of traffic on the source database
+## Configuring encryption of Replica Of traffic on the source database
 
 {{< embed-md "tls-configuration-procedure.md"  >}}

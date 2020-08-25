@@ -55,11 +55,11 @@ before running RS installation.
 {{% /expand %}}
 {{< /note-safe >}}
 
-## Step 2: Set up a Cluster
+## Step 2: Set up a cluster
 
 {{< embed-md "cluster-setup.md" >}}
 
-## Step 3: Create a Database
+## Step 3: Create a database
 
 1. Select "redis database" and the "single region" deployment, and click Next.
 
@@ -71,7 +71,7 @@ before running RS installation.
 
 You now have a Redis database!
 
-## Step 4: Connect to your Database
+## Step 4: Connect to your database
 
 After you create the Redis database, you are ready to store data in your database.
 You can test connectivity to your database with:

@@ -23,7 +23,7 @@ visit the [installing and upgrading
 section]({{< relref "/rs/installing-upgrading/_index.md" >}})
 of the technical documentation.
 
-## Step 1: Install Redis Enterprise Software
+## Step 1: Install redis enterprise software
 
 ### Bare metal, VM, Cloud instance
 
@@ -52,7 +52,7 @@ Docker container on Windows, MacOS, and Linux.
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 12000:12000 redislabs/redis:latest
 ```
 
-## Step 2: Set up a Cluster and Enable Redis on Flash
+## Step 2: Set up a cluster and enable Redis on Flash
 
 Direct your browser to https://localhost:8443/ on the host machine to
 see the Redis Enterprise Software web console. Simply click the
@@ -80,7 +80,7 @@ email for the login and a password.
 Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
 
-## Step 3: Create a Database
+## Step 3: Create a database
 
 Select the "new redis db flash" option.
 
@@ -96,7 +96,7 @@ db](/images/rs/newredisflashdb.png?width=700&height=714)
 
 You now have a Redis on Flash database!
 
-## Step 4: Connecting to your Database
+## Step 4: Connecting to your database
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test

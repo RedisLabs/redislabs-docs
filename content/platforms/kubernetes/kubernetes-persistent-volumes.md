@@ -41,7 +41,7 @@ We recommed that you omit the volumeSize definition from the REC declaration
 so that the Redis Enterprise Cluster deployment on Kubenetes use the default volume size.
 {{< /note >}}
 
-## Storage class Name
+## Storage class name
 
 *storageClassName* determines the Storage Class resource, which is
 defined by the Kubernetes cluster administrator, to be used for

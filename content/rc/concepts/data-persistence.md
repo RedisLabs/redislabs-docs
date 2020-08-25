@@ -41,7 +41,7 @@ database as well. When these two features are enabled, persistence is done
 on the slave instance and does not reduce the performance of the
 master.
 
-## Options for Configuring Data Persistence
+## Options for configuring data persistence
 
 The options for persistence in Redis Cloud are:
 
@@ -60,7 +60,7 @@ database is only being used as a cache, you may not want to incur the
 overhead that comes with using persistence. If you do need persistence,
 then you need to identify the best type for your use case.
 
-## Append Only File (AOF) vs Snapshot (RDB)
+## Append Only File (AOF) vs snapshot (RDB)
 
 Use these details to determine which options best meet your needs:
 
