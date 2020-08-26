@@ -1,7 +1,7 @@
 ---
 Title: Cluster License Keys
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 ---
