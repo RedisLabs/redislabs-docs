@@ -1,5 +1,5 @@
 ---
-Title: User Roles and Access Control
+Title: Role-Based Access Control
 description:
 weight: $weight
 alwaysopen: false

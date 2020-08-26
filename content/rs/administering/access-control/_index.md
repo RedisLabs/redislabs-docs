@@ -1,5 +1,5 @@
 ---
-Title: User Management and Access Control
+Title: User Management
 description:
 weight: 40
 alwaysopen: false
