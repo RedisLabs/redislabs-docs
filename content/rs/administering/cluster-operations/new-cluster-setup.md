@@ -58,7 +58,7 @@ To create a cluster:
     1. In **Cluster name (FQDN)**, enter a unique name for the
         cluster.
         For guidelines, refer to [How to set the cluster
-        name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+        name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}).
 
     1. Choose whether to [**Enable private & public endpoints support**]({{< relref "/rs/administering/designing-production/networking/private-public-endpoints.md" >}}).
 
@@ -96,4 +96,4 @@ by carrying out the following tests:
 Topics
 
 - [How to Set the Cluster
-    Name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+    Name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
