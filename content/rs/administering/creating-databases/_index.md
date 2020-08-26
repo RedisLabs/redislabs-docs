@@ -149,7 +149,7 @@ after the database is created.
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-- [**Periodic backup**]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) -
+- [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
 - [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -

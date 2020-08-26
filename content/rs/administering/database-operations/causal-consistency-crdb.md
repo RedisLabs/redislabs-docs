@@ -1,5 +1,5 @@
 ---
-Title: Causal Consistency in a Conflict-free Replicated Database (CRDB)
+Title: Causal Consistency in an Active-Active Database
 description:
 weight: $weight
 alwaysopen: false
