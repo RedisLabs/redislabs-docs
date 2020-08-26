@@ -1,5 +1,5 @@
 ---
-Title: Create an Active-Passive Geo-Replicated Database (Replica Of)
+Title: Create an Active-Passive Geo-Replicated Database
 description:
 weight: $weight
 alwaysopen: false
