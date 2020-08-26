@@ -36,5 +36,5 @@ adding a node, RS enforces using the new node to replace the faulty
 one.
 
 **Note**: If you are using the DNS NS record based connection approach,
-the [DNS records must be updated]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+the [DNS records must be updated]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
 each time a node is added or replaced.
