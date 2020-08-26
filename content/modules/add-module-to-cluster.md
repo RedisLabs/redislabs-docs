@@ -70,34 +70,58 @@ To upgrade a module that is installed on a cluster:
 
     ![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
 
-1. To upgrade the module for the database, run:
+1. To see the versions of the modules on the cluster, run either:
+
+    - `rladmin status modules` - Shows the latest modules available on the cluster
+        and the modules used by databases.
+    - `rladmin status modules all` - Shows all of the modules available on the cluster
+        and the modules used by databases.
+
+1. To upgrade a database to the latest version of Redis
+    and its modules to the latest version without changing the module arguments, run:
 
     ```sh
-    rladmin upgrade db <database_name> and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>"
+    rladmin upgrade db < database_name | database_ID > latest_with_modules
     ```
 
-    - If you want to remove the existing module arguments, enter `module_args ""` without arguments.
-    - If you want to use the existing module arguments, enter `module_args keep_args`
+    - To upgrade the modules without upgrading the database to the latest Redis version, use `keep_redis_version` after you specify the database.
+    - If you want to specify the modules to upgrade, use `and module module_name <module_name> version <new_module_version_number> module_args "<module arguments>" ]` for each module.
+        For the modules arguments you can either use:
+        - `module_args "<module_arguments>"` to replace the existing module arguments.
+        - `module_args ""` without arguments to remove the existing module arguments.
+        - `module_args keep_args` to use the existing module arguments.
     - If you want to update multiple modules, use the `and module` parameter for each module.
 
 ## Examples
 
 Here are some examples of module upgrades:
 
-- To upgrade the version of RediSearch to 1.6.7 and specify arguments:
+- To upgrade keep the current version of Redis and use the latest version of the modules that are used by the database:
 
     ```sh
-    rladmin upgrade db <database_name> and module db_name MyAwesomeDB module_name ft version 10607 module_args "PARTITIONS AUTO"
+    rladmin upgrade db shopping_cart keep_redis_version latest_with_modules
     ```
 
-- To upgrade RedisBloom to version 2.2.1 and remove arguments:
+- To upgrade the database to the latest Redis version and upgrade RediSearch to 1.6.7 with the specified arguments:
 
     ```sh
-    rladmin upgrade db <database_name> and module db_name MyDB module_name bf version 20201 module_args ""
+    rladmin upgrade db shopping_cart and module db_name shopping_cart module_name ft version 10607 module_args "PARTITIONS AUTO"
     ```
 
-- To upgrade RedisJSON to 1.0.4 and keep existing arguments and RedisBloom to version 2.2.1 and remove arguments:
+- To upgrade the database to the latest redis and upgrade RedisBloom to version 2.2.1 without arguments:
+
+    ```sh
+    rladmin upgrade db db:3 and module db_name shopping_cart module_name bf version 20201 module_args ""
+    ```
+
+- To upgrade RedisJSON to 1.0.4 with the existing arguments and RedisBloom to version 2.2.1 without arguments:
 
     ```sh
     rladmin upgrade module db_name MyDB module_name ReJSON version 10004 module_args keep_args and module db_name MyDB module_name bf version 20201 module_args ""
+    ```
+
+- To upgrade the database to use the latest version of Redis and use the latest version of the modules that are used by the database:
+
+    ```sh
+    rladmin upgrade db shopping_cart latest_with_modules
     ```
