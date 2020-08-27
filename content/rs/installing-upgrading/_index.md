@@ -1,5 +1,5 @@
 ---
-Title: Installing Redis Enterprise Software
+Title: Installation
 description:
 weight: 35
 alwaysopen: false
