@@ -50,9 +50,9 @@ RS supports various database configurations:
 
 ## Proxy
 
-Each node includes one or more zero-latency multi-threaded proxies
-(written in low-level C) that mask the underlying system complexity. The
-proxies oversee forwarding Redis operations to the database shards on
+Each node includes one zero-latency, multi-threaded proxy
+(written in low-level C) that masks the underlying system complexity. The
+proxy oversees forwarding Redis operations to the database shards on
 behalf of a Redis client.
 
 The proxy simplifies the cluster operation, from the application or

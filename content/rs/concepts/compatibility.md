@@ -29,10 +29,23 @@ follows:
     - BGSAVE
     - LASTSAVE
     - SAVE
+- Because access controls are managed through RS's managment interface
+    the following commands are blocked
+    - ACL DELUSER
+    - ACL SETUSER
+    - ACL GENPASS
+    - ACL LOG
+    - ACL SAVE
+    - ACL LOAD
+    management UI, the following commands are blocked:
+    - BGREWRITEAOF
+    - BGSAVE
+    - LASTSAVE
+    - SAVE
 - Because replication is managed automatically by RS and because it
     could present a security risk, the following commands are blocked:
     - MIGRATE
-    - REPLCONF
+    - REPLICAOF
     - SLAVEOF
     - SYNC/PSYNC
 - Commands that are not relevant for a hosted Redis instance are
@@ -51,6 +64,7 @@ follows:
     - LATENCY RESET
     - LATENCY GRAPH
     - LATENCY DOCTOR
+- STRALGO LCS is not yet supported
 - Lastly, only a subset of Redis configuration settings (via CONFIG
     GET/SET) is applicable to RS. Attempts to get or set a
     configuration parameter that is not included in the following list
