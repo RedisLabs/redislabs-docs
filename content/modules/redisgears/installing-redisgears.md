@@ -58,7 +58,7 @@ The Write-Behind recipe comes with two types of dependencies:
 In most cases all of these can be provisioned to RedisGears before the Functions are uploaded.
 However, root access for the driver on the host is required in some cases, for example with Oracle drivers.
 
-### Step 1: Install Oracle driver (Optional)
+### Step 1: Install Oracle driver (optional)
 
 If you want to do write-behind with an Oracle database:
 

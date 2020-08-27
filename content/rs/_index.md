@@ -34,7 +34,7 @@ In addition, Redis Enterprise supports many enterprise security features, includ
 
 For more on scaling, high availability, and durability, see the [the Redis Enterprise Software architecture.]({{< relref "/rs/concepts/_index.md" >}})
 
-## Active-Active Replicated Redis Databases (CRDB) {#activeactive-replicated-redis-databases-crdb}
+## Active-Active replicated Redis databases (CRDB) {#activeactive-replicated-redis-databases-crdb}
 
 [Active-Active databases]({{< relref "/rs/concepts/intercluster-replication.md" >}}) provide global, geo-distributed database replication with conflict-free local writes.
 This greatly simplifies the development of globally distributed applications.

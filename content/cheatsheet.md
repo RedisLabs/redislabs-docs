@@ -232,7 +232,7 @@ Output:
   {{< /tab >}}
 {{< /tabs >}}
 
-## Images and Videos
+## Images and videos
 
 ### Adding an image
 
@@ -295,7 +295,7 @@ Ouput:
 
 {{< youtube_start Bi1T3toQfF4 10 >}}
 
-## Single-Sourcing {#singlesourcing}
+## Single-sourcing {#singlesourcing}
 
 ### Expanding blocks
 

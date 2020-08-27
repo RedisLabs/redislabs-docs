@@ -510,7 +510,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
             $
             ```
 
-## Step 5: Cleaning Up
+## Step 5: Cleaning up
 
 To remove the Redis Enterprise Cluster from your PKS deployment:
 

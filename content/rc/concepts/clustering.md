@@ -46,7 +46,7 @@ the database memory limit and required throughput.
 
 ![subscription-selection-2](/images/rc/subscription-selection-2.png?width=600&height=221)
 
-## Multi-Key operations {#multikey-operations}
+## Multi-key operations {#multikey-operations}
 
 Operations on multiple keys in a sharded Redis Cloud cluster
 are supported with the following limitations:

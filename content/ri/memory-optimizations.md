@@ -55,14 +55,14 @@ When you set an expiry on a key, redis does not expire it at that instant. Inste
 
 If there are only a few keys that have expired and redis hasn't deleted them - it is fine. It's only a problem when a large number of keys haven't expired.
 
-#### How to Detect if Memory is not Reclaimed After Expiry
+#### How to detect if memory is not reclaimed after expiry
 
 1. Run the `INFO` command and find the total_memory_used and sum of all the keys for all the databases.
 1. Then take a Redis Dump(RDB) and find out the total memory and total number of keys.
 
 Looking at the difference you can clearly point out that lot of memory is still not reclaimed for the keys that have expired.
 
-#### How to Reclaim expired Keys Memory Faster
+#### How to reclaim expired keys memory faster
 
 You can follow one of these three steps to reclaim the memory:
 
@@ -165,7 +165,7 @@ This brevity comes at a cost because more time is required for changing the size
 Similarly, for sorted sets can also be converted to ziplist, but the only differnce is that zset-max-ziplist-entries is 128 which is less that what is there for hashes.
 {{< /note >}}
 
-### Switch from Set to Intset
+### Switch from set to intset
 
 Sets that contain only integers are extremely efficient memory wise. If your set contains strings, try to use integers by mapping string identifiers to integers.
 
