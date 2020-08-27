@@ -437,7 +437,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
-1. Follow the [instructions to create your database](http://localhost:1313/rs/administering/database-operations/creating-database/#creating-a-new-redis-database).
+1. Follow the [instructions to create your database](http://localhost:1313/rs/administering/creating-database/#creating-a-new-redis-database).
 
     For example:
 

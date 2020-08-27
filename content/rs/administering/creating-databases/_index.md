@@ -1,10 +1,11 @@
 ---
 title: Creating a Redis Enterprise Software Database
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 db_type: database
+aliases: /rs/administering/creating-databases/_index.md
 ---
 You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
 These databases can use Redis Enterprise features like:
@@ -19,7 +20,7 @@ and the memory available on the machine.
 
 {{< note >}}
 For databases with Active-Active replication for geo-distributed locations,
-[create an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
+[create an Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
 {{< /note >}}
 
 ## Creating a new redis database
@@ -121,34 +122,34 @@ You cannot change the [port number]({{< relref "/rs/administering/designing-prod
 after the database is created.
         {{< /note >}}
 
-- **Database clustering** - You can either:
-    - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-        and select the number of shards that you want to have in the database.
-        When database clustering is enabled, databases are subject to limitations on
-        [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
-        You can increase the number of shards in the database at any time.
+    - **Database clustering** - You can either:
+        - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+            and select the number of shards that you want to have in the database.
+            When database clustering is enabled, databases are subject to limitations on
+            [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+            You can increase the number of shards in the database at any time.
 
-        You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering#standard-hashing-policy" >}})
-        or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}})
-        to define where keys are located in the clustered database.
+            You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering#standard-hashing-policy" >}})
+            or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}})
+            to define where keys are located in the clustered database.
 
-    - Clear the **Database clustering** option to use only one shard so that you
-        can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-        without the limitations.
+        - Clear the **Database clustering** option to use only one shard so that you
+            can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
+            without the limitations.
 
 - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-- [**Replica Of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
+- [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
 - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-- [**Periodic backup**]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) -
+- [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
 - [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -

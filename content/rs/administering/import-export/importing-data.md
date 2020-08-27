@@ -1,12 +1,14 @@
 ---
-Title: Importing Data into Redis Enterprise
+Title: Importing Data into a Database
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/database-operations/importing-data/
+        /rs/administering/database-operations/administering-database-operations-importing-data/
 ---
-You can import [export]({{< relref "/rs/administering/database-operations/exporting-data.md" >}})
-or [backup]({{< relref "/rs/administering/database-operations/database-backup.md" >}})
+You can import [export]({{< relref "/rs/administering/import-export/exporting-data.md" >}})
+or [backup]({{< relref "/rs/administering/import-export/database-backup.md" >}})
 files of a specific Redis Enterprise Software (RS) database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a clustered database.
@@ -30,12 +32,12 @@ To import data into a database:
 
 The storage services that are supported for import are:
 
-### HTTP server
+#### HTTP server
 
 To import RDB files from an HTTP server, enter the path to the files. You must enter
 each path on a separate line.
 
-### FTP server
+#### FTP server
 
 Before you specify to import from an FTP server, make sure that:
 
@@ -50,7 +52,7 @@ ftp://user:password@host<:custom_port>/path/filename.rdb
 
 For example: `ftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 
-### SFTP server
+#### SFTP server
 
 Before you specify to import from an SFTP server, make sure that:
 
@@ -70,7 +72,7 @@ sftp://user:password@host<:custom_port>/path/filename.rdb
 
 For example: `sftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 
-### AWS S3
+#### AWS S3
 
 Before you import from Amazon S3, make sure that you have:
 
@@ -80,7 +82,7 @@ Before you import from Amazon S3, make sure that you have:
 
 You can also connect to a storage service that uses the S3 protocol but is not hosted by Amazon AWS. The storage service must have a valid SSL certificate. To connect to an S3-compatible storage location, run: `rladmin cluster config s3_url <url>`
 
-### Local mount point
+#### Local mount point
 
 Before you specify to import from a local mount point, make sure that:
 
@@ -107,7 +109,7 @@ To specify to import from a local mount point on a node:
 
     For example: `/mnt/Public/<filename>.rdb`
 
-### OpenStack Swift
+#### OpenStack Swift
 
 {{< note >}}
 Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
@@ -121,7 +123,7 @@ Before you specify to import from OpenStack Swift, make sure that you have:
 - User
 - Key
 
-### Azure Blob Storage
+#### Azure Blob Storage
 
 Before you choose to backup to OpenStack Swift, make sure that you have:
 
@@ -129,7 +131,7 @@ Before you choose to backup to OpenStack Swift, make sure that you have:
 - Account name
 - Account key
 
-### Google Cloud Storage
+#### Google Cloud Storage
 
 Before you choose to backup to OpenStack Swift, make sure that you have:
 
@@ -138,3 +140,20 @@ Before you choose to backup to OpenStack Swift, make sure that you have:
 - Client email
 - Private key ID
 - Private key
+
+## Importing into an Active-Active database
+
+When importing data into an Active-Active database, there are two options:
+
+- Perform a flushall to the database, thus deleting all data.
+    Then import the data into the Active-Active database.
+- Import data but merge it into the existing or add new data from the import file.
+
+Because Active-Active databases have a numeric counter data type,
+when you merge the imported data into the existing data RS increments counters by the value that is in the imported data.
+The import through the Redis Enterprise web UI handles these data types for you.
+
+You can import data into an Active-Active database [from the web UI]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
+When you import data into an Active-Active database, there is a special prompt.
+
+![Import into an Active-Active database](/images/rs/Screen-Shot-2018-03-29-at-10.00.12-PM.png?width=1720&height=702)

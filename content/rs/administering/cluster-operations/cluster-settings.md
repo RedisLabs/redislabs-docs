@@ -1,12 +1,11 @@
 ---
-Title: General settings
+Title: Cluster Name, Email Service, Time Zone, and License
 description:
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view and set various cluster settings in the **Settings \>
-General** page.
+You can view and set various cluster settings in the **Settings > General** page.
 
 ## Entering a cluster key
 
@@ -15,7 +14,7 @@ you can enter the key in the Cluster Key field, either during initial
 cluster creation or at any time afterward. The key defines various
 cluster settings, such as the maximum number of shards you can have in
 the cluster. For more detailed information see [Cluster License
-Keys]({{< relref "/rs/administering/cluster-operations/settings/license-keys.md" >}}).
+Keys]({{< relref "/rs/administering/cluster-operations/license-keys.md" >}}).
 
 ## Viewing the maximum number of allowed shards
 
