@@ -32,7 +32,8 @@ To authenticate to the Swagger UI:
 
 1. Insert the API Key values:
 
-    1. Enter the [Account Key]({{< relref "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) as the `x-api-key` value and click **Authorize**.
+    1. Enter the [Account Key]({{< relref "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) as the `x-api-key` value and click **Authorize**. 
+         `Note: The **Account Key** is the **Cloud API Access Key** on the account tab`
     1. Enter the [Secret Key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team.md" >}}) as the `x-api-secret-key` value and click **Authorize**.
     1. Click **Close**.
 
