@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/developing/crdbs/developing-hll-crdb/
 ---
 **HyperLogLog** is an algorithm that addresses the [count-distinct problem](https://en.wikipedia.org/wiki/Count-distinct_problem).
 To do this it approximates the numbers of items in a [set](https://en.wikipedia.org/wiki/Multiset).

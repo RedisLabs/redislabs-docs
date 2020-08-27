@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/developing/crdbs/developing-sets-crdb/
 ---
 Redis Sets are an unordered collection of Strings. It is possible to
 add, remove, and test for the existence of members with Redis commands.
