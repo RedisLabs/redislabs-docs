@@ -32,12 +32,12 @@ To import data into a database:
 
 The storage services that are supported for import are:
 
-#### HTTP server
+### HTTP server
 
 To import RDB files from an HTTP server, enter the path to the files. You must enter
 each path on a separate line.
 
-#### FTP server
+### FTP server
 
 Before you specify to import from an FTP server, make sure that:
 
@@ -52,7 +52,7 @@ ftp://user:password@host<:custom_port>/path/filename.rdb
 
 For example: `ftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 
-#### SFTP server
+### SFTP server
 
 Before you specify to import from an SFTP server, make sure that:
 
@@ -72,7 +72,7 @@ sftp://user:password@host<:custom_port>/path/filename.rdb
 
 For example: `sftp://username:password@10.1.1.1/home/backups/<filename>.rdb`
 
-#### AWS S3
+### AWS S3
 
 Before you import from Amazon S3, make sure that you have:
 
@@ -82,7 +82,7 @@ Before you import from Amazon S3, make sure that you have:
 
 You can also connect to a storage service that uses the S3 protocol but is not hosted by Amazon AWS. The storage service must have a valid SSL certificate. To connect to an S3-compatible storage location, run: `rladmin cluster config s3_url <url>`
 
-#### Local mount point
+### Local mount point
 
 Before you specify to import from a local mount point, make sure that:
 
@@ -109,7 +109,7 @@ To specify to import from a local mount point on a node:
 
     For example: `/mnt/Public/<filename>.rdb`
 
-#### OpenStack Swift
+### OpenStack Swift
 
 {{< note >}}
 Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
@@ -123,7 +123,7 @@ Before you specify to import from OpenStack Swift, make sure that you have:
 - User
 - Key
 
-#### Azure Blob Storage
+### Azure Blob Storage
 
 Before you choose to backup to OpenStack Swift, make sure that you have:
 
@@ -131,7 +131,7 @@ Before you choose to backup to OpenStack Swift, make sure that you have:
 - Account name
 - Account key
 
-#### Google Cloud Storage
+### Google Cloud Storage
 
 Before you choose to backup to OpenStack Swift, make sure that you have:
 
