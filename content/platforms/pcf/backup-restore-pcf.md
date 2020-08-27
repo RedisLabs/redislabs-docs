@@ -10,7 +10,7 @@ This topic describes how to backup and restore Redis Enterprise for Pivotal Plat
 
 You must use the BOSH Backup and Restore (BBR) command-line tool to backup and restore your Pivotal Platform deployment. These backup and restore instructions apply specifically to your Redis Enterprise for Pivotal Platform deployment.
 
-## Installing the BBR Command-Line Tool
+## Installing the BBR command-line tool
 
 To install the BBR command-line tool:
 

@@ -21,7 +21,7 @@ side by side in a given cluster where some clients can use Discovery
 Service based connection while others can use DNS name resolution when
 connecting to databases.
 
-## How Discovery Service Works
+## How discovery service works
 
 The Discovery Service is available for querying on each node of the
 cluster, listening on port 8001. To employ it, your application utilizes
@@ -88,7 +88,7 @@ to derive which node in the cluster to communicate with.
 To use Redis Sentinel, every database name must be unique across the cluster.
 {{< /note >}}
 
-## Redis Client Support
+## Redis client support
 
 We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
 

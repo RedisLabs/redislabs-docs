@@ -8,19 +8,19 @@ categories: ["RS"]
 You can configure Redis Enterprise Software (RS) programmatically with client libraries
 or manually with the RS Web Console.
 
-## Redis Client Libraries
+## Redis client libraries
 
 For connecting to RS databases with your
 Redis application, you can use any of the available [client libraries
 listed on Redis.io](https://redis.io/clients).
 
-### Discovery Service
+### Discovery service
 
 We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
 {{< embed-md "discovery-clients.md" >}}
 
-## Web Browsers
+## Web browsers
 
 For the Redis Enterprise Software Web Console, the following web browsers
 and versions are supported:

@@ -7,7 +7,7 @@ Redis Labs documentation is an open source project and we welcome edits of all t
 
 Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
-## Edit in GitHub vs. Open an Issue
+## Edit in GitHub vs. open an issue
 
 If you see a problem on a page, either with content or formatting, and you think you can fix it,
 you can click on the **Edit on GitHub** link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
@@ -19,7 +19,7 @@ go to [the Issues section of the repository](https://github.com/RedisLabs/redisl
 If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
 {{< /note >}}
 
-## Branches vs. Forks
+## Branches vs. forks
 
 The redislabs-docs repository is public but only members of the repository can create new branches in the repo.
 New branches in the repo are automatically built into staging sites at: `http://docs.redislabs.com/staging/<branch>`
@@ -33,7 +33,7 @@ If the changes that you make resolve two separate issues, make two separate PRs.
 After you commit your changes to the public repo or your forked repo,
 you can open a pull request to submit your changes for consideration.
 
-## Serving the Docs Site Locally
+## Serving the docs site locally
 
 After you clone the repository to your local machine, you can serve the site locally with Hugo and then browse to http://localhost:1313 to see how it looks.
 
@@ -51,7 +51,7 @@ To run an older version of Hugo on your local machine:
 1. Make a shell config file alias, for example: `alias hugo57='/usr/local/bin/hugo-0.57.2/hugo'`
 1. Go to your redislabs-docs repo and use the alias to build the docs, for example: `hugo57 serve`
 
-## Adding Pages
+## Adding pages
 
 Every article in the docs is an individual markdown file.
 To add a new article in the docs, you must add a markdown file in the hierarchy of the content directory.
@@ -76,7 +76,7 @@ categories: ["RC"]
 ---
 ```
 
-## Adding Sections
+## Adding sections
 
 To add a section to the docs that includes multiple articles, you must add a directory with a `_index.md` file.
 The `_index.md` file is the landing page for the section that should contain the main information for the section.
@@ -90,7 +90,7 @@ you can use the `children` shortcode to show all of the sub-topics for the secti
 {{%/* children style="h2" description="true" */%}}
 ```
 
-## Writing Article Content
+## Writing article content
 
 The structure of an article is:
 

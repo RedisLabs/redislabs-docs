@@ -46,7 +46,7 @@ highly recommended to make sure replication is enabled for that database
 as well. When these two features are enabled, persistence is
 performed on the database slave and does not impact performance on the master.
 
-## Options for Configuring Data Persistence
+## Options for configuring data persistence
 
 There are six options for persistence in Redis Enterprise Software:
 
@@ -66,7 +66,7 @@ you select it. If the database is being used as a cache, then you may
 not need persistence. If you do need persistence, then you need to
 identify which is the best type for your use case.
 
-## Append Only File (AOF) vs Snapshot (RDB)
+## Append only file (AOF) vs snapshot (RDB)
 
 Now that you know the available options, to assist in making a decision
 on which option is right for your use case, here is a table about the
@@ -79,7 +79,7 @@ two:
 |  Slower time to recover (Larger files) | Faster recovery time |
 |  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
 
-## Data Persistence and Redis on Flash
+## Data persistence and Redis on Flash
 
 If you are enabling data persistence for databases running on Redis
 Enterprise Flash, by default both master and slave shards are

@@ -13,7 +13,7 @@ You can create Redis Enterprise Software (RS) users and assign them to [roles]({
 
 You can manage users and roles in **access control** or with the REST API.
 
-## Adding a User
+## Adding a user
 
 To add a user to the cluster:
 
@@ -63,7 +63,7 @@ To edit the name, password, role or email alerts of a user, hover over the user 
 (/images/rs/icon_edit.png#no-click "Edit"). To change a user from internal to external, you must
 delete the user and re-add it.
 
-## User Account Security
+## User account security
 
 To make sure your user accounts are secured and not misused, RS supports enforcement of:
 

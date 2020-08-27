@@ -79,7 +79,7 @@ You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
 
 When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
-## TLS Protocol and Ciphers
+## Tls protocol and ciphers
 
 TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with. You can change the TLS protocols and ciphers to improve the security posture of your RS cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
@@ -157,7 +157,7 @@ supervisorctl restart sentinel_service
 After you set the minimum TLS version, RS does not accept communications with
 TLS versions older than the specified version.
 
-### Cipher Configuration
+### Cipher configuration
 
 When you set the TLS ciphers, the new TLS ciphers are used for management communications only.
 

@@ -167,7 +167,7 @@ You can view the binding by following the link to the secret.
 
 ![openshift-crdb-secret]( /images/rs/openshift-crdb-secret.png )
 
-## Validating Active-Active database Deployment
+## Validating Active-Active database deployment
 
 To do a basic validation test of database replication:
 

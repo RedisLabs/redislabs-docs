@@ -190,7 +190,7 @@ Headlines:
 
 Full details:
 
-- Major Features
+- Major features
     - #[339](https://github.com/RedisGraph/RedisGraph/issues/339) [Full Graph Response](https://oss.redislabs.com/redisgraph/result_structure/#top-level-members).  RedisGraph now allows to return Graph entities such as Nodes and Relationships.  This feature also enables graph visualisation.
     - #[558](https://github.com/RedisGraph/RedisGraph/issues/558) Indexing functionality replaced by [RediSearch](redisearch.io). This results in support for
         - compound indices

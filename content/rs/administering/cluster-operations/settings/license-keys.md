@@ -9,7 +9,7 @@ The cluster key (or license) enables features and capacity within Redis Enterpri
 You can add or update a cluster key at any time in a cluster lifecycle.
 When the cluster does not have a cluster key, the cluster is in trial mode.
 
-## Trial Mode
+## Trial mode
 
 Trial mode is limited to thirty days and a total of four shards, including master and slave
 shards. Any new installation starts its thirty-day clock from the day
@@ -17,7 +17,7 @@ the cluster setup was done (with the first cluster node provisioned).
 This mode allows all features to be enabled, including Redis on Flash,
 during the trial period.
 
-## Viewing the Cluster Key
+## Viewing the cluster key
 
 You can see the cluster key either:
 
@@ -33,7 +33,7 @@ You can see the cluster key either:
     - expiration_date - The date of the cluster key expiration
     - shards_limit - The number of shards allowed by the cluster key
 
-## Adding or Updating a Cluster Key
+## Adding or updating a cluster key
 
 {{< note >}}
 After you add a cluster key, you cannot remove the key to return the cluster to trial mode.
@@ -50,7 +50,7 @@ cluster license key is valid. If saving of a new cluster key fails, the
 operation returns the error "invalid license key". In this case, the
 existing key stays in effect.
 
-## Expired Cluster Key
+## Expired cluster key
 
 When the license is expired:
 

@@ -16,7 +16,7 @@ memory]({{< relref "/rs/concepts/memory-architecture/memory-management.md" >}})
 for best functionality and performance. The formal
 recommendation is to disable Linux swap completely in the OS.
 
-## Disabling Swap
+## Disabling swap
 
 To disable the swap in the OS of an existing server/VM/instance, you
 must have sudo access or be root to run the following command:

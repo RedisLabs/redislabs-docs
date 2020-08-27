@@ -72,5 +72,5 @@ Here is an example of the pricing response section of a dry-run request:
 
 The structure of the pricing response depends on the cloud account used by the request:
 
-- For a customer provided cloud account - The response includes pricing data for the shards, and a lists the resources required (storage & compute instances) without pricing data
-- For a Redis Labs internal cloud account (`cloudAccountId = 1`) - The response includes pricing data for both shards and the resources required (storage & compute instances)
+- For a customer provided cloud account - The response includes pricing data for the shards, and a lists the resources required (storage and compute instances) without pricing data
+- For a Redis Labs internal cloud account (`cloudAccountId = 1`) - The response includes pricing data for both shards and the resources required (storage and compute instances)

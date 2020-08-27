@@ -10,7 +10,7 @@ lets you create dashboards that highlight the metrics that are important to you.
 
 Here are the metrics available to Prometheus:
 
-## Database Metrics
+## Database metrics
 
 | Metric | Description |
 | ------ | :------ |
@@ -81,7 +81,7 @@ Here are the metrics available to Prometheus:
 | bdb_write_res_max | Highest value of rate of write responses on DB (ops/sec) |
 | no_of_expires | Current number of volatile keys in the database |
 
-## Node Metrics
+## Node metrics
 
 | Metric | Description |
 | ------ | :------ |
@@ -128,7 +128,7 @@ Here are the metrics available to Prometheus:
 | node_total_req | Request rate handled by endpoints on node (ops/sec) |
 | node_up | Node is part of the cluster and is connected |
 
-## Proxy Metrics
+## Proxy metrics
 
 | Metric | Description |
 | ------ | :------ |
@@ -189,7 +189,7 @@ Here are the metrics available to Prometheus:
 | listener_write_started_res | Number of responses sent from the DB of type "write" |
 | listener_write_started_res_max | Highest value of number of responses sent from the DB of type "write" |
 
-## Replication Metrics
+## Replication metrics
 
 | Metric | Description |
 | ------ | :------ |
@@ -202,7 +202,7 @@ Here are the metrics available to Prometheus:
 | bdb_crdt_syncer_local_ingress_lag_time | Lag time between the source and the destination (ms) for CRDB traffic |
 | bdb_crdt_syncer_status | Syncer status for CRDB traffic; 0 = in-sync, 1 = syncing, 2 = out of sync |
 
-## Shard Metrics
+## Shard metrics
 
 | Metric | Description |
 | ------ | :------ |

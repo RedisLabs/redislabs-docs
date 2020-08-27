@@ -13,7 +13,7 @@ The hardware requirements for Redis Enterprise Software (RS) are different for d
 
 - In a production environment you must have enough resources to handle the load on the database and recover from failures.
 
-## Development Environment
+## Development environment
 
 You can build your development environment with non-production hardware, such as a laptop, desktop, or small VM or instance,
 and with these hardware requirements:
@@ -24,7 +24,7 @@ and with these hardware requirements:
 | RAM per node | The amount of RAM for each node. | 4GB | >= 8GB |
 | Storage per node | The amount of storage space for each node. | 10GB | >= 20GB |
 
-## Production Environment
+## Production environment
 
 We recommend these hardware requirements for production systems or for development systems that are designed to demonstrate production use cases:
 

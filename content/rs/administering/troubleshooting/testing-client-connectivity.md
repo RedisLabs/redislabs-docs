@@ -24,7 +24,7 @@ To test client connectivity:
 If any issues are encountered during the connectivity test, contact our
 support at <support@redislabs.com>.
 
-## Test Connecting to your Database
+## Test connecting to your database
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
@@ -33,7 +33,7 @@ connectivity to your database:
 - Connecting with redis-cli, the built-in command-line tool
 - Connecting with a _Hello World_ application using Python.
 
-### Connecting Using redis-cli
+### Connecting using redis-cli
 
 Run redis-cli, located in the /opt/redislabs/bin directory, to connect
 to port 12000 and store and retrieve a key in database1

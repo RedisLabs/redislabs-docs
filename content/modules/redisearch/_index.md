@@ -92,7 +92,7 @@ has its limitations: it doesn't support exact phrase search, it has a
 big memory overhead, and can be very slow with big records
 intersections.
 
-## Storing Documents
+## Storing documents
 
 The RediSearch engine indexes "documents", which are a list of
 field-value pairs. The index knows how to index each field, but that's
@@ -115,7 +115,7 @@ data by adding the NOSAVE modifier to the indexing command.
 
 ## Configuring
 
-### Partitioning and Shards In Regards to RediSearch
+### Partitioning and shards in regards to RediSearch
 
 RediSearch differs from its open source brother in one key
 aspect. The enterprise version can work with multiple shards on a

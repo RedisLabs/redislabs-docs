@@ -13,7 +13,7 @@ This includes all data in memory and persisted to disk.
 We recommend that you [backup your database]({{< relref "/rc/administration/configuration/backups.md" >}}) before you flush the data.
 {{< /warning >}}
 
-## flushall for Redis Cloud Databases
+## flushall for Redis Cloud databases
 
 You can flush a database from the command line with the redis-cli command or with your Redis client.
 

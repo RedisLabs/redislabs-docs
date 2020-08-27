@@ -48,7 +48,7 @@ For a quick overview of Replica Of capabilities watch this quick video.
 
 {{< youtube AG-XGn7BQkQ >}}
 
-## Replication Process
+## Replication process
 
 When a database is defined as a replica of another database, all its
 existing data is deleted and replaced by data that is loaded from the
@@ -133,7 +133,7 @@ Replica Of supports the ability to encrypt uni-directional replication
 communications between source and destination clusters utilizing TLS 1.2
 based encryption.
 
-## Data Compression for Replica Of
+## Data compression for Replica Of
 
 When the Replica Of is defined across different Redis Enterprise
 Software clusters, it may be beneficial to compress the data that flows

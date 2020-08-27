@@ -12,7 +12,7 @@ This is a maintenance release for version 1.0.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
 
-Main Features:
+Main features:
 
 - #[143](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/143) Standard Deviation for Aggregations
 - #[163](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/163) `TS.RANGE` and `TS.MRANGE` can limit results via optional `COUNT` flag
@@ -44,7 +44,7 @@ This is the General Availability release of RedisTimeSeries!  Please read the [f
 
 In RedisTimeSeries, we are introducing a new data type that uses chunks of memory of fixed size for time series samples, indexed by the same [Radix Tree implementation](https://github.com/antirez/rax) as Redis Streams. With Streams, you can create a [capped stream](https://redis.io/commands/xadd), effectively limiting the number of messages by count. In RedisTimeSeries, you can apply a retention policy in milliseconds. This is better for time series use cases, because they are typically interested in the data during a given time window, rather than a fixed number of samples.
 
-#### Downsampling / compaction
+#### Downsampling/compaction
 
 If you want to keep all of your raw data points indefinitely, your data set will grow linearly over time. However, if your use case allows you to have less fine-grained data further back in time, downsampling can be applied. This allows you to keep fewer historical data points by aggregating raw data for a given time window using a given aggregation function. [RedisTimeSeries supports downsampling](https://oss.redislabs.com/redistimeseries/commands/#tscreaterule) with the [following aggregations](https://oss.redislabs.com/redistimeseries/commands/#tsrange): avg, sum, min, max, range, count, first and last.  
 

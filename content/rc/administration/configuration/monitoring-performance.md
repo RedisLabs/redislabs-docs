@@ -28,7 +28,7 @@ For a quick tour of what you get, watch this video. -->
 
 <!-- {{< youtube GYpVYilv5u4 >}} -->
 
-## Definition of Each Metric
+## Definition of each metric
 
 For each database, there are 14 different metrics you can see on the
 page:
@@ -56,7 +56,7 @@ Relic](https://newrelic.com/plugins/poison-pen-llc/28). Also, you might
 want to read [this
 post](https://redislabs.com/blog/secure-redis-ssl-added-to-redsmin-and-clients).
 
-## Alerting on Metrics
+## Alerting on metrics
 
 There are five metrics, located on the Configuration tab for each
 database, that you can and should create alerts for.
@@ -81,7 +81,7 @@ appropriately on your own. For example, if you have two databases,
 configuring an alert for when each database reaches 80% can surpass your
 number of subscriptions.
 
-## Changing Alert Email Recipients
+## Changing alert email recipients
 
 Any member of the account team can receive alert emails.
 

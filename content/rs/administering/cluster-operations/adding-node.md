@@ -22,7 +22,7 @@ After you install the first node, you can add more nodes to the cluster.
     "/rs/installing-upgrading/configuring/cluster-dns/_index.md"
     >}}) each time a node is added or replaced.
 
-## Adding a node to an existing Cluster
+## Adding a node to an existing cluster
 
 To add a node in RS:
 

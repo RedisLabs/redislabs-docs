@@ -20,7 +20,7 @@ To see the JSON elements, expand the specific API operation and, in the request 
 
 Here are several examples of JSON requests to update a database:
 
-### Add or Remove Replica Of
+### Add or remove Replica Of
 
 Setting one or more source Redis databases configures the updated database as a Replica Of destination database for the specified Redis databases.
 

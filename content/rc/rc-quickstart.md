@@ -17,7 +17,7 @@ When you create a Redis Cloud subscription, you must choose:
     - **Pro** - For high-throughput applications, many databases or large datasets
     - **Ultimate** - For a more complete support experience (Contact [Redis Labs Sales](https://redislabs.com/redis-enterprise-cloud/pricing/))
 
-## Step 1: Create a New Subscription
+## Step 1: Create a new subscription
 
 To create a new subscription:
 
@@ -40,7 +40,7 @@ To create a new subscription:
 The subscription shows a "Pending" status and takes approximately 10 to 15 minutes to provision.
 You receive an email when your subscription is ready to use.
 
-### Next Steps
+### Next steps
 
 We recommend that you setup [VPC peering]({{< relref "/rc/administration/setup/edit-subscription#vpc-peering" >}}) with your application VPC.
 VPC peering lets you route traffic between your VPCs using private IP addresses for improved security and performance.
@@ -50,7 +50,7 @@ You can also [edit these subscription settings]({{< relref "/rc/administration/s
 1. Subscription name
 1. Payment information
 
-## Step 2: Create a Database
+## Step 2: Create a database
 
 After you create a subscription, you can create a database:
 
@@ -146,7 +146,7 @@ bar
 With that simple test complete, you change the host, port, password and SSL certificates
 in any existing code or apps that use Redis and you are done.
 
-## More Information
+## More information
 
 - [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
 - [Securing Your Redis Cloud Database]({{< relref "/rc/administration/security/_index.md" >}})

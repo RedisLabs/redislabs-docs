@@ -9,9 +9,9 @@ categories: ["Modules"]
 
 This version is the last version that I (@dvirsky) will be releasing, and it includes a lot of new cool features, and actually NO bug-fixes over 1.1.0! So long and thanks for all the fish!
 
-### New Features
+### New features
 
-#### Aggregation Filters
+#### Aggregation filters
 
 As an addition to the aggregation API in `FT.AGGREGATE`, it is possible to do post-index filtering of the pipeline, using the `FILTER` keyword. e.g.:
 
@@ -24,7 +24,7 @@ FT.AGGREGATE idx "*"
 
 See [http://redisearch.io/Aggregations/](http://redisearch.io/Aggregations/) for more details.
 
-#### Query Attributes
+#### Query attributes
 
 It is now possible to apply specific query modifying attributes to specific clauses of the query (see #[212](https://github.com/RediSearch/RediSearch/issues/212)).
 
@@ -41,13 +41,13 @@ The supported attributes are:
 1. $slop: determines the maximum allowed "slop" (space between terms) in the query clause.
 1. $inorder: whether or not the terms in a query clause must appear in the same order as in the query.
 
-#### Fuzzy Matching
+#### Fuzzy matching
 
 Wrapping a search term with `%` will cause the index to expand the query to terms that are within an Edit Distance of 1 from the original term. For example, querying for `%redis%` will expand it to query for `redis, jedis, credis, predis`, etc (provided the terms appear in documents in the index).
 
 Notice that each query term needs to be wrapped independently, and that we limit the maximum amount of expansions to 200 per term, as this hurts performance significantly.
 
-#### Conditional Updates
+#### Conditional updates
 
 It is now possible to update documents (`FT.ADD ... REPLACE [PARTIAL]`) only if a certain condition is met regarding the document's state **before** the updates. So for example, if our document has a timestamp field, and we would like to update its title only if the timestamp is below a certain value, we can do the following:
 
@@ -59,7 +59,7 @@ FT.ADD myIndex myDoc 1.0
        title "new title"
 ```
 
-#### Backslash Escaping
+#### Backslash escaping
 
 Following several user requests, it is now possible to escape separator characters in documents (it is already done in the query itself), and avoid tokenization when needed.
 
@@ -67,7 +67,7 @@ For example, indexing the text `hello\-world hello world` will create the tokeni
 
 The same goes to the query string: If the document contains the token `hello-world`, it can be found by running in redis-cli: `FT.SEARCH idx "hello\\-world", which will cause the query not to be separated.
 
-#### Synonyms Support
+#### Synonyms support
 
 It is now possible to provide the index with synonym groups (.e.g boy, child, kid), and have it automatically index synonymous terms so that searching for one will return documents containing another.
 

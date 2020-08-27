@@ -16,7 +16,7 @@ because after you delete the database it cannot be recovered (except from your b
 - We recommend that you create a backup of your database before deleting it.
 {{< /note >}}
 
-## Deleting a Database
+## Deleting a database
 
 1. Go to the **Databases** page from the Redis Cloud menu.
 1. Click on the database you wish to delete from the list of your databases.

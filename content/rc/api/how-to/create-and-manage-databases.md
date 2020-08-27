@@ -9,7 +9,7 @@ aliases: /rv/api/how-to/create-and-manage-databases/
 You can use `cURL` commands to create and manage a cloud account
 with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).
 
-## Create a Database
+## Create a database
 
 The API operation that creates a database is: `POST /subscriptions/{subscription-id}/databases`
 

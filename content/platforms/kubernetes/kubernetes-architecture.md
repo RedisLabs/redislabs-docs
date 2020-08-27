@@ -37,7 +37,7 @@ Redis Enterprise is not only great as an in-memory database but also extremely e
 
 ![kubernetes-overview-performance-improvements-read]( /images/rs/kubernetes-overview-performance-improvements-read.png )![kubernetes-overview-performance-improvements-write]( /images/rs/kubernetes-overview-performance-improvements-write.png )
 
-## Multiple services on each Pod
+## Multiple services on each pod
 
 Each Pod includes multiple Redis Enterprise instances (multiple services). We found that the traditional method of deploying a Redis Enterprise database over Kubernetes, in which each Pod includes only a single Redis Enterprise instance while preserving a dedicated CPU, is notably inefficient. Redis Enterprise is exceptionally fast and in many cases can use just a fraction of the CPU resources to deliver the requested throughput. Furthermore, when running a Redis Enterprise Cluster with multiple Redis Enterprise instances across multiple Pods, the Kubernetes network, with its multiple vSwitches, can quickly become the deployment’s bottleneck. Therefore, Redis Labs took a different approach to managing Redis Enterprise over the Kubernetes environment. Deploying multiple Redis Enterprise database instances on a single Pod allows us to better utilize the hardware resources used by the Pod such as CPU, memory, and network while keeping the same level of isolation. See the figure below:
 

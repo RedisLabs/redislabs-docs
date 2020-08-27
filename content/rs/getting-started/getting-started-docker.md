@@ -50,7 +50,7 @@ about installing Docker Engine:
 - [MacOS](https://docs.docker.com/docker-for-mac/install/)
 - [Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows)
 
-## Step 2: Run the Container
+## Step 2: Run the container
 
 To pull and start the Redis Enterprise Software Docker container, run this
 `docker run` command in the terminal or command-line for your operating system.
@@ -66,11 +66,11 @@ connections, 9443 for REST API connections, and port 12000 open for redis client
 You can publish other [ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 with `-p <host_port>:<container_port>`.
 
-## Step 3: Set up a Cluster
+## Step 3: Set up a cluster
 
 {{< embed-md "cluster-setup.md" >}}
 
-## Step 4: Create a Database
+## Step 4: Create a database
 
 1. Select "redis database" and the "single region" deployment, and click Next.
 
@@ -101,7 +101,7 @@ When you see a green check mark, the database is activated and ready for you to 
 
 You now have a Redis database!
 
-## Step 5: Connect to your Database
+## Step 5: Connect to your database
 
 After you create the Redis database, you are ready to store data in your
 database. You can test connectivity to your database with:
@@ -109,7 +109,7 @@ database. You can test connectivity to your database with:
 - redis-cli - the built-in command-line tool
 - A _Hello World_ application using Python
 
-### Connecting Using redis-cli {#connecting-using-rediscli}
+### Connecting using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with Redis database.
 
@@ -131,7 +131,7 @@ OK
 "123"
 ```
 
-### Connecting Using _Hello World_ Application in Python
+### Connecting using _Hello World_ application in Python
 
 A simple python application running on the **host machine**, not the
 container, can also connect to database1.

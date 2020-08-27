@@ -38,7 +38,7 @@ Before configuring an Active-Active database, you must:
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
 
-## Active-Active Database Current Limitations
+## Active-Active database current limitations
 
 1. RS is limited to five participating clusters or instances in an Active-Active database.
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database you must create a new Active-Active database and migrate the data.
@@ -71,13 +71,13 @@ Do you want to set up NTP time synchronization now [Y/N]? Y
 2017-10-30 11:24:19 [.] Making sure NTP is installed and time is set.
 ```
 
-## Network Configurations
+## Network configurations
 
 RS assumes that networking between the clusters is already configured when you create an Active-Active database.
 For security purposes, we recommend that you configure a secure VPN between all clusters that host an instance of an Active-Active database.
 The setup of the Active-Active database fails if there is no connectivity between the clusters.
 
-## Network Ports
+## Network ports
 
 For initial configuration and ongoing maintenance of an Active-Active database, every node must have access to the REST API ports of every other node.
 You must also open ports for [VPNs and Security groups]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
@@ -85,7 +85,7 @@ You must also open ports for [VPNs and Security groups]({{< relref "/rs/administ
 For synchronization, Active-Active databases operate over the standard endpoint ports.
 The endpoint port that you configure when you create the Active-Active database is the endpoint port of the proxy for that Active-Active database on each cluster.
 
-### Data Persistence
+### Data persistence
 
 You can set the data persistence configuration, including AOF (Append-Only File) data persistence and snapshot,
 for each participating cluster.

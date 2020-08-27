@@ -50,7 +50,7 @@ We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. 
 
 {{< /expand-control >}}
 
-## Memory Analysis
+## Memory analysis
 
 {{< expand-control >}}
 {{% expand "How long does the memory analysis take?" %}}
@@ -109,7 +109,7 @@ Our licensing works on the sum of used memory on the redis instances you have ad
 
 {{< /expand-control >}}
 
-## License and Support
+## License and support
 
 {{< expand-control >}}
 
@@ -123,7 +123,7 @@ See the official [RedisInsight Licence Terms](https://redislabs.com/wp-content/u
 
 {{< /expand-control >}}
 
-## Privacy and Security
+## Privacy and security
 
 {{< expand-control >}}
 

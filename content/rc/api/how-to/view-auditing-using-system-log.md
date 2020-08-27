@@ -12,7 +12,7 @@ You can view the system log in the Redis Cloud Admin Console by selecting `Menu`
 
 ![System Logs in the UI](/images/rc/system_log.png?width=998&height=576)
 
-### System Logs API Operation
+### System logs API operation
 
 The API operation for querying the system log is `GET /logs`.
 

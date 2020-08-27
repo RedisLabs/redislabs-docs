@@ -17,7 +17,7 @@ Each of these database configurations requires specific steps to add them to Red
 - Redis with TLS authentication
 - Elasticache
 
-## Add a Standalone Redis Database
+## Add a standalone Redis database
 
 This is the simplest setup of a Redis database with just a single Redis server.
 
@@ -50,7 +50,7 @@ Your newly added database is shown in the home screen.
 
 ![instance_overview_page](/images/ri/add-db-added-screen.png)
 
-## Add a Redis Cluster Database
+## Add a Redis cluster database
 
 To add a [Redis Cluster](https://redis.io/topics/cluster-tutorial) database:
 
@@ -66,7 +66,7 @@ To add a [Redis Cluster](https://redis.io/topics/cluster-tutorial) database:
     If you don't know which node to select or if there are no other clients for the database yet,
     select all of the nodes.
 
-### Add a Redis Sentinel Database
+### Add a Redis Sentinel database
 
 [Redis Sentinel](https://redis.io/topics/sentinel) is often used for High Availability deployments of Redis.
 It provides automatic master-to-slave failover.
@@ -95,7 +95,7 @@ To add a Redis database with a [Redis Sentinel](https://redis.io/topics/sentinel
     A single set of Sentinel instances can monitor and manage the failover of multiple databases.
     If your database requires a password, enter the password and click **Add Selected Database**.
 
-### Add a Redis Database that uses TLS
+### Add a Redis database that uses TLS
 
 Some configurations of Redis use SSL/TLS for network communication.
 

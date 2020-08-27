@@ -35,7 +35,7 @@ Using features from the newer version before all nodes are upgraded can produce 
 
 {{< /warning >}}
 
-## Upgrading a Node
+## Upgrading a node
 
 Upgrading the software on a node requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/_index.md" >}})
@@ -80,7 +80,7 @@ If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
-## Upgrading a Database
+## Upgrading a database
 
 Some RS upgrades add support for new Redis versions. In these cases,
 Redis Labs recommends that you upgrade the databases to the new Redis
@@ -127,7 +127,7 @@ a result:
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
-## Upgrading Active-Active Databases {#upgrading-activeactive-databases}
+## Upgrading Active-Active databases {#upgrading-activeactive-databases}
 
 When you upgrade an Active-Active database, you can also upgrade:
 

@@ -33,7 +33,7 @@ If the CLI does not recognize the rladmin command,
 you run this command to load the needed configuration first: `bash -l`
     {{< /note >}}
 
-## Command Syntax Help
+## Command syntax help
 
 In the rladmin CLI you can:
 

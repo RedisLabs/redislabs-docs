@@ -21,7 +21,7 @@ This topic describes how to install and configure Redis Enterprise for Pivotal P
 
     ![Import button](/images/platforms/pcf_add-to-dash_tile.png)
 
-## Configure and Deploy Redis Enterprise for Pivotal Platform
+## Configure and deploy Redis Enterprise for Pivotal Platform
 
 1. Click the newly imported tile.
 

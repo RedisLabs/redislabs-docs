@@ -74,7 +74,7 @@ For example, a request for data points in the `count-connections` (number of con
     }
 ```
 
-## Metric Categories
+## Metric categories
 
 Data points are shown divided into these categories:
 
@@ -106,7 +106,7 @@ Data points are shown divided into these categories:
 |**values-in-flash**|Number of values stored in Flash|count|Y|||
 |**values-in-ram**|Number of values stored in RAM|count|Y|||
 
-## Usage Example
+## Usage example
 
 ```shell
 {{% embed-code "rv/api/70-query-metrics.sh" %}}

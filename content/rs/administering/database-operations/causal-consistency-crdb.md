@@ -12,7 +12,7 @@ For instance, if operations A and B were applied on the same key and the effect 
 then all instances of an Active-Active databases would observe the effect of A before observing the effect of B.
 This way, any causal relationship between operations on the same key is also observed and maintained by every replica.
 
-### Causal Consistency Side Effects
+### Causal consistency side effects
 
 When the Causal Consistency option is enabled, each instance maintains the order of operations it received from another instance
 and relays that information to all other N-2 instances,
@@ -21,7 +21,7 @@ where N represents the number of instances used by the Active-Active database.
 As a result, network traffic is increased by a factor of (N-2).
 The memory consumed by each instance and overall performance are also impacted when Causal Consistency is activated.
 
-### Enabling Causal Consistency
+### Enabling causal consistency
 
 When you create an Active-Active database, Causal Consistency is set as:
 

@@ -22,7 +22,7 @@ On Windows and Mac, install docker version 18.03 or higher.
 You can run `docker version` to find out your docker version.
 {{< /note >}}
 
-## Run RedisInsight Docker Image
+## Run RedisInsight Docker image
 
 Next, run the RedisInsight container.
 The easiest way is to run the following command:

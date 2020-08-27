@@ -11,7 +11,7 @@ After you create the API access key, you can manage usage of the API access key 
 - Delete the access key
 - Limit usage of the access key by network subnets
 
-## Delete a Secret Key
+## Delete a secret key
 
 To delete an access key:
 
@@ -23,7 +23,7 @@ To delete an access key:
 1. Click **Delete**.
 1. Confirm that you want to delete the access key.
 
-## Add an Allowed Subnet
+## Add an allowed subnet
 
 By default, API access is allowed from all IP addresses.
 
@@ -37,7 +37,7 @@ To limit API access to a specified range of source IP addresses:
 
 After you add the subnet, you can add more subnets or click **OK**.
 
-## Delete an Allowed Subnet
+## Delete an allowed subnet
 
 1. Go to: **Settings** > **Cloud API Keys**
 1. Click **Manage IPs** for the access key that you want to change.

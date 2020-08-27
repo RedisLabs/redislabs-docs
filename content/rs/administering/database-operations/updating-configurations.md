@@ -20,7 +20,7 @@ For [Active-Active database instances](#updating-crdb-configuration), most datab
 
 1. Click **Update**.
 
-## Editing Active-Active Database Configuration
+## Editing Active-Active database configuration
 
 An Active-Active database (formerly known as CRDB) is a database that spans multiple Redis Enterprise clusters.
 The clusters that host instances of the Active-Active database are called participating clusters.
@@ -38,7 +38,7 @@ most database settings only apply to the Active-Active database instance that yo
 
 You can change the global configuration of the Active-Active database from the command-line with the crdb-cli.
 
-## Participating Clusters
+## Participating clusters
 
 You can add and remove participating clusters of an Active-Active database to change the Active-Active topology.
 Use the participating clusters list to manage the changes to Active-Active topology in the UI.
@@ -60,7 +60,7 @@ If a participating cluster that was removed forcefully returns attempts to re-jo
 it will have an out of date on Active-Active database membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
 
-## TLS Authentication and Encryption
+## TLS authentication and encryption
 
 To prevent unauthorized access to your data, you can configure RS to secure communications with TLS protocol
 (the more secure successor to SSL).
