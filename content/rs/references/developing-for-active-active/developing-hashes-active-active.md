@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/developing/crdbs/developing-hashes-crdb/
 ---
 Hashes are great for structured data that contain a map of fields and
 values. They are used for managing distributed user or app session

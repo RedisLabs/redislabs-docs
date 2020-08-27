@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/developing/crdbs/developing-streams-crdb/
 ---
 A [Redis Stream](https://redis.io/topics/streams-intro) is a data structure that acts like an append-only log.
 Each stream entry consists of:

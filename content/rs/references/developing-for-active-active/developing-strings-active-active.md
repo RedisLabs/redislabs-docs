@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/references/developing-for-active-active/developing-strings-active-active.md/
 ---
 Strings have particular unique characteristics in an Active-Active database. First off,
 they are the only data type that Last Write Wins (LWW) applies to. As

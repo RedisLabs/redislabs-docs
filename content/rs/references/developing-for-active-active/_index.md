@@ -1,9 +1,10 @@
 ---
 title: Developing Applications with Active-Active Databases
 description:
-weight: $weight
+weight: 85
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/developing/crdbs/
 ---
 Developing geo-distributed, multi-master applications can be difficult.
 Application developers may have to understand a large number of race
@@ -110,16 +111,16 @@ followed by descriptions:
 
 | **Data Type** | **Support Level** |
 |------------|-----------------|
-| Float Counters | [Supported]({{< relref "/rs/developing/crdbs/strings#string-data-type-with-counter-value-in-crdbs" >}}) |
-| Geospatial | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
-| Hashes | [Supported]({{< relref "/rs/developing/crdbs/developing-hashes-crdb.md" >}}); Hash fields are treated as strings or counters |
-| Integer Counters | [Supported]({{< relref "/rs/developing/crdbs/strings#string-data-type-with-counter-value-in-crdbs" >}}) |
-| Lists | [Supported]({{< relref "/rs/developing/crdbs/developing-lists-crdb.md" >}}) |
-| Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sets-crdb.md" >}}) |
-| Strings | [Supported]({{< relref "/rs/developing/crdbs/strings.md" >}}) |
-| Sorted Sets | [Supported]({{< relref "/rs/developing/crdbs/developing-sorted-sets-crdb.md" >}}) |
-| HyperLogLog | [Supported]({{< relref "/rs/developing/crdbs/developing-hll-crdb.md" >}}) |
-| Streams | [Supported]({{< relref "/rs/developing/crdbs/developing-streams-crdb.md" >}}) |
+| Float Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-data-type-with-counter-value-in-crdbs" >}}) |
+| Geospatial | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
+| Hashes | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hashes-active-active.md" >}}); Hash fields are treated as strings or counters |
+| Integer Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-data-type-with-counter-value-in-crdbs" >}}) |
+| Lists | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-lists-active-active.md" >}}) |
+| Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sets-active-active.md" >}}) |
+| Strings | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
+| Sorted Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
+| HyperLogLog | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hll-active-active.md" >}}) |
+| Streams | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
 | Bitsets | Not currently supported |
 
 ### Other data types

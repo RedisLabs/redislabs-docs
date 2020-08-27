@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/developing/crdbs/developing-sorted-sets-crdb/
 ---
 {{< note >}}
 [Redis Geospatial (Geo)](https://redis.io/commands/GEOADD) is based on Sorted Sets, so the same Active-Active database development instructions apply to Geo.
