@@ -24,11 +24,10 @@
 
       {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
       {{- if ne $numberOfPages 0 }}
-          {{- .Scratch.Set "pages" .Pages }}
+          {{- $pages := .Pages }}
           {{- if .Sections}}
-          {{- .Scratch.Set "pages" (.Pages | union .Sections) }}
+            {{- $pages = (.Pages | union .Sections) }}
           {{- end}}
-          {{- $pages := (.Scratch.Get "pages") }}
 
         {{- if eq .Site.Params.ordersectionsby "title"}}
           {{- range $pages.ByTitle }}
