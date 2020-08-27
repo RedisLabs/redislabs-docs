@@ -28,10 +28,10 @@ An Active-Active database is made up of instances of the data that are each stor
 Before configuring an Active-Active database, you must:
 
 - If the Active-Active database spans a WAN, establish a VPN between each networks that hosts a cluster with an instance.
-- Setup [RS clusters]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) for each Active-Active database instance.
+- Setup [RS clusters]({{< relref "/rs/administering/new-cluster-setup.md" >}}) for each Active-Active database instance.
 
     All clusters must have the same RS version.
-- Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) for connections to the cluster.
+- Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.
 
     Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) for inter-cluster communications,
     but are compatible with local application connections.
@@ -44,7 +44,7 @@ Before configuring an Active-Active database, you must:
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database you must create a new Active-Active database and migrate the data.
 1. Active-Active databases do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 1. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
-1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/administering/active-passive.md" >}}).
+1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/administering/designing-production/active-passive.md" >}}).
 
 ## Network Time Service (NTP or Chrony)
 
@@ -131,9 +131,3 @@ The scenarios in which an Active-Active database updates to other instances use 
 {{< note >}}
 Synchronization of data from the master shard to the slave shard is always a full synchronization.
 {{< /note >}}
-
-### Syncer in Active-Passive Replication (Replica Of)
-
-In Replica Of, the master node does not transfer the replication backlog to its slave.
-Whenever a synchronization is necessary, the slave has no backlog and can only do a full sync.
-But, in a controlled failover the demoted master still has the replication backlog, and when the syncer connects, it can do a partial sync.

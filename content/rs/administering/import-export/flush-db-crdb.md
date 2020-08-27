@@ -1,16 +1,17 @@
 ---
 Title: Flushing Database Data
 description:
-weight: $weight
+weight: 80
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/database-operations/flush-db-crdb/
 ---
 To delete the data in a database without deleting the database configuration,
 you can flush the data from the database.
 
 {{< warning title="Data Loss Warning" >}}
 The flush command deletes ALL in-memory and persistence data in the database.
-We recommend that you [backup your database]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) before you flush the data.
+We recommend that you [backup your database]({{< relref "/rs/administering/import-export/database-backup.md" >}}) before you flush the data.
 {{< /warning >}}
 
 ## Flushing data from a database

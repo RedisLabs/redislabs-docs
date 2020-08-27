@@ -1,12 +1,12 @@
 ---
-Title: Create an Active-Passive Geo-Replicated Database (Replica Of)
+Title: Create an Active-Passive Geo-Replicated Database
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/intercluster-replication/replica-of/
 ---
-[Active-Passive replicated databases]({{< relref "/rs/administering/active-passive.md" >}}) (also known as Replica Of) give applications read-only access
+[Active-Passive replicated databases]({{< relref "/rs/administering/designing-production/active-passive.md" >}}) (also known as Replica Of) give applications read-only access
 to replicas of the data that are hosted in different geographical locations.
 
 The source database can be located in the same Redis Enterprise Software (RS) cluster, in a different cluster, or in an OSS Redis database.
@@ -26,7 +26,7 @@ When you add, remove, or edit Replica Of sources, the data is re-replicated from
 To configure a destination database as a Replica Of:
 
 1. Open the database settings:
-    1. For a new database, [create the database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) with its settings.
+    1. For a new database, [create the database]({{< relref "/rs/administering/creating-databases/_index.md" >}}) with its settings.
     1. For an existing database:
         1. Go to **databases**.
         1. Click on the database and go to **configuration**.
@@ -67,7 +67,7 @@ If you regenerate the password, replication to existing destinations fails until
 
         {{< note >}}
 For a source database on a different RS cluster,
-you can [compress the replication data]({{< relref "/rs/administering/active-passive#data-compression-for-replica-of">}}) to save bandwidth.
+you can [compress the replication data]({{< relref "/rs/administering/designing-production/active-passive#data-compression-for-replica-of">}}) to save bandwidth.
         {{< /note >}}
 
     - For a source database in an OSS Redis cluster - Enter the URL of the source endpoint in the format:

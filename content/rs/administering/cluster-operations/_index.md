@@ -1,11 +1,10 @@
 ---
-Title: Cluster Operations
+Title: Cluster Maintenance
 description:
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---
-This section has all you need to know pertaining to administering the
-cluster in Redis Enterprise Software.
+This section has all you need to know to maintain a Redis Enterprise Software (RS) cluster.
 
 {{< allchildren style="h2" description="true" />}}

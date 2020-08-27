@@ -177,24 +177,24 @@ Changes in 4.4.2 - 49
     upgrade.
     **Workaround:** Refresh the browser and the UI will return to work
     properly.
-- **Issue:** In the *Replica of* process, if the target database does
+- **Issue:** In the Replica Of process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on the target database might not be in sync with
-    the source database, although the status of the *Replica of* process
+    the source database, although the status of the Replica Of process
     indicates that it is.
     **Workaround:** You must manually stop and restart the
     synchronization process in order to ensure the databases are in
     sync.
-- **Issue:** In the *Replica of* process, if the source database is
-    resharded while the *Replica of* process is active, the
+- **Issue:** In the Replica Of process, if the source database is
+    resharded while the Replica Of process is active, the
     synchronization process will fail.
     **Workaround:** You must manually stop and restart the
     synchronization process after the resharding of the source database
     is done.
-- **Issue:** In the *Replica of* process, if there is very high
-    traffic on the database the *Replica of* process might be restarted
+- **Issue:** In the Replica Of process, if there is very high
+    traffic on the database the Replica Of process might be restarted
     frequently due to the "slave buffer" being exceeded. In this case,
-    you will often see the status of the *Replica of* process display as
+    you will often see the status of the Replica Of process display as
     "Syncing".
     **Workaround:** You must manually increase the "slave buffer" size
     through rladmin. To find the appropriate buffer size please contact

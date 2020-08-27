@@ -18,11 +18,13 @@ synchronize the database, either within Redis Enterprise or external to Redis En
 
 You can create Active-Active databases on Redis Enterprise Software or Redis Cloud.
 
-[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/active-active.md" >}})
+[Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/designing-production/active-active.md" >}})
 provides these benefits and also provides write access to all of the database replicas.
 
-**Warning:** Configuring a database as a replica of the database that it replicates
+{{< warning >}}
+Configuring a database as a replica of the database that it replicates
 creates a cyclical replication and is not supported.
+{{< /warning >}}
 
 The Replica Of is defined in the context of the destination database
 by specifying the source databases.
@@ -38,11 +40,13 @@ result, commands that were executed in a certain order when compared
 across source databases might be executed in a different order on the
 destination database.
 
-**Note:** The Replica Of feature should not be confused with the
+{{< note >}}
+The Replica Of feature should not be confused with the
 in-memory [Database
 replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
+{{< /note >}}
 
 For a quick overview of Replica Of capabilities watch this quick video.
 
@@ -95,9 +99,11 @@ the source was executed on the destination.
 The system also displays the destination database status as an aggregate
 of the statuses of all the sources.
 
-**Note:** If you encounter issues with the Replica Of process, refer
+{{< note >}}
+If you encounter issues with the Replica Of process, refer
 to the troubleshooting section [Replica Of repeatedly
 fails]({{< relref "/rs/administering/troubleshooting/replicaof-repeatedly-fails.md" >}}).
+{{< /note >}}
 
 ### Synchronization errors
 
@@ -179,3 +185,22 @@ which shard/s the command refers.
 
 The source and destination can have different shard counts and functions
 for placement of keys.
+
+### Synchronization in Active-Passive Replication
+
+In Active-Passive databases, one cluster hosts the source database that receives read-write operations
+and the other clusters host destination databases that receive synchronization updates from the source database.
+
+When there is a significant difference between the source and destination databases,
+the destination database flushes all of the data from its memory and starts synchronizing the data again.
+This process is called a **full sync**.
+
+For example, if the database updates for the destination databases
+that are stored by the destination database in a synchronization backlog exceed their allocated memory,
+the source database starts a full sync.
+
+{{% warning %}}
+When you failover to the destination database for write operations,
+make sure that you disable **Replica Of** before you direct clients to the destination database.
+This avoids a full sync that can overwrite your data.
+{{% /warning %}}
