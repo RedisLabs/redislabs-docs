@@ -81,6 +81,10 @@ header nav.shortcuts li {
   position: relative;
 }
 
+header nav.shortcuts li:last-of-type {
+  padding-right: 0;
+}
+
 header nav.shortcuts li a:hover {
   opacity: 1;
 }
@@ -834,20 +838,20 @@ section a {
 }
 ul.footer-action .social a {
   display: inline-block;
-  padding: 0 .5rem;
+  color: #a7a7a7;
   font-size: 35px;
-  color: #a2a8a8;
+  width: 1em;
+  margin-right: 0.2em;  
 }
 .btm_footer {
   background: #393b3c;
 }
 
 .social img {
-  width: 27px;
+  width: 23px;
 }
 .social {
   display: flex;
-  justify-content: space-between;
 }
 
 .cbp-spmenu-push-toleft header {
@@ -1487,20 +1491,20 @@ thead tr {
   margin-top: -5px;
   border-right-color: rgba(0, 0, 0, 0.8); }
 
-#inner-footer {
-  margin: 0 auto;
-  max-width: 1100px;
-  width: 90%;
-  padding-top: 50px;
-  padding-bottom: 50px;  
-}
-
 .footer {
     clear: both;
     margin-top: 0;
     background: #3f4b5f;
     position: relative;
     z-index: 3;
+    padding-top: 50px;
+    padding-bottom: 50px;    
+}
+
+#inner-footer {
+  margin: 0 auto;
+  max-width: 1100px;
+  width: 90%;
 }
 
 .footer h3, .footer h4, .footer h5, .footer h6 {
@@ -1516,18 +1520,17 @@ thead tr {
 }
 
 .footer .social a {
-    display: inline-block;
-    padding: 0 .5rem;
-    font-size: 2.275rem
+  display: inline-block;
+  padding: 0;
+  font-size: 30px;
+  margin-right: .2em;
 }
 
 .footer .left-columns {
   width: 50%;
   display: flex;
-}
-
-.footer nav {
-    margin-bottom: 3rem
+  margin-right: 50px;
+  margin-bottom: 30px;  
 }
 
 .footer nav ul {
@@ -1554,14 +1557,18 @@ thead tr {
 }
 
 .footer .v-bottom {
-    color: #a2a8a8
+    color: #a2a8a8;
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 90%;    
 }
 
 .footer-logo {
-    margin-right: 20px;
-    margin-bottom: 10px;
-    margin-left: 14px;
-    float: left !important
+  margin-right: 20px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  margin-left: 14px;
+  float: left !important;
 }
 
 .footer ul.no-bullet li {
@@ -1571,7 +1578,7 @@ thead tr {
 
 .footer .cta {
   color: #fff;
-  font-size: 14px;  
+  font-size: 14px;
 }
 
 .footer .cta p.cta-title {
@@ -1585,19 +1592,28 @@ thead tr {
 .footer .cta p.cta-text {
   font-size: 14px;
   line-height: 24px;
-  padding-bottom: 14px!important;
+  padding-bottom: 0 !important;
+  margin-top: 5px;
+  margin-bottom: 0;
   font-weight: 300;
 }
 
-.footer .cta .cta-btn {
+.footer .cta-btn {
   line-height: 1;
   font-weight: 500;
   border-radius: 6px!important;
   text-decoration: none;
   border: none;
+  margin-top: 5px;
   padding: 8px 40px 10px;
   color: #fff;
   background-color: #5961ff;
+  width: 142px;
+  text-align: center;    
+}
+
+.footer .cta-btn a {
+  font-weight: 700;  
 }
 
 .fi-social-500px:before, .fi-social-adobe:before, .fi-social-amazon:before, .fi-social-android:before, .fi-social-apple:before, .fi-social-behance:before, .fi-social-bing:before, .fi-social-blogger:before, .fi-social-delicious:before, .fi-social-designer-news:before, .fi-social-deviant-art:before, .fi-social-digg:before, .fi-social-dribbble:before, .fi-social-drive:before, .fi-social-dropbox:before, .fi-social-evernote:before, .fi-social-facebook:before, .fi-social-flickr:before, .fi-social-forrst:before, .fi-social-foursquare:before, .fi-social-game-center:before, .fi-social-github:before, .fi-social-google-plus:before, .fi-social-hacker-news:before, .fi-social-hi5:before, .fi-social-instagram:before, .fi-social-joomla:before, .fi-social-lastfm:before, .fi-social-linkedin:before, .fi-social-medium:before, .fi-social-myspace:before, .fi-social-orkut:before, .fi-social-path:before, .fi-social-picasa:before, .fi-social-pinterest:before, .fi-social-rdio:before, .fi-social-reddit:before, .fi-social-skillshare:before, .fi-social-skype:before, .fi-social-smashing-mag:before, .fi-social-snapchat:before, .fi-social-spotify:before, .fi-social-squidoo:before, .fi-social-stack-overflow:before, .fi-social-steam:before, .fi-social-stumbleupon:before, .fi-social-treehouse:before, .fi-social-tumblr:before, .fi-social-twitter:before, .fi-social-vimeo:before, .fi-social-windows:before, .fi-social-xbox:before, .fi-social-yahoo:before, .fi-social-yelp:before, .fi-social-youtube:before, .fi-social-zerply:before, .fi-social-zurb:before {
@@ -1609,7 +1625,8 @@ thead tr {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
-    text-decoration: inherit
+    text-decoration: inherit;
+    color: #a7a7a7;
 }
 
 .row {
@@ -1681,10 +1698,14 @@ ul.footer-action li a:hover {
 }
 
 p.source-org.copyright {
-  color: #a2a8a8;
-  font-weight: 400;
-  margin: 0 0 16px 0 !important;
   width: 50%;
+  margin: 0 0 16px 0 !important;
+  padding-bottom: 14px!important;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  line-height: 24px;
+  color: #a2a8a8;
 }
 
 div.notices {
