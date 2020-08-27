@@ -1,7 +1,7 @@
 ---
-Title: Redis Cloud
+Title: Redis Enterprise Cloud
 description:
-weight: 30
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/

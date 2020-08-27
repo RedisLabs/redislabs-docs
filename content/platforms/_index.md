@@ -1,7 +1,7 @@
 ---
 Title: Platforms
 description: 
-weight: 40
+weight: 50
 alwaysopen: false
 categories: ["Platforms"]
 ---
