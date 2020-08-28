@@ -13,28 +13,28 @@ This release includes an improved synchronization mechanism for Active-Active Re
 
 Follow these [instructions](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/) for upgrading to RS 5.4.10 from RS 5.0 and above.
 
-## New Features
+## New features
 
-### Synchronization mechanism in A-A Redis and Replica-of
+### Synchronization mechanism in Active-Active Redis and Replica-of
 
-RS 5.4.10 incorporates the improved [Redis synchronization mechanism]({{< relref "/rs/administering/active-active.md#syncer-process" >}}) ([PSYNC2](https://redis.io/topics/replication)) for Active-Active Redis (CRDB) and Replica-of.
+RS 5.4.10 incorporates the improved [Redis synchronization mechanism]({{< relref "/rs/administering/active-active#syncer-process" >}}) ([PSYNC2](https://redis.io/topics/replication)) for Active-Active Redis (CRDB) and Replica-of.
 
 As a result, failure scenarios in any A-A replica (and the source database of Replica-of), require only partial synchronization between the cross-region replicas instead of full synchronization that can be costly in time and bandwidth.
 
-### RS on RHEL 7 Supports OpenSSL 1.0.2 and up
+### RS on RHEL 7 supports OpenSSL 1.0.2 and up
 
 To keep RS secure and keep our internal libraries up-to-date, starting from RS 5.4.10 our RHEL 7 installations require a minimum of OpenSSL 1.0.2.
 
 When you install or upgrade RS 5.4.10 on RHEL 7 with older version of OpenSLL, the installation fails with the error:
 
-```src
+```sh
 Error: Package: redislabs-5.4.10-1.rhel7.x86_64 (/redislabs-5.4.10-1.rhel7.x86_64)
         Requires: libcrypto.so.10(OPENSSL_1.0.2)(64bit)
 ```
 
 If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
-## Additional Capabilities
+## Additional capabilities
 
 - The following new GA releases of Redis Modules are bundled in RS 5.4.10:
     - RedisBloom, version 2.0.3
@@ -54,11 +54,11 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle/).
 - Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS web UI.
     If you use a self-signed certificate that does not include this field, [update the self-signed certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or earlier to version RS 5.4.4 or later:
+- When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or lower to version RS 5.4.4 or higher:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
 
-## Important Fixes
+## Important fixes
 
 - The titles of the ‘rladmin status nodes’ command output were updated from ‘RAM’ to ‘FREE_RAM’ (the amount of RAM in the node that is currently not used) and from ‘AVAILABLE_RAM’ to ‘PROVISIONAL_RAM’ (the amount of RAM in the node that can be provisioned).
 - RS31492 - Upgraded dependent libraries: [python-cryptography to version 2.7](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/3b5a408696b91a0b545f670ce35bb920d5a4beb4); [nginx to version 1.16.0](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/4ab171d4467bd91c6b38cec81da3c52a6113a787); [PyYaml to version 5.1.2](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/11e814ae0d14c85b248bc7451edbbbcb71f3858f); [python-requests to version 2.22.0](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/0e2ab74b4e2b2dc9872a86fbdb5593f5354eb103); [urllib3 to version 1.25.3](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/038e44163d7dc1fed4e3b67cb252a84583c2f44a)
@@ -76,7 +76,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 - RS33883 - HCSAN command in Active-Active Redis updated to return Integer instead of a String.
 - Fixed a limitation so Redis 5 and Redis 4 can be selected as the Redis version to use CRDB and RoF
 
-## Known Limitations
+## Known limitations
 
 ### Upgrade
 
@@ -84,9 +84,9 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
     that improve its compatibility with open source Redis.
     Now the string data-type in Active-Active Redis (CRDB) is implicitly and dynamically typed, just like open source Redis.
     To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower,
-    you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading.md#upgrading-crdbs" >}}).
+    you must [upgrade the CRDB protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
 - Before you upgrade a database with RediSearch Module to Redis 5.0,
-    you must [upgrade the RediSearch Module]({{< relref "/modules/upgrading-rs.md" >}}) to version 1.4.2 or above.
+    you must [upgrade the RediSearch Module]({{< relref "/modules/add-module-to-cluster.md" >}}) to version 1.4.2 or above.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above
     by manually updating the certificates on the disk instead of [updating them through the API]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
     For assistance with this issue, contact Support.
@@ -100,11 +100,11 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
     `curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"`
 
-### Discovery Service
+### Discovery service
 
 - For [Redis Sentinel (Discovery Service)]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), every database name must be unique across the cluster.
 
-### Redis Commands
+### Redis commands
 
 - The capability of disabling specific Redis commands does not work on commands specific to Redis Modules.
 - The CLIENT ID command cannot guarantee incremental IDs between clients that connect to different nodes under multi proxy policies.

@@ -10,7 +10,7 @@ Then you can query the data for a time range on some aggregation rule.
 
 Connect to redis.
 
-```src
+```sh
 $ redis-cli -p 12543
 127.0.0.1:12543>
 ```

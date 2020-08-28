@@ -1,14 +1,14 @@
 ---
-Title: Developing with Strings in a CRDB
+Title: Developing with Strings in an Active-Active database
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Strings have particular unique characteristics in a CRDB. First off,
+Strings have particular unique characteristics in an Active-Active database. First off,
 they are the only data type that Last Write Wins (LWW) applies to. As
 part of that, a wall-clock timestamp (OS Time) is in the metadata of any
-operation on a String. If RS cannot determine the order of operations,
+operation on a String. If Redis Enterprise Software cannot determine the order of operations,
 the value with the higher timestamp wins. This is the only case where OS
 time is used to resolve a conflict.
 
@@ -24,46 +24,17 @@ time (t2) wins over the update at t1.
 |  t5 | — Sync — | — Sync — |
 |  t6 |  | SET key1 “d” |
 
-String type in Redis is implicitly and dynamically typed. Besides string
-command like APPEND, It is overloaded with numeric and bitfield command
-as well like INCR and SETBIT. However, bitfield, numeric, float vs pure
-string data behave differently in CRDBs. In standard Redis, string type
-checks the stored value dynamically to decide which commands can operate
-on the value. For example, you can first set a string key to "abc" use
-the APPEND command and SET the same key to 7 and use INCR to update it
-to 8.
+Bitfield methods like SETBIT are not supported in Active-Active databases.
 
-In CRDTs the initial type of the value is identified by the method used
-to create the value. To create a counter value, you can use INCR, DECR,
-INCRBY, DECRBY. However, in CRDTs the type of the value does not
-dynamically change after creation. So if a string key is initialized
-using the SET or MSET method, even if the value is set to a numeric
-value, numeric commands like INCR return an error.
+### String data type with counter value in Active-Active databases
 
-Please note that bitfield methods like SETBIT are not supported in CRDBs
-in this version.
-
-To initialize a key as pure string, simply use the SET command. With the
-value, you can use APPEND, GET, GETRANGE, GETSET, MGET, MSET, MSETNX,
-PSETEX, SET, SETEX, SETNX, SETRANGE, STRLEN methods. Once a string value
-is initialized using SET command, bitfield or numeric commands no longer
-work on the string data and return the following generic type mismatch
-error
-
-*(error) WRONGTYPE Operation against a key holding the wrong kind of
-value*
-
-### String Data Type with Counter Value in CRDBs
-
-While traditional Redis does not have an explicit counter type, Redis
-Enterprise Software's CRDBs does. Counters can be used to implement
-distributed counters. This can be useful when counting total views of an
+Counters can be used to implement distributed counters. This can be useful when counting total views of an
 article or image, or when counting social interactions like "retweets"
-or "likes" of an article in a CRDB distributed to multiple geographies.
+or "likes" of an article in an Active-Active database distributed to multiple geographies.
 
 On conflicting writes, counters accumulate the total counter operations
-across all member CRDBs in each sync. Here is an example of how counter
-values can be initialized and maintained across two member CRDBs. With
+across all member Active-Active databases in each sync. Here is an example of how counter
+values can be initialized and maintained across two member Active-Active databases. With
 each sync, the counter value accumulates the private increment and
 decrements of each site and maintain an accurate counter across
 concurrent writes.
@@ -80,13 +51,5 @@ concurrent writes.
 |  t8 | — Sync — | — Sync — |
 |  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
-It is important to note that counter values are created through the
-INCR, INCRBY, DECR and DECRBY commands and only these commands can be
-used to change counter values. Using other string commands return the
-following generic type mismatch error
-
-*(error) WRONGTYPE Operation against a key holding the wrong kind of
-value*
-
-Note: CRDB supports 59-bit counters. This limitation is to protect from
+Note: Active-Active databases support 59-bit counters. This limitation is to protect from
 overflowing a counter in a concurrent operation.

@@ -1,6 +1,6 @@
 ---
 Title: Creating API Keys
-description: How to use the Redis Labs web UI to create and manage API Keys for your Account's team owners
+description: How to use the Redis Cloud Admin Console to create and manage API Keys for your Account's team owners
 weight: 20
 alwaysopen: false
 categories: ["RC"]
@@ -12,7 +12,7 @@ API access requires each API request to include 2 parameters:
     You must [enable your Account to use API]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}).
 1. **Secret key** - Created by account owners for their use or for other owners of the same account.
 
-## Generating a Secret Key
+## Generating a secret key
 
 For an account owner to create a key for themselves:
 
@@ -35,11 +35,11 @@ For an account owner to create a key for themselves:
     A popup window is shown that shows that the secret key was successfully created.
 1. Copy the secret key value and store it in a safe location.
 
-{{% note %}}
+{{< note >}}
 The dropdown list of users only contains users of the current account in the owner role who completed email address verification.
-{{% /note %}}
+{{< /note >}}
 
-## Using the Secret Key
+## Using the secret key
 
 The secret value of the key is shown only when you generate the key.
 The value of the secret key cannot be retrieved later on.

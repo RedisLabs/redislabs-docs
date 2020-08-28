@@ -9,12 +9,12 @@ nextStep:
     href: /docs/install/activating/
 aliases: /ri/install/install-k8s/
 ---
-In this walkthrough, we will install RedisInsight on [Kubernetes](https://kubernetes.io/). 
-This is an easy way to use RedisInsight with a [Redis Enteprise K8s deployment](https://github.com/RedisLabs/redis-enterprise-k8s-docs).
+In this walkthrough, we will install RedisInsight on [Kubernetes](https://kubernetes.io/).
+This is an easy way to use RedisInsight with a [Redis Enterprise K8s deployment](https://github.com/RedisLabs/redis-enterprise-k8s-docs).
 
 ## Create the RedisInsight deployment
 
-Below is an annotated yaml that will create a RedisInsight deployment in a K8s cluster.
+Below is an annotated YAML file that will create a RedisInsight deployment in a K8s cluster.
 
 1. Create a new file redisinsight.yaml with the content below
 
@@ -52,14 +52,14 @@ spec:
 
 1. Create the RedisInsight deployment
 
-```src
+```sh
 kubectl apply -f redisinsight.yaml
 ```
 
 1. Once the deployment has been successfully applied and the deployment complete, access RedisInsight. This can be accomplished by exposing the deployment as a K8s Service or by using port forwarding, as in the example below:
 
-```src
+```sh
 kubectl port-forward deployment/redisinsight 8001
 ```
 
-Open your browser and point to http://localhost:8001
+Open your browser and point to <http://localhost:8001>

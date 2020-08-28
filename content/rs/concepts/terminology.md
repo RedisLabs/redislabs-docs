@@ -1,11 +1,11 @@
 ---
-Title: Terminology in Redis Enterprise Software (RS)
+title: Terminology in Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Here are explanations of some of the terms used in RS.
+Here are explanations of some of the terms used in Redis Enterprise Software (RS).
 
 ## Node
 
@@ -25,7 +25,7 @@ which helps to achieve high availability.
 A node is made up of several components, as detailed below, and works
 together with the other cluster nodes.
 
-## Redis Instance - Shard
+## Redis instance (shard)
 
 As indicated above, each node serves as a container for hosting multiple
 database instances, referred to as "shards".
@@ -50,9 +50,9 @@ RS supports various database configurations:
 
 ## Proxy
 
-Each node includes one or more zero-latency multi-threaded proxies
-(written in low-level C) that mask the underlying system complexity. The
-proxies oversee forwarding Redis operations to the database shards on
+Each node includes one zero-latency, multi-threaded proxy
+(written in low-level C) that masks the underlying system complexity. The
+proxy oversees forwarding Redis operations to the database shards on
 behalf of a Redis client.
 
 The proxy simplifies the cluster operation, from the application or

@@ -15,7 +15,7 @@
 {{- $level := .level }}
  {{- with .sect}}
   {{- if .IsSection}}
-    <option value="{{ .Permalink}}" {{if eq .URL $currentNode.URL}} selected{{end}}>
+    <option value="{{ .Permalink}}" {{if eq .RelPermalink $currentNode.RelPermalink}} selected{{end}}>
   {{if gt $level 1 }}
     {{- range after 1 (seq $level)}}-{{ end }} 
   {{end}} {{.Title}}</option>
@@ -24,11 +24,10 @@
 
       {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
       {{- if ne $numberOfPages 0 }}
-          {{- .Scratch.Set "pages" .Pages }}
+          {{- $pages := .Pages }}
           {{- if .Sections}}
-          {{- .Scratch.Set "pages" (.Pages | union .Sections) }}
+            {{- $pages = (.Pages | union .Sections) }}
           {{- end}}
-          {{- $pages := (.Scratch.Get "pages") }}
 
         {{- if eq .Site.Params.ordersectionsby "title"}}
           {{- range $pages.ByTitle }}
@@ -50,7 +49,7 @@
   {{end}}
   {{- else}}
     {{- if not .Params.Hidden }}
-      <option value="{{ .Permalink}}" {{if eq .URL $currentNode.URL}} selected{{end}}> 
+      <option value="{{ .Permalink}}" {{if eq .RelPermalink $currentNode.RelPermalink}} selected{{end}}> 
 {{- range after 1 (seq $level)}}-{{ end }} {{.Title}}</option>
     {{- end}}
   {{- end}}

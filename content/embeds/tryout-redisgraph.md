@@ -9,7 +9,7 @@ taking part in the MotoGP league. Once created, we'll start querying our data.
 
 Connect to redis.
 
-```src
+```sh
 $ redis-cli -p 12543
 127.0.0.1:12543>
 ```

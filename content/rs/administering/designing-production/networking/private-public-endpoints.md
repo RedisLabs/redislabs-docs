@@ -1,5 +1,5 @@
 ---
-Title: Private and Public Endpoints on Redis Enterprise Software (RS)
+title: Private and Public Endpoints on Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
@@ -13,7 +13,7 @@ can have both:
 
 - A private IP address that can be used only from within the internal
     network
-- Public IP address(es) that can be used from the public network
+- Public IP addresses that can be used from the public network
     (Internet)
 
 In this case, it is possible to configure Redis Enterprise Software to
@@ -34,19 +34,19 @@ To enable this configuration you need to:
 Once this configuration is in place, both sets of endpoints are
 available for the databases in the cluster.
 
-## Modifying an Existing Cluster
+## Modifying an existing cluster
 
 You can enable it by using the ***rladmin suffix add*** command.
 
 To add an internal FQDN/IP to a cluster:
 
-```src
+```sh
 rladmin suffix add name <internal.clustername.domain.com> internal
 ```
 
 To add an internal FQDN/IP to a cluster, but signal to the cluster there
 is slave for DNS:
 
-```src
+```sh
 rladmin suffix add name <internal.clustername.domain.com> internal slave 10.0.1.1
 ```

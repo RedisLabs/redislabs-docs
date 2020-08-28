@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When you install RS on the first node of a cluster, you create the new cluster.
+When you install Redis Enterprise Software (RS) on the first node of a cluster, you create the new cluster.
 After you install the first node, you can add more nodes to the cluster.
 
 ## Prerequisites
@@ -19,27 +19,27 @@ After you install the first node, you can add more nodes to the cluster.
     the clocks first.
 
 - You must [update the DNS records]({{< relref
-    "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md"
+    "/rs/installing-upgrading/configuring/cluster-dns/_index.md"
     >}}) each time a node is added or replaced.
 
-## Adding a node to an existing Cluster
+## Adding a node to an existing cluster
 
-To add a node in Redis Enterprise Software (RS):
+To add a node in RS:
 
 1. [Install the RS installation package]({{< relref
-    "/rs/installing-upgrading/downloading-installing.md" >}}) on a clean installation
+    "/rs/installing-upgrading/_index.md" >}}) on a clean installation
     of a [supported operating system]({{< relref
-    "/rs/administering/designing-production/supported-platforms.md" >}}).
+    "/rs/installing-upgrading/supported-platforms.md" >}}).
 1. To connect to the RS management UI of the new RS installation, go to:
     https://\<URL or IP address>:8443
 
     For example, if you installed RS on a machine with IP address 10.0.1.34,
     go to `https://10.0.1.34:8443`.
 
-    {{% tip %}}The RS management UI uses SSL encryption with a default certificate.
+    {{< tip >}}The RS management UI uses SSL encryption with a default certificate.
     You can also [replace the TLS certificate]({{< relref
     "/rs/administering/cluster-operations/updating-certificates.md" >}}) with a
-    custom certificate.{{% /tip %}}
+    custom certificate.{{< /tip >}}
 
 1. To start configuring RS, click **Setup**.
 1. Configure the RS network and storage settings:
@@ -76,6 +76,6 @@ To add a node in Redis Enterprise Software (RS):
 The node is added to the cluster. You can see it in the list of nodes in the
 cluster.
 
-{{% tip %}}We recommend that you run the [rlcheck utility]({{< relref
+{{< tip >}}We recommend that you run the [rlcheck utility]({{< relref
 "/rs/references/rlcheck.md" >}}) to verify that the node is functioning
-properly.{{% /tip %}}
+properly.{{< /tip >}}

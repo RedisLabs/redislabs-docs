@@ -1,12 +1,12 @@
 ---
-Title: Creating a Redis Enterprise Software (RS) Database
+title: Creating a Redis Enterprise Software Database
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 db_type: database
 ---
-You can create Redis databases that are sharded and distributed across a single RS cluster.
+You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
 These databases can use Redis Enterprise features like:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
@@ -17,12 +17,12 @@ These databases can use Redis Enterprise features like:
 You can create databases according to the number of shards in your subscription
 and the memory available on the machine.
 
-{{% note %}}
-To create databases that are designed to be hosted in distributed locations,
-see [Creating CRDBs]({{< relref "/rs/administering/database-operations/create-crdb.md" >}}).
-{{% /note %}}
+{{< note >}}
+For databases with Active-Active replication for geo-distributed locations,
+[create an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
+{{< /note >}}
 
-## Creating a New Redis Database
+## Creating a new redis database
 
 To create a new database:
 
@@ -51,22 +51,22 @@ To create a new database:
         - Only letter, number or hyphen (-) characters
         - Starts with a letter; ends with a letter or digit.
 
-        {{% note %}}
+        {{< note >}}
 The database name is not case-sensitive
-        {{% /note %}}
+        {{< /note >}}
 
     - **Memory limit** - The [memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}) includes all database replicas and shards,
         including slave shards in database replication and database shards in database clustering.
         If the total size of the database in the cluster reaches the memory limit,
         then the data eviction policy for the database is enforced.
 
-        {{% note %}}
+        {{< note >}}
 If you create a [Redis Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
 for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
-        {{% /note %}}
+        {{< /note >}}
 
-1. Select from the basic {{< field "db_type" >}} options:
+1. Configure the {{< field "db_type" >}} options that you want for the database:
 
     - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that you use intra-cluster replication to create slave shards for each database for high-availablity of your data.
 
@@ -91,23 +91,35 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File.
 
-    - **Password** - To protect your database from unauthorized connections,
-        enter a Redis password. Then, use the password in you application connections
-        to the database.
+    - **Default database access** - When you configure a password for your database,
+        all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
+        If you also configure an access control list, connections can specify other users for authentication,
+        and requests are allowed according to the Redis ACLs specified for that user.
 
-        {{% note %}}
+        {{< note >}}
 If you are creating a Memcached database, enter a username and password for SASL Authentication.
-        {{% /note %}}
+        {{< /note >}}
 
-1. Select from the advanced {{< field "db_type" >}} options:
+1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
+
+    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
+        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that apply to those connections.
+
+        To define an access control list:
+
+        1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
+        1. Select the [role]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
+        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that you want the role to have in the database.
+        1. Click **Save** to save the ACL.
+        1. Click **Update** to save the changes to the database.
 
     - **Endpoint port number** - You can define the port number that clients use to connect to the database,
         or a port is randomly selected.
 
-        {{% note %}}
+        {{< note >}}
 You cannot change the [port number]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 after the database is created.
-        {{% /note %}}
+        {{< /note >}}
 
 - **Database clustering** - You can either:
     - Enable [database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
@@ -116,8 +128,8 @@ after the database is created.
         [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
 
-        You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#standard-hashing-policy" >}})
-        or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#custom-hashing-policy" >}})
+        You can accept the [standard hashing policy]({{< relref "/rs/concepts/high-availability/clustering#standard-hashing-policy" >}})
+        or define a [custom hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}})
         to define where keys are located in the clustered database.
 
     - Clear the **Database clustering** option to use only one shard so that you
@@ -129,20 +141,19 @@ after the database is created.
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-- [**Replica of**]({{< relref "/rs/administering/active-passive.md" >}}) -
-    You can make this database a repository for keys in other databases.
+- [**Replica Of**]({{< relref "/rs/administering/database-operations/create-active-passive.md" >}}) -
+    You can make this database a repository for keys from other databases.
 
-- [**TLS**]
-    ({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+- [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
 - [**Periodic backup**]({{< relref "/rs/administering/database-operations/database-backup.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
-- [**Alerts**]({{< relref "/rs/administering/database-operations/alerting.md" >}}) -
+- [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -
     You can select alerts to show in the database status and configure their thresholds.
-    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/security/account-management.md" >}}).
+    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
 
 1. Click **Activate**.
 
@@ -151,7 +162,7 @@ after the database is created.
 
     ![database-port](/images/rs/database-port.png)
 
-## Simple Connectivity Test
+## Simple connectivity test
 
 Once the database is created, you can find the endpoint and port for the
 database in the web UI on the configuration page of each database. It is
@@ -163,14 +174,14 @@ There are a few simple ways to check connectivity to your database:
 - Redis_cli
 - Using a simple application
 
-### Testing Database Connectivity with Telnet
+### Testing database connectivity with Telnet
 
 As a quick smoke test, telnet to your endpoint and port for the database.
 Then run the redis PING command.
 
 Using the URL-based connection method, the result looks like:
 
-```src
+```sh
 $ telnet redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com 19836
 Trying 54.89.217.184…
 Connected to redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com.
@@ -180,21 +191,21 @@ PING
 +PONG
 ```
 
-### Testing Database Connectivity with redis-cli {#testing-database-connectivity-with-rediscli}
+### Testing database connectivity with redis cli {#testing-database-connectivity-with-rediscli}
 
 The redis-cli utility is installed on each node in RS cluster with the rest of the utilities.
 
 Using the URL-based connection method, you can connect the database
 endpoint URL and port number. The result looks like:
 
-```src
+```sh
 $ redis-cli -h redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com
 -p 19836 -a astrongpassword
 redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
 ```
 
-### Testing Database Connectivity with Simple Application
+### 
 
 You can also use a simple application to test connectivity to your database.
 Here is a simple python app  the connects to the database by IP address.
@@ -204,13 +215,13 @@ In the IP-based connection method, you do only need the database name, not the p
 Here we simply use the discovery service that listens on port 8001 on all nodes of the cluster
 to discover the endpoint for the database named "db1".
 
-```src
+```sh
 from redis.sentinel import Sentinel
 
 # with IP based connections, a list of known node IP addresses is constructed
 # to allow connection even if any one of the nodes in the list is unavailable.
 sentinel_list = [
-(10.0.0.44', 8001),
+('10.0.0.44', 8001),
 ('10.0.0.45', 8001),
 ('10.0.0.45', 8001)
 ]
@@ -230,7 +241,7 @@ print r.get('foo')
 In the URL-based connection method, you need to specify the endpoint
 and the port number for your database.
 
-```src
+```sh
 import redis
 
 # the URL provided to redis. Redis method comes from the database configuration

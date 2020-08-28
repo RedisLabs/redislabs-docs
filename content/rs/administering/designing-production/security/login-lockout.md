@@ -11,12 +11,12 @@ RS includes user login restrictions.
 You can customize the restrictions to align with the security policy of your organization.
 Every failed login is shown in the logs.
 
-{{% note %}}
+{{< note >}}
 Customers, such as large organizations, that use LDAP to manage external authentication
 must set these restrictions in the LDAP service.
-{{% /note %}}
+{{< /note >}}
 
-## User Login Lockout
+## User login lockout
 
 The parameters for the user login lockout are:
 
@@ -28,19 +28,19 @@ By default, after 5 failed login attempts within 15 minutes, the user account is
 
 You can view the user login restrictions for your cluster with:
 
-```src
+```sh
 rladmin info cluster | grep login_lockout
 ```
 
-## Customizing the User Lockout Parameters
+## Customizing the user lockout parameters
 
 You can customize the user lockout parameters with from rladmin.
 
-### Changing the Login Lockout Threshold
+### Changing the login lockout threshold
 
 You can set the login lockout threshold with the command:
 
-```src
+```sh
 rladmin tune cluster login_lockout_threshold <login_lockout_threshold>
 ```
 
@@ -49,29 +49,29 @@ the account is not locked out after failed login attempts, and the cluster setti
 
 For example, to set the lockout threshold to 10 failed login attempts.
 
-```src
+```sh
 rladmin tune cluster login_lockout_threshold 10
 ```
 
-### Changing the Login Lockout Counter Reset
+### Changing the login lockout counter reset
 
 You can set the login lockout reset in seconds with the command:
 
-```src
+```sh
 rladmin tune cluster login_lockout_counter_reset_after <login_lockout_counter_reset_after>
 ```
 
 For example, to set the lockout reset to 1 hour:
 
-```src
+```sh
 rladmin tune cluster login_lockout_counter_reset_after 3600
 ```
 
-### Changing the Login Lockout Duration
+### Changing the login lockout duration
 
 You can set the login lockout duration in seconds with the command:
 
-```src
+```sh
 rladmin tune cluster login_lockout_duration <login_lockout_duration>
 ```
 
@@ -80,11 +80,11 @@ the account must be manually unlocked by an administrator, and the cluster setti
 
 For example, to set the lockout duration to 1 hour:
 
-```src
+```sh
 rladmin tune cluster login_lockout_duration 3600
 ```
 
-## Unlocking Locked User Accounts
+## Unlocking locked user accounts
 
 Before the lockout duration ends,
 an administrator can change the user password in order to manually unlock the user account.

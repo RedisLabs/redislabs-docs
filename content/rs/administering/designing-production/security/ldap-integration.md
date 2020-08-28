@@ -6,134 +6,43 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/designing-production/security/ldap-integration/
 ---
-Redis Enterprise Software (RS) provides you with the ability to
-integrate your existing LDAP server for authentication for account
-management in RS. LDAP authentication for RS administrator accounts
-requires minimal manual steps to configure the systems to interact.
+Redis Enterprise Software (RS) can integrate with your identity provider using LDAP authentication.
+After you configure the LDAP connection, you can give LDAP users access to the RS web UI according to the permissions that you assign.
 
-**Note**: LDAP groups cannot be mapped to Redis Enterprise Software
-accounts.
+`saslauthd` is the process that handles LDAP authentication requests to RS.
 
-For the steps, you need to configure the saslauthd service for the
-cluster, set up accounts on the LDAP Server, then map those IDs in RS.
+{{< note >}}
+LDAP authentication is not yet supported for Redis ACL Users.
+{{< /note >}}
 
-The steps are:
+To configure LDAP authentication for RS web UI users on a running cluster:
 
-1. Configuring the saslauthd service
-1. Set up accounts on the LDAP server if not already there
-1. Mapping user IDs using the RS web UI to the LDAP server
-1. Using the REST API or rladmin to propagate configurations to cluster
+1. Configure `saslauthd` to use LDAP Authentication:
+    1. Edit the `/etc/default/saslauthd`, and change the `MECHANISMS` variable to `MECHANISMS="ldap"`.
+    1. Edit the `saslauthd.conf` configuration file in the installation directory (default: `/etc/opt/redislabs/saslauthd.conf`) and enter the values for these fields:
 
-**Warning:** Use a secure/encrypted connections between RS nodes and
-between RS nodes and LDAP servers. The LDAP server uses SASL PLAIN,
-sending and receiving data in the clear. You should use only a trusted
-network such as a VPN, a connection encrypted with TLS v1.2, or some
-other trusted network.
+        - `ldap_servers`: the LDAP servers that you authenticate against and the port to use. Port 389 is standard for unencrypted LDAP connections, while port 636 is standard for encrypted LDAP connections (strongly recommended).
+        - `ldap_tls_cacert_file` (optional): The path to your CA Certificates. This is required for encrypted LDAP connections only.
+        - `ldap_filter`: The filter used to search for users
+        - `ldap_bind_dn`: The distinguished name for the user that will be used to authenticate to the LDAP server
+        - `ldap_password`: The password used for the user specified in `ldap_bind_dn`
 
-If you are using LDAP over SSL, then make the following changes to saslauthd.conf:
+        For example:
 
-1. Replace ldap:// in the URL with ldaps://.
-2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt
+        ```sh
+        ldap_servers: ldaps://ldap1.mydomain.com:636 ldaps://ldap2.mydomain.com:636
+        ldap_tls_cacert_file: /path/to/your/CARootCert.crt
+        ldap_search_base: ou=coolUsers,dc=company,dc=com
+        ldap_filter: (sAMAccountName=%u)
+        ldap_bind_dn: cn=admin,dc=company,dc=com
+        ldap_password: secretSquirrel
+        ```
 
-## Configuring the saslauthd Service
+1. Import the `saslauthd` configuration into RS with the command:
 
-saslauthd is a process that handles authentication requests to support
-Redis Enterprise Software while the LDAP protocol is utilized to connect
-the LDAP server.
+    ```sh
+    rladmin cluster config saslauthd_ldap_conf /etc/opt/redislabs/saslauthd.conf
+    ```
 
-### Step 1: Configure LDAP options in config file
-
-```src
-vi /tmp/saslauthd.conf
-```
-
-You must specify the URIs for the LDAP servers you are
-authenticating with. You can specify multiple LDAP servers by listing
-them separated by a space.
-
-If you are using LDAP over SSL/TLS, then:
-
-1. Replace ldap:// in the URL with ldaps://.
-2. Add ldap_tls_cacert_file: /path/to/your/CARootCert.crt
- SSL/TLS in other articles
-
-```src
-# Add the following, but with your LDAP Server FQDNs or IPs:
-ldap_servers: ldap://ldap1.mydomain.com:389 ldap://ldap2.mydomain.com:389
-
-# You must specify the LDAP distinguished name for the search to be relative to.
-# It should include the base domain component (dc)
-ldap_search_base: ou=coolUsers,dc=company,dc=com
-
-# Specify a LDAP search filter. The value for the configuration option (%u)
-# should correspond to parameters specific for your installation.
-ldap_filter: (sAMAccountName=%u)
-
-# If your LDAP servers require a password to connect, add that to the conf file.
-ldap_password: <your password here>
-
-# If your LDAP servers don't allow anonymous binds, add this to the conf file.
-ldap_bind_dn: cn=admin,dc=company,dc=com
-```
-
-Example saslauthd.conf file
-
-```src
-ldap_servers: ldap://ldap1.mydomain.com ldap://ldap2.mydomain.com
-ldap_search_base: ou=coolUsers,dc=company,dc=com
-ldap_filter: (sAMAccountName=%u)
-ldap_password: secretSquirrel
-ldap_bind_dn: cn=admin,dc=company,dc=com
-```
-
-### Step 2: Distribute saslauthd.conf to all nodes in the cluster
-
-```src
-$ sudo /opt/redislabs/bin/rladmin cluster config saslauthd_ldap_conf /tmp/saslauthd.conf
-Cluster configured successfully
-```
-
-Note: If this is a new server installation, for this command to work, a
-cluster must be set up already.
-
-### Step 3: Confirm saslauthd is configured
-
-Now that we have saslauthd configured, let's test with a known LDAP user
-before we finish the configurations in RS.
-
-```src
-$ testsaslauthd -u user -p password
-0: OK "Success."
-```
-
-With that return of "Success", we know that saslauthd is configured and
-connecting to the LDAP server.
-
-Note: If you are using Multi-Master Replication and want to use LDAP for
-administrators, the LDAP set up process must be performed on each
-cluster.
-
-### Step 4: Create an RS User to Authenticate with LDAP
-
-You can [create an external RS user]({{< relref "/rs/administering/designing-production/security/account-management.md" >}})
-with LDAP authentication in the web UI.
-
-To create an external user with LDAP authentication in the REST API:
-
-```src
-$ curl -k -L -v -u "<your_admin_account>:<your_password>" -H "Content-Type: application/json" -X POST https://<your_redis_cluster_fqdn>:9443/v1/users -d '{"auth_method":"external", "name":"<username>", "role":"<user_role>"}'
-```
-
-For the user-role, enter one of these roles:
-
-- admin
-- cluster_member
-- db_viewer
-- db_member
-- cluster_viewer
-
-Note: At this time, there is no way to convert an existing account to
-use LDAP. You must delete the existing and create a new account to use.
-
-At this point, you should be able to log into the Redis Enterprise
-Software web UI with the user you just created.
+1. Restart the `saslauthd` service for the changes to take effect: `sudo supervisorctl restart saslauthd`
+1. [Create LDAP users]({{< relref "/rs/administering/access-control#adding-a-user" >}}) as `external` users in the RS web UI.

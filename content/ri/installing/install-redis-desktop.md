@@ -12,17 +12,10 @@ RedisInsight is a full-featured Desktop GUI client for:
 - Ubuntu 18.04
 - MacOS 10.13 High Sierra
 
-{{% note %}}
+{{< note >}}
 For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
 We are happy to receive any feedback at redisinsight@redislabs.com.
-{{% /note %}}
-
-RedisInsight offers the following features -
-
-* Easy to use browser based interface to search keys, view and edit data
-* Only GUI tool to support Redis Cluster
-* Supports SSL/TLS based connections
-* Run Memory Analysis
+{{< /note >}}
 
 To install RedisInsight:
 
@@ -31,11 +24,21 @@ To install RedisInsight:
 
     - For Ubuntu - To make the downloaded file executable, run:
 
-    ```src
-    chmod +x redisinsight-<platform>-<version>
-    ```
+        ```sh
+        chmod +x redisinsight-<platform>-<version>
+        ```
 
-    - For Windows and Mac - Run the installer.
+    - For Windows and MacOS - Run the installer.
+
+        Both the Windows and MacOS packages are signed and notarized.
+
+        {{< note >}}
+Since RedisInsight 1.6.3, some  on MacOS 10.14.x users have reported issues installing the application.
+If you encounter this, please let us know at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
+A workaround for this issue is:
+1. Move the package to the Desktop and left-click on the file while pressing the Control key.
+1. A warning message is shown that MacOS cannot check the application properly. To proceeed, click "Open".
+        {{< /note >}}
 
 1. Run RedisInsight:
 

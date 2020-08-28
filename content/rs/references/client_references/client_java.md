@@ -9,7 +9,7 @@ In order to use Redis with Java you need a Java Redis client. In following secti
 
 ## Lettuce
 
-Lettuce is a scalable thread-safe Redis client providing both synchronous and asynchronous connections.
+Lettuce is a thread-safe Redis client providing both synchronous and asynchronous connections.
 
 ### Installing Lettuce
 
@@ -23,7 +23,7 @@ Lettuce's installation instructions are given in the ["Binaries/Download"](https
 
 You can also download the latest Lettuce release from the GitHub repository: [https://github.com/mp911de/lettuce/wiki/Download](https://github.com/mp911de/lettuce/wiki/Download)
 
-### Opening a Connection to Redis using Lettuce
+### Opening a connection to Redis using Lettuce
 
 The following code creates a connection to Redis using Lettuce:
 
@@ -105,7 +105,7 @@ For an added security measure, you can secure the connection using SSL connectio
         }
     }
 
-### Reading and Writing Data with Lettuce
+### Reading and writing data with Lettuce
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value bar to the Redis key foo, reads it back, and prints it:
 
@@ -124,7 +124,7 @@ The output of the above code should be:
 
 ## Jedis
 
-Jedis is a blazingly small and sane Redis Java client.
+Jedis is a simple, complete, thread-safe Java client for Redis.
 
 ### Installing Jedis
 
@@ -143,7 +143,7 @@ You can also download the latest [Jedis release](https://github.com/xetorthio/je
     $ cd jedis
     ~/jedis$ make package
 
-### Opening a Connection to Redis Using Jedis
+### Opening a connection to Redis using Jedis
 
 The following code creates a connection to Redis using Jedis:
 
@@ -164,7 +164,7 @@ To adapt this example to your code, make sure that you replace the following val
 - In line 6, the second argument to `Jedis` should be your database's port
 - In line 7, the argument to `auth` should be your database's password
 
-### Connection Pooling with Jedis
+### Connection pooling with Jedis
 
 Jedis isn't thread-safe, and the same Jedis instance shouldn't be used from different threads. To overcome the overhead of multiple Jedis instances and connection maintenance, use `JedisPool`. To use JedisPool you'll have to have `Apache Commons Pool 2.3` available - download it  [here]( http://commons.apache.org/proper/commons-pool/download_pool.cgi) or add the following Maven dependency:
 
@@ -225,7 +225,7 @@ Once your application exits, remember to dispose of the `JedisPool` by using the
 
 Jedis does not support SSL connections natively. For an added security measure, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis) or this [Jedis fork](https://github.com/RedisLabs/jedis) that has been added with SSL support.
 
-## Reading and Writing Data with Jedis
+## Reading and writing data with Jedis
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

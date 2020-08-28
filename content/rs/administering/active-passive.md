@@ -14,7 +14,9 @@ In Replica Of, an administrator designates a database as a replica (destination)
 After the initial data load from source to destination is completed,
 all write commands are synchronized from the sources to the destination.
 Replica Of lets you distribute the read load of your application across multiple databases or
-synchronize the database, either within RS or external to RS, to another database.
+synchronize the database, either within Redis Enterprise or external to Redis Enterprise, to another database.
+
+You can create Active-Active databases on Redis Enterprise Software or Redis Cloud.
 
 [Active-Active Geo-Distribution (CRDB)]({{< relref "/rs/administering/active-active.md" >}})
 provides these benefits and also provides write access to all of the database replicas.
@@ -22,7 +24,7 @@ provides these benefits and also provides write access to all of the database re
 **Warning:** Configuring a database as a replica of the database that it replicates
 creates a cyclical replication and is not supported.
 
-The *Replica of* is defined in the context of the destination database
+The Replica Of is defined in the context of the destination database
 by specifying the source databases.
 
 A destination database can have a maximum of thirty-two (32) source
@@ -36,76 +38,17 @@ result, commands that were executed in a certain order when compared
 across source databases might be executed in a different order on the
 destination database.
 
-**Note:** The *Replica of* feature should not be confused with the
+**Note:** The Replica Of feature should not be confused with the
 in-memory [Database
 replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
 feature, which is used for creating a master / slave configuration that
 enables ensuring database high-availability.
 
-For a quick overview of ReplicaOf capabilities watch this quick video.
+For a quick overview of Replica Of capabilities watch this quick video.
 
 {{< youtube AG-XGn7BQkQ >}}
 
-## Replica of Sources
-
-RS has a security mechanism in which an internal admin password is
-assigned to each database. This password helps protect the database from
-being used as a replica source and is required in order to define
-another database as a replica target of this database.
-
-The source databases can be located in the same Redis Enterprise
-Software (RS) as the destination database, in a different RS, or they
-can be Redis databases that are not part of an RS.
-
-- When a source database is from within RS, the source URL has the
-    following format:
-    \[database name\]: redis://admin:\[internal database
-    password\]@\[database endpoint with port\] where the internal
-    database password is the password automatically assigned and
-    populated by RS. In the RS management UI, when you enter the textbox
-    to define a replica source from within the target database page, the
-    list of existing databases is shown with the appropriate URL,
-    including the internal admin password, already set up.
-- When a source database is from a different RS, the source URL has
-    the same exact format as indicated above (except for the
-    **\[database name\]:** prefix), but in this case, the URL does not
-    show up as an option in the UI. In order to configure the target
-    database as a replica of a database from a different RS, you need to
-    extract the source database URL, including the internal admin
-    password, from the source database. This can be done in the UI from
-    the source database page by clicking the **Get Replica of source
-    URL** link next to the Endpoint field. In addition, you can
-    regenerate the internal admin password from the same UI. If you
-    regenerate the internal admin password, any existing replica
-    destinations already configured stops working until you update
-    them.
-    - **Compression:** when a source database is located on a different
-    Redis Enterprise Software cluster, there is also an option to enable
-    compression of the data being replicated. For additional details,
-    refer to the ["Replica of" data
-    compression]({{< relref "/rs/administering/active-passive.md#data-compression-for-replica-of">}}) section.
-- When a source database is external to a Redis Enterprise Software
-    cluster, the source URL has the following format:
-    redis://:\[redis password\]@\[hostname\]:\[port\] where the password
-    is the Redis password assigned by the user, represented with URL
-    encoding escape characters. If no password was defined for the
-    database, the following format should be used:
-    redis://hostname:port.
-
-When multiple sources are defined there is no meaning to the order in
-which they are defined or presented.
-
-If you make changes to the definition of the sources (such as editing,
-adding or deleting a source), then the synchronization process is
-restarted from scratch for all the source databases.
-
-**Note:** If you used the mDNS protocol when naming the cluster name
-(FQDN), make sure that the client mDNS perquisites are met in order for the
-*Replica of* feature to work. For additional details, refer to the
-[Client prerequisites for
-mDNS]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}).
-
-## Replication Process
+## Replication process
 
 When a database is defined as a replica of another database, all its
 existing data is deleted and replaced by data that is loaded from the
@@ -129,7 +72,7 @@ or by the system - the user can restart the process. **Restarting the
 process causes the synchronization process to flush the DB and restart
 the process from the beginning**.
 
-### Replica of status
+### Replica Of status
 
 The replication process can have the following statuses:
 
@@ -152,8 +95,8 @@ the source was executed on the destination.
 The system also displays the destination database status as an aggregate
 of the statuses of all the sources.
 
-**Note:** If you encounter issues with the *Replica of* process, refer
-to the troubleshooting section [Replica of repeatedly
+**Note:** If you encounter issues with the Replica Of process, refer
+to the troubleshooting section [Replica Of repeatedly
 fails]({{< relref "/rs/administering/troubleshooting/replicaof-repeatedly-fails.md" >}}).
 
 ### Synchronization errors
@@ -186,35 +129,13 @@ stop:
 
 ## Encryption
 
-ReplicaOf supports the ability to encrypt uni-directional replication
+Replica Of supports the ability to encrypt uni-directional replication
 communications between source and destination clusters utilizing TLS 1.2
-based encryption. To enable this encryption, proceed through the
-following steps:
+based encryption.
 
-{{%excerpt-include filename="rs/administering/designing-production/security/tls-configuration.md" %}}
+## Data compression for Replica Of
 
-### Configuring TLS for Replica Of on the destination database
-
-To enable TLS for Replica Of in the destination database:
-
-1. Edit the 'Replica of' section of the destination Database to point
-    the source Database and press the 'Enable TLS Authentication' icon:
-    ![Replica-of
-    Destination](/images/rs/Screen-Shot-2018-03-29-at-10.48.18-PM.png?width=1608&height=178)
-    Replica-of Destination
-2. From the *source cluster*, copy the "Proxy
-    Certificate" (located under **settings**-\> **general**) and paste
-    it as the **Source Cluster Certificate** for the destination
-    Database:
-    ![Replica-of Destination -
-    Certificate](/images/rs/Screen-Shot-2018-03-29-at-10.49.55-PM.png?width=1596&height=626)
-    Replica-of Destination - Certificate
-3. Press the **Continue** button, save the certificate and **Update**
-    the database changes.
-
-## Data Compression for Replica Of
-
-When the *Replica of* is defined across different Redis Enterprise
+When the Replica Of is defined across different Redis Enterprise
 Software clusters, it may be beneficial to compress the data that flows
 through the network (depending on where the clusters physically reside
 and the available network).
@@ -242,7 +163,7 @@ It is advised that you test compression out in a lower environment
 before enabling it in production.
 
 In the Redis Enterprise Software management UI, when designating a
-*Replica of* source from a different Redis Enterprise Software cluster,
+Replica Of source from a different Redis Enterprise Software cluster,
 there is also an option to enable compression. When enabled, gzip
 compression with level -6 is utilized.
 

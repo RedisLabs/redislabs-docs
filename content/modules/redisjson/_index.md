@@ -10,7 +10,7 @@ aliases:
 Applications developed with the open source version of RedisJSON are 100%
 compatible with RedisJSON in Redis Enterprise Software (RS).
 
-## RedisJSON Path Syntax
+## RedisJSON path syntax
 
 Since there is no standard for JSON path syntax, RedisJSON implements its
 own. RedisJSON's syntax is a subset of common best practices and resembles
@@ -66,28 +66,28 @@ version.
 Log into the RedisJSON enabled database with redis-cli and the --raw switch
 so we can see the raw output:
 
-```src
+```sh
 $ redis-cli --raw
 127.0.0.1:6379>
 ```
 
 I have a document called example1 I want to store and it looks like so:
 
-```src
+```sh
 {"foo": "bar"}
 ```
 
 Add a new entity to the example1 document called test2 and set it to an
 array called test3
 
-```src
+```sh
 127.0.0.1:6379> json.set example1 .test2 '{"test3":[1,2,3]}'
 OK
 ```
 
 Get the object to see what it looks like:
 
-```src
+```sh
 127.0.0.1:6379> JSON.GET example1
 {"foo":"bar","test2":{"test3":[1,2,3]}}
 ```
@@ -95,7 +95,7 @@ Get the object to see what it looks like:
 Get the second array value from the test2 sub-document in the test3
 object's array:
 
-```src
+```sh
 127.0.0.1:6379> JSON.GET example1 .test2.test3[1]
 2
 ```
@@ -104,7 +104,7 @@ As you can see, you can easily traverse the document structure by path
 to get only the data you want, when you need it. You could also use this
 to increment or another operation on this object.
 
-## RedisJSON Commands
+## RedisJSON commands
 
 For the authoritative list of RedisJSON commands, please go
 [here](http://redisjson.io/).

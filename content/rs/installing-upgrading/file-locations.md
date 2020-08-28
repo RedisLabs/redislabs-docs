@@ -1,14 +1,14 @@
 ---
 Title: File Locations
 description:
-weight: 40
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/file-locations/
 ---
-To make sure that Redis Enterprise Software (RS) functions properly, make sure that you handle the files in the application directories with care.
+To make sure that Redis Enterprise Software functions properly, make sure that you handle the files in the application directories with care.
 
-## Application Directories
+## Application directories
 
 The directories that Redis Enterprise Software installs into are:
 
@@ -20,7 +20,7 @@ The directories that Redis Enterprise Software installs into are:
 | /opt/redislabs/lib | System library files |
 | /opt/redislabs/sbin | System binaries for tweaking provisioning |
 
-## Configuration and Data Directories
+## Configuration and data directories
 
 The default directories that Redis Enterprise Software uses for data and metadata are:
 
@@ -28,6 +28,7 @@ The default directories that Redis Enterprise Software uses for data and metadat
 |------------|-----------------|
 | /var/opt/redislabs | Default storage location for the cluster data, system logs, backups and ephemeral, persisted data |
 | /var/opt/redislabs/log | System logs for Redis Enterprise Software |
+| /var/opt/redislabs/run | Socket files for Redis Enterprise Software |
 | /etc/opt/redislabs | Default location for cluster manager configuration and certificates |
 | /tmp | Temporary files |
 

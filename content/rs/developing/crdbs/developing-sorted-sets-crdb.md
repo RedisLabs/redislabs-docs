@@ -1,13 +1,13 @@
 ---
-Title: Developing with Sorted Sets in a CRDB
+Title: Developing with Sorted Sets in an Active-Active database
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-{{% note %}}
-[Redis Geospatial (Geo)](https://redis.io/commands/GEOADD) is based on Sorted Sets, so the same CRDB development instructions apply to Geo.
-{{% /note %}}
+{{< note >}}
+[Redis Geospatial (Geo)](https://redis.io/commands/GEOADD) is based on Sorted Sets, so the same Active-Active database development instructions apply to Geo.
+{{< /note >}}
 
 Similar to Redis Sets, Redis Sorted Sets are non-repeating collections
 of Strings. The difference between the two is that every member of a
@@ -16,15 +16,15 @@ lowest to highest. While members are unique, they may have the same
 score.
 
 With Sorted Sets, you can quickly add, remove or update elements as
-well as get ranges by score or by rank (position). Sorted Sets in CRDBs
+well as get ranges by score or by rank (position). Sorted Sets in Active-Active databases
 behave the same and maintain additional metadata to handle concurrent
 conflicting writes. Conflict resolution is done in two
 phases:
 
 1. First, the database resolves conflict at the set level using "OR
     Set" (Observed-Remove Set). With OR-Set behavior, writes across
-    multiple CRDB instances are typically unioned except in cases of
-    conflicts. Conflicting writes can happen when a CRDB instance
+    multiple Active-Active database instances are typically unioned except in cases of
+    conflicts. Conflicting writes can happen when an Active-Active database instance
     deletes an element while the other adds or updates the same element.
     In this case, an observed Remove rule is followed, and only
     instances it has already seen are removed. In all other cases, the
@@ -34,7 +34,7 @@ phases:
     conflict resolution as regular counters.
 
 Please see the following examples to get familiar with Sorted Sets'
-behavior in CRDB:
+behavior in Active-Active database:
 
 Example of Simple Sorted Set with No
 Conflict:
@@ -53,7 +53,7 @@ replicas (in this example, x with score 1.1 was added by Instance 1 to
 Sorted Set Z, and y with score 1.2 was added by Instance 2 to Sorted Set
 Z) in a non-concurrent manner (i.e. each operation happened separately
 and after both instances were in sync), the end result is a Sorted
-Set including both elements in each CRDB instance.
+Set including both elements in each Active-Active database instance.
 Example of Sorted Set and Concurrent
 Add:
 
@@ -67,10 +67,10 @@ Add:
 
 **Explanation**:
 When concurrently adding an element x to a Sorted Set Z by two different
-CRDB instances (Instance 1 added score 1.1 and Instance 2 added score
-2.1), the CRDB implements Last Write Win (LWW) to determine the score of
+Active-Active database instances (Instance 1 added score 1.1 and Instance 2 added score
+2.1), the Active-Active database implements Last Write Win (LWW) to determine the score of
 x. In this scenario, Instance 2 performed the ZADD operation at time
-t2\>t1 and therefore the CRDB sets the score 2.1 to
+t2\>t1 and therefore the Active-Active database sets the score 2.1 to
 x.
 
 Example of Sorted Set with Concurrent Add Happening at the Exact Same
@@ -84,12 +84,12 @@ Time:
 |  t4 | ZSCORE Z x => 1.1 | ZSCORE Z x => 1.1 |
 
 **Explanation**:
-The example above shows a relatively rare situation, in which two CRDB
+The example above shows a relatively rare situation, in which two Active-Active database
 instances concurrently added the same element x to a Sorted Set at the
 same exact time but with a different score, i.e. Instance 1 added x with
 a 1.1 score and Instance 2 added x with a 2.1 score. After syncing, the
-CRDB realized that both operations happened at the same time and
-resolved the conflict by arbitrarily (but consistently across all CRDB
+Active-Active database realized that both operations happened at the same time and
+resolved the conflict by arbitrarily (but consistently across all Active-Active database
 instances) giving precedence to Instance 1.
 Example of Sorted Set with Concurrent Counter
 Increment:
@@ -105,7 +105,7 @@ Increment:
 **Explanation**:
 The result is the sum of all
 ZINCRBY
-operations performed by all CRDB instances.
+operations performed by all Active-Active database instances.
 
 Example of Removing an Element from a Sorted
 Set:
@@ -125,6 +125,6 @@ At t4 - t5, concurrent ZREM and ZINCRBY operations ran on Instance 1
 and Instance 2 respectively. Before the instances were in sync, the ZREM
 operation could only delete what had been seen by Instance 1, so
 Instance 2 was not affected. Therefore, the ZSCORE operation shows the
-local effect on x. At t7, after both instances were in-sync, the CRDB
+local effect on x. At t7, after both instances were in-sync, the Active-Active database
 resolved the conflict by subtracting 4.1 (the value of element x in
 Instance 1) from 6.1 (the value of element x in Instance 2).

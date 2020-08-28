@@ -5,23 +5,34 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-For each node in the cluster, you can configure both a persistent
-storage and an ephemeral storage path.
+For each node in the cluster, you can configure both persistent
+storage and ephemeral storage paths.
 
-- Persistent storage is mandatory; it is used by the cluster to store
+- Persistent storage is mandatory. It is used by the cluster to store
     information that needs to persist even if a shard or a node fails,
-    e.g server logs, configurations, files. For example, if you choose
-    any type of persistence for a database, then the persistence
-    information is stored in this location.
-- Ephemeral storage is optional. If defined, it is used by the cluster
-    to store information that does not need to persist. This aids in
-    optimization and helps to reduce the load on the persistent storage.
+    including server logs, configurations, files.
+    For example, if you configure [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
+    for a database,
+    then the persistence information is stored in this location.
+    
+    The persistent volume must be a SAN (Storage Area Network)
+    using an EXT4 or XFS file system and be connected as an external storage volume. 
+    
+    When using AOF persistence, we recommend that you use flash-based storage
+    for the persistent volume.
+    
+- Ephemeral storage is optional. If configured, the cluster stores temporary information
+    that does not need to persist in the ephemeral storage.
+    This improves performance and helps to reduce the load on the persistent storage.
+    
+    Ephemeral storage must be a locally attached volume on each node.
 
-Critical: **DO NOT** confuse persistent or ephemeral storage on this
-page with Redis persistence or AWS ephemeral drives used in other areas
-of Redis Enterprise Software.
+{{< note >}}
+Persistent and ephemeral storage discussed here is not related
+to Redis persistence or AWS ephemeral drives.
+{{< /note >}}
 
-For disk size requirements refer to the following sections:
+For disk size requirements, see:
 
 - [Hardware
     requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})

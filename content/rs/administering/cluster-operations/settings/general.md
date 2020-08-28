@@ -8,7 +8,7 @@ categories: ["RS"]
 You can view and set various cluster settings in the **Settings \>
 General** page.
 
-## Entering a Cluster Key
+## Entering a cluster key
 
 After purchasing a cluster key and if your account has the "Admin" role,
 you can enter the key in the Cluster Key field, either during initial
