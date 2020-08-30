@@ -155,19 +155,24 @@ header nav.shortcuts li .submenu-wrapper {
   box-shadow: 0 100px 80px 0 rgba(0,0,0,.07), 0 41.8px 33.4px 0 rgba(0,0,0,.05), 0 22.3px 17.9px 0 rgba(0,0,0,.04), 0 12.5px 10px 0 rgba(0,0,0,.04), 0 6.7px 5.3px 0 rgba(0,0,0,.03), 0 2.8px 2.2px 0 rgba(0,0,0,.02);
   background: #fff;
 }
-header nav.shortcuts li .submenu-wrapper.products {
-  left: -5px;
+header nav.shortcuts li .submenu-wrapper.cloud {
+  left: 250px;
   position: fixed;
   top: 70px;
-  width: 100%;
+  width: 450px;
+}
+header nav.shortcuts li .submenu-wrapper.software {
+  width: 250px;
+}
+header nav.shortcuts li .submenu-wrapper.platform {
+  width: 800px;
 }
 header nav.shortcuts li .submenu-wrapper.solutions {
   width: 500px;
 }
-header nav.shortcuts li .submenu-wrapper.customers {
-  width: 220px;
-}
 header nav.shortcuts li .submenu-wrapper.learn {
+    left: 300px;
+  position: fixed;
   width: 860px;
 }
 header nav.shortcuts .submenu-wrapper .arrow_box {
@@ -230,7 +235,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list > li {
   flex-basis: 0;
   flex-grow: 1;
   padding: 0;
-  margin: 0;
+  margin-top: 10px;
 }
 
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children {
@@ -258,6 +263,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
   cursor: pointer;
   color: #494c4d;
 }
+
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list .submenu-section-title {
   padding-left: 10px;
   padding-bottom: 0;
@@ -266,7 +272,9 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list .submenu-section
   font-weight: 700;
   color: #6d7278;
   text-transform: uppercase;
+  line-height: 25px;
 }
+
 header nav.shortcuts li .fa {
   font-size: 1.5rem;
   margin-right: 0.3rem; }
