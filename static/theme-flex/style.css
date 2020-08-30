@@ -1604,7 +1604,7 @@ thead tr {
 .footer ul.no-bullet li {
   list-style: none;
   margin-bottom: 8px;
-  line-height: 30px;
+  line-height: 24px;
 }
 
 .footer .cta {
@@ -1649,7 +1649,7 @@ thead tr {
 .footer .cta-btn a {
   display: flex;  
   align-items: center;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
 }
 
