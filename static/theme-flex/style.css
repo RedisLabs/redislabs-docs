@@ -115,7 +115,8 @@ header nav.shortcuts-right li:last-child a label {
   color: #5961ff;
   border-radius: 6px!important;
   height: 52px;
-  padding: 12px 20px 12px;  
+  width: 100px;
+  padding: 12px 16px 12px;
   display: flex;
   align-items: center;  
 }
