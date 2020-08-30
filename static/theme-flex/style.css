@@ -70,7 +70,7 @@ header nav.shortcuts li {
   display: inline-block;
   padding: 0 10px;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Graphik Web', sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 70px;
@@ -95,6 +95,10 @@ header nav.shortcuts-right li a label {
   font-weight: 700;
 }
 
+header nav.shortcuts-right li a label:hover {
+  color: #3e41a0;
+}
+
 header nav.shortcuts-right li a {
   padding: 0 !important;
 }
@@ -115,6 +119,12 @@ header nav.shortcuts-right li:last-child a label {
   display: flex;
   align-items: center;  
 }
+
+header nav.shortcuts-right li:last-child a label:hover {
+  color: #3e41a0;
+  border: 2px solid #3e41a0;
+}
+
 header nav.shortcuts label {
   color: #6d7278;
   display: inline;
