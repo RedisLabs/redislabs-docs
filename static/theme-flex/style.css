@@ -1653,6 +1653,11 @@ thead tr {
   font-size: 16px;
 }
 
+.footer .cta-btn:hover {
+  background-color: #3e41a0;
+  transition: all .2s ease-in-out;
+}
+
 .fi-social-500px:before, .fi-social-adobe:before, .fi-social-amazon:before, .fi-social-android:before, .fi-social-apple:before, .fi-social-behance:before, .fi-social-bing:before, .fi-social-blogger:before, .fi-social-delicious:before, .fi-social-designer-news:before, .fi-social-deviant-art:before, .fi-social-digg:before, .fi-social-dribbble:before, .fi-social-drive:before, .fi-social-dropbox:before, .fi-social-evernote:before, .fi-social-facebook:before, .fi-social-flickr:before, .fi-social-forrst:before, .fi-social-foursquare:before, .fi-social-game-center:before, .fi-social-github:before, .fi-social-google-plus:before, .fi-social-hacker-news:before, .fi-social-hi5:before, .fi-social-instagram:before, .fi-social-joomla:before, .fi-social-lastfm:before, .fi-social-linkedin:before, .fi-social-medium:before, .fi-social-myspace:before, .fi-social-orkut:before, .fi-social-path:before, .fi-social-picasa:before, .fi-social-pinterest:before, .fi-social-rdio:before, .fi-social-reddit:before, .fi-social-skillshare:before, .fi-social-skype:before, .fi-social-smashing-mag:before, .fi-social-snapchat:before, .fi-social-spotify:before, .fi-social-squidoo:before, .fi-social-stack-overflow:before, .fi-social-steam:before, .fi-social-stumbleupon:before, .fi-social-treehouse:before, .fi-social-tumblr:before, .fi-social-twitter:before, .fi-social-vimeo:before, .fi-social-windows:before, .fi-social-xbox:before, .fi-social-yahoo:before, .fi-social-yelp:before, .fi-social-youtube:before, .fi-social-zerply:before, .fi-social-zurb:before {
     font-family: "foundation-icons";
     font-style: normal;
