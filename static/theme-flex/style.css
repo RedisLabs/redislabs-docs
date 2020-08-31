@@ -156,7 +156,7 @@ header nav.shortcuts li .submenu-wrapper {
   background: #fff;
 }
 header nav.shortcuts li .submenu-wrapper.cloud {
-  left: 250px;
+  left: 280px;
   position: fixed;
   top: 70px;
   width: 450px;
@@ -171,7 +171,7 @@ header nav.shortcuts li .submenu-wrapper.solutions {
   width: 500px;
 }
 header nav.shortcuts li .submenu-wrapper.learn {
-    left: 300px;
+  left: auto;
   position: fixed;
   width: 860px;
 }
@@ -272,7 +272,8 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list .submenu-section
   font-weight: 700;
   color: #6d7278;
   text-transform: uppercase;
-  line-height: 25px;
+  line-height: 20px;
+  margin-bottom: 5px;
 }
 
 header nav.shortcuts li .fa {
@@ -3032,6 +3033,21 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
 }
 
 @media (max-width: 900px) {
+  header .header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;   
+    padding: 20px 0; 
+  }
+
+  header .logo {
+    display: block;
+    height: 30px;
+    position: relative;
+    margin: 7px 0 0 0;
+  }
+
   header nav.shortcuts {
     display: none;
   }
@@ -3039,6 +3055,13 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   header nav.shortcuts.shortcuts-right {
     display: block;
     text-align: right;
+    padding: 0;
+    flex: 1;    
+    margin: 0;
+  }
+
+  header nav.shortcuts.shortcuts-right:first-child {
+    display: none;
   }
 
   article section.page table.hot-topics-table th {
