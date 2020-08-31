@@ -15,6 +15,7 @@ Prerequisites:
 1. An [OpenShift cluster installed (3.x or 4.x)](https://docs.openshift.com/container-platform/3.11/welcome/index.html) with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
 1. The [OpenShift cli installed](https://docs.openshift.com/online/starter/cli_reference/openshift_cli/getting-started-cli.html#cli-installing-cli_cli-developer-commands)
+git command is required
 
 ## Step 1: Login
 
