@@ -3021,8 +3021,16 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     font-size: 14px;
     line-height: 14px;
   }
-}
+  article section.page table {
+    display: block;
+    overflow-y: auto;
+  }
 
+  article section.page table td {
+    font-size: 11px;
+    line-height: 11px;
+  }
+}
 
 @media (max-width: 1250px) {
   article section.page table.hot-topics-table th {
@@ -3069,13 +3077,6 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     font-size: 11px;
     line-height: 12px;
   }
-}
-
-@media (max-width: 550px) {
-  article section.page table.hot-topics-table th {
-    padding: 40px 0px 0 10px;
-    font-size: 13px;
-    line-height: 14px;
   }
 }
 
@@ -3117,6 +3118,11 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     font-size: 2.4rem;
     line-height: 2.85rem;
     margin: 2.3rem 2rem;
+  }
+
+  .page .main-content nav .nav-tabs .nav-item {
+    font-size: 12px;
+    padding: 3px;
   }
 }
 
@@ -3247,15 +3253,11 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
 }
 
-@media (max-width: 1366px) {
-  article section.page table {
-    display: block;
-    overflow-y: auto;
-  }
-
-  article section.page table td {
-    font-size: 11px;
-    line-height: 11px;
+@media (max-width: 550px) {
+  article section.page table.hot-topics-table th {
+    padding: 40px 0px 0 10px;
+    font-size: 13px;
+    line-height: 14px;
   }
 }
 
@@ -3499,13 +3501,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
   cursor: pointer;
   font-weight: 600;
   text-decoration: none;
-}
-
-@media (max-width: 1024px) {
-  .page .main-content nav .nav-tabs .nav-item {
-    font-size: 12px;
-    padding: 3px;
-  }
 }
 
 .page .main-content .tab-content {  
