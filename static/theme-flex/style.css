@@ -3077,7 +3077,8 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     font-size: 11px;
     line-height: 12px;
   }
-  }
+  footer {
+    display: none; }
 }
 
 @media (max-width: 1024px) {
@@ -3098,8 +3099,6 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   .main-content-left {
     width: 100%;
   }
-  footer {
-    display: none; }
   .main-content-right {
     width: 0;
     min-width: auto;
