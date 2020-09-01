@@ -156,7 +156,7 @@ header nav.shortcuts li .submenu-wrapper {
   background: #fff;
 }
 header nav.shortcuts li .submenu-wrapper.cloud {
-  left: 280px;
+  left: 230px;
   position: fixed;
   top: 70px;
   width: 450px;
@@ -3006,6 +3006,12 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   padding-bottom: 40px;
 }
 
+@media (max-width: 1500px) {
+  header nav.shortcuts li .submenu-wrapper.learn {
+    left: 300px;
+  }
+}
+
 @media (max-width: 1366px) {
   article section.page table.hot-topics-table {
   display: table;
@@ -3032,20 +3038,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1105px) {
   header .header-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;   
-    padding: 20px 0; 
-  }
-
-  header .logo {
-    display: block;
-    height: 30px;
-    position: relative;
-    margin: 7px 0 0 0;
+    height: 73px;
   }
 
   header nav.shortcuts {
@@ -3053,11 +3048,10 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
 
   header nav.shortcuts.shortcuts-right {
-    display: block;
+    display: inline-block;
     text-align: right;
-    padding: 0;
     flex: 1;    
-    margin: 0;
+    margin: 15px 0px 0px 0px;
   }
 
   header nav.shortcuts.shortcuts-right:first-child {
@@ -3132,13 +3126,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+
   nav.shortcuts li:last-child a label {
     font-size: 12px;
-  }
-  header .logo img {
-    height: 32.2292px;
-    width: 130px !important;
-    padding-top: 0px;
   }
   .nav-links {
     display: flex;
