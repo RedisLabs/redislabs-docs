@@ -260,7 +260,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
   height: 70px;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a:hover {
-  cursor: pointer;
+  font-weight: 500;
   color: #494c4d;
 }
 
