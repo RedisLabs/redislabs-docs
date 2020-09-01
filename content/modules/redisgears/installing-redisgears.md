@@ -146,5 +146,5 @@ Go to the [rgsync website](https://pypi.org/project/rgsync/) to get the replicat
 1. Run gears-cli with your custom file:
 
     ```sh
-    gears-cli --host <host> --port <post> --password <password> <yourfile>.py
+    gears-cli run --host <host> --port <post> --password <password> <yourfile>.py
     ```
