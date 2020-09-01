@@ -156,7 +156,7 @@ header nav.shortcuts li .submenu-wrapper {
   background: #fff;
 }
 header nav.shortcuts li .submenu-wrapper.cloud {
-  left: 280px;
+  left: 230px;
   position: fixed;
   top: 70px;
   width: 450px;
@@ -260,7 +260,7 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
   height: 70px;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a:hover {
-  cursor: pointer;
+  font-weight: 500;
   color: #494c4d;
 }
 
@@ -3010,6 +3010,12 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   padding-bottom: 40px;
 }
 
+@media (max-width: 1500px) {
+  header nav.shortcuts li .submenu-wrapper.learn {
+    left: 300px;
+  }
+}
+
 @media (max-width: 1366px) {
   article section.page table.hot-topics-table {
   display: table;
@@ -3019,8 +3025,16 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     font-size: 14px;
     line-height: 14px;
   }
-}
+  article section.page table {
+    display: block;
+    overflow-y: auto;
+  }
 
+  article section.page table td {
+    font-size: 11px;
+    line-height: 11px;
+  }
+}
 
 @media (max-width: 1250px) {
   article section.page table.hot-topics-table th {
@@ -3036,20 +3050,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1105px) {
   header .header-wrap {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;   
-    padding: 20px 0; 
-  }
-
-  header .logo {
-    display: block;
-    height: 30px;
-    position: relative;
-    margin: 7px 0 0 0;
+    height: 73px;
   }
 
   header nav.shortcuts {
@@ -3057,11 +3060,10 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
 
   header nav.shortcuts.shortcuts-right {
-    display: block;
+    display: inline-block;
     text-align: right;
-    padding: 0;
     flex: 1;    
-    margin: 0;
+    margin: 15px 0px 0px 0px;
   }
 
   header nav.shortcuts.shortcuts-right:first-child {
@@ -3079,14 +3081,8 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     font-size: 11px;
     line-height: 12px;
   }
-}
-
-@media (max-width: 550px) {
-  article section.page table.hot-topics-table th {
-    padding: 40px 0px 0 10px;
-    font-size: 13px;
-    line-height: 14px;
-  }
+  footer {
+    display: none; }
 }
 
 @media (max-width: 1024px) {
@@ -3107,8 +3103,6 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   .main-content-left {
     width: 100%;
   }
-  footer {
-    display: none; }
   .main-content-right {
     width: 0;
     min-width: auto;
@@ -3128,6 +3122,11 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     line-height: 2.85rem;
     margin: 2.3rem 2rem;
   }
+
+  .page .main-content nav .nav-tabs .nav-item {
+    font-size: 12px;
+    padding: 3px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -3136,13 +3135,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+
   nav.shortcuts li:last-child a label {
     font-size: 12px;
-  }
-  header .logo img {
-    height: 32.2292px;
-    width: 130px !important;
-    padding-top: 0px;
   }
   .nav-links {
     display: flex;
@@ -3261,15 +3256,11 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
 }
 
-@media (max-width: 1366px) {
-  article section.page table {
-    display: block;
-    overflow-y: auto;
-  }
-
-  article section.page table td {
-    font-size: 11px;
-    line-height: 11px;
+@media (max-width: 550px) {
+  article section.page table.hot-topics-table th {
+    padding: 40px 0px 0 10px;
+    font-size: 13px;
+    line-height: 14px;
   }
 }
 
@@ -3513,13 +3504,6 @@ a[href*="#no-click"], img[src*="#no-click"] {
   cursor: pointer;
   font-weight: 600;
   text-decoration: none;
-}
-
-@media (max-width: 1024px) {
-  .page .main-content nav .nav-tabs .nav-item {
-    font-size: 12px;
-    padding: 3px;
-  }
 }
 
 .page .main-content .tab-content {  
