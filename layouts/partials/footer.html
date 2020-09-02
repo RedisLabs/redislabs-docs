@@ -106,29 +106,38 @@
                             <div class="social small-only-text-center">
                                 <a href="https://twitter.com/redislabs" target="_blank" rel="noopener noreferrer"><i
                                         class="fi-social-twitter"></i></a>
-                                <a href="https://www.youtube.com/channel/UCD78lHSwYqMlyetR0_P4Vig" target="_blank" rel="noopener noreferrer"><i
-                                    class="fi-social-youtube"></i></a>     
-                                <a href="https://www.facebook.com/RedisLabs" target="_blank" rel="noopener noreferrer"><i
-                                    class="fi-social-facebook"></i></a><br>                                                               
-                                <a href="https://www.linkedin.com/company/redis-labs-inc" target="_blank" rel="noopener noreferrer"><i
-                                        class="fi-social-linkedin"></i></a>                            
+                                <a href="https://www.youtube.com/channel/UCD78lHSwYqMlyetR0_P4Vig" target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src="{{.Site.BaseURL}}/images/yt.png">
+                                </a>     
+                                <a href="https://www.facebook.com/RedisLabs" target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src="{{.Site.BaseURL}}/images/fb.png">
+                                </a>
+                                <br>                                                               
+                                <a href="https://www.linkedin.com/company/redis-labs-inc" target="_blank" rel="noopener noreferrer">
+                                    <img
+                                        src="{{.Site.BaseURL}}/images/in.png">                                
+                                </a>                            
                                 <a href="https://www.glassdoor.com/Overview/Working-at-Redis-Labs-EI_IE928722.11,21.htm"
                                     target="_blank" rel="noopener noreferrer">
                                     <img loading="lazy"
-                                        width="23px"
-                                        src="{{.Site.BaseURL}}/images/glassdoor.svg"
-                                        data-lazy-src="{{.Site.BaseURL}}/images/glassdoor.svg">
+                                        width="20px"
+                                        style="width:20px;"
+                                        src="{{.Site.BaseURL}}/images/gd.png"
+                                        data-lazy-src="{{.Site.BaseURL}}/images/gd.png">
                                     <noscript><img
-                                            src="{{.Site.BaseURL}}/images/glassdoor.svg"
-                                            width="23px"></noscript>
+                                            style="width:20px;"
+                                            src="{{.Site.BaseURL}}/images/gd.png"
+                                            width="20px"></noscript>
                                 </a>
                                 <a href="https://www.instagram.com/redislabsofficial/" target="_blank" rel="noopener noreferrer">
                                     <img loading="lazy"
                                     width="23px"
-                                    src="{{.Site.BaseURL}}/images/instagram.svg"
-                                        data-lazy-src="{{.Site.BaseURL}}/images/instagram.svg">
+                                    src="{{.Site.BaseURL}}/images/ig.png"
+                                        data-lazy-src="{{.Site.BaseURL}}/images/ig.png">
                                     <noscript><img
-                                            src="{{.Site.BaseURL}}/images/instagram.svg"
+                                            src="{{.Site.BaseURL}}/images/ig.png"
                                             width="23px"></noscript>
                                 </a>
                             </div>
@@ -144,7 +153,7 @@
         <div class="row v-bottom">
             <div class="small-12 medium-12 columns">
                 <img width="26" class="float-left footer-logo" src="{{.Site.BaseURL}}/images/icon-redis.svg"></noscript>
-                <p class="source-org copyright">&copy; {{ now.Format "2006"}} Redis Labs. Redis and the cube logo are
+                <p class="source-org copyright">&copy; {{ now.Format "2006"}} Redis Labs. Redis and the cube logo are registered
                     trademarks of<br>Redis Labs Ltd.</p>
             </div>
         </div>

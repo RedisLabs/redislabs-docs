@@ -1,5 +1,34 @@
 @charset "UTF-8";
 
+@font-face{
+  font-family:'Graphik Web';
+  src:url(/fonts/graphik/Graphik-Medium-Web.woff2) format("woff2"),url(/fonts/graphik/Graphik-Medium-Web.woff) format("woff");
+  font-weight:500;
+  font-style:normal;
+  font-stretch:normal
+}
+@font-face{
+  font-family:'Graphik Web';
+  src:url(/fonts/graphik/Graphik-Regular-Web.woff2) format("woff2"),url(/fonts/graphik/Graphik-Regular-Web.woff) format("woff");
+  font-weight:400;
+  font-style:normal;
+  font-stretch:normal
+}
+@font-face{
+  font-family:'Graphik Web';
+  src:url(/fonts/graphik/Graphik-Light-Web.woff2) format("woff2"),url(/fonts/graphik/Graphik-Light-Web.woff) format("woff");
+  font-weight:300;
+  font-style:normal;
+  font-stretch:normal
+}
+@font-face{
+  font-family:'Graphik Web';
+  src:url(/fonts/graphik/Graphik-Semibold-Web.woff2) format("woff2"),url(/fonts/graphik/Graphik-Semibold-Web.woff) format("woff");
+  font-weight:600;
+  font-style:normal;
+  font-stretch:normal
+}
+
 header {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -401,6 +430,7 @@ article > aside .menu .dd-item div a:hover, article > aside .menu .dd-item div a
 article > aside .menu .dd-item div i.category-icon:active,
 article > aside .menu .dd-item div i.category-icon:focus,
 article > aside .menu .dd-item div i.category-icon:hover {
+  color: #5961ff;
   border-radius: .2rem;
   padding: 0 0rem; }
 article > aside section {
@@ -871,7 +901,8 @@ ul.footer-action .social a {
 }
 
 .social img {
-  width: 23px;
+  width: 22px;
+  margin-right: 2px;
 }
 
 .social {
@@ -1347,7 +1378,7 @@ span.current {
   overflow: hidden;
 }
 .category-icon.hovered {
-  color: #b62412;
+  color: #5961ff;
 }
 .search-box {
   position: fixed;
@@ -1550,7 +1581,7 @@ thead tr {
 }
 
 .footer a:hover {
-    color: #fff
+    color: #1585cf
 }
 
 .footer .social a {
@@ -1618,7 +1649,7 @@ thead tr {
 .footer ul.no-bullet li {
   list-style: none;
   margin-bottom: 8px;
-  line-height: 24px;
+  line-height: 30px;
 }
 
 .footer .cta {
@@ -1650,7 +1681,7 @@ thead tr {
   border-radius: 6px!important;
   text-decoration: none;
   border: none;
-  margin-top: 5px;
+  margin-top: 8px;
   padding: 8px 40px 10px;
   color: #fff;
   background-color: #5961ff;
@@ -1664,7 +1695,7 @@ thead tr {
   display: flex;  
   align-items: center;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .footer .cta-btn:hover {
@@ -1750,7 +1781,7 @@ ul.footer-action li a {
 }
 
 ul.footer-action li a:hover {
-  color: white;
+  color: #1585cf;
 }
 
 p.source-org.copyright {
@@ -1759,7 +1790,6 @@ p.source-org.copyright {
   padding-bottom: 14px!important;
   font-weight: 300;
   font-size: 14px;
-  letter-spacing: 0.75px;
   line-height: 24px;
   color: #a2a8a8;
 }
@@ -2152,7 +2182,7 @@ form.search-form {
 }
 
 input.search-submit.button {
-  background: #b62412;
+  background: #5961ff;
   color: white;
   text-transform: uppercase;
   /* font-weight: 300; */
