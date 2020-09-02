@@ -366,7 +366,7 @@ article > aside .menu .dd-item.parent > ul {
 article > aside .menu .dd-item.active > ul {
   display: block; }
 article > aside .menu .dd-item.active > div {
-  color: #b62411; }
+  color: #5961ff; }
 
 article > aside .menu .dd-item.haschildren > div {
   margin-left: -20px; }
@@ -393,7 +393,7 @@ article > aside .menu .dd-item div a {
   text-decoration: none;
 }
 article > aside .menu .dd-item div a:hover, article > aside .menu .dd-item div a:focus, article > aside .menu .dd-item div a:active {
-  color: #b62411; }
+  color: #5961ff; }
 article > aside .menu .dd-item div i.category-icon:active,
 article > aside .menu .dd-item div i.category-icon:focus,
 article > aside .menu .dd-item div i.category-icon:hover {
@@ -413,11 +413,11 @@ article > aside section {
 
 .SideMenuToggle:hover {
   cursor: pointer;
-  color: #b62411 !important;
+  color: #5961ff !important;
 }
 
 .SideMenuToggle:hover i.fa {
-  color: #b62411 !important;
+  color: #5961ff !important;
 }
 
 article > aside .menu .dd-item div a.expander-title {
@@ -506,7 +506,7 @@ section ul {
 }
 
 section a {
-  color: #b62411; }
+  color: #5961ff; }
 
 /* section strong {
   font-weight: 500; } */
@@ -522,7 +522,7 @@ section a {
 }
 
 .home-hero h1 {
-  color: #bf2810;
+  color: #5961ff;
   font-size: 4rem;
   line-height: 4rem;
   margin-bottom: 1rem;
@@ -645,7 +645,7 @@ section a {
 
 .home-options__option ul section {
   display: flex;
-  color: #c82f0e;
+  color: #5961ff;
 }
 
 .home-options__option ul li {
@@ -657,11 +657,11 @@ section a {
 }
 
 .home-options__option li section i {
-  color: #c82f0e;
+  color: #5961ff;
 }
 
 .home-options__option ul section li a {
-  color: #c82f0e;
+  color: #5961ff;
   padding-left: 4px;
 }
 
@@ -827,7 +827,7 @@ section a {
   width: 100%; }
 
 #navigation a.github-link:hover {
-  color: #b62411;
+  color: #5961ff;
 
 }
 .btm_footer ul {
@@ -1246,7 +1246,7 @@ nav#toc {
   padding-left: 100px;
 }
 nav#toc h4 {
-  color: #b62411;
+  color: #5961ff;
   margin: 0rem 0rem 1.2rem 0rem;
   font-size: 1.1rem;
 }
@@ -1257,7 +1257,7 @@ nav#toc ul {
   padding: 0;
 }
 nav#toc ul li {
-  color: #b62411;
+  color: #5961ff;
   font-size: 1rem;
 }
 .nav-links-footer a {
@@ -1290,8 +1290,8 @@ a.menu__link:hover:before {
   width: 50%;
 }
 .post-bottom .edit-link a {
-  border: 2px solid rgba(53, 66, 83, 0.8);
-  color: #354253;
+  border: 2px solid #5961ff;
+  color: #5961ff;
   padding: 6px;
   border-radius: 3px;
   text-decoration: none !important;
@@ -1974,11 +1974,11 @@ div#navigation a {
   background: #ababab;
 }
 .panel.panel-primary.panel-warning i, .panel.panel-primary.panel-caution i {
-  color: #b62411;
+  color: #5961ff;
 }
 
 .panel.panel-primary.panel-warning .panel-content, .panel.panel-primary.panel-caution .panel-content {
-  border-left-color: #b62411;
+  border-left-color: #5961ff;
 }
 nav#toc ul > li > ul {
   padding-left: 20px;
@@ -2016,17 +2016,17 @@ button.hamburger.hamburger--spring.hamburger-mobile {
   display: none;
 }
 #navigation a.nav-prev-next:hover i {
-  color: #b62411;
+  color: #5961ff;
 }
 
 .nav-links-footer a:hover {
-  color: #b62411;
+  color: #5961ff;
   text-decoration: none;
   transition: all 200ms;
 }
 
 a.got-to-top:hover {
-  color: #b62411;
+  color: #5961ff;
   text-decoration: none;
 }
 
@@ -2253,7 +2253,7 @@ ul.no-bullet li {
 }
 
 .cbp-spmenu a:active {
-  background: #b62411;
+  background: #5961ff;
   color: white;
 }
 
@@ -2454,7 +2454,7 @@ article > aside .menu > li.parent > .children {
 }
 
 article > aside .menu .dd-item .highlight:hover {
-  color: #b62411;
+  color: #5961ff;
 }
 
 /* Example media queries */
@@ -2570,12 +2570,12 @@ article > aside .menu .dd-item .highlight:hover {
 .menu__link:focus,
 .menu__link[data-submenu]:hover::after,
 .menu__link[data-submenu]:focus::after {
-  /* color: #b62411; */
+  /* color: #5961ff; */
   /* font-weight: bold; */
 }
 
 .menu__link--current::before {
-  background: #b62411 !important;
+  background: #5961ff !important;
   opacity: 1 !important;
   width: 60% !important;
 }
@@ -2703,7 +2703,7 @@ article > aside .menu .dd-item .highlight:hover {
   vertical-align: middle;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #b62411;
+  color: #5961ff;
   font-size: 13px;
   /* padding: 21px 15px; */
   height: 57px;
@@ -2733,7 +2733,7 @@ article > aside .menu .dd-item .highlight:hover {
 
 .menu__breadcrumbs a:not(:last-child):hover::after,
 .menu__breadcrumbs a:not(:last-child):focus::after {
-  color: #b62411;
+  color: #5961ff;
 }
 
 .menu__back {
@@ -3268,7 +3268,7 @@ i.icon-icons_plus, i.icon-icons_minus {
 
 .expand-content {
   padding-left: 15px;
-  border-left: 1px solid #b62410;
+  border-left: 1px solid #5961ff;
   margin-left: 45px;
 }
 
@@ -3277,7 +3277,7 @@ i.icon-icons_plus, i.icon-icons_minus {
   display: flex;
   align-items: start;
   margin-bottom: 12px;
-  color: #b62410;
+  color: #5961ff;
 }
 
 .expand-label > span:hover {
@@ -3522,7 +3522,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
 .expand-shortcode-control {
   display: inline-block;
   margin-bottom: 10px;
-  color: #c82f0e;
+  color: #5961ff;
 }
 
 .expand-shortcode-control:hover {
