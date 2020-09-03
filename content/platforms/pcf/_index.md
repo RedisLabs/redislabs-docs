@@ -1,7 +1,7 @@
 ---
 Title: Getting Started with Redis Enterprise Software for Pivotal Platform
-description: 
-weight: 60
+description:
+weight: 65
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/pcf/
