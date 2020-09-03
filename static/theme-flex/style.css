@@ -286,7 +286,8 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
   text-transform: none;
   font-size: 14px;
   color: #a7a7a7;
-  height: 70px;
+  height: 10px;
+  line-height: 20px;
 }
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__children li a:hover {
   font-weight: 500;
@@ -295,8 +296,8 @@ header nav.shortcuts li .submenu-wrapper .submenu .submenu-list  .submenu-list__
 
 header nav.shortcuts li .submenu-wrapper .submenu .submenu-list .submenu-section-title {
   padding-left: 10px;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding-bottom: 38px;
+  padding-top: 23px;
   letter-spacing: 1px;
   font-weight: 700;
   color: #6d7278;
@@ -610,7 +611,7 @@ section a {
   border-radius: 5px;
   border: 1px solid #eee;
   margin: 15px;
-  min-width: 327px;
+  min-width: 400px;
   padding-top: 10px;
   text-align: center;
   width: 327px;
