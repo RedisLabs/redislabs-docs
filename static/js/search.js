@@ -1,4 +1,4 @@
-const SEARCH_API_URL = "http://localhost:8001/search"
+const SEARCH_API_URL = "http://docs.andrewbrookins.com:8001/search"
 
 /**
  * Trigger a search and transform the result
