@@ -3,27 +3,31 @@
     {{ partial "gtm-body" . | safeHTML }}
   {{ end }}
 {{ end }}
-<header id="header">
-  <div class="logo">
-    {{ partial "header.html" . }}
-  </div>
-  {{- with .Site.Menus.shortcuts}}
-    {{ partial "navigation.html" . }}  
-  {{- end}}
+<div class="header-wrap-outer">
+  <header id="header">  
+      <div class="header-wrap">
+        <div class="logo">
+          {{ partial "header.html" . }}
+        </div>
+        {{- with .Site.Menus.shortcuts}}
+          {{ partial "navigation.html" . }}  
+        {{- end}}
 
-  <nav class="shortcuts shortcuts-right">
-    <li class="" role="">
-        <a href="https://app.redislabs.com/#/login" rel="noopener">
-          <label>Login</label>
-        </a>
-    </li>  
-    <li class="" role="">
-      <a href="https://redislabs.com/redis-enterprise-deployment/" rel="noopener">
-        <label>Try Free</label>
-      </a>
-    </li>
-  </nav>
-</header>
+        <nav class="shortcuts shortcuts-right">
+          <li class="" role="">
+              <a href="https://app.redislabs.com/#/login" rel="noopener">
+                <label>Login</label>
+              </a>
+          </li>  
+          <li class="" role="">
+            <a href="https://redislabs.com/redis-enterprise-deployment/" rel="noopener">
+              <label>Try Free</label>
+            </a>
+          </li>
+        </nav>
+      </div>
+  </header>
+</div>
 <a id="top"></a>
 <article>
     {{if not .IsHome}}

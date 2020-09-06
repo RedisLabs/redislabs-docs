@@ -3,13 +3,13 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 35 29.6" style="enable-background:new 0 0 35 29.6;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#DC382D;stroke-miterlimit:10;}
-	.st1{fill:none;stroke:#DC382D;stroke-width:1.25;stroke-miterlimit:10;}
-	.st2{fill:none;stroke:#DC382D;stroke-width:1.75;stroke-miterlimit:10;}
+	.st0{fill:none;stroke:#5961ff;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#5961ff;stroke-width:1.25;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#5961ff;stroke-width:1.75;stroke-miterlimit:10;}
 	.st3{fill:#504F4E;}
-	.st4{fill:#DC382D;}
-	.st5{fill:none;stroke:#DC382D;stroke-width:1.5;stroke-miterlimit:10;}
-	.st6{fill:none;stroke:#DC382D;stroke-width:1.25;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#5961ff;}
+	.st5{fill:none;stroke:#5961ff;stroke-width:1.5;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#5961ff;stroke-width:1.25;stroke-linejoin:round;stroke-miterlimit:10;}
 </style>
 <g>
 	<path class="st4" d="M35,8.2L17.5,0L0,8.2l17.5,8.2L35,8.2z M17.5,1.7l13.9,6.5l-13.9,6.5L3.5,8.2L17.5,1.7z"/>
