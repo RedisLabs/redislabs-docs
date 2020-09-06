@@ -6,6 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 db_type: database
 aliases: /rs/administering/creating-databases/_index.md
+        /rs/administering/database-operations/creating-database/
 ---
 You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
 These databases can use Redis Enterprise features like:

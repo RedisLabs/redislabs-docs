@@ -5,6 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/intercluster-replication/replica-of/
+        /rs/administering/active-passive/
 ---
 In Redis Enterprise, active-passive geo-distribution provides applications read-only access
 to replicas of the data set from different geographical locations.

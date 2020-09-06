@@ -5,6 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/intercluster-replication/replica-of/
+        /rs/administering/database-operations/create-active-passive/
 ---
 [Active-Passive replicated databases]({{< relref "/rs/administering/designing-production/active-passive.md" >}}) (also known as Replica Of) give applications read-only access
 to replicas of the data that are hosted in different geographical locations.

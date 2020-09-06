@@ -5,6 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/create-crdb/
+        /rs/administering/database-operations/create-active-active/
 ---
 [Active-Active geo-replicated databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) (formerly known as CRDBs) give applications write access
 to replicas of the dataset in different geographical locations.

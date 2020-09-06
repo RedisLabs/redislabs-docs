@@ -5,6 +5,7 @@ weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/import-export/exporting-data/
+        /rs/administering/database-operations/exporting-data/
 ---
 You can [schedule backups]({{< relref "/rs/administering/import-export/exporting-data.md" >}})
 of a specific Redis Enterprise Software (RS) database to make sure you always have valid backups.
