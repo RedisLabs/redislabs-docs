@@ -5,6 +5,18 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisBloom 2.2.4 (July 2020)
+
+Headlines:
+
+- This release improves overall stability and provides fixes for founded issues.
+
+Details:
+
+- Bugfix:
+    - #[215](https://github.com/redisbloom/redisbloom/issues/215) Count-Min-Sketch CMS.INCRBY command to reply with correct min result.
+    - #[219](https://github.com/redisbloom/redisbloom/issues/219) Cuckoo Filter CF.DEBUG correct response formatting.
+
 ## RedisBloom 2.2.2 (March 2020)
 
 Headlines:
