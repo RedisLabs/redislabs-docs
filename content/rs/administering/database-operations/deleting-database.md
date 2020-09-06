@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/database-operations/delete-crdb/
 ---
 To delete a database in Redis Enterprise Software:
 

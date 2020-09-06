@@ -5,6 +5,7 @@ weight: 85
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/developing/crdbs/
+        /rs/developing/
 ---
 Developing geo-distributed, multi-master applications can be difficult.
 Application developers may have to understand a large number of race

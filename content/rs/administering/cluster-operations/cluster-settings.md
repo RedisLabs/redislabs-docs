@@ -4,13 +4,16 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/cluster-operations/settings/
+        /rs/administering/cluster-operations/settings/general/
+        /rs/administering/cluster-operations/settings/license-keys/
 ---
 You can view and set various cluster settings in the **Settings > General** page.
 
 ## Entering a cluster key
 
 After purchasing a cluster key and if your account has the "Admin" role,
-you can enter the key in the Cluster Key field, either during initial
+you can enter the key in the Cluster Key field, either during initial\
 cluster creation or at any time afterward. The key defines various
 cluster settings, such as the maximum number of shards you can have in
 the cluster. For more detailed information see [Cluster License
