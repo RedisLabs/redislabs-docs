@@ -73,9 +73,16 @@ To install RS on Linux from the CLI:
 
 1. Copy the installation package to the node.
 
-    {{< note >}}
-For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of the package.
-    {{< /note >}}
+    {{% expand "How do I know the package is authentic?" %}}
+For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of the package:
+
+- For Ubuntu:
+    1. Import the key with: `gpg --import <path to GPG key>`
+    1. Verify the package signature with: `dpkg-sig --verify <path to installation package>`
+- For RHEL:
+    1. Import the key with: `rpm --import <path to GPG key>`
+    1. Verify the package signature with: `rpm --checksig <path to installation package>`
+    {{% /expand %}}
 
 1. On the node, change to the directory where the installation package is and extract the installation files:
 
