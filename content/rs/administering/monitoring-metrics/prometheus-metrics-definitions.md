@@ -252,3 +252,15 @@ Here are the metrics available to Prometheus:
 | redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
 | redis_up | Shard is up and running |
 | redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |
+| total_connections_received | we can measure new connections per second |
+| total_commands_processed | we can measure ops/sec (currently only available on the bdb) |
+| total_net_input_bytes | measure ingress throughput |
+| total_net_output_bytes | measure egress throughput |
+| master_repl_offset | measure replicated bytes/sec |
+| repl_touch_bytes | measure touch bytes/sec |
+| module_fork_in_progress | important to know when redis has forks |
+| keyspace_read_hits | |
+| keyspace_read_misses | |
+| keyspace_write_hits | |
+| keyspace_write_misses | |
+| keys_trimmed | |
