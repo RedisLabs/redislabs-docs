@@ -224,10 +224,10 @@ Here are the metrics available to Prometheus:
 | redis_expired_keys | Keys expired so far (since restart) |
 | redis_forwarding_state | Shard forwarding state (on or off) |
 | redis_keys_trimmed | The number of keys that were trimmed in the current or last resharding process |
-| redis_keyspace_read_hits | Rate of read operations accessing an existing keyspace (ops/sec) |
-| redis_keyspace_read_misses | Rate of read operations accessing an non-existing keyspace (ops/sec) |
-| redis_keyspace_write_hits | Rate of write operations accessing an existing keyspace (ops/sec) |
-| redis_keyspace_write_misses | Rate of write operations accessing an non-existing keyspace (ops/sec) |
+| redis_keyspace_read_hits | Number of read operations accessing an existing keyspace |
+| redis_keyspace_read_misses | Number of read operations accessing an non-existing keyspace |
+| redis_keyspace_write_hits | Number of write operations accessing an existing keyspace |
+| redis_keyspace_write_misses | Number of write operations accessing an non-existing keyspace |
 | redis_master_link_status | Indicates if the slave is connected to its master |
 | redis_master_repl_offset | Running counter of the number of bytes sent to replicas by the shard; Calculate the throughput for a time period by comparing the value at different times |
 | redis_master_sync_in_progress | The master shard is synchronizing (1 true | 0 false) |
