@@ -206,6 +206,9 @@ Here are the metrics available to Prometheus:
 
 | Metric | Description |
 | ------ | :------ |
+| keys_trimmed | The number of keys that were trimmed in the current or last resharding process |
+| master_repl_offset | Running counter of the number of bytes sent to replicas by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
+| module_fork_in_progress | The number of simultaneous forks that are currently active |
 | redis_active_defrag_running | Automatic memory defragmentation current aggressiveness (% cpu) |
 | redis_allocator_active | Total used memory including external fragmentation |
 | redis_allocator_allocated | Total allocated memory |
@@ -252,11 +255,8 @@ Here are the metrics available to Prometheus:
 | redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
 | redis_up | Shard is up and running |
 | redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |
-| total_connections_received | Running counter of the number of connections received by the shard; Calculate the number of connections for a time period by comparing the value at different times (Resolution: Seconds) |
+| repl_touch_bytes | Running counter of the number of bytes sent to replicas as TOUCH commands by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
 | total_commands_processed | Running counter of the number of commands received by the shard; Calculate the number of commands for a time period by comparing the value at different times (Resolution: Seconds) |
+| total_connections_received | Running counter of the number of connections received by the shard; Calculate the number of connections for a time period by comparing the value at different times (Resolution: Seconds) |
 | total_net_input_bytes | Running counter of the number of bytes received by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
 | total_net_output_bytes | Running counter of the number of bytes sent by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
-| master_repl_offset | Running counter of the number of bytes sent to replicas by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
-| repl_touch_bytes | Running counter of the number of bytes sent to replicas as TOUCH commands by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
-| module_fork_in_progress | The number of simultaneous forks that are currently active |
-| keys_trimmed | The number of keys that were trimmed in the current or last resharding process |
