@@ -213,6 +213,7 @@ Here are the metrics available to Prometheus:
 | redis_aof_last_cow_size | Last AOFR, CopyOnWrite memory |
 | redis_aof_rewrite_in_progress | The number of simultaneous AOF rewrites that are in progress |
 | redis_aof_rewrites | Number of AOF rewrites this process executed |
+| redis_aof_delayed_fsync | Number of times an AOF fsync caused delays in the redis main thread (inducing latency); This can indicate that the disk is slow or overloaded |
 | redis_blocked_clients | Count the clients waiting on a blocking call |
 | redis_connected_clients | Number of client connections to the specific shard |
 | redis_connected_slaves | Number of connected slaves |
