@@ -47,10 +47,10 @@ Here are the metrics available to Prometheus:
 | bdb_other_req_max | Highest value of rate of other (non read/write) requests on DB (ops/sec) |
 | bdb_other_res | Rate of other (non read/write) responses on DB (ops/sec) |
 | bdb_other_res_max | Highest value of rate of other (non read/write) responses on DB (ops/sec) |
-| bdb_pubsub_channels | Count the pub/sub channels with subscribed clients. |
-| bdb_pubsub_channels_max | Highest value of count the pub/sub channels with subscribed clients. |
-| bdb_pubsub_patterns | Count the pub/sub patterns with subscribed clients. |
-| bdb_pubsub_patterns_max | Highest value of count the pub/sub patterns with subscribed clients. |
+| bdb_pubsub_channels | Count the pub/sub channels with subscribed clients |
+| bdb_pubsub_channels_max | Highest value of count the pub/sub channels with subscribed clients |
+| bdb_pubsub_patterns | Count the pub/sub patterns with subscribed clients |
+| bdb_pubsub_patterns_max | Highest value of count the pub/sub patterns with subscribed clients |
 | bdb_read_hits | Rate of read operations accessing an existing key (ops/sec) |
 | bdb_read_hits_max | Highest value of rate of read operations accessing an existing key (ops/sec) |
 | bdb_read_misses | Rate of read operations accessing a non-existing key (ops/sec) |
@@ -132,13 +132,13 @@ Here are the metrics available to Prometheus:
 
 | Metric | Description |
 | ------ | :------ |
-| listener_acc_latency | Accumulative latency (sum of the latencies) of all types of commands on DB. For the average latency, divide this value by listener_total_res. |
+| listener_acc_latency | Accumulative latency (sum of the latencies) of all types of commands on DB. For the average latency, divide this value by listener_total_res |
 | listener_acc_latency_max | Highest value of accumulative latency of all types of commands on DB |
-| listener_acc_other_latency | Accumulative latency (sum of the latencies) of commands that are type "other" on DB. For the average latency, divide this value by listener_other_res. |
+| listener_acc_other_latency | Accumulative latency (sum of the latencies) of commands that are type "other" on DB. For the average latency, divide this value by listener_other_res |
 | listener_acc_other_latency_max | Highest value of accumulative latency of commands that are type "other" on DB |
-| listener_acc_read_latency | Accumulative latency (sum of the latencies) of commands that are type "read" on DB. For the average latency, divide this value by listener_read_res. |
+| listener_acc_read_latency | Accumulative latency (sum of the latencies) of commands that are type "read" on DB. For the average latency, divide this value by listener_read_res |
 | listener_acc_read_latency_max | Highest value of accumulative latency of commands that are type "read" on DB |
-| listener_acc_write_latency | Accumulative latency (sum of the latencies) of commands that are type "write" on DB. For the average latency, divide this value by listener_write_res. |
+| listener_acc_write_latency | Accumulative latency (sum of the latencies) of commands that are type "write" on DB. For the average latency, divide this value by listener_write_res |
 | listener_acc_write_latency_max | Highest value of accumulative latency of commands that are type "write" on DB |
 | listener_auth_cmds | Number of memcached AUTH commands sent to the DB |
 | listener_auth_cmds_max | Highest value of number of memcached AUTH commands sent to the DB |
@@ -211,10 +211,10 @@ Here are the metrics available to Prometheus:
 | redis_allocator_allocated | Total allocated memory |
 | redis_allocator_resident | Total resident memory (RSS) |
 | redis_aof_last_cow_size | Last AOFR, CopyOnWrite memory |
-| redis_aof_rewrite_in_progress | The number of simultaneous AOF rewrites that are in progress. |
+| redis_aof_rewrite_in_progress | The number of simultaneous AOF rewrites that are in progress |
 | redis_aof_rewrites | Number of AOF rewrites this process executed |
-| redis_blocked_clients | Count the clients waiting on a blocking call. |
-| redis_connected_clients | Number of client connections to the specific shard. |
+| redis_blocked_clients | Count the clients waiting on a blocking call |
+| redis_connected_clients | Number of client connections to the specific shard |
 | redis_connected_slaves | Number of connected slaves |
 | redis_db0_avg_ttl | Average TTL of all volatile keys |
 | redis_db0_expires | Total count of volatile keys |
@@ -235,17 +235,17 @@ Here are the metrics available to Prometheus:
 | redis_mem_clients_normal | Current memory used for input and output buffers of non-slave clients |
 | redis_mem_clients_slaves | Current memory used for input and output buffers of slave clients |
 | redis_mem_fragmentation_ratio | Memory fragmentation ratio (1.3 means 30% overhead) |
-| redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error. |
+| redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error |
 | redis_mem_replication_backlog | Size of replication backlog |
-| redis_process_cpu_system_seconds_total | Shard Process system CPU time spent in seconds. |
+| redis_process_cpu_system_seconds_total | Shard Process system CPU time spent in seconds |
 | redis_process_cpu_usage_percent | Shard Process cpu usage precentage |
-| redis_process_cpu_user_seconds_total | Shard user CPU time spent in seconds. |
-| redis_process_main_thread_cpu_system_seconds_total | Shard main thread system CPU time spent in seconds. |
-| redis_process_main_thread_cpu_user_seconds_total | Shard main thread user CPU time spent in seconds. |
-| redis_process_max_fds | Shard Maximum number of open file descriptors. |
+| redis_process_cpu_user_seconds_total | Shard user CPU time spent in seconds |
+| redis_process_main_thread_cpu_system_seconds_total | Shard main thread system CPU time spent in seconds |
+| redis_process_main_thread_cpu_user_seconds_total | Shard main thread user CPU time spent in seconds |
+| redis_process_max_fds | Shard Maximum number of open file descriptors |
 | redis_process_open_fds | Shard Number of open file descriptors |
-| redis_process_resident_memory_bytes | Shard Resident memory size in bytes. |
-| redis_process_start_time_seconds | Shard Start time of the process since unix epoch in seconds. |
+| redis_process_resident_memory_bytes | Shard Resident memory size in bytes |
+| redis_process_start_time_seconds | Shard Start time of the process since unix epoch in seconds |
 | redis_process_virtual_memory_bytes | Shard virtual memory in bytes |
 | redis_rdb_bgsave_in_progress | Indication if bgsave is currently in progress |
 | redis_rdb_last_cow_size | Last bgsave (or SYNC fork) used CopyOnWrite memory |
