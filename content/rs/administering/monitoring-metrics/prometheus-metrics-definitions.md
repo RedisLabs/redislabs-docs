@@ -206,9 +206,6 @@ Here are the metrics available to Prometheus:
 
 | Metric | Description |
 | ------ | :------ |
-| keys_trimmed | The number of keys that were trimmed in the current or last resharding process |
-| master_repl_offset | Running counter of the number of bytes sent to replicas by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
-| module_fork_in_progress | The number of simultaneous forks that are currently active |
 | redis_active_defrag_running | Automatic memory defragmentation current aggressiveness (% cpu) |
 | redis_allocator_active | Total used memory including external fragmentation |
 | redis_allocator_allocated | Total allocated memory |
@@ -226,11 +223,13 @@ Here are the metrics available to Prometheus:
 | redis_expire_cycle_cpu_milliseconds | The cumulative amount of time spent on active expiry cycles |
 | redis_expired_keys | Keys expired so far (since restart) |
 | redis_forwarding_state | Shard forwarding state (on or off) |
+| redis_keys_trimmed | The number of keys that were trimmed in the current or last resharding process |
 | redis_keyspace_read_hits | Rate of read operations accessing an existing keyspace (ops/sec) |
 | redis_keyspace_read_misses | Rate of read operations accessing an non-existing keyspace (ops/sec) |
 | redis_keyspace_write_hits | Rate of write operations accessing an existing keyspace (ops/sec) |
 | redis_keyspace_write_misses | Rate of write operations accessing an non-existing keyspace (ops/sec) |
 | redis_master_link_status | Indicates if the slave is connected to its master |
+| redis_master_repl_offset | Running counter of the number of bytes sent to replicas by the shard; Calculate the throughput for a time period by comparing the value at different times |
 | redis_master_sync_in_progress | The master shard is synchronizing (1 true | 0 false) |
 | redis_max_process_mem | Current memory limit configured by redis_mgr according to node free memory |
 | redis_maxmemory | Current memory limit configured by redis_mgr according to db memory limits |
@@ -240,6 +239,7 @@ Here are the metrics available to Prometheus:
 | redis_mem_fragmentation_ratio | Memory fragmentation ratio (1.3 means 30% overhead) |
 | redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error |
 | redis_mem_replication_backlog | Size of replication backlog |
+| redis_module_fork_in_progress | A binary value that indicates if there is an active fork spawned by a module (1) or not (0) |
 | redis_process_cpu_system_seconds_total | Shard Process system CPU time spent in seconds |
 | redis_process_cpu_usage_percent | Shard Process cpu usage precentage |
 | redis_process_cpu_user_seconds_total | Shard user CPU time spent in seconds |
@@ -253,10 +253,10 @@ Here are the metrics available to Prometheus:
 | redis_rdb_bgsave_in_progress | Indication if bgsave is currently in progress |
 | redis_rdb_last_cow_size | Last bgsave (or SYNC fork) used CopyOnWrite memory |
 | redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
+| redis_repl_touch_bytes | Running counter of the number of bytes sent to replicas as TOUCH commands by the shard as a result of a READ command that was processed; Calculate the throughput for a time period by comparing the value at different times |
+| redis_total_commands_processed | Running counter of the number of commands processed by the shard; Calculate the number of commands for a time period by comparing the value at different times |
+| redis_total_connections_received | Running counter of the number of connections received by the shard; Calculate the number of connections for a time period by comparing the value at different times |
+| redis_total_net_input_bytes | Running counter of the number of bytes received by the shard; Calculate the throughput for a time period by comparing the value at different times |
+| redis_total_net_output_bytes | Running counter of the number of bytes sent by the shard; Calculate the throughput for a time period by comparing the value at different times |
 | redis_up | Shard is up and running |
 | redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |
-| repl_touch_bytes | Running counter of the number of bytes sent to replicas as TOUCH commands by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
-| total_commands_processed | Running counter of the number of commands received by the shard; Calculate the number of commands for a time period by comparing the value at different times (Resolution: Seconds) |
-| total_connections_received | Running counter of the number of connections received by the shard; Calculate the number of connections for a time period by comparing the value at different times (Resolution: Seconds) |
-| total_net_input_bytes | Running counter of the number of bytes received by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
-| total_net_output_bytes | Running counter of the number of bytes sent by the shard; Calculate the number of bytes for a time period by comparing the value at different times (Resolution: Seconds) |
