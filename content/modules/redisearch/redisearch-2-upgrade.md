@@ -32,7 +32,7 @@ To upgrade a RediSearch 1.x database to RediSearch 2.x:
 
     1. Browse to the module package and upload it to the cluster.
 1. Create a new database :
-    1. [Create a database]({{< relref "/rs/administering/creating-databases.md" >}}) and configure the database settings.
+    1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}) and configure the database settings.
     1. In the Redis Modules section, click ![Add](/images/rs/icon_add.png#no-click "Add"), select **RediSearch 2**, and click ![Save](/images/rs/icon_save.png#no-click "Save").
     1. Click **Activate** to create the database.
 1. Migrate the data to the RediSearch 2.x database:
