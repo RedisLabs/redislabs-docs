@@ -16,4 +16,10 @@ For this quick start tutorial, you need:
     - A Redis Enterprise Software database [with the RediSearch module]({{< relref "/modules/add-module-to-database.md" >}})
 - redis-cli with connectivity to a redis database
 
+## Try out RediSearch 1.x
+
 {{< embed-md "tryout-redisearch.md" >}}
+
+## Try out RediSearch 2.x
+
+{{< embed-md "tryout-redisearch-2.md" >}}
