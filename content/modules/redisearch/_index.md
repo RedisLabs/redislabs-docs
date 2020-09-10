@@ -14,10 +14,10 @@ to get a geo-replicated, integrated query, and full-text search over efficient i
 You can build compound indexes that index multiple fields in documents with text, numeric, and geospatial data types.
 With those indexes you can do language-aware fuzzy matching, fast auto-complete, exact phrase matching, numeric filtering, and geo-radius queries.
 
-As the documents change in your database change, the index automatically processes these changes to keep your searches updated.
-You can limit the index to only contain the index structure so that the results return the unique docID you defined.
+As the documents in your database change, the index automatically processes these changes to keep your searches updated.
+You can also limit the index to only contain the index structure so that the results return a unique docID.
 
-For full-text searches, developers can customize the fields queries and ranking of the search results.
+For full-text searches, developers can customize the field queries and ranking of the search results.
 When querying, developers can use multiple predicates that query both text, numeric, and geospatial fields in one query.
 Sorting can be done by a given field as well and can be limited with an offset for simplified support for results pages.
 
@@ -57,7 +57,7 @@ If the user needs to retrieve a specific document by its ID, a simple HGETALL ca
 
 ## Resharding and RediSearch
 
-By removing the index from the keyspace and having it created based on the data in hashes - we removed the obstacle for resharding, which was not possible in versions 1.X.
+By removing the index from the keyspace and having it created based on the data in hashes - we removed the obstacle for resharding, which was not possible in version 1.x.
 When half of the data moves to the new shard the index related to that data will be created synchronously and, when the original shard is trimmed later, RediSearch detects the deleted keys and removes them from the index.
 Because the index on the new shard is created synchronously though, it's expected that the resharding process will take longer.
 

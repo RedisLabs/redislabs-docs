@@ -20,7 +20,7 @@ Run this command:
 ```
 
 {{< note >}}
-For databases in a Redis Cloud Essentials subscription, you need to add the index name, as a tag, to the document key to make sure that the index and the documents are located on the same shard:
+For databases in a Redis Cloud Essentials subscription, you need to add the index name to the document key as a tag to make sure that the index and the documents are located on the same shard:
 
 ```sh
 FT.CREATE myIdx ...
@@ -29,7 +29,7 @@ FT.ADD myIdx {myIdx}:docid ...
 
 {{< /note >}}
 
-### Add info to test index
+### Add data to test index
 
 Now add some data to this index. Here we add an object with the key
 doc1 and then add a title of "hello world", body of "my favorite

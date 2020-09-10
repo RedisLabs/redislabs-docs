@@ -32,7 +32,7 @@ HSET myIdx {myIdx}:docid ...
 
 {{< /note >}}
 
-### Add info to test index
+### Add data to test index
 
 Now add some data to this index. Here we add an object with the key
 doc1 and then add a title of "hello world", body of "my favorite
