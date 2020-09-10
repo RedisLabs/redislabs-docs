@@ -40,7 +40,7 @@ To upgrade a RediSearch 1.x database to RediSearch 2.x:
     1. Extract the package.
     1. In the extracted directory, run the RediSearch_Syncer.py script:
 
-        ```
+        ```sh
         python RediSearch_Syncer.py -d <destination_url> -s <source_url> [-l] [--add-prefix <prefix>]
         ```
 
@@ -48,15 +48,14 @@ To upgrade a RediSearch 1.x database to RediSearch 2.x:
 
         - `destination url` - 
         - `source url` - 
-        - `-l` -
-        - `--add-prefix <prefix>` -
+        - `--add-prefix <prefix>` (optional) - Specify the prefix of the hashes that you want to migrate to the new RediSearch 2 database
 
         The script shows a table with the progress of the replication.
-    
-    1. Stop the traffic on the source database *?*
+
     1. Go to each shard of the database and run `rladmin info replication`.
-    
-        When the offset of each shard in the replication shown in `rladmin info replication` matches the `repl_offset`,
+
+        When the offset of each shard in the replication shown in `shard-cli info replication` matches the `repl_offset`,
         the replication is complete.
 
-    1. Stop the `RediSearch_Syncer.py` script.
+    1. Stop the traffic on the source database.
+    1. Quit the `RediSearch_Syncer.py` script with Ctrl-Q.
