@@ -12,7 +12,7 @@ aliases:
 
 ---
 Modules add additional functionality to your databases for specific use cases.
-You can add modules to the database when you create the database or after the database is already created.
+You can add modules to the database when you create the database.
 
 ## Add modules to a database
 
