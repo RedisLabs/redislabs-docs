@@ -1,7 +1,5 @@
 // const SEARCH_API_URL = "https://docsearch-dot-redislabs-university.appspot.com/search"
-const SEARCH_API_URL = "http://localhost:8081/search"
-const wikiUrl = 'https://en.wikipedia.org'
-const params = 'action=query&list=search&format=json&origin=*'
+const SEARCH_API_URL = "https://docsearch-dot-redislabs-university.appspot.com/search"
 const THIRTY_SECONDS = 30000
 
 function setWithExpiry(key, value, ttl) {
@@ -15,7 +13,6 @@ function setWithExpiry(key, value, ttl) {
 }
 
 function getWithExpiry(key) {
-  return
 	const itemStr = localStorage.getItem(key)
 	if (!itemStr) {
 		return null
@@ -78,7 +75,7 @@ new Autocomplete('#autocomplete', {
           <div class="search-section-title">
             ${result.section_title}
           </div>
-          <div class="search-snippet">
+          <div class="search-body">
             ${result.body}
           </div>
         </li>
