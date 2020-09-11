@@ -69,14 +69,18 @@ new Autocomplete('#autocomplete', {
           <div class="search-root">
             ${root}
           </div>
-          <div class="search-title">
-            ${result.title}
+          <div class="search-left">
+            <div class="search-title">
+              ${result.title}
+            </div>
           </div>
-          <div class="search-section-title">
-            ${result.section_title}
-          </div>
-          <div class="search-body">
-            ${result.body}
+          <div class="search-right">
+            <div class="search-section-title">
+              ${result.section_title}
+            </div>
+            <div class="search-body">
+              ${result.body}
+            </div>
           </div>
         </li>
       `
@@ -86,11 +90,18 @@ new Autocomplete('#autocomplete', {
           <div class="search-root">
             ${root}
           </div>
-          <div class="search-title">
-            ${result.title}
+          <div class="search-left">
+            <div class="search-title">
+              ${result.title}
+            </div>
           </div>
-          <div class="search-body">
-            ${result.body}
+          <div class="search-right">
+            <div class="search-section-title">
+              ${result.title}
+            </div>
+            <div class="search-body">
+              ${result.body}
+            </div>
           </div>
         </li>
       `
