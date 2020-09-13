@@ -62,9 +62,9 @@ You can now serve your index information from geo-distributed database instances
 
 ## Resharding and RediSearch
 
-By removing the index from the keyspace and having it created based on the data in hashes - we removed the obstacle for resharding, which was not possible in version 1.x.
-When half of the data moves to the new shard the index related to that data will be created synchronously and, when the original shard is trimmed later, RediSearch detects the deleted keys and removes them from the index.
-Because the index on the new shard is created synchronously though, it's expected that the resharding process will take longer.
+By moving the index out of the keyspace and structuring the data as hashes, we made it possible to reshard the database.
+When half of the data moves to the new shard, the index related to that data is created synchronously and RediSearch removes the keys from the index when it detects that the keys were deleted.
+Because the index on the new shard is created synchronously though, it's expected that the resharding process will take longer than resharding of a database without RediSearch.
 
 ## Related links
 
