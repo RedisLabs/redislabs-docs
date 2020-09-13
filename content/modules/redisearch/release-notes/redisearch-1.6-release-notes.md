@@ -5,6 +5,23 @@ weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 1.6.14 (September 2020)
+
+- This is a maintenance release for version 1.6.
+
+Details:
+
+- Minor features:
+
+    - #[1420](https://github.com/RediSearch/RediSearch/pull/1420) The hard limit of the number of results produced by FT.SEARCH is now configurable with MAXSEARCHRESULTS.
+
+- Bug fixes:
+
+    - #[1313](https://github.com/RediSearch/RediSearch/pull/1313) Wrong error of unsupported phonetic field.
+    - #[1286](https://github.com/RediSearch/RediSearch/pull/1286) Possible crash on optional search.
+    - #[1449](https://github.com/RediSearch/RediSearch/pull/1449) Rare file descriptor leak on FORK GC.
+    - #[1469](https://github.com/RediSearch/RediSearch/pull/1469) Endless loop when reaching internal docid above uint32_max.
+
 ## RediSearch 1.6.13 (May 2020)
 
 This is a maintenance release for version 1.6.
