@@ -55,6 +55,11 @@ where each document is represented by a single key, and each property and its va
 For retrieval, we simply perform an HGETALL query on each retrieved document, returning its entire data.
 If the user needs to retrieve a specific document by its ID, a simple HGETALL can be performed by the user.
 
+## RediSearch in Active-Active databases
+
+As a result of the new RediSearch architecture and methodology, [RediSearch 2.x supports Active-Active databases]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}).
+You can now serve your index information from geo-distributed database instances.
+
 ## Resharding and RediSearch
 
 By removing the index from the keyspace and having it created based on the data in hashes - we removed the obstacle for resharding, which was not possible in version 1.x.
