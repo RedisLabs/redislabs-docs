@@ -25,3 +25,5 @@ To help visualize this process, let's look at this example:
 |  t4 | Active-Active synchronization | - Sync - |  | - Sync - |  |
 |  t5 | Both hashes are found in each instance | HGETALL doc1<br/>1) "field2"<br/>2) "b"<br/>3) "field1"<br/>4) "a" |  | HGETALL doc1<br/>1) "field2"<br/>2) "b"<br/>3) "field1"<br/>4) "a" |  |
 |  t6 | Search for "a" in each instance finds both documents |  | FT.Search idx "a"<br/>1) 1<br/>2) doc1 |  | FT.Search idx "a"<br/>1) 1<br/>2) doc1 |
+
+The practical result here is that you have a geo-distributed database with a high level of consistency that can also receive search operations on any instance.
