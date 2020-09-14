@@ -29,6 +29,10 @@ Next, run the RedisInsight container. The easiest way is to run the following co
 
 and then point your browser to [http://localhost:8001](http://localhost:8001).
 
+{{% note %}}
+RedisInsight also provides a health check endpoint at [http://localhost:8001/healthcheck/](http://localhost:8001/healthcheck/) to monitor the health of the running container.
+{{% /note %}}
+
 In addition, you can add some additional flags to the docker run command:
 
 1. You can add the `-it` flag to see the logs and view the progress
