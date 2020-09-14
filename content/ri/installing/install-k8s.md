@@ -45,6 +45,13 @@ spec:
         ports:
         - containerPort: 8001 #exposed conainer port and protocol
           protocol: TCP
+        livenessProbe:
+           httpGet:
+              path : /healthcheck/ # exposed RI endpoint for healthcheck
+              port: 8001 # exposed container port
+           initialDelaySeconds: 5 # number of seconds to wait after the container starts to perform liveness probe
+           periodSeconds: 5 # period in seconds after which liveness probe is performed
+           failureThreshold: 1 # number of liveness probe failures after which container restarts
       volumes:
       - name: db
         emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
