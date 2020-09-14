@@ -8,14 +8,14 @@ categories: ["RC"]
 aliases: /rv/api/how-to/backup-and-import-databases/
 ---
 
-## Backup a Database
+## Backup a database
 
 When you create or update a database, you can specify the (optional) `periodicBackupPath` parameter
 with a [backup path](/rv/administration/configuration/backups/).
 This parameter enables periodic and on-demand backup operations for the specified database.
 
 The API operation for on-demand backups is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
-On-demand database backup is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
+On-demand database backup is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}})".
 
 ### Prerequisites for backups
 
@@ -34,10 +34,10 @@ Before you enable backups, you must define the variables that the API requires:
 The backup database API does not require a body.
 Instead, the `periodicBackupPath` must be set to a valid path with available storage capacity to store the backup files for the specific database.
 
-## Import a Database
+## Import a database
 
 You can import data into an existing database from multiple storage sources, including AWS S3, Redis, FTP.
-Database import is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
+Database import is an [asynchronous operation]({{< relref  "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}})".
 
 The API operation for performing on-demand backup is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/import`.
 
@@ -50,9 +50,9 @@ The requirements for data import are:
 
 The duration of the import process depends on the amount of data imported and the network bandwidth between the data source and the importing database.
 
-{{% warning %}}
+{{< warning >}}
 Data imported into an existing database overwrites any existing data.
-{{% /warning %}}
+{{< /warning >}}
   
 ### Database import script
 

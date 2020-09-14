@@ -11,12 +11,12 @@ Deleting a database is just as easy as creating one.
 Make sure that you are truly done with the database,
 because after you delete the database it cannot be recovered (except from your backups).
 
-{{% note %}}
+{{< note >}}
 - Only users that are defined as Owners on the Redis Cloud account can delete a database.
 - We recommend that you create a backup of your database before deleting it.
-{{% /note %}}
+{{< /note >}}
 
-## Deleting a Database
+## Deleting a database
 
 1. Go to the **Databases** page from the Redis Cloud menu.
 1. Click on the database you wish to delete from the list of your databases.

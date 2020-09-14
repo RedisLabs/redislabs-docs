@@ -1,17 +1,16 @@
 ---
-Title: Memory Management with Redis Enterprise Software (RS)
+title: Memory Management with Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-RS manages node memory so that data is entirely in RAM for improved database performance.
+Redis Enterprise Software (RS) manages node memory so that data is entirely in RAM for improved database performance.
 RS is designed to handle memory management to optimize database performance - better than OS memory management.
 If not enough RAM is available, RS prevents adding more data into the databases.
 
 RS protects the existing data and prevents the database from being able to store data into the shards.
-You can configure the cluster to move the data to another node, or even discard it according to the [eviction policy]
-({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) set on each database by the administrator.
+You can configure the cluster to move the data to another node, or even discard it according to the [eviction policy]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) set on each database by the administrator.
 
 RoF [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 manages memory so that you can also use Flash memory (SSD) to store data.
@@ -32,7 +31,7 @@ In addition to cluster memory management,
 we recommend that you have a monitoring platform that alerts you proactively before a system gets low on RAM.
 You must maintain sufficient free memory to make sure that you have a healthy RS installation.
 
-## Memory Statistics
+## Memory statistics
 
 You can see the status of the cluster memory with these statistics:
 

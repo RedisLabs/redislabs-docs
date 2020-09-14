@@ -1,7 +1,7 @@
 ---
 Title: Logging and Audit Events
 description:
-weight: $weight
+weight: 70
 alwaysopen: false
 categories: ["RS"]
 ---

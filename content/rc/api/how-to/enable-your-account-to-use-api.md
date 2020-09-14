@@ -1,6 +1,6 @@
 ---
 Title: Enable the API for your Account
-description: Enabling an account to use API using the Redis Labs web UI
+description: Enabling an account to use API using the Redis Cloud Admin Console
 weight: 10
 alwaysopen: false
 categories: ["RC"]
@@ -8,9 +8,9 @@ aliases: /rv/api/how-to/enable-your-account-to-use-api/
 ---
 By default, the API is disabled for accounts.
 
-{{% warning %}}
+{{< warning >}}
 Make sure that the access key is protected against unauthorized use. Anyone who sends an API request with the access key can make changes to your account.
-{{% /warning %}}
+{{< /warning >}}
 
 To enable an account to use API:
 

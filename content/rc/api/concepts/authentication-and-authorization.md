@@ -18,9 +18,9 @@ All API operations require authentication using a set of 2 API Keys:
 The [account key that you create]({{< relref "/rc/api/how-to/enable-your-account-to-use-api" >}}) identifies your Redis Labs account when you perform an API request.
 A Redis Labs user can belong to one or more accounts, but any API operation must be performed within the scope of a specific account.
 
-{{% note %}}
+{{< note >}}
 An account key is an account level secret. Do not share this key with anyone who is not authorized in the account.
-{{% /note %}}
+{{< /note >}}
 
 You create the account key once and you cannot change or remove it after it is created.
 If you want to delete the account key or create a new account key, contact Redis Labs support.
@@ -30,9 +30,9 @@ If you want to delete the account key or create a new account key, contact Redis
 The secret key is a personal key that belongs to a specific user with the **owner** role.
 Only that user can perform requests with that key.
 
-{{% note %}}
+{{< note >}}
 Secret key is a personal secret. Do not share the key with others.
-{{% /note %}}
+{{< /note >}}
 
 A user can [generate multiple secret keys]({{< relref "/rc/api/how-to/create-api-keys-for-your-team" >}})
 for themselves or for other users defined as owners within the same account.

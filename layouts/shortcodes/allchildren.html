@@ -15,11 +15,10 @@
 {{- $cpage := (.Scratch.Get "current") }}
 
 <ul class="children children-{{$style}}">
-	{{- .Scratch.Set "pages" $cpage.Pages }}
+	{{- $pages := $cpage.Pages }}
 	{{- if $cpage.Sections}}
-			{{- .Scratch.Set "pages" ($cpage.Pages | union $cpage.Sections) }}
+			{{- $pages = ($cpage.Pages | union $cpage.Sections) }}
     {{- end}}
-    {{- $pages := (.Scratch.Get "pages") }}
 
 	{{- if eq $sortTerm "Weight"}}
 		{{- template "childs" dict "menu" $pages.ByWeight "style" $style "showhidden" $showhidden "count" 1 "depth" $depth "pages" .Site.Pages "description" $withDescription "sortTerm" $sortTerm}}
@@ -49,11 +48,11 @@
 	{{- $numn := add $num $.count }}
 
 	{{- (printf "<h%d>" $numn)|safeHTML}}
-		<a href="{{.URL}}" >{{ .Title }}</a>
+		<a href="{{.RelPermalink}}" >{{ .Title }}</a>
 	{{- (printf "</h%d>" $numn)|safeHTML}}
 {{- else}}
 	{{- (printf "<%s>" $.style)|safeHTML}}
-		<a href="{{.URL}}" >{{ .Title }}</a>
+		<a href="{{.RelPermalink}}" >{{ .Title }}</a>
 	{{- (printf "</%s>" $.style)|safeHTML}}
 {{- end}}
 
@@ -75,11 +74,10 @@
 {{- if eq $.style "li" }}
 <ul>
 {{- end}}
-	{{- .Scratch.Set "pages" .Pages }}
+	{{- $pages := .Pages }}
     {{- if .Sections}}
-	    {{- .Scratch.Set "pages" (.Pages | union .Sections) }}
+		{{- $pages = (.Pages | union .Sections) }}
     {{- end}}
-    {{- $pages := (.Scratch.Get "pages") }}
 
 	{{- if eq $.sortTerm "Weight"}}
 		{{- template "childs" dict "menu" $pages.ByWeight  "style" $.style "showhidden" $.showhidden "count" (add $.count 1) "depth" $.depth "pages" $.pages "description" $.description "sortTerm" $.sortTerm}}

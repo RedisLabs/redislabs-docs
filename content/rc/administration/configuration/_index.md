@@ -11,4 +11,4 @@ While there is very little configuration of Redis Cloud
 required, there are some things that you can and may want to do to
 tailor your database to your use case.
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}

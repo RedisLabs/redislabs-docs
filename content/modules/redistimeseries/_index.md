@@ -29,7 +29,7 @@ Each sample is a tuple of the time and the value of 128 bits,
 
 In RedisTimeSeries, we introduce a new data type that uses chunks of memory of fixed size for time series samples, indexed by the same Radix Tree implementation as Redis Streams. With Streams, you can create [a capped stream](https://redis.io/commands/xadd), effectively limiting the number of messages by count. In RedisTimeSeries, you can apply a retention policy in milliseconds. This is better for time series use cases, because they are typically interested in the data during a given time window, rather than a fixed number of samples.
 
-### Downsampling / compaction
+### Downsampling/compaction
 
 | Before Downsampling | After Downsampling |
 | --- | --- |
@@ -43,7 +43,7 @@ When using Redis’ core data structures, you can only retrieve a time series by
 
 RedisTimeSeries does this indexing for you based on `field value` pairs (a.k.a labels) you can add to each time series, and use to filter at query time (a full list of these filters is available in our [documentation](https://oss.redislabs.com/redistimeseries/commands/#filtering)). Here’s an example of creating a time series with two labels (sensor_id and area_id are the fields with values 2 and 32 respectively) and a retention window of 60,000 milliseconds:
 
-```src
+```sh
     TS.CREATE temperature RETENTION 60000 LABELS sensor_id 2 area_id 32
 ```
 
@@ -51,7 +51,7 @@ RedisTimeSeries does this indexing for you based on `field value` pairs (a.k.a l
 
 When you need to query a time series, it’s cumbersome to stream all raw data points if you’re only interested in, say, an average over a given time interval. RedisTimeSeries follows the Redis philosophy to only transfer the minimum required data to ensure lowest latency. Below is an example of aggregation query over time buckets of 5,000 milliseconds with an [aggregation function](https://oss.redislabs.com/redistimeseries/commands/#tsrange):  
 
-```src
+```sh
     127.0.0.1:12543> TS.RANGE temperature:3:32 1548149180000 1548149210000 AGGREGATION avg 5000
     1) 1) (integer) 1548149180000
        2) "26.199999999999999"
@@ -77,7 +77,7 @@ RedisTimeSeries comes with several integrations into existing time series tools.
 
 Furthermore, we also created direct integrations for [Grafana](https://github.com/RedisTimeSeries/grafana-redistimeseries) and [Telegraph](https://github.com/RedisTimeSeries/telegraf). [This repository](https://github.com/RedisTimeSeries/prometheus-demos) contains a docker-compose setup of RedisTimeSeries, its remote write adaptor, Prometheus and [Grafana](https://grafana.com/). It also comes with a set of data generators and pre-built Grafana dashboards.
 
-## Time Series Modelling Approaches with Redis
+## Time series modelling approaches with Redis
 
 ### Data modelling approaches
 
@@ -124,7 +124,7 @@ As can be seen, the two approaches of using Sorted Sets yield very different thr
 
 The read query we used in this benchmark queried a single time series and aggregated it in one-hour time buckets by keeping the maximum observed CPU percentage in each bucket. The time range we considered in the query was exactly one hour, so a single maximum value was returned. For RedisTimeSeries, this is out of the box functionality (as discussed earlier).  
 
-```src
+```sh
     127.0.0.1:12543> TS.RANGE cpu_usage_user{1340993056} 1451606390000 1451609990000 AGGREGATION max 3600000
 ```
 
@@ -134,7 +134,7 @@ For the Redis Streams and Sorted Sets approaches, we created [the following LUA 
 
 This is where you can see the real power of having dedicated data structure for a given use case with a toolbox that runs alongside it. RedisTimeSeries just blows all other approaches out of the water, and is the only one to achieve sub-millisecond response times.
 
-### Memory Utilization
+### Memory utilization
 
 In both the Redis Streams and Sorted Set approaches, the samples were kept as a string, while in RedisTimeSeries it was a double. In this specific data set, we chose a CPU measurement with rounded integer values between 0-100, which thus consumes two bytes of memory as a string. In RedisTimeSeries, however, each metric had 64-bit precision.
 

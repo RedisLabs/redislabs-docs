@@ -12,7 +12,7 @@ You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](ht
 - The cURL HTTP client
 - An HTTP client in any programming language
 
-## Swagger User Interface
+## Swagger user interface
 
 The [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models and simulated usage.
 
@@ -36,9 +36,9 @@ To authenticate to the Swagger UI:
     1. Enter the [Secret Key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team.md" >}}) as the `x-api-secret-key` value and click **Authorize**.
     1. Click **Close**.
 
-{{% note %}}
+{{< note >}}
 The key values are not saved when you refresh the page.
-{{% /note %}}
+{{< /note >}}
 
 When authorization is successful the lock icon appears as a closed lock.
 
@@ -80,9 +80,9 @@ you can enter the values for the parameters.
 
         ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
-{{% note %}}
-The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.
-{{% /note %}}
+{{< warning >}}
+The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is. Use the [how to articles]({{< relref "/rc/api/how-to/_index.md" >}}) for more examples of Cloud API operations.
+{{< /warning >}}
 
 ## Using the `cURL` HTTP client
 

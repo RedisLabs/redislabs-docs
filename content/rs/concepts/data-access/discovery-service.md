@@ -21,6 +21,8 @@ side by side in a given cluster where some clients can use Discovery
 Service based connection while others can use DNS name resolution when
 connecting to databases.
 
+## How discovery service works
+
 The Discovery Service is available for querying on each node of the
 cluster, listening on port 8001. To employ it, your application utilizes
 a [Redis Sentinel enabled client
@@ -48,7 +50,7 @@ Software Discovery Service you can connect to port 8001 with redis-cli
 utility and execute "SENTINEL masters". Following is a sample output
 from one of the nodes of a Redis Enterprise Software cluster:
 
-```src
+```sh
 $ ./redis-cli -p 8001
 127.0.0.1:8001> SENTINEL masters
 1) 1) "name"
@@ -82,14 +84,19 @@ implements only the parts required to provide applications with easy
 High Availability, be compatible with the protocol, and not rely on DNS
 to derive which node in the cluster to communicate with.
 
+{{< note >}}
+To use Redis Sentinel, every database name must be unique across the cluster.
+{{< /note >}}
+
 ## Redis client support
 
-You can find the recommended list of client libraries to use for
-Discovery Service using the Redis Sentinel API on the [hardware and
-software requirements
-page]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}),
-under "Client" section.
+We recommend these clients that are tested for use with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) that uses the Redis Sentinel API:
 
-Note: Redis Sentinel API can return endpoints for both master and slave
-endpoints. Discovery Service only supports master endpoints and does not
+{{< embed-md "discovery-clients.md" >}}
+
+{{< note >}}
+Redis Sentinel API can return endpoints for both master and slave
+endpoints.
+Discovery Service only supports master endpoints and does not
 support returning slave endpoints for a database.
+{{< /note >}}

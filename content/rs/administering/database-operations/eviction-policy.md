@@ -5,9 +5,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-The eviction policy designates a data eviction method for Redis
-Enterprise Software (RS) to use when the database size reaches its
-limit. You can select any of the following:
+The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.
+The eviction policies are:
 
 | **Policy** | **Description** |
 |------------|-----------------|
@@ -20,17 +19,11 @@ limit. You can select any of the following:
 |  volatile-random | Randomly evicts keys with an "expire" field set |
 |  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
 
-One mechanism to avoid this, but still keep performance is to use [Redis
-on
-Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
-It can span your database across RAM + Flash Memory and intelligently
-manage what data is hot and should be in RAM and what data is not and
-can be on Flash memory (SSD).
+{{% note %}}
+- [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) always operate in noeviction mode.
+- Review the documentation for each Redis module to see how it uses eviction.
+{{% /note %}}
 
-Note: [Geo-Distributed
-CRDBs]({{< relref "/rs/administering/active-active.md" >}})
-always operate in noeviction mode.
-
-Warning: Some redis Modules do not fully support eviction or all
-eviction types. Please see each module's documentation for more
-information on this topic.
+If you want to avoid data eviction, we recommend that you use [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
+RoF stores the hot data of your dataset in RAM and the rest of your dataset in Flash memory (SSD).
+This lets you kept more data in your database while keeping only the most critical data in high-cost RAM.

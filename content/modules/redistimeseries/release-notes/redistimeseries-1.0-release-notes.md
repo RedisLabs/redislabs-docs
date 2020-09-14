@@ -5,14 +5,14 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisTimeSeries 1.0.3
+## RedisTimeSeries 1.0.3 (September 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.0.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
 
-Main Features:
+Main features:
 
 - #[143](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/143) Standard Deviation for Aggregations
 - #[163](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/163) `TS.RANGE` and `TS.MRANGE` can limit results via optional `COUNT` flag
@@ -29,7 +29,7 @@ Main Performance improvements:
 - #[3651](https://github.com/RedisTimeSeries/RedisTimeSeries/commit/3651ef8eb65b390e333053b91a64617fc2382f6e) Do not use `_union` if there's only 1 leaf in the index
 - #[0a68](https://github.com/RedisTimeSeries/RedisTimeSeries/commit/0a68d4eca95108595ac7dfbae68d3f0371e41470) Make _difference faster by iterating over the left dict (which is always smaller)
 
-## RedisTimeSeries 1.0.1
+## RedisTimeSeries 1.0.1 (July 2019)
 
 Update urgency: Minor
 This is a maintenance release for version 1.0.
@@ -44,7 +44,7 @@ This is the General Availability release of RedisTimeSeries!  Please read the [f
 
 In RedisTimeSeries, we are introducing a new data type that uses chunks of memory of fixed size for time series samples, indexed by the same [Radix Tree implementation](https://github.com/antirez/rax) as Redis Streams. With Streams, you can create a [capped stream](https://redis.io/commands/xadd), effectively limiting the number of messages by count. In RedisTimeSeries, you can apply a retention policy in milliseconds. This is better for time series use cases, because they are typically interested in the data during a given time window, rather than a fixed number of samples.
 
-#### Downsampling / compaction
+#### Downsampling/compaction
 
 If you want to keep all of your raw data points indefinitely, your data set will grow linearly over time. However, if your use case allows you to have less fine-grained data further back in time, downsampling can be applied. This allows you to keep fewer historical data points by aggregating raw data for a given time window using a given aggregation function. [RedisTimeSeries supports downsampling](https://oss.redislabs.com/redistimeseries/commands/#tscreaterule) with the [following aggregations](https://oss.redislabs.com/redistimeseries/commands/#tsrange): avg, sum, min, max, range, count, first and last.  
 
@@ -54,7 +54,7 @@ When using Redis’ core data structures, you can only retrieve a time series by
 
 RedisTimeSeries does this indexing for you based on `field value` pairs (a.k.a labels) you can add to each time series, and use to filter at query time (a full list of these filters is available in our documentation). Here’s an example of creating a time series with two labels (sensor_id and area_id are the fields with values 2 and 32 respectively) and a retention window of 60,000 milliseconds:
 
-```src
+```sh
 TS.CREATE temperature RETENTION 60000 LABELS sensor_id 2 area_id 32
 ```
 
@@ -62,7 +62,7 @@ TS.CREATE temperature RETENTION 60000 LABELS sensor_id 2 area_id 32
 
 When you need to query a time series, it’s cumbersome to stream all raw data points if you’re only interested in, say, an average over a given time interval. RedisTimeSeries follows the Redis philosophy to only transfer the minimum required data to ensure lowest latency. Below is an example of aggregation query over time buckets of 5,000 milliseconds with an [aggregation function](https://oss.redislabs.com/redistimeseries/commands/#tsrange):  
 
-```src
+```sh
 127.0.0.1:6379> TS.RANGE temperature:3:32 1548149180000 1548149210000 AGGREGATION avg 5000
 1) 1) (integer) 1548149180000
    2) "26.199999999999999"

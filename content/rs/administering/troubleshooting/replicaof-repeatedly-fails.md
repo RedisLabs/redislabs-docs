@@ -1,37 +1,28 @@
 ---
-Title: ReplicaOf Repeatedly Fails
+Title: Replica Of Repeatedly Fails
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-There might be instances in which the Replica of process repeatedly
-fails and restarts itself on Redis Enterprise Software (RS). This can
-result from the Redis "client-output-buffer-limit" setting on the source
-database being configured to a relatively small value, which causes the
-connection to be dropped.
+**Problem**: The Replica Of process repeatedly fails and restarts
 
-To identify this issue you can review the Redis log of the source
-database and find an entry in the log describing this issue.
+**Diagnostic**: A log entry in the Redis log of the source database shows repeated failures and restarts.
 
-To resolve this issue, follow the instructions below to reconfigure the
-buffer on the source database to a bigger value:
+**Cause**: The Redis "client-output-buffer-limit" setting on the source database
+is configured to a relatively small value, which causes the connection drop.
 
-- If the source database is a Redis that is part of RS, run the
-    following command in
-    [rladmin]({{< relref "/rs/references/rladmin.md" >}}) to
-    increase the slave buffer size of the **source database**:
-    tune db \< db:id \| name \> slave_buffer \< value \>
+**Resolution**: Reconfigure the buffer on the source database to a bigger value:
 
-<!-- -->
+- If the source is a Redis database on an RS cluster,
+    increase the slave buffer size of the **source database** with:
 
-- If the source database is a Redis that is not part of RS, run the
-    [config set](http://redis.io/commands/config-set) command through
-    redis-CLI to increase the client output buffer size of the **source
-    database**:
-    config set client-output-buffer-limit "slave \< hard limit \> \<
-    soft limit \> \< soft seconds \>"
+    `rladmin tune db < db:id | name > slave_buffer < value >`
 
-For additional information about this issue and configuration, refer to
-the following blog post: [Top Redis Headaches for Devops - Replication
-Buffer](https://redislabs.com/blog/top-redis-headaches-for-devops-replication-buffer).
+- If the source is a Redis database not on an RS cluster,
+    use the [config set](http://redis.io/commands/config-set) command through
+    redis-CLI to increase the client output buffer size of the **source database** with:
+
+    `config set client-output-buffer-limit "slave <hard_limit> <soft_limit> <soft_seconds>"`
+
+**Additional information**: [Top Redis Headaches for Devops - Replication Buffer](https://redislabs.com/blog/top-redis-headaches-for-devops-replication-buffer)
