@@ -7,7 +7,7 @@ categories: ["Modules"]
 module: RediSearch
 ---
 RediSearch 2.x includes some significant changes to the architecture of RediSearch that provide improved functionality.
-The main architectural change is that the indexes are stored outside of the redis database that contains the data.
+The main architectural change is that the indexes are stored outside of the Redis database that contains the data.
 This allows for improvements in command efficiency.
 It also allows for improvements in replication between clusters because the index changes are managed by the participating clusters rather than being synchronized with the data.
 
@@ -20,7 +20,13 @@ This change allows databases with RediSearch to support:
 
 To upgrade a Redis Enterprise Software (RS) database with RediSearch 1.x to RediSearch 2.x, you have to set up a new database with RediSearch 2.x and use the `RediSearch_Syncer.py` script to replicate the data from the old database into the new database.
 
-To upgrade a RediSearch 1.x database to RediSearch 2.x:
+## Prerequisites
+
+Make sure that you have Python 2 (`sudo apt install python`) installed on the host where you will run the synchronization script.
+
+## Replicating data from RediSearch 1.x to RediSearch 2.x:
+
+To replicate a RediSearch 1.x database to a RediSearch 2.x database:
 
 1. Log in to the web UI of the RS cluster that you want to host the new database with RediSearch 2.x.
 1. Add the RediSearch 2.x module to the cluster:
@@ -31,13 +37,17 @@ To upgrade a RediSearch 1.x database to RediSearch 2.x:
        ![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
 
     1. Browse to the module package and upload it to the cluster.
-1. Create a new database :
+1. Create a new database with RediSearch 2.x:
     1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}) and configure the database settings.
     1. In the Redis Modules section, click ![Add](/images/rs/icon_add.png#no-click "Add"), select **RediSearch 2**, and click ![Save](/images/rs/icon_save.png#no-click "Save").
     1. Click **Activate** to create the database.
 1. Migrate the data to the RediSearch 2.x database:
     1. Download the RediSearch_Syncer package for your operating system.
-    1. Extract the package.
+        - [RedHat Enterprise Linux 7](http://redismodules.s3.amazonaws.com/redisearch/RediSearchSyncer/RediSearchSyncer-rhel7.zip)
+        - [Ubuntu 18.04](http://redismodules.s3.amazonaws.com/redisearch/RediSearchSyncer/RediSearchSyncer-bionic.zip)
+        - [Ubuntu 16.04](http://redismodules.s3.amazonaws.com/redisearch/RediSearchSyncer/RediSearchSyncer-xenial.zip)
+        - [Ubuntu 14.04](http://redismodules.s3.amazonaws.com/redisearch/RediSearchSyncer/RediSearchSyncer-trusty.zip)
+    1. Extract the package with: `unzip <package_name>`
     1. In the extracted directory, run the RediSearch_Syncer.py script:
 
         ```sh
@@ -48,7 +58,7 @@ To upgrade a RediSearch 1.x database to RediSearch 2.x:
 
         - `destination url` - The replication URL of the RediSearch 2.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
         - `source url` - The replication URL of the RediSearch 1.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
-        - `--add-prefix <prefix>` (optional) - Adds a prefix to the keys that are migrated to the new database
+        - `--add-prefix <prefix>` (optional) - Adds a prefix to the keys that are replicated to the new database
 
         The script shows a table with the progress of the replication.
         Press **F5** to see the updated status of the replication process.
