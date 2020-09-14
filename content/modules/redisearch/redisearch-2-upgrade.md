@@ -46,16 +46,19 @@ To upgrade a RediSearch 1.x database to RediSearch 2.x:
 
         Where:
 
-        - `destination url` - 
-        - `source url` - 
-        - `--add-prefix <prefix>` (optional) - Specify the prefix of the hashes that you want to migrate to the new RediSearch 2 database
+        - `destination url` - The replication URL of the RediSearch 2.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
+        - `source url` - The replication URL of the RediSearch 1.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
+        - `--add-prefix <prefix>` (optional) - Adds a prefix to the keys that are migrated to the new database
 
         The script shows a table with the progress of the replication.
+        Press **F5** to see the updated status of the replication process.
 
-    1. Go to each shard of the database and run `rladmin info replication`.
+    1. Stop the processes that are sending requests to the source database so all of the data gets synchronized to the destination database.
+    1. When the status field is `st_in_sync` then you can press **Ctrl-C** to cancel the synchronization process.
 
-        When the offset of each shard in the replication shown in `shard-cli info replication` matches the `repl_offset`,
-        the replication is complete.
+        {{< note >}}
+        You can also verify that the replication is complete in `shard-cli`. Connect to each shard in the source database and run `info replication` to see the replication offset.
+        Then connect to each shard in the destination database and make sure that the offset reported in `info replication` is the same as for the shard in the source database.
+        {{< /note >}}
 
-    1. Stop the traffic on the source database.
-    1. Quit the `RediSearch_Syncer.py` script with Ctrl-Q.
+    1. Press **Q** to quit the `RediSearch_Syncer.py`.
