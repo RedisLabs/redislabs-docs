@@ -29,9 +29,15 @@ Next, run the RedisInsight container. The easiest way is to run the following co
 
 and then point your browser to [http://localhost:8001](http://localhost:8001).
 
-{{% note %}}
 RedisInsight also provides a health check endpoint at [http://localhost:8001/healthcheck/](http://localhost:8001/healthcheck/) to monitor the health of the running container.
-{{% /note %}}
+
+{{< note >}}
+Make sure the directory you pass as a volume to the container has necessary permissions for the container to access it.
+For example, if the previous command returns a permissions error, run the following command:
+
+```bash
+{{< param docker_db_volume_permission >}}
+```
 
 In addition, you can add some additional flags to the docker run command:
 
