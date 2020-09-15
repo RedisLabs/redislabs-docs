@@ -22,7 +22,7 @@ To upgrade a Redis Enterprise Software (RS) database with RediSearch 1.x to Redi
 
 ## Prerequisites
 
-Make sure that you have Python 2 (`sudo apt install python`) installed on the host where you will run the synchronization script.
+Make sure that you have Python 3 (`sudo apt install python3`) installed on the host where you will run the synchronization script.
 
 ## Replicating data from RediSearch 1.x to RediSearch 2.x:
 
@@ -51,7 +51,7 @@ To replicate a RediSearch 1.x database to a RediSearch 2.x database:
     1. In the extracted directory, run the RediSearch_Syncer.py script:
 
         ```sh
-        python RediSearch_Syncer.py -d <destination_url> -s <source_url> [-l] [--add-prefix <prefix>]
+        python3 RediSearch_Syncer.py -d <destination_url> -s <source_url> [-l] [--add-prefix <prefix>]
         ```
 
         Where:
@@ -63,12 +63,20 @@ To replicate a RediSearch 1.x database to a RediSearch 2.x database:
         The script shows a table with the progress of the replication.
         Press **F5** to see the updated status of the replication process.
 
+        For example:
+
+        ```sh
+        python RediSearch_Syncer.py -d redis://admin:IBrS0xaL6rShfB1wKTtUkcQG1g3UWAlTd53AotPdTcQvGIVP@redis-19472.cluster1.local:19472 -s redis://admin:1GjFuUbBqTSPDbRfaxEPLSoXpFmRdFxmBKMD0BuxwMJ2DEaO@redis-19636.cluster1.local:19636
+        ```
+
     1. Stop the processes that are sending requests to the source database so all of the data gets synchronized to the destination database.
+    1. Verify that the replication is complete in `shard-cli`:
+
+        1. Connect to each shard in the source database and run `info replication` to see the replication offset.
+        1. Compare that replication offset to the offset reported by the syncer.
+
     1. When the status field is `st_in_sync` then you can press **Ctrl-C** to cancel the synchronization process.
-
-        {{< note >}}
-        You can also verify that the replication is complete in `shard-cli`. Connect to each shard in the source database and run `info replication` to see the replication offset.
-        Then connect to each shard in the destination database and make sure that the offset reported in `info replication` is the same as for the shard in the source database.
-        {{< /note >}}
-
     1. Press **Q** to quit the `RediSearch_Syncer.py`.
+
+You can now redirect your database connections to the database with RediSearch 2.x.
+
