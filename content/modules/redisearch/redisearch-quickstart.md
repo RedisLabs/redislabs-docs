@@ -19,7 +19,3 @@ For this quick start tutorial, you need:
 ## Try out RediSearch 2.x
 
 {{< embed-md "tryout-redisearch-2.md" >}}
-
-## Try out RediSearch 1.x
-
-{{< embed-md "tryout-redisearch.md" >}}
