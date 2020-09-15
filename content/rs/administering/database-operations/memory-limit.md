@@ -1,5 +1,5 @@
 ---
-Title: Database memory limits in Redis Enterprise Software
+Title: Database Memory Limits
 description:
 weight: $weight
 alwaysopen: false

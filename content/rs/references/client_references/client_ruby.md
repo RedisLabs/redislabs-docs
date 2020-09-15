@@ -19,7 +19,7 @@ Or, include `redis-rb` in your Gemfile by adding to it the following line:
 
 Followed by executing `bundle install`.
 
-## Opening a Connection to Redis Using redis-rb
+## Opening a connection to Redis using redis-rb
 
 The following code creates a connection to Redis using redis-rb:
 
@@ -40,7 +40,7 @@ To adapt this example to your code, make sure that you replace the following val
 
 redis-rb does not support SSL connections natively. For an added security measure, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis) or this [redis-rb fork](https://github.com/RedisLabs/redis-rb) that has been added with SSL support.
 
-## Reading and Writing Data with redis-rb
+## Reading and writing data with redis-rb
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

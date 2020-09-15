@@ -22,7 +22,7 @@ You can connect to a Redis database using a wide variety of tools and libraries 
 - Make friends with Redis' own command line tool - `redis-cli` - to quickly connect and manage any Redis database (**tip:** you can also use `telnet` instead)
 - Use tools that provide a [GUI for Redis](/blog/so-youre-looking-for-the-redis-gui)
 
-## Basic Connection Troubleshooting
+## Basic connection troubleshooting
 
 Connecting to a remote server can be challenging. Here’s a quick checklist for common pitfalls:
 

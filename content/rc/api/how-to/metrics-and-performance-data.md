@@ -10,9 +10,9 @@ You can get metrics and usage statistics for a database from the API operation:
 
 `GET /subscriptions/{subscription-id}/databases/{database-id}/metrics?metricSpan={metric-span}`.
 
-{{% note %}}
+{{< note >}}
 Redis Labs Essentials and Pro databases support metrics API requests.
-{{% /note %}}
+{{< /note >}}
 
 The query accepts 3 parameters:
 
@@ -20,7 +20,7 @@ The query accepts 3 parameters:
 - `database-id` (Required) - The ID of the database
 - `metric-span` (Optional) - The [time span]({{< relref "/rc/api/concepts/metrics#metric-spans-and-intervals" >}}) for the query. The default time span is `1hour`.
 
-## Metrics Query Example
+## Metrics query example
 
 ```shell
 {{% embed-code "rv/api/70-query-metrics.sh" %}}

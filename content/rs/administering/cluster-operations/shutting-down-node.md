@@ -1,25 +1,30 @@
 ---
-Title: Shutting Down a Node
+Title: Stopping a Node with Persistence
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When you shut down a machine acting as a Redis Enterprise Software (RS)
-node, databases that have persistence enabled attempt to persist
-all data to disk before shutting down. Depending on the number of
-databases and their size, the persistence operation might take a long
-time and result in the machine shutdown taking a very long time. In
-other cases, the operating system might force shutdown before all data
-has been persisted to disk, resulting in data loss.
+Because Redis is an in-memory database,
+when you stop a machine that hosts a Redis Enterprise Software (RS) node that has databases with persistence enabled, either:
 
-In order to ensure proper data persistence with no data loss it is
-recommended to run the following command from the operating system
-command-line-interface (CLI) and wait for it to finish before shutting
-down the machine:
+- Redis can delay the machine shutdown as the databases with persistence enabled try to save the data to disk.
+    The length of the delay depends on the number of databases and the size of the data.
+- The operating system can force the node to stop before all of the data is saved to disk. This results in data loss.
 
-```src
+To gracefully stop RS and make sure that data is saved,
+we recommended that you stop the RS processes so that RS saves the data to disk.
+Then you can stop the node without risk of delay or data loss.
+
+{{< note >}}
+To avoid risk of data loss and cluster instability,
+we recommend that at most only one node in the cluster be down at any time.
+{{< /note >}}
+
+To stop the RS processes, run:
+
+```sh
 sudo supervisorctl stop all
 ```
 
-Note: You should only shut down one node at a time.
+Wait for this process to finish and then stop the node.

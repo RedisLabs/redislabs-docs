@@ -104,14 +104,14 @@ certificates, and a self-signed certificate on the client machine.
 
     1. Generate a private key by running the following commands:
 
-        ```src
+        ```sh
         sudo su
         openssl genrsa -out /etc/stunnel/keyclient.pem 4096
         ```
 
     1. Generate a client certificate by running the following commands:
 
-        ```src
+        ```sh
         openssl req -new -x509 -key /etc/stunnel/keyclient.pem
         -out
         /etc/stunnel/cert.pem -days 1826
@@ -120,11 +120,10 @@ certificates, and a self-signed certificate on the client machine.
     When prompted, enter the appropriate configuration details for the
     certificate.
 
-1. Copy the RS nodes certificates from all nodes to the client machine.
+1. Copy the RS [node certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}})
+    from all nodes to the client machine.
     The certificates are saved in a file named proxy_cert.pem, which is
-    stored in /etc/opt/redislabs in each node. For additional details,
-    refer to [Updating TLS certificates]
-    ({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+    stored in /etc/opt/redislabs in each node.
 1. Rename the certificate files fetched from the RS nodes as
     certsvr.pem. For example: certsvr1.pem, certsvr2.pem.
 1. Create a single file for all of the server certificates on the
@@ -188,7 +187,7 @@ in transit between a Redis client and a Redis Enterprise cluster, use
 the REST API or the following rladmin
 command:
 
-```src
+```sh
 rladmin> cluster config min_data_TLS_version [version, e.g. 1.2]
 ```
 

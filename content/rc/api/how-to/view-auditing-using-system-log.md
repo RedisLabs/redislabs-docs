@@ -8,11 +8,11 @@ aliases: /rv/api/how-to/view-auditing-using-system-log/
 ---
 The Redis Labs system log collects and reports on actions performed on various entities in the account. These entities include the account itself, users, API Keys, subscriptions, databases, accounts, payment methods and more. For each entity, various lifecycle events are logged in the system log.
 
-You can view the system log in the Redis Labs web UI by selecting `Menu` and then `System Log`. This will display the system log entries for the current account.
+You can view the system log in the Redis Cloud Admin Console by selecting `Menu` and then `System Log`. This will display the system log entries for the current account.
 
 ![System Logs in the UI](/images/rc/system_log.png?width=998&height=576)
 
-### System Logs API Operation
+### System logs API operation
 
 The API operation for querying the system log is `GET /logs`.
 
@@ -27,9 +27,9 @@ The `/logs` API operation accepts the following parameters:
 - `offset` - The starting point for the results.  The default value of `0` starts with the latest log entry. A value of `11` skips the first 10 entries and retrieves entries starting with the 11 and older.
 - `limit` - The maximum number of entries to return per request. Default value is `100`.
 
-{{% note %}}
+{{< note >}}
 The system log returns information for the entire account. It reports log entries for all types of entities, including Redis Labs Essentials and Redis Labs Pro subscriptions, databases and related entities.
-{{% /note %}}
+{{< /note >}}
 
 ### Request results
 
@@ -40,7 +40,7 @@ An API System Log request results in data that includes an `entries` array. The 
 - `originator` - The name of the user who performed the action described by the system log entry.
 - `apiKeyName` - The name of the API key used to perform the action described by the system log entry.
     This field only appears if the action was performed through the API.
-    If the operation was performed through the Redis Labs web UI this property is omitted.
+    If the operation was performed through the Redis Cloud Admin Console this property is omitted.
 - `resource` - The name of the entity associated with the logged action (for example, database name).
     This property is omitted if it is not applicable to the specific log entry.
 - `type` - The category associated with the action log entry.

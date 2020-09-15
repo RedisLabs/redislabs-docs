@@ -3,7 +3,8 @@ jobs:
     # The build job for staging branches that excludes Google Tag Manager
     build-staging:
         docker:
-            - image: cibuilds/hugo:0.48
+            # Hugo image
+            - image: cibuilds/hugo:0.72
         working_directory: ~/project
         steps:
             # Checkout the code from the branch into the working_directory
@@ -37,7 +38,7 @@ jobs:
     # The build job for production branches that includes Google Tag Manager
     build-prod:
         docker:
-            - image: cibuilds/hugo:0.48
+            - image: cibuilds/hugo:0.72
         working_directory: ~/project
         steps:
             # Checkout the code from the branch into the working_directory

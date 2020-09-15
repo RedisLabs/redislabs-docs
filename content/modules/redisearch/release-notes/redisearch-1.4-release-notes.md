@@ -5,7 +5,46 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 1.4.25
+## RediSearch 1.4.28 (May 2020)
+
+This is a maintenance release for version 1.4.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bugfixes:
+    - #[1218](https://github.com/RediSearch/RediSearch/pull/1218) Potential crash when running [without concurrency](https://oss.redislabs.com/redisearch/1.4/Configuring.html#safemode) and using the [cursor API](https://oss.redislabs.com/redisearch/1.4/Aggregations.html#cursor_api).
+
+## RediSearch 1.4.27 (April 2020)
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Features:
+    - #[1172](https://github.com/redisearch/redisearch/issues/1172) Added [`exists`](https://oss.redislabs.com/redisearch/Aggregations.html#list_of_string_apply_functions) function that can be used on conditional updates ([REPLACE PARTIAL](https://oss.redislabs.com/redisearch/Commands.html#ftadd)) to check if a field exists in the document.
+- Minor Enhancements:
+    - #[1172](https://github.com/redisearch/redisearch/issues/1172) Lazy evaluation of the right side of 'or'/'and' clauses in [IF condition](https://oss.redislabs.com/redisearch/Commands.html#parameters_1).
+- Bugfixes:
+    - #[1110](https://github.com/redisearch/redisearch/issues/1110) Rare GC failure when accessing uninitialized variable.
+    - #[1131](https://github.com/redisearch/redisearch/issues/1131) Crash on highlighting a search query where the document no longer exists.
+
+## RediSearch 1.4.26 (March 2020)
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Fix rare `FORK GC` crash which caused by accessing uninitialized variable.
+
+## RediSearch 1.4.25 (March 2020)
 
 Headlines:
 
@@ -18,7 +57,7 @@ Details:
 - Bugfixes:
     - #[1051](https://github.com/RediSearch/RediSearch/issues/1051) `FORK GC` was not updating the unique sum of the numeric index.
 
-## RediSearch 1.4.24
+## RediSearch 1.4.24 (January 2020)
 
 Headlines:
 
@@ -121,7 +160,7 @@ This is a maintenance release for version 1.4.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
 
-Main Features:
+Main features:
 
 - #[883](https://github.com/RediSearch/RediSearch/issues/883) Forkgc optimizations - introduce new config parameter `FORK_GC_CLEAN_THRESHOLD`. RediSearch will only start to clean when the number of not cleaned documents is exceeding this threshold.
 
@@ -174,7 +213,7 @@ This is a maintenance release for version 1.4.
 
 This release improves overall stability and provides fixes for issues found after the previous release .
 
-Main Features:
+Main features:
 
 - #[741](https://github.com/RediSearch/RediSearch/issues/741) Allow Chinese tokenizing to recognise \-escape for punctuations
 
@@ -314,7 +353,7 @@ This release improves overall stability and focuses on performance improvements 
 - New: Runtime Configuration
 - Change: Unlimited Autocomplete Results
 
-### Garbage Collector
+### Garbage collector
 
 RediSearch employs a garbage collector that removes deleted documents from the internal data structures.
 
@@ -322,15 +361,15 @@ In this release the garbage collection mechanism was improved in terms of effici
 
 The improved collection mechanism is currently **experimental*- and is not enabled by default. Enabling the new garbage collection mechanism requires setting the `GC_POLICY` configuration option to `FORK` at load time, for example:
 
-```src
+```sh
 redis-server --loadmodule ./redisearch.so GC_POLICY FORK
 ```
 
-### Runtime Configuration
+### Runtime configuration
 
 RediSearch's [configuration](https://oss.redislabs.com/redisearch/Configuring/) is applied via arguments passed to the module at load time. This release introduces the new [`FT.CONFIG`  command](https://oss.redislabs.com/redisearch/Commands/#ftconfig) that allows to retrieve the current configuration as well as change it during runtime.
 
-### Unlimited Autocomplete Results
+### Unlimited autocomplete results
 
 This version removes the limit of 10 results from `FT.SUGGET` - you can set the `MAX num` as high as needed.
 

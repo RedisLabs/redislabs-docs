@@ -9,7 +9,7 @@ aliases: /rv/api/how-to/create-and-manage-databases/
 You can use `cURL` commands to create and manage a cloud account
 with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).
 
-## Create a Database
+## Create a database
 
 The API operation that creates a database is: `POST /subscriptions/{subscription-id}/databases`
 
@@ -17,7 +17,7 @@ The database is created in an existing or a newly created subscription.
 When a subscription is created, it is created with at least one database.
 You can add more databases to the subscription, and you can update or delete existing databases.
 
-Creating a database is an [asynchronous operation]({{< relref "/rc/api/concepts/provisioning-lifecycle.md#asynchronous-operations" >}})".
+Creating a database is an [asynchronous operation]({{< relref "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}}).
 
 The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a cloud account ID.
 When the cloud account ID is received, the processing phase is complete and the provisioning phase starts.

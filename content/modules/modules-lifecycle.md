@@ -11,7 +11,7 @@ However, for any discrepancy between the two policies, the subscription agreemen
 
 Redis Enterprise Software follows the [RS lifecycle]({{< relref "/rs/administering/product-lifecycle.md" >}}).
 
-## Modules Release Numbering
+## Modules release numbering
 
 Redis Labs uses a three-place numbering scheme to designate released versions of its Redis Enterprise Modules.
 The format is “Major1.Major2.Minor”.
@@ -24,7 +24,7 @@ The format is “Major1.Major2.Minor”.
     existing capabilities. We increment the minor number when many quality improvements
     are added to the release.
 
-## Modules End-of-Life Schedule {#modules-endoflife-schedule}
+## Modules end of life schedule {#modules-endoflife-schedule}
 
 End-of-Life for a given Major version is 18 months after the formal release of
 that version or 12 months after the release of the following version, whichever comes last.

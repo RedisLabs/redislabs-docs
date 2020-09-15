@@ -7,7 +7,7 @@ categories: ["RC"]
 draft: true
 ---
 Metrics API provides programmatic access to database usage and performance data.
-The metrics API shows data that similar to the data that the Redis Labs web UI shows in the database metrics.
+The metrics API shows data that similar to the data that the Redis Cloud Admin Console shows in the database metrics.
 
 ## Metric spans and intervals
 
@@ -24,9 +24,9 @@ The metric span determines the time period for the data points in the metrics AP
 | 1month  | 1 month | 12 hours | continuous |
 | 1year  | 1 year | 7 days | continuous |
 
-{{% note %}}
+{{< note >}}
 The data point interval represents a best-effort and is not an absolute or unvarying interval. The exact interval between one data point and the next may vary and the interval values may change.
-{{% /note %}}
+{{< /note >}}
 
 ### High frequency, on-demand metric spans
 
@@ -74,7 +74,7 @@ For example, a request for data points in the `count-connections` (number of con
     }
 ```
 
-## Metric Categories
+## Metric categories
 
 Data points are shown divided into these categories:
 
@@ -106,7 +106,7 @@ Data points are shown divided into these categories:
 |**values-in-flash**|Number of values stored in Flash|count|Y|||
 |**values-in-ram**|Number of values stored in RAM|count|Y|||
 
-## Usage Example
+## Usage example
 
 ```shell
 {{% embed-code "rv/api/70-query-metrics.sh" %}}

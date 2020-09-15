@@ -6,21 +6,23 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/getting-started/creating-database/redisbloom/
 ---
-For this quick start tutorial, you need either:
+For this quick start tutorial, you need:
 
 - Either:
-    - [A Redis Enterprise Software database with the RedisBloom module enabled]({{< relref "/modules/create-database-rs.md" >}})
-    - [A Redis Cloud Pro database with the RedisBloom module enabled](https://redislabs.com/redis-enterprise-cloud/)
+    - A Redis Cloud database [with the RedisBloom module]({{< relref "/rc/administration/setup/create-database.md" >}})
+
+        You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
+    - A Redis Enterprise Software database with [the RedisBloom module]({{< relref "/modules/add-module-to-database.md" >}})
 - redis-cli with connectivity to a redis database
 
 {{< embed-md "tryout-redisbloom.md" >}}
 
-### Debugging Bloom filters
+## Debugging Bloom filters
 
 Finally, I added a BF.DEBUG command, to see exactly how the filter is
 being utilized:
 
-```src
+```sh
  127.0.0.1:6379> BF.DEBUG test
  1) "size:987949"
  2) "bytes:239627 bits:1917011 hashes:14 capacity:100000 size:100000 ratio:0.0001"

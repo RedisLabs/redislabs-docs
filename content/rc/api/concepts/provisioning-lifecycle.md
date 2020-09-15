@@ -19,7 +19,7 @@ The API uses two phases in response to a request that requires asynchronous proc
 
 ![processing-and-provisioning](/images/rv/api/processing-and-provisioning.png)
 
-## Task Processing
+## Task processing
 
 During this phase, the request is received, evaluated, planned and executed.
 
@@ -58,18 +58,18 @@ During the processing of a request, the task moves through these states:
 - `processing-error` - Request processing failed.
     A detailed cause or reason is included in the task status JSON response.
 
-{{% note %}}
+{{< note >}}
 A task that reaches the `received` state cannot be cancelled and it will await completion (i.e. processing and provisioning). If you wish to undo an operation that was performed by a task, perform a compensating action (for example: delete a subscription that was created unintentionally)
-{{% /note %}}
+{{< /note >}}
 
-## Task Provisioning
+## Task provisioning
 
 When the processing phase succeeds and the task is in the `processing-completed` state, the provisioning phase starts.
 During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request.
 
-{{% note %}}
+{{< note >}}
 The term "provisioning" refers to all infrastructure changes required in order to apply the request. This includes provisioning new or additional infrastructure.
-{{% /note %}}
+{{< /note >}}
 
 The provisioning phase may require several minutes to complete. You can query the resource identifier to track the progress of the provisioning phase.
 

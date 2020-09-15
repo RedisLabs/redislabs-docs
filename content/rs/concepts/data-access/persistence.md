@@ -11,7 +11,7 @@ Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}))
 and therefore, is at risk of being lost upon a process or server
 failure. As Redis Enterprise Software is not
 just a caching solution, but also a full-fledged database,
-[persistence](https://redislabs.com/redis-features/persistence) to disk
+[persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
 is critical. Therefore, Redis Enterprise Software supports persisting
 data to disk on a per-database basis and in multiple ways.
 
@@ -34,7 +34,7 @@ hours. The snapshot is a dump of the data and while there is a potential
 of losing up to one hour of data, it is dramatically faster to recover
 from a snapshot compared to AOF recovery.
 
-[Persistence](https://redislabs.com/redis-features/persistence) can be
+[Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be
 configured either at time of database creation or by editing an existing
 database's configuration. While the persistence model can be changed
 dynamically, just know that it can take time for your database to switch
@@ -46,7 +46,7 @@ highly recommended to make sure replication is enabled for that database
 as well. When these two features are enabled, persistence is
 performed on the database slave and does not impact performance on the master.
 
-## Options for Configuring Data Persistence
+## Options for configuring data persistence
 
 There are six options for persistence in Redis Enterprise Software:
 
@@ -66,7 +66,7 @@ you select it. If the database is being used as a cache, then you may
 not need persistence. If you do need persistence, then you need to
 identify which is the best type for your use case.
 
-## Append Only File (AOF) vs Snapshot (RDB)
+## Append only file (AOF) vs snapshot (RDB)
 
 Now that you know the available options, to assist in making a decision
 on which option is right for your use case, here is a table about the
@@ -79,7 +79,7 @@ two:
 |  Slower time to recover (Larger files) | Faster recovery time |
 |  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
 
-## Data Persistence and Redis on Flash
+## Data persistence and Redis on Flash
 
 If you are enabling data persistence for databases running on Redis
 Enterprise Flash, by default both master and slave shards are
@@ -101,6 +101,6 @@ you don't want to risk data persistence adding latency. If that is the
 case, you can disable data-persistence on the master shards using the
 following *rladmin* command:
 
-```src
+```sh
 rladmin tune db db: master_persistence disabled
 ```

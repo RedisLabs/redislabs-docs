@@ -1,30 +1,34 @@
 ---
-Title: View and Edit a Cloud Account
+Title: Create and Edit a Cloud Account for Redis Cloud Ultimate
 description:
 weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/how-to/view-edit-cloud-account/
+        /rv/how-to/creating-cloud-account/
+        /rc/how-to/creating-cloud-account/
 ---
+In Redis Cloud Ultimate subscriptions, most customers build their subscriptions in our AWS accounts
+so that we can take responsibility to make sure that the infrastructure is in optimal condition.
+If you need to build your subscriptions in your own AWS accounts,
+we need to have access to your AWS account to help with monitoring, maintenance and technical support.
 
-To view or edit your existing cloud accounts please select **Cloud
-Accounts** from the right side menu.
+To provide us with secure authorization to access your AWS accounts, you need to:
 
-Select the relevant Cloud Account and click on that account's **Edit**
-button.
+1. Create a programmatic user and provide us with the access key and secret access key for that user.
+1. Create a console role and provide us with that role name.
 
-In edit mode please enter or update the following details:
+To create or edit a cloud account in Redis Cloud:
 
-1. **Account Name** - Give the account a name so you could recognize
-    him
-1. **AWS_ACCESS_KEY_ID** - Redis Cloud user's AWS access key
-1. **AWS_SECRET_ACCESS_KEY** - Redis Cloud user's AWS secret key
-1. **AWS Console User** - Redis Cloud AWS UI console user
-1. **AWS Console password** - Redis Cloud AWS UI console user's password
-1. **IAM Users sign-in link** - This is the link you use to log into
-    the AWS console (e.g.
-    https://\<YOUR-ACCOUNT-ID-WITHOUT-HYPHENS>.signin.aws.amazon.com/console)
+1. In **Cloud Accounts**, either:
+    - Click ![Add](/images/rs/icon_add.png#no-click "Add") to create an new account.
+    - Click on the account that you want to edit and then click **Edit**.
+1. Enter the cloud account details:
+    - **Account Name** - A meaningful name for the account.
+    - **AWS_ACCESS_KEY_ID** - The AWS access key for the programmatic user
+    - **AWS_SECRET_ACCESS_KEY** - The AWS secret access key for the programmatic user
+    - **IAM Role Name** - The name of the console role with access to the console
+1. Click **Save**.
 
-You can delete your Cloud Account from the system by clicking on the
-**Delete** button. Please note, you can only delete a Cloud Account if
-it has no active subscription related to it.
+You can click **Delete** to delete your Cloud Account from Redis Cloud,
+but only if it has no active subscription related to it.
