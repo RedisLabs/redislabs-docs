@@ -1,4 +1,3 @@
-// const SEARCH_API_URL = "https://docsearch-dot-redislabs-university.appspot.com/search"
 const SEARCH_API_URL = "https://docsearch-dot-redislabs-university.appspot.com/search"
 const THIRTY_SECONDS = 30000
 
