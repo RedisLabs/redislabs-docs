@@ -12,10 +12,10 @@ This allows for improvements in command efficiency and improvements in replicati
 
 This change allows databases with RediSearch to support:
 
-- Active-Active databases
+- [Active-Active databases]({{< relref "/modules/redisearch/redisearch-active-active.md" >}})
 - Database cluster re-sharding
 - Replica Of to a sharded destination database
-- EXPIRE of documents reflected in the index
+- [EXPIRE](https://redis.io/commands/ttl) of documents reflected in the index
 
 In addition, RediSearch 2.x indexes data that already existed in the database at the time that the index was created.
 
@@ -28,6 +28,14 @@ After you create the database or after you replicate the data, [create an index]
 ## Prerequisites
 
 Make sure that you have Python 3 (`sudo apt install python3`) installed on the host where you will run the synchronization script.
+
+## Limitations
+
+1. Suggestions (`FT.SUG` APIs) and spell check dictionaries are not replicated from the source database. You need to add them manually.
+1. If there are multiple indexes on the source and the documents do not have prefixes that identify them with an index, RediSearch 2.x can't index the documents in their respective indexes.
+1. The NOSAVE option is no longer supported. Indexes created with the NOSAVE option can't be upgraded.
+1. Databases that contain temporary indexes can't be upgraded.
+1. Any attempt to add, delete, or modify an index during the upgrade will cause the replication to fail. During the upgrade, the source database can only receive ft.add and ft.del commands.
 
 ## Replicating data from RediSearch 1.x to RediSearch 2.x:
 
@@ -66,7 +74,7 @@ To replicate a RediSearch 1.x database to a RediSearch 2.x database:
         - `--add-prefix <prefix>` (optional) - Adds a prefix to all of the hashes that are replicated to the new database.
 
             {{< note >}}
-The `add-prefix` option is only recommended when the source database only contains hashes that you want to index.
+The `add-prefix` option is only recommended when you want to index all of the hashes in the same index in the source database.
             {{< /note >}}
 
         The script shows a table with the progress of the replication.
