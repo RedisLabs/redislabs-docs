@@ -11,37 +11,31 @@ The RediSearch 2.x module is a source-available project that lets you build powe
 When combined with Redis Enterprise Software (RS), you can use the same RediSearch protocols and commands
 to get a geo-replicated, integrated query, and full-text search over efficient in-memory indexes.
 
-You can build compound indexes that index multiple fields in documents with text, numeric, and geospatial data types.
-With those indexes you can do language-aware fuzzy matching, fast auto-complete, exact phrase matching, numeric filtering, and geo-radius queries.
+You can index more than one field per document, and these fields can represent text, numeric, or geospatial data types.
+With RediSearch indexes you can do language-aware fuzzy matching, fast auto-complete, exact phrase matching, numeric filtering, and geo-radius queries.
 
 As the documents in your database change, the index automatically processes these changes to keep your searches updated.
 You can also limit the index to only contain the index structure so that the results return a unique docID.
 
-For full-text searches, developers can customize the field queries and ranking of the search results.
-When querying, developers can use multiple predicates that query both text, numeric, and geospatial fields in one query.
-Sorting can be done by a given field as well and can be limited with an offset for simplified support for results pages.
+For full-text searches, you can customize the field queries and ranking of the search results.
+When querying, you can use multiple predicates that query both text, numeric, and geospatial fields in one query.
+You can also sort by a specific field and limit the results with an offset to easily produce customized results pages.
 
-RediSearch is language aware and support the following languages for stemming:
-
-    "arabic", "danish", "dutch", "english", "finnish", "french", "german", "hungarian", "italian", "norwegian", "portuguese", "romanian", "russian", "spanish", "swedish", "tamil", "turkish"
-
-The index supports auto-complete engines with specific commands that can provide real-time interactive search suggestions.
+RediSearch supports [over 15 natural languages](https://oss.redislabs.com/redisearch/Stemming/#supported_languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://oss.redislabs.com/redisearch/master/Commands/#ftsugadd).
 
 ## RediSearch Index
 
 The fundamental part of any search engine is the inverted index.
-The search index is a map between words or terms to the respective documents they appear in.
+An inverted index is mapping between terms (or words) and the documents they appear in.
 
-If we have two documents, one titled _Hello World_ and the other titled "Hello Kitty",
-a search engine would keep an inverted index of the word "hello" that contains two records, one for each of these documents.
+A search engine keeps an inverted index that lists the documents that contain a specific keyword.
+For example, if you have one document with the title "Hello World" and another document with the title "Hello Kitty", the inverted index lists those documents for the keyword "hello".
 
 Searching consists of loading, traversing, intersecting (if needed) and sorting these indexes in order to produce the most relevant results.
-The index gets more complex as the indexes contain relevant scores, term positions in the document, and other fine details.
 
-Until now, inverted indexes on top of a Redis database were always modeled with Redis native data types, usually sorted sets,
+In RediSearch 1.x, inverted indexes on top of a Redis database were always modeled with Redis native data types, usually sorted sets,
 where the document ID was stored as the "element" and the relevance as the "score."
-This worked great because it allowed developers to use Redis intersection and union to perform multi-word searches,
-but this approach doesn't support exact phrase search, it has a high memory overhead, and can be slow with big record intersections.
+In RediSearch 2.x, the index is stored outside of the keyspace to improve performance.
 
 ## Storing documents
 
@@ -50,9 +44,9 @@ The index knows how to index each field, but that's not enough.
 We need to actually store the data for retrieval.
 In a simple use case, you can just push documents to the database and RediSearch creates a complete index and document database.
 
-For storing documents, the RediSearch engine relies on Redis hash keys,
+For storing documents, the RediSearch engine relies on Redis hashes,
 where each document is represented by a single key, and each property and its value by a hash key and element.
-For retrieval, we simply perform an HGETALL query on each retrieved document, returning its entire data.
+For retrieval, you simply perform an HGETALL query on each retrieved document, returning its entire data.
 If the user needs to retrieve a specific document by its ID, a simple HGETALL can be performed by the user.
 
 ## RediSearch in Active-Active databases
@@ -62,7 +56,7 @@ You can now serve your index information from geo-distributed database instances
 
 ## Resharding and RediSearch
 
-By moving the index out of the keyspace and structuring the data as hashes, we made it possible to reshard the database.
+By moving the index out of the keyspace and structuring the data as hashes, RediSearch 2.x makes it possible to reshard the database.
 When half of the data moves to the new shard, the index related to that data is created synchronously and RediSearch removes the keys from the index when it detects that the keys were deleted.
 Because the index on the new shard is created synchronously though, it's expected that the resharding process will take longer than resharding of a database without RediSearch.
 
