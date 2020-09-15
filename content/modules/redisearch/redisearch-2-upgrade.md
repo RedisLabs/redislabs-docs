@@ -8,17 +8,22 @@ module: RediSearch
 ---
 RediSearch 2.x includes some significant changes to the architecture of RediSearch that provide improved functionality.
 The main architectural change is that the indexes are stored outside of the Redis database that contains the data.
-This allows for improvements in command efficiency.
-It also allows for improvements in replication between clusters because the index changes are managed by the participating clusters rather than being synchronized with the data.
+This allows for improvements in command efficiency and improvements in replication between clusters because the index changes are managed by the participating clusters rather than being synchronized with the data.
 
 This change allows databases with RediSearch to support:
 
 - Active-Active databases
-- Database clustering (sharding)
-- Replica Of to sharded destination database
+- Database cluster re-sharding
+- Replica Of to a sharded destination database
 - EXPIRE of documents reflected in the index
 
+In addition, RediSearch 2.x indexes data that already existed in the database at the time that the index was created.
+
 To upgrade a Redis Enterprise Software (RS) database with RediSearch 1.x to RediSearch 2.x, you have to set up a new database with RediSearch 2.x and use the `RediSearch_Syncer.py` script to replicate the data from the old database into the new database.
+
+{{< note >}}
+After you create the database or after you replicate the data, [create an index](https://oss.redislabs.com/redisearch/Commands/#ftcreate) with a prefix or filter that defines the keys that you want to index.
+{{< /note >}}
 
 ## Prerequisites
 
@@ -58,7 +63,11 @@ To replicate a RediSearch 1.x database to a RediSearch 2.x database:
 
         - `destination url` - The replication URL of the RediSearch 2.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
         - `source url` - The replication URL of the RediSearch 1.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
-        - `--add-prefix <prefix>` (optional) - Adds a prefix to the keys that are replicated to the new database
+        - `--add-prefix <prefix>` (optional) - Adds a prefix to all of the hashes that are replicated to the new database.
+
+            {{< note >}}
+The `add-prefix` option is only recommended when the source database only contains hashes that you want to index.
+            {{< /note >}}
 
         The script shows a table with the progress of the replication.
         Press **F5** to see the updated status of the replication process.
