@@ -72,11 +72,6 @@ After you download the .tar file installation package, install the package on on
 To install RS on Linux from the CLI:
 
 1. Copy the installation package to the node.
-
-    {{% note %}}
-For Ubuntu DEB packages and RHEL RPM packages, you can use the [GPG key]({{< relref "/rs/installing-upgrading/GPG-KEY-redislabs-packages" >}}) to confirm authenticity of the package.
-    {{% note %}}
-
 1. On the node, change to the directory where the installation package is and extract the installation files:
 
     ```sh
