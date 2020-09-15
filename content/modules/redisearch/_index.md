@@ -7,9 +7,9 @@ categories: ["Modules"]
 aliases:
   - /rs/developing/modules/redisearch/
 ---
-The RediSearch 2.x module is a source-available project that lets you build powerful searches for Redis databases.
+The RediSearch 2.x module is a source-available project that lets you build powerful searches for open-source Redis databases.
 When combined with Redis Enterprise Software (RS), you can use the same RediSearch protocols and commands
-to get a geo-replicated, integrated query, and full-text search over efficient in-memory indexes.
+to get a geo-replicated query, and full-text search over efficient in-memory indexes.
 
 You can index more than one field per document, and these fields can represent text, numeric, or geospatial data types.
 With RediSearch indexes you can do language-aware fuzzy matching, fast auto-complete, exact phrase matching, numeric filtering, and geo-radius queries.
