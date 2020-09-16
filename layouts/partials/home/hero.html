@@ -3,24 +3,71 @@
     <p>Redis Enterprise in a variety of deployment options</p>
 
     <div>
-        <div class="searchcontainer">
-            <i class="icon-Search searchicon"></i>
-            <input class="searchbox" data-search-input id="search-by" type="text"
-                placeholder="{{T "Search-placeholder"}}">
-        </div>
-        <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-        <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
-        <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
-
-        <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
+      <div id="autocomplete" class="autocomplete">
+      <input class="autocomplete-input" />
+      <ul class="autocomplete-result-list"></ul>
     </div>
+
+      <script type="text/javascript" src="{{"js/autocomplete.js" | relURL}}"></script>
+      <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
+      <link href="{{"css/autocomplete.css" | relURL}}" rel="stylesheet">
 </section>
 
 <style>
-    .autocomplete-suggestions {
-        width: 700px !important;
-        margin-left: -5px !important;
-        max-width: 100% !important;
-        max-height: 285px;
-    }
+  #autocomplete {
+    max-width: 700px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .autocomplete-result {
+    border-top: 1px solid #eee;
+    padding: 16px;
+    background: transparent;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .search-root {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    width: 100%;
+  }
+
+  .search-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: darkgray;
+    word-break: break-word;
+    text-align: right;
+    width: 100%;
+  }
+
+  .search-left {
+    width: 25%;
+    padding-right: 5px;
+  }
+
+  .search-right {
+    width: 75%;
+    padding-left: 15px;
+  }
+
+  .search-section-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+    width: 100%;
+  }
+
+  .search-body {
+    font-size: 13px;
+    width: 100%;
+  }
+
 </style>
