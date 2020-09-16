@@ -1,5 +1,12 @@
 const SEARCH_API_URL = "https://docsearch-dot-redislabs-university.appspot.com/search"
 const THIRTY_SECONDS = 30000
+const EVENT_LOCAL_CACHE = "search:served_from_local_cache"
+const EVENT_LIVE_SEARCH_FAILED = "search:live_search:failed"
+const EVENT_LIVE_SEARCH_SUCCESS = "search:live_search:success"
+
+function stripRoot(url) {
+  return url.split("q=")[1]
+}
 
 function setWithExpiry(key, value, ttl) {
 	const now = new Date()
@@ -10,6 +17,7 @@ function setWithExpiry(key, value, ttl) {
 	}
 	localStorage.setItem(key, JSON.stringify(item))
 }
+
 
 function getWithExpiry(key) {
 	const itemStr = localStorage.getItem(key)
@@ -23,6 +31,8 @@ function getWithExpiry(key) {
 		localStorage.removeItem(key)
 		return null
 	}
+
+	analytics.track(EVENT_LOCAL_CACHE, {query: stripRoot(key)})
 	return item.value
 }
 
@@ -46,14 +56,19 @@ new Autocomplete('#autocomplete', {
     }
 
     return new Promise(resolve => {
+      query = stripRoot(url)
+
       $.getJSON(url)
         .fail(function(jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
             console.error("Error querying search API:", err);
+            analytics.track(EVENT_LIVE_SEARCH_FAILED, {query: query})
             resolve([])
         })
         .done(function(data) {
           setWithExpiry(url, data.results, THIRTY_SECONDS)
+          analytics.track(EVENT_LIVE_SEARCH_SUCCESS, {query: query, count: data.total,
+                                                      page_size: data.results.length})
           resolve(data.results)
         })
     })
