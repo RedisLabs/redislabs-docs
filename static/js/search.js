@@ -107,7 +107,7 @@ new Autocomplete('#autocomplete', {
     }
   },
 
-  getResultValue: result => result.title,
+  getResultValue: result => "",
 
   // Open the selected article in
   // a new window
