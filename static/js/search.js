@@ -4,9 +4,6 @@ const EVENT_LOCAL_CACHE = "search:served_from_local_cache"
 const EVENT_LIVE_SEARCH_FAILED = "search:live_search:failed"
 const EVENT_LIVE_SEARCH_SUCCESS = "search:live_search:success"
 
-function stripRoot(url) {
-  return url.split("q=")[1]
-}
 
 function setWithExpiry(key, value, ttl) {
 	const now = new Date()
@@ -32,7 +29,6 @@ function getWithExpiry(key) {
 		return null
 	}
 
-	analytics.track(EVENT_LOCAL_CACHE, {query: stripRoot(key)})
 	return item.value
 }
 
@@ -41,7 +37,9 @@ new Autocomplete('#autocomplete', {
   debounceTime: 2,
 
   search: input => {
-    const url = SEARCH_API_URL + "?q=" + input.trim() + "*"
+    const trimmedInput = input.trim()
+    const url = `${SEARCH_API_URL}?q=${trimmedInput}*`
+    const shouldTrack = input.length > 4
 
     if (input.length === 0) {
       return []
@@ -51,24 +49,30 @@ new Autocomplete('#autocomplete', {
 
     const cachedResults = getWithExpiry(url)
 
-    if (cachedResults) {
+    if (cachedResults && shouldTrack) {
+      analytics.track(EVENT_LOCAL_CACHE, {query: trimmedInput})
       return cachedResults
     }
 
     return new Promise(resolve => {
-      query = stripRoot(url)
-
       $.getJSON(url)
         .fail(function(jqxhr, textStatus, error) {
-            var err = textStatus + ", " + error;
-            console.error("Error querying search API:", err);
-            analytics.track(EVENT_LIVE_SEARCH_FAILED, {query: query})
-            resolve([])
+          const err = `${textStatus}, ${error}`
+          console.error("Error querying search API:", err)
+          if (shouldTrack) {
+            analytics.track(EVENT_LIVE_SEARCH_FAILED, {query: trimmedInput})
+          }
+          resolve([])
         })
         .done(function(data) {
           setWithExpiry(url, data.results, THIRTY_SECONDS)
-          analytics.track(EVENT_LIVE_SEARCH_SUCCESS, {query: query, count: data.total,
-                                                      page_size: data.results.length})
+          if (shouldTrack) {
+            analytics.track(EVENT_LIVE_SEARCH_SUCCESS, {
+              query: trimmedInput,
+              count: data.total,
+              page_size: data.results.length
+            })
+          }
           resolve(data.results)
         })
     })
