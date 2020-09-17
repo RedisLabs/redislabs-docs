@@ -23,20 +23,6 @@ You can also sort by a specific field and limit the results with an offset to ea
 
 RediSearch supports [over 15 natural languages](https://oss.redislabs.com/redisearch/Stemming/#supported_languages) for stemming and includes auto-complete engines with specific commands that can provide real-time [interactive search suggestions](https://oss.redislabs.com/redisearch/master/Commands/#ftsugadd).
 
-## RediSearch Index
-
-The fundamental part of any search engine is the inverted index.
-An inverted index is mapping between terms (or words) and the documents they appear in.
-
-A search engine keeps an inverted index that lists the documents that contain a specific keyword.
-For example, if you have one document with the title "Hello World" and another document with the title "Hello Kitty", the inverted index lists those documents for the keyword "hello".
-
-Searching consists of loading, traversing, intersecting (if needed) and sorting these indexes in order to produce the most relevant results.
-
-In RediSearch 1.x, inverted indexes on top of a Redis database were always modeled with Redis native data types, usually sorted sets,
-where the document ID was stored as the "element" and the relevance as the "score."
-In RediSearch 2.x, the index is stored outside of the keyspace to improve performance.
-
 ## Storing documents
 
 The RediSearch engine indexes "documents", which are a list of field-value pairs.
