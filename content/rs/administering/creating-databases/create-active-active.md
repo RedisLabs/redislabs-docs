@@ -19,7 +19,7 @@ Every instance of an Active-Active database can receive write operations, and al
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
 1. **Create Active-Active database** - Connect to one of your clusters and create a new Active-Active database.
 1. **Add participating clusters** - Add the participating clusters to the Active-Active database with the user credentials for the service account.
-1. **Verify creation** - connect to each of the participating clusters and verify your Active-Active database was created on them.
+1. **Verify creation** - Log in to each of the participating clusters and verify your Active-Active database was created on them.
 1. **Confirm Active-Active database Synchronization** - Test writing to one cluster and reading from a different cluster.
 
 ## Prerequisites
