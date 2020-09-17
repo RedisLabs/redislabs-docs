@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 [Redis Enterprise Software (RS) 6.0.8](https://redislabs.com/download-center/#downloads) is now available!
-This version includes open source Redis 6.0.5, changes the rladmin tool for upgrading modules, and includes bug fixes.
+This version includes the new RediSearch 2.0 module, open source Redis 6.0.5, changes the rladmin tool for upgrading modules, and includes bug fixes.
 
 ## Version information
 
@@ -40,18 +40,17 @@ Find out more [here](https://docs.redislabs.com/latest/modules/add-module-to-clu
 
 The following GA releases of Redis Modules are bundled in RS 6.0:
 
-- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md" >}}) (updated)
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0]({{< relref "/modules/redisearch/release-notes.md" >}}) (updated)
+- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}})
 - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.0.19]({{< relref "/modules/redisgraph/release-notes/redisgraph-2.0-release-notes.md" >}}) (updated)
-- [RedisJson](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{< relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md" >}})
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [1.6.14]({{< relref "/modules/redisearch/release-notes/redisearch-1.6-release-notes.md" >}}) (updated)
 - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.2.7]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}) (updated)
+- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{< relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md" >}}) (updated)
 
 To use the updated modules with a database, you must [upgrade the module on the database]({{< relref "/modules/add-module-to-cluster#upgrading-the-module-for-the-database" >}}).
 
 ## Additional capabilities
 
 - [Shard level metrics]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions#shard-metrics" >}}) have been added to the metrics_exporter and are now available from Prometheus. You can find all of the metrics [here]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions" >}}).
-- RS DEB packages (for Ubuntu) and RPM packages (for RHEL) are now signed with a GPG key so customers can verify that the package is authentic and has not been tampered with.
 - The [crdb-cli](https://docs.redislabs.com/latest/rs/references/crdb-cli-reference/) history log is now being added to support packages.
 
 ## Important fixes
