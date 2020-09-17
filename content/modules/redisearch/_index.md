@@ -7,7 +7,7 @@ categories: ["Modules"]
 aliases:
   - /rs/developing/modules/redisearch/
 ---
-The RediSearch 2.x module is a source-available project that lets you build powerful searches for open-source Redis databases.
+The [RediSearch 2.x module](https://redislabs.com/blog/introducing-redisearch-2-0/) is a source-available project that lets you build powerful searches for open-source Redis databases.
 When combined with Redis Enterprise Software (RS), you can use the same RediSearch protocols and commands
 to get a geo-replicated query, and full-text search over efficient in-memory indexes.
 
@@ -48,6 +48,7 @@ Because the index on the new shard is created synchronously though, it's expecte
 
 ## Related links
 
+- [Getting Started with RediSearch 2.0](https://redislabs.com/blog/getting-started-with-redisearch-2-0/)
 - [RediSearch Quick Start Guide]({{< relref "/modules/redisearch/redisearch-quickstart.md" >}})
 - [Configuring RediSearch](https://oss.redislabs.com/redisearch/Configuring/)
 - [RediSearch commands](http://redisearch.io/)
