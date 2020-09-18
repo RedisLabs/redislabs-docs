@@ -1,13 +1,13 @@
 ---
 Title: RediSearch 2.0 Release Notes
 description:
-weight: 96
+weight: 95
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 2.0 GA Release (September 2020)
+## RediSearch 2.0 (September, 2020)
 
-RediSearch 2.0 includes several improvements in performance and usability over RediSearch 1.0. These changes necessitate a few backward-breaking changes to the API.
+RediSearch 2.0 is a public preview release meeting GA standards. This release includes several improvements in performance and usability over RediSearch 1.0. These changes necessitate a few backward-breaking changes to the API.
 
 ### Highlights
 
@@ -29,24 +29,28 @@ You can read more details in [the RediSearch 2.0 announcement blog post](https:/
 * Several RediSearch commands now map to their Redis equivalents: `FT.ADD` -> `HSET`, `FT.DEL` -> `DEL` (DD by default), `FT.GET` -> `HGETALL`, `FT.MGET` -> `HGETALL`.
 * RediSearch indexes no longer reside within the key space, and the indexes are no longer saved to the RDB.
 * You can [upgrade from RediSearch 1.x](https://oss.redislabs.com/redisearch/master/Upgrade_to_2.0/).
-### Other noteworthy details
-  - #1246 [`  geodistance`](https://oss.redislabs.com/redisearch/master/Aggregations/#list_of_geo_apply_functions) function for `FT.AGGREGATE` APPLY operation.
-  - #1394 - Expired documents (TTL) will be removed from the index.
-  - #1394 - [Optimization](https://oss.redislabs.com/redisearch/master/Configuring/#partial_indexed_docs) to avoid reindexing documents when non-indexed fields are updated.
-  - After [index creation](https://oss.redislabs.com/redisearch/Commands/#ftcreate), an initial scan starts for existing documents.  You can check the status of this scan by calling [`FT.INFO`](https://oss.redislabs.com/redisearch/Commands/#ftinfo) and looking at the `indexing` and `percent_indexed`.  While `indexing` is true, queries return partial results.
-  - #1435 `NOINITIALINDEX` flag on [`FT.CREATE`](https://oss.redislabs.com/redisearch/Commands/#ftcreate) to skip the initial scan of documents on index creation.
-  - #1401  Support upgrade from v1.x and for reading RDB's created by RediSearch 1.x ([more information](https://oss.redislabs.com/redisearch/master/Upgrade_to_2.0/)).
-  - #1445 Support for load event. This event indexes documents when they are loaded from RDB, ensuring that indexes are fully available when RDB loading is complete (available from Redis 6.0.7 and above).
-  - #1384 [`FT.DROPINDEX`](https://oss.redislabs.com/redisearch/Commands/#ftdropindex) which by default does not delete the documents (see deprecated `FT.DROP`).
-  - #1385 Add index definition to [`FT.INFO`](https://oss.redislabs.com/redisearch/master/Commands/#ftinfo) response.
-   - #1097 Add Hindi snowball stemmer.
-   - `FT._LIST` command allows to query all available indices.  Note that this is a temporary command as indicated by the `_` The final solution will be a [`SCAN`](https://redis.io/commands/scan)-like command for databases with many indices.  This command is for this reason not documented.
+
+### Noteworthy changes
+  - [#1246](https://github.com/RediSearch/RediSearch/pull/1246): [`  geodistance`](https://oss.redislabs.com/redisearch/master/Aggregations/#list_of_geo_apply_functions) function for `FT.AGGREGATE` APPLY operation.
+  - [#1394](https://github.com/RediSearch/RediSearch/pull/1394): Expired documents (TTL) will be removed from the index.
+  - [#1394](https://github.com/RediSearch/RediSearch/pull/1394): [Optimization](https://oss.redislabs.com/redisearch/master/Configuring/#partial_indexed_docs) to avoid reindexing documents when non-indexed fields are updated.
+  - After [index creation](https://oss.redislabs.com/redisearch/Commands/#ftcreate), an initial scan starts for existing documents.  You can check the status of this scan by calling [`FT.INFO`](https://oss.redislabs.com/redisearch/Commands/#ftinfo) and looking at the `indexing` and `percent_indexed` values.  While `indexing` is true, queries return partial results.
+  - [#1435](https://github.com/RediSearch/RediSearch/pull/1435): `NOINITIALINDEX` flag on [`FT.CREATE`](https://oss.redislabs.com/redisearch/Commands/#ftcreate) to skip the initial scan of documents on index creation.
+  - [#1401](https://github.com/RediSearch/RediSearch/pull/1401): Support upgrade from v1.x and for reading RDB's created by RediSearch 1.x ([more information](https://oss.redislabs.com/redisearch/master/Upgrade_to_2.0/)).
+  - [#1445](https://github.com/RediSearch/RediSearch/pull/1445): Support for load event. This event indexes documents when they are loaded from RDB, ensuring that indexes are fully available when RDB loading is complete (available from Redis 6.0.7 and above).
+  - [#1384](https://github.com/RediSearch/RediSearch/pull/1384): [`FT.DROPINDEX`](https://oss.redislabs.com/redisearch/Commands/#ftdropindex) which by default does not delete the documents (see deprecated `FT.DROP`).
+  - [#1385](https://github.com/RediSearch/RediSearch/pull/1385): Add index definition to [`FT.INFO`](https://oss.redislabs.com/redisearch/master/Commands/#ftinfo) response.
+   - [#1097](https://github.com/RediSearch/RediSearch/pull/1097): Add Hindi snowball stemmer.
+   - The `FT._LIST` command allows to query all available indices.  Note that this is a temporary command as indicated by the `_` The final solution will be a [`SCAN`](https://redis.io/commands/scan)-like command for databases with many indices.  This command is for this reason not documented.
+   - The RediSearch version in Redis will be 20000 or 2.0.0 in semantic versioning. Since the version of a module in Redis is numeric, we could not add an GA flag.
+   - RediSearch 2.x requires Redis 6.0 or later.
+
 ### Behavior changes
 Please familiarize yourself with these changes before upgrading to RediSearch 2.0:
-  - #1381 - `FT.SYNADD` is removed; use `FT.SYNUPDATE` instead. Also the synonym group ID can now be a string (next to a number).
-  - #1437 Documents that expire during query execution time will not appear in the results (but might have been counted in the number of produced documents).
-  - #1221 Synonyms support for lower case. This can result in a different result set on FT.SEARCH when using synonyms.
-  - RediSearch will not index hashes whose fields do not matach an existing index schema. You can see the number of hashes not indexed using [`FT.INFO`](https://oss.redislabs.com/redisearch/Commands/#ftinfo) - `hash_indexing_failures `.  The requirement for adding support for partially indexing and blocking is captured here: #1455.
+  - [#1381](https://github.com/RediSearch/RediSearch/pull/1381): `FT.SYNADD` is removed; use `FT.SYNUPDATE` instead. Also the synonym group ID can now be a string (next to a number).
+  - [#1437](https://github.com/RediSearch/RediSearch/pull/1437): Documents that expire during query execution time will not appear in the results (but might have been counted in the number of produced documents).
+  - [#1221](https://github.com/RediSearch/RediSearch/pull/1221): Synonyms support for lower case. This can result in a different result set on FT.SEARCH when using synonyms.
+  - RediSearch will not index hashes whose fields do not match an existing index schema. You can see the number of hashes not indexed using [`FT.INFO`](https://oss.redislabs.com/redisearch/Commands/#ftinfo) - `hash_indexing_failures `.  The requirement for adding support for partially indexing and blocking is captured here: [#1455](https://github.com/RediSearch/RediSearch/pull/1455).
   - Removed support for `NOSAVE` (for details see [v1.6 docs](https://oss.redislabs.com/redisearch/1.6/Commands/#ftadd)).
   - RDB loading will take longer due to the index not being persisted.
   - Field names in the [query syntax](https://oss.redislabs.com/redisearch/Query_Syntax/) are now case-sensitive.
@@ -58,13 +62,10 @@ Please familiarize yourself with these changes before upgrading to RediSearch 2.
     - `FT.MGET` (mapped to `HGETALL` for backward compatibility)
   - Removed commands:
     - `FT.ADDHASH` (no longer makes sense)
-    - `FT.SYNADD` (see #1381)
+    - `FT.SYNADD` (see [#1381](https://github.com/RediSearch/RediSearch/pull/1381))
     - `FT.OPTIMIZE` (see [v1.6 docs](https://oss.redislabs.com/redisearch/1.6/Commands/#ftoptimize))
-### Scaling a single index over multiple shards with the open source Redis cluster API
+
+### Scaling changes
 In RediSearch 1.x, a single RediSearch index, and its documents, had to reside on a single shard. This meant that dataset size and throughput were limited to what a single Redis process could handle.
 
 Redis Enterprise now offers the ability to distribute documents in a clustered database and aggregate the results at query time. This fan-out and aggregation is handled by a component called the "coordinator", which is now also available under the same [Redis Source Available License](https://redislabs.com/legal/licenses/) for all Redis OSS users in its own repository: [RSCoordinator](https://github.com/RediSearch/RSCoordinator).
-
-### Notes:
-* The RediSearch version in Redis will be 20000 or 2.0.0 in semantic versioning. Since the version of a module in Redis is numeric, we could not add an GA flag.
-* RediSearch 2.x requires Redis 6.0 or later.
