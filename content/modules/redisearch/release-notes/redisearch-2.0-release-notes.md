@@ -65,8 +65,3 @@ Please familiarize yourself with these changes before upgrading to RediSearch 2.
     - `FT.ADDHASH` (no longer makes sense)
     - `FT.SYNADD` (see [#1381](https://github.com/RediSearch/RediSearch/pull/1381))
     - `FT.OPTIMIZE` (see [v1.6 docs](https://oss.redislabs.com/redisearch/1.6/Commands/#ftoptimize))
-
-### Scaling changes
-In RediSearch 1.x, a single RediSearch index, and its documents, had to reside on a single shard. This meant that dataset size and throughput were limited to what a single Redis process could handle.
-
-Redis Enterprise now offers the ability to distribute documents in a clustered database and aggregate the results at query time. This fan-out and aggregation is handled by a component called the "coordinator", which is now also available under the same [Redis Source Available License](https://redislabs.com/legal/licenses/) for all Redis OSS users in its own repository: [RSCoordinator](https://github.com/RediSearch/RSCoordinator).
