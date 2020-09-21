@@ -103,6 +103,8 @@ Before you choose to backup to Google Cloud Storage, make sure that you have:
 - Private key ID
 - Private key
 
-The client and key details should be retrieved from a defined service account in GCP console (under API & Services > Credentials > Create Credentials).
-The service account should be given `Storage Legacy Bucket Writer` permission on the target bucket.
+{{< note >}}
+You can retrive the client and key details from a defined service account in GCP console (go to API & Services > Credentials > Create Credentials).
+The service account should be set with `Storage Legacy Bucket Writer` permissions on the target bucket. Verify the bucket doesn't use a retention policy as it can interfere with the process.
 Note that the format of the private key from the downloaded JSON is in a single string where new lines are marked with `\n` characters. When pasting the key into the UI, reformat the key by replacing all `\n` characters with a new line.
+{{< /note >}}
