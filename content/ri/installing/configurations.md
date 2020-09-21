@@ -31,3 +31,5 @@ The following environment variables can be set to configure RedisInsight:
 - `REDISINSIGHT_HOME_DIR` - By default, RedisInsight stores application data (such as local database, log files and snapshot files) in  `~/.redisinsight` in your home directory on desktop and in the `/db` directory in the Docker container. To change this directory, set the `REDISINSIGHT_HOME_DIR` environment variable.
 
 - `LOG_DIR` - By default, RedisInsight stores log files in your home directory (`REDISINSIGHT_HOME_DIR`). To have RedisInsight store the log files in a different directory, set the `LOG_DIR` environment variable.
+
+- `REDISINSIGHT_LOG_LEVEL` - By default, RedisInsight logs all warnings produced by it. To configure log level of RedisInsight, set the `REDISINSIGHT_LOG_LEVEL` environment variable. Possible values of this variable are - DEBUG, INFO, WARNING, ERROR and CRITICAL.
