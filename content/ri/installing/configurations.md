@@ -49,9 +49,18 @@ The following environment variables can be set to configure RedisInsight:
 
 **Default:**     `"~/.redisinsight"`
 
+### RILOGDIR
+
+**Description:** Sets the logging storage directory where RedisInsight stores application logs.
+
+**Type:**        String
+
+**Default:**     `"~/.redisinsight"` on desktop, `"/db"` on docker.
+
+
 ### RILOGLEVEL
 
-**Description:** Configures the log level of the application. Possible values are - DEBUG, INFO, WARNING, ERROR and CRITICAL.
+**Description:** Configures the log level of the application. Possible values are - `"DEBUG"`, `"INFO"`, `"WARNING"`, `"ERROR`" and `"CRITICAL"`.
 
 **Type:**        String
 
@@ -87,10 +96,10 @@ The following environment variables can be set to configure RedisInsight:
 
 **Deprecated in:** `v1.9.0`
 
-### LOG_DIR
+### LOG_DIR (DEPRECATED)
 
 **Description:** Sets the logging storage directory where RedisInsight stores application logs.
 
 **Type:**        String
 
-**Default:**     `"~/.redisinsight"`
+**Default:**     `"~/.redisinsight"` on desktop, `"/db"` on docker.
