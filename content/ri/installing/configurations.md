@@ -49,6 +49,13 @@ The following environment variables can be set to configure RedisInsight:
 
 **Default:**     `"~/.redisinsight"`
 
+### RILOGLEVEL
+
+**Description:** Configures the log level of the application. Possible values are - DEBUG, INFO, WARNING, ERROR and CRITICAL.
+
+**Type:**        String
+
+**Default:**     `"WARNING"`
 
 ### REDISINSIGHT_PORT (DEPRECATED)
 
