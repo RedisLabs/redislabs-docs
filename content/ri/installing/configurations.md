@@ -47,7 +47,7 @@ The following environment variables can be set to configure RedisInsight:
 
 **Type:**        String
 
-**Default:**     `"~/.redisinsight"`
+**Default:**     `"~/.redisinsight"` on desktop, `"/db"` on docker.
 
 ### RILOGDIR
 
@@ -92,7 +92,7 @@ The following environment variables can be set to configure RedisInsight:
 
 **Type:**          String
 
-**Default:**       `"~/.redisinsight"`
+**Default:**       `"~/.redisinsight"` on desktop, `"/db"` on docker.
 
 **Deprecated in:** `v1.9.0`
 
