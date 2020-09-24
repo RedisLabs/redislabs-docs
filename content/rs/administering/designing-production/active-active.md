@@ -43,7 +43,7 @@ Before configuring an Active-Active database, you must:
 
 1. RS is limited to five participating clusters or instances in an Active-Active database.
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database you must create a new Active-Active database and migrate the data.
-1. Active-Active databases do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
+1. Active-Active databases do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}). >>> OUTDATED <<<
 1. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
 1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/administering/designing-production/active-passive.md" >}}).
 
