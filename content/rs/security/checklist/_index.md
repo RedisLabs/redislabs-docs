@@ -80,5 +80,5 @@ Redis Implements self-signed certificates for the database proxy and replication
 Similar to the control plane, you can also configure TLS protocols to help support your security and compliane needs. For more information visit our documentation [here]({{< relref "/rs/security/database-security/encryption.md#configuring-tls-protocols" >}}).
 
 ## Database Backups
-Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports database backups to multiple backup mediums. To learn more about database backups visit our backup documentation [here]({{< relref "/rs/administering/database-operations/database-backup.md" >}}).
+Implementing a disaster recovery strategy is an important part of data security. Redis Enterprise supports database backups to multiple backup mediums. To learn more about database backups visit our backup documentation [here]({{< relref "/rs/administering/import-export/database-backup.md" >}}).
 

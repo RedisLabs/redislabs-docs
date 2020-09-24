@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-Redis Enterprise comes with a set of logs on the server and availible through the user interface to assist users in investigating actions taken on the server and to troubleshoot issues.
+Redis Enterprise comes with a set of logs on the server and available through the user interface to assist users in investigating actions taken on the server and to troubleshoot issues.
 
 ## Sending logs to a remote logging server
 Redis Enterprise sends logs to syslog by default. You can send these  logs to a remote logging server by configuring syslog. 
