@@ -161,7 +161,7 @@
 </footer>
 
 <!-- GDPR MODAL -->
-<div id="gdpr-modal" style="background-color: rgb(48, 59, 74); color: rgb(167, 167, 167); padding: 0.5em 2em 1em; text-align: center; line-height: 1.5; font-size: smaller; z-index: 10; position: sticky; bottom: 0px;">
+<div id="gdpr-modal" style="display: none; background-color: rgb(48, 59, 74); color: rgb(167, 167, 167); padding: 0.5em 2em 1em; text-align: center; line-height: 1.5; font-size: smaller; z-index: 10; position: sticky; bottom: 0px;">
     <div style="max-width: 1200px; margin: 0 auto;">
         <p style="
         margin: .5em 0 0 0;
@@ -185,6 +185,6 @@
             border: none;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;            
-        " class="button" tabindex="0">Continue</a>
+        " class="button" tabindex="0" onclick="acceptGDPR()">Continue</a>
     </div>
 </div>
