@@ -1,4 +1,4 @@
-const SEARCH_API_URL = "https://docsearch-dot-redislabs-university.appspot.com/search"
+const SEARCH_API_URL = "http://34.107.129.53/search"
 const THIRTY_SECONDS = 30000
 const EVENT_LOCAL_CACHE = "search:served_from_local_cache"
 const EVENT_LIVE_SEARCH_FAILED = "search:live_search:failed"
