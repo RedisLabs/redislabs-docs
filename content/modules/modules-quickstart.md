@@ -20,7 +20,7 @@ The modules that are currently available for Redis Cloud are:
 - [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
 
 {{< note >}}
-Modules are currently available as a public preview in AWS region `ap-south-1`.
+Modules are currently available as a public preview in AWS region `ap-south-1` and `us-west-2`.
 They will be available in other providers and regions after the public preview period is finished.
 {{< /note >}}
 
@@ -45,7 +45,7 @@ To create a new subscription:
 1. Select your subscription configuration:
     1. For the cloud provider, make sure that **Amazon AWS** is selected.
     <!-- , **Microsoft Azure**, **Google Cloud Platform** -->
-    1. For the region that you want the subscription to use, select **ap-south-1**.
+    1. For the region that you want the subscription to use, select **ap-south-1** or **us-west-2**.
     1. In the Redis Cloud service levels, select the Redis Cloud Essentials **30MB/1 Database** level.
     1. Enter a name for the subscription.
 1. Click **Create**.
