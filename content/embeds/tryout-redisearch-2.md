@@ -21,16 +21,6 @@ In this example, we have four fields: title (TEXT), body (TEXT), url (TEXT), an
     By default, all hashes get a score of 1.0.
     In this example, the SCORE_FIELD directive specifies a "weight" field whose value can override the default score for a document.
 
-{{< note >}}
-For databases in a Redis Cloud Essentials subscription, you need to add the index name to the document key as a tag to make sure that the index and the documents are located on the same shard:
-
-```sh
-FT.CREATE database_idx ...
-HSET database_idx {doc}:1 ...
-```
-
-{{< /note >}}
-
 ### Testing the index
 
 Now add some data to this index. Here we add a hash with the key
