@@ -21,7 +21,7 @@ other DNS server except for the one included with the RS installation.
 The existence of another DNS server on the same machine might cause
 unexpected and erroneous behavior.
 
-## Cluster Name (FQDN) and Connection Management
+## Cluster name (FQDN) and connection management
 
 When connecting to the cluster for administration or connecting to
 databases for data access, there are 2 options:
@@ -42,7 +42,7 @@ databases for data access, there are 2 options:
     cluster and to the databases need to maintain IP address of at least
     one node in the cluster to discover and access the cluster topology.
 
-## URL Based Connections and How to set up Cluster Name (FQDN)
+## URL-based connections and how to set up cluster name (FQDN)
 
 The Fully Qualified Domain Name (FQDN) is the unique cluster identifier
 that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) that are
@@ -59,7 +59,7 @@ The FQDN must always comply with the IETF's [RFC
 952](http://tools.ietf.org/html/rfc952) standard and section 2.1 of the
 [RFC 1123](http://tools.ietf.org/html/rfc1123) standard.
 
-## Naming the Cluster FQDN
+## Naming the cluster FQDN
 
 You have two options for naming the cluster FQDN:
 
@@ -120,7 +120,7 @@ When using the DNS or mDNS option, failover can be done transparently
 and the DNS is updated automatically to point to the IP of the new
 master.
 
-## IP Based Connections
+## IP-based connections
 
 When you use IP based connection option, the FQDN does not need to have
 any special format because clients use IP addresses instead of
@@ -151,4 +151,4 @@ page](https://redislabs.com/resources/how-to-redis-enterprise/).
 You can find a simple example of URL and IP Based connection in the
 "Testing Connectivity to your Database" section on the ["Creating a new
 database"
-page]({{< relref "/rs/administering/database-operations/creating-database#simple-connectivity-test" >}}).
+page]({{< relref "/rs/administering/creating-database/_index.md#simple-connectivity-test" >}}).

@@ -9,7 +9,7 @@ aliases: /rv/api/how-to/create-and-manage-subscriptions/
 You can use `cURL` commands to create and manage a subscriptions
 with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).
 
-## Create a Subscription
+## Create a subscription
 
 The API operation that creates a subscription is: `POST /subscriptions`
 

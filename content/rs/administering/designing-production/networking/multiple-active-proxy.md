@@ -51,7 +51,7 @@ just uses the next IP in the list to connect to another proxy.
 
 ## Proxy policies
 
-A database can have one of the following four proxy policies:
+A database can have one of these proxy policies:
 
 | **Proxy Policy** | **Description** |
 |------------|-----------------|
@@ -106,13 +106,13 @@ Note: you can find the endpoint id for the endpoint argument by running
 *status* command for rladmin. Look for the endpoint id information under
 the *ENDPOINT* section of the output.
 
-### Reapply Policies After Topology Changes
+### Reapply policies after topology changes
 
 If you want to reapply the policy after topology changes, such as node restarts,
 failovers and migrations, run this command to reset the policy:
 
 ```sh
-rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards||all-nodes>
+rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
 ```
 
 This is not required with single policies.

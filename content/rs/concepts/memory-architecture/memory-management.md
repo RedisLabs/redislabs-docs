@@ -31,7 +31,7 @@ In addition to cluster memory management,
 we recommend that you have a monitoring platform that alerts you proactively before a system gets low on RAM.
 You must maintain sufficient free memory to make sure that you have a healthy RS installation.
 
-## Memory Statistics
+## Memory statistics
 
 You can see the status of the cluster memory with these statistics:
 

@@ -25,7 +25,7 @@ intent.
 For more information, go here. For information, go to [Developing with
 Active-Active databases]({{< relref "/rs/developing/crdbs/_index.md" >}}).
 
-## Redis Modules
+## Redis modules
 
 Redis Modules enable you to extend the functionality of Redis Enterprise
 Software. One can add new data types, capabilities, etc. to tailor the
@@ -33,7 +33,7 @@ cluster to a specific use case or need. Once installed, modules benefit
 from the high performance, scalability, and high availability that Redis
 Enterprise is known for.
 
-### Redis Labs Modules
+### Redis Labs modules
 
 Redis Labs developed and certified these modules for use with RS:
 
@@ -52,7 +52,7 @@ Redis Labs developed and certified these modules for use with RS:
     - This module turns RS into a supercharged distributed in-memory
       full-text indexing and search beast.
 
-### Custom Modules
+### Custom modules
 
 In addition, Redis Enterprise Software provides the ability to load and
 use custom [Redis modules](https://redislabs.com/community/redis-modules-hub/) or
@@ -69,7 +69,7 @@ and highly available cluster Redis Enterprise Software is famous for.
 For more information go to [quick start with Redis Enterprise Software
 on Docker.]({{< relref "/rs/getting-started/docker/_index.md" >}})
 
-## LDAP Integration
+## LDAP integration
 
 As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Software can now use either built-in

@@ -15,7 +15,7 @@ Prerequisites:
 - The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.8 or higher.
 - The [PKS cli installed](https://docs.pivotal.io/runtimes/pks/1-4/installing-pks-cli.html).
 
-## Step 1: Login and Prepare your PKS environment and PKS Cluster
+## Step 1: Login and prepare your PKS environment and PKS cluster
 
 1. Log in to PKS and your PKS cluster:
 
@@ -123,7 +123,7 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
  ```
 -->
 
-## Step 2: Get and Prepare Deployment Files
+## Step 2: Get and prepare deployment files
 
 1. Clone this repository, which contains the deployment files:
 
@@ -293,7 +293,7 @@ For production environments you must retain the Persistent Volume Claims (PVCs) 
              versionTag:       5.4.10-22
         ```
 
-## Step 3: Create your Cluster
+## Step 3: Create your cluster
 
 1. Once you have `your_pks_cluster.yaml` file set, you need to apply it to create your Redis Enterprise Cluster:
 
@@ -437,7 +437,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
-1. Follow the [instructions to create your database](http://localhost:1313/rs/administering/database-operations/creating-database/#creating-a-new-redis-database).
+1. Follow the [instructions to create your database](http://localhost:1313/rs/administering/creating-database/#creating-a-new-redis-database).
 
     For example:
 
@@ -510,7 +510,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
             $
             ```
 
-## Step 5: Cleaning Up
+## Step 5: Cleaning up
 
 To remove the Redis Enterprise Cluster from your PKS deployment:
 

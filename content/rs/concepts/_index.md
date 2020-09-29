@@ -29,7 +29,7 @@ Stack](/images/rs/rp_stack.png?width=700&height=319)
 and red tiles representing the data access path with Redis as the
 shards.*
 
-## High Availability with Redis Enterprise
+## High availability with Redis Enterprise
 
 Redis Enterprise uses in-memory replication to maintain master and slave
 replicas. Redis Enterprise comes with various watchdogs that detect and
@@ -44,7 +44,7 @@ built-in WAN-based replication for Redis deployments across multiple
 data centers. WAN-based replication mechanisms in Redis Enterprise are
 designed, protect against total Data Center or wider network failures.
 
-## Scaling Databases
+## Scaling databases
 
 Each Redis Enterprise cluster can contain multiple databases. In Redis,
 databases represent data that belong to a single application, tenant, or
@@ -82,7 +82,7 @@ flash hardware in use, applications experience slightly higher latency
 when bringing values back into RAM from flash. However subsequent
 accesses to the same value is fast, once the value is in RAM.
 
-## Data Durability with Redis Enterprise
+## Data durability with Redis Enterprise
 
 Redis Enterprise has two durability options:
 

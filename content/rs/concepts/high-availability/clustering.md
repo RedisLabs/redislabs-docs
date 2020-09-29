@@ -142,7 +142,7 @@ Examples of such changes include:
 or require flushing the database, is to back up the database and import
 the data to a newly configured database.
 
-## Multi-Key operations {#multikey-operations}
+## Multi-key operations {#multikey-operations}
 
 Operations on multiple keys in a clustered database are supported with
 the following limitations:

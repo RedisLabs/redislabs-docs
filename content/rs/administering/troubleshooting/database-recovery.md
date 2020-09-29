@@ -31,7 +31,7 @@ The database recovery process includes:
     If you use the original storage drives,
     make sure that you backup all files on the old persistent storage drives to another location.
 
-## Recovering the Databases
+## Recovering the databases
 
 After you prepare the cluster that hosts the database,
 you can run the recovery process from the [rladmin]({{< relref "/rs/references/rladmin.md" >}})

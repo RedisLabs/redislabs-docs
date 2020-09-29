@@ -22,7 +22,7 @@ On Windows and Mac, install docker version 18.03 or higher.
 You can run `docker version` to find out your docker version.
 {{< /note >}}
 
-## Run RedisInsight Docker Image
+## Run RedisInsight Docker image
 
 Next, run the RedisInsight container.
 The easiest way is to run the following command:
@@ -32,6 +32,8 @@ The easiest way is to run the following command:
 ```
 
 and then point your browser to [http://localhost:8001](http://localhost:8001).
+
+RedisInsight also provides a health check endpoint at [http://localhost:8001/healthcheck/](http://localhost:8001/healthcheck/) to monitor the health of the running container.
 
 {{< note >}}
 Make sure the directory you pass as a volume to the container has necessary permissions for the container to access it.

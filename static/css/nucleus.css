@@ -582,7 +582,7 @@ th {
 body {
   font-size: 16px;
   line-height: 20px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Graphik Web', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -653,7 +653,7 @@ fieldset {
   padding: 0.938rem;
   margin: 0 0 1.7rem 0; }
 span.icon-icons_Copy:hover:before {
-  color: #b62411;
+  color: #5961ff;
 }
 input,
 label,

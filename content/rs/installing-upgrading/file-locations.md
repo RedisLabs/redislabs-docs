@@ -8,7 +8,7 @@ aliases: /rs/administering/installing-upgrading/file-locations/
 ---
 To make sure that Redis Enterprise Software functions properly, make sure that you handle the files in the application directories with care.
 
-## Application Directories
+## Application directories
 
 The directories that Redis Enterprise Software installs into are:
 
@@ -20,7 +20,7 @@ The directories that Redis Enterprise Software installs into are:
 | /opt/redislabs/lib | System library files |
 | /opt/redislabs/sbin | System binaries for tweaking provisioning |
 
-## Configuration and Data Directories
+## Configuration and data directories
 
 The default directories that Redis Enterprise Software uses for data and metadata are:
 
@@ -34,5 +34,5 @@ The default directories that Redis Enterprise Software uses for data and metadat
 
 You can change these file locations for:
 
-- [Ephemeral and persistence storage]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) during cluster setup
+- [Ephemeral and persistence storage]({{< relref "/rs/administering/new-cluster-setup.md" >}}) during cluster setup
 - [Socket files]({{< relref "/rs/installing-upgrading/configuring/change-location-socket-files.md" >}}) after cluster setup

@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 Here are some frequently asked questions about Redis Enterprise Software (RS).
 
-## Features and Terminology
+## Features and terminology
 
 {{< expand-control >}}
 <!-- Also in RC -->
@@ -61,7 +61,7 @@ you need.
 {{< /expand>}}
 {{< /expand-control >}}
 
-## Technical Capabilities
+## Technical capabilities
 
 {{< expand-control >}}
 {{< expand "How many Redis databases can I create and manage?" >}}

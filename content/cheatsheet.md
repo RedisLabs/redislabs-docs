@@ -10,7 +10,7 @@ Here you can find examples of style and formatting elements that you can use in 
 % is used when the inner content of the shortcode is markdown, and < is used when the inner content is HTML.
 {{< /note >}}
 
-## Basic Content Formatting
+## Basic content formatting
 
 ### Tabbed paragraphs
 
@@ -232,7 +232,7 @@ Output:
   {{< /tab >}}
 {{< /tabs >}}
 
-## Images and Videos
+## Images and videos
 
 ### Adding an image
 
@@ -295,7 +295,7 @@ Ouput:
 
 {{< youtube_start Bi1T3toQfF4 10 >}}
 
-## Single-Sourcing {#singlesourcing}
+## Single-sourcing {#singlesourcing}
 
 ### Expanding blocks
 
@@ -387,7 +387,7 @@ Output:
 
 {{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
 
-## Informative Notices
+## Informative notices
 
 **Info**
 
@@ -475,7 +475,7 @@ Ouput:
 Inside a well
 {{< /well >}}
 
-## Contents Lists
+## Contents lists
 
 ### All children
 
@@ -507,7 +507,7 @@ Ouput:
 Recently updated articles
 {{< /recently-updated >}}
 
-## Other Shortcodes
+## Other shortcodes
 
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
 - [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)

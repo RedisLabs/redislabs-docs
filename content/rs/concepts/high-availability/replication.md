@@ -24,7 +24,7 @@ for slave shards is used, the slave shard is automatically migrated on node fail
 size, as explained in [Database memory
 limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
 
-## Redis on Flash Replication Considerations
+## Redis on Flash replication considerations
 
 We recommend that you set the sequential replication feature using
 rladmin. This is due to the potential for relatively slow replication

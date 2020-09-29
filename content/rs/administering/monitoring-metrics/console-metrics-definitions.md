@@ -15,7 +15,7 @@ aliases: /rs/administering/monitoring-metrics/definitions/
 The Redis Enterprise Software (RS) admin console shows metrics with information about the performance of the cluster, node, database, and shard.
 For Redis on Flash (ROF) databases, additional metrics are available.
 
-## Standard Metrics
+## Standard metrics
 
 | Metric | Components measured | Description | More information |
 | ------ | ------ | ------ | ------ |
@@ -52,7 +52,7 @@ For Redis on Flash (ROF) databases, additional metrics are available.
 | Writes latency | Database | Latency per write operation |  |
 | Writes/sec | Database | Number of total writes per second | For example: SET |
 
-## Redis on Flash Metrics
+## Redis on Flash metrics
 
 | Metric | Components measured | Description |
 | ------ | ------ | ------ |

@@ -24,7 +24,7 @@ Absolutely! There is no lock-in with Redis Cloud.
 Using the instructions on this page,
 you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice.
 
-## Backing Up to Amazon Simple Storage Service (AWS S3)
+## Backing up to Amazon Simple Storage Service (AWS S3)
 
 To use an S3 bucket for storing backups, first access your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
@@ -54,7 +54,7 @@ steps:
 After the permissions are set for your bucket, set the **Backup Path** to the path of your S3 bucket
 and click **Apply**. For example, if the name of your bucket is *backups-bucket*, use the path: `s3://backups-bucket`
 
-## Backing Up to Google Cloud Storage (GCS)
+## Backing up to Google Cloud Storage (GCS)
 
 For [Google Cloud Platform (GCP)
 console](https://developers.google.com/console/) subscriptions, to use a GCS bucket for storing your resources' backups:
@@ -80,7 +80,7 @@ bucket's name is backups-bucket, use the path:
 
 `gs://backups-bucket`
 
-## Backing Up to Azure Blob Storage (ABS)
+## Backing up to Azure Blob Storage (ABS)
 
 To use an ABS container for storing your resources' backups, follow
 these steps in your [Microsoft Azure Management
@@ -117,7 +117,7 @@ Where:
 - *container_name:* the name of the container, if needed.
 - *path*: the backups path, if needed.
 
-## Backing Up to an FTP Server
+## Backing up to an FTP Server
 
 To store your resource backups on an FTP server, set its **Backup Path**
 using the following syntax:

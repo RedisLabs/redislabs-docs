@@ -22,10 +22,10 @@ set up two RS installations and continue from Step 2.
 {{< note >}}
 This getting started guide is for development or demonstration environments.
 To set up an Active-Active database in a production environment, use the instructions for
-[creating an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
+[creating an Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
 {{< /note >}}
 
-## Step 1: Run Two Containers
+## Step 1: Run two containers
 
 To spin up two RS containers, run these commands:
 
@@ -41,7 +41,7 @@ The **-p** options map the web UI port (8443), REST API port (9443), and
 database access port differently for each container to make sure that all
 containers can be accessed from the host OS that is running the containers.
 
-## Step 2: Setup Two Clusters
+## Step 2: Setup two clusters
 
 1. For cluster 1, direct your browser to **https://localhost:8443** on the
 host machine to see the Redis Enterprise Software web console. Simply
@@ -125,7 +125,7 @@ https://localhost:8443 and cluster 2 at https://localhost:8445.
     local clusters running on the same host.
 
 <!-- Also in getting-started-crdbs.md -->
-## Step 4: Test the Connection to your Member Redis Active-Active databases
+## Step 4: Test the connection to your member Redis Active-Active databases
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
@@ -140,7 +140,7 @@ replication to for the global Active-Active database.
 
 ![crdb-diagram](/images/rs/crdb-diagram.png)
 
-### Connecting Using redis-cli {#connecting-using-rediscli}
+### Connecting using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with redis database.
 
@@ -186,7 +186,7 @@ redis-cli is a simple command-line tool to interact with redis database.
     "123"
     ```
 
-### Connecting Using _Hello World_ Application in Python
+### Connecting using _Hello World_ application in Python
 
 A simple python application running on the host machine can also connect
 to the database.

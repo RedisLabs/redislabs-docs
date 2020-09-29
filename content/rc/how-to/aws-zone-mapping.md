@@ -14,7 +14,7 @@ you do not need to map AWS zones.
 - AWS zone mapping is not yet supported for Redis Cloud Pro and Ultimate.
 {{< /note >}}
 
-## Why Do Zone Mapping?
+## Why do zone mapping?
 
 As you probably know, the [Amazon AWS cloud infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)
 is divided into regions across the world and Availability Zones (AZ) inside each region.
@@ -28,7 +28,7 @@ To mitigate for this latency overhead, you can automatically map AZs that are de
 with the AZs in your Redis Cloud account.
 This makes sure that your application and database are co-located on the same physical AZ.
 
-## How to MAP Zones
+## How to map zones
 
 1. [Log in](https://app.redislabs.com/#/login) to your Redis Cloud Essentials account.
 1. Go to **settings** > **account**.

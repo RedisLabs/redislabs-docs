@@ -7,10 +7,10 @@ categories: ["Modules"]
 ---
 Before you can use RedisGears, you have to install the RedisGears module on your RS cluster.
 
-## Minimum Requirements
+## Minimum requirements
 
 - Redis Enterprise 6.0.0 or later
-- The [cluster is setup]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) and all of the nodes are joined to the cluster
+- The [cluster is setup]({{< relref "/rs/administering/new-cluster-setup.md" >}}) and all of the nodes are joined to the cluster
 
 ## Installing RedisGears
 
@@ -31,7 +31,7 @@ On each node in the Redis Enterprise cluster:
 
 {{< note >}}
 - `<version>` - The version number in the format `x.y.z`.
-- `<version_integer>` - The version number in integer format `xxyyzz` or you can calculate it as `10000*x + 100*y + z`.
+- `<version_integer>` - The version number in integer format `xxyyzz` (`xyyzz` if `x` < 10). You can calculate this number using the formula `10000*x + 100*y + z`.
 - You must also run these commands on new nodes before you join them to an existing cluster.
 {{< /note >}}
 
@@ -40,7 +40,7 @@ On each node in the Redis Enterprise cluster:
 1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module.
 1. In the RS admin console, [add the RedisGears module]({{< relref "/modules/add-module-to-cluster.md" >}}) to the cluster.
 
-### Step 3: Create a Database and Verify the Installation
+### Step 3: Create a database and verify the installation
 
 1. Create a Redis Enterprise database [with the RedisGears module enabled]({{< relref "/modules/add-module-to-database.md" >}}).
 1. From the CLI of a node in the cluster, check that the database was created successfully and shards are running with: `rladmin status`
@@ -48,7 +48,7 @@ On each node in the Redis Enterprise cluster:
 
     To connect to the database from a client, run: `redis-cli -h <FQDN_of_node> -p <host> [-a <password>]`
 
-## Install the Write-Behind Recipe
+## Install the write-behind recipe
 
 The Write-Behind recipe comes with two types of dependencies:
 
@@ -58,7 +58,7 @@ The Write-Behind recipe comes with two types of dependencies:
 In most cases all of these can be provisioned to RedisGears before the Functions are uploaded.
 However, root access for the driver on the host is required in some cases, for example with Oracle drivers.
 
-### Step 1: Install Oracle driver (Optional)
+### Step 1: Install Oracle driver (optional)
 
 If you want to do write-behind with an Oracle database:
 
@@ -95,7 +95,7 @@ This list can be different or more extensive in newer versions.
 
     This command returns a list of all available requirements.
 
-### Step 3: Register the Functions
+### Step 3: Register the functions
 
 The following is a RedisGears recipe that shows how to use the Write Behind pattern to map data from Redis Hashes to MySQL tables.
 The recipe maps all Redis Hashes with the prefix `person:<id>` to the MySQL table persons, with `<id>` being the primary key and mapped to the person_id column.
@@ -146,5 +146,5 @@ Go to the [rgsync website](https://pypi.org/project/rgsync/) to get the replicat
 1. Run gears-cli with your custom file:
 
     ```sh
-    gears-cli --host <host> --port <post> --password <password> <yourfile>.py
+    gears-cli run --host <host> --port <post> --password <password> <yourfile>.py
     ```

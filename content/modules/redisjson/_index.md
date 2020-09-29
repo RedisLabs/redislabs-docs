@@ -10,7 +10,7 @@ aliases:
 Applications developed with the open source version of RedisJSON are 100%
 compatible with RedisJSON in Redis Enterprise Software (RS).
 
-## RedisJSON Path Syntax
+## RedisJSON path syntax
 
 Since there is no standard for JSON path syntax, RedisJSON implements its
 own. RedisJSON's syntax is a subset of common best practices and resembles
@@ -104,7 +104,7 @@ As you can see, you can easily traverse the document structure by path
 to get only the data you want, when you need it. You could also use this
 to increment or another operation on this object.
 
-## RedisJSON Commands
+## RedisJSON commands
 
 For the authoritative list of RedisJSON commands, please go
 [here](http://redisjson.io/).

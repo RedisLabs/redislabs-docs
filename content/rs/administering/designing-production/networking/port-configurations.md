@@ -21,7 +21,7 @@ update your firewall with the port for that new database endpoint.
 |------------|-----------------|-----------------|-----------------|
 | ICMP | * | Internal | For connectivity checking between nodes |
 | TCP | 1968 | Internal | Proxy traffic |
-| TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 3340, 3341, 8002 36379, 36380 | Internal | Cluster traffic |
+| TCP | 3333, 3334, 3335, 3336, 3337, 3338, 3339, 36379, 36380 | Internal | Cluster traffic |
 | TCP | 8001 | Internal, External | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8002, 8004 | Internal | System health monitoring |
 | TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
@@ -39,7 +39,7 @@ Connection sources are:
 - External - The traffic is from client applications or external monitoring resources
 - Active-Active - The traffic is from clusters that host Active-Active databases
 
-## Changing the Management Web UI Port
+## Changing the management web UI port
 
 If for any reason you want to use a custom port for the RS Web UI
 instead of the default port (8443), you can change the port. Before you
@@ -59,7 +59,7 @@ To change the default port for the RS Web UI, on any node in the cluster run:
 rladmin cluster config cm_port <new-port>
 ```
 
-## Disabling HTTP support for API Endpoints
+## Disabling HTTP support for API endpoints
 
 To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.
 Before you disable HTTP support, make sure that you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint

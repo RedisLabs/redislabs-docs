@@ -12,9 +12,9 @@ aliases:
 
 ---
 Modules add additional functionality to your databases for specific use cases.
-You can add modules to the database when you create the database or after the database is already created.
+You can add modules to the database when you create the database.
 
-## Add Modules to a Database
+## Add modules to a database
 
 {{< note >}}
 - Before you add a module to a database,
@@ -26,9 +26,7 @@ You can add modules to the database when you create the database or after the da
 To add modules to a database:
 
 1. Go to: **databases**
-1. Either:
-    - Click on an existing database
-    - Click ![Add](/images/rs/icon_add.png#no-click "Add") and **create database**
+1. Click ![Add](/images/rs/icon_add.png#no-click "Add") and **create database**
 1. Configure the database settings.
 1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add"):
     1. Select the module that you want to add.

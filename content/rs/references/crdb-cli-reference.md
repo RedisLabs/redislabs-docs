@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-An [Active-Active database]({{< relref "/rs/administering/active-active.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
+An [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
 replicates your dataset across Redis Enterprise Software (RS) clusters located in geographically distributed regions.
 Active-Active databases allow read-write access in all locations, making them ideal for distributed applications that require the fastest response times, and also for disaster recovery.
 
@@ -14,7 +14,7 @@ Each cluster that hosts an instance is called a **participating cluster**.
 
 An Active-Active database requires two or more participating clusters.
 Each instance is responsible for updating the instances residing on other participating clusters with the transactions it receives.
-Write conflicts are resolved using [CRDTs]({{< relref "/rs/administering/active-active.md" >}}).
+Write conflicts are resolved using [CRDTs]({{< relref "/rs/administering/designing-production/active-active.md" >}}).
 
 To programmatically maintain an Active-Active database and its instances, you can use the CRDB-CLI command-line tool.
 
@@ -35,11 +35,11 @@ You can track the task with [`crdb-cli task status`](#active-active-task-status)
 
 For each CRDB-CLI command, you can use `--help` for additional information about the command.
 
-## Active-Active Database Operations
+## Active-Active database operations
 
 Active-Active database operations affect the configuration and data of the database.
 
-### Creating an Active-Active Database
+### Creating an Active-Active database
 
 The `crdb create` command lets you create a customized Active-Active database and create instances of the database on specified participating clusters. Before you create an Active-Active database you must have:
 
@@ -135,7 +135,7 @@ To create an Active-Active database with 1 shard in each instance and not wait f
 crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --no-wait
 ```
 
-### Showing the list of Active-Active Databases
+### Showing the list of Active-Active databases
 
 The `crdb list` command shows all Active-Active databases that the cluster participates in.
 Each database is represented with a unique GUID, the name of the database, an instance ID, and the FQDN of the cluster that hosts the instance.
@@ -229,11 +229,11 @@ This is an irreversible command.
 If the data in your database is important, make sure you back it up before you delete the database.
 {{< /warning >}}
 
-## Active-Active Instance Operations
+## Active-Active instance operations
 
 Active-Active instance operations affect the placement of database instances on participating clusters, but do not change the configuration or data in the database.
 
-### Adding an instance to an Active-Active Database {#adding-an-instance-to-an-activeactive-database}
+### Adding an instance to an Active-Active database {#adding-an-instance-to-an-activeactive-database}
 
 The `crdb add-instance` command lets you add instances to an existing Active-Active database in order to host the database on additional clusters.
 This creates a read-write copy of the database on the specified cluster.
@@ -245,7 +245,7 @@ When you add an instance to an Active-Active database, you must specify:
 |`crdb-guid <guid-id>`| string| The ID of the Active-Active database that you want to add the instance to|
 |`instance fqdn=<cluster_fqdn>,username=<username>,password=<password>`| strings| The connection information for the participating cluster that will host the new instance|
 
-### Removing an instance from an Active-Active Database {#removing-an-instance-from-an-activeactive-database}
+### Removing an instance from an Active-Active database {#removing-an-instance-from-an-activeactive-database}
 
 The `remove-instance` command deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
 
@@ -263,7 +263,7 @@ you can use the `--unordered` flag to remove the instance from the Active-Active
 After you use `crdb remove-instance --unordered`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <crdb-guid> <instance-id>`
 {{< /note >}}
 
-## Active-Active Task Status
+## Active-Active task status
 
 Each `crdb-cli crdb` command creates a task ID that you can use to track the progress of the command.
 For example:

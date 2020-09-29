@@ -13,7 +13,7 @@ node_redis installation instructions are given in the [README file](https://gith
 
     npm install redis 
 
-## Opening a Connection to Redis Using node_redis
+## Opening a connection to Redis using node_redis
 
 The following code creates a connection to Redis using node_redis:
 
@@ -54,7 +54,7 @@ TLS is supported by node_redis as of [version 2.4.0](https://github.com/NodeRedi
     var client = redis.createClient(port, 'hostname', {tls: ssl});
     ...
 
-## Reading and Writing Data with node_redis
+## Reading and writing data with node_redis
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

@@ -257,7 +257,7 @@ Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/
 
         The version tag, as it appears on your repository (e.g. on [DockerHub](https://hub.docker.com/r/redislabs/redis/)).
 
-## Step 4: Create your Cluster
+## Step 4: Create your cluster
 
 Once you have your_cluster_name yaml set, you need to apply it to create your Redis Enterprise Cluster:
 
@@ -327,7 +327,7 @@ Changing the admin password impacts the proper operation of the K8s deployment.
 
     ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
 
-- Follow the interface’s [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+- Follow the interface’s [instructions to create your database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
 {{< note >}}
 In order to conduct the Ping test through Telnet, you can create a new route to the newly created database port in the same way as described above for the UI port. After you create your database, go to the Openshift management console, select your project name and go to Applications-\>Services. You will see two newly created services representing the database along with their IP and port information, similar to the screenshot below.

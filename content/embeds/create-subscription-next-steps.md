@@ -1,7 +1,7 @@
 The subscription shows a "Pending" status and takes approximately 10 to 15 minutes to provision.
 You receive an email when your subscription is ready to use.
 
-## Next Steps
+## Next steps
 
 We recommend that you setup [VPC peering]({{< relref "/rc/administration/setup/edit-subscription#vpc-peering" >}}) with your application VPC.
 VPC peering lets you route traffic between your VPCs using private IP addresses for improved security and performance.

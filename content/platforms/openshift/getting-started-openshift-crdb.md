@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-In this guide, we'll set up an [Active-Active database]({{< relref "/rs/administering/active-active.md" >}})
+In this guide, we'll set up an [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}})
 (formerly known as CRDB) deployment with Active-Active replication
 spanning across two Redis Enterprise clusters over OpenShift, using Redis Enterprise Operator
 and OpenShift Route.
@@ -167,7 +167,7 @@ You can view the binding by following the link to the secret.
 
 ![openshift-crdb-secret]( /images/rs/openshift-crdb-secret.png )
 
-## Validating Active-Active database Deployment
+## Validating Active-Active database deployment
 
 To do a basic validation test of database replication:
 

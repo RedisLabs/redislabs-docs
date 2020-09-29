@@ -11,7 +11,7 @@ aliases: /modules/packaging
 Redis Labs does not and cannot support third party modules or databases created with them.
 {{< /warning >}}
 
-## Packaging Non-Certified Modules
+## Packaging non-certified modules
 
 In addition to the ones Redis Labs packages and certifies, there are
 other modules that can be installed and extend Redis databases in Redis
@@ -29,13 +29,13 @@ require six steps:
 1. Deploy the custom module to the cluster using the web UI
 1. Create a database that utilizes the module
 
-### Get the Module from GitHub
+### Get the module from GitHub
 
 ```sh
 git clone https://github.com/account/myModule.git
 ```
 
-### Compile the Module
+### Compile the module
 
 To compile the module just run:
 
@@ -43,7 +43,7 @@ To compile the module just run:
 cd myModule/;make
 ```
 
-### Install ramp-packer Utility
+### Install ramp-packer utility
 
 [RAMP](https://github.com/RedisLabs/RAMP) or "Redis Automatic Module
 Packaging", is a utility created by Redis Labs for packaging up modules
@@ -55,7 +55,7 @@ Run the next command to install ramp-packer:
 pip install ramp-packer
 ```
 
-### Wrap the Custom Module Using Ramp Utility
+### Wrap the custom module using ramp utility
 
 ```sh
 $ ramp pack <PATH_TO_myModule.so> -a "Your Name" -e "yourname@emailaddress.com"

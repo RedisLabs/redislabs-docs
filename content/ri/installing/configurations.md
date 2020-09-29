@@ -20,7 +20,7 @@ To configure RedisInsight with environment variables:
 1. Set the environment variables.
 1. Restart RedisInsight.
 
-## RedisInsight Environment Variables
+## RedisInsight environment variables
 
 The following environment variables can be set to configure RedisInsight:
 

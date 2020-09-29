@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-## Write-Behind Caching
+## Write-behind caching
 
 Write-behind is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis Labs currently supports write-behind caching in [Redis Enterprise Software]({{< relref "/rs" >}}).
 
@@ -15,12 +15,12 @@ Here's how these caching patterns work:
 1. Your application uses the cache for reads and writes.
 1. The cache syncs any changed data to the backing database asynchronously.
 
-<!-- ### Read-Through Caching
+<!-- ### Read-through caching
 
 1. Your application reads from the cache. If there's a cache hit, the data is returned.
 1. If there's cache miss, the cache retrieves the data from your backing database (think Oracle, PostgreSQL, etc.). The data is then stored in the cache and returned. -->
 
-## Write-Behind Caching with RedisGears
+## Write-behind caching with RedisGears
 
 [RGSync](https://github.com/RedisGears/rgsync) is a RedisGears recipe that uses the write-behind pattern to synchronize Redis data structures to a backing data store (Oracle, MySQL, Cassandra, and Snowflake are currently supported).
 
@@ -91,7 +91,7 @@ gears-cli --host <host>
           REQUIREMENTS rgsync
 ```
 
-### Secret Management
+### Secret management
 
 You may not want to store database credentials in your RedisGears functions. To avoid this, you can pass these credentials as module parameters and then reference them from your functions.
 

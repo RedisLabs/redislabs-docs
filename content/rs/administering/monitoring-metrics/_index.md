@@ -1,11 +1,12 @@
 ---
 Title: Monitoring with Metrics and Alerts
 description:
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/alerting/
          /rs/administering/cluster-operations/settings/alerts/
+         /rs/administering/database-operations/metrics/shard-metrics/
 ---
 You can use the metrics that measure the performance of your Redis Enterprise Software (RS) clusters, nodes, databases and shards
 to keep an eye on the performance of your databases.
@@ -16,7 +17,7 @@ You can also access the metrics and configure alerts through the REST API so tha
 Make sure you read the [definition of each metric]({{< relref "/rs/administering/monitoring-metrics/console-metrics-definitions.md" >}})
 so that you understand exactly what it represents.
 
-## Real-time Metrics
+## Real-time metrics
 
 You can see the metrics of the cluster in:
 
@@ -34,7 +35,7 @@ To choose which metrics to display in the two large graphs at the top of the pag
 
 We recommend that you show two similar metrics in the top graphs so you can compare them side-by-side.
 
-## Cluster Alerts
+## Cluster alerts
 
 In **settings** > **alerts**, you can enable alerts for node or cluster events, such as high memory usage or throughput.
 
@@ -53,7 +54,7 @@ To enable alerts for a cluster:
 
 - In **settings** > **alerts**, select the alerts that you want to show for the cluster and click **Save**.
 
-## Database Alerts
+## Database alerts
 
 For each database, you can enable alerts for database events, such as high memory usage or throughput.
 
@@ -68,7 +69,7 @@ To enable alerts for a database:
 1. In **configuration** for each database, click **show advanced options** to see the database alerts and select the alerts that you want to get for the database.
 1. Click **Update**.
 
-## Sending Alerts by Email
+## Sending alerts by email
 
 To send cluster or database alerts by email:
 

@@ -16,7 +16,7 @@ Customers, such as large organizations, that use LDAP to manage external authent
 must set these restrictions in the LDAP service.
 {{< /note >}}
 
-## User Login Lockout
+## User login lockout
 
 The parameters for the user login lockout are:
 
@@ -32,11 +32,11 @@ You can view the user login restrictions for your cluster with:
 rladmin info cluster | grep login_lockout
 ```
 
-## Customizing the User Lockout Parameters
+## Customizing the user lockout parameters
 
 You can customize the user lockout parameters with from rladmin.
 
-### Changing the Login Lockout Threshold
+### Changing the login lockout threshold
 
 You can set the login lockout threshold with the command:
 
@@ -53,7 +53,7 @@ For example, to set the lockout threshold to 10 failed login attempts.
 rladmin tune cluster login_lockout_threshold 10
 ```
 
-### Changing the Login Lockout Counter Reset
+### Changing the login lockout counter reset
 
 You can set the login lockout reset in seconds with the command:
 
@@ -67,7 +67,7 @@ For example, to set the lockout reset to 1 hour:
 rladmin tune cluster login_lockout_counter_reset_after 3600
 ```
 
-### Changing the Login Lockout Duration
+### Changing the login lockout duration
 
 You can set the login lockout duration in seconds with the command:
 
@@ -84,7 +84,7 @@ For example, to set the lockout duration to 1 hour:
 rladmin tune cluster login_lockout_duration 3600
 ```
 
-## Unlocking Locked User Accounts
+## Unlocking locked user accounts
 
 Before the lockout duration ends,
 an administrator can change the user password in order to manually unlock the user account.

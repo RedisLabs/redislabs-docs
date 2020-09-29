@@ -30,7 +30,7 @@ To make sure that we can manage your AWS resources, you must not:
 
 For more about creating an AWS user, see the [AWS IAM documentation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
-## Step 1: Create the IAM Instance Policy
+## Step 1: Create the IAM instance policy
 
 First, create a policy to use for the new instance role:
 
@@ -113,7 +113,7 @@ First, create a policy to use for the new instance role:
 1. Validate it and press **Review Policy**.
 1. Enter **RedisLabsInstanceRolePolicy** as the policy name and click **Create Policy**.
 
-## Step 2: Create the Service Role
+## Step 2: Create the service role
 
 Now create the role that uses the policy:
 
@@ -126,7 +126,7 @@ Now create the role that uses the policy:
     select it, and click **Next: Review**.
 1. Name the role `redislabs-cluster-node-role` and click **Create Role**.
 
-## Step 3: Create the User Policy
+## Step 3: Create the user policy
 
 Now create a policy to assign to the user:
 
@@ -257,7 +257,7 @@ Now create a policy to assign to the user:
 1. Validate the policy and click **Review Policy**.
 1. Enter `RedislabsIAMUserRestrictedPolicy` as the policy name and click **Create Policy**.
 
-## Step 4: Create the Programmatic Access User
+## Step 4: Create the programmatic access user
 
 Create a user and attach the policy you created:
 
@@ -272,7 +272,7 @@ Create a user and attach the policy you created:
 1. Click **Create user**.
 1. Download the user credentials and store them in a secure location.
 
-## Step 5: Create the Console Access Role
+## Step 5: Create the console access role
 
 Last, create a role and attach the policy you created:
 

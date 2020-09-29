@@ -160,7 +160,7 @@ After you install the Redis Enterprise operator into a project you can:
 - Click on **Catalog > Installed Operators** in the left menu to view the operators in your project.
 - Click on **Catalog > Operator Management** to view your operator subscriptions.
 
-## Create a Redis Enterprise Cluster
+## Create a Redis Enterprise cluster
 
 You can easily create a cluster with the operator in **Installed Operators**.
 
@@ -204,7 +204,7 @@ The name of the cluster must be "rec" for deployments from within the OLM. For m
 
     ![K8S - created rec via operator details]( /images/rs/k8s-operator-rec-after-create-details.png )
 
-## Create a Database
+## Create a database
 
 ### Step 1: Access the Redis Enterprise UI
 
@@ -251,7 +251,7 @@ the operator. The generated password is stored in a Kubernetes secret.
 
 ### Step 2: Create your database
 
-Continue with the [instructions to create your database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}). After you create a database, the operator discovers the database and
+Continue with the [instructions to create your database]({{< relref "/rs/administering/creating-databases/_index.md" >}}). After you create a database, the operator discovers the database and
 creates additional Kubernetes services for application workload access to the
 database.
 

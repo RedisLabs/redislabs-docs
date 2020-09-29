@@ -12,7 +12,7 @@ This release bundles OSS Redis 5.0.7 and includes new Redis Modules versions, se
 
 Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) for upgrading to RS 5.4.14 from RS 5.0.2 and above.
 
-## New Features
+## New features
 
 - Version [5.0.7](https://raw.githubusercontent.com/antirez/redis/5.0/00-RELEASENOTES) of OSS Redis is merged into RS 5.4.14.
 - The following GA releases of Redis Modules are bundled in RS 5.4.14:
@@ -22,7 +22,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
     - [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version 1.4.25 (updated, [release notes]({{< relref "/modules/redisearch/release-notes/redisearch-1.4-release-notes.md#redisearch-1425-march-2020" >}}))
     - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version 1.2.3 (updated, [release notes]({{< relref "/modules/redistimeseries/release-notes/redistimeseries-1.2-release-notes.md" >}}))
 
-## Additional Capabilities
+## Additional capabilities
 
 - Added the ability to retrieve license details with a REST API command.
     Now you can get your license details from the web UI (settings > general) or from the REST API command:
@@ -67,7 +67,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
 
-## Important Fixes
+## Important fixes
 
 - RS23396 - Improved the disconnection mechanism in case of inactive UI session
 - RS27924 - Added descriptive error messages in the UI console when validating the license
@@ -75,7 +75,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 - RS35675 - Updated the upgrade process of Active-Active Redis databases to save causal consistency and encryption flags
 - RS36922 - Fixed an issue in a specific cluster upgrade scenario from versions earlier than RS 5.4.0 to RS 5.4.0 or higher
 
-## Known Limitations
+## Known limitations
 
 ### Upgrade
 
@@ -100,11 +100,11 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
     `curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"`
 
-### Discovery Service
+### Discovery service
 
 - For [Redis Sentinel (Discovery Service)]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), every database name must be unique across the cluster.
 
-### Redis Commands
+### Redis commands
 
 - The capability of disabling specific Redis commands does not work on commands specific to Redis Modules.
 - The CLIENT ID command cannot guarantee incremental IDs between clients that connect to different nodes under multi proxy policies.

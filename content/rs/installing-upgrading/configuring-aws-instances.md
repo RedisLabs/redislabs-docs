@@ -9,7 +9,7 @@ aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
 There are some special considerations that are important when installing
 and running Redis Enterprise Software (RS) on an AWS instances.
 
-## Storage Considerations
+## Storage considerations
 
 AWS instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
@@ -19,7 +19,7 @@ connected. Later, when setting up RS on the instance, make sure that [the
 persistence storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
 Note: After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}})) on the instance
-and **before** running through [the setup process]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})),
+and **before** running through [the setup process]({{< relref "/rs/administering/new-cluster-setup.md" >}})),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
 `chown redislabs:redislabs /< ebs folder name>`
@@ -35,7 +35,7 @@ this feature could be critical to use:
     this case, the provisioned IOPS should be on the nodes used as
     slaves in the cluster.
 
-## Instance Types
+## Instance types
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
@@ -65,4 +65,4 @@ When configuring the Security Group:
 After successfully launching the instances:
 
 1. Install RS from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/_index.md" >}}).
-2. [Set up the cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
+2. [Set up the cluster]({{< relref "/rs/administering/new-cluster-setup.md" >}}).

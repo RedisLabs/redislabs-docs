@@ -1,14 +1,4 @@
 jQuery(document).ready(function() {
-    $(window).scroll(function (event) {
-        var scroll = $(window).scrollTop();
-        var header = $('#header');
-        if(scroll > 40) {
-            header.css('height', '50px');
-        } else {
-            header.css('height', '70px');
-        }
-    });
-
     $("nav.shortcuts li").hover(
         function() {
             $(this).children('.submenu-wrapper').css('visibility', 'visible');
