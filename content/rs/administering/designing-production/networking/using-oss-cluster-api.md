@@ -85,7 +85,7 @@ To configure an RS Active-Active database (formerly known as CRDB) to use the OS
 1. To enable the OSS Cluster API for the Active-Active database, run:
 
     ```sh
-    crdb-cli crdb update --crdb_guid <guid> --oss-cluster true
+    crdb-cli crdb update --crdb-guid <guid> --oss-cluster true
     ```
 
     {{< note >}}
