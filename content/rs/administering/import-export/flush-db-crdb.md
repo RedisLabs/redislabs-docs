@@ -63,7 +63,7 @@ To flush data from an Active-Active database:
     1. To flush the Active-Active database, run:
 
         ```sh
-        crdb-cli crdb flush --crdb-guid <CRDB_GUID>
+        crdb-cli crdb flush --crdb-guid <CRDB-GUID>
         ```
 
         The command output contains the task ID of the flush task, for example:
