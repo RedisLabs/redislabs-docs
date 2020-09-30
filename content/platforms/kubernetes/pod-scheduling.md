@@ -128,7 +128,7 @@ podAntiAffinity:
     topologyKey: kubernetes.io/hostname
 ```
 
-Each pod has the three labels above where `redis.io/cluster` is the name of your cluster.
+Each pod has the three labels above where `redis.io/cluster` is the label for the name of your cluster.
 
 You can change this rule to restrict or include nodes that the Redis Enterprise cluster node pods can run on.
 For example, you can delete the `redis.io/cluster` label so that even Redis Enterprise node pods from different clusters cannot be scheduled on the same Kubernetes node:
