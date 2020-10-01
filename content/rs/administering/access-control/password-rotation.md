@@ -24,7 +24,7 @@ You can add an additional password to a user account as long as:
 - The new password does not already exist as a password for the user
 - If [password complexity]({{< relref "/rs/administering/access-control/#setting-up-local-password-complexity" >}}) is required, the new password meets the complexity requirements
 
-To add an additional password to an RS user account, run this command as a POST:
+To add an additional password to an RS user account, run this POST command:
 
 ```sh
 curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
