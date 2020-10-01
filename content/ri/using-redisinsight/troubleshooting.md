@@ -27,10 +27,10 @@ You can install RedisInsight on operating systems that are not officially suppor
 
 We are happy to receive your feedback at redisinsight@redislabs.com.
 
-
 ## Using behind a reverse proxy
 
-RedisInsight should work fine behind a reverse proxy like Nginx for most use-cases.
+RedisInsight should work fine behind a reverse proxy like NGINX for most use-cases.
 There are a couple of things to keep in mind:
+
 - Since some requests can be long-running, we recommend that the **request timeout is set to over 30 seconds** on the reverse proxy.
 - Using path-rewriting, i.e, hosting RedisInsight behind a prefix path is not supported at this time.
