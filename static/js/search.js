@@ -1,8 +1,5 @@
-const SEARCH_API_URL = "http://34.107.129.53/search"
+const SEARCH_API_URL = "https://stage-search-service.redislabs.com/search"
 const THIRTY_SECONDS = 30000
-const EVENT_LOCAL_CACHE = "search:served_from_local_cache"
-const EVENT_LIVE_SEARCH_FAILED = "search:live_search:failed"
-const EVENT_LIVE_SEARCH_SUCCESS = "search:live_search:success"
 
 
 function setWithExpiry(key, value, ttl) {
@@ -39,7 +36,6 @@ new Autocomplete('#autocomplete', {
   search: input => {
     const trimmedInput = input.trim()
     const url = `${SEARCH_API_URL}?q=${trimmedInput}*`
-    const shouldTrack = input.length > 4
 
     if (input.length === 0) {
       return []
@@ -49,8 +45,7 @@ new Autocomplete('#autocomplete', {
 
     const cachedResults = getWithExpiry(url)
 
-    if (cachedResults && shouldTrack) {
-      analytics.track(EVENT_LOCAL_CACHE, {query: trimmedInput})
+    if (cachedResults) {
       return cachedResults
     }
 
@@ -59,20 +54,10 @@ new Autocomplete('#autocomplete', {
         .fail(function(jqxhr, textStatus, error) {
           const err = `${textStatus}, ${error}`
           console.error("Error querying search API:", err)
-          if (shouldTrack) {
-            analytics.track(EVENT_LIVE_SEARCH_FAILED, {query: trimmedInput})
-          }
           resolve([])
         })
         .done(function(data) {
           setWithExpiry(url, data.results, THIRTY_SECONDS)
-          if (shouldTrack) {
-            analytics.track(EVENT_LIVE_SEARCH_SUCCESS, {
-              query: trimmedInput,
-              count: data.total,
-              page_size: data.results.length
-            })
-          }
           resolve(data.results)
         })
     })
