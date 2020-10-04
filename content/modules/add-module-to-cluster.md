@@ -45,5 +45,6 @@ To deploy an upgraded package:
 
     ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
+
 [Adding modules to a database]({{< relref "/modules/add-module-to-database.md">}}).
-[Upgrading a database's module]({{< relref "/modules/add-module-to-database.md">}}).
+[Upgrading a database's module]({{< relref "/modules/add-module-to-database/#upgrading-the-module-for-the-database">}}).
