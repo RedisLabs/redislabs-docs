@@ -6,6 +6,7 @@
       <div id="autocomplete" class="autocomplete">
       <input class="autocomplete-input" />
       <ul class="autocomplete-result-list"></ul>
+      <div class="powered-by-redisearch"></div>
     </div>
 
       <script type="text/javascript" src="{{"js/autocomplete.js" | relURL}}"></script>
@@ -68,6 +69,17 @@
   .search-body {
     font-size: 13px;
     width: 100%;
+  }
+
+  .powered-by-redisearch {
+    background-image: url('/images/redisearch.png');
+    background-repeat: no-repeat;
+    background-position: 95% 95%;
+    height: 50px;
+    width: 300px;
+    position: absolute;
+    bottom: 7px;
+    right: 0;
   }
 
 </style>
