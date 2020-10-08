@@ -43,6 +43,10 @@ new Autocomplete('#autocomplete', {
 
     try { xhr.abort(); } catch(e){}
 
+    // Save the query so we can append it to a selected result URL later.
+    // We use this to track search queries.
+    this.lastQuery = trimmedInput
+
     const cachedResults = getWithExpiry(url)
 
     if (cachedResults) {
@@ -117,7 +121,8 @@ new Autocomplete('#autocomplete', {
   // a new window
   onSubmit: result => {
     if (result) {
-      window.open(`${result.url}`)
+      const lastQuery = encodeURIComponent(this.lastQuery)
+      window.open(`${result.url}?s=${lastQuery}`)
     }
   }
 })
