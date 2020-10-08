@@ -1,4 +1,4 @@
-const SEARCH_API_URL = "https://stage-search-service.redislabs.com/search"
+const SEARCH_API_URL = "https://search-service.redislabs.com/search"
 const THIRTY_SECONDS = 30000
 
 
