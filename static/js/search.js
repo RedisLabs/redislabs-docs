@@ -119,7 +119,20 @@
           })
           .done(function(data) {
             setWithExpiry(url, data.results, THIRTY_SECONDS)
-            resolve(data.results)
+
+            if (!data.results.length) {
+              // Push a fake 'no results' document.
+              results = [{
+                title: "",
+                section_title: `No results found for "${trimmedInput}"`,
+                body: "",
+                hierarchy: ['']
+              }]
+              resolve(results)
+            }
+            else {
+              resolve(data.results)
+            }
           })
       })
     },
