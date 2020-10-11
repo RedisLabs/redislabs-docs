@@ -77,6 +77,12 @@ To add a node in RS:
 The node is added to the cluster. You can see it in the list of nodes in the
 cluster.
 
+{{< note >}}In case of adding multiple nodes to the clutter,we recommend
+that you add them one after the other rather than in parallel.
+When a node joins, the cluster makes sure all other nodes are up and running.
+Adding more than one node concurrently may result in failure.
+In that case try to join nodes again.{{< /note >}}
+
 {{< tip >}}We recommend that you run the [rlcheck utility]({{< relref
 "/rs/references/rlcheck.md" >}}) to verify that the node is functioning
 properly.{{< /tip >}}
