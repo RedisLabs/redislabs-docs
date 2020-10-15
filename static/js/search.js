@@ -1,3 +1,4 @@
+// test
 var lunrIndex, pagesIndex;
 
 function endsWith(str, suffix) {
