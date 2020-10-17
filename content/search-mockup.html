@@ -447,107 +447,109 @@
         data-position="below"
       >
         <input class="autocomplete-input" aria-expanded="true" />
-        <ul class="autocomplete-result-list" role="listbox" style="position: absolute; z-index: 1; width: 100%; box-sizing: border-box; pointer-events: auto; top: 100%;" id="autocomplete-result-list-1">
+        
+        <div class="autocomplete-result-list-wrapper" role="listbox" style="position: absolute; z-index: 1; width: 100%; box-sizing: border-box; pointer-events: auto; top: 100%;">
+          <ul class="autocomplete-result-list" id="autocomplete-result-list-1">
+            <li
+              id="autocomplete-result-0"
+              class="autocomplete-result"
+              data-result-index="0"
+              aria-selected="false"
+            >
+              <div class="search-root">
+                Root Page
+              </div>
+              <div class="search-left">
+                <div class="search-title">
+                  A Long Result Page Title Driving Text Wide
+                </div>
+              </div>
+              <div class="search-right">
+                <div class="search-section-title">
+                  Section Title
+                </div>
+                <div class="search-body">
+                  Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                  Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+                </div>
+              </div>
+            </li>
 
-          <li
-            id="autocomplete-result-0"
-            class="autocomplete-result"
-            data-result-index="0"
-            aria-selected="false"
-          >
-            <div class="search-root">
-              Root Page
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                A Long Result Page Title Driving Text Wide
+            <li
+              id="autocomplete-result-1"
+              class="autocomplete-result"
+              data-result-index="1"
+              aria-selected="false"
+            >
+              <div class="search-root">
+                A Long Root Page With Many Words
               </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                Section Title
+              <div class="search-left">
+                <div class="search-title">
+                  Result Page Title
+                </div>
               </div>
-              <div class="search-body">
-                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
-                Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+              <div class="search-right">
+                <div class="search-section-title">
+                  Section Title
+                </div>
+                <div class="search-body">
+                  Lorem ipsum
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li
-            id="autocomplete-result-1"
-            class="autocomplete-result"
-            data-result-index="1"
-            aria-selected="false"
-          >
-            <div class="search-root">
-              A Long Root Page With Many Words
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                Result Page Title
+            <li
+              id="autocomplete-result-2"
+              class="autocomplete-result"
+              data-result-index="2"
+              aria-selected="false"
+            >
+              <div class="search-root">
+                Root Page
               </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                Section Title
+              <div class="search-left">
+                <div class="search-title">
+                  Result Page Title
+                </div>
               </div>
-              <div class="search-body">
-                Lorem ipsum
+              <div class="search-right">
+                <div class="search-section-title">
+                  Section Title
+                </div>
+                <div class="search-body">
+                  Lorem ipsum
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li
-            id="autocomplete-result-2"
-            class="autocomplete-result"
-            data-result-index="2"
-            aria-selected="false"
-          >
-            <div class="search-root">
-              Root Page
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                Result Page Title
+            <li
+              id="autocomplete-result-3"
+              class="autocomplete-result"
+              data-result-index="3"
+              aria-selected="false"
+            >
+              <div class="search-root">
+                Root Page
               </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                Section Title
+              <div class="search-left">
+                <div class="search-title">
+                  Result Page Title
+                </div>
               </div>
-              <div class="search-body">
-                Lorem ipsum
+              <div class="search-right">
+                <div class="search-section-title">
+                  Section Title
+                </div>
+                <div class="search-body">
+                  Lorem ipsum
+                </div>
               </div>
-            </div>
-          </li>
+            </li>
 
-          <li
-            id="autocomplete-result-3"
-            class="autocomplete-result"
-            data-result-index="3"
-            aria-selected="false"
-          >
-            <div class="search-root">
-              Root Page
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                Result Page Title
-              </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                Section Title
-              </div>
-              <div class="search-body">
-                Lorem ipsum
-              </div>
-            </div>
-          </li>
-
-        </ul>
-        <div class="powered-by-redisearch"></div>
+          </ul>
+          <div class="powered-by-redisearch"></div>
+        </div>
 
       <!-- <script type="text/javascript" src="./js/autocomplete.js"></script> -->
       <!-- <script type="text/javascript" src="./js/search.js"></script> -->
@@ -564,6 +566,10 @@
     position: relative;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .autocomplete-result-list-wrapper .autocomplete-result-list {
+    padding-bottom: 60px; /* height of powered-by-redisearch section */
   }
 
   .autocomplete-result {
@@ -616,12 +622,16 @@
   .powered-by-redisearch {
     background-image: url('../images/redisearch.png');
     background-repeat: no-repeat;
-    background-position: 95% 95%;
-    height: 50px;
-    width: 300px;
+    background-position: 95% 60%;
     position: absolute;
-    bottom: 7px;
     right: 0;
+    width: 100%;
+    background-color: #fff;
+    bottom: 0;
+    height: 60px;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);    
   }
 </style>
 
