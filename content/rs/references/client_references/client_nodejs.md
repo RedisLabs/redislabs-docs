@@ -5,7 +5,9 @@ weight:
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis with Node.js you need to install a Node.js Redis client. In the following sections, we demonstrate the use of [node_redis](https://github.com/NodeRedis/node_redis), a complete Redis client for Node.js. Additional Node.js clients for Redis can be found under the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
+In order to use Redis with Node.js you need to install a Node.js Redis client. In the following sections, we demonstrate the use of [node_redis](https://github.com/NodeRedis/node_redis), a community recommended Redis client for Node.js. The other community recommended client for Node.js developers is [ioredis]().
+
+Additional Node.js clients for Redis can be found under the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
 
 ## Installing node_redis
 
@@ -82,16 +84,20 @@ Once connected to Redis, you can start reading and writing data. The following c
     // Open a connection to Redis
     ...
  
-    client.set('foo', 'bar'); 
-    client.get('foo', (err, reply) => {
+    client.set('foo', 'bar', (err, reply) => {
         if (err) throw err;
         console.log(reply);
+        
+        client.get('foo', (err, reply) => {
+            if (err) throw err;
+            console.log(reply);
+        });
     });
 
 The output of the above code should be:
 
     $ node example_node_redis.js
-    Connected to Redis
+    OK
     bar
 
 node_redis exposes a function named for each Redis command.  These functions take string arguments, the first of which is almost always the Redis key to run the command against. These arguments are followed by an optional error first callback function.
