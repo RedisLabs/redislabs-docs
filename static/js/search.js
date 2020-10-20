@@ -123,7 +123,6 @@
       }
       this.core.hideResults()
     }
-  }
 
     updateStyle = () => {
       this.root.dataset.expanded = this.expanded
