@@ -98,6 +98,23 @@ window.onclick = function(e) {
   }, 400);
 </script>
 
+<script>
+  // Compliance dialog
+  function acceptGDPR() {
+    localStorage.setItem('gdpr_accepted', true);
+    window.location.reload();    
+  };
+
+  (function() {
+    if(!localStorage.getItem('gdpr_accepted')) {
+      const e = document.getElementById('gdpr-modal');
+      if(!e) return;
+
+      e.style.display = 'block';
+    }
+  })();
+</script>
+
 <script src="{{"theme-flex/modernizr-custom.js" | relURL}}" defer></script>
 <script src="{{"theme-flex/classie.js" | relURL}}" defer></script>
 <script src="{{"theme-flex/polyfills.js" | relURL}}" defer></script>

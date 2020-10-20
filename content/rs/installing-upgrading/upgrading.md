@@ -45,8 +45,8 @@ on all of the machines on which RS is installed.
 
 - You must upgrade the master node before you upgrade the other nodes.
 We recommend that you plan to keep all nodes up until the upgrade is completed
-on all nodes. The node role is shown in the output of the 'rladmin status
-nodes' command.
+on all nodes. The node role is shown in the output of the `rladmin status
+nodes` command.
 - You cannot change the installation path or user during upgrade.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of updating them through the API. For assistance with this issue, contact [Support](https://support.redislabs.com).
 
@@ -98,7 +98,7 @@ To check whether your Redis database versions match the latest Redis
 version supported by RS:
 
 - In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
-    run the status command.
+    run the `status` command.
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
 - In the Management UI, go to the **Cluster \> Configuration** page.
@@ -186,10 +186,10 @@ You must upgrade the CRDB protocol before you update the CRDB feature set versio
 1. If the feature set version is old, you must upgrade all of the CRDB instances. Then, to update the feature set for each active-active database, run:
 
     ```sh
-    crdb-cli crdb update --crdb-guid <crdb_guid> --featureset-version yes
+    crdb-cli crdb update --crdb-guid <CRDB-GUID> --featureset-version yes
     ```
 
-    You can retrieve the `crdb_guid` with the following command:
+    You can retrieve the `<CRDB-GUID>` with the following command:
 
     ```sh
     crdb-cli crdb list
