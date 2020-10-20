@@ -152,7 +152,7 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 To upgrade a CRDB instance:
 
-1. [Upgrade RS](#upgrading-nodes) on each node in the clusters where the CRDB instances are located.
+1. [Upgrade RS](#upgrading-a-node) on each node in the clusters where the CRDB instances are located.
 
 1. To see the status of your CRDB instances, run: `rladmin status`
 
