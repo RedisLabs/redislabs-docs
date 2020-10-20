@@ -118,21 +118,21 @@
             resolve([])
           })
           .done(function(data) {
-            setWithExpiry(url, data.results, THIRTY_SECONDS)
-
+            // Push a fake 'no results' document if there were no results.
             if (!data.results.length) {
-              // Push a fake 'no results' document.
               results = [{
                 title: "",
                 section_title: `No results found for "${trimmedInput}"`,
                 body: "",
                 hierarchy: ['']
               }]
-              resolve(results)
             }
             else {
-              resolve(data.results)
+              results = data.results
             }
+
+            setWithExpiry(url, results, THIRTY_SECONDS)
+            resolve(results)
           })
       })
     },
