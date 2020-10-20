@@ -1,8 +1,3 @@
-#autocomplete {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
 .autocomplete-input {
   z-index: 100;
 }

@@ -91,12 +91,16 @@
 
       {{- if not .Site.Params.disableSearch}}
       <div>
-        <div>
           <div id="autocomplete" class="autocomplete autocomplete-inline">
-          <input class="autocomplete-input autocomplete-input-inline" placeholder="{{T "Search-placeholder"}}"/>
-          <ul class="autocomplete-result-list"></ul>
-        </div>
-          <script type="text/javascript" src="{{"js/autocomplete.js" | relURL}}"></script>
+            <input class="autocomplete-input autocomplete-input-inline" placeholder="{{T "Search-placeholder"}}" />
+
+            <div class="autocomplete-result-list-wrapper">
+              <ul class="autocomplete-result-list"></ul>
+              <div class="redisearch-logo">
+              </div>
+            </div>
+          </div>
+                <script type="text/javascript" src="{{"js/autocomplete.js" | relURL}}"></script>
           <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
           <link href="{{"css/autocomplete.css" | relURL}}" rel="stylesheet">
           <link href="{{"css/search.css" | relURL}}" rel="stylesheet">

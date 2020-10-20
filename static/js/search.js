@@ -72,9 +72,10 @@
           .done(function(data) {
             // Push a fake 'no results' document if there were no results.
             if (!data.results.length) {
+              const safeInput = encodeURIComponent(trimmedInput).replaceAll("%22", '"').replaceAll("%20", " ")
               results = [{
                 title: "",
-                section_title: `No results found for "${trimmedInput}"`,
+                section_title: `No results found for '${safeInput}'`,
                 body: "",
                 hierarchy: ['']
               }]
