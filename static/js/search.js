@@ -2,6 +2,13 @@
 
   const SEARCH_API_URL = "https://search-service.redislabs.com/search"
   const THIRTY_SECONDS = 30000
+  const SEARCH_LOGO = '<a class="powered-by-redisearch" href="https://oss.redislabs.com/redisearch/"></a>'
+
+
+  const searchLogo = document.querySelector('.redisearch-logo')
+  searchLogo.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
 
 
   function setWithExpiry(key, value, ttl) {
@@ -29,61 +36,6 @@
     }
 
     return item.value
-  }
-
-  class RedisLabsAutocomplete extends Autocomplete {
-    constructor(
-      root,
-      opts = {}
-    ) {
-      super(root, opts)
-
-      this.input.removeEventListener('keydown', this.core.handleKeyDown)
-      this.input.addEventListener('keydown', e => this.handleKeyDown(e))
-    }
-
-    handleKeyDown(event) {
-      const { key } = event
-
-      switch (key) {
-        case 'Up': // IE/Edge
-        case 'Down': // IE/Edge
-        case 'ArrowUp':
-        case 'ArrowDown': {
-          const selectedIndex =
-            key === 'ArrowUp' || key === 'Up'
-              ? this.core.selectedIndex - 1
-              : this.core.selectedIndex + 1
-          event.preventDefault()
-          this.core.handleArrows(selectedIndex)
-          break
-        }
-        case 'Tab': {
-          this.core.selectResult()
-          break
-        }
-        case 'Enter': {
-          const selectedResult = this.core.results[this.core.selectedIndex]
-
-          // Avoid closing the search box on Enter if a result is not selected.
-          if (!selectedResult) {
-            return;
-          }
-
-          this.core.selectResult()
-          this.core.onSubmit(selectedResult)
-          break
-        }
-        case 'Esc': // IE/Edge
-        case 'Escape': {
-          this.core.hideResults()
-          this.core.setValue()
-          break
-        }
-        default:
-          return
-      }
-    }
   }
 
 
@@ -120,9 +72,10 @@
           .done(function(data) {
             // Push a fake 'no results' document if there were no results.
             if (!data.results.length) {
+              const safeInput = encodeURIComponent(trimmedInput).replaceAll("%22", '"').replaceAll("%20", " ")
               results = [{
                 title: "",
-                section_title: `No results found for "${trimmedInput}"`,
+                section_title: `No results found for '${safeInput}'`,
                 body: "",
                 hierarchy: ['']
               }]
@@ -194,7 +147,15 @@
         const lastQuery = encodeURIComponent(this.lastQuery)
         window.open(`${result.url}?s=${lastQuery}`, "_top")
       }
+    },
+
+    onUpdate: (results, selectedIndex) => {
+      const redisearchLogo = document.querySelector('.redisearch-logo')
+      if (results.length) {
+        redisearchLogo.innerHTML = SEARCH_LOGO
+      } else {
+        redisearchLogo.innerHTML = ""
+      }
     }
   })
-
 })()
