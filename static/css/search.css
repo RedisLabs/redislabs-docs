@@ -7,9 +7,6 @@
   z-index: 100;
 }
 
-.autocomplete-result-list-wrapper {
-}
-
 .autocomplete-result-list {
     display: flex;
     position: relative;
@@ -17,8 +14,6 @@
     justify-content: space-between;
 
 }
-
-
 
 .autocomplete-result-list-wrapper .autocomplete-result-list {
   padding-bottom: 60px; /* height of powered-by-redisearch section */
@@ -29,14 +24,14 @@
   margin: 0 auto;
 }
 
-/* .autocomplete-inline {
+.autocomplete-inline {
   max-width: 96%;
   margin-bottom: 5px;
 }
 
 .autocomplete-input-inline {
   padding: 6px 6px 6px 48px;
-} */
+}
 
 .autocomplete-result {
   border-top: 1px solid #eee;
@@ -46,6 +41,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.autocomplete-result::last {
+  padding-bottom: 60px; /* height of powered-by-redisearch section */
 }
 
 .search-root {
@@ -86,7 +85,7 @@
 }
 
 .powered-by-redisearch {
-  background-image: url('images/redisearch.png');
+  background-image: url('../images/redisearch.png');
   background-repeat: no-repeat;
   background-position: 95% 60%;
   position: absolute;
