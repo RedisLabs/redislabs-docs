@@ -14,7 +14,7 @@ In this example, we have four fields: title (TEXT), body (TEXT), url (TEXT), an
 1. Create the schema:
 
     ```sh
-    127.0.0.1:12543> FT.CREATE database_idx PREFIX 1 "doc:" SCORE_FIELD "weight" SCHEMA title TEXT body TEXT url TEXT weight NUMERIC
+    127.0.0.1:12543> FT.CREATE database_idx PREFIX 1 "doc:" SCORE_FIELD "doc_weight" SCHEMA title TEXT body TEXT url TEXT doc_weight NUMERIC
     ```
 
     This command indexes all of the hashes with the prefix "doc:".
@@ -45,6 +45,13 @@ Now add some data to this index. Here we add a hash with the key
 127.0.0.1:12543> HSET doc:1 title "Redis Labs" body "primary and caching" url "<https://redislabs.com>" value 10
 OK
 ```
+
+To add a document specific score, set a value for the `doc_weight` field, which we specified as the `SCORE_FIELD` in the schema definition:
+```sh
+127.0.0.1:12543> HSET doc:2 title "Redis Labs" body "primary and caching" url "<https://redislabs.com>" value 10 doc_weight 2
+OK
+```
+
 
 ### Search the index
 
