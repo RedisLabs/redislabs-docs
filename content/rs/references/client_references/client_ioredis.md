@@ -111,7 +111,7 @@ The following code snippet reads the value stored at the key `foo`, and prints i
     });
     ```
 
-The output of the above code should be:
+The output of the above code is:
 
     ```sh
     $ node example_ioredis.js
