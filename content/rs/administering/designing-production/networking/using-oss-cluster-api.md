@@ -92,4 +92,4 @@ To configure an RS Active-Active database (formerly known as CRDB) to use the OS
 The Redis OSS Cluster API setting applies to all of the instances of the Active-Active database.
     {{< /note >}}
 
-To disable OSS Cluster API with rladmin, run: `crdb-cli crdb update --crdb-guid <CRDB-GUID> --oss-cluster false`
+To disable OSS Cluster API for the Active-Active database, run: `crdb-cli crdb update --crdb-guid <CRDB-GUID> --oss-cluster false`
