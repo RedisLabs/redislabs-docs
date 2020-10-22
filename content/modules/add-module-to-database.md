@@ -43,9 +43,9 @@ To add modules to a database:
 
     You can repeat these steps to add additional modules to the database.
 
-    {{ note }}
+    {{< note >}}
     RediSearch 1.x and RediSearch 2.x are not supported for use in the same database.
-    {{ /note }}
+    {{< /note >}}
 
 1. Click **Show advanced options** and enter a port number for the database, such as: **12543**.
 1. Click **Activate**.
