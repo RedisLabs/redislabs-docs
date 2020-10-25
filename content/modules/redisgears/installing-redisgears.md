@@ -16,6 +16,10 @@ Before you can use RedisGears, you have to install the RedisGears module on your
 
 ### Step 1: Install RedisGears dependencies
 
+{{< note >}}
+This step is required for Redis Enterprise Software 6.0.8 and below only.
+{{< /note >}}
+
 On each node in the Redis Enterprise cluster:
 
 1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module - Dependencies Package from the Redis Enterprise Software section of the Downloads page.
