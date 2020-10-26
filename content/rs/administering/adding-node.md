@@ -23,6 +23,9 @@ After you install the first node, you can add more nodes to the cluster.
     "/rs/installing-upgrading/configuring/cluster-dns/_index.md"
     >}}) each time a node is added or replaced.
 
+- We recommend that you add nodes one after the other rather than in parallel
+to avoid errors that occur because the connection to the other the other nodes in the cluster cannot be verified.
+
 ## Adding a node to an existing cluster
 
 To add a node in RS:
@@ -74,8 +77,10 @@ To add a node in RS:
     "/rs/concepts/high-availability/rack-zone-awareness.md" >}}), you are
     redirected to a page in which you must set the Rack-zone ID for the new node.
 
-The node is added to the cluster. You can see it in the list of nodes in the
-cluster.
+The node is added to the cluster.
+You can see it in the list of nodes in the cluster.
+
+If you see an error when you add the node, try adding the node again.
 
 {{< tip >}}We recommend that you run the [rlcheck utility]({{< relref
 "/rs/references/rlcheck.md" >}}) to verify that the node is functioning
