@@ -15,13 +15,12 @@ After you disable a service, you can enable the service from the same API endpoi
 
 The services that you can disable are:
 
-- mdns_server - 
-- cm_server - 
-- stats_archiver - 
-- saslauthd - 
-- pdns_server - 
-- crdb_coordinator - 
-- crdb_worker - 
+- RS Admin Console - `cm_server`
+- Gathering statistics - `stats_archiver`
+- [LDAP
+Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) - `saslauthd`
+- [Discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})- `mdns_server`, `pdns_server`
+- [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) - `crdb_coordinator`, `crdb_worker`
 
 To disable a service, use the `/v1/cluster/services/configuration` endpoint
 with the name of the service and the operating mode (enabled/disabled) in JSON format.
