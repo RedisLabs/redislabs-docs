@@ -17,7 +17,7 @@ In this example, we have four fields: `title` (`TEXT`), `body` (`TEXT`), `url` 
     127.0.0.1:12543> FT.CREATE database_idx PREFIX 1 "doc:" SCORE_FIELD "doc_weight" SCHEMA title TEXT body TEXT url TEXT visits NUMERIC
     ```
 
-    This command indexes all of the hashes with the prefix "`doc:`" as well as all the future ones that will be created.
+    This command indexes all of the hashes with the prefix "`doc:`" as well as all the future ones that will be created with that prefix.
 
     By default, all hashes get a score of 1.0, but if we need to be able to assign document-specific score to documents, we can do that too. We only need to specify in the schema the name of the hash element in which we will define the document score which will override the default of 1.0. This is done by using the `SCORE_FIELD` directive.
     In our example, `SCORE_FIELD` specifies a "`doc_weight`" field.
@@ -48,7 +48,7 @@ OK
 
 To add a document specific score, causing the document to appear higher or lower in results, set a value for the `doc_weight` field, which we specified as the `SCORE_FIELD` in the schema definition:
 ```sh
-127.0.0.1:12543> HSET doc:2 title "Redis Labs" body "Modules" url "<https://redislabs.com/modules>" visits 102 doc_weight 2
+127.0.0.1:12543> HSET doc:2 title "Redis Labs" body "Modules" url "<https://redislabs.com/modules>" visits 102 doc_weight 0.8
 OK
 ```
 
