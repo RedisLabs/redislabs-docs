@@ -1,25 +1,26 @@
 ### Creating indexes
 
-Let's create a new index called "database_idx".
+Let's create a new index called "`database_idx`".
 When you define the index, you must pass in the structure of the data you are adding to the index.
-In this example, we have four fields: title (TEXT), body (TEXT), url (TEXT), and weight (NUMERIC), and the title has a weight of 5.0.
+In this example, we have four fields: `title` (`TEXT`), `body` (`TEXT`), `url` (`TEXT`) and `visits` (`NUMERIC`), with the title field having a higher weight than the others (`5.0`).
 
-1. Connect to Redis.
+1. Connect to Redis (replace 12543 with the port number your RediSearch is running on).
 
     ```sh
     $ redis-cli -p 12543
     127.0.0.1:12543>
     ```
 
-1. Create the schema:
+2. Create the schema:
 
     ```sh
-    127.0.0.1:12543> FT.CREATE database_idx PREFIX 1 "doc:" SCORE_FIELD "doc_weight" SCHEMA title TEXT body TEXT url TEXT doc_weight NUMERIC
+    127.0.0.1:12543> FT.CREATE database_idx PREFIX 1 "doc:" SCORE_FIELD "doc_weight" SCHEMA title TEXT body TEXT url TEXT visits NUMERIC
     ```
 
-    This command indexes all of the hashes with the prefix "doc:".
-    By default, all hashes get a score of 1.0.
-    In this example, the SCORE_FIELD directive specifies a "weight" field whose value can override the default score for a document.
+    This command indexes all of the hashes with the prefix "`doc:`" as well as all the future ones that will be created.
+
+    By default, all hashes get a score of 1.0, but if we need to be able to assign document-specific score to documents, we can do that too. We only need to specify in the schema the name of the hash element in which we will define the document score which will override the default of 1.0. This is done by using the `SCORE_FIELD` directive.
+    In our example, `SCORE_FIELD` specifies a "`doc_weight`" field.
 
 {{< note >}}
 For databases in a Redis Cloud Essentials subscription, you need to add the index name to the document key as a tag to make sure that the index and the documents are located on the same shard:
@@ -33,29 +34,28 @@ HSET database_idx {doc}:1 ...
 
 ### Testing the index
 
-Now add some data to this index. Here we add a hash with the key
-"doc:1" and the fields:
+Now add some data to this index. Here we add a hash with the key "`doc:1`" and the fields:
 
-- Title: "Redis Labs"
-- Body: "primary and caching"
-- URL: <https://redislabs.com>
-- Weight: 10
+- title: "Redis Labs"
+- body: "Primary and caching"
+- url: <https://redislabs.com/primary-caching>
+- visits: 108
 
 ```sh
-127.0.0.1:12543> HSET doc:1 title "Redis Labs" body "primary and caching" url "<https://redislabs.com>" value 10
+127.0.0.1:12543> HSET doc:1 title "Redis Labs" body "Primary and caching" url "<https://redislabs.com/primary-caching>" visits 108
 OK
 ```
 
-To add a document specific score, set a value for the `doc_weight` field, which we specified as the `SCORE_FIELD` in the schema definition:
+To add a document specific score, causing the document to appear higher or lower in results, set a value for the `doc_weight` field, which we specified as the `SCORE_FIELD` in the schema definition:
 ```sh
-127.0.0.1:12543> HSET doc:2 title "Redis Labs" body "primary and caching" url "<https://redislabs.com>" value 10 doc_weight 2
+127.0.0.1:12543> HSET doc:2 title "Redis Labs" body "Modules" url "<https://redislabs.com/modules>" visits 102 doc_weight 2
 OK
 ```
 
 
 ### Search the index
 
-Do a search on this index for any documents with the word "first":
+Do a search on this index for any documents with the word "primary":
 
 ```sh
 127.0.0.1:12543> FT.SEARCH database_idx "primary" LIMIT 0 10
@@ -73,7 +73,7 @@ Do a search on this index for any documents with the word "first":
 
 ### Drop the index
 
-You can drop the index without deleting the underlying hash with the FT.DROPINDEX command:
+You can drop the index without deleting the underlying hash with the `FT.DROPINDEX` command:
 
 ```sh
 127.0.0.1:12543> FT.DROPINDEX database_idx
