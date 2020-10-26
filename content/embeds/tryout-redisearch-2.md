@@ -19,7 +19,8 @@ In this example, we have four fields: `title` (`TEXT`), `body` (`TEXT`), `url` 
 
     This command indexes all of the hashes with the prefix "`doc:`" as well as all the future ones that will be created with that prefix.
 
-    By default, all hashes get a score of 1.0, but we can configure that value through the `SCORE` directive. If we need to be able to assign document-specific score to documents, we can do that too. We only need to specify the name of the document element in which we will define the document score which will override the default. This is done by using the `SCORE_FIELD` directive.
+    By default, all hashes get a score of 1.0, but we can configure that value through the `SCORE` directive. If we need to assign a document-specific score to documents, we can do that too. 
+    We only need to specify the name of the document element in which we will define the document score which will override the default. This is done by using the `SCORE_FIELD` directive.
     
     In our example the default document score is `0.5` and we can have a document-specific score by setting a value between 0 and 1 in the  "`doc_score`" field of the hash.
 
@@ -47,7 +48,9 @@ Now add some data to this index. Here we add a hash with the key "`doc:1`" and t
 OK
 ```
 
-To add a document specific score, causing the document to appear higher or lower in results, set a value for the `doc_score` field, which we specified as the `SCORE_FIELD` in the schema definition:
+To add a document specific score, that causes the document to appear higher or lower in results, set a value for the `doc_score` field.
+We specified the `SCORE_FIELD` in the schema definition to hold the document weight value.
+
 ```sh
 127.0.0.1:12543> HSET doc:2 title "Redis Labs" body "Modules" url "<https://redislabs.com/modules>" visits 102 doc_score 0.8
 OK
