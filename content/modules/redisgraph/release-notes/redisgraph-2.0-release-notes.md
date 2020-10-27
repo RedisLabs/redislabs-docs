@@ -5,6 +5,43 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisGraph 2.0.21 (October 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor enhancements:
+
+    - #[1326](https://github.com/RedisGraph/RedisGraph/pull/1326), #[1330](https://github.com/RedisGraph/RedisGraph/pull/1330) Enable comments in Cypher queries.
+
+- Bug fixes:
+
+- #[1338](https://github.com/RedisGraph/RedisGraph/pull/1338) Update parser to support negative values.
+- #[1319](https://github.com/RedisGraph/RedisGraph/pull/1319) Replace assertion with runtime error - execution plan building process is unable locate an operation suitable for a filter.
+- #[1184](https://github.com/RedisGraph/RedisGraph/pull/1184) EXPLAIN and PROFILE are invalid clauses. They have counterpart commands [GRAPH.EXPLAIN](https://oss.redislabs.com/redisgraph/commands/#graphexplain) and [GRAPH.PROFILE](https://oss.redislabs.com/redisgraph/commands/#graphprofile)
+- #[1212](https://github.com/RedisGraph/RedisGraph/pull/1212) Emit error on the creation of undirected edges.
+
+## RedisGraph 2.0.20 (September 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor updates:
+
+    - #[1315](https://github.com/RedisGraph/RedisGraph/pull/1315) RediSearch 1.8.3
+    - #[1276](https://github.com/RedisGraph/RedisGraph/pull/1276) Graph info is added to Redis crash report.
+    - #[1265](https://github.com/RedisGraph/RedisGraph/pull/1265) Debug assertion functionality.
+
 ## RedisGraph 2.0.19 (August 2020)
 
 This is a maintenance release for version 2.0.
