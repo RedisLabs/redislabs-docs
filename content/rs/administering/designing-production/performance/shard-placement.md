@@ -35,5 +35,5 @@ To see the shard placement policy for a database in `rladmin status`.
 To change the shard placement policy for a database, run:
 
 ```sh
-rladmin placement db db:1 [ dense | sparse ]
+rladmin placement db [ database name | database ID ] [ dense | sparse ]
 ```
