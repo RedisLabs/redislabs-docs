@@ -23,7 +23,7 @@ To install ioredis, run:
 
 This example code creates a connection to Redis:
 
-    ```sh
+    ```javascript
         const Redis = require('ioredis');
         const redis = new Redis({
         host: 'hostname',
