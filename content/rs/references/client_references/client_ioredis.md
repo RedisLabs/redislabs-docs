@@ -26,9 +26,9 @@ This example code creates a connection to Redis:
     ```javascript
         const Redis = require('ioredis');
         const redis = new Redis({
-        host: 'hostname',
-        port: 6379,
-        password: 'password'
+            host: 'hostname',
+            port: 6379,
+            password: 'password'
         });
     ```
 
@@ -44,7 +44,7 @@ Make sure to replace the values in the example with the values for your Redis in
 
 This example shows how to configure ioredis to make a connection to Redis using TLS:
 
-    ```sh
+    ```javascript
     const Redis = require('ioredis');
     const fs = require('fs');
 
@@ -66,13 +66,13 @@ ACLs provide the capability to create named user accounts, each having its own p
 
 To connect to Redis as an ACL user, provide the user's username and password when creating the client:
 
-    ```sh
+    ```javascript
     const Redis = require('ioredis');
     const redis = new Redis({
-      host: 'hostname',
-      port: 6379,
-      username: 'username',
-      password: 'password'
+        host: 'hostname',
+        port: 6379,
+        username: 'username',
+        password: 'password'
     });
     ```
 
@@ -100,7 +100,7 @@ Your ACL user must have permission to run that command, otherwise connection att
 After the connection to Redis is established, you can start reading and writing data.
 The following code snippet reads the value stored at the key `foo`, and prints it:
 
-    ```sh
+    ```javascript
     // Open a connection to Redis
     // 'foo' has been set to 'bar'.
     ...
@@ -123,13 +123,13 @@ The first argument is almost always the Redis key to run the command against.
 These arguments are followed by an optional error first callback function.
 If a callback function is not provided, a Promise is returned:
 
-    ```sh
+    ```javascript
     // Open a connection to Redis
     // 'foo' has been set to 'bar'.
 
     const redisDemo = async () => {
-      const reply = await redis.get('foo');
-      console.log(reply);
+        const reply = await redis.get('foo');
+        console.log(reply);
     };
 
     redisDemo();
