@@ -16,7 +16,7 @@ After you disable a service, you can enable the service from the same API endpoi
 The services that you can disable are:
 
 - RS Admin Console - `cm_server`
-- Gathering statistics - `stats_archiver`
+- Logs in CSV format - `stats_archiver`
 - [LDAP
 Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) - `saslauthd`
 - [Discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})- `mdns_server`, `pdns_server`
