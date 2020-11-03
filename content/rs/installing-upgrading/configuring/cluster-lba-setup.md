@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When you want to setup a Redis Enterprise cluster in an environment that doesn't allow DNS, you can use a load balancer agent (LBA to direct traffic between the cluster nodes.
+When you want to setup a Redis Enterprise cluster in an environment that doesn't allow DNS, you can use a load balancer (LB) to direct traffic to the cluster nodes.
 
 ## DNS role for databases
 
@@ -52,11 +52,11 @@ The architecture is shown in the following diagram with 3 nodes Redis Enterprise
 Other ports are shown in the list of [RS network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
 {{< note >}}
-Make sure the RS admin console only uses sticky, secured connections on port 8443:
+Sticky, secured connections are needed only for RS admin console service (provided on port 8443).
 
 - Certain LBAs provide specific logic to close idle connections. Either disable this feature or make sure the applications connecting to Redis use reconnection logic.
-- Make sure the LBA is fast enough to resolve connections between two clusters or applications that are connected to Redis databases through LBA.
-- Choose the standard LBA which is commonly used in your environment so that you have easy access to in-house expertise for troubleshooting issues.
+- Make sure the LB is fast enough to resolve connections between two clusters or applications that are connected to Redis databases through LB.
+- Choose the standard LB which is commonly used in your environment so that you have easy access to in-house expertise for troubleshooting issues.
 {{< /note >}}
 
 ### RS cluster configuration
@@ -68,28 +68,31 @@ There are certain recommended settings within the cluster that guarantee a flawl
 - The `rladmin` commands update the settings on all nodes in the cluster.
 {{< /note >}}
 
-To optimize the cluster to run behind an LBA, run:
-
+The following settings are needed to allow inbound connections to be terminated on the relevant node inside the cluster:
 ```sh
     # enable all-node proxy policy by default
     rladmin tune cluster default_sharded_proxy_policy all-nodes
-
-    # enable sparse placement by default
-    rladmin tune cluster default_shards_placement sparse
-
+    
     # ensure we redirect where necessary when running behind an LBA
     rladmin cluster config handle_redirects enabled
 ```
 
+An additional setting can be done to allow (on average) closer termination of client connection to where Redis shard is located. This is an optinoal setting.
+
+```sh
+    # enable sparse placement by default
+    rladmin tune cluster default_shards_placement sparse
+```
+
 ### RS database configuration
 
-After the cluster settings are updated and the LBAs are configured,
+After the cluster settings are updated and the LBs are configured,
 you can go to the RS admin console at <https://load-balancer-virtual-ip:8443/> and [create a new database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
-### Keep LBA configuration updated when the cluster configuration changes
+### Keep LB configuration updated when the cluster configuration changes
 
-When your RS cluster is located behind a load balancer, you must update the LBA when the cluster topology and IP addresses change.
-Some common cases that require you to update the LBA are:
+When your RS cluster is located behind a load balancer, you must update the LB when the cluster topology and IP addresses change.
+Some common cases that require you to update the LB are:
 
 - Adding new nodes to the Redis Enterprise cluster
 - Removing nodes from the Redis Enterprise cluster
@@ -98,3 +101,17 @@ Some common cases that require you to update the LBA are:
 
 After these changes, make sure that the redis connections in your applications can connect to the Redis database,
 especially if they are directly connected on IP addresses that have changed.
+
+## Inter Cluster communication considerations
+
+Redis Enterprise supports several topologies that allow inter cluster replication, these include Active/Passive (https://docs.redislabs.com/latest/rs/administering/designing-production/active-passive/) and Active/Active (https://docs.redislabs.com/latest/rs/administering/designing-production/active-active/) deployment options.
+When your RS clusters are located behind load balancers, you must allow some netowrk services to be open and defined in the load balancers to allow the replication to work.
+
+### Active Passive 
+
+For Active Passive communication to work, you will need to expose database port(s) locally in each cluster (as defined above) but also allow these ports through firewalls that may be positioned between the clusters.
+
+### Active Active
+
+For Active Active communication to work, you will need to expose several ports, every database port and several control plane ports as defined in https://docs.redislabs.com/latest/rs/administering/designing-production/networking/port-configurations/. Pay attention to services that are marked with Connection Source as "Active-Active". These ports should be allowed through firewalls that may be positioned between the clusters.
+
