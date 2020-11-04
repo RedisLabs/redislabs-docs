@@ -37,12 +37,21 @@ Team members can have different roles to the account:
 ### Team management for GCP Marketplace customers
 
 If you subscribed to Redis Cloud using GCP Marketplace, you can manage your team from the IAM section of the GCP console.
-To grant Redis Cloud access to a GCP user, assign one of these roles to the user:
+To grant Redis Cloud access to a GCP user, 
+click on the add button to add a member, insert the email address and assign one of these roles to the user:
 
-- **Viewer** - serviceusage.serviceUsageViewer and redisenterprisecloud.viewer
-- **Owner** - serviceusage.serviceUsageViewer and redisenterprisecloud.admin
+ serviceusage.serviceUsageViewer & redisenterprisecloud.viewer - these roles should be assigned to member designated as viewer
+ serviceusage.serviceUsageViewer & redisenterprisecloud.admin -  these roles should be assigned to member designated as owner
+ 
+In case these roles do not appear while adding a member see the following steps to add a role to your project:
+click on manage roles, 
+search the role on the "filter table" field ( for example: "service usage viewer" or "redis enterprise cloud admin")
+mark the checkbox
+click on "create role from selection" , click on create
+Go back to IAM for adding a member and assigning it the desried roles.
 
 Users must log in using SSO to Redis Cloud at least once for them to be added to the team.
+This cam be done by clicking on the button "manage on provider" 
 
 ## Multi-Factor Authentication (MFA)
 
