@@ -38,7 +38,7 @@ When installed, the following are created:
  * the CRD for a Redis Enterprise Database,
  * the operator (a deployment).
 
- The operator currently runs within single namespace and is scoped to operate only on cluster CRD's in that namespace. This allows a multi-tenant deployment of the operator supporting different versions in different namespaces.
+ The operator currently runs within a single namespace and is scoped to operate only on Redis Enterprise Cluster CRD's in that namespace. This allows the deployment of the multiple instances of the operator on the same Kubernetes cluster, supporting multiple Redis Enterprise Clusters in multiple namespaces.
 
 ## Installing the operator
 
