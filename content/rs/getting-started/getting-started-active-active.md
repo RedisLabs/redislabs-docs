@@ -47,8 +47,9 @@ containers can be accessed from the host OS that is running the containers.
 host machine to see the Redis Enterprise Software web console. Simply
 click the **Setup** button on the page to get started.
 
-    Note: Depending on your browser, you may see a certificate error. Continue to
-    the website.
+    {{< note >}}
+Depending on your browser, you may see a certificate error. Continue to the website.
+    {{< /note >}}
 
     ![rs-setup](/images/rs/rs-setup.png)
 
@@ -103,16 +104,19 @@ Now we have two Redis Enterprise Software clusters with FQDNs
         that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         limitations do not apply.
 
-        Note: You cannot enable or disable database clustering after the Active-Active database is created.
+        {{< note >}}
+You cannot enable or disable database clustering after the Active-Active database is created.
+        {{< /note >}}
 
 1. Click **Activate** to create your Active-Active database.
 
     ![crdb-activate](/images/rs/crdb-activate.png)
 
     <!-- Also in getting-started-docker.md -->
-    Note: If you cannot activate the database because of a memory limitation,
-    make sure that Docker has enough memory allocated in the Advanced section
-    of Docker Settings.
+    {{< note >}}
+If you cannot activate the database because of a memory limitation,
+make sure that Docker has enough memory allocated in the Advanced section of Docker Settings.
+    {{< /note >}}
 
 1. After the Active-Active database is created, you can now visit each cluster 1 at
 https://localhost:8443 and cluster 2 at https://localhost:8445.
@@ -191,10 +195,11 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and
-[redis-py](https://github.com/andymccurdy/redis-py#installation)
-(python library for connecting to Redis) configured on the host machine
-running the container.
+{{< note >}}
+Before you continue, you must have python
+and [redis-py](https://github.com/andymccurdy/redis-py#installation)
+(python library for connecting to Redis) configured on the host machine running the container.
+{{< /note >}}
 
 1. In the command-line terminal, create a new file called "redis_test.py"
 

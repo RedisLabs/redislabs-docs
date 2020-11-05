@@ -188,10 +188,12 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and
+{{< note >}}
+Before you continue, you must have python and
 [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
 running the container.
+{{< /note >}}
 
 1. In the command-line terminal, create a new file called "redis_test.py"
 

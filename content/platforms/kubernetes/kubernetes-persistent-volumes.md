@@ -73,7 +73,9 @@ Below is an example of a response to the command.
 | *VolumeBindingMode:*    | *Immediate*                                             |
 | *Events:*               | *\<none\>*                                              |
 
-*Note: storageClassName must be specified for this deployment type.*
+{{< note >}}
+storageClassName must be specified for this deployment type.
+{{< /note >}}
 
 Example of the redisEnterpriseNodeResources definition:
 

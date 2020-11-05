@@ -18,11 +18,13 @@ set up an instance make sure that it has a properly sized EBS backed volume
 connected. Later, when setting up RS on the instance, make sure that [the
 persistence storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
-Note: After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}})) on the instance
+{{< note >}}
+After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}})) on the instance
 and **before** running through [the setup process]({{< relref "/rs/administering/new-cluster-setup.md" >}})),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
 `chown redislabs:redislabs /< ebs folder name>`
+{{< /note >}}
 
 Another feature that may be of importance to you is the use of
 Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a

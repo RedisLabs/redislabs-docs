@@ -46,8 +46,10 @@ data traffic between the database and the clients.
 You can also specify that authentication is not enforced for traffic received from
 clusters and clients.
 
-Note: You cannot enable or disable TLS after the Active-Active database is created, but you can change
-the TLS configuration.
+{{< note >}}
+You cannot enable or disable TLS after the Active-Active database is created,
+but you can change the TLS configuration.
+{{< /note >}}
 
 ### Configuring TLS for Active-Active communication only
 

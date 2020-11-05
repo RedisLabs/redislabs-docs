@@ -35,7 +35,9 @@ The rack-zone ID must comply with the following rules:
 - Characters consist of letters, digits, or hyphens ('-').
 - ID starts with a letter and ends with a letter or a digit.
 
-Note: rack-zone IDs are **case-insensitive** (uppercase and lowercase letter are treated as the same).
+{{< note >}}
+Rack-zone IDs are **case-insensitive** (uppercase and lowercase letter are treated as the same).
+{{< /note >}}
 
 ### Node layout
 

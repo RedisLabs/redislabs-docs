@@ -138,9 +138,11 @@ Examples of such changes include:
 - Adding new rules in the custom hashing policy.
 - Deleting rules from the custom hashing policy.
 
-**Note:** The recommended workaround for updates that are not enabled,
-or require flushing the database, is to back up the database and import
-the data to a newly configured database.
+{{< note >}}
+The recommended workaround for updates that are not enabled,
+or require flushing the database,
+is to back up the database and import the data to a newly configured database.
+{{< /note >}}
 
 ## Multi-key operations {#multikey-operations}
 
@@ -157,9 +159,11 @@ the following limitations:
     Commands that affect all keys or keys that match a specified pattern are allowed
     in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS
 
-    **Note**: When using these commands in a sharded setup, the command
-    is distributed across multiple shards and the responses from all
-    shards are combined into a single response.
+    {{< note >}}
+When using these commands in a sharded setup,
+the command is distributed across multiple shards
+and the responses from all shards are combined into a single response.
+    {{< /note >}}
 
 - **Geo commands**: In GEORADIUS/GEOREADIUSBYMEMBER commands, the
     STORE and STOREDIST option can only be used when all affected keys
