@@ -57,6 +57,8 @@ communicate with each other as if they are within the same network. You can conn
 VPC in the Redis Cloud subscription to the VPC of your application. Then your application can
 connect securely to your Redis Cloud database using VPC Peering to optimize the performance of your application.
 
+**VPC peering exists only on Pro subscriptions
+
 The VPC peering configuration requires you to initiate VPC peering on your Redis Cloud subcription
 and accept the VPC peering request for the AWS VPC that you want to peer with.
 
