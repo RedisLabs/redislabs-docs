@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-If a node in your Redis Enterprise Software (RS)cluster is faulty, its status appears as **Down **in
+If a node in your Redis Enterprise Software (RS)cluster is faulty, its status appears as **Down** in
 the **Status** column of the **Nodes** page, and in the **Cluster \>
 Configuration** page.
 
