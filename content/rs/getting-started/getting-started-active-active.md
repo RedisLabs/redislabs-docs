@@ -93,15 +93,13 @@ Now we have two Redis Enterprise Software clusters with FQDNs
         - `https://cluster1.local:9443` - the cluster you are currently connected to
         - `https://cluster2.local:9443` - the other cluster
 
-    1. In the **Database clustering** option, either:
+    1. In **Database clustering**, either:
 
-        - Make sure that Database clustering is enabled and select the number of shards
+        - Make sure that **Database clustering** is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
-        - Clear the **Database clustering** option to use only one shard and so
-        that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-        limitations do not apply.
+        - Clear **Database clustering** to use only one shard and to avoid [Multi-key command]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) limitations.
 
         Note: You cannot enable or disable database clustering after the Active-Active database is created.
 
