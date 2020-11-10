@@ -5,47 +5,50 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To maintain secure access to your Redis Enterprise Software (RS) cluster and databases,
-most organizational security policies require that you rotate user passwords on a regular basis.
+Most organizational security policies require periodic password rotation.
+Redis Enterprise Software lets you implement these policies using its API.
+Specifically, you can add a new password for a database user without immediately invalidating the old one (which might cause authentication errors in production).
 
-For user access to the RS web UI,
+For user access to the RS Admin Console,
 you can set a [password expiration policy]({{< relref "/rs/administering/access-control/#setting-local-user-password-expiration" >}}) that prompts the user to change their password.
 However, for database connections that rely on password authentication,
-you need to allow for authentication with the existing password while you rollout the new password to your systems.
+you need to allow for authentication with the existing password while you roll out the new password to your systems.
 
 With the RS REST API, you can add additional passwords to an RS user account for authentication to the database or the Admin Console and API.
 After the old password is replaced in the database connections,
 just delete the old password to finish the password rotation process.
 
 {{ warning }}
+Multiple passwords are only supported using the REST API.
 If you reset the password for a user in the RS Admin Console,
-that password replaces all other passwords for the user.
+the new password replaces all other passwords for that user.
 {{ /warning }}
-
-## Adding an additional password to an RS user account
 
 You can add an additional password to a user account as long as:
 
 - The new password does not already exist as a password for the user
 - If [password complexity]({{< relref "/rs/administering/access-control/#setting-up-local-password-complexity" >}}) is required, the new password meets the complexity requirements
 
-To add an additional password to an RS user account, run this POST command:
+## Rotating the password of an RS user account
 
-```sh
-curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
-    https://<RS_server_address>:9443/v1/cluster
-    -d '{
-    "username": "<username>"
-    "old_password": "<existing_password>",
-    "new_password": "<new_password>",
-    }'
-```
+To rotate the password of an RS user account:
 
-After you run this command, you can authenticate with both the old and the new password.
+1. Add an additional password to an RS user account with this POST command:
 
-## Deleting an existing password
+    ```sh
+    curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
+        https://<RS_server_address>:9443/v1/cluster
+        -d '{
+        "username": "<username>"
+        "old_password": "<existing_password>",
+        "new_password": "<new_password>",
+        }'
+    ```
 
-After you rotate the passwords for all database connections that connect with a user, you can delete an existing password with the command:
+    After you run this command, you can authenticate with both the old and the new password.
+
+1. Update the password in all database connections that connect with the user account.
+1. Delete the original password with this DELETE command:
 
 ```sh
 curl -k -v -X DELETE -H "content-type: application/json" -u "<administrator_user>:<password>"
@@ -68,7 +71,7 @@ You can replace the passwords for a user account as long as:
 - The new password does not already exist as a password for the user
 - If [password complexity]({{< relref "/rs/administering/access-control/#setting-up-local-password-complexity" >}}) is required, the new password meets the complexity requirements
 
-To replace all existing passwords for a user account with a single new password, run:
+To replace all existing passwords for a user account with a single new password, use this PUT command:
 
 ```sh
 curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<password>"
