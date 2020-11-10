@@ -14,7 +14,7 @@ you can set a [password expiration policy]({{< relref "/rs/administering/access-
 However, for database connections that rely on password authentication,
 you need to allow for authentication with the existing password while you roll out the new password to your systems.
 
-With the RS REST API, you can add additional passwords to an RS user account for authentication to the database or the Admin Console and API.
+With the RS REST API, you can add additional passwords to an useraccount for authentication to the database or the Admin Console and API.
 After the old password is replaced in the database connections,
 just delete the old password to finish the password rotation process.
 
@@ -29,11 +29,11 @@ You can add an additional password to a user account as long as:
 - The new password does not already exist as a password for the user
 - If [password complexity]({{< relref "/rs/administering/access-control/#setting-up-local-password-complexity" >}}) is required, the new password meets the complexity requirements
 
-## Rotating the password of an RS user account
+## Rotating the password of an useraccount
 
-To rotate the password of an RS user account:
+To rotate the password of an useraccount:
 
-1. Add an additional password to an RS user account with this POST command:
+1. Add an additional password to an useraccount with this POST command:
 
     ```sh
     curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
