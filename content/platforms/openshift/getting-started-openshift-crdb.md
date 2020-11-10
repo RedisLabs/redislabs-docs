@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+hidden: true
 ---
 In this guide, we'll set up an [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}})
 (formerly known as CRDB) deployment with Active-Active replication
