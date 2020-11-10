@@ -1,17 +1,17 @@
 ---
-Title: Disabling Services to Improve Performance
+Title: Disabling Services to Free System Memory
 description: 
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 The Redis Enterprise Software (RS) cluster nodes host a range of services that support the cluster processes.
-In most deployments, either all of these services are required
-or there are enough resources on the nodes that the unused services do not degrade performance.
+In most deployments, either all of these services are required,
+or there are enough memory resources on the nodes for the database requirements.
 
-In a deployment with limited resources, certain services can be disabled from API endpoint in order to improve performance.
-It's important to verify that disabling the service will not prevent the cluster from functioning as expected.
-After you disable a service, you can enable the service from the same API endpoint.
+In a deployment with limited memory resources, certain services can be disabled from API endpoint to free system memory.
+Before you disable a service, make sure that your deployment does not depend on that service.
+After you disable a service, you can re-enable it from the same API endpoint.
 
 The services that you can disable are:
 
@@ -27,34 +27,34 @@ with the name of the service and the operating mode (enabled/disabled) in JSON f
 
 For example:
 
-- To disable the RS Web UI, run:
+- To disable the RS Admin Console, issue this PUT request:
 
     ```sh
     curl --request PUT \
     --url https://localhost:9443/v1/cluster/services_configuration \
     --header 'content-type: application/json' \
     --data '{
-    "cm_server": {
-        "operating_mode": "disabled"
-    }
+        "cm_server":{
+            "operating_mode":"disabled"
+        }
     }'
     ```
 
-- To disable the CRDB services and enable the stats_archiver for cluster component statistics, run:
+- To disable the CRDB services and enable the `stats_archiver` for cluster component statistics, issue this PUT request:
 
     ```sh
     curl --request PUT \
     --url https://localhost:9443/v1/cluster/services_configuration \
     --header 'content-type: application/json' \
     --data '{
-    "crdb_coordinator": {
-        "operating_mode": "disabled"
-    },
-    "crdb_worker": {
-        "operating_mode": "disabled"
-    },
-    "stats_archiver": {
-        "operating_mode": "enabled"
-    }
+        "crdb_coordinator":{
+            "operating_mode":"disabled"
+        },
+        "crdb_worker":{
+            "operating_mode":"disabled"
+        },
+        "stats_archiver":{
+            "operating_mode":"enabled"
+        }
     }'
     ```
