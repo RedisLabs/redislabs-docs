@@ -16,7 +16,7 @@ This is a maintenance release for version 2.0.
 
 - Minor bug fixes:
 
-    - #1605 Rare bug where identical results would get a lower score
+    - [#1605](https://github.com/RediSearch/RediSearch/pull/1605) Rare bug where identical results would get a lower score
 
 ## RediSearch 2.0.1 (October, 2020)
 
