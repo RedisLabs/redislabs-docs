@@ -22,8 +22,8 @@ To access the installation package for any of these platforms:
 1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
 
 {{< note >}}
-Before you install the Linux package or AWS AMI on an AWS instance,
-review the [configuration requirements for AWS instances]({{< relref "configuring-aws-instances.md" >}}).
+Before you install the Linux package or AWS AMI on an AWS EC2 instance,
+review the [configuration requirements for AWS EC2 instances]({{< relref "configuring-aws-instances.md" >}}).
 {{< /note >}}
 
 In this article we walk you through the process for installing the RS installation package for Linux.
