@@ -7,7 +7,7 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
 ---
 There are some special considerations that are important when installing
-and running Redis Enterprise Software (RS) on an AWS EC2 instances or AWS Outposts.
+and running Redis Enterprise Software (RS) on AWS EC2 instances or AWS Outposts.
 
 ## Storage considerations
 
