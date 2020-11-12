@@ -152,7 +152,7 @@ the following limitations:
     commands are not allowed across slots. The following multi-key
     commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
 
-    These commands are disabled for CRBDs because sharding is enabled.
+    In CRBDs, multi-key commands can only be run on keys that are in the same slot.
 
     Commands that affect all keys or keys that match a specified pattern are allowed
     in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS
