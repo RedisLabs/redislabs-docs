@@ -63,8 +63,6 @@ The Redis OSS Cluster API setting applies to the specified database only, not to
 
 ## Enabling OSS Cluster API support for Active-Active databases from the command line
 
-You can enable OSS Cluster API support for Active-Active databases, but only when you create the database.
-
 For a new RS Active-Active database, to enable the OSS Cluster API from the command line:
 
 1. To create an Active-Active database with OSS Cluster API, run:
