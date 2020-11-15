@@ -170,6 +170,7 @@ sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ### Custom installation user and group
 
 By default, RS is installed with the user:group `redislabs:redislabs`.
+If you require `redislabs` UID (User Identifier) and GID (Group Identifier) numbers to be identical on all the nodes, please create `redislabs` user and group prior the installation with the required numbers. 
 During the installation you can specify the OS user and group that RS is installed with and that owns all of the RS processes.
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
