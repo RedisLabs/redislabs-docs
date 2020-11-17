@@ -1,5 +1,5 @@
 ---
-Title: Configuring AWS Instances for Redis Enterprise Software
+Title: Configuring AWS EC2 instances for Redis Enterprise Software
 description:
 weight: 30
 alwaysopen: false
@@ -7,12 +7,11 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
 ---
 There are some special considerations that are important when installing
-and running Redis Enterprise Software (RS) on an AWS instances.
-This guide also applies to AWS Outpost.
+and running Redis Enterprise Software (RS) on AWS EC2 instances or AWS Outposts.
 
 ## Storage considerations
 
-AWS instances are ephemeral, but your persistent database storage should
+AWS EC2 instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. Therefore, when you
 set up an instance make sure that it has a properly sized EBS backed volume
