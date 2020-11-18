@@ -69,6 +69,7 @@ of the configuration and persistence files on each of the nodes.
 
     - To recover all of the databases, run: `rladmin recover all`
     - To recover a single databases, run: `rladmin recover db <database_id|name>`
+    - To recover only the database configuration without the data (in case AOF or snapshot files aren't available), run: `recover db only_configuration <db_name>`
 
     All databases are recovered with the same data that they had in the old cluster.
     The data is recovered from the persistence files located in the persistent storage drives
