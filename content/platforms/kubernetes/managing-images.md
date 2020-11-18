@@ -280,7 +280,6 @@ spec:
   nodes: 3
   pullSecrets:
     -name: regcred
-  - name: regcred
   redisEnterpriseImageSpec:
     imagePullPolicy: IfNotPresent
     repository: gcr.io/yourproject/redislabs/redis
