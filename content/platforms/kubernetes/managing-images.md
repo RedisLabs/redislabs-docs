@@ -278,7 +278,8 @@ metadata:
   name: rec
 spec:
   nodes: 3
-  imagePullSecrets:
+  pullSecrets:
+    -name: regcred
   - name: regcred
   redisEnterpriseImageSpec:
     imagePullPolicy: IfNotPresent
