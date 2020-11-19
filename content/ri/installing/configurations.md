@@ -32,4 +32,4 @@ The following environment variables can be set to configure RedisInsight:
 
 - `LOG_DIR` - By default, RedisInsight stores log files in your home directory (`REDISINSIGHT_HOME_DIR`). To have RedisInsight store the log files in a different directory, set the `LOG_DIR` environment variable.
 
-- `REDISINSIGHT_LOG_LEVEL` - By default, RedisInsight logs all warnings. To configure the log level of RedisInsight, set the `REDISINSIGHT_LOG_LEVEL` environment variable. Possible values of this variable are - DEBUG, INFO, WARNING, ERROR and CRITICAL.
+- `REDISINSIGHT_LOG_LEVEL` - By default RedisInsight is configured with "WARNING" log level, which raise all warnings. To configure the log level of RedisInsight, set the `REDISINSIGHT_LOG_LEVEL` environment variable. Possible values of this variable are - DEBUG, INFO, WARNING, ERROR and CRITICAL.
