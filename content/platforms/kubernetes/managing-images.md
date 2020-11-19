@@ -95,7 +95,7 @@ clusters.
 You can set up a private registry in a couple of ways:
 
  * On-premise via [Docker registry](https://docs.docker.com/registry/deploying/),
-   RedHat Quay, or other providers,
+   RedHat Quay, or other providers
  * via a cloud provider (e.g., Azure Container Registry, Google Container Registry, etc.).
 
 Once you have setup a repository, you will have:
