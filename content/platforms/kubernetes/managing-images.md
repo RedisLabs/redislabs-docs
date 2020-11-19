@@ -119,7 +119,7 @@ A Kubernetes deployment uses a variety of images. Some of the important images f
  * The Redis Enterprise Software operator
 
 Once you have created a private registry, you will need to push these images
-to your private repository. The process to do so is:
+to your private repository. To push the images:
 
  1. Pull the various images locally for Redis Enterprise and the operator.
  2. Tag the local images with the repository prefixed onto the name.
