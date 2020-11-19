@@ -46,7 +46,7 @@ images for the Redis Enterprise operator and cluster, take care to note:
 ## Determining image pull sources
 
 Every pod in your deployed application has a source repository. You
-can determine the sources by a simple command:
+can determine the sources by running this command:
 
 ```
 kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' | uniq -c
