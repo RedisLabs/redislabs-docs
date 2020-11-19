@@ -76,10 +76,10 @@ To use the sample JSON document in your own account, you must modify these param
 
 - **`paymentMethodId`** - Specify a payment method that is defined for your account.
     You can lookup the payment method identifier using the `GET /payment-methods` API operation.
-    In case you subscribed to Redis Cloud via the GCP Marketplace you do not need to pass this field in your API requests.
+    If you subscribed to Redis Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
 - **`cloudAccountId`** - Specify a cloud account that is defined for your account.
     You can lookup the cloud accounts identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use Redis Labs internal resources.
-    In case you subscribed to Redis Cloud via the GCP Marketplace you should always pass `1` in this field.
+    If you subscribed to Redis Cloud through the GCP Marketplace, use the value `1` for this field.
 
 - The JSON document contains 2 primary segments: subscription specification and databases specification.
 - When you create a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file.
