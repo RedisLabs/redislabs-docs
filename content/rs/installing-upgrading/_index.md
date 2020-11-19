@@ -49,7 +49,7 @@ sudo lsblk
 
 - [Disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
 - Make sure that you have root-level access to each node, either directly or with sudo.
-- If you require `redislabs` UID (user ID) and GID (group ID) numbers to be the same on all the nodes, create the `redislabs` user and group with the required numbers.
+- If you require `redislabs` UID (user ID) and GID (group ID) numbers to be the same on all the nodes, create the `redislabs` user and group with the required numbers on each node.
 - When port 53 is in use, the installation fails. This is known to happen in
     default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
     To work around this issue, change the system configuration to make this port available
@@ -171,7 +171,6 @@ sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ### Custom installation user and group
 
 By default, RS is installed with the user:group `redislabs:redislabs`.
-If you require `redislabs` UID (User Identifier) and GID (Group Identifier) numbers to be identical on all the nodes, please create `redislabs` user and group prior the installation with the required numbers. 
 During the installation you can specify the OS user and group that RS is installed with and that owns all of the RS processes.
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
