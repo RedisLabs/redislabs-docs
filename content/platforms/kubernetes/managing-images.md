@@ -92,7 +92,7 @@ clusters.
 
 ### Creating a private repository
 
-A private registry can be setup via:
+You can set up a private registry in a couple of ways:
 
  * on-premise via [Docker registry](https://docs.docker.com/registry/deploying/),
    RedHat Quay, or other providers,
