@@ -113,7 +113,7 @@ identifier.
 
 A Kubernetes deployment uses a variety of images. Some of the important images for a Redis Enterprise Software deployment include:
 
- * Redis Enterprise
+ * Redis Enterprise Software
  * bootstrapping a Redis Enterprise cluster node
  * the Service Rigger
  * the Redis Enterprise operator
