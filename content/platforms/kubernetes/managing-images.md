@@ -45,7 +45,7 @@ images for the Redis Enterprise operator and cluster, take care to note:
 
 ## Determining image pull sources
 
-Every pod in your various deployed application has a source repository. You
+Every pod in your deployed application has a source repository. You
 can determine the sources by a simple command:
 
 ```
