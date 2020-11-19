@@ -111,7 +111,7 @@ identifier.
 
 ### Pushing Redis Enterprise images to a private repository
 
-A Kubernetes deployment uses different images for various purposes:
+A Kubernetes deployment uses a variety of images. Some of the important images for a Redis Enterprise Software deployment include:
 
  * Redis Enterprise
  * bootstrapping a Redis Enterprise cluster node
