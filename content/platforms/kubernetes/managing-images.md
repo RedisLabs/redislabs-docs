@@ -164,7 +164,6 @@ need to add a [pull secret](https://kubernetes.io/docs/tasks/configure-pod-conta
 and then tell Kubernetes and the operator to use the pull secret.
 
 See the following two sections for how to specify registry credentials.
-detail where the pull secret needs to be specified.
 
 ### Specifying the operator image
 
