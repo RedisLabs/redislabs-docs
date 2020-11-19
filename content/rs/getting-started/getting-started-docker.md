@@ -91,11 +91,8 @@ enter `12000` for the port number.
 
 1. Click **Activate** to create your database
 
-<!-- Also in crdbs.md -->
 {{< note >}}
-If you cannot activate the database because of a memory limitation,
-make sure that Docker has enough memory allocated in the Advanced section
-of Docker Settings.
+{{< embed-md "docker-memory-limitation.md" >}}
 {{< /note >}}
 
 The database configuration is shown.

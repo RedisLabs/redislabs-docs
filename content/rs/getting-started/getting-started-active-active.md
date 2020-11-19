@@ -93,16 +93,14 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     1. In the **participating clusters** list, add the address and admin credentials for:
         - `https://cluster1.local:9443` - the cluster you are currently connected to
         - `https://cluster2.local:9443` - the other cluster
-    <!-- Also in create-crdb.md -->
-    1. In the **Database clustering** option, either:
 
-        - Make sure the Database clustering is enabled and select the number of shards
+    1. In **Database clustering**, either:
+
+        - Make sure that **Database clustering** is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
-        - Clear the **Database clustering** option to use only one shard and so
-        that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-        limitations do not apply.
+        - Clear **Database clustering** to use only one shard and to avoid [Multi-key command]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) limitations.
 
         {{< note >}}
 You cannot enable or disable database clustering after the Active-Active database is created.
@@ -112,14 +110,12 @@ You cannot enable or disable database clustering after the Active-Active databas
 
     ![crdb-activate](/images/rs/crdb-activate.png)
 
-    <!-- Also in getting-started-docker.md -->
     {{< note >}}
-If you cannot activate the database because of a memory limitation,
-make sure that Docker has enough memory allocated in the Advanced section of Docker Settings.
+    {{< embed-md "docker-memory-limitation.md" >}}
     {{< /note >}}
 
-1. After the Active-Active database is created, you can now visit each cluster 1 at
-https://localhost:8443 and cluster 2 at https://localhost:8445.
+1. After the Active-Active database is created, access the RS admin console
+    of cluster 1 at https://localhost:8443 and of cluster 2 at https://localhost:8445.
 
 1. Make sure that each cluster has an Active-Active database member database with the name `database1`.
 
@@ -201,13 +197,13 @@ and [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine running the container.
 {{< /note >}}
 
-1. In the command-line terminal, create a new file called "redis_test.py"
+1. In the command-line terminal, create a new file called `redis_test.py`.
 
     ```sh
     vi redis_test.py
     ```
 
-1. Paste this code into the "redis_test.py" file.
+1. Paste this code into the `redis_test.py` file.
 
     This application stores a value in key1 in cluster 1, gets that value from
     key1 in cluster 1, and gets the value from key1 in cluster 2.
