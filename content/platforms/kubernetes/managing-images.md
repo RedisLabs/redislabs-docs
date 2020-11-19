@@ -57,7 +57,7 @@ limit this command to specific namespaces by replacing the `--all-namespaces` pa
 a set of `-n {namespace}` parameters, where each `{namespace}` is a specific
 namespace of interest on your cluster.
 
-Any image that is not prefixed by a repository domain name (e.g., "gcr.io"), will pull
+Any image not prefixed by a repository domain name (e.g., "gcr.io") will pull
 from the default repository for the Kubernetes cluster (i.e., DockerHub).
 
 For the Redis Enterprise Operator, you can determine your pull source by a
