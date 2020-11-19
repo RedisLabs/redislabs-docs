@@ -73,7 +73,7 @@ Docker [rate limits image pulls](https://www.docker.com/blog/scaling-docker-to-s
 Anonymous users are allowed 100 pulls every 6 hours; for authenticated users, the limit is 200 pulls every 6 hours.
 These rate limits may affect your Kubernetes cluster in a number of ways:
 
- * the cluster nodes will likely be treated as a one anonymous user,
+ * The cluster nodes will likely be treated as a one anonymous user.
  * the number of pulls during an initial or subsequent deployment could
    exceed the rate limiting for any aspect of the deployment: for our operator, Redis Enterprise, or for other non-Redis pods,
  * pull failures may cause serious delays in the ability for a deployment to pull the necessary images and so will
