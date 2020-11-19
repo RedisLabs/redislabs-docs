@@ -39,11 +39,15 @@ Before configuring an Active-Active database, you must:
 - Configure the network so that all nodes in each cluster can connect to the proxy port and the cluster admin port (9443) of each cluster.
 - Confirm that a [network time service](#network-time-service-ntp-or-chrony) is configured and running on each node in all clusters.
 
+### Redis Modules on Active-Active Databases {#redis-modules-on-activeactive-databases}
+Active-Active databases support only compatible [Redis modules]({{< relref "/modules/_index.md" >}}).
+- [RediSearch 2.x in Redis Enterprise Software (RS) 6.0 and higher]({{< relref "/modules/redisearch/redisearch-active-active.md" >}}). 
+- RedisGears
+
 ## Active-Active database current limitations
 
-1. RS is limited to five participating clusters or instances in an Active-Active database.
+1. The RS admin console is limited to five participating clusters or instances in an Active-Active database.
 1. An existing database cannot be changed into an Active-Active database. To move data from an existing database to an Active-Active database you must create a new Active-Active database and migrate the data.
-1. Active-Active databases do not support [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}}).
 1. Active-Active databases require FQDNs or mDNS (development only). Discovery Service is not supported with Active-Active databases.
 1. Active-Active databases are not compatible with [Replica Of]({{< relref "/rs/administering/designing-production/active-passive.md" >}}).
 

@@ -32,7 +32,6 @@ The following environment variables can be set to configure RedisInsight:
 
 **Default:**     `8001`
 
-
 ### RIHOST
 
 **Description:** Which host should RedisInsight bind to.

@@ -11,8 +11,10 @@ A Redis Enterprise Software (RS) cluster typically consists of several
 nodes. For production deployments, Redis Labs recommends an uneven
 number of nodes, with a minimum of three.
 
-Note: In a cluster that consists of only one node, some features and
+{{< note >}}
+In a cluster that consists of only one node, some features and
 capabilities are not enabled, such as database replication that provides high availability.
+{{< /note >}}
 
 To set up a new cluster, you must first [install the Redis Enterprise
 Software
@@ -30,11 +32,11 @@ To create a cluster:
     installed RS on a machine with IP address 10.0.1.34, then navigate
     to https://10.0.1.34:8443.
 
-    **Note:** The RS management UI uses a [self-signed SSL/TLS encryption]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-
-    **Note:** If the machine has both an internal IP address and an
-    external IP address, use the external IP address to access the setup
-    UI.
+    {{< note >}}
+- The RS management UI uses a [self-signed SSL/TLS encryption]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
+- If the machine has both an internal IP address and an external IP address,
+use the external IP address to access the setup UI.
+    {{< /note >}}
 
 1. Click **Setup**.
 1. In the Node Configuration page that appears:

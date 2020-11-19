@@ -152,7 +152,7 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 To upgrade a CRDB instance:
 
-1. [Upgrade RS](#upgrading-nodes) on each node in the clusters where the CRDB instances are located.
+1. [Upgrade RS](#upgrading-a-node) on each node in the clusters where the CRDB instances are located.
 
 1. To see the status of your CRDB instances, run: `rladmin status`
 
@@ -186,10 +186,10 @@ You must upgrade the CRDB protocol before you update the CRDB feature set versio
 1. If the feature set version is old, you must upgrade all of the CRDB instances. Then, to update the feature set for each active-active database, run:
 
     ```sh
-    crdb-cli crdb update --crdb-guid <crdb_guid> --featureset-version yes
+    crdb-cli crdb update --crdb-guid <CRDB-GUID> --featureset-version yes
     ```
 
-    You can retrieve the `crdb_guid` with the following command:
+    You can retrieve the `<CRDB-GUID>` with the following command:
 
     ```sh
     crdb-cli crdb list

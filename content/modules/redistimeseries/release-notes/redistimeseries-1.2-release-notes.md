@@ -105,4 +105,6 @@ Full details:
     - #[320](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/320) Delete the existing key prior to restoring it.
     - #[323](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/323) Empty first sample on aggregation.
 
-note: the version inside Redis will be 10202 or 1.2.2 in semantic versioning.
+{{< note >}}
+The version inside Redis will be 10202 or 1.2.2 in semantic versioning.
+{{< /note >}}

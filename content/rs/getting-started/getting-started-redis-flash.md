@@ -58,8 +58,10 @@ Direct your browser to https://localhost:8443/ on the host machine to
 see the Redis Enterprise Software web console. Simply click the
 **Setup** button to get started.
 
-Note: Depending on your browser, you may see a certificate error. Simply
-choose "continue to the website" to get to the setup screen.
+{{< note >}}
+Depending on your browser, you may see a certificate error.
+Simply choose "continue to the website" to get to the setup screen.
+{{< /note >}}
 
 ![setup_linux](/images/rs/setup_linux.png?width=600&height=287)
 
@@ -123,11 +125,11 @@ OK
 A simple python application running in the host machine can also connect
 to the database1.
 
-Note: The following section assumes you already have python and redis-py
-(python library for connecting to Redis) configured on the host machine
-running the container. You can find the instructions to configure
-redis-py on the [github page for
-redis-py](https://github.com/andymccurdy/redis-py).
+{{< note >}}
+The following section assumes you already have python
+and redis-py (python library for connecting to Redis) configured on the host machine running the container.
+You can find the instructions to configure redis-py on the [github page for redis-py](https://github.com/andymccurdy/redis-py).
+{{< /note >}}
 
 In the command-line Terminal, create a new file called
 **redis_test.py**

@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+hidden: true
 ---
 In this guide, we'll set up an [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}})
 (formerly known as CRDB) deployment with Active-Active replication
@@ -32,7 +33,9 @@ the Redis Enterprise Cluster API service and the DB service that exposes the Act
 Both services are used during the creation and management of an Active-Active deployment.
 The routes are configured with TLS passthrough.
 
-**Note**: Routes should have unique hostnames across a Kubernetes cluster.
+{{< note >}}
+Routes should have unique hostnames across a Kubernetes cluster.
+{{< /note >}}
 
 ## Steps for creating an Active-Active deployment with Service Broker
 
@@ -46,7 +49,9 @@ using the REC custom resource, with a Service Broker deployment as covered in
 
 The peerClusters section in the spec is used for creating an Active-Active with the Service Broker.
 
-Note: This is only relevant for OpenShift deployments, which support Service Brokers natively.
+{{< note >}}
+This is only relevant for OpenShift deployments, which support Service Brokers natively.
+{{< /note >}}
 
 Copy this section of the REC spec and modify it for your environment. To apply it
 to every cluster that will participate in the Active-Active database deployment, edit the cluster yaml file

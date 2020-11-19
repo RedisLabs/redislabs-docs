@@ -8,7 +8,7 @@
       <title>{{ .Title }} | {{ .Site.Title }}</title>
       <link rel="shortcut icon" href="{{"/images/icon_logo/favicon-32x32.png" | relURL}}" type="image/x-icon" />
       <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
-      <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">      
+      <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
       <link href="{{"css/bootstrap.min.css" | relURL}}" rel="stylesheet">
       <link href="{{"css/foundation-icons.css" | relURL}}" rel="stylesheet">
       {{ $style := resources.Get "theme-flex/style.css"  | resources.Fingerprint }}
@@ -19,7 +19,7 @@
             var baseurl = "{{.Site.BaseURL}}";
       </script>
       {{ partial "custom-head.html" . }}
-      
+
       {{if .IsHome}}
       <style>
             @media screen and (max-width: 768px) {

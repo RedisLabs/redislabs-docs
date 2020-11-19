@@ -26,9 +26,11 @@ preferably a certificate issued by an intermediate certificate authority (CA).
 To encrypt the connection to the database endpoint with TLS, enter the
 contents the client certificate to the **TLS** field.
 
-**Note**: Once TLS encryption is enabled for the database endpoint,
+{{< note >}}
+Once TLS encryption is enabled for the database endpoint,
 the database does not accept unsecured connections. TLS encryption can
 significantly impact database throughput and latency.
+{{< /note >}}
 
 ### Adding TLS CA signed certificates to the proxy
 
@@ -49,10 +51,10 @@ significantly impact database throughput and latency.
 1. [Replace the RS server certificates](https://docs.redislabs.com/latest/rs/administering/cluster-operations/updating-certificates/) and key
     on all nodes with the CA signed certificate, and restart the proxy.
 
-    Note: A certificate for the databases' endpoint should be assigned
-    for the same domain as the cluster name. For example, for a cluster
-    with the name "redislabs.com" the certificate should be for
-    "*.redislabs.com".
+    {{< note >}}
+A certificate for the database's endpoint should be assigned for the same domain as the cluster name.
+For example, for a cluster with the name "redislabs.com" the certificate should be for "*.redislabs.com".
+    {{< /note >}}
 
 1. Add the TLS client certificates in the UI including CA
     certificates and any intermediate certificates by chaining the
@@ -79,9 +81,11 @@ use tools that enable this functionality, such as
 [stunnel](https://www.stunnel.org/index.html). An example of how to use
 stunnel is detailed below.
 
-**Note**: For security reasons, RS supports only the TLS protocol.
+{{< note >}}
+For security reasons, RS supports only the TLS protocol.
 Therefore, make sure that the Redis client or secured tunnel solution you
 use supports TLS, preferably TLS v1.2.
+{{< /note >}}
 
 When using self-signed certificates on the cluster nodes, make sure to
 copy these certificates to the client machines as well, thereby enabling
@@ -134,23 +138,28 @@ certificates, and a self-signed certificate on the client machine.
     1. Create a redislabs.conf file in /etc/stunnel folder.
     1. Make sure that the certificates that have been generated exist in
         the following folder: /etc/stunnel.
-    1. Edit the redislabs.conf content to look as follows:cert =
-        /etc/stunnel/cert.pem
+    1. Edit the redislabs.conf content to look as follows:
+
+        ```sh
+        cert = /etc/stunnel/cert.pem
         key = /etc/stunnel/keyclient.pem
         cafile = /etc/stunnel/servercerts.pem
         verify = 2
         delay = yes
         output = /tmp/stunnel.log
-        pid = /tmp/stunnel.pid\[redislabs\]
+        pid = /tmp/stunnel.pid
         client = yes
         accept = 127.0.0.1:6379
-        connect = \[database endpoint value\]Where \[database endpoint
-        value\] is the database endpoint as can be retrieved from RS.
+        connect = <database endpoint value>
+        ```
 
-        **Note**: The value for the accept parameter is the local IP and
-        port that is used for redirecting the traffic through the
-        secure tunnel to the database endpoint configured in the connect
-        parameter.
+        Where `database endpoint value` is the database endpoint as can be retrieved from RS.
+
+        {{< note >}}
+The value for the accept parameter is the local IP and port
+that is used for redirecting the traffic through the secure tunnel
+to the database endpoint configured in the connect parameter.
+        {{< /note >}}
 
 1. Copy the contents of the client certificate from cert.pem and enter
     them in the **SSL Client Authentication** field, in the RS UI, of
@@ -159,12 +168,12 @@ certificates, and a self-signed certificate on the client machine.
 1. Start the stunnel service by running the following command:service
     stunnel restart
 
-    **Note**: Any change made to the stunnel configuration requires
-    restarting the stunnel service.
+    {{< note >}}
+Any change made to the stunnel configuration requires restarting the stunnel service.
 
-    Check the stunnel log file to verify that the connection is working
-    properly. The log file is created under the root folder within the
-    configuration mentioned above.
+Check the stunnel log file to verify that the connection is working properly.
+The log file is created under the root folder within the configuration mentioned above.
+    {{< /note >}}
 
 1. Test the connection to the Redis database from the client machine.
     You can use redis-cli to run commands on the client machine, and the

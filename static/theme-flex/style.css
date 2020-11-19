@@ -637,6 +637,11 @@ section a {
   width: 100px;
 }
 
+.home-options__option__icon img.modules-icon {
+  width: 80px;
+  margin-top: 8px;
+}
+
 .home-options__option__icon img.platforms-icon {
   width: 88px;
   margin-top: 8px;

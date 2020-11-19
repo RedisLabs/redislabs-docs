@@ -1,176 +1,161 @@
-var lunrIndex, pagesIndex;
+(function() {
 
-function endsWith(str, suffix) {
-    return str.indexOf(suffix, str.length - suffix.length) !== -1;
-}
+  const SEARCH_API_URL = "https://search-service.redislabs.com/search"
+  const THIRTY_SECONDS = 30000
+  const SEARCH_LOGO = '<a class="powered-by-redisearch" href="https://oss.redislabs.com/redisearch/"></a>'
 
-// Initialize lunrjs using our generated index file
-function initLunr() {
-    if (!endsWith(baseurl,"/")){
-        baseurl = baseurl+'/'
-    };
 
-    var ic = getIndexCache();
+  const searchLogo = document.querySelector('.redisearch-logo')
+  searchLogo.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
 
-    if(ic) {
-        processIndex(ic);
-        return;
+
+  function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+
+    const item = {
+      value: value,
+      expiry: now.getTime() + ttl,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  }
+
+
+  function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+    if (!itemStr) {
+      return null
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return null
     }
 
-    $.getJSON(baseurl +"index.json")
-        .done(function(index) {
-            setIndexCache(index);
-            processIndex(index);
-        })
-        .fail(function(jqxhr, textStatus, error) {
-            var err = textStatus + ", " + error;
-            console.error("Error getting Hugo index file:", err);
-        });
-}
+    return item.value
+  }
 
-function setIndexCache(li) {
-    sessionStorage.setItem('_rld_lunr_index_', JSON.stringify(li));
-}
 
-function getIndexCache() {
-    var i = sessionStorage.getItem('_rld_lunr_index_');
-    return i? JSON.parse(i) : null;
-}
+  new RedisLabsAutocomplete('#autocomplete', {
+    debounceTime: 2,
 
-function processIndex(index) {
-    pagesIndex = index;
-    lunrIndex = lunr(function () {
-        this.ref('uri');
-        this.field('title', {
-            boost: 15
-        });
-        this.field('keywords', {
-            boost: 12
-        });
-        this.field('tags', {
-            boost: 10
-        });
-        this.field('content', {
-            boost: 5
-        });
-        this.field('categories');
+    search: input => {
+      const trimmedInput = input.trim()
+      const url = `${SEARCH_API_URL}?q=${trimmedInput}*`
 
-        pagesIndex.forEach(function(page) {
-            if(!page.uriRel.startsWith('/embeds')) {
-                this.add(page);
+      if (input.length === 0) {
+        return []
+      }
+
+      try { xhr.abort(); } catch(e){}
+
+      // Save the query so we can append it to a selected result URL later.
+      // We use this to track search queries.
+      this.lastQuery = trimmedInput
+
+      const cachedResults = getWithExpiry(url)
+
+      if (cachedResults) {
+        return cachedResults
+      }
+
+      return new Promise(resolve => {
+        $.getJSON(url)
+          .fail(function(jqxhr, textStatus, error) {
+            const err = `${textStatus}, ${error}`
+            console.error("Error querying search API:", err)
+            resolve([])
+          })
+          .done(function(data) {
+            // Push a fake 'no results' document if there were no results.
+            if (!data.results.length) {
+              const safeInput = encodeURIComponent(trimmedInput).replaceAll("%22", '"').replaceAll("%20", " ")
+              results = [{
+                title: "",
+                section_title: `No results found for '${safeInput}'`,
+                body: "",
+                hierarchy: ['']
+              }]
             }
-        }, this);
-        
-        this.pipeline.remove(this.stemmer);
-    });
-}
-
-function getCurrentProductCategory() {
-    if(!window.location.pathname) {
-        return null;
-    }
-
-    var urlParams = window.location.pathname.split('/');
-    if(!urlParams || urlParams.length < 3) {
-        return null;
-    }
-
-    if(urlParams[1] === 'latest') {
-        return urlParams[2];
-    }
-
-    if(urlParams[1] === 'staging') {
-        return urlParams[3];
-    }
-
-    return urlParams[1];
-}
-
-function isCategorySearchable(cat) {
-    if(!cat) {
-        return false;
-    }
-
-    return ['RS', 'RC', 'RI', 'MODULES', 'PLATFORMS'].includes(cat.toUpperCase());
-}
-
-var currentCategory = getCurrentProductCategory();
-var isCurrentCategorySearchable = isCategorySearchable(currentCategory);
-
-/**
- * Trigger a search in lunr and transform the result
- *
- * @param  {String} query
- * @return {Array}  results
- */
-function search(query) {
-    var results = lunrIndex.search(query);
-    var r = results.map(function(result) {
-        return pagesIndex.filter(function(page) {
-            return page.uri === result.ref;
-        })[0];
-    });
-    
-    if(!r || r.length < 2 || !isCurrentCategorySearchable) {
-        return r;
-    }
-
-    var cat = currentCategory.toUpperCase();
-    
-    r.sort((a, b) => {
-        var aCat = (a.categories && a.categories.length > 0)? a.categories[0].toUpperCase() : '';
-        var bCat = (b.categories && b.categories.length > 0)? b.categories[0].toUpperCase() : '';
-
-        if(aCat === cat && bCat !== cat) {
-            return -1;
-        }
-
-        if(aCat !== cat && bCat === cat) {
-            return 1;
-        }
-
-        return 0;
-    });
-
-    return r;
-}
-
-// Let's get started
-initLunr();
-$( document ).ready(function() {
-    var searchList = new autoComplete({
-        delay: 550,
-        /* selector for the search box element */
-        selector: $("#search-by").get(0),
-        /* source is the callback to perform the search */
-        source: function(term, response) {
-            response(search(term));
-        },
-        /* renderItem displays individual search results */
-        renderItem: function(item, term) {
-            var numContextWords = 3;
-            var regEx = "(?:\\s?(?:[\\w\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]+)\\s?){0";
-            var text = item.content.match(
-                regEx+numContextWords+"}" +
-                    term+regEx+numContextWords+"}");
-            if(text && text.length > 0) {
-                var len = text[0].split(' ').length;
-                item.context = len > 1? '...' + text[0].trim() + '...' : null;
+            else {
+              results = data.results
             }
-            item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
-            return '<div class="autocomplete-suggestion" ' +
-                'data-term="' + term + '" ' +
-                'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '?s=' + term + '"' +
-                'data-context="' + item.context + '">' +
-                    '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
-                    '<div class="context">' + (item.context || '') +'</div>' +
-                '</div>';
-        },
-        /* onSelect callback fires when a search suggestion is chosen */
-        onSelect: function(e, term, item) {
-            console.log(item.getAttribute('data-val'));
-            location.href = item.getAttribute('data-uri');
-        }
-    });
-});
+
+            setWithExpiry(url, results, THIRTY_SECONDS)
+            resolve(results)
+          })
+      })
+    },
+
+    renderResult: (result, props) => {
+      const root = result.hierarchy[0]
+
+      if (result.section_title) {
+        return `
+          <li ${props}>
+            <div class="search-root">
+              ${root}
+            </div>
+            <div class="search-left">
+              <div class="search-title">
+                ${result.title}
+              </div>
+            </div>
+            <div class="search-right">
+              <div class="search-section-title">
+                ${result.section_title}
+              </div>
+              <div class="search-body">
+                ${result.body}
+              </div>
+            </div>
+          </li>
+        `
+      } else {
+        return `
+          <li ${props}>
+            <div class="search-root">
+              ${root}
+            </div>
+            <div class="search-left">
+              <div class="search-title">
+                ${result.title}
+              </div>
+            </div>
+            <div class="search-right">
+              <div class="search-section-title">
+                ${result.title}
+              </div>
+              <div class="search-body">
+                ${result.body}
+              </div>
+            </div>
+          </li>
+        `
+      }
+    },
+
+    getResultValue: result => "",
+
+    // Open the selected article in
+    // a new window
+    onSubmit: result => {
+      if (result) {
+        const lastQuery = encodeURIComponent(this.lastQuery)
+        window.open(`${result.url}?s=${lastQuery}`, "_top")
+      }
+    },
+
+    onUpdate: (results, selectedIndex) => {
+      const redisearchLogo = document.querySelector('.redisearch-logo')
+      if (results.length) {
+        redisearchLogo.innerHTML = SEARCH_LOGO
+      } else {
+        redisearchLogo.innerHTML = ""
+      }
+    }
+  })
+})()

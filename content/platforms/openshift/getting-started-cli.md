@@ -55,8 +55,6 @@ For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_r
 {{< /note >}}
 -->
 
-Specifically for the custom resource (cr) yaml file, you can also download and edit one of the files in the [example folder](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tree/master/examples).
-
 ## Step 3: Prepare your yaml files
 
 Let’s look at each yaml file to see what requires editing:

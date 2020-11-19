@@ -55,7 +55,9 @@ about installing Docker Engine:
 To pull and start the Redis Enterprise Software Docker container, run this
 `docker run` command in the terminal or command-line for your operating system.
 
-Note: On Windows, make sure Docker is configured to run Linux-based containers.
+{{< note >}}
+On Windows, make sure Docker is configured to run Linux-based containers.
+{{< /note >}}
 
 ```sh
 docker run -d --cap-add sys_resource --name rp -p 8443:8443 -p 9443:9443 -p 12000:12000 redislabs/redis
@@ -89,11 +91,8 @@ enter `12000` for the port number.
 
 1. Click **Activate** to create your database
 
-<!-- Also in crdbs.md -->
 {{< note >}}
-If you cannot activate the database because of a memory limitation,
-make sure that Docker has enough memory allocated in the Advanced section
-of Docker Settings.
+{{< embed-md "docker-memory-limitation.md" >}}
 {{< /note >}}
 
 The database configuration is shown.
@@ -136,11 +135,11 @@ OK
 A simple python application running on the **host machine**, not the
 container, can also connect to database1.
 
-Note: The following section assumes you already have Python and redis-py
-(python library for connecting to Redis) configured on the host machine
-running the container. You can find the instructions to configure
-redis-py on the [github page for
-redis-py](https://github.com/andymccurdy/redis-py).
+{{< note >}}
+The following section assumes you already have Python
+and redis-py (python library for connecting to Redis) configured on the host machine running the container.
+You can find the instructions to configure redis-py on the [github page for redis-py](https://github.com/andymccurdy/redis-py).
+{{< /note >}}
 
 1. Create a new file called `redis_test.py` with this contents:
 
