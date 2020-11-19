@@ -52,7 +52,7 @@ can determine the sources by running this command:
 kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' | uniq -c
 ```
 
-The output is list all the images and their counts used on your cluster. You can
+The output lists all of the images used by your cluster. You can
 limit this command to specific namespaces by changing the `--all-namespaces` to
 a set of `-n {namespace}` parameters where each `{namespace}` is a specific
 namespace of interest on your cluster.
