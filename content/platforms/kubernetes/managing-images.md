@@ -114,7 +114,7 @@ identifier that prefixes the repository path for your container images.
 A Kubernetes deployment uses a variety of images. Some of the important images for a Redis Enterprise Software deployment include:
 
  * Redis Enterprise Software
- * bootstrapping a Redis Enterprise cluster node
+ * Bootstrapping a Redis Enterprise cluster node (in the operator image)
  * The Service Rigger
  * The Redis Enterprise Software operator
 
