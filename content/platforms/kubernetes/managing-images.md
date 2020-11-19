@@ -71,7 +71,7 @@ kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '
 
 Docker [rate limits image pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/).
 Anonymous users are allowed 100 pulls every 6 hours; for authenticated users, the limit is 200 pulls every 6 hours.
-a Kubernetes cluster, this may affect the cluster in a number of ways:
+These rate limits may affect your Kubernetes cluster in a number of ways:
 
  * the cluster nodes will likely be treated as a one anonymous user,
  * the number of pulls during an initial or subsequent deployment could
