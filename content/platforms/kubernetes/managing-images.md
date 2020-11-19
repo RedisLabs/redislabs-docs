@@ -243,7 +243,7 @@ The corresponding image spec labels are:
 
  * **`redisEnterpriseImageSpec`**: controls the Redis Enterprise container image. *The version should match the RS version associated with the operator version*.
  * **`bootstrapperImageSpec`** - controls the bootstrapper container image, *the version must match the operator version*
- * **`redisEnterpriseServicesRiggerImageSpec`** - controls the service rigger version, *the version must match the operator version*
+ * **`redisEnterpriseServicesRiggerImageSpec`**: controls the service rigger version. *The version must match the operator version*.
 
 For example, the following pulls all three container images from a
 private registry:
