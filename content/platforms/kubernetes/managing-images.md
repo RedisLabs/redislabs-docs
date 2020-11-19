@@ -102,7 +102,7 @@ Once you have set up a private registry, you will identify the registry using:
 
  * A domain name
  * A port (optional)
- * an optional registry path suffix,
+ * An registry path suffix (optional)
 
 This information identifies your registry and must be used to references images you
 push to your private registry. For example, a Google Container Registry
