@@ -148,7 +148,7 @@ Once you push your images to your private repository, you need to
 configure your deployments to use the private repository. There are two
 different deployments to consider:
 
- 1. The Redis Enterprise operator.
+ 1. The Redis Enterprise operator
  2. The Redis Enterprise pods and Service Rigger created by the operator.
 
 For (1), the operator container image is controlled directly by the deployment
