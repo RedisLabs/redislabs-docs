@@ -60,7 +60,7 @@ Where:
 - external_addr - external addresses
 
 {{< note >}}
-While [Joining a new node to a
+While [joining a new node to a
 cluster]({{< relref "/rs/administering/adding-node.md" >}})
 during the node bootstrap process,
 when prompted to provide an IP of an existing node in the cluster,
