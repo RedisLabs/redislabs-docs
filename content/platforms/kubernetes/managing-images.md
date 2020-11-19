@@ -71,61 +71,61 @@ kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '
 
 Docker [rate limits image pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/).
 Anonymous users are allowed 100 pulls every 6 hours; for authenticated users, the limit is 200 pulls every 6 hours.
-a Kubernetes cluster, this may affect the cluster in a number of ways:
+These rate limits may affect your Kubernetes cluster in a number of ways:
 
- * the cluster nodes will likely be treated as a one anonymous user,
- * the number of pulls during an initial or subsequent deployment could
-   exceed the rate limiting for any aspect of the deployment: for our operator, Redis Enterprise, or for other non-Redis pods,
- * pull failures may cause serious delays in the ability for a deployment to pull the necessary images and so will
+ * The cluster nodes will likely be treated as a one anonymous user.
+ * The number of pulls during an initial or subsequent deployment might
+   exceed the rate limit for other deployment dependencies, including our operator, Redis Enterprise Software, or for other non-Redis pods.
+ * Pull failures may prevent your deployment from downloading the required images in a timely manner. Delays here can affect the stability of deployments like StatefulSet, which is used by the Redis Enterprise operator.
    affect the stability of deployments like the StatefulSet used by the Redis Enterprise operator.
 
-For this reason, serious consideration should be applied to where the images
+For these reasons, you should seriously consider where your images
 are pulled from to avoid failures caused by rate limiting. The easiest solution
 is to push the required images to a private repository under your control.
 
 ## Managing image sources
 
-Redis Enterprise operator and cluster images are pushed to DockerHub,
-Red Hat, and other public registries for distribution. Your organization may
-require these images be copied to other registries used by your Kubernetes
+The images for Redis Enterprise Software and its Kubernetes operator are distributed on DockerHub,
+Red Hat, and other public registries. Your organization may
+require these images to be copied to other registries used by your Kubernetes
 clusters.
 
 ### Creating a private repository
 
-A private registry can be setup via:
+You can set up a private registry in a couple of ways:
 
- * on-premise via [Docker registry](https://docs.docker.com/registry/deploying/),
-   RedHat Quay, or other providers,
- * via a cloud provider (e.g., Azure Container Registry, Google Container Registry, etc.).
+ * On-premise via [Docker registry](https://docs.docker.com/registry/deploying/),
+   RedHat Quay, or other providers
+ * Cloud provider based registries (e.g., Azure Container Registry, Google Container Registry, etc.).
 
-Once you have setup a repository, you will have:
+Once you have set up a private registry, you will identify the registry using:
 
- * a domain name,
- * an optional port,
- * an optional registry path suffix,
+ * A domain name
+ * A port (optional)
+ * An registry path suffix (optional)
 
-This information identifies your registry and must be used to references images you
+You use this information to reference the images you
 push to your private registry. For example, a Google Container Registry
-will start with `gcr.io/{project-id}` where '{project-id}' is the cloud project
+will start with `gcr.io/{project-id}` where `{project-id}` is the cloud project
 identifier.
 
 ### Pushing Redis Enterprise images to a private repository
 
-A Kubernetes deployment uses different images for various purposes:
+A Kubernetes deployment uses a variety of images. Some of the important images for a Redis Enterprise Software deployment include:
 
- * Redis Enterprise
+ * Redis Enterprise Software
  * bootstrapping a Redis Enterprise cluster node
- * the Service Rigger
- * the Redis Enterprise operator
+ * The Service Rigger
+ * The Redis Enterprise Software operator
 
-Once you have setup a private repository, you will need to push these images
-to your private repository. The process to do so is:
+Once you have created a private registry, you will need to push these images
+to your private repository. To push the images:
 
  1. Pull the various images locally for Redis Enterprise and the operator.
  2. Tag the local images with the repository prefixed onto the name.
- 3. Push the new tagged images name with the repository prefix.
+ 3. Push the newly tagged images named with the repository prefix.
 
-For Redis Enterprise and the operator, this process can be accomplished by:
+For example, here are the commands for pushing the images for Redis Enterprise Software and its operator to your private registry:
 
 ```
 PRIVATE_REPO=...your repo...
@@ -144,12 +144,12 @@ docker push ${PRIVATE_REPO}/redislabs/k8s-controller:${OPERATOR_VERSION}
 
 ## Using a private repository
 
-After pushing your desired version to your private repository, you just need to
+Once you push your images to your private repository, you need to
 configure your deployments to use the private repository. There are two
 different deployments to consider:
 
- 1. The Redis Enterprise operator.
- 2. The Redis Enterprise pods and Service Rigger created by the operator.
+ 1. The Redis Enterprise operator
+ 2. The Redis Enterprise pods and Service Rigger created by the operator
 
 For (1), the operator container image is controlled directly by the deployment
 bundle. Whereas, for (2), the Redis Enterprise cluster pod (RS and bootstrapper) and Service Rigger
@@ -163,15 +163,14 @@ necessary authorization to pull the images. Otherwise, you may
 need to add a [pull secret](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) to your namespace
 and then tell Kubernetes and the operator to use the pull secret.
 
-If you need to specify credentials, each of the following sections will
-detail where the pull secret needs to be specified.
+See the following two sections for how to specify registry credentials.
 
 ### Specifying the operator image
 
 The operator bundle (e.g., see the [6.0.8-1 bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/6.0.8-1/bundle.yaml))
 contains the operator deployment and the reference to the operator image (redislabs/operator). To use a private repository, you must
 change this image reference before you deploy the operator. This image
-should point to the same value tag pushed to the private repository:
+should point to the same tag pushed to the private repository:
 
 ```
 ${PRIVATE_REPO}/redislabs/operator:${OPERATOR_VERSION}
@@ -202,12 +201,12 @@ spec:
 ```
 
 Note that if you apply this change to modify an existing operator deployment,
-the operator's pod will restart. As the operator is stateless, it will pull
+the operator's pod will restart. The operator, because it is stateless, will pull
 the image from the private repository (as necessary) and restart the pod. This
 kind of change will not affect any existing cluster managed by the operator.
 
-If your registry requires a pull secret, the standard `imagePullSecrets`
-may be specified on the operator deployment:
+If your registry requires a pull secret, you may specify the standard `imagePullSecrets`
+ on the operator deployment:
 
 
 ```YAML
@@ -223,9 +222,9 @@ spec:
 A Redis Enterprise cluster managed by the operator consists of three
 container images:
 
- * **`redislabs/redis`** - the Redis Enterprise container image
- * **`redislabs/operator`** - the bootstrapper container image packaged with the operator
- * **`redislabs/k8s-controller`** - the service rigger container image
+ * **`redislabs/redis`**: the Redis Enterprise container image
+ * **`redislabs/operator`**: the bootstrapper container image packaged with the operator
+ * **`redislabs/k8s-controller`**: the Service Rigger container image
 
 By default, a new Redis Enterprise Software cluster is created using the
 container images listed above. These container images will be pulled from the default
