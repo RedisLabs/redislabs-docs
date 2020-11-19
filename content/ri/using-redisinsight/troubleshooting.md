@@ -29,7 +29,7 @@ We are happy to receive your feedback at redisinsight@redislabs.com.
 
 ## Using behind a reverse proxy
 
-It's possible to configure RedisInsight to run behind a reverse proxy like NGINX.
-There are a couple of things to keep in mind:
+When you configure RedisInsight to run behind a reverse proxy like NGINX:
+
 - Since some requests can be long-running, we recommend that the **request timeout is set to over 30 seconds** on the reverse proxy.
-- Using path-rewriting, i.e, hosting RedisInsight behind a prefix path is not supported at this time.
+- Hosting RedisInsight behind a prefix path (path-rewriting) is not supported at this time.
