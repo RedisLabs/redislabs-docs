@@ -20,7 +20,7 @@ with the Kubernetes cluster. As such, an
 undecorated reference to `redislabs/redis` will likely pull from DockerHub
 (except on OpenShift where it pulls from Red Hat).
 
-For security reasons (i.e., in air-gapped environments), you may way to pull the images
+For security reasons (e.g., in air-gapped environments), you may want to pull the images
 from a public repository once and then push them to a private repository under
 your control.  Further, as [Docker announced](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/)
 rate limiting for public pulls, you may want to consider pulling images from a
