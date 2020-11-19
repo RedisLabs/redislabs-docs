@@ -70,7 +70,7 @@ kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '
 ## Rating limiting with DockerHub
 
 Docker [rate limits image pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/).
-via rate limiting for the number of pulls, anonymous or authenticated,
+Anonymous users are allowed 100 pulls every 6 hours; for authenticated users, the limit is 200 pulls every 6 hours.
 on the scale of 100 and 200 pulls per 6 hours, respectively. In the context of
 a Kubernetes cluster, this may affect the cluster in a number of ways:
 
