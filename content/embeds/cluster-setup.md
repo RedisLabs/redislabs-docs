@@ -1,11 +1,11 @@
 1. In the web browser on the host machine, go to https://localhost:8443 to see
 the Redis Enterprise Software web console.
 
-    Note:
-
-    - Depending on your browser, you may see a certificate error. You can safely
-    continue to the web console.
-    - If you see an error from nginx, try again after a few minutes.
+    {{< note >}}
+- Depending on your browser, you may see a certificate error. You can safely
+continue to the web console.
+- If you see an error from nginx, try again after a few minutes.
+    {{< /note >}}
 
 1. Click **Setup** to start the node configuration steps.
 
@@ -21,7 +21,7 @@ Then click **Next** button.
 1. Enter an email and password for the admin account for the web console.
 
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
-    
+
     These credentials are also used for connections to the REST API.
 
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS

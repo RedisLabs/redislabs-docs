@@ -41,8 +41,10 @@ When creating or editing a Redis database on Redis Cloud, the
 system automatically calculates the number of shards needed based on
 the database memory limit and required throughput.
 
-**Note:** For Redis Cloud, clustering is only available in the
+{{< note >}}
+For Redis Cloud, clustering is only available in the
 "Pay-As-You-Go" subscription.
+{{< /note >}}
 
 ![subscription-selection-2](/images/rc/subscription-selection-2.png?width=600&height=221)
 
