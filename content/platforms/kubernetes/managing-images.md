@@ -43,7 +43,7 @@ images for the Redis Enterprise operator and cluster, take care to note:
    **not supported**.
 {{< /note >}}
 
-## Determining image pull sources
+## Determining Docker image sources
 
 Every pod in your deployed application has a source repository. You
 can determine the sources by running this command:
