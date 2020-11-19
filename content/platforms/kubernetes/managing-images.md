@@ -163,7 +163,7 @@ necessary authorization to pull the images. Otherwise, you may
 need to add a [pull secret](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) to your namespace
 and then tell Kubernetes and the operator to use the pull secret.
 
-If you need to specify credentials, each of the following sections will
+See the following two sections for how to specify registry credentials.
 detail where the pull secret needs to be specified.
 
 ### Specifying the operator image
