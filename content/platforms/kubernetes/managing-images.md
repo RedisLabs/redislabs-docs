@@ -100,7 +100,7 @@ You can set up a private registry in a couple of ways:
 
 Once you have set up a private registry, you will identify the registry using:
 
- * a domain name,
+ * A domain name
  * an optional port,
  * an optional registry path suffix,
 
