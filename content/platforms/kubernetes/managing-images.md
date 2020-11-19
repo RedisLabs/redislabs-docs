@@ -227,18 +227,18 @@ container images:
  * **`redislabs/operator`** - the bootstrapper container image packaged with the operator
  * **`redislabs/k8s-controller`** - the service rigger container image
 
-By default, when a new cluster is created by the operator, it uses the
-standard container images listed above. As such, it will not necessarily pull
-them from the same private repository from which the operator may have been
-pulled. The images will be pulled from the default container registry for
-the Kubernetes cluster (i.e., typically DockerHub).
+By default, a new Redis Enterprise Software cluster is created using the
+container images listed above. These container images will be pulled from the default
+registry for the Kubernetes cluster and not from the same registry, possibly
+private, that the operator itself was pulled.
 
-The consequence is that you must specify all three container images
-to pull all the images from the same private repository. The container
+To pull the Redis Enterprise Software and related container images from
+a private registry, you must specify all three of these images in the
+Redis Enterprise cluster custom resource. The container
 images are controlled by an image specification that specifies the
 image pull policy, the container image, and the version tag.
 
-The corresponding image spec labels are:
+The corresponding image specification labels are:
 
  * **`redisEnterpriseImageSpec`**: controls the Redis Enterprise container image. *The version should match the RS version associated with the operator version*.
  * **`bootstrapperImageSpec`**": controls the bootstrapper container image. *The version must match the operator version*.
