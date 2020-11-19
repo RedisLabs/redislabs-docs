@@ -115,7 +115,7 @@ A Kubernetes deployment uses a variety of images. Some of the important images f
 
  * Redis Enterprise Software
  * bootstrapping a Redis Enterprise cluster node
- * the Service Rigger
+ * The Service Rigger
  * the Redis Enterprise operator
 
 Once you have setup a private repository, you will need to push these images
