@@ -118,7 +118,7 @@ A Kubernetes deployment uses a variety of images. Some of the important images f
  * The Service Rigger
  * The Redis Enterprise Software operator
 
-Once you have setup a private repository, you will need to push these images
+Once you have created a private registry, you will need to push these images
 to your private repository. The process to do so is:
 
  1. Pull the various images locally for Redis Enterprise and the operator.
