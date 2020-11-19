@@ -152,9 +152,9 @@ deployment. There are two different deployments to consider:
  1. The Redis Enterprise operator
  2. The Redis Enterprise pods and Service Rigger created by the operator
 
-For (1), the operator container image is controlled directly by the deployment
+For (1), the operator container image is configured directly by the deployment
 bundle. Whereas, for (2), the Redis Enterprise cluster pod (RS and bootstrapper) and Service Rigger
-images are controlled in the Redis Enterprise Custom Resource.
+images are configured in the Redis Enterprise Custom Resource.
 
 Also, depending on your Kubernetes platform, your private container registry may
 require authentication. If you are using a private container registry associated with
