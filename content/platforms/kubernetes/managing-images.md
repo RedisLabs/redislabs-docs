@@ -170,7 +170,7 @@ See the following two sections for how to specify registry credentials.
 The operator bundle (e.g., see the [6.0.8-1 bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/6.0.8-1/bundle.yaml))
 contains the operator deployment and the reference to the operator image (redislabs/operator). To use a private repository, you must
 change this image reference before you deploy the operator. This image
-should point to the same value tag pushed to the private repository:
+should point to the same tag pushed to the private repository:
 
 ```
 ${PRIVATE_REPO}/redislabs/operator:${OPERATOR_VERSION}
@@ -201,12 +201,12 @@ spec:
 ```
 
 Note that if you apply this change to modify an existing operator deployment,
-the operator's pod will restart. As the operator is stateless, it will pull
+the operator's pod will restart. The operator, because it is stateless, will pull
 the image from the private repository (as necessary) and restart the pod. This
 kind of change will not affect any existing cluster managed by the operator.
 
-If your registry requires a pull secret, the standard `imagePullSecrets`
-may be specified on the operator deployment:
+If your registry requires a pull secret, you may specify the standard `imagePullSecrets`
+ on the operator deployment:
 
 
 ```YAML
@@ -222,9 +222,9 @@ spec:
 A Redis Enterprise cluster managed by the operator consists of three
 container images:
 
- * **`redislabs/redis`** - the Redis Enterprise container image
- * **`redislabs/operator`** - the bootstrapper container image packaged with the operator
- * **`redislabs/k8s-controller`** - the service rigger container image
+ * **`redislabs/redis`**: the Redis Enterprise container image
+ * **`redislabs/operator`**: the bootstrapper container image packaged with the operator
+ * **`redislabs/k8s-controller`**: the Service Rigger container image
 
 By default, when a new cluster is created by the operator, it uses the
 standard container images listed above. As such, it will not necessarily pull
