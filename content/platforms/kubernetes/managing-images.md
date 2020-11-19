@@ -36,7 +36,7 @@ Before you deploy private repositories for managing container
 images for the Redis Enterprise operator and cluster, take care to note:
 
  * Each version of the Redis Enterprise operator is mapped to a specific version
-   of Redis Enterprise. The semantic versions match (e.g., 6.0.8) but the releases
+   of Redis Enterprise Software. The semantic versions always match (e.g., 6.0.8), although the specific release numbers
    may be different (e.g., 6.0.8-1 is the operator version for RS 6.0.8-28).
  * A specific operator version only supports a specific Redis Enterprise
    version. Other combinations of operator and Redis Enterprise versions are
