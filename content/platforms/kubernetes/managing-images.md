@@ -41,7 +41,7 @@ images for the Redis Enterprise operator and cluster, take care to note:
  * A specific operator version only supports a specific Redis Enterprise
    version. Other combinations of operator and Redis Enterprise versions are
    **not supported**.
-
+{{< /note >}}
 
 ## Determining image pull sources
 
