@@ -24,7 +24,7 @@ For security reasons (e.g., in air-gapped environments), you may want to pull th
 from a public repository once and then push them to a private repository under
 your control.  Furthermore, because [Docker now rate limits public pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/),
 you may want to consider pulling images from a
-private repository to avoid deployment failures when you hit your rate limit.
+private repository to avoid deployment failures when you hit your DockerHub rate limit.
 
 
 The information below will enable you to track and prescribe the right
