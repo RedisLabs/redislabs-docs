@@ -104,7 +104,7 @@ Once you have set up a private registry, you will identify the registry using:
  * A port (optional)
  * An registry path suffix (optional)
 
-This information identifies your registry and must be used to references images you
+You use this information to reference the images you
 push to your private registry. For example, a Google Container Registry
 will start with `gcr.io/{project-id}` where '{project-id}' is the cloud project
 identifier.
