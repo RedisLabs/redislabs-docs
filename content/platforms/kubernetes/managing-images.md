@@ -79,7 +79,7 @@ These rate limits may affect your Kubernetes cluster in a number of ways:
  * Pull failures may prevent your deployment from downloading the required images in a timely manner. Delays here can affect the stability of deployments like StatefulSet, which is used by the Redis Enterprise operator.
    affect the stability of deployments like the StatefulSet used by the Redis Enterprise operator.
 
-For this reason, serious consideration should be applied to where the images
+For these reasons, you should seriously consider where your images
 are pulled from to avoid failures caused by rate limiting. The easiest solution
 is to push the required images to a private repository under your control.
 
