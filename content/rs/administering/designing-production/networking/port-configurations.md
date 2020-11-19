@@ -25,9 +25,9 @@ update your firewall with the port for that new database endpoint.
 | TCP | 8001 | Internal, External | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8002, 8004, 8006 | Internal | System health monitoring |
 | TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
-| TCP | 8444, 9080 | Internal | For nginx <-> cnm_http/cm traffic |
+| TCP | 8444, 9080 | Internal | For web proxy <-> cnm_http/cm traffic |
 | TCP | 9081 | Internal, Active-Active | For Active-Active management |
-| TCP | 8070, 8071 | Internal, External | For metrics exported and managed by nginx |
+| TCP | 8070, 8071 | Internal, External | For metrics exported and managed by the web proxy |
 | TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
 | TCP | 20000-29999 | Internal | Database shard traffic |
