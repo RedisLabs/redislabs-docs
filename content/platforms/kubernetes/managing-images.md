@@ -98,7 +98,7 @@ You can set up a private registry in a couple of ways:
    RedHat Quay, or other providers
  * via a cloud provider (e.g., Azure Container Registry, Google Container Registry, etc.).
 
-Once you have setup a repository, you will have:
+Once you have set up a private registry, you will identify the registry using:
 
  * a domain name,
  * an optional port,
