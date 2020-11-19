@@ -123,7 +123,7 @@ to your private repository. To push the images:
 
  1. Pull the various images locally for Redis Enterprise and the operator.
  2. Tag the local images with the repository prefixed onto the name.
- 3. Push the new tagged images name with the repository prefix.
+ 3. Push the newly tagged images named with the repository prefix.
 
 For Redis Enterprise and the operator, this process can be accomplished by:
 
