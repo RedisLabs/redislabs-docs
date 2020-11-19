@@ -60,7 +60,7 @@ namespace of interest on your cluster.
 Any image not prefixed by a repository domain name (e.g., "gcr.io") will pull
 from the default repository for the Kubernetes cluster (i.e., DockerHub).
 
-For the Redis Enterprise Operator, you can determine your pull source by a
+To specifically determine the pull source for the Redis Enterprise Operator itself, run the following command:
 simple filter:
 
 ```
