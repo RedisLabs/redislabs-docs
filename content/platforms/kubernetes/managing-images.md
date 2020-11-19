@@ -53,7 +53,7 @@ kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '
 ```
 
 The output lists all of the images used by your cluster. You can
-limit this command to specific namespaces by changing the `--all-namespaces` to
+limit this command to specific namespaces by replacing the `--all-namespaces` parameter with
 a set of `-n {namespace}` parameters where each `{namespace}` is a specific
 namespace of interest on your cluster.
 
