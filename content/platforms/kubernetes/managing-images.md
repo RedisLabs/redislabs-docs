@@ -125,7 +125,7 @@ to your private repository. To push the images:
  2. Tag the local images with the repository prefixed onto the name.
  3. Push the newly tagged images named with the repository prefix.
 
-For Redis Enterprise and the operator, this process can be accomplished by:
+For example, here are the commands for pushing the images for Redis Enterprise Software and its operator to your private registry:
 
 ```
 PRIVATE_REPO=...your repo...
