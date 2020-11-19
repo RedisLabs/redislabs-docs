@@ -149,7 +149,7 @@ configure your deployments to use the private repository. There are two
 different deployments to consider:
 
  1. The Redis Enterprise operator
- 2. The Redis Enterprise pods and Service Rigger created by the operator.
+ 2. The Redis Enterprise pods and Service Rigger created by the operator
 
 For (1), the operator container image is controlled directly by the deployment
 bundle. Whereas, for (2), the Redis Enterprise cluster pod (RS and bootstrapper) and Service Rigger
