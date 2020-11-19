@@ -86,7 +86,7 @@ is to push the required images to a private repository under your control.
 ## Managing image sources
 
 The images for Redis Enterprise Software and its Kubernetes operator are distributed on DockerHub,
-Red Hat, and other public registries for distribution. Your organization may
+Red Hat, and other public registries. Your organization may
 require these images be copied to other registries used by your Kubernetes
 clusters.
 
