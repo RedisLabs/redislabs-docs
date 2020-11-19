@@ -122,8 +122,8 @@ Once you have created a private container registry, you will need to push these 
 to your private container registry. To push the images:
 
  1. Pull the various images locally for Redis Enterprise and the operator.
- 2. Tag the local images with the container registry prefixed onto the name.
- 3. Push the newly tagged images named with the container registry prefix.
+ 2. Tag the local images with the private container registry to which you are pushing prefixed onto the name.
+ 3. Push the newly tagged images named with the private container registry prefix.
 
 For example, here are the commands for pushing the images for Redis Enterprise Software and its operator to your private container registry:
 
