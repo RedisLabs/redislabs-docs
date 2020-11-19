@@ -30,7 +30,7 @@ private repository to avoid deployment failures when you hit your DockerHub rate
 The information below will enable you to track and prescribe the right
 solution for where your deployments pull container images.
 
-**IMPORTANT NOTE**
+{{< note >}}
 
 Before you deploy private repositories for managing container
 images for the Redis Enterprise operator and cluster, take care to note:
