@@ -4,7 +4,7 @@ the Redis Enterprise Software web console.
     {{< note >}}
 - Depending on your browser, you may see a certificate error. You can safely
 continue to the web console.
-- If you see an error from nginx, try again after a few minutes.
+- If the server does not show the login screen, try again after a few minutes.
     {{< /note >}}
 
 1. Click **Setup** to start the node configuration steps.
