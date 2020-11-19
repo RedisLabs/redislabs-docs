@@ -101,7 +101,7 @@ You can set up a private registry in a couple of ways:
 Once you have set up a private registry, you will identify the registry using:
 
  * A domain name
- * an optional port,
+ * A port (optional)
  * an optional registry path suffix,
 
 This information identifies your registry and must be used to references images you
