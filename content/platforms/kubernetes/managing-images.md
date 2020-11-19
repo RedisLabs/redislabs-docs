@@ -144,7 +144,7 @@ docker push ${PRIVATE_REPO}/redislabs/k8s-controller:${OPERATOR_VERSION}
 
 ## Using a private repository
 
-After pushing your desired version to your private repository, you just need to
+Once you push your images to your private repository, you need to
 configure your deployments to use the private repository. There are two
 different deployments to consider:
 
