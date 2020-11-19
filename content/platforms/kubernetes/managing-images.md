@@ -76,7 +76,7 @@ These rate limits may affect your Kubernetes cluster in a number of ways:
  * The cluster nodes will likely be treated as a one anonymous user.
  * The number of pulls during an initial or subsequent deployment might
    exceed the rate limit for other deployment dependencies, including our operator, Redis Enterprise Software, or for other non-Redis pods.
- * pull failures may cause serious delays in the ability for a deployment to pull the necessary images and so will
+ * Pull failures may prevent your deployment from downloading the required images in a timely manner. Delays here can affect the stability of deployments like StatefulSet, which is used by the Redis Enterprise operator.
    affect the stability of deployments like the StatefulSet used by the Redis Enterprise operator.
 
 For this reason, serious consideration should be applied to where the images
