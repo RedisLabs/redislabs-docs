@@ -10,7 +10,7 @@ aliases:
 Redis Enterprise Software, its Kubernetes operator, and the Service Rigger
 are all distributed as separate container images.
 Your Kubernetes deployment will pull these images as needed.
-various pods for the operator or Redis Enterprise cluster. You can control where these images are
+ You can control where these images are
 pulled from within the operator deployment and also via the
 Redis Enterprise custom resource.
 
