@@ -15,7 +15,7 @@ pulled from within the operator deployment and also via the
 Redis Enterprise custom resource.
 
 In general, images for deployments that do not have a registry domain
-name (e.g., gcr.io or localhost:5000), are pulled from the default registry associated
+name (e.g., `gcr.io` or `localhost:5000`) are pulled from the default registry associated
 with the Kubernetes cluster. As such, an
 undecorated reference to `redislabs/redis` will likely pull from DockerHub
 (except on OpenShift where it pulls from Red Hat).
