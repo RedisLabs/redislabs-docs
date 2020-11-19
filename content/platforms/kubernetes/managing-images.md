@@ -106,7 +106,7 @@ Once you have set up a private registry, you will identify the registry using:
 
 You use this information to reference the images you
 push to your private registry. For example, a Google Container Registry
-will start with `gcr.io/{project-id}` where '{project-id}' is the cloud project
+will start with `gcr.io/{project-id}` where `{project-id}` is the cloud project
 identifier.
 
 ### Pushing Redis Enterprise images to a private repository
