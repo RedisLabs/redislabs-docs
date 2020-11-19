@@ -52,7 +52,7 @@ significantly impact database throughput and latency.
     on all nodes with the CA signed certificate, and restart the proxy.
 
     {{< note >}}
-A certificate for the databases' endpoint should be assigned for the same domain as the cluster name.
+A certificate for the database's endpoint should be assigned for the same domain as the cluster name.
 For example, for a cluster with the name "redislabs.com" the certificate should be for "*.redislabs.com".
     {{< /note >}}
 
