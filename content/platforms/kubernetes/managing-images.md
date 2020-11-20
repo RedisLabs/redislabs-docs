@@ -77,32 +77,31 @@ These rate limits may affect your Kubernetes cluster in a number of ways:
  * The number of pulls during an initial or subsequent deployment might
    exceed the rate limit for other deployment dependencies, including our operator, Redis Enterprise Software, or for other non-Redis pods.
  * Pull failures may prevent your deployment from downloading the required images in a timely manner. Delays here can affect the stability of deployments like StatefulSet, which is used by the Redis Enterprise operator.
-   affect the stability of deployments like the StatefulSet used by the Redis Enterprise operator.
 
 For these reasons, you should seriously consider where your images
 are pulled from to avoid failures caused by rate limiting. The easiest solution
-is to push the required images to a private registry under your control.
+is to push the required images to a private container registry under your control.
 
 ## Managing image sources
 
 The images for Redis Enterprise Software and its Kubernetes operator are distributed on DockerHub,
 Red Hat, and other public registries. Your organization may
-require these images to be copied to other registries used by your Kubernetes
+require these images to be copied to other container registries used by your Kubernetes
 clusters.
 
 ### Creating a private container registry
 
-You can set up a private registry in a couple of ways:
+You can set up a private container registry in a couple of ways:
 
  * On-premise via [Docker registry](https://docs.docker.com/registry/deploying/),
-   RedHat Quay, or other providers
+   [Red Hat Quay](https://www.redhat.com/en/technologies/cloud-computing/quay), or other providers
  * Cloud provider based registries (e.g., Azure Container Registry, Google Container Registry, etc.).
 
-Once you have set up a private registry, you will identify the registry using:
+Once you have set up a private container registry, you will identify the container registry using:
 
  * A domain name
  * A port (optional)
- * An repository path suffix (optional)
+ * An repository path (optional)
 
 You use this information to reference the images you
 push to your private registry. For example, a Google Container Registry
@@ -118,12 +117,13 @@ A Kubernetes deployment uses a variety of images. Some of the important images f
  * The Service Rigger
  * The Redis Enterprise Software operator
 
-Once you have created a private container registry, you will need to push these images
-to your private container registry. To push the images:
+Once you have created a private container registry, you will need to push
+all these images to your private container registry. In general,
+to push the images you must:
 
- 1. Pull the various images locally for Redis Enterprise and the operator.
- 2. Tag the local images with the private container registry to which you are pushing prefixed onto the name.
- 3. Push the newly tagged images named with the private container registry prefix.
+ 1. Pull the various images locally for the Redis Enterprise Software, Service Rigger, and the operator.
+ 2. Tag the local images with the private container registry, repository, and version tag.
+ 3. Push the newly tagged images.
 
 For example, here are the commands for pushing the images for Redis Enterprise Software and its operator to your private container registry:
 
@@ -152,7 +152,7 @@ deployment. There are two different deployments to consider:
  1. The Redis Enterprise operator
  2. The Redis Enterprise pods and Service Rigger created by the operator
 
-For (1), the operator container image is configured directly by the deployment
+For (1), the operator container image is configured directly by the operator deployment
 bundle. Whereas, for (2), the Redis Enterprise cluster pod (RS and bootstrapper) and Service Rigger
 images are configured in the Redis Enterprise Custom Resource.
 
@@ -202,9 +202,8 @@ spec:
 ```
 
 Note that if you apply this change to modify an existing operator deployment,
-the operator's pod will restart. The operator, because it is stateless, will pull
-the image from the private container registry (as necessary) and restart the pod. This
-kind of change will not affect any existing cluster managed by the operator.
+the operator's pod will restart. As the operator is stateless, the restart will
+not not affect any existing cluster managed by the operator.
 
 If your container registry requires a pull secret, you may specify the standard `imagePullSecrets`
  on the operator deployment:
@@ -223,8 +222,8 @@ spec:
 A Redis Enterprise cluster managed by the operator consists of three
 container images:
 
- * **`redislabs/redis`**: the Redis Enterprise container image
- * **`redislabs/operator`**: the bootstrapper container image packaged with the operator
+ * **`redislabs/redis`**: the Redis Enterprise Software container image
+ * **`redislabs/operator`**: the bootstrapper is packaged within the operator container image
  * **`redislabs/k8s-controller`**: the Service Rigger container image
 
 By default, a new Redis Enterprise Software cluster is created using the
@@ -241,9 +240,9 @@ and the version tag.
 
 The corresponding image specification labels are:
 
- * **`redisEnterpriseImageSpec`**: controls the Redis Enterprise container image. *The version should match the RS version associated with the operator version*.
+ * **`redisEnterpriseImageSpec`**: controls the Redis Enterprise Software container image. *The version should match the RS version associated with the operator version*.
  * **`bootstrapperImageSpec`**": controls the bootstrapper container image. *The version must match the operator version*.
- * **`redisEnterpriseServicesRiggerImageSpec`**: controls the service rigger version. *The version must match the operator version*.
+ * **`redisEnterpriseServicesRiggerImageSpec`**: controls the Service Rigger container image. *The version must match the operator version*.
 
 For example, the following pulls all three container images from a
 private registry:
