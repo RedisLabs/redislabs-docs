@@ -1,6 +1,6 @@
 ---
 Title: Managing Container Images
-description: The operator and Redis Enterprise images can be configured to be pulled from a variety of sources. This section describes how to configure alternate private repositories for images or techniques for handling public repositories and possible rate limiting.
+description: The Redis Enterprise Software and Kubernetes operator images can be configured to be pulled from a variety of sources. This page describes how to configure alternate private repositories for images, plus some techniques for handling public repositories with rate limiting.
 weight: 92
 alwaysopen: false
 categories: ["Platforms"]
