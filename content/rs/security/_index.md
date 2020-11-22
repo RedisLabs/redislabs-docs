@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 Security is an important part of any production system. This section is intended to detail the configurable security controls within Redis Enterprise.
 
-## Architecture
+## Architecture Security
 
 When deploying Redis Enterprise in production a best practice is to ensure that your overall application architecture is secure. This section details common architectural practices that can help ensure your deployment is secure and always availible.
 
@@ -29,7 +29,7 @@ For antivirus solutions that intercept processes, binary files may have to be ex
     | /opt/redislabs/lib | System library files |
     | /opt/redislabs/sbin | System binaries for tweaking provisioning |
 
-- **Send logs to a remote logging server** - Redis Enterprise is configured to send logs by default to syslog, however, in order to send these logs to a remote logging server you must configure syslog based on your remote logging server Vendors requirements. Remote logging helps ensure that the logs are not deleted so that you can rotate the logs so that your server disk does not fill up.  
+- **Send logs to a remote logging server** - Redis Enterprise is configured to send logs by default to syslog. To send these logs to a remote logging server you must [configure syslog]({{< relref "/rs/security/logging.md" >}}) based the requirements of the remote logging server vendor. Remote logging helps ensure that the logs are not deleted so that you can rotate the logs so that your server disk does not fill up.
 
 - **Deploy clusters with an odd number of 3 or more nodes** - Redis is an available and partition tolerant database. We recommend that Redis Enterprise be deployed in a cluster of an odd number of 3 or more nodes so that you are able to successfully failover in the event of a failure.
 
