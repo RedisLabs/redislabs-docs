@@ -5,28 +5,28 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-
 To prevent unauthorized access to your data, Redis Enterprise databases support the TLS protocol that includes:
 
 1. Encryption - Makes sure that the traffic can only be read by the sender and recipient.
-1. Authentication - The server makes sure that it communicates with an authorized entity.
+1. Authentication - The server makes sure that it communicates with an authorized entity.<!--more-->
 
 ## Client certificate authentication
-**Certificate authentication is available for:**
+
+Certificate authentication is available for:
 
 1. Client to server communications - traffic from your Redis client to your database.
 1. Replication and synchronization traffic - When you configure `Replica Of` for a database, synchronization traffic flows between the primary instance of the database and the replica instance of the database. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
 
-**To configure TLS Authentication:**
+To configure TLS Authentication:
 
 1. In **databases**, either:
-	- Click **Add** (+) to create a new database.
-	- Click on the database that you want to configure and at the bottom of the page click edit.
+    - Click **Add** (+) to create a new database.
+    - Click on the database that you want to configure and at the bottom of the page click edit.
 1. Enable the TLS option on the configuration page. When creating a database this may be found under "Show advanced options".
     ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
-1.  Select the TLS Scope:
-	- Require TLS for Replica Of communications only - This option will only encrypt synchronization traffic.
-	- Require TLS for all communications - This option will encrypt synchronization traffic and traffic between a client and a server.
+1. Select the TLS Scope:
+    - Require TLS for Replica Of communications only - This option will only encrypt synchronization traffic.
+    - Require TLS for all communications - This option will encrypt synchronization traffic and traffic between a client and a server.
     ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
 
 1. Select if you would like authentication enforced. By deselecting this option you enforce encryption without authentication.
@@ -39,7 +39,7 @@ To prevent unauthorized access to your data, Redis Enterprise databases support 
 1. Repeat for any client certificates you would like to be able to authenticate to your database.
 
 {{< note >}}
-Note: There are two considerations for replication authentication you should be aware of:
+There are two considerations for replication authentication you should be aware of:
 
 1. The syncer certificates of the clusters that host the replica instances of the database must always be set when enabling a database for encryption.
 2. When using CRDB, the syncer certificate for each cluster must be configured on the database.
@@ -48,6 +48,7 @@ Note: There are two considerations for replication authentication you should be 
 ## Certificate Authentication for Active-Active Databases
 
 When you create a new CRDB, you can configure authentication for traffic between active-active databases using the same process for as replication traffic.
+
 {{< note >}}
 You cannot enable or disable TLS after the CRDB is created, but you can change
 the TLS configuration.
@@ -70,6 +71,7 @@ data traffic between the database and the clients.
 1. Ensure you copy the syncer certificate from the settings tab of all participating clusters. This will ensure that you can authenticate to each CRDB in the cluster.
 
 ## Installing your own certificates
+
 Redis Enterprise Software uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 
 If using a self-signed certificate is not the right solution for you, you can import a certificate signed by a certificate authority of your choice.
@@ -83,25 +85,27 @@ The certificates that help facilitate encrypted traffic to the database and with
 When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
 {{< /warning >}}
 
-**Step 1:** Create a private key
+1. Create a private key:
 
-```sh
-openssl genrsa -out <key-file-name>.pem 2048
-```
+    ```sh
+    openssl genrsa -out <key-file-name>.pem 2048
+    ```
 
-**Step 2:** Create a certificate signing request
-```sh
-openssl req -new -key <key-file-name>.pem -out <key-file-name>.csr
-```
+1. Create a certificate signing request:
 
-{{< note >}}
+    ```sh
+    openssl req -new -key <key-file-name>.pem -out <key-file-name>.csr
+    ```
+
+    {{< note >}}
 You will be prompted for a Country Name, State or Province Name, Locality Name, Organization Name, Organizational Unit and Common Name. You will need to check with your security team or certificate authority on the right values for your organization. The database fqdn is typically used as the common name for the certificate.
-{{< /note >}}
+    {{< /note >}}
 
-**Step 3:** Sign the private using your certificate authority
-- The process to obtain a CA signed certificate is different for each organization and CA vendor. Please consult your security team or certificate authority for the appropriate instructions to sign certificates.
+1. Sign the private using your certificate authority:
 
-**Step 4:** Upload the certificate to the cluster
+    - The process to obtain a CA signed certificate is different for each organization and CA vendor. Please consult your security team or certificate authority for the appropriate instructions to sign certificates.
+
+1. Upload the certificate to the cluster.
 
 To replace the proxy certificate use the rladmin command line utility:
 
@@ -114,6 +118,7 @@ To replace the syncer certificate use the rladmin command line utility:
 ```sh
  rladmin cluster certificate set syncer certificate_file <cert-file-name>.pem key_file <key-file-name>.pem
 ```
+
 ## Configuring TLS Protocols
 
 TLS protocols that impact the data path impact client to server communications and the discovery service.  
@@ -141,8 +146,8 @@ For your changes to take effect on the discovery service, restart the service wi
 supervisorctl restart sentinel_service
 ```
 
-
 ## Client Side Encryption
+
 Client side encryption may be used to help encrypt data through its lifecycle. This comes with some limitations. Operations that must operate on the data, such as increments, comparisons, and searches will not function properly. Client side encryption is used to help protect data in use.
 
 You can write client side encryption logic directly in your own application or use functions built into clients such as the Java Lettuce cipher codec.

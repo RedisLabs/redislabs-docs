@@ -5,9 +5,7 @@ weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-
-# Role Based Access Control
-Role-based access control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.
+Role-based access control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.<!--more-->
 
 Roles may be configured using standard or custom templates for database permissions that are based on the Redis ACL syntax. Redis Enterprise allows you to restrict database operations by command, command category, and key pattern.
 Keys are typically restricted based on a namespace using a glob style wildcard.
@@ -18,7 +16,7 @@ The role CacheReader demonstrated below has been given the acl rule "+get ~cache
 
 To learn more on Redis command and key restrictions visit the [Redis documentation](https://redis.io/topics/acl#acl-rules)
 
-## Configuring Redis ACLs
+### Configuring Redis ACLs
 
 #### Redis ACL command syntax
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
@@ -110,7 +108,6 @@ To add a user to the cluster:
 	- Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 1. Select the save icon.
 {{< video "/images/rs/new-user-add.mp4" "Create a new user" >}}
-
 
 ## Disabling the default user
 When you provision a database, default user will be enabled. This allows for backwards compatibility with versions of Redis before Redis 6.

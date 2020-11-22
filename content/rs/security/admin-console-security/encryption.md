@@ -5,7 +5,7 @@ weight: 30
 alwaysopen: false
 categories: ["RS"]
 ---
-This section details how you can configure certificates and encryption within the Redis Enterprise control plane. This includes settting up your own certificate, configuring TLS and enforcing HTTPS.
+This section details how you can configure certificates and encryption within the Redis Enterprise control plane. This includes setting up your own certificate, configuring TLS, and enforcing HTTPS.<!--more-->
 
 ## Installing your own certificates
 
