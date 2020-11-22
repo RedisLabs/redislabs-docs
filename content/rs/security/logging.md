@@ -17,7 +17,7 @@ To do this, modify the syslog or rsyslog configuration on your operating system 
 
 Redis Enterprise uses the default logrotate daemon to schedule rotation of logs stored on the operating system. The configuration of log rotation may be found at /etc/logrotate.d.
 
-By default the log rotation should occur on a daily basis. Redis Labs reccomends sending log files to a remote logging server so that they can be more effectively maintained.
+By default the log rotation should occur on a daily basis. We recommend that you send log files to a remote logging server so that they can be more effectively maintained.
 
 The below log rotation policy is enabled by default with Redis Enterprise but can be modified to meet your needs.
 

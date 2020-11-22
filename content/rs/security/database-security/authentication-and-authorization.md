@@ -16,28 +16,26 @@ The role CacheReader demonstrated below has been given the acl rule "+get ~cache
 
 To learn more on Redis command and key restrictions visit the [Redis documentation](https://redis.io/topics/acl#acl-rules)
 
-### Configuring Redis ACLs
-
-#### Redis ACL command syntax
+## Redis ACL command syntax
 Redis ACLs are defined by a [Redis syntax](https://redis.io/topics/acl#acl-rules) where you specify the commands or command categories that are allowed for specific keys.
 
 {{< note >}}
 Redis Enterprise Modules are not currently assigned a command category.
 {{< /note >}}
 
-**Redis Enterprise allows you to:**
+Redis Enterprise allows you to:
 
 1. Include commands and categories with the "+" prefix for commands or "+@" prefix for command categories
 1. Exclude commands and categories with the "-" prefix for commands or "-@" prefix for command categories
 1. Include keys or key patterns with the "~" prefix
 
-**To define database access control, you can:**
+To define database access control, you can:
 
 1. Use the predefined user roles and add Redis ACLs for specific databases.
 1. Create new user roles and select the management roles and Redis ACLs that apply to the user roles for specific databases.
 1. Assign roles and Redis ACLs to a database in the access control list section of the database configuration.
 
-**The predefined Redis ACLs are:**
+The predefined Redis ACLs are:
 
 - **Full Access** - All commands are allowed on all keys.
 - **Not Dangerous** - All commands are allowed except those that are administrative, could affect availability, or could affect performance.
@@ -45,16 +43,16 @@ Redis Enterprise Modules are not currently assigned a command category.
 
 ## Configuring Redis ACLs
 
-**To configure a Redis ACL rule that you can assign to a user role:**
+To configure a Redis ACL rule that you can assign to a user role:
 
-In **access control** > **redis acls**:
+1. In **access control** > **redis acls**:
 
-- Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-- Create a new Redis ACL - Click ![Add](/images/rs/icon_add.png#no-click "Add").
+    - Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
+    - Create a new Redis ACL - Click ![Add](/images/rs/icon_add.png#no-click "Add").
 
 1. Enter a descriptive name for the Redis ACL. This will be used to reference the ACL rule to the role.
-1. Define the ACL rule
-1. Select Save
+1. Define the ACL rule.
+1. Click Save.
 
 {{< video "/images/rs/new-redis-acl-rule.mp4" "Create a new Redis ACL Rule" >}}
 
@@ -74,17 +72,19 @@ In **access control** > **roles**, you can configure user roles with:
 - **Management roles** - Management roles define user access to the UI and API of the cluster
 - **Data access controls** - Data access controls define the permissions each role has to each database in the cluster.
 
-#### Defining roles for database access
+### Defining roles for database access
+
 To create a user role for users that cannot connect to the Redis Enterprise control plane, assign the "**None**" management role to the user role.
 {{< note >}}
-Redis Labs reccomends setting the management role to None for any role used for database access.
+We recommend that you set the management role to None for any role used for database access.
 {{< /note >}}
 
-**To define a role for database access:**
-In **access control** > **roles**:
+To define a role for database access:
 
-- Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-- Create a new Redis ACL - Click ![Add](/images/rs/icon_add.png#no-click "Add").
+1. In **access control** > **roles**:
+
+    - Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
+    - Create a new Redis ACL - Click ![Add](/images/rs/icon_add.png#no-click "Add").
 
 1. Enter a descriptive name for the role. This will be used to reference the role when configuring users.
 1. Select a Cluster management role by default this is set to "**None**"
@@ -95,7 +95,7 @@ In **access control** > **roles**:
 1. Select save
 {{< video "/images/rs/new-redis-role.mp4" "Create a new Redis Role" >}}
 
-## Adding Users
+### Adding Users
 
 To add a user to the cluster:
 
@@ -104,12 +104,13 @@ To add a user to the cluster:
 1. Enter the name, email and password of the new user and select the role to assign to the user.
 1. Select the internal user type
 1. For email alerts, click "Edit" and select the alerts that the user should receive. You can select:
-	- Receive alerts for databases - The alerts that are enabled for the selected databases will be sent to the user. You can either select "All databases", or you can select "Customize" and select the individual databases to send alerts for.
-	- Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
+    - Receive alerts for databases - The alerts that are enabled for the selected databases will be sent to the user. You can either select "All databases", or you can select "Customize" and select the individual databases to send alerts for.
+    - Receive cluster alerts - The alerts that are enabled for the cluster in **settings** > **alerts** are sent to the user.
 1. Select the save icon.
 {{< video "/images/rs/new-user-add.mp4" "Create a new user" >}}
 
-## Disabling the default user
+### Disabling the default user
+
 When you provision a database, default user will be enabled. This allows for backwards compatibility with versions of Redis before Redis 6.
 
 To disable the default user:
@@ -119,7 +120,7 @@ To disable the default user:
 1. Deselect the checkbox.
 
 {{< note >}}
-Redis Labs reccomends disabling the default user when using ACLs with your database and backwards compatibility is not required.
+We recommend that you disable the default user when using ACLs with your database and backwards compatibility is not required.
 {{< /note >}}
 
 ![default](/images/rs/default-user.png#no-click "default")
