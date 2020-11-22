@@ -9,7 +9,7 @@ You can configure users and roles for the control plane. This section details ho
 
 ## Role Based Access Control
 
-Redis Enterprise includes five pre-built roles to help users who need limited access to Admin Console.
+Redis Enterprise includes five pre-built roles to help users who need limited access to the admin console.
 
 1. **DB Viewer** - Read any settings for databases
 1. **DB Member** - Administer databases

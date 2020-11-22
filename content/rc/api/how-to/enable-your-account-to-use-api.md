@@ -1,6 +1,6 @@
 ---
 Title: Enable the API for your Account
-description: Enabling an account to use API using the Redis Cloud Admin Console
+description: Enabling an account to use API using the Redis Cloud admin console
 weight: 10
 alwaysopen: false
 categories: ["RC"]
