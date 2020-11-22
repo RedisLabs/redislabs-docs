@@ -28,7 +28,7 @@ For databases with Active-Active replication for geo-distributed locations,
 
 To create a new database:
 
-1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the {{< field "db_type" >}}.
+1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the {{< field "db_type" >}}.
 
     By default, the address is: `https://<RS_address>:8443`
 
@@ -170,7 +170,7 @@ after the database is created.
 ## Simple connectivity test
 
 Once the database is created, you can find the endpoint and port for the
-database in the web UI on the configuration page of each database. It is
+database in the admin console on the configuration page of each database. It is
 listed under the "Endpoint" property
 
 There are a few simple ways to check connectivity to your database:

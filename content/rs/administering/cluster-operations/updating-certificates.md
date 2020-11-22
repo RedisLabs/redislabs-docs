@@ -8,7 +8,7 @@ categories: ["RS"]
 Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 The self-signed certificates are used to establish encryption-in-transit for the following traffic:
 
-- Management Web UI (CM) - The certificate for connections to the management web UI
+- Management admin console (CM) - The certificate for connections to the management admin console
 - REST API - The certificate for REST API calls
 - Proxy - The certificate for connections between clients and database endpoints
 - Syncer - The certificate for Active-Active and Replica Of synchronization between clusters
@@ -16,7 +16,7 @@ The self-signed certificates are used to establish encryption-in-transit for the
 
 These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
-When you use the default self-signed certificates, an untrusted connection notification is shown in the web UI.
+When you use the default self-signed certificates, an untrusted connection notification is shown in the admin console.
 Depending on the browser you use, you can allow the connection for each session or add an exception to make the site trusted in future sessions.
 
 {{< warning >}}
@@ -87,7 +87,7 @@ TLS protocols and ciphers define the overall suite of algorithms that clients ar
 
 The communications for which you can modify TLS protocols and ciphers are:
 
-- Management path - The TLS configuration for cluster administration using the web UI and API.
+- Management path - The TLS configuration for cluster administration using the admin console and API.
 - Data path - The TLS configuration for the communication between the applications and the databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}).
 

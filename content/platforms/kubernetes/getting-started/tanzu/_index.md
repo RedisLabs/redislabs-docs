@@ -400,7 +400,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
     dgeil7
     ```
 
-1. There are two primary options for accessing the Web UI:
+1. There are two primary options for accessing the admin console:
     1. If your PKS cluster has a load balancer service setup with a public IP you have access to or otherwise a routable IP address from your machine:
         - Determine that IP address:
 
@@ -433,7 +433,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
         - Use `localhost` followed by port number 8443 in your browser address bar: `https://localhost:8443`
 
-1. Log in to the Web UI with the username defined in your REC yaml and the password.
+1. Log in to the admin console with the username defined in your REC yaml and the password.
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 

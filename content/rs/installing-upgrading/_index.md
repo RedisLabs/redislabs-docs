@@ -101,7 +101,7 @@ To install RS without answering the installation questions, either:
 - Use an [answer file](#installation-answer-file) to answer the installation questions.
     {{< /note >}}
 
-    After RS is successfully installed, the IP address of the RS web UI is shown:
+    After RS is successfully installed, the IP address of the RS admin console is shown:
 
     ```sh
     Summary:

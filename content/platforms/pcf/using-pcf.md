@@ -57,7 +57,7 @@ Available service plans are listed in either:
 
     {{< note >}}
 Do not create or delete databases through the Redis Enterprise Cluster UI.
-Use the cf creates/delete/update-service commands or use the Pivotal Apps Manager web UI to create and manage databases through available plans.
+Use the cf creates/delete/update-service commands or use the Pivotal Apps Manager admin console to create and manage databases through available plans.
     {{< /note >}}
 
 ## Installing a license key in an existing cluster

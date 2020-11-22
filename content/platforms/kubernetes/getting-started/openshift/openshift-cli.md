@@ -311,14 +311,14 @@ To create your database:
 
     Next, create your database.
 
-1. Open a browser window and navigate to the Redis Enterprise web UI at: `localhost:8443`
+1. Open a browser window and navigate to the Redis Enterprise admin console at: `localhost:8443`
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
 1. To get your password from the OpenShift management console, go `Resources > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
 
     {{< warning >}}
-Do not change the default admin user password in the Redis Enterprise web UI.
+Do not change the default admin user password in the Redis Enterprise admin console.
 Changing the admin password can cause unextpected results in your K8s deployment.
     {{< /warning >}}
 

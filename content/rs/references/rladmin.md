@@ -8,7 +8,7 @@ aliases: /rs/references/cli-reference/rladmin/
 ---
 Redis Enterprise Software (RS) includes rladmin, a command-line interface (CLI)
 that you can use to do advanced administrative tasks.
-Some of these tasks you can also do through the management web UI.
+Some of these tasks you can also do through the management admin console.
 
 For example, with the rladmin CLI you can:
 

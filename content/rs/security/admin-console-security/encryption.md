@@ -15,7 +15,7 @@ If using a self-signed certificate is not the right solution for you, you can im
 
 The certificates that help facilitate encrypted traffic to the control plane are the user interface, the rest api and the metrics exporter.
 
-1. User Interface (CM) - The certificate for connections to the management web UI
+1. User Interface (CM) - The certificate for connections to the management admin console
 1. REST API - The certificate for REST API calls
 1. Metrics exporter - The certificate to export metrics to Prometheus
 
