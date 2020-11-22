@@ -5,14 +5,12 @@ weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---
-
 Redis Enterprise comes with a set of logs on the server and available through the user interface to assist users in investigating actions taken on the server and to troubleshoot issues.
 
 ## Sending logs to a remote logging server
 Redis Enterprise sends logs to syslog by default. You can send these  logs to a remote logging server by configuring syslog. 
 
 To do this, modify the syslog or rsyslog configuration on your operating system to send logs in /var/opt/redislabs/log to a remote monitoring server of your choice.
-
 
 ## Viewing logs in the user interface
 Redis Enterprise provides log files for auditing and troubleshooting. You can see these logs in the admin console and on the host operating system.
