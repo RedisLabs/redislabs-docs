@@ -5,6 +5,7 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
+Redis Cloud uses role-based access control to help give users only the access that they need.<!--more-->
 
 ## User Management
 

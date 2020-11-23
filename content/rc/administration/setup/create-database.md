@@ -44,7 +44,7 @@ between the VPC that this database is on and the VPC that the destination databa
 
     - **Access Control & Security**
         - Enable the **Default User** for the database.
-            We recommend that you use a complex password and not leave the password blank.
+            We recommend that you use a complex password between 8 and 128 characters, and with at least one uppercase letter (A-Z), one lowercase letter (a-z), one number (0-9), and one special character.
         - Specify the **Source IP/Subnet** addresses that your database receives
             traffic from, for example your application server.
         - Enable **SSL Client Authentication**, and either:

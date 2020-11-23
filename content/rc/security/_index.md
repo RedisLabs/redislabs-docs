@@ -6,13 +6,15 @@ alwaysopen: false
 categories: ["RC"]
 aliases: "/rc/administration/security"
 ---
-
 Redis Cloud provides a number of features to ensure the security of your cloud
 database deployments. As a Redis Cloud user, there are three systems you need
-to consider when thinking about security: the [admin console]({{<relref "/rc/security/admin-console-security/_index.md">}}), [your databases]({{<relref "/rc/security/database-security/_index.md">}}),
-and the [Redis Cloud API]({{<relref "/rc/api/how-to/enable-your-account-to-use-api.md">}}).
+to consider when thinking about security:
 
-Before digging into all the details, you should review our [shared responsibility model]({{<relref "/rc/security/shared-responsibility-model.md">}}) for security.
+- The [admin console]({{<relref "/rc/security/admin-console-security/_index.md">}})
+- [Your databases]({{<relref "/rc/security/database-security/_index.md">}})
+- The [Redis Cloud API]({{<relref "/rc/api/how-to/enable-your-account-to-use-api.md">}})
+
+Before digging into all the details, review our [shared responsibility model]({{<relref "/rc/security/shared-responsibility-model.md">}}) for security.
 
 ## Admin console security
 
@@ -29,4 +31,3 @@ IP restrictions and VPC peering.
 ## Redis Cloud API security
 
 The Redis Cloud API allows you to programmatically administer your subscriptions and database deployments. This API is disabled by default. When you [enable the API]({{<relref "/rc/api/how-to/enable-your-account-to-use-api.md">}}), you can then [manage the API keys]({{<relref "/rc/api/how-to/manage-api-keys.md">}}) for the all owners of your Redis Cloud account.
-

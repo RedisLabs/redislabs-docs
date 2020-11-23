@@ -1,5 +1,5 @@
 ---
-Title: Multi-factor authentiction
+Title: Multi-factor authentication
 description:
 weight: 20
 alwaysopen: false
@@ -7,7 +7,7 @@ categories: ["RC"]
 ---
 
 To reduce the chances of unauthorized access to the Redis Cloud Admin Console, each user can enable MFA to require an authentication code at login.
-The account owner can also enable MFA enforcement for all users in the account so that users cannot log in without MFA.
+The account owner can also enable MFA enforcement for all users in the account so that users cannot log in without MFA.<!--more-->
 
 When MFA is enabled, users must enter their username, password, and an authentication code. MFA requires a phone that can receive these authentication codes over text messages.
 

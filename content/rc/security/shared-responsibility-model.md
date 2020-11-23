@@ -1,11 +1,10 @@
 ---
-Title: Redis Cloud security shared responsibility model
+Title: Redis Cloud shared responsibility model
 description:
 weight: 11
 alwaysopen: false
 categories: ["RC"]
 ---
-
 The security of all Redis Cloud deployments is a shared responsibility. Redis Labs, the public cloud providers (AWS, GCP, and Azure), and our customers all
 take part in ensuring the security of these deployments.
 
