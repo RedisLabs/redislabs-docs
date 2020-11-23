@@ -10,7 +10,7 @@ database can reach in the cluster, across all database replicas and
 shards, including:
 
 - Slave shards (if database replication is enabled)
-- Database shards (if database clustering is enabled)
+- Database shards (if database clustering is enabled)<!--more-->
 
 If the total size of the database in the cluster reaches the memory
 limit, the data eviction policy that was defined for the database is

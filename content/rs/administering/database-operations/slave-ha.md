@@ -8,7 +8,7 @@ categories: ["RS"]
 When you enable [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) for your database,
 Redis Enterprise Software replicates your data to a slave node to make sure that your data is highly available.
 If the slave node fails or if the master node fails and the slave is promoted to master,
-the remaining master node is a single point of failure.
+the remaining master node is a single point of failure.<!--more-->
 
 You can configure high availability for slave shards (slave HA) so that the cluster automatically migrates the slave shards to an available node.
 An available node is a node that:
