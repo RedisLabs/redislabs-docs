@@ -70,30 +70,32 @@ To make sure that there is at least one key per shard, the application should:
 
 ### Failing over
 
-When the application has determined it needs to fail over to another replica, it should simply re-establish its connections with the remote replica’s endpoint.
+When the application sees that it needs to failover to another replica, it should simply re-establish its connections with the endpoint on the remote replica.
 
 {{< note >}}
 Sample code that maps a hash slot to a key name can be found in this Python script.
 {{< /note >}}
 
-Note that the remote endpoint may not have received all locally performed and acknowledged writes, due to the asynchronous nature of Active/Active and Redis replication. The application should therefore be resilient against not reading its own recent writes. Those writes may either be:
+Because Active/Active and Redis replication are asynchronous, the remote endpoint may not have all of the locally performed and acknowledged writes. The application should be resilient against not reading its own recent writes. Those writes can be either:
 
-1. Lost forever, if the local replica has experienced double failure, loss of persistent files, etc.
+1. Lost forever, if the local replica has an event like experienced double failure or loss of persistent files.
 1. Temporarily unavailable, but will converge and show up at a later time if the local replica only experiences a temporary failure and still maintains a copy of this data in memory or as persistent files.
 
-## Fail-back Decision
+## Failback decision
 
-The application may choose the same liveness checks described above to continue monitoring the state of the failed replica after fail-over.
-Failing back is a more involved process: it is not enough for the local replica to be available, but we must also make sure it has successfully re-synced with remote replicas and that it is not in stale mode.
+The application can use the same liveness checks described above to continue monitoring the state of the failed replica after failover.
+
+Failback is a more involved process. It is not enough for the local replica to be available, but we must also make sure it has successfully re-synced with remote replicas and that it is not in stale mode.
 The PUB/SUB mechanism described above is an effective way to determine that a replica is available and not stale.
+
 Dataset-based mechanisms are potentially less reliable for several reasons:
 
-1. In order to determine that a local replica is not stale, it is not enough to simply read keys from it; it is also necessary to attempt to write to it.
-1. As stated above, remote writes for some keys may appear in the local replica before the replication link is back up and while the replica is still in stale mode.
-1. A replica that has never been written to will never become stale, so on startup it will be immediately ready but serve stale data for a longer period of time.
+1. In order to determine that a local replica is not stale, it is not enough to simply read keys from it. It is also necessary to attempt to write to it.
+1. As stated above, remote writes for some keys appear in the local replica before the replication link is back up and while the replica is still in stale mode.
+1. A replica that was never written to never becomes stale, so on startup it is immediately ready but serves stale data for a longer period of time.
 
 ## Replica Configuration Changes
 
-All fail-over and fail-back operations should be done strictly on the application side, and should not involve changes to the Active-Active configuration.
+All failover and failback operations should be done strictly on the application side, and should not involve changes to the Active-Active configuration.
 The only valid case for re-configuring the Active-Active deployment and removing a replica is when memory consumption becomes too high as garbage collection cannot be performed.
-Once a replica has been removed, it can only be re-joined as a new fresh replica thereby losing any writes that were not converged.
+Once a replica is removed, it can only be re-joined as a new fresh replica. Then it loses any writes that were not converged.
