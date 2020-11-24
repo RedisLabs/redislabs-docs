@@ -11,6 +11,10 @@ aliases:
     - /rs/getting-started/docker/
 categories: ["RS"]
 ---
+{{< warning >}}
+Docker containers are currently only supported for development and testing environments, not for production.
+{{< /warning >}}
+
 For testing purposes, you can run Redis Enterprise Software (RS) on Docker containers on
 [Linux, Windows, or MacOS]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
 The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/redis/)
@@ -29,10 +33,6 @@ of common topologies:
 
 ![0](/images/rs/0.png?width=780&height=380)
 
-{{< note >}}
-Docker containers are currently only supported for development and testing environments.
-{{< /note >}}
-
 To get started with a single Redis Enterprise Software container:
 
 - Step 1: Install Docker Engine for your operating system
@@ -42,6 +42,10 @@ To get started with a single Redis Enterprise Software container:
 - Step 5: Connect to your database
 
 ## Step 1: Install Docker Engine
+
+{{< note >}}
+Docker containers are currently only supported for development and testing environments, not for production.
+{{< /note >}}
 
 Go to the Docker installation page for your operating system for detailed instructions
 about installing Docker Engine:
