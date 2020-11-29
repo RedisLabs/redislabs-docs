@@ -123,13 +123,11 @@ Every instance of an Active-Active database can receive write operations, and al
         on a specific key is maintained across all instances of an Active-Active database.
         To enable Causal Consistency for an existing Active-Active database, use the REST API.
 
-    - **TLS** - You can enable TLS for communications between participating clusters.
-        After you create the Active-Active database, you can enable SSL for the data
-        access operations from applications just like regular Redis Enterprise databases.
-
-        SSL for data access operations is a local setting on each
-        cluster that only impacts the specific instance of the Active-Active database you are editing and
-        does not apply automatically to all instances of an Active-Active database.
+    - **TLS** - If you enable TLS when you create the Active-Active database,
+        the nodes use the TLS mode **Require TLS for CRDB communication only**
+        to require TLS authentication and encryption for communications between participating clusters.
+        After you create the Active-Active database, you can set the TLS mode to **Require TLS for all communications**
+        so that client communication from applications are also authenticated and encryption.
 
 <!-- Also in getting-started-crdbs.md -->
 ## Test the connection to your member Redis Active-Active databases
