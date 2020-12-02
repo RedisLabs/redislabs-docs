@@ -1,5 +1,5 @@
 ---
-Title: Installation
+Title: Installation and Setup
 description:
 weight: 35
 alwaysopen: false
@@ -7,15 +7,35 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/
         /rs/installing-upgrading/downloading-installing/
 ---
-To install Redis Enterprise Software (RS), you must first choose the [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
-In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS with:
+In this installation and setup guide we walk you through the process of planning your deployment, installing RS, setting up a multi-node cluster, and creating your database—soup to nuts.
+So, grab a cup of coffee and just follow the steps.
 
-- [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
-- [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
-- [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
-- [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
+## Planning your RS deployment
 
-To access the installation package for any of these platforms:
+To install Redis Enterprise Software (RS), you must first:
+
+- Set up your hardware according to the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+
+    {{% expand "What hardware do I need?" %}}
+    {{< embed-md "hardware-requirements-embed.md" >}}
+    {{% /expand %}}
+
+- Choose the [platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
+
+    {{% expand "What platforms are supported?" %}}
+    {{< embed-md "supported-platforms-embed.md" >}}
+    {{% /expand %}}
+
+    In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS with:
+
+    - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
+    - [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
+    - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
+    - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
+
+## Downloading the installation package
+
+To download the installation package for any of the supported platforms:
 
 1. Go to the [Redis Labs download page](https://app.redislabs.com/#/sign-up/software?direct=true).
 1. Log in with your Redis Labs credentials or sign up for a new account.
@@ -26,9 +46,12 @@ Before you install the Linux package or AWS AMI on an AWS EC2 instance,
 review the [configuration requirements for AWS EC2 instances]({{< relref "configuring-aws-instances.md" >}}).
 {{< /note >}}
 
+## Installing RS on Linux
+
+After you download the .tar file installation package, you are ready to install the package on one of the nodes in the cluster.
 In this article we walk you through the process for installing the RS installation package for Linux.
 
-## Prerequisites
+Before you install RS, review these prerequisites:
 
 - If you want to use Redis on Flash (RoF) for your databases, review the [prerequisites, storage requirements, and other considerations]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
     {{% expand "To prepare and format the flash memory:" %}}
@@ -65,10 +88,6 @@ sudo lsblk
 
 - Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
     We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 40000 65535'.
-
-## Installing RS on Linux
-
-After you download the .tar file installation package, install the package on one of the nodes in the cluster.
 
 To install RS on Linux from the CLI:
 
