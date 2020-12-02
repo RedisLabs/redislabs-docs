@@ -39,6 +39,12 @@ To install Redis Enterprise Software (RS) on each node in the cluster, you must 
     {{< embed-md "port-configurations-embed.md" >}}
     {{% /expand %}}
 
+- Configure [cluster DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
+
+    {{% expand "How do I configure DNS for my cluster?" %}}
+    {{< embed-md "cluster-dns-embed.md" >}}
+    {{% /expand %}}
+
 ## Downloading the installation package
 
 To download the installation package for any of the supported platforms:
