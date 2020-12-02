@@ -33,6 +33,12 @@ To install Redis Enterprise Software (RS) on each node in the cluster, you must 
     - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
     - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
 
+- Open [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
+
+    {{% expand "What network ports does RS use?" %}}
+    {{< embed-md "port-configurations-embed.md" >}}
+    {{% /expand %}}
+
 ## Downloading the installation package
 
 To download the installation package for any of the supported platforms:
