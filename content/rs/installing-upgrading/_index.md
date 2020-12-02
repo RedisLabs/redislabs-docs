@@ -291,3 +291,14 @@ If you use `systune=yes`, the installation answers yes to all of the system tuni
 ## Set up the new cluster
 
 {{< embed-md "new-cluster-embed.md" >}}
+
+## Add more nodes to the cluster
+
+{{< embed-md "adding-node-embed.md" >}}
+
+## Next steps
+
+Now that your cluster is set up with nodes, you can:
+
+- [Add users]({{< relref "/rs/administering/access-control/_index.md" >}}) to the cluster with specific permissions
+- [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
