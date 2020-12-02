@@ -12,7 +12,7 @@ So, grab a cup of coffee and just follow the steps.
 
 ## Planning your RS deployment
 
-To install Redis Enterprise Software (RS), you must first:
+To install Redis Enterprise Software (RS) on each node in the cluster, you must first:
 
 - Set up your hardware according to the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
@@ -48,8 +48,8 @@ review the [configuration requirements for AWS EC2 instances]({{< relref "config
 
 ## Installing RS on Linux
 
-After you download the .tar file installation package, you are ready to install the package on one of the nodes in the cluster.
-In this article we walk you through the process for installing the RS installation package for Linux.
+After you download the .tar file installation package, you are ready to install the package on the nodes in the cluster.
+Here we walk you through the process for installing the RS installation package for Linux.
 
 Before you install RS, review these prerequisites:
 
@@ -275,3 +275,7 @@ If you use `systune=yes`, the installation answers yes to all of the system tuni
     ```sh
     ./install.sh -c /home/user/answers
     ```
+
+## Set up the new cluster
+
+{{< embed-md "new-cluster-embed.md" >}}
