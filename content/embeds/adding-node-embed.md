@@ -25,9 +25,9 @@ To add a node in RS:
     For example, if you installed RS on a machine with IP address 10.0.1.34, go to `https://10.0.1.34:8443`.
 
     {{< tip >}}
-    The RS management UI uses SSL encryption with a default certificate.
-    You can also [replace the TLS certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}})
-    with a custom certificate.
+The RS management UI uses SSL encryption with a default certificate.
+You can also [replace the TLS certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}})
+with a custom certificate.
     {{< /tip >}}
 
 1. To start configuring RS, click **Setup**.
