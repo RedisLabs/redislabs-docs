@@ -34,9 +34,9 @@ const redis = new Redis({
 
 Make sure to replace the values in the example with the values for your Redis instance:
 
-- `hostname` - The name of the host your database runs on
+- `<hostname>` - The name of the host your database runs on
 - `<port>` - The port that the database is running on (default: 6379)
-- `password` - The default Redis password, if configured
+- `<password>` - The default Redis password, if configured
 
 Remember to always store passwords outside of your code, for example in environment variables.
 
