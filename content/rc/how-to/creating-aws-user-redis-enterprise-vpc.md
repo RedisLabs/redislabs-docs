@@ -247,11 +247,11 @@ Now create a policy to assign to the user:
                     }
                 }
             },
-            {	
-                "Sid": "Support",	
-                "Effect": "Allow",	
-                "Action": "support:*",	
-                "Resource": "*"	
+            {
+                "Sid": "Support",
+                "Effect": "Allow",
+                "Action": "support:*",
+                "Resource": "*"
             }
         ]
     }
