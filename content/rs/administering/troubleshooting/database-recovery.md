@@ -13,7 +13,7 @@ When a cluster fails or a database is corrupted, you must:
 To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
 These files are stored in the [persistence storage location]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
-    
+
 The database recovery process includes:
 
 1. If the cluster failed, [recover the cluster]({{< relref "/rs/administering/troubleshooting/cluster-recovery.md" >}}).
@@ -43,7 +43,7 @@ To recover the database:
     These drives must contain the cluster configuration backup files and database persistence files.
 
     {{< note >}}
-Make sure that the user redislabs has permissions to access the storage location
+Make sure that the user `redislabs` has permissions to access the storage location
 of the configuration and persistence files on each of the nodes.
     {{< /note >}}
 
@@ -65,26 +65,21 @@ of the configuration and persistence files on each of the nodes.
     make sure that the recovery path is set correctly on all of the nodes in the cluster.
     If that does not resolve the issues, contact [Redis Labs Support](mailto:support@redislabs.com).
 
-1. You can either recover the databases all at once or specify the database to recover:
+1. Recover the database, either:
 
-    - To recover all of the databases, run: `rladmin recover all`
-    - To recover a single databases, run: `rladmin recover db <database_id|name>`
-
-    All databases are recovered with the same data that they had in the old cluster.
-    The data is recovered from the persistence files located in the persistent storage drives
-    that you mounted to the nodes.
-
-    - If AOF or snapshot is available, the data is restored from the AOF or snapshot. Active-Active database instances are then synced with the other participating clusters to update with data changed since the AOF or snapshot (fast Active-Active sync).
-
-        If AOF or snapshot is available for an Active-Active database but you want to get all of the data from the other participating clusters (slow Active-Active sync), use: `recover db only_configuration <db_name>`
-
-    - If AOF or snapshot is not available, the database is restored empty. Active-Active database instances are synced with the other participating clusters (slow Active-Active sync).
+    - Recover the databases all at once from the persistence files located in the persistent storage drives: `rladmin recover all`
+    - Recover a single database from the persistence files located in the persistent storage drives: `rladmin recover db <database_id|name>`
+    - Recover only the database configuration for a single database (without the data): `recover db only_configuration <db_name>`
 
     {{< note >}}
-If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
-you must first map the recovery path of each node to the location of the old persistence files.
-To do this, run the `node <id> recovery_path set` command in rladmin.
-The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
+    - If AOF or snapshot is not available, the database is restored empty.
+    - For Active-Active databases that still have live instances, we recommend that you recover the failed instances from the persistence files and let the remaining data update from the other instances.
+    - For Active-Active databases that all instances need to be recovered, we recommend that you recover one instance with the data and only recover the configuration for the other instances.
+        The empty instances then update from the recovered data.
+    - If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
+        you must first map the recovery path of each node to the location of the old persistence files.
+        To do this, run the `node <id> recovery_path set` command in rladmin.
+        The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
     {{< /note >}}  
 
 1. To verify that the recovered databases are now active, run: `rladmin status`
