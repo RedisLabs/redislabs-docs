@@ -58,12 +58,12 @@ of the configuration and persistence files on each of the nodes.
     The status for each database can be either ready for recovery or missing files.
     An indication of missing files in any of the databases can result from:
 
-    - The storage location is not found
-    - Cannot read the persistence files, such as: no permission to read the files, missing files, or corrupted files
+    - The storage location is not found - Make sure that on all of the nodes in the cluster the recovery path is set correctly.
+    - Files are not found in the storage location - Move the files to the storage location.
+    - No permission to read the files - Change the file permissions so that redislabs:redislabs has 640 permissions.
+    - Files are corrupted - Locate copies of the files that are not corrupted.
 
-    If the output shows that there are missing files,
-    make sure that the recovery path is set correctly on all of the nodes in the cluster.
-    If that does not resolve the issues, contact [Redis Labs Support](mailto:support@redislabs.com).
+    If you cannot resolve the issues, contact [Redis Labs Support](mailto:support@redislabs.com).
 
 1. Recover the database, either:
 
@@ -72,14 +72,14 @@ of the configuration and persistence files on each of the nodes.
     - Recover only the database configuration for a single database (without the data): `recover db only_configuration <db_name>`
 
     {{< note >}}
-- If AOF or snapshot is not available, the database is restored empty.
-- For Active-Active databases that still have live instances, we recommend that you recover the failed instances from the persistence files and let the remaining data update from the other instances.
+- If persistence was not configure for the database, the database is restored empty.
+- For Active-Active databases that still have live instances, we recommend that you recover the configuration for the failed instances and let the  data update from the other instances.
 - For Active-Active databases that all instances need to be recovered, we recommend that you recover one instance with the data and only recover the configuration for the other instances.
    The empty instances then update from the recovered data.
 - If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
    you must first map the recovery path of each node to the location of the old persistence files.
    To do this, run the `node <id> recovery_path set` command in rladmin.
-   The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
+   The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, usually under `/var/opt/redislabs/persist/redis`.
     {{< /note >}}  
 
 1. To verify that the recovered databases are now active, run: `rladmin status`
