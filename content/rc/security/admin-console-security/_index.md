@@ -5,8 +5,8 @@ weight: 12
 alwaysopen: false
 categories: ["RC"]
 ---
-The Redis Cloud admin console provides several security features. 
+The admin console is the web application you use to manage your Redis Cloud deployments. To increase the security of your deployments, you need to take steps to secure this admin console. This means:
 
-These include:
-
-{{< allchildren style="h2" description="true" />}}
+* Choosing [strong passwords](https://en.wikipedia.org/wiki/Password_strength)
+* Enabling [multi-factor authentication]({{<relref "/rc/security/admin-console-security/multi-factor-authentication.md">}})
+* [Managing admin console users]({{<relref "/rc/security/admin-console-security/user-team-management.md">}}) and their roles
