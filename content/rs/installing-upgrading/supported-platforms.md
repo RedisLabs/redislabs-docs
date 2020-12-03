@@ -8,7 +8,6 @@ aliases: /rs/administering/designing-production/supported-platforms/
 ---
 Redis Enterprise Software (RS) is supported on several operating systems, cloud environments, and virtual environments.
 
-{{< note >}}
 Make sure your system meets these requirements:
 
 - Only 64-bit operating systems are supported.
@@ -26,7 +25,10 @@ Make sure your system meets these requirements:
 | Amazon Linux | Version 1 |
 | Docker | [Docker images]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
 | Kubernetes, Pivotal Platform (PCF) and other orchestration and cloud environments | See the [Platform documentation]({{< relref "/platforms" >}}) |
-| RHEL/CentOS 6, Oracle Linux 6, Ubuntu 14.04 | Support ended on November 30, 2020 |
+
+{{< note >}}
+Support for RHEL/CentOS 6, Oracle Linux 6, and Ubuntu 14.04 ended on November 30, 2020.
+{{< /note >}}
 
 ## VMware
 
