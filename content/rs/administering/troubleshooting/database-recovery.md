@@ -72,14 +72,14 @@ of the configuration and persistence files on each of the nodes.
     - Recover only the database configuration for a single database (without the data): `recover db only_configuration <db_name>`
 
     {{< note >}}
-    - If AOF or snapshot is not available, the database is restored empty.
-    - For Active-Active databases that still have live instances, we recommend that you recover the failed instances from the persistence files and let the remaining data update from the other instances.
-    - For Active-Active databases that all instances need to be recovered, we recommend that you recover one instance with the data and only recover the configuration for the other instances.
-        The empty instances then update from the recovered data.
-    - If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
-        you must first map the recovery path of each node to the location of the old persistence files.
-        To do this, run the `node <id> recovery_path set` command in rladmin.
-        The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
+- If AOF or snapshot is not available, the database is restored empty.
+- For Active-Active databases that still have live instances, we recommend that you recover the failed instances from the persistence files and let the remaining data update from the other instances.
+- For Active-Active databases that all instances need to be recovered, we recommend that you recover one instance with the data and only recover the configuration for the other instances.
+   The empty instances then update from the recovered data.
+- If the persistence files of the databases from the old cluster are not stored in the persistent storage location of the new node,
+   you must first map the recovery path of each node to the location of the old persistence files.
+   To do this, run the `node <id> recovery_path set` command in rladmin.
+   The persistence files for each database are located in the persistent storage path of the nodes from the old cluster, under the /redis directory.
     {{< /note >}}  
 
 1. To verify that the recovered databases are now active, run: `rladmin status`
