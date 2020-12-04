@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-To reduce the chances of unauthorized access, Redis Enterprise Cloud allows users to enable Multi-Factor Authentication (MFA).
+To reduce the chances of unauthorized access, Redis Enterprise Cloud allows users to enable multi-factor authentication (MFA).
 
-When MFA is enabled, users must enter their username, password, and an authentication code when logging in. MFA requires a mobile device that can receive these authentication codes over text messaging. In addition, you may [use an authenticator app](#app) such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator).
+When MFA is enabled, users must enter their username, password, and an authentication code when logging in. MFA requires a mobile device that can receive these authentication codes over text messaging. In addition, you may [use an authenticator app](#app) such as [Google Authenticator](https://en.wikipedia.org/wiki/Google_Authenticator) as one of your factors.
 
 To further increase the security of the account, the account owner can [require MFA enforcement for all users](#enforcing).
 

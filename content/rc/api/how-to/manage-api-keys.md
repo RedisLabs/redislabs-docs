@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/manage-api-keys/
 ---
-After you create a Redis Enterprise Cloud API access key, you can manage this access key in the following ways:
+After you create a Redis Enterprise Cloud API access key, you can manage your API access key in the following ways:
 
 - Deleting the access key
 - Limiting usage of the access key by network subnets
