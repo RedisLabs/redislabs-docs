@@ -19,7 +19,7 @@ can check your database's Redis version by navigating to the **View Database** s
 
 ![Redis Version Compliance](/images/rc/redis-version-compliance.png "Redis Version Compliance")
 
-## Password-based authentication {#passwordbased-authentication}
+## Password-based authentication {#password-based-authentication}
 
 Password-based authentication is a basic but essential Redis security feature. When you create a Redis Cloud database,
 your database is given a randomly generated password. You can see this password on the **View Database** screen.
@@ -55,7 +55,7 @@ To change your Redis database password:
 
 ![Cancel/Update](/images/rc/cancel-update.png "Cancel Update")
 
-## Role-Based access control {#rolebased-access-control}
+## Role-Based access control {#role-based-access-control}
 
 Role-based access control (RBAC) is an access-control mechanism that allows you to define *roles* with specific sets of *permissions*. You can then assign *users* to these roles
 to provide appropriate levels of access.
@@ -73,16 +73,16 @@ There are three tabs on this screen: **Users**, **Roles**, and **Redis ACLs**.
 
 In the **Redis ACLs** tab, you define named *permissions* for specific Redis commands and keys.
 
-In the **Roles** tab, you create roles. Each role consists of a set of permissions for a one or more Redis Cloud databases.
+In the **Roles** tab, you create roles. Each role consists of a set of permissions for one or more Redis Cloud databases.
 
 Finally, in the **Users** tab, you create users, and you assign each user a role.
 
-#### OSS Redis ACLs vs. Redis Cloud RBAC
+#### OSS Redis ACLs vs. Redis Enterprise Cloud RBAC
 
 In open source Redis, you can create users and assign ACLs to them using the `ACL` command. However, open source
 Redis does not support generic roles.
 
-In Redis Cloud, you configure RBAC using the admin console. As a result, certain open source Redis ACL
+In Redis Enterprise Cloud, you configure RBAC using the admin console. As a result, certain open source Redis ACL
 subcommands are not available in Redis Cloud.
 
 Specifically, Redis Cloud databases block the following ACL subcommands: `LOAD`, `SAVE`, `SETUSER`, `DELUSER`, `GENPASS`, and `LOG`.
@@ -169,12 +169,12 @@ To define database access control, you can either:
 To configure a Redis ACL that you can assign to a data access role:
 
 1. In **Data Access Control** > **Redis ACLs**:
-    - Edit an existing Redis ACL - Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
-    - Create a new Redis ACL - Click ![Add](/images/rc/icon_add.png#no-click "Add").
+    - To edit an existing Redis ACL: Hover over a Redis ACL and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
+    - To create a new Redis ACL: Click ![Add](/images/rc/icon_add.png#no-click "Add").
 1. Enter a descriptive name for the Redis ACL.
-1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) of the command or click **Rule Builder** to use the form to build the command:
+1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) defining the ACL or click **Rule Builder** to use a form to build the ACL:
     1. For the commands:
-        1. Select to include or exclude the command or category.
+        1. Select whether to include or exclude a command or category.
         1. Enter the [ACL syntax](https://redis.io/topics/acl#acl-rules) that defines the commands.
             - To add more command definitions, click ![Add](/images/rc/icon_add.png#no-click "Add").
             - All entries in the Commands/Categories column apply to the keys defined in the Keys column.
