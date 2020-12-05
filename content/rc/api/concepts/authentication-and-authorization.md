@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/concepts/authentication-and-authorization/
 ---
-All API operations require authentication using a pair of API keys known as the **account key** and the **secret key**.
+All API operations require authentication using a pair of API keys known as the **account key** and the **secret key**:
 
 | Key name    | HTTP Header name   | Description                                                       |
 | ----------- | ------------------ | ----------------------------------------------------------------- |
@@ -15,7 +15,7 @@ All API operations require authentication using a pair of API keys known as the 
 
 ## Enabling the API
 
-The API is disabled all on all account by default. You must first [enable the API]({{< relref "/rc/api/how-to/enable-your-account-to-use-api" >}}) before you can use it.
+The API is disabled all on all accounts by default. You must first [enable the API]({{< relref "/rc/api/how-to/enable-your-account-to-use-api" >}}) before you can use it.
 
 ## Account key
 

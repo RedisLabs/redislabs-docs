@@ -12,7 +12,7 @@ Every API request must include the following two API keys:
     Before using the API, you must [enable API access for your account ]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}).
 1. **Secret key**: Created by account owners for their use or for other owners on the same account.
 
-## Generating a secret key
+## Generating a secret key {#secret}
 
 To generate a secret key:
 

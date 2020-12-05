@@ -15,7 +15,7 @@ To enable the API for an account:
 1. In the **Account** tab, locate the **Cloud API Access Key**.
 1. Click **Generate**.
 
-The generated string is the API access key. You will need to include this access key, and a [secret key], when making API calls.
+The generated string is the API access key. You will need to include this access key, and a [secret key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team#secret" >}}), when making API calls.
 Only account owners can see the access key in the account settings.
 
 {{< warning >}}
