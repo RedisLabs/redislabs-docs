@@ -149,11 +149,15 @@ The Redis ACL syntax emphasizes brevity:
 - `@` indicates a command category
 - `~` defines a permitted key pattern
 
+#### Pre-defined permissions
+
 Redis Cloud includes three, pre-defined permissions:
 
 - Full Access (`+@all ~*`) - All commands are allowed for all keys
 - Not Dangerous (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
 - Read Only (`+@read ~*`) - Only the "read" command category is allowed for all keys
+
+#### Module command permissions
 
 Note that you can define permissions for the Redis module commands of any modules that are loaded on the subscription;
 however, these permissions can only be used for databases that support those modules.

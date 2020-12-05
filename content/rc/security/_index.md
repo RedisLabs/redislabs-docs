@@ -30,4 +30,4 @@ IP restrictions and VPC peering.
 
 ## API security
 
-The Redis Enterprise Cloud API allows you to programmatically administer your subscriptions and database deployments. This API is disabled by default. When you [enable the API]({{<relref "/rc/api/how-to/enable-your-account-to-use-api.md">}}), you can then [manage the API keys]({{<relref "/rc/api/how-to/manage-api-keys.md">}}) for all owners of your Redis Cloud account.
+The Redis Enterprise Cloud API allows you to programmatically administer your subscriptions and database deployments. This API is disabled by default. When you [enable the API]({{<relref "/rc/api/how-to/enable-your-account-to-use-api.md">}}), you can then [manage the API keys]({{<relref "/rc/api/how-to/manage-api-keys.md">}}) for all owners of your Redis Cloud account. For an overview of the security features of the API, see the [API authentication documentation]({{<relref "/rc/api/concepts/authentication-and-authorization.md">}}).
