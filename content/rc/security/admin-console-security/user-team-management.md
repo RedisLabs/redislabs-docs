@@ -5,7 +5,7 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---
-Redis Enterprise Cloud lets you create user accounts for your team members. You can manage these user account and their roles using the admin console.
+Redis Enterprise Cloud lets you create user accounts for your team members. You can manage these user accounts and their roles using the admin console.
 
 {{< note >}}
 Admin console users are distinct from database users. To manage your Redis database users, see [Database passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}}).
