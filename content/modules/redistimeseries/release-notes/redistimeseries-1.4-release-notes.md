@@ -5,6 +5,44 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisTimeSeries 1.4.7 - December 2020
+
+This is a maintenance release for version 1.4.
+
+Headlines:
+
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+Bugfixes:
+
+- [#581](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/581) Misaligned allocators usage might crash Redis.
+- [#588](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/588) `ON_DUPLICATE` min/max rules not working for negative value.
+
+## RedisTimeSeries 1.4.6 - November 2020
+
+This is a maintenance release for version 1.4.
+
+Headlines:
+
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+Minor enhancements:
+
+- [#565](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/565)
+    duplicate policy: add `SUM` option: If a previous sample exists, add the new sample to it so that the updated value is equal to (previous + new).
+    If no previous sample exists, set the updated value equal to the new value. (PR [#565](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/565)
+- [#559](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/559)
+    Compressed chunk will be be the default global option
+- [#559](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/559)
+    Added `chunkType` to `TS.INFO`
+
+Bugfixes:
+
+- [#528](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/528)
+    Out of order insert might crash Redis if there's an update to an empty downsampled key
+- [#561](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/561)
+    `TS.MRANGE` command might crash if there's an expired key that was deleted in the result set
+
 ## RedisTimeSeries 1.4 GA (1.4.5 - September 2020)
 
 This is the General Availability release for RedisTimeSeries 1.4.
