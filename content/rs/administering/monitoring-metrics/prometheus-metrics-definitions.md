@@ -21,8 +21,8 @@ Here are the metrics available to Prometheus:
 | bdb_avg_write_latency | Average latency of write operations (seconds); returned only when there is traffic |
 | bdb_avg_write_latency_max | Highest value of average latency of write operations (seconds); returned only when there is traffic |
 | bdb_conns | Number of client connections to DB |
-| bdb_egress_bytes | Rate of outgoing network traffic to DB (bytes/sec) |
-| bdb_egress_bytes_max | Highest value of rate of outgoing network traffic to DB (bytes/sec) |
+| bdb_egress_bytes | Rate of outgoing network traffic from the DB (bytes/sec) |
+| bdb_egress_bytes_max | Highest value of rate of outgoing network traffic from the DB (bytes/sec) |
 | bdb_evicted_objects | Rate of key evictions from DB (evictions/sec) |
 | bdb_evicted_objects_max | Highest value of rate of key evictions from DB (evictions/sec) |
 | bdb_expired_objects | Rate keys expired in DB (expirations/sec) |
