@@ -44,9 +44,9 @@ When authorization is successful the lock icon appears as a closed lock.
 
 ![swagger-closed-lock](/images/rv/api/swagger-closed-lock.png)
 
-### Calling API operations
+### Making API requests
 
-After you complete the authorization in the Swagger UI, execute an API operation:
+After you complete the authorization in the Swagger UI, you can make an API request:
 
 1. Open an action category and select an API operation.
 
