@@ -4,7 +4,7 @@ description:
 weight: 51
 alwaysopen: false
 categories: ["RC"]
-aliases: "/rc/administration/security"
+aliases: /rc/administration/security
 ---
 Redis Enterprise Cloud provides a number of features to ensure the security of your cloud
 database deployments. As a Redis Cloud user, there are three systems you need
