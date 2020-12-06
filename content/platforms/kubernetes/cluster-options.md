@@ -53,7 +53,7 @@ You can create this binding manually, but we do not recommend it.
 
     {{< /note >}}
 
-- [`nodes`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec) <<Need URL Update>>: `nnn`
+- [`nodes`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec): `nnn`
 
     This [must be an odd number](https://redislabs.com/redis-enterprise/technology/highly-available-redis/) that is 3 or higher.
 - [`uiServiceType`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): `service_type`
@@ -62,7 +62,7 @@ You can create this binding manually, but we do not recommend it.
     The service_type must be either `ClusterIP` or `LoadBalancer` (default: `ClusterIP`).
     This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/).
 
-- [`persistentSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#persistentconfigurationspec) <<Need URL Update>>:
+- [`persistentSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
     You can add a `storageClassName` that specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. For example, AWS uses “gp2” as a default, GKE uses “standard” and Azure uses "default".
 
@@ -75,7 +75,7 @@ You can create this binding manually, but we do not recommend it.
       storageClassName: "gp2"
     ```
 
-- [`redisEnterpriseNodeResources`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec) <<Need URL Update>>:
+- [`redisEnterpriseNodeResources`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
     The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node (see `limits` and `requests`).
 
@@ -83,7 +83,7 @@ You can create this binding manually, but we do not recommend it.
 We recommend that resource limits equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
     {{< /note >}}
 
-    - [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec) <<Need URL Update>>:
+    - [`limits`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
         The max resources for a Redis node (similar to pod limits).
 
@@ -97,7 +97,7 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
 
         The default is 4 cores (4000m) and 4GB (4Gi).
 
-    - [`requests`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec) <<Need URL Update>>:
+    - [`requests`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
         The minimum resources for a Redis node (similar to pod requests).
 
@@ -111,17 +111,7 @@ We recommend that resource limits equal requests ([Learn why](https://github.com
 
         The default is 4 cores (4000m) and 4GB (4Gi).
 
-- [`serviceBrokerSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#servicebrokerspec) <<Need URL Update>>:
-
-    Enables and controls the service broker. The service broker is disabled by default.
-
-    ```yaml
-      enabled: true|false
-      persistentSpec:
-         storageClassName: "*class_name*"
-    ```
-
-- [`redisEnterpriseImageSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#imagespec) <<Need URL Update>>:
+- [`redisEnterpriseImageSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#imagespec):
 
     This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator automatically uses the matching RHEL image version for the release.
 
