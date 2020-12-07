@@ -55,5 +55,5 @@ Consistency](/images/rs/strong_consistency-300x156.png)
 With the WAIT command, applications can have a guarantee that even under
 a node failure or node restart, an acknowledged write is recorded.
 
-Please see the WAIT command for details on the new durability and
+See the WAIT command for details on the new durability and
 consistency options.

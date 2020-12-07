@@ -37,10 +37,10 @@ network, and storage settings to ensure optimal Redis Enterprise performance.
 
 You also need to ensure that each Redis Enterprise shard is pinned to a specific ESX/ESXi host by setting the appropriate affinity rules.
 
-If you must manually migrate a virtual machine to another host, please ensure that you follow the best practices for shard maintenance, and contact support if you have questions.
+If you must manually migrate a virtual machine to another host, please ensure that you follow the best practices for shard maintenance, and [contact Redis Labs support](http://support.redislabs.com) if you have questions.
 
 ## VMware limitations
 
-Please note that Redis Enterprise is not compatible with VMware VMotion at this time. To use Redis Enterprise on VMware, you must disable VMotion.
+Note that Redis Enterprise is not compatible with VMware VMotion at this time. To use Redis Enterprise on VMware, you must disable VMotion.
 
 In addition, VMware snapshotting is unsupported. Redis Enterprise cluster manages state dynamically. We don't support VMware snapshotting because a VM restored from a snapshot might not have the correct node and cluster state.

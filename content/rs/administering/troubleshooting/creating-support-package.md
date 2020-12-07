@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 If you encounter any issues that you are not able to resolve yourself
-and need to contact Redis Labs support for assistance, you can create a
+and need to [contact Redis Labs support](http://support.redislabs.com) for assistance, you can create a
 support package that gathers all essential information to help us debug
 your issues.
 
