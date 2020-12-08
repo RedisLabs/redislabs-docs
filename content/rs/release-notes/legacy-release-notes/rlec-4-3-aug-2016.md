@@ -133,7 +133,7 @@ upgrade to this version.
 - **Issue**: RLEC-8283 - The cluster recovery process does not work
     properly when the cluster that needs to be recovered does not have a
     node with ID 1.**Workaround**: If you encounter this issue please
-    contact support at: <support@redislabs.com>
+    [contact Redis Labs support](https://redislabs.com/company/support/)
 - **Issue**: In the Replica Of process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on the target database might not be in sync with
@@ -152,7 +152,7 @@ upgrade to this version.
     you will often see the status of the Replica Of process display as
     "Syncing".**Workaround**: You must manually increase the "slave
     buffer" size through rladmin. In order to find the appropriate
-    buffer size please contact support at: <support@redislabs.com>
+    buffer size please [contact Redis Labs support](https://redislabs.com/company/support/)
 - **Issue**: In a cluster that is configured to support rack-zone
     awareness, if the user forces migration of a master or slave shard
     through rladmin to a node on the same rack-zone as its corresponding

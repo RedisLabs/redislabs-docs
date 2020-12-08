@@ -115,7 +115,7 @@ Then click **Initiate Peering**.
 Once your VPC peering request is accepted, the status in your subscription's **VPC Peering** tab will indicate 'Peer Established'.
 
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
-please don't hesitate to [contact support](https://redislabs.com/company/contact/support/).
+please don't hesitate to [contact Redis Labs support](https://redislabs.com/company/support/).
 
 #### Configuring a CIDR whitelist
 
@@ -187,7 +187,7 @@ Before you click **Initiate Connection**, be sure that you copy the `gcloud` com
 Once your VPC peering request is accepted, the status in your subscription's **VPC Peering** tab will indicate 'Peer Established'.
 
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
-please don't hesitate to [contact support](https://redislabs.com/company/contact/support/).
+please don't hesitate to [contact Redis Labs support](https://redislabs.com/company/support/).
 
 ### VPCs with Azure
 

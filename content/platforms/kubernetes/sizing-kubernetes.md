@@ -24,7 +24,7 @@ Define the number of cluster nodes in redis-enterprise-cluster.yaml file.
         nodes: 3
 
 The number of nodes in the cluster must be an uneven number
-equal to or greater than 3. Please refer to the article [Highly-Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
+equal to or greater than 3. Refer to the article [Highly-Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
 for a detailed explanation on this topic.
 
 Set the number of cluster nodes during deployment
