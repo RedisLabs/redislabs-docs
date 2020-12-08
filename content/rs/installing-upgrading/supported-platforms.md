@@ -15,6 +15,7 @@ Make sure your system meets these requirements:
 - You must install Redis Enterprise Software directly on the host, not through system cloning.
 - You must install on a clean host with no other applications running so that all RAM is allocated to the OS and RS only.
 - Linux distributions must be installed with at least "Minimal Install" configuration.
+- All nodes in the cluster must run the same OS version.
 {{< /note >}}
 
 | **Platform** | **Versions/Information** |
