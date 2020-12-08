@@ -32,7 +32,7 @@ Your account is now configured for MFA.
 We recommend that you also [configure MFA for an authenticator app](#app) as an additional factor.
 {{< /note >}}
 
-If you cannot log in to your account because of MFA, please [contact Redis Labs support](http://support.redislabs.com).
+If you cannot log in to your account because of MFA, please [contact Redis Labs support](https://redislabs.com/company/support/).
 
 If your mobile phone is lost or stolen, make sure that you update the MFA configuration to prevent unauthorized logins.
 

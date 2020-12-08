@@ -37,7 +37,7 @@ network, and storage settings to ensure optimal Redis Enterprise performance.
 
 You also need to ensure that each Redis Enterprise shard is pinned to a specific ESX/ESXi host by setting the appropriate affinity rules.
 
-If you must manually migrate a virtual machine to another host, please ensure that you follow the best practices for shard maintenance, and [contact Redis Labs support](http://support.redislabs.com) if you have questions.
+If you must manually migrate a virtual machine to another host, please ensure that you follow the best practices for shard maintenance, and [contact Redis Labs support](https://redislabs.com/company/support/) if you have questions.
 
 ## VMware limitations
 

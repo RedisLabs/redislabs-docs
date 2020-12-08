@@ -25,4 +25,4 @@ To see the rlcheck optional flags, run: `rlcheck --help`
 Specifically, the `--continue-on-error` flag runs all tests to completion and shows all errors when complete.
 {{< /note >}}
 
-To resolve issues reported by rlcheck, [contact Redis Labs support](http://support.redislabs.com).
+To resolve issues reported by rlcheck, [contact Redis Labs support](https://redislabs.com/company/support/).
