@@ -14,8 +14,6 @@ Minor bugfixes:
 - Added [`OSS_GLOBAL_PASSWORD`](https://github.com/RediSearch/RSCoordinator#running-rscoordinator) config argument to allow specify shards password on OSS cluster.
 - Update `min_redis_pack_version` to 6.0.8
 
-Note: All these changes happened on [RSCoordinator](https://github.com/RediSearch/RSCoordinator). For consistency reasons however, we keep both repositories tags in sync until we merge the two repositories.
-
 ## RediSearch 2.0.2 (November, 2020)
 
 This is a maintenance release for version 2.0.
