@@ -5,6 +5,15 @@ weight: 95
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 2.0.3 (November, 2020)
+
+This is a maintenance release for version 2.0.
+
+Minor bugfixes:
+
+- Added [`OSS_GLOBAL_PASSWORD`](https://github.com/RediSearch/RSCoordinator#running-rscoordinator) config argument to allow specify shards password on OSS cluster.
+- Update `min_redis_pack_version` to 6.0.8
+
 ## RediSearch 2.0.2 (November, 2020)
 
 This is a maintenance release for version 2.0.
