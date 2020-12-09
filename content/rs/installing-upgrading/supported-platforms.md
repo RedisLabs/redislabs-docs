@@ -8,6 +8,7 @@ aliases: /rs/administering/designing-production/supported-platforms/
 ---
 Redis Enterprise Software (RS) is supported on several operating systems, cloud environments, and virtual environments.
 
+{{< note >}}
 Make sure your system meets these requirements:
 
 - Only 64-bit operating systems are supported.
