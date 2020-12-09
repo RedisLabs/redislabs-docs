@@ -5,6 +5,30 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisGraph 2.2.9 (December 2020)
+
+This is a maintenance release for version 2.2.
+
+Headlines:
+
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Performance improvements:
+    - #[1426](https://github.com/RedisGraph/RedisGraph/pull/1426) Improve load times of adjacency matrices that always have different source and destination nodes.
+- Minor enhancements:
+    - #[1463](https://github.com/RedisGraph/RedisGraph/pull/1463) Remove all assertions from production builds.
+    - #[1442](https://github.com/RedisGraph/RedisGraph/pull/1442) NULL property values should be ignored in `CREATE` clauses and trigger errors in MERGE clauses.
+    - #[1429](https://github.com/RedisGraph/RedisGraph/pull/1429) Improve error handling of a number of invalid query constructions.
+    - #[1431](https://github.com/RedisGraph/RedisGraph/pull/1431) Traversal patterns are only allowed in `MATCH`, `MERGE`, `CREATE`, and `WHERE` contexts.
+- Bugfixes:
+    - #[1429](https://github.com/RedisGraph/RedisGraph/pull/1429) Fix potential misapplications of `WHERE` filters.
+    - #[1460](https://github.com/RedisGraph/RedisGraph/pull/1460) `RETURN` clauses can only be followed by `UNION` clauses.
+    - #[1467](https://github.com/RedisGraph/RedisGraph/pull/1467) Disallow assignment of complex data types to property values.
+    - #[1437](https://github.com/RedisGraph/RedisGraph/pull/1437) Failed property updates on `MERGE` should be handled gracefully.
+    - #[1446](https://github.com/RedisGraph/RedisGraph/pull/1446) Fix errors in Cartesian Product filter placement.
+
 ## RedisGraph 2.2 GA (November 2020)
 
 This is the General Availability Release of RedisGraph 2.2 (v2.2.8)!
