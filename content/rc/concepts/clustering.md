@@ -72,10 +72,10 @@ are supported with the following limitations:
     and pipelining are supported with Redis Cloud cluster
     like if it were a non-cluster DB.
 
-## Changing the sharding policy
+## Changing the hashing policy
 
 The clustering configuration of a Redis Cloud instance can be
-changed. However, sharding policy changes trigger the deletion
+changed. However, hashing policy changes trigger the deletion
 (i.e. FLUSHDB) of the data before they can be applied. These changes
 are:
 

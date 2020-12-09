@@ -31,18 +31,15 @@ In clustering, these terms are commonly used:
 - Slot or Hash Slot - The result of the hash calculation.
 - Shard - Redis process that is part of the Redis clustered database.
 
-## When to use sharding
+## When to use clustering
 
-Sharding the keyspace is an efficient way of scaling Redis that should
-be employed when:
+Clustering is an efficient way of scaling Redis that should be used when:
 
-- The dataset is large enough to benefit from using the RAM resources
-    of more than one server. We recommend sharding a dataset
-    once it reaches a size of 25 GB (50 GB for RoF).
-- The operations performed against the database are CPU-intensive,
-    resulting in performance degradation. By having multiple CPU cores
-    manage the database's shards, the load of operations is distributed
-    among them.
+- The dataset is large enough to benefit from using the RAM resources of more than one node.
+    When a dataset is more than 25 GB (50 GB for RoF), we recommend that you enable clustering to create multiple shards of the database
+    and spread the data requests across nodes.
+- The operations performed against the database are CPU-intensive, resulting in performance degradation.
+    By having multiple CPU cores manage the database's shards, the load of operations is distributed among them.
 
 ## Number of shards
 
@@ -61,7 +58,7 @@ RediSearch enabled database, you must create a new database
 at the new required size and replicate the current database to the new
 one.
 
-## Supported sharding policies
+## Supported hashing policies
 
 ### Standard hashing policy
 
@@ -124,10 +121,10 @@ their order to suit your application's requirements.
     PCRE_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 
-## Changing the sharding policy
+## Changing the hashing policy
 
-The sharding policy of a clustered database can be changed. However,
-most sharding policy changes trigger the deletion (i.e., FLUSHDB) of the
+The hashing policy of a clustered database can be changed. However,
+most hashing policy changes trigger the deletion (i.e., FLUSHDB) of the
 data before they can be applied.
 
 Examples of such changes include:
