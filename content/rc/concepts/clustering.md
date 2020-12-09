@@ -7,8 +7,8 @@ categories: ["RC"]
 aliases: /rc/concepts/clustering-redis-cloud/
         /rv/concepts/clustering/
 ---
-Redis is mostly a single-threaded process to provide high performance and simple.
-To let you also take advantage of clustering,
+Redis is mostly a single-threaded process. This enables Redis to be high performance and simple (no need for threads synchronization).
+To let you take advantage of Redis clustering,
 Redis Cloud uses our Redis Enterprise technology to scale Redis databases for you.
 
 For example:
