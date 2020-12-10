@@ -57,7 +57,3 @@ To create a cluster:
 1. Click **Next**.
 
 After a short wait, your cluster is created and you can log in to the RS admin console.
-You can now access any of the management capabilities, including:
-
-- [Creating a new database]({{< relref "/rs/administering/creating-databases/_index.md" >}})
-- [Joining a new node to a cluster]({{< relref "/rs/administering/adding-node.md" >}})
