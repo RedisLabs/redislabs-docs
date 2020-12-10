@@ -14,7 +14,7 @@ Redis Cloud uses our Redis Enterprise technology to scale Redis databases for yo
 For example:
 
 - The dataset is big enough that it would benefit from using the RAM resources of more than one server.
-    We recommend enabling clusting for the database when the data reaches the size of 25 GB (50 GB for RoF) to create multiple shards.
+    We recommend enabling clustering for the database when the data reaches the size of 25 GB (50 GB for RoF) to create multiple shards.
 - The operations performed against the database are CPU intensive enough to degrade performance.
     With clustering, you can distribute operational load across the same server or multiple servers.
 
