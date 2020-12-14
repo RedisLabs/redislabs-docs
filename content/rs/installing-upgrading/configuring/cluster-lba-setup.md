@@ -30,8 +30,7 @@ Depending on which Redis Enterprise services you want to access outside the clus
 One or more Virtual IPs (VIPs) are defined on the load balancer to expose Redis Enterprise services.
 The architecture is shown in the following diagram with 3 nodes Redis Enterprise cluster with one database (DB1) configured on port 12000:
 
-<to be added - image>
-
+![cluster-behind-load-balancer-top-down](/images/rs/cluster-behind-load-balancer-top-down.png "cluster-behind-load-balancer-top-down")
 ## Setting up an RS cluster with load balancers
 
 ### Prerequisites
