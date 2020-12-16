@@ -2,6 +2,7 @@ _The master branch_ => [![CircleCI](https://circleci.com/gh/RedisLabs/redislabs-
 
 # Redis Labs Documentation Center
 
+
 The Redis Labs Documentation Center is built with [Hugo]( https://gohugo.io/ ) version 0.48 and is based on the [DocDock]( https://github.com/vjeantet/hugo-theme-docdock.git ) theme.
 
 ## Installing the Redis Labs Documentation Center
