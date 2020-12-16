@@ -34,7 +34,7 @@ and versions are supported:
 <!-- -->
 
 - On Windows 8.1:
-    - Internet Explorer version 11 and up
+    - Internet Explorer version 11
     - Chrome version 48 and up
     - Firefox version 44 and up
 
