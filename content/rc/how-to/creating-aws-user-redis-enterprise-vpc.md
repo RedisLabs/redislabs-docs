@@ -9,14 +9,42 @@ aliases: /rv/how-to/creating-aws-user-redis-enterprise-vpc/
 In most Redis Cloud deployments, the infrastructure of your Redis Cloud subscriptions on AWS is created in dedicated AWS accounts that we manage for you.
 In Redis Cloud Ultimate, you can choose to have this infrastructure on your own AWS accounts.
 You'll want these accounts to be separate from any AWS application accounts,
-and you'll need to create some dedicated IAM entities to let us manage the infrastructure for you.
+and you'll need to create some dedicated IAM entities and then configure your Redis Cloud Account with the necessary details.
+
+The configuration can either be done 'by hand', following the instructions in [Create and Edit a Cloud Account for Redis Cloud Ultimate 
+](rc/how-to/view-edit-cloud-account.md), or via the Cloud API, in which case you'll use the [create cloud account using POST](https://api.redislabs.com/v1/swagger-ui.html#/Cloud%20Accounts/createCloudAccountUsingPOST) call.
 
 In the new AWS account, you need to create:
 
 - An **instance role**
-- A user with an **access key**
+- A user with an **access key** and a password
 - A role that grants **AWS console access**
 
+You have two options for how to create these resources. Choose **one** of them only:
+
+# A. Use Automation (Cloudformation)
+Use the following link to leverage Cloudformation to do this automatically. 
+
+<a href="https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=RedisCloud&templateURL=https://s3.amazonaws.com/cloudformation-templates.redislabs.com/RedisCloud.yaml">
+<img alt="Launch RedisCloud template" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"/>
+</a>
+
+Further details can be found in the [public Github Repo](https://github.com/Redislabs-Solution-Architects/AWSCloudAccountResources).
+
+Note that secrets created using this mechanism are stored in your AWS Secrets Manager for safe keeping.
+
+The output of this stack maps to the two configuration methods thus:
+
+| Output | By Hand | By API|
+|---------|---|---|
+|accessKeyId | AWS_ACCESS_KEY_ID | accessKeyId |
+| accessSecretKey | AWS_SECRET_ACCESS_KEY | accessSecretKey |
+| consolePassword | - | consolePassword |
+| signInLoginUrl | - | signInLoginUrl |
+| IAMRoleName | IAM Role Name | - |
+| consoleUsername| - | consoleUsername |
+
+# B. Do it Manually
 Make sure that you save the access key in a secure location so that you can enter the key when you create the Redis Cloud account.
 
 {{< warning >}}
