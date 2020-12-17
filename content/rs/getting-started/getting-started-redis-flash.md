@@ -63,7 +63,7 @@ Depending on your browser, you may see a certificate error.
 Simply choose "continue to the website" to get to the setup screen.
 {{< /note >}}
 
-![setup_linux](/images/rs/setup_linux.png)
+![getstarted-setup](/images/rs/getstarted-setup.png)
 
 On the **node configuration** page, select the **Enable flash storage
 support** checkbox and provide a cluster FQDN: **mycluster.local**.
@@ -77,7 +77,7 @@ the trial version of the product.
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-![RP-SetupScreen4](/images/rs/RP-SetupScreen4.jpeg)
+![getstarted-admincredentials](/images/rs/getstarted-admincredentials.jpeg)
 
 Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.

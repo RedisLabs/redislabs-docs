@@ -51,7 +51,7 @@ click the **Setup** button on the page to get started.
 Depending on your browser, you may see a certificate error. Continue to the website.
     {{< /note >}}
 
-    ![rs-setup](/images/rs/rs-setup.png)
+    ![getstarted-getstarted-setup](/images/rs/getstarted-getstarted-setup.png)
 
 1. On the **node configuration** page, select your default settings and
 provide a cluster FQDN, for example `cluster1.local`. Then click
@@ -65,7 +65,7 @@ trial version of the product.
 1. On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-    ![set-admin-credentials](/images/rs/set-admin-credentials.png)
+    ![getstarted-admincredentials](/images/rs/getstarted-admincredentials.png)
 
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
     certificate on the node, and proceed through the browser warning.
