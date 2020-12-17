@@ -57,7 +57,7 @@ Depending on your browser, you may see a certificate error. Continue to the webs
 provide a cluster FQDN, for example `cluster1.local`. Then click
 **Next** button.
 
-    ![node-config](/images/rs/node-config.png)
+    ![getstarted-nodeconfig](/images/rs/getstarted-nodeconfig.png)
 
 1. If you don't have a license key, click the **Next** button to try the
 trial version of the product.

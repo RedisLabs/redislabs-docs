@@ -449,7 +449,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
     1. Click **Next** to create a single-region deployment on RAM.
 
-        ![new_databases](/images/rs/new_databases.png)
+        ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)
 
     1. Enter the mandatory details of the new {{< field "db_type" >}}:
 
