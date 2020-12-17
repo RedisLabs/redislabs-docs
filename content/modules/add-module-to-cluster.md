@@ -34,7 +34,7 @@ To deploy an upgraded package:
 1. In the Redis Enterprise web UI, go to the: **settings**
 1. In **redis modules**, click **Add Module**.
 
-    ![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
+    ![upgrade_module-1](/images/rs/upgrade_module-1.png)
 
 1. Browse to the packaged module and upload
     it.
@@ -43,7 +43,7 @@ To deploy an upgraded package:
 
     The database configuration shows that a new version of the module is available for the database.
 
-    ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
+    ![update_available-1](/images/rs/update_available-1.png)
 
 ## Upgrading the module for the database
 
@@ -58,7 +58,7 @@ To upgrade a module that is installed on a cluster:
 1. Run `rladmin status` to list the databases on the node.
 1. Copy the name of the database that uses the module that you want to upgrade.
 
-    ![rladmin_status-1](/images/rs/rladmin_status-1.png?width=1000&height=214)
+    ![rladmin_status-1](/images/rs/rladmin_status-1.png)
 
 1. Find the exact module name and version:
 
@@ -68,7 +68,7 @@ To upgrade a module that is installed on a cluster:
 
     An example of the JSON file for the RediSearch module is:
 
-    ![module_info-1](/images/rs/module_info-1.png?width=1000&height=382)
+    ![module_info-1](/images/rs/module_info-1.png)
 
 1. To see the versions of the modules on the cluster, run either:
 

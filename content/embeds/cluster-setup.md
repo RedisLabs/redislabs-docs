@@ -9,18 +9,22 @@ continue to the web console.
 
 1. Click **Setup** to start the node configuration steps.
 
-    ![Redis Enterprise Software Setup](/images/rs/getstarted-setup.png?width=600)
+    ![Redis Enterprise Software Setup](/images/rs/getstarted-setup.png)
 
 1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`.
 Then click **Next** button.
 
-    ![Redis Enterprise Software node configuration](/images/rs/getstarted-nodeconfig.png?width=600)
+    ![Redis Enterprise Software node configuration](/images/rs/getstarted-nodeconfig.png)
 
 1. Enter your license key, if you have one. If not, click the **Next** button to use the trial version.
 
 1. Enter an email and password for the admin account for the web console.
 
+<<<<<<< HEAD
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
+=======
+    ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png)
+>>>>>>> Remove image sizes
 
     These credentials are also used for connections to the REST API.
 

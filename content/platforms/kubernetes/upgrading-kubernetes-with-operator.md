@@ -62,16 +62,16 @@ These diagrams show how a rolling update works:
 - Each hexagon represents a node
 - Each box represents a pod
 
-![kubernetes-rolling-updates](/images/rs/kubernetes-rolling-updates.png?width=500)
+![kubernetes-rolling-updates](/images/rs/kubernetes-rolling-updates.png)
 
 The pods are updated one by one in the diagram, starting from left to right.
 Each pod is updated after the last one completes successfully.
 
-![kubernetes-rolling-updates-newapp](/images/rs/kubernetes-rolling-updates-newapp.png?width=500)
+![kubernetes-rolling-updates-newapp](/images/rs/kubernetes-rolling-updates-newapp.png)
 
-![kubernetes-rolling-updates-newcluster](/images/rs/kubernetes-rolling-updates-newcluster.png?width=500)
+![kubernetes-rolling-updates-newcluster](/images/rs/kubernetes-rolling-updates-newcluster.png)
 
-![kubernetes-rolling-updates-done](/images/rs/kubernetes-rolling-updates-done.png?width=500)
+![kubernetes-rolling-updates-done](/images/rs/kubernetes-rolling-updates-done.png)
 
 The pods in the StatefulSet are updated in reverse ordinal order.
 The Kubernetes controller terminates each pod and waits for it to transition to `Running` and then to `Ready`.

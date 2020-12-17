@@ -84,7 +84,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
 1. After you login to cluster1.local, select the Redis database and deployment type
 **Geo-Distributed**. Then click **Next**.
 
-    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png)
 
 1. In **create database**, click the **show advanced option** and:
 

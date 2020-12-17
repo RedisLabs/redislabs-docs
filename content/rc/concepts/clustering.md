@@ -46,7 +46,7 @@ For Redis Cloud, clustering is only available in the
 "Pay-As-You-Go" subscription.
 {{< /note >}}
 
-![subscription-selection-2](/images/rc/subscription-selection-2.png?width=600&height=221)
+![subscription-selection-2](/images/rc/subscription-selection-2.png)
 
 ## Multi-key operations {#multikey-operations}
 

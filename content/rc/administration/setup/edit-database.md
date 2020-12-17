@@ -18,7 +18,7 @@ you can add one to a subscription by clicking on the **+** below each subscripti
 
 When you select a database you can:
 
-![Viewing databases edit icons](/images/rc/view_database2.png?width=600&height=338)
+![Viewing databases edit icons](/images/rc/view_database2.png)
 
 - Click ![Edit](/images/rc/icon_edit.png#no-click "Edit") to [edit the database](#edit-a-database).
     You can change the [database settings]({{< relref "/rc/administration/setup/create-database.md" >}}).

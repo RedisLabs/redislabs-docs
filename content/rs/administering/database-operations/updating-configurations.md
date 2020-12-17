@@ -45,7 +45,7 @@ Use the participating clusters list to manage the changes to Active-Active topol
 You can make multiple changes at once to the list of participating clusters.
 The changes you make to the list are committed when the database configuration is saved.
 
-![pasted-image-0-1](/images/rs/pasted-image-0-1.png?width=1534&height=233)
+![pasted-image-0-1](/images/rs/pasted-image-RS-Docker-cluster-single-host.png)
 
 All of the existing participating clusters must be online and in a syncing state when you add new participating clusters.
 
