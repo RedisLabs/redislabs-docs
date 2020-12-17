@@ -20,11 +20,7 @@ Then click **Next** button.
 
 1. Enter an email and password for the admin account for the web console.
 
-<<<<<<< HEAD
-    ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png?width=600)
-=======
     ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png)
->>>>>>> Remove image sizes
 
     These credentials are also used for connections to the REST API.
 
