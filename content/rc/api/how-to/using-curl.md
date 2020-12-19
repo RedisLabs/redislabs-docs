@@ -113,6 +113,4 @@ curl -s -X GET "https://$HOST/logs" \
 - The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command-line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
 - You can set the variables using shell commands like the following:
 
-    ```shell
-    {{% embed-code "rv/api/05-set-variables.sh" %}}
-    ```
+    {{% embed-code2 "rv/api/05-set-variables.sh" "shell"%}}

@@ -1,0 +1,5 @@
+{{$file := .Get 0}}
+{{$type := .Get 1}}
+``` {{printf "%s" $type }}
+{{printf "./static/code/%s" $file  | readFile | safeHTML | }}
+```
