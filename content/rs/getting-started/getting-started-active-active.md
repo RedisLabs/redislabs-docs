@@ -51,7 +51,7 @@ click the **Setup** button on the page to get started.
 Depending on your browser, you may see a certificate error. Continue to the website.
     {{< /note >}}
 
-    ![getstarted-getstarted-setup](/images/rs/getstarted-getstarted-setup.png)
+    ![getstarted-setup](/images/rs/getstarted-setup.png)
 
 1. On the **node configuration** page, select your default settings and
 provide a cluster FQDN, for example `cluster1.local`. Then click
