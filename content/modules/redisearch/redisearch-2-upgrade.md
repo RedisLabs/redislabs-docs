@@ -47,7 +47,7 @@ To replicate a RediSearch 1.x database to a RediSearch 2.x database:
     1. In the Redis Enterprise web UI, go to the: **settings**
     1. In **redis modules**, click **Add Module**.
 
-       ![upgrade_module-1](/images/rs/upgrade_module-1.png)
+       ![upgrade_module-1](/images/rs/upgrade_module.png)
 
     1. Browse to the module package and upload it to the cluster.
 1. Create a new database with RediSearch 2.x:
