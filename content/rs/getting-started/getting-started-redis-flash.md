@@ -63,21 +63,21 @@ Depending on your browser, you may see a certificate error.
 Simply choose "continue to the website" to get to the setup screen.
 {{< /note >}}
 
-![setup_linux](/images/rs/setup_linux.png?width=600&height=287)
+![getstarted-setup](/images/rs/getstarted-setup.png)
 
 On the **node configuration** page, select the **Enable flash storage
 support** checkbox and provide a cluster FQDN: **mycluster.local**.
 Then simply click the **Next** button.
 
 ![Enable Redis
-Flash](/images/rs/enable_redis_flash.png?width=800&height=663)
+Flash](/images/rs/enable_redis_flash.png)
 
 If you don't have a license key yet, click the **Next** button to try
 the trial version of the product.
 On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-![RP-SetupScreen4](/images/rs/RP-SetupScreen4.jpeg?width=600&height=377)
+![getstarted-admincredentials](/images/rs/getstarted-admincredentials.jpeg)
 
 Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
 certificate on the node, and proceed through the browser warning.
@@ -86,7 +86,7 @@ certificate on the node, and proceed through the browser warning.
 
 Select the "new redis db flash" option.
 
-![redis-on-flash](/images/rs/redis-on-flash.png?width=391&height=400)
+![redis-on-flash](/images/rs/redis-on-flash.png)
 
 On the **new redis on flash db** page, click the **show advanced
 option** link and enter **myredisflashdb** for a database name and
@@ -94,7 +94,7 @@ option** link and enter **myredisflashdb** for a database name and
 create your database.
 
 ![new redis flash
-db](/images/rs/newredisflashdb.png?width=700&height=714)
+db](/images/rs/newredisflashdb.png)
 
 You now have a Redis on Flash database!
 

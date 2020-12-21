@@ -20,7 +20,7 @@ same rack.
 Rack-zone awareness affects various cluster, node and database-related
 actions, such as node rebalancing, node removal, node replacement, shard and endpoint migration, and database failover.
 
-## Cluster and node configuration {#clusternode-configuration}
+## Cluster and node configuration
 
 To enable rack-zone awareness, you need to configure it at the
 cluster, node, and database levels.

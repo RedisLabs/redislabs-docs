@@ -43,7 +43,7 @@ To create a new database:
     If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
-    ![new_databases](/images/rs/new_databases.png)
+    ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)
 
 1. Enter the mandatory details of the new {{< field "db_type" >}}:
 

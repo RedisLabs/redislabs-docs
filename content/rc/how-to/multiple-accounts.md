@@ -13,4 +13,4 @@ When you open the Redis Cloud menu, you see a menu like the screenshot below.
 When you click on the arrow, you see all of the accounts you are a member of and you can switch between the accounts.
 The permissions for each account are defined by the role you are assigned by the account owner.
 
-![account_multiple_teams](/images/rc/account_multiple_teams.png?width=399&height=622)
+![account_multiple_teams](/images/rc/account_multiple_teams.png)

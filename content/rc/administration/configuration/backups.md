@@ -64,13 +64,13 @@ console](https://developers.google.com/console/) subscriptions, to use a GCS buc
 1. Click on the three dot button (1) on your relevant bucket name and
     choose **Edit bucket permissions** (2).
     ![GCS bucket
-    permissions](/images/rc/bucket-perm1.png?width=800&height=493)
+    permissions](/images/rc/bucket-permissions.png)
 1. Under **Add members**, enter:
     `service@redislabs-prod-clusters.iam.gserviceaccount.com`
 1. For the role, select **Storage Legacy -\> Storage Legacy Bucket
     Writer**.
     ![Google Cloud Storage
-    Permissions](/images/rc/gcs-permissions.jpg?width=800&height=606)
+    Permissions](/images/rc/gcs-permissions.jpg)
 1. Click on the **Add** button.
 
 Once your bucket's permissions are set, you can use it with your

@@ -28,8 +28,7 @@ and 6.
 Independently, the write to a slave is also persisted to disk and
 acknowledged within the slave. These are steps 7 and 8.
 
-![Weak
-Consistency](/images/rs/weak_consistency-300x161.png)
+![Weak Consistency](/images/rs/weak-consistency.png)
 
 With the new WAIT command, applications can ask to wait for
 acknowledgments only after replication or persistence is confirmed on
@@ -49,8 +48,7 @@ With this flow, the application only gets the acknowledgment from the
 write after durability is achieved with replication to the slave and to
 the persistent storage.
 
-![Strong
-Consistency](/images/rs/strong_consistency-300x156.png)
+![Strong Consistency](/images/rs/strong-consistency.png)
 
 With the WAIT command, applications can have a guarantee that even under
 a node failure or node restart, an acknowledged write is recorded.
