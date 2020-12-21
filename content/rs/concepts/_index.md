@@ -21,8 +21,7 @@ zones. Redis Enterprise architecture is made up of a management path
     maintain slave shards using the in-memory replication for protection
     against failures that may render master shard inaccessible.
 
-![Redis Enterprise
-Stack](/images/rs/rp_stack.png)
+![Redis Enterprise Stack](/images/rs/rp_stack.png)
 
 *Figure 1*
 *Redis Enterprise Nodes with blue layer representing the management path
