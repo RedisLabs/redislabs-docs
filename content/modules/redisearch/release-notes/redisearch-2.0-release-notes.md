@@ -5,6 +5,26 @@ weight: 95
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 2.0.5 (December, 2020)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Minor features:
+    - [#1696](https://github.com/RediSearch/RediSearch/pull/1696) Add [`MAXAGGREGATERESULTS`](https://oss.redislabs.com/redisearch/Configuring/#maxaggregateresults) module configuration for [`FT.AGGREGATE`](https://oss.redislabs.com/redisearch/Commands/#ftaggregate). Similar to MAXSE`ARCHRESULTS for `FT.SEARCH`, it limits the maximum number of results returned.
+
+## RediSearch 2.0.4 (December, 2020)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Bugfixes in RediSearch:
+    - [#1668](https://github.com/RediSearch/RediSearch/pull/1668) Stopwords are not filtered out on tag fields.
+- Bugfixes in RSCoordinator:
+    - [#206](https://github.com/RediSearch/RediSearch/pull/206) `FT.AGGREGATE` with `LIMIT` and `offset` greater than `0` returned fewer results than requested.
+
 ## RediSearch 2.0.3 (November, 2020)
 
 This is a maintenance release for version 2.0.
