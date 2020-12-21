@@ -39,6 +39,9 @@ To deploy an upgraded package:
 1. Browse to the packaged module and upload
     it.
 1. Note the version number of the new module version.
+
+    If you don't see the updated module version, refresh the page.
+
 1. In **databases**, select the configuration section.
 
     The database configuration shows that a new version of the module is available for the database.
