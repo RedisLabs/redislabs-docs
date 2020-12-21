@@ -64,7 +64,7 @@ console](https://developers.google.com/console/) subscriptions, to use a GCS buc
 1. Click on the three dot button (1) on your relevant bucket name and
     choose **Edit bucket permissions** (2).
     ![GCS bucket
-    permissions](/images/rc/bucket-perm1.png)
+    permissions](/images/rc/bucket-permissions.png)
 1. Under **Add members**, enter:
     `service@redislabs-prod-clusters.iam.gserviceaccount.com`
 1. For the role, select **Storage Legacy -\> Storage Legacy Bucket

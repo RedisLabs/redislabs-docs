@@ -62,7 +62,7 @@ There are five metrics, located on the Configuration tab for each
 database, that you can and should create alerts for.
 
 ![Alert
-Settings](/images/rc/alert_settings-2.png)
+Settings](/images/rc/alert_settings.png)
 
 If you want to edit the values or enable/disable an alert, you must
 first click on the pencil icon to edit the configuration. While there
