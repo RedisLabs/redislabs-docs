@@ -24,7 +24,7 @@ the two master shards are hosted on one node and the two slave shards are hosted
 
 For Redis on RAM databases without the OSS cluster API enabled, use the dense policy to optimize performance.
 
-![dense_placement](/images/rs/dense_placement_1.png)
+![dense_placement](/images/rs/dense_placement.png)
 
 *Figure: Three nodes with two master shards (red) and two slave shards (grey) with a dense placement policy*
 
