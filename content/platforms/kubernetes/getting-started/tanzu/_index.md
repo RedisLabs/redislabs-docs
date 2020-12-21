@@ -1,12 +1,12 @@
 ---
-Title: Getting Started with PKS (Pivotal Container Service)
-description:
+Title: Getting Started with VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS)
+description: This section provides the steps required to set up a Redis Enterprise Cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/k8s-pks/
 ---
-These are the steps required to set up a Redis Enterprise Cluster with Kubernetes Operator on PKS (Pivotal Container Service).
+These are the steps required to set up a Redis Enterprise Cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
 
 Prerequisites:
 
@@ -249,7 +249,7 @@ For production environments you must retain the Persistent Volume Claims (PVCs) 
         in the `spec:` section.
         - `nodes` - The number of nodes in the cluster, 3 by default (In order to evaluate cluster functionality, must be an uneven number of at least 3 or greater—[here’s why](https://redislabs.com/redis-enterprise/technology/highly-available-redis/))
 
-        <!-- - uiServiceType: service_type 
+        <!-- - uiServiceType: service_type
         Service type value can be either ClusterIP or LoadBalancer. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is ClusterIP.need to spin off to its own article, no need to provide too many options; rather, remove barriers to adoption--->
 
         - `username` - <your_email_address> - use an accessible email if evaluating alerting or use the default or any other properly formatted address. If not specified the default username is demo@redislabs.com

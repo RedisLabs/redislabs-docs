@@ -1,11 +1,12 @@
 ---
 Title: Redis Labs Kubernetes Architecture
-description: 
+description: This section provides an overview of the architecture and considerations for Redis Enterprise on Kubernetes.
 weight: 20
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-architecture-overview
          /rs/concepts/kubernetes-architecture/
+         /platforms/kubernetes/kubernetes-architecture/
 ---
 Redis Labs bases its Kubernetes architecture on several vital concepts.
 

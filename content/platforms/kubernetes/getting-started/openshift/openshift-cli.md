@@ -6,6 +6,7 @@ weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
+         /platforms/openshift/getting-started-cli/
 ---
 These are the steps required to set up a Redis Enterprise Software
 Cluster with OpenShift.

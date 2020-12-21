@@ -1,10 +1,11 @@
 ---
-Title: Upgrading a Redis Enterprise Cluster in Operator-based Architecture
-description:
+Title: Upgrading a Redis Enterprise Cluster on Kubernetes
+description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
 weight: 50
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/
+         /platforms/kubernetes/upgrading-kubernetes-with-operator/
 ---
 Redis Labs implements rolling updates for software upgrades in Kubernetes deployments.
 

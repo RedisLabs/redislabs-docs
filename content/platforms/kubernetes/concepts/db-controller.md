@@ -1,11 +1,11 @@
 ---
-Title: Managing Redis Enterprise Databases in Kubernetes
-description: The database controller provides the ability to create, manage,
+Title: Managing Redis Enterprise Databases on Kubernetes
+description: This section describes how the database controller provides the ability to create, manage,
   and use databases via a database custom resource.
-weight: 35
+weight: 100
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/concepts/kubernetes/k8s-operator-based-deployments
+aliases: /platforms/kubernetes/db-controller/
 ---
 A database is created with a custom resource just like a cluster.
 The database controller in the Redis Enterprise operator:
