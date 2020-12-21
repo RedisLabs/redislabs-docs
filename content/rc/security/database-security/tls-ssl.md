@@ -4,6 +4,7 @@ description:
 weight: 20
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/administration/security/securing-redis-cloud-connections
 ---
 
 Transport Layer Security (TLS), commonly called "SSL", ensures the privacy of data sent between applications and their Redis databases. TLS is available in Redis Cloud Pro and Redis Cloud Ultimate.
