@@ -4,6 +4,7 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/administration/security/data-access-control
 ---
 
 All Redis Cloud databases require either [password-based authentication](#password-based-authentication) or
