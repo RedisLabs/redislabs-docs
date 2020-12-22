@@ -15,7 +15,7 @@ echo "TASK_ID=$TASK_ID"
 echo "Step 2: wait for processing completion"
 
 STATUS=
-while [ "$STATUS" != 'processing-completed' ] || [ "$STATUS" != 'processing-error' ]
+while [ "$STATUS" != 'processing-completed' -a "$STATUS" != 'processing-error' ]
 do
     sleep 3 # seconds   
     STATUS=$(curl -s -X GET "https://$HOST/tasks/$TASK_ID" \
