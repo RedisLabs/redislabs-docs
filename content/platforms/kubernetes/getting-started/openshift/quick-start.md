@@ -5,7 +5,7 @@ description: A quick introduction to the steps necessary to get a Redis Enterpri
 weight: 5
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: /platforms/openshift/quick-start/
 ---
 The deployment of Redis Enterprise clusters is managed with the Redis Enterprise operator that you deploy in the namespace for your project.
 To create a database that your application
@@ -27,7 +27,7 @@ vastly simplifies the deployment of the operator.
 
 ## For OpenShift 3.x via the CLI
 
-To [create a database on an OpenShift 3.x cluster via the CLI]({{< relref "getting-started-cli.md" >}}) you need:
+To [create a database on an OpenShift 3.x cluster via the CLI]({{< relref "openshift-cli.md" >}}) you need:
 
 1. An [OpenShift 3.x cluster installed](https://docs.openshift.com/container-platform/3.11/welcome/index.html) with at least three nodes that each meet the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
@@ -35,11 +35,11 @@ To [create a database on an OpenShift 3.x cluster via the CLI]({{< relref "getti
 
 ## For OpenShift 4.x via the OperatorHub
 
-To [create a database on an OpenShift 4.x cluster via the OperatorHub]({{< relref "getting-started-operatorhub.md" >}}) you only need the [OpenShift 4.x cluster installed](https://docs.openshift.com/container-platform/4.3/welcome/index.html) with at least three nodes that each meet the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+To [create a database on an OpenShift 4.x cluster via the OperatorHub]({{< relref "openshift-operatorhub.md" >}}) you only need the [OpenShift 4.x cluster installed](https://docs.openshift.com/container-platform/4.3/welcome/index.html) with at least three nodes that each meet the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
 ## For OpenShift 4.x via the CLI
 
-To [create a database on an OpenShift 4.x cluster via the CLI]({{< relref "getting-started-cli.md" >}}) you need:
+To [create a database on an OpenShift 4.x cluster via the CLI]({{< relref "openshift-cli.md" >}}) you need:
 
 1. An [OpenShift 4.x cluster installed](https://docs.openshift.com/container-platform/4.3/welcome/index.html) with at least three nodes that each meet the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher

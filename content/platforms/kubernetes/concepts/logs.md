@@ -1,12 +1,13 @@
 ---
-Title: Redis Enterprise Kubernetes Logs
-description: 
+Title: Redis Enterprise Logs on Kubernetes
+description: This section provides information about how logs are stored and accessed.
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 # keywords: ["kubernetes"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-logs
          /rs/concepts/logs/
+         /platforms/kubernetes/kubernetes-logs/
 ---
 
 ## Logs

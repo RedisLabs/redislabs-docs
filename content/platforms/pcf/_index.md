@@ -1,6 +1,6 @@
 ---
-Title: Getting Started with Redis Enterprise Software for Pivotal Platform
-description: 
+Title: Redis Enterprise Software for Pivotal Platform
+description:
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]

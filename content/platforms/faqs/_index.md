@@ -11,7 +11,7 @@ Here are some frequently asked questions about Redis Enterprise on integration p
 
 {{< expand-control >}}
 {{% expand "What is an Operator?" %}}
-An Operator is a [Kubernetes custom controller]( https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes/kubernetes-with-operator.md" >}}).
+An Operator is a [Kubernetes custom controller]( https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes/concepts/operator.md" >}}).
 {{% /expand %}}
 
 {{% expand "Does Redis Enterprise Operator support multiple clusters per namespace?" %}}
@@ -69,7 +69,7 @@ Connect to the UI by pointing your browser to `https://localhost:8443`
 {{% expand "How should I size Redis Enterprise Cluster nodes?" %}}
 For nodes hosting the Redis Enterprise Cluster statefulSet pods, please follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
-For additional information please also refer to [Kubernetes Operator Deployment – Persistent Volumes]({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}).
+For additional information please also refer to [Kubernetes Operator Deployment – Persistent Volumes]({{< relref "/platforms/kubernetes/concepts/persistent-volumes.md" >}}).
 {{% /expand %}}
 
 {{% expand "How to retrieve the username/password for a Redis Enterprise Cluster?" %}}
@@ -229,7 +229,7 @@ Also, some of the RLEC services must be able to increase default resource limits
 
 While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
 
-The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/openshift/getting-started-cli#step-3-prepare-your-yaml-files" >}}).
+The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/kubernetes/getting-started/openshift/openshift-cli#step-3-prepare-your-yaml-files" >}}).
 
 RLEC PSP definitions are controlled with role-based access control (RBAC).
 A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account

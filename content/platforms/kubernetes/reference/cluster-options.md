@@ -1,10 +1,10 @@
 ---
 Title: Options for Redis Enterprise Clusters
-description: A primer to configuration options for Redis Enterprise cluster Custom Resource Definitions.
+description: A primer for the configuration options for Redis Enterprise cluster Custom Resource Definitions.
 weight: 32
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: /platforms/kubernetes/cluster-options/
 ---
 A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD).
 The default format is a YAML definition such as:

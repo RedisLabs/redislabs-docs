@@ -6,7 +6,7 @@ description: OpenShift 4.x provides the OperatorHub where you can install the
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: /platforms/openshift/getting-started-operatorhub/
 ---
 The OperatorHub is a feature of OpenShift 4.x that enables browsing a catalog
 of open-source and vendor-provided operators.

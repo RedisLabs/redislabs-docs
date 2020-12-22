@@ -1,13 +1,14 @@
 ---
-Title: Getting Started with Redis Enterprise Software using Kubernetes
+Title: Redis Enterprise Software on Kubernetes
 description:
-weight: 90
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
-Kubernetes provides simpler orchestration with containers and has been widely adopted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
+Kubernetes provides enterprise orchestration of containers and has been widely adopted. The Redis Enterprise Operator for Kubernetes provides a
+simple way to get a Redis Enterprise cluster on Kubernetes as well as enables more complex deployment scenarios.
 
 {{< allchildren style="h2" description="true" />}}
 
