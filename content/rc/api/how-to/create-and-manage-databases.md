@@ -27,9 +27,9 @@ When the cloud account ID is received, the processing phase is complete and the 
 - Install `jq` on your machine: `sudo apt install jq`
 - Define the expected variables needed to use the API:
 
-    ```shell
+```shell
 {{% embed-code "rv/api/06-set-variables-with-subscription-id.sh" %}}
-    ```
+```
 
 ### Database JSON body
 
