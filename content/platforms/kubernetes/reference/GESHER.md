@@ -1,11 +1,16 @@
-# Admission Conrol with Gesher Installation for Redis Enterprise Operator
-
-## Gesher Background
+---
+Title: Admission Control with Gesher Installation for Redis Enterprise Operator
+description:
+weight: 50
+alwaysopen: false
+categories: ["Platforms"]
+aliases:
+---
 
 Gesher is an operator that enables Kubernetes administrator to delegate the ability to setup webhook validating admisison controllers to users for running within their own namespace.
 
 Gesher is configured by two custom resources.
- 
+
 1) A cluster-scoped **NamespacedValidatingType** that defines what Kubernetes resources and operations Gesher is allowed to Proxy
 2) A namespace-scoped **NamespacedValidatingRule** that is a namespaced equivalent to Kubernetes **ValidatingWebhookConfiguration** but only effects resources within its same namespace.
 
@@ -86,7 +91,7 @@ This will deploy the admission proxy, and via an included **NamespacedValidating
 
 8. Deployment for the Gesher operator
 
-**Note:** if one is using openshift, one should replace `operator.yaml` with `operator.openshift.yaml`
+    **Note:** if one is using openshift, one should replace `operator.yaml` with `operator.openshift.yaml`
 
     ```shell script
     kubectl apply -f gesher/operator.yaml
