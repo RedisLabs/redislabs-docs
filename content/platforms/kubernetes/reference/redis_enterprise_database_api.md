@@ -1,33 +1,14 @@
-# Redis Enterprise Database API
+---
+Title: Redis Enterprise Database API
+description:
+weight: 80
+alwaysopen: false
+categories: ["Platforms"]
+aliases:
+---
+
 This document describes the parameters for the Redis Enterprise Database custom resource
 > Note this document is auto-generated from code comments. To contribute a change please change the code comments.
-## Table of Contents
-* [Objects](#objects)
-  * [AzureBlobStorage](#azureblobstorage)
-  * [BackupSpec](#backupspec)
-  * [BdbAlertSettingsWithThreshold](#bdbalertsettingswiththreshold)
-  * [DbAlertsSettings](#dbalertssettings)
-  * [DbModule](#dbmodule)
-  * [FtpStorage](#ftpstorage)
-  * [GoogleStorage](#googlestorage)
-  * [InternalEndpoint](#internalendpoint)
-  * [MountPointStorage](#mountpointstorage)
-  * [RedisEnterpriseConnection](#redisenterpriseconnection)
-  * [RedisEnterpriseDatabase](#redisenterprisedatabase)
-  * [RedisEnterpriseDatabaseList](#redisenterprisedatabaselist)
-  * [RedisEnterpriseDatabaseSpec](#redisenterprisedatabasespec)
-  * [RedisEnterpriseDatabaseStatus](#redisenterprisedatabasestatus)
-  * [ReplicaSource](#replicasource)
-  * [ReplicaSourceStatus](#replicasourcestatus)
-  * [RolePermission](#rolepermission)
-  * [S3Storage](#s3storage)
-  * [SftpStorage](#sftpstorage)
-  * [SwiftStorage](#swiftstorage)
-* [Enums](#enums)
-  * [DatabasePersistence](#databasepersistence)
-  * [DatabaseStatus](#databasestatus)
-  * [RepliceSourceType](#replicesourcetype)
-  * [RolePermissionType](#rolepermissiontype)
 ## Objects
 
 ### AzureBlobStorage
@@ -38,7 +19,6 @@ This document describes the parameters for the Redis Enterprise Database custom 
 | absSecretName | The name of the K8s secret that holds ABS credentials. The secret must contain the keys \"AccountName\" and \"AccountKey\", and these must hold the corresponding credentials | string |  | true |
 | container | Azure Blob Storage container name. | string |  | true |
 | subdir | Optional. Azure Blob Storage subdir under container. | string | empty | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### BackupSpec
 The various backup storage options are validated to be mutually exclusive, although for technical reasons, the relevant error is not very clear and indicates a conflict in the specified storage type.
@@ -53,7 +33,6 @@ The various backup storage options are validated to be mutually exclusive, altho
 | sftp |  | *[SftpStorage](#sftpstorage) |  | false |
 | gcs |  | *[GoogleStorage](#googlestorage) |  | false |
 | mount |  | *[MountPointStorage](#mountpointstorage) |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### BdbAlertSettingsWithThreshold
 Threshold for database alert
@@ -62,7 +41,6 @@ Threshold for database alert
 | ----- | ----------- | ------ | -------- | -------- |
 | enabled | Alert enabled or disabled | bool |  | true |
 | threshold | Threshold for alert going on/off | string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### DbAlertsSettings
 DbAlertsSettings An API object that represents the database alerts configuration.
@@ -83,7 +61,6 @@ DbAlertsSettings An API object that represents the database alerts configuration
 | bdb_replica_src_syncer_connection_error | Replica-of source - sync has connection error while trying to connect replica source | *[BdbAlertSettingsWithThreshold](#bdbalertsettingswiththreshold) |  | false |
 | bdb_shard_num_ram_values | Number of values kept in a shard's RAM is lower than [values] | *[BdbAlertSettingsWithThreshold](#bdbalertsettingswiththreshold) |  | false |
 | bdb_size | Dataset size has reached the threshold value [% of the memory limit] | *[BdbAlertSettingsWithThreshold](#bdbalertsettingswiththreshold) |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### DbModule
 Redis Enterprise Module: https://redislabs.com/redis-enterprise/modules/
@@ -93,7 +70,6 @@ Redis Enterprise Module: https://redislabs.com/redis-enterprise/modules/
 | name | The module's name e.g \"ft\" for redissearch | string |  | true |
 | version | Module's semantic version e.g \"1.6.12\" | string |  | true |
 | config | Module command line arguments e.g. VKEY_MAX_ENTITY_COUNT 30 | string |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### FtpStorage
 
@@ -101,7 +77,6 @@ Redis Enterprise Module: https://redislabs.com/redis-enterprise/modules/
 | Field | Description | Scheme | Default Value | Required |
 | ----- | ----------- | ------ | -------- | -------- |
 | url | a URI of the \"ftps://[USER[:PASSWORD]@]HOST[:PORT]/PATH[/]\" format | string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### GoogleStorage
 GoogleStorage
@@ -111,7 +86,6 @@ GoogleStorage
 | gcsSecretName | The name of the K8s secret that holds the Google Cloud Storage credentials. The secret must contain the keys \"CLIENT_ID\", \"PRIVATE_KEY\", \"PRIVATE_KEY_ID\", \"CLIENT_EMAIL\" and these must hold the corresponding credentials. The keys should correspond to the values in the key JSON. | string |  | true |
 | bucketName | Google Storage bucket name. | string |  | true |
 | subdir | Optional. Google Storage subdir under bucket. | string | empty | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### InternalEndpoint
 
@@ -120,7 +94,6 @@ GoogleStorage
 | ----- | ----------- | ------ | -------- | -------- |
 | host | Hostname assigned to the database | string |  | false |
 | port | Database port name | int |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### MountPointStorage
 MountPointStorage
@@ -128,7 +101,6 @@ MountPointStorage
 | Field | Description | Scheme | Default Value | Required |
 | ----- | ----------- | ------ | -------- | -------- |
 | path | Path to the local mount point. You must create the mount point on all nodes, and the redislabs:redislabs user must have read and write permissions on the local mount point. | string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseConnection
 Connection between a database, and Its Redis Enterprise Cluster
@@ -136,7 +108,6 @@ Connection between a database, and Its Redis Enterprise Cluster
 | Field | Description | Scheme | Default Value | Required |
 | ----- | ----------- | ------ | -------- | -------- |
 | name | The name of the Redis Enterprise Cluster where the database should be stored. | string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseDatabase
 RedisEnterpriseDatabase is the Schema for the redisenterprisedatabases API
@@ -146,7 +117,6 @@ RedisEnterpriseDatabase is the Schema for the redisenterprisedatabases API
 | metadata |  | [metav1.ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#objectmeta-v1-meta) |  | false |
 | spec |  | [RedisEnterpriseDatabaseSpec](#redisenterprisedatabasespec) |  | false |
 | status |  | [RedisEnterpriseDatabaseStatus](#redisenterprisedatabasestatus) |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseDatabaseList
 RedisEnterpriseDatabaseList contains a list of RedisEnterpriseDatabase
@@ -155,7 +125,6 @@ RedisEnterpriseDatabaseList contains a list of RedisEnterpriseDatabase
 | ----- | ----------- | ------ | -------- | -------- |
 | metadata |  | [metav1.ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#listmeta-v1-meta) |  | false |
 | items |  | [][RedisEnterpriseDatabase](#redisenterprisedatabase) |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseDatabaseSpec
 RedisEnterpriseDatabaseSpec defines the desired state of RedisEnterpriseDatabase
@@ -177,7 +146,6 @@ RedisEnterpriseDatabaseSpec defines the desired state of RedisEnterpriseDatabase
 | backup | Target for automatic database backups. | *[BackupSpec](#backupspec) |  | false |
 | modulesList | List of modules associated with database | *[][DbModule](#dbmodule) |  | false |
 | rolesPermissions | List of Redis Enteprise ACL and Role bindings to apply | [][RolePermission](#rolepermission) |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseDatabaseStatus
 RedisEnterpriseDatabaseStatus defines the observed state of RedisEnterpriseDatabase
@@ -197,7 +165,6 @@ RedisEnterpriseDatabaseStatus defines the observed state of RedisEnterpriseDatab
 | internalEndpoints | Endpoints listed internally by the Redis Enterprise Cluster. Can be used to correlate a ReplicaSourceStatus entry. | [][InternalEndpoint](#internalendpoint) |  | false |
 | redisEnterpriseCluster | The Redis Enterprise Cluster Object this Resource is associated with | string |  | false |
 | observedGeneration | The generation (built in update counter of K8s) of the REDB resource that was fully acted upon, meaning that all changes were handled and sent as an API call to the Redis Enterprise Cluster (REC). This field value should equal the current generation when the resource changes were handled. Note: the lastActionStatus field tracks actions handled asynchronously by the Redis Enterprise Cluster. | int64 |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### ReplicaSource
 
@@ -210,7 +177,6 @@ RedisEnterpriseDatabaseStatus defines the observed state of RedisEnterpriseDatab
 | clientKeySecret | Secret that defines what client key to use.  The secret needs 2 keys in its map, \"cert\" that is the PEM encoded certificate and \"key\" that is the PEM encoded private key | *string |  | false |
 | serverCertSecret | Secret that defines the Server's certificate.  The secret needs 1 key in its map, \"cert\" that is the PEM encoded certificate | *string |  | false |
 | tlsSniName | TLS SNI Name to use | *string |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### ReplicaSourceStatus
 
@@ -224,7 +190,6 @@ RedisEnterpriseDatabaseStatus defines the observed state of RedisEnterpriseDatab
 | rdbTransferred | Number of bytes transferred from the source’s RDB during the syncing phase. | int |  | false |
 | status | Sync status of this source | string |  | false |
 | endpointHost | The internal host name of the replica source database. Can be used as an identifier. See the internalEndpoints list on the REDB status. | string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### RolePermission
 Redis Enterprise Role and ACL Binding
@@ -234,7 +199,6 @@ Redis Enterprise Role and ACL Binding
 | type | Type of Redis Enterprise Database Role Permission | [RolePermissionType](#rolepermissiontype) |  | true |
 | role | Role Name of RolePermissionType | string |  | true |
 | acl | Acl Name of RolePermissionType | string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### S3Storage
 
@@ -244,7 +208,6 @@ Redis Enterprise Role and ACL Binding
 | awsSecretName | The name of the K8s secret that holds the AWS credentials. The secret must contain the keys \"AWS_ACCESS_KEY_ID\" and \"AWS_SECRET_ACCESS_KEY\", and these must hold the corresponding credentials. | string |  | true |
 | bucketName | Amazon S3 bucket name. | string |  | true |
 | subdir | Optional. Amazon S3 subdir under bucket. | string | empty | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### SftpStorage
 
@@ -253,7 +216,6 @@ Redis Enterprise Role and ACL Binding
 | ----- | ----------- | ------ | -------- | -------- |
 | sftpSecretName | The name of the K8s secret that holds SFTP credentials. The secret must contain the \"Key\" key, which is the SSH private key for connecting to the sftp server. | string |  | true |
 | sftp_url | SFTP url | string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### SwiftStorage
 
@@ -264,7 +226,6 @@ Redis Enterprise Role and ACL Binding
 | auth_url | Swift service authentication URL. | string |  | true |
 | container | Swift object store container for storing the backup files. | string |  | true |
 | prefix | Optional. Prefix (path) of backup files in the swift container. | string | empty | false |
-[Back to Table of Contents](#table-of-contents)
 ## Enums
 
 ### DatabasePersistence
@@ -278,7 +239,6 @@ Database persistence policy. see https://docs.redislabs.com/latest/rs/concepts/d
 | "snapshotEvery1Hour" | A snapshot of the database is created every hour |
 | "snapshotEvery6Hour" | A snapshot of the database is created every 6 hours. |
 | "snapshotEvery12Hour" | A snapshot of the database is created every 12 hours. |
-[Back to Table of Contents](#table-of-contents)
 
 ### DatabaseStatus
 State of the Redis Enterprise Database
@@ -293,7 +253,6 @@ State of the Redis Enterprise Database
 | "creation-failed" | Database creation has failed |
 | "recovery" | Database creation has failed |
 | "" | Database status unknown |
-[Back to Table of Contents](#table-of-contents)
 
 ### RepliceSourceType
 
@@ -301,11 +260,9 @@ State of the Redis Enterprise Database
 | ----- | ----------- |
 | "SECRET" | Information on DB to Replicate from stored in a secret |
 | "REDB" | Replicate from a DB created via the RedisEnterpriseDatabase Controller |
-[Back to Table of Contents](#table-of-contents)
 
 ### RolePermissionType
 
 | Value | Description |
 | ----- | ----------- |
 | "redis-enterprise" | Use Roles and ACLs defined within Redis Enterprise directly |
-[Back to Table of Contents](#table-of-contents)
