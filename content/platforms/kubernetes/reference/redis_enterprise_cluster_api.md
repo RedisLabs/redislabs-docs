@@ -1,24 +1,16 @@
-# Redis Enterprise Cluster API
-This document describes the parameters for the Redis Enterprise Cluster custom resource
+---
+Title: Redis Enterprise Cluster API
+description: 
+weight: 70
+alwaysopen: false
+categories: ["Platforms"]
+aliases:
+---
+
+This document describes the parameters for the Redis Enterprise Cluster custom resource.
+
 > Note this document is auto-generated from code comments. To contribute a change please change the code comments.
-## Table of Contents
-* [Objects](#objects)
-  * [ActiveActive](#activeactive)
-  * [ImageSpec](#imagespec)
-  * [Module](#module)
-  * [PersistentConfigurationSpec](#persistentconfigurationspec)
-  * [RedisEnterpriseCluster](#redisenterprisecluster)
-  * [RedisEnterpriseClusterList](#redisenterpriseclusterlist)
-  * [RedisEnterpriseClusterSpec](#redisenterpriseclusterspec)
-  * [RedisEnterpriseClusterStatus](#redisenterpriseclusterstatus)
-  * [ServicesRiggerConfigurationSpec](#servicesriggerconfigurationspec)
-  * [SlaveHA](#slaveha)
-  * [UpgradeSpec](#upgradespec)
-* [Enums](#enums)
-  * [ActiveActiveMethod](#activeactivemethod)
-  * [ClusterEventReason](#clustereventreason)
-  * [ClusterState](#clusterstate)
-  * [SpecStatusName](#specstatusname)
+
 ## Objects
 
 ### ActiveActive
@@ -30,7 +22,6 @@ This document describes the parameters for the Redis Enterprise Cluster custom r
 | apiIngressUrl | RS API URL | string |  | true |
 | dbIngressSuffix | DB ENDPOINT SUFFIX - will be used to set the db host ingress <db name><db ingress suffix>. Creates a host name so it should be unique if more than one db is created on the cluster with the same name | string |  | true |
 | ingressAnnotations | Used for ingress controllers such as ha-proxy or nginx in GKE | map[string]string |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### ImageSpec
 Image specification
@@ -40,7 +31,6 @@ Image specification
 | repository | Repository | string |  | true |
 | versionTag |  | string |  | true |
 | imagePullPolicy |  | v1.PullPolicy |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### Module
 
@@ -50,7 +40,6 @@ Image specification
 | name |  | string |  | true |
 | displayName |  | string |  | true |
 | versions |  | []string |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### PersistentConfigurationSpec
 Specification for Redis Enterprise Cluster persistence
@@ -60,7 +49,6 @@ Specification for Redis Enterprise Cluster persistence
 | enabled | Whether to add persistent volume to Redis Enterprise pods | *bool | True | true |
 | storageClassName | Storage class for persistent volume in Redis Enterprise pods Leave empty to use the default | string |  | true |
 | volumeSize |  | resource.Quantity |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseCluster
 RedisEnterpriseCluster is the Schema for the redisenterpriseclusters API
@@ -70,7 +58,6 @@ RedisEnterpriseCluster is the Schema for the redisenterpriseclusters API
 | metadata |  | [metav1.ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#objectmeta-v1-meta) |  | false |
 | spec |  | [RedisEnterpriseClusterSpec](#redisenterpriseclusterspec) |  | false |
 | status |  | [RedisEnterpriseClusterStatus](#redisenterpriseclusterstatus) |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseClusterList
 RedisEnterpriseClusterList contains a list of RedisEnterpriseCluster
@@ -79,7 +66,6 @@ RedisEnterpriseClusterList contains a list of RedisEnterpriseCluster
 | ----- | ----------- | ------ | -------- | -------- |
 | metadata |  | [metav1.ListMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#listmeta-v1-meta) |  | false |
 | items |  | [][RedisEnterpriseCluster](#redisenterprisecluster) |  | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseClusterSpec
 RedisEnterpriseClusterSpec defines the desired state of RedisEnterpriseCluster
@@ -119,7 +105,6 @@ RedisEnterpriseClusterSpec defines the desired state of RedisEnterpriseCluster
 | podAnnotations | pod annotations | map[string]string |  | false |
 | podTolerations | Tolerations that are added to all managed pods. for more information: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ | [][v1.Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#toleration-v1-core) | empty | false |
 | slaveHA | Slave high availability mechanism configuration. | *[SlaveHA](#slaveha) |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### RedisEnterpriseClusterStatus
 RedisEnterpriseClusterStatus defines the observed state of RedisEnterpriseCluster
@@ -129,7 +114,6 @@ RedisEnterpriseClusterStatus defines the observed state of RedisEnterpriseCluste
 | state | State of Redis Enterprise Cluster | [ClusterState](#clusterstate) |  | true |
 | specStatus | Validity of Redis Enterprise Cluster specification | [SpecStatusName](#specstatusname) |  | true |
 | modules | Modules Available in Cluster | [][Module](#module) |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### ServicesRiggerConfigurationSpec
 Specification for service rigger
@@ -139,7 +123,6 @@ Specification for service rigger
 | databaseServiceType | Service types for access to databases. should be a comma separated list. The possible values are cluster_ip, headless and load_balancer. | string | cluster_ip,headless | true |
 | serviceNaming |  | string |  | true |
 | extraEnvVars |  | []v1.EnvVar |  | false |
-[Back to Table of Contents](#table-of-contents)
 
 ### SlaveHA
 
@@ -147,7 +130,6 @@ Specification for service rigger
 | Field | Description | Scheme | Default Value | Required |
 | ----- | ----------- | ------ | -------- | -------- |
 | slaveHAGracePeriod | Time in seconds between when a node fails, and when slave high availability mechanism starts relocating shards. If set to 0, will not affect cluster configuration. | *uint32 | 1800 | true |
-[Back to Table of Contents](#table-of-contents)
 
 ### UpgradeSpec
 Specification for upgrades of Redis Enterprise
@@ -155,7 +137,6 @@ Specification for upgrades of Redis Enterprise
 | Field | Description | Scheme | Default Value | Required |
 | ----- | ----------- | ------ | -------- | -------- |
 | autoUpgradeRedisEnterprise | Whether to upgrade Redis Enterprise automatically when operator is upgraded | bool |  | true |
-[Back to Table of Contents](#table-of-contents)
 ## Enums
 
 ### ActiveActiveMethod
@@ -165,7 +146,6 @@ Method of ingress from another cluster in Active-Active configuration
 | ----- | ----------- |
 | "openShiftRoute" | Routes are only usable in OpenShift |
 | "ingress" | See https://kubernetes.io/docs/concepts/services-networking/ingress/ |
-[Back to Table of Contents](#table-of-contents)
 
 ### ClusterEventReason
 Reason for cluster event
@@ -174,7 +154,6 @@ Reason for cluster event
 | ----- | ----------- |
 | "InvalidConfiguration" | Invalid Configuration |
 | "StatusChange" | Status Change |
-[Back to Table of Contents](#table-of-contents)
 
 ### ClusterState
 State of the Redis Enterprise Cluster
@@ -191,7 +170,6 @@ State of the Redis Enterprise Cluster
 | "Invalid" | ClusterConfigurationInvalid means an invalid spec was applied |
 | "InvalidUpgrade" | ClusterInvalidUpgrade means an upgrade is not possible at this time |
 | "Upgrade" | ClusterUpgrade |
-[Back to Table of Contents](#table-of-contents)
 
 ### SpecStatusName
 Whether the REC specification is valid (custom resource)
@@ -200,4 +178,3 @@ Whether the REC specification is valid (custom resource)
 | ----- | ----------- |
 | "Invalid" | Specification status invalid |
 | "Valid" | Specification status valid |
-[Back to Table of Contents](#table-of-contents)
