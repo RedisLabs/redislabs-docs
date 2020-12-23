@@ -1,6 +1,11 @@
-
-
-# REDB Admission Controller
+---
+Title: Redis Enterprise Operator Admission Control
+description:
+weight: 60
+alwaysopen: false
+categories: ["Platforms"]
+aliases:
+---
 
 Redis Labs' Redis Enterprise Operator provides an installable admission control that can be used to verify RedisEnterpriseDatabase resources on creation and modification for correctness.  This prevents end users from creating syntatically valid but functionally invalid database configurations.  The admission control leverages Kubernetes' built in [Dynamic Admission Control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/).
 
