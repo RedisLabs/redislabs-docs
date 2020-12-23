@@ -12,7 +12,7 @@ This is a maintenance release for version 2.0.
 Details:
 
 - Minor features:
-    - [#1696](https://github.com/RediSearch/RediSearch/pull/1696) Add [`MAXAGGREGATERESULTS`](https://oss.redislabs.com/redisearch/Configuring/#maxaggregateresults) module configuration for [`FT.AGGREGATE`](https://oss.redislabs.com/redisearch/Commands/#ftaggregate). Similar to MAXSE`ARCHRESULTS for `FT.SEARCH`, it limits the maximum number of results returned.
+    - [#1696](https://github.com/RediSearch/RediSearch/pull/1696) Add [`MAXAGGREGATERESULTS`](https://oss.redislabs.com/redisearch/Configuring/#maxaggregateresults) module configuration for [`FT.AGGREGATE`](https://oss.redislabs.com/redisearch/Commands/#ftaggregate). Similar to `MAXSEARCHRESULTS` for `FT.SEARCH`, it limits the maximum number of results returned.
 
 ## RediSearch 2.0.4 (December, 2020)
 
