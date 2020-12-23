@@ -171,7 +171,7 @@ kubectl port-forward deployment/redisinsight 8001
 
 Open your browser and point to <http://localhost:8001>
 
-## Helm Chart
+## Helm Chart (Experimental)
 
 You can download the RedisInsight helm chart from **[here](/pkgs/redisinsight-chart-0.1.0.tgz)**.
 
