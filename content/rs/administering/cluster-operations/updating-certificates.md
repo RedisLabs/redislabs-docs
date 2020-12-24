@@ -172,6 +172,7 @@ To set the TLS ciphers:
 rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
 ```
 
-When you modify your cipher suites, make sure:
-- The configured TLS version matchs the required cipher suites
-- The certificates in use are signed appropiatly to support the required cipher suites
+When you modify your cipher suites, make sure that:
+
+- The configured TLS version matches the required cipher suites
+- The certificates in use are properly signed to support the required cipher suites
