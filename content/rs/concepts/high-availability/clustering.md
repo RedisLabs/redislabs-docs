@@ -31,7 +31,7 @@ In clustering, these terms are commonly used:
 - Slot or Hash Slot - The result of the hash calculation.
 - Shard - Redis process that is part of the Redis clustered database.
 
-## When to use clustering
+## When to use clustering (sharding)
 
 Clustering is an efficient way of scaling Redis that should be used when:
 
