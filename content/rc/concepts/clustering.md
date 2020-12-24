@@ -14,7 +14,7 @@ Redis Cloud uses our Redis Enterprise technology to scale Redis databases for yo
 For example:
 
 - The dataset is big enough that it would benefit from using the RAM resources of more than one server.
-    We recommend sharding a dataset once it reaches the size of 25 GB (50 GB for RoF).
+    We recommend enabling clustering for the database when the data reaches the size of 25 GB (50 GB for RoF) to create multiple shards.
 - The operations performed against the database are CPU intensive enough to degrade performance.
     With clustering, you can distribute operational load across the same server or multiple servers.
 
@@ -74,10 +74,10 @@ are supported with the following limitations:
     and pipelining are supported with Redis Cloud cluster
     like if it were a non-cluster DB.
 
-## Changing the sharding policy
+## Changing the hashing policy
 
 The clustering configuration of a Redis Cloud instance can be
-changed. However, sharding policy changes trigger the deletion
+changed. However, hashing policy changes trigger the deletion
 (i.e. FLUSHDB) of the data before they can be applied. These changes
 are:
 
