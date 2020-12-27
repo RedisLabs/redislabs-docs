@@ -1,0 +1,11 @@
+name: prouct-labels-for-prs
+on:
+  pull_request-target:
+    types: [opened]
+jobs:
+  label-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@main
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"

@@ -1,0 +1,5 @@
+p_Software: rs/**/*
+p_Cloud: rc/**/*
+p_Platforms: platforms/**/*
+p_Modules: modules/**/*
+p_Insight: ri/**/*
