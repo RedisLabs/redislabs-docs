@@ -16,8 +16,7 @@ This release introduces support for run-time configuration of the maximum number
 Details:
 
 - Features
-    - #[1480](https://github.com/RedisGraph/RedisGraph/pull/1480) Introduce GRAPH.CONFIG SET/GET, allow result-set size to be configured at runtime.
-
+    - #[1480](https://github.com/RedisGraph/RedisGraph/pull/1480) Introduce GRAPH.CONFIG SET/GET to allow result-set size to be configured at runtime.
 
 ## RedisGraph 2.2.10 (December 2020)
 
@@ -30,7 +29,7 @@ This release improves overall stability and fixes an issue with backwards compat
 Details:
 
 - Bugfixes:
-    - #[1475](https://github.com/RedisGraph/RedisGraph/pull/1475) Fix erroneous property update when using `SET` with an unindexed property followed by an indexed own.
+    - #[1475](https://github.com/RedisGraph/RedisGraph/pull/1475) Fix erroneous property update when using `SET` with an unindexed property followed by an indexed one.
     - #[1473](https://github.com/RedisGraph/RedisGraph/pull/1473) Fix backwards compatibility issue in rebuilding and dropping exact-match and full-text indexes.
 
 ## RedisGraph 2.2.9 (December 2020)
