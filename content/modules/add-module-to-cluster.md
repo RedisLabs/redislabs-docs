@@ -27,25 +27,56 @@ To get the latest features and fixes for a module, you must upgrade the module i
     go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
 - Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
-## Adding a module to Redis Enterprise Software cluster
+## Adding a module to a Redis Enterprise Software cluster
 
-To deploy an upgraded package:
+You can add a module to your cluster using:
+
+- The REST API - For all modules, but modules with dependencies must use the `/v2/modules` endpoint.
+- The admin console - For modules without dependencies, such as RedisGraph.
+
+To add a module package to the cluster using the REST API:
+
+1. Copy the module package to a node in the cluster, for example:
+
+    ```sh
+    curl https://redismodules.s3.amazonaws.com/redisgears/redisgears.linux-bionic-x64.1.0.3.zip -o /tmp/redisgears.linux-bionic-x64.1.0.3.zip
+    ```
+
+1. POST the modules to the `/v2/modules` endpoint, for example:
+
+    ```sh
+    curl -k -u "admin@redislabs.com:<password>" -F "module=@/tmp/redisgears.linux-bionic-x64.1.0.3.zip" https://localhost:9443/v2/modules
+    ```
+
+    The response includes an action ID that you can use with the `/v1/actions` endpoint to see the progress of the action, such as:
+
+    ```sh
+    $ curl -k -u "admin@redislabs.com:<password>" https://localhost:9443/v1/actions/d1b6d8c2-7a95-4a4d-8ce8-6e6b6f12308f
+    {"action_uid":"d1b6d8c2-7a95-4a4d-8ce8-6e6b6f12308f","module_uid":"9f52147d8036b08903ca3a8bca87da00","name":"module_installation","progress":"100","status":"completed","task_id":"d1b6d8c2-7a95-4a4d-8ce8-6e6b6f12308f"}
+    ```
+
+    {{< note >}}
+You can also use the `/v1/modules` endpoint, but modules with dependencies are blocked from using that endpoint.
+    {{< /note >}}
+
+1. When the action is complete, log into the cluster admin console and go to `settings` > `redis modules` to see the module in the list.
+
+To add a module package to the cluster using the admin console:
 
 1. In the Redis Enterprise web UI, go to the: **settings**
 1. In **redis modules**, click **Add Module**.
 
     ![upgrade_module-1](/images/rs/upgrade_module-1.png?width=1600&height=956)
 
-1. Browse to the packaged module and upload
-    it.
+1. Browse to the packaged module and upload it.
 1. Note the version number of the new module version.
-1. In **databases**, select the configuration section.
-
-    The database configuration shows that a new version of the module is available for the database.
-
-    ![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
 ## Upgrading the module for the database
+
+After you add and updated module to the cluster, go to the configuration of the databases that use the module.
+The database configuration shows that a new version of the module is available for the database.
+
+![update_available-1](/images/rs/update_available-1.png?width=1346&height=1600)
 
 {{< note >}}
 After you upgrade the module for a database, the database shards are restarted.
