@@ -34,6 +34,18 @@ You can add a module to your cluster using:
 - The REST API - For all modules, but modules with dependencies must use the `/v2/modules` endpoint.
 - The admin console - For modules without dependencies, such as RedisGraph.
 
+### Adding a module using the REST API
+
+Modules that have dependencies can only be added from the REST API.
+The `module.json` file in the module package lists the dependencies for the module and the URL to download each dependency.
+When you add the module, the master node downloads and installs the dependencies.
+Then the other nodes in the cluster copy the dependencies from the master node.
+
+{{< note >}}
+- If your master node does not have connectivity to the internet, copy the dependencies to a local server and set the URLs in the `module.json` file to point to the local location.
+- If you want to remove a module with dependencies from a cluster, you have to use a DELETE action with the `/v2/modules` endpoint so that the dependencies are delete also.
+{{< /note >}}
+
 To add a module package to the cluster using the REST API:
 
 1. Copy the module package to a node in the cluster, for example:
@@ -60,6 +72,8 @@ You can also use the `/v1/modules` endpoint, but modules with dependencies are b
     {{< /note >}}
 
 1. When the action is complete, log into the cluster admin console and go to `settings` > `redis modules` to see the module in the list.
+
+### Adding a module using the admin console
 
 To add a module package to the cluster using the admin console:
 
