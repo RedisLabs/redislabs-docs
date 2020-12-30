@@ -117,8 +117,13 @@ Where:
 - *storage_account_access_key:* the primary access key to the
     storage account
 - *storage_account_name:* the storage account name
-- *container_name:* the name of the container, if needed.
+- *container_name:* the name of the container
 - *path*: the backups path, if needed.
+
+For example:
+URL: https://my.blob.core.windows.net/container
+Key: mysecretkey
+`abs://:mysecretkey@my/container`
 
 ## Backing up to an FTP Server
 
