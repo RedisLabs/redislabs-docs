@@ -43,7 +43,7 @@ Then the other nodes in the cluster copy the dependencies from the master node.
 
 {{< note >}}
 - If your master node does not have connectivity to the internet, copy the dependencies to a local server and set the URLs in the `module.json` file to point to the local location.
-- If you want to remove a module with dependencies from a cluster, you have to use a DELETE action with the `/v2/modules` endpoint so that the dependencies are delete also.
+- To remove a module with dependencies from a cluster, you must use a DELETE action with the `/v2/modules` endpoint.
 {{< /note >}}
 
 To add a module package to the cluster using the REST API:
