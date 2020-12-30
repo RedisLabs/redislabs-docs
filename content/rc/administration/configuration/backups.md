@@ -86,22 +86,26 @@ To use an ABS container for storing your resources' backups, follow
 these steps in your [Microsoft Azure Management
 Portal](https://manage.windowsazure.com/):
 
-1. Access your storage by clicking the left-hand **STORAGE** icon.
-1. Select the storage account:
-    1. To create a new storage account:
-        1. Click the **NEW** button at the lower-left corner of the
-            page.
-        1. Verify that you've selected **DATA
-            SERVICES->STORAGE->QUICK CREATE** from the menu.
-        1. Enter the **URL** for your new storage account.
-        1. Select a **LOCATION/AFFINITY GROUP** for the storage
-            account.
-        1. Choose a **REPLICATION** mode for the account.
-        1. Click the **CREATE STORAGE ACCOUNT** button.
-        1. Continue to step 2.2.
-    1. To use an existing storage account, select it by clicking on it.
-1. Click the **MANAGE ACCESS KEYS** button at the bottom of the page.
-1. Copy your storage account's **PRIMARY ACCESS KEY**
+Create Storage account:
+1. Click on "Storage Accounts" in Azure Console
+2. Click on "+ Add" on the top left corner of the screen
+3. Under "Basics" > "Project details" select the desired "Subscription" and "Resource Group"
+5. Under "Basics" > "Instance details" update the "Storage account name", "Location", "Performance", "Account kind" and "Replication"
+6. Click on "Review + Create"
+7. Click on "Create" and wait for the creation process to complete
+
+Get storage account key:
+1. Click on "Storage Accounts" in Azure Console
+2. Select the desired Storage Account
+3. Click on "Access Keys" on the left panel
+4. Click on "Show Keys" and copy the desired key
+
+Create Container:
+1. Click on "Storage Accounts" in Azure Console
+2. Select the desired Storage Account
+3. Click on "Containers" on the left panel
+4. Click on "+ Container"
+5. Give the container a name and click on "Create" 
 
 Set your resource's **Backup Path** to the path of your ABS storage
 account and clicking the **Apply** button using the following syntax:
