@@ -1,11 +1,12 @@
 ---
-Title: Redis Enterprise Cluster Recovery for Kubernetes
-description: 
+Title: Recovering a Redis Enterprise Cluster on Kubernetes
+description: This task describes how to recover a Redis Enterprise cluster on Kubernetes.
 weight: 70
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/cluster-recovery/
-        /platforms/kubernetes/cluster-recovery/
+         /platforms/kubernetes/cluster-recovery/
+         /platforms/kubernetes/kubernetes-cluster-recovery/
 ---
 When a Redis Enterprise cluster loses contact with more than half of its nodes either because of failed nodes or network split,
 the cluster stops responding to client connections.
@@ -22,7 +23,7 @@ The cluster recovery for Kubernetes automates these recovery steps:
 
 ## Prerequisites
 
-- For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/platforms/kubernetes/kubernetes-persistent-volumes.md" >}}).
+- For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/platforms/kubernetes/concepts/persistent-volumes.md" >}}).
 - For data recovery, the databases must be [configured with persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}).
 
 ## Recovering a Cluster on Kubernetes

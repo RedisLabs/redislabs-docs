@@ -1,10 +1,11 @@
 ---
 Title: Deploying Kubernetes with Persistent Volumes in Operator-based Architecture
-description: 
+description: This section covers details about how persistent volumes are sized and specified for Redis Enterprise cluster deployments.
 weight: 40
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/kubernetes-operator-deployment-persistent-volumes/
+         /platforms/kubernetes/kubernetes-persistent-volumes/
 ---
 To deploy a Redis Enterprise Cluster with Redis Enterprise Operator the
 spec should include a *persistentSpec* section, in the
