@@ -1,6 +1,6 @@
 ---
 Title: Creating replica databases on Kubernetes
-description: A guide for creating and automating database replicas via the database controller
+description: This task describes how to create and automate database replicas via the database controller
 weight: 42
 alwaysopen: false
 categories: ["Platforms"]

@@ -1,6 +1,6 @@
 ---
 Title: Configuring LDAP Authentication
-description: How to configure LDAP-based authentication on a cluster on Kubernetes.
+description: This task describes how to configure LDAP-based authentication for a cluster on Kubernetes.
 weight: 90
 alwaysopen: false
 categories: ["Platforms"]
