@@ -96,10 +96,10 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
     - **Default database access** - When you configure a password for your database,
         all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
         If you also configure an access control list, connections can specify other users for authentication,
-        and requests are allowed according to the Redis ACLs specified for that user. 
-        
+        and requests are allowed according to the Redis ACLs specified for that user.
+
         Note that creating a database without further ACLs (see below) contains a *default* user with full access to the database which
-        in turn requires the definition a password for security reasons. 
+        in turn requires the definition a password for security reasons.
 
         {{< note >}}
 If you are creating a Memcached database, enter a username and password for SASL Authentication.
@@ -210,13 +210,13 @@ redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
 ```
 
-### 
+### Testing database connectivity with a simple application
 
 You can also use a simple application to test connectivity to your database.
-Here is a simple python app  the connects to the database by IP address.
+Here is a simple python app that connects to the database by IP address.
 The app uses the discovery service that is compliant with Redis Sentinel API.
 
-In the IP-based connection method, you do only need the database name, not the port number.
+In the IP-based connection method, you only need the database name, not the port number.
 Here we simply use the discovery service that listens on port 8001 on all nodes of the cluster
 to discover the endpoint for the database named "db1".
 
