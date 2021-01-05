@@ -76,8 +76,11 @@ To use the sample JSON document in your own account, you must modify these param
 
 - **`paymentMethodId`** - Specify a payment method that is defined for your account.
     You can lookup the payment method identifier using the `GET /payment-methods` API operation.
+    If you subscribed to Redis Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
 - **`cloudAccountId`** - Specify a cloud account that is defined for your account.
     You can lookup the cloud accounts identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use Redis Labs internal resources.
+    If you subscribed to Redis Cloud through the GCP Marketplace, use the value `1` for this field.
+
 - The JSON document contains 2 primary segments: subscription specification and databases specification.
 - When you create a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file.
 - You can [copy-and-paste]({{< relref  "/rc/api/how-to/using-curl#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).

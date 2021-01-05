@@ -10,7 +10,7 @@ The Redis Labs system log collects and reports on actions performed on various e
 
 You can view the system log in the Redis Cloud Admin Console by selecting `Menu` and then `System Log`. This will display the system log entries for the current account.
 
-![System Logs in the UI](/images/rc/system_log.png?width=998&height=576)
+![System Logs in the UI](/images/rc/system_log.png)
 
 ### System logs API operation
 

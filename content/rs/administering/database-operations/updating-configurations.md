@@ -1,5 +1,5 @@
 ---
-Title: Updating database configuration
+Title: Updating the Database Configuration
 description:
 weight: $weight
 alwaysopen: false
@@ -12,7 +12,7 @@ To edit the configuration of a database:
 1. Go to **Database** and select the database that you want to edit.
 1. Go to **Configuration** and click **Edit** at the bottom of the page.
     The database settings appear.
-1. Change the any of the [configurable database settings]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+1. Change the any of the [configurable database settings]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
     {{< note >}}
 For [Active-Active database instances](#updating-crdb-configuration), most database settings only apply to the instance that you are editing.
@@ -45,7 +45,7 @@ Use the participating clusters list to manage the changes to Active-Active topol
 You can make multiple changes at once to the list of participating clusters.
 The changes you make to the list are committed when the database configuration is saved.
 
-![pasted-image-0-1](/images/rs/pasted-image-0-1.png?width=1534&height=233)
+![add-active-active-participants](/images/rs/add-active-active-participants.png)
 
 All of the existing participating clusters must be online and in a syncing state when you add new participating clusters.
 

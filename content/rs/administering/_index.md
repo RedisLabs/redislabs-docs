@@ -1,11 +1,11 @@
 ---
-Title: Administering Redis Enterprise
+Title: Administration
 description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---
-This section covers everything you need to know to get up and running with Redis Enterprise Software (RS).
+This section covers everything you need to know to run your Redis Enterprise Software (RS) deployment.
 
 {{< note >}}
 In addition to using the RS web UI to manage the cluster,

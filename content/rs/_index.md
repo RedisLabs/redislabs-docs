@@ -8,7 +8,7 @@ categories: ["RS"]
 
 ## What is Redis Enterprise?
 
-[Redis Enterprise](https://redislabs.com/redis-enterprise/) is a robust, in-memory database platform built by same people who develop open source Redis.
+[Redis Enterprise](https://redislabs.com/redis-enterprise/) is a robust, in-memory database platform built by the same people who develop open source Redis.
 It maintains the simplicity and high performance of Redis and adds many enterprise-grade capabilities, including:
 
 - Linear scaling to hundreds of millions of operations per second
@@ -52,7 +52,7 @@ This lowers costs while maintaining similar performance to completely RAM-based 
 {{< tab tabNum="1" >}}
 
 With RS, a dataset can grow beyond the size of the largest node in the cluster and be processed by any number of cores.
-By partitioning your dataset across multiple nodes using a sharding policy, RS overcomes the memory limitations of a single node and the performance limitations of a single core.
+By partitioning your dataset across multiple nodes using a hashing policy, RS overcomes the memory limitations of a single node and the performance limitations of a single core.
 
 You can dynamically scale your Redis databases increasing their memory limits or increasing the number of shards, all using the built-in UI.
 

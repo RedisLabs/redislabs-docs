@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software Product Lifecycle
 description:
-weight: $weight
+weight: 100
 alwaysopen: false
 categories: ["RS"]
 ---

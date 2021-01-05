@@ -17,10 +17,10 @@ The eviction policies are:
 |  volatile-lru | Evicts the least recently used keys out of all keys with an "expire" field set |
 |  volatile-lfu | Evicts the least frequently used keys out of all keys with an "expire" field set |
 |  volatile-random | Randomly evicts keys with an "expire" field set |
-|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
+|  volatile-ttl | Evicts the shortest time-to-live keys out of all keys with an "expire" field set. |
 
 {{% note %}}
-- [Active-Active databases]({{< relref "/rs/administering/active-active.md" >}}) always operate in noeviction mode.
+- [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) always operate in noeviction mode.
 - Review the documentation for each Redis module to see how it uses eviction.
 {{% /note %}}
 

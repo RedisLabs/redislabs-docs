@@ -21,8 +21,8 @@ Here are the metrics available to Prometheus:
 | bdb_avg_write_latency | Average latency of write operations (seconds); returned only when there is traffic |
 | bdb_avg_write_latency_max | Highest value of average latency of write operations (seconds); returned only when there is traffic |
 | bdb_conns | Number of client connections to DB |
-| bdb_egress_bytes | Rate of outgoing network traffic to DB (bytes/sec) |
-| bdb_egress_bytes_max | Highest value of rate of outgoing network traffic to DB (bytes/sec) |
+| bdb_egress_bytes | Rate of outgoing network traffic from the DB (bytes/sec) |
+| bdb_egress_bytes_max | Highest value of rate of outgoing network traffic from the DB (bytes/sec) |
 | bdb_evicted_objects | Rate of key evictions from DB (evictions/sec) |
 | bdb_evicted_objects_max | Highest value of rate of key evictions from DB (evictions/sec) |
 | bdb_expired_objects | Rate keys expired in DB (expirations/sec) |
@@ -47,10 +47,10 @@ Here are the metrics available to Prometheus:
 | bdb_other_req_max | Highest value of rate of other (non read/write) requests on DB (ops/sec) |
 | bdb_other_res | Rate of other (non read/write) responses on DB (ops/sec) |
 | bdb_other_res_max | Highest value of rate of other (non read/write) responses on DB (ops/sec) |
-| bdb_pubsub_channels | Count the pub/sub channels with subscribed clients. |
-| bdb_pubsub_channels_max | Highest value of count the pub/sub channels with subscribed clients. |
-| bdb_pubsub_patterns | Count the pub/sub patterns with subscribed clients. |
-| bdb_pubsub_patterns_max | Highest value of count the pub/sub patterns with subscribed clients. |
+| bdb_pubsub_channels | Count the pub/sub channels with subscribed clients |
+| bdb_pubsub_channels_max | Highest value of count the pub/sub channels with subscribed clients |
+| bdb_pubsub_patterns | Count the pub/sub patterns with subscribed clients |
+| bdb_pubsub_patterns_max | Highest value of count the pub/sub patterns with subscribed clients |
 | bdb_read_hits | Rate of read operations accessing an existing key (ops/sec) |
 | bdb_read_hits_max | Highest value of rate of read operations accessing an existing key (ops/sec) |
 | bdb_read_misses | Rate of read operations accessing a non-existing key (ops/sec) |
@@ -132,13 +132,13 @@ Here are the metrics available to Prometheus:
 
 | Metric | Description |
 | ------ | :------ |
-| listener_acc_latency | Accumulative latency (sum of the latencies) of all types of commands on DB. For the average latency, divide this value by listener_total_res. |
+| listener_acc_latency | Accumulative latency (sum of the latencies) of all types of commands on DB. For the average latency, divide this value by listener_total_res |
 | listener_acc_latency_max | Highest value of accumulative latency of all types of commands on DB |
-| listener_acc_other_latency | Accumulative latency (sum of the latencies) of commands that are type "other" on DB. For the average latency, divide this value by listener_other_res. |
+| listener_acc_other_latency | Accumulative latency (sum of the latencies) of commands that are type "other" on DB. For the average latency, divide this value by listener_other_res |
 | listener_acc_other_latency_max | Highest value of accumulative latency of commands that are type "other" on DB |
-| listener_acc_read_latency | Accumulative latency (sum of the latencies) of commands that are type "read" on DB. For the average latency, divide this value by listener_read_res. |
+| listener_acc_read_latency | Accumulative latency (sum of the latencies) of commands that are type "read" on DB. For the average latency, divide this value by listener_read_res |
 | listener_acc_read_latency_max | Highest value of accumulative latency of commands that are type "read" on DB |
-| listener_acc_write_latency | Accumulative latency (sum of the latencies) of commands that are type "write" on DB. For the average latency, divide this value by listener_write_res. |
+| listener_acc_write_latency | Accumulative latency (sum of the latencies) of commands that are type "write" on DB. For the average latency, divide this value by listener_write_res |
 | listener_acc_write_latency_max | Highest value of accumulative latency of commands that are type "write" on DB |
 | listener_auth_cmds | Number of memcached AUTH commands sent to the DB |
 | listener_auth_cmds_max | Highest value of number of memcached AUTH commands sent to the DB |
@@ -211,10 +211,11 @@ Here are the metrics available to Prometheus:
 | redis_allocator_allocated | Total allocated memory |
 | redis_allocator_resident | Total resident memory (RSS) |
 | redis_aof_last_cow_size | Last AOFR, CopyOnWrite memory |
-| redis_aof_rewrite_in_progress | The number of simultaneous AOF rewrites that are in progress. |
+| redis_aof_rewrite_in_progress | The number of simultaneous AOF rewrites that are in progress |
 | redis_aof_rewrites | Number of AOF rewrites this process executed |
-| redis_blocked_clients | Count the clients waiting on a blocking call. |
-| redis_connected_clients | Number of client connections to the specific shard. |
+| redis_aof_delayed_fsync | Number of times an AOF fsync caused delays in the redis main thread (inducing latency); This can indicate that the disk is slow or overloaded |
+| redis_blocked_clients | Count the clients waiting on a blocking call |
+| redis_connected_clients | Number of client connections to the specific shard |
 | redis_connected_slaves | Number of connected slaves |
 | redis_db0_avg_ttl | Average TTL of all volatile keys |
 | redis_db0_expires | Total count of volatile keys |
@@ -223,11 +224,13 @@ Here are the metrics available to Prometheus:
 | redis_expire_cycle_cpu_milliseconds | The cumulative amount of time spent on active expiry cycles |
 | redis_expired_keys | Keys expired so far (since restart) |
 | redis_forwarding_state | Shard forwarding state (on or off) |
-| redis_keyspace_read_hits | Rate of read operations accessing an existing keyspace (ops/sec) |
-| redis_keyspace_read_misses | Rate of read operations accessing an non-existing keyspace (ops/sec) |
-| redis_keyspace_write_hits | Rate of write operations accessing an existing keyspace (ops/sec) |
-| redis_keyspace_write_misses | Rate of write operations accessing an non-existing keyspace (ops/sec) |
+| redis_keys_trimmed | The number of keys that were trimmed in the current or last resharding process |
+| redis_keyspace_read_hits | Number of read operations accessing an existing keyspace |
+| redis_keyspace_read_misses | Number of read operations accessing an non-existing keyspace |
+| redis_keyspace_write_hits | Number of write operations accessing an existing keyspace |
+| redis_keyspace_write_misses | Number of write operations accessing an non-existing keyspace |
 | redis_master_link_status | Indicates if the slave is connected to its master |
+| redis_master_repl_offset | Number of bytes sent to replicas by the shard; Calculate the throughput for a time period by comparing the value at different times |
 | redis_master_sync_in_progress | The master shard is synchronizing (1 true | 0 false) |
 | redis_max_process_mem | Current memory limit configured by redis_mgr according to node free memory |
 | redis_maxmemory | Current memory limit configured by redis_mgr according to db memory limits |
@@ -235,20 +238,26 @@ Here are the metrics available to Prometheus:
 | redis_mem_clients_normal | Current memory used for input and output buffers of non-slave clients |
 | redis_mem_clients_slaves | Current memory used for input and output buffers of slave clients |
 | redis_mem_fragmentation_ratio | Memory fragmentation ratio (1.3 means 30% overhead) |
-| redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error. |
+| redis_mem_not_counted_for_evict | Portion of used_memory (in bytes) that's not counted for eviction and OOM error |
 | redis_mem_replication_backlog | Size of replication backlog |
-| redis_process_cpu_system_seconds_total | Shard Process system CPU time spent in seconds. |
+| redis_module_fork_in_progress | A binary value that indicates if there is an active fork spawned by a module (1) or not (0) |
+| redis_process_cpu_system_seconds_total | Shard Process system CPU time spent in seconds |
 | redis_process_cpu_usage_percent | Shard Process cpu usage precentage |
-| redis_process_cpu_user_seconds_total | Shard user CPU time spent in seconds. |
-| redis_process_main_thread_cpu_system_seconds_total | Shard main thread system CPU time spent in seconds. |
-| redis_process_main_thread_cpu_user_seconds_total | Shard main thread user CPU time spent in seconds. |
-| redis_process_max_fds | Shard Maximum number of open file descriptors. |
+| redis_process_cpu_user_seconds_total | Shard user CPU time spent in seconds |
+| redis_process_main_thread_cpu_system_seconds_total | Shard main thread system CPU time spent in seconds |
+| redis_process_main_thread_cpu_user_seconds_total | Shard main thread user CPU time spent in seconds |
+| redis_process_max_fds | Shard Maximum number of open file descriptors |
 | redis_process_open_fds | Shard Number of open file descriptors |
-| redis_process_resident_memory_bytes | Shard Resident memory size in bytes. |
-| redis_process_start_time_seconds | Shard Start time of the process since unix epoch in seconds. |
+| redis_process_resident_memory_bytes | Shard Resident memory size in bytes |
+| redis_process_start_time_seconds | Shard Start time of the process since unix epoch in seconds |
 | redis_process_virtual_memory_bytes | Shard virtual memory in bytes |
 | redis_rdb_bgsave_in_progress | Indication if bgsave is currently in progress |
 | redis_rdb_last_cow_size | Last bgsave (or SYNC fork) used CopyOnWrite memory |
 | redis_rdb_saves | Total count of bgsaves since process was restarted (including slave fullsync and persistence) |
+| redis_repl_touch_bytes | Number of bytes sent to replicas as TOUCH commands by the shard as a result of a READ command that was processed; Calculate the throughput for a time period by comparing the value at different times |
+| redis_total_commands_processed | Number of commands processed by the shard; Calculate the number of commands for a time period by comparing the value at different times |
+| redis_total_connections_received | Number of connections received by the shard; Calculate the number of connections for a time period by comparing the value at different times |
+| redis_total_net_input_bytes | Number of bytes received by the shard; Calculate the throughput for a time period by comparing the value at different times |
+| redis_total_net_output_bytes | Number of bytes sent by the shard; Calculate the throughput for a time period by comparing the value at different times |
 | redis_up | Shard is up and running |
 | redis_used_memory | Memory used by shard (in bigredis this includes flash) (bytes) |

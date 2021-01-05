@@ -43,9 +43,9 @@ We recommend these hardware requirements for production systems or for developme
     - When the CPU load reaches a certain level, RS tries to migrate "noisy" shards to a different node in the cluster and sends an alert to the operator.
     - If your application is designed to put a lot of load on your Redis database, make sure that you have at least one available core for each shard of your database.
     - If some of the cluster nodes are utilizing more than 80% of the CPU, consider migrating busy resources to less busy nodes.
-    - If all the cluster nodes are utilizing over 80% of the CPU, consider scaling out the cluster by [adding a node]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
+    - If all the cluster nodes are utilizing over 80% of the CPU, consider scaling out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
 - RAM:
     - Since Redis uses a relatively large amount of buffers (such as for slave communication, client communication, and pub/sub commands) make sure that at least 30% of the RAM is "unused" on each node.
     - If some of the cluster nodes are utilizing more than 65% of the RAM, you should look at migrating busy resources to less busy nodes.
-    - If all the cluster nodes are utilizing over 70% of the RAM, you should look to scale out the cluster by [adding a node]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
+    - If all the cluster nodes are utilizing over 70% of the RAM, you should look to scale out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
     - Do not run other memory-consuming systems on the RS node.

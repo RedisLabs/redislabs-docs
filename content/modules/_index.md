@@ -1,7 +1,7 @@
 ---
 Title: Redis Modules
 description:
-weight: 1
+weight: 70
 alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/developing/modules/

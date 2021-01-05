@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/
 ---
-To upgrade the Redis Enterprise Software (RS) on a cluster,
+To upgrade the Redis Enterprise Software (RS) software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{< warning >}}
@@ -45,8 +45,8 @@ on all of the machines on which RS is installed.
 
 - You must upgrade the master node before you upgrade the other nodes.
 We recommend that you plan to keep all nodes up until the upgrade is completed
-on all nodes. The node role is shown in the output of the 'rladmin status
-nodes' command.
+on all nodes. The node role is shown in the output of the `rladmin status
+nodes` command.
 - You cannot change the installation path or user during upgrade.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of updating them through the API. For assistance with this issue, contact [Support](https://support.redislabs.com).
 
@@ -98,7 +98,7 @@ To check whether your Redis database versions match the latest Redis
 version supported by RS:
 
 - In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
-    run the status command.
+    run the `status` command.
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
 - In the Management UI, go to the **Cluster \> Configuration** page.
@@ -112,7 +112,7 @@ To upgrade your database:
 1. Make sure that all of the nodes in the RS cluster are [upgraded](#upgrading-nodes).
     You cannot upgrade databases before all of the nodes in the cluster are upgraded.
 1. In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}})
-    on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
+    on any node in the cluster, run this command for each database: `rladmin upgrade db <database_name | database_ID>`
 
 During the database upgrade process, the database is restarted. As
 a result:
@@ -129,18 +129,18 @@ a result:
 
 ## Upgrading Active-Active databases {#upgrading-activeactive-databases}
 
-When you upgrade an Active-Active database, you can also upgrade:
+When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 - **Protocol version** - RS 5.4.2 and higher include a new CRDB protocol version to support new Active-Active features.
-    The CRDB protocol is backward-compatible so that RS 5.4.2 Active-Active database instances can understand write-operations that come from instances with the older CRDB protocol, but Active-Active database instances with the older protocol cannot understand write-operations of instances with the newer protocol version.
+    The CRDB protocol is backward-compatible so that RS 5.4.2 CRDB instances can understand write-operations that come from instances with the older CRDB protocol, but CRDB instances with the older protocol cannot understand write-operations of instances with the newer protocol version.
     As a result, after you upgrade the CRDB protocol on one instance,
     instances that were not upgraded yet cannot receive write updates from the upgraded instance.
     The upgraded instance receives updates from upgraded and non-upgraded instances.
 
     {{< note >}}
 
-- Upgrade all instances of a specific Active-Active database within a reasonable time frame to avoid temporary inconsistencies between the instances.
-- Make sure that you upgrade all instances of a specific Active-Active database before you do global operations on the Active-Active database, such as removing instances and adding new instances.
+- Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
+- Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
 
     {{< /note >}}
 
@@ -150,13 +150,13 @@ When you upgrade an Active-Active database, you can also upgrade:
 - **Feature set version** - RS 5.6.0 and higher include a new feature set version to support new Active-Active features.
     When you update the feature set version for an Active-Active database, the feature set version is updated for all of the database instances.
 
-To upgrade an Active-Active database instance:
+To upgrade a CRDB instance:
 
-1. [Upgrade RS](#upgrading-nodes) on each node in the clusters where the Active-Active database instances are located.
+1. [Upgrade RS](#upgrading-a-node) on each node in the clusters where the CRDB instances are located.
 
-1. To see the status of your Active-Active database instances, run: `rladmin status`
+1. To see the status of your CRDB instances, run: `rladmin status`
 
-    The statuses of the Active-Active database instances on the node can indicate:
+    The statuses of the CRDB instances on the node can indicate:
 
     - `OLD REDIS VERSION`
     - `OLD CRDB PROTOCOL VERSION`
@@ -164,18 +164,18 @@ To upgrade an Active-Active database instance:
 
     ![crdb-upgrade-node](/images/rs/crdb-upgrade-node.png)
 
-1. To upgrade each Active-Active database instance including the Redis version and CRDB protocol version, run:
+1. To upgrade each CRDB instance including the Redis version and CRDB protocol version, run:
 
     ```sh
-    rladmin upgrade db <crdb_name>
+    rladmin upgrade db <database_name | database_ID>
     ```
 
     If the protocol version is old, read the warning message carefully and confirm.
     ![crdb-upgrade-protocol](/images/rs/crdb-upgrade-protocol.png)
 
-    The Active-Active database instance uses the new Redis version and CRDB protocol version.
+    The CRDB instance uses the new Redis version and CRDB protocol version.
 
-    {{% expand "To upgrade the Active-Active database instance without upgrading the protocol version:" %}}
+    {{% expand "To upgrade the CRDB instance without upgrading the protocol version:" %}}
 You can use the `keep_crdt_protocol_version` option to upgrade the database
 without upgrading the CRDB protocol version and continue using the old version.
 If you use this option, make sure that you upgrade the CRDB protocol soon after with the `rladmin upgrade db` command.
@@ -183,13 +183,13 @@ If you use this option, make sure that you upgrade the CRDB protocol soon after 
 You must upgrade the CRDB protocol before you update the CRDB feature set version.
     {{% /expand %}}
 
-1. If the feature set version is old, you must upgrade all of the Active-Active database instances. Then, to update the feature set for each active-active database, run:
+1. If the feature set version is old, you must upgrade all of the CRDB instances. Then, to update the feature set for each active-active database, run:
 
     ```sh
-    crdb-cli crdb update --crdb-guid <crdb_guid> --featureset-version yes
+    crdb-cli crdb update --crdb-guid <CRDB-GUID> --featureset-version yes
     ```
 
-    You can retrieve the `crdb_guid` with the following command:
+    You can retrieve the `<CRDB-GUID>` with the following command:
 
     ```sh
     crdb-cli crdb list

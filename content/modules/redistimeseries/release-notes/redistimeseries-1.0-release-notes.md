@@ -38,7 +38,7 @@ Secondary Index should work faster when a filter consistent a list of k=v predic
 
 ## RedisTimeSeries 1.0.0
 
-This is the General Availability release of RedisTimeSeries!  Please read the [full story here](https://redislabs.com/blog/redistimeseries-ga-making-4th-dimension-truly-immersive)
+This is the General Availability release of RedisTimeSeries!  Read the [full story here](https://redislabs.com/blog/redistimeseries-ga-making-4th-dimension-truly-immersive)
 
 ### Features
 

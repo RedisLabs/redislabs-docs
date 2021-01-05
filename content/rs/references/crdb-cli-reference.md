@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-An [Active-Active database]({{< relref "/rs/administering/active-active.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
+An [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}}) (also known as CRDB or Conflict-free, Replicated DataBase)
 replicates your dataset across Redis Enterprise Software (RS) clusters located in geographically distributed regions.
 Active-Active databases allow read-write access in all locations, making them ideal for distributed applications that require the fastest response times, and also for disaster recovery.
 
@@ -14,7 +14,7 @@ Each cluster that hosts an instance is called a **participating cluster**.
 
 An Active-Active database requires two or more participating clusters.
 Each instance is responsible for updating the instances residing on other participating clusters with the transactions it receives.
-Write conflicts are resolved using [CRDTs]({{< relref "/rs/administering/active-active.md" >}}).
+Write conflicts are resolved using [CRDTs]({{< relref "/rs/administering/designing-production/active-active.md" >}}).
 
 To programmatically maintain an Active-Active database and its instances, you can use the CRDB-CLI command-line tool.
 
@@ -110,8 +110,8 @@ The `crdb create` command supports several additional options:
 |`replication true`| boolean| Enables [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})| where every master shard replicates to a replica shard (We recommend that you use replication so that active-active database synchronization traffic is off-loaded to the slave shard)|
 |`encryption true`| boolean| Enable encryption|
 |`sharding disable`| string| Disable sharding (also known as [database clustering]({{< relref "/rs/concepts/high-availability/replication.md" >}})) so that there is only one shard for the database|
-|`shards-count <number>`| integer| If sharding is enabled this specifies the number of Redis shards for each database instance|
-|`shard-key-regex <regex_rule>`| string| If sharding is enabled this defines a custom sharding key regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
+|`shards-count <number>`| integer| If clustering is enabled this specifies the number of Redis shards for each database instance|
+|`shard-key-regex <regex_rule>`| string| If clustering is enabled this defines a regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
 <!-- |`default-db-config <options>`|text|Default database configuration options|
 |`default-db-config-file <filename>`|file path|Default database configuration options| -->
 
@@ -166,7 +166,7 @@ If you want to change the configuration of the local instance only, you can chan
 The syntax for the command is:
 
 ```sh
-crdb-cli crdb update --crdb-guid <crdb-guid> /
+crdb-cli crdb update --crdb-guid <CRDB-GUID> /
 [--no-wait] /
 [--db-config-json <file_content>] /
 [--db-config-json-file <filename>] /
@@ -210,7 +210,7 @@ If the data in your database is important, make sure you back it up before you f
 To flush the data from an Active-Active database, run:
 
 ```sh
-crdb-cli crdb flush --crdb-guid <crdb-guid>
+crdb-cli crdb flush --crdb-guid <CRDB-GUID>
 ```
 
 ### Deleting an Active-Active database
@@ -221,7 +221,7 @@ This command requires the CRDB-GUID of the database.
 To delete an Active-Active database, run:
 
 ```sh
-crdb-cli crdb delete --crdb-guid <crdb-guid>
+crdb-cli crdb delete --crdb-guid <CRDB-GUID>
 ```
 
 {{< warning >}}
@@ -242,7 +242,7 @@ When you add an instance to an Active-Active database, you must specify:
 
 |Flag and argument| Argument type| Description|
 |---|---|---|
-|`crdb-guid <guid-id>`| string| The ID of the Active-Active database that you want to add the instance to|
+|`crdb-guid <CRDB-GUID>`| string| The ID of the Active-Active database that you want to add the instance to|
 |`instance fqdn=<cluster_fqdn>,username=<username>,password=<password>`| strings| The connection information for the participating cluster that will host the new instance|
 
 ### Removing an instance from an Active-Active database {#removing-an-instance-from-an-activeactive-database}
@@ -253,14 +253,14 @@ When you remove an instance from an Active-Active database, you must specify:
 
 |Flag and argument| Argument type| Description|
 |---|---|---|
-|`crdb-guid <guid-id>`| string| The ID of the Active-Active database that you want to add the instance to|
+|`crdb-guid <CRDB-GUID>`| string| The ID of the Active-Active database that you want to add the instance to|
 |`instance-id=<instance_id>`| integer| The ID of the instance to remove from the Active-Active database|
 
 {{< note >}}
 If the cluster that you run the command on cannot communicate with the instance that you want to remove,
 you can use the `--unordered` flag to remove the instance from the Active-Active database without purging the data from the instance.
 
-After you use `crdb remove-instance --unordered`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <crdb-guid> <instance-id>`
+After you use `crdb remove-instance --unordered`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <CRDB-GUID> <instance-id>`
 {{< /note >}}
 
 ## Active-Active task status

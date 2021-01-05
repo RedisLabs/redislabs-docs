@@ -2,7 +2,7 @@
 Title: RedisInsight
 date: 2018-07-20 03:49:29 +0530
 description: 
-weight: $weight
+weight: 90
 alwaysopen: false
 categories: ["RI"]
 ---

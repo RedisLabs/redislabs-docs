@@ -79,7 +79,7 @@ You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
 
 When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
 
-## Tls protocol and ciphers
+## TLS protocol and ciphers
 
 TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with. You can change the TLS protocols and ciphers to improve the security posture of your RS cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
@@ -171,3 +171,8 @@ To set the TLS ciphers:
 ```sh
 rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
 ```
+
+When you modify your cipher suites, make sure that:
+
+- The configured TLS version matches the required cipher suites
+- The certificates in use are properly signed to support the required cipher suites

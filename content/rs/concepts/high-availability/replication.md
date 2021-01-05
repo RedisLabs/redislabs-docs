@@ -20,9 +20,10 @@ Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}
 - [High Availability for Slave Shards]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) - When high availability
 for slave shards is used, the slave shard is automatically migrated on node failover to maintain high availability.
 
-**Note**: Enabling replication has implications for the total database
-size, as explained in [Database memory
-limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
+{{< note >}}
+Enabling replication has implications for the total database size,
+as explained in [Database memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
+{{< /note >}}
 
 ## Redis on Flash replication considerations
 
@@ -46,5 +47,7 @@ The recommended sequential replication configuration is two, i.e.:
 rladmin tune cluster max_redis_forks 1 max_slave_full_syncs 1
 ```
 
-Note: This means that at any given time, only one master and one slave
-can be part of a full sync replication process
+{{< note >}}
+This means that at any given time,
+only one master and one slave can be part of a full sync replication process.
+{{< /note >}}

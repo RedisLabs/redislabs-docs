@@ -41,7 +41,7 @@ To adapt this example to your code, make sure that you replace the following val
 
 ## Using SSL and hiredis
 
-hiredis does not support SSL connections natively. For an added security measure, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis).
+hiredis supports SSL natively as of [version 1.0.0](https://github.com/redis/hiredis/releases/tag/v1.0.0). For older hiredis versions, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis).
 
 ## Reading and writing data with hiredis
 

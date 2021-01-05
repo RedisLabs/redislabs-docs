@@ -1,7 +1,7 @@
 ---
-Title: Using RedisInsight
+Title: Administration
 description:
-weight: 30
+weight: 50
 alwaysopen: false
 categories: ["RI"]
 ---

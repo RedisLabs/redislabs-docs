@@ -1,5 +1,5 @@
 ---
-Title: Database memory limits in Redis Enterprise Software
+Title: Database Memory Limits
 description:
 weight: $weight
 alwaysopen: false
@@ -59,9 +59,10 @@ amount of data stored in it, as long as the total size across all master
 shards does not exceed 3 GB. In this case, the maximum dataset size you
 can store in the database is 3 GB.
 
-**Note:** If you edit an existing database that already has data in it,
-some updates might fail as they could cause the total database size to
-exceed the memory limit. For example, enabling replication doubles the
-existing database size, which may then exceed the memory limit. In these
-cases, you must update the memory limit before you can make the
-change.
+{{< note >}}
+If you edit an existing database that already has data in it,
+some updates might fail as they could cause the total database size to exceed the memory limit.
+For example, enabling replication doubles the existing database size,
+which may then exceed the memory limit.
+In these cases, you must update the memory limit before you can make the change.
+{{< /note >}}

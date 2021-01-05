@@ -25,7 +25,7 @@ RedisGraph is the first queryable [Property Graph](https://github.com/opencypher
 
 ### Active-Active Redis (CRDB) - Creation in non-clustering mode {#activeactive-redis-crdb-creation-in-nonclustering-mode}
 
-In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}) in a non-clustering mode. As a result, the following creation options are allowed:
+In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) in a non-clustering mode. As a result, the following creation options are allowed:
 
 1. Clustering mode - Creates a CRDB that consists of any number of shards in a clustering mode and is subject to [multi-key commands limitations]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
 1. Non-clustering mode - Creates a CRDB that consists of one shard only in a non-clustering mode so that [multi-key command limitations]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) do not apply.
@@ -36,7 +36,7 @@ When [slave high availability]({{< relref "/rs/administering/database-operations
 
 RS 5.4 expands the high availability capabilities by adding the ability to automatically avoid this single point of failure by configuring the cluster to automatically migrate the replica shard to another available node. In practice, replica migration creates a new replica shard and replicates the data from the master shard to the new replica shard.
 
-*_Please note that just as is the case with the Redis open-source project, Redis Labs is in the process of changing the "master-slave" terminology to "master-replica" everywhere, including within our documentation._
+*_Note that just as is the case with the Redis open-source project, Redis Labs is in the process of changing the "master-slave" terminology to "master-replica" everywhere, including within our documentation._
 
 ## Additional capabilities
 
@@ -72,7 +72,7 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 ### Upgrade
 
 - Before you upgrade a database with the RediSearch module to Redis 5.0, you must [upgrade the RediSearch module on that DB]({{< relref "/modules/add-module-to-cluster.md" >}}) to 1.4.2 or higher. We recommend that you upgrade the RediSearch module before you upgrade the cluster to RS 5.4.
-- Node upgrade fails if SSL certificates were configured in version 5.0.2 and above by updating the certificates on the disk instead of using the new API. For assistance with this issue, please contact support.
+- Node upgrade fails if SSL certificates were configured in version 5.0.2 and above by updating the certificates on the disk instead of using the new API. For assistance with this issue, please [contact Redis Labs support](https://redislabs.com/company/support/).
 
 ### Cluster API
 

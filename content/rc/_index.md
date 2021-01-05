@@ -1,22 +1,22 @@
 ---
-Title: Redis Cloud
+Title: Redis Enterprise Cloud
 description:
-weight: 30
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/
 ---
-Redis Cloud delivers a cost-effective, fully managed
+Redis Enterprise Cloud delivers a cost-effective, fully managed
 Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
 
-Redis Cloud is based on the proven Redis Enterprise technology,
+Redis Enterprise Cloud is based on the proven Redis Enterprise technology,
 serving thousands of customers of our [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) products.
-With Redis Cloud, you can deploy quickly on major public clouds
+With Redis Enterprise Cloud, you can deploy quickly on major public clouds
 and create Redis databases that are fully compatible with
 the open-source Redis clients.
 
-With Redis Cloud, you get all of that plus:
+With Redis Enterprise Cloud, you get all of that plus:
 
 - A dedicated cloud environment
 - Full enterprise features
@@ -37,7 +37,7 @@ without any downtime or limitation of Redis commands.
 Upgrade or downgrade by simply changing plan settings,
 without downtime and without the need to move your dataset between cloud instances.
 
-With Redis Cloud, we automatically add or remove instances to your cluster
+With Redis Enterprise Cloud, we automatically add or remove instances to your cluster
 to accommodate your fluctuating dataset size without any interruption
 to your applications.
 
@@ -58,7 +58,7 @@ safeguarding against all possible failure scenarios by using:
 - Persistence with Append Only File (AOF) or snapshots
 - Backups and disaster recovery
 
-Redis Cloud has demonstrated resilience over many years,
+Redis Enterprise Cloud has demonstrated resilience over many years,
 providing hundreds of thousands of databases with continuous operation while withstanding hundreds of cloud outages,
 all without data loss or interruption of service.
 
@@ -70,7 +70,7 @@ and hosts your database on optimal cloud instances.
 
 ### Hybrid deployment and geo-region replication {#hybrid-deployment-and-georegion-replication}
 
-Efficiently replicate Redis databases between Redis Cloud and Redis Enterprise Software or across cloud regions,
+Efficiently replicate Redis databases between Redis Enterprise Cloud and Redis Enterprise Software or across cloud regions,
 with built-in compression and WAN optimization technologies.
 Create multi-region, multi-cloud or hybrid (on-premises and cloud) Redis Enterprise deployments
 that accelerate your applications and require zero time to recover.
@@ -86,7 +86,7 @@ The status of the RC infrastructure is in real-time on the [Status](https://sta
 
 ### Encryption and authentication
 
-Meet your security goals without compromising performance using Redis Cloud fully encrypted SSL connections,
+Meet your security goals without compromising performance using Redis Enterprise Cloud fully encrypted SSL connections,
 and apply multi-level authentication mechanisms such as:
 
 - IP whitelist
