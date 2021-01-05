@@ -112,6 +112,7 @@ followed by descriptions:
 
 | **Data Type** | **Support Level** |
 |------------|-----------------|
+| Bitfield | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-bitfields-active-active.md" >}}) |
 | Float Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-data-type-with-counter-value-in-crdbs" >}}) |
 | Geospatial | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
 | Hashes | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hashes-active-active.md" >}}); Hash fields are treated as strings or counters |
