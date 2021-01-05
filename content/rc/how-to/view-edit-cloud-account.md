@@ -13,6 +13,10 @@ so that we can take responsibility to make sure that the infrastructure is in op
 If you need to build your subscriptions in your own AWS accounts,
 we need to have access to your AWS account to help with monitoring, maintenance and technical support.
 
+Consider using the [terraform-aws-Redislabs-Cloud-Account-Resources](https://github.com/TobyHFerguson/terraform-aws-Redislabs-Cloud-Account-Resources) module to automate the entire multi-step process. 
+
+If you wish to do this manually, or to understand more deeply what the above module will accomplish, then read on:
+
 To provide us with secure authorization to access your AWS accounts, you need to:
 
 1. Create a programmatic user and provide us with the access key and secret access key for that user.
