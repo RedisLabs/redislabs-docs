@@ -65,7 +65,6 @@ Every instance of an Active-Active database can receive write operations, and al
 
     {{< note >}}
 
-- The eviction policy can only be set to **noeviction** for Active-Active databases.
 - You cannot enable or disable database clustering after the Active-Active database is created.
 
     {{< /note >}}
@@ -110,7 +109,12 @@ Every instance of an Active-Active database can receive write operations, and al
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
 
-    - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
+    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+
+    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
+        By default, when the total size of the database reaches its memory limit the database evicts keys
+        according to the least recently used keys out of all keys with an "expire" field set
+        in order to make room for new keys. You can select a different data eviction policy.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.
