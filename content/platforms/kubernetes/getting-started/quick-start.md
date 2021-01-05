@@ -135,10 +135,10 @@ You can test the operator by creating a minimal cluster by following this proced
     EOF
     ```
 
-    This will request Redis Enterprise nodes with 2 CPUs and 4GB of memory.
-    If you want to test with a larger or smaller configuration, you can
-    specify the node resources. For example, we can reduce the CPU and memory
-    for a quick test:
+    This will request a cluster with 3 Redis Enterprise nodes using the
+    default requests (i.e., 2 CPUs and 4GB of memory per node).
+    If you want to test with a larger configuration, you can
+    specify the node resources. For example, we can increase the memory:
 
     ```
     cat <<EOF > simple-cluster.yaml
@@ -150,13 +150,16 @@ You can test the operator by creating a minimal cluster by following this proced
       nodes: 3
       redisEnterpriseNodeResources:
         limits:
-          cpu: 1000m
-          memory: 3Gi
+          cpu: 2000m
+          memory: 16Gi
         requests:
-          cpu: 1000m
-          memory: 3Gi
+          cpu: 2000m
+          memory: 16Gi
     EOF
     ```
+
+    See [Hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md">}}) for more
+    information on sizing Redis Enterprise Node resource requests.
 
 2. Create the CRD in the namespace with the file `simple-cluster.yaml`:
 
