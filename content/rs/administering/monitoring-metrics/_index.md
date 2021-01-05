@@ -1,11 +1,12 @@
 ---
 Title: Monitoring with Metrics and Alerts
 description:
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/alerting/
          /rs/administering/cluster-operations/settings/alerts/
+         /rs/administering/database-operations/metrics/shard-metrics/
 ---
 You can use the metrics that measure the performance of your Redis Enterprise Software (RS) clusters, nodes, databases and shards
 to keep an eye on the performance of your databases.

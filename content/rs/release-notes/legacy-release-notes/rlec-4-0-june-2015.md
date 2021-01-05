@@ -23,7 +23,7 @@ update this file.
     multiple AWS regions.
 - Support for additional browsers and operating systems for the
     management UI.
-- Replica of feature which enables creating a Redis database that
+- Replica Of feature which enables creating a Redis database that
     keeps synchronizing data from another Redis database.
 - Rack-zone awareness feature which enables mapping nodes to
     racks/zones to ensure a more sophisticated high-availability

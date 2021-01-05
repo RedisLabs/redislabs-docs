@@ -22,7 +22,7 @@ received from clusters or clients.
 Related topics:
 
 - You can use the REST API to [update the server TLS certificates and TLS protocol version]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-- To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/database-operations/create-active-passive#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
+- To encrypt Replica Of synchronization traffic, you must also [configure encryption for the destination database]({{< relref "/rs/administering/creating-databases/create-active-passive#configuring-tls-for-replica-of-traffic-on-the-destination-database" >}}).
 
 ## Authentication for databases
 
@@ -46,8 +46,10 @@ data traffic between the database and the clients.
 You can also specify that authentication is not enforced for traffic received from
 clusters and clients.
 
-Note: You cannot enable or disable TLS after the Active-Active database is created, but you can change
-the TLS configuration.
+{{< note >}}
+You cannot enable or disable TLS after the Active-Active database is created,
+but you can change the TLS configuration.
+{{< /note >}}
 
 ### Configuring TLS for Active-Active communication only
 

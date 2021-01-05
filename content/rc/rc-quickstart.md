@@ -150,6 +150,6 @@ in any existing code or apps that use Redis and you are done.
 
 - [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
 - [Securing Your Redis Cloud Database]({{< relref "/rc/administration/security/_index.md" >}})
-- [Creating Databases]({{< relref "/rs/administering/database-operations/creating-database.md" >}})
+- [Creating Databases]({{< relref "/rs/administering/creating-databases/_index.md" >}})
 - [Redis Cloud Pro Database Backups]({{< relref "/rc/administration/configuration/backups.md" >}})
 - [Monitoring Redis Cloud Performance]({{< relref "/rc/administration/configuration/monitoring-performance.md" >}}).

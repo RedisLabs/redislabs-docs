@@ -55,7 +55,7 @@ For instructions on how to install RS and set up a cluster, go to either:
 - [Quick Setup]({{< relref "/rs/getting-started/_index.md" >}}) for a test installation
 - [Install and Upgrade]({{< relref "/rs/installing-upgrading/_index.md" >}}) for a production installation
 
-For the tests we use a quorum node in the cluster to keep costs down on AWS instance usage,
+For the tests we use a quorum node in the cluster to keep costs down on AWS EC2 instance usage,
 but still keep the minimum 3 nodes in the cluster that RS needs in case a node fails.
 The quorum node can be on a less powerful instance type (m4.large) as it does not have shards on it or take traffic.
 

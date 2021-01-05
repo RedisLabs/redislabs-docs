@@ -22,7 +22,7 @@ set up two RS installations and continue from Step 2.
 {{< note >}}
 This getting started guide is for development or demonstration environments.
 To set up an Active-Active database in a production environment, use the instructions for
-[creating an Active-Active database]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
+[creating an Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
 {{< /note >}}
 
 ## Step 1: Run two containers
@@ -47,16 +47,17 @@ containers can be accessed from the host OS that is running the containers.
 host machine to see the Redis Enterprise Software web console. Simply
 click the **Setup** button on the page to get started.
 
-    Note: Depending on your browser, you may see a certificate error. Continue to
-    the website.
+    {{< note >}}
+Depending on your browser, you may see a certificate error. Continue to the website.
+    {{< /note >}}
 
-    ![rs-setup](/images/rs/rs-setup.png)
+    ![getstarted-setup](/images/rs/getstarted-setup.png)
 
 1. On the **node configuration** page, select your default settings and
 provide a cluster FQDN, for example `cluster1.local`. Then click
 **Next** button.
 
-    ![node-config](/images/rs/node-config.png)
+    ![getstarted-nodeconfig](/images/rs/getstarted-nodeconfig.png)
 
 1. If you don't have a license key, click the **Next** button to try the
 trial version of the product.
@@ -64,7 +65,7 @@ trial version of the product.
 1. On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-    ![set-admin-credentials](/images/rs/set-admin-credentials.png)
+    ![getstarted-admincredentials](/images/rs/getstarted-admincredentials.png)
 
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
     certificate on the node, and proceed through the browser warning.
@@ -83,7 +84,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
 1. After you login to cluster1.local, select the Redis database and deployment type
 **Geo-Distributed**. Then click **Next**.
 
-    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png)
 
 1. In **create database**, click the **show advanced option** and:
 
@@ -92,30 +93,29 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     1. In the **participating clusters** list, add the address and admin credentials for:
         - `https://cluster1.local:9443` - the cluster you are currently connected to
         - `https://cluster2.local:9443` - the other cluster
-    <!-- Also in create-crdb.md -->
-    1. In the **Database clustering** option, either:
 
-        - Make sure the Database clustering is enabled and select the number of shards
+    1. In **Database clustering**, either:
+
+        - Make sure that **Database clustering** is enabled and select the number of shards
         that you want to have in the database. When database clustering is enabled,
         databases are subject to limitations on [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
         You can increase the number of shards in the database at any time.
-        - Clear the **Database clustering** option to use only one shard and so
-        that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
-        limitations do not apply.
+        - Clear **Database clustering** to use only one shard and to avoid [Multi-key command]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) limitations.
 
-        Note: You cannot enable or disable database clustering after the Active-Active database is created.
+        {{< note >}}
+You cannot enable or disable database clustering after the Active-Active database is created.
+        {{< /note >}}
 
 1. Click **Activate** to create your Active-Active database.
 
     ![crdb-activate](/images/rs/crdb-activate.png)
 
-    <!-- Also in getting-started-docker.md -->
-    Note: If you cannot activate the database because of a memory limitation,
-    make sure that Docker has enough memory allocated in the Advanced section
-    of Docker Settings.
+    {{< note >}}
+    {{< embed-md "docker-memory-limitation.md" >}}
+    {{< /note >}}
 
-1. After the Active-Active database is created, you can now visit each cluster 1 at
-https://localhost:8443 and cluster 2 at https://localhost:8445.
+1. After the Active-Active database is created, access the RS admin console
+    of cluster 1 at https://localhost:8443 and of cluster 2 at https://localhost:8445.
 
 1. Make sure that each cluster has an Active-Active database member database with the name `database1`.
 
@@ -191,18 +191,19 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and
-[redis-py](https://github.com/andymccurdy/redis-py#installation)
-(python library for connecting to Redis) configured on the host machine
-running the container.
+{{< note >}}
+Before you continue, you must have python
+and [redis-py](https://github.com/andymccurdy/redis-py#installation)
+(python library for connecting to Redis) configured on the host machine running the container.
+{{< /note >}}
 
-1. In the command-line terminal, create a new file called "redis_test.py"
+1. In the command-line terminal, create a new file called `redis_test.py`.
 
     ```sh
     vi redis_test.py
     ```
 
-1. Paste this code into the "redis_test.py" file.
+1. Paste this code into the `redis_test.py` file.
 
     This application stores a value in key1 in cluster 1, gets that value from
     key1 in cluster 1, and gets the value from key1 in cluster 2.

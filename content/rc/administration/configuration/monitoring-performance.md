@@ -62,7 +62,7 @@ There are five metrics, located on the Configuration tab for each
 database, that you can and should create alerts for.
 
 ![Alert
-Settings](/images/rc/alert_settings-2.png?width=600&height=151)
+Settings](/images/rc/alert_settings.png)
 
 If you want to edit the values or enable/disable an alert, you must
 first click on the pencil icon to edit the configuration. While there
@@ -70,7 +70,8 @@ are default values, each database's alerting needs are usually
 different, so there are no best practices, per se, around what to set
 these to.
 
-**Note**: The "Total size of datasets under this plan" metric is at the
+{{< note >}}
+The "Total size of datasets under this plan" metric is at the
 subscription plan level even though they are shown (for convenience) at
 the database level. If you set this alert in one database you can see that
 the value has changed in the other database configurations too. The
@@ -80,6 +81,7 @@ databases on the same subscription, you need to set this percentage
 appropriately on your own. For example, if you have two databases,
 configuring an alert for when each database reaches 80% can surpass your
 number of subscriptions.
+{{< /note >}}
 
 ## Changing alert email recipients
 
@@ -93,9 +95,11 @@ To change the alert email recipients please do the following:
     should receive alerts.
 1. Save your changes by clicking **'Save'**.
 
-**NOTE:** PaaS users, such as Heroku users, don't have the option to
+{{< note >}}
+PaaS users, such as Heroku users, don't have the option to
 create a team. Users on a team can specify an alert email and a billing
 email, regardless of what email is set in **Account** -> **Account
 Info**. For PaaS users, on the other hand, the alert emails and billing
 emails are sent to the email that is set in **Account** -> **Account
 Info**.
+{{< /note >}}

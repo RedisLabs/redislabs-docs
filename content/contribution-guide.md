@@ -170,7 +170,7 @@ Here are some examples:
 
 |  Text type | Wrong                                       | Correct                                | Explanation                                           |
 | --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
+| Procedure | Sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
 | Procedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
 
 ### Common syntax gotchas

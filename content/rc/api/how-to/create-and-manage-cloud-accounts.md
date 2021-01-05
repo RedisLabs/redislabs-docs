@@ -23,10 +23,10 @@ Before you use the API to create and manage cloud account, you must:
 - Install `jq` on your machine: `sudo apt install jq`
 - Define the expected variables needed to use the API:
 
-    ```shell
+```shell
 {{% embed-code "rv/api/05-set-variables.sh" %}}
 {{% embed-code "rv/api/60-cloud-account-set-variables.sh" %}}
-    ```
+```
 
 ### Cloud account JSON body
 

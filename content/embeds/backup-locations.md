@@ -102,3 +102,14 @@ Before you choose to backup to Google Cloud Storage, make sure that you have:
 - Client email
 - Private key ID
 - Private key
+
+{{< note >}}
+
+You can find the client and key details in your service account in the GCP console (**API & Services** > **Credentials** > **Create Credentials**).
+
+- Make sure that the service account has the `Storage Legacy Bucket Writer` permission on the target bucket.
+- Make sure that the bucket doesn't use a retention policy because it can interfere with the process.
+- The format of the private key from the downloaded JSON is in a single string where new lines are marked with `\n` characters.
+    When you paste the key into the RS web UI, replace each `\n` character with a new line.
+
+{{< /note >}}

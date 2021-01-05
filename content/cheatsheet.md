@@ -424,7 +424,7 @@ Notes suggest steps that prevent errors that do not cause data loss.
 Syntax:
 
 ```sh
-{{</* note */%}}Make sure you have enough disk space.{{</* /note */>}}
+{{</* note */>}}Make sure you have enough disk space.{{</* /note */>}}
 ```
 
 Ouput:

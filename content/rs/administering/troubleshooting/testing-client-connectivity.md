@@ -11,7 +11,7 @@ database.
 
 To test client connectivity:
 
-1. [Create a Redis database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}) and get the database endpoint, which
+1. [Create a Redis database]({{< relref "/rs/administering/creating-databases/_index.md" >}}) and get the database endpoint, which
     contains the cluster name (FQDN).
 1. Try to connect to the database endpoint from your client of choice,
     and execute commands against the database.
@@ -51,11 +51,12 @@ OK
 A simple python application running on the host machine can also connect
 to the database1.
 
-Note: The following section assumes you already have python and redis-py
-(python library for connecting to Redis) configured on the host machine
-running the container. You can find the instructions to configure
-redis-py on the [github page for
-redis-py](https://github.com/andymccurdy/redis-py).
+{{< note >}}
+The following section assumes you already have python and redis-py
+(python library for connecting to Redis) configured on the host machine running the container.
+You can find the instructions to configure redis-py on the
+[github page for redis-py](https://github.com/andymccurdy/redis-py).
+{{< /note >}}
 
 In the command-line Terminal, create a new file called
 **redis_test.py**

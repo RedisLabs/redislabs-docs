@@ -1,5 +1,5 @@
 ---
-Title: Installing RedisInsight
+Title: Installation
 description:
 weight: 30
 alwaysopen: false

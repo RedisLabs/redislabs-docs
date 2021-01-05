@@ -34,5 +34,5 @@ The default directories that Redis Enterprise Software uses for data and metadat
 
 You can change these file locations for:
 
-- [Ephemeral and persistence storage]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}) during cluster setup
+- [Ephemeral and persistence storage]({{< relref "/rs/administering/new-cluster-setup.md" >}}) during cluster setup
 - [Socket files]({{< relref "/rs/installing-upgrading/configuring/change-location-socket-files.md" >}}) after cluster setup

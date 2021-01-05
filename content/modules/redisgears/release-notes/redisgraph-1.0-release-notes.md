@@ -5,6 +5,28 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisGears 1.0.2 (October 2020)
+
+This is a maintenance release for version 1.0.
+
+Headlines:
+
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor Features:
+    - #[368](https://github.com/RedisGears/RedisGears/pull/368) Support for buffer input on `createTensorFromBlob` when integrating with [RedisAI](https://github.com/RedisGears/RedisGears/blob/v1.0.2/redisai.io) API.
+    - #[373](https://github.com/RedisGears/RedisGears/pull/373) Registered execution plans will not re-send their metadata when they are triggered (this feature reduces network overhead and improve performance of distributed registrations).
+    - #[371](https://github.com/RedisGears/RedisGears/pull/371) Full details on import requirement failure.
+
+- Bugfixes:
+
+    - #[374](https://github.com/RedisGears/RedisGears/pull/374) Fix RedisAI `toFlatList` function to handle long long encoding.
+    - #[375](https://github.com/RedisGears/RedisGears/pull/375) Call `OnRegister` on RDBLoad.
+    - #[388](https://github.com/RedisGears/RedisGears/pull/388) Fix crash on hello request failure (internal protocol between shards), a retry will be triggered after 1 second.
+    - #[395](https://github.com/RedisGears/RedisGears/pull/395) Fix rare wrong results on [aggregate](https://oss.redislabs.com/redisgears/operations.html#aggregate) and [aggregateby](https://oss.redislabs.com/redisgears/operations.html#aggregateby). Use deep copy on the zero value to avoid those incorrect results.
+
 ## RedisGears 1.0.1 (July 2020)
 
 This is a maintenance release for version 1.0.

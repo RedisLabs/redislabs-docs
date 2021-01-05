@@ -1,5 +1,5 @@
 ---
-Title: Installing Redis Enterprise Software
+Title: Installation
 description:
 weight: 35
 alwaysopen: false
@@ -22,8 +22,8 @@ To access the installation package for any of these platforms:
 1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
 
 {{< note >}}
-Before you install the Linux package or AWS AMI on an AWS instance,
-review the [configuration requirements for AWS instances]({{< relref "configuring-aws-instances.md" >}}).
+Before you install the Linux package or AWS AMI on an AWS EC2 instance,
+review the [configuration requirements for AWS EC2 instances]({{< relref "configuring-aws-instances.md" >}}).
 {{< /note >}}
 
 In this article we walk you through the process for installing the RS installation package for Linux.
@@ -49,6 +49,7 @@ sudo lsblk
 
 - [Disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
 - Make sure that you have root-level access to each node, either directly or with sudo.
+- If you require the `redislabs` UID (user ID) and GID (group ID) numbers to be the same on all the nodes, create the `redislabs` user and group with the required numbers on each node.
 - When port 53 is in use, the installation fails. This is known to happen in
     default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
     To work around this issue, change the system configuration to make this port available
@@ -63,7 +64,7 @@ sudo lsblk
     {{% /expand %}}
 
 - Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
-    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 30000 65535'.
+    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 40000 65535'.
 
 ## Installing RS on Linux
 
@@ -116,11 +117,11 @@ To install RS without answering the installation questions, either:
     RS is now installed on the node.
     Repeat this process for each node in the cluster.
 
-1. [Create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
-    or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an existing RS cluster.
-1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
+1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}) database.
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
 ### Custom installation directories
 

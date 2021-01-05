@@ -1,13 +1,14 @@
 ---
-Title: Getting Started with Redis Enterprise Software using Kubernetes
+Title: Redis Enterprise Software on Kubernetes
 description:
-weight: 60
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
-Kubernetes provides simpler orchestration with containers and has been widely adopted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
+Kubernetes provides enterprise orchestration of containers and has been widely adopted. The Redis Enterprise Operator for Kubernetes provides a
+simple way to get a Redis Enterprise cluster on Kubernetes as well as enables more complex deployment scenarios.
 
 {{< allchildren style="h2" description="true" />}}
 
@@ -64,15 +65,19 @@ To define your Kubernetes cluster, give it a name and keep the size of the clust
 
 <!-- Add image -->
 
-Note: it may take a few mins to create the cluster. Ensure the Kubernetes cluster creation is complete before proceeding to the next step.
+{{< note >}}
+It may take a few mins to create the cluster. Ensure the Kubernetes cluster creation is complete before proceeding to the next step.
+{{< /note >}}
 
 For best placement, Redis Enterprise pods should be placed on separate physical nodes in the Kubernetes cluster. This makes sure that there is better availability during node failures. Placing multiple Redis Enterprise nodes in the same physical host can cause multiple nodes to fail at once and may result in availability and data loss.
 
 <!-- Add image -->
 
-_Note: By the way, If you are a commandline kind of person, here is how you can simplify the three screen above into 2 simple lines;_
+{{< note >}}
+By the way, If you are a commandline kind of person, here is how you can simplify the three screen above into 2 simple lines;
 
     gcloud container clusters create cluster-1 --num-nodes=3 -m n1-standard-2
+{{< /note >}}
 
 Finally to finish the Kubernetes deployment, you need to get the Kubernetes console up and running and start the Kubernetes proxy. on the terminal window, run the following commands;
 
@@ -162,7 +167,9 @@ To test the connection to the database, we use the _redis-cli_ tool. Here is a s
 
     # 127.0.0.1:12000>
 
-Note: To clean up the deployment you can simply delete the cluster using the following command line
+{{< note >}}
+To clean up the deployment you can simply delete the cluster using the following command line
 
     gcloud container clusters delete cluster-1
+{{< /note >}}
 {{% /comment %}}

@@ -17,11 +17,13 @@ upgrade instructions before beginning the upgrade process.
 You can upgrade to RS 5.0.2 from RS 4.4.2 and above. If you have a
 version older than 4.4.2, you must first upgrade to at least 5.0.
 
-Note: Starting from RS 5.0.2, ports 3338 and 3339 should also be opened
-on each node for the purpose of internal cluster communication. For more
-information, check the ['network port
+{{< note >}}
+Starting from RS 5.0.2, ports 3338 and 3339 should also be opened
+on each node for the purpose of internal cluster communication.
+For more information, check the ['network port
 configurations']({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 page
+{{< /note >}}
 
 ## New features
 

@@ -23,5 +23,5 @@ sudo /etc/network/if-up.d/ntpdate
 ```
 
 If you are using [Active-Active databases]({{< relref "/rs/concepts/intercluster-replication.md" >}}),
-you must use [Network Time Service (ntpd)]({{< relref "/rs/administering/active-active#network-time-service-ntp-or-chrony" >}})
+you must use [Network Time Service (ntpd)]({{< relref "/rs/administering/designing-production/active-active#network-time-service-ntp-or-chrony" >}})
 to synchronize OS clocks consistent across clusters to handle conflict resolution according to the OS time.

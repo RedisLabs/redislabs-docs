@@ -7,14 +7,14 @@ categories: ["RC"]
 aliases: /rc/concepts/clustering-redis-cloud/
         /rv/concepts/clustering/
 ---
-Redis is mostly a single-threaded process to provide high performance and simple.
-To let you also take advantage of clustering,
+Redis is mostly a single-threaded process. This enables Redis to be high performance and simple (no need for threads synchronization).
+To let you take advantage of Redis clustering,
 Redis Cloud uses our Redis Enterprise technology to scale Redis databases for you.
 
 For example:
 
 - The dataset is big enough that it would benefit from using the RAM resources of more than one server.
-    We recommend sharding a dataset once it reaches the size of 25 GB (50 GB for RoF).
+    We recommend enabling clustering for the database when the data reaches the size of 25 GB (50 GB for RoF) to create multiple shards.
 - The operations performed against the database are CPU intensive enough to degrade performance.
     With clustering, you can distribute operational load across the same server or multiple servers.
 
@@ -41,10 +41,12 @@ When creating or editing a Redis database on Redis Cloud, the
 system automatically calculates the number of shards needed based on
 the database memory limit and required throughput.
 
-**Note:** For Redis Cloud, clustering is only available in the
+{{< note >}}
+For Redis Cloud Essentials, clustering is only available in the
 "Pay-As-You-Go" subscription.
+![clustering-subscription](/images/rc/clustering-subscription.png)
+{{< /note >}}
 
-![subscription-selection-2](/images/rc/subscription-selection-2.png?width=600&height=221)
 
 ## Multi-key operations {#multikey-operations}
 
@@ -72,10 +74,10 @@ are supported with the following limitations:
     and pipelining are supported with Redis Cloud cluster
     like if it were a non-cluster DB.
 
-## Changing the sharding policy
+## Changing the hashing policy
 
 The clustering configuration of a Redis Cloud instance can be
-changed. However, sharding policy changes trigger the deletion
+changed. However, hashing policy changes trigger the deletion
 (i.e. FLUSHDB) of the data before they can be applied. These changes
 are:
 

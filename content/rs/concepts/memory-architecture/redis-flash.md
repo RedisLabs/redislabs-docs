@@ -19,7 +19,7 @@ This enables you to have much larger datasets with RAM-like latency and
 performance, but at dramatically lower cost than an all-RAM database.
 
 ![All-RAM Redis Databases versus Redis on Flash enabled
-databases](/images/rs/redis_flash_px.png?width=600&height=328)
+databases](/images/rs/redis_flash_px.png)
 
 By using Redis on Flash to distribute the data between RAM and flash
 memory, which is much cheaper than RAM, you can lower your TCO and
@@ -144,7 +144,7 @@ prerequisites:
 Once these requirements are met, both Redis of Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
-database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
 When Redis on Flash is enabled, additional settings and
 [metrics]({{< relref "/rs/administering/monitoring-metrics/console-metrics-definitions.md#redis-on-flash-metrics" >}})

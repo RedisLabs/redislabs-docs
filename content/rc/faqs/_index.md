@@ -66,7 +66,7 @@ You can downgrade or upgrade your subscription at any time with no downtime or p
 Redis Cloud Pro and Redis Cloud Essentials are both fully-managed Redis services operated by Redis Labs, however Redis Cloud Pro runs on a dedicated VPC and offers:
 
 - [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) - Recommended for datasets larger than 500GB
-- [Active-Active]({{< relref "/rs/administering/active-active.md" >}}) and [Active-Passive]({{< relref "/rs/administering/active-passive.md" >}}) Geo Distribution
+- [Active-Active]({{< relref "/rs/administering/designing-production/active-active.md" >}}) and [Active-Passive]({{< relref "/rs/administering/designing-production/active-passive.md" >}}) Geo Distribution
 - Integration with [modules]({{< relref "/modules/_index.md" >}})
 - Encryption of [persistence data]({{< relref "/rs/concepts/data-access/persistence.md" >}})
 - [Cloud API]({{< relref "/rc/api/_index.md" >}})
