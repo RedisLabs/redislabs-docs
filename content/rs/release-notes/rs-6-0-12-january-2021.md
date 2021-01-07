@@ -19,7 +19,7 @@ And other functional and stability improvements.
 
 ### Version information
 
-#### Upgrade
+#### Upgrade instructions
 
 - Follow [these instructions](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
 - For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/#upgrading-activeactive-databases).
