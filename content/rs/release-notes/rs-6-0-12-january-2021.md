@@ -19,7 +19,7 @@ And other functional and stability improvements.
 
 ### Version information
 
-#### Upgrade instructions
+#### Upgrade
 
 - Follow [these instructions](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
 - For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/#upgrading-activeactive-databases).
@@ -33,11 +33,8 @@ And other functional and stability improvements.
 
 - Support for RS 5.4.X ended on December 31, 2020.
 - Support for Red Hat Enterprise Linux 6 and Oracle Linux 6 and Ubuntu 14.04 (Trusty) operating systems platforms ended on November 30, 2020.
-
-Next RS version:
-
-- Upgrades to the next RS version, will be enabled from RS 5.6.0 and above.
-- Upgrades of Active-Active databases to the next RS version, will require all their instances to run with protocol version 1 and featureset version 1 or above. Active-Active databases running on protocol version 0 and/or featureset version 0 will block the upgrade.
+- This is the last RS version that supports direct upgrades from versions below 5.6.0.
+- This is the last RS version that supports Active-Active protocol version below 1 and featureset version below 1.
 
 ### New Features
 
