@@ -12,7 +12,7 @@ This version includes the following new features and improvements:
 - You can [disable several internal RS services](https://docs.redislabs.com/latest/rs/administering/troubleshooting/disabling-services/) to free up more memory
 - User accounts can have multiple passwords to allow for [password rotation](https://docs.redislabs.com/latest/rs/administering/access-control/password-rotation/)
 - [Dependencies are automatically installed](https://docs.redislabs.com/latest/modules/add-module-to-cluster/#adding-a-module-using-the-rest-api) when you add modules to a cluster
-- [Envoy replaces nginx](https://docs.redislabs.com/latest/rs/administering/designing-production/networking/port-configurations/) for internal cluster administration
+- [Envoy replaces NGINX](https://docs.redislabs.com/latest/rs/administering/designing-production/networking/port-configurations/) for internal cluster administration
 - Automatic recovery of the [syncer process](https://docs.redislabs.com/latest/rs/administering/designing-production/active-active/#syncer-process) from out-of-memory (preview mode)
 
 And other functional and stability improvements.
