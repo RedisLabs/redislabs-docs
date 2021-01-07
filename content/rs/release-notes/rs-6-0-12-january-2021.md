@@ -89,6 +89,17 @@ When a destination instance (that is, the instance running the syncer process) g
 
 This is a configurable option and currently under preview mode. This behavior will be GA and set as default in the next RS version.
 
+To enable the syncer automatic recovery, do these steps on each participating cluster:
+
+1. [Upgrade the featureset version({{< relref "/rs/installing-upgrading/upgrading#upgrading-activeactive-databases" >}}) to `3`.
+1. Enable the syncer automatic recovery using the REST API:
+
+    ```sh
+    curl -v -k -u <username>:<password> -X PUT -H “Content-Type: application/json” -d ‘{crdt_syncer_auto_oom_unlatch”:true}’ http://<cluster_address>:8080/v1/bdbs/<database_ID>
+    ```
+
+The syncer process restarts to with automatic recovery on.
+
 ### Redis modules
 
 The following GA releases of Redis modules are bundled with RS 6.0.12:
@@ -105,6 +116,8 @@ To use the updated modules with a database, you must [upgrade the module on the 
 
 - RS 6.0.12 includes open source Redis 6.0.6. For more information about Redis 6.0.6, check out the [release notes](https://raw.githubusercontent.com/redis/redis/6.0.6/00-RELEASENOTES).
 - The bundled Nginx version was updated from version 1.16.0 to 1.18.0.
+- The crdb-cli syntax to remove an instance is changed from
+`remove-instance [--ordered|--unordered]` to `remove-instance [--force|--no-force]`.
 
 ### Important fixes
 
