@@ -56,7 +56,10 @@ Redis Software users can now use the REST API to [disable the following services
 
 Once disabled, services will not be monitored and controlled by the supervisord.
 
-Warning: This feature can cause unintended results if not used with care. Use only if you are sure you fully understand the consequences of the action. Use in a LAB environment before in production and at your own risk.
+{{< warning >}}
+This feature can cause unintended results if the cluster relies on the disabled services.
+Make sure you understand the impact of disabled services and test the system in a lab environment before you deploy in production.
+{{< /warning >}}
 
 #### Support for multiple passwords
 
