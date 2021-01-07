@@ -54,11 +54,11 @@ Redis Software users can now use the REST API to [disable the following services
 - crdb_coordinator
 - crdb_worker
 
-Once disabled, services will not be monitored and controlled by the supervisord.
+Once disabled, services are not monitored and controlled by the supervisord.
 
 {{< warning >}}
 This feature can cause unintended results if the cluster relies on the disabled services.
-Make sure you understand the impact of disabled services and test the system in a lab environment before you deploy in production.
+To make sure you understand the impact of disabled services, test the system in a lab environment before you deploy in production.
 {{< /warning >}}
 
 #### Support for multiple passwords
