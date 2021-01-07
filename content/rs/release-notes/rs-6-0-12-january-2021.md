@@ -91,7 +91,7 @@ This is a configurable option and currently under preview mode. This behavior wi
 
 To enable the syncer automatic recovery, do these steps on each participating cluster:
 
-1. [Upgrade the featureset version({{< relref "/rs/installing-upgrading/upgrading#upgrading-activeactive-databases" >}}) to `3`.
+1. [Upgrade the featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrading-activeactive-databases" >}}) to `3`.
 1. Enable the syncer automatic recovery using the REST API:
 
     ```sh
