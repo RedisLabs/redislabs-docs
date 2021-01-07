@@ -10,7 +10,7 @@ Redis Enterprise Software lets you implement these policies using its API.
 Specifically, you can add a new password for a database user without immediately invalidating the old one (which might cause authentication errors in production).
 
 For user access to the RS Admin Console,
-you can set a [password expiration policy]({{< relref "/rs/administering/access-control/#setting-local-user-password-expiration" >}}) that prompts the user to change their password.
+you can set a [password expiration policy]({{< relref "/rs/administering/access-control/_index.md#setting-local-user-password-expiration" >}}) that prompts the user to change their password.
 However, for database connections that rely on password authentication,
 you need to allow for authentication with the existing password while you roll out the new password to your systems.
 
@@ -24,7 +24,7 @@ If you reset the password for a user in the RS Admin Console,
 the new password replaces all other passwords for that user.
 {{ /warning }}
 
-The new password cannot already exist as a password for the user and must meet the [password complexity]({{< relref "/rs/administering/access-control/#setting-up-local-password-complexity" >}}) requirements, if enabled.
+The new password cannot already exist as a password for the user and must meet the [password complexity]({{< relref "/rs/administering/access-control/_index.md#setting-up-local-password-complexity" >}}) requirements, if enabled.
 
 ## Rotating the password of a user account
 
