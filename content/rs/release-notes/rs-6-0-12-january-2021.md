@@ -63,33 +63,31 @@ Make sure you understand the impact of disabled services and test the system in 
 
 #### Support for multiple passwords
 
-With Redis 6 and Redis Software 6 users, you can now enhance your security procedures by managing multiple passwords per user to allow seamless password rotation.
+For users of Redis 6 and RS 6.0 and above, you can now add more security to your password management by maintaining multiple passwords for a user to allow seamless password rotation.
 
-As of RS 6.0, Redis Software users can be assigned with data access permissions (Redis ACLs) and cluster administration permissions. Password rotation is especially helpful so that you can do a rolling update of the passwords in the clients that connect to the Redis databases.
+As of RS 6.0, you can assign specific data access permissions (Redis ACLs) and cluster administration permissions to users.
+Password rotation is especially helpful so that you can do a rolling update of the passwords in the application clients that connect to the Redis databases.
 
-Managing multiple passwords is currently supported [using the REST API only](https://docs.redislabs.com/latest/rs/administering/access-control/password-rotation/).
-
-#### Envoy to replace Nginx
-
-Starting version 6.0.12, Redis Software uses Envoy for its internal control plane communication (management layer) instead of nginx.
-
-Coming up in the next RS version, we'll use Envoy to enable encrypted mesh architecture for the communication of nodes in a cluster.
-
-Note: Envoy has no role in any data plane communication.
+In this version, you can only configure multiple passwords [using the REST API](https://docs.redislabs.com/latest/rs/administering/access-control/password-rotation/).
 
 #### Redis Modules dependencies management
 
-RedisGears GA and RedisAI GA require external dependencies to be fetched and managed by Redis Software. Modules declare dependencies at release time in their ramp file. These dependencies are installed by Redis Software when the module is added to the cluster. The master node downloads the required dependencies and prompt the other nodes to copy the dependencies from the master node. When all dependencies requirements are satisfied, the module completes. New nodes to the cluster install the dependencies also.
+RedisGears GA and RedisAI GA require Redis Software to fetch and manage external dependencies.
+Modules declare dependencies at release time in their ramp file.
 
-#### Syncer automatic recovery from out-of-memory (preview mode)
+In this version of RS, these dependencies are installed by Redis Software when the module is added to the cluster.
+The master node downloads the required dependencies and prompts the other nodes to copy the dependencies from the master node.
+When all dependency requirements are satisfied, the module installation is complete.
+New nodes to the cluster also automatically install the dependencies.
 
-For Active-Active databases, we improved the syncer process behaviour when hitting an out of memory (OOM) state.
+#### Syncer automatic recovery from out-of-memory (Preview mode)
 
-Although Active-Active synchronization is bi-directional, in each direction we can define a source instance and a destination instance. When a destination instance (that is, the instance running the syncer process) gets OOM, the syncer process attempts to automatically recover the data synchronization when memory becomes available.
+For Active-Active databases, the syncer process gracefully recovers from an out of memory (OOM) state.
+
+Although Active-Active synchronization is bi-directional, in each direction we can define a source instance and a destination instance.
+When a destination instance (that is, the instance running the syncer process) gets OOM, the syncer process attempts to automatically recover the data synchronization when memory becomes available.
 
 This is a configurable option and currently under preview mode. This behavior will be GA and set as default in the next RS version.
-
-Note: This capability is not supported with Replica Of.
 
 ### Redis modules
 
