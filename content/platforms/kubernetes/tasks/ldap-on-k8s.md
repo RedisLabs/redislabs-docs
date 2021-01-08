@@ -490,7 +490,7 @@ ldap_tls_key: /opt/ldap/client.key
 1. The saslauthd daemon is not restarted when the configuration changes. If you have never configured LDAP, it will still work. The configuration file does not exist until you do and so it will get read.
 Unfortunately, if you change the configuration and have previously tried to authenticate with an external user, the configuration will not get read again until the saslauthd daemon is restarted. There is currently no way to do that via K8s other than to restart the pods because K8s administrators don’t have access to root in the Redis Enterprise container.
 
-   You can proceed with caution and restart the pods by:
+   You can proceed with caution and restart the pods by running:
 
    ```
    kubectl rollout restart statefulset name-of-cluster
