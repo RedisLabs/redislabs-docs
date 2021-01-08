@@ -1,6 +1,6 @@
 ---
 Title: Using kustomize for deployment
-description: This tasks describes how to use the kustomize tool with the Redis Enterprise operator on Kubernetes
+description: How to use the kustomize tool with the Redis Enterprise operator on Kubernetes
 weight: 32
 alwaysopen: false
 categories: ["Platforms"]
