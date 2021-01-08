@@ -23,7 +23,7 @@ At minimum, you’ll need the following information about your LDAP server:
 
 In this tutorial, we will use a test server deployed on the same K8s cluster.
 
-## Setting up an LDAP Server
+## Setting up an LDAP server
 
 If you don’t already have an LDAP server, you can easily deploy one in the same K8s
 cluster for testing using a [helm chart for OpenLDAP](https://hub.helm.sh/charts/stable/openldap):
