@@ -498,4 +498,4 @@ Unfortunately, if you change the configuration and have previously tried to auth
 
    where "name-of-cluster" is the name of the Redis Enterprise cluster in your CR.
 
-1. For cluster deployed LDAP servers the suffix “cluster.local” will not resolve properly. You can remove the cluster.local suffix for LDAP deployments in the same K8s cluster.
+1. For cluster-deployed LDAP servers, the suffix “cluster.local” will not resolve properly. You can remove the "cluster.local" suffix for LDAP deployments in the same K8s cluster.
