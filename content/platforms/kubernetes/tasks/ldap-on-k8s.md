@@ -10,7 +10,7 @@ aliases:
 
 Throughout this tutorial we will assume there is a single namespace called ‘db'.
 
-## LDAP Overview
+## LDAP overview
 
 At minimum, you’ll need the following information about your LDAP server:
 
