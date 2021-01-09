@@ -162,7 +162,7 @@ the command is distributed across multiple shards
 and the responses from all shards are combined into a single response.
     {{< /note >}}
 
-- **Geo commands**: In GEORADIUS/GEOREADIUSBYMEMBER commands, the
+- **Geo commands**: In GEORADIUS / GEORADIUSBYMEMBER commands, the
     STORE and STOREDIST option can only be used when all affected keys
     reside in the same slot.
 - **Transactions**: All operations within a WATCH / MULTI / EXEC block
