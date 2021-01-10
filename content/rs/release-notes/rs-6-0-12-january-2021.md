@@ -127,7 +127,7 @@ To use the updated modules with a database, you must [upgrade the module on the 
 - RS49404 - Fixed a bug in for upgrades with custom directories that prevent users from creating databases via the web UI console.
 - RS43961 - bigkeys command fixed to handle non-printable key names
 - RS45707 - Fixed a bug that caused RCP (Redis Cloud Pro) databases to reject connections while resharding the database.
-- RS51144 - Fixed a bug in the syncer process that was stopping synchronization between all instances in some scenarios of network disconnection of one or more participation clusters.
+- RS51144 - Fixed a bug in the syncer process that was stopping synchronization between all instances in some scenarios of network disconnection of one or more participating clusters.
 
 ### Known limitations
 
