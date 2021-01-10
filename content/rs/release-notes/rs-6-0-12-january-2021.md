@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software Release Notes 6.0.12 (January 2020)
+Title: Redis Enterprise Software Release Notes 6.0.12 (January 2021)
 description:
 weight: 78
 alwaysopen: false
