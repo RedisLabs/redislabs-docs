@@ -37,6 +37,11 @@ These are the required query parameters for any type of database.
 | `verifyServer` | boolean | optional          | `"true"` if the server certificate of you Redis database has to be verified. |
 |                |         |                   |                                                                              |
 
+{{< note >}}
+If you want to add the TLS certificates for your Redis database, you have to manually fill [database form]({{< relref "/ri/using-redisinsight/add-instance.md" >}}).
+{{< /note >}}
+
+
 #### Examples
 
 ##### Standalone database
