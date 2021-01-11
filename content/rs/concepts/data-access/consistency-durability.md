@@ -7,7 +7,7 @@ categories: ["RS"]
 ---
 Redis Enterprise Software (RS) comes with the ability to replicate data
 to another slave for high availability and persist in-memory data on
-disk permanently for durability. With the new WAIT command, you can
+disk permanently for durability. With the WAIT command, you can
 control the consistency and durability guarantees for the replicated and
 persisted database in RS.
 
@@ -30,7 +30,7 @@ acknowledged within the slave. These are steps 7 and 8.
 
 ![Weak Consistency](/images/rs/weak-consistency.png)
 
-With the new WAIT command, applications can ask to wait for
+With the WAIT command, applications can ask to wait for
 acknowledgments only after replication or persistence is confirmed on
 the slave. The flow of a write operation with the WAIT command is
 shown below:
