@@ -28,9 +28,9 @@ These are the required query parameters for any type of database.
 
 | Parameter      | Type    | Required/Optional | Description                                                                  |
 |----------------|---------|-------------------|------------------------------------------------------------------------------|
-| `name`         | string  | required          | A nick name for the Redis database. Any string is valid                      |
 | `host`         | string  | required          | Hostname of your Redis database.                                             |
 | `port`         | number  | required          | Port of your Redis database.                                                 |
+| `name`         | string  | optional          | A nick name for the Redis database. Any string is valid                      |
 | `username`     | string  | optional          | Username of your Redis database.                                             |
 | `passsword`    | string  | optional          | Password of your Redis database.                                             |
 | `tls`          | boolean | optional          | `"true"` if your Redis database has TLS enabled.                             |
