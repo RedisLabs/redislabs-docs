@@ -18,11 +18,11 @@ With the RS REST API, you can add additional passwords to an user account for au
 After the old password is replaced in the database connections,
 just delete the old password to finish the password rotation process.
 
-{{ warning }}
+  {{< warning >}}
 Multiple passwords are only supported using the REST API.
 If you reset the password for a user in the RS Admin Console,
 the new password replaces all other passwords for that user.
-{{ /warning }}
+  {{< /warning >}}
 
 The new password cannot already exist as a password for the user and must meet the [password complexity]({{< relref "/rs/administering/access-control/_index.md#setting-up-local-password-complexity" >}}) requirements, if enabled.
 
