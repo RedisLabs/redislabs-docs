@@ -5,8 +5,8 @@ weight: 15
 categories: ["RI"]
 path: api/
 nextStep:
-    Title: Memory Analysis
-    href: /docs/features/memory-analysis/
+    Title: Adding Databases via GET URL
+    href: /docs/features/api-get/
 ---
 
 If you have a lot of Redis databases or you are using RedisInsight as part of some automated workflow,
