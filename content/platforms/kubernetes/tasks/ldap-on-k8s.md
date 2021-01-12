@@ -92,13 +92,17 @@ cluster for testing using a [helm chart for OpenLDAP](https://github.com/helm/ch
 
 A cluster must be configured to use an external LDAP server. This can be done via the rladmin command or via the REST API by setting the “saslauthd_ldap_conf” cluster parameter with the saslauthd configuration information. Internally, the saslauthd ademon handles LDAP-based authentication.
 
-Once you have setup LDAP authentication, you can test connectivity via the the testsaslauthd command. You can just connect to any Redis Enterprise Node pod and then try out a username and password:
+Once you have enabled LDAP authentication, you can test connectivity using the `testsaslauthd` command. Log in to any Redis Enterprise Node's pod, and then run the following:
 
 ```
-testsaslauthd -u tester -p tester
+testsaslauthd -u [USERNAME] -p [PASSWORD]
 ```
 
-Once the saslauthd daemon can successfully authenticate users, you need to add the user to the list of allowed users in the Redis Enterprise cluster. You can do this through the administrative UI or via the REST API. **A user that is not added is not allowed to authenticate.** If you can authenticate with testsaslauthd but not via the REST API or the UI, then you need to verify the user has been added to the Redis Enterprise cluster.
+Once the `saslauthd` daemon can successfully authenticate users, you need to add the user to the list of allowed users in the Redis Enterprise cluster.
+
+You can add new users using the administrative UI or the REST API.
+
+**A user that is not added is not allowed to authenticate.** If you can authenticate with testsaslauthd but not via the REST API or the UI, then you need to verify the user has been added to the Redis Enterprise cluster.
 
 If you want to programatically add your LDAP user, you can simply use the REST API. You’ll need to have access to the API. In this example, the API has been port-forwarded to the local host:
 
