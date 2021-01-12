@@ -7,7 +7,7 @@ categories: ["Platforms"]
 aliases:
 ---
 
-You can configure a replica of database by creating an item in
+You can configure a replica of a database by creating an item in
 the `replicaSources` section of the [Redis Enterprise Database specification](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec). The value of
 `replicaSourceType` must be 'SECRET'; `replicaSourceName`
 must be the name of a secret that contains the replica source url.
