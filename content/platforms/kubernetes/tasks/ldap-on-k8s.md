@@ -8,7 +8,7 @@ aliases:
 ---
 
 
-Throughout this tutorial we will assume there is a single namespace called ‘db'.
+This tutorial describes how to configure LDAP-based authentication for a Redis Enterprise cluster on Kubernetes. Throughout this tutorial, we will assume that there is a single namespace called "db".
 
 ## LDAP overview
 
@@ -18,17 +18,17 @@ At minimum, you’ll need the following information about your LDAP server:
  * The filter to identify a particular user (e.g., uid=%u)
  * The bind DN for the account that can search (e.g., cn=admin,dc=example,dc=org)
  * The password for the bind DN
- * The server host and port.
+ * The server host and port
  * Whether you are using SSL
 
-In this tutorial, we will use a test server deployed on the same K8s cluster.
+This tutorial uses a test LDAP server deployed on the k8s cluster hosting Redis Enterprise.
 
 ## Setting up an LDAP server
 
 If you don’t already have an LDAP server, you can easily deploy one in the same K8s
-cluster for testing using a [helm chart for OpenLDAP](https://hub.helm.sh/charts/stable/openldap):
+cluster for testing using a [helm chart for OpenLDAP](https://github.com/helm/charts/tree/master/stable/openldap):
 
-1. Create a ldap-values.yaml file that contains:
+1. Create a file called `ldap-values.yaml` containing the following:
 
    ```
    env:
@@ -58,7 +58,7 @@ cluster for testing using a [helm chart for OpenLDAP](https://hub.helm.sh/charts
    ou: users
    ```
 
-1. Create a file called user.ldif for your test user:
+1. Create a file called `user.ldif` for your test user:
 
    ```
    dn: uid=tester,ou=users,dc=example,dc=org
@@ -73,7 +73,7 @@ cluster for testing using a [helm chart for OpenLDAP](https://hub.helm.sh/charts
    userPassword: {SSHA}5IcQ2zo5wkCCohXHGWteDMBDbJElbChP
    ```
 
-   The password for the user is “tester”. If you’d like to change it, you can with:
+   The password for the user is “tester”. If you’d like to change it, run the following command:
 
    ```
    ldappasswd  -h localhost -p 3889 -s newpassword -W -D "cn=admin,dc=example,dc=org" -x "uid=tester,ou=users,dc=example,dc=org"
@@ -100,7 +100,7 @@ testsaslauthd -u tester -p tester
 
 Once the saslauthd daemon can successfully authenticate users, you need to add the user to the list of allowed users in the Redis Enterprise cluster. You can do this through the administrative UI or via the REST API. **A user that is not added is not allowed to authenticate.** If you can authenticate with testsaslauthd but not via the REST API or the UI, then you need to verify the user has been added to the Redis Enterprise cluster.
 
-If you want to automatically add your LDAP user, you can simply use the REST API. You’ll need to have access to the API somehow. In this example, the API has been port forwarded to the local host:
+If you want to programatically add your LDAP user, you can simply use the REST API. You’ll need to have access to the API. In this example, the API has been port-forwarded to the local host:
 
 ```
 cat << EOF > add-user.json
@@ -115,10 +115,10 @@ EOF
 curl -v -k -u "demo@redislabs.com:xxx" -X POST -d @add-user.json -H "Content-Type: application/json" https://localhost:9443/v1/users
 ```
 
-### Deploying a Redis Enterprise Cluster
-A Redis Enterprise cluster requires no special setup other to be configured with LDAP as the configuration is outside of the scope of the Redis Enterprise CR.
+### Deploying a Redis Enterprise cluster
+A Redis Enterprise cluster requires no special setup other to be configured with LDAP as the configuration is outside of the scope of the Redis Enterprise custom resource.
 
-You can create a simple test cluster that can be used with the examples below via this CR:
+You can create a simple test cluster that can be used with the examples below by using the following custom resource:
 
 ```
 apiVersion: app.redislabs.com/v1
@@ -136,14 +136,14 @@ spec:
       memory: 3Gi
 ```
 
-### LDAP Configuration
+### LDAP configuration
 
 A new Redis Enterprise cluster does not have any LDAP configuration but is ready
 to accept them. The saslauthd daemon is already running and configured to use
 LDAP as a mechanism. All you need to do is to provide the cluster
 with the LDAP configuration information (see [saslauthd’s configuration reference](https://github.com/cyrusimap/cyrus-sasl/blob/master/saslauthd/LDAP_SASLAUTHD)).
 
-Using the example LDAP server we setup, a minimal set of configuration parameters for saslauthd:
+The following configuration parameters for `saslauthd` reference the LDAP server we just configured:
 
 ```
 ldap_servers: ldap://ldap-openldap.bdb.svc:389
@@ -160,7 +160,7 @@ If this information was in a file called “ldap.conf”, you can connect to a R
 rladmin cluster config saslauthd_ldap_conf ldap.conf
 ```
 
-The saslauthd daemon is configured to use the file `/etc/opt/redislabs/saslauthd.conf` on each node. You cannot edit this file directly on the node. Instead, you just need a local copy of the configuration you desire and rladmin command will update the cluster configuration. The cluster will update all the node’s configuration and preserve the setting after any pod restarts.
+The `saslauthd` daemon is configured to use the file `/etc/opt/redislabs/saslauthd.conf` on each node. You cannot edit this file directly on the node. Instead, you just need a local copy of the configuration you desire and rladmin command will update the cluster configuration. The cluster will update all the node’s configuration and preserve the setting after any pod restarts.
 
 ### Using the REST API to update the configuration
 Alternatively, you can post the same configuration data in a request to the REST API for the cluster. First you forward the cluster API from a pod:
@@ -252,12 +252,12 @@ If you are automating deployments with the operator, you can automate this confi
 
    In the above job, the cluster name is “ldap”. You will have to change this to the name of your cluster in all three of the CLUSTER_NAME, CLUSTER_USER, and CLUSTER_PASSWORD environment variables.
 
-This job waits for the cluster to be in the “Running” state. You can submit this job at the same time as the Redis Enterprise CR. It will wait for a period of time for the cluster to spin up and then change the configuration. This time period is tunable.
+This job waits for the cluster to be in the “Running” state. You can submit this job at the same time as the Redis Enterprise custom resource. It will wait for a period of time for the cluster to spin up and then change the configuration. This time period is tunable.
 
-You'll need to create the docker image (i.e., in the example as "you/job-config-ldap:1")
+You'll need to create the Docker image (i.e., in the example as "you/job-config-ldap:1")
 and make it available to your K8s cluster.
 
-You can build this docker image yourself with the following:
+You can build this Docker image yourself with the following:
 
 1. Dockerfile
 
