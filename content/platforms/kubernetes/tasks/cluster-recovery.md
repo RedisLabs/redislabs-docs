@@ -1,7 +1,7 @@
 ---
 Title: Recovering a Redis Enterprise Cluster on Kubernetes
 description: This task describes how to recover a Redis Enterprise cluster on Kubernetes.
-weight: 70
+weight: 20
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/cluster-recovery/
