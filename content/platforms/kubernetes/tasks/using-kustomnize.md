@@ -112,7 +112,7 @@ patchesStrategicMerge:
 EOF
 ```
 
-At this, we can test our “dev” customization by running the folliwing:
+We can now test our “dev” customization without applying it to the cluster by running the following:
 
 ```
 kubectl kustomize dev
