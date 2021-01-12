@@ -7,9 +7,9 @@ categories: ["Platforms"]
 aliases:
 ---
 
-Configuring a replica of database can be accomplished by creating an item in
+You can configure a replica of database by creating an item in
 the `replicaSources` section of the [Redis Enterprise Database specification](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec). The value of
-`replicaSourceType` must be 'SECRET' and `replicaSourceName`
+`replicaSourceType` must be 'SECRET'; `replicaSourceName`
 must be the name of a secret that contains the replica source url.
 
 A secret must be created using a `stringData` section containing the replica source URL as follows:
@@ -49,9 +49,9 @@ and the secret contains the correct replica source URL for that database.
 
 ## Retrieving the replica source URL via kubectl
 
-You will need kubectl, curl, and jq installed for this procedure.
+You will need `kubectl`, `curl`, and `jq` installed for this procedure.
 
-1. Setup your metadata:
+1. Set your metadata:
 
    ```
    CLUSTER_NAME=test
