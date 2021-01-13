@@ -16,7 +16,7 @@ SASL. We recommend to use the bmemcached-CLI client, and the
 instructions here is for this client. This instruction refers to Ubuntu
 OS. Make the necessary changes if you are using other Linux
 flavor.
-
+Need to update the below part
 ```sh
 $ wget https://github.com/RedisLabs/bmemcached-cli/archive/master.zip
 $ sudo apt-get install unzip python-pip
