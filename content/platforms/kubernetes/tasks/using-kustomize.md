@@ -1,5 +1,5 @@
 ---
-Title: Using kustomize for deployment
+Title: Using kustomize for Deployment
 description: How to use the kustomize tool with the Redis Enterprise operator on Kubernetes
 weight: 32
 alwaysopen: false
@@ -23,7 +23,7 @@ Kustomize works on the building variants from a hierarchy of configurations. In 
 
 For example, say we want to control the limits and requests for a node so that they are different values for development and production. To start, we must create a “base” directory that contains a default configuration for a simple cluster:
 
-```
+```sh
 mkdir -p base
 cat << EOF > base/cluster.yaml
 apiVersion: app.redislabs.com/v1
@@ -38,7 +38,7 @@ EOF
 
 We then need to configure the “base” directory to be recognized by kustomize. The simplest configuration lists only the resources:
 
-```
+```sh
 cat << EOF > base/kustomization.yaml
 resources:
  - cluster.yaml
@@ -47,7 +47,7 @@ EOF
 
 Now we can create a variant for development that tunes down the CPU requirements and also creates a single-node cluster while changing the namespace:
 
-```
+```sh
 mkdir -p dev
 cat << EOF > dev/cluster.yaml
 apiVersion: app.redislabs.com/v1
@@ -70,7 +70,7 @@ In this example, the cluster resource must repeat the prolog metadata so that ku
 
 As before, we need to tell kustomize about our resources using a `kustomization.yaml` file. In this case, we need to tell kustomize what to do with our variant of `cluster.yaml`. Specifically, we want to patch the base `cluster.yaml` by strategically merging properties:
 
-```
+```sh
 cat << EOF > dev/kustomization.yaml
 bases:
  - ../base
@@ -84,7 +84,7 @@ EOF
 
 For a QA deployment, we might need more resources:
 
-```
+```sh
 mkdir -p qa
 cat << EOF > qa/cluster.yaml
 apiVersion: app.redislabs.com/v1
@@ -114,13 +114,13 @@ EOF
 
 We can now test our “dev” customization without applying it to the cluster by running the following:
 
-```
+```sh
 kubectl kustomize dev
 ```
 
 and the output should look something like this:
 
-```
+```yaml
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
@@ -148,19 +148,19 @@ Kustomize is a tool that fits in with the idea of “configuration as code”. T
 
 The simplest way is to run kustomize is with `kubectl apply -k`. In the example, we could create our development cluster by:
 
-```
+```sh
 kubectl apply -k dev
 ```
 
 If we need to feed the output to another tool, the output of `kubectl kustomize` has the appropriate separators to be used as a bundle. We can easily redirect the output for use in another tool:
 
-```
+```sh
 kubectl kustomize dev > bundle.yaml
 ```
 
 Finally, you can run kustomize as its own binary outside of `kubectl`. The “kustomize build” command has the same outcome as “kubectl kustomize”:
 
-```
+```sh
 kustomize build dev
 ```
 

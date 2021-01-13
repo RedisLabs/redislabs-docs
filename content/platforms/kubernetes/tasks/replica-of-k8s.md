@@ -1,5 +1,5 @@
 ---
-Title: Creating replica databases on Kubernetes
+Title: Creating Replica Databases on Kubernetes
 description: How to create and automate database replicas using the database controller
 weight: 42
 alwaysopen: false
@@ -14,7 +14,7 @@ must be the name of a secret that contains the replica source url.
 
 A secret must be created using a `stringData` section containing the replica source URL as follows:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -29,7 +29,7 @@ the REST API as well.
 
 A replica of database CR simply uses the secret in the `replicaSources` section:
 
-```
+```yaml
 apiVersion: app.redislabs.com/v1alpha1
 kind: RedisEnterpriseDatabase
 metadata:
@@ -46,14 +46,13 @@ In the above, `name-of-replica` database will be created as a replica of the
 source database as long as the source database exists on the source cluster
 and the secret contains the correct replica source URL for that database.
 
-
 ## Retrieving the replica source URL via kubectl
 
 You will need `kubectl`, `curl`, and `jq` installed for this procedure.
 
 1. Set your metadata:
 
-   ```
+   ```js
    CLUSTER_NAME=test
    SOURCE_DB=db1
    TARGET_DB=db2
@@ -62,20 +61,20 @@ You will need `kubectl`, `curl`, and `jq` installed for this procedure.
 
 1. Retrieve the cluster authentication:
 
-   ```
+   ```js
    CLUSTER_USER=`kubectl get secret/${CLUSTER_NAME} -o json | jq -r .data.username | base64 -d`
    CLUSTER_PASSWORD=`kubectl get secret/${CLUSTER_NAME} -o json | jq -r .data.password | base64 -d`
    ```
 
 1. Forward the port of the REST API service for your source cluster:
 
-   ```
+   ```sh
    kubectl port-forward pod/${CLUSTER_NAME}-0 9443
    ```
 
 1. Request the information from the REST API:
 
-   ```
+   ```js
    JQ='.[] | select(.name=="'
    JQ+="${SOURCE_DB}"
    JQ+='") | ("redis://admin:" +  .authentication_admin_pass + "@"+.endpoints[0].dns_name+":"+(.endpoints[0].port|tostring))'
@@ -86,7 +85,7 @@ You will need `kubectl`, `curl`, and `jq` installed for this procedure.
 
 1. Construct the secret for the replica:
 
-   ```
+   ```yaml
    cat << EOF > secret.yaml
    apiVersion: v1
    kind: Secret
@@ -100,7 +99,7 @@ You will need `kubectl`, `curl`, and `jq` installed for this procedure.
 
 1. Create the replica database:
 
-   ```
+   ```yaml
    cat << EOF > target.yaml
    apiVersion: app.redislabs.com/v1alpha1
    kind: RedisEnterpriseDatabase
@@ -118,20 +117,19 @@ You will need `kubectl`, `curl`, and `jq` installed for this procedure.
 
 ## Automating the creation via a job
 
-
 The following procedure uses a ConfigMap and a Job to construct the replica
 source URL secret from the source database and configure the target database.
 
 There are four parameters:
 
- * `source` - the name of the source database
- * `cluster` - the name of the cluster for the source database
- * `target` - the name of the target database
- * `targetCluster` - the name of the cluster for the target database
+- `source` - the name of the source database
+- `cluster` - the name of the cluster for the source database
+- `target` - the name of the target database
+- `targetCluster` - the name of the cluster for the target database
 
 These parameters can be set by:
 
-```
+```sh
 kubectl create configmap replica-of-database-parameters \
 --from-literal=source=name-of-source \
 --from-literal=cluster=name-of-cluster \
@@ -145,7 +143,7 @@ database target, and target cluster names.
 The Job and ConfigMap below, when submitted, will create the secret and
 replica database:
 
-```
+```yaml
 apiVersion: batch/v1
 kind: Job
 metadata:

@@ -7,19 +7,18 @@ categories: ["Platforms"]
 aliases:
 ---
 
-
 This tutorial describes how to configure LDAP-based authentication for a Redis Enterprise cluster on Kubernetes. Throughout this tutorial, we will assume that there is a single namespace called "db".
 
 ## LDAP overview
 
 At minimum, you’ll need the following information about your LDAP server:
 
- * The base name for where to find users (e.g., ou=users,dc=example,dc=org)
- * The filter to identify a particular user (e.g., uid=%u)
- * The bind DN for the account that can search (e.g., cn=admin,dc=example,dc=org)
- * The password for the bind DN
- * The server host and port
- * Whether you are using SSL
+- The base name for where to find users (e.g., ou=users,dc=example,dc=org)
+- The filter to identify a particular user (e.g., uid=%u)
+- The bind DN for the account that can search (e.g., cn=admin,dc=example,dc=org)
+- The password for the bind DN
+- The server host and port
+- Whether you are using SSL
 
 This tutorial uses a test LDAP server deployed on the k8s cluster hosting Redis Enterprise.
 
@@ -30,7 +29,7 @@ cluster for testing using a [helm chart for OpenLDAP](https://github.com/helm/ch
 
 1. Create a file called `ldap-values.yaml` containing the following:
 
-   ```
+   ```yaml
    env:
      LDAP_ORGANISATION: "ACME Inc."
      LDAP_DOMAIN: "example.org"
@@ -40,19 +39,19 @@ cluster for testing using a [helm chart for OpenLDAP](https://github.com/helm/ch
 
 1. Deploy OpenLDAP:
 
-   ```
+   ```sh
    helm install ldap -f ldap-values.yaml stable/openldap
    ```
 
 1. Forward the pod to your localhost so you can configure the users. The ‘xxx’ should be replace with the actual pod hash:
 
-   ```
+   ```sh
    kubectl port-forward pod/ldap-openldap-xxx 3889:389
    ```
 
 1. Create a file called users.ldif for the users Organizational Unit:
 
-   ```
+   ```yaml
    dn: ou=users,dc=example,dc=org
    objectClass: organizationalUnit
    ou: users
@@ -60,7 +59,7 @@ cluster for testing using a [helm chart for OpenLDAP](https://github.com/helm/ch
 
 1. Create a file called `user.ldif` for your test user:
 
-   ```
+   ```yaml
    dn: uid=tester,ou=users,dc=example,dc=org
    objectClass: top
    objectClass: account
@@ -75,13 +74,13 @@ cluster for testing using a [helm chart for OpenLDAP](https://github.com/helm/ch
 
    The password for the user is “tester”. If you’d like to change it, run the following command:
 
-   ```
+   ```sh
    ldappasswd  -h localhost -p 3889 -s newpassword -W -D "cn=admin,dc=example,dc=org" -x "uid=tester,ou=users,dc=example,dc=org"
    ```
 
 1. Create the OU and user:
 
-   ```
+   ```sh
    ldapadd -h localhost -p 3889 -x -W -D "cn=admin,dc=example,dc=org" -f users.ldif
    ldapadd -h localhost -p 3889 -x -W -D "cn=admin,dc=example,dc=org" -f user.ldif
    ```
@@ -94,7 +93,7 @@ A cluster must be configured to use an external LDAP server. This can be done vi
 
 Once you have enabled LDAP authentication, you can test connectivity using the `testsaslauthd` command. Log in to any Redis Enterprise Node's pod, and then run the following:
 
-```
+```sh
 testsaslauthd -u [USERNAME] -p [PASSWORD]
 ```
 
@@ -106,7 +105,7 @@ You can add new users using the administrative UI or the REST API.
 
 If you want to programatically add your LDAP user, you can simply use the REST API. You’ll need to have access to the API. In this example, the API has been port-forwarded to the local host:
 
-```
+```sh
 cat << EOF > add-user.json
 {
     "name":"tester",
@@ -120,11 +119,12 @@ curl -v -k -u "demo@redislabs.com:xxx" -X POST -d @add-user.json -H "Content-Typ
 ```
 
 ### Deploying a Redis Enterprise cluster
+
 A Redis Enterprise cluster requires no special setup other to be configured with LDAP as the configuration is outside of the scope of the Redis Enterprise custom resource.
 
 You can create a simple test cluster that can be used with the examples below by using the following custom resource:
 
-```
+```yaml
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
@@ -149,7 +149,7 @@ with the LDAP configuration information (see [saslauthd’s configuration refere
 
 The following configuration parameters for `saslauthd` reference the LDAP server we just configured:
 
-```
+```yaml
 ldap_servers: ldap://ldap-openldap.bdb.svc:389
 ldap_search_base: ou=users,dc=example,dc=org
 ldap_filter: (uid=%u)
@@ -158,24 +158,26 @@ ldap_password: admin
 ```
 
 ### Using rladmin to update the configuration
+
 If this information was in a file called “ldap.conf”, you can connect to a Redis Enterprise Node pod and configure the server via:
 
-```
+```sh
 rladmin cluster config saslauthd_ldap_conf ldap.conf
 ```
 
 The `saslauthd` daemon is configured to use the file `/etc/opt/redislabs/saslauthd.conf` on each node. You cannot edit this file directly on the node. Instead, you just need a local copy of the configuration you desire and rladmin command will update the cluster configuration. The cluster will update all the node’s configuration and preserve the setting after any pod restarts.
 
 ### Using the REST API to update the configuration
+
 Alternatively, you can post the same configuration data in a request to the REST API for the cluster. First you forward the cluster API from a pod:
 
-```
+```sh
 kubectl port-forward pod/ldap-0 9443
 ```
 
 Then you change the LDAP configuration with a JSON version of the ldap configuration.
 
-```
+```sh
 cat << EOF > tmp.json
 {"saslauthd_ldap_conf": "ldap_servers: ldap://ldap-openldap.bdb.svc:389\nldap_search_base: ou=users,dc=example,dc=org\nldap_filter: (uid=%u)\nldap_bind_dn: cn=admin,dc=example,dc=org\nldap_password: admin\n"}
 EOF
@@ -184,7 +186,7 @@ curl -f -k -u "demo@redislabs.com:xxx" -X PUT -d @tmp.json -H "Content-Type: app
 
 The key value for “saslauthd_ldap_conf” is the configuration file verbatim as it would be in the saslauthd configuration file. As such, it can be relatively tricky to get the syntax right and generating this programmatically is helpful. A little python program (make_request.py) can help:
 
-```
+```py
 import sys
 import json
 
@@ -196,7 +198,7 @@ with open(sys.argv[2]) as data:
 
 And so we can do:
 
-```
+```sh
 python make_request.py saslauthd_ldap_conf ldap.conf > tmp.json
 curl -f -k -u "demo@redislabs.com:xxx" -X PUT -d @tmp.json -H "Content-Type: application/json" https://localhost:9443/v1/cluster
 ```
@@ -207,13 +209,13 @@ If you are automating deployments with the operator, you can automate this confi
 
 1. Create a ConfigMap that contains the LDAP configuration:
 
-   ```
+   ```sh
    kubectl create configmap config-job --from-file=saslauthd_ldap_conf=ldap.conf
    ```
 
 2. Submit this job:
 
-   ```
+   ```yaml
    apiVersion: batch/v1
    kind: Job
    metadata:
@@ -263,9 +265,9 @@ and make it available to your K8s cluster.
 
 You can build this Docker image yourself with the following:
 
-1. Dockerfile
+- Dockerfile
 
-   ```
+   ```dockerfile
    FROM python:3.8-slim
 
    RUN apt-get update && apt-get install -y curl
@@ -278,9 +280,10 @@ You can build this Docker image yourself with the following:
 
    ENTRYPOINT ["/bin/sh", "/app/config.sh"]
    ```
-1. config.sh
 
-   ```
+- config.sh
+
+   ```sh
    #!/bin/sh
    CLUSTER_HOST=${CLUSTER_NAME}.${MY_NAMESPACE}.svc.cluster.local
    CLUSTER_PORT=9443
@@ -294,9 +297,9 @@ You can build this Docker image yourself with the following:
    fi
    ```
 
-1. make_request.py
+- make_request.py
 
-   ```
+   ```py
    import sys
    import json
 
@@ -306,9 +309,9 @@ You can build this Docker image yourself with the following:
       print(json.dumps(d))
    ```
 
-1. waitfor.py
+- waitfor.py
 
-   ```
+   ```py
    from kubernetes import client, config
    import argparse
    import pprint
@@ -402,27 +405,26 @@ You can build this Docker image yourself with the following:
       sys.exit(0 if count>0 else 1)
    ```
 
-
 ### Using volumes for TLS keys and certificate files
 
 There are four parameters for TLS that require a local file:
 
- * `ldap_tls_cacert_file` - a file containing the CA certificates
- * `ldap_tls_cacert_dir` - a directory containing CA certificates
- * `ldap_tls_cert` - the client certificate file
- * `ldap_tls_key` - the client private key
+- `ldap_tls_cacert_file` - a file containing the CA certificates
+- `ldap_tls_cacert_dir` - a directory containing CA certificates
+- `ldap_tls_cert` - the client certificate file
+- `ldap_tls_key` - the client private key
 
 You can provide these files and directories using a volume mount. On the cluster specification, you can specify the extra volumes via “volumes” and the extra volume mounts via “redisEnterpriseVolumeMounts”.
 
 One way to handle the certificate files is put them into a ConfigMap and mount the volume from it. For example, if we have a special certificate authority in a file a called “ca.crt”, we can create a ConfigMap:
 
-```
+```sh
 kubectl create configmap ldap-certs --from-file=ca.crt=ca.crt
 ```
 
 Then in our cluster, we add the volume and volume mount:
 
-```
+```yaml
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
@@ -449,7 +451,7 @@ The result is we can use the file path “/opt/ldap/ca.crt” for the “ldap_tl
 
 You can use the usual techniques to map a set of files into a directory for the “ldap_tls_cert_dir” parameter if you have multiple CA certificates:
 
-```
+```yaml
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
@@ -483,7 +485,7 @@ spec:
 
 which allows you to use:
 
-```
+```yaml
 ldap_tls_cacert_dir: /opt/ldap/ca
 ldap_tls_cert: /opt/ldap/client.crt
 ldap_tls_key: /opt/ldap/client.key
@@ -496,7 +498,7 @@ Unfortunately, if you change the configuration and have previously tried to auth
 
    You can proceed with caution and restart the pods by running:
 
-   ```
+   ```sh
    kubectl rollout restart statefulset name-of-cluster
    ```
 
