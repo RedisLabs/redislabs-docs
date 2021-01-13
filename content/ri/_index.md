@@ -18,7 +18,7 @@ RedisInsight is a free GUI for Redis that is available on all platforms (Windows
 RedisInsight also has support for several Redis modules, including RedisGraph, RedisTimeSeries, and RediSearch.
 
 
-**Start using RedisInsight:**
+## Start using RedisInsight
 
 - [Install RedisInsight]({{<relref "/ri/installing/_index.md" >}})
 - [Add a Redis Database]({{<relref "/ri/using-redisinsight/add-instance.md">}})
