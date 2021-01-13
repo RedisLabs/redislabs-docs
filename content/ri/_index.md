@@ -13,7 +13,7 @@ RedisInsight is a free GUI for Redis that is available on all platforms (Windows
 - Use commands with a REPL (read-eval-print-loop) with the the [CLI]({{<relref "/ri/using-redisinsight/cli.md" >}}) tool
 - Analyze memory usage with the [Memory Analysis]({{<relref "/ri/using-redisinsight/memory-analysis.md">}}) tool
 - Identify and troubleshoot bottlenecks with the [Slowlog]({{<relref "/ri/using-redisinsight/slowlog.md">}}) tool
-- Edit the configuration of your Redis instance with the [Configuration]({{<relref "/ri/using-redisinsight/configuration.md">}})
+- Edit the configuration of your Redis instance with the [Configuration]({{<relref "/ri/using-redisinsight/configuration.md">}}) tool
 
 RedisInsight also has support for several Redis modules, including RedisGraph, RedisTimeSeries, and RediSearch.
 
