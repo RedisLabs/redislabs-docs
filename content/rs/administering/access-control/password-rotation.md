@@ -31,6 +31,8 @@ The new password cannot already exist as a password for the user and must meet t
 To rotate the password of a user account:
 
 1. Add an additional password to an user account with this POST command:
+when i use "-X POST" i get the error "method not allowed"
+when using "/v1/cluster" i get the error "bad request"  (are you sure the api should be /v1/cluster and not /v1/users/password)
 
     ```sh
     curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
