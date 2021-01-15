@@ -34,11 +34,11 @@ To rotate the password of a user account:
 
     ```sh
     curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
-        https://<RS_server_address>:9443/v1/cluster
+        https://<RS_server_address>:9443/v1/users/password
         -d '{
         "username": "<username>"
-        "old_password": "<existing_password>",
-        "new_password": "<new_password>",
+        "old_password": "<an_existing_password>",
+        "new_password": "<a_new_password>",
         }'
     ```
 
@@ -49,10 +49,10 @@ To rotate the password of a user account:
 
 ```sh
 curl -k -v -X DELETE -H "content-type: application/json" -u "<administrator_user>:<password>"
-    https://<RS_server_address>:9443/v1/cluster
+    https://<RS_server_address>:9443/v1/users/password
     -d '{
     "username": "<username>",
-    "old_password": "<existing_password>"
+    "old_password": "<an_existing_password>"
     }'
 ```
 
@@ -67,10 +67,10 @@ To replace all existing passwords for a user account with a single new password,
 
 ```sh
 curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<password>"
-    https://<RS_server_address>:9443/v1/cluster
+    https://<RS_server_address>:9443/v1/users/password
     -d '{
     "username": "<username>"
-    "old_password": "<existing_password>",
-    "new_password": "<new_password>",
+    "old_password": "<an_existing_password>",
+    "new_password": "<a_new_password>",
     }'
 ```
