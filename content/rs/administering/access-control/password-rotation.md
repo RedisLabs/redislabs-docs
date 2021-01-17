@@ -36,9 +36,9 @@ To rotate the password of a user account:
     curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
         https://<RS_server_address>:9443/v1/users/password
         -d '{
-        "username": "<username>"
-        "old_password": "<an_existing_password>",
-        "new_password": "<a_new_password>",
+        "username":"<username>",
+        "old_password":"<an_existing_password>",
+        "new_password":"<a_new_password>"
         }'
     ```
 
