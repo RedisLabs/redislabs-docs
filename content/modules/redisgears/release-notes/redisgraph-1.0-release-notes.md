@@ -5,6 +5,18 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisGears 1.0.3 (November 2020)
+
+This is a maintenance release for version 1.0.
+
+Headlines:
+
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+- Bugfixes:
+    - #[427](https://github.com/RedisGears/RedisGears/pull/427) Rare issue where messages might get lost and cause executions timeouts.
+    - #[434](https://github.com/RedisGears/RedisGears/pull/434) Triggering an execution on uninitialized cluster state should raise a cluster uninitialized error.
+
 ## RedisGears 1.0.2 (October 2020)
 
 This is a maintenance release for version 1.0.
