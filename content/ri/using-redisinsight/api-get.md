@@ -17,7 +17,7 @@ Below is the documentation for the URL required to add databases.
 
 Used to add Redis databases to RedisInsight.
 
-**URL** : `/api/add/`
+**URL** : `/add/`
 
 **Method** : `GET`
 
