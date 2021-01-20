@@ -77,7 +77,7 @@ the top of the page and click on the *Route53* menu item:
 
 ![01-ServicesRoute53-en](/images/rs/01-ServicesRoute53-en.png)
 
-Make sure you have registered a domain, and that you defined *Route53* as the primary/master name server for the whole domain
+Make sure you have registered a domain, and that you have defined *Route53* as the primary/master name server for the whole domain
 or for one of its sub-domains. You should have at least one zone in
 *Route53*. Click on the *Hosted zones* link to open it:
 
