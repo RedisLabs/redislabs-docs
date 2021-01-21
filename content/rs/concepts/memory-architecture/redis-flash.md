@@ -131,7 +131,7 @@ To create Redis on Flash databases, you must meet the following prerequisites:
 - Meet all [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) and [software requirements]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
 - [Install Redis Enterprise Software]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 
-Once these requirements are met, both Redis of Flash databases and
+Once these requirements are met, both Redis on Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
 database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
