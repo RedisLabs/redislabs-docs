@@ -129,7 +129,7 @@ To create Redis on Flash databases you must meet the following
 prerequisites:
 
 - [Ephemeral and persistent storage]({{<relref "/rs/administering/designing-production/persistent-ephemeral-storage.md">}}) is mounted on Redis Enterprise Software nodes with the proper disk size.
-- All [hardware requirements]({{< relref "/rs/administering designing-production/hardware-requirements.md" >}}) are met.
+- All [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) are met.
 - All [software requirements]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) are met.
 - The [Redis Enterprise Software installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) is complete.
 
