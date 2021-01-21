@@ -78,5 +78,5 @@ curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<
 All of the existing passwords are deleted and only the new password is valid.
 
 {{< note >}}
-If you run the above command without '-X PUT', the new password is added to the list of existing passwords.
+If you run the above command without `-X PUT`, the new password is added to the list of existing passwords.
 {{< /note >}}
