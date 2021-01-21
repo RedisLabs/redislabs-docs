@@ -33,7 +33,7 @@ To rotate the password of a user account:
 1. Add an additional password to an user account with this POST command:
 
     ```sh
-    curl -k -v -H "content-type: application/json" -u "<administrator_user>:<password>"
+    curl -k -v -X POST -H "content-type: application/json" -u "<administrator_user>:<password>"
         https://<RS_server_address>:9443/v1/users/password
         -d '{
         "username":"<username>",
@@ -74,3 +74,9 @@ curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<
     "new_password":"<a_new_password>"
     }'
 ```
+
+All of the existing passwords are deleted and only the new password is valid.
+
+{{< note >}}
+If you run the above command without '-X PUT', the new password is added to the list of existing passwords.
+{{< /note >}}
