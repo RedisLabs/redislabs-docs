@@ -15,29 +15,41 @@ you create it, even outside of this range, the cluster only verifies
 that the assigned port is not already in use. You must manually
 update your firewall with the port for that new database endpoint.
 
-## Ports and port ranges used by Redis Enterprise Software
+## Ports and port ranges used by RS
+
+There are 3 types of ports that are open for use by RS:
+
+- Internal - The traffic is between or within the cluster nodes
+- External - The traffic is from client applications or external monitoring resources
+- Active-Active - The traffic is from clusters that host Active-Active databases
+
+### Network traffic between the cluster and other systems
+
+You need to open these ports in your firewall to allow traffic to pass from the cluster to other systems:
+
+| Protocol | Port | Connection Source | Description |
+|------------|-----------------|-----------------|-----------------|
+| TCP | 8001 | Internal, External | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
+| TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
+| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
+| TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
+| UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
+
+### Network ports used between or within the cluster nodes
+
+These ports are used by Redis Software within the cluster:
 
 | Protocol | Port | Connection Source | Description |
 |------------|-----------------|-----------------|-----------------|
 | ICMP | * | Internal | For connectivity checking between nodes |
 | TCP | 1968 | Internal | Proxy traffic |
 | TCP | 3333-3341, 3344, 36379, 36380 | Internal | Internode communication |
-| TCP | 8001 | Internal, External | Traffic from application to RS [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8002, 8004, 8006 | Internal | System health monitoring |
-| TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 8444, 9080 | Internal | For web proxy <-> cnm_http/cm traffic |
 | TCP | 9081 | Internal, Active-Active | For Active-Active management |
 | TCP | 8070, 8071 | Internal, External | For metrics exported and managed by the web proxy |
-| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
-| TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
 | TCP | 20000-29999 | Internal | Database shard traffic |
-| UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
 
-Connection sources are:
-
-- Internal - The traffic is from other cluster nodes
-- External - The traffic is from client applications or external monitoring resources
-- Active-Active - The traffic is from clusters that host Active-Active databases
 
 ## Changing the management web UI port
 
