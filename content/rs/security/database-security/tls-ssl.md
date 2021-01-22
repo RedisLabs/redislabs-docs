@@ -1,31 +1,30 @@
 ---
-Title: Encryption
+Title: Transport Layer Security (TLS)
 description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: ["/rs/administering/designing-production/security/tls-configuration", "/rs/administering/designing-production/security/client-connections"]
 ---
-To prevent unauthorized access to your data, Redis Enterprise databases support the TLS protocol that includes:
+Transport Layer Security (TLS), commonly called “SSL”, ensures the privacy of data sent between applications and their Redis databases. TLS also secures connections between Redis Enterprise Software nodes.
 
-1. Encryption - Makes sure that the traffic can only be read by the sender and recipient.
-1. Authentication - The server makes sure that it communicates with an authorized entity.<!--more-->
+## TLS authentication
 
-## Client certificate authentication
+You can enable TLS for the following two scenarios:
 
-Certificate authentication is available for:
+1. Client-server traffic between your Redis clients and your Redis databases
+1. Replication and synchronization traffic between the nodes of a Redis Enterprise Software cluster
 
-1. Client to server communications - traffic from your Redis client to your database.
-1. Replication and synchronization traffic - When you configure `Replica Of` for a database, synchronization traffic flows between the primary instance of the database and the replica instance of the database. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
+When you configure `Replica Of` for a database, synchronization traffic flows between the primary instance of the database and the replica instance of the database. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
 
-To configure TLS Authentication:
+To enable and configure TLS authentication:
 
 1. In **databases**, either:
     - Click **Add** (+) to create a new database.
     - Click on the database that you want to configure and at the bottom of the page click edit.
-1. Enable the TLS option on the configuration page. When creating a database this may be found under "Show advanced options".
+1. Enable the TLS option on the configuration page. When creating a database, you can find this under "Show advanced options".
     ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
-1. Select the TLS Scope:
+1. Select the TLS scope:
     - Require TLS for Replica Of communications only - This option will only encrypt synchronization traffic.
     - Require TLS for all communications - This option will encrypt synchronization traffic and traffic between a client and a server.
     ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")

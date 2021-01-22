@@ -1,11 +1,11 @@
-i--
-Title: Authentication and authorization
+---
+Title: Passwords, users, and roles
 description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-Role-based access control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.<!--more-->
+Role-based access control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.
 
 Roles may be configured using standard or custom templates for database permissions that are based on the Redis ACL syntax. Redis Enterprise allows you to restrict database operations by command, command category, and key pattern.
 Keys are typically restricted based on a namespace using a glob style wildcard.
