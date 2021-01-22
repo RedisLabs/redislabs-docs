@@ -4,6 +4,7 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/administering/designing-production/security/tls-configuration", "/rs/administering/designing-production/security/client-connections"]
 ---
 To prevent unauthorized access to your data, Redis Enterprise databases support the TLS protocol that includes:
 
