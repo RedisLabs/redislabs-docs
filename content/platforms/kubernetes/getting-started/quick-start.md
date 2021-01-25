@@ -1,7 +1,6 @@
 ---
 Title: Quick Start for Kubernetes
-description: The Redis Enterprise Kubernetes Operator 
-  must be installed on your cluster to Redis Enterprise cluster deployments.
+description: How to install the Redis Enterprise Kubernetes Operator.
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
