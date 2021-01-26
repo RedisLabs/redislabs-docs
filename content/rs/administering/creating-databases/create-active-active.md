@@ -112,9 +112,10 @@ Every instance of an Active-Active database can receive write operations, and al
     - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
-        By default, when the total size of the database reaches its memory limit the database evicts keys
-        according to the least recently used keys out of all keys with an "expire" field set
-        in order to make room for new keys. You can select a different data eviction policy.
+        When the total size of the database reaches its memory limit the database,
+        the database cannot accept new keys.
+        You can select a data eviction policy that defines the keys to evict in order to make room for new keys,
+        for example the least recently used keys out of all keys with an "expire" field set.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.
