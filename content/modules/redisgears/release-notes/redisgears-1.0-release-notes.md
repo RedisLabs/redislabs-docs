@@ -4,7 +4,33 @@ description:
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
+aliases: /modules/redisgears/release-notes/redisgraph-1.0-release-notes
 ---
+## RedisGears 1.0.4 (January 2021)
+
+This is a maintenance release for version 1.0.
+
+Headlines:
+
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+- Bugfixes:
+
+    - #[458](https://github.com/RedisGears/RedisGears/pull/458) Crash on StreamReader when the stream is dropped during processing of the function.
+    - #[477](https://github.com/RedisGears/RedisGears/pull/477) Rare crash on accumulate step.
+
+## RedisGears 1.0.3 (November 2020)
+
+This is a maintenance release for version 1.0.
+
+Headlines:
+
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+- Bugfixes:
+    - #[427](https://github.com/RedisGears/RedisGears/pull/427) Rare issue where messages might get lost and cause executions timeouts.
+    - #[434](https://github.com/RedisGears/RedisGears/pull/434) Triggering an execution on uninitialized cluster state should raise a cluster uninitialized error.
+
 ## RedisGears 1.0.2 (October 2020)
 
 This is a maintenance release for version 1.0.
