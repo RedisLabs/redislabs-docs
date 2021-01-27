@@ -36,6 +36,8 @@ To configure a destination database as a Replica Of:
 1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to show the box for the source database endpoint.
 1. Enter the URL of the source database endpoint:
 
+    <!-- Shared in migrate-to-active-active.md -->
+
     {{< note >}}
 The order of the Replica Of sources has no impact on replication.
     {{< /note >}}
