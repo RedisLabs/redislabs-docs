@@ -8,17 +8,17 @@ categories: ["RS"]
 With [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}), applications can read and write to the same data set from different geographical locations seamlessly and with latency less than 1 ms, without changing the way the application connects to the database.
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
-If you have data in a single-region database that you want to migrate to an Active-Active database,
+If you have data in a single-region RS database that you want to migrate to an Active-Active database,
 you'll need to create a new Active-Active database and migrate the data into the new database as a [Replica Of](https://docs.redislabs.com/latest/rs/administering/active-passive/) the existing database.
 This process will gradually populate the data in the Active-Active database.
 
 Before data migration starts, all data is flushed from the Active-Active database.
-The data is migrated to the Active-Active instance where you enabled Replica Of, and then the Active-Active replication copies the data to the other Active-Active instances.
+The data is migrated to the Active-Active instance where you enabled Replica Of, and then the Active-Active replication copies the data from that instance to the other Active-Active instances.
 When data migration is finished, disable Replica Of and connect your applications to the Active-Active database.
 
 {{< note >}}
 During the migration, make sure that any applications that connect to the Active-Active database are **read-only**
-to make sure that dataset is unchanged in the migration process.
+to make sure the dataset is identical to the source database during the migration process.
 {{< /note >}}
 
 To migrate an RS database to Active-Active:
@@ -85,7 +85,12 @@ you can [compress the replication data]({{< relref "/rs/administering/designing-
             redis://<hostname>:<database_port>
             ```
 
-{{< note >}}
+    {{< note >}}
 If you used the mDNS protocol for the cluster name (FQDN),
 make sure that the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring/mdns.md" >}}) are met.
-{{< /note >}}
+    {{< /note >}}
+
+1. Click **Update** at the bottom of the page.
+1. When the synchronization icon turns green ![Synchronization complete](/images/rs/icon_sync_green.png#no-click "Synchronization complete"), the migration is complete.
+1. Edit the configuration of the Active-Active database and disable **Migration using Replica Of**.
+1. Redirect your database connections to the Active-Active database.
