@@ -95,12 +95,14 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
     - **Default database access** - To require a password for all database connections,
         enable the default database access and enter a password.
-        When the default database access is Active, all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
+        When the default database access is Active with a password, all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
 
-        When the default database access is inactive, the database accepts all connections without authentication,
-        unless you configure an Access Control List.
-        An access control list specifies additional users for authentication,
-        and requests are allowed according to the Redis ACLs specified for that user.
+        When the default database access is Active without a password, the database accepts connections without authentication.
+
+        We recommend that you either:
+
+        - Enable the default database password and configure a password
+        - Disable the default database password and configure access control lists (ACLs)
 
         {{< note >}}
 If you are creating a Memcached database, enter a username and password for SASL Authentication.
