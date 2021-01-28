@@ -7,22 +7,45 @@ categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/changing-subscription-plan/
         /rc/administration/setup-and-editing/changing-subscription-plan/
 ---
-It is very easy to upgrade or downgrade your subscription at any time,
-all with no downtime.
+You can change your subscription plan at any time.
 
-To do this:
+To do so:
 
-1. Go to "Subscriptions" in the menu
-1. Click on the subscription name you want to edit
-1. Click on "Change Subscription" button at the bottom of the form
-1. Click on which plan you would like to upgrade or downgrade to
-1. Click the "Update" button
+1. From the Redis Cloud menu, choose **Subscriptions**.  
 
-Be aware that you cannot downgrade your plan if the databases in your
-subscription are larger in total size than the next lowest plan. For
-example, if you are currently on the 2.5GB plan and your databases total
-1.75GB, you would not be able to downgrade to the 1GB plan as your
-databases currently exceed the plan's limit. If you need to downgrade,
-you must remove data or databases to get below the threshold.
+    ![Select **Subscriptions** from the Redis Cloud menu](/images/rc/subscription-menu-select.png)
 
-{{< youtube uCcCnQ74C2U >}}
+1.  Select the subscription you want to change.
+
+    ![Select the target subscription from the list](/images/rc/subscription-list-select.png)
+
+1.  Select the **Change Description** button to list the available options.
+
+    ![The **Change subscription** button appears below the list of subscriptions.](/images/rc/subscription-change-button.png)
+
+
+1.  The first option you can change is type, which indicates whether the plan supports replication or data-persistence.  
+
+    Your current selection is highlighted.
+
+    ![The current plan type is selected.](/images/rc/subscription-type-cache.png)
+
+    To change this setting, select your preferred value.
+
+1.  Available memory sizes are displayed, along with prices.  
+
+    To change the memory size, choose your preferred value.
+
+    If you are upgrading a free plan, you need to select or add a payment method.
+
+1.  When finished, select the Update button.
+
+Before reducing memory the memory size of a subscription, verify that your data fits in the new size; otherwise, the update fails.
+
+Subscription updates happen in the background.  Changes may take several minutes to complete.  
+
+If the **Change Subscription** button is disabled, it usually means earlier updates are still deploying.
+
+Refresh the page after a few moments.  If the problem persists, contact support.
+
+    ![The **Change Subscription** button is disabled during update deployment.](/images/rc/subscription-change-button.png)
