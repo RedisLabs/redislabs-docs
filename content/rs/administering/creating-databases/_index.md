@@ -142,15 +142,19 @@ after the database is created.
             without the limitations.
 
     - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+
     - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
         By default, when the total size of the database reaches its memory limit the database evicts keys
         according to the least recently used keys out of all keys with an "expire" field set
         in order to make room for new keys. You can select a different data eviction policy.
+
     - [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
         You can make this database a repository for keys from other databases.
+
     - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
         You can require TLS encryption and authentication for all communications,
         TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
+
     - [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
         You can configure periodic backups of the database, including the interval and backup location parameters.
 
