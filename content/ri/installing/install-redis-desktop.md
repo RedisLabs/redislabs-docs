@@ -1,48 +1,53 @@
 ---
-Title: Installing the RedisInsight Desktop Client
+Title: Install the RedisInsight Desktop Client
 date: 2018-07-20 03:49:29 +0530
 weight: 5
 categories: ["RI"]
 path: install/redis-desktop-mac-win-linux/
 aliases: /ri/install/install-redis-desktop/
 ---
-RedisInsight is a full-featured Desktop GUI client for:
+The RedisInsight desktop client is available for the following operating systems:
 
 - Windows 10
 - Ubuntu 18.04
 - MacOS 10.13 High Sierra
 
 {{< note >}}
-For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
-We are happy to receive any feedback at redisinsight@redislabs.com.
+For unsupported operating systems, you can still install RedisInsight. However, you should be aware that it may show unexpected behavior.
+We are happy to receive any feedback at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
 {{< /note >}}
 
-To install RedisInsight:
+## Install RedisInsight on Ubuntu
 
-1. [Download](https://redislabs.com/redisinsight/) RedisInsight for Desktop.
-1. Prepare the executable:
-
-    - For Ubuntu - To make the downloaded file executable, run:
+1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. Make your downloaded file into an executable.
 
         ```sh
         chmod +x redisinsight-<platform>-<version>
         ```
 
-    - For Windows and MacOS - Run the installer.
+1. Start RedisInsight.
 
-        Both the Windows and MacOS packages are signed and notarized.
+        ```sh
+        `/redisinsight-<platform>-<version>`
+        ```
 
+1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{<relref "/ri/using-redisinsight/add-instance.md">}}) connection.
+
+## Install RedisInsight on MacOS
+
+1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. Run the installer.
         {{< note >}}
-Since RedisInsight 1.6.3, some  on MacOS 10.14.x users have reported issues installing the application.
-If you encounter this, please let us know at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
-A workaround for this issue is:
-1. Move the package to the Desktop and left-click on the file while pressing the Control key.
-1. A warning message is shown that MacOS cannot check the application properly. To proceeed, click "Open".
+MacOS 10.14.x users occasionally encounter errors during installation.
+If you encounter a problem installing RedisInsight, please contact us at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com) and perform the following troubleshooting steps:
+1. Move the package to the Desktop and left-click the file while hold the Control key.
+1. Click "Open" to proceed past the warning message.
         {{< /note >}}
+1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{<relref "/ri/using-redisinsight/add-instance.md">}}) connection.
 
-1. Run RedisInsight:
+## Install RedisInsight on Windows
 
-    - Windows - Open RedisInsight.
-    - MacOS and Ubuntu - Run: `/redisinsight-<platform>-<version>`
-
-1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
+1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. Run the installer.
+1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{<relref "/ri/using-redisinsight/add-instance.md">}}) connection.
