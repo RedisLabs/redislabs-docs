@@ -17,8 +17,7 @@ For unsupported operating systems, you can still install RedisInsight. However, 
 We are happy to receive any feedback at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
 {{< /note >}}
 
-
-## Ubuntu
+## Install RedisInsight on Ubuntu
 
 1. [Download RedisInsight](https://redislabs.com/redisinsight/).
 1. Make your downloaded file into an executable.
@@ -35,8 +34,7 @@ chmod +x redisinsight-<platform>-<version>
 
 1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
 
-
-## MacOS
+## Install RedisInsight on MacOS
 
 1. [Download RedisInsight](https://redislabs.com/redisinsight/).
 1. Run the installer.
@@ -48,8 +46,7 @@ If you encounter a problem installing RedisInsight, please contact us at [redisi
         {{< /note >}}
 1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
 
-
-## Windows
+## Install RedisInsight on Windows
 
 1. [Download RedisInsight](https://redislabs.com/redisinsight/).
 1. Run the installer.
