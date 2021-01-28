@@ -35,21 +35,25 @@ You need to open these ports in your firewall to allow traffic to pass from the 
 | TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
 | UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
 
-### Network ports used between or within the cluster nodes
+### Network ports used between the cluster nodes
 
-These ports are used by Redis Software within the cluster:
+These ports are used by Redis Software between cluster nodes:
 
 | Protocol | Port | Connection Source | Description |
 |------------|-----------------|-----------------|-----------------|
 | ICMP | * | Internal | For connectivity checking between nodes |
 | TCP | 1968 | Internal | Proxy traffic |
 | TCP | 3333-3341, 3344, 36379, 36380 | Internal | Internode communication |
-| TCP | 8002, 8004, 8006 | Internal | System health monitoring |
-| TCP | 8444, 9080 | Internal | For web proxy <-> cnm_http/cm traffic |
 | TCP | 9081 | Internal, Active-Active | For Active-Active management |
-| TCP | 8070, 8071 | Internal, External | For metrics exported and managed by the web proxy |
 | TCP | 20000-29999 | Internal | Database shard traffic |
 
+### Network ports used within the cluster nodes
+
+These ports are used by Redis Software within each cluster node:
+
+| TCP | 8002, 8004, 8006 | Internal | System health monitoring |
+| TCP | 8070, 8071 | Internal, External | For metrics exported and managed by the web proxy |
+| TCP | 8444, 9080 | Internal | For web proxy <-> cnm_http/cm traffic |
 
 ## Changing the management web UI port
 
