@@ -362,8 +362,8 @@ Compression depth is the number of list nodes from each end of the list to leave
 Example:
 
 1. List-compression-depth=1 compresses every list node except the head and tail of the list.
-1. List-compression-depth=2 never compresses head or head->next or tail or tail->prev.
-1. List-compression-depth=3 starts compression after head->next->next and before tail->prev->prev, etc.
+1. List-compression-depth=2 never compresses the head or head->next or the tail or tail->prev.
+1. List-compression-depth=3 starts compression after the head->next->next and before the tail->prev->prev, etc.
 
 #### Trade offs
 
