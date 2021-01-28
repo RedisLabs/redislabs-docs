@@ -79,10 +79,20 @@ Every instance of an Active-Active database can receive write operations, and al
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
         AOF provides the fastest and most reliable method for instance failure recovery.
 
-    - **Default database access** - When you configure a password for your database,
-        all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
-        If you also configure an access control list, connections can specify other users for authentication,
-        and requests are allowed according to the Redis ACLs specified for that user.
+    - **Default database access** - To require a password for all database connections,
+        enable the default database access and enter a password.
+        When the default database access is Active with a password, all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
+
+        When the default database access is Active without a password, the database accepts connections without authentication.
+
+        We recommend that you either:
+
+        - Enable the default database password and configure a password
+        - Disable the default database password and configure access control lists (ACLs)
+
+        {{< note >}}
+If you are creating a Memcached database, enter a username and password for SASL Authentication.
+        {{< /note >}}
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
