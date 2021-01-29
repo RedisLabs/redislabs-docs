@@ -351,7 +351,7 @@ List is just a link list of arrays, where none of the arrays are compressed. By 
 
 We have two configurations:
 List-max-ziplist-size: 8kb(default)
-List-compression-depth: 0,1,2 (0 by default)
+List-compression-depth: 0(default)
 
 A configuration change in redis.conf `list-compression-depth=1` helps you achieve compression.
 
@@ -361,9 +361,9 @@ Compression depth is the number of list nodes from each end of the list to leave
 
 Example:
 
-1. a depth=1 means compress every list node except the head and tail of the list.
-1. A depth=2 means never compress head or head->next or tail or tail->prev.
-1. A depth=3 starts compression after head->next->next and before tail->prev->prev, etc.
+1. List-compression-depth=1 compresses every list node except the head and tail of the list.
+1. List-compression-depth=2 never compresses the head or head->next or the tail or tail->prev.
+1. List-compression-depth=3 starts compression after the head->next->next and before the tail->prev->prev, etc.
 
 #### Trade offs
 
