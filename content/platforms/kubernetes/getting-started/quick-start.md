@@ -63,7 +63,7 @@ You need to ensure that you pull the correct version of the bundle. You can find
 by checking the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
 or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases).
 
-You can download the bundle for the latest release by issuing the following `curl` commands:
+You can download the bundle for the latest release by issuing the following `curl` command:
 
 ```
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
