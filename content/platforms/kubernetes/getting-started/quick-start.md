@@ -39,8 +39,6 @@ This lets you deploy multiple instances of the operator on the same Kubernetes c
 
 The Redis Enterprise Operator manages a single Redis Enterprise cluster in a single namespace.
 
-While the operator can watch additional namespaces for consumer namespaces, the Redis Enterprise Operator
-and cluster must exist in the same namespace.
 
 Throughout this guide, you should assume that each command is applied to the namespace in
 which the Redis Enterprise cluster operates.
