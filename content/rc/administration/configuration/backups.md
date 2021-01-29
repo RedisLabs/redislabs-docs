@@ -86,22 +86,14 @@ To use an ABS container for storing your resources' backups, follow
 these steps in your [Microsoft Azure Management
 Portal](https://manage.windowsazure.com/):
 
-1. Access your storage by clicking the left-hand **STORAGE** icon.
-1. Select the storage account:
-    1. To create a new storage account:
-        1. Click the **NEW** button at the lower-left corner of the
-            page.
-        1. Verify that you've selected **DATA
-            SERVICES->STORAGE->QUICK CREATE** from the menu.
-        1. Enter the **URL** for your new storage account.
-        1. Select a **LOCATION/AFFINITY GROUP** for the storage
-            account.
-        1. Choose a **REPLICATION** mode for the account.
-        1. Click the **CREATE STORAGE ACCOUNT** button.
-        1. Continue to step 2.2.
-    1. To use an existing storage account, select it by clicking on it.
-1. Click the **MANAGE ACCESS KEYS** button at the bottom of the page.
-1. Copy your storage account's **PRIMARY ACCESS KEY**
+### Create an Azure Storage account
+https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal
+
+### Create a container
+https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal
+
+### Manage storage account access keys
+https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal
 
 Set your resource's **Backup Path** to the path of your ABS storage
 account and clicking the **Apply** button using the following syntax:
