@@ -144,12 +144,11 @@ after the database is created.
     - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
-        By default, when the total size of the database reaches its memory limit the database evicts keys
-        according to the least recently used keys out of all keys with an "expire" field set
-        in order to make room for new keys. You can select a different data eviction policy.
+        When the total size of the database reaches its memory limit the database,
+        the database cannot accept new keys. You can select a data eviction policy that defines the keys to evict in order to make room for new keys. The default eviction policy is `noeviction`.
 
     - [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
-        You can make this database a repository for keys from other databases.
+        You can give applications read-only access to replicas of the data that are hosted in different geographical locations or clusters. This is called Active-Passive or Replica Of. To configure the replication, enable Replica Of and specify the databases to replicate to this database.
 
     - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
         You can require TLS encryption and authentication for all communications,
