@@ -29,7 +29,7 @@ chmod +x redisinsight-<platform>-<version>
 1. Start RedisInsight.
 
 ```sh
-/redisinsight-<platform>-<version>
+./redisinsight-<platform>-<version>
 ```
 
 1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
