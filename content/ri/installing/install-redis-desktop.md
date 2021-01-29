@@ -33,7 +33,8 @@ chmod +x redisinsight-linux64-<version>
 ./redisinsight-linux64-<version>
 ```
 
-1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
+1. To access your RedisInsight GUI, open a web browser and navigate to [{{< param siteURL >}}]({{< param siteURL >}}).
+
 
 ## Install RedisInsight on MacOS
 
@@ -52,3 +53,7 @@ If you encounter a problem installing RedisInsight, please contact us at [redisi
 1. [Download RedisInsight](https://redislabs.com/redisinsight/).
 1. Run the installer.
 1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
+
+## Next Steps
+
+- [Add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}})
