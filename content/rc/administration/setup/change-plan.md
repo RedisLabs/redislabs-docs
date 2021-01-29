@@ -19,9 +19,9 @@ To do so:
 
     ![Select the target subscription from the list](/images/rc/subscription-list-select.png)
 
-1.  Select the **Change Description** button to list the available options.
+1.  Select the **Change Subscription** button to list the available options.
 
-    ![The **Change subscription** button appears below the list of subscriptions.](/images/rc/subscription-change-button.png)
+    ![The **Change Subscription** button appears below the list of subscriptions.](/images/rc/subscription-change-button.png)
 
 
 1.  The first option you can change is type, which indicates whether the plan supports replication or data-persistence.  

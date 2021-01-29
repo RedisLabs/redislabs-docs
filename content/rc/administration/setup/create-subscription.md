@@ -29,7 +29,7 @@ To create a new subscription:
 1. Select your subscription configuration:
 
     1. Select a cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
-    1. Select the region that you want the subscription to use, for example: `us-central1`.
+    1. Select a region for your subscription, such as `us-central1`.
     1. In the Redis Cloud service levels, select the memory or throughput limit for your subscription.  To learn about your options, see [Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
 <!--
         - Fixed - You can also select either [Replication]({{< relref "/rc/concepts/clustering.md" >}}) or Multi-Availability Zone (Multi-AZ)
@@ -38,7 +38,7 @@ To create a new subscription:
             - [**Build a Plan**]({{< relref "/rc/administration/setup/customize-pro.md" >}}) to follow a sizing process where you tell us your requirements and we give you a subscription that's just right for you.
             - **Request Pricing** to customize an Ultimate subscription that includes annual payments, premium support, and customer success packages.
 -->
-4. After you select a subscription configuration, update technical details as requested.
+4. Update technical details:
 
     1. Review the subscription configuration.
     1. Update technical details according to your needs, such as **Deployment CIDR** and other values as prompted.
