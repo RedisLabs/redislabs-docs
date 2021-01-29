@@ -4,6 +4,7 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RC"]
+linktitle: "Quick Start"
 aliases: /rv/quick-setup/
          /rc/quick-setup-redis-cloud/
          /rc/quick-setup/
@@ -13,9 +14,9 @@ When you create a Redis Cloud subscription, you must choose:
 - A cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
 - The provider region
 - Redis Cloud service level:
-    - **Essentials** - For development environments and low-throughput applications
-    - **Pro** - For high-throughput applications, many databases or large datasets
-    - **Ultimate** - For a more complete support experience (Contact [Redis Labs Sales](https://redislabs.com/redis-enterprise-cloud/pricing/))
+    - **Fixed** - Set pricing designed for low-throughput applications
+    - **Flexible**  - "Pay as you go" plans for any dataset size or throughput
+    - **Annual** - Predefined annual consumption commitments that provide substantial discounts over Flexible plans.
 
 ## Step 1: Create a new subscription
 
