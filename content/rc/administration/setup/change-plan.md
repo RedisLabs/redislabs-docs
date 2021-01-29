@@ -38,9 +38,10 @@ To do so:
 
     If you are upgrading a free plan, you need to select or add a payment method.
 
-1.  When finished, select the Update button.
+1.  When finished, select the **Update** button.
 
-Before reducing memory the memory size of a subscription, verify that your data fits in the new size; otherwise, the update fails.
+Before updating to a plan with a smaller memory size, verify that your data fits the new size.  Otherwise, the update process will fail and the plan will remain at the original size.
+
 
 Subscription updates happen in the background.  Changes may take several minutes to complete.  
 
