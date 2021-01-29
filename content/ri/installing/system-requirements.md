@@ -3,7 +3,7 @@ Title: System requirements for RedisInsight
 date: 2021-01-29 03:49:29 +0530
 weight: 4
 categories: ["RI"]
-path: install/systemt-requirements/
+path: install/system-requirements/
 ---
 This section of the documentation describes the recommended requirements for various Operating Systems for running RedisInsight.
 
