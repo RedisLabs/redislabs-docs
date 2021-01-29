@@ -20,16 +20,17 @@ We are happy to receive any feedback at [redisinsight@redislabs.com](mailto:redi
 ## Install RedisInsight on Ubuntu
 
 1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. Open a terminal and navigate to the folder containing the downloaded file.
 1. Make your downloaded file into an executable.
 
 ```sh
-chmod +x redisinsight-<platform>-<version>
+chmod +x redisinsight-linux64-<version>
 ```
 
 1. Start RedisInsight.
 
 ```sh
-./redisinsight-<platform>-<version>
+./redisinsight-linux64-<version>
 ```
 
 1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
