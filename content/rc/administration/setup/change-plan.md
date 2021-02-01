@@ -40,13 +40,15 @@ To do so:
 
 1.  When finished, select the **Update** button.
 
-Before updating to a plan with a smaller memory size, verify that your data fits the new size.  Otherwise, the update process will fail and the plan will remain at the original size.
+## Troubleshooting
 
+1.  Before updating to a plan with a smaller memory size, verify that your data fits the new size.  Otherwise, the update process will fail and the plan will remain at the original size.
 
-Subscription updates happen in the background.  Changes may take several minutes to complete.  
+1.  Subscription updates happen in the background.  Changes may take several minutes to complete.  
 
-If the **Change Subscription** button is disabled, it usually means earlier updates are still deploying.
+    If the **Change Subscription** button is disabled, it usually means earlier updates are still deploying.
 
-Refresh the page after a few moments.  If the problem persists, contact support.
+    ![The **Change Subscription** button is disabled during update deployment.](/images/rc/subscription-change-disabled.png)
 
-    ![The **Change Subscription** button is disabled during update deployment.](/images/rc/subscription-change-button.png)
+    Refresh the page after a few moments.  If the problem persists, contact support.
+
