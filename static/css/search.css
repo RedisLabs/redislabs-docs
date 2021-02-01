@@ -44,9 +44,25 @@
 
 .search-root {
   font-size: 14px;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
   font-weight: bold;
   width: 100%;
+}
+
+.search-root-item {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: 0;
+  cursor: default;
+  padding: 16px 16px 0px 16px;
+}
+
+.first-section-item {
+  border: 0;
+}
+
+.no-section-title {
+  margin-top: 0;
 }
 
 .search-title {
