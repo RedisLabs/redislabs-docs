@@ -5,8 +5,10 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.
-The eviction policies are:
+When the total size of a database reaches its [memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}), the database cannot accept new keys. You can select a data eviction policy that defines which keys to delete to make room for new keys.
+
+
+## Eviction policy types
 
 | **Policy** | **Description** |
 |------------|-----------------|
@@ -19,11 +21,17 @@ The eviction policies are:
 |  volatile-random | Randomly evicts keys with an "expire" field set |
 |  volatile-ttl | Evicts the shortest time-to-live keys out of all keys with an "expire" field set. |
 
-{{% note %}}
-- [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) always operate in noeviction mode.
-- Review the documentation for each Redis module to see how it uses eviction.
-{{% /note %}}
+
+## Eviction policy defaults
+
+`volatile-lru` is the default eviction policy for databases, with the exception of Active-Active databases. The default for [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) is `noeviction`. 
+
+### Eviction for modules
+
+When using Redis modules, review the the documentation for each Redis module to see how it uses eviction.
+
+### Avoid data eviction
 
 If you want to avoid data eviction, we recommend that you use [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
-RoF stores the hot data of your dataset in RAM and the rest of your dataset in Flash memory (SSD).
-This lets you kept more data in your database while keeping only the most critical data in high-cost RAM.
+Redis on Flash stores the hot data of your dataset in RAM and the rest of your dataset in Flash memory (SSD).
+This lets you keep more data in your database while only the most critical data is stored in high-cost RAM.

@@ -113,7 +113,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
     - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
         When the total size of the database reaches its memory limit,
-        the database cannot accept new keys. You can select a data eviction policy that defines the keys to delete to make room for new keys. The default eviction policy for Active-Active is `noeviction`.
+        the database cannot accept new keys. You can select a data eviction policy that defines which keys to delete to make room for new keys. The default eviction policy for Active-Active is `noeviction`.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.

@@ -145,7 +145,7 @@ after the database is created.
 
     - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
         When the total size of the database reaches its memory limit,
-        the database cannot accept new keys. You can select a data eviction policy that defines the keys to delete to make room for new keys.
+        the database cannot accept new keys. You can select a data eviction policy that defines which keys to delete to make room for new keys. The default policy for new databases is `volatile-lru`.
 
     - [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
         You can give applications read-only access to replicas of the data that are hosted in different geographical locations or clusters. This is called Active-Passive or Replica Of. To configure the replication, enable Replica Of and specify the databases to replicate to this database.
