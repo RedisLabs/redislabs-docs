@@ -13,7 +13,11 @@ RedisInsight is a full-featured Desktop GUI client for:
 - MacOS 10.13 High Sierra
 
 {{< note >}}
-For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
+
+- Before installing RedisInsight for the above mentioned platforms, refer to the [recommended system requirements](https://docs.redislabs.com/ri/installing/system-requirements/).
+
+- For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
+
 We are happy to receive any feedback at redisinsight@redislabs.com.
 {{< /note >}}
 
