@@ -16,7 +16,7 @@ This section of the documentation describes the recommended requirements for var
 
 ## Mac
 
-- Max OS X 10.9 or later
+- Max OS X 10.13 or later
 - 8GB Memory (RAM)
 - 64 bit
 - No software pre-requisites
@@ -28,7 +28,7 @@ RedisInsight is supported on Mac hardware with Intel chips, but not for Mac hard
 ## Linux
 
 - Ubuntu 18.04 LTS or later
-- 15GB Memory (RAM)  
+- 8GB Memory (RAM)  
 - 64 bit
 - No software pre-requisites
 
