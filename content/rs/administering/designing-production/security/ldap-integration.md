@@ -18,8 +18,8 @@ LDAP authentication is not yet supported for Redis ACL Users.
 To configure LDAP authentication for RS web UI users on a running cluster:
 
 1. Configure `saslauthd` to use LDAP Authentication:
-    1. Edit the `/etc/default/saslauthd`, and change the `MECHANISMS` variable to `MECHANISMS="ldap"`.
-    1. Edit the `saslauthd.conf` configuration file in the installation directory (default: `/etc/opt/redislabs/saslauthd.conf`) and enter the values for these fields:
+    1. On each node, edit `/etc/default/saslauthd` to change the `MECHANISMS` variable to `MECHANISMS="ldap"`.
+    1. On one node, edit the `saslauthd.conf` configuration file in the installation directory (default: `/etc/opt/redislabs/saslauthd.conf`) and enter the values for these fields:
 
         - `ldap_servers`: the LDAP servers that you authenticate against and the port to use. Port 389 is standard for unencrypted LDAP connections, while port 636 is standard for encrypted LDAP connections (strongly recommended).
         - `ldap_tls_cacert_file` (optional): The path to your CA Certificates. This is required for encrypted LDAP connections only.
@@ -44,5 +44,10 @@ To configure LDAP authentication for RS web UI users on a running cluster:
     rladmin cluster config saslauthd_ldap_conf /etc/opt/redislabs/saslauthd.conf
     ```
 
-1. Restart the `saslauthd` service for the changes to take effect: `sudo supervisorctl restart saslauthd`
+1. Restart the `saslauthd` service on each node in the cluster for the changes to take effect: 
+
+    ```sh
+    sudo supervisorctl restart saslauthd
+    ```
+    
 1. [Create LDAP users]({{< relref "/rs/administering/access-control#adding-a-user" >}}) as `external` users in the RS web UI.
