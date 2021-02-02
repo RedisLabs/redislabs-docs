@@ -91,51 +91,32 @@
     },
 
     renderResult: (result, props) => {
-      const root = result.hierarchy[0]
+      let sectionTitle = "",
+        hasSectionTitle = result.section_title !== ""
 
-      if (result.section_title) {
-        return `
-          <li ${props}>
-            <div class="search-root">
-              ${root}
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                ${result.title}
-              </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                ${result.section_title}
-              </div>
-              <div class="search-body">
-                ${result.body}
-              </div>
-            </div>
-          </li>
-        `
-      } else {
-        return `
-          <li ${props}>
-            <div class="search-root">
-              ${root}
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                ${result.title}
-              </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                ${result.title}
-              </div>
-              <div class="search-body">
-                ${result.body}
-              </div>
-            </div>
-          </li>
+      if (hasSectionTitle) {
+        sectionTitle = `
+          <div class="search-section-title">
+            ${result.section_title}
+          </div>
         `
       }
+
+      return `
+        <li ${props}>
+          <div class="search-left">
+            <div class="search-title">
+              ${result.title}
+            </div>
+          </div>
+          <div class="search-right">
+            ${sectionTitle}
+            <div class="search-body">
+              ${result.body}
+            </div>
+          </div>
+        </li>
+      `
     },
 
     getResultValue: result => "",

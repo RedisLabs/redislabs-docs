@@ -29,8 +29,7 @@
 }
 
 .autocomplete-result {
-  border-top: 1px solid #eee;
-  padding: 16px;
+  padding: 11px;
   background: transparent;
 
   display: flex;
@@ -44,9 +43,26 @@
 
 .search-root {
   font-size: 14px;
-  margin-bottom: 8px;
   font-weight: bold;
   width: 100%;
+}
+
+.search-root-item {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: 0;
+  cursor: default;
+  padding: 16px 16px 8px 16px;
+  border-top: 1px solid #eee;
+  width: 100%;
+}
+
+.search-root-item::first {
+  border: 0;
+}
+
+.no-section-title {
+  margin-top: 0;
 }
 
 .search-title {
