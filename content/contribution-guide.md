@@ -7,17 +7,18 @@ Redis Labs documentation is an open source project and we welcome edits of all t
 
 Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
+
 ## Edit in GitHub vs. open an issue
 
 If you see a problem on a page, either with content or formatting, and you think you can fix it,
 you can click on the **Edit on GitHub** link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
 
-If you see a problem on a page but you don't know how to fix it,
+<mark>If you see a problem on a page but you don't know how to fix it,
 go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a **New Issue**.
 
 {{< note >}}
 If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
-{{< /note >}}
+{{< /note >}}</mark>
 
 ## Branches vs. forks
 
@@ -97,21 +98,21 @@ The structure of an article is:
 - A short description (2-4 sentences) of the article.
 - Concepts
 - Prerequisites (if necessary)
-- Informational notices (if necessary)
+- <mark> Informational notices (if necessary)</mark>
 - Procedure
 
 Every article must relate to only one procedure,
-and the concepts must explain any background information that is needed to know when and why to use the procedure.
+and the concepts must explain any background information necessary about when and why to use the procedure.
 
 ### Writing structure
 
 - The concept section consists of:
-    - 2-4 paragraphs in the section or subsection
-    - 2-4 sentences in each paragraph
-    - 10-15 words in each sentence section
-    - Break lines at logical sentence breaks (end of sentence, comma)
+    - <mark> 2-4 paragraphs in the section or subsection </mark>
+    - <mark> 2-4 sentences in each paragraph </mark>
+    - <mark> 10-15 words in each sentence section </mark>
+    - <mark> Break lines at logical sentence breaks (end of sentence, comma)</mark>
 - The prerequisites are listed as bullet points
-- List notes and warnings before the procedure
+- <mark> List notes and warnings before the procedure</mark>
 - For procedures:
     - No more than 10 steps
     - Sub-procedures must be one step with multiple sub-steps
@@ -141,10 +142,10 @@ and the concepts must explain any background information that is needed to know 
 
 - We recommend that you use a markdown linter in your IDE to maintain good markdown syntax.
 - Format names of UI controls in bold - **OK**
-- Format commands and input text in code - `rladmin`
-- Introduce a procedure with the goal of the procedure and a colon (:) - To authenticate to the Swagger UI:
-- Lead the sentence with the subject
-- Use “must” instead of - needs, wants, has to, desire, ...
+- Format commands, filenames, and input text in code - `rladmin`
+- <mark> Introduce a procedure with the goal of the procedure and a colon (:) - To authenticate to the Swagger UI:</mark>
+- <mark> Lead the sentence with the subject
+- Use “must” instead of - needs, wants, has to, desire, ... </mark>
 - Subject and verb must agree in number - blueprint exists, blueprints exist
 - Don’t start a sentence with “also”
 - Instead of writing “In this section” write what is in the section:
@@ -250,3 +251,10 @@ Here are some examples:
         The key values are not saved when you refresh the page.
         {{< /note >}}
         ```
+
+## Related Info
+
+For more info about editing and writing our documents:
+
+- [Editing guide]({{<relref "content/editing-guide.md">}})
+- [Markdown cheatsheet]({{<relref "content/cheatsheet.md">}})
