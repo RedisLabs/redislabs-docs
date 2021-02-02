@@ -15,9 +15,8 @@ Because Redis is based on a single threaded architecture, Redis Slow Log
 can be much more useful than slow log mechanisms of multi-threaded
 database systems such as MySQL Slow Query Log.
 
-Unlike tools that introduce lock overhead (which makes the debugging
-process very complex, Redis Slow Log is highly effective at showing the
-actual processing time of each command.
+Unlike tools that introduce lock overhead (which complicates the debugging
+process), Redis Slow Log is highly effective at showing the actual processing time of each command.
 
 Redis Enterprise Software includes enhancements to the standard Redis
 Slow Log capabilities that allow you to analyze the execution time

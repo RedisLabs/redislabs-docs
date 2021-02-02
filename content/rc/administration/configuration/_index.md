@@ -7,7 +7,7 @@ categories: ["RC"]
 aliases: /rc/administration/configure/
         /rv/administration/configuration/
 ---
-While there is very little configuration of Redis Cloud
+While there is little configuration of Redis Cloud
 required, there are some things that you can and may want to do to
 tailor your database to your use case.
 
