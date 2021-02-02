@@ -26,7 +26,7 @@ To create a new subscription:
 1. At the bottom of the page, click ![Add](/images/rs/icon_add.png#no-click "Add").
 1. Select your subscription configuration:
     1. Select a cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**
-    1. Select the region that you want the subscription to use, for example: `us-central1`
+    1. Select the region that you want the subscription to use, for example: <nobr>`us-central1`</nobr>.
     1. In the Redis Cloud service levels, select the memory or throughput limit for your subscription.
 1. After you select a subscription configuration:
     1. Review the subscription configuration.
