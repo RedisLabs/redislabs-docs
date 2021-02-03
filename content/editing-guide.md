@@ -7,7 +7,7 @@ Redis Labs documentation is an open source project and we welcome edits of all t
 
 Just to get you started, here is a simple explanation of how to edit the docs.
 
-## Getting to the source
+## Find the source
 
 1. Find a page with something to edit.
 
@@ -75,3 +75,10 @@ Here's what this process looks like:
 {{< video "/images/site/review-and-create-PR.mp4" "review-and-create-PR" >}}
 
 Your edits improve the quality of the documentation and help every Redis Labs customer get the most out of Redis products!
+
+## Related Info
+
+For more info about editing and writing our documents:
+
+- [Markdown cheatsheet]({{<relref "content/cheatsheet.md">}})
+- [Contribution guide]({{<relref "content/contribution-guide.md">}})
