@@ -11,7 +11,7 @@ The RedisInsight desktop client allows you to download and use the RedisInsight 
 ## System Requirements
 
 | Requirement | Ubuntu | MacOS | Windows |
-| :---------| :---------: | :---------: |---------: |
+| :-----: | :-----: | :-----: | :-----: |
 | Operating System | Ubuntu 18.04 LTS or later | MacOS 10.13 or later  | Windows 10 |
 | Memory (RAM) | 8GB | 8GB  | 8GB  |
 | Processor| 64 bit | 64 bit | 32 bit or 64 bit|
