@@ -10,6 +10,20 @@
     e.preventDefault()
   })
 
+  function escapeHtml(str) {
+    return str.replace(/[&<>"'\/]/g, function (s) {
+      var entityMap = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': '&quot;',
+          "'": '&#39;',
+          "/": '&#x2F;'
+        };
+
+      return entityMap[s];
+    });
+  }
 
   function setWithExpiry(key, value, ttl) {
     const now = new Date()
@@ -72,7 +86,7 @@
           .done(function(data) {
             // Push a fake 'no results' document if there were no results.
             if (!data.results.length) {
-              const safeInput = encodeURIComponent(trimmedInput).replaceAll("%22", '"').replaceAll("%20", " ")
+              const safeInput = escapeHtml(trimmedInput)
               results = [{
                 title: "",
                 section_title: `No results found for '${safeInput}'`,
