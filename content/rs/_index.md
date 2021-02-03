@@ -20,15 +20,17 @@ It maintains the simplicity and high performance of Redis and adds many enterpri
 
 Redis Enterprise is available as software and as a hosted [cloud service]({{< relref "/rc/_index.md" >}}).
 
-You can run Redis Enterprise Software (RS) in an on-premises data center or on your preferred cloud platform. RS also works with [various container orchestrations systems]({{< relref "/platforms/_index.md" >}}), such as Kubernetes. See our docs on [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}}), [Openshift]({{< relref "/platforms/openshift/_index.md" >}}), [PKS]({{< relref "/platforms/pks/_index.md" >}}), and [PCF]({{< relref "/platforms/pcf/_index.md" >}}) for more details.
+You can run Redis Enterprise Software in an on-premises data center or on your preferred cloud platform. 
 
-For development and testing, you can also run RS using [Docker containers]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
+Redis Enterprise also works with [various container orchestrations systems]({{< relref "/platforms/_index.md" >}}), such as Kubernetes. See our docs on [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}}), [Openshift]({{< relref "/platforms/openshift/_index.md" >}}), [PKS]({{< relref "/platforms/pks/_index.md" >}}), and [PCF]({{< relref "/platforms/pcf/_index.md" >}}) for more details.
 
-If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benfits of RS on all major public clouds.
+For development and testing, you can also run Redis Enterprise using [Docker containers]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
+
+If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benfits of Redis Enterprise Software on all major public clouds.
 
 ## Why Redis Enterprise Software?
 
-Redis Enterprise Software makes it easy to run Redis at scale.
+Redis Enterprise makes it easy to run Redis at scale.
 You can use a single Redis Enterprise Cluster to provision as many Redis databases as you need for your organization, and each of these databases can be tuned and scaled independently.
 In addition, Redis Enterprise supports many enterprise security features, including role-based access control.
 
@@ -51,8 +53,9 @@ This lowers costs while maintaining similar performance to completely RAM-based 
 {{< tabs tabTotal="7" tabID="1" tabName1="Linear Scalability" tabName2="High Availability" tabName3="Data Durability" tabName4="High Performance" tabName5="Dedicated Databases" tabName6="User Interface" tabName7="24/7 Support">}}
 {{< tab tabNum="1" >}}
 
-With RS, a dataset can grow beyond the size of the largest node in the cluster and be processed by any number of cores.
-By partitioning your dataset across multiple nodes using a hashing policy, RS overcomes the memory limitations of a single node and the performance limitations of a single core.
+With Redis Enterprise, a dataset can grow beyond the size of the largest node in the cluster and be processed by any number of cores.
+
+By partitioning your dataset across multiple nodes using a hashing policy, you overcome the memory limitations of a single node and the performance limitations of a single core.
 
 You can dynamically scale your Redis databases increasing their memory limits or increasing the number of shards, all using the built-in UI.
 
@@ -63,6 +66,7 @@ In addition to replicating a database within the same data center, you can also 
 This provides high availability, disaster recovery, and performance improvements for globally-distributed applications.
 
 If a node fails, the data is seamlessly served from a replacement node in the cluster without human intervention.
+
 Redis Enterprise can automatically handle node failures, Redis process failures, and proxy failures.
 Failover typically completes within a few seconds.
 
@@ -73,7 +77,7 @@ Failover typically completes within a few seconds.
 {{< /tab >}}
 {{< tab tabNum="3" >}}
 
-RS enables the use of Redis AOF (Append-Only File) every second or on
+Redis Enterprise enables the use of Redis AOF (Append-Only File) every second or on
 every write, or (RDB) snapshots of your dataset every 1, 6, or 12 hours
 to persistent storage. In addition, you can back up your dataset
 periodically or on-demand to an FTP server, network storage or cloud storage service.
@@ -98,7 +102,7 @@ The UI also allows you configure alerts for events at the database and cluster l
 {{< /tab >}}
 {{< tab tabNum="7" >}}
 
-Redis Labs provides [24/7 support](https://redislabs.com/redis-enterprise-deployment/support/) to users of Redis Enterprise Software and Cloud.
+Redis Labs provides [24/7 support](https://redislabs.com/redis-enterprise-deployment/support/) to users of Redis Enterprise Software and Redis Enterprise Cloud.
 
 {{< /tab >}}
 {{< /tabs >}}
