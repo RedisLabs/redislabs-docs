@@ -20,7 +20,7 @@ For example:
 
 A Redis Cloud cluster is a set of managed Redis processes and cloud instances,
 with each process managing a subset of the database keyspace.
-Clusting uses multiple cores and resources of multiple instance to overcome scaling challenges.
+Clustering uses multiple cores and resources of multiple instance to overcome scaling challenges.
 
 In a Redis Cloud cluster, the keyspace is partitioned into hash
 slots. At any given time a slot resides on and is managed by a single
