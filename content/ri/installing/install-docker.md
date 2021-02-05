@@ -25,13 +25,14 @@ You can run `docker version` to find out your docker version.
 ## Run RedisInsight Docker image
 
 Next, run the RedisInsight container.
-The easiest way is to run the following command:
+
+1. Run the following command:
 
 ```bash
-{{< param docker_command >}}
+docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight:latest
 ```
 
-and then point your browser to [http://localhost:8001](http://localhost:8001).
+1. Point your browser to [http://localhost:8001](http://localhost:8001).
 
 RedisInsight also provides a health check endpoint at [http://localhost:8001/healthcheck/](http://localhost:8001/healthcheck/) to monitor the health of the running container.
 
@@ -40,13 +41,14 @@ Make sure the directory you pass as a volume to the container has necessary perm
 For example, if the previous command returns a permissions error, run the following command:
 
 ```bash
-{{< param docker_db_volume_permission >}}
+chown -R 1001 redisinsight
 ```
+{{< /note >}}
 
 In addition, you can add some additional flags to the docker run command:
 
 1. You can add the `-it` flag to see the logs and view the progress.
-1. On Linux, you can add `--network host`. This makes it easy to work with redis running on your local machine.
+1. On Linux, you can add `--network host`. This makes it easy to work with edis running on your local machine.
 1. To analyze RDB files stored in S3, you can add the access key and secret access key as environment variables using the `-e` flag.
 
     For example: `-e AWS_ACCESS_KEY=<aws access key> -e AWS_SECRET_KEY=<aws secret access key>`
@@ -58,4 +60,4 @@ Starting webserver...
 Visit http://0.0.0.0:8001 in your web browser.
 Press CTRL-C to exit.
 ```
-{{< /note >}}
+
