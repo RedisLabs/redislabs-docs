@@ -389,7 +389,7 @@ This version improves overall stability and performance of RediSearch. It also d
 
 Like most search engines, RediSearch was designed for maintaining append-mostly indices. To update an existing document, the document is actually replaced - that is deleted and added to the index.
 
-Because RediSearch provides realtime indexing and searching, it's sometimes used to search near-realtime data (or the results of its processing). In such cases, the number of indexed documents stays mostly static, but their contents are continuously updated.
+Because RediSearch provides realtime indexing and searching, it is sometimes used to search near-realtime data (or the results of its processing). In such cases, the number of indexed documents stays mostly static, but their contents are continuously updated.
 
 To support this use case, RediSearch has been reworked internally to use 64-bit internal document IDs so that an index can sustain high update throughputs without overflowing. Furthermore and as a result, significant effort has been put into improving memory management and garbage collection.
 
