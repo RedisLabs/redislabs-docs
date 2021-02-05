@@ -323,7 +323,7 @@ Redis and clients are typically IO bound and the IO costs are typically at least
 
 There are several compression algorithms to choose from, each with it's own tradeoffs.
 
-1. Snappy by google aims for high speed and reasonable compression.
+1. [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression)) aims for high speed and reasonable compression.
 1. LZO compresses fast and decompresses faster.
 1. Others such as Gzip are more widely available.
 
