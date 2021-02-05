@@ -118,7 +118,7 @@ Ingestion details of each approach:
 
 All our ingestion operations were executed at sub-millisecond latency and, although both used the same Rax data structure, the RedisTimeSeries approach has slightly higher throughput than Redis Streams.
 
-Each approach yields different results, which shows value of prototyping against specific use cases. As we see on query performance, the Sorted Set per Device comes with improved write throughput but at the expense of query performance. It’s a trade off between ingestion, query performance, and flexibility (remember the earlier data modeling remark).
+Each approach yields different results, which shows the value of prototyping against specific use cases. As we see on query performance, the Sorted Set per Device comes with improved write throughput but at the expense of query performance. It’s a trade off between ingestion, query performance, and flexibility (remember the earlier data modeling remark).
 
 ### Read performance
 
