@@ -1096,7 +1096,7 @@ Or you can use the socket.io server at [https://reveal-js-multiplex-ccjbegmaii.n
 
 You'll need to generate a unique secret and token pair for your master and client presentations. To do so, visit ```http://example.com/token```, where ```http://example.com``` is the location of your socket.io server. Or if you're going to use the socket.io server at [https://reveal-js-multiplex-ccjbegmaii.now.sh/](https://reveal-js-multiplex-ccjbegmaii.now.sh/), visit [https://reveal-js-multiplex-ccjbegmaii.now.sh/token](https://reveal-js-multiplex-ccjbegmaii.now.sh/token).
 
-You are welcome to point your presentations at the Socket.io server running at [https://reveal-js-multiplex-ccjbegmaii.now.sh/](https://reveal-js-multiplex-ccjbegmaii.now.sh/), but availability and stability are not guaranteed.
+You are very welcome to point your presentations at the Socket.io server running at [https://reveal-js-multiplex-ccjbegmaii.now.sh/](https://reveal-js-multiplex-ccjbegmaii.now.sh/), but availability and stability are not guaranteed.
 
 For anything mission critical I recommend you run your own server. The easiest way to do this is by installing [now](https://zeit.co/now). With that installed, deploying your own Multiplex server is as easy running the following command from the reveal.js folder: `now plugin/multiplex`.
 
@@ -1184,7 +1184,7 @@ The **basic setup** is for authoring presentations only. The **full setup** give
 
 ### Basic setup
 
-The core of reveal.js is easy to install. You'll simply need to download a copy of this repository and open the index.html file directly in your browser.
+The core of reveal.js is very easy to install. You'll simply need to download a copy of this repository and open the index.html file directly in your browser.
 
 1. Download the latest version of reveal.js from <https://github.com/hakimel/reveal.js/releases>
 
