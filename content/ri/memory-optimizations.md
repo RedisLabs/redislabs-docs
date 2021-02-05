@@ -250,7 +250,7 @@ The only tradeoffs are related to code complexity. Redis internally uses the sam
 
 Avoid converting hashes to lists when: 
 1. When your hash contains fewer than 50,000 objects.
-1. The size of your hash values are not consistent. Some values values contain a few fields while other contain many.
+1. The size of your hash values are not consistent (for instance, when some hashes contain only a few field-value pairs while others contain many).
 
 ### Shard big hashes to small hashes
 
