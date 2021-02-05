@@ -278,7 +278,7 @@ The only trade off of converting big hashes to small hashes is that it increase 
 
 Unique items can be difficult to count. Usually this means storing every unique item then recalling this information somehow. 
 
-Redis sets support this with a single command, however, storage and retrieval costs grow in proportion to the number of elements. If this becomes prohibative, consider HyperLogLog as a probabilistic alternative.
+Redis sets support this with a single command; however, storing every unique item you want want to count may use a prohibitive amount of memory. If this is the case, consider using a HyperLogLog instead. A HyperLogLog is a probabilistic data structure for counting unique items in a set. HyperLogLogs trade off perfect accuracy for less memory usage.
 
 Bloom filters help when your set contains a high number of elements and you use the set to determine existence or to eliminate duplicates.  
 
