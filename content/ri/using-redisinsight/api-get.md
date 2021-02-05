@@ -50,20 +50,30 @@ If you want to add the TLS certificates for your Redis database, you have to man
 
 ##### Standalone database
 
-![Standalone database](/images/ri/api-get-standalone.png)
+```
+/add/?name=standalone&host=localhost&port=6379
+```
 
 ##### Cluster database
 
-![Cluster database](/images/ri/api-get-cluster.png)
+```
+/add/?name=cluster&host=172.19.0.3&port=7000
+```
 
 ##### Sentinel database
 
-![Sentinel database](/images/ri/api-get-sentinel.png)
+```
+/add/?name=sentinel&host=localhost&port=26379
+```
 
 ##### Standalone database with ACL
 
-![Standalone database with ACL](/images/ri/api-get-standalone-acl.png)
+```
+/add/?name=redis-acl&host=172.19.0.2&port=6379&username=myuser&password=p1pp0
+```
 
 ##### Standalone database with TLS
 
-![Standalone database with TLS](/images/ri/api-get-standalone-tls.png)
+```
+/add/?name=redis-tls&host=172.19.0.2&port=6379&tls=true
+```
