@@ -8,7 +8,7 @@ categories: ["RS"]
 Redis on Flash (RoF) offers users of [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) and [Redis
 Enterprise Cloud](https://redislabs.com/redis-enterprise-cloud/) the unique ability to
-have very large Redis databases but at significant cost savings. Where
+have large Redis databases but at significant cost savings. Where
 standard Redis databases must all be in RAM, Redis on Flash enables your
 Redis databases to span both RAM and dedicated flash memory
 (SSD). Whilst keys are always stored in RAM, RoF intelligently manages
