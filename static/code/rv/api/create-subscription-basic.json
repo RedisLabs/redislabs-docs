@@ -1,5 +1,6 @@
 {
     "name": "Basic subscription example",
+    "dryRun": true,
     "paymentMethodId": 8240,
     "cloudProviders": [
       {
