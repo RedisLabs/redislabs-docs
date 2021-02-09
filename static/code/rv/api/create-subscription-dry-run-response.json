@@ -1,6 +1,4 @@
 {
-  "_comment": "content omitted for brevity...",
-  
   "response": {
     "resource": {
       "pricing": [
@@ -66,7 +64,5 @@
         }
       ]
     }
-  },
-
-  "_comment": "content omitted for brevity..."
+  }  
 }
