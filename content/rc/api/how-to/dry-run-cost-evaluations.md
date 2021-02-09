@@ -68,7 +68,7 @@ Here is an example of the pricing response section for the abve create subscript
 3. The cost evaluation for each database is measured in quantity of the specific shard type required the requested database. The cost per shard is defined by the fields `pricePerUnit` (where `unit` is a shard of the specific type), `priceCurrency` and `pricePeriod`
 4. For example, to calculate the total hourly cost of a database, use the following formula:  `pricePerUnit` * `quantity` 
 5. The structure of the pricing response depends on the cloud account used by the request. There are two types of cloud accounts: a cloud account owned, named and managed by the customer (AWS only) and a "Redis Labs resources" cloud account (All cloud providers)
-6. For a customer provided cloud account - The cost evaluation response lists the AWS resources required (storage and compute instances) without pricing data (which depend on the specific details of the customer's AWS account)
+6. For a customer provided cloud account - The cost evaluation response lists the AWS resources required (storage and compute instances) without pricing data (which depends on the specific details of the customer's AWS account)
 7. For a Redis Labs internal cloud account (defined a `cloudAccountId = 1` in the create subscription request) - The cost evaluation response includes a `MinimumPrice` element. This indicates the minimal hourly cost of the entire subscription. This minimum price will be charged if the sum of all shards for all the subscription's databases is less than the specified minimum price
 
 
