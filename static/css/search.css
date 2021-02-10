@@ -37,7 +37,7 @@
   justify-content: space-between;
 }
 
-li:last-child {
+.autocomplete-result-list li:last-child {
   padding-bottom: 80px !important; /* height of powered-by-redisearch section */
 }
 
