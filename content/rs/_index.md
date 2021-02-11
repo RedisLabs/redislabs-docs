@@ -14,7 +14,7 @@ It maintains the simplicity and high performance of Redis and adds many enterpri
 - Redis on Flash to support large datasets while minimizing infrastructure costs
 - 99.999% uptime
 
-### Software vs. Cloud
+## Software vs. Cloud
 
 Redis Enterprise is available as software and as a hosted [cloud service]({{< relref "/rc/_index.md" >}}).
 
