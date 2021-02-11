@@ -67,7 +67,7 @@ header .header-wrap {
   height: 100%;
   width: 90%;  
   max-width: 1600px;
-  margin: 0 auto;
+  margin: 0 0rem 0 2rem;
   position: relative;  
 }
 
