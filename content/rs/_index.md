@@ -6,8 +6,6 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-## What is Redis Enterprise?
-
 [Redis Enterprise](https://redislabs.com/redis-enterprise/) is a robust, in-memory database platform built by the same people who develop open source Redis.
 It maintains the simplicity and high performance of Redis and adds many enterprise-grade capabilities, including:
 

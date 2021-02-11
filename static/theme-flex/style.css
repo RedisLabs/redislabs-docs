@@ -613,7 +613,7 @@ section a {
   margin: 15px;
   padding-top: 10px;
   text-align: center;
-  max-width: 300px;
+  max-width: 330px;
   min-height: 394px;
 }
 
@@ -1349,6 +1349,10 @@ a.menu__link:hover:before {
   top: 3px;
 }
 .main-content-left > ul > li {
+  margin-bottom: 1.3rem;
+  margin-left: 2rem;
+}
+.main-content-left > ol > li {
   margin-bottom: 1.3rem;
   margin-left: 2rem;
 }
