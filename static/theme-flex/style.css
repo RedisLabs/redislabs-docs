@@ -359,7 +359,7 @@ article > aside {
   position: fixed;
   z-index: 2;
   top: 58px;
-  width: 20rem;
+  width: 23rem;
   overflow-y: auto;
   -moz-box-shadow: 1px 0 8px 0 #ddd;
   -webkit-box-shadow: 1px 0 8px 0 #ddd;
@@ -1103,7 +1103,7 @@ section.page {
   -ms-flex: 1;
   flex: 1;
   box-sizing: border-box;
-  padding: 2rem 3rem 0 23rem;
+  padding: 2rem 3rem 0 26rem;
   max-width: 1420px;
   margin: 0 1em;
   padding-right: 0;
