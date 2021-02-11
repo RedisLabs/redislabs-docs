@@ -611,10 +611,9 @@ section a {
   border-radius: 5px;
   border: 1px solid #eee;
   margin: 15px;
-  min-width: 400px;
   padding-top: 10px;
   text-align: center;
-  width: 327px;
+  max-width: 300px;
   min-height: 394px;
 }
 
