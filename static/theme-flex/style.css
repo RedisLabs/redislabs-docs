@@ -3574,3 +3574,21 @@ a[href*="#no-click"], img[src*="#no-click"] {
   font-size: 20px;
   vertical-align: -2px;
 }
+
+/* Custom CSS rules */
+
+
+/* Glossary */
+.main-content-left dl.glossary {
+}
+
+.main-content-left dl.glossary dt {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.main-content-left dl.glossary dd {
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
