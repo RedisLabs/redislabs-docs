@@ -359,7 +359,7 @@ article > aside {
   position: fixed;
   z-index: 2;
   top: 58px;
-  width: 24rem;
+  width: 20rem;
   overflow-y: auto;
   -moz-box-shadow: 1px 0 8px 0 #ddd;
   -webkit-box-shadow: 1px 0 8px 0 #ddd;
@@ -886,6 +886,8 @@ section a {
   text-transform: uppercase;
 }
 .main-content-bottom {
+  width: auto;
+  max-width: 700px;
   margin-top: 90px;
   padding: 10px 0 60px;
   background: white;
@@ -1102,18 +1104,20 @@ section.page {
   -ms-flex: 1;
   flex: 1;
   box-sizing: border-box;
-  padding: 2rem 3rem 0 27rem;
+  padding: 2rem 3rem 0 23rem;
   max-width: 1420px;
   margin: 0 1em;
   padding-right: 0;
 }
 article section.page h1:first-of-type {
-  margin: 5rem 0rem;
+  margin: 2rem 0rem;
   text-align: left;
   color: #354253;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 3rem;
   line-height: 3.45rem;
+  width: auto;
+  max-width: 700px;
 }
 article section.page h1 {
   margin-top: 3.5rem; }
@@ -1284,10 +1288,9 @@ nav#toc {
   /* width: 100%; */
   width: 300px;
   /* width: 100%; */
-  padding-left: 100px;
+  padding-left: 10px;
 }
 nav#toc h4 {
-  color: #5961ff;
   margin: 0rem 0rem 1.2rem 0rem;
   font-size: 1.1rem;
 }
@@ -2092,6 +2095,7 @@ button.close-button {
 }
 .main-content-right {
   min-width: 340px;
+  padding-left: 20px;
 }
 article > aside .menu > li.parent {
   grid-area: 1;
