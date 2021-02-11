@@ -158,7 +158,7 @@ Technique that has been used to scale larger data storage and processing loads. 
 {{</definition>}}
 
 {{<definition "Simple Authentication and Security Layer (SASL)">}}
-Frameworkl for adding authentication support and data security to connection-based protocols via replaceable mechanisms.
+Framework for adding authentication support and data security to connection-based protocols via replaceable mechanisms.
 {{</definition>}}
 
 {{<definition "snapshot (RDB)">}}
