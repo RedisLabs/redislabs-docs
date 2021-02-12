@@ -80,9 +80,9 @@ A series of definitions, as you'd find in a glossary, should go into a definitio
 For the entires, use the following shortcode:
 
 ```
-{{%/*definition "term"%}}
+{{</*definition "term">}}
 The definition of "term" goes here.
-{{%/definition%}}
+{{</definition>}}
 ```
 
 This produces the following HTML output:
