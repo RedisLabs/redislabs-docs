@@ -13,20 +13,20 @@ Allows you to manage permissions based on key patterns.
 
 {{%definition "Active-Active database (CRDB)"%}}
 Geo-distributed databases that span multiple Redis Enterprise Software clusters. Active-Active databases depend on multi-master replication (MMR) and conflict-free replicated data types (CRDTs) to power a simple development experience for geo-distributed applications. 
-{{%/definition>}}
+{{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
 A “member database” of a global Active-Active database which is made up of its own master and replica shards spanning a single cluster.
-{{%/definition>}}
+{{%/definition%}}
 
 {{%definition "active-passive database replication"%}}
 Provides applications read-only access to replicas of the data set from different geographical locations. The Redis Enterprise implementation of active-passive replication is called Replica Of.
-{{%/definition>}}
+{{%/definition%}}
 
 {{%definition "append-only file (AoF)"%}}
 Log files that keep a record of data changes by writing to the end of a file. This happens with every write, or every second to allow data recovering the entire
 dataset by replaying the append-only log from the beginning to the end. 
-{{%/definition>}}
+{{%/definition%}}
 
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
