@@ -12,7 +12,7 @@ Allows you to manage permissions based on key patterns.
 {{%/definition%}}
 
 {{%definition "Active-Active database (CRDB)"%}}
-Geo-distributed databases that span multiple Redis Enterprise Software clusters. Active-Active databases depend on multi-master replication (MMR) and conflict-free replicated data types (CRDTs) to power a simple development experience for geo-distributed applications. 
+Geo-distributed databases that span multiple Redis Enterprise Software clusters. Active-Active databases depend on multi-master replication (MMR) and conflict-free replicated data types (CRDTs) to power a simple development experience for geo-distributed applications.
 {{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
@@ -54,7 +54,7 @@ Naming system for computers, services, or other resources connected to the Inter
 
 {{%definition "`fysnc`"%}}
 Linux command to synchronize a file's in-core state with a storage device
-{{<%/definition%}}
+{{%/definition%}}
 
 {{%definition "hash slot"%}}
 The result of a hash calculation.
