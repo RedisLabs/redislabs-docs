@@ -154,7 +154,7 @@ Redis process that is part of the Redis clustered database.
 
 {{%definition "sharding"%}}
 Technique that has been used to scale larger data storage and processing loads. Sharding take your data, partitions it into smaller pieces and then send the data to different locations depending on which partition the data has been assigned to.
-{{%/definition%>}}
+{{%/definition%}}
 
 {{%definition "Simple Authentication and Security Layer (SASL)"%}}
 Framework for adding authentication support and data security to connection-based protocols via replaceable mechanisms.
