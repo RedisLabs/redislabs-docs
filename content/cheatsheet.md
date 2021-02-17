@@ -512,3 +512,10 @@ Recently updated articles
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
 - [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)
 - [Children](https://learn.netlify.com/en/shortcodes/children/)
+
+## Related Info
+
+For more info about editing and writing our documents:
+
+- [Editing guide]({{<relref "content/editing-guide.md">}})
+- [Contribution guide]({{<relref "content/contribution-guide.md">}})

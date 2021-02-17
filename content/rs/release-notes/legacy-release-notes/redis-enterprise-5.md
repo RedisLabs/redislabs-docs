@@ -69,8 +69,8 @@ Redis Enterprise Pack (RS). The modules are:
       easily able to address nested data via a path.
 - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
-      filters are probabilistic data structures that do a very good job at
-      quickly determining if something is contained within a set.
+      filters are probabilistic data structures that
+      quickly determine if values are in a set.
 
 #### Custom modules
 

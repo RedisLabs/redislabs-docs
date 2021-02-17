@@ -1,6 +1,7 @@
 (function() {
 
   const SEARCH_API_URL = "https://search-service.redislabs.com/search"
+  const SEARCH_SITE = "https://docs.redislabs.com"
   const THIRTY_SECONDS = 30000
   const SEARCH_LOGO = '<a class="powered-by-redisearch" href="https://oss.redislabs.com/redisearch/"></a>'
 
@@ -10,6 +11,20 @@
     e.preventDefault()
   })
 
+  function escapeHtml(str) {
+    return str.replace(/[&<>"'\/]/g, function (s) {
+      var entityMap = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': '&quot;',
+          "'": '&#39;',
+          "/": '&#x2F;'
+        };
+
+      return entityMap[s];
+    });
+  }
 
   function setWithExpiry(key, value, ttl) {
     const now = new Date()
@@ -44,7 +59,7 @@
 
     search: input => {
       const trimmedInput = input.trim()
-      const url = `${SEARCH_API_URL}?q=${trimmedInput}*`
+      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}`
 
       if (input.length === 0) {
         return []
@@ -72,7 +87,7 @@
           .done(function(data) {
             // Push a fake 'no results' document if there were no results.
             if (!data.results.length) {
-              const safeInput = encodeURIComponent(trimmedInput).replaceAll("%22", '"').replaceAll("%20", " ")
+              const safeInput = escapeHtml(trimmedInput)
               results = [{
                 title: "",
                 section_title: `No results found for '${safeInput}'`,
@@ -91,51 +106,32 @@
     },
 
     renderResult: (result, props) => {
-      const root = result.hierarchy[0]
+      let sectionTitle = "",
+        hasSectionTitle = result.section_title !== ""
 
-      if (result.section_title) {
-        return `
-          <li ${props}>
-            <div class="search-root">
-              ${root}
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                ${result.title}
-              </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                ${result.section_title}
-              </div>
-              <div class="search-body">
-                ${result.body}
-              </div>
-            </div>
-          </li>
-        `
-      } else {
-        return `
-          <li ${props}>
-            <div class="search-root">
-              ${root}
-            </div>
-            <div class="search-left">
-              <div class="search-title">
-                ${result.title}
-              </div>
-            </div>
-            <div class="search-right">
-              <div class="search-section-title">
-                ${result.title}
-              </div>
-              <div class="search-body">
-                ${result.body}
-              </div>
-            </div>
-          </li>
+      if (hasSectionTitle) {
+        sectionTitle = `
+          <div class="search-section-title">
+            ${result.section_title}
+          </div>
         `
       }
+
+      return `
+        <li ${props}>
+          <div class="search-left">
+            <div class="search-title">
+              ${result.title}
+            </div>
+          </div>
+          <div class="search-right">
+            ${sectionTitle}
+            <div class="search-body">
+              ${result.body}
+            </div>
+          </div>
+        </li>
+      `
     },
 
     getResultValue: result => "",
