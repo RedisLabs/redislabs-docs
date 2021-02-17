@@ -107,14 +107,14 @@ If you are creating a Memcached database, enter a username and password for SASL
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/database-security/authentication-and-authorization.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/security/database-security/authentication-and-authorization.md#database-access-control" >}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/database-security/passwords-users-roles.md" >}}) that have access to the database
+        and the [Redis ACLs]({{< relref "/rs/security/database-security/passwords-users-roles.md#database-access-control" >}}) that apply to those connections.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [role]({{ relref "/rs/security/database-security/authentication-and-authorization.md" }}) that you want to have access to the database.
-        1. Select the [ACL]({{ relref "/rs/security/database-security/authentication-and-authorization.md#database-access-control" }}) that you want the role to have in the database.
+        1. Select the [role]({{ relref "/rs/security/database-security/passwords-users-roles.md" }}) that you want to have access to the database.
+        1. Select the [ACL]({{ relref "/rs/security/database-security/passwords-users-roles.md#database-access-control" }}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -151,7 +151,7 @@ after the database is created.
     - [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
-- [**TLS**]({{< relref "/rs/security/database-security/encryption.md" >}}) -
+- [**TLS**]({{< relref "/rs/security/database-security/tls-ssl.md" >}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 

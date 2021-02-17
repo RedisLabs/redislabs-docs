@@ -14,7 +14,7 @@ You can also:
 - Add a new Relic license key
 - Configure Multi-Factor Authentication (MFA)
 
-When you set up [SSL/TLS]({{< relref "/rc/administration/security/securing-redis-cloud-connections.md" >}}) for your account,
+When you set up [SSL/TLS]({{< relref "/rc/security/database-security/tls-ssl.md" >}}) for your account,
 you must enter the downloadable Redis Labs CA Certificate from this page.
 
 ![settings](/images/rc/settings.png)
