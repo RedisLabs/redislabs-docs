@@ -54,7 +54,7 @@
   }
 
 
-  new RedisLabsAutocomplete('#autocomplete', {
+  new RedisSiteSearch('#redis-sitesearch', {
     debounceTime: 2,
 
     search: input => {
