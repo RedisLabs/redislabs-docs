@@ -6,16 +6,23 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/enable-your-account-to-use-api/
 ---
-By default, the Redis Enterprise Cloud API is disabled.
 
-To enable the API for an account:
+If you have a Flexible or Annual Redis Enterprise Cloud subscription, you can use a REST API to manage your subscription programmatically.
 
-1. [Log in to admin console](https://app.redislabs.com) as an account owner.
+{{< note >}}
+The Redis Cloud REST API is available only to Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+{{< /note >}}
+
+For security reasons, Redis Cloud API is disabled by default:
+
+To enable the API:
+
+1. [Sign in to admin console](https://app.redislabs.com) as an account owner.
 1. Go to **Settings**.
 1. In the **Account** tab, locate the **Cloud API Access Key**.
 1. Click **Generate**.
 
-The generated string is the API access key. You will need to include this access key, and a [secret key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team#secret" >}}), when making API calls.
+The generated string is the API access key. You need this access key and a [secret key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team#secret" >}}) to make API calls.
 Only account owners can see the access key in the account settings.
 
 {{< warning >}}

@@ -1,36 +1,26 @@
 ---
-Title: API
+Title: Redis Cloud REST API
 description:
 weight: 80
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/
 ---
-Redis Cloud Pro (RC Pro) API follows the principles of the REST architectural style to expose programmatic access to Redis Labs Pro features and capabilities.
 
-## Supported Redis Cloud Pro features
+The [Redis Cloud REST API]((https://api.redislabs.com/v1/swagger-ui.html)) helps you manage your Redis Cloud subscription programmatically.
 
-The API exposes programmatic access for management of:
+You can use the API to:
 
-- [**Full lifecycle management**]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md" >}}) of Redis Labs Pro Subscriptions and Databases
-- [**System Log**]({{< relref  "/rc/api/how-to/view-auditing-using-system-log.md" >}}) for auditing lifecycle actions (create, update, delete) using
-- [**Hosting cloud provider credentials**]({{< relref  "/rc/api/how-to/create-and-manage-cloud-accounts.md" >}}) definition and management
-- **Backup & import databases** from various sources (e.g. AWS S3, FTP etc.)
-- **Redis Modules**
-- **Alerts settings**
-- **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
+- Add or update users  
+- Create or manage databases  
+- Define or change hosting credentials  
+- Define or manage roles and permissions  
+- Audit access via logs  
+- Backup or import databases  
 
-## API features
-
-The RC Pro API includes these features:
-
-- Standard REST API (accessible using [any HTTP client / programming language]({{< relref  "/rc/api/how-to/using-curl.md" >}}))
-- Supports OpenAPI 2.0 standard
-- Exposes [Swagger user interface](https://api.redislabs.com/v1/swagger-ui.html)
-- Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200) guidelines
-- Secure [authentication and authorization]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
-- Support for multiple personal [API Keys]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
-- Restrict API usage to specific source IP addresses / ranges
+{{< note >}}
+The Redis Cloud REST API is available only to Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+{{< /note >}}
 
 ## Getting started
 
@@ -41,3 +31,10 @@ The RC Pro API includes these features:
 1. [The Processing and Provisioning Lifecycle]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md" >}})
 1. [Create and manage Subscriptions]({{< relref  "/rc/api/how-to/create-and-manage-subscriptions.md" >}})
 
+## More info
+
+- How to use the [Redis Cloud API]({{< relref  "/rc/api/how-to/using-curl.md" >}})
+- [Full API Reference](https://api.redislabs.com/v1/swagger-ui.html)
+- Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200) guidelines
+- Secure [authentication and authorization]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
+- [Enabling and creating API keys]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
