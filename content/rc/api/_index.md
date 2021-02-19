@@ -1,6 +1,6 @@
 ---
-Title: Redis Cloud REST API
-description:
+Title: REST API
+description: Describes the Redis Cloud REST API and links to additional info.
 weight: 80
 alwaysopen: false
 categories: ["RC"]
@@ -24,17 +24,15 @@ The Redis Cloud REST API is available only to Flexible or Annual subscriptions. 
 
 ## Getting started
 
-1. [Enable your Account to use API]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}})
-1. [Authentication and Authorization]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
-1. [Create API Keys for your team]({{< relref  "/rc/api/how-to/create-api-keys-for-your-team.md" >}})
-1. [Using the API]({{< relref  "/rc/api/how-to/using-curl.md" >}})
-1. [The Processing and Provisioning Lifecycle]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md" >}})
-1. [Create and manage Subscriptions]({{< relref  "/rc/api/how-to/create-and-manage-subscriptions.md" >}})
+1. [Enable the API]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}})
+1. [Authenticate and authorize]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
+1. [Create API keys]({{< relref  "/rc/api/how-to/create-api-keys-for-your-team.md" >}})
+1. [Use the API]({{< relref  "/rc/api/how-to/using-curl.md" >}})
+1. [Learn the API lifecycle]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md" >}})
+1. [Create and manage subscriptions]({{< relref  "/rc/api/how-to/create-and-manage-subscriptions.md" >}})
 
 ## More info
 
-- How to use the [Redis Cloud API]({{< relref  "/rc/api/how-to/using-curl.md" >}})
+- Use the [Redis Cloud API]({{< relref  "/rc/api/how-to/using-curl.md" >}})
 - [Full API Reference](https://api.redislabs.com/v1/swagger-ui.html)
-- Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200) guidelines
 - Secure [authentication and authorization]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
-- [Enabling and creating API keys]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)

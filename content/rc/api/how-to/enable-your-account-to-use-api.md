@@ -1,13 +1,13 @@
 ---
-Title: Enable the API for your Account
-description: Enabling an account to use API using the Redis Cloud Admin Console
+Title: Enable the API
+description: Use the Redis Cloud dashboard to enable the REST API.
 weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/enable-your-account-to-use-api/
 ---
 
-If you have a Flexible or Annual Redis Enterprise Cloud subscription, you can use a REST API to manage your subscription programmatically.
+If you have a Flexible (or Annual) Redis Enterprise Cloud subscription, you can use a REST API to manage your subscription programmatically.
 
 {{< note >}}
 The Redis Cloud REST API is available only to Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
