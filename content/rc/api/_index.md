@@ -1,6 +1,6 @@
 ---
 Title: REST API
-description: Describes the Redis Cloud REST API and links to additional info.
+description: Describes the Redis Cloud REST API and links to additional info
 weight: 80
 alwaysopen: false
 categories: ["RC"]
@@ -19,7 +19,7 @@ You can use the API to:
 - Backup or import databases  
 
 {{< note >}}
-The Redis Cloud REST API is available only to Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
 {{< /note >}}
 
 ## Getting started
