@@ -19,13 +19,17 @@ To enable the API:
 
 1. Sign in to your [Redis Cloud subscription](https://app.redislabs.com) as an account owner.
 1. From the menu, choose **Settings**.
-1. In the **Account** tab, locate the **Cloud API Access Key**.
+1. In the **Account** tab, locate the **Cloud API Access Key** in the **Misc** section.
+
+    ![Cloud API Access Key setting in the Misc section of the Redis Cloud settings](/images/rc/settings-cloud-api-key.png)
 
     If you do not see the **Cloud API Access Key** setting, verify that you're signed into a Flexible (or Annual) subscription and that you are an account owner.
 
-1. Select **Generate**.
+1. If the setting contains a key, the API is already enabled.  
 
-The generated string is the API access key. You need this access key and a [secret key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team#secret" >}}) to make API calls.
+    If you see a **Generate** button, select it to generate your key.
+
+The generated key is the API access key. You need combine this with a [secret key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team#secret" >}}) to make API calls.
 
 Only account owners can see the access key in the account settings.
 

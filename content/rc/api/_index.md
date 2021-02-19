@@ -7,7 +7,8 @@ categories: ["RC"]
 aliases: /rv/api/
 ---
 
-The [Redis Cloud REST API]((https://api.redislabs.com/v1/swagger-ui.html)) helps you manage your Redis Cloud subscription programmatically.
+The [Redis Cloud REST API](https://api.redislabs.com/v1/swagger-ui.html) helps you manage your Redis Cloud subscription programmatically.
+
 
 You can use the API to:
 
