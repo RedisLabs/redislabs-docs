@@ -13,7 +13,7 @@ If you have a Flexible (or Annual) Redis Enterprise Cloud subscription, you can 
 The Redis Cloud REST API is available only to Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
 {{< /note >}}
 
-For security reasons, Redis Cloud API is disabled by default.
+For security reasons, the Redis Cloud API is disabled by default.
 
 To enable the API:
 
