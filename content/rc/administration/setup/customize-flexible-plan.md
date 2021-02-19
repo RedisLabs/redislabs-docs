@@ -4,7 +4,9 @@ description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
-aliases: /rc/administration/customize-pro/
+aliases: /rc/administration/customize-pro/ 
+         /rc/administration/customize-pro.md 
+         /rc/administration/customize-flexible-plan/
 ---
 
 When you create a subscription with a Flexible plan, you customize it to your business needs.
@@ -63,13 +65,15 @@ When the Sizing tab first opens, it lets you enter your database details.
 | **Ops/sec** | The operations required per second (when **Throughput By** is set to _Ops/sec_) |
 | **Number of Shards** | The number of shards set aside for the database (when **Throughput By** is set to _Number of Shards_) |
 
-When finished, click the Save button to add the database to your subscription.
+When finished, click the **Save** button to add the database to your subscription.
 
-{{</* note */>}}Once a database has been saved to your subscription, you cannot change it here.  If you make a mistake, either:
+{{</* note */>}}Make sure you have enough disk space.{{</* /note */>}}
+
+Once a database has been saved to your subscription, you cannot change it here.  If you make a mistake, either:
 
 - Delete it from this list and create a new one
 
-- Edit the database after creating the subscription.{{</* /note */>}}
+- Edit the database after creating the subscription.
 
 After saving your database, you can:
 
