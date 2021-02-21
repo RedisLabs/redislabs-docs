@@ -104,7 +104,7 @@ The syncer process restarts to with automatic recovery on.
 
 The following GA releases of Redis modules are bundled with RS 6.0.12:
 
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0.5](https://docs.redislabs.com/latest/modules/redisearch/release-notes/redisearch-2.0-release-notes/)
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0.6](https://docs.redislabs.com/latest/modules/redisearch/release-notes/redisearch-2.0-release-notes/)
 - [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4](https://docs.redislabs.com/latest/modules/redisjson/release-notes/redisjson-1.0-release-notes/)
 - [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.2.11](https://docs.redislabs.com/latest/modules/redisgraph/release-notes/)
 - [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7](https://docs.redislabs.com/latest/modules/redistimeseries/release-notes/)
@@ -128,6 +128,11 @@ To use the updated modules with a database, you must [upgrade the module on the 
 - RS43961 - bigkeys command fixed to handle non-printable key names
 - RS45707 - Fixed a bug that caused RCP (Redis Cloud Pro) databases to reject connections while resharding the database.
 - RS51144 - Fixed a bug in the syncer process that was stopping synchronization between all instances in some scenarios of network disconnection of one or more participating clusters.
+
+with 6.0.12-58:
+- RS50865 - Fixed a bug causing rladmin change master node to fail when performed after a prior successful master change.
+- RS51359 - Fixed a memory leak on slave shards in Active-Active databases with replication and AOF for persistence.
+- RS52363 - Updated PUB/SUB max message value size from 64KB to 512MB 
 
 ### Known limitations
 
