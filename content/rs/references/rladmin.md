@@ -78,7 +78,7 @@ You can use the `rladmin cluster` commands for cluster management. Some `rladmin
 | [`cluster reset_password`](#cluster-reset_password) | Change the password for a given email |
 | [`cluster stats_archiver`](#cluster-stats_archiver) | Enable/disable stats archiving |
 | [`cluster debug_info`](#cluster-debug_info) | Create a support package |
-| [`cluster running_actions`](#cluster-running_actions) | List all active tasks |
+| `cluster running_actions` | List all active tasks |
 
 | Command (for non-configured clusters) | Description |
 | - | - |
@@ -116,7 +116,7 @@ The following parameters are optional:
 
 #### `cluster reset_password`
 
-Changes the password associated with e-mail address provided.
+This command changes the password associated with e-mail address provided.
 
 ```text
 rladmin cluster reset_password <user email>
@@ -127,12 +127,32 @@ rladmin cluster reset_password <user email>
 
 #### `cluster debug_info`
 
+This command writes a support package to the specified path in the cluster configuration file.
+
 ```text
 rladmin cluster debug_info [ path <path> ]
 ```
+#### `cluster create`
 
-#### `cluster running_actions`
+This command creates a new cluster. The node from which the command is executed becomes the first node of the new cluster. 
 
+```text
+cluster create 
+        name <cluster-name>
+        username <admin-user> 
+        password <admin-password> 
+        [ node_uid <node-uid> ] 
+        [ rack_aware ] 
+        [ rack_id <node-rack-id> ] 
+        [ license_file <file> ] 
+        [ ephemeral_path <path> ] 
+        [ persistent_path <path> ] 
+        [ register_dns_suffix ] 
+        [ flash_enabled ] 
+        [ flash_path path ] 
+        [ addr ip-address ] 
+        [external_addr <ip-addresses>]
+```
 
 ### `failover`
 
