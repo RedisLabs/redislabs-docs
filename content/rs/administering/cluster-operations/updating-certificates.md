@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/administering/cluster-operations/updating-certificates"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 The self-signed certificates are used to establish encryption-in-transit for the following traffic:
@@ -16,8 +17,9 @@ The self-signed certificates are used to establish encryption-in-transit for the
 
 These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
-When you use the default self-signed certificates, an untrusted connection notification is shown in the admin console.
-Depending on the browser you use, you can allow the connection for each session or add an exception to make the site trusted in future sessions.
+When you use the default self-signed certificates and you connect to the admin console over a web browser, you'll seen an untrusted connection notification.
+
+Depending on your browser, you can allow the connection for each session or add an exception to trust the certificate for all future sessions.
 
 {{< warning >}}
 When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.

@@ -4,6 +4,7 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/administering/access-control/user-roles"]
 ---
 Role-based access control allows you to scale your Redis deployments while minimizing the overhead involved in managing a cluster with many databases, multiple users, and various access control lists. With RBAC, you can create a role once and then deploy it across multiple databases in the cluster with ease.
 

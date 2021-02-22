@@ -4,6 +4,7 @@ description:
 weight: 60
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/administering/designing-production/security/"]
 ---
 Security is an important part of any production system. This section is intended to detail the configurable security controls within Redis Enterprise.
 

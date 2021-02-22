@@ -5,23 +5,32 @@ weight: 30
 alwaysopen: false
 categories: ["RS"]
 ---
-This section details how you can configure certificates and encryption within the Redis Enterprise control plane. This includes setting up your own certificate, configuring TLS, and enforcing HTTPS.<!--more-->
+Redis Enterprise Software uses self-signed certificates by default ensure that the product is secure.
 
-## Installing your own certificates
+The self-signed certificates establish encryption-in-transit for the following cluster components:
 
-Redis Enterprise Software uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
+- The admin console
+- The REST API
+- The Proxy, which manages connections between clients and database endpoints
+- The Syncer, which synchronizes data between clusters (using either Active-Active or Active-Passive replication)
+- The metrics exporter, which sends metrics to Prometheus
 
-If using a self-signed certificate is not the right solution for you, you can import a CA signed certificate to Redis Enterprise.
+These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
-The certificates that help facilitate encrypted traffic to the control plane are the user interface, the rest api and the metrics exporter.
+When you use the default self-signed certificates and you connect to the admin console over a web browser, you'll seen an untrusted connection notification.
 
-1. User Interface (CM) - The certificate for connections to the management admin console
-1. REST API - The certificate for REST API calls
-1. Metrics exporter - The certificate to export metrics to Prometheus
+Depending on your browser, you can allow the connection for each session or add an exception to trust the certificate for all future sessions.
 
 {{< warning >}}
 When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
 {{< /warning >}}
+
+
+This section details how you can configure certificates and encryption for Redis Enterprise Software. This includes setting up your own certificate, configuring TLS, and enforcing HTTPS.<!--more-->
+
+## Installing your own certificates
+
+Follow these instructions to install your own certificates. Note that you can install a separate certificate per cluster component.
 
 **Step 1:** Create a private key
 
@@ -35,15 +44,24 @@ openssl req -new -key <key-file-name>.pem -out <key-file-name>.csr
 ```
 
 {{< note >}}
-You will be prompted for a Country Name, State or Province Name, Locality Name, Organization Name, Organizational Unit and Common Name. You will need to check with your security team or certificate authority on the right values for your organization. The database's fqdn is typically used as the common name for the certificate.
+You will be prompted for a Country Name, State or Province Name, Locality Name, Organization Name, Organizational Unit and Common Name. You will need to check with your security team or certificate authority for the right values for your organization. The database's fully qualified domain name (FQDN) is typically used as the common name for the certificate.
 {{< /note >}}
 
-**Step 3:** Sign the private using your certificate authority
-- The process to obtain a CA signed certificate is different for each organization and CA vendor. Please consult your security team or certificate authority for the appropriate instructions to sign certificates.
+**Step 3:** Sign the private key using your certificate authority
+- How to obtain a CA signed certificate is different for each organization and CA vendor. Consult your security team or certificate authority for the appropriate way to sign a certificate.
 
 **Step 4:** Upload the certificate to the cluster
 
-To replace the user interface certificate use the rladmin command line utility:
+Use the `rladmin` command line utility to replace the current certificate. You'll run the `cluster certificate set` command, followed by the name of the certificate to set, the certificate filename, and the key filename.
+
+The certificate names are as follows:
+    - For the admin console: `cm`
+    - For the REST API: `api`
+    - For the Proxy: `proxy`
+    - For the Syncer: `syncer`
+    - For the metrics exporter: `metrics_exporter`
+
+For example, to replace the certificate for the admin console, run the following `rladmin` command:
 
 ```sh
  rladmin cluster certificate set cm certificate_file <cert-file-name>.pem key_file <key-file-name>.pem

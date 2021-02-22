@@ -4,6 +4,7 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/administering/designing-production/security/login-lockout"]
 ---
 You can configure users and roles for the control plane. This section details how you can set users and roles, configure external identity providers for authentication, and set up user account security within Redis Enterprise.<!--more-->
 
