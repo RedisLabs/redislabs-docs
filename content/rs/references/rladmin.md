@@ -1,5 +1,5 @@
 ---
-Title: Redis Software Administration CLI (rladmin)
+Title: rladmin
 description:
 weight: $weight
 alwaysopen: false
@@ -132,9 +132,11 @@ This command writes a support package to the specified path in the cluster confi
 ```text
 rladmin cluster debug_info [ path <path> ]
 ```
+
+
 #### `cluster create`
 
-This command creates a new cluster. The node from which the command is executed becomes the first node of the new cluster. 
+This command creates a new cluster. The node from which the command is executed becomes the first node of the new cluster.
 
 ```text
 cluster create 
@@ -160,18 +162,115 @@ cluster create
 
 ```text
 rladmin failover 
-        [db <db:id | name>] 
+        [ db <db:id | name> ] 
         shard <id1 .. idN> 
-        [immediate]
+        [ immediate ]
 ```
 
 ### `help`
 
-
-
 ### `info`
 
+The `rladmin info` command shows a lists of settings you are able to configure for specified databases, proxies, clusters, or nodes.
+
+```text
+rladmin info db <db:id | name>
+```
+
+```text
+rladmin info proxy <id | all>
+```
+
+```text
+rladmin info cluster <id>
+```
+
+```text
+rladmin info node <id>
+```
+
 ### `migrate`
+
+You can use the `rladmin migrate` command to migrate shards or endpoints to new node within the same cluster.
+
+To migrate a single shard or a list of shards use the `shard` parameter.
+
+```text
+rladmin migrate 
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        shard <id1 .. idN> 
+        [ preserve_roles ]
+        target_node <id> 
+        [ override_policy ]
+```
+
+To migrate a single endpoint or list of endpoints, use the `endpoint` parameter.
+
+```text
+rladmin migrate 
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        endpoint <id> 
+        target_node <id> 
+        [ override_policy ]
+```
+
+To migrate all slave (replica) shards for a certain database or node, use the `all_slave_shards` parameter.
+
+```text
+rladmin migrate
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        all_slave_shards 
+        target_node <id> 
+        [ override_policy ]
+```
+
+To migrate all master shards for a certain database or node, use the `all_master_shards` parameter.
+
+```text
+rladmin migrate
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        all_master_shards 
+        target_node <id> 
+        [ override_policy ]
+```
+
+To migrate all shards for a certain database or node, use the `all_shards` parameter.
+
+```text
+rladmin migrate
+        <origin node:id>
+        all_shards
+        target_node <id> 
+        [ override_policy ]
+```
+
+To migrate endpoints for databases to the node where the majority of the shards reside, use `endpoint_to_shard` parameter.
+
+```text
+rladmin migrate
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        endpoint_to_shards
+        [ restrict_target_node <id> ] 
+        [ override_policy ]
+        [ commit ]
+```
+
+To migrate shards to the node where the endpoint resides, use the `shards_to_endpoint` parameter.
+
+```text
+rladmin migrate
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        shards_to_endpoint
+        [ restrict_target_node <id> ] [ override_policy ]
+        [ to_first_slot ]
+        [ commit ]
+        [ max_concurrent_migrations <value> ]
+```
+
+| Optional Parameter | Description |
+| - | - |
+| db | 
+
 
 ### `node`
 
