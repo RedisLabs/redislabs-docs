@@ -11,32 +11,64 @@ Redis Labs implements rolling updates for software upgrades in Kubernetes deploy
 
 ## Upgrading Redis Enterprise in Operator
 
-1. Clone this repository, which contains the deployment files:
+### Download the bundle
+You need to ensure that you pull the correct version of the bundle. You can find the version tags
+by checking the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
+or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases).
 
-    ```sh
-    git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
-    ```
+You can download the bundle for the latest release by issuing the following `curl` command:
 
-    Example response:
+```
+VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
+curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
+```
 
-    ```sh
-    Cloning into 'redis-enterprise-k8s-docs'...
-    remote: Enumerating objects: 37, done.
-    remote: Counting objects: 100% (37/37), done.
-    remote: Compressing objects: 100% (30/30), done.
-    remote: Total 168 (delta 19), reused 9 (delta 7), pack-reused 131
-    Receiving objects: 100% (168/168), 45.32 KiB | 7.55 MiB/s, done.
-    Resolving deltas: 100% (94/94), done.
-    ```
+If you need a different release, replace `VERSION` in the above with a specific release tag.
 
-1. Apply the [bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml), or the openshift.bundle.yaml file if you are running OpenShift.
+### Apply the bundle
+
+Applying the bundle applies the changes made in the new release to custom resource definitions, roles, role binding, operator service account and deploys a new operator binary.
 
     {{< note >}}
-If you are not pulling images from Docker Hub, update the operator Image spec to point to your private repository.
+If you are not pulling images from Docker Hub, update the operator image spec to point to your private repository.
 If you have made changes to the role, role binding, rbac or crd in the previous version you must merge them with the updated declarations in the new version files.
     {{< /note >}}
+    
+You can upgrade the bundle and operator with a single apply command, passing in the bundle YAML file:
 
-1. After the Operator upgrade is complete:
+```
+kubectl apply -f bundle.yaml
+```
+
+After running this command, you should see a result similar to this:
+
+```
+role.rbac.authorization.k8s.io/redis-enterprise-operator configured
+serviceaccount/redis-enterprise-operator configured
+rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured
+customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com configured
+customresourcedefinition.apiextensions.k8s.io/redisenterprisedatabases.app.redislabs.com configured
+deployment.apps/redis-enterprise-operator configured
+```
+
+### Verify that the operator is running
+
+You can verify the operator is running in your namespace by checking the deployment as follows:
+
+```
+kubectl get deployment -l name=redis-enterprise-operator
+```
+
+You should see a result similar to this:
+
+```
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+redis-enterprise-operator   1/1     1            1           0m36s
+```
+
+### Upgrade the Redis Enterprise cluster version
+
+After the Operator upgrade is complete:
     1. Run `kubectl edit rec` in the namespace your Redis Enterprise Cluster is deployed in.
     1. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag provided in the release documentation.
 
