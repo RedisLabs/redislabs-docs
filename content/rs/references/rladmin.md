@@ -194,7 +194,6 @@ rladmin info node <id>
 You can use the `rladmin migrate` command to migrate shards or endpoints to new node within the same cluster.
 
 To migrate a single shard or a list of shards use the `shard` parameter.
-
 ```text
 rladmin migrate 
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -205,7 +204,6 @@ rladmin migrate
 ```
 
 To migrate a single endpoint or list of endpoints, use the `endpoint` parameter.
-
 ```text
 rladmin migrate 
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -225,7 +223,6 @@ rladmin migrate
 ```
 
 To migrate all master shards for a certain database or node, use the `all_master_shards` parameter.
-
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -235,7 +232,6 @@ rladmin migrate
 ```
 
 To migrate all shards for a certain database or node, use the `all_shards` parameter.
-
 ```text
 rladmin migrate
         <origin node:id>
@@ -245,7 +241,6 @@ rladmin migrate
 ```
 
 To migrate endpoints for databases to the node where the majority of the shards reside, use `endpoint_to_shard` parameter.
-
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -256,7 +251,6 @@ rladmin migrate
 ```
 
 To migrate shards to the node where the endpoint resides, use the `shards_to_endpoint` parameter.
-
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -271,14 +265,90 @@ rladmin migrate
 | - | - |
 | db | 
 
-
 ### `node`
+
+`rladmin node` manages the IP addresses (internal and external) assigned to a node. `rladmin node snapshot` manages snapshots of the current node state, including active endpoints and active shards.
+
+```text
+rladmin node <id> addr set <addr>
+```
+```text
+rladmin node <id> external_addr set <addr1> <addr2>
+```
+```text
+rladmin node <id> external_addr [ add | remove ] <addr>
+```
+```text
+rladmin node <id> enslave [ shards_only | endpoints_only ]
+```
+```text
+rladmin node <id> snapshot [ create | list | restore | delete ]
+```
+```text
+rladmin node <id>  remove
+```
+
+| Parameter | Description |
+| - | - |
+| addr set | |
+| `external_addr set | |
+| `external_addr | |
+| `enslave` | Enslaves all bound resources |
+| `snapshot` | Snapshots the node's active endpoints and shards |
+| `remove` | |
 
 ### `placement`
 
+`rladmin placement` manages the shard placement policy.
+
+By default the placement policy applies to an all databases within a cluster. Specify the `db` parameter to define the policy for an individual database.
+
+```text
+rladmin placement [ db <db:id | name> ] [ dense | sparse ]
+```
+
+| Placement policy | Description |
+| - | - |
+| dense | Shards will be placed on the same node as long as it has resources |
+| sparse | Shards will be placed on the maximum number of available nodes within the cluster |
+
 ### `recover`
 
+`rladmin recover` manages databases in recovery mode and recovers data or configuration data.
+
+```text
+rladmin recover [ db <db:id | name> ] [ only_configuration ]
+```
+```text
+rladmin recover all [ only_configuration ]
+```
+```text
+rladmin recover list
+```
+
+| Parameter | Description |
+| - | - |
+| only_configuration | Only recovers configuration data |
+| all | Recovers data from all databases in recovery mode within the cluster|
+| list | Lists all databases available for recovery within the cluster |
+
 ### `restart`
+
+`rladmin restart` restarts all the processes being used by a specific database.
+
+```text
+rladmin restart 
+        db <db:id | name> 
+        [ preserve_roles ] 
+        [ discard_data ] 
+        [ force_discard ]
+```
+
+| Parameter | Description |
+| - | - |
+| preserve_roles | Performs an additional failover to maintain shard roles |
+| discard_data | Allows discarding data if there is no persistence or replication |
+| force_discard | Forcibly discards data even if there is persistence or replication |
 
 ### `status`
 
