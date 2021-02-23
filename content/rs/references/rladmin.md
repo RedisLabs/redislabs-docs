@@ -408,10 +408,36 @@ rladmin status shards
 
 #### `suffix list`
 
+```text
+rladmin suffix list
+```
+
 #### `suffix add`
+
+```text
+rladmin suffix add 
+        name <name>
+        [ default ]
+        [ internal ]
+        [ mdns ]
+        [ use_aaaa_ns ]
+        [ slaves <ip>.. ]
+```
+
+| Optional parameter | Description |
+| - | - |
+| default |  |
+| internal |  |
+| mdns |  |
+| use_aaaa_ns |  |
+| slaves |  |
+
 
 #### `suffix delete`
 
+```text
+rladmin suffix delete name <name>
+```
 
 ### `tune`
 
