@@ -396,6 +396,7 @@ rladmin status shards
         [ sort <column_titles> ] 
         [ issues_only ]
 ```
+
 | Command | Filter |
 | - | - |
 | rladmin status nodes | Only nodes |
@@ -404,6 +405,13 @@ rladmin status shards
 | rladmin status shards | Only shards |
 
 ### `suffix`
+
+#### `suffix list`
+
+#### `suffix add`
+
+#### `suffix delete`
+
 
 ### `tune`
 
