@@ -291,11 +291,11 @@ rladmin node <id>  remove
 | Parameter | Description |
 | - | - |
 | addr set | |
-| `external_addr set | |
-| `external_addr | |
-| `enslave` | Enslaves all bound resources |
-| `snapshot` | Snapshots the node's active endpoints and shards |
-| `remove` | |
+| external_addr set | |
+| external_addr | |
+| enslave | Enslaves all bound resources |
+| snapshot | Snapshots the node's active endpoints and shards |
+| remove | |
 
 ### `placement`
 
@@ -351,6 +351,57 @@ rladmin restart
 | force_discard | Forcibly discards data even if there is persistence or replication |
 
 ### `status`
+
+```text
+rladmin status
+        [ extra <parameter> ]
+        [ issues_only]
+```
+
+| `extra` parameter | Description |
+| - | - |
+| extra state_machines | Shows execution of state machine information  |
+| extra nodestats | Shows shards per node |
+| extra backups | Shows periodic backup status |
+| extra frag | Shows fragmented memory available after the restart |
+| extra watchdog | Shows watchdog status  |
+| extra rack_id | Shows `rack_id` if customer is not `rack_aware` |
+| extra redis_version | Shows Redis version of all databases in the cluster |
+| extra all | Shows all above `extra` information |
+
+```text
+rladmin status nodes 
+        [ extra <parameters> ] 
+        [ sort <column_titles> ] 
+        [ issues_only ]
+```
+```text
+rladmin status databases 
+        [ extra <parameters> ] 
+        [ sort <column_titles> ] 
+        [ issues_only ]
+```
+```text
+rladmin status endpoints 
+        [ node <id> ] 
+        [ extra <parameters> ] 
+        [ sort <column_titles> ] 
+        [ issues_only ]
+```
+```text
+rladmin status shards
+        [ node <id> ] 
+        [ db <db:id | name> ]
+        [ extra <parameters> ] 
+        [ sort <column_titles> ] 
+        [ issues_only ]
+```
+| Command | Filter |
+| - | - |
+| rladmin status nodes | Only nodes |
+| rladmin status databases | only databases |
+| rladmin status endpoints | Only endpoints |
+| rladmin status shards | Only shards |
 
 ### `suffix`
 
