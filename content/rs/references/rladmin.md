@@ -189,29 +189,6 @@ rladmin info node <id>
 
 `rladmin migrate` migrates shards or endpoints to a new node within the same cluster.
 
-| Parameter | Description | Syntax |
-| - | - | - |
-| shard | Migrates a single shard or list of shards |
-```text 
-rladmin migrate [ [db <db:id | name>] | [node <origin node:id>] ]shard <id1 .. idN> [ preserve_roles ]target_node <id> [ override_policy ]
-```
-|
-| endpoint | Migrates a single endpoint or list of endpoints | ```text
-rladmin migrate 
-        [ [db <db:id | name>] | [node <origin node:id>] ]
-        shard <id1 .. idN> 
-        [ preserve_roles ]
-        target_node <id> 
-        [ override_policy ]
-``` |
-| all_slave_shards | Migrates all slave shards for a certain database or node | ```text
-rladmin migrate
-        [ [db <db:id | name>] | [node <origin node:id>] ]
-        all_slave_shards 
-        target_node <id> 
-        [ override_policy ]
-```|
-
 To migrate a single shard or a list of shards use the `shard` parameter.
 ```text
 rladmin migrate 
@@ -221,6 +198,8 @@ rladmin migrate
         target_node <id> 
         [ override_policy ]
 ```
+
+
 To migrate a single endpoint or list of endpoints, use the `endpoint` parameter.
 ```text
 rladmin migrate 
@@ -230,8 +209,8 @@ rladmin migrate
         [ override_policy ]
 ```
 
-To migrate all slave (replica) shards for a certain database or node, use the `all_slave_shards` parameter.
 
+To migrate all slave (replica) shards for a certain database or node, use the `all_slave_shards` parameter.
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -239,6 +218,7 @@ rladmin migrate
         target_node <id> 
         [ override_policy ]
 ```
+
 
 To migrate all master shards for a certain database or node, use the `all_master_shards` parameter.
 ```text
@@ -249,6 +229,7 @@ rladmin migrate
         [ override_policy ]
 ```
 
+
 To migrate all shards for a certain database or node, use the `all_shards` parameter.
 ```text
 rladmin migrate
@@ -257,6 +238,7 @@ rladmin migrate
         target_node <id> 
         [ override_policy ]
 ```
+
 
 To migrate endpoints for databases to the node where the majority of the shards reside, use `endpoint_to_shard` parameter.
 ```text
@@ -267,6 +249,7 @@ rladmin migrate
         [ override_policy ]
         [ commit ]
 ```
+
 
 To migrate shards to the node where the endpoint resides, use the `shards_to_endpoint` parameter.
 ```text
@@ -281,7 +264,7 @@ rladmin migrate
 
 | Optional Parameter | Description |
 | - | - |
-| db | 
+| db |
 
 ### `node`
 
@@ -393,12 +376,14 @@ rladmin status nodes
         [ sort <column_titles> ] 
         [ issues_only ]
 ```
+
 ```text
 rladmin status databases 
         [ extra <parameters> ] 
         [ sort <column_titles> ] 
         [ issues_only ]
 ```
+
 ```text
 rladmin status endpoints 
         [ node <id> ] 
@@ -406,6 +391,7 @@ rladmin status endpoints
         [ sort <column_titles> ] 
         [ issues_only ]
 ```
+
 ```text
 rladmin status shards
         [ node <id> ] 
