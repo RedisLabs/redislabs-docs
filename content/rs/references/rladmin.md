@@ -465,12 +465,12 @@ rladmin tune
         [ continue_on_error ]
 ```
 
-| Optional Parameters | Description | 
+| Optional Parameters | Description |
 | - | - |
 | slave_buffer | Redis slave output buffer limits (in MB or hard:soft:time) |
 | client_buffer | Redis client output buffer limits (in MB or hard:soft:time) |
-| repl_backlog | size of the replication buffer |
-| repl_timeout | replication timeout (in seconds) |
+| repl_backlog | Size of the replication buffer |
+| repl_timeout | Replication timeout (in seconds) |
 | repl_diskless |  |
 | master_persistence |  |
 | maxclients |  |
@@ -487,10 +487,85 @@ rladmin tune
 | slave_ha_priority |  |
 | continue_on_error |  |
 
+#### `tune proxy`
+
+```text
+rladmin tune proxy <id | all> 
+        [ mode <static | dynamic> ] 
+        [ threads <value> ] 
+        [ max_threads <value> ]
+        [ scale_threshold <value> ] 
+        [ scale_duration <value> ]
+```
+
+| Optional Parameters | Description | 
+| - | - |
+| mode |  |
+| threads |  |
+| max_threads |  |
+| scale_threshold |  |
+| scale_duration |  |
+
+#### `tune cluster`
+
+```text
+rladmin tune cluster
+        [ repl_diskless <^enabled | disabled> ] 
+        [ default_redis_version <version> ] 
+        [ redis_provision_node_threshold <size> ] 
+        [ redis_migrate_node_threshold <size> ] 
+        [ redis_provision_node_threshold_percent <percent> ] 
+        [ redis_migrate_node_threshold_percent <percent> ] 
+        [ max_simultaneous_backups <size> ] 
+        [ watchdog_profile <cloud | local-network> ] 
+        [ slave_ha <enabled/disabled> ] 
+        [ slave_ha_grace_period <seconds> ] 
+        [ slave_ha_cooldown_period <seconds> ] 
+        [ slave_ha_bdb_cooldown_period <seconds> ] 
+        [ continue_on_error ]
+```
+| Optional Parameters | Description | 
+| - | - |
+| repl_diskless |  |
+| default_redis_version |  |
+| redis_provision_node_threshold |  |
+| redis_migrate_node_threshold |  |
+| redis_provision_node_threshold_percent |  |
+| redis_migrate_node_threshold_percent |  |
+| max_simultaneous_backups |  |
+| watchdog_profile |  |
+| slave_ha |  |
+| slave_ha_grace_period |  |
+| slave_ha_cooldown_period |  |
+| slave_ha_bdb_cooldown_period |  |
+| continue_on_error |  |
+
 
 ### `upgrade`
 
+```text
+upgrade db <db:id | name> 
+        [ preserve_roles ] 
+        [ keep_current_version ] 
+        [ discard_data ] 
+        [ force_discard ]
+```
+| Optional Parameters | Description |
+| - | - |
+| preserve_roles |  |
+| keep_current_version |  |
+| discard_data |  |
+| force_discard |  |
+
 ### `verify`
+
+```text
+verify balance [ node <id> ]
+```
+
+```text
+verify rack_aware
+```
 
 ## Use the rladmin shell
 
