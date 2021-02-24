@@ -6,8 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/references/cli-reference/rladmin/
 ---
-`rladmin` is a command-line utility for performing administrative tasks such as failover, migrate, and bind on a Redis Enterprise Software cluster. Some of these tasks can also be performed through the Management UI and some are unique to the `rladmin` CLI tool. 
-
+`rladmin` is a command-line utility for performing administrative tasks such as failover, migrate, and bind on a Redis Enterprise Software cluster. Some of these tasks can also be performed through the Management UI and some are unique to the `rladmin` CLI tool.
 
 ## rladmin Commands
 | Command | Description |
@@ -31,26 +30,7 @@ aliases: /rs/references/cli-reference/rladmin/
 | [verify](#verify) | Cluster verification reports |
 
 ### `bind`
-
-Every database uses [at least one proxy endpoint]({{< relref "/rs/administering/designing-production/networking/multiple-active-proxy.md" >}}) to direct client connections to the shard hosting the desired key.
-The cluster has a proxy policy that automatically assigns proxy endpoints to nodes in the cluster, but you can fine-tune the policy by including or excluding nodes.
-
-With the bind command, you can use:
-
-- `policy` to change the proxy policy.
-- `include` or `exclude` to specify the nodes to include or exclude from the proxy policy.
-
-#### Proxy policy
-
-There are four types of proxy policies available: 
-| Proxy policy | Description |
-| - | - |
-| single | All traffic flows through a single proxy bound to the database endpoint (preferable in most cases)               |
-| all-master-shards | Multiple proxies, one on each master node (best for high traffic and multiple master shards)                     |
-| all-nodes | Multiple proxies, one on each node of the cluster (increases traffic in the cluster, only used in special cases) |
-| Legacy | Copies existing binding configuration from earlier versions                                                      |
-
-- To change the proxy policy, run the following command:
+`rladmin bind` manages the proxy policy for the cluster or a specific database. It also can include or exclude endpoints from the proxy policy.
 
 ```text
 rladmin bind 
@@ -59,7 +39,12 @@ rladmin bind
         policy <single | all-master-shards | all-nodes>
 ```
 
-- To specify the nodes to include or exclude from the proxy policy, run the following command:
+| Proxy policy | Description |
+| - | - |
+| single | All traffic flows through a single proxy bound to the database endpoint (preferable in most cases)               |
+| all-master-shards | Multiple proxies, one on each master node (best for high traffic and multiple master shards)                     |
+| all-nodes | Multiple proxies, one on each node of the cluster (increases traffic in the cluster, only used in special cases) |
+| Legacy | Copies existing binding configuration from earlier versions
 
 ```text
 rladmin bind 
@@ -70,15 +55,15 @@ rladmin bind
 
 ### `cluster`
 
-You can use the `rladmin cluster` commands for cluster management. Some `rladmin cluster` commands are only for clusters that are already configured, while others are only for new clusters that have not been configured.
+`rladmin cluster` manages cluster configuration and administration. Some `rladmin cluster` commands are only for clusters that are already configured, while others are only for new clusters that have not been configured.
 
 | Command (for configured clusters) | Description |
 | - | - |
-| [`cluster config`](#cluster-config) | Update configuration for the cluster |
-| [`cluster reset_password`](#cluster-reset_password) | Change the password for a given email |
-| [`cluster stats_archiver`](#cluster-stats_archiver) | Enable/disable stats archiving |
-| [`cluster debug_info`](#cluster-debug_info) | Create a support package |
-| `cluster running_actions` | List all active tasks |
+| [`cluster config`](#cluster-config) | Updates configuration for the cluster |
+| [`cluster reset_password`](#cluster-reset_password) | Changes the password for a given email |
+| [`cluster stats_archiver`](#cluster-stats_archiver) | Enables/disables stats archiving |
+| [`cluster debug_info`](#cluster-debug_info) | Creates a support package |
+| `cluster running_actions` | Lists all active tasks |
 
 | Command (for non-configured clusters) | Description |
 | - | - |
@@ -88,7 +73,7 @@ You can use the `rladmin cluster` commands for cluster management. Some `rladmin
 
 #### `cluster config`
 
-This command is used to update configuration for the cluster.
+`rladmin cluster config updates the cluster configuration.
 
 ```text
  rladmin cluster config 
@@ -99,12 +84,9 @@ This command is used to update configuration for the cluster.
         [ min_control_TLS_version <control_tls_version>]
         [ min_data_TLS_version <data_tls_version> ]
         [ sentinel_ssl_policy <allowed/required/disabled> ]
-
 ```
 
-The following parameters are optional:
-
-| Option | Description |
+| Optional Parameter | Description |
 | - | - |
 | cipher_suites | The cipher suite used for TLS connections to the RS admin console |
 | ipv6 | Enable or disable IPv6 connections to the RS admin console |
@@ -116,27 +98,25 @@ The following parameters are optional:
 
 #### `cluster reset_password`
 
-This command changes the password associated with e-mail address provided.
+`rladmin cluster reset_password` changes the password associated with e-mail address provided.
 
 ```text
 rladmin cluster reset_password <user email>
 ```
 
-#### `cluster stats_archiver`
-
+<!--- #### `cluster stats_archiver` --->
 
 #### `cluster debug_info`
 
-This command writes a support package to the specified path in the cluster configuration file.
+`rladmin cluster debug_info` writes a support package to the specified path in the cluster configuration file.
 
 ```text
 rladmin cluster debug_info [ path <path> ]
 ```
 
-
 #### `cluster create`
 
-This command creates a new cluster. The node from which the command is executed becomes the first node of the new cluster.
+`rladmin cluster create` creates a new cluster. The node from which the command is executed becomes the first node of the new cluster.
 
 ```text
 cluster create 
@@ -152,13 +132,27 @@ cluster create
         [ register_dns_suffix ] 
         [ flash_enabled ] 
         [ flash_path path ] 
-        [ addr ip-address ] 
-        [external_addr <ip-addresses>]
+        [ addr <ip-address> ] 
+        [ external_addr <ip-addresses> ]
 ```
+
+| Optional Parameters | Description |
+| - | - |
+| node_uid | Unique node ID |
+| rack_aware | Enables/disables rack awareness |
+| rack_id |  |
+| license_file | Path to RLEC license file |
+| ephemeral_path | Path to ephemeral storage location |
+| persistent_path | Path to persistent storage location |
+| register_nds_suffix | Enables database mapping to both internal and external IP |
+| flash_enabled | Enables flash storage |
+| flash_path | Path to flash storage location |
+| addr | Internal IP addresses of the node |
+| external_addr | External IP addresses of the node |
 
 ### `failover`
 
-`rladmin failover` allows you to failover one or more master shards of a specific database and promote their respective replicas to new masters. This command verifies replicas are in full sync before failover is performed, unless you specify the `immediate` option.
+`rladmin failover` performs a failover for master shards of a specific database, and promotes their respective replicas to new masters. The `immediate` flag performs the failover without verifying the replica shards are in full sync with the master shards.
 
 ```text
 rladmin failover 
@@ -169,9 +163,11 @@ rladmin failover
 
 ### `help`
 
+`rladmin help` list all the options and parameters associated with the `rladmin` command.
+
 ### `info`
 
-The `rladmin info` command shows a lists of settings you are able to configure for specified databases, proxies, clusters, or nodes.
+`rladmin info` lists configurable settings for specified databases, proxies, clusters, or nodes.
 
 ```text
 rladmin info db <db:id | name>
@@ -191,7 +187,30 @@ rladmin info node <id>
 
 ### `migrate`
 
-You can use the `rladmin migrate` command to migrate shards or endpoints to new node within the same cluster.
+`rladmin migrate` migrates shards or endpoints to a new node within the same cluster.
+
+| Parameter | Description | Syntax |
+| - | - | - |
+| shard | Migrates a single shard or list of shards |
+```text 
+rladmin migrate [ [db <db:id | name>] | [node <origin node:id>] ]shard <id1 .. idN> [ preserve_roles ]target_node <id> [ override_policy ]
+```
+|
+| endpoint | Migrates a single endpoint or list of endpoints | ```text
+rladmin migrate 
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        shard <id1 .. idN> 
+        [ preserve_roles ]
+        target_node <id> 
+        [ override_policy ]
+``` |
+| all_slave_shards | Migrates all slave shards for a certain database or node | ```text
+rladmin migrate
+        [ [db <db:id | name>] | [node <origin node:id>] ]
+        all_slave_shards 
+        target_node <id> 
+        [ override_policy ]
+```|
 
 To migrate a single shard or a list of shards use the `shard` parameter.
 ```text
@@ -202,7 +221,6 @@ rladmin migrate
         target_node <id> 
         [ override_policy ]
 ```
-
 To migrate a single endpoint or list of endpoints, use the `endpoint` parameter.
 ```text
 rladmin migrate 
@@ -432,7 +450,6 @@ rladmin suffix add
 | use_aaaa_ns |  |
 | slaves |  |
 
-
 #### `suffix delete`
 
 ```text
@@ -524,6 +541,7 @@ rladmin tune cluster
         [ slave_ha_bdb_cooldown_period <seconds> ] 
         [ continue_on_error ]
 ```
+
 | Optional Parameters | Description | 
 | - | - |
 | repl_diskless |  |
@@ -574,7 +592,6 @@ To open the rladmin shell:
 1. Login to the Redis Enterprise Software host with an account that is a member of the **redislabs** OS group.
 
     The rladmin binary is located in `/opt/redislabs/bin`. If you don't have this directory in your PATH, you may want to add it. Otherwise, you can use `bash -l <username>` to log in as a user with permissions to that directory.
-
 
 1. Run: `rladmin`
 
