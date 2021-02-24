@@ -397,12 +397,12 @@ rladmin status shards
         [ issues_only ]
 ```
 
-| Command | Filter |
+| Command | Description |
 | - | - |
-| rladmin status nodes | Only nodes |
-| rladmin status databases | only databases |
-| rladmin status endpoints | Only endpoints |
-| rladmin status shards | Only shards |
+| rladmin status nodes | Filters to only nodes |
+| rladmin status databases | Filters to only databases |
+| rladmin status endpoints | Filters to only endpoints |
+| rladmin status shards | Filters to only shards |
 
 ### `suffix`
 
@@ -440,6 +440,53 @@ rladmin suffix delete name <name>
 ```
 
 ### `tune`
+
+```text
+rladmin tune 
+        db <db:id | name> 
+        [ slave_buffer <value> ] 
+        [ client_buffer <value> ] 
+        [ repl_backlog <size> ] 
+        [ repl_timeout <value> ] 
+        [ repl_diskless <enabled/disabled/default> ] 
+        [ master_persistence <enabled/disabled> ] 
+        [ maxclients <value> ] 
+        [ schedpolicy <value> ] 
+        [ max_shard_pipeline <value> ] 
+        [ conns <value> ] 
+        [ conns_type <value> ] 
+        [ max_client_pipeline <value> ] 
+        [ max_connections <value> ] 
+        [ max_aof_file_size <size> ] 
+        [ oss_cluster <enabled/disabled> ] 
+        [ oss_cluster_api_preferred_ip_type <value> ] 
+        [ slave_ha <enabled/disabled> ] 
+        [ slave_ha_priority <value> ] 
+        [ continue_on_error ]
+```
+
+| Optional Parameters | Description | 
+| - | - |
+| slave_buffer | Redis slave output buffer limits (in MB or hard:soft:time) |
+| client_buffer | Redis client output buffer limits (in MB or hard:soft:time) |
+| repl_backlog | size of the replication buffer |
+| repl_timeout | replication timeout (in seconds) |
+| repl_diskless |  |
+| master_persistence |  |
+| maxclients |  |
+| schedpolicy |  |
+| max_shard_pipeline |  |
+| conns |  |
+| conns_type |  |
+| max_client_pipeline |  |
+| max_connections |  |
+| max_aof_file_size |  |
+| oss_cluster |  |
+| oss_cluster_api_preferred_ip_type |  |
+| slave_ha |  |
+| slave_ha_priority |  |
+| continue_on_error |  |
+
 
 ### `upgrade`
 
