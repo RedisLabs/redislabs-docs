@@ -190,9 +190,9 @@ rladmin info node <id>
 `rladmin migrate` migrates shards or endpoints to a new node within the same cluster.
 
 To migrate a single shard or a list of shards use the `shard` parameter.
+
 ```text
-rladmin migrate 
-        [ [db <db:id | name>] | [node <origin node:id>] ]
+rladmin migrate [ [db <db:id | name>] | [node <origin node:id>] ]
         shard <id1 .. idN> 
         [ preserve_roles ]
         target_node <id> 
