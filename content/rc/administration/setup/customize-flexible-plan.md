@@ -101,7 +101,7 @@ When the database list is displayed, you can:
 
 When you've defined the databases for your subscription, select the **Next** button to review the cost estimate.
 
-## Review &amp; Create tab
+## Review and Create tab
 
 The **Review & Create** tab provides a cost estimate for your Flexible plan and provides a place to enter payment details:
 
