@@ -13,47 +13,63 @@ When you create a subscription with a Flexible plan, you customize it to your bu
 
 This means you:
 
-- Define deployment settings for your subscription, such as cloud provider, network settings, and so on
+- Define deployment settings for your subscription, such as cloud provider, network settings, and so on.
 
 - Create at least one database in order to determine cluster size.
 
-- Review the cost estimate for your selections before creating the subscription.
+- Review the cost estimate for your selections and define payment before creating the subscription.
 
-Here's what the process looks like when you start:
+This article describes the Create Custom Subscription screen, which uses tabs to break the process into three step.  Here, you'll find a description of the settings and options for each tab.
 
-&lt;image here>
 
-## Setup settings
+
+## Setup tab
 
 The Setup tab specifies general settings for the deployment of your subscription.
 
-Here's what's available:
+{{<image filename="/images/rc/flexible-create-setup.png" width="75%" alt="The Setup tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
-| Setting | Description |
+There are three sections on this tab:
+
+- [General settings](#general-settings)
+- [Cloud details](#cloud-details)
+- [Advanced options](#advanced-options)
+
+### General settings {#general-settings}
+
+| General setting | Description |
 |:---------|:-----------|
-| _General settings:_|
 | **Subscription&nbsp;Name** | A custom name for your subscription (_required_) |
 | **Runs On**| Defines whether your databases are stored only in memory (RAM) or are split between memory and Flash storage (RAM+Flash).  See [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})|
-| _Cloud details:_|
+
+### Cloud details {#cloud-details}
+
+| Cloud detail | Description |
+|:---------|:-----------|
 | **Cloud Vendor** | The public cloud provider |
-| **Region(s)** | The cloud region for your sunscription |
-| **Multi-AZ** | Whether in-memory data is replicated to another zone within the deployment region. We recommend choosing a region with at least three availability zones.|
-| _Advanced options:_|
+| **Region(s)** | The cloud region for your subscription |
+| **Multi-AZ** | Whether in-memory data is replicated to another zone within the deployment region. For best results, choose a region with at least three availability zones.|
+
+### Advanced options {#advanced-options}
+
+| Advanced option | Description |
+|:---------|:-----------|
 | **Deployment CIDR** | The [CIDR](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) subnet address for your deployment. Must not overlap other addresses used with your subscription.|
 | **Preferred Availability Zone(s)** | (_GCP only_) The [availability zone](https://cloud.google.com/compute/docs/regions-zones/#available) for your selected region.<br/><br/>If you choose *Select zone(s)*, you must choose at least one zone from **Zone Suffix**.  You can choose up to three preferred zones. |
 | **Persistent Storage Encryption** | (_AWS only_) Whether data is encrypted when stored to disk.  When selected, this mounts [encrypted EBS volumes](https://aws.amazon.com/ebs/faqs/#Encryption) to your instance. |
 
-After selecting your preferences, choose **Next** to determine your size requirements.
+When finished, choose **Next** to determine your size requirements.
 
-## Size settings
+## Size tab
 
-The Sizing tab determines your subscription cluster requirements, which are determined by databases in your subscription and their requirement.
+The **Sizing** tab helps you specify the database, memory, and throughput for your subscription.
 
-When the Sizing tab first opens, it lets you enter your database details.
+When you first visit the **Sizing** tab, you define a database:
 
-| Setting | Description |
+{{<image filename="/images/rc/flexible-create-sizing-first.png" width="75%" alt="Defining a database on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
+
+| New database setting | Description |
 |:---------|:-----------|
-| _New database settings:_|
 | **Name** | A custom name for your database (_required_) |
 | **Protocol** | _Redis_ or _Memcached_ |
 | **Memory Limit (GB)** | The size limit for the database, Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).| 
@@ -67,32 +83,29 @@ When the Sizing tab first opens, it lets you enter your database details.
 
 When finished, click the **Save** button to add the database to your subscription.
 
-{{</* note */>}}Make sure you have enough disk space.{{</* /note */>}}
+When you have at least one defined database, the **Sizing** tab shows a list of your defined databases and provides to maintain them.
 
-Once a database has been saved to your subscription, you cannot change it here.  If you make a mistake, either:
+{{<image filename="/images/rc/flexible-create-sizing-list.png" width="75%" alt="The database list shown on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
-- Delete it from this list and create a new one
+When the database list is displayed, you can:
 
-- Edit the database after creating the subscription.
+- Use the **Delete** icon (displayed on the right side of the database entry in the list0 to remove a database.
 
-After saving your database, you can:
+- Create multiple copies of a database by updating the **Quantity** field.
 
-- Increase the Quantity of databases matching your selected settings (&lt;plus/minus buttons from quantity field).
+- Create a new database by clicking the **Add** button above the Back button.
 
-- Add another set of database choices (&lt;image of blue plus button>).
+- Return to the **Setup** tab using the **Back** button.
 
 - **Cancel** the subscription (&lt;Cancel button image>)
 
-- Choose Next to continue creating the subscription. (&lt;Next button image>)
+When you've defined the databases for your subscription, select the **Next** button to review the cost estimate.
 
-## Review and create the subscription
+## Review &amp; Create tab
 
-The Review & Create tab 
+The **Review & Create** tab provides a cost estimate for your Flexible plan and provides a place to enter payment details:
 
-- summarizes your custom subscription settings
-- provides a cost estimate
-- lets you enter payment info
-- creates or cancels the subscription
+{{<image filename="/images/rc/flexible-create-review.png" width="75%" alt="The **Review & Create** tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
 To update **Payment Method**, choose an existing method from the list or add a new one.
 
@@ -102,8 +115,10 @@ Use the:
 
 - **Back** button to change your selections
 - **Cancel** button to cancel the subscription
-- **Continue** button to create the subscription.
+- **Continue** button to create the subscription
 
 Note that subscriptions are created in the background.  While they are provisioning, you will not be able to change any details.
 
-The check the status of a subscription, choose Subscriptions from the dashboard menu.  The Subscriptions list displays the status for each subscription.
+To check the status of a subscription, choose **Subscriptions** from the admin console menu.  The **Subscriptions** list displays the status for each subscription.  You will also receive an email when your subscription is ready to use.
+
+When your subscription is fully provisioned, use the **Databases** command from the admin console menu to determine the connection details.  You can also define access controls. 
