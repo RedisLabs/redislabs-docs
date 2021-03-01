@@ -26,6 +26,10 @@ When the total size of a database reaches its [memory limit]({{< relref "/rs/adm
 
 `volatile-lru` is the default eviction policy for databases, with the exception of Active-Active databases. The default for [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) is `noeviction`. 
 
+### Eviction for Active-Active Redis databases
+Since Active-Active eviction needs to get propagated to all participant clusters, its eviction mechanism kicks in earlier than in a regular Redis database. The eviction on Active-Active databases starts to evict keys once the memory has reached 80% of maxmemory. In case the used memory continues to rise although keys are being evicted, the eviction mechanism will get more aggressive to prevent getting to Out-Of-Memory.
+Note that in case of network issues between Active-Active instances, keys will still get evicted, but memory can get freed only when all instances get synchronized about it. That means that in cases where there is no communication between participant clusters, eviction can end by all keys getting evicted and instance has reached Out-Of-Memory state.
+
 ### Eviction for modules
 
 When using Redis modules, review the the documentation for each Redis module to see how it uses eviction.
