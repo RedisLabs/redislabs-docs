@@ -20,7 +20,7 @@ An available node is a node that:
 In practice, slave migration creates a new slave shard and replicates the data from the master shard to the new slave shard.
 For example:
 
-1. Node:2 has a master shard and node:3 has the corresponding the slave shard.
+1. Node:2 has a master shard and node:3 has the corresponding slave shard.
 1. Either:
 
     - Node:2 fails and the slave shard on node:3 is promoted to master.
