@@ -141,24 +141,25 @@ after the database is created.
             can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
             without the limitations.
 
-- [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
-    By default, when the total size of the database reaches its memory limit the database evicts keys
-    according to the least recently used keys out of all keys with an "expire" field set
-    in order to make room for new keys. You can select a different data eviction policy.
+    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-- [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
-    You can make this database a repository for keys from other databases.
+    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
+        When the total size of the database reaches its memory limit,
+        the database cannot accept new keys. You can select a data eviction policy that defines which keys to delete to make room for new keys. The default policy for new databases is `volatile-lru`.
 
-- [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
-    You can require TLS encryption and authentication for all communications,
-    TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
+    - [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
+        You can give applications read-only access to replicas of the data that are hosted in different geographical locations or clusters. This is called Active-Passive or Replica Of. To configure the replication, enable Replica Of and specify the databases to replicate to this database.
 
-- [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
-    You can configure periodic backups of the database, including the interval and backup location parameters.
+    - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+        You can require TLS encryption and authentication for all communications,
+        TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-- [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -
-    You can select alerts to show in the database status and configure their thresholds.
-    You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
+    - [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
+        You can configure periodic backups of the database, including the interval and backup location parameters.
+
+    - [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -
+        You can select alerts to show in the database status and configure their thresholds.
+        You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering  designing-production/access-control/_index.md" >}}).
 
 1. Click **Activate**.
 
