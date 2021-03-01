@@ -8,7 +8,7 @@ aliases: /rv/administration/
 ---
 Redis Cloud manages most of the administration of your deployment automatically. However, you can manage several areas of your Redis Cloud deployment yourself.
 
-- [Create a subscription]({{<relref "/rc/administration/setup/create-subscription.md">}}), [customize a Flexible plan]({{<relref "rc/administration/setup/customize-flexible-plan.md">}}), and [edit your subscription]({{<relref "rc/administration/setup/edit-subscription.md">}}) 
+- [Create a subscription]({{<relref "/rc/administration/setup/">}}) and [edit your subscription]({{<relref "rc/administration/setup/edit-subscription.md">}}) 
 - [Create a database]({{<relref "rc/administration/setup/create-database.md">}}), [delete a database]({{<relref "rc/administration/setup/delete-database.md">}}), and [edit a database]({{<relref "rc/administration/setup/edit-database.md">}}) 
 - [Monitor your database performance]({{<relref "rc/administration/configuration/monitoring-performance.md">}}) 
 - [Backup your databases]({{<relref "rc/administration/configuration/backups.md">}}) to remote storage locations

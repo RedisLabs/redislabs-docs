@@ -8,12 +8,12 @@ aliases: /rc/administration/setup-and-editing/viewing-editing-database/
         /rv/administration/setup_and_editing/viewing-editing-databases/
 ---
 To view your database, go to the Menu and click on "Databases".
-Your databases are grouped by [subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}).
+Your databases are grouped by [subscription]({{< relref "/rc/administration/setup/" >}}).
 
 ![Viewing databases in UI](/images/rc/databases_main.png)
 
 In this view you see the each database and some of its settings.
-Since a [subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}) can have multiple databases,
+Since a [subscription]({{< relref "/rc/administration/setup/" >}}) can have multiple databases,
 you can add one to a subscription by clicking on the **+** below each subscription table.
 
 When you select a database you can:
