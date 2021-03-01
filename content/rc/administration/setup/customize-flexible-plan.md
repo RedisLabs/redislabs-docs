@@ -9,13 +9,13 @@ aliases: /rc/administration/customize-pro/
          /rc/administration/customize-flexible-plan/
 ---
 
-When you create a subscription with a Flexible plan, you customize it to your business needs.
+When you create a subscription with a [Flexible plan]({{< relref "/rc/administration/setup/#subscription-plans"}}), you customize it to your business needs.
 
 This means you:
 
 1. Define deployment settings for your subscription, such as cloud provider and network settings.
 
-1. Create at least one database to help determine cluster size.
+1. Create at least one database to determine the size of the underlying cluster.
 
 1. Review the cost estimate for your selections and define payment before creating the subscription.
 
@@ -88,15 +88,15 @@ When you have at least one defined database, the **Sizing** tab shows a list of 
 
 When the database list is displayed, you can:
 
-- Use the **Delete** icon (displayed on the right side of the database entry in the list0 to remove a database.
+- Use the **Delete** icon (displayed on the right side of the database entry in the list to remove a database.
 
--  Use the **Quantity** field to make multiple copies of a database, up to the limits defined for your subscription.
+- Use the **Quantity** field to make multiple copies of a database, up to the limits defined for your subscription.
 
-- Create a new database by clicking the **Add** button above the Back button.
+- To add another database, use the **Add** button above the **Back** button.
 
 - Return to the **Setup** tab using the **Back** button.
 
-- **Cancel** the subscription (&lt;Cancel button image>)
+- **Cancel** the subscription
 
 After defining the databases for your subscription, select the **Next** button to review the cost estimate.
 
@@ -116,7 +116,7 @@ Use the:
 - **Cancel** button to cancel the subscription
 - **Continue** button to create the subscription
 
-Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed make changes.
+Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed make changes.  (This process generally taked 10-15 minutes.)
 
 To check the status of a subscription, choose **Subscriptions** from the admin console menu.  The **Subscriptions** list displays the status for each subscription.  You will also receive an email when your subscription is ready to use.
 
