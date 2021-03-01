@@ -9,7 +9,7 @@ aliases: /rc/administration/customize-pro/
          /rc/administration/customize-flexible-plan/
 ---
 
-When you create a subscription with a [Flexible plan]({{< relref "/rc/administration/setup/#subscription-plans"}}), you customize it to your business needs.
+When you create a subscription with a [Flexible plan]({{< relref "/rc/administration/setup/#subscription-plans" >}}), you customize it to your business needs.
 
 This means you:
 
@@ -116,7 +116,7 @@ Use the:
 - **Cancel** button to cancel the subscription
 - **Continue** button to create the subscription
 
-Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed make changes.  (This process generally taked 10-15 minutes.)
+Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed make changes.  (The process generally takes 10-15 minutes.)
 
 To check the status of a subscription, choose **Subscriptions** from the admin console menu.  The **Subscriptions** list displays the status for each subscription.  You will also receive an email when your subscription is ready to use.
 
