@@ -7,7 +7,6 @@ categories: ["RS"]
 ---
 When the total size of a database reaches its [memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}), the database cannot accept new keys. You can select a data eviction policy that defines which keys to delete to make room for new keys.
 
-
 ## Eviction policy types
 
 | **Policy** | **Description** |
@@ -21,14 +20,13 @@ When the total size of a database reaches its [memory limit]({{< relref "/rs/adm
 |  volatile-random | Randomly evicts keys with an "expire" field set |
 |  volatile-ttl | Evicts the shortest time-to-live keys out of all keys with an "expire" field set. |
 
-
 ## Eviction policy defaults
 
-`volatile-lru` is the default eviction policy for databases, with the exception of Active-Active databases. The default for [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) is `noeviction`. 
+`volatile-lru` is the default eviction policy for databases, with the exception of Active-Active databases. The default for [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) is `noeviction`.
 
 ### Eviction for Active-Active Redis databases
-Since Active-Active eviction needs to get propagated to all participant clusters, its eviction mechanism kicks in earlier than in a regular Redis database. The eviction on Active-Active databases starts to evict keys once the memory has reached 80% of maxmemory. In case the used memory continues to rise although keys are being evicted, the eviction mechanism will get more aggressive to prevent getting to Out-Of-Memory.
-Note that in case of network issues between Active-Active instances, keys will still get evicted, but memory can get freed only when all instances get synchronized about it. That means that in cases where there is no communication between participant clusters, eviction can end by all keys getting evicted and instance has reached Out-Of-Memory state.
+
+The eviction policy mechanism for Active-Active databases kicks in earlier than for regular databases because it requires propagation to all participating clusters. The eviction policy starts to evict keys when the Active-Active database reaches 80% of its memory limit. If memory usage continues to rise while the keys are being evicted, the rate of eviction will increase to prevent reaching the Out-of-Memory state.
 
 ### Eviction for modules
 
