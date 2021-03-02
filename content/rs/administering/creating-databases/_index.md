@@ -93,13 +93,16 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File.
 
-    - **Default database access** - When you configure a password for your database,
-        all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
-        If you also configure an access control list, connections can specify other users for authentication,
-        and requests are allowed according to the Redis ACLs specified for that user.
+    - **Default database access** - To require a password for all database connections,
+        enable the default database access and enter a password.
+        When the default database access is Active with a password, all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
 
-        Note that creating a database without further ACLs (see below) contains a *default* user with full access to the database which
-        in turn requires the definition a password for security reasons.
+        When the default database access is Active without a password, the database accepts connections without authentication.
+
+        We recommend that you either:
+
+        - Enable the default database password and configure a password
+        - Disable the default database password and configure access control lists (ACLs)
 
         {{< note >}}
 If you are creating a Memcached database, enter a username and password for SASL Authentication.
@@ -107,10 +110,11 @@ If you are creating a Memcached database, enter a username and password for SASL
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
+    - **Access Control List** - In addition to the default access password,
+        you can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
         and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that apply to those connections.
 
-        To define an access control list:
+        To define an access control list (ACL):
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
         1. Select the [role]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
