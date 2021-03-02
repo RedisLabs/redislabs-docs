@@ -8,7 +8,7 @@ categories: ["RS"]
 With [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}), applications can read and write to the same data set from different geographical locations seamlessly and with latency less than 1 ms, without changing the way the application connects to the database.
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
-If you have data in a single-region RS database that you want to migrate to an Active-Active database,
+If you have data in a single-region Redis Enterprise Software database that you want to migrate to an Active-Active database,
 you'll need to create a new Active-Active database and migrate the data into the new database as a [Replica Of](https://docs.redislabs.com/latest/rs/administering/active-passive/) the existing database.
 This process will gradually populate the data in the Active-Active database.
 
