@@ -25,7 +25,7 @@ This article describes the Create Custom Subscription screen, which uses tabs to
 
 The Setup tab specifies general settings for the deployment of your subscription.
 
-{{<image filename="/images/rc/flexible-create-setup.png" width="75%" alt="The Setup tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/flexible-create-setup.png" width="75%" alt="The Setup tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
 There are three sections on this tab:
 
@@ -65,7 +65,7 @@ The **Sizing** tab helps you specify the database, memory, and throughput for yo
 
 When you first visit the **Sizing** tab, you're prompted to define a new database:
 
-{{<image filename="/images/rc/flexible-create-sizing-first.png" width="75%" alt="Defining a database on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/flexible-create-sizing-first.png" width="75%" alt="Defining a database on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
 | New database setting | Description |
 |:---------|:-----------|
@@ -84,7 +84,7 @@ When finished, click the **Save** button to add the database to your subscriptio
 
 When you have at least one defined database, the **Sizing** tab shows a list of your defined databases and provides to maintain them.
 
-{{<image filename="/images/rc/flexible-create-sizing-list.png" width="75%" alt="The database list shown on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/flexible-create-sizing-list.png" width="75%" alt="The database list shown on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
 When the database list is displayed, you can:
 
@@ -104,7 +104,7 @@ After defining the databases for your subscription, select the **Next** button t
 
 The **Review & Create** tab provides a cost estimate for your Flexible plan and provides a place to enter payment details:
 
-{{<image filename="/images/rc/flexible-create-review.png" width="75%" alt="The **Review & Create** tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/flexible-create-review.png" width="75%" alt="The **Review & Create** tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
 To update **Payment Method**, choose an existing method from the list or add a new one.
 
