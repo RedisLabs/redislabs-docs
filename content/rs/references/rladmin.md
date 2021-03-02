@@ -9,6 +9,7 @@ aliases: /rs/references/cli-reference/rladmin/
 `rladmin` is a command-line utility for performing administrative tasks such as failover, migrate, and bind on a Redis Enterprise Software cluster. Some of these tasks can also be performed through the Management UI and some are unique to the `rladmin` CLI tool.
 
 ## rladmin Commands
+
 | Command | Description |
 | - | - |
 | [rladmin](#use-the-rladmin-shell) | Enter the `rladmin` shell |
@@ -30,6 +31,7 @@ aliases: /rs/references/cli-reference/rladmin/
 | [verify](#verify) | Cluster verification reports |
 
 ### `bind`
+
 `rladmin bind` manages the proxy policy for the cluster or a specific database. It also can include or exclude endpoints from the proxy policy.
 
 ```text
@@ -67,9 +69,9 @@ rladmin bind
 
 | Command (for non-configured clusters) | Description |
 | - | - |
-| [`cluster create`](#cluster-create) |  |
-| [`cluster join`](#cluster-join) |  |
-| [`cluster recover_filename`](#cluster-recover_filename) |  |
+| [`cluster create`](#cluster-create) | Creates a new cluster |
+| [`cluster join`](#cluster-join) | Adds a node to an existing cluster |
+| [`cluster recover_filename`](#cluster-recover_filename) | Recovers a cluster from a backup file |
 
 #### `cluster config`
 
@@ -150,6 +152,10 @@ cluster create
 | addr | Internal IP addresses of the node |
 | external_addr | External IP addresses of the node |
 
+#### `cluster join`
+
+#### `cluster recover_filename`
+
 ### `failover`
 
 `rladmin failover` performs a failover for master shards of a specific database, and promotes their respective replicas to new masters. The `immediate` flag performs the failover without verifying the replica shards are in full sync with the master shards.
@@ -189,7 +195,19 @@ rladmin info node <id>
 
 `rladmin migrate` migrates shards or endpoints to a new node within the same cluster.
 
-To migrate a single shard or a list of shards use the `shard` parameter.
+| Optional Parameter | Description |
+| - | - |
+| db | Limits migration to specific database |
+| node | Limits migration to specific origin node |
+| target_node | Migration target node |
+| restrict_target_node | Finds target node automatically |
+| override_policy | Overrides rack aware policy and allows master and slave shards on the same node |
+| to_first_slot | Finds the node where the shard with the first hash slot (overrides endpoint_to_shard) |
+| commit | Perform the actions |
+| max_concurrent_migrations | Sets maximum number of concurrent endpoint migrations |
+| preserve_roles | Performs an additional failover to guarantee roles of masters are preserved |
+
+#### Migrate shards
 
 ```text
 rladmin migrate [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -199,8 +217,8 @@ rladmin migrate [ [db <db:id | name>] | [node <origin node:id>] ]
         [ override_policy ]
 ```
 
+#### Migrate endpoints
 
-To migrate a single endpoint or list of endpoints, use the `endpoint` parameter.
 ```text
 rladmin migrate 
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -209,8 +227,8 @@ rladmin migrate
         [ override_policy ]
 ```
 
+#### Migrate all slave shards
 
-To migrate all slave (replica) shards for a certain database or node, use the `all_slave_shards` parameter.
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -219,8 +237,8 @@ rladmin migrate
         [ override_policy ]
 ```
 
+#### Migrate all master shards
 
-To migrate all master shards for a certain database or node, use the `all_master_shards` parameter.
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -229,8 +247,8 @@ rladmin migrate
         [ override_policy ]
 ```
 
+#### Migrate all shards
 
-To migrate all shards for a certain database or node, use the `all_shards` parameter.
 ```text
 rladmin migrate
         <origin node:id>
@@ -239,8 +257,8 @@ rladmin migrate
         [ override_policy ]
 ```
 
+#### Migrate endpoints to shard location
 
-To migrate endpoints for databases to the node where the majority of the shards reside, use `endpoint_to_shard` parameter.
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -250,8 +268,10 @@ rladmin migrate
         [ commit ]
 ```
 
+This command will migrate endpoints for databases to the node where the majority of the shards reside, use `endpoint_to_shard` parameter.
 
-To migrate shards to the node where the endpoint resides, use the `shards_to_endpoint` parameter.
+#### Migrate shards to endpoint location
+
 ```text
 rladmin migrate
         [ [db <db:id | name>] | [node <origin node:id>] ]
@@ -262,9 +282,7 @@ rladmin migrate
         [ max_concurrent_migrations <value> ]
 ```
 
-| Optional Parameter | Description |
-| - | - |
-| db |
+This command will migrate shards to the node where the endpoint resides, use the `shards_to_endpoint` parameter.
 
 ### `node`
 
@@ -273,30 +291,26 @@ rladmin migrate
 ```text
 rladmin node <id> addr set <addr>
 ```
+
 ```text
 rladmin node <id> external_addr set <addr1> <addr2>
 ```
+
 ```text
 rladmin node <id> external_addr [ add | remove ] <addr>
 ```
+
 ```text
 rladmin node <id> enslave [ shards_only | endpoints_only ]
 ```
+
 ```text
 rladmin node <id> snapshot [ create | list | restore | delete ]
 ```
+
 ```text
 rladmin node <id>  remove
 ```
-
-| Parameter | Description |
-| - | - |
-| addr set | |
-| external_addr set | |
-| external_addr | |
-| enslave | Enslaves all bound resources |
-| snapshot | Snapshots the node's active endpoints and shards |
-| remove | |
 
 ### `placement`
 
@@ -320,9 +334,11 @@ rladmin placement [ db <db:id | name> ] [ dense | sparse ]
 ```text
 rladmin recover [ db <db:id | name> ] [ only_configuration ]
 ```
+
 ```text
 rladmin recover all [ only_configuration ]
 ```
+
 ```text
 rladmin recover list
 ```
@@ -444,9 +460,11 @@ rladmin suffix delete name <name>
 
 ### `tune`
 
+#### `tune db`
+`rladmin tune db` configures databases. 
+
 ```text
-rladmin tune 
-        db <db:id | name> 
+rladmin tune db <db:id | name> 
         [ slave_buffer <value> ] 
         [ client_buffer <value> ] 
         [ repl_backlog <size> ] 
@@ -474,21 +492,21 @@ rladmin tune
 | client_buffer | Redis client output buffer limits (in MB or hard:soft:time) |
 | repl_backlog | Size of the replication buffer |
 | repl_timeout | Replication timeout (in seconds) |
-| repl_diskless |  |
-| master_persistence |  |
-| maxclients |  |
-| schedpolicy |  |
-| max_shard_pipeline |  |
-| conns |  |
-| conns_type |  |
-| max_client_pipeline |  |
-| max_connections |  |
-| max_aof_file_size |  |
-| oss_cluster |  |
-| oss_cluster_api_preferred_ip_type |  |
-| slave_ha |  |
-| slave_ha_priority |  |
-| continue_on_error |  |
+| repl_diskless | Enables/disables diskless replication |
+| master_persistence | Enables/disables persistence of the master shard |
+| maxclients | Controls the maxiumum client connections between the proxy and shards |
+| schedpolicy | Controls how server side connections are used when forwarding traffic to shards (values are `cmp`, `mru`, `spread`, or `mnp`) |
+| max_shard_pipeline | Maximum commands in the proxy's pipeline per shard connection (default value is 200) |
+| conns | Size of internal connection pool |
+| conns_type | Specifies connection pool size as either per-thread or per-shard |
+| max_client_pipeline | Maximum commands in the proxy's pipeline per client connection (max value is 2047, default value is 200)  |
+| max_connections | Maximum client connections to database's endpoint (default value is 0 or unlimited) |
+| max_aof_file_size | Maximum size (in MB) of [AoF]({{< relref "/glossary/_index.md#append-only_file_aof" >}}) file (min value is 10 GB)|
+| oss_cluster | Enables/disables OSS cluster API |
+| oss_cluster_api_preferred_ip_type | IP type (internal or external) for endpoint and database in OSS cluster API (default is internal) |
+| slave_ha | Enables/disables slave high availability (defaults to cluster setting) |
+| slave_ha_priority | Priority of database in slave high availability mechanism |
+| continue_on_error | Flag that skips tuning shards that can't be reached |
 
 #### `tune proxy`
 
@@ -544,31 +562,37 @@ rladmin tune cluster
 | slave_ha_bdb_cooldown_period |  |
 | continue_on_error |  |
 
-
 ### `upgrade`
 
+`rladmin upgrade` schedules a restart of the master and slave processes to upgrade the Redis software for a specific database instance.
+
 ```text
-upgrade db <db:id | name> 
+rladmin upgrade db <db:id | name> 
         [ preserve_roles ] 
         [ keep_current_version ] 
         [ discard_data ] 
         [ force_discard ]
 ```
+
 | Optional Parameters | Description |
 | - | - |
-| preserve_roles |  |
-| keep_current_version |  |
-| discard_data |  |
-| force_discard |  |
+| preserve_roles | Performs an additional failover to guarantee roles of masters are preserved |
+| keep_current_version | Upgrades to a new patch release, not to the latest major.minor version |
+| discard_data | Indicates that data will not be saved after the upgrade |
+| force_discard | Forces `discard_data` if there is replication or persistence enabled |
 
 ### `verify`
 
-```text
-verify balance [ node <id> ]
-```
+`rladmin verify balance` prints a cluster shard balance report.
 
 ```text
-verify rack_aware
+rladmin verify balance [ node <id> ]
+```
+
+`rladmin verify rack_aware` prints a cluster rack aware verification report.
+
+```text
+rladmin verify rack_aware
 ```
 
 ## Use the rladmin shell
