@@ -39,8 +39,7 @@ Redis Labs developed and certified these modules for use with RS:
 
 - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
-      filters are probabilistic data structures that do a very good job at
-      quickly determining if something is contained within a set.
+      filters are probabilistic data structures that quickly determine if something is contained within a set.
 - [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     - RedisGraph is the first queryable Property Graph database to use sparse
       matrices to represent the adjacency matrix in graphs and linear algebra to query the graph.

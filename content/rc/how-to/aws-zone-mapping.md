@@ -39,11 +39,11 @@ This makes sure that your application and database are co-located on the same ph
 The zone mapping takes a few minutes to complete as it maps the availability zones.
 During the zone mapping you see:
 
-![zone-mapping](/images/rc/zone-mapping.png?width=600&height=359)
+![zone-mapping](/images/rc/zone-mapping.png)
 
 After zone mapping is complete, the dropdown for **Cloud** in a new subscription shows the zone letter.
 
-![after_zone_mapping](/images/rc/after_zone_mapping.png?width=600&height=192)
+![after_zone_mapping](/images/rc/after_zone_mapping.png)
 
 For existing subscriptions in Redis Cloud Essentials, you now see the Availability Zone they are using.
 To reduce the latency described above:

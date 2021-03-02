@@ -9,7 +9,7 @@ In order to use Redis with C# you need a C# Redis client. In following sections,
 
 ## Installing StackExchange.Redis
 
-StackExchange.Redis' installation instructions are given in the ["Installation" section](https://github.com/StackExchange/StackExchange.Redis#Installation) of its README file. It can be installed via the nuget package manager console with the following command:
+StackExchange.Redis' installation instructions are given in the ["Installation" section](https://stackexchange.github.io/StackExchange.Redis/) of its documentation page. It can be installed via the nuget package manager console with the following command:
 
     PM> Install-Package StackExchange.Redis
 
@@ -29,7 +29,7 @@ To adapt this example to your code, make sure that you replace the following val
 
 ## Connection pooling with StackExchange.Redis
 
-While StackExchange.Redis does not provide direct means for conventional connection pooling, we recommend you **share and reuse** the ConnectionMultiplexer object. The ConnectionMultiplexer object should not be created per operation - it is to be created only once at the beginning and reused for the duration of the run. ConnectionMultiplexer is thread-safe so it can be safely shared between threads. For more information, refer to StackExchange.Redis’ [Basic Usage document](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md).
+While StackExchange.Redis does not provide direct means for conventional connection pooling, we recommend you **share and reuse** the ConnectionMultiplexer object. The ConnectionMultiplexer object should not be created per operation - it is to be created only once at the beginning and reused for the duration of the run. ConnectionMultiplexer is thread-safe so it can be safely shared between threads. For more information, refer to StackExchange.Redis’ [Basic Usage document](https://stackexchange.github.io/StackExchange.Redis/Basics).
 
 ## Using SSL and StackExchange.Redis
 

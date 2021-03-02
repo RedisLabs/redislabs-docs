@@ -44,7 +44,7 @@ The order of the Replica Of sources has no impact on replication.
     the available databases are shown in the correct format for the URL of the source endpoint:
 
         ```sh
-        redis://admin:<database_password>@<database_endpoint>:<database_port>
+        <database name>: redis://admin:<database_password>@<database_endpoint>:<database_port>
         ```
 
         You can select the database that you want to use as the source.

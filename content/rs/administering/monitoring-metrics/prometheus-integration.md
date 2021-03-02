@@ -13,7 +13,7 @@ Metrics are exposed at the node, database, shard and proxy levels.
 - Prometheus ([https://prometheus.io/](https://prometheus.io/)) is an open-source systems monitoring and alerting toolkit that can scrape metrics from different sources.
 - Grafana ([https://grafana.com/](https://grafana.com/)) is an open-source, feature-rich metrics dashboard and graph editor that can process Prometheus data.
 
-![grafana-prometheus](/images/rs/grafana-prometheus.png?width=500)
+![grafana-prometheus](/images/rs/grafana-prometheus.png)
 
 In each cluster, the metrics_exporter component listens on port 8070 and serves as a Prometheus scraping endpoint for obtaining metrics.
 
@@ -99,7 +99,7 @@ To get started with custom monitoring:
 
     1. In the Grafana configuration menu, select **Data Sources**.
 
-        ![data-sources](/images/rs/data-sources.png?width=300)
+        ![data-sources](/images/rs/data-sources.png)
 
     1. Add a new data source with:
 
@@ -108,7 +108,7 @@ To get started with custom monitoring:
         - URL: `http://<your prometheus address>:9090`
         - Access: `Server`
 
-    ![prometheus-connection](/images/rs/prometheus-connection.png?width=500)
+    ![prometheus-connection](/images/rs/prometheus-connection.png)
 
     {{< note >}}
 

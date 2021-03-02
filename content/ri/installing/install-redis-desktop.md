@@ -1,48 +1,75 @@
 ---
-Title: Installing the RedisInsight Desktop Client
+Title: Install the RedisInsight Desktop Client
 date: 2018-07-20 03:49:29 +0530
 weight: 5
 categories: ["RI"]
 path: install/redis-desktop-mac-win-linux/
 aliases: /ri/install/install-redis-desktop/
 ---
-RedisInsight is a full-featured Desktop GUI client for:
+The RedisInsight desktop client allows you to download and use the RedisInsight GUI locally. The desktop client is supported on Windows, MacOS, and Ubuntu operating systems and works with all variants of Redis.
 
-- Windows 10
-- Ubuntu 18.04
-- MacOS 10.13 High Sierra
+## System Requirements
+
+| Requirement | Ubuntu | MacOS | Windows |
+| :-----: | :-----: | :-----: | :-----: |
+| Operating System | Ubuntu 18.04 LTS or later | MacOS 10.13 or later  | Windows 10 |
+| Memory (RAM) | 8GB | 8GB  | 8GB  |
+| Processor| 64 bit | 64 bit | 32 bit or 64 bit|
 
 {{< note >}}
-For not supported operating system version, you can install RedisInsight for the operating system, but it may have unexpected behavior.
-We are happy to receive any feedback at redisinsight@redislabs.com.
+For unsupported operating systems, you can still install RedisInsight. However, it may show unexpected behavior.
+We are happy to receive any feedback at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
 {{< /note >}}
 
-To install RedisInsight:
+{{< note >}}
+Disk space: If you are using [online memory analysis](https://docs.redislabs.com/latest/ri/using-redisinsight/memory-analysis/), you will want to have enough space to store the RDB file for your Redis database. This is usually 10-50% of the Redis instance’s memory usage.
+{{< /note >}}
 
-1. [Download](https://redislabs.com/redisinsight/) RedisInsight for Desktop.
-1. Prepare the executable:
+## Install RedisInsight on Ubuntu
 
-    - For Ubuntu - To make the downloaded file executable, run:
+1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. Open a terminal and navigate to the folder containing the downloaded file.
+1. Make your downloaded file into an executable.
 
-        ```sh
-        chmod +x redisinsight-<platform>-<version>
-        ```
+```sh
+chmod +x redisinsight-linux64-<version>
+```
 
-    - For Windows and MacOS - Run the installer.
+1. Start RedisInsight.
 
-        Both the Windows and MacOS packages are signed and notarized.
+```sh
+./redisinsight-linux64-<version>
+```
 
+1. To access your RedisInsight GUI, open a web browser and navigate to [{{< param siteURL >}}]({{< param siteURL >}}).
+
+
+## Install RedisInsight on MacOS
+
+{{<warning>}}
+RedisInsight is only supported on Mac hardware with Intel chips. Mac hardware with the Apple M1 (ARM) chip is not supported.
+{{</warning>}}
+
+1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. Run the installer.
         {{< note >}}
-Since RedisInsight 1.6.3, some  on MacOS 10.14.x users have reported issues installing the application.
-If you encounter this, please let us know at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com).
-A workaround for this issue is:
-1. Move the package to the Desktop and left-click on the file while pressing the Control key.
-1. A warning message is shown that MacOS cannot check the application properly. To proceeed, click "Open".
+MacOS 10.14.x users occasionally encounter errors during installation.
+If you encounter a problem installing RedisInsight, please contact us at [redisinsight@redislabs.com](mailto:redisinsight@redislabs.com) and perform the following troubleshooting steps:
+1. Move the package to the Desktop and left-click the file while hold the Control key.
+1. Click "Open" to proceed past the warning message.
         {{< /note >}}
+1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
 
-1. Run RedisInsight:
+## Install RedisInsight on Windows
 
-    - Windows - Open RedisInsight.
-    - MacOS and Ubuntu - Run: `/redisinsight-<platform>-<version>`
+{{<note>}}
+RedisInsight should install and run on a fresh Windows system. There is no need to install any .NET framework.
+{{</note>}}
 
-1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and add your first Redis database connection.
+1. [Download RedisInsight](https://redislabs.com/redisinsight/).
+1. Run the installer.
+1. After the web server starts, open [{{< param siteURL >}}]({{< param siteURL >}}) and [add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}}) connection.
+
+## Next Steps
+
+- [Add a Redis database]({{< relref "/ri/using-redisinsight/add-instance.md" >}})

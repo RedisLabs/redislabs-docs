@@ -43,7 +43,7 @@ To create a new database:
     If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
-    ![new_databases](/images/rs/new_databases.png)
+    ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)
 
 1. Enter the mandatory details of the new {{< field "db_type" >}}:
 
@@ -96,10 +96,10 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
     - **Default database access** - When you configure a password for your database,
         all connections to the database must authenticate with the [AUTH command](https://redis.io/commands/auth).
         If you also configure an access control list, connections can specify other users for authentication,
-        and requests are allowed according to the Redis ACLs specified for that user. 
-        
-        Please note that creating a database without further ACLs (see below) contains a *default* user with full access to the database which
-        in turn requires the definition a password for security reasons. 
+        and requests are allowed according to the Redis ACLs specified for that user.
+
+        Note that creating a database without further ACLs (see below) contains a *default* user with full access to the database which
+        in turn requires the definition a password for security reasons.
 
         {{< note >}}
 If you are creating a Memcached database, enter a username and password for SASL Authentication.
@@ -141,22 +141,24 @@ after the database is created.
             can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
             without the limitations.
 
-- [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
+    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+
+    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.
 
-- [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
+    - [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
-- [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+    - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
-- [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
+    - [**Periodic backup**]({{< relref "/rs/administering/import-export/database-backup.md" >}}) -
     You can configure periodic backups of the database, including the interval and backup location parameters.
 
-- [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -
+    - [**Alerts**]({{< relref "/rs/administering/monitoring-metrics/_index.md#database-alerts" >}}) -
     You can select alerts to show in the database status and configure their thresholds.
     You can also select to send the alerts by email to [relevant users]({{< relref "/rs/administering/designing-production/access-control/_index.md" >}}).
 
@@ -210,13 +212,13 @@ redis-19836.c9.us-east-1-2.ec2.cloud.redislabs.com:19836> PING
 PONG
 ```
 
-### 
+### Testing database connectivity with a simple application
 
 You can also use a simple application to test connectivity to your database.
-Here is a simple python app  the connects to the database by IP address.
+Here is a simple python app that connects to the database by IP address.
 The app uses the discovery service that is compliant with Redis Sentinel API.
 
-In the IP-based connection method, you do only need the database name, not the port number.
+In the IP-based connection method, you only need the database name, not the port number.
 Here we simply use the discovery service that listens on port 8001 on all nodes of the cluster
 to discover the endpoint for the database named "db1".
 

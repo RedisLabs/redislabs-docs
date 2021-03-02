@@ -59,18 +59,24 @@ To use the updated modules with a database, you must [upgrade the module on the 
 - RS43572 - Fixed a bug causing the UI to fail when enabling SMTP STARTLS.
 - RS46062 - Fixed missing metrics of Active-Active databases in Grafana.
 - RS44758 - Fixed non responding button for saving a new user via the UI.
+With build 6.0.8-32:
+- RS45627, RS47382 - Fixed bugs causing clients to disconnect when using XREAD and XREADGROUP commands in blocking mode on other clients’ connections.
 
 ## Known limitations
 
+### Active-Active databases
+- RS44656 - A bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change. ***TBD***
+- RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database Persistence]({{< relref "rs/concepts/data-access/persistence.md" >}}) are suffering from memory leak on slave the shards causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshot for Database Persistence or restart the slave shards ***TBD***.
+
 ### Upgrade
 
-- [RS 5.4.2]({{< relref "/rs/release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
-- When you upgrade an Active-Active Redis with active AOF from version [RS 5.4.2]({{< relref "/rs/release-notes/rs-5-4-2-april-2019.md" >}}) or lower to version [RS 5.4.2]({{< relref "/rs/release-notes/rs-5-4-4-june-2019.md" >}}) or higher:
+- [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol]({{< relref "/rs/installing-upgrading/upgrading#upgrading-crdbs" >}}).
+- When you upgrade an Active-Active Redis with active AOF from version [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}) or lower to version [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-4-june-2019.md" >}}) or higher:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
     For assistance with this issue, contact [Support](https://redislabs.com/support).
-- Starting from [RS 5.4.2]({{< relref "/rs/release-notes/rs-5-4-2-april-2019.md" >}}), to preserve the current Redis major.minor version during database upgrade you must use the keep_redis_version option instead of keep_current_version.
+- Starting from [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}), to preserve the current Redis major.minor version during database upgrade you must use the keep_redis_version option instead of keep_current_version.
 
 ### Redis commands
 

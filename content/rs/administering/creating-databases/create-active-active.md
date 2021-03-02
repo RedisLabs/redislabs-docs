@@ -59,7 +59,7 @@ Every instance of an Active-Active database can receive write operations, and al
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial Active-Active database sync of a new replica.
 
-    ![new_geo-distributed](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+    ![new_geo-distributed](/images/rs/new_geo-distrbuted.png)
 
 1. Enter the name of the new Active-Active database and select from the options:
 
@@ -109,6 +109,8 @@ Every instance of an Active-Active database can receive write operations, and al
         - Clear the **Database clustering** option to use only one shard so that you
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
+
+    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
 

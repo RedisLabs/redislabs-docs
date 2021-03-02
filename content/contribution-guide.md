@@ -12,12 +12,6 @@ Just to get you started, here is a simple explanation of how to contribute conte
 If you see a problem on a page, either with content or formatting, and you think you can fix it,
 you can click on the **Edit on GitHub** link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
 
-If you see a problem on a page but you don't know how to fix it,
-go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a **New Issue**.
-
-{{< note >}}
-If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
-{{< /note >}}
 
 ## Branches vs. forks
 
@@ -141,7 +135,7 @@ and the concepts must explain any background information that is needed to know 
 
 - We recommend that you use a markdown linter in your IDE to maintain good markdown syntax.
 - Format names of UI controls in bold - **OK**
-- Format commands and input text in code - `rladmin`
+- Format commands, filenames, and input text in code - `rladmin`
 - Introduce a procedure with the goal of the procedure and a colon (:) - To authenticate to the Swagger UI:
 - Lead the sentence with the subject
 - Use “must” instead of - needs, wants, has to, desire, ...
@@ -170,7 +164,7 @@ Here are some examples:
 
 |  Text type | Wrong                                       | Correct                                | Explanation                                           |
 | --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
+| Procedure | Sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
 | Procedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
 
 ### Common syntax gotchas
@@ -250,3 +244,9 @@ Here are some examples:
         The key values are not saved when you refresh the page.
         {{< /note >}}
         ```
+## Related Information
+
+For more about contributing and editing documentation, see:
+
+- [Editing guide]({{<relref "content/editing-guide.md">}})
+- [Markdown cheatsheet]({{<relref "content/cheatsheet.md">}})

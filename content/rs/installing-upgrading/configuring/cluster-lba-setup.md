@@ -30,8 +30,7 @@ Depending on which Redis Enterprise services you want to access outside the clus
 One or more Virtual IPs (VIPs) are defined on the load balancer to expose Redis Enterprise services.
 The architecture is shown in the following diagram with 3 nodes Redis Enterprise cluster with one database (DB1) configured on port 12000:
 
-<to be added - image>
-
+![cluster-behind-load-balancer-top-down](/images/rs/cluster-behind-load-balancer-top-down.png "cluster-behind-load-balancer-top-down")
 ## Setting up an RS cluster with load balancers
 
 ### Prerequisites
@@ -105,7 +104,7 @@ especially if they are directly connected on IP addresses that have changed.
 ## Inter Cluster communication considerations
 
 Redis Enterprise supports several topologies that allow inter cluster replication, these include Active/Passive (https://docs.redislabs.com/latest/rs/administering/designing-production/active-passive/) and Active/Active (https://docs.redislabs.com/latest/rs/administering/designing-production/active-active/) deployment options.
-When your RS clusters are located behind load balancers, you must allow some netowrk services to be open and defined in the load balancers to allow the replication to work.
+When your RS clusters are located behind load balancers, you must allow some network services to be open and defined in the load balancers to allow the replication to work.
 
 ### Active Passive 
 

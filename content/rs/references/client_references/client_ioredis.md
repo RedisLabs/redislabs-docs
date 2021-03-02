@@ -23,41 +23,46 @@ To install ioredis, run:
 
 This example code creates a connection to Redis:
 
-    ```javascript
-        const Redis = require('ioredis');
-        const redis = new Redis({
-            host: 'hostname',
-            port: 6379,
-            password: 'password'
-        });
-    ```
+```javascript
+const Redis = require('ioredis');
+const redis = new Redis({
+    host: '<hostname>',
+    port: <port>,
+    password: '<password>'
+});
+```
 
 Make sure to replace the values in the example with the values for your Redis instance:
 
-- `'hostname'` - The name of the host your database runs on
-- `6379` - The port that Redis listens on (Default: 6379)
-- `'password'` - The default Redis password, if configured
+- `<hostname>` - The name of the host your database runs on
+- `<port>` - The port that the database is running on (default: 6379)
+- `<password>` - The default Redis password, if configured
 
-    Remember to always store passwords outside of your code, for example in environment variables.
+Remember to always store passwords outside of your code, for example in environment variables.
 
 ## Connecting to Redis with TLS
 
 This example shows how to configure ioredis to make a connection to Redis using TLS:
 
-    ```javascript
-    const Redis = require('ioredis');
-    const fs = require('fs');
+```javascript
+const Redis = require('ioredis');
+const fs = require('fs');
 
-    const redis = new Redis({
-        host: 'hostname',
-        port: 6379,
-        tls: {
-            key: fs.readFileSync('path_to_keyfile', encoding='ascii'),
-            cert: fs.readFileSync('path_to_certfile', encoding='ascii'),
-            ca: [ fs.readFileSync('path_to_ca_certfile', encoding='ascii') ]
-        }
-    });
-    ```
+const redis = new Redis({
+    host: 'hostname',
+    port: <port>,
+    tls: {
+        key: fs.readFileSync('path_to_keyfile', encoding='ascii'),
+        cert: fs.readFileSync('path_to_certfile', encoding='ascii'),
+        ca: [ fs.readFileSync('path_to_ca_certfile', encoding='ascii') ]
+    }
+});
+```
+
+Where you must provide:
+
+- `<hostname>` - The name of the host your database runs on
+- `<port>` - The port that the database is running on (default: 6379)
 
 ## Connecting to Redis using an ACL user and password
 
@@ -66,32 +71,32 @@ ACLs provide the capability to create named user accounts, each having its own p
 
 To connect to Redis as an ACL user, provide the user's username and password when creating the client:
 
-    ```javascript
-    const Redis = require('ioredis');
-    const redis = new Redis({
-        host: 'hostname',
-        port: 6379,
-        username: 'username',
-        password: 'password'
-    });
-    ```
+```javascript
+const Redis = require('ioredis');
+const redis = new Redis({
+    host: 'hostname',
+    port: <port>,
+    username: 'username',
+    password: 'password'
+});
+```
 
 Make sure to replace the values in the example with the values for your Redis instance:
 
-- `'hostname'` - The name of the host your database runs on
-- `6379` - The port that Redis listens on (Default: 6379)
-- `'username'` - The username of the ACL user
-- `'password'` - The password of the ACL user
+- `<hostname>` - The name of the host your database runs on
+- `<port>` - The port that the database is running on (default: 6379)
+- `<username>` - The username of the ACL user
+- `<password>` - The password of the ACL user
 
 {{< note >}}
 ioredis uses the Redis `INFO` command while creating a new connection.
 Your ACL user must have permission to run that command, otherwise connection attempts will fail with a `NOPERM` error message:
 
-    ```sh
-    [ioredis] Unhandled error event: ReplyError: 
-    NOPERM this user has no permissions to run the 'info' command or its 
-    subcommand
-    ```
+```sh
+[ioredis] Unhandled error event: ReplyError: 
+NOPERM this user has no permissions to run the 'info' command or its 
+subcommand
+```
 
 {{< /note >}}
 
@@ -100,44 +105,44 @@ Your ACL user must have permission to run that command, otherwise connection att
 After the connection to Redis is established, you can start reading and writing data.
 The following code snippet reads the value stored at the key `foo`, and prints it:
 
-    ```javascript
-    // Open a connection to Redis
-    // 'foo' has been set to 'bar'.
-    ...
- 
-    client.get('foo', (err, reply) => {
-        if (err) throw err;
-        console.log(reply);
-    });
-    ```
+```javascript
+// Open a connection to Redis
+// 'foo' has been set to 'bar'.
+...
+
+client.get('foo', (err, reply) => {
+    if (err) throw err;
+    console.log(reply);
+});
+```
 
 The output of the above code is:
 
-    ```sh
-    $ node example_ioredis.js
-    bar
-    ```
+```sh
+$ node example_ioredis.js
+bar
+```
 
 ioredis exposes a function named for each Redis command.
 The first argument is almost always the Redis key to run the command against.
 These arguments are followed by an optional error first callback function.
 If a callback function is not provided, a Promise is returned:
 
-    ```javascript
-    // Open a connection to Redis
-    // 'foo' has been set to 'bar'.
+```javascript
+// Open a connection to Redis
+// 'foo' has been set to 'bar'.
 
-    const redisDemo = async () => {
-        const reply = await redis.get('foo');
-        console.log(reply);
-    };
+const redisDemo = async () => {
+    const reply = await redis.get('foo');
+    console.log(reply);
+};
 
-    redisDemo();
-    ```
+redisDemo();
+```
 
 The output of the above code should be:
 
-    ```sh
-    $ node example_ioredis.js
-    bar
-    ```
+```sh
+$ node example_ioredis.js
+bar
+```

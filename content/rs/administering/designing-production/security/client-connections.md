@@ -38,8 +38,8 @@ significantly impact database throughput and latency.
 
 1. The proxy is responsible for terminating the TLS connection
 1. Server certificate and key are located on
-    /etc/opt/redislabs:proxy_cert.pem - server certificate
-    thatproxy_key.pem - server certificate key\*any update on these
+    `/etc/opt/redislabs:proxy_cert.pem` - server certificate
+    `thatproxy_key.pem` - server certificate key\*any update on these
     require a proxy restart
 1. Enabling of TLS is done via "ssl authentication" field in the
     UI. You are required to add a client-side certificate as a TLS
@@ -129,15 +129,15 @@ certificates, and a self-signed certificate on the client machine.
     The certificates are saved in a file named proxy_cert.pem, which is
     stored in /etc/opt/redislabs in each node.
 1. Rename the certificate files fetched from the RS nodes as
-    certsvr.pem. For example: certsvr1.pem, certsvr2.pem.
+    `certsvr.pem`. For example: certsvr1.pem, certsvr2.pem.
 1. Create a single file for all of the server certificates on the
     client machine, by running the following command from the OS CLI.
-    For example:cat /etc/stunnel/certsvr1.pem
-    /etc/stunnel/certsvr2.pem \> /etc/stunnel/servercerts.pem
+    For example:`cat /etc/stunnel/certsvr1.pem`
+    `/etc/stunnel/certsvr2.pem \> /etc/stunnel/servercerts.pem`
 1. Configure stunnel for the connection to RS by using the steps below:
-    1. Create a redislabs.conf file in /etc/stunnel folder.
+    1. Create a redislabs.conf file in `/etc/stunnel` folder.
     1. Make sure that the certificates that have been generated exist in
-        the following folder: /etc/stunnel.
+        the following folder: `/etc/stunnel`.
     1. Edit the redislabs.conf content to look as follows:
 
         ```sh

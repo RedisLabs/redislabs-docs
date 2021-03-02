@@ -110,8 +110,8 @@ The `crdb create` command supports several additional options:
 |`replication true`| boolean| Enables [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})| where every master shard replicates to a replica shard (We recommend that you use replication so that active-active database synchronization traffic is off-loaded to the slave shard)|
 |`encryption true`| boolean| Enable encryption|
 |`sharding disable`| string| Disable sharding (also known as [database clustering]({{< relref "/rs/concepts/high-availability/replication.md" >}})) so that there is only one shard for the database|
-|`shards-count <number>`| integer| If sharding is enabled this specifies the number of Redis shards for each database instance|
-|`shard-key-regex <regex_rule>`| string| If sharding is enabled this defines a custom sharding key regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
+|`shards-count <number>`| integer| If clustering is enabled this specifies the number of Redis shards for each database instance|
+|`shard-key-regex <regex_rule>`| string| If clustering is enabled this defines a regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
 <!-- |`default-db-config <options>`|text|Default database configuration options|
 |`default-db-config-file <filename>`|file path|Default database configuration options| -->
 
@@ -258,9 +258,9 @@ When you remove an instance from an Active-Active database, you must specify:
 
 {{< note >}}
 If the cluster that you run the command on cannot communicate with the instance that you want to remove,
-you can use the `--unordered` flag to remove the instance from the Active-Active database without purging the data from the instance.
+you can use the `--no-force` flag to remove the instance from the Active-Active database without purging the data from the instance.
 
-After you use `crdb remove-instance --unordered`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <CRDB-GUID> <instance-id>`
+After you use `crdb remove-instance --no-force`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <CRDB-GUID> <instance-id>`
 {{< /note >}}
 
 ## Active-Active task status

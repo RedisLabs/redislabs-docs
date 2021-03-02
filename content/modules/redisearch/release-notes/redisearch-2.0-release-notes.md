@@ -5,6 +5,52 @@ weight: 95
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RediSearch 2.0.6 (February, 2020)
+
+This is a maintenance release for version 2.0.
+
+Details:
+- Minor additions:
+    - #[1696](https://github.com/redisearch/redisearch/issues/1696) The maximum number of results produced by `FT.AGGREGATE` is now configurable: [`MAXAGGREGATERESULTS`](https://oss.redislabs.com/redisearch/2.0/Configuring/#maxaggregateresults).
+    - #[1708](https://github.com/redisearch/redisearch/issues/1708) [Stemming](https://oss.redislabs.com/redisearch/2.0/Stemming/#stemming_support) updated with support of new languages: Basque, Catalan, Greek, Indonesian, Irish, Lithuanian, Nepali.
+- Minor bugfixes:
+    - #[1668](https://github.com/redisearch/redisearch/issues/1668) Fixes support of stop words in [tag fields](https://oss.redislabs.com/redisearch/2.0/Tags/#querying_tag_fields). Solves also the following related issues: #[166](https://github.com/redisearch/redisearch/issues/166),  #[984](https://github.com/redisearch/redisearch/issues/984), #[1237](https://github.com/redisearch/redisearch/issues/1237), #[1294](https://github.com/redisearch/redisearch/issues/1294).
+    - #[1689](https://github.com/redisearch/redisearch/issues/1689) Consistency fix and performance improvement when using [FT.SUGGET](https://oss.redislabs.com/redisearch/2.0/Commands/#ftsugget) with [RSCoordinator](https://github.com/RediSearch/RSCoordinator).
+    - #[1774](https://github.com/redisearch/redisearch/issues/1774) [`MINPREFIX`](https://oss.redislabs.com/redisearch/2.0/Configuring/#minprefix) and [`MAXFILTEREXPANSION`](https://oss.redislabs.com/redisearch/2.0/Configuring/#maxprefixexpansions) configuration options can be changed at runtime.
+    - #[1745](https://github.com/redisearch/redisearch/issues/1745) Enforce 0 value for [REDUCER COUNT](https://oss.redislabs.com/redisearch/2.0/Aggregations/#groupby_reducers).
+    - #[1757](https://github.com/redisearch/redisearch/issues/1757) Return an error when reaching the maximum number of [sortable fields](https://oss.redislabs.com/redisearch/2.0/Overview/#sortable_fields), instead of crashing.
+    - #[1762](https://github.com/redisearch/redisearch/issues/1762) Align the maximum number of sortable fields with the maximum number of fields (1024)
+
+
+## RediSearch 2.0.5 (December, 2020)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Minor features:
+    - [#1696](https://github.com/RediSearch/RediSearch/pull/1696) Add [`MAXAGGREGATERESULTS`](https://oss.redislabs.com/redisearch/Configuring/#maxaggregateresults) module configuration for [`FT.AGGREGATE`](https://oss.redislabs.com/redisearch/Commands/#ftaggregate). Similar to `MAXSEARCHRESULTS` for `FT.SEARCH`, it limits the maximum number of results returned.
+
+## RediSearch 2.0.4 (December, 2020)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Bugfixes in RediSearch:
+    - [#1668](https://github.com/RediSearch/RediSearch/pull/1668) Stopwords are not filtered out on tag fields.
+- Bugfixes in RSCoordinator:
+    - [#206](https://github.com/RediSearch/RediSearch/pull/206) `FT.AGGREGATE` with `LIMIT` and `offset` greater than `0` returned fewer results than requested.
+
+## RediSearch 2.0.3 (November, 2020)
+
+This is a maintenance release for version 2.0.
+
+Minor bugfixes:
+
+- Added [`OSS_GLOBAL_PASSWORD`](https://github.com/RediSearch/RSCoordinator#running-rscoordinator) config argument to allow specify shards password on OSS cluster.
+- Update `min_redis_pack_version` to 6.0.8
+
 ## RediSearch 2.0.2 (November, 2020)
 
 This is a maintenance release for version 2.0.

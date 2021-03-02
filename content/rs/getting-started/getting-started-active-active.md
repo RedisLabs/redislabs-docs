@@ -51,13 +51,13 @@ click the **Setup** button on the page to get started.
 Depending on your browser, you may see a certificate error. Continue to the website.
     {{< /note >}}
 
-    ![rs-setup](/images/rs/rs-setup.png)
+    ![getstarted-setup](/images/rs/getstarted-setup.png)
 
 1. On the **node configuration** page, select your default settings and
 provide a cluster FQDN, for example `cluster1.local`. Then click
 **Next** button.
 
-    ![node-config](/images/rs/node-config.png)
+    ![getstarted-nodeconfig](/images/rs/getstarted-nodeconfig.png)
 
 1. If you don't have a license key, click the **Next** button to try the
 trial version of the product.
@@ -65,7 +65,7 @@ trial version of the product.
 1. On the next screen, set up a Cluster Administrator account using an
 email for the login and a password.
 
-    ![set-admin-credentials](/images/rs/set-admin-credentials.png)
+    ![getstarted-admincredentials](/images/rs/getstarted-admincredentials.png)
 
 1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
     certificate on the node, and proceed through the browser warning.
@@ -84,7 +84,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
 1. After you login to cluster1.local, select the Redis database and deployment type
 **Geo-Distributed**. Then click **Next**.
 
-    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+    ![new_geo-distrbuted](/images/rs/new_geo-distrbuted.png)
 
 1. In **create database**, click the **show advanced option** and:
 
