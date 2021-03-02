@@ -1,5 +1,5 @@
 ---
-Title: Installation
+Title: Installation and Setup
 description:
 weight: 35
 alwaysopen: false
@@ -7,15 +7,47 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/
         /rs/installing-upgrading/downloading-installing/
 ---
-To install Redis Enterprise Software (RS), you must first choose the [supported platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
-In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS with:
+In this installation and setup guide we walk you through the process of planning your deployment, installing RS, setting up a multi-node cluster, and creating your database—soup to nuts.
+So, grab a cup of coffee and let's get started.
 
-- [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
-- [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
-- [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
-- [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
+## Planning your RS deployment
 
-To access the installation package for any of these platforms:
+To install Redis Enterprise Software (RS) on each node in the cluster, you must first:
+
+- Set up your hardware according to the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+
+    {{% expand "What hardware do I need?" %}}
+    {{< embed-md "hardware-requirements-embed.md" >}}
+    {{% /expand %}}
+
+- Choose the [platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
+
+    {{% expand "What platforms are supported?" %}}
+    {{< embed-md "supported-platforms-embed.md" >}}
+    {{% /expand %}}
+
+    In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy RS with:
+
+    - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
+    - [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
+    - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
+    - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
+
+- Open [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
+
+    {{% expand "What network ports does RS use?" %}}
+    {{< embed-md "port-configurations-embed.md" >}}
+    {{% /expand %}}
+
+- Configure [cluster DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
+
+    {{% expand "How do I configure DNS for my cluster?" %}}
+    {{< embed-md "cluster-dns-embed.md" >}}
+    {{% /expand %}}
+
+## Downloading the installation package
+
+To download the installation package for any of the supported platforms:
 
 1. Go to the [Redis Labs download page](https://app.redislabs.com/#/sign-up/software?direct=true).
 1. Log in with your Redis Labs credentials or sign up for a new account.
@@ -26,9 +58,12 @@ Before you install the Linux package or AWS AMI on an AWS EC2 instance,
 review the [configuration requirements for AWS EC2 instances]({{< relref "configuring-aws-instances.md" >}}).
 {{< /note >}}
 
-In this article we walk you through the process for installing the RS installation package for Linux.
+## Installing RS on Linux
 
-## Prerequisites
+After you download the .tar file installation package, you are ready to install the package on the nodes in the cluster.
+Here we walk you through the process for installing the RS installation package for Linux.
+
+Before you install RS, review these notes:
 
 - If you want to use Redis on Flash (RoF) for your databases, review the [prerequisites, storage requirements, and other considerations]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
     {{% expand "To prepare and format the flash memory:" %}}
@@ -64,67 +99,13 @@ sudo lsblk
     {{% /expand %}}
 
 - Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
-    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 40000 65535'.
+    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 40000 65535`.
+- The main directories that RS is installed in are:
+    - /opt/redislabs
+    - /etc/opt/redislabs
+    - /var/opt/redislabs
 
-## Installing RS on Linux
-
-After you download the .tar file installation package, install the package on one of the nodes in the cluster.
-
-To install RS on Linux from the CLI:
-
-1. Copy the installation package to the node.
-1. On the node, change to the directory where the installation package is and extract the installation files:
-
-    ```sh
-    tar vxf <tarfile name>
-    ```
-
-1. To install RS, run:
-
-    {{< note >}}
-- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
-- RS is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
-- You must either be logged in as the root user or use sudo to run the install process.
-    {{< /note >}}
-
-    ```sh
-    sudo ./install.sh
-    ```
-
-1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
-    including the `rlcheck` installation verification.
-
-    {{< note >}}
-To install RS without answering the installation questions, either:
-
-- Run `./install.sh -y` to answer yes to all of the questions.
-- Use an [answer file](#installation-answer-file) to answer the installation questions.
-    {{< /note >}}
-
-    After RS is successfully installed, the IP address of the RS web UI is shown:
-
-    ```sh
-    Summary:
-    -------
-    ALL TESTS PASSED.
-    2017-04-24 10:54:15 [!] Please logout and login again to make
-    sure all environment changes are applied.
-    2017-04-24 10:54:15 [!] Point your browser at the following
-    URL to continue:
-    2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
-    ```
-
-    RS is now installed on the node.
-    Repeat this process for each node in the cluster.
-
-1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
-    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
-1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
-
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
-
-### Custom installation directories
-
+    {{% expand "How can I specify the directories where RS is installed?" %}}
 During the installation you can specify the directories for the RS files to be installed in.
 The files are installed in the `redislabs` directory in the path that you specify.
 
@@ -143,7 +124,7 @@ You can specify any or all of these file locations:
 | Configuration files | --config-dir   | /etc/opt          | /etc/opt/redislabs    |
 | Data and log files  | --var-dir      | /var/opt          | /var/opt/redislabs    |
 
-{{% expand "These files are not in the custom directories:" %}}
+These files are not in the custom directories:
 
 - OS files
     - /etc/cron.d/redislabs
@@ -160,15 +141,16 @@ You can specify any or all of these file locations:
 - Installation reference files
     - /etc/opt/redislabs/redislabs_custom_install_version
     - /etc/opt/redislabs/redislabs_env_config.sh
-{{% /expand %}}
 
 To install RS in specified file directories, run:
 
 ```sh
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ```
+    {{% /expand %}}
 
-### Custom installation user and group
+- RS is installed with the system user and group `redislabs:redislabs`
+    {{% expand "How can I install RS with a specific system user and group?" %}}
 
 By default, RS is installed with the user:group `redislabs:redislabs`.
 During the installation you can specify the OS user and group that RS is installed with and that owns all of the RS processes.
@@ -186,11 +168,39 @@ To install RS with a specified user and group, run:
 ```sh
 sudo ./install.sh --os-user <user> --os-group <group>
 ```
+    {{% /expand %}}
 
-### Installation questions
+To install RS on Linux from the CLI:
 
-During the installation process, you must answer a few questions to configure the node for your environment.
-These installation questions are:
+1. Copy the installation package to the node.
+
+    ```sh
+    scp redislabs-X.Y.Z-32-bionic-amd64.tar <username>@<ip_address>:/home
+    ```
+
+1. On the node, change to the directory where the installation package is and extract the installation files:
+
+    ```sh
+    tar vxf <tarfile name>
+    ```
+
+1. To install RS, run:
+
+    {{< note >}}
+- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
+- RS is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{< /note >}}
+
+    ```sh
+    sudo ./install.sh
+    ```
+
+1. Answer the installation questions when shown to complete the installation process,
+    and run `rlcheck` to verify the installation.
+
+    {{% expand "What are the installation questions?" %}}
+The questions that the installation process asks are:
 
 - **Linux swap file** - `Swap is enabled. Do you want to proceed? [Y/N]?`
 
@@ -223,11 +233,13 @@ These installation questions are:
 
     We recommend that you run the `rlckeck` installation verification to make sure that the installation completed successfully.
     If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
+    {{% /expand %}}
 
-### Installation answer file
+    {{% expand "How can I do a silent install of RS?" %}}
+To install RS without answering the installation questions, either:
 
-To avoid answering the installation questions during the installation process,
-you can prepare an answer file and use it to do a silent installation.
+- Run `./install.sh -y` to answer yes to all of the questions.
+- Prepare an answer file and use it to do a silent installation.
 
 To install RS with an answer file:
 
@@ -245,9 +257,7 @@ To install RS with an answer file:
     rlcheck=yes
     ```
 
-    {{< note >}}
-If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
-    {{< /note >}}
+    If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
 
 1. Run the install script with `-c` and the path to the answer file.
 
@@ -256,3 +266,41 @@ If you use `systune=yes`, the installation answers yes to all of the system tuni
     ```sh
     ./install.sh -c /home/user/answers
     ```
+    {{% /expand %}}
+
+    After RS is successfully installed, the IP address of the RS web UI is shown:
+
+    ```sh
+    Summary:
+    -------
+    ALL TESTS PASSED.
+    2017-04-24 10:54:15 [!] Please logout and login again to make
+    sure all environment changes are applied.
+    2017-04-24 10:54:15 [!] Point your browser at the following
+    URL to continue:
+    2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
+    ```
+
+    RS is now installed on the node.
+    Repeat this process for each node in the cluster.
+
+1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
+1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
+
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
+
+## Set up the new cluster
+
+{{< embed-md "new-cluster-embed.md" >}}
+
+## Add more nodes to the cluster
+
+{{< embed-md "adding-node-embed.md" >}}
+
+## Next steps
+
+Now that your cluster is set up with nodes, you can:
+
+- [Add users]({{< relref "/rs/administering/access-control/_index.md" >}}) to the cluster with specific permissions.
+- [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
