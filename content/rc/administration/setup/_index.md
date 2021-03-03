@@ -28,7 +28,7 @@ These articles provide the details to help you create and manage your subscripti
 
 As of February 2021, Redis Enterprise Cloud suppports the following subscription plans:
 
-- _Free plans_ are designed for training purposes and prototyping.  They can be seamlessly upgraded to to Fixed plans with no data loss.
+- _Free plans_ are designed for training purposes and prototyping.  They can be seamlessly upgraded to Fixed plans with no data loss.
 
 - _Fixed plans_ are cost-efficient and designed for low-throughput scenarios.  They support a range of availability, persistence, and backup options.  Pricing supports low throughput workloads.
 
@@ -46,9 +46,9 @@ Here's a quick comparison:
 | Security | role-based auth<br/>password protection<br/>encryption in transit | role-based auth<br/>password protection<br/>SSL & SIP auth<br/>encryption in transit | role-based auth<br/>password protection<br/>SSL & SAIP auth<br/>encryption in transit<br/>encryption at rest |
 | Admin REST API | No | No | Yes |  
 | Support | Best effort | Basic | Flexible: Standard<br/>Annual: Premium |
-| Selected additional features<br/> <br/> <br/>|Replication| Replication<br/>Auto-failover<br /> | Dedicated accounts<br>Redis on Flash<br/>Active/Active<br/>??? |   
+| Selected additional features<br/> <br/> <br/>|| Replication<br/>Auto-failover<br /> | Dedicated accounts<br>Redis on Flash<br/>Active/Active<br/> |   
 
-For full details, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
+For details, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
 
 ## Create a new subscription
 
@@ -56,7 +56,7 @@ To create a new subscription:
 
 1. In the Redis Cloud menu, select **Subscriptions**.
 
-1. At the bottom of the page, select the **Add Subscription** button (![Add Subscription button](/images/rs/icon_add.png#no-click)).
+1. At the bottom of the page, select the **Add Subscription** button (![Add Subscription button](/images/rs/icon-subscription-add.png#no-click)).
 
 1. Select your subscription configuration:
 
@@ -66,7 +66,7 @@ To create a new subscription:
 
     1. Select the plan that best reflects your needs.
 
-        - For help creating a Free or Fixed subscriptions, see creating-fixed-subscription (TODO)
+        - For help creating a Fixed or Free subscriptions, see [Create a Fixed or Free subscription]({{< relref "customize-flexible-plan.md" >]]).creating-fixed-subscription.
 
         - For help creating a Flexible subscription, see [Create a Flexible subscription]({{< relref "customize-flexible-plan.md" >}})
     
