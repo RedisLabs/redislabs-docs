@@ -74,7 +74,7 @@ When you first visit the **Sizing** tab, you're prompted to define a new databas
 | **Memory Limit (GB)** | The size limit for the database, Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).| 
 | **Throughput By** | Identifies how throughput is measured for the database, either operations per second (_Ops/sec_) or _Number of shards_. |
 | **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2](#), [RedisGraph](#), [RedisBloom](#), or [RedisTimeSeries](#).<br/><br/>If you select RedisSearch 2, you also need to specify a value for **Number of Documents**.  This defines the maximum internal array size ([MAXDOCTABLESIZE](https://oss.redislabs.com/redisearch/Configuring/?_ga=2.155176508.524468484.1612194154-499260268.1607530891#maxdoctablesize)).|
-| **Replication** | Enables an in-memeory replica, which in turn enables real-time failover, but doubles memory consumption. |
+| **Replication** | Enables an in-memory replica, which in turn enables real-time failover, but doubles memory consumption. |
 | **Data Persistence** | Defines the data persistence policy, if any. See [Database Persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}) |
 | **OSS Cluster API support** | Allows client to use the OSS Cluster API to access the database. |
 | **Ops/sec** | The operations required per second (when **Throughput By** is set to _Ops/sec_) |
