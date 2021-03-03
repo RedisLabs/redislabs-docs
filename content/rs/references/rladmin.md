@@ -142,7 +142,7 @@ cluster create
 | - | - |
 | node_uid | Unique node ID |
 | rack_aware | Enables/disables rack awareness |
-| rack_id |  |
+| rack_id | Rack ID of the rack |
 | license_file | Path to RLEC license file |
 | ephemeral_path | Path to ephemeral storage location |
 | persistent_path | Path to persistent storage location |
@@ -154,7 +154,68 @@ cluster create
 
 #### `cluster join`
 
-#### `cluster recover_filename`
+`rladmidn cluster join` adds a node to an existing cluster. 
+
+```text
+rladmin cluster join 
+        name <cluster-name> | nodes <node-address> 
+        username <admin-user> 
+        password <admin-password>
+        [ ephemeral_path <path> ]
+        [ persistent_path <path> ]
+        [ rack_id <node-rack-id> ]
+        [ override_rack_id ]
+        [ replace_node <node-uid> ]
+        [ flash_enabled ]
+        [ flash_path <path> ]
+        [ addr <ip-address> ]
+        [ external_addr <ip-addresses> ]
+        [ override_repair ]
+        [ cmn_http_port <port> ]
+```
+
+| Optional Parameters | Description |
+| - | - |
+| ephemeral_path | Path to ephemeral storage location |
+| persistent_path | Path to persistent storage location |
+| rack_id | Rack ID of the rack |
+| override_rack_id | Manually overrides the existing default rack ID |
+| replace_node | Replaces specified node with new node |
+| flash_enabled | Enables flash storage |
+| flash_path | Path to flash storage location |
+| addr | Internal IP addresses of the node |
+| external_addr | External IP addresses of the node |
+| override_repair | Enables joining a cluster with a dead node |
+| cmn_http_port | Joins a cluster that has a non-default cnm_http_port |
+
+#### `cluster recover`
+
+`rladmin cluster recover` recovers a cluster from a backup file.
+
+```text
+rladmin cluster recover 
+        filename <recovery-file-name> 
+        [ ephemeral_path <path> ] 
+        [ persistent_path <path> ] 
+        [ rack_id <ID> ] 
+        [ override_rack_id ] 
+        [ node_uid <number> ] 
+        [ flash_enabled ] 
+        [ flash_path <path> ] 
+        [ addr <ip-address> ] 
+        [ external_addr <ip-addresses> ]
+```
+
+| Optional Parameters | Description |
+| - | - |
+| ephemeral_path | Path to ephemeral storage location |
+| persistent_path | Path to persistent storage location |
+| rack_id | Rack ID of the rack |
+| override_rack_id | Manually overrides the existing default rack ID |
+| flash_enabled | Enables flash storage |
+| flash_path | Path to flash storage location |
+| addr | Internal IP addresses of the node |
+| external_addr | External IP addresses of the node |
 
 ### `failover`
 
@@ -426,13 +487,19 @@ rladmin status shards
 
 ### `suffix`
 
+`rladmin suffix` manages all DNS suffixes in the cluster.
+
 #### `suffix list`
+
+`rladmin suffix list` show all DNS suffixes defined in the cluster.
 
 ```text
 rladmin suffix list
 ```
 
 #### `suffix add`
+
+`rladmin suffix add` adds a new DNS suffix to the cluster.
 
 ```text
 rladmin suffix add 
@@ -446,13 +513,15 @@ rladmin suffix add
 
 | Optional parameter | Description |
 | - | - |
-| default |  |
-| internal |  |
-| mdns |  |
-| use_aaaa_ns |  |
-| slaves |  |
+| default | Sets given suffix as default |
+| internal | Forces suffix to use private IPs |
+| mdns | Enables Multicast DNS support |
+| use_aaaa_ns | Enables IPV6 address support |
+| slaves | Notifies slave shards of changes in frontend DNS |
 
 #### `suffix delete`
+
+`rladmin suffix delete ` deletes an existing suffix from the cluster.
 
 ```text
 rladmin suffix delete name <name>
@@ -460,8 +529,11 @@ rladmin suffix delete name <name>
 
 ### `tune`
 
+`rladmin tune` configures parameters for databases, proxies, and clusters.
+
 #### `tune db`
-`rladmin tune db` configures databases. 
+
+`rladmin tune db` configures database parameters.
 
 ```text
 rladmin tune db <db:id | name> 
@@ -510,6 +582,8 @@ rladmin tune db <db:id | name>
 
 #### `tune proxy`
 
+`rladmin tune proxy` configures proxy parameters.
+
 ```text
 rladmin tune proxy <id | all> 
         [ mode <static | dynamic> ] 
@@ -519,15 +593,17 @@ rladmin tune proxy <id | all>
         [ scale_duration <value> ]
 ```
 
-| Optional Parameters | Description | 
+| Optional Parameters | Description |
 | - | - |
-| mode |  |
-| threads |  |
-| max_threads |  |
-| scale_threshold |  |
-| scale_duration |  |
+| mode | Determines if proxy automatically adjusts number of threads based of size of the load |
+| threads | Initial number of threads created at startup |
+| max_threads | Maximum number of threads allowed |
+| scale_threshold | CPU utilization threshold that triggers spawning new threads |
+| scale_duration | Time (in seconds) before automatic proxy automatically scales |
 
 #### `tune cluster`
+
+`rladmin tune cluster` configures cluster parameters.
 
 ```text
 rladmin tune cluster
@@ -546,21 +622,25 @@ rladmin tune cluster
         [ continue_on_error ]
 ```
 
-| Optional Parameters | Description | 
+| Optional Parameters | Description |
 | - | - |
-| repl_diskless |  |
-| default_redis_version |  |
-| redis_provision_node_threshold |  |
-| redis_migrate_node_threshold |  |
-| redis_provision_node_threshold_percent |  |
-| redis_migrate_node_threshold_percent |  |
-| max_simultaneous_backups |  |
-| watchdog_profile |  |
-| slave_ha |  |
-| slave_ha_grace_period |  |
-| slave_ha_cooldown_period |  |
-| slave_ha_bdb_cooldown_period |  |
-| continue_on_error |  |
+| repl_diskless | Enables/disables diskless replication (can be overwritten per database) |
+| default_redis_version | Default Redis version for new databases |
+| redis_provision_node_threshold | Memory (in MBs) needed to provision a new database |
+| redis_migrate_node_threshold | Memory (in MBs) needed to migrate a database between nodes |
+| redis_provision_node_threshold_percent | Memory (in percentage) needed to provision a new database |
+| redis_migrate_node_threshold_percent | Memory (in percentage) needed to migrate a database between nodes |
+| max_simultaneous_backups | Number of backups allowed to happen at once |
+| watchdog_profile | Enables pre-configured watchdog profiles ( cloud or local-network) |
+| slave_ha | Enables/disables slave high availability |
+| slave_ha_grace_period | Time (in seconds) between when a node fails and when slave high availability starts relocating shards to another node |
+| slave_ha_cooldown_period | Time (in seconds) after shard relocation during which the slave high availibity mechanism can't relocate to another node  |
+| slave_ha_bdb_cooldown_period | Time (in seconds) after shard relocation during which databases can't be relocated to another node |
+| continue_on_error | Skips shards that can't be reached |
+
+Redis cluster watchdog supports two pre-configured profiles:
+-  `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.
+- `local-network`profile is suitable for dedicated LANs and has a better failure detection and failover times.
 
 ### `upgrade`
 
