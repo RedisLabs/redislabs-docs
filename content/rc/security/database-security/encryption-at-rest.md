@@ -1,50 +1,56 @@
 ---
 Title: Encryption at rest
-description:
+description: Describes when data is encypted at rest and how to enable it for AWS subscriptions.
 weight: 40
 alwaysopen: false
 categories: ["RC"]
 ---
+Redis Cloud databases write their data to disk whenever [persistence]({{<relref "/rc/concepts/data-persistence.md">}}) is enabled. 
 
-Redis Cloud databases write their data to disk whenever [persistence]({{<relref "/rc/concepts/data-persistence.md">}}) is enabled. For deployments on [GCP](#gcp) and [Azure](#azure), this data is always encrypted by default. For [AWS](#aws),
-all pre-configured subscriptions encrypt data by default. For custom Redis Cloud Pro subscriptions, see the
-[documentation below](#aws-pro) for how to enable encryption.
+On [Google Cloud Platform](#gcp) (GCP) and [Microsoft Azure](#azure), Redis Cloud deployments are always encrypted at rest. 
 
-## Disk encryption on AWS {#aws}
+For [Amazon Web Services](#aws) (AWS), Redis Cloud Flexible (and Annual) subscriptions can be encrypted at rest when you create the subscription.  
 
-Persisted data for Redis Cloud databases on AWS is written to [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html). When Redis on Flash is enabled, the data stored in flash memory is written to [encrypted NVMe SSD volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html).
+## Encryption at rest on AWS {#aws}
 
-Almost all deployments of Redis Cloud Essentials, Pro, and Ultimate enable encryption by default. The one
-exception to this rule is custom plans. See below for how to enable encryption on these plans.
+When encrypted, persistent data is written to [encrypted EBS volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html). 
 
-### Enabling encryption for custom Redis Cloud Pro subscriptions {#aws-pro}
+When Redis on Flash is enabled, the flash memory data is written to [encrypted NVMe SSD volumes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html).
 
-If you're creating a custom Redis Cloud Pro subscription, then you need to make sure that you enable
-encryption. You create a customer subscription when you select **Build a Plan**, as seen here:
+Encryption can only be enabled when a subscription is created.
 
-![Build a Plan](/images/rc/build-a-plan.png "Build a Plan")
+### Enable encryption when creating Flexible plans {#aws-flexible}
 
-This will take you to the **Create Customer Subscription** screen:
+To enable encryption when creating a Flexible plan on AWS:
 
-![Create Custom Subscription](/images/rc/create-custom-subscription.png "Create Custom Subscription")
+1.  Create a new AWS subscription.
 
-From here, scroll down to where it says **Advanced Options**, and ensure that the **Persistent Storage Encryption** slider
-is set to **Yes**:
+1.  In the Flexible plan section, select the Create button.
 
-![Persistent Storage Encryption](/images/rc/persistent-storage-encryption.png "Persistent Storage Encryption")
+    {{<image filename="/images/rc/subscription-create-flexible.png" width="75%" alt="Create Flexible Plan" >}}{{< /image >}}
 
-Once this is set, all databases created from this subscription will use encrypted volumes to store their persistent data.
+    This takes you to the **Create Custom Subscription** screen:
+
+    {{<image filename="/images/rc/create-custom-subscription.png" width="75%" 
+    alt="Create Custom Subscription screen" >}}{{< /image >}}
+
+1.  Expand the **Advanced Options** and then verify that **Persistent Storage Encryption** is set to **Yes**.
+
+    {{<image filename="/images/rc/persistent-storage-encryption.png" width="75%" 
+    alt="Persistent Storage Encryption setting" >}}{{< /image >}}
+
+When you create the subscription, all databases will be encrypted at rest.
 
 ## Disk encryption on GCP {#gcp}
 
-All data written to disk on GCP-based Redis Cloud deployments is encrypted by default. When deloying
+All data written to disk on GCP-based Redis Cloud deployments is encrypted by default. When deploying
 a Redis Cloud database on GCP, you don't need to take any actions to enable this encryption.
 
 To learn more, see the [GCP encryption at rest documentation](https://cloud.google.com/security/encryption-at-rest).
 
 ## Disk encryption on Azure {#azure}
 
-All data written to disk on Azure-based Redis Cloud deployments is encrypted by default. When deloying
+All data written to disk on Azure-based Redis Cloud deployments is encrypted by default. When deploying
 a Redis Cloud database on Azure, you don't need to take any actions to enable this encryption.
 
 To learn more, see the [Azure encryption at rest documentation](https://docs.microsoft.com/en-us/azure/security/fundamentals/encryption-atrest).

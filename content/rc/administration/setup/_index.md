@@ -66,7 +66,6 @@ To create a new subscription:
 
     1. Select the plan that best reflects your needs.
 
-        - For help creating a Fixed or Free subscriptions, see [Create a Fixed or Free subscription]({{< relref "customize-flexible-plan.md" >]]).creating-fixed-subscription.
+        - For help creating a Fixed or Free subscriptions, see [Create a Fixed or Free subscription]({{< relref "/rc/administration/setup/create-fixed-subscription.md" >}}).  
 
-        - For help creating a Flexible subscription, see [Create a Flexible subscription]({{< relref "customize-flexible-plan.md" >}})
-    
+        - For help creating a Flexible subscription, see [Create a Flexible subscription]({{< relref "/rc/administration/setup/create-flexible-subscription.md" >}}).
