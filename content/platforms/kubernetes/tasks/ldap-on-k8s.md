@@ -159,10 +159,10 @@ ldap_password: admin
 
 ### Using rladmin to update the configuration
 
-If this information was in a file called “ldap.conf”, you can connect to a Redis Enterprise Node pod and configure the server via:
+If this information was in a file called “ldap.conf” stored in "/tmp", you can connect to a Redis Enterprise Node pod and configure the server via:
 
 ```sh
-rladmin cluster config saslauthd_ldap_conf /path/to/ldap.conf
+rladmin cluster config saslauthd_ldap_conf /tmp/ldap.conf
 ```
 
 The `saslauthd` daemon is configured to use the file `/etc/opt/redislabs/saslauthd.conf` on each node. You cannot edit this file directly on the node. Instead, you just need a local copy of the configuration you desire and rladmin command will update the cluster configuration. The cluster will update all the node’s configuration and preserve the setting after any pod restarts.
