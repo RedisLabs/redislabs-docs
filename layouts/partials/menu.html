@@ -3,7 +3,7 @@
 {{- $isParentRoot := eq .Parent .FirstSection -}}
 {{- $numOfChildren := (add (len .Pages) (len .Sections)) -}}
 {{- $shouldCollapse := and $isParentRoot (eq $numOfChildren 0) -}}
-{{- $isCollapsed := (or $shouldCollapse (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/"))) -}}
+{{- $isCollapsed := (or $shouldCollapse (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/glossary") (eq .RelPermalink "/modules/"))) -}}
 
 {{- if eq .Site.Params.ordersectionsby "title"}}
   {{- range .Site.Home.Sections.ByTitle}}
@@ -30,13 +30,13 @@
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
         {{- if ne $numberOfPages 0 }} haschildren{{end -}}
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
-        {{- if (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/"))}} menu-root {{end}}
+        {{- if (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/"))}} menu-root {{end}}
         ">
-        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}
+        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
-        {{- if eq .RelPermalink .RelPermalink }}
+        {{- if not (eq .RelPermalink "/glossary/") }}
           <!-- Child items -->          
           {{if or (eq .RelPermalink "/rs/") }}
             <div class="children has-version-selector">

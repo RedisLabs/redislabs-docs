@@ -20,7 +20,7 @@ To overcome these issues, Redis Labs created a layered architecture approach tha
 
 ## Operator based deployment
 
-Operator allows Redis Labs to maintain a unified deployment solution across all Kubernetes environments, i.e., RedHat OpenShift, Pivotal Container Services (PKS), Google Kubernetes Engine (GKE), Azure Kubernetes Service (AKS), Amazon Elastic Container Service for Kubernetes (EKS) and vanilla Kubernetes. Statefulset and anti-affinity guarantee that each Redis Enterprise node resides on a Pod that is hosted on a different VM or physical server. See this setup shown in the figure below:
+Operator allows Redis Labs to maintain a unified deployment solution across various Kubernetes environments, i.e., RedHat OpenShift, VMware Tanzu (Tanzu Kubernetes Grid, and Tanzu Kubernetes Grid Integrated Edition, formerly known as PKS), Google Kubernetes Engine (GKE), Azure Kubernetes Service (AKS), and vanilla (upstream) Kubernetes. Statefulset and anti-affinity guarantee that each Redis Enterprise node resides on a Pod that is hosted on a different VM or physical server. See this setup shown in the figure below:
 
 ![kubernetes-overview-unified-deployment]( /images/rs/kubernetes-overview-unified-deployment.png )
 
