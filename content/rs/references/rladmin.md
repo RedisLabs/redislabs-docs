@@ -75,7 +75,7 @@ rladmin bind
 
 #### `cluster config`
 
-`rladmin cluster config updates the cluster configuration.
+`rladmin cluster config` updates the cluster configuration.
 
 ```text
  rladmin cluster config 
