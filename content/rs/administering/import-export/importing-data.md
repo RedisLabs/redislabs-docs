@@ -125,7 +125,7 @@ Before you specify to import from OpenStack Swift, make sure that you have:
 
 ### Azure Blob Storage
 
-Before you choose to backup to OpenStack Swift, make sure that you have:
+Before you choose to import from Azure Blob Storage, make sure that you have:
 
 - Storage location path in the format: `/container_name/[path/]/<filename>.rdb`
 - Account name
@@ -133,7 +133,7 @@ Before you choose to backup to OpenStack Swift, make sure that you have:
 
 ### Google Cloud Storage
 
-Before you choose to backup to OpenStack Swift, make sure that you have:
+Before you choose to import from Google Cloud Storage, make sure that you have:
 
 - Storage location path in the format: `/bucket_name/[path/]/<filename>.rdb`
 - Client ID

@@ -21,7 +21,7 @@ To enable the API:
 1. From the menu, choose **Settings**.
 1. In the **Account** tab, locate the **Cloud API Access Key** in the **Misc** section.
 
-    {{<image filename="images/rc/settings-cloud-api-key.png" width="75%" alt="When available, the Cloud API access key appears in the Misc section of the account settings." >}}{{< /image >}}
+    {{<image filename="/images/rc/settings-cloud-api-key.png" width="75%" alt="Cloud API Access Key setting in the Misc section of the Redis Cloud settings" >}}{{< /image >}}
 
     If you do not see the **Cloud API Access Key** setting, verify that you're signed into a Flexible (or Annual) subscription and that you are an account owner.
 
