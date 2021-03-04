@@ -59,7 +59,7 @@
 
     search: input => {
       const trimmedInput = input.trim()
-      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}`
+      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}&from_url=${window.location}`
 
       if (input.length === 0) {
         return []
