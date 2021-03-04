@@ -1,6 +1,6 @@
 ---
-title: Create and manage subscriptions
-description:
+title: Setup and Editing
+description: 
 weight: 20
 alwaysopen: false
 categories: ["RC"]
@@ -12,19 +12,13 @@ aliases: /rv/administration/setup_and_editing/
          /rc/administration/setup/create-subscription/
 ---
 
-Redis Enterprise Cloud subscriptions support Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure.
+This page helps you manage resources for your Redis Cloud account, including subscriptions, databases, and more.
 
-When you create a subscription, you need at least three pieces of info:
+## Manage subscriptions
 
-1. Your cloud provider, either Amazon Web Services (AWS), Google Cloud Platform (GCP), or Microsoft Azure.
+Before setting up a subscription, it helps to understand what's available:
 
-1. The deployment region (varies by provider and location)
-
-1. The subscription plan type
-
-These articles provide the details to help you create and manage your subscriptions.
-
-## Subscription plans
+### Subscription plans
 
 As of February 2021, Redis Enterprise Cloud suppports the following subscription plans:
 
@@ -48,7 +42,35 @@ Here's a quick comparison:
 | Support | Best effort | Basic | Flexible: Standard<br/>Annual: Premium |
 | Selected additional features<br/> <br/> <br/>|| Replication<br/>Auto-failover<br /> | Dedicated accounts<br>Redis on Flash<br/>Active/Active<br/> |   
 
-For details, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
+To learn more, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
+
+### Subscription tasks
+
+#### Create subscription
+
+For help creating a subscription, see:
+
+- [Create a Fixed or Free subscription]()
+
+- [Create a Flexible subscription]()
+
+- To create an Annual subscription, contact support.
+
+#### Edit subscription
+
+#### Delete subscription
+
+To 
+
+### Edit subscription
+
+### Delete subscription
+
+To delete a subscription:
+
+1. First, empty and delete all databases in your subcription.
+
+1. Ne
 
 ## Create a new subscription
 

@@ -5,17 +5,17 @@ weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/customize-pro/ 
-         /rc/administration/customize-pro.md 
-         /rc/administration/customize-flexible-plan/
+         /rc/administration/setup/customize-pro.md 
+         /rc/administration/setup/customize-flexible-plan/
 ---
 
-When you create a subscription with a [Flexible plan]({{< relref "/rc/administration/setup/#subscription-plans" >}}), you customize it to your business needs.
-
-This means you:
+To create a [Flexible subscription]({{< relref "/rc/administration/setup/#subscription-plans" >}})
 
 1. Define deployment settings for your subscription, such as cloud provider and network settings.
 
-1. Create at least one database to determine the size of the underlying cluster.
+1. Define database size and throughput settings to help determine the best shard configuration.
+
+1. Create initial databases.
 
 1. Review the cost estimate for your selections and define payment before creating the subscription.
 
@@ -23,7 +23,7 @@ This article describes the Create Custom Subscription screen, which uses tabs to
 
 ## Setup tab
 
-The Setup tab specifies general settings for the deployment of your subscription.
+The **Setup** tab specifies general settings for the deployment of your subscription.
 
 {{<image filename="images/rc/flexible-create-setup.png" width="75%" alt="The Setup tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
@@ -82,7 +82,7 @@ When you first visit the **Sizing** tab, you're prompted to define a new databas
 
 When finished, click the **Save** button to add the database to your subscription.
 
-When you have at least one defined database, the **Sizing** tab shows a list of your defined databases and provides to maintain them.
+When you have at least one defined database, the **Sizing** tab lists your defined databases.
 
 {{<image filename="images/rc/flexible-create-sizing-list.png" width="75%" alt="The database list shown on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
@@ -119,5 +119,3 @@ Use the:
 Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed make changes.  (The process generally takes 10-15 minutes.)
 
 To check the status of a subscription, choose **Subscriptions** from the admin console menu.  The **Subscriptions** list displays the status for each subscription.  You will also receive an email when your subscription is ready to use.
-
-When your subscription is fully provisioned, use the **Databases** command from the admin console menu to determine the connection details.  You can also define access controls. 
