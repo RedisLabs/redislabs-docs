@@ -521,7 +521,7 @@ rladmin suffix add
 
 #### `suffix delete`
 
-`rladmin suffix delete ` deletes an existing suffix from the cluster.
+`rladmin suffix delete` deletes an existing suffix from the cluster.
 
 ```text
 rladmin suffix delete name <name>
@@ -536,13 +536,14 @@ rladmin suffix delete name <name>
 `rladmin tune db` configures database parameters.
 
 ```text
-rladmin tune db <db:id | name> 
+rladmin tune db <db:id | name>
+        [ crdt_xadd_id_uniqueness_mode <liberal | semi-strict | strict> ]
         [ slave_buffer <value> ] 
         [ client_buffer <value> ] 
         [ repl_backlog <size> ] 
         [ repl_timeout <value> ] 
-        [ repl_diskless <enabled/disabled/default> ] 
-        [ master_persistence <enabled/disabled> ] 
+        [ repl_diskless <enabled | disabled | default> ] 
+        [ master_persistence <enabled | disabled> ] 
         [ maxclients <value> ] 
         [ schedpolicy <value> ] 
         [ max_shard_pipeline <value> ] 
@@ -551,7 +552,7 @@ rladmin tune db <db:id | name>
         [ max_client_pipeline <value> ] 
         [ max_connections <value> ] 
         [ max_aof_file_size <size> ] 
-        [ oss_cluster <enabled/disabled> ] 
+        [ oss_cluster <enabled | disabled> ] 
         [ oss_cluster_api_preferred_ip_type <value> ] 
         [ slave_ha <enabled/disabled> ] 
         [ slave_ha_priority <value> ] 
@@ -560,13 +561,14 @@ rladmin tune db <db:id | name>
 
 | Optional Parameters | Description |
 | - | - |
+|crdt_xadd_id_uniqueness_mode | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below) |
 | slave_buffer | Redis slave output buffer limits (in MB or hard:soft:time) |
 | client_buffer | Redis client output buffer limits (in MB or hard:soft:time) |
 | repl_backlog | Size of the replication buffer |
 | repl_timeout | Replication timeout (in seconds) |
 | repl_diskless | Enables/disables diskless replication |
 | master_persistence | Enables/disables persistence of the master shard |
-| maxclients | Controls the maxiumum client connections between the proxy and shards |
+| maxclients | Controls the maximum client connections between the proxy and shards |
 | schedpolicy | Controls how server side connections are used when forwarding traffic to shards (values are `cmp`, `mru`, `spread`, or `mnp`) |
 | max_shard_pipeline | Maximum commands in the proxy's pipeline per shard connection (default value is 200) |
 | conns | Size of internal connection pool |
@@ -579,6 +581,12 @@ rladmin tune db <db:id | name>
 | slave_ha | Enables/disables slave high availability (defaults to cluster setting) |
 | slave_ha_priority | Priority of database in slave high availability mechanism |
 | continue_on_error | Flag that skips tuning shards that can't be reached |
+
+| crdt_xadd_id_uniqueness_mode | Description |
+| - | - |
+| liberal | XADD will succeed with any valid ID (not recommended, allows duplicate IDs) |
+|semi-strict | Will allow full ID. Partial IDs are completed with the unique database instance ID (not recommended, allows duplicate IDs) |
+| strict | XADD will fail if a full ID is given. Partial IDs are completed using the unique database instance ID |
 
 #### `tune proxy`
 
