@@ -26,6 +26,7 @@
     });
   }
 
+
   function setWithExpiry(key, value, ttl) {
     const now = new Date()
 
@@ -33,12 +34,12 @@
       value: value,
       expiry: now.getTime() + ttl,
     }
-    localStorage.setItem(key, JSON.stringify(item))
+    sessionStorage.setItem(key, JSON.stringify(item))
   }
 
 
   function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
+    const itemStr = sessionStorage.getItem(key)
     if (!itemStr) {
       return null
     }
@@ -46,7 +47,7 @@
     const now = new Date()
 
     if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
+      sessionStorage.removeItem(key)
       return null
     }
 
@@ -99,7 +100,11 @@
               results = data.results
             }
 
-            setWithExpiry(url, results, THIRTY_SECONDS)
+            try {
+              setWithExpiry(url, results, THIRTY_SECONDS)
+            } catch (e) {
+              // Fail silently if session storage is full.
+            }
             resolve(results)
           })
       })
