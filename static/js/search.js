@@ -1,7 +1,7 @@
 (function() {
 
   const SEARCH_API_URL = "https://search-service.redislabs.com/search"
-  const SEARCH_SITE = "https://docs.redislabs.com"
+  const SEARCH_SITE = `${window.location.protocol}//${window.location.host}`
   const THIRTY_SECONDS = 30000
   const SEARCH_LOGO = '<a class="powered-by-redisearch" href="https://oss.redislabs.com/redisearch/"></a>'
 
@@ -59,7 +59,7 @@
 
     search: input => {
       const trimmedInput = input.trim()
-      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}&from_url=${window.location}`
+      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}&from_url=${window.location.href}`
 
       if (input.length === 0) {
         return []
