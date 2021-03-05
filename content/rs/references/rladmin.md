@@ -98,7 +98,7 @@ rladmin bind
 | min_control_TLS_version | The minimum version of TLS protocol which is supported at the control path |
 | min_data_TLS_version | The minimum version of TLS protocol which is supported at the data path |
 | sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
-| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Integrating LDAP Authentication]({{< relref "/rs/administering/designing-production/security/ldap-integration.md >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
+| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Integrating LDAP Authentication]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
 
 #### `cluster reset_password`
 
