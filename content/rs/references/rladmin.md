@@ -86,6 +86,7 @@ rladmin bind
         [ min_control_TLS_version <control_tls_version>]
         [ min_data_TLS_version <data_tls_version> ]
         [ sentinel_ssl_policy <allowed/required/disabled> ]
+        [ saslauthd_ldap_conf </tmp/ldap.conf> ]
 ```
 
 | Optional Parameter | Description |
@@ -97,6 +98,7 @@ rladmin bind
 | min_control_TLS_version | The minimum version of TLS protocol which is supported at the control path |
 | min_data_TLS_version | The minimum version of TLS protocol which is supported at the data path |
 | sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
+| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Kubernetes LDAP configuration]({{< relref "/platforms/kubernetes/tasks/ldap-on-k8s.md/#ldap-configuration >}})) |
 
 #### `cluster reset_password`
 
@@ -582,7 +584,7 @@ rladmin tune db <db:id | name>
 | slave_ha_priority | Priority of database in slave high availability mechanism |
 | continue_on_error | Flag that skips tuning shards that can't be reached |
 
-| crdt_xadd_id_uniqueness_mode | Description |
+| XADD behavior mode | Description |
 | - | - |
 | liberal | XADD will succeed with any valid ID (not recommended, allows duplicate IDs) |
 |semi-strict | Will allow full ID. Partial IDs are completed with the unique database instance ID (not recommended, allows duplicate IDs) |
