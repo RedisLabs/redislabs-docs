@@ -17,7 +17,7 @@ Each of these database configurations requires specific steps to add them to Red
 - Redis with TLS authentication
 - Elasticache
 
-## Supported Redis Versions
+### Supported Redis Versions
 
 Currently, RedisInsight supports Redis versions 4 and newer.
 
