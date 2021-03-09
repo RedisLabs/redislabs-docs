@@ -16,6 +16,9 @@ Before data migration starts, all data is flushed from the Active-Active databas
 The data is migrated to the Active-Active instance where you enabled Replica Of, and the data from that instance is copied to the other Active-Active instances.
 When data migration is finished, disable Replica Of and connect your applications to the Active-Active database.
 
+{{<image filename="images/rs/A-A_migration.png" width="75%" alt="Active-Active data migration process" >}}{{< /image >}}
+
+
 {{< note >}}
 During the migration, make sure that any applications that connect to the Active-Active database are **read-only**
 to make sure the dataset is identical to the source database during the migration process.
@@ -65,7 +68,7 @@ If you regenerate the password, replication to existing destinations fails until
         1. In the destination database, paste the URL of the source endpoint in the **Replica Of** box, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
         {{< note >}}
-For a source database on a different RS cluster,
+For a source database on a different Redis Enterprise Software cluster,
 you can [compress the replication data]({{< relref "/rs/administering/designing-production/active-passive#data-compression-for-replica-of">}}) to save bandwidth.
         {{< /note >}}
 
