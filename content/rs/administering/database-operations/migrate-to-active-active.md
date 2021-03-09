@@ -13,7 +13,7 @@ you'll need to create a new Active-Active database and migrate the data into the
 This process will gradually populate the data in the Active-Active database.
 
 Before data migration starts, all data is flushed from the Active-Active database.
-The data is migrated to the Active-Active instance where you enabled Replica Of, and then the Active-Active replication copies the data from that instance to the other Active-Active instances.
+The data is migrated to the Active-Active instance where you enabled Replica Of, and the data from that instance is copied to the other Active-Active instances.
 When data migration is finished, disable Replica Of and connect your applications to the Active-Active database.
 
 {{< note >}}
