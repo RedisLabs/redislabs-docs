@@ -90,6 +90,7 @@ the [client mDNS prerequisites]({{< relref "/rs/installing-upgrading/configuring
     {{< /note >}}
 
 1. Click **Update** at the bottom of the page.
-1. When the synchronization icon turns green ![Synchronization complete](/images/rs/icon_sync_green.png#no-click "Synchronization complete"), the migration is complete. Note that migration can take minutes to hours to complete depending on the dataset size and network quality. 
-1. Edit the configuration of the Active-Active database and disable **Migration using Replica Of**.
+1. When the synchronization icon turns green ![Synchronization complete](/images/rs/icon_sync_green.png#no-click "Synchronization complete"), the migration is complete. Note that migration can take minutes to hours to complete depending on the dataset size and network quality.
+1. Edit the configuration of the Active-Active database and select the **Stop** button to disable **Migration using Replica Of**.
+{{<image filename="images/rs/Migration_using_Replica_Of_complete.png" width="75%" alt="disable migration using replica of" >}} {{</image>}}
 1. Redirect your database connections to the Active-Active database.
