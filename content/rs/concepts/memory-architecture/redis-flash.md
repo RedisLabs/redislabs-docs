@@ -125,23 +125,13 @@ than extending RAM in a number of ways.
 
 ## Next steps
 
-To create Redis on Flash databases you must meet the following
-prerequisites:
+To create Redis on Flash databases, you must meet the following prerequisites: 
 
-- Have ephemeral and persistent flash memory mounted on Redis
-    Enterprise Software nodes with the proper disk size, per the [Redis
-    on Flash memory
-    guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements#production-environment-hardware-requirements" >}}).
-- Have all [hardware
-    requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-    in place.
-- Have all [software
-    requirements]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}})
-    in place.
-- Perform the [initial setup and creation of a new
-    cluster]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+- Mount [ephemeral and persistent storage]({{<relref "/rs/administering/designing-production/persistent-ephemeral-storage.md">}}) on Redis Enterprise Software nodes with the proper disk size.
+- Meet all [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) and [software requirements]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
+- [Install Redis Enterprise Software]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 
-Once these requirements are met, both Redis of Flash databases and
+Once these requirements are met, both Redis on Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
 database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).

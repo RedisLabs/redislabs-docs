@@ -62,7 +62,7 @@ use the external IP address to access the setup UI.
     1. In **Cluster name (FQDN)**, enter a unique name for the
         cluster.
         For guidelines, refer to [How to set the cluster
-        name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}).
+        name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}).
 
     1. Choose whether to [**Enable private & public endpoints support**]({{< relref "/rs/administering/designing-production/networking/private-public-endpoints.md" >}}).
 

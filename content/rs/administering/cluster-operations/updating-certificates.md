@@ -77,7 +77,9 @@ You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
 
 - cert - The contents of the *_cert.pem file
 
-When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
+The new certificates are used the next time the clients connect to the database.
+
+When you upgrade RS, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
 
 ## TLS protocol and ciphers
 

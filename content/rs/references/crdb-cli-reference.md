@@ -258,9 +258,9 @@ When you remove an instance from an Active-Active database, you must specify:
 
 {{< note >}}
 If the cluster that you run the command on cannot communicate with the instance that you want to remove,
-you can use the `--unordered` flag to remove the instance from the Active-Active database without purging the data from the instance.
+you can use the `--no-force` flag to remove the instance from the Active-Active database without purging the data from the instance.
 
-After you use `crdb remove-instance --unordered`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <CRDB-GUID> <instance-id>`
+After you use `crdb remove-instance --no-force`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <CRDB-GUID> <instance-id>`
 {{< /note >}}
 
 ## Active-Active task status

@@ -1,7 +1,7 @@
 ---
 Title: Upgrading a Redis Enterprise Cluster on Kubernetes
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
-weight: 50
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/

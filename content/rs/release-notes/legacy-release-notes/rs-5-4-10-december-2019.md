@@ -61,7 +61,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 ## Important fixes
 
 - The titles of the ‘rladmin status nodes’ command output were updated from ‘RAM’ to ‘FREE_RAM’ (the amount of RAM in the node that is currently not used) and from ‘AVAILABLE_RAM’ to ‘PROVISIONAL_RAM’ (the amount of RAM in the node that can be provisioned).
-- RS31492 - Upgraded dependent libraries: [python-cryptography to version 2.7](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/3b5a408696b91a0b545f670ce35bb920d5a4beb4); [nginx to version 1.16.0](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/4ab171d4467bd91c6b38cec81da3c52a6113a787); [PyYaml to version 5.1.2](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/11e814ae0d14c85b248bc7451edbbbcb71f3858f); [python-requests to version 2.22.0](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/0e2ab74b4e2b2dc9872a86fbdb5593f5354eb103); [urllib3 to version 1.25.3](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/038e44163d7dc1fed4e3b67cb252a84583c2f44a)
+- RS31492 - Upgraded dependent libraries: [python-cryptography to version 2.7](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/3b5a408696b91a0b545f670ce35bb920d5a4beb4); [NGINX to version 1.16.0](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/4ab171d4467bd91c6b38cec81da3c52a6113a787); [PyYaml to version 5.1.2](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/11e814ae0d14c85b248bc7451edbbbcb71f3858f); [python-requests to version 2.22.0](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/0e2ab74b4e2b2dc9872a86fbdb5593f5354eb103); [urllib3 to version 1.25.3](https://github.com/redislabsdev/Redis-Enterprise/pull/4209/commits/038e44163d7dc1fed4e3b67cb252a84583c2f44a)
 - RS31187 - Upgraded the internal Python interpreter to version 2.7.16
 - RS33042 - Fixed Support Package to contain complete SLOWLOG information
 - RS32699 - Avoided unnecessary restart and failover of Redis processes when Active-Active database is upgraded
@@ -80,7 +80,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
 
 ### Upgrade
 
-- [RS 5.4.2]({{< relref "/rs/release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis (CRDB) capabilities
+- [RS 5.4.2]({{< relref "rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md" >}}) introduced new Active-Active Redis (CRDB) capabilities
     that improve its compatibility with open source Redis.
     Now the string data-type in Active-Active Redis (CRDB) is implicitly and dynamically typed, just like open source Redis.
     To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower,
