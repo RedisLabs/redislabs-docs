@@ -29,10 +29,6 @@ The eviction policy mechanism for Active-Active databases kicks in earlier than 
 
 In case of network issues between Active-Active instances, memory can only be freed when all instances are in sync. If there is no communication between participating clusters, it can result in eviction of all keys and the instance reaching an Out-of-Memory state.
 
-### Eviction for modules
-
-When using Redis modules, review the the documentation for each Redis module to see how it uses eviction.
-
 ### Avoid data eviction
 
 If you want to avoid data eviction, we recommend that you use [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
