@@ -33,7 +33,7 @@ To migrate an RS database to Active-Active:
 1. Click **Edit** at the bottom of the database configuration.
 1. Enable **Migration using Replica Of**.
 1. Click **Continue** to confirm that you want to flush the data from the Active-Active database.
-1. Enter the URL of the source database endpoint (the order has no impact on replication):
+1. Enter the URL of the source database endpoint (the order has no impact on replication).
 
     <!-- Shared in create-active-passive.md -->
 
