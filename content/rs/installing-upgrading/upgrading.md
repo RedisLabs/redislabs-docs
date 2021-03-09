@@ -140,7 +140,8 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 - Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
 - Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
-
+- Protocol version 0 is deprecated on RS 6.0.20 or later.
+- Before upgrading to RS 6.0.20 or later, make sure all your Active-Active databases are set with their lastest protocol version. Otherwise upgrades will fail.
     {{< /note >}}
 
     After you upgrade an instance to use the new protocol version,
@@ -148,6 +149,12 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 - **Feature set version** - RS 5.6.0 and higher include a new feature set version to support new Active-Active features.
     When you update the feature set version for an Active-Active database, the feature set version is updated for all of the database instances.
+    
+    {{< note >}}
+
+- Feature set version 0 is deprecated on RS 6.0.20 or later.
+- Before upgrading to RS 6.0.20 or later, make sure all your Active-Active databases are set with their lastest feature set version. Otherwise upgrades will fail.
+    {{< /note >}}
 
 To upgrade a CRDB instance:
 
