@@ -550,34 +550,45 @@ rladmin suffix delete name <name>
 
 ```text
 rladmin tune db <db:id | name>
-        [ crdt_xadd_id_uniqueness_mode <liberal | semi-strict | strict> ]
         [ slave_buffer <value> ] 
         [ client_buffer <value> ] 
-        [ repl_backlog <size> ] 
+        [ repl_backlog <value | auto> ] 
+        [ crdt_repl_backlog <value | auto> ]
         [ repl_timeout <value> ] 
         [ repl_diskless <enabled | disabled | default> ] 
         [ master_persistence <enabled | disabled> ] 
         [ maxclients <value> ] 
-        [ schedpolicy <value> ] 
+        [ schedpolicy <cmp | mru | spread | mnp> ] 
         [ max_shard_pipeline <value> ] 
-        [ conns <value> ] 
-        [ conns_type <value> ] 
+        [ conns <value> ] [ conns_type <value> ] 
         [ max_client_pipeline <value> ] 
         [ max_connections <value> ] 
         [ max_aof_file_size <size> ] 
         [ oss_cluster <enabled | disabled> ] 
         [ oss_cluster_api_preferred_ip_type <value> ] 
-        [ slave_ha <enabled/disabled> ] 
+        [ slave_ha <enabled | disabled> ] 
         [ slave_ha_priority <value> ] 
+        [ skip_import_analyze <enabled | disabled> ]
+        [ mkms <enabled | disabled> ]
         [ continue_on_error ]
+        [ gradual_src_mode <enabled | disabled> ]
+        [ gradual_sync_mode <enabled | disabled | auto> ]
+        [ gradual_sync_max_shards_per_source <value> ]
+        [ module_name <value> ] [ module_config_params <value> ]
+        [ crdt_xadd_id_uniqueness_mode <liberal | semi-strict | strict> ]
+        [ metrics_export_all <enabled | disabled> ]
+        [ syncer_mode <distributed | centralized>]
+        [ syncer_monitoring <enabled | disabled> ]
+        [ mtls_allow_weak_hashing <enabled | disabled> ]
+        [ mtls_allow_outdated_cert <enabled | disabled> ]
 ```
 
 | Optional Parameters | Description |
 | - | - |
-|crdt_xadd_id_uniqueness_mode | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below) |
 | slave_buffer | Redis slave output buffer limits (in MB or hard:soft:time) |
 | client_buffer | Redis client output buffer limits (in MB or hard:soft:time) |
-| repl_backlog | Size of the replication buffer |
+| repl_backlog | Size of the replication buffer (in MB or auto)|
+| crdt_repl_backlog | Size of the Active-Active replication buffer  (in MB or auto) |
 | repl_timeout | Replication timeout (in seconds) |
 | repl_diskless | Enables/disables diskless replication |
 | master_persistence | Enables/disables persistence of the master shard |
@@ -593,7 +604,14 @@ rladmin tune db <db:id | name>
 | oss_cluster_api_preferred_ip_type | IP type (internal or external) for endpoint and database in OSS cluster API (default is internal) |
 | slave_ha | Enables/disables slave high availability (defaults to cluster setting) |
 | slave_ha_priority | Priority of database in slave high availability mechanism |
+| skip_import_analyze | Skips the analyzing step when importing a database |
+| mkms | Enables multi-key multi-slot commands |
 | continue_on_error | Flag that skips tuning shards that can't be reached |
+| gradual_src_mode | Enables gradual sync of sources |
+| gradual_sync_mode | Enables gradual sync of source shards |
+| gradual_sync_max_shards_per_source | Number of shards per sync source that can be replicated (positive integer) |
+| module_name and module_config_params | Configures areguments of module in runtime | 
+|crdt_xadd_id_uniqueness_mode | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below) |
 
 | XADD behavior mode | Description |
 | - | - |
