@@ -61,6 +61,8 @@ rladmin bind
 
 | Command (for configured clusters) | Description |
 | - | - |
+| - | - |
+| `cluster certificate` | Sets the cluster certificate |
 | [`cluster config`](#cluster-config) | Updates configuration for the cluster |
 | [`cluster reset_password`](#cluster-reset_password) | Changes the password for a given email |
 | [`cluster stats_archiver`](#cluster-stats_archiver) | Enables/disables stats archiving |
@@ -72,6 +74,15 @@ rladmin bind
 | [`cluster create`](#cluster-create) | Creates a new cluster |
 | [`cluster join`](#cluster-join) | Adds a node to an existing cluster |
 | [`cluster recover_filename`](#cluster-recover_filename) | Recovers a cluster from a backup file |
+
+#### `cluster certificate`
+ `rladmin cluster certificate` sets the cluster certificate to a given file.
+
+ ```text
+ rladmin cluster certificate 
+        set <certificate_name> 
+        certificate_file <certificate_file> 
+        [ key_file <certificate_file> ]
 
 #### `cluster config`
 
