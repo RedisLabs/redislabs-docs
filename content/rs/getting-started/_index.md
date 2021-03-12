@@ -74,11 +74,11 @@ To set up your machine as an RS cluster:
 
     ![Redis Enterprise Software create database](/images/rs/getstarted-newdatabase.png)
 
-1. Enter a database name such as `database1` and select **Show Advanced Options**.
+1. Enter a database name such as `database1` and then select **Show Advanced Options**.
 
     ![Redis Enterprise Software configure new database screen](/images/rs/getstarted-createdatabase.png)
 
-1. Select **Endpoint port number** and then enter `12000`.
+1. In **Endpoint port number**, enter `12000`.
 
 1. Select the **Activate** button to create your database.
 
