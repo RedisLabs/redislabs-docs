@@ -226,7 +226,7 @@ rladmin cluster join
 
 #### `cluster recover`
 
-`rladmin cluster recover` recovers a cluster from a backup file. Configuration backup file's default location is `/var/opt/redislabs/persist/ccs/ccs-redis.rdb`. 
+`rladmin cluster recover` recovers a cluster from a backup file. Configuration backup file's default location is `/var/opt/redislabs/persist/ccs/ccs-redis.rdb`.
 
 ```text
 rladmin cluster recover 
@@ -476,6 +476,8 @@ rladmin restart
 | force_discard | Forcibly discards data even if there is persistence or replication |
 
 ### `status`
+
+`rladmin status` displays the current cluster status and topology information.
 
 ```text
 rladmin status
@@ -741,6 +743,10 @@ rladmin upgrade db <db:id | name>
         [ keep_current_version ] 
         [ discard_data ] 
         [ force_discard ]
+        [ parallel_shards_upgrade ]
+        [ keep_crdt_protocol_version ]
+        [ force ]
+        [ and module module name <module name> version <version> module_args <args_str> ]
 ```
 
 | Optional Parameters | Description |
@@ -749,6 +755,10 @@ rladmin upgrade db <db:id | name>
 | keep_current_version | Upgrades to a new patch release, not to the latest major.minor version |
 | discard_data | Indicates that data will not be saved after the upgrade |
 | force_discard | Forces `discard_data` if there is replication or persistence enabled |
+| parallel_shards_upgrade |  |
+| keep_crdt_protocol_version | Keeps the current crdt protocol version |
+| force | Forces upgrade and skips warnings and confirmations |
+| and module | Clause that allows upgrade of BDB and specified Redis module in a single step with only one restart (can be specified multiple times) |
 
 ### `verify`
 
