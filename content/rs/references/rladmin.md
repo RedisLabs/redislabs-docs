@@ -160,10 +160,11 @@ cluster create
         [ rack_id <node-rack-id> ] 
         [ license_file <file> ] 
         [ ephemeral_path <path> ] 
-        [ persistent_path <path> ] 
+        [ persistent_path <path> ]
+        [ ccs_persistent_path <path> ] 
         [ register_dns_suffix ] 
         [ flash_enabled ] 
-        [ flash_path path ] 
+        [ flash_path <path> ] 
         [ addr <ip-address> ] 
         [ external_addr <ip-addresses> ]
 ```
@@ -174,11 +175,12 @@ cluster create
 | rack_aware | Enables/disables rack awareness |
 | rack_id | Rack ID of the rack |
 | license_file | Path to RLEC license file |
-| ephemeral_path | Path to ephemeral storage location |
-| persistent_path | Path to persistent storage location |
+| ephemeral_path | Path to ephemeral storage location (defaults to /var/opt/redislabs) |
+| persistent_path | Path to persistent storage location (defaults to /var/opt/redislabs/persist) |
+| ccs_persistent_path | Path to location of ccs snapshots (defaults to /var/opt/redislabs/persist) |
 | register_nds_suffix | Enables database mapping to both internal and external IP |
 | flash_enabled | Enables flash storage |
-| flash_path | Path to flash storage location |
+| flash_path | Path to flash storage location (defaults to /var/opt/redislabs/flash)|
 | addr | Internal IP addresses of the node |
 | external_addr | External IP addresses of the node |
 
@@ -193,6 +195,7 @@ rladmin cluster join
         password <admin-password>
         [ ephemeral_path <path> ]
         [ persistent_path <path> ]
+        [ ccs_persistent_path <path> ]
         [ rack_id <node-rack-id> ]
         [ override_rack_id ]
         [ replace_node <node-uid> ]
@@ -201,32 +204,37 @@ rladmin cluster join
         [ addr <ip-address> ]
         [ external_addr <ip-addresses> ]
         [ override_repair ]
+        [ accept_servers <enable | disable> ]
         [ cmn_http_port <port> ]
 ```
 
 | Optional Parameters | Description |
 | - | - |
-| ephemeral_path | Path to ephemeral storage location |
-| persistent_path | Path to persistent storage location |
+| ephemeral_path | Path to ephemeral storage location (defaults to /var/opt/redislabs)|
+| persistent_path | Path to persistent storage location (defaults to /var/opt/redislabs/persist) |
+| ccs_persistent_path | Path to ccs snapshot location (defaults to /var/opt/redislabs/persist) |
 | rack_id | Rack ID of the rack |
 | override_rack_id | Manually overrides the existing default rack ID |
 | replace_node | Replaces specified node with new node |
 | flash_enabled | Enables flash storage |
-| flash_path | Path to flash storage location |
+| flash_path | Path to flash storage location (defaults to /var/opt/redislabs/flash) |
 | addr | Internal IP addresses of the node |
 | external_addr | External IP addresses of the node |
 | override_repair | Enables joining a cluster with a dead node |
+| accept_servers | Allows allocation of resources on the new node |
 | cmn_http_port | Joins a cluster that has a non-default cnm_http_port |
 
 #### `cluster recover`
 
-`rladmin cluster recover` recovers a cluster from a backup file.
+`rladmin cluster recover` recovers a cluster from a backup file. Configuration backup file's default location is `/var/opt/redislabs/persist/ccs/ccs-redis.rdb`. 
 
 ```text
 rladmin cluster recover 
         filename <recovery-file-name> 
         [ ephemeral_path <path> ] 
-        [ persistent_path <path> ] 
+        [ persistent_path <path> ]
+        [ ccs_persistent_path <path> ]
+        [ ccs_persistent_path <path> ]
         [ rack_id <ID> ] 
         [ override_rack_id ] 
         [ node_uid <number> ] 
@@ -238,12 +246,13 @@ rladmin cluster recover
 
 | Optional Parameters | Description |
 | - | - |
-| ephemeral_path | Path to ephemeral storage location |
-| persistent_path | Path to persistent storage location |
+| ephemeral_path | Path to ephemeral storage location (defaults to /var/opt/redislabs) |
+| persistent_path | Path to persistent storage location (defaults to /var/opt/redislabs/persist) |
+| ccs_persistent_path | Path to location of ccs snapshots (default is same as persistent_path) |
 | rack_id | Rack ID of the rack |
 | override_rack_id | Manually overrides the existing default rack ID |
 | flash_enabled | Enables flash storage |
-| flash_path | Path to flash storage location |
+| flash_path | Path to flash storage location (defaults to /var/opt/redislabs/flash) |
 | addr | Internal IP addresses of the node |
 | external_addr | External IP addresses of the node |
 
