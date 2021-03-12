@@ -550,11 +550,11 @@ rladmin suffix delete name <name>
 
 ```text
 rladmin tune db <db:id | name>
-        [ slave_buffer <value> ] 
+        [ slave_buffer <valueMG | hard:soft:time> ] 
         [ client_buffer <value> ] 
-        [ repl_backlog <value | auto> ] 
-        [ crdt_repl_backlog <value | auto> ]
-        [ repl_timeout <value> ] 
+        [ repl_backlog <valueMB | auto> ] 
+        [ crdt_repl_backlog <valueMB | auto> ]
+        [ repl_timeout <seconds> ] 
         [ repl_diskless <enabled | disabled | default> ] 
         [ master_persistence <enabled | disabled> ] 
         [ maxclients <value> ] 
@@ -600,7 +600,7 @@ rladmin tune db <db:id | name>
 | max_client_pipeline | Maximum commands in the proxy's pipeline per client connection (max value is 2047, default value is 200)  |
 | max_connections | Maximum client connections to database's endpoint (default value is 0 or unlimited) |
 | max_aof_file_size | Maximum size (in MB) of [AoF]({{< relref "/glossary/_index.md#append-only_file_aof" >}}) file (min value is 10 GB)|
-| oss_cluster | Enables/disables OSS cluster API |
+| oss_cluster | Enables OSS cluster API |
 | oss_cluster_api_preferred_ip_type | IP type (internal or external) for endpoint and database in OSS cluster API (default is internal) |
 | slave_ha | Enables/disables slave high availability (defaults to cluster setting) |
 | slave_ha_priority | Priority of database in slave high availability mechanism |
@@ -610,8 +610,13 @@ rladmin tune db <db:id | name>
 | gradual_src_mode | Enables gradual sync of sources |
 | gradual_sync_mode | Enables gradual sync of source shards |
 | gradual_sync_max_shards_per_source | Number of shards per sync source that can be replicated (positive integer) |
-| module_name and module_config_params | Configures areguments of module in runtime | 
+| module_name and module_config_params | Configures arguments of module in runtime |
 |crdt_xadd_id_uniqueness_mode | XADD's behavior in an Active-Active database, defined as liberal, semi-strict, or strict (see descriptions below) |
+| metrics_export_all | Enabled the exporter to expose all shard metrics |
+| syncer_mode | Configures syncer to run in distributed or centralized mode. For distributed syncer, DMC policy must be all-nodes or all-master-nodes |
+| syncer_monitoring | Enables syncer monitoring |
+| mtls_allow_weak_hashing | Enables weak hashing (less than 2048 bits) in mTLS connections |
+| mtls_allow_outdated_cert | Enables outdated certificates in mTLS connections |
 
 | XADD behavior mode | Description |
 | - | - |
@@ -629,7 +634,7 @@ rladmin tune proxy <id | all>
         [ threads <value> ] 
         [ max_threads <value> ]
         [ scale_threshold <value> ] 
-        [ scale_duration <value> ]
+        [ scale_duration <seconds> ]
 ```
 
 | Optional Parameters | Description |
@@ -646,7 +651,7 @@ rladmin tune proxy <id | all>
 
 ```text
 rladmin tune cluster
-        [ repl_diskless <^enabled | disabled> ] 
+        [ repl_diskless <enabled | disabled> ] 
         [ default_redis_version <version> ] 
         [ redis_provision_node_threshold <size> ] 
         [ redis_migrate_node_threshold <size> ] 
@@ -658,7 +663,11 @@ rladmin tune cluster
         [ slave_ha_grace_period <seconds> ] 
         [ slave_ha_cooldown_period <seconds> ] 
         [ slave_ha_bdb_cooldown_period <seconds> ] 
-        [ continue_on_error ]
+        [ max_saved_events_per_type <value> ]
+        [ parallel_shards_upgrade <value> ]
+        [ default_concurrent_restore_actions <value> ]
+        [ show_internals <enabled | disabled> ]
+        [ expose_hostnames_for_all_suffixes <enabled | disabled> ]
 ```
 
 | Optional Parameters | Description |
@@ -675,7 +684,14 @@ rladmin tune cluster
 | slave_ha_grace_period | Time (in seconds) between when a node fails and when slave high availability starts relocating shards to another node |
 | slave_ha_cooldown_period | Time (in seconds) after shard relocation during which the slave high availibity mechanism can't relocate to another node  |
 | slave_ha_bdb_cooldown_period | Time (in seconds) after shard relocation during which databases can't be relocated to another node |
-| continue_on_error | Skips shards that can't be reached |
+| max_saved_events_per_type | Maximum number of events each type saved in CCS per object type |
+| parallel_shards_upgrade | Number of shards upgraded in parallel during DB upgrade (positive integer or "all") |
+| login_lockout_threshold | Number of failed sign-in attempts to trigger locking a user account (positive integer or "0" to specify never to lock account) |
+| login_lockout_duration | Time a locked account remains locked ( "0" means account can only be unlocked by an admin) |
+| login_lockout_counter_reset_after | Time after failed login attempt before counter resets to 0 |
+| default_concurrent_restore_actions | Default number of concurrent actions during node restore from a snapshot (positive integer or "all") |
+| show_internals |  |
+| expose_hostnames_for_all_suffixes |  |
 
 Redis cluster watchdog supports two pre-configured profiles:
 -  `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.
