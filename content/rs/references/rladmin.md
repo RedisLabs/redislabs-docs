@@ -61,7 +61,6 @@ rladmin bind
 
 | Command (for configured clusters) | Description |
 | - | - |
-| - | - |
 | `cluster certificate` | Sets the cluster certificate |
 | [`cluster config`](#cluster-config) | Updates configuration for the cluster |
 | [`cluster reset_password`](#cluster-reset_password) | Changes the password for a given email |
@@ -76,6 +75,7 @@ rladmin bind
 | [`cluster recover_filename`](#cluster-recover_filename) | Recovers a cluster from a backup file |
 
 #### `cluster certificate`
+
  `rladmin cluster certificate` sets the cluster certificate to a given file.
 
  ```text
@@ -83,6 +83,7 @@ rladmin bind
         set <certificate_name> 
         certificate_file <certificate_file> 
         [ key_file <certificate_file> ]
+```
 
 #### `cluster config`
 
@@ -94,22 +95,38 @@ rladmin bind
         [ ipv6 <enabled/disabled> ]
         [ handle_redirects <enabled/disabled>]
         [ http_support <enabled/disabled>]
+        [ cm_port <number> ]
+        [ cnm_http_port <number> ]
+        [ cnm_https_prot <number>]
+        [ saslauthd_ldap_conf </tmp/ldap.conf> ]
+        [ debuginfo_path <path/to/directory> ]
         [ min_control_TLS_version <control_tls_version>]
         [ min_data_TLS_version <data_tls_version> ]
         [ sentinel_ssl_policy <allowed/required/disabled> ]
-        [ saslauthd_ldap_conf </tmp/ldap.conf> ]
+        [ min_sentinel_TLS_version <sentinel_tls_version> ]
+        [ data_cipher_list <data-cipher-suites-str> ]
+        [ s3_url <url> ]
+        [ cm_session_timeout <minutes> ]
 ```
 
 | Optional Parameter | Description |
 | - | - |
-| cipher_suites | The cipher suite used for TLS connections to the RS admin console |
+| cipher_suites | Cipher suite used for TLS connections to the RS admin console |
+| data_cipher_list | Cipher suites used by the data plane |
+| sentinel_cipher_suites | Cipher suites used by the sentinel service |
 | ipv6 | Enable or disable IPv6 connections to the RS admin console |
 | handle_redirects | Enable or disable handling DNS redirects when DNS is not configured and running behind a load balancer |
 | http_support | Enable or disable using HTTP for REST API connections (info cluster) |
+| cm_port | Ui server listening port |
+| cmn_http_port | HTTP REST API server listening port |
+| cnm_https_port | HTTPS REST API server listening port |
+| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Integrating LDAP Authentication]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
+| debuginfo_path | Path to local directory to place file when generating support packages |
 | min_control_TLS_version | The minimum version of TLS protocol which is supported at the control path |
 | min_data_TLS_version | The minimum version of TLS protocol which is supported at the data path |
 | sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
-| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Integrating LDAP Authentication]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
+| s3_url | The URL of S3 export and import |
+| cm_session_timeout | Timeout (in minutes) for the CM session |
 
 #### `cluster reset_password`
 
@@ -167,7 +184,7 @@ cluster create
 
 #### `cluster join`
 
-`rladmidn cluster join` adds a node to an existing cluster. 
+`rladmidn cluster join` adds a node to an existing cluster.
 
 ```text
 rladmin cluster join 
@@ -229,6 +246,14 @@ rladmin cluster recover
 | flash_path | Path to flash storage location |
 | addr | Internal IP addresses of the node |
 | external_addr | External IP addresses of the node |
+
+#### `cluster services`
+
+`rladmin cluster services` enables or disables selected cluster services.
+
+```text
+rladmin cluster services [ cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver <enabled | disabled> ]
+```
 
 ### `failover`
 
