@@ -92,41 +92,53 @@ rladmin bind
 ```text
  rladmin cluster config 
         [ cipher_suites '<openssl_cipher_list>' ]
-        [ ipv6 <enabled/disabled> ]
-        [ handle_redirects <enabled/disabled>]
-        [ http_support <enabled/disabled>]
         [ cm_port <number> ]
+        [ cm_session_timeout <minutes> ]
         [ cnm_http_port <number> ]
         [ cnm_https_prot <number>]
-        [ saslauthd_ldap_conf </tmp/ldap.conf> ]
+        [ data_cipher_list <data-cipher-suites-str> ]
         [ debuginfo_path <path/to/directory> ]
+        [ handle_redirects <enabled/disabled>]
+        [ http_support <enabled/disabled>]
+        [ ipv6 <enabled/disabled> ]
         [ min_control_TLS_version <control_tls_version>]
         [ min_data_TLS_version <data_tls_version> ]
-        [ sentinel_ssl_policy <allowed/required/disabled> ]
         [ min_sentinel_TLS_version <sentinel_tls_version> ]
-        [ data_cipher_list <data-cipher-suites-str> ]
         [ s3_url <url> ]
-        [ cm_session_timeout <minutes> ]
+        [ saslauthd_ldap_conf </tmp/ldap.conf> ]
+        [ sentinel_cipher_suites <cipher_suites_list>]
+        [ sentinel_ssl_policy <allowed/required/disabled> ]
+        [ services <??> ]
+        [ upgrade_mode < enabled | disabled> ]
+        
+        
+        
+        
 ```
 
 | Optional Parameter | Description |
 | - | - |
 | cipher_suites | Cipher suite used for TLS connections to the RS admin console |
-| data_cipher_list | Cipher suites used by the data plane |
-| sentinel_cipher_suites | Cipher suites used by the sentinel service |
-| ipv6 | Enable or disable IPv6 connections to the RS admin console |
-| handle_redirects | Enable or disable handling DNS redirects when DNS is not configured and running behind a load balancer |
-| http_support | Enable or disable using HTTP for REST API connections (info cluster) |
 | cm_port | Ui server listening port |
+| cm_session_timeout | Timeout (in minutes) for the CM session |
 | cmn_http_port | HTTP REST API server listening port |
 | cnm_https_port | HTTPS REST API server listening port |
-| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Integrating LDAP Authentication]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
+| data_cipher_list | Cipher suites used by the data plane |
 | debuginfo_path | Path to local directory to place file when generating support packages |
+| handle_redirects | Enable or disable handling DNS redirects when DNS is not configured and running behind a load balancer |
+| http_support | Enable or disable using HTTP for REST API connections (info cluster) |
+| ipv6 | Enable or disable IPv6 connections to the RS admin console |
 | min_control_TLS_version | The minimum version of TLS protocol which is supported at the control path |
 | min_data_TLS_version | The minimum version of TLS protocol which is supported at the data path |
-| sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
+| min_sentinel_TLS_version |  |
 | s3_url | The URL of S3 export and import |
-| cm_session_timeout | Timeout (in minutes) for the CM session |
+| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Integrating LDAP Authentication]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
+| sentinel_cipher_suites | Cipher suites used by the sentinel service |
+| sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
+| services |  |
+| upgrade_mode |  |
+
+
 
 #### `cluster reset_password`
 
