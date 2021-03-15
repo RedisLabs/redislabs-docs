@@ -57,7 +57,7 @@ rladmin bind
 
 ### `cluster`
 
-`rladmin cluster` manages cluster configuration and administration. Some `rladmin cluster` commands are only for clusters that are already configured, while others are only for new clusters that have not been configured.
+`rladmin cluster` manages cluster configuration and administration. Most `rladmin cluster` commands are only for clusters that are already configured, while a few others are only for new clusters that have not been configured.
 
 | Command (for configured clusters) | Description |
 | - | - |
