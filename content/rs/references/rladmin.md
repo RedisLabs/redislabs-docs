@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/references/cli-reference/rladmin/
 ---
-`rladmin` is a command-line utility for performing administrative tasks such as failover, migrate, and bind on a Redis Enterprise Software cluster. Some of these tasks can also be performed through the Management UI and some are unique to the `rladmin` CLI tool.
+`rladmin` is a command-line utility for performing administrative tasks such as failover, migration, and endpoint binding on a Redis Enterprise Software cluster. `rladmin` can also edit cluster and database configurations. Some of these tasks can also be performed through the Management UI and some are unique to the `rladmin` CLI tool.
 
 ## rladmin Commands
 
