@@ -16,7 +16,7 @@ aliases: /rs/references/cli-reference/rladmin/
 | [bind](#bind) | Bind an endpoint |
 | [cluster](#cluster) | Cluster management commands |
 | [exit](#use-the-rladmin-shell)| Exit `rladmin` shell |
-| [failover](#failover) | Fail over master to replica |
+| [failover](#failover) | Fail over a master shard to replica shard (previously slave shard) |
 | [help](#help) | Show available commands or specific command usage |
 | [info](#info) | Show current parameters for a cluster, database, node, or proxy |
 | [migrate](#migrate) | Migrate elements between nodes |
