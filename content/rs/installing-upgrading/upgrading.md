@@ -13,6 +13,10 @@ you must upgrade each of the nodes and then upgrade each of the databases in the
 Always check the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) before upgrading to a newer version of Redis Enterprise Software. Pay attention to any upgrade notices (for example, the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}})).
 {{< /warning >}}
 
+{{< Note >}}
+The Redis Enterprise Software (RS) downgrade is not supported >}})).
+{{< /Note >}}
+
 Version requirements:
 
 - To upgrade your cluster to v6.0, your cluster must first be on 5.4.0 or above
