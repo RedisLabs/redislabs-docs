@@ -21,7 +21,7 @@ When data migration is finished, disable Replica Of and connect your application
 
 {{< note >}}
 During the migration, make sure that any applications that connect to the Active-Active database are **read-only**
-to make sure the dataset is identical to the source database during the migration process.
+to make sure the dataset is identical to the source database during the migration process. You may continue to write to the source database during the migration process.
 {{< /note >}}
 
 To migrate an RS database to Active-Active:
