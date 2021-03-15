@@ -33,7 +33,7 @@ You need to open these ports in your firewall to allow traffic to pass from the 
 | TCP | 8070, 8071 | Internal, External | For metrics exported and managed by the web proxy |
 | TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
 | TCP | 9081 | Internal, Active-Active | For Active-Active management |
-| TCP | 9443 (Recommended), [8070, 8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
+| TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
 | UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
 
