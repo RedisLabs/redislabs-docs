@@ -292,7 +292,7 @@ rladmin info proxy <id | all>
 ```
 
 ```text
-rladmin info cluster <id>
+rladmin info cluster
 ```
 
 ```text
