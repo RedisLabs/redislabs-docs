@@ -19,10 +19,6 @@ Redis Enterprise Software's port usage falls into three general categories:
 - External: For traffic from client applications or external monitoring resources
 - Active-Active - The traffic is from clusters that host Active-Active databases
 
-### Ports for traffic between the cluster and other systems
-
-You need to open these ports in your firewall to allow traffic to pass from the cluster to other systems:
-
 | Protocol | Port | Connection Source | Description |
 |------------|-----------------|-----------------|-----------------|
 | TCP | 8001 | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
@@ -32,26 +28,12 @@ You need to open these ports in your firewall to allow traffic to pass from the 
 | TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
 | UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
-
-### Ports for traffic between cluster nodes
-
-These ports are used by Redis Software between cluster nodes:
-
-| Protocol | Port | Connection Source | Description |
-|------------|-----------------|-----------------|-----------------|
 | ICMP | * | Internal | Connectivity checking between nodes |
 | TCP | 1968 | Internal | Proxy traffic |
 | TCP | 3333-3341, 3343-3344, 36379, 36380 | Internal | Internode communication |
 | TCP | 20000-29999 | Internal | Database shard traffic |
-
-### Ports for traffic within the cluster nodes
-
-These ports are used by Redis Software within each cluster node:
-
-| Protocol | Port | Connection Source | Description |
-|------------|-----------------|-----------------|-----------------|
 | TCP | 8002, 8004, 8006 | Internal | System health monitoring |
-| TCP | 8444, 9080 | Internal | Traffic betwen web proxy and cnm_http/cm |
+| TCP | 8444, 9080 | Internal | Traffic between web proxy and cnm_http/cm |
 
 ## Changing the admin console port
 
