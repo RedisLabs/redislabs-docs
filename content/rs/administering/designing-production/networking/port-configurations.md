@@ -8,7 +8,7 @@ categories: ["RS"]
 All Redis Enterprise Software deployments span multiple physical/virtual nodes. You'll need to keep several ports open between these nodes. This document describes the various port ranges and their uses.
 
 {{% Note %}}
-You must manually update your firewall with the port for each new database endpoint. The cluster assigns ports (between 10,000 and 19,999) for database endpoints by default, and only verifies that new endpoints are not already in use.
+Whenever you create a new database, you must verify that the ports assigned to the new database's endpoints are open. The cluster will not perform this verification for you. 
 {{% /Note %}}
 
 ## Ports and port ranges used by Redis Enterprise Software
