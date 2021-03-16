@@ -7,9 +7,9 @@ categories: ["RS"]
 ---
 All Redis Enterprise Software deployments span multiple physical/virtual nodes. You'll need to keep several ports open between these nodes. This document describes the various port ranges and their uses.
 
-{{% Note %}}
+{{< note >}}
 Whenever you create a new database, you must verify that the ports assigned to the new database's endpoints are open. The cluster will not perform this verification for you. 
-{{% /Note %}}
+{{<> /note >}}
 
 ## Ports and port ranges used by Redis Enterprise Software
 
