@@ -53,7 +53,7 @@ These ports are used by Redis Software within each cluster node:
 | TCP | 8002, 8004, 8006 | Internal | System health monitoring |
 | TCP | 8444, 9080 | Internal | Traffic betwen web proxy and cnm_http/cm |
 
-## Changing the management web UI port
+## Changing the admin console port
 
 You can change the default port for the Redis Enterprise Software web UI (8443) to a custom port, as long as the new port is not in use by another process.
 
