@@ -9,7 +9,7 @@ All Redis Enterprise Software deployments span multiple physical/virtual nodes. 
 
 {{< note >}}
 Whenever you create a new database, you must verify that the ports assigned to the new database's endpoints are open. The cluster will not perform this verification for you. 
-{{<> /note >}}
+{{< /note >}}
 
 ## Ports and port ranges used by Redis Enterprise Software
 
