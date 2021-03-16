@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To make sure Redis Enterprise Software servers can pass necessary communications between them,
+All Redis Enterprise Software deployments span multiple physical/virtual nodes. You'll need to keep several ports open between these nodes. This document describes the various port ranges and their uses.
 we recommend all servers have the following ports open.
 
 {{% Note %}}
