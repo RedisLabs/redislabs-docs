@@ -13,7 +13,7 @@ Whenever you create a new database, you must verify that the ports assigned to t
 
 ## Ports and port ranges used by Redis Enterprise Software
 
-There are 3 types of ports that are open for use by RS:
+Redis Enterprise Software's port usage falls into three general categories:
 
 - Internal - The traffic is between or within the cluster nodes
 - External - The traffic is from client applications or external monitoring resources
