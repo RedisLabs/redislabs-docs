@@ -35,7 +35,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8002, 8004, 8006 | Internal | System health monitoring |
 | TCP | 8444, 9080 | Internal | Traffic between web proxy and cnm_http/cm |
 
-## Changing the admin console port
+## Change the admin console port
 
 You can change the default port for the Redis Enterprise Software web UI (8443) to a custom port, as long as the new port is not in use by another process.
 
@@ -48,7 +48,7 @@ rladmin cluster config cm_port <new-port>
 After changing the Redis Enterprise Software web UI port, you must connect any new node added to the cluster to the UI with the custom port number:
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
 
-## Disabling HTTP support for API endpoints
+## Disable HTTP support for API endpoints
 
 To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.
 Before you disable HTTP support, make sure you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint to prevent broken connections.
