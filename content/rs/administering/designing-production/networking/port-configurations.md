@@ -57,7 +57,7 @@ These ports are used by Redis Software within each cluster node:
 
 You can change the default port for the Redis Enterprise Software web UI (8443) to a custom port, as long as the new port is not in use by another process.
 
-To change the default port for the RS Web UI, on any node in the cluster run:
+To change this port, run:
 
 ```sh
 rladmin cluster config cm_port <new-port>
