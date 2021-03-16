@@ -16,7 +16,7 @@ Whenever you create a new database, you must verify that the ports assigned to t
 Redis Enterprise Software's port usage falls into three general categories:
 
 - Internal: For traffic between or within cluster nodes
-- External - The traffic is from client applications or external monitoring resources
+- External: For traffic from client applications or external monitoring resources
 - Active-Active - The traffic is from clusters that host Active-Active databases
 
 ### Ports for traffic between the cluster and other systems
