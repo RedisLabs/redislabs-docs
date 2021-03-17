@@ -37,7 +37,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 
 ## Change the admin console port
 
-You can change the default port for the Redis Enterprise Software web UI (8443) to a custom port, as long as the new port is not in use by another process.
+The Redis Enterprise Software admin console uses port 8443, by default. You can change this to a custom port as long as the new port is not in use by another process.
 
 To change this port, run:
 
