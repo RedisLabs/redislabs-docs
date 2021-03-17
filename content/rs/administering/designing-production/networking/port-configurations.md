@@ -17,7 +17,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 
 - Internal: For traffic between or within cluster nodes
 - External: For traffic from client applications or external monitoring resources
-- Active-Active - The traffic is from clusters that host Active-Active databases
+- Active-Active: For traffic to and from clusters hosting Active-Active databases
 
 | Protocol | Port | Connection Source | Description |
 |------------|-----------------|-----------------|-----------------|
