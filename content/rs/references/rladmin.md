@@ -108,7 +108,6 @@ rladmin bind
         [ saslauthd_ldap_conf </tmp/ldap.conf> ]
         [ sentinel_cipher_suites <cipher_suites_list>]
         [ sentinel_ssl_policy <allowed/required/disabled> ]
-        [ services <??> ]
         [ upgrade_mode < enabled | disabled> ]
         
         
@@ -135,7 +134,6 @@ rladmin bind
 | saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Integrating LDAP Authentication]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
 | sentinel_cipher_suites | Cipher suites used by the sentinel service |
 | sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
-| services |  |
 | upgrade_mode |  |
 
 
