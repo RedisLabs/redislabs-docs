@@ -108,6 +108,7 @@ rladmin bind
         [ saslauthd_ldap_conf </tmp/ldap.conf> ]
         [ sentinel_cipher_suites <cipher_suites_list>]
         [ sentinel_ssl_policy <allowed/required/disabled> ]
+        [ services <cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver> <enabled | disabled> ]
         [ upgrade_mode < enabled | disabled> ]
         
         
@@ -265,14 +266,6 @@ rladmin cluster recover
 | flash_path | Path to flash storage location (defaults to /var/opt/redislabs/flash) |
 | addr | Internal IP addresses of the node |
 | external_addr | External IP addresses of the node |
-
-#### `cluster services`
-
-`rladmin cluster services` enables or disables selected cluster services.
-
-```text
-rladmin cluster services [ cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver <enabled | disabled> ]
-```
 
 ### `failover`
 
