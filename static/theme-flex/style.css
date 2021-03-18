@@ -67,7 +67,7 @@ header .header-wrap {
   height: 100%;
   width: 90%;  
   max-width: 1600px;
-  margin: 0 auto;
+  margin: 0 0rem 0 2rem;
   position: relative;  
 }
 
@@ -335,6 +335,7 @@ header nav.shortcuts li a {
 .main-content-left {
   width: auto;
   /* padding-right: 100px; */
+  min-width: 500px;
   max-width: 700px;
 }
 
@@ -359,7 +360,7 @@ article > aside {
   position: fixed;
   z-index: 2;
   top: 58px;
-  width: 24rem;
+  width: 23rem;
   overflow-y: auto;
   -moz-box-shadow: 1px 0 8px 0 #ddd;
   -webkit-box-shadow: 1px 0 8px 0 #ddd;
@@ -611,10 +612,9 @@ section a {
   border-radius: 5px;
   border: 1px solid #eee;
   margin: 15px;
-  min-width: 400px;
   padding-top: 10px;
   text-align: center;
-  width: 327px;
+  max-width: 330px;
   min-height: 394px;
 }
 
@@ -886,6 +886,8 @@ section a {
   text-transform: uppercase;
 }
 .main-content-bottom {
+  width: auto;
+  max-width: 700px;
   margin-top: 90px;
   padding: 10px 0 60px;
   background: white;
@@ -1102,32 +1104,38 @@ section.page {
   -ms-flex: 1;
   flex: 1;
   box-sizing: border-box;
-  padding: 2rem 3rem 0 27rem;
+  padding: 2rem 3rem 0 26rem;
   max-width: 1420px;
   margin: 0 1em;
   padding-right: 0;
 }
 article section.page h1:first-of-type {
-  margin: 5rem 0rem;
+  margin: 2rem 0rem 2rem 0rem;
   text-align: left;
   color: #354253;
-  font-weight: 700;
+  font-weight: 550;
   font-size: 3rem;
-  line-height: 3.45rem;
+  line-height: 3.5rem;
+  width: auto;
+  max-width: 700px;
 }
 article section.page h1 {
   margin-top: 3.5rem; }
 article section.page h2 {
   margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 article section.page h3 {
   font-size: 1.6rem;
+  margin: 2rem 0rem 1rem 0rem;
 }
 article section.page h4 {
   font-size: 1.4rem;
+  margin: 1.8 0rem 0.8 0rem;
 }
 article section.page h5 {
   font-size: 1.2rem;
+  margin: 1.6 0rem 0.6 0rem;
 }
 article section.page h2::before, article section.page h3::before {
   content:"";
@@ -1284,10 +1292,9 @@ nav#toc {
   /* width: 100%; */
   width: 300px;
   /* width: 100%; */
-  padding-left: 100px;
+  padding-left: 10px;
 }
 nav#toc h4 {
-  color: #5961ff;
   margin: 0rem 0rem 1.2rem 0rem;
   font-size: 1.1rem;
 }
@@ -1344,6 +1351,11 @@ a.menu__link:hover:before {
 }
 .main-content-left > ul > li {
   margin-bottom: 1.3rem;
+  margin-left: 2rem;
+}
+.main-content-left > ol > li {
+  margin-bottom: 1.3rem;
+  margin-left: 2rem;
 }
 .nav-links-footer-right a {
   /* margin-right: 8px; */
@@ -2020,7 +2032,7 @@ div#navigation a {
   border-left-color: #5961ff;
 }
 nav#toc ul > li > ul {
-  padding-left: 20px;
+  padding-left: 15;
 }
 
 nav#toc > ul > li {
@@ -2091,6 +2103,7 @@ button.close-button {
 }
 .main-content-right {
   min-width: 340px;
+  padding-left: 20px;
 }
 article > aside .menu > li.parent {
   grid-area: 1;
