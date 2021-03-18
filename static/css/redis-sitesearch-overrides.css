@@ -1,3 +1,11 @@
+.redis-sitesearch-input {
+    max-width: 700px !important;
+}
+
+.redis-sitesearch .redis-sitesearch-result-list-wrapper {
+    max-width: 700px !important;
+}
+
 .search-right {
     width: 75%;
 }
