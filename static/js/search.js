@@ -1,7 +1,7 @@
 (function() {
 
   const SEARCH_API_URL = "https://search-service.redislabs.com/search"
-  const SEARCH_SITE = "https://docs.redislabs.com"
+  const SEARCH_SITE = "https://docs.redislabs.com/latest"
   const THIRTY_SECONDS = 30000
   const SEARCH_LOGO = '<a class="powered-by-redisearch" href="https://oss.redislabs.com/redisearch/"></a>'
 
@@ -26,6 +26,7 @@
     });
   }
 
+
   function setWithExpiry(key, value, ttl) {
     const now = new Date()
 
@@ -33,12 +34,12 @@
       value: value,
       expiry: now.getTime() + ttl,
     }
-    localStorage.setItem(key, JSON.stringify(item))
+    sessionStorage.setItem(key, JSON.stringify(item))
   }
 
 
   function getWithExpiry(key) {
-    const itemStr = localStorage.getItem(key)
+    const itemStr = sessionStorage.getItem(key)
     if (!itemStr) {
       return null
     }
@@ -46,7 +47,7 @@
     const now = new Date()
 
     if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key)
+      sessionStorage.removeItem(key)
       return null
     }
 
@@ -54,12 +55,12 @@
   }
 
 
-  new RedisLabsAutocomplete('#autocomplete', {
+  new RedisSiteSearch('#redis-sitesearch', {
     debounceTime: 2,
 
     search: input => {
       const trimmedInput = input.trim()
-      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}`
+      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}&from_url=${window.location.href}`
 
       if (input.length === 0) {
         return []
@@ -99,7 +100,11 @@
               results = data.results
             }
 
-            setWithExpiry(url, results, THIRTY_SECONDS)
+            try {
+              setWithExpiry(url, results, THIRTY_SECONDS)
+            } catch (e) {
+              // Fail silently if session storage is full.
+            }
             resolve(results)
           })
       })

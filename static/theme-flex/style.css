@@ -199,10 +199,10 @@ header nav.shortcuts li .submenu-wrapper.platform {
 header nav.shortcuts li .submenu-wrapper.solutions {
   width: 500px;
 }
-header nav.shortcuts li .submenu-wrapper.learn {
+header nav.shortcuts li .submenu-wrapper.developers {
   left: auto;
   position: fixed;
-  width: 860px;
+  width: 560px;
 }
 header nav.shortcuts .submenu-wrapper .arrow_box {
   position: absolute;
@@ -1658,7 +1658,7 @@ thead tr {
 .footer-logo {
   margin-right: 13px;
   margin-top: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   margin-left: 0;
   float: left !important;
 }
@@ -1802,13 +1802,12 @@ ul.footer-action li a:hover {
 }
 
 p.source-org.copyright {
-  width: 50%;
-  margin: 0 !important;
-  padding-bottom: 14px!important;
+  width: 100%;
   font-weight: 300;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 0px;
   color: #a2a8a8;
+  padding: 2px;
 }
 
 div.notices {
@@ -3586,3 +3585,21 @@ a[href*="#no-click"], img[src*="#no-click"] {
   font-size: 20px;
   vertical-align: -2px;
 }
+
+/* Custom CSS rules */
+
+
+/* Glossary */
+.main-content-left dl.glossary {
+}
+
+.main-content-left dl.glossary dt {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.main-content-left dl.glossary dd {
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+

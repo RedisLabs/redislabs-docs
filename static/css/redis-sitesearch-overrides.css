@@ -1,0 +1,53 @@
+.search-right {
+    width: 75%;
+}
+
+.redis-sitesearch .redis-sitesearch-result-list {
+    max-height: 60vh;
+}
+
+.redis-sitesearch-inline .redis-sitesearch-result-list {
+    max-height: 70vh;
+}
+
+@media screen and (max-width: 753px) {
+    .redis-sitesearch-inline {
+        margin-top: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 376px) {
+    .redis-sitesearch .redis-sitesearch-result-list {
+        max-height: 40vh;
+    }
+
+    .redis-sitesearch-inline .redis-sitesearch-result-list  {
+        max-height: 70vh;
+    }
+
+    .search-left {
+        width: 30%;
+    }
+
+    .search-right {
+        width: 70%;
+    }
+
+    .redis-sitesearch-result {
+        padding: 9px 1.5em 9px 9px;
+    }
+}
+
+
+@media screen and (max-height: 750px) {
+    .redis-sitesearch .redis-sitesearch-result-list {
+        max-height: 50vh;
+    }
+
+    .redis-sitesearch-inline .redis-sitesearch-result-list  {
+        max-height: 70vh;
+    }
+
+
+}
