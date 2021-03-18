@@ -199,10 +199,10 @@ header nav.shortcuts li .submenu-wrapper.platform {
 header nav.shortcuts li .submenu-wrapper.solutions {
   width: 500px;
 }
-header nav.shortcuts li .submenu-wrapper.learn {
+header nav.shortcuts li .submenu-wrapper.developers {
   left: auto;
   position: fixed;
-  width: 860px;
+  width: 560px;
 }
 header nav.shortcuts .submenu-wrapper .arrow_box {
   position: absolute;
