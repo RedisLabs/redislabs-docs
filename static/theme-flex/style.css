@@ -1647,7 +1647,7 @@ thead tr {
 .footer-logo {
   margin-right: 13px;
   margin-top: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
   margin-left: 0;
   float: left !important;
 }
@@ -1791,13 +1791,12 @@ ul.footer-action li a:hover {
 }
 
 p.source-org.copyright {
-  width: 50%;
-  margin: 0 !important;
-  padding-bottom: 14px!important;
+  width: 100%;
   font-weight: 300;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 0px;
   color: #a2a8a8;
+  padding: 2px;
 }
 
 div.notices {
