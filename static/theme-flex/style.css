@@ -335,6 +335,7 @@ header nav.shortcuts li a {
 .main-content-left {
   width: auto;
   /* padding-right: 100px; */
+  min-width: 500px;
   max-width: 700px;
 }
 
@@ -1109,12 +1110,12 @@ section.page {
   padding-right: 0;
 }
 article section.page h1:first-of-type {
-  margin: 2rem 0rem 1rem 0rem;
+  margin: 2rem 0rem 2rem 0rem;
   text-align: left;
   color: #354253;
   font-weight: 550;
   font-size: 3rem;
-  line-height: 3.45rem;
+  line-height: 3.5rem;
   width: auto;
   max-width: 700px;
 }
