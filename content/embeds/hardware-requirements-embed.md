@@ -33,7 +33,7 @@ We recommend these hardware requirements for production systems or for developme
 <sup>*</sup>Additional considerations:
 
 - Cores:
-    - When the CPU load reaches a certain level, RS tries to migrate "noisy" shards to a different node in the cluster and sends an alert to the operator.
+    - When the CPU load reaches a certain level, Redis Enterprise Software sends an alert to the operator.
     - If your application is designed to put a lot of load on your Redis database, make sure that you have at least one available core for each shard of your database.
     - If some of the cluster nodes are utilizing more than 80% of the CPU, consider migrating busy resources to less busy nodes.
     - If all the cluster nodes are utilizing over 80% of the CPU, consider scaling out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
