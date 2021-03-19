@@ -221,7 +221,7 @@ also updated with the generated database password.
 
 ### `enforceClientAuthentication`
 
-A boolean that indicates whether [client authentication]({{< relref "/rs/security/database-security/tls-ssl.md">}}) should be enforced (default: `true`).
+A boolean that indicates whether [client authentication]({{< relref "/rs/security/tls-ssl.md">}}) should be enforced (default: `true`).
 
 ### `evictionPolicy`
 
@@ -275,7 +275,7 @@ The number of [database shards]({{< relref "/rs/concepts/high-availability/clust
 
 ### `tlsMode`
 
-Controls SSL [authentication and encryption]({{< relref "/rs/security/database-security/tls-ssl.md">}}) for connections to the database.
+Controls SSL [authentication and encryption]({{< relref "/rs/security/tls-ssl.md">}}) for connections to the database.
 
 | Value | Description |
 | ----- | ----------- |

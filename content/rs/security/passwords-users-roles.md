@@ -1,5 +1,5 @@
 ---
-Title: Passwords, users, and roles
+Title: Database access control
 description:
 weight: 10
 alwaysopen: false
