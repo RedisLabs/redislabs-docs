@@ -31,11 +31,5 @@
     {{ end }}
 
     {{ partial "custom-footer" . }}
-
-    {{ if eq (getenv "HUGO_ENV") "production" }}
-        {{if not .IsHome}}
-        {{ partial "page-feedback" . }}
-        {{ end }}
-    {{ end }}
   </body>
 </html>
