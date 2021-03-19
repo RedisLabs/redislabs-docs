@@ -40,19 +40,6 @@ For antivirus solutions that intercept processes, binary files may have to be ex
 
 ## Control Plane Security
 
-Redis Enterprise comes with a simple to use user interface and API that helps to facilitate configuration of databases. The below section details common security configurations that should be considered when deploying Redis Enterprise in a production environment.
-
-- **Integrate with an external identity provider** - Redis Enterprise supports integrations with an external identity provider, such as Active Directory, through an [LDAP integration]({{< relref "/rs/security/passwords-users-roles.md#setting-up-ldap" >}}). LDAP is used to provide a central location where usersnames and passwords are stored. Centralized policy management such as password policies can be enforced through LDAP to help you meet your organizations policies.
-
-- **Align your user account security with your organization's policy** - If your organization is not able to use an LDAP integration, Redis Enterprise comes with several features to [implement user account security]({{< relref "/rs/security/passwords-users-roles.md#user-account-security" >}}). These features include a password complexity profile, password expiration, and user login lockouts.
-
-- **Limit session timeouts** - Session timeouts help to ensure that if a users session is ever compromised that the Redis Enterprise control plane will only be availible for the duration of the session lifetime. As a result a session timeout makes the tradeoff between usability and security. [A session will only be availible for a set amount of time]({{< relref "/rs/security/passwords-users-roles.md#session-timeout" >}}) before the user is required to re-authenticate. By default, Redis Enterprise has a session timeout of 15 minutes, which meets most security guidelines.
-
-- **Require HTTPS for API endpoints** - Redis Enterprise comes with an API that users are able to use to automate frequent manual tasks. This API is availible in both an encrypted and unencrypted endpoint for backwards compatibility. You can [disable the unencrypted endpoint]({{< relref "/rs/security/admin-console-security/encryption.md#requiring-https-for-api-endpoints" >}}) if its not in use without any impact.
-
-- **Configure Transport Layer Security (TLS)** - A common compliance requirement is to [set a minimum version of TLS]({{< relref "rs/security/admin-console-security/encryption.md#tls-configuration" >}}). This helps to make sure that only secure versions of TLS are allowed when accessing the cluster.
-
-- **Install your own certificates** - Redis Enterprise comes with self-signed certificates by default, however, many organizations require that you [use specific CA signed certificates]({{< relref "/rs/security/admin-console-security/encryption.md#requiring-https-for-api-endpoints" >}}).
 
 ## Database Security
 

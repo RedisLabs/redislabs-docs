@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["RS"]
 aliases: ["/rs/administering/designing-production/security/login-lockout"]
 ---
-You can configure users and roles for the control plane. This section details how you can set users and roles, configure external identity providers for authentication, and set up user account security within Redis Enterprise.<!--more-->
+You can configure users and roles for the admin console. This section details how you can set users and roles, configure external identity providers for authentication, and set up user account security within Redis Enterprise.<!--more-->
 
-## Role Based Access Control
+## Role-Based Access Control
 
 Redis Enterprise includes five pre-built roles to help users who need limited access to the admin console.
 
