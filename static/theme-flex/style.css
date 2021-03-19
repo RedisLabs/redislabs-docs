@@ -339,6 +339,12 @@ header nav.shortcuts li a {
   max-width: 700px;
 }
 
+@media screen and (max-width: 500px) {
+  .main-content-left {
+    min-width: auto;
+  }
+}
+
 article {
   display: block !important;
   -ms-flex: none !important;
