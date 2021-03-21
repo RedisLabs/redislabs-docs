@@ -32,7 +32,7 @@ In case of network issues between Active-Active instances, memory can only be fr
    {{< note >}}
     
 - Data eviction policy is not supported for Active-Active databases with Redis on Flash (RoF).
-- 
+
     {{< /note >}}
 
 ### Avoid data eviction
