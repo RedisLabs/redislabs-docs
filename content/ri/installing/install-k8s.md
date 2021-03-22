@@ -59,7 +59,7 @@ spec:
       containers:
 
       - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:1.7.0 #repo/image
+        image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
         volumeMounts:
         - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
@@ -124,7 +124,7 @@ spec:
     spec:
       containers:
       - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:1.7.0 #repo/image
+        image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
         env:
           # If there's a service named 'redisinsight' that exposes the
