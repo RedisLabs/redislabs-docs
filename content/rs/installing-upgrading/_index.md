@@ -65,6 +65,7 @@ Here we walk you through the process for installing the RS installation package 
 
 Before you install RS, review these notes:
 
+- Make sure that you review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
 - If you want to use Redis on Flash (RoF) for your databases, review the [prerequisites, storage requirements, and other considerations]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
     {{% expand "To prepare and format the flash memory:" %}}
 Run:

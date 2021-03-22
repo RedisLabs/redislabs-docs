@@ -243,7 +243,7 @@ the operator. The generated password is stored in a Kubernetes secret.
 - The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/4.3/dev_guide/routes.html).
     {{< /note >}}
 
-1. In a browser, go to localhost:8443 to open the Redis Enterprise web UI:
+1. In a browser, go to localhost:8443 to open the Redis Enterprise admin console:
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
@@ -259,7 +259,7 @@ database.
 
 ### Step 3: Inspect your database services
 
-After you create your database in the Redis Enterprise web UI, the operator
+After you create your database in the Redis Enterprise admin console, the operator
 detects the change and creates Kubernetes services that expose the database. The
 databases are named according to the database name. For example, if you
 called your database "`test`", kubectl shows these services:

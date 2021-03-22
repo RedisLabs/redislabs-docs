@@ -69,7 +69,7 @@ The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_
 
 ## Removing a node
 
-To remove a node using the web UI:
+To remove a node using the admin console:
 
 1. Click **Remove** at the top of the **Node** page for the node to be
     removed.

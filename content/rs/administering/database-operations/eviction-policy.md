@@ -5,7 +5,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.
+The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.<!--more-->
+
 The eviction policies are:
 
 | **Policy** | **Description** |

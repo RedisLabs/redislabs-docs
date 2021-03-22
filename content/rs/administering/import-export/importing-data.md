@@ -151,9 +151,9 @@ When importing data into an Active-Active database, there are two options:
 
 Because Active-Active databases have a numeric counter data type,
 when you merge the imported data into the existing data RS increments counters by the value that is in the imported data.
-The import through the Redis Enterprise web UI handles these data types for you.
+The import through the Redis Enterprise admin console handles these data types for you.
 
-You can import data into an Active-Active database [from the web UI]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
+You can import data into an Active-Active database [from the admin console]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
 When you import data into an Active-Active database, there is a special prompt.
 
 ![Import into an Active-Active database](/images/rs/import-to-active-active-warning.png)
