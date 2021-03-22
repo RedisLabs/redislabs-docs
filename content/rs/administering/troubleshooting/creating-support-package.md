@@ -29,7 +29,7 @@ If package creation fails with `internal error` or if you cannot access the UI, 
 
     1. Change the storage location where the support package is saved: `rladmin cluster config debuginfo_path <path>`
 
-        The `redislabs` user must have write access to the storage location.
+        The `redislabs` user must have write access to the storage location on all cluster nodes.
     1. On any one of the node in the cluster, run: `rladmin cluster debug_info`
 
 - If `rladmin cluster debug_info` fails for another reason, you can create a support package for the cluster from the command-line on each node in the cluster with the command: `/opt/redislabs/bin/debuginfo`
