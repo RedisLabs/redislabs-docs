@@ -116,7 +116,7 @@ Every instance of an Active-Active database can receive write operations, and al
         the database cannot accept new keys. You can select a data eviction policy that defines which keys to delete to make room for new keys. The default eviction policy for Active-Active is `noeviction`.
         
     {{< note >}}
-- Data eviction policy is not supported for Active-Active databases with Redis on Flash (RoF).
+- Data eviction policies are not supported for Active-Active databases with Redis on Flash (RoF).
     {{< /note >}}
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
