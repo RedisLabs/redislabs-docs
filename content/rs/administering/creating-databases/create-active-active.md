@@ -117,7 +117,6 @@ Every instance of an Active-Active database can receive write operations, and al
         
     {{< note >}}
 - Data eviction policy is not supported for Active-Active databases with Redis on Flash (RoF).
-
     {{< /note >}}
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
