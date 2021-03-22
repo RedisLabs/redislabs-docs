@@ -65,7 +65,7 @@ spec:
         - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
           mountPath: /db
         ports:
-        - containerPort: 8001 #exposed conainer port and protocol
+        - containerPort: 8001 #exposed container port and protocol
           protocol: TCP
       volumes:
       - name: db
