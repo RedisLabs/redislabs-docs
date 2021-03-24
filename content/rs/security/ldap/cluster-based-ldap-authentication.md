@@ -5,8 +5,11 @@ hidden: true
 weight: 99
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/designing-production/security/ldap-integration/
-         /rs/security/admin-console-security/ldap/
+aliases: [
+    "/rs/administering/designing-production/security/ldap-integration/",
+    "/rs/security/admin-console-security/ldap/",
+    "/rs/security/admin-console-security/ldap.md"
+]
 ---
 {{<warning>}}
 This article describes features that are considered deprecated.  They will be removed from a future version of Redis Software.<br/><br/>  
