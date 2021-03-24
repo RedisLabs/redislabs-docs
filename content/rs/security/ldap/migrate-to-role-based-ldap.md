@@ -31,15 +31,15 @@ Here’s a high-level checklist that covers the basic process:
 
 1.  Configure each database ACL.
 
-1.  Remove the earlier “external” (“LDAP”) users from Redis Software.
+1.  Remove the earlier "external" (LDAP) users from Redis Software.
 
-1.  Use **Settings** | ** LDAP ** to enable role-based LDAP.
+1.  Use **Settings** | **LDAP** to enable role-based LDAP.
 
 1.  Map your LDAP groups to access control roles.
 
 1.  Test application connectivity using the LDAP credentials of an app team member.
 
-1.  (Recommended) Disable default access for the database to avoid anonymous client connections.
+1.  _(Recommended)_ Disable default access for the database to avoid anonymous client connections.
 
  Because deployments and requirements vary, you’ll likely need to adjust these guidelines.
 
@@ -47,7 +47,7 @@ Here’s a high-level checklist that covers the basic process:
 
 There are several ways to test your LDAP integration, including:
 
-- Connecting with redis-cli and using the AUTH command to test LDAP username/password credentials.
+- Connecting with `redis-cli` and using the AUTH command to test LDAP username/password credentials.
 
 - Signing in to the admin console using LDAP username/password credentials authorized for the Administration role.
 
@@ -55,6 +55,9 @@ There are several ways to test your LDAP integration, including:
 
 - Using the REST API to connect using LDAP username/password credentials.
 
-## Related info
+## Next steps
 
-TBD
+- Enable and configure [role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}})
+- Map LDAP groups to [access control roles]({{< relref "/rs/security/ldap/map-ldap-groups-to-roles.md" >}})
+- Update database ACLs to [authorize LDAP access]({{< relref "/rs/security/ldap/update-database-acls.md" >}})
+- Learn more about Redis Software [security & practices]({{< relref "/rs/security/" >}})

@@ -13,12 +13,14 @@ Once LDAP is enabled, you need to map LDAP roles to Redis Software access contro
 
 Here’s how:
 
-1. From the admin console menu, select **Access control**| **LDAP mappings**.
+1. From the admin console menu, select **Access control** | **LDAP mappings**.
 
-    _(screenshot)_
+    {{<image filename="/images/rs/rs-access-control-ldap-mappings.png" width="75%" alt="The Access control | LDAP mappings screen in the Redis Software admin console" >}}{{< /image >}}
 
-   If you see an "LDAP configuration is disabled" message, use **Settings** | **LDAP** to [enable role-based LDAP](enable-role-based-ldap.md).
 
+   If you see an "LDAP configuration is disabled" message, use **Settings** | **LDAP** to [enable role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}}).
+
+   You can map LDAP roles when LDAP configuration is disabled; they will have no effect until LDAP is properly configured and enabled.
 
 1.  Select the **Add** button to create a new mapping and then enter the following details:
 
@@ -42,6 +44,8 @@ The scope of the authorization depends on the access control role:
 
 - To authorize LDAP users to specific databases, update the database access control lists (ACLs) to include the mapped LDAP role.
 
-## Related info
+## Next steps
 
-TBD
+- Enable and configure [role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}})
+- Update database ACLs to [authorize LDAP access]({{< relref "/rs/security/ldap/update-database-acls.md" >}})
+- Learn more about Redis Software [security & practices]({{< relref "/rs/security/" >}})

@@ -17,10 +17,10 @@ Role-based LDAP lets you authorize admin console admins (previously known as _ex
 
 To enable and configure LDAP, sign into the Redis Software admin console and then select **Settings** | **LDAP**.
 
-_(screenshot)_
+{{<image filename="/images/rs/rs-settings-ldap-configure.png" width="75%" alt="The LDAP configuration screen in the Redis Software admin console" >}}{{< /image >}}
 
 {{<warning>}}
-If LDAP is already enabled, you may already be using the cluster-based LDAP integration.  If so, follow the migration process to enable role-based LDAP.  (External users must be deleted from the admin console before enabling role-based LDAP.)
+If LDAP is already enabled, you may already be using the cluster-based LDAP integration.  If so, follow the [migration process]({{< relref "/rs/security/ldap/migrate-to-role-based-ldap" >}}) to enable role-based LDAP.  (External users must be deleted from the admin console before enabling role-based LDAP.)
 {{</warning>}}
 
 When LDAP is enabled, use the info you gathered to populate the following settings:
@@ -82,6 +82,8 @@ In this example, `%D` is replaced by the Distinguished Name of the user attempti
 
 When finished, use the **Save** button to save your changes.
 
-## Related info
+## Next steps
 
-TBD
+- Map LDAP groups to [access control roles]({{< relref "/rs/security/ldap/map-ldap-groups-to-roles.md" >}})
+- Update database ACLs to [authorize LDAP access]({{< relref "/rs/security/ldap/update-database-acls.md" >}})
+- Learn more about Redis Software [security & practices]({{< relref "/rs/security/" >}})

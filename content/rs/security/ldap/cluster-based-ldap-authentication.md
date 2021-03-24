@@ -12,11 +12,11 @@ aliases: [
 ]
 ---
 {{<warning>}}
-This article describes features that are considered deprecated.  They will be removed from a future version of Redis Software.<br/><br/>  
+This article describes features that are considered deprecated.  They will be removed in a future release of Redis Software.<br/><br/>  
   
-As of v6.0.20, Redis Software supports role-based LDAP authentication, which can be enabled using the admin console or the Redis Software REST API.<br/><br/>  
+As of v6.0.20, Redis Software supports role-based [LDAP authentication]({{< relref "/rs/security/ldap/" >}}), which can be enabled using the admin console or the Redis Software REST API.<br/><br/>  
   
-The technique and limitations described in this article are still included with v6.0.20, however, they are considered obsolete, if favor of the new mechanism.<br/><br/>  
+The features described in this article are still included with v6.0.20; however, they are considered obsolete and have been replaced by [role-based LDAP authentication]({{< relref "/rs/security/ldap/" >}}).<br/><br/>  
   
 For now, you can continue to use cluster-based LDAP integration, however, support will be removed in a future version.  We strongly recommend migrating to role-base LDAP.
 {{</warning>}}
