@@ -44,7 +44,7 @@ The scope of the authorization depends on the access control role:
 
 - To authorize LDAP users to specific databases, update the database access control lists (ACLs) to include the mapped LDAP role.
 
-## Next steps
+## Related info
 
 - Enable and configure [role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}})
 - Update database ACLs to [authorize LDAP access]({{< relref "/rs/security/ldap/update-database-acls.md" >}})

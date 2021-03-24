@@ -32,7 +32,7 @@ If the first rule gives them read access and the third rule authorizes write acc
 As a result, we recommend ordering roles so that higher access roles appear before roles with more limited access. 
 
 
-## Next steps
+## Related info
 
 - Enable and configure [role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}})
 - Map LDAP groups to [access control roles]({{< relref "/rs/security/ldap/map-ldap-groups-to-roles.md" >}})

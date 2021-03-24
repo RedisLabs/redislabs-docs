@@ -14,7 +14,7 @@ As of v6.0.20, Redis Software integrates [Lightweight Directory Access Protocol]
 
 Furthermore, you can configure LDAP roles using the admin console or the Redis Software REST API.
 
-Previously, you could enable LDAP authentication for admin console users by configuring a cluster either through the command-line or the REST API.   
+Previously, you could enable LDAP authentication for admin console users by [configuring a cluster]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) either through the command-line or the REST API.   
 
 The cluster-based LDAP mechanism is supported in v6.0.20; however, the mechanism is deprecated and will be removed in a future update.
 
@@ -73,7 +73,7 @@ Once everything's in place, you should:
 
 If you already have appropriate roles, you can update them to include LDAP groups.
 
-## Next steps
+## Related info
 
 - Enable and configure [role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}})
 - Map LDAP groups to [access control roles]({{< relref "/rs/security/ldap/map-ldap-groups-to-roles.md" >}})
