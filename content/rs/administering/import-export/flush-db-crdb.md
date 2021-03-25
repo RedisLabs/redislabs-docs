@@ -36,7 +36,7 @@ When you flush an Active-Active database (formerly known as CRDB), all of the re
 
 To flush data from an Active-Active database:
 
-- Web UI
+- admin console
 
     1. Go to **database** and select the Active-Active database that you want to flush.
     1. Go to **configuration** and click **Flush** at the bottom of the page.

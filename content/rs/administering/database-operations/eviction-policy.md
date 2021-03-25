@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When the total size of a database reaches its [memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}), the database cannot accept new keys. You can select a data eviction policy that defines which keys to delete to make room for new keys.
+The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.<!--more-->
 
-## Eviction policy types
+The eviction policies are:
 
 | **Policy** | **Description** |
 |------------|-----------------|

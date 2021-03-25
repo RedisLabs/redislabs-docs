@@ -18,7 +18,7 @@ Before you can use RedisGears, you have to install the RedisGears module on your
 
 {{< note >}}
 This step is required for Redis Enterprise Software 6.0.8 and below only.
-For RS 6.0.12 and above, the dependencies are installed automatically when [you install with the `/v2/modules` endopoint]({{< relref "/modules/add-module-to-cluster.md#adding-a-module-using-the-rest-api" >}}).
+For RS 6.0.12 and above, the dependencies are installed automatically when [you install with the `/v2/modules` endpoint]({{< relref "/modules/add-module-to-cluster.md#adding-a-module-using-the-rest-api" >}}).
 {{< /note >}}
 
 On each node in the Redis Enterprise cluster:

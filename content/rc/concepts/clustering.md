@@ -20,7 +20,7 @@ For example:
 
 A Redis Cloud cluster is a set of managed Redis processes and cloud instances,
 with each process managing a subset of the database keyspace.
-Clusting uses multiple cores and resources of multiple instance to overcome scaling challenges.
+Clustering uses multiple cores and resources of multiple instance to overcome scaling challenges.
 
 In a Redis Cloud cluster, the keyspace is partitioned into hash
 slots. At any given time a slot resides on and is managed by a single
@@ -41,12 +41,13 @@ When creating or editing a Redis database on Redis Cloud, the
 system automatically calculates the number of shards needed based on
 the database memory limit and required throughput.
 
+<!--  DOC-439: Stubbing out for initial pass
 {{< note >}}
 For Redis Cloud Essentials, clustering is only available in the
 "Pay-As-You-Go" subscription.
 ![clustering-subscription](/images/rc/clustering-subscription.png)
 {{< /note >}}
-
+-->
 
 ## Multi-key operations {#multikey-operations}
 
