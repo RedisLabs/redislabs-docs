@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/developing/crdbs/region-application-failover-active-active/
 ---
-Active-Active Redis deployments use a leader-less replication architecture that doesn't have a built-in failover or failback mechanism.
+Active-Active Redis deployments don't have a built-in failover or failback mechanism.
 An application deployed with an Active-Active database connects to a replica of the database that is geographically nearby.
 If that replica is not available, the application can failover to a remote replica, and failback again if necessary.
 In this article we explain how this process works.
@@ -19,14 +19,14 @@ then the write operations are processed when the failed replica recovers.
 
 ## Detecting Failure
 
-There are two principle types of failure an application can detect:
+Your application can detect two types of failure:
 
 1. **Local failures** - The local replica is down or otherwise unavailable
-1. **Replication failures** - The local replica is available but fails to replicate writes to or from remote replicas
+1. **Replication failures** - The local replica is available but fails to replicate to or from remote replicas
 
 ### Local Failures
 
-Local failure detection is when the application is unable to connect to the Redis endpoint for any reason, for example: multiple node failures, configuration errors, connection refused, connection timed out, unexpected protocol level errors.
+Local failure is detected when the application is unable to connect to the database endpoint for any reason. Reasons for a local failure can include: multiple node failures, configuration errors, connection refused, connection timed out, unexpected protocol level errors.
 
 ### Replication Failures
 
@@ -38,23 +38,22 @@ The most reliable method for health-checking replication is by using the Redis p
 Note that this document does not suggest that Redis pub/sub is reliable in the common sense. Messages can get lost in certain conditions, but that is acceptable in this case because typically the application determines that replication is down only after not being able to deliver a number of messages over a period of time.
 {{< /note >}}
 
-When you use the pub/sub data type to detect failures:
+When you use the pub/sub data type to detect failures, the application:
 
-1. The application establishes a connection to all replicas and subscribes to a dedicated per-replica channel.
-1. The application establishes another connection to all replicas and periodically publishes a uniquely identifiable message.
-1. The application monitors received messages and ensures that it is able to receive its own messages within a predetermined window of time.
+1. Connects to all replicas and subscribes to a dedicated channel for each replica.
+1. Connects to all replicas and periodically publishes a uniquely identifiable message.
+1. Monitors received messages and ensures that it is able to receive its own messages within a predetermined window of time.
 
-You can also rely on known dataset changes to monitor the reliability of the replication stream,
+You can also use known dataset changes to monitor the reliability of the replication stream,
 but pub/sub is preferred method because:
 
 1. It does not involve dataset changes.
 1. It does not make any assumptions about the dataset.
-1. In certain cases dataset keys may appear to be modified even though the replication link fails. This happens because keys may receive updates either through full-state replication (re-sync) or through online replication of effects. Pub/sub messages, however, are only delivered as replicated effects and are therefore a more reliable indicator of a live replication link.
+1. Pub/sub messages are delivered as replicated effects and are a more reliable indicator of a live replication link. In certain cases, dataset keys may appear to be modified even if the replication link fails. This happens because keys may receive updates through full-state replication (re-sync) or through online replication of effects. 
 
 ## Impact of sharding on failure detection
 
-Because shards are replicated individually and replication can fail for a specific shard or set of shards,
-it’s necessary to use multiple keys (PUB/SUB channels, or real dataset keys) and that there will be at least one key per shard.
+You must use multiple keys (PUB/SUB channels or real dataset keys) and there be at least one key per shard. Replication can fail for a specific shard or set of shards, as shards are replicated individually.
 
 {{< note >}}
 This is true when sharding configuration is symmetric, meaning that all replicas have the same number of shards and hash slots assignment.
