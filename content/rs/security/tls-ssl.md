@@ -10,7 +10,7 @@ Transport Layer Security (TLS), commonly called “SSL”, ensures the privacy o
 
 ## TLS authentication
 
-You can enable TLS for the following two scenarios:
+You can enable TLS for one or both of the following scenarios:
 
 1. Client-server traffic between your Redis clients and your Redis databases
 1. Replication and synchronization traffic between the nodes of a Redis Enterprise Software cluster
@@ -21,15 +21,15 @@ To enable and configure TLS authentication:
 
 1. In **databases**, either:
     - Click **Add** (+) to create a new database.
-    - Click on the database that you want to configure and at the bottom of the page click edit.
-1. Enable the TLS option on the configuration page. When creating a database, you can find this under "Show advanced options".
+    - Click on the database that you want to configure and at the bottom of the page click **Edit**.
+1. Select **Show advanced options** and enable the **TLS** option .
     ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
 1. Select the TLS scope:
-    - Require TLS for Replica Of communications only - This option will only encrypt synchronization traffic.
-    - Require TLS for all communications - This option will encrypt synchronization traffic and traffic between a client and a server.
+    - **Require TLS for Replica Of Communications Only** - Only encrypt synchronization traffic.
+    - **Require TLS for All Communications** - Encrypt synchronization traffic and traffic between a client and a server.
     ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
 
-1. Select if you would like authentication enforced. By deselecting this option you enforce encryption without authentication.
+1. Select if you would like authentication enforced. By deselecting this option, you enforce encryption without authentication.
 1. Enter the certificates authorized to authenticate.
 1. Copy the syncer certificate from the cluster settings tab. The syncer certificate is used to facilitate encrypted replication and synchronization traffic.
 1. Click Add  ![Add](/images/rs/icon_add.png#no-click "Add") to configure certificates.
