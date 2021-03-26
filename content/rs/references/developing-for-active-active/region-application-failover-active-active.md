@@ -53,13 +53,8 @@ but pub/sub is preferred method because:
 
 ## Impact of sharding on failure detection
 
-You must use multiple keys (PUB/SUB channels or real dataset keys) and there be at least one key per shard. Replication can fail for a specific shard or set of shards, as shards are replicated individually.
-
-{{< note >}}
-This is true when sharding configuration is symmetric, meaning that all replicas have the same number of shards and hash slots assignment.
-If the sharding configuration is not symmetric, then it’s necessary to make sure that there is at least one key per hash slot that intersects a pair of source/target shards.
-Because this is complex, we recommend against using non-symmetric configurations in a fail-over/fail-back mechanism.
-{{< /note >}}
+If your sharding configuration is symmetric, make sure to use at least one key (PUB/SUB channels or real dataset key) per shard. Shards are replicated individually and are vulnerable to failure. Symmetric sharding configurations have the same number of shards and hash slots for all replicas.
+We do not recommend an asymmetric sharding configuration, which requires at least one key per hash slot that intersects with a pair of shards.
 
 To make sure that there is at least one key per shard, the application should:
 
@@ -69,32 +64,30 @@ To make sure that there is at least one key per shard, the application should:
 
 ### Failing over
 
-When the application sees that it needs to failover to another replica, it should simply re-establish its connections with the endpoint on the remote replica.
+When the application needs to failover to another replica, it should simply re-establish its connections with the endpoint on the remote replica. Because Active/Active and Redis replication are asynchronous, the remote endpoint may not have all of the locally performed and acknowledged writes.
 
-{{< note >}}
+It's best if your application doesn't read its own recent writes. Those writes can be either:
+
+1. Lost forever, if the local replica has an event such as a double failure or loss of persistent files.
+1. Temporarily unavailable, but will be available at a later time if the local replica's failure is temporary.
+
+<!--- {{< note >}}
 Sample code that maps a hash slot to a key name can be found in this Python script.
-{{< /note >}}
-
-Because Active/Active and Redis replication are asynchronous, the remote endpoint may not have all of the locally performed and acknowledged writes. The application should be resilient against not reading its own recent writes. Those writes can be either:
-
-1. Lost forever, if the local replica has an event like experienced double failure or loss of persistent files.
-1. Temporarily unavailable, but will converge and show up at a later time if the local replica only experiences a temporary failure and still maintains a copy of this data in memory or as persistent files.
+{{< /note >}} --->
 
 ## Failback decision
 
-The application can use the same liveness checks described above to continue monitoring the state of the failed replica after failover.
+Your application can use the same checks described above <!---link to checks described above---> to continue monitoring the state of the failed replica after failover.
 
-Failback is a more involved process. It is not enough for the local replica to be available, but we must also make sure it has successfully re-synced with remote replicas and that it is not in stale mode.
-The PUB/SUB mechanism described above is an effective way to determine that a replica is available and not stale.
+To monitor the state of a replica during the failback process, you must make sure the replica is available, re-synced with the remote replicas, and not in stale mode. The PUB/SUB mechanism is an effective way to monitor this.
 
 Dataset-based mechanisms are potentially less reliable for several reasons:
-
-1. In order to determine that a local replica is not stale, it is not enough to simply read keys from it. It is also necessary to attempt to write to it.
+1. In order to determine that a local replica is not stale, it is not enough to simply read keys from it. You must also attempt to write to it.
 1. As stated above, remote writes for some keys appear in the local replica before the replication link is back up and while the replica is still in stale mode.
 1. A replica that was never written to never becomes stale, so on startup it is immediately ready but serves stale data for a longer period of time.
 
 ## Replica Configuration Changes
 
 All failover and failback operations should be done strictly on the application side, and should not involve changes to the Active-Active configuration.
-The only valid case for re-configuring the Active-Active deployment and removing a replica is when memory consumption becomes too high as garbage collection cannot be performed.
-Once a replica is removed, it can only be re-joined as a new fresh replica. Then it loses any writes that were not converged.
+The only valid case for re-configuring the Active-Active deployment and removing a replica is when memory consumption becomes too high because garbage collection cannot be performed.
+Once a replica is removed, it can only be re-joined as a new replica and it loses any writes that were not converged.
