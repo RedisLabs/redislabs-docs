@@ -128,4 +128,4 @@ We recommend that you disable the default user when using ACLs with your databas
 
 ### Users, Roles and Redis ACLs on Active-Active databases
 Users, Roles and Redis ACLs are cluster level entities. Therefore they are applied per a local participating cluster and Active-Active database instance and they are not replicated or propagated to the other participating clusters and instances.
-ACLs will be enforced according to the instace the client has connected to. The Active-Active replication mechnism will propagate all the effects of an operation.
+ACLs will be enforced according to the instance the client is connected to. The Active-Active replication mechanism will propagate all the effects of the operation.
