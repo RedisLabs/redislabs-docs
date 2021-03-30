@@ -12,7 +12,7 @@ aliases: [
 ]
 ---
 {{<warning>}}
-This article describes features that are considered deprecated.  They will be removed in a future release of Redis Software.<br/><br/>  
+This article describes features that are considered deprecated.  They will be removed in a future release of Redis Enterprise Software.<br/><br/>  
   
 As of v6.0.20, Redis Software supports role-based [LDAP authentication]({{< relref "/rs/security/ldap/" >}}), which can be enabled using the admin console or the Redis Software REST API.<br/><br/>  
   

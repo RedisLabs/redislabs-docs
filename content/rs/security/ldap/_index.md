@@ -10,7 +10,7 @@ aliases: /rs/administering/designing-production/security/ldap-integration/
          /rs/security/ldap/
 ---
 
-As of v6.0.20, Redis Software integrates [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP)  authentication and authorization into its role-based access controls (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
+As of v6.0.20, Redis Enterprise Software integrates [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization into its role-based access controls (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
 
 Furthermore, you can configure LDAP roles using the admin console or the Redis Software REST API.
 
@@ -30,7 +30,7 @@ Here's how role-based LDAP integration works:
 
     Based on the LDAP configuration details, the username is mapped to an LDAP Distinguished Name.
 
-1.  A simple LDAP bind is attempted using the Distinguished Name and the password.  The sign-in fails if the bind fails.
+1.  A simple [LDAP bind request](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol#Bind_(authenticate)) is attempted using the Distinguished Name and the password.  The sign-in fails if the bind fails.
 
 1.  Obtain user’s LDAP group memberships.
 
@@ -50,7 +50,7 @@ Before enabling LDAP in Redis Software, you should verify a few things:
 
 1.  You’ll need to know the LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Software access control group.
 
-1.  You’ll also need a Redis Software access control group for each LDAP group.  If you haven’t already set up role-based access controls (RBAC), you should do so before enabling LDAP.
+1.  You’ll also need a Redis Software access control group for each LDAP group.  If you haven’t already set up [role-based access controls]({{<relref "rc/security/database-security/passwords-users-roles/#rolebased-access-control">}}) (RBAC), you should do so before enabling LDAP.
 
 1.  Finally, you need the the following LDAP info:
 

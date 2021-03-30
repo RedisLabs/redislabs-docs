@@ -7,7 +7,7 @@ categories: ["RS"]
 aliases: 
 ---
 
-Redis Software uses a role-based mechanism to enable LDAP authentication and authorization.  
+Redis Enterprise Software uses a role-based mechanism to enable LDAP authentication and authorization.  
 
 When a user attempts to access Redis Software resources using LDAP credentials, the credentials are passed to the LDAP server in a bind request. If the request succeeds, the user’s groups are searched for one authorizing access to the original resource.
 
