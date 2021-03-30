@@ -50,7 +50,7 @@ Before enabling LDAP in Redis Software, you should verify a few things:
 
 1.  You’ll need to know the LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Software access control group.
 
-1.  You’ll also need a Redis Software access control group for each LDAP group.  If you haven’t already set up [role-based access controls]({{<relref "rc/security/passwords-users-roles/#rolebased-access-control">}}) (RBAC), you should do so before enabling LDAP.
+1.  You’ll also need a Redis Software access control group for each LDAP group.  If you haven’t already set up [role-based access controls]({{<relref "rc/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC), you should do so before enabling LDAP.
 
 1.  Finally, you need the the following LDAP info:
 
