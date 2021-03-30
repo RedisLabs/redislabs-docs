@@ -9,7 +9,7 @@ aliases: /rc/administration/customize-pro/
          /rc/administration/setup/customize-flexible-plan/
 ---
 
-To create a [Flexible subscription]({{< relref "/rc/administration/setup/#subscription-plans" >}})
+To create a [Flexible subscription]({{< relref "/rc/subscriptions/#subscription-plans" >}})
 
 1. Define deployment settings for your subscription, such as cloud provider and network settings.
 

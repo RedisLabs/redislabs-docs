@@ -6,6 +6,8 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/setup_and_editing/view-edit-subscription/
          /rc/administration/setup-and-editing/viewing-subscription/
+         /rc/administration/setup-and-editing/changing-subscription-plan/
+         /rc/administration/setup-and-editing/changing-subscription-plan/
 ---
 After you create a subscription, you can view the subscription details and
 change some of them, including:
@@ -115,29 +117,3 @@ and accept the VPC peering request for the AWS VPC that you want to peer with.
 
 Now the VPC Peering request is accepted. Its status in the VPC Peering tab in the Redis Cloud subscription is updated to 'Peer Established'.
 
-### CIDR Whitelist
-
-If you are deploying Redis Cloud on your own infrastructure, you can configure the CIDR Whitelist for your subscription.
-The CIDR whitelist defines a range of IP addresses and AWS security groups that control inbound
-and outbound traffic to the Redis Cloud VPC. When you manage the CIDR whitelist with security groups you
-can easily use the same security groups to manage access to your application.
-
-To define the CIDR whitelist:
-
-1. In **Subscriptions**, click on the subscription for VPC peering.
-1. Go to: **Security** > **CIDR Whitelist**
-1. If there are no CIDR whitelist entries, click ![Add](/images/rs/icon_add.png#no-click "Add")
-   to create a CIDR whitelist. Otherwise, click ![Add](/images/rs/icon_add.png#no-click "Add")
-   under the list of CIDR whitelist entries to add another entry.
-1. Specify a whitelist entry as either:
-    - IP Address:
-        1. For the type, select **IP Address**.
-        1. For the value, enter the IP address in CIDR format for the traffic that
-            you want to allow access for.
-    - Security Group:
-        1. For the type, select **Security Group**.
-        1. For the value, enter the ID of the AWS security group to grant access to.
-1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
-1. Either:
-   1. Add more whitelist entries - Click ![Add](/images/rs/icon_add.png#no-click "Add").
-   1. Apply the changes to the whitelist - Click **Apply all changes**.

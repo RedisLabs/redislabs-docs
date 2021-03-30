@@ -48,8 +48,8 @@ After zone mapping is complete, the dropdown for **Cloud** in a new subscription
 For existing subscriptions in Redis Cloud Essentials, you now see the Availability Zone they are using.
 To reduce the latency described above:
 
-1. [Create a new subscription]({{< relref "/rc/administration/setup/" >}}) in the AZ for your application.
-1. [Create a new database]({{< relref "/rc/administration/setup/create-database.md" >}}).
+1. [Create a new subscription]({{< relref "/rc/subscriptions/_index.md" >}}) in the AZ for your application.
+1. [Create a new database]({{< relref "/rc/databases/create-database.md" >}}).
 1. [Migrate your data]({{< relref "/rc/how-to/importing-data.md" >}}) to the new database.
 
 While simple, this causes some downtime.

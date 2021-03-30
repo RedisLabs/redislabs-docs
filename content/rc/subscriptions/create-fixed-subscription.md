@@ -94,4 +94,4 @@ Here's what you can specify:
 |**Modules** | Defines the module associated with the database, if any |
 |**Alert Settings** | Identfies when to send alert emails regarding database conditions. |
 
-For more info, see [Creating Databases]({{<relref "rc/administration/setup/create-database.md">}}).
+For more info, see [Creating Databases]({{<relref "rc/databases/create-database.md">}}).

@@ -38,7 +38,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
         and select the endpoint of a database to hold a copy of the data.
 
         {{< note >}}
-You must configure [VPC Peering]({{< relref "/rc/administration/setup/edit-subscription#vpc-peering" >}})
+You must configure [VPC Peering]({{< relref "/rc/security/vpc-peering.md" >}})
 between the VPC that this database is on and the VPC that the destination database is on.
         {{< /note >}}
 

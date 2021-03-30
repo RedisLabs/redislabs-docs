@@ -1,8 +1,9 @@
 ---
-title: Setup and Editing
+title: Manage subscriptions
 description: 
 weight: 20
 alwaysopen: false
+linktitle: Subscriptions
 categories: ["RC"]
 aliases: /rv/administration/setup_and_editing/
          /rc/administration/setup-and-editing/
@@ -12,17 +13,13 @@ aliases: /rv/administration/setup_and_editing/
          /rc/administration/setup/create-subscription/
 ---
 
-This page helps you manage resources for your Redis Cloud account, including subscriptions, databases, and more.
+This page helps you manage your Redis Cloud subscriptions; it briefly compares available pland and shows where to find help wth common tasks.
 
-## Manage subscriptions
-
-Before setting up a subscription, it helps to understand what's available:
-
-### Subscription plans
+## Subscription plans
 
 As of February 2021, Redis Enterprise Cloud suppports the following subscription plans:
 
-- _Free plans_ are designed for training purposes and prototyping.  They can be seamlessly upgraded to Fixed plans with no data loss.
+- _Free plans_ are designed for training purposes and prototyping.  They can be seamlessly upgraded to Fixed plans with no data loss.  (Free plans are a tier of Fixed plans.)
 
 - _Fixed plans_ are cost-efficient and designed for low-throughput scenarios.  They support a range of availability, persistence, and backup options.  Pricing supports low throughput workloads.
 
@@ -44,17 +41,37 @@ Here's a quick comparison:
 
 To learn more, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
 
+## Common tasks
+
+Creating a new subscription:
+
+- [Create a Fixed or Free subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md">}})
+
+- [Create a Flexible subscription]({{<relref "rc/subscriptions/create-flexible-subscription.md">}})
+
+Viewing subscription details
+
+To view the details of a subscrition, :
+
+
+
+
+- To create an Annual subscription, contact support.
+
+### Edit subscription
+
+
+
+
+### Delete subscription
+
+### Other tasks
+
+### Related info
+
 ### Subscription tasks
 
 #### Create subscription
-
-For help creating a subscription, see:
-
-- [Create a Fixed or Free subscription]()
-
-- [Create a Flexible subscription]()
-
-- To create an Annual subscription, contact support.
 
 #### Edit subscription
 
