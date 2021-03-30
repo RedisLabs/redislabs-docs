@@ -35,9 +35,9 @@ You can enable TLS by editing the configuration of an existing database (as show
 
 ## Enable TLS for Active-Active cluster connections
 
-{{< warning >}}
+{{< note >}}
 You cannot enable or disable TLS after the Active-Active database is created, but you can change the TLS configuration.
-{{< /warning >}}
+{{< /note >}}
 
 ### Retrieve syncer certificates
 
@@ -45,7 +45,7 @@ You cannot enable or disable TLS after the Active-Active database is created, bu
 
 ### Configure TLS certificates for Active-Active
 
-1. During database creation (see [Create an Active-Active Geo-Replicated Database]({{<relref "content/rs/administering/creating-databases/create-active-active.md">)}}, select **Edit** from the **configuration** tab.
+1. During database creation (see [Create an Active-Active Geo-Replicated Database]({{<relref "content/rs/administering/creating-databases/create-active-active.md" >)}}, select **Edit** from the **configuration** tab.
 1. Enable **TLS**.
     - **Enforce client authentication** is selected by default. If you choose to change this option, you will enforce encryption without authentication.
 1. Select **Require TLS for CRDB communication only** from the dropdown menu.
@@ -68,7 +68,7 @@ To enforce TLS authentication, Active-Active databases require syncer certificat
 
 You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
 
-1. For each cluster hosting a replica, copy the syncer certificate from the **settings** > **general** tab.
+1. For each cluster hosting a replica, copy the syncer certificate from the **general** settings tab.
 1. Select your database from your database list and navigate to the **configuration** tab.
 1. Select **Edit** at the bottom of your screen.
 1. Enable **TLS**.
