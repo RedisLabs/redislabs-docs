@@ -8,14 +8,31 @@ aliases: ["/rs/administering/designing-production/security/tls-configuration", "
 ---
 Transport Layer Security (TLS), commonly called “SSL”, ensures the privacy of data sent between applications and their Redis databases. TLS also secures connections between Redis Enterprise Software nodes.
 
-## TLS authentication
-
 You can enable TLS for one or both of the following scenarios:
 
 1. Client-server traffic between your Redis clients and your Redis databases
 1. Replication and synchronization traffic between the nodes of a Redis Enterprise Software cluster
 
-When you configure `Replica Of` for a database, synchronization traffic flows between the primary instance of the database and the replica instance of the database. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
+When you configure `Replica Of` for a database, synchronization traffic flows between the primary instance of the database and the replica instance. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
+
+## Enable TLS for client connections
+
+1. Select your database from your database list and navigate to the **configuration** tab.
+1. Select **Edit** at the bottom of your screen.
+1. Check the **Enable TLS** checkbox.
+    - **Enforce client authentication** is selected by default. If you choose to change this option, you will enforce encryption without authentication.
+1. Select **Advanced Options** and **Require TLS for All Communications** from the dropdown menu.
+1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add") and paste your certificate or certificate authority (CA) into the text box, then **Save**.
+1. Repeat for each client certificate you need to add.
+    - If your database uses Replica Of or Active-Active replication, you will need to add the syncer certificates for the participating clusters. The steps for each are below.
+1. Select **Update** at the bottom of the screen.
+
+## Enable TLS for Active-Active cluster connections
+
+
+
+## Enable TLS for Replica Of cluster connections
+
 
 To enable and configure TLS authentication:
 
