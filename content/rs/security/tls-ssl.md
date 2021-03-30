@@ -10,7 +10,7 @@ Transport Layer Security (TLS), commonly called “SSL”, ensures the privacy o
 
 ## TLS authentication
 
-You can enable TLS for the following two scenarios:
+You can enable TLS for one or both of the following scenarios:
 
 1. Client-server traffic between your Redis clients and your Redis databases
 1. Replication and synchronization traffic between the nodes of a Redis Enterprise Software cluster
@@ -20,29 +20,28 @@ When you configure `Replica Of` for a database, synchronization traffic flows be
 To enable and configure TLS authentication:
 
 1. In **databases**, either:
-    - Click **Add** (+) to create a new database.
-    - Click on the database that you want to configure and at the bottom of the page click edit.
-1. Enable the TLS option on the configuration page. When creating a database, you can find this under "Show advanced options".
+    - Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add") to create a new database.
+    - Select the database that you want to configure and select **Edit** at bottom of the page.
+1. Select **Show advanced options** and enable the **TLS** option .
     ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
 1. Select the TLS scope:
-    - Require TLS for Replica Of communications only - This option will only encrypt synchronization traffic.
-    - Require TLS for all communications - This option will encrypt synchronization traffic and traffic between a client and a server.
+    - **Require TLS for Replica Of Communications Only** - Only encrypt synchronization traffic.
+    - **Require TLS for All Communications** - Encrypt synchronization traffic and traffic between a client and a server.
     ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
-
 1. Select if you would like authentication enforced. By deselecting this option you enforce encryption without authentication.
-1. Enter the certificates authorized to authenticate.
-1. Copy the syncer certificate from the cluster settings tab. The syncer certificate is used to facilitate encrypted replication and synchronization traffic.
-1. Click Add  ![Add](/images/rs/icon_add.png#no-click "Add") to configure certificates.
-1. Paste the syncer certificate into the certificate box.
-        ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
-1. Save the certificates. ![icon_save](/images/rs/icon_save.png#no-click "Save")
-1. Repeat for any client certificates you would like to be able to authenticate to your database.
+1. Copy the syncer certificate from the settings tab of any other clusters this database will need to communicate with (via Replica Of or Active-Active).
+1. Click Add  ![Add](/images/rs/icon_add.png#no-click "Add") and enter one of the following certificates in the text box:
+    1.Client certificate: Enter a certificate authorized to authenticate your client connections. To enforce mutual authentication, you can also enter a certificate authority (CA).
+    1. Cluster syncer certificate: Paste the syncer certificate of other clusters the database will communicate with into the certificate box.
+         ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
+1. Save the certificate ![icon_save](/images/rs/icon_save.png#no-click "Save")
+1. Repeat for any certificates or certificate authority (CA) you would like to use for authentication.
 
 {{< note >}}
 There are two considerations for replication authentication you should be aware of:
 
 1. The syncer certificates of the clusters that host the replica instances of the database must always be set when enabling a database for encryption.
-2. When using CRDB, the syncer certificate for each cluster must be configured on the database.
+2. When using Active-Active, the syncer certificate for each cluster must be configured on the database.
 {{< /note >}}
 
 ## Certificate Authentication for Active-Active Databases
