@@ -10,14 +10,9 @@ RedisInsight Memory analysis help you analyze your redis instance and helps in r
 1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzes it to create a temp file with all the keys and meta data required for analysis. In case there is a master-slave connection, RedisInsight downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
 
 1. **offline mode** - In this mode, RedisInsight analyzes your redis backup files. These files can either be present in your system or on s3. RedisInsight accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RedisInsight should have ReadOnly permission to your s3 bucket where the files are stored.
+Specify the name of the s3 bucket and the path to the rdb file.
 
-    The s3 path needs to use the path syntax and not the virtual hosted syntax:
-
-    ```sh
-    https://s3.<region>.amazonaws.com/<bucket name>/<object key name>
-    ```
-
-    For example: https://s3.us-east-1.amazonaws.com/my-bucket/mydb.rdb.tgz
+![s3_memory_analysis](/images/ri/s3-memory-analysis-dialog.png)
 
 ## Running memory analysis on an instance
 
@@ -78,4 +73,4 @@ This can be done in two ways:
 
  After the RSNAP file is completely generated, it is uploaded to our servers where further analysis is done to generate recommendations. We have over 20 recommendations at this point which give you simple advice on how to optimize your redis database.
 
- So that's a very brief overview of what happens under the hood at RedisInsight. We are constantly working on improving our process and we've had quite a bit of back and forth about the exact mechanism of the entire process. It goes without saying that the process keeps evolving and might even look very different in the near future. We'll try to keep this page updated with all significant changes, so check back here or follow our blog to stay updated.
+ So that's a brief look under the hood of RedisInsight. We are constantly working on improving our process and we've had quite a bit of back and forth about the exact mechanism of the entire process. It goes without saying that the process keeps evolving and might look different in the near future. We'll try to keep this page updated with all significant changes, so check back here or follow our blog to stay updated.

@@ -55,7 +55,7 @@ For instructions on how to install RS and set up a cluster, go to either:
 - [Quick Setup]({{< relref "/rs/getting-started/_index.md" >}}) for a test installation
 - [Install and Upgrade]({{< relref "/rs/installing-upgrading/_index.md" >}}) for a production installation
 
-For the tests we use a quorum node in the cluster to keep costs down on AWS instance usage,
+For the tests we use a quorum node in the cluster to keep costs down on AWS EC2 instance usage,
 but still keep the minimum 3 nodes in the cluster that RS needs in case a node fails.
 The quorum node can be on a less powerful instance type (m4.large) as it does not have shards on it or take traffic.
 
@@ -82,7 +82,7 @@ For these tests, the load generation host uses a c4.8xlarge instance type.
 
 ### Create a Redis on Flash test database
 
-You can use the RS web UI to create a test database.
+You can use the RS admin console to create a test database.
 We recommend that you use a separate database for each test case with these requirements:
 
 |  **Parameter** | **With replication** | **Without replication** | **Description** |
@@ -129,7 +129,7 @@ $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-pattern=P:P --ratio=0:1
 ```
 
-You can see the **Values in RAM** metric on the **metrics** page of your database in the RS web UI to validate the test.
+You can see the **Values in RAM** metric on the **metrics** page of your database in the RS admin console to validate the test.
 
 ### Without replication
 
@@ -147,7 +147,7 @@ $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 
 #### With replication
 
-We recommend that you do a dry run and double check the RAM Hit Ratio on the **metrics** screen in the RS web UI before you write down the test results.
+We recommend that you do a dry run and double check the RAM Hit Ratio on the **metrics** screen in the RS admin console before you write down the test results.
 
 To test RoF with an 85% RAM Hit Ratio, run:
 
@@ -182,9 +182,9 @@ Where:
 
 ### Monitor the test results
 
-You can either monitor the results in the **metrics** tab of the RS Web UI or with the memtier_benchmark output.
+You can either monitor the results in the **metrics** tab of the RS admin console or with the memtier_benchmark output.
 The memtier_benchmark results include the network latency between the load generator instance and the cluster instances.
-The metrics shown in the RS web UI do not include network latency.
+The metrics shown in the RS admin console do not include network latency.
 
 ### Expected results
 

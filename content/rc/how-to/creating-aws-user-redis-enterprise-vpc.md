@@ -192,14 +192,16 @@ Now create a policy to assign to the user:
                 "Resource": "*"
             },
             {
-                "Sid": "CreateInstancesVolumesAndTags",
+                "Sid": "CreateInstancesSnapshotsVolumesAndTags",
                 "Effect": "Allow",
                 "Action": [
                     "ec2:CreateVolume",
                     "ec2:AttachVolume",
                     "ec2:StartInstances",
                     "ec2:RunInstances",
-                    "ec2:CreateTags"
+                    "ec2:CreateSnapshot",
+                    "ec2:CreateTags",
+                    "ec2:ModifyInstanceAttribute"
                 ],
                 "Resource": "*"
             },
@@ -227,13 +229,14 @@ Now create a policy to assign to the user:
                 "Resource": "*"
             },
             {
-                "Sid": "DeleteInstancesVolumesAndTagsWithIdentiferTag",
+                "Sid": "DeleteInstancesVolumesSnapshotsAndTagsWithIdentiferTag",
                 "Effect": "Allow",
                 "Action": [
                     "ec2:RebootInstances",
                     "ec2:StopInstances",
                     "ec2:TerminateInstances",
                     "ec2:DeleteVolume",
+                    "ec2:DeleteSnapshot",
                     "ec2:DetachVolume",
                     "ec2:DeleteTags"
                 ],

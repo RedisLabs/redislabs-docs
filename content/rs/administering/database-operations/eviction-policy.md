@@ -5,7 +5,8 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.
+The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.<!--more-->
+
 The eviction policies are:
 
 | **Policy** | **Description** |
@@ -17,7 +18,7 @@ The eviction policies are:
 |  volatile-lru | Evicts the least recently used keys out of all keys with an "expire" field set |
 |  volatile-lfu | Evicts the least frequently used keys out of all keys with an "expire" field set |
 |  volatile-random | Randomly evicts keys with an "expire" field set |
-|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of all keys with an "expire" field set. |
+|  volatile-ttl | Evicts the shortest time-to-live keys out of all keys with an "expire" field set. |
 
 {{% note %}}
 - [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) always operate in noeviction mode.

@@ -8,9 +8,9 @@ aliases: /rv/api/how-to/view-auditing-using-system-log/
 ---
 The Redis Labs system log collects and reports on actions performed on various entities in the account. These entities include the account itself, users, API Keys, subscriptions, databases, accounts, payment methods and more. For each entity, various lifecycle events are logged in the system log.
 
-You can view the system log in the Redis Cloud Admin Console by selecting `Menu` and then `System Log`. This will display the system log entries for the current account.
+You can view the system log in the Redis Cloud admin console by selecting `Menu` and then `System Log`. This will display the system log entries for the current account.
 
-![System Logs in the UI](/images/rc/system_log.png?width=998&height=576)
+![System Logs in the UI](/images/rc/system_log.png)
 
 ### System logs API operation
 
@@ -40,7 +40,7 @@ An API System Log request results in data that includes an `entries` array. The 
 - `originator` - The name of the user who performed the action described by the system log entry.
 - `apiKeyName` - The name of the API key used to perform the action described by the system log entry.
     This field only appears if the action was performed through the API.
-    If the operation was performed through the Redis Cloud Admin Console this property is omitted.
+    If the operation was performed through the Redis Cloud admin console this property is omitted.
 - `resource` - The name of the entity associated with the logged action (for example, database name).
     This property is omitted if it is not applicable to the specific log entry.
 - `type` - The category associated with the action log entry.

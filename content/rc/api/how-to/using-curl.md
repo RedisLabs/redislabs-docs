@@ -44,9 +44,9 @@ When authorization is successful the lock icon appears as a closed lock.
 
 ![swagger-closed-lock](/images/rv/api/swagger-closed-lock.png)
 
-### Calling API operations
+### Making API requests
 
-After you complete the authorization in the Swagger UI, execute an API operation:
+After you complete the authorization in the Swagger UI, you can make an API request:
 
 1. Open an action category and select an API operation.
 
@@ -113,6 +113,6 @@ curl -s -X GET "https://$HOST/logs" \
 - The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON command-line processor, and it will display only the raw output ("`-r`") of the root element ("`.`")
 - You can set the variables using shell commands like the following:
 
-    ```shell
-    {{% embed-code "rv/api/05-set-variables.sh" %}}
-    ```
+```shell
+{{% embed-code "rv/api/05-set-variables.sh" %}}
+```

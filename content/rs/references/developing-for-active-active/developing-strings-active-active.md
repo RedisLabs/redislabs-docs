@@ -53,5 +53,7 @@ concurrent writes.
 |  t8 | — Sync — | — Sync — |
 |  t9 | GET key1<br/>13 | GET key1<br/>13 |
 
-Note: Active-Active databases support 59-bit counters. This limitation is to protect from
-overflowing a counter in a concurrent operation.
+{{< note >}}
+Active-Active databases support 59-bit counters.
+This limitation is to protect from overflowing a counter in a concurrent operation.
+{{< /note >}}

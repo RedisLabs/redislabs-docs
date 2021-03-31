@@ -10,11 +10,7 @@ To upgrade the Redis Enterprise Software (RS) software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{< warning >}}
-
-- Before you upgrade, you must read the [RS 6.0 release notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md" >}}),
-including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}}).
-- You must read the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for every version that you upgrade to.
-
+Always check the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) before upgrading to a newer version of Redis Enterprise Software. Pay attention to any upgrade notices (for example, the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}})).
 {{< /warning >}}
 
 Version requirements:
@@ -24,7 +20,6 @@ Version requirements:
 - To upgrade your cluster to v5.6, your cluster must first be on 5.0.2-30 or above.
 - To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above.
 - To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above.
-- To upgrade your cluster to v5.0, your cluster must first be on 4.4.2 or above.
 
 The upgrade process for a Redis Enterprise Software cluster is "ongoing" when the nodes in the cluster have mixed versions.
 The upgrade is only considered complete when all of the nodes are upgraded to the new version.
@@ -45,8 +40,8 @@ on all of the machines on which RS is installed.
 
 - You must upgrade the master node before you upgrade the other nodes.
 We recommend that you plan to keep all nodes up until the upgrade is completed
-on all nodes. The node role is shown in the output of the 'rladmin status
-nodes' command.
+on all nodes. The node role is shown in the output of the `rladmin status
+nodes` command.
 - You cannot change the installation path or user during upgrade.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of updating them through the API. For assistance with this issue, contact [Support](https://support.redislabs.com).
 
@@ -98,7 +93,7 @@ To check whether your Redis database versions match the latest Redis
 version supported by RS:
 
 - In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
-    run the status command.
+    run the `status` command.
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
 - In the Management UI, go to the **Cluster \> Configuration** page.
@@ -152,7 +147,7 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 To upgrade a CRDB instance:
 
-1. [Upgrade RS](#upgrading-nodes) on each node in the clusters where the CRDB instances are located.
+1. [Upgrade RS](#upgrading-a-node) on each node in the clusters where the CRDB instances are located.
 
 1. To see the status of your CRDB instances, run: `rladmin status`
 
@@ -186,10 +181,10 @@ You must upgrade the CRDB protocol before you update the CRDB feature set versio
 1. If the feature set version is old, you must upgrade all of the CRDB instances. Then, to update the feature set for each active-active database, run:
 
     ```sh
-    crdb-cli crdb update --crdb-guid <crdb_guid> --featureset-version yes
+    crdb-cli crdb update --crdb-guid <CRDB-GUID> --featureset-version yes
     ```
 
-    You can retrieve the `crdb_guid` with the following command:
+    You can retrieve the `<CRDB-GUID>` with the following command:
 
     ```sh
     crdb-cli crdb list

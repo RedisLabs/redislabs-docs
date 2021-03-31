@@ -1,5 +1,5 @@
 ---
-Title: Configuring AWS Instances for Redis Enterprise Software
+Title: Configuring AWS EC2 instances for Redis Enterprise Software
 description:
 weight: 30
 alwaysopen: false
@@ -7,22 +7,24 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
 ---
 There are some special considerations that are important when installing
-and running Redis Enterprise Software (RS) on an AWS instances.
+and running Redis Enterprise Software (RS) on AWS EC2 instances or AWS Outposts.
 
 ## Storage considerations
 
-AWS instances are ephemeral, but your persistent database storage should
+AWS EC2 instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. Therefore, when you
 set up an instance make sure that it has a properly sized EBS backed volume
 connected. Later, when setting up RS on the instance, make sure that [the
 persistence storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
-Note: After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}})) on the instance
-and **before** running through [the setup process]({{< relref "/rs/administering/new-cluster-setup.md" >}})),
+{{< note >}}
+After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the instance
+and **before** running through [the setup process]({{< relref "/rs/administering/new-cluster-setup.md" >}}),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
 `chown redislabs:redislabs /< ebs folder name>`
+{{< /note >}}
 
 Another feature that may be of importance to you is the use of
 Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a

@@ -35,11 +35,13 @@ time for your database to switch from one persistence model to the
 other. It depends on what you are switching from and to, as well as
 the size of your database.
 
-Note: For performance reasons, if you are going to be using AOF, it is
+{{< note >}}
+For performance reasons, if you are going to be using AOF, it is
 highly recommended you make sure replication is enabled for that
 database as well. When these two features are enabled, persistence is done
 on the slave instance and does not reduce the performance of the
 master.
+{{< /note >}}
 
 ## Options for configuring data persistence
 

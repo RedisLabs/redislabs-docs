@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/getting-started/quick-setup/
 ---
-In this quick setup guide, we take you through the steps to install Redis Enterprise Software (RS) on a Linux host to test its capabilities.
+In this getting started guide, we take you through the steps to install Redis Enterprise Software (RS) on a Linux host to test its capabilities.
 The steps to set up a RS cluster with a single node are super simple and go as follows:
 
 - Step 1: Install Redis Enterprise Software
@@ -14,32 +14,39 @@ The steps to set up a RS cluster with a single node are super simple and go as f
 - Step 3: Create a new Redis database
 - Step 4: Connect to your Redis database
 
-This quick start is designed for local testing.
-To connect to the RS cluster remotely,
-make sure that the necessary [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) are open to network traffic.
+{{< note >}}
+**This quick start is designed for local testing only.**
+For production environments, the [RS installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) procedures walk you through all of the deployment options.
+{{< /note >}}
 
-You can also get started with RS with:
+You can also try out RS with our guides for:
 
-- [RS in a Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) for development or testing purposes
-- A [custom RS installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) for production purposes
+- [RS in a Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) skip the installation process
+- [RS Redis on Flash cluster]({{< relref "/rs/getting-started/getting-started-redis-flash.md" >}}) to optimize your memory resources
+- [RS Active-Active cluster]({{< relref "/rs/getting-started/getting-started-active-active.md" >}}) for read/write high availablity
 
 ## Step 1: Install Redis Enterprise Software
 
-You can download the binaries from the [Redis Enterprise Download Center](https://www.redislabs.com/download-center/)
+To get RS installed on your machine:
+
+1. Download the installation files from the [Redis Enterprise Download Center](https://www.redislabs.com/download-center/)
 and copy the download package to machine with a Linux-based OS. To untar the image:
 
-```sh
-tar vxf <downloaded tar file name>
-```
+    ```sh
+    tar vxf <downloaded tar file name>
+    ```
 
-Once the tar command completes, install RS with the install.sh script in
-the current directory.
+    {{< note >}}
+You are required to create a free login to access the download center.
+    {{< /note >}}
 
-```sh
-sudo ./install.sh -y
-```
+1. Once the tar command completes, install RS with the install.sh script in the current directory.
 
-{{< note-safe >}}
+    ```sh
+    sudo ./install.sh -y
+    ```
+
+    {{< note-safe >}}
 When port 53 is in use, the installation fails. This is known to happen in
 default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
 To workaround this issue, change the system configuration to make this port available
@@ -53,9 +60,11 @@ before running RS installation.
 1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
 1. Run: `sudo service systemd-resolved restart`
 {{% /expand %}}
-{{< /note-safe >}}
+    {{< /note-safe >}}
 
 ## Step 2: Set up a cluster
+
+To set up your machine as an RS cluster:
 
 {{< embed-md "cluster-setup.md" >}}
 
@@ -99,11 +108,12 @@ OK
 A simple python application running on the **host machine**, not the
 container, can also connect to database1.
 
-Note: The following section assumes you already have Python and redis-py
-(python library for connecting to Redis) configured on the host machine
-running the container. You can find the instructions to configure
-redis-py on the [github page for
-redis-py](https://github.com/andymccurdy/redis-py).
+{{< note >}}
+The following section assumes you already have Python and redis-py
+(python library for connecting to Redis) configured on the host machine running the container.
+You can find the instructions to configure redis-py on the
+[github page for redis-py](https://github.com/andymccurdy/redis-py).
+{{< /note >}}
 
 1. Create a new file called `redis_test.py` with this contents:
 

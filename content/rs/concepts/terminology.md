@@ -33,7 +33,7 @@ database instances, referred to as "shards".
 RS supports various database configurations:
 
 - **Standard Redis database** - A single Redis shard with no
-    replication or data sharding.
+    replication or clustering.
 - **Highly available Redis database** - Every database master shard
     has a replicated slave shard, so that if the master shard fails the
     cluster can automatically failover to the slave shard with minimal

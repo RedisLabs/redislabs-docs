@@ -9,7 +9,7 @@ When a Redis Enterprise Software (RS) cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
 {{< note >}}
-For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/kubernetes-cluster-recovery.md" >}}).
+For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/tasks/cluster-recovery.md" >}}).
 {{< /note >}}
 
 Cluster failure can be caused by:
@@ -48,7 +48,7 @@ The cluster recovery process includes:
 
 1. Install [RS]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the new cluster nodes.
 
-    Do not configure the cluster nodes (`rladmin cluster create` in the CLI or **Setup** in the Web UI).
+    Do not configure the cluster nodes (`rladmin cluster create` in the CLI or **Setup** in the admin console).
 
     The new servers must have the same basic hardware and software configuration as the original servers, including:
 

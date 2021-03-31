@@ -4,11 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/administering/cluster-operations/updating-certificates"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 The self-signed certificates are used to establish encryption-in-transit for the following traffic:
 
-- Management Web UI (CM) - The certificate for connections to the management web UI
+- Management admin console (CM) - The certificate for connections to the management admin console
 - REST API - The certificate for REST API calls
 - Proxy - The certificate for connections between clients and database endpoints
 - Syncer - The certificate for Active-Active and Replica Of synchronization between clusters
@@ -16,8 +17,9 @@ The self-signed certificates are used to establish encryption-in-transit for the
 
 These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
-When you use the default self-signed certificates, an untrusted connection notification is shown in the web UI.
-Depending on the browser you use, you can allow the connection for each session or add an exception to make the site trusted in future sessions.
+When you use the default self-signed certificates and you connect to the admin console over a web browser, you'll seen an untrusted connection notification.
+
+Depending on your browser, you can allow the connection for each session or add an exception to trust the certificate for all future sessions.
 
 {{< warning >}}
 When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
@@ -77,15 +79,17 @@ You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
 
 - cert - The contents of the *_cert.pem file
 
-When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
+The new certificates are used the next time the clients connect to the database.
 
-## Tls protocol and ciphers
+When you upgrade RS, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
+
+## TLS protocol and ciphers
 
 TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with. You can change the TLS protocols and ciphers to improve the security posture of your RS cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
 The communications for which you can modify TLS protocols and ciphers are:
 
-- Management path - The TLS configuration for cluster administration using the web UI and API.
+- Management path - The TLS configuration for cluster administration using the admin console and API.
 - Data path - The TLS configuration for the communication between the applications and the databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}).
 
@@ -171,3 +175,8 @@ To set the TLS ciphers:
 ```sh
 rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
 ```
+
+When you modify your cipher suites, make sure that:
+
+- The configured TLS version matches the required cipher suites
+- The certificates in use are properly signed to support the required cipher suites
