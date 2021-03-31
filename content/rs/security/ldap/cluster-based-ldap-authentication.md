@@ -26,7 +26,7 @@ Redis Enterprise Software supports Lightweight Directory Access Protocol (LDAP) 
 {{< note >}}
 Known Limitations:
 
-- LDAP access is not yet available for database access, but this is planned for a future release.
+- LDAP access for database access is available only when using the role-based [LDAP authentication]({{< relref "/rs/security/ldap/" >}}).
 - This process does not apply when running Redis Enterprise on Kubernetes.
 {{< /note >}}
 
