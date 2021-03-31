@@ -21,7 +21,7 @@ You can enable TLS by editing the configuration of an existing database (as show
 1. Select your database from your database list and navigate to the **configuration** tab.
 1. Select **Edit** at the bottom of your screen.
 1. Enable **TLS**.
-    - **Enforce client authentication** is selected by default. If you choose to change this option, you will enforce encryption without authentication.
+    - **Enforce client authentication** is selected by default. If you unselect this option, you will still enforce encryption, but TLS client authentication will be disabled.
 1. Select **Advanced Options** and **Require TLS for All Communications** from the dropdown menu.
     ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
 1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add")
