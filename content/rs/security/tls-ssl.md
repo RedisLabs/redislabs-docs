@@ -42,6 +42,7 @@ You cannot enable or disable TLS after the Active-Active database is created, bu
 ### Retrieve syncer certificates
 
 1. For each participating cluster, copy the syncer certificate from the **general** settings tab.
+    ![general-settings-syncer-cert](/images/rs/general-settings-syncer-cert.png "general-settings-syncer-cert")
 
 ### Configure TLS certificates for Active-Active
 
