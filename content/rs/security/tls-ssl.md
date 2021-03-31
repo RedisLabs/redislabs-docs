@@ -62,7 +62,7 @@ You cannot enable or disable TLS after the Active-Active database is created, bu
 
 Repeat this process on all participating clusters.
 
-To enforce TLS authentication, Active-Active databases require syncer certificates for every cluster connection. If every cluster does not have the syncer certificate for every other participating cluster, it will cause read and write errors.
+To enforce TLS authentication, Active-Active databases require syncer certificates for each cluster connection. If every participating cluster doesn't have a syncer certificate for every other participating cluster, synchronization will fail.
 
 ## Enable TLS for Replica Of cluster connections
 
