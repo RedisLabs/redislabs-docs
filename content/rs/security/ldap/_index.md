@@ -10,7 +10,7 @@ aliases: /rs/administering/designing-production/security/ldap-integration/
          /rs/security/ldap/
 ---
 
-As of v6.0.20, Redis Enterprise Software integrates [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization into its role-based access controls (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
+As of version 6.0.20, Redis Enterprise Software integrates [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization into its [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
 
 Furthermore, you can configure LDAP roles using the admin console or the Redis Software REST API.
 
@@ -48,9 +48,9 @@ For database access, the user needs to belong to an LDAP group mapped to a role 
 
 Before enabling LDAP in Redis Software, you should verify a few things:
 
-1.  You’ll need to know the LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Software access control group.
+1.  You’ll need to know the LDAP groups that correspond to the levels of access you wish to authorize.  Each LDAP group will be mapped to a Redis Software access control role.
 
-1.  You’ll also need a Redis Software access control group for each LDAP group.  If you haven’t already set up [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC), you should do so before enabling LDAP.
+1.  You’ll also need a Redis Software access control role for each LDAP group.  If you haven’t already set up [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC), you should do so before enabling LDAP.
 
 1.  Finally, you need the the following LDAP info:
 
@@ -58,7 +58,7 @@ Before enabling LDAP in Redis Software, you should verify a few things:
     - Certificate details for secure protocols.  
     - Bind credentials, including Distinguished Name, password, and (optionally) client public and private keys for certificate authentication.  
     - Authentication query details, whether template or query.  
-    - Authorization query details, whether template or query.  
+    - Authorization query details, whether attribute or query.  
     - The Distinguished Names of LDAP groups you’ll use to authorize access to Redis Software resoures. 
 
 ## How to enable LDAP
