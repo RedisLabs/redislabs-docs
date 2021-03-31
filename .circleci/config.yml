@@ -125,13 +125,16 @@ jobs:
             - run:
                 name: Deploy site files to the AWS S3 bucket and set HTML, CSS, and JS files to expire for immediate client update
                 command: |
-                    #set aws S3 target location to branch_name
+                    # Set aws S3 target location to branch_name
                     export LOCATION=${CIRCLE_BRANCH}
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --include "*.js" --cache-control max-age=0 # --size-only
                     # Deploy all other files to the S3 bucket corresponding to the current branch
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" --exclude "*.js" # --size-only
-
+                    # Deploy the robots.txt file
+                    aws s3 cp robots.txt s3://docs.redislabs.com/robots.txt
+                    # Deploy the S3 site configuration
+                    aws s3api put-bucket-website --bucket docs.redislabs.com --website-configuration file://website.json
 workflows:
   version: 2
   build-deploy:
