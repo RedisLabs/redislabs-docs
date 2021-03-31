@@ -55,7 +55,7 @@ You cannot enable or disable TLS after the Active-Active database is created, bu
     ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
 1. Save the syncer certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
 1. Repeat this process, adding the syncer certificate for each participating cluster.
-1. Optional: If also you want to  require TLS for client connections, select **Require TLS for All Communications** from the dropdown and add client certificates as well.
+1. Optional: If also you want to require TLS for client connections, select **Require TLS for All Communications** from the dropdown and add client certificates as well.
 1. Select **Update** at the bottom of the screen to save your configuration.
 
 ### Configure TLS on all participating clusters
