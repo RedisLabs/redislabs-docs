@@ -65,6 +65,8 @@ jobs:
             - persist_to_workspace:
                 root: .
                 paths:
+                    - robots.txt
+                    - website.json
                     - public
 
     # Deploy for branches other than -build to /staging/{branch}
