@@ -29,10 +29,10 @@ If you need a different release, replace `VERSION` in the above with a specific 
 
 Applying the bundle applies the changes made in the new release to custom resource definitions, roles, role binding, operator service account and deploys a new operator binary.
 
-    {{< note >}}
+{{< note >}}
 If you are not pulling images from Docker Hub, update the operator image spec to point to your private repository.
 If you have made changes to the role, role binding, rbac or crd in the previous version you must merge them with the updated declarations in the new version files.
-    {{< /note >}}
+{{< /note >}}
     
 You can upgrade the bundle and operator with a single apply command, passing in the bundle YAML file:
 
