@@ -41,70 +41,27 @@ Here's a quick comparison:
 
 To learn more, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
 
+
+The folowing links links help with other tasks:
+
 ## Common tasks
 
-Creating a new subscription:
+Create a new subscription:
 
-- [Create a Fixed or Free subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md">}})
+- The Redis Cloud [quick start]({{<relref "rc/rc-quickstart.md">}}) helps you create a free subscription and your first database.  (Start here if you're new.)
+
+- [Create a Fixed subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md">}})
 
 - [Create a Flexible subscription]({{<relref "rc/subscriptions/create-flexible-subscription.md">}})
 
-Viewing subscription details
-
-To view the details of a subscrition, :
-
-
-
-
 - To create an Annual subscription, contact support.
 
-### Edit subscription
+View subscription details:
 
+- View or update a [Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}})
 
+- View [Flexible subscription]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}})
 
+- [Delete a subscription](({{<relref "/rc/subscriptions/delete-subscription.md">}})
+)
 
-### Delete subscription
-
-### Other tasks
-
-### Related info
-
-### Subscription tasks
-
-#### Create subscription
-
-#### Edit subscription
-
-#### Delete subscription
-
-To 
-
-### Edit subscription
-
-### Delete subscription
-
-To delete a subscription:
-
-1. First, empty and delete all databases in your subcription.
-
-1. Ne
-
-## Create a new subscription
-
-To create a new subscription:
-
-1. In the Redis Cloud menu, select **Subscriptions**.
-
-1. At the bottom of the page, select the **Add Subscription** button (![Add Subscription button](/images/rs/icon-subscription-add.png#no-click)).
-
-1. Select your subscription configuration:
-
-    1. Select a cloud provider: **Amazon AWS**, **Microsoft Azure**, **Google Cloud Platform**.
-
-    1. Select the region that you want the subscription to use, for example: `us-central1`.
-
-    1. Select the plan that best reflects your needs.
-
-        - For help creating a Fixed or Free subscriptions, see [Create a Fixed or Free subscription]({{< relref "/rc/administration/setup/create-fixed-subscription.md" >}}).  
-
-        - For help creating a Flexible subscription, see [Create a Flexible subscription]({{< relref "/rc/administration/setup/create-flexible-subscription.md" >}}).

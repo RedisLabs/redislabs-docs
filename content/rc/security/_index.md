@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/security
 ---
-Redis Enterprise Cloud provides a number of features to ensure the security of your cloud
-database deployments. As a Redis Cloud user, there are three systems you need
-to consider when thinking about security:
+Redis Enterprise Cloud provides a number of ways to secure subscription and databases.
+
+As a Redis Cloud user, there are three systems you need to consider when thinking about security:
 
 - The [admin console]({{<relref "/rc/security/admin-console-security/_index.md">}})
 - [Your databases]({{<relref "/rc/security/database-security/_index.md">}})
@@ -23,10 +23,14 @@ by assigning the appropriate user roles and enabling multi-factor authentication
 
 ## Database security
 
-You have several options when it comes to [securing your Redis Cloud databases]({{<relref "/rc/security/database-security/_index.md">}}). These include
-[role-based access control]({{<relref "/rc/security/database-security/passwords-users-roles.md">}}),
-[network security]({{<relref "/rc/security/database-security/network-security.md">}}), [TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}}), and [network security]({{<relref "/rc/security/database-security/network-security.md">}}) using
-IP restrictions and VPC peering.
+You have several options when it comes to [securing your Redis Cloud databases]({{<relref "/rc/security/database-security/_index.md">}}). These include:
+
+- [role-based access control]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
+- [network security]({{<relref "/rc/security/database-security/network-security.md">}})
+- [TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}})
+- [network security]({{<relref "/rc/security/database-security/network-security.md">}}) using
+[VPC peering]({{<relref "/rc/security/vpc-peering.md">}}) and [CIDR whitelist]({{<relref "/rc/subscriptions/cidr-whitelist.md">}})
+
 
 ## API security
 
