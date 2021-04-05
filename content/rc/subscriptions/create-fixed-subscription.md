@@ -1,5 +1,5 @@
 ---
-Title: Create a Fixed or Free subscription
+Title: Create a Fixed subscription
 description:
 weight: 30
 alwaysopen: false
@@ -12,12 +12,15 @@ aliases: /rv/administration/setup_and_editing/create-subscription/
 ---
 Fixed Size subscription plans provide services designed for low throughput workflows.  Several tiers are available, each designed for different memory sizes and integration requirements.
 
-Creating a Fixed (or Free) subscription is a two-step process:
+Creating a Fixed subscription is a two-step process:
 
 1. Create a subscription
 1. Create an initial database
 
 When creating your subscription, you'll need to know which tier to choose.
+
+(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create a free subscription and an initial database.)
+
 
 ## Fixed size subscription tiers
 

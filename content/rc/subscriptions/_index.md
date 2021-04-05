@@ -3,8 +3,8 @@ title: Manage subscriptions
 description: 
 weight: 20
 alwaysopen: false
-linktitle: Subscriptions
 categories: ["RC"]
+linktitle: Subscriptions
 aliases: /rv/administration/setup_and_editing/
          /rc/administration/setup-and-editing/
          /rc/administration/setup-editing/

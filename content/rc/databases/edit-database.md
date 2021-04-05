@@ -1,7 +1,7 @@
 ---
 Title: View and edit databases
 description:
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/viewing-editing-database/

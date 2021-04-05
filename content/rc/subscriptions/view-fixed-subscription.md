@@ -1,16 +1,16 @@
 ---
-Title: View or change a fixed subscription
+Title: View or change a Fixed subscription
 description:
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-linktitle: View fixed subscription
+linktitle: View Fixed subscription
 aliases: /rv/administration/setup_and_editing/view-edit-subscription/
          /rc/administration/setup-and-editing/viewing-subscription/
          /rc/administration/setup-and-editing/changing-subscription-plan/
          /rc/administration/setup-and-editing/changing-subscription-plan/
 ---
-To view the details of a fixed subscription:
+To view the details of a Fixed subscription:
 
 1.  Use the admin console menu to select the **Subscriptions** command.  This displays the **Subscriptions** list.
 
