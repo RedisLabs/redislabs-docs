@@ -74,12 +74,12 @@ console by going to **Settings** and selecting the **Flexible Plans CA** button.
 
 ![Flexible Plans CA button](/images/rc/rc-settings-ca-flexible.png "Flexible Plans CA")
 
-If you're requiring client authentication, you'll also need a public and private client keys. See
-[Enabling TLS](#enabling-tls) for detai.
+If you're requiring client authentication, you'll also need public and private client keys. See
+[Enabling TLS](#enabling-tls) for details.
 
 ### Connect with the Redis CLI
 
-Here's how to use the Redis command-line interface (CLI) tool to a TLS-enabled Redis Cloud database:
+Here's how to use the Redis CLI to connect to a TLS-enabled Redis Cloud database:
 
 If you're not requiring client authentication, then you need to provide the host, port, and the Redis Cloud CA certificate:
 
