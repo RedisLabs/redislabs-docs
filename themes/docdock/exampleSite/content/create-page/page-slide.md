@@ -40,7 +40,7 @@ Your content will be served as a fullscreen revealjs presentation and revealOpti
 
 
 ## Slide Delimiters
-When creating the content for your slideshow presentation within content markdown file you need to be able to distinguish between one slide and the next. This is achieved very simply using a  convention within Markdown that indicates the start of each new slide.
+When creating the content for your slideshow presentation within content markdown file you need to be able to distinguish between one slide and the next. This is achieved with a Markdown convention that indicates the start of each new slide.
 
 As both horizontal and vertical slides are supported by reveal.js each has it's own unique delimiter.
 
@@ -57,7 +57,7 @@ By using a combination of horizontal and vertical slides you can customize the n
 
 
 
-For example, a very simple slideshow presentation can be created as follows
+For example, a simple presentation can be created as follows
 
 ```
 +++

@@ -51,8 +51,7 @@ priority from preempting the scheduling of Redis Enterprise Nodes. Similarly,
 a high value may also prevent eviction when lower priority workloads
 are deployed on the same cluster.
 
-The successful use of this strategy involves first creating a
-priority class with a very large priority value:
+The successful use of this strategy involves first creating a priority class with a very large priority value:
 
 ```yaml
 apiVersion: scheduling.k8s.io/v1

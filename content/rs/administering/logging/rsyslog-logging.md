@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-This document explains the structure of Redis Enterprise Software (RS)
-log entries that go into rsyslog and how to use these log entries to
-identify events.
+This document explains the structure of Redis Enterprise Software (RS) log entries that go into rsyslog
+and how to use these log entries to identify events.
+Also, we recommend that you [secure your logs]({{< relref "/rs/security/logging.md" >}}) with a remote logging server and log rotation.
 
 ## Logging concepts
 

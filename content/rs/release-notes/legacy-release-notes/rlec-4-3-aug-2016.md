@@ -51,7 +51,7 @@ upgrade to this version.
     cluster.]({{< relref "/rs/administering/new-cluster-setup.md" >}})
 - Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
-    SSL]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}}).
+    SSL]({{< relref "/rs/security/tls-ssl.md" >}}).
 - Added support for running the cluster on the following operating
     systems and versions: RHEL/CentOS 6.6, 7.1, 7.2, RHEL 6.7, Oracle
     Linux 6.5.
@@ -120,45 +120,63 @@ upgrade to this version.
     having an old version. When you upgrade the Redis database (using
     rladmin upgrade db command) the Redis version will be updated to 3.0
     even if you updated the cluster's Redis default version to
-    2.8.**Workaround**: If you would like to cancel the old version
+    2.8.
+    
+    **Workaround**: If you would like to cancel the old version
     indication in rladmin status without upgrading the Redis version to
     3.0 you should first change the cluster default version to 2.8
     (using rladmin tune cluster command), and then trigger the Redis
     process to be restarted by migrating the database shards (using
     rladmin migrate db command).
+
 - **Issue**: RLEC-8486 - On Ubuntu, when uninstalling RLEC using the
     apt-get purge command, some of the Redis processes on the machine
-    might continue running.**Workaround**: If you encounter this issue
+    might continue running.
+    
+    **Workaround**: If you encounter this issue
     you must manually kill the Redis processes.
+
 - **Issue**: RLEC-8283 - The cluster recovery process does not work
     properly when the cluster that needs to be recovered does not have a
-    node with ID 1.**Workaround**: If you encounter this issue please
+    node with ID 1.
+    
+    **Workaround**: If you encounter this issue please
     [contact Redis Labs support](https://redislabs.com/company/support/)
+
 - **Issue**: In the Replica Of process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on the target database might not be in sync with
     the source database, although the status of the Replica Of process
-    indicates that it is.**Workaround**: You must manually stop and
+    indicates that it is.
+    
+    **Workaround**: You must manually stop and
     restart the synchronization process in order to ensure the databases
     are in sync.
+
 - **Issue**: In the Replica Of process, if the source database is
     resharded while the Replica Of process is active, the
-    synchronization process will fail.**Workaround**: You must manually
+    synchronization process will fail.
+
+    **Workaround**: You must manually
     stop and restart the synchronization process after the resharding of
     the source database is done.
-- **Issue**: In the Replica Of process, if there is very high
-    traffic on the database the Replica Of process might be restarted
-    frequently due to the "slave buffer" being exceeded. In this case
+
+- **Issue**: In the Replica Of process, high database traffic might restart the Replica Of process due to the "slave buffer" being exceeded. In this case
     you will often see the status of the Replica Of process display as
-    "Syncing".**Workaround**: You must manually increase the "slave
+    "Syncing".
+    
+    **Workaround**: You must manually increase the "slave
     buffer" size through rladmin. In order to find the appropriate
     buffer size please [contact Redis Labs support](https://redislabs.com/company/support/)
+
 - **Issue**: In a cluster that is configured to support rack-zone
     awareness, if the user forces migration of a master or slave shard
     through rladmin to a node on the same rack-zone as its corresponding
     master or slave shard, and later runs the rebalance process, the
     rebalance process will not migrate the shards to ensure rack-zone
-    awareness compliance.**Workaround**: In the scenario described
+    awareness compliance.
+    
+    **Workaround**: In the scenario described
     above, you must use rladmin to manually migrate the shard, to a node
     on a valid rack-zone in order to ensure rack-zone awareness
     compliance.
