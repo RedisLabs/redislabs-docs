@@ -51,6 +51,9 @@ To use the updated modules with a database, you must [upgrade the module on the 
 ## Additional capabilities
 
 - [Shard level metrics]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions#shard-metrics" >}}) have been added to the metrics_exporter and are now available from Prometheus. You can find all of the metrics [here]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions" >}}).
+
+- RS DEB packages (for Ubuntu) and RPM packages (for RHEL) are now signed with a GPG key so customers can verify that the package is authentic and has not been tampered with. You can access the GPG on the [installaion page](https://docs.redislabs.com/latest/rs/installing-upgrading/#installing-rs-on-linux).
+
 - The [crdb-cli](https://docs.redislabs.com/latest/rs/references/crdb-cli-reference/) history log is now being added to support packages.
 
 ## Important fixes

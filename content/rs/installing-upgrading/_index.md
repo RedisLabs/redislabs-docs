@@ -100,11 +100,79 @@ sudo lsblk
     {{% /expand %}}
 
 - Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
-    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 40000 65535`.
-- The main directories that RS is installed in are:
-    - /opt/redislabs
-    - /etc/opt/redislabs
-    - /var/opt/redislabs
+
+    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 30000 65535'.
+
+## Installing RS on Linux
+
+After you download the .tar file installation package, install the package on one of the nodes in the cluster.
+
+To install RS on Linux from the CLI:
+
+1. Copy the installation package to the node.
+
+    {{% expand "How do I know the package is authentic?" %}}
+For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of the package:
+
+- For Ubuntu:
+    1. Import the key with: `gpg --import <path to GPG key>`
+    1. Verify the package signature with: `dpkg-sig --verify <path to installation package>`
+- For RHEL:
+    1. Import the key with: `rpm --import <path to GPG key>`
+    1. Verify the package signature with: `rpm --checksig <path to installation package>`
+    {{% /expand %}}
+
+1. On the node, change to the directory where the installation package is and extract the installation files:
+
+    ```sh
+    tar vxf <tarfile name>
+    ```
+
+1. To install RS, run:
+
+    {{< note >}}
+- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
+- RS is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{< /note >}}
+
+    ```sh
+    sudo ./install.sh
+    ```
+
+1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
+    including the `rlcheck` installation verification.
+
+    {{< note >}}
+To install RS without answering the installation questions, either:
+
+- Run `./install.sh -y` to answer yes to all of the questions.
+- Use an [answer file](#installation-answer-file) to answer the installation questions.
+    {{< /note >}}
+
+    After RS is successfully installed, the IP address of the RS web UI is shown:
+
+    ```sh
+    Summary:
+    -------
+    ALL TESTS PASSED.
+    2017-04-24 10:54:15 [!] Please logout and login again to make
+    sure all environment changes are applied.
+    2017-04-24 10:54:15 [!] Point your browser at the following
+    URL to continue:
+    2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
+    ```
+
+    RS is now installed on the node.
+    Repeat this process for each node in the cluster.
+
+1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
+1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
+
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
+
+### Custom installation directories
 
     {{% expand "How can I specify the directories where RS is installed?" %}}
 During the installation you can specify the directories for the RS files to be installed in.
