@@ -7,7 +7,9 @@ categories: ["RC"]
 aliases: /rc/administration/security/securing-redis-cloud-connections
 ---
 
-Transport Layer Security (TLS) uses encryption to secure [network communication](https://en.wikipedia.org/wiki/Transport_Layer_Security)  Redis Cloud Flexible and Annual subscriptions can use TLS to encrypt data communications between applications and Redis databases. 
+Transport Layer Security (TLS) uses encryption to secure [network communication](https://en.wikipedia.org/wiki/Transport_Layer_Security).  
+
+Redis Cloud Flexible and Annual subscriptions can use TLS to encrypt data communications between applications and Redis databases.
 
 ## Use TLS with Redis Cloud
 
@@ -23,22 +25,22 @@ To enable TLS for a Redis Cloud database.
 
 1. Select the **Databases** command from the admin console menu to open the **View Databases** screen and then select your database from the list.
 
-![View Database](/images/rc/view-db.png#no-click "View Database")
+    ![View Database](/images/rc/view-db.png#no-click "View Database")
 
 2. Select the **Edit** icon to edit the database. ![Add](/images/rc/icon_edit.png#no-click "Edit")
 
-![Edit Database](/images/rc/edit-db.png#no-click "Edit Database")
+    ![Edit Database](/images/rc/edit-db.png#no-click "Edit Database")
 
 3. In the **Access Control & Security** section, enable the **SSL Client Authentication** setting.
 
-![SSL Client Authentication](/images/rc/ssl-client-auth.png "SSL Client Authentication")
+    ![SSL Client Authentication](/images/rc/ssl-client-auth.png "SSL Client Authentication")
 
 4. Decide whether you want to enforce client authentication (also known as "mutual authentication"). By
 enabling client authentication, only those clients that present a valid certificate will be able to connect. If you do not want to require client authentication, skip to **step 8**.
 
 5. To require client authentication, select **Enforce client authentication**.
 
-![Enforce Client Authentication](/images/rc/enforce-client-auth.png "SSL Client Authentication")
+    ![Enforce Client Authentication](/images/rc/enforce-client-auth.png "SSL Client Authentication")
 
 6. Next, either provide an X.509 certificate containing a public key for your client or use the 
 **Generate Client Certificate** button to generate one.
@@ -50,7 +52,7 @@ enabling client authentication, only those clients that present a valid certific
 
 8. Select the **Update** button to apply your changes and enable TLS.
 
-![Cancel / Update](/images/rc/cancel-update.png "Cancel / Update")
+    ![Cancel / Update](/images/rc/cancel-update.png "Cancel / Update")
 
 
 {{<note>}}
