@@ -7,17 +7,15 @@ categories: ["RC"]
 aliases: /rc/administration/security/securing-redis-cloud-connections
 ---
 
-Transport Layer Security (TLS), commonly called "SSL", ensures the privacy of data sent between applications and their Redis databases. TLS is available in Redis Cloud Pro and Redis Cloud Ultimate.
-
-## Using TLS with Redis Cloud
+Transport Layer Security (TLS), commonly called "SSL", ensures the privacy of data sent between applications and their Redis databases. TLS is available in Redis Cloud Flexible and Annual subscriptions.
+\
+## Use TLS with Redis Cloud
 
 TLS is not enabled by default for Redis Cloud databases. To use TLS, you must first enable it.
 
-When you enable TLS, you also need to decide whether to enable client authentication. With client authentication,
-all clients connecting to your database will be required to present a valid client certificate for the
-connection to succeed. Although client authentication is not required by Redis Cloud, we do recommend it.
+When you enable TLS, you also need to decide whether to enable client authentication. With client authentication, all clients connecting to your database will be required to present a valid client certificate for the connection to succeed. Although client authentication is not required by Redis Cloud, we do recommend it.
 
-### Enabling TLS
+### Enable TLS
 
 Here's how to enable TLS for a Redis Cloud database.
 
@@ -60,7 +58,7 @@ Once you've enabled TLS, all client connections to your database must use TLS. U
 will no longer be permitted.
 {{</note>}}
 
-## Connecting over TLS
+## Connect over TLS
 
 To connect to a Redis Cloud database over TLS, you will need:
 
@@ -77,7 +75,7 @@ console by going to **Settings** and clicking on **Pro CA**.
 In addition, if you're requiring client authentication, then you'll need a public and private client key. See
 [Enabling TLS](#enabling-tls) for where to get these files.
 
-### Connecting with the Redis CLI
+### Connect with the Redis CLI
 
 Here's a quick example of how to connect to your TLS-enabled Redis Cloud database using the Redis CLI.
 
