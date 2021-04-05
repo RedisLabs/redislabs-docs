@@ -18,7 +18,7 @@ When the cloud account ID is received, the processing phase is complete and the 
 
 ### Prerequisites
 
-- Install `jq` on your machine: `sudo apt install jq`
+- Install `jq` on your machine: `sudo apt install jq` 
 - Define the expected variables needed to use the API:
 
 ```shell
