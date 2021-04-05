@@ -1,5 +1,5 @@
 ---
-Title: Developing with Strings in an Active-Active database
+Title: Developing with Strings and Bitfields
 description:
 weight: $weight
 alwaysopen: false
@@ -7,51 +7,61 @@ categories: ["RS"]
 aliases: /rs/references/developing-for-active-active/developing-strings-active-active.md/
         /rs/developing/crdbs/strings/
 ---
-Strings have particular unique characteristics in an Active-Active database. First off,
-they are the only data type that Last Write Wins (LWW) applies to. As
-part of that, a wall-clock timestamp (OS Time) is in the metadata of any
-operation on a String. If Redis Enterprise Software cannot determine the order of operations,
-the value with the higher timestamp wins. This is the only case where OS
-time is used to resolve a conflict.
+Active-Active databases support both strings and bitfields.
 
-Here is an example where an update happening to the same key at a later
+{{<note>}}
+Active-Active **bitfield** support was added in RS version 6.0.20.
+{{</note>}}
+
+Changes to both of these data structures will be replicated across Active-Active member databases.
+
+## Replication semantics
+
+Except in the case of [string counters]({{< relref "#string-counter-support" >}}) (see below), both strings and bitfields are replicated using a "last write wins" approach. The reason for this is that strings and bitfields are effectively binary objects. So, unlike with lists, sets, and hashes, the conflict resolution semantics of a given operation on a string or bitfield are undefined.
+
+### How "last write wins" works
+
+A wall-clock timestamp (OS time) is stored in the metadata of every string
+and bitfield operation. If the replication syncer cannot determine the order of operations,
+the value with the latest timestamp wins. This is the only case with Active-Active databases where OS time is used to resolve a conflict.
+
+Here's an example where an update happening to the same key at a later
 time (t2) wins over the update at t1.
 
-|  **Time** | **Member CRDB1** | **Member CRDB2** |
-|  ------: | :------: | :------: |
-|  t1 | SET key1 “a” |  |
-|  t2 |  | SET key1 “b” |
+|  **Time** | **Region 1** | **Region 2** |
+|  :------: | :------: | :------: |
+|  t1 | SET text “a” |  |
+|  t2 |  | SET text “b” |
 |  t3 | — Sync — | — Sync — |
-|  t4 | SET key1 “c” |  |
+|  t4 | SET text “c” |  |
 |  t5 | — Sync — | — Sync — |
-|  t6 |  | SET key1 “d” |
+|  t6 |  | SET text “d” |
 
-Bitfield methods like SETBIT are not supported in Active-Active databases.
+### String counter support
 
-### String data type with counter value in Active-Active databases
-
-Counters can be used to implement distributed counters. This can be useful when counting total views of an
-article or image, or when counting social interactions like "retweets"
-or "likes" of an article in an Active-Active database distributed to multiple geographies.
+When you're using a string as counter (for instance, with the [INCR](https://redis.io/commands/incr) or [INCRBY](https://redis.io/commands/incrby) commands),
+then conflicts will be resolved semantically.
 
 On conflicting writes, counters accumulate the total counter operations
-across all member Active-Active databases in each sync. Here is an example of how counter
-values can be initialized and maintained across two member Active-Active databases. With
+across all member Active-Active databases in each sync.
+
+Here's an example of how counter
+values works when synced between two member Active-Active databases. With
 each sync, the counter value accumulates the private increment and
 decrements of each site and maintain an accurate counter across
 concurrent writes.
 
-|  **Time** | **Member CRDB1** | **Member CRDB2** |
-|  ------: | :------: | :------: |
-|  t1 | INCRBY key1 7 |  |
-|  t2 |  | INCRBY key1 3 |
-|  t3 | GET key1<br/>7 | GET key1<br/>3 |
+|  **Time** | **Region 1** | **Region 2** |
+|  :------: | :------: | :------: |
+|  t1 | INCRBY counter 7 |  |
+|  t2 |  | INCRBY counter 3 |
+|  t3 | GET counter<br/>7 | GET counter<br/>3 |
 |  t4 | — Sync — | — Sync — |
-|  t5 | GET key1<br/>10 | GET key1<br/>10 |
-|  t6 | DECRBY key1 3 |  |
-|  t7 |  | INCRBY key1 6 |
+|  t5 | GET counter<br/>10 | GET counter<br/>10 |
+|  t6 | DECRBY counter 3 |  |
+|  t7 |  | INCRBY counter 6 |
 |  t8 | — Sync — | — Sync — |
-|  t9 | GET key1<br/>13 | GET key1<br/>13 |
+|  t9 | GET counter<br/>13 | GET counter<br/>13 |
 
 {{< note >}}
 Active-Active databases support 59-bit counters.
