@@ -22,9 +22,9 @@ To manage subscriptions, you can:
 
 - Create a [Flexible subscription]({{<relref "/rc/subscriptions/_index.md">}})).
 
-- View or update a [Fixed subscription]({{<relref "/rc/subscriptions/update-fixed-subscription.md">}})).
+- View or update a [Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}})).
 
-- View or a [Flexible subscription]({{<relref "/rc/subscriptions/update-flexible-subscription.md">}})).
+- View or a [Flexible subscription]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}})).
 
 ## Manage databases
 

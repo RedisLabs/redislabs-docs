@@ -29,7 +29,7 @@ You have several options when it comes to [securing your Redis Cloud databases](
 - [network security]({{<relref "/rc/security/database-security/network-security.md">}})
 - [TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}})
 - [network security]({{<relref "/rc/security/database-security/network-security.md">}}) using
-[VPC peering]({{<relref "/rc/security/vpc-peering.md">}}) and [CIDR whitelist]({{<relref "/rc/subscriptions/cidr-whitelist.md">}})
+[VPC peering]({{<relref "/rc/security/vpc-peering.md">}}) and [CIDR whitelist]({{<relref "/rc/security/cidr-whitelist.md">}})
 
 
 ## API security
