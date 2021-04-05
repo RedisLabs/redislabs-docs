@@ -22,6 +22,11 @@ You can download the bundle for the latest release by issuing the following `cur
 VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
 curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
 ```
+For openshift environments, the name of the bundle is openshift.bundle.yaml, and so the curl command to run is:
+
+```
+curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/openshift.bundle.yaml
+```
 
 If you need a different release, replace `VERSION` in the above with a specific release tag.
 
@@ -38,6 +43,12 @@ You can upgrade the bundle and operator with a single apply command, passing in 
 
 ```
 kubectl apply -f bundle.yaml
+```
+
+If you are using openshift, run this instead:
+
+```
+kubectl apply -f openshift.bundle.yaml
 ```
 
 After running this command, you should see a result similar to this:
