@@ -65,7 +65,7 @@ will no longer be permitted.
 To connect to a Redis Cloud database over TLS, you will need:
 
 * A Redis client that supports TLS
-* The Redis Cloud client authentication (CA) certificate
+* The Redis Cloud client authentication certificate
 
 ### Certificates
 
