@@ -91,7 +91,9 @@ Before you choose to backup to Azure Blob Storage, make sure that you have:
 
 - Storage location path in the format: `/container_name/[path/]/`
 - Account name
-- Account key
+- An authentication token, either an account key or an Azure [shared access signature](https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature) (SAS).
+
+Azure SAS support requires Redis Software version 6.0.20.  To learn more about Azure SAS, see [Grant limited access to Azure Storage resources using shared access signatures](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview).
 
 ### Google Cloud Storage
 
