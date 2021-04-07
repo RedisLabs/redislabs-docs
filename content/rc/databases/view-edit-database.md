@@ -64,7 +64,7 @@ The icons along the top of the **View Database** screen let you perform actions 
 |:------:|:-------------|
 | ![Edit](/images/rc/icon-edit.png#no-click "Add") | Edit the database |
 | ![Delete](/images/rc/icon-delete-blue-box.png#no-click "Delete") | Delete the database.  Note: you have to empty a database before you can delete it. |
-| ![Import](/images/rc/icon-import.png#no-click "import") | [import data]({{< relref "/rc/how-to/importing-data.md" >}}) | 
+| ![Import](/images/rc/icon-import.png#no-click "import") | [import data]({{< relref "/rc/databases/import-data.md" >}}) | 
 | ![Backup](/images/rc/icon-refresh.png#no-click "Backup") | [Backup data]({{< relref "/rc/databases/back-up-data.md" >}}) | 
 | ![Syncing](/images/rc/icon-sync-data.png#no-click "Syncing") | _(Replica databases only)_ Data is syncing to other databases. | 
 | ![Active](/images/rc/icon-active.png#no-click "Active") | The database is active and available for input. | 

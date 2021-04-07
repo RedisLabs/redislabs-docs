@@ -50,7 +50,7 @@ To reduce the latency described above:
 
 1. [Create a new subscription]({{< relref "/rc/subscriptions/_index.md" >}}) in the AZ for your application.
 1. [Create a new database]({{< relref "/rc/databases/create-database.md" >}}).
-1. [Migrate your data]({{< relref "/rc/how-to/importing-data.md" >}}) to the new database.
+1. [Migrate your data]({{< relref "/rc/databases/import-data.md" >}}) to the new database.
 
 While simple, this causes some downtime.
 To prevent any downtime during the zone mapping, contact [support](mailto:support@redislabs.com?Subject=Zero%20Downtime%20DB%20Migration) for further assistance.

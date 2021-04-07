@@ -22,11 +22,11 @@ Databases are the heart of any Redis Enterprise Cloud subscription.  Here's how 
 
 - [Monitor database performance]({{<relref "rc/databases/monitor-performance.md">}}) 
 
-- [Import data into databases]({{<relref "rc/how-to/importing-data">}}) 
+- [Import data into databases]({{<relref "rc/databases/import-data.md">}}) 
 
 - [Back up databases]({{<relref "rc/databases/back-up-data.md">}})
 
 - [Secure database access]({{<relref "rc/security/database-security/_index.md">}})
 
-- [Flush database data]({{<relref "rc/how-to/flush-db.md">}})
+- [Flush database data]({{<relref "rc/databases/flush-data.md">}})
 
