@@ -30,13 +30,13 @@ To manage subscriptions, you can:
 
 - [Create a database]({{<relref "rc/databases/create-database.md">}})
 
-- [Edit a database]({{<relref "rc/databases/edit-database.md">}})
+- [View or edit a database]({{<relref "rc/databases/view-edit-database.md">}})
 
 - [Delete a database]({{<relref "rc/databases/delete-database.md">}})
 
-- [Monitor database performance]({{<relref "rc/administration/configuration/monitoring-performance.md">}}) 
+- [Monitor database performance]({{<relref "rc/databases/monitor-performance.md">}}) 
 
-- [Back up databases]({{<relref "rc/administration/configuration/backups.md">}})
+- [Back up database data]({{<relref "rc/databases/back-up-data.md">}})
 
 - [Secure database access]({{<relref "rc/security/database-security/_index.md">}})
 

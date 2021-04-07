@@ -1,27 +1,43 @@
 ---
-Title: Monitoring Performance
+Title: Monitor database performance
 description:
-weight: 40
+weight: 35
 alwaysopen: false
 categories: ["RC"]
+linktitle: Monitor performance
 aliases: /rv/administration/configuration/monitoring-performance/
          /rc/administration/configuration/monitoring-performance/
          /rc/administration/configure/monitoring-alerting-metrics/
+         /rc/databases/monitor-performance/
 ---
-Redis Cloud provides a straightforward dashboard that
-gives you good visibility into each database. Metrics can be viewed on
-the Metrics tab of a selected database. Use the scroll bar at the top to
-change between time intervals: last minute, five minutes, hour, day,
-week, month, and year.
 
-If you hover your cursor over the mini-graph for a metric, you should see two
-boxes with arrows, one arrow pointing to the left and one to the right
-(depending on which side of the mini-graph you hover on). Each side of
-the mini-graph corresponds to the larger moving graphs towards the top
-of the page, under the time scale. For example, if in the big graphs you
-want to see Reads/sec on the left and Writes/sec on the right, click on
-the left side of the Read/sec mini-graph and the right side of the
-Writes/sec mini-graph.
+Redis Enterprise Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance passes defined threshholds.
+
+##  View database metrics
+
+The **Meterics** tab of the **View Database** screen provides a series of graphs showing performance data for your database.
+
+(screenshot)
+
+Performance data provides insights into how your database is being used and how well it is performing.
+
+The interval scrollbar controls the time period displayed in the graphs.  
+
+### Promote metric graphs
+
+The **Metrics** screen shows two primary graphs and a collection of smaller ones.  You can promote any smaller graph to a primary position.
+
+When you use the mouse to point to a smaller graph, three things appear:
+
+- A promotion icon pointing left
+- A promotion icon pointing right
+- A summary panel showing the minimum, average, maximum and most recent values displayed in the graph.
+
+(screenshot)
+
+Use the promotion icons to promote the smaller graph to one of the primary positions. The left icon promotes the smaller graph to the left position and the right icon promotes the smaller graph to the right position.
+
+
 
 <!-- Video out of date
 For a quick tour of what you get, watch this video. -->
@@ -30,8 +46,7 @@ For a quick tour of what you get, watch this video. -->
 
 ## Definition of each metric
 
-For each database, there are 14 different metrics you can see on the
-page:
+Several metric graphs are available:
 
 | **Metric** | **Description** |
 |------------|-----------------|
@@ -50,13 +65,10 @@ page:
 | Expired Objects/sec | Number of expired objects per sec. An expired object is an object with expired TTL that was deleted from the database. |
 | Hit Ratio (percentage) | The number of operations on existing keys divided by total database operations. |
 
-If you want to get more information, we recommend
-[Redsmin](https://www.redsmin.com/) and/or [New
-Relic](https://newrelic.com/plugins/poison-pen-llc/28). Also, you might
-want to read [this
-post](https://redislabs.com/blog/secure-redis-ssl-added-to-redsmin-and-clients).
+For more detailed analysis, consider tools similar to [Redsmin](https://www.redsmin.com/) or [New
+Relic](https://newrelic.com/plugins/poison-pen-llc/28).  To learn more, [Secure Redis: SSL Added to Redsmin and Clients](https://redislabs.com/blog/secure-redis-ssl-added-to-redsmin-and-clients).
 
-## Alerting on metrics
+## Configure metric alerts
 
 There are five metrics, located on the Configuration tab for each
 database, that you can and should create alerts for.
@@ -83,7 +95,7 @@ configuring an alert for when each database reaches 80% can surpass your
 number of subscriptions.
 {{< /note >}}
 
-## Changing alert email recipients
+### Change alert recipients
 
 Any member of the account team can receive alert emails.
 

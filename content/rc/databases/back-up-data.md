@@ -1,37 +1,38 @@
 ---
-Title: Database Backups
+Title: Back up database data
 description:
-weight: 70
+weight: 40
 alwaysopen: false
 categories: ["RC"]
+linktitle: Back up data
 aliases: /rv/administration/configure/backups/
         /rc/administration/configure/backups/
         /rv/administration/configuration/backups/
+        /rc/databases/backups/
 ---
-You can run scheduled and on-demand backups of your Redis Cloud databases
-to a remote storage location. In Redis Cloud Essentials, a scheduled backups run every 24 hours;
-in Redis Cloud Pro, you can choose the backup interval and time.
 
-{{< note >}}
-Backups are only available for paid subscriptions.
-Customers with free subscriptions must upgrade to a paid subscriptions to use backups.
-Subscription upgrade does not cause downtime.
-{{< /note >}}
+The back up process for Redis Enterprise Cloud data depends on your plan:
 
-## Can I export my Redis data from Redis Cloud?
+- Flexible and Annual can use the **Backup** icon on the View Database screen or schedule regular backups.
 
-Absolutely! There is no lock-in with Redis Cloud.
-Using the instructions on this page,
-you can export your latest RDB backup file from your cloud storage, FTP or HTTP server to any Redis server of your choice.
+- Paid Fixed plans run scheduled backups every 24 hours.  
 
-## Backing up to Amazon Simple Storage Service (AWS S3)
+- Free plans do not back up automatically.
 
-To use an S3 bucket for storing backups, first access your [AWS
+    (To back up Free plan data, connect to the database and use a process appropriate for the connection.  For example, you can use the [SAVE](https://redis.io/commands/save) or [BGSAVE](https://redis.io/commands/bgsave) commands with Redis&nbsp;CLI.)
+
+Here, you'll learn how to store backups using different cloud providers.
+
+## Back up to Amazon Simple Storage Service (AWS S3)
+
+To use an S3 bucket for storing backups, sign in to your [AWS
 Management Console](https://console.aws.amazon.com/) and follow these
 steps:
 
 1. Go to the AWS S3 Management Console in: **Services > Storage > S3**
+
 1. Configure the permissions for your S3 bucket:
+
     - For a new bucket:
         1. Click **Create Bucket**.
         1. Enter a name and region for the bucket and click **Next**.
@@ -43,6 +44,7 @@ steps:
             1. In the Account field enter:
                 `fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614`
             1. Select the **Write objects**, **Read bucket permissions**, and **Write bucket permissions**, and click **Save**.
+
     - For an existing bucket, click on the S3 bucket and go to the **Permissions** tab.
         1. Click **Add account**.
         1. In the **Access for other AWS accounts** section, enter:
@@ -54,12 +56,12 @@ steps:
 After the permissions are set for your bucket, set the **Backup Path** to the path of your S3 bucket
 and click **Apply**. For example, if the name of your bucket is *backups-bucket*, use the path: `s3://backups-bucket`
 
-## Backing up to Google Cloud Storage (GCS)
+## Back up to Google Cloud Storage (GCS)
 
 For [Google Cloud Platform (GCP)
-console](https://developers.google.com/console/) subscriptions, to use a GCS bucket for storing your resources' backups:
+console](https://developers.google.com/console/) subscriptions, store your backups in a GCS bucket:
 
-1. Login to your account on Google Cloud Platform
+1. Sign in Google Cloud Platform
 1. Navigate to **Storage -> Browser**
 1. Click on the three dot button (1) on your relevant bucket name and
     choose **Edit bucket permissions** (2).
@@ -80,7 +82,7 @@ bucket's name is backups-bucket, use the path:
 
 `gs://backups-bucket`
 
-## Backing up to Azure Blob Storage (ABS)
+## Back up to Azure Blob Storage (ABS)
 
 To use an ABS container for storing your resources' backups, follow
 these steps in your [Microsoft Azure Management
@@ -108,7 +110,7 @@ Where:
 - *container_name:* the name of the container, if needed.
 - *path*: the backups path, if needed.
 
-## Backing up to an FTP Server
+## Back up to an FTP Server
 
 To store your resource backups on an FTP server, set its **Backup Path**
 using the following syntax:

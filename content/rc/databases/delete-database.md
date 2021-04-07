@@ -1,7 +1,7 @@
 ---
 Title: Delete a database
 description:
-weight: 70
+weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/delete-databases/
