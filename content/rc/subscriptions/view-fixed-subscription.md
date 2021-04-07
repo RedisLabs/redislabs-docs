@@ -16,12 +16,13 @@ To view the details of a Fixed subscription:
 
 1.  Select the subscription you wish to view.
 
-    (screenshot)
+    {{<image filename="images/rc/subscription-list-select.png" width="75%" alt="The View Subscription screen for Fixed (and Free) subscriptions." >}} >}}{{< /image >}}
+
 
 The following details are displayed:
 
 | _Detail_ | _Description_ |
-|+---------|+--------------|
+|:---------|:--------------|
 | **Description** | Brief summary of subscription, including the plan type, cloud provider, region, and data size limit. |
 | **Name** | A descriptive name for the plan.  Can be changed at any time. |
 | **Price** | Cost of the plan |
@@ -45,11 +46,13 @@ Once a subscription has been created, only a few details can be changed, includi
 - **Payment method** (paid plans only).
 - Plan tier, which changes the maximum memory, the nuber of databases, and [other options]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}}).
 
-To change the name or payment method, select the edit icon (pencil icon) and then update the info.
+To change the name or payment method, select the **Edit** icon ({{<image filename="images/rc/icon_edit.png" width="24px" alt="The Edit icon" >}}{{< /image >}}) and then update the info.
 
 To update your subscription to a new tier, select the **Change Subscription** button while viewing the subscription details.
 
-This displays the **Change Subscription** screen
+This displays the **Change Subscription** screen:
+
+{{<image filename="images/rc/subscription-change-fixed.png" width="75%" alt="Select the target subscription from the list." >}}{{< /image >}}
 
 Here, you can change the plan type and the tier.
 

@@ -15,11 +15,11 @@ To view the details of a database, select it from the database list:
 
     If you have a single subscription, this displays a list of databases.
 
-    _(screenshot)_
+    When you have more than one subscription, the database list is organized by subscription.
 
-    If you have more than one subscrption, the database list is organized by subscription.
+    {{<image filename="images/rc/database-list-select.png" width="75%" alt="The Database list with multiple subscriptionsFixed Size Plan section of the Create Subscription screen." >}}{{< /image >}}
 
-    _(screenshot)_
+    Here, the second of three subscriptions is selected.
 
 3.  Select the database from the list.
 
@@ -27,9 +27,11 @@ To view the details of a database, select it from the database list:
 
 This opens the **View Database** screen.
 
+{{<image filename="images/rc/database-view-configuration.png" width="75%" alt="The Configuration tab of the View Database screen." >}}{{< /image >}}
+
 The View Database screen lets you review the configuration details of a database, graphs showing performance metrics, and a "slowlog" of recent actions. 
 
-## Configuation details
+## Configuration details
 
 When the **View Details** screen first appears, it defaults to the Configuration tab, which displays the following details:
 
@@ -46,7 +48,6 @@ When the **View Details** screen first appears, it defaults to the Configuration
 | **Private Endpoint** | (_flexible plans only_) URI identifying the private endpoint and port for the database. |
 | **Database Clustering** | (_flexible plans only_)  Summary of current clustering policy. |
 | **OSS Cluster API support** | (_flexible plans only_)  Whether the API is enabled or not. |
-
 | **Data Persistence** | When enabled, describes the current persistence algorithm. |
 | **Access Control & Security** | Current user password, if any. |
 | **Redis Version Compliance** | Core Redis version compatibility version.|
@@ -57,15 +58,17 @@ When the **View Details** screen first appears, it defaults to the Configuration
 
 ## Other actions and info
 
-The icons along the top of the View Database screen let you perform actions and report status:
+The icons along the top of the **View Database** screen let you perform actions and report status:
 
 | _Icon_ | _Descrition_ |
-| (pencil) | Edit the database |
-| (delete) | Delete the database.  Note: you have to empty a database before you can delete it. |
-| (import) | [import data]({{< relref "/rc/how-to/importing-data.md" >}}) | 
-| (backup) | [Backup data]({{< relref "/rc/administration/configuration/backups.md" >}}) | 
-| (active) | The database is active and available for input. | 
-| (pending) | The database is being updated and not available for input. | 
+|:------:|:-------------|
+| ![Edit](/images/rc/icon_edit.png#no-click "Add") | Edit the database |
+| ![Delete](/images/rc/icon_delete.png#no-click "Delete") | Delete the database.  Note: you have to empty a database before you can delete it. |
+| ![Import](/images/rc/icon_import.png#no-click "import") | [import data]({{< relref "/rc/how-to/importing-data.md" >}}) | 
+| ![Backup](/images/rc/icon_backup.png#no-click "Backup") | [Backup data]({{< relref "/rc/administration/configuration/backups.md" >}}) | 
+| ![Syncing](/images/rc/icon_sync.png#no-click "Syncing") | _(Replica databases only)_ Data is syncing to other databases. | 
+| ![Active](/images/rc/icon_active.png#no-click "Active") | The database is active and available for input. | 
+| ![Pending](/images/rs/icon_pending.png#no-click "Pending") | The database is being updated and not available for input. | 
 
 The **View Database** screen also has tabs that let you view:
 

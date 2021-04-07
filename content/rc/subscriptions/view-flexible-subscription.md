@@ -13,16 +13,16 @@ To view the details of a Flexible subscription:
 
 1.  Select the subscription you wish to view.
 
-    (screenshot)
+    {{<image filename="images/rc/subscription-view-flexible.png" width="75%" alt="Select the target subscription from the list." >}}{{< /image >}}
 
 Two tabs are available:
 
-1.  The **General* tab summarizes the your subscription details, the cost estimate, and the payment method.
+1.  The **General** tab summarizes the your subscription details, the cost estimate, and the payment method.
     
     **General details** include:
     
     | _Detail_ | _Description_ |
-    |+---------|+--------------|
+    |:---------|:--------------|
     | **Subscription name** | A descriptive name for the plan.  Can be changed at any time. |
     | **Runs on** | Either _RAM_ or _RAM+Flash_ |
     | **Cloud account** | (_AWS only_) Descriptive name of the associated cloud account.  Useful for organizations that manage [multiple accounts]({{<relref "/rc/how-to/view-edit-cloud-account.md">}}). |

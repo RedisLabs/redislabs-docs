@@ -24,25 +24,19 @@ If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/s
 
 ## Create a subscription
 
-<!-- Redis Cloud subscriptions can be deployed in each of the major cloud platforms: **Amazon AWS**, **Google Cloud Platform**, and **Microsoft Azure**, 
-
-Four plans are available, including:
-
-- _Free:_ a basic plan designed for tutorial and experimentation.
-- _Fixed:_ set pricing for low-throughput solutions.
-- _Flexible:_ "Pay as you go" plans for any dataset size or throughput
-- _Annual:_ Predfined commitments that provide substantial savings over Flexible plans.
--->
-
 To create a new free subscription:
 
 1. Sign in to the Redis Cloud admin portal.  (Create an acoount if you don't already have one.)
 
 2. From the admin console menu, choose **Subscriptions**.
 
-    _(screenshot)_
+    {{<image filename="images/rc/subscription-menu-select.png" alt="The Subscriptions command from the admin console menu." >}}{{< /image >}}
 
-3.  Select the ![Add button](/images/rs/icon_add.png#no-click "Add").
+
+
+3.  Select the **Add Subscription** button (![Add button](/images/rs/icon_add.png#no-click "Add Subscription")).
+
+    {{<image filename="images/rc/subscription-list-empty.png" alt="The Subscription list when you have no subscriptions." >}}{{< /image >}}
 
 4.  Choose a **Cloud Provider** and a **Region**.
 
@@ -52,7 +46,7 @@ To create a new free subscription:
 
     Free plans are a tier of Fixed plans; this provides an easy upgrade path when you need it.
 
-    _(screenshot)_
+    {{<image filename="images/rc/subscription-create-free.png" width="75%" alt="Create a free subscription. " >}}{{< /image >}}
 
 6.  Enter a descriptive **Subscription Name** and then select **Create**.
 
@@ -64,13 +58,16 @@ Next, we create a database.
 
 1.  If you aren't already at the Databases screen, sign into the Redis Cloud admin console, select **Databases** from the menu, and then select the ![Add button](/images/rs/icon_add.png#no-click "Add") button.
 
-    _(screenshot)_
+    {{<image filename="images/rc/fixed-sub-create-database-free.png" width="75%" alt="Create a free subscription. " >}}{{< /image >}}
 
 2.  Enter a descriptive **Database Name**.  
 
-    You have 40 characters; you can use letters, numbers, or a hyphen.  The name must start with a letter and end with either a letter or a number.  Spaces are not allowed.
+    - You have 40 characters  
+    - You can use letters, numbers, or a hyphen  
+    - The name must start with a letter and end with either a letter or a number
+    - Spaces are not allowed
 
-3.  For this exercise, leave the remaining options at their default values.  (To learn about them, see [Create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription.md" >}}))
+3.  For this exercise, leave the remaining options at their default values.  (To learn about them, see [Create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription.md" >}}).)
 
 4.  Locate the **Activate** button near the bottom of the page and then select it.
 
@@ -82,9 +79,9 @@ Next, we create a database.
 
 At this point, you're at the View Database screen for your new database.  
 
-To connect to your database, you need three pieces of information:
+To connect to your database, you need the following info:
 
-- The public endpoint for your database.
+- The public endpoint for your database
 - The port number
 - The database password
 
@@ -94,13 +91,11 @@ These are available in the **Configuration** details of the **View Database** sc
 
 - The **Access Control & Security** setting shows a masked **Default Password**.  Use **Password** button to show or hide the password.  
 
-    (Fixed, Flexible, and Annual plans help you secure your databases in a variety of ways, including IP address restriction, role-based-access-controls and more.)
-
 Once you have the connection details, you can connect in a variety of ways, including:
 
--- Using the redis-cli utility 
+- Using the `redis-cli` utility 
 
--- Using a connection client from your preferred programming language
+- Using a [connection client](https://redis.io/clients) for your preferred programming language
 
 Here's an example of each.
 
@@ -108,69 +103,65 @@ Here's an example of each.
 
 The `redis-cli` utility is installed when you install Redis.  
 
-Docker provides a covenient way to run `redis-cli` without through the full installation experience.
+Docker provides a covenient way to run `redis-cli` without the full installation experience.
 
 When you run the `redis` Docker image, you can open a bash shell instance and run `redis-cli` from the container.
 
 1.  To begin, pull the `redis` docker image and run it with default options:
 
     ``` sh
-% docker pull redis
-% docker run -d --name redis1 redis
-% docker exec -it redis1 bash
+    % docker pull redis
+    % docker run -d --name redis1 redis
+    % docker exec -it redis1 bash
     ```
 
 2.  This gives you a bash prompt running within your Docker image.  From here, you can connect to your database:
 
     ``` sh
-# redis-cli -h <endpoint> -p <port> -a <password>
-xxx:yyy> 
+    # redis-cli -h <endpoint> -p <port> -a <password>
+    xxx:yyy> 
     ```
 
     Replace `<endpoint>`, `<port>`, and `<password>` with the details copied from the **View Database** screen.
 
-3.  You should now be connectd to your database and can perform basic Redis commands:
+3.  You should now be connectde to your database and can perform basic Redis commands:
 
     ``` sh
-xxx:yyy> ping
-PONG
-xxx:yyy> set hello world
-OK
-xxx:yyy> get hello
-"world"
+    xxx:yyy> ping
+    PONG
+    xxx:yyy> set hello world
+    OK
+    xxx:yyy> get hello
+    "world"
     ```
 
 ### Programming language (Python)
 
 Different programming languages use different clients to interact with Redis databases.
 
-Here's how to connect to your database using a client for Python
+Here's how to connect to your database using a client for Python.
 
-1.  if you don't already have the client:
+1.  If you don't already have the client installed:
 
-```sh
-sudo pip install redis-client
-```
+    ```sh
+    sudo pip install redis-client
+    ```
 
 2.  The specific syntax vries according to the client:
 
     ```python
-# import the library
-import redis-client
-# Create connection object
-r = redis.Redis(host='<endpoint>', port=<port>, password='<password>')
-# set a value for an object
-r.set('hello', 'world')
-# retrieve and print the value for the  object
-print(r.get('hello'))
+    import redis-client
+    r = redis.Redis(host='<endpoint>', port=<port>, password='<password>')
+    r.set('hello', 'world')
+    print(r.get('hello'))
     ```
+    
+3.  Now, run the code:
 
-Now run the code:
-
-```sh
-$ python example_redis.py
-bar
-```
+    ```sh
+    $ python example_redis.py
+    bar
+    ```
 
 
 
