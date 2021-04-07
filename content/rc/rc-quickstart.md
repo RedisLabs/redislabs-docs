@@ -20,7 +20,7 @@ You'll learn how to:
 
 3.  Connect to your database
 
-If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/subscriptions/" >}})) and [Manage databases]({{< relref "/rc/databases/" >}}).
+If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/subscriptions/" >}}) and [Manage databases]({{< relref "/rc/databases/" >}}).
 
 ## Create a subscription
 
