@@ -6,6 +6,8 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/delete-crdb/
 ---
+When you delete a database, the database configuration and data are deleted.<!--more-->
+
 To delete a database in Redis Enterprise Software:
 
 1. Click the relevant database row in the **Databases** page. The

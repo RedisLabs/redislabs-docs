@@ -6,8 +6,6 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-## What is Redis Enterprise?
-
 [Redis Enterprise](https://redislabs.com/redis-enterprise/) is a robust, in-memory database platform built by the same people who develop open source Redis.
 It maintains the simplicity and high performance of Redis and adds many enterprise-grade capabilities, including:
 
@@ -16,7 +14,7 @@ It maintains the simplicity and high performance of Redis and adds many enterpri
 - Redis on Flash to support large datasets while minimizing infrastructure costs
 - 99.999% uptime
 
-### Software vs. Cloud
+## Software vs. Cloud
 
 Redis Enterprise is available as software and as a hosted [cloud service]({{< relref "/rc/_index.md" >}}).
 
@@ -70,7 +68,7 @@ If a node fails, the data is seamlessly served from a replacement node in the cl
 Redis Enterprise can automatically handle node failures, Redis process failures, and proxy failures.
 Failover typically completes within a few seconds.
 
-[Learn more about High Availability in RS]({{< relref "/rs/concepts/high-availability/_index.md" >}}).
+[Learn more about High Availability]({{< relref "/rs/concepts/high-availability/_index.md" >}}).
 
 {{< youtube qIZuW_8bPtQ >}}
 

@@ -9,12 +9,16 @@ aliases:
 
 To deploy Redis Enterprise Software on Kubernetes, you first need to install the Redis Enterprise Operator. The best way to install the operator depends on your Kubernetes environment.
 
+This quick start guide is for generic Kubernetes distributions ([kOps](https://kops.sigs.k8s.io)) as well as:
+
+ * [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/) (AKS)
+ * [Rancher](https://rancher.com/products/rancher/) / [Rancher Kubernetes Engine](https://rancher.com/products/rke/) (RKE)
+ * [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) (GKE)
+
 If you're running either OpenShift or VMWare Tanzu, we provide specific getting started guides for installing the Redis Enterprise Operator on these platforms:
 
 * [Redis Enterprise on OpenShift]({{< relref "/platforms/kubernetes/getting-started/openshift/_index.md" >}})
 * [Redis Enterprise on VMWare Tanzu]({{< relref "/platforms/kubernetes/getting-started/tanzu/_index.md" >}})
-
-For all other Kubernetes deployments, continue reading this guide.
 
 ## Operator overview {#overview}
 

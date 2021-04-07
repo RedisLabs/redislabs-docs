@@ -132,26 +132,35 @@ before running through the upgrade process.
 
 - **Issue**: Connecting from a client to a database endpoint with
     mixed upper case and lower case letters can result in a slow
-    response from the database.**Workaround**: The cluster name (FQDN)
+    response from the database.
+    
+    **Workaround**: The cluster name (FQDN)
     should consist of only lower-case letters. When connecting from a
     client to a database endpoint, only lower case letters should be
     used in the endpoint.
+
 - **Issue**: When upgrading a node to a new RLEC version (refer to
     [Upgrading
     nodes]({{< relref "/rs/installing-upgrading/upgrading.md" >}})
     while the node is in the offline state (refer to [Taking a node
     offline]({{< relref "/rs/administering/cluster-operations/removing-node.md" >}}),
     the upgrade process succeeds but might result in an unstable
-    cluster.**Workaround**: Do not try to upgrade a node while it is in
+    cluster.
+    
+    **Workaround**: Do not try to upgrade a node while it is in
     the offline state.
+
 - **Issue**: In Red Hat Enterprise Linux, and CentOS operating
     systems, the process used for cleaning up internal log files does
     not work, thereby allowing the log files to grow and possibly result
-    in disk space issues.**Workaround**: On each machine that functions
+    in disk space issues.
+    
+    **Workaround**: On each machine that functions
     as a node in the cluster, create a file named "redislabs", and save
     it in the following location: "/etc/logrotate.d/" (e.g.
     "/etc/logrotate.d/redislabs").
     The file should contain the following text:
+    ```
     /var/opt/redislabs/log/\*.log {
     daily
     missingok
@@ -160,38 +169,50 @@ before running through the upgrade process.
     compress
     notifempty
     }
+    ```
     The file's permissions should be root:root, 644.
     Afterwards, from the operating system command line interface (CLI)
     run the following commands:
+    ```
     yum install policycoreutils-python
     semanage fcontext -a -t var_log_t '/var/opt/redislabs/log(/.\*)?'
     restsorecon -R /var/opt/redislabs/log
+    ```
+
 - **Issue**: In the Replica Of process, if the target database does
     not have replication enabled and it is restarted or fails for any
     reason, the data on target database might not be in sync with the
     source database, although the status of the Replica Of process
-    indicates it is.**Workaround**: You need to manually stop and
+    indicates it is.
+    
+    **Workaround**: You need to manually stop and
     restart the synchronization process in order to ensure the databases
     are in sync.
+
 - **Issue**: In the Replica Of process, if the source database is
     resharded while the replica of process is active, the
-    synchronization process will fail.**Workaround**: You need to
+    synchronization process will fail.
+    
+    **Workaround**: You need to
     manually stop and restart the synchronization process after
     resharding of the source database is done.
-- **Issue**: In the replica of process, if there is very high traffic
-    on the database the replica of process might be restarted frequently
-    as result of the "slave buffer" being exceeded. In this case you see
+- **Issue**: In the replica of process, high database traffic might restart the Replica of process as result of the "slave buffer" being exceeded. In this case you see
     the status of the replica of process as "Syncing"
-    frequently.**Workaround**: You need to manually reconfigure the
+    frequently.
+    
+    **Workaround**: You need to manually reconfigure the
     "slave buffer" through rladmin and set the buffer size to a new
     size. In order to find the appropriate buffer size please contact
     support at: <support@redislabs.com>.
+
 - **Issue**: In a cluster that is configured to support rack-zone
     awareness, if the user forces migration of a master or slave shard,
     through rladmin, to a node on the same rack-zone as its
     corresponding master or slave shard, and later runs the rebalance
     process, the rebalance process will not migrate the shards to ensure
-    rack-zone awareness compliance.**Workaround**: In the scenario
+    rack-zone awareness compliance.
+    
+    **Workaround**: In the scenario
     described above, you need to manually migrate the shard, through
     rladmin, to a node on a valid rack-zone in order to ensure rack-zone
     awareness

@@ -1,6 +1,6 @@
 ---
-Title: Managing API Keys
-description: Managing API Keys using the Redis Cloud Admin Console
+Title: Manage API Keys
+description: Managing API Keys using the Redis Cloud admin console
 weight: 30
 alwaysopen: false
 categories: ["RC"]

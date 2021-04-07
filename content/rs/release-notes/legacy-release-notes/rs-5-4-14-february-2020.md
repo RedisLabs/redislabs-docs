@@ -25,7 +25,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 ## Additional capabilities
 
 - Added the ability to retrieve license details with a REST API command.
-    Now you can get your license details from the web UI (settings > general) or from the REST API command:
+    Now you can get your license details from the admin console (settings > general) or from the REST API command:
 
     `GET https://localhost:9443/v1/license`
 
@@ -61,7 +61,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 ## Information
 
 - End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle).
-- Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS web UI.
+- Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS admin console.
     If you use a self-signed certificate that does not include this field, [update the self-signed certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 - When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or lower to version RS 5.4.4 or higher:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.

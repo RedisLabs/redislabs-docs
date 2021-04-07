@@ -28,7 +28,7 @@ For databases with Active-Active replication for geo-distributed locations,
 
 To create a new database:
 
-1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the {{< field "db_type" >}}.
+1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the {{< field "db_type" >}}.
 
     By default, the address is: `https://<RS_address>:8443`
 
@@ -107,14 +107,14 @@ If you are creating a Memcached database, enter a username and password for SASL
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/passwords-users-roles.md" >}}) that have access to the database
+        and the [Redis ACLs]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that apply to those connections.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [role]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
-        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that you want the role to have in the database.
+        1. Select the [role]({{ relref "/rs/security/passwords-users-roles.md" }}) that you want to have access to the database.
+        1. Select the [ACL]({{ relref "/rs/security/passwords-users-roles.md#database-access-control" }}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -151,7 +151,7 @@ after the database is created.
     - [**Replica Of**]({{< relref "/rs/administering/creating-databases/create-active-passive.md" >}}) -
     You can make this database a repository for keys from other databases.
 
-    - [**TLS**]({{< relref "/rs/administering/designing-production/security/tls-configuration.md" >}}) -
+- [**TLS**]({{< relref "/rs/security/tls-ssl.md" >}}) -
     You can require TLS encryption and authentication for all communications,
     TLS encryption and authentication for Replica Of communication only, and TLS authentication for clients.
 
@@ -172,7 +172,7 @@ after the database is created.
 ## Simple connectivity test
 
 Once the database is created, you can find the endpoint and port for the
-database in the web UI on the configuration page of each database. It is
+database in the admin console on the configuration page of each database. It is
 listed under the "Endpoint" property
 
 There are a few simple ways to check connectivity to your database:

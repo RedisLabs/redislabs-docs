@@ -47,7 +47,7 @@ Databases provide various approaches to address some of these concerns:
     distributions, all writes go to an active cluster. Redis Enterprise
     provides a "Replica Of" capability that provides a similar approach.
     This can be employed when the workload is heavily balanced towards
-    read and very few writes. However, WAN performance and availability
+    read and few writes. However, WAN performance and availability
     is quite flaky and traveling large distances for writes take away
     from application performance and availability.
 - Two-phase Commit (2PC): This approach is designed around a protocol
@@ -87,7 +87,7 @@ Redis Enterprise Software.
 
 ## Compatibility
 
-Active-Active databases act very much like a standard Redis database except a few
+Active-Active databases behave like standard Redis databases, except for a few
 differences:
 
 - Active-Active databases in this version support all major Redis data types. See the
