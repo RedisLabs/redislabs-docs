@@ -29,7 +29,7 @@ This opens the **View Database** screen.
 
 {{<image filename="images/rc/database-view-configuration.png" width="75%" alt="The Configuration tab of the View Database screen." >}}{{< /image >}}
 
-The View Database screen lets you review the configuration details of a database, graphs showing performance metrics, and a "slowlog" of recent actions. 
+The **View Database** screen lets you review the configuration details of a database, graphs showing performance metrics, and a "slowlog" of recent actions. 
 
 ## Configuration details
 
@@ -62,13 +62,13 @@ The icons along the top of the **View Database** screen let you perform actions 
 
 | _Icon_ | _Descrition_ |
 |:------:|:-------------|
-| ![Edit](/images/rc/icon_edit.png#no-click "Add") | Edit the database |
-| ![Delete](/images/rc/icon_delete.png#no-click "Delete") | Delete the database.  Note: you have to empty a database before you can delete it. |
-| ![Import](/images/rc/icon_import.png#no-click "import") | [import data]({{< relref "/rc/how-to/importing-data.md" >}}) | 
-| ![Backup](/images/rc/icon_backup.png#no-click "Backup") | [Backup data]({{< relref "/rc/administration/configuration/backups.md" >}}) | 
-| ![Syncing](/images/rc/icon_sync.png#no-click "Syncing") | _(Replica databases only)_ Data is syncing to other databases. | 
-| ![Active](/images/rc/icon_active.png#no-click "Active") | The database is active and available for input. | 
-| ![Pending](/images/rs/icon_pending.png#no-click "Pending") | The database is being updated and not available for input. | 
+| ![Edit](/images/rc/icon-edit.png#no-click "Add") | Edit the database |
+| ![Delete](/images/rc/icon-delete-blue-box.png#no-click "Delete") | Delete the database.  Note: you have to empty a database before you can delete it. |
+| ![Import](/images/rc/icon-import.png#no-click "import") | [import data]({{< relref "/rc/how-to/importing-data.md" >}}) | 
+| ![Backup](/images/rc/icon-refresh.png#no-click "Backup") | [Backup data]({{< relref "/rc/administration/configuration/backups.md" >}}) | 
+| ![Syncing](/images/rc/icon-sync-data.png#no-click "Syncing") | _(Replica databases only)_ Data is syncing to other databases. | 
+| ![Active](/images/rc/icon-active.png#no-click "Active") | The database is active and available for input. | 
+| ![Pending](/images/rc/icon-pending.png#no-click "Pending") | The database is being updated and is not available for input. | 
 
 The **View Database** screen also has tabs that let you view:
 

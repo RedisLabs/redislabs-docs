@@ -13,7 +13,7 @@ To view the details of a Flexible subscription:
 
 1.  Select the subscription you wish to view.
 
-    {{<image filename="images/rc/subscription-view-flexible.png" width="75%" alt="Select the target subscription from the list." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-view-flexible.png" width="75%" alt="The View Subscription screen for Flexible subscriptions." >}}{{< /image >}}
 
 Two tabs are available:
 
