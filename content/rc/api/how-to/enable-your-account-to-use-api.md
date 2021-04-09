@@ -5,6 +5,7 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/enable-your-account-to-use-api/
+         /rc/api/how-to/enable-your-account-to-use-api/
 ---
 
 If you have a Flexible (or Annual) Redis Enterprise Cloud subscription, you can use a REST API to manage your subscription programmatically.

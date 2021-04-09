@@ -4,43 +4,47 @@ description: API requests follow specific lifecycle phases and states, based on 
 weight: 20
 alwaysopen: false
 categories: ["RC"]
+linktitle: Process and provisioning
 aliases: /rv/api/concepts/provisioning-lifecycle/
 ---
-The RC Pro REST API can run operations that use many resources, including multiple servers, services and related infrastructure.
-These operations include CREATE, UPDATE and DELETE operations on Subscriptions, Databases and other entities.
-As a result, these operations can take several minutes to process and complete.
 
-The API asynchronously processes and provisions these operations to improve performance.
-The API responds to the request with a task identifier that you can use to track the progress of the request through the phases of the asynchronous operation.
+Flexible and Annual Redis Enterprise Cloud subscriptions can leverage a RESTful API that permits operations against a variety of resources, including servers, services, and related infrastructure.
 
-For operations that do not create or modify resources, such as most GET operations, the API uses standard synchronous HTTP request-response.
+{{< note >}}
+The REST API is not supported for Fixed or Free subscriptions.
+{{< /note >}}
 
-The API uses two phases in response to a request that requires asynchronous processing: processing and provisioning
+[Once it's enabled]({{< relref "/rc/api/how-to/enable-your-account-to-use-api.md" >}}), you can use the REST API to create, update, and delete sybscriptions, databases, and other entities.
+
+API operations run asynchronously, which means that provisioning occurs in the background.  When you submit a request, a background process starts working on it.  The respose object includes an ID that lets you determine the status of the background process as it performs its work.
+
+For operations that do not create or modify resources (such as most GET operations), the API is sychronous; that is, the response object reports the results of the request.
+
+Asyncronous processes have two phases: processing and provisioning
 
 ![processing-and-provisioning](/images/rv/api/processing-and-provisioning.png)
 
 ## Task processing
 
-During this phase, the request is received, evaluated, planned and executed.
+During this phase, the request is received, evaluated, planned, and executed.
 
 ### Tracking requests using tasks
 
-When you request an asynchronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.
-The `taskId` is a unique identifier that allows you to track the progress of the requested operation and get information on its state.
+When you request an asynchronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.  This unique ID lets you track the progress of the requested operation and get information on its state.
 
-You can query the `taskId` to track the state of a specific task:
+Use `taskId` to track the state of a specific task:
 
 ```shell
 {{% embed-code "rv/api/20-get-task-id.sh" %}}
 ```
 
-In this example, the `$TASK_ID` variable is set to hold the value of `taskId`. For example:
+Here, the `$TASK_ID` variable contins the ID.  For example:
 
 ```bash
 TASK_ID=166d7f69-f35b-41ed-9128-7d753b642d63
 ```
 
-You can also query the state of all active tasks or recently completed tasks in your account:
+You can also request that state of all active or recently completed account tasks:
 
 ```shell
 {{% embed-code "rv/api/30-get-all-tasks.sh" %}}
