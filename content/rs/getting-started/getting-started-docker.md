@@ -128,13 +128,13 @@ to the database port number, and store and retrieve a key in database1.
 
 ```sh
 $ /opt/redislabs/bin/redis-cli -p 12000
-127.0.0.1:16653> set key1 123
+127.0.0.1:12000> set key1 123
 OK
-127.0.0.1:16653> get key1
+127.0.0.1:12000> get key1
 "123"
 ```
 
-### Connecting using _Hello World_ application in Python
+### Connecting using _Sample Test_ application in Python
 
 A simple python application running on the **host machine**, not the
 container, can also connect to database1.
