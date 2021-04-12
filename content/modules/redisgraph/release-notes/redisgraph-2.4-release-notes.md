@@ -1,7 +1,7 @@
 ---
-Title: RedisGraph 2.2 Release Notes
+Title: RedisGraph 2.4 Release Notes
 description:
-weight: 97
+weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
