@@ -1,7 +1,7 @@
 ---
-Title: Creating a Database
+Title: Create a database
 description:
-weight: 50
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/setup_and_editing/create-databases/
@@ -38,7 +38,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
         and select the endpoint of a database to hold a copy of the data.
 
         {{< note >}}
-You must configure [VPC Peering]({{< relref "/rc/administration/setup/edit-subscription#vpc-peering" >}})
+You must configure [VPC Peering]({{< relref "/rc/security/vpc-peering.md" >}})
 between the VPC that this database is on and the VPC that the destination database is on.
         {{< /note >}}
 
@@ -52,7 +52,7 @@ between the VPC that this database is on and the VPC that the destination databa
                 the generated certificate.
             - Paste the certificate for your client.
     - **Data Eviction Policy** - Select a policy for evicting data when the memory limit is reached.
-    - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/administration/configuration/backups.md" >}}) location.
+    - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/databases/back-up-data.md" >}}) location.
     - **Modules** - Enable modules and select the module to use with the database.
 
         - For applications that require high-throughput, use a Redis Cloud Pro subscription.
