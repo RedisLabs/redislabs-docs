@@ -44,7 +44,7 @@ Once a subscription has been created, only a few details can be changed, includi
 
 - **Name** associated with the description.
 - **Payment method** (paid plans only).
-- Plan tier, which changes the maximum memory, the nuber of databases, and [other options]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}}).
+- Plan tier, which changes the maximum memory, the number of databases, and [other options]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}}).
 
 To change the name or payment method, select the **Edit** icon ({{<image filename="images/rc/icon_edit.png" width="24px" alt="The Edit icon" >}}{{< /image >}}) and then update the info.
 
@@ -70,6 +70,6 @@ When you change your plan tier, your data and endpoints are not disrupted.
 
 If you upgrade a free plan to a paid tier, you need to add a payment method.
 
-If you change your subscription to a lower tier, make sure your data (and databases) fit within the limits of the new tier; otherwise, the change attempt fails.
+If you change your subscription to a lower tier, make sure your data (and databases) fit within the limits of the new tier; otherwise, the change attempt will fail.
 
 

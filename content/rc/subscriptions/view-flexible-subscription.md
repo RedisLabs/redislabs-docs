@@ -23,12 +23,12 @@ Two tabs are available:
     
     | _Detail_ | _Description_ |
     |:---------|:--------------|
-    | **Subscription name** | A descriptive name for the plan.  Can be changed at any time. |
+    | **Subscription name** | A descriptive name for the plan; can be changed at any time.|
     | **Runs on** | Either _RAM_ or _RAM+Flash_ |
-    | **Cloud account** | (_AWS only_) Descriptive name of the associated cloud account.  Useful for organizations that manage [multiple accounts]({{<relref "/rc/how-to/view-edit-cloud-account.md">}}). |
-    | **Cloud** | Describes the subscription cloud provider. |
-    | **Region** | Deployment region details. | 
-    | **Multi-AZ** | Indicates whether replication is deployed across multiple availability zones within the region. |
+    | **Cloud account** | (_AWS only_) Descriptive name of the associated cloud account (Useful for organizations that manage [multiple accounts]({{<relref "/rc/how-to/view-edit-cloud-account.md">}})) |
+    | **Cloud** | Describes the subscription cloud provider |
+    | **Region** | Deployment region details | 
+    | **Multi-AZ** | Indicates whether replication is deployed across multiple availability zones within the region |
     
     The **Cost Esimate** section describes the shards required to deply the subscription based on the choices made when the subscription was created.  
     

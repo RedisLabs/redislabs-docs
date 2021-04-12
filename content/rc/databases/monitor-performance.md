@@ -11,7 +11,7 @@ aliases: /rv/administration/configuration/monitoring-performance/
          /rc/databases/monitor-performance/
 ---
 
-Redis Enterprise Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance passes defined threshholds.
+Redis Enterprise Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined threshholds.
 
 ##  View database metrics
 
@@ -38,13 +38,6 @@ When you use the mouse to point to a smaller graph, three things appear:
 
 Use the promotion icons to promote the smaller graph to one of the primary positions. The left icon promotes the smaller graph to the left position and the right icon promotes the smaller graph to the right position.
 
-
-
-<!-- Video out of date
-For a quick tour of what you get, watch this video. -->
-
-<!-- {{< youtube GYpVYilv5u4 >}} -->
-
 ## Definition of each metric
 
 Several metric graphs are available:
@@ -66,8 +59,7 @@ Several metric graphs are available:
 | Expired Objects/sec | Number of expired objects per sec. An expired object is an object with expired TTL that was deleted from the database. |
 | Hit Ratio (percentage) | The number of operations on existing keys divided by total database operations. |
 
-For more detailed analysis, consider tools similar to [Redsmin](https://www.redsmin.com/) or [New
-Relic](https://newrelic.com/plugins/poison-pen-llc/28).  To learn more, [Secure Redis: SSL Added to Redsmin and Clients](https://redislabs.com/blog/secure-redis-ssl-added-to-redsmin-and-clients).
+For more detailed analysis, consider tools similar to [RedisInsight]({{< relref "/ri/" >}}).
 
 ## Configure metric alerts
 

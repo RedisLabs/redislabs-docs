@@ -20,4 +20,4 @@ To delete a subscription:
 
 Once a subscription is deleted, it cannot be recovered.
 
-We recommend backing up data before removing it.
+We recommend backing up your data before removing databases or subscriptions.

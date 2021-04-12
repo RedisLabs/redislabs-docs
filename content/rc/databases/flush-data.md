@@ -6,13 +6,13 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-When you _flush_ a database, you remove all data.  This is a pre-requisite to deleting a database.
+When you _flush_ a database, you remove all data.  This is a prerequisite to deleting a database.
 
 As you might expect, flushing a database _permanently_ removes all data.  The data cannot be recovered, except from backups made before flushing.
 
 Consequently, we _strongly_ recommend backing up databases before flushing them.
 
-## Use Redis-CLI to flus data
+## Use Redis-CLI to flush data
 
 To flush data from a database:
 

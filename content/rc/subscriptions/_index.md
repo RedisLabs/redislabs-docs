@@ -41,9 +41,6 @@ Here's a quick comparison:
 
 To learn more, see [Redis Enterprise Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing/).
 
-
-The folowing links links help with other tasks:
-
 ## Common tasks
 
 Create a new subscription:

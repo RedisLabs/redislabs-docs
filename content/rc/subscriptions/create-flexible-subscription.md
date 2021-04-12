@@ -102,7 +102,7 @@ After defining the databases for your subscription, select the **Next** button t
 
 ## Review and Create tab
 
-The **Review & Create** tab provides a cost estimate for your Flexible plan and provides a place to enter payment details:
+The **Review & Create** tab provides a cost estimate for your Flexible plan and lets you enter payment details:
 
 {{<image filename="images/rc/flexible-create-review.png" width="75%" alt="The **Review & Create** tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
