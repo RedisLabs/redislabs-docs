@@ -1,10 +1,12 @@
 ---
 Title: Enable the API
-description: Use the Redis Cloud dashboard to enable the REST API.
+description: Use the Redis Cloud dashboard to enable the REST API.  (Requires a Flexible or Fixed account.)
 weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/enable-your-account-to-use-api/
+         /rc/api/how-to/enable-your-account-to-use-api/
+         /rc/api/enable-the-api/
 ---
 
 If you have a Flexible (or Annual) Redis Enterprise Cloud subscription, you can use a REST API to manage your subscription programmatically.
@@ -29,7 +31,7 @@ To enable the API:
 
     If you see a **Generate** button, select it to generate your key.
 
-The generated key is the API access key. You need combine this with a [secret key]({{< relref "/rc/api/how-to/create-api-keys-for-your-team#secret" >}}) to make API calls.
+The generated key is the API access key. You need combine this with a [secret key]({{< relref "/rc/api/get-started/manage-api-keys.md#secret" >}}) to make API calls.
 
 Only account owners can see the access key in the account settings.
 
@@ -37,4 +39,4 @@ Only account owners can see the access key in the account settings.
 Make sure that you keep your access keys secret. Anyone who sends an API request with a valid access key can make changes to your account.
 {{< /warning >}}
 
-To further manage your API keys and limit usage by subnet, see [Manage API keys]({{< relref "/rc/api/how-to/manage-api-keys.md" >}}).
+To further manage your API keys and limit usage by subnet, see [Manage API keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}}).

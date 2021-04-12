@@ -1,13 +1,17 @@
 ---
 Title: Create and manage Subscriptions
 description: This article describes how to create and manage a subscription using `cURL` commands.
-weight: 60
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-subscriptions/
+         /rs/api/how-to/create-and-manage-subscriptions/
+         /rs/api/example/manage-subscriptions/
 ---
-You can use `cURL` commands to create and manage a subscriptions
-with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).
+
+You can use the Redis Enterprise Cloud REST API to create and manage subscriptions.
+
+These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api.md#using-the-curl-http-client" >}}); you can use any REST client to work with the Redis Cloud REST API.
 
 ## Create a subscription
 
@@ -18,7 +22,10 @@ When the cloud account ID is received, the processing phase is complete and the 
 
 ### Prerequisites
 
-- Install `jq` on your machine: `sudo apt install jq`
+- These example require `jq`, [a JSON parser](https://stedolan.github.io/jq/).  
+
+    Use your package manager to install it  (Example: `sudo apt install jq`)
+
 - Define the expected variables needed to use the API:
 
 ```shell
@@ -83,7 +90,7 @@ To use the sample JSON document in your own account, you must modify these param
 
 - The JSON document contains 2 primary segments: subscription specification and databases specification.
 - When you create a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file.
-- You can [copy-and-paste]({{< relref  "/rc/api/how-to/using-curl#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
+- You can [copy-and-paste]({{< relref  "/rc/api/get-started/use-rest-api.md#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
 
 {{< note >}}
 The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You can reference these examples and modify them to fit your specific needs and account settings. The examples will fail if used as-is.

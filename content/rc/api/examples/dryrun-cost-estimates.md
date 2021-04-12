@@ -1,7 +1,7 @@
 ---
 Title: Evaluating Cost Before Deployment
 description: How to evaluate the cost of a specific subscription or database without changing existing resources.
-weight: 65
+weight: 50
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/dry-run-cost-evaluations/

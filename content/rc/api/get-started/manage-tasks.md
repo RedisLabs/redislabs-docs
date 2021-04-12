@@ -1,7 +1,8 @@
 ---
-Title: Task Management
+Title: Manage API tasks
+linkTitle: Manage tasks
 description: A task is an API operation that is performed asynchronously because it exceeds the time allowed for the synchronous request/response model.
-weight: 30
+weight: 50
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/concepts/tasks-management/
@@ -19,7 +20,7 @@ All create, update, and delete API operations (`POST`, `PUT` and `DELETE`) and s
 
 After you request an asynchronous operation, the operations returns a `taskId` that identities the specific task, and contains contextual and status data on the API operation performed by the task.
 
-Tasks are part of the API [processing and provisioning lifecycle]({{< relref "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}}).
+Tasks are part of the API [processing and provisioning lifecycle]({{< relref "/rc/api/get-started/process-lifecycle.md#asynchronous-operations" >}}).
 
 ### Task information
 
@@ -47,7 +48,7 @@ Where:
 
 - `taskId` - The unique identifier (UUID) of the specific task
 - `commandType` - The request (command) type
-- `status` - The [status]({{< relref "/rc/api/concepts/provisioning-lifecycle#provisioning-statuses">}}) of the task
+- `status` - The [status]({{< relref "/rc/api/get-started/process-lifecycle.md#provisioning-statuses">}}) of the task
 - `description` - A description of the status
 - `timestamp` - The time of the response in ISO-8601 date format and in the UTC timezone
 - `_links` - URI links to resources related to the task including:
@@ -100,7 +101,7 @@ This response example shows:
 - The `status` value is `"processing-completed"`.
 - The `response` field contains the resource identifier of the subscription resource changed by this task.
 - The `links` array contains another `getSubscriptionInformation` URL that links to the newly created subscription.
-    This link queries the subscription status during [provisioning]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}))
+    This link queries the subscription status during [provisioning]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}))
 
 ### Tasks list
 

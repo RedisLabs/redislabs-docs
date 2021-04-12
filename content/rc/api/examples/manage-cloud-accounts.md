@@ -1,17 +1,21 @@
 ---
 Title: Create and Manage Cloud Accounts
 description: Cloud accounts specify which account to use when creating and modifying infrastructure resources.
-weight: 50
+linkTitle: Manage Cloud accounts
+weight: 80
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-cloud-accounts/
+         /rc/api/how-to/create-and-manage-cloud-accounts/
+         /rc/api/examples/managge-cloud-accounts
 ---
-You can use `cURL` commands to create and manage a cloud account
-with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).
+You can use the Redis Enterprise Cloud REST API to cloud accounts.
+
+These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api.md#using-the-curl-http-client" >}}); you can use any REST client to work with the Redis Cloud REST API.
 
 ## Create a cloud account
 
-The API operation that creates a cloud account is: `POST /cloud-accounts`
+To create a cloud account, use: `POST /cloud-accounts`
 
 The following Linux shell script sends a `POST /cloud-accounts` and waits for a cloud account ID.
 When the cloud account ID is received, the processing phase runs.
@@ -20,7 +24,10 @@ When the cloud account ID is received, the processing phase runs.
 
 Before you use the API to create and manage cloud account, you must:
 
-- Install `jq` on your machine: `sudo apt install jq`
+- These example require `jq`, [a JSON parser](https://stedolan.github.io/jq/).  
+
+    Use your package manager to install it  (Example: `sudo apt install jq`)
+
 - Define the expected variables needed to use the API:
 
 ```shell

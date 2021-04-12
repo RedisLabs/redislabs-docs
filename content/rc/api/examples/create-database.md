@@ -1,30 +1,39 @@
 ---
-Title: Create and manage Databases
+Title: Create and manage databases
 description: This article describes how to create and manage a database using `cURL` commands.
-weight: 70
+linkTitle: Create databases
+weight: 20
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-databases/
+         /rc/api/how-to/create-and-manage-databases/
+         /rc/api/examples/create-database
 ---
-You can use `cURL` commands to create and manage a cloud account
-with the [CURL HTTP client]({{< relref "/rc/api/how-to/using-curl#using-the-curl-http-client" >}}).
+
+You can use the Redis Enterprise Cloud REST API to create databases.
+
+These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest-api.md#using-the-curl-http-client" >}}); you can use any REST client to work with the Redis Cloud REST API.
 
 ## Create a database
 
-The API operation that creates a database is: `POST /subscriptions/{subscription-id}/databases`
+To create a database use `POST /subscriptions/{subscription-id}/databases`
 
-The database is created in an existing or a newly created subscription.
+The database is created in an existing or a newly-created subscription.
+
 When a subscription is created, it is created with at least one database.
-You can add more databases to the subscription, and you can update or delete existing databases.
 
-Creating a database is an [asynchronous operation]({{< relref "/rc/api/concepts/provisioning-lifecycle#asynchronous-operations" >}}).
+You can add databases to the subscription; you can also update or delete existing databases.
 
-The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a cloud account ID.
-When the cloud account ID is received, the processing phase is complete and the provisioning phase starts.
+Creating a database is an [asynchronous operation]({{< relref "/rc/api/get-started/process-lifecycle.md#asynchronous-operations" >}}).
+
+The following Linux shell script sends a `POST /subscriptions/{subscription-id}/databases` and waits for a cloud account ID.  When the cloud account ID is received, the processing phase is complete and the provisioning phase starts.
 
 ### Prerequisites
 
-- Install `jq` on your machine: `sudo apt install jq`
+- These example require `jq`, [a JSON parser](https://stedolan.github.io/jq/).  
+
+    Use your package manager to install it  (Example: `sudo apt install jq`)
+
 - Define the expected variables needed to use the API:
 
 ```shell

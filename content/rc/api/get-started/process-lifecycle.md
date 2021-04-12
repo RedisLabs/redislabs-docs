@@ -1,7 +1,7 @@
 ---
 Title: The Processing and Provisioning Lifecycle
 description: API requests follow specific lifecycle phases and states, based on the complexity and length of execution of the operation.
-weight: 20
+weight: 60
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/concepts/provisioning-lifecycle/

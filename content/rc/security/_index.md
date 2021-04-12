@@ -12,7 +12,7 @@ to consider when thinking about security:
 
 - The [admin console]({{<relref "/rc/security/admin-console-security/_index.md">}})
 - [Your databases]({{<relref "/rc/security/database-security/_index.md">}})
-- The [Redis Cloud API]({{<relref "/rc/api/how-to/enable-your-account-to-use-api.md">}})
+- The [Redis Cloud API]({{<relref "/rc/api/get-started/enable-the-api.md">}})
 
 Before digging into all the details, you should review our [shared responsibility model]({{<relref "/rc/security/shared-responsibility-model.md">}}) for security.
 
@@ -30,4 +30,4 @@ IP restrictions and VPC peering.
 
 ## API security
 
-The Redis Enterprise Cloud API allows you to programmatically administer your subscriptions and database deployments. This API is disabled by default. When you [enable the API]({{<relref "/rc/api/how-to/enable-your-account-to-use-api.md">}}), you can then [manage the API keys]({{<relref "/rc/api/how-to/manage-api-keys.md">}}) for all owners of your Redis Cloud account. For an overview of the security features of the API, see the [API authentication documentation]({{<relref "/rc/api/concepts/authentication-and-authorization.md">}}).
+The Redis Enterprise Cloud API allows you to programmatically administer your subscriptions and database deployments. This API is disabled by default. When you [enable the API]({{<relref "/rc/api/get-started/enable-the-api.md">}}), you can then [manage the API keys]({{<relref "/rc/api/get-started/manage-api-keys.md">}}) for all owners of your Redis Cloud account. For an overview of the security features of the API, see the [API authentication documentation]({{<relref "/rc/api/get-started/_index.md">}}).

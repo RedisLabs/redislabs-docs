@@ -1,7 +1,7 @@
 ---
 Title: View Account Information
 description: Get initial information on account parameters
-weight: 110
+weight: 70
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/view-account-information/
