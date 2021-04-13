@@ -124,7 +124,6 @@ rladmin bind
 | cm_session_timeout | Timeout (in minutes) for the CM session |
 | cmn_http_port | HTTP REST API server listening port |
 | cnm_https_port | HTTPS REST API server listening port |
-| data_cipher_list | Cipher suites used by the data plane |
 | debuginfo_path | Path to local directory to place file when generating support packages |
 | handle_redirects | Enable or disable handling DNS redirects when DNS is not configured and running behind a load balancer |
 | http_support | Enable or disable using HTTP for REST API connections (info cluster) |

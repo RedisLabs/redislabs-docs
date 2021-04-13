@@ -190,9 +190,7 @@ See the example below to configure cipher suites for the sentinel service:
 rladmin cluster config sentinel_cipher_suites TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 ```
 
-{{note}}
 When you modify your cipher suites, make sure that:
 
 - The configured TLS version matches the required cipher suites
 - The certificates in use are properly signed to support the required cipher suites
-{{/note}}
