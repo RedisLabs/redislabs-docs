@@ -91,7 +91,7 @@ rladmin bind
 
 ```text
  rladmin cluster config 
-        [ cipher_suites <openSSL_cipher_list> ]
+        [ cipher_suites <BoringSSL_cipher_list> ]
         [ cm_port <number> ]
         [ cm_session_timeout <minutes> ]
         [ cnm_http_port <number> ]
@@ -106,7 +106,6 @@ rladmin bind
         [ min_sentinel_TLS_version <sentinel_tls_version> ]
         [ s3_url <url> ]
         [ saslauthd_ldap_conf </tmp/ldap.conf> ]
-        [ control_cipher_suites <BoringSSL_cipher_list> ]
         [ sentinel_ssl_policy <allowed/required/disabled> ]
         [ data_cipher_list <openSSL_cipher_list> ]
         [ sentinel_cipher_suites <golang_cipher_list>]
@@ -120,7 +119,7 @@ rladmin bind
 
 | Optional Parameter | Description |
 | - | - |
-| cipher_suites | Cipher suite used for TLS connections to the admin console |
+| cipher_suites | Cipher suite used for TLS connections to the admin console; specified in the format understood by the BoringSSL library |
 | cm_port | Ui server listening port |
 | cm_session_timeout | Timeout (in minutes) for the CM session |
 | cmn_http_port | HTTP REST API server listening port |
@@ -135,7 +134,6 @@ rladmin bind
 | min_sentinel_TLS_version |  |
 | s3_url | The URL of S3 export and import |
 | saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Cluster-based LDAP Authentication]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/content/platforms/kubernetes/tasks/ldap-on-k8s.md" >}})) |
-|control_cipher_suites | Cipher suites used by the control plane; specified in the format understood by the BoringSSL library |
 | data_cipher_list | Cipher suites used by the the data plane; specified in the format understood by the OpenSSL library |
 | sentinel_cipher_suites | Cipher suites used by the sentinel service (supported ciphers are implemented by the [golang.org cipher suites package](https://golang.org/src/crypto/tls/cipher_suites.go)) |
 | sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
