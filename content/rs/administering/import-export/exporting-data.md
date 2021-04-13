@@ -1,6 +1,6 @@
 ---
-Title: Exporting Data From a Database
-description:
+Title: Export data from a database
+description: You can export data to import it into a new database or to make a backup.  This article shows how to do so.
 weight: 60
 alwaysopen: false
 categories: ["RS"]
@@ -8,7 +8,7 @@ aliases: /rs/administering/import-export/exporting-data/
         /rs/administering/database-operations/exporting-data/
 ---
 You can [schedule backups]({{< relref "/rs/administering/import-export/exporting-data.md" >}})
-of a specific Redis Enterprise Software (RS) database to make sure you always have valid backups.
+of a specific Redis Enterprise Software database to make sure you always have valid backups.
 You can also export the data from a specific database at any time.
 
 You can export a database to these locations:
@@ -21,7 +21,7 @@ You can export a database to these locations:
 - Azure Blob Storage
 - Google Cloud Storage
 
-The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
+{{comment}}The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
 If you backup a database configured for database clustering,
 RS copies a backup file for each shard to the specified backup location.
 
@@ -29,8 +29,9 @@ RS copies a backup file for each shard to the specified backup location.
 Make sure that you have enough space available in your storage location.
 If there is not enough space in the backup location, the backup fails.
 {{< /note >}}
+{{/comment}}
 
-## Exporting data from a database
+## Export data from a database
 
 To export data from a database:
 
