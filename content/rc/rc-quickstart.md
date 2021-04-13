@@ -144,13 +144,13 @@ Here's how to connect to your database using a client for Python.
 1.  If you don't already have the client installed:
 
     ```sh
-    sudo pip install redis-client
+    sudo pip install redis
     ```
 
 2.  The specific syntax vries according to the client:
 
     ```python
-    import redis-client
+    import redis
     r = redis.Redis(host='<endpoint>', port=<port>, password='<password>')
     r.set('hello', 'world')
     print(r.get('hello'))
