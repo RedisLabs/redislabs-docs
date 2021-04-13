@@ -30,7 +30,7 @@ where synchronization catches up to distribute all local member Active-Active da
 updates to other participating clusters and other member Active-Active databases.
 
 |  **Time** | **Member CRDB1** | **Member CRDB2** |
-|  ------: | :------: | :------: |
+|  :------: | :------: | :------: |
 |  t1 | INCRBY key1 7 |  |
 |  t2 |  | INCRBY key1 3 |
 |  t3 | GET key1<br/>7 | GET key1<br/>3 |
@@ -112,10 +112,11 @@ followed by descriptions:
 
 | **Data Type** | **Support Level** |
 |------------|-----------------|
-| Float Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-data-type-with-counter-value-in-crdbs" >}}) |
+| Bitfield | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
+| Float Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-counter-support" >}}) |
 | Geospatial | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
 | Hashes | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hashes-active-active.md" >}}); Hash fields are treated as strings or counters |
-| Integer Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-data-type-with-counter-value-in-crdbs" >}}) |
+| Integer Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-counter-support" >}}) |
 | Lists | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-lists-active-active.md" >}}) |
 | Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sets-active-active.md" >}}) |
 | Strings | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
