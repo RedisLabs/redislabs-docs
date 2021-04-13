@@ -5,6 +5,8 @@ weight: 51
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/security
+         /rs/administering/designing-production/security/
+
 ---
 Redis Enterprise Cloud provides a number of ways to secure subscription and databases.
 
