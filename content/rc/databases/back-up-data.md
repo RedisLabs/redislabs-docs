@@ -11,6 +11,7 @@ aliases: [ "/rv/administration/configure/backups/",
            "/rc/administration/configuration/backups.md", 
            "/rc/administration/configuration/backups/",
            "/rc/databases/backups/" ]
+
 ---
 
 The back up process for Redis Enterprise Cloud data depends on your plan:
