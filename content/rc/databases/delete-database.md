@@ -1,7 +1,7 @@
 ---
-Title: Deleting a Database
+Title: Delete a database
 description:
-weight: 70
+weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/delete-databases/
@@ -18,8 +18,12 @@ because after you delete the database it cannot be recovered (except from your b
 
 ## Deleting a database
 
-1. Go to the **Databases** page from the Redis Cloud menu.
-1. Click on the database you wish to delete from the list of your databases.
-1. Click on the trash can icon next to **View Database**.
-1. Click **Delete** to confirm that you want to delete the database.
-    The database and all of its data and configurations is now deleted.
+1. Use the admin console menu to select the **Databases** command.
+
+1. From the databases list, select the database you want to delete.
+
+1. When the database details appear, select the Delete icon.
+
+1. Confirm your choice.
+
+The database and all of its data and configurations is now deleted.

@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-Redis Cloud supports two types of network security: [IP Restrictions](#ip) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as indicated in the table below:
+Redis Enterprise Cloud supports two types of network security: [IP Restrictions](#ip) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as indicated in the table below:
 
 <table>
 <tbody>
@@ -17,18 +17,18 @@ Redis Cloud supports two types of network security: [IP Restrictions](#ip) and [
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px;">AWS</td>
-<td style="height: 23px;">Pro and Ultimate</td>
-<td style="height: 23px;">Essentials, Pro, and Ultimate</td>
+<td style="height: 23px;">Flexible and Annual</td>
+<td style="height: 23px;">Fixed (paid), Flexible, and Annual</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px;">GCP</td>
-<td style="height: 23px;">Pro and Ultimate</td>
-<td style="height: 23px;">Essentials, Pro, and Ultimate</td>
+<td style="height: 23px;">Flexible and Annual</td>
+<td style="height: 23px;">Fixed (paid), Flexible, and Annual</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px;">Azure</td>
-<td style="height: 23px;">Ultimate</td>
-<td style="height: 23px;">Ultimate</td>
+<td style="height: 23px;">Annual</td>
+<td style="height: 23px;">Annual</td>
 </tr>
 </tbody>
 </table>
@@ -72,7 +72,7 @@ How you create these connections, and the features supported, varies somewhat by
 
 Subscriptions that run on AWS support two VPC options. To ensure that that you can securely connect to your database, you must either [create a VPC peering connection](#creating-a-vpc-peering-connection) or [deploy your subscription in your own VPC](#deploying-in-your-own-vpc).
 
-#### Creating a VPC peering connection
+#### Create a VPC peering connection
 
 Below are instructions for creating a VPC peering connection for AWS. One you've created this connection, you may also want to consider [configuring a CIDR whitelist] to allow connection only from specific IP address blocks or security groups.
 
@@ -117,7 +117,7 @@ Once your VPC peering request is accepted, the status in your subscription's **V
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
 please don't hesitate to [contact Redis Labs support](https://redislabs.com/company/support/).
 
-#### Configuring a CIDR whitelist
+#### Configurea CIDR whitelist
 
 The **CIDR whitelist** defines a range of IP addresses and/or AWS security groups permitted to access
 databases in the Redis Cloud VPC.
@@ -140,27 +140,23 @@ To define the CIDR whitelist:
    1. Add more whitelist entries by clicking ![Add](/images/rs/icon_add.png#no-click "Add").
    1. Or apply the changes to the whitelist by selecting **Apply all changes**.
 
-#### Deploying in your own VPC
+#### Deploy in your own VPC
 
-As an alternative to VPC peering, you can create a subscription directly in your own AWS VPC. You need to do this at the time you create your subscription.
+As an alternative to VPC peering, you can create and deploy a Flexible subscription directly in your own AWS VPC. You need to do this at the time you create your subscription.
 
 1. Navigate to the **New Subscription** page:
 
 ![New Subscription](/images/rc/new-subscription.png "New Subscription")
 
-2. Scroll to the bottom of this page, and under **Customize Your Subscription**, select
-**Build a Plan**.
+2. In the **Flexible plan** section, select the **Create** button.
 
-![Build a Plan](/images/rc/build-a-plan.png "Build a Plan")
+3.  When the Create Custom Subscription screen appears, locate the **Networking** section of the **Setup** tab and then select the option to deploy in an existing VPC.
 
-On the next screen, look for the **Networking** subsection.
+    Next, enter the subnet (**Deployment CIDR**) where you want your subscription deployed and your VPC ID.
 
-![Existing VPC](/images/rc/existing-vpc-networking.png "Existing VPC")
+4.  Fill in the remaining details for your subscription.
 
-For where to deploy the subscription, select **In an existing VPC**. Then enter the subnet (**Deployment CIDR**) where
-you want your subscription deployed and enter your VPC ID.
-
-One your subscription and databases have been provisioned, you'll be able to access those databases directly from within your own VPC.
+Once your subscription and databases have been provisioned, you'll be able to access those databases directly from within your own VPC.
 
 ### VPCs with GCP
 
@@ -191,4 +187,4 @@ please don't hesitate to [contact Redis Labs support](https://redislabs.com/comp
 
 ### VPCs with Azure
 
-When you request a Redis Cloud Ultimate subscription, all databases will be deployed in your own Azure VPC.
+When you request a Redis Cloud Annual subscription, all databases will be deployed in your own Azure VPC.
