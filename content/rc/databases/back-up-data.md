@@ -5,12 +5,13 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 linktitle: Back up data
-aliases: /rv/administration/configure/backups/
-         /rc/administration/configure/backups/
-         /rv/administration/configuration/backups/
-         /rc/administration/configuration/backups/
-         /rc/databases/backups/
-         /rc/administration/configuration/backups.md        
+aliases: [ "/rv/administration/configure/backups/",
+           "/rc/administration/configure/backups/",
+           "/rv/administration/configuration/backups/",
+           "/rc/administration/configuration/backups.md", 
+           "/rc/administration/configuration/backups/",
+           "/rc/databases/backups/" ]
+
 ---
 
 The back up process for Redis Enterprise Cloud data depends on your plan:
