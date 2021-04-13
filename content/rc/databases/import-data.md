@@ -7,8 +7,9 @@ categories: ["RC"]
 linktitle: Import data
 aliases: /rv/how-to/importing-dataset-redis-cloud/
          /rc/how-to/importing-dataset-redis-cloud/
-         /rc/how-to/importing-data-database/
          /rv/how-to/importing-data-database/
+         /rc/how-to/importing-data-database/
+         /rc/how-to/importing-data-database.md
          /rc/databases/import-data/
 ---
 You can import an existing dataset into your Redis Cloud instance from an existing Redis server or an RDB file.

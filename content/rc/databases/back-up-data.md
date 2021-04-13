@@ -8,6 +8,7 @@ linktitle: Back up data
 aliases: /rv/administration/configure/backups/
          /rc/administration/configure/backups/
          /rv/administration/configuration/backups/
+         /rc/administration/configuration/backups/
          /rc/databases/backups/
          /rc/administration/configuration/backups.md        
 ---

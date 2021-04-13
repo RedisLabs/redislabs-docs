@@ -101,9 +101,9 @@ Once you have the connection details, you can connect in a variety of ways, incl
 
 Here's an example of each.
 
-### Using redic-cli (via Docker){#using-rediscli}
+### Using redis-cli (via Docker){#using-rediscli}
 
-The `redis-cli` utility is installed when you install Redis.  
+The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands).
 
 Docker provides a covenient way to run `redis-cli` without the full installation experience.
 
@@ -124,9 +124,9 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
     xxx:yyy> 
     ```
 
-    Replace `<endpoint>`, `<port>`, and `<password>` with the details copied from the **View Database** screen.
+    Replace `<endpoint>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
 
-3.  You should now be connectde to your database and can perform basic Redis commands:
+3.  You should now be connectded to your database and can perform basic Redis commands:
 
     ``` sh
     xxx:yyy> ping
