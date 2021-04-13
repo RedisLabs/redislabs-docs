@@ -5,15 +5,18 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 linktitle: Back up data
-aliases: /rv/administration/configure/backups/
-        /rc/administration/configure/backups/
-        /rv/administration/configuration/backups/
-        /rc/databases/backups/
+aliases: [ "/rv/administration/configure/backups/",
+           "/rc/administration/configure/backups/",
+           "/rv/administration/configuration/backups/",
+           "/rc/administration/configuration/backups.md", 
+           "/rc/administration/configuration/backups/",
+           "/rc/databases/backups/" ]
+
 ---
 
 The back up process for Redis Enterprise Cloud data depends on your plan:
 
-- Flexible and Annual can use the **Backup** icon on the View Database screen or schedule regular backups.
+- Flexible and Annual can use the **Backup** icon on the **View Database** screen or schedule regular backups.
 
 - Paid Fixed plans run scheduled backups every 24 hours.  
 

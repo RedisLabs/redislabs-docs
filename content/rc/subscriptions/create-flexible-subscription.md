@@ -5,6 +5,8 @@ weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/customize-pro/ 
+         /rc/administration/customize-pro.md          
+         /rc/administration/setup/customize-pro/ 
          /rc/administration/setup/customize-pro.md 
          /rc/administration/setup/customize-flexible-plan/
 ---

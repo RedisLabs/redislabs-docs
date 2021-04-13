@@ -71,13 +71,15 @@ Next, we create a database.
 
 4.  Locate the **Activate** button near the bottom of the page and then select it.
 
-5.  You're taken to the Configuration tab of the View Database screen.  In the upper corner, you'll see an orange box containing a rotating circle.  This is the Pending status indicator and it means your database is still being created.
+5.  You're taken to the **Configuration** tab of the **View Database** screen.  In the upper corner, you'll see an orange box containing a rotating circle.  This is the Pending status indicator and it means your database is still being created.
 
-    Admin console operations are asychronous; they operate in the background.  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
+    ![Pending icon](/images/rc/icon-pending.png#no-click "Pending icon") &nbsp; ![Active icon](/images/rc/icon-active.png#no-click "Active icon")
+
+    Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
 
 ## Connect to a database
 
-At this point, you're at the View Database screen for your new database.  
+At this point, you're at the **View Database** screen for your new database.  
 
 To connect to your database, you need the following info:
 
@@ -99,9 +101,9 @@ Once you have the connection details, you can connect in a variety of ways, incl
 
 Here's an example of each.
 
-### Using redic-cli (via Docker){#using-rediscli}
+### Using redis-cli (via Docker){#using-rediscli}
 
-The `redis-cli` utility is installed when you install Redis.  
+The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands).
 
 Docker provides a covenient way to run `redis-cli` without the full installation experience.
 
@@ -122,9 +124,9 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
     xxx:yyy> 
     ```
 
-    Replace `<endpoint>`, `<port>`, and `<password>` with the details copied from the **View Database** screen.
+    Replace `<endpoint>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
 
-3.  You should now be connectde to your database and can perform basic Redis commands:
+3.  You should now be connectded to your database and can perform basic Redis commands:
 
     ``` sh
     xxx:yyy> ping
@@ -139,19 +141,20 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
 
 Different programming languages use different clients to interact with Redis databases.
 
-Here's how to connect to your database using a client for Python.
+Here's how to connect to your database using the `redis-py` library for Python.
 
 1.  If you don't already have the client installed:
 
     ```sh
-    sudo pip install redis-client
+    sudo pip install redis-py
     ```
 
 2.  The specific syntax vries according to the client:
 
     ```python
-    import redis-client
-    r = redis.Redis(host='<endpoint>', port=<port>, password='<password>')
+    import redis
+    r = redis.Redis(host='<endpoint>', port=<port>, 
+                    password='<password>')
     r.set('hello', 'world')
     print(r.get('hello'))
     ```
@@ -167,7 +170,7 @@ Here's how to connect to your database using a client for Python.
 
 ## More info
 
-- [Manage Databases]({{< relref "/rs/databases/_index.md" >}})
+- [Manage Databases]({{< relref "/rc/databases/_index.md" >}})
 - [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
 - [Secure Your Redis Cloud Database]({{< relref "/rc/administration/security/_index.md" >}})
 - [Back-up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})
