@@ -119,7 +119,7 @@ rladmin bind
 
 | Optional Parameter | Description |
 | - | - |
-| cipher_suites | Cipher suite used for TLS connections to the admin console; specified in the format understood by the BoringSSL library |
+| cipher_suites | Cipher suites used for TLS connections to the admin console; specified in the format understood by the BoringSSL library |
 | cm_port | Ui server listening port |
 | cm_session_timeout | Timeout (in minutes) for the CM session |
 | cmn_http_port | HTTP REST API server listening port |
