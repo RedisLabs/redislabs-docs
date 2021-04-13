@@ -71,13 +71,15 @@ Next, we create a database.
 
 4.  Locate the **Activate** button near the bottom of the page and then select it.
 
-5.  You're taken to the Configuration tab of the View Database screen.  In the upper corner, you'll see an orange box containing a rotating circle.  This is the Pending status indicator and it means your database is still being created.
+5.  You're taken to the **Configuration** tab of the **View Database** screen.  In the upper corner, you'll see an orange box containing a rotating circle.  This is the Pending status indicator and it means your database is still being created.
 
-    Admin console operations are asychronous; they operate in the background.  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
+    ![Pending icon](/images/rc/icon-pending.png#no-click "Pending icon") &nbsp; ![Active icon](/images/rc/icon-active.png#no-click "Active icon")
+
+    Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
 
 ## Connect to a database
 
-At this point, you're at the View Database screen for your new database.  
+At this point, you're at the **View Database** screen for your new database.  
 
 To connect to your database, you need the following info:
 
@@ -139,7 +141,7 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
 
 Different programming languages use different clients to interact with Redis databases.
 
-Here's how to connect to your database using a client for Python.
+Here's how to connect to your database using the `redis-client` library for Python.
 
 1.  If you don't already have the client installed:
 
@@ -167,7 +169,7 @@ Here's how to connect to your database using a client for Python.
 
 ## More info
 
-- [Manage Databases]({{< relref "/rs/databases/_index.md" >}})
+- [Manage Databases]({{< relref "/rc/databases/_index.md" >}})
 - [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
 - [Secure Your Redis Cloud Database]({{< relref "/rc/administration/security/_index.md" >}})
 - [Back-up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})

@@ -9,6 +9,9 @@ aliases: /rv/administration/setup_and_editing/view-edit-subscription/
          /rc/administration/setup-and-editing/viewing-subscription/
          /rc/administration/setup-and-editing/changing-subscription-plan/
          /rc/administration/setup-and-editing/changing-subscription-plan/
+         /rc/administration/setup/edit-subscription/
+         /rc/administration/setup/edit-subscription.md
+
 ---
 To view the details of a Fixed subscription:
 

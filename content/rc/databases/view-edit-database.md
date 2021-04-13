@@ -6,6 +6,8 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/viewing-editing-database/
         /rv/administration/setup_and_editing/viewing-editing-databases/
+        /rc/administration/setup/edit-database/
+        /rc/administration/setup/edit-database.md
 ---
 To view the details of a database, select it from the database list:
 
