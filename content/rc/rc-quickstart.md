@@ -141,19 +141,20 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
 
 Different programming languages use different clients to interact with Redis databases.
 
-Here's how to connect to your database using the `redis-client` library for Python.
+Here's how to connect to your database using the `redis-py` library for Python.
 
 1.  If you don't already have the client installed:
 
     ```sh
-    sudo pip install redis-client
+    sudo pip install redis-py
     ```
 
 2.  The specific syntax vries according to the client:
 
     ```python
-    import redis-client
-    r = redis.Redis(host='<endpoint>', port=<port>, password='<password>')
+    import redis
+    r = redis.Redis(host='<endpoint>', port=<port>, 
+                    password='<password>')
     r.set('hello', 'world')
     print(r.get('hello'))
     ```
