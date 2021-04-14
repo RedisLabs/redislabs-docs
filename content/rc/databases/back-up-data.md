@@ -22,7 +22,7 @@ The back up process for Redis Enterprise Cloud data depends on your plan:
 
 - Free plans do not back up automatically.
 
-    (To back up Free plan data, connect to the database and use a process appropriate for the connection.  For example, you can use the [SAVE](https://redis.io/commands/save) or [BGSAVE](https://redis.io/commands/bgsave) commands with Redis&nbsp;CLI.)
+    (To back up Free plan data, connect to the database and use a process appropriate for the connection.  For example, you can use the [DUMP](https://redis.io/commands/dump) and [RESTORE](https://redis.io/commands/restore) commands with Redis&nbsp;CLI.)
 
 Here, you'll learn how to store backups using different cloud providers.
 
