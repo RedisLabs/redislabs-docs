@@ -15,7 +15,7 @@ Here’s how:
 
 1. From the admin console menu, select **Access control** | **LDAP mappings**.
 
-    {{<image filename="/images/rs/rs-access-control-ldap-mappings.png" width="75%" alt="The Access control | LDAP mappings screen in the Redis Software admin console" >}}{{< /image >}}
+    {{<image filename="images/rs/rs-access-control-ldap-mappings.png" width="75%" alt="The Access control | LDAP mappings screen in the Redis Software admin console" >}}{{< /image >}}
 
 
    If you see an "LDAP configuration is disabled" message, use **Settings** | **LDAP** to [enable role-based LDAP]({{< relref "/rs/security/ldap/enable-role-based-ldap.md" >}}).
