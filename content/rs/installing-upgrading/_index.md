@@ -261,7 +261,7 @@ To install on Linux from the CLI:
 
     {{< note >}}
 - Files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
-- Redis Software is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
+- Redis Software is installed and run under the `redislabs` user and `redislabs` group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
 - You must either be logged in as the root user or use sudo to run the install process.
     {{< /note >}}
 
