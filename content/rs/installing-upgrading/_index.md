@@ -7,12 +7,18 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/
         /rs/installing-upgrading/downloading-installing/
 ---
-In this installation and setup guide we walk you through the process of planning your deployment, installing RS, setting up a multi-node cluster, and creating your database—soup to nuts.
-So, grab a cup of coffee and let's get started.
+This walks you through the process of installing Redis Enterprise Software, which includes several steps:
 
-## Planning your RS deployment
+1. Plan your deployment
+2. Install Redis Software
+3. Set up a multi-node cluster
+4. Create your database
 
-To install Redis Enterprise Software (RS) on each node in the cluster, you must first:
+Here, you'll learn how to perform each step.
+
+## Plan your deployment
+
+To install Redis Enterprise Software on each node in the cluster, you must first:
 
 - Set up your hardware according to the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
@@ -45,23 +51,23 @@ To install Redis Enterprise Software (RS) on each node in the cluster, you must 
     {{< embed-md "cluster-dns-embed.md" >}}
     {{% /expand %}}
 
-## Downloading the installation package
+## Download the installation package
 
 To download the installation package for any of the supported platforms:
 
 1. Go to the [Redis Labs download page](https://app.redislabs.com/#/sign-up/software?direct=true).
-1. Log in with your Redis Labs credentials or sign up for a new account.
-1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform and click **Go**.
+1. Sign in with your Redis Labs credentials or create a new account.
+1. In the Downloads section for Redis Enterprise Software, select the installation package for your platform then select **Go**.
 
 {{< note >}}
 Before you install the Linux package or AWS AMI on an AWS EC2 instance,
 review the [configuration requirements for AWS EC2 instances]({{< relref "configuring-aws-instances.md" >}}).
 {{< /note >}}
 
-## Installing RS on Linux
+## Prepare to install on Linux
 
 After you download the .tar file installation package, you are ready to install the package on the nodes in the cluster.
-Here we walk you through the process for installing the RS installation package for Linux.
+Here is the process for installing the RS installation package for Linux.
 
 Before you install RS, review these notes:
 
@@ -103,7 +109,7 @@ sudo lsblk
 
     We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 30000 65535'.
 
-## Installing RS on Linux
+## Install on Linux
 
 After you download the .tar file installation package, install the package on one of the nodes in the cluster.
 
@@ -174,7 +180,7 @@ To install RS without answering the installation questions, either:
 
 ### Custom installation directories
 
-    {{% expand "How can I specify the directories where RS is installed?" %}}
+{{% expand "How can I specify the directories where RS is installed?" %}}
 During the installation you can specify the directories for the RS files to be installed in.
 The files are installed in the `redislabs` directory in the path that you specify.
 
@@ -216,7 +222,7 @@ To install RS in specified file directories, run:
 ```sh
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ```
-    {{% /expand %}}
+{{% /expand %}}
 
 - RS is installed with the system user and group `redislabs:redislabs`
     {{% expand "How can I install RS with a specific system user and group?" %}}
@@ -363,7 +369,7 @@ To install RS with an answer file:
 
 {{< embed-md "new-cluster-embed.md" >}}
 
-## Add more nodes to the cluster
+## Add nodes to the cluster
 
 {{< embed-md "adding-node-embed.md" >}}
 
