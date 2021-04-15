@@ -136,7 +136,7 @@ For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG
 
     {{< note >}}
 - The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
-- Redit Software is installed and run under the redislabs user and redislabs group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
+- By default, Redis Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group](#custom-installation-user-and-group) during the installation.
 - You must either be logged in as the root user or use sudo to run the install process.
     {{< /note >}}
 
