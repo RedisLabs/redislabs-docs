@@ -289,7 +289,7 @@ The questions that the installation process asks are:
 
 - **Network time** - `Do you want to set up NTP time synchronization now [Y/N]?`
 
-    Redis Software requires all cluster nodes have synchronized time.
+    Redis Software requires that all cluster nodes have synchronized time.
     You can either let the installation process configure NTP
     or you can [configure NTP manually]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
 
