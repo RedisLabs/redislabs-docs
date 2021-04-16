@@ -75,7 +75,7 @@ Next, we create a database.
 
     ![Pending icon](/images/rc/icon-pending.png#no-click "Pending icon") &nbsp; ![Active icon](/images/rc/icon-active.png#no-click "Active icon")
 
-    Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
+    Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
 
 ## Connect to a database
 
