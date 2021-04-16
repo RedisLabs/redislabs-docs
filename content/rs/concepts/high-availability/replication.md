@@ -20,10 +20,10 @@ Awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}
 - [High Availability for Slave Shards]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) - When high availability
 for slave shards is used, the slave shard is automatically migrated on node failover to maintain high availability.
 
-{{< note >}}
+{{< warning >}}
 Enabling replication has implications for the total database size,
 as explained in [Database memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
-{{< /note >}}
+{{< /warning >}}
 
 ## Redis on Flash replication considerations
 
