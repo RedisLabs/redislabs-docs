@@ -18,7 +18,7 @@ The services that you can disable are:
 - RS Admin Console - `cm_server`
 - Logs in CSV format - `stats_archiver`
 - [LDAP
-Integration]({{< relref "/rs/security/admin-console-security/ldap.md" >}}) - `saslauthd`
+Integration]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) - `saslauthd`
 - [Discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})- `mdns_server`, `pdns_server`
 - [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) - `crdb_coordinator`, `crdb_worker`
 
