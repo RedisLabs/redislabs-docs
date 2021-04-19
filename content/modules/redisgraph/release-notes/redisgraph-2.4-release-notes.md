@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-## RedisGraph 2.4 GA (March 2020)
+## RedisGraph 2.4 GA (March 2021)
 
 ### Headlines:
 This release introduces the [Map](https://oss.redislabs.com/redisgraph/master/datatypes/#maps) and [Geospatial Point](https://oss.redislabs.com/redisgraph/master/datatypes/#geospatial-points) datatypes.
