@@ -32,7 +32,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. To create service accounts, on each participating cluster:
 
-    1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the Active-Active database.
+    1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the Active-Active database.
         By default, the address is: `https://<RS_address>:8443`
     1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the name, email, and password for the user, select the **Admin** role, and click ![Save](/images/rs/icon_save.png#no-click "Save").
@@ -46,7 +46,7 @@ Every instance of an Active-Active database can receive write operations, and al
     telnet <target FQDN> 9443
     ```
 
-1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the Active-Active database.
+1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the Active-Active database.
     By default, the address is: `https://<RS_address>:8443`
 
 1. In **databases**, click ![Add](/images/rs/icon_add.png#no-click "Add").
@@ -65,7 +65,6 @@ Every instance of an Active-Active database can receive write operations, and al
 
     {{< note >}}
 
-- The eviction policy can only be set to **noeviction** for Active-Active databases.
 - You cannot enable or disable database clustering after the Active-Active database is created.
 
     {{< /note >}}
@@ -86,15 +85,15 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/passwords-users-roles.md" >}}) that have access to the database
+        and the [Redis ACLs]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that apply to those connections.
         You can only configure access control after the Active-Active database is created.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
-        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that you want the role to have in the database.
+        1. Select the [role]({{< relref "/rs/security/passwords-users-roles.md" >}}) that you want to have access to the database.
+        1. Select the [ACL]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -109,6 +108,8 @@ Every instance of an Active-Active database can receive write operations, and al
         - Clear the **Database clustering** option to use only one shard so that you
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
+
+    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
     - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
 

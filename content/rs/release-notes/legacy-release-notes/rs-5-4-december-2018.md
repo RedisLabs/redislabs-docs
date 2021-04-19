@@ -50,13 +50,13 @@ RS 5.4 expands the high availability capabilities by adding the ability to autom
 
 - RS23616 - Fixed a failure when updating the memory limit of RoF database.
 - RS22871 - Fixed a certificate verify failure after nodes upgrade.
-- RS2862 - Improved web UI performance in case multiple browsers or windows are directed to the web UI.
+- RS2862 - Improved admin console performance in case multiple browsers or windows are directed to the admin console.
 - RS22751 - Fixed an issue in the backup process which caused temporary service outage.
 - RS22636 - Fixed Redis process failure when a ReJSON Module's command is executed.
 - RS22601 - Fixed a failure during shard migration procedure.
 - RS22478 - Fixed a failure in replica-of process between two databases with ReBloom Module.
 - RS21974 - SMTP username and password are not mandatory in the email server settings when there is no need for authentication.
-- RS21801 - Fixed web UI issues when cluster is configured with FIPS compliance.
+- RS21801 - Fixed admin console issues when cluster is configured with FIPS compliance.
 - RS21772 - Fixed a failure when trying to update a database's endpoint policy to all-master-shards.
 - RS19842 - Updated permissions of some internal files.
 - RS19433 - Improved RAM eviction process for RoF databases.

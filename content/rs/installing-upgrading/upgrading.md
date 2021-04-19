@@ -10,11 +10,7 @@ To upgrade the Redis Enterprise Software (RS) software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 {{< warning >}}
-
-- Before you upgrade, you must read the [RS 6.0 release notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md" >}}),
-including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}}).
-- You must read the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for every version that you upgrade to.
-
+Always check the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) before upgrading to a newer version of Redis Enterprise Software. Pay attention to any upgrade notices (for example, the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}})).
 {{< /warning >}}
 
 Version requirements:
@@ -140,6 +136,8 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 - Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
 - Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
+- Protocol version 0 is deprecated on RS 6.0.20 or later.
+- To avoid a failed upgrade, make sure all your Active-Active databases are configured with the latest protocol version before upgrading to Redis Enterprise Software 6.0.20 or later.
 
     {{< /note >}}
 
@@ -148,6 +146,12 @@ When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
 - **Feature set version** - RS 5.6.0 and higher include a new feature set version to support new Active-Active features.
     When you update the feature set version for an Active-Active database, the feature set version is updated for all of the database instances.
+    
+    {{< note >}}
+
+- Feature set version 0 is deprecated on RS 6.0.20 or later.
+- To avoid a failed upgrade, make sure all your Active-Active databases are configured with the latest feature set version before upgrading to Redis Enterprise Software 6.0.20 or later.
+    {{< /note >}}
 
 To upgrade a CRDB instance:
 

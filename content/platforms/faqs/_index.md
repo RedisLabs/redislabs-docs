@@ -38,7 +38,7 @@ kubectl describe rec my-cluster-name
 The cluster admin user password is created by the Operator during the deployment of the Redis Enterprise cluster and is stored in a Kubernetes secret.
 
 {{< warning >}}
-Do not change the default admin user password in the Redis Enterprise web UI.
+Do not change the default admin user password in the Redis Enterprise admin console.
 Changing the admin password impacts the proper operation of the K8s deployment.
 {{< /warning >}}
 
@@ -152,7 +152,7 @@ echo "Q2h5N1BBY28=" | base64 –-decode
 ```
 
 {{< warning >}}
-Do not change the default admin user password in the Redis Enterprise web UI.
+Do not change the default admin user password in the Redis Enterprise admin console.
 Changing the admin password impacts the proper operation of the K8s deployment.
 {{< /warning >}}
 
@@ -165,7 +165,7 @@ Retrieve your password by selecting “Reveal Secret.”
 ![openshift-password-retrieval]( /images/rs/openshift-password-retrieval.png )
 
 {{< warning >}}
-Do not change the default admin user password in the Redis Enterprise web UI.
+Do not change the default admin user password in the Redis Enterprise admin console.
 Changing the admin password impacts the proper operation of the K8s deployment.
 {{< /warning >}}
 

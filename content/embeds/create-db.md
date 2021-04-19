@@ -1,4 +1,4 @@
-1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the { { < field "db_type"  > } }.
+1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the { { < field "db_type"  > } }.
 
 <!-- When shortcodes can run in embeds, fix field shrotcode above. -->
 

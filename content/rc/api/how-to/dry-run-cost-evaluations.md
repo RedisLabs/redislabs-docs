@@ -17,10 +17,11 @@ With a **dry-run request**, you can evaluate the impact that subscription and da
 
 API operations that support dry-run requests accept the `dryRun` boolean parameter in the JSON request body.
 
-For example, the JSON body of a create subscription request can include the `dryRun=true` parameter:
+For example, the JSON body of a create subscription request body can include the `dryRun=true` parameter:
+
 
 ```shell
-{{% embed-code "rv/api/create-subscription-basic-dry-run.json" %}}
+{{% embed-code "rv/api/create-subscription-dry-run-basic-request.json" %}}
 ```
 
 ## Executing a dry-run request
@@ -34,43 +35,43 @@ A dry-run request produces a cost evaluation report for the subscription.
 | **Create database** | Creates a new database in the subscription | Returns a cost evaluation report for the relevant subscription |
 | **Update database** | Changes the specified database | Returns a cost evaluation report and evaluates whether the relevant subscription requires additional resources base on the database modification |
 
-### Example of a dry-run response
 
-Here is an example of the pricing response section of a dry-run request:
+### Example of a dry-run request & response
 
-```json
-  "response": {
-    "resource": {
-      "pricing": [
-        {
-          "type": "Shards",
-          "quantity": 2,
-          "quantityMeasurement": "shards",
-          "pricePerUnit": 0.308,
-          "priceCurrency": "USD",
-          "pricePeriod": "hour"
-        },
-        {
-          "type": "EBS Volume",
-          "quantity": 71,
-          "quantityMeasurement": "GB"
-        },
-        {
-          "type": "c5.xlarge",
-          "quantity": 2,
-          "quantityMeasurement": "instances"
-        },
-        {
-          "type": "m5.large",
-          "quantity": 1,
-          "quantityMeasurement": "instances"
-        }
-      ]
-    }
-  }
+This section demonstrates a complete example of a create subscription dry-run request and response. 
+
+#### dry-run request body
+
+Here is an example of the pricing request body:
+
+```shell
+{{% embed-code "rv/api/create-subscription-dry-run-request.json" %}}
 ```
 
-The structure of the pricing response depends on the cloud account used by the request:
+1. The create subscription request contains the `"dryRun": true` parameter
+2. The databases array contains the definitions of multiple database templates, named `database-a`,  `database-b`, `database-c` etc.
+3. Note that the databases differ in structure (size, throughput measurement, replication, quantity etc.)
 
-- For a customer provided cloud account - The response includes pricing data for the shards, and a lists the resources required (storage and compute instances) without pricing data
-- For a Redis Labs internal cloud account (`cloudAccountId = 1`) - The response includes pricing data for both shards and the resources required (storage and compute instances)
+#### dry-run response
+
+Here is an example of the pricing response section for the abve create subscription dry-run request:
+
+
+```shell
+{{% embed-code "rv/api/create-subscription-dry-run-response.json" %}}
+```
+
+{{</* note */>}}Some of the response content was omitted for brevity.{{</* /note */>}}
+
+1. The `pricing` array contains an element for each database, containing the database name and cost evaluation related to that database
+2. The database cost is measured in type and number of shards required for the specific database, as defined by the database template in the request. See [Cloud Pricing](https://redislabs.com/redis-enterprise-cloud/pricing)
+3. The cost evaluation for each database is measured in quantity of the specific shard type required the requested database. The cost per shard is defined by the fields `pricePerUnit` (where `unit` is a shard of the specific type), `priceCurrency` and `pricePeriod`
+4. For example, to calculate the total hourly cost of a database, use the following formula:  `pricePerUnit` * `quantity` 
+5. The structure of the pricing response depends on the cloud account used by the request. There are two types of cloud accounts: a cloud account owned, named and managed by the customer (AWS only) and a "Redis Labs resources" cloud account (All cloud providers)
+6. For a customer provided cloud account - The cost evaluation response lists the AWS resources required (storage and compute instances) without pricing data (which depends on the specific details of the customer's AWS account)
+7. For a Redis Labs internal cloud account (defined a `cloudAccountId = 1` in the create subscription request) - The cost evaluation response includes a `MinimumPrice` element. This indicates the minimal hourly cost of the entire subscription. This minimum price will be charged if the sum of all shards for all the subscription's databases is less than the specified minimum price
+
+
+### Viewing actual subscription cost
+
+The `Get subscriptions` and `Get subscription by id` JSON response contains an element named `subscriptionPricing` that details the latest calculated cost of a subscription, grouped by shard type for all the databases in the subscription. 

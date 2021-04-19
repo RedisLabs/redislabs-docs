@@ -39,8 +39,7 @@ Redis Labs developed and certified these modules for use with RS:
 
 - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
-      filters are probabilistic data structures that do a very good job at
-      quickly determining if something is contained within a set.
+      filters are probabilistic data structures that quickly determine if something is contained within a set.
 - [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     - RedisGraph is the first queryable Property Graph database to use sparse
       matrices to represent the adjacency matrix in graphs and linear algebra to query the graph.
@@ -75,7 +74,7 @@ As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Software can now use either built-in
 authentication or authenticate externally via LDAP with saslauthd. The
 accounts can be used for administering resources on the cluster via
-command line, Rest API, or Web UI.
+command line, Rest API, or admin console.
 
 For more information see [LDAP
-Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
+Integration]({{< relref "/rs/security/passwords-users-roles.md#setting-up-ldap" >}}).

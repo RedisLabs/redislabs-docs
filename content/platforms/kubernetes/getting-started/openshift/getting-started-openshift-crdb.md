@@ -25,7 +25,7 @@ Typically, a Kubernetes cluster administrator configures a [DNS wildcard entry]
 that resolves to an OpenShift Container Platform node that is running
 the OpenShift router.
 
-The default router in OpenShift is HAProxy, which is a free, very fast and reliable solution
+The default router in OpenShift is HAProxy, which is a free, fast, and reliable solution
 offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
 
 The Redis Enterprise Operator uses the routes mechanism to expose 2 inter-cluster services:

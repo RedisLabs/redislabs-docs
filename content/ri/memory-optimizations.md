@@ -129,7 +129,7 @@ This builds a Redis hash with two fields post:1 and post:2 holding the values 20
 
 Combining small strings to Hashes reduces the memory used and in return save a cost.
 
-Hashes can be encoded efficiently in a very small memory space, so Redis makers recommend that we use hashes whenever possible since "a few keys use a lot more memory than a single key containing a hash with a few fields", a key represents a Redis Object holds a lot more information than just its value, on the other hand a hash field only hold the value assigned, thus why it's much more efficient.
+Hashes can be encoded to use memory efficiently, so Redis makers recommend that we use hashes whenever possible since "a few keys use a lot more memory than a single key containing a hash with a few fields", a key represents a Redis Object holds a lot more information than just its value, on the other hand a hash field only hold the value assigned, thus why it's much more efficient.
 
 #### Trade offs
 
@@ -248,10 +248,9 @@ The only tradeoffs are related to code complexity. Redis internally uses the sam
 
 #### When to avoid converting hash to list
 
-Following are the situations when conversion of hash to list should be avoided:
-
-1. When you have less than 50,000 objects.
-1. Your objects are not regular i.e. some users have lots of information, others very little.
+Avoid converting hashes to lists when: 
+1. When your hash contains fewer than 50,000 field-value pairs.
+1. The size of your hash values are not consistent (for instance, when some hashes contain only a few field-value pairs while others contain many).
 
 ### Shard big hashes to small hashes
 
@@ -277,9 +276,11 @@ The only trade off of converting big hashes to small hashes is that it increase 
 
 ### Switch to bloom filter or hyperloglog
 
-Unique items can be difficult to count. Usually this means storing every unique item then recalling this information somehow. With Redis, this can be accomplished by using a set and a single command, however both the storage and time complexity of this with very large sets is prohibitive. HyperLogLog provides a probabilistic alternative.
+Unique items can be difficult to count. Usually this means storing every unique item then recalling this information somehow. 
 
-If your set contains a very large number of elements, and you are only using the set for existence checks or to eliminate duplicates - then you benefit by using a bloom filter.
+Redis sets support this with a single command; however, storing every unique item you want want to count may use a prohibitive amount of memory. If this is the case, consider using a HyperLogLog instead. A HyperLogLog is a probabilistic data structure for counting unique items in a set. HyperLogLogs trade off perfect accuracy for less memory usage.
+
+Bloom filters help when your set contains a high number of elements and you use the set to determine existence or to eliminate duplicates.  
 
 Bloom filters aren't natively supported, but you can find several solutions on top of redis. If you are only using the set to count number of unique elements - like unique ip addresses, unique pages visited by a user etc - then switching to hyperloglog saves significant memory.
 
@@ -322,7 +323,7 @@ Redis and clients are typically IO bound and the IO costs are typically at least
 
 There are several compression algorithms to choose from, each with it's own tradeoffs.
 
-1. Snappy by google aims for very high speeds and reasonable compression.
+1. [Snappy](https://en.wikipedia.org/wiki/Snappy_(compression)) aims for high speed and reasonable compression.
 1. LZO compresses fast and decompresses faster.
 1. Others such as Gzip are more widely available.
 
@@ -351,7 +352,7 @@ List is just a link list of arrays, where none of the arrays are compressed. By 
 
 We have two configurations:
 List-max-ziplist-size: 8kb(default)
-List-compression-depth: 0,1,2 (0 by default)
+List-compression-depth: 0(default)
 
 A configuration change in redis.conf `list-compression-depth=1` helps you achieve compression.
 
@@ -361,12 +362,12 @@ Compression depth is the number of list nodes from each end of the list to leave
 
 Example:
 
-1. a depth=1 means compress every list node except the head and tail of the list.
-1. A depth=2 means never compress head or head->next or tail or tail->prev.
-1. A depth=3 starts compression after head->next->next and before tail->prev->prev, etc.
+1. List-compression-depth=1 compresses every list node except the head and tail of the list.
+1. List-compression-depth=2 never compresses the head or head->next or the tail or tail->prev.
+1. List-compression-depth=3 starts compression after the head->next->next and before the tail->prev->prev, etc.
 
 #### Trade offs
 
-For small values (for example 40 bytes per list entry here), compression has very little performance impact. When using 40 byte values with a max ziplist size of 8k, that's around 200 individual elements per ziplist. You only pay the extra "compression overhead" cost when a new ziplist gets created (in this case, once every 200 inserts).
+For small values (for example 40 bytes per list entry here), compression has minimal performance impact. When using 40 byte values with a max ziplist size of 8k, that's around 200 individual elements per ziplist. You only pay the extra "compression overhead" cost when a new ziplist gets created (in this case, once every 200 inserts).
 
 For larger values (for example 1024 bytes per list entry here), compression does have a noticeable performance impact, but Redis is still operating at over 150,000 operations per second for all good values of ziplist size (-2). When using 1024 byte values with a max ziplist size of 8k, that works out to 7 elements per ziplist. In this case, you pay the extra compression overhead once every seven inserts. That's why the performance is slightly less in the 1024 byte element case.

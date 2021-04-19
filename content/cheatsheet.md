@@ -73,6 +73,25 @@ Ouput:
 
 {{% comment %}}Do not publish!{{% /comment %}}
 
+### Definitions
+
+A series of definitions, as you'd find in a glossary, should go into a definition list (e.g., `<dl></dl>`).
+
+For the entires, use the following shortcode:
+
+```
+{{</*definition "term">}}
+The definition of "term" goes here.
+{{</definition>}}
+```
+
+This produces the following HTML output:
+
+```
+<dt id="term">term</dt>
+<dd>The definition of "term" goes here.</dd>
+```
+
 ### Code formatting
 
 **Embedded code snippets**
@@ -512,3 +531,10 @@ Recently updated articles
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
 - [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)
 - [Children](https://learn.netlify.com/en/shortcodes/children/)
+
+## Related Info
+
+For more info about editing and writing our documents:
+
+- [Editing guide]({{<relref "content/editing-guide.md">}})
+- [Contribution guide]({{<relref "content/contribution-guide.md">}})

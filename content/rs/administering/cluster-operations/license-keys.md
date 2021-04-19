@@ -21,7 +21,7 @@ during the trial period.
 
 You can see the cluster key either:
 
-- Web UI - Go to: **settings** > **general**
+- admin console - Go to: **settings** > **general**
 
     The cluster key string is shown.
 - REST API - GET `https://localhost:9443/v1/license`
@@ -41,8 +41,8 @@ After you add a cluster key, you cannot remove the key to return the cluster to 
 
 You can add a cluster key to the cluster either:
 
-- During cluster setup using the web UI or CLI
-- After cluster setup using the web UI -
+- During cluster setup using the admin console or CLI
+- After cluster setup using the admin console -
     Go to **settings** > **general**, paste your cluster key into the **cluster key** field, and click the **Save** button.
 
 An existing cluster key can be updated at any time provided the new
@@ -63,7 +63,7 @@ When the license is expired:
 
 - You can do these actions:
 
-    - Login to the web UI and view settings and metrics at all resolutions
+    - Login to the admin console and view settings and metrics at all resolutions
         for the cluster, nodes and databases
     - Change cluster settings including license key, security for administrators, and cluster alerts
     - Failover when a node fails and explicitly migrate shard between nodes

@@ -51,6 +51,9 @@ To use the updated modules with a database, you must [upgrade the module on the 
 ## Additional capabilities
 
 - [Shard level metrics]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions#shard-metrics" >}}) have been added to the metrics_exporter and are now available from Prometheus. You can find all of the metrics [here]({{< relref "/rs/administering/monitoring-metrics/prometheus-metrics-definitions" >}}).
+
+- RS DEB packages (for Ubuntu) and RPM packages (for RHEL) are now signed with a GPG key so customers can verify that the package is authentic and has not been tampered with. You can access the GPG on the [installaion page](https://docs.redislabs.com/latest/rs/installing-upgrading/#installing-rs-on-linux).
+
 - The [crdb-cli](https://docs.redislabs.com/latest/rs/references/crdb-cli-reference/) history log is now being added to support packages.
 
 ## Important fixes
@@ -59,8 +62,14 @@ To use the updated modules with a database, you must [upgrade the module on the 
 - RS43572 - Fixed a bug causing the UI to fail when enabling SMTP STARTLS.
 - RS46062 - Fixed missing metrics of Active-Active databases in Grafana.
 - RS44758 - Fixed non responding button for saving a new user via the UI.
+With build 6.0.8-32:
+- RS45627, RS47382 - Fixed bugs causing clients to disconnect when using XREAD and XREADGROUP commands in blocking mode on other clients’ connections.
 
 ## Known limitations
+
+### Active-Active databases
+- RS44656 - A bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change. ***TBD***
+- RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database Persistence]({{< relref "rs/concepts/data-access/persistence.md" >}}) are suffering from memory leak on slave the shards causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshot for Database Persistence or restart the slave shards ***TBD***.
 
 ### Upgrade
 

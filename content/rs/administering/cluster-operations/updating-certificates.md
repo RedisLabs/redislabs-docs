@@ -4,11 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: ["/rs/administering/cluster-operations/updating-certificates"]
 ---
 Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 The self-signed certificates are used to establish encryption-in-transit for the following traffic:
 
-- Management Web UI (CM) - The certificate for connections to the management web UI
+- Management admin console (CM) - The certificate for connections to the management admin console
 - REST API - The certificate for REST API calls
 - Proxy - The certificate for connections between clients and database endpoints
 - Syncer - The certificate for Active-Active and Replica Of synchronization between clusters
@@ -16,8 +17,9 @@ The self-signed certificates are used to establish encryption-in-transit for the
 
 These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
 
-When you use the default self-signed certificates, an untrusted connection notification is shown in the web UI.
-Depending on the browser you use, you can allow the connection for each session or add an exception to make the site trusted in future sessions.
+When you use the default self-signed certificates and you connect to the admin console over a web browser, you'll seen an untrusted connection notification.
+
+Depending on your browser, you can allow the connection for each session or add an exception to trust the certificate for all future sessions.
 
 {{< warning >}}
 When you update the certificates, the new certificate replaces the same certificates on all nodes in the cluster.
@@ -77,7 +79,9 @@ You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
 
 - cert - The contents of the *_cert.pem file
 
-When you upgrade RS, the upgrade process copies the certificates on the first upgraded node to all of the nodes in the cluster.
+The new certificates are used the next time the clients connect to the database.
+
+When you upgrade RS, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
 
 ## TLS protocol and ciphers
 
@@ -85,15 +89,15 @@ TLS protocols and ciphers define the overall suite of algorithms that clients ar
 
 The communications for which you can modify TLS protocols and ciphers are:
 
-- Management path - The TLS configuration for cluster administration using the web UI and API.
-- Data path - The TLS configuration for the communication between the applications and the databases.
+- Control plane - The TLS configuration for cluster administration using the admin console and API.
+- Data plane - The TLS configuration for the communication between the applications and the databases.
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}).
 
-You can configure the TLS protocols and ciphers with the rladmin commands shown here, or with the REST API.
+You can configure the TLS protocols and ciphers with the `rladmin` commands shown here, or with the REST API.
 
-### TLS protocol for the management path
+### TLS protocol for the control plane
 
-To set the minimum TLS protocol for the management path:
+To set the minimum TLS protocol for the control plane:
 
 - Default TLS Protocols: TLSv1.0
 - Syntax: `rladmin cluster config cluster config min_control_TLS_version <TLS_Version>`
@@ -108,7 +112,7 @@ For example:
 rladmin cluster config min_control_TLS_version 1.2
 ```
 
-### TLS protocol for the data path and discovery service
+### TLS protocol for the data plane and discovery service
 
 To set the minimum TLS protocol for the data path:
 
@@ -159,17 +163,31 @@ TLS versions older than the specified version.
 
 ### Cipher configuration
 
-When you set the TLS ciphers, the new TLS ciphers are used for management communications only.
+#### Control plan cipher suite configuration
 
-To set the TLS ciphers:
+Control plane cipher suites use the BoringSSL libary format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99).
 
-- Default TLS Protocols: HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
-- Syntax: `rladmin cluster config cipher_suites '<openssl_cipher_list>'`
-    - Redis Enterprise Software uses OpenSSL to implement TLS ([List of available configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html))
-- The below example uses the Mozilla intermediate compatibility cipher list
-
+See the example below to configure cipher suites for the control plane.:
 ```sh
-rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384'
+rladmin cluster config cipher_suites AES128-SHA:DHE-PSK-AES256-CCM8:AES256-SHA
+```
+
+#### Data plane cipher suite configuration
+
+Data plane cipher suites use the OpenSSL libary format. See OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html)
+
+See the example below to configure cipher suites for the data plane:
+```sh
+rladmin cluster config data_cipher_list AES128-SHA:DHE-PSK-AES256-CCM8:AES256-SHA
+```
+
+#### Sentinel service cipher suite configuration
+
+Sentinel service cipher suites use the golang.org OpenSSL format for discovery service TLS connections. See their documentation for a list of [available configurations](https://golang.org/src/crypto/tls/cipher_suites.go).
+
+See the example below to configure cipher suites for the sentinel service:
+```sh
+rladmin cluster config sentinel_cipher_suites TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 ```
 
 When you modify your cipher suites, make sure that:

@@ -41,10 +41,10 @@ Make sure that you have Python 3 (`sudo apt install python3`) installed on the h
 
 To replicate a RediSearch 1.x database to a RediSearch 2.x database:
 
-1. Log in to the web UI of the RS cluster that you want to host the new database with RediSearch 2.x.
+1. Log in to the admin console of the RS cluster that you want to host the new database with RediSearch 2.x.
 1. Add the RediSearch 2.x module to the cluster:
     1. Go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/) and download the RediSearch 2.x module package.
-    1. In the Redis Enterprise web UI, go to the: **settings**
+    1. In the Redis Enterprise admin console, go to the: **settings**
     1. In **redis modules**, click **Add Module**.
 
        ![upgrade_module](/images/rs/upgrade_module.png)
@@ -69,8 +69,8 @@ To replicate a RediSearch 1.x database to a RediSearch 2.x database:
 
         Where:
 
-        - `destination url` - The replication URL of the RediSearch 2.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
-        - `source url` - The replication URL of the RediSearch 1.x database that you see when you click on **Get Replica of source URL** in the database configuration in the web UI.
+        - `destination url` - The replication URL of the RediSearch 2.x database that you see when you click on **Get Replica of source URL** in the database configuration in the admin console.
+        - `source url` - The replication URL of the RediSearch 1.x database that you see when you click on **Get Replica of source URL** in the database configuration in the admin console.
         - `--add-prefix <prefix>` (optional) - Adds a prefix to all of the hashes that are replicated to the new database.
 
             {{< note >}}
