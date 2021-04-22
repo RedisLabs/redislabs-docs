@@ -77,7 +77,7 @@ You can also use the `/v1/modules` endpoint, but modules with dependencies are b
 
 To add a module package to the cluster using the admin console:
 
-1. In the Redis Enterprise web UI, go to the: **settings**
+1. In the Redis Enterprise admin console, go to the: **settings**
 1. In **redis modules**, click **Add Module**.
 
     ![upgrade_module](/images/rs/upgrade_module.png)

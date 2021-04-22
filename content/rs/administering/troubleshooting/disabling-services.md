@@ -17,6 +17,7 @@ The services that you can disable are:
 
 - RS Admin Console - `cm_server`
 - Logs in CSV format - `stats_archiver`
+
 - [LDAP
 Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) - `saslauthd`
 - [Discovery service]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}})- `mdns_server`, `pdns_server`

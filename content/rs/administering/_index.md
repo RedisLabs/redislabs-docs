@@ -8,7 +8,7 @@ categories: ["RS"]
 This section covers everything you need to know to run your Redis Enterprise Software (RS) deployment.
 
 {{< note >}}
-In addition to using the RS web UI to manage the cluster,
+In addition to using the RS admin console to manage the cluster,
 you can also do cluster operations with the cluster REST API.
 
 To access the cluster REST API documentation, either:

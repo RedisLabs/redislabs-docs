@@ -73,6 +73,25 @@ Ouput:
 
 {{% comment %}}Do not publish!{{% /comment %}}
 
+### Definitions
+
+A series of definitions, as you'd find in a glossary, should go into a definition list (e.g., `<dl></dl>`).
+
+For the entires, use the following shortcode:
+
+```
+{{</*definition "term">}}
+The definition of "term" goes here.
+{{</definition>}}
+```
+
+This produces the following HTML output:
+
+```
+<dt id="term">term</dt>
+<dd>The definition of "term" goes here.</dd>
+```
+
 ### Code formatting
 
 **Embedded code snippets**

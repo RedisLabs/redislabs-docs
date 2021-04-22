@@ -51,7 +51,7 @@ upgrade to this version.
     cluster.]({{< relref "/rs/administering/new-cluster-setup.md" >}})
 - Connection to database endpoint can now be encrypted with SSL. For
     additional details, refer to [Securing client connection with
-    SSL]({{< relref "/rs/administering/designing-production/security/client-connections.md" >}}).
+    SSL]({{< relref "/rs/security/tls-ssl.md" >}}).
 - Added support for running the cluster on the following operating
     systems and versions: RHEL/CentOS 6.6, 7.1, 7.2, RHEL 6.7, Oracle
     Linux 6.5.

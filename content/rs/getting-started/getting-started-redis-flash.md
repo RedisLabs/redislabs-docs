@@ -23,7 +23,7 @@ visit the [installing and upgrading
 section]({{< relref "/rs/installing-upgrading/_index.md" >}})
 of the technical documentation.
 
-## Step 1: Install redis enterprise software
+## Step 1: Install Redis Enterprise Software
 
 ### Bare metal, VM, Cloud instance
 

@@ -91,24 +91,24 @@
 
       {{- if not .Site.Params.disableSearch}}
       <div>
-          <div id="autocomplete" class="autocomplete autocomplete-inline">
-            <input class="autocomplete-input autocomplete-input-inline" placeholder="{{T "Search-placeholder"}}" />
+          <div id="redis-sitesearch" class="redis-sitesearch redis-sitesearch-inline">
+            <input class="redis-sitesearch-input redis-sitesearch-input-inline" placeholder="{{T "Search-placeholder"}}" />
 
-            <div class="autocomplete-result-list-wrapper">
-              <ul class="autocomplete-result-list"></ul>
+            <div class="redis-sitesearch-result-list-wrapper">
+              <ul class="redis-sitesearch-result-list"></ul>
               <div class="redisearch-logo">
               </div>
             </div>
           </div>
-                <script type="text/javascript" src="{{"js/autocomplete.js" | relURL}}"></script>
+          <script type="text/javascript" src="{{"js/redis-sitesearch.min.js" | relURL}}"></script>
           <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
-          <link href="{{"css/autocomplete.css" | relURL}}" rel="stylesheet">
-          <link href="{{"css/search.css" | relURL}}" rel="stylesheet">
+          <link href="{{"css/redis-sitesearch.css" | relURL}}" rel="stylesheet">
+          <link href="{{"css/redis-sitesearch-overrides.css" | relURL}}" rel="stylesheet">
       </div>
       {{- end}}
 
       <div class="chevrons">
-        {{ partial "next-prev-page.html" . }}
+       <!-- {{ partial "next-prev-page.html" . }} -->
       </div>
       {{end}}
 
@@ -122,8 +122,4 @@
 
       {{if not .IsHome}}
         <h1>{{.Title}}</h1>
-
-        {{if eq .RelPermalink "/rs/"}}
-          {{ partial "rs-hot-topics-table.html" . }}
-        {{end}}
       {{end}}

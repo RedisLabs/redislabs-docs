@@ -323,7 +323,7 @@ In order to create your database, we will log in to the Redis Enterprise UI.
 - Retrieve your password by selecting “Reveal Secret.”
 
     {{< warning >}}
-Do not change the default admin user password in the Redis Enterprise web UI.
+Do not change the default admin user password in the Redis Enterprise admin console.
 Changing the admin password impacts the proper operation of the K8s deployment.
     {{< /warning >}}
 

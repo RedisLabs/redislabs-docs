@@ -41,7 +41,7 @@ You can see the status of the cluster memory with these statistics:
 
     This statistic is shown:
     - rladmin status - Cluster
-    - web UI metrics - Cluster
+    - admin console metrics - Cluster
 - Provisional_RAM - The amount of RAM that is available for provisioning to databases out of the total RAM allocated for databases.
     Used Provisional_RAM can include memory allocated for replication or other database features.
 
@@ -50,10 +50,10 @@ You can see the status of the cluster memory with these statistics:
 
     This statistic is shown in:
     - rladmin status - Shards
-    - web UI metrics - Database
+    - admin console metrics - Database
 - Memory limit - The maximum amount of memory that the database can use for data.
 
-    This statistic is shown in: web UI metrics - Database
+    This statistic is shown in: admin console metrics - Database
 - Memory usage - The percent of used memory out of memory limit.
 
-    This statistic is shown in: web UI metrics - Database
+    This statistic is shown in: admin console metrics - Database

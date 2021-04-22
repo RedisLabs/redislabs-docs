@@ -114,7 +114,7 @@ and the concepts must explain any background information that is needed to know 
 
         1. To create service accounts, on each participating cluster:
 
-            1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+            1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the CRDB.
                 By default, the address is: `https://<RS_address>:8443`
             1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
             1. Enter the name, email, and password for the user, select the **Admin** role,

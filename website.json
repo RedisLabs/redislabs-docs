@@ -1,0 +1,60 @@
+{
+    "IndexDocument": {
+        "Suffix": "index.html"
+    },
+    "ErrorDocument": {
+        "Key": "404.html"
+    },
+    "RoutingRules": [
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/"
+            },
+            "Redirect": {
+                "HostName": "docs.redislabs.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.6/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redislabs.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.4/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redislabs.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.4/platforms/"
+            },
+            "Redirect": {
+                "HostName": "docs.redislabs.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "5.6/platforms/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "5.2/"
+            },
+            "Redirect": {
+                "HostName": "docs.redislabs.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/"
+            }
+        }
+    ]
+}

@@ -95,10 +95,10 @@ As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Pack can now use either built-in
 authentication or authenticate externally via LDAP with saslauthd. The
 accounts can be used for administering resources on the cluster via
-command line, Rest API, or Web UI.
+command line, Rest API, or admin console.
 
 For more information see [LDAP
-Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
+Integration]({{< relref "/rs/security/passwords-users-roles.md#setting-up-ldap" >}}).
 
 ## Additional capabilities
 

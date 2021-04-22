@@ -1,7 +1,7 @@
 ---
 Title: Concepts
 description:
-weight: 30
+weight: 40
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/concepts/

@@ -26,7 +26,7 @@ require six steps:
 1. Compile the module
 1. Install ramp-packer utility
 1. Wrap the custom module using ramp utility
-1. Deploy the custom module to the cluster using the web UI
+1. Deploy the custom module to the cluster using the admin console
 1. Create a database that utilizes the module
 
 ### Get the module from GitHub

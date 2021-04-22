@@ -35,6 +35,9 @@ That said, the following Redis features are not applicable in the context of our
     - [MEMORY DOCTOR](https://redis.io/commands/memory-doctor)
     - [MEMORY MALLOC-STATS](https://redis.io/commands/memory-malloc-stats)
     - [MEMORY PURGE](https://redis.io/commands/memory-purge)
+    - [MODULE LOAD](https://redis.io/commands/module-load)
+    - [MODULE UNLOAD](https://redis.io/commands/module-unload)
+    - [MODULE LIST](https://redis.io/commands/module-list)
 - Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list show an error when used:
     - hash-max-ziplist-entries
     - hash-max-ziplist-value

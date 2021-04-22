@@ -1,15 +1,16 @@
 ---
-Title: Importing Data into a Database
-description:
+Title: Import data into a database
+description: You can import export or backup files of a specific Redis Enterprise Software database to restore data. You can either import from a single file or from multiple files, such as when you want to import from a backup of a clustered database.
 weight: 20
 alwaysopen: false
 categories: ["RS"]
+linktitle: Import data
 aliases: /rs/administering/database-operations/importing-data/
         /rs/administering/database-operations/administering-database-operations-importing-data/
 ---
 You can import [export]({{< relref "/rs/administering/import-export/exporting-data.md" >}})
 or [backup]({{< relref "/rs/administering/import-export/database-backup.md" >}})
-files of a specific Redis Enterprise Software (RS) database to restore data.
+files of a specific Redis Enterprise Software database to restore data.
 You can either import from a single file or from multiple files,
 such as when you want to import from a backup of a clustered database.
 
@@ -17,7 +18,7 @@ such as when you want to import from a backup of a clustered database.
 Importing data erases all existing content in the database.
 {{< /warning >}}
 
-## Importing data into a database
+## Import data into a database
 
 To import data into a database:
 
@@ -125,15 +126,17 @@ Before you specify to import from OpenStack Swift, make sure that you have:
 
 ### Azure Blob Storage
 
-Before you choose to backup to OpenStack Swift, make sure that you have:
+Before you choose to import from Azure Blob Storage, make sure that you have:
 
 - Storage location path in the format: `/container_name/[path/]/<filename>.rdb`
 - Account name
-- Account key
+- An authentication token, either an account key or an Azure [shared access signature](https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature) (SAS).
+
+Azure SAS support requires Redis Software version 6.0.20.  To learn more about Azure SAS, see [Grant limited access to Azure Storage resources using shared access signatures](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview).
 
 ### Google Cloud Storage
 
-Before you choose to backup to OpenStack Swift, make sure that you have:
+Before you choose to import from Google Cloud Storage, make sure that you have:
 
 - Storage location path in the format: `/bucket_name/[path/]/<filename>.rdb`
 - Client ID
@@ -151,9 +154,9 @@ When importing data into an Active-Active database, there are two options:
 
 Because Active-Active databases have a numeric counter data type,
 when you merge the imported data into the existing data RS increments counters by the value that is in the imported data.
-The import through the Redis Enterprise web UI handles these data types for you.
+The import through the Redis Enterprise admin console handles these data types for you.
 
-You can import data into an Active-Active database [from the web UI]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
+You can import data into an Active-Active database [from the admin console]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
 When you import data into an Active-Active database, there is a special prompt.
 
 ![Import into an Active-Active database](/images/rs/import-to-active-active-warning.png)
