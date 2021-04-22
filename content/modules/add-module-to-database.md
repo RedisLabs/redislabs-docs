@@ -48,7 +48,7 @@ To add modules to a database:
 ## Upgrading the module for the database
 
 {{< note >}}
-After you upgrade the module for a database, the database shards are restarted.
+After you upgrade the module, the database shards will restart and cause a short interruption in availability across the cluster.
 This causes a short interruption in the availability of this database across the cluster.
 {{< /note >}}
 
