@@ -34,7 +34,7 @@ For more information about Redis 6.0.5, check out the [release notes](https://ra
 
 The [rladmin CLI](https://docs.redislabs.com/latest/rs/references/rladmin/) introduces several updates to the commands for upgrading modules.
 It is now easier to upgrade your modules to the latest module version.
-Find out more [here](https://docs.redislabs.com/latest/modules/add-module-to-database/#upgrading-the-module-for-the-database).
+Find out more [here]({{< relref "/modules/add-module-to-database.md" >}}).
 
 ## Redis modules
 
