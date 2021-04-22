@@ -19,7 +19,7 @@ The services that you can disable are:
 - Logs in CSV format - `stats_archiver`
 
 - [LDAP
-Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}) - `saslauthd`
+Authentication]({{< relref "/rs/security/ldap.md" >}}) - `saslauthd`
 - [Discovery service]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}})- `mdns_server`, `pdns_server`
 - [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) - `crdb_coordinator`, `crdb_worker`
 
