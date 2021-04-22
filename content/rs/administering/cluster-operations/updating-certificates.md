@@ -184,7 +184,7 @@ Control plane cipher suites use the BoringSSL library format for TLS connections
 See the example below to configure cipher suites for the control plane.:
 
 ```sh
-rladmin cluster config cipher_suites AES128-SHA:AES256-SHA
+rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305
 ```
 
 #### Data plane cipher suite configuration (for 6.0.20 or later)
