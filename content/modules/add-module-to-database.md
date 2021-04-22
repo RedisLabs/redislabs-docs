@@ -53,7 +53,6 @@ After you upgrade the module, the database shards will restart and cause a short
 
 To upgrade a module that is installed on a cluster:
 
-1. Connect to the terminal of a node in the cluster
 1. From the terminal, run `rladmin status` to list the databases on the node.
 1. Copy the name of the database that uses the module that you want to upgrade.
 
