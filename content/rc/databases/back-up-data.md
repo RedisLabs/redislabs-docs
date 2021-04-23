@@ -85,23 +85,20 @@ bucket's name is backups-bucket, use the path:
 
 `gs://backups-bucket`
 
-## Back up to Azure Blob Storage (ABS)
+## Back up to Azure Blob Storage 
 
-To use an ABS container for storing your resources' backups, follow
-these steps in your [Microsoft Azure Management
-Portal](https://manage.windowsazure.com/):
+To store your backup in Microsoft Azure Blob Storage, sign in to the Azure portal and then:
 
-### Create an Azure Storage account
-https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal
+1. [Create an Azure Storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create)
 
-### Create a container
-https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal
+1. [Create a container](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal#create-a-container)
 
-### Manage storage account access keys
-https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage?tabs=azure-portal
+1. [Manage storage account access keys](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage)
 
-Set your resource's **Backup Path** to the path of your ABS storage
-account and clicking the **Apply** button using the following syntax:
+Set your resource's **Backup Path** to the path of your storage
+account.
+
+The syntax for creating the backup varies according to your authorization mechanism.  For example:
 
 `abs://:storage_account_access_key@storage_account_name/container_name/[path/]`
 
@@ -112,6 +109,8 @@ Where:
 - *storage_account_name:* the storage account name
 - *container_name:* the name of the container, if needed.
 - *path*: the backups path, if needed.
+
+To learn more, see [Authorizing access to data in Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-auth)
 
 ## Back up to an FTP Server
 
