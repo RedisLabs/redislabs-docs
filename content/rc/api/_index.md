@@ -6,6 +6,7 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/
          /rc/api/
+         /rc/api/_index.md
 ---
 
 The [Redis Enterprise Cloud REST API](https://api.redislabs.com/v1/swagger-ui.html) helps you manage your Redis Cloud subscription programmatically.
