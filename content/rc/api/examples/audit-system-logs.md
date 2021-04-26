@@ -6,7 +6,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/view-auditing-using-system-log/
          /rc/api/how-to/view-auditing-using-system-log/
+         /rc/api/how-to/view-auditing-using-system-log.md
          /rc/examples/audit-system-logs/
+         /rc/api/examples/audit-system-logs.md
 ---
 System logs collect and report actions performed on various entities in your Redis Enterprise Cloud subscription.  These entities include the account itself, users, API Keys, subscriptions, databases, accounts, payment methods and more. For each entity, various lifecycle events are logged in the system log.
 

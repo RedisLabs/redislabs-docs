@@ -7,7 +7,9 @@ categories: ["RC"]
 linkTitle: Use the API
 aliases: /rv/api/how-to/using-curl/
          /rc/api/how-to/using-curl/
+         /rc/api/how-to/using-curl.md
          /rc/api/get-started/use-rest-api/
+         /rc/api/get-started/use-rest-api.md         
 ---
 You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](https://api.redislabs.com/v1/)) with any of the following tools:
 

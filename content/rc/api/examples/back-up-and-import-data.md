@@ -7,7 +7,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/backup-and-import-databases/
          /rc/api/how-to/backup-and-import-databases/
+         /rc/api/how-to/backup-and-import-databases.md
          /rc/api/examples/back-up-and-import-data/
+         /rc/api/examples/back-up-and-import-data.md
 ---
 
 ## Back up a database

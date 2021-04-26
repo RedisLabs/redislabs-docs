@@ -6,8 +6,12 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/create-api-keys-for-your-team/
          /rc/api/how-to/create-api-keys-for-your-team/
+         /rc/api/how-to/create-api-keys-for-your-team.md
          /rv/api/how-to/manage-api-keys/
          /rc/api/how-to/manage-api-keys/
+         /rc/api/how-to/manage-api-keys.md
+         /rc/api/get-started/manage-api-keys/
+         /rc/api/get-started/manage-api-keys.md
 ---
 Every API request must include the following two API keys:
 

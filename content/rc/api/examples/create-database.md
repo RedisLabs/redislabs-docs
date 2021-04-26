@@ -7,7 +7,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-databases/
          /rc/api/how-to/create-and-manage-databases/
+         /rc/api/how-to/create-and-manage-databases.md
          /rc/api/examples/create-database
+         /rc/api/examples/create-database.md
 ---
 
 You can use the Redis Enterprise Cloud REST API to create databases.

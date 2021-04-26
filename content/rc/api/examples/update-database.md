@@ -5,6 +5,10 @@ weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/update-databases/
+         /rc/api/how-to/update-databases/
+         /rc/api/how-to/update-databases.md
+         /rc/api/examples/update-database/
+         /rc/api/examples/update-database.md
 ---
 
 The API operation that updates an existing database is: `PUT /subscriptions/{subscription-id}/databases/{database-id}`

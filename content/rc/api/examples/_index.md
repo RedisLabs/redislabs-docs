@@ -7,6 +7,7 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/
          /rc/api/how-to/
+         /rc/api/how-to/_index.md
          /rc/api/examples/
          /rc/api/examples/_index.md
          /rv/api/concepts/

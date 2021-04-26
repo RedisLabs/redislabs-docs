@@ -5,8 +5,10 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-subscriptions/
-         /rs/api/how-to/create-and-manage-subscriptions/
-         /rs/api/example/manage-subscriptions/
+         /rc/api/how-to/create-and-manage-subscriptions/
+         /rc/api/how-to/create-and-manage-subscriptions.md         
+         /rc/api/example/manage-subscriptions/
+         /rc/api/examples/manage-subscriptions.md
 ---
 
 You can use the Redis Enterprise Cloud REST API to create and manage subscriptions.

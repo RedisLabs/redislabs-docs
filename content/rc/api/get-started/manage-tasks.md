@@ -9,6 +9,7 @@ aliases: /rv/api/concepts/tasks-management/
          /rc/api/concepts/tasks-management/
          /rc/api/concepts/tasks-management.md
          /rc/api/get-started/manage-tasks/
+         /rc/api/get-started/manage-tasks.md
 ---
 A task is an API operation that is performed asynchronously because it exceeds the time allowed for the synchronous request/response model.
 

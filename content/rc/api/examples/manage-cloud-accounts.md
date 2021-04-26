@@ -7,7 +7,9 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-cloud-accounts/
          /rc/api/how-to/create-and-manage-cloud-accounts/
+         /rc/api/how-to/create-and-manage-cloud-accounts.md
          /rc/api/examples/managge-cloud-accounts
+         /rc/api/examples/manage-cloud-accounts.md
 ---
 You can use the Redis Enterprise Cloud REST API to cloud accounts.
 
