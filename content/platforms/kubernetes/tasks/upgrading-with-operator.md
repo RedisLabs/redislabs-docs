@@ -67,7 +67,7 @@ deployment.apps/redis-enterprise-operator configured
 You can verify the operator is running in your namespace by checking the deployment as follows:
 
 ```
-kubectl get deployment -l name=redis-enterprise-operator
+kubectl get deployment/redis-enterprise-operator
 ```
 
 You should see a result similar to this:
