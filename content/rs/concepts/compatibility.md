@@ -6,15 +6,15 @@ alwaysopen: false
 categories: ["RS"]
 ---
 Redis Enterprise Software is compatible with open source
-Redis. Redis Labs contributes extensively to the open source Redis
+Redis (OSS Redis). Redis Labs contributes extensively to the open source Redis
 project and uses it inside of Redis Enterprise Software. As a rule, Redis Labs adheres to
 the open source's specifications and makes every effort to update
 Redis Enterprise Software with the latest version of open source Redis.
 
 ## Redis commands
 
-Any standard Redis client can be used with Redis Software. There is some
-Redis functionality (shown below) that's not applicable for Redis Software:
+Any standard Redis client can be used with Redis Software.
+There is some Redis functionality (shown below) that's not applicable for Redis Software:
 
 - Shared databases aren't supported in Redis Software, because of the potential for
     negative impact on performance. We recommend using
@@ -22,12 +22,14 @@ Redis functionality (shown below) that's not applicable for Redis Software:
     blocked and produce an error when executed on a dedicated database:
     - MOVE
     - SELECT
-- Data persistence, backups, and access controls are managed from the Redis Software
+- Data persistence and backups are managed from the Redis Software
     admin console. The following commands are blocked:
     - BGREWRITEAOF
     - BGSAVE
     - LASTSAVE
     - SAVE
+- Access controls are managed from the Redis Software
+    admin console. The following commands are blocked
     - ACL DELUSER
     - ACL SETUSER
     - ACL GENPASS
