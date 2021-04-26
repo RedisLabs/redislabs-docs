@@ -1,12 +1,15 @@
 ---
 Title: Get started with the REST API
+linkTitle: Get started
 description: Describes how Redis Cloud REST API uses keys to authenicate and authorize access.
 weight: 10
-alwaysopen: false
+alwaysopen: true
 categories: ["RC"]
 aliases: /rv/api/concepts/authentication-and-authorization/
          /rc/api/concepts/authentication-and-authorization/
+         /rc/api/concepts/authentication-and-authorization.md         
          /rc/api/get-started/
+         /rc/api/get-started/_index.md
 ---
 
 To use the Redis Enterprise Cloud REST API, you need to:

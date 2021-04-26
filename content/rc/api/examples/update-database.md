@@ -1,5 +1,5 @@
 ---
-Title: Update Databases
+Title: Update databases
 description: How to construct requests that update an existing database.
 weight: 30
 alwaysopen: false

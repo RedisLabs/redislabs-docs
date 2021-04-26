@@ -1,5 +1,5 @@
 ---
-Title: Databases Backup and Import
+Title: Database backup and import
 description: When you create or update a database, you can specify the backup path.
     The import API operation lets you import data from various source types and specified locations.
 weight: 40

@@ -8,5 +8,9 @@ categories: ["RC"]
 aliases: /rv/api/how-to/
          /rc/api/how-to/
          /rc/api/examples/
+         /rc/api/examples/_index.md
+         /rv/api/concepts/
+         /rc/api/concepts/
+         /rc/api/concepts/_index.md
 ---
 {{< allchildren style="h2" description="true" />}}

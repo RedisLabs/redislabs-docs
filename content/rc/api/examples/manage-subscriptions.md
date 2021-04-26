@@ -1,5 +1,5 @@
 ---
-Title: Create and manage Subscriptions
+Title: Create and edit subscriptions
 description: This article describes how to create and manage a subscription using `cURL` commands.
 weight: 10
 alwaysopen: false

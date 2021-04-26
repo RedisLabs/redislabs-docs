@@ -1,5 +1,6 @@
 ---
-Title: Redis Cloud REST API
+Title: Redis Enterprise Cloud REST API
+linkTitle: REST API
 description: Describes the Redis Cloud REST API and links to additional info
 weight: 80
 alwaysopen: false

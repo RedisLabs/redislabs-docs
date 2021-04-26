@@ -1,16 +1,27 @@
 ---
-Title: The Processing and Provisioning Lifecycle
+Title: The API lifecycle (process and provisioning) 
+linkTitle: API request lifecycle
 description: API requests follow specific lifecycle phases and states, based on the complexity and length of execution of the operation.
 weight: 60
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/concepts/provisioning-lifecycle/
+         /rc/api/concepts/provisioning-lifecycle/
+         /rc/api/concepts/provisioning-lifecycle.md
+         /rc/api/get-started/process-lifecycle.md
+         /rc/api/get-started/process-lifecycle/
 ---
-The RC Pro REST API can run operations that use many resources, including multiple servers, services and related infrastructure.
+The Redis Enterprise Cloud REST API can run operations that use many resources, including multiple servers, services and related infrastructure.
 These operations include CREATE, UPDATE and DELETE operations on Subscriptions, Databases and other entities.
+
 As a result, these operations can take several minutes to process and complete.
 
+{{< note >}}
+The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+{{< /note >}}
+
 The API asynchronously processes and provisions these operations to improve performance.
+
 The API responds to the request with a task identifier that you can use to track the progress of the request through the phases of the asynchronous operation.
 
 For operations that do not create or modify resources, such as most GET operations, the API uses standard synchronous HTTP request-response.
@@ -23,7 +34,7 @@ The API uses two phases in response to a request that requires asynchronous proc
 
 During this phase, the request is received, evaluated, planned and executed.
 
-### Tracking requests using tasks
+### Use tasks to track requests
 
 When you request an asynchronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.
 The `taskId` is a unique identifier that allows you to track the progress of the requested operation and get information on its state.
@@ -46,7 +57,7 @@ You can also query the state of all active tasks or recently completed tasks in 
 {{% embed-code "rv/api/30-get-all-tasks.sh" %}}
 ```
 
-### Task ID states
+### Task process states
 
 During the processing of a request, the task moves through these states:
 
@@ -62,7 +73,7 @@ During the processing of a request, the task moves through these states:
 A task that reaches the `received` state cannot be cancelled and it will await completion (i.e. processing and provisioning). If you wish to undo an operation that was performed by a task, perform a compensating action (for example: delete a subscription that was created unintentionally)
 {{< /note >}}
 
-## Task provisioning
+## Task provisioning phase
 
 When the processing phase succeeds and the task is in the `processing-completed` state, the provisioning phase starts.
 During the provisioning phase, the API orchestrates all of the infrastructure, resources, and dependencies required by the request.
@@ -90,7 +101,7 @@ During the provisioning of a resource (such as a subscription, database or cloud
 - `deleting` - De-provisioning and deletion is in progress.
 - `error` - An error ocurred during the provisioning phase, including the details of the error.
 
-## Processing limitations
+## Process limitations
 
 The following limitations apply to asynchronous operations:
 
