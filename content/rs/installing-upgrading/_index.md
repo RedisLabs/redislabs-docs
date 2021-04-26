@@ -134,15 +134,14 @@ For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG
 
 1. To install RS, run:
 
-    {{< note >}}
-- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
-- By default, Redis Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group](#custom-installation-user-and-group) during the installation.
-- You must either be logged in as the root user or use sudo to run the install process.
-    {{< /note >}}
-
     ```sh
     sudo ./install.sh
     ```
+    {{< note >}}
+- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
+- By default, Redis Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group](#custom-installation-user-and-group) during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{< /note >}}
 
 1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
     including the `rlcheck` installation verification.
@@ -259,15 +258,15 @@ To install on Linux from the CLI:
 
 1. To install, run:
 
-    {{< note >}}
-- Files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
-- Redis Software is installed and run under the `redislabs` user and `redislabs` group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
-- You must either be logged in as the root user or use sudo to run the install process.
-    {{< /note >}}
-
     ```sh
     sudo ./install.sh
     ```
+
+    {{< note >}}
+- Files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
+- Redis Software is installed and run under the `redislabs` user and `redislabs` group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{< /note >}}
 
 1. Answer the installation questions when shown to complete the installation process,
     and run `rlcheck` to verify the installation.
