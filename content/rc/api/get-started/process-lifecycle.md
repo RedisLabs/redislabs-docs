@@ -1,5 +1,5 @@
 ---
-Title: The API lifecycle (process and provisioning) 
+Title: The API request lifecycle  
 linkTitle: API request lifecycle
 description: API requests follow specific lifecycle phases and states, based on the complexity and length of execution of the operation.
 weight: 60
@@ -11,22 +11,23 @@ aliases: /rv/api/concepts/provisioning-lifecycle/
          /rc/api/get-started/process-lifecycle.md
          /rc/api/get-started/process-lifecycle/
 ---
-The Redis Enterprise Cloud REST API can run operations that use many resources, including multiple servers, services and related infrastructure.
-These operations include CREATE, UPDATE and DELETE operations on Subscriptions, Databases and other entities.
+The Redis Enterprise Cloud REST API can operate on multiple resources, including multiple servers, services and related infrastructure.
 
-As a result, these operations can take several minutes to process and complete.
+These operations can create, update, and delete a variety of entites, including subscriptions, databases, cloud accounts, and more.
+
+Many operations are not instantaneous; they take time to process and to deploy.
 
 {{< note >}}
 The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
 {{< /note >}}
 
-The API asynchronously processes and provisions these operations to improve performance.
+These operations are broken into tasks that run asychronously; that is, they run in the background so that you can continue working with resources that aren't being modified.
 
-The API responds to the request with a task identifier that you can use to track the progress of the request through the phases of the asynchronous operation.
+When you make a request that kicks off a task, the response object provides a task identifier that you can use to track a task's progress through the asynchonous lifecycle.
 
-For operations that do not create or modify resources, such as most GET operations, the API uses standard synchronous HTTP request-response.
+Not every REST API call is asynchronous.  Operations that do not create or modify resources run sychronously.  For example, most GET operations are sychronous.
 
-The API uses two phases in response to a request that requires asynchronous processing: processing and provisioning
+Asynchronous operations have two main phases: processing and provisioning.  A resource is not available until both phases are complete.
 
 ![processing-and-provisioning](/images/rv/api/processing-and-provisioning.png)
 
