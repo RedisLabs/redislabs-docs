@@ -77,7 +77,7 @@ Next, we create a database.
 
     When the database has been created, the status indicator switches to a green box containing a checkmark; this is the Active status indicator.  When your database becomes active, it's ready for use.
 
-    Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
+Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
 
 ## Connect to a database
 

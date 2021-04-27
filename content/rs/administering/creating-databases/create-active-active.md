@@ -65,7 +65,6 @@ Every instance of an Active-Active database can receive write operations, and al
 
     {{< note >}}
 
-- The eviction policy can only be set to **noeviction** for Active-Active databases.
 - You cannot enable or disable database clustering after the Active-Active database is created.
 
     {{< /note >}}

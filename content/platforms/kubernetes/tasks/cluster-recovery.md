@@ -60,7 +60,7 @@ When the last pod is manually deleted, the recovery process resumes.
 1. To recover the cluster data, once the cluster is in Running state, for any cluster pod run:
 
     ```sh
-    kubectl exec -it <pod-name> rladmin recover all
+    kubectl exec <pod-name> -- rladmin recover all
     ```
 
     This command recovers the data for all nodes in the cluster based on the cluster configuration in pod-0.

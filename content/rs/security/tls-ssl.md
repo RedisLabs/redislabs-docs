@@ -6,69 +6,83 @@ alwaysopen: false
 categories: ["RS"]
 aliases: ["/rs/administering/designing-production/security/tls-configuration", "/rs/administering/designing-production/security/client-connections"]
 ---
-Transport Layer Security (TLS), commonly called “SSL”, ensures the privacy of data sent between applications and their Redis databases. TLS also secures connections between Redis Enterprise Software nodes.
+Transport Layer Security (TLS), a successor to SSL, ensures the privacy of data sent between applications and their Redis databases. TLS also secures connections between Redis Enterprise Software nodes.
 
-## TLS authentication
+You can use TLS authentication for one or more of the following types of communication:
 
-You can enable TLS for the following two scenarios:
+- Communication from clients (applications) to your database
+- Communication from your database to other clusters for replication using [Replica Of]({{<relref "rs/administering/designing-production/active-passive.md">}})
+- Communication to and from your database to other clusters for synchronization using [Active-Active]({{<relref "rs/administering/designing-production/active-active.md">}})
 
-1. Client-server traffic between your Redis clients and your Redis databases
-1. Replication and synchronization traffic between the nodes of a Redis Enterprise Software cluster
+## Enable TLS for client connections
 
-When you configure `Replica Of` for a database, synchronization traffic flows between the primary instance of the database and the replica instance of the database. You can configure authentication for Replica Of synchronization traffic only, or for all communications, including Replica Of synchronization traffic and data traffic between the database and the clients.
+You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
 
-To enable and configure TLS authentication:
-
-1. In **databases**, either:
-    - Click **Add** (+) to create a new database.
-    - Click on the database that you want to configure and at the bottom of the page click edit.
-1. Enable the TLS option on the configuration page. When creating a database, you can find this under "Show advanced options".
-    ![database-tls-config](/images/rs/database-tls-config.png "Database TLS Configuration")
-1. Select the TLS scope:
-    - Require TLS for Replica Of communications only - This option will only encrypt synchronization traffic.
-    - Require TLS for all communications - This option will encrypt synchronization traffic and traffic between a client and a server.
-    ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
-
-1. Select if you would like authentication enforced. By deselecting this option you enforce encryption without authentication.
-1. Enter the certificates authorized to authenticate.
-1. Copy the syncer certificate from the cluster settings tab. The syncer certificate is used to facilitate encrypted replication and synchronization traffic.
-1. Click Add  ![Add](/images/rs/icon_add.png#no-click "Add") to configure certificates.
-1. Paste the syncer certificate into the certificate box.
-        ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
-1. Save the certificates. ![icon_save](/images/rs/icon_save.png#no-click "Save")
-1. Repeat for any client certificates you would like to be able to authenticate to your database.
-
-{{< note >}}
-There are two considerations for replication authentication you should be aware of:
-
-1. The syncer certificates of the clusters that host the replica instances of the database must always be set when enabling a database for encryption.
-2. When using CRDB, the syncer certificate for each cluster must be configured on the database.
-{{< /note >}}
-
-## Certificate Authentication for Active-Active Databases
-
-When you create a new CRDB, you can configure authentication for traffic between active-active databases using the same process for as replication traffic.
-
-{{< note >}}
-You cannot enable or disable TLS after the CRDB is created, but you can change
-the TLS configuration.
-{{< /note >}}
-
-### Configuring TLS for CRDB communication
-
-To enable TLS for CRDB communication for a CRDB:
-
-1. In **databases**, click ![icon_add](/images/rs/icon_add.png#no-click "Add")
-    to create a new CRDB.
-1. In **configuration**, at the bottom of the page click **edit**.
+1. Select your database from your database list and navigate to the **configuration** tab.
+1. Select **Edit** at the bottom of your screen.
 1. Enable **TLS**.
-![crdb-tls-config-enable](/images/rs/crdb-tls-config-enable.png "crdb-tls-config-enable")
-1. After you create the CRDB on all participating clusters, on the participating clusters for which you want to require TLS, edit the CRDB instance and select your TLS scope.
-        - Require TLS for CRDB communication only - This option will require TLS for  CRDB synchronization only
-data traffic between the database and the clients.
-        - Require TLS for all communications - This option will encrypt synchronization traffic and traffic between a client and a server.   
- ![crdb-tls-all](/images/rs/crdb-tls-all.png "crdb-tls-all")
-1. Ensure you copy the syncer certificate from the settings tab of all participating clusters. This will ensure that you can authenticate to each CRDB in the cluster.
+    - **Enforce client authentication** is selected by default. If you unselect this option, you will still enforce encryption, but TLS client authentication will be disabled.
+1. Select **Advanced Options** and **Require TLS for All Communications** from the dropdown menu.
+    ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
+1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add")
+1. Paste your certificate or certificate authority (CA) into the text box.
+    ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
+1. Save the certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
+1. Repeat for each client certificate you need to add.
+    - If your database uses Replica Of or Active-Active replication, you will need to add the syncer certificates for the participating clusters. The steps for each are below.
+1. Optional: To limit connections further to a subset of those with valid certificates, enforce **Subject Alternative Name** and enter authorized users separated with commas.
+1. Select **Update** at the bottom of the screen to save your configuration.
+
+## Enable TLS for Active-Active cluster connections
+
+{{< note >}}
+You cannot enable or disable TLS after the Active-Active database is created, but you can change the TLS configuration.
+{{< /note >}}
+
+### Retrieve syncer certificates
+
+1. For each participating cluster, copy the syncer certificate from the **general** settings tab.
+    ![general-settings-syncer-cert](/images/rs/general-settings-syncer-cert.png "general-settings-syncer-cert")
+
+### Configure TLS certificates for Active-Active
+
+1. During database creation (see [Create an Active-Active Geo-Replicated Database]({{<relref "content/rs/administering/creating-databases/create-active-active.md" >}}), select **Edit** from the **configuration** tab.
+1. Enable **TLS**.
+    - **Enforce client authentication** is selected by default. If you unselect this option, you will still enforce encryption, but TLS client authentication will be disabled.
+1. Select **Require TLS for CRDB communication only** from the dropdown menu.
+    ![crdb-tls-all](/images/rs/crdb-tls-all.png "crdb-tls-all")
+1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add")
+1. Paste a syncer certificate into the text box.
+    ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
+1. Save the syncer certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
+1. Repeat this process, adding the syncer certificate for each participating cluster.
+1. Optional: If also you want to require TLS for client connections, select **Require TLS for All Communications** from the dropdown and add client certificates as well.
+1. Select **Update** at the bottom of the screen to save your configuration.
+
+### Configure TLS on all participating clusters
+
+Repeat this process on all participating clusters.
+
+To enforce TLS authentication, Active-Active databases require syncer certificates for each cluster connection. If every participating cluster doesn't have a syncer certificate for every other participating cluster, synchronization will fail.
+
+## Enable TLS for Replica Of cluster connections
+
+You can enable TLS by editing the configuration of an existing database (as shown below) or by selecting **Advanced Options** when you are creating a new database.
+
+1. For each cluster hosting a replica, copy the syncer certificate from the **general** settings tab.
+1. Select your database from your database list and navigate to the **configuration** tab.
+1. Select **Edit** at the bottom of your screen.
+1. Enable **TLS**.
+    - **Enforce client authentication** is selected by default. If you unselect this option, you will still enforce encryption, but TLS client authentication will be disabled.
+1. Under **Advanced Options**, Select **Require TLS for Replica Of Only** from the dropdown menu.
+    ![database-tls-all](/images/rs/database-tls-all.png "database-tls-all")
+1. Select **Add** ![Add](/images/rs/icon_add.png#no-click "Add")
+1. Paste a syncer certificate into the text box.
+    ![database-tls-replica-certs](/images/rs/database-tls-replica-certs.png "Database TLS Configuration")
+1. Save the syncer certificate. ![icon_save](/images/rs/icon_save.png#no-click "Save")
+1. Repeat this process, adding the syncer certificate for each cluster hosting a replica of this database.
+1. Optional: If you also want to require TLS for client connections, select **Require TLS for All Communications** from the dropdown and add client certificates as well.
+1. Select **Update** at the bottom of the screen to save your configuration.
 
 ## Installing your own certificates
 
