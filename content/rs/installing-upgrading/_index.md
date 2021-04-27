@@ -189,7 +189,7 @@ The files are installed in the `redislabs` directory in the path that you specif
 {{< /note >}}
 
 {{< note >}}
-- Custom installation directories are not supported for Redis on Flash databases.
+- Custom installation directories are not supported for databases using Redis on Flash.
 {{< /note >}}
 
 You can specify any or all of these file locations:
