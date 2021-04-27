@@ -39,6 +39,8 @@ First, create a policy to use for the new instance role:
 1. In the AWS IAM console, go to **Policies** > **Create policy**.
 1. In the **JSON** tab, paste the contents of the RedisLabsInstanceRolePolicy.json policy file.
 
+	{{% code-include file="/static/RedisLabsInstanceRolePolicy.json" language="js" %}}
+
     {{%expand "View RedisLabsInstanceRolePolicy.json" %}}
     {
         "Version": "2012-10-17",
