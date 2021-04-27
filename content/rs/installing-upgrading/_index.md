@@ -182,10 +182,14 @@ During the installation, you can customize the installation directories.
 The files are installed in the `redislabs` directory in the path that you specify.
 
 {{< note >}}
-- Custom installation directories are supported on RedHat Enterprise Linux versions 6 and 7.
+- Custom installation directories are supported on RedHat Enterprise Linux version 7.
 - When you install with custom directories, the installation does not run as an RPM file.
 - If a `redislabs` directory already exists in the path that you specify, the installation fails.
 - All nodes in a cluster must be installed with the same file locations.
+{{< /note >}}
+
+{{< note >}}
+- Custom installation directories are not supported for databases using Redis on Flash.
 {{< /note >}}
 
 You can specify any or all of these file locations:
@@ -229,7 +233,7 @@ During the installation you can specify the OS user and group, which owns all Re
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
 {{< note >}}
-- Custom installation user is supported on RedHat Enterprise Linux versions 6 and 7.
+- Custom installation user is supported on RedHat Enterprise Linux version 7.
 - When you install with custom directories, the installation does not run as an RPM file.
 - You must create the user and group befor attempting to install Redis Software.
 - You can specify an LDAP user as the installation user.
