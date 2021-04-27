@@ -36,12 +36,14 @@ operations, configuring multiple active proxies may cause additional
 latency in operations as the shards and proxies are spread across
 multiple nodes in the cluster.
 
-Note: When the network on a single active proxy becomes the bottleneck,
+{{< note >}}
+When the network on a single active proxy becomes the bottleneck,
 you might also look into enabling the multiple NIC support in RS. With
 nodes that have multiple physical NICs (Network Interface Cards), you
 can configure RS to separate internal and external traffic onto
 independent physical NICs. For more details, refer to [Multi-IP &
 IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}).
+{{< /note >}}
 
 Having multiple proxies for a database can improve RS's ability for fast
 failover in case of proxy and/or node failure. With multiple proxies for
@@ -51,7 +53,7 @@ just uses the next IP in the list to connect to another proxy.
 
 ## Proxy policies
 
-A database can have one of the following four proxy policies:
+A database can have one of these proxy policies:
 
 | **Proxy Policy** | **Description** |
 |------------|-----------------|
@@ -59,26 +61,14 @@ A database can have one of the following four proxy policies:
 | All Master Shards | There are multiple proxies that are bound to the database, one on each node that hosts a database master shard. This mode fits most use cases that require multiple proxies. |
 | All Nodes | There are multiple proxies that are bound to the database, one on each node in the cluster, regardless of whether or not there is a shard from this database on the node. This mode should be used only in special cases. |
 
-Note: Manual intervention is also available via the rladmin bind add and
+{{< note >}}
+Manual intervention is also available via the rladmin bind add and
 remove commands.
-
-## Shard placement policy
-
-A database can have one of two shard placement policies:
-
-| **Placement Policy** | **Description** |
-|------------|-----------------|
-| Dense | The cluster should attempt to place as many shards as possible on the smallest number of nodes as possible. This mode is useful when there is a single proxy in order to reduce the latency between the proxy and the database shards. |
-| Sparse | The cluster should attempt to spread the shards across as many nodes in the cluster as possible. This mode is useful when multiple proxies are bound to the database in order to spread the traffic as much as possible across cluster nodes. |
-
-See [Shard
-Placement]({{< relref "/rs/concepts/rebalancing-shard-placement.md" >}}),
-for more information.
+{{< /note >}}
 
 ## Database configuration
 
-A database can be configured with any combination of proxy policy and
-shard placement policy using rladmin bind and rladmin placement.
+A database can be configured with a proxy policy using rladmin bind.
 
 Warning: Any configuration update which causes existing proxies to be
 unbounded can cause existing client connections to get disconnected.
@@ -89,7 +79,7 @@ configuration.
 The **info** command on cluster returns the existing proxy policy for
 sharded and non-sharded (single shard) databases.
 
-```src
+```sh
 $ rladmin info cluster
 cluster configuration:
    repl_diskless: enabled
@@ -112,21 +102,23 @@ rladmin. The following command is an example that changes the bind
 policy for a database called "db1" with an endpoint id "1:1" to "All
 Master Shards" proxy policy.
 
-```src
+```sh
 rladmin bind db db1 endpoint 1:1 policy all-master-shards
 ```
 
-Note: you can find the endpoint id for the endpoint argument by running
+{{< note >}}
+You can find the endpoint id for the endpoint argument by running
 *status* command for rladmin. Look for the endpoint id information under
 the *ENDPOINT* section of the output.
+{{< /note >}}
 
-### Reapply Policies After Topology Changes
+### Reapply policies after topology changes
 
 If you want to reapply the policy after topology changes, such as node restarts,
 failovers and migrations, run this command to reset the policy:
 
-```src
-rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards||all-nodes>
+```sh
+rladmin bind db <db_name> endpoint <endpoint id> policy <all-master-shards|all-nodes>
 ```
 
 This is not required with single policies.

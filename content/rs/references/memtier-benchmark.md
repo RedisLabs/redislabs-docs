@@ -12,12 +12,12 @@ But what does the performance look like as compared to an all-RAM RS database?
 The simple scenarios on this page show you how you can get performance results with the free RS trial version.
 If you would like assistance with your evaluation or need to test a larger cluster, we'd be happy to help.
 
-{{% note %}}
+{{< note >}}
 memtier_benchmark is included with Redis Enterprise Software in /opt/redislabs/bin/.
 To benchmark another database provider, you can get [memtier_benchmark on GitHub](https://github.com/RedisLabs/memtier_benchmark).
-{{% /note %}}
+{{< /note >}}
 
-## Benchmark and Performance Test Considerations
+## Benchmark and performance test considerations
 
 For our testing, let's configure a Redis Enterprise Software cluster with the trial version
 and use memtier_benchmark to evaluate the performance of a Redis on Flash enabled database in these scenarios:
@@ -34,13 +34,13 @@ The Redis Enterprise Software trial version lets you use up to 4 Redis shards wi
 - 1 non-replicated clustered database with 4 master shards
 - 1 highly available and clustered database with 2 master shards and 2 slave shards
 
-## Test Environment and RS Cluster Setup
+## Test environment and RS cluster setup
 
 For the test environment, you must:
 
 1. Create a three-node RS cluster.
 1. Prepare the flash memory.
-1. Setup the load generation tool.
+1. Set up the load generation tool.
 
 ### Creating a three-node RS cluster {#creating-a-threenode-rs-cluster}
 
@@ -52,10 +52,10 @@ You can run all of these tests on Amazon AWS with these hosts:
 
 For instructions on how to install RS and set up a cluster, go to either:
 
-- [Quick Setup]({{< relref "/rs/getting-started/quick-setup.md" >}}) for a test installation
-- [Install and Upgrade]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) for a production installation
+- [Quick Setup]({{< relref "/rs/getting-started/_index.md" >}}) for a test installation
+- [Install and Upgrade]({{< relref "/rs/installing-upgrading/_index.md" >}}) for a production installation
 
-For the tests we use a quorum node in the cluster to keep costs down on AWS instance usage,
+For the tests we use a quorum node in the cluster to keep costs down on AWS EC2 instance usage,
 but still keep the minimum 3 nodes in the cluster that RS needs in case a node fails.
 The quorum node can be on a less powerful instance type (m4.large) as it does not have shards on it or take traffic.
 
@@ -64,12 +64,12 @@ Those SSDs are what RoF combines with RAM to host the database on.
 If you run these tests in another environment (such as on-premise),
 you must use NVMe SSDs to see the performance benefits of RoF.
 
-## Preparing the Flash Memory
+## Preparing the flash memory
 
 After you install RS on the nodes,
 the flash memory attached to the i3.2xlarge instances must be prepared and formatted with the `/opt/redislabs/sbin/prepare_flash.sh` script.
 
-## Setting up the Load Generation Tool
+## Setting up the load generation tool
 
 The memtier_benchmark load generator tool generates the load on the RoF databases.
 To use this tool, install RS on a dedicated instance that is not part of the RS cluster
@@ -78,11 +78,11 @@ We recommend that you use a relatively powerful instance to avoid bottlenecks at
 
 For these tests, the load generation host uses a c4.8xlarge instance type.
 
-## Database Configuration Parameters
+## Database configuration parameters
 
 ### Create a Redis on Flash test database
 
-You can use the RS web UI to create a test database.
+You can use the RS admin console to create a test database.
 We recommend that you use a separate database for each test case with these requirements:
 
 |  **Parameter** | **With replication** | **Without replication** | **Description** |
@@ -96,19 +96,19 @@ We recommend that you use a separate database for each test case with these requ
 |  Number of (master) shards | 2 | 4 | Shards are distributed as follows:<br/>- With replication: 1 master shard and 1 slave shard on each node<br/>- Without replication: 2 master shards on each node |
 |  Other parameters | Default | Default | Keep the default values for the other configuration parameters. |
 
-## Data Population
+## Data population
 
 ### Populate the benchmark dataset
 
 The memtier_benchmark load generation tool populates the database.
 To populate the database with N items of 500 Bytes each in size, on the load generation instance run:
 
-```src
+```sh
 $ memtier_benchmark -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-maximum=$N -n allkeys -d 500 --key-pattern=P:P --ratio=1:0
 ```
 
-Setup a test database with these values:
+Set up a test database with these values:
 
 |  **Parameter** | **Description** |
 |  ------ | ------ |
@@ -117,41 +117,41 @@ Setup a test database with these values:
 |  Number of items<br/>(–key-maximum) | With replication: 75 Million<br/>Without replication: 150 Million |
 |  Item size<br/>(-d) | 500 Bytes |
 
-## Centralize the Keyspace
+## Centralize the keyspace
 
 ### With replication
 
 To create about 20.5 million items in RAM for your highly available clustered database with 75 million items, run:
 
-```src
+```sh
 $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-minimum=27250000 --key-maximum=47750000 -n allkeys
 --key-pattern=P:P --ratio=0:1
 ```
 
-You can see the **Values in RAM** metric on the **metrics** page of your database in the RS web UI to validate the test.
+You can see the **Values in RAM** metric on the **metrics** page of your database in the RS admin console to validate the test.
 
 ### Without replication
 
 To create 41 million items in RAM without replication enabled and 150 million items, run:
 
-```src
+```sh
 $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-minimum=54500000 --key-maximum=95500000 -n allkeys
 --key-pattern=P:P --ratio=0:1
 ```
 
-## Test Runs
+## Test runs
 
 ### Generate load
 
 #### With replication
 
-We recommend that you do a dry run and double check the RAM Hit Ratio on the **metrics** screen in the RS web UI before you write down the test results.
+We recommend that you do a dry run and double check the RAM Hit Ratio on the **metrics** screen in the RS admin console before you write down the test results.
 
 To test RoF with an 85% RAM Hit Ratio, run:
 
-```src
+```sh
 $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=11 -c 20 -t 1
 -d 500 --key-maximum=75000000 --key-pattern=G:G --key-stddev=5125000
 --ratio=1:1 --distinct-client-seed --randomize --test-time=600
@@ -162,7 +162,7 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=11 -c 20 -t 1
 
 Here is the command for 150 million items:
 
-```src
+```sh
 $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=24 -c 20 -t 1
 -d 500 --key-maximum=150000000 --key-pattern=G:G --key-stddev=10250000
 --ratio=1:1 --distinct-client-seed --randomize --test-time=600
@@ -178,13 +178,13 @@ Where:
 |  Pipelining (--pipeline)\ | Pipelining allows you to send multiple requests without waiting for each individual response (-t) and number of clients per thread (-c) |
 |  Read\write ratio (--ratio)\ | A value of 1:1 means that you have the same number of write operations as read operations (-t) and number of clients per thread (-c) |
 
-## Test Results
+## Test results
 
 ### Monitor the test results
 
-You can either monitor the results in the **metrics** tab of the RS Web UI or with the memtier_benchmark output.
+You can either monitor the results in the **metrics** tab of the RS admin console or with the memtier_benchmark output.
 The memtier_benchmark results include the network latency between the load generator instance and the cluster instances.
-The metrics shown in the RS web UI do not include network latency.
+The metrics shown in the RS admin console do not include network latency.
 
 ### Expected results
 

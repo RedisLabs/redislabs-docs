@@ -1,106 +1,106 @@
 ---
-Title: Redis Enterprise Software (RS)
+Title: Redis Enterprise Software
 description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
 
-## What is Redis Enterprise Software?
+[Redis Enterprise](https://redislabs.com/redis-enterprise/) is a robust, in-memory database platform built by the same people who develop open source Redis.
+It maintains the simplicity and high performance of Redis and adds many enterprise-grade capabilities, including:
 
-Redis Enterprise Software (RS) is based on the proven technology behind the [Redis Enterprise offering](https://redislabs.com/why-redis/redis-enterprise/), which is used by thousands of customers. RS extends and provides advanced, enterprise-critical features to Redis.
+- Linear scaling to hundreds of millions of operations per second
+- Active-Active global distribution with local latency
+- Redis on Flash to support large datasets while minimizing infrastructure costs
+- 99.999% uptime
 
-You can install RS in your production environment of choice, whether for an on-premises data-center or your preferred cloud platform.
-For testing, you can also use pre-installed Docker containers.
-Either way, you have full control of your data, clusters, databases, and configuration.
+## Software vs. Cloud
 
-Note: The previous name of Redis Enterprise Software (RS) was “Redis Labs Enterprise Cluster” (RLEC).
+Redis Enterprise is available as software and as a hosted [cloud service]({{< relref "/rc/_index.md" >}}).
 
-## What are the benefits of using RS?
+You can run Redis Enterprise Software in an on-premises data center or on your preferred cloud platform. 
 
-The RS architecture supports multiple threaded Redis databases created for multiple users across the same cluster infrastructure while keeping the databases completely isolated from one another. In addition, RS gives you the flexibility to run your Redis database in multiple configurations to accommodate your specific performance and availability needs.
+Redis Enterprise also works with [various container orchestrations systems]({{< relref "/platforms/_index.md" >}}), such as Kubernetes. See our docs on [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}}), [Openshift]({{< relref "/platforms/openshift/_index.md" >}}), [PKS]({{< relref "/platforms/pks/_index.md" >}}), and [PCF]({{< relref "/platforms/pcf/_index.md" >}}) for more details.
 
-[Learn more about Redis Enterprise Software architecture.]({{< relref "/rs/concepts/_index.md" >}})
+For development and testing, you can also run Redis Enterprise using [Docker containers]({{< relref "/rs/getting-started/getting-started-docker.md" >}}).
+
+If you prefer a managed version of Redis Enterprise, [Redis Enterprise Cloud]({{< relref "/rc/_index.md" >}}) provides all of the benfits of Redis Enterprise Software on all major public clouds.
+
+## Why Redis Enterprise Software?
+
+Redis Enterprise makes it easy to run Redis at scale.
+You can use a single Redis Enterprise Cluster to provision as many Redis databases as you need for your organization, and each of these databases can be tuned and scaled independently.
+In addition, Redis Enterprise supports many enterprise security features, including role-based access control.
+
+For more on scaling, high availability, and durability, see the [the Redis Enterprise Software architecture.]({{< relref "/rs/concepts/_index.md" >}})
+
+## Active-Active replicated Redis databases (CRDB) {#activeactive-replicated-redis-databases-crdb}
+
+[Active-Active databases]({{< relref "/rs/concepts/intercluster-replication.md" >}}) provide global, geo-distributed database replication with conflict-free local writes.
+This greatly simplifies the development of globally distributed applications.
+Geo-distributed Active-Active databases combine [conflict-free replicated data types](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type) with Redis data types to provide automatic conflict resolution based on each data type's semantics.
 
 ## Redis on Flash
 
-Redis on Flash offers the unique ability to have a very large Redis database but at significant cost savings. Where standard Redis databases must all be in RAM, RoF enables your Redis databases to span both RAM and dedicated flash memory (SSD) to “hot” values in RAM and “warm” values on flash. All of this while guaranteeing 100% compatibility with all Redis clients, data types, and commands, at just a fraction of the overall cost.
+[Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) offers dramatic cost savings for extra large Redis databases.
+Standard Redis databases keep all of their data in RAM; Redis on Flash databases distribute data across RAM and dedicated flash memory (SSD).
+This lowers costs while maintaining similar performance to completely RAM-based databases.
 
-[Learn more about Redis on Flash.]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+## Additional features
 
-## Geo-Distributed Active-Active Conflict-free Replicated Redis Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-redis-databases-crdb}
+{{< tabs tabTotal="7" tabID="1" tabName1="Linear Scalability" tabName2="High Availability" tabName3="Data Durability" tabName4="High Performance" tabName5="Dedicated Databases" tabName6="User Interface" tabName7="24/7 Support">}}
+{{< tab tabNum="1" >}}
 
-Developing globally distributed applications can be challenging, as developers have to think about race conditions and complex combinations of events under geo-failovers and cross-region write conflicts. CRDBs simplify the development of such applications by directly using built-in smarts for handling conflicting writes based on the data type in use. Instead of depending on simplistic “last-writer-wins” conflict resolution, geo-distributed CRDBs combine techniques defined in CRDT (conflict-free replicated data types) research with Redis types to provide smart and automatic conflict resolution based on the data type's intent.
+With Redis Enterprise, a dataset can grow beyond the size of the largest node in the cluster and be processed by any number of cores.
 
-[Learn more about CRDBs.]({{< relref "/rs/concepts/intercluster-replication.md" >}})
+By partitioning your dataset across multiple nodes using a hashing policy, you overcome the memory limitations of a single node and the performance limitations of a single core.
 
-## Major Features
+You can dynamically scale your Redis databases increasing their memory limits or increasing the number of shards, all using the built-in UI.
 
-### Seamless scalability
+{{< /tab >}}
+{{< tab tabNum="2" >}}
 
-With RS, a dataset can grow beyond the largest node in the cluster and
-be processed by any number of cores. By creating a Redis cluster and
-sharding your dataset across multiple nodes (using a sharding policy of
-choice), RS overcomes the memory limitations of a single node and the
-performance limitations of a single core. Dynamic scaling is easy; you
-can increase your dataset's maximum size by simply changing the memory
-limit setting or by increasing the number of shards, all with the click of a
-button. Scaling, upgrades, and downgrades do not incur any downtime.
+In addition to replicating a database within the same data center, you can also replicate a dataset across data centers and across regions.
+This provides high availability, disaster recovery, and performance improvements for globally-distributed applications.
 
-{{< youtube 6iVpOg8V5lQ >}}
+If a node fails, the data is seamlessly served from a replacement node in the cluster without human intervention.
 
-### True high availability
+Redis Enterprise can automatically handle node failures, Redis process failures, and proxy failures.
+Failover typically completes within a few seconds.
 
-In addition to replicating a database within the same data center, you
-can also replicate a dataset across data-centers and across regions to
-achieve high availability, disaster recovery, and performance benefits.
-If a node fails, the data is seamlessly served from a replacement node
-in the cluster without human intervention. RS technology is capable of
-automatically handling node failures, Redis failures, and proxy
-failures. Auto-failover is carried out within a few seconds.
-
-[Learn more about High Availability in RS]({{< relref "/rs/concepts/high-availability/_index.md" >}}).
+[Learn more about High Availability]({{< relref "/rs/concepts/high-availability/_index.md" >}}).
 
 {{< youtube qIZuW_8bPtQ >}}
 
-### Built-in data persistence, backups and replication {#builtin-data-persistence-backups-and-replication}
+{{< /tab >}}
+{{< tab tabNum="3" >}}
 
-RS enables the use of Redis AOF (Append-Only File) every second or on
+Redis Enterprise enables the use of Redis AOF (Append-Only File) every second or on
 every write, or (RDB) snapshots of your dataset every 1, 6, or 12 hours
 to persistent storage. In addition, you can back up your dataset
-periodically or ad-hoc to an FTP server or AWS S3. Other cloud storage
-options, such as Azure Geo-Redundant Storage, SoftLayer Object Storage,
-and Google Cloud Storage, are planned to be added in a future release.
+periodically or on-demand to an FTP server, network storage or cloud storage service.
 
-### Predictable high-performance {#predictable-highperformance}
+{{< /tab >}}
+{{< tab tabNum="4" >}}
 
-Datasets are processed by multiple cores to guarantee the best
-performance. In addition, RS uses advanced mechanisms to guarantee
-high-performance, even during intensive disk-access scenarios.
+Requests are processed by multiple cores to guarantee the best performance.
 
-### Multiple dedicated databases
+{{< /tab >}}
+{{< tab tabNum="5" >}}
 
-You can run multiple databases over a single RS deployment, each running
-in a dedicated process and in a non-blocking manner.
+You can run multiple databases on a single Redis Enterprise Cluster.
+Each database runs with its own dedicated processes in a non-blocking manner.
 
-### Unlimited database connections
+{{< /tab >}}
+{{< tab tabNum="6" >}}
 
-Use as many database connections as you want.
+Redis Enterprise provides a full-featured UI for setting up, configuring, and monitoring the cluster and its databases.
+The UI also allows you configure alerts for events at the database and cluster levels.
 
-### Full-featured management UI {#fullfeatured-management-ui}
+{{< /tab >}}
+{{< tab tabNum="7" >}}
 
-RS provides a full-featured and easy-to-use management user interface
-(UI) for setting up, configuring and monitoring the cluster and each
-database. In addition, RS provides configurable alert notifications for
-important events at the single database level as well as the cluster
-level.
+Redis Labs provides [24/7 support](https://redislabs.com/redis-enterprise-deployment/support/) to users of Redis Enterprise Software and Redis Enterprise Cloud.
 
-### Cluster automation
-
-RS's fully-managed solution takes care of all your database scaling,
-data-persistence tuning, shards migration and auto-failover needs.
-
-### 24/7 support {#247-support}
-
-Paying customers enjoy our premium 24/7 support through Redis Labs online
-or phone support services.
+{{< /tab >}}
+{{< /tabs >}}

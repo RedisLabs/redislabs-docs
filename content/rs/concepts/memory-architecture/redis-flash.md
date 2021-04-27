@@ -7,8 +7,8 @@ categories: ["RS"]
 ---
 Redis on Flash (RoF) offers users of [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) and [Redis
-Enterprise VPC](https://redislabs.com/products/redis-cloud-private/) the unique ability to
-have very large Redis databases but at significant cost savings. Where
+Enterprise Cloud](https://redislabs.com/redis-enterprise-cloud/) the unique ability to
+have large Redis databases but at significant cost savings. Where
 standard Redis databases must all be in RAM, Redis on Flash enables your
 Redis databases to span both RAM and dedicated flash memory
 (SSD). Whilst keys are always stored in RAM, RoF intelligently manages
@@ -19,7 +19,7 @@ This enables you to have much larger datasets with RAM-like latency and
 performance, but at dramatically lower cost than an all-RAM database.
 
 ![All-RAM Redis Databases versus Redis on Flash enabled
-databases](/images/rs/redis_flash_px.png?width=600&height=328)
+databases](/images/rs/redis_flash_px.png)
 
 By using Redis on Flash to distribute the data between RAM and flash
 memory, which is much cheaper than RAM, you can lower your TCO and
@@ -27,11 +27,11 @@ better utilize hardware, hypervisor, and cloud resources. In many cases,
 Redis on Flash can cut resource costs by over 70% when compared to an
 all-RAM Redis Enterprise Software deployment.
 
-## Flash Memory
+## Flash memory
 
 Unlike standard Redis Enterprise Software installations, implementing
 Redis on Flash requires pre-planning around memory and overall sizing.
-There are a few critical recommendations
+There are a few critical recommendations:
 
 - The flash memory should be local to the server/VM/instance/container
     as opposed to network attached.
@@ -61,7 +61,7 @@ When you begin planning the deployment of Redis on Flash in Production,
 we recommend working closely with the Redis Labs technical team for
 sizing and performance tuning.
 
-## Tunable RAM to Flash Ratio
+## Tunable RAM to flash ratio
 
 You can easily configure or tune the ratio of RAM-to-Flash for each
 database independently, optimizing performance for your specific use
@@ -70,7 +70,7 @@ database. Think of this like a gas pedal in a car, the database speeds
 up as you give it more gas (RAM). We recommend you keep at least 20% of
 all values in RAM.
 
-## Working Set Management
+## Working set management
 
 Of your dataset, perhaps there is a subset of highly active objects
 considered the application's "working set." Redis on Flash 
@@ -78,13 +78,13 @@ intelligently manages the location of the working set (RAM) and the
 infrequently accessed keys (flash memory), based on LRU
 (least-recently-used) on a per-object basis.
 
-## Redis Client Support
+## Redis client support
 
 Just like all-RAM databases, RoF is compatible with existing Redis
 applications. Databases that employ RoF are identical to all-RAM Redis
 Enterprise Software databases in characteristics and features.
 
-## Redis on Flash vs Disk Based Databases
+## Redis on Flash vs disk-based databases
 
 Flash memory can be SATA or NVMe based storage devices, but NVMe is
 where you can see the performance benefits. There are many databases in
@@ -123,29 +123,19 @@ than extending RAM in a number of ways.
     Redis Enterprise Software. You get the benefits of RoF now and into
     the future regardless of how flash memory evolves.
 
-## Next Steps
+## Next steps
 
-To create Redis on Flash databases you must meet the following
-prerequisites:
+To create Redis on Flash databases, you must meet the following prerequisites: 
 
-- Have ephemeral and persistent flash memory mounted on Redis
-    Enterprise Software nodes with the proper disk size, per the [Redis
-    on Flash memory
-    guidelines]({{< relref "/rs/administering/designing-production/hardware-requirements.md#production-environment-hardware-requirements" >}}).
-- Have all [hardware
-    requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-    in place.
-- Have all [software
-    requirements]({{< relref "/rs/administering/designing-production/supported-platforms.md" >}})
-    in place.
-- Perform the [initial setup and creation of a new
-    cluster]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}).
+- Mount [ephemeral and persistent storage]({{<relref "/rs/administering/designing-production/persistent-ephemeral-storage.md">}}) on Redis Enterprise Software nodes with the proper disk size.
+- Meet all [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) and [software requirements]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
+- [Install Redis Enterprise Software]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 
-Once these requirements are met, both Redis of Flash databases and
+Once these requirements are met, both Redis on Flash databases and
 all-RAM databases can be created and managed in the same cluster. For
 additional details, refer to [Creating a new
-database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
 When Redis on Flash is enabled, additional settings and
-[metrics]({{< relref "/rs/administering/monitoring-metrics/definitions.md#redis-on-flash-metrics" >}})
+[metrics]({{< relref "/rs/administering/monitoring-metrics/console-metrics-definitions.md#redis-on-flash-metrics" >}})
 are available in the system.

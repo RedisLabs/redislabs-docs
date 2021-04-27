@@ -1,11 +1,11 @@
 ---
-Title: Terminology in Redis Enterprise Software (RS)
+title: Terminology in Redis Enterprise Software
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Here are explanations of some of the terms used in RS.
+Here are explanations of some of the terms used in Redis Enterprise Software (RS).
 
 ## Node
 
@@ -25,7 +25,7 @@ which helps to achieve high availability.
 A node is made up of several components, as detailed below, and works
 together with the other cluster nodes.
 
-## Redis Instance - Shard
+## Redis instance (shard)
 
 As indicated above, each node serves as a container for hosting multiple
 database instances, referred to as "shards".
@@ -33,7 +33,7 @@ database instances, referred to as "shards".
 RS supports various database configurations:
 
 - **Standard Redis database** - A single Redis shard with no
-    replication or data sharding.
+    replication or clustering.
 - **Highly available Redis database** - Every database master shard
     has a replicated slave shard, so that if the master shard fails the
     cluster can automatically failover to the slave shard with minimal
@@ -50,9 +50,9 @@ RS supports various database configurations:
 
 ## Proxy
 
-Each node includes one or more zero-latency multi-threaded proxies
-(written in low-level C) that mask the underlying system complexity. The
-proxies oversee forwarding Redis operations to the database shards on
+Each node includes one zero-latency, multi-threaded proxy
+(written in low-level C) that masks the underlying system complexity. The
+proxy oversees forwarding Redis operations to the database shards on
 behalf of a Redis client.
 
 The proxy simplifies the cluster operation, from the application or
@@ -66,9 +66,7 @@ instruction pipelining even if not instructed to do so by the client.
 
 Each database is served by a database endpoint that is part of and
 managed by the proxies. The endpoint oversees forwarding Redis
-operations to specific database shards. If database replication is
-enabled, each database has two endpoints: a master endpoint and a slave
-endpoint.
+operations to specific database shards.
 
 If the master shard fails and the slave shard is promoted to master, the
 master endpoint is updated to point to the new master shard.

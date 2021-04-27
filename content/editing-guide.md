@@ -7,7 +7,7 @@ Redis Labs documentation is an open source project and we welcome edits of all t
 
 Just to get you started, here is a simple explanation of how to edit the docs.
 
-## Getting to the Source
+## Find the source
 
 1. Find a page with something to edit.
 
@@ -22,7 +22,7 @@ Just to get you started, here is a simple explanation of how to edit the docs.
 Here's what this process looks like:
 {{< video "/images/site/click-link-and-login-to-github.mp4" "click-link-and-login-to-github" >}}
 
-## Make the Change
+## Make the change
 
 1. Fork the repository.
 
@@ -37,7 +37,7 @@ Here's what this process looks like:
 Here's what this process looks like:
 {{< video "/images/site/fork-repo-and-change-text.mp4" "fork-repo-and-change-text" >}}
 
-## Propose the Change
+## Propose the change
 
 1. When you finish with your changes, scroll down to the bottom of the page.
 1. Enter a meaningful name for the change that you made.
@@ -49,7 +49,7 @@ Here's what this process looks like:
 Here's what this process looks like:
 {{< video "/images/site/propose-file-change.mp4" "propose-file-change" >}}
 
-## Open a Pull Request
+## Open a pull request
 
 1. Review your changes.
 
@@ -75,3 +75,10 @@ Here's what this process looks like:
 {{< video "/images/site/review-and-create-PR.mp4" "review-and-create-PR" >}}
 
 Your edits improve the quality of the documentation and help every Redis Labs customer get the most out of Redis products!
+
+## Related Info
+
+For more info about editing and writing our documents:
+
+- [Markdown cheatsheet]({{<relref "content/cheatsheet.md">}})
+- [Contribution guide]({{<relref "content/contribution-guide.md">}})

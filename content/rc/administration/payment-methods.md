@@ -1,13 +1,14 @@
 ---
 Title: Payment Methods
 description:
-weight: $weight
+weight: 50
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
+aliases: /rv/administration/payment-methods/
 ---
-On this page, you can view and edit your account's existing payment
-methods, as well as add new ones to your Redis Cloud Essentials account.
-Click the name of an existing method to view and edit it or click the
-"+" icon to add a new payment method.
+On this page you can view and edit the existing payment methods for your account, as well as add new ones to your account.
 
-![payment_methods](/images/rc/payment_methods.png?width=1000&height=365)
+- To add a new payment method, click ![Add](/images/rs/icon_add.png#no-click "Add").
+- To edit an existing a payment method, click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
+
+![payment_methods](/images/rc/payment_methods.png)

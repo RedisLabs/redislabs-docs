@@ -5,12 +5,12 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When a cluster fails,
+When a Redis Enterprise Software (RS) cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
-{{% note %}}
-For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/cluster-recovery.md" >}}).
-{{% /note %}}
+{{< note >}}
+For cluster recovery in a Kubernetes Operator deployment, go to: [Redis Enterprise Cluster Recovery for Kubernetes]({{< relref "/platforms/kubernetes/tasks/cluster-recovery.md" >}}).
+{{< /note >}}
 
 Cluster failure can be caused by:
 
@@ -21,8 +21,7 @@ To recover a cluster and re-create it as it was before the failure
 you must restore the cluster configuration (ccs-redis.rdb) to the cluster nodes.
 To restore the data that was in the databases to databases in the new cluster
 you must restore the database persistence files (backup, AOF, or snapshot files) to the databases.
-These files are stored in the [persistent storage location]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
+These files are stored in the [persistent storage location]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}).
 
 The cluster recovery process includes:
 
@@ -40,55 +39,55 @@ The cluster recovery process includes:
 - We recommend that you use clean persistent storage drives for the new cluster.
     If you use the original storage drives,
     make sure that you backup the files on the original storage drives to a safe location.
+- Identify the cluster configuration file that you want to use as the configuration for the recovered cluster.
+    The cluster configuration file is `/css/ccs-redis.rdb` on the persistent storage for each node.
 
-## Recovering the Cluster
+## Recovering the cluster
 
 1. (Optional) If you want to recover the cluster to the original cluster nodes, uninstall RS from the nodes.
 
-1. Install [RS]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}}) on the new cluster nodes.
+1. Install [RS]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the new cluster nodes.
 
-    Do not configure the cluster nodes (`rladmin cluster create` in the CLI or **Setup** in the Web UI).
+    Do not configure the cluster nodes (`rladmin cluster create` in the CLI or **Setup** in the admin console).
 
     The new servers must have the same basic hardware and software configuration as the original servers, including:
 
     - The same number of nodes
     - At least the same amount of memory
     - The same RS version
+    - The same installation user and paths
 
-    {{% note %}}
+    {{< note >}}
 The cluster recovery can fail if these requirements are not met.
-    {{% /note %}}
+    {{< /note >}}
 
 1. Mount the persistent storage drives with the recovery files to the new nodes.
     These drives must contain the cluster configuration backup files and database persistence files.
 
-    {{% note %}}
+    {{< note >}}
 Make sure that the user redislabs has permissions to access the storage location
 of the configuration and persistence files on each of the nodes.
-    {{% /note %}}
+    {{< /note >}}
 
     If you use local persistent storage, place all of the recovery files on each of the cluster nodes.
 
 1. To recover the cluster configuration from the original cluster to the first node in the new cluster,
     from the [rladmin]({{< relref "/rs/references/rladmin.md" >}}) command-line interface (CLI):
 
-    ```src
+    ```sh
     cluster recover filename [ <persistent_path> | <ephemeral_path> ]<filename> node_uid <node_uid> rack_id <rack_id>
     ```
 
     {{% expand "Command syntax" %}}
 `<filename>` - The full path of the old cluster configuration file in the persistent storage.
-The cluster configuration file is /css/ccs-redis.rdb.
-The file is located on the persistent storage drive for each node in the original cluster and all copies are identical.
+The cluster configuration file is `/css/ccs-redis.rdb`.
 
 `<node_uid>` - The id of the node, in this case `1`.
 
-`<persistent_path>` (optional) - The location of the [persistent storage ]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`<persistent_path>` (optional) - The location of the [persistent storage ]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`<ephemeral_path>` (optional) - The location of the [ephemeral storage]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`<ephemeral_path>` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
 `<rack_id>` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}})
@@ -99,7 +98,7 @@ Otherwise, the node gets the same rack ID as the original node.
 
     For example:
 
-    ```src
+    ```sh
     rladmin cluster recover filename /tmp/persist/ccs/ccs-redis.rdb node_uid 1 rack_id 5
     ```
 
@@ -108,14 +107,14 @@ Otherwise, the node gets the same rack ID as the original node.
 
 1. To join the remaining servers to the new cluster, from the rladmin CLI of each new node run:
 
-    ```src
+    ```sh
     cluster join [ nodes <cluster_member_ip_address> | name <cluster_FQDN> ] username <username> password <password> replace_node <node_id>
     ```
 
     {{% expand "Command syntax" %}}
 `nodes` - The IP address of a node in the cluster that this node is joining.
 
-`name` - The [FQDN name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+`name` - The [FQDN name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
 of the cluster this node is joining.
 
 `username` - The email address of the cluster administrator.
@@ -124,16 +123,13 @@ of the cluster this node is joining.
 
 `replace_node` - The ID of the node that this node replaces from the old cluster.
 
-`persistent_path` (optional) - The location of the [persistent storage]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`persistent_path` (optional) - The location of the [persistent storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`ephemeral_path` (optional) - The location of the [ephemeral storage]
-({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
+`ephemeral_path` (optional) - The location of the [ephemeral storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
 in the new node.
 
-`rack_id` (optional) - If [rack-zone awareness]
-({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
+`rack_id` (optional) - If [rack-zone awareness]({{< relref "/rs/concepts/high-availability/rack-zone-awareness.md" >}}) was enabled in the cluster,
 use this parameter to set the rack ID to be the same as the rack ID
 of the old node. You can also change the value of the rack ID by
 providing a different value and using the `override_rack_id` flag.
@@ -141,16 +137,16 @@ providing a different value and using the `override_rack_id` flag.
 
     For example:
 
-    ```src
+    ```sh
     rladmin cluster join nodes 10.142.0.4 username admin@example.com password mysecret replace_node 2
     ```
 
     You can run the `rladmin status` command to verify that the recovered nodes are now active,
     and that the databases are pending recovery.
 
-    {{% note %}}
-Make sure that you update your [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}})
+    {{< note >}}
+Make sure that you update your [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}})
 with the IP addresses of the new nodes.
-    {{% /note %}}
+    {{< /note >}}
 
 After the cluster is recovered, you must [recover the databases]({{< relref "/rs/administering/troubleshooting/database-recovery.md" >}}).

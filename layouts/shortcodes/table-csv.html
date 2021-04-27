@@ -21,7 +21,7 @@
         <tr>
             {{ range $kr := seq $columnCount }}
             {{ $ar := sub $kr 1 }}
-            <td align='center'>{{ index $r $ar }}</td>
+            <td align='left'>{{ index $r $ar }}</td>
             {{ end }}
         </tr>
         {{ end }}

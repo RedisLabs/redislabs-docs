@@ -3,470 +3,36 @@
     {{ partial "gtm-body" . | safeHTML }}
   {{ end }}
 {{ end }}
-<header id="header">
-  <div class="logo">
-    {{ partial "header.html" . }}
-  </div>
-  {{- with .Site.Menus.shortcuts}}
-  <nav class="shortcuts">
-      <li class="" role="">
-        <label>Products</label>
-        <div class="submenu-wrapper products">
-         <div class="arrow_box"></div>
-          <ul class="vertical menu submenu is-dropdown-submenu first-sub" data-submenu="" aria-hidden="true" role="menu" style="">
-            <div class="row align-center">
-                <div class="small-12 columns submenu-list">
-                    <li id="menu-item-49314"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49314 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Redis Enterprise"
-                        data-is-click="false">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Redis Enterprise</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-49429"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49429"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/">Advantages</a></li>
-                                        <li id="menu-item-49430"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49430"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/data-structures/">Data
-                                                structures</a></li>
-                                        <li id="menu-item-49431"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49431"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/modules/">Modules</a>
-                                        </li>
-                                        <li id="menu-item-49441"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49441"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/multi-model/">Multi-model</a>
-                                        </li>
-                                        <li id="menu-item-49628"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49628"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/technology/">Technology</a>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="menu-item-49315"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49315 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Deployment">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Deployment</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-49463"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49463"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise-deployment/">Selection
-                                                guide</a></li>
-                                        <li id="menu-item-50774"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50774"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise-cloud/">Cloud</a></li>
-                                        <li id="menu-item-50289"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50289"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise-software/">Software</a>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="menu-item-49316"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49316 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Modules">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Modules</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-49449"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49449"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/redis-search/">RediSearch</a>
-                                        </li>
-                                        <li id="menu-item-49450"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49450"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/redis-graph/">RedisGraph</a>
-                                        </li>
-                                        <li id="menu-item-49451"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49451"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/redis-json/">RedisJSON</a>
-                                        </li>
-                                        <li id="menu-item-49452"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49452"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/redis-time-series/">RedisTimeSeries</a>
-                                        </li>
-                                        <li id="menu-item-49454"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49454"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/redis-bloom/">RedisBloom</a>
-                                        </li>
-                                        <li id="menu-item-49439"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49439"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/redis-edge/">RedisEdge</a>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="menu-item-49317"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49317 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Visualization">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Visualization</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-49436"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49436"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redisinsight/">RedisInsight</a></li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="menu-item-49319"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49319 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="More">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">More</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-50448"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50448"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/connectors/">Connectors</a>
-                                        </li>
-                                        <li id="menu-item-50449"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50449"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-enterprise/clients/">Clients</a>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-            </div>
-          </ul>          
+<div class="header-wrap-outer">
+  <header id="header">
+      <div class="header-wrap">
+        <div class="logo">
+          {{ partial "header.html" . }}
         </div>
-      </li>
-      <li class="" role="">
-        <label>Solutions</label>
-        <div class="submenu-wrapper solutions">
-          <div class="arrow_box"></div>
-          <ul class="vertical menu submenu is-dropdown-submenu first-sub" data-submenu="" aria-hidden="true" role="menu" style="">
-            <div class="row align-center">
-                <div class="small-12 columns submenu-list">
-                    <li id="menu-item-49320"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49320 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Use Cases">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Use Cases</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                            <div class="row align-center">
-                                <div class="small-12 columns submenu-list__children">
-                                    <li id="menu-item-50394"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50394"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/use-cases/caching/">Caching</a>
-                                    </li>
-                                    <li id="menu-item-50552"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50552"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/use-cases/session-management/">Session
-                                            management</a></li>
-                                    <li id="menu-item-50557"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50557"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/use-cases/fraud-mitigation/">Fraud
-                                            mitigation</a></li>
-                                    <li id="menu-item-50558"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50558"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/use-cases/leaderboards/">Leaderboards</a>
-                                    </li>
-                                    <li id="menu-item-50403"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50403"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/use-cases/messaging/">Messaging</a>
-                                    </li>
-                                    <li id="menu-item-53106"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53106"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/use-cases/fast-data-ingest/">Fast
-                                            data ingest</a></li>
-                                </div>
-                            </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="menu-item-49321"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49321 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Industries">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Industries</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                            <div class="row align-center">
-                                <div class="small-12 columns submenu-list__children">
-                                    <li id="menu-item-52693"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52693"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/industries/retail/">Retail</a>
-                                    </li>
-                                    <li id="menu-item-50967"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50967"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/industries/redis-for-media-and-entertainment/">Media
-                                            &amp; entertainment</a></li>
-                                    <li id="menu-item-52694"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52694"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/industries/technology/">Technology</a>
-                                    </li>
-                                    <li id="menu-item-50051"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50051"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/industries/financial-services/">Financial
-                                            services</a></li>
-                                    <li id="menu-item-50052"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50052"
-                                        role="menuitem"><a
-                                            href="https://redislabs.com/redis-enterprise/industries/gaming/">Gaming</a>
-                                    </li>
-                                </div>
-                            </div>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-            </div>
-          </ul>          
-        </div>
-      </li>
-      <li class="" role="">
-        <label>Customers</label>
-        <div class="submenu-wrapper customers">
-          <div class="arrow_box"></div>
-          <ul class="vertical menu submenu is-dropdown-submenu first-sub" data-submenu="" aria-hidden="true" role="menu" style="">
-            <div class="row align-center">
-                <div class="small-12 columns submenu-list">
-                        <li id="menu-item-49320"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49320 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Use Cases">
-                        <div>
-                            <div>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-50394"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50394"
-                                            role="menuitem">
-                                            <a href="https://redislabs.com/customer-stories/">Customer Stories</a>
-                                        </li>
-                                        <li id="menu-item-50552"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50552"
-                                            role="menuitem">
-                                            <a href="https://redislabs.com/case-studies/">Case Studies</a>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-            </div>
-          </ul>
-        </div>
-      </li>
-      <li class="" role="">
-        <label>Learn</label>
-        <div class="submenu-wrapper learn">
-          <div class="arrow_box"></div>
-          <ul class="vertical menu submenu is-dropdown-submenu first-sub" data-submenu="" aria-hidden="true" role="menu" style="">
-            <div class="row align-center">
-                <div class="small-12 columns  submenu-list">
-                    <li id="menu-item-49322"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49322 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Start Here">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Start Here</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-49632"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49632"
-                                            role="menuitem"><a target="_blank" rel="noopener noreferrer"
-                                                href="https://app.redislabs.com/#/sign-up/cloud">Try Free</a></li>
-                                        <li id="menu-item-49898"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49898"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/get-started-with-redis/">Get Started</a>
-                                        </li>
-                                        <li id="menu-item-49359"
-                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49359"
-                                            role="menuitem"><a target="_blank" rel="noopener noreferrer"
-                                                href="https://docs.redislabs.com/latest/index.html">Documentation</a></li>
-                                        <li id="menu-item-49976"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49976"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/university/">University</a></li>
-                                        <li id="menu-item-49357"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49357"
-                                            role="menuitem"><a href="https://redislabs.com/redis-for-dummies/">Redis
-                                                For Dummies e-Book</a></li>
-                                        <li id="menu-item-49358"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49358"
-                                            role="menuitem"><a href="https://redislabs.com/redis-in-action/">Redis
-                                                in Action e-Book</a></li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="menu-item-49323"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49323 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Become a Redis Expert">
-                        <div>
-                            <div>
-                            <a class="submenu-section-title">Become a Redis Expert</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns  submenu-list__children">
-                                        <li id="menu-item-49361"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49361"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/redis-best-practices/">Redis Best
-                                                Practices</a></li>
-                                        <li id="menu-item-49634"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49634"
-                                            role="menuitem"><a href="https://redislabs.com/whitepapers/">White
-                                                Papers</a></li>
-                                        <li id="menu-item-49635"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49635"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/datasheets/">Datasheets</a></li>
-                                        <li id="menu-item-49636"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49636"
-                                            role="menuitem"><a
-                                                href="https://redislabs.com/benchmarks/">Benchmarks</a></li>
-                                        <li id="menu-item-49914"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49914"
-                                            role="menuitem"><a href="https://redislabs.com/tech-videos/">Tech
-                                                Videos</a></li>
-                                        <li id="menu-item-49637"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49637"
-                                            role="menuitem"><a href="https://redislabs.com/tech-talks/">Tech
-                                                Talks</a></li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                    <li id="menu-item-49631"
-                        class="nav-head menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-49631 is-dropdown-submenu-parent opens-right"
-                        role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Connect with Us">
-                        <div>
-                            <div>
-                                <a class="submenu-section-title">Connect with Us</a>
-                            </div>
-                            <ul class="vertical menu submenu is-dropdown-submenu" data-submenu="" aria-hidden="true" role="menu">
-                                <div class="row align-center">
-                                    <div class="small-12 columns submenu-list__children">
-                                        <li id="menu-item-49902"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49902"
-                                            role="menuitem"><a href="https://redislabs.com/blog/">Blog</a></li>
-                                        <li id="menu-item-49996"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49996"
-                                            role="menuitem"><a href="https://redislabs.com/events/">Events</a></li>
-                                        <li id="menu-item-49640"
-                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49640"
-                                            role="menuitem"><a href="https://redislabs.com/webinars/">Webinars</a>
-                                        </li>
-                                    </div>
-                                </div>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-            </div>
-          </ul>          
-        </div>
-      </li>
-  </nav>
-  {{- end}}
+        {{- with .Site.Menus.shortcuts}}
+          {{ partial "navigation.html" . }}
+        {{- end}}
 
-  <nav class="shortcuts shortcuts-right">
-    <li class="" role="">
-        <a href="https://app.redislabs.com/#/login" rel="noopener">
-          <label>Login</label>
-        </a>
-    </li>  
-    <li class="" role="">
-      <a href="https://redislabs.com/redis-enterprise-deployment/" rel="noopener">
-        <label>Try Free</label>
-      </a>
-    </li>
-  </nav>
-  <!-- <button class="hamburger hamburger--spring hamburger-desktop" type="button">
-    <span class="hamburger-box">
-      <span class="hamburger-inner">Menu</span>
-    </span>
-  </button> -->
-
-  <button id="showRightPush" class="hamburger hamburger--spring hamburger-mobile" type="button">
-    <span class="hamburger-box">
-      <span class="hamburger-inner">Menu Mobile</span>
-    </span>
-  </button>
-
-  <div class="reveal large" id="navModal">
-    <nav class="modal_navigation" role="navigation">
-      {{ partial "navigation.html" . }}
-    </nav>
-  </div>
-</header>
+        <nav class="shortcuts shortcuts-right">
+          <li class="" role="">
+              <a href="https://app.redislabs.com/#/login" rel="noopener">
+                <label>Login</label>
+              </a>
+          </li>
+          <li class="" role="">
+            <a href="https://redislabs.com/redis-enterprise-deployment/" rel="noopener">
+              <label>Try Free</label>
+            </a>
+          </li>
+        </nav>
+      </div>
+  </header>
+</div>
 <a id="top"></a>
 <article>
     {{if not .IsHome}}
     <aside>
-      <ul class="menu">        
+      <ul class="menu">
         {{if .Params.categories}}
           {{if eq (index .Params.categories 0) "RS"}}
             <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
@@ -475,9 +41,25 @@
                 <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
                 <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
               </button>
-              <div class="menu__version-selector__list version-selector-control">                
-                <a href="https://docs.redislabs.com/5.4/rs" id="version-select-5.4" onclick="_setSelectedVersion('5.4', 'v5.4 (latest)')">v5.4 (latest)</a>
+              <div class="menu__version-selector__list version-selector-control">
+                <a href="https://docs.redislabs.com/6.0/rs" id="version-select-6.0" onclick="_setSelectedVersion('6.0', 'v6.0 (latest)')">v6.0 (latest)</a>
+                <a href="https://docs.redislabs.com/5.6/rs" id="version-select-5.6" onclick="_setSelectedVersion('5.6', 'v5.6')">v5.6</a>
+                <a href="https://docs.redislabs.com/5.4/rs" id="version-select-5.4" onclick="_setSelectedVersion('5.4', 'v5.4')">v5.4</a>
                 <a href="https://docs.redislabs.com/5.2/rs" id="version-select-5.2" onclick="_setSelectedVersion('5.2', 'v5.2 (and below)')">v5.2 (and below)</a>
+              </div>
+            </div>
+          {{end}}
+
+          {{if eq (index .Params.categories 0) "Platforms"}}
+            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
+              <button class="menu__version-selector-btn version-selector-control">
+                <span id="versionSelectorValue" class="version-selector-control"></span>
+                <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
+                <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
+              </button>
+              <div class="menu__version-selector__list version-selector-control">
+                <a href="https://docs.redislabs.com/6.0/platforms" id="version-select-6.x" onclick="_setSelectedVersion('6.0', 'v6.x (latest)')">v6.x (latest)</a>
+                <a href="https://docs.redislabs.com/5.6/platforms" id="version-select-5.x" onclick="_setSelectedVersion('5.6', 'v5.x')">v5.x</a>
               </div>
             </div>
           {{end}}
@@ -503,32 +85,30 @@
     <section class="page">
         <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
           <span class="links">
-          {{ template "breadcrumb" dict "page" . "value" .Title }}   
+          {{ template "breadcrumb" dict "page" . "value" .Title }}
           </span>
         </div>
-      
+
       {{- if not .Site.Params.disableSearch}}
       <div>
-        <div class="searchcontainer">
-          <i class="icon-Search searchicon"></i>
-          <input class="searchbox" data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
-        </div>
-        <script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-        <script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
-        <link href="{{"css/auto-complete.css" | relURL}}" rel="stylesheet">
-        <!-- <script type="text/javascript">
-          { { if .Site.IsMultiLingual } }
-          var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
-          { { else } }
-          var baseurl = "{{.Site.BaseURL}}";
-          { { end } }
-        </script> -->
-        <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
+          <div id="redis-sitesearch" class="redis-sitesearch redis-sitesearch-inline">
+            <input class="redis-sitesearch-input redis-sitesearch-input-inline" placeholder="{{T "Search-placeholder"}}" />
+
+            <div class="redis-sitesearch-result-list-wrapper">
+              <ul class="redis-sitesearch-result-list"></ul>
+              <div class="redisearch-logo">
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript" src="{{"js/redis-sitesearch.min.js" | relURL}}"></script>
+          <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
+          <link href="{{"css/redis-sitesearch.css" | relURL}}" rel="stylesheet">
+          <link href="{{"css/redis-sitesearch-overrides.css" | relURL}}" rel="stylesheet">
       </div>
       {{- end}}
 
       <div class="chevrons">
-        {{ partial "next-prev-page.html" . }}
+       <!-- {{ partial "next-prev-page.html" . }} -->
       </div>
       {{end}}
 
@@ -542,9 +122,4 @@
 
       {{if not .IsHome}}
         <h1>{{.Title}}</h1>
-
-        {{if eq .RelPermalink "/rs/"}}
-          {{ partial "rs-hot-topics-table.html" . }}
-        {{end}}        
       {{end}}
-

@@ -1,24 +1,8 @@
-<!-- Version selector -->
+<!-- Common code for version selectors -->
 {{if .Params.categories}}
-{{if eq (index .Params.categories 0) "RS"}}
+{{if or (eq (index .Params.categories 0) "RS") (eq (index .Params.categories 0) "Platforms")}}
 <script>
-(function () {
-  var pa = window.location.pathname.split('/');
-  var pv = pa[1]; // latest, 5.4 or 5.2
-
-  if(pv == '5.4' || pv == 'latest') {
-    v = '5.4';
-    d = 'v5.4 (latest)';
-  } else if (pv == '5.2') {
-    v = '5.2';
-    d = 'v5.2 (and below)';
-  }
-
-  _setVersion(v, d);
-  _setSelectedVersion(v);
-})();
-
-function _setVersion(ver, displayName) {
+  function _setVersion(ver, displayName) {
   document.getElementById('versionSelectorValue').innerText = displayName;
 }
 
@@ -28,9 +12,9 @@ function _setSelectedVersion(ver) {
     if(i) {
       i.classList.toggle('selected-version');
     }
-  }  
+  }
 }
-  
+
 function _openVersionSelector() {
     document.getElementById('versionSelector').classList.toggle('open');
 }
@@ -45,13 +29,66 @@ window.onclick = function(e) {
       }
     }
   }
-}</script>
+}
+</script>
 {{end}}
 {{end}}
-<!-- /Version selector -->
+
+<!-- RS version selector -->
+{{if .Params.categories}}
+{{if eq (index .Params.categories 0) "RS"}}
+<script>
+(function () {
+  var pa = window.location.pathname.split('/');
+  var pv = pa[1]; // latest, 5.4 or 5.2
+
+  if(pv == '6.0' || pv == 'latest') {
+    v = '6.0';
+    d = 'v6.0 (latest)';
+  } else if (pv == '5.6') {
+    v = '5.6';
+    d = 'v5.6';
+  } else if (pv == '5.4') {
+    v = '5.4';
+    d = 'v5.4';
+  } else if (pv == '5.2') {
+    v = '5.2';
+    d = 'v5.2 (and below)';
+  }
+
+  _setVersion(v, d);
+  _setSelectedVersion(v);
+})();
+</script>
+{{end}}
+{{end}}
+<!-- /RS version selector -->
+
+<!-- Platforms version selector -->
+{{if .Params.categories}}
+{{if eq (index .Params.categories 0) "Platforms"}}
+<script>
+(function () {
+  var pa = window.location.pathname.split('/');
+  var pv = pa[1]; // 6.x, 5.x
+
+  if(pv == '6.0' || pv == 'latest') {
+    v = '6.x';
+    d = 'v6.x (latest)';
+  } else if (pv == '5.6') {
+    v = '5.x';
+    d = 'v5.x';
+  }
+  _setVersion(v, d);
+  _setSelectedVersion(v);
+})();
+</script>
+{{end}}
+{{end}}
+<!-- /Platforms version selector -->
 
 <script>
-  // Setup GA Event tracking
+  // Set up GA Event tracking
   setTimeout(function(){
     if(window.ga) {
       window.ga('create', 'UA-92003007-1', {
@@ -61,14 +98,37 @@ window.onclick = function(e) {
   }, 400);
 </script>
 
-<script src="{{"js/clipboard.min.js" | relURL}}"></script>
+<script>
+  // Compliance dialog
+  function acceptGDPR() {
+    localStorage.setItem('gdpr_accepted', true);
+    window.location.reload();    
+  };
 
+  (function() {
+    if(!localStorage.getItem('gdpr_accepted')) {
+      const e = document.getElementById('gdpr-modal');
+      if(!e) return;
+
+      e.style.display = 'block';
+    }
+  })();
+</script>
+
+<script src="{{"theme-flex/modernizr-custom.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/classie.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/polyfills.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/jquery.nice-select.min.js" | relURL}}" defer></script>
+<script src="{{"theme-flex/custom.js" | relURL}}" defer></script>
+
+<script src="{{"js/clipboard.min.js" | relURL}}" defer></script>
+<script src="{{"js/bootstrap.min.js" | relURL}}" defer></script>
 <link href="{{"css/featherlight.min.css" | relURL}}" rel="stylesheet">
-<script src="{{"js/featherlight.min.js" | relURL}}"></script>
+<script src="{{"js/featherlight.min.js" | relURL}}" defer></script>
 
 {{if eq .Site.Params.highlightClientSide true}}
-<script src="{{"js/highlight.pack.js" | relURL}}"></script>
+<script src="{{"js/highlight.pack.js" | relURL}}" defer></script>
 <script>hljs.initHighlightingOnLoad();</script>
 {{end}}
 
-<script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}"></script>
+<script src="{{(printf "theme-%s/script.js" (.Site.Params.themeStyle| default "flex")) | relURL}}" defer></script>

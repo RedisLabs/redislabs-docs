@@ -582,7 +582,7 @@ th {
 body {
   font-size: 16px;
   line-height: 20px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Graphik Web', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -623,7 +623,7 @@ ul, ol {
   margin-top: 1.7rem;
   margin-bottom: 1.7rem; }
 ul ul, ul ol, ol ul, ol ol {
-  margin-top: 0;
+  margin-top: 0.3rem;
   margin-bottom: 0; }
 
 blockquote {
@@ -639,9 +639,6 @@ cite:before {
 pre {
   padding: 0.938rem; }
 
-code {
-  vertical-align: bottom; }
-
 small {
   font-size: 0.925rem; }
 
@@ -656,7 +653,7 @@ fieldset {
   padding: 0.938rem;
   margin: 0 0 1.7rem 0; }
 span.icon-icons_Copy:hover:before {
-  color: #b62411;
+  color: #5961ff;
 }
 input,
 label,

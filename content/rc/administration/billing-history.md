@@ -1,13 +1,14 @@
 ---
 Title: Billing History
 description:
-weight: $weight
+weight: 80
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
+aliases: /rv/administration/billing-history/
 ---
-This page contains a list of purchases, changes, and payments for the
-subscriptions you have in your Redis Cloud Essentials account. If you
-have a question about billing, please be sure to supply the reference
-number from this list when contacting Redis Labs support team.
+This page contains a list of purchases, changes, and payments for the subscriptions you have in your Redis Cloud account.
 
-![billing_history](/images/rc/billing_history.png?width=1000&height=647)
+If you have a question about billing,
+make sure that you refer to the reference number from this list when you [contact Redis Labs support](https://redislabs.com/company/support/).
+
+![billing_history](/images/rc/billing_history.png)

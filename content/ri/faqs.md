@@ -1,7 +1,7 @@
 ---
 Title: FAQs
 description:
-weight: $weight
+weight: 80
 alwaysopen: false
 categories: ["RI"]
 ---
@@ -9,6 +9,7 @@ Here are some frequently asked questions about Redis Enterprise Software.
 
 ## General
 
+{{< expand-control >}}
 {{% expand "What is RedisInsight?" %}}
 RedisInsight is a browser based GUI for Redis. It lets you do the following -
 
@@ -36,7 +37,7 @@ We open sourced redis-rdb-tools in 2012 as a way to analyze the RDB file, and we
 {{% /expand %}}
 
 {{% expand "What versions of Redis does RedisInsight support?" %}}
-Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an email at redisinsight@redislabs.com and we can try to accommodate your use case.
+Currently, RedisInsight supports single node redis instances. Redis Cluster support is experimental, but not all features work. If you want to use RedisInsight for Redis Cluster, send us an [email](mailto:redisinsight@redislabs.com) and we can try to accommodate your use case.
 {{% /expand %}}
 
 {{% expand "Do you support Redis Labs Enterprise Version?" %}}
@@ -44,11 +45,14 @@ Yes, RedisInsight is fully compatible with Redis Labs Enterprise version.
 {{% /expand %}}
 
 {{% expand "What cloud providers do you support?" %}}
-We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an email at redisinsight@redislabs.com if you would like to use RedisInsight on a cloud provider that we haven't listed.
+We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. That said, RedisInsight should work with any cloud provider as long as you run it on a host that has network access to your cloud based redis server. Send us an [email](mailto:redisinsight@redislabs.com) if you would like to use RedisInsight on a cloud provider that we haven't listed.
 {{% /expand %}}
 
-## Memory Analysis
+{{< /expand-control >}}
 
+## Memory analysis
+
+{{< expand-control >}}
 {{% expand "How long does the memory analysis take?" %}}
 This depends on how large your dataset and the host on which you are running your docker container. Empirically, expect 30s per GB of RAM analyzed.
 {{% /expand %}}
@@ -85,7 +89,11 @@ Key pattern is a grouping of related keys, for example users:*. RedisInsight can
 We assume that you use colon as a separator. If you use a non-standard separator, you have to add key patterns manually.
 {{% /expand %}}
 
+{{< /expand-control >}}
+
 ## Connecting to Redis
+
+{{< expand-control >}}
 
 {{% expand "How do I connect to redis-server running on localhost?" %}}
 First, this works only if you have RedisInsight running on your local computer. Depending on your docker version, you can use one of these host names instead of localhost - docker.for.mac.localhost, docker.for.win.localhost or host.docker.internal. If none of those host names work, find the ip address of your computer (usually starts with 192.x.x.x), and use that ip address instead of localhost.
@@ -99,30 +107,36 @@ You must install RedisInsight inside your VPC, either on an EC2 instance, or usi
 Our licensing works on the sum of used memory on the redis instances you have added to RedisInsight. So if your license allows 15GB, you can add 5 redis instances using 3 GB RAM, or 1 redis server using 15 GB.
 {{% /expand %}}
 
-## License and Support
+{{< /expand-control >}}
 
-{{% expand "How do you calculate used memory?" %}}
-We run the `info` command and look at used_memory to determine the memory used by redis.
+## License and support
+
+{{< expand-control >}}
+
+{{% expand "Is RedisInsight a free tool?" %}}
+Yes, RedisInsight is available as a non-commercial, free of charge tool. You can review the terms of use in the [RedisInsight Licence Terms](https://redislabs.com/wp-content/uploads/2019/10/RedisInsight-EULA-terms.pdf) document.
 {{% /expand %}}
 
-{{% expand "What do you mean by perpetual license?" %}}
-Once you buy a license, you can use RedisInsight forever as long as you are within your usage limits. Additionally, you are eligible for software upgrades for 1 year from the date of purchase. After a year, you no longer receive updates, but can continue to use the version of RedisInsight you last downloaded.
+{{% expand "Where can I find the licence terms of RedisInsight?" %}}
+See the official [RedisInsight Licence Terms](https://redislabs.com/wp-content/uploads/2019/10/RedisInsight-EULA-terms.pdf) document. 
 {{% /expand %}}
 
-{{% expand "How do I get my license key?" %}}
-Once you complete payment, you receive an email with your license key.
-{{% /expand %}}
+{{< /expand-control >}}
 
-## Privacy and Security
+## Privacy and security
+
+{{< expand-control >}}
 
 {{% expand "Who has access to my redis servers?" %}}
 We provide RedisInsight as a docker container that you install and run on your hardware or cloud account. We do not have any ability to connect to your installation of RedisInsight or look at data within your redis servers.
 {{% /expand %}}
 
 {{% expand "How can I secure my RedisInsight installation?" %}}
-We recommend installing HTTPS, whitelisting IP addresses that have access to RedisInsight and/or making it available within your VPN/internal network. Additionally, choose a strong admin password.
+We recommend installing HTTPS, whitelisting IP addresses that have access to RedisInsight and/or making it available within your VPN/internal network. Additionally, make sure you use a strong admin password for your database.
 {{% /expand %}}
 
 {{% expand "What information do you collect about my installation?" %}}
 We use google analytics so that we can understand how customers use the software. Per google analytics terms and conditions, we do not track any personally identifiable information.
 {{% /expand %}}
+
+{{< /expand-control >}}

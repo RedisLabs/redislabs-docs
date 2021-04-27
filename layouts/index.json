@@ -6,6 +6,7 @@
     "uriRel": "{{ $page.RelPermalink }}",
     "title": "{{ htmlEscape $page.Title}}",
     "tags": [{{ range $tindex, $tag := $page.Params.tags }}{{ if $tindex }}, {{ end }}"{{ $tag| htmlEscape }}"{{ end }}],
+    "keywords": [{{ range $kindex, $keyword := $page.Params.keywords }}{{ if $kindex }}, {{ end }}"{{ $keyword| htmlEscape }}"{{ end }}],
     "description": "{{ htmlEscape .Description}}",
     "content": {{$page.Plain | jsonify}},
     "categories": [{{ range $cindex, $category := $page.Params.categories }}{{ if $cindex }}, {{ end }}"{{ $category| htmlEscape }}"{{ end }}]	

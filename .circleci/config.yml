@@ -3,19 +3,20 @@ jobs:
     # The build job for staging branches that excludes Google Tag Manager
     build-staging:
         docker:
-            - image: cibuilds/hugo:0.48
+            # Hugo image
+            - image: cibuilds/hugo:0.72
         working_directory: ~/project
         steps:
             # Checkout the code from the branch into the working_directory
             - checkout
             # Set GitHub branch name in config.toml for the Improve this Page link
             - run:
-                name: Replace "branch" with branch name in config.toml 
+                name: Set "Edit in GitHub" link for the specified branch in the hugo config
                 command: sed -i s/branch/${CIRCLE_BRANCH}/g config.toml
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
-                name: Build staging site
+                name: Build site files (HTML, CSS, images) with the baseURL for the specified branch
                 command: |
                     if [ "${CIRCLE_BRANCH}" == "master" ] ;
                         then export LOCATION=staging/dev
@@ -25,7 +26,7 @@ jobs:
                     echo ${LOCATION}
                     hugo -v --baseURL //docs.redislabs.com/$LOCATION
             - run:
-                name: Remove unnecessary directories
+                name: Remove generated directories that are not needed
                 command: |
                     cd public
                     rm -rf embeds revealjs
@@ -37,14 +38,14 @@ jobs:
     # The build job for production branches that includes Google Tag Manager
     build-prod:
         docker:
-            - image: cibuilds/hugo:0.48
+            - image: cibuilds/hugo:0.72
         working_directory: ~/project
         steps:
             # Checkout the code from the branch into the working_directory
             - checkout
             # Set GitHub branch name in config.toml for the Improve this Page link
             - run:
-                name: Replace "branch" with branch name in config.toml (except for latest version change to master)
+                name: Set "Edit in GitHub" link for the specified branch in the hugo config
                 command: |
                     if [ "${CIRCLE_BRANCH}" == "latest" ] ;
                         then sed -i s/branch/master/g config.toml
@@ -52,18 +53,20 @@ jobs:
                         sed -i s/branch/${CIRCLE_BRANCH}/g config.toml ;
                     fi
             - run:
-                name: Building site
+                name: Build site files (HTML, CSS, images) with the baseURL for the specified branch, including Google snippets (production)
                 command: |
                     export VERSION=${CIRCLE_BRANCH/-build/}
                     HUGO_ENV=production hugo -v --baseURL //docs.redislabs.com/$VERSION
             - run:
-                name: Remove unnecessary directories
+                name: Remove generated directories that are not needed
                 command: |
                     cd public
                     rm -rf embeds revealjs
             - persist_to_workspace:
                 root: .
                 paths:
+                    - robots.txt
+                    - website.json
                     - public
 
     # Deploy for branches other than -build to /staging/{branch}
@@ -80,7 +83,7 @@ jobs:
                 command: aws configure set default.s3.signature_version s3v4
             # Declare target location for baseURL and deployment location and deploy to the S3 bucket corresponding to the current branch
             - run:
-                name: Deploy to S3
+                name: Replace existing site files on the AWS S3 bucket for the branch
                 command: |
                     if [ "${CIRCLE_BRANCH}" == "master" ] ;
                         then export LOCATION=staging/dev
@@ -89,7 +92,7 @@ jobs:
                     fi
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read # --size-only
 
-    # Deploy for -build to push to /{version} without -build and rs only
+    # Deploy only RS site files to the AWS S3 bucket for the branch
     deploy-prod:
         docker:
             - image: xueshanf/awscli:latest
@@ -103,7 +106,7 @@ jobs:
                 command: aws configure set default.s3.signature_version s3v4
             # Deploy to the S3 bucket corresponding to the current branch
             - run:
-                name: Deploy to S3
+                name: Replace existing site files on the AWS S3 bucket for the branch
                 command:  |
                     export VERSION=${CIRCLE_BRANCH/-build/}
                     aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --exclude "*rv/*" --exclude "*rc/*" # --size-only
@@ -122,15 +125,18 @@ jobs:
                 command: aws configure set default.s3.signature_version s3v4
             # Declare target location for baseURL and deployment location and deploy to the S3 bucket corresponding to the current branch
             - run:
-                name: Deploy to AWS S3
+                name: Deploy site files to the AWS S3 bucket and set HTML, CSS, and JS files to expire for immediate client update
                 command: |
-                    #set aws S3 target location to branch_name
+                    # Set aws S3 target location to branch_name
                     export LOCATION=${CIRCLE_BRANCH}
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --include "*.js" --cache-control max-age=0 # --size-only
                     # Deploy all other files to the S3 bucket corresponding to the current branch
                     aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" --exclude "*.js" # --size-only
-
+                    # Deploy the robots.txt file
+                    aws s3 cp robots.txt s3://docs.redislabs.com/robots.txt
+                    # Deploy the S3 site configuration
+                    aws s3api put-bucket-website --bucket docs.redislabs.com --website-configuration file://website.json
 workflows:
   version: 2
   build-deploy:

@@ -11,9 +11,9 @@ In order to use Redis with C you need a C Redis client. In following sections, w
 
 Download the latest [hiredis release](https://github.com/redis/hiredis/releases) from the GitHub repository.
 
-## Opening a Connection to Redis Using hiredis
+## Opening a connection to Redis using hiredis
 
-The following code creates a connection to Redis using  hiredis' synchronous API:
+The following code creates a connection to Redis using the hiredis synchronous API:
 
     #include "hiredis.h"
 
@@ -41,9 +41,9 @@ To adapt this example to your code, make sure that you replace the following val
 
 ## Using SSL and hiredis
 
-hiredis does not support SSL connections natively. For an added security measure, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis).
+hiredis supports SSL natively as of [version 1.0.0](https://github.com/redis/hiredis/releases/tag/v1.0.0). For older hiredis versions, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis).
 
-## Reading and Writing Data with hiredis
+## Reading and writing data with hiredis
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

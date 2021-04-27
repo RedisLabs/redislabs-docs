@@ -1,5 +1,5 @@
 ---
-Title: Configuring AWS Instances for Redis Enterprise Software
+Title: Configuring AWS EC2 instances for Redis Enterprise Software
 description:
 weight: 30
 alwaysopen: false
@@ -7,29 +7,24 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
 ---
 There are some special considerations that are important when installing
-and running Redis Enterprise Software (RS) on an AWS instances.
+and running Redis Enterprise Software (RS) on AWS EC2 instances or AWS Outposts.
 
-## Storage Considerations
+## Storage considerations
 
-AWS instances are ephemeral, but your persistent database storage should
+AWS EC2 instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
 the storage must be located outside of the instance. Therefore, when you
 set up an instance make sure that it has a properly sized EBS backed volume
-connected. Later, when setting up RS on the instance, make sure that the
-persistence storage (for additional details, refer to [Persistent and
-ephemeral
-storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}})
-is configured to use this volume.
+connected. Later, when setting up RS on the instance, make sure that [the
+persistence storage]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}) is configured to use this volume.
 
-Note: After installing the RS package on the instance (for additional
-details, refer to [Accessing and installing the setup
-package]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
-and **before** running through the setup process (for additional
-details, refer to [Initial setup - creating a new
-cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}),
+{{< note >}}
+After [installing the RS package]({{< relref "/rs/installing-upgrading/_index.md" >}}) on the instance
+and **before** running through [the setup process]({{< relref "/rs/administering/new-cluster-setup.md" >}}),
 you must give the group 'redislabs' permissions to the EBS volume by
 running the following command from the OS command-line interface (CLI):
-chown redislabs:redislabs /\< ebs folder name \>
+`chown redislabs:redislabs /< ebs folder name>`
+{{< /note >}}
 
 Another feature that may be of importance to you is the use of
 Provisioned IOPS for EBS backed volumes. Provisioned IOPS guarantee a
@@ -42,7 +37,7 @@ this feature could be critical to use:
     this case, the provisioned IOPS should be on the nodes used as
     slaves in the cluster.
 
-## Instance Types
+## Instance types
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
@@ -50,7 +45,7 @@ requirements]({{< relref "/rs/administering/designing-production/hardware-requir
 
 In addition, some instance types are optimized for EBS backed volumes
 and some are not. If you are using persistent storage, you should use an
-instance type that is, if disk drain rate matters to your database
+instance type that is, especially if disk drain rate matters to your database
 implementation.
 
 ## Security
@@ -62,15 +57,14 @@ When configuring the Security Group:
     access the UI.
 - If you are using the DNS resolving option with RS, define a DNS UDP
     rule for port 53 to allow access to the databases' endpoints by
-    using the DNS resolving mechanism. For additional details, refer to
-    DNS.
+    using the [DNS resolving mechanism]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}).
 - To create a cluster that has multiple nodes all running as instances on AWS,
     you need to define a security group that has an All TCP rule for all ports, 0 - 65535,
     and add it to all instances that are part of the cluster.
     This makes sure that all nodes are able to communicate with each other.
-    To limit the number of open ports, you can open just the [ports used by RS]
-    ({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+    To limit the number of open ports, you can open just the [ports used by RS]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
-After successfully launching the instances, setup the cluster as
-described in [Initial setup - creating a new
-cluster]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}}).
+After successfully launching the instances:
+
+1. Install RS from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+2. [Set up the cluster]({{< relref "/rs/administering/new-cluster-setup.md" >}}).

@@ -1,5 +1,5 @@
 ---
-Title: Removing a Node
+Title: Removing a Cluster Node
 description:
 weight: $weight
 alwaysopen: false
@@ -8,13 +8,14 @@ categories: ["RS"]
 There are various reasons why you may want to remove a node in Redis
 Enterprise Software (RS):
 
-- You no longer need the extra capacity, meaning you want to
-    permanently remove the node.
+- You no longer need the extra capacity, meaning you want to permanently remove the node.
 - You would like to replace a faulty node with a healthy node.
 - You would like to replace a healthy node with a different node.
 
 The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
+
+You can configure [email alerts from the cluster]({{< relref "/rs/administering/monitoring-metrics/_index.md#cluster-alerts" >}}) to notify you of cluster changes, including when a node is removed.
 
 **Make sure to read through these explanations thoroughly before taking
 any action.**
@@ -56,19 +57,19 @@ must first add the new node to the cluster, migrate all the resources
 from the node you would like to remove, and only then remove the node.
 
 For further guidance, refer to [adding a new node to a
-cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
+cluster]({{< relref "/rs/administering/adding-node.md" >}}).
 
 You can migrate resources by using the *rladmin* command-line interface
 (CLI). For guidelines, refer to [*rladmin* command line interface
 (CLI)]({{< relref "/rs/references/rladmin.md" >}}).
 
-**Note**: The DNS records must be updated each time a node is added or
-replaced. For additional details, refer to
-[DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+{{< note >}}
+The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) must be updated each time a node is added or replaced.
+{{< /note >}}
 
 ## Removing a node
 
-To remove a node:
+To remove a node using the admin console:
 
 1. Click **Remove** at the top of the **Node** page for the node to be
     removed.
@@ -81,13 +82,16 @@ To remove a node:
 1. Once the process finishes, the node is no longer shown in
     the UI.
 
-You can choose to receive email alerts related to this process, as
-described in [Managing cluster
-alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
+To remove a node using the REST API, use the `/v1/nodes/3/actions/remove` endpoint with the JSON data and the "Content-Type: application/json" header.
 
-**Note**: Once you remove a node, if you need to add it back to a
-cluster, you must first
-[uninstall]({{< relref "/rs/installing-upgrading/uninstalling.md" >}})
-and
-[reinstall]({{< relref "/rs/installing-upgrading/downloading-installing.md" >}})
-the software on that node.
+For example:
+
+```sh
+curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
+```
+
+{{< note >}}
+If you need to add a removed node back to the cluster,
+you must [uninstall]({{< relref "/rs/installing-upgrading/uninstalling.md" >}})
+and [reinstall]({{< relref "/rs/installing-upgrading/_index.md" >}}) the software on that node.
+{{< /note >}}

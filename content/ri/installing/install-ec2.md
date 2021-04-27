@@ -46,7 +46,7 @@ Next, launch an EC2 instance.
     * Incoming traffic is allowed on port 22 only during installation
 1. Review and launch the ec2 instance
 
-Step 3: Verify Permissions & Connectivity
+Step 3: Verify Permissions and Connectivity
 ----------
 
 Next, verify the EC2 instance has the required IAM permissions, and can connect to ElastiCache Redis instances.

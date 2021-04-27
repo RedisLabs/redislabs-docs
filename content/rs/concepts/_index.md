@@ -21,15 +21,14 @@ zones. Redis Enterprise architecture is made up of a management path
     maintain slave shards using the in-memory replication for protection
     against failures that may render master shard inaccessible.
 
-![Redis Enterprise
-Stack](/images/rs/rp_stack.png?width=700&height=319)
+![Redis Enterprise Stack](/images/rs/rp_stack.png)
 
 *Figure 1*
 *Redis Enterprise Nodes with blue layer representing the management path
 and red tiles representing the data access path with Redis as the
 shards.*
 
-## High Availability with Redis Enterprise
+## High availability with Redis Enterprise
 
 Redis Enterprise uses in-memory replication to maintain master and slave
 replicas. Redis Enterprise comes with various watchdogs that detect and
@@ -44,7 +43,7 @@ built-in WAN-based replication for Redis deployments across multiple
 data centers. WAN-based replication mechanisms in Redis Enterprise are
 designed, protect against total Data Center or wider network failures.
 
-## Scaling Databases
+## Scaling databases
 
 Each Redis Enterprise cluster can contain multiple databases. In Redis,
 databases represent data that belong to a single application, tenant, or
@@ -59,7 +58,7 @@ applications. Databases in Redis Enterprise can be resharded into more
 Redis shards to scale throughput while maintaining sub-millisecond
 latencies. Resharding is performed without downtime.
 
-![Sharding diagram](/images/rs/sharding.png?width=700&height=406)
+![Sharding diagram](/images/rs/sharding.png)
 
 *Figure 2*
 *Redis Enterprise places master (M) and slave (S) replicas in separate
@@ -82,7 +81,7 @@ flash hardware in use, applications experience slightly higher latency
 when bringing values back into RAM from flash. However subsequent
 accesses to the same value is fast, once the value is in RAM.
 
-## Data Durability with Redis Enterprise
+## Data durability with Redis Enterprise
 
 Redis Enterprise has two durability options:
 

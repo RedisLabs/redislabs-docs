@@ -44,7 +44,8 @@ googleTagManager = "GTM-TKZ6J9R"
 mac_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-mac.dmg"
 linux_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-linux64"
 windows_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-win.msi"
-docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight"
+docker_command = "docker run -v redisinsight:/db -p 8001:8001 redislabs/redisinsight:latest"
+docker_db_volume_permission = "chown -R 1001 redisinsight"
 
 siteURL = "http://127.0.0.1:8001"
 
@@ -76,3 +77,6 @@ url = "https://redislabs.com/blog/"
 weight = 50
 
 [taxonomies]
+
+[markup.goldmark.renderer]
+  unsafe = true

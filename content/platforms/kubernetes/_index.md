@@ -1,15 +1,16 @@
 ---
-Title: Getting Started with Redis Enterprise Software using Kubernetes
+Title: Redis Enterprise Software on Kubernetes
 description:
-weight: 30
+weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
-Kubernetes provides simpler orchestration with containers and has been widely adopted. It is simple to get a Redis Enterprise cluster on Kubernetes with the Redis Enterprise Operator deployment.
+Kubernetes provides enterprise orchestration of containers and has been widely adopted. The Redis Enterprise Operator for Kubernetes provides a
+simple way to get a Redis Enterprise cluster on Kubernetes as well as enables more complex deployment scenarios.
 
-{{%allchildren style="h2" description="true"%}}
+{{< allchildren style="h2" description="true" />}}
 
 {{% comment %}}
 ## What is Redis Enterprise?
@@ -19,7 +20,7 @@ Redis is the most popular database used with Docker containers. Redis Enterprise
 We use the Docker container for 4.5 version of Redis Enterprise for the steps here. You can find more information on the container image on [Docker Hub](https://hub.docker.com/r/redislabs/redis/) and see details on how to deploy the container locally with Docker below:
 
 - [Working with Redis Enterprise and Docker]({{< relref "/rs/getting-started/docker/_index.md" >}})
-- [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/docker/getting-started-docker.md" >}})
+- [Getting Started with Redis Enterprise Software on Docker]({{< relref "/rs/getting-started/getting-started-docker.md" >}})
 
 ## Deploying Redis Enterprise with Kubernetes on Google Cloud
 
@@ -27,7 +28,7 @@ Here are the 4 steps to set up our cluster with Redis Enterprise:
 
 - Step 1: Create a Kubernetes cluster on Google Cloud
 - Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
-- Step 3: Setup Redis Enterprise cluster
+- Step 3: Set up Redis Enterprise cluster
 - Step 4: Create a Redis database and test your connectivity
 
 ### Requirements
@@ -64,15 +65,19 @@ To define your Kubernetes cluster, give it a name and keep the size of the clust
 
 <!-- Add image -->
 
-Note: it may take a few mins to create the cluster. Ensure the Kubernetes cluster creation is complete before proceeding to the next step.
+{{< note >}}
+It may take a few mins to create the cluster. Ensure the Kubernetes cluster creation is complete before proceeding to the next step.
+{{< /note >}}
 
 For best placement, Redis Enterprise pods should be placed on separate physical nodes in the Kubernetes cluster. This makes sure that there is better availability during node failures. Placing multiple Redis Enterprise nodes in the same physical host can cause multiple nodes to fail at once and may result in availability and data loss.
 
 <!-- Add image -->
 
-_Note: By the way, If you are a commandline kind of person, here is how you can simplify the three screen above into 2 simple lines;_
+{{< note >}}
+By the way, If you are a commandline kind of person, here is how you can simplify the three screen above into 2 simple lines;
 
     gcloud container clusters create cluster-1 --num-nodes=3 -m n1-standard-2
+{{< /note >}}
 
 Finally to finish the Kubernetes deployment, you need to get the Kubernetes console up and running and start the Kubernetes proxy. on the terminal window, run the following commands;
 
@@ -91,7 +96,7 @@ And finally start the Kubernetes proxy:
 
 ## Step 2: Deploy the Redis Enterprise containers to Kubernetes cluster
 
-You now need to feed the container yaml file to provision Redis Enterprise cluster. You can download a sample [container yaml file](https://docs.redislabs.com/latest/rs/getting-started/redis-enterprise.yaml).
+You now need to feed the container yaml file to provision Redis Enterprise cluster. You can download a sample [container yaml file](https://docs.redislabs.com/latest/platforms/kubernetes/redis-enterprise.yaml).
 
     kubectl apply -f redis-enterprise.yaml
 
@@ -114,7 +119,7 @@ The output looks something like this;
 
     redispack-deployment-709212938-kcjd7 1/1 Running 0 7s
 
-## Step 3: Setup Redis Enterprise cluster
+## Step 3: Set up Redis Enterprise cluster
 
 We are now ready to create the Redis Enterprise cluster. There is one small change that needs to be done to the container to get networking to work properly: we need to change the css binding to 0.0.0.0. To do this, you need to run the following in each container with each iteration using the pods name from the _kubectl get po_ output above.
 
@@ -162,7 +167,9 @@ To test the connection to the database, we use the _redis-cli_ tool. Here is a s
 
     # 127.0.0.1:12000>
 
-Note: To clean up the deployment you can simply delete the cluster using the following command line
+{{< note >}}
+To clean up the deployment you can simply delete the cluster using the following command line
 
     gcloud container clusters delete cluster-1
+{{< /note >}}
 {{% /comment %}}

@@ -8,7 +8,7 @@ aliases: /rs/getting-started/pcf/
 ---
 This topic describes how to use Redis Enterprise Software (RS) for Pivotal Platform.
 
-## Creating a Redis Enterprise Database instance via cf CLI and service broker using service plans
+## Creating a Redis Enterprise database instance via cf CLI and service broker using service plans
 
 1. Perform 'cf login' to your foundation.
 
@@ -16,7 +16,7 @@ This topic describes how to use Redis Enterprise Software (RS) for Pivotal Platf
 
     For example:
 
-    ```src
+    ```sh
     # cf create-service redislabs small-redis redis2
     Creating service instance redis2 in org RedisLabs  space space1 as admin...
     OK
@@ -32,7 +32,7 @@ Available service plans are listed in either:
 
     ![Import button](/images/platforms/pcf_apps_service_plans.png)
 
-## Creating a Redis Enterprise Database instance via Pivotal Platform Apps Manager
+## Creating a Redis Enterprise database instance via Pivotal Platform Apps Manager
 
 1. From Pivotal Platform Apps Manager go to Marketplace and select Redis Enterprise on Pivotal Platform.
 
@@ -47,20 +47,20 @@ Available service plans are listed in either:
     ![Import button](/images/platforms/pcf_apps_config_create.png)
     ![Import button](/images/platforms/pcf_ops_service_plan_created.png)
 
-## Accessing the Redis Enterprise Cluster UI
+## Accessing the Redis Enterprise cluster UI
 
-1. Connect to the Redis Enterprise Admin Console by placing the **Cluster Management Console Subdomain** in the host part of the following URL: `https://[Cluster Management Console Subdomain].[System Domain]`.
+1. Connect to the Redis Enterprise admin console by placing the **Cluster Management Console Subdomain** in the host part of the following URL: `https://[Cluster Management Console Subdomain].[System Domain]`.
 
     For example: `https://console-redis.sys.my-domain.cf-app.com`
 
 1. Log in using the Administrator email account and password you specified in the tile configuration above.
 
-    {{% note %}}
+    {{< note >}}
 Do not create or delete databases through the Redis Enterprise Cluster UI.
-Use the cf creates/delete/update-service commands or use the Pivotal Apps Manager web UI to create and manage databases through available plans.
-    {{% /note %}}
+Use the cf creates/delete/update-service commands or use the Pivotal Apps Manager admin console to create and manage databases through available plans.
+    {{< /note >}}
 
-## Installing a License Key in an Existing Cluster
+## Installing a license key in an existing cluster
 
 1. Connect to the Redis Enterprise UI per the instructions above.
 
@@ -72,12 +72,12 @@ Use the cf creates/delete/update-service commands or use the Pivotal Apps Manage
 
 1. Paste the license key you received from Redis Labs into the **Cluster key** form field and click the **Save** button.
 
-    {{% note %}}
+    {{< note >}}
 If your license is already expired, changes to the cluster configuration, such as a version upgrade, cause cluster failure.
 Always apply a valid license key before making such changes.
-    {{% /note %}}
+    {{< /note >}}
 
-## Connect to Redis Database Using redis-cli
+## Connect to Redis database using redis-cli
 
 `redis-cli` is a simple command-line tool for interacting with Redis Database.
 
@@ -87,20 +87,20 @@ To connect to Redis Database, do the following:
 
 1. Change to the `/opt/redislabs/bin` directory and run `redis-cli` to connect to port 12000 and to the database-endpoint that is reported in the database properties after you created the database.
 
-    ```src
+    ```sh
     sudo /opt/redislabs/bin/redis-cli -p 12000 -h database-endpoint
     ```
 
 1. To store and retrieve a key in `database1`, run the following commands:
 
-    ```src
+    ```sh
     set key1 123
     get key1
     ```
 
 For example:
 
-```src
+```sh
 127.0.0.1:16653> set key1 123
 
 OK

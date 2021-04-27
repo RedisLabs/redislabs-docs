@@ -56,25 +56,6 @@ jQuery('document').ready(function($) {
         return false;
     });
 
-
-    function mobile_nav() {
-        var showRightPush = document.getElementById( 'showRightPush' ),
-            menuRight = document.getElementById( 'ml-menu' ),
-            body = document.body;
-
-        showRightPush.onclick = function() {
-            classie.toggle( this, 'is-active' );
-            classie.toggle( body, 'cbp-spmenu-push-toleft' );
-            classie.toggle( menuRight, 'cbp-spmenu-open' );
-        };
-
-    }
-    mobile_nav();
-
-
-
-
-
     // ML MENU //
 
     /**

@@ -20,9 +20,9 @@ To open the rladmin CLI:
 
 The utility runs and reports the result of each check.
 
-{{% note %}}
+{{< note >}}
 To see the rlcheck optional flags, run: `rlcheck --help`
 Specifically, the `--continue-on-error` flag runs all tests to completion and shows all errors when complete.
-{{% /note %}}
+{{< /note >}}
 
-To resolve issues reported by rlcheck, contact Redis Labs Support at <support@redislabs.com>.
+To resolve issues reported by rlcheck, [contact Redis Labs support](https://redislabs.com/company/support/).

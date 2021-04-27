@@ -31,18 +31,15 @@ In clustering, these terms are commonly used:
 - Slot or Hash Slot - The result of the hash calculation.
 - Shard - Redis process that is part of the Redis clustered database.
 
-## When to use sharding
+## When to use clustering (sharding)
 
-Sharding the keyspace is an efficient way of scaling Redis that should
-be employed when:
+Clustering is an efficient way of scaling Redis that should be used when:
 
-- The dataset is large enough to benefit from using the RAM resources
-    of more than one server. We recommend sharding a dataset
-    once it reaches a size of 25 GB (50 GB for RoF).
-- The operations performed against the database are CPU-intensive,
-    resulting in performance degradation. By having multiple CPU cores
-    manage the database's shards, the load of operations is distributed
-    among them.
+- The dataset is large enough to benefit from using the RAM resources of more than one node.
+    When a dataset is more than 25 GB (50 GB for RoF), we recommend that you enable clustering to create multiple shards of the database
+    and spread the data requests across nodes.
+- The operations performed against the database are CPU-intensive, resulting in performance degradation.
+    By having multiple CPU cores manage the database's shards, the load of operations is distributed among them.
 
 ## Number of shards
 
@@ -61,7 +58,7 @@ RediSearch enabled database, you must create a new database
 at the new required size and replicate the current database to the new
 one.
 
-## Supported sharding policies
+## Supported hashing policies
 
 ### Standard hashing policy
 
@@ -124,10 +121,10 @@ their order to suit your application's requirements.
     PCRE_ANCHORED: the pattern is constrained to match only at the
     start of the string being searched.
 
-## Changing the sharding policy
+## Changing the hashing policy
 
-The sharding policy of a clustered database can be changed. However,
-most sharding policy changes trigger the deletion (i.e., FLUSHDB) of the
+The hashing policy of a clustered database can be changed. However,
+most hashing policy changes trigger the deletion (i.e., FLUSHDB) of the
 data before they can be applied.
 
 Examples of such changes include:
@@ -138,29 +135,36 @@ Examples of such changes include:
 - Adding new rules in the custom hashing policy.
 - Deleting rules from the custom hashing policy.
 
-**Note:** The recommended workaround for updates that are not enabled,
-or require flushing the database, is to back up the database and import
-the data to a newly configured database.
+{{< note >}}
+The recommended workaround for updates that are not enabled,
+or require flushing the database,
+is to back up the database and import the data to a newly configured database.
+{{< /note >}}
 
-## Multi-Key operations {#multikey-operations}
+## Multi-key operations {#multikey-operations}
 
 Operations on multiple keys in a clustered database are supported with
 the following limitations:
 
 - **Multi-key commands**: Redis offers several commands that accept
     multiple keys as arguments. In a clustered database, most multi-key
-    commands are not allowed across tags. The following multi-key
-    commands **are allowed** across tags: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
+    commands are not allowed across slots. The following multi-key
+    commands **are allowed** across slots: DEL, MSET, MGET, EXISTS, UNLINK, TOUCH
+
+    In CRBDs, multi-key commands can only be run on keys that are in the same slot.
 
     Commands that affect all keys or keys that match a specified pattern are allowed
     in a clustered database, for example: FLUSHDB, FLUSHALL, KEYS
 
-    **Note**: When using these commands in a sharded setup, the command
-    is distributed across multiple shards and the responses from all
-    shards are combined into a single response.
+    {{< note >}}
+When using these commands in a sharded setup,
+the command is distributed across multiple shards
+and the responses from all shards are combined into a single response.
+    {{< /note >}}
 
-- **Geo commands**: In GEORADIUS/GEOREADIUSBYMEMBER commands, the
-    STORE and STOREDIST option can only be used when all affected keys
+- **Geo commands**: For the [GEORADIUS](https://redis.io/commands/georadius) and
+    [GEORADIUSBYMEMBER](https://redis.io/commands/georadiusbymember) commands, the
+    STORE and STOREDIST options can only be used when all affected keys
     reside in the same slot.
 - **Transactions**: All operations within a WATCH / MULTI / EXEC block
     should be performed on keys that are mapped to the same slot.
@@ -171,4 +175,4 @@ the following limitations:
     but do not result in the proper violation error being returned.
 - **Renaming keys**: The use of the RENAME / RENAMENX commands is
     allowed only when the key's original and new values are mapped to
-    the same tag.
+    the same slot.

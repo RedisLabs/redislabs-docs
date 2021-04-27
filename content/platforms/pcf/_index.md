@@ -1,7 +1,7 @@
 ---
-Title: Getting Started with Redis Enterprise Software for Pivotal Platform
-description: 
-weight: 90
+Title: Redis Enterprise Software for Pivotal Platform
+description:
+weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/pcf/
@@ -21,7 +21,7 @@ This topic describes how to install and configure Redis Enterprise for Pivotal P
 
     ![Import button](/images/platforms/pcf_add-to-dash_tile.png)
 
-## Configure and Deploy Redis Enterprise for Pivotal Platform
+## Configure and deploy Redis Enterprise for Pivotal Platform
 
 1. Click the newly imported tile.
 
@@ -48,10 +48,10 @@ This topic describes how to install and configure Redis Enterprise for Pivotal P
    - Optionally, for production clusters, you can also provide a static IP address of a set of static IP addresses (comma-separated) to use for cluster nodes. You can also enable Multiple Availability Zone (Rack) awareness.
    - Save your changes by clicking **Save**.
 
-    {{% note %}}
+    {{< note >}}
 Make sure that the **Cluster Recovery** option is not selected during installation.
 This option is only for when you recover a cluster.
-    {{% /note %}}
+    {{< /note >}}
 
     ![Import button](/images/platforms/pcf_rp_config_full_screen2.png)
 
@@ -81,10 +81,9 @@ This option is only for when you recover a cluster.
 
     ![Import button](/images/platforms/pcf_resource_config.png)
 
-    {{% note %}}
-Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum hardware specification requirements]
-({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) for Redis Enterprise.
-    {{% /note %}}
+    {{< note >}}
+Ensure the capacity used for Redis Enterprise cluster nodes meet the [minimum hardware specification requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}) for Redis Enterprise.
+    {{< /note >}}
 
 1. Click **Save**.
 

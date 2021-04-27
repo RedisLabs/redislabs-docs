@@ -3,7 +3,7 @@
 {{- $isParentRoot := eq .Parent .FirstSection -}}
 {{- $numOfChildren := (add (len .Pages) (len .Sections)) -}}
 {{- $shouldCollapse := and $isParentRoot (eq $numOfChildren 0) -}}
-{{- $isCollapsed := (or $shouldCollapse (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") (eq .URL "/ri/"))) -}}
+{{- $isCollapsed := (or $shouldCollapse (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/glossary") (eq .RelPermalink "/modules/"))) -}}
 
 {{- if eq .Site.Params.ordersectionsby "title"}}
   {{- range .Site.Home.Sections.ByTitle}}
@@ -24,27 +24,26 @@
   {{- if and .IsSection (or (not .Params.hidden) $.showhidden)}}
     {{- $numberOfPages := (add (len .Pages) (len .Sections)) }}
     {{- safeHTML .Params.head}}    
-    <li data-nav-id="{{.URL}}" class="dd-item
+    <li data-nav-id="{{.RelPermalink}}" class="dd-item
         {{- if .IsAncestor $currentNode}} parent{{end -}}
-        {{- if eq .URL $currentNode.URL}} active{{end -}}
+        {{- if eq .RelPermalink $currentNode.RelPermalink}} active{{end -}}
         {{- if .Params.alwaysopen}} alwaysopen{{end -}}
         {{- if ne $numberOfPages 0 }} haschildren{{end -}}
         {{- if $isCollapsed}} menu-collapsed {{else}} menu-expanded{{end -}}
-        {{- if (or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") (eq .URL "/ri/"))}} menu-root {{end}}
+        {{- if (or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/"))}} menu-root {{end}}
         ">
-        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") }}
+        {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/glossary/") (eq .RelPermalink "/rv/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}
           <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>          
         {{- end}}
 
-        {{- if eq .URL .RelPermalink }}
+        {{- if not (eq .RelPermalink "/glossary/") }}
           <!-- Child items -->          
-          {{if or (eq .URL "/rs/") }}
+          {{if or (eq .RelPermalink "/rs/") }}
             <div class="children has-version-selector">
           {{else}}
             <div class="children">
           {{end}}
-
-              {{- if or (eq .URL "/rs/") (eq .URL "/rc/") (eq .URL "/rv/") (eq .URL "/platforms/") (eq .URL "/ri/") }}          
+              {{- if or (eq .RelPermalink "/rs/") (eq .RelPermalink "/rc/") (eq .RelPermalink "/platforms/") (eq .RelPermalink "/ri/") (eq .RelPermalink "/modules/")}}          
                 <div class="menu-divider"></div>
                 
                 <span class="SideMenuToggle expander">
@@ -57,7 +56,7 @@
                 </span>                
 
               {{- else}}
-                <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.Title}}{{safeHTML .Params.Post}}</a>
+                <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</a>
 
                 {{- if ne $numberOfPages 0 }}
                   {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
@@ -74,11 +73,10 @@
 
       {{- if ne $numberOfPages 0 }}
         <ul>
-          {{- .Scratch.Set "pages" .Pages }}
+          {{- $pages := .Pages }}
           {{- if .Sections}}
-          {{- .Scratch.Set "pages" (.Pages | union .Sections) }}
+            {{- $pages = (.Pages | union .Sections) }}
           {{- end}}
-          {{- $pages := (.Scratch.Get "pages") }}
 
         {{- if eq .Site.Params.ordersectionsby "title"}}
           {{- range $pages.ByTitle }}
@@ -100,8 +98,8 @@
     </li>
   {{- else}}
     {{- if not .Params.Hidden }}
-      <li data-nav-id="{{.URL}}" class="dd-item
-     {{- if eq .URL $currentNode.URL}} active{{end -}}
+      <li data-nav-id="{{.RelPermalink}}" class="dd-item
+     {{- if eq .RelPermalink $currentNode.RelPermalink}} active{{end -}}
       ">
         <div>
           <a href="{{ .RelPermalink}}">

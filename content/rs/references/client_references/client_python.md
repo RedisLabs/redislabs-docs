@@ -18,7 +18,7 @@ You can also download the latest [redis-py release](https://github.com/andymccur
     cd redis-py
     ~/redis-py$ sudo python setup.py install
 
-## Opening a Connection to Redis Using redis-py
+## Opening a connection to Redis using redis-py
 
 The following code creates a connection to Redis using redis-py:
 
@@ -35,7 +35,7 @@ To adapt this example to your code, make sure that you replace the following val
 - In line 5, `port` should be set to your database's port
 - In line 6, `password` should be set to your database's password
 
-## Connection Pooling with redis-py
+## Connection pooling with redis-py
 
 redis-py provides a connection pooling mechanism as explained in the [Connection Pools section](https://github.com/andymccurdy/redis-py#connection-pools) of its README file. Since connection pooling is enabled by default, no special actions are required to use it.
 
@@ -50,7 +50,7 @@ redis-py is the second Redis client that natively supported SSL. Use the `SSLCon
         ssl_cert_reqs='required',
         ssl_ca_certs='path_to_ca_cert')
 
-## Reading and Writing Data with redis-py
+## Reading and writing data with redis-py
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 

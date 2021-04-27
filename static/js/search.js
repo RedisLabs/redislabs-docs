@@ -1,100 +1,162 @@
-var lunrIndex, pagesIndex;
+(function() {
 
-function endsWith(str, suffix) {
-    return str.indexOf(suffix, str.length - suffix.length) !== -1;
-}
+  const SEARCH_API_URL = "https://search-service.redislabs.com/search"
+  const SEARCH_SITE = "https://docs.redislabs.com/latest"
+  const THIRTY_SECONDS = 30000
+  const SEARCH_LOGO = '<a class="powered-by-redisearch" href="https://oss.redislabs.com/redisearch/"></a>'
 
-// Initialize lunrjs using our generated index file
-function initLunr() {
-    if (!endsWith(baseurl,"/")){
-        baseurl = baseurl+'/'
-    };
 
-    // First retrieve the index file
-    $.getJSON(baseurl +"index.json")
-        .done(function(index) {
-            pagesIndex =   index;
-            // Set up lunrjs by declaring the fields we use
-            // Also provide their boost level for the ranking
-            lunrIndex = new lunr.Index
-            lunrIndex.ref("uri");
-            lunrIndex.field('title', {
-                boost: 15
-            });
-            lunrIndex.field('tags', {
-                boost: 10
-            });
-            lunrIndex.field("content", {
-                boost: 5
-            });
-            lunrIndex.field("categories", {
-                boost: 1
-            });            
+  const searchLogo = document.querySelector('.redisearch-logo')
+  searchLogo.addEventListener('mousedown', (e) => {
+    e.preventDefault()
+  })
 
-            // Feed lunr with each file and let lunr actually index them
-            pagesIndex.forEach(function(page) {            
-                if(!page.uriRel.startsWith('/embeds')) {
-                    lunrIndex.add(page);
-                }                
-            });
-            lunrIndex.pipeline.remove(lunrIndex.stemmer)
-        })
-        .fail(function(jqxhr, textStatus, error) {
-            var err = textStatus + ", " + error;
-            console.error("Error getting Hugo index file:", err);
-        });
-}
+  function escapeHtml(str) {
+    return str.replace(/[&<>"'\/]/g, function (s) {
+      var entityMap = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': '&quot;',
+          "'": '&#39;',
+          "/": '&#x2F;'
+        };
 
-/**
- * Trigger a search in lunr and transform the result
- *
- * @param  {String} query
- * @return {Array}  results
- */
-function search(query) {
-    // Find the item in our index corresponding to the lunr one to have more info
-    return lunrIndex.search(query).map(function(result) {
-            return pagesIndex.filter(function(page) {
-                return page.uri === result.ref;
-            })[0];
-        });
-}
-
-// Let's get started
-initLunr();
-$( document ).ready(function() {
-    var searchList = new autoComplete({
-        /* selector for the search box element */
-        selector: $("#search-by").get(0),
-        /* source is the callback to perform the search */
-        source: function(term, response) {
-            response(search(term));
-        },
-        /* renderItem displays individual search results */
-        renderItem: function(item, term) {
-            var numContextWords = 3;
-            var regEx = "(?:\\s?(?:[\\w\!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~]+)\\s?){0";
-            var text = item.content.match(
-                regEx+numContextWords+"}" +
-                    term+regEx+numContextWords+"}");
-            if(text && text.length > 0) {
-                var len = text[0].split(' ').length;
-                item.context = len > 1? '...' + text[0].trim() + '...' : null;
-            }
-            item.cat = (item.categories && item.categories.length > 0)? item.categories[0] : '';
-            return '<div class="autocomplete-suggestion" ' +
-                'data-term="' + term + '" ' +
-                'data-title="' + item.title + '" ' +
-                'data-uri="'+ item.uri + '?s=' + term + '"' +
-                'data-context="' + item.context + '">' +
-                    '<div>' + item.title + '<strong class="category">' + item.cat + '</strong> </div>' +
-                    '<div class="context">' + (item.context || '') +'</div>' +
-                '</div>';
-        },
-        /* onSelect callback fires when a search suggestion is chosen */
-        onSelect: function(e, term, item) {
-            console.log(item.getAttribute('data-val'));
-            location.href = item.getAttribute('data-uri');
-        }
+      return entityMap[s];
     });
-});
+  }
+
+
+  function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+
+    const item = {
+      value: value,
+      expiry: now.getTime() + ttl,
+    }
+    sessionStorage.setItem(key, JSON.stringify(item))
+  }
+
+
+  function getWithExpiry(key) {
+    const itemStr = sessionStorage.getItem(key)
+    if (!itemStr) {
+      return null
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      sessionStorage.removeItem(key)
+      return null
+    }
+
+    return item.value
+  }
+
+
+  new RedisSiteSearch('#redis-sitesearch', {
+    debounceTime: 2,
+
+    search: input => {
+      const trimmedInput = input.trim()
+      const url = `${SEARCH_API_URL}?q=${trimmedInput}*&site=${SEARCH_SITE}&from_url=${window.location.href}`
+
+      if (input.length === 0) {
+        return []
+      }
+
+      try { xhr.abort(); } catch(e){}
+
+      // Save the query so we can append it to a selected result URL later.
+      // We use this to track search queries.
+      this.lastQuery = trimmedInput
+
+      const cachedResults = getWithExpiry(url)
+
+      if (cachedResults) {
+        return cachedResults
+      }
+
+      return new Promise(resolve => {
+        $.getJSON(url)
+          .fail(function(jqxhr, textStatus, error) {
+            const err = `${textStatus}, ${error}`
+            console.error("Error querying search API:", err)
+            resolve([])
+          })
+          .done(function(data) {
+            // Push a fake 'no results' document if there were no results.
+            if (!data.results.length) {
+              const safeInput = escapeHtml(trimmedInput)
+              results = [{
+                title: "",
+                section_title: `No results found for '${safeInput}'`,
+                body: "",
+                hierarchy: ['']
+              }]
+            }
+            else {
+              results = data.results
+            }
+
+            try {
+              setWithExpiry(url, results, THIRTY_SECONDS)
+            } catch (e) {
+              // Fail silently if session storage is full.
+            }
+            resolve(results)
+          })
+      })
+    },
+
+    renderResult: (result, props) => {
+      let sectionTitle = "",
+        hasSectionTitle = result.section_title !== ""
+
+      if (hasSectionTitle) {
+        sectionTitle = `
+          <div class="search-section-title">
+            ${result.section_title}
+          </div>
+        `
+      }
+
+      return `
+        <li ${props}>
+          <div class="search-left">
+            <div class="search-title">
+              ${result.title}
+            </div>
+          </div>
+          <div class="search-right">
+            ${sectionTitle}
+            <div class="search-body">
+              ${result.body}
+            </div>
+          </div>
+        </li>
+      `
+    },
+
+    getResultValue: result => "",
+
+    // Open the selected article in
+    // a new window
+    onSubmit: result => {
+      if (result) {
+        const lastQuery = encodeURIComponent(this.lastQuery)
+        window.open(`${result.url}?s=${lastQuery}`, "_top")
+      }
+    },
+
+    onUpdate: (results, selectedIndex) => {
+      const redisearchLogo = document.querySelector('.redisearch-logo')
+      if (results.length) {
+        redisearchLogo.innerHTML = SEARCH_LOGO
+      } else {
+        redisearchLogo.innerHTML = ""
+      }
+    }
+  })
+})()

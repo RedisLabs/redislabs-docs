@@ -15,4 +15,6 @@ Profiler gives information about the number of commands processed, commands/seco
 
 ![profile](/images/ri/profile.png)
 
-**Note**: Running monitor command is dangerous to the performance of your production server, hence the profiler is run for a maximum time of 5 minutes, if the user has not stopped it in between. This is to avoid overload on the server.
+{{< note >}}
+Running monitor command is dangerous to the performance of your production server, hence the profiler is run for a maximum time of 5 minutes, if the user has not stopped it in between. This is to avoid overload on the server.
+{{< /note >}}

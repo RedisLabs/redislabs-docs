@@ -1,12 +1,12 @@
 ---
 Title: Usage Reports
 description:
-weight: $weight
+weight: 70
 alwaysopen: false
-categories: ["RC Essentials"]
+categories: ["RC"]
+aliases: /rv/administration/usage-reports/
 ---
-You can view the number of gigabytes used by this Redis Cloud Essentials
-account. You are able to filter the data by subscription, database, and
-statement month/year.
+You can view the number of gigabytes used by this Redis Cloud account.
+You can filter the data by subscription, database, and statement month/year.
 
-![usage_report](/images/rc/usage_report.png?width=1000&height=712)
+![usage_report](/images/rc/usage_report.png)

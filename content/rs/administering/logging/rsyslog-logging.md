@@ -5,9 +5,9 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-This document explains the structure of Redis Enterprise Software (RS)
-log entries that go into rsyslog and how to use these log entries to
-identify events.
+This document explains the structure of Redis Enterprise Software (RS) log entries that go into rsyslog
+and how to use these log entries to identify events.
+Also, we recommend that you [secure your logs]({{< relref "/rs/security/logging.md" >}}) with a remote logging server and log rotation.
 
 ## Logging concepts
 
@@ -50,13 +50,12 @@ Since rsyslog entries do not include the severity information by
 default, you can use the following instructions in order to log that
 information (in Ubuntu):
 Add the following line to /etc/rsyslog.conf
-$templateTraditionalFormatWithPRI,"%pri‐text%:%timegenerated%%HOSTNAME%
-%syslogtag%%msg:::drop‐last‐lf%n"
+$template TraditionalFormatWithPRI,"%pri-text%:%timegenerated%:%HOSTNAME%:%syslogtag%:%msg:::drop-last-lf%\n"
 
 And modify $ActionFileDefaultTemplate to use your new template
 $ActionFileDefaultTemplateTraditionalFormatWithPRI
 Make sure to save the changes and restart rsyslog in order for the
-changes to take effect. you can see the alerts and events under /var/log
+changes to take effect. You can see the alerts and events under /var/log
 in messages log file.
 
 **Command components:**
@@ -319,7 +318,7 @@ false,"time":1434365471,"disk":705667072,"type":
 
 ## Mapping UI events and alerts to log entries
 
-### Cluster / Node related events
+### Cluster and node related events
 
 | **Event as shown in the UI** | **Event code­name** | **Object type** | **Category** | **Severity** | **Notes** |
 |------------|-----------------|------------|-----------------|------------|-----------------|
@@ -349,5 +348,5 @@ false,"time":1434365471,"disk":705667072,"type":
 | Throughput is lower than RPS (requests per second) | low_throughput | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
 | Latency is higher than msec | high_latency | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
 | Periodic backup has been delayed for longer than minutes | backup_delayed | bdb | alert | true: warning</br>false: info | Has threshold parameter in the data: section of the log entry. |
-| Replica of ­database unable to sync with source | syncer_connection_error</br>syncer_general_error | bdb | alert | error</br>error |
-| Replica of ­ sync lag is higher than seconds | high_syncer_lag | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
+| Replica Of ­database unable to sync with source | syncer_connection_error</br>syncer_general_error | bdb | alert | error</br>error |
+| Replica Of sync lag is higher than seconds | high_syncer_lag | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |

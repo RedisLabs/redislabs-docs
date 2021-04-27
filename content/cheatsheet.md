@@ -6,7 +6,11 @@ draft: false
 ---
 Here you can find examples of style and formatting elements that you can use in your pages.
 
-## Basic Content Formatting
+{{< note >}}
+% is used when the inner content of the shortcode is markdown, and < is used when the inner content is HTML.
+{{< /note >}}
+
+## Basic content formatting
 
 ### Tabbed paragraphs
 
@@ -27,24 +31,24 @@ To link to another page in the content directory:
 Syntax:
 
 ```md
-[Redis Cloud Pro Quick Setup]({{</* relref  "/rv/quick-setup.md" */>}})`
+[Redis Cloud Quick Start]({{</* relref  "/rc/rc-quickstart.md" */>}})`
 ```
 
 Output:
 
-[Redis Cloud Pro Quick Setup]({{< relref  "/rv/quick-setup.md" >}})
+[Redis Cloud Quick Start]({{< relref  "/rc/rc-quickstart.md" >}})
 
 To link to an anchor on another page in the content directory:
 
 Syntax:
 
 ```md
-`[Sign up for Redis Cloud Pro]({{</* relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
+`[Sign up for Redis Cloud]({{</* relref "/rc/rc-quickstart#step-1-sign-up-for-redis-cloud-pro-account" */>}})`
 ```
 
 Output:
 
-[Sign up for Redis Cloud Pro]({{< relref "/rv/quick-setup.md#step-1-sign-up-for-redis-cloud-pro-account" >}})
+[Sign up for Redis Cloud]({{< relref "/rc/rc-quickstart#step-1-sign-up-for-redis-cloud-pro-account" >}})
 
 ### Text formatting
 
@@ -61,13 +65,32 @@ Text in the comments shortcode is not published in the output.
 
 Syntax:
 
-```src
+```sh
 {{%/* comment */%}}Do not publish!{{%/* /comment */%}}
 ```
 
 Ouput:
 
 {{% comment %}}Do not publish!{{% /comment %}}
+
+### Definitions
+
+A series of definitions, as you'd find in a glossary, should go into a definition list (e.g., `<dl></dl>`).
+
+For the entires, use the following shortcode:
+
+```
+{{</*definition "term">}}
+The definition of "term" goes here.
+{{</definition>}}
+```
+
+This produces the following HTML output:
+
+```
+<dt id="term">term</dt>
+<dd>The definition of "term" goes here.</dd>
+```
 
 ### Code formatting
 
@@ -137,13 +160,13 @@ Code can be shown like code fences using the code shortcode also.
 
 Syntax:
 
-```src
-{{%/* code */%}}var x = 123;{{%/* /code */%}}
+```sh
+{{</* code */>}}var x = 123;{{</* /code */>}}
 ```
 
 Ouput:
 
-{{% code %}}var x = 123;{{% /code %}}
+{{< code >}}var x = 123;{{< /code >}}
 
 ### Tables
 
@@ -182,7 +205,53 @@ Output:
 
 {{< table-csv "test_table.csv" 3 >}}
 
-## Images and Videos
+### Tabs
+
+Source: https://github.com/rvanhorn/hugo-dynamic-tabs
+
+Syntax:
+```
+{{%/* tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" */%}}
+  {{%/* tab tabNum="1" */%}}
+
+  Tab 1 Content
+
+  {{%/* /tab */%}}
+  {{%/* tab tabNum="2" */%}}
+
+  Tab 2 Content
+
+  {{%/* /tab */%}}
+  {{%/* tab tabNum="3" */%}}
+
+  Tab 3 Content
+
+  {{%/* /tab */%}}
+{{%/* /tabs */%}}
+```
+
+Output:
+
+{{< tabs tabTotal="3" tabID="1" tabName1="Tab 1" tabName2="Tab 2" tabName3="Tab 3" >}}
+  {{< tab tabNum="1" >}}
+
+  **Tab 1 Content**  
+  Content in the first tab
+
+  {{< /tab >}}
+  {{< tab tabNum="2" >}}
+
+  **Tab 2 Content**
+
+  {{< /tab >}}
+  {{< tab tabNum="3" >}}
+
+  **Tab 3 Content**
+
+  {{< /tab >}}
+{{< /tabs >}}
+
+## Images and videos
 
 ### Adding an image
 
@@ -223,8 +292,8 @@ Embed YouTube video.
 
 Syntax:
 
-```src
-{{%/* youtube Bi1T3toQfF4 */%}}
+```sh
+{{</* youtube Bi1T3toQfF4 */>}}
 ```
 
 Ouput:
@@ -237,7 +306,7 @@ Embed YouTube video and start playback from specific timestamp.
 
 Syntax:
 
-```src
+```sh
 {{</* youtube_start Bi1T3toQfF4 10 */>}}
 ```
 
@@ -245,25 +314,65 @@ Ouput:
 
 {{< youtube_start Bi1T3toQfF4 10 >}}
 
-## Single-Sourcing {#singlesourcing}
+## Single-sourcing {#singlesourcing}
 
 ### Expanding blocks
 
 Syntax:
 
 ```md
-{{%/* expand "How do you make expanding blocks?" */%}}
+{{</* expand "How do you make expanding blocks?" */>}}
 This is how you make expanding blocks.
-{{%/* /expand */%}}
+{{</* /expand */>}}
 ```
 
 Output:
 
-{{%expand "How do you make expanding blocks?" %}}
+{{< expand "How do you make expanding blocks?" >}}
 This is how you make expanding blocks.
-{{% /expand%}}
+{{< /expand >}}
+
+### Embedded partials
+
+A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials must be placed in `content/embeds` directory.
+
+Embed a markdown partial
+
+Syntax:
+
+```md
+{{</* excerpt */>}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+provides a simple mechanism for cluster-aware Redis clients to learn
+and know the cluster topology. This enables clients to connect directly
+to an RS proxy on the node hosting the master shard for the data being
+operated on.{{</* /excerpt */>}}
+```
+
+Output:
+
+{{< excerpt >}}The Redis OSS Cluster API support in Redis Enterprise Software (RS)
+provides a simple mechanism for cluster-aware Redis clients to learn
+and know the cluster topology. This enables clients to connect directly
+to an RS proxy on the node hosting the master shard for the data being
+operated on.{{< /excerpt >}}
+
+Embed an HTML partial
+
+Syntax:
+
+```sh
+{{</* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */>}}
+```
+
+Output:
+
+{{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
 
 ### Excerpts
+
+{{< warning >}}
+In most cases, use embedded partials instead of excerpts.
+{{< /warning >}}
 
 **Defining an excerpt**
 
@@ -289,43 +398,15 @@ operated on.{{% /excerpt %}}
 
 Syntax:
 
-```src
+```sh
 {{%/* excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" */%}}
 ```
 
 Output:
 
-{{%excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" %}}
+{{< excerpt-include filename="rs/concepts/data-access/oss-cluster-api.md" />}}
 
-**Embedding a partial**
-
-A partial markdown or HTML file can be included in other files using the **embed-md** or **embed-html** shortcodes. Partials should be placed in `layouts/partials/embeds` directory.
-
-Embed a markdown partial
-
-Syntax:
-
-```src
-{{</* embed-md "sample.md"  */>}}
-```
-
-Output:
-
-{{< embed-md "sample.md" >}}
-
-Embed an HTML partial
-
-Syntax:
-
-```src
-{{</* embed-html "sample-table.html" */>}}
-```
-
-Output:
-
-{{< embed-html "sample.html" >}}
-
-## Informative Notices
+## Informative notices
 
 **Info**
 
@@ -333,13 +414,13 @@ Info boxes give background information that does not prevent proper use of the p
 
 Syntax:
 
-```src
-{{%/* info */%}}After you do this the first time, it gets easier.{{%/* /info */%}}
+```sh
+{{</* info */>}}After you do this the first time, it gets easier.{{</* /info */>}}
 ```
 
 Ouput:
 
-{{% info %}}After you do this the first time, it gets easier.{{% /info %}}
+{{< info >}}After you do this the first time, it gets easier.{{< /info >}}
 
 **Tip**
 
@@ -347,13 +428,13 @@ Tips give additional information for improved use of the product.
 
 Syntax:
 
-```src
-{{%/* tip */%}}Eating on time prevents hunger.{{%/* /tip */%}}
+```sh
+{{</* tip */%}}Eating on time prevents hunger.{{</* /tip */>}}
 ```
 
 Ouput:
 
-{{% tip %}}Eating on time prevents hunger.{{% /tip %}}
+{{< tip >}}Eating on time prevents hunger.{{< /tip >}}
 
 **Note**
 
@@ -361,13 +442,13 @@ Notes suggest steps that prevent errors that do not cause data loss.
 
 Syntax:
 
-```src
-{{%/* note */%}}Make sure you have enough disk space.{{%/* /note */%}}
+```sh
+{{</* note */>}}Make sure you have enough disk space.{{</* /note */>}}
 ```
 
 Ouput:
 
-{{% note %}}Make sure you have enough disk space.{{% /note %}}
+{{< note >}}Make sure you have enough disk space.{{< /note >}}
 
 **Warning**
 
@@ -375,13 +456,13 @@ Warnings suggest that users think carefully before doing steps that can cause ir
 
 Syntax:
 
-```src
-{{%/* warning */%}}Backup your data before erasing the hard disk!{{%/* /warning */%}}
+```sh
+{{</* warning */>}}Backup your data before erasing the hard disk!{{</* /warning */>}}
 ```
 
 Ouput:
 
-{{% warning %}}Backup your data before erasing the hard disk!{{% /warning %}}
+{{< warning >}}Backup your data before erasing the hard disk!{{< /warning >}}
 
 **Label** (Not used)
 
@@ -389,13 +470,13 @@ Label displays a label. The type parameter can be passed to the shortcode in ord
 
 Syntax:
 
-```src
-{{%/* label type="info" */%}}This is a label{{%/* /label */%}}
+```sh
+{{</* label type="info" */>}}This is a label{{</* /label */>}}
 ```
 
 Ouput:
 
-{{% label type="info" %}}This is a label{{% /label %}}
+{{< label type="info" >}}This is a label{{< /label >}}
 
 **Well**
 
@@ -403,17 +484,17 @@ Well displays content inside a container.
 
 Syntax:
 
-```src
-{{%/* well */%}} Inside a well {{%/* /well */%}}
+```sh
+{{</* well */>}} Inside a well {{</* /well */>}}
 ```
 
 Ouput:
 
-{{% well %}}
+{{< well >}}
 Inside a well
-{{% /well %}}
+{{< /well >}}
 
-## Contents Lists
+## Contents lists
 
 ### All children
 
@@ -421,8 +502,8 @@ Allchildren displays all the child pages of current page.
 
 Syntax:
 
-```src
-{{%/* allchildren style="h2" description="true" */%}}
+```sh
+{{</* allchildren style="h2" description="true" */>}}
 ```
 
 Ouput:
@@ -430,22 +511,30 @@ Ouput:
 See example [here](/rc/administration).
 
 ### Recently updated
+
 This shortcode can be used to display recently updated articles.
 
 Syntax:
 
-```src
-{{%/* recently-updated */%}} Recently updated articles {{%/* /recently-updated */%}}
+```sh
+{{</* recently-updated */>}} Recently updated articles {{</* /recently-updated */>}}
 ```
 
 Ouput:
 
-{{% recently-updated %}}
+{{< recently-updated >}}
 Recently updated articles
-{{% /recently-updated %}}
+{{< /recently-updated >}}
 
-## Other Shortcodes
+## Other shortcodes
 
 - [Attachments](https://learn.netlify.com/en/shortcodes/attachments/)
 - [Mermaid](https://learn.netlify.com/en/shortcodes/mermaid/)
 - [Children](https://learn.netlify.com/en/shortcodes/children/)
+
+## Related Info
+
+For more info about editing and writing our documents:
+
+- [Editing guide]({{<relref "content/editing-guide.md">}})
+- [Contribution guide]({{<relref "content/contribution-guide.md">}})

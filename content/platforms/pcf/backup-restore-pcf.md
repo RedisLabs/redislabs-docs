@@ -10,7 +10,7 @@ This topic describes how to backup and restore Redis Enterprise for Pivotal Plat
 
 You must use the BOSH Backup and Restore (BBR) command-line tool to backup and restore your Pivotal Platform deployment. These backup and restore instructions apply specifically to your Redis Enterprise for Pivotal Platform deployment.
 
-## Installing the BBR Command-Line Tool
+## Installing the BBR command-line tool
 
 To install the BBR command-line tool:
 
@@ -21,7 +21,7 @@ To install the BBR command-line tool:
 1. Right-click on the latest tar archive of the tool and copy the link address.
 1. To download the BBR tool, in the Ops Manager run:
 
-    ```src
+    ```sh
     wget <archive_link_address> -O bbr.tar && tar -xvf bbr.tar
     ```
 
@@ -35,14 +35,14 @@ Before you configure a backup process you must have:
 
 - BBR user credentials - Find the values for `bbr_user` and `bbr_user_pass` in the Ops Manager file:
 
-    ```src
+    ```sh
     https://<host>/api/v0/deployed/director/credentials/uaa_bbr_client_credentials
     ```
 
 - Deployment name - On the Ops Manager, find the deployment name that begins
 with `redis-enterprise-` in the output of the command:
 
-    ```src
+    ```sh
     bosh -e cf deployments
     ```
 
@@ -50,7 +50,7 @@ To backup your Redis Enterprise for Pivotal Platform deployment:
 
 1. Run the backup command:
 
-    ```src
+    ```sh
     BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> releases/bbr deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> backup
     ```
 
@@ -71,19 +71,19 @@ To restore a Redis Enterprise for Pivotal Platform deployment:
 
 1. On the new Pivotal Platform Foundation, install a redis-enterprise tile with the same configuration of the original tile.
 
-    {{% note %}}
+    {{< note >}}
 A different cluster name or number of machines than the original tile causes errors in the restore.
-    {{% /note %}}
+    {{< /note >}}
 
 1. In the cluster configuration tab, check the **Recovery Mode** checkbox and click **Apply change**.
 1. Copy the backup archive to the Ops Manager.
 1. Run the restore command to recover the cluster:
 
-    {{% note %}}
+    {{< note >}}
 This command does not recover databases.
-    {{% /note %}}
+    {{< /note >}}
 
-    ```src
+    ```sh
     BOSH_CLIENT_SECRET=<bbr_user_pass> <path_to_bbr> deployment --debug --target <Bosh_OpsManager_IPaddress> --ca-cert=/var/tempest/workspaces/default/root_ca_certificate --username <bbr_user> --deployment <deployment_name> restore --artifact-path=<archive_path>
     ```
 
@@ -95,7 +95,7 @@ This command does not recover databases.
 1. To see that all of the nodes are connected, run: `rladmin status extra all`
 1. On each node, set the [cluster recovery](http://docs.redislabs.com/latest/rs/administering/troubleshooting/cluster-recovery/) source path to the cluster backup file:
 
-    ```src
+    ```sh
     rladmin node <node_id> recovery_path set <import_path>
     ```
 
@@ -109,7 +109,7 @@ This command does not recover databases.
 
 1. To verify that database recovery is ready, run:
 
-    ```src
+    ```sh
     rladmin recover list
     ```
 
@@ -117,7 +117,7 @@ This command does not recover databases.
 
 1. To start database recovery, run:
 
-    ```src
+    ```sh
     rladmin recover all
     ```
 

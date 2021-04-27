@@ -8,6 +8,10 @@ nextStep:
     Title: Memory Analysis
     href: /docs/features/troubleshooting/
 ---
+When RedisInsight doesn't behave as expected, use these steps to see what the problem is.
+
+For additional configuration options, such as changing the default port, go to: https://docs.redislabs.com/latest/ri/installing/configurations/
+
 ## Logs
 
 To get detailed information about errors in RedisInsight, you can review the log files with the `.log` extension in:
@@ -16,3 +20,16 @@ To get detailed information about errors in RedisInsight, you can review the log
 - **Mac**: In the `/Users/<your-username>/.redisinsight` directory.
 - **Windows**: In the `C:\Users\<your-username>\.redisinsight` directory.
 - **Linux**: In the `/home/<your-username>/.redisinsight` directory.
+
+{{< note >}}
+You can install RedisInsight on operating systems that are not officially supported, but it may not behave as expected.
+{{< /note >}}
+
+We are happy to receive your feedback at redisinsight@redislabs.com.
+
+## Using behind a reverse proxy
+
+When you configure RedisInsight to run behind a reverse proxy like NGINX:
+
+- Since some requests can be long-running, we recommend that the **request timeout is set to over 30 seconds** on the reverse proxy.
+- Hosting RedisInsight behind a prefix path (path-rewriting) is not supported at this time.

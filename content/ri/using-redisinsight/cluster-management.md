@@ -13,6 +13,8 @@ RedisInsight Cluster Management provides you with a GUI to manage your Redis Clu
 
 ![cluster-management](/images/ri/cluster-management.png)
 
+## Cluster Management actions
+
 Cluster Management not only gives you a representation of your cluster but also helps you administer your cluster by using the following actions -
 
 1. **Cluster Rebalance** - Cluster Rebalance helps you migrate all slots according to slot percentages amongst cluster nodes.
@@ -22,3 +24,15 @@ Cluster Management not only gives you a representation of your cluster but also 
 1. **Delete Node in Cluster** - Using this a slave can be deleted. We dont support deletion of masters as deleting a master directly can be problematic
 1. **Make a node Replica of Master** - Cluster management includes a feature to make the selected node replica of a master. If the node is already a replica, no work is required. If the node is a master, then that should be empty i.e. - no hash slots and keys.
 1. **Cluster Health Monitoring & Alerts** - Cluster Management constantly runs health checks for your cluster and returns alerts if there is any issue with the cluster. It also provides alerts if the master and slave are on the same server. The alerts for the cluster can be fixed by using the Fix Cluster feature.
+
+## Compatibility
+
+RedisInsight Cluster Management capabilities are available for [OSS Redis Clusters](https://redis.io/topics/cluster-tutorial)
+Currently we do not support Redis Enterprise Software clusters that have the [OSS Cluster API]({{< relref "rs/concepts/data-access/oss-cluster-api.md" >}}) enabled. 
+
+{{% note %}}
+
+RedisInsight Cluster Management tool for TLS databases is not supported on Microsoft Windows because Windows does not include the OpenSSL library.
+You can run RedisInsight using [Docker]({{< relref "ri/installing/install-docker.md" >}}) on Windows to manage TLS databases.
+
+{{% /note %}}

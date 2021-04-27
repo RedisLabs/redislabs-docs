@@ -1,5 +1,5 @@
 ---
-Title: Installing RedisInsight
+Title: Installation
 description:
 weight: 30
 alwaysopen: false
@@ -10,4 +10,5 @@ We offer various ways to install RedisInsight:
 
 - [Desktop]({{< relref "/ri/installing/install-redis-desktop.md" >}})
 - [Docker]({{< relref "/ri/installing/install-docker.md" >}})
-- [EC2]({{< relref "/ri/installing/install-ec2.md" >}})
+- [Kubernetes]({{< relref "/ri/installing/install-k8s.md" >}})
+- [Amazon AWS EC2]({{< relref "/ri/installing/install-ec2.md" >}})

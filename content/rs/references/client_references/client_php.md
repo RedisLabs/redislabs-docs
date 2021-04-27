@@ -14,7 +14,7 @@ Predis' installation instructions are given in the ["How to Use Predis" section]
 
 You can also download the latest [Predis release](https://github.com/nrk/predis/releases) from the GitHub repository.
 
-### Opening a Connection to Redis Using Predis
+### Opening a connection to Redis using Predis
 
 The following code creates a connection to Redis using Predis:
 
@@ -36,7 +36,7 @@ Unless you've installed Predis with Composer, you'll need to include the 2nd and
 - In line 9, `port` should be your database's port
 - In line 10, `password` should be your database's password
 
-## Persistent Connections with Predis
+## Persistent connections with Predis
 
 Predis supports the use of persistent connections, which are recommended practice to minimize connection management overhead. To enable persistent connections, use the `persistent` connection attribute as shown in the following snippet:
 
@@ -51,7 +51,7 @@ Predis supports the use of persistent connections, which are recommended practic
 
 does not support SSL connections natively. For an added security measure, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis) or this [Predis fork](https://github.com/RedisLabs/predis) that has been added with SSL support.
 
-## Reading and Writing Data with Predis
+## Reading and writing data with Predis
 
 Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
 
