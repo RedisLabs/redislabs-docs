@@ -62,28 +62,38 @@ and click **Apply**. For example, if the name of your bucket is *backups-bucket*
 ## Back up to Google Cloud Storage (GCS)
 
 For [Google Cloud Platform (GCP)
-console](https://developers.google.com/console/) subscriptions, store your backups in a GCS bucket:
+console](https://developers.google.com/console/) subscriptions, store your backups in a Google Cloud Storage bucket:
 
-1. Sign in Google Cloud Platform
-1. Navigate to **Storage -> Browser**
-1. Click on the three dot button (1) on your relevant bucket name and
-    choose **Edit bucket permissions** (2).
-    ![GCS bucket
-    permissions](/images/rc/bucket-permissions.png)
-1. Under **Add members**, enter:
+1. Sign in to Google Cloud Platform console.
+
+1. In the admin console menu, locate the _Storage_ section than select **Cloud Storage&nbsp;>&nbsp;Browser**.
+
+1. Create or select a bucket.
+
+1. Select the [overflow menu](https://material.io/components/app-bars-top#anatomy) (three dots, stacked) and then select the **Edit Bucket Permissions** command.
+
+1. Select the **Add members** button and then add:
+
     `service@redislabs-prod-clusters.iam.gserviceaccount.com`
-1. For the role, select **Storage Legacy -\> Storage Legacy Bucket
-    Writer**.
-    ![Google Cloud Storage
-    Permissions](/images/rc/gcs-permissions.jpg)
-1. Click on the **Add** button.
 
-Once your bucket's permissions are set, you can use it with your
-resource by setting its **Backup Path** to the path of your GCS bucket
-and clicking the **Activate** button. For example, if your backups
-bucket's name is backups-bucket, use the path:
+1. Set **Role** to **Storage Legacy** | **Storage Legacy Bucket Writer**.
 
-`gs://backups-bucket`
+1. Save your changes.
+
+1. Verify that your bucket does _not_ have a set retention policy.  
+
+    To do so:
+
+    1. View the details of your bucket.
+
+    1. Select the **Retention** tab.
+    
+    1. Verify that there is no retention policy.  
+    
+    If a policy is defined and you cannot delete it, you need to use a different bucket.
+
+Use the bucket details **Configuration** tab to locate the **gsutil URI**.  This is the value you'll assign to your resource's backup path.
+
 
 ## Back up to Azure Blob Storage 
 
