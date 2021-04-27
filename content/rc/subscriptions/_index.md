@@ -16,7 +16,7 @@ aliases: /rv/administration/setup_and_editing/
          
 ---
 
-This page helps you manage your Redis Cloud subscriptions; it briefly compares available plans and shows where to find help wth common tasks.
+This page helps you manage your Redis Cloud subscriptions; it briefly compares available plans and shows where to find help with common tasks.
 
 ## Subscription plans
 
