@@ -15,7 +15,7 @@ Redis Enterprise Cloud provides a variety of metrics to help you monitor databas
 
 ##  View database metrics
 
-The **Meterics** tab of the **View Database** screen provides a series of graphs showing performance data for your database.
+The **Metrics** tab of the **View Database** screen provides a series of graphs showing performance data for your database.
 
 {{<image filename="images/rc/database-view-metrics.png" width="75%" alt="The Metrics tab of the View Database screen." >}}{{< /image >}}
 
