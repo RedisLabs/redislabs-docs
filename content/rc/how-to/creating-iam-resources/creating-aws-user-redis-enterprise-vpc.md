@@ -43,10 +43,10 @@ Now create a policy to assign to the user:
 {{< video "/images/rc/create-instance-user-policy.mp4" "Create an instance user policy" >}}
 
 1. In AWS IAM console, go to **Policies** > **Create policy**.
-1. In the **JSON** tab, paste the contents of the RedislabsIAMUserRestrictedPolicy.json policy file.
+1. In the **JSON** tab, paste the contents of the RedisLabsIAMUserRestrictedPolicy.json policy file.
 
     {{%expand "View RedislabsIAMUserRestrictedPolicy.json" %}}
-	{{% code-include file="rv/RedislabsIAMUserRestrictedPolicy.json" language="js" %}}
+	{{% code-include file="rv/RedisLabsIAMUserRestrictedPolicy.json" language="js" %}}
     {{% /expand%}}
 
 1. Validate the policy and click **Review Policy**.
