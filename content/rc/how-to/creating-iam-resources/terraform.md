@@ -1,5 +1,6 @@
 ---
-Title: Terraform
+Title: Create IAM resources using Terraform
+linkTitle: Terraform
 Weight: 20
 categories: ["RC"]
 alwaysopen: false
