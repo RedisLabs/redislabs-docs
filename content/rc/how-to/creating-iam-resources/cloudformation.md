@@ -1,5 +1,6 @@
 ---
-Title: CloudFormation
+Title: Create resources (CloudFormation)
+linkTitle: CloudFormation
 Weight: 10
 categories: ["RC"]
 alwaysopen: false
