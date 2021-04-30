@@ -134,15 +134,14 @@ For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG
 
 1. To install RS, run:
 
-    {{< note >}}
-- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
-- By default, Redis Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group](#custom-installation-user-and-group) during the installation.
-- You must either be logged in as the root user or use sudo to run the install process.
-    {{< /note >}}
-
     ```sh
     sudo ./install.sh
     ```
+    {{< note >}}
+- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
+- By default, Redis Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group](#custom-installation-user-and-group) during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{< /note >}}
 
 1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
     including the `rlcheck` installation verification.
@@ -183,10 +182,14 @@ During the installation, you can customize the installation directories.
 The files are installed in the `redislabs` directory in the path that you specify.
 
 {{< note >}}
-- Custom installation directories are supported on RedHat Enterprise Linux versions 6 and 7.
+- Custom installation directories are supported on RedHat Enterprise Linux version 7.
 - When you install with custom directories, the installation does not run as an RPM file.
 - If a `redislabs` directory already exists in the path that you specify, the installation fails.
 - All nodes in a cluster must be installed with the same file locations.
+{{< /note >}}
+
+{{< note >}}
+- Custom installation directories are not supported for databases using Redis on Flash.
 {{< /note >}}
 
 You can specify any or all of these file locations:
@@ -230,7 +233,7 @@ During the installation you can specify the OS user and group, which owns all Re
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
 {{< note >}}
-- Custom installation user is supported on RedHat Enterprise Linux versions 6 and 7.
+- Custom installation user is supported on RedHat Enterprise Linux version 7.
 - When you install with custom directories, the installation does not run as an RPM file.
 - You must create the user and group befor attempting to install Redis Software.
 - You can specify an LDAP user as the installation user.
@@ -259,15 +262,15 @@ To install on Linux from the CLI:
 
 1. To install, run:
 
-    {{< note >}}
-- Files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). You can also [specify other directories](#custom-installation-directories) for these files during the installation.
-- Redis Software is installed and run under the `redislabs` user and `redislabs` group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
-- You must either be logged in as the root user or use sudo to run the install process.
-    {{< /note >}}
-
     ```sh
     sudo ./install.sh
     ```
+
+    {{< note >}}
+- Files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
+- Redis Software is installed and run under the `redislabs` user and `redislabs` group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
+- You must either be logged in as the root user or use sudo to run the install process.
+    {{< /note >}}
 
 1. Answer the installation questions when shown to complete the installation process,
     and run `rlcheck` to verify the installation.

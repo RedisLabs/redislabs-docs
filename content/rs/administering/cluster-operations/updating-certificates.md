@@ -6,6 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: ["/rs/administering/cluster-operations/updating-certificates"]
 ---
+
 Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 The self-signed certificates are used to establish encryption-in-transit for the following traffic:
 
@@ -40,11 +41,11 @@ To replace certificates using the rladmin CLI, run:
 Where:
 
 - cert-name - The name of certificate you want to replace:
-    - For management UI: `cm`
-    - For REST API: `api`
-    - For database endpoint: `proxy`
-    - For syncer: `syncer`
-    - For metrics exporter: `metrics_exporter`
+  - For management UI: `cm`
+  - For REST API: `api`
+  - For database endpoint: `proxy`
+  - For syncer: `syncer`
+  - For metrics exporter: `metrics_exporter`
 - cert-file-name - The name of your certificate file
 - key-file-name - The name of your key file
 
@@ -65,19 +66,20 @@ curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d
 Where:
 
 - cert_name - The name of the certificate to replace:
-    - For management UI: `cm`
-    - For REST API: `api`
-    - For database endpoint: `proxy`
-    - For syncer: `syncer`
-    - For metrics exporter: `metrics_exporter`
-- key - The contents of the *_key.pem file
+  - For management UI: `cm`
+  - For REST API: `api`
+  - For database endpoint: `proxy`
+  - For syncer: `syncer`
+  - For metrics exporter: `metrics_exporter`
+- key - The contents of the \*\_key.pem file
 
-    {{< tip >}}
-The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
-You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
-    {{< /tip >}}
+      {{< tip >}}
 
-- cert - The contents of the *_cert.pem file
+  The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
+  You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
+  {{< /tip >}}
+
+- cert - The contents of the \*\_cert.pem file
 
 The new certificates are used the next time the clients connect to the database.
 
@@ -100,11 +102,11 @@ You can configure the TLS protocols and ciphers with the `rladmin` commands show
 To set the minimum TLS protocol for the control plane:
 
 - Default TLS Protocols: TLSv1.0
-- Syntax: `rladmin cluster config cluster config min_control_TLS_version <TLS_Version>`
+- Syntax: `rladmin cluster config min_control_TLS_version <TLS_Version>`
 - TLS versions available:
-    - For TLSv1 - 1
-    - For TLSv1.1 - 1.1
-    - For TLSv1.2 - 1.2
+  - For TLSv1 - 1
+  - For TLSv1.1 - 1.1
+  - For TLSv1.2 - 1.2
 
 For example:
 
@@ -117,11 +119,11 @@ rladmin cluster config min_control_TLS_version 1.2
 To set the minimum TLS protocol for the data path:
 
 - Default TLS Protocols: TLSv1.0
-- Syntax: `rladmin cluster config cluster config min_data_TLS_version <TLS_Version>`
+- Syntax: `rladmin cluster config min_data_TLS_version <TLS_Version>`
 - TLS versions available:
-    - For TLSv1 - 1
-    - For TLSv1.1 - 1.1
-    - For TLSv1.2 - 1.2
+  - For TLSv1 - 1
+  - For TLSv1.1 - 1.1
+  - For TLSv1.2 - 1.2
 
 For example:
 
@@ -142,9 +144,9 @@ To enable TLS for the discovery service:
 - Default: Allows both TLS and non-TLS connections
 - Syntax: `rladmin cluster config sentinel_ssl_policy <ssl_policy>`
 - ssl_policy values available:
-    - `allowed` - Allows both TLS and non-TLS connections
-    - `required` - Allows only TLS connections
-    - `disabled` - Allows only non-TLS connections
+  - `allowed` - Allows both TLS and non-TLS connections
+  - `required` - Allows only TLS connections
+  - `disabled` - Allows only non-TLS connections
 
 For example:
 
@@ -163,29 +165,44 @@ TLS versions older than the specified version.
 
 ### Cipher configuration
 
-#### Control plan cipher suite configuration
+{note}
+Redis Enterprise Software doesn't support Diffie–Hellman key exchange (`DHE-`) ciphers.
+{/note}
 
-Control plane cipher suites use the BoringSSL libary format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99).
+#### Control plane cipher suite configuration (for 6.0.8 or earlier)
 
 See the example below to configure cipher suites for the control plane.:
+
 ```sh
-rladmin cluster config cipher_suites AES128-SHA:DHE-PSK-AES256-CCM8:AES256-SHA
+rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305
 ```
 
-#### Data plane cipher suite configuration
+#### Control plane cipher suite configuration (for 6.0.12 or later)
 
-Data plane cipher suites use the OpenSSL libary format. See OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html)
+Control plane cipher suites use the BoringSSL library format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99).
+
+See the example below to configure cipher suites for the control plane.:
+
+```sh
+rladmin cluster config cipher_suites AES128-SHA:AES256-SHA
+```
+
+#### Data plane cipher suite configuration (for 6.0.20 or later)
+
+Data plane cipher suites use the OpenSSL library format. See OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html)
 
 See the example below to configure cipher suites for the data plane:
+
 ```sh
-rladmin cluster config data_cipher_list AES128-SHA:DHE-PSK-AES256-CCM8:AES256-SHA
+rladmin cluster config data_cipher_list AES128-SHA:AES256-SHA
 ```
 
-#### Sentinel service cipher suite configuration
+#### Sentinel service cipher suite configuration (for 6.0.20 or later)
 
 Sentinel service cipher suites use the golang.org OpenSSL format for discovery service TLS connections. See their documentation for a list of [available configurations](https://golang.org/src/crypto/tls/cipher_suites.go).
 
 See the example below to configure cipher suites for the sentinel service:
+
 ```sh
 rladmin cluster config sentinel_cipher_suites TLS_RSA_WITH_AES_128_CBC_SHA:TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
 ```

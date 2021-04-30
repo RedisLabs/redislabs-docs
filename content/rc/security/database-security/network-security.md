@@ -117,7 +117,7 @@ Once your VPC peering request is accepted, the status in your subscription's **V
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
 please don't hesitate to [contact Redis Labs support](https://redislabs.com/company/support/).
 
-#### Configurea CIDR whitelist
+#### Configure the CIDR whitelist
 
 The **CIDR whitelist** defines a range of IP addresses and/or AWS security groups permitted to access
 databases in the Redis Cloud VPC.
