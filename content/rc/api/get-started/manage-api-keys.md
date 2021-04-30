@@ -34,7 +34,7 @@ To generate a secret access key:
 1. From the admin console menu, choose **Settings** and select **Cloud API Keys**.
 
     If **Cloud API Keys** is not shown, make sure you have [enabled your Account to use API]({{< relref "/rc/api/get-started/enable-the-api.md" >}}).
-1. To create a new key, click **Add new API secret key**.
+1. To create a new key, select **Add new API secret key**.
 1. Enter the secret key properties:
     1. User Name: Choose the user associated with the key.
 
@@ -73,12 +73,12 @@ To limit API access to a specified range of source IP addresses:
 
 1. [Sign in to admin console](https://app.redislabs.com) as an account owner.
 1. Go to **Settings** > **Cloud API Keys**
-1. Click **Manage IPs** for the access key that you want to limit.
-1. Click ![Add](/images/rs/icon_add.png#no-click "Add") to add a new whitelist subnet.
+1. Select **Manage IPs** for the access key that you want to limit.
+1. Select ![Add](/images/rs/icon_add.png#no-click "Add") to add a new whitelist subnet.
 1. Enter the subnet in [CIDR format](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation), for example: `10.2.5.0/24`
 1. Save the subnet.
 
-After you add the subnet, you can add additional subnets or click **OK**.
+After you add the subnet, you can add additional subnets or select **OK**.
 
 ## Delete an allowed subnet
 
@@ -87,4 +87,4 @@ After you add the subnet, you can add additional subnets or click **OK**.
 1. Select  **Manage IPs** for the access key that you want to change.
 1. Delete the subnet that you want to remove.
 
-After you delete the subnet, you can delete more subnets or click **OK**.
+After you delete the subnet, you can delete more subnets or select **OK**.

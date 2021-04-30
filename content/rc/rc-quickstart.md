@@ -105,7 +105,7 @@ Once you have the connection details, you can connect in a variety of ways, incl
 
 Here's an example of each.
 
-### Using redis-cli (via Docker){#using-rediscli}
+### Use redis-cli (via Docker){#using-rediscli}
 
 The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands).
 
@@ -141,7 +141,7 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
     "world"
     ```
 
-### Programming language (Python)
+### Use code (Python)
 
 Different programming languages use different clients to interact with Redis databases.
 
