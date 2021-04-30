@@ -1,21 +1,25 @@
 ---
-Title: Update Databases
+Title: Update databases
 description: How to construct requests that update an existing database.
-weight: 75
+weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/update-databases/
+         /rc/api/how-to/update-databases/
+         /rc/api/how-to/update-databases.md
+         /rc/api/examples/update-database/
+         /rc/api/examples/update-database.md
 ---
 
 The API operation that updates an existing database is: `PUT /subscriptions/{subscription-id}/databases/{database-id}`
 
-This API operation uses the same [provisioning lifecycle]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}) as the [create and manage databases]({{< relref "/rc/api/how-to/create-and-manage-databases.md" >}}) operation.
+This API operation uses the same [provisioning lifecycle]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}) as the [create database]({{< relref "/rc/api/examples/create-database.md" >}}) operation.
 
 ## Database update request JSON body
 
 The primary component of a database update request is the JSON request body that contains the details of the requested database changes.
 
-You can see [the complete set of JSON elements]({{< relref "/rc/api/how-to/using-curl#inputs-for-operations-in-swagger" >}}) accepted by the database update API operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
+You can see [the complete set of JSON elements]({{< relref "/rc/api/get-started/use-rest-api.md#inputs-for-operations-in-swagger" >}}) accepted by the database update API operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
 To see the JSON elements, expand the specific API operation and, in the request section, click **Model**.
 
 Here are several examples of JSON requests to update a database:

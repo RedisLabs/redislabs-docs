@@ -1,10 +1,14 @@
 ---
 Title: View Account Information
 description: Get initial information on account parameters
-weight: 110
+weight: 70
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/view-account-information/
+         /rc/api/how-to/view-account-information/
+         /rc/api/how-to/view-account-information.md
+         /rc/api/examples/view-account-information/
+         /rc/api/examples/view-account-information.md
 ---
 
 The root API operation returns information about the current account, user and API Key (as identified by the set of API Keys provided in the API request).

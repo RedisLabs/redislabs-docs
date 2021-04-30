@@ -77,7 +77,9 @@ Next, we create a database.
 
     When the database has been created, the status indicator switches to a green box containing a checkmark; this is the Active status indicator.  When your database becomes active, it's ready for use.
 
-Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/concepts/provisioning-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but your new database isn't available.  When the icon changes to show a green box containing a checkmark, your database is ready to use.
+Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but pending resources aren't avilable until they're active.
+
+To use a database, you need to connect to it.
 
 ## Connect to a database
 
@@ -103,7 +105,7 @@ Once you have the connection details, you can connect in a variety of ways, incl
 
 Here's an example of each.
 
-### Using redis-cli (via Docker){#using-rediscli}
+### Use redis-cli (via Docker){#using-rediscli}
 
 The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands).
 
@@ -139,7 +141,7 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
     "world"
     ```
 
-### Programming language (Python)
+### Use code (Python)
 
 Different programming languages use different clients to interact with Redis databases.
 

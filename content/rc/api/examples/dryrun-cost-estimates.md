@@ -1,13 +1,17 @@
 ---
-Title: Evaluating Cost Before Deployment
+Title: Estimate cost
 description: How to evaluate the cost of a specific subscription or database without changing existing resources.
-weight: 65
+weight: 50
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/how-to/dry-run-cost-evaluations/
+         /rc/api/how-to/dry-run-cost-evaluations/
+         /rc/api/how-to/dry-run-cost-evaluations.md
+         /rc/api/examples/dryrun-cost-estimates/
+         /rc/api/examples/dryrun-cost-estimates.md
 ---
-When you change your subscriptions and databases you also change the cost of your deployment.
-With a **dry-run request**, you can evaluate the impact that subscription and databases changes cause before you deploy these changes:
+When you change your subscriptions and databases, you also change the cost of your deployment.
+With a **dry-run request**, you can evaluate the impact and obtain a cost estimate ahead of that subscription and databases changes cause before you deploy these changes:
 
 - Create subscription
 - Create a database
