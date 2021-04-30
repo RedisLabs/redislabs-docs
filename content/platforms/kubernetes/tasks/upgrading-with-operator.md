@@ -84,7 +84,7 @@ Before beginning the upgrade of the Redis Enterprise cluster version, check the 
 After the Operator upgrade is complete, you can upgrade Redis Enterprise cluster version using the following steps.
 
 1. Run `kubectl edit rec` in the namespace your Redis Enterprise cluster is deployed in.
-2. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag you found in the Operator release notes.
+2. Replace the `image:` declaration under `redisEnterpriseImageSpec` with the new version tag you found in the operator release notes.
 3. Save the changes to apply
 
 The rolling upgrade of the cluster nodes' statefulSet starts.
