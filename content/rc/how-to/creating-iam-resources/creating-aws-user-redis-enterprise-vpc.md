@@ -1,5 +1,5 @@
 ---
-Title: Manual
+Title: Create IAM resources (AWS)
 weight: 30
 alwaysopen: false
 categories: ["RC"]
