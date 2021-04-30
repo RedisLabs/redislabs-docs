@@ -5,7 +5,7 @@ weight: 30
 categories: ["RC"]
 ---
 For most Redis Enterprise Cloud Flexible or Annual subscriptions deployed to Amazon Web Services (AWS), we manage the supporting infrastructure for you in dedicated AWS accounts.
-In Redis Cloud Ultimate, you can choose to have this infrastructure on your own AWS accounts.
+Redis Enterprise Cloud Annual subscriptions let you manage this infrastructure with your own AWS accounts.
 You'll want these accounts to be separate from any AWS application accounts,
 and you'll need to create some dedicated IAM entities to let us manage the infrastructure for you.
 
