@@ -5,7 +5,7 @@ Weight: 10
 categories: ["RC"]
 alwaysopen: false
 ---
-Simply clicking on the link below will launch the relevant CloudFormation stack creation process in the AWS console:
+The following link uses CloudFormation to create a stack using the AWS console:
 
 
 <a href="https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=RedisCloud&templateURL=https://s3.amazonaws.com/cloudformation-templates.redislabs.com/RedisCloud.yaml">
