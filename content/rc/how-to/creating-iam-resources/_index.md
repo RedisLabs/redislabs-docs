@@ -1,5 +1,6 @@
 ---
-Title: Creating IAM Entities for AWS Cloud Accounts
+Title: Create IAM entities for AWS cloud accounts
+linkTitle: Create IAM entities
 description:
 weight: 30
 categories: ["RC"]
