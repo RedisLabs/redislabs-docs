@@ -79,7 +79,7 @@ redis-enterprise-operator   1/1     1            1           0m36s
 
 ### Upgrade the Redis Enterprise cluster version
 
-Before beginning the upgrade of the Redis Enterprise cluster version, check the Operator release notes to find the Redis Enterprise image tag. For example, in Operator release [6.0.12-5](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases/tag/v6.0.12-5), the Images section shows the Redis Enterprise tag is `6.0.12-57`.
+Before beginning the upgrade of the Redis Enterprise cluster version, check the K8s operator release notes to find the Redis Enterprise image tag. For example, in Redis Enterprise K8s operator release [6.0.12-5](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases/tag/v6.0.12-5), the `Images` section shows the Redis Enterprise tag is `6.0.12-57`.
 
 After the Operator upgrade is complete, you can upgrade Redis Enterprise cluster version using the following steps.
 
