@@ -3,7 +3,7 @@
         "Suffix": "index.html"
     },
     "ErrorDocument": {
-        "Key": "404.html"
+        "Key": "latest/404.html"
     },
     "RoutingRules": [
         {
