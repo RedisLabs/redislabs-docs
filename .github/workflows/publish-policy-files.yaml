@@ -1,0 +1,106 @@
+name: Publish Policy Files
+on: push
+env:
+  BUCKET:  iam-resource-automation-do-not-delete
+  ZIPFILE: terraform-aws-Redislabs-Cloud-Account-IAM-Resources.zip
+  POLICY_DIR: policies
+  COLON: ":"
+jobs:
+  check-for-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Get modified files using defaults
+        id: changed-files
+        uses: tj-actions/changed-files@v4.2
+        
+      - name: setup output variable to non-null if there are files to process
+        id: step1
+        if: ${{ (contains(steps.changed-files.outputs.all_modified_files, 'static/code/rv/RedisLabsInstanceRolePolicy.json') || contains(steps.changed-files.outputs.all_modified_files, 'static/code/rv/RedisLabsIAMUserRestrictedPolicy.json')) }}
+        run:
+          echo "::set-output name=test::hello"
+
+  update-s3-snippets:
+    needs: check-for-changes
+    runs-on: ubuntu-latest
+    if: ${{needs.check-for-changes.outputs.output1 != null }}
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Configure AWS credentials from Redislabs account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.REDISLABS_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.REDISLABS_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+          
+      - name: make snippets and move to s3
+        run: |
+          for file in RedisLabsInstanceRolePolicy.json RedislabsIAMUserRestrictedPolicy.json
+          do
+          snippet=$(basename $file .json)Snippet.json
+          cat $file | jq { PolicyDocument':' .} >$snippet &&
+          aws s3 mv $snippet s3://${{env.BUCKET}}/
+          done
+
+  refresh-zip-file:
+    needs: check-for-changes
+    runs-on: ubuntu-latest
+    if: ${{needs.check-for-changes.outputs.output1 != null }}
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: make the policy directory
+        run: mkdir ${{env.POLICY_DIR}}
+
+      - name: Configure AWS credentials from Redislabs account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.REDISLABS_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.REDISLABS_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+          
+      - name: download zip file from S3
+        run: aws s3 cp s3://${{env.BUCKET}}/${{env.ZIPFILE}} ${{env.ZIPFILE}}
+        
+      - name: get policy files
+        shell: bash
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          cp static/code/rv/RedisLabs*Policy.json ${{env.POLICY_DIR}}
+          
+      - name: zip policy files
+        uses: montudor/action-zip@v1.0.0
+        with:
+          args: zip -fv ${{env.ZIPFILE}} ${{env.POLICY_DIR}}/*
+
+      - name: upload zip file to s3
+        run: aws s3 mv ${{env.ZIPFILE}} s3://${{env.BUCKET}}/${{env.ZIPFILE}}
+        
+      - name: remove the policy dir
+        run: rm -rf ${{env.POLICY_DIR}}
+        
+  change-reporter: 
+    needs: check-for-changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: print value of check condition
+        run: echo "${{needs.check-for-changes.outputs.output1}}"
+      - name: no policy file changes detected
+        if: ${{needs.check-for-changes.outputs.output1 == null }}
+        run: |
+          echo no policy file changes detected
+          
+      - name: policy file changes detected 
+        if: ${{needs.check-for-changes.outputs.output1 != null }}
+        run: |
+          echo policy file changes detected    
+  
+       
