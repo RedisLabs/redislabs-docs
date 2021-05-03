@@ -8,7 +8,7 @@ alwaysopen: false
 The following link uses CloudFormation to create a stack using the AWS console:
 
 
-<a href="https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=RedisCloud&templateURL=https://s3.amazonaws.com/cloudformation-templates.redislabs.com/RedisCloud.yaml">
+<a href="https://console.aws.amazon.com/cloudformation/home?#/stacks/new?stackName=RedisCloud&templateURL=https://s3.amazonaws.com/iam-resource-automation-do-not-delete/RedisCloud.yaml">
 <img alt="Launch RedisCloud template" src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"/>
 </a>
 
@@ -16,7 +16,7 @@ If you prefer to use the AWS CLI then the command you need is shown below, subst
 
 ```
 aws cloudformation create-stack --stack-name RedisCloud --template-url \
-https://s3.amazonaws.com/cloudformation-templates.redislabs.com/RedisCloud.yaml \
+https://s3.amazonaws.com/iam-resource-automation-do-not-delete/RedisCloud.yaml \
 --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_NAMED_IAM CAPABILITY_IAM \
 --profile YOUR_PROFILE_HERE
 ```
