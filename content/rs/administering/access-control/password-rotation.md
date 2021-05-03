@@ -14,7 +14,7 @@ you can set a [password expiration policy]({{< relref "/rs/administering/access-
 However, for database connections that rely on password authentication,
 you need to allow for authentication with the existing password while you roll out the new password to your systems.
 
-With the RS REST API, you can add additional passwords to an user account for authentication to the database or the Admin Console and API.
+With the RS REST API, you can add additional passwords to a user account for authentication to the database or the Admin Console and API.
 After the old password is replaced in the database connections,
 just delete the old password to finish the password rotation process.
 
@@ -30,16 +30,10 @@ The new password cannot already exist as a password for the user and must meet t
 
 To rotate the password of a user account:
 
-1. Add an additional password to an user account with this POST command:
+1. Add an additional password to a user account with this POST command:
 
     ```sh
-    curl -k -v -X POST -H "content-type: application/json" -u "<administrator_user>:<password>"
-        https://<RS_server_address>:9443/v1/users/password
-        -d '{
-        "username":"<username>",
-        "old_password":"<an_existing_password>",
-        "new_password":"<a_new_password>"
-        }'
+    curl -k -v -X POST -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}' https://<RS_server_address>:9443/v1/users/password
     ```
 
     After you run this command, you can authenticate with both the old and the new password.
@@ -48,12 +42,7 @@ To rotate the password of a user account:
 1. Delete the original password with this DELETE command:
 
 ```sh
-curl -k -v -X DELETE -H "content-type: application/json" -u "<administrator_user>:<password>"
-    https://<RS_server_address>:9443/v1/users/password
-    -d '{
-    "username":"<username>",
-    "old_password":"<an_existing_password>"
-    }'
+curl -k -v -X DELETE -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>"}' https://<RS_server_address>:9443/v1/users/password
 ```
 
 If there is only one valid password for a user account, you cannot delete that password.
@@ -66,13 +55,7 @@ This can be helpful if you suspect that your passwords are compromised and you w
 To replace all existing passwords for a user account with a single new password, use this PUT command:
 
 ```sh
-curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<password>"
-    https://<RS_server_address>:9443/v1/users/password
-    -d '{
-    "username":"<username>",
-    "old_password":"<an_existing_password>",
-    "new_password":"<a_new_password>"
-    }'
+curl -k -v -X PUT -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"username":"<username>", "old_password":"<an_existing_password>", "new_password":"<a_new_password>"}' https://<RS_server_address>:9443/v1/users/password
 ```
 
 All of the existing passwords are deleted and only the new password is valid.
