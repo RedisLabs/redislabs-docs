@@ -4,21 +4,21 @@ weight: 10
 categories: ["RI"]
 path: auto-discover-databases/
 ---
-RedisInsight lets you automatically add Redis Enterprise Software (RS) and Redis Enterprise Cloud databases.
+RedisInsight lets you automatically add Redis Enterprise Software and Redis Enterprise Cloud databases.
 
 {{< note >}}
-For auto-discovery, Redis Enterprise Cloud databases must be in a Pro subscription.
+For Redis Cloud, auto-discovery is supported only for Flexible or Annual subscriptions.
 {{< /note >}}
 
-## Auto-discovery for Redis Enterprise Software
+## Auto-discovery for Redis Software
 
-To automatically discover and add RS databases to RedisInsight:
+To automatically discover and add Redit Software databases to RedisInsight:
 
-1. In RedisInsight, click **ADD REDIS DATABASE**.
+1. In RedisInsight, select **ADD REDIS DATABASE**.
 
     ![re-step-1](/images/ri/re-step-1.png)
 
-1. Click on **Automatically Discover Databases**.
+1. Select **Automatically Discover Databases**.
 
     ![re-step-2](/images/ri/rc-step-2.png)
 
@@ -26,25 +26,25 @@ To automatically discover and add RS databases to RedisInsight:
 
     ![re-step-3](/images/ri/rc-step-3.png)
 
-1. Enter the connection details and click **DISCOVER DATABASES**.
+1. Enter the connection details and then select **DISCOVER DATABASES**.
 
     ![re-step-4](/images/ri/re-step-4.png)
 
-1. From the list of databases, select the databases that you want to add and click **ADD SELECTED DATABASES**.
+1. From the list of databases, choose the databases that you want to add and then select **ADD SELECTED DATABASES**.
 
     ![re-step-5](/images/ri/re-step-5.png)
 
-    All of the databases that were successfully added are dislayed on the screen. To see the databases in the Databases page, click **VIEW DATABASES**.
+    All of the databases that were successfully added are dislayed on the screen. To see the databases in the **Databases** page, click **VIEW DATABASES**.
 
-## Auto-discovery for Redis Enterprise Cloud databases
+## Auto-discovery for Redis Cloud databases
 
-To automatically discover and add Redis Enterprise Cloud (RC) databases to RedisInsight:
+To automatically discover and add Redis Cloud databases to RedisInsight:
 
-1. In RedisInsight, click **ADD REDIS DATABASE**.
+1. In RedisInsight, select **ADD REDIS DATABASE**.
 
     ![rc-step-1](/images/ri/re-step-1.png)
 
-1. Click on **Automatically Discover Databases**.
+1. Select **Automatically Discover Databases**.
 
     ![rc-step-2](/images/ri/rc-step-2.png)
 
@@ -52,26 +52,26 @@ To automatically discover and add Redis Enterprise Cloud (RC) databases to Redis
 
     ![rc-step-3](/images/ri/rc-step-3.png)
 
-1. Enter the [Account Key]({{< relref "/rc/api/concepts/authentication-and-authorization#account-key" >}}) and the [Secret key]({{< relref "/rc/api/concepts/authentication-and-authorization#secret-key" >}}) associated with your Redis Enterprise Cloud account and click **SUBMIT**.
+1. Enter the [Account Key]({{< relref "/rc/api/get-started/_index.md#account-key" >}}) and the [Secret key]({{< relref "/rc/api/get-started/_index.md#secret-key" >}}) associated with your Redis Cloud subscription and then select **SUBMIT**.
 
     ![rc-step-4](/images/ri/rc-step-4.png)
 
 1. Verify the details for the account:
-    - If the account details match your account, click on **MY SUBSCRIPTIONS** to list all of the subscriptions in your account.
-    - If the account details do not match your account, click **NOT MY ACCOUNT** and enter the correct credentials.
+    - If the account details match your account, select **MY SUBSCRIPTIONS** to list the subscriptions in your account.
+    - If the account details do not match your account, select **NOT MY ACCOUNT** and then verify the credentials.
 
     ![rc-step-5](/images/ri/rc-step-5.png)
 
-1. Select the subscriptions that contain the databases that you want to add and click **SHOW DATABASES**.
+1. Choose the subscriptions that contain databases to be added to RedisInsight and then select  **SHOW DATABASES**.
 
     ![rc-step-6](/images/ri/rc-step-6.png)
 
-1. From the list of active databases in the selected subscriptions, select the databases that you want to register and click **REGISTER DATABASES**.
+1. From the list of active databases in the selected subscriptions, choose the databases to be added to RedisInsight and then select **REGISTER DATABASES**.
 
     ![rc-step-7](/images/ri/rc-step-7.png)
 
-    All of the databases that were successfully added are dislayed on the screen. If all of the databases were added successfully, **All selected databases added successfully** is shown.
+    When sucessfully added, databases are dislayed on the screen. If all databases are added successfully, the message **All selected databases added successfully** is displays.
 
     ![rc-step-8](/images/ri/rc-step-8.png)
 
-1.  To see the automatically discovered databases in the Databases page, click **VIEW DATABASES**.
+1.  To see the automatically discovered databases in the **Databases** page, select **VIEW DATABASES**.

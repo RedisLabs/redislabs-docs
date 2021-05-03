@@ -1,18 +1,19 @@
 ---
-Title: Metrics and usage statistics
-description: Metrics API provides programmatic access to database usage and performance data
+Title: Request performance metrics
+description: The metrics API provides programmatic access to database usage and performance data
 weight: 40
 alwaysopen: false
 categories: ["RC"]
-draft: true
 ---
-Metrics API provides programmatic access to database usage and performance data.
-The metrics API shows data that similar to the data that the Redis Cloud admin console shows in the database metrics.
+The REST API provides programmatic access to database usage and performance metrics.
+
+It provides data similar to that shown in the **Metrics** tab of the **View Database** screen of the admin console.
 
 ## Metric spans and intervals
 
-Metrics API data shows the data for the database that you request and the metric span that you request.
-The metric span determines the time period for the data points in the metrics API response.
+Metric data summarizes performance for a given database over a specific period of time.  
+
+The metric span determines the time period for the results in the response.
 
 | Metric Span | Data duration | Data point interval | Data point collection |
 |---|---|---|---|

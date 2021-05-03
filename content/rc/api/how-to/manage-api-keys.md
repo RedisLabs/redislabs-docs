@@ -4,14 +4,16 @@ description: Managing API Keys using the Redis Cloud admin console
 weight: 30
 alwaysopen: false
 categories: ["RC"]
+hidden: true
+draft: true
 aliases: /rv/api/how-to/manage-api-keys/
 ---
 After you create a Redis Enterprise Cloud API access key, you can manage your API access key in the following ways:
 
 - Deleting the access key
 - Limiting usage of the access key by network subnets
-
-## Deleting an API access key
+<!-->
+## Delete an access key
 
 To delete an access key:
 
@@ -45,3 +47,4 @@ After you add the subnet, you can add more subnets or click **OK**.
 1. Delete the subnet that you want to disallow.
 
 After you delete the subnet, you can delete more subnets or click **OK**.
+-->

@@ -71,6 +71,6 @@ This can be done in two ways:
 
  After we have the dump, following either of the approaches mentioned above, we perform analysis on the dump, computing memory statistics and discovering key patterns. What happens here is similar to what is done by the open source [redis-rdb-tools](https://github.com/sripathikrishnan/redis-rdb-tools). The result of this process is an **RSNAP** file (stands for redis snapshot), which contains the key names, memory statistics and other generated information about the dump, but importantly, not the values of the keys themselves. The dump file never really leaves the system the agent runs on.
 
- After the RSNAP file is completely generated, it is uploaded to our servers where further analysis is done to generate recommendations. We have over 20 recommendations at this point which give you simple advice on how to optimize your redis database.
+ After the RSNAP file is completely generated, it is used to generate recommendations. We have over 20 recommendations at this point which give you simple advice on how to optimize your redis database.
 
  So that's a brief look under the hood of RedisInsight. We are constantly working on improving our process and we've had quite a bit of back and forth about the exact mechanism of the entire process. It goes without saying that the process keeps evolving and might look different in the near future. We'll try to keep this page updated with all significant changes, so check back here or follow our blog to stay updated.
