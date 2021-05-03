@@ -11,13 +11,13 @@
       {{ hugo.Generator }}
       <title>{{ .Title }} | {{ .Site.Title }}</title>
       <link rel="shortcut icon" href="{{"/latest/images/icon_logo/favicon-32x32.png"}}" type="image/x-icon" />
-      <link href="{{"/latest/css/font-awesome.min.css"}}" rel="stylesheet">
-      <link href="{{"/latest/css/nucleus.css"}}" rel="stylesheet">
-      <link href="{{"/latest/css/bootstrap.min.css"}}" rel="stylesheet">
-      <link href="{{"/latest/css/foundation-icons.css"}}" rel="stylesheet">
-      <link href="/latest/theme-flex/style.css" rel="stylesheet">
+      <link href="{{"css/font-awesome.min.css" | absURL }}" rel="stylesheet">
+      <link href="{{"css/nucleus.css" | absURL }}" rel="stylesheet">
+      <link href="{{"css/bootstrap.min.css" | absURL }}" rel="stylesheet">
+      <link href="{{"css/foundation-icons.css" | absURL }}" rel="stylesheet">
+      <link href="{{"theme-flex/style.css" | absURL }}" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
-      <script src="{{"/latest/js/jquery-2.x.min.js"}}"></script>
+      <script src="{{"js/jquery-2.x.min.js" | absURL }}"></script>
       <script type="text/javascript">
             var baseurl = "{{.Site.BaseURL}}";
       </script>
@@ -136,10 +136,10 @@
               </div>
             </div>
           </div>
-          <script type="text/javascript" src="{{"/latest/js/redis-sitesearch.min.js" | relURL}}"></script>
-          <script type="text/javascript" src="{{"/latest/js/search.js" | relURL}}"></script>
-          <link href="{{"/latest/css/redis-sitesearch.css" | relURL}}" rel="stylesheet">
-          <link href="{{"/latest/css/redis-sitesearch-overrides.css" | relURL}}" rel="stylesheet">
+          <script type="text/javascript" src="{{"js/redis-sitesearch.min.js" | absURL}}"></script>
+          <script type="text/javascript" src="{{"js/search.js" | absURL}}"></script>
+          <link href="{{"css/redis-sitesearch.css" | absURL}}" rel="stylesheet">
+          <link href="{{"css/redis-sitesearch-overrides.css" | absURL}}" rel="stylesheet">
       </div>
       {{- end}}
 

@@ -56,7 +56,7 @@ jobs:
                 name: Build site files (HTML, CSS, images) with the baseURL for the specified branch, including Google snippets (production)
                 command: |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    HUGO_ENV=production hugo -v --baseURL //docs.redislabs.com/$VERSION
+                    HUGO_ENV=production hugo -v --baseURL https://docs.redislabs.com/$VERSION
             - run:
                 name: Remove generated directories that are not needed
                 command: |
