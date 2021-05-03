@@ -42,10 +42,10 @@ jobs:
           
       - name: make snippets and move to s3
         run: |
-          for file in RedisLabsInstanceRolePolicy.json RedislabsIAMUserRestrictedPolicy.json
+          for file in RedisLabsInstanceRolePolicy.json RedisLabsIAMUserRestrictedPolicy.json
           do
           snippet=$(basename $file .json)Snippet.json
-          cat $file | jq { PolicyDocument':' .} >$snippet &&
+          cat $file | jq '{ PolicyDocument":" .}' >$snippet &&
           aws s3 mv $snippet s3://${{env.BUCKET}}/
           done
 
