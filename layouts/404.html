@@ -10,14 +10,14 @@
       {{- partial "canonical-url" . | safeHTML -}}
       {{ hugo.Generator }}
       <title>{{ .Title }} | {{ .Site.Title }}</title>
-      <link rel="shortcut icon" href="{{"/images/icon_logo/favicon-32x32.png"}}" type="image/x-icon" />
-      <link href="{{"latest/css/font-awesome.min.css"}}" rel="stylesheet">
-      <link href="{{"latest/css/nucleus.css"}}" rel="stylesheet">
-      <link href="{{"latest/css/bootstrap.min.css"}}" rel="stylesheet">
-      <link href="{{"latest/css/foundation-icons.css"}}" rel="stylesheet">
-      <link href="latest/theme-flex/style.css" rel="stylesheet">
+      <link rel="shortcut icon" href="{{"/latest/images/icon_logo/favicon-32x32.png"}}" type="image/x-icon" />
+      <link href="{{"/latest/css/font-awesome.min.css"}}" rel="stylesheet">
+      <link href="{{"/latest/css/nucleus.css"}}" rel="stylesheet">
+      <link href="{{"/latest/css/bootstrap.min.css"}}" rel="stylesheet">
+      <link href="{{"/latest/css/foundation-icons.css"}}" rel="stylesheet">
+      <link href="/latest/theme-flex/style.css" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
-      <script src="{{"latest/js/jquery-2.x.min.js"}}"></script>
+      <script src="{{"/latest/js/jquery-2.x.min.js"}}"></script>
       <script type="text/javascript">
             var baseurl = "{{.Site.BaseURL}}";
       </script>
@@ -34,8 +34,132 @@
       {{end}}
   </head>
   <body data-url="{{ .RelPermalink }}">
-    {{ partial "flex/body-beforecontent.html" . }}
-      
+    {{ if eq (getenv "HUGO_ENV") "production" }}
+  {{ with .Site.Params.googleTagManager }}
+    {{ partial "gtm-body" . | safeHTML }}
+  {{ end }}
+{{ end }}
+<div class="header-wrap-outer">
+  <header id="header">
+      <div class="header-wrap">
+        <div class="logo">
+          {{ partial "header.html" . }}
+        </div>
+        {{- with .Site.Menus.shortcuts}}
+          {{ partial "navigation.html" . }}
+        {{- end}}
+
+        <nav class="shortcuts shortcuts-right">
+          <li class="" role="">
+              <a href="https://app.redislabs.com/#/login" rel="noopener">
+                <label>Login</label>
+              </a>
+          </li>
+          <li class="" role="">
+            <a href="https://redislabs.com/redis-enterprise-deployment/" rel="noopener">
+              <label>Try Free</label>
+            </a>
+          </li>
+        </nav>
+      </div>
+  </header>
+</div>
+<a id="top"></a>
+<article>
+    {{if not .IsHome}}
+    <aside>
+      <ul class="menu">
+        {{if .Params.categories}}
+          {{if eq (index .Params.categories 0) "RS"}}
+            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
+              <button class="menu__version-selector-btn version-selector-control">
+                <span id="versionSelectorValue" class="version-selector-control"></span>
+                <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
+                <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
+              </button>
+              <div class="menu__version-selector__list version-selector-control">
+                <a href="https://docs.redislabs.com/6.0/rs" id="version-select-6.0" onclick="_setSelectedVersion('6.0', 'v6.0 (latest)')">v6.0 (latest)</a>
+                <a href="https://docs.redislabs.com/5.6/rs" id="version-select-5.6" onclick="_setSelectedVersion('5.6', 'v5.6')">v5.6</a>
+                <a href="https://docs.redislabs.com/5.4/rs" id="version-select-5.4" onclick="_setSelectedVersion('5.4', 'v5.4')">v5.4</a>
+                <a href="https://docs.redislabs.com/5.2/rs" id="version-select-5.2" onclick="_setSelectedVersion('5.2', 'v5.2 (and below)')">v5.2 (and below)</a>
+              </div>
+            </div>
+          {{end}}
+
+          {{if eq (index .Params.categories 0) "Platforms"}}
+            <div id="versionSelector" class="menu__version-selector version-selector-control" onclick="_openVersionSelector()">
+              <button class="menu__version-selector-btn version-selector-control">
+                <span id="versionSelectorValue" class="version-selector-control"></span>
+                <span class="menu__version-selector__toggler opener version-selector-control">&#x25BC;</span>
+                <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
+              </button>
+              <div class="menu__version-selector__list version-selector-control">
+                <a href="https://docs.redislabs.com/6.0/platforms" id="version-select-6.x" onclick="_setSelectedVersion('6.0', 'v6.x (latest)')">v6.x (latest)</a>
+                <a href="https://docs.redislabs.com/5.6/platforms" id="version-select-5.x" onclick="_setSelectedVersion('5.6', 'v5.x')">v5.x</a>
+              </div>
+            </div>
+          {{end}}
+        {{end}}
+
+        {{- if not .Site.Params.disableHomeIcon}}
+            <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
+              <a href="{{"/" | relLangURL}}">
+                <i class="fa fa-fw fa-home"></i>
+              </a>
+            </li>
+        {{- end}}
+
+        {{- partial "menu.html" . }}
+
+      </ul>
+
+      {{- partial "language-selector.html" . }}
+      <section>
+        {{- partial "menu-footer.html" . }}
+      </section>
+    </aside>
+    <section class="page">
+        <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+          <span class="links">
+          {{ template "breadcrumb" dict "page" . "value" .Title }}
+          </span>
+        </div>
+
+      {{- if not .Site.Params.disableSearch}}
+      <div>
+          <div id="redis-sitesearch" class="redis-sitesearch redis-sitesearch-inline">
+            <input class="redis-sitesearch-input redis-sitesearch-input-inline" placeholder="{{T "Search-placeholder"}}" />
+
+            <div class="redis-sitesearch-result-list-wrapper">
+              <ul class="redis-sitesearch-result-list"></ul>
+              <div class="redisearch-logo">
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript" src="{{"/latest/js/redis-sitesearch.min.js" | relURL}}"></script>
+          <script type="text/javascript" src="{{"/latest/js/search.js" | relURL}}"></script>
+          <link href="{{"/latest/css/redis-sitesearch.css" | relURL}}" rel="stylesheet">
+          <link href="{{"/latest/css/redis-sitesearch-overrides.css" | relURL}}" rel="stylesheet">
+      </div>
+      {{- end}}
+
+      <div class="chevrons">
+       <!-- {{ partial "next-prev-page.html" . }} -->
+      </div>
+      {{end}}
+
+      <div class="nav-select">
+          <center>
+          <select onchange="javascript:location.href = this.value;">
+          {{partial "flex/selectnavigation.html" .}}
+      </select>
+      </center>
+      </div>
+
+      {{if not .IsHome}}
+        <h1>{{.Title}}</h1>
+      {{end}}
+
 	<h1><a href="https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=bmansheim&labels=bug&template=got-a-404-.md&title=Got+a+404">How did you get here?</a></h1>
 	<p>
 	</p>
