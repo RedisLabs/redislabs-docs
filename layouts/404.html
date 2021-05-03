@@ -2,7 +2,36 @@
 <html>
   <head>
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
-    {{ partial "flex/head.html" . }}
+ <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      {{ if ne (getenv "HUGO_ENV") "production" }}
+            {{- partial "noindex" . | safeHTML -}}
+      {{ end }}
+      {{- partial "canonical-url" . | safeHTML -}}
+      {{ hugo.Generator }}
+      <title>{{ .Title }} | {{ .Site.Title }}</title>
+      <link rel="shortcut icon" href="{{"/images/icon_logo/favicon-32x32.png"}}" type="image/x-icon" />
+      <link href="{{"latest/css/font-awesome.min.css"}}" rel="stylesheet">
+      <link href="{{"latest/css/nucleus.css"}}" rel="stylesheet">
+      <link href="{{"latest/css/bootstrap.min.css"}}" rel="stylesheet">
+      <link href="{{"latest/css/foundation-icons.css"}}" rel="stylesheet">
+      <link href="latest/theme-flex/style.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+      <script src="{{"latest/js/jquery-2.x.min.js"}}"></script>
+      <script type="text/javascript">
+            var baseurl = "{{.Site.BaseURL}}";
+      </script>
+      {{ partial "custom-head.html" . }}
+
+      {{if .IsHome}}
+      <style>
+            @media screen and (max-width: 768px) {
+                  .nice-select {
+                  display: none !important;
+                  }
+            }
+      </style>
+      {{end}}
   </head>
   <body data-url="{{ .RelPermalink }}">
     {{ partial "flex/body-beforecontent.html" . }}
