@@ -4,7 +4,7 @@ env:
   BUCKET:  iam-resource-automation-do-not-delete
   ZIPFILE: terraform-aws-Redislabs-Cloud-Account-IAM-Resources.zip
   POLICY_DIR: policies
-  COLON: ":"
+  POLICY_1: static/code/rv/RedisLabsInstanceRolePolicy.json
 jobs:
   check-for-changes:
     runs-on: ubuntu-latest
@@ -22,7 +22,7 @@ jobs:
         
       - name: setup output variable to non-null if there are files to process
         id: step1
-        if: ${{ (contains(steps.changed-files.outputs.all_modified_files, 'static/code/rv/RedisLabsInstanceRolePolicy.json') || contains(steps.changed-files.outputs.all_modified_files, 'static/code/rv/RedisLabsIAMUserRestrictedPolicy.json')) }}
+        if: ${{ (contains(steps.changed-files.outputs.all_modified_files, ${{env.POLICY_1}}) || contains(steps.changed-files.outputs.all_modified_files, 'static/code/rv/RedisLabsIAMUserRestrictedPolicy.json')) }}
         run:
           echo "::set-output name=test::hello"
 
