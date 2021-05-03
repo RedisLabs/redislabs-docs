@@ -4,11 +4,7 @@ provider "aws" {
 }
 
 module "Redislabs-Cloud-Account-Resources" {
-    source = "s3::https://s3.amazonaws.com/cloudformation-templates.redislabs.com/terraform-aws-Redislabs-Cloud-Account-IAM-Resources.zip"
-    pgp_key = "keybase:toby_h_ferguson"
-}
-
-output "accessKeyId" {
+    source = "s3::https://iam-resource-automation-do-not-delete.s3.amazonaws.com/terraform-aws-Redislabs-Cloud-Account-IAM-Resources.zip
     value = module.Redislabs-Cloud-Account-Resources.accessKeyId
 }
 
