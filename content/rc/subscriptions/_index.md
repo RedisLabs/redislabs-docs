@@ -62,6 +62,6 @@ View subscription details:
 
 - View [Flexible subscription]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}})
 
-- [Delete a subscription](({{<relref "/rc/subscriptions/delete-subscription.md">}})
-)
+- [Delete a subscription]({{<relref "/rc/subscriptions/delete-subscription.md">}})
+
 
