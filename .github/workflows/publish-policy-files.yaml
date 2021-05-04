@@ -4,6 +4,7 @@ env:
   BUCKET:  iam-resource-automation-do-not-delete
   ZIPFILE: terraform-aws-Redislabs-Cloud-Account-IAM-Resources.zip
   POLICY_DIR: policies
+  POLICY_1: static/code/rv/RedisLabsInstanceRolePolicy.json
   POLICY_2: static/code/rv/RedisLabsIAMUserRestrictedPolicy.json
 jobs:
   check-for-changes:
@@ -22,7 +23,7 @@ jobs:
         
       - name: setup output variable to non-null if there are files to process
         id: step1
-        if: ${{ (contains(steps.changed-files.outputs.all_modified_files, 'static/code/rv/RedisLabsInstanceRolePolicy.json') || contains(steps.changed-files.outputs.all_modified_files, env.POLICY_2)) }}
+        if: ${{ (contains(steps.changed-files.outputs.all_modified_files, env.POLICY_1) || contains(steps.changed-files.outputs.all_modified_files, env.POLICY_2)) }}
         run:
           echo "::set-output name=test::hello"
 
@@ -42,7 +43,7 @@ jobs:
           
       - name: make snippets and move to s3
         run: |
-          for file in static/code/rv/RedisLabs*.json
+          for file in ${{env.POLICY_1}} ${{env.POLICY_2}}
           do
           snippet=$(basename $file .json)Snippet.json
           cat $file | jq '{ PolicyDocument: .}' >$snippet &&
