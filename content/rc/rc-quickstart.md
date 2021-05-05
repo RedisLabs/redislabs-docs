@@ -26,64 +26,81 @@ If you already have a subscription, see [Manage subscriptions]({{< relref "/rc/s
 
 To create a new free subscription:
 
-1. Sign in to the Redis Cloud admin portal.  (Create an acoount if you don't already have one.)
+1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
-2. From the admin console menu, choose **Subscriptions**.
+2. If this is the first time you've signed in, you have no active subscriptions and can select the **Add subscription** button.
 
-    {{<image filename="images/rc/subscription-menu-select.png" alt="The Subscriptions command from the admin console menu." >}}{{< /image >}}
+    {{<image filename="images/rc/button-subscription-add.png" alt="The Add subscriptions button appears when there are no other subscriptions." >}}{{< /image >}}
 
+    If you already have a subscription, select the **New subscription** button in the admin menu.
 
+    {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
-3.  Select the **Add Subscription** button (![Add button](/images/rs/icon_add.png#no-click "Add Subscription")).
+    (You can only have one free subscription.)
 
-    {{<image filename="images/rc/subscription-list-empty.png" alt="The Subscription list when you have no subscriptions." >}}{{< /image >}}
+3. When the **New subscription** page appears, select **Fixed plans** and then scroll to the cloud vendor options.
+
+    {{<image filename="images/rc/subscription-new-plan-options.png" alt="Available subscription plan options." >}}{{< /image >}}
 
 4.  Choose a **Cloud Provider** and a **Region**.
 
     (You can ignore the **High-Availability** options for now; these are available in paid tiers only.)
 
+    {{<image filename="images/rc/subscription-new-cloud-vendor-options.png" alt="Available cloud vendor options." >}}{{< /image >}}
+
+
 5.  In the **Fixed Size** panel, locate the **Dataset Size** list and then choose **30MB**.
 
     Free plans are a tier of Fixed plans; this provides an easy upgrade path when you need it.
 
-    {{<image filename="images/rc/subscription-create-free.png" width="75%" alt="Create a free subscription. " >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-new-fixed-plan-options.png" alt="Create a free subscription. " >}}{{< /image >}}
 
-6.  Enter a descriptive **Subscription Name** and then select **Create**.
+6.  Enter a descriptive **Subscription Name** and then select the **Create subscription**.
 
-If this is your first subscription, you'll be taken directly to the **Create Database** screen.
+    {{<image filename="images/rc/button-subscription-create.png" alt="The Create subscription button is located below the subscription options. " >}}{{< /image >}}
+
 
 ## Create a database
 
-Next, we create a database.
+Now that you have a subscription, you need to create a database.
 
-1.  If you aren't already at the Databases screen, sign into the Redis Cloud admin console, select **Databases** from the menu, and then select the ![Add button](/images/rs/icon_add.png#no-click "Add") button.
 
-    {{<image filename="images/rc/fixed-sub-create-database-free.png" width="75%" alt="Create a free subscription. " >}}{{< /image >}}
+1.  If you aren't already at the Subscription details screen, sign into the Redis Cloud admin console and select your subscription from the subscription list.
 
-2.  Enter a descriptive **Database Name**.  
+2.  Select the **New Database** button.
+
+    {{<image filename="images/rc/button-database-new.png" width="75%" alt="Create a free subscription. " >}}{{< /image >}}
+
+2.  In the **General** section, enter a descriptive **Database Name**.  
 
     - You have 40 characters  
     - You can use letters, numbers, or a hyphen  
     - The name must start with a letter and end with either a letter or a number
     - Spaces are not allowed
 
+    {{<image filename="images/rc/database-new-free-name.png" width="75%" alt="Create new database. " >}}{{< /image >}}
+
 3.  For this exercise, leave the remaining options at their default values.  (To learn about them, see [Create a fixed subscription]({{< relref "/rc/subscriptions/create-fixed-subscription.md" >}}).)
 
-4.  Locate the **Activate** button near the bottom of the page and then select it.
+4.  Select the **Activate database** button near the upper, right corner of the page.
 
-5.  You're taken to the **Configuration** tab of the **View Database** screen.  In the upper corner, you'll see an orange box containing a rotating circle.  This is the Pending status indicator and it means your database is still being created.
+5.  You're taken to the **Configuration tab** for your new database.
 
-    ![Pending icon](/images/rc/icon-pending.png#no-click "Pending icon") &nbsp; ![Active icon](/images/rc/icon-active.png#no-click "Active icon")
+    {{<image filename="images/rc/database-fixed-configuration-general.png" width="75%" alt="Configuration tab showing details of your new database." >}}{{< /image >}}
 
-    When the database has been created, the status indicator switches to a green box containing a checkmark; this is the Active status indicator.  When your database becomes active, it's ready for use.
+    In the upper corner, an icon shows the current status of the database.  If the icon shows an orange clock, this means your database is still being created and its status is _pending_.
+
+    ![Pending status icon](/images/rc/icon-database-status-pending.png#no-click "Pending database status") &nbsp; ![Active status icon](/images/rc/icon-database-status-active.png#no-click "Active database status")
+
+    Once the database has been created, it becomes _active_ and the status indicator switches to a teal circle containing a checkmark.  
 
 Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but pending resources aren't avilable until they're active.
 
-To use a database, you need to connect to it.
+When your new database becomes active, you're ready to connect to it.
 
 ## Connect to a database
 
-At this point, you're at the **View Database** screen for your new database.  
+At this point, you're viewing the **Configuration** details for your new database.  
 
 To connect to your database, you need the following info:
 
@@ -91,11 +108,14 @@ To connect to your database, you need the following info:
 - The port number
 - The database password
 
-These are available in the **Configuration** details of the **View Database** screen:
+These are displayed in the **Configuration** tab.  
 
-- The **Endpoint** setting shows the URI for your database and the port number
+- In the **General** section, the **Public endpoint** setting shows the URI for your database and the port number.  Use the **Copy** button to copy these values to the Clipboard.
 
-- The **Access Control & Security** setting shows a masked **Default Password**.  Use **Password** button to show or hide the password.  
+- The **Security** section contains your **Default user password**.  By default, this is masked.  Select the eye icon to show or hide the password.    
+
+    {{<image filename="images/rc/database-fixed-configuration-security.png" width="75%" alt="The Security section of the Configuration tab of the database details page." >}}{{< /image >}}
+
 
 Once you have the connection details, you can connect in a variety of ways, including:
 
