@@ -1,5 +1,5 @@
 ---
-Title: Database password rotation
+Title: User password rotation
 description:
 weight: $weight
 alwaysopen: false
