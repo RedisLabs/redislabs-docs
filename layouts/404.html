@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
   <head>
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
@@ -101,13 +101,11 @@
           {{end}}
         {{end}}
 
-        {{- if not .Site.Params.disableHomeIcon}}
             <li data-nav-id="{{"/" | relLangURL}}" class="dd-item">
               <a href="{{"/" | relLangURL}}">
                 <i class="fa fa-fw fa-home"></i>
               </a>
             </li>
-        {{- end}}
 
         {{- partial "menu.html" . }}
 
@@ -119,14 +117,20 @@
       </section>
     </aside>
     <section class="page">
-        <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-          <span class="links">
-          {{ template "breadcrumb" dict "page" . "value" .Title }}
-          </span>
-        </div>
 
-      {{- if not .Site.Params.disableSearch}}
-      <div>
+
+      {{end}}
+
+      <div class="nav-select">
+          <center>
+          <select onchange="javascript:location.href = this.value;">
+          {{partial "flex/selectnavigation.html" .}}
+      </select>
+      </center>
+      </div>
+
+      <h1>404: Page not found</h1>
+ <div>
           <div id="redis-sitesearch" class="redis-sitesearch redis-sitesearch-inline">
             <input class="redis-sitesearch-input redis-sitesearch-input-inline" placeholder="{{T "Search-placeholder"}}" />
 
@@ -141,31 +145,18 @@
           <link href="{{"css/redis-sitesearch.css" | absURL}}" rel="stylesheet">
           <link href="{{"css/redis-sitesearch-overrides.css" | absURL}}" rel="stylesheet">
       </div>
-      {{- end}}
 
-      <div class="chevrons">
-       <!-- {{ partial "next-prev-page.html" . }} -->
-      </div>
-      {{end}}
+      <div class="main-content">
+      <div class="main-content-left">
 
-      <div class="nav-select">
-          <center>
-          <select onchange="javascript:location.href = this.value;">
-          {{partial "flex/selectnavigation.html" .}}
-      </select>
-      </center>
-      </div>
-
-      {{if not .IsHome}}
-        <h1>{{.Title}}</h1>
-      {{end}}
-
-	<h1><a href="https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=bmansheim&labels=bug&template=got-a-404-.md&title=Got+a+404">How did you get here?</a></h1>
+	<h2><a href="https://github.com/RedisLabs/redislabs-docs/issues/new?assignees=lanceleonard&labels=bug&template=got-a-404-.md&title=Got+a+404">How did you get here?</a></h2>
 	<p>
 	</p>
-	<p>{{T "message-404"}}</p>
+	<p>Please use the above search interface or the links to find what you're looking for.</p>
 	<p><a href="{{.Site.BaseURL}}">{{T "Go-to-homepage"}}</a></p>
 	<!-- <p><img src="{{"images/gopher-404.jpg" | relURL}}" style="width:50%"></img></p>     -->
+  </div></div>
+  <div style="height:250px"></div>
     
     {{ partial "flex/body-aftercontent.html" . }}
     

@@ -56,7 +56,7 @@
                 </span>                
 
               {{- else}}
-                <a href="{{ .RelPermalink}}">{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</a>
+                <a href="{{ .RelPermalink | absURL }}">{{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}</a>
 
                 {{- if ne $numberOfPages 0 }}
                   {{- if or (.IsAncestor $currentNode) (.Params.alwaysopen) }}
@@ -98,11 +98,11 @@
     </li>
   {{- else}}
     {{- if not .Params.Hidden }}
-      <li data-nav-id="{{.RelPermalink}}" class="dd-item
+      <li data-nav-id="{{.RelPermalink | absURL }}" class="dd-item
      {{- if eq .RelPermalink $currentNode.RelPermalink}} active{{end -}}
       ">
         <div>
-          <a href="{{ .RelPermalink}}">
+          <a href="{{ .RelPermalink | absURL }}">
             {{safeHTML .Params.Pre}}{{.LinkTitle}}{{safeHTML .Params.Post}}
           </a>
           {{- if $showvisitedlinks}}<i class="fa fa-circle-thin read-icon"></i>{{end}}
