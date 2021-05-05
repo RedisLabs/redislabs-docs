@@ -29,6 +29,6 @@ terraform apply
 ```
 This will output the various data you need although you'll have to access the sensitive data thus:
 
-* accessSecretKey: `terraform output accessSecretKey`
+* accessSecretKey: `echo $(terraform output -raw accessSecretKey)`
 * consolePassword: `
-terraform output consolePassword | tr -d \" | base64 --decode | keybase pgp decrypt`
+echo $(terraform output -raw consolePassword | base64 --decode | keybase pgp decrypt)`
