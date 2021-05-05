@@ -1,6 +1,6 @@
 ---
 Title: Encryption at rest
-description:
+description: Describes when data is encypted at rest and how to enable it for AWS subscriptions.
 weight: 40
 alwaysopen: false
 categories: ["RC"]

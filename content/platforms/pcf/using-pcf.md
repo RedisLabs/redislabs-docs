@@ -49,7 +49,7 @@ Available service plans are listed in either:
 
 ## Accessing the Redis Enterprise cluster UI
 
-1. Connect to the Redis Enterprise Admin Console by placing the **Cluster Management Console Subdomain** in the host part of the following URL: `https://[Cluster Management Console Subdomain].[System Domain]`.
+1. Connect to the Redis Enterprise admin console by placing the **Cluster Management Console Subdomain** in the host part of the following URL: `https://[Cluster Management Console Subdomain].[System Domain]`.
 
     For example: `https://console-redis.sys.my-domain.cf-app.com`
 
@@ -57,7 +57,7 @@ Available service plans are listed in either:
 
     {{< note >}}
 Do not create or delete databases through the Redis Enterprise Cluster UI.
-Use the cf creates/delete/update-service commands or use the Pivotal Apps Manager web UI to create and manage databases through available plans.
+Use the cf creates/delete/update-service commands or use the Pivotal Apps Manager admin console to create and manage databases through available plans.
     {{< /note >}}
 
 ## Installing a license key in an existing cluster

@@ -5,6 +5,19 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisJSON 1.0.7 (December 2020)
+
+This is a maintenance release for version 1.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- [#222](https://github.com/RedisJSON/RedisJSON/pull/222) Validate path is not empty.
+- [#253](https://github.com/RedisJSON/RedisJSON/pull/253) `NULL` de-reference after error.
+
 ## RedisJSON 1.0.5 (September 2020)
 
 This is a maintenance release for version 1.0.

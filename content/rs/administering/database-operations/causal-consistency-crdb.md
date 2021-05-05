@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 When you enable Causal Consistency in Active-Active databases,
-the order of operations on a specific key are maintained across all Active-Active database instances.
+the order of operations on a specific key are maintained across all Active-Active database instances.<!--more-->
 
 For instance, if operations A and B were applied on the same key and the effect of A was observed by the instance that initiated B before B was applied to the key,
 then all instances of an Active-Active databases would observe the effect of A before observing the effect of B.

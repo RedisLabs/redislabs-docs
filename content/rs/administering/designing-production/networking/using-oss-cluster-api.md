@@ -19,9 +19,9 @@ When you enable the Redis OSS Cluster API from the command line or RS admin cons
 [multi-key commands]({{< relref "/rc/concepts/clustering#multikey-operations" >}}) are only allowed when all keys are mapped to the same slot.
 To verify that your database meets this requirement, make sure that the `CLUSTER KEYSLOT` reply is the same for all keys in the [multi-key command]({{< relref "/rs/concepts/high-availability/clustering#multikey-operations" >}}).
 
-## Enabling OSS Cluster API support from the web UI
+## Enabling OSS Cluster API support from the admin console
 
-For a Redis Enterprise Software (RS) database, to enable the OSS Cluster API from the Web UI:
+For a Redis Enterprise Software (RS) database, to enable the OSS Cluster API from the admin console:
 
 1. Go to: **databases**
 1. Either:

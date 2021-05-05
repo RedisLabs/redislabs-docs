@@ -108,7 +108,7 @@
       {{- end}}
 
       <div class="chevrons">
-        {{ partial "next-prev-page.html" . }}
+       <!-- {{ partial "next-prev-page.html" . }} -->
       </div>
       {{end}}
 
@@ -122,8 +122,4 @@
 
       {{if not .IsHome}}
         <h1>{{.Title}}</h1>
-
-        {{if eq .RelPermalink "/rs/"}}
-          {{ partial "rs-hot-topics-table.html" . }}
-        {{end}}
       {{end}}

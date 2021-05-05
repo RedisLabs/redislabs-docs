@@ -5,6 +5,20 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisTimeSeries 1.4.8 - March 2021
+
+This is a maintenance release for version 1.4.
+
+Headlines:
+This release improves overall stability and provides fixes for issues found after the previous release.
+
+Bugfixes:
+
+- [#612](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/612) Crash on `MGET`/`MRANGE`
+- [#606](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/606) Memory leak when key loaded from RDB
+- [#624](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/624) Uninitialised memory access on log
+
+
 ## RedisTimeSeries 1.4.7 - December 2020
 
 This is a maintenance release for version 1.4.
