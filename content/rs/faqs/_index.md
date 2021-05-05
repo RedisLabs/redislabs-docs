@@ -15,8 +15,9 @@ Here are some frequently asked questions about Redis Enterprise Software (RS).
 {{< embed-md "what-is-redis-enterprise.md"  >}}
 {{< /expand >}}
 
-{{< expand "Are you fully compatible with open source Redis?" >}} Redis Enterprise Software is fully [compatible with open source Redis](https://docs.redislabs.com/latest/rs/concepts/compatibility/)
-{{< /expand >}}
+{{% expand "Are you fully compatible with open source Redis?" %}}
+Redis Enterprise Software is fully [compatible with open source Redis]({{<relref "rs/concepts/compatibility">}}).
+{{% /expand %}}
 
 {{< expand "Can I keep my data safe and always available?" >}}
 Redis Enterprise Software offers a comprehensive suite of
