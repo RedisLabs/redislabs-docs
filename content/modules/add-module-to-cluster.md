@@ -34,7 +34,7 @@ You can add a module to your cluster using:
 - The REST API - For all modules, but modules with dependencies must use the `/v2/modules` endpoint.
 
 ```sh
-**Note:** The /v2/modules endpoint only exists for RS v6.0.12 and above. If you are on an older RS version, you must perform a manual installation of the module and it's dependencies 
+**Note:** The /v2/modules endpoint only exists for Redis Enterprise Software v6.0.12 and above. If you are on an older version, you must perform a manual installation of the module and its dependencies 
 Example: [Installing RedisGears](https://docs.redislabs.com/latest/modules/redisgears/installing-redisgears/)
 ```
 
