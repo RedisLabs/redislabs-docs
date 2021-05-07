@@ -38,9 +38,9 @@ All paid (100 MB and above) fixed plans support replication and backups (daily a
 
 If you need additional resources, you can update your subscription at any time.
 
-## Create a subscription
+## Create a Fixed subscription
 
-To create a Fixed (or Free) subscription:
+To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-plans" >}}):
 
 1.  From the admin console menu, select the **New Subscription** button.  
 
@@ -86,7 +86,9 @@ Here are few details to keep in mind:
 
 When you create your subscription, there's a brief pause while your request is processed and then you're taken to the **Subscription details** page.
 
+{{<image filename="images/rc/subscription-fixed-databases-none.png" alt="The Subscription details screen with no databases." >}}{{< /image >}}
+
 To create your first database, select the **New Database** button and then fill in the appropriate details.
 
-To learn more, see [Create Databases]({{<relref "rc/databases/create-database.md">}}).
+To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
 
