@@ -33,6 +33,8 @@ Using features from the newer version before all nodes are upgraded can produce 
 
 {{< /warning >}}
 
+NOTE to be added
+
 ## Upgrading a node
 
 Upgrading the software on a node requires installing the [RS installation
