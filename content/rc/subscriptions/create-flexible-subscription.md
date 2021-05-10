@@ -25,13 +25,13 @@ To create a [Flexible subscription]({{< relref "/rc/subscriptions/#subscription-
 
 2. When the **New subscription** page appears, select **Flexible plans** and then scroll to the cloud vendor options.
 
-    {{<image filename="images/rc/subscription-new-plan-options.png" alt="Available subscription plan options." >}}{{< /image >}}
+    {{<image filename="images/rc/new-subscription-plans-flexible.png" alt="Available subscription plans; Flexible plan is selected." >}}{{< /image >}}
 
-3. From here, three steps remain:
+3. From here, you need to:
 
     1. Set up the deployment options for your subscription, include cloud vendor details, replication settings, and advanced options.
 
-    2. Define the size requirements for your subscription.
+    2. Define the database size requirements for your subscription.
 
     3. Review your choices, provide payment details, and then create the subscription.
 
@@ -42,7 +42,7 @@ The following sections provide more information.
 
 The **Setup** tab specifies general settings for the deployment of your subscription.
 
-{{<image filename="images/rc/flexible-create-setup.png" width="75%" alt="The Setup tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-tabs-setup.png" width="75%" alt="The Setup tab of the new Fixed subscription process." >}}{{< /image >}}
 
 The two sections to this tab:
 
@@ -54,7 +54,7 @@ To continue to the Sizing tag, locate and select the **Continue** button, which 
 
 ### General settings {#general-settings}
 
-{{<image filename="images/rc/flexible-create-setup.png" width="75%" alt="The Setup tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-setup-general.png" width="75%" alt="The General settings of the Setup tab." >}}{{< /image >}}
 
 The following settings are defined in the **General settings** of the **Setup** tab:
 
@@ -68,7 +68,7 @@ The following settings are defined in the **General settings** of the **Setup** 
 
 ### Advanced options {#advanced-options}
 
-{{<image filename="images/rc/flexible-create-setup.png" width="75%" alt="The Setup tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-setup-advanced.png" width="75%" alt="The Advanced settings of the Setup tab." >}}{{< /image >}}
 
 The following settings are defined in the **Advanced options** of the **Setup** tab:
 
@@ -82,17 +82,21 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 
 When finished, choose **Continue** to determine your subscription size requirements.
 
+{{<image filename="images/rc/button-subscription-continue.png" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+
 ## Sizing tab
 
 The **Sizing** tab helps you specify the database, memory, and throughput requirements for your subscription.
 
-{{<image filename="images/rc/flexible-create-sizing-first.png" width="75%" alt="Defining a database on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-sizing-tab.png" width="75%" alt="The Sizing tab when creating a new Flexible subscription." >}}{{< /image >}}
 
 When you first visit the **Sizing** tab, there are no databases defined.  Select the **Add** button to create one.
 
-{{<image filename="images/rc/icon-subscription-flexible-add-database.png" width="75%" alt="Defining a database on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/icon-add-database.png" alt="Use the Add button to define a new database for your subscription." >}}{{< /image >}}
 
 This opens the **New Database** dialog, which lets you define the requirements for your new database.
+
+{{<image filename="images/rc/flexible-add-database-basic.png" width="75%" alt="The New Database dialog with basic settings." >}}{{< /image >}}
 
 By default, you're shown basic settings, which include:
 
@@ -103,6 +107,10 @@ By default, you're shown basic settings, which include:
 | **Memory Limit (GB)** | The size limit for the database. Specify small sizes as decimals of 1.0&nbsp;GB; example: `0.1` GB (minimum).|
 | **Replication** | Indicates whether a replica copy of the database is maintained in case the primary database becomes unavailable.  (Warning: Doubles memory consumption). |
 | **Quantity** | Identifies the number of databases to create with the selected settings. |
+
+Advanced options are also available.
+
+{{<image filename="images/rc/flexible-add-database-advanced.png" width="75%" alt="The New Database dialog with advanced settings." >}}{{< /image >}}
 
 Select **Advanced options** to specify values for the following settings:
 
@@ -115,33 +123,27 @@ Select **Advanced options** to specify values for the following settings:
 
 When finished, select **Save Database** to create your database.
 
-{{<image filename="images/rc/icon-subscription-flexible-add-database.png" width="75%" alt="Defining a database on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/button-database-save.png" alt="Select the Save Database button to define your new database." >}}{{< /image >}}
 
-When you have at least one defined database, select the **Continue button** to display the Review and create tab.
+Use the **Add database** button to define additional databases or select the **Continue button** to display the **Review and create** tab.
 
-{{<image filename="images/rc/flexible-create-sizing-list.png" width="75%" alt="The database list shown on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
+Use the **Edit** icon to change a database or the **Delete** icon to remove a database from the list.
 
-Use the Edit icon to change database properties or the Delete icon to remove a database from the list.
+{{<image filename="images/rc/icon-database-edit.png" alt="Use the Edit button to change database settings." >}}{{< /image >}}
+ &nbsp; 
+{{<image filename="images/rc/icon-database-delete.png" alt="Use the Delete button to remove a database." >}}{{< /image >}}
 
-{{<image filename="images/rc/flexible-create-sizing-list.png" width="75%" alt="The database list shown on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}} &nbsp; 
-{{<image filename="images/rc/flexible-create-sizing-list.png" width="75%" alt="The database list shown on the Sizing tab of the Create Custom Subscription screen." >}}{{< /image >}}
 
 ## Review and Create tab
 
-The **Review & Create** tab provides a cost estimate for your Flexible plan and lets you enter payment details:
+The **Review & Create** tab provides a cost estimate for your Flexible plan:
 
-{{<image filename="images/rc/flexible-create-review.png" width="75%" alt="The **Review & Create** tab of the Create Custom Subscription screen." >}}{{< /image >}}
+{{<image filename="images/rc/subscription-new-flexible-review.png" width="75%" alt="The Review & Create tab of the New Flexible subscription screen." >}}{{< /image >}}
 
-To update **Payment Method**, choose an existing method from the list or add a new one.
+Select **Back to Sizing** to make changes or **Create subscription** to create your new Flexible subscription.
 
-When available, special offers are displayed below the payment methods.
-
-Use the:
-
-- **Back** button to change your selections
-- **Cancel** button to cancel the subscription
-- **Continue** button to create the subscription
+{{<image filename="images/rc/button-subscription-create.png" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
 
 Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed make changes.  (The process generally takes 10-15 minutes.)
 
-To check the status of a subscription, choose **Subscriptions** from the admin console menu.  The **Subscriptions** list displays the status for each subscription.  You will also receive an email when your subscription is ready to use.
+Use the **Subscriptions list** to check the status of your subscription.  You will also receive an email when your subscription is ready to use.
