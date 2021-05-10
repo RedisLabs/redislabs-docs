@@ -77,7 +77,7 @@ crdb-cli crdb create --name <name> /
 [--oss-cluster true]
 [--bigstore true]
 [--bigstore-ram-size <maximum_memory>]
-[--with-module <module_name>]
+[--with-module name=<module_name>,version=<module_version>,args=<module_args>]
 ```
 
 After you run the command, the response shows the globally unique identifier (GUID) of the task and the GUID of the Active-Active database that was created:
@@ -123,7 +123,13 @@ To create an Active-Active database with two shards in each instance and with en
 crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --shards-count 2 --encrypted true
 ```
 
-To create an Active-Active database with no shards and with encrypted traffic between the clusters:
+To create an Active-Active database with two shards and with RediSearch 2.0.6 module:
+
+```sh
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --shards-count 2 --with-module name=search,version="2.0.6",args="PARTITIONS AUTO"
+```
+
+To create an Active-Active database with two shards and with encrypted traffic between the clusters:
 
 ```sh
 crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --encrypted true --shards-count 2
