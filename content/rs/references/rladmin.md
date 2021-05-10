@@ -95,7 +95,7 @@ rladmin bind
         [ cm_port <number> ]
         [ cm_session_timeout <minutes> ]
         [ cnm_http_port <number> ]
-        [ cnm_https_prot <number>]
+        [ cnm_https_port <number>]
         [ data_cipher_list <data-cipher-suites-str> ]
         [ debuginfo_path <path/to/directory> ]
         [ handle_redirects <enabled/disabled>]
