@@ -1,4 +1,5 @@
 Title: High Availability
+linkTitle: High availability
 description: Describes database replication and high availability as it affects Redis Enterprise Cloud.   
 weight: 90
 alwaysopen: false
