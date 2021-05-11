@@ -7,7 +7,7 @@ aliases:
 
 ---
 
-Database replication helps ensure high availability. When replication is enabled, your dataset is duplicated to create a replica, which is constantly synchronized with the primary dataset. Replication allows for automatic failover and greater fault tolerance, to help prevent data loss should something go wrong. 
+Database replication helps ensure high availability. When replication is enabled, your dataset is duplicated to create a replica, which stays in sync with the primary dataset. Replication allows for automatic failover and greater fault tolerance. This can prevent data loss in the event of a hardware, zone, or regional failure. 
 
 Redis Enterprise Cloud supports three levels of replication:
 
