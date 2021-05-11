@@ -43,7 +43,7 @@
   <header id="header">
       <div class="header-wrap">
         <div class="logo">
-          {{ partial "header.html" . }}
+          <p><a href="https://redislabs.com"><img src="{{"images/icon_logo/logo-redis-2.svg" | absURL}}" alt="Redis Labs"></a></p>
         </div>
         {{- with .Site.Menus.shortcuts}}
           {{ partial "navigation.html" . }}
@@ -109,25 +109,25 @@
 
             <li data-nav-id="/rs/" class="dd-item haschildren menu-expanded menu-root 
             ">
-              <a href="{{"/rs" | absURL }}">Redis Enterprise Software</a></li>
+              <a href="{{"rs" | absURL }}">Redis Enterprise Software</a></li>
 
             <li data-nav-id="/rc/" class="dd-item haschildren menu-expanded menu-root 
             ">
-              <a href="{{"/rc" | absURL }}">Redis Enterprise Cloud</a></li>
+              <a href="{{"rc" | absURL }}">Redis Enterprise Cloud</a></li>
 
             <li data-nav-id="/platforms/" class="dd-item haschildren menu-expanded menu-root 
             ">
-              <a href="{{"/platforms" | absURL }}">Platforms</a></li>
+              <a href="{{"platforms" | absURL }}">Platforms</a></li>
 
             <li data-nav-id="/modules/" class="dd-item haschildren menu-expanded menu-root 
             ">
-              <a href="{{"/modules" | absURL }}">Redis Modules</a></li>
+              <a href="{{"modules" | absURL }}">Redis Modules</a></li>
             <li data-nav-id="/ri/" class="dd-item haschildren menu-expanded menu-root 
             ">
-              <a href="{{"/ri" | absURL}}">RedisInsight</a></li>
+              <a href="{{"ri" | absURL}}">RedisInsight</a></li>
             <li data-nav-id="/glossary/" class="dd-item haschildren menu-expanded menu-root 
             ">
-              <a href="{{"/glossary" | absURL}}">Glossary</a></li>
+              <a href="{{"glossary" | absURL}}">Glossary</a></li>
 
 
 
@@ -183,7 +183,7 @@
 	<p><a href="{{.Site.BaseURL}}">{{T "Go-to-homepage"}}</a></p>
 	<!-- <p><img src="{{"images/gopher-404.jpg" | relURL}}" style="width:50%"></img></p>     -->
   </div></div>
-  <div style="height:250px"></div>
+  <div style="height:300px"></div>
     
     {{ partial "flex/body-aftercontent.html" . }}
     

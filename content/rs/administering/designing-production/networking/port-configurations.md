@@ -49,6 +49,20 @@ rladmin cluster config cm_port <new-port>
 After changing the Redis Enterprise Software web UI port, you must connect any new node added to the cluster to the UI with the custom port number:
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
 
+## Change the REST API port
+
+For the REST API, Redis Enterprise Software uses port 9443 (secure) and port 8080 (unsecure), by default. You can change this to a custom port as long as the new port is not in use by another process.
+
+To change these ports, run:
+
+```sh
+rladmin cluster config cnm_http_port <new-port>
+```
+
+```sh
+rladmin cluster config cnm_https_port <new-port>
+```
+
 ## Disable HTTP support for API endpoints
 
 To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.

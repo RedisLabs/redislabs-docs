@@ -32,6 +32,12 @@ To get the latest features and fixes for a module, you must upgrade the module i
 You can add a module to your cluster using:
 
 - The REST API - For all modules, but modules with dependencies must use the `/v2/modules` endpoint.
+
+```sh
+**Note:** The /v2/modules endpoint only exists for Redis Enterprise Software v6.0.12 and above. If you are on an older version, you must perform a manual installation of the module and its dependencies 
+Example: [Installing RedisGears](https://docs.redislabs.com/latest/modules/redisgears/installing-redisgears/)
+```
+
 - The admin console - For modules without dependencies, such as RedisGraph.
 
 ### Adding a module using the REST API

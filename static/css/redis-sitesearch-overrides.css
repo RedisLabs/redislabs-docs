@@ -4,6 +4,7 @@
 
 .redis-sitesearch .redis-sitesearch-result-list-wrapper {
     max-width: 700px !important;
+    z-index: 10 !important;
 }
 
 .search-right {

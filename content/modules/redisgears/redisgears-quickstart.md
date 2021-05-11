@@ -85,7 +85,7 @@ redis.cloud:6379> HSET person:4 name "James Jameson" age 21
 (integer) 2
 ```
 
-Each hash hash two fields, one containing a name and the other an age. Now, suppose we want to keep a record of the maximum age of all users. We can register a RedisGears function to do this. Open up a file called `maxage.py`, and add the following code:
+Each hash has two fields, one containing a name and the other an age. Now, suppose we want to keep a record of the maximum age of all users. We can register a RedisGears function to do this. Open up a file called `maxage.py`, and add the following code:
 
 ```py
 def age(x):
