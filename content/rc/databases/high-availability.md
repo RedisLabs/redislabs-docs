@@ -21,7 +21,7 @@ Your replication options depend on which subscription plan you're using:
 - _Fixed_ plans allow you to choose between no replication or single-zone replication.
 - _Flexible_ plans enable single-zone replication by default and allow you to upgrade to multi-zone replication. 
 
-To learn more about Redis Enterprise Cloud subscriptions, see [Manage subscriptions]({{<relref "/rc/subscriptions/_index.md>}}).
+To learn more about Redis Enterprise Cloud subscriptions, see [Manage subscriptions]({{<relref "/rc/subscriptions/_index.md">}}).
 
 To learn more about high availability and replication, see:
 - [Highly Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
