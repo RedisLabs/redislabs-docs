@@ -23,6 +23,6 @@ Your replication options depend on which subscription plan you're using:
 
 To learn more about Redis Enterprise Cloud subscriptions, see [Manage subscriptions]({{<relref "/rc/subscriptions/_index.md>}}).
 
-To learn more about high availability and replication:
+To learn more about high availability and replication, see:
 - [Highly Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
 - [Database replication]({{<relref "/rs/concepts/high-availability/replication.md">}})
