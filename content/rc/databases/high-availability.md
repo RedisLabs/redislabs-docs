@@ -13,7 +13,7 @@ Redis Enterprise Cloud supports three levels of replication:
 
 - _No replication_ means that you will have a single copy of your database.
 - _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region. If anything happens to the primary, the replica takes over and becomes the new primary.
-- _Multi-zone replications_ means that the primary and the replicas are stored in different region zones, which provides additional protection by distributing the replicas.
+- _Multi-zone replication_ means that the primary and its replicas are stored in different regions. This means that your database can remain online even if an entire region becomes unavailable.
 
 Each subscription plan has different replication options available:
 
@@ -26,4 +26,3 @@ To learn more about Redis Enterprise Cloud subscriptions, see [Manage subscripti
 To learn more about high availability and replication:
 - [Highly Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
 - [Database replication]({{<relref "/rs/concepts/high-availability/replication.md">}})
-
