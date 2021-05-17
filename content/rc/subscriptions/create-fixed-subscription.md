@@ -21,9 +21,9 @@ When creating your subscription, you'll need to know which tier to choose.
 
 Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated February 2021):
 
-| Max DB Size | Number of<br/>Databases | Concurrent<br/>Connections | Security<br/> Groups | Max IP<br/> Auth rules |
+| Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections | Security<br/> Groups | Max IP<br/> Auth rules |
 |------------:|:---------:|:-----------:|:---------------:|:-------------:|
-| 30 MB (free)     | 1 | 30 | N/A | N/A |
+| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A | N/A |
 | 100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 | 4 |
 | 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 | 4 |
 | 500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 | 4 |
@@ -59,8 +59,6 @@ To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-pla
     - _No-replication_ means that you will have a single copy of your database.
     - _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.
     - _Multi-zone replication_ means that the primary and the replicas are stored in different region zones, which provides additional protection by distributing the replicas.
-
-    To learn more about replication and availability, see: [Link TBD]().
 
 5.  Select the desired plan size.   
 

@@ -19,7 +19,7 @@ To view the details of a Fixed subscription:
 
 1.  If you have more than one subscription, select the target subscription from the subscription list.
 
-    {{<image filename="images/rc/subscription-list-select.png" alt="The View Subscription screen for Fixed (and Free) subscriptions." >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-list-select.png" alt="The Subscription list shows your scurrent ubscriptions." >}}{{< /image >}}
 
 1.  Your subscription details appear, along with a summary of your database details.
 
@@ -101,15 +101,15 @@ The following details are displayed:
 | **Cloud vendor** | Your subscription cloud vendor |
 | **Plan description** | Brief summary of subscription, including the plan type, cloud provider, region, and data size limit |
 | **Availability** | Describes high availability settings |
-| **Region** | Describes the region your subcription is deployed to |
-| **Plan** | Describrs the tier of your Fixed plan, especre4ssed in terms of mamximum database size.  Also displays the cost for paid plans. |
-| **Databases** | Maxmimum number of databases for your plan |
+| **Region** | Describes the region your subscription is deployed to |
+| **Plan** | Describes the tier of your Fixed plan, expressed in terms of maximum database size.  Also displays the cost for paid plans. |
+| **Databases** | Maximum number of databases for your plan |
 | **Connections** | Maximum number of concurrent connections |
 | **CIDR allow rules** | Maximum number of authorization rules |
 | **Data persistence** | Indicates whether persistence is supported for your subscription |
 | **Daily & instant backups** | Indicates whether backups are supported for your subscription |
-| **Replication** | Indicates whether replication is supported for your subscription. | 
-| **Clustering** | Indicates whether clustering is supported for your subscription. | 
+| **Replication** | Indicates whether replication is supported for your subscription | 
+| **Clustering** | Indicates whether clustering is supported for your subscription | 
 
 The **Cancel subscription** button appears below the **Overview** details; it lets you  [delete your subscription]({{<relref "rc/subscriptions/create-fixed-subscription.md#fixed-size-subscription-tiers">}})
 
