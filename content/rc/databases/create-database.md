@@ -9,7 +9,24 @@ aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
          /rc/administration/setup-and-editing/creating-databases/
 ---
-Once you have a subscription, you can easily create a database in Redis Cloud by following these steps:
+Once you have a [subscription]({{< relref "rc/subscriptions/" >}}), you can easily create a database in Redis Enterprise Cloud:
+
+1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
+
+2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
+
+    {{<image filename="images/rc/button-subscription-add.png" alt="The Add subscriptions button appears when there are no other subscriptions." >}}{{< /image >}}
+
+3. Select the **New database** button.
+
+    {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database for your subscription." >}}{{< /image >}}
+
+
+
+This displays the Create database screen, which varies according to your subscription plan.
+
+
+
 
 1. In the Redis Cloud menu, click **Databases**.
 1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png#no-click "Add").
