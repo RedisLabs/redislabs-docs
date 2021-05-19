@@ -1,5 +1,6 @@
 ---
 Title: Uninstalling Redis Enterprise Software
+LinkTitle: Uninstall Redis Enterprise Software
 description:
 weight: 70
 alwaysopen: false

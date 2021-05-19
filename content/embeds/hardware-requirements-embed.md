@@ -1,6 +1,6 @@
-The hardware requirements for Redis Enterprise Software (RS) are different for development and production environments.
+The hardware requirements for Redis Enterprise Software are different for development and production environments.
 
-- In a development environment you can test your application with a live RS database.
+- In a development environment, you can test your application with a live database.
 
     If you want to test your application under production conditions, use the production environment requirements.
 
@@ -34,11 +34,18 @@ We recommend these hardware requirements for production systems or for developme
 
 - Cores:
     - When the CPU load reaches a certain level, Redis Enterprise Software sends an alert to the operator.
+
     - If your application is designed to put a lot of load on your Redis database, make sure that you have at least one available core for each shard of your database.
+
     - If some of the cluster nodes are utilizing more than 80% of the CPU, consider migrating busy resources to less busy nodes.
+
     - If all the cluster nodes are utilizing over 80% of the CPU, consider scaling out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
+
 - RAM:
-    - Since Redis uses a relatively large amount of buffers (such as for slave communication, client communication, and pub/sub commands) make sure that at least 30% of the RAM is "unused" on each node.
-    - If some of the cluster nodes are utilizing more than 65% of the RAM, you should look at migrating busy resources to less busy nodes.
+    - Redis uses a relatively large amount of buffers, which enable replica communication, client communication, pub/sub commands, and more.  As a result, you should ensure that 30% of the RAM is "unused" on each node at any given time.
+
+    - If one or more cluster nodes are utilizing more than 65% of the RAM, consider migrating resources to less active nodes.
+
     - If all the cluster nodes are utilizing over 70% of the RAM, you should look to scale out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
-    - Do not run other memory-consuming systems on the RS node.
+
+    - Do not run other memory-consuming systems on the Redis Software node.

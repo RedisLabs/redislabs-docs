@@ -1,5 +1,6 @@
 ---
-Title: Configuring AWS EC2 instances for Redis Enterprise Software
+Title: Configure AWS EC2 instances for Redis Enterprise Software
+linkTitle: AWS EC2 configuration
 description:
 weight: 30
 alwaysopen: false
@@ -7,9 +8,15 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring-aws-instances/
 ---
 There are some special considerations that are important when installing
-and running Redis Enterprise Software (RS) on AWS EC2 instances or AWS Outposts.
+and running Redis Enterprise Software on Amazon Web Services (AWS), whether Amazon Electric Cloud Compute (EC2) AWS Outposts.  
 
-## Storage considerations
+These include:
+
+- [Storage considerations](#storage)
+- [Instance types](#instance-types)
+- [Security group configuration](#security)
+
+## Storage considerations {#storage}
 
 AWS EC2 instances are ephemeral, but your persistent database storage should
 not be. If you require a persistent storage location for your database,
@@ -37,7 +44,7 @@ this feature could be critical to use:
     this case, the provisioned IOPS should be on the nodes used as
     slaves in the cluster.
 
-## Instance types
+## Instance types {#instance-types}
 
 Choose an instance type that has (at minimum) enough free memory and
 disk space to meet RS's [hardware
@@ -48,7 +55,7 @@ and some are not. If you are using persistent storage, you should use an
 instance type that is, especially if disk drain rate matters to your database
 implementation.
 
-## Security
+## Security group configuration {#security}
 
 When configuring the Security Group:
 
@@ -66,5 +73,5 @@ When configuring the Security Group:
 
 After successfully launching the instances:
 
-1. Install RS from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/_index.md" >}}).
+1. Install Redis Enterprise Software from the [Linux package or AWS AMI]({{< relref "/rs/installing-upgrading/_index.md" >}}).
 2. [Set up the cluster]({{< relref "/rs/administering/new-cluster-setup.md" >}}).

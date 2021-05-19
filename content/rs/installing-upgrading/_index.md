@@ -18,38 +18,25 @@ Here, you'll learn how to perform each step.
 
 ## Plan your deployment
 
-Before installing Redis Software, you need to:
+Before installing Redis Enterprise Software, you need to:
 
-- Set up your hardware according to the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+- Set up [your hardware]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
-    {{% expand "What hardware do I need?" %}}
-    {{< embed-md "hardware-requirements-embed.md" >}}
-    {{% /expand %}}
+- Choose your [deployment platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}).
 
-- Choose the [platform]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}}) that you want to deploy on.
+    Redis Enterprise Software supports a variety of platforms, including:
 
-    {{% expand "What platforms are supported?" %}}
-    {{< embed-md "supported-platforms-embed.md" >}}
-    {{% /expand %}}
-
-    In addition to Linux operating systems (Ubuntu, RHEL/CentOS, Oracle Linux), you can also deploy Redis Software to:
-
+    - Multiple Linux distributions (Ubuntu, RHEL/CentOS, Oracle Linux)
     - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
     - [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
     - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
     - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
 
-- Open [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
+    For complete details, see [Supported platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}})
 
-    {{% expand "What network ports are used" %}}
-    {{< embed-md "port-configurations-embed.md" >}}
-    {{% /expand %}}
+- Open appropriate [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
 
 - Configure [cluster DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
-
-    {{% expand "How do I configure DNS for my cluster?" %}}
-    {{< embed-md "cluster-dns-embed.md" >}}
-    {{% /expand %}}
 
 ## Download the installation package
 
@@ -70,42 +57,40 @@ Before installing, review these notes:
 
 - Review the [security considerations]({{< relref "/rs/security/" >}}) for your deployment.
 
-- If you want to use Redis on Flash (RoF) for your databases, review the [prerequisites, storage requirements, and other considerations]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
-    {{% expand "To prepare and format the flash memory:" %}}
-Run:
+- If you want to use Redis on Flash (RoF) for your databases, review the prerequisites, storage requirements, and [other considerations]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) for RoF databases and prepare and format the flash memory.
 
-```sh
-sudo /opt/redislabs/sbin/prepare_flash.sh
-```
+    Use the `prepare_flash` script to prepare and format flash memory:
 
-This command finds all of the unformatted disks and mounts them as RAID partitions in `/var/opt/redislabs/flash`.
+    ```sh
+    sudo /opt/redislabs/sbin/prepare_flash.sh
+    ```
 
-To verify the disk configuration, run:
+    This script finds unformatted disks and mounts them as RAID partitions in `/var/opt/redislabs/flash`.
 
-```sh
-sudo lsblk
-```
-    {{% /expand %}}
+    To verify the disk configuration, run:
+
+    ```sh
+    sudo lsblk
+    ```
 
 - [Disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
-- Make sure that you have root-level access to each node, either directly or with sudo.
+- Make sure that you have root-level access to each node, either directly or with `sudo`
 - If you require the `redislabs` UID (user ID) and GID (group ID) numbers to be the same on all the nodes, create the `redislabs` user and group with the required numbers on each node.
 - When port 53 is in use, the installation fails. This is known to happen in
-    default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
+    default Ubuntu 18.04 installations in which `systemd-resolved` (DNS server) is running.
+
     To work around this issue, change the system configuration to make this port available
-    before installation.
+    before installation.  Here's one way to do so:
 
-    {{% expand "Example steps to resolve the port 53 conflict:" %}}
-1. Run: `sudo vi /etc/systemd/resolved.conf`
-1. Add `DNSStubListener=no` as the last line in the file and save the file.
-1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
-1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
-1. Run: `sudo service systemd-resolved restart`
-    {{% /expand %}}
+    1. Run: `sudo vi /etc/systemd/resolved.conf`
+    1. Add `DNSStubListener=no` as the last line in the file and save the file.
+    1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
+    1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
+    1. Run: `sudo service systemd-resolved restart`
 
-- Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+- Make sure that the operating system isn't using ports [range Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
-    We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 30000 65535'.
+    We recommend updating `/etc/sysctl.conf` to include `net.ipv4.ip_local_port_range = 30000 65535'.
 
 ## Install on Linux
 
@@ -115,16 +100,27 @@ To install from the CLI:
 
 1. Copy the installation package to the node.
 
-    {{% expand "How do I know the package is authentic?" %}}
-For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of the package:
+    Use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
 
-- For Ubuntu:
-    1. Import the key with: `gpg --import <path to GPG key>`
-    1. Verify the package signature with: `dpkg-sig --verify <path to installation package>`
-- For RHEL:
-    1. Import the key with: `rpm --import <path to GPG key>`
-    1. Verify the package signature with: `rpm --checksig <path to installation package>`
-    {{% /expand %}}
+    - For Ubuntu:
+        1. Import the key with:  
+        ```sh
+        gpg --import <path to GPG key>
+        ```  
+        2. Verify the package signature with: 
+        ```sh 
+        dpkg-sig --verify <path to installation package>
+        ```
+
+    - For RHEL:
+        1. Import the key with:  
+        ```sh
+        rpm --import <path to GPG key>
+        ```
+        2. Verify the package signature with:  
+         ```sh
+         rpm --checksig <path to installation package>
+         ```
 
 1. On the node, change to the directory where the installation package is and extract the installation files:
 
@@ -132,13 +128,13 @@ For Ubuntu DEB packages and RHEL RPM packages, you can use the {{< download "GPG
     tar vxf <tarfile name>
     ```
 
-1. To install RS, run:
+1. To install, run:
 
     ```sh
     sudo ./install.sh
     ```
     {{< note >}}
-- The RS files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
+- The Redit Enterprise Software files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
 - By default, Redis Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group](#custom-installation-user-and-group) during the installation.
 - You must either be logged in as the root user or use sudo to run the install process.
     {{< /note >}}
@@ -153,7 +149,7 @@ To install without answering the installation questions, either:
 - Use an [answer file](#installation-answer-file) to answer the installation questions.
     {{< /note >}}
 
-    When the installation completes sucessfully, the IP address of the admin console is diplayed:
+    When the installation completes successfully, the IP address of the admin console is displayed:
 
     ```sh
     Summary:
@@ -166,19 +162,20 @@ To install without answering the installation questions, either:
     2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
     ```
 
-    Redis Software is now installed on the node.
+    Redis Enterprise Software is now installed on the node.
+
     Repeat this process for each node in the cluster.
 
 1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
-    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing Redis Software cluster.
+    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing Redis Enterprise Software cluster.
 1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
 ### Custom installation directories
 
-{{% expand "How can I customize the installation directories?" %}}
 During the installation, you can customize the installation directories.
+
 The files are installed in the `redislabs` directory in the path that you specify.
 
 {{< note >}}
@@ -223,13 +220,15 @@ To install to specific directories, run:
 ```sh
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ```
-{{% /expand %}}
 
 - Redis Software is installed with the system user and group `redislabs:redislabs`
-    {{% expand "How can I install using specific system user and group?" %}}
+    
+### Customize system user and group
 
-By default, Redis Software is installed with the user:group `redislabs:redislabs`.
-During the installation you can specify the OS user and group, which owns all Redis Software processes.
+By default, Redis Enterprise Software is installed with the user:group `redislabs:redislabs`.
+
+During the installation you can specify the user and group that own all Redis Software processes.
+
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
 {{< note >}}
@@ -239,44 +238,15 @@ If you specify the user only, then installation is run with the primary group th
 - You can specify an LDAP user as the installation user.
 {{< /note >}}
 
-To specify the user and group, run:
+Use command-line options for the install script to customize the user or group:
 
 ```sh
 sudo ./install.sh --os-user <user> --os-group <group>
 ```
-    {{% /expand %}}
 
-To install on Linux from the CLI:
+### Installation questions 
 
-1. Copy the installation package to the node.
-
-    ```sh
-    scp redislabs-X.Y.Z-32-bionic-amd64.tar <username>@<ip_address>:/home
-    ```
-
-1. On the node, change to the directory where the installation package is and extract the installation files:
-
-    ```sh
-    tar vxf <tarfile name>
-    ```
-
-1. To install, run:
-
-    ```sh
-    sudo ./install.sh
-    ```
-
-    {{< note >}}
-- Files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
-- Redis Software is installed and run under the `redislabs` user and `redislabs` group. You can also [specify a different user](#custom-installation-user-and-group) during the installation.
-- You must either be logged in as the root user or use sudo to run the install process.
-    {{< /note >}}
-
-1. Answer the installation questions when shown to complete the installation process,
-    and run `rlcheck` to verify the installation.
-
-    {{% expand "What are the installation questions?" %}}
-The questions that the installation process asks are:
+Several questions appear during installation:
 
 - **Linux swap file** - `Swap is enabled. Do you want to proceed? [Y/N]?`
 
@@ -309,10 +279,10 @@ The questions that the installation process asks are:
 
     We recommend running the `rlcheck` installation verification to make sure that the installation completed successfully.
     If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
-    {{% /expand %}}
+ 
+ ### Silent install
 
-    {{% expand "How can I do a silent install of RS?" %}}
-To install without answering the installation questions, either:
+To install without answering the installation questions, do one of the following:
 
 - Run `./install.sh -y` to answer yes to all of the questions.
 - Prepare an answer file and use it to do a silent installation.
@@ -333,7 +303,7 @@ To install with an answer file:
     rlcheck=yes
     ```
 
-    If you use `systune=yes`, the installation answers yes to all of the system tuning questions.
+    If you use `systune=yes`, the installation answers `yes` to all of the system tuning questions.
 
 1. Run the install script with `-c` and the path to the answer file.
 
@@ -342,37 +312,6 @@ To install with an answer file:
     ```sh
     ./install.sh -c /home/user/answers
     ```
-    {{% /expand %}}
-
-    When install suceeds, the IP address of the admin console is shown:
-
-    ```sh
-    Summary:
-    -------
-    ALL TESTS PASSED.
-    2017-04-24 10:54:15 [!] Please logout and login again to make
-    sure all environment changes are applied.
-    2017-04-24 10:54:15 [!] Point your browser at the following
-    URL to continue:
-    2017-04-24 10:54:15 [!] https://<your_ip_here>:8443
-    ```
-
-    Redis Software is now installed on the node.
-    Repeat this process for each node in the cluster.
-
-1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
-    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
-1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
-
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
-
-## Set up the new cluster
-
-{{< embed-md "new-cluster-embed.md" >}}
-
-## Add nodes to the cluster
-
-{{< embed-md "adding-node-embed.md" >}}
 
 ## Next steps
 
