@@ -25,7 +25,7 @@ Two tabs are available:
     |:---------|:--------------|
     | **Subscription name** | A descriptive name for the plan; can be changed at any time.|
     | **Runs on** | Either _RAM_ or _RAM+Flash_ |
-    | **Cloud account** | (_AWS only_) Descriptive name of the associated cloud account (Useful for organizations that manage [multiple accounts]({{<relref "/rc/how-to/view-edit-cloud-account.md">}})) |
+    | **Cloud account** | (_AWS only_) Descriptive name of the associated cloud account (Useful for organizations that manage [multiple accounts]({{<relref "/rc/how-to/view-edit-cloud-account">}})) |
     | **Cloud** | Describes the subscription cloud provider |
     | **Region** | Deployment region details | 
     | **Multi-AZ** | Indicates whether replication is deployed across multiple availability zones within the region |

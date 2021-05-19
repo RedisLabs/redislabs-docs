@@ -1,11 +1,11 @@
 ---
-Title: Create IAM resources using Terraform
+Title: Create IAM Resources using Terraform
 linkTitle: Terraform
 Weight: 20
 categories: ["RC"]
 alwaysopen: false
 ---
-To automate the creation of the IAM resources needed simply create a template that references the `terraform-aws-Redislabs-Cloud-Account-IAM-Resources` module, located in S3, as instructed below:
+To automate the creation of the IAM resources needed simply create a template that references the `terraform-aws-Redislabs-Cloud-Account-IAM-Resources` module, located in S3, as instructed below and then use the relevant output information to create the Cloud Account. (Note that different information is required depending on whether one uses the Redis Cloud admin UI or the REST API. The output from the terraform template contains all the information needed by both methods)
 
 
 1. create a `main.tf` as shown below (replacing the `profile`, `region` and `pgp_key` values for your own:
