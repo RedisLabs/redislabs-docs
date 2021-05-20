@@ -76,8 +76,11 @@ Before installing, review these notes:
     ```
 
 - [Disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) on all cluster nodes.
-- Make sure that you have root-level access to each node, either directly or with `sudo`
+
+- Make sure that you have root-level access to each node, either directly or with `sudo`.  
+
 - If you require the `redislabs` UID (user ID) and GID (group ID) numbers to be the same on all the nodes, create the `redislabs` user and group with the required numbers on each node.
+
 - When port 53 is in use, the installation fails. This is known to happen in
     default Ubuntu 18.04 installations in which `systemd-resolved` (DNS server) is running.
 
@@ -90,9 +93,9 @@ Before installing, review these notes:
     1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
     1. Run: `sudo service systemd-resolved restart`
 
-- Make sure that the operating system isn't using ports [range Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
+- Make sure that the ports [Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) are available; that is, they're not being used by the operating system or other processes.
 
-    We recommend updating `/etc/sysctl.conf` to include:  
+    To avoid port collision, we recommend updating `/etc/sysctl.conf` to include:  
     ``` sh
     net.ipv4.ip_local_port_range = 30000 65535
     ```
@@ -105,7 +108,7 @@ To install from the CLI:
 
 1. Copy the installation package to the node.
 
-    Use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
+    __(Optional)_ Use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
 
     - For Ubuntu:
         1. Import the key with:  
@@ -342,5 +345,5 @@ Specialized configuration info is also available:
 
 Now that your cluster is set up with nodes, you can:
 
-- [Add users]({{< relref "/rs/administering/access-control/_index.md" >}}) to the cluster with specific permissions.
+- [Add users]({{< relref "/rs/security/passwords-users-roles.md" >}}) to the cluster with specific permissions.  To begin, start with [Authentication and authorization]({{< relref "/rs/security/admin-console-security/user-security" >}}).
 - [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
