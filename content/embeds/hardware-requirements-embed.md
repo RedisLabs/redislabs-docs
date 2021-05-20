@@ -33,7 +33,7 @@ We recommend these hardware requirements for production systems or for developme
 <sup>*</sup>Additional considerations:
 
 - Cores:
-    - When the CPU load reaches a certain level, Redis Enterprise Software sends an alert to the operator.
+    - When the CPU load reaches a certain level, Redis Enterprise Software sends an alert to the operator.  
 
     - If your application is designed to put a lot of load on your Redis database, make sure that you have at least one available core for each shard of your database.
 
@@ -42,10 +42,10 @@ We recommend these hardware requirements for production systems or for developme
     - If all the cluster nodes are utilizing over 80% of the CPU, consider scaling out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
 
 - RAM:
-    - Redis uses a relatively large amount of buffers, which enable replica communication, client communication, pub/sub commands, and more.  As a result, you should ensure that 30% of the RAM is "unused" on each node at any given time.
+    - Redis uses a relatively large number of buffers, which enable replica communication, client communication, pub/sub commands, and more.  As a result, you should ensure that 30% of the RAM is available on each node at any given time.
 
-    - If one or more cluster nodes are utilizing more than 65% of the RAM, consider migrating resources to less active nodes.
+    - If one or more cluster nodes utilizes more than 65% of the RAM, consider migrating resources to less active nodes.
 
-    - If all the cluster nodes are utilizing over 70% of the RAM, you should look to scale out the cluster by [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
+    - If all cluster nodes are utilizing more than 70% of available RAM, consider [adding a node]({{< relref "/rs/administering/adding-node.md" >}}).
 
-    - Do not run other memory-consuming systems on the Redis Software node.
+    - Do not run any other memory-intensive processes on the Redis Software node.

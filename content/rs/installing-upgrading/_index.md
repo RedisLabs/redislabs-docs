@@ -1,5 +1,5 @@
 ---
-Title: Installation and Setup
+Title: Install and Setup
 description:
 weight: 35
 alwaysopen: false
@@ -7,12 +7,14 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/
         /rs/installing-upgrading/downloading-installing/
 ---
-This walks you through the process of installing Redis Enterprise Software, which includes several steps:
+This guide shows how to install Redis Enterprise Software, which includes several steps:
 
-1. Plan your deployment
-2. Install Redis Software
-3. Set up a multi-node cluster
-4. Create your database
+1. [Plan your deployment](#plan-your-deployment)
+1. Download the [installation package](#download-the-installation-package)
+1. [Prepare to install](#prepare-to-install-on-linux)
+1. [Perform the install](#install-on-linux)
+
+Depending on your needs, you may also want to [customize the installation](#installation-questions-and-options).
 
 Here, you'll learn how to perform each step.
 
@@ -26,7 +28,7 @@ Before installing Redis Enterprise Software, you need to:
 
     Redis Enterprise Software supports a variety of platforms, including:
 
-    - Multiple Linux distributions (Ubuntu, RHEL/CentOS, Oracle Linux)
+    - Multiple Linux distributions (Ubuntu, RedHat Enterprise Linux (RHEL)/IBM CentOS, Oracle Linux)
     - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
     - [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
     - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
@@ -90,7 +92,10 @@ Before installing, review these notes:
 
 - Make sure that the operating system isn't using ports [range Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
 
-    We recommend updating `/etc/sysctl.conf` to include `net.ipv4.ip_local_port_range = 30000 65535'.
+    We recommend updating `/etc/sysctl.conf` to include:  
+    ``` sh
+    net.ipv4.ip_local_port_range = 30000 65535
+    ```
 
 ## Install on Linux
 
@@ -172,7 +177,54 @@ To install without answering the installation questions, either:
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
-### Custom installation directories
+## Installation questions and options
+
+The installation defaults serve most requirements; however, there are times when customizations are needed.
+
+This section describes:
+
+- The questions asked [during installation](#installation-questions)
+- [How to customize installation directories](#custom-installation-directories) 
+- [Set user and group ownership](#customize-system-user-and-group)
+- How to perform a [silent install](#silent-install).
+
+### Installation questions
+
+Several questions appear during installation:
+
+- **Linux swap file** - `Swap is enabled. Do you want to proceed? [Y/N]?`
+
+    We recommend that you [disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) in the operating system configuration
+    to give Redis Software control of the memory allocation.
+
+- **Automatic OS tuning** - `Do you want to automatically tune the system for best performance [Y/N]?`
+
+    To allow the installation process to optimize the OS for Redis Software, answer `Y`.
+    The installation process prompts you for additional information.
+
+    The `/opt/redislabs/sbin/systune.sh` file contains details about the tuning process.
+
+- **Network time** - `Do you want to set up NTP time synchronization now [Y/N]?`
+
+    Redis Software requires that all cluster nodes have synchronized time.
+    You can either let the installation process configure NTP
+    or you can [configure NTP manually]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
+
+- **Firewall ports** - `Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?`
+
+    Redis Enterprise Software requires that all nodes have [specific network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) open.
+    You can either:
+
+    - Answer `Y` to let the installation process open these ports.
+    - Answer `N` and configure the firewall manually for [RHEL/CentOS firewall]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
+    - Answer `N` and configure the firewall on the node manually for your OS.
+
+- **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
+
+    We recommend running the `rlcheck` installation verification to make sure that the installation completed successfully.
+    If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
+ 
+### Customize installation directories
 
 During the installation, you can customize the installation directories.
 
@@ -220,14 +272,12 @@ To install to specific directories, run:
 ```sh
 sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
 ```
-
-- Redis Software is installed with the system user and group `redislabs:redislabs`
-    
+ 
 ### Customize system user and group
 
 By default, Redis Enterprise Software is installed with the user:group `redislabs:redislabs`.
 
-During the installation you can specify the user and group that own all Redis Software processes.
+During the installation, you can specify the user and group that own all Redis Enterprise Software processes.
 
 If you specify the user only, then installation is run with the primary group that the user belongs to.
 
@@ -244,43 +294,7 @@ Use command-line options for the install script to customize the user or group:
 sudo ./install.sh --os-user <user> --os-group <group>
 ```
 
-### Installation questions 
-
-Several questions appear during installation:
-
-- **Linux swap file** - `Swap is enabled. Do you want to proceed? [Y/N]?`
-
-    We recommend that you [disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) in the operating system configuration
-    to give Redis Software control of the memory allocation.
-
-- **Automatic OS tuning** - `Do you want to automatically tune the system for best performance [Y/N]?`
-
-    To allow the installation process to optimize the OS for Redis Software, answer `Y`.
-    The installation process prompts you for additional information.
-
-    The `/opt/redislabs/sbin/systune.sh` file contains details about the tuning process.
-
-- **Network time** - `Do you want to set up NTP time synchronization now [Y/N]?`
-
-    Redis Software requires that all cluster nodes have synchronized time.
-    You can either let the installation process configure NTP
-    or you can [configure NTP manually]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
-
-- **Firewall ports** - `Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?`
-
-    Redis Software requires that all nodes have [specific network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) open.
-    You can either:
-
-    - Answer `Y` to let the installation process open these ports.
-    - Answer `N` and configure the firewall manually for [RHEL/CentOS firewall]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
-    - Answer `N` and configure the firewall on the node manually for your OS.
-
-- **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
-
-    We recommend running the `rlcheck` installation verification to make sure that the installation completed successfully.
-    If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
- 
- ### Silent install
+### Silent install
 
 To install without answering the installation questions, do one of the following:
 
@@ -312,6 +326,17 @@ To install with an answer file:
     ```sh
     ./install.sh -c /home/user/answers
     ```
+
+## Additional configuration
+
+Specialized configuration info is also available:
+
+- [Configure CentOS/RHEL Firewall]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
+- [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
+- [mDNS client prerequisites]({{< relref "rs/installing-upgrading/configuring/mdns.md" >}})
+- [Configure cluster DNS]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})
+- [Configure Linux swap space]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
+- [Cluster load balancer setup]({{< relref "rs/installing-upgrading/configuring/cluster-lba-setup.md" >}})
 
 ## Next steps
 
