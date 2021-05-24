@@ -73,7 +73,7 @@ Where:
   - For metrics exporter: `metrics_exporter`
 - key - The contents of the \*\_key.pem file
 
-      {{< tip >}}
+    {{< tip >}}
 
   The key file contains `\n` end of line characters (EOL) that you cannot paste into the API call.
   You can use `sed -z 's/\n/\\\n/g'` to escape the EOL characters.
@@ -165,9 +165,9 @@ TLS versions older than the specified version.
 
 ### Cipher configuration
 
-{note}
+{{<note>}}
 Redis Enterprise Software doesn't support Diffie–Hellman key exchange (`DHE-`) ciphers.
-{/note}
+{{</note>}}
 
 #### Control plane cipher suite configuration (for 6.0.8 or earlier)
 
