@@ -164,7 +164,6 @@ After you set the minimum TLS version, RS does not accept communications with
 TLS versions older than the specified version.
 
 ### Cipher configuration
-need to fix below
 
 {{<note>}}
 Redis Enterprise Software doesn't support Diffie–Hellman key exchange (`DHE-`) ciphers.
