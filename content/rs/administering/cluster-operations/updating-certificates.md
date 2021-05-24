@@ -166,7 +166,7 @@ TLS versions older than the specified version.
 ### Cipher configuration
 need to fix below
 
-{note}
+{{<note>}}
 Redis Enterprise Software doesn't support Diffie–Hellman key exchange (`DHE-`) ciphers.
 {/note}
 
