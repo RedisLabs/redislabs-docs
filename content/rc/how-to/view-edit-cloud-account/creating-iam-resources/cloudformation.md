@@ -32,7 +32,7 @@ https://s3.amazonaws.com/iam-resource-automation-do-not-delete/RedisCloud.yaml \
 ```
 
 To obtain the outputs using the cli use the following commands:
-### accessKeyId
+* `accessKeyId`
 
 ```
 aws cloudformation describe-stacks --stack-name RedisCloud \
@@ -40,7 +40,7 @@ aws cloudformation describe-stacks --stack-name RedisCloud \
 --output text
 ```
 
-### IAMRoleName
+* `IAMRoleName`
 
 ```
 aws cloudformation describe-stacks --stack-name RedisCloud \
@@ -48,25 +48,29 @@ aws cloudformation describe-stacks --stack-name RedisCloud \
 --output text
 ```
 
-### consolePassword
+* `consolePassword`
+
 The consolePassword is encoded as a JSON object, therefore we use [jq(1)](https://www.systutorials.com/docs/linux/man/1-jq/) to decode it.
 ```
 aws secretsmanager get-secret-value --secret-id /redislabsuser/password \
 --query SecretString --output text | jq -r .password
 ```
 
-### signInLoginUrl
+* `signInLoginUrl`
+
 ```
 aws cloudformation describe-stacks --stack-name RedisCloud \
 --query "Stacks[0].Outputs[?OutputKey=='signInLoginUrl'].OutputValue" \
 --output text
 ```
-### accessSecretKey
+* `accessSecretKey`
+
 ```
 aws secretsmanager get-secret-value --secret-id /redislabsuser/secret_access_key \
 --query SecretString --output text
 ```
-### consoleUsername
+* `consoleUsername`
+
 ```
 aws cloudformation describe-stacks --stack-name RedisCloud \
 --query "Stacks[0].Outputs[?OutputKey=='consoleUsername'].OutputValue" \

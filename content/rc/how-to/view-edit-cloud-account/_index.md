@@ -28,7 +28,7 @@ To create or edit a Cloud Account in Redis Cloud via the admin console:
 
 1. Use ONE of three methods to create the necessary IAM resources, as
 detailed in [Create IAM
-Entities](/rc/how-to/view-edit-cloud-account/creating-iam-resources),
+Resources](/rc/how-to/view-edit-cloud-account/creating-iam-resources),
 and then use the outputs from the chosen method to continue the
 process, as described below:
 1. In **Cloud Accounts**, either:
