@@ -9,7 +9,7 @@ aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
          /rc/administration/setup-and-editing/creating-databases/
 ---
-Once you have a [subscription]({{< relref "rc/subscriptions/" >}}), you can easily create a database in Redis Enterprise Cloud:
+To create a database in your Redis Enterprise Cloud [subscription]({{< relref "rc/subscriptions/" >}}):
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
@@ -21,11 +21,65 @@ Once you have a [subscription]({{< relref "rc/subscriptions/" >}}), you can easi
 
     {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database for your subscription." >}}{{< /image >}}
 
+This displays the **Create database** screen, which varies according to your subscription plan.
+
+{{<image filename="images/rc/database-create-general-flexible.png" alt="Use the New Database screen to create a new database for your subscription." >}}{{< /image >}}
+
+The **Create database** screen is divided into sections, each dedicated to a specific category of settings.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
+
+## General section
+
+The **General** section defines basic properties about your database.
+
+The available settings vary according to your subscription plan:
+
+|Setting name|Description|
+|:-----------|:----------|
+| **Subscription** | Read-only description of your subscription plan, including cloud provider and region |
+| **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible only_) |
+| **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible only_) |
+| **Database Name** | A name for your database (_required_) |
+| **Protocol**  | Set to _Redis_ unless you need to support legacy memcached databases |
+| **Modules** | Extend core Redis functionality using [modules]({{< relref "modules/" >}}) |
+
+## Scalability section
+
+The **Scalability** section lets you manage the maximum size, throughput, and hashing policy for a database.
+
+{{<image filename="images/rc/database-create-scalability-flexible.png" alt="Use the Scalability section to control the size, throughput, and hashing policy for a database." >}}{{< /image >}}
+
+The **Scalability** section is available only for Flexible and Annual plans.
+
+|Setting name|Description|
+|:-----------|:----------|
+| **Memory size** | Maximum size (in GB) for your database |
+| **Throughput** | Defines throughput in terms of maximum operations per second for the database
+| **Shards** | Defines the throughput in terms of shards dedicated to the database
+| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#changing-the-hashing-policy" >}}) |
+| **Cluster OSS** | Enables the [OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
+
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+
+## Durability section
+
+The **Durability** section helps you keep your database (and your data) available when problems occur.
+
+{{<image filename="images/rc/database-create-durability-flexible.png" alt="Use the Durability settings to keep your database (and data) available when problems occur." >}}{{< /image >}}
 
 
-This displays the Create database screen, which varies according to your subscription plan.
+|Setting name|Description|
+|:-----------|:----------|
+| **High availability** | Replicates your data across multiple nodes, as allowed by your subscription plan |
+| **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/concepts/data-persistence.md" >}}) depend on your plan type |
+| **Data eviction policy** | Defines what happens when your database reaches its [memory size limit]({{< relref "/rc/concepts/data-eviction-policies.md" >}}) |
+|
+
+## Security section
+
+## Alerts section
 
 
+*snip*
 
 
 1. In the Redis Cloud menu, click **Databases**.
