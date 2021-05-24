@@ -44,6 +44,11 @@ process, as described below:
 
 It is possible to use the [REST API](/rc/api) to create Cloud Accounts, but that is covered elsewhere.
 
+{{< note >}}
+Only one Cloud Account is allowed per AWS Account. 
+{{< /note >}}
+
+
 ## Delete
 You can click **Delete** to delete your Cloud Account from Redis Cloud,
 but only if it has no active subscription related to it.
