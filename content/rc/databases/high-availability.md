@@ -1,11 +1,12 @@
-Title: High availability
+
+---
+Title: High availability and replication
 linkTitle: High availability
 description: Describes database replication and high availability as it affects Redis Enterprise Cloud.   
 weight: 90
 alwaysopen: false
 categories: ["RC"]
 aliases: 
-
 ---
 
 Database replication helps ensure high availability. When replication is enabled, your dataset is duplicated to create a replica, which stays in sync with the primary dataset. Replication allows for automatic failover and greater fault tolerance. This can prevent data loss in the event of a hardware, zone, or regional failure. 
