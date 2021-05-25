@@ -72,11 +72,33 @@ The **Durability** section helps you keep your database (and your data) availabl
 | **High availability** | Replicates your data across multiple nodes, as allowed by your subscription plan |
 | **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/concepts/data-persistence.md" >}}) depend on your plan type |
 | **Data eviction policy** | Defines what happens when your database reaches its [memory size limit]({{< relref "/rc/concepts/data-eviction-policies.md" >}}) |
-|
+| **Remote backup** | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for backups. |
+| **Active-passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
 
 ## Security section
 
+The **Security** section helps you control access to your database.
+
+{{<image filename="images/rc/database-create-security-flexible.png" alt="Use the Security settings to control access to your database." >}}{{< /image >}}
+
+
+|Setting name|Description|
+|:-----------|:----------|
+| **Default user** | When enabled, permits access using a simple password.  
+| **Redis password** | Password assigned to the database when created.  
+| **CIDR allow list** | (_paid Fixed, Flexible, or Annual subscriptions only_) |
+| **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) |
+
+
 ## Alerts section
+
+The **Alerts** section defines notification emails sent to your account and the conditions that trigger them.
+
+{{<image filename="images/rc/database-create-alerts-flexible.png" alt="The Alerts section defines the notification emails and their triggering conditions." >}}{{< /image >}}
+
+
+|Setting name|Description|
+|:-----------|:----------|
 
 
 *snip*
