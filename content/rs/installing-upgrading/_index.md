@@ -14,7 +14,7 @@ This guide shows how to install Redis Enterprise Software, which includes severa
 1. [Prepare to install](#prepare-to-install-on-linux)
 1. [Perform the install](#install-on-linux)
 
-Depending on your needs, you may also want to [customize the installation](#installation-questions-and-options).
+Depending on your needs, you may also want to [customize the installation](#more-info-and-options).
 
 Here, you'll learn how to perform each step.
 
@@ -108,7 +108,7 @@ To install from the CLI:
 
 1. Copy the installation package to the node.
 
-    __(Optional)_ Use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
+    _(Optional)_ Use the {{< download "GPG key file" "GPG-KEY-redislabs-packages.gpg" >}} to confirm authenticity of Ubuntu/Debian or RHEL RPM packages:
 
     - For Ubuntu:
         1. Import the key with:  
@@ -142,19 +142,19 @@ To install from the CLI:
     sudo ./install.sh
     ```
     {{< note >}}
-- The Redit Enterprise Software files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
-- By default, Redis Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group](#custom-installation-user-and-group) during the installation.
+- The Redis Enterprise Software files are installed in the default [file locations]({{< relref "/rs/installing-upgrading/file-locations.md" >}}). 
+- By default, Redis Enterprise Software runs on the OS as the `redislabs` user and `redislabs` group. If needed, you can [specify a different user and group]({{<relref "rs/installing-upgrading/customize-user-and-group.md">}}) during the installation.
 - You must either be logged in as the root user or use sudo to run the install process.
     {{< /note >}}
 
-1. Answer the [installation questions](#installation-questions) when shown to complete the installation process,
+1. Answer the [installation questions]({{<relref "rs/installing-upgrading/manage-installation-questions.md">}}) when shown to complete the installation process,
     including the `rlcheck` installation verification.
 
     {{< note >}}
 To install without answering the installation questions, either:
 
 - Run `./install.sh -y` to answer yes to all of the questions.
-- Use an [answer file](#installation-answer-file) to answer the installation questions.
+- Use an [answer file]({{<relref "rs/installing-upgrading/manage-installation-questions.md">}}) to answer installation questions automatically.
     {{< /note >}}
 
     When the installation completes successfully, the IP address of the admin console is displayed:
@@ -186,7 +186,7 @@ If you've already installed Redis Enterprise Software, you can also:
 
 - [Upgrade an existing deployment]({{<relref "rs/installing-upgrading/upgrading.md">}})
 
-- Uninstall an existing deployment]({{<relref "rs/installing-upgrading/uninstalling.md">}})
+- [Uninstall an existing deployment]({{<relref "rs/installing-upgrading/uninstalling.md">}})
 
 More info is available to help with customization and related questions:
 
@@ -201,7 +201,7 @@ More info is available to help with customization and related questions:
 - [Manage installation questions]({{<relref "rs/installing-upgrading/manage-installation-questions.md">}})
 - [mDNS client prerequisites]({{< relref "rs/installing-upgrading/configuring/mdns.md" >}})
 - [Offline installation]({{<relref "rs/installing-upgrading/offline-installation.md">}})
-- [User and group ownership](({{<relref "rs/installing-upgrading/customize-user-and-group.md">}}))
+- [User and group ownership]({{<relref "rs/installing-upgrading/customize-user-and-group.md">}})
 
 ## Next steps
 

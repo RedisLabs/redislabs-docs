@@ -1,5 +1,5 @@
 ---
-Title: Change Location of Socket Files
+Title: Change socket file locations
 LinkTitle: Socket file location
 description:
 weight: $weight

@@ -1,5 +1,5 @@
 ---
-Title: Setting Up a Cluster Behind a Load Balancer
+Title: Set up cluster behind a load balancer
 linkTitle: Cluster load balancer setup
 description:
 weight: $weight
@@ -11,7 +11,7 @@ When you want to setup a Redis Enterprise cluster in an environment that doesn't
 ## DNS role for databases
 
 Normally, Redis Enterprise uses DNS to provide dynamic database endpoints.
-A DNS name such as redis-12345.clustername.domain gives clients access to the database resource:
+A DNS name such as `redis-12345.clustername.domain` gives clients access to the database resource:
 
 - If multiple proxies are in use, the DNS name resolves to multiple IP addresses so that clients can load balance.
 - On failover or topology changes, the DNS name is automatically updated to reflect the live IP addresses.

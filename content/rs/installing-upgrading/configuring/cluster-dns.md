@@ -1,5 +1,6 @@
 ---
-Title: Configuring Cluster DNS
+Title: Configure Cluster DNS
+linkTitle: Cluster DNS configuration
 description:
 weight: $weight
 alwaysopen: false
