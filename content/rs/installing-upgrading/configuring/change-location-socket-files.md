@@ -1,5 +1,6 @@
 ---
 Title: Change Location of Socket Files
+LinkTitle: Socket file location
 description:
 weight: $weight
 alwaysopen: false

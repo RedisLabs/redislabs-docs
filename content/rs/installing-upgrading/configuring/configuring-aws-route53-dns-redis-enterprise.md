@@ -1,5 +1,6 @@
 ---
 Title: Configuring AWS Route53 DNS Management
+linkTitle: AWS Route 53 DNS
 description:
 weight: $weight
 alwaysopen: false
@@ -7,10 +8,11 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/configuring-aws-route53-dns-redis-enterprise
         /rs/installing-upgrading/configuring/cluster-name-dns-connection-management/configuring-aws-route53-dns-redis-enterprise/
 ---
-Redis Enterprise Software (RS) requires DNS to be properly configured to
-achieve high-availability (HA) and fail-over regardless of where it is
-installed. Here we discuss doing this with AWS's Route53 service
-for DNS resolution.
+Redis Enterprise Software requires DNS to be properly configured to
+achieve high availability and fail-over regardless of where it is
+installed. 
+
+Here, you learn how to configure AWS Route53 DNS resolution.
 
 ## Prerequisites
 

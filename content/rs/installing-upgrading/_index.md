@@ -180,166 +180,28 @@ To install without answering the installation questions, either:
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
-## Installation questions and options
+## More info and options
 
-The installation defaults serve most requirements; however, there are times when customizations are needed.
+If you've already installed Redis Enterprise Software, you can also:
 
-This section describes:
+- [Upgrade an existing deployment]({{<relref "rs/installing-upgrading/upgrading.md">}})
 
-- The questions asked [during installation](#installation-questions)
-- [How to customize installation directories](#custom-installation-directories) 
-- [Set user and group ownership](#customize-system-user-and-group)
-- How to perform a [silent install](#silent-install).
+- Uninstall an existing deployment]({{<relref "rs/installing-upgrading/uninstalling.md">}})
 
-### Installation questions
+More info is available to help with customization and related questions:
 
-Several questions appear during installation:
-
-- **Linux swap file** - `Swap is enabled. Do you want to proceed? [Y/N]?`
-
-    We recommend that you [disable Linux swap]({{< relref "/rs/installing-upgrading/configuring/linux-swap.md" >}}) in the operating system configuration
-    to give Redis Software control of the memory allocation.
-
-- **Automatic OS tuning** - `Do you want to automatically tune the system for best performance [Y/N]?`
-
-    To allow the installation process to optimize the OS for Redis Software, answer `Y`.
-    The installation process prompts you for additional information.
-
-    The `/opt/redislabs/sbin/systune.sh` file contains details about the tuning process.
-
-- **Network time** - `Do you want to set up NTP time synchronization now [Y/N]?`
-
-    Redis Software requires that all cluster nodes have synchronized time.
-    You can either let the installation process configure NTP
-    or you can [configure NTP manually]({{< relref "/rs/administering/designing-production/synchronizing-clocks.md" >}}).
-
-- **Firewall ports** - `Would you like to open RedisLabs cluster ports on the default firewall zone [Y/N]?`
-
-    Redis Enterprise Software requires that all nodes have [specific network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) open.
-    You can either:
-
-    - Answer `Y` to let the installation process open these ports.
-    - Answer `N` and configure the firewall manually for [RHEL/CentOS firewall]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}).
-    - Answer `N` and configure the firewall on the node manually for your OS.
-
-- **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
-
-    We recommend running the `rlcheck` installation verification to make sure that the installation completed successfully.
-    If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
- 
-### Customize installation directories
-
-During the installation, you can customize the installation directories.
-
-The files are installed in the `redislabs` directory in the path that you specify.
-
-{{< note >}}
-- Custom installation directories are supported on RedHat Enterprise Linux version 7.
-- When you install with custom directories, the installation does not run as an RPM file.
-- If a `redislabs` directory already exists in the path that you specify, the installation fails.
-- All nodes in a cluster must be installed with the same file locations.
-{{< /note >}}
-
-{{< note >}}
-- Custom installation directories are not supported for databases using Redis on Flash.
-{{< /note >}}
-
-You can specify any or all of these file locations:
-
-| Files               | Installer flag | Example parameter | Example file location |
-| ------------------- | -------------- | ----------------- | --------------------- |
-| Binaries files      | --install-dir  | /opt              | /opt/redislabs        |
-| Configuration files | --config-dir   | /etc/opt          | /etc/opt/redislabs    |
-| Data and log files  | --var-dir      | /var/opt          | /var/opt/redislabs    |
-
-These files are not in the custom directories:
-
-- OS files
-    - /etc/cron.d/redislabs
-    - /etc/firewalld/services
-    - /etc/firewalld/services/redislabs-clients.xml
-    - /etc/firewalld/services/redislabs.xml
-    - /etc/ld.so.conf.d/redislabs_ldconfig.conf.tmpl
-    - /etc/logrotate.d/redislabs
-    - /etc/profile.d/redislabs_env.sh
-    - /usr/lib/systemd/system/rlec_supervisor.service.tmpl
-    - /usr/share/selinux/mls/redislabs.pp
-    - /usr/share/selinux/targeted/redislabs.pp
-
-- Installation reference files
-    - /etc/opt/redislabs/redislabs_custom_install_version
-    - /etc/opt/redislabs/redislabs_env_config.sh
-
-To install to specific directories, run:
-
-```sh
-sudo ./install.sh --install-dir <path> --config-dir <path> --var-dir <path>
-```
- 
-### Customize system user and group
-
-By default, Redis Enterprise Software is installed with the user:group `redislabs:redislabs`.
-
-During the installation, you can specify the user and group that own all Redis Enterprise Software processes.
-
-If you specify the user only, then installation is run with the primary group that the user belongs to.
-
-{{< note >}}
-- Custom installation user is supported on RedHat Enterprise Linux version 7.
-- When you install with custom directories, the installation does not run as an RPM file.
-- You must create the user and group befor attempting to install Redis Software.
-- You can specify an LDAP user as the installation user.
-{{< /note >}}
-
-Use command-line options for the install script to customize the user or group:
-
-```sh
-sudo ./install.sh --os-user <user> --os-group <group>
-```
-
-### Silent install
-
-To install without answering the installation questions, do one of the following:
-
-- Run `./install.sh -y` to answer yes to all of the questions.
-- Prepare an answer file and use it to do a silent installation.
-
-To install with an answer file:
-
-1. Prepare the answer file with the answers to the [installation questions](#installation-questions).
-
-    The answer file can contain any of the parameters for the installation questions and indicate the answer for the question with `yes` or `no`.
-
-    For example:
-
-    ```sh
-    ignore_swap=no
-    systune=yes
-    ntp=no
-    firewall=no
-    rlcheck=yes
-    ```
-
-    If you use `systune=yes`, the installation answers `yes` to all of the system tuning questions.
-
-1. Run the install script with `-c` and the path to the answer file.
-
-    For example:
-
-    ```sh
-    ./install.sh -c /home/user/answers
-    ```
-
-## Additional configuration
-
-Specialized configuration info is also available:
-
-- [Configure CentOS/RHEL Firewall]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
+- [AWS EC2 configuration]({{<relref "rs/installing-upgrading/configuring-aws-instances.md">}})
+- [CentOS/RHEL Firewall conifugration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
-- [mDNS client prerequisites]({{< relref "rs/installing-upgrading/configuring/mdns.md" >}})
-- [Configure cluster DNS]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})
-- [Configure Linux swap space]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
+- [Cluster DNS configuration]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/installing-upgrading/configuring/cluster-lba-setup.md" >}})
+- [File locations]({{<relref "rs/installing-upgrading/file-locations.md">}})
+- [Supported platforms]({{<relref "rs/installing-upgrading/supported-platforms.md">}})
+- [Linux swap space configuration]({{< relref "rs/installing-upgrading/configuring/linux-swap.md" >}})
+- [Manage installation questions]({{<relref "rs/installing-upgrading/manage-installation-questions.md">}})
+- [mDNS client prerequisites]({{< relref "rs/installing-upgrading/configuring/mdns.md" >}})
+- [Offline installation]({{<relref "rs/installing-upgrading/offline-installation.md">}})
+- [User and group ownership](({{<relref "rs/installing-upgrading/customize-user-and-group.md">}}))
 
 ## Next steps
 
