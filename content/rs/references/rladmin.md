@@ -111,10 +111,6 @@ rladmin bind
         [ sentinel_cipher_suites <golang_cipher_list>]
         [ services <cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver> <enabled | disabled> ]
         [ upgrade_mode < enabled | disabled> ]
-        
-        
-        
-        
 ```
 
 | Optional Parameter | Description |
