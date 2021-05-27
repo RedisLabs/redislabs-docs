@@ -1,12 +1,12 @@
 # Doc changelog
 
-This article summarizes recent changes to Redis Enterprise Software and Redis Enterprise Cloud docs:
+Here, we highlight recent changes to Redis Enterprise Software and Redis Enterprise Cloud docs:
 
 ## May 2021
 
 - Redis Enterprise Software doc updates:
 
-    - Added article compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/concepts/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
+    - Added article describing compatibility with [open source Redis](https://docs.redislabs.com/latest/rs/concepts/compatibility/) ([PR #1345](https://github.com/RedisLabs/redislabs-docs/pull/1345))
 
     - Simplified [install and update](https://docs.redislabs.com/latest/rs/installing-upgrading/) article and resolved navigation issues ([PR #1376](https://github.com/RedisLabs/redislabs-docs/pull/1376))
 
@@ -20,9 +20,9 @@ This article summarizes recent changes to Redis Enterprise Software and Redis En
 
     - Created [preview docs](https://docs.redislabs.com/staging/release-rc-new-ui/rc/rc-quickstart/) for updated user experience ([PR #1274](https://github.com/RedisLabs/redislabs-docs/pull/1371))
 
-- Additional updates to fix typos, missing images, and other glitches.
+- Additional updates to fix typos, missing images, and other glitches
 
-    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-05-01..2021-05-31).
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-05-01..2021-05-31)
 
 ## April 2021
 
@@ -30,7 +30,7 @@ This article summarizes recent changes to Redis Enterprise Software and Redis En
 
     - Updated docs to support release 6.0.20, which includes new [LDAP authentication](https://docs.redislabs.com/latest/rs/security/ldap/) docs, updated [certificate docs](https://docs.redislabs.com/latest/rs/security/admin-console-security/encryption/), [and more](https://docs.redislabs.com/latest/rs/release-notes/rs-6-0-20-april-2021/) ([PR #1317](https://github.com/RedisLabs/redislabs-docs/pull/1317))
 
-    - Documented Active-Active support for [bitfield types](https://docs.redislabs.com/latest/rs/references/developing-for-active-active/developing-strings-active-active/) ([PR 1300](https://github.com/RedisLabs/redislabs-docs/pull/1300))
+    - Documented Active-Active support for [bitfield types](https://docs.redislabs.com/latest/rs/references/developing-for-active-active/developing-strings-active-active/) ([PR #1300](https://github.com/RedisLabs/redislabs-docs/pull/1300))
 
 - Redis Enterprise Cloud doc updates:
 
@@ -40,9 +40,9 @@ This article summarizes recent changes to Redis Enterprise Software and Redis En
 
     - Updated data backup docs for Microsoft Azure ([PR #1341](https://github.com/RedisLabs/redislabs-docs/pull/1341))
 
-- Additional updates to fix typos, missing images, and other glitches.
+- Additional updates to fix typos, missing images, and other glitches
 
-    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-04-01..2021-04-30).
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-04-01..2021-04-30)
 
 
 ## January through March 2021
@@ -53,7 +53,7 @@ This article summarizes recent changes to Redis Enterprise Software and Redis En
 
     - Reworked `rladmin` [command reference](https://docs.redislabs.com/latest/rs/references/rladmin/) ([PR #1256](https://github.com/RedisLabs/redislabs-docs/pull/1256))
 
-    - Updated [install and setup](https://docs.redislabs.com/latest/rs/installing-upgrading/) doc. ([PR #1123](https://github.com/RedisLabs/redislabs-docs/pull/1123))
+    - Updated [install and setup](https://docs.redislabs.com/latest/rs/installing-upgrading/) doc ([PR #1123](https://github.com/RedisLabs/redislabs-docs/pull/1123))
 
 - Redis Enterprise Cloud doc updates:
 
@@ -61,7 +61,7 @@ This article summarizes recent changes to Redis Enterprise Software and Redis En
 
     - Updated administration [landing page](https://docs.redislabs.com/latest/rc/administration/) ([PR #1191](https://github.com/RedisLabs/redislabs-docs/pull/1191))
 
-    - Updated [Enable the REST API](https://docs.redislabs.com/latest/rc/api/get-started/enable-the-api/) page for clarity. ([PR #1244](https://github.com/RedisLabs/redislabs-docs/pull/1244))
+    - Updated [Enable the REST API](https://docs.redislabs.com/latest/rc/api/get-started/enable-the-api/) page for clarity ([PR #1244](https://github.com/RedisLabs/redislabs-docs/pull/1244))
 
 - Additional changes
 
@@ -69,8 +69,8 @@ This article summarizes recent changes to Redis Enterprise Software and Redis En
 
     - Created Kubernetes [quick start](https://docs.redislabs.com/latest/platforms/kubernetes/getting-started/quick-start/) ([PR #1174](https://github.com/RedisLabs/redislabs-docs/pull/1174)) and [developer guides](https://docs.redislabs.com/latest/platforms/kubernetes/tasks/) ([PR #1173](https://github.com/RedisLabs/redislabs-docs/pull/1173))
 
-    - Additional  updates to fix typos, missing images, and other glitches.
+    - Additional  updates to fix typos, missing images, and other glitches
 
-        To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-01-01..2021-03-31).
+        To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-01-01..2021-03-31)
 
 
