@@ -1,5 +1,6 @@
 ---
 Title: Client Prerequisites for mDNS
+linkTitle: mDNS client prerequisites
 description:
 weight: $weight
 alwaysopen: false

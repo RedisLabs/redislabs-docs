@@ -1,5 +1,6 @@
 ---
-Title: Configuring Swap for Linux
+Title: Configure Swap for Linux
+linkTitle: Linux swap configuration
 description:
 weight: $weight
 alwaysopen: false

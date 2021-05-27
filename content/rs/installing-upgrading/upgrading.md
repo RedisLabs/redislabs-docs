@@ -1,12 +1,13 @@
 ---
-Title: Upgrading Redis Enterprise Software
+Title: Upgrade Redis Enterprise Software
+linkTitle: Upgrade Redis Enterprise Software
 description:
 weight: 60
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/
 ---
-To upgrade the Redis Enterprise Software (RS) software on a cluster,
+To upgrade the Redis Enterprise Software  software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 For Active-Active clusters, you must upgrade all the nodes on all clusters first, and then upgrade each of the databases in each cluster.
@@ -33,7 +34,7 @@ Using features from the newer version before all nodes are upgraded can produce 
 
 {{< /warning >}}
 
-## Upgrading a node
+## Upgrade a node
 
 Upgrading the software on a node requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/_index.md" >}})
@@ -78,22 +79,22 @@ If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
-## Upgrading a database
+## Upgrade a database
 
-Some RS upgrades add support for new Redis versions. In these cases,
+Some upgrades add support for new Redis versions. In these cases,
 Redis Labs recommends that you upgrade the databases to the new Redis
-version, although this is not mandatory because RS upgrades are backward
-compatible. RS also supports a mix of Redis database versions.
+version, although this is not mandatory because upgrades are backward
+compatible. Redis Software also supports a mix of Redis database versions.
 
-RS always supports two Redis versions. By default, new Redis databases
+Redis Software always supports two Redis versions. By default, new Redis databases
 are created with the latest version, and existing databases get upgraded
 to the latest version according to the instructions detailed below. If
 you would like to change the default Redis version to the previous
 version supported, you should use the `tune cluster default_redis_version`
-command in the rladmin CLI and set it to the previous Redis version supported.
+command in the `rladmin` CLI and set it to the previous Redis version supported.
 
-To check whether your Redis database versions match the latest Redis
-version supported by RS:
+To check whether your Redis database versions match the latest supported Redis
+version:
 
 - In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
     run the `status` command.
@@ -125,7 +126,7 @@ a result:
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
-## Upgrading Active-Active databases {#upgrading-activeactive-databases}
+## Upgrade Active-Active databases {#upgrading-activeactive-databases}
 
 When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
