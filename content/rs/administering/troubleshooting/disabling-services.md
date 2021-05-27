@@ -24,7 +24,7 @@ The services that you can disable are:
 To disable a service with the `rladmin cluster config` command, use the `services` parameter and the name of the service, followed by `disabled`.
 ```text
  rladmin cluster config 
-        [ services <cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver> <enabled | disabled> ]
+        [ services <service_name> <enabled | disabled> ]
 ```
 
 To disable a service with the API, use the `/v1/cluster/services/configuration` endpoint
