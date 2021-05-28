@@ -1,6 +1,6 @@
 # Doc changelog
 
-Here, we highlight recent changes to Redis Enterprise Software and Redis Enterprise Cloud docs:
+The docs are updated on a near-daily basis.  Here are some recent highlights:
 
 ## May 2021
 
