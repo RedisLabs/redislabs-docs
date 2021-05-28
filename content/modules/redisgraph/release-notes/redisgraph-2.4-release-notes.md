@@ -31,3 +31,5 @@ This release introduces the [Map](https://oss.redislabs.com/redisgraph/master/da
 
 Notes:
 This is the first GA version of 2.4. The version inside Redis will be 2.4.2 in semantic versioning. Since the version of a module in Redis is numeric, we could not add an GA flag.
+
+<<Need to include cluste version requirement>>
