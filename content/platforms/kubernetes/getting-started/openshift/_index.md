@@ -7,6 +7,10 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
          /platforms/openshift/
+         /platforms/kubernetes/getting-started/openshift/getting-started-openshift-crdb/
+         /platforms/kubernetes/getting-started/openshift/getting-started-openshift-crdb.md
+         /platforms/openshift/getting-started-openshift-crdb/
+         /platforms/openshift/getting-started-openshift-crdb.md
 ---
 
 Redis Enterprise is supported on OpenShift Kubernetes cluster deployments via
