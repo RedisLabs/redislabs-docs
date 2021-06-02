@@ -16,7 +16,7 @@ More info: [redis.io/topics/acl](https://redis.io/topics/acl), [ACL wikipedia](h
 {{%definition "Active-Active database (CRDB)"%}}
 Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
 
-More info: [Active-Passive Geo-Distributed Redis]({{<relref "/rs/administering/designing-production/active-passive.md" >}}), [Create an Active-Passive Geo-Replicated Database]({{<relref "/rs/administering/creating-databases/create-active-passive.md" >}})
+More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/administering/designing-production/active-active.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/concepts/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/references/developing-for-active-active/_index.md">}})
 {{%/definition%}}
 
 {{%definition "Active-Active database instance"%}}
@@ -159,6 +159,8 @@ Single-threaded Redis OSS database.
 
 {{%definition "Redis on Flash (RoF)"%}}
 Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Redis on Flash manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
+
+More info: [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/getting-started/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
 {{%definition "Replica Of"%}}
