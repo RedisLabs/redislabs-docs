@@ -78,7 +78,7 @@ For an Active-Passive database use [rladmin]({{< relref "rs/references/rladmin.m
 rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
 ```
 
-**For Redis Software before version 6.0.20:**
+**For Redis Software versions earlier than 6.0.20:**
 Replication backlog is set by default to 1MB and is can not be set dynamically ('auto' mode).
 Tuning is possible only using [rladmin]({{< relref "rs/references/rladmin.md" >}}) applying to a local intanse of the database on each cluster.
 ```text
