@@ -79,7 +79,7 @@ rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
 ```
 
 **For Redis Software versions earlier than 6.0.20:**
-Replication backlog is set by default to 1MB and is can not be set dynamically ('auto' mode).
+The Replication backlog defaults to 1MB and cannot be set dynamically ('auto' mode).
 Tuning is possible only using [rladmin]({{< relref "rs/references/rladmin.md" >}}) applying to a local intanse of the database on each cluster.
 ```text
 rladmin tune db <db:id | name> repl_backlog <Backlog size in MB (or if ending with bytes, KB or GB, in the respective unit)>
