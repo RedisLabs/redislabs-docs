@@ -62,7 +62,7 @@ The joined participating clusters reject updates sent from the removed participa
 
 ## Replication Backlog
 
-Active-Active and Active-Passive databases are maintaining a Replication Backlog to keep synchronization among the clusters.
+Active-Active and Active-Passive databases maintain a Replication Backlog to synchronize clusters.
 By default, the Replication Backlog size will be set automatically allocated to 1% of the database size and be limited in the range of 1MB (min) - 250MB (max) per shard.
 It is also possible to toggle between the automatic allocation to a manual size allocation from the command-line:
 
@@ -82,4 +82,3 @@ Tuning is possible only using [rladmin]({{< relref "rs/references/rladmin.md" >}
 ```text
 rladmin tune db <db:id | name> repl_backlog <Backlog size in MB (or if ending with bytes, KB or GB, in the respective unit)>
 ```
-
