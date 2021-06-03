@@ -1,5 +1,6 @@
 ---
 Title: Getting Started with Redis Enterprise Active-Active Databases
+linktitle: Active-Active databases
 description:
 weight: 30
 alwaysopen: false
