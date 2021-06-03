@@ -73,7 +73,7 @@ For an Active-Active database:
 crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_backlog_size\": <SIZE_IN_BYTES | 'auto'>}"
 ```
 
-For an Active-Passive database use [rladmin]({{< relref "rs/references/rladmin.md" >}}) from the source database and run:
+For an Active-Passive database:
 ```text
 rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
 ```
