@@ -64,7 +64,9 @@ The joined participating clusters reject updates sent from the removed participa
 
 Active-Active and Active-Passive databases maintain a Replication Backlog to synchronize clusters.
 By default, the replication backlog is set to one percent (1%) of the database size and ranges between 1MB to 250MB per shard.
-It is also possible to toggle between the automatic allocation to a manual size allocation from the command-line:
+Use the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility to control the size of the replication backlog.  You can set it to `auto` or set a specific size.  
+
+The syntax varies between Active-Active and Active-Passive databases. 
 
 For an Active-Active database use [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) to run:
 ```text
