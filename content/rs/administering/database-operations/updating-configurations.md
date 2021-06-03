@@ -36,7 +36,7 @@ most database settings only apply to the Active-Active database instance that yo
 - TLS mode
 - Periodic backup
 
-You can change the global configuration of the Active-Active database from the command-line with the crdb-cli.
+You can change the global configuration of the Active-Active database from the command-line with the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}).
 
 ## Participating clusters
 
@@ -59,3 +59,27 @@ If you must remove offline participating clusters, you can do this with forced r
 If a participating cluster that was removed forcefully returns attempts to re-join the cluster,
 it will have an out of date on Active-Active database membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
+
+## Replication Backlog
+
+Active-Active and Active-Passive databases are maintaining a Replication Backlog to keep synchronization among the clusters.
+By default, the Replication Backlog size will be set automatically allocated to 1% of the database size and be limited in the range of 1MB (min) - 250MB (max) per shard.
+It is also possible to toggle between the automatic allocation to a manual size allocation from the command-line:
+
+For an Active-Active database use [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) to run:
+```text
+crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_backlog_size\": <SIZE_IN_BYTES | 'auto'>}"
+```
+
+For an Active-Passive database use [rladmin]({{< relref "rs/references/rladmin.md" >}}) from the source database and run:
+```text
+rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
+```
+
+**For Redis Software before version 6.0.20:**
+Replication backlog is set by default to 1MB and is can not be set dynamically ('auto' mode).
+Tuning is possible only using [rladmin]({{< relref "rs/references/rladmin.md" >}}) applying to a local intanse of the database on each cluster.
+```text
+rladmin tune db <db:id | name> repl_backlog <Backlog size in MB (or if ending with bytes, KB or GB, in the respective unit)>
+```
+
