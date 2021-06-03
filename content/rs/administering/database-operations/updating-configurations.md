@@ -68,7 +68,7 @@ Use the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility
 
 The syntax varies between Active-Active and Active-Passive databases. 
 
-For an Active-Active database use [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) to run:
+For an Active-Active database:
 ```text
 crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_backlog_size\": <SIZE_IN_BYTES | 'auto'>}"
 ```
