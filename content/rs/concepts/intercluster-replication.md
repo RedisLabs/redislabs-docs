@@ -58,7 +58,7 @@ in between.
 
 [Learn more about
 synchronization]({{< relref "/rs/administering/designing-production/active-active.md" >}}) for
-each supported data type and [how to develop]({{< relref "/rs/references/developing-for-active-active.md" >}}) with them on RS.
+each supported data type and [how to develop]({{< relref "/rs/references/developing-for-active-active/_index.md" >}}) with them on RS.
 
 ## Terminology
 
