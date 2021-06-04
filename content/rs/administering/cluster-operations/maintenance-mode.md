@@ -4,8 +4,9 @@ description: Prepare node for maintenance, and restore it to previous state
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/cluster-operations/shutting-down-node.md
-/rs/administering/cluster-operations/shutting-down-node/
+aliases: 
+        /rs/administering/cluster-operations/shutting-down-node.md
+        /rs/administering/cluster-operations/shutting-down-node/
 ---
 When you need to do hardware or operating system maintenance on a server that hosts an Redis Enterprise Software (RS) node,
 it is important that you move all of the shards on that node to another node to protect the data.
