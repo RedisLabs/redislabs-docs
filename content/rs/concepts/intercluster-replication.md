@@ -57,7 +57,7 @@ in between.
 |  t6 |  | SET key1 “d” |
 
 [Learn more about
-synchronization]({{< relref "rs/administering/designing-production/active-active.md" >}}) for
+synchronization]({{< relref "/rs/administering/designing-production/active-active.md" >}}) for
 each supported data type and [how to develop]({{< relref "rs/references/developing-for-active-active.md" >}}) with them on RS.
 
 ## Terminology
