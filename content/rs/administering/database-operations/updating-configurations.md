@@ -60,7 +60,7 @@ If a participating cluster that was removed forcefully returns attempts to re-jo
 it will have an out of date on Active-Active database membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
 
-## Replication Backlog
+## Replication backlog
 
 Active-Active and Active-Passive databases maintain a Replication Backlog to synchronize clusters.
 By default, the replication backlog is set to one percent (1%) of the database size and ranges between 1MB to 250MB per shard.
