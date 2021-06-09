@@ -364,7 +364,7 @@ rladmin migrate
         [ commit ]
 ```
 
-This command will migrate endpoints for databases to the node where the majority of the shards reside.
+This command migrates database endpoints to the node where the majority of the shards reside.
 
 ### `node`
 
