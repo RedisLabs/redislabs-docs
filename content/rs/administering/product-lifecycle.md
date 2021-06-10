@@ -35,7 +35,7 @@ that version.
 
 | RS Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
-| 6.0 – May 2020                            | November 30, 2021  |
+| 6.0 – May 2020                            | May 31, 2021  |
 | 5.6 – April 2020                          | October 31, 2021  |
 | 5.4 – December 2018                       | December 31, 2020  |
 | 5.2 – June 2018                           | December 31, 2019  |
