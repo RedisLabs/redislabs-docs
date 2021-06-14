@@ -60,6 +60,22 @@ The **Scalability** section is available only for Flexible and Annual plans.
 
 To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
 
+### Memory size
+
+Memory size represents the maximum amount of memory for the database, which includes data values, keys, module data, and overhead for specific features.  High availability features, such as replication and Active-Active, dramatically increase memory consumption.  
+
+Here are some general guidelines:
+
+- Memory size represents an upper limit.  You cannot store more data than the memory size.  Depending on your other selections, available memory for data may be much less than expected.
+
+- Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory size when replication is enabled.
+
+- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.
+
+- Modules also consumes memory.
+
+Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/administering/database-operations/memory-limit.md" >}})
+
 ## Durability section
 
 The **Durability** section helps you keep your database (and your data) available when problems occur.
