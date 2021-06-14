@@ -24,7 +24,7 @@ For security reasons (e.g., in air-gapped environments), you may want to pull th
 from a public registry once and then push them to a private registry under
 your control.
 
-{{ % warning %}}It is very important that the images you are pushing to the private registry have the same exact version tag as the original images. {{% /warning %}}
+{{ < warning >}}It is very important that the images you are pushing to the private registry have the same exact version tag as the original images. {{< /warning >}}
 
 Furthermore, because [Docker now rate limits public pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/),
 you may want to consider pulling images from a
