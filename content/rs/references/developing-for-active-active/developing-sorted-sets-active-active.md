@@ -34,7 +34,7 @@ phases:
     case, the score is treated as a counter and applies the same
     conflict resolution as regular counters.
 
-Please see the following examples to get familiar with Sorted Sets'
+See the following examples to get familiar with Sorted Sets'
 behavior in Active-Active database:
 
 Example of Simple Sorted Set with No

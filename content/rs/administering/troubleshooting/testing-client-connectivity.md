@@ -51,11 +51,12 @@ OK
 A simple python application running on the host machine can also connect
 to the database1.
 
-Note: The following section assumes you already have python and redis-py
-(python library for connecting to Redis) configured on the host machine
-running the container. You can find the instructions to configure
-redis-py on the [github page for
-redis-py](https://github.com/andymccurdy/redis-py).
+{{< note >}}
+The following section assumes you already have python and redis-py
+(python library for connecting to Redis) configured on the host machine running the container.
+You can find the instructions to configure redis-py on the
+[github page for redis-py](https://github.com/andymccurdy/redis-py).
+{{< /note >}}
 
 In the command-line Terminal, create a new file called
 **redis_test.py**

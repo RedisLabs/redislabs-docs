@@ -39,18 +39,18 @@ This makes sure that your application and database are co-located on the same ph
 The zone mapping takes a few minutes to complete as it maps the availability zones.
 During the zone mapping you see:
 
-![zone-mapping](/images/rc/zone-mapping.png?width=600&height=359)
+![zone-mapping](/images/rc/zone-mapping.png)
 
 After zone mapping is complete, the dropdown for **Cloud** in a new subscription shows the zone letter.
 
-![after_zone_mapping](/images/rc/after_zone_mapping.png?width=600&height=192)
+![after_zone_mapping](/images/rc/after_zone_mapping.png)
 
 For existing subscriptions in Redis Cloud Essentials, you now see the Availability Zone they are using.
 To reduce the latency described above:
 
-1. [Create a new subscription]({{< relref "/rc/administration/setup/create-subscription.md" >}}) in the AZ for your application.
-1. [Create a new database]({{< relref "/rc/administration/setup/create-database.md" >}}).
-1. [Migrate your data]({{< relref "/rc/how-to/importing-data.md" >}}) to the new database.
+1. [Create a new subscription]({{< relref "/rc/subscriptions/_index.md" >}}) in the AZ for your application.
+1. [Create a new database]({{< relref "/rc/databases/create-database.md" >}}).
+1. [Migrate your data]({{< relref "/rc/databases/import-data.md" >}}) to the new database.
 
 While simple, this causes some downtime.
 To prevent any downtime during the zone mapping, contact [support](mailto:support@redislabs.com?Subject=Zero%20Downtime%20DB%20Migration) for further assistance.

@@ -287,4 +287,6 @@ Full details:
     - #[607](https://github.com/RedisGraph/RedisGraph/issues/607) All ops NULL-set variables in their free routines (memory).
     - #[893](https://github.com/RedisGraph/RedisGraph/issues/893) Preserve the children array order when replacing operations.
 
-Note: the version inside Redis will be 20001 or 2.0.1 in semantic versioning.
+{{< note >}}
+The version inside Redis will be 20001 or 2.0.1 in semantic versioning.
+{{< /note >}}

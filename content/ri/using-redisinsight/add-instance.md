@@ -17,6 +17,10 @@ Each of these database configurations requires specific steps to add them to Red
 - Redis with TLS authentication
 - Elasticache
 
+### Supported Redis Versions
+
+Currently, RedisInsight supports Redis versions 4 and newer.
+
 ## Add a standalone Redis database
 
 This is the simplest setup of a Redis database with just a single Redis server.
@@ -35,10 +39,16 @@ To add a standalone Redis database to RedisInsight:
 
     ![instance_overview_page](/images/ri/add-db-form-screen.png)
 
-    - **Name**: A name for your Redis database. It does not have to match the name of the database in the Redis cluster.
     - **Host**: The hostname of your Redis database, for example `redis.acme.com`.
        If your Redis server is running on your local machine, you can enter either `127.0.0.1` or `localhost`.
+       You can also paste a Connection URL. When pasted, the database details are automatically filled.
+
+       The following Connection URLs are supported:
+         - [`redis://[[user]:[pass]]@host:port`](https://www.iana.org/assignments/uri-schemes/prov/redis)
+         - [`rediss://[[user]:[pass]]@host:port`](https://www.iana.org/assignments/uri-schemes/prov/rediss)
+         - `host:port`
     - **Port**: The port your Redis database is available on. The default port for Redis is `6379`.
+    - **Name**: A name for your Redis database. It does not have to match the name of the database in the Redis cluster.
     - **Username**: The username, if your database is ACL enabled, otherwise leave this field empty.
     - **Password**: The password, if any, for your Redis database.
        If your database doesn't require a password, leave this field empty.
@@ -113,6 +123,11 @@ To add a TLS-enabled Redis database:
 1. Select **Use TLS**.
 
     ![instance_overview_page](/images/ri/add-db-tls-screen.png)
+
+1. If the server needs to be authenticated, pass a [CA Certificate](https://en.wikipedia.org/wiki/Certificate_authority).
+   1. If the certificate returned by the server needs to be verified, select **Verify TLS Certificate**.
+
+     ![instance_overview_page](/images/ri/add-db-tls-ca-cert-screen.png)
 
 1. If your database requires TLS client authentication to do mutual authentication:
 

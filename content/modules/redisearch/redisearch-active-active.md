@@ -14,6 +14,7 @@ The way it works is that:
 1. You create the index in each instance of the database.
 1. If you are using [synomyms](https://oss.redislabs.com/redisearch/Synonyms/), they need to be added on each replica.
 1. The index is maintained by each instance outside of the database keyspace, so only updates to the hashes in the databases are synchronized.
+1. The following commands are not supported: FT.DROP, FT.SUGADD, FT.SUGGET, FT.SUGDEL, FT.SUGLEN.
 
 To help visualize this process, let's look at this example:
 

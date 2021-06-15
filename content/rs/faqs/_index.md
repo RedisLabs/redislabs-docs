@@ -15,9 +15,9 @@ Here are some frequently asked questions about Redis Enterprise Software (RS).
 {{< embed-md "what-is-redis-enterprise.md"  >}}
 {{< /expand >}}
 
-{{< expand "Are you fully compatible with open source Redis?" >}}
-{{< embed-md "compatible-with-oss.md"  >}}
-{{< /expand >}}
+{{% expand "Are you fully compatible with open source Redis?" %}}
+Redis Enterprise Software is fully [compatible with open source Redis]({{<relref "rs/concepts/compatibility">}}).
+{{% /expand %}}
 
 {{< expand "Can I keep my data safe and always available?" >}}
 Redis Enterprise Software offers a comprehensive suite of
@@ -25,7 +25,7 @@ high-availability provisions, including in-memory replication,
 persistent storage, and backups.
 {{< /expand>}}
 
-{{< expand "What do you mean by the term Shard?" >}}
+{{< expand "What do you mean by the term shard?" >}}
 A shard is any type of provisioned Redis instance, such as a master
 copy, slave copy, database shard that is part of a clustered database,
 etc.

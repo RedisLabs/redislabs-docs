@@ -36,6 +36,8 @@ To configure a destination database as a Replica Of:
 1. Click ![icon_add](/images/rs/icon_add.png#no-click "Add") to show the box for the source database endpoint.
 1. Enter the URL of the source database endpoint:
 
+    <!-- Shared in migrate-to-active-active.md -->
+
     {{< note >}}
 The order of the Replica Of sources has no impact on replication.
     {{< /note >}}
@@ -44,13 +46,13 @@ The order of the Replica Of sources has no impact on replication.
     the available databases are shown in the correct format for the URL of the source endpoint:
 
         ```sh
-        redis://admin:<database_password>@<database_endpoint>:<database_port>
+        <database name>: redis://admin:<database_password>@<database_endpoint>:<database_port>
         ```
 
         You can select the database that you want to use as the source.
 
     - For a source database in a different RS cluster:
-        1. Log in to the Web UI of the cluster that hosts the source database.
+        1. Log in to the admin console of the cluster that hosts the source database.
         1. In **databases**, click on the database and go to **configuration**.
         1. Under **Endpoint**, click on **Get Replica Of source URL**.
 
@@ -103,7 +105,7 @@ To enable TLS for Replica Of in the destination database:
 
     ![Encrypt Replica-of](/images/rs/replicaof-unencrypted.png)
 
-1. From the Web UI of the cluster that hosts the source database,
+1. From the admin console of the cluster that hosts the source database,
     go to **settings** > **general** and copy the proxy certificate.
 1. Paste it as the **Source Cluster Certificate** for the destination database:
 

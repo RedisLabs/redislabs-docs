@@ -59,13 +59,13 @@ spec:
       containers:
 
       - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:1.7.0 #repo/image
+        image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
         volumeMounts:
         - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
           mountPath: /db
         ports:
-        - containerPort: 8001 #exposed conainer port and protocol
+        - containerPort: 8001 #exposed container port and protocol
           protocol: TCP
       volumes:
       - name: db
@@ -124,7 +124,7 @@ spec:
     spec:
       containers:
       - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:1.7.0 #repo/image
+        image: redislabs/redisinsight:latest #repo/image
         imagePullPolicy: IfNotPresent #Always pull image
         env:
           # If there's a service named 'redisinsight' that exposes the
@@ -170,3 +170,49 @@ kubectl port-forward deployment/redisinsight 8001
 ```
 
 Open your browser and point to <http://localhost:8001>
+
+## Helm Chart (Experimental)
+
+You can download the RedisInsight helm chart from **[here](/pkgs/redisinsight-chart-0.1.0.tgz)**.
+
+1. After downloading, install the helm chart using the following command:
+
+```sh
+helm install redisinsight redisinsight-chart-0.1.0.tgz --set service.type=NodePort
+```
+
+{{< note >}}
+The service type is [NodePort](https://kubernetes.io/docs/concepts/services-networking/service/#nodeport) which allows us to access redisinsight from outside k8s cluster.
+{{< /note >}}
+
+You get the following output:
+```
+NAME: redisinsight
+LAST DEPLOYED: Wed Dec 16 10:46:08 2020
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+NOTES:
+1. Get the application URL by running these commands:
+  export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services redisinsight-redisinsight-chart)
+  export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+  echo http://$NODE_IP:$NODE_PORT
+
+```
+
+2. Run the commands mentioned in the output to get the end point:
+
+```sh
+export NODE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[0].nodePort}" services redisinsight-redisinsight-chart)
+export NODE_IP=$(kubectl get nodes --namespace default -o jsonpath="{.items[0].status.addresses[0].address}")
+echo http://$NODE_IP:$NODE_PORT #Example: http://172.17.0.2:32388
+
+```
+
+3. Open your browser and point to `http://<endpopoint>:<port>` from the previous command.
+
+4. To uninstall the helm chart:
+
+```sh
+helm uninstall redisinsight
+```

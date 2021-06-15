@@ -63,12 +63,13 @@ You can migrate resources by using the *rladmin* command-line interface
 (CLI). For guidelines, refer to [*rladmin* command line interface
 (CLI)]({{< relref "/rs/references/rladmin.md" >}}).
 
-**Note**: The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) must be updated each time a node is added or
-replaced.
+{{< note >}}
+The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) must be updated each time a node is added or replaced.
+{{< /note >}}
 
 ## Removing a node
 
-To remove a node using the web UI:
+To remove a node using the admin console:
 
 1. Click **Remove** at the top of the **Node** page for the node to be
     removed.
@@ -89,6 +90,8 @@ For example:
 curl -X POST -H "Content-Type: application/json" -i -k -u user@redislabs.com:password https://localhost:9443/v1/nodes/3/actions/remove --data "{}"
 ```
 
-**Note**: If you need to add a removed node back to the cluster,
+{{< note >}}
+If you need to add a removed node back to the cluster,
 you must [uninstall]({{< relref "/rs/installing-upgrading/uninstalling.md" >}})
 and [reinstall]({{< relref "/rs/installing-upgrading/_index.md" >}}) the software on that node.
+{{< /note >}}

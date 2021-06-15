@@ -1,13 +1,13 @@
 ---
-Title: Scheduled Backups
-description:
+Title: Schedule periodic backups
+description: You can manually export your data from a specific Redis Enterprise Software database at any time. You can also schedule backups of your databases to make sure you always have valid backups.
 weight: 40
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/database-operations/database-backup/
 ---
 You can manually [export your data]({{< relref "/rs/administering/import-export/exporting-data.md" >}})
-from a specific Redis Enterprise Software (RS) database at any time.
+from a specific Redis Enterprise Software database at any time.
 You can also schedule backups of your databases to make sure you always have valid backups.
 The backup process can be scheduled for every 1, 4, 12 or 24 hours from the time that you save the backup configuration.
 
@@ -23,7 +23,7 @@ You can schedule backups to these locations:
 
 The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
 If you backup a database configured for database clustering,
-RS copies a backup file for each shard to the specified backup location.
+Redis Software copies a backup file for each shard to the specified backup location.
 
 {{< note >}}
 
@@ -33,7 +33,7 @@ RS copies a backup file for each shard to the specified backup location.
 
 {{< /note >}}
 
-## Scheduling periodic backups
+## Schedule periodic backups
 
 To schedule periodic backups for a database:
 

@@ -24,16 +24,6 @@ In this example, we have four fields: `title` (`TEXT`), `body` (`TEXT`), `url` 
     
     In our example the default document score is `0.5` and we can have a document-specific score by setting a value between 0 and 1 in the  "`doc_score`" field of the hash.
 
-{{< note >}}
-For databases in a Redis Cloud Essentials subscription, you need to add the index name to the document key as a tag to make sure that the index and the documents are located on the same shard:
-
-```sh
-FT.CREATE database_idx ...
-HSET database_idx {doc}:1 ...
-```
-
-{{< /note >}}
-
 ### Testing the index
 
 Now add some data to this index. Here we add a hash with the key "`doc:1`" and the fields:

@@ -36,12 +36,14 @@ operations, configuring multiple active proxies may cause additional
 latency in operations as the shards and proxies are spread across
 multiple nodes in the cluster.
 
-Note: When the network on a single active proxy becomes the bottleneck,
+{{< note >}}
+When the network on a single active proxy becomes the bottleneck,
 you might also look into enabling the multiple NIC support in RS. With
 nodes that have multiple physical NICs (Network Interface Cards), you
 can configure RS to separate internal and external traffic onto
 independent physical NICs. For more details, refer to [Multi-IP &
 IPv6]({{< relref "/rs/administering/designing-production/networking/multi-ip-ipv6.md" >}}).
+{{< /note >}}
 
 Having multiple proxies for a database can improve RS's ability for fast
 failover in case of proxy and/or node failure. With multiple proxies for
@@ -59,8 +61,10 @@ A database can have one of these proxy policies:
 | All Master Shards | There are multiple proxies that are bound to the database, one on each node that hosts a database master shard. This mode fits most use cases that require multiple proxies. |
 | All Nodes | There are multiple proxies that are bound to the database, one on each node in the cluster, regardless of whether or not there is a shard from this database on the node. This mode should be used only in special cases. |
 
-Note: Manual intervention is also available via the rladmin bind add and
+{{< note >}}
+Manual intervention is also available via the rladmin bind add and
 remove commands.
+{{< /note >}}
 
 ## Database configuration
 
@@ -102,9 +106,11 @@ Master Shards" proxy policy.
 rladmin bind db db1 endpoint 1:1 policy all-master-shards
 ```
 
-Note: you can find the endpoint id for the endpoint argument by running
+{{< note >}}
+You can find the endpoint id for the endpoint argument by running
 *status* command for rladmin. Look for the endpoint id information under
 the *ENDPOINT* section of the output.
+{{< /note >}}
 
 ### Reapply policies after topology changes
 

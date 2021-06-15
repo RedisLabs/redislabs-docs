@@ -5,46 +5,13 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-All data is stored and managed exclusively in either RAM or RAM + Flash
-Memory ([Redis on
-Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}))
-and therefore, is at risk of being lost upon a process or server
-failure. As Redis Enterprise Software is not
-just a caching solution, but also a full-fledged database,
-[persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
-is critical. Therefore, Redis Enterprise Software supports persisting
-data to disk on a per-database basis and in multiple ways.
+All data is stored and managed exclusively in either RAM or RAM + Flash Memory ([Redis on
+Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})) and therefore, is at risk of being lost upon a process or server
+failure. As Redis Enterprise Software is not just a caching solution, but also a full-fledged database, [persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) to disk
+is critical. Therefore, Redis Enterprise Software supports persisting data to disk on a per-database basis and in multiple ways.
 
-There are two options for persistence:
-
-1. Append Only File (AOF) - A continuous writing of data to disk
-1. Snapshot (RDB) - An automatic periodic snapshot writing to disk
-
-Data persistence, via either mechanism, is used solely to rehydrate the
-database if the database process fails for any reason. It is not a
-replacement for backups, but something you do in addition to backups.
-To disable data persistence, select **None**.
-
-AOF writes the latest 'write' commands into a file every second, it 
-resembles a traditional RDBMS's redo log, if you are familiar with that. 
-This file can later be 'replayed' in order to recover from a crash.
-
-A snapshot (RDB) on the other hand, is performed every one, six, or twelve
-hours. The snapshot is a dump of the data and while there is a potential
-of losing up to one hour of data, it is dramatically faster to recover
-from a snapshot compared to AOF recovery.
-
-[Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be
-configured either at time of database creation or by editing an existing
-database's configuration. While the persistence model can be changed
-dynamically, just know that it can take time for your database to switch
-from one persistence model to the other. It depends on what you are
-switching from and to, but also on the size of your database.
-
-Note: For performance reasons, if you are going to be using AOF, it is
-highly recommended to make sure replication is enabled for that database
-as well. When these two features are enabled, persistence is
-performed on the database slave and does not impact performance on the master.
+[Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be configured either at time of database creation or by editing an existing
+database's configuration. While the persistence model can be changed dynamically, just know that it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
 
 ## Options for configuring data persistence
 
@@ -59,12 +26,35 @@ There are six options for persistence in Redis Enterprise Software:
 |  Snapshot every 6 hours | A snapshot of the database is created every 6 hours. |
 |  Snapshot every 12 hours | A snapshot of the database is created every 12 hours. |
 
-The first thing you need to do is determine if you even need
-persistence. Persistence is used to recover from a catastrophic failure,
-so make sure that you need to incur the overhead of persistence before
-you select it. If the database is being used as a cache, then you may
-not need persistence. If you do need persistence, then you need to
-identify which is the best type for your use case.
+## Selecting a persistence strategy
+
+When selecting your persistence strategy, you should take into account your tolerance for data loss and performance needs. There will always be tradeoffs between the two.
+The fsync() system call syncs data from file buffers to disk. You can configure how often Redis performs an fsync() to most effectively make tradeoffs between performance and durability for your use case.
+Redis supports three fsync policies: every write, every second, and disabled. 
+
+Redis also allows snapshots through RDB files for persistence. Within Redis Enterprise, you can configure both snapshots and fsync policies. 
+
+For any high availibility needs, replication may also be used to further reduce any risk of data loss and is highly reccomended. 
+
+**For use cases where data loss has a high cost:**
+
+1. Append only file (AOF) - Fsync every everywrite - Redis Enterprise sets the open-source Redis directive appendfsync always.  With this policy, Redis will wait for the write and the fsync to complete prior to sending an acknowledgement to the client that the data has written. This introduces the performance overhead of the fsync in addition to the execution of the command. The fsync policy always favors durability over performance and should be used when there is a high cost for data loss.
+
+**For use cases where data loss is tolerable only limitedly:**
+
+1. Append only file (AOF) - Fsync every 1 sec - Redis will fsync any newly written data every second. This policy balances performance and durability and should be used when minimal data loss is acceptable in the event of a failure. This is the default Redis policy. This policy could result in between 1 and 2 seconds worth of data loss but on average this will be closer to one second.
+
+{{< note >}}
+For performance reasons, if you are going to be using AOF, it is highly recommended to make sure replication is enabled for that database as well. When these two features are enabled, persistence is
+performed on the database slave and does not impact performance on the master.
+{{< /note >}}
+
+**For use cases where data loss is tolerable or recoverable for extended periods of time:**
+
+1. Snapshot, every 1 hour - Sets a full backup every 1 hour.
+1. Snapshot, every 6 hour - Sets a full backup every 6 hours.
+1. Snapshot, every 12 hour - Sets a full backup every 12 hours.
+1. None - Does not backup or persist data at all.
 
 ## Append only file (AOF) vs snapshot (RDB)
 
@@ -79,7 +69,18 @@ two:
 |  Slower time to recover (Larger files) | Faster recovery time |
 |  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
 
-## Data persistence and Redis on Flash
+## Configuring persistence for your database
+
+1. In **databases**, either:
+        - Click **Add** (+) to create a new database.
+        - Click on the database that you want to configure and at the bottom of the page click edit.
+1. Navigate to Persistence
+1. Select your database persistence option
+1. Select save or update
+
+{{< video "/images/rs/persistence.mp4" "Persistence" >}}
+
+## Data Persistence and Redis on Flash
 
 If you are enabling data persistence for databases running on Redis
 Enterprise Flash, by default both master and slave shards are
@@ -102,5 +103,5 @@ case, you can disable data-persistence on the master shards using the
 following *rladmin* command:
 
 ```sh
-rladmin tune db db: master_persistence disabled
+rladmin tune db <database_ID_or_name> master_persistence disabled
 ```
