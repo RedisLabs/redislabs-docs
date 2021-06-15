@@ -1,5 +1,6 @@
 ---
 Title: Create a database
+linkTitle: Create database
 description:
 weight: 10
 alwaysopen: false
