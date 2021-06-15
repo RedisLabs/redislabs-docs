@@ -8,7 +8,9 @@ linktitle: "Databases"
 aliases: 
 ---
 
-Databases are the heart of any Redis Enterprise Cloud subscription.  Here's how to perform a variety of tasks:
+Databases are the heart of any Redis Enterprise Cloud subscription.  
+
+Here's how to perform a variety of tasks:
 
 ## Common database tasks
 
