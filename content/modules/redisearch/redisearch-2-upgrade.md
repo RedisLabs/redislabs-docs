@@ -87,9 +87,8 @@ The `add-prefix` option is only recommended when you want to index all of the ha
         ```
 
     1. Stop the processes that are sending requests to the source database so all of the data gets synchronized to the destination database.
-    1. Verify that the replication is complete by comparing the number of indexed documents on FT.INFO on both source and destination database.
+    1. Verify that the replication is complete by comparing the number of indexed documents on FT.INFO on both source and destination databases until the number of indexed documents is the same in the source and destination databases.
     1. When the status field is `st_in_sync` then you can press **Ctrl-C** to cancel the synchronization process.
     1. Press **Q** to quit the `RediSearch_Syncer.py`.
 
 You can now redirect your database connections to the database with RediSearch 2.x.
-
