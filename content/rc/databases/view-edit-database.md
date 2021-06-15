@@ -9,7 +9,7 @@ aliases: /rc/administration/setup-and-editing/viewing-editing-database/
         /rc/administration/setup/edit-database/
         /rc/administration/setup/edit-database.md
 ---
-To view the details of a database, select it from the database list:
+To view the details of a database:
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
@@ -25,6 +25,8 @@ The **Database** screen lets you review:
 - Configuration details of a database
 - Graphs showing performance metrics
 - Recent activity via a "slowlog"
+
+To change database settings, see [Edit database details](#edit-database-details),
 
 ## Configuration details tab
 
@@ -129,15 +131,15 @@ Here, you can:
 
     When you choose this action, you're asked to confirm.
 
-    {{<image filename="images/rc/database-delete-dialog.png" alt="The Delete database confirmation dialog confirms your decision to delete a database." >}}{{< /image >}}
+    {{<image filename="images/rc/database-delete-confirm-dialog.png" alt="The Delete database confirmation dialog confirms your decision to delete a database." >}}{{< /image >}}
 
     Databases must be active and empty before they can be deleted.  To learn more, see [Delete a database]({{< relref "/rc/databases/delete-database.md" >}}).
 
 - Import data into the database.
 
-    When you choose this action, you're asked to specify the source aand location of the data to import
+    When you choose this action, you're asked to specify the source and location of the data to import
 
-    {{<image filename="images/rc/database-delete-dialog.png" alt="The Delete database confirmation dialog confirms your decision to delete a database." >}}{{< /image >}}
+    {{<image filename="images/rc/database-import-dialog.png" alt="The Import data dialog helps you import data into a database." >}}{{< /image >}}
 
     To learn more, see [Import data]({{< relref "/rc/databases/import-data.md" >}}).
 
@@ -151,15 +153,15 @@ The **View Database** screen also has tabs that let you view:
 
 - **Slowlog**: a log showing recent [slow queries](https://redis.io/commands/slowlog) run against your database.  The log displays when the action started, the duration, the complexity of the operation, and any parameters passed to the operation.
 
-## Edit a database
+## Edit database details
 
-Use the **Edit database** button to change a database.
+Use the **Edit database** button to edit database details.
 
 {{<image filename="images/rc/button-database-edit.png" alt="The Edit database button lets you change selected database properties." >}}{{< /image >}}
 
-When you edit a database, certain fields cannot be updated, especially those that might lead to data loss.
+Because databases exist within the context of a deployment, certain fields cannot be updated, especially those that might lead to data loss.
 
-You can change the following settings:
+Here's what you can change: 
 
 | Section | Setting | Comments |
 |:-----------|:----------|:---------|
