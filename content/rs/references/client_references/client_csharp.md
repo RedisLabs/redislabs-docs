@@ -1,61 +1,216 @@
 ---
-Title: Using Redis with .Net C#
+Title: Using Redis with .NET
 description:
 weight:
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis with C# you need a C# Redis client. In following sections, we demonstrate the use of [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis), General purpose Redis client. Additional C# clients for Redis can be found under the [C# section](http://redis.io/clients#c) of the Redis Clients page.
+In order to use Redis in .NET, you need a .NET Redis client. This article shows how to use [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis), a general purpose Redis client.  More .NET Redis clients can be found in the [C# section](https://redis.io/clients#c-sharp) of the Redis Clients page.
 
 ## Installing StackExchange.Redis
 
-StackExchange.Redis' installation instructions are given in the ["Installation" section](https://stackexchange.github.io/StackExchange.Redis/) of its documentation page. It can be installed via the nuget package manager console with the following command:
+There are several ways to install this package including:
 
-    PM> Install-Package StackExchange.Redis
+1. With the [.NET CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/):
+```sh
+dotnet add package StackExchange.Redis
+```
+2. with the [package manager console](https://nuget-tutorial.net/en/tutorial/100009/package-manager-console):
+```sh
+`PM> Install-Package StackExchange.Redis`
+```
+3. With the [NuGet GUI](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio) in Visual Studio
 
 ## Opening a Connection to Redis Using StackExchange.Redis
 
-The following code creates a connection to Redis using StackExchange.Redis:
+The following code creates a connection to Redis using StackExchange.Redis in the context of a console application:
 
-    using StackExchange.Redis;
+```csharp
+using StackExchange.Redis;
+using System;
+using System.Threading.Tasks;
+
+namespace ReferenceConsoleRedisApp
+{
+    class Program
+    {
+        static readonly ConnectionMultiplexer redis = ConnectionMultiplexer.Connect(
+            new ConfigurationOptions{
+                EndPoints = {"localhost:6379"}                
+            });
+        static async Task Main(string[] args)
+        {
+            var db = redis.GetDatabase();
+            var pong = await db.PingAsync();
+            Console.WriteLine(pong);
+        }
+    }
+}
+
+```
+
+The above example assumes that you have a Redis Server running locally.
+
+To configure the connection to your environment, adjust the parameters in the [ConfigurationOptions](https://stackexchange.github.io/StackExchange.Redis/Configuration) object appropriately. For the remainder of the examples, the configuration will simply be `localhost`.
+
+## Connection Pooling with StackExchange.Redis
+
+StackExchange.Redis does not support conventional connection pooling.  We recommend sharing and reusing the ConnectionMultiplexer object. The ConnectionMultiplexer object should not be created for each operation.  Instead, create an instance at the beginning and then reuse the object throughout your process. ConnectionMultiplexer is thread-safe so it can be safely shared between threads. For more information, see the  [Basics document](https://stackexchange.github.io/StackExchange.Redis/Basics).
+
+## Dependency Injection of the ConnectionMultiplexer
+
+As the [`ConnectionMultiplexer`](https://stackexchange.github.io/StackExchange.Redis/Basics) must be shared and reused within a runtime, it's recommended that you use [dependency injection](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection) to pass it where it's needed. There's a few flavors of dependency injection depending on what you're using.
+
+### ASP.NET Core 
+
+A single [`ConnectionMultiplexer`](https://stackexchange.github.io/StackExchange.Redis/Basics) instance should be shared throughout the runtime. Use the [`AddSingleton`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions.addsingleton?view=dotnet-plat-ext-5.0) method of [`IServiceCollection`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection?view=dotnet-plat-ext-5.0) to inject your instance as a dependency in.NET Core when configuring your app's services in `Startup.cs`:
+
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    //Configure other services up here
+    var multiplexer = ConnectionMultiplexer.Connect("localhost");
+    services.AddSingleton<IConnectionMultiplexer>(multiplexer);
+}
+```
+
+Once the service is registered, you can inject it into anything that allows dependency injection, such as MVC Controllers, API Controllers, Blazor Server Components, and more.  Simply hand the service to the appropriate controller.  Here's how to pass it to a `RedisController` instance:
+
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class RedisController : ControllerBase
+{
+    private readonly IConnectionMultiplexer _redis;
     
-    readonly ConnectionMultiplexer muxer = ConnectionMultiplexer.Connect("hostname:port,password=password");
-    IDatabase conn = muxer.GetDatabase();
+    public RedisController(IConnectionMultiplexer redis)
+    {
+        _redis = redis;
+    }
 
-To adapt this example to your code, make sure that you replace the following values with those of your database:
+    [HttpGet("foo")]
+    public async Task<IActionResult> Foo()
+    {
+        var db = _redis.GetDatabase();
+        var foo = await db.StringGetAsync("foo");
+        return Ok(foo.ToString());
+    }
+}
+```
 
-- In line 1, the first part of the string argument to `Connect` should be your database's endpoint
-- In line 1, the second part of the string argument to `Connect` should be your database's password
+### Azure Functions
 
-## Connection pooling with StackExchange.Redis
+There are two types of Azure functions to consider [in-process](https://docs.microsoft.com/en-us/azure/azure-functions/functions-dotnet-class-library) and [out-of-process](https://docs.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide). Both handle dependency injection differently.
 
-While StackExchange.Redis does not provide direct means for conventional connection pooling, we recommend you **share and reuse** the ConnectionMultiplexer object. The ConnectionMultiplexer object should not be created per operation - it is to be created only once at the beginning and reused for the duration of the run. ConnectionMultiplexer is thread-safe so it can be safely shared between threads. For more information, refer to StackExchange.Redis’ [Basic Usage document](https://stackexchange.github.io/StackExchange.Redis/Basics).
+#### In-Process Azure Functions
+
+In-process Azure Functions handle dependency injection similarly to ASP.NET Core. You:
+1. Create a `Startup.cs` file
+2. Extend `FunctionStartup`
+3. Override the `Configure` method
+4. Add the multiplexer as a Singleton service for the function.
+
+
+
+```csharp
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+using StackExchange.Redis;
+[assembly: FunctionsStartup(typeof(MyNamespace.Startup))]
+
+namespace MyNamespace
+{
+    public class Startup : FunctionsStartup
+    {
+        public override void Configure(IFunctionsHostBuilder builder)
+        {
+            var muxer = ConnectionMultiplexer.Connect("localhost");
+            builder.Services.AddSingleton<IConnectionMultiplexer>(muxer);            
+        }
+    }
+}
+```
+
+#### Out-Of-Process Azure Functions
+
+Unlike in-process functions, out-of-process functions handle dependency injection in the `Main` method of `Program` class.  Modify the `HostBuilder` build pipeline to call `ConfigureServices` and add a properly to configure [`ConnectionMultiplexer`](https://stackexchange.github.io/StackExchange.Redis/Basics). Here's an example:
+
+```csharp
+public static void Main()
+{
+    var host = new HostBuilder()
+        .ConfigureFunctionsWorkerDefaults()
+        .ConfigureServices(s=>s.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost"))) // add this line
+        .Build();
+
+    host.Run();
+}
+```
+
+In both instances, you can pull out the Multiplexer by injecting it into the constructor of the class housing your functions:
+
+
+```csharp
+public class RedisTrigger
+{
+    private readonly IConnectionMultiplexer _redis;
+
+    public RedisTrigger(IConnectionMultiplexer redis){
+        _redis = redis;
+    }
+    [FunctionName("RedisTrigger")]
+    public async Task<IActionResult> Foo(
+        [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
+        ILogger log)
+    {
+        var db = _redis.GetDatabase();
+        var bar = await db.StringGetAsync("foo");
+
+        return new OkObjectResult(bar.ToString());
+    }
+}
+```
 
 ## Using SSL and StackExchange.Redis
 
-StackExchange.Redis is the first Redis client that natively supported SSL. The following code opens an SSL connection:
+StackExchange.Redis was the first Redis client to natively support TLS, as shown here:
 
-    using StackExchange.Redis;
-    using System.Security.Cryptography.X509Certificates;
-    using System.Net.Security;
+```csharp
+using StackExchange.Redis;
+using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 
-    var options = new ConfigurationOptions
+namespace ConnectToRedisWithTls
+{
+    class Program
     {
-        EndPoints = { "hostname:port" },
-        Password = "password",
-        Ssl = true
-    };
-    options.CertificateSelection += delegate {
-                return new X509Certificate2("d:\path\filname.pfx", "");
+
+        const string PATH_TO_CERT_FILE = "c:\\PATH\\TO\\CERT.pfx";        
+
+        static async Task Main(string[] args)
+        {
+            var configurationOptions = new ConfigurationOptions
+            {
+                EndPoints = { "localhost:6379" },
+                Ssl = true
             };
+            configurationOptions.CertificateSelection += delegate {
+                var cert = new X509Certificate2(PATH_TO_CERT_FILE, "");
+                return cert;
+            };
+            var redis = await ConnectionMultiplexer.ConnectAsync(configurationOptions);
+            Console.WriteLine(redis.GetDatabase().Ping());
+        }
+    }
+}
+```
+- Modify the `PATH_TO_CERT_FILE` to match the path to your certificate
+- Modify the `Endpoints` setting to point at your endpoint(s)
+- If necessary, add a `Password` to the Configuration options
 
-    readonly ConnectionMultiplexer muxer = ConnectionMultiplexer.Connect(options);
-    IDatabase conn = muxer.GetDatabase();
-
-- In line 6, the first part of the string argument should be your database's endpoint or IP address
-- In line 6, the second part of the string argument should be your database's port
-- In line 7, the string argument should be your database's password
-- In line 11, replace with the path to your .pfx file
+To learn how to run Redis Server with TLS enabled, see [TLS Support](https://redis.io/topics/encryption).
 
 ### Converting certificates from .key to .pfx format
 
@@ -71,20 +226,3 @@ Sometimes you need to use a 3rd-party library, such as when running a session on
 
 - `SERedis_ClientCertPfxPath should` be set to the path of your .pfx file
 - `SERedis_ClientCertPassword` should be set to the password of your .pfx file
-
-## Reading and writing data with StackExchange.Redis
-
-Once connected to Redis, you can start reading and writing data. The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
-
-    ///<summary>
-    ///open a connection to Redis
-    ///</summary>
-    ...
-
-    conn.StringSet("foo", "bar");
-    var value = conn.StringGet("foo");
-    Console.WriteLine(value);
-
-The output of the above code should be:
-
-    bar
