@@ -5,7 +5,7 @@ weight:
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis in .NET you need a .NET Redis client. In following sections, we demonstrate the use of [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis), a general purpose Redis client. Additional .NET clients for Redis can be found under the [C# section](https://redis.io/clients#c-sharp) of the Redis Clients page.
+In order to use Redis in .NET, you need a .NET Redis client. This article shows how to use [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis), a general purpose Redis client.  More .NET Redis clients can be found in the [C# section](https://redis.io/clients#c-sharp) of the Redis Clients page.
 
 ## Installing StackExchange.Redis
 
@@ -23,7 +23,7 @@ dotnet add package StackExchange.Redis
 
 ## Opening a Connection to Redis Using StackExchange.Redis
 
-The following code creates a connection to Redis using StackExchange.Redis in the context of a trivial console application:
+The following code creates a connection to Redis using StackExchange.Redis in the context of a console application:
 
 ```csharp
 using StackExchange.Redis;
@@ -51,7 +51,7 @@ namespace ReferenceConsoleRedisApp
 
 The above example assumes that you have a Redis Server running locally.
 
-To configure the connection to your environment, adjust the parameters in the [ConfigurationOptions](https://stackexchange.github.io/StackExchange.Redis/Configuration) object appropriately. For the remainder of the examples the configuration will simply be `localhost`.
+To configure the connection to your environment, adjust the parameters in the [ConfigurationOptions](https://stackexchange.github.io/StackExchange.Redis/Configuration) object appropriately. For the remainder of the examples, the configuration will simply be `localhost`.
 
 ## Connection Pooling with StackExchange.Redis
 
@@ -74,7 +74,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-With the service registered, you can then inject the service into anything that allows dependency injection e.g. MVC Controllers, API Controllers, Blazor Server Components etc. . . By simply handing it to the constructor of that type, for example, if we wanted to pass it to a `RedisController` we would do so with the following:
+Once the service is registered, you can inject it into anything that allows dependency injection, such as MVC Controllers, API Controllers, Blazor Server Components, and more.  Simply hand the service to the appropriate controller.  Here's how to pass it to a `RedisController` instance:
 
 ```csharp
 [Route("api/[controller]")]
@@ -104,7 +104,12 @@ There are two types of Azure functions to consider [in-process](https://docs.mic
 
 #### In-Process Azure Functions
 
-In-process Azure Functions handle dependency injection very similarly to how it's handled in ASP.NET Core. Create a Startup.cs file, and have the class extend `FunctionStartup`, override the `Configure` method, an add the multiplexer as a Singleton service for the function:
+In-process Azure Functions handle dependency injection similarly to ASP.NET Core. You:
+1. Create a `Startup.cs` file
+2. Extend `FunctionStartup`
+3. Override the `Configure` method
+4. Add the multiplexer as a Singleton service for the function.
+
 
 
 ```csharp
@@ -128,7 +133,7 @@ namespace MyNamespace
 
 #### Out-Of-Process Azure Functions
 
-Out-of-process Functions are newer, unlike in-process functions, dependency injection is handled in the `Main` method of `Program` class, modify the `HostBuilder` build pipeline to add a `ConfigureServices` call, adding a properly configured `ConnectionMultiplexer`. That method should look like: 
+Unlike in-process functions, out-of-process functions handle dependency injection in the `Main` method of `Program` class.  Modify the `HostBuilder` build pipeline to call `ConfigureServices` and add a properly to configure `ConnectionMultiplexer`. Here's an example: 
 
 ```csharp
 public static void Main()
@@ -142,7 +147,7 @@ public static void Main()
 }
 ```
 
-In both instances you can pull out the Multiplexer by injecting it into the constructor of the class housing your functions:
+In both instances, you can pull out the Multiplexer by injecting it into the constructor of the class housing your functions:
 
 
 ```csharp
@@ -168,7 +173,7 @@ public class RedisTrigger
 
 ## Using SSL and StackExchange.Redis
 
-StackExchange.Redis is the first Redis client that natively supported TLS. The following code has the StackExchange Redis Client operate on a TLS connection:
+StackExchange.Redis was the first Redis client to natively support TLS, as shown here:
 
 ```csharp
 using StackExchange.Redis;
@@ -204,7 +209,7 @@ namespace ConnectToRedisWithTls
 - Modify the `Endpoints` setting to point at your endpoint(s)
 - If necessary, add a `Password` to the Configuration options
 
-For information about how to run Redis Server with TLS enabled See the [TLS Support](https://redis.io/topics/encryption) section of the Redis documentation.
+To learn how to run Redis Server with TLS enabled, see [TLS Support](https://redis.io/topics/encryption).
 
 ### Converting certificates from .key to .pfx format
 
