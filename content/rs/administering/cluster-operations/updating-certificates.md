@@ -96,7 +96,7 @@ crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
 {{<note>}}
 - It is required that you run step 2 shortly as possible after step 1, since between the two steps new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).
 - Do not run any other _crdb-cli crdb update_ operations between the two steps.
-- Known limitation: Running step 1 (updating syncer certificate) on versions prior to 6.0.20-81 , will restart the proxy and syncer connections to it to disconnect. Therefore you are advised to schedule the certificate replacement carefully.
+- **Known limitation**: Updating syncer certificate on versions prior to 6.0.20-81 will restart the proxy and syncer connections. We recommend you schedule the certificate replacement carefully. {{</note>}}
 
 
 ## TLS protocol and ciphers
