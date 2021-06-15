@@ -87,7 +87,7 @@ When you upgrade RS, the upgrade process copies the certificates that are on the
 
 ### Update syncer certificates for Active-Active databases
 
-To update your syncer certificate on cluster/s running Active-Active database/s follow the next steps:
+To update your syncer certificate on cluster/s running Active-Active database/s follow these steps:
 **Step 1:** Update your syncer certificate on one or more of the participating clusters using one of the above options (rladmin / API / UI). You can update a single cluster, multiple or all participating clusters.
 **Step 2:** Update the Active-Active database/s configuration by running the following command via the command-line with the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility. Run this once for each Active-Active database that resides on the modified clusters.
 ```text
