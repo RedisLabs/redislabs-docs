@@ -40,5 +40,4 @@ that version.
 | 5.4 – December 2018                       | December 31, 2020  |
 | 5.2 – June 2018                           | December 31, 2019  |
 
-    {{< note >}} * Release 6.0 EOL has been extended on June 15th, 2021 by 6 months; from November 31, 2021 to May 31, 2022.
-
+    {{< note >}} * On June 15th, 2021, release 6.0 EOL was extended by 6 months; from November 31, 2021 to May 31, 2022.
