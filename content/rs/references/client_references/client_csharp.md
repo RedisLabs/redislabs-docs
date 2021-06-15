@@ -11,15 +11,15 @@ In order to use Redis in .NET, you need a .NET Redis client. This article shows 
 
 There are several ways to install this package including:
 
-1. With the .NET CLI: 
+1. With the [.NET CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/):
 ```sh
 dotnet add package StackExchange.Redis
 ```
-2. with the package manager console: 
+2. with the [package manager console](https://nuget-tutorial.net/en/tutorial/100009/package-manager-console):
 ```sh
 `PM> Install-Package StackExchange.Redis`
 ```
-3. With the NuGet GUI in Visual Studio   
+3. With the [NuGet GUI](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio) in Visual Studio
 
 ## Opening a Connection to Redis Using StackExchange.Redis
 
@@ -55,15 +55,16 @@ To configure the connection to your environment, adjust the parameters in the [C
 
 ## Connection Pooling with StackExchange.Redis
 
-While StackExchange.Redis does not provide direct means for conventional connection pooling, we recommend you **share and reuse** the ConnectionMultiplexer object. The ConnectionMultiplexer object should not be created per operation - it is to be created only once at the beginning and reused for the duration of the run. ConnectionMultiplexer is thread-safe so it can be safely shared between threads. For more information, refer to StackExchange.Redis’s [Basic Usage document](https://stackexchange.github.io/StackExchange.Redis/Basics).
+StackExchange.Redis does not support conventional connection pooling.  We recommend sharing and reusing the ConnectionMultiplexer object. The ConnectionMultiplexer object should not be created for each operation.  Instead, create an instance at the beginning and then reuse the object throughout your process. ConnectionMultiplexer is thread-safe so it can be safely shared between threads. For more information, see the  [Basics document](https://stackexchange.github.io/StackExchange.Redis/Basics).
 
 ## Dependency Injection of the ConnectionMultiplexer
 
-As the `ConnectionMultiplexer` must be shared and reused within a runtime, it's recommended that you use [dependency injection](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection) to pass it where it's needed. There's a few flavors of dependency injection depending on what you're using.
+As the [`ConnectionMultiplexer`](https://stackexchange.github.io/StackExchange.Redis/Basics) must be shared and reused within a runtime, it's recommended that you use [dependency injection](https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection) to pass it where it's needed. There's a few flavors of dependency injection depending on what you're using.
 
 ### ASP.NET Core 
 
-A single `ConnectionMultiplexer` instance should be shared throughout the runtime, therefore the most appropriate pattern to use for dependency injection in .NET Core is to inject it as a singleton. In `Startup.cs`, add the connection logic to your `ConfigureServices` method, e.g.
+A single [`ConnectionMultiplexer`](https://stackexchange.github.io/StackExchange.Redis/Basics) instance should be shared throughout the runtime. Use the [`AddSingleton`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions.addsingleton?view=dotnet-plat-ext-5.0) method of [`IServiceCollection`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.extensions.dependencyinjection.iservicecollection?view=dotnet-plat-ext-5.0) to inject your instance as a dependency in.NET Core when configuring your app's services in `Startup.cs`:
+
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -133,7 +134,7 @@ namespace MyNamespace
 
 #### Out-Of-Process Azure Functions
 
-Unlike in-process functions, out-of-process functions handle dependency injection in the `Main` method of `Program` class.  Modify the `HostBuilder` build pipeline to call `ConfigureServices` and add a properly to configure `ConnectionMultiplexer`. Here's an example: 
+Unlike in-process functions, out-of-process functions handle dependency injection in the `Main` method of `Program` class.  Modify the `HostBuilder` build pipeline to call `ConfigureServices` and add a properly to configure [`ConnectionMultiplexer`](https://stackexchange.github.io/StackExchange.Redis/Basics). Here's an example:
 
 ```csharp
 public static void Main()
