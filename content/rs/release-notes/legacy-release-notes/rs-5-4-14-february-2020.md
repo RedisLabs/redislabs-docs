@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Software Release Notes 5.4.14 (February 2020)
+linkTitle: 5.4.14 (February 2020)
 description: 
 weight: 82
 alwaysopen: false

@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Software Release Notes 6.0.8 (September 2020)
+linkTitle: 6.0.8 (September 2020)
 description:
 weight: 79
 alwaysopen: false

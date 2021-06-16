@@ -1,5 +1,6 @@
 ---
 Title: RLEC 4.4 Release Notes (December 2016)
+linkTitle: 4.4 (December 2016)
 description:
 weight: 95
 alwaysopen: false
