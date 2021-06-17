@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Software Release Notes 5.4.10 (December 2019)
+linkTitle: 5.4.10 (December 2019)
 description: 
 weight: 83
 alwaysopen: false

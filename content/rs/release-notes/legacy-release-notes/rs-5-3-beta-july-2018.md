@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Software Release Notes 5.3 BETA (July 2018)
+linkTitle: 5.3 beta(July 2018)
 description:
 weight: 90
 alwaysopen: false

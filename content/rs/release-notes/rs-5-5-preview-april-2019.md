@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Software Release Notes 5.5 Preview (April 2019)
+linkTitle: 5.5 Preview (April 2019)
 description:
 weight: 87
 alwaysopen: false
