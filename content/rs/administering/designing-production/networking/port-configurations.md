@@ -79,4 +79,4 @@ After you disable HTTP support, traffic sent to the unencrypted API endpoint is 
 
 ## HTTP to HTTPS redirection
 Starting with version 6.0.12, the automatic HTTP to HTTPS redirection is disabled.
-To poll metrics from the metrics_exporter, or to access the web UI (the CM), use HTTPS in your request, as HTTP requests won't be automatically redirected to HTTPS for those services. 
+To poll metrics from the `metrics_exporter` or to access the admin console, use HTTPS in your request. HTTP requests won't be automatically redirected to HTTPS for those services. 
