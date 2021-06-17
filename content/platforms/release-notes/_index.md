@@ -5,7 +5,7 @@ weight: 90
 alwaysopen: false
 categories: ["Platforms"]
 ---
-# Redis Enterprise Kubernetes Operator Release Notes
+## Redis Enterprise Software Kubernetes Operator Release Notes
 
 - [6.0.12-5 (February 2021)]({{<relref "/platforms/release-notes/k8s-6-0-12-5-2021-02.md">}})
 - [6.0.8-20 (December 2020)]({{<relref "/platforms/release-notes/k8s-6-0-8-20-2020-12.md">}})
