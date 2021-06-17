@@ -1,14 +1,15 @@
 ---
 Title: Redis Cloud shared responsibility model
+linkTitle: Shared responsibility model
 description:
 weight: 11
 alwaysopen: false
 categories: ["RC"]
 ---
-The security of all Redis Cloud deployments is a shared responsibility. Redis Labs, the public cloud providers (AWS, GCP, and Azure), and our customers all
+The security of all Redis Enterprise Cloud deployments is a shared responsibility. Redis Labs, the public cloud providers (Amazon Web Services \[AWS], Google Cloud Platform \[GCP], and Microsoft Azure), and our customers all
 take part in ensuring the security of these deployments.
 
-## Redis Labs' responsibility
+## Redis Labs responsibility
 
 Redis Enterprise Cloud's offerings are managed by Redis Labs and deployed on AWS, Azure, and Google Cloud infrastructure.
 
@@ -32,4 +33,4 @@ Customers are responsible for the security configurations in their Redis databas
 
 Customers are also responsible for the applications built on Redis and the data they store in Redis. Customers determine the cloud provider, region, and availability zone of their deployments.
 
-Customers understand that on Redis Cloud Essentials, their infrastructure is multi-tenant. In Pro and Ultimate, their infrastructure is single-tenant and dedicated to one specific customer.
+Customers understand that Redis Enterprise Cloud Fixed plans (including Free) are deployed to multi-tenant  infrastructure.  Flexible and Annual plans are deployed to single-tenant infrastructure dedicated to one specific customer.
