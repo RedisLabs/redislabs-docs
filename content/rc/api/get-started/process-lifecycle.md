@@ -6,26 +6,27 @@ weight: 60
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/concepts/provisioning-lifecycle/
+         /rv/api/concepts/provisioning-lifecycle.md
+         /rv/api/how-to/enable-your-account-to-use-api/
+         /rv/api/how-to/enable-your-account-to-use-api.md
+         /rc/api/how-to/enable-your-account-to-use-api/
+         /rc/api/how-to/enable-your-account-to-use-api.md
          /rc/api/concepts/provisioning-lifecycle/
          /rc/api/concepts/provisioning-lifecycle.md
          /rc/api/get-started/process-lifecycle.md
          /rc/api/get-started/process-lifecycle/
 ---
-The Redis Enterprise Cloud REST API can operate on multiple resources, including multiple servers, services and related infrastructure.
-
-These operations can create, update, and delete a variety of entites, including subscriptions, databases, cloud accounts, and more.
-
-Many operations are not instantaneous; they take time to process and to deploy.
+Flexible and Annual Redis Enterprise Cloud [subscriptions]({{< relref "/rc/subscriptions/" >}}) can leverage a RESTful API that permits operations against a variety of resources, including servers, services, and related infrastructure.
 
 {{< note >}}
-The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+The REST API is not supported for Fixed or Free subscriptions.
 {{< /note >}}
 
-These operations are broken into tasks that run asychronously; that is, they run in the background so that you can continue working with resources that aren't being modified.
+[Once it's enabled]({{< relref "rc/api/get-started/enable-the-api.md" >}}), you can use the REST API to create, update, and delete sybscriptions, databases, and other entities.
 
-When you make a request that kicks off a task, the response object provides a task identifier that you can use to track a task's progress through the asynchonous lifecycle.
+API operations run asynchronously, which means that provisioning occurs in the background.  When you submit a request, a background process starts working on it.  The respose object includes an ID that lets you determine the status of the background process as it performs its work.
 
-Not every REST API call is asynchronous.  Operations that do not create or modify resources run sychronously.  For example, most GET operations are sychronous.
+For operations that do not create or modify resources (such as most GET operations), the API is sychronous; that is, the response object reports the results of the request.
 
 Asynchronous operations have two main phases: processing and provisioning.  A resource is not available until both phases are complete.
 
@@ -37,8 +38,7 @@ During this phase, the request is received, evaluated, planned and executed.
 
 ### Use tasks to track requests
 
-When you request an asynchronous operation, including CREATE, UPDATE and DELETE operations, the response to the API REST request includes a `taskId`.
-The `taskId` is a unique identifier that allows you to track the progress of the requested operation and get information on its state.
+Many operations are asychronous, including CREATE, UPDATE, and DELETE operations.  The response objects for such operations include a provide a `taskId` identifier that lets you track the progress of the underlying operation.
 
 You can query the `taskId` to track the state of a specific task:
 
@@ -46,7 +46,7 @@ You can query the `taskId` to track the state of a specific task:
 {{% embed-code "rv/api/20-get-task-id.sh" %}}
 ```
 
-In this example, the `$TASK_ID` variable is set to hold the value of `taskId`. For example:
+In this example, the `$TASK_ID` variable includes the `taskId` value.
 
 ```bash
 TASK_ID=166d7f69-f35b-41ed-9128-7d753b642d63
