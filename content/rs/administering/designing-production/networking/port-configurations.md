@@ -76,3 +76,7 @@ rladmin cluster config http_support disabled
 
 After you disable HTTP support, traffic sent to the unencrypted API endpoint is blocked.
 
+
+## HTTP to HTTPS redirection
+Starting version 6.0.12, the automatic HTTP to HTTPS redirection is disabled.
+To pull metrics from the metrics_exporter, or to access the web UI (the CM), use HTTPS in your request, as HTTP requests won't be automatically redirected to HTTPS for those services. 
