@@ -1,5 +1,5 @@
 ---
-Title: Back up database data
+Title: Back up a database
 description:
 weight: 40
 alwaysopen: false
@@ -13,7 +13,7 @@ aliases: [ "/rv/administration/configure/backups/",
            "/rc/databases/backups/" ]
 ---
 
-The back up process for Redis Enterprise Cloud data depends on your plan:
+The backup process for Redis Enterprise Cloud databases depends on your plan:
 
 - Flexible and Annual can use the **Backup** icon on the **View Database** screen or schedule regular backups.
 
