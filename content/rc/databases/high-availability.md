@@ -21,7 +21,9 @@ Your replication options depend on which subscription plan you're using:
 
 - _Free_ plans do not support replication.
 - _Fixed_ plans allow you to choose between no replication, single-zone replication or multi-zone replication during the subscription creation. There is no option to upgrade or downgrade between signle-zone to multi-zone subscirption. There is no option to turn-off replication on the multi-zone fixed subscirption.
-- _Flexible_ plans allow multi-zone subscription by default or signle-zone (both types allow to turn of replication completely, but do not allow upgrade or downgrade between single and multi-az subscriptions). 
+- _Flexible_ plans allow multi-zone or single-zone subscriptions by default.  Each type allows replication to be disabled entirely.  
+
+   Once the subscription is created, though, you cannot switch zone settings. 
 
 To learn more about Redis Enterprise Cloud subscriptions, see [Manage subscriptions]({{<relref "/rc/subscriptions/_index.md">}}).
 
