@@ -51,12 +51,7 @@ Once database clustering has been enabled and the number of shards has
 been set, you cannot disable database clustering or reduce the number of
 shards. You can only increase the number of shards by a multiple of the
 current number of shards. For example, if the current number of shards
-was 3, you can increase to 6, 9, 12 and so on. An exception to this is a
-RediSearch enabled database. Once you configure the number of
-shards, you can no longer change that value. If you need to scale your
-RediSearch enabled database, you must create a new database
-at the new required size and replicate the current database to the new
-one.
+was 3, you can increase to 6, 9, 12 and so on. 
 
 ## Supported hashing policies
 
