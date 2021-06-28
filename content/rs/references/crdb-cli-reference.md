@@ -251,6 +251,9 @@ When you add an instance to an Active-Active database, you must specify:
 |`crdb-guid <CRDB-GUID>`| string| The ID of the Active-Active database that you want to add the instance to|
 |`instance fqdn=<cluster_fqdn>,username=<username>,password=<password>`| strings| The connection information for the participating cluster that will host the new instance|
 
+The `crdb add-instance` command supports several additional options:
+<ADD OPTIONS>
+
 ### Removing an instance from an Active-Active database {#removing-an-instance-from-an-activeactive-database}
 
 The `remove-instance` command deletes all data from an Active-Active instance, deletes the instance from the participating cluster, and removes the instance from the list of instances for the Active-Active database.
