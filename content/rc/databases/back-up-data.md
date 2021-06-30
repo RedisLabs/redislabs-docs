@@ -21,9 +21,9 @@ The backup options for Redis Enterprise Cloud databases depend on your plan:
 
 - Free plans do not back up automatically.
 
-Backups are saved to pre-defined storage locations available to your subscription.  Cloud provider storage services need to be deployed to the same provider and region that your subscription is deployed to.  In addition, access must be granted to the Redis Enterprise Cloud account.
+Backups are saved to pre-defined storage locations available to your subscription.
 
-Backup locations need to be available before you enable database backups.  To learn more, see [Set up backup locations](#set-up-backup-locations)
+Backup locations need to be available before you enable database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations)
 
 ## Enable backups
 
@@ -176,13 +176,13 @@ To store your backups on an FTP server, set its **Backup Path** using the follow
 
 Where:
 
-- *protocol*: the server's protocol, can be either ftp or ftps.
+- *protocol*: the server's protocol, can be either `ftp` or `ftps`.
 - *username*: your username, if needed.
 - *password*: your password, if needed.
 - *hostname*: the hostname or IP address of the server.
 - *port*: the port number of the server, if needed.
-- *path*: the backups path, if needed.
+- *path*: the backup path, if needed.
 
-
+The user account needs permission to write files to the server.
 
 
