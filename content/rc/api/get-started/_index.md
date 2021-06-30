@@ -1,7 +1,7 @@
 ---
 Title: Get started with the REST API
 linkTitle: Get started
-description: Describes how Redis Cloud REST API uses keys to authenicate and authorize access.
+description: Describes how Redis Cloud REST API uses keys to authenticate and authorize access.
 weight: 10
 alwaysopen: true
 categories: ["RC"]
