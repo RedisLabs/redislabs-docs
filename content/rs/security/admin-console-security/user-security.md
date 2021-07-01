@@ -157,6 +157,12 @@ To unlock a user account or reset a user password from the CLI, run:
 rladmin cluster reset_password <username>
 ```
 
+To unlock a user account or reset a user passowrd from the REST API, run:
+
+```sh
+curl -k -X PUT -v -H "cache-control: no-cache" -H "content-type: application/json" -u "<administrator_user>:<password>" -d '{"password": "<new_password>"}' https://<RS_server_address>:9443/v1/users/<uid>
+```
+
 ### Session timeout
 
 The Redis Enterprise admin console supports session timeouts. By default, users are automatically logged out after 15 minutes of inactivity.
