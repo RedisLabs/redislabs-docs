@@ -17,7 +17,7 @@ The backup options for Redis Enterprise Cloud databases depend on your plan:
 
 - Flexible and Annual subscriptions can perform backups on-demand and schedule daily backups that occur during a set hour.
 
-- Paid Fixed plans run can perform backups on-demand and schedule backups that occur every 24 hours.  
+- Paid Fixed plans can perform backups on-demand and schedule backups that occur every 24 hours.  
 
 - Free plans do not back up automatically.
 
