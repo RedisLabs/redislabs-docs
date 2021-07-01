@@ -1,6 +1,45 @@
 # Doc changelog
 
-The docs are updated on a near-daily basis.  Here are some recent highlights:
+The docs are updated regularly; here are some recent highlights:
+
+## June 2021
+
+- Redis Enterprise Software doc updates:
+
+    - Updated [Using Redis with .NET](https://docs.redislabs.com/latest/rs/references/client_references/client_csharp/)  ([PR #1401](https://github.com/RedisLabs/redislabs-docs/pull/1401))
+
+    - Added description of replication backlog to [Update database configuration](https://docs.redislabs.com/latest/rs/administering/database-operations/updating-configurations/) ([PR #1389](https://github.com/RedisLabs/redislabs-docs/pull/1389) and [PR #1395](https://github.com/RedisLabs/redislabs-docs/pull/1395))
+
+    - Cleaned up release note navigation ([PR #1406](https://github.com/RedisLabs/redislabs-docs/pull/1406))
+
+- Redis Enterprise Cloud doc updates:
+
+    - Editorial updates to multiple files, including:
+    
+         - [Quick start]() ([PR #1415](https://github.com/RedisLabs/redislabs-docs/pull/1415))
+         - [System logs]() ([PR #1409](https://github.com/RedisLabs/redislabs-docs/pull/1409))
+         - [Backup data](https://docs.redislabs.com/latest/rc/databases/back-up-data/)  ([PR #1411](https://github.com/RedisLabs/redislabs-docs/pull/1411))
+         - [FAQs](https://docs.redislabs.com/latest/rc/faqs/) ([PR #1409](https://github.com/RedisLabs/redislabs-docs/pull/1409))
+         - and more
+
+    - Continued updating [preview docs](https://docs.redislabs.com/staging/release-rc-new-ui/rc/rc-quickstart/) to reflect the new admin console experience. ([PR #1382](https://github.com/RedisLabs/redislabs-docs/pull/1382) and [PR #1419](https://github.com/RedisLabs/redislabs-docs/pull/1419))
+
+- Platform docs
+
+    - Redis Enterprise for Kubernetes release notes
+    
+        - Added 6.0.20-4 (May 2021) [release notes](https://docs.redislabs.com/latest/platforms/release-notes/k8s-6-0-20-4-2021-05/) ([PR #1398](https://github.com/RedisLabs/redislabs-docs/pull/1398))
+        
+        - Added 5.4.14 (March 2020) [release notes](https://docs.redislabs.com/latest/platforms/release-notes/k8s-5-4-14-2-2020-03/) ([PR #1403](https://github.com/RedisLabs/redislabs-docs/pull/1403))
+
+        - Updated release note navigation ([PR #1405](https://github.com/RedisLabs/redislabs-docs/pull/1405))
+
+    - Resolved navigation issue created when removing an out-of-date Redis Enterprise for Openshift article. ([PR #1384](https://github.com/RedisLabs/redislabs-docs/pull/1384))
+
+- Additional updates to fix typos, missing images, and other glitches
+
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-06-01..2021-06-30)
+
 
 ## May 2021
 
@@ -16,7 +55,7 @@ The docs are updated on a near-daily basis.  Here are some recent highlights:
 
     - Added new article introducing [high availability](https://docs.redislabs.com/latest/rc/databases/high-availability/) ([PR #1371](https://github.com/RedisLabs/redislabs-docs/pull/1371))
 
-    - Updated [Back up data](https://docs.redislabs.com/latest/rc/databases/back-up-data/) article to clarify instructions for Google Cloud Platform ([PR #1348](https://github.com/RedisLabs/redislabs-docs/pull/1348)) 
+    - Updated [data backup](https://docs.redislabs.com/latest/rc/databases/back-up-data/) article to clarify instructions for Google Cloud Platform ([PR #1348](https://github.com/RedisLabs/redislabs-docs/pull/1348)) 
 
     - Created [preview docs](https://docs.redislabs.com/staging/release-rc-new-ui/rc/rc-quickstart/) for updated user experience ([PR #1274](https://github.com/RedisLabs/redislabs-docs/pull/1371))
 
@@ -38,7 +77,7 @@ The docs are updated on a near-daily basis.  Here are some recent highlights:
 
     - Reorganized and simplified the [REST API](https://docs.redislabs.com/latest/rc/api/) docs ([PR #1310](https://github.com/RedisLabs/redislabs-docs/pull/1310))
 
-    - Updated data backup docs for Microsoft Azure ([PR #1341](https://github.com/RedisLabs/redislabs-docs/pull/1341))
+    - Updated [data backup](https://docs.redislabs.com/latest/rc/databases/back-up-data/) article for Microsoft Azure ([PR #1341](https://github.com/RedisLabs/redislabs-docs/pull/1341))
 
 - Additional updates to fix typos, missing images, and other glitches
 
