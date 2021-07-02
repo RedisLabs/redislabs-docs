@@ -1,5 +1,5 @@
 ---
-Title: Data Persistence
+Title: Data persistence
 description:
 weight: $weight
 alwaysopen: false
@@ -8,10 +8,10 @@ aliases: /rv/concepts/data-persistence/
          /rc/concepts/data-persistence-redis-cloud/
 ---
 Redis Cloud supports persisting your data to disk on a per-database basis and in multiple ways.
-Unlike a few cloud provider's Redis offerings,
-Redis Cloud has two options for persistence, Append Only File (AOF) and Snapshot (RDB).
-Data-persistence is always performed over a persistent storage that is attached to the cloud instance (e.g. AWS EBS).
-This makes sure that there is no data lost in case of a node failure event
+Unlike a few cloud providers' Redis offerings,
+Redis Cloud has two options for persistence: Append Only File (AOF) and Snapshot (RDB).
+Data persistence is always performed over a persistent storage that is attached to the cloud instance (e.g. AWS EBS).
+This ensures that there is no data lost in case of a node failure event
 because the new cloud instance will be attached to the existing persistent storage volume.
 
 Data persistence, via AOF or snapshots, is used solely to restore the
@@ -70,4 +70,4 @@ Use these details to determine which options best meet your needs:
 |------------|-----------------|
 | More resource intensive | Less resource intensive |
 | Provides better durability (recover latest point in time) | Less durable |
-| Slower time to recover (Larger files) | Faster recovery time |
+| Slower time to recover (larger files) | Faster recovery time |

@@ -1,5 +1,5 @@
 ---
-Title: Configuring Redis Cloud Resources
+Title: Configuring Redis Cloud resources
 description:
 weight: 30
 alwaysopen: false

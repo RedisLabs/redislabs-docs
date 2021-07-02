@@ -150,9 +150,9 @@ The Redis ACL syntax emphasizes brevity:
 - `@` indicates a command category
 - `~` defines a permitted key pattern
 
-#### Pre-defined permissions
+#### Predefined permissions
 
-Redis Cloud includes three, pre-defined permissions:
+Redis Cloud includes three, predefined permissions:
 
 - Full Access (`+@all ~*`) - All commands are allowed for all keys
 - Not Dangerous (`+@all -@dangerous ~*`) - All commands except for the "dangerous" command category are allowed for all keys
@@ -199,7 +199,7 @@ To assign Redis ACLs to a data access role:
     - Edit a Redis ACL association - Hover over a Redis ACL assignment and click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
     - Create a Redis ACL association - Click ![Add](/images/rc/icon_add.png#no-click "Add").
 1. Select the databases that the Redis ACL applies to.
-1. Select the [Redis ACL](#configuring-redis-acls) that define the access to commands and keys.
+1. Select the [Redis ACL](#configuring-redis-acls) that defines the access to commands and keys.
 1. Click ![Save](/images/rc/icon_save.png#no-click "Save").
 
     You can click ![Add](/images/rc/icon_add.png#no-click "Add") to assign a Redis ACL to another database.

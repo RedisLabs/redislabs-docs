@@ -13,7 +13,7 @@ aliases: /rc/administration/customize-pro/
 
 Flexible subscriptions support any dataset size or throughput.  Pricing is based on your [workload requirements](https://redislabs.com/redis-enterprise-cloud/pricing/) (database size and throughput.)  
 
-When you create a Flexible subscription, a cost estimate is provided to help you understand the impct of your requirements.  
+When you create a Flexible subscription, a cost estimate is provided to help you understand the impact of your requirements.  
 
 ## Create a Flexible subscription
 
@@ -119,7 +119,7 @@ Select **Advanced options** to specify values for the following settings:
 | **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
 | **Protocol** | Set to _Memcached_ database to support the legacy database; otherwise leave at _Redis_ |
 | **Data Persistence** | Defines the data persistence policy, if any. See [Database Persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}) |
-| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2](#), [RedisGraph](#), [RedisBloom](#), or [RedisTimeSeries](#).<br/><br/>If you select RedisSearch 2, you also need to specify a value for **Number of Documents**.  This defines the maximum internal array size ([MAXDOCTABLESIZE](https://oss.redislabs.com/redisearch/Configuring/?_ga=2.155176508.524468484.1612194154-499260268.1607530891#maxdoctablesize)).|
+| **Modules** | Identifies a module used by the database.  Choose from [RedisSearch&nbsp;2]({{< relref "/modules/redisearch/_index.md" >}}), [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}}), [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}}), or [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}}).<br/><br/>If you select RedisSearch 2, you also need to specify a value for **Number of Documents**.  This defines the maximum internal array size ([MAXDOCTABLESIZE](https://oss.redislabs.com/redisearch/Configuring/?_ga=2.155176508.524468484.1612194154-499260268.1607530891#maxdoctablesize)).|
 
 When finished, select **Save Database** to create your database.
 
@@ -144,6 +144,6 @@ Select **Back to Sizing** to make changes or **Create subscription** to create y
 
 {{<image filename="images/rc/button-subscription-create.png" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
 
-Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed make changes.  (The process generally takes 10-15 minutes.)
+Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed to make changes.  (The process generally takes 10-15 minutes.)
 
 Use the **Subscriptions list** to check the status of your subscription.  You will also receive an email when your subscription is ready to use.

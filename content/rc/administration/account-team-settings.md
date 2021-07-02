@@ -1,5 +1,5 @@
 ---
-Title: Account and Team Settings
+Title: Account and team settings
 description:
 weight: 40
 alwaysopen: false
@@ -10,7 +10,7 @@ On this page you can view settings for your Redis Cloud account and team.
 You can also:
 
 - Add or edit your VAT ID
-- Change the account Time Zone
+- Change the account time zone
 - Add a new Relic license key
 - Configure Multi-Factor Authentication (MFA)
 
@@ -22,7 +22,7 @@ you must enter the downloadable Redis Labs CA Certificate from this page.
 ## Team management
 
 To manage the team of people who have access to the account, click on
-the "Team" tab and you will be presented with the current list of team
+the "Team" tab, and you will be presented with the current list of team
 members on this account.
 
 - To add more team members, click ![Add](/images/rs/icon_add.png#no-click "Add").
@@ -58,7 +58,7 @@ The default MFA configuration sends an authentication code by text message to en
 
 To configure MFA for your user account:
 
-1. Log into your account.
+1. Log in to your account.
 2. In the menu, click on your name.
 3. In your user profile, click **Multi-Factor Authentication**.
 4. Click **Activate Now**

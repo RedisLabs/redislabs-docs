@@ -19,7 +19,7 @@ The **Metrics** tab of the **View Database** screen provides a series of graphs 
 
 {{<image filename="images/rc/database-view-metrics.png" width="75%" alt="The Metrics tab of the View Database screen." >}}{{< /image >}}
 
-Performance data provides insights into how your database is being used and how well it is performing.
+Performance data provides insight into how your database is being used and how well it is performing.
 
 The interval scrollbar controls the time period displayed in the graphs.  
 
@@ -31,7 +31,7 @@ When you use the mouse to point to a smaller graph, three things appear:
 
 - A promotion icon pointing left
 - A promotion icon pointing right
-- A summary panel showing the minimum, average, maximum and most recent values displayed in the graph.
+- A summary panel showing the minimum, average, maximum, and most recent values displayed in the graph.
 
 {{<image filename="images/rc/metrics-promote-graphs.png" width="50%" alt="Promoting graphs to primary positions" >}}{{< /image >}}
 
@@ -49,7 +49,7 @@ Several metric graphs are available:
 | Writes/sec | The number of write operations per second |
 | Other cmds/sec | The number of other Redis commands per second |
 | Latency (in milliseconds) | Latency per write operation |
-| Reads Latency (in milliseconds) | The average, min, max and last values are also shown |
+| Reads Latency (in milliseconds) | The average, min, max, and last values are also shown |
 | Writes Latency (in milliseconds) | Latency per write operation |
 | Other Latency (in milliseconds) | Latency per other commands |
 | Used Memory | The amount of memory used by the database |
