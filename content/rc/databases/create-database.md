@@ -103,7 +103,7 @@ The **Security** section helps you control access to your database.
 |:-----------|:----------|
 | **Default user** | When enabled, permits access using a simple password |
 | **Redis password** | Password assigned to the database when created |  
-| **CIDR allow list** | (_paid Fixed, Flexible, or Annual subscriptions only_) Range of IP addresses/security groups allowed to [aaccess the database]({{< relref "/rc/security/cidr-whitelist.md" >}})|
+| **CIDR allow list** | (_paid Fixed, Flexible, or Annual subscriptions only_) Range of IP addresses/security groups allowed to [access the database]({{< relref "/rc/security/cidr-whitelist.md" >}})|
 | **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) Enables [transport security layer]({{< relref "/rc/security/database-security/tls-ssl.md" >}})(TLS) encryption for database access.|
 
 
