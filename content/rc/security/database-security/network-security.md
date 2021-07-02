@@ -13,7 +13,7 @@ Redis Enterprise Cloud supports two types of network security: [IP Restrictions]
 <tr style="height: 23px;">
 <td style="height: 23px;">&nbsp;</td>
 <td style="height: 23px;">VPC Support</td>
-<td style="height: 23px;">IP Restructions</td>
+<td style="height: 23px;">IP Restrictions</td>
 </tr>
 <tr style="height: 23px;">
 <td style="height: 23px;">AWS</td>
@@ -66,7 +66,7 @@ A [Virtual Private Cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (
 
 Databases in Redis Cloud Pro and Ultimate are almost always deployed in a Redis Labs VPC. In most cases, you'll need to create a **VPC peering connection** to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
 
-How you create these connections, and the features supported, varies somewhat by public cloud. You can read about VPC usage for [AWS](#vpcs-with-aws), [GCP](#vpcs-with-gcp), and [Azure](#vpcs-with-azure) below.
+How you create these connections and the features supported vary somewhat by public cloud provider. You can read about VPC usage for [AWS](#vpcs-with-aws), [GCP](#vpcs-with-gcp), and [Azure](#vpcs-with-azure) below.
 
 ### VPCs with AWS
 
@@ -74,12 +74,12 @@ Subscriptions that run on AWS support two VPC options. To ensure that that you c
 
 #### Create a VPC peering connection
 
-Below are instructions for creating a VPC peering connection for AWS. One you've created this connection, you may also want to consider [configuring a CIDR whitelist] to allow connection only from specific IP address blocks or security groups.
+Below are instructions for creating a VPC peering connection for AWS. Once you've created this connection, you may also want to consider [configuring a CIDR whitelist]({{<relref "/rc/security/cidr-whitelist.md">}}) to allow connection only from specific IP address blocks or security groups.
 
 To create a VPC peering connection:
 
 1. In **Subscriptions**, click on the subscription requiring a VPC peering connection
-2. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll then see form like the following:
+2. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll then see a form like the following:
 
 ![VPC AWS](/images/rc/vpc-aws.png "VPC AWS")
 
@@ -107,7 +107,7 @@ Then click **Initiate Peering**.
             1. To add a route, click **Add Route**.
             1. In the Destination field, enter the Requester VPC CIDRs shown when you accepted the peering request.
 
-               This is the Redis Cloud VPC CIDR address, to which your application's VPC should connect
+               This is the Redis Cloud VPC CIDR address, to which your application's VPC should connect.
 
             1. In the Target field, select **Peering Connection** and select the relevant Peering ID.
             1. Click **Save Routes** and **Close**.
@@ -165,7 +165,7 @@ Subscriptions that run on GCP *require* a VPC peering connection.
 To create a VPC peering connection:
 
 1. In **Subscriptions**, click on the subscription requiring a VPC peering connection
-2. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll then see form like the following:
+2. In **Security** > **VPC Peering**, click ![Add](/images/rs/icon_add.png#no-click "Add"). You'll then see a form like the following:
 
 ![VPC GPC](/images/rc/vpc-gpc.png "VPC GPC")
 
