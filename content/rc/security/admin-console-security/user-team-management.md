@@ -67,4 +67,4 @@ To provide a GCP user with access to the admin console, you will need to assign 
 - For the **viewer** role: `serviceusage.serviceUsageViewer` and `redisenterprisecloud.viewer`
 - For the **owner** role:  `serviceusage.serviceUsageViewer` and `redisenterprisecloud.admin`
 
-Users must log in Redis Cloud using to GCP SSO at least once for them to be added to the team.
+Users must log in to Redis Cloud using GCP SSO at least once for them to be added to the team.

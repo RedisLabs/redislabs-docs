@@ -86,7 +86,7 @@ The **Overview** summarizes the options use to created the subscription.
 
 - The Payment info panel shows your payment details.
 
-- The **Cost Estimate** section describes the shards required to deply the subscription based on the choices made when the subscription was created.  
+- The **Cost Estimate** section describes the shards required to deploy the subscription based on the choices made when the subscription was created.  
     
 - **Payment Method** shows the current payment details.
 
