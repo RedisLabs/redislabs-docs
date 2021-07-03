@@ -1,11 +1,12 @@
 ---
-Title: RedisGears Quick Start Tutorial
+Title: RedisGears quick start tutorial
+linkTitle: Quick start
 description:
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
 ---
-For this quick start tutorial, you'll need one of the following:
+For this tutorial, you'll need one of the following:
 
 - Either:
     - A Redis Enterprise cluster with [the RedisGear module installed]({{< relref "/modules/redisgears/installing-redisgears.md" >}}), [added to the cluster]({{< relref "/modules/add-module-to-cluster.md" >}}), and [added to a database]({{< relref "/modules/add-module-to-database.md" >}})
