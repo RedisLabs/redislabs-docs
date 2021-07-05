@@ -1,5 +1,5 @@
 ---
-Title: RedisGraph 1.0 Release Notes
+Title: RedisGraph 1.0 release notes
 linkTitle: v1.0 (November 2018)
 description:
 weight: 100

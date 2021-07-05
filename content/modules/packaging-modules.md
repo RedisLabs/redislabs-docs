@@ -1,7 +1,7 @@
 ---
-Title: Packaging Modules
+Title: Package modules
 description:
-weight: 95
+weight: 8
 alwaysopen: false
 categories: ["Modules"]
 aliases: /modules/packaging

@@ -1,5 +1,6 @@
 ---
-Title: Upgrading a Database to RediSearch 2.x
+Title: Upgrading a database to RediSearch 2.x
+linkTitle: Upgrade a database
 description:
 weight: 30
 alwaysopen: false

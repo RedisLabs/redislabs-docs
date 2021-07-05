@@ -1,5 +1,5 @@
 ---
-Title: RedisGraph 2.0 Release Notes
+Title: RedisGraph 2.0 release notes
 linkTitle: v2.0 (January 2020)
 description:
 weight: 98
