@@ -1,5 +1,5 @@
 ---
-Title: Release Notes
+Title: Release notes
 description:
 weight: 99
 alwaysopen: false

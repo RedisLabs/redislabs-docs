@@ -1,5 +1,6 @@
 ---
-Title: RedisBloom Quick Start Tutorial
+Title: RedisBloom quick start tutorial
+linkTitle: Quick start
 description:
 weight: 20
 alwaysopen: false

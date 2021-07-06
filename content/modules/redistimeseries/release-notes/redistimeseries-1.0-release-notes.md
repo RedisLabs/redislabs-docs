@@ -1,13 +1,15 @@
 ---
-Title: RedisTimeSeries 1.0 Release Notes
+Title: RedisTimeSeries 1.0 release rotes
+linkTitle: v1.0 (June 2019)
 description:
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisTimeSeries 1.0.3 (September 2019)
+## v1.0.3 (September 2019)
 
 Update urgency: Medium
+
 This is a maintenance release for version 1.0.
 
 This release improves overall stability and provides fixes for issues found after the previous release.
@@ -29,14 +31,15 @@ Main Performance improvements:
 - #[3651](https://github.com/RedisTimeSeries/RedisTimeSeries/commit/3651ef8eb65b390e333053b91a64617fc2382f6e) Do not use `_union` if there's only 1 leaf in the index
 - #[0a68](https://github.com/RedisTimeSeries/RedisTimeSeries/commit/0a68d4eca95108595ac7dfbae68d3f0371e41470) Make _difference faster by iterating over the left dict (which is always smaller)
 
-## RedisTimeSeries 1.0.1 (July 2019)
+## v1.0.1 (July 2019)
 
 Update urgency: Minor
+
 This is a maintenance release for version 1.0.
 
-Secondary Index should work faster when a filter consistent a list of k=v predicates.
+Secondary index should work faster when a filter consists of a list of k=v predicates.
 
-## RedisTimeSeries 1.0.0
+## v1.0.0 (June 2019)
 
 This is the General Availability release of RedisTimeSeries!  Read the [full story here](https://redislabs.com/blog/redistimeseries-ga-making-4th-dimension-truly-immersive)
 

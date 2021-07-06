@@ -1,5 +1,6 @@
 ---
-Title: RediSearch Quick Start Tutorial
+Title: RediSearch quick start tutorial
+linkTitle: Quick start
 description:
 weight: 20
 alwaysopen: false

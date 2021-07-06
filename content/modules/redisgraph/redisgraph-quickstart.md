@@ -1,5 +1,6 @@
 ---
-Title: RedisGraph Quick Start Tutorial
+Title: RedisGraph quick start tutorial
+linkTitle: Quick start
 description:
 weight: 20
 alwaysopen: false
@@ -17,7 +18,7 @@ For this quick start tutorial, you need:
 
 {{< embed-md "tryout-redisgraph.md" >}}
 
-## Developing with RedisGraph
+## Develop with RedisGraph
 
 Before using RedisGraph, you should familiarize yourself with its commands and syntax as detailed in the
 [commands reference](https://oss.redislabs.com/redisgraph/commands/).
@@ -27,7 +28,7 @@ After you load RedisGraph, you can interact with it using redis-cli.
 Here we'll quickly create a small graph representing a subset of motorcycle riders and teams
 taking part in the MotoGP league. Once created, we'll start querying our data.
 
-### With `redis-cli`
+### Use `redis-cli`
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
@@ -60,7 +61,7 @@ How many riders represent team Ducati?
 2) 1) "Query internal execution time: 0.129000 milliseconds"
 ```
 
-### With any other client
+### Use other client
 
 You can interact with RedisGraph using your client's ability to send raw Redis commands.
 The exact method for doing that depends on your client of choice.
