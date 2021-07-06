@@ -6,6 +6,23 @@ weight: 95
 alwaysopen: false
 categories: ["Modules"]
 ---
+
+## RediSearch 2.0.10 (July 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Enhancements:
+    - #[2025](https://github.com/redisearch/redisearch/issues/2025) Improve performances on [numeric range search](https://oss.redislabs.com/redisearch/2.0/Query_Syntax/#numeric_filters_in_query)
+    - #[1958](https://github.com/redisearch/redisearch/issues/1958) #[2033](https://github.com/redisearch/redisearch/issues/2033) Support of sortable on the [GEO type](https://oss.redislabs.com/redisearch/2.0/Overview/#geo_index)
+
+- Bug fix:
+    - #[2045](https://github.com/redisearch/redisearch/issues/2045) Possible crash when loading an RDB file (silently ignore double load of alias)
+    - #[2099](https://github.com/redisearch/redisearch/issues/2099) #[2101](https://github.com/redisearch/redisearch/issues/2101) Fixes possible crash with CRDT on [FT.DROPINDEX](https://oss.redislabs.com/redisearch/2.0/Commands/#ftdropindex)
+    - #[1994](https://github.com/redisearch/redisearch/issues/1994) Skip intersect iterator qsort if [INORDER](https://oss.redislabs.com/redisearch/2.0/Query_Syntax/#query_attributes) flag is used 
+
+
 ## v2.0.9 (May 2021)
 
 This is a maintenance release for version 2.0.
