@@ -1,7 +1,8 @@
 ---
-Title: Active-Active Region Application Failover
+Title: Active-Active region application failover
+linkTitle: App failover
 description:
-weight: $weight
+weight: 1
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/developing/crdbs/region-application-failover-active-active/

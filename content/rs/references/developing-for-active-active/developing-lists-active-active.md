@@ -1,5 +1,6 @@
 ---
 Title: Developing with Lists in an Active-Active Database
+linkTitle: Lists
 description:
 weight: $weight
 alwaysopen: false

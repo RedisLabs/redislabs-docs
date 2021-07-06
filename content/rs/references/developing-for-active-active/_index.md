@@ -1,5 +1,6 @@
 ---
-title: Developing Applications with Active-Active Databases
+title: Developing applications with Active-Active databases
+linkTitle: Active-active database apps
 description:
 weight: 85
 alwaysopen: false
@@ -122,7 +123,7 @@ followed by descriptions:
 | Strings | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
 | Sorted Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
 | HyperLogLog | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hll-active-active.md" >}}) |
-| Streams | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
+| Streams | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-streams-active-active.md" >}}) |
 | Bitsets | Not currently supported |
 
 ### Other data types
