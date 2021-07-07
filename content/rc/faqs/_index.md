@@ -36,13 +36,13 @@ Every effort is made to adhere, where possible, to the specifications of open so
 
 - Since replication is managed automatically by the service and since it could present a security risk, the following commands are blocked:
     - [MIGRATE](http://redis.io/commands/MIGRATE)
-    - [REPLCONF](http://redis.io/commands/REPLCONF)
+    - [REPLICAOF](http://redis.io/commands/REPLICAOF)
     - [SLAVEOF](http://redis.io/commands/SLAVEOF)
     - [SYNC](http://redis.io/commands/SYNC)/[PSYNC](http://redis.io/commands/PSYNC)
 
 - Redis Labs clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
 
-- Redis Labs clustering technology allows [multiple active proxies](http://docs.redislabs.com/latest/rs/administering/designing-production/networking/multiple-active-proxy.md). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
+- Redis Labs clustering technology allows [multiple active proxies]({{<relref "rs/administering/designing-production/networking/multiple-active-proxy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 
 - Commands that aren’t relevant for a hosted Redis service are blocked:
     - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
@@ -111,7 +111,7 @@ including in-memory replication (within the same data center or across data cent
 
 ## Can I export my Redis data?
 
-There is no lock-in with Redis Enterprise Cloud. With a click of button, you can export your latest RDB backup file from your cloud storage, FTP, or HTTP server to any Redis server of your choice.
+There is no lock-in with Redis Enterprise Cloud. With a click of a button, you can export your latest RDB backup file from your cloud storage, FTP, or HTTP server to any Redis server of your choice.
 
 Free plans do not include this capability.
 
