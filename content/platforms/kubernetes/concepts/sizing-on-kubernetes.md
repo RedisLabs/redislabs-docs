@@ -48,6 +48,9 @@ To apply the new cluster configuration run:
 
     kubectl apply -f redis-enterprise-cluster.yaml
 
+**Note:** Decreasing the number of nodes is not supported.
+
+
 ### Sizing compute resources
 
 To set the compute resources required for each node,
