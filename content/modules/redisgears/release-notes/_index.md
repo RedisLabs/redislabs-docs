@@ -5,11 +5,9 @@ description:
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
-aliases: /modules/redisgears/release-notes/redisgraph-1.0-release-notes/
-         /modules/redisgears/release-notes/redisgraph-1.0-release-notes
+aliases: /modules/redisgears/release-notes/redisgears-1.0-release-notes/
+         /modules/redisgears/release-notes/redisgears-1.0-release-notes
          /modules/redisgears/release-notes/redisgears-1.0-release-notes.md
-         /modules/redisgears/release-notes
-         /modules/redisgears/release-notes.md
 ---
 
 Here's what's changed recently in RedisGears. 
