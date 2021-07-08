@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-## RediSearch 2.0.10 (July 2021)
+## v2.0.10 (July 2021)
 
 This is a maintenance release for version 2.0.
 
