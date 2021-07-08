@@ -1,5 +1,5 @@
 ---
-Title: Create IAM resources (AWS)
+Title: Create IAM Resources using AWS Console 
 weight: 30
 alwaysopen: false
 categories: ["RC"]
