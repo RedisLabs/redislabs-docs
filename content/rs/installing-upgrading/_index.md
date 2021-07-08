@@ -214,4 +214,4 @@ Now that your cluster is set up with nodes, you can:
 
 Redis Enterprise installation creates the redislabs:redislabs user and group. It is optional for Redis Enterprise customers to set other users that belong to the redislabs group. Users belonging to the redislabs group will have permission to read and execute (e.g. use the rladmin status command) but not to write or delete files and directories.
 
-Redis Enterprise is developed to meet a large variety of industries. Using 750 permissions is the common industry standard followed. Setting 700 permissions is a hardening of the common permissions we set. While this hardening may work - this is not a certified change that has been tested or approved.
+Redis Enterprise serves a large variety of industries. The common industry standard for permissions is 750 permissions. Reducing the permissions to 700 has not been tested and isn't supported. 
