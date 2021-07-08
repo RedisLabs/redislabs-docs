@@ -209,3 +209,9 @@ Now that your cluster is set up with nodes, you can:
 
 - [Add users]({{< relref "/rs/security/passwords-users-roles.md" >}}) to the cluster with specific permissions.  To begin, start with [Authentication and authorization]({{< relref "/rs/security/admin-console-security/user-security" >}}).
 - [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
+
+## Additional notes
+
+Redis Enterprise installation creates the redislabs:redislabs user and group. It is optional for Redis Enterprise customers to set other users that belong to the redislabs group. Users belonging to the redislabs group will have permission to read and execute (e.g. use the rladmin status command) but not to write or delete files and directories.
+
+Redis Enterprise is developed to meet a large variety of industries. Using 750 permissions is the common industry standard followed. Setting 700 permissions is a hardening of the common permissions we set. While this hardening may work - this is not a certified change that has been tested or approved.
