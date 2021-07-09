@@ -34,7 +34,7 @@ You can enable TLS by editing the configuration of an existing database (as show
 1. Select **Update** at the bottom of the screen to save your configuration.
 1. Optional: By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to disable this behavior.
     ```sh
-    rladmin tune db < db:id | name > mtls_allow_outdated_certs disabled
+    rladmin tune db < db:id | name > mtls_allow_outdated_certs enabled
     ```
 
 ## Enable TLS for Active-Active cluster connections
