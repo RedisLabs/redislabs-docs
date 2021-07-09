@@ -32,6 +32,10 @@ You can enable TLS by editing the configuration of an existing database (as show
     - If your database uses Replica Of or Active-Active replication, you will need to add the syncer certificates for the participating clusters. The steps for each are below.
 1. Optional: To limit connections further to a subset of those with valid certificates, enforce **Subject Alternative Name** and enter authorized users separated with commas.
 1. Select **Update** at the bottom of the screen to save your configuration.
+1. Optional: By default, Redis Enterprise Software validates client certificate expiration dates.  You can use `rladmin` to disable this behavior.
+    ```sh
+    rladmin tune db < db:id | name > mtls_allow_outdated_certs disabled
+    ```
 
 ## Enable TLS for Active-Active cluster connections
 
