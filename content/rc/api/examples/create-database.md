@@ -18,9 +18,9 @@ These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest
 
 ## Create a database
 
-To create a database use `POST /subscriptions/{subscription-id}/databases`
+To create a database, use `POST /subscriptions/{subscription-id}/databases`
 
-The database is created in an existing or a newly-created subscription.
+The database is created in an existing or a newly created subscription.
 
 When a subscription is created, it is created with at least one database.
 

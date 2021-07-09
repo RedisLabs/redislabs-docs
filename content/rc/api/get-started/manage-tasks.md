@@ -20,9 +20,9 @@ Examples of API operations that use tasks are:
 - update database
 - delete database
 
-All create, update, and delete API operations (`POST`, `PUT` and `DELETE`) and some query operations (`GET`) use tasks.
+All create, update, and delete API operations (`POST`, `PUT`, and `DELETE`) and some query operations (`GET`) use tasks.
 
-After you request an asynchronous operation, the operations returns a `taskId` that identities the specific task, and contains contextual and status data on the API operation performed by the task.
+After you request an asynchronous operation, the operation returns a `taskId` that identities the specific task, and contains contextual and status data on the API operation performed by the task.
 
 Tasks are part of the API [processing and provisioning lifecycle]({{< relref "/rc/api/get-started/process-lifecycle.md#asynchronous-operations" >}}).
 
