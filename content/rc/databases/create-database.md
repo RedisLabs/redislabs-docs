@@ -53,13 +53,12 @@ between the VPC that this database is on and the VPC that the destination databa
             - Paste the certificate for your client.
     - **Data Eviction Policy** - Select a policy for evicting data when the memory limit is reached.
     - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/databases/back-up-data.md" >}}) location.
-    - **Modules** - Enable modules and select the module to use with the database.
+    - **Modules** - Enable modules and select the module to use with the database.<a name="supported-modules">&nbsp;</a>
 
         - For applications that require high-throughput, use a Redis Cloud Pro subscription.
         - For RedisGraph, use the [sizing calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
             to calculate the required resources.
-        - For RediSearch on a Redis Cloud Pro subscription, enter the estimated number of documents you want to index.
-
+        - For RediSearch on a Redis Cloud Flexible (or Annual) subscription, enter the estimated number of documents you want to index.
     - **Alert Settings** - Select the alerts that you want sent to you and your team when the specified threshold is exceeded.
 1. Click **Activate**.
 
@@ -79,6 +78,10 @@ When activation is completed, creates the database. During this process you can 
 
 - An orange spinning icon on the top right to turn to a green checkmark
 - The **Endpoint** of the new database
+
+## Supported modules
+
+Redis Enterprise Cloud supports the following modules: [RediSearch v2]({{< relref "/modules/redisearch/" >}}), [RedisBloom]({{< relref "/modules/redisbloom/" >}}), [RedisJSON]({{< relref "/modules/redisjson/" >}}), [RedisTimeSeries]({{< relref "/modules/redistimeseries/" >}}), and [RedisGraph]({{< relref "/modules/redisgraph/" >}}).
 
 <!-- Video out of date
 Here is a video tutorial that shows this process: -->
