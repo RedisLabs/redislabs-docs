@@ -14,13 +14,12 @@ aliases: /rv/api/how-to/backup-and-import-databases/
 
 ## Back up a database
 
-When you create or update a database in a Flexible or Anual account, you can specify the (optional) `periodicBackupPath` parameter
+When you create or update a database in a Flexible or Annual account, you can specify the (optional) `periodicBackupPath` parameter
 with a [backup path](/rv/administration/configuration/backups/).
 This parameter enables periodic and on-demand backup operations for the specified database.
 
 The API operation for on-demand backups is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/backup`.
-On-demand database backup is an [asynchronous operation]
-({{< relref "/rc/api/get-started/process-lifecycle.md#asynchronous-operations" >}})".
+On-demand database backup is an [asynchronous operation]({{<relref "/rc/api/get-started/process-lifecycle.md#asynchronous-operations">}}).
 
 ### Prerequisites for backups
 
@@ -41,8 +40,8 @@ Instead, the `periodicBackupPath` must be set to a valid path with available sto
 
 ## Import a database
 
-You can import data into an existing database from multiple storage sources, including AWS S3, Redis, FTP.
-Database import is an [asynchronous operation]({{< relref  "/rc/api/get-started/process-lifecycle.md#asynchronous-operations" >}})".
+You can import data into an existing database from multiple storage sources, including AWS S3, Redis, and FTP.
+Database import is an [asynchronous operation]({{<relref  "/rc/api/get-started/process-lifecycle.md#asynchronous-operations">}}).
 
 The API operation for performing on-demand backup is `POST /subscriptions/{subscriptionId}/databases/{databaseId}/import`.
 
@@ -50,7 +49,7 @@ The requirements for data import are:
 
 - The URI of the data
     - The source URI must be accessible to the importing database
-    - The data format must be a redis backup file or a redis database
+    - The data format must be a Redis backup file or a Redis database
 - The subscription ID and database ID of the destination database
 
 The duration of the import process depends on the amount of data imported and the network bandwidth between the data source and the importing database.

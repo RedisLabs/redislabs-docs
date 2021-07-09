@@ -16,7 +16,7 @@ To use the Redis Enterprise Cloud REST API, you need to:
 
 - Enable the API
 - Create an account key
-- Create a secret keys
+- Create a secret key
 
 {{< note >}}
 The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
@@ -31,7 +31,7 @@ To use the keys to authenticate and authorize your request, include the keys wit
 
 ## Enable the API
 
-The API is disabled all on all accounts by default. You must first [enable the API]({{< relref "/rc/api/get-started/enable-the-api.md" >}}) before you can use it.
+The API is disabled on all accounts by default. You must first [enable the API]({{< relref "/rc/api/get-started/enable-the-api.md" >}}) before you can use it.
 
 ## Account key
 
@@ -78,5 +78,5 @@ An API request will successfully authenticate if the following conditions are me
 
 To learn more, see:
 
-- [Managing API Keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
+- [Managing API keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
 - [Use the API]({{< relref "/rc/api/get-started/use-rest-api.md" >}})
