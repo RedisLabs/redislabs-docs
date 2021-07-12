@@ -7,6 +7,17 @@ categories: ["Glossary"]
 ---
 <dl class="glossary">
 
+<!--- 
+{{%definition ""%}}
+{{%/definition%}}
+--->
+
+{{%definition "admission controller"%}}
+A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
+
+More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/)
+{{%/definition%}}
+
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
@@ -42,7 +53,6 @@ More info: [Database Clustering]({{<relref "content/rc/concepts/clustering.md" >
 
 {{%definition "Cluster Configuration Store (CSS)"%}}
 An internally managed Redis database that acts a single repository for all cluster meta-data.
-
 {{%/definition%}}
 
 {{%definition "Cluster Node Manager (CNM)"%}}
@@ -53,6 +63,12 @@ A collection of Redis Enterprise services responsible for provisioning, migratio
 Techniques used by Redis data types in Active-Active databases that handle conflicting concurrent writes across member Active-Active databases. The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
 
 More info: [CRDT info]({{<relref "/rs/references/developing-for-active-active/#info" >}}), [Active-Active Geo-Distributed Redis]({{<relref "/rs/administering/designing-production/active-active.md">}}), [CRDT wikipedia](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+{{%/definition%}}
+
+{{%definition "CustomResourceDefinition (CRD)"%}}
+Custom code that defines a resource to add to your Kubernetes API server without building a complete custom server. 
+
+More info: [CustomResourceDefinition](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-CustomResourceDefinition), [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
 {{%/definition%}}
 
 {{%definition "data eviction policy"%}}
@@ -85,6 +101,18 @@ A part of the key that is used in the hash calculation.
 More info: [Database Clustering]({{<relref "content/rs/concepts/high-availability/clustering.md">}})
 {{%/definition%}}
 
+{{%definition "ingress"%}}
+An API object that manages external access to the services in a Kubernetes cluster, typically HTTP.
+
+More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+{{%/definition%}}
+
+{{%definition "kubectl"%}}
+A command line tool for communicating with a Kubernetes API server. 
+
+More info: [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
+{{%/definition%}}
+
 {{%definition "master node"%}}
 Node that operates as the leader of a cluster
 {{%/definition%}}
@@ -101,6 +129,18 @@ More info: [Multi-factor authentication]({{<relref "/rc/security/admin-console-s
 
 {{%definition "multi-master replication (MMR)"%}}
 Multi-directional replication that power the efficient replication required to achieve active-active concurrent writes in Active-Active databases.
+{{%/definition%}}
+
+{{%definition "namespace"%}}
+An abstraction used by Kubernetes to support multiple virtual clusters on the same physical cluster.
+
+More info: [Namespaces](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+{{%/definition%}}
+
+{{%definition "operator"%}}
+Operators are software extensions to Kubernetes that make use of custom resources to manage applications and their components.
+
+More info: [Operator pattern](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/)
 {{%/definition%}}
 
 {{%definition "Out-of-Memory (OOM)"%}}
@@ -170,6 +210,12 @@ More info: [Active-Passive Geo-Distributed Redis (Replica-Of)
 ]({{<relref "/rs/administering/designing-production/active-passive.md">}})
 {{%/definition%}}
 
+{{%definition "ReplicaSet"%}}
+In Kubernetes, a ReplicaSet (aims to) maintain a set of replica Pods running at any given time.
+
+More info: [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/)
+{{%/definition%}}
+
 {{%definition "replication"%}}
 Database replication provides a mechanism to ensure high availability.
 
@@ -180,6 +226,10 @@ More info: [Database replication]({{<relref "/rs/concepts/high-availability/repl
 A security approach that restricts system access to authorized users.
 
 More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control)
+{{%/definition%}}
+
+{{%definition "secret"%}}
+Kubernetes term for object that stores sensitive information, such as passwords, OAuth tokens, and ssh keys.
 {{%/definition%}}
 
 {{%definition "shard"%}}
