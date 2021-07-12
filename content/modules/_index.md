@@ -8,11 +8,10 @@ aliases: /rs/developing/modules/
 ---
 Redis Labs develops several modules that extend the core Redis feature set. Some of the features these modules provide include [querying, indexing and full-text search]({{< relref "/modules/redisearch" >}}), [JSON support]({{< relref "/modules/redisjson" >}}), and [probabalistic data structures]({{< relref "/modules/redisbloom" >}}).
 
-You can use these modules [Redis Enterprise Software]({{< relref "/rs" >}}).  [Redis Enterprise Cloud]({{< relref "/rc" >}}) supports a selected set of modules.  For details, see [Supported modules]({{< relref "/rc/databases/create-database#supported-modules" >}}).
+You can use these modules with [Redis Enterprise Software]({{< relref "/rs" >}}).  
 
-{{<note>}}
-Redis Enterprise Cloud currently supports a subset of available modules.
-{{</note>}}
-Each module has its own quick start guide to help you get up and running quickly.
+You can use many, but not all, of them with [Redis Enterprise Cloud]({{< relref "/rc" >}}).  For details, see [Supported modules]({{< relref "/rc/databases/create-database#supported-modules" >}}).
+
+Each module includes a quick start guide.
 
 {{< embed-html "modules.html" >}}
