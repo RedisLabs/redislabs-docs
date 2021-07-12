@@ -23,7 +23,7 @@ https://s3.amazonaws.com/iam-resource-automation-do-not-delete/RedisCloud.yaml \
 --capabilities CAPABILITY_AUTO_EXPAND CAPABILITY_NAMED_IAM CAPABILITY_IAM
 ```
 
-You can track the status of the cloud formation thus:
+You can track the status of the cloud formation with the following command:
 ```
 aws cloudformation describe-stacks --stack-name RedisCloud
 ```
