@@ -35,7 +35,7 @@ For the two secrets (`accessSecretKey` and `consolePassword`) you'll need to use
 aws secretsmanager get-secret-value --secret-id=/redislabsuser/secret_access_key
 ```
 
-We recommend for the `consolePassword` you use yaml output - it makes decoding the required value easier
+We recommend using yaml output for the `consolePassword`, as it makes decoding the required value easier.
 
 ```
 aws secretsmanager get-secret-value --secret-id=/redislabsuser/password --output yaml
