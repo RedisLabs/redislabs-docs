@@ -9,12 +9,12 @@ categories: ["RS"]
 [Redis Enterprise Software (RS) 6.0.12](https://redislabs.com/download-center/#downloads) is now available!
 This version includes the following new features and improvements:
 
-- [Synchronization](https://docs.redislabs.com/latest/rs/administering/designing-production/active-active/#syncer-process) can now be [distributed across the nodes](https://docs.redislabs.com/latest/rs/administering/cluster-operations/synchronization-mode/) of Active-Active or Active-Passive databases
-- You can [disable several internal RS services](https://docs.redislabs.com/latest/rs/administering/troubleshooting/disabling-services/) to free up more memory
-- User accounts can have multiple passwords to allow for [password rotation](https://docs.redislabs.com/latest/rs/administering/access-control/password-rotation/)
-- [Dependencies are automatically installed](https://docs.redislabs.com/latest/modules/add-module-to-cluster/#adding-a-module-using-the-rest-api) when you add modules to a cluster
-- [Envoy replaces NGINX](https://docs.redislabs.com/latest/rs/administering/designing-production/networking/port-configurations/) for internal cluster administration
-- Automatic recovery of the [syncer process](https://docs.redislabs.com/latest/rs/administering/designing-production/active-active/#syncer-process) from out-of-memory (preview mode)
+- [Synchronization]({{<relref "/rs/administering/designing-production/active-active#syncer-process">}}) can now be [distributed across the nodes]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}) of Active-Active or Active-Passive databases
+- You can [disable several internal RS services]({{<relref "/rs/administering/troubleshooting/disabling-services.md">}}) to free up more memory
+- User accounts can have multiple passwords to allow for [password rotation]({{<relref "/rs/administering/access-control/password-rotation.md">}})
+- [Dependencies are automatically installed]({{<relref "/modules/add-module-to-cluster#adding-a-module-using-the-rest-api">}}) when you add modules to a cluster
+- [Envoy replaces NGINX]({{<relref "/rs/administering/designing-production/networking/port-configurations.md">}}) for internal cluster administration
+- Automatic recovery of the [syncer process]({{<relref "/rs/administering/designing-production/active-active#syncer-process">}}) from out-of-memory (preview mode)
 
 And other functional and stability improvements.
 
@@ -22,13 +22,13 @@ And other functional and stability improvements.
 
 #### Upgrade instructions
 
-- Follow [these instructions](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
-- For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/#upgrading-activeactive-databases).
+- Follow [these instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
+- For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{<relref "/rs/installing-upgrading/upgrading#upgrading-activeactive-databases">}}).
 
 #### Product lifecycle information
 
-- End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle/).
-- EOL for Redis modules can be found [here](https://docs.redislabs.com/latest/modules/modules-lifecycle/#modules-endoflife-schedule).
+- End of Life (EOL) for Redis Enterprise Software 6.0 and previous RS versions, can be found [here]({{<relref "/rs/administering/product-lifecycle.md">}}).
+- EOL for Redis modules can be found [here]({{<relref "/modules/modules-lifecycle#modules-endoflife-schedule">}}).
 
 #### Deprecation Notice
 
@@ -41,11 +41,11 @@ And other functional and stability improvements.
 
 #### Distributed Syncer
 
-The syncer process now supports running in a [distributed mode](https://docs.redislabs.com/latest/rs/administering/cluster-operations/synchronization-mode/). This option can improve the latency for Active-Active databases with a very high throughput profile. You can configure a replicated database to use distributed synchronization so that any available proxy endpoint can manage synchronization traffic.
+The syncer process now supports running in a [distributed mode]({{<relref "/rs/administering/cluster-operations/synchronization-mode.md">}}). This option can improve the latency for Active-Active databases with a very high throughput profile. You can configure a replicated database to use distributed synchronization so that any available proxy endpoint can manage synchronization traffic.
 
 #### Disabling RS services to free memory
 
-Redis Software users can now use the REST API to [disable the following services](https://docs.redislabs.com/latest/rs/administering/troubleshooting/disabling-services/):
+Redis Software users can now use the REST API to [disable the following services]({{<relref "/rs/administering/troubleshooting/disabling-services.md">}}):
 
 - cm_server
 - mdns_server
@@ -69,7 +69,7 @@ For users of Redis 6 and RS 6.0 and above, you can now add more security to your
 As of RS 6.0, you can assign specific data access permissions (Redis ACLs) and cluster administration permissions to users.
 Password rotation is especially helpful so that you can do a rolling update of the passwords in the application clients that connect to the Redis databases.
 
-In this version, you can only configure multiple passwords [using the REST API](https://docs.redislabs.com/latest/rs/administering/access-control/password-rotation/).
+In this version, you can only configure multiple passwords [using the REST API]({{<relref "/rs/administering/access-control/password-rotation.md">}}).
 
 #### Redis Modules dependencies management
 
@@ -105,13 +105,13 @@ The syncer process restarts to with automatic recovery on.
 
 The following GA releases of Redis modules are bundled with RS 6.0.12:
 
-- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0.6](https://docs.redislabs.com/latest/modules/redisearch/release-notes/redisearch-2.0-release-notes/)
-- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4](https://docs.redislabs.com/latest/modules/redisjson/release-notes/redisjson-1.0-release-notes/)
-- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.2.11](https://docs.redislabs.com/latest/modules/redisgraph/release-notes/)
-- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7](https://docs.redislabs.com/latest/modules/redistimeseries/release-notes/)
-- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4](https://docs.redislabs.com/latest/modules/redisbloom/release-notes/redisbloom-2.2-release-notes/)
+- [RediSearch](https://redislabs.com/redis-enterprise/redis-search/), version [2.0.6]({{<relref "/modules/redisearch/release-notes/redisearch-2.0-release-notes.md">}})
+- [RedisJSON](https://redislabs.com/redis-enterprise/redis-json/), version [1.0.4]({{<relref "/modules/redisjson/release-notes/redisjson-1.0-release-notes.md">}})
+- [RedisGraph](https://redislabs.com/redis-enterprise/redis-graph/), version [2.2.11]({{<relref "/modules/redisgraph/release-notes/_index.md">}})
+- [RedisTimeSeries](https://redislabs.com/redis-enterprise/redis-time-series/), version [1.4.7]({{<relref "/modules/redistimeseries/release-notes/_index.md">}})
+- [RedisBloom](https://redislabs.com/redis-enterprise/redis-bloom/), version [2.2.4]({{<relref "/modules/redisbloom/release-notes/redisbloom-2.2-release-notes.md">}})
 
-To use the updated modules with a database, you must [upgrade the module on the database](https://docs.redislabs.com/latest/modules/upgrading-rs/#upgrading-the-module-for-the-database).
+To use the updated modules with a database, you must [upgrade the module on the database]({{<relref "/modules/add-module-to-cluster#upgrading-the-module-for-the-database">}}).
 
 ### Additional capabilities
 
@@ -139,12 +139,12 @@ with 6.0.12-58:
 
 #### Upgrade
 
-- [RS 5.4.2](https://docs.redislabs.com/latest/rs/release-notes/rs-5-4-2-april-2019/) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol](https://docs.redislabs.com/latest/rs/installing-upgrading/upgrading/#upgrading-crdbs).
-- When you upgrade an Active-Active Redis with active AOF from version [RS 5.4.2](https://docs.redislabs.com/latest/rs/release-notes/rs-5-4-2-april-2019/) or earlier to version [RS 5.4.4](https://docs.redislabs.com/latest/rs/release-notes/rs-5-4-4-june-2019/) or later:
+- [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}) introduced new Active-Active Redis Database capabilities that improve its compatibility with open source Redis. Now the string data-type in Active-Active Redis Database is implicitly and dynamically typed, just like open source Redis. To use the new capabilities on nodes that are upgraded from version RS 5.4.2 or lower, you must [upgrade the Active-Active Redis Database protocol]({{<relref "/rs/installing-upgrading/upgrading#upgrading-crdbs">}}).
+- When you upgrade an Active-Active Redis with active AOF from version [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}) or earlier to version [RS 5.4.4]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-4-june-2019.md">}}) or later:
     - If replication is enabled, you must run the BGREWRITEAOF command on all slave shards after the upgrade.
     - If replication is not enabled, you must run the BGREWRITEAOF command on all shards after the upgrade.
-- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API](https://docs.redislabs.com/latest/rs/administering/cluster-operations/updating-certificates/). For assistance with this issue, contact Support.
-- Starting from [RS 5.4.2](https://docs.redislabs.com/latest/rs/release-notes/rs-5-4-2-april-2019/), to preserve the current Redis major.minor version during database upgrade you must use the keep_redis_version option instead of keep_current_version.
+- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of [updating them through the API]({{<relref "/rs/administering/cluster-operations/updating-certificates.md">}}). For assistance with this issue, contact Support.
+- Starting from [RS 5.4.2]({{<relref "/rs/release-notes/legacy-release-notes/rs-5-4-2-april-2019.md">}}), to preserve the current Redis major.minor version during database upgrade you must use the keep_redis_version option instead of keep_current_version.
 
 #### Redis commands
 

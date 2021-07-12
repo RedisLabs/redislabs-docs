@@ -5,6 +5,8 @@ description:
 weight: 82
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/release-notes/rs-5-4-14-february-2020/
+         /rs/release-notes/rs-5-4-14-february-2020.md
 ---
 [Redis Enterprise Software (RS) 5.4.14](https://redislabs.com/redis-enterprise/software/downloads/#downloads) is now available.
 This release bundles OSS Redis 5.0.7 and includes new Redis Modules versions, several enhancements, and bug fixes.
@@ -61,7 +63,7 @@ Follow these [instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >
 
 ## Information
 
-- End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here](https://docs.redislabs.com/latest/rs/administering/product-lifecycle).
+- End of Life (EOL) for Redis Enterprise Software 5.4, as well as for Redis Modules and previous RS versions, can be found [here]({{<relref "/rs/administering/product-lifecycle.md">}}).
 - Google Chrome browser on macOS Catalina requires self-signed certificate generated after June 2019 to include the extendedKeyUsage field in order to connect to the RS admin console.
     If you use a self-signed certificate that does not include this field, [update the self-signed certificate]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
 - When you upgrade an Active-Active Redis with active AOF from version RS 5.4.2 or lower to version RS 5.4.4 or higher:
