@@ -5,6 +5,8 @@ description:
 weight: 88
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/release-notes/rs-5-4-december-2018/
+         /rs/release-notes/rs-5-4-december-2018.md
 ---
 Redis Enterprise Software (RS) 5.4 is now available. RS 5.4 adds support for Redis 5.0 (GA) with the new Redis Streams data type.
 

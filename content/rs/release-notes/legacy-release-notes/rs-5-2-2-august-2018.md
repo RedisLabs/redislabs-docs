@@ -5,6 +5,8 @@ description:
 weight: 89
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/release-notes/rs-5-2-2-august-2018/
+         /rs/release-notes/rs-5-2-2-august-2018.md
 ---
 Redis Enterprise Software (RS) 5.2.2 is now available.
 
