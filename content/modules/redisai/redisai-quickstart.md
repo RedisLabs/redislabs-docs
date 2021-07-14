@@ -1,5 +1,6 @@
 ---
-Title: RedisAI Quick Start Tutorial
+Title: RedisAI quick start tutorial
+linkTitle: Quck start
 description:
 weight: 20
 alwaysopen: false

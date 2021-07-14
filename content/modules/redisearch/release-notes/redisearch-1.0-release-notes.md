@@ -1,5 +1,6 @@
 ---
-Title: RediSearch 1.0 Release Notes
+Title: RediSearch 1.0 release notes
+linkTitle: v1.0 (April 2018)
 description:
 weight: 100
 alwaysopen: false

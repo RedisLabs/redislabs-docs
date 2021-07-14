@@ -36,7 +36,7 @@ To enable the API:
 
     If you see a **Generate** button, select it to generate your key.
 
-The generated key is the API access key. You need combine this with a [secret key]({{< relref "/rc/api/get-started/manage-api-keys.md#secret" >}}) to make API calls.
+The generated key is the API access key. You need to combine this with a [secret key]({{< relref "/rc/api/get-started/manage-api-keys.md#secret" >}}) to make API calls.
 
 Only account owners can see the access key in the account settings.
 

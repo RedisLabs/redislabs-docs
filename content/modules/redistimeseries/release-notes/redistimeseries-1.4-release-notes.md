@@ -1,16 +1,33 @@
 ---
-Title: RedisTimeSeries 1.4 Release Notes
+Title: RedisTimeSeries 1.4 release notes
+linkTitle: v1.4 (September 2020)
 description:
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisTimeSeries 1.4.8 - March 2021
+## v1.4.9 (May 2021)
+
+This is a maintenance release for version 1.4.
+
+Update urgency: Medium
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Bugfixes:
+
+- #[#712](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/712) Missing keytype check on TS.INCRBY/DECRBY causes shards to crash
+- #[#719](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/719) Support for renaming time series keys
+
+## v1.4.8 (March 2021)
 
 This is a maintenance release for version 1.4.
 
 Headlines:
-This release improves overall stability and provides fixes for issues found after the previous release.
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
 
 Bugfixes:
 
@@ -19,20 +36,20 @@ Bugfixes:
 - [#624](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/624) Uninitialised memory access on log
 
 
-## RedisTimeSeries 1.4.7 - December 2020
+## v1.4.7 (December 2020)
 
 This is a maintenance release for version 1.4.
 
 Headlines:
 
-This release includes support for Redis on Flash (RoF) deployments, improves overall stability, and provides fixes for issues found after the previous release.
+- This release includes support for Redis on Flash (RoF) deployments, improves overall stability, and provides fixes for issues found after the previous release.
 
 Bugfixes:
 
 - [#581](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/581) Misaligned allocators usage might crash Redis.
 - [#588](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/588) `ON_DUPLICATE` min/max rules not working for negative value.
 
-## RedisTimeSeries 1.4.6 - November 2020
+## v1.4.6 (November 2020)
 
 This is a maintenance release for version 1.4.
 
@@ -57,7 +74,7 @@ Bugfixes:
 - [#561](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/561)
     `TS.MRANGE` command might crash if there's an expired key that was deleted in the result set
 
-## RedisTimeSeries 1.4 GA (1.4.5 - September 2020)
+## v1.4 GA (September 2020)
 
 This is the General Availability release for RedisTimeSeries 1.4.
 

@@ -22,7 +22,7 @@ kind: RedisEnterpriseDatabase
 metadata:
   name: smalldb
 spec:
-  memory: 1GB
+  memorySize: 1GB
   redisEnterpriseCluster:
     name: rec
 ```
@@ -56,7 +56,7 @@ To create a database with the database controller:
     metadata:
       name: mydb
     spec:
-      memory: 1GB
+      memorySize: 1GB
       redisEnterpriseCluster:
         name: rec
     ```

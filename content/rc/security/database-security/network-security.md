@@ -64,7 +64,7 @@ To restrict a database to a specific set of source IP addresses or subnets:
 
 A [Virtual Private Cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC) is an isolated set of resources within a [public cloud](https://en.wikipedia.org/wiki/Cloud_computing#Public_cloud), usually having its own subnets and VLAN.
 
-Databases in Redis Cloud Pro and Ultimate are almost always deployed in a Redis Labs VPC. In most cases, you'll need to create a **VPC peering connection** to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
+Databases in Flexible and Annual subscriptions are almost always deployed in a Redis Labs VPC. In most cases, you'll need to create a **VPC peering connection** to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
 
 How you create these connections and the features supported vary somewhat by public cloud provider. You can read about VPC usage for [AWS](#vpcs-with-aws), [GCP](#vpcs-with-gcp), and [Azure](#vpcs-with-azure) below.
 

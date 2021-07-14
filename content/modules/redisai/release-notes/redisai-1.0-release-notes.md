@@ -1,11 +1,12 @@
 ---
-Title: RedisAI 1.0 Release Notes
+Title: RedisAI 1.0 release notes
+linkTitle: v1.0 (May 2020)
 description:
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisAI 1.0.2 (October 2020)
+## v1.0.2 (October 2020)
 
 This is a maintenance release for version 1.0.
 
@@ -30,7 +31,7 @@ Details:
     - #[449](https://github.com/RedisAI/RedisAI/pull/449) Safely add to arrays
     - #[443](https://github.com/RedisAI/RedisAI/pull/443) Segfault for `AI.DAGRUN` + `AI.TENSORSET`
 
-## RedisAI 1.0.1 (July 2020)
+## v1.0.1 (July 2020)
 
 This is a maintenance release for version 1.0.
 
@@ -47,7 +48,7 @@ Details:
     - #[384](https://github.com/RedisAI/RedisAI/pull/384) AI.MODELGET to return *inputs*, *outputs*, *batchsize*, and *minbatchsize*.
     - #[412](https://github.com/RedisAI/RedisAI/pull/412) Several memory leaks.
 
-## RedisAI 1.0.0 (May 2020)
+## v1.0.0 (May 2020)
 
 Supported Backends:
 

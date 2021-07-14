@@ -1,5 +1,5 @@
 ---
-Title: Adding a Module to a Cluster
+Title: Add a module to a cluster
 description:
 weight: 4
 alwaysopen: false

@@ -1,5 +1,5 @@
 ---
-Title: Create API Keys
+Title: Create API keys
 description: How to use the Redis Cloud admin console to create and manage API Keys for your Account's team owners
 weight: 20
 alwaysopen: false
@@ -33,7 +33,7 @@ To generate a secret access key:
 1. Sign in to the admin console as an account owner.
 1. From the admin console menu, choose **Settings** and select **Cloud API Keys**.
 
-    If **Cloud API Keys** is not shown, make sure you have [enabled your Account to use API]({{< relref "/rc/api/get-started/enable-the-api.md" >}}).
+    If **Cloud API Keys** is not shown, make sure you have [enabled your account to use the API]({{< relref "/rc/api/get-started/enable-the-api.md" >}}).
 1. To create a new key, select **Add new API secret key**.
 1. Enter the secret key properties:
     1. User Name: Choose the user associated with the key.
@@ -43,7 +43,7 @@ To generate a secret access key:
 
         Two keys associated with the same user must have different names. Key names must meet these requirements:
         1. Between 10 and 50 characters
-        1. Only letters, digits, hyphens ('-') and underscores ('_')
+        1. Only letters, digits, hyphens ('-'), and underscores ('_')
         1. No spaces
 1. Choose **Generate API Key**.
 
@@ -58,7 +58,7 @@ The users list contains only verified users in the current account that have the
 
 To delete an access key:
 
-1. [Sign in to admin console](https://app.redislabs.com) as an account owner.
+1. [Sign in to the admin console](https://app.redislabs.com) as an account owner.
 1. Go to: **Settings** > **Cloud API Keys**
 
     If **Cloud API Keys** is not shown, make sure you have [enabled the API for your account]({{< relref "/rc/api/get-started/enable-the-api.md" >}})).
@@ -71,7 +71,7 @@ By default, API access is allowed from all IP addresses.
 
 To limit API access to a specified range of source IP addresses:
 
-1. [Sign in to admin console](https://app.redislabs.com) as an account owner.
+1. [Sign in to the admin console](https://app.redislabs.com) as an account owner.
 1. Go to **Settings** > **Cloud API Keys**
 1. Select **Manage IPs** for the access key that you want to limit.
 1. Select ![Add](/images/rs/icon_add.png#no-click "Add") to add a new whitelist subnet.
@@ -82,7 +82,7 @@ After you add the subnet, you can add additional subnets or select **OK**.
 
 ## Delete an allowed subnet
 
-1. [Sign in to admin console](https://app.redislabs.com) as an account owner.
+1. [Sign in to the admin console](https://app.redislabs.com) as an account owner.
 1. Go to **Settings** > **Cloud API Keys**
 1. Select  **Manage IPs** for the access key that you want to change.
 1. Delete the subnet that you want to remove.

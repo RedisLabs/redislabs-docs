@@ -1,11 +1,12 @@
 ---
-Title: RedisTimeSeries 1.2 Release Notes
+Title: RedisTimeSeries 1.2 release rotes
+linkTitle: v1.2 (January 2020)
 description:
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisTimeSeries 1.2.7 (June 2020)
+## v1.2.7 (June 2020)
 
 This is a maintenance release for version 1.2.
 
@@ -15,7 +16,7 @@ Details:
 
     - #[414](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/414) Crash when a query had an empty label `(foo,)`
 
-## RedisTimeSeries 1.2.6 (May 2020)
+## v1.2.6 (May 2020)
 
 This is a maintenance release for version 1.2.
 
@@ -31,7 +32,7 @@ Details:
     - #[374](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/374) `TS.RANGE` crashed when COUNT argument was missing.
     - #[395](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/395) Check minimum compatible Redis version at module load time.
 
-## RedisTimeSeries 1.2.5 (March 2020)
+## v1.2.5 (March 2020)
 
 Headlines:
 
@@ -43,7 +44,7 @@ Details:
     - #[358](https://github.com/redistimeseries/redistimeseries/issues/358) [Wrong behaviour](https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!topic/redistimeseries/wH0R69e8lOs) in `TS.RANGE` due to shifting left.
     - #[353](https://github.com/redistimeseries/redistimeseries/issues/353) Crash where the name of a time-series was already taken due to [auto-compaction](https://oss.redislabs.com/redistimeseries/configuration/#compaction_policy-policy).
 
-## RedisTimeSeries 1.2.3 (February 2020)
+## v1.2.3 (February 2020)
 
 Headlines:
 
@@ -54,9 +55,9 @@ Details:
 - Bugfixes:
     - #[338](https://github.com/redistimeseries/redistimeseries/issues/338) reverting #[319](https://github.com/redistimeseries/redistimeseries/issues/319).  Aggregation should happen on deterministic time buckets.
 
-## RedisTimeSeries 1.2 GA (1.2.2 - January 2020)
+## v1.2 GA (1.2.2 - January 2020)
 
-This is the General Availability Release of RedisTimeSeries 1.2 (1.2.2)!
+This is the general availability (GA) release of RedisTimeSeries 1.2 (1.2.2).
 
 Headlines:
 

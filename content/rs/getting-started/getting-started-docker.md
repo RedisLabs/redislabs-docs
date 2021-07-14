@@ -1,5 +1,6 @@
 ---
 Title: Getting Started with Redis Enterprise Software using Docker
+linkTitle: Docker
 description:
 weight: 40
 alwaysopen: false

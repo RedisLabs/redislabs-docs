@@ -1,5 +1,6 @@
 ---
 Title: Streams with Active-Active databases
+linkTitle: Streams
 description:
 weight: $weight
 alwaysopen: false

@@ -1,5 +1,5 @@
 ---
-Title: Installing RedisGears 
+Title: Install RedisGears 
 description:
 weight: 60
 alwaysopen: false

@@ -1,13 +1,15 @@
 ---
-title: Getting Started with Redis Enterprise Software
+title: Get started with Redis Enterprise Software
+linkTitle: Get started
 description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/getting-started/quick-setup/
 ---
-In this getting started guide, we take you through the steps to install Redis Enterprise Software (RS) on a Linux host to test its capabilities.
-The steps to set up a RS cluster with a single node are super simple and go as follows:
+This guide helps you install Redis Enterprise Software on a Linux host to test its capabilities.
+
+When finished, you'll have a simple clusert with a single node:
 
 - Step 1: Install Redis Enterprise Software
 - Step 2: Set up a Redis Enterprise Software cluster
@@ -16,18 +18,19 @@ The steps to set up a RS cluster with a single node are super simple and go as f
 
 {{< note >}}
 **This quick start is designed for local testing only.**
-For production environments, the [RS installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) procedures walk you through all of the deployment options.
+For production environments, the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) guide  walks through deployment options appropriate for a production environment.
 {{< /note >}}
 
-You can also try out RS with our guides for:
+Quick start guides are also available to help you:
 
-- [RS in a Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) skip the installation process
-- [RS Redis on Flash cluster]({{< relref "/rs/getting-started/getting-started-redis-flash.md" >}}) to optimize your memory resources
-- [RS Active-Active cluster]({{< relref "/rs/getting-started/getting-started-active-active.md" >}}) for read/write high availablity
+- Run Redis Software using a [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}), which lets you skip the installation process
+- Set up a [Redis on Flash cluster]({{< relref "/rs/getting-started/getting-started-redis-flash.md" >}}) to optimize  memory resources
+- Set up an [Active-Active cluster]({{< relref "/rs/getting-started/getting-started-active-active.md" >}}) to enable high availability
+- [Benchmark]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) Redis Enterprise Software performance.
 
 ## Step 1: Install Redis Enterprise Software
 
-To get RS installed on your machine:
+To install Redis Enterprise Software:
 
 1. Download the installation files from the [Redis Enterprise Download Center](https://www.redislabs.com/download-center/)
 and copy the download package to machine with a Linux-based OS. To untar the image:
@@ -40,31 +43,31 @@ and copy the download package to machine with a Linux-based OS. To untar the ima
 You are required to create a free login to access the download center.
     {{< /note >}}
 
-1. Once the tar command completes, install RS with the install.sh script in the current directory.
+1. Once the tar command completes, run the `install.sh` script in the current directory.
 
     ```sh
     sudo ./install.sh -y
     ```
 
-    {{< note-safe >}}
-When port 53 is in use, the installation fails. This is known to happen in
-default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
-To workaround this issue, change the system configuration to make this port available
-before running RS installation.
+### Port availability
 
-{{% expand "Example steps to resolve the port 53 conflict:" %}}
+If port 53 is in use, the installation fails. This is known to happen in
+default Ubuntu 18.04 installations where `systemd-resolved` (DNS server) is running.
+To workaround this issue, change the system configuration to make this port available
+before installing Redis Enterprise Software.
+
+Here's one way to do so:
 
 1. Run: `sudo vi /etc/systemd/resolved.conf`
 1. Add `DNSStubListener=no` as the last line in the file and save the file.
 1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
 1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
 1. Run: `sudo service systemd-resolved restart`
-{{% /expand %}}
-    {{< /note-safe >}}
+
 
 ## Step 2: Set up a cluster
 
-To set up your machine as an RS cluster:
+To set up your machine as a Redis Enterprise software cluster:
 
 {{< embed-md "cluster-setup.md" >}}
 
@@ -92,12 +95,11 @@ You can test connectivity to your database with:
 - redis-cli - the built-in command-line tool
 - A _Hello World_ application using Python
 
-### Connecting using redis-cli {#connecting-using-rediscli}
+### Connect using redis-cli {#connecting-using-rediscli}
 
-redis-cli is a simple command-line tool to interact with Redis database.
+`redis-cli` is a simple command-line tool to interact with Redis database.
 
-Run redis-cli, located in the /opt/redislabs/bin directory, to connect
-to port 12000 and store and retrieve a key in database1
+Here's how to run `redis-cli` to connect to port 12000 and perform basic database operations using Redis commands:
 
 ```sh
 $ sudo /opt/redislabs/bin/redis-cli -p 12000
@@ -145,6 +147,29 @@ True
 get key1
 123
 ```
+
+## Supported web browsers
+
+To use the Redis Software admin console, you need a modern browser with JavaScript enabled.
+
+The following browsers have been tested with the current version of the admin console:
+
+- Microsoft Windows, version 10 or later.
+    - [Google Chrome](https://www.google.com/chrome/), version 48 and later
+    - [Microsoft Edge](https://www.microsoft.com/edge), version 20 and later
+    - [Mozilla Firefox](https://www.mozilla.org/firefox/), version 44 and and later
+    - [Opera](https://www.opera.com/), version 35 and later.
+
+- Apple macOS:
+    - [Google Chrome](https://www.google.com/chrome/), version 48 and later
+    - [Mozilla Firefox](https://www.mozilla.org/firefox/), version 44 and and later
+    - [Opera](https://www.opera.com/), version 35 and later.
+
+- Linux:
+    - [Google Chrome](https://www.google.com/chrome/), version 49 and later
+    - [Mozilla Firefox](https://www.mozilla.org/firefox/), version 44 and and later
+    - [Opera](https://www.opera.com/), version 35 and later.
+
 
 ## Next steps
 

@@ -10,9 +10,9 @@ Redis Enterprise Software lets you implement password rotation policies using it
 
 You can add a new password for a database user without immediately invalidating the old one (which might cause authentication errors in production).
 
-{{note}}
+{{< note >}}
 Password rotation does not work for the default user. [Add additional users]({{< relref "/rs/security/passwords-users-roles.md#adding-users" >}}) to enable password rotation.
-{{/note}}
+{{< /note >}}
 
 For user access to the Redis Enterprise Software admin console,
 you can set a [password expiration policy]({{< relref "/rs/security/admin-console-security/user-security.md#enabling-password-expiration" >}}) to prompt the user to change their password.

@@ -1,15 +1,75 @@
 ---
-Title: RediSearch 2.0 Release Notes
+Title: RediSearch 2.0 release notes
+linkTitle: v2.0 (September 2020)
 description:
 weight: 95
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 2.0.6 (February, 2020)
+
+## v2.0.10 (July 2021)
 
 This is a maintenance release for version 2.0.
 
 Details:
+
+- Enhancements:
+    - #[2025](https://github.com/redisearch/redisearch/issues/2025) Improve performances on [numeric range search](https://oss.redislabs.com/redisearch/2.0/Query_Syntax/#numeric_filters_in_query)
+    - #[1958](https://github.com/redisearch/redisearch/issues/1958) #[2033](https://github.com/redisearch/redisearch/issues/2033) Support of sortable on the [GEO type](https://oss.redislabs.com/redisearch/2.0/Overview/#geo_index)
+
+- Bug fix:
+    - #[2045](https://github.com/redisearch/redisearch/issues/2045) Possible crash when loading an RDB file (silently ignore double load of alias)
+    - #[2099](https://github.com/redisearch/redisearch/issues/2099) #[2101](https://github.com/redisearch/redisearch/issues/2101) Fixes possible crash with CRDT on [FT.DROPINDEX](https://oss.redislabs.com/redisearch/2.0/Commands/#ftdropindex)
+    - #[1994](https://github.com/redisearch/redisearch/issues/1994) Skip intersect iterator qsort if [INORDER](https://oss.redislabs.com/redisearch/2.0/Query_Syntax/#query_attributes) flag is used 
+
+
+## v2.0.9 (May 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Bug fix in RSCoordinator:
+    - #[259](https://github.com/RediSearch/RSCoordinator/pull/259): Fix deadlock on cursor read by performing cursor command on background thread
+
+## v2.0.8 (May 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Bug fixes:
+    - #[1959](https://github.com/redisearch/redisearch/issues/1959) Renamed parse_time() to parsetime()
+    - #[1932](https://github.com/redisearch/redisearch/issues/1932) Fixed crash resulted from LIMIT arguments
+    - #[1919](https://github.com/redisearch/redisearch/issues/1919) Prevent GC fork from crashing
+- Minor enhancements:
+    - #[1880](https://github.com/redisearch/redisearch/issues/1880) Optimisation of intersect iterator
+    - #[1914](https://github.com/redisearch/redisearch/issues/1914) Do not return payload as a field
+
+## v2.0.7 (May 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Major enhancements:
+    - #[1864](https://github.com/redisearch/redisearch/issues/1864) Improve query time by predetermining reply array length.
+    - #[1879](https://github.com/redisearch/redisearch/issues/1879) Improve loading time by calling RM_ScanKey instead of RM_Call
+- Major bug fix:
+    - #[1866](https://github.com/redisearch/redisearch/issues/1866) Fix a linking issue causing incompatibility with Redis 6.2.0.
+    - #[1842](https://github.com/redisearch/redisearch/issues/1842) #1852 Fix macOS build.
+- Minor bug fixes:
+    - #[1850](https://github.com/redisearch/redisearch/issues/1850) Fix a race condition on drop temporary index.
+    - #[1855](https://github.com/redisearch/redisearch/issues/1855) Fix a binary payload corruption.
+    - #[1876](https://github.com/redisearch/redisearch/issues/1876) Fix crash if the depth of the reply array is larger than 7.
+    - #[1843](https://github.com/redisearch/redisearch/issues/1843) #[1860](https://github.com/redisearch/redisearch/issues/1860) Fix low-level API issues.
+
+## v2.0.6 (February 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
 - Minor additions:
     - #[1696](https://github.com/redisearch/redisearch/issues/1696) The maximum number of results produced by `FT.AGGREGATE` is now configurable: [`MAXAGGREGATERESULTS`](https://oss.redislabs.com/redisearch/2.0/Configuring/#maxaggregateresults).
     - #[1708](https://github.com/redisearch/redisearch/issues/1708) [Stemming](https://oss.redislabs.com/redisearch/2.0/Stemming/#stemming_support) updated with support of new languages: Basque, Catalan, Greek, Indonesian, Irish, Lithuanian, Nepali.
@@ -22,7 +82,7 @@ Details:
     - #[1762](https://github.com/redisearch/redisearch/issues/1762) Align the maximum number of sortable fields with the maximum number of fields (1024)
 
 
-## RediSearch 2.0.5 (December, 2020)
+## v2.0.5 (December 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -31,7 +91,7 @@ Details:
 - Minor features:
     - [#1696](https://github.com/RediSearch/RediSearch/pull/1696) Add [`MAXAGGREGATERESULTS`](https://oss.redislabs.com/redisearch/Configuring/#maxaggregateresults) module configuration for [`FT.AGGREGATE`](https://oss.redislabs.com/redisearch/Commands/#ftaggregate). Similar to `MAXSEARCHRESULTS` for `FT.SEARCH`, it limits the maximum number of results returned.
 
-## RediSearch 2.0.4 (December, 2020)
+## v2.0.4 (December 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -42,7 +102,7 @@ Details:
 - Bugfixes in RSCoordinator:
     - [#206](https://github.com/RediSearch/RediSearch/pull/206) `FT.AGGREGATE` with `LIMIT` and `offset` greater than `0` returned fewer results than requested.
 
-## RediSearch 2.0.3 (November, 2020)
+## v2.0.3 (November 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -51,7 +111,7 @@ Minor bugfixes:
 - Added [`OSS_GLOBAL_PASSWORD`](https://github.com/RediSearch/RSCoordinator#running-rscoordinator) config argument to allow specify shards password on OSS cluster.
 - Update `min_redis_pack_version` to 6.0.8
 
-## RediSearch 2.0.2 (November, 2020)
+## v2.0.2 (November 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -64,7 +124,7 @@ This is a maintenance release for version 2.0.
 
     - [#1605](https://github.com/RediSearch/RediSearch/pull/1605) Rare bug where identical results would get a lower score
 
-## RediSearch 2.0.1 (October, 2020)
+## v2.0.1 (October 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -78,7 +138,7 @@ This is a maintenance release for version 2.0.
     - [#1572](https://github.com/RediSearch/RediSearch/pull/1572) Crash when using WITHSORTKEYS without SORTBY.
     - [#1540](https://github.com/RediSearch/RediSearch/pull/1540) SORTBY should raise an error if the field is not defined as SORTABLE.
 
-## RediSearch 2.0 (September, 2020)
+## v2.0 (September 2020)
 
 RediSearch 2.0 is a public preview release meeting GA standards. This release includes several improvements in performance and usability over RediSearch 1.0. These improvements necessitate a few backward-breaking changes to the API.
 

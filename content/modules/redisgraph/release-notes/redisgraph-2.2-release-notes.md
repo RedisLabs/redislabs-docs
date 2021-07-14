@@ -1,11 +1,110 @@
 ---
-Title: RedisGraph 2.2 Release Notes
+Title: RedisGraph 2.2 release notes
+linkTitle: v2.2 (November 2020)
 description:
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph 2.2.11 (December 2020)
+
+## v2.2.16 (April 2021)
+
+This is a maintenance release for version 2.2.
+
+Update urgency: Medium
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Enhancements:
+
+    - #[1610](https://github.com/RedisGraph/RedisGraph/pull/1610) Add module-level configuration for query timeouts
+    - #[1572](https://github.com/RedisGraph/RedisGraph/pull/1572) Remove query size limitation from parser
+    - #[1590](https://github.com/RedisGraph/RedisGraph/pull/1590) Improve reporting of run-time errors
+    - #[1596](https://github.com/RedisGraph/RedisGraph/pull/1596) Run bulk loader commands on a non-blocking thread
+
+- Performance Improvements:
+
+    - #[1569](https://github.com/RedisGraph/RedisGraph/pull/1569) Avoid network overhead of emitting arrays with postponed length values
+
+- Bugfixes:
+
+    - #[1573](https://github.com/RedisGraph/RedisGraph/pull/1573) Lock graph on building/deleting full-text indexes, fixing a bug in full-text index replication
+    - #[1618](https://github.com/RedisGraph/RedisGraph/pull/1618) Fix error in traversals of 3 or more possible relationship types
+
+- Infrastructure:
+
+    - #[1557](https://github.com/RedisGraph/RedisGraph/pull/1557) Add automated performance benchmarks and regression testing
+    - #[1587](https://github.com/RedisGraph/RedisGraph/pull/1587), #[1598](https://github.com/RedisGraph/RedisGraph/pull/1598) Create build artifacts for multiple environments
+
+## v2.2.14 (16 February 2021)
+
+This is a maintenance release for version 2.2.
+
+Update urgency: Medium
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Performance improvements:
+
+    - #[1565](https://github.com/RedisGraph/RedisGraph/pull/1565) Reserve a single thread for performing all write queries.
+    - #[1548](https://github.com/RedisGraph/RedisGraph/pull/1548), #[1553](https://github.com/RedisGraph/RedisGraph/pull/1553), #[1554](https://github.com/RedisGraph/RedisGraph/pull/1554) only perform SET property updates when property value is changed.
+    - #[1543](https://github.com/RedisGraph/RedisGraph/pull/1543) Enable O3 compiler optimizations on libcypher-parser.
+
+- Bugfixes:
+
+    - #[1556](https://github.com/RedisGraph/RedisGraph/pull/1556) Avoid premature freeing of Records in create and update contexts.
+    - #[1541](https://github.com/RedisGraph/RedisGraph/pull/1541) Fix excessive memory consumption in OpApply.
+
+## v2.2.13 (16 February 2021)
+
+This is a maintenance release for version 2.2.
+
+Update urgency: Medium
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor enhancements:
+
+    - #[1490](https://github.com/RedisGraph/RedisGraph/pull/1490) Add support for startNode() and endNode() functions.
+    - #[1519](https://github.com/RedisGraph/RedisGraph/pull/1519) Add support for db.indexes() procedure.
+
+- Performance improvements:
+
+    - #[1393](https://github.com/RedisGraph/RedisGraph/pull/1393) Use one unified cache for all RedisGraph worker threads.
+    - #[1498](https://github.com/RedisGraph/RedisGraph/pull/1498) Consider both filters and labels in selecting a traversal's starting point.
+    - #[1468](https://github.com/RedisGraph/RedisGraph/pull/1468) Unify logic and error handling for aggregate and scalar functions.
+
+- Bugfixes:
+
+    - #[1534](https://github.com/RedisGraph/RedisGraph/pull/1534) Outdated label information used when performing index scans.
+    - #[1532](https://github.com/RedisGraph/RedisGraph/pull/1532) Invalid optimization of IN \[array] lookups when values are indexed.
+    - #[1524](https://github.com/RedisGraph/RedisGraph/pull/1524) Memory error in accessing complex values after CREATE operations.
+    - #[1523](https://github.com/RedisGraph/RedisGraph/pull/1523) Erroneous results when traversing over some transposed matrix sequences.
+    - #[1499](https://github.com/RedisGraph/RedisGraph/pull/1499) Erroneous results on variable-length traversals on repeatedly-transposed arrays.
+    - #[1504](https://github.com/RedisGraph/RedisGraph/pull/1504) Crash on certain constructions of 0-hop traversals.
+    - #[1495](https://github.com/RedisGraph/RedisGraph/pull/1495) Disallow access of properties that have not yet been created.
+    - #[1503](https://github.com/RedisGraph/RedisGraph/pull/1503) Only allow literal values as parameters.
+    - #[1496](https://github.com/RedisGraph/RedisGraph/pull/1496) Disallow assignment of complex data types to property values in MERGE contexts.
+    - #[1494](https://github.com/RedisGraph/RedisGraph/pull/1494) Disallow assignment of values to properties on deleted entities.
+
+- Build:
+
+    - #[1524](https://github.com/RedisGraph/RedisGraph/pull/1524) Update test suite to run under Python 3.
+
+
+## v2.2.11 (20 December 2020)
 
 This is a maintenance release for version 2.2.
 
@@ -18,7 +117,7 @@ Details:
 - Features
     - #[1480](https://github.com/RedisGraph/RedisGraph/pull/1480) Introduce GRAPH.CONFIG SET/GET to allow result-set size to be configured at runtime.
 
-## RedisGraph 2.2.10 (December 2020)
+## v2.2.10 (20 December 2020)
 
 This is a maintenance release for version 2.2.
 
@@ -32,7 +131,7 @@ Details:
     - #[1475](https://github.com/RedisGraph/RedisGraph/pull/1475) Fix erroneous property update when using `SET` with an unindexed property followed by an indexed one.
     - #[1473](https://github.com/RedisGraph/RedisGraph/pull/1473) Fix backwards compatibility issue in rebuilding and dropping exact-match and full-text indexes.
 
-## RedisGraph 2.2.9 (December 2020)
+## v2.2.9 (4 December 2020)
 
 This is a maintenance release for version 2.2.
 
@@ -56,7 +155,7 @@ Details:
     - #[1437](https://github.com/RedisGraph/RedisGraph/pull/1437) Failed property updates on `MERGE` should be handled gracefully.
     - #[1446](https://github.com/RedisGraph/RedisGraph/pull/1446) Fix errors in Cartesian Product filter placement.
 
-## RedisGraph 2.2 GA (November 2020)
+## v2.2 GA (November 2020)
 
 This is the General Availability Release of RedisGraph 2.2 (v2.2.8)!
 

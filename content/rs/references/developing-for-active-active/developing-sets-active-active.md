@@ -1,5 +1,6 @@
 ---
 Title: Developing with Sets in an Active-Active database
+linkTitle: Sets
 description:
 weight: $weight
 alwaysopen: false

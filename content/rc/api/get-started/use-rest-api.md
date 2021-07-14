@@ -19,7 +19,7 @@ You can access and use the API endpoint URI ([`https://api.redislabs.com/v1`](ht
 
 ## Swagger user interface
 
-The [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models and simulated usage.
+The [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html) is useful for initial introduction and for learning about API operations, models, and simulated usage.
 
 ### Authenticate to Swagger
 
@@ -62,7 +62,7 @@ After you complete the authorization in the Swagger UI, you can make an API requ
 1. Select **Try it out** and then select **Execute**.
 
     The API response is shown in the **Responses** section of the API operation.
-    The results include an example of how you to execute the same operation in a standard command-line utility using `cURL`.
+    The results include an example of how to execute the same operation in a standard command-line utility using `cURL`.
 
     ![swagger-query-results](/images/rv/api/swagger-query-results.png)
 
@@ -85,7 +85,7 @@ Some API operations require input, such as:
         ![swagger-post-edit-body](/images/rv/api/swagger-post-edit-body.png)
 
 {{< warning >}}
-The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You should modify these examples to suit your specific needs and account settings. The examples will fail if used as-is. <br/><br/>For more examples showing how to use specific endpoints, see [REST API Examples]({{< relref "/rc/api/examples/_index.md" >}}).
+The Swagger UI generates default JSON examples for `POST` and `PUT` operations. You should modify these examples to suit your specific needs and account settings. The examples will fail if used as-is. <br/><br/>For more examples showing how to use specific endpoints, see [REST API examples]({{< relref "/rc/api/examples/_index.md" >}}).
 {{< /warning >}}
 
 ## Use the `cURL` HTTP client
@@ -112,7 +112,7 @@ curl -s -X GET "https://$HOST/logs" \
 - The example expects several variables to be set in the Linux shell:
 
     - **$HOST** - The URI of the Redis Labs API (`api.redislabs.com/v1`)
-    - **$ACCOUNT_KEY** - The [Account key value]({{< relref "/rc/api/get-started/enable-the-api.md" >}})
+    - **$ACCOUNT_KEY** - The [account key value]({{< relref "/rc/api/get-started/enable-the-api.md" >}})
     - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
 
 - The line "`| jq -r .`" means that the HTTP response will be piped (forwarded) to the `jq` JSON parser, and it will display only the raw output ("`-r`") of the root element ("`.`")
