@@ -37,7 +37,7 @@ Database storage costs also increase:
 
 - For Fixed plans, single-zone and multi-zone replication effectively doubles storage costs
 
-- For Flexible and Annual plans, replication requires additional shards
+- For Flexible and Annual plans, replication requires additional shards and can affect subscription costs
 
 ## Zone setting maintenance
 
