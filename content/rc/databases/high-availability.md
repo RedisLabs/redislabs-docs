@@ -11,7 +11,9 @@ aliases: /rc/databases/high-availability/
 
 Database replication helps ensure high availability. 
 
-When replication is enabled, your dataset is duplicated to create a replica that is synchronized with the primary dataset.  Replication allows for automatic failover and greater fault tolerance.  It can prevent data loss in the event of a hardware or zone failure. 
+When replication is enabled, your dataset is duplicated to create a replica that is synchronized with the primary dataset.  
+
+Replication allows for automatic failover and greater fault tolerance.  It can prevent data loss in the event of a hardware or zone failure. 
 
 ## Options and plan support
 
