@@ -37,8 +37,12 @@ requirements]({{< relref "/rs/administering/designing-production/hardware-requir
 To explicitly specify the persistent storage size, use the *volumeSize*
 property as described in the example above.
 
+{{< warning >}}
+Be aware the persistent volume size cannot be changed after deployment. Trying to change this value after deployment can result in breaking the operator. Please be sure your specified *volumeSize* is correct at the time of creation.
+{{< /warning >}}
+
 {{< note >}}
-We recommed that you omit the volumeSize definition from the REC declaration
+We recommend that you omit the volumeSize definition from the REC declaration
 so that the Redis Enterprise Cluster deployment on Kubenetes use the default volume size.
 {{< /note >}}
 
