@@ -1,4 +1,3 @@
-
 ---
 Title: High availability and replication
 linkTitle: High availability
@@ -6,18 +5,25 @@ description: Describes database replication and high availability as it affects 
 weight: 90
 alwaysopen: false
 categories: ["RC"]
-aliases: 
+aliases: /rc/databases/high-availability/
+         /rc/databases/high-availability.md
 ---
 
-Database replication helps ensure high availability. When replication is enabled, your dataset is duplicated to create a replica, which stays in sync with the primary dataset. Replication allows for automatic failover and greater fault tolerance. This can prevent data loss in the event of a hardware or zone failure. 
+Database replication helps ensure high availability. 
+
+When replication is enabled, your dataset is duplicated to create a replica that is synchronized with the primary dataset.  
+
+Replication allows for automatic failover and greater fault tolerance.  It can prevent data loss in the event of a hardware or zone failure. 
 
 ## Options and plan support
 
 Redis Enterprise Cloud supports three levels of replication:
 
 - _No replication_ means that you will have a single copy of your database.
-- _Single-zone replication_ means that your database will have a primary and a replica located in the same zone of a cloud region. 
-- _Multi-zone replication_ means that the primary and its replicas are stored in different zones of a cloud region. This means that your database can remain online even if an entire zone becomes unavailable.
+
+- _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region. If anything happens to the primary, the replica takes over and becomes the new primary.
+
+- _Multi-zone replication_ means that the primary and its replicas are stored in different regions. This means that your database can remain online even if an entire region becomes unavailable.
 
 Your replication options depend on your [subscription plan]({{<relref "/rc/subscriptions/_index.md">}}):
 
@@ -33,7 +39,7 @@ Database storage costs also increase:
 
 - For Fixed plans, single-zone and multi-zone replication effectively doubles storage costs
 
-- For Flexible and Annual plans, replication requires additional shards
+- For Flexible and Annual plans, replication requires additional shards and can affect subscription costs
 
 ## Zone setting maintenance
 
