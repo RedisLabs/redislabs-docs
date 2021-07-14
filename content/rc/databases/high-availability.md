@@ -11,15 +11,7 @@ aliases: /rc/databases/high-availability/
 
 Database replication helps ensure high availability. 
 
-When replication is enabled, database data is stored in two locations: a _primary_ (also known as a _master_) and a _replica_ are automatically synchronized as data changes.  
-
-Should anything happen to the primary copy, such as a network communication spike or hardware failure, the replica becomes the new primary and customer connectivity continues as normal.  This automatic failover provides greater fault tolerance; it helps prevent data loss in the event of hardware, communication, or other network failures. 
-aliases: 
----
-
-Database replication helps ensure high availability. 
-
-When replication is enabled, your dataset is duplicated to create a replica that is sychronized with the primary dataset.  Replication allows for automatic failover and greater fault tolerance.  It can prevent data loss in the event of a hardware or zone failure. 
+When replication is enabled, your dataset is duplicated to create a replica that is synchronized with the primary dataset.  Replication allows for automatic failover and greater fault tolerance.  It can prevent data loss in the event of a hardware or zone failure. 
 
 ## Options and plan support
 
