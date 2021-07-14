@@ -1,11 +1,12 @@
 ---
-Title: RediSearch 1.4 Release Notes
+Title: RediSearch 1.4 release notes
+linkTitle: v1.4 (August 2018)
 description:
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 1.4.28 (May 2020)
+## v1.4.28 (May 2020)
 
 This is a maintenance release for version 1.4.
 
@@ -18,7 +19,7 @@ Details:
 - Bugfixes:
     - #[1218](https://github.com/RediSearch/RediSearch/pull/1218) Potential crash when running [without concurrency](https://oss.redislabs.com/redisearch/1.4/Configuring.html#safemode) and using the [cursor API](https://oss.redislabs.com/redisearch/1.4/Aggregations.html#cursor_api).
 
-## RediSearch 1.4.27 (April 2020)
+## v1.4.27 (April 2020)
 
 Headlines:
 
@@ -34,7 +35,7 @@ Details:
     - #[1110](https://github.com/redisearch/redisearch/issues/1110) Rare GC failure when accessing uninitialized variable.
     - #[1131](https://github.com/redisearch/redisearch/issues/1131) Crash on highlighting a search query where the document no longer exists.
 
-## RediSearch 1.4.26 (March 2020)
+## v1.4.26 (March 2020)
 
 Headlines:
 
@@ -44,7 +45,7 @@ Details:
 
 - Fix rare `FORK GC` crash which caused by accessing uninitialized variable.
 
-## RediSearch 1.4.25 (March 2020)
+## v1.4.25 (March 2020)
 
 Headlines:
 
@@ -57,7 +58,7 @@ Details:
 - Bugfixes:
     - #[1051](https://github.com/RediSearch/RediSearch/issues/1051) `FORK GC` was not updating the unique sum of the numeric index.
 
-## RediSearch 1.4.24 (January 2020)
+## v1.4.24 (January 2020)
 
 Headlines:
 
@@ -69,7 +70,7 @@ Details:
     - #[1038](https://github.com/RediSearch/RediSearch/issues/1038) Memory leak on cursor.
     - #[1049](https://github.com/RediSearch/RediSearch/issues/1049) Crash on conversion error when freeing other indexed fields.
 
-## RediSearch 1.4.23
+## v1.4.23
 
 Headlines:
 
@@ -80,7 +81,7 @@ Details:
 - Bugfixes:
     - Memory leak when cursor timed out and cursor wasn't consumed.
 
-## RediSearch 1.4.22
+## v1.4.22
 
 Headlines:
 
@@ -92,7 +93,7 @@ Details:
     - FILTER option was not working correctly with coordinator.
     - Memory leak when cursor was combined with sorted fields.
 
-## RediSearch 1.4.21
+## v1.4.21
 
 Headlines:
 
@@ -103,7 +104,7 @@ Details:
 - Bugfixes:
     - #[1031](https://github.com/RediSearch/RediSearch/issues/1031) Highlighting crashed when used with [`NOINDEX`](https://oss.redislabs.com/redisearch/Commands.html#field_options) fields.
 
-## RediSearch 1.4.20
+## v1.4.20 (January 2020)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -119,7 +120,7 @@ This release improves overall stability and provides fixes for issues found afte
     - #[1022](https://github.com/RediSearch/RediSearch/issues/1022) Potential data corruption during `GC` run.
     - #[1025](https://github.com/RediSearch/RediSearch/issues/1025) Aliasing not working properly with `FT.AGGREGATE`.
 
-## RediSearch 1.4.19
+## v1.4.19 (December 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -131,7 +132,7 @@ This release improves overall stability and provides fixes for issues found afte
     - #[1004](https://github.com/RediSearch/RediSearch/issues/1004) -  Memory leak on `TAG` array on certain situations
     - #[1006](https://github.com/RediSearch/RediSearch/issues/1006) - Unexposed error on [conditional update `IF`](https://oss.redislabs.com/redisearch/Commands.html#ftadd) that caused the error message to leak
 
-## RediSearch 1.4.18
+## v1.4.18 (November 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -141,7 +142,7 @@ This release improves overall stability and provides fixes for issues found afte
 - Bug fixes
     - [#947](https://github.com/RediSearch/RediSearch/issues/947) Fix short read on FORK GC pipe that could result in a crash and potential data corruption
 
-## RediSearch 1.4.17
+## v1.4.17 (October 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -153,7 +154,7 @@ This release improves overall stability and provides fixes for issues found afte
 - Improvements
     - #[891](https://github.com/RediSearch/RediSearch/issues/891) All memory allocations will now use the redis memory allocator.  This means that all the memory will be exposed correctly in the redis `INFO MEMORY` command.
 
-## RediSearch 1.4.16
+## v1.4.16 (September 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -169,7 +170,7 @@ Main Fixes:
 - #[848](https://github.com/RediSearch/RediSearch/issues/848) RediSearch will not crash when sorting on fields that don't exists in all documents.
 - #[884](https://github.com/RediSearch/RediSearch/issues/884) Fix wrong results on intersect iterator.
 
-## RediSearch 1.4.15
+## v1.4.15 (28 August 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -182,7 +183,7 @@ Main Fixes:
 - When Redis exits, forked processes by [FORK Garbage Collection](https://oss.redislabs.com/redisearch/Configuring.html#gc_policy) will now be closed accordingly.
 - For indices that are not [temporary](https://oss.redislabs.com/redisearch/Commands.html#ftcreate) and  [interleaved](https://oss.redislabs.com/redisearch/Configuring.html#safemode): When an index is dropped, the indexer thread is now closed.
 
-## RediSearch 1.4.14
+## v1.4.14 (20 August 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -193,7 +194,7 @@ Main Fixes:
 
 - #[851](https://github.com/RediSearch/RediSearch/issues/851) In interleaved mode ([non safemode](https://oss.redislabs.com/redisearch/Configuring.html#safemode)), documents deleted by concurrent updates, will be ignored.
 
-## RediSearch 1.4.13
+## v1.4.13 (8 August 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -206,7 +207,7 @@ Main Fixes:
 - #[820](https://github.com/RediSearch/RediSearch/issues/820) fix crash on getting a none existing doc from a doc table
 - Fix issue with invalid memory read when using tags with ' ' (space) separator
 
-## RediSearch 1.4.12
+## v1.4.12 (5 August 2019)
 
 Update urgency: Medium
 This is a maintenance release for version 1.4.
@@ -224,7 +225,7 @@ Main Fixes:
 - #[769](https://github.com/RediSearch/RediSearch/issues/769) Fix rare crash on rdb loading
 - #[749](https://github.com/RediSearch/RediSearch/issues/749) On prefix searches, do not expand prefixes to terms which have no documents
 
-## RediSearch 1.4.11
+## v1.4.11 (June 2019)
 
 Update urgency: Medium
 
@@ -233,7 +234,7 @@ This release only add support for aliasing to the previews 1.4.10 release.
 - Added functionality
     - #[731](https://github.com/RediSearch/RediSearch/issues/731) Add index aliasing. This allows users to provide (or remove) ‘links’ to indexes. The commands are FT.ALIASADD, FT.ALIASDEL, and FT.ALIASUPDATE. See [ftaliasadd](https://oss.redislabs.com/redisearch/Commands.html#ftaliasadd) for details.
 
-## RediSearch 1.4.10
+## v1.4.10 (28 May 2019)
 
 Update urgency: Medium
 
@@ -245,7 +246,7 @@ Main Fixes:
 
 - Fix memory leak when combining SORT with APPLY on FT.AGGREGATE
 
-## RediSearch 1.4.9
+## v1.4.9 (18 May 2019)
 
 Update urgency: Medium
 
@@ -263,13 +264,13 @@ Known Issue:
 
 - Memory leak when combining SORT and APPLY in FT.AGGREGATE. This issue is fixed on 1.4.10. It's recommended to skip directly to 1.4.10.
 
-## RediSearch 1.4.8
+## v1.4.8 (29 April 2019)
 
 Update urgency: Low
 
 Technical release, no changes nor fixes.
 
-## RediSearch 1.4.7
+## v1.4.7 (29 April 2019)
 
 Update urgency: Medium
 
@@ -281,7 +282,7 @@ Main Fixes:
 
 - Fix issue where Dropping and recreating the same index while querying might cause crashes.
 
-## RediSearch 1.4.6
+## v1.4.6 (8 April 2019)
 
 Update urgency: Medium
 
@@ -294,7 +295,7 @@ Main Fixes:
 - Loading a potentially corrupted RDB files generated by versions lower than 1.4
 - Fix issue where `REPLACE PARTIAL` might not work properly (#[621](https://github.com/RediSearch/RediSearch/issues/621))
 
-## RediSearch 1.4.5
+## v1.4.5 (March 2019)
 
 Update urgency: Low
 
@@ -306,7 +307,7 @@ Main Fixes:
 
 - Fixed issue where FORK GC causing redis rdb fork to fail
 
-## RediSearch 1.4.4
+## v1.4.4 (21 February 2019)
 
 Update urgency: Low
 
@@ -319,7 +320,7 @@ Main Fixes:
 - Fixed memory leak on Fork GC
 - Fixed key close after releasing GIL on Fork GC (might cause crashed on rare situations)
 
-## RediSearch 1.4.3
+## v1.4.3 (4 February 2019)
 
 Update urgency: Low
 
@@ -334,7 +335,7 @@ Main Fixes:
 1. Fixed fork GC  (preview)  deadlock when using Tags
 1. Fixed memory leaks on index creation and deletion
 
-## RediSearch 1.4.2
+## v1.4.2 (27 November 2018)
 
 Update urgency: Low
 
@@ -342,7 +343,7 @@ This is a maintenance release for version 1.4.
 
 This release improves overall stability and provides fixes to issues found.
 
-## RediSearch 1.4.1
+## v1.4.1 (12 November 2018)
 
 Update urgency: Medium
 
@@ -373,7 +374,7 @@ RediSearch's [configuration](https://oss.redislabs.com/redisearch/Configuring/) 
 
 This version removes the limit of 10 results from `FT.SUGGET` - you can set the `MAX num` as high as needed.
 
-## RediSearch 1.4.0
+## v1.4.0 (August 2018)
 
 **Update urgency:*- Medium - mainly due to numerous fixes
 

@@ -1,5 +1,6 @@
 ---
 Title: Developing with HyperLogLog in an Active-Active database
+linkTitle: HyperLogLog
 description:
 weight: $weight
 alwaysopen: false

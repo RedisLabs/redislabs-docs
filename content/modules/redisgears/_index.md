@@ -1,7 +1,7 @@
 ---
 Title: RedisGears
 description:
-weight: 55
+weight: 40
 alwaysopen: false
 categories: ["Modules"]
 ---

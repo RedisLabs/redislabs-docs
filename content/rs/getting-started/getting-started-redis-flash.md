@@ -1,5 +1,6 @@
 ---
-Title: Getting Started with Redis on Flash (RoF)
+Title: Get started with Redis on Flash (RoF)
+linkTitle: Redis on Flash
 description:
 weight: 20
 alwaysopen: false

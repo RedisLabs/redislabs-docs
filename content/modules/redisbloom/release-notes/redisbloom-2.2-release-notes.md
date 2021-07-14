@@ -1,11 +1,12 @@
 ---
-Title: RedisBloom 2.2 Release Notes
+Title: RedisBloom 2.2 release notes
+linkTitle: v2.2 (December 2019)
 description:
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisBloom 2.2.4 (July 2020)
+## v2.2.4 (July 2020)
 
 Headlines:
 
@@ -17,7 +18,7 @@ Details:
     - #[215](https://github.com/redisbloom/redisbloom/issues/215) Count-Min-Sketch CMS.INCRBY command to reply with correct min result.
     - #[219](https://github.com/redisbloom/redisbloom/issues/219) Cuckoo Filter CF.DEBUG correct response formatting.
 
-## RedisBloom 2.2.2 (March 2020)
+## v2.2.2 (March 2020)
 
 Headlines:
 
@@ -29,7 +30,7 @@ Details:
     - Bloom
         - #[180](https://github.com/redisbloom/redisbloom/issues/180) Removed the upper limit on Bloom Filter capacity.
 
-## RedisBloom 2.2.1 (January 2020)
+## v2.2.1 (January 2020)
 
 Headlines:
 
@@ -42,7 +43,7 @@ Details:
         - #[179](https://github.com/RedisBloom/RedisBloom/issues/179) Allow storing filters with size over 4294967295 (UINT32_MAX). Now 64 bits.
         - #[177](https://github.com/RedisBloom/RedisBloom/issues/177) Prevent passing both `EXPANSION` *and* `NONSCALING` parameters to `BF.RESERVE`.
 
-## RedisBloom 2.2.0 (December 2019)
+## v2.2.0 (December 2019)
 
 - Added functionality
     - Bloom

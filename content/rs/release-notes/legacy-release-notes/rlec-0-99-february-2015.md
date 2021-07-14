@@ -1,5 +1,6 @@
 ---
 Title: RLEC 0.99.5-24 Release Notes (February 15, 2015)
+linkTitle: 0.99.5-24 (February 15, 2015)
 description:
 weight: 99
 alwaysopen: false

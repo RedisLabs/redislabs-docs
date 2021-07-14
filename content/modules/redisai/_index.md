@@ -1,7 +1,7 @@
 ---
 Title: RedisAI
 description:
-weight: 55
+weight: 20
 alwaysopen: false
 categories: ["Modules"]
 ---

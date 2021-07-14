@@ -1,11 +1,13 @@
 ---
-Title: RediSearch in Active-Active Databases
+Title: RediSearch in Active-Active databases
+linkTitle: Search active-active databases
 description:
 weight: 30
 alwaysopen: false
 categories: ["Modules"]
 ---
-Starting with RediSearch 2.x supported in Redis Enterprise Software (RS) 6.0 and higher, you can [add the RediSearch module]({{< relref "/modules/add-module-to-database.md" >}}) to an [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}}) at the time that you create the database.
+Starting with RediSearch 2.x, supported in Redis Enterprise Software (RS) 6.0 and higher, you can [add the RediSearch module]({{< relref "/modules/add-module-to-database.md" >}}) to an [Active-Active database]({{< relref "/rs/administering/designing-production/active-active.md" >}}) at the time that you create the database.
+
 That means that you can run search operations on any of the instances of the Active-Active database.
 
 The way it works is that:

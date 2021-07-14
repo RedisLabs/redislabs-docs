@@ -1,5 +1,6 @@
 ---
-Title: Benchmark a Redis on Flash Enabled Database
+Title: Benchmark a Redis on Flash enabled database
+linkTitle: Benchmark Redis on Flash
 description:
 weight: $weight
 alwaysopen: false

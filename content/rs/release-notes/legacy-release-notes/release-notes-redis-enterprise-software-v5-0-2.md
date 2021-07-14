@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Software 5.0.2 (2018 March)
+linkTitle: 5.0.2 (2018 March)
 description:
 weight: 92
 alwaysopen: false

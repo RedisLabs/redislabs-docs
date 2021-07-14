@@ -1,5 +1,6 @@
 ---
-Title: Upgrading a Database to RediSearch 2.x
+Title: Upgrading a database to RediSearch 2.x
+linkTitle: Upgrade a database
 description:
 weight: 30
 alwaysopen: false
@@ -87,13 +88,8 @@ The `add-prefix` option is only recommended when you want to index all of the ha
         ```
 
     1. Stop the processes that are sending requests to the source database so all of the data gets synchronized to the destination database.
-    1. Verify that the replication is complete in `shard-cli`:
-
-        1. Connect to each shard in the source database and run `info replication` to see the replication offset.
-        1. Compare that replication offset to the offset reported by the syncer.
-
+    1. Verify that the replication is complete by comparing the number of indexed documents on FT.INFO on both source and destination databases until the number of indexed documents is the same in the source and destination databases.
     1. When the status field is `st_in_sync` then you can press **Ctrl-C** to cancel the synchronization process.
     1. Press **Q** to quit the `RediSearch_Syncer.py`.
 
 You can now redirect your database connections to the database with RediSearch 2.x.
-

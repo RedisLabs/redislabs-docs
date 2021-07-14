@@ -1,5 +1,6 @@
 ---
 Title: Developing with Sorted Sets in an Active-Active database
+linkTitle: Sorted sets
 description:
 weight: $weight
 alwaysopen: false
