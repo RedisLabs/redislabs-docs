@@ -7,13 +7,28 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## v2.4.7 (July 2021)
+
+This is a maintenance release for RedisGraph 2.4
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+- Bug fixes:
+    - #[1746](https://github.com/redisgraph/redisgraph/issues/1746) Avoid invalid memory access after reallocating labels array
+    - #[1748](https://github.com/redisgraph/redisgraph/issues/1748) Only allocate space for deleted nodes and edges
+    - #[1749](https://github.com/redisgraph/redisgraph/issues/1749), #[1730](https://github.com/redisgraph/redisgraph/issues/1730) Support updating properties with map referenced by parameter or variable
+    - #[1754](https://github.com/redisgraph/redisgraph/issues/1754) Map should return volatile data
+    - #[1773](https://github.com/redisgraph/redisgraph/issues/1773) Matrix resize doesn't set both rows and columns atomically
+    - #[1799](https://github.com/redisgraph/redisgraph/issues/1799) Always instantiate new persistent matrices as sparse%
+
 ## v2.4.6 (June 2021)
 
 This is a maintenance release for RedisGraph 2.4
 
 Update urgency: Medium
 
-- Details:
+Details:
 
 - Performance improvements:
     - #[1702](https://github.com/redisgraph/redisgraph/issues/1702) Optimize matrix synchronization in GRAPH.BULK commands
