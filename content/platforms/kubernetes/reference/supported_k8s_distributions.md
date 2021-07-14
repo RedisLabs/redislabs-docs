@@ -9,8 +9,8 @@ aliases:
 
 Each release of the Redis Enterprise operator is thoroughly tested against a set of Kubernetes distributions. The table below lists the current release's support status for each distribution.
 
-- "supported" inicates this distribution is supported for this release.
-- "depricated" indicates this distribution is supported for this release, but will be dropped in a future release.
+- "supported" indicates this distribution is supported for this release.
+- "deprecated" indicates this distribution is supported for this release, but will be dropped in a future release.
 - "no longer supported" indicates support has been dropped for this distribution.
 - Any distribution not listed below is not supported for production workloads.
 
