@@ -21,7 +21,7 @@ More info: [Using Admission Controllers](https://kubernetes.io/docs/reference/ac
 {{%definition "access control list (ACL)"%}}
 Allows you to manage permissions based on key patterns.
 
-More info: [redis.io/topics/acl](https://redis.io/topics/acl), [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list)
+More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Update database ACLs]({{<relref "/rs/security/ldap/update-database-acls.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
 {{%/definition%}}
 
 {{%definition "Active-Active database (CRDB)"%}}
@@ -43,6 +43,12 @@ Log files that keep a record of data changes by writing to the end of a file. Th
 dataset by replaying the append-only log from the beginning to the end.
 
 More info: [Data Persistence]({{<relref "content/rc/concepts/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "content/rs/concepts/data-access/persistence.md" >}})
+{{%/definition%}}
+
+{{%definition "CIDR allowlist"%}}
+Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addresses. A CIDR allowlist defines a range of IP addresses and permits connections to them.
+
+More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing), [Configure CIDR allowlist]({{<relref "/rc/security/cidr-whitelist.md">}})
 {{%/definition%}}
 
 {{%definition "cluster"%}}
@@ -111,6 +117,12 @@ More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ing
 A command line tool for communicating with a Kubernetes API server. 
 
 More info: [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)
+{{%/definition%}}
+
+{{%definition "Lightweight Directory Access Protocol (LDAP)"%}}
+A protocol for accessing and maintaining distributed directory services over an IP network, often used to authenticate users.
+
+More info: [LDAP wikipedia](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol/), [LDAP authentication]({{<relref "/rs/security/ldap/_index.md">}})
 {{%/definition%}}
 
 {{%definition "master node"%}}
@@ -225,7 +237,7 @@ More info: [Database replication]({{<relref "/rs/concepts/high-availability/repl
 {{%definition "role-based access control (RBAC)"%}}
 A security approach that restricts system access to authorized users.
 
-More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control)
+More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
 {{%/definition%}}
 
 {{%definition "secret"%}}
@@ -255,13 +267,13 @@ Data persistence file that performs a data dump every one, six, or twelve hours.
 {{%definition "Transport Layer Security (TLS)"%}}
 Protocols that provide communications security over a computer network.
 
-More info: [TSL wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security)
+More info: [TLS wikipedia](https://en.wikipedia.org/wiki/Transport_Layer_Security), [Cloud database TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}}), [Redis Enterprise TLS]({{<relref "/rs/security/tls-ssl.md">}}), [Manage TLS certificates]({{<relref "/rs/security/admin-console-security/encryption.md">}}), [Updating SSL/TLS certificates]({{<relref "/rs/administering/cluster-operations/updating-certificates.md">}})
 {{%/definition%}}
 
 {{%definition "VPC peering"%}}
 Networking connection between two VPCs that enables you to route traffic between them using private IP addresses. Instances in either VPC can communicate with each other as if they are within the same network.
 
-More info: [VPC wikipedia](https://en.wikipedia.org/wiki/Virtual_private_cloud)
+More info: [VPC wikipedia](https://en.wikipedia.org/wiki/Virtual_private_cloud), [Enable VPC peering]({{<relref "/rc/security/vpc-peering.md">}})
 {{%/definition%}}
 
 
