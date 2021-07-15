@@ -5,5 +5,6 @@ Disallow: /5.2/
 Disallow: /5.4/
 Disallow: /5.6/
 Disallow: /6.0/
+Disallow: /6.2/
 
 Sitemap: https://docs.redislabs.com/latest/sitemap.xml
