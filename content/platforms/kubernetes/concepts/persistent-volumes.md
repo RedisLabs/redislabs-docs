@@ -38,7 +38,7 @@ To explicitly specify the persistent storage size, use the *volumeSize*
 property as described in the example above.
 
 {{< warning >}}
-Be aware the persistent volume size cannot be changed after deployment. Trying to change this value after deployment can result in breaking the operator. Please be sure your specified *volumeSize* is correct at the time of creation.
+Be aware the persistent volume size cannot be changed after deployment. Trying to change this value after deployment could result in unexpected and potentially damaging behavior. Please be sure your specified *volumeSize* is correct at the time of creation.
 {{< /warning >}}
 
 {{< note >}}
