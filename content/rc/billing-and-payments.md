@@ -9,7 +9,7 @@ aliases: /rc/billing-and-payments/
          /rc/billing-and-payments.md
 ---
 
-The **Billing & Payments** screen shows the most recent transactions for your account and lets you mange your payment methods.
+The **Billing & Payments** screen shows the most recent transactions for your account and helps you manage your payment methods.
 
 {{<image filename="images/rc/billing-billing-history-tab.png" alt="The Billing & Payments screen shows billing transactions and manage payment methods." >}}{{< /image >}}
 
