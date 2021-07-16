@@ -64,7 +64,7 @@ To add a new payment method:
 
     {{<image filename="images/rc/billing-add-credit-card.png" alt="Select Add Credit Card to add a new payment method" >}}{{< /image >}}
 
-4.  If your billing address is different from your billing address, locate the **Billing address** section, deactivate **Use account address**, and then provide the appropriate details.
+4.  If your billing address is different from your account address, locate the **Billing address** section, deactivate **Use account address**, and then provide the appropriate details.
 
     {{<image filename="images/rc/billing-update-billing-address.png" alt="Deactive the Use account address slider to specfy a different billing address." >}}{{< /image >}}
 
