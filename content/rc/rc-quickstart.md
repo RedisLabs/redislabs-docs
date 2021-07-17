@@ -175,7 +175,7 @@ Here's how to connect to your database using the `redis-py` library for Python.
 ## More info
 
 - [Manage Databases]({{< relref "/rc/databases/_index.md" >}})
-- [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
+- [Data Persistenced]({{< relref "/rc/databases/configuration/data-persistence.md" >}})
 - [Secure Your Redis Cloud Database]({{< relref "/rc/administration/security/_index.md" >}})
 - [Back-up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})
 - [Monitor Redis Cloud Performance]({{< relref "/rc/databases/monitor-performance.md" >}}).

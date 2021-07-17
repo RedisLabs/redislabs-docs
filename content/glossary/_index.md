@@ -42,7 +42,7 @@ Provides applications read-only access to replicas of the data set from differen
 Log files that keep a record of data changes by writing to the end of a file. This happens with every write, or every second to allow data recovering the entire
 dataset by replaying the append-only log from the beginning to the end.
 
-More info: [Data Persistence]({{<relref "content/rc/concepts/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "content/rs/concepts/data-access/persistence.md" >}})
+More info: [Data Persistence]({{<relref "content/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "content/rs/concepts/data-access/persistence.md" >}})
 {{%/definition%}}
 
 {{%definition "CIDR allowlist"%}}
@@ -54,7 +54,7 @@ More info: [CIDR wikipedia](https://en.wikipedia.org/wiki/Classless_Inter-Domain
 {{%definition "cluster"%}}
 A Redis Enterprise cluster is composed of identical nodes that are deployed within a data center or stretched across local availability zones.
 
-More info: [Database Clustering]({{<relref "content/rc/concepts/clustering.md" >}})
+More info: [Database Clustering]({{<relref "content/rc/databases/configuration/clustering.md" >}})
 {{%/definition%}}
 
 {{%definition "Cluster Configuration Store (CSS)"%}}
