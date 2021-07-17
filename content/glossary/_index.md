@@ -80,7 +80,7 @@ More info: [CustomResourceDefinition](https://kubernetes.io/docs/reference/gloss
 {{%definition "data eviction policy"%}}
 Defines how excess data is handled when the database exceeds the memory limit.
 
-More info: [Data Eviction Policy]({{<relref "/rc/concepts/data-eviction-policies.md">}})
+More info: [Data Eviction Policy]({{<relref "/rc/databases/configuration/data-eviction-policies.md">}})
 {{%/definition%}}
 
 {{%definition "Domain Name Service (DNS)"%}}
