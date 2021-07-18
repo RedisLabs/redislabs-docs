@@ -71,20 +71,6 @@ To backup to a local mount point for a node:
 
     For example: `/mnt/Public`
 
-### OpenStack Swift
-
-{{< note >}}
-Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
-{{< /note >}}
-
-Before you choose to backup to OpenStack Swift, make sure that you have:
-
-- Storage URL in the format: `https://<openstack_url>/v1`
-- Container
-- Prefix (Optional)
-- User
-- Key
-
 ### Azure Blob Storage
 
 Before you choose to backup to Azure Blob Storage, make sure that you have:
