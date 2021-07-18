@@ -17,7 +17,6 @@ You can export a database to these locations:
 - SFTP server
 - Amazon AWS S3
 - Local mount point
-- OpenStack Swift (Object Storage)
 - Azure Blob Storage
 - Google Cloud Storage
 
