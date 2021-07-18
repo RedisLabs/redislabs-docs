@@ -7,6 +7,8 @@ alwaysopen: false
 categories: ["RC"]
 aliases:  /rv/concepts/
           /rc/concepts/
+          /rc/administration/configure/
+          /rv/administration/configuration/
           /rc/databases/configuration/
           /rc/databases/configuration.md
           /rc/databases/configuration/index.html

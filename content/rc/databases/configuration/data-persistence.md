@@ -1,5 +1,6 @@
 ---
-Title: Data Persistence
+Title: Data persistence
+linkTitle: Data persistence
 description: Data persistence enables recovery in the event of memory loss or other catastrophic failure.  Here, you learn data persistence options, when they're available, and how to apply specific settings to individual databases. 
 weight: $weight
 alwaysopen: false

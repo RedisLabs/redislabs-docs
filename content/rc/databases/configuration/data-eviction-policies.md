@@ -1,5 +1,5 @@
 ---
-Title: Data Eviction Policies
+Title: Data eviction policies
 linkTitle: Data eviction
 description: Data eviction policies control what happens when new data exceeds the memory limits of a database.  Here, you'll learn the available policies and how to change which one is used for a database.
 weight: $weight
