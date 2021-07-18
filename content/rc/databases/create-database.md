@@ -55,7 +55,7 @@ between the VPC that this database is on and the VPC that the destination databa
     - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/databases/back-up-data.md" >}}) location.
     - **Modules** - Enable modules and select the module to use with the database.<a name="supported-modules">&nbsp;</a>
 
-        - For applications that require high-throughput, use a Redis Cloud Pro subscription.
+        - For applications that require high-throughput, use a Redis Cloud Flexible subscription.
         - For RedisGraph, use the [sizing calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
             to calculate the required resources.
         - For RediSearch on a Redis Cloud Flexible (or Annual) subscription, enter the estimated number of documents you want to index.

@@ -1,12 +1,17 @@
 ---
-Title: Create and edit a Cloud Account
-description:
-weight: 20
+Title: Manage cloud accounts
+LinkTitle: Cloud accounts
+description: Describes how to provision your Redis Enterprise Cloud subscription to use existing cloud provider accounts.
+weight: 40
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/how-to/view-edit-cloud-account/
-        /rv/how-to/creating-cloud-account/
-        /rc/how-to/creating-cloud-account/
+         /rv/how-to/creating-cloud-account/
+         /rc/how-to/creating-cloud-account/
+         /rc/how-to/view-edit-cloud-account/
+         /rc/how-to/view-edit-cloud-account.md
+         /rc/cloud-accounts/
+         /rc/cloud-accounts.md
 ---
 
 Many customers use cloud provider accounts provisioned and maintained by Redis Labs.
@@ -40,3 +45,9 @@ To create or edit a cloud account in Redis Cloud:
 1. Select **Save**.
 
 Use the **Delete** button to remove a cloud account from your subscription.
+
+## Dedicated IAM resources
+
+We recommend creating dedicated identity and access management (IAM) resources to manage the infrastructure of your subscriptions.
+
+To learn more, see [Create IAM resources for AWS cloud accounts]({{<relref "/rc/cloud-accounts/iam-resources/">}})

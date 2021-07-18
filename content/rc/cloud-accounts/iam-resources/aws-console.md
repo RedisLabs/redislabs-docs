@@ -1,33 +1,41 @@
 ---
-Title: Create IAM resources (AWS)
-weight: 30
+Title: Create IAM resources using AWS console
+LinkTitle: AWS console
+weight: $weight
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/how-to/creating-aws-user-redis-enterprise-vpc/
+         /rc/how-to/creating-aws-user-redis-enterprise-vpc/
+         /rc/how-to/creating-aws-user-redis-enterprise-vpc.md
+         /rc/how-to/creating-iam-resources/creating-aws-user-redis-enterprise-vpc/
+         /rc/how-to/creating-iam-resources/creating-aws-user-redis-enterprise-vpc.md
+         /rc/cloud-accounts/iam-resources/aws-console/
+         /rc/cloud-accounts/iam-resources/aws-console.md
+
 ---
-To manually create IAM resources using the AWS Console, follow these steps.
+To manually create IAM resources using the [AWS console](https://console.aws.amazon.com/), follow these steps.
 
 ## Step 1: Create the IAM instance policy
 
 First, create a policy to use for the new instance role:
 
-{{< video "/images/rc/create-instance-role-policy.mp4" "Create an instance role policy" >}}
+<!-- {{< video "/images/rc/create-instance-role-policy.mp4" "Create an instance role policy" >}} -->
 
 1. In the AWS IAM console, go to **Policies** > **Create policy**.
-1. In the **JSON** tab, paste the contents of the RedisLabsInstanceRolePolicy.json policy file.
+1. In the **JSON** tab, paste the contents of the RedisLabsInstanceRolePolicy.json policy file, shown here:
 
     {{%expand "View RedisLabsInstanceRolePolicy.json" %}}
 	{{% code-include file="rv/RedisLabsInstanceRolePolicy.json" language="js" %}}
     {{% /expand%}}
 
-1. Validate it and press **Review Policy**.
-1. Enter **RedisLabsInstanceRolePolicy** as the policy name and click **Create Policy**.
+1. Validate it and then select **Review Policy**.
+1. Enter **RedisLabsInstanceRolePolicy** as the policy name and then select **Create Policy**.
 
 ## Step 2: Create the service role
 
-Now create the role that uses the policy:
+To create the role that uses the policy:
 
-{{< video "/images/rc/create-cluster-node-role.mp4" "Create a cluster node role" >}}
+<!-- {{< video "/images/rc/create-cluster-node-role.mp4" "Create a cluster node role" >}} -->
 
 1. In the AWS IAM console, go to **Roles** and click **Create Role**.
 1. Select **AWS Service** as the trusted entity, **EC2** as the service
@@ -40,7 +48,7 @@ Now create the role that uses the policy:
 
 Now create a policy to assign to the user:
 
-{{< video "/images/rc/create-instance-user-policy.mp4" "Create an instance user policy" >}}
+<!-- {{< video "/images/rc/create-instance-user-policy.mp4" "Create an instance user policy" >}} -->
 
 1. In the AWS IAM console, go to **Policies** > **Create policy**.
 1. In the **JSON** tab, paste the contents of the RedisLabsIAMUserRestrictedPolicy.json policy file.
@@ -56,7 +64,7 @@ Now create a policy to assign to the user:
 
 Create a user and attach the policy you created:
 
-{{< video "/images/rc/create-programmatic-user.mp4" "Create programmatic user" >}}
+<!-- {{< video "/images/rc/create-programmatic-user.mp4" "Create programmatic user" >}} -->
 
 1. In the AWS IAM console, go to **Users** > select **Add user**.
 1. Name it `redislabs-user` and check only the **Programmatic access** checkbox.
@@ -71,7 +79,7 @@ Create a user and attach the policy you created:
 
 Last, create a role and attach the policy you created:
 
-{{< video "/images/rc/create-console-access-role.mp4" "Create console access user" >}}
+<!-- {{< video "/images/rc/create-console-access-role.mp4" "Create console access user" >}} -->
 
 1. In the AWS IAM console, go to **Roles** > select **Create role**.
 1. Select **Another AWS account**.
