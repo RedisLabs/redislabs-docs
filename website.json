@@ -48,12 +48,12 @@
         },
         {
             "Condition": {
-                "KeyPrefixEquals": "5.2/"
+                "KeyPrefixEquals": "5.2/rc/"
             },
             "Redirect": {
                 "HostName": "docs.redislabs.com",
                 "Protocol": "https",
-                "ReplaceKeyPrefixWith": "latest/"
+                "ReplaceKeyPrefixWith": "latest/rc/"
             }
         },
         {
