@@ -89,8 +89,7 @@ are supported with the following limitations:
 
 The clustering configuration of a Redis Cloud instance can be
 changed. However, hashing policy changes delete existing data 
-(FLUSHDB) before they're applied. These changes such as:
-are:
+(FLUSHDB) before they're applied. These changes include:
 
 1. Changing the hashing policy, either from standard to custom or vice versa.
 1. Changing the order of custom hashing policy rules.
