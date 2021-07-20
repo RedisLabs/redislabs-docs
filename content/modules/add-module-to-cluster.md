@@ -95,7 +95,7 @@ To add a module package to the cluster using the admin console:
 
 ## Upgrading the module for the database
 
-After you add and updated module to the cluster, go to the configuration of the databases that use the module.
+After you add an updated module to the cluster, go to the configuration of the databases that use the module.
 The database configuration shows that a new version of the module is available for the database.
 
 ![update_available-1](/images/rs/update_available.png?width=1346&height=1600)
