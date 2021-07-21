@@ -1,5 +1,5 @@
 ---
-Title: Supported Platforms
+Title: Supported platforms
 description:
 weight: 10
 alwaysopen: false
