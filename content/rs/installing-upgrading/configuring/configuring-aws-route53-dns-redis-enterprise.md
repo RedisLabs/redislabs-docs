@@ -1,5 +1,5 @@
 ---
-Title: Configuring AWS Route53 DNS Management
+Title: AWS Route53 DNS management
 linkTitle: AWS Route 53 DNS
 description:
 weight: $weight
