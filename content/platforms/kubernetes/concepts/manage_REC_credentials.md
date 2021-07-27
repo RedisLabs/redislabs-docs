@@ -111,7 +111,7 @@ Note there are other methods to decode secrets.
         -o yaml | kubectl apply -f 
         ```
 
-1. It may take up to five minutes for all the components to read the new password from the updated secret.
+It may take up to five minutes for all the components to read the new password from the updated secret.
 1. Delete the previous admin user from the Redis Enterprise cluster console.
 
 {{<note>}}
