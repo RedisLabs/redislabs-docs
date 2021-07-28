@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: /platforms/kubernetes/manage_REC_credentials/
 ---
-The Redis Enterprise Software on Kubernetes uses a custom resource called RedisEnterpriseCluster to create a Redis Enterprise cluster(REC). At the time of creation, it generates random credentials the operator will use to perform operations on the Redis Enterprise cluster via the APIs. The credentials are saved in a Kubernetes (K8s) secret. The secret name defaults to the name of the cluster.
+The Redis Enterprise Software on Kubernetes uses a custom resource called RedisEnterpriseCluster to create a Redis Enterprise cluster (REC). At the time of creation, it generates random credentials the operator will use to perform operations on the Redis Enterprise cluster via the APIs. The credentials are saved in a Kubernetes (K8s) secret. The secret name defaults to the name of the cluster.
 
 {{<note>}}
 This procedure is only supported for operator versions 6.0.20-12 and above.
@@ -16,7 +16,7 @@ This procedure is only supported for operator versions 6.0.20-12 and above.
 
 The credentials can be used to access the cluster UI or the API. Connectivity must be configured to the cluster pods using an appropriate service (or port forwarding).
 
-1. To inspect the random  username and password created by the operator during creation, use the `kubectl get secret` command.
+1. To inspect the random username and password created by the operator during creation, use the `kubectl get secret` command.
 
     ```
     $ kubectl get secret rec -o jsonpath='{.data}'
@@ -25,13 +25,13 @@ The credentials can be used to access the cluster UI or the API. Connectivity mu
 
     The output will be the encoded password and username (the values above are examples).
 
-1. To decode the encoded password and username, use `echo` command and the password from the last step.
+1. To decode the encoded password and username, use `echo` command and the password from the previous step.
 
     ```
     echo MVUyTjd1Mm0= | base64 --decodexc
     ```
 
-    This will output the password and username in plain text. In this example the plain text password is 12345678 and the username is demo@redislabs.com.
+    This outputs the password and username in plain text. In this example, the plain text password is `12345678` and the username is `demo@redislabs.com`.
 
 Note there are other methods to decode secrets.
 
@@ -90,11 +90,12 @@ Note there are other methods to decode secrets.
 
 ### Replace the REC username and password
 
-1. Login to the Redis Enterprise Cluster console.
+1. Sign in to the Redis Enterprise Cluster console.
 1. [Add another admin user]({{< relref "rs/security/admin-console-security/user-security#configuring-users-with-roles" >}}) and choose a password.
 1. Set the new username in the REC spec username field.
 1. Update the cluster credential secret:
-       1. Save the existing username to a text file .
+
+       1. Save the existing username to a text file.
         ```
         echo -n "<current_username>" > username
         ```
