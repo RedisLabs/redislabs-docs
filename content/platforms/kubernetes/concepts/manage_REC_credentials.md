@@ -1,6 +1,6 @@
 ---
 Title: Manage Redis Enterprise cluster (REC) credentials
-description: 
+linkTitle: Manage REC credentials
 weight: 93
 alwaysopen: false
 categories: ["Platforms"]
