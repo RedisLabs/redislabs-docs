@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with Ruby
+Title: Redis with Ruby
+linkTitle: Ruby
 description:
 weight: $weight
 alwaysopen: false

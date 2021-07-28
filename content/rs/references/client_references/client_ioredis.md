@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with Node.js (ioredis)
+Title: Redis with Node.js (ioredis)
+linkTitle: Node.js (ioredis)
 description:
 weight:
 alwaysopen: false
