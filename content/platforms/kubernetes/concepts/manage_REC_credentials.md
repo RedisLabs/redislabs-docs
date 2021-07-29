@@ -48,10 +48,7 @@ Note there are other methods to decode secrets.
 
 1. From the pod console, add the new password for the existing user.
     ```
-    REC_USER="`cat /opt/redislabs/credentials/username`"; \
-    REC_PASSWORD="`cat /opt/redislabs/credentials/password`"; \
-    curl -k --request POST --url https://localhost:9443/v1/users/password \
-    -u "$REC_USER:$REC_PASSWORD" --header 'Content-Type: applicat
+    REC_USER="`cat /opt/redislabs/credentials/username`"; REC_PASSWORD="`cat /opt/redislabs/credentials/password`";curl -k --request POST --url https://localhost:9443/v1/users/password -u "$REC_USER:$REC_PASSWORD" --header 'Content-Type: application/json' --data "{\"username\":\"$REC_USER\",\"old_password\":\"$REC_PASSWORD\", \"new_password\":\"<NEW PASSWORD>\"}"
     ```
 
 1. From outside the node pod, update the cluster credential secret:
@@ -72,7 +69,7 @@ Note there are other methods to decode secrets.
         -o yaml | kubectl apply -f 
         ```
 
-    It may take up to five minutes for all the components to read the new password from the updated secret. 
+1. Wait five minutes for all the components to read the new password from the updated secret. If you proceed to the next step too soon, the account could get locked.
 
 1. Access the console of a pod running a Redis Enterprise cluster again.
 
@@ -82,10 +79,7 @@ Note there are other methods to decode secrets.
 
  1. From within the pod, remove the previous password to ensure only the new one applies.
     ```
-    REC_USER="`cat /opt/redislabs/credentials/username`"; \
-    REC_PASSWORD="`cat /opt/redislabs/credentials/password`"; \
-    curl -k --request DELETE --url https://localhost:9443/v1/users/password \ 
-    -u "$REC_USER:$REC_PASSWORD" --header 'Content-Type: applic
+    REC_USER="`cat /opt/redislabs/credentials/username`"; REC_PASSWORD="`cat /opt/redislabs/credentials/password`";curl -k --request POST --url https://localhost:9443/v1/users/password -u "$REC_USER:$REC_PASSWORD" --header 'Content-Type: application/json' --data "{\"username\":\"$REC_USER\",\"old_password\":\"$REC_PASSWORD\", \"new_password\":\"<NEW PASSWORD>\"}"
     ```
 
 ### Replace the REC username and password
@@ -112,7 +106,8 @@ Note there are other methods to decode secrets.
         -o yaml | kubectl apply -f 
         ```
 
-It may take up to five minutes for all the components to read the new password from the updated secret.
+1. Wait five minutes for all the components to read the new password from the updated secret.If you proceed to the next step too soon, the account could get locked.
+
 1. Delete the previous admin user from the Redis Enterprise cluster console.
 
 {{<note>}}
