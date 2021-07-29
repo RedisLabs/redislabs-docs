@@ -48,7 +48,15 @@ Note there are other methods to decode secrets.
 
 1. From the pod console, add the new password for the existing user.
     ```
-    REC_USER="`cat /opt/redislabs/credentials/username`"; REC_PASSWORD="`cat /opt/redislabs/credentials/password`";curl -k --request POST --url https://localhost:9443/v1/users/password -u "$REC_USER:$REC_PASSWORD" --header 'Content-Type: application/json' --data "{\"username\":\"$REC_USER\",\"old_password\":\"$REC_PASSWORD\", \"new_password\":\"<NEW PASSWORD>\"}"
+     REC_USER="`cat /opt/redislabs/credentials/username`" \
+     REC_PASSWORD="`cat /opt/redislabs/credentials/password`" \
+     curl -k --request POST \
+     --url https://localhost:9443/v1/users/password \
+     -u "$REC_USER:$REC_PASSWORD" \
+     --header 'Content-Type: application/json' \
+     --data "{\"username\":\"$REC_USER\", \
+     \"old_password\":\"$REC_PASSWORD\", \
+     \"new_password\":\"<NEW PASSWORD>\"}"
     ```
 
 1. From outside the node pod, update the REC credential secret:
@@ -66,8 +74,9 @@ Note there are other methods to decode secrets.
     1. Update the REC credential secret.
         ```
         kubectl create secret generic <cluster_secret_name> \
-        --from-file=./username --from-file=./password --dry-run \
-        -o yaml
+          --from-file=./username \
+          --from-file=./password --dry-run \
+          -o yaml
         kubectl apply -f 
         ```
 
@@ -81,12 +90,19 @@ Note there are other methods to decode secrets.
 
  1. From within the pod, remove the previous password to ensure only the new one applies.
     ```
-    REC_USER="`cat /opt/redislabs/credentials/username`"; REC_PASSWORD="`cat /opt/redislabs/credentials/password`";curl -k --request POST --url https://localhost:9443/v1/users/password -u "$REC_USER:$REC_PASSWORD" --header 'Content-Type: application/json' --data "{\"username\":\"$REC_USER\",\"old_password\":\"$REC_PASSWORD\", \"new_password\":\"<NEW PASSWORD>\"}"
+    REC_USER="`cat /opt/redislabs/credentials/username`"; \ REC_PASSWORD="`cat /opt/redislabs/credentials/password`"; \
+    curl -k --request POST \
+      --url https://localhost:9443/v1/users/password \
+      -u "$REC_USER:$REC_PASSWORD" \
+      --header 'Content-Type: application/json' \
+      --data "{\"username\":\"$REC_USER\", \
+      \"old_password\":\"$REC_PASSWORD\", \
+      \"new_password\":\"<NEW PASSWORD>\"}"
     ```
 
 ### Replace the REC username and password
 
-1. Sign in to the Redis Enterprise Cluster console.
+1. Sign in to the Redis Enterprise cluster console.
 1. [Add another admin user]({{< relref "rs/security/admin-console-security/user-security#configuring-users-with-roles" >}}) and choose a password.
 1. Set the new username in the REC spec username field.
 1. Update the REC credential secret:
@@ -103,8 +119,9 @@ Note there are other methods to decode secrets.
     1. Update the REC credential secret.
         ```
         kubectl create secret generic <cluster_secret_name> \
-        --from-file=./username --from-file=./password --dry-run \
-        -o yaml
+          --from-file=./username \
+          --from-file=./password --dry-run \
+          -o yaml
         kubectl apply -f 
         ```
 
