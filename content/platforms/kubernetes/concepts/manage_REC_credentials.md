@@ -18,7 +18,7 @@ The credentials can be used to access the Redis Enterprise cluster UI or the API
 
 1. To inspect the random username and password created by the operator during creation, use the `kubectl get secret` command.
 
-    ```
+    ```bash
     $ kubectl get secret rec -o jsonpath='{.data}'
     map[password:MVUyTjd1Mm0= username:ZGVtb0ByZWRpc2xhYnMuY29t]
     ```
@@ -27,7 +27,7 @@ The credentials can be used to access the Redis Enterprise cluster UI or the API
 
 1. To decode the encoded password and username, use `echo` command and the password from the previous step.
 
-    ```
+    ```bash
     echo MVUyTjd1Mm0= | base64 --decodexc
     ```
 
@@ -42,19 +42,19 @@ Note there are other methods to decode secrets.
 1. Retrieve and take note of the current password (see above)
 1. Access the console of a [pod](https://kubernetes.io/docs/concepts/workloads/pods/) running a Redis Enterprise cluster.
 
-    ```
+    ```bash
     kubectl exec -it <rec-resource-name>-0 bash
     ```
 
 1. From the pod console, add the new password for the existing user.
-    ```
+    ```bash
      REC_USER="`cat /opt/redislabs/credentials/username`" \
      REC_PASSWORD="`cat /opt/redislabs/credentials/password`" \
      curl -k --request POST \
-     --url https://localhost:9443/v1/users/password \
-     -u "$REC_USER:$REC_PASSWORD" \
-     --header 'Content-Type: application/json' \
-     --data "{\"username\":\"$REC_USER\", \
+       --url https://localhost:9443/v1/users/password \
+       -u "$REC_USER:$REC_PASSWORD" \
+       --header 'Content-Type: application/json' \
+       --data "{\"username\":\"$REC_USER\", \
      \"old_password\":\"$REC_PASSWORD\", \
      \"new_password\":\"<NEW PASSWORD>\"}"
     ```
@@ -62,17 +62,17 @@ Note there are other methods to decode secrets.
 1. From outside the node pod, update the REC credential secret:
 
     1. Save the existing username to a text file .
-        ```
+        ```bash
         echo -n "<current_username>" > username 
         ```
 
     1. Save the new password to a text file.
-        ```
+        ```bash
         echo -n "<new_password>" > password
         ```
 
     1. Update the REC credential secret.
-        ```
+        ```bash
         kubectl create secret generic <cluster_secret_name> \
           --from-file=./username \
           --from-file=./password --dry-run \
@@ -84,12 +84,12 @@ Note there are other methods to decode secrets.
 
 1. Access the console of a pod running a Redis Enterprise cluster again.
 
-    ```
+    ```bash
     kubectl exec -it <rec-resource-name>-0 bash
     ```
 
  1. From within the pod, remove the previous password to ensure only the new one applies.
-    ```
+    ```bash
     REC_USER="`cat /opt/redislabs/credentials/username`"; \ REC_PASSWORD="`cat /opt/redislabs/credentials/password`"; \
     curl -k --request POST \
       --url https://localhost:9443/v1/users/password \
@@ -107,17 +107,17 @@ Note there are other methods to decode secrets.
 1. Set the new username in the REC spec username field.
 1. Update the REC credential secret:
        1. Save the existing username to a text file.
-        ```
+        ```bash
         echo -n "<current_username>" > username
         ```
 
     1. Save the new password to a text file.
-        ```
+        ```bash
         echo -n "<new_password>" > password
         ```
 
     1. Update the REC credential secret.
-        ```
+        ```bash
         kubectl create secret generic <cluster_secret_name> \
           --from-file=./username \
           --from-file=./password --dry-run \
