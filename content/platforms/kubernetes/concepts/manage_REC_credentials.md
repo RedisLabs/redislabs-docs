@@ -40,7 +40,7 @@ Note there are other methods to decode secrets.
 ### Replace the REC password
 
 1. Retrieve and take note of the current password (see above)
-1. Access the console of a pod running a Redis Enterprise cluster.
+1. Access the console of a [pod](https://kubernetes.io/docs/concepts/workloads/pods/) running a Redis Enterprise cluster.
 
     ```
     kubectl exec -it <rec-resource-name>-0 bash
