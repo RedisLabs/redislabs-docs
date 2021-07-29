@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: /platforms/kubernetes/manage_REC_credentials/
 ---
-The Redis Enterprise Software on Kubernetes uses a custom resource called RedisEnterpriseCluster to create a Redis Enterprise cluster (REC). At the time of creation, it generates random credentials the operator will use to perform operations on the Redis Enterprise cluster via the APIs. The credentials are saved in a Kubernetes (K8s) secret. The secret name defaults to the name of the cluster.
+The Redis Enterprise Software on Kubernetes uses a custom resource called RedisEnterpriseCluster to create a Redis Enterprise cluster (REC). At the time of creation, it generates random credentials the operator will use to perform operations on the Redis Enterprise cluster via the APIs. The credentials are saved in a Kubernetes (K8s) [secret](https://kubernetes.io/docs/concepts/configuration/secret/). The secret name defaults to the name of the cluster.
 
 {{<note>}}
 This procedure is only supported for operator versions 6.0.20-12 and above.
