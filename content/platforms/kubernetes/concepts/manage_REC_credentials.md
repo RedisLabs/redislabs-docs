@@ -52,6 +52,7 @@ Note there are other methods to decode secrets.
     ```
 
 1. From outside the node pod, update the REC credential secret:
+
     1. Save the existing username to a text file .
         ```
         echo -n "<current_username>" > username 
@@ -66,7 +67,8 @@ Note there are other methods to decode secrets.
         ```
         kubectl create secret generic <cluster_secret_name> \
         --from-file=./username --from-file=./password --dry-run \
-        -o yaml | kubectl apply -f 
+        -o yaml
+        kubectl apply -f 
         ```
 
 1. Wait five minutes for all the components to read the new password from the updated secret. If you proceed to the next step too soon, the account could get locked.
@@ -88,7 +90,6 @@ Note there are other methods to decode secrets.
 1. [Add another admin user]({{< relref "rs/security/admin-console-security/user-security#configuring-users-with-roles" >}}) and choose a password.
 1. Set the new username in the REC spec username field.
 1. Update the REC credential secret:
-
        1. Save the existing username to a text file.
         ```
         echo -n "<current_username>" > username
@@ -103,7 +104,8 @@ Note there are other methods to decode secrets.
         ```
         kubectl create secret generic <cluster_secret_name> \
         --from-file=./username --from-file=./password --dry-run \
-        -o yaml | kubectl apply -f 
+        -o yaml
+        kubectl apply -f 
         ```
 
 1. Wait five minutes for all the components to read the new password from the updated secret. If you proceed to the next step too soon, the account could get locked.
