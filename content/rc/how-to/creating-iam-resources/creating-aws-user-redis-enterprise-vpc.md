@@ -5,7 +5,7 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/how-to/creating-aws-user-redis-enterprise-vpc/
 ---
-Creating IAM Resources an be performed manually using the AWS Console. This page describes that process in detail.
+To manually create IAM resources using the AWS Console, follow these steps.
 
 ## Step 1: Create the IAM instance policy
 
@@ -29,10 +29,10 @@ Now create the role that uses the policy:
 
 {{< video "/images/rc/create-cluster-node-role.mp4" "Create a cluster node role" >}}
 
-1. In AWS IAM console, go to **Roles** and click **Create Role**.
+1. In the AWS IAM console, go to **Roles** and click **Create Role**.
 1. Select **AWS Service** as the trusted entity, **EC2** as the service
     and use case, and click **Next: Permissions**.
-1. Enter `RedisLabsInstanceRolePolicy` in the search box to lookup the policy we just created,
+1. Enter `RedisLabsInstanceRolePolicy` in the search box to look up the policy we just created,
     select it, and click **Next: Review**.
 1. Name the role `redislabs-cluster-node-role` and click **Create Role**.
 
@@ -42,7 +42,7 @@ Now create a policy to assign to the user:
 
 {{< video "/images/rc/create-instance-user-policy.mp4" "Create an instance user policy" >}}
 
-1. In AWS IAM console, go to **Policies** > **Create policy**.
+1. In the AWS IAM console, go to **Policies** > **Create policy**.
 1. In the **JSON** tab, paste the contents of the RedisLabsIAMUserRestrictedPolicy.json policy file.
 
     {{%expand "View RedislabsIAMUserRestrictedPolicy.json" %}}
@@ -58,7 +58,7 @@ Create a user and attach the policy you created:
 
 {{< video "/images/rc/create-programmatic-user.mp4" "Create programmatic user" >}}
 
-1. In AWS IAM console, go to **Users** > select **Add user**.
+1. In the AWS IAM console, go to **Users** > select **Add user**.
 1. Name it `redislabs-user` and check only the **Programmatic access** checkbox.
 1. Click **Next: Permissions**.
 1. Select **Attach existing policies directly** and select
@@ -73,9 +73,9 @@ Last, create a role and attach the policy you created:
 
 {{< video "/images/rc/create-console-access-role.mp4" "Create console access user" >}}
 
-1. In AWS IAM console, go to **Roles** > select **Create role**.
-1. Select the **Another AWS account**.
-1. Under **Account ID** enter account number `168085023892` (Redis Cloud's AWS account).
+1. In the AWS IAM console, go to **Roles** > select **Create role**.
+1. Select **Another AWS account**.
+1. Under **Account ID**, enter account number `168085023892` (Redis Cloud's AWS account).
 1. Under Options, check the **Require MFA** checkbox only. *Do not check Require external ID*.
 1. Click **Next: Permissions**.
 1. Attach the policy **RedisLabsIAMUserRestrictedPolicy** to the role.

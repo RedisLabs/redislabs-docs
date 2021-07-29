@@ -111,10 +111,6 @@ rladmin bind
         [ sentinel_cipher_suites <golang_cipher_list>]
         [ services <cm_server | crdb_coordinator | crdb_worker | mdns_server | pdns_server | saslauthd | stats_archiver> <enabled | disabled> ]
         [ upgrade_mode < enabled | disabled> ]
-        
-        
-        
-        
 ```
 
 | Optional Parameter | Description |
@@ -327,16 +323,6 @@ rladmin migrate [ [db <db:id | name>] | [node <origin node:id>] ]
         [ override_policy ]
 ```
 
-#### Migrate endpoints
-
-```text
-rladmin migrate 
-        [ [db <db:id | name>] | [node <origin node:id>] ]
-        endpoint <id> 
-        target_node <id> 
-        [ override_policy ]
-```
-
 #### Migrate all slave shards
 
 ```text
@@ -378,21 +364,7 @@ rladmin migrate
         [ commit ]
 ```
 
-This command will migrate endpoints for databases to the node where the majority of the shards reside, use `endpoint_to_shard` parameter.
-
-#### Migrate shards to endpoint location
-
-```text
-rladmin migrate
-        [ [db <db:id | name>] | [node <origin node:id>] ]
-        shards_to_endpoint
-        [ restrict_target_node <id> ] [ override_policy ]
-        [ to_first_slot ]
-        [ commit ]
-        [ max_concurrent_migrations <value> ]
-```
-
-This command will migrate shards to the node where the endpoint resides, use the `shards_to_endpoint` parameter.
+This command migrates database endpoints to the node where the majority of the shards reside.
 
 ### `node`
 

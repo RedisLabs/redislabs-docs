@@ -8,7 +8,7 @@ aliases: /rc/administration/security
          /rs/administering/designing-production/security/
 
 ---
-Redis Enterprise Cloud provides a number of ways to secure subscription and databases.
+Redis Enterprise Cloud provides a number of ways to secure subscriptions and databases.
 
 As a Redis Cloud user, there are three systems you need to consider when thinking about security:
 

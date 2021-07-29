@@ -1,5 +1,6 @@
 ---
-Title: RedisTimeSeries Quick Start Tutorial
+Title: RedisTimeSeries quick start tutorial
+linkTitle: Quick start
 description:
 weight: 20
 alwaysopen: false

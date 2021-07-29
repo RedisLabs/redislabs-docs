@@ -1,70 +1,70 @@
 ---
-Title: AWS Zone Mapping for Redis Cloud Essentials
+Title: AWS zone mapping for Fixed plans
+linkTitle: AWS zone mapping
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 ---
-To get top performance from your Redis Cloud Essentials database,
-you want to match the AWS availability zones of your application to your Redis Cloud Essentials database.
+
+To achieve the best performance with a Redis Enterprise Cloud Fixed subscription deployed to Amazon Web Services (AWS), map your AWS availability zones to your database.
 
 {{< note >}}
-- If you have a Multi-AZ subscription,
-you do not need to map AWS zones.
-- AWS zone mapping is not yet supported for Redis Cloud Pro and Ultimate.
+AWS zone mapping is not yet supported for Flexible or Annual subscriptions.
 {{< /note >}}
 
-## Why do zone mapping?
+## Why map zones?
 
-As you probably know, the [Amazon AWS cloud infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)
-is divided into regions across the world and Availability Zones (AZ) inside each region.
+[AWS cloud infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/)
+is divided into regions across the world; many regions are further divided into availability zones.
 
-The Availability Zones names can be the same for different AWS accounts,
-but are actually hosted in different locations.
-This can cause latency overhead when your app and your database are not located on the same physical infrastructure. Because your application runs in your AWS account and your Redis Cloud Essentials databases runs in the Redis Labs AWS account,
-the AZs can be hosted in different locations and cause latency overhead.
+Availability zones name can be the duplicated between different AWS accounts, but are actually hosted in different locations.
 
-To mitigate for this latency overhead, you can automatically map AZs that are designated to your AWS account
-with the AZs in your Redis Cloud account.
-This makes sure that your application and database are co-located on the same physical AZ.
+Fixed accounts are hosted on shared infrastructure, there's a chance that your resources are hosted on separate server infrastructure.  Your AWS account hosts your application; however, your subscription databases are hosted in Redis&nbsp;Labs accounts, which may be deployed to different availability zones within the same region.
+
+As a result, latency increases as multiple servers are negotiated.  
+
+To mitigate this overhead, you can automatically map your AWS account availability zones to the availability zones associated with your Fixed subscription databases.  The ensures that your app and your databases are colocated to the same availability zone.
 
 ## How to map zones
 
-1. [Log in](https://app.redislabs.com/#/login) to your Redis Cloud Essentials account.
-1. Go to **settings** > **account**.
-1. Click **Map your AWS Zones**.
+1. [Sign in](https://app.redislabs.com/#/login) to your Fixed subscription.
+1. Go to **Settings** > **Account**.
+1. Select **Map your AWS Zones**.
 1. Enter the Access Key ID and Secret Access Key for an [unprivileged AWS user](#unprivileged-user-creation).
-1. Click **Map Zones**.
+1. Select **Map Zones**.
 
-The zone mapping takes a few minutes to complete as it maps the availability zones.
-During the zone mapping you see:
+The zone mapping takes a few minutes to complete.  The **Mapping your availability zones** screen displays progress:
 
 ![zone-mapping](/images/rc/zone-mapping.png)
 
-After zone mapping is complete, the dropdown for **Cloud** in a new subscription shows the zone letter.
+When mapping is complete, the dropdown for **Cloud** in a new subscription shows the zone letter as part of the region name.
 
 ![after_zone_mapping](/images/rc/after_zone_mapping.png)
 
-For existing subscriptions in Redis Cloud Essentials, you now see the Availability Zone they are using.
-To reduce the latency described above:
+Next, you need to migrate your data to a database created in the availability zone containing your app.  This may require a new subscription or a new database.
 
-1. [Create a new subscription]({{< relref "/rc/subscriptions/_index.md" >}}) in the AZ for your application.
-1. [Create a new database]({{< relref "/rc/databases/create-database.md" >}}).
-1. [Migrate your data]({{< relref "/rc/databases/import-data.md" >}}) to the new database.
+The general process is:
 
-While simple, this causes some downtime.
-To prevent any downtime during the zone mapping, contact [support](mailto:support@redislabs.com?Subject=Zero%20Downtime%20DB%20Migration) for further assistance.
+1.  Verify that your subscription is hosted in the availability zone containing your app.  If not, create a new subscription in the appropriate zone.
+
+2.  Verify that your databases are hosted in a subscription located in the availability zone containing your app.  If not, create new databases in the appropriate subscription and then migrate the data to the new databases.  
+
+3.  Once your data is migrated to the proper databases and subscription, remove the older resources.
+
+This commonly leads to downtime.  For help, contact [support](mailto:support@redislabs.com?Subject=Zero%20Downtime%20DB%20Migration) for assistance.
 
 ## Unprivileged user creation
 
-Redis Cloud Essentials requires an AWS IAM user for the zone mapping.
-We recommend that you create a new and restricted account to use for zone mapping.
+Fixed plans require an AWS IAM user for the zone mapping.
 
-To create a restricted IAM account for zone mapping:
+We recommend creating a new, restricted account:
 
-1. Create a new user in your AWS account where your application is hosted.
-1. Create access keys for that user.
-1. Give the user this IAM policy:
+1. Create a new user in your AWS account hosting your app.
+
+1. Create access keys for the new user account.
+
+1. Update the new user account IAM policy.
 
     ```json
     {
@@ -86,6 +86,6 @@ To create a restricted IAM account for zone mapping:
 
     ```
 
-1. After the zone mapping is completed, delete the user that you created for zone mapping.
+1. After the zone mapping is completed, delete the new user created for zone mapping.
 
-For more information about creating IAM users, see the Amazon AWS documentation for IAM.
+To learn more about, see [Creating an IAM user in your AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) (AWS documentation).

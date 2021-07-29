@@ -1,5 +1,5 @@
 ---
-Title: Back up database data
+Title: Back up a database
 description:
 weight: 40
 alwaysopen: false
@@ -24,6 +24,8 @@ The backup options for Redis Enterprise Cloud databases depend on your plan:
 Backups are saved to pre-defined storage locations available to your subscription.
 
 Backup locations need to be available before you enable database backups.  To learn more, see [Set up backup storage locations](#set-up-backup-storage-locations)
+
+Here, you'll learn how to store backups using different cloud providers.
 
 ## Enable backups
 

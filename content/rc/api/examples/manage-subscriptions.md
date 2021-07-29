@@ -19,12 +19,12 @@ These examples use the [`cURL` utility]({{< relref "/rc/api/get-started/use-rest
 
 The API operation that creates a subscription is: `POST /subscriptions`
 
-The following Linux shell script sends a `POST /subscriptions/` and waits for a cloud account ID.
+The following Linux shell script sends a `POST /subscriptions/` request and waits for a cloud account ID.
 When the cloud account ID is received, the processing phase is complete and the provisioning phase starts.
 
 ### Prerequisites
 
-- These example require `jq`, [a JSON parser](https://stedolan.github.io/jq/).  
+- These examples require `jq`, [a JSON parser](https://stedolan.github.io/jq/).  
 
     Use your package manager to install it  (Example: `sudo apt install jq`)
 
@@ -60,7 +60,7 @@ The script contains the steps that are explained below.
 This step executes a `POST` request to `subscriptions` with the defined parameters and a JSON body located within a separate JSON file.
 
 The POST response is a JSON document that contains the `taskId`,
-which is stored in a variable called `TASK_ID` that is used later to track the progress request.
+which is stored in a variable called `TASK_ID` that is used later to track the request's progress.
 
 #### Step 2 the subscription creation script
 
@@ -70,7 +70,7 @@ This step queries the API for the status of the subscription creation request ba
 
 When the status changes from `processing-in-progress` to `processing-completed` (or `processing-error`),
 this step prints the `response`, including the `resourceId`.
-In this case the `resourceId` is a subscription ID.
+In this case, the `resourceId` is a subscription ID.
 
 If the processing phase completed successfully, the subscription is visible
 in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status.
@@ -87,7 +87,7 @@ To use the sample JSON document in your own account, you must modify these param
     You can lookup the payment method identifier using the `GET /payment-methods` API operation.
     If you subscribed to Redis Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
 - **`cloudAccountId`** - Specify a cloud account that is defined for your account.
-    You can lookup the cloud accounts identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use Redis Labs internal resources.
+    You can look up cloud account identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use Redis Labs internal resources.
     If you subscribed to Redis Cloud through the GCP Marketplace, use the value `1` for this field.
 
 - The JSON document contains 2 primary segments: subscription specification and databases specification.

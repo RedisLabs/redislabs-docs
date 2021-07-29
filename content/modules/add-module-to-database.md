@@ -1,7 +1,7 @@
 ---
-Title: Adding Modules to a Database
+Title: Add a module to a database
 description:
-weight: 8
+weight: 4
 alwaysopen: false
 categories: ["Modules"]
 aliases:

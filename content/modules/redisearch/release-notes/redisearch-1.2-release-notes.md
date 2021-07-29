@@ -1,11 +1,12 @@
 ---
-Title: RediSearch 1.2 Release Notes
+Title: RediSearch 1.2 release notes
+linkTitle: v1.2 (June 2018)
 description:
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 1.2.0 (June 2019)
+## RediSearch 1.2.0 (June 2018)
 
 This version is the last version that I (@dvirsky) will be releasing, and it includes a lot of new cool features, and actually NO bug-fixes over 1.1.0! So long and thanks for all the fish!
 

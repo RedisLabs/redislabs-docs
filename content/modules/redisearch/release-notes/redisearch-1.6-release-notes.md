@@ -1,11 +1,48 @@
 ---
-Title: RediSearch 1.6 Release Notes
+Title: RediSearch 1.6 release notes
+linkTitle: v1.6 (January 2020)
 description:
 weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RediSearch 1.6.14 (September 2020)
+
+## v1.6.16 (June 2021)
+
+This is a maintenance release for version 1.6.
+
+Update urgency: MODERATE - Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fix:
+
+    - #[2018](https://github.com/RediSearch/RediSearch/pull/2018): FT.ADD REPLACE leaves fields from the previous document that are not included in the new document #[647](https://github.com/RediSearch/RediSearch/pull/647) #[1193](https://github.com/RediSearch/RediSearch/pull/1193)
+
+## v1.6.15 (February 2021)
+
+This is a maintenance release for version 1.6.
+
+Update urgency: Low
+
+Details:
+
+- Minor enhancements:
+    - #[1225](https://github.com/RediSearch/RediSearch/pull/1225) Allow scientific representation of numbers for numeric fields.
+    - #[1574](https://github.com/RediSearch/RediSearch/pull/1574) Allow SORTBY for non-sortable fields.
+
+- Minor bugfixes:
+    - #[1683](https://github.com/RediSearch/RediSearch/pull/1683) Add a module parameter _NUMERIC_COMPRESS which prevent <nobr>double -> float</nobr> compression. It prevents an issue where an exact match on some floating-point numbers is not found.
+    - #[1757](https://github.com/RediSearch/RediSearch/pull/1757) Remove assertion on the limitation of the number of sortable fields, instead return an error.
+    - #[1668](https://github.com/RediSearch/RediSearch/pull/1668) Query words from stopword list on tag fields.
+    - #[1745](https://github.com/RediSearch/RediSearch/pull/1745) Enforce 0 value for count reducer.
+    - #[1774](https://github.com/RediSearch/RediSearch/pull/1774) MINPREFIX & MAXEXPANSION can be changed in runtime.
+    - #[1861](https://github.com/RediSearch/RediSearch/pull/1761) Fix issue for FT.SCOREEXPLAIN where reply array depth can exceed 7.
+    - #[1689](https://github.com/RediSearch/RediSearch/pull/1689) FT.SUGGET results from RSCoordinator are more consistent.
+    - Various small tweaks under the hood.
+
+
+## v1.6.14 (September 2020)
 
 - This is a maintenance release for version 1.6.
 
@@ -22,7 +59,7 @@ Details:
     - #[1449](https://github.com/RediSearch/RediSearch/pull/1449) Rare file descriptor leak on FORK GC.
     - #[1469](https://github.com/RediSearch/RediSearch/pull/1469) Endless loop when reaching internal docid above uint32_max.
 
-## RediSearch 1.6.13 (May 2020)
+## v1.6.13 (May 2020)
 
 This is a maintenance release for version 1.6.
 
@@ -35,7 +72,7 @@ Details:
 - Bugfixes:
     - #[1186](https://github.com/RediSearch/RediSearch/pull/1186) #[1188](https://github.com/RediSearch/RediSearch/pull/1188) incorrect values for `inverted_sz_mb` and `num_records` in `FT.INFO` command.
 
-## RediSearch 1.6.12 (April 2020)
+## v1.6.12 (April 2020)
 
 Headlines:
 
@@ -55,7 +92,7 @@ Details:
     - #[1169](https://github.com/redisearch/redisearch/issues/1169) [FIRST_VALUE](https://oss.redislabs.com/redisearch/Aggregations.html#first_value) reducer crashed when value did not exist.
     - #[1159](https://github.com/redisearch/redisearch/issues/1159) Infinite loop on [`NOT`](https://oss.redislabs.com/redisearch/Query_Syntax.html#search_query_syntax) criteria tester.%
 
-## RediSearch 1.6.11 (March 2020)
+## v1.6.11 (March 2020)
 
 Headlines:
 
@@ -66,7 +103,7 @@ Details:
 - Bugfixes:
     - #[1126](https://github.com/redisearch/redisearch/issues/1126) Memory leak introduced by queries for tag fields that have no results.
 
-## RediSearch 1.6.10 (March 2020)
+## v1.6.10 (March 2020)
 
 Headlines:
 
@@ -86,7 +123,7 @@ Details:
     - #[1106](https://github.com/redisearch/redisearch/issues/1106)  Pipe leak on `FORK GC` caused by closing the fork without holding the lock.
     - #[1114](https://github.com/redisearch/redisearch/issues/1114)  PR #[986](https://github.com/redisearch/redisearch/issues/986) reverted the work from #[985](https://github.com/redisearch/redisearch/issues/985), #[989](https://github.com/redisearch/redisearch/issues/989). This PR reintroduces these features.
 
-## RediSearch 1.6.9 (February 2020)
+## v1.6.9 (February 2020)
 
 Headlines:
 
@@ -98,7 +135,7 @@ Details:
     - #[1052](https://github.com/redisearch/redisearch/issues/1052) Remove wrong optimization on Quantile.
     - #[1057](https://github.com/redisearch/redisearch/issues/1057) Memory pool did not release memory when certain limit was reached.
 
-## RediSearch 1.6.8 (February 2020)
+## v1.6.8 (February 2020)
 
 Headlines:
 
@@ -110,9 +147,9 @@ Details:
     - #[1052](https://github.com/redisearch/redisearch/issues/1052) Remove wrong optimization on Quantile.
     - #[1057](https://github.com/redisearch/redisearch/issues/1057) Memory pool did not release memory when certain limit was reached.
 
-## RediSearch 1.6 GA (1.6.7 - January 2020)
+## v1.6 GA (January 2020)
 
-This is the General Availability Release of RediSearch 1.6!
+This is the General Availability Release of RediSearch 1.6 (v1.6.7).
 
 Headlines:
 

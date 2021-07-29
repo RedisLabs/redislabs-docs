@@ -11,9 +11,11 @@ aliases: /rc/databases/high-availability/
 
 Database replication helps ensure high availability. 
 
-When replication is enabled, database data is stored in two locations: a _primary_ (also known as a _master_) and a _replica_ are automatically synchronized as data changes.  
+When replication is enabled, your dataset is duplicated to create a replica that is synchronized with the primary dataset.  
 
-Should anything happen to the primary copy, such as a network communication spike or hardware failure, the replica becomes the new primary and customer connectivity continues as normal.  This automatic failover provides greater fault tolerance; it helps prevent data loss in the event of hardware, communication, or other network failures. 
+Replication allows for automatic failover and greater fault tolerance.  It can prevent data loss in the event of a hardware or zone failure. 
+
+## Options and plan support
 
 Redis Enterprise Cloud supports three levels of replication:
 
@@ -23,13 +25,31 @@ Redis Enterprise Cloud supports three levels of replication:
 
 - _Multi-zone replication_ means that the primary and its replicas are stored in different regions. This means that your database can remain online even if an entire region becomes unavailable.
 
-Your replication options depend on your subscription plan:
+Your replication options depend on your [subscription plan]({{<relref "/rc/subscriptions/_index.md">}}):
 
 - _Free_ plans do not support replication.
-- _Fixed_ plans let you choose between single-zone replication and no replication.  
-- _Flexible_ plans enable single-zone replication by default and permit upgrading to multi-zone replication. (Support varies between cloud providers and their regions.) 
+- _Fixed_ plans let you choose between no replication, single-zone replication, or multi-zone replication when creating a subscription.  
+- _Flexible_ and _Annual_ plans allow multi-zone or single-zone subscriptions by default.  You can also disable replication.
 
-To learn more about Redis Enterprise Cloud subscriptions, see [Manage subscriptions]({{<relref "/rc/subscriptions/_index.md">}}).
+## Performance impact 
+
+Replication can affect performance as traffic increases to synchronize all copies. 
+
+Database storage costs also increase:
+
+- For Fixed plans, single-zone and multi-zone replication effectively doubles storage costs
+
+- For Flexible and Annual plans, replication requires additional shards and can affect subscription costs
+
+## Zone setting maintenance
+
+Zone settings can only be defined when a subscription is created.  You cannot change these settings once the subscription becomes active.
+
+This means you can't convert a multi-zone subscription to a single zone (or vice-versa).  
+
+To use different zone settings, create a new subscription with the preferred settings and then migrate data from the original subscription.
+
+## More info
 
 To learn more about high availability and replication, see:
 - [Highly Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)

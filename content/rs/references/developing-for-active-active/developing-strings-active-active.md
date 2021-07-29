@@ -1,5 +1,6 @@
 ---
 Title: Strings and Bitfields with Active-Active Databases
+linkTitle: Strings and bitfields
 description:
 weight: $weight
 alwaysopen: false

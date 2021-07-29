@@ -1,5 +1,6 @@
 ---
 Title: RLEC 4.2.1-30 Release Notes (October 18, 2015)
+linkTitle: 4.2.1-30 (October 18, 2015)
 description:
 weight: 97
 alwaysopen: false

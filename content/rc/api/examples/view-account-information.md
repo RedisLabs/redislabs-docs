@@ -1,5 +1,5 @@
 ---
-Title: View Account Information
+Title: View account information
 description: Get initial information on account parameters
 weight: 70
 alwaysopen: false
@@ -11,7 +11,7 @@ aliases: /rv/api/how-to/view-account-information/
          /rc/api/examples/view-account-information.md
 ---
 
-The root API operation returns information about the current account, user and API Key (as identified by the set of API Keys provided in the API request).
+The root API operation returns information about the current account, user, and API Key (as identified by the set of API Keys provided in the API request).
 
 ```shell
 {{% embed-code "rv/api/70-query-metrics.sh" %}}

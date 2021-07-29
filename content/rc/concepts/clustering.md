@@ -1,5 +1,5 @@
 ---
-Title: Clustering Redis Databases
+Title: Clustering Redis databases
 description:
 weight: $weight
 alwaysopen: false
@@ -20,10 +20,10 @@ For example:
 
 A Redis Cloud cluster is a set of managed Redis processes and cloud instances,
 with each process managing a subset of the database keyspace.
-Clustering uses multiple cores and resources of multiple instance to overcome scaling challenges.
+Clustering uses multiple cores and resources of multiple instances to overcome scaling challenges.
 
 In a Redis Cloud cluster, the keyspace is partitioned into hash
-slots. At any given time a slot resides on and is managed by a single
+slots. At any given time, a slot resides on and is managed by a single
 Redis server. An instance that belongs to a cluster can manage multiple
 slots. This division of the key space, shown as sharding, is achieved by
 hashing the keys' names, or parts of these (key hash tags), in order to
@@ -133,7 +133,7 @@ default RegEx rules that implement the standard hashing policy are:
 | .\*{(?\<tag\>.\*)}.\* | Hashing is done on the substring between the curly braces. |
 | (?\<tag\>.\*) | The entire key's name is used for hashing. |
 
-You can modify existing rules, add new ones, delete rules or change
+You can modify existing rules, add new ones, delete rules, or change
 their order to suit your application's requirements.
 
 ### Custom hashing policy notes and limitations

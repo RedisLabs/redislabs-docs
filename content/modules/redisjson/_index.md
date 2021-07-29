@@ -1,7 +1,7 @@
 ---
 Title: RedisJSON
 description:
-weight: 40
+weight: 60
 alwaysopen: false
 categories: ["Modules"]
 aliases:

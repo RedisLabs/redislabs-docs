@@ -1,7 +1,7 @@
 ---
-Title: Modules Lifecycle
+Title: Module lifecycle
 description:
-weight: 99
+weight: 7
 alwaysopen: false
 categories: ["Modules"]
 ---

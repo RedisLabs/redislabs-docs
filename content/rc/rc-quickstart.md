@@ -93,7 +93,7 @@ Now that you have a subscription, you need to create a database.
 
     Once the database has been created, it becomes _active_ and the status indicator switches to a teal circle containing a checkmark.  
 
-Admin console operations are asychronous; they operate [in the background]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but pending resources aren't avilable until they're active.
+Admin console operations are asynchronous; they operate [in the background]({{< relref "/rc/api/get-started/process-lifecycle.md" >}}).  You can continue to use the admin console for other tasks, but pending resources aren't available until they're active.
 
 When your new database becomes active, you're ready to connect to it.
 
@@ -128,16 +128,16 @@ Here's an example of each.
 
 The `redis-cli` utility is installed when you install Redis.  It provides a command-line interface that lets you work with your database using core [Redis commands](https://redis.io/commands).
 
-Docker provides a covenient way to run `redis-cli` without the full installation experience.
+Docker provides a convenient way to run `redis-cli` without the full installation experience.
 
 When you run the `redis` Docker image, you can open a bash shell instance and run `redis-cli` from the container.
 
 1.  To begin, pull the `redis` docker image and run it with default options:
 
     ``` sh
-    % docker pull redis
-    % docker run -d --name redis1 redis
-    % docker exec -it redis1 bash
+    $ docker pull redis
+    $ docker run -d --name redis1 redis
+    $ docker exec -it redis1 bash
     ```
 
 2.  This gives you a bash prompt running within your Docker image.  From here, you can connect to your database:
@@ -149,7 +149,7 @@ When you run the `redis` Docker image, you can open a bash shell instance and ru
 
     Replace `<endpoint>`, `<port>`, and `<password>` with the details copied earlier from the **View Database** screen.
 
-3.  You should now be connectded to your database and can perform basic Redis commands:
+3.  You should now be connected to your database and can perform basic Redis commands:
 
     ``` sh
     xxx:yyy> ping
@@ -169,14 +169,14 @@ Here's how to connect to your database using the `redis-py` library for Python.
 1.  If you don't already have the client installed:
 
     ```sh
-    sudo pip install redis-py
+    sudo pip install redis
     ```
 
-2.  The specific syntax vries according to the client:
+2.  The specific syntax varies according to the client:
 
     ```python
     import redis
-    r = redis.Redis(host='<endpoint>', port=<port>, 
+    r = redis.Redis(host='<endpoint>', port='<port>', 
                     password='<password>')
     r.set('hello', 'world')
     print(r.get('hello'))
@@ -186,13 +186,13 @@ Here's how to connect to your database using the `redis-py` library for Python.
 
     ```sh
     $ python example_redis.py
-    bar
+    world
     ```
 
 ## More info
 
-- [Manage Databases]({{< relref "/rc/databases/_index.md" >}})
-- [Data Persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
-- [Secure Your Redis Cloud Database]({{< relref "/rc/administration/security/_index.md" >}})
-- [Back-up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})
-- [Monitor Redis Cloud Performance]({{< relref "/rc/databases/monitor-performance.md" >}}).
+- [Manage databases]({{< relref "/rc/databases/_index.md" >}})
+- [Data persistence with Redis Cloud]({{< relref "rc/concepts/data-persistence.md" >}})
+- [Secure your Redis Cloud database]({{< relref "/rc/security/_index.md" >}})
+- [Back up Flexible databases]({{< relref "/rc/databases/back-up-data.md" >}})
+- [Monitor Redis Cloud performance]({{< relref "/rc/databases/monitor-performance.md" >}})

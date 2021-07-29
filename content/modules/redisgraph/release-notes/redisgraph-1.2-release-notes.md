@@ -1,6 +1,7 @@
 ---
-Title: RedisGraph 1.2 Release Notes
-description:
+Title: RedisGraph 1.2 release notes
+linkTitle: v1.2 (April 2019)
+description: 
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
