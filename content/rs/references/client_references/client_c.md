@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with C
+Title: Redis with C
+linkTitle: C
 description:
 weight:
 alwaysopen: false

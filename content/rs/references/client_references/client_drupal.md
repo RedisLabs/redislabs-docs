@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with Drupal 7
+Title: Redis with Drupal 7
+linkTitle: Drupal
 description:
 weight: 
 alwaysopen: false
