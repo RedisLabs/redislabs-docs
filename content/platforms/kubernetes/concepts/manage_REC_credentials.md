@@ -12,9 +12,9 @@ The Redis Enterprise Software on Kubernetes uses a custom resource called RedisE
 This procedure is only supported for operator versions 6.0.20-12 and above.
 {{</note>}}
 
-## Retrieve the current username and password 
+## Retrieve the current username and password
 
-The credentials can be used to access the cluster UI or the API. Connectivity must be configured to the cluster pods using an appropriate service (or port forwarding).
+The credentials can be used to access the Redis Enterprise cluster UI or the API. Connectivity must be configured to the REC [pods](https://kubernetes.io/docs/concepts/workloads/pods/) using an appropriate service (or port forwarding).
 
 1. To inspect the random username and password created by the operator during creation, use the `kubectl get secret` command.
 
@@ -51,7 +51,7 @@ Note there are other methods to decode secrets.
     REC_USER="`cat /opt/redislabs/credentials/username`"; REC_PASSWORD="`cat /opt/redislabs/credentials/password`";curl -k --request POST --url https://localhost:9443/v1/users/password -u "$REC_USER:$REC_PASSWORD" --header 'Content-Type: application/json' --data "{\"username\":\"$REC_USER\",\"old_password\":\"$REC_PASSWORD\", \"new_password\":\"<NEW PASSWORD>\"}"
     ```
 
-1. From outside the node pod, update the cluster credential secret:
+1. From outside the node pod, update the REC credential secret:
     1. Save the existing username to a text file .
         ```
         echo -n "<current_username>" > username 
@@ -62,7 +62,7 @@ Note there are other methods to decode secrets.
         echo -n "<new_password>" > password
         ```
 
-    1. Update the cluster credential secret.
+    1. Update the REC credential secret.
         ```
         kubectl create secret generic <cluster_secret_name> \
         --from-file=./username --from-file=./password --dry-run \
@@ -87,7 +87,7 @@ Note there are other methods to decode secrets.
 1. Sign in to the Redis Enterprise Cluster console.
 1. [Add another admin user]({{< relref "rs/security/admin-console-security/user-security#configuring-users-with-roles" >}}) and choose a password.
 1. Set the new username in the REC spec username field.
-1. Update the cluster credential secret:
+1. Update the REC credential secret:
 
        1. Save the existing username to a text file.
         ```
@@ -99,17 +99,17 @@ Note there are other methods to decode secrets.
         echo -n "<new_password>" > password
         ```
 
-    1. Update the cluster credential secret.
+    1. Update the REC credential secret.
         ```
         kubectl create secret generic <cluster_secret_name> \
         --from-file=./username --from-file=./password --dry-run \
         -o yaml | kubectl apply -f 
         ```
 
-1. Wait five minutes for all the components to read the new password from the updated secret.If you proceed to the next step too soon, the account could get locked.
+1. Wait five minutes for all the components to read the new password from the updated secret. If you proceed to the next step too soon, the account could get locked.
 
 1. Delete the previous admin user from the Redis Enterprise cluster console.
 
 {{<note>}}
-The operator may log errors in the time between updating the username in the REC spec and the secret update. 
+The operator may log errors in the time between updating the username in the REC spec and the secret update.
 {{</note>}}
