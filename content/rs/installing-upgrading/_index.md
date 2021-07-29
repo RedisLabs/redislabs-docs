@@ -1,5 +1,6 @@
 ---
-Title: Install and Setup
+Title: Install and setup
+linkTitle: Install and setup
 description:
 weight: 35
 alwaysopen: false
@@ -180,6 +181,12 @@ To install without answering the installation questions, either:
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
+## Notes
+
+- Redis Enterprise Software installation creates the `redislabs:redislabs` user and group. Assigning other users to the `redislabs` group is optional. Users belonging to the `redislabs` group will have permission to read and execute (e.g. use the `rladmin` status command) but not to write or delete files and directories.
+
+- Redis Enterprise Software serves a large variety of industries. The common industry standard for permissions is `750` permissions. Reducing the permissions to `700` has not been tested and isn't supported. 
+
 ## More info and options
 
 If you've already installed Redis Enterprise Software, you can also:
@@ -191,7 +198,7 @@ If you've already installed Redis Enterprise Software, you can also:
 More info is available to help with customization and related questions:
 
 - [AWS EC2 configuration]({{<relref "rs/installing-upgrading/configuring-aws-instances.md">}})
-- [CentOS/RHEL Firewall conifugration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
+- [CentOS/RHEL Firewall configuration]({{< relref "rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}})
 - [Change socket file location]({{< relref "rs/installing-upgrading/configuring/change-location-socket-files.md" >}})
 - [Cluster DNS configuration]({{< relref "rs/installing-upgrading/configuring/cluster-dns.md" >}})
 - [Cluster load balancer setup]({{< relref "rs/installing-upgrading/configuring/cluster-lba-setup.md" >}})
@@ -210,8 +217,3 @@ Now that your cluster is set up with nodes, you can:
 - [Add users]({{< relref "/rs/security/passwords-users-roles.md" >}}) to the cluster with specific permissions.  To begin, start with [Authentication and authorization]({{< relref "/rs/security/admin-console-security/user-security" >}}).
 - [Create databases]({{< relref "/rs/administering/creating-databases/_index.md" >}}) to use with your applications.
 
-## Additional notes
-
-Redis Enterprise installation creates the redislabs:redislabs user and group. Assigning other users to the redislabs group is optional. Users belonging to the redislabs group will have permission to read and execute (e.g. use the rladmin status command) but not to write or delete files and directories.
-
-Redis Enterprise serves a large variety of industries. The common industry standard for permissions is 750 permissions. Reducing the permissions to 700 has not been tested and isn't supported. 

@@ -1,5 +1,6 @@
 ---
-Title: Concepts and Architecture
+Title: Concepts and architecture
+linkTitle: Concepts and architecture
 description:
 weight: 40
 alwaysopen: false

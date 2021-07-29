@@ -1,6 +1,6 @@
 ---
 Title: Uninstall Redis Enterprise Software
-LinkTitle: Uninstall Redis Enterprise Software
+LinkTitle: Uninstall existing deployment
 description:
 weight: 70
 alwaysopen: false

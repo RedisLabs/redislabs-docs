@@ -4,7 +4,9 @@ description:
 weight: 60
 alwaysopen: false
 categories: ["RS"]
-aliases: ["/rs/administering/designing-production/security/"]
+aliases: /rs/administering/designing-production/security/
+         /rs/security/database-security/
+         /rs/security/database-security.md
 ---
 Security is an important part of any production system. This section describes the security features and settings available in Redis Enterprise.
 

@@ -13,11 +13,9 @@ aliases: /rv/api/
 The [Redis Enterprise Cloud REST API](https://api.redislabs.com/v1/swagger-ui.html) helps you manage your Redis Cloud subscription programmatically.
 
 You can use the API to:
-
-- Add or update users  
+ 
 - Create or manage databases  
-- Define or change hosting credentials  
-- Define or manage roles and permissions  
+- Define or change hosting credentials    
 - Audit access via logs  
 - Backup or import databases  
 

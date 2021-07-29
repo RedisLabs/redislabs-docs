@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with Node.js (node_redis)
+Title: Redis with Node.js (node_redis)
+linkTitle: Node.js (node_redis)
 description:
 weight:
 alwaysopen: false

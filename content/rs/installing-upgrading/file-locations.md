@@ -1,5 +1,5 @@
 ---
-Title: File Locations
+Title: File locations
 description:
 weight: 20
 alwaysopen: false

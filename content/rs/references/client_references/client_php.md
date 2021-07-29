@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with PHP
+Title: Redis with PHP
+linkTitle: PHP
 description:
 weight:
 alwaysopen: false

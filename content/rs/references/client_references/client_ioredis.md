@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with Node.js (ioredis)
+Title: Redis with Node.js (ioredis)
+linkTitle: Node.js (ioredis)
 description:
 weight:
 alwaysopen: false
@@ -52,9 +53,9 @@ const redis = new Redis({
     host: 'hostname',
     port: <port>,
     tls: {
-        key: fs.readFileSync('path_to_keyfile', encoding='ascii'),
-        cert: fs.readFileSync('path_to_certfile', encoding='ascii'),
-        ca: [ fs.readFileSync('path_to_ca_certfile', encoding='ascii') ]
+        key: fs.readFileSync('path_to_keyfile', 'ascii'),
+        cert: fs.readFileSync('path_to_certfile', 'ascii'),
+        ca: [ fs.readFileSync('path_to_ca_certfile', 'ascii') ]
     }
 });
 ```
