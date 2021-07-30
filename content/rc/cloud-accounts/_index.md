@@ -14,20 +14,30 @@ aliases: /rv/how-to/view-edit-cloud-account/
          /rc/cloud-accounts.md
 ---
 
-Many customers use cloud provider accounts provisioned and maintained by Redis Labs.
+Many customers use cloud provider accounts provisioned and maintained by Redis Labs.  
 
-Customers with existing Amazon Web Services accounts can provision their Flexible or Annual subscriptions to use their existing AWS accounts.  
+Customers with existing Amazon Web Services (AWS) accounts can provision their Flexible or Annual subscriptions to use their existing AWS accounts.  
 
-To do so, you associate your existing AWS account as a _cloud account_ for your subscription, which requires entering credentials to enable monitoring, maintenance, and technical support.
+To do so, you associate your existing AWS account as a _cloud account_ for your subscription.  This requires setting up and entering credentials that enable monitoring, maintenance, and technical support of your subscription.
 
 You need to create:
 
 1. A programmatic user and provide us with the access key and secret access key for that user.
 1. A console role and provide us with that role name.
 
-To create or edit a cloud account in Redis Cloud:
+These resources need to exist before adding the cloud account to your subscription.  To learn more, see [Create IAM resources]({{<relref "/rc/cloud-accounts/iam-resources/">}}).
 
-1. Sign into the admin console and then select the target subscription.
+{{<note>}}
+Once an AWS account has been configured as a cloud account, you must _not_:
+- Manually change the configuration of required resources, such as security groups<br/>
+- Manually suspend or stop (terminate) provisioned resources</br></br>
+{{</note>}}
+
+## Add or edit a cloud account
+
+To create or edit a cloud account in Redis Enterprise Cloud:
+
+1. Sign into the [admin console](https://app.redislabs.com/) and then select the target subscription.
 
 1. From the console menu, select **Cloud Accounts** and then either:
 
@@ -50,4 +60,4 @@ Use the **Delete** button to remove a cloud account from your subscription.
 
 We recommend creating dedicated identity and access management (IAM) resources to manage the infrastructure of your subscriptions.
 
-To learn more, see [Create IAM resources for AWS cloud accounts]({{<relref "/rc/cloud-accounts/iam-resources/">}})
+To learn more, see [Create IAM resources for AWS cloud accounts]({{<relref "/rc/cloud-accounts/iam-resources/">}}).
