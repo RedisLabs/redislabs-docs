@@ -10,51 +10,45 @@ Here are some frequently asked questions about Redis Enterprise on integration p
 
 ## What is an Operator?
 
-An Operator is a [Kubernetes custom controller]( https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes/concepts/operator.md" >}}).
+An operator is a [Kubernetes custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes/concepts/operator.md" >}}).
 
-## Does Redis Enterprise Operator support multiple clusters per namespace?
+## Does Redis Enterprise operator support multiple RECs per namespace?
 
-The Redis Enterprise Operator may only deploy a single Redis Enterprise Cluster per namespace. Each Redis Enterprise Cluster can run multiple databases while maintaining high capacity and performance.
+The Redis Enterprise operator may only deploy a single Redis Enterprise cluster (REC) per [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/). Each REC can run multiple databases while maintaining high capacity and performance.
 
 ## Do I need to deploy a Redis Enterprise Operator per namespace?
 
-Yes, one Operator per namespace, each managing a single Redis Enterprise Cluster.
+Yes, one operator per namespace, each managing a single Redis Enterprise cluster.
+Each REC can run multiple databases while maintaining high capacity and performance.
 
-Each Redis Enterprise Cluster can run multiple databases while maintaining high capacity and performance.
-
-## How can I see the Custom Resource Definitions (CRDs) created for my cluster?
+## How can I see the Custom Resource Definitions (CRDs) created for my Redis Enterprise cluster?
 
 Run the following:
 
 ```sh
 kubectl get rec
-kubectl describe rec my-cluster-name
+kubectl describe rec <my-cluster-name>
 ```
 
-## How can I change the cluster admin user password?
+## How can I change the Redis Enterprise cluster admin user password?
 
-The cluster admin user password is created by the Operator during the deployment of the Redis Enterprise cluster and is stored in a Kubernetes secret.
+The cluster admin user password is created by the operator during the deployment of the Redis Enterprise cluster (REC) and is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
-{{< warning >}}
-Do not change the default admin user password in the Redis Enterprise admin console.
-Changing the admin password impacts the proper operation of the K8s deployment.
-{{< /warning >}}
+See [Manage REC credentials]({{<relref "/platforms/kubernetes/concepts/manage_REC_credentials">}}) for instructions on changing the admin password.
 
-If you must use a different admin password, create an additional user with admin privileges and configure with the new password.
+## How is using Redis Enterprise operator superior to using Helm charts?
 
-## How is using Redis Enterprise Operator superior to using Helm Charts?
+While [Helm charts](https://helm.sh/docs/topics/charts/) help automate multi-resource deployments, they do not provide the lifecycle management and lack many of the benefits provided by the operator:
 
-While Helm Charts help automate multi-resource deployments, they do not provide the lifecycle management and lack many of the benefits provided by the Operator:
+- Operators are a K8s standard, while Helm is a proprietary tool
+    - Using operators means better packaging for different Kubernetes deployments and distributions, as Helm is not supported in a straightforward way everywhere
+- Operators allow full control over the Redis Enterprise cluster lifecycle
+    - We’ve experienced difficulties managing the state and lifecycle of the application through Helm, as it essentially only allows to determine the resources being deployed, which is a problem when upgrading and evolve the Redis Enterprise Cluster settings
+- Operators support advanced flows which would otherwise require using an additional third party product
 
-- Operators are a K8s standards while Helm is a proprietary tool
-    - Using Operators means the better packaging for different Kubernetes deployments and distributions as Helm is not supported in a straightforward way everywhere
-- Operators allow full control over the Redis Enterprise Cluster lifecycle
-    - We’ve experienced difficulties managing state and lifecycle of the application through Helm as it essentially only allows to determine the resources being deployed, which is a problem when upgrading and evolve the Redis Enterprise Cluster settings
-- Operators support advanced flows which would otherwise require using an additional 3rd party
+## How to connect to the Redis Enterprise cluster user interface
 
-## How to connect to the Redis Enterprise Cluster user interface
-
-Create a port forwarding rule to expose the cluster user interface (UI) port. For example, when the default port 8443 is used, run:
+Create a [port forwarding](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward) rule to expose the cluster user interface (UI) port. For example, when the default port 8443 is used, run:
 
 ```sh
 kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:8443
@@ -62,17 +56,17 @@ kubectl port-forward –namespace <namespace> service/<name>-cluster-ui 8443:844
 
 Connect to the UI by pointing your browser to `https://localhost:8443`
 
-## How should I size Redis Enterprise Cluster nodes?
+## How should I size Redis Enterprise cluster nodes?
 
-For nodes hosting the Redis Enterprise Cluster statefulSet pods, please follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
+For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
-For additional information please also refer to [Kubernetes Operator Deployment – Persistent Volumes]({{< relref "/platforms/kubernetes/concepts/persistent-volumes.md" >}}).
+For additional information please also refer to [Kubernetes operator deployment – persistent volumes]({{< relref "/platforms/kubernetes/concepts/persistent-volumes.md" >}}).
 
 ## How to retrieve the username/password for a Redis Enterprise Cluster?
 
-The Redis Enterprise Cluster stores the username/password of the UI in a K8s secret.
+The Redis Enterprise cluster stores the username/password of the UI in a K8s [secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
-To retrieve, first, find the secret by retrieving secrets and locating one of type Opaque with a name identical or containing your Redis Enterprise Cluster name.
+Find the secret by retrieving secrets and locating one of type [Opaque](https://kubernetes.io/docs/concepts/workloads/pods/) with a name identical or containing your Redis Enterprise cluster name.
 
 For example, run:
 
@@ -126,10 +120,6 @@ Next, decode, for example, the password field. Run:
 echo "Q2h5N1BBY28=" | base64 –-decode
 ```
 
-{{< warning >}}
-Do not change the default admin user password in the Redis Enterprise admin console.
-Changing the admin password impacts the proper operation of the K8s deployment.
-{{< /warning >}}
 
 ## How to retrieve the username/password for a Redis Enterprise Cluster through the OpenShift Console?
 
@@ -138,10 +128,6 @@ To retrieve your password, navigate to the OpenShift management console, select 
 Retrieve your password by selecting “Reveal Secret.”
 ![openshift-password-retrieval]( /images/rs/openshift-password-retrieval.png )
 
-{{< warning >}}
-Do not change the default admin user password in the Redis Enterprise admin console.
-Changing the admin password impacts the proper operation of the K8s deployment.
-{{< /warning >}}
 
 ## What capabilities, privileges and permissions are defined by the Security Context Constraint (SCC) yaml and the Pod Security Policy (PSP) yaml?
 
@@ -196,15 +182,15 @@ spec:
 
 ([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/psp.yaml))
 
-The SYS_RESOURCE capability is required by the Redis Labs Enterprise Cluster (RLEC) container so that RLEC can set correct OOM scores to its processes inside the container.
-Also, some of the RLEC services must be able to increase default resource limits, especially the number of open file descriptors.
+The SYS_RESOURCE capability is required by the Redis Enterprise cluster (REC) container so that REC can set correct out of memory (OOM) scores to its processes inside the container.
+Also, some of the REC services must be able to increase default resource limits, especially the number of open file descriptors.
 
-While the RLEC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
+While the REC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
 
-The RLEC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/kubernetes/getting-started/openshift/openshift-cli#step-3-prepare-your-yaml-files" >}}).
+The REC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift Getting Started Guide]({{< relref "/platforms/kubernetes/getting-started/openshift/openshift-cli#step-3-prepare-your-yaml-files" >}}).
 
-RLEC PSP definitions are controlled with role-based access control (RBAC).
-A cluster role allowing the RLEC PSP is granted to the redis-enterprise-operator service account
+REC PSP definitions are controlled with role-based access control (RBAC).
+A cluster role allowing the REC PSP is granted to the redis-enterprise-operator service account
 and allows that account to create pods with the PSP shown above.
 
 {{< note >}}
