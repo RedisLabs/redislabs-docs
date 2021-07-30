@@ -46,7 +46,7 @@ To grant Redis Cloud access to a GCP user, select the **Add** button to add a me
 In case these roles do not appear, add a role to your project by doing the following:
 1. Select **Manage Roles** 
 1. Search the role on the **filter table** field ( for example: "service usage viewer" or "redis enterprise cloud admin")
-1. Mark the checkbox
+1. Place a check in the checkbox
 1. Select **Create role from selection** and select **Create**
 1. Go back to **IAM** to add a member and assign the desried roles.
 
