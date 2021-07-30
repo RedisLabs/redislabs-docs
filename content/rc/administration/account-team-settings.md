@@ -51,7 +51,7 @@ In case these roles do not appear, add a role to your project by doing the follo
 1. Go back to **IAM** to add a member and assign the desried roles.
 
 Users are not added to the team until they sign in to Redis Cloud using their single-sign on (SSO) credentials.
-This cam be done by clicking on the button **manage on provider** 
+Use the **manage on provider** button to do so. 
 
 ## Multi-Factor Authentication (MFA)
 
