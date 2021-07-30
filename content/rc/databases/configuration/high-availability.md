@@ -2,11 +2,13 @@
 Title: High availability and replication
 linkTitle: High availability
 description: Describes database replication and high availability as it affects Redis Enterprise Cloud.   
-weight: 90
+weight: $weight
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/databases/high-availability/
          /rc/databases/high-availability.md
+         /rc/databases/configuration/high-availability/
+         /rc/databases/configuration/high-availability.md
 ---
 
 Database replication helps ensure high availability. 
