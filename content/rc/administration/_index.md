@@ -6,6 +6,8 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/
          /rc/administration/configuration/
+         /rv/how-to/
+         /rc/how-to/
 ---
 With Redis Enterprise Cloud, most administrative tasks are handled for you; however, there are a few things that you need to take care of yourself.
 
