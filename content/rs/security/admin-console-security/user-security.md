@@ -193,7 +193,7 @@ Active-Active databases are relying on the administrator credentials for managem
 When updating an administrator user password on a cluster with Active-Active databases please follow these steps:
 1. From the user management page, update the administrator user password on the cluster/s you wish to update.
 1. Go to each participating cluster and for each Active-Active database update the admin user credentials that have you changed with the last step. 
-Do not perform any management operation on the databases between these two steps.
+{{< warnging> }}Do not perform any management operation on the databases between these two steps. {{< /warning >}}
 
 ## LDAP integration
 
