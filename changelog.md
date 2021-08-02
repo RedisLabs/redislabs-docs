@@ -19,7 +19,7 @@ The docs are updated regularly; here are some recent highlights:
 
     - Continued reorganizing docs to improve navigation and discoverability.  [Cloud account](https://docs.redislabs.com/latest/rc/cloud-accounts/) docs are now a top-level section and have been updated to improve accuracy and clarity. ([PR #1454](https://github.com/RedisLabs/redislabs-docs/pull/1454))
 
-    - Continued updating [preview docs](https://docs.redislabs.com/staging/release-rc-new-ui/rc/rc-quickstart/) to reflect the new admin console experience. ([PR #1453](https://github.com/RedisLabs/redislabs-docs/pull/1453)
+    - Continued updating [preview docs](https://docs.redislabs.com/staging/release-rc-new-ui/rc/rc-quickstart/) to reflect the new admin console experience. ([PR #1453](https://github.com/RedisLabs/redislabs-docs/pull/1453))
 
     - Clarified a number of docs based on feedback ([PR #1431](https://github.com/RedisLabs/redislabs-docs/pull/1431), [PR #1440](https://github.com/RedisLabs/redislabs-docs/pull/1440), [PR #1448](https://github.com/RedisLabs/redislabs-docs/pull/1448))
 
