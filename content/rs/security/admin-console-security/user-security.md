@@ -187,6 +187,14 @@ rladmin cluster config cm_session_timeout_minutes <number_of_min>
 
 Here, number_of_min is the number of minutes after which sessions will time out.
 
+## Updating Administrator password on Clusters with Active-Active databases
+
+Active-Active databases are relying on the Administrator credentials for management operations of the Active-Active database.
+When updating an administrator user password on a cluster with Active-Active databases please follow these steps:
+1. From the user management page, update the administrator user password on the cluster/s you wish to update.
+1. Go to each participating cluster and for each Active-Active database update the Admin user/s credentials that have you changed on step 1.
+Do not perform any management operation on the databases between these two steps.
+
 ## LDAP integration
 
 As of version 6.0.20, Redis Enterprise Software integrates [Lightweight Directory Access Protocol](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) (LDAP) authentication and authorization into its [role-based access controls]({{<relref "rs/security/passwords-users-roles.md##olebased-access-control">}}) (RBAC).  You can now use LDAP to authorize access to the admin console and to authorize database access.
