@@ -2,6 +2,43 @@
 
 The docs are updated regularly; here are some recent highlights:
 
+## July 2021
+
+- Redis Enterprise Software doc updates:
+
+    - Updated the [Redis client reference](https://docs.redislabs.com/latest/rs/references/client_references/) to improve readability and navigation.  ([PR #1467](https://github.com/RedisLabs/redislabs-docs/pull/1467))
+
+    - Updated [release notes](https://docs.redislabs.com/latest/rs/release-notes/) to improve links to internal docs. ([PR #1443](https://github.com/RedisLabs/redislabs-docs/pull/1443))
+
+    - Continued to refine [install/setup](https://docs.redislabs.com/latest/rs/installing-upgrading/) docs, along with supporting material.
+    ([PR #1460](https://github.com/RedisLabs/redislabs-docs/pull/1460))
+
+    - Clarified and improved readability of the [FAQs](https://docs.redislabs.com/latest/rs/faqs/). ([PR #1431](https://github.com/RedisLabs/redislabs-docs/pull/1431))
+
+- Redis Enterprise Cloud doc updates:
+
+    - Continued reorganizing docs to improve navigation and discoverability.  [Cloud account](https://docs.redislabs.com/latest/rc/cloud-accounts/) docs are now a top-level section and have been updated to improve accuracy and clarity. ([PR #1454](https://github.com/RedisLabs/redislabs-docs/pull/1454))
+
+    - Continued updating [preview docs](https://docs.redislabs.com/staging/release-rc-new-ui/rc/rc-quickstart/) to reflect the new admin console experience. ([PR #1453](https://github.com/RedisLabs/redislabs-docs/pull/1453))
+
+    - Clarified a number of docs based on feedback ([PR #1431](https://github.com/RedisLabs/redislabs-docs/pull/1431), [PR #1440](https://github.com/RedisLabs/redislabs-docs/pull/1440), [PR #1448](https://github.com/RedisLabs/redislabs-docs/pull/1448))
+
+- Redis Enterprise for Kubernetes release notes
+
+    - Created a [support matrix](https://docs.redislabs.com/latest/platforms/kubernetes/reference/supported_k8s_distributions/) detailing the distributions (and versions) supported by Redis Enterprise for Kubernetes.  ([PR #1451](https://github.com/RedisLabs/redislabs-docs/pull/1451))
+
+    - Created a [new article](https://docs.redislabs.com/latest/platforms/kubernetes/concepts/manage_rec_credentials/) describing how to manage Redis Enterprise cluster (REC) credentials.  ([PR #1466](https://github.com/RedisLabs/redislabs-docs/pull/1466))
+
+    - Added [a warning](https://docs.redislabs.com/latest/platforms/kubernetes/concepts/persistent-volumes/) noting that the size of a persistent volume cannot be changed after deployment.  ([PR #1449](https://github.com/RedisLabs/redislabs-docs/pull/1449))
+    
+    - Clarified and improved readability of the [FAQs](https://docs.redislabs.com/latest/platforms/faqs/). ([PR #1459](https://github.com/RedisLabs/redislabs-docs/pull/1459))
+
+- Redis module docs - Updated release notes for [all modules](https://docs.redislabs.com/latest/modules/) to be current, consistent, and easier to navigate. ([PR #1426](https://github.com/RedisLabs/redislabs-docs/pull/1426))
+
+- Additional updates to fix typos, missing images, and other glitches
+
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-07-01..2021-07-31)
+
 ## June 2021
 
 - Redis Enterprise Software doc updates:
@@ -111,5 +148,4 @@ The docs are updated regularly; here are some recent highlights:
     - Additional  updates to fix typos, missing images, and other glitches
 
         To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-01-01..2021-03-31)
-
 
