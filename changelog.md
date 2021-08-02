@@ -13,7 +13,7 @@ The docs are updated regularly; here are some recent highlights:
     - Continued to refine [install/setup](https://docs.redislabs.com/latest/rs/installing-upgrading/) docs, along with supporting material.
     ([PR #1460](https://github.com/RedisLabs/redislabs-docs/pull/1460))
 
-    - Clarified and improve readability of the [FAQs](https://docs.redislabs.com/latest/rs/faqs/). ([PR #1431](https://github.com/RedisLabs/redislabs-docs/pull/1431))
+    - Clarified and improved readability of the [FAQs](https://docs.redislabs.com/latest/rs/faqs/). ([PR #1431](https://github.com/RedisLabs/redislabs-docs/pull/1431))
 
 - Redis Enterprise Cloud doc updates:
 
@@ -148,5 +148,4 @@ The docs are updated regularly; here are some recent highlights:
     - Additional  updates to fix typos, missing images, and other glitches
 
         To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-01-01..2021-03-31)
-
 
