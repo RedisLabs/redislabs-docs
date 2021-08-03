@@ -1,51 +1,47 @@
-DNS is critical to the default operation of Redis Enterprise Software (RS) deployments.
+DNS is critical to the default operation of Redis Enterprise Software deployments.
 This can be altered, but instead using the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}),
 which utilizes pure IP-based connectivity as it is compliant with the Redis Sentinel API.
 
-As part of the high availability capabilities in RS,
+As part of the high availability capabilities in Redis Enterprise Software,
 each node includes a small DNS server for managing various internal cluster functionalities,
 such as automatic failover or automatic migration.
-Therefore, the node on which you are provisioning RS should not run any other DNS server except for the one included with the RS installation.
-The existence of another DNS server on the same machine can cause unexpected behavior in RS.
+Therefore, nodes that provision Redis Enterprise Software should run only the DNS server included with the software.  They should not run any other DNS servers; otherwise, unexpected behavior can occur.
 
 ## Cluster name (FQDN) and connection management
 
-When connecting to the cluster for administration or connecting to databases for data access, there are 2 options:
+Whether you're administering Redis Enterprise Software or accessing databases, there are two ways to connect:
 
-- URL-based Connections - URL-based connections require DNS setup for resolution of the cluster name (FQDN) when connecting to the cluster
-    for administration or connecting to databases for data access.
-    As the topology of the cluster changes and new nodes are added or existing nodes are removed from the cluster,
-    DNS records may need to be modified.
-    However, with URL-based connections, applications simply have to remember the URL for the cluster or the database.
-- IP-based Connections - IP-based connections do not require DNS setup and instead use IP addresses of the nodes in the cluster
-    for connecting to the cluster for administration or data access.
-    As the topology of the cluster changes and new nodes are added or existing nodes are removed from the cluster,
-    no DNS records need to be modified.
-    However, administrators and applications connecting to the cluster and to the databases need to maintain the IP address
-    of at least one node in the cluster to discover and access the cluster topology.
+- URL-based connections - URL-based connections use DNS to resolve the fully qualified cluster domain name.  This means that DNS records might need to be updated when topology changes, such as adding (or removing) nodes from the cluster.  
+
+    Because apps and other clients connections rely on the URL, they do not need to be modified when topology changes.  
+
+- IP-based connections - IP-based connections do not require DNS setup, as they rely on the underlying TCP/IP addresses.  As long as topology changes do not change the address of the cluster nodes, no configuration changes are needed, DNS or otherwise.  
+
+    However, changes to IP addresses (or changes to IP address access) impact all apps and clients connecting to the node.
 
 ## URL-based connections and how to set up cluster name (FQDN)
 
-The Fully Qualified Domain Name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}})
-that are part of the Redis Enterprise Software.
-The FQDN is a crucial component of the high-availability mechanism in RS because it is used by the internal DNS
-to enable the automatic and transparent failover of nodes, databases shards, and endpoints, by automatically updating their IP addresses.
+The Fully Qualified Domain Name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) of Redis Enterprise Software.
+The FQDN is a crucial component of the high-availability mechanism because it's used internally to enable and implement automatic and transparent failover of nodes, databases shards, and endpoints.
 
 {{< note >}}
-Setting the cluster's FQDN is a one-time operation.
-After the FQDN is set it cannot be updated.
+Setting the cluster's FQDN is a one-time operation; it cannot be changed after being set.
 {{< /note >}}
 
 The FQDN must always comply with the IETF's [RFC 952](http://tools.ietf.org/html/rfc952) standard
 and section 2.1 of the [RFC 1123](http://tools.ietf.org/html/rfc1123) standard.
 
-## Naming the cluster FQDN
+## Name the cluster domain name
 
-You have two options for naming the cluster FQDN:
+You can name the cluster domain name using either DNS or IP addresses.  
 
 ### DNS
 
-Use this option if you already have your own domain, would like to make the cluster part of your domain and are able to update the DNS.
+Use DNS if you:
+
+- have your own domain
+- want to integrate the cluster into that domain
+- can access and update the DNS records for that domain
 
 1. Make sure that the cluster and at least one node (preferably all nodes) in the cluster
     are correctly configured in the DNS with the appropriate NS entries.
@@ -103,10 +99,10 @@ Once you have the IP address, you can simply connect to port number 8443 (for ex
 However, as the topology of the cluster changes and node with the given IP address is removed,
 you need to remember the IP address of another node participating in this cluster to connect to the admin console and manage the cluster.
 
-Applications connecting to RS databases for data access have the same constraints.
+Applications connecting to Redis Software databases have the same constraints.
 When using the IP-based connection method, you can use the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}})
 to discover the database endpoint for a given database name as long as you have an IP address for at least one of the nodes in the cluster.
 The API used for discovery service is compliant with the Redis Sentinel API.
 
-You can find a simple example of URL and IP-based connection in the "Testing Connectivity to your Database" section
-of [Creating a new database]({{< relref "/rs/administering/creating-database/_index.md#simple-connectivity-test" >}}).
+To test your connection, try pinging the service.  For help, see [Connect yo your database]connYou can find a simple example of URL and IP-based connection in the "Testing Connectivity to your Database" section
+of [Creating a new database]({{< relref "rs/getting-started/#step-4-connect-to-your-database" >}}).
