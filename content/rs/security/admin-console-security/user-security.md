@@ -191,7 +191,7 @@ Here, number_of_min is the number of minutes after which sessions will time out.
 
 Active-Active databases are relying on the administrator credentials for management operations of the Active-Active database.
 When updating an administrator user password on a cluster with Active-Active databases please follow these steps:
-1. From the user management page, update the administrator user password on the cluster/s you wish to update.
+1. From the user management page, update the administrator user password on the clusters you wish to update.
 1. Go to each participating cluster and for each Active-Active database update the admin user credentials that have you changed with the last step. 
 {{< warnging> }}Do not perform any management operation on the databases between these two steps. {{< /warning >}}
 
