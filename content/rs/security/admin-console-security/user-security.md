@@ -187,7 +187,7 @@ rladmin cluster config cm_session_timeout_minutes <number_of_min>
 
 Here, number_of_min is the number of minutes after which sessions will time out.
 
-## Updating Administrator password on Clusters with Active-Active databases
+## Update Active-Active cluster admin credentials
 
 Active-Active databases use administrator credentials to manage operations for Active-Active database.
 When updating an administrator user password on a cluster with Active-Active databases please follow these steps:
