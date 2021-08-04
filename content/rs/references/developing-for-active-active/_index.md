@@ -186,6 +186,11 @@ Furthermore, a replica that is NOT the "owner" of the expired value:
     DEL.
 - Expires it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
+    
+    {{< note >}}
+Active-Active databases expiration values are in range of [0, 2^49].
+While non Active-Active Redis expiration values are in range of [0, 2^64], 
+    {{< /note >}}
 
 ## Out-of-Memory (OOM) {#outofmemory-oom}
 
