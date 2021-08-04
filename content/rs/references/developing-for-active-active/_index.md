@@ -188,8 +188,7 @@ Furthermore, a replica that is NOT the "owner" of the expired value:
     attempts to access it in WRITE mode.
     
     {{< note >}}
-Active-Active databases expiration values are in range of [0, 2^49].
-While non Active-Active Redis expiration values are in range of [0, 2^64], 
+Expiration values are in the range of [0, 2^49] for Active-Active databases and [0, 2^64] for non Active-Active databases.
     {{< /note >}}
 
 ## Out-of-Memory (OOM) {#outofmemory-oom}
