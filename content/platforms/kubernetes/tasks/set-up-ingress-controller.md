@@ -115,7 +115,7 @@ ingress-default-backend   ClusterIP      10.100.76.69     <none>                
              servicePort: <port> 
   ```
 
-### Next Steps
+9. Test your access <!--- Insert link here --->
 
 ## Set up NGINX ingress controller
 
