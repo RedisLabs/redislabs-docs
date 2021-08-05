@@ -1,6 +1,6 @@
 ---
-Title: Set up an ingress controller
-description: 
+Title: Establish routing with an ingress controller
+linkTitle: Configure ingress
 weight: 25
 alwaysopen: false
 categories: [""]
@@ -34,7 +34,7 @@ For the hostname you will use to access your database, we recommend including th
     kubectl create namespace ingress-controller
     ```
 
-1. Find the name of your worker nodes and label them for the ingress controller role. 
+1. Find the name of your worker nodes and label them for the ingress controller role.
     ```bash
     kubectl get nodes
     ```
@@ -78,6 +78,7 @@ For the hostname you will use to access your database, we recommend including th
     sessionAffinity: None
     type: LoadBalancer
   ```
+
 6. Check the services in that namespace again. The new service with the type `LoadBalancer` should appear.
     ```bash
     $ kubectl get svc -n ingress-controller
@@ -90,5 +91,35 @@ For the hostname you will use to access your database, we recommend including th
 {{< note >}} In this example we are using AWS as a cloud provider and the load balancer was provisioned for us by AWS. {{< /note >}}
 
 7. Go to the `cs.redislabs.com` hosted zone of [Route 53](https://aws.amazon.com/route53/) and create a new recordset with the type `CNAME`. 
-    1. Use an external IP address of the `haproxy-controller` service as the value (example: `afd79dd212dcc11eaafbb0e678032796-1566764726.us-east-1.elb.amazonaws.com`)
+    1. Use an external IP address of the `haproxy-controller` service as the value
     1. Use the [desired hostname](/platforms/kubernetes/tasks/set-up-ingress-controller/#determine-the-desired-hostname-for-accessing-your-databases) as the name. (example: `*.rec.ldr-eks-04`). {{< note >}} Using the wildcard `*` as part of the hostnames allows you to access all your databases using this load balancer. {{< /note >}}
+
+8. Create the ingress resource yaml file.
+
+  ```yaml
+   apiVersion: networking.k8s.io/v1beta1
+   kind: Ingress
+   metadata:
+     name: rec-ingress
+     annotations:
+       ingress.kubernetes.io/ssl-passthrough: "true"
+   spec:
+     rules:
+     - host: redis-<port>.rec.ldr-eks-04.cs.redislabs.com
+       http:
+         paths:
+         - path: /
+           backend:
+             serviceName: myfirstdb
+             servicePort: <port> 
+  ```
+
+## Set up NGINX ingress controller 
+
+
+
+
+## Ingress
+### HAProxy
+### NGINX
+## Test access
