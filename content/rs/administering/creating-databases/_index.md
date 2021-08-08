@@ -84,6 +84,10 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         You can't add a module to an existing database.
         {{< /note >}} 
         
+        {{< note >}}
+        If adding redisGraph module, we need to add a remark that databse with RedisGraph soed not support any eviction policy, and add a note as well in the eviction policy section below.
+        {{< /note >}} 
+        
         To add a module to the database:
 
         1. In the Redis Modules field, click ![Add](/images/rs/icon_add.png#no-click "Add").
