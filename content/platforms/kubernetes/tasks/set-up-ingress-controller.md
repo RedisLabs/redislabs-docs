@@ -24,7 +24,7 @@ You'll need a database with the following: <!--- SME QUESTION: are the values be
 
 ### Determine your desired hostname
 
-For the hostname you will use to access your database, we recommend including the Redis Enterprise cluster name and K8s cluster name. In the example below the RE cluster is called `rec` and the K8s cluster is called `ldr-eks-04`. The goal in the example below is to access each database through `redis-<port>.rec.ldr-eks-04.cs.redislabs.com`.
+For the hostname you will use to access your database, we recommend including the Redis Enterprise cluster name and K8s cluster name. In the example below the RE cluster is called `rec` and the K8s cluster is called `eks-04`. The goal in the example below is to access each database through `redis-<port>.rec.eks-04.cs.redislabs.com`.
 
 ## Set up HAProxy ingress controller
 
@@ -93,7 +93,7 @@ ingress-default-backend   ClusterIP      10.100.76.69     <none>                
 
 7. Go to the `cs.redislabs.com` hosted zone of [Route 53](https://aws.amazon.com/route53/) and create a new recordset with the type `CNAME`. 
     1. Use an external IP address of the `haproxy-controller` service as the value
-    1. Use the [desired hostname](/platforms/kubernetes/tasks/set-up-ingress-controller/#determine-the-desired-hostname-for-accessing-your-databases) as the name. (example: `*.rec.ldr-eks-04`). {{< note >}} Using the wildcard `*` as part of the hostnames allows you to access all your databases using this load balancer. {{< /note >}}
+    1. Use the [desired hostname](/platforms/kubernetes/tasks/set-up-ingress-controller/#determine-the-desired-hostname-for-accessing-your-databases) as the name. (example: `*.rec.eks-04`). {{< note >}} Using the wildcard `*` as part of the hostnames allows you to access all your databases using this load balancer. {{< /note >}}
 
 8. Create the ingress resource yaml file.
 
@@ -106,7 +106,7 @@ ingress-default-backend   ClusterIP      10.100.76.69     <none>                
        ingress.kubernetes.io/ssl-passthrough: "true"
    spec:
      rules:
-     - host: redis-<port>.rec.ldr-eks-04.cs.redislabs.com
+     - host: redis-<port>.rec.eks-04.cs.redislabs.com
        http:
          paths:
          - path: /
