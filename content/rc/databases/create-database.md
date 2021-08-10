@@ -24,7 +24,7 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
         - Shards - Enter the number of **Shards** you require for the database.
     - **Replication** - By default, each shard has a slave shard.
         If you do not require slave shards, disable replication.
-    - **Data Persistence** - Select when and how the data is saved to [persistent storage]({{< relref "rc/concepts/data-persistence.md" >}}) :
+    - **Data Persistence** - Select when and how the data is saved to [persistent storage]({{< relref "rc/databases/configuration/data-persistence.md" >}}) :
         - None - Data is not persisted to disk at all.
         - Append Only File (AoF) one second - Data is fsynced to disk every second.
         - Snapshot every 1 hour - A snapshot of the database is created every hour.
@@ -55,7 +55,7 @@ between the VPC that this database is on and the VPC that the destination databa
     - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/databases/back-up-data.md" >}}) location.
     - **Modules** - Enable modules and select the module to use with the database.<a name="supported-modules">&nbsp;</a>
 
-        - For applications that require high-throughput, use a Redis Cloud Pro subscription.
+        - For applications that require high-throughput, use a Redis Cloud Flexible subscription.
         - For RedisGraph, use the [sizing calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
             to calculate the required resources.
         - For RediSearch on a Redis Cloud Flexible (or Annual) subscription, enter the estimated number of documents you want to index.

@@ -1,22 +1,30 @@
 ---
 Title: Clustering Redis Databases
-description:
+linkTitle: Clustering 
+description: Redis Enterprise Cloud uses clustering to manage very large databases (25 GB and larger).  Here, you'll learn how to manage clustering and how to use hashing policies to control how data is managed.
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/concepts/clustering-redis-cloud/
-        /rv/concepts/clustering/
+         /rv/concepts/clustering/
+         /rc/concepts/clustering/
+         /rc/concepts/clustering.md
+         /rc/databases/configuration/clustering/
+         /rc/databases/configuration/clustering.md
 ---
-Redis is mostly a single-threaded process. This enables Redis to be high performance and simple (no need for threads synchronization).
-To let you take advantage of Redis clustering,
-Redis Cloud uses our Redis Enterprise technology to scale Redis databases for you.
+For very large databases, Redis Enterprise Cloud distributes database data to different cloud instances.  For example:
 
-For example:
+- When data grows beyond the the RAM resources of a single server.
 
-- The dataset is big enough that it would benefit from using the RAM resources of more than one server.
-    We recommend enabling clustering for the database when the data reaches the size of 25 GB (50 GB for RoF) to create multiple shards.
+    Multiple shards should be used when data grows to 25 GB (50 GB for Redis on Flash) to create multiple shards.
+
 - The operations performed against the database are CPU intensive enough to degrade performance.
-    With clustering, you can distribute operational load across the same server or multiple servers.
+
+    Clustering distributes operational load, whether to instances on the same server or across multiple servers.
+
+This distribution is called _clustering_ because it manages the way data is distributed throughout the cluster of nodes that support the database.
+
+## How data is distributed
 
 A Redis Cloud cluster is a set of managed Redis processes and cloud instances,
 with each process managing a subset of the database keyspace.
@@ -24,20 +32,22 @@ Clustering uses multiple cores and resources of multiple instance to overcome sc
 
 In a Redis Cloud cluster, the keyspace is partitioned into hash
 slots. At any given time a slot resides on and is managed by a single
-Redis server. An instance that belongs to a cluster can manage multiple
-slots. This division of the key space, shown as sharding, is achieved by
-hashing the keys' names, or parts of these (key hash tags), in order to
+Redis server. 
+
+An instance that belongs to a cluster can manage multiple
+slots. This division of the key space, known as _sharding_, is achieved by
+hashing the key names, or parts of these (key hash tags), in order to
 obtain the slot in which a key should reside.
 
-Even while employing multiple Redis processes, the use of a Redis
-Cloud cluster is nearly transparent to the application that
+Even when using multiple Redis processes, the use of a Redis
+Enterprise Cloud cluster is nearly transparent to the application that
 uses it. The cluster is accessible via a single endpoint that
 automatically routes all operations to the relevant shards, without the
 complexity of a cluster-aware Redis client. This allows applications to
 benefit from using the cluster without performing any code changes, even
 if they were not designed to use it beforehand.
 
-When creating or editing a Redis database on Redis Cloud, the
+When creating or editing a Redis database on Redis Enterprise Cloud, the
 system automatically calculates the number of shards needed based on
 the database memory limit and required throughput.
 
@@ -78,11 +88,10 @@ are supported with the following limitations:
 ## Changing the hashing policy
 
 The clustering configuration of a Redis Cloud instance can be
-changed. However, hashing policy changes trigger the deletion
-(i.e. FLUSHDB) of the data before they can be applied. These changes
-are:
+changed. However, hashing policy changes delete existing data 
+(FLUSHDB) before they're applied. These changes include:
 
-1. Changing the hashing policy from standard to custom or vice versa.
+1. Changing the hashing policy, either from standard to custom or vice versa.
 1. Changing the order of custom hashing policy rules.
 1. Adding rules before existing ones in the custom hashing policy.
 1. Deleting rules from the custom hashing policy.

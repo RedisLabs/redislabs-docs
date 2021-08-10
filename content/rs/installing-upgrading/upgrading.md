@@ -1,6 +1,6 @@
 ---
 Title: Upgrade Redis Enterprise Software
-linkTitle: Upgrade Redis Enterprise Software
+linkTitle: Upgrade existing deployment
 description:
 weight: 60
 alwaysopen: false
