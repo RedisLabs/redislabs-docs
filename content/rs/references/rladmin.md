@@ -592,6 +592,7 @@ rladmin tune db <db:id | name>
         [ mtls_allow_weak_hashing <enabled | disabled> ]
         [ mtls_allow_outdated_cert <enabled | disabled> ]
         [ mtls_allow_no_xkusage <enabled | disabled> ]
+        [ data_internode_encryption <enabled | disabled> ]
 ```
 
 | Optional Parameters | Description |
@@ -629,6 +630,7 @@ rladmin tune db <db:id | name>
 | mtls_allow_weak_hashing | Enables weak hashing (less than 2048 bits) in mTLS connections |
 | mtls_allow_outdated_cert | Enables outdated certificates in mTLS connections |
 | mtls_allow_no_xkusage | Allows extended key checks to be skipped |
+| data_internode_encryption | Enables or disables [internode encryption]({{< relref "/rs/security/internode-encryption.md" >}}) for the database |
 
 | XADD behavior mode | Description |
 | - | - |
