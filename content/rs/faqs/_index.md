@@ -11,7 +11,7 @@ Here are some frequently asked questions about Redis Enterprise Software.
 
 ### What exactly is Redis Enterprise?
 
-Redis Labs has enhanced open source Redis with a technology layer that encapsulates open source Redis, while fully supporting all its commands, data structures and modules. 
+Redis Enterprise Software enhances open source Redis with a technology layer that encapsulates open source Redis while fully supporting all its commands, data structures and modules. 
 
 Redis Enterprise adds exceptional flexibility, stable high performance and unmatched resilience, as well as multiple deployment choices (public and private clouds, on-premises, hybrid, RAM-Flash combination), topology (active-active, active-passive, active-replica) and support for very large dataset sizes. 
 
@@ -62,9 +62,9 @@ The free version does
 not provide the same support options as the paid version. 
 
 Finally, no
-service level agreement (SLA) is provided with the trial version. To continue operation of the
+service level agreement (SLA) is provided with the trial version. To continue operating the
 cluster with full capabilities, you must purchase a [subscription
-cluster key from Redis Labs](https://redislabs.com/pricing).
+cluster key from Redis](https://redislabs.com/pricing).
 
 ### What is the payment schedule and terms?
 

@@ -49,7 +49,7 @@ To view the audit logs:
 
 Server logs can be found by default in the directory `/var/opt/redislabs/log/`.
 
-These log files are used by the Redis Labs support team to troubleshoot issues. The logs you will most frequently interact with is 'event_log.log'. This log file is where logs of configuration actions within Redis are stored and is useful to determine events that occur within Redis Enterprise.
+These log files are used by the Redis support team to troubleshoot issues. The logs you will most frequently interact with is 'event_log.log'. This log file is where logs of configuration actions within Redis are stored and is useful to determine events that occur within Redis Enterprise.
 
 ## Setting log timestamps
 

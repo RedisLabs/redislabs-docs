@@ -1,12 +1,12 @@
 _The master branch_ => [![CircleCI](https://circleci.com/gh/RedisLabs/redislabs-docs/tree/master.svg?style=svg)](https://circleci.com/gh/RedisLabs/redislabs-docs/tree/master)
 
-# Redis Labs Documentation Center
+# Redis Documentation Center
 
-The Redis Labs Documentation Center is built with [Hugo]( https://gohugo.io/ ) version 0.48 and is based on the [DocDock]( https://github.com/vjeantet/hugo-theme-docdock.git ) theme.
+The Redis Documentation Center is built with [Hugo]( https://gohugo.io/ ) version 0.48 and is based on the [DocDock]( https://github.com/vjeantet/hugo-theme-docdock.git ) theme.
 
-## Installing the Redis Labs Documentation Center
+## Installing the Redis Documentation Center
 
-To run the Redis Labs Documentation Center locally:
+To run the Redis Documentation Center locally:
 
 1. Install the latest Hugo:
 

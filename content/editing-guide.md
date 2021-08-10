@@ -1,9 +1,9 @@
 ---
 title: Editing Guide
-description: How to edit the Redis Labs documentation
+description: How to edit the Redis documentation
 draft: false
 ---
-Redis Labs documentation is an open source project and we welcome edits of all types.
+Redis documentation is an open source project and we welcome edits of all types.
 
 Just to get you started, here is a simple explanation of how to edit the docs.
 
@@ -74,7 +74,7 @@ Here's what this process looks like:
 Here's what this process looks like:
 {{< video "/images/site/review-and-create-PR.mp4" "review-and-create-PR" >}}
 
-Your edits improve the quality of the documentation and help every Redis Labs customer get the most out of Redis products!
+Your edits improve the quality of the documentation and help every Redis customer get the most out of Redis products!
 
 ## Related Info
 

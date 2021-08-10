@@ -1,9 +1,9 @@
 ---
 title: Contribution Guide
-description: How to contribute to the Redis Labs documentation
+description: How to contribute to the Redis documentation
 draft: false
 ---
-Redis Labs documentation is an open source project and we welcome edits of all types.
+Redis documentation is an open source project and we welcome edits of all types.
 
 Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
@@ -31,7 +31,7 @@ you can open a pull request to submit your changes for consideration.
 
 After you clone the repository to your local machine, you can serve the site locally with Hugo and then browse to http://localhost:1313 to see how it looks.
 
-The Redis Labs documentation site does not run on the latest version of [Hugo](http://gohugo.io).
+The Redis documentation site does not run on the latest version of [Hugo](http://gohugo.io).
 You can go to the readme page of the redislabs-docs repository to find the version of Hugo that is currently supported.
 
 To run an older version of Hugo on your local machine:

@@ -28,13 +28,13 @@ In this example, we have four fields: `title` (`TEXT`), `body` (`TEXT`), `url` 
 
 Now add some data to this index. Here we add a hash with the key "`doc:1`" and the fields:
 
-- title: "Redis Labs"
+- title: "Redis"
 - body: "Primary and caching"
 - url: <https://redislabs.com/primary-caching>
 - visits: 108
 
 ```sh
-127.0.0.1:12543> HSET doc:1 title "Redis Labs" body "Primary and caching" url "<https://redislabs.com/primary-caching>" visits 108
+127.0.0.1:12543> HSET doc:1 title "Redis" body "Primary and caching" url "<https://redislabs.com/primary-caching>" visits 108
 OK
 ```
 
@@ -42,7 +42,7 @@ To add a document specific score, that causes the document to appear higher or l
 We specified the `SCORE_FIELD` in the schema definition to hold the document weight value.
 
 ```sh
-127.0.0.1:12543> HSET doc:2 title "Redis Labs" body "Modules" url "<https://redislabs.com/modules>" visits 102 doc_score 0.8
+127.0.0.1:12543> HSET doc:2 title "Redis" body "Modules" url "<https://redislabs.com/modules>" visits 102 doc_score 0.8
 OK
 ```
 
@@ -56,7 +56,7 @@ Do a search on this index for any documents with the word "primary":
 1) (integer) 1
 2) "doc:1"
 3) 1) "title"
-   2) "Redis Labs"
+   2) "Redis"
    3) "body"
    4) "primary and caching"
    5) "url"

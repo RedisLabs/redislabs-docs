@@ -23,20 +23,20 @@ Here is an example of the API operation response:
 {
   "account": {
     "id": 654321,
-    "name": "Redis Labs",
+    "name": "Redis",
     "createdTimestamp": "2018-12-23T15:15:31Z",
     "updatedTimestamp": "2019-07-04T12:22:04Z",
     "key": {
-      "name": "john-doe-api-key-6",
+      "name": "jay-doe-api-key-6",
       "accountId": 654321,
-      "accountName": "Redis Labs Account for John Doe",
+      "accountName": "Redis account for Jay Doe",
       "allowedSourceIps": [
         "82.81.136.0/24"
       ],
       "createdTimestamp": "2019-06-06T07:41:14Z",
       "owner": {
-        "name": "John Doe",
-        "email": "John.doe@redislabs.com"
+        "name": "Jay Doe",
+        "email": "jay.doe@redislabs.com"
       },
       "httpSourceIp": "82.81.136.242"
     }

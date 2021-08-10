@@ -1,5 +1,5 @@
-A Redis Enterprise Software (RS) cluster typically consists of several nodes.
-For production deployments, Redis Labs recommends an uneven number of nodes, with a minimum of three.
+A Redis Enterprise Software cluster typically consists of several nodes.
+For production deployments, we recommend an uneven number of nodes, with a minimum of three.
 
 {{< note >}}
 In a cluster that consists of only one node, some features and capabilities are not enabled,

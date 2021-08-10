@@ -30,8 +30,7 @@ software that can reliably manage an application in an extensible,
 modular way and do not hinder the basic primitives that comprise the K8s
 architecture.
 
-We at Redis Labs have created an Operator that deploys and manages the
-lifecycle of a Redis Enterprise Cluster.
+Redis created an Operator that deploys and manages the lifecycle of a Redis Enterprise Cluster.
 
 The Redis Enterprise Operator acts as a custom controller for the custom
 resource RedisEnterpriseCluster, or ‘rec’, which is defined through K8s
@@ -58,7 +57,7 @@ The Operator creates the following resources:
 - Secret – holds the cluster username, password, and license
 - Statefulset – holds Redis Enterprise nodes
 - The Services Manager deployment – exposes databases and tags nodes
-- The Redis Labs UI service
+- The Redis UI service
 - The service that runs the REST API + Sentinel
 - Pod Disruption Budget
 - Optionally: a deployment for the Service Broker, including services and a PVC

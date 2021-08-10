@@ -15,7 +15,7 @@ You can also:
 - Configure Multi-Factor Authentication (MFA)
 
 When you set up [SSL/TLS]({{< relref "/rc/security/database-security/tls-ssl.md" >}}) for your account,
-you must enter the downloadable Redis Labs CA Certificate from this page.
+you must enter the downloadable Redis CA Certificate from this page.
 
 ![settings](/images/rc/settings.png)
 
@@ -100,8 +100,8 @@ To configure MFA for the Authenticator app:
     1. Select the plus sign and press **Scan a barcode**.
     1. Scan the Redis Cloud barcode.
 
-To log in to the Redis Cloud admin console, you can do MFA either with a text message or the Authenticator app.
-If you use with the Authenticator app, you must open the Authenticator app and enter the Redis Labs code into the Redis Enterprise Cloud login.
+To log in to the Redis Enterprise Cloud admin console, you can do MFA either with a text message or the Authenticator app.
+If you use with the Authenticator app, you must open the Authenticator app to locate the code that lets you sign in to the Redis Enterprise Cloud admin console.
 
 #### Deactivating MFA
 

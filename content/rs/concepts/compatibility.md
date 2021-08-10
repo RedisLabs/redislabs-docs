@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["RS"]
 ---
 Redis Enterprise Software is compatible with open source
-Redis (OSS Redis). Redis Labs contributes extensively to the open source Redis
-project and uses it inside of Redis Enterprise Software. As a rule, Redis Labs adheres to
-the open source's specifications and makes every effort to update
+Redis (OSS Redis). Redis contributes extensively to the open source Redis
+project and uses it inside of Redis Enterprise Software. As a rule, we adhere to
+the open source project's specifications and makes every effort to update
 Redis Enterprise Software with the latest version of open source Redis.
 
 ## Redis commands
