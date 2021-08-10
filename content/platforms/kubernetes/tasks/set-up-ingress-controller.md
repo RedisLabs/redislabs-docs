@@ -11,11 +11,15 @@ Every time a Redis Enterprise Database (REDB) is created in a Kubernetes (K8s) e
 
 REDB's default to the `ClusterIP` type that exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
-{{< info >}} You won't need an ingress controller if your REDB uses a `LoadBalancer`  or headless service. a `LoadBalancer` service is exposed externally through a cloud provider's load balancer. Headless services don't allocate a cluster IP and instead allows you to use a different discovery method all together that is not tied to your Kubernetes implementation. {{< /info >}}
-
 Redis Enterprise Software on Kubernetes supports two ingress controllers, [HAProxy](https://haproxy-ingress.github.io/) and [NGINX](https://kubernetes.github.io/ingress-nginx/).
 
-{{< note >}} OpenShift uses [routes](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html) for external access instead of ingress controllers. {{< /note >}}
+#### Do you need an ingress controller?
+
+You will not need an ingress controller if:
+- your REDB uses a `Loadbalancer` or headless service for routing
+
+- you are using OpenShift to manage your K8s cluster (see [routes](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html))
+
 
 ## Prerequisites
 
@@ -35,7 +39,7 @@ spec:
   tlsMode: enabled
 ```
 
-#### If you choose to use a previously created database: 
+##### If you choose to use a previously created database: 
 
 If you are using an existing REDB that was created with a yaml file, you cannot make edits to that database in the Redis Enterprise UI. All changes need to be made in the yaml file.
 
@@ -69,7 +73,7 @@ kind: Ingress
 metadata:
   name: rec-ingress
   annotations:
-    <nginx>.ingress.kubernetes.io/ssl-passthrough: "true"
+    <ingress-controller>.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
   - host: <hostname>
@@ -85,8 +89,8 @@ The `ssl-passthrough` annotation is required to allow access to the database. Th
 
 ## Test your external access
 
-### RedisInsight
+#### RedisInsight
 
-### Openssl
+#### Openssl
 
-### Python
+#### Python
