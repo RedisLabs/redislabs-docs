@@ -576,11 +576,11 @@ The following values are supported:
 | `major`  | Limits Redis upgrades to the latest minor (`.x`) release |
 |||
 
-Redis Enterprise ships with two versions of Redis: the latest major release and the latest minor release.  The one installed during update depends on the selected policy.
+Redis Enterprise ships with two versions of Redis: the latest major release (example: 6.0) and the latest minor release (example: 6.2).  This policy defines which one is installed during update.
 
 As of v6.2.4, the default behavior is `latest`.  Earlier versions behaved as if the default were `major`.
 
-This change allows customers to choose how to handle the Redis upgrade process.  By choosing `major`, you choose a longer upgrade cycle and choosing `latest` lets you upgrade more quickly.
+This change allows customers to choose how to handle Redis upgrades, which can become an issue when Redis updates more frequently than Redis Enterprise Software.  By choosing `major`, you choose a longer upgrade cycle while choosing `latest` lets you upgrade more quickly.
 
 ##### `tune cluster default_redis_version`
 
@@ -590,7 +590,9 @@ This change allows customers to choose how to handle the Redis upgrade process. 
 rladmin tune default_redis_version <value> 
 ```
 
-The value parameter should be a version number in form of major.minor that corresponds to the version of Redis matching the value of the `redis_upgrade_policy`.  To illustrate,  Redis Enterprise Software 6.2.4 included Redis 6.0 (major) and Redis 6.2 (latest).  To use Redis 6.2 as the minimum version instead of Redis 6.0 (the default), you would run the following `rladmin` commands:
+The value parameter should be a version number in form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.
+
+To illustrate,  Redis Enterprise Software 6.2.4 included Redis 6.0 (major) and Redis 6.2 (latest).  To use Redis 6.2 as the minimum version instead of Redis 6.0 (the default), you would run the following `rladmin` commands:
 
 ``` text
 tune cluster redis_upgrade_policy latest
