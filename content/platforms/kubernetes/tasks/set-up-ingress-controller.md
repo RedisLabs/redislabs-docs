@@ -20,9 +20,10 @@ Redis Enterprise Software on Kubernetes supports two ingress controllers, [HAPro
 ## Prerequisites
 
 ### Redis Enterprise database (REDB)
-- Create a Redis Enterprise database with "TLS for all communication" enabled and "client authentication" disabled.
 
-The yaml to create this REDB must include `tlsMode: enabled` as shown in this example: 
+Create a Redis Enterprise database with "TLS for all communication" enabled and "client authentication" disabled.
+
+The yaml to create this REDB must include `tlsMode: enabled` as shown in this example:
 
 ```yaml
 apiVersion: app.redislabs.com/v1alpha1
@@ -33,28 +34,54 @@ spec:
   memorySize: <memory-size>MB
   tlsMode: enabled
 ```
+
 #### If you choose to use a previously created database: 
 
 If you are using an existing REDB that was created with a yaml file, you cannot make edits to that database in the Redis Enterprise UI. All changes need to be made in the yaml file.
 
-If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{<relref "content/rs/security/tls-ssl/#enable-tls-for-client-connections">}}) for more information on these security settings.
+If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{< relref "content/rs/security/tls-ssl.md" >}}) for more information on these security settings.
 
 ### Ingress controller
 
-Install one of the supported ingress controllers: 
+Install one of the supported ingress controllers:
+
 - [NGINX Ingress Controller Installation Guide](https://kubernetes.github.io/ingress-nginx/deploy/)
 - [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/)
 
-{{< note >}}Important! You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX.{{< /note >}}
+{{< warning >}}You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{< /warning >}}
 
 ## Determine your desired hostname
 
-_This need to be revised to exclude cs.redislabs.com and cloud vendor specifics_
+**This need to be revised to exclude cs.redislabs.com and cloud vendor specifics**
 For the hostname you will use to access your database, we recommend including the Redis Enterprise cluster name and K8s cluster name. In the example below the RE cluster is called `rec` and the K8s cluster is called `eks-04`. The goal in the example below is to access each database through `redis-<port>.rec.eks-04.cs.redislabs.com`.
 
-_add note about wildcard??_
+**add note about wildcard??**
 
 ## Create ingress resource
+
+1. Map the hostname **(of?)** to the IP of the ingress controller's `LoadBalancer` service.
+
+1. Create the ingress resource yaml file.
+
+```yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: rec-ingress
+  annotations:
+    <nginx>.ingress.kubernetes.io/ssl-passthrough: "true"
+spec:
+  rules:
+  - host: <hostname>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: <db-name>
+          servicePort: <port>
+```
+
+The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on which ingress controller you have. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.
 
 ## Test your external access
 
@@ -63,5 +90,3 @@ _add note about wildcard??_
 ### Openssl
 
 ### Python
-
-
