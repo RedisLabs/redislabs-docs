@@ -554,51 +554,6 @@ rladmin suffix delete name <name>
 
 `rladmin tune` configures parameters for databases, proxies, and clusters.
 
-#### `tune cluster`
-
-`rladmin tune cluster` defines default policies for the cluster.
-
-##### `tune cluster redis_upgrade_policy`
-
-`rladmin tune cluster redis_upgrade_policy` defines the default policy for cluster upgrade operations.
-
-```text
-rladmin tune redis_upgrade_policy [ latest | major ] 
-```
-
-The policy defines how Redis upgrades are handled when you upgrade Redis Enterprise Software.  
-
-The following values are supported:
-
-| Value | Description | 
-|:------|:------------|
-| `latest` | Limits Redis upgrades to the current major Redis release (`.0`) _default_ |
-| `major`  | Limits Redis upgrades to the latest minor (`.x`) release |
-|||
-
-Redis Enterprise ships with two versions of Redis: the latest major release (example: 6.0) and the latest minor release (example: 6.2).  This policy defines which one is installed during update.
-
-As of v6.2.4, the default behavior is `latest`.  Earlier versions behaved as if the default were `major`.
-
-This change allows customers to choose how to handle Redis upgrades, which can become an issue when Redis updates more frequently than Redis Enterprise Software.  By choosing `major`, you choose a longer upgrade cycle while choosing `latest` lets you upgrade more quickly.
-
-##### `tune cluster default_redis_version`
-
-`rladmin tune cluster default_redis_version` defines the minimum version of Redis used when databases are created or upgraded.  Typically changed in conjunction with the `redis_upgrade_policy` setting.
-
-```text
-rladmin tune default_redis_version <value> 
-```
-
-The value parameter should be a version number in form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.
-
-To illustrate,  Redis Enterprise Software 6.2.4 included Redis 6.0 (major) and Redis 6.2 (latest).  To use Redis 6.2 as the minimum version instead of Redis 6.0 (the default), you would run the following `rladmin` commands:
-
-``` text
-tune cluster redis_upgrade_policy latest
-tune cluster default_redis_version 6.2
-```
-
 #### `tune db`
 
 `rladmin tune db` configures database parameters.
@@ -725,6 +680,8 @@ rladmin tune cluster
         [ default_concurrent_restore_actions <value> ]
         [ show_internals <enabled | disabled> ]
         [ expose_hostnames_for_all_suffixes <enabled | disabled> ]
+        [ redis_upgrade_policy <latest | major> ]
+        [ default_redis_version <value> ]
 ```
 
 | Optional Parameters | Description |
@@ -749,6 +706,8 @@ rladmin tune cluster
 | default_concurrent_restore_actions | Default number of concurrent actions during node restore from a snapshot (positive integer or "all") |
 | show_internals |  |
 | expose_hostnames_for_all_suffixes |  |
+| redis_upgrade_policy | The policy defines how Redis upgrades are handled when you upgrade Redis Enterprise Software.<br /><br />Supported values are `latest` (Limits Redis upgrades to the current minor Redis release (`.x`) \[_default as of v6.2.4_] and `major` (Limits Redis upgrades to the current major (`.0`) release). \[_effective default prior to v6.2.4_] |
+| default_redis_version <value> | The minimum version of Redis used when databases are created or upgraded.  Typically changed in conjunction with the `redis_upgrade_policy` setting.<br/><br/>  The value parameter should be a version number in form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis. |
 
 Redis cluster watchdog supports two pre-configured profiles:
 -  `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.
@@ -781,7 +740,7 @@ rladmin upgrade db <db:id | name>
 | force | Forces upgrade and skips warnings and confirmations |
 | and module | Clause that allows upgrade of BDB and specified Redis module in a single step with only one restart (can be specified multiple times) |
 
-As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now controlled by a new parameter that sets the default upgrade policy used to create new databases and to upgrade ones already in the cluster.  To learn more, see [TBD](#).
+As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now controlled by a new parameter that sets the default upgrade policy used to create new databases and to upgrade ones already in the cluster.  To learn more, see [tune cluster default_redis_version](#tune).
 
 
 ### `verify`
