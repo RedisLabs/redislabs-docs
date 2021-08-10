@@ -636,6 +636,7 @@ rladmin tune db <db:id | name>
         [ syncer_monitoring <enabled | disabled> ]
         [ mtls_allow_weak_hashing <enabled | disabled> ]
         [ mtls_allow_outdated_cert <enabled | disabled> ]
+        [ mtls_allow_no_xkusage <enabled | disabled> ]
 ```
 
 | Optional Parameters | Description |
@@ -672,6 +673,7 @@ rladmin tune db <db:id | name>
 | syncer_monitoring | Enables syncer monitoring |
 | mtls_allow_weak_hashing | Enables weak hashing (less than 2048 bits) in mTLS connections |
 | mtls_allow_outdated_cert | Enables outdated certificates in mTLS connections |
+| mtls_allow_no_xkusage | Allows extended key checks to be skipped |
 
 | XADD behavior mode | Description |
 | - | - |
