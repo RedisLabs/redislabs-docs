@@ -7,7 +7,7 @@ categories: [""]
 aliases: 
 ---
 
-Every time a Redis Enterprise Database (REDB) is created in a Kubernetes (K8s) environment, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for this purpose: `ClusterIP`, headless, or `LoadBalancer`.
+Every time a Redis Enterprise Database (REDB) is created in a Kubernetes (K8s) environment, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, headless, or `LoadBalancer`.
 
 REDB's default to the `ClusterIP` type that exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
@@ -37,7 +37,7 @@ spec:
 
 If you are using an existing REDB that was created with a yaml file, you cannot make edits to that database in the Redis Enterprise UI. All changes need to be made in the yaml file.
 
-If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{<relref "/rs/security/tls-ssl/#enable-tls-for-client-connections">}}) for more information on these security settings.
+If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{<relref "content/rs/security/tls-ssl/#enable-tls-for-client-connections">}}) for more information on these security settings.
 
 ### Ingress controller
 
