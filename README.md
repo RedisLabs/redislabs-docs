@@ -39,11 +39,11 @@ To access the site, go to: http://localhost:1313
 
 ## Publishing
 
-The latest branch is the latest stable version of documentation for the latest publicly available release at: https://docs.redislabs.com/latest
+The latest branch is the latest stable version of documentation for the latest publicly available release at: https://docs.redis.com/latest
 
 Documentation for previous versions is published through the version build branches (for example 5.2-build).
 
-The master branch is published to https://docs.redislabs.com/staging/dev and represents the unstable version of documentation for the latest publicly available release. When stable, this branch is published to the latest branch.
+The master branch is published to https://docs.redis.com/staging/dev and represents the unstable version of documentation for the latest publicly available release. When stable, this branch is published to the latest branch.
 
 ## Contributing to the documentation
 
@@ -64,4 +64,4 @@ To add a new section in the sidebar, you must add a directory and add an `_index
 
 ## Markdown
 
-For more information about markdown syntax for our docs, see the [cheatsheet](https://docs.redislabs.com/latest/cheatsheet).
+For more information about markdown syntax for our docs, see the [cheatsheet](https://docs.redis.com/latest/cheatsheet).
