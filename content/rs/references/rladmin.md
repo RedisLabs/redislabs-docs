@@ -554,6 +554,49 @@ rladmin suffix delete name <name>
 
 `rladmin tune` configures parameters for databases, proxies, and clusters.
 
+#### `tune cluster`
+
+`rladmin tune cluster` defines default policies for the cluster.
+
+##### `tune cluster redis_upgrade_policy`
+
+`rladmin tune cluster redis_upgrade_policy` defines the default policy for cluster upgrade operations.
+
+```text
+rladmin tune redis_upgrade_policy [ latest | major ] 
+```
+
+The policy defines how Redis upgrades are handled when you upgrade Redis Enterprise Software.  
+
+The following values are supported:
+
+| Value | Description | 
+|:------|:------------|
+| `latest` | Limits Redis upgrades to the current major Redis release (`.0`) _default_ |
+| `major`  | Limits Redis upgrades to the latest minor (`.x`) release |
+|||
+
+Redis Enterprise ships with two versions of Redis: the latest major release and the latest minor release.  The one installed during update depends on the selected policy.
+
+As of v6.2.4, the default behavior is `latest`.  Earlier versions behaved as if the default were `major`.
+
+This change allows customers to choose how to handle the Redis upgrade process.  By choosing `major`, you choose a longer upgrade cycle and choosing `latest` lets you upgrade more quickly.
+
+##### `tune cluster default_redis_version`
+
+`rladmin tune cluster default_redis_version` defines the minimum version of Redis used when databases are created or upgraded.  Typically changed in conjunction with the `redis_upgrade_policy` setting.
+
+```text
+rladmin tune default_redis_version <value> 
+```
+
+The value parameter should be a version number in form of major.minor that corresponds to the version of Redis matching the value of the `redis_upgrade_policy`.  To illustrate,  Redis Enterprise Software 6.2.4 included Redis 6.0 (major) and Redis 6.2 (latest).  To use Redis 6.2 as the minimum version instead of Redis 6.0 (the default), you would run the following `rladmin` commands:
+
+``` text
+tune cluster redis_upgrade_policy latest
+tune cluster default_redis_version 6.2
+```
+
 #### `tune db`
 
 `rladmin tune db` configures database parameters.
@@ -733,6 +776,9 @@ rladmin upgrade db <db:id | name>
 | keep_crdt_protocol_version | Keeps the current crdt protocol version |
 | force | Forces upgrade and skips warnings and confirmations |
 | and module | Clause that allows upgrade of BDB and specified Redis module in a single step with only one restart (can be specified multiple times) |
+
+As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now controlled by a new parameter that sets the default upgrade policy used to create new databases and to upgrade ones already in the cluster.  To learn more, see [TBD](#).
+
 
 ### `verify`
 
