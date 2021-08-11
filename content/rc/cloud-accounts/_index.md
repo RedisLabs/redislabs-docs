@@ -14,7 +14,7 @@ aliases: /rv/how-to/view-edit-cloud-account/
          /rc/cloud-accounts.md
 ---
 
-Many customers use cloud provider accounts provisioned and maintained by Redis Labs.  
+Many customers use cloud provider accounts provisioned and maintained by Redis.  
 
 Customers with existing Amazon Web Services (AWS) accounts can provision their Flexible or Annual subscriptions to use their existing AWS accounts.  
 

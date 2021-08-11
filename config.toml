@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "Redis Labs Documentation Center"
+title = "Redis Documentation Center"
 theme = "docdock"
 assetDir = "static"
 # themesdir = "../.."

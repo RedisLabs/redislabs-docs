@@ -1,9 +1,9 @@
 ---
 title: Contribution Guide
-description: How to contribute to the Redis Labs documentation
+description: How to contribute to the Redis documentation
 draft: false
 ---
-Redis Labs documentation is an open source project and we welcome edits of all types.
+Redis documentation is an open source project and we welcome edits of all types.
 
 Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
@@ -16,7 +16,7 @@ you can click on the **Edit on GitHub** link, [edit the page, and submit the cha
 ## Branches vs. forks
 
 The redislabs-docs repository is public but only members of the repository can create new branches in the repo.
-New branches in the repo are automatically built into staging sites at: `http://docs.redislabs.com/staging/<branch>`
+New branches in the repo are automatically built into staging sites at: `http://docs.redis.com/staging/<branch>`
 After every commit to a branch, the site is re-built within about 1 minute so you can see the live updates.
 
 If you are not a member of the repository, you can fork the repository to a branch in your account
@@ -31,7 +31,7 @@ you can open a pull request to submit your changes for consideration.
 
 After you clone the repository to your local machine, you can serve the site locally with Hugo and then browse to http://localhost:1313 to see how it looks.
 
-The Redis Labs documentation site does not run on the latest version of [Hugo](http://gohugo.io).
+The Redis documentation site does not run on the latest version of [Hugo](http://gohugo.io).
 You can go to the readme page of the redislabs-docs repository to find the version of Hugo that is currently supported.
 
 To run an older version of Hugo on your local machine:

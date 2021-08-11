@@ -26,7 +26,7 @@ output "consoleUsername" {
 }
 
 output "signInLoginUrl" {
-    description =  "Redis Labs User's console login URL"
+    description =  "Redis User's console login URL"
     value = module.Redislabs-Cloud-Account-Resources.signInLoginUrl
 }
 

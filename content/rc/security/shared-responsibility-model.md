@@ -6,14 +6,13 @@ weight: 11
 alwaysopen: false
 categories: ["RC"]
 ---
-The security of all Redis Enterprise Cloud deployments is a shared responsibility. Redis Labs, the public cloud providers (Amazon Web Services \[AWS], Google Cloud Platform \[GCP], and Microsoft Azure), and our customers all
-take part in ensuring the security of these deployments.
+The security of all Redis Enterprise Cloud deployments is a shared responsibility. Redis, the public cloud providers (Amazon Web Services \[AWS], Google Cloud Platform \[GCP], and Microsoft Azure), and our customers all help ensure the security of these deployments.
 
-## Redis Labs responsibility
+## Redis responsibility
 
-Redis Enterprise Cloud's offerings are managed by Redis Labs and deployed on AWS, Azure, and Google Cloud infrastructure.
+Redis Enterprise Cloud's offerings are managed by Redis and deployed on AWS, Azure, and Google Cloud infrastructure.
 
-Redis Labs is responsible for the software that runs Redis Enterprise Cloud. This includes the patching and maintenance of
+Redis is responsible for the software that runs Redis Enterprise Cloud. This includes the patching and maintenance of
 the operating systems that Redis is deployed on as well as the patching and maintenance of Redis Enterprise Cloud.
 
 ## Cloud provider responsibility

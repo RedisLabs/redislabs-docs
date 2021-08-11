@@ -92,7 +92,7 @@ If you see this error, upgrade to OpenSSL 1.0.2 or higher before you install RS.
     you must [upgrade the RediSearch Module]({{< relref "/modules/add-module-to-cluster.md" >}}) to version 1.4.2 or above.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above
     by manually updating the certificates on the disk instead of [updating them through the API]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}}).
-    For assistance with this issue, [contact Redis Labs support](https://redislabs.com/company/support/).
+    For assistance with this issue, [contact Redis support](https://redislabs.com/company/support/).
 - We recommend that you test module upgrade commands in a test environment before you upgrade modules in a production environment.
     The module upgrade arguments are not validated during the upgrade process and incorrect arguments can cause unexpected downtime.
 - Starting from RS 5.4.2, to preserve the current Redis major.minor version during database upgrade you must use the `keep_redis_version` option instead of `keep_current_version`.

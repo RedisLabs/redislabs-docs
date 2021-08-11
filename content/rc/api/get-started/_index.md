@@ -43,7 +43,7 @@ An account key is an account-level secret. Do not share this key with anyone not
 
 You create the account key once when enabling API access.
 
-If you need to change or delete your account key, please [contact Redis Labs support](https://redislabs.com/company/support/).
+If you need to change or delete your account key, please [contact support](https://redislabs.com/company/support/).
 
 ## Secret key
 

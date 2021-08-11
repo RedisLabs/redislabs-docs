@@ -72,8 +72,8 @@ When the status changes from `processing-in-progress` to `processing-completed` 
 this step prints the `response`, including the `resourceId`.
 In this case, the `resourceId` is a subscription ID.
 
-If the processing phase completed successfully, the subscription is visible
-in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status.
+If the processing phase completed successfully, the status displayed
+in the [admin console](https://app.redislabs.com) is `pending`.
 This status indicates that the subscription is being provisioned.
 
 You can use the `GET /subscriptions/{subscriptionId}` API operation to track the created subscription
@@ -84,13 +84,18 @@ until it changes to the `active` state.
 To use the sample JSON document in your own account, you must modify these parameters:
 
 - **`paymentMethodId`** - Specify a payment method that is defined for your account.
-    You can lookup the payment method identifier using the `GET /payment-methods` API operation.
-    If you subscribed to Redis Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
-- **`cloudAccountId`** - Specify a cloud account that is defined for your account.
-    You can look up cloud account identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use Redis Labs internal resources.
-    If you subscribed to Redis Cloud through the GCP Marketplace, use the value `1` for this field.
 
-- The JSON document contains 2 primary segments: subscription specification and databases specification.
+    You can lookup the payment method identifier using the `GET /payment-methods` API operation.
+
+    If you subscribed to Redis Enterprise Cloud through the GCP Marketplace, you do not need to pass this field in your API requests.
+
+- **`cloudAccountId`** - Specify a cloud account that is defined for your account.
+
+    You can look up cloud account identifiers using the `GET /cloud-accounts` API operation or use `"cloudAccountId": 1` to use internal resources.
+
+    If you subscribed to Redis Enterprise Cloud through the GCP Marketplace, use the value `1` for this field.
+
+- The JSON document contains two primary segments: subscription specification and databases specification.
 - When you create a subscription, you must specify one or more databases in the "`databases`" array of the above JSON file.
 - You can [copy-and-paste]({{< relref  "/rc/api/get-started/use-rest-api.md#swagger-user-interface" >}}) the contents of the JSON file into the `POST /subscriptions` operation in the [Swagger UI](https://api.redislabs.com/v1/swagger-ui.html).
 

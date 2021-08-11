@@ -142,7 +142,7 @@ upgrade to this version.
     node with ID 1.
     
     **Workaround**: If you encounter this issue please
-    [contact Redis Labs support](https://redislabs.com/company/support/)
+    [contact Redis support](https://redislabs.com/company/support/)
 
 - **Issue**: In the Replica Of process, if the target database does
     not have replication enabled and it is restarted or fails for any
@@ -168,7 +168,7 @@ upgrade to this version.
     
     **Workaround**: You must manually increase the "slave
     buffer" size through rladmin. In order to find the appropriate
-    buffer size please [contact Redis Labs support](https://redislabs.com/company/support/)
+    buffer size please [contact Redis support](https://redislabs.com/company/support/)
 
 - **Issue**: In a cluster that is configured to support rack-zone
     awareness, if the user forces migration of a master or slave shard

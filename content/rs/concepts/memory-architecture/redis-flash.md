@@ -58,7 +58,7 @@ performance). The Redis Enterprise Software database persistent and
 ephemeral storage can be on different disks, either local or attached.
 
 When you begin planning the deployment of Redis on Flash in Production,
-we recommend working closely with the Redis Labs technical team for
+we recommend working closely with the Redis technical team for
 sizing and performance tuning.
 
 ## Tunable RAM to flash ratio
