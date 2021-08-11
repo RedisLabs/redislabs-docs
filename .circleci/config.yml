@@ -109,9 +109,9 @@ jobs:
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
                 command: |
-                export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
-                export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
-                aws configure set default.s3.signature_version s3v4
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws configure set default.s3.signature_version s3v4
             # Deploy to the S3 bucket corresponding to the current branch
             - run:
                 name: Replace existing site files on the AWS S3 bucket for the branch
@@ -133,9 +133,9 @@ jobs:
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
                 command: |
-                export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
-                export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
-                aws configure set default.s3.signature_version s3v4
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws configure set default.s3.signature_version s3v4
             # Declare target location for baseURL and deployment location and deploy to the S3 bucket corresponding to the current branch
             - run:
                 name: Deploy site files to the AWS S3 bucket and set HTML, CSS, and JS files to expire for immediate client update
