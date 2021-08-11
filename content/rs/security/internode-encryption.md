@@ -31,7 +31,7 @@ You need to:
 
 To enable internode encryption for a database, you need to enable the appropriate setting for each database you wish to encrypt.  There are several ways to do this:
 
-- Use the admin console to enable the internode encryption setting from the database configuration screen:
+- Use the admin console to enable the **Internode encryption** setting from the database configuration screen:
 
     {{<image filename="images/rs/database-configuration-internode-encryption-edit.png" alt="The Internode encryption setting can be found on the Configuration tab of the Database settings." >}}{{< /image >}}
 
@@ -58,4 +58,4 @@ The private CA is generated when a cluster is created or upgraded to 6.2.4.
 
 When nodes join the cluster, the cluster CA is used to generate certificates for the new node, one for each plane.  Certificates signed by the private CA are not shared between clusters and they're not exposed outside the cluster.
 
-All certificates signed by the internal CA are automatically rotated. Periodically, an internal process checks certificate expiration and generates new certificates when the existing ones are about to expire.  Alerts also monitor certificate expiration and are triggered when problems prevent certificates from being rotated.
+All certificates signed by the internal CA are automatically rotated. Every thirty (30) days, an internal process checks certificate expiration and generates new certificates when the existing ones are about to expire.  Alerts also monitor certificate expiration and are triggered when problems prevent certificates from being rotated.

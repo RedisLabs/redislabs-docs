@@ -666,7 +666,6 @@ rladmin tune proxy <id | all>
 ```text
 rladmin tune cluster
         [ repl_diskless <enabled | disabled> ] 
-        [ default_redis_version <version> ] 
         [ redis_provision_node_threshold <size> ] 
         [ redis_migrate_node_threshold <size> ] 
         [ redis_provision_node_threshold_percent <percent> ] 
@@ -689,7 +688,6 @@ rladmin tune cluster
 | Optional Parameters | Description |
 | - | - |
 | repl_diskless | Enables/disables diskless replication (can be overwritten per database) |
-| default_redis_version | Default Redis version for new databases |
 | redis_provision_node_threshold | Memory (in MBs) needed to provision a new database |
 | redis_migrate_node_threshold | Memory (in MBs) needed to migrate a database between nodes |
 | redis_provision_node_threshold_percent | Memory (in percentage) needed to provision a new database |
@@ -709,7 +707,7 @@ rladmin tune cluster
 | show_internals |  |
 | expose_hostnames_for_all_suffixes |  |
 | redis_upgrade_policy | The policy defines how Redis upgrades are handled when you upgrade Redis Enterprise Software.<br /><br />Supported values are `latest` (Limits Redis upgrades to the current minor Redis release (`.x`) \[_default as of v6.2.4_] and `major` (Limits Redis upgrades to the current major (`.0`) release). \[_effective default prior to v6.2.4_] |
-| default_redis_version <value> | The minimum version of Redis used when databases are created or upgraded.  Typically changed in conjunction with the `redis_upgrade_policy` setting.<br/><br/>  The value parameter should be a version number in form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis. |
+| default_redis_version | The minimum version of Redis used when databases are created or upgraded.  Typically changed in conjunction with the `redis_upgrade_policy` setting.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis. |
 
 Redis cluster watchdog supports two pre-configured profiles:
 -  `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.
