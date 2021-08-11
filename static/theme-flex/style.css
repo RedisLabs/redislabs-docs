@@ -76,11 +76,12 @@ header .logo {
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -20px;  
+  margin-top: -20px; 
 }
 
 header .logo img {
   width: 163px !important;
+  height: 40px;
 }
 
 header nav.shortcuts {
