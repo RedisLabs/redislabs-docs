@@ -3619,3 +3619,7 @@ a[href*="#no-click"], img[src*="#no-click"] {
 article section.page table {
   table-layout: auto !important;
 }
+
+.gdpr-modal {
+  z-index: 9999;
+}
