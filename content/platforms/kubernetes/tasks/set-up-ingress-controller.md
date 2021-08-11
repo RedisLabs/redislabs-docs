@@ -12,6 +12,7 @@ Every time a Redis Enterprise Database (REDB) is created in a Kubernetes (K8s) e
 REDB's default to the `ClusterIP` type that exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
 You will not need an ingress controller if:
+
 - your REDB uses a `Loadbalancer` or headless service for routing
 
 - you are using OpenShift to manage your K8s cluster (see [routes](https://docs.openshift.com/container-platform/3.11/architecture/networking/routes.html))
@@ -54,16 +55,22 @@ Install one of the supported ingress controllers:
 
 {{< warning >}}You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{< /warning >}}
 
-## Determine your desired hostname
-
-**This need to be revised to exclude cs.redislabs.com and cloud vendor specifics**
-For the hostname you will use to access your database, we recommend including the Redis Enterprise cluster name and K8s cluster name. In the example below the RE cluster is called `rec` and the K8s cluster is called `eks-04`. The goal in the example below is to access each database through `redis-<port>.rec.eks-04.cs.redislabs.com`.
-
-**add note about wildcard??**
 
 ## Create ingress resource
 
-1. Map the hostname **(of?)** to the IP of the ingress controller's `LoadBalancer` service.
+1. Retrieve the hostname of your ingress controller's `LoadBalancer` service with `kubectl get svc <ingress-cntrl>-ingress -n ingress-controller`.
+
+```bash
+$ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n ingress-controller
+```
+
+Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.
+
+```bash
+NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                                      AGE
+haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
+```
+ 
 
 1. Create the ingress resource yaml file.
 
@@ -73,7 +80,7 @@ kind: Ingress
 metadata:
   name: rec-ingress
   annotations:
-    <ingress-controller>.ingress.kubernetes.io/ssl-passthrough: "true"
+    <nginx | haproxy>.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
   - host: <hostname>
