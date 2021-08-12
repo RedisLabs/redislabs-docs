@@ -3612,9 +3612,9 @@ a[href*="#no-click"], img[src*="#no-click"] {
 }
 
 /* CSS hacks - Aug 2021 */
-.root,
-.drift-widget-message-preview-wrapper {
-  display: none;
+#root,
+#drift-widget-message-preview-wrapper {
+  display: none !important;
 }
 
 article section.page table {
@@ -3624,3 +3624,4 @@ article section.page table {
 .gdpr-modal {
   z-index: 9999;
 }
+  
