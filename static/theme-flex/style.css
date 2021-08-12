@@ -3612,7 +3612,8 @@ a[href*="#no-click"], img[src*="#no-click"] {
 }
 
 /* CSS hacks - Aug 2021 */
-.root {
+.root,
+.drift-widget-message-preview-wrapper {
   display: none;
 }
 
