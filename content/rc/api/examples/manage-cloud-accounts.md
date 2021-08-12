@@ -8,7 +8,7 @@ categories: ["RC"]
 aliases: /rv/api/how-to/create-and-manage-cloud-accounts/
          /rc/api/how-to/create-and-manage-cloud-accounts/
          /rc/api/how-to/create-and-manage-cloud-accounts.md
-         /rc/api/examples/managge-cloud-accounts
+         /rc/api/examples/manage-cloud-accounts
          /rc/api/examples/manage-cloud-accounts.md
 ---
 You can use the Redis Enterprise Cloud REST API to create and manage cloud accounts.
@@ -75,9 +75,9 @@ When the status changes from `processing-in-progress` to `processing-completed` 
 this step prints the `response`, including the `resourceId`.
 In this case, the `resourceId` is a cloud account ID.
 
-If the processing phase completed successfully, the cloud account is visible
-in the [Redis Labs management site](https://app.redislabs.com) in the `pending` status.
-This status indicates that the cloud account is being provisioned.
+If the processing phase completed successfully, the cloud account is displayed
+in the [admin console](https://app.redislabs.com) with a `pending` status.
+This indicates that the cloud account is being provisioned.
 
 You can use the `GET /cloud-accounts/{cloudAccountId}` API operation to track the created cloud account
-until it changes to the `active` state.
+until it becomes `active`.

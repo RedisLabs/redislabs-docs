@@ -24,7 +24,7 @@ To get the latest features and fixes for a module, you must upgrade the module i
 ## Getting the packaged modules
 
 - Redis Enterprise modules - To download the upgrades to the modules,
-    go to the [Redis Labs Download Center](https://redislabs.com/download-center/modules/).
+    go to the [Redis Download Center](https://redislabs.com/download-center/modules/).
 - Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
 ## Adding a module to a Redis Enterprise Software cluster

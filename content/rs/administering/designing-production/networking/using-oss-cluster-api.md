@@ -16,7 +16,7 @@ Before you enable Redis OSS Cluster API for a database, make sure that:
 - The database proxy policy does not use node `include` or `exclude`.
 
 When you enable the Redis OSS Cluster API from the command line or RS admin console,
-[multi-key commands]({{< relref "/rc/concepts/clustering#multikey-operations" >}}) are only allowed when all keys are mapped to the same slot.
+[multi-key commands]({{< relref "/rc/databases/configuration/clustering#multikey-operations" >}}) are only allowed when all keys are mapped to the same slot.
 To verify that your database meets this requirement, make sure that the `CLUSTER KEYSLOT` reply is the same for all keys in the [multi-key command]({{< relref "/rs/concepts/high-availability/clustering#multikey-operations" >}}).
 
 ## Enabling OSS Cluster API support from the admin console

@@ -49,7 +49,7 @@ There are three sections on this tab:
 | **Cloud Vendor** | The public cloud provider |
 | **Region(s)** | The cloud region for your subscription |
 | **Multi-AZ** | Whether in-memory data is replicated to another zone within the deployment region. For best results, choose a region with at least three availability zones.|
-| **Cloud Account** | (_AWS_) Credentials allowing Redis Cloud to be deployed to an existing AWS account.  See [Create and Edit a Cloud Account]({{< relref "/rc/how-to/view-edit-cloud-account.md" >}})|
+| **Cloud Account** | (_AWS_) Credentials allowing Redis Cloud to be deployed to an existing AWS account.  See [Manage cloud accounts]({{< relref "/rc/cloud-accounts/" >}})|
 
 ### Advanced options {#advanced-options}
 

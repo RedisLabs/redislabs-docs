@@ -5,18 +5,15 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-This document explains the structure of Redis Enterprise Software (RS) log entries that go into rsyslog
+This document explains the structure of Redis Enterprise Software log entries that go into `rsyslog`
 and how to use these log entries to identify events.
 Also, we recommend that you [secure your logs]({{< relref "/rs/security/logging.md" >}}) with a remote logging server and log rotation.
 
 ## Logging concepts
 
-RS adds to the log different log entries, from various cluster
-components, for various events and actions that take place in the
-cluster.
+Redis Enterprise Software updates logs with entries from a variety of components in response to a host of actions and events that take place within the cluster.
 
-There might be many different log entries for a specific event that can
-be perceived externally as a single event.
+Individual events may generate multiple log entries, even though they stem from a single action.
 
 For example, in order for the cluster to decide that a cluster node is
 down there might be various log entries added by different cluster
@@ -31,11 +28,8 @@ action, like removing a node from the cluster, are actually made up of
 several different events that take place in a sequence, and might also
 fail in the process.
 
-As a result, Redis Labs enabled that by default all logs entries that
-are shown in the log page in the management UI are also written to
-syslog. Then rsyslog can be configured to monitor the syslog. All alerts
-are logged to syslog if the alerts are configured to be enabled, in
-addition to other log entries.
+As a result, all log entries displayed in the admin console are also written to `syslog`.  You can configure `rsyslog` to monitor `syslog`. Enabled alerts are logged to `syslog` along and appear with other log entries.
+
 
 The log entries can be categorized into events and alerts. Events just
 get logged, while alerts have a state attached to them. In the Mapping
@@ -63,7 +57,7 @@ in messages log file.
 - \%pri­text% ­adds the severity
 - \%timegenerated% ­adds the timestamp
 - \%HOSTNAME% ­adds the machine name
-- \%syslogtag% ­the RS message as detailed below in the Log entry
+- \%syslogtag% ­the Redis Enterprise Software message as detailed below in the Log entry
     structure section
     below.
 - \%msg:::drop­last­lf%n ­ removes duplicated log entries
@@ -336,7 +330,7 @@ false,"time":1434365471,"disk":705667072,"type":
 | Nodes rebalanced | rebalance_failed</br>rebalance_completed</br>rebalance_abort_failed</br>rebalance_abort_completed | cluster | event | error</br>info</br>error</br>info | The nodes rebalance is a process that can fail and can also be aborted. If aborted, the abort can succeed or fail. |
 | Database replication requires at least two nodes in cluster | too_few_nodes_for_replication | cluster | alert | true: warning</br>false: info | |
 | True high availability requires an odd number of nodes with a minimum of three nodes | even_node_count | cluster | alert | true: warning</br>false: info | |
-| Not all nodes in the cluster are running the same Redis Labs Enterprise Cluster version | inconsistent_rl_sw | cluster | alert | true: warning</br>false: info |
+| Not all nodes in the cluster are running the same Redis Enterprise Cluster version | inconsistent_rl_sw | cluster | alert | true: warning</br>false: info |
 | Not all databases are running the same open source version | inconsistent_redis_sw | cluster | alert | true: warning</br>false: info | |
 
 ### Database related events

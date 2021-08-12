@@ -1,10 +1,15 @@
 ---
 Title: AWS zone mapping for Fixed plans
 linkTitle: AWS zone mapping
-description:
-weight: $weight
+description: Reduce latency by mapping your AWS availability zones to the zones used by your Fixed subscription.
+weight: 90
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/how-to/aws-zone-mapping/
+         /rc/how-to/aws-zone-mapping.md
+         /rc/administration/aws-zone-mapping/
+         /rc/administration/aws-zone-mapping.md
+
 ---
 
 To achieve the best performance with a Redis Enterprise Cloud Fixed subscription deployed to Amazon Web Services (AWS), map your AWS availability zones to your database.
@@ -88,4 +93,4 @@ We recommend creating a new, restricted account:
 
 1. After the zone mapping is completed, delete the new user created for zone mapping.
 
-To learn more about, see [Creating an IAM user in your AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) (AWS documentation).
+To learn more, see [Creating an IAM user in your AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) (AWS documentation).

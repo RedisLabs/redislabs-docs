@@ -13,7 +13,7 @@ To establish a connection to a Redis database, you'll need the following informa
 - The database password (when configured with an authentication password which is **strongly recommended**)
 - The SSL certificates (when configured with SSL authentication and encryption - see [this article](/kb/read-more-ssl) for more information)
 
-The combination of `hostname:port` is commonly referred to as the "endpoint." This information is readily obtainable from your Redis Labs Enterprise Cluster and Redis Cloud web consoles. Unless otherwise specified, our Redis databases are accessible via a single managed endpoint to ensure high availability.
+The combination of `hostname:port` is commonly referred to as the "endpoint." This information is readily obtainable from your Redis Enterprise Cluster and Redis Enterprise Cloud admin consoles. Unless otherwise specified, our Redis databases are accessible via a single managed endpoint to ensure high availability.
 
 You can connect to a Redis database using a wide variety of tools and libraries depending on your needs. Here's a short list:
 
@@ -31,8 +31,8 @@ Connecting to a remote server can be challenging. Here’s a quick checklist for
 - Try disabling any security measures that your database may have been set up with (e.g. Source IP/Subnet lists, Security Groups, SSL, etc...).
 - Try using a command line tool to connect to the database from your server - it is possible that your host and/port are blocked by the network.
 - If you've managed to open a connection, try sending the `INFO` command and act on its reply or error message.
-- Redis Labs Redis databases only support connecting to the default database (0) and block some administrative commands. For more information, refer to the following:
-    - Redis Labs Enterprise Cluster: [RLEC compatibility](/redis-enterprise-documentation/rlec-compatibility)
-    - Redis Cloud FAQ: [Are you fully compatible with open source Redis](/faqs#are-you-fully-compatible-with-open-source-redis)
+- Redis Enterprise Software Redis databases only support connecting to the default database (0) and block some administrative commands. To learn more, see:
+    - Redis Enterprise Cluster: [REC compatibility](/redis-enterprise-documentation/rlec-compatibility)
+    - Redis Enterprise Cloud FAQ: [Are you fully compatible with open source Redis](/faqs#are-you-fully-compatible-with-open-source-redis)
 
 If you encounter any difficulties or have questions please feel free to [contact our help desk](mailto:support@redislabs.com).

@@ -1,19 +1,19 @@
 ---
-Title: Redis Enterprise Software Product Lifecycle
+Title: Redis Enterprise Software product lifecycle
+linkTitle: Product lifecycle
 description:
 weight: 100
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view the Redis Enterprise Software (RS) subscription agreement [here](https://redislabs.com/wp-content/uploads/2019/11/redis-enterprise-software-subscription-agreement.pdf).
-This Product Lifecycle fully reflects our subscription agreement.
+Redis Enterprise Software product lifecycle fully reflects our [subscription agreement](https://redislabs.com/wp-content/uploads/2019/11/redis-enterprise-software-subscription-agreement.pdf).
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
 Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).
 
-## Release numbering
+## Release numbers
 
-Redis Labs uses a four-place numbering scheme to designate released versions of its products.
+Redis uses a four-place numbering scheme to designate released versions of its products.
 The format is “Major1.Major2.Minor-Build”.
 
 - Major sections of the version number represents fundamental changes and additions in
@@ -26,14 +26,14 @@ The format is “Major1.Major2.Minor-Build”.
 - Build number is incremented with any changes to the product. Build number is
     incremented with each build when any change is made to the binaries.
 
-Redis Enterprise Software typically gets 2 major releases every year but the product shipping cycles may vary.
+Redis Enterprise Software typically gets two major releases every year but the product shipping cycles may vary.
 
 ## End-of-life schedule {#endoflife-schedule}
 
 End-of-Life for a given Major release occurs 18 months after the formal release of
 that version.
 
-| RS Release Date | End of Life (EOL)  |
+| Version - Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
 | 6.0 – May 2020                            | May 31, 2022*  |
 | 5.6 – April 2020                          | October 31, 2021  |

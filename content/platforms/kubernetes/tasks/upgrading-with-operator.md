@@ -7,7 +7,7 @@ categories: ["Platforms"]
 aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/
          /platforms/kubernetes/upgrading-kubernetes-with-operator/
 ---
-Redis Labs implements rolling updates for software upgrades in Kubernetes deployments.
+Redis implements rolling updates for software upgrades in Kubernetes deployments.
 
 ## Upgrading Redis Enterprise in Operator
 

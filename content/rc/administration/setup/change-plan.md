@@ -1,7 +1,7 @@
 ---
 Title: Changing Redis Cloud Plans
 description:
-weight: $weight
+weight: 85
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/changing-subscription-plan/

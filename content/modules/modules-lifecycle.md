@@ -13,7 +13,7 @@ Redis Enterprise Software follows the [RS lifecycle]({{< relref "/rs/administeri
 
 ## Modules release numbering
 
-Redis Labs uses a three-place numbering scheme to designate released versions of its Redis Enterprise Modules.
+Redis uses a three-place numbering scheme to designate released versions of its Redis Enterprise Modules.
 The format is “Major1.Major2.Minor”.
 
 - Major sections of the version number represents fundamental changes and additions in

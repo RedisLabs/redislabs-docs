@@ -27,7 +27,7 @@ Key, appears in the **Max number of shards** field.
 ## Viewing the cluster name
 
 The cluster name appears in the **Cluster name** field. This gives a
-common name that your team or Redis Labs support can refer to. It is
+common name that your team or Redis support can refer to. It is
 especially helpful if you have multiple clusters.
 
 ## Setting your time zone

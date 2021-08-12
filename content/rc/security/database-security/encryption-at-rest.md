@@ -5,7 +5,7 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 ---
-Redis Cloud databases write their data to disk whenever [persistence]({{<relref "/rc/concepts/data-persistence.md">}}) is enabled. 
+Redis Cloud databases write their data to disk whenever [persistence]({{<relref "/rc/databases/configuration/data-persistence.md">}}) is enabled. 
 
 On [Google Cloud Platform](#gcp) (GCP) and [Microsoft Azure](#azure), Redis Cloud deployments are always encrypted at rest. 
 
