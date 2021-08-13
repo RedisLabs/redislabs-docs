@@ -1,6 +1,7 @@
 ---
 Title: Run the log collector script
 linkTitle: Run log_collector.py
+description: Run the log collector script to package relevant logs into a tar.gz file to send to Redis Support for help troubleshooting your Kubernetes environment.
 weight: 89
 alwaysopen: false
 categories: ["Platforms"]
