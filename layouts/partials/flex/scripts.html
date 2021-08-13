@@ -88,17 +88,6 @@ window.onclick = function(e) {
 <!-- /Platforms version selector -->
 
 <script>
-  // Set up GA Event tracking
-  setTimeout(function(){
-    if(window.ga) {
-      window.ga('create', 'UA-92003007-1', {
-          'clientId': window.ga.getAll()[0].get('clientId')
-      });
-    }
-  }, 400);
-</script>
-
-<script>
   // Compliance dialog
   function acceptGDPR() {
     localStorage.setItem('gdpr_accepted', true);
