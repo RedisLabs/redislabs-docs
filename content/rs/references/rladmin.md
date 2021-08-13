@@ -591,6 +591,8 @@ rladmin tune db <db:id | name>
         [ syncer_monitoring <enabled | disabled> ]
         [ mtls_allow_weak_hashing <enabled | disabled> ]
         [ mtls_allow_outdated_cert <enabled | disabled> ]
+        [ mtls_allow_no_xkusage <enabled | disabled> ]
+        [ data_internode_encryption <enabled | disabled> ]
 ```
 
 | Optional Parameters | Description |
@@ -627,6 +629,8 @@ rladmin tune db <db:id | name>
 | syncer_monitoring | Enables syncer monitoring |
 | mtls_allow_weak_hashing | Enables weak hashing (less than 2048 bits) in mTLS connections |
 | mtls_allow_outdated_cert | Enables outdated certificates in mTLS connections |
+| mtls_allow_no_xkusage | Allows extended key checks to be skipped |
+| data_internode_encryption | Enables or disables [internode encryption]({{< relref "/rs/security/internode-encryption.md" >}}) for the database |
 
 | XADD behavior mode | Description |
 | - | - |
@@ -662,7 +666,6 @@ rladmin tune proxy <id | all>
 ```text
 rladmin tune cluster
         [ repl_diskless <enabled | disabled> ] 
-        [ default_redis_version <version> ] 
         [ redis_provision_node_threshold <size> ] 
         [ redis_migrate_node_threshold <size> ] 
         [ redis_provision_node_threshold_percent <percent> ] 
@@ -678,12 +681,13 @@ rladmin tune cluster
         [ default_concurrent_restore_actions <value> ]
         [ show_internals <enabled | disabled> ]
         [ expose_hostnames_for_all_suffixes <enabled | disabled> ]
+        [ redis_upgrade_policy <latest | major> ]
+        [ default_redis_version <value> ]
 ```
 
 | Optional Parameters | Description |
 | - | - |
 | repl_diskless | Enables/disables diskless replication (can be overwritten per database) |
-| default_redis_version | Default Redis version for new databases |
 | redis_provision_node_threshold | Memory (in MBs) needed to provision a new database |
 | redis_migrate_node_threshold | Memory (in MBs) needed to migrate a database between nodes |
 | redis_provision_node_threshold_percent | Memory (in percentage) needed to provision a new database |
@@ -702,6 +706,8 @@ rladmin tune cluster
 | default_concurrent_restore_actions | Default number of concurrent actions during node restore from a snapshot (positive integer or "all") |
 | show_internals |  |
 | expose_hostnames_for_all_suffixes |  |
+| redis_upgrade_policy | The policy defines how Redis upgrades are handled when you upgrade Redis Enterprise Software.<br /><br />Supported values are `latest` (Limits Redis upgrades to the current minor Redis release (`.x`) \[_default as of v6.2.4_] and `major` (Limits Redis upgrades to the current major (`.0`) release). \[_effective default prior to v6.2.4_] |
+| default_redis_version | The minimum version of Redis used when databases are created or upgraded.  Typically changed in conjunction with the `redis_upgrade_policy` setting.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis. |
 
 Redis cluster watchdog supports two pre-configured profiles:
 -  `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.
@@ -733,6 +739,9 @@ rladmin upgrade db <db:id | name>
 | keep_crdt_protocol_version | Keeps the current crdt protocol version |
 | force | Forces upgrade and skips warnings and confirmations |
 | and module | Clause that allows upgrade of BDB and specified Redis module in a single step with only one restart (can be specified multiple times) |
+
+As of v6.2.4, the default behavior for `upgrade db` has changed.  It is now controlled by a new parameter that sets the default upgrade policy used to create new databases and to upgrade ones already in the cluster.  To learn more, see [tune cluster default_redis_version](#tune).
+
 
 ### `verify`
 

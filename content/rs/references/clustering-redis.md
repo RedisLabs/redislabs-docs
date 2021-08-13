@@ -22,9 +22,6 @@ Joining multiple Redis servers into a Redis cluster is a challenging task, espec
 
 There are several solutions to clustering Redis, most notable of which is the [open source Redis cluster](http://redis.io/topics/cluster-spec).
 
-Redis Labs Enterprise Cluster and Redis Cloud were built from the ground up to provide a Redis cluster of any size while supporting all Redis commands. Your dataset is distributed across multiple shards in multiple nodes of the Redis cluster and is constantly monitored to ensure optimal performance. When needed, more shards and nodes can be added to your dataset so it can scale continuously and limitlessly.
+Redis Enterprise Software and Redis Enterprise Cloud were built from the ground up to provide a Redis cluster of any size while supporting all Redis commands. Your dataset is distributed across multiple shards in multiple nodes of the Redis cluster and is constantly monitored to ensure optimal performance. When needed, more shards and nodes can be added to your dataset so it can scale continuously and limitlessly.
 
-Redis Labs clusters provide a single endpoint to connect to, and do not require any code changes or special configuration from the application’s perspective. For more information on setting up and using Redis Labs clusters, refer to the following articles:
-
-- Redis Labs Enterprise Cluster: [Database clustering](/redis-enterprise-documentation/database-configuration/database-clustering)
-- [Redis Cloud Cluster](/kb/redis-cloud-cluster)
+Redis Enterprise clusters provide a single endpoint to connect to, and do not require any code changes or special configuration from the application’s perspective. For more information on setting up and using Redis Enterprise clusters, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering/" >}}).

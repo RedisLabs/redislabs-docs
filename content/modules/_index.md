@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 aliases: /rs/developing/modules/
 ---
-Redis Labs develops several modules that extend the core Redis feature set. Some of the features these modules provide include [querying, indexing and full-text search]({{< relref "/modules/redisearch" >}}), [JSON support]({{< relref "/modules/redisjson" >}}), and [probabalistic data structures]({{< relref "/modules/redisbloom" >}}).
+Redis develops several modules that extend the core Redis feature set. Some of the features these modules provide include [querying, indexing and full-text search]({{< relref "/modules/redisearch" >}}), [JSON support]({{< relref "/modules/redisjson" >}}), and [probabalistic data structures]({{< relref "/modules/redisbloom" >}}).
 
 You can use these modules with [Redis Enterprise Software]({{< relref "/rs" >}}).  
 

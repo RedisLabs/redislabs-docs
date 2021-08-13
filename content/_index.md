@@ -1,5 +1,5 @@
 ---
-title: Redis Labs Documentation
+title: Redis Documentation
 # description: Where documentation LIVES!
 toc: false
 ---

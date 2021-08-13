@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
@@ -43,7 +43,7 @@
   <header id="header">
       <div class="header-wrap">
         <div class="logo">
-          <p><a href="https://redislabs.com"><img src="{{"images/icon_logo/logo-redis-2.svg" | absURL}}" alt="Redis Labs"></a></p>
+          <p><a href="https://redislabs.com"><img src="{{"images/icon_logo/logo-redis-3.svg" | absURL}}" alt="Redis"></a></p>
         </div>
         {{- with .Site.Menus.shortcuts}}
           {{ partial "navigation.html" . }}
@@ -78,10 +78,9 @@
                 <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
               </button>
               <div class="menu__version-selector__list version-selector-control">
-                <a href="https://docs.redislabs.com/6.2/rs" id="version-select-6.2" onclick="_setSelectedVersion('6.2', 'v6.2 (latest)')">v6.2 (latest)</a>
-                <a href="https://docs.redislabs.com/6.0/rs" id="version-select-6.0" onclick="_setSelectedVersion('6.0', 'v6.0')">v6.0</a>
-                <a href="https://docs.redislabs.com/5.6/rs" id="version-select-5.6" onclick="_setSelectedVersion('5.6', 'v5.6')">v5.6</a>
-                <a href="https://docs.redislabs.com/5.4/rs" id="version-select-5.4" onclick="_setSelectedVersion('5.4', 'v5.4')">v5.4</a>
+                <a href="https://docs.redis.com/6.0/rs" id="version-select-6.0" onclick="_setSelectedVersion('6.0', 'v6.0 (latest)')">v6.0 (latest)</a>
+                <a href="https://docs.redis.com/5.6/rs" id="version-select-5.6" onclick="_setSelectedVersion('5.6', 'v5.6')">v5.6</a>
+                <a href="https://docs.redis.com/5.4/rs" id="version-select-5.4" onclick="_setSelectedVersion('5.4', 'v5.4')">v5.4</a>
               </div>
             </div>
           {{end}}
@@ -94,8 +93,8 @@
                 <span class="menu__version-selector__toggler closer version-selector-control">&#x25B2;</span>
               </button>
               <div class="menu__version-selector__list version-selector-control">
-                <a href="https://docs.redislabs.com/6.0/platforms" id="version-select-6.x" onclick="_setSelectedVersion('6.0', 'v6.x (latest)')">v6.x (latest)</a>
-                <a href="https://docs.redislabs.com/5.6/platforms" id="version-select-5.x" onclick="_setSelectedVersion('5.6', 'v5.x')">v5.x</a>
+                <a href="https://docs.redis.com/6.0/platforms" id="version-select-6.x" onclick="_setSelectedVersion('6.0', 'v6.x (latest)')">v6.x (latest)</a>
+                <a href="https://docs.redis.com/5.6/platforms" id="version-select-5.x" onclick="_setSelectedVersion('5.6', 'v5.x')">v5.x</a>
               </div>
             </div>
           {{end}}
@@ -107,35 +106,21 @@
               </a>
             </li>
 
-            <li data-nav-id="/rs/" class="dd-item haschildren menu-expanded menu-root 
-            ">
+            <li data-nav-id="/rs/" class="dd-item haschildren menu-expanded menu-root">
               <a href="{{"rs" | absURL }}">Redis Enterprise Software</a></li>
 
-            <li data-nav-id="/rc/" class="dd-item haschildren menu-expanded menu-root 
-            ">
+            <li data-nav-id="/rc/" class="dd-item haschildren menu-expanded menu-root">
               <a href="{{"rc" | absURL }}">Redis Enterprise Cloud</a></li>
 
-            <li data-nav-id="/platforms/" class="dd-item haschildren menu-expanded menu-root 
-            ">
+            <li data-nav-id="/platforms/" class="dd-item haschildren menu-expanded menu-root">
               <a href="{{"platforms" | absURL }}">Platforms</a></li>
 
-            <li data-nav-id="/modules/" class="dd-item haschildren menu-expanded menu-root 
-            ">
+            <li data-nav-id="/modules/" class="dd-item haschildren menu-expanded menu-root">
               <a href="{{"modules" | absURL }}">Redis Modules</a></li>
-            <li data-nav-id="/ri/" class="dd-item haschildren menu-expanded menu-root 
-            ">
+            <li data-nav-id="/ri/" class="dd-item haschildren menu-expanded menu-root">
               <a href="{{"ri" | absURL}}">RedisInsight</a></li>
-            <li data-nav-id="/glossary/" class="dd-item haschildren menu-expanded menu-root 
-            ">
+            <li data-nav-id="/glossary/" class="dd-item haschildren menu-expanded menu-root">
               <a href="{{"glossary" | absURL}}">Glossary</a></li>
-
-
-
-
-
-
-
-
       </ul>
 
       {{- partial "language-selector.html" . }}
@@ -193,5 +178,4 @@
     {{ partial "custom-footer.html" . }}
   </body>
 </html>
-
 

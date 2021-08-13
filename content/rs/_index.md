@@ -100,7 +100,7 @@ The UI also allows you configure alerts for events at the database and cluster l
 {{< /tab >}}
 {{< tab tabNum="7" >}}
 
-Redis Labs provides [24/7 support](https://redislabs.com/redis-enterprise-deployment/support/) to users of Redis Enterprise Software and Redis Enterprise Cloud.
+Redis provides [24/7 support](https://redislabs.com/redis-enterprise-deployment/support/) to users of Redis Enterprise Software and Redis Enterprise Cloud.
 
 {{< /tab >}}
 {{< /tabs >}}

@@ -57,10 +57,10 @@ cluster to a specific use case or need. Once installed, modules benefit
 from the high performance, scalability, and high availability that Redis
 Enterprise is known for.
 
-#### Redis Labs modules
+#### Redis modules
 
-There are three modules Redis Labs has developed and certified with
-Redis Enterprise Pack (RS). The modules are:
+Redis has developed and certified the following modules for use with 
+Redis Enterprise Pack:
 
 - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
     - This module turns RS into a supercharged distributed in-memory

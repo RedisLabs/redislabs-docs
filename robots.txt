@@ -8,3 +8,4 @@ Disallow: /6.0/
 Disallow: /6.2/
 
 Sitemap: https://docs.redislabs.com/latest/sitemap.xml
+Sitemap: https://docs.redis.com/latest/sitemap.xml

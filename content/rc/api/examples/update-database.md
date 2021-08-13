@@ -42,7 +42,7 @@ The following JSON request specifies two source databases for the updated databa
 ```
 
 - The `replicaOf` array contains one or more URIs with the format: `redis://user:password@host:port`
-- If the URI provided belongs to the same Redis Labs Cloud Account, only provide the host and port (example: `["redis://endpoint1:6379', "redis://endpoint2:6380"]`)
+- If the URI provided belongs to the same account, you can provide just the host and port (example: `["redis://endpoint1:6379', "redis://endpoint2:6380"]`)
 
 {{< warning >}}
 If a source database is already defined for a specific database, and the goal is to add an additional source database, the source databases URI for the existing source must be included in the database updates JSON request.
