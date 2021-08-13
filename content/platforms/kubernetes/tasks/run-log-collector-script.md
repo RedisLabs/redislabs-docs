@@ -12,7 +12,7 @@ The Redis Enterprise cluster (REC) log collector script ([`log_collector.py`](ht
 
 1. Download the [`log_collector.py`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/log_collector/log_collector.py) file.
 2. Run the script on the system that runs your `kubectl` or `oc` commands.
-    - Pass `-n` parameter to run on the current namespace.
+    - Pass `-n` parameter to run on a different namespace than the one you are currently on.
     - Run with `-h` to see options.
 
     ```bash
