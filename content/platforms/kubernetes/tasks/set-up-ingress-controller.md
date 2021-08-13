@@ -7,7 +7,7 @@ categories: [""]
 aliases: 
 ---
 
-Every time a Redis Enterprise Database (REDB) is created in a Kubernetes (K8s) environment, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, headless, or `LoadBalancer`.
+Every time a Redis Enterprise Database (REDB) is created in a Kubernetes (K8s) environment, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
 
 By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
@@ -45,23 +45,22 @@ Install one of the supported ingress controllers:
 
 {{< warning >}}You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{< /warning >}}
 
-
 ## Create ingress resource
 
 1. Retrieve the hostname of your ingress controller's `LoadBalancer` service with `kubectl get svc <ingress-cntrl>-ingress -n ingress-controller`.
 
-```bash
-$ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n ingress-controller
-```
+  ```bash
+  $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n ingress-controller
+  ```
 
-Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.
+  Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.
 
-```bash
-NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                                      AGE
-haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
-```
+  ```bash
+  NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                                      AGE
+  haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
+  ```
 
-1. Create the ingress resource yaml file.
+2. Create the ingress resource yaml file.
 
 ```yaml
 apiVersion: networking.k8s.io/v1beta1
@@ -69,7 +68,7 @@ kind: Ingress
 metadata:
   name: rec-ingress
   annotations:
-    <nginx | haproxy>.ingress.kubernetes.io/ssl-passthrough: "true"
+    <controller-specific-annotations-below>
 spec:
   rules:
   - host: <hostname>
@@ -81,13 +80,30 @@ spec:
           servicePort: <port>
 ```
 
+For HAProxy, insert the following into the `annotations` section:
+```yaml
+haproxy.ingress.kubernetes.io/ssl-passthrough: "true"
+kubernetes.io/ingress.class: haproxy
+```
+
+For NGINX, insert the following into the `annotations` section: 
+```yaml
+nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+```
+
 The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on which ingress controller you have. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.
 
 ## Test your external access
 
+To test your external access to the database, you need a client that supports [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication).
+
 #### Test your access with Openssl
 
-1. Copy the default self-signed certificate on the Redis Enterprise cluster (`proxy_cert.pem`) to your current folder.
+1. Get the default CA certificate from the `redis-enterprise-node` container on any of the Redis Enterprise pods. 
+
+```bash
+kubectl exec -it <pod-name> -c redis-enterprise-node -- cat /etc/opt/redislabs/proxy_cert.pem
+```
 
 2. Run the following `openssl` command, substituting your own values for `<hostname>` and `<port>`.
 
