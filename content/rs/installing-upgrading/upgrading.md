@@ -7,34 +7,87 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/
 ---
-To upgrade the Redis Enterprise Software  software on a cluster,
+To upgrade Redis Enterprise Software on a cluster,
 you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
 
 For Active-Active clusters, you must upgrade all the nodes on all clusters first, and then upgrade each of the databases in each cluster.
 
-{{< warning >}}
-Always check the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) before upgrading to a newer version of Redis Enterprise Software. Pay attention to any upgrade notices (for example, the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}})).
-{{< /warning >}}
+## Upgrade planning
 
-Version requirements:
+The upgrade process requires a bit of planning:
 
-- To upgrade your cluster to v6.0, your cluster must first be on 5.4.0 or above
-    and the databases must be running Redis 5.
+1.  Always check the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) before upgrading to a newer version of Redis Enterprise Software. 
+
+     In particular, take note of any upgrade notes, such as the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}})).
+
+2.  Verify version requirements:
+
+    - To upgrade your cluster to v6.2, your cluster must first be on 6.0 or above _and_ your database nodes must be running Redis 6.
+
     - To upgrade your cluster to v6.0.20, your cluster must first be on 5.6.0
-- To upgrade your cluster to v5.6, your cluster must first be on 5.0.2-30 or above.
-- To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above.
-- To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above.
 
-The upgrade process for a Redis Enterprise Software cluster is "ongoing" when the nodes in the cluster have mixed versions.
-The upgrade is only considered complete when all of the nodes are upgraded to the new version.
+    - To upgrade your cluster to v6.0, your cluster must first be on 5.4.0 or above _and_ the databases must be running Redis 5.
 
-{{< warning >}}
+    - To upgrade your cluster to v5.6, your cluster must first be on 5.0.2-30 or above.
 
-Using features from the newer version before all nodes are upgraded can produce unexpected results or cause failures in the cluster.
+    - To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above.
 
-{{< /warning >}}
+    - To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above.
 
-## Upgrade a node
+3.  Avoid using features introduced in the newer version until after all nodes have been upgraded; otherwise, unexpected results or cluster failures can occur.
+
+## Upgrade process
+
+The upgrade process includes several tasks, including upgrading:
+
+- [Open source Redis](#upgrade-open-source-redis)
+- [Each node](#upgrade-a-node) in the cluster
+- [Each database](#upgrade-a-database)
+- [Active-active databases](#upgrade-activeactive-databases)
+
+The following sections provide more info.
+
+The upgrade process for a Redis Enterprise Software cluster is considered _ongoing_ when nodes in the cluster have mixed versions.
+
+The upgrade process is only considered _complete_ when all nodes are upgraded to the new version.
+
+### Upgrade open source Redis
+
+Part of the Redis Enterprise Software upgrade process includes upgrading open source (OSS) Redis, also known as _core_ Redis.  
+
+Each upgrade of Redis Enterprise Software includes _two_ versions of OSS Redis to help smooth the upgrade process:
+
+- The _latest_ release reflects the most recent minor release (example: Redis 6.2), whether major (x.0 release) or minor (x.y).
+
+- The last _major_ release reflects the most recent major release (example: 6.0).
+
+When you upgrade OSS Redis, you can upgrade from:
+
+- The previous major release to the current major release.
+
+- The previous minor release to the current minor release.
+
+If you're not currently using either of supported previous releases, you need to separately update OSS Redis to one of those releases; otherwise, the update to Redis Enterprise Software fails.
+
+You can use `rladmin` to choose which release  to install:
+
+``` shell
+tune cluster redis_upgrade_policy latest
+```
+
+Updating OSS Redis also updates the default version used to create or update databases.  For example, if you update to the example 6.2 release described earlier and then you create a database, its version is `6.2`.
+
+Databases cannot be used by earlier versions of OSS Redis.  Later versions of OSS Redis can, for the most part, use older database versions.  (For details, review the relevant release notes.)
+
+Use `rladmin` to change the default database version:
+
+``` shell
+tune cluster default_redis_version 6.2
+```
+
+To learn more, see the [rladmin reference]({{< relref "/rs/release-notes/_index.md" >}})
+
+### Upgrade a node
 
 Upgrading the software on a node requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/_index.md" >}})
@@ -72,14 +125,14 @@ important to upgrade the nodes one by one, and **not attempt to upgrade
 more than one node at a time**.
 {{< /warning >}}
 
-To make sure that the node is functioning properly, run [`rlcheck`]({{< relref "/rs/references/rlcheck.md" >}}) and `rladmin status extra all`
+To make sure that the node is functioning properly, run [`rlcheck`]({{< relref "/rs/references/rlcheck.md" >}}) and <nobr>`rladmin status extra all`</nobr>
 on the node both before and after the upgrade.
 
 If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
-## Upgrade a database
+### Upgrade a database
 
 Some upgrades add support for new Redis versions. In these cases,
 we recommend upgrading the databases to the new Redis
@@ -88,10 +141,9 @@ compatible. Redis Software also supports a mix of Redis database versions.
 
 Redis Software always supports two Redis versions. By default, new Redis databases
 are created with the latest version, and existing databases get upgraded
-to the latest version according to the instructions detailed below. If
-you would like to change the default Redis version to the previous
-version supported, you should use the `tune cluster default_redis_version`
-command in the `rladmin` CLI and set it to the previous Redis version supported.
+to the latest version according to the instructions detailed below. 
+
+To change the default Redis version to the previously supported version, use `rladmin` and run the <nobr>`tune cluster default_redis_version`</nobr> command.
 
 To check whether your Redis database versions match the latest supported Redis
 version:
@@ -126,40 +178,43 @@ a result:
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
-## Upgrade Active-Active databases {#upgrading-activeactive-databases}
+### Upgrade Active-Active databases {#upgrading-activeactive-databases}
 
 When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
-- **Protocol version** - RS 5.4.2 and higher include a new CRDB protocol version to support new Active-Active features.
-    The CRDB protocol is backward-compatible so that RS 5.4.2 CRDB instances can understand write-operations that come from instances with the older CRDB protocol, but CRDB instances with the older protocol cannot understand write-operations of instances with the newer protocol version.
-    As a result, after you upgrade the CRDB protocol on one instance,
-    instances that were not upgraded yet cannot receive write updates from the upgraded instance.
+- **Protocol version** - Starting with version 5.4.2, a new CRDB protocol version helps support  Active-Active features.
+
+    The CRDB protocol is backward-compatible, which means v5.4.2 CRDB instances can understand write-operations from instances using the the earlier CRDB protocol.  However, earlier CRDB instances (those using the older protocol cannot) understand write-operations from instances using the newer protocol version.
+
+    Once you upgrade the CRDB protocol on one instance, non-upgraded instances cannot receive write updates from the upgraded instance.
+
     The upgraded instance receives updates from upgraded and non-upgraded instances.
 
-    {{< note >}}
+    When upgraded to the latest protocol version, upgraded instances automatically receives any missing write-operations.
 
-- Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
-- Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
-- Protocol version 0 is deprecated on RS 6.0.20 or later.
-- To avoid a failed upgrade, make sure all your Active-Active databases are configured with the latest protocol version before upgrading to Redis Enterprise Software 6.0.20 or later.
+    _Guidelines:_
 
-    {{< /note >}}
+    - Upgrade all instances of a specific CRDB within a reasonable time frame to avoid temporary inconsistencies between the instances.
 
-    After you upgrade an instance to use the new protocol version,
-    it automatically receives any missing write-operations.
+    - Make sure that you upgrade all instances of a specific CRDB before you do global operations on the CRDB, such as removing instances and adding new instances.
 
-- **Feature set version** - RS 5.6.0 and higher include a new feature set version to support new Active-Active features.
-    When you update the feature set version for an Active-Active database, the feature set version is updated for all of the database instances.
+    - As of v6.0.20, protocol version 0 is deprecated; support will be removed in a future version.
+
+    - To avoid upgrade failures, update all Active-Active databases to the latest protocol version _before_ upgrading Redis Enterprise Software to v6.0.20 or later.
+
+- **Feature version** - Starting with version 5.6.0, a new feature version (also called a _feature set version_) helps support new Active-Active features.
+
+    When you update the feature version for an Active-Active database, the feature version is updated for all of the database instances.
     
-    {{< note >}}
+    _Guidelines:_
 
-- Feature set version 0 is deprecated on RS 6.0.20 or later.
-- To avoid a failed upgrade, make sure all your Active-Active databases are configured with the latest feature set version before upgrading to Redis Enterprise Software 6.0.20 or later.
-    {{< /note >}}
+    - As of v6.0.20, feature version 0 is deprecated; support will be removed in a future version.
+
+    - To avoid upgrade failures, update all Active-Active databases to the latest protocol version _before_ upgrading Redis Enterprise Software to v6.0.20 or later.
 
 To upgrade a CRDB instance:
 
-1. [Upgrade RS](#upgrading-a-node) on each node in the clusters where the CRDB instances are located.
+1. [Upgrade Redis Enterprise Software](#upgrading-a-node) on each node in the clusters where the CRDB instances are located.
 
 1. To see the status of your CRDB instances, run: `rladmin status`
 
@@ -171,24 +226,24 @@ To upgrade a CRDB instance:
 
     ![crdb-upgrade-node](/images/rs/crdb-upgrade-node.png)
 
-1. To upgrade each CRDB instance including the Redis version and CRDB protocol version, run:
+1. To upgrade each CRDB instance, including the Redis version and CRDB protocol version, run:
 
     ```sh
     rladmin upgrade db <database_name | database_ID>
     ```
 
     If the protocol version is old, read the warning message carefully and confirm.
+
     ![crdb-upgrade-protocol](/images/rs/crdb-upgrade-protocol.png)
 
     The CRDB instance uses the new Redis version and CRDB protocol version.
 
-    {{% expand "To upgrade the CRDB instance without upgrading the protocol version:" %}}
-You can use the `keep_crdt_protocol_version` option to upgrade the database
-without upgrading the CRDB protocol version and continue using the old version.
-If you use this option, make sure that you upgrade the CRDB protocol soon after with the `rladmin upgrade db` command.
+    Use the `keep_crdt_protocol_version` option to upgrade the database feature version 
+without upgrading the CRDB protocol version.
 
-You must upgrade the CRDB protocol before you update the CRDB feature set version.
-    {{% /expand %}}
+    If you use this option, make sure that you upgrade the CRDB protocol soon after with the `rladmin upgrade db` command.
+
+    You must upgrade the CRDB protocol before you update the CRDB feature set version.
 
 1. If the feature set version is old, you must upgrade all of the CRDB instances. Then, to update the feature set for each active-active database, run:
 
