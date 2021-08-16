@@ -76,11 +76,12 @@ header .logo {
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -20px;  
+  margin-top: -20px; 
 }
 
 header .logo img {
   width: 163px !important;
+  height: 40px;
 }
 
 header nav.shortcuts {
@@ -3610,3 +3611,17 @@ a[href*="#no-click"], img[src*="#no-click"] {
   margin-bottom: 40px;
 }
 
+/* CSS hacks - Aug 2021 */
+#root,
+#drift-widget-message-preview-wrapper {
+  display: none !important;
+}
+
+article section.page table {
+  table-layout: auto !important;
+}
+
+.gdpr-modal {
+  z-index: 9999;
+}
+  

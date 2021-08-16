@@ -21,7 +21,7 @@
                 "KeyPrefixEquals": "6.0/rc/"
             },
             "Redirect": {
-                "HostName": "docs.redislabs.com",
+                "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/rc/"
             }
