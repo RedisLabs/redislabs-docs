@@ -114,7 +114,7 @@ openssl s_client \
  -servername <hostname>
 ```
 
-If you are connected to the database, you will receive `PONG`, back as shown below:
+If you are connected to the database, you will receive `PONG` back, as shown below:
 
 ```bash
 ...
