@@ -1,5 +1,5 @@
 ---
-Title: Upgrade Redis Enterprise Software
+Title: Upgrade an existing Redis Enterprise Software deployment
 linkTitle: Upgrade existing deployment
 description:
 weight: 60
@@ -18,7 +18,7 @@ The upgrade process requires a bit of planning:
 
 1.  Always check the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) before upgrading to a newer version of Redis Enterprise Software. 
 
-     In particular, take note of any upgrade notes, such as the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}})).
+     In particular, take note of any upgrade notes, such as the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}}).
 
 2.  Verify version requirements:
 
@@ -43,7 +43,7 @@ The upgrade process includes several tasks, including upgrading:
 - [Open source Redis](#upgrade-open-source-redis)
 - [Each node](#upgrade-a-node) in the cluster
 - [Each database](#upgrade-a-database)
-- [Active-active databases](#upgrade-activeactive-databases)
+- [Active-Active databases](#upgrade-activeactive-databases)
 
 The following sections provide more info.
 
@@ -67,7 +67,7 @@ When you upgrade OSS Redis, you can upgrade from:
 
 - The previous minor release to the current minor release.
 
-If you're not currently using either of supported previous releases, you need to separately update OSS Redis to one of those releases; otherwise, the update to Redis Enterprise Software fails.
+If you're not currently using either of the supported previous releases included with the update, you need to separately update OSS Redis to one of those releases; otherwise, the update to Redis Enterprise Software fails.
 
 You can use `rladmin` to choose which release  to install:
 
@@ -85,7 +85,7 @@ Use `rladmin` to change the default database version:
 tune cluster default_redis_version 6.2
 ```
 
-To learn more, see the [rladmin reference]({{< relref "/rs/release-notes/_index.md" >}})
+To learn more, see the [rladmin reference]({{< relref "/rs/references/rladmin.md#tune-cluster" >}})
 
 ### Upgrade a node
 
@@ -178,7 +178,7 @@ a result:
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
-### Upgrade Active-Active databases {#upgrading-activeactive-databases}
+### Upgrade Active-Active databases 
 
 When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
