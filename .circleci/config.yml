@@ -96,6 +96,13 @@ jobs:
                     export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
                     export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
                     aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read # --size-only
+            # Purge the site cache to force the deployed changes to display immediately
+            - run:
+                name: Purge site cache
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/staging/*"
 
     # Deploy only RS site files to the AWS S3 bucket for the branch
     deploy-docs-prod:
@@ -120,6 +127,14 @@ jobs:
                     export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
                     export VERSION=${CIRCLE_BRANCH/-build/}
                     aws s3 sync public s3://docs.redis.com/$VERSION --delete --acl public-read --exclude "*rv/*" --exclude "*rc/*" # --size-only
+            # Purge the site cache to force the deployed changes to display immediately
+            - run:
+                name: Purge site cache
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    export VERSION=${CIRCLE_BRANCH/-build/}
+                    aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/${VERSION}/*"
 
     # Deploy for -build to push to /{version} without -build
     deploy-docs-latest:
@@ -152,6 +167,13 @@ jobs:
                     aws s3 cp robots.txt s3://docs.redis.com/robots.txt
                     # Deploy the S3 site configuration
                     aws s3api put-bucket-website --bucket docs.redis.com --website-configuration file://website.json
+            # Purge the site cache to force the deployed changes to display immediately
+            - run:
+                name: Purge site cache
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/latest/*" "/robots.txt"
 workflows:
   version: 2
   build-deploy:
