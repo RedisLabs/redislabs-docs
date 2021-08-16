@@ -56,7 +56,7 @@ Install one of the supported ingress controllers:
   Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.
 
   ```bash
-  NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                                      AGE
+  NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE
   haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
   ```
 
