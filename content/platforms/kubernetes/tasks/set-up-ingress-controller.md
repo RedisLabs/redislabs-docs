@@ -19,7 +19,7 @@ Redis Enterprise Software on Kubernetes supports two ingress controllers, [HAPro
 
 Create a Redis Enterprise database with "TLS for all communication" enabled and "client authentication" disabled.
 
-The yaml to create this REDB must include `tlsMode: enabled` as shown in this example:
+The YAML to create this REDB must include `tlsMode: enabled` as shown in this example:
 
 ```yaml
 apiVersion: app.redislabs.com/v1alpha1
@@ -32,7 +32,7 @@ spec:
 
 ##### If you choose to use a previously created database:
 
-If you are using an existing REDB that was created with a yaml file, you cannot make edits to that database in the Redis Enterprise UI. All changes need to be made in the yaml file.
+If you are using an existing REDB that was created with a YAML file, you cannot make edits to that database in the Redis Enterprise UI. All changes need to be made in the YAML file.
 
 If you are using an existing database that is managed from the UI, see [Enable TLS for client connections]({{< relref "content/rs/security/tls-ssl.md" >}}) for more information on these security settings.
 
@@ -49,49 +49,53 @@ Install one of the supported ingress controllers:
 
 1. Retrieve the hostname of your ingress controller's `LoadBalancer` service with `kubectl get svc <ingress-cntrl>-ingress -n ingress-controller`.
 
-  ```bash
-  $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n ingress-controller
-  ```
+    ```bash
+    $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n ingress-controller
+    ```
 
-  Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.
+    Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.
 
-  ```bash
-  NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE
-  haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
-  ```
+    ```bash
+    NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE
+    haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
+    ```
 
-2. Create the ingress resource yaml file.
+1. Choose the hostname you will use to access your database (this value will be represented in this article with `<my-db-hostname>`).  
 
-```yaml
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
-metadata:
-  name: rec-ingress
-  annotations:
-    <controller-specific-annotations-below>
-spec:
-  rules:
-  - host: <hostname>
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: <db-name>
-          servicePort: <port>
-```
+1. Create a DNS entry that resolves your chosen database hostname to the IP address for the ingress controller's LoadBalancer.
 
-For HAProxy, insert the following into the `annotations` section:
-```yaml
-haproxy.ingress.kubernetes.io/ssl-passthrough: "true"
-kubernetes.io/ingress.class: haproxy
-```
+1. Create the ingress resource YAML file.
 
-For NGINX, insert the following into the `annotations` section: 
-```yaml
-nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-```
+    ```yaml
+    apiVersion: networking.k8s.io/v1beta1
+    kind: Ingress
+    metadata:
+      name: rec-ingress
+      annotations:
+        <controller-specific-annotations-below>
+    spec:
+      rules:
+      - host: <my-db-hostname>
+        http:
+          paths:
+          - path: /
+            backend:
+              serviceName: <db-name>
+              servicePort: 443
+    ```
 
-The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on which ingress controller you have. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.
+    For HAProxy, insert the following into the `annotations` section:
+        ```yaml
+        haproxy.ingress.kubernetes.io/ssl-passthrough: "true"
+        kubernetes.io/ingress.class: haproxy
+        ```
+
+    For NGINX, insert the following into the `annotations` section:
+        ```yaml
+        nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+        ```
+
+    The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on which ingress controller you have. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.
 
 ## Test your external access
 
@@ -101,18 +105,18 @@ To test your external access to the database, you need a client that supports [T
 
 1. Get the default CA certificate from the `redis-enterprise-node` container on any of the Redis Enterprise pods. 
 
-```bash
-kubectl exec -it <pod-name> -c redis-enterprise-node -- cat /etc/opt/redislabs/proxy_cert.pem
-```
+    ```bash
+    kubectl exec -it <pod-name> -c redis-enterprise-node -- cat /etc/opt/redislabs/proxy_cert.pem
+    ```
 
-2. Run the following `openssl` command, substituting your own values for `<hostname>` and `<port>`.
+1. Run the following `openssl` command, substituting your own values for `<my-db-hostname>`.
 
-```bash
-openssl s_client \
- -connect <hostname>:<port> \
- -crlf -CAfile ./proxy_cert.pem \
- -servername <hostname>
-```
+    ```bash
+    openssl s_client \
+     -connect <my-db-hostname>:443 \
+     -crlf -CAfile ./proxy_cert.pem \
+     -servername <my-db-hostname>
+    ```
 
 If you are connected to the database, you will receive `PONG` back, as shown below:
 
@@ -127,13 +131,13 @@ PING
 
 #### Test your access with Python
 
-You can use the code below to test your access with Python, substituting your own values for `<hostname>`, `<port>`, and `<file-path>`.
+You can use the code below to test your access with Python, substituting your own values for `<my-db-hostname>` and `<file-path>`.
 
 ```python
 import redis
 
-r = redis.StrictRedis(host='<hostname>',
-                port=<port>, db=0, ssl=True,
+r = redis.StrictRedis(host='<my-db-hostname>',
+                port=443, db=0, ssl=True,
                 ssl_ca_certs='/<file-path>/proxy_cert.pem')
 
 
