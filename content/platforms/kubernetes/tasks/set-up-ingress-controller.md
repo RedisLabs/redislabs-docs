@@ -46,12 +46,11 @@ Install one of the supported ingress controllers:
 
 ## Create ingress resource
 
-1. Retrieve the hostname of your ingress controller's `LoadBalancer` service with `kubectl get svc <ingress-cntrl>-ingress -n ingress-controller`.
+1. Retrieve the hostname of your ingress controller's `LoadBalancer` service.
 
-        $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n  
+        $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n  <ingress-ctrl-namespace>
 
     Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.  
-
 
         NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE
         haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m  
@@ -78,7 +77,6 @@ Install one of the supported ingress controllers:
                   serviceName: <db-name>
                   servicePort: 443  
   
-
     For HAProxy, insert the following into the `annotations` section:  
 
         haproxy.ingress.kubernetes.io/ssl-passthrough: "true"
