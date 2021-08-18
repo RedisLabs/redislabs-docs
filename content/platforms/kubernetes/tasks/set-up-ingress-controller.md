@@ -22,12 +22,14 @@ Create a Redis Enterprise database with "TLS for all communication" enabled and 
 
 The YAML to create this REDB must include `tlsMode: enabled` as shown in this example:
 
-    apiVersion: app.redislabs.com/v1alpha1
-    kind: RedisEnterpriseDatabase
-    metadata:
-      name: <your-db-name>
-    spec:
-      tlsMode: enabled
+```yaml
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+ name: <your-db-name>
+spec:
+  tlsMode: enabled
+```
 
 ##### If you choose to use a previously created database:
 
@@ -48,16 +50,16 @@ Install one of the supported ingress controllers:
 
 1. Retrieve the hostname of your ingress controller's `LoadBalancer` service with `kubectl get svc <ingress-cntrl>-ingress -n ingress-controller`.
 
-
-    $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n ingress-controller
-
+    ```bash
+    $ kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n 
+    ```
 
     Below is example output for an HAProxy ingress controller running on a K8s cluster hosted by AWS.
 
-
+    ```bash
     NAME              TYPE           CLUSTER-IP    EXTERNAL-IP                                                              PORT(S)                      AGE
     haproxy-ingress   LoadBalancer   10.43.62.53   a56e24df8c6173b79a63d5da54fd9cff-676486416.us-east-1.elb.amazonaws.com   80:30610/TCP,443:31597/TCP   21m
-
+    ```
 
 1. Choose the hostname you will use to access your database (this value will be represented in this article with `<my-db-hostname>`).  
 
@@ -65,7 +67,7 @@ Install one of the supported ingress controllers:
 
 1. Create the ingress resource YAML file.
 
-
+    ```yaml
     apiVersion: networking.k8s.io/v1beta1
     kind: Ingress
     metadata:
@@ -81,7 +83,7 @@ Install one of the supported ingress controllers:
             backend:
               serviceName: <db-name>
               servicePort: 443
-
+   ```
 
     For HAProxy, insert the following into the `annotations` section:
 
@@ -101,28 +103,32 @@ To test your external access to the database, you need a client that supports [T
 
 #### Test your access with Openssl
 
-1. Get the default CA certificate from the `redis-enterprise-node` container on any of the Redis Enterprise pods. 
+1. Get the default CA certificate from the `redis-enterprise-node` container on any of the Redis Enterprise pods.
 
+    ```bash
     kubectl exec -it <pod-name> -c redis-enterprise-node -- cat /etc/opt/redislabs/proxy_cert.pem
-
+    ```
 
 1. Run the following `openssl` command, substituting your own values for `<my-db-hostname>`.
 
+    ```bash
     openssl s_client \
      -connect <my-db-hostname>:443 \
      -crlf -CAfile ./proxy_cert.pem \
      -servername <my-db-hostname>
+    ```
 
-If you are connected to the database, you will receive `PONG` back, as shown below:
+    If you are connected to the database, you will receive `PONG` back, as shown below:
 
+    ```bash
     ...
        Verify return code: 0 (ok)
     ---
 
     PING 
     +PONG
+    ```
 
-    
 #### Test your access with Python
 
 You can use the code below to test your access with Python, substituting your own values for `<my-db-hostname>` and `<file-path>`.
