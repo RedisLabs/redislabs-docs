@@ -89,7 +89,7 @@ Task 2b3d62c6-395b-4679-87b1-eef006ad4a38 created
   ---> Status changed: started -> finished
 ```
 
-If you only specify the required fields, the properties of the database are::
+If you only specify the required fields, the properties of the database are:
 
 - Compression level 3
 - Causal consistency is off

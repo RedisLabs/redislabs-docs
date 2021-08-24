@@ -14,11 +14,13 @@ aliases:
 Modules add additional functionality to your databases for specific use cases.
 You can add modules to the database when you create the database.
 
-## Add modules to a database
+## Create a database with a module
 
 {{< note >}}
 - Before you add a module to a database,
     we recommend that you [upgrade the module]({{< relref "/modules/add-module-to-cluster.md" >}}) to the latest version.
+- Modules can be added to a database only when creating a new database.
+    You can't add a module to an existing database.
 - After you add a module to the database,
     certain database fields for the database are disabled according to the supported capabilities of the module.
 {{< /note >}}

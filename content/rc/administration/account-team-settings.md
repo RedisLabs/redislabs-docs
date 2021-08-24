@@ -15,7 +15,7 @@ You can also:
 - Configure Multi-Factor Authentication (MFA)
 
 When you set up [SSL/TLS]({{< relref "/rc/security/database-security/tls-ssl.md" >}}) for your account,
-you must enter the downloadable Redis Labs CA Certificate from this page.
+you must enter the downloadable Redis CA Certificate from this page.
 
 ![settings](/images/rc/settings.png)
 
@@ -36,13 +36,22 @@ Team members can have different roles to the account:
 
 ### Team management for GCP Marketplace customers
 
-If you subscribed to Redis Enterprise Cloud using GCP Marketplace, you can manage your team from the IAM section of the GCP console.
-To grant Redis Cloud access to a GCP user, assign one of these roles to the user:
 
-- **Viewer** - serviceusage.serviceUsageViewer and redisenterprisecloud.viewer
-- **Owner** - serviceusage.serviceUsageViewer and redisenterprisecloud.admin
+If you subscribed to Redis Enterprise Cloud using GCP Marketplace, you can manage your team from the **IAM section** of the GCP console.
+To grant Redis Cloud access to a GCP user, select the **Add** button to add a member, insert the email address, and then assign one of the following roles to the user:
 
-Users must log in using SSO to Redis Cloud at least once for them to be added to the team.
+ serviceusage.serviceUsageViewer & redisenterprisecloud.viewer - these roles should be assigned to member designated as viewer
+ serviceusage.serviceUsageViewer & redisenterprisecloud.admin -  these roles should be assigned to member designated as owner
+ 
+In case these roles do not appear, add a role to your project by doing the following:
+1. Select **Manage Roles** 
+1. Search the role on the **filter table** field ( for example: "service usage viewer" or "redis enterprise cloud admin")
+1. Place a check in the checkbox
+1. Select **Create role from selection** and select **Create**
+1. Go back to **IAM** to add a member and assign the desried roles.
+
+Users are not added to the team until they sign in to Redis Cloud using their single-sign on (SSO) credentials.
+Use the **manage on provider** button to do so. 
 
 ## Multi-Factor Authentication (MFA)
 
@@ -91,8 +100,8 @@ To configure MFA for the Authenticator app:
     1. Select the plus sign and press **Scan a barcode**.
     1. Scan the Redis Cloud barcode.
 
-To log in to the Redis Cloud admin console, you can do MFA either with a text message or the Authenticator app.
-If you use with the Authenticator app, you must open the Authenticator app and enter the Redis Labs code into the Redis Enterprise Cloud login.
+To log in to the Redis Enterprise Cloud admin console, you can do MFA either with a text message or the Authenticator app.
+If you use with the Authenticator app, you must open the Authenticator app to locate the code that lets you sign in to the Redis Enterprise Cloud admin console.
 
 #### Deactivating MFA
 

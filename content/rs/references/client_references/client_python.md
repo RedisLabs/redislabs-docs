@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with Python
+Title: Redis with Python
+linkTitle: Python
 description:
 weight:
 alwaysopen: false

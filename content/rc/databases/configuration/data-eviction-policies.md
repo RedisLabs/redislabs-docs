@@ -1,11 +1,21 @@
 ---
 Title: Data eviction policies
-description:
+linkTitle: Data eviction
+description: Data eviction policies control what happens when new data exceeds the memory limits of a database.  Here, you'll learn the available policies and how to change which one is used for a database.
 weight: $weight
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/concepts/data-eviction-policies/
+         /rc/concepts/data-eviction-policies/
+         /rc/concepts/data-eviction-policies.md 
 ---
+
+The data eviction policy of a database controls what happens when new data exceeds the memory size of a database.  Typically, such situations require _evicting_ (or deleting) data previously added to the database.  
+
+To control this behavior, [change the]({{< relref "/rc/databases/view-edit-database.md" >}}) **Data eviction policy** setting for a database.
+
+## Available policies
+
 For each database, you can choose from these data eviction policies:
 
 |  **Options** | **Description** |
@@ -19,10 +29,10 @@ For each database, you can choose from these data eviction policies:
 |  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of keys with an "expire" field set |
 |  no eviction | Returns an error if the memory limit has been reached when trying to insert more data |
 
-Redis Cloud supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+Redis Cloud supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) (RoF)
 to prevent data eviction but maintain high performance.
-RoF can span your database across RAM and Flash Memory
-and intelligently manage hot data in RAM and cold data in Flash memory (SSD).
+
+RoF can extend your database across RAM and Flash Memory and intelligently manage "hot" (active) data in RAM and "cold" (less active) data in Flash memory (SSD).
 
 {{< note >}}
 [Active-Active Geo-Distributed CRDBs]({{< relref "/rs/administering/designing-production/active-active.md" >}}) always operates in noeviction mode.

@@ -1,5 +1,5 @@
 ---
-Title: Redis Labs Kubernetes Architecture
+Title: Redis Kubernetes Architecture
 description: This section provides an overview of the architecture and considerations for Redis Enterprise on Kubernetes.
 weight: 20
 alwaysopen: false
@@ -8,19 +8,19 @@ aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-architecture-overview
          /rs/concepts/kubernetes-architecture/
          /platforms/kubernetes/kubernetes-architecture/
 ---
-Redis Labs bases its Kubernetes architecture on several vital concepts.
+Redis bases its Kubernetes architecture on several vital concepts.
 
 ## Layered architecture
 
 Kubernetes is an excellent orchestration tool, but it was not designed to deal with all the nuances associated with operating Redis Enterprise. Therefore, it can fail to react accurately to internal Redis Enterprise edge cases or failure conditions. Also, Kubernetes orchestration runs outside the Redis Cluster deployment and may fail to trigger failover events, for example, in split network scenarios.
 
-To overcome these issues, Redis Labs created a layered architecture approach that splits responsibilities between operations Kubernetes does well, procedures Redis Enterprise Cluster excels at, and the processes both can orchestrate together. The figure below illustrated this layered orchestration architecture:
+To overcome these issues, Redis created a layered architecture approach that splits responsibilities between operations Kubernetes does well, procedures Redis Enterprise Cluster excels at, and the processes both can orchestrate together. The figure below illustrated this layered orchestration architecture:
 
 ![kubernetes-overview-layered-orchestration]( /images/rs/kubernetes-overview-layered-orchestration.png )
 
 ## Operator based deployment
 
-Operator allows Redis Labs to maintain a unified deployment solution across various Kubernetes environments, i.e., RedHat OpenShift, VMware Tanzu (Tanzu Kubernetes Grid, and Tanzu Kubernetes Grid Integrated Edition, formerly known as PKS), Google Kubernetes Engine (GKE), Azure Kubernetes Service (AKS), and vanilla (upstream) Kubernetes. Statefulset and anti-affinity guarantee that each Redis Enterprise node resides on a Pod that is hosted on a different VM or physical server. See this setup shown in the figure below:
+Operator allows Redis to maintain a unified deployment solution across various Kubernetes environments, i.e., RedHat OpenShift, VMware Tanzu (Tanzu Kubernetes Grid, and Tanzu Kubernetes Grid Integrated Edition, formerly known as PKS), Google Kubernetes Engine (GKE), Azure Kubernetes Service (AKS), and vanilla (upstream) Kubernetes. Statefulset and anti-affinity guarantee that each Redis Enterprise node resides on a Pod that is hosted on a different VM or physical server. See this setup shown in the figure below:
 
 ![kubernetes-overview-unified-deployment]( /images/rs/kubernetes-overview-unified-deployment.png )
 
@@ -40,6 +40,6 @@ Redis Enterprise is not only great as an in-memory database but also extremely e
 
 ## Multiple services on each pod
 
-Each Pod includes multiple Redis Enterprise instances (multiple services). We found that the traditional method of deploying a Redis Enterprise database over Kubernetes, in which each Pod includes only a single Redis Enterprise instance while preserving a dedicated CPU, is notably inefficient. Redis Enterprise is exceptionally fast and in many cases can use just a fraction of the CPU resources to deliver the requested throughput. Furthermore, when running a Redis Enterprise Cluster with multiple Redis Enterprise instances across multiple Pods, the Kubernetes network, with its multiple vSwitches, can quickly become the deployment’s bottleneck. Therefore, Redis Labs took a different approach to managing Redis Enterprise over the Kubernetes environment. Deploying multiple Redis Enterprise database instances on a single Pod allows us to better utilize the hardware resources used by the Pod such as CPU, memory, and network while keeping the same level of isolation. See the figure below:
+Each Pod includes multiple Redis Enterprise instances (multiple services). We found that the traditional method of deploying a Redis Enterprise database over Kubernetes, in which each Pod includes only a single Redis Enterprise instance while preserving a dedicated CPU, is notably inefficient. Redis Enterprise is exceptionally fast and in many cases can use just a fraction of the CPU resources to deliver the requested throughput. Furthermore, when running a Redis Enterprise Cluster with multiple Redis Enterprise instances across multiple Pods, the Kubernetes network, with its multiple vSwitches, can quickly become the deployment’s bottleneck. Therefore, Redis took a different approach to managing Redis Enterprise over the Kubernetes environment. Deploying multiple Redis Enterprise database instances on a single Pod allows us to better utilize the hardware resources used by the Pod such as CPU, memory, and network while keeping the same level of isolation. See the figure below:
 
 ![kubernetes-overview-multiple-services-per-pod]( /images/rs/kubernetes-overview-multiple-services-per-pod.png )

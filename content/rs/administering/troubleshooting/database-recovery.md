@@ -63,7 +63,7 @@ of the configuration and persistence files on each of the nodes.
     - No permission to read the files - Change the file permissions so that redislabs:redislabs has 640 permissions.
     - Files are corrupted - Locate copies of the files that are not corrupted.
 
-    If you cannot resolve the issues, contact [Redis Labs Support](mailto:support@redislabs.com).
+    If you cannot resolve the issues, contact [Redis support](mailto:support@redislabs.com).
 
 1. Recover the database, either:
 

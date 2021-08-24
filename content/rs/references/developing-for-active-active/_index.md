@@ -186,6 +186,10 @@ Furthermore, a replica that is NOT the "owner" of the expired value:
     DEL.
 - Expires it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
+    
+    {{< note >}}
+Expiration values are in the range of [0,&nbsp;2^49] for Active-Active databases and [0,&nbsp;2^64] for non Active-Active databases.
+    {{< /note >}}
 
 ## Out-of-Memory (OOM) {#outofmemory-oom}
 

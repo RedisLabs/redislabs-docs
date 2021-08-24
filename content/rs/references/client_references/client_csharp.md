@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with .NET
+Title: Redis with .NET
+linkTitle: .NET
 description:
 weight:
 alwaysopen: false

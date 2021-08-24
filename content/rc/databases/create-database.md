@@ -56,10 +56,10 @@ The **Scalability** section is available only for Flexible and Annual plans.
 | **Memory size** | Maximum size (in GB) for your database |
 | **Throughput** | Defines throughput in terms of maximum operations per second for the database
 | **Shards** | Defines the throughput in terms of shards dedicated to the database
-| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/concepts/high-availability/clustering.md#changing-the-hashing-policy" >}}) |
+| **Hashing policy** | Defines the [hashing policy]({{< relref "/rs/databases/configuration/clustering.md#changing-the-hashing-policy" >}}) |
 | **Cluster OSS** | Enables the [OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
 
-To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/databases/configuration/clustering.md" >}}).
 
 ### Memory size
 
@@ -87,8 +87,8 @@ The **Durability** section helps you keep your database (and your data) availabl
 |Setting name|Description|
 |:-----------|:----------|
 | **High availability** | Replicates your data across multiple nodes, as allowed by your subscription plan |
-| **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/concepts/data-persistence.md" >}}) depend on your plan type |
-| **Data eviction policy** | Defines what happens when your database reaches its [memory size limit]({{< relref "/rc/concepts/data-eviction-policies.md" >}}) |
+| **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type |
+| **Data eviction policy** | Defines what happens when your database reaches its [memory size limit]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) |
 | **Remote backup** | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). |
 | **Active-passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
 

@@ -1,6 +1,6 @@
 ---
 Title: Upgrade Redis Enterprise Software
-linkTitle: Upgrade Redis Enterprise Software
+linkTitle: Upgrade existing deployment
 description:
 weight: 60
 alwaysopen: false
@@ -82,7 +82,7 @@ to work with the UI again.
 ## Upgrade a database
 
 Some upgrades add support for new Redis versions. In these cases,
-Redis Labs recommends that you upgrade the databases to the new Redis
+we recommend upgrading the databases to the new Redis
 version, although this is not mandatory because upgrades are backward
 compatible. Redis Software also supports a mix of Redis database versions.
 
@@ -104,7 +104,7 @@ version:
     The page lists the latest Redis version supported.
 
 If the Redis database versions are older than the version supported by
-RS, Redis Labs recommends that you upgrade your Redis databases.
+Redis Enterprise Software, we recommend upgrading your Redis databases.
 
 To upgrade your database:
 

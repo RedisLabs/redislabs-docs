@@ -10,9 +10,9 @@ Here are some frequently asked questions about Redis Enterprise Cloud.
 
 ## What is Redis Enterprise?
 
-Redis Labs has enhanced open source Redis with a technology layer that encapsulates open source Redis, while fully supporting all its commands, data structures and modules. 
+Redis Enterprise is a technology layer that encapsulates open source Redis while fully supporting its commands, data structures, and modules. 
 
-It adds exceptional flexibility, stable high performance and unmatched resilience, as well as multiple deployment choices (public and private clouds, on-premises, hybrid, RAM-Flash combination), topology (active-active, active-passive, active-replica) and support for very large dataset sizes. 
+This layer adds exceptional flexibility, stable high performance, and unmatched resilience, as well as multiple deployment choices (public and private clouds, on-premises, hybrid, RAM-Flash combination), topology (active-active, active-passive, active-replica), and support for very large dataset sizes. 
 
 This enhanced and exponentially more powerful database platform is Redis Enterprise.  
 
@@ -40,9 +40,9 @@ Every effort is made to adhere, where possible, to the specifications of open so
     - [SLAVEOF](http://redis.io/commands/SLAVEOF)
     - [SYNC](http://redis.io/commands/SYNC)/[PSYNC](http://redis.io/commands/PSYNC)
 
-- Redis Labs clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
+- Redis clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
 
-- Redis Labs clustering technology allows [multiple active proxies]({{<relref "rs/administering/designing-production/networking/multiple-active-proxy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
+- Redis clustering technology allows [multiple active proxies]({{<relref "rs/administering/designing-production/networking/multiple-active-proxy.md">}}). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 
 - Commands that aren’t relevant for a hosted Redis service are blocked:
     - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
@@ -117,7 +117,7 @@ Free plans do not include this capability.
 
 ## Can my Redis database grow infinitely?
 
-Our proxy-based architecture and Dynamic Clustering technology were built from the ground up to provide scalable Redis,
+Our proxy-based architecture and Dynamic Clustering technology were built from the ground up to provide scalable Redis 
 and to support its commands and data types at any dataset size.
 All you need to do is select a plan that fits your dataset size.
 If your dataset is expected to grow or occasionally varies in size, we recommend using a Flexible plan, which charges according to the number of shards or the throughput.
@@ -145,7 +145,7 @@ Subscription downgrades fail if the new plan cannot support the data.
 
 ## What is the difference between Flexible and Fixed plans?
 
-Briefly, Redis Enterprise Cloud Flexible and Fixed plans are fully-managed Redis services operated by Redis Labs.
+Briefly, Redis Enterprise Cloud Flexible and Fixed plans are fully-managed Redis services operated by Redis.
 
 Flexible plans run in dedicated VPCs and offer:
 

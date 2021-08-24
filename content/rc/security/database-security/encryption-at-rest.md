@@ -5,7 +5,7 @@ weight: 40
 alwaysopen: false
 categories: ["RC"]
 ---
-Redis Cloud databases write their data to disk whenever [persistence]({{<relref "/rc/concepts/data-persistence.md">}}) is enabled. 
+Redis Cloud databases write their data to disk whenever [persistence]({{<relref "/rc/databases/configuration/data-persistence.md">}}) is enabled. 
 
 On [Google Cloud Platform](#gcp) (GCP) and [Microsoft Azure](#azure), Redis Cloud deployments are always encrypted at rest. 
 
@@ -27,16 +27,16 @@ To enable encryption when creating a Flexible plan on AWS:
 
 1.  In the Flexible plan section, select the Create button.
 
-    {{<image filename="/images/rc/subscription-create-flexible.png" width="75%" alt="Create Flexible Plan" >}}{{< /image >}}
+    {{<image filename="images/rc/subscription-create-flexible.png" width="75%" alt="Create Flexible Plan" >}}{{< /image >}}
 
     This takes you to the **Create Custom Subscription** screen:
 
-    {{<image filename="/images/rc/create-custom-subscription.png" width="75%" 
+    {{<image filename="images/rc/create-custom-subscription.png" width="75%" 
     alt="Create Custom Subscription screen" >}}{{< /image >}}
 
 1.  Expand the **Advanced Options** and then verify that **Persistent Storage Encryption** is set to **Yes**.
 
-    {{<image filename="/images/rc/persistent-storage-encryption.png" width="75%" 
+    {{<image filename="images/rc/persistent-storage-encryption.png" width="75%" 
     alt="Persistent Storage Encryption setting" >}}{{< /image >}}
 
 When you create the subscription, all databases will be encrypted at rest.

@@ -17,11 +17,10 @@ You can export a database to these locations:
 - SFTP server
 - Amazon AWS S3
 - Local mount point
-- OpenStack Swift (Object Storage)
 - Azure Blob Storage
 - Google Cloud Storage
 
-{{comment}}The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
+{{<comment>}}The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
 If you backup a database configured for database clustering,
 RS copies a backup file for each shard to the specified backup location.
 
@@ -29,7 +28,7 @@ RS copies a backup file for each shard to the specified backup location.
 Make sure that you have enough space available in your storage location.
 If there is not enough space in the backup location, the backup fails.
 {{< /note >}}
-{{/comment}}
+{{</comment>}}
 
 ## Export data from a database
 

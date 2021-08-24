@@ -1,12 +1,13 @@
 ---
-Title: Redis Enterprise Technical Overview
+Title: Redis Enterprise Software technical overview
+linkTitle: Technical overview
 description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
 
-Redis Enterprise is designed to simplify operations while providing seamless scalability, top performance, and high availability.
+Redis Enterprise Software is designed to simplify operations while providing seamless scalability, top performance, and high availability.
 
 Here are some of the features and design decisions that make this possible.
 

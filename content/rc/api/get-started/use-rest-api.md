@@ -111,7 +111,7 @@ curl -s -X GET "https://$HOST/logs" \
 
 - The example expects several variables to be set in the Linux shell:
 
-    - **$HOST** - The URI of the Redis Labs API (`api.redislabs.com/v1`)
+    - **$HOST** - The URI of the REST API host (`api.redislabs.com/v1`)
     - **$ACCOUNT_KEY** - The [account key value]({{< relref "/rc/api/get-started/enable-the-api.md" >}})
     - **$SECRET_KEY** - The personal [secret key value]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
 

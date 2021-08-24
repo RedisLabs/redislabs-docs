@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-Write-behind is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis Labs currently supports write-behind caching in [Redis Enterprise Software]({{< relref "/rs" >}}).
+Write-behind is a caching strategy in which the cache layer itself connects to the backing database. This means that your applications need only ever connect to your cache layer, and the cache then reads from or updates the backing database as needed. Redis currently supports write-behind caching in [Redis Enterprise Software]({{< relref "/rs" >}}).
 
 Here's how these caching patterns work:
 

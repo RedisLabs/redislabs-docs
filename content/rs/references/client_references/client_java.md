@@ -1,5 +1,6 @@
 ---
-Title: Using Redis with Java
+Title: Redis with Java
+linkTitle: Java
 description:
 weight:
 alwaysopen: false

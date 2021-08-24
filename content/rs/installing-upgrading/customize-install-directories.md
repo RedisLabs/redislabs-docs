@@ -17,9 +17,6 @@ The files are installed in the `redislabs` directory located in the path that yo
 - When you install with custom directories, the installation does not run as an RPM file.
 - If a `redislabs` directory already exists in the path that you specify, the installation fails.
 - All nodes in a cluster must be installed with the same file locations.
-{{< /note >}}
-
-{{< note >}}
 - Custom installation directories are not supported for databases using Redis on Flash.
 {{< /note >}}
 

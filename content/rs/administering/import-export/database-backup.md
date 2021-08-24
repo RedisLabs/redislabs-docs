@@ -17,7 +17,6 @@ You can schedule backups to these locations:
 - SFTP server
 - Amazon S3
 - Local mount point
-- OpenStack Swift (Object Storage)
 - Azure Blob Storage
 - Google Cloud Storage
 

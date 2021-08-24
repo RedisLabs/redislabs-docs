@@ -11,7 +11,7 @@
                 "KeyPrefixEquals": "6.0/"
             },
             "Redirect": {
-                "HostName": "docs.redislabs.com",
+                "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
             }
@@ -21,7 +21,7 @@
                 "KeyPrefixEquals": "5.6/rc/"
             },
             "Redirect": {
-                "HostName": "docs.redislabs.com",
+                "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/rc/"
             }
@@ -31,7 +31,7 @@
                 "KeyPrefixEquals": "5.4/rc/"
             },
             "Redirect": {
-                "HostName": "docs.redislabs.com",
+                "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/rc/"
             }
@@ -41,7 +41,7 @@
                 "KeyPrefixEquals": "5.4/platforms/"
             },
             "Redirect": {
-                "HostName": "docs.redislabs.com",
+                "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "5.6/platforms/"
             }
@@ -51,7 +51,7 @@
                 "KeyPrefixEquals": "5.2/"
             },
             "Redirect": {
-                "HostName": "docs.redislabs.com",
+                "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
             }
@@ -61,7 +61,7 @@
                 "KeyPrefixEquals": "latest/rc/how-to/creating-aws-user-redis-enterprise-vpc/"
             },
             "Redirect": {
-                "HostName": "docs.redislabs.com",
+                "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/rc/how-to/creating-iam-resources/creating-aws-user-redis-enterprise-vpc/"
             }

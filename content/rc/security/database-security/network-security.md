@@ -64,7 +64,7 @@ To restrict a database to a specific set of source IP addresses or subnets:
 
 A [Virtual Private Cloud](https://en.wikipedia.org/wiki/Virtual_private_cloud) (VPC) is an isolated set of resources within a [public cloud](https://en.wikipedia.org/wiki/Cloud_computing#Public_cloud), usually having its own subnets and VLAN.
 
-Databases in Flexible and Annual subscriptions are almost always deployed in a Redis Labs VPC. In most cases, you'll need to create a **VPC peering connection** to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
+Databases in Flexible and Annual subscriptions are almost always deployed in a Redis VPC. In most cases, you'll need to create a **VPC peering connection** to access these databases. A VPC peering connection allows unrestricted network access between two VPCs.
 
 How you create these connections and the features supported vary somewhat by public cloud provider. You can read about VPC usage for [AWS](#vpcs-with-aws), [GCP](#vpcs-with-gcp), and [Azure](#vpcs-with-azure) below.
 
@@ -88,7 +88,7 @@ To create a VPC peering connection:
     - AWS Account ID
     - AWS Region
     - AWS VPC ID
-    - VPC CIDR (must not overlap with the Redis Labs CIDR block)
+    - VPC CIDR (must not overlap with the Redis CIDR block)
 
 Then click **Initiate Peering**.
 
@@ -115,7 +115,7 @@ Then click **Initiate Peering**.
 Once your VPC peering request is accepted, the status in your subscription's **VPC Peering** tab will indicate 'Peer Established'.
 
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
-please don't hesitate to [contact Redis Labs support](https://redislabs.com/company/support/).
+please don't hesitate to [contact Redis support](https://redislabs.com/company/support/).
 
 #### Configure the CIDR whitelist
 
@@ -183,7 +183,7 @@ Before you click **Initiate Connection**, be sure that you copy the `gcloud` com
 Once your VPC peering request is accepted, the status in your subscription's **VPC Peering** tab will indicate 'Peer Established'.
 
 If you correctly follow these steps, you will be able to connect to your database. If you have any problems or questions,
-please don't hesitate to [contact Redis Labs support](https://redislabs.com/company/support/).
+please don't hesitate to [contact Redis support](https://redislabs.com/company/support/).
 
 ### VPCs with Azure
 
