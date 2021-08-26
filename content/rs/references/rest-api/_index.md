@@ -1,6 +1,6 @@
 ---
 Title: REST API
-description: Documents the REST API available to REdis Enterprise Software deployments.
+description: Documents the REST API available to Redis Enterprise Software deployments.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
