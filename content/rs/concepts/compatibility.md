@@ -57,6 +57,8 @@ There is some Redis functionality (shown below) that's not applicable for Redis 
     - LATENCY RESET
     - LATENCY GRAPH
     - LATENCY DOCTOR
+    - RESET
+    - FAILOVER
 - STRALGO LCS is not yet supported
 - Only a subset of Redis configuration settings (listed below) are applicable to Redis Software. Using CONFIG GET/SET with other configuration settings will return an error. The commands that apply to Redis Software are listed below:
     - hash-max-ziplist-entries
