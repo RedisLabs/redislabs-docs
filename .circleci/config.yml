@@ -81,6 +81,7 @@ jobs:
     deploy-docs-staging:
         docker:
             - image: xueshanf/awscli:latest
+            - image: icalialabs/wkhtmltopdf
         working_directory: ~/project
         steps:
             - attach_workspace:
@@ -112,9 +113,9 @@ jobs:
                     export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
                     aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/staging/*"
             # Install wkhtmltopdf tool for PDF generation
-            - run:
-                name: Install wkhtmltopdf
-                command: apt-get install wkhtmltopdf
+            #- run:
+            #    name: Install wkhtmltopdf
+            #    command: apt-get install wkhtmltopdf
             # Generate PDFs
             - run:
                 name: Generate PDFs
