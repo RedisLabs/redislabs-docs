@@ -42,6 +42,7 @@ jobs:
                 root: .
                 paths:
                     - public
+                    - utilities
 
     # The build job for production branches that includes Google Tag Manager
     build-docs-prod:
