@@ -877,6 +877,10 @@ section a {
   color: #5961ff;
 
 }
+#navigation a.pdf-link:hover {
+  color: #5961ff;
+
+}
 .btm_footer ul {
   margin: 0;
   background: #393b3c;
@@ -1353,6 +1357,18 @@ a.menu__link:hover:before {
   transition: all 200ms linear;
 }
 .edit-link i:before {
+  position: relative;
+  top: 3px;
+}
+.post-bottom .pdf-link a {
+  border: 2px solid #5961ff;
+  color: #5961ff;
+  padding: 6px;
+  border-radius: 3px;
+  text-decoration: none !important;
+  transition: all 200ms linear;
+}
+.pdf-link i:before {
   position: relative;
   top: 3px;
 }
@@ -1948,6 +1964,10 @@ nav#toc.fixed-pos {
   color: white;
   background: #354253;
 }
+.post-bottom .pdf-link a:hover {
+  color: white;
+  background: #354253;
+}
 .panel-heading {
   /* text-indent: -9999px; */
   font-weight: 700;
@@ -1978,11 +1998,21 @@ ol li ul li {
   position: relative;
   top: -3px;
 }
+.pdf-link a i {
+  margin-right: 6px;
+  font-size: 17px;
+  position: relative;
+  top: -3px;
+}
 ol > li > ul > li {
   margin-top: 10px;
 }
 .edit-link {
   font-size: 14px;
+}
+.pdf-link {
+  font-size: 14px;
+  margin:auto
 }
 i.icon-Top {
   margin-left: 5px;
@@ -3215,6 +3245,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   div#navigation .edit-link {
     display: none;
   }
+  div#navigation .pdf-link {
+    display: none;
+  }
 
   .anchor {
     display: none;
@@ -3257,6 +3290,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
     padding: 1rem 1.6rem;
   }
   .edit-link a {
+    text-decoration: none !important;
+  }
+  .pdf-link a {
     text-decoration: none !important;
   }
   article > section.page #navigation label {
