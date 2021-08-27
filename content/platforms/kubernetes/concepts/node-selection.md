@@ -1,5 +1,5 @@
 ---
-Title: Controlling Node Selection
+Title: Control node selection
 weight: 80
 alwaysopen: false
 description: This section provides information about how Redis Enterprise cluster pods can be scheduled to only be placed

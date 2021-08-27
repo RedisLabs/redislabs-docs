@@ -44,4 +44,3 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 \* No longer supported by Google  
 \*\* No longer supported by VMware  
 \*\*\* Tanzu Kubernetes Grid Integrated Edition  
-
