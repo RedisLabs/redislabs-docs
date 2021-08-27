@@ -100,7 +100,6 @@ We recommend that you plan to keep all nodes up until the upgrade is completed
 on all nodes. The node role is shown in the output of the `rladmin status
 nodes` command.
 - You cannot change the installation path or user during upgrade.
-- Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of updating them through the API. For assistance with this issue, contact [Support](https://support.redislabs.com).
 
 {{< /warning >}}
 
