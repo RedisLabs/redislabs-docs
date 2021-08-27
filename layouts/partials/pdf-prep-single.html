@@ -1,0 +1,36 @@
+{{ $sourcePage := .Page }}
+
+<html>
+<head>
+  <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
+  <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
+  <link href="{{"css/bootstrap.min.css" | relURL}}" rel="stylesheet">
+  <link href="{{"css/foundation-icons.css" | relURL}}" rel="stylesheet">
+  {{ $style := resources.Get "theme-flex/style.css"  | resources.Fingerprint }}
+  <link href="{{$style.RelPermalink}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+  <link href="{{"css/featherlight.min.css" | absURL}}" rel="stylesheet">
+  
+  <meta charset="utf-8">
+  {{ with $sourcePage }}
+    <title>{{ .Title }}</title>
+  {{ end }}
+</head>
+
+<body>
+  {{ with $sourcePage }}
+    <h1>{{ .Title }}</h1>
+  {{ end }}
+
+  <ul>
+    {{ with $sourcePage }}
+      {{ partial "mini-toc.html" .}}
+    {{ end }}
+  </ul>
+
+  {{ with $sourcePage }}
+    <h2 id="{{ substr .RelPermalink 1 -1 }}" name="{{ .Title }}">{{ .Title }}</h2>
+    {{ .Content }}
+  {{ end }}
+</body>
+</html>
