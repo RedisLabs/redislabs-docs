@@ -81,9 +81,11 @@ jobs:
 
     # Deploy for branches other than -build to /staging/{branch}
     deploy-docs-staging:
+        dependencies:
+            pre:
+                - sudo apt-get install wkhtmltopdf
         docker:
             - image: xueshanf/awscli:latest
-            - image: icalialabs/wkhtmltopdf
         working_directory: ~/project
         steps:
             - attach_workspace:
