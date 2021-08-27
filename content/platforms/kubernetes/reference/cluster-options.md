@@ -1,5 +1,5 @@
 ---
-Title: Options for Redis Enterprise Clusters
+Title: Options for Redis Enterprise clusters
 description: A primer for the configuration options for Redis Enterprise cluster Custom Resource Definitions.
 weight: 32
 alwaysopen: false

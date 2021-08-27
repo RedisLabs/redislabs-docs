@@ -1,5 +1,5 @@
 ---
-Title: Sizing and Scaling a Redis Enterprise Cluster Deployment on Kubernetes
+Title: Sizing and scaling a Redis Enterprise cluster deployment on Kubernetes
 linkTitle: Sizing and scaling
 description: This section provides information about sizing and scaling Redis Enterprise in a Kubernetes deployment.
 weight: 50
