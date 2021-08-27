@@ -13,6 +13,14 @@ jobs:
             - run:
                 name: Set "Edit in GitHub" link for the specified branch in the hugo config
                 command: sed -i s/branch/${CIRCLE_BRANCH}/g config.toml
+            # Create temporary helper files to prepare for PDF generation
+            - run:
+                name: Create helper files for PDF generation
+                command: |
+                    cd utilities/create_pdf_tarball
+                    ./create_html.sh
+                    cd ../create_single_pdfs
+                    ./create_html.sh
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
@@ -95,7 +103,7 @@ jobs:
                     fi
                     export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
                     export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
-                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read # --size-only
+                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --exclude "pdfs/archive/*" --exclude "pdfs/*.pdf" # --size-only
             # Purge the site cache to force the deployed changes to display immediately
             - run:
                 name: Purge site cache
@@ -103,6 +111,45 @@ jobs:
                     export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
                     export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
                     aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/staging/*"
+            # Install wkhtmltopdf tool for PDF generation
+            - run:
+                name: Install wkhtmltopdf
+                command: sudo apt-get install wkhtmltopdf
+            # Generate PDFs
+            - run:
+                name: Generate PDFs
+                command: |
+                    if [ "${CIRCLE_BRANCH}" == "master" ] ;
+                        then export LOCATION=staging/dev
+                    else
+                        export LOCATION=staging/${CIRCLE_BRANCH} ;
+                    fi
+                    cd utilities/create_pdf_tarball
+                    ./create_pdfs_tarball.sh
+                    cd ../create_single_pdfs
+                    ./create_pdfs.sh
+                    cd ../..
+                    cp -r static/pdfs public
+            # Remove temporary helper files created for PDF generation
+            - run:
+                name: Remove PDF generation helper files
+                command: |
+                    cd utilities/create_pdf_tarball
+                    ./delete_tmps.sh
+                    cd ../create_single_pdfs
+                    ./delete_tmps.sh
+            # Deploy PDFs to S3 bucket
+            - run:
+                name: Deploy PDFs to S3 bucket
+                command: |
+                    if [ "${CIRCLE_BRANCH}" == "master" ] ;
+                        then export LOCATION=staging/dev
+                    else
+                        export LOCATION=staging/${CIRCLE_BRANCH} ;
+                    fi
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "pdfs/archive/*" --include "pdfs/*.pdf" --cache-control max-age=0 # --size-only
 
     # Deploy only RS site files to the AWS S3 bucket for the branch
     deploy-docs-prod:
