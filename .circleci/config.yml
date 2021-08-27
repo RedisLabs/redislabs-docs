@@ -118,7 +118,7 @@ jobs:
                 name: Install wkhtmltopdf
                 command: |
                     curl -L -o wkhtmltopdf.tar.xz https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_arm64.deb
-                    sudo dpkg -i wkhtmltox_0.12.6-1.bionic_arm64.deb
+                    dpkg -i wkhtmltox_0.12.6-1.bionic_arm64.deb
             # Generate PDFs
             - run:
                 name: Generate PDFs
