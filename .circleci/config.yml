@@ -114,7 +114,7 @@ jobs:
             # Install wkhtmltopdf tool for PDF generation
             - run:
                 name: Install wkhtmltopdf
-                command: sudo apt-get install wkhtmltopdf
+                command: apt-get install wkhtmltopdf
             # Generate PDFs
             - run:
                 name: Generate PDFs
