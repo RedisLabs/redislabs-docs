@@ -27,7 +27,7 @@ For details about individual modules, see the corresponding documentation.
 |||||<br/>|
 | Active-Active (CRDB)    | No         | No           | Yes (v1.0) | No           |
 | Backup/Restore          | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
-| Clustering              | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v2.2.3) |
+| Clustering              | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v2.2.3)[^1] |
 | Custom hashing policy   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
 | Eviction expiration     | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | No           |
 | Failover/migration      | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
@@ -35,10 +35,12 @@ For details about individual modules, see the corresponding documentation.
 | Module datatypes        | Yes        | Yes          | Yes        | Yes          |
 | Multikey methods        | Yes (v1.0) | No           | Yes (v1.0) | No           |
 | Persistence (AOF)       | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v2.0)   |
-| Persistence (snapshop)  | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
+| Persistence (snapshot)  | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
 | Redis on Flash (RoF)    | No         | Yes (vTBD)   | Yes (vTBD) | No           |
 | Replica Of              | Yes (v1.0) | Yes (v2.0)   | No         | Yes (v2.2)   |
 | Reshard/rebalance       | No         | Yes (v2.0)   | Yes (v1.0) | No           |
+
+[^1]: The RedisGraph module supports clustering, however, individual Graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, contact support.
 
 | Feature name/capability | [RedisJSON]({{< relref  "/modules/redisjson" >}})    | [RediSearch]({{< relref  "/modules/redisearch" >}})    | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) |
 |-------------------------|:------------:|:-------------:|:---------------:|
@@ -56,10 +58,12 @@ For details about individual modules, see the corresponding documentation.
 | Module datatypes        | Yes          | Yes           | Yes          | 
 | Multikey methods        | No           | Yes (v2.0     | Yes (v1.2)   | 
 | Persistence (AOF)       | Yes (v1.0)   | Yes (v1.4)    | Yes (v1.2)   | 
-| Persistence (snapshop)  | Yes (v1.0)   | Yes (v1.6)    | Yes (v1.2)   | 
+| Persistence (snapshot)  | Yes (v1.0)   | Yes (v1.6)    | Yes (v1.2)   | 
 | Redis on Flash (RoF)    | Yes (v1.0)   | Yes (v2.0)    | Yes (v1.4.7) | 
-| Replica Of              | Yes (v1.0)   | Yes (v1.6)    | Yes (v1.2)   | 
+| Replica Of              | Yes (v1.0)   | Yes (v1.6)[^2]    | Yes (v1.2)   | 
 | Reshard/rebalance       | Yes (v1.0)   | Yes (v2.0)    | Yes (v1.2)   | 
+
+[^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
 
 ## Feature descriptions
 
@@ -77,8 +81,13 @@ The following table briefly describes each feature shown in the earlier tables.
 | Module datatypes        | Supports module-specific datatypes and existing Redis types |
 | Multikey methods        | Includes methods that support multiple keys (inverted cells) |
 | Persistence (AOF)       | Supports databases using AoF persistence |
-| Persistence (snapshop)  | Supports databases using snapshop persistence | 
+| Persistence (snapshot)  | Supports databases using snapshot persistence | 
 | Redis on Flash (RoF)    | Supports Redis on Flash (RoF) |
 | Replica Of              | Supports databases using REPLICAOF  | 
 | Reshard/rebalance       | Supports module is able to operate in a database that is resharded and rebalanced|
 
+<!-- 
+    Individual footnotes are rendered below the following heading.  
+    Thus, any additional sections need to be placed above this comment.
+-->
+## Footnotes
