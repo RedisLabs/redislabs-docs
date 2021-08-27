@@ -1,5 +1,6 @@
 ---
-Title: Redis Kubernetes Architecture
+Title: Redis Enterprise on Kubernetes Architecture
+linkTitle: Architecture
 description: This section provides an overview of the architecture and considerations for Redis Enterprise on Kubernetes.
 weight: 20
 alwaysopen: false
