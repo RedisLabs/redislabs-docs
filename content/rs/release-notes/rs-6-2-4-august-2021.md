@@ -103,13 +103,13 @@ You can enable data plane internode encryption by:
 
 ### Internal certificate management
 
-Internode encryption relies on internal certificates signed by a unique, private CA certificate created for your deployment.  The private CA generates and signs leaf certificates for internode encryption only.  It's generated when you install or upgrade to Redis Enterprise 6.2.4.  it's used only within the cluster and is not exposed outside of the cluster.  
+Internode encryption relies on internal certificates signed by a unique, private CA certificate created for your deployment.  The private CA generates and signs leaf certificates for internode encryption only.  It's generated when you install or upgrade to Redis Enterprise 6.2.4.  It's used only within the cluster and is not exposed outside of the cluster.  
 
 The leaf certificates expire regularly; they're automatically rotated before expiration and alerts are issued as needed.
 
 ### Open source Redis compatibility
 
-[Redis 6.2](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES) introduced new commands, feature improvements, security fixes; it addresses many customer requests.
+[Redis 6.2](https://raw.githubusercontent.com/redis/redis/6.2/00-RELEASENOTES) introduced new commands, feature improvements, and security fixes; it addresses many customer requests.
 
 Redis Enterprise Software supports all new commands, except [RESET](https://redis.io/commands/reset) and [FAILOVER](https://redis.io/commands/failover).  (Redis Enterprise takes a different approach to connectivity; it also separates control plane operations from data plane operations.)
 
