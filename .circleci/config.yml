@@ -38,6 +38,12 @@ jobs:
                 command: |
                     cd public
                     rm -rf embeds revealjs
+            # Test install wkhtmltopdf
+            - run:
+                name: Install wkhtmltopdf
+                command: |
+                    apt-get install wkhtmltopdf
+                    wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
             - persist_to_workspace:
                 root: .
                 paths:
