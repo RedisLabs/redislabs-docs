@@ -42,7 +42,8 @@ jobs:
             - run:
                 name: Install wkhtmltopdf
                 command: |
-                    sudo apt-get update; sudo apt-get install wkhtmltopdf
+                    curl -L -o wkhtmltox.deb https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.bionic_amd64.deb
+                    sudo dpkg -i wkhtmltox.deb
                     wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
             - persist_to_workspace:
                 root: .
