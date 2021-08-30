@@ -42,7 +42,7 @@ jobs:
             - run:
                 name: Install wkhtmltopdf
                 command: |
-                    sudo apt-get install wkhtmltopdf
+                    sudo apt-get update; sudo apt-get install wkhtmltopdf
                     wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
             - persist_to_workspace:
                 root: .
