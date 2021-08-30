@@ -6,6 +6,20 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
+## v1.0.8 (August 2021)
+
+This is a maintenance release for version 1.0.
+Update urgency: `LOW` -  No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Enhancements:
+    - #[257](https://github.com/redisjson/redisjson/issues/257) Support inter shards TLS capability
+
+- Bug fixes:
+   - #[282](https://github.com/redisjson/redisjson/issues/282) Change [JSON.DEBUG](https://oss.redislabs.com/redisjson/commands/#jsondebug) first key index to 2
+
+
 ## v1.0.7 (December 2020)
 
 This is a maintenance release for version 1.0.
