@@ -10,7 +10,7 @@ aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kuberne
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments.
 
-## Upgrading Redis Enterprise 
+## Upgrade Redis Enterprise 
 
 ### Download the bundle
 You need to ensure that you pull the correct version of the bundle. You can find the version tags
