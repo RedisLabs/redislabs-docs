@@ -26,7 +26,7 @@ You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading.md">}}
 
 Keep the following in mind:
 
-- Upgrades from versions earlier than v6.0 are not supported.
+- Upgrades from versions earlier than v6.0 are not supported
 
 - The new internode encryption feature requires port 3342 to be open on all machines in the cluster.
 
@@ -69,13 +69,13 @@ Redis Enterprise modules have individual release numbers [and lifecycle]({{<relr
 
     For help migrating to the LDAP-based mechanism, see [Migrate to role-based LDAP]({{<relref "/rs/security/ldap/migrate-to-role-based-ldap.md">}}).
     
-- Following the EOL declaration of Open stack swift, it was removed as a target for backup and export.
+- [OpenStack Object Storage](https://wiki.openstack.org/wiki/Swift) ("Swift") has reached end-of-life.  Consequently, you can no longer use ObjectStack Swift as a target for database backup or export operations.  
 
 ## Features and enhancements
 
 ### Internode encryption
 
-Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plan and the data plane: 
+Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plan and the data plane, as shown in the following diagram. 
 
 {{<image filename="images/rs/internode-encryption.png" alt="This diagram shows how internode encryption secures communication on the control plane and the dataplane." >}}{{< /image >}}
 
@@ -115,7 +115,7 @@ The leaf certificates expire regularly; they're automatically rotated before exp
 
 Redis Enterprise Software supports all new commands, except [RESET](https://redis.io/commands/reset) and [FAILOVER](https://redis.io/commands/failover).  (Redis Enterprise takes a different approach to connectivity; it also separates control plane operations from data plane operations.)
 
-To learn more about Redis Enterprise Software compatibility with open source Redis, see [In Redis Enterprise compatibility with open source]({{<relref "/rs/concepts/compatibility.md">}})
+To learn more, see Redis Enterprise Software [compatibility with open source]({{<relref "/rs/concepts/compatibility.md">}}).
 
 ### Redis modules
 
@@ -129,7 +129,9 @@ Redis Enterprise Software v6.2.4 includes the following Redis modules:
 
 ### Internode encryption for modules 
          
-To utilize data plane encryption for existing databases with modules, update the module to the latest version prior to enabling data plane encryption. To add or upgrade modules to your databases, see [these instructions] ({{<relref "/rs/latest/modules/upgrading-rs/#upgrading-the-module-for-the-database.">}})
+To utilize data plane encryption for existing databases with modules, update the module to the latest version prior to enabling data plane encryption. 
+
+For help, see [Upgrade the module for a database]({{<relref "//modules/add-module-to-cluster.md#upgrading-the-module-for-the-database">}}).
 
 ### Module-related enhancements
 
