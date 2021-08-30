@@ -120,7 +120,7 @@ curl -v -k -u "demo@redislabs.com:xxx" -X POST -d @add-user.json -H "Content-Typ
 
 ### Deploying a Redis Enterprise cluster
 
-A Redis Enterprise cluster (REC) requires no special setup other to be configured with LDAP as the configuration is outside of the scope of the Redis Enterprise custom resource.
+A Redis Enterprise cluster (REC) requires no special setup other than to be configured with LDAP since the configuration is outside of the scope of the Redis Enterprise custom resource.
 
 You can create a simple test cluster that can be used with the examples below by using the following custom resource:
 
