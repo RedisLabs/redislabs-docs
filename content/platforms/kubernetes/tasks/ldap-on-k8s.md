@@ -85,7 +85,7 @@ cluster for testing using a [helm chart for OpenLDAP](https://github.com/helm/ch
    ldapadd -h localhost -p 3889 -x -W -D "cn=admin,dc=example,dc=org" -f user.ldif
    ```
 
-## Deploying a cluster with LDAP support
+## Deploy a cluster with LDAP support
 
 ### Overview
 
