@@ -1,5 +1,6 @@
 ---
-Title: Recovering a Redis Enterprise Cluster on Kubernetes
+Title: Recover a Redis Enterprise cluster on Kubernetes
+linkTitle: Recover a Redis cluster
 description: This task describes how to recover a Redis Enterprise cluster on Kubernetes.
 weight: 20
 alwaysopen: false

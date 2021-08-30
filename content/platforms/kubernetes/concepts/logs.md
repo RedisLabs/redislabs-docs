@@ -1,5 +1,6 @@
 ---
-Title: Redis Enterprise Logs on Kubernetes
+Title: Redis Enterprise logs on Kubernetes
+linkTitle: Logs
 description: This section provides information about how logs are stored and accessed.
 weight: 60
 alwaysopen: false

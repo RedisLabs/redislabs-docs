@@ -1,5 +1,6 @@
 ---
-Title: Creating Replica Databases on Kubernetes
+Title: Create replica databases on Kubernetes
+linkTitle: Create replica databases
 description: How to create and automate database replicas using the database controller
 weight: 42
 alwaysopen: false

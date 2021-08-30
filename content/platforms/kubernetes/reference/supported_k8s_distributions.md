@@ -41,7 +41,6 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | AKS 1.18                        | supported      |
 | EKS 1.18                        | supported      |
 
-\* No longer supported by Google
-\*\* No longer supported by VMware
-\*\*\* Tanzu Kubernetes Grid Integrated Edition
-
+\* No longer supported by Google  
+\*\* No longer supported by VMware  
+\*\*\* Tanzu Kubernetes Grid Integrated Edition  
