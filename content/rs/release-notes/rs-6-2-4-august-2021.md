@@ -75,9 +75,7 @@ Redis Enterprise modules have individual release numbers [and lifecycle]({{<relr
 
 ### Internode encryption
 
-Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plan and the data plane, as shown in the following diagram. 
-
-{{<image filename="images/rs/internode-encryption.png" alt="This diagram shows how internode encryption secures communication on the control plane and the dataplane." >}}{{< /image >}}
+Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plan and the data plane. 
 
 #### Control plane internode encryption
 
