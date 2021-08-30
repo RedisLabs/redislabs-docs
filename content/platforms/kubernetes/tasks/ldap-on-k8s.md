@@ -157,7 +157,7 @@ ldap_bind_dn: cn=admin,dc=example,dc=org
 ldap_password: admin
 ```
 
-### Using `rladmin` to update the configuration
+### Use `rladmin` to update the configuration
 
 If this information was in a file called “ldap.conf” stored in "/tmp", you can connect to a Redis Enterprise Node pod and configure the server via:
 
