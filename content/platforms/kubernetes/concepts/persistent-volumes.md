@@ -1,5 +1,6 @@
 ---
-Title: Deploying Kubernetes with Persistent Volumes in Operator-based Architecture
+Title: Deploy Kubernetes with persistent volumes in an operator-based architecture
+linkTitle: Persistent volumes
 description: This section covers details about how persistent volumes are sized and specified for Redis Enterprise cluster deployments.
 weight: 40
 alwaysopen: false

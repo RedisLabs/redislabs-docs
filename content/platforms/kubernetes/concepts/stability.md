@@ -1,5 +1,5 @@
 ---
-Title: Managing Pod Stability
+Title: Manage pod stability
 description: This section provides information about how you can use quality of service, priority class, eviction thresholds and resource monitoring
     to maintain cluster node pod stability.
 weight: 90

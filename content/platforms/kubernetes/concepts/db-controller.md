@@ -1,5 +1,6 @@
 ---
-Title: Managing Redis Enterprise Databases on Kubernetes
+Title: Manage Redis Enterprise databases on Kubernetes
+linkTitle: Manage databases
 description: This section describes how the database controller provides the ability to create, manage,
   and use databases via a database custom resource.
 weight: 100

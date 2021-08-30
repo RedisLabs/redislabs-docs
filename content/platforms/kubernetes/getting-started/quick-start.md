@@ -14,6 +14,7 @@ This quick start guide is for generic Kubernetes distributions ([kOps](https://k
  * [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/) (AKS)
  * [Rancher](https://rancher.com/products/rancher/) / [Rancher Kubernetes Engine](https://rancher.com/products/rke/) (RKE)
  * [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) (GKE)
+ * [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/)(EKS)
 
 If you're running either OpenShift or VMWare Tanzu, we provide specific getting started guides for installing the Redis Enterprise Operator on these platforms:
 
