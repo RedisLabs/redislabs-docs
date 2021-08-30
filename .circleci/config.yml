@@ -42,9 +42,10 @@ jobs:
             - run:
                 name: Install wkhtmltopdf
                 command: |
-                    curl -L -o wkhtmltopdf.tar.xz https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-                    tar -xf wkhtmltopdf.tar.xz
-                    wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
+                    curl -L -o wkhtmltox.tar.xz https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+                    tar -xf wkhtmltox.tar.xz
+                    ls -l wkhtmltox
+                    .wkhtmltox/bin/wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
             - persist_to_workspace:
                 root: .
                 paths:
