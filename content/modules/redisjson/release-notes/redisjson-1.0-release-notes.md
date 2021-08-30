@@ -9,6 +9,7 @@ categories: ["Modules"]
 ## v1.0.8 (August 2021)
 
 This is a maintenance release for version 1.0.
+
 Update urgency: `LOW` -  No need to upgrade unless there are new features you want to use.
 
 Details:
