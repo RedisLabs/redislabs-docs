@@ -6,6 +6,16 @@ weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## v2.2.6 (August 2021)
+
+This is a maintenance release for version 1.0.
+
+Update urgency: `LOW` -  No need to upgrade unless there are new features you want to use.
+
+Details:
+- Enhancements:
+    - #[333](https://github.com/redisbloom/redisbloom/issues/333) Support inter shards TLS capability
+
 ## v2.2.4 (July 2020)
 
 Headlines:
