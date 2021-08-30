@@ -1,23 +1,22 @@
 ---
-Title: Redis Enterprise Software Release Notes 6.2.4 (September 2021)
-linkTitle: 6.2.4 (September 2021)
+Title: Redis Enterprise Software Release Notes 6.2.4 (August 2021)
+linkTitle: 6.2.4 (August 2021)
 description:
 weight: 76
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/release-notes/rs-6-2-4-september-2021/
-         /rs/release-notes/rs-6-2-4-september-2021.md
+aliases: /rs/release-notes/rs-6-2-4-august-2021/
+         /rs/release-notes/rs-6-2-4-august-2021.md
 ---
 
 [Redis Enterprise Software version 6.2.4](https://redislabs.com/redis-enterprise-software/download-center/software/) is now available! 
 
 This version offers:
 
-- Encryption of all communications within cluster nodes, 
-- New functionality 
+- Encryption of all communications within cluster nodes 
 - Security enhancements
 - Bug fixes
-- Compatibility with the latest version of open source Redis 6.2.
+- Compatibility with the latest version of open source Redis 6.2.3
 
 ## Version changes
 
@@ -27,7 +26,7 @@ You can [upgrade to v6.2.4]({{<relref "/rs/installing-upgrading/upgrading.md">}}
 
 Keep the following in mind:
 
-- Upgrades from versions earlier than v6.0 are not supported
+- Upgrades from versions earlier than v6.0 are not supported.
 
 - The new internode encryption feature requires port 3342 to be open on all machines in the cluster.
 
@@ -45,7 +44,7 @@ The default behavior of the `upgrade db` command has changed.  It is now control
 
     Setting the upgrade policy to `latest` ensures that the most recent Redis features are available to new databases and ones that are upgraded.  It also requires more frequent upgrades, as open source Redis is updated more frequently than Redis Enterprise Software.
 
-The Redis Enterprise Software 6.2.4 package includes compatibility with the most recent major Redis release (v6.0) and the latest (most recent) update to Redis (v6.2).  
+The Redis Enterprise Software 6.2.4 package includes compatibility with the most recent major Redis release (v6.0) and the latest (most recent) update to Redis (v6.2.3).  
 
 By default, compatibility with v6.0 will be installed.  To change this, use `rladmin` to set the upgrade policy and the default Redis version:
 
@@ -69,12 +68,14 @@ Redis Enterprise modules have individual release numbers [and lifecycle]({{<relr
 - [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), the SASL-based LDAP mechanism was deprecated in favor of a new [RBAC-based approach]({{<relref "/rs/security/ldap/">}}).  As of v.6.2.4, support for the older mechanism has been removed.
 
     For help migrating to the LDAP-based mechanism, see [Migrate to role-based LDAP]({{<relref "/rs/security/ldap/migrate-to-role-based-ldap.md">}}).
+    
+- Following the EOL declaration of Open stack swift, it was removed as a target for backup and export.
 
 ## Features and enhancements
 
 ### Internode encryption
 
-Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plan (the admin console) and the data plane (Redis clients, the OSS Cluster API, and the REST API):
+Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plan and the data plane: 
 
 {{<image filename="images/rs/internode-encryption.png" alt="This diagram shows how internode encryption secures communication on the control plane and the dataplane." >}}{{< /image >}}
 
@@ -90,12 +91,16 @@ Data plane internode encryption is available for new or fully upgraded clusters.
 
 You can enable data plane internode encryption by:
 
-- Enabling it for individual databases
-
-- Setting the TBD policy:
+- Setting the cluster policy to enable data plane internode encryption by default for new databases
+    
+    ``` shell
+    rladmin tune cluster data_internode_encryption
+    ```
+         
+- Enabling it for individual existing databases
 
     ``` shell
-    rladmin command TBD
+    rladmin tune db <db:id | name> data_internode_encryption enabled
     ```
 
 ### Internal certificate management
@@ -110,7 +115,7 @@ The leaf certificates expire regularly; they're automatically rotated before exp
 
 Redis Enterprise Software supports all new commands, except [RESET](https://redis.io/commands/reset) and [FAILOVER](https://redis.io/commands/failover).  (Redis Enterprise takes a different approach to connectivity; it also separates control plane operations from data plane operations.)
 
-To learn more about Redis Enterprise Software compatibility with open source Redis, see [In v6.0.20]({{<relref "/rs/concepts/compatibility.md">}})
+To learn more about Redis Enterprise Software compatibility with open source Redis, see [In Redis Enterprise compatibility with open source]({{<relref "/rs/concepts/compatibility.md">}})
 
 ### Redis modules
 
@@ -122,18 +127,14 @@ Redis Enterprise Software v6.2.4 includes the following Redis modules:
 - [RedisGraph v2.4.7]({{<relref "/modules/redisgraph/release-notes/redisgraph-2.4-release-notes.md">}})
 - [RedisTimeSeries v1.4.10]({{<relref "/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes.md">}})
 
-The upgrade package includes general availability (GA) releases of each module.
-
 ### Internode encryption for modules 
-
-Before enabling data plane internode encryption for existing databases using modules, make sure you've upgraded the module to at least the version shown earlier.
+         
+To utilize data plane encryption for existing databases with modules, update the module to the latest version prior to enabling data plane encryption. To add or upgrade modules to your databases, see [these instructions] ({{<relref "/rs/latest/modules/upgrading-rs/#upgrading-the-module-for-the-database.">}})
 
 ### Module-related enhancements
 
 Added the capability to update current module arguments for an existing database. 
-
 In earlier versions, you could do this only when upgrading a module.
-
 To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrade">}}).
 
 ## Resolved issues
@@ -146,11 +147,11 @@ To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrad
 
 - RS52265 - Fixed excessive log lines reporting when Active-Active database is on featureset `0`. We recommend [upgrading the featureset]({{<relref "/rs/installing-upgrading/upgrading.md#upgrading-activeactive-databases">}}) version to the latest
 
-RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active database became disconnected during full synchronization
+- RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active database became disconnected during full synchronization
 
-RS58184 - Fixed a bug when trying to create an Active-Active database with expired syncer certificates; participating clusters were creating replicas even though the create operation failed.
+- RS58184 - Fixed a bug when trying to create an Active-Active database with expired syncer certificates; participating clusters were creating replicas even though the create operation failed.
 
-RS48988 - Add the username description in the log upon an unauthorized REST API request
+- RS48988 - Add the username description in the log upon an unauthorized REST API request
 
 ## Known limitations
 
