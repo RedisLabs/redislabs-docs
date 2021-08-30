@@ -706,8 +706,8 @@ rladmin tune cluster
 | default_concurrent_restore_actions | Default number of concurrent actions during node restore from a snapshot (positive integer or "all") |
 | show_internals |  |
 | expose_hostnames_for_all_suffixes |  |
-| redis_upgrade_policy | The policy defines how Redis upgrades are handled when you upgrade Redis Enterprise Software.<br /><br />Supported values are `latest` (Limits Redis upgrades to the current minor Redis release (`.x`) \[_default as of v6.2.4_] and `major` (Limits Redis upgrades to the current major (`.0`) release). \[_effective default prior to v6.2.4_] |
-| default_redis_version | The minimum version of Redis used when databases are created or upgraded.  Typically changed in conjunction with the `redis_upgrade_policy` setting.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis. |
+| redis_upgrade_policy | When you upgrade or create a new Redis database, this policy determines which version of Redis database compatibility is used.<br /><br />Supported values are:<ul><li><p>`latest`, which applies the most recent Redis compatibility update \(_effective default prior to v6.2.4_)<p></li><li>`major`, which applies the most recent major-release compatibility update (_default as of v6.2.4_).</li></ul>  |
+| default_redis_version | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value.  |
 
 Redis cluster watchdog supports two pre-configured profiles:
 -  `cloud` profile is suitable for common cloud environments. It has a higher tolerance for network jitter.

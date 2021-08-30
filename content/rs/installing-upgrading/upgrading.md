@@ -7,177 +7,142 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/upgrading/
 ---
-To upgrade Redis Enterprise Software on a cluster,
-you must upgrade each of the nodes and then upgrade each of the databases in the cluster.
+To upgrade Redis Enterprise Software, you:
 
-For Active-Active clusters, you must upgrade all the nodes on all clusters first, and then upgrade each of the databases in each cluster.
+1.  Upgrade the software on all nodes of the cluster.
 
-## Upgrade planning
+2.  _(Optional)_ Upgrade each database in the cluster.
 
-The upgrade process requires a bit of planning:
+You don't have to upgrade the databases in cluster, however, new features and important fixes might not be enabled until you do so.
 
-1.  Always check the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) before upgrading to a newer version of Redis Enterprise Software. 
+## Supported upgrade paths
 
-     In particular, take note of any upgrade notes, such as the [Redis Enterprise 6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}}).
+The upgrade path depends on two requirements, which vary according to the desired cluster version:
 
-2.  Verify version requirements:
+| Target<br/>cluster version | Minimum<br/>cluster version | Minimum database<br/>compatibility version |
+|:----------:|:----------:|:----------:|
+| 6.2    | 6.0      | 6.0 |
+| 6.0.20 | 5.6      | 5.0 |
+| 6.0    | 5.4.0    | 5.0 |
+| 5.6    | 5.0.2-30 | 4.0 |
 
-    - To upgrade your cluster to v6.2, your cluster must first be on 6.0 or above _and_ your database nodes must be running Redis 6.
+To upgrade successfully, both of the following must be true:
 
-    - To upgrade your cluster to v6.0.20, your cluster must first be on 5.6.0
+- Each node on your cluster must be at the minimum cluster version
+- The Redis database compatibility version for each database must meet the required minimum.
 
-    - To upgrade your cluster to v6.0, your cluster must first be on 5.4.0 or above _and_ the databases must be running Redis 5.
+If you do not meet these minimums, you must first update the nodes and databases accordingly.
 
-    - To upgrade your cluster to v5.6, your cluster must first be on 5.0.2-30 or above.
+## Upgrade a cluster
 
-    - To upgrade your cluster to v5.4, your cluster must first be on 5.0 or above.
+### Upgrade prerequisites
 
-    - To upgrade your cluster to v5.2, your cluster must first be on 4.5 or above.
+Before upgrading a cluster:
 
-3.  Avoid using features introduced in the newer version until after all nodes have been upgraded; otherwise, unexpected results or cluster failures can occur.
+- Verify that you meet the upgrade path requirements for your desired cluster version and review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
 
-## Upgrade process
+- Identify the cluster master node and upgrade that node first.
 
-The upgrade process includes several tasks, including upgrading:
+    Use the [`rladmin status nodes`]({{< relref "/rs/references/rladmin.md#status" >}}) command to identify the master node.
 
-- [Open source Redis](#upgrade-open-source-redis)
-- [Each node](#upgrade-a-node) in the cluster
-- [Each database](#upgrade-a-database)
-- [Active-Active databases](#upgrade-activeactive-databases)
+## Cluster upgrade process
 
-The following sections provide more info.
+Starting with the master node, follow these steps for every node in the cluster.  (We recommend upgrading each node separately to ensure cluster availability.)
 
-The upgrade process for a Redis Enterprise Software cluster is considered _ongoing_ when nodes in the cluster have mixed versions.
+1.  Download the Redis Enterprise Software installation package to the machine running the node.  
 
-The upgrade process is only considered _complete_ when all nodes are upgraded to the new version.
+    For help, see [Download the installation package]({{< relref "/rs/installing-upgrading#download-the-installation-package" >}})
 
-### Upgrade open source Redis
+1.  Untar the installation package.  Note that neither the installation path nor the user can be changed during the upgrade.
 
-Part of the Redis Enterprise Software upgrade process includes upgrading open source (OSS) Redis, also known as _core_ Redis.  
+1.  Verify node operation with the following commands:
 
-Each upgrade of Redis Enterprise Software includes _two_ versions of OSS Redis to help smooth the upgrade process:
+    ``` shell
+    rlcheck
+    rladmin status extra all
+    ```
 
-- The _latest_ release reflects the most recent minor release (example: Redis 6.2), whether major (x.0 release) or minor (x.y).
+1.  Run the install command:
 
-- The last _major_ release reflects the most recent major release (example: 6.0).
+    ``` shell
+    sudo ./install.sh -y
+    ```
 
-When you upgrade OSS Redis, you can upgrade from:
+    The installation script automatically recognizes the upgrade and responds accordingly.
 
-- The previous major release to the current major release.
+    The upgrade replaces all node processes, which might briefly interrupt any active connections.
 
-- The previous minor release to the current minor release.
+1.  Verify node operation by repeating the commands from Step 3.
 
-If you're not currently using either of the supported previous releases included with the update, you need to separately update OSS Redis to one of those releases; otherwise, the update to Redis Enterprise Software fails.
+1.  If the admin console was open in a web browser during the upgrade, refresh the browser to reload the console.
 
-You can use `rladmin` to choose which release  to install:
+When each node is upgraded, the cluster is fully upgraded.
+
+## Upgrade a database
+
+### Upgrade prerequisites
+
+Before upgrading a database:
+
+- Review the relevant [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for any preparation instructions.
+
+- Verify that the database version meets the minimums specified earlier.
+
+    To determine the database version:
+
+    - Use the admin console to open the Configuration tab for the database.
+
+    - Use the `rladmin status all` command to display configuration details.  (An indicator appears in the command output when the database compatibility version is out-of-date.)
+
+- Verify the cluster is fully upgraded and operational.
+
+    Use the admin console to display the Configuration tab for the cluster.  The tab displays the cluster version information and the Redis database compatibility version.
+
+- To avoid data loss during the upgrade, take care to back up the data.  
+
+    You can export the data to an external location, enable replication, or enable persistence.
+
+    When choosing how to back up data, keep the following in mind:
+
+    - To reduce downtime when replication is enabled, a failover is performed before restarting the master database.
+
+    - When persistence is enabled without replication, the database is unavailable during restart because the data is restored from the persistence file.  AOF persistence restoration is slower than snapshot restoration.
+
+### Redis database upgrade policy
+
+In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility used to create new and update existing databases.  To learn more, see [`rladmin upgrade`]({{< relref "/rs/references/rladmin.md#upgrade" >}}).)
+
+As of v6.2.4, this policy defaults to `major`, which limits Redis database compatibility to the most recent major release (v6.0, as of this writing.).  To create databases using the most recent release of Redis, use `rladmin` to set the policy to `latest`.
 
 ``` shell
 tune cluster redis_upgrade_policy latest
 ```
 
-Updating OSS Redis also updates the default version used to create or update databases.  For example, if you update to the example 6.2 release described earlier and then you create a database, its version is `6.2`.
+### Database upgrade process
 
-Databases cannot be used by earlier versions of OSS Redis.  Later versions of OSS Redis can, for the most part, use older database versions.  (For details, review the relevant release notes.)
+To upgrade a database:
 
-Use `rladmin` to change the default database version:
+1.  Verify that the `redis_upgrade_policy` is set according to your preferences.
 
-``` shell
-tune cluster default_redis_version 6.2
-```
+1.  _(Optional)_  Back up the database to minimize data loss.
 
-To learn more, see the [rladmin reference]({{< relref "/rs/references/rladmin.md#tune-cluster" >}})
+1.  Use `rladmin` to upgrade the database:
 
-### Upgrade a node
+    ``` shell
+    rladmin upgrade db <database name | database ID>
+    ```
 
-Upgrading the software on a node requires installing the [RS installation
-package]({{< relref "/rs/installing-upgrading/_index.md" >}})
-on all of the machines on which RS is installed.
+    This restarts the database.  If replication and persistence are disabled, the data is lost.
 
-{{< warning >}}
+1. Check the Redis database compatibility version for the database to confirm the upgrade.  
 
-- You must upgrade the master node before you upgrade the other nodes.
-We recommend that you plan to keep all nodes up until the upgrade is completed
-on all nodes. The node role is shown in the output of the `rladmin status
-nodes` command.
-- You cannot change the installation path or user during upgrade.
+    To do so:
 
-{{< /warning >}}
+    - Use the admin console to open the Compatibility tab for the database; the Redis version displays the Redis database compatibility version.
 
-You run install.sh from the directory where you untarred the media
-just like you do for a new installation. The software recognizes this is
-an upgrade and proceeds accordingly.
+    - Use `rladmin status databases extra all` to display a list of the databases in your cluster and their current Redis database compatibility version.
 
-Just like for a new installation, you must sudo or be root to do the
-upgrade.
-
-To upgrade a node run:
-
-```sh
-sudo ./install.sh
-```
-
-The node upgrade process restarts the services running RS, which causes
-a short interruption to connections to the proxy, node and databases.
-
-{{< warning >}}In order to ensure cluster and databases' availability, it is
-important to upgrade the nodes one by one, and **not attempt to upgrade
-more than one node at a time**.
-{{< /warning >}}
-
-To make sure that the node is functioning properly, run [`rlcheck`]({{< relref "/rs/references/rlcheck.md" >}}) and <nobr>`rladmin status extra all`</nobr>
-on the node both before and after the upgrade.
-
-If you have the RS management UI open in the browser while you are
-upgrading the nodes, make sure that you refresh the browser before trying
-to work with the UI again.
-
-### Upgrade a database
-
-Some upgrades add support for new Redis versions. In these cases,
-we recommend upgrading the databases to the new Redis
-version, although this is not mandatory because upgrades are backward
-compatible. Redis Software also supports a mix of Redis database versions.
-
-Redis Software always supports two Redis versions. By default, new Redis databases
-are created with the latest version, and existing databases get upgraded
-to the latest version according to the instructions detailed below. 
-
-To change the default Redis version to the previously supported version, use `rladmin` and run the <nobr>`tune cluster default_redis_version`</nobr> command.
-
-To check whether your Redis database versions match the latest supported Redis
-version:
-
-- In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
-    run the `status` command.
-    If the Redis version is not the latest supported, an indication
-    appears in the command output next to the database's status.
-- In the Management UI, go to the **Cluster \> Configuration** page.
-    The page lists the latest Redis version supported.
-
-If the Redis database versions are older than the version supported by
-Redis Enterprise Software, we recommend upgrading your Redis databases.
-
-To upgrade your database:
-
-1. Make sure that all of the nodes in the RS cluster are [upgraded](#upgrading-nodes).
-    You cannot upgrade databases before all of the nodes in the cluster are upgraded.
-1. In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}})
-    on any node in the cluster, run this command for each database: `rladmin upgrade db <database_name | database_ID>`
-
-During the database upgrade process, the database is restarted. As
-a result:
-
-- For databases that have [replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})
-    enabled, a failover is done before the master database restarts to make sure that
-    there is no downtime.
-- For databases without replication but with persistence enabled,
-    the database is unavailable during the restart because data is restored from the persistence file.
-    The length of the downtime is different for each persistence option.
-    For example, AOF usually takes longer than an RDB file.
-- For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
-    enabled, the database loses all its data after it is restarted.
-
-### Upgrade Active-Active databases 
+    Verify that the Redis version is set to the expected value.
 
 When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
