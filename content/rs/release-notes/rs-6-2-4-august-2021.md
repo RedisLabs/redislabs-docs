@@ -40,7 +40,7 @@ The default behavior of the `upgrade db` command has changed.  It is now control
 
     This is the default value for Redis Enterprise Software.
 
-- When set to `latest`, the policy creates new databases and upgrades existing ones to be compatible with latest (most recent) version of open source Redis, which was the default behavior of earlier versions of Redis Enterprise Software.  It is not longer the default behavior.
+- When set to `latest`, the policy creates new databases and upgrades existing ones to be compatible with the latest (most recent) version of open source Redis, which was the default behavior of earlier versions of Redis Enterprise Software.  This is no longer the default behavior.
 
     Setting the upgrade policy to `latest` ensures that the most recent Redis features are available to new databases and ones that are upgraded.  It also requires more frequent upgrades, as open source Redis is updated more frequently than Redis Enterprise Software.
 
@@ -61,7 +61,7 @@ Redis Enterprise Software v5.6.0 will reach end of life (EOF) on October 31, 202
 
 To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
-Redis Enterprise modules have individual release numbers [and lifecycle]({{<relref "/modules/modules-lifecycle.md">}}).
+Redis Enterprise modules have individual release numbers [and lifecycles]({{<relref "/modules/modules-lifecycle.md">}}).
 
 ### Deprecation notices
 
@@ -75,17 +75,17 @@ Redis Enterprise modules have individual release numbers [and lifecycle]({{<relr
 
 ### Internode encryption
 
-Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plan and the data plane. 
+Internode encryption (INE) encrypts all communication between nodes in a cluster; it is available for the control plane and the data plane. 
 
 #### Control plane internode encryption
 
-Control plane internode encryption encrypts all management communication with a cluster.  it is enabled by default for all new clusters and upgraded clusters.
+Control plane internode encryption encrypts all management communication within a cluster.  It is enabled by default for all new clusters and upgraded clusters.
 
 #### Data plane internode encryption
 
 Data plane internode encryption encrypts communication between nodes within a cluster, such as database replication between nodes.  
 
-Data plane internode encryption is available for new or fully upgraded clusters.  It not enabled by default.  
+Data plane internode encryption is available for new or fully upgraded clusters.  It is not enabled by default.  
 
 You can enable data plane internode encryption by:
 
@@ -139,15 +139,16 @@ To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrad
 
 ## Resolved issues
 
-- RS39954 - Changed the UI status indication for the [default user]({{<relref "/rs/references/rladmin.md#upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
+- RS39954 - Changed the UI status indication for the 
+[default user]({{<relref "/rs/references/rladmin#upgrade">}}) from `Active/Inactive` to `Enabled/Disabled` 
 
 - RS42626 - Increased the max length for modules commands from 23 characters to 64 characters
 
-- RS54732 - Fixed incorrect reporting of number database connections, which caused the number of connections to be reports as a 20 digit number
+- RS54732 - Fixed incorrect reporting of number database connections, which caused the number of connections to be reported as a 20 digit number
 
-- RS52265 - Fixed excessive log lines reporting when Active-Active database is on featureset `0`. We recommend [upgrading the featureset]({{<relref "/rs/installing-upgrading/upgrading.md#upgrading-activeactive-databases">}}) version to the latest
+- RS52265 - Fixed excessive log lines reporting when an Active-Active database is on featureset `0`. We recommend [upgrading the featureset]({{<relref "/rs/installing-upgrading/upgrading.md#upgrading-activeactive-databases">}}) version to the latest
 
-- RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active database became disconnected during full synchronization
+- RS56122 - Fixed a bug that was causing AOF files to grow when the replicas of two Active-Active databases became disconnected during full synchronization
 
 - RS58184 - Fixed a bug when trying to create an Active-Active database with expired syncer certificates; participating clusters were creating replicas even though the create operation failed.
 
@@ -156,4 +157,3 @@ To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrad
 ## Known limitations
 
 All [known limitations]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md#known-limitations">}}) from v6.0.20 have been fixed. 
-
