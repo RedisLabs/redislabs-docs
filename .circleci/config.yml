@@ -19,8 +19,8 @@ jobs:
                 command: |
                     cd utilities/create_pdf_tarball
                     ./create_html.sh
-                #    cd ../create_single_pdfs
-                #    ./create_html.sh
+                   cd ../create_single_pdfs
+                   ./create_html.sh
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
@@ -211,16 +211,16 @@ jobs:
                    cd utilities/create_pdf_tarball
                    ls -l
                    ./create_pdfs_tarball.sh
-                #    cd ../create_single_pdfs
-                #    ./create_pdfs.sh
+                   cd ../create_single_pdfs
+                   ./create_pdfs.sh
             # Remove temporary helper files created for PDF generation
             - run:
                name: Remove PDF generation helper files
                command: |
                    cd utilities/create_pdf_tarball
                    ./delete_tmps.sh
-                #    cd ../create_single_pdfs
-                #    ./delete_tmps.sh
+                   cd ../create_single_pdfs
+                   ./delete_tmps.sh
             - persist_to_workspace:
                 root: .
                 paths:

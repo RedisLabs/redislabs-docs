@@ -14,35 +14,35 @@ for file in $(find ../../content/rs -name '*.md'); do
     html_name=$(echo $file | sed 's#../../content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
     pdf_name=$(echo $file | sed 's#../../content/##g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
 
-    wkhtmltopdf http://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
+    wkhtmltopdf https://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
 done
 
 for file in $(find ../../content/rc -name '*.md'); do
     html_name=$(echo $file | sed 's#../../content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
     pdf_name=$(echo $file | sed 's#../../content/##g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
 
-    wkhtmltopdf http://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
+    wkhtmltopdf https://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
 done
 
 for file in $(find ../../content/ri -name '*.md'); do
     html_name=$(echo $file | sed 's#../../content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
     pdf_name=$(echo $file | sed 's#../../content/##g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
 
-    wkhtmltopdf http://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
+    wkhtmltopdf https://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
 done
 
 for file in $(find ../../content/modules -name '*.md'); do
     html_name=$(echo $file | sed 's#../../content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
     pdf_name=$(echo $file | sed 's#../../content/##g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
 
-    wkhtmltopdf http://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
+    wkhtmltopdf https://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
 done
 
 for file in $(find ../../content/platforms -name '*.md'); do
     html_name=$(echo $file | sed 's#../../content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
     pdf_name=$(echo $file | sed 's#../../content/##g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
 
-    wkhtmltopdf http://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
+    wkhtmltopdf https://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
 done
 
 echo "Finished converting html to PDFs."
