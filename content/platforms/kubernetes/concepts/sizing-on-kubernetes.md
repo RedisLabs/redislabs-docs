@@ -9,10 +9,10 @@ aliases: /rs/administering/kubernetes/sizing-scaling-redis-enterprise-cluster-ku
          /platforms/kubernetes/sizing-kubernetes/
 ---
 The following article reviews the mechanism and methods available for sizing
-and scaling a Redis Enterprise Cluster deployment.
+and scaling a Redis Enterprise cluster deployment.
 
 For minimum and recommended sizing, always follow the sizing guidelines
-detailed in the [Redis Enterprise Hardware Requirements]({{< relref
+detailed in the [Redis Enterprise hardware requirements]({{< relref
 "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
 ## Sizing and scaling cluster nodes
@@ -26,7 +26,7 @@ Define the number of cluster nodes in redis-enterprise-cluster.yaml file.
         nodes: 3
 
 The number of nodes in the cluster must be an uneven number
-equal to or greater than 3. Refer to the article [Highly-Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
+equal to or greater than 3. Refer to the article [Highly Available Redis](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
 for a detailed explanation on this topic.
 
 Set the number of cluster nodes during deployment
