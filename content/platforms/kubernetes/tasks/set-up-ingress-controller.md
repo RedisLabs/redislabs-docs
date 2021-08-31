@@ -86,7 +86,7 @@ Install one of the supported ingress controllers:
 
         nginx.ingress.kubernetes.io/ssl-passthrough: "true"  
 
-    The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending your ingress controller and any additional customizations. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.  
+    The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on your ingress controller and any additional customizations. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.  
 
 ## Test your external access  
 
