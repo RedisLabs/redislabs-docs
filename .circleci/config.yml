@@ -117,16 +117,15 @@ jobs:
     # Deploy for branches other than -build to /staging/{branch}
     deploy-pdfs-staging:
         docker:
-            - image: cimg/base:2021.07
+            - image: rrelledge/redis-docs-wkhtmltopdf:0.0.1
         working_directory: ~/project
         steps:
             - attach_workspace:
                 at: ~/project
-            # Test install wkhtmltopdf
+            # Test wkhtmltopdf
             - run:
-                name: Install wkhtmltopdf
+                name: Test wkhtmltopdf
                 command: |
-                    sudo apt-get update && sudo apt-get install wkhtmltopdf
                     which wkhtmltopdf
                     wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
             # Install wkhtmltopdf tool for PDF generation
