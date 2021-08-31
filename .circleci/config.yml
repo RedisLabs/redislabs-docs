@@ -38,14 +38,6 @@ jobs:
                 command: |
                     cd public
                     rm -rf embeds revealjs
-            # Test install wkhtmltopdf
-            - run:
-                name: Install wkhtmltopdf
-                command: |
-                    curl -L -o wkhtmltox.tar.xz https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-                    tar -xf wkhtmltox.tar.xz
-                    ls -l wkhtmltox
-                    .wkhtmltox/bin/wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
             - persist_to_workspace:
                 root: .
                 paths:
@@ -121,6 +113,22 @@ jobs:
                     export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
                     export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
                     aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/staging/*"
+
+    # Deploy for branches other than -build to /staging/{branch}
+    deploy-pdfs-staging:
+        docker:
+            - image: cimg/base:2021.07
+        working_directory: ~/project
+        steps:
+            - attach_workspace:
+                at: ~/project
+            # Test install wkhtmltopdf
+            - run:
+                name: Install wkhtmltopdf
+                command: |
+                    sudo apt-get update && sudo apt-get install wkhtmltopdf
+                    which wkhtmltopdf
+                    wkhtmltopdf https://docs.redis.com/latest/rs/ gen-test.pdf
             # Install wkhtmltopdf tool for PDF generation
             #- run:
             #    name: Install wkhtmltopdf
@@ -239,21 +247,27 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build-docs-staging:
-          filters:
-            branches:
-              ignore:
-                - /.*-build/
-                - latest
+    #   - build-docs-staging:
+    #       filters:
+    #         branches:
+    #           ignore:
+    #             - /.*-build/
+    #             - latest
       - build-docs-prod:
           filters:
             branches:
               only:
                 - /.*-build/
                 - latest
-      - deploy-docs-staging:
-          requires:
-            - build-docs-staging
+    #   - deploy-docs-staging:
+    #       requires:
+    #         - build-docs-staging
+    #       filters:
+    #         branches:
+    #           ignore:
+    #             - /.*-build/
+    #             - latest
+      - deploy-pdfs-staging:
           filters:
             branches:
               ignore:
