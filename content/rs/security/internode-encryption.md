@@ -10,11 +10,17 @@ aliases: /rs/security/internode-encryption/
 ---
 As of v6.2.4, Redis Enterprise Software supports _internode encryption_, which encrypts internal communication between nodes. This improves the security of data as it travels within a cluster.
 
-By default, internode encryption is enabled for the control plane, which manages communications within the cluster.
+Internode encryption is enabled for the _control plane_, which manages the cluster and its databases.
 
-Internode encryption is also supported for the data plane, which encrypts communication used to replicate shards between nodes and proxy communication with shards located on different nodes.
+Internode encryption is supported for the _data plane_, which encrypts communication used to replicate shards between nodes and proxy communication with shards located on different nodes.
 
-Internode encryption is disabled by default for individual databases in order to optimize for performance.  Encryption adds latency and overhead; the impact is measurable and varies according to the database. You can enable internode encryption for a database by changing its configuration settings.  This lets you choose when to favor performance and when to encrypt data.
+The following diagram shows how this works.
+
+{{<image filename="images/rs/internode-encryption.png" alt="A diagram showing the interaction between data plane encryption, control plane encryption, and various elements of a cluster." >}}{{< /image >}}
+
+Data plane encryption is disabled by default for individual databases in order to optimize for performance.  Encryption adds latency and overhead; the impact is measurable and varies according to the database, its field types, and the details of the underlying use case. 
+
+You can enable data plane encryption for a database by changing the database configuration settings.  This lets you choose when to favor performance and when to encrypt data.
 
 ## Prerequisites
 
@@ -27,9 +33,9 @@ You need to:
 - Open port 3342 for the TLS channel used for encrypted communication.
 
 
-## Enable internode encryption for databases
+## Enable data plan encryption
 
-To enable internode encryption for a database, you need to enable the appropriate setting for each database you wish to encrypt.  There are several ways to do this:
+To enable internode encryption for a database (also called _data plane encryption_), you need to enable the appropriate setting for each database you wish to encrypt.  To do so, you can:
 
 - Use the admin console to enable the **Internode encryption** setting from the database configuration screen:
 
@@ -38,7 +44,7 @@ To enable internode encryption for a database, you need to enable the appropriat
 -  Use the `rladmin` command-line utility to set the [data_internode_encryption]({{< relref "/rs/references/rladmin.md#tune" >}}) setting for the database:
 
     ``` text
-    rladmin tune db <database_id> true
+    rladmin tune db <database_id> data_internode_encryption enabled
     ``` 
 
 - Use the Redis Enterprise Software REST API to set the `data_internode_encryption` setting for the database.
@@ -48,17 +54,26 @@ To enable internode encryption for a database, you need to enable the appropriat
     { “data_internode_encryption” : true }
     ```
 
-When you change the internode encryption setting for a database, all active remote client connections are disconnected.  This affects every connection outside the node.
+When you change the data internode encryption setting for a database, all active remote client connections are disconnected.  This restarts the internal (DMC) proxy and disconnects all client connections.
+
+## Encryption ciphers and settings
+
+To encrypt internode communications, Redis Enterprise Software uses TLS 1.2 and the following Cipher suites:
+
+- ECDHE-RSA-AES256-GCM-SHA384
+- ECDHE-RSA-AES128-GCM-SHA256
+
+No configurable settings are exposed; internode encryption is used internally within a cluster and not exposed to any outside service.
 
 ## Certificate authority and rotation
 
-Starting with v6.2.4, internode communication is managed, in part, by two certificates, one for the control plane and one for the data plane.  These certificates are signed by a private certificate authority (CA).  The CA is not exposed outside of the cluster, so it cannot be accessed by external processes or services.  In addition, each cluster generates a unique CA that is not used anywhere else.
+Starting with v6.2.4, internode communication is managed, in part, by two certificates: one for the control plane and one for the data plane.  These certificates are signed by a private certificate authority (CA).  The CA is not exposed outside of the cluster, so it cannot be accessed by external processes or services.  In addition, each cluster generates a unique CA that is not used anywhere else.
 
 The private CA is generated when a cluster is created or upgraded to 6.2.4.  
 
 When nodes join the cluster, the cluster CA is used to generate certificates for the new node, one for each plane.  Certificates signed by the private CA are not shared between clusters and they're not exposed outside the cluster.
 
-All certificates signed by the internal CA are automatically rotated. Every thirty (30) days, an internal process checks certificate expiration and generates new certificates when the existing ones are about to expire.  Alerts also monitor certificate expiration and are triggered when problems prevent certificates from being rotated.
+All certificates signed by the internal CA are expire after forty-five (45) days and automatically rotated every thirty (30) days.  Alerts also monitor certificate expiration and trigger should certificate expiration fall below 45 days.  If you receive such an alert, contact support.
 
 You can use the Redis Enterprise Software REST API to rotate certificates manually:
 
