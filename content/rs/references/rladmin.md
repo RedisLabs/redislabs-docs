@@ -592,7 +592,7 @@ rladmin tune db <db:id | name>
         [ mtls_allow_weak_hashing <enabled | disabled> ]
         [ mtls_allow_outdated_cert <enabled | disabled> ]
         [ mtls_allow_no_xkusage <enabled | disabled> ]
-        [ data_internode_encryption <enabled | disabled> ]
+        [ data_internode_encryption <enable | disable> ]
 ```
 
 | Optional Parameters | Description |
@@ -683,10 +683,13 @@ rladmin tune cluster
         [ expose_hostnames_for_all_suffixes <enabled | disabled> ]
         [ redis_upgrade_policy <latest | major> ]
         [ default_redis_version <value> ]
+        [ data_internode_encryption <enable | disable> ]
+
 ```
 
 | Optional Parameters | Description |
 | - | - |
+| data_internode_encryption | Enables or disables [internode encryption]({{< relref "/rs/security/internode-encryption.md" >}}) for new databases |
 | default_concurrent_restore_actions | Default number of concurrent actions during node restore from a snapshot (positive integer or "all") |
 | default_redis_version | The default Redis database compatibility version used to create new databases.<br/><br/>  The value parameter should be a version number in the form of "x.y" where _x_ represents the major version number and _y_ represents the minor version number.  The final value corresponds to the desired version of Redis.<br/><br/>You cannot set _default_redis_version_ to a value higher than that supported by the current _redis_upgrade_policy_ value.  |
 | expose_hostnames_for_all_suffixes |  |
