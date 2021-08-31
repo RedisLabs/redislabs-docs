@@ -208,8 +208,8 @@ jobs:
                    else
                        export LOCATION=staging/${CIRCLE_BRANCH} ;
                    fi
+                   wkhtmltopdf --version
                    cd utilities/create_pdf_tarball
-                   ls -l
                    ./create_pdfs_tarball.sh
                    cd ../create_single_pdfs
                    ./create_pdfs.sh
@@ -254,7 +254,10 @@ jobs:
                    fi
                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
-                   aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "pdf-gen-*" --include "pdfs/archive/*" --include "pdfs/*.pdf" --cache-control max-age=0 # --size-only
+                   # Copy the offline PDFs tarball to the archive
+                   aws s3 cp public/pdfs/archive/*.tar.gz s3://docs.redis.com/$LOCATION/pdfs/archive/
+                   # Sync standalone PDFs
+                   aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "pdf-gen*" --include "pdfs/*.pdf" --cache-control max-age=0 # --size-only
 
 workflows:
   version: 2
