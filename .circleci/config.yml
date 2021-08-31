@@ -19,8 +19,8 @@ jobs:
                 command: |
                     cd utilities/create_pdf_tarball
                     ./create_html.sh
-                   cd ../create_single_pdfs
-                   ./create_html.sh
+                    cd ../create_single_pdfs
+                    ./create_html.sh
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
