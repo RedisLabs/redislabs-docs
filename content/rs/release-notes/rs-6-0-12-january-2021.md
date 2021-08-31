@@ -23,7 +23,7 @@ And other functional and stability improvements.
 #### Upgrade instructions
 
 - Follow [these instructions]({{<relref "/rs/installing-upgrading/upgrading.md">}}) for upgrading to RS 6.0.12 from RS 5.4.0 and above.
-- For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{<relref "/rs/installing-upgrading/upgrading#upgrading-activeactive-databases">}}).
+- For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{<relref "/rs/installing-upgrading/upgrading#upgrade-activeactive-databases">}}).
 
 #### Product lifecycle information
 
@@ -92,7 +92,7 @@ This is a configurable option and currently under preview mode. This behavior wi
 
 To enable the syncer automatic recovery, do these steps on each participating cluster:
 
-1. [Upgrade the featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrading-activeactive-databases" >}}) to `3`.
+1. [Upgrade the featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrade-activeactive-databases" >}}) to `3`.
 1. Enable the syncer automatic recovery using the REST API:
 
     ```sh

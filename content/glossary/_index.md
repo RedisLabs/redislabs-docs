@@ -12,6 +12,8 @@ categories: ["Glossary"]
 {{%/definition%}}
 --->
 
+## A, B
+
 {{%definition "admission controller"%}}
 A piece of code that intercepts requests to the Kubernetes API server prior to persistence of the object.
 
@@ -24,8 +26,9 @@ Allows you to manage permissions based on key patterns.
 More info: [redis.io/topics/acl](https://redis.io/topics/acl); [ACL wikipedia](https://en.wikipedia.org/wiki/Access-control_list); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Update database ACLs]({{<relref "/rs/security/ldap/update-database-acls.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
 {{%/definition%}}
 
+<a name="active-active"></a>
 {{%definition "Active-Active database (CRDB)"%}}
-Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
+Geo-distributed databases that span multiple [Redis Enterprise Software]({{<relref "#redis-enterprise-software">}}) [clusters]({{<relref "#cluster">}}). Active-Active databases, also known as conflict-free replicated databases (CRDB), depend on [multi-master replication (MMR)]({{<relref "#multi-master-replication-mmr">}}) and [conflict-free replicated data types (CRDTs)]({{<relref "#conflict-free-replicated-data-types-crdt">}}) to power a simple development experience for geo-distributed applications.
 
 More info: [Active-Active Geo-Distributed Redis]({{<relref "/rs/administering/designing-production/active-active.md">}}), [Geo-Distributed Active-Active Redis Applications]({{<relref "/rs/concepts/intercluster-replication.md" >}}), [Developing Applications for Active-Active Databases]({{<relref "rs/references/developing-for-active-active/_index.md">}})
 {{%/definition%}}
@@ -44,6 +47,8 @@ dataset by replaying the append-only log from the beginning to the end.
 
 More info: [Data Persistence]({{<relref "content/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "content/rs/concepts/data-access/persistence.md" >}})
 {{%/definition%}}
+
+## C
 
 {{%definition "CIDR allowlist"%}}
 Classless Inter-Domain Routing (CIDR) is a method to allocate and route IP addresses. A CIDR allowlist defines a range of IP addresses and permits connections to them.
@@ -65,6 +70,11 @@ An internally managed Redis database that acts a single repository for all clust
 A collection of Redis Enterprise services responsible for provisioning, migration, monitoring, re-sharding, re-balancing, de-provisioning, auto-scaling
 {{%/definition%}}
 
+{{%definition "conflict-free replicated databases (CRDB)"%}}
+
+Conflict-free replicated databases (CRDB) are an alternate name for [Active-Active databases](#active-active).
+{{%/definition%}}
+
 {{%definition "conflict-free replicated data types (CRDT)"%}}
 Techniques used by Redis data types in Active-Active databases that handle conflicting concurrent writes across member Active-Active databases. The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
 
@@ -76,6 +86,8 @@ Custom code that defines a resource to add to your Kubernetes API server without
 
 More info: [CustomResourceDefinition](https://kubernetes.io/docs/reference/glossary/?fundamental=true#term-CustomResourceDefinition), [Custom Resources](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/)
 {{%/definition%}}
+
+## D - F
 
 {{%definition "data eviction policy"%}}
 Defines how excess data is handled when the database exceeds the memory limit.
@@ -95,6 +107,8 @@ Linux command to synchronize a file's in-core state with a storage device
 More info: [`fsync` man page]("https://man7.org/linux/man-pages/man2/fsync.2.html")
 {{%/definition%}}
 
+## G - J
+
 {{%definition "hash slot"%}}
 The result of a hash calculation.
 
@@ -113,6 +127,8 @@ An API object that manages external access to the services in a Kubernetes clust
 More info: [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
 {{%/definition%}}
 
+## K, L
+
 {{%definition "kubectl"%}}
 A command line tool for communicating with a Kubernetes API server. 
 
@@ -125,7 +141,9 @@ A protocol for accessing and maintaining distributed directory services over an 
 More info: [LDAP wikipedia](https://en.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol/), [LDAP authentication]({{<relref "/rs/security/ldap/_index.md">}})
 {{%/definition%}}
 
-{{%definition "master node"%}}
+## M - O
+
+{{%definition "Master node"%}}
 Node that operates as the leader of a cluster
 {{%/definition%}}
 
@@ -158,6 +176,8 @@ More info: [Operator pattern](https://kubernetes.io/docs/concepts/extend-kuberne
 {{%definition "Out-of-Memory (OOM)"%}}
 If a member Active-Active database is in an out of memory situation, that member is marked “inconsistent” by Redis Enterprise Software, the member stops responding to user traffic, and the syncer initiates full reconciliation with other peers in the Active-Active database.
 {{%/definition%}}
+
+## P - R
 
 {{%definition "participating clusters"%}}
 Clusters participating in the multi-master replication of an Active-Active database.
@@ -240,6 +260,8 @@ A security approach that restricts system access to authorized users.
 More info: [RBAC wikipedia](https://en.wikipedia.org/wiki/Role-based_access_control); [Database access control]({{<relref "/rs/security/passwords-users-roles.md">}}); [Passwords, users, and roles]({{<relref "/rc/security/database-security/passwords-users-roles#role-based-access-control">}})
 {{%/definition%}}
 
+## S 
+
 {{%definition "secret"%}}
 Kubernetes term for object that stores sensitive information, such as passwords, OAuth tokens, and ssh keys.
 {{%/definition%}}
@@ -263,6 +285,8 @@ More info: [SASL wikipedia](https://en.wikipedia.org/wiki/Simple_Authentication_
 {{%definition "snapshot (RDB)"%}}
 Data persistence file that performs a data dump every one, six, or twelve hours.
 {{%/definition%}}
+
+## T - Z
 
 {{%definition "Transport Layer Security (TLS)"%}}
 Protocols that provide communications security over a computer network.
