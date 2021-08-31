@@ -15,7 +15,7 @@ Prerequisites:
 
 1. An [OpenShift cluster installed (3.x or 4.x)](https://docs.openshift.com/container-platform/3.11/welcome/index.html) with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
-1. The [OpenShift cli installed](https://docs.openshift.com/online/starter/cli_reference/openshift_cli/getting-started-cli.html#cli-installing-cli_cli-developer-commands)
+1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/getting-started-cli.html)
 
 ## Step 1: Login
 
@@ -60,7 +60,7 @@ For RHEL images, please use the redis-enterprise-cluter_rhel.yaml and operator_r
 
 Let’s look at each yaml file to see what requires editing:
 
-- [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml)
+- [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)
 
     The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/3.11/welcome/index.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
 
@@ -84,7 +84,7 @@ Let’s look at each yaml file to see what requires editing:
 
         You can see the name of your project with `oc project`.
 
-- [openshift.bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift.bundle.yaml) -
+- [openshift.bundle.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift.bundle.yaml) -
 
     The bundle file includes several declarations:
 
@@ -108,7 +108,7 @@ Changes to this file can cause unexpected results.
         role.rbac.authorization.k8s.io/redis-enterprise-operator created
         serviceaccount/redis-enterprise-operator created
         rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
-        customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com configured
+        customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redis.com configured
         deployment.apps/redis-enterprise-operator created
         ```
 
@@ -201,12 +201,12 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 - [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml)
 -->
 
-- The [redis-enterprise-cluster_rhel yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/redis-enterprise-cluster_rhel.yaml) defines the configuration of the newly created resource: Redis Enterprise Cluster. You can rename the file to `your_cluster_name.yaml`, but it is not required.
+- The [rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml) defines the configuration of the newly created resource: Redis Enterprise Cluster. You can rename the file to `your_cluster_name.yaml`, but it is not required.
 
     You can edit this yaml file for your requirements, but you can use the sample provided for testing, developement and quick start deployments. Here are the main fields you to review and edit:
 
     - name: “your_cluster_name” - For example “demo-cluster”
-    - nodes: number_of_nodes_in_the_cluster - Must be an [uneven number of 3 or more](https://redislabs.com/redis-enterprise/technology/highly-available-redis/)
+    - nodes: number_of_nodes_in_the_cluster - Must be an [uneven number of 3 or more](https://redis.com/redis-enterprise/technology/highly-available-redis/)
     - uiServiceType: service_type - Service type value can be either `ClusterIP` or `LoadBalancer`. This is an optional configuration based on [k8s service types](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/). The default is `ClusterIP`.
 
     - storageClassName: “gp2“ - This specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for the persistent disks in your nodes. For example, AWS uses “gp2” as a default, GKE uses “standard”, and Azure uses "default".
@@ -230,13 +230,13 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
         The default is 4 cores (4000m) and 4GB (4Gi).
 
         {{< note >}}
-[Resource limits should equal requests](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service).
+[Resource limits should equal requests](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/topics.md#resource-limits-and-quotas).
         {{< /note >}}
 
     - serviceBrokerSpec –
     - enabled: \<false/true\>
 
-        This specifies [persistence](https://redislabs.com/redis-features/persistence) for the Service Broker with an “enabled/disabled” flag. The default is “false.”
+        This specifies [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}) for the Service Broker with an “enabled/disabled” flag. The default is “false.”
 
         ```sh
         persistentSpec:
