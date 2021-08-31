@@ -13,7 +13,7 @@ To upgrade Redis Enterprise Software, you:
 
 2.  _(Optional)_ Upgrade each database in the cluster.
 
-You don't have to upgrade the databases in cluster, however, new features and important fixes might not be enabled until you do so.
+You don't have to upgrade the databases in your cluster, however, new features and important fixes might not be enabled until you do so.
 
 ## Supported upgrade paths
 
@@ -110,7 +110,7 @@ Before upgrading a database:
 
 ### Redis database upgrade policy
 
-In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility used to create new and update existing databases.  To learn more, see [`rladmin upgrade`]({{< relref "/rs/references/rladmin.md#upgrade" >}}).)
+In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility used to create new and update existing databases.  To learn more, see [`rladmin upgrade`]({{< relref "/rs/references/rladmin.md#upgrade" >}}).
 
 As of v6.2.4, this policy defaults to `major`, which limits Redis database compatibility to the most recent major release (v6.0, as of this writing.).  To create databases using the most recent release of Redis, use `rladmin` to set the policy to `latest`.
 

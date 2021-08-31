@@ -43,8 +43,8 @@ To enable internode encryption for a database (also called _data plane encryptio
 
 -  Use the `rladmin` command-line utility to set the [data_internode_encryption]({{< relref "/rs/references/rladmin.md#tune" >}}) setting for the database:
 
-    ``` text
-    rladmin tune db <database_id> data_internode_encryption enabled
+    ``` shell
+    rladmin tune db <database_id> data_internode_encryption enable
     ``` 
 
 - Use the Redis Enterprise Software REST API to set the `data_internode_encryption` setting for the database.
@@ -55,6 +55,12 @@ To enable internode encryption for a database (also called _data plane encryptio
     ```
 
 When you change the data internode encryption setting for a database, all active remote client connections are disconnected.  This restarts the internal (DMC) proxy and disconnects all client connections.
+
+To enable data plane encryption by default for new databases, use `rladmin` to tune the cluster:
+
+``` shell
+rladmin tune cluster data_internode_encryption enable
+```
 
 ## Encryption ciphers and settings
 
