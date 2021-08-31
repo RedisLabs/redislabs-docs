@@ -140,7 +140,7 @@ You should receive the following response:
 serviceaccount/redis-enterprise-operator created
 rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
 -->
-
+<!---
 - [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/sb_rbac.yaml)
 
     If you deploy a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker.
@@ -161,7 +161,7 @@ Changes to this file can cause unexpected results.
     clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
     clusterrolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured
     ```
-
+--->
 <!--
 - [crd.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml)
 
