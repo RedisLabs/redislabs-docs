@@ -92,7 +92,7 @@ You can enable data plane internode encryption by:
 - Setting the cluster policy to enable data plane internode encryption by default for new databases
     
     ``` shell
-    rladmin tune cluster data_internode_encryption
+    rladmin tune cluster data_internode_encryption enabled
     ```
          
 - Enabling it for individual existing databases
