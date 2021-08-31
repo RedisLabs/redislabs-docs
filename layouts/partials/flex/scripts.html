@@ -42,9 +42,12 @@ window.onclick = function(e) {
   var pa = window.location.pathname.split('/');
   var pv = pa[1]; // latest, 5.4 or 5.2
 
-  if(pv == '6.0' || pv == 'latest') {
+  if(pv == '6.2' || pv == 'latest') {
+    v = '6.2';
+    d = 'v6.2 (latest)';
+  } else if (pv == '6.0') {
     v = '6.0';
-    d = 'v6.0 (latest)';
+    d = 'v6.0';
   } else if (pv == '5.6') {
     v = '5.6';
     d = 'v5.6';
