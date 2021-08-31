@@ -56,7 +56,7 @@ You can create this binding manually, but we do not recommend it.
 - [`nodes`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec): `nnn`
 
     This [must be an odd number](https://redislabs.com/redis-enterprise/technology/highly-available-redis/) that is 3 or higher.
-- [`uiServiceType`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec): `service_type`
+- [`uiServiceType`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec): `service_type`
 
     This controls how the Redis Enterprise UI is exposed on the cluster.
     The service_type must be either `ClusterIP` or `LoadBalancer` (default: `ClusterIP`).
@@ -64,7 +64,7 @@ You can create this binding manually, but we do not recommend it.
 
 - [`persistentSpec`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md#redisenterpriseclusterspec):
 
-    You can add a `storageClassName` that specifies the [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. For example, AWS uses “gp2” as a default, GKE uses “standard” and Azure uses "default".
+    You can add a `storageClassName` that specifies the [Storage Class](https://kubernetes.io/docs/concepts/storage/storage-classes/) used for your nodes’ persistent disks. For example, AWS uses “gp2” as a default, GKE uses “standard” and Azure uses "default".
 
     Also, adding a `volumeSize` lets you control the size of the persistent volume attached to the Redis Enterprise pods.
 

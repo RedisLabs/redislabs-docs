@@ -25,7 +25,7 @@ Here are the ways that you can control the pod scheduling:
 
 ## Using node selectors
 
-The [`nodeSelector`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/operator.md#redisenterpriseclusterspec)
+The [`nodeSelector`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/crds/v1/rec_crd.yaml)
 property of the cluster specification uses the same values and structures as
 the [Kubernetes `nodeSelector`](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector).
 In general, node labels are a simple way to make sure that specific nodes are used for Redis Enterprise pods.
