@@ -28,19 +28,18 @@ To prepare a client or node for mDNS:
         apt-get install libnss-mdns
         ```
 
+    - For RHEL/CentOS 6.x:
+
+        ```sh
+        $ rpm -ivh http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+        $ yum install nss-mdns
+        $ service avahi-daemon start
+        ```
 
     - For RHEL/CentOS 7:
 
         ```sh
         $ rpm -ivh https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-7-12.noarch.rpm
-        $ yum install nss-mdns
-        $ service avahi-daemon start
-        ```
-        
-    - For RHEL/CentOS 8.x:
-
-        ```sh
-        $ rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
         $ yum install nss-mdns
         $ service avahi-daemon start
         ```
