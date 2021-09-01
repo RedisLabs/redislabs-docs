@@ -194,7 +194,7 @@ jobs:
     # Build PDFs for staging branches
     build-pdfs-staging:
         docker:
-            - image: rrelledge/redis-docs-wkhtmltopdf:0.0.1
+            - image: rrelledge/redis-docs-wkhtmltopdf:0.0.2
         working_directory: ~/project
         steps:
             - attach_workspace:

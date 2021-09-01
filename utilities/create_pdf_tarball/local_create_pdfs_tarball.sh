@@ -14,10 +14,19 @@ else
     location=docs.redis.com/$LOCATION
 fi
 
+echo "Generating rc-docs.pdf"
 wkhtmltopdf http://$location/pdf-gen-rc-docs/ ../../static/pdfs/archive/tmp/$tarball_name/rc-docs.pdf
+
+echo "Generating rs-docs.pdf"
 wkhtmltopdf http://$location/pdf-gen-rs-docs/ ../../static/pdfs/archive/tmp/$tarball_name/rs-docs.pdf
+
+echo "Generating ri-docs.pdf"
 wkhtmltopdf http://$location/pdf-gen-ri-docs/ ../../static/pdfs/archive/tmp/$tarball_name/ri-docs.pdf
+
+echo "Generating modules-docs.pdf"
 wkhtmltopdf http://$location/pdf-gen-modules-docs/ ../../static/pdfs/archive/tmp/$tarball_name/modules-docs.pdf
+
+echo "Generating platforms-docs.pdf"
 wkhtmltopdf http://$location/pdf-gen-platforms-docs/ ../../static/pdfs/archive/tmp/$tarball_name/platforms-docs.pdf
 
 echo "Finished converting html to PDFs."
