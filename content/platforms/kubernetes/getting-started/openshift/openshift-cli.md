@@ -233,11 +233,6 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 [Resource limits should equal requests](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/topics.md#resource-limits-and-quotas).
         {{< /note >}}
 
-    - serviceBrokerSpec –
-    - enabled: \<false/true\>
-
-        This specifies [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}) for the Service Broker with an “enabled/disabled” flag. The default is “false.”
-
         ```sh
         persistentSpec:
         storageClassName: “gp2“
@@ -246,10 +241,9 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
     - redisEnterpriseImageSpec: This configuration controls the Redis Enterprise version used, and where it is fetched from. This is an optional field. The Operator automatically uses the matching RHEL image version for the release.
 
         ```sh
-        [imagePullPolicy](https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/builds_and_image_streams.html#image-pull-policy):
-        IfNotPresent
-        Repository: redislabs/redis
-        versionTag: 5.2.10-22
+        imagePullPolicy: IfNotPresent
+        repository: redislabs/redis
+        versionTag: 6.0.20-97
         ```
 
         The version tag must be as it appears on your repository, such as on [DockerHub](https://hub.docker.com/r/redislabs/redis/).
