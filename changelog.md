@@ -8,7 +8,7 @@ The docs are updated regularly; here are some recent highlights:
 
     - The company name change was incorporated into the website and its content ([PR #1480](https://github.com/RedisLabs/redislabs-docs/pull/1480) and others)
 
-    - Breadcrumbs now use the same text as the table of contents. ([PR #1501](https://github.com/RedisLabs/redislabs-docs/pull/1501))
+    - Breadcrumbs now use the same text as the table of contents ([PR #1501](https://github.com/RedisLabs/redislabs-docs/pull/1501))
 
 - Redis Enterprise Software doc updates: 
 
@@ -32,7 +32,7 @@ The docs are updated regularly; here are some recent highlights:
 
     - A new article describes how to set up external routing using an [ingress controller](https://docs.redis.com/latest/platforms/kubernetes/tasks/set-up-ingress-controller/) ([PR #1466](https://github.com/RedisLabs/redislabs-docs/pull/1466), [PR #1497](https://github.com/RedisLabs/redislabs-docs/pull/1497))
 
-    - Added a task describing how to run the [log collector script](https://docs.redis.com/latest/platforms/kubernetes/tasks/run-log-collector-script/).  ([PR #1486](https://github.com/RedisLabs/redislabs-docs/pull/1471), [PR #1472](https://github.com/RedisLabs/redislabs-docs/pull/1486))
+    - Added a task describing how to run the [log collector script](https://docs.redis.com/latest/platforms/kubernetes/tasks/run-log-collector-script/)  ([PR #1486](https://github.com/RedisLabs/redislabs-docs/pull/1471), [PR #1472](https://github.com/RedisLabs/redislabs-docs/pull/1486))
 
     - Multiple typos and clarifications have been made throughout the section ([PR #1505](https://github.com/RedisLabs/redislabs-docs/pull/1505), [PR #1516](https://github.com/RedisLabs/redislabs-docs/pull/1516), [PR #1517](https://github.com/RedisLabs/redislabs-docs/pull/1517))
 
@@ -42,7 +42,7 @@ The docs are updated regularly; here are some recent highlights:
 
     - The Glossary has been expanded ([PR #1490](https://github.com/RedisLabs/redislabs-docs/pull/1490))
 
-    - PDF generation is currently in private preview.
+    - PDF generation is currently in preview
 
 - Additional updates to fix typos, missing images, and other glitches
 
