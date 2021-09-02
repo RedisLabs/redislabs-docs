@@ -16,7 +16,7 @@
       {{ partial "recursive-children.html" (dict "context" . "printType" "toc" "depth" $newDepth "pageFilepath" .Page.File.Path "paddingVal" $newPaddingVal) }}
     {{ end }}
     {{ if eq $printType "content" }}
-      <h2 id="{{ substr .RelPermalink 1 -1 }}" name="{{ .Title }}">{{ .Title }}</h2>
+      <h1 id="{{ substr .RelPermalink 1 -1 }}" name="{{ .Title }}">{{ .Title }}</h1>
       <div>{{ .Content }}</div>
       {{ $newDepth := add $depth 1}}
       {{ $newPaddingVal := add $paddingVal 20}}

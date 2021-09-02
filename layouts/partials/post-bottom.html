@@ -5,13 +5,19 @@
         <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a>
         </div>
-        <div class="pdf-link">{{ partial "download-pdf.html" . }}<i class="fi-download"></i>
-            <span>{{T "Download-pdf"}}</span></a>
+        <div style="display: flex;">
+            <div class="pdf-link" style="margin-right: 10px;">{{ partial "download-pdf.html" . }}<i class="fi-download"></i>
+                <span>{{T "Download-pdf"}}</span></a>
+            </div>
+            <div class="go-top-link">
+                <a href="#top" class="got-to-top">Top&nbsp;<i class="icon-Top"></i></a>
+            </div>
         </div>
+        {{ else }}
+            <div class="go-top-link">
+                <a href="#top" class="got-to-top">Top&nbsp;<i class="icon-Top"></i></a>
+            </div>
         {{ end }}
-        <div class="go-top-link">
-            <a href="#top" class="got-to-top">Top&nbsp;<i class="icon-Top"></i></a>
-        </div>
     </div>    
         <!--<a class="nav-spacer"></a>-->
     {{- with ($.Scratch.Get "prevPage") -}}
