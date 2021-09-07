@@ -1,3 +1,34 @@
+@charset "UTF-8";
+
+@font-face{
+  font-family:'Graphik Web';
+  src:url(../fonts/graphik/Graphik-Medium-Web.woff2) format("woff2"),url(../fonts/graphik/Graphik-Medium-Web.woff) format("woff");
+  font-weight:500;
+  font-style:normal;
+  font-stretch:normal
+}
+@font-face{
+  font-family:'Graphik Web';
+  src:url(../fonts/graphik/Graphik-Regular-Web.woff2) format("woff2"),url(../fonts/graphik/Graphik-Regular-Web.woff) format("woff");
+  font-weight:400;
+  font-style:normal;
+  font-stretch:normal
+}
+@font-face{
+  font-family:'Graphik Web';
+  src:url(../fonts/graphik/Graphik-Light-Web.woff2) format("woff2"),url(../fonts/graphik/Graphik-Light-Web.woff) format("woff");
+  font-weight:300;
+  font-style:normal;
+  font-stretch:normal
+}
+@font-face{
+  font-family:'Graphik Web';
+  src:url(../fonts/graphik/Graphik-Semibold-Web.woff2) format("woff2"),url(../fonts/graphik/Graphik-Semibold-Web.woff) format("woff");
+  font-weight:600;
+  font-style:normal;
+  font-stretch:normal
+}
+
 body .logo {
   display: block;
   position: relative;
@@ -24,6 +55,11 @@ body {
   display: block !important;
   size: A4 !important;
   font-weight: 400;
+}
+
+html {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
 }
 
 body a {
