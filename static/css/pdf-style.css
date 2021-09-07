@@ -23,6 +23,11 @@ html,
 body {
   display: block !important;
   size: A4 !important;
+  font-weight: 400;
+}
+
+body a {
+  color: #5961ff;
 }
 
 body h1:first-of-type {
@@ -85,6 +90,25 @@ body pre {
 body img {
   max-width: 99%;
   page-break-inside: avoid;
+}
+
+body ol,
+body ul {
+  padding: 0;
+  padding: 0 1.5rem;
+}
+
+body ul {
+  list-style-type: disc;
+}
+
+body > ul > li {
+  margin-bottom: 1.3rem;
+  margin-left: 2rem;
+}
+body > ol > li {
+  margin-bottom: 1.3rem;
+  margin-left: 2rem;
 }
 
 body .panel {
