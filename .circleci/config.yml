@@ -217,7 +217,7 @@ jobs:
             - run:
                name: Remove PDF generation helper files
                command: |
-                    cd utilities/create_pdf_tarball
+                   cd utilities/create_pdf_tarball
                    ./delete_tmps.sh
                    cd ../create_single_pdfs
                    ./delete_tmps.sh
