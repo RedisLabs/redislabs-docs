@@ -213,15 +213,12 @@ jobs:
                    ./create_pdfs_tarball.sh
                    cd ../create_single_pdfs
                    ./create_pdfs.sh
-            # Remove temporary helper files created for PDF generation
+            # Remove temporary helper files created for PDF tarball generation
             - run:
-               name: Remove PDF generation helper files
+               name: Remove PDF tarball generation helper files
                command: |
                    cd utilities/create_pdf_tarball
                    ./delete_tmps.sh
-                   cd ../create_single_pdfs
-                   ./delete_tmps.sh
-                   ls -l ../../public
             - persist_to_workspace:
                 root: .
                 paths:
@@ -263,9 +260,9 @@ jobs:
 
                    # Sync standalone PDFs
                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "pdf-gen*" --include "pdfs/*.pdf" --cache-control max-age=0 # --size-only
-            # Remove temporary helper files created for PDF generation
+            # Remove temporary helper files created for standalone PDF generation
             - run:
-               name: Remove PDF generation helper files
+               name: Remove standalone PDF generation helper files
                command: |
                    if [ "${CIRCLE_BRANCH}" == "master" ] ;
                        then export LOCATION=staging/dev
@@ -275,7 +272,7 @@ jobs:
                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
 
-                   aws s3 rm s3://docs.redis.com/$LOCATION --recursive --exclude "*" --include "pdf-gen-*" --dryrun
+                   aws s3 rm s3://docs.redis.com/$LOCATION --recursive --exclude "*" --include "pdf-gen-*"
 
 workflows:
   version: 2
