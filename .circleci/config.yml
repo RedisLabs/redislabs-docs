@@ -221,7 +221,7 @@ jobs:
                    ./delete_tmps.sh
                    cd ../create_single_pdfs
                    ./delete_tmps.sh
-                   ls -l public
+                   ls -l ../../public
             - persist_to_workspace:
                 root: .
                 paths:
