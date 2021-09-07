@@ -6,9 +6,12 @@
             <span>{{T "Edit-this-page"}}</span></a>
         </div>
         <div style="display: flex;">
-            <div class="pdf-link" style="margin-right: 10px;">{{ partial "download-pdf.html" . }}<i class="fi-download"></i>
-                <span>{{T "Download-pdf"}}</span></a>
-            </div>
+            <!-- Only display Download PDF button if on latest -->
+            {{/* if in .Site.BaseURL "docs.redis.com/latest" */}} <!--commented out for testing/preview-->
+                <div class="pdf-link" style="margin-right: 10px;">{{ partial "download-pdf.html" . }}<i class="fi-download"></i>
+                    <span>{{T "Download-pdf"}}</span></a>
+                </div>
+            {{/* end */}} <!--commented out for testing/preview-->
             <div class="go-top-link">
                 <a href="#top" class="got-to-top">Top&nbsp;<i class="icon-Top"></i></a>
             </div>

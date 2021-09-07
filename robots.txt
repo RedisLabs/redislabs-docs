@@ -5,6 +5,8 @@ Disallow: /5.2/
 Disallow: /5.4/
 Disallow: /5.6/
 Disallow: /6.0/
+Disallow: /latest/pdfs/
+Disallow: /latest/pdf-gen-*
 
 Sitemap: https://docs.redislabs.com/latest/sitemap.xml
 Sitemap: https://docs.redis.com/latest/sitemap.xml
