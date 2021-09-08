@@ -3,7 +3,7 @@
 @font-face{
   font-family:'Lato';
   src:url(../fonts/lato/Lato-Regular.ttf) format("ttf"),url(../fonts/lato/Lato-Regular.ttf) format("ttf");
-  font-weight:500;
+  font-weight:400;
   font-style:normal;
   font-stretch:normal
 }
@@ -11,7 +11,7 @@
 @font-face{
   font-family:'Roboto Mono';
   src:url(../fonts/robotomono/RobotoMono-Regular.ttf) format("ttf"),url(../fonts/robotomono/RobotoMono-Regular.ttf) format("ttf");
-  font-weight:500;
+  font-weight:400;
   font-style:normal;
   font-stretch:normal
 }
@@ -41,12 +41,9 @@ html,
 body {
   display: block !important;
   size: A4 !important;
-  font-weight: 400;
-}
-
-html {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
+  font-weight: 400;
 }
 
 body code {
