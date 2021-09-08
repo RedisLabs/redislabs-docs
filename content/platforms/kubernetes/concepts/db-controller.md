@@ -8,49 +8,29 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: /platforms/kubernetes/db-controller/
 ---
-A database is created with a custom resource just like a cluster.
+## Redis Enterprise database (REDB) lifecycle
+
+A Redis Enterprise database (REDB) is created with a custom resource file. The custom resource defines the size, name, and other specifications for the REDB. The database is created when you apply the custom resource file.
+
 The database controller in the Redis Enterprise operator:
 
 - Discovers the custom resource
-- Makes sure that it is created on the referenced cluster
-- Maintains parity between its specification and the database within the Redis Enterprise cluster
-
-The custom resource defines the size and other facets of the desired database.
-For example, a 1GB database can simply be created on the `rec` cluster with the resource:
-
-```yaml
-kind: RedisEnterpriseDatabase
-metadata:
-  name: smalldb
-spec:
-  memorySize: 1GB
-  redisEnterpriseCluster:
-    name: rec
-```
-
-The cluster is referenced by name in the `redisEnterpriseCluster` and must exist in the same namespace.
-Then, the database is created when you apply the resource file (for example, `smalldb.yaml`):
-
-```sh
-kubectl apply -f smalldb.yaml
-```
+- Makes sure that it is created in the same namespace as the Redis Enterprise cluster (REC)
+- Maintains consistency between the custom resource and the REDB
 
 The database controller recognizes the new custom resource and validates the specification.
-If the database specification is valid, the controller combines the values specified in
-the custom resource with default values and uses the full specification to create the
-database on the specified Redis Enterprise cluster.
-This lets a user specify the minimum desired state.
+If valid, the controller combines the values specified in
+the custom resource with default values to create a full specification. It then uses this full specification to create the
+database on the specified Redis Enterprise cluster (REC).
 
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
-If the database custom resource is deleted, the database is deleted from the cluster and its services are also deleted.
-
-## Database lifecycle
+If the database custom resource is deleted, the database and its services is deleted from the cluster.
 
 ### Creating databases
 
-To create a database with the database controller:
+Your Redis Enterprise database custom resource must be of the 'kind': 'RedisEnterpriseDatabase' and have values for 'name' and 'memorySize'. All other values are optional and will be defaults if not specified.
 
-1. Create a file called db.yaml that contains your database custom resource:
+1. Create a file (in this example mydb.yaml) that contains your database custom resource.
 
     ```YAML
     kind: RedisEnterpriseDatabase
@@ -58,20 +38,24 @@ To create a database with the database controller:
       name: mydb
     spec:
       memorySize: 1GB
-      redisEnterpriseCluster:
-        name: rec
     ```
 
-1. Apply the file to your namespace that contains your cluster and the operator:
+    To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the 'spec:' section of your RedisEnterpriseDatabase custom resource.
+        ```
+          redisEnterpriseCluster:
+            name: rec
+        ```
+
+1. Apply the file in the namespace you want your database to be in.
 
     ```sh
-    kubectl apply -f db.yaml
+    kubectl apply -f mydb.yaml
     ```
 
-1. Check the status of your database:
+1. Check the status of your database.
 
     ```sh
-    kubectl get redb/mydb -o jsonpath="{.status.status}"
+    kubectl get redb mydb -o jsonpath="{.status.status}"
     ```
 
     When the status is `active`, the database is ready to use.
@@ -86,15 +70,16 @@ To modify the database:
 1. Edit the definition:
 
     ```sh
-    kubectl edit redb/mydb
+    kubectl edit redb mydb
     ```
 
-1. Change the specification (only properties in `spec` section) and save the changes.
+1. Change the specification (only properties in `spec` section) and save the changes.  
+    For more details, see [RedisEnterpriseDatabaseSpec](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec) or [Options for Redis Enterprise databases]({{< relref "content/platforms/kubernetes/reference/db-options.md" >}}). 
 
 1. Monitor the status to see when the changes take effect:
 
     ```sh
-    kubectl get redb/mydb -o jsonpath="{.status.status}"
+    kubectl get redb mydb -o jsonpath="{.status.status}"
     ```
 
     When the status is `active`, the database is ready for use.
@@ -103,12 +88,12 @@ To modify the database:
 
 The database exists as long as the custom resource exists.
 If you delete the custom resource, the database controller deletes the database.
-The database controller removes the database from the cluster and its services.
+The database controller removes the database and it's services from the cluster.
 
 To delete a database, run:
 
 ```sh
-kubectl delete redb/mydb
+kubectl delete redb mydb
 ```
 
 ## Connecting to databases
