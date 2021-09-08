@@ -41,6 +41,10 @@ html {
   font-size: 14px;
 }
 
+body code {
+  font-family: "Roboto Mono", monospace;
+}
+
 body a {
   color: #5961ff;
 }
