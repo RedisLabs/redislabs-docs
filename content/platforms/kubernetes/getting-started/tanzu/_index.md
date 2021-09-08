@@ -1,12 +1,12 @@
 ---
 Title: Getting Started with VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS)
-description: This section provides the steps required to set up a Redis Enterprise Cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
+description: This section provides the steps required to set up a Redis Enterprise cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/getting-started/getting-started-kubernetes/k8s-pks/
 ---
-These are the steps required to set up a Redis Enterprise Cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
+These are the steps required to set up a Redis Enterprise cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
 
 Prerequisites:
 
@@ -67,8 +67,8 @@ Prerequisites:
 
     {{< note >}}
 While you can use the Kubernetes default namespace, it is a best practice to use a separate namespace if you are sharing the cluster with others.
-The Operator deployment deploys and runs one Redis Enterprise Cluster in one Kubernetes namespace.
-In order to run multiple Redis Enterprise Clusters, deploy each one in its own namespace.
+The operator deployment deploys and runs one Redis Enterprise cluster in one Kubernetes namespace.
+In order to run multiple Redis Enterprise clusters, deploy each one in its own namespace.
     {{< /note >}}
 
 1. Create a namespace for your deployment:
@@ -145,10 +145,10 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
 
 1. Edit the yaml files for your specific deployment, if necessary:
 
-    - [bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/bundle.yaml) - The bundle file includes several declarations:
-        - `rbac` (Role-Based Access Control) defines who can access specified resources. The Operator application requires these definitions to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). These include declaration of rules, role and rolebinding.
-        - `crd` creates a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next.
-        - `operator` creates the operator deployment that is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise Cluster. Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes, as pods. The yaml contains the latest image tag representing the latest Operator version available.
+    - [bundle.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml) - The bundle file includes several declarations:
+        - `rbac` (Role-Based Access Control) defines who can access specified resources. The Operator application requires these definitions to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). These include declaration of rules, role and role binding.
+        - `crd` creates a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next.
+        - `operator` creates the operator deployment that is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise cluster. Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes, as pods. The yaml contains the latest image tag representing the latest Operator version available.
 
         This yaml file is commonly not necessary to edit.
 
@@ -181,7 +181,7 @@ In order to run multiple Redis Enterprise Clusters, deploy each one in its own n
             redis-enterprise-operator   1/1     1            1           0m36s
             ```
 
-        1. Create a storage class. The Redis Enterprise Cluster deployment dynamically provisions Persistent Volume Claims (PVCs) for use with cluster persistent storage needs. In order to create dynamic PVCs, the Kubernetes cluster must have a storage class defined. Determine whether a storage class is defined on your PKS cluster:
+        1. Create a storage class. The Redis Enterprise cluster deployment dynamically provisions Persistent Volume Claims (PVCs) for use with cluster persistent storage needs. In order to create dynamic PVCs, the Kubernetes cluster must have a storage class defined. Determine whether a storage class is defined on your PKS cluster:
 
             ```sh
             kubectl get storageclasses
@@ -240,9 +240,9 @@ You can omit the reclaimPolicy declaration in the yaml file, in case of error, f
 For production environments you must retain the Persistent Volume Claims (PVCs) when cluster persistent is used, in order to enable recovery.
         {{< /note >}}
 
-        You will use the storage class name you have just created in the next step, editing the Redis Enterprise Cluster (REC) yaml.
+        You will use the storage class name you have just created in the next step, editing the Redis Enterprise cluster (REC) yaml.
 
-    - [app_v1_redisenterprisecluster_cr.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/5.4.10-8/crds/app_v1_redisenterprisecluster_cr.yaml) - Defines the configuration of the newly created resource: Redis Enterprise Cluster.
+    - [rec_crd.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/crds/v1/rec_crd.yaml) - Defines the configuration of the newly created resource: Redis Enterprise cluster.
         This yaml could be renamed your_pks_cluster.yaml to keep things tidy, but this isn’t a mandatory step. This yaml **must** be edited, however, to reflect the specific configurations of your cluster. Here are the only fields you **must** review before you apply the REC yaml:
 
         - `name` - “your_cluster_name” (e.g. “re-cluster”). You can keep the default name or choose your own
@@ -256,7 +256,7 @@ For production environments you must retain the Persistent Volume Claims (PVCs) 
 
         <!--- - persistentSpec: enabled: \<false/true\>
         Check your Redis Software nodes’ enabled/disabled flag for [persistency](https://redislabs.com/redis-features/persistence). The default is “false.”
-        we now default to using persistence-->
+        we now default to using persistence -->
 
         - `storageClassName` - Your storage class name from the previous step.
         - `redisEnterpriseNodeResources` - The [compute resources](https://docs.openshift.com/enterprise/3.2/dev_guide/compute_resources.html#dev-compute-resources) required for each node. You can use the default or set your own. If your cluster is resource constrained, the minimum workable limits for basic testing are 2 CPU and 3GB. For development and production, see the [minimum hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
@@ -295,7 +295,7 @@ For production environments you must retain the Persistent Volume Claims (PVCs) 
 
 ## Step 3: Create your cluster
 
-1. Once you have `your_pks_cluster.yaml` file set, you need to apply it to create your Redis Enterprise Cluster:
+1. Once you have `your_pks_cluster.yaml` file set, you need to apply it to create your Redis Enterprise cluster:
 
     ```sh
     $ kubectl apply -f your_cluster_name.yaml
@@ -512,7 +512,7 @@ In order to create your database, you will log in to the Redis Enterprise UI.
 
 ## Step 5: Cleaning up
 
-To remove the Redis Enterprise Cluster from your PKS deployment:
+To remove the Redis Enterprise cluster from your PKS deployment:
 
 1. [Delete]({{< relref "/rs/administering/database-operations/deleting-database.md" >}}) any databases you created.
 

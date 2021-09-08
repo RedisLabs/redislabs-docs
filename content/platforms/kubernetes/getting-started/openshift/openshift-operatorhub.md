@@ -239,11 +239,11 @@ the operator. The generated password is stored in a Kubernetes secret.
     Where `rec-0` is replaced with of the pods associated with your Redis Entperise cluster.
 
     {{< note >}}
-- rec-0 is one of your cluster pods. Consider running the port-forward command in the background.
-- The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/4.3/dev_guide/routes.html).
+- `rec-0` is one of your cluster pods. Consider running the port-forward command in the background.
+- The Openshift UI provides tools for creating additional routing options, including external routes.
     {{< /note >}}
 
-1. In a browser, go to localhost:8443 to open the Redis Enterprise admin console:
+1. In a browser, go to `localhost:8443` to open the Redis Enterprise admin console:
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 

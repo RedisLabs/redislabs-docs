@@ -128,7 +128,7 @@
 
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
-{{$value := (printf "<a href='%s'>%s</a> <span>></span> %s" .page.Parent.RelPermalink .page.Parent.Title .value)}}
+{{$value := (printf "<a href='%s'>%s</a> <span>></span> %s" .page.Parent.RelPermalink .page.Parent.LinkTitle .value)}}
 {{ template "breadcrumb" dict "page" .page.Parent "value" $value }}
 {{else}}
  {{.value|safeHTML}}

@@ -35,6 +35,7 @@ that version.
 
 | Version - Release Date | End of Life (EOL)  |
 | ----------------------------------------- | ------------------ |
+| 6.2 – August 2021                         | February 28, 2023  |
 | 6.0 – May 2020                            | May 31, 2022*  |
 | 5.6 – April 2020                          | October 31, 2021  |
 | 5.4 – December 2018                       | December 31, 2020  |
