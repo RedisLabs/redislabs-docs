@@ -1,6 +1,14 @@
 @charset "UTF-8";
 
 @font-face{
+  font-family:'Lato';
+  src:url(../fonts/lato/Lato-Regular.ttf) format("ttf"),url(../fonts/lato/Lato-Regular.ttf) format("ttf");
+  font-weight:500;
+  font-style:normal;
+  font-stretch:normal
+}
+
+@font-face{
   font-family:'Roboto Mono';
   src:url(../fonts/robotomono/RobotoMono-Regular.ttf) format("ttf"),url(../fonts/robotomono/RobotoMono-Regular.ttf) format("ttf");
   font-weight:500;
