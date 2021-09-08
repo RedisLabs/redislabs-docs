@@ -26,7 +26,7 @@ database on the specified Redis Enterprise cluster (REC).
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
 If the database custom resource is deleted, the database and its services is deleted from the cluster.
 
-### Creating databases
+### Create a database
 
 Your Redis Enterprise database custom resource must be of the 'kind': 'RedisEnterpriseDatabase' and have values for 'name' and 'memorySize'. All other values are optional and will be defaults if not specified.
 
@@ -60,7 +60,7 @@ Your Redis Enterprise database custom resource must be of the 'kind': 'RedisEnte
 
     When the status is `active`, the database is ready to use.
 
-### Modifying databases
+### Modify a database
 
 The custom resource defines the properties of the database.
 To change the database, you can edit your original specification and apply the change or use `kubectl edit`.
@@ -84,7 +84,7 @@ To modify the database:
 
     When the status is `active`, the database is ready for use.
 
-### Deleting databases
+### Delete a database
 
 The database exists as long as the custom resource exists.
 If you delete the custom resource, the database controller deletes the database.
@@ -96,78 +96,67 @@ To delete a database, run:
 kubectl delete redb mydb
 ```
 
-## Connecting to databases
+## Connect to a database
 
 After the database controller creates a database, the services for accessing the database are created in the same namespace.
-Connection information for the database is stored in a secret.
-The name of that secret is stored in the database custom resource
- and can be retrieved (e.g., for redb/mydb) by :
-
-```sh
-kubectl get redb/mydb -o jsonpath="{.spec.databaseSecretName}"
-```
-
-This secret contains:
+Connection information for the database is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/) maintained by the database controller. This secret contains:
 
 - The database port (port)
 - The database service name (service_name)
 - The database password for authenticating (password)
 
-The database controller maintains these connection values in the secret.
-An application can use this secret in a variety of ways.
-A simple way is to map them to environment variables in a deployment pod.
+The name of that secret is stored in the database custom resource.
 
-For example, we can add the connection parameters as environment variables to deploy a guestbook demonstration application and have it connect to our database:
+1. Retrieve the secret name.
+    ```sh
+    kubectl get redb mydb -o jsonpath="{.spec.databaseSecretName}"
+    ```
 
-```yaml
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: guestbook
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: guestbook
-      name: guestbook
-  template:
+  The database secret name usually takes the form of 'redb-<databasename>', so in our example it will be 'redb-mydb'. 
+
+1. Retrieve the secret.
+
+    ```sh
+    kubectl get secret redb-mydb -o yaml
+    ```
+
+  Look in the 'data' section for the encoded password, port, and service name.
+    ```
+    apiVersion: v1
+    data:
+      password: asdfghjkl=
+      port: lkjhgf=
+      service_name: zxcvbnmlkjhjgfdsa==
+    kind: Secret
     metadata:
-      labels:
-        app: guestbook
-        name: guestbook
-    spec:
-      containers:
-        - name: guestbook
-          image: roeyredislabs/guestbook:latest
-          imagePullPolicy: Always
-          env:
-          - name: REDIS_PORT
-            valueFrom:
-              secretKeyRef:
-                name: redb-mydb
-                key: port
-          - name: REDIS_HOST
-            valueFrom:
-              secretKeyRef:
-                name: redb-mydb
-                key: service_name
-          - name: REDIS_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: redb-mydb
-                key: password
-          ports:
-            - name: guestbook
-              containerPort: 80
+    .
+    .
+    .
 
-```
+    ```
 
-Then, we can forward the application pod (the name is specific to your deployment):
+1. Decode the password, port, and service name.
+    ```
+    echo asdfghjkl= | base64 --decode
+    echo lkjhgf= | base64 --decode
+    echo zxcvbnmlkjhjgfdsa== | base64 --decode
+    ```
 
-```sh
-kubectl port-forward guestbook-667fcbf6f6-gztjv 8080:80
-```
+1. Retrieve and decode the password.
 
-Browse to `http://localhost:8080/` to view the demonstration.
+    ```
+    kubectl get secret redb-mydb -o jasonpath="{data.password}" | base64 --decode
+    ```
+
+1. Retrieve and decode the port number.
+    ```
+    kubectl get secret redb-mydb -o jasonpath="{data.port}" | base64 --decode
+    ```
+
+1. Retrieve and decode the service_name.
+    ```
+    kubectl get secret redb-mydb -o jasonpath="{data.service_name}" | base64 --decode
+    ```
+
 
 See [Options for Redis Enterprise databases]({{< relref "content/platforms/kubernetes/reference/db-options.md" >}}) for additional database options and configuration.
