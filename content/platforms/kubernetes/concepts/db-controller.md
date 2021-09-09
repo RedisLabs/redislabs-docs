@@ -103,7 +103,7 @@ After the database controller creates a database, the services for accessing the
 Connection information for the database is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/) maintained by the database controller. This secret contains:
 
 - The database port ('port')
-- The database service name ('service_names')
+- A comma seperated list of service names ('service_names')
 - The database password for authenticating ('password')
 
 The name of that secret is stored in the database custom resource.
@@ -132,16 +132,18 @@ The steps below are only for connecting to your database from within your K8s cl
     kubectl get secret redb-mydb -o jsonpath="{.data.port}" | base64 --decode
     ```
 
-1. Retrieve and decode the service_name.
+1. Retrieve and decode the service_names.
 
     ```sh
     kubectl get secret redb-mydb -o jsonpath="{.data.service_names}" | base64 --decode
     ```
 
+    You'll need to pick just one service listed here to use for connecting.
+
 1. From a pod within your cluster, use `redis-cli` to connect to your database.
 
     ```sh
-    redis-cli -h <service_names> -p <port>
+    redis-cli -h <service_name> -p <port>
     ```
 
 1. Enter the password you retrieved from the secret.
