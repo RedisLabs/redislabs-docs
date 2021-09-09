@@ -107,6 +107,10 @@ Connection information for the database is stored in a Kubernetes [secret](https
 
 The name of that secret is stored in the database custom resource.
 
+{{<note>}}
+The steps below are only for connecting to your database from within your K8s cluster. To access your database from outside the K8s cluster, you need to configure [ingress]({{<relref "content/platforms/kubernetes/tasks/set-up-ingress-controller.md">}}) or use Openshift routes.
+{{</note>}}
+
 1. Retrieve the secret name.
 
     ```sh
@@ -172,4 +176,4 @@ The name of that secret is stored in the database custom resource.
     auth <password>
     ```
 
-    You are now connected to your database!
+    You are now connected to your database! 
