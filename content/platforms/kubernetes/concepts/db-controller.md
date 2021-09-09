@@ -123,19 +123,19 @@ The steps below are only for connecting to your database from within your K8s cl
 1. Retrieve and decode the password.
 
     ```sh
-    kubectl get secret redb-mydb -o jasonpath="{data.password}" | base64 --decode
+    kubectl get secret redb-mydb -o jsonpath="{.data.password}" | base64 --decode
     ```
 
 1. Retrieve and decode the port number.
 
     ```sh
-    kubectl get secret redb-mydb -o jasonpath="{data.port}" | base64 --decode
+    kubectl get secret redb-mydb -o jsonpath="{.data.port}" | base64 --decode
     ```
 
 1. Retrieve and decode the service_name.
 
     ```sh
-    kubectl get secret redb-mydb -o jasonpath="{data.service_names}" | base64 --decode
+    kubectl get secret redb-mydb -o jsonpath="{.data.service_names}" | base64 --decode
     ```
 
 1. From a pod within your cluster, use `redis-cli` to connect to your database.
