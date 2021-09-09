@@ -25,7 +25,7 @@ Redis Enterprise Software's port usage falls into three general categories:
 | TCP | 8001 | Internal, External | Traffic from application to Redis Enterprise Software [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) |
 | TCP | 8070, 8071 | Internal, External | Metrics exported and managed by the web proxy |
 | TCP | 8443 | Internal, External | Secure (HTTPS) access to the management web UI |
-| TCP | 9081 | Internal, Active-Active | Active-Active management |
+| TCP | 9081 | Internal | Active-Active management (internal) |
 | TCP | 9443 (Recommended), [8080](#turning-off-http-support) | Internal, External, Active-Active | REST API traffic, including cluster management and node bootstrap |
 | TCP | 10000-19999 | Internal, External, Active-Active | Database traffic |
 | UDP | 53, 5353 | Internal, External | DNS/mDNS traffic |
