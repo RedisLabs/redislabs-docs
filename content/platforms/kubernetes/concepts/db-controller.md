@@ -131,10 +131,7 @@ The name of that secret is stored in the database custom resource.
       service_name: zxcvbnmlkjhjgfdsa==
     kind: Secret
     metadata:
-    .
-    .
-    .
-
+    ...
     ```
 
 1. Decode the password, port, and service name.
