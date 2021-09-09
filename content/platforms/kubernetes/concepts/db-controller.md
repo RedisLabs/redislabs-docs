@@ -160,7 +160,7 @@ The name of that secret is stored in the database custom resource.
     kubectl get secret redb-mydb -o jasonpath="{data.service_name}" | base64 --decode
     ```
 
-1. From a pod within your cluster, use 'redis-cli' to connect to your database.
+1. From a pod within your cluster, use `redis-cli` to connect to your database.
 
     ```sh
     redis-cli -h <service_name> -p <port>
