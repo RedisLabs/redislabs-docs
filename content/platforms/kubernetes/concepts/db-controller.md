@@ -40,8 +40,9 @@ Your Redis Enterprise database custom resource must be of the 'kind': 'RedisEnte
       memorySize: 1GB
     ```
 
-    To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the 'spec:' section of your RedisEnterpriseDatabase custom resource.
-        ```
+    To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the 'spec' section of your RedisEnterpriseDatabase custom resource.
+
+        ```yaml
           redisEnterpriseCluster:
             name: rec
         ```
@@ -102,13 +103,13 @@ After the database controller creates a database, the services for accessing the
 Connection information for the database is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/) maintained by the database controller. This secret contains:
 
 - The database port ('port')
-- The database service name ('service_name')
+- The database service name ('service_names')
 - The database password for authenticating ('password')
 
 The name of that secret is stored in the database custom resource.
 
 {{<note>}}
-The steps below are only for connecting to your database from within your K8s cluster. To access your database from outside the K8s cluster, you need to configure [ingress]({{<relref "content/platforms/kubernetes/tasks/set-up-ingress-controller.md">}}) or use Openshift routes.
+The steps below are only for connecting to your database from within your K8s cluster. To access your database from outside the K8s cluster, you need to configure [ingress]({{<relref "content/platforms/kubernetes/tasks/set-up-ingress-controller.md">}}) or use OpenShift routes.
 {{</note>}}
 
 1. Retrieve the secret name.
@@ -118,33 +119,6 @@ The steps below are only for connecting to your database from within your K8s cl
     ```
 
       The database secret name usually takes the form of 'redb-<database_name>', so in our example it will be 'redb-mydb'.
-
-1. Retrieve the secret.
-
-    ```sh
-    kubectl get secret redb-mydb -o yaml
-    ```
-
-      Look in the 'data' section for the encoded password, port, and service name.
-
-    ```yaml
-    apiVersion: v1
-    data:
-      password: asdfghjkl=
-      port: lkjhgf=
-      service_name: zxcvbnmlkjhjgfdsa==
-    kind: Secret
-    metadata:
-    ...
-    ```
-
-1. Decode the password, port, and service name.
-
-    ```sh
-    echo asdfghjkl= | base64 --decode
-    echo lkjhgf= | base64 --decode
-    echo zxcvbnmlkjhjgfdsa== | base64 --decode
-    ```
 
 1. Retrieve and decode the password.
 
@@ -161,13 +135,13 @@ The steps below are only for connecting to your database from within your K8s cl
 1. Retrieve and decode the service_name.
 
     ```sh
-    kubectl get secret redb-mydb -o jasonpath="{data.service_name}" | base64 --decode
+    kubectl get secret redb-mydb -o jasonpath="{data.service_names}" | base64 --decode
     ```
 
 1. From a pod within your cluster, use `redis-cli` to connect to your database.
 
     ```sh
-    redis-cli -h <service_name> -p <port>
+    redis-cli -h <service_names> -p <port>
     ```
 
 1. Enter the password you retrieved from the secret.
@@ -176,4 +150,4 @@ The steps below are only for connecting to your database from within your K8s cl
     auth <password>
     ```
 
-    You are now connected to your database! 
+    You are now connected to your database!
