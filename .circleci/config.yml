@@ -39,7 +39,6 @@ jobs:
                 command: |
                     cd utilities/create_pdf_tarball
                     ./edit_links.sh
-                    cat ../../public/pdf-gen-rs-docs/index.html
             - run:
                 name: Remove generated directories that are not needed
                 command: |
