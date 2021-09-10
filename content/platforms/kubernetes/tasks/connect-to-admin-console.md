@@ -11,6 +11,10 @@ aliases: /platforms/kubernetes/tasks/connect-to-admin-console.md
 
 The username and password for the Redis Enterprise Software [admin console]({{<relref "/rs/administering/_index.md">}}) are stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/). After retrieving your credentials, you can use port forwarding to connect to the admin console.
 
+{{<note>}}
+There are several methods for accessing the admin console. Port forwarding is the simplest, but not the most efficient method for long term use. You could also use a load balancer service or ingress. Configuring ingress is a good permanent solution for long term use.
+{{/note}}
+
 1. Switch to the namespace with your Redis Enterprise cluster (REC).
 
     ```sh
