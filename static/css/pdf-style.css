@@ -70,7 +70,8 @@ html,
 body {
   display: block !important;
   size: A4 !important;
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: 'Graphik Web', sans-serif;
 }
 
 body code {
