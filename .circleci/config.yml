@@ -33,6 +33,12 @@ jobs:
                     fi
                     echo ${LOCATION}
                     hugo -v --baseURL //docs.redis.com/$LOCATION
+            # Create internal links in temporary PDF generation helper files
+            - run:
+                name: Create internal links in PDF generation helper files
+                command: |
+                    cd utilities/create_pdf_tarball
+                    ./edit_links.sh
             - run:
                 name: Remove generated directories that are not needed
                 command: |
