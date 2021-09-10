@@ -1,4 +1,4 @@
-echo "Preparing html for PDF generation..."
+echo "Preparing html for standalone PDF generation..."
 
 for file in $(find ../../content/rs -name '*.md'); do
     new_dir_name=$(echo $file | sed 's#../../content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
@@ -60,4 +60,4 @@ for file in $(find ../../content/platforms -name '*.md'); do
     touch ../../content/$new_dir_name/_index.md
 done
 
-echo "Finished preparing html for PDF generation."
+echo "Finished preparing html for standalone PDF generation."
