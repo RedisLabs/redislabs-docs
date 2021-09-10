@@ -89,7 +89,7 @@ To modify the database:
 
 The database exists as long as the custom resource exists.
 If you delete the custom resource, the database controller deletes the database.
-The database controller removes the database and it's services from the cluster.
+The database controller removes the database and its services from the cluster.
 
 To delete a database, run:
 
