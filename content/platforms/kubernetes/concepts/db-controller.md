@@ -28,7 +28,7 @@ If the database custom resource is deleted, the database and its services are de
 
 ### Create a database
 
-Your Redis Enterprise database custom resource must be of the 'kind': 'RedisEnterpriseDatabase' and have values for 'name' and 'memorySize'. All other values are optional and will be defaults if not specified.
+Your Redis Enterprise database custom resource must be of the `kind: RedisEnterpriseDatabase` and have values for `name` and `memorySize`. All other values are optional and will be defaults if not specified.
 
 1. Create a file (in this example mydb.yaml) that contains your database custom resource.
 
