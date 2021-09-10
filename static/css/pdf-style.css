@@ -192,9 +192,9 @@ body .tab-content {
   padding: 10px 20px;
 }
 
-body .tab-content p {
-  margin-left: 1em;
-  margin-right: 1em;
+body .tab-content *:not(.tab-pane fade, .tab-pane p) {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
 body .tab-content .youtube-container {
