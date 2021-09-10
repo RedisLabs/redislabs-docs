@@ -118,7 +118,7 @@ The steps below are only for connecting to your database from within your K8s cl
     kubectl get redb mydb -o jsonpath="{.spec.databaseSecretName}"
     ```
 
-      The database secret name usually takes the form of 'redb-<database_name>', so in our example it will be 'redb-mydb'.
+      The database secret name usually takes the form of `redb-<database_name>`, so in our example it will be `redb-mydb`.
 
 1. Retrieve and decode the password.
 
