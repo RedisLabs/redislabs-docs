@@ -1,0 +1,26 @@
+{{ $printType := .printType }}
+{{ $depth := .depth | default 0 }}
+{{ $paddingVal := .paddingVal | default 0 }}
+{{ $currPage := .context.GetPage .pageFilepath }}
+{{ $children := $currPage.Pages }}
+
+{{ if $children }}
+  {{ $paddingStyle := print "padding-left: " $paddingVal "px"}}
+  {{ range $i, $child := $children }}
+    {{ if eq $printType "toc" }}
+      <div style={{ $paddingStyle }}>
+        <li><a href="#{{ .Title }}">{{ .LinkTitle }}</a></li>
+      </div>
+      {{ $newDepth := add $depth 1}}
+      {{ $newPaddingVal := add $paddingVal 20}}
+      {{ partial "recursive-children.html" (dict "context" . "printType" "toc" "depth" $newDepth "pageFilepath" .Page.File.Path "paddingVal" $newPaddingVal) }}
+    {{ end }}
+    {{ if eq $printType "content" }}
+      <h1 id="{{ substr .RelPermalink 1 -1 }}" name="{{ .Title }}">{{ .Title }}</h1>
+      <div>{{ .Content }}</div>
+      {{ $newDepth := add $depth 1}}
+      {{ $newPaddingVal := add $paddingVal 20}}
+      {{ partial "recursive-children.html" (dict "context" . "printType" "content" "pageFilepath" .Page.File.Path) }}
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -36,6 +36,8 @@
 {{- if not $.Site.Params.disableNavChevron -}}
         <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ with .File }}{{ replace .Dir "\\" "/" }}{{ .LogicalName }}{{ end}}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a></div>
+        <div class="pdf-link"><a href="../pdfs/rs-docs.pdf" download="rs-docs.pdf" class="github-link" target="blank"><i class="icon-fi-download"></i>
+            <span>{{T "Download-pdf"}}</span></a></div>
         <!--<a class="nav-spacer"></a>-->
     {{- with ($.Scratch.Get "prevPage") -}}
         <div class="nav-links"><a class="nav-prev-next" href="{{.RelPermalink}}" title="{{.Title}}"><i class="icon-ArrowLeft"></i></a>
