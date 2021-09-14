@@ -8,49 +8,29 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: /platforms/kubernetes/db-controller/
 ---
-A database is created with a custom resource just like a cluster.
+## Redis Enterprise database (REDB) lifecycle
+
+A Redis Enterprise database (REDB) is created with a custom resource file. The custom resource defines the size, name, and other specifications for the REDB. The database is created when you apply the custom resource file.
+
 The database controller in the Redis Enterprise operator:
 
 - Discovers the custom resource
-- Makes sure that it is created on the referenced cluster
-- Maintains parity between its specification and the database within the Redis Enterprise cluster
-
-The custom resource defines the size and other facets of the desired database.
-For example, a 1GB database can simply be created on the `rec` cluster with the resource:
-
-```yaml
-kind: RedisEnterpriseDatabase
-metadata:
-  name: smalldb
-spec:
-  memorySize: 1GB
-  redisEnterpriseCluster:
-    name: rec
-```
-
-The cluster is referenced by name in the `redisEnterpriseCluster` and must exist in the same namespace.
-Then, the database is created when you apply the resource file (for example, `smalldb.yaml`):
-
-```sh
-kubectl apply -f smalldb.yaml
-```
+- Makes sure that it is created in the same namespace as the Redis Enterprise cluster (REC)
+- Maintains consistency between the custom resource and the REDB
 
 The database controller recognizes the new custom resource and validates the specification.
-If the database specification is valid, the controller combines the values specified in
-the custom resource with default values and uses the full specification to create the
-database on the specified Redis Enterprise cluster.
-This lets a user specify the minimum desired state.
+If valid, the controller combines the values specified in
+the custom resource with default values to create a full specification. It then uses this full specification to create the
+database on the specified Redis Enterprise cluster (REC).
 
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
-If the database custom resource is deleted, the database is deleted from the cluster and its services are also deleted.
+If the database custom resource is deleted, the database and its services are deleted from the cluster.
 
-## Database lifecycle
+### Create a database
 
-### Creating databases
+Your Redis Enterprise database custom resource must be of the `kind: RedisEnterpriseDatabase` and have values for `name` and `memorySize`. All other values are optional and will be defaults if not specified.
 
-To create a database with the database controller:
-
-1. Create a file called db.yaml that contains your database custom resource:
+1. Create a file (in this example mydb.yaml) that contains your database custom resource.
 
     ```YAML
     kind: RedisEnterpriseDatabase
@@ -58,25 +38,30 @@ To create a database with the database controller:
       name: mydb
     spec:
       memorySize: 1GB
-      redisEnterpriseCluster:
-        name: rec
     ```
 
-1. Apply the file to your namespace that contains your cluster and the operator:
+    To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the `spec` section of your RedisEnterpriseDatabase custom resource.
+
+        ```yaml
+          redisEnterpriseCluster:
+            name: rec
+        ```
+
+1. Apply the file in the namespace you want your database to be in.
 
     ```sh
-    kubectl apply -f db.yaml
+    kubectl apply -f mydb.yaml
     ```
 
-1. Check the status of your database:
+1. Check the status of your database.
 
     ```sh
-    kubectl get redb/mydb -o jsonpath="{.status.status}"
+    kubectl get redb mydb -o jsonpath="{.status.status}"
     ```
 
     When the status is `active`, the database is ready to use.
 
-### Modifying databases
+### Modify a database
 
 The custom resource defines the properties of the database.
 To change the database, you can edit your original specification and apply the change or use `kubectl edit`.
@@ -86,103 +71,85 @@ To modify the database:
 1. Edit the definition:
 
     ```sh
-    kubectl edit redb/mydb
+    kubectl edit redb mydb
     ```
 
-1. Change the specification (only properties in `spec` section) and save the changes.
+1. Change the specification (only properties in `spec` section) and save the changes.  
+    For more details, see [RedisEnterpriseDatabaseSpec](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec) or [Options for Redis Enterprise databases]({{< relref "content/platforms/kubernetes/reference/db-options.md" >}}). 
 
 1. Monitor the status to see when the changes take effect:
 
     ```sh
-    kubectl get redb/mydb -o jsonpath="{.status.status}"
+    kubectl get redb mydb -o jsonpath="{.status.status}"
     ```
 
     When the status is `active`, the database is ready for use.
 
-### Deleting databases
+### Delete a database
 
 The database exists as long as the custom resource exists.
 If you delete the custom resource, the database controller deletes the database.
-The database controller removes the database from the cluster and its services.
+The database controller removes the database and its services from the cluster.
 
 To delete a database, run:
 
 ```sh
-kubectl delete redb/mydb
+kubectl delete redb mydb
 ```
 
-## Connecting to databases
+## Connect to a database
 
-After the database controller creates a database, the services for accessing the database are created in the same namespace.
-Connection information for the database is stored in a secret.
-The name of that secret is stored in the database custom resource
- and can be retrieved (e.g., for redb/mydb) by :
+After the database controller creates a database, the services for accessing the database are created in the same namespace. By default there are two services, one 'ClusterIP' service and one 'headless' service.  
+Connection information for the database is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/) maintained by the database controller. This secret contains:
 
-```sh
-kubectl get redb/mydb -o jsonpath="{.spec.databaseSecretName}"
-```
+- The database port (`port`)
+- A comma seperated list of service names (`service_names`)
+- The database password for authenticating (`password`)
 
-This secret contains:
+The name of that secret is stored in the database custom resource.
 
-- The database port (port)
-- The database service name (service_name)
-- The database password for authenticating (password)
+{{<note>}}
+The steps below are only for connecting to your database from within your K8s cluster. To access your database from outside the K8s cluster, you need to configure [ingress]({{<relref "content/platforms/kubernetes/tasks/set-up-ingress-controller.md">}}) or use OpenShift routes.
+{{</note>}}
 
-The database controller maintains these connection values in the secret.
-An application can use this secret in a variety of ways.
-A simple way is to map them to environment variables in a deployment pod.
+1. Retrieve the secret name.
 
-For example, we can add the connection parameters as environment variables to deploy a guestbook demonstration application and have it connect to our database:
+    ```sh
+    kubectl get redb mydb -o jsonpath="{.spec.databaseSecretName}"
+    ```
 
-```yaml
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: guestbook
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: guestbook
-      name: guestbook
-  template:
-    metadata:
-      labels:
-        app: guestbook
-        name: guestbook
-    spec:
-      containers:
-        - name: guestbook
-          image: roeyredislabs/guestbook:latest
-          imagePullPolicy: Always
-          env:
-          - name: REDIS_PORT
-            valueFrom:
-              secretKeyRef:
-                name: redb-mydb
-                key: port
-          - name: REDIS_HOST
-            valueFrom:
-              secretKeyRef:
-                name: redb-mydb
-                key: service_name
-          - name: REDIS_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: redb-mydb
-                key: password
-          ports:
-            - name: guestbook
-              containerPort: 80
+      The database secret name usually takes the form of `redb-<database_name>`, so in our example it will be `redb-mydb`.
 
-```
+1. Retrieve and decode the password.
 
-Then, we can forward the application pod (the name is specific to your deployment):
+    ```sh
+    kubectl get secret redb-mydb -o jsonpath="{.data.password}" | base64 --decode
+    ```
 
-```sh
-kubectl port-forward guestbook-667fcbf6f6-gztjv 8080:80
-```
+1. Retrieve and decode the port number.
 
-Browse to `http://localhost:8080/` to view the demonstration.
+    ```sh
+    kubectl get secret redb-mydb -o jsonpath="{.data.port}" | base64 --decode
+    ```
 
-See [Options for Redis Enterprise databases]({{< relref "content/platforms/kubernetes/reference/db-options.md" >}}) for additional database options and configuration.
+1. Retrieve and decode the service_names.
+
+    ```sh
+    kubectl get secret redb-mydb -o jsonpath="{.data.service_names}" | base64 --decode
+    ```
+
+    You'll need to pick just one service listed here to use for connecting.
+
+1. From a pod within your cluster, use `redis-cli` to connect to your database.
+
+    ```sh
+    redis-cli -h <service_name> -p <port>
+    ```
+
+1. Enter the password you retrieved from the secret.
+
+    ```sh
+    auth <password>
+    ```
+
+    You are now connected to your database!
