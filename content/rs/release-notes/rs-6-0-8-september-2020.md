@@ -14,7 +14,7 @@ This version includes the new RediSearch 2.0 module, open source Redis 6.0.5, ch
 ### Upgrade instructions
 
 Follow [these instructions]({{< relref "/rs/installing-upgrading/upgrading.md" >}}) for upgrading to RS 6.0.8 from RS 5.4.0 and above.
-For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrading-activeactive-databases" >}}).
+For Active-Active deployments, this release requires that you [upgrade the CRDB featureset version]({{< relref "/rs/installing-upgrading/upgrading#upgrade-activeactive-databases" >}}).
 
 ### End of life
 

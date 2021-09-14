@@ -1,6 +1,6 @@
 ---
-Title: Options for Redis Enterprise Databases
-description: A primer for the configuration options for Redis Enterprise database Custom Resource Definitions.
+Title: Options for Redis Enterprise databases
+description: A primer for the configuration options for Redis Enterprise database custom resource definitions.
 weight: 35
 alwaysopen: false
 categories: ["Platforms"]

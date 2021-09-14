@@ -16,12 +16,12 @@ An operator is a [Kubernetes custom controller](https://kubernetes.io/docs/conce
 
 The Redis Enterprise operator may only deploy a single Redis Enterprise cluster (REC) per [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/). Each REC can run multiple databases while maintaining high capacity and performance.
 
-## Do I need to deploy a Redis Enterprise Operator per namespace?
+## Do I need to deploy a Redis Enterprise operator per namespace?
 
 Yes, one operator per namespace, each managing a single Redis Enterprise cluster.
 Each REC can run multiple databases while maintaining high capacity and performance.
 
-## How can I see the Custom Resource Definitions (CRDs) created for my Redis Enterprise cluster?
+## How can I see the custom resource definitions (CRDs) created for my Redis Enterprise cluster?
 
 Run the following:
 

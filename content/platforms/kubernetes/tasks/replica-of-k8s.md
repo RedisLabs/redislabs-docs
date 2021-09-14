@@ -1,5 +1,6 @@
 ---
-Title: Creating Replica Databases on Kubernetes
+Title: Create replica databases on Kubernetes
+linkTitle: Create replica databases
 description: How to create and automate database replicas using the database controller
 weight: 42
 alwaysopen: false
@@ -8,7 +9,7 @@ aliases:
 ---
 
 You can configure a replica of a database by creating an item in
-the `replicaSources` section of the [Redis Enterprise Database specification](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec). The value of
+the `replicaSources` section of the [Redis Enterprise database specification](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md#redisenterprisedatabasespec). The value of
 `replicaSourceType` must be 'SECRET'; `replicaSourceName`
 must be the name of a secret that contains the replica source url.
 

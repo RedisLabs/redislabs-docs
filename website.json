@@ -8,12 +8,22 @@
     "RoutingRules": [
         {
             "Condition": {
-                "KeyPrefixEquals": "6.0/"
+                "KeyPrefixEquals": "6.2/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
             }
         },
         {
