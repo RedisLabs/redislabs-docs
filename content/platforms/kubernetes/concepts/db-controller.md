@@ -40,7 +40,7 @@ Your Redis Enterprise database custom resource must be of the `kind: RedisEnterp
       memorySize: 1GB
     ```
 
-    To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the 'spec' section of your RedisEnterpriseDatabase custom resource.
+    To create a REDB in a different namespace from your REC, you need to specify the cluster with `redisEnterpriseCluster` in the `spec` section of your RedisEnterpriseDatabase custom resource.
 
         ```yaml
           redisEnterpriseCluster:
