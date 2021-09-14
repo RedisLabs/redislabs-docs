@@ -13,7 +13,7 @@ The username and password for the Redis Enterprise Software [admin console]({{<r
 
 {{<note>}}
 There are several methods for accessing the admin console. Port forwarding is the simplest, but not the most efficient method for long-term use. You could also use a load balancer service or ingress. 
-{{/note}}
+{{</note>}}
 
 1. Switch to the namespace with your Redis Enterprise cluster (REC).
 
