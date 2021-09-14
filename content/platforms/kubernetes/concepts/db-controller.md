@@ -102,9 +102,9 @@ kubectl delete redb mydb
 After the database controller creates a database, the services for accessing the database are created in the same namespace. By default there are two services, one 'ClusterIP' service and one 'headless' service.  
 Connection information for the database is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/) maintained by the database controller. This secret contains:
 
-- The database port ('port')
-- A comma seperated list of service names ('service_names')
-- The database password for authenticating ('password')
+- The database port (`port`)
+- A comma seperated list of service names (`service_names`)
+- The database password for authenticating (`password`)
 
 The name of that secret is stored in the database custom resource.
 
