@@ -17,7 +17,7 @@ aliases: /rs/references/rest-api/users/authorize
 
     POST /v1/users/authorize
 
-Authorize a RLEC user.
+Authorize an RLEC user.
 
 In order to use the rest-api a user must be authorized using JSON Web Token (JWT). In order to obtain a valid token a request should be made to /users/authorize with a valid username and password.
 

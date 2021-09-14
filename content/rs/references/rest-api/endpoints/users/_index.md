@@ -16,7 +16,7 @@ aliases: /rs/references/rest-api/users
 ## Authorize endpoints
 | Method | Path | Description |
 |--------|------|-------------|
-| [POST]({{<relref "/rs/references/rest-api/endpoints/users/authorize.md">}}) | `/v1/users/authorize` | Authorize a RLEC user |
+| [POST]({{<relref "/rs/references/rest-api/endpoints/users/authorize.md">}}) | `/v1/users/authorize` | Authorize an RLEC user |
 
 ## Password endpoints
 | Method | Path | Description |
@@ -28,5 +28,5 @@ aliases: /rs/references/rest-api/users
 ## Refresh_jwt endpoints
 | Method | Path | Description |
 |--------|------|-------------|
-| [POST]({{<relref "/rs/references/rest-api/endpoints/users/refresh_jwt.md">}}) | `/v1/users/authorize` | Get a new authentication token |
+| [POST]({{<relref "/rs/references/rest-api/endpoints/users/refresh_jwt.md">}}) | `/v1/users/refresh_jwt` | Get a new authentication token |
 
