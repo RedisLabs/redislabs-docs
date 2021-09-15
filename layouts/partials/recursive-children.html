@@ -8,8 +8,9 @@
   {{ $paddingStyle := print "padding-left: " $paddingVal "px"}}
   {{ range $i, $child := $children }}
     {{ if eq $printType "toc" }}
+      {{ $tocLink := print "#" ( substr .RelPermalink 1 -1 ) }}
       <div style={{ $paddingStyle }}>
-        <li><a href="#{{ .Title }}">{{ .LinkTitle }}</a></li>
+        <li><a href="{{$tocLink}}">{{ .LinkTitle }}</a></li>
       </div>
       {{ $newDepth := add $depth 1}}
       {{ $newPaddingVal := add $paddingVal 20}}
