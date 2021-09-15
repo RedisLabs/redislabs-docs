@@ -78,7 +78,7 @@ Sample code that maps a hash slot to a key name can be found in this Python scri
 
 ## Failback decision
 
-Your application can use the same checks described above <!---link to checks described above---> to continue monitoring the state of the failed replica after failover.
+Your application can use the same checks described above to continue monitoring the state of the failed replica after failover.
 
 To monitor the state of a replica during the failback process, you must make sure the replica is available, re-synced with the remote replicas, and not in stale mode. The PUB/SUB mechanism is an effective way to monitor this.
 
