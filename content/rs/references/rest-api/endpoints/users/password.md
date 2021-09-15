@@ -1,6 +1,6 @@
 ---
-Title: Password endpoints
-linkTitle: Password
+Title: Password requests
+linkTitle: password
 description: Documents the Redis Enterprise Software REST API users/password endpoints.
 weight: $weight
 alwaysopen: false
@@ -15,69 +15,9 @@ aliases: /rs/references/rest-api/users/password
 
 | Method                     | Path                 | Description                 |
 |----------------------------|----------------------|-----------------------------|
-| [POST](#add-password)      | `/v1/users/password` | Add a new password          |
 | [PUT](#update-password)    | `/v1/users/password` | Change an existing password |
+| [POST](#add-password)      | `/v1/users/password` | Add a new password          |
 | [DELETE](#delete-password) | `/v1/users/password` | Delete a password           |
-
-## Add password
-
-    POST /v1/users/password
-
-Add a new password to an internal user's passwords list.
-
-The request must contain a single JSON with the username, an
-existing password and a new password to be added.
-
-#### Request
-
-    POST /users/password HTTP/1.1
-
-##### Request headers
-| Name   | Type             | Description         |
-|--------|------------------|---------------------|
-| Host   | cnm.cluster.fqdn | Domain name         |
-| Accept | application/json | Accepted media type |
-
-##### Request body fields
-| Field name    | Type   | Description                                |
-|---------------|--------|--------------------------------------------|
-| username•     | string |                                            |
-| old_password• | string | A password that exists in the current list |
-| new_password• | string | The new (single) password                  |
-
-\* Required field
-
-##### Example request body
-
-  ```json
-  {
-      "username": "johnsmith",
-      "old_password": "an existing password",
-      "new_password": "a password to add"
-  }
-  ```
-
-#### Response
-
-##### Error codes
-
-When errors are reported, the server may return a JSON object with
-error_code and message field that provide additional information.
-The following are possible error_code values:
-
-| Code | Description |
-|------|-------------|
-| password_not_complex | The given password is not complex enough (Only work when the password_complexity feature is enabled). |
-| new_password_same_as_current | The given new password is identical to one of the already existing passwords. |
-
-##### Status codes
-
-| Code | Description |
-|------|-------------|
-| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, new password was added to the list of valid passwords. |
-| [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing parameters. |
-| [401 Unauthorized](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2) | The user is unauthorized. |
-| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to add a password to a non-existing user. |
 
 ## Update password
     
@@ -87,28 +27,15 @@ Reset the password list of an internal user to include a (single)
 new password.
 
 The request must contain a single JSON with the username, a
-currently valid password and the new password:
+currently valid password, and the new password:
 
-#### Request
+### Request
 
-    PUT /users/password HTTP/1.1
+#### Example HTTP request
 
-##### Request headers
-| Name   | Type             | Description         |
-|--------|------------------|---------------------|
-| Host   | cnm.cluster.fqdn | Domain name         |
-| Accept | application/json | Accepted media type |
+    PUT /users/password
 
-##### Request body fields
-| Field name    | Type   | Description                                |
-|---------------|--------|--------------------------------------------|
-| username•     | string |                                            |
-| old_password• | string | A password that exists in the current list |
-| new_password• | string | The new (single) password                  |
-
-\* Required field
-
-##### Example request body
+#### Example JSON body
 
   ```json
   {
@@ -118,20 +45,33 @@ currently valid password and the new password:
   }
   ```
 
-#### Response
+#### Request headers
+| Key    | Value            | Description         |
+|--------|------------------|---------------------|
+| Host   | cnm.cluster.fqdn | Domain name         |
+| Accept | application/json | Accepted media type |
 
-##### Error codes
+#### Request body
+| Field | Type | Description |
+|-------|------|-------------|
+| username     | string | Affected user (required) |
+| old_password | string | A password that exists in the current list (required) |
+| new_password | string | The new (single) password (required) |
+
+### Response
+
+#### Error codes
 
 When errors are reported, the server may return a JSON object with
-error_code and message field that provide additional information.
-The following are possible error_code values:
+`error_code` and `message` fields that provide additional information.
+The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
 | password_not_complex | The given password is not complex enough (Only work when the password_complexity feature is enabled). |
 | new_password_same_as_current | The given new password is identical to one of the already existing passwords. |
 
-##### Status codes
+#### Status codes
 
 | Code | Description |
 |------|-------------|
@@ -139,6 +79,66 @@ The following are possible error_code values:
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing parameters. |
 | [401 Unauthorized](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2) | The user is unauthorized. |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to reset password to a non-existing user. |
+
+## Add password
+
+    POST /v1/users/password
+
+Add a new password to an internal user's passwords list.
+
+The request must contain a single JSON with the username, an
+existing password, and a new password to be added.
+
+### Request
+
+#### Example HTTP request
+
+    POST /users/password
+
+#### Example JSON body
+
+  ```json
+  {
+      "username": "johnsmith",
+      "old_password": "an existing password",
+      "new_password": "a password to add"
+  }
+  ```
+
+#### Request headers
+| Key    | Value            | Description         |
+|--------|------------------|---------------------|
+| Host   | cnm.cluster.fqdn | Domain name         |
+| Accept | application/json | Accepted media type |
+
+#### Request body
+| Field | Type | Description |
+|-------|------|-------------|
+| username     | string | Affected user (required) |
+| old_password | string | A password that exists in the current list (required) |
+| new_password | string | The new (single) password (required) |
+
+### Response
+
+#### Error codes
+
+When errors are reported, the server may return a JSON object with
+`error_code` and `message` fields that provide additional information.
+The following are possible `error_code` values:
+
+| Code | Description |
+|------|-------------|
+| password_not_complex | The given password is not complex enough (Only work when the password_complexity feature is enabled). |
+| new_password_same_as_current | The given new password is identical to one of the already existing passwords. |
+
+#### Status codes
+
+| Code | Description |
+|------|-------------|
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, new password was added to the list of valid passwords. |
+| [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing parameters. |
+| [401 Unauthorized](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2) | The user is unauthorized. |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to add a password to a non-existing user. |
 
 ## Delete password
     DELETE /v1/users/password
@@ -148,25 +148,13 @@ Delete a password from the list of an internal user's passwords.
 The request must contain a single JSON with the username and an
 existing password to be deleted.
 
-#### Request
+### Request
 
-    DELETE /users/password HTTP/1.1
+#### Example HTTP request
 
-##### Request headers
-| Name   | Type             | Description         |
-|--------|------------------|---------------------|
-| Host   | cnm.cluster.fqdn | Domain name         |
-| Accept | application/json | Accepted media type |
+    DELETE /users/password
 
-##### Request body fields
-| Field name    | Type   | Description                     |
-|---------------|--------|---------------------------------|
-| username•     | string |                                 |
-| old_password• | string | Existing password to be deleted |
-
-\* Required field
-
-##### Example request body
+#### Example JSON body
 
   ```json
   {
@@ -175,19 +163,31 @@ existing password to be deleted.
   }
   ```
 
-#### Response
+#### Request headers
+| Key    | Value            | Description         |
+|--------|------------------|---------------------|
+| Host   | cnm.cluster.fqdn | Domain name         |
+| Accept | application/json | Accepted media type |
 
-##### Error codes
+#### Request body
+| Field | Type | Description |
+|-------|------|-------------|
+| username | string | Affected user (required) |
+| old_password | string | Existing password to be deleted (required) |
+
+### Response
+
+#### Error codes
 
 When errors are reported, the server may return a JSON object with
-error_code and message field that provide additional information.
-The following are possible error_code values:
+`error_code` and `message` fields that provide additional information.
+The following are possible `error_code` values:
 
 | Code | Description |
 |------|-------------|
 | cannot_delete_last_password | Cannot delete the last password of a user |
 
-##### Status codes
+#### Status codes
 
 | Code | Description |
 |------|-------------|

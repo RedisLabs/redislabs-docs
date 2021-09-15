@@ -1,6 +1,6 @@
 ---
-Title: Users endpoints
-linkTitle: Users
+Title: Users requests
+linkTitle: users
 description: Documents the Redis Enterprise Software REST API users endpoints.
 weight: $weight
 alwaysopen: false
@@ -13,20 +13,12 @@ aliases: /rs/references/rest-api/users
          /rs/references/rest_api/users.md
 ---
 
-## Authorize endpoints
 | Method | Path | Description |
 |--------|------|-------------|
-| [POST]({{<relref "/rs/references/rest-api/endpoints/users/authorize.md">}}) | `/v1/users/authorize` | Authorize an RLEC user |
+| [GET](#get-all-users) | `/v1/users` | Get all users |
+| [GET](#get-user) | `/v1/users/{{uid}}` | Get a single user |
+| [PUT](#update-user) | `/v1/users/{{uid}}` | Update a user's configuration |
+| [POST](#create-user) | `/v1/users` | Create a new user |
+| [DELETE](#delete-user) | `/v1/users/{{uid}}` | Delete a user |
 
-## Password endpoints
-| Method | Path | Description |
-|--------|------|-------------|
-| [POST]({{<relref "/rs/references/rest-api/endpoints/users/password#add-password">}})      | `/v1/users/password` | Add a new password          |
-| [PUT]({{<relref "/rs/references/rest-api/endpoints/users/password#update-password">}})    | `/v1/users/password` | Change an existing password |
-| [DELETE]({{<relref "/rs/references/rest-api/endpoints/users/password#delete-password">}}) | `/v1/users/password` | Delete a password           |
-
-## Refresh_jwt endpoints
-| Method | Path | Description |
-|--------|------|-------------|
-| [POST]({{<relref "/rs/references/rest-api/endpoints/users/refresh_jwt.md">}}) | `/v1/users/refresh_jwt` | Get a new authentication token |
-
+TBA
