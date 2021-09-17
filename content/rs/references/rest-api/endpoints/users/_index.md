@@ -16,9 +16,9 @@ aliases: /rs/references/rest-api/users
 | Method | Path | Description |
 |--------|------|-------------|
 | [GET](#get-all-users) | `/v1/users` | Get all users |
-| [GET](#get-user) | `/v1/users/{{uid}}` | Get a single user |
-| [PUT](#update-user) | `/v1/users/{{uid}}` | Update a user's configuration |
+| [GET](#get-user) | `/v1/users/{uid}` | Get a single user |
+| [PUT](#update-user) | `/v1/users/{uid}` | Update a user's configuration |
 | [POST](#create-user) | `/v1/users` | Create a new user |
-| [DELETE](#delete-user) | `/v1/users/{{uid}}` | Delete a user |
+| [DELETE](#delete-user) | `/v1/users/{uid}` | Delete a user |
 
 TBA

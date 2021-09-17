@@ -29,7 +29,7 @@ new password.
 The request must contain a single JSON with the username, a
 currently valid password, and the new password:
 
-### Request
+### Request {#put-request}
 
 #### Example HTTP request
 
@@ -58,9 +58,9 @@ currently valid password, and the new password:
 | old_password | string | A password that exists in the current list (required) |
 | new_password | string | The new (single) password (required) |
 
-### Response
+### Response {#put-response}
 
-#### Error codes
+#### Error codes {#put-error-codes}
 
 When errors are reported, the server may return a JSON object with
 `error_code` and `message` fields that provide additional information.
@@ -71,7 +71,7 @@ The following are possible `error_code` values:
 | password_not_complex | The given password is not complex enough (Only work when the password_complexity feature is enabled). |
 | new_password_same_as_current | The given new password is identical to one of the already existing passwords. |
 
-#### Status codes
+#### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -89,7 +89,7 @@ Add a new password to an internal user's passwords list.
 The request must contain a single JSON with the username, an
 existing password, and a new password to be added.
 
-### Request
+### Request {#post-request}
 
 #### Example HTTP request
 
@@ -118,9 +118,9 @@ existing password, and a new password to be added.
 | old_password | string | A password that exists in the current list (required) |
 | new_password | string | The new (single) password (required) |
 
-### Response
+### Response {#post-response}
 
-#### Error codes
+#### Error codes {#post-error-codes}
 
 When errors are reported, the server may return a JSON object with
 `error_code` and `message` fields that provide additional information.
@@ -131,7 +131,7 @@ The following are possible `error_code` values:
 | password_not_complex | The given password is not complex enough (Only work when the password_complexity feature is enabled). |
 | new_password_same_as_current | The given new password is identical to one of the already existing passwords. |
 
-#### Status codes
+#### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -148,7 +148,7 @@ Delete a password from the list of an internal user's passwords.
 The request must contain a single JSON with the username and an
 existing password to be deleted.
 
-### Request
+### Request {#delete-request}
 
 #### Example HTTP request
 
@@ -175,9 +175,9 @@ existing password to be deleted.
 | username | string | Affected user (required) |
 | old_password | string | Existing password to be deleted (required) |
 
-### Response
+### Response {#delete-response}
 
-#### Error codes
+#### Error codes {#delete-error-codes}
 
 When errors are reported, the server may return a JSON object with
 `error_code` and `message` fields that provide additional information.
@@ -187,7 +187,7 @@ The following are possible `error_code` values:
 |------|-------------|
 | cannot_delete_last_password | Cannot delete the last password of a user |
 
-#### Status codes
+#### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|
