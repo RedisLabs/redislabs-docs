@@ -218,6 +218,16 @@
         },
         {
             "Condition": {
+                "KeyPrefixEquals": "glossary/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/glossary"
+            }
+        },
+        {
+            "Condition": {
                 "KeyPrefixEquals": "latest/rc/how-to/creating-aws-user-redis-enterprise-vpc/"
             },
             "Redirect": {
