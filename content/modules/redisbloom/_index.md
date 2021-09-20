@@ -7,7 +7,7 @@ categories: ["Modules"]
 aliases:
   - /redisbloom/
   - /redis-bloom/
-  - /-redis_bloom/
+  - /redis_bloom/
   - /rs/developing/modules/bloom-filters/
 ---
 A Bloom filter is a probabilistic data structure which provides an
