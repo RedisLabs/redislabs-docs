@@ -4,6 +4,7 @@ description:
 weight: 100
 alwaysopen: false
 categories: ["Glossary"]
+aliases: /glossary/
 ---
 <dl class="glossary">
 

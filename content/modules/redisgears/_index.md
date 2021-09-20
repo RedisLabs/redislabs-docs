@@ -4,6 +4,9 @@ description:
 weight: 40
 alwaysopen: false
 categories: ["Modules"]
+aliases: /redisgears/
+         /redis-gears/
+         /redis_gears/
 ---
 ## What is RedisGears?
 
