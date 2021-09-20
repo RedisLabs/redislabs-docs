@@ -108,7 +108,7 @@
         },
         {
             "Condition": {
-                "KeyPrefixEquals": "platforms"
+                "KeyPrefixEquals": "platforms/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
