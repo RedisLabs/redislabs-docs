@@ -4,6 +4,13 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/
+         /redissoftware/
+         /redis-software/
+         /redis_software/
+         /redisenterprisesoftware/
+         /redis-enterprise-software/
+         /redis_enterprise_software/
 ---
 
 [Redis Enterprise](https://redislabs.com/redis-enterprise/) is a robust, in-memory database platform built by the same people who develop open source Redis.

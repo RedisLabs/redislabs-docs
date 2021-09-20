@@ -5,6 +5,14 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/
+         /rc/
+         /rediscloud
+         /redis-cloud
+         /redis_cloud
+         /redisenterprisecloud
+         /redis-enterprise-cloud
+         /redis_enterprise_cloud
+
 ---
 Redis Enterprise Cloud delivers a cost-effective, fully managed
 Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
