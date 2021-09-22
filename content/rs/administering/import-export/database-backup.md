@@ -8,6 +8,7 @@ aliases: /rs/administering/database-operations/database-backup/
 ---
 You can manually [export your data]({{< relref "/rs/administering/import-export/exporting-data.md" >}})
 from a specific Redis Enterprise Software database at any time.
+
 You can also schedule backups of your databases to make sure you always have valid backups.
 The backup process can be scheduled for every 1, 4, 12 or 24 hours from the time that you save the backup configuration.
 
@@ -20,9 +21,10 @@ You can schedule backups to these locations:
 - Azure Blob Storage
 - Google Cloud Storage
 
-The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/import-export/importing-data.md" >}}).
-If you backup a database configured for database clustering,
-Redis Software copies a backup file for each shard to the specified backup location.
+The backup process creates compressed (.gz) RDB files that you can [import into a database]({{< relref "/rs/administering/import-export/importing-data.md" >}}). 
+
+When you back up a database configured for database clustering,
+Redis Enterprise Software creates a backup file for each shard in the configuration.  All backup files are copied to the storage location.
 
 {{< note >}}
 
@@ -36,11 +38,21 @@ Redis Software copies a backup file for each shard to the specified backup locat
 
 To schedule periodic backups for a database:
 
-1. In **databases**, click on the database that you want to configure backups for.
-1. In **configuration**, select **Periodic backup**.
-1. Select an interval for the backups to run either every **1**, **4**, **12** or **24** hours.
-1. Select one of the available storage types.
-1. Enter the details for the selected storage type.
-1. To save the database configuration, click **Update**.
+1.  Sign in to the Redis Enterprise Software admin console using admin credentials.
+2.  From the admin menu, choose **Databases** and then select the database.
+3.  Select the **Edit** button.
+4.  Locate the **Periodic backup** checkbox and then select it.
+
+    {{<image filename="images/rs/database-configuration-periodic-backup.png" alt="In the admin console, the Periodic backup settings can be found on the Configuration details tab of the database." >}}{{< /image >}}
+    
+
+5.  Set **Interval** to the desired backup frequency.  Backups can be scheduled to occur _every 24 hours_, _every 12 hours_, _every 4 hours_ or _every hour_.
+
+6.  Choose the **Storage location** for the backup file.  See [storage locations](#storage-locations) for details.
+
+    Note that the storage location must be accessible before enabling periodic backups.
+
+7.  Enter the access details for the selected storage location. 
+
 
 {{< embed-md "backup-locations.md" >}}
