@@ -1,5 +1,5 @@
 ---
-Title: High Availability for replica shards
+Title: High availability for replica shards
 linkTitle: High availability for replicas
 description:
 weight: $weight
