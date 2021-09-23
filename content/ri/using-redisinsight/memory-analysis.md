@@ -1,13 +1,16 @@
 ---
-Title: Memory Analysis
+Title: Memory analysis
+linkTitle: Memory analysis
 date: 2018-06-14 03:49:29 +0530
 weight: 50
 categories: ["RI"]
 path: features/memory-analysis/
 ---
-RedisInsight Memory analysis help you analyze your redis instance and helps in reducing memory usage and improving application performance. Analysis can be done in two ways:
+RedisInsight Memory analysis help you analyze your Redis database, which helps reduce memory use and improves application performance. 
 
-1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzes it to create a temp file with all the keys and meta data required for analysis. In case there is a master-slave connection, RedisInsight downloads the dump from the slave instead of the master in order to avoid affecting the performance of the master.
+Analysis can be done in two ways:
+
+1. **online mode** - In this mode, RedisInsight downloads a rdb file from your connected redis instance and analyzes it to create a temp file with all the keys and meta data required for analysis. In case there is a master-replica connection, RedisInsight downloads the dump from the replica instead of the master in order to avoid affecting the performance of the master.
 
 1. **offline mode** - In this mode, RedisInsight analyzes your redis backup files. These files can either be present in your system or on s3. RedisInsight accepts a list of rdb files given to it and analyzes all the information required from these files instead of downloading it from your redis instance. In order to analyze backup files stored in s3, RedisInsight should have ReadOnly permission to your s3 bucket where the files are stored.
 Specify the name of the s3 bucket and the path to the rdb file.
@@ -16,7 +19,7 @@ Specify the name of the s3 bucket and the path to the rdb file.
 
 ## Running memory analysis on an instance
 
-Navigte to Memory Analysis > Overview, and then click the "Analyze Now" button. You should see a dialog box with two options - Offline Analysis and Online Analysis.
+Navigate to Memory Analysis > Overview, and then click the "Analyze Now" button. You should see a dialog box with two options - Offline Analysis and Online Analysis.
 
 Choose the offline analysis approach if you have a RDB Backup file that you want to analyze. We can proceed with online analysis.
 
@@ -60,8 +63,8 @@ This can be done in two ways:
 
   1. Using the [SYNC](https://redis.io/commands/sync) command.
      This is the preferred approach and is used if possible.
-     Redis has a `SYNC` command that slaves use to synchronize with the master.
-     Our agent pretends to be a slave and sends the `SYNC` command to the instance, which responds with all its data as it would to a slave trying to synchronize with it.
+     Redis has a `SYNC` command that replicas use to synchronize with the master.
+     Our agent pretends to be a replica and sends the `SYNC` command to the instance, which responds with all its data as it would to a replica trying to synchronize with it.
   1. Using the [DUMP](https://redis.io/commands/dump) command.
      Cloud providers do not support the `SYNC` command, so that approach won't work.
      But they do support the `DUMP` command.

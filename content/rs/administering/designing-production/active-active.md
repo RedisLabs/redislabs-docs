@@ -9,17 +9,17 @@ aliases: /rs/administering/intercluster-replication/crdbs/
 ---
 In Redis Enterprise, active-active geo-distribution is based on [CRDT technology](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type).
 The Redis Enterprise implementation of CRDT is called an Active-Active database (formerly known as CRDB).
-With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with latency less than 1 ms,
+With Active-Active databases, applications can read and write to the same data set from different geographical locations seamlessly and with latency less than one millisecond (ms),
 without changing the way the application connects to the database.
 
 Active-Active databases also provide disaster recovery and accelerated data read-access for geographically distributed users.
 
 {{< note >}}
 Active-Active databases do not replicate the entire database, only the data.
-Database configurations, Lua scripts, and other configurations are not replicated.
+Database configurations, LUA scripts, and other support info are not replicated.
 {{< /note >}}
 
-You can create Active-Active databases on Redis Enterprise Software (RS) or Redis Cloud.
+You can create Active-Active databases on Redis Enterprise Software or Redis Cloud.
 
 ## Considerations for Active-Active Databases {#considerations-for-activeactive-databases}
 
@@ -28,10 +28,10 @@ An Active-Active database is made up of instances of the data that are each stor
 
 Before configuring an Active-Active database, you must:
 
-- If the Active-Active database spans a WAN, establish a VPN between each networks that hosts a cluster with an instance.
+- If the Active-Active database spans a WAN, establish a VPN between each network that hosts a cluster with an instance.
 - Setup [RS clusters]({{< relref "/rs/administering/new-cluster-setup.md" >}}) for each Active-Active database instance.
 
-    All clusters must have the same RS version.
+    All clusters must have the same Redis Enterprise Software version.
 - Configure [FQDNs in a DNS server]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) for connections to the cluster.
 
     Active-Active databases are not compatible with the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}) for inter-cluster communications,
@@ -106,11 +106,11 @@ The syncer process:
 
 Some replication capabilities are also included in [open source redis](https://redis.io/topics/replication).
 
-The Master at the top of the master-slaves tree creates a replication ID.
-This replication ID is identical for all slaves in that tree.
+The Master at the top of the master-replica tree creates a replication ID.
+This replication ID is identical for all replicas in that tree.
 When a new master is appointed, the replication ID changes but a partial sync from the previous ID is still possible.
 In a partial sync, the backlog of operations since the offset are transferred as raw operations.
-In a full sync, the data from the master is transferred to the slave as an RDB file which is followed by a partial sync.
+In a full sync, the data from the master is transferred to the replica as an RDB file which is followed by a partial sync.
 
 Partial synchronization requires a backlog large enough to store the data operations until connection is restored.
 
@@ -119,7 +119,7 @@ Partial synchronization requires a backlog large enough to store the data operat
 In the case of an Active-Active database:
 
 - Multiple past replication IDs and offsets are stored to allow for multiple syncs
-- The Active-Active backlog is also sent to the slave during a full sync
+- The Active-Active backlog is also sent to the replica during a full sync
 
 {{< warning >}}
 Full sync triggers heavy data transfers between geo-replicated instances of an Active-Active database.
@@ -127,12 +127,12 @@ Full sync triggers heavy data transfers between geo-replicated instances of an A
 
 The scenarios in which an Active-Active database updates to other instances use partial synchronization are:
 
-- Failover of master shard to slave shard
-- Restart or crash of slave shard that requires sync from master
-- Migrate slave shard to another node
-- Migrate master shard to another node as a slave using failover and slave migration
-- Migrate master shard and preserve roles using failover, slave migration, and second failover to return shard to master
+- Failover of master shard to replica shard
+- Restart or crash of replica shard that requires sync from master
+- Migrate replica shard to another node
+- Migrate master shard to another node as a replica using failover and replica migration
+- Migrate master shard and preserve roles using failover, replica migration, and second failover to return shard to master
 
 {{< note >}}
-Synchronization of data from the master shard to the slave shard is always a full synchronization.
+Synchronization of data from the master shard to the replica shard is always a full synchronization.
 {{< /note >}}

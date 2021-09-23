@@ -1,5 +1,6 @@
 ---
-Title: Adding a Redis Database
+Title: Add a Redis database
+linkTitle: Add database
 date: 2018-07-20 03:49:29 +0530
 weight: 10
 categories: ["RI"]
@@ -8,7 +9,8 @@ nextStep:
     Title: Memory Analysis
     href: /docs/features/memory-analysis/
 ---
-Before using any of the tools to work with your database, you must first add the database so RedisInsight can connect to it.
+Before using any of the tools to work with your database, you must first add the database so RedisInsight can connect to it.\
+
 Each of these database configurations requires specific steps to add them to RedisInsight:
 
 - Standalone Redis
@@ -79,7 +81,7 @@ To add a [Redis Cluster](https://redis.io/topics/cluster-tutorial) database:
 ### Add a Redis Sentinel database
 
 [Redis Sentinel](https://redis.io/topics/sentinel) is often used for High Availability deployments of Redis.
-It provides automatic master-to-slave failover.
+It provides automatic master-to-replica failover.
 When you use Sentinel, clients connect to the Sentinel instance to get the current topology of the databases.
 The client then connects to the current master.
 If the connection fails, the client queries the Sentinel instance again to find the current master.

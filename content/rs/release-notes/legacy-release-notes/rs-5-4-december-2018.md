@@ -33,9 +33,9 @@ In RS 5.4 you can [create Active-Active databases (CRDBs)]({{< relref "/rs/admin
 1. Clustering mode - Creates a CRDB that consists of any number of shards in a clustering mode and is subject to [multi-key commands limitations]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
 1. Non-clustering mode - Creates a CRDB that consists of one shard only in a non-clustering mode so that [multi-key command limitations]({{< relref "/rs/concepts/high-availability/clustering.md" >}}) do not apply.
 
-### High availability for replica (slave) shards
+### High availability for replica shards
 
-When [slave high availability]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) is enabled and a master shard fails, a replica shard is automatically promoted to a master shard to maintain data availability. This creates a single point of failure until a new replica shard is manually created.
+When [replica high availability]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) is enabled and a master shard fails, a replica (formerly _slave_) shard is automatically promoted to a master shard to maintain data availability. This creates a single point of failure until a new replica shard is manually created.
 
 RS 5.4 expands the high availability capabilities by adding the ability to automatically avoid this single point of failure by configuring the cluster to automatically migrate the replica shard to another available node. In practice, replica migration creates a new replica shard and replicates the data from the master shard to the new replica shard.
 
