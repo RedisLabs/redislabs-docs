@@ -1,5 +1,6 @@
 ---
-Title: High Availability for Slave Shards
+Title: High Availability for replica shards
+linkTitle: High availability for replicas
 description:
 weight: $weight
 alwaysopen: false
@@ -40,7 +41,7 @@ For example:
 - Replica HA migrates as many shards as possible based on available DRAM in the target node. When no DRAM is available, replica HA stops migrating replica shards to that node.
 {{< /note >}}
 
-## Configuring high availability for slave shards
+## Configuring high availability for replica shards
 
 Using `rladmin` or the REST API, replica HA is controlled on the database level and on the cluster level.
 You can enable or disable replica HA for a database or for the entire cluster.
