@@ -60,7 +60,7 @@ currently valid password, and the new password:
 
 ### Response {#put-response}
 
-#### Error codes {#put-error-codes}
+### Error codes {#put-error-codes}
 
 When errors are reported, the server may return a JSON object with
 `error_code` and `message` fields that provide additional information.
@@ -71,7 +71,7 @@ The following are possible `error_code` values:
 | password_not_complex | The given password is not complex enough (Only work when the password_complexity feature is enabled). |
 | new_password_same_as_current | The given new password is identical to one of the already existing passwords. |
 
-#### Status codes {#put-status-codes}
+### Status codes {#put-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -120,7 +120,7 @@ existing password, and a new password to be added.
 
 ### Response {#post-response}
 
-#### Error codes {#post-error-codes}
+### Error codes {#post-error-codes}
 
 When errors are reported, the server may return a JSON object with
 `error_code` and `message` fields that provide additional information.
@@ -131,7 +131,7 @@ The following are possible `error_code` values:
 | password_not_complex | The given password is not complex enough (Only work when the password_complexity feature is enabled). |
 | new_password_same_as_current | The given new password is identical to one of the already existing passwords. |
 
-#### Status codes {#post-status-codes}
+### Status codes {#post-status-codes}
 
 | Code | Description |
 |------|-------------|
@@ -177,7 +177,7 @@ existing password to be deleted.
 
 ### Response {#delete-response}
 
-#### Error codes {#delete-error-codes}
+### Error codes {#delete-error-codes}
 
 When errors are reported, the server may return a JSON object with
 `error_code` and `message` fields that provide additional information.
@@ -187,7 +187,7 @@ The following are possible `error_code` values:
 |------|-------------|
 | cannot_delete_last_password | Cannot delete the last password of a user |
 
-#### Status codes {#delete-status-codes}
+### Status codes {#delete-status-codes}
 
 | Code | Description |
 |------|-------------|

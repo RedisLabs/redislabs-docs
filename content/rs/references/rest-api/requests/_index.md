@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise REST API endpoints
-linkTitle: Endpoints
-description: Documents the endpoints supported by the Redis Enterprise Software REST API calls.
+Title: Redis Enterprise REST API requests
+linkTitle: Requests
+description: Documents the requests supported by the Redis Enterprise Software REST API calls.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
