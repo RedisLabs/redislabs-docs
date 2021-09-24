@@ -14,7 +14,7 @@ is configured to a relatively small value, which causes the connection drop.
 
 **Resolution**: Reconfigure the buffer on the source database to a bigger value:
 
-- If the source is a Redis database on an Redis Enterprise Software cluster,
+- If the source is a Redis database on a Redis Enterprise Software cluster,
     increase the replica buffer size of the **source database** with:
 
     `rladmin tune db < db:id | name > slave_buffer < value >`
