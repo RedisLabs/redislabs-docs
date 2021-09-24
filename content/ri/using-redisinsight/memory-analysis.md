@@ -6,7 +6,7 @@ weight: 50
 categories: ["RI"]
 path: features/memory-analysis/
 ---
-RedisInsight Memory analysis help you analyze your Redis database, which helps reduce memory use and improves application performance. 
+RedisInsight Memory analysis helps you analyze your Redis database, which helps reduce memory use and improves application performance. 
 
 Analysis can be done in two ways:
 
