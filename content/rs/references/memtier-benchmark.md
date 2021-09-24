@@ -194,4 +194,4 @@ You should expect to see an average throughput of:
 - Around 160,000 ops/sec when testing without replication (i.e. Four master shards)
 - Around 115,000 ops/sec when testing with enabled replication (i.e. Four master and 2 replica shards)
 
-In both cases, the average latency should below one millisecond.
+In both cases, the average latency should be below one millisecond.
