@@ -31,7 +31,7 @@ shards.*
 
 ## High availability with Redis Enterprise
 
-Redis Enterprise uses in-memory replication to maintain master and replica
+Redis Enterprise uses in-memory replication to maintain master and
 replicas. Redis Enterprise comes with various watchdogs that detect and
 protect against many failures types. Under failures such as node,
 network, process failures that render master replica inaccessible, Redis
