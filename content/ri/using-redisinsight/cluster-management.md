@@ -21,7 +21,7 @@ Cluster Management not only gives you a representation of your cluster but also 
 1. **Manual Resharding** - Manual Resharding asks for source and destination nodes with slot ranges. Using this you can migrate the specified slot range from source to destination node in just a few clicks.
 1. **Add Node to Cluster**- Cluster Management allows you to add a new node to your cluster as a master. The node should be empty and should have cluster enabled.
 1. **Manual Failover** - Using this you can manually failover a replica node to become the master.
-1. **Delete Node in Cluster** - Using this to delete a replica.  (Master nodes cannot be deleted.)
+1. **Delete Node in Cluster** - Use this to delete a replica.  (Master nodes cannot be deleted.)
 1. **Make a node Replica of Master** - Cluster management includes a feature to make the selected node replica of a master. If the node is already a replica, no work is required. If the node is a master, then that should be empty i.e. - no hash slots and keys.
 1. **Cluster Health Monitoring & Alerts** - Cluster Management constantly runs health checks for your cluster and returns alerts if there is any issue with the cluster. It also provides alerts if the master and replica are on the same server. The alerts for the cluster can be fixed by using the Fix Cluster feature.
 

@@ -1,7 +1,7 @@
 ---
 Title: Getting Started with the CLI tools
 description: The operator and cluster can be installed via CLI tools
-  OpenShift 3.x or 4.x.
+  OpenShift
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
@@ -13,9 +13,9 @@ Cluster with OpenShift.
 
 Prerequisites:
 
-1. An [OpenShift cluster installed (3.x or 4.x)](https://docs.openshift.com/container-platform/3.11/welcome/index.html) with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
+1. An [OpenShift cluster installed](https://docs.openshift.com/container-platform/4.8/installing/index.html) at version 4.6 or higher, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
-1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/4.2/cli_reference/openshift_cli/getting-started-cli.html)
+1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html)
 
 ## Step 1: Login
 
@@ -62,7 +62,7 @@ Let’s look at each yaml file to see what requires editing:
 
 - [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml)
 
-    The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/3.11/welcome/index.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
+    The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
 
     1. Apply the file:
 
@@ -300,7 +300,7 @@ To create your database:
 
     {{< note >}}
 - your_cluster_name-0 is one of your cluster pods. Consider running the port-forward command in the background.
-- The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/3.11/dev_guide/routes.html).
+- The Openshift UI provides tools for creating additional routing options, including external routes. These are covered in [RedHat Openshift documentation](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html).
     {{< /note >}}
 
     Next, create your database.
