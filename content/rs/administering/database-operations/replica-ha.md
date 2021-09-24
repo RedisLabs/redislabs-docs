@@ -5,10 +5,8 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/administering/database-operations/slave-ha.md,
-         /rs/administering/database-operations/slave-ha/,
-         /rs/administering/database-operations/replica-ha.md,
-         /rs/administering/database-operations/replica-ha/
+aliases: [/rs/administering/database-operations/slave-ha.md,
+         /rs/administering/database-operations/slave-ha/]
 ---
 When you enable [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) for your database,
 Redis Enterprise Software copies your data to a replica node to make your data highly available.

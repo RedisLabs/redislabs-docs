@@ -31,11 +31,11 @@ shards.*
 
 ## High availability with Redis Enterprise
 
-Redis Enterprise uses in-memory replication to maintain master and replica
+Redis Enterprise uses in-memory replication to maintain master and
 replicas. Redis Enterprise comes with various watchdogs that detect and
 protect against many failures types. Under failures such as node,
 network, process failures that render master replica inaccessible, Redis
-Enterprise automatically promotes the replica replica to be a master
+Enterprise automatically promotes the replica to be a master
 replica and redirects the client connection transparently to the new
 master replica.
 
@@ -62,7 +62,7 @@ latencies. Resharding is performed without downtime.
 ![Sharding diagram](/images/rs/sharding.png)
 
 *Figure 2*
-*Redis Enterprise places master node (M) and replica (R) replicas in separate
+*Redis Enterprise places master node (M) and replicas (R) in separate
 nodes, racks and zones and use in-memory replication to protect data
 against failures.*
 

@@ -9,7 +9,7 @@ aliases: /rs/references/cli-reference/memtier-benchmark/
 ---
 Redis on Flash (RoF) on Redis Enterprise Software lets you use cost-effective Flash memory as a RAM extension for your database.
 
-But what does the performance look like as compared to an memory-only database, one stored solely in RAM?
+But what does the performance look like as compared to a memory-only database, one stored solely in RAM?
 
 These scenarios use the `memtier_benchmark` utility to evaluate the performance of a Redis Enterprise Software deployment, including the trial version.  
 
@@ -20,7 +20,7 @@ For additional, such as assistance with larger clusters, [contact support](https
 
 ## Benchmark and performance test considerations
 
-These tests assume you're using a trial version of Redis Enterprise Software and want to test the performance of Redis on Flash enabled database in the following scenarios:
+These tests assume you're using a trial version of Redis Enterprise Software and want to test the performance of a Redis on Flash enabled database in the following scenarios:
 
 - Without replication: Four (4) master shards
 - With replication: Two (2) primary and two replica shards
@@ -36,7 +36,7 @@ With the trial version of Redis Enterprise Software you can create a cluster of 
 
 For the test environment, you need to:
 
-1. Create cluster with three nodes.
+1. Create a cluster with three nodes.
 1. Prepare the flash memory.
 1. Configure the load generation tool.
 
@@ -194,4 +194,4 @@ You should expect to see an average throughput of:
 - Around 160,000 ops/sec when testing without replication (i.e. Four master shards)
 - Around 115,000 ops/sec when testing with enabled replication (i.e. Four master and 2 replica shards)
 
-In both cases, the average latency should below one millisecond.
+In both cases, the average latency should be below one millisecond.
