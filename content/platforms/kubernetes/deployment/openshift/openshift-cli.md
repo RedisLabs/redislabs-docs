@@ -1,12 +1,20 @@
 ---
-Title: Getting Started with the CLI tools
+Title: Redis Enterprise Software on Kubernetes deployment with OpenShift CLI tools
+linkTitle: OpenShift CLI
 description: The operator and cluster can be installed via CLI tools
   OpenShift
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
-         /platforms/openshift/getting-started-cli/
+aliases: [
+    /rs/getting-started/getting-started-kubernetes/k8s-openshift/, 
+    /platforms/openshift/getting-started-cli/,
+    /platforms/kubernetes/getting-started/openshift/openshift-cli/,
+    /platforms/kubernetes/getting-started/openshift/openshift-cli.md,
+    /platforms/kubernetes/deployment/openshift/openshift-cli/,
+    /platforms/kubernetes/deployment/openshift/openshift-cli/
+
+]
 ---
 These are the steps required to set up a Redis Enterprise Software
 Cluster with OpenShift.

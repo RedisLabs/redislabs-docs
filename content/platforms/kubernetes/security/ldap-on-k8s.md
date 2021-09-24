@@ -1,13 +1,19 @@
 ---
 Title: Configure LDAP authentication
-description: How to configure LDAP-based authentication for a Redis Enterprise cluster on Kubernetes.
+linkTitle: LDAP authentication
+description: How to configure LDAP authentication for a Redis Enterprise cluster on Kubernetes.
 weight: 90
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: [
+       /platforms/kubernetes/tasks/ldap-on-k8s/,
+       /platforms/kubernetes/tasks/ldap-on-k8s.md,
+       /platforms/kubernetes/security/ldap-on-k8s.md,
+       /platforms/kubernetes/secuirty/ldap-on-k8s/,
+]
 ---
 
-This tutorial describes how to configure LDAP-based authentication for a Redis Enterprise cluster on Kubernetes. Throughout this tutorial, we will assume that there is a single namespace called "db".
+This tutorial describes how to configure LDAP-based authentication for a Redis Enterprise Software on Kubernetes. Throughout this tutorial, we will assume that there is a single namespace called "db".
 
 ## LDAP overview
 

@@ -1,12 +1,18 @@
 ---
-Title: Getting Started with the OperatorHub on OpenShift 4.x
+Title: Redis Enterprise Software on Kubernetes deployment with the OpenShift OperatorHub
+linkTitle: OpenShift OperatorHub
 description: OpenShift provides the OperatorHub where you can install the
- Redis Enterprise Operator from the administrator user interface. Alternatively,
+ Redis Enterprise operator from the administrator user interface. Alternatively,
  can install the operator and cluster with the CLI.
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /platforms/openshift/getting-started-operatorhub/
+aliases: [
+    /platforms/openshift/getting-started-operatorhub/,
+    /platforms/kubernetes/getting-started/openshift/openshift-operatorhub.md
+    /platforms/kubernetes/deployment/openshift/openshift-operatorhub/,
+    /platforms/kubernetes/deployment/openshift/openshift-operatorhub.md,
+]
 ---
 The OperatorHub is a feature of OpenShift 4.x that enables browsing a catalog
 of open-source and vendor-provided operators.

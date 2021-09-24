@@ -1,10 +1,17 @@
 ---
 Title: Manage container images
+linktitle: Manage container images
 description: This section details how the Redis Enterprise Software and Kubernetes operator images can be configured to be pulled from a variety of sources. This page describes how to configure alternate private repositories for images, plus some techniques for handling public repositories with rate limiting.
 weight: 92
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /platforms/kubernetes/managing-images/
+aliases: [
+  /platforms/kubernetes/managing-images/,
+  /platforms/kubernetes/concepts/managing-images/,
+  /platforms/kubernetes/concepts/managing-images.md,
+  /platforms/kubernetes/deployment/container-images/,
+  /platforms/kubernetes/deployment/container-images.md,
+]
 ---
 
 Redis Enterprise Software, its Kubernetes operator, and the Service Rigger

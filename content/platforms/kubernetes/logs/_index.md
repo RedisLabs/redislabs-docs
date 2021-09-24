@@ -1,23 +1,31 @@
 ---
-Title: Redis Enterprise logs on Kubernetes
+Title: Redis Enterprise Software log on Kubernetes
 linkTitle: Logs
 description: This section provides information about how logs are stored and accessed.
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
 # keywords: ["kubernetes"]
-aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-logs
-         /rs/concepts/logs/
-         /platforms/kubernetes/kubernetes-logs/
+aliases: [
+  /rs/concepts/kubernetes/redis-labs-kubernetes-logs,
+  /rs/concepts/logs/,
+  /platforms/kubernetes/kubernetes-logs/,
+  /platforms/kubernetes/concepts/logs/,
+  /platforms/kubernetes/concepts/logs.md,
+  /platforms/kubernetes/logs/,
+  /platforms/kubernetes/logs/_index.md,
+]
 ---
 
 ## Logs
+
 Each redis-enterprise container stores its logs under `/var/opt/redislabs/log`.
 When using persistent storage this path is automatically mounted to the
 `redis-enterprise-storage` volume.
 This volume can easily be accessed by a sidecar, i.e. a container residing on the same pod.
 
 For example, in the REC (Redis Enterprise Cluster) spec you can add a sidecar container, such as a busybox, and mount the logs to there:
+
 ```yaml
 sideContainersSpec:
   - name: busybox

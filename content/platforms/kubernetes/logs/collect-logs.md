@@ -1,14 +1,20 @@
 ---
-Title: Run the log collector script
-linkTitle: Run log_collector.py
+Title: Collect logs
+linkTitle: Collect logs
 description: Run the log collector script to package relevant logs into a tar.gz file to send to Redis Support for help troubleshooting your Kubernetes environment.
 weight: 89
 alwaysopen: false
 categories: ["Platforms"]
-aliases: 
+aliases: [ 
+      /platforms/kubernetes/tasks/run-log-collector-script/, 
+      /platforms/kubernetes/tasks/run-log-collector-script.md, 
+      /platforms/kubernetes/logs/collect-logs.md,
+      /platforms/kubernetes/logs/collect-logs/,
+]
+    
 ---
 
-The Redis Enterprise cluster (REC) log collector script ([`log_collector.py`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/log_collector/log_collector.py)) creates and fills a directory with the relevant logs for your environment. These logs will help the support team with troubleshooting. 
+The Redis Enterprise cluster (REC) log collector script ([`log_collector.py`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/log_collector/log_collector.py)) creates and fills a directory with the relevant logs for your environment. These logs will help the support team with troubleshooting.
 
 1. Download the [`log_collector.py`](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/log_collector/log_collector.py) file.
 2. Run the script on the system that runs your `kubectl` or `oc` commands.

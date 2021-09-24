@@ -1,16 +1,13 @@
 ---
-Title: Getting Started with Kubernetes and OpenShift
+Title: Redis Enterprise Software deployment for Kubernetes with OpenShift
 description: Redis Enterprise is supported on OpenShift Kubernetes cluster deployments via
   an operator. 
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/getting-started/getting-started-kubernetes/k8s-openshift/
-         /platforms/openshift/
-         /platforms/kubernetes/getting-started/openshift/getting-started-openshift-crdb/
-         /platforms/kubernetes/getting-started/openshift/getting-started-openshift-crdb.md
-         /platforms/openshift/getting-started-openshift-crdb/
-         /platforms/openshift/getting-started-openshift-crdb.md
+draft: true
+aliases: [
+]
 ---
 
 Redis Enterprise is supported on OpenShift Kubernetes cluster deployments via

@@ -1,12 +1,15 @@
 ---
 Title: Enable internode encryption
-description: Enable encryption for communication between REC nodes in your K8s cluster. 
 linkTitle: Internode encryption
+description: Enable encryption for communication between REC nodes in your K8s cluster. 
 weight: 99
 categories: ["Platforms"]
-aliases: /platforms/kubernetes/tasks/internode-encryption.md
-        /content/platforms/kubernetes/tasks/internode-encryption/
-
+aliases: [
+    /platforms/kubernetes/tasks/internode-encryption.md, 
+    /platforms/kubernetes/tasks/internode-encryption/,
+    /platforms/kubernetes/security/internode-encryption.md, 
+    /platforms/kubernetes/security/internode-encryption/,
+]
 ---
 
 Internode encryption provides added security by encrypting communication between nodes in your Redis Enterprise cluster (REC).

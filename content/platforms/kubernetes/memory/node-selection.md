@@ -1,11 +1,19 @@
 ---
 Title: Control node selection
+linkTitle: Node selection
 weight: 80
 alwaysopen: false
 description: This section provides information about how Redis Enterprise cluster pods can be scheduled to only be placed
  on specific nodes or node pools.
 categories: ["Platforms"]
-aliases: /platforms/kubernetes/pod-scheduling/
+aliases: [
+    /platforms/kubernetes/pod-scheduling/,
+    /platforms/kubernetes/concepts/node-selection.md,
+    /platforms/kubernetes/concepts/node-selection,
+    /platforms/kubernetes/memory/node-selection.md
+    /platforms/kubernetes/memory/node-selection/
+]
+
 ---
 
 Many K8s cluster deployments have different kinds of nodes that have

@@ -1,10 +1,16 @@
 ---
-Title: Quick Start for Kubernetes
+Title: Deploy Redis Enterprise Software on Kubernetes
+
 description: How to install the Redis Enterprise Kubernetes Operator.
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: [
+  /platforms/kubernetes/getting-started/quick-start/,
+  /platforms/kubernetes/getting-started/quick-start.md,
+  /platforms/kubernetes/deployment/quick-start/,
+  /platforms/kubernetes/deployment/quick-start.md, 
+]
 ---
 
 To deploy Redis Enterprise Software on Kubernetes, you first need to install the Redis Enterprise Operator. The best way to install the operator depends on your Kubernetes environment.

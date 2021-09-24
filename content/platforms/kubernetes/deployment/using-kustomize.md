@@ -1,10 +1,16 @@
 ---
-Title: Using kustomize for Deployment
+Title: Use kustomize for deployment
+linkTitle: kustomize
 description: How to use the kustomize tool with the Redis Enterprise operator on Kubernetes
-weight: 32
+weight: 90
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: [
+  /platforms/kubernetes/tasks/using-kustomize/, 
+  /platforms/kubernetes/tasks/using-kustomize.md
+  /platforms/kubernetes/deployment/using-kustomize/, 
+  /platforms/kubernetes/deployment/using-kustomize.md
+]
 ---
 
 [Kustomize](https://kustomize.io) is a template-free, [Kubernetes native](https://github.com/kubernetes-sigs/kustomize) way to customize application configuration. Kustomize is available in `kubectl` by running `kubectl apply -k`. Kustomize provides a declarative approach to configuration management that you can use with a variety of deployment tools for Kubernetes.

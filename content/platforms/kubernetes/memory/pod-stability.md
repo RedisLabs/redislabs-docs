@@ -1,11 +1,19 @@
 ---
 Title: Manage pod stability
+linkTitle: Pod stability
 description: This section provides information about how you can use quality of service, priority class, eviction thresholds and resource monitoring
     to maintain cluster node pod stability.
 weight: 90
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /platforms/kubernetes/stability/
+aliases: [ 
+    /platforms/kubernetes/stability/,
+    /platforms/kubernetes/concepts/stability.md,
+    /platforms/kubernetes/concepts/stability/,
+    /platforms/kubernetes/memory/pod-stability.md,
+    /platforms/kubernetes/memory/pod-stability/ 
+]
+
 ---
 
 Kubernetes clusters manage the allocation of system resources and can evict pods to release system resources.

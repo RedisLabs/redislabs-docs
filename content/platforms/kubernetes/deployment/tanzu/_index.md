@@ -1,10 +1,17 @@
 ---
-Title: Getting Started with VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS)
+Title: Redis Enterprise Software on Kubernetes deployment with VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS)
+linkTitle: VMWare Tanzu Kubernetes Grid Integrated Edition
 description: This section provides the steps required to set up a Redis Enterprise cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/getting-started/getting-started-kubernetes/k8s-pks/
+aliases: [
+    /rs/getting-started/getting-started-kubernetes/k8s-pks/,
+    /platforms/kubernetes/getting-started/tanzu/,
+    /platforms/kubernetes/getting-started/tanzu._index.md,
+    /platforms/kubernetes/deployment/tanzu/,
+    /platforms/kubernetes/deployment/tanzu/_index.md,
+]
 ---
 These are the steps required to set up a Redis Enterprise cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
 
