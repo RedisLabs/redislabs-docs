@@ -9,7 +9,7 @@ aliases: /rs/references/cli-reference/memtier-benchmark/
 ---
 Redis on Flash (RoF) on Redis Enterprise Software lets you use cost-effective Flash memory as a RAM extension for your database.
 
-But what does the performance look like as compared to an memory-only database, one stored solely in RAM?
+But what does the performance look like as compared to a memory-only database, one stored solely in RAM?
 
 These scenarios use the `memtier_benchmark` utility to evaluate the performance of a Redis Enterprise Software deployment, including the trial version.  
 
