@@ -20,7 +20,7 @@ For additional, such as assistance with larger clusters, [contact support](https
 
 ## Benchmark and performance test considerations
 
-These tests assume you're using a trial version of Redis Enterprise Software and want to test the performance of Redis on Flash enabled database in the following scenarios:
+These tests assume you're using a trial version of Redis Enterprise Software and want to test the performance of a Redis on Flash enabled database in the following scenarios:
 
 - Without replication: Four (4) master shards
 - With replication: Two (2) primary and two replica shards
