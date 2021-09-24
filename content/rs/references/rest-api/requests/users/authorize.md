@@ -1,7 +1,7 @@
 ---
 Title: Authorize requests
 linkTitle: authorize
-description: Documents the Redis Enterprise Software REST API users/authorize endpoints.
+description: Documents the Redis Enterprise Software REST API users/authorize requests.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

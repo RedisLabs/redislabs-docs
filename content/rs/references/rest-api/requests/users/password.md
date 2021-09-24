@@ -1,7 +1,7 @@
 ---
 Title: Password requests
 linkTitle: password
-description: Documents the Redis Enterprise Software REST API users/password endpoints.
+description: Documents the Redis Enterprise Software REST API users/password requests.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

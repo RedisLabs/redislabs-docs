@@ -1,7 +1,7 @@
 ---
 Title: Refresh_jwt requests
 linkTitle: refresh_jwt
-description: Documents the Redis Enterprise Software REST API users/refresh_jwt endpoints.
+description: Documents the Redis Enterprise Software REST API users/refresh_jwt requests.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

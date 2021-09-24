@@ -1,7 +1,7 @@
 ---
 Title: Users requests
 linkTitle: users
-description: Documents the Redis Enterprise Software REST API users endpoints.
+description: Documents the Redis Enterprise Software REST API users requests.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
