@@ -36,7 +36,7 @@ With the trial version of Redis Enterprise Software you can create a cluster of 
 
 For the test environment, you need to:
 
-1. Create cluster with three nodes.
+1. Create a cluster with three nodes.
 1. Prepare the flash memory.
 1. Configure the load generation tool.
 
