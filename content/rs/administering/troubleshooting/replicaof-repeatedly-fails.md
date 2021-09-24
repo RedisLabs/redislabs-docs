@@ -19,7 +19,7 @@ is configured to a relatively small value, which causes the connection drop.
 
     `rladmin tune db < db:id | name > slave_buffer < value >`
 
-- If the source is a Redis database not on an Redis Enterprise Software cluster,
+- If the source is a Redis database not on a Redis Enterprise Software cluster,
     use the [config set](http://redis.io/commands/config-set) command through
     `redis-cli` to increase the client output buffer size of the **source database** with:
 
