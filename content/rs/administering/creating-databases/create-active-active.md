@@ -70,8 +70,8 @@ Every instance of an Active-Active database can receive write operations, and al
     {{< /note >}}
 
     - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all Active-Active database use replication for best intercluster synchronization performance.
-        When replication is enabled, every Active-Active database master shard is replicated to a corresponding slave shard. The slave shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
-        We also recommend that you enable [slave HA]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) to ensure that the slave shards are highly-available for this synchronization.
+        When replication is enabled, every Active-Active database master shard is replicated to a corresponding replica shard. The replica shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
+        We also recommend that you enable [replica HA]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) to ensure that the replica shards are highly-available for this synchronization.
 
     - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
         To protect against loss of data stored in RAM,

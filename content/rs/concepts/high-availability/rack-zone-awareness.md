@@ -1,17 +1,18 @@
 ---
 Title: Rack-zone awareness in Redis Enterprise Software
-description:
+linkTitle: Rack-zone awareness
+description: Rack-zone awareness ensures high-availability in the event of a rack or zone failure.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 Rack-zone awareness is a Redis Enterprise feature that helps to ensure high-availability in the event of a rack or zone failure.
 
-When you enable rack-zone awareness in a Redis Enterprise Software (RS) cluster, you assign
+When you enable rack-zone awareness in a Redis Enterprise Software cluster, you assign
 a rack-zone ID to each node. This ID is used to map the node to a
-physical rack or logical zone. The cluster can then ensure that master shards, corresponding slave shards, and associated endpoints are placed on nodes in different racks/zones.
+physical rack or logical zone. The cluster can then ensure that master shards, corresponding replica shards, and associated endpoints are placed on nodes in different racks/zones.
 
-In the event of a rack or zone failure, the slaves and endpoints in the remaining racks/zones will be promoted. This ensures high availability when a rack or zone fails.
+In the event of a rack or zone failure, the replicas and endpoints in the remaining racks/zones are promoted. This ensures high availability when a rack or zone fails.
 
 There is no limitation on the number of rack-zones per cluster; each
 node can belong to a different rack, or multiple nodes can belong to the
@@ -51,9 +52,9 @@ Keep in mind that one of the nodes in your cluster can be a quorum-only node, as
 
 Once the cluster has been configured to support rack-zone awareness, you can create a rack-zone aware database.
 
-Rack-zone awareness is relevant only for databases that have replication enabled (i.e., databases with slave shards). Once you
+Rack-zone awareness is relevant only for databases that have replication enabled (i.e., databases with replica shards). Once you
 enable replication for a database, you may also enable rack-zone awareness.
 
 ## Shard placement without rack-zone awareness
 
-Note that even in the case of a database with rack-zone awareness disabled, the cluster will still ensure that master and slave shards are placed on distinct nodes.
+Note that even in the case of a database with rack-zone awareness disabled, the cluster will still ensure that master and replica shards are placed on distinct nodes.

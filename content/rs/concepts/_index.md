@@ -17,9 +17,9 @@ zones. Redis Enterprise architecture is made up of a management path
     responsible for orchestrating the cluster, placement of database
     shards as well as detecting and mitigating failures. Proxy helps
     scale connection management.
-- Data Access path is composed of master and slave Redis shards.
+- Data Access path is composed of master and replica Redis shards.
     Clients perform data operations on the master shard. Master shards
-    maintain slave shards using the in-memory replication for protection
+    maintain replica shards using the in-memory replication for protection
     against failures that may render master shard inaccessible.
 
 ![Redis Enterprise Stack](/images/rs/rp_stack.png)
@@ -31,11 +31,11 @@ shards.*
 
 ## High availability with Redis Enterprise
 
-Redis Enterprise uses in-memory replication to maintain master and slave
+Redis Enterprise uses in-memory replication to maintain master and
 replicas. Redis Enterprise comes with various watchdogs that detect and
 protect against many failures types. Under failures such as node,
 network, process failures that render master replica inaccessible, Redis
-Enterprise automatically promotes the slave replica to be a master
+Enterprise automatically promotes the replica to be a master
 replica and redirects the client connection transparently to the new
 master replica.
 
@@ -62,7 +62,7 @@ latencies. Resharding is performed without downtime.
 ![Sharding diagram](/images/rs/sharding.png)
 
 *Figure 2*
-*Redis Enterprise places master (M) and slave (S) replicas in separate
+*Redis Enterprise places master node (M) and replicas (R) in separate
 nodes, racks and zones and use in-memory replication to protect data
 against failures.*
 
