@@ -9,7 +9,7 @@ nextStep:
     Title: Memory Analysis
     href: /docs/features/memory-analysis/
 ---
-Before using any of the tools to work with your database, you must first add the database so RedisInsight can connect to it.\
+Before using any of the tools to work with your database, you must first add the database so RedisInsight can connect to it.
 
 Each of these database configurations requires specific steps to add them to RedisInsight:
 
