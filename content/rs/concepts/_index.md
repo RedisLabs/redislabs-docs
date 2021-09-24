@@ -35,7 +35,7 @@ Redis Enterprise uses in-memory replication to maintain master and
 replicas. Redis Enterprise comes with various watchdogs that detect and
 protect against many failures types. Under failures such as node,
 network, process failures that render master replica inaccessible, Redis
-Enterprise automatically promotes the replica replica to be a master
+Enterprise automatically promotes the replica to be a master
 replica and redirects the client connection transparently to the new
 master replica.
 
