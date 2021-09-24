@@ -62,7 +62,7 @@ latencies. Resharding is performed without downtime.
 ![Sharding diagram](/images/rs/sharding.png)
 
 *Figure 2*
-*Redis Enterprise places master node (M) and replica (R) replicas in separate
+*Redis Enterprise places master node (M) and replicas (R) in separate
 nodes, racks and zones and use in-memory replication to protect data
 against failures.*
 
