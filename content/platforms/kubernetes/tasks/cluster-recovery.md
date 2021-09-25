@@ -24,7 +24,7 @@ The cluster recovery for Kubernetes automates these recovery steps:
 
 ## Prerequisites
 
-- For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/platforms/kubernetes/concepts/persistent-volumes.md" >}}).
+- For cluster recovery, the cluster must be [deployed with persistence]({{< relref "/platforms/kubernetes/memory/persistent-volumes.md" >}}).
 - For data recovery, the databases must be [configured with persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}}).
 
 ## Recovering a Cluster on Kubernetes
