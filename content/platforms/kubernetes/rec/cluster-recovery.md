@@ -5,9 +5,15 @@ description: This task describes how to recover a Redis Enterprise cluster on Ku
 weight: 20
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/concepts/kubernetes/cluster-recovery/
-         /platforms/kubernetes/cluster-recovery/
-         /platforms/kubernetes/kubernetes-cluster-recovery/
+aliases: [
+    /rs/concepts/kubernetes/cluster-recovery/,
+    /platforms/kubernetes/cluster-recovery/,
+    /platforms/kubernetes/kubernetes-cluster-recovery/,
+    /platforms/kubernetes/tasks/cluster-recovery.md,
+    /platforms/kubernetes/tasks/cluster-recovery/,
+    /platforms/kubernetes/rec/cluster-recovery.md,
+    /platforms/kubernetes/rec/cluster-recovery/,
+]
 ---
 When a Redis Enterprise cluster loses contact with more than half of its nodes either because of failed nodes or network split,
 the cluster stops responding to client connections.

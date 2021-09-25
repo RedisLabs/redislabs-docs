@@ -5,8 +5,12 @@ description: Connect to the Redis Enterprise admin console to manage your Redis 
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /platforms/kubernetes/tasks/connect-to-admin-console.md
-         /platforms/kubernetes/tasks/connect-to-admin-console/
+aliases: [
+    /platforms/kubernetes/tasks/connect-to-admin-console.md,
+    /platforms/kubernetes/tasks/connect-to-admin-console/,
+    /platforms/kubernetes/rec/connect-to-admin-console.md,
+    /platforms/kubernetes/rec/connect-to-admin-console/,
+]
 ---
 
 The username and password for the Redis Enterprise Software [admin console]({{<relref "/rs/administering/_index.md">}}) are stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/). After retrieving your credentials, you can use port forwarding to connect to the admin console.

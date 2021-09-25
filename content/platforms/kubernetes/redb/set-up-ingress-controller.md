@@ -1,11 +1,16 @@
 ---
 Title: Establish external routing with an ingress controller
-linkTitle: Configure ingress
+linkTitle: Ingress routing
 description: Configure an ingress controller to access your Redis Enterprise databases from outside the Kubernetes cluster. 
 weight: 25
 alwaysopen: false
 categories: ["Platforms"]
-aliases: 
+aliases: [
+  /platforms/kubernetes/tasks/set-up-ingress-controller.md,
+  /platforms/kubernetes/tasks/set-up-ingress-controller/,
+  /platforms/kubernetes/redb/set-up-ingress-controller.md,
+  /platforms/kubernetes/redb/set-up-ingress-controller/,
+]
 ---
 
 Every time a Redis Enterprise database (REDB) is created in a Kubernetes (K8s) environment, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.

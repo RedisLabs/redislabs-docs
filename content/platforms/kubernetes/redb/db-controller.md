@@ -3,10 +3,16 @@ Title: Manage Redis Enterprise databases on Kubernetes
 linkTitle: Manage databases
 description: This section describes how the database controller provides the ability to create, manage,
   and use databases via a database custom resource.
-weight: 100
+weight: 5
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /platforms/kubernetes/db-controller/
+aliases: [
+    /platforms/kubernetes/db-controller/,
+    /platforms/kubernetes/concepts/db-controller.md,
+    /platforms/kubernetes/concepts/db-controller/,
+    /platforms/kubernetes/redb/db-controller.md,
+    /platforms/kubernetes/redb/db-controller/
+]
 ---
 ## Redis Enterprise database (REDB) lifecycle
 

@@ -5,7 +5,12 @@ description: How to create and automate database replicas using the database con
 weight: 42
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: [
+  /platforms/kubernetes/tasks/replica-of-k8s.md,
+  /platforms/kubernetes/tasks/replica-of-k8s/,
+  /platforms/kubernetes/redb/replica-redb.md,
+  /platforms/kubernetes/redb/replica-redb/
+]
 ---
 
 You can configure a replica of a database by creating an item in

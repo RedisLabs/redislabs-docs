@@ -1,12 +1,18 @@
 ---
-Title: Upgrade a Redis Enterprise cluster on Kubernetes
-linkTitle: Ugrade a Redis cluster
+Title: Upgrade a Redis Enterprise cluster (REC) on Kubernetes
+linkTitle: Upgrade a Redis cluster
 description: This task describes how to upgrade a Redis Enterprise cluster via the operator.
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/
-         /platforms/kubernetes/upgrading-kubernetes-with-operator/
+aliases: [
+    /rs/administering/kubernetes/upgrading-redis-enterprise-cluster-kubernetes-deployment-operator/,
+    /platforms/kubernetes/upgrading-kubernetes-with-operator/,
+    /platforms/kubernetes/tasks/upgrading-with-operator.md,
+    /platforms/kubernetes/tasks/upgrading-with-operator/,
+    /platforms/kubernetes/rec/upgrade-redis-cluster.md,
+    /platforms/kubernetes/rec/upgrade-redis-cluster/
+]
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments.
 
