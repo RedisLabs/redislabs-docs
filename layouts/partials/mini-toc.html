@@ -14,13 +14,8 @@
       {{ $headerLevel := index (findRE "[1-3]" . 1) 0 }}
       {{ $headerLevel := len (seq $headerLevel) }}
 
-      {{ $anchorIDraw := ($header | plainify | htmlEscape | replaceRE "[/-]" "") }}
-      {{ $anchorID := ($anchorIDraw | anchorize)}}
-
       {{ $genAnchor := index (split (index (split $header "id=\"") 1) "\"") 0 }}
-      {{ if or (hasPrefix $genAnchor "get-") (hasPrefix $genAnchor "put-") (hasPrefix $genAnchor "post-") (hasPrefix $genAnchor "delete-")}}
-        {{ $anchorID = $genAnchor }}
-      {{ end }}
+      {{ $anchorID := $genAnchor }}
 
       {{ if ne $i 0 }}
         {{ $prevHeaderLevel := index (findRE "[1-3]" (index $headers (sub $i 1)) 1) 0 }}
