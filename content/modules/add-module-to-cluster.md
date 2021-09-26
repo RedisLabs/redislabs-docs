@@ -40,7 +40,7 @@ Example: [Installing RedisGears](https://docs.redislabs.com/latest/modules/redis
 
 - The admin console - For modules without dependencies, such as RedisGraph.
 
-### Adding a module using the REST API
+### Adding a module using the REST API (Not working)
 
 Modules that have dependencies can only be added from the REST API.
 The `module.json` file in the module package lists the dependencies for the module and the URL to download each dependency.
