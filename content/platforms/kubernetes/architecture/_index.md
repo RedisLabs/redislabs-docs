@@ -1,8 +1,8 @@
 ---
-Title: Redis Enterprise on Kubernetes architecture
+Title: Redis Enterprise Software on Kubernetes architecture
 linkTitle: Architecture
 description: This section provides an overview of the architecture and considerations for Redis Enterprise on Kubernetes.
-weight: 20
+weight: 11
 alwaysopen: false
 categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-architecture-overview
