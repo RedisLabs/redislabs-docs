@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software log on Kubernetes
+Title: Redis Enterprise Software logs on Kubernetes
 linkTitle: Logs
 description: This section provides information about how logs are stored and accessed.
 weight: 60
