@@ -1,6 +1,6 @@
 ---
-Title: Use kustomize for deployment
-linkTitle: kustomize
+Title: Deploy with kustomize
+linkTitle: Deploy with kustomize
 description: How to use the kustomize tool with the Redis Enterprise operator on Kubernetes
 weight: 90
 alwaysopen: false

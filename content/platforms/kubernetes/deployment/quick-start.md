@@ -1,7 +1,7 @@
 ---
 Title: Deploy Redis Enterprise Software on Kubernetes
-
-description: How to install the Redis Enterprise Kubernetes Operator.
+linkTitle: Kubernetes 
+description: How to install Redis Enterprise Software on Kubernetes.
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
@@ -13,7 +13,7 @@ aliases: [
 ]
 ---
 
-To deploy Redis Enterprise Software on Kubernetes, you first need to install the Redis Enterprise Operator. The best way to install the operator depends on your Kubernetes environment.
+To deploy Redis Enterprise Software on Kubernetes, you first need to install the Redis Enterprise operator. The best way to install the operator depends on your Kubernetes environment.
 
 This quick start guide is for generic Kubernetes distributions ([kOps](https://kops.sigs.k8s.io)) as well as:
 
