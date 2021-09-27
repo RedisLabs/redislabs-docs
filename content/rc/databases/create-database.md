@@ -16,14 +16,14 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
 1. Configure the database:
     - **Name** - Enter a name for the database. (Up to 40 characters long)
     - **Protocol** - Select whether the database uses **Redis** or **Memcached**.
-    - **Memory** - Enter a memory limit for the database. If replication is on, the database limit includes the memory of the slave shards.
+    - **Memory** - Enter a memory limit for the database. If replication is on, the database limit includes the memory of the replica shards.
     - **Redis on Flash** - If your database uses [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
         enter the average data structure size (in bytes). This helps us optimize your database.
     - **Throughput** - In **Throughput by**, select the definition of throughput as:
         - Ops/sec - Enter the required **Max Throughput** between 1000 and 10000000.
         - Shards - Enter the number of **Shards** you require for the database.
-    - **Replication** - By default, each shard has a slave shard.
-        If you do not require slave shards, disable replication.
+    - **Replication** - By default, each shard has a replica shard.
+        If you do not require replica shards, disable replication.
     - **Data Persistence** - Select when and how the data is saved to [persistent storage]({{< relref "rc/databases/configuration/data-persistence.md" >}}) :
         - None - Data is not persisted to disk at all.
         - Append Only File (AoF) one second - Data is fsynced to disk every second.

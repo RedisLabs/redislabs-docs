@@ -26,9 +26,9 @@ Cluster with OpenShift.
 
 Prerequisites:
 
-1. An [OpenShift cluster installed (3.x or 4.x)](https://docs.openshift.com/container-platform/3.11/welcome/index.html) with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
+1. An [OpenShift cluster installed](https://docs.openshift.com/container-platform/4.8/installing/index.html) at version 4.6 or higher, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
-1. The [OpenShift cli installed](https://docs.openshift.com/online/starter/cli_reference/openshift_cli/getting-started-cli.html#cli-installing-cli_cli-developer-commands)
+1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html)
 
 ## Step 1: Login
 
@@ -77,7 +77,7 @@ Let’s look at each yaml file to see what requires editing:
 
 - [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml)
 
-    The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/3.11/welcome/index.html)) yaml defines the cluster’s security context constraints, which we will apply to our project later on. We strongly recommend **not** changing anything in this yaml file.
+    The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html)) yaml defines the cluster’s security context constraints, which we will apply to our project later on. We strongly recommend **not** changing anything in this yaml file.
 
     Apply the file:
 
@@ -99,7 +99,7 @@ Let’s look at each yaml file to see what requires editing:
 
     (If you do not remember your project name, run “oc project”)
 
-- [openshift.bundle.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift.bundle.yaml) -
+- [openshift.bundle.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift.bundle.yaml) -
 
     The bundle file includes several declarations:
 
@@ -152,7 +152,7 @@ serviceaccount/redis-enterprise-operator created
 rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
 -->
 
-- [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/sb_rbac.yaml)
+ <!--> [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/sb_rbac.yaml)
 
     If you’re deploying a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker.
 
@@ -169,7 +169,7 @@ rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
     ```sh
     clusterrole.rbac.authorization.k8s.io/redis-enterprise-operator-sb configured
     clusterrolebinding.rbac.authorization.k8s.io/redis-enterprise-operator configured
-    ```
+    ``` -->
 
 <!--
 - [crd.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml)
@@ -210,7 +210,7 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 - [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml)
 -->
 
-- The [redis-enterprise-cluster_rhel yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/redis-enterprise-cluster_rhel.yaml) defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_cluster_name.yaml to keep things tidy, but this isn’t a mandatory step.
+- The [rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml) defines the configuration of the newly created resource: Redis Enterprise Cluster. This yaml could be renamed your_cluster_name.yaml to keep things tidy, but this isn’t a mandatory step.
 
     This yaml can be edited to the required use case, however, the sample provided can be used for test/dev and quick start purposes. Here are the main fields you may review and edit:
 
@@ -243,7 +243,7 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
         The default (if unspecified) is 4 cores (4000m) and 4GB (4Gi).
 
         {{< note >}}
-Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/docs/topics.md#guaranteed-quality-of-service)).
+Resource limits should equal requests ([Learn why](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/topics.md#guaranteed-quality-of-service)).
         {{< /note >}}
 
     - serviceBrokerSpec –
