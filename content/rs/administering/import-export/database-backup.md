@@ -9,7 +9,7 @@ aliases: /rs/administering/database-operations/database-backup/
 
 Periodic backups provide a way to restore data with minimal data loss.  With Redis Enterprise Software, you can schedule periodic backups to occur every once a day (every 24 hours), twice a day (every twelve hours), every four hours, or every hour.
 
-As of v6.2.8, you can specify the start time for twenty four or twelve hour backups.
+As of v6.2.8, you can specify the start time for twenty-four or twelve hour backups.
 
 To make an on-demand backup, [export your data]({{< relref "/rs/administering/import-export/exporting-data.md" >}}).
 
@@ -56,11 +56,11 @@ To schedule periodic backups for a database:
     
 6.  Use the following table to help specify the details:
 
-    | Control name | Description |
+    | Setting | Description |
     |--------------|-------------|
     | **Interval** | Specifies the frequency of the backup; that is, the time between each backup snapshot.<br/><br/>Supported values include _Every 24 hours_, _Every 12 hours_, _Every 4 hours_, and _Every hour_. |
     | **Set starting time** | _v6.2.8 or later:&nbsp;_ Specifies the start time for the backup; available when **Interval** is set to _Every 24 hours_ or _Every 12 hours_.<br/><br/>If not specified, defaults to a time selected by Redis Enterprise Software. |
-    | **Choose storage type** | Specifies the storage type for the backup.  Supported options vary and might require additional details.  To learn more, see [Supported storage types](#supported-storage-types).
+    | **Choose storage type** | Specifies the storage type for the backup.  Supported options vary and might require additional details.  To learn more, see [Supported storage locations](#supported-storage-locations).
 
 7.  Select **Update** to apply your changes.
 
@@ -68,7 +68,7 @@ Access to the storage location is verified when you apply your updates.  This me
 
 ## Default backup start time
 
-If you do _not_ specify a start time for twenty four or twelve hour backups, Redis Enterprise Software chooses one for you, based on the time the backups are enabled.
+If you do _not_ specify a start time for twenty-four or twelve hour backups, Redis Enterprise Software chooses one for you, based on the time the backups are enabled.
 
 This choice assumes that your database is deployed to a multi-tenant cluster containing multiple databases.  This means that default start times are staggered (offset) to ensure availability.  This is done by calculating a random offset which specifies a number of seconds added to the start time.  
 
@@ -78,9 +78,9 @@ Here's how it works:
 - You choose to back up your database every 12 hours.
 - Because you didn't set a start time, the cluster randomly chooses an offset of 4,320 seconds (or 72 minutes).
 
-This means your first periodic backup will run roughly around 5:12 pm (72 minutes after the time you enabled backups) and repeats every twelve hours at about that same time.
+This means your first periodic backup occurs 72 minutes after the time you enabled periodic backups (4:00&nbsp;pm&nbsp;+&nbsp;72&nbsp;minutes).  Backups repeat every twelve hours at roughly same time.
 
-The backup time is imprecise because backups are triggered by a scheduled process that itself runs every five minutes.  When the process wakes, it compares the current time to the scheduled backup time.  If that time has passed, it triggers a backup.  
+The backup time is imprecise because they're started by a trigger process that runs every five minutes.  When the process wakes, it compares the current time to the scheduled backup time.  If that time has passed, it triggers a backup.  
 
 If the previous backup fails, the trigger process retries the backup until it succeeds.
 
@@ -138,25 +138,25 @@ Before enabling backups to an SFTP server, make sure that:
 To backup to an SFTP server, enter the SFTP server location in the format:
 
 ```sh
-sftp://user:password@host:<:custom_port>/path/
+sftp://user:password@host<:custom_port>/path/
 ```
 
 For example: `sftp://username:password@10.1.1.1/home/backups/`
 
 ### Local mount point
 
-Before you choose to backup to a local mount point, make sure that:
+Before enabling periodic backups to a local mount point, verify that:
 
-- The node has network connectivity to the destination server of the mount point.
+- The node can connect to the destination server, the one hosting the mount point.
 - The `redislabs:redislabs` user has read and write privileges on the local mount point
 and on the destination server.
-- The backup location has enough disk space for your backup files. The backup files
-are saved with filenames that include the timestamp so that backup files are not overwritten.
+- The backup location has enough disk space for your backup files. Backup files
+are saved with filenames that include the timestamp, which means that earlier backups are not overwritten.
 
-To backup to a local mount point for a node:
+To back up to a local mount point:
 
 1. On each node in the cluster, create the mount point:
-    1. Connect to the terminal of the RS server that the node is running on.
+    1. Connect to a shell running on Redis Enterprise Software server hosting the node.
     1. Mount the remote storage to a local mount point.
 
         For example:
@@ -191,9 +191,9 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
 
 1.  Use the Buckets list to locate and select your bucket.  When the settings appear, select the **Permissions** tab, locate the **Access control list (ACL)** section, and then select the **Edit** button.
 
-1.  When the **Edit access control list (ACL)** screen appears, locate the Access for other AWS accounts section and then select the **Add grantee** button.
+1.  When the **Edit access control list (ACL)** screen appears, locate the **Access for other AWS accounts** section and then select the **Add grantee** button.
 
-    1.  In the **Grantee** field, enter:
+    1.  In the **Grantee** field, enter the AWS account ID:
     
     ```
     fd1b05415aa5ea3a310265ddb13b156c7c76260dbc87e037a8fc290c3c86b614
@@ -203,7 +203,9 @@ To store backups in an Amazon Web Services (AWS) Simple Storage Service (S3) [bu
     1.  In the **Bucket ACL** list, enable **Read** and **Write**.
     1.  When finished, select the **Save changes** button.
 
-Once the bucket is available and the permissions are set, use the name of your bucket as the **Backup destination** for your database's Remote backup settings. For example, suppose your bucket is named *backups-bucket*.  In that case, set **Backup destination** to `s3://backups-bucket`.
+Once the bucket is available and the permissions are set, use the name of your bucket as the **Backup destination** for your database **Remote backup settings**. 
+
+Use the S3 protocol scheme (`s3://`) to set *backups-bucket* to the name of your backup bucket.  If, for example, your bucket is named *backups-bucket*, set **Backup destination** to `s3://backups-bucket`.
 
 ### GCP Storage 
 
@@ -212,7 +214,7 @@ console](https://developers.google.com/console/) subscriptions, store your backu
 
 1. Sign in to Google Cloud Platform console.
 
-1. In the admin console menu, locate the _Storage_ section than select **Cloud Storage&nbsp;>&nbsp;Browser**.
+1. In the admin console menu, locate the _Storage_ section then select **Cloud Storage&nbsp;>&nbsp;Browser**.
 
 1. Create or select a bucket.
 
@@ -254,7 +256,7 @@ Set your resource's **Backup Path** to the path of your storage account.
 
 The syntax for creating the backup varies according to your authorization mechanism.  For example:
 
-`abs://:storage_account_access_key@storage_account_name/container_name/[path/]`
+`abs://storage_account_access_key@storage_account_name/container_name/[path/]`
 
 Where:
 
