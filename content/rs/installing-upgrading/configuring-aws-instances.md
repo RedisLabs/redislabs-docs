@@ -42,7 +42,7 @@ this feature could be critical to use:
     Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
 1. When using AOF on every write and there is a high write load. In
     this case, the provisioned IOPS should be on the nodes used as
-    slaves in the cluster.
+    replicas in the cluster.
 
 ## Instance types {#instance-types}
 

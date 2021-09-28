@@ -5,6 +5,9 @@ weight: 80
 alwaysopen: false
 categories: ["Modules"]
 aliases:
+  - /redistimeseries/
+  - /redis-time-series/
+  - /redis_time_series/ 
   - /rs/developing/modules/redistimeseries/
 ---
 RedisTimeSeries is a Redis module developed by Redis to enhance your experience managing time series data with Redis.

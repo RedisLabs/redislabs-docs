@@ -4,7 +4,9 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/getting-started/getting-started-kubernetes/
+aliases: /kubernetes/
+         /k8s/
+         /rs/getting-started/getting-started-kubernetes/
          /rs/administering/kubernetes/
 ---
 Kubernetes provides enterprise orchestration of containers and has been widely adopted. The Redis Enterprise Operator for Kubernetes provides a
