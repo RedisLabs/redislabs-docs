@@ -1,5 +1,5 @@
 ---
-Title: Redis Enterprise Software on Kubernetes operator-based Architecture
+Title: Redis Enterprise Software on Kubernetes operator-based architecture
 linkTitle: What is an operator?
 description: This section provides a description of the design of the Redis Enterprise operator for Kubernetes.
 weight: 30

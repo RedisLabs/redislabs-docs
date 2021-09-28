@@ -11,7 +11,7 @@ aliases: [
 ]
 ---
 
-This section contains articles to help you manage your Redis Enterprise clusters (REC)).
+This section contains articles to help you manage your Redis Enterprise clusters (REC).
 
 
 {{< allchildren style="h2" description="true" />}}
