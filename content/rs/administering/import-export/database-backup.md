@@ -66,38 +66,38 @@ To schedule periodic backups for a database:
 
 Access to the storage location is verified when you apply your updates.  This means the location, credentials, and other details must exist and function before you can enable periodic backups.
 
-## Default backup intervals
+## Default backup start time
 
 If you do _not_ specify a start time for twenty four or twelve hour backups, Redis Enterprise Software chooses one for you, based on the time the backups are enabled.
 
-This choice assumes that your database is deployed to a multi-tenant cluster containing multiple databases.  This means that default start times are staggered to ensure availability.  This is done by calculating a random offset which specifies a number of seconds added to the start time.  
+This choice assumes that your database is deployed to a multi-tenant cluster containing multiple databases.  This means that default start times are staggered (offset) to ensure availability.  This is done by calculating a random offset which specifies a number of seconds added to the start time.  
 
 Here's how it works:
 
 - Assume you're enabling the backup at 4:00 pm (1600 hours).
 - You choose to back up your database every 12 hours.
-- Because you didn't set a start time, the cluster chooses an offset of 4,320 seconds (or 72 minutes).
+- Because you didn't set a start time, the cluster randomly chooses an offset of 4,320 seconds (or 72 minutes).
 
-This means your first periodic backup will run roughly around 5:12 pm (72 minutes after the time you enabled backups) and will repeat every twelve hours at about that same time.
+This means your first periodic backup will run roughly around 5:12 pm (72 minutes after the time you enabled backups) and repeats every twelve hours at about that same time.
 
 The backup time is imprecise because backups are triggered by a scheduled process that itself runs every five minutes.  When the process wakes, it compares the current time to the scheduled backup time.  If that time has passed, it triggers a backup.  
 
 If the previous backup fails, the trigger process retries the backup until it succeeds.
 
-In addition, throttling and resource limits also affect backup frequency.
+In addition, throttling and resource limits also affect backup times.
 
 For help with specific backup issues, [contact support](https://redis.com/company/support/).
 
 
 ## Supported storage locations {#supported-storage-locations}
 
-Database backups can be stored to a local mount point, saved to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on a cloud provider storage service. 
+Database backups can be saved to a local mount point, transferred to [a URI](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier) using FTP/SFTP, or stored on cloud provider storage. 
 
-When stored to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
+When saved to a local mount point or a cloud provider, backup locations need to be available to [the group and user]({{< relref "/rs/installing-upgrading/customize-user-and-group.md" >}}) running Redis Enterprise Software, `redislabs:redislabs` by default.  
 
 Redis Enterprise Software needs the ability to view permissions and update objects in the storage location. Implementation details vary according to the provider and your configuration. To learn more, consult the provider's documentation.
 
-The following sections provide general guidelines.  However, provider features change frequently. For best results, use your provider's documentation for the latest info.
+The following sections provide general guidelines.  Because provider features change frequently, use your provider's documentation for the latest info.
 
 ### FTP server
 
