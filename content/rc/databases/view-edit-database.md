@@ -9,22 +9,23 @@ aliases: /rc/administration/setup-and-editing/viewing-editing-database/
         /rc/administration/setup/edit-database/
         /rc/administration/setup/edit-database.md
 ---
+
+Use the **Databases** menu of the admin console to manage your subscription databases.
+
 To view the details of a database:
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
-2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
+2.  Locate the database in the list.
 
-    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
-
-3.  Select the database to open the **Database** page.
+3.  Select the database name to open the **Database** page.
 
     {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
 The **Database** screen lets you review:
 - Configuration details of a database
 - Graphs showing performance metrics
-- Recent activity via a "slowlog"
+- Recent activity via a "slowlog," which lists queries that exceed a certain [execution time](https://redis.io/commands/slowlog).
 
 To change database settings, see [Edit database details](#edit-database-details),
 
