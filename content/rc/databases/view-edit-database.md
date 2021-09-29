@@ -29,32 +29,6 @@ The **Database** screen lets you review:
 
 For help changing database settings, see [Edit database details](#edit-database-details),
 
-## Manage the database list
-
-The **Databases** list summarizes the status of all databases from the subscriptions associated with your account.  
-
-You can:
-
-- Sort the list in descending or ascending order using the the arrow displayed to right of the field name in the header.  Supported fields include _Subscription_, _Name_, and _Memory_.
-
-    {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
-    
-    Select the arrow icon to change the sort order.  One sort order can be active at any given time.
-
-- Use the Filter icon displayed to the right of the field name in the header to display string matches for that field.
-
-    {{<image filename="images/rc/icon-database-list-filter-normal.png" alt="Use the filter icon in the list header to filter the list." >}}{{< /image >}}
-
-    You can filter the list on **Subscription**, **Name**, **Endpoint**, and **Options**.  String matches are _not_ case sensitive.  You can specify more than one filter expression at a time.  
-
-    The icon is circled when a filter is active.
-
-    {{<image filename="images/rc/icon-database-list-filter-active.png" alt="Active filters display a circle in the icon." >}}{{< /image >}}
-
-- Use the controls in the list footer to change the number of items displayed in the list or to navigate.
-
-Sort orders and filter expressions are not saved between console sessions.
-
 ## Configuration details tab
 
 The **Configuration details** screen is divided into sections, each dedicated to a specific category.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
@@ -171,6 +145,32 @@ Here, you can:
     To learn more, see [Import data]({{< relref "/rc/databases/import-data.md" >}}).
 
 For best results, we recommend backing up data before starting any **Danger Zone** actions.
+
+## Manage the database list
+
+The **Databases** list summarizes the status of all databases from the subscriptions associated with your account.  
+
+You can:
+
+- Sort the list in descending or ascending order using the the arrow displayed to right of the field name in the header.  Supported fields include _Subscription_, _Name_, and _Memory_.
+
+    {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
+    
+    Select the arrow icon to change the sort order.  One sort order can be active at any given time.
+
+- Use the Filter icon displayed to the right of the field name in the header to display string matches for that field.
+
+    {{<image filename="images/rc/icon-database-list-filter-normal.png" alt="Use the filter icon in the list header to filter the list." >}}{{< /image >}}
+
+    You can filter the list on **Subscription**, **Name**, **Endpoint**, and **Options**.  String matches are _not_ case sensitive.  You can specify more than one filter expression at a time.  
+
+    The icon is circled when a filter is active.
+
+    {{<image filename="images/rc/icon-database-list-filter-active.png" alt="Active filters display a circle in the icon." >}}{{< /image >}}
+
+- Use the controls in the list footer to change the number of items displayed in the list or to navigate.
+
+Sort orders and filter expressions are not saved between console sessions.
 
 ## Other actions and info
 
