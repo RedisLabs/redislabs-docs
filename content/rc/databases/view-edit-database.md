@@ -14,7 +14,7 @@ Use the **Databases** menu of the admin console to manage your subscription data
 
 To view the details of a database:
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
+1. Sign in to the Redis Cloud [admin console](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
 2.  Locate the database in the list.
 
