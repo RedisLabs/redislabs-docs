@@ -1,5 +1,6 @@
 ---
-Title: Delete a database
+Title: Delete database
+linkTitle: Delete database
 description:
 weight: 30
 alwaysopen: false
@@ -7,23 +8,35 @@ categories: ["RC"]
 aliases: /rc/administration/setup-and-editing/delete-databases/
         /rv/administration/setup_and_editing/deleting-database/
 ---
-Deleting a database is just as easy as creating one.
-Make sure that you are truly done with the database,
-because after you delete the database it cannot be recovered (except from your backups).
 
-{{< note >}}
-- Only users that are defined as Owners on the Redis Cloud account can delete a database.
-- We recommend that you create a backup of your database before deleting it.
-{{< /note >}}
+To delete a database, use the **Delete** button.  It's located in the **Danger zone** section of the database's **Configuration** tab.
 
-## Deleting a database
+Databases must be empty before they can be deleted.  Deleted databases cannot be recovered.  (We recommend [making a backup]({{< relref "rc/databases/back-up-data.md" >}}), just in case.)  
 
-1. Use the admin console menu to select the **Databases** command.
+This command requires the account owner role.
 
-1. From the databases list, select the database you want to delete.
+## Step-by-step
 
-1. When the database details appear, select the Delete icon.
+1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/). 
 
-1. Confirm your choice.
+1. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
-The database and all of its data and configurations is now deleted.
+    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
+
+1.  Select the database from the list.  The **Configuration** tab is selected by default.
+
+    {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+
+1.  Scroll to the **Danger zone**.
+
+    {{<image filename="images/rc/database-details-configuration-tab-danger-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
+
+1.  Select the **Delete** button.
+
+    {{<image filename="images/rc/button-danger-zone-delete.png" alt="The Delete button is located in the Danger zone section of the database Configuration tab." >}}{{< /image >}}
+
+1. When the **Delete database** dialog appears, use the **Delete database** button to confirm your choice.
+
+    {{<image filename="images/rc/button-database-delete.png" alt="The Delete button is located in the Danger zone section of the database Configuration tab." >}}{{< /image >}}
+
+When the operation completes, the database and its data are deleted.
