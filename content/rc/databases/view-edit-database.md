@@ -9,24 +9,25 @@ aliases: /rc/administration/setup-and-editing/viewing-editing-database/
         /rc/administration/setup/edit-database/
         /rc/administration/setup/edit-database.md
 ---
+
+Use the **Databases** menu of the admin console to manage your subscription databases.
+
 To view the details of a database:
 
-1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
+1. Sign in to the Redis Cloud [admin console](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
-2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
+2.  Locate the database in the list.
 
-    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
-
-3.  Select the database to open the **Database** page.
+3.  Select the database name to open the **Database** page.
 
     {{<image filename="images/rc/database-details-configuration-tab-general-flexible.png" width="75%" alt="The Configuration tab of the Database details screen." >}}{{< /image >}}
 
 The **Database** screen lets you review:
 - Configuration details of a database
 - Graphs showing performance metrics
-- Recent activity via a "slowlog"
+- Recent activity via a "slowlog," which lists queries that exceed a certain [execution time](https://redis.io/commands/slowlog).
 
-To change database settings, see [Edit database details](#edit-database-details),
+For help changing database settings, see [Edit database details](#edit-database-details).
 
 ## Configuration details tab
 
@@ -144,6 +145,32 @@ Here, you can:
     To learn more, see [Import data]({{< relref "/rc/databases/import-data.md" >}}).
 
 For best results, we recommend backing up data before starting any **Danger Zone** actions.
+
+## Manage the database list
+
+The **Databases** list summarizes the status of all databases from the subscriptions associated with your account.  
+
+You can:
+
+- Sort the list in descending or ascending order using the the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Name**, and **Memory**.
+
+    {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
+    
+    Select the arrow icon to change the sort order.  One sort order can be active at any given time.
+
+- Use the Filter icon displayed to the right of the field name in the header to display string matches for that field.
+
+    {{<image filename="images/rc/icon-database-list-filter-normal.png" alt="Use the filter icon in the list header to filter the list." >}}{{< /image >}}
+
+    You can filter the list on **Subscription**, **Name**, **Endpoint**, and **Options**.  String matches are _not_ case sensitive.  You can specify more than one filter expression at a time.  
+
+    The icon is circled when a filter is active.
+
+    {{<image filename="images/rc/icon-database-list-filter-active.png" alt="Active filters display a circle in the icon." >}}{{< /image >}}
+
+- Use the controls in the list footer to change the number of items displayed in the list or to navigate.
+
+Sort orders and filter expressions are not saved between console sessions.
 
 ## Other actions and info
 
