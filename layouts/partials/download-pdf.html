@@ -16,4 +16,4 @@
     {{ $pdfFilepath = print .Site.BaseURL "/pdfs/" $pdfName }}
 {{ end }}
 
-<a href={{ $pdfFilepath }} download={{ $pdfName }} target="blank">
+<a href={{ $pdfFilepath }} download={{ $pdfName }} target="blank" rel="nofollow">
