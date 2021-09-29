@@ -27,7 +27,7 @@ The **Database** screen lets you review:
 - Graphs showing performance metrics
 - Recent activity via a "slowlog," which lists queries that exceed a certain [execution time](https://redis.io/commands/slowlog).
 
-For help changing database settings, see [Edit database details](#edit-database-details),
+For help changing database settings, see [Edit database details](#edit-database-details).
 
 ## Configuration details tab
 
@@ -152,7 +152,7 @@ The **Databases** list summarizes the status of all databases from the subscript
 
 You can:
 
-- Sort the list in descending or ascending order using the the arrow displayed to right of the field name in the header.  Supported fields include _Subscription_, _Name_, and _Memory_.
+- Sort the list in descending or ascending order using the the arrow displayed to right of the field name in the header.  Supported fields include **Subscription**, **Name**, and **Memory**.
 
     {{<image filename="images/rc/icon-database-list-sort-ascending.png" alt="Use the arrows in the list header to sort the list." >}}{{< /image >}} {{<image filename="images/rc/icon-database-list-sort-descending.png" alt="The direction of the arrow corresponds to the direction of the sort." >}}{{< /image >}}
     
