@@ -2,7 +2,7 @@
 
 Title: Create Active-active databases on Kubernetes
 linkTitle: Create Active-Active databases
-description: This section how to set up an active-active Redis Enterprise database on Kubernetes using the Redis operator.  
+description: This section how to set up an active-active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
 weight: 50
 alwaysopen: false
 categories: ["Platforms"]
@@ -27,63 +27,79 @@ Before creating Active-Active databases you'll need the following:
 
 You'll need the following information for each participating Redis Enterprise cluster:
 
-- Database name:
+- Database name `<db-name>`:
   - Format: string
   - Example value: `myaadb`
-  - How to get it: you choose your database name
-- REC hostname:
+- REC hostname (FQDN) `<rec-hostname>`:
   - API parameter name: `name`
   - Format: `<rec-name>.<namespace>.svc.cluster.local`
   - Example value: `rec01.rec01.svc.cluster.local`
-  - How to get it:
-    ```bash
-    curl -u <user>:<password> https://<rec_api>/v1/cluster /
-      | jq '.name'
-    ```
-- API URL:
+- Ingress suffix `<ingress-suffix>`:
+  - Format: string
+  - Example value: `-docs.rec-docs.redisdemo.com`
+- API URL `<ingress-api>`:
   - API parameter name: `url`
-  - Format: `https://<apiIngressUrl>`
-  - Example value: `https://api-openshift.apps.abc-ocp.cs.redisdemo.com`
-  - How to get it:
-    ```bash
-    oc get rec -o json /
-      | jq '.items[].spec.activeActive.apiIngressUrl'
-    ```
-- REC admin credentials:
+  - Format: `api<ingress-suffix>`
+  - Example value: `api-docs.rec-docs.redisdemo.com`
+- REC admin credentials `<username> <password>`:
   - API parameter name: `credentials`
-  - Format:
   - Example value: username: `user@redisdemo.com`, password: `something`
-  - How to get it:
+  - How to get them:
     ```bash
-    kubectl get secret <rec-name> /
+    kubectl get secret <rec-name> \
       -o jsonpath='{.data.username}' | base64 --decode
-    kubectl get secret <rec-name> /
+    kubectl get secret <rec-name> \
       -o jsonpath='{.data.password}' | base64 --decode
     ```
 - Replication endpoint:
   - API parameter name: `replication_endpoint`
-  - Format: `<dbname><dbIngressSuffix>:443`
-  - Example value: `myaadb-xy-cluster.apps.abc-ocp.cs.redisdemo.com:443`
-  - How to get it:
-    ```bash
-    oc get rec -o json /
-      | jq '.items[].spec.activeActive.dbIngressSuffix'
-    ```
+  - Format: `<db-name><ingress-suffix>:443`
+  - Example value: `myaadb-docs.rec-docs.redisdemo.com:443`
 - Replication hostname:
   - API parameter name: `replication_tls_sni`
-  - Format: `<dbname><dbIngressSuffix>`
-  - Example value: `myaadb-xy-cluster.apps.abc-ocp.cs.redisdemo.com`
-  - How to get it:
-    ```bash
-    oc get rec -o json /
-      | jq '.items[].spec.activeActive.dbIngressSuffix'
-    ```
+  - Format: `<db-name><ingress-suffix>`
+  - Example value: `myaadb-docs.rec-docs.redisdemo.com`
+
 
 ## Add support for Active-Active to the REC resources
+
+From inside your K8s cluster, use `kubectl edit <rec-resource>.yaml` to add the following the the `spec` section of your REC resource. Do this for each participating Redis Enterprise cluster.
+
+If you are using an [ingress controller]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller.md">}}):
+
+  ```yaml
+  activeActive:
+    apiIngressUrl: api<ingress-suffix>
+    dbIngressSuffix: <ingress-suffix>
+      ingressAnnotations:
+      kubernetes.io/ingress.class: <nginx | haproxy>
+      <nginx | haproxy>.ingress.kubernetes.io/backend-protocol: HTTPS
+      <nginx | haproxy>.ingress.kubernetes.io/ssl-passthrough: "true"  
+    method: ingress
+  ```
+
+  If you are using OpenShift routes:
+  ```yaml
+  activeActive:
+    apiIngressUrl: api<ingress-suffix>
+    dbIngressSuffix: <ingress-suffix>
+    method: openShiftRoute
+  ```
+
+Create a DNS entry that resolves your chosen database hostname (<db-name><ingress-suffix>) to the IP address for the ingress controller's LoadBalancer. To find the IP for the LoadBalacer, see [Create ingress resource]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller/#create-ingress-resource">}})
 
 ## Create the Active-Active database
 
 ### via crdb-cli
+
+```bash
+crdb-cli crdb create 
+  --name <db-name> \
+  --memory-size <mem-size> \
+  --encryption yes \
+  --instance fqdn=<rec01-hostname>,url=<rec01-api-url>,username=<rec01-username>,password=<rec01-password>,replication_endpoint=<rec01-replication-endpoint>,replication_tls-sni=<rec01-replication-hostname> \
+  --instance fqdn=<rec02-hostname>,url=<rec01-api-url>,username=<rec02-username>,password=<rec02-password>,replication_endpoint=<rec02-replication-endpoint>,replication_tls-sni=<rec02-replication-hostname>
+```
 
 ### via API
 
