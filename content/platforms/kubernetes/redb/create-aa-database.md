@@ -15,14 +15,14 @@ With Active-Active databases provide read and write access to the same data set 
 
 # Prerequisites
 
-Before creating Active-Active databases you'll need the following configured on two or more Kubernetes clusters:
+Before creating Active-Active databases you'll need the following:
 
-- Redis Enterprise cluster (REC) that:
-    - can be managed by `kubectl`
-    - has a different name from other RECs used for this database
-    - has enough memory resources available for the size of the database
-- REC admin role credentials to both RECs
-- Routing for external access with an ingress controller or OpenShift routes
+- Two or more working Kubernetes clusters that have:
+  - The [`kubectl`](https://kubernetes.io/docs/reference/kubectl/overview/) CLI tool installed
+  - Routing for external access with an [ingress controller]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller.md">}}) or OpenShift routes
+  - A working [Redis Enterprise cluster (REC)]({{<relref "/platforms/kubernetes/reference/cluster-options.md">}}) with a different name from the others
+  - Enough memory resources available for the size of the database (see [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md">}}) for more info)
+- [Admin role credentials]({{<relref "/platforms/kubernetes/security/manage_REC_credentials.md">}}) to both RECs 
 
 # Document required parameters
 
