@@ -10,6 +10,8 @@ aliases:
 
 Databases are the heart of any Redis Enterprise Cloud subscription.  
 
+Here's how to perform a variety of tasks:
+
 ## Common database tasks
 
 - [Create a database]({{<relref "rc/databases/create-database.md">}})
