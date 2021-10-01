@@ -1,16 +1,16 @@
 ---
-Title: BDB debug info requests
+Title: All BDB debug info requests
 linkTitle: bdb
 description: Documents the Redis Enterprise Software REST API debuginfo/all/bdb requests.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/references/rest-api/debuginfo-all/bdb
-         /rs/references/rest-api/debuginfo-all/bdb.md
-         /rs/references/restapi/debuginfo-all/bdb
-         /rs/references/restapi/debuginfo-all/bdb.md
-         /rs/references/rest_api/debuginfo-all/bdb
-         /rs/references/rest_api/debuginfo-all/bdb.md
+aliases: /rs/references/rest-api/debuginfo/all/bdb
+         /rs/references/rest-api/debuginfo/all/bdb.md
+         /rs/references/restapi/debuginfo/all/bdb
+         /rs/references/restapi/debuginfo/all/bdb.md
+         /rs/references/rest_api/debuginfo/all/bdb
+         /rs/references/rest_api/debuginfo/all/bdb.md
 ---
 
 | Method | Path | Description |
