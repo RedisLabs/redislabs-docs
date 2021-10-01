@@ -25,7 +25,7 @@ Before creating Active-Active databases you'll need the following:
 
 ## Document required parameters
 
-You'll need the following information for each participating Redis Enterprise cluster:
+You'll need the following information for each participating Redis Enterprise cluster (REC):
 
 - Database name `<db-name>`:
   - Format: string
@@ -37,7 +37,7 @@ You'll need the following information for each participating Redis Enterprise cl
 - Ingress suffix `<ingress-suffix>`:
   - Format: string
   - Example value: `-docs.rec-docs.redisdemo.com`
-- API URL `<ingress-api>`:
+- API URL `<api-url>`:
   - API parameter name: `url`
   - Format: `api<ingress-suffix>`
   - Example value: `api-docs.rec-docs.redisdemo.com`
@@ -60,11 +60,11 @@ You'll need the following information for each participating Redis Enterprise cl
   - Format: `<db-name><ingress-suffix>`
   - Example value: `myaadb-docs.rec-docs.redisdemo.com`
 
-## Add support for Active-Active to the REC resources
+## Add `activeActive` section to the REC resource file
 
-From inside your K8s cluster, use `kubectl edit <rec-resource>.yaml` to add the following the the `spec` section of your REC resource. Do this for each participating Redis Enterprise cluster.
+From inside your K8s cluster, use `kubectl edit <rec-resource>.yaml` to add the following the the `spec` section of your REC resource. Do this for each participating cluster.
 
-If you are using an [ingress controller]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller.md">}}):
+If you are using an [ingress controller]({{<relref "content/platforms/kubernetes/redb/set-up-ingress-controller.md">}}):
 
   ```yaml
   activeActive:
@@ -78,6 +78,7 @@ If you are using an [ingress controller]({{<relref "/platforms/kubernetes/redb/s
   ```
 
   If you are using OpenShift routes:
+
   ```yaml
   activeActive:
     apiIngressUrl: api<ingress-suffix>
@@ -85,7 +86,16 @@ If you are using an [ingress controller]({{<relref "/platforms/kubernetes/redb/s
     method: openShiftRoute
   ```
 
-Create a DNS entry that resolves your chosen database hostname (<db-name><ingress-suffix>) to the IP address for the ingress controller's LoadBalancer. To find the IP for the LoadBalacer, see [Create ingress resource]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller/#create-ingress-resource">}})
+## Resolve hostnames
+
+ Next, create a DNS entry that resolves your chosen database hostname (`<db-name><ingress-suffix>`) and your API URL (`api<ingress-suffix>`) to the IP address for the ingress controller's LoadBalancer. Do this for each participating Redis Enterprise cluster.
+
+To find the IP for the LoadBalancer:
+  ```bash
+  kubectl get svc <haproxy-ingress | ingress-ngnix-controller> -n  <ingress-ctrl-namespace>
+  ```
+
+The operator uses the API URL (`apiIngressUrl`) to create an ingress route to the Redis Enterprise cluster's API; this only happens once per cluster. Every time a new active-active database instance is created on this cluster, the operator create a new ingress route to the database with the ingress suffix (`dbIngressSuffix`). The hostname for each new database will be in the format `<db-name><ingress-suffix>`.
 
 ## Create the Active-Active database
 
