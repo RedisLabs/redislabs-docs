@@ -60,7 +60,6 @@ You'll need the following information for each participating Redis Enterprise cl
   - Format: `<db-name><ingress-suffix>`
   - Example value: `myaadb-docs.rec-docs.redisdemo.com`
 
-
 ## Add support for Active-Active to the REC resources
 
 From inside your K8s cluster, use `kubectl edit <rec-resource>.yaml` to add the following the the `spec` section of your REC resource. Do this for each participating Redis Enterprise cluster.
