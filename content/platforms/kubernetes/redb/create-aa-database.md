@@ -18,31 +18,33 @@ On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/des
 Before creating Active-Active databases you'll need the following:
 
 - Two or more working Kubernetes clusters that have:
-  - The [`kubectl`](https://kubernetes.io/docs/reference/kubectl/overview/) CLI tool installed
-  - Routing for external access with an [ingress controller]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller.md">}}) or OpenShift routes
+  - Routing for external access with an [ingress controller]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller.md">}}) or routes (for OpenShift only)
   - A working [Redis Enterprise cluster (REC)]({{<relref "/platforms/kubernetes/reference/cluster-options.md">}}) with a unique name
   - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/administering/designing-production/hardware-requirements.md">}}))
 
 ## Document required parameters
 
-You'll need the following information for each participating Redis Enterprise cluster (REC):
-
 - Database name `<db-name>`:
   - Format: string
   - Example value: `myaadb`
-- REC hostname (FQDN) `<rec-hostname>`:
-  - API parameter name: `name`
+
+You'll need the following information for each participating Redis Enterprise cluster (REC):
+
+- Redis Enterprise cluster name `<rec-hostname>`:
+  - Description: 
   - Format: `<rec-name>.<namespace>.svc.cluster.local`
-  - Example value: `rec01.rec01.svc.cluster.local`
-- Ingress suffix `<ingress-suffix>`:
+  - Example value: `rec01.ns01.svc.cluster.local`
+- API hostname `<api-hostname>`:
+  - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster.
   - Format: string
-  - Example value: `-docs.rec-docs.redisdemo.com`
-- API URL `<api-url>`:
-  - API parameter name: `url`
-  - Format: `api<ingress-suffix>`
-  - Example value: `api-docs.rec-docs.redisdemo.com`
+  - Example value: `api.abc.cde.redisdemo.com`
+- Ingress suffix `<ingress-suffix>`:
+  - Description: Combined with database name to create the database hostname
+  - Format: string
+  - Example value: `-fgh.ijk.redisdemo.com`
+  - How to get it: you choose
 - REC admin credentials `<username> <password>`:
-  - API parameter name: `credentials`
+  - Description: 
   - Example value: username: `user@redisdemo.com`, password: `something`
   - How to get them:
     ```bash
@@ -52,67 +54,76 @@ You'll need the following information for each participating Redis Enterprise cl
       -o jsonpath='{.data.password}' | base64 --decode
     ```
 - Replication endpoint:
-  - API parameter name: `replication_endpoint`
+  - Description: 
   - Format: `<db-name><ingress-suffix>:443`
-  - Example value: `myaadb-docs.rec-docs.redisdemo.com:443`
+  - Example value: `myaadb-fgh.ijk.redisdemo.com:443`
 - Replication hostname:
-  - API parameter name: `replication_tls_sni`
+  - Description: 
   - Format: `<db-name><ingress-suffix>`
-  - Example value: `myaadb-docs.rec-docs.redisdemo.com`
+  - Example value: `myaadb-fgh.ijk.redisdemo.com`
 
 ## Add `activeActive` section to the REC resource file
 
-From inside your K8s cluster, use `kubectl edit <rec-resource>.yaml` to add the following the the `spec` section of your REC resource. Do this for each participating cluster.
+From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource to add the following to the `spec` section. Do this for each participating cluster.
 
-If your cluster uses an [ingress controller]({{<relref "content/platforms/kubernetes/redb/set-up-ingress-controller.md">}}):
+ The operator uses the API URL (`apiIngressUrl`) to create an ingress to the Redis Enterprise cluster's API; this only happens once per cluster. Every time a new Active-Active database instance is created on this cluster, the operator creates a new ingress route to the database with the ingress suffix (`dbIngressSuffix`). The hostname for each new database will be in the format `<db-name><ingress-suffix>`.
 
-  ```yaml
-  activeActive:
-    apiIngressUrl: api<ingress-suffix>
-    dbIngressSuffix: <ingress-suffix>
-      ingressAnnotations:
-      kubernetes.io/ingress.class: <nginx | haproxy>
-      <nginx | haproxy>.ingress.kubernetes.io/backend-protocol: HTTPS
-      <nginx | haproxy>.ingress.kubernetes.io/ssl-passthrough: "true"  
-    method: ingress
-  ```
+### Using ingress controller
 
-  After the changes are saved and applied, you can verify a new ingress was created for the API.
+1. If your cluster uses an [ingress controller]({{<relref "content/platforms/kubernetes/redb/set-up-ingress-controller.md">}}), add the following to the `spec` section.
 
-  ```bash
-  $ kubectl get ingress
-  NAME   HOSTS                            ADDRESS                                 PORTS   AGE
-  rec01  api-docs.rec-docs.redisdemo.com  225161f845b278-111450635.us.cloud.com   80      24h
-  ```
+    ```yaml
+    activeActive:
+      apiIngressUrl: <api-hostname>
+      dbIngressSuffix: <ingress-suffix>
+        ingressAnnotations:
+        kubernetes.io/ingress.class: <nginx | haproxy>
+        <nginx | haproxy>.ingress.kubernetes.io/backend-protocol: HTTPS
+        <nginx | haproxy>.ingress.kubernetes.io/ssl-passthrough: "true"  
+      method: ingress
+    ```
 
-If your cluster uses OpenShift routes:
+1. After the changes are saved and applied, you can verify a new ingress was created for the API.
 
-  ```yaml
-  activeActive:
-    apiIngressUrl: api<ingress-suffix>
-    dbIngressSuffix: <ingress-suffix>
-    method: openShiftRoute
-  ```
+    ```bash
+    $ kubectl get ingress
+    NAME   HOSTS                            ADDRESS                                 PORTS   AGE
+    rec01  api.abc.cde.redisdemo.com  225161f845b278-111450635.us.cloud.com   80      24h
+    ```
 
-After the changes are saved and applied, you can verify a new route was created for the API.
-```bash
-$ oc get route
-NAME    HOST/PORT                       PATH    SERVICES  PORT  TERMINATION   WILDCARD
-rec01   api-docs.rec-docs.redisdemo.com rec01   api             passthrough   None
-```
+1. API call to verify access from outside K8s?
 
-The operator uses the API URL (`apiIngressUrl`) to create an ingress to the Redis Enterprise cluster's API; this only happens once per cluster. Every time a new active-active database instance is created on this cluster, the operator create a new ingress route to the database with the ingress suffix (`dbIngressSuffix`). The hostname for each new database will be in the format `<db-name><ingress-suffix>`.
+    If not, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
-## Resolve hostnames
+    To find the IP for the LoadBalancer:
 
-Next, create a DNS alias that resolves your chosen database hostname (`<db-name><ingress-suffix>`) and your API URL (`api<ingress-suffix>`) to the IP address for the ingress controller's LoadBalancer. Do this for each participating Redis Enterprise cluster.
+    ```bash
+    kubectl get svc <haproxy-ingress | ingress-ngnix-controller> \
+      -n  <ingress-ctrl-namespace>
+    ```
 
-To find the IP for the LoadBalancer:
+### Using OpenShift routes
 
-  ```bash
-  kubectl get svc <haproxy-ingress | ingress-ngnix-controller> \
-    -n  <ingress-ctrl-namespace>
-  ```
+1. If your cluster uses OpenShift routes, add the following to the `spec` section.
+
+      ```yaml
+      activeActive:
+        apiIngressUrl: <api-hostname>
+        dbIngressSuffix: <ingress-suffix>
+        method: openShiftRoute
+      ```
+
+    For OpenShift, your ingress suffix should include the suffix generated for your routes. The OpenShift suffix is typically in the format `apps.<openshift-name>.<domain>.com`.
+
+1. After the changes are saved and applied, you can verify a new route was created for the API.
+
+    ```bash
+    $ oc get route
+    NAME    HOST/PORT                       PATH    SERVICES  PORT  TERMINATION   WILDCARD
+    rec01   api-openshift.apps.abc.redisdemo.com rec01   api             passthrough   None
+    ```
+
+1. Verify API hostname works?
 
 ## Create an Active-Active database with `crdb-cli`
 
@@ -123,8 +134,10 @@ crdb-cli crdb create
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
-  --instance fqdn=<rec01-hostname>,url=<rec01-api-url>,username=<rec01-username>,password=<rec01-password>,replication_endpoint=<rec01-replication-endpoint>,replication_tls-sni=<rec01-replication-hostname> \
-  --instance fqdn=<rec02-hostname>,url=<rec02-api-url>,username=<rec02-username>,password=<rec02-password>,replication_endpoint=<rec02-replication-endpoint>,replication_tls-sni=<rec02-replication-hostname>
+  --instance fqdn=<rec01-hostname>,url=<rec01-api-hostname>,username=<rec01-username>,password=<rec01-password>,replication_endpoint=<rec01-replication-endpoint>,replication_tls-sni=<rec01-replication-hostname> \
+  --instance fqdn=<rec02-hostname>,url=<rec02-api-hostname>,username=<rec02-username>,password=<rec02-password>,replication_endpoint=<rec02-replication-endpoint>,replication_tls-sni=<rec02-replication-hostname>
 ```
 
-## Test your database
+See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
+
+## Test your database??
