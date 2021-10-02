@@ -15,13 +15,13 @@ aliases: /rs/references/rest-api/cluster/stats/last
 
 | Method | Path | Description |
 |--------|------|-------------|
-| [GET](#get-cluster-stats-last) | `/v1/cluster/stats/last` | Get last cluster stats |
+| [GET](#get-cluster-stats-last) | `/v1/cluster/stats/last` | Get most recent cluster stats |
 
-## Get last cluster stats {#get-cluster-stats-last}
+## Get most recent cluster stats {#get-cluster-stats-last}
 
 	GET /v1/cluster/stats/last
 
-Get the last cluster stats.
+Get the most recent cluster stats.
 
 #### Required permissions
 

@@ -15,14 +15,14 @@ aliases: /rs/references/rest-api/shards-stats/last
 
 | Method | Path | Description |
 |--------|------|-------------|
-| [GET](#get-all-shards-stats-last) | `/v1/shards/stats/last` | Get last stats for all shards |
-| [GET](#get-shard-stats-last) | `/v1/shards/stats/last/{uid}` | Get last stats for a specific shard |
+| [GET](#get-all-shards-stats-last) | `/v1/shards/stats/last` | Get most recent stats for all shards |
+| [GET](#get-shard-stats-last) | `/v1/shards/stats/last/{uid}` | Get most recent stats for a specific shard |
 
-## Get last stats for all shards {#get-all-shards-stats-last}
+## Get most recent stats for all shards {#get-all-shards-stats-last}
 
 	GET /v1/shards/stats/last
 
-Get last stats for all shards.
+Get most recent stats for all shards.
 
 #### Required permissions
 
@@ -104,11 +104,11 @@ Get last stats for all shards.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | No shards exist |
 
-## Get last stats for a shard {#get-shard-stats-last}
+## Get most recent stats for a shard {#get-shard-stats-last}
 
 	GET /v1/shards/stats/last/{int: uid}
 
-Get stats for a specific shard.
+Get most recent stats for a specific shard.
 
 #### Required permissions
 

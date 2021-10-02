@@ -1,0 +1,289 @@
+---
+Title: Database alerts requests
+linkTitle: alerts
+description: Documents the Redis Enterprise Software REST API bdbs/alerts requests.
+weight: $weight
+alwaysopen: false
+categories: ["RS"]
+aliases: /rs/references/rest-api/bdbs/alerts
+         /rs/references/rest-api/bdbs/alerts.md
+         /rs/references/restapi/bdbs/alerts
+         /rs/references/restapi/bdbs/alerts.md
+         /rs/references/rest_api/bdbs/alerts
+         /rs/references/rest_api/bdbs/alerts.md
+---
+
+| Method | Path | Description |
+|--------|------|-------------|
+| [GET](#get-all-bdbs-alerts) | `/v1/bdbs/alerts` | Get all alert states for all databases |
+| [GET](#get-bdbs-alerts) | `/v1/bdbs/alerts/{uid}` | Get all alert states for a specific database |
+| [GET](#get-bdbs-alert) | `/v1/bdbs/alerts/{uid}/{alert}` | Get a specific database alert state |
+| [POST](#post-bdbs-alerts) | `/v1/bdbs/alerts/{uid}` | Update a database’s alerts configuration |
+
+## Get all alerts for all databases {#get-all-bdbs-alerts}
+
+	GET /v1/bdbs/alerts
+
+Get all alert states for all bdbs.
+
+#### Required permissions
+
+| Permission name |
+|-----------------|
+| view_all_bdbs_alerts |
+
+### Request {#get-all-request} 
+
+#### Example HTTP request
+
+	GET /bdbs/alerts 
+
+#### Request headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+
+### Response {#get-all-response}
+
+Returns a hash of alert uid's and the alerts states for each BDB.
+
+See REST API alerts overview for a description of the alert state object.
+
+#### Example JSON body
+
+```json
+{
+    "1": {
+        "bdb_size": {
+            "enabled": true,
+            "state": true,
+            "threshold": "80",
+            "change_time": "2014-08-29T11:19:49Z",
+            "severity": "WARNING",
+            "change_value": {
+                "state": true,
+                "threshold": "80",
+                "memory_util": 81.2
+            }
+        },
+        "..."
+    },
+    "..."
+}
+```
+
+### Status codes {#get-all-status-codes} 
+
+| Code | Description |
+|------|-------------|
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
+
+## Get all alert states for a database {#get-bdbs-alerts}
+
+	GET /v1/bdbs/alerts/{int: uid}
+
+Get all alert states for a bdb.
+
+#### Required permissions
+
+| Permission name |
+|-----------------|
+| view_bdb_alerts |
+
+### Request {#get-request-alerts} 
+
+#### Example HTTP request
+
+	GET /bdbs/alerts/1 
+
+#### Request headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+
+### Response {#get-response-alerts} 
+
+Returns a hash of alert objects and their states.
+
+See REST API alerts overview for a description of the alert state object.
+
+#### Example JSON body
+
+```json
+{
+    "bdb_size": {
+        "enabled": true,
+        "state": true,
+        "threshold": "80",
+        "severity": "WARNING",
+        "change_time": "2014-08-29T11:19:49Z",
+        "change_value": {
+            "state": true,
+            "threshold": "80",
+            "memory_util": 81.2
+        }
+    },
+    "..."
+}
+```
+
+### Status codes {#get-status-codes-alerts} 
+
+| Code | Description |
+|------|-------------|
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified bdb does not exist |
+
+## Get a database alert {#get-bdbs-alert}
+
+	GET /v1/bdbs/alerts/{int: uid}/{alert}
+
+Get a bdb alert state.
+
+#### Required permissions
+
+| Permission name |
+|-----------------|
+| view_bdb_alerts |
+
+### Request {#get-request} 
+
+#### Example HTTP request
+
+	GET /bdbs/alerts/1/bdb_size 
+
+
+#### Request headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+
+
+#### URL parameters
+
+| Field | Type | Description |
+|-------|------|-------------|
+| uid | integer | The unique ID of the database |
+| alert | string | The alert name |
+
+### Response {#get-response} 
+
+See REST API alerts overview for a description of the alert state object.
+
+#### Example JSON body
+
+```json
+{
+    "enabled": true,
+    "state": true,
+    "threshold": "80",
+    "severity": "WARNING",
+    "change_time": "2014-08-29T11:19:49Z",
+    "change_value": {
+        "state": true,
+        "threshold": "80",
+        "memory_util": 81.2
+    }
+}
+```
+
+### Status codes {#get-status-codes} 
+
+| Code | Description |
+|------|-------------|
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
+| [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad request |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified alert or bdb does not exist |
+
+## Update database alert configuration {#post-bdbs-alerts}
+
+	POST /v1/bdbs/alerts/{int: uid}
+
+Updates a database's alerts configuration.
+
+#### Required permissions
+
+| Permission name |
+|-----------------|
+| update_bdb_alerts |
+
+### Request {#post-request} 
+
+The request must contain a single JSON bdb object with one or many database alert objects in it.
+
+If passed with the dry_run URL query string, the function will validate the alert thresholds, but not commit them.
+
+#### Example HTTP request
+
+	POST /bdbs/alerts/1 
+
+#### Example JSON body
+
+```json
+{
+     "bdb_size":{
+         "threshold":"80",
+         "enabled":true
+     },
+     "bdb_high_syncer_lag":{
+         "threshold":"",
+         "enabled":false
+     },
+     "bdb_low_throughput":{
+         "threshold":"1",
+         "enabled":true
+     },
+     "bdb_high_latency":{
+         "threshold":"3000",
+         "enabled":true
+     },
+     "bdb_high_throughput":{
+         "threshold":"1",
+         "enabled":true
+     },
+     "bdb_backup_delayed":{
+         "threshold":"1800",
+         "enabled":true
+     }
+}
+```
+
+#### Request headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+
+
+#### URL parameters
+
+| Field | Type | Description |
+|-------|------|-------------|
+| uid | integer | Database ID |
+| dry_run | string | Validate the alert thresholds but do not apply them |
+
+#### Request body
+
+| Field | Type | Description |
+|-------|------|-------------|
+| enabled | boolean | Alert enabled or disabled |
+| threshold | string | Threshold for alert to indicate when it should turn on or off |
+
+### Response {#post-response} 
+
+The response includes the updated database alerts.
+
+### Status codes {#post-status-codes} 
+
+| Code | Description |
+|------|-------------|
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified database was not found. |
+| [406 Not Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | Invalid configuration parameters provided. |
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, database alerts updated. |
