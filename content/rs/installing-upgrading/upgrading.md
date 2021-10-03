@@ -118,6 +118,12 @@ As of v6.2.4, this policy defaults to `major`, which limits Redis database compa
 tune cluster redis_upgrade_policy latest
 ```
 
+customer following these instruction will change the redis_upgrade_policy to latest .
+this might be desirable for non conservative customers, but not desirable for conservative customers.
+we need to provide customer with more details, so that he can make the right decision.
+Please add more details and make it clear that it is not mandatory to change policy to latest.
+
+
 ### Database upgrade process
 
 To upgrade a database:
