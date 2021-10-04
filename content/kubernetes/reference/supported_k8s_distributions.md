@@ -4,7 +4,12 @@ description: Support matrix for the current Redis Enterprise K8s operator
 weight: 30
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: [
+    /platforms/kubernetes/reference/supported_k8s_distributions/,
+    /platforms/kubernetes/reference/supported_k8s_distributions.md,
+    /kubernetes/reference/supported_k8s_distributions.md,
+    /kubernetes/reference/supported_k8s_distributions/
+]
 ---
 
 Each release of the Redis Enterprise operator is thoroughly tested against a set of Kubernetes distributions. The table below lists the current release's support status for each distribution.

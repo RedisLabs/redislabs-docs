@@ -8,6 +8,8 @@ categories: ["Platforms"]
 aliases: [
   /platforms/kubernetes/reference/,
   /platforms/kubernetes/reference/_index.md,
+  /kubernetes/reference/_index.md,
+  /kubernetes/reference/_index/,
 ]
 ---
 

@@ -4,7 +4,12 @@ description: A primer for the configuration options for Redis Enterprise databas
 weight: 35
 alwaysopen: false
 categories: ["Platforms"]
-aliases:
+aliases: [
+   /platforms/kubernetes/reference/db-options.md,
+   /platforms/kubernetes/reference/db-options/
+   /kubernetes/reference/db-options.md,
+   /kubernetes/reference/db-options/
+]
 ---
 
 The database options are specified in the `spec` section of the database custom resource.

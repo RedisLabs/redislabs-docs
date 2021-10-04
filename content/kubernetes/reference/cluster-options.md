@@ -4,7 +4,12 @@ description: A primer for the configuration options for Redis Enterprise cluster
 weight: 32
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /platforms/kubernetes/cluster-options/
+aliases: [
+  /platforms/kubernetes/cluster-options/
+  /platforms/kubernetes/cluster-options.md,
+  /kubernetes/reference/cluster-options.md,
+  /kubernetes/reference/cluster-options/
+]
 ---
 A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD).
 The default format is a YAML definition such as:
