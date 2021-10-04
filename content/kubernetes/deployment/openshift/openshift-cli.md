@@ -13,6 +13,8 @@ aliases: [
     /platforms/kubernetes/getting-started/openshift/openshift-cli.md,
     /platforms/kubernetes/deployment/openshift/openshift-cli/,
     /platforms/kubernetes/deployment/openshift/openshift-cli/
+    /kubernetes/deployment/openshift/openshift-cli.md,
+    /kubernetes/deployment/openshift/openshift-cli/,
 
 ]
 ---
@@ -134,7 +136,7 @@ Changes to this file can cause unexpected results.
         ```
 
 <!--
-[rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac.yaml)
+[rbac.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/rbac.yaml)
 
 The rbac (Role-Based Access Control) yaml defines who can access which resources. We need this to allow our Operator application to deploy and manage the entire Redis Enterprise deployment (all cluster resources within a namespace). Therefore, we strongly recommend **not** changing anything in this yaml file. To apply it, type:
 
@@ -149,7 +151,7 @@ serviceaccount/redis-enterprise-operator created
 rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created`
 -->
 <!---
-- [sb_rbac.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/sb_rbac.yaml)
+- [sb_rbac.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/sb_rbac.yaml)
 
     If you deploy a service broker, also apply the sb_rbac.yaml file. The sb_rbac (Service Broker Role-Based Access Control) yaml defines the access permissions of the Redis Enterprise Service Broker.
 
@@ -171,7 +173,7 @@ Changes to this file can cause unexpected results.
     ```
 --->
 <!--
-- [crd.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml)
+- [crd.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/crd.yaml)
 
 The next step applies crd.yaml, creating a [CustomResourceDefinition](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) for your Redis Enterprise Cluster resource. This provides another API resource to be handled by the k8s API server and managed by the operator we will deploy next. We strongly recommend **not** changing anything in this yaml file.
 
@@ -185,11 +187,11 @@ You should receive the following response:
 
 `customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com     configured`
 
-- [operator.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/operator.yaml)
+- [operator.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/operator.yaml)
 
 Applying this yaml creates the operator deployment, which is responsible for managing the k8s deployment and lifecycle of a Redis Enterprise Cluster. Among many other responsibilities, it creates a [stateful set](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) that runs the Redis Enterprise nodes (as pods).
 
-Always make sure you have the latest [operator.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/operator.yaml). Alternatively, you can edit the following tag:
+Always make sure you have the latest [operator.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/operator.yaml). Alternatively, you can edit the following tag:
 image:redislabs/operator:tag
 
 To apply the operator.yaml, run:
@@ -206,7 +208,7 @@ Now, run `kubectl get deployment` and verify that your redis-enterprise-operator
 
 ![getting-started-kubernetes-openshift-image2]( /images/rs/getting-started-kubernetes-openshift-image2.png )
 
-- [redis-enterprise-cluster.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml)
+- [redis-enterprise-cluster.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/redis-enterprise-cluster.yaml)
 -->
 
 - The [rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml) defines the configuration of the newly created resource: Redis Enterprise Cluster. You can rename the file to `your_cluster_name.yaml`, but it is not required.

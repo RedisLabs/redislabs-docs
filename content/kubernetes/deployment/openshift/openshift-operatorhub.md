@@ -9,9 +9,12 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: [
     /platforms/openshift/getting-started-operatorhub/,
-    /platforms/kubernetes/getting-started/openshift/openshift-operatorhub.md
+    /platforms/kubernetes/getting-started/openshift/openshift-operatorhub.md,
     /platforms/kubernetes/deployment/openshift/openshift-operatorhub/,
     /platforms/kubernetes/deployment/openshift/openshift-operatorhub.md,
+    /kubernetes/deployment/openshift/openshift-operatorhub.md,
+    /kubernetes/deployment/openshift/openshift-operatorhub/
+
 ]
 ---
 The OperatorHub is a feature of OpenShift 4.x that enables browsing a catalog
@@ -44,11 +47,11 @@ this constraint installed, the operator cannot create Redis Enterprise clusters.
 
 The security context constraint for the operator needs to be **installed only once** and **must not be deleted**.
 
-The constraint [scc.yaml](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml)
+The constraint [scc.yaml](https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml)
 can be downloaded and installed by a cluster administrator with the commands:
 
 ```sh
-curl -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml
+curl -O https://raw.githubuser.com/RedisLabs/redis-enterprise-k8s-docs/master/openshift/scc.yaml
 oc apply -f scc.yaml
 ```
 

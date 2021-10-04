@@ -4,7 +4,14 @@ description:
 weight: 60
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/getting-started/pcf/
+aliases: [
+    /rs/getting-started/pcf/,
+    /platforms/pcf/using-pcf/,
+    /platforms/pcf/using-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/using-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/using-pcf/
+
+]
 ---
 This topic describes how to use Redis Enterprise Software (RS) for Pivotal Platform.
 

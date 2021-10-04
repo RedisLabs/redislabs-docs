@@ -4,7 +4,15 @@ description:
 weight: 90
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/getting-started/pcf/
+aliases: [
+    /rs/getting-started/pcf/,
+    /platforms/pcf/backup-restore-pcf/,
+    /platforms/pcf/backup-restore-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/backup-restore-pcf.md,
+    /kubernetes/deployment/tanzu/pcf/backup-restore-pcf/
+
+
+]
 ---
 This topic describes how to backup and restore Redis Enterprise for Pivotal Platform (formerly Pivotal Cloud Foundry - PCF).
 

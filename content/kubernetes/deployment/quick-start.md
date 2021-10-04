@@ -10,6 +10,8 @@ aliases: [
   /platforms/kubernetes/getting-started/quick-start.md,
   /platforms/kubernetes/deployment/quick-start/,
   /platforms/kubernetes/deployment/quick-start.md, 
+  /kubernetes/deployment/quick-start.md,
+  /kubernetes/deployment/quick-start/
 ]
 ---
 

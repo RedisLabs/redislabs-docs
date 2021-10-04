@@ -11,6 +11,8 @@ aliases: [
   /platforms/kubernetes/getting-started/_index.md,
   /platforms/kubernetes/deployment/,
   /platforms/kubernetes/deployment/_index.md,
+  /kubernetes/deployment/_index.md,
+  /kubernetes/deployment/_index/
 
 ]
 ---

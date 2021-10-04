@@ -11,6 +11,9 @@ aliases: [
     /platforms/kubernetes/getting-started/tanzu._index.md,
     /platforms/kubernetes/deployment/tanzu/,
     /platforms/kubernetes/deployment/tanzu/_index.md,
+    /kubernetes/deployment/tanzu/,
+    /kubernetes/deployment/tanzu/_index.md,
+
 ]
 ---
 These are the steps required to set up a Redis Enterprise cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).

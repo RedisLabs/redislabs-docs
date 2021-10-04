@@ -4,8 +4,13 @@ description:
 weight: 99
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/getting-started/pcf/
-         /platforms/pcf/installing-pcf/
+aliases: [ /rs/getting-started/pcf/,
+         /platforms/pcf/installing-pcf/,
+         /platforms/pcf/,
+         /platforms/pcf/_index.md,
+         /kubernetes/deployment/tanzu/pcf/_index.md,
+         /kubernetes/deployment/tanzu/pcf/_index/
+]
 ---
 This topic describes how to install and configure Redis Enterprise for Pivotal Platform (formerly Pivotal Cloud Foundry - PCF).
 

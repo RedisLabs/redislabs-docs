@@ -11,6 +11,8 @@ aliases: [
   /platforms/kubernetes/concepts/managing-images.md,
   /platforms/kubernetes/deployment/container-images/,
   /platforms/kubernetes/deployment/container-images.md,
+  /kubernetes/deployment/container-images.md,
+  /kubernetes/deployment/container-images/,
 ]
 ---
 
