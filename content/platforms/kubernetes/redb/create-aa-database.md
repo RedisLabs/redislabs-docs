@@ -1,6 +1,6 @@
 ---
 
-Title: Create Active-active databases on Kubernetes
+Title: Create Active-Active databases on Kubernetes
 linkTitle: Create Active-Active databases
 description: This section how to set up an active-active Redis Enterprise database on Kubernetes using the Redis Enterprise Software operator.  
 weight: 50
@@ -11,11 +11,11 @@ aliases: [
     /platforms/kubernetes/redb/create-aa-database.md,
 ]
 ---
-On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/designing-production/active-active.md">}}) databases provide read and write access to the same data set from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/administering/designing-production/active-active.md">}}).
+On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/designing-production/active-active.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/administering/designing-production/active-active.md">}}).
 
 ## Prerequisites
 
-Before creating Active-Active databases you'll need the following:
+Before creating Active-Active databases, you'll need the following:
 
 - Two or more working Kubernetes clusters that have:
   - Routing for external access with an [ingress controller]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller.md">}}) or routes (for OpenShift only)
@@ -114,7 +114,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
     oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
     ```
 
-1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC0 resource file.
+1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
       ```yaml
       activeActive:
@@ -141,7 +141,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 ## Create an Active-Active database with `crdb-cli`
 
-The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{<relref "platforms/kubernetes/redb/create-aa-database.md#document-required-parameters" >}}) for each Redis Enterprise cluster.
+The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{<relref "platforms/kubernetes/redb/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
 ```bash
 crdb-cli crdb create 
