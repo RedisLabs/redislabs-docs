@@ -45,7 +45,6 @@ rladmin bind
 | - | - |
 | all-master-shards | Multiple proxies, one on each master node (best for high traffic and multiple master shards)                     |
 | all-nodes | Multiple proxies, one on each node of the cluster (increases traffic in the cluster, only used in special cases) |
-| legacy | Copies existing binding configuration from earlier versions
 | single | All traffic flows through a single proxy bound to the database endpoint (preferable in most cases)               |
 
 ```text
