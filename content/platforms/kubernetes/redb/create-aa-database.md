@@ -25,6 +25,7 @@ Before creating Active-Active databases you'll need the following:
 ## Document required parameters
 
 - Database name `<db-name>`:
+  - Description: Combined with ingress suffix to create the Active-Active database hostname.
   - Format: string
   - Example value: `myaadb`
   - How you get it: you choose
@@ -32,7 +33,7 @@ Before creating Active-Active databases you'll need the following:
 You'll need the following information for each participating Redis Enterprise cluster (REC):
 
 - REC hostname `<rec-hostname>`:
-  - Description: ?
+  - Description: Hostname used to identify your Redis Enterprise cluster in the `crdb-cli` command.
   - Format: `<rec-name>.<namespace>.svc.cluster.local`
   - Example value: `rec01.ns01.svc.cluster.local`
   - How to get it: ?
@@ -47,7 +48,7 @@ You'll need the following information for each participating Redis Enterprise cl
   - Example value: `-fgh.ijk.redisdemo.com`
   - How to get it: you choose
 - REC admin credentials `<username> <password>`:
-  - Description: ?
+  - Description: Admin username and password for the REC stored in a secret.
   - Example value: username: `user@redisdemo.com`, password: `something`
   - How to get them:
     ```bash
@@ -94,11 +95,11 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
     rec01  api.abc.cde.redisdemo.com  225161f845b278-111450635.us.cloud.com   80      24h
     ```
 
-1. Verify you can access the API from outside the K8s cluster. 
+1. Verify you can access the API from outside the K8s cluster.
 
-```
-curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/
-```
+    ```bash
+   curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/
+    ```
 
 <see comments> If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
@@ -123,7 +124,12 @@ curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/
     rec01   api-openshift.apps.abc.redisdemo.com rec01   api             passthrough   None
     ```
 
-1. Verify API hostname works??????
+1. Verify you can access the API from outside the K8s cluster.
+
+    ```bash
+   curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/
+    ```
+
 
 ## Create an Active-Active database with `crdb-cli`
 
