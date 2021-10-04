@@ -7,6 +7,31 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## v2.4.11 (October 2021)
+This is a maintenance release for RedisGraph 2.4.
+
+Update urgency: `MODERATE` : Program an upgrade of the server, but it's not urgent.
+
+Details:
+- Bug fixes:
+    - #[1931](https://github.com/RedisGraph/RedisGraph/issues/1931) Fix race condition on calling [`BGSAVE`](https://redis.io/commands/bgsave) while flushing matrices
+    - #[1898](https://github.com/RedisGraph/RedisGraph/issues/1898) Error when setting a property to an array containing an invalid type
+    - #[1897](https://github.com/RedisGraph/RedisGraph/issues/1897) Aliases in `WITH...ORDER BY` must be valid references%
+
+## v2.4.11 (September 2021)
+
+This is a maintenance release for RedisGraph 2.4
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+- Critical bug fixes:
+    - #[1911](https://github.com/RedisGraph/RedisGraph/issues/1911) When a [query timeout](https://oss.redis.com/redisgraph/configuration/#timeout) is set and the graph contained indexes, a crash could occur while releasing indexes
+
+- Bug fixes:
+    - #[1913](https://github.com/RedisGraph/RedisGraph/issues/1913) Update thread-local AST for every cloned operation
+    - #[1915](https://github.com/RedisGraph/RedisGraph/issues/1915) Validate function references in parameters%
+
 ## v2.4.7 (July 2021)
 
 This is a maintenance release for RedisGraph 2.4
