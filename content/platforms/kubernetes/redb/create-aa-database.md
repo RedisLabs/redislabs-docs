@@ -111,6 +111,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. Make sure your Redis Enterprise cluster has a unique name. By default, OpenShift always names the REC "`rec`". You'll need to manually rename any RECs using Active-Active with a unique name and reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace.
     ```
+    oc apply -f scc.yaml
     oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
     ```
 
