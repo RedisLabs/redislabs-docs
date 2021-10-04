@@ -73,7 +73,7 @@ Here are some general guidelines:
 
 - Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) is enabled.)
 
-- Modules also consumes memory.
+- Modules also consume memory.
 
 Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/administering/database-operations/memory-limit.md" >}})
 

@@ -1,0 +1,49 @@
+{{ $sourcePage := .Page }}
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow">
+  {{ with $sourcePage }}
+    <title>{{ .Title }}</title>
+  {{ end }}
+
+  <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
+  <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
+  <link href="{{"css/bootstrap.min.css" | relURL}}" rel="stylesheet">
+  <link href="{{"css/foundation-icons.css" | relURL}}" rel="stylesheet">
+  {{ $style := resources.Get "theme-flex/style.css"  | resources.Fingerprint }}
+  <link href="{{$style.RelPermalink}}" rel="stylesheet">
+  <link href="{{"css/pdf-style.css" | relURL}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i" rel="stylesheet">
+  <link href="{{"css/featherlight.min.css" | absURL}}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i" rel="stylesheet">
+</head>
+
+<body>
+  <div style="page-break-after: always;">
+    <div class="logo">
+      <p><img src="/images/icon_logo/logo-redis-3.svg"></p>
+    </div>
+
+    {{ with $sourcePage }}
+      <h1>{{ .Title }}</h1>
+    {{ end }}
+
+    <h2>Table of contents</h2>
+
+    <ul>
+      {{ with $sourcePage }}
+        {{ partial "recursive-children.html" (dict "context" . "printType" "toc" "depth" 0 "pageFilepath" .Page.File.Path "paddingVal" 0) }}
+      {{ end }}
+    </ul>
+  </div>
+
+  {{ with $sourcePage }}
+    <h1 id="{{ substr .RelPermalink 1 -1 }}" name="{{ .Title }}">{{ .Title }}</h1>
+    <div>{{ .Content }}</div>
+    {{ partial "recursive-children.html" (dict "context" . "printType" "content" "pageFilepath" .Page.File.Path) }}
+  {{ end }}
+</body>
+</html>

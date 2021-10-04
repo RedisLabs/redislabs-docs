@@ -5,6 +5,12 @@ description:
 weight: 90
 alwaysopen: false
 categories: ["RI"]
+aliases: /ri/
+         /redisinsight/
+         /redis-insight/
+         /redis_insight/
+
+
 ---
 RedisInsight is a free GUI for Redis that is available on all platforms (Windows, Mac, Linux, and Docker) and works with all variants of Redis. RedisInsight allows you to:
 - View performance metrics for your Redis instance with the [Overview tool]({{<relref "/ri/using-redisinsight/overview.md">}})

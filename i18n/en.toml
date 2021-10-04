@@ -34,6 +34,9 @@ other = "You can use the Search or look in the menu to find what you were lookin
 [Go-to-homepage]
 other = "Back to the docs homepage"
 
+[Download-pdf]
+other = "Download PDF"
+
 [Edit-this-page]
 other = "Edit on GitHub"
 

@@ -22,7 +22,7 @@ The [Redis Enterprise Software container](https://hub.docker.com/r/redislabs/red
 represents a node in an RS Cluster. When deploying RS using Docker, there are a couple
 of common topologies:
 
-**Topology #1:** The simplest topology is to run a single-node RS Cluster with a single container in a single host machine. This is best for local development or functional testing. Obviously, single-node clusters come with limited functionality in a few ways. For instance, in a single-node topology, RS can't replicate to slave shards or provide any protection for failures. Simply follow the instruction in the Getting Started pages for Windows, macOS and Linux to build your development environment.
+**Topology #1:** The simplest topology is to run a single-node RS Cluster with a single container in a single host machine. This is best for local development or functional testing. Obviously, single-node clusters come with limited functionality in a few ways. For instance, in a single-node topology, Redis Enterprise Software can't replicate to replica shards or provide any protection for failures. Simply follow the instruction in the Getting Started pages for Windows, macOS and Linux to build your development environment.
 
 ![0-2](/images/rs/RS-Docker-container.png)
 

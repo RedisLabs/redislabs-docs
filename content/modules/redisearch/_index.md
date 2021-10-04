@@ -5,6 +5,10 @@ weight: 30
 alwaysopen: false
 categories: ["Modules"]
 aliases:
+  - /redisearch/
+  - /redissearch/
+  - /redis-search/
+  - /redis_search/
   - /rs/developing/modules/redisearch/
 ---
 The [RediSearch 2.x module](https://redislabs.com/blog/introducing-redisearch-2-0/) is a source-available project that lets you build powerful searches for open-source Redis databases.
