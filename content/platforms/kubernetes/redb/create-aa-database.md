@@ -36,7 +36,10 @@ You'll need the following information for each participating Redis Enterprise cl
   - Description: Hostname used to identify your Redis Enterprise cluster in the `crdb-cli` command.
   - Format: `<rec-name>.<namespace>.svc.cluster.local`
   - Example value: `rec01.ns01.svc.cluster.local`
-  - How to get it: ?
+  - How to get it: List all your Redis Enterprise clusters
+      ```bash
+      kubectl get rec --all-namespaces
+      ```
 - **API hostname** `<api-hostname>`:
   - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster.
   - Format: string
