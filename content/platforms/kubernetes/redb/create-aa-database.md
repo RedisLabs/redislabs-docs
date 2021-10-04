@@ -100,7 +100,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 ????API call???
 ```
 
-If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
+<see comments> If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
 ### Using OpenShift routes
 
