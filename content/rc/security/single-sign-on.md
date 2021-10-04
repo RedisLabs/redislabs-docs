@@ -11,7 +11,7 @@ As an alternative to the traditional email/password account authentication metho
 
 ## Social login
 
-One SSO option that Redis Cloud offers is [social login](https://en.wikipedia.org/wiki/Social_login), which allows you to use an existing social media account to create or sign into a Redis Cloud account.
+One SSO option that Redis Cloud offers is [social login](https://en.wikipedia.org/wiki/Social_login), which allows you to use an existing social media account to create or sign into your Redis Cloud account.
 
 Redis Cloud supports the following social logins:
 - GitHub
