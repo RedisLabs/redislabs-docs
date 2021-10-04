@@ -141,8 +141,8 @@ crdb-cli crdb create
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
-  --instance fqdn=<rec01-hostname>,url=<rec01-api-hostname>,username=<rec01-username>,password=<rec01-password>,replication_endpoint=<rec01-replication-endpoint>,replication_tls-sni=<rec01-replication-hostname> \
-  --instance fqdn=<rec02-hostname>,url=<rec02-api-hostname>,username=<rec02-username>,password=<rec02-password>,replication_endpoint=<rec02-replication-endpoint>,replication_tls-sni=<rec02-replication-hostname>
+  --instance fqdn=<rec-hostname-01>,url=<api-hostname-01>,username=<username-01>,password=<password-01>,replication_endpoint=<replication-endpoint-01>,replication_tls-sni=<replication-hostname-01> \
+  --instance fqdn=<rec-hostname-02>,url=<api-hostname-02>,username=<username-02>,password=<password-02>,replication_endpoint=<replication-endpoint-02>,replication_tls-sni=<replication-hostname-02>
 ```
 
 See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
