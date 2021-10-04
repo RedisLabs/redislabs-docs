@@ -11,7 +11,9 @@ aliases: [
     /platforms/kubernetes/concepts/stability.md,
     /platforms/kubernetes/concepts/stability/,
     /platforms/kubernetes/memory/pod-stability.md,
-    /platforms/kubernetes/memory/pod-stability/ 
+    /platforms/kubernetes/memory/pod-stability/,
+    /kubernetes/memory/pod-stability.md,
+    /kubernetes/memory/pod-stability/,
 ]
 
 ---

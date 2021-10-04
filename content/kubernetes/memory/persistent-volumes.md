@@ -11,7 +11,9 @@ aliases: [
     /platforms/kubernetes/concepts/persistent-volumes.md, 
     /platforms/kubernetes/concepts/persistent-volumes/, 
     /platforms/kubernetes/memory/persistent-volumes/, 
-    /platforms/kubernetes/memory/persistent-volumes.md 
+    /platforms/kubernetes/memory/persistent-volumes.md,
+    /kubernetes/memory/persistent-volumes.md,
+    /kubernetes/memory/persistent-volumes/
 ]
 ---
 To deploy a Redis Enterprise cluster with Redis Enterprise operator the

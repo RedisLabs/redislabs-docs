@@ -10,19 +10,22 @@ aliases: [
     /platforms/kubernetes/pod-scheduling/,
     /platforms/kubernetes/concepts/node-selection.md,
     /platforms/kubernetes/concepts/node-selection,
-    /platforms/kubernetes/memory/node-selection.md
-    /platforms/kubernetes/memory/node-selection/
+    /platforms/kubernetes/memory/node-selection.md,
+    /platforms/kubernetes/memory/node-selection/,
+    /kubernetes/memory/node-selection.md,
+    /kubernetes/memory/node-selection/,
+
 ]
 
 ---
 
-Many K8s cluster deployments have different kinds of nodes that have
+Many Kubernetes cluster deployments have different kinds of nodes that have
 different CPU and memory resources available for scheduling cluster workloads.
 The Redis Enterprise operator has various abilities to control the scheduling
 Redis Enterprise cluster node pods through properties specified in the
-Redis Enterprise cluster CRD.
+Redis Enterprise cluster custom resource definition (CRD).
 
-A Redis Enterprise cluster is deployed as a StatefulSet which manages the Redis Enterprise cluster node pods.
+A Redis Enterprise cluster (REC) is deployed as a StatefulSet which manages the Redis Enterprise cluster node pods.
 The scheduler chooses a node to deploy a new Redis Enterprise cluster node pod on when:
 
 - The cluster is created

@@ -5,10 +5,16 @@ description: This section provides information about sizing and scaling Redis En
 weight: 50
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /rs/administering/kubernetes/sizing-scaling-redis-enterprise-cluster-kubernetes-deployment/
-         /platforms/kubernetes/sizing-kubernetes/
-         /platforms/kubernetes/concepts/sizing-on-kubernetes.md
-         /platforms/kubernetes/concepts/sizing-on-kubernetes
+aliases: [
+    /rs/administering/kubernetes/sizing-scaling-redis-enterprise-cluster-kubernetes-deployment/,
+    /platforms/kubernetes/sizing-kubernetes/,
+    /platforms/kubernetes/concepts/sizing-on-kubernetes.md,
+    /platforms/kubernetes/concepts/sizing-on-kubernetes,
+    /platforms/kubernetes/memory/sizing-on-kubernetes.md,
+    /platforms/kubernetes/memory/sizing-on-kubernetes/,
+    /kubernetes/memory/sizing-on-kubernetes.md,
+    /kubernetes/memory/sizing-on-kubernetes/,
+] 
 ---
 The following article reviews the mechanism and methods available for sizing
 and scaling a Redis Enterprise cluster deployment.
