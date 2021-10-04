@@ -1,5 +1,5 @@
 ---
-Title: Database actions recover requests
+Title: Recover database action requests
 linkTitle: recover
 description: Documents the Redis Enterprise Software REST API bdbs/actions/recover requests.
 weight: $weight
