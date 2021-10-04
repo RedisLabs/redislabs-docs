@@ -5,10 +5,10 @@ description:
 weight: 100
 alwaysopen: false
 categories: ["Platforms"]
-aliases: {
-  /platforms/faqs/
+aliases: [
+  /platforms/faqs/,
   /platforms/faqs.md
-}
+]
 ---
 Here are some frequently asked questions about Redis Enterprise on integration platforms.
 

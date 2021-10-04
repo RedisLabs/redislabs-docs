@@ -10,6 +10,8 @@ aliases: [
       /platforms/kubernetes/tasks/run-log-collector-script.md, 
       /platforms/kubernetes/logs/collect-logs.md,
       /platforms/kubernetes/logs/collect-logs/,
+      /kubernetes/logs/collect-logs.md,
+      /kubernetes/logs/collect-logs/
 ]
     
 ---

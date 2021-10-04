@@ -14,6 +14,8 @@ aliases: [
   /platforms/kubernetes/concepts/logs.md,
   /platforms/kubernetes/logs/,
   /platforms/kubernetes/logs/_index.md,
+  /kubernetes/logs/_index.md,
+  /kubernetes/logs/_index/
 ]
 ---
 

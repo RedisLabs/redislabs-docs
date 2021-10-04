@@ -4,12 +4,10 @@ description:
 weight: 10
 alwaysopen: false
 categories: ["Platforms"]
-aliases: /kubernetes/
-         /k8s/
-         /rs/getting-started/getting-started-kubernetes/
-         /rs/administering/kubernetes/
+hidden: true
+draft: true
 ---
-Kubernetes provides enterprise orchestration of containers and has been widely adopted. The Redis Enterprise Operator for Kubernetes provides a
+Kubernetes provides enterprise orchestration of containers and has been widely adopted. The Redis Enterprise operator for Kubernetes provides a
 simple way to get a Redis Enterprise cluster on Kubernetes as well as enables more complex deployment scenarios.
 
 {{< allchildren style="h2" description="true" />}}
