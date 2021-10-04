@@ -188,7 +188,7 @@ cluster create
 | persistent_path | Path to persistent storage location (defaults to /var/opt/redislabs/persist) |
 | rack_aware | Enables/disables rack awareness |
 | rack_id | Rack ID of the rack |
-| register_nds_suffix | Enables database mapping to both internal and external IP |
+| register_dns_suffix | Enables database mapping to both internal and external IP |
 
 #### `cluster join`
 
