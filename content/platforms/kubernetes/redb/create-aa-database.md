@@ -58,11 +58,11 @@ You'll need the following information for each participating Redis Enterprise cl
       -o jsonpath='{.data.password}' | base64 --decode
     ```
 - Replication endpoint:
-  - Description: ?
+  - Description: Endpoint used externally to contact the database.
   - Format: `<db-name><ingress-suffix>:443`
   - Example value: `myaadb-fgh.ijk.redisdemo.com:443`
 - Replication hostname:
-  - Description: ?
+  - Description: Hostname used inside the ingress for the database.
   - Format: `<db-name><ingress-suffix>`
   - Example value: `myaadb-fgh.ijk.redisdemo.com`
 
