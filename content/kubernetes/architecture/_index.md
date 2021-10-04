@@ -8,6 +8,8 @@ categories: ["Platforms"]
 aliases: /rs/concepts/kubernetes/redis-labs-kubernetes-architecture-overview
          /rs/concepts/kubernetes-architecture/
          /platforms/kubernetes/kubernetes-architecture/
+         /kubernetes/architecture/
+         /kubernetes/architecture/_index.md/
 ---
 Redis bases its Kubernetes architecture on several vital concepts.
 

@@ -20,6 +20,9 @@ aliases: [
   /platforms/kubernetes/getting-started/openshift/_index/, 
   /platforms/kubernetes/deployment/openshift/_index.md,
   /platforms/kubernetes/deployment/openshift/_index.md,
+  /kubernetes/deployment/openshift/_index.md,
+  /kubernetes/deployment/openshift/_index/,
+
 ]
 ---
 The deployment of Redis Enterprise clusters is managed with the Redis Enterprise operator that you deploy in the namespace for your project.
