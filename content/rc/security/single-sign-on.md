@@ -14,8 +14,8 @@ As an alternative to the traditional email/password account authentication metho
 One SSO option that Redis Cloud offers is [social login](https://en.wikipedia.org/wiki/Social_login), which allows you to use an existing social media account to create or sign into your Redis Cloud account.
 
 Redis Cloud supports the following social logins:
-- GitHub
-- Google
+- [GitHub](https://github.com/)
+- [Google](https://accounts.google.com/)
 
 {{<note>}}
 If your Google and GitHub accounts share an email address (such as Gmail), you can use either one to sign into the same Redis Cloud account.
