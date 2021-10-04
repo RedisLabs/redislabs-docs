@@ -10,6 +10,8 @@ aliases: [
        /platforms/kubernetes/tasks/ldap-on-k8s.md,
        /platforms/kubernetes/security/ldap-on-k8s.md,
        /platforms/kubernetes/secuirty/ldap-on-k8s/,
+       /kubernetes/security/ldap-on-k8s.md,
+       /kubernetes/security/ldap-on-k8s/
 ]
 ---
 

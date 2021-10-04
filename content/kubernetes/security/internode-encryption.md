@@ -9,6 +9,8 @@ aliases: [
     /platforms/kubernetes/tasks/internode-encryption/,
     /platforms/kubernetes/security/internode-encryption.md, 
     /platforms/kubernetes/security/internode-encryption/,
+    /kubernetes/security/internode-encryption.md,
+    /kubernetes/security/internode-encryption/
 ]
 ---
 

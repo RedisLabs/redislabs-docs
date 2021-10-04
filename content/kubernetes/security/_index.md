@@ -8,6 +8,8 @@ categories: ["Platforms"]
 aliases: [
   /platforms/kubernetes/security/,
   /platforms/kubernetes/security/_index.md,
+  /kubernetes/security/,
+  /kubernetes/security/_index.md,
 ]
 ---
 
