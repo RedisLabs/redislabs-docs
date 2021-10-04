@@ -9,7 +9,10 @@ aliases: [
   /platforms/kubernetes/tasks/replica-of-k8s.md,
   /platforms/kubernetes/tasks/replica-of-k8s/,
   /platforms/kubernetes/redb/replica-redb.md,
-  /platforms/kubernetes/redb/replica-redb/
+  /platforms/kubernetes/redb/replica-redb/,
+  /kubernetes/redb/replica-redb.md,
+  /kubernetes/redb/replica-redb/,
+  
 ]
 ---
 

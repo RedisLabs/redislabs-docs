@@ -11,7 +11,9 @@ aliases: [
     /platforms/kubernetes/concepts/db-controller.md,
     /platforms/kubernetes/concepts/db-controller/,
     /platforms/kubernetes/redb/db-controller.md,
-    /platforms/kubernetes/redb/db-controller/
+    /platforms/kubernetes/redb/db-controller/,
+    /kubernetes/redb/db-controller/,
+    /kubernetes/redb/db-controller.md
 ]
 ---
 ## Redis Enterprise database (REDB) lifecycle

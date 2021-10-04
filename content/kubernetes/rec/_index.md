@@ -6,8 +6,11 @@ weight: 30
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-    content/platforms/kubernetes/rec/_index.md,
+    /platforms/kubernetes/rec/_index.md,
     /platforms/kubernetes/rec/,
+    /kubernetes/rec/_index.md,
+    /kubernetes/rec/
+
 ]
 ---
 

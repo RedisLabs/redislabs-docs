@@ -10,10 +10,12 @@ aliases: [
   /platforms/kubernetes/tasks/set-up-ingress-controller/,
   /platforms/kubernetes/redb/set-up-ingress-controller.md,
   /platforms/kubernetes/redb/set-up-ingress-controller/,
+  /kubernetes/redb/set-up-ingress-controller.md,
+  /kubernetes/redb/set-up-ingress-controller/,
 ]
 ---
 
-Every time a Redis Enterprise database (REDB) is created in a Kubernetes (K8s) environment, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
+Every time a Redis Enterprise database (REDB) with the Redis Enterprise operator for Kubernetes, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
 
 By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
