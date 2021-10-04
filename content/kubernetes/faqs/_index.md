@@ -14,7 +14,7 @@ Here are some frequently asked questions about Redis Enterprise on integration p
 
 ## What is an Operator?
 
-An operator is a [Kubernetes custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/platforms/kubernetes/architecture/operator.md" >}}).
+An operator is a [Kubernetes custom controller](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources#custom-controllers) which extends the native K8s API. Refer to the article [Redis Enterprise K8s Operator-based deployments – Overview]({{< relref "/kubernetes/architecture/operator.md" >}}).
 
 ## Does Redis Enterprise operator support multiple RECs per namespace?
 
@@ -38,7 +38,7 @@ kubectl describe rec <my-cluster-name>
 
 The cluster admin user password is created by the operator during the deployment of the Redis Enterprise cluster (REC) and is stored in a Kubernetes [secret](https://kubernetes.io/docs/concepts/configuration/secret/).
 
-See [Manage REC credentials]({{< relref "/platforms/kubernetes/security/manage_REC_credentials">}}) for instructions on changing the admin password.
+See [Manage REC credentials]({{< relref "/kubernetes/security/manage_REC_credentials">}}) for instructions on changing the admin password.
 
 ## How is using Redis Enterprise operator superior to using Helm charts?
 
@@ -64,7 +64,7 @@ Connect to the UI by pointing your browser to `https://localhost:8443`
 
 For nodes hosting the Redis Enterprise cluster [statefulSet](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/) [pods](https://kubernetes.io/docs/concepts/workloads/pods/), follow the guidelines provided for Redis Enterprise in the [hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}).
 
-For additional information please also refer to [Kubernetes operator deployment – persistent volumes]({{< relref "/platforms/kubernetes/memory/persistent-volumes.md" >}}).
+For additional information please also refer to [Kubernetes operator deployment – persistent volumes]({{< relref "/kubernetes/memory/persistent-volumes.md" >}}).
 
 ## How to retrieve the username/password for a Redis Enterprise Cluster?
 
@@ -191,7 +191,7 @@ Also, some of the REC services must be able to increase default resource limits,
 
 While the REC container runs as user 1001, there are no limits currently set on users and user groups in the default scc.yaml file. The psp.yaml example defines the specific uid.
 
-The REC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift CLI deployment article]({{< relref "/platforms/kubernetes/deployment/openshift/openshift-cli" >}}).
+The REC SCC definitions are only applied to the project namespace when you apply them to the namespace specific Service Account as described in the [OpenShift CLI deployment article]({{< relref "/kubernetes/deployment/openshift/openshift-cli" >}}).
 
 REC PSP definitions are controlled with role-based access control (RBAC).
 A cluster role allowing the REC PSP is granted to the redis-enterprise-operator service account
