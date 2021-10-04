@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RC"]
 ---
 
-As an alternative to the traditional email/password account authentication method, you can sign up for a Redis Cloud account and sign into the [admin console](https://app.redislabs.com/new/) with [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on). This allows you to use one set of credentials, managed by your [identity provider](https://en.wikipedia.org/wiki/Identity_provider), to access multiple websites.
+As an alternative to the traditional email/password account authentication method, you can create a Redis Cloud account and sign into the [admin console](https://app.redislabs.com/new/) with [single sign-on (SSO)](https://en.wikipedia.org/wiki/Single_sign-on). This allows you to use one set of credentials, managed by your [identity provider](https://en.wikipedia.org/wiki/Identity_provider), to access multiple websites.
 
 ## Social login
 
