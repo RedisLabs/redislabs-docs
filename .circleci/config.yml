@@ -50,7 +50,6 @@ jobs:
                     - public
                     - utilities
                     - content
-                    - website.json
 
     # The build job for production branches that includes Google Tag Manager
     build-docs-prod:
@@ -144,13 +143,6 @@ jobs:
         steps:
             - attach_workspace:
                 at: ~/project
-            # TEST Create new_website.json to include PDF redirects
-            - run:
-               name: Create new_website.json to include PDF redirects
-               command: |
-                   cd utilities/redirect_pdfs
-                   ./add_pdf_redirects.sh
-                   cat new_website.json
             # Set the signature version for the S3 auth
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
