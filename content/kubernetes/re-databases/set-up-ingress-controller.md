@@ -10,8 +10,8 @@ aliases: [
   /platforms/kubernetes/tasks/set-up-ingress-controller/,
   /platforms/kubernetes/redb/set-up-ingress-controller.md,
   /platforms/kubernetes/redb/set-up-ingress-controller/,
-  /kubernetes/redb/set-up-ingress-controller.md,
-  /kubernetes/redb/set-up-ingress-controller/,
+  /kubernetes/re-databases/set-up-ingress-controller.md,
+  /kubernetes/re-databases/set-up-ingress-controller/,
 ]
 ---
 

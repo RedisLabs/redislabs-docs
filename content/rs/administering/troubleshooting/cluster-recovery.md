@@ -9,7 +9,7 @@ When a Redis Enterprise Software (RS) cluster fails,
 you must use the cluster configuration file and database data to recover the cluster.
 
 {{< note >}}
-For cluster recovery in a Kubernetes deployment, go to: [Recover a Redis Enterprise cluster on Kubernetes]({{< relref "/kubernetes/rec/cluster-recovery.md" >}}).
+For cluster recovery in a Kubernetes deployment, go to: [Recover a Redis Enterprise cluster on Kubernetes]({{< relref "/kubernetes/re-clusters/cluster-recovery.md" >}}).
 {{< /note >}}
 
 Cluster failure can be caused by:

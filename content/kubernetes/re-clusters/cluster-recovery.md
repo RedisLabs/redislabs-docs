@@ -13,8 +13,8 @@ aliases: [
     /platforms/kubernetes/tasks/cluster-recovery/,
     /platforms/kubernetes/rec/cluster-recovery.md,
     /platforms/kubernetes/rec/cluster-recovery/,
-    /kubernetes/rec/cluster-recovery.md,
-    /kubernetes/rec/cluster-recovery/
+    /kubernetes/re-clusters/cluster-recovery.md,
+    /kubernetes/re-clusters/cluster-recovery/
 ]
 ---
 When a Redis Enterprise cluster loses contact with more than half of its nodes either because of failed nodes or network split,

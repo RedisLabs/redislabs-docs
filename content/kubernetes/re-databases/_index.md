@@ -8,8 +8,8 @@ categories: ["Platforms"]
 aliases: [
     content/platforms/kubernetes/redb/_index.md,
     /platforms/kubernetes/redb/,
-    /kubernetes/redb/,
-    /kubernetes/redb/_index.md,
+    /kubernetes/re-databases/,
+    /kubernetes/re-databases/_index.md,
 ]
 ---
 

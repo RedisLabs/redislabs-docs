@@ -10,8 +10,8 @@ aliases: [
     /platforms/kubernetes/tasks/connect-to-admin-console/,
     /platforms/kubernetes/rec/connect-to-admin-console.md,
     /platforms/kubernetes/rec/connect-to-admin-console/,
-    /kubernetes/rec/connect-to-admin-console.md,
-    /kubernetes/rec/connect-to-admin-console/,
+    /kubernetes/re-clusters/connect-to-admin-console.md,
+    /kubernetes/re-clusters/connect-to-admin-console/,
 ]
 ---
 

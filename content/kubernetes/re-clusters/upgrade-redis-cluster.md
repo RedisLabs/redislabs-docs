@@ -12,8 +12,8 @@ aliases: [
     /platforms/kubernetes/tasks/upgrading-with-operator/,
     /platforms/kubernetes/rec/upgrade-redis-cluster.md,
     /platforms/kubernetes/rec/upgrade-redis-cluster/,
-    /kubernetes/rec/upgrade-redis-cluster.md,
-    /kubernetes/rec/upgrade-redis-cluster/,
+    /kubernetes/re-clusters/upgrade-redis-cluster.md,
+    /kubernetes/re-clusters/upgrade-redis-cluster/,
 ]
 ---
 Redis implements rolling updates for software upgrades in Kubernetes deployments.
