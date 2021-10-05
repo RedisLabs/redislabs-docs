@@ -1,39 +1,39 @@
 ---
-Title: Export resets status database action requests
-linkTitle: export_reset_status
-description: Documents the Redis Enterprise Software REST API bdbs/actions/export_reset_status requests.
+Title: Backup reset status database action requests
+linkTitle: backup_reset_status
+description: Documents the Redis Enterprise Software REST API bdbs/actions/imbackup_reset_statusport requests.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/references/rest-api/bdbs/actions/export_reset_status
-         /rs/references/rest-api/bdbs/actions/export_reset_status.md
-         /rs/references/restapi/bdbs/actions/export_reset_status
-         /rs/references/restapi/bdbs/actions/export_reset_status.md
-         /rs/references/rest_api/bdbs/actions/export_reset_status
-         /rs/references/rest_api/bdbs/actions/export_reset_status.md
+aliases: /rs/references/rest-api/bdbs/actions/backup_reset_status
+         /rs/references/rest-api/bdbs/actions/backup_reset_status.md
+         /rs/references/restapi/bdbs/actions/backup_reset_status
+         /rs/references/restapi/bdbs/actions/backup_reset_status.md
+         /rs/references/rest_api/bdbs/actions/backup_reset_status
+         /rs/references/rest_api/bdbs/actions/backup_reset_status.md
 ---
 
 | Method | Path | Description |
 |--------|------|-------------|
-| [PUT](#put-bdbs-actions-export-reset-status) | `/v1/bdbs/{uid}/actions/export_reset_status` | Reset database export status |
+| [PUT](#put-bdbs-actions-backup-reset-status) | `/v1/bdbs/{uid}/actions/backup_reset_status` | Reset database backup status |
 
-## Reset database export status {#put-bdbs-actions-export-reset-status}
+## Reset database backup status {#put-bdbs-actions-backup-reset-status}
 
-	PUT /v1/bdbs/{int: uid}/actions/export_reset_status
+	PUT /v1/bdbs/{int: uid}/actions/backup_reset_status
 
-Resets the database's `export_status` to idle if an export is not in progress and clears the value of the `export_failure_reason` field.
+Reset the database's `backup_status` to idle if a backup is not in progress and clears the value of the `backup_failure_reason` field.
 
 #### Required permissions
 
 | Permission name |
 |-----------------|
-| reset_bdb_current_export_status |
+| reset_bdb_current_backup_status |
 
 ### Request {#put-request} 
 
 #### Example HTTP request
 
-	PUT /bdbs/1/actions/export_reset_status 
+	PUT /bdbs/1/actions/backup_reset_status 
 
 #### Request headers
 

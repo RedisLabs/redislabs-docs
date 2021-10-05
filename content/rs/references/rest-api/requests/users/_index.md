@@ -229,7 +229,7 @@ When errors are reported, the server may return a JSON object with    `error_cod
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, the user is updated. |
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing configuration parameters. |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to change a non-existing user. |
-| [406 Not Ac ceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | The requested configuration is invalid. |
+| [406 Not Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | The requested configuration is invalid. |
 
 ## Create user {#post-user}
 
@@ -331,7 +331,7 @@ When errors are reported, the server may return a JSON object with    `error_cod
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, user is created. |
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad or missing configuration parameters. |
-| [409 C onflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | User with the same email already exists. |
+| [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | User with the same email already exists. |
 
 ## Delete user {#delete-user}
 
