@@ -375,6 +375,12 @@ jobs:
         steps:
             - attach_workspace:
                 at: ~/project
+            # Create new_website.json to include PDF redirects
+            - run:
+               name: Create new_website.json to include PDF redirects
+               command: |
+                   cd utilities/redirect_pdfs
+                   ./add_pdf_redirects.sh
             # Set the signature version for the S3 auth
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
@@ -397,6 +403,9 @@ jobs:
 
                    # Sync standalone PDFs
                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "pdfs/*.pdf" --cache-control max-age=0 # --size-only
+
+                   # Update the S3 site configuration to include PDF redirects
+                   aws s3api put-bucket-website --bucket docs.redis.com --website-configuration file://utilities/redirect_pdfs/new_website.json
             # Remove temporary helper files created for standalone PDF generation
             - run:
                name: Remove standalone PDF generation helper files
