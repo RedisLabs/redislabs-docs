@@ -50,6 +50,7 @@ jobs:
                     - public
                     - utilities
                     - content
+                    - website.json
 
     # The build job for production branches that includes Google Tag Manager
     build-docs-prod:
