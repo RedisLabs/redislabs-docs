@@ -9,9 +9,11 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: [
     /platforms/openshift/getting-started-operatorhub/,
-    /platforms/kubernetes/getting-started/openshift/openshift-operatorhub.md
+    /platforms/kubernetes/getting-started/openshift/openshift-operatorhub/,
+    /platforms/kubernetes/getting-started/openshift/openshift-operatorhub.md,
     /platforms/kubernetes/deployment/openshift/openshift-operatorhub/,
     /platforms/kubernetes/deployment/openshift/openshift-operatorhub.md,
+    
 ]
 ---
 The OperatorHub is a feature of OpenShift 4.x that enables browsing a catalog
