@@ -25,7 +25,7 @@ Before creating Active-Active databases, you'll need the following:
 ## Document required parameters
 
 - **Database name** `<db-name>`:
-  - Description: Combined with ingress suffix to create the Active-Active database hostname.
+  - Description: Combined with ingress suffix to create the Active-Active database hostname
   - Format: string
   - Example value: `myaadb`
   - How you get it: you choose
@@ -33,7 +33,7 @@ Before creating Active-Active databases, you'll need the following:
 You'll need the following information for each participating Redis Enterprise cluster (REC):
 
 - **REC hostname** `<rec-hostname>`:
-  - Description: Hostname used to identify your Redis Enterprise cluster in the `crdb-cli` command.
+  - Description: Hostname used to identify your Redis Enterprise cluster in the `crdb-cli` command
   - Format: `<rec-name>.<namespace>.svc.cluster.local`
   - Example value: `rec01.ns01.svc.cluster.local`
   - How to get it: List all your Redis Enterprise clusters
@@ -41,17 +41,17 @@ You'll need the following information for each participating Redis Enterprise cl
       kubectl get rec --all-namespaces
       ```
 - **API hostname** `<api-hostname>`:
-  - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster.
+  - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster
   - Format: string
   - Example value: `api.abc.cde.redisdemo.com`
   - How to get it: you choose
 - **Ingress suffix** `<ingress-suffix>`:
-  - Description: Combined with database name to create the Active-Active database hostname.
+  - Description: Combined with database name to create the Active-Active database hostname
   - Format: string
   - Example value: `-fgh.ijk.redisdemo.com`
   - How to get it: you choose
 - **REC admin credentials** `<username> <password>`:
-  - Description: Admin username and password for the REC stored in a secret.
+  - Description: Admin username and password for the REC stored in a secret
   - Format: string
   - Example value: username: `user@redisdemo.com`, password: `something`
   - How to get them:
@@ -61,14 +61,16 @@ You'll need the following information for each participating Redis Enterprise cl
     kubectl get secret <rec-name> \
       -o jsonpath='{.data.password}' | base64 --decode
     ```
-- **Replication endpoint** `<replication-endpoint>`:
-  - Description: Endpoint used externally to contact the database.
-  - Format: `<db-name><ingress-suffix>:443`
-  - Example value: `myaadb-fgh.ijk.redisdemo.com:443`
 - **Replication hostname** `<replication-hostname>`:
-  - Description: Hostname used inside the ingress for the database.
+  - Description: Hostname used inside the ingress for the database
   - Format: `<db-name><ingress-suffix>`
   - Example value: `myaadb-fgh.ijk.redisdemo.com`
+  - How to get it: Combine `<db-name>` and `<ingress-suffix`> values you documented above. 
+- **Replication endpoint** `<replication-endpoint>`:
+  - Description: Endpoint used externally to contact the database
+  - Format: `<db-name><ingress-suffix>:443`
+  - Example value: `myaadb-fgh.ijk.redisdemo.com:443`
+  - How to get it:`<replication-hostname>` documented above followed by "`:443`"
 
 ## Add `activeActive` section to the REC resource file
 
