@@ -12,14 +12,14 @@ aliases: [
     /platforms/kubernetes/getting-started/openshift/openshift-cli/,
     /platforms/kubernetes/getting-started/openshift/openshift-cli.md,
     /platforms/kubernetes/deployment/openshift/openshift-cli/,
-    /platforms/kubernetes/deployment/openshift/openshift-cli/
+    /platforms/kubernetes/deployment/openshift/openshift-cli/,
     /kubernetes/deployment/openshift/openshift-cli.md,
     /kubernetes/deployment/openshift/openshift-cli/,
 
 ]
 ---
 These are the steps required to set up a Redis Enterprise Software
-Cluster with OpenShift.
+cluster with OpenShift.
 
 Prerequisites:
 

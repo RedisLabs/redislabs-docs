@@ -8,7 +8,8 @@ weight: 10
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-    /platforms/openshift/getting-started-operatorhub/,
+        /platforms/openshift/getting-started-operatorhub/,
+    /platforms/kubernetes/getting-started/openshift/openshift-operatorhub/,
     /platforms/kubernetes/getting-started/openshift/openshift-operatorhub.md,
     /platforms/kubernetes/deployment/openshift/openshift-operatorhub/,
     /platforms/kubernetes/deployment/openshift/openshift-operatorhub.md,

@@ -8,6 +8,8 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: [
   /platforms/openshift/quick-start/,
+  /platforms/kubernetes/getting-started/openshift/,
+  /platforms/kubernetes/getting-started/openshift/_index.md,
   /platforms/kubernetes/getting-started/openshift/quick-start/, 
   /platforms/kubernetes/getting-started/openshift/quick-start.md,
   /rs/getting-started/getting-started-kubernetes/k8s-openshift/,
