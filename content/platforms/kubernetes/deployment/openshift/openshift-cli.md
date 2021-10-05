@@ -12,7 +12,7 @@ aliases: [
     /platforms/kubernetes/getting-started/openshift/openshift-cli/,
     /platforms/kubernetes/getting-started/openshift/openshift-cli.md,
     /platforms/kubernetes/deployment/openshift/openshift-cli/,
-    /platforms/kubernetes/deployment/openshift/openshift-cli/
+    /platforms/kubernetes/deployment/openshift/openshift-cli/,
 
 ]
 ---
