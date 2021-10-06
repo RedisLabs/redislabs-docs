@@ -19,7 +19,7 @@ Make sure your system meets these requirements:
 | Oracle Linux 7 | Based on the corresponding RHEL version |
 | Amazon Linux | Version 1 |
 | Docker | [Docker images]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
-| Kubernetes, Pivotal Platform (PCF) and other orchestration and cloud environments | See the [Platform documentation]({{< relref "/platforms" >}}) |
+| Kubernetes | See the [Platform documentation]({{< relref "/kubernetes/_index.md" >}}) |
 
 ## VMware
 
