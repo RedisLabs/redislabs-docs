@@ -16,8 +16,8 @@ echo "Generating internal links for modules docs html"
 sed 's^href="../modules/^href="#modules/^g' ../../public/pdf-gen-modules-docs/index.html > tmp_index.html
 sed 's^/">^">^g' tmp_index.html | sed 's^/" >^">^g' > ../../public/pdf-gen-modules-docs/index.html
 
-echo "Generating internal links for platforms docs html"
-sed 's^href="../platforms/^href="#platforms/^g' ../../public/pdf-gen-platforms-docs/index.html > tmp_index.html
-sed 's^/">^">^g' tmp_index.html | sed 's^/" >^">^g' > ../../public/pdf-gen-platforms-docs/index.html
+echo "Generating internal links for kubernetes docs html"
+sed 's^href="../kubernetes/^href="#kubernetes/^g' ../../public/pdf-gen-kubernetes-docs/index.html > tmp_index.html
+sed 's^/">^">^g' tmp_index.html | sed 's^/" >^">^g' > ../../public/pdf-gen-kubernetes-docs/index.html
 
 echo "Finished generating internal links for offline docs PDF generation."
