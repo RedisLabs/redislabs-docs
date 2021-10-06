@@ -42,7 +42,7 @@ for file in $(find ../../content/modules -name '*.md'); do
     wkhtmltopdf https://$location/$html_name/ ../../public/pdfs/$pdf_name.pdf
 done
 
-for file in $(find ../../content/platforms -name '*.md'); do
+for file in $(find ../../content/kubernetes -name '*.md'); do
     html_name=$(echo $file | sed 's#../../content/#pdf-gen-#g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
     pdf_name=$(echo $file | sed 's#../../content/##g' | sed 's#/_index##g' | sed 's#/#-#g' | sed 's#.md##g')
 
