@@ -1,5 +1,5 @@
 ---
-Title: BDBs crdt sources alerts requests
+Title: Database crdt sources alerts requests
 linkTitle: crdt_sources/alerts
 description: Documents the Redis Enterprise Software REST API bdbs/crdt_sources requests.
 weight: $weight
