@@ -9,7 +9,9 @@ aliases: [
     /platforms/kubernetes/rec/_index.md,
     /platforms/kubernetes/rec/,
     /kubernetes/re-clusters/_index.md,
-    /kubernetes/re-clusters/
+    /kubernetes/re-clusters/,
+    /kubernetes/rec/,
+    /kubernetes/rec/_index.md,
 
 ]
 ---
