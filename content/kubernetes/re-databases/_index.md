@@ -10,6 +10,8 @@ aliases: [
     /platforms/kubernetes/redb/,
     /kubernetes/re-databases/,
     /kubernetes/re-databases/_index.md,
+    /kubernetes/redb/,
+    /kubernetes/redb/_index.md,
 ]
 ---
 
