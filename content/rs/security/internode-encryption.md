@@ -33,7 +33,7 @@ You need to:
 - Open port 3342 for the TLS channel used for encrypted communication.
 
 
-## Enable data plan encryption
+## Enable data plane encryption
 
 To enable internode encryption for a database (also called _data plane encryption_), you need to enable the appropriate setting for each database you wish to encrypt.  To do so, you can:
 

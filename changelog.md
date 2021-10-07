@@ -2,6 +2,43 @@
 
 The docs are updated regularly; here are some recent highlights:
 
+## September 2021
+
+- Changes affecting all sections:
+
+    - PDF support is enabled for all articles on the [latest branch](https://docs.redis.com/latest/).  ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/) and others)
+
+        In addition, you can download [a tarball](https://docs.redis.com/latest/pdfs/current/redis-docs-latest.tar.gz) containing PDFs of all docs.  The tarball contains separate PDFs for each section of the website.
+
+        PDFs update when content is pushed to latest, so they're always up-to-date.
+
+    - Issues with the in-page table of contents have been addressed. ([PR #1543](https://github.com/RedisLabs/redislabs-docs/pull/1543)) 
+
+- Redis Enterprise Software doc updates: 
+
+    - Clarified and fixed issues in the 6.2.4 docs. ([PR #1536](https://github.com/RedisLabs/redislabs-docs/pull/1536)) 
+
+- Redis Enterprise Cloud updates:
+
+    - Docs were updated to support the new user experience; these changes include updates, rewrites, and reorgs.  Some changes remain, but the major workflows have been updated.  ([PR #1274](https://github.com/RedisLabs/redislabs-docs/pull/1274) & [PR #1548](https://github.com/RedisLabs/redislabs-docs/pull/1452))
+
+    - A new article helps you manage [billing and payments](https://docs.redis.com/latest/rc/billing-and-payments/) for your subscription. ([PR #1274](https://github.com/RedisLabs/redislabs-docs/pull/1274))  
+
+- Kubernetes doc updates:
+
+    - Updated docs to support the K8s [6.2.4-1 release](https://docs.redis.com/latest/platforms/release-notes/k8s-6-2-4-1-2021-09/). ([PR #1527](https://github.com/RedisLabs/redislabs-docs/pull/1527)) 
+
+    - [Manage Redis Enterprise databases on Kubernetes](https://docs.redis.com/latest/platforms/kubernetes/redb/db-controller/) has been updated. ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/1524)) 
+
+    - A new article shows how to [connect to the admin console](https://docs.redis.com/latest/platforms/kubernetes/rec/connect-to-admin-console/) to manage the Redis Enterprise cluster in your Kubernetes deployment.  ([PR #1529](https://github.com/RedisLabs/redislabs-docs/pull/1529))
+
+    - A new article shows how to [enable internode encryption](https://docs.redis.com/latest/platforms/kubernetes/security/internode-encryption/) between Redis Enterprise cluster nodes in your Kubernetes deployment.  ([PR #1526](https://github.com/RedisLabs/redislabs-docs/pull/1526))  
+
+- Additional updates to fix typos, missing images, and other glitches
+
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-09-01..2021-09-30).
+
+
 ## August 2021
 
 - Changes affecting all sections:
