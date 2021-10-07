@@ -48,7 +48,7 @@ When you add the module, the master node downloads and installs the dependencies
 Then the other nodes in the cluster copy the dependencies from the master node.
 
 {{< note >}}
-- If your master node does not have connectivity to the internet, copy the dependencies to `<modulesdatadir>/<module_name>/<version_integer>/deps/`. `modulesdatadir` is depending on where Redis Enterprise is installed (`/var/opt/redislabs/modules/` by default), `module_name` is the module name you want to install (`rg` for RedisGears), and `version_integer` is an integer format xxyyzz (xyyzz if x < 10). You can calculate this number using the formula 10000*x + 100*y + z. For example, RedisGears 1.0.7 dependencies need to be placed under `/var/opt/redislabs/modules/rg/10007/deps`.
+- If your master node does not have connectivity to the internet, copy the dependencies to `<modulesdatadir>/<module_name>/<version_integer>/deps/`. `modulesdatadir` is depending on where Redis Enterprise is installed (`/var/opt/redislabs/modules/` by default), `module_name` is the module name you want to install (`rg` for RedisGears), and `version_integer` is an integer format xxyyzz (xyyzz if x < 10). You can calculate this number using the formula 1000*x + 100*y + z. For example, RedisGears 1.0.7 dependencies need to be placed under `/var/opt/redislabs/modules/rg/10007/deps`.
 - To remove a module with dependencies from a cluster, you must use a DELETE action with the `/v2/modules` endpoint.
 {{< /note >}}
 
