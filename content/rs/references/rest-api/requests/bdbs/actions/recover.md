@@ -16,7 +16,7 @@ aliases: /rs/references/rest-api/bdbs/actions/recover
 | Method | Path | Description |
 |--------|------|-------------|
 | [GET](#get-bdbs-actions-recover) | `/v1/bdbs/{uid}/actions/recover` | Get a database recovery plan |
-| [POST](#post-bdbs-actions-recover) | `/v1/bdbs` | Initiate database recovery |
+| [POST](#post-bdbs-actions-recover) | `/v1/bdbs/{uid}/actions/recover` | Initiate database recovery |
 
 ## Get database recovery plan {#get-bdbs-actions-recover}
 
