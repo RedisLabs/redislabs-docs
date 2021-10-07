@@ -18,8 +18,8 @@ On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/des
 Before creating Active-Active databases, you'll need the following:
 
 - Two or more working Kubernetes clusters that have:
-  - Routing for external access with an [ingress controller]({{<relref "/platforms/kubernetes/redb/set-up-ingress-controller.md">}}) or routes (for OpenShift only)
-  - A working [Redis Enterprise cluster (REC)]({{<relref "/platforms/kubernetes/reference/cluster-options.md">}}) with a unique name
+  - Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) or routes (for OpenShift only)
+  - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
   - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/administering/designing-production/hardware-requirements.md">}}))
 
 ## Document required parameters
@@ -80,7 +80,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 ### Using ingress controller
 
-1. If your cluster uses an [ingress controller]({{<relref "content/platforms/kubernetes/redb/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
+1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/re-database/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
 
     ```yaml
     activeActive:
@@ -144,7 +144,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 ## Create an Active-Active database with `crdb-cli`
 
-The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{<relref "platforms/kubernetes/redb/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
+The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{<relref "/kubernetes/re-databases/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
 ```bash
 crdb-cli crdb create 
