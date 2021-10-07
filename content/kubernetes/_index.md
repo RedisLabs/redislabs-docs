@@ -6,6 +6,12 @@ weight: 50
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
+    /platforms/kubernetes/,
+    /platforms/kubernetes/_index.md,
+    /platforms/kubernetes/concepts/,
+    /platforms/kubernetes/concepts/_index.md,
+    /platforms/kubernetes/tasks/,
+    //platforms/kubernetes/tasks/_index.md,
     /platforms/,
     /kubernetes/,
     /k8s/,
