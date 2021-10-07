@@ -178,3 +178,4 @@ Here are some examples of module upgrades:
     ```sh
     rladmin upgrade db shopping_cart latest_with_modules
     ```
+.
