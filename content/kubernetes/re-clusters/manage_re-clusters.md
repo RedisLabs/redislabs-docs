@@ -10,3 +10,7 @@ aliases: [
    /kubernetes/re-clusters/manage_re-clusters/
 ]
 ---
+
+## Create a RedisEntepriseCluster custom resource
+
+## Connect to your Redis Enterprise cluster (REC)
