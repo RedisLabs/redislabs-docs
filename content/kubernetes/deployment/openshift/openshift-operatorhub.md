@@ -200,7 +200,7 @@ The CRD for a Redis Enterprise cluster in YAML format is shown.
 
     ![K8S - create rec via operator]( /images/rs/k8s-operator-rec-create-yaml.png )
 
-1. Edit [the YAML definition]({{< relref "cluster-options.md">}}).
+1. Edit the [custom resource definition]({{< relref "/kubernetes/reference/cluster-options.md">}}).
 
     {{< note >}}
 The name of the cluster must be "rec" for deployments from within the OLM. For more information, see the `name:` field description in [**Options for clusters**]({{< relref "cluster-options.md">}}).
