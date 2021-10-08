@@ -69,8 +69,8 @@ are supported with the following limitations:
     can only be used when all affected keys reside in the same slot.
     These commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH, MSETNX,
     RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE, SORT,
-    SUNION, ZINTERSTORE, ZUNIONSTORE.
-1. **Geo commands:** In GEORADIUS/GEORADIUSBYMEMBER commands, the
+    SUNION, ZINTER, ZINTERSTORE, ZUNION, ZUNIONSTORE, ZDIFF, ZDIFFSTORE
+1. **Geo commands:** In GEORADIUS/GEORADIUSBYMEMBER/GEOSEARCHSTORE commands, the
     STORE and STOREDIST options can only be used when all affected keys
     reside in the same slot.
 1. **Transactions:** All operations within a WATCH/MULTI/EXEC block
@@ -78,7 +78,7 @@ are supported with the following limitations:
 1. **Lua scripts:** All keys that are used by the script must reside in
     the same slot and need to be provided as arguments to the
     EVAL/EVALSHA commands (as per the Redis specification).
-1. **Renaming keys:** The use of the RENAME/RENAMENX commands is
+1. **Renaming/Copy keys:** The use of the RENAME/RENAMENX/COPY commands is
     allowed only when both the key's original name and its new name are
     mapped to the same hash slot.
 1. **Variadic commands**: The use of (MGET, MSET, HMGET, HMSET, etc..)
