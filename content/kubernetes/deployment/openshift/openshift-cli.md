@@ -35,7 +35,7 @@ Prerequisites:
 
     ![getting-started-kubernetes-openshift-image1]( /images/rs/getting-started-kubernetes-openshift-image1.png )
 
-1. Click on **admin** (upper right corner) and then **Copy Login**.
+1. Click on **admin** (upper right corner) and then **Copy Login command**.
 
     ![getting-started-kubernetes-openshift-image4]( /images/rs/getting-started-kubernetes-openshift-image4.png )
 
