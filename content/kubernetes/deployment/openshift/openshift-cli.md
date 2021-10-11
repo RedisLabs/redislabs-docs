@@ -87,7 +87,7 @@ Let’s look at each yaml file to see what requires editing:
         securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured
         ```
 
-    1. To bind the scc to your project, run:
+    1. To bind the scc to your project,change your_project_name with your project name, and run:
 
         ```sh
         oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name
