@@ -42,7 +42,7 @@ Prerequisites:
 1. Paste the `login` command into your shell, for example:
 
     ```sh
-    oc login https://your-cluster.acme.com –token=your$login$token
+    oc login --token=<yourToken> --server=https://<cluster FQDN:PORT>
     ```
 
 1. To verify that you are using the newly created project, run:
