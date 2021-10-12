@@ -306,7 +306,7 @@ To create your database:
 1. Apply port forwarding to your Cluster:
 
     ```sh
-    kubectl port-forward your_cluster_name-0 8443:8443
+    oc port-forward your_cluster_name-0 8443:8443
     ```
 
     {{< note >}}
