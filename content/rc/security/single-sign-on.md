@@ -36,7 +36,7 @@ If your Google and GitHub accounts share an email address (such as Gmail), you c
 3. Enter your GitHub password to **Confirm access**
 
 {{<note>}}
-If the email address associated with your GitHub account is not public, you will see an error message that your sign in attempt failed. You need to make your email address public on GitHub before you try again. <br />
+If the email address associated with your GitHub account is not public, you will see an error message that your sign in attempt failed. You need to make your email address public on GitHub before you try again. <br /><br />
 To make your GitHub email address public:  
 1. Select your user icon in the upper right corner and choose **Settings** from the dropdown menu
 2. Select **Emails** and clear the **Keep my email addresses private** checkbox
