@@ -126,7 +126,7 @@ Changes to this file can cause unexpected results.
     1. To verify that your redis-enterprise-operator deployment is running, run:
 
         ```sh
-        kubectl get deployment -l name=redis-enterprise-operator
+        oc get deployment
         ```
 
         A typical response will look like this:
