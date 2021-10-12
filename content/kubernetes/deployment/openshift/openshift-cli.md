@@ -78,7 +78,7 @@ Let’s look at each yaml file to see what requires editing:
     1. Apply the file:
 
         ```sh
-        oc apply -f scc.yaml
+        oc apply -f redis-enterprise-k8s-docs/openshift/scc.yaml
         ```
 
         You should receive the following response:
