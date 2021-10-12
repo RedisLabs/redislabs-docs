@@ -110,7 +110,7 @@ Changes to this file can cause unexpected results.
     1. Apply the yaml file with:
 
         ```sh
-        kubectl apply -f openshift.bundle.yaml
+        oc apply -f openshift.bundle.yaml
         ```
 
         The command returns a confirmation response such as:
