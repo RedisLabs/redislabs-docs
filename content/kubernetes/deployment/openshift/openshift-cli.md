@@ -266,10 +266,10 @@ After you set up the your_cluster_name yaml:
 1. Apply it to create your Redis Enterprise Cluster:
 
     ```sh
-    kubectl apply -f your_cluster_name.yaml
+    oc apply -f your_cluster_name.yaml
     ```
 
-1. Run `kubectl get rec` and verify that creation succeeded. (`rec` is a shortcut for “RedisEnterpriseClusters”).
+1. Run `oc get rec` and verify that creation succeeded. (`rec` is a shortcut for “RedisEnterpriseClusters”).
 
     The command returns a confirmation response such as:
 
