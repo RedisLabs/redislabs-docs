@@ -29,6 +29,11 @@ Before creating Active-Active databases, you'll need the following:
   - Format: string
   - Example value: `myaadb`
   - How you get it: you choose
+  - The database name requirements are:
+        Maximum of 63 characters
+        Only letter, number or hyphen (-) characters
+        Starts with a letter; ends with a letter or digit.
+        Note: The database name is not case-sensitive
 
 You'll need the following information for each participating Redis Enterprise cluster (REC):
 
