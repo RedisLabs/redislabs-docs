@@ -9,5 +9,5 @@ categories: ["RS"]
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| status    | 'exporting'<br></br>'succeeded'<br></br>'failed' | Status of scheduled periodic backup process |
+| status    | 'exporting'<br />'succeeded'<br />'failed' | Status of scheduled periodic backup process |
 | progress  | number, (range: 0-100) | Shard backup progress (percentage) |

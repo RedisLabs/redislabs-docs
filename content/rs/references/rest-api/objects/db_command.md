@@ -11,5 +11,5 @@ An object that represents a generic Redis command.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| command | string          | Redis command. |
-| args    | array of string | Command arguments. |
+| command | string          | Redis command |
+| args    | array of string | Command arguments |

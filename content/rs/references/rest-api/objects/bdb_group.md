@@ -12,6 +12,6 @@ pool.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| uid          | integer          | Cluster unique ID of the database group. |
+| uid          | integer          | Cluster unique ID of the database group |
 | memory_size  | integer          | The common memory pool size limit for all databases in the group, expressed in bytes |
 | members      | array of strings  | A list of uids of member databases (read-only) |

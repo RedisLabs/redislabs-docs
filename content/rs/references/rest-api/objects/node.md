@@ -12,14 +12,14 @@ An API object that represents a node in the cluster.
 | Name | Type/Value | Description |
 |------|------------|-------------|
 | uid                | integer         | Cluster unique ID of node (read-only) |
-| status             | 'active'<br></br>'provisioning'<br></br>'decommissioning'<br></br>'down' | Node status (read-only) |
+| status             | 'active'<br />'provisioning'<br />'decommissioning'<br />'down' | Node status (read-only) |
 | addr               | string          | Internal IP address of node  |
 | external_addr      | complex object  | External IP addresses of node. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. |
 | public_addr        | string          | Public IP address of node    |
 | total_memory       | integer         | Total memory of node (bytes) (read-only) |
 | cores              | integer         | Total number of CPU cores (read-only) |
 | architecture       | string          | Hardware architecture (read-only) |
-| bigstore_driver    | 'ibm-capi-ga1'<br></br>'ibm-capi-ga2'<br></br>'ibm-capi-ga4'<br></br>'rocksdb' | Bigstore driver name or none |
+| bigstore_driver    | 'ibm-capi-ga1'<br />'ibm-capi-ga2'<br />'ibm-capi-ga4'<br />'rocksdb' | Bigstore driver name or none |
 | bigstore_size      | integer         | Storage size of bigstore storage (read-only) |
 | bigredis_storage_path | string       | Flash storage path (read-only) |
 | ephemeral_storage_path | string      | Ephemeral storage path (read-only) |
@@ -28,8 +28,8 @@ An API object that represents a node in the cluster.
 | persistent_storage_size | number    | Persistent storage size (bytes) (read- only) |
 | recovery_path      | string          | Recovery files path          |
 | software_version   | string          | Installed Redis Labs cluster software version (read-only) |
-| supported_database_versions | [{ "db_type": string, "version": string }, ...] | Versions of open source databases supported by Redis Labs software on the node (read-only)<br></br>**db_type**: Type of database<br></br>**version**: Version of database |
-| shard_list         | array of integers | Cluster unique IDs of all node shards. |
+| supported_database_versions | [{ "db_type": string, "version": string }, ...] | Versions of open source databases supported by Redis Labs software on the node (read-only)<br />**db_type**: Type of database<br />**version**: Version of database |
+| shard_list         | array of integers | Cluster unique IDs of all node shards |
 | os_version         | string          | Installed OS version (human-readable) (read-only) |
 | os_name            | string          | OS name (read-only)     |
 | os_semantic_version | string         | Full version number (read-only) |
