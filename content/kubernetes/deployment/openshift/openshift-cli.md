@@ -320,7 +320,7 @@ To create your database:
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
-1. To get your password from the OpenShift management console, go `Resources > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
+1. To get your password from the OpenShift management console, go `Workloads > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
 
     {{< warning >}}
 Do not change the default admin user password in the Redis Enterprise admin console.
