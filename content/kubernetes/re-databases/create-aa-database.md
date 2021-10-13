@@ -43,7 +43,7 @@ You'll need the following information for each participating Redis Enterprise cl
   - Example value: `rec01.ns01.svc.cluster.local`
   - How to get it: List all your Redis Enterprise clusters
       ```bash
-      kubectl get rec --all-namespaces
+      kubectl get rec --all-namespaces --no-headers | awk '{print $2"."$1".svc.cluster.local"}'
       ```
 - **API hostname** `<api-hostname>`:
   - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster
