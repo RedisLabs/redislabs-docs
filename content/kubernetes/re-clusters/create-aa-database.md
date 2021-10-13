@@ -7,8 +7,8 @@ weight: 50
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [ 
-    /platforms/kubernetes/redb/create-aa-database/,
-    /platforms/kubernetes/redb/create-aa-database.md,
+    /kubernetes/re-clusters/create-aa-database/,
+    /kubernetes/re-clusters/create-aa-database.md,
 ]
 ---
 On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/designing-production/active-active.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/administering/designing-production/active-active.md">}}).
