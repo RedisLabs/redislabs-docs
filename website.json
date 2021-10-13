@@ -235,6 +235,17 @@
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/rc/how-to/creating-iam-resources/creating-aws-user-redis-enterprise-vpc/"
             }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "latest/pdfs/",
+                "HttpErrorCodeReturnedEquals": "403"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyWith": "latest/"
+            }
         }
 
     ]

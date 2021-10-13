@@ -24,10 +24,10 @@ cat ./list_template_recursive.html | sed 's/parent_filepath/"modules\/_index.md"
 mkdir ../../content/pdf-gen-modules-docs
 touch ../../content/pdf-gen-modules-docs/_index.md
 
-echo "Preparing platforms docs html"
-mkdir ../../layouts/pdf-gen-platforms-docs
-cat ./list_template_recursive.html | sed 's/parent_filepath/"platforms\/_index.md"/g' > ../../layouts/pdf-gen-platforms-docs/list.html
-mkdir ../../content/pdf-gen-platforms-docs
-touch ../../content/pdf-gen-platforms-docs/_index.md
+echo "Preparing kubernetes docs html"
+mkdir ../../layouts/pdf-gen-kubernetes-docs
+cat ./list_template_recursive.html | sed 's/parent_filepath/"kubernetes\/_index.md"/g' > ../../layouts/pdf-gen-kubernetes-docs/list.html
+mkdir ../../content/pdf-gen-kubernetes-docs
+touch ../../content/pdf-gen-kubernetes-docs/_index.md
 
 echo "Finished preparing html for offline docs PDF generation."
