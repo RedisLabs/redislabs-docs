@@ -13,16 +13,26 @@ aliases: [
 ---
 On Kubernetes, Redis Enterprise [Active-Active]({{<relref "/rs/administering/designing-production/active-active.md">}}) databases provide read and write access to the same dataset from different Kubernetes clusters. For more general information about Active-Active, see the [Redis Enterprise Software docs]({{<relref "/rs/administering/designing-production/active-active.md">}}).
 
+Creating an Active-Active database requires [routing]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) network access between two Redis Enterprise clusters residing in two different Kubernetes clusters. Without the proper access configured for each cluster, syncing between the databases instances will fail.
+
+This process consists of:
+
+1. Documenting values to be used in later steps. It's important these values are correct and consistent.
+1. Editing the Redis Enterprise cluster (REC) spec file to include the `ActiveActive` section. This will be slightly different depending on the K8s distribution you are using.
+1. Creating the database with the crdb-cli command. These values must match up with values in the REC resource spec. 
+
 ## Prerequisites
 
 Before creating Active-Active databases, you'll need the following:
 
 - Two or more working Kubernetes clusters that have:
-  - Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) or routes (for OpenShift only)
+  - Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (for OpenShift use routes)
   - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
   - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/administering/designing-production/hardware-requirements.md">}}))
 
 ## Document required parameters
+
+The most common mistake when setting up Active-Active databases is incorrect or inconsistent parameter values. The values listed in the resource file must match those used in the crdb-cli command.
 
 - **Database name** `<db-name>`:
   - Description: Combined with ingress suffix to create the Active-Active database hostname
@@ -30,10 +40,10 @@ Before creating Active-Active databases, you'll need the following:
   - Example value: `myaadb`
   - How you get it: you choose
   - The database name requirements are:
-        Maximum of 63 characters
-        Only letter, number or hyphen (-) characters
-        Starts with a letter; ends with a letter or digit.
-        Note: The database name is not case-sensitive
+       - Maximum of 63 characters
+       - Only letter, number or hyphen (-) characters
+       - Starts with a letter; ends with a letter or digit.
+       - Database name is not case-sensitive
 
 You'll need the following information for each participating Redis Enterprise cluster (REC):
 
@@ -75,13 +85,13 @@ You'll need the following information for each participating Redis Enterprise cl
   - Description: Endpoint used externally to contact the database
   - Format: `<db-name><ingress-suffix>:443`
   - Example value: `myaadb-fgh.ijk.redisdemo.com:443`
-  - How to get it:`<replication-hostname>` documented above followed by "`:443`"
+  - How to get it:`<replication-hostname>:443`"
 
 ## Add `activeActive` section to the REC resource file
 
 From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource to add the following to the `spec` section. Do this for each participating cluster.
 
- The operator uses the API URL (`apiIngressUrl`) to create an ingress to the Redis Enterprise cluster's API; this only happens once per cluster. Every time a new Active-Active database instance is created on this cluster, the operator creates a new ingress route to the database with the ingress suffix (`dbIngressSuffix`). The hostname for each new database will be in the format `<db-name><ingress-suffix>`.
+ The operator uses the API hostname (`<api-hostname>`) to create an ingress to the Redis Enterprise cluster's API; this only happens once per cluster. Every time a new Active-Active database instance is created on this cluster, the operator creates a new ingress route to the database with the ingress suffix (`ingress-suffix`). The hostname for each new database will be in the format `<db-name><ingress-suffix>`.
 
 ### Using ingress controller
 
@@ -114,10 +124,17 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
   If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
+1. Make sure you have a DNS aliases that route to the ingress controller's LoadBalancer IP for both the API hostname (`<api-hostname>`) and the replication hostname (`<replication-hostname>`) for each database. To avoid entering each database individually, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
+
 ### Using OpenShift routes
 
-1. Make sure your Redis Enterprise cluster (REC) has a different name (`<rec-name.namespace>`) than any other participating clusters. If not, you'll need to manually rename the REC or move it to a different namespace. After changing the REC name or namespace, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
-You can check your new REC name with `oc get rec -o=jsonpath='{.metadata.name}`.
+1. Make sure your Redis Enterprise cluster (REC) has a different name (`<rec-name.namespace>`) than any other participating clusters. If not, you'll need to manually rename the REC or move it to a different namespace.
+    You can check your new REC name with:
+    ```
+    oc get rec -o=jsonpath='{.metadata.name}
+    ```
+
+    After changing the REC name or namespace, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
     ```
     oc apply -f scc.yaml
     oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
@@ -132,7 +149,7 @@ You can check your new REC name with `oc get rec -o=jsonpath='{.metadata.name}`.
         method: openShiftRoute
       ```
 
-    For OpenShift, your ingress suffix should include the domain generated by OpenShift for your routes. This is listed in your cluster ingress's `spec.domain` field. It's typically in the format `apps.<openshift-name>.<domain>.com`.
+    For OpenShift, your ingress suffix and API hostname should include the domain generated by OpenShift for your routes. This is listed in your cluster ingress's `spec.domain` field. It's typically in the format `apps.<openshift-name>.<domain>.com`.
 
 1. After the changes are saved and applied, you can see that a new route was created for the API.
 
@@ -160,6 +177,8 @@ crdb-cli crdb create
   --instance fqdn=<rec-hostname-01>,url=<api-hostname-01>,username=<username-01>,password=<password-01>,replication_endpoint=<replication-endpoint-01>,replication_tls-sni=<replication-hostname-01> \
   --instance fqdn=<rec-hostname-02>,url=<api-hostname-02>,username=<username-02>,password=<password-02>,replication_endpoint=<replication-endpoint-02>,replication_tls-sni=<replication-hostname-02>
 ```
+
+To create a database that syncs between more than two instances, add additional `--instance` arguments.
 
 See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">}}) for more options.
 
