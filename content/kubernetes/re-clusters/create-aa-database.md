@@ -19,16 +19,15 @@ This process consists of:
 
 1. Documenting values to be used in later steps. It's important these values are correct and consistent.
 1. Editing the Redis Enterprise cluster (REC) spec file to include the `ActiveActive` section. This will be slightly different depending on the K8s distribution you are using.
-1. Creating the database with the crdb-cli command. These values must match up with values in the REC resource spec. 
+1. Creating the database with the `crdb-cli` command. These values must match up with values in the REC resource spec.
 
 ## Prerequisites
 
-Before creating Active-Active databases, you'll need the following:
+Before creating Active-Active databases, you'll need two or more working Kubernetes clusters that each have:
 
-- Two or more working Kubernetes clusters that have:
-  - Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (for OpenShift use routes)
-  - A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
-  - Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/administering/designing-production/hardware-requirements.md">}}))
+- Routing for external access with an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) (for OpenShift use routes)
+- A working [Redis Enterprise cluster (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}}) with a unique name
+- Enough memory resources available for the database (see [hardware requirements]({{<relref "/rs/administering/designing-production/hardware-requirements.md">}}))
 
 ## Document required parameters
 
@@ -41,7 +40,7 @@ The most common mistake when setting up Active-Active databases is incorrect or 
   - How you get it: you choose
   - The database name requirements are:
        - Maximum of 63 characters
-       - Only letter, number or hyphen (-) characters
+       - Only letter, number, or hyphen (-) characters
        - Starts with a letter; ends with a letter or digit.
        - Database name is not case-sensitive
 
@@ -91,7 +90,7 @@ You'll need the following information for each participating Redis Enterprise cl
 
 From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource to add the following to the `spec` section. Do this for each participating cluster.
 
- The operator uses the API hostname (`<api-hostname>`) to create an ingress to the Redis Enterprise cluster's API; this only happens once per cluster. Every time a new Active-Active database instance is created on this cluster, the operator creates a new ingress route to the database with the ingress suffix (`ingress-suffix`). The hostname for each new database will be in the format `<db-name><ingress-suffix>`.
+ The operator uses the API hostname (`<api-hostname>`) to create an ingress to the Redis Enterprise cluster's API; this only happens once per cluster. Every time a new Active-Active database instance is created on this cluster, the operator creates a new ingress route to the database with the ingress suffix (`<ingress-suffix>`). The hostname for each new database will be in the format <nobr>`<db-name><ingress-suffix>`</nobr>.
 
 ### Using ingress controller
 
@@ -122,7 +121,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
    curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/
     ```
 
-  If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
+    If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
 
 1. Make sure you have a DNS aliases that route to the ingress controller's LoadBalancer IP for both the API hostname (`<api-hostname>`) and the replication hostname (`<replication-hostname>`) for each database. To avoid entering each database individually, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
