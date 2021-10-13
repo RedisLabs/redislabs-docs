@@ -33,6 +33,39 @@ To upgrade successfully, both of the following must be true:
 
 If you do not meet these minimums, you must first update the nodes and databases accordingly.
 
+## Redis upgrade policy
+
+In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility used to create new and update existing databases. 
+
+As of v6.2.4, this policy defaults to `major`, which limits Redis database compatibility to the most recent major release (v6.0, as of this writing.).  To create databases using the most recent release of Redis, use `rladmin` to set the policy to `latest`.
+
+``` shell
+tune cluster redis_upgrade_policy latest
+```
+
+The policy supports the following values:
+
+- When set to `major`, the policy allows databases to be created or updated to versions of Redis compatible with open source Redis major releases.  This allows for longer upgrade cycles by supporting Redis versions across multiple Redis Enterprise Software releases.  
+
+    This is the default value for Redis Enterprise Software.
+
+- When set to `latest`, the policy creates new databases and upgrades existing ones to be compatible with the latest (most recent) version of open source Redis, which was the default behavior of earlier versions of Redis Enterprise Software.  This is no longer the default behavior.
+
+    Setting the upgrade policy to `latest` ensures that the most recent Redis features are available to new databases and ones that are upgraded.  It also requires more frequent upgrades, as open source Redis is updated more frequently than Redis Enterprise Software.
+
+To demonstrate: The Redis Enterprise Software 6.2.4 package included compatibility with the most recent major Redis release (v6.0 at the time) and the latest (most recent) update to Redis (v6.2.3 at the time).  
+
+By default, compatibility with v6.0 was installed with the upgrade.  
+
+To change this to use the latest release available, use `rladmin` to set the upgrade policy and the default Redis version:
+
+``` shell
+tune cluster redis_upgrade_policy latest
+tune cluster default_redis_version 6.2
+```
+
+The default policy value supports a more conservative approach to upgrades.  Changing the policy to `latest` provides access to the more recent feature changes; however, it requires more frequent upgrades to stay current.
+
 ## Upgrade a cluster
 
 ### Upgrade prerequisites
@@ -107,39 +140,6 @@ Before upgrading a database:
     - To reduce downtime when replication is enabled, a failover is performed before restarting the master database.
 
     - When persistence is enabled without replication, the database is unavailable during restart because the data is restored from the persistence file.  AOF persistence restoration is slower than snapshot restoration.
-
-### Redis database upgrade policy
-
-In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility used to create new and update existing databases. 
-
-As of v6.2.4, this policy defaults to `major`, which limits Redis database compatibility to the most recent major release (v6.0, as of this writing.).  To create databases using the most recent release of Redis, use `rladmin` to set the policy to `latest`.
-
-``` shell
-tune cluster redis_upgrade_policy latest
-```
-
-The policy supports the following values:
-
-- When set to `major`, the policy allows databases to be created or updated to versions of Redis compatible with open source Redis major releases.  This allows for longer upgrade cycles by supporting Redis versions across multiple Redis Enterprise Software releases.  
-
-    This is the default value for Redis Enterprise Software.
-
-- When set to `latest`, the policy creates new databases and upgrades existing ones to be compatible with the latest (most recent) version of open source Redis, which was the default behavior of earlier versions of Redis Enterprise Software.  This is no longer the default behavior.
-
-    Setting the upgrade policy to `latest` ensures that the most recent Redis features are available to new databases and ones that are upgraded.  It also requires more frequent upgrades, as open source Redis is updated more frequently than Redis Enterprise Software.
-
-To demonstrate: The Redis Enterprise Software 6.2.4 package included compatibility with the most recent major Redis release (v6.0 at the time) and the latest (most recent) update to Redis (v6.2.3 at the time).  
-
-By default, compatibility with v6.0 was installed with the upgrade.  
-
-To change this to use the latest release available, use `rladmin` to set the upgrade policy and the default Redis version:
-
-``` shell
-tune cluster redis_upgrade_policy latest
-tune cluster default_redis_version 6.2
-```
-
-The default policy value supports a more conservative approach to upgrades.  Changing the policy to `latest` provides access to the more recent feature changes; however, it requires more frequent upgrades to stay current.
 
 ### Database upgrade process
 
