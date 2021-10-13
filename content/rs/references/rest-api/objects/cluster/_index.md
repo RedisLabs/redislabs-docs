@@ -16,7 +16,7 @@ An API object that represents the cluster.
 | rack_aware | boolean | Cluster operates in a rack-aware mode (read-only) |
 | default_sharded_proxy_policy | string (default:&nbsp;all-master-shards) | Default proxy_policy for newly created sharded databases' endpoints (read-only) |
 | default_non_sharded_proxy_policy | string (default:&nbsp;single) | Default proxy_policy for newly created non-sharded databases' endpoints (read-only) |
-| alert_settings | [alert_settings]({{<relref "./alert_settings">}}) object | Cluster and node alert settings |
+| alert_settings | [alert_settings]({{<relref "/rs/references/rest-api/objects/cluster/alert_settings">}}) object | Cluster and node alert settings |
 | smtp_host | string | SMTP server for automated emails |
 | smtp_port | integer | SMTP server port for automated emails |
 | smtp_username | string | SMTP server username (pattern does not allow special characters &,\<,>,") |

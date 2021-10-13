@@ -19,8 +19,8 @@ An API object that represents a Redis shard in a bdb.
 | role                 | 'master'<br />'slave'        | Role of this shard |
 | assigned_slots       | string                          | Shards hash slot range |
 | bigstore_ram_weight  | number                          | Shards RAM distribution weight |
-| sync                 | [sync]({{<relref "./sync.md">}}) object | Shard's current sync status and progress |
-| loading              | [loading]({{<relref "./loading">}}) object      | Current status of dump file loading |
-| backup               | [backup]({{<relref "./backup">}}) object        | Current status of scheduled periodic backup process |
+| sync                 | [sync]({{<relref "/rs/references/rest-api/objects/shard/sync.md">}}) object | Shard's current sync status and progress |
+| loading              | [loading]({{<relref "/rs/references/rest-api/objects/shard/loading">}}) object      | Current status of dump file loading |
+| backup               | [backup]({{<relref "/rs/references/rest-api/objects/shard/backup">}}) object        | Current status of scheduled periodic backup process |
 | report_timestamp     | string                          | The time in which the shard's info was collected (read-only) |
 | redis_info           | redis_info object               | A sub-dictionary of the [Redis INFO command](https://redis.io/commands/info) |
