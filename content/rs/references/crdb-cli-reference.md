@@ -179,7 +179,6 @@ crdb-cli crdb update --crdb-guid <CRDB-GUID> /
 [--compression (0-6)] /
 [--causal-consistency true] /
 [--password <password>] /
-[--replication true] /
 [--encryption true] /
 [--oss-cluster true]
 [--bigstore-ram-size <maximum_memory>]
