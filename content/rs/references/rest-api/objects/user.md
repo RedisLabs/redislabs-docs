@@ -15,7 +15,7 @@ An API object that represents an RLEC user.
 | email                 | string             | User's email (pattern matching only ascii characters) |
 | password              | string             | User's password. Note that it could also be an already-hashed value, in which case 'password_hash_method' parameter is also provided. |
 | name                  | string             | User's name (pattern does not allow non-ascii and special characters &,\<,>,") |
-| email_alerts          | boolean (default: true) | Activate email alerts for a user |
+| email_alerts          | boolean (default:&nbsp;true) | Activate email alerts for a user |
 | bdbs_email_alerts     | complex object     | UIDs of databases that user will receive alerts for |
 | cluster_email_alerts  | boolean            | Activate cluster email alerts for a user |
 | role                  | 'admin'<br />'cluster_member'<br />**'db_viewer'**<br />'db_member'<br />'cluster_viewer'<br />'none' | User's role |

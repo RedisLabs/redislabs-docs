@@ -12,4 +12,10 @@ Cluster check result
 | Name | Type/Value | Description |
 |------|------------|-------------|
 | cluster_test_result | boolean | Indication if any of the tests failed |
-| nodes | `[{ "node_uid": integer, "result": boolean, "error": string }, ...]` | Nodes results |
+| nodes | {{<code>}}
+[{
+  "node_uid": integer,
+  "result": boolean,
+  "error": string
+}, ...]
+{{</code>}} | Nodes results |

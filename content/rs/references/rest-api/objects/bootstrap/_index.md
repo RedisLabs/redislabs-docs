@@ -17,7 +17,15 @@ A bootstrap configuration object.
 | action      | 'join_cluster'<br />'create_cluster' | Action to perform |
 | max_retries | integer | Max number of retries in case of recoverable errors |
 | retry_time  | integer | Max waiting time between retries (in seconds) |
-| dns_suffixes | [{ "name": string, "cluster_default": boolean, "use_aaaa_ns": boolean, "use_internal_addr": boolean, "slaves": array}, ...] | Explicit configuration of DNS suffixes<br />**name**: DNS suffix name<br />**cluster_default**: Should this suffix be the default cluster suffix<br />**use_aaaa_ns**: Should AAAA records be published for NS records<br />**use_internal_addr**: Should internal cluster IPs be published for databases<br />**slaves**: List of replica servers that should be published as NS and notified |
+| dns_suffixes | {{<code>}}
+[{
+  "name": string,
+  "cluster_default": boolean,
+  "use_aaaa_ns": boolean,
+  "use_internal_addr": boolean,
+  "slaves": array
+}, ...]
+{{</code>}} | Explicit configuration of DNS suffixes<br />**name**: DNS suffix name<br />**cluster_default**: Should this suffix be the default cluster suffix<br />**use_aaaa_ns**: Should AAAA records be published for NS records<br />**use_internal_addr**: Should internal cluster IPs be published for databases<br />**slaves**: List of replica servers that should be published as NS and notified |
 | license     | string                  | License string              |
 | cluster     | [cluster_identity]({{<relref "/rs/references/rest-api/objects/bootstrap/cluster_identity">}}) object | Cluster to join or create  |
 | credentials | [credentials]({{<relref "/rs/references/rest-api/objects/bootstrap/credentials">}}) object | Cluster admin credentials  |

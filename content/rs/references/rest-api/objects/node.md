@@ -28,7 +28,12 @@ An API object that represents a node in the cluster.
 | persistent_storage_size | number    | Persistent storage size (bytes) (read- only) |
 | recovery_path      | string          | Recovery files path          |
 | software_version   | string          | Installed Redis Labs cluster software version (read-only) |
-| supported_database_versions | [{ "db_type": string, "version": string }, ...] | Versions of open source databases supported by Redis Labs software on the node (read-only)<br />**db_type**: Type of database<br />**version**: Version of database |
+| supported_database_versions | {{<code>}}
+[{
+  "db_type": string,
+  "version": string
+}, ...]
+{{</code>}} | Versions of open source databases supported by Redis Labs software on the node (read-only)<br />**db_type**: Type of database<br />**version**: Version of database |
 | shard_list         | array of integers | Cluster unique IDs of all node shards |
 | os_version         | string          | Installed OS version (human-readable) (read-only) |
 | os_name            | string          | OS name (read-only)     |
