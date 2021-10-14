@@ -35,21 +35,29 @@ If you do not meet these minimums, you must first update the nodes and databases
 
 ## Redis upgrade policy
 
-In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility used to create new and update existing databases. 
+In version 6.2.4, Redis Enterprise Software introduced the Redis database compatibility upgrade policy (`redis_upgrade_policy`).  This policy controls the default value for the Redis database compatibility when creating or updating databases. 
 
-As of v6.2.4, this policy defaults to `major`, which limits Redis database compatibility to the most recent major release (v6.0, as of this writing.).  To create databases using the most recent release of Redis, use `rladmin` to set the policy to `latest`.
+As of v6.2.4, this policy defaults to `major`, which limits Redis database compatibility to the most recent major release (v6.0, as of this writing).  
 
-``` shell
-tune cluster redis_upgrade_policy latest
-```
+This value supports a more conservative approach to upgrades.  You can change the value to support more frequent upgrades, however, you'll need to upgrade more frequently to stay current.  
 
-The policy supports the following values:
+If you change the policy to `latest`, you need to upgrade Redis Enterprise Software every time there's a minor release.  Further, you'll need to leave the policy set to `latest` until the next major release of Redis Enterprise Software, which generally happens every 18-24 months.
 
-- When set to `major`, the policy allows databases to be created or updated to versions of Redis compatible with open source Redis major releases.  This allows for longer upgrade cycles by supporting Redis versions across multiple Redis Enterprise Software releases.  
+Changes to the upgrade policy do _not_ affect existing databases.  The policy is used only when you create a new database, upgrade a database, or change its configuration.
+
+For best results, we recommend changing the policy value only after upgrading to a major release of Redis Enterprise Software.
+
+## Upgrade policy values
+
+The Redis version of a database indicates its open source Redis compatibility.  When you create a database or edit its configuration, the compatibility version is updated to support the most recent version supported by your copy of Redis Enterprise Software.  
+
+The database compatibility upgrade policy controls this by limiting compatibility to either the most recent _major_ (x.0) release or the _latest_ release (x.y) supported by your version of Redis Enterprise Software.
+
+- When set to `major`, the policy limits Redis compatibility to major releases.  This allows for longer upgrade cycles by supporting Redis versions across multiple Redis Enterprise Software releases.  
 
     This is the default value for Redis Enterprise Software.
 
-- When set to `latest`, the policy creates new databases and upgrades existing ones to be compatible with the latest (most recent) version of open source Redis, which was the default behavior of earlier versions of Redis Enterprise Software.  This is no longer the default behavior.
+- When set to `latest`, the policy limits compatibility to the latest (most recent) version of open source Redis supported by your copy of Redis Enterprise Software.  (This was the default behavior of earlier releases.  As of v6.2.4, this is no longer the default behavior.)
 
     Setting the upgrade policy to `latest` ensures that the most recent Redis features are available to new databases and ones that are upgraded.  It also requires more frequent upgrades, as open source Redis is updated more frequently than Redis Enterprise Software.
 
@@ -63,8 +71,6 @@ To change this to use the latest release available, use `rladmin` to set the upg
 tune cluster redis_upgrade_policy latest
 tune cluster default_redis_version 6.2
 ```
-
-The default policy value supports a more conservative approach to upgrades.  Changing the policy to `latest` provides access to the more recent feature changes; however, it requires more frequent upgrades to stay current.
 
 ## Upgrade a cluster
 
