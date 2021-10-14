@@ -183,6 +183,6 @@ See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">
 
 ## Test your database
 
-The easiest way to test your Active-Active database is to set a key value pair in one database, and retrieve it from the other. 
+The easiest way to test your Active-Active database is to set a key-value pair in one database and retrieve it from the other. 
 
 You can connect to your databases with the instructions in [Manage databases]({{<relref "/kubernetes/re-databases/db-controller.md#connect-to-a-database">}}). Set a test key with `SET foo bar` in the first database. If your Active-Active deployment is working properly, when connected to your second database, `GET foo` should output `bar`.
