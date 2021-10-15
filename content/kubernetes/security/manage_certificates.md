@@ -38,10 +38,18 @@ spec:
 
 ## Update certificates through the API
 
-You can read the available Redis Enterprise cluster (REC) certificates with the API path `/v1/cluster/certifcates`.
+You can read the available Redis Enterprise cluster (REC) certificates with the API path `/v1/cluster/certificates`.
 
-To update a certificate via the API,...PUT request to /v1/cluster/update_cert with the following json structure has to be sent: `{“name”: <cert_name>, “certificate”: <certificate>, “key”: <cert_key>}`.
+To update a certificate via the API:
 
+```api
+PUT /v1/cluster/update_cert
+{
+   "certificate": <certificate>, 
+   "key": <cert_key>,
+   "name": <cert_name> 
+}
+```
 
 ## Troubleshooting
 
