@@ -20,7 +20,7 @@ An API object that represents a managed database in the cluster.
 | bigstore | boolean (default:&nbsp;false) | Database bigstore option |
 | created_time | string | The date and time the database was created (read-only) |
 | last_changed_time | string | Last administrative configuration change (read-only) |
-| status | 'pending'<br />'active'<br />'active-change-pending'<br />'delete-pending'<br />'import-pending'<br />'creation-failed'<br />'recovery' | Database life-cycle status. See the 'bdb -\> status' section (read-only) |
+| [status]({{<relref "/rs/references/rest-api/objects/bdb/status">}}) | 'pending'<br />'active'<br />'active-change-pending'<br />'delete-pending'<br />'import-pending'<br />'creation-failed'<br />'recovery' | Database lifecycle status (read-only) |
 | import_status | 'idle'<br />'initializing'<br />'importing'<br />'succeeded'<br />'failed' | Database import process status (read-only) |
 | import_progress | number, <nobr>(range: 0-100)</nobr> | Database import progress (percentage) (read-only) |
 | import_failure_reason | 'download-error'<br />'file-corrupted'<br />'general-error'<br />'file-larger-than-mem-limit:\<n bytes of expected dataset>:\<n bytes configured bdb limit>'<br />'key-too-long'<br />'invalid-bulk-length'<br />'out-of-memory' | Import failure reason (read-only) |
@@ -31,7 +31,7 @@ An API object that represents a managed database in the cluster.
 | export_progress | number, <nobr>(range: 0-100)</nobr> | Database manually triggered export progress (percentage) (read-only) |
 | export_failure_reason | 'no-permission'<br />'wrong-file-path'<br /> 'general-error' | Reason of last failed export process (read-only) |
 | last_export_time | string | Time of last successful export (read-only) |
-| dataset_import_sources | complex object | Array of source file location description objects to import from when performing an import action. This is write-only and cannot be read after set. <br />Call GET /jsonschema to retrieve the object's structure. <br />See also the 'bdb -\> dataset_import_sources' section. |
+| dataset_import_sources | [complex object]({{<relref "/rs/references/rest-api/objects/bdb/dataset_import_sources">}}) | Array of source file location description objects to import from when performing an import action. This is write-only and cannot be read after set. <br />Call GET /jsonschema to retrieve the object's structure. |
 | memory_size | integer (default:&nbsp;0) | Database memory limit (0 is unlimited), expressed in bytes. |
 | bigstore_ram_size | integer (default:&nbsp;0) | Memory size of bigstore RAM part. |
 | eviction_policy | 'volatile-lru'<br />'volatile-ttl'<br />'volatile-random'<br />'allkeys-lru'<br />'allkeys-random'<br />'noeviction'<br />'volatile-lfu'<br />'allkeys-lfu' | Database eviction policy (Redis style).<br />**Redis DB default**:&nbsp;'volatile-lru'<br />**memcached DB default**:&nbsp;'allkeys-lru' |
@@ -42,7 +42,7 @@ An API object that represents a managed database in the cluster.
 | max_aof_load_time | integer (default:&nbsp;3600) | Maximum time shard's AOF reload should take (seconds). |
 | max_aof_file_size | integer | Maximum size for shard's AOF file (bytes). Default 300GB, (on bigstore DB 150GB) |
 | backup | boolean (default:&nbsp;false) | Policy for periodic database backup |
-| backup_location | complex object | Target for automatic database backups. <br />Call `GET`&nbsp;`/jsonschema` to retrieve the object's structure. <br />See also the 'bdb -\> backup_location' section. |
+| backup_location | [complex object]({{<relref "/rs/references/rest-api/objects/bdb/backup_location">}}) | Target for automatic database backups. <br />Call `GET`&nbsp;`/jsonschema` to retrieve the object's structure. |
 | backup_interval | integer | Interval in seconds in which automatic backup will be initiated |
 | backup_interval_offset | integer | Offset (in seconds) from round backup interval when automatic backup will be initiated (should be less than backup_interval) |
 | backup_history | integer (default:&nbsp;0) | Backup history retention policy (number of days, 0 is forever) |
@@ -108,8 +108,8 @@ An API object that represents a managed database in the cluster.
 | endpoint_ip | complex object | External IP addresses of node hosting the BDB's endpoint. `GET`&nbsp;`/jsonschema` to retrieve the object's structure. (read-only) (deprecated) |
 | max_connections | integer (default:&nbsp;0) | Maximum number of client connections allowed (0 unlimited) |
 | implicit_shard_key | boolean (default:&nbsp;false) | Controls the behavior of what happens in case a key does not match any of the regex rules. <br />**true**: if a key does not match any of the rules, the entire key will be used for the hashing function <br />**false**: if a key does not match any of the rules, an error will be returned. |
-| replica_sources | array of [syncer_sources](#syncer-sources) objects | Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section |
-| crdt_sources | array of [syncer_sources](#syncer-sources) objects | Remote endpoints/peers of CRDB database to sync from. See the 'bdb -\> replica_sources' section |
+| replica_sources | array of [syncer_sources]({{<relref "/rs/references/rest-api/objects/bdb/syncer_sources">}}) objects | Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section |
+| crdt_sources | array of [syncer_sources]({{<relref "/rs/references/rest-api/objects/bdb/syncer_sources">}}) objects | Remote endpoints/peers of CRDB database to sync from. See the 'bdb -\> replica_sources' section |
 | gradual_src_mode | 'enabled'<br />'disabled' | Indicates if gradual sync (of sync sources) should be activated |
 | gradual_src_max_sources | integer (default:&nbsp;1) | Sync a maximum N sources in parallel (gradual_src_mode should be enabled for this to take effect) |
 | gradual_sync_mode | 'enabled'<br />'disabled'<br />'auto' | Indicates if gradual sync (of source shards) should be activated ('auto' for automatic decision) |
@@ -127,9 +127,9 @@ An API object that represents a managed database in the cluster.
   "last_error": string
 }, ...]
 {{</code>}} | (deprecated, instead use replica_sources or crdt_sources) Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section<br />**uid**: Numeric unique identification of this source<br />**uri**: Source Redis URI<br />**compression**: Compression level for the replication link<br />**status**: Sync status of this source<br />**rdb_transferred**: Number of bytes transferred from the source's RDB during the syncing phase<br />**rdb_size**: The source's RDB size to be transferred during the syncing phase<br />**last_update**: Time last update was received from the source<br />**lag**: Lag in millisec between source and destination (while synced)<br />**last_error**: Last error encountered when syncing from the source |
-| replica_sync | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | Allow to enable, disable, or pause syncing from specified replica_sources. See the 'bdb -\> replica_sync' section |
-| crdt_sync | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | Allow to enable, disable, or pause syncing from specified crdt_sources. Applicable only for CRDB bdb. See the 'bdb -\> replica_sync' section |
-| sync | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | (deprecated, instead use replica_sync or crdt_sync) Allow to enable, disable, or pause syncing from specified sync_sources. See the 'bdb -\> replica_sync' section |
+| [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified replica_sources |
+| crdt_sync | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified crdt_sources. Applicable only for CRDB bdb. See [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) for more details. |
+| sync | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | (deprecated, use [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) or crdt_sync instead) Enable, disable, or pause syncing from specified sync_sources |
 | bigstore_ram_weights | {{<code>}}	
 [{
   "shard_uid": integer,
