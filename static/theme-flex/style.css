@@ -1227,6 +1227,8 @@ article section.page p > code,
 article section.page li code,
 article section.page table code {
   padding: 0 0.25rem; }
+article section.page table code {
+  font-size: 11px; }
 
 /* Code source and copy */
 article section.page pre {
