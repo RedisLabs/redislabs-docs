@@ -173,8 +173,8 @@ crdb-cli crdb create
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
-  --instance fqdn=<rec-hostname-01>,url=<api-hostname-01>,username=<username-01>,password=<password-01>,replication_endpoint=<replication-endpoint-01>,replication_tls-sni=<replication-hostname-01> \
-  --instance fqdn=<rec-hostname-02>,url=<api-hostname-02>,username=<username-02>,password=<password-02>,replication_endpoint=<replication-endpoint-02>,replication_tls-sni=<replication-hostname-02>
+  --instance fqdn=<rec-hostname-01>,url=<api-hostname-01>,username=<username-01>,password=<password-01>,replication_endpoint=<replication-endpoint-01>,replication_tls_sni=<replication-hostname-01> \
+  --instance fqdn=<rec-hostname-02>,url=<api-hostname-02>,username=<username-02>,password=<password-02>,replication_endpoint=<replication-endpoint-02>,replication_tls_sni=<replication-hostname-02>
 ```
 
 To create a database that syncs between more than two instances, add additional `--instance` arguments.
