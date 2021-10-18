@@ -139,7 +139,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
     oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
     ```
 
-1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
+1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.???
 
       ```yaml
       activeActive:
