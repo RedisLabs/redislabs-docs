@@ -13,5 +13,7 @@ aliases: /rv/api/how-to/
          /rv/api/concepts/
          /rc/api/concepts/
          /rc/api/concepts/_index.md
+         /rc/api/examples/metrics/
+         /rc/api/examples/metrics.md
 ---
 {{< allchildren style="h2" description="true" />}}
