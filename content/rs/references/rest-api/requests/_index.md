@@ -2,7 +2,7 @@
 Title: Redis Enterprise REST API requests
 linkTitle: Requests
 description: Documents the requests supported by the Redis Enterprise Software REST API calls.
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 ---

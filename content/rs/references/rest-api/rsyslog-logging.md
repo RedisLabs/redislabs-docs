@@ -2,7 +2,7 @@
 Title: Redis Enterprise cluster system log entries
 linkTitle: Cluster system log entries
 description: Describe system log entries related to cluster events.
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---

@@ -2,7 +2,7 @@
 Title: Redis Enterprise REST API objects
 linkTitle: Objects
 description: Documents the objects used with Redis Enterprise Software REST API calls.
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RS"]
 ---
