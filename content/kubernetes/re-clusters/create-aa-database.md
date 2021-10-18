@@ -133,7 +133,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
     oc get rec -o=jsonpath='{.metadata.name}
     ```
 
-    After changing the REC name or namespace, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
+    Only if the rec name was modified, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
     ```
     oc apply -f scc.yaml
     oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
