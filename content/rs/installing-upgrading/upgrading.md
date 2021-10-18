@@ -132,7 +132,7 @@ To upgrade a database:
     rladmin upgrade db <database name | database ID>
     ```
 
-    This restarts the database.  If replication and persistence are disabled, the data is lost.
+    This restarts the database.  No data is lost, as a snapshot is taken before the restart and used to restore data after the restart.
 
 1. Check the Redis database compatibility version for the database to confirm the upgrade.  
 
