@@ -64,7 +64,7 @@ You'll need the following information for each participating Redis Enterprise cl
   - Format: string
   - Example value: `-fgh.ijk.redisdemo.com`
   - How to get it: you choose
-- **REC admin credentials** `<username> <password>`:
+- [**REC admin credentials**]({{<relref "/kubernetes/security/manage_REC_credentials.md" >}}) `<username> <password>`:
   - Description: Admin username and password for the REC stored in a secret
   - Format: string
   - Example value: username: `user@redisdemo.com`, password: `something`
