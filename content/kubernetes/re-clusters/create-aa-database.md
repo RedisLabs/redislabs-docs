@@ -128,9 +128,9 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 ### Using OpenShift routes
 
 1. Make sure your Redis Enterprise cluster (REC) has a different name (`<rec-name.namespace>`) than any other participating clusters. If not, you'll need to manually rename the REC or move it to a different namespace.
-    You can check your new REC name with:
+            You can check your new REC name with:
     ```
-    oc get rec -o=jsonpath='{.metadata.name}
+    oc get rec -o=jsonpath='{.metadata.name}'
     ```
 
     After changing the REC name or namespace, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
