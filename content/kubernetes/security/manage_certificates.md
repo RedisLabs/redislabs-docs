@@ -79,7 +79,7 @@ Check the operator logs and use the API to verify the certificate has been updat
   GET /v1/cluster/certificates
   ```
 
-## Related information
+## More info
 
 - [Updating SSL/TLS certificates]({{< relref "/rs/administering/cluster-operations/updating-certificates.md" >}})
 - [Installing your own certificates]({{< relref "/rs/security/tls-ssl#installing-your-own-certificates" >}})
