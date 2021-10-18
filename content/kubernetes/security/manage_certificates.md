@@ -46,7 +46,7 @@ To install and use your own certificates with Kubernetes on your Redis Enterpris
 
 ## Update certificates in the REC custom resource
 
-Edit the Redis Enterprise cluster (REC) custom resource to add a `Certificates` section under the `spec` section. You are only required to add the fields for the certificates you are installing.
+Edit the Redis Enterprise cluster (REC) custom resource to add a `Certificates` subsection under the `spec` section. You are only required to add the fields for the certificates you are installing.
 
 ```yaml
 spec:
