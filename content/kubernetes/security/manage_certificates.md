@@ -20,7 +20,7 @@ Below are the names of certificates used by Redis Enterprise Software and the tr
 - `syncer` - for Active-Active and Replica Of synchronization between Redis Enterprise clusters
 - `metrics_exporter` - for exporting metrics to Prometheus
 
-To install and use your own certificates with Kubernetes on your Redis Enterprise cluster, they need to be stored in secrets. The REC custom resource also needs to be configured with those secret names to read and use the certificates.
+To install and use your own certificates with Kubernetes on your Redis Enterprise cluster, they need to be stored in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/). The REC custom resource also needs to be configured with those secret names to read and use the certificates.
 
 ## Create a secret to hold the new certificate
 
@@ -57,7 +57,7 @@ spec:
     proxyCertificateSecretName: <proxycert-secret-name>
 ```
 
-### Update certificates through the API
+#### Update certificates through the API
 
 Alternatively, can also update the REC custom resource via the API:
 
