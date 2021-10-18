@@ -60,7 +60,7 @@ spec:
 
 #### Update certificates through the API
 
-Alternatively, can also update the REC custom resource via the API:
+Alternatively, you can also update the REC custom resource via the API:
 
 ```API
 PUT /v1/cluster/update_cert
