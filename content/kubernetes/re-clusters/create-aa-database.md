@@ -118,7 +118,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 1. Verify you can access the API from outside the K8s cluster.
 
     ```bash
-   curl -k -L -i -u <UI-username>:<UI-password> https://<api-hostname>/v1/cluster
+   curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/cluster
     ```
 
     If the API call fails, create a DNS alias that resolves your API hostname (`<api-hostname>`) to the IP address for the ingress controller's LoadBalancer.
