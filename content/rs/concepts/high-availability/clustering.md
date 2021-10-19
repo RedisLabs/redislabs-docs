@@ -168,6 +168,6 @@ and the responses from all shards are combined into a single response.
     (as per the Redis specification). Using keys in a Lua script that
     were not provided as arguments might violate the sharding concept
     but do not result in the proper violation error being returned.
-- **Renaming keys**: The use of the RENAME / RENAMENX commands is
+- **Renaming/Copy keys**: The use of the RENAME / RENAMENX / COPY commands is
     allowed only when the key's original and new values are mapped to
     the same slot.

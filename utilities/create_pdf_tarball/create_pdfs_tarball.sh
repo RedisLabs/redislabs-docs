@@ -26,8 +26,8 @@ wkhtmltopdf https://$location/pdf-gen-ri-docs/ ../../public/pdfs/archive/tmp/$ta
 echo "Generating modules-docs.pdf"
 wkhtmltopdf https://$location/pdf-gen-modules-docs/ ../../public/pdfs/archive/tmp/$tarball_name/modules-docs.pdf
 
-echo "Generating platforms-docs.pdf"
-wkhtmltopdf https://$location/pdf-gen-platforms-docs/ ../../public/pdfs/archive/tmp/$tarball_name/platforms-docs.pdf
+echo "Generating kubernetes-docs.pdf"
+wkhtmltopdf https://$location/pdf-gen-kubernetes-docs/ ../../public/pdfs/archive/tmp/$tarball_name/kubernetes-docs.pdf
 
 echo "Finished converting html to PDFs."
 

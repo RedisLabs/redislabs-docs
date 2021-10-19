@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 aliases: /rs/references/cli-reference/rladmin/
 ---
-`rladmin` is a command-line utility for performing administrative tasks such as failover, migration, and endpoint binding on a Redis Enterprise Software cluster. `rladmin` can also edit cluster and database configurations. Some of these tasks can also be performed through the Management UI and some are unique to the `rladmin` CLI tool.
+`rladmin` is a command-line utility for performing administrative tasks such as failover, migration, and endpoint binding on a Redis Enterprise Software cluster. `rladmin` can also edit cluster and database configurations. Some of these tasks can also be performed through the admin console and some are unique to the `rladmin` CLI tool.
 
 ## rladmin Commands
 
@@ -128,7 +128,7 @@ rladmin bind
 | min_data_TLS_version | The minimum version of TLS protocol which is supported at the data path |
 | min_sentinel_TLS_version |  |
 | s3_url | The URL of S3 export and import |
-| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Cluster-based LDAP Authentication]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/platforms/kubernetes/security/ldap-on-k8s.md" >}})) |
+| saslauthd_ldap_conf | Updates LDAP authentication configuration for the cluster (see [Cluster-based LDAP Authentication]({{< relref "/rs/security/ldap/cluster-based-ldap-authentication.md" >}}) or [Kubernetes LDAP configuration]({{< relref "/kubernetes/security/ldap-on-k8s.md" >}})) |
 | sentinel_cipher_suites | Cipher suites used by the sentinel service (supported ciphers are implemented by the [golang.org cipher suites package](https://golang.org/src/crypto/tls/cipher_suites.go)) |
 | sentinel_ssl_policy | Define SSL policy for the Discovery Service: required/disabled/allowed |
 | upgrade_mode |  |
