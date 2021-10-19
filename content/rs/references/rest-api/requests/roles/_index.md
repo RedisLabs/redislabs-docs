@@ -30,8 +30,8 @@ Get all role objects.
 #### Required permissions
 
 | Permission name |
-|:-----------------:|
-| view_all_roles_info |
+|-----------------|
+| [view_all_roles_info]({{<relref "/rs/references/rest-api/permissions#view_all_roles_info">}}) |
 
 ### Request {#get-all-request} 
 
@@ -108,7 +108,7 @@ Get a single role object.
 
 | Permission name |
 |-----------------|
-| view_role_info |
+| [view_role_info]({{<relref "/rs/references/rest-api/permissions#view_role_info">}}) |
 
 ### Request {#get-request} 
 
@@ -162,7 +162,7 @@ Update an existing role object.
 
 | Permission name |
 |-----------------|
-| update_role |
+| [update_role]({{<relref "/rs/references/rest-api/permissions#update_role">}}) |
 
 ### Request {#put-request} 
 
@@ -233,7 +233,7 @@ Create a new role.
 
 | Permission name |
 |-----------------|
-| create_role |
+| [create_role]({{<relref "/rs/references/rest-api/permissions#create_role">}}) |
 
 ### Request {#post-request} 
 
@@ -305,7 +305,7 @@ Delete a role object.
 
 | Permission name |
 |-----------------|
-| delete_role |
+| [delete_role]({{<relref "/rs/references/rest-api/permissions#delete_role">}}) |
 
 ### Request {#delete-request} 
 

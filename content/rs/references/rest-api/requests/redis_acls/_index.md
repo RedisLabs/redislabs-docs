@@ -31,7 +31,7 @@ Get all redis_acl objects.
 
 | Permission name |
 |-----------------|
-| view_all_redis_acls_info |
+| [view_all_redis_acls_info]({{<relref "/rs/references/rest-api/permissions#view_all_redis_acls_info">}}) |
 
 ### Request {#get-all-request} 
 
@@ -93,7 +93,7 @@ Get a single redis_acl object.
 
 | Permission name |
 |-----------------|
-| view_redis_acl_info |
+| [view_redis_acl_info]({{<relref "/rs/references/rest-api/permissions#view_redis_acl_info">}}) |
 
 ### Request {#get-request} 
 
@@ -147,7 +147,7 @@ Update an existing redis_acl object.
 
 | Permission name |
 |-----------------|
-| update_redis_acl |
+| [update_redis_acl]({{<relref "/rs/references/rest-api/permissions#update_redis_acl">}}) |
 
 ### Request {#put-request} 
 
@@ -219,7 +219,7 @@ Create a new redis_acl object (a named redis acl)
 
 | Permission name |
 |-----------------|
-| create_redis_acl |
+| [create_redis_acl]({{<relref "/rs/references/rest-api/permissions#create_redis_acl">}}) |
 
 ### Request {#post-request} 
 
@@ -292,7 +292,7 @@ Delete a redis_acl object.
 
 | Permission name |
 |-----------------|
-| delete_redis_acl |
+| [delete_redis_acl]({{<relref "/rs/references/rest-api/permissions#delete_redis_acl">}}) |
 
 ### Request {#delete-request} 
 

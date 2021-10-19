@@ -27,7 +27,7 @@ Resets the database's `export_status` to idle if an export is not in progress an
 
 | Permission name |
 |-----------------|
-| reset_bdb_current_export_status |
+| [reset_bdb_current_export_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_export_status">}}) |
 
 ### Request {#put-request} 
 

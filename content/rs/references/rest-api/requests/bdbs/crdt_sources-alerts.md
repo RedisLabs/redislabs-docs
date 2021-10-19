@@ -30,7 +30,7 @@ Get all alert states for all crdt sources of all CRDBs.
 
 | Permission name |
 |-----------------|
-| view_all_bdbs_alerts |
+| [view_all_bdbs_alerts]({{<relref "/rs/references/rest-api/permissions#view_all_bdbs_alerts">}}) |
 
 ### Request {#get-all-request} 
 
@@ -90,7 +90,7 @@ Get all alert states for all crdt sources for a specific local bdb of a CRDB.
 
 | Permission name |
 |-----------------|
-| view_bdb_alerts |
+| [view_bdb_alerts]({{<relref "/rs/references/rest-api/permissions#view_bdb_alerts">}}) |
 
 ### Request {#get-request-all-crdt-alerts} 
 
@@ -155,7 +155,7 @@ of a CRDB.
 
 | Permission name |
 |-----------------|
-| view_bdb_alerts |
+| [view_bdb_alerts]({{<relref "/rs/references/rest-api/permissions#view_bdb_alerts">}}) |
 
 ### Request {#get-request-crdt-alerts} 
 
@@ -220,7 +220,7 @@ Get a bdb alert state.
 
 | Permission name |
 |-----------------|
-| view_bdb_alerts |
+| [view_bdb_alerts]({{<relref "/rs/references/rest-api/permissions#view_bdb_alerts">}}) |
 
 ### Request {#get-request-alert} 
 

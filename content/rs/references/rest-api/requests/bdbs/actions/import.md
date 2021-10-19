@@ -27,7 +27,7 @@ Initiate a manual import process.
 
 | Permission name |
 |-----------------|
-| start_bdb_import |
+| [start_bdb_import]({{<relref "/rs/references/rest-api/permissions#start_bdb_import">}}) |
 
 ### Request {#post-request} 
 

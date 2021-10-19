@@ -31,7 +31,7 @@ Get all RLEC users.
 
 | Permission name |
 |-----------------|
-| view_all_users_info |
+| [view_all_users_info]({{<relref "/rs/references/rest-api/permissions#view_all_users_info">}}) |
 
 ### Request {#get-all-request} 
 
@@ -91,7 +91,7 @@ Get a single RLEC user.
 
 | Permission name |
 |-----------------|
-| view_user_info |
+| [view_user_info]({{<relref "/rs/references/rest-api/permissions#view_user_info">}}) |
 
 ### Request {#get-request} 
 
@@ -149,7 +149,7 @@ Update an RLEC user configuration.
 
 | Permission name |
 |-----------------|
-| update_user (Although any user can change their own name, password, or alerts) |
+| [update_user]({{<relref "/rs/references/rest-api/permissions#update_user">}}) (Although any user can change their own name, password, or alerts) |
 
 ### Request {#put-request} 
 
@@ -244,7 +244,7 @@ and a password:
 
 | Permission name |
 |-----------------|
-| create_new_user |
+| [create_new_user]({{<relref "/rs/references/rest-api/permissions#create_new_user">}}) |
 
 ### Request {#post-request} 
 
@@ -343,7 +343,7 @@ Delete an RLEC user.
 
 | Permission name |
 |-----------------|
-| delete_user |
+| [delete_user]({{<relref "/rs/references/rest-api/permissions#delete_user">}}) |
 
 ### Request {#delete-request} 
 

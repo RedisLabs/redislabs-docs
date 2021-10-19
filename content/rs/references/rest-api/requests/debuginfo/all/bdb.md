@@ -27,7 +27,7 @@ Fetch debuginfo from all nodes that are relevent to a given bdb uid.
 
 | Permission name |
 |-----------------|
-| view_debugging_info |
+| [view_debugging_info]({{<relref "/rs/references/rest-api/permissions#view_debugging_info">}}) |
 
 ### Request {#get-all-request} 
 

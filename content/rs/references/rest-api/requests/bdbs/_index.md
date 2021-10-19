@@ -33,7 +33,7 @@ Get all databases in the cluster.
 
 | Permission name |
 |-----------------|
-| view_all_bdbs_info |
+| [view_all_bdbs_info]({{<relref "/rs/references/rest-api/permissions#view_all_bdbs_info">}}) |
 
 ### Request {#get-all-request} 
 
@@ -94,7 +94,7 @@ Get a single database (bdb object) as JSON.
 
 | Permission name |
 |-----------------|
-| view_bdb_info |
+| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) |
 
 ### Request {#get-request} 
 
@@ -161,7 +161,7 @@ To track this request's progress, poll the [`/actions/<action_uid>` endpoint]({{
 
 | Permission name |
 |-----------------|
-| update_bdb |
+| [update_bdb]({{<relref "/rs/references/rest-api/permissions#update_bdb">}}) |
 
 ### Request {#put-request} 
 
@@ -228,7 +228,7 @@ If called with the `dry_run` URL query string, the function will validate the bd
 
 | Permission name |
 |-----------------|
-| update_bdb_with_action |
+| [update_bdb_with_action]({{<relref "/rs/references/rest-api/permissions#update_bdb_with_action">}}) |
 
 ### Request {#put-request-action} 
 
@@ -322,7 +322,7 @@ The cluster will use default configuration for any missing bdb field. The databa
 
 | Permission name |
 |-----------------|
-| create_bdb |
+| [create_bdb]({{<relref "/rs/references/rest-api/permissions#create_bdb">}}) |
 
 ### Request {#post-request-v1} 
 
@@ -497,7 +497,7 @@ Delete an active database.
 
 | Permission name |
 |-----------------|
-| delete_bdb |
+| [delete_bdb]({{<relref "/rs/references/rest-api/permissions#delete_bdb">}}) |
 
 ### Request {#delete-request} 
 

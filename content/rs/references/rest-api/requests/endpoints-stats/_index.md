@@ -32,7 +32,7 @@ compatability.
 
 | Permission name |
 |-----------------|
-| view_endpoint_stats |
+| [view_endpoint_stats]({{<relref "/rs/references/rest-api/permissions#view_endpoint_stats">}}) |
 
 ### Request {#get-request} 
 

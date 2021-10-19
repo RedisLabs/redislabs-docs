@@ -27,7 +27,7 @@ List possible Redis module capabilities.
 
 | Permission name |
 |-----------------|
-| view_cluster_modules |
+| [view_cluster_modules]({{<relref "/rs/references/rest-api/permissions#view_cluster_modules">}}) |
 
 ### Request {#get-request} 
 

@@ -27,7 +27,7 @@ Initiate a database export.
 
 | Permission name |
 |-----------------|
-| start_bdb_export |
+| [start_bdb_export]({{<relref "/rs/references/rest-api/permissions#start_bdb_export">}}) |
 
 ### Request {#post-request} 
 

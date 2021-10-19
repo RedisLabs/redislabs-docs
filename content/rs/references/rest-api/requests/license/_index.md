@@ -29,7 +29,7 @@ and supported features.
 
 | Permission name |
 |-----------------|
-| view_license |
+| [view_license]({{<relref "/rs/references/rest-api/permissions#view_license">}}) |
 
 ### Request {#get-request} 
 
@@ -77,7 +77,7 @@ Validate and install a new license string.
 
 | Permission name |
 |-----------------|
-| install_new_license |
+| [install_new_license]({{<relref "/rs/references/rest-api/permissions#install_new_license">}}) |
 
 ### Request {#put-request} 
 

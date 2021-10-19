@@ -27,7 +27,7 @@ Reset the database's `backup_status` to idle if a backup is not in progress and 
 
 | Permission name |
 |-----------------|
-| reset_bdb_current_backup_status |
+| [reset_bdb_current_backup_status]({{<relref "/rs/references/rest-api/permissions#reset_bdb_current_backup_status">}}) |
 
 ### Request {#put-request} 
 

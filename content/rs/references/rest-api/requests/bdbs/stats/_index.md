@@ -28,7 +28,7 @@ Get stats for all BDBs.
 
 | Permission name |
 |-----------------|
-| view_all_bdb_stats |
+| [view_all_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_all_bdb_stats">}}) |
 
 ### Request {#get-all-request} 
 
@@ -141,7 +141,7 @@ Get stats for a specific BDB.
 
 | Permission name |
 |-----------------|
-| view_bdb_stats |
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
 
 ### Request {#get-request} 
 

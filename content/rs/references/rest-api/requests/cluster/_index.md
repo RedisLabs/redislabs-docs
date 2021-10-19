@@ -28,7 +28,7 @@ Get cluster info.
 
 | Permission name |
 |-----------------|
-| view_cluster_info |
+| [view_cluster_info]({{<relref "/rs/references/rest-api/permissions#view_cluster_info">}}) |
 
 ### Request {#get-request} 
 
@@ -83,7 +83,7 @@ changes.
 
 | Permission name |
 |-----------------|
-| update_cluster |
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
 
 ### Request {#put-request} 
 

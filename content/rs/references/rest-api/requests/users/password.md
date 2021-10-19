@@ -19,7 +19,7 @@ aliases: /rs/references/rest-api/users/password
 | [POST](#add-password)      | `/v1/users/password` | Add a new password          |
 | [DELETE](#delete-password) | `/v1/users/password` | Delete a password           |
 
-## Update password
+## Update password {#update-password}
     
     PUT /v1/users/password
     
@@ -80,7 +80,7 @@ The following are possible `error_code` values:
 | [401 Unauthorized](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2) | The user is unauthorized. |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to reset password to a non-existing user. |
 
-## Add password
+## Add password {#add-password}
 
     POST /v1/users/password
 
@@ -140,7 +140,7 @@ The following are possible `error_code` values:
 | [401 Unauthorized](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2) | The user is unauthorized. |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to add a password to a non-existing user. |
 
-## Delete password
+## Delete password {#delete-password}
     DELETE /v1/users/password
 
 Delete a password from the list of an internal user's passwords.

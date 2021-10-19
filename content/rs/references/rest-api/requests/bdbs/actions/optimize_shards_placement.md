@@ -28,7 +28,7 @@ Get optimized shards placement for the given database.
 
 | Permission name |
 |-----------------|
-| view_bdb_info |
+| [view_bdb_info]({{<relref "/rs/references/rest-api/permissions#view_bdb_info">}}) |
 
 ### Request {#get-request} 
 

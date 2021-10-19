@@ -28,7 +28,7 @@ Get stats for a all peer instances of a local CRDB instance.
 
 | Permission name |
 |-----------------|
-| view_bdb_stats |
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
 
 ### Request {#get-all-request} 
 
@@ -114,7 +114,7 @@ Get stats for a specific CRDB peer instance.
 
 | Permission name |
 |-----------------|
-| view_bdb_stats |
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
 
 ### Request {#get-request} 
 

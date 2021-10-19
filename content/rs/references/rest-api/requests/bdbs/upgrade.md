@@ -27,7 +27,7 @@ Upgrade a BDB.
 
 | Permission name |
 |-----------------|
-| update_bdb_with_action |
+| [update_bdb_with_action]({{<relref "/rs/references/rest-api/permissions#update_bdb_with_action">}}) |
 
 ### Request {#post-request} 
 

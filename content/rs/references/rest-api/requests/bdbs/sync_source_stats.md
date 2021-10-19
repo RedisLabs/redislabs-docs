@@ -28,7 +28,7 @@ Get stats for all syncer sources of a local database.
 
 | Permission name |
 |-----------------|
-| view_bdb_stats |
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
 
 ### Request {#get-all-request} 
 
@@ -105,7 +105,7 @@ Get stats for a specific syncer (replica-of) instance.
 
 | Permission name |
 |-----------------|
-| view_bdb_stats |
+| [view_bdb_stats]({{<relref "/rs/references/rest-api/permissions#view_bdb_stats">}}) |
 
 ### Request {#get-request} 
 

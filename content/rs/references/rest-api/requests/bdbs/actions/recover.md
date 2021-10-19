@@ -30,7 +30,7 @@ The recovery plan provides information about the recovery status (if it is possi
 
 | Permission name |
 |-----------------|
-| view_bdb_recovery_plan |
+| [view_bdb_recovery_plan]({{<relref "/rs/references/rest-api/permissions#view_bdb_recovery_plan">}}) |
 
 ### Request {#get-request} 
 

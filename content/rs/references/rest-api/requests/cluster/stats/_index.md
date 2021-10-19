@@ -27,7 +27,7 @@ Get cluster stats.
 
 | Permission name |
 |-----------------|
-| view_cluster_stats |
+| [view_cluster_stats]({{<relref "/rs/references/rest-api/permissions#view_cluster_stats">}}) |
 
 ### Request {#get-request} 
 

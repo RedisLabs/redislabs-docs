@@ -29,7 +29,7 @@ Get the LDAP configuration, as JSON.
 
 | Permission name |
 |-----------------|
-| view_ldap_config |
+| [view_ldap_config]({{<relref "/rs/references/rest-api/permissions#view_ldap_config">}}) |
 
 ### Request {#get-request} 
 
@@ -80,7 +80,7 @@ Set or update the cluster LDAP configuration.
 
 | Permission name |
 |-----------------|
-| config_ldap |
+| [config_ldap]({{<relref "/rs/references/rest-api/permissions#config_ldap">}}) |
 
 ### Request {#put-request} 
 
@@ -147,7 +147,7 @@ Clear the LDAP configuration.
 
 | Permission name |
 |-----------------|
-| config_ldap |
+| [config_ldap]({{<relref "/rs/references/rest-api/permissions#config_ldap">}}) |
 
 ### Request {#delete-request} 
 

@@ -32,7 +32,7 @@ actions on all nodes.
 
 | Permission name |
 |-----------------|
-| view_status_of_all_node_actions |
+| [view_status_of_all_node_actions]({{<relref "/rs/references/rest-api/permissions#view_status_of_all_node_actions">}}) |
 
 ### Request {#get-all-request} 
 
@@ -66,7 +66,7 @@ Get the status of all actions on a specific node.
 
 | Permission name |
 |-----------------|
-| view_status_of_node_action |
+| [view_status_of_node_action]({{<relref "/rs/references/rest-api/permissions#view_status_of_node_action">}}) |
 
 ### Request {#get-request-all-actions} 
 
@@ -175,7 +175,7 @@ removed as soon as the new one is submitted.
 
 | Permission name |
 |-----------------|
-| start_node_action |
+| [start_node_action]({{<relref "/rs/references/rest-api/permissions#start_node_action">}}) |
 
 ### Request {#post-request} 
 
@@ -228,7 +228,7 @@ previously executed and completed action.
 
 | Permission name |
 |-----------------|
-| cancel_node_action |
+| [cancel_node_action]({{<relref "/rs/references/rest-api/permissions#cancel_node_action">}}) |
 
 ### Request {#delete-request} 
 

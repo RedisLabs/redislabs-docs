@@ -27,7 +27,7 @@ Use the module runtime configuration command (if defined) to configure new argum
 
 | Permission name |
 |-----------------|
-| edit_bdb_module |
+| [edit_bdb_module]({{<relref "/rs/references/rest-api/permissions#edit_bdb_module">}}) |
 
 ### Request {#post-request} 
 

@@ -28,7 +28,7 @@ information used for troubleshooting, for the given bdb.
 
 | Permission name |
 |-----------------|
-| view_debugging_info |
+| [view_debugging_info]({{<relref "/rs/references/rest-api/permissions#view_debugging_info">}}) |
 
 ### Request {#get-request} 
 

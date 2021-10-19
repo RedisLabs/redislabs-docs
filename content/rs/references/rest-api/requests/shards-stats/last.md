@@ -28,7 +28,7 @@ Get most recent stats for all shards.
 
 | Permission name |
 |-----------------|
-| view_all_shard_stats |
+| [view_all_shard_stats]({{<relref "/rs/references/rest-api/permissions#view_all_shard_stats">}}) |
 
 ### Request {#get-all-request} 
 
@@ -114,7 +114,7 @@ Get most recent stats for a specific shard.
 
 | Permission name |
 |-----------------|
-| view_shard_stats |
+| [view_shard_stats]({{<relref "/rs/references/rest-api/permissions#view_shard_stats">}}) |
 
 ### Request {#get-request} 
 

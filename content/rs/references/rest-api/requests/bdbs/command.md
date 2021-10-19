@@ -27,7 +27,7 @@ Execute a Redis or Memcached command, per the db type.
 
 | Permission name |
 |-----------------|
-| execute_redis_or_memcached_command |
+| [execute_redis_or_memcached_command]({{<relref "/rs/references/rest-api/permissions#execute_redis_or_memcached_command">}}) |
 
 ### Request {#post-request} 
 

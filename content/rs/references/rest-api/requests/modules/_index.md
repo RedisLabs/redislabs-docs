@@ -30,7 +30,7 @@ List available modules, i.e. modules stored within the CCS.
 
 | Permission name |
 |-----------------|
-| view_cluster_modules |
+| [view_cluster_modules]({{<relref "/rs/references/rest-api/permissions#view_cluster_modules">}}) |
 
 ### Request {#list-request} 
 
@@ -63,7 +63,7 @@ Get specific available modules, i.e. modules stored within the CCS.
 
 | Permission name |
 |-----------------|
-| view_cluster_modules |
+| [view_cluster_modules]({{<relref "/rs/references/rest-api/permissions#view_cluster_modules">}}) |
 
 ### Request {#get-request} 
 
@@ -106,7 +106,7 @@ Packer](https://github.com/RedisLabs/RAMP).
 
 | Permission name |
 |-----------------|
-| update_cluster |
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
 
 ### Request {#post-request} 
 
@@ -157,7 +157,7 @@ Delete a module.
 
 | Permission name |
 |-----------------|
-| update_cluster |
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
 
 ### Request {#delete-request} 
 

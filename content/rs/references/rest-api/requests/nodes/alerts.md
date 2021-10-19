@@ -29,7 +29,7 @@ Get all alert states for all nodes.
 
 | Permission name |
 |-----------------|
-| view_all_nodes_alerts |
+| [view_all_nodes_alerts]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_alerts">}}) |
 
 ### Request {#get-all-request} 
 
@@ -92,7 +92,7 @@ Get all alert states for a node.
 
 | Permission name |
 |-----------------|
-| view_node_alerts |
+| [view_node_alerts]({{<relref "/rs/references/rest-api/permissions#view_node_alerts">}}) |
 
 ### Request {#get-request-all-alerts} 
 
@@ -155,7 +155,7 @@ Get node alert state.
 
 | Permission name |
 |-----------------|
-| view_node_alerts |
+| [view_node_alerts]({{<relref "/rs/references/rest-api/permissions#view_node_alerts">}}) |
 
 ### Request {#get-request} 
 

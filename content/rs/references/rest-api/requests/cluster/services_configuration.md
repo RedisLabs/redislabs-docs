@@ -28,7 +28,7 @@ Get cluster services settings.
 
 | Permission name |
 |-----------------|
-| view_cluster_info |
+| [view_cluster_info]({{<relref "/rs/references/rest-api/permissions#view_cluster_info">}}) |
 
 ### Request {#get-request} 
 
@@ -75,7 +75,7 @@ Update the cluster services settings.
 
 | Permission name |
 |-----------------|
-| update_cluster |
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
 
 ### Request {#put-request} 
 

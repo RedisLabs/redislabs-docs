@@ -30,7 +30,7 @@ Get all alert states for all bdbs.
 
 | Permission name |
 |-----------------|
-| view_all_bdbs_alerts |
+| [view_all_bdbs_alerts]({{<relref "/rs/references/rest-api/permissions#view_all_bdbs_alerts">}}) |
 
 ### Request {#get-all-request} 
 
@@ -90,7 +90,7 @@ Get all alert states for a bdb.
 
 | Permission name |
 |-----------------|
-| view_bdb_alerts |
+| [view_bdb_alerts]({{<relref "/rs/references/rest-api/permissions#view_bdb_alerts">}}) |
 
 ### Request {#get-request-alerts} 
 
@@ -148,7 +148,7 @@ Get a bdb alert state.
 
 | Permission name |
 |-----------------|
-| view_bdb_alerts |
+| [view_bdb_alerts]({{<relref "/rs/references/rest-api/permissions#view_bdb_alerts">}}) |
 
 ### Request {#get-request} 
 
@@ -211,7 +211,7 @@ Updates a database's alerts configuration.
 
 | Permission name |
 |-----------------|
-| update_bdb_alerts |
+| [update_bdb_alerts]({{<relref "/rs/references/rest-api/permissions#update_bdb_alerts">}}) |
 
 ### Request {#post-request} 
 

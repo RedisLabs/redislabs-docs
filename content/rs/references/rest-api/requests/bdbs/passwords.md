@@ -29,7 +29,7 @@ Set a single password for the bdb's default user (i.e., for `AUTH`&nbsp;`<passwo
 
 | Permission name |
 |-----------------|
-| update_bdb |
+| [update_bdb]({{<relref "/rs/references/rest-api/permissions#update_bdb">}}) |
 
 ### Request {#put-request} 
 
@@ -88,7 +88,7 @@ Add a password to the bdb's default user (i.e., for `AUTH`&nbsp;`<password>` aut
 
 | Permission name |
 |-----------------|
-| update_bdb |
+| [update_bdb]({{<relref "/rs/references/rest-api/permissions#update_bdb">}}) |
 
 ### Request {#post-request} 
 
@@ -145,7 +145,7 @@ Delete a password from the bdb's default user (i.e., for `AUTH`&nbsp;`<password>
 
 | Permission name |
 |-----------------|
-| update_bdb |
+| [update_bdb]({{<relref "/rs/references/rest-api/permissions#update_bdb">}}) |
 
 ### Request {#delete-request} 
 

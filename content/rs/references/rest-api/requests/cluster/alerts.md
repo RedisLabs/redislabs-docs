@@ -28,7 +28,7 @@ Get all alert states for the cluster object.
 
 | Permission name |
 |-----------------|
-| view_cluster_alerts |
+| [view_cluster_alerts]({{<relref "/rs/references/rest-api/permissions#view_cluster_alerts">}}) |
 
 ### Request {#get-all-request} 
 
@@ -87,7 +87,7 @@ Get a cluster alert state.
 
 | Permission name |
 |-----------------|
-| view_cluster_alerts |
+| [view_cluster_alerts]({{<relref "/rs/references/rest-api/permissions#view_cluster_alerts">}}) |
 
 ### Request {#get-request} 
 

@@ -28,7 +28,7 @@ Get stats for all nodes.
 
 | Permission name |
 |-----------------|
-| view_all_nodes_stats |
+| [view_all_nodes_stats]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_stats">}}) |
 
 ### Request {#get-all-request} 
 
@@ -135,7 +135,7 @@ Get stats for a node.
 
 | Permission name |
 |-----------------|
-| view_node_stats |
+| [view_node_stats]({{<relref "/rs/references/rest-api/permissions#view_node_stats">}}) |
 
 ### Request {#get-request} 
 

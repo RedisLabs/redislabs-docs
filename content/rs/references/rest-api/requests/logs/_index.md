@@ -27,7 +27,7 @@ Get cluster events log. Returns an array of events.
 
 | Permission name |
 |-----------------|
-| view_logged_events |
+| [view_logged_events]({{<relref "/rs/references/rest-api/permissions#view_logged_events">}}) |
 
 ### Request {#get-request} 
 

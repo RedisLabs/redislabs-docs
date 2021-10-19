@@ -29,7 +29,7 @@ Get all cluster nodes.
 
 | Permission name |
 |-----------------|
-| view_all_nodes_info |
+| [view_all_nodes_info]({{<relref "/rs/references/rest-api/permissions#view_all_nodes_info">}}) |
 
 ### Request {#get-all-request} 
 
@@ -108,7 +108,7 @@ Get a single cluster node.
 
 | Permission name |
 |-----------------|
-| view_node_info |
+| [view_node_info]({{<relref "/rs/references/rest-api/permissions#view_node_info">}}) |
 
 ### Request {#get-request} 
 
@@ -171,7 +171,7 @@ error will be returned otherwise.
 
 | Permission name |
 |-----------------|
-| update_node |
+| [update_node]({{<relref "/rs/references/rest-api/permissions#update_node">}}) |
 
 ### Request {#put-request} 
 

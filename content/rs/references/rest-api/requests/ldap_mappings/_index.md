@@ -31,7 +31,7 @@ Get all ldap_mapping objects.
 
 | Permission name |
 |-----------------|
-| view_all_ldap_mappings_info |
+| [view_all_ldap_mappings_info]({{<relref "/rs/references/rest-api/permissions#view_all_ldap_mappings_info">}}) |
 
 ### Request {#get-all-request} 
 
@@ -81,7 +81,7 @@ Get a single ldap_mapping object.
 
 | Permission name |
 |-----------------|
-| view_ldap_mapping_info |
+| [view_ldap_mapping_info]({{<relref "/rs/references/rest-api/permissions#view_ldap_mapping_info">}}) |
 
 ### Request {#get-request} 
 
@@ -147,7 +147,7 @@ Update an existing ldap_mapping object.
 
 | Permission name |
 |-----------------|
-| update_ldap_mapping |
+| [update_ldap_mapping]({{<relref "/rs/references/rest-api/permissions#update_ldap_mapping">}}) |
 
 ### Request {#put-request} 
 
@@ -235,7 +235,7 @@ Create a new LDAP mapping.
 
 | Permission name |
 |-----------------|
-| create_ldap_mapping |
+| [create_ldap_mapping]({{<relref "/rs/references/rest-api/permissions#create_ldap_mapping">}}) |
 
 ### Request {#post-request} 
 
@@ -316,7 +316,7 @@ Delete an LDAP mapping object.
 
 | Permission name |
 |-----------------|
-| delete_ldap_mapping |
+| [delete_ldap_mapping]({{<relref "/rs/references/rest-api/permissions#delete_ldap_mapping">}}) |
 
 ### Request {#delete-request} 
 
