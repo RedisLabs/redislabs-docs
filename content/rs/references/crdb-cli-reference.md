@@ -94,7 +94,7 @@ If you only specify the required fields, the properties of the database are:
 - Compression level 3
 - Causal consistency is off
 - No password
-- No replication
+- Replication
 - No encryption
 - 1 shard
 - Shard key regex: `{u'regex': u'.*\\{(?<tag>.*)\\}.*'}, {u'regex': u'(?<tag>.*)'}`
@@ -179,7 +179,6 @@ crdb-cli crdb update --crdb-guid <CRDB-GUID> /
 [--compression (0-6)] /
 [--causal-consistency true] /
 [--password <password>] /
-[--replication true] /
 [--encryption true] /
 [--oss-cluster true]
 [--bigstore-ram-size <maximum_memory>]
