@@ -11,7 +11,7 @@ aliases: [
 ]
 ---
 
-By default, Redis Enterprise operator for Kubernetes generates TLS certificates for the cluster during creation. These self-signed certificates are generated on the first node of each Redis Enterprise cluster (REC) and are copied to all other nodes added to the cluster.
+By default, Redis Enterprise Software for Kubernetes generates TLS certificates for the cluster during creation. These self-signed certificates are generated on the first node of each Redis Enterprise cluster (REC) and are copied to all other nodes added to the cluster.
 
 Below are the names of certificates used by Redis Enterprise Software and the traffic they encrypt:
 
@@ -46,11 +46,11 @@ To install and use your own certificates with Kubernetes on your Redis Enterpris
 
 ## Update certificates in the REC custom resource
 
-Edit the Redis Enterprise cluster (REC) custom resource to add a `Certificates` subsection under the `spec` section. You are only required to add the fields for the certificates you are installing.
+Edit the Redis Enterprise cluster (REC) custom resource to add a `certificates` subsection under the `spec` section. You are only required to add the fields for the certificates you are installing.
 
 ```yaml
 spec:
-  Certificates:
+  certificates:
     apiCertificateSecretName: <apicert-secret-name>
     cmCertificateSecretName: <cmcert-secret-name>
     syncerCertificateSecretName: <syncercert-secret-name>
@@ -60,7 +60,7 @@ spec:
 
 #### Update certificates through the API
 
-Alternatively, you can also update the REC custom resource via the API:
+Alternatively, you can also update the REC certificates via the API:
 
 ```API
 PUT /v1/cluster/update_cert
