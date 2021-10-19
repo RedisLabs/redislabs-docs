@@ -5,6 +5,9 @@ description: Documents the requests supported by the Redis Enterprise Software R
 weight: 30
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/references/rest-api/endpoints/
+         /rs/references/restapi/endpoints/
+         /rs/references/rest_api/endpoints/
 ---
 
 This page serves as the entry page for the endpoint reference section of the RS REST API docs.
