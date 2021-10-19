@@ -12,11 +12,11 @@ An API object that represents a proxy in the cluster.
 | Name | Type/Value | Description |
 |------|------------|-------------|
 | uid                                  | integer     | Unique ID of proxy (read-only) |
-| threads                              | integer, (range: 1-256) | Number of threads |
-| max_threads                          | integer, (range: 1-256) | Max number of threads |
+| threads                              | integer, <nobr>(range: 1-256)</nobr> | Number of threads |
+| max_threads                          | integer, <nobr>(range: 1-256)</nobr> | Max number of threads |
 | dynamic_threads_scaling              | boolean     | Automatically adjust the number of threads|
-| threads_usage_threshold              | integer, (range: 50-99) | Max number of threads |
-| duration_usage_threshold             | integer, (range: 10-300) | Max number of threads |
+| threads_usage_threshold              | integer, <nobr>(range: 50-99)</nobr> | Max number of threads |
+| duration_usage_threshold             | integer, <nobr>(range: 10-300)</nobr> | Max number of threads |
 | backlog                              | integer     | tcp listen queue backlog |
 | conns                                | integer     | Number of connections |
 | client_keepcnt                       | integer     | Client tcp keepalive count |
