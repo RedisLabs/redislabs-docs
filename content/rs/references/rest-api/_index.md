@@ -12,46 +12,58 @@ aliases: /rs/references/rest-api/
          /rs/references/rest_api.md
 ---
 
+## Protocol and headers
 
-## JSON Requests and Responses
+### JSON requests and responses
 
-The Redis Enterprise Software REST API uses the JavaScript Object Notation (JSON) for requests and responses.
+The Redis Enterprise Software REST API uses [JavaScript Object Notation (JSON)](http://www.json.org) for requests and responses. See the [RFC 4627 technical specifications](http://www.ietf.org/rfc/rfc4627.txt) for additional information about JSON.
 
-Some responses may have an empty body, but indicate the response with standard HTTP codes. For more information, see RFC 4627 (http://www.ietf.org/rfc/rfc4627.txt) and www.json.org.
+Some responses may have an empty body but indicate the response with standard [HTTP codes](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).
 
 Both requests and responses may include zero or more objects.
 
-In case the request is for a single entity, the response shall return a single JSON object, or none. In case the request if for a list of entities, the response shall return a single JSON array with 0 or more elements.
+If the request is for a single entity, the response returns a single JSON object or none. If the request is for a list of entities, the response returns a JSON array with zero or more elements.
 
-Requests may be delivered with some JSON object fields missing. In this case, these fields will be assigned default values (often indicating they are not in use).
+If you omit certain JSON object fields from a request, they may be assigned default values, which often indicate that these fields are not in use.
 
-Request Headers
-The Redis Labs REST API supports the following HTTP headers:
+### Request headers
 
-Header	Supported/Required Values
-Accept	application/json
-Content-Length	Length (in bytes) of request message.
-Content-Type	application/json
-Response Headers
-The Redis Labs REST API supports the following HTTP headers:
+The Redis Enterprise REST API supports the following HTTP headers:
 
-Header	Supported/Required Values
-Content-Type	application/json
-Content-Length	Length (in bytes) of response message.
-API Versions
-All RLEC API operations are versioned, in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
+| Header | Supported/Required Values |
+|--------|---------------------------|
+| Accept | application/json |
+| Content-Length | Length (in bytes) of request message |
+| Content-Type | application/json |
 
-Authentication
-Authentication to RLEC API occurs via Basic Auth. Provide your RLEC username and password as the basic auth credentials.
+### Response headers
+
+The Redis Enterprise REST API supports the following HTTP headers:
+
+| Header | Supported/Required Values |
+|--------|---------------------------|
+| Content-Type | application/json |
+| Content-Length | Length (in bytes) of response message |
+
+## API versions
+
+All RLEC API operations are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
+
+## Authentication
+
+Authentication to the RLEC API occurs via Basic Auth. Provide your RLEC username and password as the basic auth credentials.
 
 All calls must be made over SSL, to port 9443.
 
 Example Request:
 
-curl -u "demo@redislabs.com:password" https://localhost:9443/v1/bdbs
-Common Responses
-The following are common responses which may be returned in some cases regardless of any specific request.
+    curl -u "demo@redislabs.com:password" https://localhost:9443/v1/bdbs
 
-Response	Condition / Required handling
-503 (Service Unavailable)	Contacted node is currently not a member of any active cluster.
-505 (HTTP Version Not Supported)	An unsupported X-API-Version was used, see API Versions above.
+## Common responses
+
+The following are common responses which may return regardless of the request type.
+
+| Response | Condition/Required handling |
+|----------|-----------------------------|
+| [503 Service Unavailable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.4) | Contacted node is currently not a member of any active cluster. |
+| [505&nbsp;HTTP&nbsp;Version&nbsp;Not&nbsp;Supported](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6) | An unsupported X-API-Version was used, see API Versions above. |
