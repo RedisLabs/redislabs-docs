@@ -1,6 +1,6 @@
 ---
 Title: Manage API keys
-description: How to use the Redis Cloud admin console to create and manage API user keys for your Account's team owners
+description: How to use the Redis Cloud admin console to create and manage API user keys for your account's team owners
 weight: 20
 alwaysopen: false
 categories: ["RC"]
@@ -33,7 +33,7 @@ If an **Enable API** button appears, select it to [enable the REST API]({{< relr
 
 ## API account key
 
-The **API Account key** is used as the value of the `x-api-key` HTTP header to authenticate a REST API.
+The **API account key** is used as the value of the `x-api-key` HTTP header to authenticate a REST API.
 
 By default, the **API account key** is masked; that is, it is obscured for security reasons.  You can use the **Show** button to display the key and the **Hide** button to mask it.
 

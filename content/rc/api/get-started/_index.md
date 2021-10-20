@@ -56,7 +56,7 @@ User keys can be displayed only when created.  For details, see ({{< relref "/rc
 User keys are personal secrets. Do not share them.
 {{< /note >}}
 
-Individual users can have [generate multiple user keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
+Individual users can [generate multiple user keys]({{< relref "/rc/api/get-started/manage-api-keys.md" >}})
 for themselves, for separate apps, or for other owners within the same account.
 
 Every user key has a name. Use this to associate specific API requests to individual users or apps.
