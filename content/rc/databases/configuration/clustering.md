@@ -28,7 +28,7 @@ This distribution is called _clustering_ because it manages the way data is dist
 
 A Redis Cloud cluster is a set of managed Redis processes and cloud instances,
 with each process managing a subset of the database keyspace.
-Clustering uses multiple cores and resources of multiple instance to overcome scaling challenges.
+Clustering uses multiple cores and resources of multiple instances to overcome scaling challenges.
 
 In a Redis Cloud cluster, the keyspace is partitioned into hash
 slots. At any given time a slot resides on and is managed by a single
@@ -69,8 +69,8 @@ are supported with the following limitations:
     can only be used when all affected keys reside in the same slot.
     These commands are: BITOP, BLPOP, BRPOP, BRPOPLPUSH, MSETNX,
     RPOPLPUSH, SDIFF, SDIFFSTORE, SINTER, SINTERSTORE, SMOVE, SORT,
-    SUNION, ZINTERSTORE, ZUNIONSTORE.
-1. **Geo commands:** In GEORADIUS/GEORADIUSBYMEMBER commands, the
+    SUNION, ZINTER, ZINTERSTORE, ZUNION, ZUNIONSTORE, ZDIFF, ZDIFFSTORE
+1. **Geo commands:** In GEORADIUS/GEORADIUSBYMEMBER/GEOSEARCHSTORE commands, the
     STORE and STOREDIST options can only be used when all affected keys
     reside in the same slot.
 1. **Transactions:** All operations within a WATCH/MULTI/EXEC block
@@ -78,7 +78,7 @@ are supported with the following limitations:
 1. **Lua scripts:** All keys that are used by the script must reside in
     the same slot and need to be provided as arguments to the
     EVAL/EVALSHA commands (as per the Redis specification).
-1. **Renaming keys:** The use of the RENAME/RENAMENX commands is
+1. **Renaming/Copy keys:** The use of the RENAME/RENAMENX/COPY commands is
     allowed only when both the key's original name and its new name are
     mapped to the same hash slot.
 1. **Variadic commands**: The use of (MGET, MSET, HMGET, HMSET, etc..)
@@ -142,7 +142,7 @@ default RegEx rules that implement the standard hashing policy are:
 | .\*{(?\<tag\>.\*)}.\* | Hashing is done on the substring between the curly braces. |
 | (?\<tag\>.\*) | The entire key's name is used for hashing. |
 
-You can modify existing rules, add new ones, delete rules or change
+You can modify existing rules, add new ones, delete rules, or change
 their order to suit your application's requirements.
 
 ### Custom hashing policy notes and limitations

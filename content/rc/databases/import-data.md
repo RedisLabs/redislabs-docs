@@ -17,7 +17,7 @@ aliases: /rv/how-to/importing-dataset-redis-cloud/
 ---
 You can import an existing dataset into your Redis Cloud instance from an existing Redis server or an RDB file.
 
-In order to import a sharded database that has multiple RDB files you must first merge the files into a single RDB.
+In order to import a sharded database that has multiple RDB files, you must first merge the files into a single RDB.
 For assistance, contact [Support](https://support.redislabs.com).
 
 {{< note >}}
@@ -100,10 +100,10 @@ To use the Redis Cloud admin console to import your data, you must first share t
 To share and import an RDB file that is stored in a GCP Storage bucket:
 
 1. Go to the GCP console and click on your GCP project.
-1. Click on the menu to open it, and select **Storage** to open the Storage browser and view your buckets.
+1. Click on the menu to open it and select **Storage** to open the Storage browser and view your buckets.
 1. Click on the bucket where the RDB file is stored.
 1. Edit the file permissions:
-    1. Click on the RDB file menu to open it, and click **Edit permissions**.
+    1. Click on the RDB file menu to open it and click **Edit permissions**.
     1. Click **Add item**.
     1. Enter the user details and access:
        - In the Entity field of the new item, select **User**.
@@ -125,7 +125,7 @@ To share and import an RDB file that is stored in a GCP Storage bucket:
 
 ### Via Azure Blob Storage container
 
-To import an RDB file that is stored in an Microsoft Azure Blog storage container:
+To import an RDB file that is stored in a Microsoft Azure Blog storage container:
 
 1. In the Redis Cloud admin console, select the target database.
 1. Click ![Import](/images/rc/icon_import.png#no-click "Import").

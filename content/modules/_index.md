@@ -4,7 +4,8 @@ description:
 weight: 70
 alwaysopen: false
 categories: ["Modules"]
-aliases: /rs/developing/modules/
+aliases: /modules/
+         /rs/developing/modules/
 ---
 Redis develops several modules that extend the core Redis feature set. Some of the features these modules provide include [querying, indexing and full-text search]({{< relref "/modules/redisearch" >}}), [JSON support]({{< relref "/modules/redisjson" >}}), and [probabalistic data structures]({{< relref "/modules/redisbloom" >}}).
 

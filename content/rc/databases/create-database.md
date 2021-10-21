@@ -1,5 +1,6 @@
 ---
 Title: Create a database
+linkTitle: Create database
 description:
 weight: 10
 alwaysopen: false
@@ -9,81 +10,118 @@ aliases: /rv/administration/setup_and_editing/create-databases/
          /rc/administration/setup_and_editing/create-databases/
          /rc/administration/setup-and-editing/creating-databases/
 ---
-Once you have a subscription, you can easily create a database in Redis Cloud by following these steps:
+To create a database in your Redis Enterprise Cloud [subscription]({{< relref "rc/subscriptions/" >}}):
 
-1. In the Redis Cloud menu, click **Databases**.
-1. In the subscription where you want to add the database, click ![Add](/images/rs/icon_add.png#no-click "Add").
-1. Configure the database:
-    - **Name** - Enter a name for the database. (Up to 40 characters long)
-    - **Protocol** - Select whether the database uses **Redis** or **Memcached**.
-    - **Memory** - Enter a memory limit for the database. If replication is on, the database limit includes the memory of the slave shards.
-    - **Redis on Flash** - If your database uses [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
-        enter the average data structure size (in bytes). This helps us optimize your database.
-    - **Throughput** - In **Throughput by**, select the definition of throughput as:
-        - Ops/sec - Enter the required **Max Throughput** between 1000 and 10000000.
-        - Shards - Enter the number of **Shards** you require for the database.
-    - **Replication** - By default, each shard has a slave shard.
-        If you do not require slave shards, disable replication.
-    - **Data Persistence** - Select when and how the data is saved to [persistent storage]({{< relref "rc/databases/configuration/data-persistence.md" >}}) :
-        - None - Data is not persisted to disk at all.
-        - Append Only File (AoF) one second - Data is fsynced to disk every second.
-        - Snapshot every 1 hour - A snapshot of the database is created every hour.
-        - Snapshot every 6 hours - A snapshot of the database is created every 6 hours.
-        - Snapshot every 12 hours - A snapshot of the database is created every 12 hours.
-    - **OSS Cluster API** - You can:
-        - Enable [OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}})
-            to expose the cluster topology to your application.
-        - Select **Use external endpoint** to let clients connect to the OSS cluster API throught the external endpoint.
-    - **Replica Of** - You can enable [Replica Of]({{< relref "/rs/administering/designing-production/active-passive.md" >}})
-        and select the endpoint of a database to hold a copy of the data.
+1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
-        {{< note >}}
-You must configure [VPC Peering]({{< relref "/rc/security/vpc-peering.md" >}})
-between the VPC that this database is on and the VPC that the destination database is on.
-        {{< /note >}}
+2. If you have more than one subscription, select the target subscription from the list.  This displays the **Databases** tab for the selected subscription.
 
-    - [**Access Control & Security**]({{< relref "/rs/security/tls-ssl.md" >}}) - You can:
-        - Enable the **Default User** for the database.
-            We recommend that you use a complex password between 8 and 128 characters, and with at least one uppercase letter (A-Z), one lowercase letter (a-z), one number (0-9), and one special character.
-        - Specify the **Source IP/Subnet** addresses that your database receives
-            traffic from, for example your application server.
-        - Enable **SSL Client Authentication**, and either:
-            - **Generate Client Certificate** and configure your client to use
-                the generated certificate.
-            - Paste the certificate for your client.
-    - **Data Eviction Policy** - Select a policy for evicting data when the memory limit is reached.
-    - **Periodic Backups** - Enable backups and specify the [database backup]({{< relref "/rc/databases/back-up-data.md" >}}) location.
-    - **Modules** - Enable modules and select the module to use with the database.<a name="supported-modules">&nbsp;</a>
+    {{<image filename="images/rc/subscription-flexible-databases-tab-pending.png" alt="The Databases tab summarizes databases created for a given subscription." >}}{{< /image >}}
 
-        - For applications that require high-throughput, use a Redis Cloud Flexible subscription.
-        - For RedisGraph, use the [sizing calculator](https://redislabs.com/redis-enterprise/redis-graph/redisgraph-calculator/)
-            to calculate the required resources.
-        - For RediSearch on a Redis Cloud Flexible (or Annual) subscription, enter the estimated number of documents you want to index.
-    - **Alert Settings** - Select the alerts that you want sent to you and your team when the specified threshold is exceeded.
-1. Click **Activate**.
+3. Select the **New database** button.
 
-After you click **Activate**, Redis Cloud:
+    {{<image filename="images/rc/button-database-new.png" alt="The New Database button creates a new database for your subscription." >}}{{< /image >}}
 
-- Calculates the number of shards needed for this database.
-- Calculate if is enough space to fit the database in the current infrastructure
-    or if you must increase the cloud resources.
-- Checks that you have enough unused shards in your subscription.
+This displays the **Create database** screen, which varies according to your subscription plan.
 
-If a new infrastructure needs to be deployed, or more shards need to be
-purchased, Redis Cloud shows you the additional instances/shards that you need for this
-database and the cost of the additional resources. You can review this information
-and approve the additional resources. After you approve, Redis Cloud activates the resources.
+{{<image filename="images/rc/database-create-general-flexible.png" alt="Use the New Database screen to create a new database for your subscription." >}}{{< /image >}}
 
-When activation is completed, creates the database. During this process you can see:
+The **Create database** screen is divided into sections, each dedicated to a specific category of settings.  Note that not every section or setting is available to every [subscription plan]({{< relref "rc/subscriptions/" >}}).
 
-- An orange spinning icon on the top right to turn to a green checkmark
-- The **Endpoint** of the new database
+## General section
 
-## Supported modules
+The **General** section defines basic properties about your database.
 
-Redis Enterprise Cloud supports the following modules: [RediSearch v2]({{< relref "/modules/redisearch/" >}}), [RedisBloom]({{< relref "/modules/redisbloom/" >}}), [RedisJSON]({{< relref "/modules/redisjson/" >}}), [RedisTimeSeries]({{< relref "/modules/redistimeseries/" >}}), and [RedisGraph]({{< relref "/modules/redisgraph/" >}}).
+The available settings vary according to your subscription plan:
 
-<!-- Video out of date
-Here is a video tutorial that shows this process: -->
+|Setting name|Description|
+|:-----------|:----------|
+| **Subscription** | Read-only description of your subscription plan, including cloud provider and region |
+| **Active-Active Redis** | Checked when the subscription supports Active-Active databases (_coming soon; Flexible or Annual subscriptions only_) |
+| **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
+| **Database Name** | A name for your database (_required_) |
+| **Protocol**  | Set to _Redis_ unless you need to support legacy memcached databases |
+| **Modules** | Extend core Redis functionality using [modules]({{< relref "modules/" >}}) |
 
-<!-- {{< youtube Z8KgtMsyNx0 >}} -->
+## Scalability section
+
+The **Scalability** section lets you manage the maximum size, throughput, and hashing policy for a database.
+
+{{<image filename="images/rc/database-create-scalability-flexible.png" alt="Use the Scalability section to control the size, throughput, and hashing policy for a database." >}}{{< /image >}}
+
+The **Scalability** section is available only for Flexible and Annual plans.
+
+|Setting name|Description|
+|:-----------|:----------|
+| **Memory size** | Maximum size (in GB) for your database |
+| **Throughput** | Defines throughput in terms of maximum operations per second for the database
+| **Shards** | Defines the throughput in terms of shards dedicated to the database
+| **Hashing policy** | Defines the [hashing policy]({{< relref "rs/concepts/high-availability/clustering.md#changing-the-hashing-policy" >}}) |
+| **Cluster OSS** | Enables the [OSS Cluster API]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) for a database<br/><br/>When this option is enabled, you cannot define a custom hashing policy|
+
+To learn more about these settings and when to use them, see [Database clustering]({{< relref "/rs/concepts/high-availability/clustering.md" >}}).
+
+### Memory size
+
+Memory size represents the maximum amount of memory for the database, which includes data values, keys, module data, and overhead for specific features.  High availability features, such as replication and Active-Active, dramatically increase memory consumption.  
+
+Here are some general guidelines:
+
+- Memory size represents an upper limit.  You cannot store more data than the memory size.  Depending on your other selections, available memory for data may be much less than expected.
+
+- Replication doubles memory consumption; that is, 512MB of data requires at least 1GB of memory size when replication is enabled.
+
+- Active-Active replication also doubles memory consumption.  The effect is cumulative; that is, if you enable Active-Active and replication, the memory size impact can be as large as four times (4x) the original data size.  (This is significantly reduced when [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) is enabled.)
+
+- Modules also consume memory.
+
+Memory limits in Redis Enterprise Cloud are subject to the same considerations as Redis Enterprise Software; to learn more, see [Database memory limits]({{< relref "/rs/administering/database-operations/memory-limit.md" >}})
+
+## Durability section
+
+The **Durability** section helps you keep your database (and your data) available when problems occur.
+
+{{<image filename="images/rc/database-create-durability-flexible.png" alt="Use the Durability settings to keep your database (and data) available when problems occur." >}}{{< /image >}}
+
+
+|Setting name|Description|
+|:-----------|:----------|
+| **High availability** | Replicates your data across multiple nodes, as allowed by your subscription plan |
+| **Data persistence** | Defines whether (and how) data is saved to disk; [available options]({{< relref "/rc/databases/configuration/data-persistence.md" >}}) depend on your plan type |
+| **Data eviction policy** | Defines what happens when your database reaches its [memory size limit]({{< relref "/rc/databases/configuration/data-eviction-policies.md" >}}) |
+| **Remote backup** | (_paid Fixed, Flexible, or Annual subscriptions only_) When enabled, identifies a location and interval for [data backups]({{< relref "/rc/databases/back-up-data.md" >}}). |
+| **Active-passive Redis** | (_Flexible or Annual subscriptions only_) When enabled, identifies a path to the linked database. |
+
+## Security section
+
+The **Security** section helps you control access to your database.
+
+{{<image filename="images/rc/database-create-security-flexible.png" alt="Use the Security settings to control access to your database." >}}{{< /image >}}
+
+
+|Setting name|Description|
+|:-----------|:----------|
+| **Default user** | When enabled, permits access using a simple password |
+| **Redis password** | Password assigned to the database when created |  
+| **CIDR allow list** | (_paid Fixed, Flexible, or Annual subscriptions only_) Range of IP addresses/security groups allowed to [access the database]({{< relref "/rc/security/cidr-whitelist.md" >}})|
+| **Transport layer security (TLS)** | (_Flexible or Annual subscriptions only_) Enables [transport security layer]({{< relref "/rc/security/database-security/tls-ssl.md" >}})(TLS) encryption for database access.|
+
+
+## Alerts section
+
+The **Alerts** section defines notification emails sent to your account and the conditions that trigger them.
+
+{{<image filename="images/rc/database-create-alerts-flexible.png" alt="The Alerts section defines the notification emails and their triggering conditions." >}}{{< /image >}}
+
+The available alerts vary according to the subscription type.
+
+|Setting name|Description|
+|:-----------|:----------|
+| **Dataset size has reached** | When enabled, sends an an email when the database reaches the defined memory size _(Free, Flexible, or Annuals plans only_)|
+| **Total size of datasets under this plan reached** | When enabled, sends an an email when the database reaches the defined memory size _(paid Fixed plans only_)|
+| **Throughput is higher than** | When enabled, sends an email when the operations per second exceed the defined threshold _(paid Fixed, Flexible, or Annuals plans only_)|
+| **Throughput is lower than** | When enabled, sends an email when the operations per second falls below the defined threshold _(paid Fixed, Flexible, or Annuals plans only_)|
+| **Latency is higher than** | When enabled, sends an an email when the latency exceeds the defined memory size _(paid Fixed plans only_)|
+| **Number of connections** | When enabled, sends an email when the connections exceeds the defined limit.  _(Free and Fixed plans only)_|
+| **Replica Of - database unable to sync with source** | When enabled, sends email when the replica database cannot sync with the primary (source) database _(Flexible or Annuals plans only_) |
+| **Replica Of - sync lag is higher than** | When enabled, sends email when the sync lag exceeds the defined threshold _(Flexible or Annuals plans only_) |

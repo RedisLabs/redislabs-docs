@@ -2,6 +2,91 @@
 
 The docs are updated regularly; here are some recent highlights:
 
+## September 2021
+
+- Changes affecting all sections:
+
+    - PDF support is enabled for all articles on the [latest branch](https://docs.redis.com/latest/).  ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/) and others)
+
+        In addition, you can download [a tarball](https://docs.redis.com/latest/pdfs/current/redis-docs-latest.tar.gz) containing PDFs of all docs.  The tarball contains separate PDFs for each section of the website.
+
+        PDFs update when content is pushed to latest, so they're always up-to-date.
+
+    - Issues with the in-page table of contents have been addressed. ([PR #1543](https://github.com/RedisLabs/redislabs-docs/pull/1543)) 
+
+- Redis Enterprise Software doc updates: 
+
+    - Clarified and fixed issues in the 6.2.4 docs. ([PR #1536](https://github.com/RedisLabs/redislabs-docs/pull/1536)) 
+
+- Redis Enterprise Cloud updates:
+
+    - Docs were updated to support the new user experience; these changes include updates, rewrites, and reorgs.  Some changes remain, but the major workflows have been updated.  ([PR #1274](https://github.com/RedisLabs/redislabs-docs/pull/1274) & [PR #1548](https://github.com/RedisLabs/redislabs-docs/pull/1452))
+
+    - A new article helps you manage [billing and payments](https://docs.redis.com/latest/rc/billing-and-payments/) for your subscription. ([PR #1274](https://github.com/RedisLabs/redislabs-docs/pull/1274))  
+
+- Kubernetes doc updates:
+
+    - Updated docs to support the K8s [6.2.4-1 release](https://docs.redis.com/latest/platforms/release-notes/k8s-6-2-4-1-2021-09/). ([PR #1527](https://github.com/RedisLabs/redislabs-docs/pull/1527)) 
+
+    - [Manage Redis Enterprise databases on Kubernetes](https://docs.redis.com/latest/platforms/kubernetes/redb/db-controller/) has been updated. ([PR #1524](https://github.com/RedisLabs/redislabs-docs/pull/1524)) 
+
+    - A new article shows how to [connect to the admin console](https://docs.redis.com/latest/platforms/kubernetes/rec/connect-to-admin-console/) to manage the Redis Enterprise cluster in your Kubernetes deployment.  ([PR #1529](https://github.com/RedisLabs/redislabs-docs/pull/1529))
+
+    - A new article shows how to [enable internode encryption](https://docs.redis.com/latest/platforms/kubernetes/security/internode-encryption/) between Redis Enterprise cluster nodes in your Kubernetes deployment.  ([PR #1526](https://github.com/RedisLabs/redislabs-docs/pull/1526))  
+
+- Additional updates to fix typos, missing images, and other glitches
+
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-09-01..2021-09-30).
+
+
+## August 2021
+
+- Changes affecting all sections:
+
+    - The company name change was incorporated into the website and its content ([PR #1480](https://github.com/RedisLabs/redislabs-docs/pull/1480) and others)
+
+    - Breadcrumbs now use the same text as the table of contents ([PR #1501](https://github.com/RedisLabs/redislabs-docs/pull/1501))
+
+- Redis Enterprise Software doc updates: 
+
+    - Updated docs to support the 6.2.4 release ([PR #1479](https://github.com/RedisLabs/redislabs-docs/pull/1479), [PR #1489](https://github.com/RedisLabs/redislabs-docs/pull/1471), [PR #1472](https://github.com/RedisLabs/redislabs-docs/pull/1489), [PR #1506](https://github.com/RedisLabs/redislabs-docs/pull/1506), [PR #1511](https://github.com/RedisLabs/redislabs-docs/pull/1511), and [PR #1514](https://github.com/RedisLabs/redislabs-docs/pull/1514)):
+    
+        - A new article describing [internode encryption](https://docs.redis.com/latest/rs/security/internode-encryption/)
+
+        - Rewrites to the [upgrade existing deployment](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/) doc
+
+        - [release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-4-august-2021/) 
+
+        - [rladmin updates](https://docs.redis.com/latest/rs/references/rladmin/)
+        
+    - A copy of the [v6.0.x docs](https://docs.redis.com/6.0/rs/) has been archived to support customers who remain on those releases ([PR #1452](https://github.com/RedisLabs/redislabs-docs/pull/1452))
+
+- Redis Enterprise Cloud
+
+    - Continued updating and reorganizing docs for the updated user experience (in preview) ([PR #1419](https://github.com/RedisLabs/redislabs-docs/pull/1419), [PR #1453](https://github.com/RedisLabs/redislabs-docs/pull/1453), [PR #1454](https://github.com/RedisLabs/redislabs-docs/pull/1454))
+
+- Kubernetes doc updates:
+
+    - A new article describes how to set up external routing using an [ingress controller](https://docs.redis.com/latest/platforms/kubernetes/tasks/set-up-ingress-controller/) ([PR #1466](https://github.com/RedisLabs/redislabs-docs/pull/1466), [PR #1497](https://github.com/RedisLabs/redislabs-docs/pull/1497))
+
+    - Added a task describing how to run the [log collector script](https://docs.redis.com/latest/platforms/kubernetes/tasks/run-log-collector-script/)  ([PR #1486](https://github.com/RedisLabs/redislabs-docs/pull/1471), [PR #1472](https://github.com/RedisLabs/redislabs-docs/pull/1486))
+
+    - Multiple typos and clarifications have been made throughout the section ([PR #1505](https://github.com/RedisLabs/redislabs-docs/pull/1505), [PR #1516](https://github.com/RedisLabs/redislabs-docs/pull/1516), [PR #1517](https://github.com/RedisLabs/redislabs-docs/pull/1517))
+
+- Additional updates:
+
+    - Module release notes have been updated to reflect recent updates ([PR #1508](https://github.com/RedisLabs/redislabs-docs/pull/1508), [PR #1509](https://github.com/RedisLabs/redislabs-docs/pull/1509), [PR #1510](https://github.com/RedisLabs/redislabs-docs/pull/1510))
+
+    - The Glossary has been expanded ([PR #1490](https://github.com/RedisLabs/redislabs-docs/pull/1490))
+
+    - PDF generation is currently in preview
+
+- Additional updates to fix typos, missing images, and other glitches
+
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-08-01..2021-08-31)
+
+
+
 ## July 2021
 
 - Redis Enterprise Software doc updates:

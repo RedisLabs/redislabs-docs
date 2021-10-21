@@ -7,6 +7,36 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## v2.0.12 (September 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Enhancements:
+  - #[2184](https://github.com/redisearch/redisearch/issues/2184) API: getter functions for score, language and stop words list
+  - #[2188](https://github.com/redisearch/redisearch/issues/2188) Introduced the UNF parameter to SORTABLE to disable normalisation on TAG/TEXT fields
+  - #[2218](https://github.com/redisearch/redisearch/issues/2218) API: added RediSearch_CreateDocument2
+
+- Bug fix:
+  - #[2153](https://github.com/redisearch/redisearch/issues/2153) Restore FT.INFO complexity to O(1)
+  - #[2203](https://github.com/redisearch/redisearch/issues/2203) FT.AGGREGATE returns inaccurate results when TAG field is not set in hash
+
+
+## v2.0.11 (August 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Enhancements:
+  - #[2156](https://github.com/redisearch/redisearch/issues/2156) TAG fields can now be case sensitive using the [CASESENSITIVE parameter](https://oss.redis.com/redisearch/2.0/Tags/#creating_a_tag_field)
+  - #[2113](https://github.com/redisearch/redisearch/issues/2113) An already existing document that can't be updated is removed from the index (JIRA MOD-1266)
+  - #[267](https://github.com/RediSearch/RSCoordinator/pull/267) #[287](https://github.com/RediSearch/RSCoordinator/pull/287) Updated Hiredis to support Intershard TLS
+
+- Bug Fixes:
+  - #[2117](https://github.com/redisearch/redisearch/issues/2117) #[2115](https://github.com/redisearch/redisearch/issues/2115) Fix crash on coordinator on first value reducer
+
 ## v2.0.10 (July 2021)
 
 This is a maintenance release for version 2.0.
@@ -16,12 +46,14 @@ Details:
 - Enhancements:
     - #[2025](https://github.com/redisearch/redisearch/issues/2025) Improve performances on [numeric range search](https://oss.redislabs.com/redisearch/2.0/Query_Syntax/#numeric_filters_in_query)
     - #[1958](https://github.com/redisearch/redisearch/issues/1958) #[2033](https://github.com/redisearch/redisearch/issues/2033) Support of sortable on the [GEO type](https://oss.redislabs.com/redisearch/2.0/Overview/#geo_index)
+    - #[2079](https://github.com/redisearch/redisearch/issues/2079) Update to Snowball 2.1.0, adds Armenian, Serbian and Yiddish stemming support
+    - #[2002](https://github.com/redisearch/redisearch/issues/2002) Add stopwords list support in the API
 
 - Bug fix:
     - #[2045](https://github.com/redisearch/redisearch/issues/2045) Possible crash when loading an RDB file (silently ignore double load of alias)
     - #[2099](https://github.com/redisearch/redisearch/issues/2099) #[2101](https://github.com/redisearch/redisearch/issues/2101) Fixes possible crash with CRDT on [FT.DROPINDEX](https://oss.redislabs.com/redisearch/2.0/Commands/#ftdropindex)
     - #[1994](https://github.com/redisearch/redisearch/issues/1994) Skip intersect iterator qsort if [INORDER](https://oss.redislabs.com/redisearch/2.0/Query_Syntax/#query_attributes) flag is used 
-
+    - #[257](https://github.com/redisearch/rscoordinator/issues/257) Switch coordinator to send _FT.CURSOR instead FT.CURSOR to prevent data access without holding the lock
 
 ## v2.0.9 (May 2021)
 

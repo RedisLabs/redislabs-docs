@@ -19,11 +19,11 @@ to your users.
 
 ## Network security
 
-Redis Cloud supports two types of network security: [IP Restrictions]({{< relref "/rc/security/database-security/network-security.md">}}#ip) and [VPCs]({{<relref "/rc/security/database-security/network-security.md">}}#virtual-private-clouds). We recommend that you employ that least one of these network security options to constrain access to your databases.
+Redis Cloud supports two types of network security: [IP Restrictions]({{< relref "/rc/security/database-security/network-security.md">}}#ip) and [VPCs]({{<relref "/rc/security/database-security/network-security.md">}}#virtual-private-clouds). We recommend that you employ at least one of these network security options to constrain access to your databases.
 
 ## Transport Layer Security (TLS)
 
-Redis Cloud supports [Transport Layer Security]({{<relref "/rc/security/database-security/tls-ssl.md">}}) (TLS) for database connections. TLS, often called "SSL", ensures the privacy the TCP connection between your application and database. When client
+Redis Cloud supports [Transport Layer Security]({{<relref "/rc/security/database-security/tls-ssl.md">}}) (TLS) for database connections. TLS, often called "SSL", ensures the privacy of the TCP connection between your application and database. When client
 authentication is enabled, TLS also ensures that those clients with an authorized key can connect to your Redis databases.
 We strongly recommend that you enable TLS for any application trasmitting sensitive data across the wire.
 

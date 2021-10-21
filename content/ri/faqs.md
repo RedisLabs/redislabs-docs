@@ -71,7 +71,7 @@ Data is downloaded in one of two ways:
 
 ### What is the overhead of online memory analysis on redis server?
 
-The overhead is minimal. If SYNC command is supported, the overhead is the same as connecting a slave for a short duration. If SYNC command is disabled, we run the  SCAN command followed by DUMP in a pipeline. Neither approach blocks your redis server.
+The overhead is minimal. If SYNC command is supported, the overhead is the same as connecting a replica for a short duration. If SYNC command is disabled, we run the  SCAN command followed by DUMP in a pipeline. Neither approach blocks your redis server.
 
 ### What is offline mode of memory analysis?
 

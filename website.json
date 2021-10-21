@@ -8,12 +8,22 @@
     "RoutingRules": [
         {
             "Condition": {
-                "KeyPrefixEquals": "6.0/"
+                "KeyPrefixEquals": "6.2/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "6.0/rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
             }
         },
         {
@@ -58,12 +68,183 @@
         },
         {
             "Condition": {
+                "KeyPrefixEquals": "rc/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "rs/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/rs/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "ri/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/ri/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "modules/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "platforms/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "kubernetes/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/kubernetes"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "k8s/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/platforms/kubernetes"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redisai/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redisai"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redisbloom/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redisbloom"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redisgears/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redisgears"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redisgraph/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redisgraph"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redisjson/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redisjson"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redisearch/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redisearch"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redissearch/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redisearch"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "redistimeseries/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/modules/redistimeseries"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "glossary/"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyPrefixWith": "latest/glossary"
+            }
+        },
+        {
+            "Condition": {
                 "KeyPrefixEquals": "latest/rc/how-to/creating-aws-user-redis-enterprise-vpc/"
             },
             "Redirect": {
                 "HostName": "docs.redis.com",
                 "Protocol": "https",
                 "ReplaceKeyPrefixWith": "latest/rc/how-to/creating-iam-resources/creating-aws-user-redis-enterprise-vpc/"
+            }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "latest/pdfs/",
+                "HttpErrorCodeReturnedEquals": "403"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyWith": "latest/"
             }
         }
 

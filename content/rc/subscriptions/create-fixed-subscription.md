@@ -10,25 +10,20 @@ aliases: /rv/administration/setup_and_editing/create-subscription/
          /rc/administration/setup-and-editing/create-subscription/
          /rc/administration/setup/create-subscription/
 ---
-Fixed Size subscription plans provide services designed for low throughput workflows.  Several tiers are available, each designed for different memory sizes and integration requirements.
-
-Creating a Fixed subscription is a two-step process:
-
-1. Create a subscription
-1. Create an initial database
+Fixed Size subscription plans support low throughput workflows.  Several tiers are available, each designed for different memory sizes and integration requirements.
 
 When creating your subscription, you'll need to know which tier to choose.
 
-(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create a free subscription and an initial database.)
+(If you're new to Redis Enterprise Cloud, the [quick start]({{<relref "/rc/rc-quickstart.md">}}) helps you create a free subscription and an initial database.  You also learn how to connect to your database.)
 
 
-## Fixed size subscription tiers
+## Fixed plan subscription tiers
 
 Fixed plan pricing scales according to the memory size of all databases defined in the subscription.  Additional limits also apply, as shown here (updated February 2021):
 
-| Max DB Size | Number of<br/>Databases | Concurrent<br/>Connections | Security<br/> Groups | Max IP<br/> Auth rules |
+| Max DB Size &nbsp; | Number of<br/>Databases | Concurrent<br/>Connections | Security<br/> Groups | Max IP<br/> Auth rules |
 |------------:|:---------:|:-----------:|:---------------:|:-------------:|
-| 30 MB (free)     | 1 | 30 | N/A | N/A |
+| (Free) 30 MB &nbsp;&nbsp;&nbsp;&nbsp; | 1 | 30 | N/A | N/A |
 | 100 MB &nbsp;&nbsp;&nbsp;&nbsp; | 4 | 256 | 1 | 4 |
 | 250 MB &nbsp;&nbsp;&nbsp;&nbsp; | 8 | 256 | 1 | 4 |
 | 500 MB &nbsp;&nbsp;&nbsp;&nbsp; | 12 | 512 | 1 | 4 |
@@ -39,62 +34,59 @@ Fixed plan pricing scales according to the memory size of all databases defined 
 
 The 30 MB Fixed plan is free; it's designed for training and prototype purposes.
 
+All paid (100 MB and above) fixed plans support replication and backups (daily and instant).
+
 If you need additional resources, you can update your subscription at any time.
 
-## Step 1: Create a subscription
+## Create a Fixed subscription
 
-To create a Fixed (or Free) subscription:
+To create a [Fixed subscription]({{< relref "/rc/subscriptions/#subscription-plans" >}}):
 
-1.  From the admin console menu, choose **Subscriptions**.
+1.  From the admin console menu, select the **New Subscription** button.  
 
-2.  Select the **New Subscription** button ({{<image filename="images/rc/icon-subscription-add-button.png" width="24px" alt="The Add Subscripton button" >}}{{< /image >}}) to display the **Create Subscription** screen.
+    {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
-    {{<image filename="images/rc/fixed-subscription-create.png" width="75%" alt="The Fixed Size Plan section of the Create Subscription screen." >}}{{< /image >}}
+2. When the **New subscription** page appears, select **Fixed plans** and then scroll to the cloud vendor options.
 
-3.  When the **New Subscription** screen appears, enter your cloud provider details.
+    {{<image filename="images/rc/subscription-new-plan-options.png" alt="Available subscription plan options." >}}{{< /image >}}
 
-4.  Select your **High Availability** preferences.
+3.  Choose a **Cloud Provider** and a **Region**.
+
+    {{<image filename="images/rc/subscription-new-cloud-vendor-options.png" alt="Available cloud vendor options." >}}{{< /image >}}
+
+4.  In the **High-availability** panel, select your replication settings.  
+
+    - _No-replication_ means that you will have a single copy of your database.
+    - _Single-zone replication_ means that your database will have a primary and a replica located in the same cloud region.  If anything happens to the primary, the replica takes over and becomes the new primary.
+    - _Multi-zone replication_ means that the primary and the replicas are stored in different region zones, which provides additional protection by distributing the replicas.
 
 5.  Select the desired plan size.   
 
     To create a Free subscription, select the 30 MB plan size.  
 
-6.  Enter a subscription name and payment details (if prompted).
+    {{<image filename="images/rc/subscription-new-fixed-tiers.png" alt="Available tiers for Fixed size subscription plans." >}}{{< /image >}}
 
-    {{<image filename="images/rc/fixed-subscription-paid-tier.png" width="75%" alt="Database name and payment details are needed for paid plans." >}}{{< /image >}}
+6.  Enter a subscription name and payment details.
 
-7.  Select the **Create** button.
+7.  Locate and then select the **Create Subscription** button, which is located below the **Credit card** details.
 
-The steps can vary slightly:
+    {{<image filename="images/rc/button-subscription-create.png" alt="The Create Subscription button." >}}{{< /image >}}
 
-- You aren't prompted for payment details when creating a Free subscription.
+Here are few details to keep in mind:
 
-    {{<image filename="images/rc/fixed-subscription-free-tier.png" width="75%" alt="You aren't prompted for payment method when creating a free plan." >}}{{< /image >}}
+- You aren't prompted for payment details when creating a Free subscription. 
 
-- If you're creating a paid subscription and haven't previously entered a payment method, you'll enter payment details after clicking the **Create** button in Step 7.
+- You can only have one free subscription at a time.
 
-    {{<image filename="images/rc/fixed-sub-add-credit-card.png" width="75%" alt="The Add Credit Card screen appears when you create a paid plan before adding a payment method." >}}{{< /image >}}
+- If you're creating a paid subscription and haven't previously entered a payment method, use the **Add Credit Card** button to add one.
 
-    If you cancel the **Add Credit Card** screen at this point, you return to the **Create Subscription** screen.
+    {{<image filename="images/rc/icon-add-credit-card.png" alt="The Add credit card icon." >}}{{< /image >}}
 
-## Step 2: Create initial database
+When you create your subscription, there's a brief pause while your request is processed and then you're taken to the **Subscription details** page.
 
-After creating your new subscription, the **Create Database** screen appears.
+{{<image filename="images/rc/subscription-fixed-databases-none.png" alt="The Subscription details screen with no databases." >}}{{< /image >}}
 
-{{<image filename="images/rc/fixed-sub-create-database-paid.png" width="75%" alt="The Create Database screen appears when you create a new subscription." >}}{{< /image >}}
+To create your first database, select the **New Database** button and then fill in the appropriate details.
 
-Here's what you can specify:
+To learn more, see [Create a database]({{<relref "rc/databases/create-database.md">}}).
 
-|Setting name|Description|
-|:-----------|:----------|
-|**Database Name** | A name for your database (_required_)|
-|**Protocol** | Either _Redis_ (default) or _Memcached_ |
-|**Replication** | Enable or disable according to your preferences (_paid only_)|
-|**Data Persistence** | Controls when data is persisted to storage (_paid only_)|
-|**Access Control & Security** | Defines security policies; free accounts limited to password only | 
-|**Data Eviction Policy** | Determines what happens when you run out of space. | 
-|**Periodic Backup** | When enabled, defines a path for backups (_paid only_) |
-|**Modules** | Defines the module associated with the database, if any |
-|**Alert Settings** | Identfies when to send alert emails regarding database conditions. |
-
-For more info, see [Creating Databases]({{<relref "rc/databases/create-database.md">}}).

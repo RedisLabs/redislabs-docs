@@ -32,8 +32,7 @@ Before installing Redis Enterprise Software, you need to:
     - Multiple Linux distributions (Ubuntu, RedHat Enterprise Linux (RHEL)/IBM CentOS, Oracle Linux)
     - [Amazon AWS AMI]({{< relref "configuring-aws-instances.md" >}})
     - [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) (for development and testing only)
-    - [Pivotal Cloud Foundry]({{< relref "/platforms/pcf/using-pcf.md" >}})
-    - [Kubernetes]({{< relref "/platforms/kubernetes/_index.md" >}})
+    - [Kubernetes]({{< relref "/kubernetes/_index.md" >}})
 
     For complete details, see [Supported platforms]({{< relref "/rs/installing-upgrading/supported-platforms.md" >}})
 

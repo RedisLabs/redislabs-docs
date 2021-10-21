@@ -1,8 +1,12 @@
 ---
-Title: Release Notes
+Title: RedisInsight release notes
+linkTitle: Release notes
 description:
 weight: 70
 alwaysopen: false
 categories: ["RI"]
 ---
-{{< allchildren style="h2" description="true" />}}
+
+Here are the most recent changes for RedisInsight:
+
+{{< table-children columnNames="Version (Date),Release notes" columnSources="LinkTitle,Title" enableLinks="Title" >}}
