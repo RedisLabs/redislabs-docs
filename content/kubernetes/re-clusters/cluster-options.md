@@ -13,21 +13,20 @@ aliases: [
   /kubernetes/re-clusters/cluster-options/,
 ]
 ---
-A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD).
-The default format is a YAML definition such as:
+A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD). The default format is a YAML definition such as:
 
 ```yaml
 apiVersion: app.redislabs.com/v1
 kind: RedisEnterpriseCluster
 metadata:
-  name: rec
-  namespace: my-project
+  name: <rec-name>
+  namespace: <namespace>
 spec:
   nodes: 3
   persistentSpec:
     enabled: true
   uiServiceType: ClusterIP
-  username: demo@redislabs.com
+  username: <admin-username>
   redisEnterpriseNodeResources:
     limits:
       cpu: 4000m
@@ -38,12 +37,10 @@ spec:
   redisEnterpriseImageSpec:
     imagePullPolicy: IfNotPresent
     repository: redislabs/redis
-    versionTag: 6.0.6-39.rhel7-openshift
+    versionTag: <current-version>
 ```
 
-This example may be useful to get started with a test or development deployment.
-You can modify it for your required deployment use case.
-This file and other references are available in the [RedisLabs/redis-enterprise-k8s-docs](https://github.com/RedisLabs/redis-enterprise-k8s-docs) GitHub repository.
+Example files and other references are available in the [RedisLabs/redis-enterprise-k8s-docs](https://github.com/RedisLabs/redis-enterprise-k8s-docs) GitHub repository.
 
 Here are the main fields for you to review and edit:
 

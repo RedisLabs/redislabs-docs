@@ -28,30 +28,7 @@ spec:
   nodes: 3
 ```
 
-Default values:
-
-serviceAccountName : redis enterprise cluster name
-createServiceAccount: TRUE
-uiServiceType: ClusterIP
-license: empty string (trial mode license)
-licenseSecretName: empty string
-username: demo@relisabs.com
-redisEnterpriseImageSpec: default for this version
-redisEnterpriseServicesRiggerSpec: default for this version
-bootstrapperImageSpec: default for this version
-redisEnterpriseNodeResources: 2 CPUs and 4 GB memory
-bootstrapperResources: .5 CPU and .5GB memory
-pullSecrets: empty
-sideContainersSpec: empty
-extraLabels: empty
-podSecurityPolicyName: empty
-enforceIPv4: FALSE
-
-
-
-
-
-The full list of attributes supported through the Redis Enterprise Cluster (REC) API can be found HERE.
+[Options for Redis Enterprise clusters]({{< relref "kubernetes/re-clusters/cluster-options.md" >}}) has more detail on common configuration options. The [Redis Enterprise Cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) has a full list of supported attributes.
 
 kubectl apply -f rec.yaml
 
@@ -69,37 +46,6 @@ Note: Once the cluster is up, the cluster GUI and API could be used to configure
 ui service created by the operator and the default credentials as set in a secret.
 
 The secret name is the same as the cluster name within the namespace.
-
-### Create a single-node cluster
-
-Single-node clusters have small minimum node resources and small database capacity. The most common use case for single-node clusters is for a volatile cache.
-
-```
-apiVersion: app.redislabs.com/v1alpha1
-kind: RedisEnterpriseCluster
-metadata:
-  name: "any-name-you-want"
-spec:
-  nodes: 1
-  redisEnterpriseNodeResources:
-    limits:
-      cpu: "2"
-      memory: 2Gi
-    requests:
-      cpu: "2"
-      memory: 2Gi
-  redisEnterpriseServicesConfiguration:
-    mdnsServer:
-      operatingMode: "disabled"
-    cmServer:
-      operatingMode: "disabled"
-    pdnsServer:
-      operatingMode: "disabled"
-    crdbCoordinator:
-      operatingMode: "disabled"
-    crdbWorker:
-      operatingMode: "disabled"
-```
 
 ## Modify your Redis Enterprise cluster (REC)
 
