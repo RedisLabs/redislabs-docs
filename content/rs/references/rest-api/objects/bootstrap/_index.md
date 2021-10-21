@@ -1,7 +1,7 @@
 ---
 Title: Bootstrap object
 linkTitle: bootstrap
-description: Documents the bootstrap object used with Redis Enterprise Software REST API calls.
+description: An object for bootstrap configuration
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

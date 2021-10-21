@@ -1,7 +1,7 @@
 ---
 Title: Shard object
 linkTitle: shard
-description: Documents the shard object used with Redis Enterprise Software REST API calls.
+description: An object that represents a database shard
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

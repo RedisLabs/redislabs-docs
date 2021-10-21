@@ -7,9 +7,15 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
+Some Redis Enterprise [REST API requests]({{<relref "/rs/references/rest-api/requests">}}) may require the user to have specific permissions.
+
+Administrators can assign a predefined role to a user via the [admin console]({{<relref "/rs/security/admin-console-security/user-security">}}) or a [<nobr>`PUT /users/{uid}`</nobr> API request]({{<relref "/rs/references/rest-api/requests/users#put-user">}}) in order to grant necessary permissions to them.
+
 ## Roles
 
-Each user in the cluster has a role assigned to it, which defines the permissions the user holds. Possible roles include:
+Each user in the cluster has an assigned role, which defines the permissions granted to the user.
+
+Available roles include:
 
 - **db_viewer**: Can view database info.
 - **db_member**: Can create or modify databases and view their info.

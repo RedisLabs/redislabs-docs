@@ -1,13 +1,13 @@
 ---
 Title: Job scheduler object
 linkTitle: job_scheduler
-description: Documents the job_scheduler object used with Redis Enterprise Software REST API calls.
+description: An object for job scheduler settings
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents the job_scheduler settings in the cluster.
+An API object that represents the job scheduler settings in the cluster.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

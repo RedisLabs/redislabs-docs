@@ -1,7 +1,7 @@
 ---
 Title: Services configuration object
 linkTitle: services_configuration
-description: Documents the services_configuration object used with Redis Enterprise Software REST API calls.
+description: An object for optional cluster services settings
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

@@ -1,13 +1,13 @@
 ---
 Title: Redis ACL object
 linkTitle: redis_acl
-description: Documents the redis_acl object used with Redis Enterprise Software REST API calls.
+description: An object that represents a Redis access control list (ACL)
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents a RedisACL object
+An API object that represents a Redis [access control list (ACL)]({{<relref "/rs/security/passwords-users-roles">}})
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

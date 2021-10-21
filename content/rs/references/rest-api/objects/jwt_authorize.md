@@ -1,13 +1,13 @@
 ---
 Title: JWT authorize object
 linkTitle: jwt_authorize
-description: Documents the jwt_authorize object used with Redis Enterprise Software REST API calls.
+description: An object for user authentication or a JW token refresh request
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 
-User authentication or JW token refresh request to REST API
+An API object for user authentication or a JW token refresh request.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

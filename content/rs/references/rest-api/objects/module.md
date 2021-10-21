@@ -1,13 +1,13 @@
 ---
 Title: Module object
 linkTitle: module
-description: Documents the module object used with Redis Enterprise Software REST API calls.
+description: An object that represents a Redis module
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 
-Represents a Redis module
+Represents a [Redis module]({{<relref "/modules">}}).
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

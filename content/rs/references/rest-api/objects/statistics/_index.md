@@ -1,7 +1,7 @@
 ---
 Title: Statistics
 linkTitle: statistics
-description: Documents the statistics used with Redis Enterprise Software REST API calls.
+description: An object that contains metrics for clusters, databases, nodes, or shards
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
@@ -9,7 +9,7 @@ categories: ["RS"]
 
 ## Statistics overview
 
-Clusters, nodes, databases, and shards collect various statistics at regular time intervals. You can view the statistics for these objects via `GET stats` requests to their respective endpoints:
+Clusters, databases, nodes, and shards collect various statistics at regular time intervals. You can view the statistics for these objects via `GET stats` requests to their respective endpoints:
 - [Cluster stats]({{<relref "/rs/references/rest-api/requests/cluster/stats">}})
 - [Database stats]({{<relref "/rs/references/rest-api/requests/bdbs/stats">}})
 - [Node stats]({{<relref "/rs/references/rest-api/requests/nodes/stats">}})

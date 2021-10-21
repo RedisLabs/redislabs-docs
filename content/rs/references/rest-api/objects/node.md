@@ -1,7 +1,7 @@
 ---
 Title: Node object
 linkTitle: node
-description: Documents the node object used with Redis Enterprise Software REST API calls.
+description: An object that represents a node in the cluster
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

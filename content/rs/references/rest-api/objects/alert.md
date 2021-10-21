@@ -1,7 +1,7 @@
 ---
 Title: Alert object
 linkTitle: alert
-description: Documents the alert object used with Redis Enterprise Software REST API calls.
+description: An object that contains alert info
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

@@ -1,13 +1,13 @@
 ---
 Title: LDAP mapping object
 linkTitle: ldap_mapping
-description: Documents the ldap_mapping object used with Redis Enterprise Software REST API calls.
+description: An object that represents a mapping between an LDAP group and roles
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents an LDAP mapping
+An API object that represents an [LDAP mapping]({{<relref "/rs/security/ldap/map-ldap-groups-to-roles">}}) between an LDAP group and [roles]({{<relref "/rs/references/rest-api/objects/role">}}).
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

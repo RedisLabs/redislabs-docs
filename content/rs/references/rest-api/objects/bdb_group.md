@@ -1,7 +1,7 @@
 ---
 Title: BDB group object
 linkTitle: bdb_group
-description: Documents the bdb_group object used with Redis Enterprise Software REST API calls.
+description: An object that represents a group of databases with a shared memory pool
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

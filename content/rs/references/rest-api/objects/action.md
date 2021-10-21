@@ -1,7 +1,7 @@
 ---
 Title: Action object
 linkTitle: action
-description: Documents the action object used with Redis Enterprise Software REST API calls.
+description: An object that represents cluster actions
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

@@ -47,11 +47,11 @@ The Redis Enterprise REST API supports the following HTTP headers:
 
 ## API versions
 
-All RLEC API operations are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
+All API requests are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
 
 ## Authentication
 
-Authentication to the RLEC API occurs via Basic Auth. Provide your RLEC username and password as the basic auth credentials.
+Authentication to the API occurs via Basic Auth. Provide your username and password as the basic auth credentials.
 
 All calls must be made over SSL, to port 9443.
 

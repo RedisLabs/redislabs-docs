@@ -7,13 +7,8 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-This page serves as the entry page for the Object reference section of the RS REST API docs.
+Certain [REST API requests]({{<relref "/rs/references/rest-api/requests">}}) require you to include specific objects in the request body. Many requests also return objects in the response body.
 
-When finished, it will contain:
+Both REST API requests and responses represent these objects as [JSON](https://www.json.org).
 
-- General information that applies to objects using by the REST API, where request objects or response objects.
-
-- An allchildren macro that displays a list of available object reference pages.
-
-Pages will be adapted from the HTML shipped in the REST API tarball provided with RS 6.2.4.
-
+{{< table-children columnNames="Object,Description" columnSources="LinkTitle,Description" enableLinks="LinkTitle" >}}

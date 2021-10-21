@@ -1,13 +1,13 @@
 ---
 Title: LDAP object
 linkTitle: ldap
-description: Documents the ldap object used with Redis Enterprise Software REST API calls.
+description: An object that contains the cluster's LDAP configuration
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents the cluster's LDAP configuration.
+An API object that represents the cluster's [LDAP]({{<relref "/rs/security/ldap">}}) configuration.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

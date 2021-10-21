@@ -1,7 +1,7 @@
 ---
 Title: BDB object
 linkTitle: bdb
-description: Documents the bdb object used with Redis Enterprise Software REST API calls.
+description: An object that represents a database
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

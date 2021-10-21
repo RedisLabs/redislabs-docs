@@ -1,7 +1,7 @@
 ---
 Title: Check result object
 linkTitle: check_result
-description: Documents the bdb object used with Redis Enterprise Software REST API calls.
+description: An object that contains the results of a cluster check
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

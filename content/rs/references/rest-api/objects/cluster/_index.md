@@ -1,7 +1,7 @@
 ---
 Title: Cluster object
 linkTitle: cluster
-description: Documents the cluster object used with Redis Enterprise Software REST API calls.
+description: An object that represents a cluster
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

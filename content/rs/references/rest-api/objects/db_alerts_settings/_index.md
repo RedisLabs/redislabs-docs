@@ -1,7 +1,7 @@
 ---
 Title: Database alerts settings object
 linkTitle: db_alerts_settings
-description: Documents the db_alerts_settings object used with Redis Enterprise Software REST API calls.
+description: An object for database alerts configuration
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

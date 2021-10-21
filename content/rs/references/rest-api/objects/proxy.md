@@ -1,13 +1,13 @@
 ---
 Title: Proxy object
 linkTitle: proxy
-description: Documents the proxy object used with Redis Enterprise Software REST API calls.
+description: An object that represents a proxy in the cluster
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents a proxy in the cluster.
+An API object that represents a [proxy](https://en.wikipedia.org/wiki/Proxy_server) in the cluster.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

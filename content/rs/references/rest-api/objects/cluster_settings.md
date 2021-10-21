@@ -1,7 +1,7 @@
 ---
 Title: Cluster settings object
 linkTitle: cluster_settings
-description: Documents the cluster_settings object used with Redis Enterprise Software REST API calls.
+description: An object for cluster resource management settings
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

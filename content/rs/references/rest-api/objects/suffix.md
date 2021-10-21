@@ -1,7 +1,7 @@
 ---
 Title: Suffix object
 linkTitle: suffix
-description: Documents the suffix object used with Redis Enterprise Software REST API calls.
+description: An object that represents a DNS suffix
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

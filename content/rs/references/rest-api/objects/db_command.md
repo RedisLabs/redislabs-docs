@@ -1,7 +1,7 @@
 ---
 Title: Database command object
 linkTitle: db_command
-description: Documents the db_command object used with Redis Enterprise Software REST API calls.
+description: An object that represents a generic Redis command
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
