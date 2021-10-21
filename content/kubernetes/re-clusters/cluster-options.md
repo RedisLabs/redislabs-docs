@@ -5,7 +5,7 @@ weight: 32
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-  /platforms/kubernetes/cluster-options/
+  /platforms/kubernetes/cluster-options/,
   /platforms/kubernetes/cluster-options.md,
   /kubernetes/reference/cluster-options.md,
   /kubernetes/reference/cluster-options/,

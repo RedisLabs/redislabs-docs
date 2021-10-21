@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: [
     /kubernetes/re-clusters/manage_re-clusters.md,
-   /kubernetes/re-clusters/manage_re-clusters/
+   /kubernetes/re-clusters/manage_re-clusters/,
 ]
 ---
 
@@ -117,7 +117,7 @@ The custom resource defines the properties of the Redis Enterprise cluster (REC)
 
     Method 2: Edit the resource definition with <nobr>`kubectl edit rec <rec-resource>`</nobr>.
 
-1. Change the specification (properties in `spec` section) and save the changes. See [Options for Redis Enterprise clusters]({{< relref "/kubernetes/reference/cluster-options.md">}}) for more details about cluster configuration options.
+1. Change the specification (properties in `spec` section) and save the changes. See [Options for Redis Enterprise clusters]({{< relref "/kubernetes/re-clusters/cluster-options.md">}}) for more details about cluster configuration options.
 
 1. Monitor the status to see when the changes take effect:
 
