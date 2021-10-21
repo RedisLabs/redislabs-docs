@@ -8,7 +8,9 @@ aliases: [
   /platforms/kubernetes/cluster-options/
   /platforms/kubernetes/cluster-options.md,
   /kubernetes/reference/cluster-options.md,
-  /kubernetes/reference/cluster-options/
+  /kubernetes/reference/cluster-options/,
+  /kubernetes/re-clusters/cluster-options.md,
+  /kubernetes/re-clusters/cluster-options/,
 ]
 ---
 A Redis Enterprise cluster is defined in a Custom Resource Definition (CRD).

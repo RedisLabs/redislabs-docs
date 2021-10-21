@@ -8,7 +8,9 @@ aliases: [
    /platforms/kubernetes/reference/db-options.md,
    /platforms/kubernetes/reference/db-options/
    /kubernetes/reference/db-options.md,
-   /kubernetes/reference/db-options/
+   /kubernetes/reference/db-options/,
+   /kubernetes/re-databases/db-options.md,
+   /kubernetes/re-databases/db-options/,
 ]
 ---
 
