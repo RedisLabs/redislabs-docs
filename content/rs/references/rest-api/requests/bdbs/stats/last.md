@@ -1,9 +1,10 @@
 ---
-Title: Database last stats requests
+Title: Latest database stats requests
 linkTitle: last
-description: Documents the Redis Enterprise Software REST API bdbs/stats/last requests.
+description: Most recent database statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/stats/last
          /rs/references/rest-api/bdbs/stats/last.md
@@ -18,11 +19,11 @@ aliases: /rs/references/rest-api/bdbs/stats/last
 | [GET](#get-all-bdbs-stats-last) | `/v1/bdbs/stats/last` | Get most recent stats for all databases |
 | [GET](#get-bdbs-stats-last) | `/v1/bdbs/{uid}` | Get most recent stats for a specific database |
 
-## Get most recent stats for all databases {#get-all-bdbs-stats-last}
+## Get latest stats for all databases {#get-all-bdbs-stats-last}
 
 	GET /v1/bdbs/stats/last
 
-Get the most recent statistics for all BDBs.
+Get the most recent statistics for all databases.
 
 #### Required permissions
 
@@ -58,6 +59,8 @@ Get the most recent statistics for all BDBs.
 | metrics | string | Comma-separated list of metric names for which we want statistics (default is all). (optional) |
 
 ### Response {#get-all-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all databases.
 
 #### Example JSON body
 
@@ -132,11 +135,11 @@ Get the most recent statistics for all BDBs.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | No bdbs exist |
 
-## Get most recent stats for a database {#get-bdbs-stats-last}
+## Get latest database stats {#get-bdbs-stats-last}
 
 	GET /v1/bdbs/stats/last/{int: uid}
 
-Get the most recent statistics for a specific BDB.
+Get the most recent statistics for a specific database.
 
 #### Required permissions
 
@@ -170,6 +173,8 @@ Get the most recent statistics for a specific BDB.
 | metrics | string | Comma-separated list of metric names for which we want statistics (default is all). (optional) |
 
 ### Response {#get-response} 
+
+Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for a specific database.
 
 #### Example JSON body
 

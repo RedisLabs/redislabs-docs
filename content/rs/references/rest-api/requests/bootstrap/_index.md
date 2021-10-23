@@ -1,9 +1,10 @@
 ---
 Title: Bootstrap requests
 linkTitle: bootstrap
-description: Documents the Redis Enterprise Software REST API bootstrap requests.
+description: Bootstrap requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bootstrap
          /rs/references/rest-api/bootstrap.md
@@ -16,7 +17,7 @@ aliases: /rs/references/rest-api/bootstrap
 | Method | Path | Description |
 |--------|------|-------------|
 | [GET](#get-bootstrap) | `/v1/boostrap` | Get the local node's bootstrap status |
-| [POST](#post-bootstrap) | `/v1/bootstrap/{action}` |  |
+| [POST](#post-bootstrap) | `/v1/bootstrap/{action}` | Initiate bootstrapping |
 
 ## Get boostrap status {#get-bootstrap}
 
@@ -42,7 +43,18 @@ Once the node is part of an active cluster, authentication is required.
 
 ### Response {#get-response} 
 
-The JSON response object contains two other objects `bootstrap_status` which is described below, and `local_node_info` which is a subset of a node object that provides information about the node configuration.
+The JSON response object contains two other objects:
+- `bootstrap_status` which is described below
+- `local_node_info` which is a subset of a [node object]({{<relref "/rs/references/rest-api/objects/node">}}) that provides information about the node configuration
+
+`bootstrap_status` object: 
+| Field | Description |
+|-------|-------------|
+| state | Current bootstrap state.<br></br>`idle`: No bootstrapping started.<br></br>`initiated`: Bootstrap request received.<br></br>`creating_cluster`: In the process of creating a new cluster.<br></br>`joining_cluster`: In the process of joining an existing cluster.<br></br>`error`: The last bootstrap action failed.<br></br>`completed`: The last bootstrap action completed successfully.|
+| start_time | Bootstrap process start time |
+| end_time | Bootstrap process end time |
+| error_code | If state is `error`, this error code describes the type of error encountered. |
+| error_details | An error-specific object that may contain additional information about the error. A common field in use is `message` which provides a more verbose error message.
 
 #### Example JSON body
 
@@ -91,16 +103,6 @@ The JSON response object contains two other objects `bootstrap_status` which is 
     }
 }
 ```
-
-#### bootstrap_status object
-
-| Field | Description |
-|-------|-------------|
-| state | Current bootstrap state.<br></br>`idle`: No bootstrapping started.<br></br>`initiated`: Bootstrap request received.<br></br>`creating_cluster`: In the process of creating a new cluster.<br></br>`joining_cluster`: In the process of joining an existing cluster.<br></br>`error`: The last bootstrap action failed.<br></br>`completed`: The last bootstrap action completed successfully.|
-| start_time | Bootstrap process start time |
-| end_time | Bootstrap process end time |
-| error_code | If state is `error`, this error code describes the type of error encountered. |
-| error_details | An error-specific object that may contain additional information about the error. A common field in use is `message` which provides a more verbose error message.
 
 ### Error codes {#get-error-codes}
 
@@ -216,15 +218,7 @@ complete.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| action | string | Action to perform |
-| cluster | object cluster_identity | Cluster to join or create |
-| node | object node_identity | Node description |
-| license | string | License string |
-| credentials | object credentials | Cluster admin credentials|
-
-See [Object attributes]({{<relref "/rs/references/rest-api/objects/">}}) for more details on the bootstrap object properties.
+Include a [bootstrap object]({{<relref "/rs/references/rest-api/objects/bootstrap">}}) in the request body.
 
 ### Response {#post-response} 
 

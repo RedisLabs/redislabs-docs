@@ -1,9 +1,10 @@
 ---
-Title: Redis ACLs requests
+Title: Redis access control list (ACL) requests
 linkTitle: redis_acls
-description: Documents the Redis Enterprise Software REST API redis_acls requests.
+description: Redis access control list (ACL) requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/redis_acls
          /rs/references/rest-api/redis_acls.md
@@ -25,7 +26,7 @@ aliases: /rs/references/rest-api/redis_acls
 
 	GET /v1/redis_acls
 
-Get all redis_acl objects.
+Get all Redis ACL objects.
 
 #### Required permissions
 
@@ -48,6 +49,8 @@ Get all redis_acl objects.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-all-response} 
+
+Returns a JSON array of [Redis ACL objects]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
 
 #### Example JSON body
 
@@ -87,7 +90,7 @@ Get all redis_acl objects.
 
 	GET /v1/redis_acls/{int: uid}
 
-Get a single redis_acl object.
+Get a single Redis ACL object.
 
 #### Required permissions
 
@@ -118,6 +121,8 @@ Get a single redis_acl object.
 
 ### Response {#get-response} 
 
+Returns a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
+
 #### Example JSON body
 
 ```json
@@ -141,7 +146,7 @@ Get a single redis_acl object.
 
 	PUT /v1/redis_acls/{int: uid}
 
-Update an existing redis_acl object.
+Update an existing Redis ACL object.
 
 #### Required permissions
 
@@ -173,11 +178,11 @@ Update an existing redis_acl object.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| acl | string | Redis ACL rule |
+Include a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}) with updated fields in the request body.
 
 ### Response {#put-response} 
+
+Returns the updated [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
 
 #### Example JSON body
 
@@ -213,7 +218,7 @@ Possible `error_code` values:
 
 	POST /v1/redis_acls
 
-Create a new redis_acl object (a named redis acl)
+Create a new Redis ACL object.
 
 #### Required permissions
 
@@ -246,12 +251,11 @@ Create a new redis_acl object (a named redis acl)
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| name | string | Role name |
-| acl | string | Redis ACL rule |
+Include a [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}) in the request body.
 
 ### Response {#post-response} 
+
+Returns the newly created [Redis ACL object]({{<relref "/rs/references/rest-api/objects/redis_acl">}}).
 
 #### Example JSON body
 
@@ -286,7 +290,7 @@ Possible `error_code` values:
 
 	DELETE /v1/redis_acls/{int: uid}
 
-Delete a redis_acl object.
+Delete a Redis ACL object.
 
 #### Required permissions
 
@@ -316,6 +320,7 @@ Delete a redis_acl object.
 
 ### Response {#delete-response} 
 
+Returns a status code that indicates the Redis ACL deletion success or failure.
 
 ### Status codes {#delete-status-codes} 
 

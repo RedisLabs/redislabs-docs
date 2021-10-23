@@ -1,9 +1,10 @@
 ---
 Title: Cluster module capabilities requests
 linkTitle: module-capabilities
-description: Documents the Redis Enterprise Software REST API cluster/module-capabilities requests.
+description: Redis module capabilities requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/module-capabilities
          /rs/references/rest-api/cluster/module-capabilities.md
@@ -43,6 +44,8 @@ List possible Redis module capabilities.
 | Accept | \*/\* | Accepted media type |
 
 ### Response {#get-response} 
+
+Returns a JSON object that contains a list of capability names and descriptions.
 
 #### Example JSON body
 

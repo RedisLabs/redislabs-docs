@@ -1,9 +1,10 @@
 ---
 Title: Import reset status database action requests
 linkTitle: import_reset_status
-description: Documents the Redis Enterprise Software REST API bdbs/actions/import_reset_status requests.
+description: Reset database import status requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions/import_reset_status
          /rs/references/rest-api/bdbs/actions/import_reset_status.md
@@ -52,6 +53,7 @@ Reset the database’s `import_status` to idle if a backup is not in progress an
 
 ### Response {#put-response} 
 
+Returns a status code.
 
 ### Status codes {#put-status-codes} 
 

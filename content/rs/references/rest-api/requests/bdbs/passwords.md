@@ -1,9 +1,10 @@
 ---
 Title: Database passwords requests
 linkTitle: passwords
-description: Documents the Redis Enterprise Software REST API bdbs/passwords requests.
+description: Database password requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/passwords
          /rs/references/rest-api/bdbs/passwords.md
@@ -70,6 +71,8 @@ The above request resets the password of the bdb to ‘new password’.
 
 ### Response {#put-response} 
 
+Returns a status code that indicates password update success or failure.
+
 ### Status codes {#put-status-codes} 
 
 | Code | Description |
@@ -127,6 +130,8 @@ The above request adds a password to the bdb.
 
 ### Response {#post-response} 
 
+Returns a status code that indicates password creation success or failure.
+
 ### Status codes {#post-status-codes} 
 
 | Code | Description |
@@ -183,6 +188,8 @@ The above request deletes a password from the bdb.
 | password | string | Password to delete |
 
 ### Response {#delete-response} 
+
+Returns a status code that indicates password deletion success or failure.
 
 ### Status codes {#delete-status-codes} 
 

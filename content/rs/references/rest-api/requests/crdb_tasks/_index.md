@@ -1,9 +1,10 @@
 ---
 Title: CRDB tasks requests
 linkTitle: crdb_tasks
-description: Documents the Redis Enterprise Software REST API crdb_tasks requests.
+description: Active-Active database task status requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/crdb_tasks
          /rs/references/rest-api/crdb_tasks.md

@@ -1,9 +1,10 @@
 ---
 Title: Database actions requests
 linkTitle: actions
-description: Documents the Redis Enterprise Software REST API bdbs/actions requests.
+description: Database action requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions
          /rs/references/rest-api/bdbs/actions.md

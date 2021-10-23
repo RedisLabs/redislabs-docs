@@ -1,9 +1,10 @@
 ---
 Title: Database command requests
 linkTitle: command
-description: Documents the Redis Enterprise Software REST API bdbs/command requests.
+description: Database command requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/command
          /rs/references/rest-api/bdbscommand.md
@@ -30,8 +31,6 @@ Execute a Redis or Memcached command, per the db type.
 | [execute_redis_or_memcached_command]({{<relref "/rs/references/rest-api/permissions#execute_redis_or_memcached_command">}}) |
 
 ### Request {#post-request} 
-
-The request must contain a JSON object with a `command` field. Certain commands may also require a JSON array of arguments.
 
 #### Example HTTP request
 
@@ -75,12 +74,16 @@ The request must contain a JSON object with a `command` field. Certain commands 
 
 #### Request body
 
+The request must contain a JSON object with a `command` field. Certain commands may also require a JSON array of arguments.
+
 | Field | Type | Description |
 |-------|------|-------------|
 | command | string | Command to execute (required) |
 | args | list | List of command arguments (required for certain commands) |
 
 ### Response {#post-response} 
+
+Returns a JSON object that contains different responses based on the database type.
 
 #### Example JSON body
 

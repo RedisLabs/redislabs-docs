@@ -1,9 +1,10 @@
 ---
 Title: Database replica sources alerts requests
 linkTitle: replica_sources/alerts
-description: Documents the Redis Enterprise Software REST API bdbs/replica_sources/alerts requests.
+description: Replica source alert requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/replica_sources-alerts
          /rs/references/rest-api/bdbs/replica_sources-alerts.md
@@ -20,7 +21,7 @@ aliases: /rs/references/rest-api/bdbs/replica_sources-alerts
 | [GET](#get-bdbs-replica_source-all-alerts) | `/v1/bdbs/replica_sources/alerts/{uid}/{replica_src_id}` | Get all alert states for a replica source |
 | [GET](#get-bdbs-replica-source-alert) | `/v1/bdbs/replica_sources/alerts/{uid}/{replica_src_id}/{alert}` | Get a replica source alert state |
 
-## Get all replica sources alert states for all BDBs {#get-all-bdbs-replica-sources-alerts}
+## Get all DBs replica sources alert states {#get-all-bdbs-replica-sources-alerts}
 
 	GET /v1/bdbs/replica_sources/alerts
 
@@ -80,7 +81,7 @@ See [REST API alerts overview] for a description of the alert state object.
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 
-## Get all replica sources alert states for a BDB {#get-bdbs-replica-sources-alerts}
+## Get DB replica source alert states {#get-bdbs-replica-sources-alerts}
 
 	GET /v1/bdbs/replica_sources/alerts/{int: uid}
 
@@ -113,9 +114,7 @@ Get all alert states for all replica sources of a specific bdb.
 
 ### Response {#get-response-all-replica-alerts} 
 
-Returns a hash of alert objects and their states.
-
-See [REST API alerts overview] for a description of the alert state object.
+Returns a hash of [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}) and their states.
 
 #### Example JSON body
 
@@ -144,7 +143,7 @@ See [REST API alerts overview] for a description of the alert state object.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified bdb does not exist |
 
-## Get all alert states for a replica source {#get-bdbs-replica_source-all-alerts}
+## Get replica source alert states {#get-bdbs-replica_source-all-alerts}
 
 	GET /v1/bdbs/replica_sources/alerts/{int: uid}/{int: replica_src_id}
 
@@ -178,9 +177,7 @@ Get all alert states for a specific replica source of a bdb.
 
 ### Response {#get-response-replica-alerts} 
 
-Returns a hash of alert objects and their states.
-
-See [REST API alerts overview] for a description of the alert state object.
+Returns a hash of [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}) and their states.
 
 #### Example JSON body
 
@@ -245,7 +242,7 @@ Get a replica source alert state of a specific bdb.
 
 ### Response {#get-response-alert} 
 
-See [REST API alerts overview] for a description of the alert state object.
+Returns an [alert state object]({{<relref "/rs/references/rest-api/objects/alert">}}).
 
 #### Example JSON body
 

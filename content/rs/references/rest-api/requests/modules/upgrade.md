@@ -1,9 +1,10 @@
 ---
-Title: Modules upgrade requests
+Title: Upgrade module requests
 linkTitle: upgrade/bdb
-description: Documents the Redis Enterprise Software REST API modules/upgrade/bdb requests.
+description: Upgrade module requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/modules/upgrade-bdb
          /rs/references/rest-api/modules/upgrade-bdb.md
@@ -68,6 +69,8 @@ Upgrades module version on a specific BDB.
 
 ### Response {#post-response} 
 
+Returns the upgraded [module object]({{<relref "/rs/references/rest-api/objects/module">}}).
+
 #### Example JSON body
 
 ```json
@@ -80,10 +83,6 @@ Upgrades module version on a specific BDB.
     "// additional fields..."
 }
 ```
-
-See [Object attributes]({{<relref "/rs/references/rest-api/objects">}})
-for more details on additional db parameters.
-
 
 ### Error codes {#post-error-codes} 
 

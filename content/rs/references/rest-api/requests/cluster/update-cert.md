@@ -1,9 +1,10 @@
 ---
 Title: Update cluster certificate requests
 linkTitle: update_cert
-description: Documents the Redis Enterprise Software REST API cluster/update_cert requests.
+description: Update cluster certificate requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/update_cert
          /rs/references/rest-api/cluster/update_cert.md

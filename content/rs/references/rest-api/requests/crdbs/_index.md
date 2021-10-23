@@ -1,9 +1,10 @@
 ---
 Title: CRDBs requests
 linkTitle: crdbs
-description: Documents the Redis Enterprise Software REST API crdbs requests.
+description: Active-Active database requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/crdbs
          /rs/references/rest-api/crdbs.md

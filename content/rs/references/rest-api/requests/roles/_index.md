@@ -1,9 +1,10 @@
 ---
 Title: Roles requests
 linkTitle: roles
-description: Documents the Redis Enterprise Software REST API roles requests.
+description: Roles requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/roles
          /rs/references/rest-api/roles.md
@@ -25,7 +26,7 @@ aliases: /rs/references/rest-api/roles
 
 	GET /v1/roles
 
-Get all role objects.
+Get all roles' details.
 
 #### Required permissions
 
@@ -48,6 +49,8 @@ Get all role objects.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-all-response} 
+
+Returns a JSON array of [role objects]({{<relref "/rs/references/rest-api/objects/role">}}).
 
 #### Example JSON body
 
@@ -102,7 +105,7 @@ Get all role objects.
 
 	GET /v1/roles/{int: uid}
 
-Get a single role object.
+Get the details of a single role.
 
 #### Required permissions
 
@@ -133,6 +136,8 @@ Get a single role object.
 
 ### Response {#get-response} 
 
+Returns a [role object]({{<relref "/rs/references/rest-api/objects/role">}}).
+
 #### Example JSON body
 
 ```json
@@ -156,7 +161,7 @@ Get a single role object.
 
 	PUT /v1/roles/{int: uid}
 
-Update an existing role object.
+Update an existing role's details.
 
 #### Required permissions
 
@@ -188,11 +193,11 @@ Update an existing role object.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| management | string | Management role |
+Include a [role object]({{<relref "/rs/references/rest-api/objects/role">}}) with updated fields in the request body.
 
 ### Response {#put-response} 
+
+Returns a [role object]({{<relref "/rs/references/rest-api/objects/role">}}) with the updated fields.
 
 #### Example JSON body
 
@@ -260,12 +265,11 @@ Create a new role.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| name | string | Role name |
-| management | string | Management role |
+Include a [role object]({{<relref "/rs/references/rest-api/objects/role">}}) in the request body.
 
 ### Response {#post-response} 
+
+Returns the newly created [role object]({{<relref "/rs/references/rest-api/objects/role">}}).
 
 #### Example JSON body
 
@@ -330,6 +334,7 @@ Delete a role object.
 
 ### Response {#delete-response} 
 
+Returns a status code to indicate role deletion success or failure.
 
 ### Status codes {#delete-status-codes} 
 

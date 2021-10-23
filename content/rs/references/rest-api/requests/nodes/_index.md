@@ -1,9 +1,10 @@
 ---
 Title: Nodes requests
 linkTitle: nodes
-description: Documents the Redis Enterprise Software REST API nodes requests.
+description: Node requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/nodes
          /rs/references/rest-api/nodes.md
@@ -46,6 +47,8 @@ Get all cluster nodes.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-all-response} 
+
+Returns a JSON array of [node objects]({{<relref "/rs/references/rest-api/objects/node">}}).
 
 #### Example JSON body
 
@@ -131,6 +134,8 @@ Get a single cluster node.
 
 ### Response {#get-response} 
 
+Returns a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
+
 #### Example JSON body
 
 ```json
@@ -164,8 +169,8 @@ Currently, this operation supports editing the following attributes:
 
 - `accept_servers`
 
-The `addr` attribute can only be updated for offline nodes, and an
-error will be returned otherwise.
+The `addr` attribute can only be updated for offline nodes, and the request will return an
+error otherwise.
 
 #### Required permissions
 
@@ -205,7 +210,10 @@ error will be returned otherwise.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| { addr | string | 10.0.0.1 } |
+| addr | string | Internal IP address of node |
+| external_addr | complex object | External IP addresses of node. GET /jsonschema to retrieve the object’s structure. |
+| recovery_path | string | Path for recovery files |
+| accept_servers | boolean | If true, no shards will be created on the node |
 
 ### Response {#put-response} 
 

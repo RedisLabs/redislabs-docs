@@ -1,9 +1,10 @@
 ---
 Title: Suffixes requests
 linkTitle: suffixes
-description: Documents the Redis Enterprise Software REST API suffixes requests.
+description: DNS suffixes requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/suffixes
          /rs/references/rest-api/suffixes.md
@@ -23,9 +24,6 @@ aliases: /rs/references/rest-api/suffixes
 
 Get all DNS suffixes in the cluster.
 
-The response body contains a JSON array with all suffixes,
-represented as suffix objects.
-
 ### Request {#get-all-request} 
 
 #### Example HTTP request
@@ -41,6 +39,8 @@ represented as suffix objects.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-all-response} 
+
+The response body contains a JSON array with all suffixes, represented as [suffix objects]({{<relref "/rs/references/rest-api/objects/suffix">}}).
 
 #### Example JSON body
 

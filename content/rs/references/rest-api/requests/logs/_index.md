@@ -1,9 +1,10 @@
 ---
 Title: Logs requests
 linkTitle: logs
-description: Documents the Redis Enterprise Software REST API logs requests.
+description: Cluster event logs requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/logs
          /rs/references/rest-api/logs.md
@@ -21,7 +22,7 @@ aliases: /rs/references/rest-api/logs
 
 	GET /v1/logs
 
-Get cluster events log. Returns an array of events.
+Get cluster events log.
 
 #### Required permissions
 
@@ -55,6 +56,8 @@ Get cluster events log. Returns an array of events.
 | offset | integer | Skip offset events before returning first one (useful for pagination). (optional) |
 
 ### Response {#get-response} 
+
+Returns a JSON array of events.
 
 #### Example JSON body
 

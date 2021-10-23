@@ -1,7 +1,7 @@
 ---
 Title: Debug info requests
 linkTitle: debuginfo
-description: Documents the Redis Enterprise Software REST API debuginfo requests.
+description: Debug info requests
 weight: $weight
 alwaysopen: false
 categories: ["RS"]

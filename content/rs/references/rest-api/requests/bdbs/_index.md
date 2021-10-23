@@ -1,9 +1,10 @@
 ---
 Title: Database requests
 linkTitle: bdbs
-description: Documents the Redis Enterprise Software REST API bdbs requests.
+description: Database requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs
          /rs/references/rest-api/bdbs.md
@@ -58,8 +59,7 @@ Get all databases in the cluster.
 
 ### Response {#get-all-response} 
 
-The response body contains a JSON array with all databases,
-represented as bdb objects.
+The response body contains a JSON array with all databases, represented as [BDB objects]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
 #### Example JSON body
 
@@ -88,7 +88,7 @@ represented as bdb objects.
 
 	GET /v1/bdbs/{int: uid}
 
-Get a single database (bdb object) as JSON.
+Get a single database.
 
 #### Required permissions
 
@@ -126,6 +126,8 @@ Get a single database (bdb object) as JSON.
 
 ### Response {#get-response} 
 
+Returns a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
+
 #### Example JSON body
 
 ```json
@@ -135,9 +137,6 @@ Get a single database (bdb object) as JSON.
     "// additional fields..."
 }
 ```
-
-See [Object attributes]({{<relref "/rs/references/rest-api/objects">}})
-for more details on additional db parameters.
 
 ### Status codes {#get-status-codes} 
 
@@ -194,7 +193,13 @@ The above request attempts to modify a database configuration to enable in-memor
 |-------|------|-------------|
 | uid | integer | The unique ID of the database for which update is requested. |
 
+#### Request body
+
+Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with updated fields in the request body.
+
 ### Response {#put-response} 
+
+Returns the updated [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
 #### Example JSON body
 
@@ -216,7 +221,7 @@ The above request attempts to modify a database configuration to enable in-memor
 | [406&nbsp;Not&nbsp;Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | The requested configuration is invalid. |
 | [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | Attempting to change a database while it is busy with another configuration change. In this context, this is a temporary condition, and the request should be reattempted later. |
 
-## Update database configuration and perform additional action {#put-bdbs-action}
+## Update database and perform action {#put-bdbs-action}
 
 	PUT /v1/bdbs/{int: uid}/{action}
 
@@ -266,7 +271,13 @@ To change the shard hashing policy, you must flush all keys from the database.
 | action | string | Additional action to perform. Currently supported actions are: `flush`, `reset_admin_pass`. |
 | dry_run | string | Validate the new bdb object but don't apply the update. |
 
+#### Request body
+
+Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with updated fields in the request body.
+
 ### Response {#put-response-action} 
+
+Returns a status code. If an error occurs, the response body may include an error code and message with more details.
 
 ### Error codes {#put-error-codes-action} 
 
@@ -346,8 +357,6 @@ The `uid` of the database is auto-assigned by the cluster because it was not exp
 
 Defaults are used for all other configuration parameters.
 
-See [Object attributes]({{<relref "/rs/references/rest-api/objects">}}) for more details on additional db parameters
-
 #### Request headers
 
 | Key | Value | Description |
@@ -361,9 +370,13 @@ See [Object attributes]({{<relref "/rs/references/rest-api/objects">}}) for more
 |-------|------|-------------|
 | dry_run | string | Validate the new bdb object but don't create the database. |
 
+#### Request body
+
+Include a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) in the request body.
+
 ### Response {#post-response-v1} 
 
-The response includes the newly created bdb object.
+The response includes the newly created [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
 #### Example JSON body
 
@@ -472,7 +485,13 @@ To retrieve a recovery plan according to the database's existing persistence fil
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
+#### Request body
+
+Include a JSON object that contains a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) and an optional `recovery_plan` object in the request body.
+
 ### Response {#post-response-v2} 
+
+The response includes the newly created [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
 #### Example JSON body
 
@@ -520,6 +539,7 @@ Delete an active database.
 
 ### Response {#delete-response} 
 
+Returns a status code that indicates the database deletion success or failure.
 
 ### Status codes {#delete-status-codes} 
 

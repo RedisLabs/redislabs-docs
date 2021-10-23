@@ -1,9 +1,10 @@
 ---
 Title: License requests
 linkTitle: license
-description: Documents the Redis Enterprise Software REST API license requests.
+description: License requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/license
          /rs/references/rest-api/license.md
@@ -46,6 +47,8 @@ and supported features.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-response} 
+
+Returns a JSON object that contains the license details.
 
 #### Example JSON body
 
@@ -104,9 +107,7 @@ The request must be a JSON object with a single key named "license".
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| license | string | New license string |
+Include a JSON object that contains the new `license` string in the request body.
 
 ### Response {#put-response} 
 

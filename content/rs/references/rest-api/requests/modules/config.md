@@ -1,9 +1,10 @@
 ---
-Title: Modules configuration requests
+Title: Configure module requests
 linkTitle: config/bdb
-description: Documents the Redis Enterprise Software REST API modules/config/bdb requests.
+description: Configure module requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/modules/config-bdb
          /rs/references/rest-api/modules/config-bdb.md
@@ -60,6 +61,8 @@ Use the module runtime configuration command (if defined) to configure new argum
 | module_args | string | Module command line arguments (pattern does not allow special characters &,<,>,”) |
 
 ### Response {#post-response} 
+
+Returns a status code. If an error occurs, the response body may include an error code and message with more details.
 
 ### Error codes {#post-error-codes} 
 

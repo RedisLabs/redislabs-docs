@@ -1,9 +1,10 @@
 ---
 Title: Cluster certificates requests
 linkTitle: certificates
-description: Documents the Redis Enterprise Software REST API cluster/certificates requests.
+description: Cluster certificates requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/certificates
          /rs/references/rest-api/cluster/certificates.md
@@ -46,6 +47,8 @@ Get the cluster's certificates.
 
 ### Response {#get-response} 
 
+Returns a JSON object that contains the cluster's certificates and keys.
+
 #### Example JSON body
 
 ```json
@@ -86,6 +89,7 @@ this endpoint.
 
 ### Response {#delete-response} 
 
+Returns a status code that indicates the certificate deletion success or failure.
 
 ### Status codes {#delete-status-codes} 
 

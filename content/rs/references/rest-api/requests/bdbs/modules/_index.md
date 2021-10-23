@@ -1,9 +1,10 @@
 ---
 Title: Database modules requests
 linkTitle: modules
-description: Documents the Redis Enterprise Software REST API bdbs/modules requests.
+description: Redis module requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/modules
          /rs/references/rest-api/bdbs/modules.md

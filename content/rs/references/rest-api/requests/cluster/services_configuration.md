@@ -1,9 +1,10 @@
 ---
 Title: Cluster services configuration requests
 linkTitle: services_configuration
-description: Documents the Redis Enterprise Software REST API cluster/services_configuration requests.
+description: Cluster services configuration requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/services_configuration
          /rs/references/rest-api/cluster/services_configuration.md
@@ -44,6 +45,8 @@ Get cluster services settings.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-response} 
+
+Returns a [services configuration object]({{<relref "/rs/references/rest-api/objects/services_configuration">}}).
 
 #### Example JSON body
 
@@ -101,17 +104,11 @@ Update the cluster services settings.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| mdns_server | string | Enable/disable the Multicast DNS server |
-| cm_server | string | Enable/disable the CM server |
-stats_archiver | string | Enable/disable the stats archiver service |
-| saslauthd | string | Enable/disable the saslauthd service |
-| pdns_server | string | Enable/disable the pdns server |
-| crdb_coordinator | string | Enable/disable the crdb coordinator process |
-| crdb_worker | string | Enable/disable the crdb worker processes |
+Include a [services configuration object]({{<relref "/rs/references/rest-api/objects/services_configuration">}}) with updated fields in the request body.
 
 ### Response {#put-response} 
+
+Returns the updated [services configuration object]({{<relref "/rs/references/rest-api/objects/services_configuration">}}).
 
 #### Example JSON body
 

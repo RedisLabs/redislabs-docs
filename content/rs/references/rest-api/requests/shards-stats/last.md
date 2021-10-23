@@ -1,9 +1,10 @@
 ---
-Title: Shards last stats requests
+Title: Latest shards stats requests
 linkTitle: last
-description: Documents the Redis Enterprise Software REST API shards/stats/last requests.
+description: Most recent shard statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/shards-stats/last
          /rs/references/rest-api/shards-stats/last.md
@@ -18,11 +19,11 @@ aliases: /rs/references/rest-api/shards-stats/last
 | [GET](#get-all-shards-stats-last) | `/v1/shards/stats/last` | Get most recent stats for all shards |
 | [GET](#get-shard-stats-last) | `/v1/shards/stats/last/{uid}` | Get most recent stats for a specific shard |
 
-## Get most recent stats for all shards {#get-all-shards-stats-last}
+## Get latest stats for all shards {#get-all-shards-stats-last}
 
 	GET /v1/shards/stats/last
 
-Get most recent stats for all shards.
+Get most recent statistics for all shards.
 
 #### Required permissions
 
@@ -54,6 +55,8 @@ Get most recent stats for all shards.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-all-response} 
+
+Returns most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all shards.
 
 #### Example JSON body
 
@@ -104,11 +107,11 @@ Get most recent stats for all shards.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | No shards exist |
 
-## Get most recent stats for a shard {#get-shard-stats-last}
+## Get latest shard stats {#get-shard-stats-last}
 
 	GET /v1/shards/stats/last/{int: uid}
 
-Get most recent stats for a specific shard.
+Get most recent statistics for a specific shard.
 
 #### Required permissions
 
@@ -147,6 +150,8 @@ Get most recent stats for a specific shard.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the specified shard.
 
 #### Example JSON body
 

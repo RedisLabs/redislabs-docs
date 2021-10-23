@@ -1,9 +1,10 @@
 ---
 Title: Database stats requests
 linkTitle: stats
-description: Documents the Redis Enterprise Software REST API bdbs/stats requests.
+description: Database statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/stats
          /rs/references/rest-api/bdbs/stats.md
@@ -18,11 +19,11 @@ aliases: /rs/references/rest-api/bdbs/stats
 | [GET](#get-all-bdbs-stats) | `/v1/bdbs/stats` | Get stats for all databases |
 | [GET](#get-bdbs-stats) | `/v1/bdbs/stats/{uid}` | Get stats for a specific database |
 
-## Get stats for all databases {#get-all-bdbs-stats}
+## Get all database stats {#get-all-bdbs-stats}
 
 	GET /v1/bdbs/stats
 
-Get stats for all BDBs.
+Get statistics for all databases.
 
 #### Required permissions
 
@@ -52,6 +53,8 @@ Get stats for all BDBs.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-all-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all databases.
 
 #### Example JSON body
 
@@ -131,11 +134,11 @@ Get stats for all BDBs.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | No bdbs exist |
 
-## Get stats for a database {#get-bdbs-stats}
+## Get database stats {#get-bdbs-stats}
 
 	GET /v1/bdbs/stats/{int: uid}
 
-Get stats for a specific BDB.
+Get statistics for a specific database.
 
 #### Required permissions
 
@@ -171,6 +174,8 @@ Get stats for a specific BDB.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for a specific database.
 
 #### Example JSON body
 

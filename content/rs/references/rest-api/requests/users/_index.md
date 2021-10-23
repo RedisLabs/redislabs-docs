@@ -1,9 +1,10 @@
 ---
 Title: Users requests
 linkTitle: users
-description: Documents the Redis Enterprise Software REST API users requests.
+description: User requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/users
          /rs/references/rest-api/users.md
@@ -25,7 +26,7 @@ aliases: /rs/references/rest-api/users
 
 	GET /v1/users
 
-Get all RLEC users.
+Get a list of all users.
 
 #### Required permissions
 
@@ -48,6 +49,8 @@ Get all RLEC users.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-all-response} 
+
+Returns a JSON array of [user objects]({{<relref "/rs/references/rest-api/objects/user">}}).
 
 #### Example JSON body
 
@@ -85,7 +88,7 @@ Get all RLEC users.
 
 	GET /v1/users/{int: uid}
 
-Get a single RLEC user.
+Get a single user's details.
 
 #### Required permissions
 
@@ -112,9 +115,11 @@ Get a single RLEC user.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| uid | integer | The RLEC user unique ID. |
+| uid | integer | The user's unique ID |
 
 ### Response {#get-response} 
+
+Returns a [user object]({{<relref "/rs/references/rest-api/objects/user">}}) that contains the details for the specified user ID.
 
 #### Example JSON body
 
@@ -143,7 +148,7 @@ Get a single RLEC user.
 
 	PUT /v1/users/{int: uid}
 
-Update an RLEC user configuration.
+Update an existing user's configuration.
 
 #### Required permissions
 
@@ -178,19 +183,16 @@ Update an RLEC user configuration.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| uid | integer | The RLEC user unique ID. |
+| uid | integer | The user's unique ID |
 
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| name | string | User's name |
-| email_alerts | boolean | Enable/disable email alerts |
+Include a [user object]({{<relref "/rs/references/rest-api/objects/user">}}) with updated fields in the request body.
 
 ### Response {#put-response} 
 
-The response includes the updated user object.
+Returns the updated [user object]({{<relref "/rs/references/rest-api/objects/user">}}).
 
 #### Example JSON body
 
@@ -206,10 +208,9 @@ The response includes the updated user object.
 }
 ```
 
-
-Note that with RBAC-enabled clusters the role is replaced with
-role_uids.
-
+{{<note>}}
+For [RBAC-enabled clusters]({{<relref "/rs/security/passwords-users-roles">}}), the returned user details include `role_uids` instead of `role`.
+{{</note>}}
 
 ### Error codes {#put-error-codes} 
 
@@ -235,10 +236,7 @@ When errors are reported, the server may return a JSON object with    `error_cod
 
 	POST /v1/users
 
-Create a new RLEC user.
-
-The request must contain a single JSON user object, with an email
-and a password:
+Create a new user.
 
 #### Required permissions
 
@@ -273,30 +271,23 @@ and a password:
 | Host | cnm.cluster.fqdn | Domain name |
 | Accept | application/json | Accepted media type |
 
-
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| email | string | Email address (required) |
-| password | string | Password (required) |
-| name | string | User's name |
-| email_alerts | boolean | Enable/disable email alerts |
-| bdbs_email_alerts | array | List of database uids or ['all'] for all databases |
-| role | string | Role |
-| auth_method | string | Authorization method |
+Include a single [user object]({{<relref "/rs/references/rest-api/objects/user">}}), with an email and a password, in the request body.
 
-Note that with RBAC-enabled clusters, the role is replaced with role_uids.
+{{<note>}}
+For [RBAC-enabled clusters]({{<relref "/rs/security/passwords-users-roles">}}), use `role_uids` instead of `role` in the request body.
+{{</note>}}
 
 `email_alerts` can be configured either as: 
 
-- `true` - user will receive alerts for all databases configured in `bdbs_email_alerts` or for all the databases if `bdbs_email_alerts` is not configured. `bdbs_email_alerts` can be a list of database uids or `[‘all’]` meaning all databases. 
+- `true` - user will receive alerts for all databases configured in `bdbs_email_alerts`. The user will receive alerts for all databases by default if `bdbs_email_alerts` is not configured. `bdbs_email_alerts` can be a list of database UIDs or `[‘all’]` meaning all databases. 
 
 - `false` - user will not receive alerts for any databases
 
 ### Response {#post-response} 
 
-The response includes the newly created user object.
+Returns the newly created [user object]({{<relref "/rs/references/rest-api/objects/user">}}).
 
 #### Example JSON body
 
@@ -337,7 +328,7 @@ When errors are reported, the server may return a JSON object with    `error_cod
 
 	DELETE /v1/users/{int: uid}
 
-Delete an RLEC user.
+Delete a user.
 
 #### Required permissions
 
@@ -364,10 +355,11 @@ Delete an RLEC user.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| uid | integer | The RLEC user unique ID. |
+| uid | integer | The user's unique ID |
 
 ### Response {#delete-response} 
 
+Returns a status code to indicate the success or failure of the user deletion.
 
 ### Status codes {#delete-status-codes} 
 

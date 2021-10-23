@@ -1,9 +1,10 @@
 ---
 Title: Cluster actions requests
 linkTitle: actions
-description: Documents the Redis Enterprise Software REST API cluster/actions requests.
+description: Cluster action requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/actions
          /rs/references/rest-api/cluster/actions.md
@@ -40,7 +41,7 @@ Get the status of all currently executing, queued, or completed cluster actions.
 
 ### Response {#get-all-response} 
 
-The response body is a JSON array of actions, as described in [REST API actions overview]({{<relref "/rs/references/rest-api/objects">}}). 
+Returns a JSON array of [action objects]({{<relref "/rs/references/rest-api/objects/action">}}). 
 
 #### Example JSON body
 
@@ -63,7 +64,7 @@ The response body is a JSON array of actions, as described in [REST API actions 
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides info about an ongoing action. |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run). |
 
-## Get a cluster action {#get-cluster-action}
+## Get cluster action {#get-cluster-action}
 
 	GET /v1/cluster/actions/{action}
 
@@ -89,7 +90,7 @@ Get the status of a currently executing, queued, or completed cluster action.
 
 ### Response {#get-response} 
 
-The response body for the action is a JSON object, as described in [REST API actions overview]({{<relref "/rs/references/rest-api/objects">}}). 
+Returns an [action object]({{<relref "/rs/references/rest-api/objects/action">}}). 
 
 #### Example JSON body
 
@@ -108,7 +109,7 @@ The response body for the action is a JSON object, as described in [REST API act
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides info about an ongoing action. |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run). |
 
-## Initiate a cluster-wide action {#post-cluster-action}
+## Initiate cluster-wide action {#post-cluster-action}
 
 	POST /v1/cluster/actions/{action}
 
@@ -152,7 +153,7 @@ The body content may provide additional action details. Currently, it is not use
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad action or content provided. |
 | [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | A conflicting action is already in progress. |
 
-## Cancel action or remove action status {#delete-cluster-action}
+## Cancel action {#delete-cluster-action}
 
 	DELETE /v1/cluster/actions/{action}
 
@@ -178,6 +179,8 @@ a previously executed and completed action.
 | action | string | The name of the action to cancel, currently no actions are supported. |
 
 ### Response {#delete-response} 
+
+Returns a status code.
 
 ### Status codes {#delete-status-codes} 
 

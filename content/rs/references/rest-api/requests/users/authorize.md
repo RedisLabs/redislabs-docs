@@ -1,9 +1,10 @@
 ---
-Title: Authorize requests
+Title: Authorize user requests
 linkTitle: authorize
-description: Documents the Redis Enterprise Software REST API users/authorize requests.
+description: Users authorization requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/users/authorize
          /rs/references/rest-api/users/authorize.md
@@ -21,9 +22,7 @@ aliases: /rs/references/rest-api/users/authorize
 
     POST /v1/users/authorize
 
-Authorize an RLEC user.
-
-In order to use the rest-api, a user must be authorized using a JSON Web Token (JWT). In order to obtain a valid token, a request should be made to `/users/authorize` with a valid username and password.
+Generate a JSON Web Token (JWT) for a user to use as authorization to access the REST API.
 
 ### Request {#post-request}
 
@@ -47,13 +46,12 @@ In order to use the rest-api, a user must be authorized using a JSON Web Token (
 | Accept | application/json | Accepted media type |
 
 #### Request body
-| Field | Type | Description |
-|-------|------|-------------|
-| username | string | The RLEC user’s username (required) |
-| password | string | The RLEC user’s password (required) |
-| ttl | integer | Time to live - The amount of time in seconds the token will be valid |
+
+Include a [JWT authorize object]({{<relref "/rs/references/rest-api/objects/jwt_authorize">}}) with a valid username and password in the request body.
 
 ### Response {#post-response}
+
+Returns a JSON object that contains the generated access token.
 
 #### Example JSON body
 

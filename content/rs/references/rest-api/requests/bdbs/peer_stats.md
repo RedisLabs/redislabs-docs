@@ -1,9 +1,10 @@
 ---
-Title: Database peer stats requests
+Title: CRDB peer stats requests
 linkTitle: peer_stats
-description: Documents the Redis Enterprise Software REST API bdbs/peer_stats requests.
+description: Active-Active peer instance statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/peer_stats
          /rs/references/rest-api/bdbs/peer_stats.md
@@ -18,11 +19,11 @@ aliases: /rs/references/rest-api/bdbs/peer_stats
 | [GET](#get-all-bdbs-peer_stats) | `/v1/bdbs/{bdb_uid}/peer_stats` | Get stats for all CRDB peer instances |
 | [GET](#get-bdbs-peer_stats) | `/v1/bdbs/{bdb_uid}/peer_stats/{uid}` | Get stats for a specific CRDB peer instance |
 
-## Get stats for all CRDB peer instances {#get-all-bdbs-peer_stats}
+## Get all CRDB peer stats {#get-all-bdbs-peer_stats}
 
 	GET /v1/bdbs/{bdb_uid}/peer_stats
 
-Get stats for a all peer instances of a local CRDB instance.
+Get statistics for all peer instances of a local CRDB instance.
 
 #### Required permissions
 
@@ -58,6 +59,8 @@ Get stats for a all peer instances of a local CRDB instance.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-all-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all CRDB peer instances.
 
 #### Example JSON body
 
@@ -104,11 +107,11 @@ Get stats for a all peer instances of a local CRDB instance.
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Database does not exist. |
 | [406 Not Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | Database is not a CRDB. |
 
-## Get stats for a CRDB peer instance {#get-bdbs-peer_stats}
+## Get CRDB peer stats {#get-bdbs-peer_stats}
 
 	GET /v1/bdbs/{bdb_uid}/peer_stats/{int: uid}
 
-Get stats for a specific CRDB peer instance.
+Get statistics for a specific CRDB peer instance.
 
 #### Required permissions
 
@@ -145,6 +148,8 @@ Get stats for a specific CRDB peer instance.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for a specific CRDB peer instance.
 
 #### Example JSON body
 

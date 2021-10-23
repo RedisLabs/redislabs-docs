@@ -1,9 +1,10 @@
 ---
 Title: Rotate cluster certificates requests
 linkTitle: rotate
-description: Documents the Redis Enterprise Software REST API cluster/certificates/rotate requests.
+description: Rotate cluster certificates requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/certificates/rotate
          /rs/references/rest-api/cluster/certificates/rotate.md

@@ -1,9 +1,10 @@
 ---
-Title: Node BDB debug info requests
+Title: Database node debug info requests
 linkTitle: bdb
 description: Documents the Redis Enterprise Software REST API debuginfo/node/bdb requests.
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/debuginfo/node/bdb
          /rs/references/rest-api/debuginfo/node/bdb.md
@@ -17,7 +18,7 @@ aliases: /rs/references/rest-api/debuginfo/node/bdb
 |--------|------|-------------|
 | [GET](#get-debuginfo-node-bdb) | `/v1/debuginfo/node/bdb/{bdb_uid}` | Get debuginfo for the current node regarding a specific BDB |
 
-## Get debug info for a BDB on the current node {#get-debuginfo-node-bdb}
+## Get debug info for current node database {#get-debuginfo-node-bdb}
 
 	GET /v1/debuginfo/node/bdb/{int: bdb_uid}
 

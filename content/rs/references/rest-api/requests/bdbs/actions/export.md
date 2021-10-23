@@ -1,9 +1,10 @@
 ---
 Title: Export database action requests
 linkTitle: export
-description: Documents the Redis Enterprise Software REST API bdbs/actions/export requests.
+description: Export database requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions/export
          /rs/references/rest-api/bdbs/actions/export.md
@@ -30,13 +31,6 @@ Initiate a database export.
 | [start_bdb_export]({{<relref "/rs/references/rest-api/permissions#start_bdb_export">}}) |
 
 ### Request {#post-request} 
-
-The request body should contain a JSON object with the following export parameters: 
-
-- `export_location` - details for the export destination. Call [`GET /jsonschema`]({{<relref "/rs/references/rest-api/requests/jsonschema#get-jsonschema">}}) on the bdb object and review the `backup_location` field to retrieve the object's structure. 
-- `email_notification` - when set to true, an email will be sent on export failure/completion. (optional)
-
-See [Backup location] for more details on the backup location types.
 
 #### Example HTTP request
 
@@ -73,13 +67,16 @@ The above request initiates an export operation to the specified location.
 
 #### Request body
 
+The request body should contain a JSON object with the following export parameters: 
+
 | Field | Type | Description |
 |-------|------|-------------|
-| export_location | JSON object | Details for the export destination |
+| export_location | [backup_location/export_location]({{<relref "/rs/references/rest-api/objects/bdb/backup_location">}}) object | Details for the export destination. Call [`GET /jsonschema`]({{<relref "/rs/references/rest-api/requests/jsonschema#get-jsonschema">}}) on the bdb object and review the `backup_location` field to retrieve the object's structure.  |
 | email_notification | boolean | Enable/disable an email notification on export failure/ completion. (optional) |
 
 ### Response {#post-response} 
 
+Returns a status code.
 
 ### Status codes {#post-status-codes} 
 

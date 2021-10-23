@@ -1,9 +1,10 @@
 ---
 Title: Cluster last stats requests
 linkTitle: last
-description: Documents the Redis Enterprise Software REST API cluster/stats/last requests.
+description: Most recent cluster statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/stats/last
          /rs/references/rest-api/cluster/stats/last.md
@@ -17,11 +18,11 @@ aliases: /rs/references/rest-api/cluster/stats/last
 |--------|------|-------------|
 | [GET](#get-cluster-stats-last) | `/v1/cluster/stats/last` | Get most recent cluster stats |
 
-## Get most recent cluster stats {#get-cluster-stats-last}
+## Get latest cluster stats {#get-cluster-stats-last}
 
 	GET /v1/cluster/stats/last
 
-Get the most recent cluster stats.
+Get the most recent cluster statistics.
 
 #### Required permissions
 
@@ -52,6 +53,8 @@ Get the most recent cluster stats.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the cluster.
 
 #### Example JSON body
 

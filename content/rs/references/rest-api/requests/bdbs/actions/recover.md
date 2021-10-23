@@ -1,9 +1,10 @@
 ---
 Title: Recover database action requests
 linkTitle: recover
-description: Documents the Redis Enterprise Software REST API bdbs/actions/recover requests.
+description: Database recovery requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions/recover
          /rs/references/rest-api/bdbs/actions/recover.md
@@ -69,15 +70,6 @@ Initiate recovery for a database in recovery state.
 
 ### Request {#post-request} 
 
-The request body may be empty, in which case the database will be
-recovered automatically:
-
--   Databases with no persistence are recovered with no data.
--   Persistent files (aof, rdb) will be loaded from their expected storage locations (i.e. where replica or master shards were last active).
--   If persistent files are not found where expected but can be located on other cluster nodes, they will be used.
-
-The request may also include a request body with an explicit recovery plan.
-
 #### Example HTTP request
 
 	POST /bdbs/1/actions/recover 
@@ -115,7 +107,20 @@ The request may also include a request body with an explicit recovery plan.
 |-------|------|-------------|
 | uid | integer | The unique ID of the database to recover. |
 
+#### Request body
+
+The request body may be empty, in which case the database will be
+recovered automatically:
+
+-   Databases with no persistence are recovered with no data.
+-   Persistent files (aof, rdb) will be loaded from their expected storage locations (i.e. where replica or master shards were last active).
+-   If persistent files are not found where expected but can be located on other cluster nodes, they will be used.
+
+The request may also include a request body with an explicit recovery plan.
+
 ### Response {#post-response} 
+
+Returns a status code.
 
 ### Status codes {#post-status-codes} 
 

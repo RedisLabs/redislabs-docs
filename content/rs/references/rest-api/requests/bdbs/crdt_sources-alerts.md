@@ -1,9 +1,10 @@
 ---
-Title: Database crdt sources alerts requests
+Title: Database CRDT sources alerts requests
 linkTitle: crdt_sources/alerts
-description: Documents the Redis Enterprise Software REST API bdbs/crdt_sources requests.
+description: Conflict-free replicated data type (CRDT) source alert requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/crdt_sources-alerts
          /rs/references/rest-api/bdbs/crdt_sources-alerts.md
@@ -15,16 +16,16 @@ aliases: /rs/references/rest-api/bdbs/crdt_sources-alerts
 
 | Method | Path | Description |
 |--------|------|-------------|
-| [GET](#get-all-bdbs-crdt-sources-alerts) | `/v1/bdbs/crdt_sources/alerts` | Get all crdt sources alert states for all CRDB bdbs |
-| [GET](#get-bdbs-crdt-sources-alerts) | `/v1/bdbs/crdt_sources/alerts/{uid}` | Get all crdt sources alert states for a bdb |
-| [GET](#get-bdbs-crdt-source-all-alerts) | `/v1/bdbs/crdt_sources/alerts/{uid}/{crdt_src_id}` | Get all alert states for a crdt source |
-| [GET](#get-bdbs-crdt-source-alert) | `/v1/bdbs/crdt_sources/alerts/{uid}/{crdt_src_id}/{alert}` | Get a bdb alert state |
+| [GET](#get-all-bdbs-crdt-sources-alerts) | `/v1/bdbs/crdt_sources/alerts` | Get all CRDT sources alert states for all CRDB databases |
+| [GET](#get-bdbs-crdt-sources-alerts) | `/v1/bdbs/crdt_sources/alerts/{uid}` | Get all CRDT sources alert states for a database |
+| [GET](#get-bdbs-crdt-source-all-alerts) | `/v1/bdbs/crdt_sources/alerts/{uid}/{crdt_src_id}` | Get all alert states for a CRDT source |
+| [GET](#get-bdbs-crdt-source-alert) | `/v1/bdbs/crdt_sources/alerts/{uid}/{crdt_src_id}/{alert}` | Get a database alert state |
 
-## Get all crdt sources alert states for all CRDBs {#get-all-bdbs-crdt-sources-alerts}
+## Get all CRDB CRDT source alert states {#get-all-bdbs-crdt-sources-alerts}
 
 	GET /v1/bdbs/crdt_sources/alerts
 
-Get all alert states for all crdt sources of all CRDBs.
+Get all alert states for all CRDT sources of all CRDBs.
 
 #### Required permissions
 
@@ -47,9 +48,7 @@ Get all alert states for all crdt sources of all CRDBs.
 
 ### Response {#get-all-response} 
 
-Returns a hash of alert UIDs and the alerts states for each local BDB of CRDB.
-
-See [REST API alerts overview] for a description of the alert state object.
+Returns a hash of alert UIDs and the [alerts states]({{<relref "/rs/references/rest-api/objects/alert">}}) for each local BDB of CRDB.
 
 #### Example JSON body
 
@@ -80,7 +79,7 @@ See [REST API alerts overview] for a description of the alert state object.
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 
-## Get all crdt sources alert states for a bdb {#get-bdbs-crdt-sources-alerts}
+## Get all BDB CRDT sources alert states {#get-bdbs-crdt-sources-alerts}
 
 	GET /v1/bdbs/crdt_sources/alerts/{int: uid}
 
@@ -113,9 +112,7 @@ Get all alert states for all crdt sources for a specific local bdb of a CRDB.
 
 ### Response {#get-response-all-crdt-alerts} 
 
-Returns a hash of alert objects and their states.
-
-See [REST API alerts overview]for a description of the alert state object.
+Returns a hash of [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}) and their states.
 
 #### Example JSON body
 
@@ -144,11 +141,11 @@ See [REST API alerts overview]for a description of the alert state object.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified bdb does not exist |
 
-## Get all alert states for a crdt source {#get-bdbs-crdt-source-all-alerts}
+## Get all CRDT source alert states {#get-bdbs-crdt-source-all-alerts}
 
 	GET /v1/bdbs/crdt_sources/alerts/{int: uid}/{int: crdt_src_id}
 
-Get all alert states for specific crdt source for a specific local bdb
+Get all alert states for specific crdt source for a specific local BDB
 of a CRDB.
 
 #### Required permissions
@@ -179,9 +176,7 @@ of a CRDB.
 
 ### Response {#get-response-crdt-alerts} 
 
-Returns a hash of alert objects and their states. 
-
-See [REST API alerts overview] for a description of the alert state object.
+Returns a hash of [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}) and their states. 
 
 #### Example JSON body
 
@@ -214,7 +209,7 @@ See [REST API alerts overview] for a description of the alert state object.
 
 	GET /v1/bdbs/crdt_sources/alerts/{int: uid}/{int: crdt_src_id}/{alert}
 
-Get a bdb alert state.
+Get a BDB alert state.
 
 #### Required permissions
 
@@ -246,7 +241,7 @@ Get a bdb alert state.
 
 ### Response {#get-response-alert} 
 
-See [REST API alerts overview] for a description of the alert state object.
+Returns an [alert object]({{<relref "/rs/references/rest-api/objects/alert">}}).
 
 #### Example JSON body
 

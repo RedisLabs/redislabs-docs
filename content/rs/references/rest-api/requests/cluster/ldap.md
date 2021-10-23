@@ -1,9 +1,10 @@
 ---
 Title: Cluster LDAP requests
 linkTitle: ldap
-description: Documents the Redis Enterprise Software REST API cluster/ldap requests.
+description: LDAP configuration requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/ldap
          /rs/references/rest-api/cluster/ldap.md
@@ -23,7 +24,7 @@ aliases: /rs/references/rest-api/cluster/ldap
 
 	GET /v1/cluster/ldap
 
-Get the LDAP configuration, as JSON.
+Get the LDAP configuration.
 
 #### Required permissions
 
@@ -45,6 +46,8 @@ Get the LDAP configuration, as JSON.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-response} 
+
+Returns an [LDAP object]({{<relref "/rs/references/rest-api/objects/ldap">}}).
 
 #### Example JSON body
 
@@ -70,7 +73,7 @@ Get the LDAP configuration, as JSON.
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success |
 
-## Set or update LDAP configuration {#put-cluster-ldap}
+## Update LDAP configuration {#put-cluster-ldap}
 
 	PUT /v1/cluster/ldap
 
@@ -112,15 +115,11 @@ Set or update the cluster LDAP configuration.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| uris | list of strings | URIs of LDAP servers containing only the schema, the host, and the port |
-| bind_dn | string | A domain name to use when binding with the LDAP server to run queries |
-| bind_pass | string | A password to use when binding with the LDAP server to run queries |
-| user_dn_template | string | A string template that maps between the username provided to the cluster for authentication, and the LDAP DN. |
-| dn_group_attr | string | The name of an attribute of the LDAP user entity that contains a list of the groups that user belongs to. |
+Include an [LDAP object]({{<relref "/rs/references/rest-api/objects/ldap">}}) with updated fields in the request body.
 
 ### Response {#put-response} 
+
+Returns a status code. If an error occurs, the response body may include an error code and message with more details.
 
 ### Error codes {#put-error-codes} 
 
@@ -163,6 +162,8 @@ Clear the LDAP configuration.
 | Accept | application/json | Accepted media type |
 
 ### Response {#delete-response} 
+
+Returns a status code.
 
 ### Status codes {#delete-status-codes} 
 

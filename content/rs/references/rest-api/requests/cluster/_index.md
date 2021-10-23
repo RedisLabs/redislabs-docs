@@ -1,9 +1,10 @@
 ---
 Title: Cluster requests
 linkTitle: cluster
-description: Documents the Redis Enterprise Software REST API cluster requests.
+description: Cluster settings requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster
          /rs/references/rest-api/cluster.md
@@ -44,6 +45,8 @@ Get cluster info.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-response} 
+
+Returns a [cluster object]({{<relref "/rs/references/rest-api/objects/cluster">}}).
 
 #### Example JSON body
 
@@ -123,11 +126,7 @@ The above request will enable email alerts and alert reporting for node failures
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| name | string | Cluster’s fully qualified domain name |
-| email_alerts | boolean | Enable/disable node and cluster email alerts. (default: true) |
-| alert_settings | alert_settings object | Cluster and node alert settings |
+Include a [cluster object]({{<relref "/rs/references/rest-api/objects/cluster">}}) with updated fields in the request body.
 
 ### Response {#put-response} 
 

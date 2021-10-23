@@ -1,9 +1,10 @@
 ---
-Title: Node last stats requests
+Title: Latest node stats requests
 linkTitle: last
-description: Documents the Redis Enterprise Software REST API nodes/stats/last requests.
+description: Most recent node statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/nodes/stats/last
          /rs/references/rest-api/nodes/stats/last.md
@@ -15,14 +16,14 @@ aliases: /rs/references/rest-api/nodes/stats/last
 
 | Method | Path | Description |
 |--------|------|-------------|
-| [GET](#get-all-nodes-stats-last) | `/v1/nodes/stats/last` | Get last stats for all nodes |
-| [GET](#get-node-stats-last) | `/v1/nodes/stats/last/{uid}` | Get last stats for a single node |
+| [GET](#get-all-nodes-stats-last) | `/v1/nodes/stats/last` | Get latest stats for all nodes |
+| [GET](#get-node-stats-last) | `/v1/nodes/stats/last/{uid}` | Get latest stats for a single node |
 
-## Get last stats for all nodes {#get-all-nodes-stats-last}
+## Get latest stats for all nodes {#get-all-nodes-stats-last}
 
 	GET /v1/nodes/stats/last
 
-Get last stats for all nodes.
+Get latest statistics for all nodes.
 
 #### Required permissions
 
@@ -54,6 +55,8 @@ Get last stats for all nodes.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-all-response} 
+
+Returns most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all nodes.
 
 #### Example JSON body
 
@@ -92,11 +95,11 @@ Get last stats for all nodes.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | No nodes exist |
 
-## Get last stats for a node {#get-node-stats-last}
+## Get latest node stats {#get-node-stats-last}
 
 	GET /v1/nodes/stats/last/{int: uid}
 
-Get the last stats of a node.
+Get the latest statistics of a node.
 
 #### Required permissions
 
@@ -135,6 +138,8 @@ Get the last stats of a node.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)format (optional) |
 
 ### Response {#get-response} 
+
+Returns the most recent [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the specified node.
 
 #### Example JSON body
 

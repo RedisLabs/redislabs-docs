@@ -1,9 +1,10 @@
 ---
 Title: Bootstrap validation requests
 linkTitle: validate
-description: Documents the Redis Enterprise Software REST API bootstrap/validate requests.
+description: Boostrap validation requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bootstrap/validate
          /rs/references/rest-api/bootstrap/validate.md
@@ -26,28 +27,19 @@ Perform bootstrap validation.
 Unlike actual bootstrapping, this request blocks and immediately
 returns with a response.
 
-### Request {#post-request} 
+### Request {#post-request}
 
-The request must contain a bootstrap configuration JSON object
-similar to the one used for actual bootstrapping.
+#### Example HTTP request
+
+    POST /bootstrap/validate/join_cluster
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| action | string | Action to perform |
-| cluster | object cluster_identity | Cluster to join or create |
-| node | object node_identity | Node description |
-| license | string | License string |
-| credentials | object credentials | Cluster admin credentials|
-
-See [Object attributes]({{<relref "/rs/references/rest-api/objects/">}}) for more details on the bootstrap object properties.
+The request must contain a [bootstrap configuration object]({{<relref "/rs/references/rest-api/objects/bootstrap">}}), similar to the one used for actual bootstrapping.
 
 ### Response {#post-response} 
 
-If an error occurs, the call returns a bootstrap status JSON object.
-
-#### bootstrap_status object
+If an error occurs, the call returns a `bootstrap_status` JSON object that contains the following fields:
 
 | Field | Description |
 |-------|-------------|

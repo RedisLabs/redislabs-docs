@@ -1,9 +1,10 @@
 ---
 Title: Endpoints stats requests
 linkTitle: endpoints/stats
-description: Documents the Redis Enterprise Software REST API endpoints/stats requests.
+description: Endpoint statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/endpoints-stats
          /rs/references/rest-api/endpoints-stats.md
@@ -17,11 +18,11 @@ aliases: /rs/references/rest-api/endpoints-stats
 |--------|------|-------------|
 | [GET](#get-endpoints-stats) | `/v1/endpoints/stats` | Get stats for all endpoints |
 
-## Get stats for all endpoints {#get-endpoints-stats}
+## Get all endpoints stats {#get-endpoints-stats}
 
 	GET /v1/endpoints/stats
 
-Get stats for all endpoint-proxy links.
+Get statistics for all endpoint-proxy links.
 
 {{<note>}}
 This method will return both endpoints and listeners stats for backwards

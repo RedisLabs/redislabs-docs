@@ -1,9 +1,10 @@
 ---
 Title: Backup reset status database action requests
 linkTitle: backup_reset_status
-description: Documents the Redis Enterprise Software REST API bdbs/actions/imbackup_reset_statusport requests.
+description: Reset database backup status requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions/backup_reset_status
          /rs/references/rest-api/bdbs/actions/backup_reset_status.md
@@ -51,6 +52,7 @@ Reset the database's `backup_status` to idle if a backup is not in progress and 
 
 ### Response {#put-response} 
 
+Returns a status code.
 
 ### Status codes {#put-status-codes} 
 

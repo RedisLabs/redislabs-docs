@@ -1,9 +1,10 @@
 ---
 Title: JSON schema requests
 linkTitle: jsonschema
-description: Documents the Redis Enterprise Software REST API jsonschema requests.
+description: API object JSON schema requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/jsonschema
          /rs/references/rest-api/jsonschema.md
@@ -17,11 +18,11 @@ aliases: /rs/references/rest-api/jsonschema
 |--------|------|-------------|
 | [GET](#get-jsonschema) | `/v1/jsonschema` | Get JSON schema of API objects |
 
-## Get JSON schema of API objects {#get-jsonschema}
+## Get object JSON schema {#get-jsonschema}
 
 	GET /v1/jsonschema
 
-Get the JSON schema of various Redis Enterprise REST API objects.
+Get the JSON schema of various [Redis Enterprise REST API objects]({{<relref "/rs/references/rest-api/objects">}}).
 
 ### Request {#get-request} 
 
@@ -43,6 +44,8 @@ Get the JSON schema of various Redis Enterprise REST API objects.
 | object | string | Optional. The API object name: 'cluster', 'node', 'bdb' etc. |
 
 ### Response {#get-response} 
+
+Returns the JSON schema of the specified API object.
 
 #### Example JSON body
 

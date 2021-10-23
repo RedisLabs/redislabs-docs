@@ -1,9 +1,10 @@
 ---
 Title: LDAP mappings requests
 linkTitle: ldap_mappings
-description: Documents the Redis Enterprise Software REST API ldap_mappings requests.
+description: LDAP mappings requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/ldap_mappings
          /rs/references/rest-api/ldap_mappings.md
@@ -25,7 +26,7 @@ aliases: /rs/references/rest-api/ldap_mappings
 
 	GET /v1/ldap_mappings
 
-Get all ldap_mapping objects.
+Get all LDAP mappings.
 
 #### Required permissions
 
@@ -47,6 +48,8 @@ Get all ldap_mapping objects.
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-all-response} 
+
+Returns a JSON array of [LDAP mapping objects]({{<relref "/rs/references/rest-api/objects/ldap_mapping">}}).
 
 #### Example JSON body
 
@@ -75,7 +78,7 @@ Get all ldap_mapping objects.
 
 	GET /v1/ldap_mappings/{int: uid}
 
-Get a single ldap_mapping object.
+Get a specific LDAP mapping.
 
 #### Required permissions
 
@@ -103,6 +106,8 @@ Get a single ldap_mapping object.
 | uid | integer | The object's unique ID. |
 
 ### Response {#get-response} 
+
+Returns an [LDAP mapping object]({{<relref "/rs/references/rest-api/objects/ldap_mapping">}}).
 
 #### Example JSON body
 
@@ -177,13 +182,7 @@ Update an existing ldap_mapping object.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| dn | string | An LDAP group’s distinguished name |
-| email | string | Email address used for alerts |
-| email_alerts | boolean | Enable/disable email alerts (default: true) |
-| bdbs_email_alerts | list | UIDs of databases that associated email will receive alerts for |
-| cluster_email_alerts | boolean | Enable/disable cluster email alerts for an associated email |
+Include an [LDAP mapping object]({{<relref "/rs/references/rest-api/objects/ldap_mapping">}}) with updated fields in the request body.
 
 ### Response {#put-response} 
 
@@ -264,12 +263,7 @@ Create a new LDAP mapping.
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| name | string | Role name |
-| dn | string | An LDAP group’s distinguished name |
-| email | string | Email address used for alerts |
-| role_uids | integer array | List of role UIDs associated with the LDAP group |
+Include an [LDAP mapping object]({{<relref "/rs/references/rest-api/objects/ldap_mapping">}}) in the request body.
 
 ### Response {#post-response} 
 
@@ -340,6 +334,7 @@ Delete an LDAP mapping object.
 
 ### Response {#delete-response} 
 
+Returns a status code. If an error occurs, the response body may include a more specific error code and message.
 
 ### Error codes {#delete-error-codes} 
 

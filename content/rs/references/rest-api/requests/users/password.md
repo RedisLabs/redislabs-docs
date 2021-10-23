@@ -1,9 +1,10 @@
 ---
-Title: Password requests
+Title: User password requests
 linkTitle: password
-description: Documents the Redis Enterprise Software REST API users/password requests.
+description: User password requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/users/password
          /rs/references/rest-api/users/password.md
@@ -23,11 +24,7 @@ aliases: /rs/references/rest-api/users/password
     
     PUT /v1/users/password
     
-Reset the password list of an internal user to include a (single)
-new password.
-
-The request must contain a single JSON with the username, a
-currently valid password, and the new password:
+Reset the password list of an internal user to include a new password.
 
 ### Request {#put-request}
 
@@ -52,13 +49,18 @@ currently valid password, and the new password:
 | Accept | application/json | Accepted media type |
 
 #### Request body
+
+The request must contain a single JSON object with the following fields:
+
 | Field | Type | Description |
 |-------|------|-------------|
 | username     | string | Affected user (required) |
 | old_password | string | A password that exists in the current list (required) |
-| new_password | string | The new (single) password (required) |
+| new_password | string | The new password (required) |
 
 ### Response {#put-response}
+
+Returns a status code to indicate password update success or failure.
 
 ### Error codes {#put-error-codes}
 
@@ -86,9 +88,6 @@ The following are possible `error_code` values:
 
 Add a new password to an internal user's passwords list.
 
-The request must contain a single JSON with the username, an
-existing password, and a new password to be added.
-
 ### Request {#post-request}
 
 #### Example HTTP request
@@ -112,6 +111,9 @@ existing password, and a new password to be added.
 | Accept | application/json | Accepted media type |
 
 #### Request body
+
+The request must contain a single JSON object with the following fields:
+
 | Field | Type | Description |
 |-------|------|-------------|
 | username     | string | Affected user (required) |
@@ -119,6 +121,8 @@ existing password, and a new password to be added.
 | new_password | string | The new (single) password (required) |
 
 ### Response {#post-response}
+
+Returns a status code to indicate password creation success or failure. If an error occurs, the response body may include a more specific error code and message.
 
 ### Error codes {#post-error-codes}
 
@@ -143,10 +147,7 @@ The following are possible `error_code` values:
 ## Delete password {#delete-password}
     DELETE /v1/users/password
 
-Delete a password from the list of an internal user's passwords.
-
-The request must contain a single JSON with the username and an
-existing password to be deleted.
+Delete a password from an internal user's passwords list.
 
 ### Request {#delete-request}
 
@@ -170,6 +171,9 @@ existing password to be deleted.
 | Accept | application/json | Accepted media type |
 
 #### Request body
+
+The request must contain a single JSON with the following fields:
+
 | Field | Type | Description |
 |-------|------|-------------|
 | username | string | Affected user (required) |

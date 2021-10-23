@@ -1,9 +1,10 @@
 ---
 Title: Export resets status database action requests
 linkTitle: export_reset_status
-description: Documents the Redis Enterprise Software REST API bdbs/actions/export_reset_status requests.
+description: Reset database export status requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions/export_reset_status
          /rs/references/rest-api/bdbs/actions/export_reset_status.md
@@ -51,6 +52,7 @@ Resets the database's `export_status` to idle if an export is not in progress an
 
 ### Response {#put-response} 
 
+Returns a status code.
 
 ### Status codes {#put-status-codes} 
 

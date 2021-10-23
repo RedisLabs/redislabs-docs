@@ -1,9 +1,10 @@
 ---
 Title: CRDB purge requests
 linkTitle: purge
-description: Documents the Redis Enterprise Software REST API crdbs/purge requests.
+description: Purge removed Active-Active database requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/crdbs/purge
          /rs/references/rest-api/crdbs/purge.md
@@ -17,7 +18,7 @@ aliases: /rs/references/rest-api/crdbs/purge
 |--------|------|-------------|
 | [PUT](#put-crdbs-purge) | `/v1/crdbs/{crdb_guid}/purge` | Purge data from an instance that was forcibly removed from the Active-Active database |
 
-## Purge data from removed Active-Active database instance {#put-crdbs-purge}
+## Purge data from removed instance {#put-crdbs-purge}
 
 	PUT /v1/crdbs/{crdb_guid}/purge
 

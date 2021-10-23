@@ -4,6 +4,7 @@ linkTitle: node
 description: Documents the Redis Enterprise Software REST API debuginfo/node requests.
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/debuginfo/node
          /rs/references/rest-api/debuginfo/node.md
@@ -17,7 +18,7 @@ aliases: /rs/references/rest-api/debuginfo/node
 |--------|------|-------------|
 | [GET](#get-debuginfo-node) | `/v1/debuginfo/node` | Get debuginfo for the current node |
 
-## Get debug info for the current node {#get-debuginfo-node}
+## Get debug info for current node {#get-debuginfo-node}
 
 	GET /v1/debuginfo/node
 

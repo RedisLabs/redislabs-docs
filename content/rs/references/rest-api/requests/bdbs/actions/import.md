@@ -1,9 +1,10 @@
 ---
 Title: Import database action requests
 linkTitle: import
-description: Documents the Redis Enterprise Software REST API bdbs/actions/import requests.
+description: Import database requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions/import
          /rs/references/rest-api/bdbs/actions/import.md
@@ -30,15 +31,6 @@ Initiate a manual import process.
 | [start_bdb_import]({{<relref "/rs/references/rest-api/permissions#start_bdb_import">}}) |
 
 ### Request {#post-request} 
-
-The request _may_ contain a subset of the bdb JSON object, which includes the following import-related attributes: 
-
-- `dataset_import_sources` - details for the import sources. Call [`GET /jsonschema`]({{<relref "/rs/references/rest-api/requests/jsonschema#get-jsonschema">}}) on the bdb object and review the `dataset_import_sources` field to retrieve the object's structure. 
-- `email_notification` - when set to true, an email will be sent on import failure/completion. (optional)
-
-See [Import sources] for more details on the import location types.
-
-Other attributes are not allowed and will cause the request to fail.
 
 #### Example HTTP request
 
@@ -80,13 +72,20 @@ The above request initiates an import process using `dataset_import_sources` val
 
 #### Request body
 
+The request _may_ contain a subset of the [BDB JSON object]({{<relref "/rs/references/rest-api/objects/bdb">}}), which includes the following import-related attributes: 
+
 | Field | Type | Description |
 |-------|------|-------------|
-| dataset_import_sources | list | Details for the import sources |
+| dataset_import_sources | array of [dataset_import_sources]({{<relref "/rs/references/rest-api/objects/bdb/dataset_import_sources">}}) objects | Details for the import sources. Call [`GET /jsonschema`]({{<relref "/rs/references/rest-api/requests/jsonschema#get-jsonschema">}}) on the bdb object and review the `dataset_import_sources` field to retrieve the object's structure.  |
 | email_notification | boolean | Enable/disable an email notification on import failure/ completion. (optional) |
+
+{{<note>}}
+Other attributes are not allowed and will cause the request to fail.
+{{</note>}}
 
 ### Response {#post-response} 
 
+Returns a status code.
 
 ### Status codes {#post-status-codes} 
 

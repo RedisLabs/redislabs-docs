@@ -1,9 +1,10 @@
 ---
 Title: Cluster alerts requests
 linkTitle: alerts
-description: Documents the Redis Enterprise Software REST API cluster/alerts requests.
+description: Cluster alert requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/alerts
          /rs/references/rest-api/cluster/alerts.md
@@ -51,8 +52,7 @@ Get all alert states for the cluster object.
 
 ### Response {#get-all-response} 
 
-Returns a hash of alert objects and their states. See [REST API
-alerts overview]({{<relref "/rs/references/rest-api/objects">}}) for a description of the alert state object.
+Returns a hash of [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}) and their states.
 
 #### Example JSON body
 
@@ -77,7 +77,7 @@ alerts overview]({{<relref "/rs/references/rest-api/objects">}}) for a descripti
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 
-## Get a cluster alert {#get-alert}
+## Get cluster alert {#get-alert}
 
 	GET /v1/cluster/alerts/{alert}
 
@@ -110,7 +110,7 @@ Get a cluster alert state.
 
 ### Response {#get-response} 
 
-See [REST API alerts overview]({{<relref "/rs/references/rest-api/objects">}}) for a description of the alert state object.
+Returns an [alert object]({{<relref "/rs/references/rest-api/objects/alert">}}).
 
 #### Example JSON body
 

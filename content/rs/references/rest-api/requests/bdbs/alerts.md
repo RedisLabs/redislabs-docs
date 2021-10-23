@@ -1,9 +1,10 @@
 ---
 Title: Database alerts requests
 linkTitle: alerts
-description: Documents the Redis Enterprise Software REST API bdbs/alerts requests.
+description: Database alert requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/alerts
          /rs/references/rest-api/bdbs/alerts.md
@@ -20,11 +21,11 @@ aliases: /rs/references/rest-api/bdbs/alerts
 | [GET](#get-bdbs-alert) | `/v1/bdbs/alerts/{uid}/{alert}` | Get a specific database alert state |
 | [POST](#post-bdbs-alerts) | `/v1/bdbs/alerts/{uid}` | Update a database’s alerts configuration |
 
-## Get all alerts for all databases {#get-all-bdbs-alerts}
+## Get all database alerts {#get-all-bdbs-alerts}
 
 	GET /v1/bdbs/alerts
 
-Get all alert states for all bdbs.
+Get all alert states for all databases.
 
 #### Required permissions
 
@@ -47,9 +48,7 @@ Get all alert states for all bdbs.
 
 ### Response {#get-all-response}
 
-Returns a hash of alert uid's and the alerts states for each BDB.
-
-See REST API alerts overview for a description of the alert state object.
+Returns a hash of alert UIDs and the [alerts]({{<relref "/rs/references/rest-api/objects/alert">}}) states for each database.
 
 #### Example JSON body
 
@@ -80,11 +79,11 @@ See REST API alerts overview for a description of the alert state object.
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 
-## Get all alert states for a database {#get-bdbs-alerts}
+## Get database alerts {#get-bdbs-alerts}
 
 	GET /v1/bdbs/alerts/{int: uid}
 
-Get all alert states for a bdb.
+Get all alert states for a database.
 
 #### Required permissions
 
@@ -107,9 +106,7 @@ Get all alert states for a bdb.
 
 ### Response {#get-response-alerts} 
 
-Returns a hash of alert objects and their states.
-
-See REST API alerts overview for a description of the alert state object.
+Returns a hash of [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}) and their states.
 
 #### Example JSON body
 
@@ -138,11 +135,11 @@ See REST API alerts overview for a description of the alert state object.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified bdb does not exist |
 
-## Get a database alert {#get-bdbs-alert}
+## Get database alert {#get-bdbs-alert}
 
 	GET /v1/bdbs/alerts/{int: uid}/{alert}
 
-Get a bdb alert state.
+Get a database alert state.
 
 #### Required permissions
 
@@ -174,7 +171,7 @@ Get a bdb alert state.
 
 ### Response {#get-response} 
 
-See REST API alerts overview for a description of the alert state object.
+Returns an [alert object]({{<relref "/rs/references/rest-api/objects/alert">}}).
 
 #### Example JSON body
 
@@ -201,7 +198,7 @@ See REST API alerts overview for a description of the alert state object.
 | [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Bad request |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Specified alert or bdb does not exist |
 
-## Update database alert configuration {#post-bdbs-alerts}
+## Update database alert {#post-bdbs-alerts}
 
 	POST /v1/bdbs/alerts/{int: uid}
 
@@ -214,8 +211,6 @@ Updates a database's alerts configuration.
 | [update_bdb_alerts]({{<relref "/rs/references/rest-api/permissions#update_bdb_alerts">}}) |
 
 ### Request {#post-request} 
-
-The request must contain a single JSON bdb object with one or many database alert objects in it.
 
 If passed with the dry_run URL query string, the function will validate the alert thresholds, but not commit them.
 
@@ -271,14 +266,11 @@ If passed with the dry_run URL query string, the function will validate the aler
 
 #### Request body
 
-| Field | Type | Description |
-|-------|------|-------------|
-| enabled | boolean | Alert enabled or disabled |
-| threshold | string | Threshold for alert to indicate when it should turn on or off |
+The request must contain a single JSON object with one or many database [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}).
 
 ### Response {#post-response} 
 
-The response includes the updated database alerts.
+The response includes the updated database [alerts]({{<relref "/rs/references/rest-api/objects/alert">}}).
 
 ### Status codes {#post-status-codes} 
 

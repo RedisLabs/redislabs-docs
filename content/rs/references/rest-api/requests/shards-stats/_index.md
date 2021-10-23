@@ -1,9 +1,10 @@
 ---
 Title: Shards stats requests
 linkTitle: shards/stats
-description: Documents the Redis Enterprise Software REST API shards/stats requests.
+description: Shard statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/shards-stats
          /rs/references/rest-api/shards-stats.md
@@ -18,11 +19,11 @@ aliases: /rs/references/rest-api/shards-stats
 | [GET](#get-all-shards-stats) | `/v1/shards/stats` | Get stats for all shards |
 | [GET](#get-shard-stats) | `/v1/shards/stats/{uid}` | Get stats for a specific shard |
 
-## Get stats for all shards {#get-all-shards-stats}
+## Get all shards stats {#get-all-shards-stats}
 
 	GET /v1/shards/stats
 
-Get stats for all shards.
+Get statistics for all shards.
 
 #### Required permissions
 
@@ -53,9 +54,11 @@ Get stats for all shards.
 | interval | string | Time interval for which we want stats: 1sec/10sec/5min/15min/1hour/12hour/1week (optional) |
 | stime | ISO_8601 | Start time from which we want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
-| metrics | list | Comma-separated list of metric names for which we want statistics (default is all) (optional) |
+| metrics | list | Comma-separated list of [metric names]({{<relref "/rs/references/rest-api/objects/statistics/shard-metrics">}}) for which we want statistics (default is all) (optional) |
 
 ### Response {#get-all-response} 
+
+Returns a JSON array of [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all shards.
 
 #### Example JSON body
 
@@ -138,7 +141,7 @@ Get stats for all shards.
 
 	GET /v1/shards/stats/{int: uid}
 
-Get stats for a specific shard.
+Get statistics for a specific shard.
 
 #### Required permissions
 
@@ -177,6 +180,8 @@ Get stats for a specific shard.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the specified shard.
 
 #### Example JSON body
 

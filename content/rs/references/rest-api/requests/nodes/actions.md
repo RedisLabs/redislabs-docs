@@ -1,9 +1,10 @@
 ---
 Title: Node actions requests
 linkTitle: actions
-description: Documents the Redis Enterprise Software REST API nodes/actions requests.
+description: Node action requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/nodes/actions
          /rs/references/rest-api/nodes/actions.md
@@ -21,7 +22,7 @@ aliases: /rs/references/rest-api/nodes/actions
 | [POST](#post-node-action) | `/v1/nodes/{node_uid}/actions/{action}` | Initiate node action |
 | [DELETE](#delete-node-action) | `/v1/nodes/{node_uid}/actions/{action}` | Cancel action or remove action status |
 
-## Get status for all actions on all nodes {#get-all-nodes-actions}
+## Get all actions statuses {#get-all-nodes-actions}
 
 	GET /v1/nodes/actions
 
@@ -49,6 +50,7 @@ actions on all nodes.
 
 ### Response {#get-all-response} 
 
+Returns a list of [action objects]({{<relref "/rs/references/rest-api/objects/action">}}).
 
 ### Status codes {#get-all-status-codes} 
 
@@ -56,7 +58,7 @@ actions on all nodes.
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides details about an ongoing action. |
 
-## Get status of all actions on a specific node {#get-node-actions}
+## Get node actions statuses {#get-node-actions}
 
 	GET /v1/nodes/{node_uid}/actions
 
@@ -89,9 +91,9 @@ Get the status of all actions on a specific node.
 
 ### Response {#get-response-all-actions} 
 
-An array with all actions for the specified node is returned, encapsulated in a JSON object.
+Returns a JSON object that includes a list of [action objects]({{<relref "/rs/references/rest-api/objects/action">}}) for the specified node.
 
-If no actions are available the response will include an empty array.
+If no actions are available, the response will include an empty array.
 
 #### Example JSON body
 
@@ -120,9 +122,9 @@ If no actions are available the response will include an empty array.
 | Code | Description |
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error, response provides details about an ongoing action. |
-| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run). |
+| [404&nbsp;Not&nbsp;Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Action does not exist (i.e. not currently running and no available status of last run). |
 
-## Get status of an action on a specific node {#get-node-action}
+## Get node action status {#get-node-action}
 
 	GET /v1/nodes/{node_uid}/actions/{action}
 
@@ -142,6 +144,8 @@ Get the status of a currently executing, queued, or completed action on a specif
 | Accept | application/json | Accepted media type |
 
 ### Response {#get-response} 
+
+Returns an [action object]({{<relref "/rs/references/rest-api/objects/action">}}) for the specified node.
 
 ### Error codes {#get-error-codes} 
 
@@ -217,7 +221,7 @@ The body content may provide additional action details. Currently, it is not use
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Action initiated successfully. |
 | [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | Only a single instance of any action type can be invoked at the same time. |
 
-## Cancel action or remove action status {#delete-node-action}
+## Cancel action {#delete-node-action}
 
 	DELETE /v1/nodes/{node_uid}/actions/{action}
 
@@ -251,6 +255,7 @@ previously executed and completed action.
 
 ### Response {#delete-response} 
 
+Returns a status code.
 
 ### Status codes {#delete-status-codes} 
 

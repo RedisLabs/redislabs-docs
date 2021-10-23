@@ -1,9 +1,10 @@
 ---
-Title: Upgrade database requests
+Title: Database upgrade requests
 linkTitle: upgrade
-description: Documents the Redis Enterprise Software REST API bdbs/upgrade requests.
+description: Database upgrade requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/upgrade
          /rs/references/rest-api/bdbs/upgrade.md
@@ -21,7 +22,7 @@ aliases: /rs/references/rest-api/bdbs/upgrade
 
 	POST /v1/bdbs/{int: uid}/upgrade
 
-Upgrade a BDB.
+Upgrade a database.
 
 #### Required permissions
 
@@ -65,6 +66,8 @@ Upgrade a BDB.
 | modules | list of modules | List of dicts representing the modules that will be upgraded.<br></br>Each dict includes:<br></br>• `current_module`: uid of a module to upgrade<br></br>• `new_module`: uid of the module we want to upgrade to<br></br>• `new_module_args`: args list for the new module (no defaults for the three module-related parameters).
 
 ### Response {#post-response} 
+
+Returns the upgraded [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 
 #### Example JSON body
 

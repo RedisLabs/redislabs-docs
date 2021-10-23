@@ -1,9 +1,10 @@
 ---
 Title: Cluster stats requests
 linkTitle: stats
-description: Documents the Redis Enterprise Software REST API cluster/stats requests.
+description: Cluster statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/cluster/stats
          /rs/references/rest-api/cluster/stats.md
@@ -21,7 +22,7 @@ aliases: /rs/references/rest-api/cluster/stats
 
 	GET /v1/cluster/stats
 
-Get cluster stats.
+Get cluster statistics.
 
 #### Required permissions
 
@@ -51,6 +52,8 @@ Get cluster stats.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the cluster.
 
 #### Example JSON body
 

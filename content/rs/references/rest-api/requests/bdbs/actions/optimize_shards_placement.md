@@ -1,9 +1,10 @@
 ---
 Title: Optimize shards placement database action requests
 linkTitle: optimize_shards_placement
-description: Documents the Redis Enterprise Software REST API bdbs/actions/optimize_shards_placement requests.
+description: Optimize shard placement requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/actions/optimize_shards_placement
          /rs/references/rest-api/bdbs/actions/optimize_shards_placement.md
@@ -18,7 +19,7 @@ aliases: /rs/references/rest-api/bdbs/actions/optimize_shards_placement
 | [GET](#get-bdbs-actions-optimize-shards-placement) | `/v1/bdbs/{uid}/actions/optimize_shards_placement` | Get optimized shards placement for a database  |
 
 
-## Get optimized shards placement for a database {#get-bdbs-actions-optimize-shards-placement}
+## Get optimized shards placement {#get-bdbs-actions-optimize-shards-placement}
 
 	GET /v1/bdbs/{int: uid}/actions/optimize_shards_placement
 

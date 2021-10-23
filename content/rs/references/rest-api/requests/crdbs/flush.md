@@ -1,9 +1,10 @@
 ---
 Title: CRDB flush requests
 linkTitle: flush
-description: Documents the Redis Enterprise Software REST API crdbs/flush requests.
+description: Flush Active-Active database requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/crdbs/flush
          /rs/references/rest-api/crdbs/flush.md

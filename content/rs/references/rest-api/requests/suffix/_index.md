@@ -1,9 +1,10 @@
 ---
 Title: Suffix requests
 linkTitle: suffix
-description: Documents the Redis Enterprise Software REST API suffix requests.
+description: DNS suffix requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/suffix
          /rs/references/rest-api/suffix.md
@@ -46,6 +47,8 @@ Get a single DNS suffix.
 
 ### Response {#get-response} 
 
+Returns a [suffix object]({{<relref "/rs/references/rest-api/objects/suffix">}}).
+
 #### Example JSON body
 
 ```json
@@ -54,11 +57,6 @@ Get a single DNS suffix.
     "// additional fields..."
 }
 ```
-
-
-See [Object Attributes]({{<relref "/rs/references/rest-api/objects">}})
-for more details on additional suffix parameters
-
 
 ### Status codes {#get-status-codes} 
 

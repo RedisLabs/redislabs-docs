@@ -1,9 +1,10 @@
 ---
 Title: Node alerts requests
 linkTitle: alerts
-description: Documents the Redis Enterprise Software REST API nodes/alerts requests.
+description: Node alert requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/nodes/alerts
          /rs/references/rest-api/nodes/alerts.md
@@ -19,7 +20,7 @@ aliases: /rs/references/rest-api/nodes/alerts
 | [GET](#get-node-alerts) | `/v1/nodes/alerts/{uid}` | Get all alert states for a node |
 | [GET](#get-node-alert) | `/v1/nodes/alerts/{uid}/{alert}` | Get node alert state |
 
-## Get all alert states for all nodes {#get-all-nodes-alerts}
+## Get all alert states {#get-all-nodes-alerts}
 
 	GET /v1/nodes/alerts
 
@@ -52,7 +53,7 @@ Get all alert states for all nodes.
 
 ### Response {#get-all-response} 
 
-Returns a hash of node UIDs and the alerts states for each node.
+Returns a hash of node UIDs and the [alert states]({{<relref "/rs/references/rest-api/objects/alert">}}) for each node.
 
 #### Example JSON body
 
@@ -82,7 +83,7 @@ Returns a hash of node UIDs and the alerts states for each node.
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 
-## Get all alert states for a node {#get-node-alerts}
+## Get node alert states {#get-node-alerts}
 
 	GET /v1/nodes/alerts/{int: uid}
 
@@ -117,7 +118,7 @@ Get all alert states for a node.
 
 ### Response {#get-response-all-alerts} 
 
-Returns a hash of alert objects and their states.
+Returns a hash of [alert objects]({{<relref "/rs/references/rest-api/objects/alert">}}) and their states for a specific node.
 
 #### Example JSON body
 
@@ -149,7 +150,7 @@ Returns a hash of alert objects and their states.
 
 	GET /v1/nodes/alerts/{int: uid}/{alert}
 
-Get node alert state.
+Get a node alert state.
 
 #### Required permissions
 
@@ -179,6 +180,8 @@ Get node alert state.
 | ignore_settings | boolean | Retrieve updated alert state regardless of the cluster's alert_settings. When not present, a disabled alert will always be retrieved as disabled with a false state. (optional) |
 
 ### Response {#get-response} 
+
+Returns an [alert object]({{<relref "/rs/references/rest-api/objects/alert">}}).
 
 #### Example JSON body
 

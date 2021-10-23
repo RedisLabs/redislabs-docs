@@ -5,6 +5,7 @@ description: Documents the Redis Enterprise Software REST API debuginfo/all requ
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+headerRange: "[1-2]"
 aliases: /rs/references/rest-api/debuginfo/all
          /rs/references/rest-api/debuginfo/all.md
          /rs/references/restapi/debuginfo/all

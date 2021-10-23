@@ -1,9 +1,10 @@
 ---
 Title: Database syncer source stats requests
 linkTitle: sync_source_stats
-description: Documents the Redis Enterprise Software REST API bdbs/sync_source_stats requests.
+description: Syncer source statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/bdbs/sync_source_stats
          /rs/references/rest-api/bdbs/sync_source_stats.md
@@ -18,7 +19,7 @@ aliases: /rs/references/rest-api/bdbs/sync_source_stats
 | [GET](#get-all-bdbs-sync_source_stats) | `/v1/bdbs/{bdb_uid}/sync_source_stats` | Get stats for all syncer sources |
 | [GET](#get-bdbs-sync_source_stats) | `/v1/bdbs/{bdb_uid}/sync_source_stats/{uid}` | Get stats for a specific syncer instance |
 
-## Get stats for all syncer sources {#get-all-bdbs-sync_source_stats}
+## Get all syncer source stats {#get-all-bdbs-sync_source_stats}
 
 	GET /v1/bdbs/{bdb_uid}/sync_source_stats
 
@@ -59,6 +60,8 @@ Get stats for all syncer sources of a local database.
 
 ### Response {#get-all-response} 
 
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all syncer sources.
+
 #### Example JSON body
 
 ```json
@@ -95,11 +98,11 @@ Get stats for all syncer sources of a local database.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Database does not exist. |
 
-## Get stats for a syncer instance {#get-bdbs-sync_source_stats}
+## Get syncer instance stats {#get-bdbs-sync_source_stats}
 
 	GET /v1/bdbs/{bdb_uid}/sync_source_stats/{int: uid}
 
-Get stats for a specific syncer (replica-of) instance.
+Get stats for a specific syncer (Replica Of) instance.
 
 #### Required permissions
 
@@ -136,6 +139,8 @@ Get stats for a specific syncer (replica-of) instance.
 | etime | ISO_8601 | Optional end time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for a specific syncer instance.
 
 #### Example JSON body
 

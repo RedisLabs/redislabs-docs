@@ -1,9 +1,10 @@
 ---
 Title: Node stats requests
 linkTitle: stats
-description: Documents the Redis Enterprise Software REST API nodes/stats requests.
+description: Node statistics requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/nodes/stats
          /rs/references/rest-api/nodes/stats.md
@@ -18,11 +19,11 @@ aliases: /rs/references/rest-api/nodes/stats
 | [GET](#get-all-nodes-stats) | `/v1/nodes/stats` | Get stats for all nodes |
 | [GET](#get-node-stats) | `/v1/nodes/stats/{uid}` | Get stats for a single node |
 
-## Get stats for all nodes {#get-all-nodes-stats}
+## Get all nodes stats {#get-all-nodes-stats}
 
 	GET /v1/nodes/stats
 
-Get stats for all nodes.
+Get statistics for all nodes.
 
 #### Required permissions
 
@@ -52,6 +53,8 @@ Get stats for all nodes.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-all-response} 
+
+Returns a JSON array of [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for all nodes.
 
 #### Example JSON body
 
@@ -129,7 +132,7 @@ Get stats for all nodes.
 
 	GET /v1/nodes/stats/{int: uid}
 
-Get stats for a node.
+Get statistics for a node.
 
 #### Required permissions
 
@@ -165,6 +168,8 @@ Get stats for a node.
 | etime | ISO_8601 | End time after which we don't want the stats. Should comply with the [ISO_8601](https://en.wikipedia.org/wiki/ISO_8601) format (optional) |
 
 ### Response {#get-response} 
+
+Returns [statistics]({{<relref "/rs/references/rest-api/objects/statistics">}}) for the specified node.
 
 #### Example JSON body
 

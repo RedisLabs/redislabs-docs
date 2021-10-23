@@ -1,9 +1,10 @@
 ---
 Title: Modules requests
 linkTitle: modules
-description: Documents the Redis Enterprise Software REST API modules requests.
+description: Redis modules requests
 weight: $weight
 alwaysopen: false
+headerRange: "[1-2]"
 categories: ["RS"]
 aliases: /rs/references/rest-api/modules
          /rs/references/rest-api/modules.md
@@ -20,7 +21,7 @@ aliases: /rs/references/rest-api/modules
 | [POST](#post-module) | `/v1/modules` | Upload a new module |
 | [DELETE](#delete-module) | `/v1/modules/{uid}` | Delete a module |
 
-## List available modules {#list-modules}
+## List modules {#list-modules}
 
 	GET /v1/modules
 
@@ -46,6 +47,8 @@ List available modules, i.e. modules stored within the CCS.
 | Accept | \*/\* | Accepted media type |
 
 ### Response {#list-response} 
+
+Returns a JSON array of [module objects]({{<relref "/rs/references/rest-api/objects/module">}}).
 
 ### Status codes {#list-status-codes} 
 
@@ -85,6 +88,8 @@ Get specific available modules, i.e. modules stored within the CCS.
 | uid | integer | The module's unique ID. |
 
 ### Response {#get-response} 
+
+Returns a [module object]({{<relref "/rs/references/rest-api/objects/module">}}).
 
 ### Status codes {#get-status-codes} 
 
@@ -126,6 +131,7 @@ Packer](https://github.com/RedisLabs/RAMP).
 
 ### Response {#post-response} 
 
+Returns a status code. If an error occurs, the response body may include an error code and message with more details.
 
 ### Error codes {#post-error-codes} 
 
@@ -180,6 +186,7 @@ Delete a module.
 
 ### Response {#delete-response} 
 
+Returns a status code to indicate module deletion success or failure.
 
 ### Status codes {#delete-status-codes} 
 
