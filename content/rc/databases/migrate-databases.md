@@ -1,5 +1,5 @@
 ---
-Title: Migrate data to new subscriptions
+Title: Migrate data to new subscription
 linkTitle: Migrate databases
 description: Shows two ways to migrate data to a database in a new subscription.
 weight: 75
@@ -7,7 +7,6 @@ alwaysopen: false
 categories: ["RC"]
 aliases: /rc/databases/migrate-databases/
 ---
-
 There are times when you need to migrate data from one database to another.  
 
 Here are two common ways to do this.
@@ -82,7 +81,7 @@ Here's how this works for databases hosted on the same account:
 
     {{<image filename="images/rc/icon-database-save.png" alt="The **Save** button verifies the Source URI and you can't save until it validates." >}}{{< /image >}}
 
-    If the endpoint cannot be verified, make sure that you've copied it directly from the source database and that the value you entered starts with `redis://`.
+    If the endpoint cannot be verified, make sure that you've copied the details directly from the source database and that the value you entered starts with `redis://`.
 
 7.  Select the **Save Database** button to begin updating the database.
 
