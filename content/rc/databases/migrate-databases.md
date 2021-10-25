@@ -8,86 +8,100 @@ categories: ["RC"]
 aliases: /rc/databases/migrate-databases/
 ---
 
-There are times when it's necessary to migrate data from one database to another.  
+There are times when you need to migrate data from one database to another.  
 
-Here are two ways to do it.
+There are different ways you can do this.  Here are two of the most common approaches.  
 
-Each approach is appropriate for different situations and you should review the considerations accordingly.
+Each approach is suitable for different situations and the steps may vary according to your needs.
 
 ## Transfer via import 
 
 The most common way to transfer data to a new database is to import a copy of the data into the new database.
 
-Here's how the process works:
+Here's how it works:
 
-1.  Create the target subscription and database.
-2.  Select an export storage destination and verify that it's ready for use and has sufficient space.
-3.  Export the data from the original database to the storage location.
-4.  Import the exported data into the target database, the one hosted by the new subscription.
+1.  Select an export storage destination and verify that it's ready for use and has sufficient space.
 
+1.  Export the data from the original database to the storage location.
 
+1.  Import the exported data into the target database, the one hosted by the new subscription.
+
+The migrated data reflects the state of the data at the time it was originally exported.  
+
+If you have apps or other connections actively using the source database, consider scheduling downtime for the migration to avoid loss.
+
+This approach also lets you transfer data between databases hosted by different services. 
 
 ## Sync using Active-Passive
 
-You can use Active-Passive to sync (synchronize) the source database to the target database.  This lets the source database remain active and ensures the data continues to migrate.  
+You can use Active-Passive to sync (synchronize) the source database to the target database.  This lets the source database remain active and ensures the data continues to migrate.
 
 To do this, specify the target database as an Active-Passive replica of the the source database.  The general process is:
 
 1.  Get the public endpoint of the source database
-2.  Specify the target database as an Active-Passive replica of the source.
+2.  Enable the target database as an Active-Passive replica for the source.
 3.  Wait for the data to sync.
 4.  Switch apps and other connections to the target database.
 5.  Disable Active-Passive for the target database.
 
-You'll need the Public endpoint of the source database, which is available on the **Configuration** tab of the database details page.
+You'll need the Public endpoint details for the source database, which is available on the **Configuration** tab of the database details page.
 
 Here's how this works for databases hosted on the same account:
 
 1.  Select **Databases** from the [admin menu](http://app.redis.com/), and then select the source database from the list.
 
-    {{image}}
+    {{<image filename="images/rc/migrate-database-select-source.png" alt="Select the source database from the database list." >}}{{< /image >}}
 
 2.  Select the **Configuration** tab and then locate the **Public endpoint** setting in the **General** section.
 
-    {{image}}
+    {{<image filename="images/rc/migrate-database-source-endpoint.png" alt="The public endpoint for the source database is located in the General section of the Configuration tab." >}}{{< /image >}}
+
 
 3.  Select the **Copy** button to copy the endpoint details to the Clipboard.
 
-    {{image}}
+    {{<image filename="images/rc/button-database-copy.png" alt="The Copy button copies the public endpoint details to the Clipboard." >}}{{< /image >}}
 
 4.  Use the database list drop-down to select the target database from the list.
 
-    {{image}}
+    {{<image filename="images/rc/migrate-data-select-target-list.png" alt="Use the database list drop-down to select the target database." width="50%">}}{{< /image >}}
 
-5.  From the **Configuration** tab of that database, select the **Edit database** button.
+5.  From the **Configuration** tab of the target database, select the **Edit database** button.
 
-    {{image}}
+    {{<image filename="images/rc/migrate-data-target-edit.png" alt="Use the **Edit Database** button to change the configuration of the target database." >}}{{< /image >}}
 
 6.  In the **Durability** section, enable **Active-Passive Redis** and then select the **Add URI** button.
 
-    {{image}}
+    {{<image filename="images/rc/migrate-data-active-passive-enable.png" alt="Active-Passive settings are located in the **Durability** section of the database **Configuration** tab." >}}{{< /image >}}
 
-    {{image}}
+    {{<image filename="images/rc/button-database-uri-add.png" alt="Use the **Add URI** button to specify the source of the Active-Passive replica." >}}{{< /image >}}
 
 7.  In the text box, type `redis://` and then paste in the public endpoint details. 
 
-    {{image}}
+    {{<image filename="images/rc/migrate-data-specify-source-uri.png" alt="The source URI must be specified using the 'redis://' protocol." >}}{{< /image >}}
 
-8.  Select the **Save** button.
+    Use the **Save** button to make sure you've specified the source URI correctly.
 
-    {{image}}
+    {{<image filename="images/rc/icon-database-save.png" alt="The **Save** button verifies the Source URI and you can't save until it validates." >}}{{< /image >}}
 
-    This starts a task that updates the target database.  While this task runs, the database status is `Pending`.Data does not sync during this process.
+    If the endpoint cannot be verified, make sure that you've copied it directly from the source database configuration and that the value you entered starts with `redis://`.
+
+8.  Select the **Save Database** button to begin updating the database.
+
+    {{<image filename="images/rc/button-database-save.png" alt="Use the **Save Database** button to save your changes, deploy the database, and to start data migration." >}}{{< /image >}}
+
+    Initially, the database status is __Pending__, which means the update task is still running.  
 
     The sync process doesn't begin until the database becomes `Active`.  
 
-    When the database is reported as `Synched,` everything is up to date.  
+    When data has fully migrated to the target database, database status reports `Synced`.  
 
-    {{image}}
+    {{<image filename="images/rc/migrate-data-status-synced.png" alt="When the data is migrated, the target database status displays `Synced`." >}}{{< /image >}}
 
-Active-Passive sync lets you migrate data while apps and other connections are using the source database.At some point, all connections should be switched to the target database.  When that's complete, you can disable Active-Passive for the target database.
+Active-Passive sync lets you migrate data while apps and other connections are using the source database.  Once the data is migrated, you should migrate active connections to the target database.  
 
-Note that this approach requires more memory than the import process.  On average, you need an extra 25% memory on top of other requirements.  For example, imagine you want to migrate a 1GB database that doesn't have replication enabled to a target database with replication enabled.  The target would need a memory limit of at least 2&frac12;GB.
+Active-Passive sync requires more memory than data import.  On average, you need an extra 25% memory on top of other requirements, though specific requirements depend on the data types and other factors.  
+
+To illustrate, support you want to migrate a 1&nbsp;GB source database without replication to a target database with replication enabled.  Here, the target database memory limit should be at least 2&frac12;&nbsp;GB to avoid data loss.
 
 Once the databases are synched, you can disable Active-Passive for the target database.  Before doing so, however, verify that apps and other connections have switched to the target database; otherwise, you may lose data.
 
