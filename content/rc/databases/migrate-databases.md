@@ -15,7 +15,7 @@ Each approach is suitable for different situations and the steps can vary accord
 
 ## Transfer via import 
 
-The most common way to transfer data to a new database is to import a copy of the data into the new database.
+The most common way to transfer data to a new database is to import a copy of the data into it.
 
 Here's how it works:
 
