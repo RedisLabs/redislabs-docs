@@ -57,7 +57,7 @@ Databases are not recovered. Instead, databases are recreated with the REDB cust
 
 ### Minimum node resources
 
-Single-node cluster require at least 2 CPUs and 2GB of memory.
+A single-node cluster requires at least 2 CPUs and 2GB of memory.
 
 ### Maximum database capacity
 
