@@ -58,7 +58,7 @@ Redis Enterprise REST API responses support the following HTTP headers:
 
 All API requests are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
 
-Versions are specified in the request URI, as shown in the following table:
+Specify the version in the request URI, as shown in the following table:
 
 | Request path | Description |
 |--------------|-------------|
