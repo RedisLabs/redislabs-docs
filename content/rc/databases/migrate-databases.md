@@ -10,9 +10,9 @@ aliases: /rc/databases/migrate-databases/
 
 There are times when you need to migrate data from one database to another.  
 
-There are different ways you can do this.  Here are two of the most common approaches.  
+Here are two common ways to do this.
 
-Each approach is suitable for different situations and the steps may vary according to your needs.
+Each approach is suitable for different situations and the steps can vary according to your needs.
 
 ## Transfer via import 
 
@@ -103,7 +103,7 @@ Active-Passive sync requires more memory than data import.  On average, you need
 
 To illustrate, support you want to migrate a 1&nbsp;GB source database without replication to a target database with replication enabled.  Here, the target database memory limit should be at least 2&frac12;&nbsp;GB to avoid data loss.
 
-Once the databases are synched, you can disable Active-Passive for the target database.  Before doing so, however, verify that apps and other connections have switched to the target database; otherwise, you may lose data.
+Once the databases are synced, you can disable Active-Passive for the target database.  Before doing so, however, verify that apps and other connections have switched to the target database; otherwise, you may lose data.
 
 For help setting up an Active-Passive relationship between databases hosted on different accounts, contact support.
 
