@@ -11,6 +11,15 @@ aliases: /rs/references/rest-api/
          /rs/references/rest_api/
          /rs/references/rest_api.md
 ---
+Redis Enterprise Software provides a REST API to help you automate common tasks.
+
+Here, you'll find the details of the API and how to use it.  
+
+More info is also available, including:
+
+- Supported [request endpoints]({{<relref "/rs/references/rest-api/requests/_index.md" >}}), organized by path
+- Supported [objects]({{<relref "/rs/references/rest-api/objects/_index.md" >}}), both request and response
+- Built-in roles and associated [permissions]({{<relref "/rs/references/rest-api/permissions/_index.md" >}})
 
 ## Protocol and headers
 
@@ -49,6 +58,15 @@ The Redis Enterprise REST API supports the following HTTP headers:
 
 All API requests are versioned in order to minimize the impact of backwards-incompatible API changes and to coordinate between different versions operating in parallel.
 
+Versions are specified in the request URI, as shown in the following table:
+
+| Request path | Description |
+|--------------|-------------|
+| POST `/v1/bdbs` | A version 1 request for the `/bdbs` endpoint. |
+| POST `/v2/bdbs` | A version 2 request for the `/bdbs` endpoint. |
+
+When an endpoint supports multiple versions, each version is documented on the corresponding endpoint.  For example, the [bdbs request]({{<relref "/rs/references/rest-api/requests/bdbs/" >}}) page documents POST requests for [version 1]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v1" >}}) and [version 2]({{<relref "/rs/references/rest-api/requests/bdbs/#post-bdbs-v2" >}}). 
+
 ## Authentication
 
 Authentication to the API occurs via Basic Auth. Provide your username and password as the basic auth credentials.
@@ -57,7 +75,11 @@ All calls must be made over SSL, to port 9443.
 
 Example Request:
 
-    curl -u "demo@redislabs.com:password" https://localhost:9443/v1/bdbs
+``` console
+curl -u "demo@redislabs.com:password" https://localhost:9443/v1/bdbs
+```
+
+By default, the admin user is authorized for access.  Use [role-based access controls]({{< relref "/rs/security/admin-console-security/user-security.md" >}}) to manage access.
 
 ## Common responses
 
