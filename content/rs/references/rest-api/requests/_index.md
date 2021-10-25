@@ -8,6 +8,7 @@ categories: ["RS"]
 aliases: /rs/references/rest-api/endpoints/
          /rs/references/restapi/endpoints/
          /rs/references/rest_api/endpoints/
+         /rs/references/rest_api/requests/
 ---
 
 A REST API request requires the following components:
