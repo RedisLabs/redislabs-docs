@@ -34,7 +34,7 @@ This approach also lets you transfer data between databases hosted by different 
 
 ## Sync using Active-Passive
 
-You can use Active-Passive to sync (synchronize) the source database to the target database.  This lets the source database remain active and ensures the data continues to migrate.
+If you have a Flexible (or Annual) subscription, you can use Active-Passive to sync (synchronize) the source database to the target database.  The source database remains active while the data migrates.
 
 To do this, specify the target database as an Active-Passive replica of the the source database.  The general process is:
 
@@ -52,30 +52,27 @@ Here's how this works for databases hosted on the same account:
 
     {{<image filename="images/rc/migrate-database-select-source.png" alt="Select the source database from the database list." >}}{{< /image >}}
 
-2.  Select the **Configuration** tab and then locate the **Public endpoint** setting in the **General** section.
+2.  In the **General** section of the **Configuration** tab, Locate the **Public endpoint** setting and then select the **Copy** button to copy the details to the Clipboard.
 
     {{<image filename="images/rc/migrate-database-source-endpoint.png" alt="The public endpoint for the source database is located in the General section of the Configuration tab." >}}{{< /image >}}
 
-
-3.  Select the **Copy** button to copy the endpoint details to the Clipboard.
-
     {{<image filename="images/rc/button-database-copy.png" alt="The Copy button copies the public endpoint details to the Clipboard." >}}{{< /image >}}
 
-4.  Use the database list drop-down to select the target database from the list.
+3.  Use the database list drop-down to select the target database from the list.
 
     {{<image filename="images/rc/migrate-data-select-target-list.png" alt="Use the database list drop-down to select the target database." width="50%">}}{{< /image >}}
 
-5.  From the **Configuration** tab of the target database, select the **Edit database** button.
+4.  From the **Configuration** tab of the target database, select the **Edit database** button.
 
     {{<image filename="images/rc/migrate-data-target-edit.png" alt="Use the **Edit Database** button to change the configuration of the target database." >}}{{< /image >}}
 
-6.  In the **Durability** section, enable **Active-Passive Redis** and then select the **Add URI** button.
+5.  In the **Durability** section, enable **Active-Passive Redis** and then select the **Add URI** button.
 
     {{<image filename="images/rc/migrate-data-active-passive-enable.png" alt="Active-Passive settings are located in the **Durability** section of the database **Configuration** tab." >}}{{< /image >}}
 
     {{<image filename="images/rc/button-database-uri-add.png" alt="Use the **Add URI** button to specify the source of the Active-Passive replica." >}}{{< /image >}}
 
-7.  In the text box, type `redis://` and then paste in the public endpoint details. 
+6.  In the text box, type `redis://` and then paste in the public endpoint details. 
 
     {{<image filename="images/rc/migrate-data-specify-source-uri.png" alt="The source URI must be specified using the 'redis://' protocol." >}}{{< /image >}}
 
@@ -85,7 +82,7 @@ Here's how this works for databases hosted on the same account:
 
     If the endpoint cannot be verified, make sure that you've copied it directly from the source database configuration and that the value you entered starts with `redis://`.
 
-8.  Select the **Save Database** button to begin updating the database.
+7.  Select the **Save Database** button to begin updating the database.
 
     {{<image filename="images/rc/button-database-save.png" alt="Use the **Save Database** button to save your changes, deploy the database, and to start data migration." >}}{{< /image >}}
 
