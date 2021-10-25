@@ -90,4 +90,4 @@ The following are common responses which may return regardless of the request ty
 | [503 Service Unavailable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.4) | Contacted node is currently not a member of any active cluster. |
 | [505&nbsp;HTTP&nbsp;Version&nbsp;Not&nbsp;Supported](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.6) | An unsupported `x-api-version` was used, see API Versions above. |
 
-Individual requests may support different response codes.  When this happens, these are documented on the corresponding request page.
+Individual requests may return different response codes.  These additional codes are documented on the corresponding request page.
