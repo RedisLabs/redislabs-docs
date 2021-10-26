@@ -23,7 +23,7 @@ We recommend these hardware requirements for production systems or for developme
 
 | Item | Description | Minimum Requirements | Recommended |
 |------------|-----------------|------------|-----------------|
-| Nodes per cluster | At least 3 data nodes (not including a quorum node)  are required to support a reliable, highly available deployment that handles process failure, node failure, and network split events in a consistent manner. | 3 nodes | >= 3 nodes (Must be an odd number of nodes) |
+| Nodes per cluster | At least 3 nodes are required to support a reliable, highly available deployment that handles process failure, node failure, and network split events in a consistent manner. | 3 nodes | >= 3 nodes (Must be an odd number of nodes) |
 | Cores<sup>*</sup> per node | RS is based on a multi-tenant architecture and can run multiple Redis processes (or shards) on the same core without significant performance degradation. | 4 cores | >=8 cores |
 | RAM<sup>*</sup> per node | Defining your RAM size must be part of the capacity planning for your Redis usage. | 15GB | >=30GB |
 | Ephemeral Storage | Used for storing [replication files (RDB format) and cluster log files]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}). | RAM x 2 | >= RAM x 4 |
