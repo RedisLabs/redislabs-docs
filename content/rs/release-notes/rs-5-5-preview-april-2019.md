@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software Release Notes 5.5 Preview (April 2019)
 linkTitle: 5.5 Preview (April 2019)
-description:
+description: Preview release.  Databases support multiple modules.  
 weight: 87
 alwaysopen: false
 categories: ["RS"]

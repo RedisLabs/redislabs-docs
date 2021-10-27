@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software Release Notes 6.2.4 (August 2021)
 linkTitle: 6.2.4 (August 2021)
-description:
+description: Internode encryption. Nginx replaced by envoy.  New upgrade policies/behavior.  Compatible with open source Redis 6.2.
 weight: 76
 alwaysopen: false
 categories: ["RS"]

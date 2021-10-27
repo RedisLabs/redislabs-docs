@@ -6,6 +6,6 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-Here's what changed recently in Redis Enteprise Software:
+Here's what changed recently in Redis Enterprise Software:
 
-{{< allchildren style="h2" sort="Weight" >}}
+{{< table-children columnNames="Version (Date),Major changes" columnSources="LinkTitle,Description" enableLinks="LinkTitle" >}}
