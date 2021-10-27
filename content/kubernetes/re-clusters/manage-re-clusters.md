@@ -11,13 +11,31 @@ aliases: [
 ]
 ---
 
+## HOW RECs WORK
+
+1. yaml file is created in the namespace
+2. Operator uses file to create cluster
+2.1 Operator creates services: serviceRigger, API, UI service, ClusterIP service,
+3. you can verify it was created
+4. create REDBs
+
+- only one cluster is supported per operator deployment. The operator can only manage one Redis Enterprise Cluster custom resource in a namespace. To deploy another Enterprise cluster in the same Kubernetes cluster, deploy an operator in an additional namespace for each additional Enterprise Cluster required. 
+- each Enterprise Cluster can effectively host hundreds of Redis Database instances. Deploying multiple clusters is typically used for scenarios where complete operational isolation is required at the cluster level.
+- ui service created by the operator and the default credentials as set in a secret.The secret name is the same as the (Redis Enterprise??) cluster name within the namespace.
+
+
 ## Create a RedisEnterpriseCluster custom resource
 
-Redis Enterprise Cluster (REC): an API to create Redis Enterprise clusters. Note that only one cluster is supported per operator deployment.
+<note> Creating a default custom resource is part of the deployment process. If you haven't completed that yet, go to [Deploy Redis Enterprise Software on Kubernetes]({{<relref "/kubernetes/deployment/quick-start.md">}}) </note>
 
-Create a RedisEnterpriseCluster(REC) using the
+**DO THEY NEED TO DO IMAGESPEC SECTIONS AND PULL SECRETS AFTER DEPLOYMENT?**
 
-default configuration, which is suitable for development type deployments and works in typical scenarios. 
+**`KUBECTL CONFIG SET-CONTEXT --CURRENT --NAMESPACE=<>`????**
+
+1. Create a RedisEnterpriseCluster(REC) custom resource yaml file. The default configuration below is best for development deployments and works in most typical scenarios. For production deployments, you'll need to configure **XYZ**
+
+[Options for Redis Enterprise clusters]({{< relref "kubernetes/re-clusters/cluster-options.md" >}}) has more detail on common configuration options. 
+The [Redis Enterprise Cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) has a full list of supported attributes.
 
 ```yaml
 apiVersion: app.redislabs.com/v1
@@ -28,24 +46,18 @@ spec:
   nodes: 3
 ```
 
-[Options for Redis Enterprise clusters]({{< relref "kubernetes/re-clusters/cluster-options.md" >}}) has more detail on common configuration options. The [Redis Enterprise Cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) has a full list of supported attributes.
+2. Apply the changes to your custom resource file. The operator will use this resource to create your Redis Enterprise cluster. 
 
+```bash
 kubectl apply -f rec.yaml
+```
 
+3. Verify creation was successful. `rec` is a shortcut for RedisEnterpriseCluster. The cluster takes around 5-10 minutes to come up. A typical response looks like this:
 
-Note: The Operator can only manage one Redis Enterprise Cluster custom resource in a namespace. To deploy another Enterprise Clusters in the same Kubernetes cluster, deploy an Operator in an additional namespace for each additional Enterprise Cluster required. 
-
-Note that each Enterprise Cluster can effectively host hundreds of Redis Database instances. Deploying multiple clusters is typically used for scenarios where complete operational isolation is required at the cluster level.
-
-Run kubectl get rec and verify creation was successful. rec is a shortcut for RedisEnterpriseCluster. The cluster takes around 5-10 minutes to come up. A typical response may look like this:
-
+```bash
 NAME  AGE
 rec   5m
-Note: Once the cluster is up, the cluster GUI and API could be used to configure databases. It is recommended to use the K8s REDB API that is configured through the following steps. To configure the cluster using the cluster GUI/API, use the 
-
-ui service created by the operator and the default credentials as set in a secret.
-
-The secret name is the same as the cluster name within the namespace.
+```
 
 ## Modify your Redis Enterprise cluster (REC)
 
