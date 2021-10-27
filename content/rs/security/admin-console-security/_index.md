@@ -16,7 +16,7 @@ We recommend that you use the features to implement the following best practices
 
 - **Integrate with an external identity provider**: Redis Enterprise supports integrations with an external identity provider, such as Active Directory, through an [LDAP integration]({{< relref "/rs/security/admin-console-security/user-security.md#setting-up-ldap" >}}). 
 
-- **Implement standard authenticaion practices**: If your organization does not support LDAP, you can stull use Redis Enterprise's [user account security]({{< relref "/rs/security/admin-console-security/user-security.md#user-account-security" >}}). Features include basic password complexity requirements, password expiration, and user login lockouts.
+- **Implement standard authenticaion practices**: If your organization does not support LDAP, you can still use Redis Enterprise's [user account security]({{< relref "/rs/security/admin-console-security/user-security.md#user-account-security" >}}). Features include basic password complexity requirements, password expiration, and user login lockouts.
 
 - **Limit session timeouts**: Session timeouts, or automatic logout, help to prevent inadvertent unauthorized access. You can configure the [A session will only be available for a set amount of time]({{< relref "/rs/security/passwords-users-roles.md#session-timeout" >}}) before the user is required to re-authenticate. By default, Redis Enterprise logs user out of the admin console after 15 minutes of inactivity.
 
