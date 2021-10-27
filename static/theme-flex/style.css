@@ -1372,6 +1372,17 @@ a.menu__link:hover:before {
   position: relative;
   top: 3px;
 }
+.post-bottom .go-top-link a {
+  border: 2px solid transparent;
+  padding: 6px;
+  border-radius: 3px;
+  text-decoration: none !important;
+  transition: all 200ms linear;
+}
+.go-top-link i:before {
+  position: relative;
+  top: 3px;
+}
 .main-content-left > ul > li {
   margin-bottom: 1.3rem;
   margin-left: 2rem;
@@ -2023,7 +2034,6 @@ div#breadcrumbs {
 }
 .go-top-link {
   position: relative;
-  top: 2px;
 }
 .nav-links {
   display: flex;
