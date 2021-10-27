@@ -7,7 +7,7 @@ categories: ["RS"]
 aliases: ["/rs/administering/cluster-operations/updating-certificates"]
 ---
 
-Redis Enterprise Software (RS) uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
+Redis Enterprise Software uses self-signed certificates out-of-the-box to make sure that the product is secure by default.
 The self-signed certificates are used to establish encryption-in-transit for the following traffic:
 
 - Management admin console (CM) - The certificate for connections to the management admin console
@@ -16,7 +16,7 @@ The self-signed certificates are used to establish encryption-in-transit for the
 - Syncer - The certificate for Active-Active and Replica Of synchronization between clusters
 - Metrics exporter - The certificate to export metrics to Prometheus
 
-These self-signed certificates are generated on the first node of each RS installation and are copied to all other nodes added to the cluster.
+These self-signed certificates are generated on the first node of each Redis Enterprise Software installation and are copied to all other nodes added to the cluster.
 
 When you use the default self-signed certificates and you connect to the admin console over a web browser, you'll seen an untrusted connection notification.
 
@@ -28,7 +28,7 @@ When you update the certificates, the new certificate replaces the same certific
 
 ## How to update TLS certificates
 
-You can use either the rladmin CLI or the REST API to update the certificates.
+You can use either the rladmin command-line interface (CLI) or the REST API to update the certificates.
 
 ### Using the CLI
 
@@ -66,7 +66,7 @@ curl -k -X PUT -u "<username>:<password>" -H "Content-Type: application/json" -d
 Where:
 
 - cert_name - The name of the certificate to replace:
-  - For management UI: `cm`
+  - For management admin console: `cm`
   - For REST API: `api`
   - For database endpoint: `proxy`
   - For syncer: `syncer`
@@ -83,7 +83,7 @@ Where:
 
 The new certificates are used the next time the clients connect to the database.
 
-When you upgrade RS, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
+When you upgrade Redis Enterprise Software, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
 
 ### Update syncer certificates for Active-Active databases
 
@@ -105,7 +105,7 @@ crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
 
 ## TLS protocol and ciphers
 
-TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with. You can change the TLS protocols and ciphers to improve the security posture of your RS cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
+TLS protocols and ciphers define the overall suite of algorithms that clients are able to connect to the servers with. You can change the TLS protocols and ciphers to improve the security posture of your Redis Enterprise cluster and databases. The default settings are in line with industry best practices, but you can customize them to match the security policy of your organization.
 
 The communications for which you can modify TLS protocols and ciphers are:
 
@@ -114,6 +114,12 @@ The communications for which you can modify TLS protocols and ciphers are:
 - Discovery service (Sentinel) - The TLS configuration for the [discovery service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}).
 
 You can configure the TLS protocols and ciphers with the `rladmin` commands shown here, or with the REST API.
+
+Be aware that TLS support depends on the operating system.  You cannot enable support for protocols or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact protocol and version support.  
+
+To illustrate, version 6.2.8 of Redis Enterprise Software removed support for TLS 1.0 and TLS 1.1 on Red Hat Enterprise Linux 8 (RHEL 8) because that operating system [does not enable support](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-the-system-wide-cryptographic-policies_security-hardening) for these versions by default.  
+
+If you have trouble enabling specific versions of TLS, verify that they're supported by your operating system and that they're configured correctly.
 
 ### TLS protocol for the control plane
 
@@ -178,7 +184,7 @@ For your changes to take effect on the discovery service, restart the service wi
 supervisorctl restart sentinel_service
 ```
 
-After you set the minimum TLS version, RS does not accept communications with
+After you set the minimum TLS version, Redis Enterprise Software does not accept communications with
 TLS versions older than the specified version.
 
 ### Cipher configuration

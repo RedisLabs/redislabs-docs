@@ -32,7 +32,7 @@ Keep the following in mind:
 
 - [In v6.0.20]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md">}}), Redis Enterprise Software replaced Nginx with envoy to improve internal security and communication.  As of v6.2.4, Nginx is no longer provided with Redis Enterprise Software.
 
-### Database upgrade defaults
+### Database upgrade default changes
 
 The default behavior of the `upgrade db` command has changed.  It is now controlled by a new cluster policy (`redis_upgrade_policy`), which defines the policy for creating new databases and upgrading existing databases.  The policy supports the following values:
 

@@ -1,12 +1,12 @@
 
-Redis Enterprise Software (RS) is supported on several operating systems, cloud environments, and virtual environments.
+Redis Enterprise Software is supported on several operating systems, cloud environments, and virtual environments.
 
 {{< note >}}
 Make sure your system meets these requirements:
 
 - Only 64-bit operating systems are supported.
 - You must install Redis Enterprise Software directly on the host, not through system cloning.
-- You must install on a clean host with no other applications running so that all RAM is allocated to the OS and RS only.
+- You must install on a clean host with no other applications running so that all RAM is allocated to the OS and Redis Enterprise Software  only.
 - Linux distributions must be installed with at least "Minimal Install" configuration.
 {{< /note >}}
 
@@ -14,12 +14,19 @@ Make sure your system meets these requirements:
 |------------|-----------------|
 | Ubuntu | 14.04 (Support ends on November 30, 2020)<br>16.04, 18.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
 | RHEL/CentOS 6 | 6.7, 6.8, 6.9 (Support ends on November 30, 2020) |
-| RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
+| RHEL/CentOS 7 | 8.0, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
 | Oracle Linux 6 | Based on the corresponding RHEL version |
 | Oracle Linux 7 | Based on the corresponding RHEL version |
 | Amazon Linux | Version 1 |
 | Docker | [Docker images]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) of Redis Enterprise Software are certified for Development and Testing only. |
 | Kubernetes | See the [Platform documentation]({{< relref "/kubernetes/_index.md" >}}) |
+
+Be aware that Redis Enterprise Software relies on certain components that require support from the operating system.  You cannot enable support for components, services, protocols, or versions that aren't supported by the operating system running Redis Enterprise Software.  In addition, updates to the operating system or to Redis Enterprise Software can impact component support.
+
+To illustrate, version 6.2.8 of Redis Enterprise Software removed support for TLS 1.0 and TLS 1.1 on Red Hat Enterprise Linux 8 (RHEL 8) because that operating system [does not enable support](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/security_hardening/using-the-system-wide-cryptographic-policies_security-hardening) for these versions by default.  
+
+If you have trouble enabling specific components, features, or versions, verify that they're supported by your operating system and that they're configured correctly.
+
 
 ## VMware
 
