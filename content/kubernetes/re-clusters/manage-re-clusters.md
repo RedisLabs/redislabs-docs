@@ -65,7 +65,7 @@ The Redis Enterprise operator overrides settings made from the admin console or 
 
  For more info on what settings are managed by the operator, see the [Redis Enterprise cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md).
 
-### Modify your REC custom resource
+### Modify REC custom resource
 
 The custom resource defines the properties of the Redis Enterprise cluster (REC).
 
@@ -85,17 +85,7 @@ The custom resource defines the properties of the Redis Enterprise cluster (REC)
 
     When the status is `active`, the Redis Enterprise cluster is ready for use.
 
-### Modify your Redis cluster via rladmin
-
-rladmin is a command-line utility for performing administrative tasks in Redis Enterprise Software. To use the `rladmin` tool with Kubernetes, you need to open a bash shell into your Redis Enterprise pod.
-
-```
-kubectl exec -it <rec-name> -c <container-name> --/bin/bash
-```
-
-From there, you can run `rladmin` commands like you would for a regular Redis Enterprise Software deployment. See [rladmin]({{<relref "">}}) for more information about the `rladmin` command.
-
-### Modify your Redis cluster via the admin console
+### Modify REC via the admin console
 
 1. Switch to the namespace with your Redis Enterprise cluster (REC) and find your cluster name from your list of secrets.
 
@@ -126,6 +116,18 @@ From there, you can run `rladmin` commands like you would for a regular Redis En
     ```
 
 Now you can make changes to your Redis Enterprise cluster from the admin console.
+
+### Modify REC via rladmin
+
+rladmin is a command-line utility for performing administrative tasks in Redis Enterprise Software. To use the `rladmin` tool with Kubernetes, you need to open a bash shell into your Redis Enterprise pod.
+
+```
+kubectl exec -it <rec-name> -c <container-name> --/bin/bash
+```
+
+From there, you can run `rladmin` commands like you would for a regular Redis Enterprise Software deployment. See [rladmin]({{<relref "">}}) for more information about the `rladmin` command.
+
+
 
 ## Related links
 
