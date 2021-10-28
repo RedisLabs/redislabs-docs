@@ -6,7 +6,7 @@ weight: 40
 alwaysopen: false
 categories: ["RS"]
 ---
-To use Redis with [Python](https://www.python.org/), you need a Python Redis client. In following sections, we demonstrate the use of [redis-py](https://github.com/andymccurdy/redis-py/), a Redis Python Client. Additional Python clients for Redis can be found under the [Python section](http://redis.io/clients#Python) of the Redis Clients page.
+To use Redis with [Python](https://www.python.org/), you need a Python Redis client. The following sections demonstrate the use of [redis-py](https://github.com/andymccurdy/redis-py/), a Redis Python Client. Additional Python clients for Redis can be found under the [Python section](http://redis.io/clients#Python) of the Redis Clients page.
 
 ## Install redis-py
 
