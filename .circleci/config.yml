@@ -236,7 +236,7 @@ jobs:
                     # Deploy all other files to the S3 bucket corresponding to the current branch
                     aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" --exclude "*.js" --exclude "pdfs/*" # --size-only
                     # Deploy the robots.txt file
-                    aws s3 cp robots.txt s3://docs.redis.com/robots.txt
+                    aws s3 cp robots.txt s3://docs.redis.com/robots.txt --acl public-read
                     # Deploy the S3 site configuration
                     aws s3api put-bucket-website --bucket docs.redis.com --website-configuration file://website.json
             # Purge the site cache to force the deployed changes to display immediately
