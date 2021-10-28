@@ -18,9 +18,9 @@ We recommend the following practices:
 
 - **Implement standard authentication practices**: If your organization does not support LDAP, you can still use Redis Enterprise's [user account security]({{< relref "/rs/security/admin-console-security/user-security.md#user-account-security" >}}). Features include basic password complexity requirements, password expiration, and user login lockouts.
 
-- **Limit session timeouts**: Session timeouts, also known as _automatic sign out_, helps prevent unauthorized access. Sessions remain idle for a limited period before the are allowed to idle for [a limited period]({{< relref "/rs/security/passwords-users-roles.md#session-timeout" >}}) before the user is required to re-authenticate. 
+- **Limit session timeouts**: Session timeouts, also known as _automatic sign out_, help prevent unauthorized access. Admin console sessions are allowed to idle for [a period of time]({{< relref "/rs/security/passwords-users-roles.md#session-timeout" >}}) before users are required to re-authenticate. 
 
-    By default, users are signed out after 15 minutes of inactivity.  You can set the [timeout period]({{< relref "/rs/security/admin-console-security/user-security#session-timeout" >}})
+    By default, users are signed out after 15 minutes of inactivity.  You can set the [timeout period]({{< relref "/rs/security/admin-console-security/user-security#session-timeout" >}}).
 
 - **Require HTTPS for API endpoints** - Redis Enterprise comes with a REST API to help automate tasks. This API is available in both an encrypted and unencrypted endpoint for backward compatibility. You can [disable the unencrypted endpoint]({{< relref "/rs/security/admin-console-security/encryption.md#requiring-https-for-api-endpoints" >}}) with no loss in functionality.
 
