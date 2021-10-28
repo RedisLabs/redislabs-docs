@@ -15,7 +15,7 @@ aliases: /rs/release-notes/rs-6-2-8-october-2021/
 
 This version features:
 
-- Support for Red Hat Linux Edition 8
+- Support for Red Hat Linux Edition (RHEL) 8
 - You can now set the start time for [12- and 24-hour backups]({{<relref "/rs/administering/import-export/database-backup.md">}}) 
 - Compatibility with version of [open source Redis 6.2.3](https://github.com/redis/redis/releases/tag/6.2.3) (starting with [Redis Enterprise Software v6.2.4]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md">}}))
 - Compatibility with the security fixes of the latest [open source Redis 6.2.6](https://github.com/redis/redis/releases/tag/6.2.6)
@@ -33,7 +33,7 @@ This version features:
 
 ### Product lifecycle updates
 
-Redis Enterprise Software v5.6.0 will reach end of life (EOF) on October 31, 2021.
+As of 31 October 2021, Redis Enterprise Software v5.6.0 is end of life (EOF).
 
 To learn more, see the Redis Enterprise Software [product lifecycle]({{<relref "/rs/administering/product-lifecycle.md">}}), which details the release number and the end-of-life schedule for Redis Enterprise Software.
 
@@ -66,13 +66,13 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-m
 - RS57666 - Fixed false shard migration message when the shard fails to bind the port
 - RS57444, RS55294, RS4903 - Fixed false “backup finished successfully” message when the backup failed due to restricted access to the backup destination
 
+## Known limitations
+
+All [known limitations]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md#known-limitations">}}) from v6.0.20 have been fixed. 
+
 ## Security
 
-### FIPS-enabled Red Hat Linux Edition 8 support
-
-When deploying Redis Enterprise Software 6.2.8 on Red Hat Linux Edition 8 with FIPS, verify that FIPS is enabled _before_ installing Redis Enterprise Software. 
-
-Enabling FIPS after Redis Enterprise Software installation causes changes in system-generated keys and may result in failure to open SSH to the cluster or access the UI via port 8443.
+- RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 
 ### Open source Redis security fix compatibility
 

@@ -154,15 +154,11 @@ To learn more, see [rladmin upgrade]({{<relref "/rs/references/rladmin.md#upgrad
 
 - RS48988 - Add the username description in the log upon an unauthorized REST API request
 
-## Known limitations
-
-All [known limitations]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md#known-limitations">}}) from v6.0.20 have been fixed. 
-
-#### Security
+## Security
 
 -   The following [Open Source Redis](https://github.com/redis/redis) [CVE's](https://github.com/redis/redis/security/advisories) do not affect Redis Enterprise:
 
-    -   [CVE-2021-32625](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32625) - Redis Enterprise is not impacted by the CVE that was found and fixed in           open source Redis since Redis Enterprise does not implement `LCS`. Additional information about the open source Redis fix is on [the Redis GitHub page](https://github.com/redis/redis/releases) (Redis 6.2.4, Redis 6.0.14)
+    -   [CVE-2021-32625](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32625) - Redis Enterprise is not impacted by the CVE that was found and fixed in open source Redis since Redis Enterprise does not implement `LCS`. Additional information about the open source Redis fix is on [the Redis GitHub page](https://github.com/redis/redis/releases) (Redis 6.2.4, Redis 6.0.14)
 
     -   [CVE-2021-32672](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-32672) - Redis Enterprise is not impacted by the CVE that was found and fixed in open source Redis because the LUA debugger is unsupported in Redis Enterprise. Additional information about the open source Redis fix is on [the Redis GitHub page](https://github.com/redis/redis/releases) (Redis 6.2.6, Redis 6.0.16)
 
