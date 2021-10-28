@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 By default, Redis Enterprise Software databases expose a single endpoint.
 
-When you create cluster, you can configure it to expose private and public endpoints.
+When you create a cluster, you can configure it to expose private and public endpoints.
 
 This is valuable for certain environments, such as cloud platforms, where you want:
 
