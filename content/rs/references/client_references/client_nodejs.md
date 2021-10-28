@@ -8,7 +8,7 @@ categories: ["RS"]
 ---
 To use Redis with [Node.js](https://nodejs.org/en/), you need to install a Node.js Redis client. The following sections explain how to use [node_redis](https://github.com/NodeRedis/node_redis), a community-recommended Redis client for Node.js.
 
-Another community-recommended client for Node.js developers is [ioredis](https://github.com/luin/ioredis). You can find additional node.js clients for Redis in the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
+Another community-recommended client for Node.js developers is [ioredis](https://github.com/luin/ioredis). You can find additional Node.js clients for Redis in the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
 
 ## Install node_redis
 

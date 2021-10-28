@@ -11,7 +11,7 @@ To use Redis with [PHP](https://www.php.net/), you need a PHP Redis client. The 
 
 ## Install Predis
 
-See the [How to install and use Predis](https://github.com/nrk/predis#how-to-install-and-use-predis) section of Predis' README file for installation instructions.
+See the [How to install and use Predis](https://github.com/nrk/predis#how-to-install-and-use-predis) section of the Predis client's README file for installation instructions.
 
 The recommended method to install Predis is to use [Composer](https://getcomposer.org/) and install it from [Packagist](https://packagist.org/packages/predis/predis) or the dedicated [PEAR channel](http://pear.nrk.io/).
 
