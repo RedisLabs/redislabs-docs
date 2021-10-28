@@ -33,7 +33,7 @@ If an **Enable API** button appears, select it to [enable the REST API]({{< relr
 
 ## API account key
 
-The **API account key** is used as the value of the `x-api-key` HTTP header to authenticate a REST API.
+The **API account key** is used as the value of the `x-api-key` HTTP header in order to authenticate a REST API request.
 
 By default, the **API account key** is masked; that is, it is obscured for security reasons.  You can use the **Show** button to display the key and the **Hide** button to mask it.
 
@@ -45,9 +45,9 @@ The **Copy** button copies the account key to the Clipboard.
 
 ## API user keys
 
-**API user keys** (also known as _secret keys_) are used as the value value of the `x-api-secret-key` HTTP header to authenticate a REST API.
+**API user keys** (also known as _secret keys_) are used as the value value of the `x-api-secret-key` HTTP header used to authenticate a REST API request.
 
-In this context, _user_ refers to the an account used to sign into the admin console.  Users must be account owners.
+In this context, _user_ refers to the account used to sign in to the admin console.  Users must be account owners.
 
 Users can have more than one user key; however, users should not share user keys.
 
@@ -113,7 +113,7 @@ To manage the CIDR allow list:
 
     {{<image filename="images/rc/access-management-api-user-key-delete.png" alt="The **Manage** link appears to the right of the user name for the selected user key." >}}{{< /image >}}
 
-2.  Select the **Manage** link in the **CIDR allow list** column; this displayes the **Manage CIDR allow list** dialog box.
+2.  Select the **Manage** link in the **CIDR allow list** column; this displays the **Manage CIDR allow list** dialog box.
 
     {{<image filename="images/rc/access-management-user-key-manage-cidr.png" width="50%" alt="Select the **Manage** link to define the **CIDR allow list** dialog." >}}{{< /image >}}
 
