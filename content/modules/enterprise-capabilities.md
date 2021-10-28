@@ -1,5 +1,6 @@
 ---
-Title: Enterprise feature support
+Title: Enterprise feature compatibility for modules
+linkTitle: Enterprise feature compatibility
 description: Describes the Redis Enterprise features supported by each Redis module.
 weight: 8
 alwaysopen: false
@@ -7,24 +8,32 @@ categories: ["Modules"]
 aliases: /modules/packaging
 ---
 
-While Redis modules support all features of open-source Redis, not every module is able to support all features of Redis Enterprise Software or Redis Enterprise Cloud.  In addition, each module gets new features over time.
+This article describes Redis Enterprise feature compatibility for modules.  It shows whether modules support specific features.  Version numbers indicate the minimum module version required for feature support.  Footnotes provide additional information as needed.
 
-Here, you'll find a list of common Redis Enterprise features and whether or not individual modules support those features.  Version numbers indicate the module version required for feature support.  Footnotes provide additional information as needed.
+## Redis Enterprise module support
+
+The following table shows which modules are supported by Redis Enterprise Software and Redis Enterprise Cloud.
+
+| Module | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
+|--------|:-------------------------:|:-----------------------:|
+| [RedisAI]({{<relref "/modules/redisai">}})       | Yes | No |
+| [RedisBloom]({{<relref "/modules/redisbloom">}}) | Yes | Yes |
+| [RedisGears]({{<relref "/modules/redisgears">}}) | Yes | No |
+| [RedisGraph]({{<relref "/modules/redisgraph">}}) | Yes | Yes |
+| [RedisJSON]({{<relref "/modules/redisjson">}})   | Yes | Yes |
+| [RediSearch]({{<relref "/modules/redisearch">}}) | Yes | Yes |
+| [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}) | Yes | Yes |
 
 ## Module feature support
 
 The following tables show feature support for each Redis module.  
 
-Version numbers indicate when the feature was supported.  If you're using an earlier version than shown in the table, the feature is not supported.
+Version numbers indicate when the feature was first supported.  If you're using an earlier version than what's shown in the table, the feature is not supported.
 
 For details about individual modules, see the corresponding documentation.
 
-| Feature name/capability | [RedisAI]({{< relref  "/modules/redisai" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}})  | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisGraph]({{< relref  "/modules/redisgraph" >}})   | 
+| Feature name/capability | [RedisAI]({{< relref "/modules/redisai" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}})  | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisGraph]({{< relref  "/modules/redisgraph" >}})   | 
 |-------------------------|:----------:|:------------:|:----------:|:------------:|
-|||||<br/>|
-| Supported by Redis Enterprise Software | Yes | Yes | Yes | Yes | 
-| Supported by Redis Enterprise Cloud    | No  | Yes | No  | Yes |
-|||||<br/>|
 | Active-Active (CRDB)    | No         | No           | Yes (v1.0) | No           |
 | Backup/Restore          | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
 | Clustering              | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v2.2.3)[^1] |
@@ -40,14 +49,10 @@ For details about individual modules, see the corresponding documentation.
 | Replica Of              | Yes (v1.0) | Yes (v2.0)   | No         | Yes (v2.2)   |
 | Reshard/rebalance       | No         | Yes (v2.0)   | Yes (v1.0) | No           |
 
-[^1]: The RedisGraph module supports clustering, however, individual Graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, contact support.
+[^1]: The RedisGraph module supports clustering; however, individual Graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
 
 | Feature name/capability | [RedisJSON]({{< relref  "/modules/redisjson" >}})    | [RediSearch]({{< relref  "/modules/redisearch" >}})    | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) |
 |-------------------------|:------------:|:-------------:|:---------------:|
-||||<br/>|
-| Supported by Redis Enterprise Software | Yes | Yes | Yes | 
-| Supported by Redis Enterprise Cloud    | Yes | Yes | Yes |
-||||<br/>|
 | Active-Active (CRDB)    | No           | Yes (v2.0)    | No           | 
 | Backup/Restore          | Yes (v1.0)   | Yes (v1.4)    | Yes (v1.2)   | 
 | Clustering              | Yes (v1.0)   | Yes (v1.6)    | Yes (v1.2)   | 
@@ -71,20 +76,19 @@ The following table briefly describes each feature shown in the earlier tables.
 
 | Feature name/capability | Description |
 |-------------------------|-------------|
-| Active-Active (CRDB)    | Supports Active-active (CRDB) databases  |
+| Active-Active (CRDB)    | Compatible with Active-Active (CRDB) databases  |
 | Backup/Restore          | Supports import and export features |
-| Clustering              | Supports sharded databases and shards that can be migrated |
-| Custom hashing policy   | Supports databases with custom hashing policies |
-| Eviction expiration     | Fully supports eviction policies and expiration |
-| Failover/migration      | Supports databases in failover or migration status |
-| Internode encryption    | Supports encryption on the data plane, when enabled for databases |
-| Module datatypes        | Supports module-specific datatypes and existing Redis types |
+| Clustering              | Compatible with sharded databases and shard migration |
+| Custom hashing policy   | Compatible with databases using custom hashing policies |
+| Eviction expiration     | Allows data to be evicted when the database reaches memory limits |
+| Failover/migration      | Compatible with primary/replica failover and the migration of shards between nodes within the cluster |
+| Internode encryption    | Compatible with encryption on the data plane |
 | Multikey methods        | Includes methods that support multiple keys (inverted cells) |
-| Persistence (AOF)       | Supports databases using AoF persistence |
-| Persistence (snapshot)  | Supports databases using snapshot persistence | 
-| Redis on Flash (RoF)    | Supports Redis on Flash (RoF) |
-| Replica Of              | Supports databases using REPLICAOF  | 
-| Reshard/rebalance       | Supports module is able to operate in a database that is resharded and rebalanced|
+| Persistence (AOF)       | Compatible with databases using AoF persistence |
+| Persistence (snapshot)  | Compatible with databases using snapshot persistence | 
+| Redis on Flash (RoF)    | Compatible with Redis on Flash (RoF) |
+| Replica Of              | Compatible with Active-Passive replication | 
+| Reshard/rebalance       | Compatible with database scaling for clustered databases, which redistributes data between the new shards. |
 
 <!-- 
     Individual footnotes are rendered below the following heading.  
