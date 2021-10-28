@@ -52,7 +52,7 @@ You'll need the following information for each participating Redis Enterprise cl
   - Example value: `rec01.ns01.svc.cluster.local`
   - How to get it: List all your Redis Enterprise clusters
       ```bash
-      kubectl get rec --all-namespaces --no-headers | awk '{print $2"."$1".svc.cluster.local"}'
+      kubectl get rec 
       ```
 - **API hostname** `<api-hostname>`:
   - Description: Hostname used to access the Redis Enterprise cluster API from outside the K8s cluster
@@ -69,7 +69,7 @@ You'll need the following information for each participating Redis Enterprise cl
   - Format: string
   - Example value: username: `user@redisdemo.com`, password: `something`
   - How to get them:
-    ```bash
+    ```sh
     kubectl get secret <rec-name> \
       -o jsonpath='{.data.username}' | base64 --decode
     kubectl get secret <rec-name> \
@@ -96,11 +96,11 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
 
-    ```yaml
+    ``` yaml
     activeActive:
       apiIngressUrl: <api-hostname>
       dbIngressSuffix: <ingress-suffix>
-        ingressAnnotations:
+      ingressAnnotations:
         kubernetes.io/ingress.class: <nginx | haproxy>
         <nginx | haproxy>.ingress.kubernetes.io/backend-protocol: HTTPS
         <nginx | haproxy>.ingress.kubernetes.io/ssl-passthrough: "true"  
@@ -109,7 +109,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. After the changes are saved and applied, you can verify a new ingress was created for the API.
 
-    ```bash
+    ```sh
     $ kubectl get ingress
     NAME   HOSTS                            ADDRESS                                 PORTS   AGE
     rec01  api.abc.cde.redisdemo.com  225161f845b278-111450635.us.cloud.com   80      24h
@@ -117,7 +117,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. Verify you can access the API from outside the K8s cluster.
 
-    ```bash
+    ```sh
    curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/cluster
     ```
 
@@ -129,19 +129,19 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. Make sure your Redis Enterprise cluster (REC) has a different name (`<rec-name.namespace>`) than any other participating clusters. If not, you'll need to manually rename the REC or move it to a different namespace.
             You can check your new REC name with:
-    ```
+    ```sh
     oc get rec -o=jsonpath='{.metadata.name}'
     ```
 
     If the rec name was modified, reapply [scc.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/scc.yaml) to the namespace to reestablish security privileges.
-    ```
+    ```sh
     oc apply -f scc.yaml
     oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<namespace>
     ```
 
 1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
-      ```yaml
+      ``` yaml
       activeActive:
         apiIngressUrl: <api-hostname>
         dbIngressSuffix: <ingress-suffix>
@@ -152,7 +152,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. After the changes are saved and applied, you can see that a new route was created for the API.
 
-    ```bash
+    ```sh
     $ oc get route
     NAME    HOST/PORT                       PATH    SERVICES  PORT  TERMINATION   WILDCARD
     rec01   api-openshift.apps.abc.redisdemo.com rec01   api             passthrough   None
@@ -160,15 +160,15 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. Verify you can access the API from outside the K8s cluster.
 
-    ```bash
+    ```sh
    curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/
     ```
 
 ## Create an Active-Active database with `crdb-cli`
 
-The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{<relref "/kubernetes/re-clusters/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
+The `crdb-cli` command can be run from any Redis Enterprise pod hosted on any participating K8s cluster. You'll need the values for the [required parameters]({{< relref "/kubernetes/re-clusters/create-aa-database#document-required-parameters" >}}) for each Redis Enterprise cluster.
 
-```bash
+```sh
 crdb-cli crdb create 
   --name <db-name> \
   --memory-size <mem-size> \
@@ -183,6 +183,6 @@ See the [`crdb-cli` reference]({{<relref "/rs/references/crdb-cli-reference.md">
 
 ## Test your database
 
-The easiest way to test your Active-Active database is to set a key-value pair in one database and retrieve it from the other. 
+The easiest way to test your Active-Active database is to set a key-value pair in one database and retrieve it from the other.
 
 You can connect to your databases with the instructions in [Manage databases]({{<relref "/kubernetes/re-databases/db-controller.md#connect-to-a-database">}}). Set a test key with `SET foo bar` in the first database. If your Active-Active deployment is working properly, when connected to your second database, `GET foo` should output `bar`.
