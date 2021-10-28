@@ -10,7 +10,7 @@
     <thead>
         <tr>
             {{ range $i, $column := $columnNames }}
-                <th style="text-align:left">{{ $column }}</th>
+                <th style="text-align:left">{{ $column | safeHTML }}</th>
             {{ end }}
         </tr>
     </thead>
