@@ -7,6 +7,22 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## v2.0.12 (September 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Enhancements:
+  - #[2184](https://github.com/redisearch/redisearch/issues/2184) API: getter functions for score, language and stop words list
+  - #[2188](https://github.com/redisearch/redisearch/issues/2188) Introduced the UNF parameter to SORTABLE to disable normalisation on TAG/TEXT fields
+  - #[2218](https://github.com/redisearch/redisearch/issues/2218) API: added RediSearch_CreateDocument2
+
+- Bug fix:
+  - #[2153](https://github.com/redisearch/redisearch/issues/2153) Restore FT.INFO complexity to O(1)
+  - #[2203](https://github.com/redisearch/redisearch/issues/2203) FT.AGGREGATE returns inaccurate results when TAG field is not set in hash
+
+
 ## v2.0.11 (August 2021)
 
 This is a maintenance release for version 2.0.
