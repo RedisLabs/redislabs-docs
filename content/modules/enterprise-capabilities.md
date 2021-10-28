@@ -1,5 +1,5 @@
 ---
-Title: Enterprise feature compatibility for modules
+Title: Enterprise feature compatibility for Redis modules
 linkTitle: Enterprise feature compatibility
 description: Describes the Redis Enterprise features supported by each Redis module.
 weight: 8
@@ -8,7 +8,7 @@ categories: ["Modules"]
 aliases: /modules/packaging
 ---
 
-This article describes Redis Enterprise feature compatibility for modules.  It shows whether modules support specific features.  Version numbers indicate the minimum module version required for feature support.  Footnotes provide additional information as needed.
+This article describes Redis Enterprise feature compatibility for Redis modules.  Version numbers indicate the minimum module version required for feature support.  Footnotes provide additional information as needed.
 
 ## Redis Enterprise module support
 
@@ -49,7 +49,7 @@ For details about individual modules, see the corresponding documentation.
 | Replica Of              | Yes (v1.0) | Yes (v2.0)   | No         | Yes (v2.2)   |
 | Reshard/rebalance       | No         | Yes (v2.0)   | Yes (v1.0) | No           |
 
-[^1]: The RedisGraph module supports clustering; however, individual Graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
+[^1]: The RedisGraph module supports clustering; however, individual graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
 
 | Feature name/capability | [RedisJSON]({{< relref  "/modules/redisjson" >}})    | [RediSearch]({{< relref  "/modules/redisearch" >}})    | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) |
 |-------------------------|:------------:|:-------------:|:---------------:|
