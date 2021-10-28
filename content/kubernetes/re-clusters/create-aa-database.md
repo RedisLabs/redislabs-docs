@@ -96,7 +96,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. If your cluster uses an [ingress controller]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}), add the following to the `spec` section of your REC resource file.
 
-    ``` yaml
+    ```sh
     activeActive:
       apiIngressUrl: <api-hostname>
       dbIngressSuffix: <ingress-suffix>
@@ -141,7 +141,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. If your cluster uses OpenShift routes, add the following to the `spec` section of your Redis Enterprise cluster (REC) resource file.
 
-      ``` yaml
+      ```sh
       activeActive:
         apiIngressUrl: <api-hostname>
         dbIngressSuffix: <ingress-suffix>
