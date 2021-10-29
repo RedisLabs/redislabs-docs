@@ -4,6 +4,9 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: /rs/administering/logging/rsyslog-logging/
+         /rs/administering/logging/rsyslog-logging.md
+         /rs/administering/logging/rsyslog-logging/_index.md
 ---
 This document explains the structure of Redis Enterprise Software log entries that go into `rsyslog`
 and how to use these log entries to identify events.
@@ -309,38 +312,3 @@ false,"time":1434365471,"disk":705667072,"type":
     this specific
     event, see full mapping in the Mapping UI events and alerts to log
     entries section below
-
-## Mapping UI events and alerts to log entries
-
-### Cluster and node related events
-
-| **Event as shown in the UI** | **Event code­name** | **Object type** | **Category** | **Severity** | **Notes** |
-|------------|-----------------|------------|-----------------|------------|-----------------|
-| Node failed | failed | node | alert | critical | |
-| Node joined | node_joined | cluster | event | info | |
-| Node removed | node_remove_completed</br>node_remove_failed</br>node_remove_abort_completed</br>node_remove_abort_failed | cluster | event | info</br>error</br>info</br>error | The remove node is a process that can fail and can also be aborted. If aborted, the abort can succeed or fail. |
-| Node memory has reached % of its capacity | memory | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
-| Persistent storage has reached % of its capacity | persistent_storage | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
-| Ephemeral storage has reached | ephemeral_storage | node | alert | true: warning</br>false: info | Has global_threshold parameter in the % of its capacity key/value section of the log entry. |
-| CPU utilization has reached % | cpu_utilization | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
-| Network throughput has reached MB/s | net_throughput | node | alert | true: warning</br>false: info | Has global_threshold parameter in the key/value section of the log entry. |
-| Node has insufficient disk space for AOF rewrite | insufficient_disk_aofrw | node | alert | true: error</br>false: info | |
-| Redis performance is degraded as result of disk I/O limits | aof_slow_disk_io | node | alert | true: error</br>false: info | |
-| Cluster capacity is less than total memory allocated to its databases | ram_overcommit | cluster | alert | true: error</br>false: info | |
-| Nodes rebalanced | rebalance_failed</br>rebalance_completed</br>rebalance_abort_failed</br>rebalance_abort_completed | cluster | event | error</br>info</br>error</br>info | The nodes rebalance is a process that can fail and can also be aborted. If aborted, the abort can succeed or fail. |
-| Database replication requires at least two nodes in cluster | too_few_nodes_for_replication | cluster | alert | true: warning</br>false: info | |
-| True high availability requires an odd number of nodes with a minimum of three nodes | even_node_count | cluster | alert | true: warning</br>false: info | |
-| Not all nodes in the cluster are running the same Redis Enterprise Cluster version | inconsistent_rl_sw | cluster | alert | true: warning</br>false: info |
-| Not all databases are running the same open source version | inconsistent_redis_sw | cluster | alert | true: warning</br>false: info | |
-
-### Database related events
-
-| **Event as shown in the UI** | **Event code-­name** | **Object type** | **Category** | **Severity** | **Notes** |
-|------------|-----------------|------------|-----------------|------------|-----------------|
-| Dataset size has reached % of the memory limit | size | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
-| Throughput is higher than RPS (requests per second) | high_throughput | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
-| Throughput is lower than RPS (requests per second) | low_throughput | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
-| Latency is higher than msec | high_latency | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
-| Periodic backup has been delayed for longer than minutes | backup_delayed | bdb | alert | true: warning</br>false: info | Has threshold parameter in the data: section of the log entry. |
-| Replica Of ­database unable to sync with source | syncer_connection_error</br>syncer_general_error | bdb | alert | error</br>error |
-| Replica Of sync lag is higher than seconds | high_syncer_lag | bdb | alert | true: warning</br>false: info | Has threshold parameter in the key/value section of the log entry. |
