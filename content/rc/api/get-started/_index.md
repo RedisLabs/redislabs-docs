@@ -48,7 +48,7 @@ If you need to change or delete your account key, please [contact support](https
 
 ## User key
 
-The user key is a personal key that belongs to a specific user having the **owner** role.  User keys are assigned owners when they're created and they cannot be assigned to users that aren't owners.  Keys can belong to only one owner; however, an owner may have more than one user key.
+The user key is a personal key that belongs to a specific user having the **owner** role.  User keys are assigned owners when they're created.  Keys cannot be assigned to users that aren't owners.  Keys can belong to only one owner; however, an owner may have multiple keys.
 
 You can view keys or copy their values _only_ during the [creation process]({{< relref "/rc/api/get-started/manage-api-keys.md" >}}).
 

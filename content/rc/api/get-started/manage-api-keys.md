@@ -45,7 +45,7 @@ The **Copy** button copies the account key to the Clipboard.
 
 ## API user keys
 
-**API user keys** (also known as _secret keys_) are used as the value value of the `x-api-secret-key` HTTP header used to authenticate a REST API request.
+**API user keys** (also known as _secret keys_) are used as the value of the `x-api-secret-key` HTTP header used to authenticate a REST API request.
 
 In this context, _user_ refers to the account used to sign in to the admin console.  Users must be account owners.
 
