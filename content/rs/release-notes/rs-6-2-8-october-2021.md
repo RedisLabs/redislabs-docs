@@ -53,30 +53,35 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-m
 
 ## Resolved issues
 
-- RS58804 - Fixed the UI to display an error message in case of a login attempt with an LDAP user
-- RS56680 - Fixed the UI to notify that SASLAUTHD should be disabled prior to enabling LDAP 
-- RS55844 - Fixed the UI to use the correct password and mask it on LDAP password update
-- RS60877 - Fixed the UI console from resetting an Active-Active database compression level, in cases where the compression level wasn’t set to default, when changing any other configuration via the DB configuration page
+### User interface fixes
+
+- RS58804 - Display an error message in case of a login attempt with an LDAP user
+- RS56680 - Notify that SASLAUTHD should be disabled prior to enabling LDAP 
+- RS55844 - Use the correct password and mask it on LDAP password update
+- RS60877 - Fixed reset of Active-Active database compression level, in cases where the compression level wasn’t set to default, when changing any other configuration via the DB configuration page
 - RS43999 - Fixed UI database configuration to allow changes when SFTP SSH key is customized
 - RS59861 - Fixed the UI to display an explanation error message when password complexity does not meet requirements
 - RS57734 - Fixed inaccessible UI after cluster upgrade due to missing certificate
 - RS43041 - Mask secret keys for backup destination for view and edit in the UI
-- RS60068 / RS59146 - Fixed unresolve endpoint due to PDNS issues
+
+### Additional fixes
+
+- RS60068 / RS59146 - Fixed unresolved endpoint due to PDNS issues
 - RS52812 - Expand API wrapper to return API 405 errors as JSON/XML
 - RS57666 - Fixed false shard migration message when the shard fails to bind the port
 - RS57444, RS55294, RS4903 - Fixed false “backup finished successfully” message when the backup failed due to restricted access to the backup destination
 
 ## Known limitations
 
-All [known limitations]({{<relref "/rs/release-notes/rs-6-0-20-april-2021.md#known-limitations">}}) from v6.0.20 have been fixed. 
+- RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
+
+All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
 
 ## Security
 
-- RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
-
 ### Open source Redis security fix compatibility
 
-As part of Redis commitment to security, Redis Enterprise Software implements the latest [security fixes](https://github.com/redis/redis/releases) available with open source Redis.
+As part of its commitment to security, Redis Enterprise Software implements the latest [security fixes](https://github.com/redis/redis/releases) available with open source Redis.
 
 The following [open source Redis](https://github.com/redis/redis) [CVEs](https://github.com/redis/redis/security/advisories) do not affect Redis Enterprise:
 
@@ -90,4 +95,4 @@ The following [open source Redis](https://github.com/redis/redis) [CVEs](https:/
 
 - [CVE-2021-41099](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-41099) - Redis Enterprise is not impacted by the CVE that was found and fixed in open source Redis because the proto-max-bulk-len CONFIG is blocked in Redis Enterprise. Additional information about the open source Redis fix is on [the Redis GitHub page](https://github.com/redis/redis/releases) (Redis 6.2.6, Redis 6.0.16)
 
-Some CVEs announced for Open Source Redis do not affect Redis Enterprise due to different and additional functionality available in Redis Enterprise that is not available in open source Redis.
+Some CVEs announced for Open Source Redis do not affect Redis Enterprise due to functionality that is either different from (or not available in) open source Redis.
