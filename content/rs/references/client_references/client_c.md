@@ -1,12 +1,14 @@
 ---
 Title: Redis with C
 linkTitle: C
-description: The hiredis client allows you to use Redis with C.
+description: The hiredis client lets you use C to connect to Redis databases.
 weight: 70
 alwaysopen: false
 categories: ["RS"]
 ---
-To use Redis with C, you need a C Redis client. The following sections demonstrate the use of [hiredis](https://github.com/redis/hiredis), a simple C client for Redis. Additional C clients for Redis can be found under the [C section](http://redis.io/clients#C) of the Redis Clients page.
+To use Redis with C, you need a C Redis client library. Here, you can learn how to use [hiredis](https://github.com/redis/hiredis) to connect to a Redis database from an application written in C.  
+
+Additional C client libraries are available.  To learn more, see the [C section](http://redis.io/clients#c) of the Redis Clients page.
 
 ## Install hiredis
 

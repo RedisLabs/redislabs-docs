@@ -62,7 +62,7 @@ Example output:
 
 ## Connection pooling
 
-The redis-py client provides a connection pooling mechanism as explained in the [Connection Pools section](https://github.com/andymccurdy/redis-py#connection-pools) of its README file. Since connection pooling is enabled by default, no special actions are required to use it.
+The redis-py client [pools connections](https://github.com/andymccurdy/redis-py#connection-pools) by default. No special actions are required to use it.
 
 ## SSL
 
