@@ -1,7 +1,7 @@
 ---
 Title: Redis Enterprise Software Release Notes 6.0.8 (September 2020)
 linkTitle: 6.0.8 (September 2020)
-description:
+description: RediSearch 2.0 support. Improved rladmin support for module upgrades. Compatible with open source Redis 6.0.5 
 weight: 79
 alwaysopen: false
 categories: ["RS"]
