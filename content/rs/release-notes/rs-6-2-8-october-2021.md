@@ -75,6 +75,12 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-m
 
 - RS63258 - Redis Enterprise Software 6.2.8 is not supported on RHEL 8 with FIPS enabled.
 
+    FIPS changes system-generated keys, which can limit secure access to the cluster or the admin console via port 8443.
+
+- RS63375 - RHEL 7 clusters cannot be directly upgraded to RHEL 8 when hosting databases using modules.
+
+    Due to binary differences in modules between the two operating systems, you cannot directly update RHEL 7 clusters to RHEL 8 when those clusters host databases using modules.  Instead, you need to create a new cluster on RHEL 8 and then migrate existing data from your RHEL 7 cluster. This does not apply to clusters that do not use modules.
+
 All [known limitations]({{<relref "/rs/release-notes/rs-6-2-4-august-2021.md#known-limitations">}}) from v6.2.4 have been fixed. 
 
 ## Security
