@@ -8,7 +8,7 @@ The docs are updated regularly; here are some recent highlights:
 
     - Updated docs to support the v6.2.8 release ([PR #1632](https://github.com/RedisLabs/redislabs-docs/pull/1632)), which included:
         - [Release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-8-october-2021/) ([PR #1628](https://github.com/RedisLabs/redislabs-docs/pull/1632)) 
-        - Updates to the Redis [update policy](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/#redis-upgrade-policy) docs ([PR #1599](https://github.com/RedisLabs/redislabs-docs/pull/1599))
+        - Updates to the [Redis upgrade policy](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/#redis-upgrade-policy) docs ([PR #1599](https://github.com/RedisLabs/redislabs-docs/pull/1599))
         - Updates to the [backup data](https://docs.redis.com/latest/rs/administering/import-export/database-backup/) and [export data](https://docs.redis.com/latest/rs/administering/import-export/exporting-data/) articles ([PR #1548](https://github.com/RedisLabs/redislabs-docs/pull/1548) & [PR #1598](https://github.com/RedisLabs/redislabs-docs/pull/1598))
 
     - REST API docs are [in preview](https://docs.redis.com/staging/rs-rest-api/rs/references/rest-api/) ([PR #1533](https://github.com/RedisLabs/redislabs-docs/pull/1533), [PR #1621](https://github.com/RedisLabs/redislabs-docs/pull/1621))
