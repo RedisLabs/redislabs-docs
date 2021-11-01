@@ -32,8 +32,7 @@ We recommend these hardware requirements for production systems or for developme
 
 <sup>*</sup>Additional considerations:
 - Nodes per Cluster:
-    - For clusters which are configured with 3 nodes, where one of them is considered as a quorum node - database availability can be compromised in a (non-quorum) node failure scenario.
-    - Active-Active Redis databases are not recommended to run on a 3 node cluster, where one of them is considered as a quorum node. Synchronization process will pause in case of a (non-quorum) node failure scenario.
+    - To ensure synchronization and consistency, Active-Active deployments with three node clusters are strongly discouraged from using quorum nodes. Because quorum nodes do not store data shards, they cannot support replication. In case of a node failure, replica shards aren't available for Active-Active synchronization.
 - Cores:
     - When the CPU load reaches a certain level, Redis Enterprise Software sends an alert to the operator.  
 
