@@ -20,7 +20,7 @@ The docs are updated regularly; here are some recent highlights:
         - [Enable the API](https://docs.redis.com/latest/rc/api/get-started/enable-the-api/)
         - [Manage API keys](https://docs.redis.com/latest/rc/api/get-started/manage-api-keys/)
 
-    - A new article describes how to [migrate data](https://docs.redis.com/latest/rc/databases/migrate-databases/) to Redis Enterprise Cloud subscriptions ([PR #1619](https://github.com/RedisLabs/redislabs-docs/pull/1619)).
+    - A new article describes how to [migrate data](https://docs.redis.com/latest/rc/databases/migrate-databases/) to Redis Enterprise Cloud subscriptions ([PR #1619](https://github.com/RedisLabs/redislabs-docs/pull/1619))
 
 - Kubernetes doc updates:
 
