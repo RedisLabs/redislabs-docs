@@ -25,7 +25,7 @@ To get detailed information about errors in RedisInsight, you can review the log
 You can install RedisInsight on operating systems that are not officially supported, but it may not behave as expected.
 {{< /note >}}
 
-We are happy to receive your feedback at redisinsight@redislabs.com.
+We are happy to receive your feedback at redisinsight@redis.com.
 
 ## Using behind a reverse proxy
 
