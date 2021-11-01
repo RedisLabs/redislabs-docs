@@ -42,7 +42,6 @@ For details about individual modules, see the corresponding documentation.
 | Failover/migration      | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
 | Internode encryption    | Yes (v1.2) | Yes (v2.2.6) | Yes (v1.2) | Yes (v2.4)   |
 | Module datatypes        | Yes        | Yes          | Yes        | Yes          |
-| Multi-key commands      | Yes (v1.0) | No           | Yes (v1.0) | No           |
 | Persistence (AOF)       | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v2.0)   |
 | Persistence (snapshot)  | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0)   |
 | Redis on Flash (RoF)    | No         | Yes (vTBD)   | Yes (vTBD) | No           |
@@ -61,7 +60,6 @@ For details about individual modules, see the corresponding documentation.
 | Failover/migration      | Yes (v1.0)   | Yes (v1.4)    | Yes (v1.2)   | 
 | Internode encryption    | Yes (v1.0.8) | Yes (v2.0.11) | Yes (v1.4.9) | 
 | Module datatypes        | Yes          | Yes           | Yes          | 
-| Multi-key commands      | No           | Yes (v2.0     | Yes (v1.2)   | 
 | Persistence (AOF)       | Yes (v1.0)   | Yes (v1.4)    | Yes (v1.2)   | 
 | Persistence (snapshot)  | Yes (v1.0)   | Yes (v1.6)    | Yes (v1.2)   | 
 | Redis on Flash (RoF)    | Yes (v1.0)   | Yes (v2.0)    | Yes (v1.4.7) | 
@@ -83,7 +81,6 @@ The following table briefly describes each feature shown in the earlier tables.
 | Eviction expiration     | Allows data to be evicted when the database reaches memory limits |
 | Failover/migration      | Compatible with primary/replica failover and the migration of shards between nodes within the cluster |
 | Internode encryption    | Compatible with encryption on the data plane |
-| Multi-key commands      | Compatible with multi-key commands |
 | Persistence (AOF)       | Compatible with databases using AoF persistence |
 | Persistence (snapshot)  | Compatible with databases using snapshot persistence | 
 | Redis on Flash (RoF)    | Compatible with Redis on Flash (RoF) |
