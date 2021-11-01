@@ -23,7 +23,7 @@ We recommend these hardware requirements for production systems or for developme
 
 | Item | Description | Minimum Requirements | Recommended |
 |------------|-----------------|------------|-----------------|
-| Nodes per cluster | At least 3 nodes are required to support a reliable, highly available deployment that handles process failure, node failure, and network split events in a consistent manner. | 3 nodes | >= 3 nodes (Must be an odd number of nodes) |
+| Nodes per cluster<sup>*</sup> | At least 3 nodes are required to support a reliable, highly available deployment that handles process failure, node failure, and network split events in a consistent manner. | 3 nodes | >= 3 nodes (Must be an odd number of nodes) |
 | Cores<sup>*</sup> per node | RS is based on a multi-tenant architecture and can run multiple Redis processes (or shards) on the same core without significant performance degradation. | 4 cores | >=8 cores |
 | RAM<sup>*</sup> per node | Defining your RAM size must be part of the capacity planning for your Redis usage. | 15GB | >=30GB |
 | Ephemeral Storage | Used for storing [replication files (RDB format) and cluster log files]({{< relref "/rs/administering/designing-production/persistent-ephemeral-storage.md" >}}). | RAM x 2 | >= RAM x 4 |
@@ -31,7 +31,9 @@ We recommend these hardware requirements for production systems or for developme
 | Network | We recommend using multiple NICs per node where each NIC is >100Kbps, but RS can also run over a single 1Gbps interface network used for processing application requests, inter-cluster communication, and storage access. | 1G | >=10G |
 
 <sup>*</sup>Additional considerations:
-
+- Nodes per Cluster:
+    - For clusters which are configured with 3 nodes, where one of them is considered as a quorum node - database availability can be compromised in a (non-quorum) node failure scenario.
+    - Active-Active Redis databases are not recommended to run on a 3 node cluster, where one of them is considered as a quorum node. Synchronization process will pause in case of a (non-quorum) node failure scenario.
 - Cores:
     - When the CPU load reaches a certain level, Redis Enterprise Software sends an alert to the operator.  
 
