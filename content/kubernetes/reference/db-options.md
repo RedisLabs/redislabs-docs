@@ -15,6 +15,12 @@ aliases: [
 The database options are specified in the `spec` section of the database custom resource.
 These options include options that you can change and options that are created by the controller for applications or developers. For example, the database connection information is stored in a secret.
 
+### `databasePort`
+
+Manually sets the TCP port on which the database is available. If the port number is not specified, it will be automatically generated.
+
+<warning> If you use `databasePort` in your REDB spec, the port number cannot be changed after database creation.</warning>
+
 ### `databaseSecretName`
 
 A string containing the name of a secret that contains the desired database password.
