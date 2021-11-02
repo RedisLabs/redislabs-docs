@@ -13,7 +13,7 @@ aliases: [
 ---
 
 The database options are specified in the `spec` section of the database custom resource.
-These options include options that you can change and options that are created by the controller for applications or developers. For example, the database connection information is stored in a secret.
+These options include options that you can change and options that are created by the controller for applications or developers. Changes made to the REDB custom resource will override changes made to the database via the admin console or `rladmin` commands.
 
 ### `databaseSecretName`
 
@@ -87,19 +87,6 @@ For example, to refer to the `rec` cluster:
 redisEnterpriseCluster:
    name: rec
 ```
-
-### `redisUpgradePolicy`
-
-[Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}}) that controls the default Redis database version when creating or updating databases.
-
-The supported values are:
-
-- `major` : limits Redis database version to the most recent major release
-- `latest`: sets default database version to the latest minor release
-
-More info:
-- [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}})
-- [Upgrade policy values]({{<relref "/rs/installing-upgrading/upgrading.md#upgrade-policy-values">}})
 
 ### `replication`
 
