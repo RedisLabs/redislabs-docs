@@ -16,7 +16,7 @@ aliases: [
     /kubernetes/re-clusters/upgrade-redis-cluster/,
 ]
 ---
-Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps: upgrading the Redis Enterprise Operator, and upgrading the Redis Enterprise cluster version.
+Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps: upgrading the Redis Enterprise operator, and upgrading the Redis Enterprise cluster version.
 
 ## 1- Upgrade Redis Enterprise
 
