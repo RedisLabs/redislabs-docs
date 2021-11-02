@@ -161,7 +161,7 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 1. Verify you can access the API from outside the K8s cluster.
 
     ```sh
-   curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/
+   curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/bdbs
     ```
 
 ## Create an Active-Active database with `crdb-cli`
@@ -173,8 +173,8 @@ crdb-cli crdb create
   --name <db-name> \
   --memory-size <mem-size> \
   --encryption yes \
-  --instance fqdn=<rec-hostname-01>,url=<api-hostname-01>,username=<username-01>,password=<password-01>,replication_endpoint=<replication-endpoint-01>,replication_tls_sni=<replication-hostname-01> \
-  --instance fqdn=<rec-hostname-02>,url=<api-hostname-02>,username=<username-02>,password=<password-02>,replication_endpoint=<replication-endpoint-02>,replication_tls_sni=<replication-hostname-02>
+  --instance fqdn=<rec-hostname-01>,url=<api-hostname>,username=<username-01>,password=<password-01>,replication_endpoint=<replication-endpoint-01>,replication_tls_sni=<replication-hostname-01> \
+  --instance fqdn=<rec-hostname-02>,url=<api-hostname>,username=<username-02>,password=<password-02>,replication_endpoint=<replication-endpoint-02>,replication_tls_sni=<replication-hostname-02>
 ```
 
 To create a database that syncs between more than two instances, add additional `--instance` arguments.
