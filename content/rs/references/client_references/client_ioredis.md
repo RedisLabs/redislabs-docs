@@ -1,26 +1,24 @@
 ---
 Title: Redis with Node.js (ioredis)
 linkTitle: Node.js (ioredis)
-description:
-weight:
+description: The ioredis client allows you to use Redis with Node.js.
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 ---
-In order to use Redis with Node.js, you need to install a Node.js Redis client.
-In the following sections, we demonstrate the use of [ioredis](https://github.com/luin/ioredis),
-a community recommended Redis client for Node.js with support for Promises built in.
-The other community recommended client for Node.js developers is [node_redis]({{< relref "./client_nodejs" >}}).
+In order to use Redis with [Node.js](https://nodejs.org/en/), you need to install a Node.js Redis client. The following sections demonstrate the use of [ioredis](https://github.com/luin/ioredis), a community-recommended Redis client for Node.js with build-in support for [promises]((https://nodejs.dev/learn/understanding-javascript-promises)).
 
-Additional Node.js clients for Redis can be found under the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
+Another community-recommended client for Node.js developers is [node_redis]({{< relref "./client_nodejs" >}}). Additional Node.js clients for Redis can be found under the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
 
-## Installing ioredis
+## Install ioredis
 
-Complete instructions for installing ioredis can be found in the [README file](https://github.com/luin/ioredis/blob/master/README.md).
+See the ioredis [README file](https://github.com/luin/ioredis/blob/master/README.md) for installation instructions.
+
 To install ioredis, run:
 
     npm install ioredis 
 
-## Connecting to Redis
+## Connect to Redis
 
 This example code creates a connection to Redis:
 
@@ -33,15 +31,17 @@ const redis = new Redis({
 });
 ```
 
-Make sure to replace the values in the example with the values for your Redis instance:
+Replace the values in the example with the values for your Redis instance:
 
 - `<hostname>` - The name of the host your database runs on
 - `<port>` - The port that the database is running on (default: 6379)
 - `<password>` - The default Redis password, if configured
 
+{{<note>}}
 Remember to always store passwords outside of your code, for example in environment variables.
+{{</note>}}
 
-## Connecting to Redis with TLS
+### TLS
 
 This example shows how to configure ioredis to make a connection to Redis using TLS:
 
@@ -65,7 +65,7 @@ Where you must provide:
 - `<hostname>` - The name of the host your database runs on
 - `<port>` - The port that the database is running on (default: 6379)
 
-## Connecting to Redis using an ACL user and password
+### ACL user and password
 
 Redis 6 introduced [Access Control Lists](https://redis.io/topics/acl).
 ACLs provide the capability to create named user accounts, each having its own password.
@@ -90,8 +90,9 @@ Make sure to replace the values in the example with the values for your Redis in
 - `<password>` - The password of the ACL user
 
 {{< note >}}
-ioredis uses the Redis `INFO` command while creating a new connection.
-Your ACL user must have permission to run that command, otherwise connection attempts will fail with a `NOPERM` error message:
+ioredis uses the Redis `INFO` command when it creates a new connection, so your ACL user must have permission to run `INFO`.<br /><br />
+
+If your ACL user does not have the required permissions, connection attempts will fail with a `NOPERM` error message:
 
 ```sh
 [ioredis] Unhandled error event: ReplyError: 
@@ -101,10 +102,11 @@ subcommand
 
 {{< /note >}}
 
-## Reading and writing data with ioredis
+## Example code for Redis commands
 
-After the connection to Redis is established, you can start reading and writing data.
-The following code snippet reads the value stored at the key `foo`, and prints it:
+Once connected to Redis, you can read and write data with Redis command functions.
+
+The following code snippet reads the value stored at the key `foo` and prints it:
 
 ```javascript
 // Open a connection to Redis
@@ -117,17 +119,18 @@ client.get('foo', (err, reply) => {
 });
 ```
 
-The output of the above code is:
+Example output:
 
 ```sh
 $ node example_ioredis.js
 bar
 ```
 
-ioredis exposes a function named for each Redis command.
-The first argument is almost always the Redis key to run the command against.
-These arguments are followed by an optional error first callback function.
-If a callback function is not provided, a Promise is returned:
+The ioredis client exposes a function for each Redis command.
+
+The first argument is usually the Redis key to run the command against. You can also add an optional [error first callback function](https://nodejs.org/api/errors.html#error-first-callbacks) after the other arguments.
+
+If you do not provide a callback function, the ioredis function returns a [promise](https://nodejs.dev/learn/understanding-javascript-promises):
 
 ```javascript
 // Open a connection to Redis
@@ -141,7 +144,7 @@ const redisDemo = async () => {
 redisDemo();
 ```
 
-The output of the above code should be:
+Example output:
 
 ```sh
 $ node example_ioredis.js

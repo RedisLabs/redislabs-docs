@@ -1,30 +1,28 @@
 ---
 Title: Redis with Node.js (node_redis)
 linkTitle: Node.js (node_redis)
-description:
-weight:
+description: The node_redis client allows you to use Redis with Node.js.
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 ---
-To use Redis with Node.js, you need to install a Node.js Redis client.
-In this article, you can learn how to use [node_redis](https://github.com/NodeRedis/node_redis), a community recommended Redis client for Node.js.
+To use Redis with [Node.js](https://nodejs.org/en/), you need to install a Node.js Redis client. The following sections explain how to use [node_redis](https://github.com/NodeRedis/node_redis), a community-recommended Redis client for Node.js.
 
-The other community recommended client for Node.js developers is [ioredis](https://github.com/luin/ioredis).
-You can find other node.js clients for Redis in the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
+Another community-recommended client for Node.js developers is [ioredis](https://github.com/luin/ioredis). You can find additional Node.js clients for Redis in the [Node.js section](https://redis.io/clients#Node.js) of the [Redis Clients page](https://redis.io/clients).
 
-## Installing node_redis
+## Install node_redis
+
+See the node_redis [README file](https://github.com/NodeRedis/node_redis/blob/master/README.md) for installation instructions.
 
 To install node_redis, run:
 
     npm install redis 
 
-For more information about installing node_redis, read the [node_redis README file](https://github.com/NodeRedis/node_redis/blob/master/README.md).
+## Connect to Redis
 
-## Connecting to Redis
+There are several ways that you can connect to Redis, each with different security considerations.
 
-Here we cover a few ways that you can connect to Redis with different security considerations.
-
-### Connecting to Redis with the default password
+### Default password
 
 The following code creates a connection to Redis:
 
@@ -41,15 +39,17 @@ client.on('error', err => {
 });
 ```
 
-Make sure to replace the values in the example with the values for your Redis instance:
+Replace the values in the example with the values for your Redis instance:
 
 - `<hostname>` - The name of the host your database runs on
 - `<port>` - The port that the database is running on (default: 6379)
 - `<password>` - The password you use to access Redis, if necessary.
 
+{{<note>}}
 Remember to always store passwords outside of your code, for example in environment variables.
+{{</note>}}
 
-### Connecting to Redis with TLS
+### TLS
 
 The following example demonstrates how to make a connection to Redis using TLS:
 
@@ -73,14 +73,12 @@ Where you must provide:
 - `<hostname>` - The name of the host your database runs on
 - `<port>` - The port that the database is running on (default: 6379)
 
-### Connecting to Redis using an ACL user and password
+### ACL user and password
 
-Redis 6 introduced [Access Control Lists](https://redis.io/topics/acl).
-ACLs provide the capability to create named user accounts, each having its own password.
+Redis 6 introduced [Access Control Lists](https://redis.io/topics/acl) (also known as ACLs).
+ACLs allow you to create named user accounts, each having its own password.
 
-node_redis doesn't currently support ACL commands or the `AUTH` command with a username and password.
-This means that you have to disable the client's built in `auth` function and use the generic `send_command` function to authenticate.
-`send_command` allows you to send any arbitrary command to Redis.
+The node_redis client doesn't currently support ACL commands or the `AUTH` command with a username and password. Therefore, you will need to disable the client's built in `auth` function and use the generic `send_command` function, which allows you to send any arbitrary command to Redis, to authenticate.
 
 Example:
 
@@ -98,12 +96,13 @@ client['auth'] = null;
 client.send_command('AUTH', ['<username>', '<password>']);
 ```
 
-Where you must provide the `<port>` as well as the `<username>` and `<password>` with the values for the ACL user that you are connecting as.
+Replace the `<port>`, `<username>`, and `<password>` with the values for the ACL user that you are connecting as.
 
-## Reading and writing data with node_redis
+## Example code for Redis commands
 
-After your application connects to Redis, you can start reading and writing data.
-The following code snippet writes the value `bar` to the Redis key `foo`, reads it back, and prints it:
+After your application connects to Redis, you can read and write data.
+
+The following code snippet assigns the value `bar` to the Redis key `foo`, reads it back, and prints it:
 
 ```js 
 client.set('foo', 'bar', (err, reply) => {
@@ -117,7 +116,7 @@ client.set('foo', 'bar', (err, reply) => {
 });
 ```
 
-The output of the above code should be:
+Example output:
 
 ```sh
 $ node example_node_redis.js
@@ -125,13 +124,13 @@ OK
 bar
 ```
 
-node_redis exposes a function named for each Redis command.
-These functions take string arguments, the first of which is almost always the Redis key to run the command against.
-These arguments are followed by an optional error first callback function.
+The node_redis client exposes a function named for each Redis command.
+
+These functions take strings as arguments, the first of which is usually the Redis key to run the command against. You can also add an optional [error first callback function](https://nodejs.org/api/errors.html#error-first-callbacks) after the other arguments.
 
 ## Promises and async/await
 
-To use promises and async/await with node_redis, wrap it using [Bluebird's](https://www.npmjs.com/package/bluebird) `promisifyAll` as shown here:
+To use [promises](https://nodejs.dev/learn/understanding-javascript-promises) and [async/await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await) with node_redis, wrap it using [Bluebird's](https://www.npmjs.com/package/bluebird) `promisifyAll`, as shown here:
 
 ```js
 const redis = require('redis');
