@@ -13,6 +13,8 @@ aliases: [
 ---
 A Redis Enterprise cluster (REC) is defined in a custom resource definition (CRD). The REC options are specified in the `spec` section of the custom resource. Any field not specified in the custom resource will be set to default values by the operator. Changes made to the custom resource will override changes made to the cluster via the admin console or `rladmin` commands.
 
+The most common options you might specify are listed below. For a full list of options, see the [Redis Enterprise Cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md).
+
 ### `name`: `rec`
 
     This is the cluster name that the operator uses to name various

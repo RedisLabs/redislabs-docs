@@ -15,6 +15,8 @@ aliases: [
 The database options are specified in the `spec` section of the database custom resource.
 These options include options that you can change and options that are created by the controller for applications or developers. Changes made to the REDB custom resource will override changes made to the database via the admin console or `rladmin` commands.
 
+The most common options are listed below. For a complete list of options, see [Redis Enterprise Database API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md).
+
 ### `databaseSecretName`
 
 A string containing the name of a secret that contains the desired database password.
