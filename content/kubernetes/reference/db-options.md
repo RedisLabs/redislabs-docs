@@ -88,6 +88,19 @@ redisEnterpriseCluster:
    name: rec
 ```
 
+### `redisUpgradePolicy`
+
+[Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}}) that controls the default Redis database version when creating or updating databases.
+
+The supported values are:
+
+- `major` : limits Redis database version to the most recent major release
+- `latest`: sets default database version to the latest minor release
+
+More info:
+- [Redis upgrade policy]({{<relref "/rs/installing-upgrading/upgrading.md#redis-upgrade-policy">}})
+- [Upgrade policy values]({{<relref "/rs/installing-upgrading/upgrading.md#upgrade-policy-values">}})
+
 ### `replication`
 
 A boolean that indicates whether in-memory [database replication]({{< relref "/rs/concepts/high-availability/replication.md">}}) is enabled (default: `false`).
