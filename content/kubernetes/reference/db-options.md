@@ -19,28 +19,15 @@ These options include options that you can change and options that are created b
 
 A string containing the name of a secret that contains the desired database password.
 
-If you do not specify a secret name, a secret is created for you with the name
+If you specify a secret name, you must create an [opaque secret] before you create the
+database resource. The operator takes the password from the `password` key in the secret.
+
+To disable authentication for the database,  use an empty string as a value for the `password` key.
+
+If you do not specify a secret name, the operator will create a secret for you with the name
 constructed from the database name (`metadata.name`) with "`redb-`" as a prefix.
 
-If you specify a secret name, you must create the secret before you create the
-database resource.
-
-To create your own database password in the secret, run:
-
-```sh
- kubectl create secret generic mydb --from-literal=password=<password>
- ```
-
-where \<password> is your desired password in plain text.
-
-In the database custom resource, the value is just secret name. In this example,
-the name is `mydb`:
-
- ```yaml
- databaseSecretName: mydb
- ```
-
-When the database is created, the secret is updated to include the port and service name for the database
+When the database is created, the secret is updated to include the port and service name for the database,
 but the password does not change. If you did not create the secret, it is
 also updated with the generated database password.
 
