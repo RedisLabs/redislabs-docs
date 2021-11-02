@@ -12,4 +12,4 @@ The [Redis Clients page](https://redis.io/clients) contains a list of available 
 
 The following links discuss a few recommended clients in more detail, including installation instructions and usage examples.
 
-{{< table-children columnNames="Language,Client reference" columnSources="LinkTitle,Title" enableLinks="Title" >}}
+{{< table-children columnNames="Language,Client description" columnSources="LinkTitle,Description" enableLinks="LinkTitle" >}}
