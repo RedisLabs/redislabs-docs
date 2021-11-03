@@ -2,6 +2,45 @@
 
 The docs are updated regularly; here are some recent highlights:
 
+## October 2021
+
+- Redis Enterprise Software doc updates: 
+
+    - Updated docs to support the v6.2.8 release ([PR #1632](https://github.com/RedisLabs/redislabs-docs/pull/1632)), which included:
+        - [Release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-8-october-2021/) ([PR #1628](https://github.com/RedisLabs/redislabs-docs/pull/1628)) 
+        - Updates to the [Redis upgrade policy](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/#redis-upgrade-policy) docs ([PR #1599](https://github.com/RedisLabs/redislabs-docs/pull/1599))
+        - Updates to the [backup data](https://docs.redis.com/latest/rs/administering/import-export/database-backup/) and [export data](https://docs.redis.com/latest/rs/administering/import-export/exporting-data/) articles ([PR #1548](https://github.com/RedisLabs/redislabs-docs/pull/1548) & [PR #1598](https://github.com/RedisLabs/redislabs-docs/pull/1598))
+
+    - REST API docs are [in preview](https://docs.redis.com/staging/rs-rest-api/rs/references/rest-api/) ([PR #1533](https://github.com/RedisLabs/redislabs-docs/pull/1533), [PR #1621](https://github.com/RedisLabs/redislabs-docs/pull/1621))
+
+- Redis Enterprise Cloud updates:
+
+    - REST API docs have been clarified and updated to reflect the new user experience ([PR #1651](https://github.com/RedisLabs/redislabs-docs/pull/1651)), which includes:
+        - [Get started](https://docs.redis.com/latest/rc/api/get-started/)
+        - [Enable the API](https://docs.redis.com/latest/rc/api/get-started/enable-the-api/)
+        - [Manage API keys](https://docs.redis.com/latest/rc/api/get-started/manage-api-keys/)
+
+    - A new article describes how to [migrate data](https://docs.redis.com/latest/rc/databases/migrate-databases/) to Redis Enterprise Cloud subscriptions ([PR #1619](https://github.com/RedisLabs/redislabs-docs/pull/1619))
+
+- Kubernetes doc updates:
+
+    - The Platforms section of the docs has been renamed to Kubernetes ([PR #1562](https://github.com/RedisLabs/redislabs-docs/pull/1562))
+
+- Additional changes
+
+    - Modules: A new article documents Redis Enterprise [feature compatibility support](https://docs.redis.com/latest/modules/enterprise-capabilities/) ([PR #1504](https://github.com/RedisLabs/redislabs-docs/pull/1504))
+
+    - Release notes have been added for:
+        - [RedisGraph v2.4.11](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/#v2411-october-2021) ([PR #1560](https://github.com/RedisLabs/redislabs-docs/pull/1560))
+        - [RediSearch v2.0.12](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.0-release-notes/#v2012-september-2021) ([PR #1616](https://github.com/RedisLabs/redislabs-docs/pull/1616))
+
+    - RedisInsight: [v1.11 release notes](https://docs.redis.com/latest/ri/release-notes/v1.11.0/) have been added ([PR #1605](https://github.com/RedisLabs/redislabs-docs/pull/1605))
+
+- Additional updates to fix typos, missing images, and other glitches
+
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-10-01..2021-10-31).
+
+
 ## September 2021
 
 - Changes affecting all sections:

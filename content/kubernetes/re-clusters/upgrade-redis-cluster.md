@@ -16,9 +16,9 @@ aliases: [
     /kubernetes/re-clusters/upgrade-redis-cluster/,
 ]
 ---
-Redis implements rolling updates for software upgrades in Kubernetes deployments.
+Redis implements rolling updates for software upgrades in Kubernetes deployments. The upgrade process consists of two steps: upgrading the Redis Enterprise operator, and upgrading the Redis Enterprise cluster version.
 
-## Upgrade Redis Enterprise
+## 1- Upgrade Redis Enterprise
 
 ### Download the bundle
 You need to ensure that you pull the correct version of the bundle. You can find the version tags
@@ -86,7 +86,7 @@ NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 redis-enterprise-operator   1/1     1            1           0m36s
 ```
 
-### Upgrade the Redis Enterprise cluster version
+### 2- Upgrade the Redis Enterprise cluster version
 
 Before beginning the upgrade of the Redis Enterprise cluster version, check the K8s operator release notes to find the Redis Enterprise image tag. For example, in Redis Enterprise K8s operator release [6.0.12-5](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases/tag/v6.0.12-5), the `Images` section shows the Redis Enterprise tag is `6.0.12-57`.
 
