@@ -36,8 +36,8 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | GKE 1.19                        | supported      |
 | GKE 1.20                        | supported      |
 | GKE 1.21                        | supported      |
-| Rancher 2.4 (K8s 1.17)          | supported      |
-| Rancher 2.4 (K8s 1.18)          | supported      |
+| Rancher 2.4 (K8s 1.17)          | deprecated     |
+| Rancher 2.4 (K8s 1.18)          | deprecated     |
 | Rancher 2.5 (K8s 1.17)          | supported      |
 | Rancher 2.5 (K8s 1.18)          | supported      |
 | Rancher 2.5 (K8s 1.19)          | supported      |
