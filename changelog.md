@@ -7,7 +7,7 @@ The docs are updated regularly; here are some recent highlights:
 - Redis Enterprise Software doc updates: 
 
     - Updated docs to support the v6.2.8 release ([PR #1632](https://github.com/RedisLabs/redislabs-docs/pull/1632)), which included:
-        - [Release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-8-october-2021/) ([PR #1628](https://github.com/RedisLabs/redislabs-docs/pull/1632)) 
+        - [Release notes](https://docs.redis.com/latest/rs/release-notes/rs-6-2-8-october-2021/) ([PR #1628](https://github.com/RedisLabs/redislabs-docs/pull/1628)) 
         - Updates to the [Redis upgrade policy](https://docs.redis.com/latest/rs/installing-upgrading/upgrading/#redis-upgrade-policy) docs ([PR #1599](https://github.com/RedisLabs/redislabs-docs/pull/1599))
         - Updates to the [backup data](https://docs.redis.com/latest/rs/administering/import-export/database-backup/) and [export data](https://docs.redis.com/latest/rs/administering/import-export/exporting-data/) articles ([PR #1548](https://github.com/RedisLabs/redislabs-docs/pull/1548) & [PR #1598](https://github.com/RedisLabs/redislabs-docs/pull/1598))
 
@@ -15,7 +15,7 @@ The docs are updated regularly; here are some recent highlights:
 
 - Redis Enterprise Cloud updates:
 
-    - REST API docs have been clarified and updated to reflect the new user experience ([PR #1651](https://github.com/RedisLabs/redislabs-docs/pull/1615)), which includes:
+    - REST API docs have been clarified and updated to reflect the new user experience ([PR #1651](https://github.com/RedisLabs/redislabs-docs/pull/1651)), which includes:
         - [Get started](https://docs.redis.com/latest/rc/api/get-started/)
         - [Enable the API](https://docs.redis.com/latest/rc/api/get-started/enable-the-api/)
         - [Manage API keys](https://docs.redis.com/latest/rc/api/get-started/manage-api-keys/)
@@ -34,7 +34,7 @@ The docs are updated regularly; here are some recent highlights:
         - [RedisGraph v2.4.11](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/#v2411-october-2021) ([PR #1560](https://github.com/RedisLabs/redislabs-docs/pull/1560))
         - [RediSearch v2.0.12](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.0-release-notes/#v2012-september-2021) ([PR #1616](https://github.com/RedisLabs/redislabs-docs/pull/1616))
 
-    - RedisInsight: [v1.11 release notes](https://docs.redis.com/latest/ri/release-notes/v1.11.0/) for have been added ([PR #1605](https://github.com/RedisLabs/redislabs-docs/pull/1605))
+    - RedisInsight: [v1.11 release notes](https://docs.redis.com/latest/ri/release-notes/v1.11.0/) have been added ([PR #1605](https://github.com/RedisLabs/redislabs-docs/pull/1605))
 
 - Additional updates to fix typos, missing images, and other glitches
 
