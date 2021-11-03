@@ -19,7 +19,9 @@ These options include options that you can change and options that are created b
 
 Manually sets the TCP port on which the database is available. If the port number is not specified, it will be automatically generated.
 
-<warning> If you use `databasePort` in your REDB spec, the port number cannot be changed after database creation.</warning>
+{{<warning>}}
+If you use `databasePort` in your REDB spec, the port number cannot be changed after database creation.
+{{</warning>}}
 
 If the port is not available, you'll get an error for "port is unavailable." 
 If the port is not valid, you'll get an error for "change databasePort is not allowed." 
