@@ -1,6 +1,6 @@
 ---
 Title: Redis Enterprise Software on Kubernetes deployment with VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS)
-linkTitle: VMWare Tanzu
+linkTitle: TKGI
 description: This section provides the steps required to set up a Redis Enterprise cluster with the Kubernetes Operator on VMWare Tanzu Kubernetes Grid Integrated Edition (formerly Pivotal PKS).
 weight: 60
 alwaysopen: false
