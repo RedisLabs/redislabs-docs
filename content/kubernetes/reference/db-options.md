@@ -6,9 +6,9 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: [
    /platforms/kubernetes/reference/db-options.md,
-   /platforms/kubernetes/reference/db-options/
+   /platforms/kubernetes/reference/db-options/,
    /kubernetes/reference/db-options.md,
-   /kubernetes/reference/db-options/
+   /kubernetes/reference/db-options/,
 ]
 ---
 
