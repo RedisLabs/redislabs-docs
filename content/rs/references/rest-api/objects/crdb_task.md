@@ -18,5 +18,5 @@ An object that represents an Active-Active (CRDB) task.
   "cluster_name": string,
   "description": string,
   "error_code": string
-}, ...] {{</code>}} | Error details for errors that occurred on a cluster |
+}, ...] {{</code>}} | Details for errors that occurred on a cluster |
 | status | 'queued' <br />'started' <br />'finished' <br />'failed' | CRDB task status (read only) |

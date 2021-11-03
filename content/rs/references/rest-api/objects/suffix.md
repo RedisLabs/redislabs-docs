@@ -11,9 +11,9 @@ An API object that represents a DNS suffix in the cluster.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| name         | string           | Suffix name, unique, and represents its zone (read-only) |
-| mdns         | boolean          | Support for Multicast DNS (read-only) |
-| internal     | boolean          | Does the Suffix point to internal ip addresses (read-only) |
-| default      | boolean          | Suffix is default suffix for the cluster (read-only) |
-| use_aaaa_ns  | boolean          | Suffix uses AAAA NS entries (read-only) |
-| slaves       | array of string  | Frontend DNS servers to be updated by this suffix |
+| default | boolean | Suffix is the default suffix for the cluster (read-only) |
+| internal | boolean | Does the suffix point to internal IP addresses (read-only) |
+| mdns | boolean | Support for multicast DNS (read-only) |
+| name | string | Unique suffix name that represents its zone (read-only) |
+| slaves | array of strings | Frontend DNS servers to be updated by this suffix |
+| use_aaaa_ns | boolean | Suffix uses AAAA NS entries (read-only) |

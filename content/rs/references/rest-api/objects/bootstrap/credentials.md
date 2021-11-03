@@ -9,6 +9,5 @@ categories: ["RS"]
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| username   | string       | Admin username (pattern does not allow special characters &,\<,>,") |
 | password   | string       | Admin password |
-
+| username   | string       | Admin username (pattern does not allow special characters &,\<,>,") |

@@ -9,6 +9,5 @@ categories: ["RS"]
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| max_redis_servers  | integer (default:&nbsp;100)    | Max allowed redis servers on node |
 | max_listeners      | integer (default:&nbsp;100)    | Max allowed listeners on node |
-                                        
+| max_redis_servers  | integer (default:&nbsp;100)    | Max allowed Redis servers on node |

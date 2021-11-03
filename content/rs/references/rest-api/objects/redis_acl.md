@@ -11,8 +11,8 @@ An API object that represents a Redis [access control list (ACL)]({{<relref "/rs
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| uid         | integer     | Object's unique uid |
-| name        | string      | Redis ACL's name |
-| acl         | string      | Redis ACL's string |
-| account_id  | integer     | SM account ID |
-| action_uid  | string      | Action uid. If it exists, progress can be tracked by the `GET`&nbsp;`/actions/{uid}` API (read-only) |
+| uid | integer | Object's unique ID |
+| account_id | integer | SM account ID |
+| acl | string | Redis ACL's string |
+| action_uid | string | Action UID. If it exists, progress can be tracked by the `GET`&nbsp;`/actions/{uid}` API (read-only) |
+| name | string | Redis ACL's name |

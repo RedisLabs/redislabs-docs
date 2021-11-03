@@ -9,7 +9,7 @@ categories: ["RS"]
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| ephemeral_path        | string      | Ephemeral storage path |
-| bigstore_path         | string      | Bigredis storage path |
-| persistent_path       | string      | Persistent storage path |
-| ccs_persistent_path   | string      | Persistent storage path of ccs |
+| bigstore_path | string | Bigredis storage path |
+| ccs_persistent_path | string | Persistent storage path of CCS |
+| ephemeral_path | string | Ephemeral storage path |
+| persistent_path | string | Persistent storage path |
