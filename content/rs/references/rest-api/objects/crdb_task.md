@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-An object that represents a CRDB task.
+An object that represents an Active-Active (CRDB) task.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

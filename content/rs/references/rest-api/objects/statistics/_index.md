@@ -29,7 +29,7 @@ Statistics returned from API requests always contain the following fields:
 - `stime`: a timestamp that represents the beginning of the interval, in the format "2015-05-27T12:00:00Z"
 - `etime`: a timestamp that represents the end of the interval, in the format "2015-05-27T12:00:00Z"
 
-The statistics returned by the API also contain a set of fields that represent the values of different metrics for an object during the specified time interval.
+The statistics returned by the API also contain fields that represent the values of different metrics for an object during the specified time interval.
 
 More details about the metrics relevant to each object:
 - [Cluster metrics]({{<relref "/rs/references/rest-api/objects/statistics/cluster-metrics">}})
@@ -38,7 +38,7 @@ More details about the metrics relevant to each object:
 - [Shard metrics]({{<relref "/rs/references/rest-api/objects/statistics/shard-metrics">}})
 
 {{<note>}}
-Some displayed statistics are for internal use only. They are not documented and should be ignored.
+Some statistics are for internal use only. They are not documented and should be ignored.
 {{</note>}}
 
 {{<note>}}

@@ -54,7 +54,7 @@ Initiate a manual import process.
 }
 ```
 
-The above request initiates an import process using `dataset_import_sources` values that were previously configured for the database.
+This request initiates an import process using `dataset_import_sources` values that were previously configured for the database.
 
 #### Request headers
 

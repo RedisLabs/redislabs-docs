@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-Configuration details of a cluster that is part of an Active-Active database.
+Configuration details for a cluster that is part of an Active-Active database.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|

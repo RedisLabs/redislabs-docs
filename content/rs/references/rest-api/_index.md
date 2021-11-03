@@ -15,7 +15,7 @@ Redis Enterprise Software provides a REST API to help you automate common tasks.
 
 Here, you'll find the details of the API and how to use it.  
 
-More info is available, including:
+For more info, see:
 
 - Supported [request endpoints]({{<relref "/rs/references/rest-api/requests/_index.md" >}}), organized by path
 - Supported [objects]({{<relref "/rs/references/rest-api/objects/_index.md" >}}), both request and response

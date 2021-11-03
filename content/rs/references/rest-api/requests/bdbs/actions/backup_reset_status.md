@@ -22,7 +22,7 @@ aliases: /rs/references/rest-api/bdbs/actions/backup_reset_status
 
 	PUT /v1/bdbs/{int: uid}/actions/backup_reset_status
 
-Reset the database's `backup_status` to idle if a backup is not in progress and clears the value of the `backup_failure_reason` field.
+Resets the database's `backup_status` to idle if a backup is not in progress and clears the value of the `backup_failure_reason` field.
 
 #### Required permissions
 

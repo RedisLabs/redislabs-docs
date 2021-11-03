@@ -7,17 +7,13 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-The cluster allows you to invoke general maintenance actions such as rebalancing, taking a node offline by moving all of its entities to other nodes, etc.
+The cluster allows you to invoke general maintenance actions such as rebalancing or taking a node offline by moving all of its entities to other nodes.
 
-Actions are implemented as tasks in the cluster. Every task has a
-unique `task_id` assigned by the cluster, a task name which
-describes the task, a status, and additional task-specific parameters.
+Actions are implemented as tasks in the cluster. Every task has a unique `task_id` assigned by the cluster, a task name which describes the task, a status, and additional task-specific parameters.
 
-The REST API provides a simplified interface that allows callers to
-invoke actions and query their status without a specific `task_id`.
+The REST API provides a simplified interface that allows callers to invoke actions and query their status without a specific `task_id`.
 
-The action lifecycle is based on the following status and status
-transitions:
+The action lifecycle is based on the following status and status transitions:
 
 ![Action lifecycle](/images/rs/rest-api-action-cycle.png#no-click "Action lifecycle")
 
@@ -32,7 +28,7 @@ transitions:
 |                 | failed | Operation failed |
 | progress        | integer <nobr>(range: 0-100)</nobr> | Represents percent completed  |
 
-When a task fails, the `error_code` and `error_message` fields describe the encountered error.
+When a task fails, the `error_code` and `error_message` fields describe the error.
 
 Possible `error_code` values:
 

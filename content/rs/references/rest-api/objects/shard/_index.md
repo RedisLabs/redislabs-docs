@@ -7,7 +7,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 
-An API object that represents a Redis shard in a bdb.
+An API object that represents a Redis shard in a database.
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
