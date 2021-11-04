@@ -19,7 +19,7 @@ These options include options that you can change and options that are created b
 
 A string containing the name of a secret that contains the desired database password.
 
-If you specify a secret name, you must create an [opaque secret] before you create the
+If you specify a secret name, you must create an [opaque secret](https://kubernetes.io/docs/concepts/configuration/secret/#opaque-secrets) before you create the
 database resource. The operator takes the password from the `password` key in the secret.
 
 To disable authentication for the database,  use an empty string as a value for the `password` key.
