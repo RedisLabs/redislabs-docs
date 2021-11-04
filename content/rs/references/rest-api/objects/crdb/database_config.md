@@ -21,8 +21,8 @@ An object that represents the database configuration.
 | max_aof_load_time | integer | Hint for maximum AOF reload time |
 | memory_size | integer | Database memory size limit, in bytes |
 | oss_cluster | boolean | Enables OSS Cluster mode |
-| oss_cluster_api_preferred_ip_type | string | Indicates preferred ip type in oss cluster API: internal/external |
-| oss_sharding | boolean | An alternative to shard_key_regex for using the common case of the oss shard hashing policy |
+| oss_cluster_api_preferred_ip_type | string | Indicates preferred IP type in OSS cluster API: internal/external |
+| oss_sharding | boolean | An alternative to shard_key_regex for using the common case of the OSS shard hashing policy |
 | port | integer | TCP port for database access |
 | proxy_policy | string | The policy used for proxy binding to the endpoint |
 | rack_aware | boolean | Require the database to be always replicated across multiple racks |

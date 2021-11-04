@@ -9,5 +9,5 @@ categories: ["RS"]
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
-| status    | 'in_progress'<br />'idle'<br />'link_down' | Indication of the shard's current sync status |
 | progress  | integer        | Number of bytes remaining in current sync |
+| status    | 'in_progress'<br />'idle'<br />'link_down' | Indication of the shard's current sync status |
