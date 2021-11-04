@@ -99,7 +99,7 @@ To rearrange the database shards, you can submit the blueprint returned in this 
 | Code | Description |
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
-| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Database uid does not exist |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Database UID does not exist |
 | [406 Not Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | Not enough resources in the cluster to host the database |
 
 ## Rearrange database shards {#put-bdbs-rearrange-shards}

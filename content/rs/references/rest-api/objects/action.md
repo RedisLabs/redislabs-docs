@@ -19,14 +19,14 @@ The action lifecycle is based on the following status and status transitions:
 
 | Name | Type/Value | Description |
 |------|------------|-------------|
+| progress        | integer <nobr>(range: 0-100)</nobr> | Represents percent completed  |
 | status          | queued | Requested operation and added it to the queue to await processing |
-|                 | starting | Picked up operation from the queue and started processing                  |
+|                 | starting | Picked up operation from the queue and started processing |
 |                 | running | Currently executing operation |
 |                 | cancelling | Operation cancellation is in progress |
 |                 | cancelled | Operation cancelled |
 |                 | completed | Operation completed |
 |                 | failed | Operation failed |
-| progress        | integer <nobr>(range: 0-100)</nobr> | Represents percent completed  |
 
 When a task fails, the `error_code` and `error_message` fields describe the error.
 

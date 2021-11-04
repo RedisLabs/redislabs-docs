@@ -143,7 +143,7 @@ Returns a [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}).
 | Code | Description |
 |------|-------------|
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | No error |
-| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Database uid does not exist |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Database UID does not exist |
 
 ## Update database configuration {#put-bdbs}
 
@@ -327,7 +327,7 @@ If passed with the `dry_run` URL query string, the function will validate the bd
 
 To track this request's progress, poll the [`/actions/<action_uid>` endpoint]({{<relref "/rs/references/rest-api/requests/bdbs/actions">}}) with the action_uid returned in the response body.
 
-The cluster will use default configuration for any missing bdb field. The database uid will be created by the cluster if it is missing.
+The cluster will use default configuration for any missing database field. The cluster creates a database UID if it is missing.
 
 #### Required permissions
 
@@ -430,7 +430,7 @@ When errors are reported, the server may return a JSON object with `error_code` 
 | Code | Description |
 |------|-------------|
 | [403 Forbidden](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4) | redislabs license expired. |
-| [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | Database with the same uid already exists. |
+| [409 Conflict](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.10) | Database with the same UID already exists. |
 | [406 Not Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | Invalid configuration parameters provided. |
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, database is being created. |
 

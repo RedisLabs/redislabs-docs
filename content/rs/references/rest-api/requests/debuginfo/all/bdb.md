@@ -22,7 +22,7 @@ aliases: /rs/references/rest-api/debuginfo/all/bdb
 
 	GET /v1/debuginfo/all/bdb/{int: bdb_uid}
 
-Fetch debuginfo from all nodes that are relevent to a given bdb uid.
+Fetch debuginfo from all nodes that are relevent to a given database UID.
 
 #### Required permissions
 
@@ -38,7 +38,7 @@ Fetch debuginfo from all nodes that are relevent to a given bdb uid.
 
 ### Response {#get-all-response} 
 
-Downloads the debuginfo in a tarball called _filename_.tar.gz. Extract the files from the tarball to access the debuginfo for all nodes relevant to the given bdb uid.
+Downloads the debuginfo in a tarball called _filename_.tar.gz. Extract the files from the tarball to access the debuginfo for all nodes relevant to the given database UID.
 
 #### Response headers
 

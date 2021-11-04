@@ -14,7 +14,7 @@ An API object that represents a managed database in the cluster.
 | uid | integer | Cluster unique ID of database. Can be set during creation but cannot be updated. |
 | account_id | integer | SM account ID |
 | action_uid | string | Currently running action's UID (read-only) |
-| aof_policy | **'appendfsync-every-sec'**<br />'appendfsync-always' | Policy for Append-Only File data persistence |
+| aof_policy | **'appendfsync-every-sec'** <br />'appendfsync-always' | Policy for Append-Only File data persistence |
 | authentication_admin_pass | string | Password for administrative access to the BDB (used for SYNC from the BDB) |
 | authentication_redis_pass | string | Redis AUTH password authentication |
 | authentication_sasl_pass | string | Binary memcache SASL password |
@@ -55,7 +55,7 @@ An API object that represents a managed database in the cluster.
   "shard_uid": integer,
   "weight": number
 }, ...]
-{{</code>}} | List of shard UIDs and their bigstore RAM weights;<br />**shard_uid**: Shard UID;<br />**weight**: Relative weight of RAM distribution |
+{{</code>}} | List of shard UIDs and their bigstore RAM weights;<br /> **shard_uid**: Shard UID;<br /> **weight**: Relative weight of RAM distribution |
 | crdt | boolean (default:&nbsp;false) | Use CRDT-based data types for multi-master replication |
 | crdt_causal_consistency | boolean (default:&nbsp;false) | Causal consistent CRDB. |
 | crdt_config_version | integer | Replica-set configuration version, for internal use only. |
@@ -67,12 +67,12 @@ An API object that represents a managed database in the cluster.
 | crdt_replica_id | integer | Local replica ID, for internal use only. |
 | crdt_replicas | string | Replica set configuration, for internal use only. |
 | crdt_sources | array of [syncer_sources]({{<relref "/rs/references/rest-api/objects/bdb/syncer_sources">}}) objects | Remote endpoints/peers of CRDB database to sync from. See the 'bdb -\> replica_sources' section |
-| crdt_sync | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified crdt_sources. Applicable only for Active-Active databases. See [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) for more details. |
+| crdt_sync | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified crdt_sources. Applicable only for Active-Active databases. See [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) for more details. |
 | crdt_sync_dist | boolean | Enable/disable distributed syncer in master-master |
 | crdt_syncer_auto_oom_unlatch | boolean (default:&nbsp;true) | Syncer automatically attempts to recover synchronisation from peers after this database throws an Out-Of-Memory error. Otherwise, the syncer exits |
 | created_time | string | The date and time the database was created (read-only) |
 | data_internode_encryption | boolean | Should the data plane internode communication for this database be encrypted |
-| data_persistence | **'disabled'**<br />'snapshot'<br />'aof' | Database on-disk persistence policy. For snapshot persistence, a [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) must be provided |
+| data_persistence | **'disabled'** <br />'snapshot'<br />'aof' | Database on-disk persistence policy. For snapshot persistence, a [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) must be provided |
 | dataset_import_sources | [complex object]({{<relref "/rs/references/rest-api/objects/bdb/dataset_import_sources">}}) | Array of source file location description objects to import from when performing an import action. This is write-only and cannot be read after set. <br />Call GET /jsonschema to retrieve the object's structure. |
 | default_user | boolean (default:&nbsp;true) | Allow/disallow a default user to connect |
 | disabled_commands | string (default: ) | Redis commands which are disabled in db |
@@ -92,8 +92,8 @@ An API object that represents a managed database in the cluster.
 | gradual_src_mode | 'enabled'<br />'disabled' | Indicates if gradual sync (of sync sources) should be activated |
 | gradual_sync_max_shards_per_source | integer (default:&nbsp;1) | Sync a maximum of N shards per source in parallel (gradual_sync_mode should be enabled for this to take effect) |
 | gradual_sync_mode | 'enabled'<br />'disabled'<br />'auto' | Indicates if gradual sync (of source shards) should be activated ('auto' for automatic decision) |
-| hash_slots_policy | 'legacy'<br />**'16k'** | The policy used for hash slots handling<br />**'legacy'**: slots range is '1-4096'<br />**'16k'**: slots range is '0-16383' |
-| implicit_shard_key | boolean (default:&nbsp;false) | Controls the behavior of what happens in case a key does not match any of the regex rules. <br />**true**: if a key does not match any of the rules, the entire key will be used for the hashing function <br />**false**: if a key does not match any of the rules, an error will be returned. |
+| hash_slots_policy | 'legacy'<br /> **'16k'** | The policy used for hash slots handling<br /> **'legacy'**: slots range is '1-4096'<br /> **'16k'**: slots range is '0-16383' |
+| implicit_shard_key | boolean (default:&nbsp;false) | Controls the behavior of what happens in case a key does not match any of the regex rules. <br /> **true**: if a key does not match any of the rules, the entire key will be used for the hashing function <br /> **false**: if a key does not match any of the rules, an error will be returned. |
 | import_failure_reason | 'download-error'<br />'file-corrupted'<br />'general-error'<br />'file-larger-than-mem-limit:\<n bytes of expected dataset>:\<n bytes configured bdb limit>'<br />'key-too-long'<br />'invalid-bulk-length'<br />'out-of-memory' | Import failure reason (read-only) |
 | import_progress | number, <nobr>(range: 0-100)</nobr> | Database import progress (percentage) (read-only) |
 | import_status | 'idle'<br />'initializing'<br />'importing'<br />'succeeded'<br />'failed' | Database import process status (read-only) |
@@ -119,7 +119,7 @@ An API object that represents a managed database in the cluster.
 | mtls_allow_weak_hashing | boolean | An optional mTLS relaxation flag for certs verification |
 | name | string | Database name |
 | oss_cluster | boolean (default:&nbsp;false) | OSS Cluster mode option. Cannot be enabled with `'hash_slots_policy': 'legacy'` |
-| oss_cluster_api_preferred_ip_type | **'internal'**<br />'external' | Internal/external IP type in OSS cluster API. Default value for new endpoints |
+| oss_cluster_api_preferred_ip_type | **'internal'** <br />'external' | Internal/external IP type in OSS cluster API. Default value for new endpoints |
 | oss_sharding | boolean (default:&nbsp;false) | An alternative to `shard_key_regex` for using the common case of the OSS shard hashing policy |
 | port | integer | TCP port on which the database is available. Generated automatically if omitted and returned as 0 |
 | proxy_policy | 'single'<br />'all-master-shards'<br />'all-nodes' | The default policy used for proxy binding to endpoints |
@@ -127,7 +127,7 @@ An API object that represents a managed database in the cluster.
 | redis_version | string | Version of the redis-server processes: e.g. 6.0, 5.0-big |
 | repl_backlog_size | string | Redis replication backlog size ('auto' or size in bytes) |
 | replica_sources | array of [syncer_sources]({{<relref "/rs/references/rest-api/objects/bdb/syncer_sources">}}) objects | Remote endpoints of database to sync from. See the 'bdb -\> replica_sources' section |
-| [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified replica_sources |
+| [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | Enable, disable, or pause syncing from specified replica_sources |
 | replica_sync_dist | boolean | Enable/disable distributed syncer in replica-of |
 | replication | boolean (default:&nbsp;false) | In-memory database replication mode |
 | roles_permissions | {{<code>}}
@@ -150,14 +150,14 @@ An API object that represents a managed database in the cluster.
 | shard_list | array of integers | Cluster unique IDs of all database shards. |
 | sharding | boolean (default:&nbsp;false) | Cluster mode (server-side sharding). When true, shard hashing rules must be provided by either `oss_sharding` or `shard_key_regex` |
 | shards_count | integer, <nobr>(range: 1-512)</nobr> (default:&nbsp;1) | Number of database server-side shards |
-| shards_placement | '**dense**' <br />'sparse' | Control the density of shards <br />**'dense'**: Shards reside on as few nodes as possible <br />**'sparse'**: Shards reside on as many nodes as possible |
+| shards_placement | **'dense'** <br />'sparse' | Control the density of shards <br /> **'dense'**: Shards reside on as few nodes as possible <br /> **'sparse'**: Shards reside on as many nodes as possible |
 | skip_import_analyze | 'enabled'<br />'disabled' | Enable/disable skipping the analysis stage when importing an RDB file |
 | slave_ha | boolean | Enable replica high availability mechanism for this database (default takes the cluster setting) |
 | slave_ha_priority | integer | Priority of the BDB in replica high availability mechanism |
 | snapshot_policy | array of [snapshot_policy]({{<relref "/rs/references/rest-api/objects/bdb/snapshot_policy">}}) objects | Policy for snapshot-based data persistence. A dataset snapshot will be taken every N secs if there are at least M writes changes in the dataset |
 | ssl | boolean (default:&nbsp;false) | Require SSL authenticated and encrypted connections to the database (deprecated) |
 | [status]({{<relref "/rs/references/rest-api/objects/bdb/status">}}) | 'pending'<br />'active'<br />'active-change-pending'<br />'delete-pending'<br />'import-pending'<br />'creation-failed'<br />'recovery' | Database lifecycle status (read-only) |
-| sync | 'enabled'<br />**'disabled'**<br />'paused'<br />'stopped' | (deprecated, use [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) or crdt_sync instead) Enable, disable, or pause syncing from specified sync_sources |
+| sync | 'enabled'<br /> **'disabled'** <br />'paused'<br />'stopped' | (deprecated, use [replica_sync]({{<relref "/rs/references/rest-api/objects/bdb/replica_sync">}}) or crdt_sync instead) Enable, disable, or pause syncing from specified sync_sources |
 | sync_sources | {{<code>}}
 [{
   "uid": integer,
@@ -178,8 +178,8 @@ An API object that represents a managed database in the cluster.
   "value": string
 }, ...]
 {{</code>}} | Optional list of tags objects attached to the database<br />**key**: Represents the tag's meaning and must be unique among tags (pattern does not allow special characters &,\<,>,")<br />**value**: The tag's value |
-| tls_mode | 'enabled'<br />**'disabled'**<br />'replica_ssl' | Require SSL authenticated and encrypted connections to the database |
-| type | **'redis'**<br />'memcached' | Type of database |
+| tls_mode | 'enabled'<br /> **'disabled'** <br />'replica_ssl' | Require SSL authenticated and encrypted connections to the database |
+| type | **'redis'** <br />'memcached' | Type of database |
 | use_nodes | array of strings | Cluster node UIDs to use for database shards and bound endpoints |
 | version | string | Database compatibility version: full Redis/memcached version number, e.g. 6.0.6 |
 | wait_command | boolean (default:&nbsp;true) | Supports Redis wait command (read-only) |

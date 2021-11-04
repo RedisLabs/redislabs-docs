@@ -70,7 +70,7 @@ When errors are reported, the server may return a JSON object with `error_code` 
 
 | Code | Description |
 |------|-------------|
-| db_not_exist | Database with given uid doesn't exist in cluster | 
+| db_not_exist | Database with given UID doesn't exist in cluster | 
 | missing_field | "module_name" or "module_args" are not defined in request | 
 | invalid_schema | JSON object received is not a dict object | 
 | param_error | "module_args" parameter was not parsed properly | 

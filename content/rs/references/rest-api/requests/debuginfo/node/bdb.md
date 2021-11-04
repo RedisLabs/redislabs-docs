@@ -22,8 +22,7 @@ aliases: /rs/references/rest-api/debuginfo/node/bdb
 
 	GET /v1/debuginfo/node/bdb/{int: bdb_uid}
 
-Fetch debuginfo tarfile which contains logs and other system
-information used for troubleshooting, for the given bdb.
+Fetch debuginfo tarfile which contains logs and other system information used for troubleshooting for the given database.
 
 #### Required permissions
 
@@ -39,7 +38,7 @@ information used for troubleshooting, for the given bdb.
 
 ### Response {#get-response} 
 
-Downloads the debuginfo in a tarball called _filename_.tar.gz. Extract the files from the tarball to access the debuginfo for the current node regarding the given bdb uid.
+Downloads the debuginfo in a tarball called _filename_.tar.gz. Extract the files from the tarball to access the debuginfo for the current node regarding the given database UID.
 
 #### Response headers
 

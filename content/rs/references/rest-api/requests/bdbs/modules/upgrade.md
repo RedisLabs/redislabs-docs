@@ -63,7 +63,7 @@ Upgrades module version on a specific BDB.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| modules | list | List of dicts representing the modules that will be upgraded. Each dict must include: <br></br> • **current_module**: uid of a module to upgrade <br></br> • **new_module**: uid of the module we want to upgrade to <br></br> • **new_module_args**: args list for the new module |
+| modules | list | List of dicts representing the modules that will be upgraded. Each dict must include: <br></br> • **current_module**: uid of a module to upgrade <br></br> • **new_module**: UID of the module we want to upgrade to <br></br> • **new_module_args**: args list for the new module |
 | preserve_roles | boolean | Preserve shards’ master/replica roles (optional) |
 | may_discard_data | boolean | Discard data in a non-replicated non-persistent bdb (optional) |
 
