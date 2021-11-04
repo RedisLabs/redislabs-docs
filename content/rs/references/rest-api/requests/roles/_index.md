@@ -132,7 +132,7 @@ Get the details of a single role.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| uid | integer | The RLEC role unique ID. |
+| uid | integer | The role's unique ID. |
 
 ### Response {#get-response} 
 

@@ -34,7 +34,7 @@ An API object that represents a node in the cluster.
 | recovery_path | string | Recovery files path |
 | shard_count | integer | Number of shards on the node (read-only) |
 | shard_list | array of integers | Cluster unique IDs of all node shards |
-| software_version | string | Installed Redis Labs cluster software version (read-only) |
+| software_version | string | Installed Redis Enterprise cluster software version (read-only) |
 | status | 'active'<br />'decommissioning'<br />'down'<br />'provisioning' | Node status (read-only) |
 | supported_database_versions | {{<code>}}
 [{
