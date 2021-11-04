@@ -17,6 +17,16 @@ These options include options that you can change and options that are created b
 
 The most common options are listed below. For a complete list of options, see [Redis Enterprise Database API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md).
 
+### `databasePort`
+
+Manually sets the TCP port on which the database is available. If the port number is not specified, it will be automatically generated.
+
+{{<warning>}}
+`databasePort` cannot be added, removed, or changed after database creation.
+{{</warning>}}
+
+If the admission controller is installed and configured, it will run validity checks before the REDB creation. If the port is not available, you'll get an error for "port is unavailable." If the port is not valid, you'll get an error for "change databasePort is not allowed." 
+
 ### `databaseSecretName`
 
 A string containing the name of a secret that contains the desired database password.
