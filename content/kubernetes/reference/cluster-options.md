@@ -5,10 +5,10 @@ weight: 32
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-  /platforms/kubernetes/cluster-options/
+  /platforms/kubernetes/cluster-options/,
   /platforms/kubernetes/cluster-options.md,
   /kubernetes/reference/cluster-options.md,
-  /kubernetes/reference/cluster-options/
+  /kubernetes/reference/cluster-options/,
 ]
 ---
 A Redis Enterprise cluster (REC) is defined in a custom resource definition (CRD). The REC options are specified in the `spec` section of the custom resource. Any field not specified in the custom resource will be set to default values by the operator. Changes made to the custom resource will override changes made to the cluster via the admin console or `rladmin` commands.

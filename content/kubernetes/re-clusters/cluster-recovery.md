@@ -71,8 +71,12 @@ When the last pod is manually deleted, the recovery process resumes.
     ```sh
     kubectl exec <pod-name> -- rladmin recover all
     ```
-
+    
     This command recovers the data for all nodes in the cluster based on the cluster configuration in pod-0.
+    
+   {{< note >}}
+If the database status is `missing files`, make sure all persistence files are placed on the correct nodes under the persistence path. In case of databases with AOF persistence enabled, you may need to rename AOF files on the pods to remove the .prev suffix
+   {{< /note >}}
 
     If you want to recover based on the cluster configuration of another pod, copy the cluster configuration from the source pod (/var/opt/redislabs/persist/ccs/ccs-redis.rdb) to pod-0.
 
