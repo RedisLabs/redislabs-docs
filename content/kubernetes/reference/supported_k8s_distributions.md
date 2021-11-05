@@ -26,29 +26,24 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | OpenShift 4.6  (K8s 1.19)       | supported      |
 | OpenShift 4.7  (K8s 1.20)       | supported      |
 | OpenShift 4.8  (K8s 1.21)       | supported      |
-| KOPS vanilla 1.16               | deprecated     |
-| KOPS vanilla 1.17               | deprecated     |
 | KOPS vanilla 1.18               | supported      |
 | KOPS vanilla 1.19               | supported      |
 | KOPS vanilla 1.20               | supported      |
 | KOPS vanilla 1.21               | supported      |
-| GKE 1.18                        | supported      |
 | GKE 1.19                        | supported      |
 | GKE 1.20                        | supported      |
 | GKE 1.21                        | supported      |
-| Rancher 2.4 (K8s 1.17)          | supported      |
-| Rancher 2.4 (K8s 1.18)          | supported      |
+| Rancher 2.4 (K8s 1.17)          | deprecated     |
+| Rancher 2.4 (K8s 1.18)          | deprecated     |
 | Rancher 2.5 (K8s 1.17)          | supported      |
 | Rancher 2.5 (K8s 1.18)          | supported      |
 | Rancher 2.5 (K8s 1.19)          | supported      |
 | Rancher 2.5 (K8s 1.20)          | supported      |
-| VMWare TKGI* 1.7 (K8s 1.16)     | deprecated     |
-| VMWare TKGI* 1.8 (K8s 1.17)     | deprecated     |
 | VMWare TKGI** 1.10 (K8s 1.19)   | supported      |
-| AKS 1.18                        | supported      |
 | AKS 1.19                        | supported      |
+| AKS 1.21                        | supported      |
 | EKS 1.18                        | supported      |
 | EKS 1.21                        | supported      |
  
-\* No longer supported by VMware  
+\* No longer supported by the vendor  
 \*\* Tanzu Kubernetes Grid Integrated Edition

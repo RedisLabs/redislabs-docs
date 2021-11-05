@@ -7,11 +7,11 @@ alwaysopen: false
 categories: ["Platforms"]
 aliases: [
   /platforms/kubernetes/tasks/using-kustomize/, 
-  /platforms/kubernetes/tasks/using-kustomize.md
+  /platforms/kubernetes/tasks/using-kustomize.md,
   /platforms/kubernetes/deployment/using-kustomize/, 
   /platforms/kubernetes/deployment/using-kustomize.md,
   /kubernetes/deployment/using-kustomize.md,
-  /kubernetes/deployment/using-kustomize/
+  /kubernetes/deployment/using-kustomize/,
 ]
 ---
 
