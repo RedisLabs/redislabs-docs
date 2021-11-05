@@ -33,7 +33,7 @@ done, e.g. edited a DB configuration, this is where you could look.
 
 - [Redis slow
     log]({{< relref "/rs/administering/logging/redis-slow-log.md" >}})
-- [rsyslog logging]({{< relref "/rs/administering/logging/rsyslog-logging.md" >}})
+- [rsyslog logging]({{<relref "/rs/administering/logging/rsyslog-logging/">}})
 
 ## Viewing logs in the admin console
 
