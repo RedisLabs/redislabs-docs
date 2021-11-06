@@ -50,7 +50,7 @@ A boolean that indicates whether [client authentication]({{< relref "/rs/securit
 
 ### `evictionPolicy`
 
-An [eviction policy]({{< relref "/rs/administering/database-operations/eviction-policy.md">}}) (default: `volitile-lru`)
+An [eviction policy]({{< relref "/rs/administering/database-operations/eviction-policy.md">}}) (default: `volatile-lru`)
 
 ### `memorySize`
 
