@@ -13,6 +13,7 @@ aliases: [
 ---
 ## Redis Enterprise Software for Kubernetes operator release notes
 
+- [6.2.8-2 (November 2021)]({{<relref "/kubernetes/release-notes/k8s-6-2-8-2-2021-11.md">}})
 - [6.2.4-1 (September 2021)]({{<relref "/kubernetes/release-notes/k8s-6-2-4-1-2021-09.md">}})
 - [6.0.20-12 (July 2021)]({{<relref "/kubernetes/release-notes/k8s-6-0-20-12-2021-07.md">}})
 - [6.0.20-4 (May 2021)]({{<relref "/kubernetes/release-notes/k8s-6-0-20-4-2021-05.md">}})
