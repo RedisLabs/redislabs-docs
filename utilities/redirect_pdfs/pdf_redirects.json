@@ -9,3 +9,14 @@
                 "ReplaceKeyWith": "latest/"
             }
         },
+        {
+            "Condition": {
+                "HttpErrorCodeReturnedEquals": "404",
+                "KeyPrefixEquals": "latest/pdf-gen-"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyWith": "latest/"
+            }
+        },
