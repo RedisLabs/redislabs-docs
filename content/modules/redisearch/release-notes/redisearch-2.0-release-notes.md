@@ -7,6 +7,22 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## v2.0.13 (November 2021)
+
+This is a maintenance release for version 2.0.
+
+Details:
+
+- Enhancements:
+  - #[2243](https://github.com/redisearch/redisearch/issues/2243) Add `LOAD *` for FT.AGGREGATE which will load all fields
+
+- Bug fixes:
+  - #[2269](https://github.com/redisearch/redisearch/issues/2269) #[2291](https://github.com/redisearch/redisearch/issues/2291) Remove TAG values from trie with no entries on Garbage Collection.
+  - #[2287](https://github.com/redisearch/redisearch/issues/2287) Uninitialized read on `FT.ADD`
+  - #[2342](https://github.com/redisearch/redisearch/issues/2342) Check for NULL result on intersect iterator
+  - #[2350](https://github.com/redisearch/redisearch/issues/2350) Crash on `FT.AGGREGATE` with `LIMIT 0 0`
+
+
 ## v2.0.12 (September 2021)
 
 This is a maintenance release for version 2.0.
@@ -67,6 +83,8 @@ Details:
 ## v2.0.8 (May 2021)
 
 This is a maintenance release for version 2.0.
+
+This release fixes an important regression introduced by the 2.0 release. The payload is supposed to be returned only when the WITHPAYLOADS parameter is set.
 
 Details:
 
