@@ -246,7 +246,17 @@
                 "Protocol": "https",
                 "ReplaceKeyWith": "latest/"
             }
+        },
+        {
+            "Condition": {
+                "KeyPrefixEquals": "latest/pdfs/",
+                "HttpErrorCodeReturnedEquals": "404"
+            },
+            "Redirect": {
+                "HostName": "docs.redis.com",
+                "Protocol": "https",
+                "ReplaceKeyWith": "latest/"
+            }
         }
-
     ]
 }
