@@ -39,10 +39,3 @@ aliases: /rs/references/rest-api/bdbs/actions
 | Method | Path | Description |
 |--------|------|-------------|
 | [GET]({{<relref "./optimize_shards_placement#get-bdbs-actions-optimize-shards-placement">}}) | `/v1/bdbs/{uid}/actions/optimize_shards_placement` | Get optimized shards placement for a database  |
-
-## Recover
-
-| Method | Path | Description |
-|--------|------|-------------|
-| [GET]({{<relref "./recover#get-bdbs-actions-recover">}}) | `/v1/bdbs/{uid}/actions/recover` | Get a database recovery plan |
-| [POST]({{<relref "./recover#post-bdbs-actions-recover">}}) | `/v1/bdbs/{uid}/actions/recover` | Initiate database recovery |

@@ -448,8 +448,6 @@ The persistence files must exist in the locations specified by the recovery plan
 
 If you create a database with a shards_blueprint and a recovery plan, the shard placement may not fully follow the shards_blueprint.
 
-To retrieve a recovery plan according to the database's existing persistence files, use the [`GET`&nbsp;`/bdbs/<uid>/actions/recover`]({{<relref "/rs/references/rest-api/requests/bdbs/actions/recover#get-bdbs-actions-recover">}}) request endpoint.
-
 ### Request {#post-request-v2} 
 
 #### Example HTTP request
