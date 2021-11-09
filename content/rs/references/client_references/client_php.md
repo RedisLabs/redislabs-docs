@@ -52,7 +52,7 @@ To adapt this example to your code, replace the following values with your datab
 
 Once connected to Redis, you can read and write data. The following code snippet assigns the value `bar` to the Redis key `foo`, reads it back, and prints it:
 
-```php
+```console
 // open a connection to Redis
 ...
  
@@ -63,9 +63,11 @@ var_dump($value);
 
 Example output:
 
-    $ php predis_example.php
-    Connected to Redis
-    string(3) "bar"
+```console
+$ php predis_example.php
+Connected to Redis
+string(3) "bar"
+```
 
 ## Persistent connections
 
