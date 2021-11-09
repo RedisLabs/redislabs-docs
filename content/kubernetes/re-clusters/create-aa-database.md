@@ -162,11 +162,6 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
     rec01   api-openshift.apps.abc.redisdemo.com rec01   api             passthrough   None
     ```
 
-1. Verify you can access the API from outside the K8s cluster.
-
-    ```sh
-   curl -k -L -i -u <username>:<password> https://<api-hostname>/v1/bdbs
-    ```
 
 ## Create an Active-Active database with `crdb-cli`
 
