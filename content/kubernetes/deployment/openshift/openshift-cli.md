@@ -35,14 +35,14 @@ Prerequisites:
 
     ![getting-started-kubernetes-openshift-image1]( /images/rs/getting-started-kubernetes-openshift-image1.png )
 
-1. Click on **admin** (upper right corner) and then **Copy Login**.
+1. Click on **admin** (upper right corner) and then **Copy Login command**.
 
     ![getting-started-kubernetes-openshift-image4]( /images/rs/getting-started-kubernetes-openshift-image4.png )
 
 1. Paste the `login` command into your shell, for example:
 
     ```sh
-    oc login https://your-cluster.acme.com –token=your$login$token
+    oc login --token=<yourToken> --server=https://<cluster FQDN:PORT>
     ```
 
 1. To verify that you are using the newly created project, run:
@@ -78,7 +78,7 @@ Let’s look at each yaml file to see what requires editing:
     1. Apply the file:
 
         ```sh
-        oc apply -f scc.yaml
+        oc apply -f redis-enterprise-k8s-docs/openshift/scc.yaml
         ```
 
         You should receive the following response:
@@ -87,10 +87,10 @@ Let’s look at each yaml file to see what requires editing:
         securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured
         ```
 
-    1. To bind the scc to your project, run:
+    1. To bind the scc to your project, replace <your_project_name> with the project name, and run:
 
         ```sh
-        oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:your_project_name
+        oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<your_project_name>
         ```
 
         You can see the name of your project with `oc project`.
@@ -110,7 +110,7 @@ Changes to this file can cause unexpected results.
     1. Apply the yaml file with:
 
         ```sh
-        kubectl apply -f openshift.bundle.yaml
+        oc apply -f openshift.bundle.yaml
         ```
 
         The command returns a confirmation response such as:
@@ -126,7 +126,7 @@ Changes to this file can cause unexpected results.
     1. To verify that your redis-enterprise-operator deployment is running, run:
 
         ```sh
-        kubectl get deployment -l name=redis-enterprise-operator
+        oc get deployment
         ```
 
         A typical response will look like this:
@@ -266,10 +266,10 @@ After you set up the your_cluster_name yaml:
 1. Apply it to create your Redis Enterprise Cluster:
 
     ```sh
-    kubectl apply -f your_cluster_name.yaml
+    oc apply -f your_cluster_name.yaml
     ```
 
-1. Run `kubectl get rec` and verify that creation succeeded. (`rec` is a shortcut for “RedisEnterpriseClusters”).
+1. Run `oc get rec` and verify that creation succeeded. (`rec` is a shortcut for “RedisEnterpriseClusters”).
 
     The command returns a confirmation response such as:
 
@@ -306,7 +306,7 @@ To create your database:
 1. Apply port forwarding to your Cluster:
 
     ```sh
-    kubectl port-forward your_cluster_name-0 8443:8443
+    oc port-forward your_cluster_name-0 8443:8443
     ```
 
     {{< note >}}
@@ -320,7 +320,7 @@ To create your database:
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
-1. To get your password from the OpenShift management console, go `Resources > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
+1. To get your password from the OpenShift management console, go `Workloads > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
 
     {{< warning >}}
 Do not change the default admin user password in the Redis Enterprise admin console.

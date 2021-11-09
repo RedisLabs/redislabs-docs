@@ -15,7 +15,7 @@ aliases: [
 ]
 ---
 
-Every time a Redis Enterprise database (REDB) with the Redis Enterprise operator for Kubernetes, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
+Every time a Redis Enterprise database (REDB) is created with the Redis Enterprise operator, a [service](https://kubernetes.io/docs/concepts/services-networking/service/) is created that allows requests to be routed to that database. Redis Enterprise supports three [types of services](https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types) for accessing databases: `ClusterIP`, `headless`, or `LoadBalancer`.
 
 By default, REDB creates a `ClusterIP` type service, which exposes a cluster-internal IP and can only be accessed from within the K8s cluster. For requests to be routed to the REDB from outside the K8s cluster, you need an [ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) controller.
 
@@ -47,7 +47,8 @@ If you are using an existing database that is managed from the UI, see [Enable T
 Install one of the supported ingress controllers:  
 
 - [NGINX Ingress Controller Installation Guide](https://kubernetes.github.io/ingress-nginx/deploy/)
-- [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/)  
+- [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/) 
+- [HAProxy Ingress Controller Installation](https://www.haproxy.com/documentation/kubernetes/latest/installation/community/kubernetes/) 
 
 {{< warning >}}You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{< /warning >}}  
 
@@ -86,11 +87,12 @@ Install one of the supported ingress controllers:
   
     For HAProxy, insert the following into the `annotations` section:  
 
+        kubernetes.io/ingress.class: haproxy
         haproxy.ingress.kubernetes.io/ssl-passthrough: "true"
-        kubernetes.io/ingress.class: haproxy  
 
     For NGINX, insert the following into the `annotations` section:  
 
+        kubernetes.io/ingress.class: nginx
         nginx.ingress.kubernetes.io/ssl-passthrough: "true"  
 
     The `ssl-passthrough` annotation is required to allow access to the database. The specific format changes depending on your ingress controller and any additional customizations. See [NGINX Configuration annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/) and [HAProxy Ingress Options](https://www.haproxy.com/documentation/kubernetes/latest/configuration/ingress/) for updated annotation formats.  
