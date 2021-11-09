@@ -42,7 +42,7 @@ This is a maintenance release for version 1.4.
 
 Headlines:
 
-- This release includes support for Redis on Flash (RoF) deployments, improves overall stability, and provides fixes for issues found after the previous release.
+- This release improves overall stability, and provides fixes for issues found after the previous release.
 
 Bugfixes:
 
