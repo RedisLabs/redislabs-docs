@@ -62,7 +62,7 @@ For details about individual modules, see the corresponding documentation.
 | Module datatypes        | Yes          | Yes           | Yes          | 
 | Persistence (AOF)       | Yes (v1.0)   | Yes (v1.4)    | Yes (v1.2)   | 
 | Persistence (snapshot)  | Yes (v1.0)   | Yes (v1.6)    | Yes (v1.2)   | 
-| Redis on Flash (RoF)    | Yes (v1.0)   | Yes (v2.0)    | Yes (v1.4.7) | 
+| Redis on Flash (RoF)    | Yes (v1.0)   | Yes (v2.0)    | No | 
 | Replica Of              | Yes (v1.0)   | Yes (v1.6)[^2]    | Yes (v1.2)   | 
 | Reshard/rebalance       | Yes (v1.0)   | Yes (v2.0)    | Yes (v1.2)   | 
 
