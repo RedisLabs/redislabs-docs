@@ -86,7 +86,7 @@ You'll need to create DNS aliases resolve your API hostname `<api-hostname>`,`<i
   - Description: Endpoint used externally to contact the database
   - Format: `<db-name><ingress-suffix>:443`
   - Example value: `myaadb-cluster.ijk.redisdemo.com:443`
-  - How to get it:`<replication-hostname>:443`"
+  - How to get it:`<replication-hostname>:443`
 
 ## Add `activeActive` section to the REC resource file
 
