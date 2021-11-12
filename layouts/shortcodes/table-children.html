@@ -19,27 +19,11 @@
         {{ range $i, $child := $children }}
         <tr>
             {{ range $j, $cSource := $columnSources }}
-                {{ if eq $cSource "LinkTitle" }}
                     {{ if in $enableLinks $cSource }}
-                        <td style="text-align:left"><a href="{{$child.RelPermalink}}" >{{ $child.LinkTitle }}</a></td>
+                        <td style="text-align:left"><a href="{{$child.RelPermalink}}" >{{ $child.Param $cSource }}</a></td>
                     {{ else }}
-                        <td style="text-align:left">{{ $child.LinkTitle }}</td>
+                        <td style="text-align:left">{{ $child.Param $cSource }}</td>
                     {{ end }}
-                {{ end }}
-                {{ if eq $cSource "Title" }}
-                    {{ if in $enableLinks $cSource }}
-                        <td style="text-align:left"><a href="{{$child.RelPermalink}}" >{{ $child.Title }}</a></td>
-                    {{ else }}
-                        <td style="text-align:left">{{ $child.Title }}</td>
-                    {{ end }}
-                {{ end }}
-                {{ if eq $cSource "Description" }}
-                    {{ if in $enableLinks $cSource }}
-                        <td style="text-align:left"><a href="{{$child.RelPermalink}}" >{{ $child.Description }}</a></td>
-                    {{ else }}
-                        <td style="text-align:left">{{ $child.Description }}</td>
-                    {{ end }}
-                {{ end }}
             {{ end }}
         </tr>
         {{ end }}
