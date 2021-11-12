@@ -1,7 +1,8 @@
 ---
 Title: Redis Enterprise Software Release Notes 6.0.12 (January 2021)
 linkTitle: 6.0.12 (January 2021)
-description: Distribute synchronization across nodes for Active-Active and Active-Passive databases. Disable internal services to free memory. User accounts support password rotation. Module depdencies automatically installed. Syncer process recovery.  Compatible with open source Redis 6.0.6.
+description: Distribute synchronization across nodes for Active-Active and Active-Passive databases. Disable internal services to free memory. User accounts support password rotation. Module depdencies automatically installed. Syncer process recovery.
+compatibleOSSVersion: Redis 6.0.6
 weight: 78
 alwaysopen: false
 categories: ["RS"]

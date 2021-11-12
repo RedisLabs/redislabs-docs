@@ -1,7 +1,8 @@
 ---
 Title: Redis Enterprise Software Release Notes 6.2.8 (October 2021)
 linkTitle: 6.2.8 (October 2021)
-description: RHEL 8 support. Set backup start time. Compatible with open source Redis 6.2.3.
+description: RHEL 8 support. Set backup start time.
+compatibleOSSVersion: Redis 6.2.3
 weight: 75
 alwaysopen: false
 categories: ["RS"]
