@@ -5,6 +5,9 @@
         <div class="edit-link"><a href="{{ .Site.Params.editURL }}{{ replace .File.Dir "\\" "/" }}{{ .File.LogicalName }}" class="github-link" target="blank"><i class="icon-Edit"></i>
             <span>{{T "Edit-this-page"}}</span></a>
         </div>
+        <div class="updated-date">
+            <i class="fi-calendar"></i><b>Updated:</b> {{ .Page.Lastmod.Format "January 2, 2006" }}
+        </div>
         <div style="display: flex;">
             <!-- Only display Download PDF button if on latest -->
             {{ if in .Site.BaseURL "docs.redis.com/latest" }} <!--comment out for testing/preview-->

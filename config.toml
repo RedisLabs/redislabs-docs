@@ -15,6 +15,8 @@ enableMissingTranslationPlaceholders = false
 canonifyURLs = true
 relativeURLs = true
 
+enableGitInfo = true
+
 # [Languages]
 # [Languages.en]
 # title = "Documentation for Hugo docDock"
@@ -37,7 +39,6 @@ disableSearch = false # default is false
 disableNavChevron = false # set true to hide next/prev chevron, default is false
 highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
 menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
-enableGitInfo = true
 googleAnalytics = "UA-92003007-1"
 googleTagManager = "GTM-KNWQXKB"
 
