@@ -203,7 +203,7 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 #### Control plane cipher suite configuration (for 6.0.12 or later)
 
-Control plane cipher suites use the BoringSSL library format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99).
+Control plane cipher suites use the BoringSSL library format for TLS connections to the admin console. See the BoringSSL documentation for a full list of available [BoringSSL configurations](https://github.com/google/boringssl/blob/master/ssl/test/runner/cipher_suites.go#L99-L131).
 
 See the example below to configure cipher suites for the control plane.:
 
@@ -213,7 +213,7 @@ rladmin cluster config cipher_suites ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES
 
 #### Data plane cipher suite configuration (for 6.0.20 or later)
 
-Data plane cipher suites use the OpenSSL library format. See OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html)
+Data plane cipher suites use the OpenSSL library format. See OpenSSL documentation for a list of available [OpenSSL configurations](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html)
 
 See the example below to configure cipher suites for the data plane:
 
