@@ -43,6 +43,9 @@
   {{ with $sourcePage }}
     <h1 id="{{ substr .RelPermalink 1 -1 }}" name="{{ .Title }}">{{ .Title }}</h1>
     <div>{{ .Content }}</div>
+    <hr>
+    <b>Updated:</b> {{ .Page.Lastmod.Format "January 2, 2006" }}
+    <hr>
     {{ partial "recursive-children.html" (dict "context" . "printType" "content" "pageFilepath" .Page.File.Path) }}
   {{ end }}
 </body>
