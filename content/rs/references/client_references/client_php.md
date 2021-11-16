@@ -76,17 +76,17 @@ Predis supports the use of [persistent connections](https://en.wikipedia.org/wik
 To enable persistent connections, use the `persistent` connection attribute, as shown in the following code snippet:
 
 ```php
-    $redis = new Predis\Client(array(
-        "scheme" => "tcp",
-        "host" => "hostname",
-        "port" => port,
-        "password" => "password",
-        "persistent" => "1"));
+$redis = new Predis\Client(array(
+    "scheme" => "tcp",
+    "host" => "hostname",
+    "port" => port,
+    "password" => "password",
+    "persistent" => "1"));
 ```
 
 ## Encrypted connections
 
-[As of v1.1.0](https://github.com/predis/predis/blob/main/CHANGELOG.md#v110-2016-06-02), you can encrypt connections specifying `tls` or `rediss` as the value of the `scheme` attribute or as part of the URI.
+[As of v1.1.0](https://github.com/predis/predis/blob/main/CHANGELOG.md#v110-2016-06-02), you can encrypt connections by specifying `tls` or `rediss` as the value of the `scheme` attribute or as part of the URI.
 
 In addition, you can configure connection parameters, as shown here:
 
