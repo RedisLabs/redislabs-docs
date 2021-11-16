@@ -38,6 +38,8 @@
 
   {{ with $sourcePage }}
     {{ .Content }}
+    <hr>
+    <b>Updated:</b> {{ .Page.Lastmod.Format "January 2, 2006" }}
   {{ end }}
 </body>
 </html>
