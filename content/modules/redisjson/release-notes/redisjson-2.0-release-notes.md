@@ -2,7 +2,7 @@
 Title: RedisJSON 2.0 release notes
 linkTitle: v2.0 (November 2021)
 description:
-weight: 100
+weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
@@ -13,13 +13,13 @@ This is the General Availability release of RedisJSON 2.0.
 
 ### Headlines
 
-RedisJSON is a [high-performance JSON document store](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/) that allows developers to build modern applications. It stores and processes JSON in-memory, supporting millions of operations per second with sub-millisecond response times. With the combination of `RediSearch`, native indexing, querying, and full-text search of JSON documents allows developers to create secondary indexes, and query data at lightning speed.
+RedisJSON is a [high-performance JSON document store](https://redis.com/blog/redisjson-public-preview-performance-benchmarking/) that allows developers to build modern applications. It stores and processes JSON in-memory, supporting millions of operations per second with sub-millisecond response times. The combination of `RediSearch`, native indexing, querying, and full-text search of JSON documents allows developers to create secondary indexes and query data at lightning speed.
 
 #### Indexing JSON documents
 
 Using [RediSearch](https://redisearch.io), it is now possible to [index, query, and search JSON documents](https://oss.redis.com/redisearch/master/Indexing_JSON/), gaining full-text search capabilities and document retrieving based on their content.
 
-To do so, you must install both modules, `RedisJSON` and `RediSearch` on the same database.
+To do so, you must install both modules, `RedisJSON` and `RediSearch`, on the same database.
 
 #### Support of JSON Path
 
@@ -27,7 +27,7 @@ The commands [support JSONPath](https://oss.redis.com/redisjson/2.0/path/#jsonpa
 
 The legacy path syntax is still supported.
 
-#### Commands operate on multiple paths. 
+#### Commands operate on multiple paths
 
 A `JSONPath` query may resolve to several paths. Every [command](https://oss.redis.com/redisjson/commands/) supports multiple paths and applies the operation to all the encountered paths.
 
@@ -37,9 +37,9 @@ Notice that the output of the commands evolved to provide multiple results accor
 
 - Enhancements
   - #[477](https://github.com/RedisJSON/RedisJSON/pull/477) Support of Multipath
-  - #[336](https://github.com/RedisJSON/RedisJSON/pull/336) Added generic json path implementation 
+  - #[336](https://github.com/RedisJSON/RedisJSON/pull/336) Added generic JSON path implementation 
   - #[525](https://github.com/RedisJSON/RedisJSON/pull/525) Error messages prefixed with ERR or WRONGTYPE 
-  - #[490](https://github.com/RedisJSON/RedisJSON/pull/490) Performance: Discard of method `to_value` 
+  - #[490](https://github.com/RedisJSON/RedisJSON/pull/490) Performance: Discard `to_value` method
   - #[426](https://github.com/RedisJSON/RedisJSON/pull/426) Move from next_string to next_str 
   - #[464](https://github.com/RedisJSON/RedisJSON/pull/464) Initial RedisJSON commands.json file 
   - #[488](https://github.com/RedisJSON/RedisJSON/pull/488) Docker with RediSearch revisited 
