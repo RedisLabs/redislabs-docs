@@ -1,13 +1,17 @@
 ---
-Title: Redis with PHP
-linkTitle: PHP
+Title: Redis with PHP (Predis)
+linkTitle: PHP (Predis)
 description: The Predis client allows you to use Redis with PHP.
 weight: 60
 alwaysopen: false
 categories: ["RS"]
 ---
 
-To use Redis with [PHP](https://www.php.net/), you need a PHP Redis client. The following sections demonstrate the use of [Predis](https://github.com/nrk/predis), a flexible and feature-complete Redis client library for PHP version 5.3 and later. Additional PHP clients for Redis can be found under the [PHP section](http://redis.io/clients#PHP) of the Redis Clients page.
+To use Redis with [PHP](https://www.php.net/), you need a PHP Redis client.
+
+Here, we show [Predis](https://github.com/nrk/predis), a flexible and feature-complete Redis client library for PHP version 5.3 and later. 
+
+Other Redis clients are available for PHP; see the [PHP section](http://redis.io/clients#PHP) of the Redis Clients page.
 
 ## Install Predis
 
@@ -35,7 +39,7 @@ echo "Connected to Redis";
 ?>
 ```
 {{<note>}}
-If you did not install Predis with Composer, you must include the 2nd and 3rd lines of code to load and register the Predis client library.
+If you aren't autoloading PHP dependencies, use `require` to load Predis and then call its `register` method, as shown here.  To learn more, see [Loading the library](https://github.com/predis/predis#loading-the-library).
 {{</note>}}
 
 To adapt this example to your code, replace the following values with your database's values:
@@ -48,7 +52,7 @@ To adapt this example to your code, replace the following values with your datab
 
 Once connected to Redis, you can read and write data. The following code snippet assigns the value `bar` to the Redis key `foo`, reads it back, and prints it:
 
-```php
+```console
 // open a connection to Redis
 ...
  
@@ -59,9 +63,11 @@ var_dump($value);
 
 Example output:
 
-    $ php predis_example.php
-    Connected to Redis
-    string(3) "bar"
+```console
+$ php predis_example.php
+Connected to Redis
+string(3) "bar"
+```
 
 ## Persistent connections
 
@@ -70,16 +76,31 @@ Predis supports the use of [persistent connections](https://en.wikipedia.org/wik
 To enable persistent connections, use the `persistent` connection attribute, as shown in the following code snippet:
 
 ```php
-    $redis = new Predis\Client(array(
-        "scheme" => "tcp",
-        "host" => "hostname",
-        "port" => port,
-        "password" => "password",
-        "persistent" => "1"));
+$redis = new Predis\Client(array(
+    "scheme" => "tcp",
+    "host" => "hostname",
+    "port" => port,
+    "password" => "password",
+    "persistent" => "1"));
 ```
 
-## SSL
+## Encrypted connections
 
-Predis does not support [SSL](https://en.wikipedia.org/wiki/Transport_Layer_Security) connections natively.
+[As of v1.1.0](https://github.com/predis/predis/blob/main/CHANGELOG.md#v110-2016-06-02), you can encrypt connections by specifying `tls` or `rediss` as the value of the `scheme` attribute or as part of the URI.
 
-For an added security measure, you can secure the connection using [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis) or this [Predis fork](https://github.com/RedisLabs/predis) that has been added with SSL support.
+In addition, you can configure connection parameters, as shown here:
+
+``` php
+// Named array of connection parameters:
+$client = new Predis\Client([
+  'scheme' => 'tls',
+  'ssl'    => ['cafile' => 'private.pem', 'verify_peer' => true],
+]);
+
+// Same set of parameters, but using an URI string:
+$client = new Predis\Client('tls://127.0.0.1?ssl[cafile]=private.pem&ssl[verify_peer]=1');
+```
+
+To learn more, see [Connecting to Redis](https://github.com/predis/predis#connecting-to-redis).
+
+When using earlier versions of Predis (which is _not_ recommended), you can use [stunnel](https://redislabs.com/blog/using-stunnel-to-secure-redis) or this [Predis fork](https://github.com/RedisLabs/predis) that has been added with SSL support.

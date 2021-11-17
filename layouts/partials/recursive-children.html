@@ -19,6 +19,9 @@
     {{ if eq $printType "content" }}
       <h1 id="{{ substr .RelPermalink 1 -1 }}" name="{{ .Title }}">{{ .Title }}</h1>
       <div>{{ .Content }}</div>
+      <hr>
+      <b>Updated:</b> {{ .Page.Lastmod.Format "January 2, 2006" }}
+      <hr>
       {{ $newDepth := add $depth 1}}
       {{ $newPaddingVal := add $paddingVal 20}}
       {{ partial "recursive-children.html" (dict "context" . "printType" "content" "pageFilepath" .Page.File.Path) }}

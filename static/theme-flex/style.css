@@ -1360,6 +1360,18 @@ a.menu__link:hover:before {
   position: relative;
   top: 3px;
 }
+.post-bottom .updated-date {
+  border: 2px solid transparent;
+  padding: 6px;
+  border-radius: 3px;
+  text-decoration: none !important;
+  transition: all 200ms linear;
+}
+.updated-date i:before {
+  position: relative;
+  top: 3px;
+  display: none;
+}
 .post-bottom .pdf-link a {
   border: 2px solid #5961ff;
   color: #5961ff;
@@ -2009,6 +2021,12 @@ ol li ul li {
   position: relative;
   top: -3px;
 }
+.updated-date i {
+  margin-right: 6px;
+  font-size: 17px;
+  position: relative;
+  top: -3px;
+}
 .pdf-link a i {
   margin-right: 6px;
   font-size: 17px;
@@ -2019,6 +2037,9 @@ ol > li > ul > li {
   margin-top: 10px;
 }
 .edit-link {
+  font-size: 14px;
+}
+.updated-date {
   font-size: 14px;
 }
 .pdf-link {
@@ -3252,6 +3273,9 @@ article section.page table.hot-topics-table tbody tr:last-of-type td {
   }
 
   div#navigation .edit-link {
+    display: none;
+  }
+  div#navigation .updated-date{
     display: none;
   }
   div#navigation .pdf-link {
