@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom 2.2 release notes
 linkTitle: v2.2 (December 2019)
-description:
+description: BF.INFO returns bloom filter details. CF.INFO returns cuckoo filter details. Scalable bloom and cuckoo filters. Configurable bucket size for cuckoo filters. CMS.INCRBY returns count.
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
@@ -20,7 +20,7 @@ Details:
 
 Headlines:
 
-- This release improves overall stability and provides fixes for founded issues.
+- This release improves overall stability and provides fixes for found issues.
 
 Details:
 
@@ -79,7 +79,7 @@ Details:
     - Bloom
         - #[154](https://github.com/RedisBloom/RedisBloom/issues/154) Check error rate is 1< (cannot be equal)
     - Cuckoo
-        - #[134](https://github.com/RedisBloom/RedisBloom/issues/134) Sdded `CuckooInsert_MemAllocFailed` exception
+        - #[134](https://github.com/RedisBloom/RedisBloom/issues/134) Added `CuckooInsert_MemAllocFailed` exception
         - #[130](https://github.com/RedisBloom/RedisBloom/issues/130) Number of deletes wasn’t saved to RDB
     - General
         - #[117](https://github.com/RedisBloom/RedisBloom/issues/117) Using `RMUtil_RegisterWriteDenyOOMCmd`

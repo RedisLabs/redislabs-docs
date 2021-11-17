@@ -1,8 +1,9 @@
 ---
-Title: Release notes
+Title: RedisTimeSeries release notes
+linkTitle: Release notes
 description:
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
-{{< allchildren style="h2" sort="Weight" >}}
+{{< table-children columnNames="Version&nbsp;(Release&nbsp;date)&nbsp;,Major changes" columnSources="LinkTitle,Description" enableLinks="LinkTitle" >}}

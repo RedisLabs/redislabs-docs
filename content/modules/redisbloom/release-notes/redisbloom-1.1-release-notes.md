@@ -1,6 +1,6 @@
 ---
 Title: RedisBloom 1.1 release notes
-linkTitle: v1.1.0 (February 2019)
+linkTitle: v1.1 (February 2019)
 description:
 weight: 99
 alwaysopen: false

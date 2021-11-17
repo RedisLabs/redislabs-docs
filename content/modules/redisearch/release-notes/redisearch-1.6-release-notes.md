@@ -1,7 +1,7 @@
 ---
 Title: RediSearch 1.6 release notes
 linkTitle: v1.6 (January 2020)
-description:
+description: Improved performance of full-text search and aggregation queries. Support for aliasing of indices. Added a C API to embed RediSearch in other modules. Forked process garbage collection.
 weight: 96
 alwaysopen: false
 categories: ["Modules"]
@@ -154,7 +154,7 @@ This is the General Availability Release of RediSearch 1.6 (v1.6.7).
 Headlines:
 
 - Several performance improvements increasing full-text search queries up to 60% and aggregation queries up to 73%.
-- Support for Aliasing of indices.
+- Support for aliasing of indices.
 - Low-level API in C (and [Rust bindings](https://github.com/RediSearch/redisearch-api-rs)) to make RediSearch embeddable in other Redis modules. [RedisGraph](redisgraph.io) is the first GA consumer.
 - Forked process Garbage Collection (FORK GC) allows for stable read latencies.
 

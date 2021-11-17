@@ -1,7 +1,7 @@
 ---
 Title: RedisTimeSeries 1.4 release notes
 linkTitle: v1.4 (September 2020)
-description:
+description: Added ability to backfill time series.
 weight: 98
 alwaysopen: false
 categories: ["Modules"]

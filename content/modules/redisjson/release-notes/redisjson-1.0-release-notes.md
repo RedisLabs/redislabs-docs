@@ -1,7 +1,7 @@
 ---
 Title: RedisJSON 1.0 release notes
 linkTitle: v1.0 (December 2017)
-description:
+description: Serialization cache for JSON.GET.
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
