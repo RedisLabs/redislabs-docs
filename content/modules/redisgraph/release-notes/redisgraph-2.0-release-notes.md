@@ -193,6 +193,13 @@ Details:
 - Enhancement:
     - #[955](https://github.com/redisgraph/redisgraph/issues/955)  Switch OR,AND boolean semiring to ANY,PAIR.
 
+## v2.0.4 (23 February 2020)
+
+Details:
+
+- Enhancement:
+    - Reduce GraphBLAS size
+
 ## v2.0.2 (23 February 2020)
 
 Headlines:

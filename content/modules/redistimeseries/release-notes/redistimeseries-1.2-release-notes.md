@@ -1,7 +1,7 @@
 ---
 Title: RedisTimeSeries 1.2 release rotes
 linkTitle: v1.2 (January 2020)
-description:
+description: Added compression. Stable ingestion time independent of the number of the data points on a time-series. API performance improvements. Extended client support.
 weight: 99
 alwaysopen: false
 categories: ["Modules"]

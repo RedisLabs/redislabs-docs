@@ -7,6 +7,17 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## v2.4.12 (October 2021)
+
+This is a maintenance release for RedisGraph 2.4.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+    - [#1981](https://github.com/RedisGraph/RedisGraph/pull/1981) Crash in index scan
+
 ## v2.4.11 (October 2021)
 This is a maintenance release for RedisGraph 2.4.
 

@@ -6,6 +6,37 @@ weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+
+## v1.4.13 (November 2021)
+
+This is a maintenance release for RedisTimeSeries 1.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Bug fixes:
+
+- [#881](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/881) Replicate only successful insertion of `TS.MADD`
+
+## v1.4.11 (November 2021)
+
+This is a maintenance release for RedisTimeSeries 1.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Bug fixes:
+
+- [#862](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/862) Index dictionary should be freed on removing the last element
+
+## v1.4.10 (July 2021)
+
+This is a maintenance release for RedisTimeSeries 1.4.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Bug fixes:
+
+- [#760](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/760) Avoid closing the same key twice, causing server crash on [`RENAME`](https://redis.io/commands/rename) of other keys
+
 ## v1.4.9 (May 2021)
 
 This is a maintenance release for version 1.4.
@@ -16,7 +47,7 @@ Headlines:
 
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
-Bugfixes:
+Bug fixes:
 
 - #[#712](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/712) Missing keytype check on TS.INCRBY/DECRBY causes shards to crash
 - #[#719](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/719) Support for renaming time series keys
@@ -29,7 +60,7 @@ Headlines:
 
 - This release improves overall stability and provides fixes for issues found after the previous release.
 
-Bugfixes:
+Bug fixes:
 
 - [#612](https://github.com/RedisTimeSeries/RedisTimeSeries/issues/612) Crash on `MGET`/`MRANGE`
 - [#606](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/606) Memory leak when key loaded from RDB
@@ -44,7 +75,7 @@ Headlines:
 
 - This release improves overall stability, and provides fixes for issues found after the previous release.
 
-Bugfixes:
+Bug fixes:
 
 - [#581](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/581) Misaligned allocators usage might crash Redis.
 - [#588](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/588) `ON_DUPLICATE` min/max rules not working for negative value.
@@ -67,7 +98,7 @@ Minor enhancements:
 - [#559](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/559)
     Added `chunkType` to `TS.INFO`
 
-Bugfixes:
+Bug fixes:
 
 - [#528](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/528)
     Out of order insert might crash Redis if there's an update to an empty downsampled key

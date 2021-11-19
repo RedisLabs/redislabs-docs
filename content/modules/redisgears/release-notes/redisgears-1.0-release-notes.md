@@ -1,5 +1,5 @@
 ---
-Title: RediSearch 1.0 release notes
+Title: RedisGears 1.0 release notes
 linkTitle: v1.0 (May 2020)
 description: First GA release of RedisGears. Built-in C-API and Python interpreter. Run a serverless engine in memory next to your Redis data.
 weight: 100
@@ -14,6 +14,22 @@ Here's what's changed recently in RedisGears.
 
 To learn more, see the linked pull requests.
 
+## v1.0.7 (August 2021)
+
+This is a maintenance release for version 1.0.
+
+Update urgency: `LOW` - No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Minor Features:
+
+    - [#594](https://github.com/RedisGears/RedisGears/pull/594) Added RedisGears info section to Redis info command
+
+    - [#587](https://github.com/RedisGears/RedisGears/pull/587) `inorder` option for the [command reader](https://oss.redis.com/redisgears/1.0/readers.html#commandreader)
+    
+    - [#592](https://github.com/RedisGears/RedisGears/pull/592), [#586](https://github.com/RedisGears/RedisGears/pull/586) Background executions will now appear on Redis slowlog, available in Redis 6.2 and above.
+
 ## v1.0.6 (March 2021)
 
 This is a maintenance release for version 1.0.
@@ -24,7 +40,7 @@ This is a maintenance release for version 1.0.
 
     This release improves overall stability and provides fixes for issues found after the previous release.
 
-- Bugfixes:
+- Bug fixes:
 
     - #[496](https://github.com/RedisGears/RedisGears/pull/496) Allow parallel execution on Command Reader.
 
@@ -40,7 +56,7 @@ This is a maintenance release for version 1.0.
 
     This release improves overall stability and provides fixes for issues found after the previous release.
 
-- Bugfixes:
+- Bug fixes:
 
     - #[480](https://github.com/RedisGears/RedisGears/pull/480) Crash when map/accumulate/accumulateby raises an error which causes the same pyobject to be freed twice.
 
@@ -56,7 +72,7 @@ This is a maintenance release for version 1.0.
 
     This release improves overall stability and provides fixes for issues found after the previous release.
 
-- Bugfixes:
+- Bug fixes:
 
     - #[458](https://github.com/RedisGears/RedisGears/pull/458) Crash on StreamReader when the stream is dropped during processing of the function.
 
@@ -70,7 +86,7 @@ This is a maintenance release for version 1.0.
 
     This release improves overall stability and provides fixes for issues found after the previous release.
 
-- Bugfixes:
+- Bug fixes:
 
     - #[427](https://github.com/RedisGears/RedisGears/pull/427) Rare issue where messages might get lost and cause executions timeouts.
 
@@ -93,7 +109,7 @@ This is a maintenance release for version 1.0.
 
         - #[371](https://github.com/RedisGears/RedisGears/pull/371) Full details on import requirement failure.
 
-    - Bugfixes:
+    - Bug fixes:
 
         - #[374](https://github.com/RedisGears/RedisGears/pull/374) Fix RedisAI `toFlatList` function to handle long long encoding.
 
@@ -137,7 +153,7 @@ This is a maintenance release for version 1.0.
 
             - #[345](https://github.com/RedisGears/RedisGears/pull/345) Free python GIL before calling redisAI model/script run.
 
-    - Bugfixes:
+    - Bug fixes:
 
         - #[325](https://github.com/RedisGears/RedisGears/pull/325) Circular reference that caused a logical memory leak.
 
@@ -161,7 +177,7 @@ This is the first general availability (GA) release of RedisGears (v1.0.0).
 
     To get started please check out [redisgears.io](https://oss.redislabs.com/redisgears/). We plan to release a blogpost soon and will cross link it here.
 
-    Bugfixes (compared to RC1):
+    Bug fixes (compared to RC1):
 
     - #[288](https://github.com/RedisGears/RedisGears/issues/288) dependencies with version will not crash the server.
 
