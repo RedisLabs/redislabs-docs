@@ -1,6 +1,6 @@
 ---
 Title: RediSearch 2.2 release notes
-linkTitle: v2.2 (November 2020)
+linkTitle: v2.2 (November 2021)
 description: Search and index JSON documents. Profiling queries. Field aliasing. 
 weight: 94
 alwaysopen: false
