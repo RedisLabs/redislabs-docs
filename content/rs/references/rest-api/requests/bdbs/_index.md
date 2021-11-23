@@ -227,7 +227,7 @@ Returns the updated [BDB object]({{<relref "/rs/references/rest-api/objects/bdb"
 
 Update the configuration of an active database and perform an additional action.
 
-If called with the `dry_run` URL query string, the function will validate the bdb object against the existing bdb, but will not invoke the state machine that will update it.
+If called with the `dry_run` URL query string, the function will validate the [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) against the existing database, but will not invoke the state machine that will update it.
 
 #### Required permissions
 
@@ -269,7 +269,7 @@ To change the shard hashing policy, you must flush all keys from the database.
 |-------|------|-------------|
 | uid | integer | The unique ID of the database to update. |
 | action | string | Additional action to perform. Currently supported actions are: `flush`, `reset_admin_pass`. |
-| dry_run | string | Validate the new bdb object but don't apply the update. |
+| dry_run | string | Validate the new [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) but don't apply the update. |
 
 #### Request body
 
@@ -321,11 +321,11 @@ When errors are reported, the server may return a JSON object with    `error_cod
 
 Create a new database in the cluster.
 
-The request must contain a single JSON bdb object with the configuration parameters for the new database.
+The request must contain a single JSON [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) with the configuration parameters for the new database.
 
-If passed with the `dry_run` URL query string, the function will validate the bdb object, but will not invoke the state machine that will create it.
+If passed with the `dry_run` URL query string, the function will validate the [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}), but will not invoke the state machine that will create it.
 
-To track this request's progress, poll the [`/actions/<action_uid>` endpoint]({{<relref "/rs/references/rest-api/requests/bdbs/actions">}}) with the action_uid returned in the response body.
+To track this request's progress, poll the [`/actions/<action_uid>` endpoint]({{<relref "/rs/references/rest-api/requests/bdbs/actions">}}) with the `action_uid` returned in the response body.
 
 The cluster will use default configuration for any missing database field. The cluster creates a database UID if it is missing.
 
@@ -368,7 +368,7 @@ Defaults are used for all other configuration parameters.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| dry_run | string | Validate the new bdb object but don't create the database. |
+| dry_run | string | Validate the new [BDB object]({{<relref "/rs/references/rest-api/objects/bdb">}}) but don't create the database. |
 
 #### Request body
 

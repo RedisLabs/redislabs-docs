@@ -18,7 +18,7 @@ aliases: /rs/references/rest-api/crdbs
 |--------|------|-------------|
 | [GET](#get-all-crdbs) | `/v1/crdbs` | Get all Active-Active databases |
 | [GET](#get-crdb) | `/v1/crdbs/{crdb_guid}` | Get a specific Active-Active database |
-| [PATCH](#patch-crdbs) | `/v1/crdbs/{crdb_guid}` | Update Active-Active configuration |
+| [PATCH](#patch-crdbs) | `/v1/crdbs/{crdb_guid}` | Update an Active-Active database |
 | [POST](#post-crdb) | `/v1/crdbs` | Create a new Active-Active database |
 | [DELETE](#delete-crdb) | `/v1/crdbs/{crdb_guid}` | Delete an Active-Active database |
 
@@ -95,15 +95,13 @@ Returns a [CRDB object]({{<relref "/rs/references/rest-api/objects/crdb">}}).
 | [401 Unauthorized](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.2) | Unauthorized request. Invalid credentials |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Database or configuration does not exist. |
 
-## Update Active-Active configuration {#patch-crdbs}
+## Update an Active-Active database {#patch-crdbs}
 
 	PATCH /v1/crdbs/{crdb_guid}
 
-Update Active-Active configuration.
+Update an Active-Active database's configuration.
 
-This API request is used to change CRDB configuration.
-
-In order to add or remove instances, use POST crdbs/{crdb_guid}/updates instead.
+In order to add or remove instances, use [<nobr>`POST crdbs/{crdb_guid}/updates`</nobr>]({{<relref "/rs/references/rest-api/requests/crdbs/updates#post-crdbs-updates">}}) instead.
 
 ### Request {#patch-request} 
 

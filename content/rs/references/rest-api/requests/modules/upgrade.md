@@ -22,7 +22,7 @@ aliases: /rs/references/rest-api/modules/upgrade-bdb
 
 	POST /v1/modules/upgrade/bdb/{string: uid}
 
-Upgrades module version on a specific BDB.
+Upgrades the module version on a specific database.
 
 #### Required permissions
 
@@ -65,7 +65,7 @@ Upgrades module version on a specific BDB.
 |-------|------|-------------|
 | modules | list | List of dicts representing the modules that will be upgraded. Each dict must include: <br></br> • **current_module**: UID of a module to upgrade <br></br> • **new_module**: UID of the module we want to upgrade to <br></br> • **new_module_args**: args list for the new module |
 | preserve_roles | boolean | Preserve shards’ master/replica roles (optional) |
-| may_discard_data | boolean | Discard data in a non-replicated non-persistent bdb (optional) |
+| may_discard_data | boolean | Discard data in a non-replicated non-persistent database (optional) |
 
 ### Response {#post-response} 
 

@@ -157,9 +157,9 @@ Returns a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
 
 	PUT /v1/nodes/{int: uid}
 
-Update a node object.
+Update a [node object]({{<relref "/rs/references/rest-api/objects/node">}}).
 
-Currently, this operation supports editing the following attributes:
+Currently, you can edit the following attributes:
 
 - `addr`
 
@@ -169,8 +169,9 @@ Currently, this operation supports editing the following attributes:
 
 - `accept_servers`
 
-The `addr` attribute can only be updated for offline nodes, and the request will return an
-error otherwise.
+{{<note>}}
+You can only update the `addr` attribute for offline nodes. Otherwise, the request returns an error.
+{{</note>}}
 
 #### Required permissions
 

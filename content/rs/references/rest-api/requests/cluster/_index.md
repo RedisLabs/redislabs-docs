@@ -79,7 +79,7 @@ Returns a [cluster object]({{<relref "/rs/references/rest-api/objects/cluster">}
 Update cluster settings.
 
 If called with the `dry_run` URL query string, the function will
-validate the cluster object, but will not apply the requested
+validate the [cluster object]({{<relref "/rs/references/rest-api/objects/cluster">}}), but will not apply the requested
 changes.
 
 #### Required permissions

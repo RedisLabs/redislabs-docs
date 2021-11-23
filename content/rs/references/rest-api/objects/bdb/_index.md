@@ -178,7 +178,7 @@ An API object that represents a managed database in the cluster.
   "value": string
 }, ...]
 {{</code>}} | Optional list of tags objects attached to the database<br />**key**: Represents the tag's meaning and must be unique among tags (pattern does not allow special characters &,\<,>,")<br />**value**: The tag's value |
-| tls_mode | 'enabled'<br /> **'disabled'** <br />'replica_ssl' | Require SSL authenticated and encrypted connections to the database |
+| tls_mode | 'enabled'<br /> **'disabled'** <br />'replica_ssl' | Require TLS-authenticated and encrypted connections to the database |
 | type | **'redis'** <br />'memcached' | Type of database |
 | use_nodes | array of strings | Cluster node UIDs to use for database shards and bound endpoints |
 | version | string | Database compatibility version: full Redis/memcached version number, e.g. 6.0.6 |

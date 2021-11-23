@@ -9,7 +9,7 @@ categories: ["RS"]
 
 You can view, configure, and enable various alerts for the cluster.
 
-Alerts are bound to a cluster object (such as a bdb or node), and the cluster's state determines whether the alerts turn on or off.
+Alerts are bound to a cluster object (such as a [BDB]({{<relref "/rs/references/rest-api/objects/bdb">}}) or [node]({{<relref "/rs/references/rest-api/objects/node">}})), and the cluster's state determines whether the alerts turn on or off.
 
   Name  | Type/Value | Description | Writable
 |-------|------------|-------------|----------|
