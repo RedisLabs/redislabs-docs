@@ -1,7 +1,7 @@
 ---
 Title: RediSearch 1.1 release notes
 linkTitle: v1.1 (April 2018)
-description:
+description: Aggregations engine.
 weight: 99
 alwaysopen: false
 categories: ["Modules"]

@@ -1,7 +1,7 @@
 ---
 Title: RedisAI 1.0 release notes
 linkTitle: v1.0 (May 2020)
-description:
+description: Auto-batching support. Added AI.DAGRUN and AI.DAGRUN_RO commands. AI.MODELSET allows you to provide a model in chunks. Standardized GET methods (TENSORGET,MODELGET,SCRIPTGET) replies (breaking change for clients). Cache model blobs.
 weight: 100
 alwaysopen: false
 categories: ["Modules"]

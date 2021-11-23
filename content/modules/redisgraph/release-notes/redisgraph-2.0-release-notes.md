@@ -1,7 +1,7 @@
 ---
 Title: RedisGraph 2.0 release notes
 linkTitle: v2.0 (January 2020)
-description:
+description: Enabled graph-aided search and graph visualisation. Cypher coverage. Performance improvements.
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
@@ -192,6 +192,13 @@ Details:
 
 - Enhancement:
     - #[955](https://github.com/redisgraph/redisgraph/issues/955)  Switch OR,AND boolean semiring to ANY,PAIR.
+
+## v2.0.4 (23 February 2020)
+
+Details:
+
+- Enhancement:
+    - Reduce GraphBLAS size
 
 ## v2.0.2 (23 February 2020)
 

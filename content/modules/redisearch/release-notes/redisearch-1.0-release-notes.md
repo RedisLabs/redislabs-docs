@@ -1,14 +1,14 @@
 ---
 Title: RediSearch 1.0 release notes
 linkTitle: v1.0 (April 2018)
-description:
+description: Hamming distance scoring. Wildcard queries. Optional deletion of documents in FT.DEL. Optionally keep document hashes in FT.DROP. Delete geo-sets when dropping an index. Tag prefix completion support.
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
 ## RediSearch 1.0.10 (April 2018)
 
-This is a bug-fix release with some stability fixe, a few processing bug fixes, and a few small additions:
+This is a bug-fix release with some stability fixes, a few processing bug fixes, and a few small additions:
 
 ### Fixes
 

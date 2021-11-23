@@ -1,12 +1,12 @@
 ---
 Title: RedisGraph 1.0 release notes
 linkTitle: v1.0 (November 2018)
-description:
+description: Fixed memory leaks. Support ‘*’ within RETURN clause. Added TYPE function. Initial support for UNWIND clause.
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph 1.0.15 (March 2019)
+## v1.0.15 (March 2019)
 
 - GraphBLAS 2.3.0 [release notes](https://github.com/RedisLabsModules/RedisGraph/pull/390#issuecomment-470620353)
 - WITH clause: Allows query parts to be chained together, piping the results from one to be used as starting points or criteria of the next. [ref p.78](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
@@ -19,7 +19,7 @@ categories: ["Modules"]
 
 ## v1.0.14 (21 February 2019)
 
-license update, REDIS SOURCE AVAILABLE LICENSE AGREEMENT.
+License update, REDIS SOURCE AVAILABLE LICENSE AGREEMENT.
 
 ## v1.0.13 (6 February 2019)
 
@@ -27,38 +27,35 @@ Reuse attribute name to avoid duplication
 
 ## v1.0.12 (28 January 2019)
 
-traverse direction optimization to reduce number of matrix transpose
+Traverse direction optimization to reduce number of matrix transpose
 
 ## v1.0.11 (17 January 2019)
 
-Removed OpenMP requirement
-Traverse from multiple nodes concurrently
+- Removed OpenMP requirement
+- Traverse from multiple nodes concurrently
 
 ## v1.0.10 (9 January 2019)
 
-Update indices when MERGE create new entities
+Update indices when MERGE creates new entities
 
 ## v1.0.9 (6 January 2019)
 
-Support for mixing MERGE and SET clauses
-Granular writer locking
-Fix graph serialization error in duplicate edge handling
+- Support for mixing MERGE and SET clauses
+- Granular writer locking
+- Fix graph serialization error in duplicate edge handling
 
 ## v1.0.8 (24 December 2018)
 
-Index utilization when performing cartesian product
-
-Increase usage of rm_malloc functions in module
-
-Allow serialization of NULL-valued properties
-
-Support for multiple relationship types
+- Index utilization when performing cartesian product
+- Increase usage of rm_malloc functions in module
+- Allow serialization of NULL-valued properties
+- Support for multiple relationship types
 
 ## v1.0.7 (18 December 2018)
 
-Bulk-insert support unicode
-Bulk-insert better progress reporting
-Multiple relationship types
+- Bulk-insert support unicode
+- Bulk-insert better progress reporting
+- Multiple relationship types
 
 ## v1.0.5 (15 December 2018)
 

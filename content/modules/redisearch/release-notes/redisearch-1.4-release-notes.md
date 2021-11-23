@@ -1,7 +1,7 @@
 ---
 Title: RediSearch 1.4 release notes
 linkTitle: v1.4 (August 2018)
-description:
+description: Conditional updates. Schema modification. Query spelling correction. Phonetic matching. More fuzziness in search. Retrieve and change runtime configuration. Unlimited autocomplete results.
 weight: 97
 alwaysopen: false
 categories: ["Modules"]

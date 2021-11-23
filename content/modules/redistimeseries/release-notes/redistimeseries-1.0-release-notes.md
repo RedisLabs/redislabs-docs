@@ -1,7 +1,7 @@
 ---
 Title: RedisTimeSeries 1.0 release rotes
 linkTitle: v1.0 (June 2019)
-description:
+description: Downsampling/compaction. Secondary indexing. Aggregation at read time. Integration with Prometheus, Grafana, and Telegraph.
 weight: 100
 alwaysopen: false
 categories: ["Modules"]

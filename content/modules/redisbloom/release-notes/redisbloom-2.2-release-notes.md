@@ -1,11 +1,38 @@
 ---
 Title: RedisBloom 2.2 release notes
 linkTitle: v2.2 (December 2019)
-description:
+description: BF.INFO returns bloom filter details. CF.INFO returns cuckoo filter details. Scalable bloom and cuckoo filters. Configurable bucket size for cuckoo filters. CMS.INCRBY returns count.
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+
+## v2.2.9 (November 2021)
+
+This is a maintenance release for RedisBloom 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#281](https://github.com/RedisBloom/RedisBloom/pull/281) Memory leak when loading TOPK keys from RDB.
+
+    - [#303](https://github.com/RedisBloom/RedisBloom/pull/303) `CMS.INCRBY` for negative or non-number
+
+    - [#354](https://github.com/RedisBloom/RedisBloom/pull/354) TOPK List Duplicate entries
+
+    - [#369](https://github.com/RedisBloom/RedisBloom/pull/369) Free only latest filter on `CF.COMPACT`
+
+    - [#371](https://github.com/RedisBloom/RedisBloom/pull/371) `CF.SCANDUMP` for cuckoo filter
+ 
+    - [#374](https://github.com/RedisBloom/RedisBloom/pull/374) ReplicateVerbatim for `CF.LOADCHUNK` (similar to [#309](https://github.com/RedisBloom/RedisBloom/pull/309))
+
+- Improvements:
+
+    - [#331](https://github.com/RedisBloom/RedisBloom/pull/331) Add `WITHCOUNT` flag to `TOPK.LIST`
+
 ## v2.2.6 (August 2021)
 
 This is a maintenance release for version 1.0.
@@ -20,13 +47,24 @@ Details:
 
 Headlines:
 
-- This release improves overall stability and provides fixes for founded issues.
+- This release improves overall stability and provides fixes for found issues.
 
 Details:
 
-- Bugfix:
+- Bug fixes:
     - #[215](https://github.com/redisbloom/redisbloom/issues/215) Count-Min-Sketch CMS.INCRBY command to reply with correct min result.
     - #[219](https://github.com/redisbloom/redisbloom/issues/219) Cuckoo Filter CF.DEBUG correct response formatting.
+
+## v2.2.3 (July 2020)
+
+Headlines:
+
+- This release improves overall stability and provides fixes for found issues.
+
+Details:
+
+- Bug fixes:
+    - [#217](https://github.com/RedisBloom/RedisBloom/pull/217) Client hung on `BF.INSERT` with multiple new items when a non-scaling filter is full.
 
 ## v2.2.2 (March 2020)
 
@@ -75,11 +113,11 @@ Details:
     - CMS
         - #[97](https://github.com/RedisBloom/RedisBloom/issues/97) `CMS.INCRBY` [returns count](https://oss.redislabs.com/redisbloom/CountMinSketch_Commands/#cmsincrby) instead of ‘OK’
 
-- Minor Bugfixes
+- Minor bug fixes
     - Bloom
         - #[154](https://github.com/RedisBloom/RedisBloom/issues/154) Check error rate is 1< (cannot be equal)
     - Cuckoo
-        - #[134](https://github.com/RedisBloom/RedisBloom/issues/134) Sdded `CuckooInsert_MemAllocFailed` exception
+        - #[134](https://github.com/RedisBloom/RedisBloom/issues/134) Added `CuckooInsert_MemAllocFailed` exception
         - #[130](https://github.com/RedisBloom/RedisBloom/issues/130) Number of deletes wasn’t saved to RDB
     - General
         - #[117](https://github.com/RedisBloom/RedisBloom/issues/117) Using `RMUtil_RegisterWriteDenyOOMCmd`

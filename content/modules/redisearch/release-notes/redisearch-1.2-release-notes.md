@@ -1,7 +1,7 @@
 ---
 Title: RediSearch 1.2 release notes
 linkTitle: v1.2 (June 2018)
-description:
+description: Aggregation filters. Query attributes. Fuzzy matching. Conditional updates. Backslash escaping. Synonyms support.
 weight: 98
 alwaysopen: false
 categories: ["Modules"]

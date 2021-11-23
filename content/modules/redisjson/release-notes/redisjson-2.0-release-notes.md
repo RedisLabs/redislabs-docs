@@ -1,7 +1,7 @@
 ---
 Title: RedisJSON 2.0 release notes
 linkTitle: v2.0 (November 2021)
-description:
+description: Index JSON documents. JSONPath support. Commands operate on multiple paths.
 weight: 99
 alwaysopen: false
 categories: ["Modules"]

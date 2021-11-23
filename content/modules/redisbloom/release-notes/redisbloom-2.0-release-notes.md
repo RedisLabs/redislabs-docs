@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom 2.0 release notes
 LinkTitle: v2.0 (June 2019)
-description:
+description: Added more probabilistic data structures, including top-K and count-min sketch.
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
@@ -19,7 +19,7 @@ categories: ["Modules"]
 
 ## v2.0.0 (June 2019)
 
-We are proud to announce that we doubled the number of probabilistic data structures that are generally available in RedisBloom.  Full documentation is available on [redisbloom.io](redisbloom.io)
+We are proud to announce that we doubled the number of probabilistic data structures that are generally available in RedisBloom.  Full documentation is available on [redisbloom.io](https://redisbloom.io)
 
 - #[70](https://github.com/RedisBloom/RedisBloom/issues/70) Top-K
     - [Commands](https://oss.redislabs.com/redisbloom/TopK_Commands/)

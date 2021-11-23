@@ -1,7 +1,7 @@
 ---
 Title: RediSearch 2.0 release notes
 linkTitle: v2.0 (September 2020)
-description:
+description: Automatically indexes data based on a key pattern. Scale a single index over multiple Redis shards. Improved query performance.
 weight: 95
 alwaysopen: false
 categories: ["Modules"]
@@ -188,7 +188,7 @@ This is a maintenance release for version 2.0.
     - [#1572](https://github.com/RediSearch/RediSearch/pull/1572) Crash when using WITHSORTKEYS without SORTBY.
     - [#1540](https://github.com/RediSearch/RediSearch/pull/1540) SORTBY should raise an error if the field is not defined as SORTABLE.
 
-## v2.0 (September 2020)
+## v2.0.0 (September 2020)
 
 RediSearch 2.0 is a public preview release meeting GA standards. This release includes several improvements in performance and usability over RediSearch 1.0. These improvements necessitate a few backward-breaking changes to the API.
 

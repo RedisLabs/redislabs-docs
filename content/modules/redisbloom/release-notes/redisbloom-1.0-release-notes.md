@@ -1,7 +1,7 @@
 ---
 Title: RedisBloom 1.0 release notes
 linkTitle: v1.0 (September 2017)
-description:
+description: First GA release of RedisBloom.
 weight: 100
 alwaysopen: false
 categories: ["Modules"]

@@ -1,11 +1,22 @@
 ---
 Title: RedisGraph 2.4 release notes
 linkTitle: v2.4 (March 2021)
-description:
+description: Added Map and Geospatial Point data types.
 weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
+
+## v2.4.12 (October 2021)
+
+This is a maintenance release for RedisGraph 2.4.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Bug fixes:
+    - [#1981](https://github.com/RedisGraph/RedisGraph/pull/1981) Crash in index scan
 
 ## v2.4.11 (October 2021)
 This is a maintenance release for RedisGraph 2.4.
@@ -18,7 +29,7 @@ Details:
     - #[1898](https://github.com/RedisGraph/RedisGraph/issues/1898) Error when setting a property to an array containing an invalid type
     - #[1897](https://github.com/RedisGraph/RedisGraph/issues/1897) Aliases in `WITH...ORDER BY` must be valid references%
 
-## v2.4.11 (September 2021)
+## v2.4.10 (September 2021)
 
 This is a maintenance release for RedisGraph 2.4
 
@@ -107,7 +118,7 @@ Details:
     - #[1653](https://github.com/redisgraph/redisgraph/issues/1653), #[1655](https://github.com/redisgraph/redisgraph/issues/1655) Add support for square root (sqrt) function
 
 - Performance improvements:
-    - #[1641](https://github.com/redisgraph/redisgraph/issues/1641) Use indexes when filters can only be resolved at run-time
+    - #[1641](https://github.com/redisgraph/redisgraph/issues/1641) Use indexes when filters can only be resolved at runtime
     - #[1668](https://github.com/redisgraph/redisgraph/issues/1668) Apply path filters after all other filters
 
 - Bug fixes:
@@ -121,22 +132,22 @@ Details:
 
 Headlines:
 
-- This release introduces the [Map](https://oss.redislabs.com/redisgraph/master/datatypes/#maps) and [Geospatial Point](https://oss.redislabs.com/redisgraph/master/datatypes/#geospatial-points) datatypes.
+- This release introduces the [Map](https://oss.redislabs.com/redisgraph/master/datatypes/#maps) and [Geospatial Point](https://oss.redislabs.com/redisgraph/master/datatypes/#geospatial-points) data types.
 
 Details:
 
 - Features:
-  - #[1514](https://github.com/redisgraph/redisgraph/issues/1514) Add support for [Map](https://oss.redislabs.com/redisgraph/master/datatypes/#maps) datatype.
-  - #[1516](https://github.com/redisgraph/redisgraph/issues/1516) Add support for [Geospation Point](https://oss.redislabs.com/redisgraph/master/datatypes/#geospatial-points) datatype.
+  - #[1514](https://github.com/redisgraph/redisgraph/issues/1514) Add support for [Map](https://oss.redislabs.com/redisgraph/master/datatypes/#maps) data type.
+  - #[1516](https://github.com/redisgraph/redisgraph/issues/1516) Add support for [Geospatial Point](https://oss.redislabs.com/redisgraph/master/datatypes/#geospatial-points) data type.
   - #[1562](https://github.com/redisgraph/redisgraph/issues/1562) Add [`toJSON`](https://oss.redislabs.com/redisgraph/master/commands/#json-format) function.
   - #[1607](https://github.com/redisgraph/redisgraph/issues/1607) [Querying full-text indexes](https://oss.redislabs.com/redisgraph/commands/#full-text-indexes) can yield the `score` of each result.
-  - #[1610](https://github.com/redisgraph/redisgraph/issues/1610) Expose run-time configuration for [read query timeouts](https://oss.redislabs.com/redisgraph/configuration/#query-timeout).
+  - #[1610](https://github.com/redisgraph/redisgraph/issues/1610) Expose runtime configuration for [read query timeouts](https://oss.redislabs.com/redisgraph/configuration/#query-timeout).
 
 - Performance improvements:
   - #[1596](https://github.com/redisgraph/redisgraph/issues/1596) [Redisgraph-bulk-loader](https://github.com/RedisGraph/redisgraph-bulk-loader) no longer blocks the server.
 
 - Minor Enhancements
-  - #[1590](https://github.com/redisgraph/redisgraph/issues/1590) Improve handling of run-time errors.
+  - #[1590](https://github.com/redisgraph/redisgraph/issues/1590) Improve handling of runtime errors.
   - #[1580](https://github.com/redisgraph/redisgraph/issues/1580) Enable assertions in debug mode.
 
 - Bugfixes (compared to RC1)
