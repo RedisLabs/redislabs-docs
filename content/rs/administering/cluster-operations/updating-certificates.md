@@ -54,6 +54,7 @@ For example, to replace the cm certificate with the private key "key.pem" and th
 ```sh
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 ```
+Read bellow about updating your proxy and syncer certificates for Active-Active and Actice-Passive (Replica Of) Redis databases.
 
 ### Using the REST API
 
@@ -83,7 +84,37 @@ Where:
 
 The new certificates are used the next time the clients connect to the database.
 
+Read bellow about updating your proxy and syncer certificates for Active-Active and Actice-Passive (Replica Of) Redis databases.
+
 When you upgrade Redis Enterprise Software, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
+
+### Update proxy certificates for Active-Active databases
+
+To update your proxy certificate on cluster/s running Active-Active databases follow these steps:
+
+- **Step 1:** Update your proxy certificate on one or more of the participating clusters using the `rladmin` command, or REST API. You can update a single cluster, multiple clusters, or all participating clusters.
+- **Step 2:** Update the Active-Active database configuration from the command-line with the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility. Run this command once for each Active-Active database that resides on the modified clusters.
+
+```text
+crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
+```
+
+{{<note>}}
+- It is required that you run step 2 shortly as possible after step 1, since between the two steps new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).
+- Do not run any other `crdb-cli crdb update` operations between the two steps.
+{{</note>}}
+
+### Update proxy certificates for Active-Passive databases
+
+To update your proxy certificate on cluster/s running Active-Passive (Replica Of) databases follow these steps:
+
+- **Step 1:** Update your proxy certificate on the source database cluster using the `rladmin` command, or REST API.
+- **Step 2:** From the admin console, update the destination database configuration with the new certificate as described [`here`](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
+
+{{<note>}}
+- It is required that you perform step 2 shortly as possible after step 1, since between the two steps new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).
+- Do not run any other `crdb-cli crdb update` operations between the two steps.
+{{</note>}}
 
 ### Update syncer certificates for Active-Active databases
 
