@@ -113,7 +113,6 @@ To update your proxy certificate on cluster/s running Active-Passive (Replica Of
 
 {{<note>}}
 - It is required that you perform step 2 shortly as possible after step 1, since between the two steps new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).
-- Do not run any other `crdb-cli crdb update` operations between the two steps.
 {{</note>}}
 
 ### Update syncer certificates for Active-Active databases
