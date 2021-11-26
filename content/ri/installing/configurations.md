@@ -38,7 +38,7 @@ The following environment variables can be set to configure RedisInsight:
 
 **Type:**        String
 
-**Default:**     `"0.0.0.0"`
+**Default:**     `"0.0.0.0"` on Docker and `"127.0.0.1"` on Windows, Mac, and Linux.
 
 ### RIHOMEDIR
 
