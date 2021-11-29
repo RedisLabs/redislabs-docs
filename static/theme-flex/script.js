@@ -68,7 +68,7 @@ jQuery(document).ready(function() {
     // Wrap image inside a featherlight (to get a full size view in a popup)
     images.wrap(function () {
         var image = $(this);
-        if (!image.parent("a").length) {
+        if ((!image.parent("a").length) && (this.parentElement.className != "home-options__option__icon")) {
             return "<a href='" + image[0].src + "' data-featherlight='image'></a>";
         }
     });
