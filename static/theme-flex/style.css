@@ -655,12 +655,19 @@ section a {
   transform: translateY(1px);
 }
 
+.home-options__option__icon a {
+  pointer-events: none;
+  cursor: default;
+}
+
 .home-options__option__icon a.opener {
   height: 100%;
   left: 28%;
   position: absolute;
   top: 0;
   width: 140px;
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .home-options__option h5 {
