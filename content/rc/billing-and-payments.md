@@ -54,7 +54,7 @@ The invoice is downloaded as an Acrobat PDF file.  Use your browser's download f
 
 ## Add payment method
 
-To add a new payment method:
+To add a new payment method: add supported cards
 
 1. Sign in to the Redis Cloud [admin portal](https://app.redislabs.com/new/).  (Create an account if you don't already have one.)
 
