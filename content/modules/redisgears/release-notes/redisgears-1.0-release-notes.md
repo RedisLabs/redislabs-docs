@@ -14,6 +14,30 @@ Here's what's changed recently in RedisGears.
 
 To learn more, see the linked pull requests.
 
+## v1.0.8 (November 2021)
+
+This is a maintenance release for RedisGears 1.0.
+
+Update urgency: `MODERATE` - Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Minor features:
+
+    - [#624](https://github.com/RedisGears/RedisGears/pull/624), [#626](https://github.com/RedisGears/RedisGears/pull/626) Update Python interpreter version to 3.7.12
+
+- Bug fixes:
+
+    - [#610](https://github.com/RedisGears/RedisGears/pull/610) Fix symbol collision with RediSearch and RedisGraph that causes deadlock
+
+    - [#609](https://github.com/RedisGears/RedisGears/pull/609), [#611](https://github.com/RedisGears/RedisGears/pull/611) Crash on stream reader where stream is deleted during read
+
+    - [#612](https://github.com/RedisGears/RedisGears/pull/612) Return error when GearsBuilder is used after `registered` or `run`
+
+    - [#613](https://github.com/RedisGears/RedisGears/pull/613) Rare issue where stream reader might trigger executions on replica
+
+    - [#629](https://github.com/RedisGears/RedisGears/pull/629) Rare deadlock on stream reader
+
 ## v1.0.7 (August 2021)
 
 This is a maintenance release for version 1.0.
