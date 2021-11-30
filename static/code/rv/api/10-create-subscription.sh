@@ -5,7 +5,7 @@ TASK_ID=$(curl -s -X POST "https://$HOST/subscriptions" \
     -H "accept: application/json" \
     -H "x-api-key: $ACCOUNT_KEY" \
     -H "x-api-secret-key: $SECRET_KEY" \
-    --data-binary "@./static/code/rv/api/create-subscription-basic.json" \
+    --data-binary "@create-subscription-basic.json" \
     | jq -r .taskId )
 
 echo "TASK_ID=$TASK_ID"
