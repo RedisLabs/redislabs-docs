@@ -83,6 +83,9 @@
       </section>
     </aside>
     <section class="page">
+        {{ if .Site.Params.bannerText  }}
+          {{ partial "banner.html" . }}
+        {{ end }}
         <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
           <span class="links">
           {{ template "breadcrumb" dict "page" . "value" .LinkTitle }}

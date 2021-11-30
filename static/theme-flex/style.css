@@ -564,6 +564,11 @@ section a {
   padding-top: 5rem;
 }
 
+.home-hero .banner {
+  margin-top: -5rem;
+  padding-top: 10px;
+}
+
 .home-hero h1 {
   color: #5961ff;
   font-size: 4rem;
@@ -1104,6 +1109,23 @@ article {
   /* flex: 1; */
   margin-top: 57px;
 }
+
+.banner {
+  background-color: #fffdc0;
+  padding: 1px;
+}
+
+.banner p {
+  text-align: center;
+  font-size: 16px !important;
+  color: rgb(53, 66, 83);
+}
+
+.banner a {
+  color: rgb(53, 66, 83);
+  text-decoration: underline;
+}
+
 .cbp-spmenu a.menu__link__title {
   opacity: 0.4;
   font-size: 16px;
@@ -1163,6 +1185,12 @@ article section.page table {
   /* border-bottom: 1px solid rgba(53, 66, 83, 0.8); */
   /* border-top: 1px solid rgba(53, 66, 83, 0.8); */
   margin-top: 35px;
+}
+
+article section.page .banner {
+  margin-top: -1rem;
+  margin-left: -4rem;
+  margin-right: -1.5rem;
 }
 
 a.nav-prev-next.highlight {

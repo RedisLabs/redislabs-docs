@@ -1,4 +1,7 @@
 <section class="home-hero">
+    {{ if .Site.Params.bannerText  }}
+      {{ partial "banner.html" . }}
+    {{ end }}
     <h1>Documentation</h1>
     <p>Redis Enterprise in a variety of deployment options</p>
 
