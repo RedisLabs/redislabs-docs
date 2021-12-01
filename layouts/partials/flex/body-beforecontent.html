@@ -3,6 +3,9 @@
     {{ partial "gtm-body" . | safeHTML }}
   {{ end }}
 {{ end }}
+{{ if .Site.Params.bannerText  }}
+  {{ partial "banner.html" . }}
+{{ end }}
 <div class="header-wrap-outer">
   <header id="header">
       <div class="header-wrap">
@@ -111,6 +114,12 @@
        <!-- {{ partial "next-prev-page.html" . }} -->
       </div>
       {{end}}
+
+      <!-- <div class="article-banner">
+        {{ if .Site.Params.bannerText  }}
+          {{ partial "banner.html" . }}
+        {{ end }}
+      </div> -->
 
       <div class="nav-select">
           <center>

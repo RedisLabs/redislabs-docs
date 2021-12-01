@@ -40,7 +40,7 @@ header {
   display: flex;
   left: 0;
   margin-bottom: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   z-index: 999;
@@ -57,8 +57,12 @@ header:after {
 header a {
   text-decoration: none; }
 
-header .header-wrap-outer {
+.header-wrap-outer {
   box-shadow: 0 0 6px 0 rgba(140,140,141,.5);  
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0px !important;
+  z-index: 999 !important;
 }
 
 header .header-wrap {
@@ -501,7 +505,7 @@ article > aside .menu .dd-item.parent.menu-root.menu-expanded .collapse-all-titl
 
 html,
 body {
-  height: 100%;
+  height: auto;
   position: relative;
   left: 0;
   -webkit-transition: all 0.3s ease;
@@ -562,6 +566,11 @@ section a {
 /* Home */
 .home-hero {
   padding-top: 5rem;
+}
+
+.home-hero .banner {
+  margin-top: -5rem;
+  padding-top: 10px;
 }
 
 .home-hero h1 {
@@ -1104,6 +1113,28 @@ article {
   /* flex: 1; */
   margin-top: 57px;
 }
+
+.banner {
+  background-color: #27264d;
+  padding: 1px;
+  z-index: 998;
+}
+
+.banner p {
+  text-align: center;
+  font-size: 16px !important;
+  color: #ffff;
+}
+
+.banner a {
+  color: #ffff;
+  text-decoration: underline;
+}
+
+.article-banner {
+  margin-top: 2rem;
+}
+
 .cbp-spmenu a.menu__link__title {
   opacity: 0.4;
   font-size: 16px;
@@ -1163,6 +1194,12 @@ article section.page table {
   /* border-bottom: 1px solid rgba(53, 66, 83, 0.8); */
   /* border-top: 1px solid rgba(53, 66, 83, 0.8); */
   margin-top: 35px;
+}
+
+article section.page .banner {
+  margin-top: -1rem;
+  margin-left: -4rem;
+  margin-right: -1.5rem;
 }
 
 a.nav-prev-next.highlight {
