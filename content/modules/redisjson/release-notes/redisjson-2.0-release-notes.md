@@ -14,9 +14,9 @@ This is a maintenance release for RedisJSON 2.0.
 Details:
 
 - Bug fixes:
-  - #[553](https://github.com/RedisJSON/RedisJSON/pull/553) Return an empty array on a non-existing path
+  - #[553](https://github.com/RedisJSON/RedisJSON/pull/553) Return an empty array on a nonexistent path
   - #[548](https://github.com/RedisJSON/RedisJSON/pull/548) Align error handling behavior
-  - #[546](https://github.com/RedisJSON/RedisJSON/pull/546) #[545](https://github.com/RedisJSON/RedisJSON/pull/545x) Fix key location in `JSON.DEBUG MEMORY`
+  - #[546](https://github.com/RedisJSON/RedisJSON/pull/546) #[545](https://github.com/RedisJSON/RedisJSON/pull/545) Fix key location in `JSON.DEBUG MEMORY`
 
 ## v2.0.4 (November 2021)
 
