@@ -1111,18 +1111,18 @@ article {
 }
 
 .banner {
-  background-color: #e9f6fc;
+  background-color: #27264d;
   padding: 1px;
 }
 
 .banner p {
   text-align: center;
   font-size: 16px !important;
-  color: rgb(53, 66, 83);
+  color: #ffff;
 }
 
 .banner a {
-  color: rgb(53, 66, 83);
+  color: #ffff;
   text-decoration: underline;
 }
 
