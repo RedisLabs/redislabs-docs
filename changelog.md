@@ -2,6 +2,41 @@
 
 The docs are updated regularly; here are some recent highlights:
 
+## November 2021
+
+- Redis Enterprise Software doc updates: 
+
+    - REST API docs are [now generally available](https://docs.redis.com/latest/rs/references/rest-api/) ([PR #1620](https://github.com/RedisLabs/redislabs-docs/pull/1620))
+
+    - The [Redis client](https://docs.redis.com/latest/rs/references/client_references/) reference docs have been updated ([PR #1630](https://github.com/RedisLabs/redislabs-docs/pull/1630))
+
+    - The cluster [maintenance mode](https://docs.redis.com/latest/rs/administering/cluster-operations/maintenance-mode/) article has been updated ([PR #1647](https://github.com/RedisLabs/redislabs-docs/pull/1647))
+
+    - [System log docs](https://docs.redis.com/latest/rs/administering/logging/rsyslog-logging/) have been updated and expanded, including details describing alerts and events for databases, clusters, and nodes ([PR #1631](https://github.com/RedisLabs/redislabs-docs/pull/1631))
+
+- Kubernetes doc updates:
+
+    - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) on Kubernetes ([PR #1555](https://github.com/RedisLabs/redislabs-docs/pull/1555))
+
+    - Docs have been updated to support Redis Enterprise for [Kubernetes v6.2.8-2](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-2-2021-11/) ([PR #1648](https://github.com/RedisLabs/redislabs-docs/pull/1648))
+
+    - The _Options for Redis Enterprise databases_ article now describes [databasePort](https://docs.redis.com/latest/kubernetes/reference/db-options/#databaseport) ([PR #1644](https://github.com/RedisLabs/redislabs-docs/pull/1644))
+
+    - The _Options for Redis Enterprise clusters_ article now describes [redisUpgradePolicy](https://docs.redis.com/latest/kubernetes/reference/cluster-options/#redisupgradepolicy) ([PR #1645](https://github.com/RedisLabs/redislabs-docs/pull/1645))
+
+- Release notes have been added for:
+    - [RedisAI v1.2](https://docs.redis.com/latest/modules/redisai/release-notes/redisai-1.2-release-notes/) ([PR #1668](https://github.com/RedisLabs/redislabs-docs/pull/1668))
+    - [RedisBloom v2.2.9](https://docs.redis.com/latest/modules/redisbloom/release-notes/redisbloom-2.2-release-notes/) ([PR #1668](https://github.com/RedisLabs/redislabs-docs/pull/1668))
+    - [RedisGears v1.0.8](https://docs.redis.com/latest/modules/redisgears/release-notes/redisgears-1.0-release-notes/#v108-november-2021) ([PR #1682](https://github.com/RedisLabs/redislabs-docs/pull/1682))
+    - [RedisGraph 2.4.12](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/#v2412-october-2021) ([PR #1668](https://github.com/RedisLabs/redislabs-docs/pull/1668))
+    - [RediSearch v2.25](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/) ([PR #1664](https://github.com/RedisLabs/redislabs-docs/pull/1664)) and [v2.0.13](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.0-release-notes/#v2013-november-2021) ([PR #1652](https://github.com/RedisLabs/redislabs-docs/pull/1652))
+    - [RedisTimeSeries v1.4.13](https://docs.redis.com/latest/modules/redistimeseries/release-notes/redistimeseries-1.4-release-notes/#v1413-november-2021) ([PR #1668](https://github.com/RedisLabs/redislabs-docs/pull/1668))
+    - RedisInsight v2 public preview [release notes](https://docs.redis.com/latest/ri/release-notes/v2.0.2/) have been added ([PR #1676](https://github.com/RedisLabs/redislabs-docs/pull/1676))
+
+- Additional updates to fix typos, missing images, and other glitches
+
+    To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-11-01..2021-11-30)
+
 ## October 2021
 
 - Redis Enterprise Software doc updates: 
