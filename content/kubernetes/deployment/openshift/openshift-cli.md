@@ -1,7 +1,7 @@
 ---
-Title: Redis Enterprise Software on Kubernetes deployment with OpenShift CLI tools
+Title: Deployment with OpenShift CLI for Redis Enterprise Software on Kubernetes
 linkTitle: OpenShift CLI
-description: The operator and cluster can be installed via CLI tools
+description: The Redis Enterprise operator and cluster can be installed via CLI tools
   OpenShift
 weight: 60
 alwaysopen: false
@@ -28,34 +28,33 @@ cluster with OpenShift.
 1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
 1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html)
 
-
+## Deploy the operator
 
 1. Create a new project.
 
-    ``` oc new-project <project-name> ```
+    ```sh 
+    oc new-project <project-name> 
+    ```
 
-    To verify that you are using the newly created project, run:
+1. Verify that you are using the newly created project, run:
 
-        ```sh
-        oc project <your project name>
-         ```
+    ```sh
+    oc project <your project name>
+    ```
 
 1. Get deployment files by cloning the `redis-enterprise-k8s-docs` repository.
 
-```sh
-git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
-```
+    ```sh
+    git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
+    ```
 
-## Step 3: Prepare your yaml files
- 
 1. Apply the file `scc.yaml` file.
 
- The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
+     The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
 
-
-```sh
-oc apply -f openshift/scc.yaml
-```
+    ```sh
+    oc apply -f openshift/scc.yaml
+    ```
 
     You should receive the following response:
 
@@ -94,20 +93,16 @@ oc apply -f openshift/scc.yaml
         redis-enterprise-operator   1/1     1            1           0m36s
         ```
 
-1. Apply the RedisEnterpriseCluster resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)). You can rename the file to `your_cluster_name.yaml`, but it is not required.
+## Step 4: Create your Redis Enterprise cluster (REC) custom resource
 
-    You can edit this yaml file for your requirements, but you can use the sample provided for testing, developement and quick start deployments. Here are the main fields you to review and edit:
-
-## Step 4: Create your Cluster
-
-After you set up the your_cluster_name yaml:
+1. Apply the RedisEnterpriseCluster resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)). You can rename the file to `<your_cluster_name>.yaml`, but it is not required.
 
 1. Apply it to create your Redis Enterprise Cluster:
 
     ```sh
-    oc apply -f your_cluster_name.yaml
+    oc apply -f <your_cluster_name>.yaml
     ```
-    
+
     Your Redis Enterprise Cluster (REC) will be ready shortly, typically within a few minutes.
 
 1. Check the cluster status.
@@ -140,20 +135,20 @@ After you set up the your_cluster_name yaml:
           admission-tls   Opaque   2      2m43s
           ```
 
-## Create a Redis Enterprise database (REDB) custom resource.
+## Create a Redis Enterprise database (REDB) custom resource
 
 1. Open a browser window and navigate to the Redis Enterprise admin console at: `localhost:8443`
 
     ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
 
-1. To get your password from the OpenShift management console, go `Workloads > Secrets > your_cluster_name`, select your project name, and select **Reveal Secret**.
+1. To get your password from the OpenShift management console, go `Workloads > Secrets > <your_cluster_name>`, select your project name, and select **Reveal Secret**.
 
     {{< warning >}}
 Do not change the default admin user password in the Redis Enterprise admin console.
-Changing the admin password can cause unextpected results in your K8s deployment.
+See [Manage REC credentials]({{<relref "/kubernetes/security/manage_REC_credentials.md" >}}) to change the admin password.
     {{< /warning >}}
 
-    ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
+![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
 
 
 
