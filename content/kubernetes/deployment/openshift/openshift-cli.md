@@ -24,22 +24,22 @@ cluster with OpenShift.
 
 ## Prerequisites
 
-1. An [OpenShift cluster installed](https://docs.openshift.com/container-platform/4.8/installing/index.html) at version 4.6 or higher, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}})
-1. The [kubectl package installed](https://kubernetes.io/docs/tasks/tools/install-kubectl/) at version 1.9 or higher
-1. The [OpenShift cli installed](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html)
+- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) installed at version 4.6 or higher, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}))
+- [kubectl tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/)  installed at version 1.9 or higher
+- [OpenShift CLI](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html) installed
 
 ## Deploy the operator
 
 1. Create a new project.
 
     ```sh 
-    oc new-project <project-name> 
+    oc new-project <your-project-name> 
     ```
 
 1. Verify that you are using the newly created project, run:
 
     ```sh
-    oc project <your project name>
+    oc project <your-project-name>
     ```
 
 1. Get deployment files by cloning the `redis-enterprise-k8s-docs` repository.
@@ -71,7 +71,7 @@ cluster with OpenShift.
     You can see the name of your project with `oc project`.
 
 1. Deploy the OpenShift operator bundle.
-    
+
     {{< warning >}}
     Changes to the `openshift.bundle.yaml` file can cause unexpected results.
     {{< /warning >}}
@@ -93,19 +93,21 @@ cluster with OpenShift.
         redis-enterprise-operator   1/1     1            1           0m36s
         ```
 
-## Step 4: Create your Redis Enterprise cluster (REC) custom resource
+## Create your Redis Enterprise cluster (REC) custom resource
 
-1. Apply the RedisEnterpriseCluster resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)). You can rename the file to `<your_cluster_name>.yaml`, but it is not required.
+1. Apply the RedisEnterpriseCluster resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)).
 
-1. Apply it to create your Redis Enterprise Cluster:
+    You can rename the file to `<your_cluster_name>.yaml`, but it is not required. See [Options for Redis Enterprise clusters]({{<relref "/kubernetes/reference/cluster-options.md">}}) for more info about the REC custom resource, or see the [Redis Enterprise cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for a full list of options.
+
+1. Apply the custom resource file to create your Redis Enterprise cluster.
 
     ```sh
     oc apply -f <your_cluster_name>.yaml
     ```
 
-    Your Redis Enterprise Cluster (REC) will be ready shortly, typically within a few minutes.
+    The operator typically creates the REC within a few minutes.
 
-1. Check the cluster status.
+1. Check the cluster status
 
     ```sh
     kubectl get pod
@@ -124,16 +126,39 @@ cluster with OpenShift.
 ## Configure the admission controller
 
 1. Check that the secret has been created.
-   The operator creates a Kubernetes secret for the admission controller during deployment.  
+   The operator creates a Kubernetes secret for the admission controller during deployment.
+
       ```
       kubectl get secret admission-tls
       ```
-    
-          The response will be similar to this:
-          ```
-          NAME            TYPE     DATA   AGE
-          admission-tls   Opaque   2      2m43s
-          ```
+
+    The response will be similar to this:
+
+    ```
+    NAME            TYPE     DATA   AGE
+    admission-tls   Opaque   2      2m43s
+    ```
+
+ 1. Save the automatically generated certificate to a local environment variable.
+
+    ```sh
+    CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
+    ```
+
+ 1. Create a patch file for the Kubernetes webhook.
+
+    ```sh
+    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
+
+    cat > modified-webhook.yaml <<EOF
+    webhooks:
+    - name: redb.admission.redislabs
+      clientConfig:
+        caBundle: $CERT
+      admissionReviewVersions: ["v1beta1"]
+    EOF
+    ```
+
 
 ## Create a Redis Enterprise database (REDB) custom resource
 
