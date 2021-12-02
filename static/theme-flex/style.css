@@ -642,22 +642,28 @@ section a {
 
 .home-options__option__icon img {
   width: 100px;
+  pointer-events: none;
+  cursor: default;
 }
 
 .home-options__option__icon img.modules-icon {
   width: 80px;
   margin-top: 8px;
+  pointer-events: none;
+  cursor: default;
 }
 
 .home-options__option__icon img.platforms-icon {
   width: 88px;
   margin-top: 8px;
   transform: translateY(1px);
+  pointer-events: none;
+  cursor: default;
 }
 
 .home-options__option__icon a {
-  pointer-events: none;
-  cursor: default;
+  pointer-events: none !important;
+  cursor: default !important;
 }
 
 .home-options__option__icon a.opener {
@@ -668,6 +674,26 @@ section a {
   width: 140px;
   pointer-events: auto;
   cursor: pointer;
+}
+
+.home-options__option .tile-opener {
+  display: block !important;
+}
+
+.home-options__option .tile-opener a, .tile-opener a:visited, .tile-opener a:hover, .tile-opener a:active {
+  color: #3d5051 !important;
+  text-decoration: none !important;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.home-options__option .tile-opener a:hover h5 {
+  color: #3d5051;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 400;
+  margin: 8px 0 12px 0;
+  text-decoration: underline !important;
 }
 
 .home-options__option h5 {
@@ -1165,6 +1191,12 @@ article section.page h2::before, article section.page h3::before {
   height: 60px; /* header height*/
   margin: -60px 0 0;
 }
+
+article section.page .tile-opener a:hover h5 {
+  font-size: 1.2rem;
+  margin: 1.6 0rem 0.6 0rem;
+}
+
 article section.page table {
   width: 100%;
   margin-bottom: 2em;
