@@ -32,7 +32,7 @@ cluster with OpenShift.
 
 1. Create a new project.
 
-    ```sh 
+    ```sh
     oc new-project <your-project-name> 
     ```
 
@@ -139,13 +139,13 @@ cluster with OpenShift.
     admission-tls   Opaque   2      2m43s
     ```
 
- 1. Save the automatically generated certificate to a local environment variable.
+1. Save the automatically generated certificate to a local environment variable.
 
     ```sh
     CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
     ```
 
- 1. Create a patch file for the Kubernetes webhook.
+1. Create a patch file for the Kubernetes webhook.
 
     ```sh
     sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
@@ -158,7 +158,6 @@ cluster with OpenShift.
       admissionReviewVersions: ["v1beta1"]
     EOF
     ```
-
 
 ## Create a Redis Enterprise database (REDB) custom resource
 
@@ -174,7 +173,5 @@ See [Manage REC credentials]({{<relref "/kubernetes/security/manage_REC_credenti
     {{< /warning >}}
 
 ![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
-
-
 
 ![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )
