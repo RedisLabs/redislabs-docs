@@ -2,6 +2,8 @@
 Title: RedisGears 1.0 release notes
 linkTitle: v1.0 (May 2020)
 description: First GA release of RedisGears. Built-in C-API and Python interpreter. Run a serverless engine in memory next to your Redis data.
+min-version-db: "6.0.0"
+min-version-rs: "6.0.0"
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
@@ -13,6 +15,13 @@ aliases: /modules/redisgears/release-notes/redisgears-1.0-release-notes/
 Here's what's changed recently in RedisGears. 
 
 To learn more, see the linked pull requests.
+
+## Requirements
+
+RedisGears v1.0.8 requires:
+
+- Minimum Redis compatibility version (database): 6.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.0.0
 
 ## v1.0.8 (November 2021)
 

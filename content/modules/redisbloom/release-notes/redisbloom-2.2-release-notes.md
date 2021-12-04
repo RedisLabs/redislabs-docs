@@ -2,10 +2,18 @@
 Title: RedisBloom 2.2 release notes
 linkTitle: v2.2 (December 2019)
 description: BF.INFO returns bloom filter details. CF.INFO returns cuckoo filter details. Scalable bloom and cuckoo filters. Configurable bucket size for cuckoo filters. CMS.INCRBY returns count.
+min-version-db: "4.0"
+min-version-rs: "5.0"
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RedisBloom v2.2.9 requires:
+
+- Minimum Redis compatibility version (database): 4.0
+- Minimum Redis Enterprise Software version (cluster): 5.0
 
 ## v2.2.9 (November 2021)
 

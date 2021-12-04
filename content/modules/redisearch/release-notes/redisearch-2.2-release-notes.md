@@ -2,10 +2,18 @@
 Title: RediSearch 2.2 release notes
 linkTitle: v2.2 (November 2021)
 description: Search and index JSON documents. Profiling queries. Field aliasing. 
+min-version-db: "6.0"
+min-version-rs: "6.0"
 weight: 94
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RediSearch v2.2.5 requires:
+
+- Minimum Redis compatibility version (database): 6.0
+- Minimum Redis Enterprise Software version (cluster): 6.0
 
 ## v2.2.5 (November 2021)
 

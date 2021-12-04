@@ -2,10 +2,18 @@
 Title: RediSearch 1.6 release notes
 linkTitle: v1.6 (January 2020)
 description: Improved performance of full-text search and aggregation queries. Support for aliasing of indices. Added a C API to embed RediSearch in other modules. Forked process garbage collection.
+min-version-db: "4.0"
+min-version-rs: "5.0"
 weight: 96
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RediSearch v1.6.16 requires:
+
+- Minimum Redis compatibility version (database): 4.0
+- Minimum Redis Enterprise Software version (cluster): 5.0
 
 ## v1.6.16 (June 2021)
 

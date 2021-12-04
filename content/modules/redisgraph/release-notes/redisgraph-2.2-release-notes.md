@@ -2,10 +2,18 @@
 Title: RedisGraph 2.2 release notes
 linkTitle: v2.2 (November 2020)
 description: Support for scaling reads, OPTIONAL MATCH, query caching, and GRAPH.SLOWLOG.
+min-version-db: "5.0.7"
+min-version-rs: "6.0.8"
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RedisGraph v2.2.16 requires:
+
+- Minimum Redis compatibility version (database): 5.0.7
+- Minimum Redis Enterprise Software version (cluster): 6.0.8
 
 ## v2.2.16 (April 2021)
 

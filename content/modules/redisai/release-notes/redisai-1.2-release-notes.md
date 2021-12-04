@@ -2,10 +2,19 @@
 Title: RedisAI 1.2 release notes
 linkTitle: v1.2 (November 2021)
 description: Strings tensor support. Backend updates - TF 2.6, PyTorch 1.9, ONNXRuntime 1.9. Redis now manages ONNXRuntime memory.
+min-version-db: 6.0.0
+min-version-rs: 6.2.2
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
+
+## Requirements
+
+RedisAI v1.2.5 requires:
+
+- Minimum Redis compatibility version (database): 6.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.2.2
 
 ## 1.2.5 (November 2021)
 
