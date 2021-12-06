@@ -98,6 +98,108 @@ $ minikube list
 |-------------|----------------------|--------------|---------------------------------------------|
 ```
 
+## Create the RedisInsight deployment with persistant storage
+
+Below is an annotated YAML file that will create a RedisInsight
+deployment in a K8s cluster. It will assign a peristent volume created from a volume claim template.
+Write access to the container is configured in an init container. Finally when using deployments
+with persistent writeable volumes its best to set the strategy to Recreate otherwise you may find yourself
+with two pods trying to use the same volume.
+
+1. Create a new file redisinsight.yaml with the content below
+
+```yaml
+# RedisInsight service with name 'redisinsight-service'
+apiVersion: v1
+kind: Service
+metadata:
+  name: redisinsight-service       # name should not be 'redisinsight'
+                                   # since the service creates
+                                   # environment variables that
+                                   # conflicts with redisinsight
+                                   # application's environment
+                                   # variables `REDISINSIGHT_HOST` and
+                                   # `REDISINSIGHT_PORT`
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8001
+  selector:
+    app: redisinsight
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redisinsight-pv-claim
+  labels:
+    app: redisinsight
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2Gi
+  storageClassName: default
+---
+# RedisInsight deployment with name 'redisinsight'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redisinsight #deployment name
+  labels:
+    app: redisinsight #deployment label
+spec:
+  replicas: 1 #a single replica pod
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: redisinsight #which pods is the deployment managing, as defined by the pod template
+  template: #pod template
+    metadata:
+      labels:
+        app: redisinsight #label for pod/s
+    spec:
+      volumes:
+        - name: db
+          persistentVolumeClaim:
+            claimName: redisinsight-pv-claim
+      initContainers:
+        - name: init
+          image: busybox
+          command:
+            - /bin/sh
+            - '-c'
+            - |
+              chown -R 1001 /db
+          resources: {}
+          volumeMounts:
+            - name: db
+              mountPath: /db
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      containers:
+        - name:  redisinsight #Container name (DNS_LABEL, unique)
+        image: redislabs/redisinsight:latest #repo/image
+        imagePullPolicy: IfNotPresent #Always pull image
+        volumeMounts:
+        - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
+          mountPath: /db
+        ports:
+        - containerPort: 8001 #exposed container port and protocol
+          protocol: TCP
+      volumes:
+      - name: db
+        emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+```
+
+2. Create the RedisInsight deployment and service
+
+```sh
+kubectl apply -f redisinsight.yaml
+```
+
 ## Create the RedisInsight deployment without a service.
 
 Below is an annotated YAML file that will create a RedisInsight
