@@ -155,7 +155,7 @@ cluster with OpenShift.
 
 1. Patch the validating webhook with the certificate. 
 
-    ```bash
+    ```sh
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
@@ -188,7 +188,7 @@ If not limited, the webhook will intercept requests from all namespaces. If you 
 
 1. Apply the patch.
 
-    ``bash
+    ```bash
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
     ```
 
@@ -196,24 +196,25 @@ If not limited, the webhook will intercept requests from all namespaces. If you 
 
 1. Apply an invalid resource (provided below).
 
-  This should force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
+    This should force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
 
-    ```bash
-    $ kubectl apply -f - << EOF
-    apiVersion: app.redislabs.com/v1alpha1
-    kind: RedisEnterpriseDatabase
-    metadata:
-      name: redis-enterprise-database
-    spec:
-      evictionPolicy: illegal
-    EOF
-    ```
+      ```bash
+      $ kubectl apply -f - << EOF
+      apiVersion: app.redislabs.com/v1alpha1
+      kind: RedisEnterpriseDatabase
+      metadata:
+        name: redis-enterprise-database
+      spec:
+       evictionPolicy: illegal
+      EOF
+      ```
 
-  You should see an error that the admission controller webhook `redb.admission.redislabs`.
+
+    You should see an error that the admission controller webhook `redb.admission.redislabs`.
   
-  ```bash
-  Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
-  ```
+    ```bash
+    Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+    ```
 
 ## Create a Redis Enterprise database (REDB) custom resource
 
@@ -221,23 +222,23 @@ The operator uses the instructions in the REDB custom resources to manage databa
 
 1. Create a `RedisEnterpriseDatabase` custom resource.
 
-  We've provided an example below that will create a database for testing purposes. For production databases, see documentation for [creating a database]({{<relref "/kubernetes/re-databases/db-controller.md#create-a-database" >}}) and [database options]({[<relref "/kubernetes/reference/db-options.md">]}).
+    We've provided an example below that will create a database for testing purposes. For production databases, see documentation for [creating a database]({{<relref "/kubernetes/re-databases/db-controller.md#create-a-database" >}}) and [database options]({[<relref "/kubernetes/reference/db-options.md">]}).
 
-  Example:
-    ```bash
-    cat << EOF > /tmp/redis-enterprise-database.yml
-    apiVersion: app.redislabs.com/v1alpha1
-    kind: RedisEnterpriseDatabase
-    metadata:
-      name: redis-enterprise-database
-    spec:
-      memorySize: 100MB
-    EOF
-    ```
+    Example:
+      ```bash
+      cat << EOF > /tmp/redis-enterprise-database.yml
+      apiVersion: app.redislabs.com/v1alpha1
+      kind: RedisEnterpriseDatabase
+      metadata:
+        name: redis-enterprise-database
+      spec:
+        memorySize: 100MB
+      EOF
+      ```
 
 1. Apply the newly created REDB resource
 
-    ```bash 
+    ```bash
     oc apply -f /tmp/redis-enterprise-database.yml
     ```
 
