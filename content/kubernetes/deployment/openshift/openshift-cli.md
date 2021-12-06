@@ -32,19 +32,19 @@ cluster with OpenShift.
 
 1. Create a new project.
 
-    ```sh
+    ```bash
     oc new-project <your-project-name> 
     ```
 
 1. Verify that you are using the newly created project, run:
 
-    ```sh
+    ```bash
     oc project <your-project-name>
     ```
 
 1. Get deployment files by cloning the `redis-enterprise-k8s-docs` repository.
 
-    ```sh
+    ```bash
     git clone https://github.com/RedisLabs/redis-enterprise-k8s-docs
     ```
 
@@ -52,19 +52,13 @@ cluster with OpenShift.
 
      The scc ([Security Context Constraint](https://docs.openshift.com/container-platform/4.8/authentication/managing-security-context-constraints.html)) yaml defines security context constraints for the cluster for our project. We strongly recommend that you **not** change anything in this yaml file.
 
-    ```sh
+    ```bash
     oc apply -f openshift/scc.yaml
     ```
 
     You should receive the following response:
 
-    ```sh
-    securitycontextconstraints.security.openshift.io “redis-enterprise-scc” configured
-    ```
-
-1. Provide the operator permissions for the pods.
-
-    ```sh
+    ```bash
     oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<project-name>
     ```
 
@@ -72,49 +66,48 @@ cluster with OpenShift.
 
 1. Deploy the OpenShift operator bundle.
 
-    {{< warning >}}
-    Changes to the `openshift.bundle.yaml` file can cause unexpected results.
-    {{< /warning >}}
+    {{< warning >}}Changes to the `openshift.bundle.yaml` file can cause unexpected results.{{< /warning >}}
 
-    ```sh
+    ```bash
     oc apply -f openshift.bundle.yaml
     ```
 
 1. Verify that your redis-enterprise-operator deployment is running, run:
 
-    ```sh
+    ```bash
     oc get deployment
     ```
 
     A typical response will look like this:
 
-        ```sh
-        NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
-        redis-enterprise-operator   1/1     1            1           0m36s
-        ```
+    ```bash
+    NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+    redis-enterprise-operator   1/1     1            1           0m36s
+    ```
 
 ## Create your Redis Enterprise cluster (REC) custom resource
 
-1. Apply the RedisEnterpriseCluster resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)).
+1. Apply the `RedisEnterpriseCluster` resource file ([rec_rhel.yaml](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/openshift/rec_rhel.yaml)).
 
-    You can rename the file to `<your_cluster_name>.yaml`, but it is not required. See [Options for Redis Enterprise clusters]({{<relref "/kubernetes/reference/cluster-options.md">}}) for more info about the REC custom resource, or see the [Redis Enterprise cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for a full list of options.
+    You can rename the file to `<your_cluster_name>.yaml`, but it is not required (the examples below will use `<rec_rhel>.yaml`). [Options for Redis Enterprise clusters]({{<relref "/kubernetes/reference/cluster-options.md">}}) has more info about the REC custom resource, or see the [Redis Enterprise cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md) for a full list of options.
 
 1. Apply the custom resource file to create your Redis Enterprise cluster.
 
-    ```sh
-    oc apply -f <your_cluster_name>.yaml
+    ```bash
+    oc apply -f <rec_rhel>.yaml
     ```
 
     The operator typically creates the REC within a few minutes.
 
 1. Check the cluster status
 
-    ```sh
+    ```bash
     kubectl get pod
     ```
 
     You should receive a response similar to the following:
-
+    
+    ```bash
     | NAME                             | READY | STATUS  | RESTARTS | AGE |
     | -------------------------------- | ----- | ------- | -------- | --- |
     | rec-name-0              | 2/2   | Running | 0        | 1m  |
@@ -122,32 +115,33 @@ cluster with OpenShift.
     | rec-name-2              | 2/2   | Running | 0        | 1m  |
     | rec-name-controller-x-x | 1/1   | Running | 0        | 1m  |
     | Redis-enterprise-operator-x-x    | 1/1   | Running | 0        | 5m  |
+    ```
 
 ## Configure the admission controller
 
 1. Check that the secret has been created.
    The operator creates a Kubernetes secret for the admission controller during deployment.
 
-      ```
+      ```bash
       kubectl get secret admission-tls
       ```
 
     The response will be similar to this:
 
-    ```
+    ```bash
     NAME            TYPE     DATA   AGE
     admission-tls   Opaque   2      2m43s
     ```
 
 1. Save the automatically generated certificate to a local environment variable.
 
-    ```sh
+    ```bash
     CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
     ```
 
 1. Create a patch file for the Kubernetes webhook.
 
-    ```sh
+    ```bash
     sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
 
     cat > modified-webhook.yaml <<EOF
@@ -159,19 +153,98 @@ cluster with OpenShift.
     EOF
     ```
 
+1. Patch the validating webhook with the certificate. 
+
+    ```bash
+    kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
+    ```
+
+### Limit the webhook to relevant namespaces
+
+If not limited, the webhook will intercept requests from all namespaces. If you have several REC objects in your Kubernetes cluster, you need to limit the webhook to the relevant namespaces. If you aren't using multiple namespaces, you can skip this step.
+
+1. View your namespace YAML file to verify your namespace is labeled and the label is unique to this namespace (see example below).
+
+    ```bash
+    apiVersion: v1
+    kind: Namespace
+    metadata:
+      labels:
+        namespace-name: staging
+    name: staging
+    ```
+
+1. Patch the webhook spec with the `namespaceSelector` field. 
+    ```bash
+    cat > modified-webhook.yaml <<EOF
+    webhooks:
+    - name: redb.admission.redislabs
+      namespaceSelector:
+        matchLabels:
+          namespace-name: staging
+    EOF
+
+    ```
+
+1. Apply the patch.
+
+    ``bash
+    kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
+    ```
+
+### Verify the admission controller installation
+
+1. Apply an invalid resource (provided below).
+
+  This should force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
+
+    ```bash
+    $ kubectl apply -f - << EOF
+    apiVersion: app.redislabs.com/v1alpha1
+    kind: RedisEnterpriseDatabase
+    metadata:
+      name: redis-enterprise-database
+    spec:
+      evictionPolicy: illegal
+    EOF
+    ```
+
+  You should see an error that the admission controller webhook `redb.admission.redislabs`.
+  
+  ```bash
+  Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+  ```
+
 ## Create a Redis Enterprise database (REDB) custom resource
 
-1. Open a browser window and navigate to the Redis Enterprise admin console at: `localhost:8443`
+The operator uses the instructions in the REDB custom resources to manage databases on the Redis enterprise cluster.
 
-    ![getting-started-kubernetes-openshift-image5]( /images/rs/getting-started-kubernetes-openshift-image5.png )
+1. Create a `RedisEnterpriseDatabase` custom resource.
 
-1. To get your password from the OpenShift management console, go `Workloads > Secrets > <your_cluster_name>`, select your project name, and select **Reveal Secret**.
+  We've provided an example below that will create a database for testing purposes. For production databases, see documentation for [creating a database]({{<relref "/kubernetes/re-databases/db-controller.md#create-a-database" >}}) and [database options]({[<relref "/kubernetes/reference/db-options.md">]}).
 
-    {{< warning >}}
-Do not change the default admin user password in the Redis Enterprise admin console.
-See [Manage REC credentials]({{<relref "/kubernetes/security/manage_REC_credentials.md" >}}) to change the admin password.
-    {{< /warning >}}
+  Example:
+    ```bash
+    cat << EOF > /tmp/redis-enterprise-database.yml
+    apiVersion: app.redislabs.com/v1alpha1
+    kind: RedisEnterpriseDatabase
+    metadata:
+      name: redis-enterprise-database
+    spec:
+      memorySize: 100MB
+    EOF
+    ```
 
-![getting-started-kubernetes-openshift-image3]( /images/rs/getting-started-kubernetes-openshift-image3.png )
+1. Apply the newly created REDB resource
 
-![getting-started-kubernetes-openshift-image6]( /images/rs/getting-started-kubernetes-openshift-image6.png )
+    ```bash 
+    oc apply -f /tmp/redis-enterprise-database.yml
+    ```
+
+## More info
+
+- [Options for Redis Enterprise clusters (REC)]({{<relref "/kubernetes/reference/cluster-options.md">}})
+- [Redis Enterprise cluster API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_cluster_api.md)
+- [Options for Redis Enterprise databases (REDB)]({{<relref "/kubernetes/reference/db-options.md">}})
+- [Redis Enterprise database API](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/redis_enterprise_database_api.md)
+
