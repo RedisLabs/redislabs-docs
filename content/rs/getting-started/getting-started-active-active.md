@@ -81,7 +81,7 @@ Now we have two Redis Enterprise Software clusters with FQDNs
 **cluster1.local** and **cluster2.local**.
 
     {{< note >}}
-Each Active-Active instance must have a unique FQDN.
+Each Active-Active instance must have a unique fully-qualified domain name (FQDN).
     {{< /note >}}
 
 ## Step 3: Create a Redis Active-Active database
