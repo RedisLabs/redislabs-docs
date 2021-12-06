@@ -181,14 +181,14 @@ spec:
           terminationMessagePolicy: File
       containers:
         - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:latest #repo/image
-        imagePullPolicy: IfNotPresent #Always pull image
-        volumeMounts:
-        - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
-          mountPath: /db
-        ports:
-        - containerPort: 8001 #exposed container port and protocol
-          protocol: TCP
+          image: redislabs/redisinsight:latest #repo/image
+          imagePullPolicy: IfNotPresent #Always pull image
+          volumeMounts:
+          - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
+            mountPath: /db
+          ports:
+          - containerPort: 8001 #exposed container port and protocol
+            protocol: TCP
 ```
 
 2. Create the RedisInsight deployment and service
