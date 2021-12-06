@@ -210,7 +210,7 @@ If not limited, the webhook will intercept requests from all namespaces. If you 
       ```
 
 
-    You should see an error that the admission controller webhook `redb.admission.redislabs`.
+    You should see an error from the admission controller webhook `redb.admission.redislabs`.
   
     ```bash
     Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
@@ -222,7 +222,7 @@ The operator uses the instructions in the REDB custom resources to manage databa
 
 1. Create a `RedisEnterpriseDatabase` custom resource.
 
-    We've provided an example below that will create a database for testing purposes. For production databases, see documentation for [creating a database]({{<relref "/kubernetes/re-databases/db-controller.md#create-a-database" >}}) and [database options]({{<relref "/kubernetes/reference/db-options.md">}}).
+    The following example creates a database for testing purposes. For production databases, see [creating a database]({{<relref "/kubernetes/re-databases/db-controller.md#create-a-database" >}}) and [database options]({{<relref "/kubernetes/reference/db-options.md">}}).
 
     Example:
       ```bash
