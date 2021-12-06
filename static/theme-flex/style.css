@@ -366,12 +366,14 @@ article > aside {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  left: 0;
+  /* left: 0; */
+  float: left;
   padding: 0 26px;
-  position: fixed;
+  position: sticky;
   z-index: 2;
   top: 58px;
   width: 23rem;
+  height: 100vh;
   overflow-y: auto;
   -moz-box-shadow: 1px 0 8px 0 #ddd;
   -webkit-box-shadow: 1px 0 8px 0 #ddd;
