@@ -218,11 +218,11 @@ If not limited, the webhook will intercept requests from all namespaces. If you 
 
 ## Create a Redis Enterprise database (REDB) custom resource
 
-The operator uses the instructions in the REDB custom resources to manage databases on the Redis enterprise cluster.
+The operator uses the instructions in the REDB custom resources to manage databases on the Redis Enterprise cluster.
 
 1. Create a `RedisEnterpriseDatabase` custom resource.
 
-    We've provided an example below that will create a database for testing purposes. For production databases, see documentation for [creating a database]({{<relref "/kubernetes/re-databases/db-controller.md#create-a-database" >}}) and [database options]({[<relref "/kubernetes/reference/db-options.md">]}).
+    We've provided an example below that will create a database for testing purposes. For production databases, see documentation for [creating a database]({{<relref "/kubernetes/re-databases/db-controller.md#create-a-database" >}}) and [database options]({{<relref "/kubernetes/reference/db-options.md">}}).
 
     Example:
       ```bash
