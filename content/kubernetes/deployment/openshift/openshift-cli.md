@@ -119,7 +119,7 @@ cluster with OpenShift.
 
 ## Configure the admission controller
 
-1. Check that the secret has been created.
+1. Verify the secret has been created.
    The operator creates a Kubernetes secret for the admission controller during deployment.
 
       ```bash
