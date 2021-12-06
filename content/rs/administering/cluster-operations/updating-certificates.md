@@ -190,7 +190,8 @@ TLS versions older than the specified version.
 ### Cipher configuration
 
 {{<note>}}
-Redis Enterprise Software doesn't support Diffie–Hellman key exchange (`DHE-`) ciphers.
+Redis Enterprise Software doesn't support static Diffie–Hellman key exchange ciphers.
+Redis Enterprise Software does support Ephemeral Diffie–Hellman key exchange ciphers on RHEL8 and Bionic OS.
 {{</note>}}
 
 #### Control plane cipher suite configuration (for 6.0.8 or earlier)
