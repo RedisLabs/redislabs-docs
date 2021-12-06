@@ -10,7 +10,7 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGears v1.0.15 requires:
+RedisGraph v1.0.15 requires:
 
 - Minimum Redis compatibility version (database): 4.0
 - Minimum Redis Enterprise Software version (cluster): 5.0
