@@ -80,6 +80,10 @@ Repeat the same operations for cluster 2 with these differences:
 Now we have two Redis Enterprise Software clusters with FQDNs
 **cluster1.local** and **cluster2.local**.
 
+    {{< note >}}
+Each Active-Active instance must have a unique FQDN.
+    {{< /note >}}
+
 ## Step 3: Create a Redis Active-Active database
 
 1. After you login to cluster1.local, select the Redis database and deployment type
