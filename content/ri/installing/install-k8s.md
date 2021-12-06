@@ -189,9 +189,6 @@ spec:
         ports:
         - containerPort: 8001 #exposed container port and protocol
           protocol: TCP
-      volumes:
-      - name: db
-        emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
 ```
 
 2. Create the RedisInsight deployment and service
