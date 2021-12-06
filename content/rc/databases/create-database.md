@@ -41,7 +41,7 @@ The available settings vary according to your subscription plan:
 | **Redis on Flash** | Checked when the subscription supports Redis on Flash (_Flexible or Annual subscriptions only_) |
 | **Database Name** | A name for your database (_required_) |
 | **Protocol**  | Set to _Redis_ unless you need to support legacy memcached databases |
-| **Modules** | Extend core Redis functionality using [modules]({{< relref "modules/" >}}) |
+| **Modules** | Extend core Redis functionality using [modules]({{<relref "modules/">}}).  Redis Enterprise Cloud supports selected modules; for details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}) |
 
 ## Scalability section
 
