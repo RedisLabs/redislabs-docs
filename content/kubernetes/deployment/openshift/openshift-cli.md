@@ -194,27 +194,26 @@ If not limited, the webhook will intercept requests from all namespaces. If you 
 
 ### Verify the admission controller installation
 
-1. Apply an invalid resource (provided below).
+Apply an invalid resource (provided below).
 
-    This should force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
+This should force the admission controller to reject it. If it applies successfully, the admission controller is not installed correctly.
 
-      ```bash
-      $ kubectl apply -f - << EOF
-      apiVersion: app.redislabs.com/v1alpha1
-      kind: RedisEnterpriseDatabase
-      metadata:
-        name: redis-enterprise-database
-      spec:
-       evictionPolicy: illegal
-      EOF
-      ```
-
-
-    You should see an error from the admission controller webhook `redb.admission.redislabs`.
-  
     ```bash
-    Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+    $ kubectl apply -f - << EOF
+    apiVersion: app.redislabs.com/v1alpha1
+    kind: RedisEnterpriseDatabase
+    metadata:
+      name: redis-enterprise-database
+    spec:
+     evictionPolicy: illegal
+    EOF
     ```
+
+You should see an error from the admission controller webhook `redb.admission.redislabs`.
+  
+  ```bash
+  Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+  ```
 
 ## Create a Redis Enterprise database (REDB) custom resource
 
