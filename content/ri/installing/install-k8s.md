@@ -102,11 +102,11 @@ $ minikube list
 
 Below is an annotated YAML file that will create a RedisInsight
 deployment in a K8s cluster. It will assign a peristent volume created from a volume claim template.
-Write access to the container is configured in an init container. Finally when using deployments
-with persistent writeable volumes its best to set the strategy to Recreate otherwise you may find yourself
+Write access to the container is configured in an init container. When using deployments
+with persistent writeable volumes, it's best to set the strategy to `Recreate`. Otherwise you may find yourself
 with two pods trying to use the same volume.
 
-1. Create a new file redisinsight.yaml with the content below
+1. Create a new file `redisinsight.yaml` with the content below.
 
 ```yaml
 # RedisInsight service with name 'redisinsight-service'
@@ -191,7 +191,7 @@ spec:
             protocol: TCP
 ```
 
-2. Create the RedisInsight deployment and service
+2. Create the RedisInsight deployment and service.
 
 ```sh
 kubectl apply -f redisinsight.yaml
