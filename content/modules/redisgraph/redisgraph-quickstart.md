@@ -14,21 +14,28 @@ For this quick start tutorial, you need:
 
         You can [set up a free Redis Cloud database]({{< relref "/modules/modules-quickstart.md" >}}) to see the module in action.
     - A Redis Enterprise Software database [with the RedisGraph module]({{< relref "/modules/add-module-to-database.md" >}})
-- redis-cli with connectivity to a redis database
-
-{{< embed-md "tryout-redisgraph.md" >}}
+- `redis-cli` with connectivity to a Redis database
 
 ## Develop with RedisGraph
 
 Before using RedisGraph, you should familiarize yourself with its commands and syntax as detailed in the
-[commands reference](https://oss.redislabs.com/redisgraph/commands/).
+[commands reference](https://oss.redis.com/redisgraph/commands/).
 
-After you load RedisGraph, you can interact with it using redis-cli.
+After you load RedisGraph, you can interact with it using `redis-cli`.
 
 Here we'll quickly create a small graph representing a subset of motorcycle riders and teams
 taking part in the MotoGP league. Once created, we'll start querying our data.
 
 ### Use `redis-cli`
+
+Connect to your Redis database with `redis-cli`:
+
+```sh
+$ redis-cli -p 12543
+127.0.0.1:12543>
+```
+
+Create a new graph with the `GRAPH.QUERY` command:
 
 ```sh
 127.0.0.1:12543> GRAPH.QUERY MotoGP "CREATE (:Rider {name:'Valentino Rossi'})-[:rides]->(:Team {name:'Yamaha'}), (:Rider {name:'Dani Pedrosa'})-[:rides]->(:Team {name:'Honda'}), (:Rider {name:'Andrea Dovizioso'})-[:rides]->(:Team {name:'Ducati'})"
