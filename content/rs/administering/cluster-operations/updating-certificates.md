@@ -54,7 +54,7 @@ For example, to replace the cm certificate with the private key "key.pem" and th
 ```sh
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 ```
-Read bellow about updating your proxy and syncer certificates for Active-Active and Actice-Passive (Replica Of) Redis databases.
+The following sections describe how to update proxy and syncer certificates for Active-Active and Active-Passive (Replica Of) databases.
 
 ### Using the REST API
 
