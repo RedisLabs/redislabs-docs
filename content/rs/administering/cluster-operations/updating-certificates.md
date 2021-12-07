@@ -93,7 +93,7 @@ When you upgrade Redis Enterprise Software, the upgrade process copies the certi
 To update proxy certificate on clusters running Active-Active databases:
 
 - **Step 1:** Use `rladmin` or the REST API to update proxy certificates on a single cluster, multiple clusters, or all participating clusters.
-- **Step 2:** Update the Active-Active database configuration from the command-line with the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility. Run this command once for each Active-Active database that resides on the modified clusters.
+- **Step 2:** Use the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility to update Active-Active database configuration from the command-line. Run the following command once for each Active-Active database residing on the modified clusters.
 
 ```text
 crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
