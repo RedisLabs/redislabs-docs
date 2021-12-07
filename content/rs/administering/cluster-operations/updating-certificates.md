@@ -100,7 +100,7 @@ crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
 ```
 
 {{<note>}}
-- It is required that you run step 2 shortly as possible after step 1, since between the two steps new syncer connections that use the ‘old’ certificate will get rejected by the cluster that has been updated with the new certificate (in step 1).
+- Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established .
 - Do not run any other `crdb-cli crdb update` operations between the two steps.
 {{</note>}}
 
