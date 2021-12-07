@@ -106,7 +106,7 @@ crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
 
 ### Update proxy certificates for Active-Passive databases
 
-To update your proxy certificate on cluster/s running Active-Passive (Replica Of) databases follow these steps:
+To update proxy certificate on clusters running Active-Passive (Replica Of) databases:
 
 - **Step 1:** Update your proxy certificate on the source database cluster using the `rladmin` command, or REST API.
 - **Step 2:** From the admin console, update the destination database configuration with the new certificate as described [`here`](https://docs.redis.com/latest/rs/administering/creating-databases/create-active-passive/#configuring-tls-for-replica-of-traffic-on-the-destination-database).
