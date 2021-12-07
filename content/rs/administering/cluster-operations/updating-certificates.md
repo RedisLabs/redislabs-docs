@@ -54,6 +54,7 @@ For example, to replace the cm certificate with the private key "key.pem" and th
 ```sh
 rladmin cluster certificate set cm certificate_file cluster.pem key_file key.pem
 ```
+The following sections describe how to update proxy and syncer certificates for Active-Active and Active-Passive (Replica Of) databases.
 
 ### Using the REST API
 
@@ -83,7 +84,36 @@ Where:
 
 The new certificates are used the next time the clients connect to the database.
 
+Read bellow about updating your proxy and syncer certificates for Active-Active and Actice-Passive (Replica Of) Redis databases.
+
 When you upgrade Redis Enterprise Software, the upgrade process copies the certificates that are on the first upgraded node to all of the nodes in the cluster.
+
+### Update proxy certificates for Active-Active databases
+
+To update proxy certificate on clusters running Active-Active databases:
+
+- **Step 1:** Use `rladmin` or the REST API to update proxy certificates on a single cluster, multiple clusters, or all participating clusters.
+- **Step 2:** Use the [`crdb-cli`]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility to update Active-Active database configuration from the command-line. Run the following command once for each Active-Active database residing on the modified clusters.
+
+```text
+crdb-cli crdb update --crdb-guid <CRDB-GUID> --force
+```
+
+{{<note>}}
+- Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established .
+- Do not run any other `crdb-cli crdb update` operations between the two steps.
+{{</note>}}
+
+### Update proxy certificates for Active-Passive databases
+
+To update proxy certificate on clusters running Active-Passive (Replica Of) databases:
+
+- **Step 1:**  Use `rladmin` or the REST API to update proxy certificate on the source database cluster.
+- **Step 2:** From the admin console, update the destination database (_replica_) configuration with the [new certificate]({{<relref "rs/administering/creating-databases/create-active-passive#configuring-tls-for-replica-of-traffic-on-the-destination-database">}}).
+
+{{<note>}}
+- Perform Step 2 as quickly as possible after performing Step 1.  Connections using the previous certificate are rejected after applying the new certificate.  Until both steps are performed, recovery of the database sync cannot be established .
+{{</note>}}
 
 ### Update syncer certificates for Active-Active databases
 
