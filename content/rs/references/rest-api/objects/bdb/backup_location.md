@@ -14,7 +14,6 @@ You can back up or export a database's dataset to the following types of locatio
 -   Amazon S3
 -   Google Cloud Storage
 -   Microsoft Azure Storage
--   OpenStack Object Storage (also known as "Swift")
 -   NAS/Local Storage
 
 ## Basic parameters
@@ -28,7 +27,6 @@ For all backup/export location objects, you need to specify the location type vi
 | Amazon S3 | "s3" |
 | Google Cloud Storage | "gs" |
 | Microsoft Azure Storage | "abs" |
-| OpenStack Object Storage ("Swift") | "swift" |
 | NAS/Local Storage | "mount_point" |
 
 ## Location-specific parameters
@@ -81,16 +79,6 @@ Any additional required parameters may differ based on the backup/export locatio
 {{<note>}}
 `account_key` and `sas_token` are mutually exclusive
 {{</note>}}
-
-### Swift
-
-| Key name | Type | Description |
-|----------|------|-------------|
-| auth_url | string | Swift service authentication URL |
-| container | string | The name of the Swift object store container to back up to |
-| key | string | Swift service key that corresponds to the username |
-| prefix | string | Swift path to use as a prefix for the filenames for the backup files (optional) |
-| user | string | Swift service username |
 
 ### NAS/Local Storage
 
