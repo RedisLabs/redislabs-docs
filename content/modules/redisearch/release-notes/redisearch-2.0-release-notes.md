@@ -205,7 +205,8 @@ In addition to simplifying indexing, RediSearch 2.0 allows you to scale a single
 Finally, RediSearch 2.x keeps its indexes outside of the main Redis key space. Improvements to the indexing code have increased query performance 2.4x.
 
 You can read more details in [the RediSearch 2.0 announcement blog post](https://redislabs.com/blog/introducing-redisearch-2-0/), and you can get started by checking out this [quick start blog post](https://redislabs.com/blog/getting-started-with-redisearch-2-0/).
-<img src="https://github.com/RediSearch/RediSearch/blob/master/docs/img/newarchitecture.png"  alt="architecture" width="500"/>
+
+{{<image filename="images/modules/redisearch-2-0-architecture.png" alt="Compares the architecture of RediSearch 2.0 to architecture of earlier versions." >}}{{< /image >}}
 
 ### Details
 
