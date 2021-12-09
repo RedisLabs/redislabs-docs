@@ -10,7 +10,7 @@ nextStep:
 aliases: /ri/install/install-k8s/
 ---
 
-[Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/_index.md">}}) databases can be connected to a RedisInsight desktop client the same way as any other database. However, you can also install RedisInsight directly on your Kubernetes cluster. This deployment can be created with or without a LoadBalancer service or persistent storage.
+[Redis Enterprise Software for Kubernetes]({{<relref "/kubernetes/_index.md">}}) databases can be connected to a RedisInsight desktop client the same way as any other database. However, you can also install RedisInsight directly on your Kubernetes cluster with a deployment. You can also add an accompanying load balancer service, persistent storage, or both.
 
 This deployment can be created with or without a LoadBalancer service. To add persistent storage, create a PersistentVolumeClaim.
 
@@ -19,15 +19,6 @@ This deployment can be created with or without a LoadBalancer service. To add pe
 ## Create a RedisInsight service
 
 ## Create a `PersistentVolumeClaim`
-
-
-
-
-
-
-
-
-
 
 ## Create a RedisInsight deployment and service
 
@@ -104,6 +95,7 @@ redisinsight-service   <cluster-ip>     <external-ip>    80:32143/TCP    1m
 ```
 
 4. If you are using minikube, run `minikube list` to list the service and access RedisInsight at `http://<minikube-ip>:<minikube-service-port>`.
+
 ```
 $ minikube list
 |-------------|----------------------|--------------|---------------------------------------------|
@@ -214,7 +206,7 @@ spec:
 kubectl apply -f redisinsight.yaml
 ```
 
-## Create the RedisInsight deployment without a service.
+## Create the RedisInsight deployment without a service
 
 Below is an annotated YAML file that will create a RedisInsight
 deployment in a K8s cluster.
