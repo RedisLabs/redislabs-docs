@@ -16,139 +16,67 @@ This deployment can be created with or without a LoadBalancer service. To add pe
 
 ## Create a RedisInsight deployment
 
+The example below is a RedisInsight deployment file that doesn't have a persistent volume claim or accompanying service. You'll need to configure the following sections:
+
+- **`metadata`:** Configure the deployment name (`metadata.name`) and label (`labels.app`).
+- **`spec.replicas`:** Set the number replicas to 1. 
+- **`..selector`:** The selector label (matchLabels.app`) determines which pods the deployment will manage. This must to match the pod template label (`spec.template.metadata.labels.app`).
+- **`...template`:** Add a label to your pod template (`template.metadata.labels.app`). 
+- **`...template.spec.volumes`:** Add an ephemeral storage volume to your pod template with an [`emptyDir` volume](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
+- **`...template.spec.containers`**: Set the container name, image, and image pull policy for the pod template. The container name must be unique and compatible with your DNS labels.
+- **`...containers.env`**: If you have a service named `redisinsight` to expose the deployment, you can manually override the service environnement variables.
+- **`...containers.volumeMounts`:** Specify which pod volumes will mount into the container filesystem. Set `volumeMounts.name` to the same value as `spec.volumes.name`. 
+- **`...containers.ports`:** Set the container's exposed port (`containerPort`) as `8001` and the protocol (`containerPort.protocol`) as `TCP`.
+- **`...ports.livenessProbe`:** You can create a liveness probe to perform health checks on your container. Configure the exposed endpoint (`path`) and port (`port`) for your health checks. The liveness probe will run a number of seconds after container creation (`initialDelaySeconds`), run health checks regularly (`periodSeconds`), and restart the container after a certain amount of failures(`failureThreshold`).
+
+
 ```yaml
-# RedisInsight deployment with name 'redisinsight'
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redisinsight #deployment name
+  name: redisinsight
   labels:
-    app: redisinsight #deployment label
+    app: redisinsight 
 spec:
-  replicas: 1 #a single replica pod
+  replicas: 1 
   selector:
     matchLabels:
-      app: redisinsight #which pods is the deployment managing, as defined by the pod template
-  template: #pod template
+      app: redisinsight 
+  template: 
     metadata:
       labels:
-        app: redisinsight #label for pod/s
+        app: redisinsight 
     spec:
-      containers:
-
-      - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:latest #repo/image
-        imagePullPolicy: IfNotPresent #Always pull image
-        volumeMounts:
-        - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
-          mountPath: /db
-        ports:
-        - containerPort: 8001 #exposed container port and protocol
-          protocol: TCP
       volumes:
       - name: db
-        emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
-```
-
-```yaml
-# RedisInsight deployment with name 'redisinsight'
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: redisinsight #deployment name
-  labels:
-    app: redisinsight #deployment label
-spec:
-  replicas: 1 #a single replica pod
-  strategy:
-    type: Recreate
-  selector:
-    matchLabels:
-      app: redisinsight #which pods is the deployment managing, as defined by the pod template
-  template: #pod template
-    metadata:
-      labels:
-        app: redisinsight #label for pod/s
-    spec:
-      volumes:
-        - name: db
-          persistentVolumeClaim:
-            claimName: redisinsight-pv-claim
-      initContainers:
-        - name: init
-          image: busybox
-          command:
-            - /bin/sh
-            - '-c'
-            - |
-              chown -R 1001 /db
-          resources: {}
-          volumeMounts:
-            - name: db
-              mountPath: /db
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
+        emptyDir: {} 
       containers:
-        - name:  redisinsight #Container name (DNS_LABEL, unique)
-          image: redislabs/redisinsight:latest #repo/image
-          imagePullPolicy: IfNotPresent #Always pull image
-          volumeMounts:
-          - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
-            mountPath: /db
-          ports:
-          - containerPort: 8001 #exposed container port and protocol
-            protocol: TCP
-```
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: redisinsight #deployment name
-  labels:
-    app: redisinsight #deployment label
-spec:
-  replicas: 1 #a single replica pod
-  selector:
-    matchLabels:
-      app: redisinsight #which pods is the deployment managing, as defined by the pod template
-  template: #pod template
-    metadata:
-      labels:
-        app: redisinsight #label for pod/s
-    spec:
-      containers:
-      - name:  redisinsight #Container name (DNS_LABEL, unique)
-        image: redislabs/redisinsight:latest #repo/image
-        imagePullPolicy: IfNotPresent #Always pull image
+      - name:  redisinsight 
+        image: redislabs/redisinsight:latest 
+        imagePullPolicy: IfNotPresent 
         env:
-          # If there's a service named 'redisinsight' that exposes the
-          # deployment, we manually set `REDISINSIGHT_HOST` and
-          # `REDISINSIGHT_PORT` to override the service environment
-          # variables.
           - name: REDISINSIGHT_HOST
             value: "0.0.0.0"
           - name: REDISINSIGHT_PORT
             value: "8001"
         volumeMounts:
-        - name: db #Pod volumes to mount into the container's filesystem. Cannot be updated.
+        - name: db 
           mountPath: /db
         ports:
-        - containerPort: 8001 #exposed conainer port and protocol
+        - containerPort: 8001 
           protocol: TCP
         livenessProbe:
            httpGet:
               path : /healthcheck/ # exposed RI endpoint for healthcheck
               port: 8001 # exposed container port
-           initialDelaySeconds: 5 # number of seconds to wait after the container starts to perform liveness probe
-           periodSeconds: 5 # period in seconds after which liveness probe is performed
+           initialDelaySeconds: 5 # seconds to wait after the container starts to perform liveness probe
+           periodSeconds: 5 # period (in seconds) after which liveness probe is performed
            failureThreshold: 1 # number of liveness probe failures after which container restarts
-      volumes:
-      - name: db
-        emptyDir: {} # node-ephemeral volume https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
 ```
 
 ## Create a RedisInsight service
+
+To expose 
 
 ```yaml
 apiVersion: v1
@@ -193,11 +121,57 @@ spec:
 
 ## Create a `PersistentVolumeClaim`
 
+Below is an annotated YAML file that will create a RedisInsight
+deployment in a K8s cluster. It will assign a persistent volume created from a volume claim template.
+
+
 Write access to the container is configured in an init container. When using deployments
-with persistent writeable volumes, it's best to set the strategy to `Recreate`. Otherwise you may find yourself
-with two pods trying to use the same volume.
+with persistent writeable volumes, it's best to set the strategy to `Recreate`. Otherwise you may find yourself with two pods trying to use the same volume.
+
+1. Make the following updates to your deployment spec:
+
+  1. Set the replica strategy (spec.replicas.strategy) `Recreate`. This will avoid multiple pods trying to use the same volume.
+
+    ```yaml
+    strategy:
+    type: Recreate
+    ```
+  
+  1. In the `template.spec.volumes` section, replace the `emptyDir` volume with your persistent volume claim.
+  
+    ```yaml
+    volumes:
+        - name: db
+          persistentVolumeClaim:
+            claimName: redisinsight-pv-claim
+    ```
+  
+  1. Add an  init container (`spec.initContainers`) to configure write access to the container.
+
+    ```yaml
+      initContainers:
+        - name: init
+          image: busybox
+          command:
+            - /bin/sh
+            - '-c'
+            - |
+              chown -R 1001 /db
+          resources: {}
+          volumeMounts:
+            - name: db
+              mountPath: /db
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+    ```
+  1. 
+
+    
+
+Add the following persistent volume claim to your deployment file (`redisinsight.yaml`).
 
 ```yaml
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -253,8 +227,6 @@ $ minikube list
 
 
 
-Below is an annotated YAML file that will create a RedisInsight
-deployment in a K8s cluster. It will assign a persistent volume created from a volume claim template.
 
 
 1. Create a new file `redisinsight.yaml` with the content below.
