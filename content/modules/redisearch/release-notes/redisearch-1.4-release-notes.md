@@ -2,8 +2,8 @@
 Title: RediSearch 1.4 release notes
 linkTitle: v1.4 (August 2018)
 description: Conditional updates. Schema modification. Query spelling correction. Phonetic matching. More fuzziness in search. Retrieve and change runtime configuration. Unlimited autocomplete results.
-min-version-db: "4.0"
-min-version-rs: "5.0"
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RediSearch v1.4.28 requires:
 
-- Minimum Redis compatibility version (database): 4.0
-- Minimum Redis Enterprise Software version (cluster): 5.0
+- Minimum Redis compatibility version (database): 4.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.0.0
 
 ## v1.4.28 (May 2020)
 

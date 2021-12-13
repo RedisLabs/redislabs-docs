@@ -2,8 +2,8 @@
 Title: RedisJSON 1.0 release notes
 linkTitle: v1.0 (December 2017)
 description: Serialization cache for JSON.GET.
-min-version-db: "4.0"
-min-version-rs: "5.0"
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RedisJSON v1.0.8 requires:
 
-- Minimum Redis compatibility version (database): 4.0
-- Minimum Redis Enterprise Software version (cluster): 5.0
+- Minimum Redis compatibility version (database): 4.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.0.0
 
 ## v1.0.8 (August 2021)
 

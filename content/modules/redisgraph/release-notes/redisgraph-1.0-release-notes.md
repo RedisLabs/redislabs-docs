@@ -2,8 +2,8 @@
 Title: RedisGraph 1.0 release notes
 linkTitle: v1.0 (November 2018)
 description: Fixed memory leaks. Support ‘*’ within RETURN clause. Added TYPE function. Initial support for UNWIND clause.
-min-version-db: "4.0"
-min-version-rs: "5.0"
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RedisGraph v1.0.15 requires:
 
-- Minimum Redis compatibility version (database): 4.0
-- Minimum Redis Enterprise Software version (cluster): 5.0
+- Minimum Redis compatibility version (database): 4.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.0.0
 
 ## v1.0.15 (March 2019)
 

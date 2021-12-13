@@ -2,7 +2,7 @@
 Title: RedisTimeSeries 1.2 release rotes
 linkTitle: v1.2 (January 2020)
 description: Added compression. Stable ingestion time independent of the number of the data points on a time series. API performance improvements. Extended client support.
-min-version-db: "5.0"
+min-version-db: "5.0.0"
 min-version-rs: "6.0.12"
 weight: 99
 alwaysopen: false
@@ -12,7 +12,7 @@ categories: ["Modules"]
 
 RedisTimeSeries v1.2.7 requires:
 
-- Minimum Redis compatibility version (database): 5.0
+- Minimum Redis compatibility version (database): 5.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.12
 
 ## v1.2.7 (June 2020)

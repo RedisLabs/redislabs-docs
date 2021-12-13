@@ -2,7 +2,7 @@
 Title: RedisGraph 2.4 release notes
 linkTitle: v2.4 (March 2021)
 description: Added Map and Geospatial Point data types.
-min-version-db: "6.0"
+min-version-db: "6.0.0"
 min-version-rs: "6.0.8"
 weight: 96
 alwaysopen: false
@@ -12,7 +12,7 @@ categories: ["Modules"]
 
 RedisGraph v2.4.12 requires:
 
-- Minimum Redis compatibility version (database): 6.0
+- Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.8
 
 ## v2.4.12 (October 2021)

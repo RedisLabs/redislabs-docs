@@ -2,8 +2,8 @@
 Title: RedisGraph 1.2 release notes
 linkTitle: v1.2 (April 2019)
 description: Support multiple relationships of the same type R connecting two nodes. Lexer elides escape characters in string creation. Performance improvements.
-min-version-db: "4.0"
-min-version-rs: "5.0"
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RedisGraph v1.2.2 requires:
 
-- Minimum Redis compatibility version (database): 4.0
-- Minimum Redis Enterprise Software version (cluster): 5.0
+- Minimum Redis compatibility version (database): 4.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.0.0
 
 ## v1.2.2 (May 2019)
 

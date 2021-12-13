@@ -2,8 +2,8 @@
 Title: RedisTimeSeries 1.0 release rotes
 linkTitle: v1.0 (June 2019)
 description: Downsampling/compaction. Secondary indexing. Aggregation at read time. Integration with Prometheus, Grafana, and Telegraph.
-min-version-db: "5.0"
-min-version-rs: "5.4"
+min-version-db: "5.0.0"
+min-version-rs: "5.4.0"
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RedisTimeSeries v1.0.3 requires:
 
-- Minimum Redis compatibility version (database): 5.0
-- Minimum Redis Enterprise Software version (cluster): 5.4
+- Minimum Redis compatibility version (database): 5.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.4.0
 
 ## v1.0.3 (September 2019)
 

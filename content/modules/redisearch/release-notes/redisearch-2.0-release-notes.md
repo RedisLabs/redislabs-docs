@@ -2,8 +2,8 @@
 Title: RediSearch 2.0 release notes
 linkTitle: v2.0 (September 2020)
 description: Automatically indexes data based on a key pattern. Scale a single index over multiple Redis shards. Improved query performance.
-min-version-db: "6.0"
-min-version-rs: "6.0"
+min-version-db: "6.0.0"
+min-version-rs: "6.0.0"
 weight: 95
 alwaysopen: false
 categories: ["Modules"]
@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RediSearch v2.0.13 requires:
 
-- Minimum Redis compatibility version (database): 6.0
-- Minimum Redis Enterprise Software version (cluster): 6.0
+- Minimum Redis compatibility version (database): 6.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.0.0
 
 ## v2.0.13 (November 2021)
 

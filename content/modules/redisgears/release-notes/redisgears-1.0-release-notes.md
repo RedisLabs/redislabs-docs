@@ -11,7 +11,6 @@ aliases: /modules/redisgears/release-notes/redisgears-1.0-release-notes/
          /modules/redisgears/release-notes/redisgears-1.0-release-notes
          /modules/redisgears/release-notes/redisgears-1.0-release-notes.md
 ---
-
 Here's what's changed recently in RedisGears. 
 
 To learn more, see the linked pull requests.

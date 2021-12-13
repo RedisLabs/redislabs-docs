@@ -2,8 +2,8 @@
 Title: RediSearch 1.2 release notes
 linkTitle: v1.2 (June 2018)
 description: Aggregation filters. Query attributes. Fuzzy matching. Conditional updates. Backslash escaping. Synonyms support.
-min-version-db: "4.0"
-min-version-rs: "5.0"
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RediSearch v1.2.0 requires:
 
-- Minimum Redis compatibility version (database): 4.0
-- Minimum Redis Enterprise Software version (cluster): 5.0
+- Minimum Redis compatibility version (database): 4.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.0.0
 
 ## RediSearch 1.2.0 (June 2018)
 
