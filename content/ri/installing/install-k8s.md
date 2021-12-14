@@ -20,7 +20,7 @@ The example below is a RedisInsight deployment file with one [replica](https://k
 
 Make sure to substitute your own values into your deployment file. Go to [kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for more information on deployments.
 
-{{<note>}}If you have a service named `redisinsight` that exposes the deployment, it may cause environment variable conflicts with the RedisInsight software. You can manually override the service environnement variables (as seen in this example) or change the service name (as seen in the service example below).{{</note>}}
+{{<note>}}If you have a service named `redisinsight` that exposes the deployment, it may cause environment variable conflicts with the RedisInsight software. You can manually override the service environment variables (as seen in this example) or change the service name (as seen in the service example below).{{</note>}}
 
 ```yaml
 apiVersion: apps/v1
