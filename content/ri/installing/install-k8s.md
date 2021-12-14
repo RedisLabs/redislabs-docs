@@ -112,7 +112,7 @@ For a deployment with persistent writeable volumes, add a [`PersistentVolumeClai
           type: Recreate
       ```
   
-    b. In the `.template.spec.volumes` section, replace the `emptyDir` volume the name of your persistent volume claim.
+    b. In the `.template.spec.volumes` section, replace the `emptyDir` volume with the name of your persistent volume claim.
   
       ```yaml
             volumes:
