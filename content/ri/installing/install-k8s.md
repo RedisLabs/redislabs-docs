@@ -16,19 +16,9 @@ This deployment can be created with or without a load balancer service. To add p
 
 ## Create a RedisInsight deployment
 
-The example below is a RedisInsight deployment file without a persistent volume claim or accompanying service. You'll need to configure the following sections:
+The example below is a RedisInsight deployment file with one [replica](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) and [ephemeral storage](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir). It does not have a [persistent volume claim] or [accompanying service]({{<relref "/ri/installing/install-k8s.md#create-a-redisinsight-service">}}), which you can add in the following sections. Make sure to substitute your own values and go to [kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for more information on deployments.
 
-- **`metadata`:** Configure the deployment name (`metadata.name`) and label (`labels.app`).
-- **`spec.replicas`:** Set the number replicas to 1. 
-- **`..selector`:** The selector label (matchLabels.app`) determines which pods the deployment will manage. This must to match the pod template label (`spec.template.metadata.labels.app`).
-- **`...template`:** Add a label to your pod template (`template.metadata.labels.app`). 
-- **`...template.spec.volumes`:** Add an ephemeral storage volume to your pod template with an [`emptyDir` volume](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir).
-- **`...template.spec.containers`**: Set the container name, image, and image pull policy for the pod template. The container name must be unique and compatible with your DNS labels.
-- **`...containers.env`**: If you have a service named `redisinsight` to expose the deployment, you can manually override the service environnement variables.
-- **`...containers.volumeMounts`:** Specify which pod volumes will mount into the container filesystem. Set `volumeMounts.name` to the same value as `spec.volumes.name`. 
-- **`...containers.ports`:** Set the container's exposed port (`containerPort`) as `8001` and the protocol (`containerPort.protocol`) as `TCP`.
-- **`...ports.livenessProbe`:** You can create a liveness probe to perform health checks on your container. Configure the exposed endpoint (`path`) and port (`port`) for your health checks. The liveness probe will run a number of seconds after container creation (`initialDelaySeconds`), run health checks regularly (`periodSeconds`), and restart the container after a certain amount of failures(`failureThreshold`).
-
+{{<note>}}If you have a service named `redisinsight` that exposes the deployment, it may cause environment variable conflicts with the RedisInsight software. You can manually override the service environnement variables (as seen in this example) or change the service name (as seen in the service example below).{{</note>}}
 
 ```yaml
 apiVersion: apps/v1
@@ -36,7 +26,7 @@ kind: Deployment
 metadata:
   name: redisinsight
   labels:
-    app: redisinsight 
+    app: redisinsight
 spec:
   replicas: 1 
   selector:
@@ -74,19 +64,20 @@ spec:
            failureThreshold: 1
 ```
 
-1. 1. Once the deployment and service are successfully applied and complete, access RedisInsight. You can use by port forwarding to access RedisInsight. Then open your browser to <http://localhost:8001>.
+Apply the file to create the RedisInsight deployment.
 
-    ```sh
-    kubectl port-forward deployment/redisinsight 8001
-    ```
+   ```sh
+   kubectl apply -f redisinsight.yaml
+   ```
 
 ## Create a RedisInsight service
 
-1. To expose your deployment, add a RedisInsight service to your `redisinsight.yaml` file.
+1. To expose your deployment, add a RedisInsight [service]() to your `redisinsight.yaml` file.
 
     {{<warning>}} Avoid naming your service `redisinsight`; this will create conflicts environment variables in the RedisInsight application (`REDISINSIGHT_HOST` and `REDISINSIGHT_PORT`). {{</warning>}}
 
     ```yaml
+    ---
     apiVersion: v1
     kind: Service
     metadata:
@@ -102,40 +93,42 @@ spec:
 
 1. Apply the file to create the RedisInsight deployment and service.
 
-    ```sh
-    kubectl apply -f redisinsight.yaml
-    ```
-
-1. Once the deployment and service are successfully applied and complete, access RedisInsight. You use the `<external-ip>` of the service you created to reach RedisInsight.
-
-    ```sh
-    $ kubectl get svc redisinsight-service
-    NAME                   CLUSTER-IP       EXTERNAL-IP      PORT(S)         AGE
-    redisinsight-service   <cluster-ip>     <external-ip>    80:32143/TCP    1m
-    ```
+   ```sh
+   kubectl apply -f redisinsight.yaml
+   ```
 
 ## Create a persistent volume claim
 
-For a deployment with persistent writeable volumes, add a `PersistentVolumeClaim` to your `redisinsight.yaml` file. A few changes to the deployment are also necessary. The example below creates a persistent volume created from a volume claim template.
+For a deployment with persistent writeable volumes, add a [`PersistentVolumeClaim`](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) to your `redisinsight.yaml` file. A few changes to the deployment are also necessary. The example below creates a persistent volume created from a volume claim template.
 
 1. Make the following updates to your deployment spec:
 
-    a. Set the replica strategy (spec.replicas.strategy) `Recreate`. This will avoid multiple pods trying to use the same volume.
+    a. Set the strategy (spec.strategy.type) to [`Recreate`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment). This will avoid multiple pods trying to use the same volume.
 
       ```yaml
-      strategy:
-      type: Recreate
+        strategy:
+          type: Recreate
       ```
   
-    b. In the `template.spec.volumes` section, replace the `emptyDir` volume with your persistent volume claim.
+    b. In the `template.spec.volumes` section, replace the `emptyDir` volume the name of your persistent volume claim.
   
       ```yaml
-      volumes:
-          - name: db
-            persistentVolumeClaim:
-              claimName: redisinsight-pv-claim
+            volumes:
+                - name: db
+                  persistentVolumeClaim:
+                    claimName: redisinsight-pv-claim
       ```
-  
+
+    c. Add a [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods) to the deployment pod template (spec.template.spec).
+
+      ```yaml
+            securityContext:
+              runAsUser: 1000
+              runAsGroup: 3000
+              fsGroup: 2000
+      ```
+
+<!---
     c. Add an  init container (`spec.initContainers`) to configure write access to the container.
 
       ```yaml
@@ -154,8 +147,9 @@ For a deployment with persistent writeable volumes, add a `PersistentVolumeClaim
             terminationMessagePath: /dev/termination-log
             terminationMessagePolicy: File
       ```
+--->
 
-1. Add the following persistent volume claim to your deployment file (`redisinsight.yaml`).
+2. Add the following [persistent volume claim](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods) to your deployment file (`redisinsight.yaml`).
 
     ```yaml
     ---
@@ -171,12 +165,43 @@ For a deployment with persistent writeable volumes, add a `PersistentVolumeClaim
       resources:
         requests:
           storage: 2Gi
-      storageClassName: default
+      storageClassName: <your-preferred-storage-class>
     ```
 
-1. Create the RedisInsight deployment and persistent volume claim.
+3. Create the RedisInsight deployment and persistent volume claim.
+
     ```sh
     kubectl apply -f redisinsight.yaml
     ```
 
+## Access RedisInsight
 
+Once the deployment and service are successfully applied and complete (this may take a few minutes), access RedisInsight. You can do this in several ways:
+
+- Use port forwarding and open your browser to <http://localhost:8001>.
+
+    ```sh
+    kubectl port-forward deployment/redisinsight 8001
+    ```
+
+- Use the `<external-ip>` of the service you created.
+
+    ```sh
+    $ kubectl get svc redisinsight-service
+    NAME                   CLUSTER-IP       EXTERNAL-IP      PORT(S)         AGE
+    redisinsight-service   <cluster-ip>     <external-ip>    80:32143/TCP    1m
+    ```
+
+- If you are using [minikube](https://minikube.sigs.k8s.io/docs/), you can run `minikube list` and access RedisInsight at `http://<minikube-ip>:<minikube-service-port>`.
+
+    ```sh
+    minikube list
+
+   |-------------|----------------------|--------------|---------------------------------------------|
+   |  NAMESPACE  |         NAME         | TARGET PORT  |           URL                               |
+   |-------------|----------------------|--------------|---------------------------------------------|
+   | default     | kubernetes           | No node port |                                             |
+   | default     | redisinsight-service |           80 | http://<minikube-ip>:<minikubeservice-port> |
+   | kube-system | kube-dns             | No node port |                                             |
+   |-------------|----------------------|--------------|---------------------------------------------|
+   ```
