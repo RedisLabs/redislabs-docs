@@ -16,7 +16,7 @@ This deployment can be created with or without a load balancer service. To add p
 
 ## Create a RedisInsight deployment
 
-The example below is a RedisInsight deployment file with one [replica](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) and [ephemeral storage](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir). The following sections will show you how to add an accompanying service]({{<relref "/ri/installing/install-k8s.md#create-a-redisinsight-service">}}) or [persistent storage](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
+The example below is a RedisInsight deployment file with one [replica](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) and [ephemeral storage](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir). The following sections will show you how to [add a load balancer service]({{<relref "/ri/installing/install-k8s.md#create-a-redisinsight-service">}}) or [persistent storage claim]({{<relref "/ri/installing/install-k8s.md#create-a-persistent-volume-claim">}}).
 
 Make sure to substitute your own values into your deployment file. Go to [kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for more information on deployments.
 
@@ -131,6 +131,7 @@ For a deployment with persistent writeable volumes, add a [`PersistentVolumeClai
       ```
 
 <!---
+
     c. Add an  init container (`spec.initContainers`) to configure write access to the container.
 
       ```yaml
@@ -149,6 +150,7 @@ For a deployment with persistent writeable volumes, add a [`PersistentVolumeClai
             terminationMessagePath: /dev/termination-log
             terminationMessagePolicy: File
       ```
+
 --->
 
 2. Add the following [persistent volume claim](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods) to your deployment file (`redisinsight.yaml`).
