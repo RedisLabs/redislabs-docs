@@ -7,6 +7,20 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+## v2.0.15 (December 2021)
+
+This is a maintenance release for RediSearch 2.0.
+
+Update urgency: `MODERATE` - Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+    - [#2388](https://github.com/RediSearch/RediSearch/pull/2388) Garbage Collection (GC) for empty ranges in numeric index
+    - [#2409](https://github.com/RediSearch/RediSearch/pull/2409) Introduction of `FORK_GC_CLEAN_NUMERIC_EMPTY_NODES true` module argument to enable [#2388](https://github.com/RediSearch/RediSearch/pull/2388) (off by default)
+    - [#325](https://github.com/RediSearch/RediSearch/pull/325) Used Redis allocator in hiredis (RSCoordinator)
+    - [#2362](https://github.com/RediSearch/RediSearch/pull/2362) Crash on empty field name
+
 ## v2.0.13 (November 2021)
 
 This is a maintenance release for version 2.0.
