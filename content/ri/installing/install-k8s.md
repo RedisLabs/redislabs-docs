@@ -16,7 +16,9 @@ This deployment can be created with or without a load balancer service. To add p
 
 ## Create a RedisInsight deployment
 
-The example below is a RedisInsight deployment file with one [replica](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) and [ephemeral storage](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir). It does not have a [persistent volume claim] or [accompanying service]({{<relref "/ri/installing/install-k8s.md#create-a-redisinsight-service">}}), which you can add in the following sections. Make sure to substitute your own values and go to [kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for more information on deployments.
+The example below is a RedisInsight deployment file with one [replica](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment) and [ephemeral storage](https://kubernetes.io/docs/concepts/storage/volumes/#emptydir). The following sections will show you how to add an accompanying service]({{<relref "/ri/installing/install-k8s.md#create-a-redisinsight-service">}}) or [persistent storage](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
+
+Make sure to substitute your own values into your deployment file. Go to [kubernetes.io](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) for more information on deployments.
 
 {{<note>}}If you have a service named `redisinsight` that exposes the deployment, it may cause environment variable conflicts with the RedisInsight software. You can manually override the service environnement variables (as seen in this example) or change the service name (as seen in the service example below).{{</note>}}
 
@@ -72,9 +74,9 @@ Apply the file to create the RedisInsight deployment.
 
 ## Create a RedisInsight service
 
-1. To expose your deployment, add a RedisInsight [service]() to your `redisinsight.yaml` file.
+1. To expose your deployment, add a RedisInsight [service](https://kubernetes.io/docs/concepts/services-networking/service/) to your `redisinsight.yaml` file.
 
-    {{<warning>}} Avoid naming your service `redisinsight`; this will create conflicts environment variables in the RedisInsight application (`REDISINSIGHT_HOST` and `REDISINSIGHT_PORT`). {{</warning>}}
+    {{<warning>}} Avoid naming your service `redisinsight`; this will create conflicts with environment variables in the RedisInsight application (`REDISINSIGHT_HOST` and `REDISINSIGHT_PORT`). {{</warning>}}
 
     ```yaml
     ---
@@ -103,14 +105,14 @@ For a deployment with persistent writeable volumes, add a [`PersistentVolumeClai
 
 1. Make the following updates to your deployment spec:
 
-    a. Set the strategy (spec.strategy.type) to [`Recreate`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment). This will avoid multiple pods trying to use the same volume.
+    a. Set the strategy (`spec.strategy.type`) to [`Recreate`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#recreate-deployment). This will avoid multiple pods trying to use the same volume.
 
       ```yaml
         strategy:
           type: Recreate
       ```
   
-    b. In the `template.spec.volumes` section, replace the `emptyDir` volume the name of your persistent volume claim.
+    b. In the `.template.spec.volumes` section, replace the `emptyDir` volume the name of your persistent volume claim.
   
       ```yaml
             volumes:
@@ -119,7 +121,7 @@ For a deployment with persistent writeable volumes, add a [`PersistentVolumeClai
                     claimName: redisinsight-pv-claim
       ```
 
-    c. Add a [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods) to the deployment pod template (spec.template.spec).
+    c. Add a [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#configure-volume-permission-and-ownership-change-policy-for-pods) to the deployment pod template (`.template.spec`).
 
       ```yaml
             securityContext:
