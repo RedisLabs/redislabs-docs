@@ -40,7 +40,7 @@ header {
   display: flex;
   left: 0;
   margin-bottom: 0;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   z-index: 999;
@@ -57,8 +57,12 @@ header:after {
 header a {
   text-decoration: none; }
 
-header .header-wrap-outer {
+.header-wrap-outer {
   box-shadow: 0 0 6px 0 rgba(140,140,141,.5);  
+  position: -webkit-sticky !important;
+  position: sticky !important;
+  top: 0px !important;
+  z-index: 999 !important;
 }
 
 header .header-wrap {
@@ -362,12 +366,14 @@ article > aside {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  left: 0;
+  /* left: 0; */
+  float: left;
   padding: 0 26px;
-  position: fixed;
+  position: sticky;
   z-index: 2;
   top: 58px;
   width: 23rem;
+  height: 100vh;
   overflow-y: auto;
   -moz-box-shadow: 1px 0 8px 0 #ddd;
   -webkit-box-shadow: 1px 0 8px 0 #ddd;
@@ -501,7 +507,7 @@ article > aside .menu .dd-item.parent.menu-root.menu-expanded .collapse-all-titl
 
 html,
 body {
-  height: 100%;
+  height: auto;
   position: relative;
   left: 0;
   -webkit-transition: all 0.3s ease;
@@ -562,6 +568,11 @@ section a {
 /* Home */
 .home-hero {
   padding-top: 5rem;
+}
+
+.home-hero .banner {
+  margin-top: -5rem;
+  padding-top: 10px;
 }
 
 .home-hero h1 {
@@ -642,17 +653,28 @@ section a {
 
 .home-options__option__icon img {
   width: 100px;
+  pointer-events: none;
+  cursor: default;
 }
 
 .home-options__option__icon img.modules-icon {
   width: 80px;
   margin-top: 8px;
+  pointer-events: none;
+  cursor: default;
 }
 
 .home-options__option__icon img.platforms-icon {
   width: 88px;
   margin-top: 8px;
   transform: translateY(1px);
+  pointer-events: none;
+  cursor: default;
+}
+
+.home-options__option__icon a {
+  pointer-events: none !important;
+  cursor: default !important;
 }
 
 .home-options__option__icon a.opener {
@@ -661,6 +683,28 @@ section a {
   position: absolute;
   top: 0;
   width: 140px;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.home-options__option .tile-opener {
+  display: block !important;
+}
+
+.home-options__option .tile-opener a, .tile-opener a:visited, .tile-opener a:hover, .tile-opener a:active {
+  color: #3d5051 !important;
+  text-decoration: none !important;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.home-options__option .tile-opener a:hover h5 {
+  color: #3d5051;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 400;
+  margin: 8px 0 12px 0;
+  text-decoration: underline !important;
 }
 
 .home-options__option h5 {
@@ -669,6 +713,10 @@ section a {
   font-style: normal;
   font-weight: 400;
   margin: 8px 0 12px 0;
+}
+
+.home-options__option h5 a {
+  color: #3d5051;
 }
 
 .home-options__option p {
@@ -1104,6 +1152,28 @@ article {
   /* flex: 1; */
   margin-top: 57px;
 }
+
+.banner {
+  background-color: #27264d;
+  padding: 1px;
+  z-index: 998;
+}
+
+.banner p {
+  text-align: center;
+  font-size: 16px !important;
+  color: #ffff;
+}
+
+.banner a {
+  color: #ffff;
+  text-decoration: underline;
+}
+
+.article-banner {
+  margin-top: 2rem;
+}
+
 .cbp-spmenu a.menu__link__title {
   opacity: 0.4;
   font-size: 16px;
@@ -1154,6 +1224,12 @@ article section.page h2::before, article section.page h3::before {
   height: 60px; /* header height*/
   margin: -60px 0 0;
 }
+
+article section.page .tile-opener a:hover h5 {
+  font-size: 1.2rem;
+  margin: 1.6 0rem 0.6 0rem;
+}
+
 article section.page table {
   width: 100%;
   margin-bottom: 2em;
@@ -1163,6 +1239,12 @@ article section.page table {
   /* border-bottom: 1px solid rgba(53, 66, 83, 0.8); */
   /* border-top: 1px solid rgba(53, 66, 83, 0.8); */
   margin-top: 35px;
+}
+
+article section.page .banner {
+  margin-top: -1rem;
+  margin-left: -4rem;
+  margin-right: -1.5rem;
 }
 
 a.nav-prev-next.highlight {
@@ -1231,6 +1313,8 @@ article section.page p > code,
 article section.page li code,
 article section.page table code {
   padding: 0 0.25rem; }
+article section.page table code {
+  font-size: 11px; }
 
 /* Code source and copy */
 article section.page pre {

@@ -5,7 +5,8 @@ description: Describes the Redis Enterprise features supported by each Redis mod
 weight: 8
 alwaysopen: false
 categories: ["Modules"]
-aliases: /modules/packaging
+aliases: /modules/enterprise-capabilities/
+         /modules/enterprise-capabilities.md
 ---
 
 This article describes Redis Enterprise feature compatibility for Redis modules.  Version numbers indicate the minimum module version required for feature support.  Footnotes provide additional information as needed.
