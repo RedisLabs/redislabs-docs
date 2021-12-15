@@ -1,11 +1,33 @@
 ---
 Title: RediSearch 2.0 release notes
 linkTitle: v2.0 (September 2020)
-description:
+description: Automatically indexes data based on a key pattern. Scale a single index over multiple Redis shards. Improved query performance.
+min-version-db: "6.0.0"
+min-version-rs: "6.0.0"
 weight: 95
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RediSearch v2.0.13 requires:
+
+- Minimum Redis compatibility version (database): 6.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.0.15 (December 2021)
+
+This is a maintenance release for RediSearch 2.0.
+
+Update urgency: `MODERATE` - Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+    - [#2388](https://github.com/RediSearch/RediSearch/pull/2388) Garbage Collection (GC) for empty ranges in numeric index
+    - [#2409](https://github.com/RediSearch/RediSearch/pull/2409) Introduction of `FORK_GC_CLEAN_NUMERIC_EMPTY_NODES true` module argument to enable [#2388](https://github.com/RediSearch/RediSearch/pull/2388) (off by default)
+    - [#325](https://github.com/RediSearch/RediSearch/pull/325) Used Redis allocator in hiredis (RSCoordinator)
+    - [#2362](https://github.com/RediSearch/RediSearch/pull/2362) Crash on empty field name
 
 ## v2.0.13 (November 2021)
 
@@ -188,7 +210,7 @@ This is a maintenance release for version 2.0.
     - [#1572](https://github.com/RediSearch/RediSearch/pull/1572) Crash when using WITHSORTKEYS without SORTBY.
     - [#1540](https://github.com/RediSearch/RediSearch/pull/1540) SORTBY should raise an error if the field is not defined as SORTABLE.
 
-## v2.0 (September 2020)
+## v2.0.0 (September 2020)
 
 RediSearch 2.0 is a public preview release meeting GA standards. This release includes several improvements in performance and usability over RediSearch 1.0. These improvements necessitate a few backward-breaking changes to the API.
 
@@ -205,7 +227,8 @@ In addition to simplifying indexing, RediSearch 2.0 allows you to scale a single
 Finally, RediSearch 2.x keeps its indexes outside of the main Redis key space. Improvements to the indexing code have increased query performance 2.4x.
 
 You can read more details in [the RediSearch 2.0 announcement blog post](https://redislabs.com/blog/introducing-redisearch-2-0/), and you can get started by checking out this [quick start blog post](https://redislabs.com/blog/getting-started-with-redisearch-2-0/).
-<img src="https://github.com/RediSearch/RediSearch/blob/master/docs/img/newarchitecture.png"  alt="architecture" width="500"/>
+
+{{<image filename="images/modules/redisearch-2-0-architecture.png" alt="Compares the architecture of RediSearch 2.0 to architecture of earlier versions." >}}{{< /image >}}
 
 ### Details
 

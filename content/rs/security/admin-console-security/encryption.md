@@ -98,7 +98,7 @@ To set the TLS ciphers for the control plane use the following command:
 
 - Default TLS Protocols: HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH
 - Syntax: `rladmin cluster config cipher_suites '<openssl_cipher_list>'`
-    - Redis Enterprise Software uses openssl to implement TLS ([List of available configurations](https://www.openssl.org/docs/man1.0.2/man1/ciphers.html))
+    - Redis Enterprise Software uses openssl to implement TLS ([List of available configurations](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html))
 
 The below example uses the Mozilla intermediate compatibility cipher list
 
@@ -107,7 +107,7 @@ rladmin cluster config cipher_suites 'ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AE
 ```
 
 {{< note >}}
-Its generally reccomended to use TLS 1.2 or higher. Ensure you check with your security team for the TLS protocols and ciphers that meet your organizations policies.
+Its generally recommended to use TLS 1.2 or higher. Ensure you check with your security team for the TLS protocols and ciphers that meet your organizations policies.
 {{< /note >}}
 
 ## Requiring HTTPS for API Endpoints

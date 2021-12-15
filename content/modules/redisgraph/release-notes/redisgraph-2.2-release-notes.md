@@ -1,11 +1,19 @@
 ---
 Title: RedisGraph 2.2 release notes
 linkTitle: v2.2 (November 2020)
-description:
+description: Support for scaling reads, OPTIONAL MATCH, query caching, and GRAPH.SLOWLOG.
+min-version-db: "5.0.7"
+min-version-rs: "6.0.8"
 weight: 97
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RedisGraph v2.2.16 requires:
+
+- Minimum Redis compatibility version (database): 5.0.7
+- Minimum Redis Enterprise Software version (cluster): 6.0.8
 
 ## v2.2.16 (April 2021)
 
@@ -23,7 +31,7 @@ Details:
 
     - #[1610](https://github.com/RedisGraph/RedisGraph/pull/1610) Add module-level configuration for query timeouts
     - #[1572](https://github.com/RedisGraph/RedisGraph/pull/1572) Remove query size limitation from parser
-    - #[1590](https://github.com/RedisGraph/RedisGraph/pull/1590) Improve reporting of run-time errors
+    - #[1590](https://github.com/RedisGraph/RedisGraph/pull/1590) Improve reporting of runtime errors
     - #[1596](https://github.com/RedisGraph/RedisGraph/pull/1596) Run bulk loader commands on a non-blocking thread
 
 - Performance Improvements:
@@ -110,7 +118,7 @@ This is a maintenance release for version 2.2.
 
 Headlines:
 
-This release introduces support for run-time configuration of the maximum number of results to be returned.
+This release introduces support for runtime configuration of the maximum number of results to be returned.
 
 Details:
 

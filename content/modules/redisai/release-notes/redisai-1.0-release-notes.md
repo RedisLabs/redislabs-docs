@@ -1,11 +1,21 @@
 ---
 Title: RedisAI 1.0 release notes
 linkTitle: v1.0 (May 2020)
-description:
+description: Auto-batching support. Added AI.DAGRUN and AI.DAGRUN_RO commands. AI.MODELSET allows you to provide a model in chunks. Standardized GET methods (TENSORGET,MODELGET,SCRIPTGET) replies (breaking change for clients). Cache model blobs.
+min-version-db: "5.0.7"
+min-version-rs: "5.4.11"
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
+
+## Requirements
+
+RedisAI v1.0.2 requires:
+
+- Minimum Redis compatibility version (database): 5.0.7
+- Minimum Redis Enterprise Software version (cluster): 5.4.11
+
 ## v1.0.2 (October 2020)
 
 This is a maintenance release for version 1.0.

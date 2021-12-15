@@ -19,5 +19,4 @@ Disallow: /pdfs/current/
 Disallow: /pdf-gen-*
 Disallow: /pdf-gen-*/
 
-Sitemap: https://docs.redislabs.com/latest/sitemap.xml
 Sitemap: https://docs.redis.com/latest/sitemap.xml
