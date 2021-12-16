@@ -73,7 +73,7 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-m
 - RS57444, RS55294, RS4903 - Fixed false “backup finished successfully” message when the backup failed due to restricted access to the backup destination
 
 ### Fixes on build #53
-- RS67829 - Fixed a bug that caused Modules' auxilary field not to get replicated between the primary and the replica shards. Appplicable for RediSearch, RedisGraph and RedisGears and happening only at following scenarios:
+- RS67829 - Fixed a bug that caused Modules' auxiliary field not to get replicated between the primary and the replica shards. Applicable for RediSearch, RedisGraph and RedisGears and happening only at following scenarios:
          - (A) On the destenation databases of a Replica Of upon a full sync operation
          - (B) Upon import operation
 
