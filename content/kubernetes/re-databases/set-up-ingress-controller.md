@@ -48,7 +48,6 @@ Install one of the supported ingress controllers:
 
 - [NGINX Ingress Controller Installation Guide](https://kubernetes.github.io/ingress-nginx/deploy/)
 - [HAProxy Ingress Getting Started](https://haproxy-ingress.github.io/docs/getting-started/) 
-- [HAProxy Ingress Controller Installation](https://www.haproxy.com/documentation/kubernetes/latest/installation/community/kubernetes/) 
 
 {{< warning >}}You'll need to make sure `ssl-passthrough` is enabled. It's enabled by default for HAProxy, but disabled by default for NGINX. See the [NGINX User Guide](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough) for details. {{< /warning >}}  
 
