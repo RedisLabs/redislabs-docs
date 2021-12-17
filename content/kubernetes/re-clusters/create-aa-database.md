@@ -104,8 +104,8 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
       dbIngressSuffix: <ingress-suffix>
       ingressAnnotations:
         kubernetes.io/ingress.class: <nginx | haproxy>
-        <nginx | haproxy>.ingress.kubernetes.io/backend-protocol: HTTPS
-        <nginx | haproxy>.ingress.kubernetes.io/ssl-passthrough: "true"  
+        <nginx.ingress.kubernetes.io | haproxy-ingress.github.io>/backend-protocol: HTTPS
+        <nginx.ingress.kubernetes.io | haproxy-ingress.github.io>/ssl-passthrough: "true"  
       method: ingress
     ```
 
