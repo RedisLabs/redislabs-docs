@@ -33,7 +33,7 @@ If you're running either OpenShift or VMWare Tanzu, we provide specific getting 
 
 To deploy the Redis Enterprise operator, you'll need:
 
-- a Kubernetes cluster in a [supported distributions]({{<relref "content/kubernetes/reference/supported_k8s_distributions.md">}}))
+- a Kubernetes cluster in a [supported distribution]({{<relref "content/kubernetes/reference/supported_k8s_distributions.md">}})
 - a minimum of three worker nodes
 - a Kubernetes client (kubectl)
 - access to DockerHub, RedHat Container Catalog, or a private repository that can hold the required images.
