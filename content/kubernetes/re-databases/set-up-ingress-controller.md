@@ -88,7 +88,7 @@ Install one of the supported ingress controllers:
     For HAProxy, insert the following into the `annotations` section:  
 
         kubernetes.io/ingress.class: haproxy
-        haproxy.ingress.kubernetes.io/ssl-passthrough: "true"
+        haproxy-ingress.github.io/ssl-passthrough: "true"
 
     For NGINX, insert the following into the `annotations` section:  
 
