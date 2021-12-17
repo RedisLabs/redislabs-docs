@@ -81,26 +81,26 @@ kubectl apply -f bundle.yaml
 
   You should see a result similar to this:
 
-    ```
-    role.rbac.authorization.k8s.io/redis-enterprise-operator created
-    serviceaccount/redis-enterprise-operator created
-    rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
-    customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com configured
-    customresourcedefinition.apiextensions.k8s.io/redisenterprisedatabases.app.redislabs.com configured
-    deployment.apps/redis-enterprise-operator created
-    ```
+  ```sh
+  role.rbac.authorization.k8s.io/redis-enterprise-operator created
+  serviceaccount/redis-enterprise-operator created
+  rolebinding.rbac.authorization.k8s.io/redis-enterprise-operator created
+  customresourcedefinition.apiextensions.k8s.io/redisenterpriseclusters.app.redislabs.com configured
+  customresourcedefinition.apiextensions.k8s.io/redisenterprisedatabases.app.redislabs.com configured
+  deployment.apps/redis-enterprise-operator created
+  ```
 
 #### Verify that the operator is running
 
 Check the operator deployment to verify it's running in your namespace: 
 
-```
+```sh
 kubectl get deployment -l name=redis-enterprise-operator
 ```
 
 You should see a result similar to this:
 
-```
+```sh
 NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 redis-enterprise-operator   1/1     1            1           0m36s
 ```
