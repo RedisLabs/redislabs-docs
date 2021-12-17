@@ -58,17 +58,24 @@ cluster with OpenShift.
 
     You should receive the following response:
 
-    ```bash
-    oc adm policy add-scc-to-group redis-enterprise-scc  system:serviceaccounts:<project-name>
+    ```sh
+    securitycontextconstraints.security.openshift.io "redis-enterprise-scc" configured
     ```
 
-    You can see the name of your project with `oc project`.
+1. Provide the operator permissions for the pods.
+
+    ```sh
+    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:redis-enterprise-operator
+    oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:rec
+    ```
+
+    You can see the name of your project with the `oc project` command to replace `<my-project>` in the command above. Replace `rec` with the name of your Redis Enterprise cluster, if different. 
 
 1. Deploy the OpenShift operator bundle.
 
     {{< warning >}}Changes to the `openshift.bundle.yaml` file can cause unexpected results.{{< /warning >}}
 
-    ```bash
+    ```sh
     oc apply -f openshift.bundle.yaml
     ```
 
@@ -101,13 +108,13 @@ cluster with OpenShift.
 
 1. Check the cluster status
 
-    ```bash
+    ```sh
     kubectl get pod
     ```
 
     You should receive a response similar to the following:
     
-    ```bash
+    ```sh
     | NAME                             | READY | STATUS  | RESTARTS | AGE |
     | -------------------------------- | ----- | ------- | -------- | --- |
     | rec-name-0              | 2/2   | Running | 0        | 1m  |
@@ -122,7 +129,7 @@ cluster with OpenShift.
 1. Verify the secret has been created.
    The operator creates a Kubernetes secret for the admission controller during deployment.
 
-      ```bash
+      ```sh
       kubectl get secret admission-tls
       ```
 
@@ -153,7 +160,7 @@ cluster with OpenShift.
     EOF
     ```
 
-1. Patch the validating webhook with the certificate. 
+1. Patch the validating webhook with the certificate.
 
     ```sh
     kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
