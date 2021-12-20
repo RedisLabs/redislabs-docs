@@ -21,7 +21,7 @@ This is a maintenance release for RedisJSON 2.0.
 
 Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
 
-This patch neutralises the increased memory consumption from v1 to v2.
+This patch neutralizes the increased memory consumption from v1 to v2.
 
 Details:
 
