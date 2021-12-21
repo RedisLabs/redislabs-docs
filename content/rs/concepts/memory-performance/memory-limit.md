@@ -10,6 +10,8 @@ aliases: [
     /rs/administering/database-operations/memory-limit.md, 
     /rs/concepts/memory-architecture/memory-limit/,
     /rs/concepts/memory-architecture/memory-limit.md,
+    /rs/concepts/memory-performance/memory-limit.md,
+    /rs/concepts/memory-performance/memory-limit/,
 ]
 ---
 When you set a database's memory limit, you define the maximum size the

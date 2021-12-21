@@ -23,7 +23,7 @@ for replica shards is used, the replica shard is automatically migrated on node 
 
 {{< warning >}}
 Enabling replication has implications for the total database size,
-as explained in [Database memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}).
+as explained in [Database memory limits]({{< relref "/rs/concepts/memory-architecture/memory-limit.md" >}}).
 {{< /warning >}}
 
 ## Redis on Flash replication considerations
