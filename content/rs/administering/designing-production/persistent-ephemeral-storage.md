@@ -1,9 +1,14 @@
 ---
-Title: Persistent and ephemeral storage
+Title: Node persistent and ephemeral storage
+linktitle: Persistent node storage
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    content/rs/administering/designing-production/persistent-ephemeral-storage.md,
+    content/rs/administering/designing-production/persistent-ephemeral-storage/,
+]
 ---
 For each node in the cluster, you can configure both persistent
 storage and ephemeral storage paths.
