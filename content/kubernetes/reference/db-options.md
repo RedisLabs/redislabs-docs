@@ -59,7 +59,7 @@ suffixed with a unit. For example, values like 1GB, 250MB, etc.
 
 ### `persistence`
 
-The value for the [database persistence]({{< relref "/rs/concepts/data-access/persistence.md">}}) setting.
+The value for the [database persistence]({{< relref "/rs/concepts/memory-performance/persistence.md">}}) setting.
 
 The value is a keyword with the values:
 

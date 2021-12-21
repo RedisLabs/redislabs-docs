@@ -1,5 +1,5 @@
 ---
-Title: Updating the Database Configuration
+Title: Updating the database configuration
 description:
 weight: $weight
 alwaysopen: false

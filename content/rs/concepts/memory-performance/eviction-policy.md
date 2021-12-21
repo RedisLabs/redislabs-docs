@@ -4,6 +4,12 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/database-operations/eviction-policy.md,
+    /rs/administering/database-operations/eviction-policy/,
+    /rs/concepts/memory-performance/eviction-policy.md,
+    /rs/concepts/memory-performance/eviction-policy/
+]
 ---
 The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.<!--more-->
 
