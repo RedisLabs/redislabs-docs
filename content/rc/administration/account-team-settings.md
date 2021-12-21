@@ -31,8 +31,32 @@ members on this account.
 Team members can have different roles to the account:
 
 - **Owner** - Can view, create, and edit any settings in the account
-- **Member** - Can view, create, and edit databases
+
+- **Manager** - Can view, create, and edit any settings in the subscription 
+
+    Managers can change subscription costs and change the payment methods associated with a subscription, but they cannot cannot add/remove available payment methods.
+
+- **Member** - Can view, create, and edit databases in Fixed accounts
+
+    Members may not impact costs associated with Flexible accounts; this means they cannot create databases or edit databases in ways that impact subscription cost.
+
 - **Viewer** - Can view all databases and their configurations (including database secrets)
+
+To illustrate, the following table shows each role's ability to perform common tasks using the admin console:
+
+| Task | Owner | Manager | Member | Viewer |
+|------|:-----:|:-------:|:------:|:------:|
+| Access management | <span title="Owners can manage account access">&#x2705; Yes</span> | <span title="Managers may not manage account access">&#x274c; No</span> | <span title="Members may not manage account access">&#x274c; No</span> | <span title="Viewers may not manage account access">&#x274c; No</span> | 
+| Account settings | <span title="Owners can change account settings">&#x2705; Yes</span> |  <span title="Managers may not manage account settings">&#x274c; No</span> | <span title="Members may not manage account settings">&#x274c; No</span> | <span title="Viewers may not manage account settings">&#x274c; No</span>  | 
+| Billing & payments |  <span title="Owners can add/remove payment methods and view history">&#x2705; Yes</span> | <span title="Managers may not add/remove payment methods or view billing history (Managers may change subscription payment methods between those available to the account)">&#x274c; No</span> | <span title="Members may not add/remove payment methods or view billing history">&#x274c; No</span> | <span title="Viewers may not add/remove payment methods or view billing history">&#x274c; No</span> | 
+| Create subscription | <span title="Owners can create new subscriptions">&#x2705; Yes</span> | <span title="Managers can create new subscriptions">&#x2705; Yes</span> | <span title="Members may not create subscriptions">&#x274c; No</span> | <span title="Viewers may not create subscriptions">&#x274c; No</span> |
+| Create database (Flexible) | <span title="Owners can create databases in Flexible subscriptions">&#x2705; Yes</span> | <span title="Managers can create databases in Flexible subscriptions">&#x2705; Yes</span> | <span title="Members may not create databases in Flexible subscriptions">&#x274c; No</span> | <span title="Viewers may not create databases in Flexible subscriptions">&#x274c; No</span> |
+| Edit database (affects cost) | <span title="Owners can edit databases in ways that impact subscription cost">&#x2705; Yes</span> | <span title="Managers can edit databases in ways that impact subscription costs">&#x2705; Yes</span> | <span title="Members may not edit databases in ways tht impact subscription cost">&#x274c; No</span> | <span title="Viewers may not edit databases in ways that impact subscription cost">&#x274c; No</span> |
+| Create database (Fixed) | <span title="Owners can create databases in Fixed subscriptions">&#x2705; Yes</span> | <span title="Managers can create databases in Fixed subscriptions">&#x2705; Yes</span> | <span title="Members can create databases in Fixed subscriptions">&#x2705; Yes</span> | <span title="Viewers may not create databases in Fixed subscriptions">&#x274c; No</span> |
+| Edit database (no cost impact ) | <span title="Owners can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Managers can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Members can change databases in ways that do not affect subscription cost">&#x2705; Yes</span> | <span title="Viewers may not create databases in ways that do not affect subscription cost">&#x274c; No</span> | 
+| View subscription | <span title="Owners can view subscription details">&#x2705; Yes</span> | <span title="Managers can view subscription details">&#x2705; Yes</span> | <span title="Members can view subscription details">&#x2705; Yes</span> | <span title="Viewers can view subscription details">&#x2705; Yes</span> |
+| View database | <span title="Owners can view database details">&#x2705; Yes</span> | <span title="Managers can view database details">&#x2705; Yes</span> | <span title="Members can view database details">&#x2705; Yes</span> | <span title="Viewers can view database details">&#x2705; Yes</span> |
+
 
 ### Team management for GCP Marketplace customers
 
