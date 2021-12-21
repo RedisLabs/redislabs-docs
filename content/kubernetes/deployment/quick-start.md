@@ -26,8 +26,8 @@ This quick start guide is for generic Kubernetes distributions ([kOps](https://k
 
 If you're running either OpenShift or VMWare Tanzu, we provide specific getting started guides for installing the Redis Enterprise Operator on these platforms:
 
-* [Redis Enterprise on OpenShift]({{< relref "/platforms/kubernetes/getting-started/openshift/_index.md" >}})
-* [Redis Enterprise on VMWare Tanzu]({{< relref "/platforms/kubernetes/getting-started/tanzu/_index.md" >}})
+* [Redis Enterprise on OpenShift]({{< relref "/kubernetes/deployment/openshift/_index.md" >}})
+* [Redis Enterprise on VMWare Tanzu]({{< relref "/kubernetes/deployment/tanzu/_index.md" >}})
 
 ## Prerequistes
 
