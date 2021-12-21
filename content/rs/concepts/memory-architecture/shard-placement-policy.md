@@ -5,7 +5,13 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/concepts/rebalancing-shard-placement/
+aliases: [
+    /rs/concepts/rebalancing-shard-placement/,
+    /rs/concepts/shard-placement-policy.md,
+    /rs/concepts/shard-placement-policy/,
+    content/rs/concepts/memory-architecture/shard-placement-policy.md,
+    content/rs/concepts/memory-architecture/shard-placement-policy/,
+]
 ---
 In Redis Enterprise Software, the location of master and replica shards on the cluster nodes can impact the database and node performance.
 Master shards and their corresponding replica shards are always placed on separate nodes for data resiliency.

@@ -1,9 +1,16 @@
 ---
-Title: Database Memory Limits
+Title: Database memory limits
+linktitle: Memory limits
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/database-operations/memory-limit/, 
+    /rs/administering/database-operations/memory-limit.md, 
+    /rs/concepts/memory-architecture/memory-limit/,
+    /rs/concepts/memory-architecture/memory-limit.md,
+]
 ---
 When you set a database's memory limit, you define the maximum size the
 database can reach in the cluster, across all database replicas and

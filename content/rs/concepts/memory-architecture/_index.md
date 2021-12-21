@@ -11,7 +11,7 @@ architecture to help optimize storage and performance.
 
 ## Memory limits
 
-Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "rs/concepts/terminology/.md#redis-instance-shard">}}) on the cluster. This limit includes data values, keys, module data, and overhead for other features.
+Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "rs/concepts/terminology/.md#redis-instance-shard">}}) on the cluster. This limit includes data values, keys, module data, and overhead for other features. Your memory limit will also determine the number of shards you'll need.
 
 There are a number of factors to consider when sizing your database:
 
@@ -21,6 +21,8 @@ There are a number of factors to consider when sizing your database:
 - database clustering: spreading your data into shards across multiple nodes means you cannot disable clustering or reduce the number of shards later.
 - database replication: enabling replication doubles memory consumption
 - Active-Active replication: enabling Active-Active replication requires double the memory of regular replication, which can be up to four times(4x) the original data size.
+
+For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-architecture/memory-management.md">}}) or [Database memory limits]({{<relref "content/rs/concepts/memory-architecture/memory-limit.md">}}).
 
 ## Eviction policies
 
@@ -40,14 +42,25 @@ Append-only files (AoF) keep a record of data changes and writes each change to 
 
 Snapshots capture all the data as it exists in one moment in time and writes it to disk, allowing you to recover the entire data set as it existed at that moment in time.
 
-For more information about data persistence see [Database persistence with Redis Enterprise Software]({{<relref “/rs/concepts/data-access/persistence.md”>}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
+For more info on data persistence see [Database persistence with Redis Enterprise Software]({{<relref “/rs/concepts/data-access/persistence.md”>}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
 
 ## Redis on Flash (RoF)
 
-By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Redis on Flash]({{<relref "/rs/concepts/memory-architecture/redis-flash/">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)).
+By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Redis on Flash]({{<relref "/rs/concepts/memory-architecture/redis-flash/">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Redis on Flash manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large data sets.
+
+For more info, see [Redis on Flash]({{<relref "/rs/concepts/memory-architecture/redis-flash.md">}}).
 
 ## Shard placement
 
+The location of the primary and replica shards on the cluster nodes can impact your database performance.
+primary shards and their corresponding replica shards are always placed on separate nodes for data resiliency.
+The shard placement policy helps to maintain optimal performance and resiliency.
+
+Redis Enterprise Software has two shard placement policies available:
+- **dense**: puts as many shards as possible on the smallest number of nodes
+- **sparse**: spread the shards across as many nodes as possible
+
+For more info about the shard placement policy, see [Shard placement policy]({{<relref "/rs/concepts/shard-placement-policy.md">}})
 
 ## Metrics
 
