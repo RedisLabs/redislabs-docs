@@ -1,6 +1,7 @@
 ---
 Title: Use Redis modules with RedisInsight
 linkTitle: Use modules
+description: If you enable a Redis module for a database, you can run module commands in the RedisInsight Workbench or CLI. RedisInsight also provides quick guide tutorials and a command helper to help you get familiar with module commands.
 weight: 40
 categories: ["RI"]
 ---
