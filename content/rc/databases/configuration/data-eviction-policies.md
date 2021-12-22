@@ -29,7 +29,7 @@ For each database, you can choose from these data eviction policies:
 |  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of keys with an "expire" field set |
 |  no eviction | Returns an error if the memory limit has been reached when trying to insert more data |
 
-Redis Cloud supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) (RoF)
+Redis Cloud supports [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) (RoF)
 to prevent data eviction but maintain high performance.
 
 RoF can extend your database across RAM and Flash Memory and intelligently manage "hot" (active) data in RAM and "cold" (less active) data in Flash memory (SSD).
