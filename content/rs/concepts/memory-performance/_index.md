@@ -39,7 +39,7 @@ When a database exceeds its memory limit, eviction policies determine which data
 
 The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the ‘expire’ field set.
 
-For more information about eviction policies, see [{{<relref "/rs/administering/database-operations/eviction-policy.md">}}]
+For more information about eviction policies, see [{{<relref "/rs/concepts/memory-performance/eviction-policy.md">}}]
 
 ## Persistence to disk
 
@@ -78,7 +78,7 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
-For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/administering/monitoring-metrics.md">}}), and [Memory statistics]({{<relref "/rs/concepts/memory-performance/memory-management.md#memory-statistics">}})
+For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/administering/monitoring-metrics/_index.md">}}), and [Memory statistics]({{<relref "/rs/concepts/memory-performance/memory-management.md#memory-statistics">}})
 
 
 

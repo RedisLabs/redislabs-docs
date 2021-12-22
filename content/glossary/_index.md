@@ -46,7 +46,7 @@ Provides applications read-only access to replicas of the data set from differen
 Log files that keep a record of data changes by writing to the end of a file. This happens with every write, or every second to allow data recovering the entire
 dataset by replaying the append-only log from the beginning to the end.
 
-More info: [Data Persistence]({{<relref "content/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "content/rs/concepts/data-access/persistence.md" >}})
+More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/persistence.md" >}})
 {{%/definition%}}
 
 ## C {#letter-c}
