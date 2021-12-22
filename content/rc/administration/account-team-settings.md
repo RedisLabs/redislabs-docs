@@ -1,38 +1,98 @@
 ---
-Title: Account and team settings
-description:
+Title: Access management
+description: Access management
 weight: 40
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/administration/account-team-settings/
+         /rc/administration/account-team-settings/
+         /rc/administration/account-team-settings.md
 ---
-On this page you can view settings for your Redis Cloud account and team.
-You can also:
 
-- Add or edit your VAT ID
-- Change the account time zone
-- Add a new Relic license key
-- Configure Multi-Factor Authentication (MFA)
+The **Access management** screen helps you manage:
 
-When you set up [SSL/TLS]({{< relref "/rc/security/database-security/tls-ssl.md" >}}) for your account,
-you must enter the downloadable Redis CA Certificate from this page.
+- The team of users allowed to access your subscription and its databases
+- The API keys that authenticate application access to your account.
 
-![settings](/images/rc/settings.png)
+Here, you learn how to manage your team users.  
 
-## Team management
+If your Redis Enterprise Cloud subscription is managed through Google Cloud Platform (GCP) marketplace, see [GCP Marketplace team management](#gcp-team-management) for help.
 
-To manage the team of people who have access to the account, click on
-the "Team" tab, and you will be presented with the current list of team
-members on this account.
+For help managing API keys, see [Manage API keys]({{< relref "/rc/api/get-started/manage-api-keys" >}}).
 
-- To add more team members, click ![Add](/images/rs/icon_add.png#no-click "Add").
-- To edit an existing team member, click ![Edit](/images/rc/icon_edit.png#no-click "Edit").
+## Manage team access
 
-Team members can have different roles to the account:
+The **Team** tab lets you manage the people allowed to access your account.  Each authorized person is assigned to a role that specifies their privileges.
+
+{{<image filename="images/rc/access-management-team-tab.png" alt="The Access management tab helps you manage the people allowed to access your subscription." >}}{{< /image >}}
+
+The list contains one entry summarizing the team settings for each user in your team.  By default, the list includes the account owner.
+
+The list includes several buttons and icons to help you manage the list:
+
+| Icon | Description |
+|:------:|-------------|
+| {{<image filename="images/rc/button-access-management-add.png" width="30px" alt="Use the Add button to add members to your team." >}}{{< /image >}} | The **Add** button lets you add members to your team |
+| {{<image filename="images/rc/icon-access-management-edit-user.png" width="30px" alt="Use the Edit button change details for a team member." >}}{{< /image >}} | The **Edit** button lets you edit the settings for the selected team member |
+| {{<image filename="images/rc/icon-access-management-delete-user.png" width="30px" alt="Use the Delete button to remove a member from your team." >}}{{< /image >}} | The **Delete** icon lets you remove members from your team
+| {{<image filename="images/rc/icon-list-filter.png" width="30px" alt="Use the Filter button to display team members that match specified conditions." >}}{{< /image >}} | **Filter** icons let you display team members matching conditions you specify |
+| <nobr>{{<image filename="images/rc/icon-list-sort-asc.png" width="30px" alt="The Sort ascending button displays members in ascending order according to the values of the selected field." >}}{{< /image >}}{{<image filename="images/rc/icon-list-sort-desc.png" width="30px" alt="The Sort descending button displays members in descending order according to the values of the selected field." >}}{{< /image >}}</nobr> | The **Sort ascending** and **Sort descending** icons display the list according to the selected order |
+
+If you have a large team, you can use the controls in the list footer to navigate quickly through the list.  These controls are disabled for small teams.
+
+### Add user
+
+When you add a member to your team, the **Add user** dialog appears.  
+
+{{<image filename="images/rc/access-management-add-user-dialog.png" width="50%" alt="Use the Add User dialog to specify the details for your new user." >}}{{< /image >}}
+
+Use this dialog to specify the following values:
+
+| Setting | Description |
+|---------|-------------|
+| **Name** | Name of the user displayed in the admin console and in email messages |
+| **Role** | The role identifies their subscription and account privileges.  For details, see [Team management roles](#team-management-roles). |
+| **Email** | The address used for alerts and other email messages regarding the account | 
+| **Alert emails** | Enable to be notified when subscription databases cross certain thresholds, such as exceeding memory limits or latency requirements |
+| **Operational emails** | Notifications about subscription and database changes, such as creating or deleting a database |
+| **Billing emails** | Notifications when bills are issued, paid, and so on |
+| **Multi-factor authentication** | Whether MFA is enabled for the member.  This is disabled when members have not enabled or confirmed MFA in their user profile settings |
+
+Use the **Add user** button to save your new team member details.
+
+### Edit user
+
+To edit user team details, select the user from the list and then select the **Edit** button.
+
+When you do this, the **Edit user** dialog displays the details you can change.  
+
+{{<image filename="images/rc/access-management-edit-user-dialog.png" width="50%" alt="Use the Edit User dialog to change the details for a user." >}}{{< /image >}}
+
+You can change any detail except the team member's email address.  (To change a team member's email address, update their user profile.)
+
+Use the **Save user** button to save your changes.
+
+### Delete user
+
+To remove a member from your team, select them from the list and then select the **Delete** button.  When you do this, a confirmation dialog appears.  
+
+{{<image filename="images/rc/access-management-delete-user-dialog.png" width="50%" alt="Use the confirm that you want to remove a user from your team." >}}{{< /image >}}
+
+Select the **Delete user** to confirm removal.  This action is permanent and cannot be undone.
+
+## Team management roles
+
+Each team member is assigned a role that identifies their privileges and limits their activities in the admin console.
+
+The following roles are available:
 
 - **Owner** - Can view, create, and edit any settings in the account
 
-- **Manager** - Can view, create, and edit any settings in the subscription 
+    Each subscription must have at least one account owner.  Accounts can have multiple owners.
+
+    Owners can also manage subscriptions, databases, and API keys.
+
+- **Manager** - Can view, create, and edit any setting in the subscription 
 
     Managers can change subscription costs and change the payment methods associated with a subscription, but they cannot cannot add/remove available payment methods.
 
@@ -42,7 +102,7 @@ Team members can have different roles to the account:
 
 - **Viewer** - Can view all databases and their configurations (including database secrets)
 
-To illustrate, the following table shows each role's ability to perform common tasks using the admin console:
+The following table shows each role's ability to perform common tasks using the admin console:
 
 | Task | Owner | Manager | Member | Viewer |
 |------|:-----:|:-------:|:------:|:------:|
@@ -58,89 +118,25 @@ To illustrate, the following table shows each role's ability to perform common t
 | View database | <span title="Owners can view database details">&#x2705; Yes</span> | <span title="Managers can view database details">&#x2705; Yes</span> | <span title="Members can view database details">&#x2705; Yes</span> | <span title="Viewers can view database details">&#x2705; Yes</span> |
 
 
-### Team management for GCP Marketplace customers
+## GCP Marketplace team management {#gcp-team-management}
 
+If you subscribed to Redis Enterprise Cloud using Google Cloud Platform (GCP) Marketplace, use the **IAM section** of the GCP console to manage your team.
 
-If you subscribed to Redis Enterprise Cloud using GCP Marketplace, you can manage your team from the **IAM section** of the GCP console.
-To grant Redis Cloud access to a GCP user, select the **Add** button to add a member, insert the email address, and then assign one of the following roles to the user:
+To grant Redis Cloud access to a GCP user, select the **Add** button to add a member, insert the email address, and then assign the following roles to the user:
 
- serviceusage.serviceUsageViewer & redisenterprisecloud.viewer - these roles should be assigned to member designated as viewer
- serviceusage.serviceUsageViewer & redisenterprisecloud.admin -  these roles should be assigned to member designated as owner
- 
-In case these roles do not appear, add a role to your project by doing the following:
+- To designate a viewer, assign `serviceusage.serviceUsageViewer` & `redisenterprisecloud.viewer`
+- To designate an owner, assign `serviceusage.serviceUsageViewer` & `redisenterprisecloud.admin`
+
+If these roles are not available, you can add them to your project:
+
 1. Select **Manage Roles** 
-1. Search the role on the **filter table** field ( for example: "service usage viewer" or "redis enterprise cloud admin")
-1. Place a check in the checkbox
-1. Select **Create role from selection** and select **Create**
-1. Go back to **IAM** to add a member and assign the desried roles.
 
-Users are not added to the team until they sign in to Redis Cloud using their single-sign on (SSO) credentials.
-Use the **manage on provider** button to do so. 
+1. Use the **filter table** field to locate the role. (Search for "service usage viewer" or "redis enterprise cloud admin".)
 
-## Multi-Factor Authentication (MFA)
+1. Select the role by placing a checkmark in the checkbox
 
-To reduce the chances of unauthorized access to the Redis Enterprise Cloud admin console, each user can enable MFA to require an authentication code at login.
-The account owner can also enable MFA enforcement for all users in the account to block users from logging in without MFA.
+1. Select **Create role from selection** and then select **Create**
 
-When MFA is enabled, it forces users to enter their username, password, and an authentication code sent to them by text message or generated by an app on their smartphone. MFA authentication requires a phone that can receive text messages.
+1. Use **IAM** to add a member and assign the desired role.
 
-### Using MFA for a user account
-
-Each user can enable and configure MFA for their user account.
-The default MFA configuration sends an authentication code by text message to enter when you log in.
-
-To configure MFA for your user account:
-
-1. Log in to your account.
-2. In the menu, click on your name.
-3. In your user profile, click **Multi-Factor Authentication**.
-4. Click **Activate Now**
-5. Enter your mobile phone number and enter the confirmation code sent to you by text message.
-
-Your account is now configured for MFA.
-When you log in to the Redis Cloud admin console, you are sent an authentication code by text message.
-
-To change the mobile phone number, select **Configure** for the text message code and enter the new mobile phone number.
-
-{{< note >}}
-We recommend that you also configure MFA for an Authenticator app as a second method of MFA.
-If you can't login to your account because of MFA, contact [Support](https://support.redislabs.com).
-
-If your mobile phone is lost or stolen, make sure you update the MFA configuration to prevent unauthorized logins.
-{{< /note >}}
-
-#### Configuring MFA for an authenticator app
-
-After you configure MFA for text messages, you can also configure MFA to work with a Time-based One-Time Password (TOTP) app such as Google Authenticator.
-Then when you log in to the admin console, you can select to use either an authentication code sent by text message or an authentication code shown in the Authenticator app for MFA.
-
-To configure MFA for the Authenticator app:
-
-1. Install the Google Authenticator app on your phone from the Apple Store or Google Play.
-1. Add Redis Enterprise Cloud to the app:
-    1. In your profile in your Redis Cloud account, click **Multi-Factor Authentication**.
-    1. Select **Configure** for the authenticator app.
-    1. On your phone, open the Authenticator app.
-    1. Select the plus sign and press **Scan a barcode**.
-    1. Scan the Redis Cloud barcode.
-
-To log in to the Redis Enterprise Cloud admin console, you can do MFA either with a text message or the Authenticator app.
-If you use with the Authenticator app, you must open the Authenticator app to locate the code that lets you sign in to the Redis Enterprise Cloud admin console.
-
-#### Deactivating MFA
-
-To deactivate MFA, go to your profile, select **Multi-Factor Authentication**, and select **Deactivate**.
-
-### Enforcing MFA for all user accounts
-
-Account owner users can enable MFA enforcement for all users in their account.
-After MFA is enforced for the account, all users that do not have MFA enabled are required to configure MFA the next time they log in to the Redis Enterprise Cloud admin console.
-
-- When you enable MFA enforcement, users can't disable MFA for their account.
-- When you disable MFA enforcement, users can disable MFA for their account.
-
-{{< tip >}}
-We recommend that you send an email to all the admin console users to notify them of this change before you enable MFA enforcement.
-{{< /tip >}}
-
-To enable MFA enforcement for all user accounts, the account owner must enable **MFA enforcement** in **Settings** > **Account**.
+Users must sign into Redis Enterprise Cloud using their single sign-on credentials before they appear in the team member list. 
