@@ -78,7 +78,7 @@ To remove a member from your team, select them from the list and then select the
 
 {{<image filename="images/rc/access-management-delete-user-dialog.png" width="50%" alt="Use the confirm that you want to remove a user from your team." >}}{{< /image >}}
 
-Select the **Delete user** to confirm removal.  This action is permanent and cannot be undone.
+Select the **Delete user** button to confirm removal.  This action is permanent and cannot be undone.
 
 ## Team management roles
 
