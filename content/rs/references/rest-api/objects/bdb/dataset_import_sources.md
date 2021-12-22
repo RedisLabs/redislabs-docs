@@ -17,7 +17,7 @@ You can import data to a database from the following location types:
 -   Microsoft Azure Storage
 -   NAS/Local Storage
 
-The source file to import should be in the [RDB]({{<relref "/rs/concepts/data-access/persistence">}}) format. It can also be in a compressed (gz) RDB file.
+The source file to import should be in the [RDB]({{<relref "/rs/concepts/memory-performance/persistence.md">}}) format. It can also be in a compressed (gz) RDB file.
 
 Supply an array of dataset import source objects to import data from multiple files.
 

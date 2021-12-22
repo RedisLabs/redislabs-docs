@@ -73,7 +73,7 @@ Every instance of an Active-Active database can receive write operations, and al
         When replication is enabled, every Active-Active database master shard is replicated to a corresponding replica shard. The replica shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
         We also recommend that you enable [replica HA]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) to ensure that the replica shards are highly-available for this synchronization.
 
-    - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
+    - [**Data persistence**]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
         AOF provides the fastest and most reliable method for instance failure recovery.

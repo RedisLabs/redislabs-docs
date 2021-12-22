@@ -51,7 +51,7 @@ Append-only files (AoF) keep a record of data changes and writes each change to 
 
 Snapshots capture all the data as it exists in one moment in time and writes it to disk, allowing you to recover the entire data set as it existed at that moment in time.
 
-For more info on data persistence see [Database persistence with Redis Enterprise Software]({{<relref "/rs/concepts/data-access/persistence.md">}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
+For more info on data persistence see [Database persistence with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/persistence.md">}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
 
 ## Redis on Flash (RoF)
 
