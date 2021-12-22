@@ -2,7 +2,7 @@
 Title: Database memory limits
 linktitle: Memory limits
 description:
-weight: $weight
+weight: 10
 alwaysopen: false
 categories: ["RS"]
 aliases: [

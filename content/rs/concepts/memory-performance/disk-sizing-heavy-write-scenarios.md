@@ -1,6 +1,6 @@
 ---
 Title: Disk sizing for heavy write scenarios
-linktitle: Disk sizing
+linktitle: Disk sizing for heavy writes
 description: Sizing considerations for persistent disk space for heavy throughput databases.
 weight: $weight
 alwaysopen: false

@@ -1,7 +1,7 @@
 ---
 Title: Eviction policies
 description:
-weight: $weight
+weight: 20
 alwaysopen: false
 categories: ["RS"]
 aliases: [

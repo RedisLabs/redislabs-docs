@@ -2,7 +2,7 @@
 Title: Database persistence with Redis Enterprise Software
 linktitle: Database persistence
 description:
-weight: $weight
+weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: [

@@ -39,9 +39,9 @@ When a database exceeds its memory limit, eviction policies determine which data
 
 The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the ‘expire’ field set.
 
-For more information about eviction policies, see [{{<relref "/rs/concepts/memory-performance/eviction-policy.md">}}]
+For more information, see [eviction policies]({{<relref "/rs/concepts/memory-performance/eviction-policy.md">}}).
 
-## Persistence to disk
+## Database persistence
 
 Both RAM memory and flash memory are at risk of data loss if a server or process fails. Persisting your data to disk helps protect it against loss in those situations. You can configure persistence at the time of database creation, or by editing the database’s configuration.
 
