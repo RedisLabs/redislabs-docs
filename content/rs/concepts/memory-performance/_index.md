@@ -29,7 +29,7 @@ There are a number of factors to consider when sizing your database:
 - [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
 - [**database clustering**]({{<relref "/rs/concepts/high-availability/clustering.md">}}): spreading your data into shards across multiple nodes means you cannot disable clustering or reduce the number of shards later.
 - [**database replication**]({{<relref "/rs/concepts/high-availability/replication.md">}}): enabling replication doubles memory consumption
-- [**Active-Active replication**]({{<relref "/rs/administering/designing-production/active-active.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times(4x) the original data size.
+- [**Active-Active replication**]({{<relref "/rs/administering/designing-production/active-active.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 
 For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/memory-management.md">}}) or [Database memory limits]({{<relref "/rs/concepts/memory-performance/memory-limit.md">}}).
 
@@ -49,20 +49,20 @@ There are two main types of persistence strategies in Redis Enterprise Software:
 
 Append-only files (AoF) keep a record of data changes and writes each change to the end of a file, allowing you to recover the dataset by replaying the writes in the append-only log.
 
-Snapshots capture all the data as it exists in one moment in time and writes it to disk, allowing you to recover the entire data set as it existed at that moment in time.
+Snapshots capture all the data as it exists in one moment in time and writes it to disk, allowing you to recover the entire dataset as it existed at that moment in time.
 
 For more info on data persistence see [Database persistence with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/persistence.md">}}) or [Durable Redis](https://redis.com/redis-enterprise/technology/durable-redis/).
 
 ## Redis on Flash (RoF)
 
-By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Redis on Flash manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large data sets.
+By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Redis on Flash manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large datasets.
 
 For more info, see [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}).
 
 ## Shard placement
 
 The location of the primary and replica shards on the cluster nodes can impact your database performance.
-primary shards and their corresponding replica shards are always placed on separate nodes for data resiliency.
+Primary shards and their corresponding replica shards are always placed on separate nodes for data resiliency.
 The shard placement policy helps to maintain optimal performance and resiliency.
 
 Redis Enterprise Software has two shard placement policies available:
@@ -74,7 +74,7 @@ For more info about the shard placement policy, see [Shard placement policy]({{<
 
 ## Metrics
 
-From the Redis Enterprise Software admin console, you can monitor the performance of you clusters, nodes, databases, and shards with real-time metrics. You can also enable alerts for node, cluster, or database events such as high memory usage or throughput.
+From the Redis Enterprise Software admin console, you can monitor the performance of your clusters, nodes, databases, and shards with real-time metrics. You can also enable alerts for node, cluster, or database events such as high memory usage or throughput.
 
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 

@@ -19,7 +19,7 @@ time to adjust itself to optimal performance.
 To ensure optimal performance, you must run your workload several times
 and for a long duration until performance stabilizes.
 
-In addition, you can be optimize your cluster for two different environments:
+In addition, you can optimize your cluster for two different environments:
 
 - Local-network environment
 - Cloud environment

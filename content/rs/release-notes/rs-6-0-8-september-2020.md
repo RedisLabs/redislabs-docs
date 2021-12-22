@@ -71,7 +71,7 @@ With build 6.0.8-32:
 
 ### Active-Active databases
 - RS44656 - A bug causing TLS mode for clients connections to toggle between ‘all communication’ to ‘for crdb communication only’ when performing a global configuration change. ***TBD***
-- RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database persistence]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}) are suffering from memory leak on slave the shards causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshot for Database Persistence or restart the slave shards ***TBD***.
+- RS51359 - Active-Active databases, using replication and Append Only File (AOF) for [Database persistence]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}), are suffering from memory leaks on replica shards, causing them to grow bigger than the master shards. Customers are advised to upgrade to RS 6.0.12 ***TBD***. Meanwhile you can use snapshots for Database Persistence or restart the replica shards ***TBD***.
 
 ### Upgrade
 
