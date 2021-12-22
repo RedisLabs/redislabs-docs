@@ -31,7 +31,7 @@ There are a number of factors to consider when sizing your database:
 - [**database replication**]({{<relref "/rs/concepts/high-availability/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/administering/designing-production/active-active.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times(4x) the original data size.
 
-For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-architecture/memory-management.md">}}) or [Database memory limits]({{<relref "/rs/concepts/memory-architecture/memory-limit.md">}}).
+For more information on memory limits, see [Memory management with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/memory-management.md">}}) or [Database memory limits]({{<relref "/rs/concepts/memory-performance/memory-limit.md">}}).
 
 ## Eviction policies
 
@@ -55,9 +55,9 @@ For more info on data persistence see [Database persistence with Redis Enterpris
 
 ## Redis on Flash (RoF)
 
-By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Redis on Flash]({{<relref "/rs/concepts/memory-architecture/redis-flash.md">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Redis on Flash manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large data sets.
+By default, Redis Enterprise Software stores your data entirely in [RAM](https://en.wikipedia.org/wiki/Random-access_memory) for improved performance. The [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}) feature enables your data to span both RAM and [SSD](https://en.wikipedia.org/wiki/Solid-state_drive) storage ([flash memory](https://en.wikipedia.org/wiki/Flash_memory)). Keys are always stored in RAM, but Redis on Flash manages the location of their values. Frequently used (hot) values are stored on RAM, but infrequently used (warm) values are moved to flash memory. This saves on expensive RAM space, which give you comparable performance at a lower cost for large data sets.
 
-For more info, see [Redis on Flash]({{<relref "/rs/concepts/memory-architecture/redis-flash.md">}}).
+For more info, see [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}).
 
 ## Shard placement
 
@@ -78,7 +78,7 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
-For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/administering/monitoring-metrics.md">}}), and [Memory statistics]({{<relref "/rs/concepts/memory-architecture/memory-management.md#memory-statistics">}})
+For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/administering/monitoring-metrics.md">}}), and [Memory statistics]({{<relref "/rs/concepts/memory-performance/memory-management.md#memory-statistics">}})
 
 
 
