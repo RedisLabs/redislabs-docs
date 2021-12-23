@@ -10,7 +10,6 @@ aliases: /rc/administration/customize-pro/
          /rc/administration/setup/customize-pro.md 
          /rc/administration/setup/customize-flexible-plan/
 ---
-
 Flexible subscriptions support any dataset size or throughput.  Pricing is based on your [workload requirements](https://redislabs.com/redis-enterprise-cloud/pricing/) (database size and throughput.)  
 
 When you create a Flexible subscription, a cost estimate is provided to help you understand the impact of your requirements.  
@@ -148,7 +147,7 @@ Use the **Subscriptions list** to check the status of your subscription.  You wi
 
 ### Shard types
 
-The shard types associated with your subscription depend on your database memory size and throughout requirements.  
+The shard types associated with your subscription depend on your database memory size and throughput requirements.  
 
 | Shard type | Capacity (Memory/Throughput) |
 |:------------|:----------|
