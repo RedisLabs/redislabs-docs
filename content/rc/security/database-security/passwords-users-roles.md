@@ -5,25 +5,31 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/security/data-access-control
+         /rc/security/database-security/passwords-users-roles/
+         /rc/security/database-security/passwords-users-roles.md
 ---
-
 All Redis Cloud databases require either [password-based authentication](#password-based-authentication) or
 [role-based access control](#role-based-access-control). Role-based access control allows you to define multiple
 users with fine-grained authorization features.
 
-To use role-based access control, you need a Redis Cloud database supporting version 6.0.0 and above. You
-can check your database's Redis version by navigating to the **View Database** screen...
+## Prerequisites
 
-![View Database](/images/rc/view-database-extended.png "View Database")
+To use role-based access control, your Redis cloud database needs to support Redis version 6.0.0 or later.
 
-..and then scrolling down to the **Redis Version Compliance** field:
+The **Redis version** of a database is displayed in the **General** section of the **Configuration** tab of the [database detail]({{<relref "rc/databases/view-edit-database">}}) screen.
 
-![Redis Version Compliance](/images/rc/redis-version-compliance.png "Redis Version Compliance")
+{{<image filename="images/rc/database-fixed-configuration-general.png" alt="The Redis version appears in the General section of the Configuration tab on the database details screen." >}}{{< /image >}}
 
 ## Password-based authentication {#password-based-authentication}
 
-Password-based authentication is a basic but essential Redis security feature. When you create a Redis Cloud database,
-your database is given a randomly generated password. You can see this password on the **View Database** screen.
+Password-based authentication is a basic but essential Redis security feature. When you create a Redis Cloud database, your database is given a randomly generated password called the **Default user password**.
+
+This appears in the **Security** section of the **Configuration** tab of the database details screen.
+
+{{<image filename="images/rc/database-fixed-configuration-security.png" alt="The Default user password appears in the Security section of the Configuration tab on the database details screen." >}}{{< /image >}}
+
+
+You can see this password on the **View Database** screen.
 
 ![Default User Password](/images/rc/default-user-password.png "Default User Password")
 

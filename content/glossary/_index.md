@@ -155,7 +155,7 @@ Deciding when and where shards will be moved if more network throughput, memory,
 {{%definition "multi-factor authentication (MFA)"%}}
 Method of authenticating users with pieces of evidence of the user's identity. When MFA is enabled on Redis Enterprise Cloud, users must enter their username, password, and an authentication code when logging in.
 
-More info: [Multi-factor authentication]({{<relref "/rc/security/admin-console-security/multi-factor-authentication.md">}})
+More info: [Multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication.md">}})
 {{%/definition%}}
 
 {{%definition "multi-master replication (MMR)"%}}

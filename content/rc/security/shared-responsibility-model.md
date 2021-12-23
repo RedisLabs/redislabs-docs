@@ -2,7 +2,7 @@
 Title: Redis Cloud shared responsibility model
 linkTitle: Shared responsibility model
 description:
-weight: 11
+weight: 10
 alwaysopen: false
 categories: ["RC"]
 ---

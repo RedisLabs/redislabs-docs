@@ -1,9 +1,11 @@
 ---
 Title: Encryption at rest
-description: Describes when data is encypted at rest and how to enable it for AWS subscriptions.
+description: Describes when data is encrypted at rest and how to enable it for AWS subscriptions.
 weight: 40
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/security/database-security/encryption-at-rest/
+         /rc/security/database-security/encryption-at-rest.md
 ---
 Redis Cloud databases write their data to disk whenever [persistence]({{<relref "/rc/databases/configuration/data-persistence.md">}}) is enabled. 
 

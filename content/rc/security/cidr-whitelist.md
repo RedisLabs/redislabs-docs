@@ -1,7 +1,8 @@
 ---
 Title: Configure CIDR allow list
+linkTitle: CIDR allow list
 description:
-weight: 85
+weight: 30
 alwaysopen: false
 categories: ["RC"]
 aliases: 

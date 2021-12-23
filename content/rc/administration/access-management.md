@@ -7,6 +7,10 @@ categories: ["RC"]
 aliases: /rv/administration/account-team-settings/
          /rc/administration/account-team-settings/
          /rc/administration/account-team-settings.md
+         /rc/security/admin-console-security/user-team-management/
+         /rc/security/admin-console-security/user-team-management.md
+         /rc/administration/account-team-settings/
+         /rc/administration/account-team-settings.md
 ---
 
 The **Access management** screen helps you manage:
@@ -14,7 +18,7 @@ The **Access management** screen helps you manage:
 - The team of users allowed to access your subscription and its databases
 - The API keys that authenticate application access to your account.
 
-Here, you learn how to manage your team users.  
+Here, you learn how to manage your team's users.  
 
 If your Redis Enterprise Cloud subscription is managed through Google Cloud Platform (GCP) marketplace, see [GCP Marketplace team management](#gcp-team-management) for help.
 
@@ -31,7 +35,7 @@ The list contains one entry summarizing the team settings for each user in your 
 The list includes several buttons and icons to help you manage the list:
 
 | Icon | Description |
-|:------:|-------------|
+|:----:|-------------|
 | {{<image filename="images/rc/button-access-management-add.png" width="30px" alt="Use the Add button to add members to your team." >}}{{< /image >}} | The **Add** button lets you add members to your team |
 | {{<image filename="images/rc/icon-access-management-edit-user.png" width="30px" alt="Use the Edit button change details for a team member." >}}{{< /image >}} | The **Edit** button lets you edit the settings for the selected team member |
 | {{<image filename="images/rc/icon-access-management-delete-user.png" width="30px" alt="Use the Delete button to remove a member from your team." >}}{{< /image >}} | The **Delete** button lets you remove members from your team
@@ -68,7 +72,7 @@ When you do this, the **Edit user** dialog displays the details you can change.
 
 {{<image filename="images/rc/access-management-edit-user-dialog.png" width="50%" alt="Use the Edit User dialog to change the details for a user." >}}{{< /image >}}
 
-You can change any detail except the team member's email address.  (To change a team member's email address, update their user profile.)
+You can change any detail except the team member's email address.
 
 Use the **Save user** button to save your changes.
 
