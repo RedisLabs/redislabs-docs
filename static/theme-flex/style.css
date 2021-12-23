@@ -81,6 +81,7 @@ header .logo {
 
 header .logo img {
   width: 163px !important;
+  height: 40px;
 }
 
 header nav.shortcuts {
