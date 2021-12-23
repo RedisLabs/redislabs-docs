@@ -1,1 +1,3 @@
+---
+---
 <a href="https://twitter.com/redislabs" target="_blank" class="social-twitter"><i class="fa fa-twitter"></i></a> | <a href="https://www.linkedin.com/company/redis-labs-inc/" target="_blank" class="social-linkedin">  <i class="fa fa-linkedin"></i></a> | <a href="https://github.com/RedisLabs/" target="_blank" class="social-github"><i class="fa fa-github"></i></a> | <a href="https://www.youtube.com/channel/UCD78lHSwYqMlyetR0_P4Vig" target="_blank" class="social-youtube"><i class="fa fa-youtube"></i></a> | © 2018 Redis Labs
