@@ -82,7 +82,7 @@ Install one of the supported ingress controllers:
               - path: /
                 backend:
                   serviceName: <db-name>
-                  servicePort: 443  
+                  servicePort: <db-port>  
   
     For HAProxy, insert the following into the `annotations` section:  
 
