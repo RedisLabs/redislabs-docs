@@ -74,7 +74,7 @@ To learn more, see [Upgrade the module for a database]({{<relref "/modules/add-m
 
 ### Fixes on build #53
 - RS67829 - Fixed a bug that caused Modules' auxiliary field not to get replicated between the primary and the replica shards. Applicable for RediSearch, RedisGraph and RedisGears and happening only at following scenarios:
-         - (A) On the destenation databases of a Replica Of upon a full sync operation
+         - (A) On the destination databases of a Replica Of upon a full sync operation
          - (B) Upon import operation
 
 ## Known limitations
