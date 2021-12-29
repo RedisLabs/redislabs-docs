@@ -18,16 +18,16 @@ To control this behavior, [change the]({{< relref "/rc/databases/view-edit-datab
 
 For each database, you can choose from these data eviction policies:
 
-|  **Options** | **Description** |
-|------------|-----------------|
-|  allkeys-lru | Evicts the least recently used (LRU) keys out of all keys in the database |
-|  allkeys-lfu | Evicts the least frequently used keys out of all keys
-|  allkeys-random | Randomly evicts keys out of all keys in the database |
-|  volatile-lru (**default**) | Evicts the least recently used (LRU) keys out of keys with an "expire" field set |
-|  volatile-lfu | Evicts the least frequently used keys out of all keys with an "expire" field set
-|  volatile-random | Randomly evicts keys with an "expire" field set |
-|  volatile-ttl | Evicts the shortest time-to-live and least recently used keys out of keys with an "expire" field set |
-|  no eviction | Returns an error if the memory limit has been reached when trying to insert more data |
+| **Available&nbsp;policies** | **Description** |
+|:------------|:-----------------|
+| allkeys-lru | Keeps most recently used keys; removes least recently used (LRU) keys |
+| allkeys-lfu | Keeps frequently used keys; removes least frequently used (LFU) keys |
+| allkeys-random | Randomly removes keys |
+| volatile-lru | Removes least recently used keys with `expire` field set to true (*Default*) |
+| volatile-lfu | Removes least frequently used keys with `expire` field set to true |
+| volatile-random | Randomly removes keys with `expire` field set to true |
+| volatile-ttl | Removes least frequently used keys with `expire` field set to true and the shortest remaining time-to-live (TTL) value |
+| no eviction | New values aren't saved when memory limit is reached<br/><br/>When a database uses replication, this applies to the primary database |
 
 Redis Cloud supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) (RoF)
 to prevent data eviction but maintain high performance.
