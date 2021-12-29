@@ -2,10 +2,19 @@
 Title: RediSearch 1.1 release notes
 linkTitle: v1.1 (April 2018)
 description: Aggregations engine.
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RediSearch v1.1.0 requires:
+
+- Minimum Redis compatibility version (database): 4.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.0.0
+
 ## RediSearch 1.1.0 (April 2018)
 
 This is a major version (we almost named it 2.0), which includes months of work, mostly on the brand new aggregations engine.

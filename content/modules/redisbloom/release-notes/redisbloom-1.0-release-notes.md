@@ -2,10 +2,19 @@
 Title: RedisBloom 1.0 release notes
 linkTitle: v1.0 (September 2017)
 description: First GA release of RedisBloom.
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RedisBloom v1.0.3 requires:
+
+- Minimum Redis compatibility version (database): 4.0
+- Minimum Redis Enterprise Software version (cluster): 5.0
+
 ## v1.0.3 (December 2017)
 
 This contains a single fix, issue #[19](https://github.com/RedisBloom/RedisBloom/issues/19).

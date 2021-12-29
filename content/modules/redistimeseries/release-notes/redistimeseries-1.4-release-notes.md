@@ -2,10 +2,18 @@
 Title: RedisTimeSeries 1.4 release notes
 linkTitle: v1.4 (September 2020)
 description: Added ability to backfill time series.
+min-version-db: "5.0.0"
+min-version-rs: "6.0.12"
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RedisTimeSeries v1.4.13 requires:
+
+- Minimum Redis compatibility version (database): 5.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.0.12
 
 ## v1.4.13 (November 2021)
 

@@ -7,72 +7,69 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 To quickly get access to a Redis database with a module,
-you can sign up for a free Redis Enterprise Cloud subscription, create a database, and then enable the module that you want to try out.
+you can sign up for a free [Redis Enterprise Cloud](https://app.redislabs.com/#/sign-up) subscription, create a database, and enable the module that you want to try.
 
-You can also try out modules with [Redis Enterprise Software]({{< relref "/rs/getting-started/_index.md" >}}), REdis Enterprise Software in a [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}), or any [other platform]({{< relref "/platforms/_index.md" >}}) that Redis Enterprise Software is offered on.
+The modules that are currently available for Redis Enterprise Cloud include:
 
-Free Redis Enterprise Cloud subscriptions are easy and avoid the hassle of managing infrastructure.
+- [RediSearch]({{<relref "/modules/redisearch/_index.md">}})
+- [RedisJSON]({{<relref "/modules/redisjson/_index.md">}})
+- [RedisGraph]({{<relref "/modules/redisgraph/_index.md">}})
+- [RedisTimeSeries]({{<relref "/modules/redistimeseries/_index.md">}})
+- [RedisBloom]({{<relref "/modules/redisbloom/_index.md">}})
 
-The modules that are currently available for Redis Enterprise Cloud are:
+Alternatively, you can use one of these methods to set up a Redis database with modules:
 
-- [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
-- [RedisGraph]({{< relref "/modules/redisgraph/_index.md" >}})
-- [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
-- [RedisJSON]({{< relref "/modules/redisjson/_index.md" >}})
-- [RedisTimeSeries]({{< relref "/modules/redistimeseries/_index.md" >}})
+- [Redis Enterprise Software]({{<relref "/rs/getting-started/_index.md">}})
+- Redis Enterprise Software in a [Docker container]({{<relref "/rs/getting-started/getting-started-docker.md">}})
+- [Other platforms]({{<relref "/kubernetes/_index.md">}}) for Redis Enterprise Software
 
-To get up and running with a Redis database and your preferred module:
+## Set up a Redis Cloud database
 
-1. Create a new subscription.
-1. Create a new database with the module enabled.
-1. Connect to the database.
+The following steps provide a high-level walkthrough to set up a Redis Cloud database with a module.
 
-The following steps provide a high-level walkthrough.  For more details, see the Redis Enterprise Cloud [quick start]({{< relref "/rc/rc-quickstart.md" >}})
+For more details, see the Redis Enterprise Cloud [quick start]({{<relref "/rc/rc-quickstart.md">}}).
 
-## Step 1: Create a new subscription
+### Step 1: Create a new subscription
 
 To create a new subscription:
 
-1. Go to [Redis Enterprise Cloud](http://app.redislabs.com) and follow the instructions to create a free subscription.
+1. Sign into the Redis Enterprise Cloud [admin console](http://app.redislabs.com) or create a new account.
 
-    After signing in to the Redis Cloud admin console, select **New Subscription**.
+1. Select **New subscription**.
 
-1. Select your subscription configuration:
+1. Configure your subscription:
 
-    1. For the cloud provider, select **Amazon Web Services** (AWS), **Google Cloud Platform** (GCP), or **Microsoft Azure**.
-    <!-- , **Microsoft Azure**, **Google Cloud Platform** -->
+    1. Select **Fixed plans**.
+    1. For the cloud vendor, select **Amazon Web Services** (AWS), **Google Cloud Platform** (GCP), or **Microsoft Azure**.
     1. Select a region to deploy the subscription to.
-    1. In the **Fixed size** panel, select the Free tier (30MB dataset size).
+    1. From the dataset size list, select the Free tier (30MB).
     1. Enter a name for the subscription.
-1. Click **Create**.
 
-This takes you to the **Create Database** screen.  
+1. Select **Create subscription**.
 
-## Step 2: Create a database with a module enabled
+### Step 2: Create a database with a module enabled
 
-After you create a subscription, you can create a database:
+After you create a subscription, select **New database** to create a new database:
 
-1. In **Database name**, enter a name for your database.
+1. In the **General** settings, enter a **Database name**.
 
-1. Uee the **Modules** drop-down list to select your module.
+1. Select your preferred module from the **Modules** <nobr>drop-down</nobr> list.
 
-1. Select **Activate**.
+1. Select **Activate database**.
 
-The database is in "Pending" status.
+### Step 3: Connect to your database
 
-When the database is created, you view the database settings, including:
+After creating the database, you can view its **Configuration** settings. You will need the following information to connect to your new database:
 
-- Endpoint: The address you use to connect to the database
-- Redis Password: The password you must use in your application connections to authenticate with the database
+- **Public endpoint**: The host address of the database
+- **Redis password**/**Default user password**: The password used to authenticate with the database
 
-## Step 3: Connect to your database
+With this information, you can connect to your database with the `redis-cli` command-line tool, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
 
-Now you can connect to the database with redis-cli, an application, or [RedisInsight](https://redislabs.com/redisinsight/).
+To try out your selected module, follow its corresponding quick start guide:
 
-To get started with the modules, go to the quick start guide for the module that you enabled:
-
-- [RediSearch]({{< relref "/modules/redisearch/redisearch-quickstart.md" >}})
-- [RedisJSON]({{< relref "/modules/redisjson/redisjson-quickstart.md" >}})
-- [RedisGraph]({{< relref "/modules/redisgraph/redisgraph-quickstart.md" >}})
-- [RedisTimeSeries]({{< relref "/modules/redistimeseries/redistimeseries-quickstart.md" >}})
-- [RedisBloom]({{< relref "/modules/redisbloom/redisbloom-quickstart.md" >}})
+- [RediSearch]({{<relref "/modules/redisearch/redisearch-quickstart.md">}})
+- [RedisJSON]({{<relref "/modules/redisjson/redisjson-quickstart.md">}})
+- [RedisGraph]({{<relref "/modules/redisgraph/redisgraph-quickstart.md">}})
+- [RedisTimeSeries]({{<relref "/modules/redistimeseries/redistimeseries-quickstart.md">}})
+- [RedisBloom]({{<relref "/modules/redisbloom/redisbloom-quickstart.md">}})

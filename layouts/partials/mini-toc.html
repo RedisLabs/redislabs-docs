@@ -39,7 +39,7 @@
           {{end}}
 
           <li>
-            <a href="#{{ $anchorID }}">{{ $header | plainify | htmlEscape }}</a>
+            <a href="#{{ $anchorID }}">{{ $header | plainify | safeHTML }}</a>
 
           {{ if eq $i (sub (len $headers) 1) }}
             {{ range seq (sub $prevHeaderLevel $headerLevel) }}
@@ -48,7 +48,7 @@
           {{end}}
       {{else}}
       <li>
-        <a href="#{{ $anchorID }}">{{ $header | plainify | htmlEscape }}</a>
+        <a href="#{{ $anchorID }}">{{ $header | plainify | safeHTML }}</a>
       {{end}}
     {{end}}
 

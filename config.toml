@@ -41,7 +41,7 @@ highlightClientSide = false # set true to use highlight.pack.js instead of the d
 menushortcutsnewtab = false # set true to open shortcuts links to a new tab/window
 googleAnalytics = "UA-92003007-1"
 googleTagManager = "GTM-KNWQXKB"
-bannerText = "Sign up for Redis Enterprise Cloud and use MATRIX200 to get $200 in credits and a chance to win a Tesla"
+bannerText = "Sign up for Redis Enterprise Cloud and use MATRIX200 to get $200 in credits."
 bannerLink = "https://redis.com/try-free?utm_source=docs&utm_medium=referral&utm_campaign=2021-11-reinvent+try_free"
 
 mac_dl_link = "https://downloads.redisinsight.redislabs.com/latest/redisinsight-mac.dmg"

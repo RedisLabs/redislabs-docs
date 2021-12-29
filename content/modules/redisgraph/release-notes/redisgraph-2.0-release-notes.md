@@ -2,10 +2,19 @@
 Title: RedisGraph 2.0 release notes
 linkTitle: v2.0 (January 2020)
 description: Enabled graph-aided search and graph visualisation. Cypher coverage. Performance improvements.
+min-version-db: "5.0.7"
+min-version-rs: "5.4.11"
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RedisGraph v2.0.21 requires:
+
+- Minimum Redis compatibility version (database): 5.0.7
+- Minimum Redis Enterprise Software version (cluster): 5.4.11
+
 ## v2.0.21 (October 2020)
 
 This is a maintenance release for version 2.0.

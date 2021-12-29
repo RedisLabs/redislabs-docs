@@ -1,0 +1,6 @@
+{{$oldString := .Get "oldString"}}
+{{$newString := .Get "newString"}}
+
+{{ $oldEmbed := .Inner}}
+{{ $newEmbed := replace $oldEmbed $oldString $newString }}
+{{ $newEmbed | safeHTML }}

@@ -2,10 +2,32 @@
 Title: RedisJSON 2.0 release notes
 linkTitle: v2.0 (November 2021)
 description: Index JSON documents. JSONPath support. Commands operate on multiple paths.
+min-version-db: "6.0.0"
+min-version-rs: "6.0.0"
 weight: 99
 alwaysopen: false
 categories: ["Modules"]
 ---
+## Requirements
+
+RedisJSON v2.0.5 requires:
+
+- Minimum Redis compatibility version (database): 6.0.0
+- Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.0.6 (December 2021)
+
+This is a maintenance release for RedisJSON 2.0.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+This patch neutralizes the increased memory consumption from v1 to v2.
+
+Details:
+
+- Improvements:
+
+  - [#563](https://github.com/RedisJSON/RedisJSON/pull/563) Introduction of [ijson](https://libraries.io/cargo/ijson).
 
 ## v2.0.5 (December 2021)
 
