@@ -18,12 +18,12 @@ To control this behavior, [change the]({{< relref "/rc/databases/view-edit-datab
 
 For each database, you can choose from these data eviction policies:
 
-|  **Options** | **Description** |
+|  **Available&nbsp;policies** | **Description** |
 |------------|-----------------|
 |  allkeys-lru | Keeps most recently used keys; removes least recently used (LRU) keys |
 |  allkeys-lfu | Keeps frequently used keys; removes least frequently used (LFU) keys |
 |  allkeys-random | Randomly removes keys |
-|  volatile-lru (**default**) | Removes least recently used keys with `expire` field set to true |
+|  volatile-lru | Removes least recently used keys with `expire` field set to true (*Default*) |
 |  volatile-lfu | Removes least frequently used keys with `expire` field set to true |
 |  volatile-random | Randomly removes keys with `expire` field set to true |
 |  volatile-ttl | Removes least frequently used keys with `expire` field set to true and the shortest remaining time-to-live (TTL) value |
