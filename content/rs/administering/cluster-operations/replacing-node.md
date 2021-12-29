@@ -4,6 +4,7 @@ description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: rs/cluster-administration/replacing-a-faulty-node
 ---
 If a node in your Redis Enterprise Software (RS)cluster is faulty, its status appears as **Down** in
 the **Status** column of the **Nodes** page, and in the **Cluster \>
