@@ -48,9 +48,9 @@ The docs are updated regularly; here are some recent highlights:
 
     - Legacy content has been updated to reflect current logos
 
-Finally, a variety of updates addressed typos, missing images, and other glitches
+Finally, a variety of updates addressed typos, missing images, and other glitches.
 
-To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-12-01..2021-12-31)
+To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-12-01..2021-12-31).
 
 ## November 2021
 
