@@ -20,14 +20,16 @@ architecture to help optimize storage and performance.
 
 ## Memory limits
 
-Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "rs/concepts/terminology.md#redis-instance-shard">}}) on the cluster. This limit includes data values, keys, module data, and overhead for other features. Your memory limit will also determine the number of shards you'll need.
+Database memory limits define the maximum size your database can reach across all database replicas and [shards]({{<relref "rs/concepts/terminology.md#redis-instance-shard">}}) on the cluster. Your memory limit will also determine the number of shards you'll need.
 
-There are a number of factors to consider when sizing your database:
+Besides your dataset, the memory limit must also account for replication, Active-Active overhead, and module overhead. These features can significantly increase your database size, sometimes increasing it by four times or more.
+
+Factors to consider when sizing your database:
 
 - **dataset size**: you want your limit to be above your dataset size to leave room for overhead.
-- **database throughput**: high throughput needs a higher memory limit.
+- **database throughput**: high throughput needs more shards, leading to a higher memory limit.
 - [**modules**]({{<relref "/modules/_index.md">}}): using modules with your database consumes more memory.
-- [**database clustering**]({{<relref "/rs/concepts/high-availability/clustering.md">}}): spreading your data into shards across multiple nodes means you cannot disable clustering or reduce the number of shards later.
+- [**database clustering**]({{<relref "/rs/concepts/high-availability/clustering.md">}}): spreading your data into shards across multiple nodes (scaling out) means you cannot disable clustering or reduce the number of shards later (scaling in).
 - [**database replication**]({{<relref "/rs/concepts/high-availability/replication.md">}}): enabling replication doubles memory consumption
 - [**Active-Active replication**]({{<relref "/rs/administering/designing-production/active-active.md">}}): enabling Active-Active replication requires double the memory of regular replication, which can be up to four times (4x) the original data size.
 
@@ -37,7 +39,7 @@ For more information on memory limits, see [Memory management with Redis Enterpr
 
 When a database exceeds its memory limit, eviction policies determine which data is removed. The eviction policy removes keys based on frequency of use, how recently used, randomly, expiration date, or a combination of these factors. The policy can also be set to `noeviction` to return a memory limit error when trying to insert more data.
 
-The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the ‘expire’ field set.
+The default eviction policy for databases is `volatile-lru` which evicts the least recently used keys out of all keys with the ‘expire’ field set. The default for Active-Active databases is `noeviction`.
 
 For more information, see [eviction policies]({{<relref "/rs/concepts/memory-performance/eviction-policy.md">}}).
 
@@ -62,7 +64,7 @@ For more info, see [Redis on Flash]({{<relref "/rs/concepts/memory-performance/r
 ## Shard placement
 
 The location of the primary and replica shards on the cluster nodes can impact your database performance.
-Primary shards and their corresponding replica shards are always placed on separate nodes for data resiliency.
+Primary shards and their corresponding replica shards are always placed on separate nodes for data resiliency and high availability.
 The shard placement policy helps to maintain optimal performance and resiliency.
 
 Redis Enterprise Software has two shard placement policies available:
@@ -79,7 +81,3 @@ From the Redis Enterprise Software admin console, you can monitor the performanc
 With the Redis Enterprise Software API, you can also integrate Redis Enterprise metrics into other monitoring environments, such as Prometheus.
 
 For more info about monitoring with Redis Enterprise Software, see [Monitoring with metrics and alerts]({{<relref "/rs/administering/monitoring-metrics/_index.md">}}), and [Memory statistics]({{<relref "/rs/concepts/memory-performance/memory-management.md#memory-statistics">}}).
-
-
-
-
