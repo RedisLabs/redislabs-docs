@@ -4,14 +4,6 @@ The docs are updated regularly; here are some recent highlights:
 
 ## December 2021
 
-@channel - Welcome to 2021.  Happy New Year!
-
-It's time to review what your friendly neighborhood Docs team did in December.
-
-According to [GitHub Pulse](https://github.com/RedisLabs/redislabs-docs/pulse/monthly), 9 contributors changed 74 files last month.  This led to 37 commits to master and 26 commits to other branches.  40 pull requests were active and 38 were merged.
-
-Here are some highlights:
-
 - Redis Enterprise Cloud updates
 
     - [Billing & payments](https://docs.redis.com/latest/rc/billing-and-payments/#apply-coupon) now describes how to apply coupons; duplicate content has been consolidated ([PR #1720](https://github.com/RedisLabs/redislabs-docs/pull/1720))
