@@ -10,10 +10,25 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisGraph v2.4.12 requires:
+RedisGraph v2.4.13 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.8
+
+## v2.4.13 (December 2021)
+
+This is a maintenance release for RedisGraph 2.4.
+
+Update urgency: `HIGH`: There is a critical bug that may affect a subset of users. Upgrade!
+
+Details:
+
+- Performance improvements
+    - [#2040](https://github.com/RedisGraph/RedisGraph/pull/2040) Use optimal order of traversals
+
+- Bug fixes:
+    - [#2046](https://github.com/RedisGraph/RedisGraph/pull/2046) Avoid serialization of duplicate graph keys (high urgency)
+    - [#2033](https://github.com/RedisGraph/RedisGraph/pull/2033) Update RediSearch to 2.0.13
 
 ## v2.4.12 (October 2021)
 
