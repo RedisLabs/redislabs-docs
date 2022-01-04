@@ -2,6 +2,56 @@
 
 The docs are updated regularly; here are some recent highlights:
 
+## December 2021
+
+- Redis Enterprise Cloud updates
+
+    - [Billing & payments](https://docs.redis.com/latest/rc/billing-and-payments/#apply-coupon) now describes how to apply coupons; duplicate content has been consolidated ([PR #1720](https://github.com/RedisLabs/redislabs-docs/pull/1720))
+
+    - [Shard descriptions](https://docs.redis.com/latest/rc/subscriptions/create-flexible-subscription/#shard-types) were added to the Create Flexible subscription topic ([PR #1717](https://github.com/RedisLabs/redislabs-docs/pull/1717))
+
+    - Eviction [policy descriptions](https://docs.redis.com/latest/rc/databases/configuration/data-eviction-policies/) have been updated ([PR #1721](https://github.com/RedisLabs/redislabs-docs/pull/1721))
+
+- Redis Enterprise Software doc updates
+
+    - Eviction [policy descriptions](https://docs.redis.com/latest/rs/administering/database-operations/eviction-policy/) have been updated; duplicate content has been consolidated ([PR #1721](https://github.com/RedisLabs/redislabs-docs/pull/1721))
+
+- Redis Enterprise for Kubernetes doc updates
+
+    - The Redis Enterprise for Kubernetes [quick start](https://docs.redis.com/latest/kubernetes/deployment/quick-start/) has been updated ([PR #1706](https://github.com/RedisLabs/redislabs-docs/pull/1706/))
+
+    - The OpenShift CLI [quick start](https://docs.redis.com/latest/kubernetes/deployment/openshift/openshift-cli/) has been updated ([PR #1675](https://github.com/RedisLabs/redislabs-docs/pull/1675/))
+
+- Redis module doc updates
+
+    - The Modules [quick start](https://docs.redis.com/latest/modules/modules-quickstart/) has been updated ([PR #1711](https://github.com/RedisLabs/redislabs-docs/pull/1711))
+
+    - A new RediSearch [quick start](https://docs.redis.com/latest/modules/redisearch/redisearch-quickstart/) is available ([PR #1711](https://github.com/RedisLabs/redislabs-docs/pull/1711))
+
+    - Release notes were added for [RedisJSON v2.0.6](https://docs.redis.com/latest/modules/redisjson/release-notes/redisjson-2.0-release-notes/) ([PR #1712](https://github.com/RedisLabs/redislabs-docs/pull/1712)) & v2.0.5 ([PR #1688](https://github.com/RedisLabs/redislabs-docs/pull/1688))  
+
+    - Release notes were added for [RediSearch v2.0.15](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/) ([PR #1704](https://github.com/RedisLabs/redislabs-docs/pull/1704))
+
+    - Module release note have been updated to reflect minimum version requirements and to highlight changes ([PR #1692](https://github.com/RedisLabs/redislabs-docs/pull/1692))
+
+- RedisInsight doc updates
+
+    - A new tutorial shows how to use [RedisInsight with modules](https://docs.redis.com/staging/jira-doc-523/ri/using-redisinsight/modules/) ([PR #1715](https://github.com/RedisLabs/redislabs-docs/pull/1715)) 
+
+    - The article showing how to deploy [RedisInsight to Kubernetes](https://docs.redis.com/staging/jira-doc-1040/ri/installing/install-k8s/) was updated to reflect the RedisInsight v2 private preview ([PR #1702](https://github.com/RedisLabs/redislabs-docs/pull/1702)) 
+
+- Infrastructure improvements
+
+    - Various issues have been resolved for in-page tables of contents (([PR #1703](https://github.com/RedisLabs/redislabs-docs/pull/1703), [PR #1697](https://github.com/RedisLabs/redislabs-docs/pull/1697), & [PR #1691](https://github.com/RedisLabs/redislabs-docs/pull/1691))
+
+    - "Hero" page icons have been refactored to improve doc experience ([PR #1683](https://github.com/RedisLabs/redislabs-docs/pull/1683))
+
+    - Legacy content has been updated to reflect current logos
+
+Finally, a variety of updates addressed typos, missing images, and other glitches.
+
+To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2021-12-01..2021-12-31).
+
 ## November 2021
 
 - Redis Enterprise Software doc updates: 
