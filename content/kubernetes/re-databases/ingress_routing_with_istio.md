@@ -11,7 +11,11 @@ aliases: [
 ]
 ---
 
-Redis Enterprise for Kubernetes version 6.2.8-tbd introduces the ability to use an Istio ingress gateway as an alternative to NGINX or HaProxy ingress controllers. Istio can also understand ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources. To configure Istio to work with the Redis Kubernetes operator, we will use two custom resources: a `Gateway` and a `VirtualService`. Then you'll be able to establish external access to your database.
+Redis Enterprise for Kubernetes version `6.2.8-tbd` introduces the ability to use an Istio ingress gateway as an alternative to NGINX or HaProxy ingress controllers.
+
+Istio can also understand ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources.
+
+To configure Istio to work with the Redis Kubernetes operator, we will use two custom resources: a `Gateway` and a `VirtualService`. Then you'll be able to establish external access to your database.
 
 ## Install and configure Istio for Redis Enterprise
 
@@ -34,15 +38,87 @@ Redis Enterprise for Kubernetes version 6.2.8-tbd introduces the ability to use 
     dig api.istio.k8s.my.redisdemo.com
     ```
 
-    Look in the `ANSWER SECTION` for the record.
-    
+    Look in the `ANSWER SECTION` for the record you just created.
+
     ```yaml
     ;; ANSWER SECTION:
     api.istio.k8s.my.redisdemo.com. 0 IN    A       12.345.678.910
     ```
 
-1. Create the `Gateway` custom resource file.
+## Create custom resources
 
-1. Create the `VirtualService` custom resource file.
+On a different namespace from `istio-system`, create and apply the gateway and virtual service resource files.
 
-1. On a different namespace from `istio-system`, apply the gateway and virtual service resource files.
+1. Create a `Gateway` custom resource file (`redis-gateway.yaml`).
+
+    ```yaml
+    apiVersion: networking.istio.io/v1alpha3
+    kind: Gateway
+    metadata:
+      name: redis-gateway
+    spec:
+      selector:
+        istio: ingressgateway 
+      servers:
+      - hosts:
+        - '*<.istio.k8s.my.redisdemo.com>'
+        port:
+          name: https
+          number: 443
+          protocol: HTTPS
+        tls:
+          mode: PASSTHROUGH
+    ```
+
+    {{<note>}}
+    - Replace `<.istio.k8s.my.redisdemo.com>` in the example file below with the domain matching your DNS record.
+    - The gateway's metadata name must be similar to the gateway's spec name (`redis-gateway` in this example).
+    - TLS passthrough mode is required to allow secure access to the database.
+    {{</note>}}
+
+1. Apply `gateway.yaml` to create the ingress gateway.
+
+    ```sh
+    kubectl apply -f gateway.yaml
+    ```
+
+1. Verify the gateway was created successfully.
+
+      ```sh
+      kubectl get gateway
+      NAME            AGE
+      redis-gateway   3h33m
+      ```
+
+1. Create the `VirtualService` custom resource file (`redis-vs.yaml`).
+
+    Replace `<.istio.k8s.my.redisdemo.com>` in the example file below with the domain matching your DNS record.
+
+    ```yaml
+    apiVersion: networking.istio.io/v1alpha3
+    kind: VirtualService
+    metadata:
+      name: redis-vs
+    spec:
+      gateways:
+      - redis-gateway
+      hosts:
+      - "*<.istio.k8s.my.redisdemo.com>"
+      tls:
+      - match:
+        - port: 443
+          sniHosts:
+          - api<.istio.k8s.my.redisdemo.com>
+        route:
+        - destination:
+            host: rec
+            port:
+              number: 9443
+      - match:
+        - port: 443
+          sniHosts:
+          - db1<.istio.k8s..my.redisdemo.com>
+        route:
+        - destination:
+            host: db1
+    ```
