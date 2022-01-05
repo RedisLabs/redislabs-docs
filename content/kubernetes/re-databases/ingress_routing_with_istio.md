@@ -34,7 +34,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 1. Create a DNS entry that resolves your chosen database hostname (or a wildcard `*` followed by your domain) to the Istio `EXTERNAL-IP`. This hostname is what you will use to access your database from outside the cluster.
 
-    In this example, any hostname ending in `.istio.k8s.my.redisdemo.com` will resolve to Istio's LoadBalancer's external IP `12.345.678.910`. Substitute your own values accordingly.
+    In this example, any hostname ending in `.istio.k8s.my.redisdemo.com` will resolve to the Istio LoadBalancer's external IP of `12.345.678.910`. Substitute your own values accordingly.
 
 1. Verify the record was created successfully.
 
@@ -88,6 +88,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
       ```sh
       kubectl get gateway
+
       NAME            AGE
       redis-gateway   3h33m
       ```
@@ -148,5 +149,5 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 To [test your external access]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md">}}) to the database, you need a client that supports [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) and [SNI](https://en.wikipedia.org/wiki/Server_Name_Indication).
 
-See [Test your access with Openssl]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md#test-your-access-with-openssl">}}) or [Test your access with Python]({{<relref "http://localhost:1313/kubernetes/re-databases/set-up-ingress-controller.md#test-your-access-with-python">}}).
+See [Test your access with Openssl]({{<relref "/kubernetes/re-databases/set-up-ingress-controller.md#test-your-access-with-openssl">}}) or [Test your access with Python]({{<relref "http://localhost:1313/kubernetes/re-databases/set-up-ingress-controller.md#test-your-access-with-python">}}) for more info.
 
