@@ -17,11 +17,11 @@ Before you can use RedisGears, you have to install the RedisGears module on your
 ### Step 1: Install RedisGears dependencies
 
 {{< note >}}
-This step is required for Redis Enterprise Software 6.0.8 and below only.
+This step is required for Redis Enterprise Software 6.0.8 and below only, or if your environment is not connected to the internet.
 For RS 6.0.12 and above, the dependencies are installed automatically when [you install with the `/v2/modules` endpoint]({{< relref "/modules/add-module-to-cluster.md#adding-a-module-using-the-rest-api" >}}).
 {{< /note >}}
 
-On each node in the Redis Enterprise cluster:
+On the master node in the Redis Enterprise cluster:
 
 1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module - Dependencies Package from the Redis Enterprise Software section of the Downloads page.
 1. Copy the dependencies package to a node in your cluster.
@@ -30,14 +30,13 @@ On each node in the Redis Enterprise cluster:
     ```sh
     # source /etc/opt/redislabs/redislabs_env_config.sh
     # mkdir -p $modulesdatadir/rg/<version_integer>/deps/
-    # tar -xvf /<path>/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<version_integer>/deps
+    # cp /<path>/redisgears-dependencies.linux-<os>-x64.<version>.tgz $modulesdatadir/rg/<version_integer>/deps
     # chown -R $osuser $modulesdatadir/rg
     ```
 
 {{< note >}}
 - `<version>` - The version number in the format `x.y.z`.
-- `<version_integer>` - The version number in integer format `xxyyzz` (`xyyzz` if `x` < 10). You can calculate this number using the formula `10000*x + 100*y + z`.
-- You must also run these commands on new nodes before you join them to an existing cluster.
+- `<version_integer>` - The version number in integer format `xxyyzz` (`xyyzz` if `x` < 10). You can calculate this number using the formula `10000*x + 100*y + z`. For example version 1.0.8 integer number is 10008.
 {{< /note >}}
 
 ### Step 2: Install the RedisGears module
