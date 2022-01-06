@@ -71,7 +71,7 @@ The redis-py client natively supports SSL.
 Use the `SSLConnection` class or instantiate your connection pool using a `rediss://` URL and the `from_url` method, like so:
 
 ```python
-r = redis.Redis( url='rediss://:password@hostname:port/0',
+r = redis.Redis.from_url( url='rediss://:password@hostname:port/0',
     password='password',
     ssl_keyfile='path_to_keyfile',
     ssl_certfile='path_to_certfile',
