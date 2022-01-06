@@ -11,9 +11,9 @@ aliases: /rs/administering/creating-databases/_index.md
 You can create Redis databases that are are clustered and distributed across a single Redis Enterprise Software (RS) cluster.
 These databases can use Redis Enterprise features like:
 
-- [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+- [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}})
 - [High availability]({{< relref "/rs/concepts/high-availability/_index.md" >}})
-- [Data persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
+- [Data persistence]({{< relref "/rs/concepts/memory-performance/persistence.md" >}})
 - [Redis modules]({{< relref "/rs/developing/modules/_index.md" >}})
 
 You can create databases according to the number of shards in your subscription
@@ -40,7 +40,7 @@ To create a new database:
 
 1. Click **Next** to create a single-region, in-memory database.
 
-    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+    If your cluster supports [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory.
 
     ![getstarted-newdatabase](/images/rs/getstarted-newdatabase.png)
@@ -57,13 +57,13 @@ To create a new database:
 The database name is not case-sensitive
         {{< /note >}}
 
-    - **Memory limit** - The [memory limit]({{< relref "/rs/administering/database-operations/memory-limit.md" >}}) includes all database replicas and shards,
+    - **Memory limit** - The [database memory limits]({{< relref "/rs/concepts/memory-performance/memory-limit.md" >}}) includes all database replicas and shards,
         including slave shards in database replication and database shards in database clustering.
         If the total size of the database in the cluster reaches the memory limit,
         then the data eviction policy for the database is enforced.
 
         {{< note >}}
-If you create a [Redis Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}})
+If you create a Redis on Flash
 or a Memcached Flash database, you also have to set the RAM-to-Flash ratio
 for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
         {{< /note >}}
@@ -94,7 +94,7 @@ for this database. Minimum RAM portion is 10%, and maximum RAM portion is 50%.
 
         {{< video "/images/rs/multiple-modules.mp4" "Adding multiple modules" >}}
 
-    - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
+    - [**Data persistence**]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File.
 
@@ -148,7 +148,7 @@ after the database is created.
 
     - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
 
-    - [**Data eviction policy**]({{< relref "/rs/administering/database-operations/eviction-policy.md" >}}) -
+    - [**Data eviction policy**]({{< relref "/rs/concepts/memory-performance/eviction-policy.md" >}}) -
     By default, when the total size of the database reaches its memory limit the database evicts keys
     according to the least recently used keys out of all keys with an "expire" field set
     in order to make room for new keys. You can select a different data eviction policy.

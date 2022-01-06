@@ -1,12 +1,20 @@
 ---
-Title: Disk Sizing for Heavy Write Scenarios
-description:
+Title: Disk sizing for heavy write scenarios
+linktitle: Disk sizing for heavy writes
+description: Sizing considerations for persistent disk space for heavy throughput databases.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/designing-production/performance/disk-sizing-heavy-write-scenarios.md,
+    /rs/administering/designing-production/performance/disk-sizing-heavy-write-scenarios/,
+    /rs/concepts/memory-performance/disk-sizing-heavy-write-scenarios.md,
+    /rs/concepts/memory-performance/disk-sizing-heavy-write-scenarios/,
+
+]
 ---
 In extreme write scenarios, when AOF is enabled, the AOF rewrite process
-may require considerably more disk space for database persistence.
+may require considerably more disk space for database persistence.
 
 To estimate the required persistent disk space in such cases, use the
 formula described below.
@@ -15,7 +23,7 @@ formula described below.
 write scenarios, assuming identical shard sizes:**
 
 **X (1 + 3Y +Y²)**
-      where:
+where:
 **X** = each shard size
 **Y** = number of shards
 

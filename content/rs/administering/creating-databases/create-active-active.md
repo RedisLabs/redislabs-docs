@@ -55,7 +55,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create an Active-Active database on RAM.
 
-    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial Active-Active database sync of a new replica.
 
@@ -73,7 +73,7 @@ Every instance of an Active-Active database can receive write operations, and al
         When replication is enabled, every Active-Active database master shard is replicated to a corresponding replica shard. The replica shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
         We also recommend that you enable [replica HA]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) to ensure that the replica shards are highly-available for this synchronization.
 
-    - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
+    - [**Data persistence**]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
         AOF provides the fastest and most reliable method for instance failure recovery.

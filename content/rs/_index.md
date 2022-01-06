@@ -49,7 +49,7 @@ Geo-distributed Active-Active databases combine [conflict-free replicated data t
 
 ## Redis on Flash
 
-[Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}) offers dramatic cost savings for extra large Redis databases.
+[Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}) offers dramatic cost savings for extra large Redis databases.
 Standard Redis databases keep all of their data in RAM; Redis on Flash databases distribute data across RAM and dedicated flash memory (SSD).
 This lowers costs while maintaining similar performance to completely RAM-based databases.
 

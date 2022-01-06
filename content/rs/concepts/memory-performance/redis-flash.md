@@ -1,9 +1,15 @@
 ---
 Title: Redis on Flash
 description:
-weight: $weight
+weight: 40
 alwaysopen: false
 categories: ["RS"]
+aliases: [
+    /rs/concepts/memory-architecture/redis-flash/,
+    /rs/concepts/memory-architecture/redis-flash.md,
+    /rs/concepts/memory-performance/redis-flash/,
+    /rs/concepts/memory-performance/redis-flash.md,
+]
 ---
 Redis on Flash (RoF) offers users of [Redis Enterprise
 Software]({{< relref "/rs/_index.md" >}}) and [Redis

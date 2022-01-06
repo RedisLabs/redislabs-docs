@@ -46,7 +46,7 @@ Provides applications read-only access to replicas of the data set from differen
 Log files that keep a record of data changes by writing to the end of a file. This happens with every write, or every second to allow data recovering the entire
 dataset by replaying the append-only log from the beginning to the end.
 
-More info: [Data Persistence]({{<relref "content/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "content/rs/concepts/data-access/persistence.md" >}})
+More info: [Data Persistence]({{<relref "/rc/databases/configuration/data-persistence.md" >}}), [Data Persistence with Redis Enterprise Software]({{<relref "/rs/concepts/memory-performance/persistence.md" >}})
 {{%/definition%}}
 
 ## C {#letter-c}
@@ -235,7 +235,7 @@ Single-threaded Redis OSS database.
 {{%definition "Redis on Flash (RoF)"%}}
 Enables your Redis databases to span both RAM and dedicated flash memory (SSD). Redis on Flash manages the location of key values (RAM vs Flash) in the database via a LRU-based (least-recently-used) mechanism.
 
-More info: [Redis on Flash]({{<relref "/rs/concepts/memory-architecture/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/getting-started/getting-started-redis-flash.md">}})
+More info: [Redis on Flash]({{<relref "/rs/concepts/memory-performance/redis-flash.md">}}), [Getting Started with Redis on Flash (RoF)]({{<relref "/rs/getting-started/getting-started-redis-flash.md">}})
 {{%/definition%}}
 
 {{%definition "Replica Of"%}}

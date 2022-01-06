@@ -1,9 +1,15 @@
 ---
 Title: Eviction policies
 description:
-weight: $weight
-alwaysopen: false
+weight: 20
+alwaysOpen: false
 categories: ["RS"]
+aliases: [
+    /rs/administering/database-operations/eviction-policy.md,
+    /rs/administering/database-operations/eviction-policy/,
+    /rs/concepts/memory-performance/eviction-policy.md,
+    /rs/concepts/memory-performance/eviction-policy/
+]
 ---
 
 The eviction policy determines what happens when a database reaches its memory limit.  
@@ -42,7 +48,7 @@ Data eviction policies are not supported for Active-Active databases with Redis 
 
 To avoid data eviction, make sure your database is large enough to hold required values.  
 
-For larger databases, consider using [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
+For larger databases, consider using [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}).
 
 Redis on Flash stores actively-used data (also known as _hot data_) in RAM and the remaining data in Flash memory (SSD).
 This lets you retain more data while ensuring the fastest access to the most critical data.

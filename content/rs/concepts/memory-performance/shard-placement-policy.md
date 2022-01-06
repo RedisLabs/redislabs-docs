@@ -2,10 +2,18 @@
 Title: Shard placement policy
 linkTitle: Shard placement policy
 description:
-weight: $weight
+weight: 50
 alwaysopen: false
 categories: ["RS"]
-aliases: /rs/concepts/rebalancing-shard-placement/
+aliases: [
+    /rs/concepts/rebalancing-shard-placement/,
+    /rs/concepts/shard-placement-policy.md,
+    /rs/concepts/shard-placement-policy/,
+    /rs/concepts/memory-architecture/shard-placement-policy.md,
+    /rs/concepts/memory-architecture/shard-placement-policy/,
+    /rs/concepts/memory-performance/shard-placement-policy.md,
+    /rs/concepts/memory-performance/shard-placement-policy/,
+]
 ---
 In Redis Enterprise Software, the location of master and replica shards on the cluster nodes can impact the database and node performance.
 Master shards and their corresponding replica shards are always placed on separate nodes for data resiliency.
