@@ -590,7 +590,6 @@ rladmin tune db <db:id | name>
         [ syncer_monitoring <enabled | disabled> ]
         [ mtls_allow_weak_hashing <enabled | disabled> ]
         [ mtls_allow_outdated_cert <enabled | disabled> ]
-        [ mtls_allow_no_xkusage <enabled | disabled> ]
         [ data_internode_encryption <enable | disable> ]
 ```
 

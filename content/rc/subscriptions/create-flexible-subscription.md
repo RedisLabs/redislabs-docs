@@ -10,7 +10,6 @@ aliases: /rc/administration/customize-pro/
          /rc/administration/setup/customize-pro.md 
          /rc/administration/setup/customize-flexible-plan/
 ---
-
 Flexible subscriptions support any dataset size or throughput.  Pricing is based on your [workload requirements](https://redislabs.com/redis-enterprise-cloud/pricing/) (database size and throughput.)  
 
 When you create a Flexible subscription, a cost estimate is provided to help you understand the impact of your requirements.  
@@ -21,7 +20,7 @@ To create a [Flexible subscription]({{< relref "/rc/subscriptions/#subscription-
 
 1.  From the admin console menu, select the **New Subscription** button.  
 
-    {{<image filename="images/rc/button-subscription-new.png" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
+    {{<image filename="images/rc/button-subscription-new.png" width="20%" alt="The New subscriptions button in the admin console menu." >}}{{< /image >}}
 
 2. When the **New subscription** page appears, select **Flexible plans** and then scroll to the cloud vendor options.
 
@@ -82,7 +81,7 @@ The following settings are defined in the **Advanced options** of the **Setup** 
 
 When finished, choose **Continue** to determine your subscription size requirements.
 
-{{<image filename="images/rc/button-subscription-continue.png" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
+{{<image filename="images/rc/button-subscription-continue.png" width="100px" alt="Select the Continue button to continue to the next step." >}}{{< /image >}}
 
 ## Sizing tab
 
@@ -92,7 +91,7 @@ The **Sizing** tab helps you specify the database, memory, and throughput requir
 
 When you first visit the **Sizing** tab, there are no databases defined.  Select the **Add** button to create one.
 
-{{<image filename="images/rc/icon-add-database.png" alt="Use the Add button to define a new database for your subscription." >}}{{< /image >}}
+{{<image filename="images/rc/icon-add-database.png" width="30px" alt="Use the Add button to define a new database for your subscription." >}}{{< /image >}}
 
 This opens the **New Database** dialog, which lets you define the requirements for your new database.
 
@@ -100,7 +99,7 @@ This opens the **New Database** dialog, which lets you define the requirements f
 
 By default, you're shown basic settings, which include:
 
-| New database setting | Description |
+| Database&nbsp;setting | Description |
 |:---------|:-----------|
 | **Name** | A custom name for your database (_required_) |
 | **Throughput/Shards** | Identifies maximum throughput for the database, which can be specified in terms of operations per second (**Ops/sec**) or number of shards dedicated to the database (**Shards**).throughput is measured for the database, either operations per second (_Ops/sec_) or _Number of shards_. |
@@ -114,7 +113,7 @@ Advanced options are also available.
 
 Select **Advanced options** to specify values for the following settings:
 
-| New database<br/>advanced option | Description |
+| Advanced&nbsp;option | Description |
 |:---------|:-----------|
 | **OSS Cluster API** | Enable to use the open-source Redis Cluster API. |
 | **Protocol** | Set to _Memcached_ database to support the legacy database; otherwise leave at _Redis_ |
@@ -123,15 +122,13 @@ Select **Advanced options** to specify values for the following settings:
 
 When finished, select **Save Database** to create your database.
 
-{{<image filename="images/rc/button-database-save.png" alt="Select the Save Database button to define your new database." >}}{{< /image >}}
+{{<image filename="images/rc/button-database-save.png" width="140px" alt="Select the Save Database button to define your new database." >}}{{< /image >}}
 
 Use the **Add database** button to define additional databases or select the **Continue button** to display the **Review and create** tab.
 
 Use the **Edit** icon to change a database or the **Delete** icon to remove a database from the list.
 
-{{<image filename="images/rc/icon-database-edit.png" alt="Use the Edit button to change database settings." >}}{{< /image >}}
- &nbsp; 
-{{<image filename="images/rc/icon-database-delete.png" alt="Use the Delete button to remove a database." >}}{{< /image >}}
+{{<image filename="images/rc/icon-database-edit.png" width="30px" alt="Use the Edit button to change database settings." >}}{{< /image >}}&nbsp;{{<image filename="images/rc/icon-database-delete.png" width="30px" alt="Use the Delete button to remove a database." >}}{{< /image >}}
 
 
 ## Review and Create tab
@@ -142,8 +139,22 @@ The **Review & Create** tab provides a cost estimate for your Flexible plan:
 
 Select **Back to Sizing** to make changes or **Create subscription** to create your new Flexible subscription.
 
-{{<image filename="images/rc/button-subscription-create.png" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
+{{<image filename="images/rc/button-subscription-create.png" width="140px" alt="Select Create subscription to create your new subscription." >}}{{< /image >}}
 
 Note that subscriptions are created in the background.  While they are provisioning, you aren't allowed to make changes.  (The process generally takes 10-15 minutes.)
 
 Use the **Subscriptions list** to check the status of your subscription.  You will also receive an email when your subscription is ready to use.
+
+### Shard types
+
+The shard types associated with your subscription depend on your database memory size and throughput requirements.  
+
+| Shard type | Capacity (Memory/Throughput) |
+|:------------|:----------|
+| Micro | 1GB / 1K ops/sec |
+| High-throughput | 2.5GB / 25K ops/sec |
+| Small | 12.5GB / 12.5K ops/sec |
+| Large | 25GB  / 25K ops/sec |
+| Very large | 50GB / 5.0K ops/sec |
+
+Prices vary according to the cloud provider and region.  Minimum prices apply.  To learn more, see [Cloud pricing](https://redis.com/redis-enterprise-cloud/pricing/).

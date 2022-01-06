@@ -2,7 +2,7 @@
 Title: Eviction policies
 description:
 weight: 20
-alwaysopen: false
+alwaysOpen: false
 categories: ["RS"]
 aliases: [
     /rs/administering/database-operations/eviction-policy.md,
@@ -11,36 +11,44 @@ aliases: [
     /rs/concepts/memory-performance/eviction-policy/
 ]
 ---
-The eviction policy defines the methodology that Redis Enterprise Software uses when the database exceeds the memory limit.<!--more-->
 
-The eviction policies are:
+The eviction policy determines what happens when a database reaches its memory limit.  
 
-| **Policy** | **Description** |
+To make room for new data, older data is _evicted_ (removed) according to the selected policy.
+
+To prevent this from happening, make sure your database is large enough to hold all desired keys.  
+
+| **Eviction&nbsp;Policy** | **Description** |
 |------------|-----------------|
-|  noeviction | Returns an error if the memory limit has been reached when trying to insert more data |
-|  allkeys-lru | Evicts the least recently used keys out of all keys |
-|  allkeys-lfu | Evicts the least frequently used keys out of all keys |
-|  allkeys-random | Randomly evicts keys out of all keys |
-|  volatile-lru | Evicts the least recently used keys out of all keys with an "expire" field set |
-|  volatile-lfu | Evicts the least frequently used keys out of all keys with an "expire" field set |
-|  volatile-random | Randomly evicts keys with an "expire" field set |
-|  volatile-ttl | Evicts the shortest time-to-live keys out of all keys with an "expire" field set. |
+|  noeviction | New values aren't saved when memory limit is reached<br/><br/>When a database uses replication, this applies to the primary database |
+|  allkeys-lru | Keeps most recently used keys; removes least recently used (LRU) keys |
+|  allkeys-lfu | Keeps frequently used keys; removes least frequently used (LFU) keys |
+|  allkeys-random | Randomly removes keys |
+|  volatile-lru | Removes least recently used keys with `expire` field set to true |
+|  volatile-lfu | Removes least frequently used keys with `expire` field set to true |
+|  volatile-random | Randomly removes keys with `expire` field set to true |
+|  volatile-ttl | Removes least frequently used keys with `expire` field set to true and the shortest remaining time-to-live (TTL) value |
 
 ## Eviction policy defaults
 
-`volatile-lru` is the default eviction policy for databases, with the exception of Active-Active databases. The default for [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}) is `noeviction`. 
+`volatile-lru` is the default eviction policy for most databases.
 
-### Eviction for Active-Active Redis databases
+For performance reasons, the default policy for [Active-Active databases]({{< relref "/rs/administering/designing-production/active-active.md" >}}). 
+
+## Active-Active database eviction
 The eviction policy mechanism for Active-Active databases kicks in earlier than for regular databases because it requires propagation to all participating clusters. The eviction policy starts to evict keys when one of the Active-Active instances reaches 80% of its memory limit. If memory usage continues to rise while the keys are being evicted, the rate of eviction will increase to prevent reaching the Out-of-Memory state.
 
-In case of network issues between Active-Active instances, memory can only be freed when all instances are in sync. If there is no communication between participating clusters, it can result in eviction of all keys and the instance reaching an Out-of-Memory state.
+In case of network issues between Active-Active instances, memory can be freed only when all instances are in sync. If there is no communication between participating clusters, it can result in eviction of all keys and the instance reaching an Out-of-Memory state.
 
 {{< note >}}
 Data eviction policies are not supported for Active-Active databases with Redis on Flash (RoF).
 {{< /note >}}
 
-### Avoid data eviction
+## Avoid data eviction
 
-If you want to avoid data eviction, we recommend that you use [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}).
-Redis on Flash stores the hot data of your dataset in RAM and the rest of your dataset in Flash memory (SSD).
-This lets you keep more data in your database while only the most critical data is stored in high-cost RAM.
+To avoid data eviction, make sure your database is large enough to hold required values.  
+
+For larger databases, consider using [Redis on Flash (RoF)]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}).
+
+Redis on Flash stores actively-used data (also known as _hot data_) in RAM and the remaining data in Flash memory (SSD).
+This lets you retain more data while ensuring the fastest access to the most critical data.

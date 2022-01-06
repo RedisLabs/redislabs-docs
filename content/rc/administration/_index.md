@@ -17,34 +17,39 @@ The following links point you in the right direction.
 
 To manage subscriptions, you can:
 
-- Review available [subscription plans]({{<relref "/rc/subscriptions/_index.md">}}). 
+- Review available [subscription plans]({{<relref "/rc/subscriptions">}}). 
 
-- Use the Redis Cloud [quick start]({{<relref "/rc/rc-quickstart.md">}}) to create a free subscription and an initial database.  (Start here if you're new.)
+- Use the Redis Cloud [quick start]({{<relref "/rc/rc-quickstart">}}) to create a free subscription and an initial database.  (Start here if you're new.)
 
-- Create a [Fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription.md">}}).
+- Create a [Fixed subscription]({{<relref "/rc/subscriptions/create-fixed-subscription">}}).
 
-- Create a [Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription.md">}}).
+- Create a [Flexible subscription]({{<relref "/rc/subscriptions/create-flexible-subscription">}}).
 
-- View or update a [Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription.md">}}).
+- View or update a [Fixed subscription]({{<relref "/rc/subscriptions/view-fixed-subscription">}}).
 
-- View or update a [Flexible subscription]({{<relref "/rc/subscriptions/view-flexible-subscription.md">}}).
+- View or update a [Flexible subscription]({{<relref "/rc/subscriptions/view-flexible-subscription">}}).
 
 ## Manage databases
 
-- [Create a database]({{<relref "rc/databases/create-database.md">}})
+- [Create a database]({{<relref "rc/databases/create-database">}})
 
-- [View or edit a database]({{<relref "rc/databases/view-edit-database.md">}})
+- [View or edit a database]({{<relref "rc/databases/view-edit-database">}})
 
-- [Delete a database]({{<relref "rc/databases/delete-database.md">}})
+- [Delete a database]({{<relref "rc/databases/delete-database">}})
 
-- [Monitor database performance]({{<relref "rc/databases/monitor-performance.md">}}) 
+- [Monitor database performance]({{<relref "rc/databases/monitor-performance">}}) 
 
-- [Back up database data]({{<relref "rc/databases/back-up-data.md">}})
+- [Back up database data]({{<relref "rc/databases/back-up-data">}})
 
-- [Secure database access]({{<relref "rc/security/database-security/_index.md">}})
+- [Secure database access]({{<relref "rc/security/database-security">}})
 
 ## Other common tasks
 
-- Review [payment methods]({{<relref "rc/administration/payment-methods.md">}}) and [billing history]({{<relref "rc/administration/billing-history.md">}})
+Use [Billing & Payments]({{<relref "rc/billing-and-payments">}}) to:
 
-- Review [system logs]({{<relref "rc/administration/system-logs.md">}}) and [usage reports]({{<relref "rc/administration/usage-reports.md">}})
+- Review and download [invoices]({{<relref "rc/billing-and-payments#download-invoice">}})
+
+- Update [payment methods]({{<relref "rc/billing-and-payments#add-payment-method">}})
+
+- [Apply coupons]({{<relref "rc/billing-and-payments#apply-coupon">}})
+
