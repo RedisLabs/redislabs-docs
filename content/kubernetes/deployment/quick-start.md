@@ -202,7 +202,7 @@ You can test the operator by creating a minimal cluster by following this proced
    metadata:
      name: smalldb
    spec:
-     memory: 100MB
+     memorySize: 100MB
    EOF
    ```
 
