@@ -179,7 +179,7 @@ public class JedisExample {
      
   public static void main(String[] args) throws Exception {
     Jedis jedis = new Jedis("hostname", port);
-    jedis.auth("password")
+    jedis.auth("password");
     System.out.println("Connected to Redis");
   }
 }
