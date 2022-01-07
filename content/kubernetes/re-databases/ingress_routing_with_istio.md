@@ -29,7 +29,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
     kubectl get svc istio-ingressgateway -n istio-system
 
     NAME                   TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                                                                      AGE
-    istio-ingressgateway   LoadBalancer   12.34.567.89   12.345.678.910   15021:12345/TCP,80:67891/TCP,443:23456/TCP,31400:78901/TCP,15443:10112/TCP   3h8m
+    istio-ingressgateway   LoadBalancer   10.34.67.89   10.145.78.91   15021:12345/TCP,80:67891/TCP,443:23456/TCP,31400:78901/TCP,15443:10112/TCP   3h8m
     ```
 
 1. Create a DNS entry that resolves your chosen database hostname (or a wildcard `*` followed by your domain) to the Istio `EXTERNAL-IP`. This hostname is what you will use to access your database from outside the cluster.
@@ -56,7 +56,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 1. On a different namespace from `istio-system`, create a `Gateway` custom resource file (`redis-gateway.yaml`).
 
     ```yaml
-    apiVersion: networking.istio.io/v1alpha3
+    apiVersion: networking.istio.io/v1beta1
     kind: Gateway
     metadata:
       name: redis-gateway
@@ -75,7 +75,6 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
     ```
 
     - Replace `.istio.k8s.my.redisdemo.com` with the domain matching your DNS record.
-    - The gateway's metadata name must be similar to the gateway's spec name (`redis-gateway` in this example).
     - TLS passthrough mode is required to allow secure access to the database.
 
 1. Apply `gateway.yaml` to create the ingress gateway.
@@ -98,7 +97,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 1. On different namespace than `istio-system`, create the `VirtualService` custom resource file (`redis-vs.yaml`).
 
     ```yaml
-    apiVersion: networking.istio.io/v1alpha3
+    apiVersion: networking.istio.io/v1beta1
     kind: VirtualService
     metadata:
       name: redis-vs
@@ -126,7 +125,10 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
             host: db1
     ```
 
+    This creates both a route to contact the API server and a route to contact one of the databases (`db1` in this example).
+
     - Replace `.istio.k8s.my.redisdemo.com` with the domain matching your DNS record.
+    - The gateway's metadata name must be similar to the gateway's spec name (`redis-gateway` in this example).
 
 1. Apply `redis-vs.yaml` to create the virtual service.
 
