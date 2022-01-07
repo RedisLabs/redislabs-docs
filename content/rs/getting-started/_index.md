@@ -11,7 +11,7 @@ aliases: /rs/getting-started/quick-setup/
 ---
 This guide helps you install Redis Enterprise Software on a Linux host to test its capabilities.
 
-When finished, you'll have a simple cluser with a single node:
+When finished, you'll have a simple cluster with a single node:
 
 - Step 1: Install Redis Enterprise Software
 - Step 2: Set up a Redis Enterprise Software cluster
