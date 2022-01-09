@@ -41,6 +41,7 @@ Your Redis Enterprise database custom resource must be of the `kind: RedisEnterp
 1. Create a file (in this example mydb.yaml) that contains your database custom resource.
 
     ```YAML
+    apiVersion: app.redislabs.com/v1alpha1
     kind: RedisEnterpriseDatabase
     metadata:
       name: mydb
