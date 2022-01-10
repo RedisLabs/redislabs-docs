@@ -34,7 +34,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
 1. Create a DNS entry that resolves your chosen database hostname (or a wildcard `*` followed by your domain) to the Istio `EXTERNAL-IP`. Use this hostname to access your database from outside the cluster.
 
-    In this example, any hostname that ends with `.istio.k8s.my.redisdemo.com` will resolve to the Istio LoadBalancer's external IP of `12.345.678.910`. Substitute your own values accordingly.
+    In this example, any hostname that ends with `.istio.k8s.my.redisdemo.com` will resolve to the Istio LoadBalancer's external IP of `10.145.78.91`. Substitute your own values accordingly.
 
 1. Verify the record was created successfully.
 
@@ -46,7 +46,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
 
     ```sh
     ;; ANSWER SECTION:
-    api.istio.k8s.my.redisdemo.com. 0 IN    A       12.345.678.910
+    api.istio.k8s.my.redisdemo.com. 0 IN    A       10.145.78.91
     ```
 
 ## Create custom resources
