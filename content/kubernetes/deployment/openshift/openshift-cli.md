@@ -24,7 +24,10 @@ cluster with OpenShift.
 
 ## Prerequisites
 
-- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) installed at version 4.6 or higher, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}))
+- [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) installed, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}))
+  {{<note>}}
+If you are running an OpenShift 3 version, use the `bundle.yaml` file located in teh `openshift_3_x` folder in the `redis-enterprise-k8s-docs` repo. This folder also contains the custom resource definitions (CRDs) compatible with OpenShift 3.x.  
+  {{</note>}}
 - [kubectl tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/)  installed at version 1.9 or higher
 - [OpenShift CLI](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html) installed
 
@@ -69,15 +72,21 @@ cluster with OpenShift.
     oc adm policy add-scc-to-user redis-enterprise-scc system:serviceaccount:<my-project>:rec
     ```
 
-    You can see the name of your project with the `oc project` command to replace `<my-project>` in the command above. Replace `rec` with the name of your Redis Enterprise cluster, if different. 
+    You can see the name of your project with the `oc project` command to replace `<my-project>` in the command above. Replace `rec` with the name of your Redis Enterprise cluster, if different.
 
 1. Deploy the OpenShift operator bundle.
 
-    {{< warning >}}Changes to the `openshift.bundle.yaml` file can cause unexpected results.{{< /warning >}}
+  {{<note>}}
+If you are running on OpenShift 3.x, use the `openshift.bundle.yaml` file in the `openshift_3_x` folder.
+  {{</note>}}
 
-    ```sh
-    oc apply -f openshift.bundle.yaml
-    ```
+  ```sh
+  oc apply -f openshift.bundle.yaml
+   ```
+
+{{< warning >}}
+Changes to the `openshift.bundle.yaml` file can cause unexpected results.
+{{< /warning >}}
 
 1. Verify that your redis-enterprise-operator deployment is running, run:
 
