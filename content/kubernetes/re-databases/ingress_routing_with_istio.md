@@ -113,7 +113,7 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
           - api.istio.k8s.my.redisdemo.com
         route:
         - destination:
-            host: rec
+            host: rec1
             port:
               number: 9443
       - match:
@@ -125,10 +125,11 @@ To configure Istio to work with the Redis Kubernetes operator, we will use two c
             host: db1
     ```
 
-    This creates both a route to contact the API server and a route to contact one of the databases (`db1` in this example).
+    This creates both a route to contact the API server on the REC (`rec1`) and a route to contact one of the databases (`db1`).
 
     - Replace `.istio.k8s.my.redisdemo.com` with the domain that matches your DNS record.
     - The gateway's metadata name must be similar to the gateway's spec name (`redis-gateway` in this example).
+    - When creating an Active-Active database with the `crdb-cli` command,  
 
 1. Apply `redis-vs.yaml` to create the virtual service.
 

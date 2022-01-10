@@ -127,6 +127,16 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 1. Make sure you have DNS aliases for each database that resolve your API hostname `<api-hostname>`,`<ingress-suffix>`, `<replication-hostname>` to the IP address of the ingress controller’s LoadBalancer. To avoid entering multiple DNS records, you can use a wildcard in your alias (such as `*.ijk.redisdemo.com`).
 
+#### If using Istio Gateway and VirtualService
+
+No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/re-databases/ingress_routing_with_istio.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
+
+{{<warning>}}
+These custom resources are not controlled by the operator and will need to be configured and maintained manually.
+{{</warning>}}
+
+For each cluster, verify the VirtualService resource has two `- match:` blocks in the `tls` section. The hostname under `sniHosts:` should match your `<replication-hostname>`.
+
 ### Using OpenShift routes
 
 1. Make sure your Redis Enterprise cluster (REC) has a different name (`<rec-name.namespace>`) than any other participating clusters. If not, you'll need to manually rename the REC or move it to a different namespace.
@@ -161,7 +171,6 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
     NAME    HOST/PORT                       PATH    SERVICES  PORT  TERMINATION   WILDCARD
     rec01   api-openshift.apps.abc.redisdemo.com rec01   api             passthrough   None
     ```
-
 
 ## Create an Active-Active database with `crdb-cli`
 
