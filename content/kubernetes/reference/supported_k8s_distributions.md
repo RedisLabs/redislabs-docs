@@ -26,23 +26,28 @@ Each release of the Redis Enterprise operator is thoroughly tested against a set
 | OpenShift 4.6  (K8s 1.19)       | supported      |
 | OpenShift 4.7  (K8s 1.20)       | supported      |
 | OpenShift 4.8  (K8s 1.21)       | supported      |
+| OpenShift 4.9  (K8s 1.22)       | supported      |
 | KOPS vanilla 1.18               | supported      |
 | KOPS vanilla 1.19               | supported      |
 | KOPS vanilla 1.20               | supported      |
 | KOPS vanilla 1.21               | supported      |
+| KOPS vanilla 1.22               | supported      |
 | GKE 1.19                        | supported      |
 | GKE 1.20                        | supported      |
 | GKE 1.21                        | supported      |
-| Rancher 2.4 (K8s 1.17)          | deprecated     |
-| Rancher 2.4 (K8s 1.18)          | deprecated     |
+| GKE 1.22                        | supported      |
 | Rancher 2.5 (K8s 1.17)          | supported      |
 | Rancher 2.5 (K8s 1.18)          | supported      |
 | Rancher 2.5 (K8s 1.19)          | supported      |
 | Rancher 2.5 (K8s 1.20)          | supported      |
 | VMWare TKGI** 1.10 (K8s 1.19)   | supported      |
 | AKS 1.19                        | supported      |
+| AKS 1.20                        | supported      |
 | AKS 1.21                        | supported      |
+| AKS 1.22                        | supported      |
 | EKS 1.18                        | supported      |
+| EKS 1.19                        | supported      |
+| EKS 1.20                        | supported      |
 | EKS 1.21                        | supported      |
  
 \* No longer supported by the vendor  
