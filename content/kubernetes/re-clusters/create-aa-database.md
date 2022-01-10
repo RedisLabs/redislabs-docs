@@ -131,6 +131,10 @@ From inside your K8s cluster, edit your Redis Enterprise cluster (REC) resource 
 
 No changes are required to the REC spec if you are using [Istio]({{<relref "/kubernetes/re-databases/ingress_routing_with_istio.md">}}) in place of an ingress controller. The `activeActive` section added above creates ingress resources. The two custom resources used to configure Istio (Gateway and VirtualService) replace the need for ingress resources.
 
+{{<warning>}}
+These custom resources are not controlled by the operator and will need to be configured and maintained manually.
+{{</warning>}}
+
 For each cluster, verify the VirtualService resource has two `- match:` blocks in the `tls` section. The hostname under `sniHosts:` should match your `<replication-hostname>`.
 
 ### Using OpenShift routes
