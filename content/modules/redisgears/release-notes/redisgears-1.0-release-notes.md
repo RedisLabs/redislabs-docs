@@ -17,10 +17,22 @@ To learn more, see the linked pull requests.
 
 ## Requirements
 
-RedisGears v1.0.8 requires:
+RedisGears v1.0.9 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v1.0.9 (January 2022)
+
+This is a maintenance release for RedisGears 1.0
+
+Update urgency: `LOW` : No need to upgrade unless there are new features you want to use.
+
+Details:
+
+- Improvements:
+
+    - [#652](https://github.com/RedisGears/RedisGears/pull/652) Support for keys space notifications coming from other modules.
 
 ## v1.0.8 (November 2021)
 
