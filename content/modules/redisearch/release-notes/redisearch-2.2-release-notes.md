@@ -10,10 +10,33 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.2.5 requires:
+RediSearch v2.2.6 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.2.6 (January 2022)
+
+This is a maintenance release for RediSearch 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+
+    - [#2362](https://github.com/RediSearch/RediSearch/pull/2362) Crash on empty field name
+    - [#2407](https://github.com/RediSearch/RediSearch/pull/2407) Inconsistency with `FT.CREATE` and `ON`: return error for spec without fields parameters
+    - [#2392](https://github.com/RediSearch/RediSearch/pull/2392) Remove limit on Geo field precision
+    - [#2440](https://github.com/RediSearch/RediSearch/pull/2440) Fix in NOT(-) iterator
+    - [#2414](https://github.com/RediSearch/RediSearch/pull/2414) Prevent server freeze when `FT.SEARCH` timeout while sorting
+    - [#2386](https://github.com/RediSearch/RediSearch/pull/2386) Memory leak in numeric field index
+
+- Improvements:
+
+    - [#2424](https://github.com/RediSearch/RediSearch/pull/2424), [#2425](https://github.com/RediSearch/RediSearch/pull/2425) Performance improvements for numeric indices
+    - [#2408](https://github.com/RediSearch/RediSearch/pull/2408) API: Added `RediSearch_IndexInfo`
+    - [#2448](https://github.com/RediSearch/RediSearch/pull/2448) API: Added `setLang` and `setScore`
 
 ## v2.2.5 (November 2021)
 
