@@ -108,3 +108,5 @@ Info**. For PaaS users, on the other hand, the alert emails and billing
 emails are sent to the email that is set in **Account** -> **Account
 Info**.
 {{< /note >}}
+
+<<<NEED TO UPDATE SCREENSHOTS TO NEW UI>>>
