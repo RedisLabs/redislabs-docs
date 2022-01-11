@@ -11,7 +11,7 @@ aliases: [
 ]
 ---
 
-Redis Enterprise for Kubernetes version `6.2.8-tbd` introduces the ability to use an Istio ingress gateway as an alternative to NGINX or HaProxy ingress controllers.
+Redis Enterprise for Kubernetes version `6.2.8-11` introduces the ability to use an Istio ingress gateway as an alternative to NGINX or HaProxy ingress controllers.
 
 Istio can also understand ingress resources, but using that mechanism takes away the advantages and options that the native Istio resources provide. Istio offers its own configuration methods using custom resources.
 

@@ -26,7 +26,7 @@ cluster with OpenShift.
 
 - [OpenShift cluster](https://docs.openshift.com/container-platform/4.8/installing/index.html) installed, with at least three nodes (each meeting the [minimum requirements for a development installation]({{< relref "/rs/administering/designing-production/hardware-requirements.md" >}}))
   {{<note>}}
-If you are running an OpenShift 3 version, use the `bundle.yaml` file located in teh `openshift_3_x` folder in the `redis-enterprise-k8s-docs` repo. This folder also contains the custom resource definitions (CRDs) compatible with OpenShift 3.x.  
+If you are running an OpenShift 3 version, use the `bundle.yaml` file located in the `openshift_3_x` folder in the `redis-enterprise-k8s-docs` repo. This folder also contains the custom resource definitions (CRDs) compatible with OpenShift 3.x.  
   {{</note>}}
 - [kubectl tool](https://kubernetes.io/docs/tasks/tools/install-kubectl/)  installed at version 1.9 or higher
 - [OpenShift CLI](https://docs.openshift.com/container-platform/4.8/cli_reference/openshift_cli/getting-started-cli.html) installed
