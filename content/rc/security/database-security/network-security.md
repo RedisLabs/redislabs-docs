@@ -1,12 +1,16 @@
 ---
 Title: Network security
+linkTitle: Network security
 description:
 weight: 30
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/security/database-security/network-security/
+         /rc/security/database-security/network-security.md
+
 ---
 
-Redis Enterprise Cloud supports two types of network security: [IP Restrictions](#ip) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as indicated in the table below:
+Redis Enterprise Cloud supports two types of network security: [IP Restrictions](#ip) and [VPCs](#virtual-private-clouds). These features are available in most Redis Cloud configurations, as shown here:
 
 <table>
 <tbody>

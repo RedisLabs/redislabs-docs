@@ -1,9 +1,12 @@
 ---
 Title: Multi-factor authentication
+linkTitle: Multi-factor authentication
 description:
-weight: 20
+weight: 40
 alwaysopen: false
 categories: ["RC"]
+aliases: /rc/security/admin-console-security/multi-factor-authentication/
+         /rc/security/admin-console-security/multi-factor-authentication.md
 ---
 
 To reduce the chances of unauthorized access, Redis Enterprise Cloud allows users to enable multi-factor authentication (MFA).

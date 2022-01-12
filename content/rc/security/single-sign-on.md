@@ -2,7 +2,7 @@
 Title: Single sign-on
 linkTitle: Single sign-on
 description: Single sign-on (SSO) integration with Redis Cloud
-weight: $weight
+weight: 60
 alwaysopen: false
 categories: ["RC"]
 ---

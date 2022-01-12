@@ -5,12 +5,17 @@ weight: 51
 alwaysopen: false
 categories: ["RC"]
 aliases: /rc/administration/security
-         /rs/administering/designing-production/security/
-
+         /rc/administering/designing-production/security/
+         /rc/security/admin-console-security/_index.md
+         /rc/security/admin-console-security/
+         /rc/security/admin-console-security.md
+         /rc/security/database-security/_index.md
+         /rc/security/database-security/
+         /rc/security/database-security.md
 ---
 Redis Enterprise Cloud provides a number of ways to secure subscriptions and databases.
 
-As a Redis Cloud user, there are three systems you need to consider when thinking about security:
+As a Redis Cloud user, here are a few things to consider when thinking about security:
 
 - The [admin console]({{<relref "/rc/security/admin-console-security/_index.md">}})
 - [Your databases]({{<relref "/rc/security/database-security/_index.md">}})
@@ -20,13 +25,19 @@ Before digging into all the details, you should review our [shared responsibilit
 
 ## Admin console security
 
-The admin console is the web application you use to manage your Redis Cloud deployments. [Securing the admin console]({{<relref "/rc/security/admin-console-security/_index.md">}})
-by assigning the appropriate user roles and enabling multi-factor authentication is essential for a secure deployment.
+The admin console is the web application you use to manage your Redis Cloud deployments. 
+
+Secure access to the admin console by:
+
+- Assigning appropriate roles to [team members with access]({{<relref "/rc/administration/access-management#team-management-roles">}})
+
+- Enabling enabling [multi-factor authentication]({{<relref "/rc/security/multi-factor-authentication">}})
 
 ## Database security
 
 You have several options when it comes to [securing your Redis Cloud databases]({{<relref "/rc/security/database-security/_index.md">}}). These include:
 
+- [encryption at rest]({{<relref "/rc/security/encryption-at-rest.md">}})
 - [role-based access control]({{<relref "/rc/security/database-security/passwords-users-roles.md">}})
 - [network security]({{<relref "/rc/security/database-security/network-security.md">}})
 - [TLS]({{<relref "/rc/security/database-security/tls-ssl.md">}})

@@ -1,5 +1,6 @@
 ---
 Title: Enable VPC peering
+linkTitle: VPC peering
 description:
 weight: 80
 alwaysopen: false
