@@ -112,7 +112,9 @@ NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 redis-enterprise-operator   1/1     1            1           0m36s
 ```
 
-### Test the operator
+## Test the operator
+
+### Create a Redis Enterprise cluster (REC)
 
 A cluster is created by creating a custom resource with the kind "RedisEnterpriseCluster"
 that contains the specification of the cluster option. See the
@@ -160,8 +162,7 @@ You can test the operator by creating a minimal cluster by following this proced
     See the [Redis Enterprise hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md">}}) for more
     information on sizing Redis Enterprise node resource requests.
   
-
-2. Create the CRD in the namespace with the file `simple-cluster.yaml`:
+1. Create the CRD in the namespace with the file `simple-cluster.yaml`:
 
     ```sh
     kubectl apply -f simple-cluster.yaml
@@ -173,7 +174,7 @@ You can test the operator by creating a minimal cluster by following this proced
     redisenterprisecluster.app.redislabs.com/test-cluster created
     ```
 
-3. You can verify the creation of the with:
+1. You can verify the creation of the with:
 
     ```sh
     kubectl get rec
@@ -200,9 +201,15 @@ You can test the operator by creating a minimal cluster by following this proced
    kubectl get all
    ```
 
+### Enable the Admission Controller
+
 <!---ADD Admission Controller and namespace limiting webhook steps here--->
 
-4. Once the cluster is running, you can create a test database. First, define the database with the following YAML file:
+### Create a Redis Enterprise Database (REDB)
+
+Once the cluster is running, you can create a test database. 
+
+1. Define the database with a sample REDB custom resource YAML file.
 
    ```sh
    cat <<EOF > smalldb.yaml
@@ -215,14 +222,13 @@ You can test the operator by creating a minimal cluster by following this proced
    EOF
    ```
 
-   Next, apply the database:
+1. Apply the REDB resource file.
 
    ```sh
    kubectl apply -f smalldb.yaml
    ```
 
-5. The connectivity information for the database is now stored in a Kubernetes
-   secret using the same name but prefixed with `redb-`:
+1. The connectivity information for the database is now stored in a Kubernetes secret using the same name but prefixed with `redb-`:
 
    ```sh
    kubectl get secret/redb-smalldb -o yaml
@@ -231,19 +237,3 @@ You can test the operator by creating a minimal cluster by following this proced
    From this secret you can get the service name, port, and password for the
    default user.
 
-## Operator overview {#overview}
-
-The Redis Enterprise operator uses [custom resource definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) (CRDs) to create and manage Redis Enterprise clusters (REC) and Redis Enterprise databases (REDB).
-
-The operator is a deployment that runs within a given namespace. These operator pods must run with sufficient privileges to create the Redis Enterprise cluster resources within that namespace.
-
-When the operator is installed, the following resources are created:
-
-* a service account under which the operator will run
-* a set of roles to define the privileges necessary for the operator to perform its tasks
-* a set of role bindings to authorize the service account for the correct roles (see above)
-* the CRD for a Redis Enterprise cluster (REC)
-* the CRD for a Redis Enterprise database (REDB)
-* the operator itself (a deployment)
-
-The operator currently runs within a single namespace and is scoped to operate only on the Redis Enterprise cluster in that namespace.
