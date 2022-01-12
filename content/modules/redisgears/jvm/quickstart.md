@@ -18,7 +18,7 @@ For this quick start tutorial, you need:
 
 ### Create a Maven project
 
-1. Create a new [Maven project](https://maven.apache.org/guides/getting-started/index.html#)
+1. Create a new [Maven project](https://maven.apache.org/guides/getting-started/index.html#).
 
 1. Add the following sections to the [pom.xml](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html) file:
 
@@ -39,7 +39,7 @@ For this quick start tutorial, you need:
     </dependencies>
     ```
 
-1. Add example code for either [batch processing](#batch-processing) or [event processing](#event-processing) to your project's `main` function
+1. Add example code for either [batch processing](#batch-processing) or [event processing](#event-processing) to your project's `main` function.
 
 
 
