@@ -28,9 +28,9 @@ After the install is complete, RedisGears will appear in the list of available m
 
 ### Redis Enterprise v6.0.12 or later
 
-1. Download the RedisGears package.
+1. Download the RedisGears package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
-1. Upload the RedisGears package to a node in the cluster.
+1. Upload the package to a node in the cluster.
 
 1. Add RedisGears to the cluster with a `POST` request to the `/v2/modules` REST API endpoint:
 
@@ -44,11 +44,31 @@ The `POST /v2/modules` request automatically downloads the RedisGears JVM plugin
 
 ### Redis Enterprise v6.0.8 or earlier
 
-1. Download the RedisGears and JVM plugin packages.
+1. Download the RedisGears JVM plugin package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
-1. Upload both packages to a node in the cluster.
+1. Upload the package to a node in the cluster.
 
-1. TBA
+1. As the root user, create a `deps` directory for RedisGears:
+
+    ```sh
+    # mkdir -p $modulesdatadir/rg/<version_integer>/deps/
+    ```
+
+    {{<note>}}
+Replace `<version_integer>` with the version of the RedisGears package you downloaded, formatted as an integer.
+<br></br>
+For example, 10201 is the version integer for version 1.2.1.
+    {{</note>}}
+
+1. Extract the JVM plugin package in the `deps` directory:
+
+    ```sh
+    # tar -xvf /<path>/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<version_integer>/deps
+    ```
+
+1. Download the RedisGears package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
+
+1. From the Redis Enterprise admin console, [upload the RedisGears module]({{<relref "/modules/add-module-to-cluster#admin-console-method">}}) to the cluster.
 
 ## Enable RedisGears for a database
 
