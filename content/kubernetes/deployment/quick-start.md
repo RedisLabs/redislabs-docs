@@ -66,7 +66,7 @@ The Redis Enterprise operator [definition and reference materials](https://githu
 operator implementation is published as a Docker container. The operator
 definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
 
-### Download the bundle
+### Download the operator bundle
 
 To ensure that you pull the correct version of the bundle, check versions tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
 or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases).
@@ -80,7 +80,7 @@ or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#rel
 
 If you need a different release, replace `VERSION` in the above with a specific release tag.
 
-### Apply the bundle
+### Deploy the operator bundle
 
 ```sh
 kubectl apply -f bundle.yaml
@@ -97,7 +97,7 @@ kubectl apply -f bundle.yaml
   deployment.apps/redis-enterprise-operator created
   ```
 
-#### Verify that the operator is running
+#### Verify the operator is running
 
 Check the operator deployment to verify it's running in your namespace:
 
@@ -123,14 +123,14 @@ for more information on the various options available.
 
 You can test the operator by creating a minimal cluster by following this procedure:
 
-1. Create a file called `simple-cluster.yaml` that defines a Redis Enterprise cluster with three nodes:
+1. Create a file called `test-rec.yaml` that defines a Redis Enterprise cluster with three nodes:
 
     ```sh
-    cat <<EOF > simple-cluster.yaml
+    cat <<EOF > test-rec.yaml
     apiVersion: "app.redislabs.com/v1"
     kind: "RedisEnterpriseCluster"
     metadata:
-      name: "test-cluster"
+      name: "test-rec"
     spec:
       nodes: 3
     EOF
@@ -138,17 +138,10 @@ You can test the operator by creating a minimal cluster by following this proced
 
     This will request a cluster with three Redis Enterprise nodes using the
     default requests (i.e., 2 CPUs and 4GB of memory per node).
-    If you want to test with a larger configuration, you can
-    specify the node resources. For example, this configuration increases the memory:
 
-    ```sh
-    cat <<EOF > simple-cluster.yaml
-    apiVersion: "app.redislabs.com/v1"
-    kind: "RedisEnterpriseCluster"
-    metadata:
-      name: "test-cluster"
-    spec:
-      nodes: 3
+    To test with a larger configuration, use the example below to add node resources to the `spec` section of your test cluster (`test-rec.yaml`).
+
+    ```yaml
       redisEnterpriseNodeResources:
         limits:
           cpu: 2000m
@@ -156,22 +149,21 @@ You can test the operator by creating a minimal cluster by following this proced
         requests:
           cpu: 2000m
           memory: 16Gi
-    EOF
     ```
 
     See the [Redis Enterprise hardware requirements]({{< relref "/rs/administering/designing-production/hardware-requirements.md">}}) for more
     information on sizing Redis Enterprise node resource requests.
   
-1. Create the CRD in the namespace with the file `simple-cluster.yaml`:
+1. Apply your custom resource definition (CRD) file in the same namespace as `test-rec.yaml`.
 
     ```sh
-    kubectl apply -f simple-cluster.yaml
+    kubectl apply -f test-rec.yaml
     ```
 
     You should see a result similar to this:
 
     ```sh
-    redisenterprisecluster.app.redislabs.com/test-cluster created
+    redisenterprisecluster.app.redislabs.com/test-rec created
     ```
 
 1. You can verify the creation of the with:
@@ -184,18 +176,20 @@ You can test the operator by creating a minimal cluster by following this proced
 
     ```sh
     NAME           AGE
-    test-cluster   1m
+    test-rec   1m
     ```
 
    At this point, the operator will go through the process of creating various
-   services and pod deployments. You can track the progress by examining the
+   services and pod deployments.
+
+   You can track the progress by examining the
    StatefulSet associated with the cluster:
 
    ```sh
-   kubectl rollout status sts/test-cluster
+   kubectl rollout status sts/test-rec
    ```
 
-   or by simply looking at the status of all of the resources in your namespace:
+   or by looking at the status of all of the resources in your namespace:
 
    ```sh
    kubectl get all
