@@ -195,9 +195,11 @@ You can test the operator by creating a minimal cluster by following this proced
    kubectl get all
    ```
 
+<!--- Once the cluster is up, the cluster GUI and API could be used to configure databases. It is recommended to use the K8s REDB API that is configured through the following steps. To configure the cluster using the cluster GUI/API, use the ui service created by the operator and the default credentials as set in a secret. The secret name is the same as the cluster name within the namespace.--->
+
 ### Enable the Admission Controller
 
-<!---ADD Admission Controller and namespace limiting webhook steps here--->
+
 
 ### Create a Redis Enterprise Database (REDB)
 
