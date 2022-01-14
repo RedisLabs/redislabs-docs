@@ -230,20 +230,3 @@ You can test the operator by creating a minimal cluster by following this proced
 
    From this secret you can get the service name, port, and password for the
    default user.
-
-## Operator overview {#overview}
-
-The Redis Enterprise operator uses [custom resource definitions](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions) (CRDs) to create and manage Redis Enterprise clusters (REC) and Redis Enterprise databases (REDB).
-
-The operator is a deployment that runs within a given namespace. These operator pods must run with sufficient privileges to create the Redis Enterprise cluster resources within that namespace.
-
-When the operator is installed, the following resources are created:
-
-* a service account under which the operator will run
-* a set of roles to define the privileges necessary for the operator to perform its tasks
-* a set of role bindings to authorize the service account for the correct roles (see above)
-* the CRD for a Redis Enterprise cluster (REC)
-* the CRD for a Redis Enterprise database (REDB)
-* the operator itself (a deployment)
-
-The operator currently runs within a single namespace and is scoped to operate only on the Redis Enterprise cluster in that namespace.
