@@ -236,4 +236,3 @@ Once the cluster is running, you can create a test database.
 
    From this secret you can get the service name, port, and password for the
    default user.
-
