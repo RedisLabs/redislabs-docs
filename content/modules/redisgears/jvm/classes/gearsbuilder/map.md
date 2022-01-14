@@ -7,15 +7,26 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+```java
+public <I extends java.io.Serializable> GearsBuilder<I> map​(
+	gears.operations.MapOperation<T,​I> mapper)
+```
+
 Add a map operation to the pipe. It maps records one-to-one. 
 
 ## Parameters
  
-Type Parameters:
-I - The template type of the returned builder
+Type parameters:
 
-Parameters:
-mapper - The map operation
+| Name | Description |
+|------|-------------|
+| I | The template type of the returned builder |
+
+Function parameters:
+
+| Name | Type | Description |
+|------|------|-------------|
+| mapper | gears.operations.MapOperation<T,​I> | The map operation |
 
 ## Returns
 

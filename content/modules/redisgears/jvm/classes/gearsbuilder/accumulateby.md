@@ -7,6 +7,12 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+```java
+public <I extends java.io.Serializable> GearsBuilder<I> accumulateBy​(
+	gears.operations.ExtractorOperation<T> extractor, 
+	gears.operations.AccumulateByOperation<T,​I> accumulator)
+```
+
 Add an accumulateBy operation to the pipe.
 
 The accumulate by takes an extractor and an accumulator.
@@ -19,12 +25,18 @@ The initial value of the accumulator is null.
 
 ## Parameters
  
-Type Parameters:
-I - - The template type of the returned builder
+Type parameters:
 
-Parameters:
-extractor - The extractor operation
-accumulator - The accumulator operation
+| Name | Description |
+|------|-------------|
+| I | The template type of the returned builder |
+
+Function parameters:
+
+| Name | Type | Description |
+|------|------|-------------|
+| extractor | gears.operations.ExtractorOperation<T> | The extractor operation |
+| accumulator | gears.operations.AccumulateByOperation<T,​I> | The accumulator operation |
 
 ## Returns
 

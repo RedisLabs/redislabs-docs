@@ -7,15 +7,22 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+```java
+public GearsBuilder<T> foreach​(
+    gears.operations.ForeachOperation<T> foreach)
+```
+
 Add a foreach operation to the pipe.
 
 ## Parameters
 
-foreach - - the foreach operation
+| Name | Type | Description |
+|------|------|-------------|
+| foreach | gears.operations.ForeachOperation<T> | The foreach operation |
 
 ## Returns
 
-GearsBuilder with a new template type, notice that the return object might be the same as the previous.
+Returns a GearsBuilder object with a new template type. The return object might be the same as the previous.
 
 ## Example
 

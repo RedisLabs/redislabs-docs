@@ -7,6 +7,10 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+```java
+public GearsBuilder<T> collect()
+```
+
 Collects all the records to the shard that started the execution.
 
 ## Parameters

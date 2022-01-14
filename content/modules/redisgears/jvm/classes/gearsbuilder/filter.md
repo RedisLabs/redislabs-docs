@@ -7,11 +7,18 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+```java
+public GearsBuilder<T> filter​(
+    gears.operations.FilterOperation<T> filter)
+```
+
 Add a filter operation to the pipe. The filter should return true if RedisGears should continue process the record and otherwise false.
 
 ## Parameters
- 
-foreach - The foreach operation
+
+| Name | Type | Description |
+|------|------|-------------|
+| filter | gears.operations.FilterOperation<T> | The filter operation |
 
 ## Returns
 

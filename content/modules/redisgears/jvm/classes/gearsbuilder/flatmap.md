@@ -7,21 +7,32 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+```java
+public <I extends java.io.Serializable> GearsBuilder<I> flatMap​(
+	gears.operations.FlatMapOperation<T,​I> flatmapper)
+```
+
 Add a flatmap operation to the pipe. The record mapping is one-to-many (1:N), so it maps a single input record to one or more output records.
 
 The operation must return an Iterable object. The RedisGears module iterates over the elements in the Iterable object and passes them one by one through the pipe.
 
 ## Parameters
  
-Type Parameters:
-I - The template type of the returned builder object
+Type parameters:
 
-Parameters:
-flatmapper - The flatmap operation
+| Name | Description |
+|------|-------------|
+| I | The template type of the returned builder object |
+
+Function parameters:
+
+| Name | Type | Description |
+|------|------|-------------|
+| flatmapper | | The flatmap operation |
 
 ## Returns
 
-A GearsBuilder object with a new template type. The returned object might be the same as the initial GearsBuilder.
+Returns a GearsBuilder object with a new template type. The returned object might be the same as the initial GearsBuilder.
 
 ## Example
 

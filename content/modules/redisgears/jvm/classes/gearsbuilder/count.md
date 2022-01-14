@@ -7,6 +7,10 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
+```java
+public GearsBuilder<java.lang.Integer> count()
+```
+
 Add a count operation to the pipe. The operation returns a single record that represents the number of records in the pipe.
 
 ## Parameters

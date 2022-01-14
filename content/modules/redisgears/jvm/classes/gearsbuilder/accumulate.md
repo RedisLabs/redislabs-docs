@@ -1,25 +1,36 @@
 ---
 Title: Accumulate
 linkTitle: accumulate
-description: A many-to-one mapped, reduce the record in the pipe to a single record.
+description: A many-to-one mapped function that reduces the record in the pipe to a single record.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
 ---
 
-A many-to-one mapped, reduce the record in the pipe to a single record. The initial accumulator object is null (same as for accumulateBy).
+```java
+public <I extends java.io.Serializable> GearsBuilder<I> accumulate​(
+    gears.operations.AccumulateOperation<T,​I> accumulator)
+```
+
+A many-to-one mapped function that reduces the records in the pipe to a single record. The initial accumulator object is null.
 
 ## Parameters
  
-Type Parameters:
-I - The template type of the returned builder
+Type parameters:
 
-Parameters:
-accumulator - The accumulate operation
+| Name | Description |
+|------|-------------|
+| I | The template type of the returned builder |
+
+Function parameters:
+
+| Name | Type | Description |
+|------|------|-------------|
+| accumulator | gears.operations.AccumulateOperation<T,​I> | The accumulate operation |
 
 ## Returns
 
-- GearsBuilder with a new template type, notice that the return object might be the same as the previous.
+Returns a GearsBuilder object with a new template type. The return object might be the same as the previous.
 
 ## Example
 
