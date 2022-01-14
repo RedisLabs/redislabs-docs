@@ -60,7 +60,7 @@ Upload your JAR file to a node in the Redis Enterprise cluster. You will need to
 Use the `RG.JEXECUTE` command to run your RedisGears Java code:
 
 ```sh
-$ redis-cli -x -h {host} -p {port} RG.JEXECUTE {main class} < {filepath}/{JAR name}.jar
+$ redis-cli -x -h {host} -p {port} RG.JEXECUTE {package.MainClass} < {filepath}/{JAR name}.jar
 ```
 
 {{<note>}}
@@ -146,7 +146,7 @@ $ redis-cli -x -h {host} -p {port} \
 
 ### Event processing
 
-If you use the `GearsBuilder.register()` function in your code, then the functions you add to your pipeline will run every time a certain event occurs, such as when you add a new key to the database.
+If you use the `GearsBuilder.register()` function in your code, then the functions you add to your pipeline will run every time a certain database event occurs.
 
 The following example registers a pipeline of functions that will automatically update the maximum age every time you add a new person hash to your database.
 

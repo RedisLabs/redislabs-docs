@@ -20,7 +20,7 @@ Before you can use RedisGears with the JVM, you need to install the RedisGears m
 
 ## Install RedisGears and the JVM plugin
 
-If your cluster uses Redis Enterprise v6.0.12 or later, you only need to download the RedisGears package. The JVM plugin will install automatically if you make a `POST`request to the `/v2/modules` REST API endpoint.
+If your cluster uses Redis Enterprise v6.0.12 or later, you only need to download the RedisGears package. The JVM plugin will install automatically if you make a `POST` request to the `/v2/modules` REST API endpoint.
 
 For earlier versions of Redis Enterprise, you need to download both the RedisGears and the JVM plugin packages and use a `POST /v1/modules` request.
 
