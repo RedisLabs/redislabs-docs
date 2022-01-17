@@ -39,6 +39,7 @@ Before installing Redis Enterprise Software, you need to:
 - Open appropriate [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
 
 - Configure [cluster DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
+- By default, the installation process requires an Internet connection to enable installing dependency packages and for synchronizing the operating system clock against an NTP server.For offline installation refer to : https://docs.redis.com/latest/rs/installing-upgrading/offline-installation/
 
 ## Download the installation package
 
