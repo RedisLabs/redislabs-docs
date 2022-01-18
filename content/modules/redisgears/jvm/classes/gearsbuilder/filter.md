@@ -1,7 +1,7 @@
 ---
 Title: Filter
 linkTitle: filter
-description: Add a filter operation to the pipe.
+description: Filters out records in the pipe based on a given condition.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]

@@ -1,7 +1,7 @@
 ---
 Title: Accumulate
 linkTitle: accumulate
-description: A many-to-one mapped function that reduces the record in the pipe to a single record.
+description: Reduces many records in the pipe to a single record.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -10,9 +10,15 @@ categories: ["Modules"]
 ```java
 public <I extends java.io.Serializable> GearsBuilder<I> accumulate​(
     gears.operations.AccumulateOperation<T,​I> accumulator)
+
+public <I extends java.io.Serializable> GearsBuilder<I> accumulate​(
+    I initialValue, 
+    gears.operations.AccumulateOperation<T,​I> accumulator)
 ```
 
-A many-to-one mapped function that reduces the records in the pipe to a single record. The initial accumulator object is null.
+Accumulate is a many-to-one function that iterates through the records in the pipe and reduces them to a single record.
+
+You can provide a parameter to set the initial accumulator value. Otherwise, the initial accumulator object is null.
 
 ## Parameters
  
@@ -26,26 +32,35 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
+| initialValue | Template type I | The initial value of the accumulated object |
 | accumulator | gears.operations.AccumulateOperation<T,​I> | The accumulate operation |
 
 ## Returns
 
-Returns a GearsBuilder object with a new template type. The return object might be the same as the previous.
+Returns a GearsBuilder object with a new template type.
 
 ## Example
 
-This example counts the number of records:
+Both of the following examples count the number of records in the pipeline.
+
+Without the `initialValue` parameter:
 
 ```java
 GearsBuilder.CreateGearsBuilder(reader).accumulate((a, r)->{
     Integer ret = null;
-    if(a == null) {
+    if (a == null) {
 	    ret = 1;
-    }else {
+    } else {
 	    ret = (Integer)a;
     }
     return ret + 1;
 });
 ```
 
-TODO: add the optional parameters
+With the `initialValue` parameter set to 0:
+
+```java
+GearsBuilder.CreateGearsBuilder(reader).accumulate(0, (a, r)->{
+   	return a + 1;
+});
+```

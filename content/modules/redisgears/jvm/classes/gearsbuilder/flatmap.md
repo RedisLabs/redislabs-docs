@@ -1,7 +1,7 @@
 ---
 Title: FlatMap
 linkTitle: flatMap
-description: Add a flatmap operation to the pipe.
+description: Maps a single input record to one or more output records.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -32,7 +32,7 @@ Function parameters:
 
 ## Returns
 
-Returns a GearsBuilder object with a new template type. The returned object might be the same as the initial GearsBuilder.
+Returns a GearsBuilder object with a new template type.
 
 ## Example
 

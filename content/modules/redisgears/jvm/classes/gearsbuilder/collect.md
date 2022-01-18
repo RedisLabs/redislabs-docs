@@ -1,7 +1,7 @@
 ---
 Title: Collect
 linkTitle: collect
-description: Collects all the records to the shard that started the execution.
+description: Collects all records to the origin shard.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]

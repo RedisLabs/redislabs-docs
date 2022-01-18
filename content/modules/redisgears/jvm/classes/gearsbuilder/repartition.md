@@ -1,7 +1,7 @@
 ---
 Title: Repartition
 linkTitle: repartition
-description: Add a repartition operation to the operation pipe.
+description: Moves records between shards according to the extracted data.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]

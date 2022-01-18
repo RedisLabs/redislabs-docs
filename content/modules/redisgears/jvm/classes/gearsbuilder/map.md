@@ -1,7 +1,7 @@
 ---
 Title: Map
 linkTitle: map
-description: Add a map operation to the pipe.
+description: Maps records one-to-one.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]

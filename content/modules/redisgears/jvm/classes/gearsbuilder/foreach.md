@@ -1,7 +1,7 @@
 ---
 Title: Foreach
 linkTitle: foreach
-description: Add a foreach operation to the pipe.
+description: For each record in the pipe, run some operations.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -12,7 +12,7 @@ public GearsBuilder<T> foreach​(
     gears.operations.ForeachOperation<T> foreach)
 ```
 
-Add a foreach operation to the pipe.
+Use the foreach function to define a set of operations to run for each record in the pipe.
 
 ## Parameters
 
@@ -22,7 +22,7 @@ Add a foreach operation to the pipe.
 
 ## Returns
 
-Returns a GearsBuilder object with a new template type. The return object might be the same as the previous.
+Returns a GearsBuilder object with a new template type.
 
 ## Example
 

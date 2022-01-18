@@ -1,7 +1,7 @@
 ---
 Title: Count
 linkTitle: count
-description: Add a count operation to the pipe, the operation returns a single record which is the number of records in the pipe.
+description: Counts the number of records in the pipe.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]

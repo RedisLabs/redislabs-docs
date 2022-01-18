@@ -1,7 +1,7 @@
 ---
 Title: Register
 linkTitle: register
-description: Register the pipeline of functions to run when certain events occur.
+description: Registers the pipeline of functions to run when certain events occur.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -14,7 +14,7 @@ public java.lang.String register​(
     gears.operations.OnUnregisteredOperation onUnregistered)
 ```
 
-Register the pipeline of functions to run when certain events occur.
+Registers the pipeline of functions to run when certain events occur.
 
 ## Parameters
 

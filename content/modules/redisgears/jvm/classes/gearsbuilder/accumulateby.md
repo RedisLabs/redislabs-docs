@@ -1,7 +1,7 @@
 ---
 Title: AccumulateBy
 linkTitle: accumulateBy
-description: Add an accumulateBy operation to the pipe.
+description: Extracts specific data from multiple records in the pipe and reduces them to a single record.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -11,13 +11,18 @@ categories: ["Modules"]
 public <I extends java.io.Serializable> GearsBuilder<I> accumulateBy​(
 	gears.operations.ExtractorOperation<T> extractor, 
 	gears.operations.AccumulateByOperation<T,​I> accumulator)
+
+public <I extends java.io.Serializable> GearsBuilder<I> accumulateBy​(
+	gears.operations.ValueInitializerOperation<I> valueInitializer, 
+	gears.operations.ExtractorOperation<T> extractor, 
+	gears.operations.AccumulateByOperation<T,​I> accumulator)
 ```
 
 Add an accumulateBy operation to the pipe.
 
-The accumulate by takes an extractor and an accumulator.
+The accumulateBy takes an extractor and an accumulator.
 
-The extractor extracts the data by which we should perform the group by. 
+The extractor extracts the data by which we should perform the group by.
 
 The accumulate is the reduce function. The accumulator gets the group, accumulated data, and current record and returns a new accumulated data.
 
@@ -35,16 +40,19 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
+| valueInitializer | gears.operations.ValueInitializerOperation<I> | Whenever the accumulated value is null, use this function to initialize it |
 | extractor | gears.operations.ExtractorOperation<T> | The extractor operation |
 | accumulator | gears.operations.AccumulateByOperation<T,​I> | The accumulator operation |
 
 ## Returns
 
-Returns a GearsBuilder object with a new template type. The returned object might be the same as the previous.
+Returns a GearsBuilder object with a new template type.
 
 ## Example
 
-The following example counts the number of unique values:
+Both of the following examples count the number of unique values.
+
+Without the `valueInitializer` parameter:
 
 ```java
 GearsBuilder.CreateGearsBuilder(reader).
@@ -61,4 +69,15 @@ GearsBuilder.CreateGearsBuilder(reader).
 });
 ```
 
-TODO: add optional param
+With the `valueInitializer` parameter:
+
+```java
+GearsBuilder.CreateGearsBuilder(reader).
+    	accumulateBy(()->{
+   		return 0;
+   	},r->{
+   		return r.getStringVal();
+   	},(k, a, r)->{
+   		return a + 1;
+   	});
+```

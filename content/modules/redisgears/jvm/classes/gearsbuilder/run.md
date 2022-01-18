@@ -1,7 +1,7 @@
 ---
 Title: Run
 linkTitle: run
-description: Run the pipeline of functions immediately.
+description: Runs the pipeline of functions immediately.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -11,7 +11,7 @@ categories: ["Modules"]
 public void run​(boolean jsonSerialize, boolean collect)
 ```
 
-Run the pipeline of functions immediately upon execution.
+Runs the pipeline of functions immediately upon execution.
 
 ## Parameters
 
