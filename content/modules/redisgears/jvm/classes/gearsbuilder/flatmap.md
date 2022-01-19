@@ -12,9 +12,10 @@ public <I extends java.io.Serializable> GearsBuilder<I> flatMap​(
 	gears.operations.FlatMapOperation<T,​I> flatmapper)
 ```
 
-Add a flatmap operation to the pipe. The record mapping is one-to-many (1:N), so it maps a single input record to one or more output records.
+Maps a single input record to one or more output records.
 
-The operation must return an Iterable object. The RedisGears module iterates over the elements in the Iterable object and passes them one by one through the pipe.
+The FlatMap operation must return an [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html) object. RedisGears 
+splits the elements from the Iterable object and processes them as individual records.
 
 ## Parameters
  
@@ -28,7 +29,7 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| flatmapper | gears.operations.FlatMapOperation<T,​I> | The flatmap operation |
+| flatmapper | <nobr>gears.operations.FlatMapOperation<T,​I></nobr> | For each input record, returns one or more output records |
 
 ## Returns
 

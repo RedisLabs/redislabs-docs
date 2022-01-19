@@ -26,7 +26,7 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| mapper | gears.operations.MapOperation<T,​I> | For each input record, returns a new output record |
+| mapper | <nobr>gears.operations.MapOperation<T,​I></nobr> | For each input record, returns a new output record |
 
 ## Returns
 

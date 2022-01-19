@@ -18,7 +18,7 @@ Moves records between the shards. The extracted data determines the new shard lo
 
 | Name | Type | Description |
 |------|------|-------------|
-| extractor | gears.operations.ExtractorOperation<T> | Extracts a specific value from each record |
+| extractor | <nobr>gears.operations.ExtractorOperation<T></nobr> | Extracts a specific value from each record |
 
 ## Returns
 
