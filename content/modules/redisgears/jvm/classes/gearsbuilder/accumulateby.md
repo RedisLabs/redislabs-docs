@@ -1,7 +1,7 @@
 ---
 Title: AccumulateBy
 linkTitle: accumulateBy
-description: Extracts specific data from multiple records in the pipe and reduces them to a single record.
+description: Groups records and reduces each group to a single record per group.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -18,15 +18,9 @@ public <I extends java.io.Serializable> GearsBuilder<I> accumulateBy​(
 	gears.operations.AccumulateByOperation<T,​I> accumulator)
 ```
 
-Add an accumulateBy operation to the pipe.
+Iterates through the records in the pipe, groups them based on the provided extractor, and then reduces each group to a single record per group with the accumulator function.
 
-The accumulateBy takes an extractor and an accumulator.
-
-The extractor extracts the data by which we should perform the group by.
-
-The accumulate is the reduce function. The accumulator gets the group, accumulated data, and current record and returns a new accumulated data.
-
-The initial value of the accumulator is null.
+The initial value of the accumulator is null unless you provide a value initializer operation as a parameter.
 
 ## Parameters
  
@@ -41,8 +35,8 @@ Function parameters:
 | Name | Type | Description |
 |------|------|-------------|
 | valueInitializer | gears.operations.ValueInitializerOperation<I> | Whenever the accumulated value is null, use this function to initialize it |
-| extractor | gears.operations.ExtractorOperation<T> | The extractor operation |
-| accumulator | gears.operations.AccumulateByOperation<T,​I> | The accumulator operation |
+| extractor | gears.operations.ExtractorOperation<T> | Extracts a specific value from each record |
+| accumulator | <nobr>gears.operations.AccumulateByOperation<T,​I></nobr> | A function with logic to update the accumulator value with each record |
 
 ## Returns
 
