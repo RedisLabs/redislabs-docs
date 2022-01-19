@@ -8,6 +8,10 @@ categories: ["Modules"]
 ---
 
 ```java
+public java.lang.String register()
+
+public java.lang.String register​(ExecutionMode mode)
+
 public java.lang.String register​(
     ExecutionMode mode, 
     gears.operations.OnRegisteredOperation onRegister, 
