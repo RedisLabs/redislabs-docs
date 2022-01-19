@@ -11,7 +11,7 @@ categories: ["Modules"]
 public GearsBuilder<T> collect()
 ```
 
-Collects all the records to the shard that started the execution.
+Collects all of the records to the shard where the RedisGears job started.
 
 ## Parameters
  
@@ -19,7 +19,7 @@ None
 
 ## Returns
 
-GearsBuilder with the same template type as the input builder, notice that the return object might be the same as the previous.
+Returns a GearsBuilder object with the same template type as the input builder.
 
 ## Example
 

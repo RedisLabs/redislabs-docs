@@ -11,7 +11,7 @@ categories: ["Modules"]
 public GearsBuilder<java.lang.Integer> count()
 ```
 
-Add a count operation to the pipe. The operation returns a single record that represents the number of records in the pipe.
+Counts the number of records in the pipe and returns the total as a single record.
 
 ## Parameters
  
@@ -19,7 +19,7 @@ None
 
 ## Returns
 
-Returns a GearsBuilder object with a new template type (Integer). The return object might be the same as the previous.
+Returns a GearsBuilder object with a new template type (Integer).
 
 ## Example
 

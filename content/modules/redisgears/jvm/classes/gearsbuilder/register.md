@@ -14,7 +14,15 @@ public java.lang.String register​(
     gears.operations.OnUnregisteredOperation onUnregistered)
 ```
 
-Registers the pipeline of functions to run when certain events occur.
+Registers the pipeline of functions to run when certain events occur. The registered functions will run each time the event occurs.
+
+Execution modes:
+
+| Name | Description |
+|------|-------------|
+| ASYNC | Runs asynchronously on all of the shards. |
+| ASYNC_LOCAL | Runs asynchronously but only on the current shard that generated the event. |
+| SYNC | Runs synchronously only on the same shard that generated the event. |
 
 ## Parameters
 

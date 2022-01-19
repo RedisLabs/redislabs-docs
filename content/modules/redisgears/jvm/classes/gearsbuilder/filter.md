@@ -12,17 +12,21 @@ public GearsBuilder<T> filter​(
     gears.operations.FilterOperation<T> filter)
 ```
 
-Add a filter operation to the pipe. The filter should return true if RedisGears should continue process the record and otherwise false.
+Filters out records in the pipe based on a given condition.
+
+The filter operation should contain a conditional statement and return a boolean for each record:
+- If `true`, the record will continue through the pipe. 
+- If `false`, it filters out the record.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| filter | gears.operations.FilterOperation<T> | The filter operation |
+| filter | gears.operations.FilterOperation<T> | A function that checks a condition for each record in the pipe. Returns a boolean. |
 
 ## Returns
 
-Returns a GearsBuilder object with the same template type as the input builder. The return object might be the same as the previous.
+Returns a GearsBuilder object with the same template type as the input builder.
 
 ## Example
 

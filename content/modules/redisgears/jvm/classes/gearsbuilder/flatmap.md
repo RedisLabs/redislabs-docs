@@ -28,7 +28,7 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| flatmapper | | The flatmap operation |
+| flatmapper | gears.operations.FlatMapOperation<T,​I> | The flatmap operation |
 
 ## Returns
 

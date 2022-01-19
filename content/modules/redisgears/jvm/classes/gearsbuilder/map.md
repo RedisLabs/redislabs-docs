@@ -12,7 +12,7 @@ public <I extends java.io.Serializable> GearsBuilder<I> map​(
 	gears.operations.MapOperation<T,​I> mapper)
 ```
 
-Add a map operation to the pipe. It maps records one-to-one. 
+Maps each input record in the pipe to an output record, one-to-one.
 
 ## Parameters
  
@@ -26,11 +26,11 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| mapper | gears.operations.MapOperation<T,​I> | The map operation |
+| mapper | gears.operations.MapOperation<T,​I> | For each input record, returns a new output record |
 
 ## Returns
 
-Returns a GearsBuilder object with a new template type. The returned object might be the same as the previous.
+Returns a GearsBuilder object with a new template type.
 
 ## Example
 
