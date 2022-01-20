@@ -30,11 +30,11 @@ Returns a GearsBuilder object with the same template type as the input builder.
 
 ## Example
 
-Get all strings that contain the substring "hello":
+Get all records that contain the substring "person:":
 
 ```java
 GearsBuilder.CreateGearsBuilder(reader).
     filter(r->{
-        return r.getStringVal().contains("hello");
+        return r.getKey().contains("person:");
 });
 ```

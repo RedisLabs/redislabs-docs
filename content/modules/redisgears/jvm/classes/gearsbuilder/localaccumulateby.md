@@ -13,7 +13,7 @@ public <I extends java.io.Serializable> GearsBuilder<I> localAccumulateBy​(
 	gears.operations.AccumulateByOperation<T,​I> accumulator)
 ```
 
-The localAccumulateBy function is similar to [accumulateBy]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/accumulateby">}}), except it performs the operation locally on each shard without moving data between shards.
+The `localAccumulateBy` function is similar to [`accumulateBy`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/accumulateby">}}), except it performs the operation locally on each shard without moving data between shards.
 
 On each shard, iterates through the records in the pipe, groups them based on the provided extractor, and then reduces each group to a single record per group with the accumulator function.
 

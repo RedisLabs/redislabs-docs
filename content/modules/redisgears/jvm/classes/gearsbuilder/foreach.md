@@ -1,7 +1,7 @@
 ---
 Title: Foreach
 linkTitle: foreach
-description: For each record in the pipe, run some operations.
+description: For each record in the pipe, runs some operations.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -26,6 +26,12 @@ Returns a GearsBuilder object with a new template type.
 
 ## Example
 
-```java
+For each person hash, add a new full_name field that combines their first and last names:
 
+```java
+GearsBuilder.CreateGearsBuilder(reader).foreach(r->{
+    String firstName = r.getHashVal().get("first_name");
+    String lastName = r.getHashVal().get("last_name");
+   	r.getHashVal().put("full_name", firstName + lastName);
+}); 
 ```

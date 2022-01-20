@@ -7,12 +7,14 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-A RedisGears pipe builder. The reader supplies data to the pipe, which then passes through a series of operations that transforms the data.
+The `GearsBuilder` class allows you to create a pipeline of RedisGears functions that transform data.
+
+It requires a reader to supply data to the pipe.
 
 To create a `GearsBuilder` object, follow this example code:
 
 ```java
-BaseReader reader = ...; // initialize the reader
+BaseReader reader = ...; // Initialize the reader
 builder = GearsBuilder.CreateGearsBuilder(reader);
 ```
 

@@ -29,5 +29,8 @@ None
 ## Example
 
 ```java
-
+GearsBuilder.log(
+    "Setting keys to expire after 1 month", 
+    LogLevel.WARNING
+);
 ```
