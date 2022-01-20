@@ -18,7 +18,7 @@ Defines a set of operations to run for each record in the pipe.
 
 | Name | Type | Description |
 |------|------|-------------|
-| foreach | gears.operations.ForeachOperation<T> | The set of operations to run for each record |
+| foreach | ForeachOperation<T> | The set of operations to run for each record |
 
 ## Returns
 

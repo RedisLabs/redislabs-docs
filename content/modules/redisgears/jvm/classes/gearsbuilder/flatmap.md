@@ -29,7 +29,7 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| flatmapper | <nobr>gears.operations.FlatMapOperation<T,​I></nobr> | For each input record, returns one or more output records |
+| flatmapper | <nobr>FlatMapOperation<T,​I></nobr> | For each input record, returns one or more output records |
 
 ## Returns
 

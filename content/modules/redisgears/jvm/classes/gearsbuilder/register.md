@@ -33,8 +33,8 @@ Execution modes:
 | Name | Type | Description |
 |------|------|-------------|
 | mode | ExecutionMode | The execution mode to use (ASYNC/ASYNC_LOCAL/SYNC) |
-| onRegister | gears.operations.OnRegisteredOperation | Register callback that will be called on each shard upon register |
-| onUnregistered | gears.operations.OnUnregisteredOperation | Unregister callback that will be called on each shard upon unregister |
+| onRegister | OnRegisteredOperation | Register callback that will be called on each shard upon register |
+| onUnregistered | OnUnregisteredOperation | Unregister callback that will be called on each shard upon unregister |
 
 ## Returns
 

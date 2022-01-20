@@ -32,8 +32,8 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| initialValue | Template type I | The initial value of the accumulated object |
-| accumulator | <nobr>gears.operations.AccumulateOperation<T,​I></nobr> | A function with logic to update the accumulator value with each record |
+| initialValue | template type I | The initial value of the accumulated object |
+| accumulator | <nobr>AccumulateOperation<T,​I></nobr> | A function with logic to update the accumulator value with each record |
 
 ## Returns
 

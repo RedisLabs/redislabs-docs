@@ -34,9 +34,9 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| valueInitializer | gears.operations.ValueInitializerOperation<I> | Whenever the accumulated value is null, use this function to initialize it |
-| extractor | gears.operations.ExtractorOperation<T> | Extracts a specific value from each record |
-| accumulator | <nobr>gears.operations.AccumulateByOperation<T,​I></nobr> | A function with logic to update the accumulator value with each record |
+| valueInitializer | ValueInitializerOperation<I> | Whenever the accumulated value is null, use this function to initialize it |
+| extractor | ExtractorOperation<T> | Extracts a specific value from each record |
+| accumulator | <nobr>AccumulateByOperation<T,​I></nobr> | A function with logic to update the accumulator value with each record |
 
 ## Returns
 

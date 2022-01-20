@@ -22,7 +22,7 @@ The filter operation should contain a conditional statement and return a boolean
 
 | Name | Type | Description |
 |------|------|-------------|
-| filter | gears.operations.FilterOperation<T> | A function that checks a condition for each record in the pipe. Returns a boolean. |
+| filter | FilterOperation<T> | A function that checks a condition for each record in the pipe. Returns a boolean. |
 
 ## Returns
 
