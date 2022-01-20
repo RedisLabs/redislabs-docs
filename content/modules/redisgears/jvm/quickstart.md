@@ -77,7 +77,7 @@ You can use these code examples with your own Maven project to try out batch pro
 
 If you use the `GearsBuilder.run()` function within your code, then the functions you add to your pipeline will run exactly once after you use `RG.JEXECUTE` with your JAR file.
 
-The following example filters the existing data in your database and returns any string values that contain the substring "galaxy".
+The following example calculates the average rating of all restaurant reviews stored in your database.
 
 #### Add data to the database
 
@@ -87,29 +87,39 @@ The following example filters the existing data in your database and returns any
     $ redis-cli -h <host> -p <port>
     ```
 
-1. Add a few strings to the database with the `SET` command:
+1. Add a few review hashes to the database with the `HSET` command:
 
     ```sh
-    127.0.0.1:12000> SET message:1 "hello world"
-    OK
-    127.0.0.1:12000> SET message:2 "hello galaxy"
-    OK
-    127.0.0.1:12000> SET message:3 "hello universe"
-    OK
-    127.0.0.1:12000> SET message:4 "hello new galaxy"
-    OK
+    127.0.0.1:12000> HSET review:1 user "Alex L" message "My new favorite restaurant!" rating 5
+    (integer) 3
+    127.0.0.1:12000> HSET review:2 user "Anonymous user" message "Kind of overpriced" rating 2
+    (integer) 3
+    127.0.0.1:12000> HSET review:3 user "Francis J" message "They have a really unique menu." rating 4
+    (integer) 3
     127.0.0.1:12000> exit
     ```
 
 #### Example code
 
 ```java
+import java.io.Serializable;
 import gears.GearsBuilder;
 import gears.readers.KeysReader;
 import gears.records.KeysReaderRecord;
 
-public class App 
+public class Reviews implements Serializable
 {
+
+	private static final long serialVersionUID = 1L;
+	int count; // Total number of reviews
+	int ratingsSum; // Sum of all review ratings
+	
+    // Reviews constructor
+	public Reviews(int count, int ratingsSum) {
+		this.count = count;
+		this.ratingsSum = ratingsSum;
+	}
+
     public static void main(String args[]) 
     {  
         // Create the reader that will pass data to the pipe
@@ -118,15 +128,22 @@ public class App
         // Create the data pipe builder
         GearsBuilder<KeysReaderRecord> gb = GearsBuilder.CreateGearsBuilder(reader);
         
-        // Get all strings that contain the substring "galaxy"
-        gb.filter(r->{
-        	return r.getStringVal().contains("galaxy");
-       	});
-        
-        // Map the string value for each key
-        gb.map(r->{
-        	return r.getStringVal();
- 	    });
+		gb.filter(r->{
+			// Filter out any keys that are not reviews
+			return r.getKey().startsWith("review:");
+		}).map(r->{
+			// Extract the rating field
+			return r.getHashVal().get("rating");
+		})
+		.accumulate(new Reviews(0, 0), (accumulator, record)-> {
+			// Count the reviews and add up all of their ratings
+			accumulator.count++;
+			accumulator.ratingsSum += Integer.parseInt(record);
+			return accumulator;
+		}).map(r->{
+			// Calculate the average rating
+			return ((double) r.ratingsSum) / r.count;
+		});
              
         // Run the data through the pipeline immediately
         gb.run();
@@ -138,9 +155,8 @@ public class App
 
 ```sh
 $ redis-cli -x -h {host} -p {port} \
-    RG.JEXECUTE com.domain.packagename.App < /tmp/rgjvmtest-0.0.1-SNAPSHOT.jar
-1) 1) "\"hello galaxy\""
-   2) "\"hello new galaxy\""
+    RG.JEXECUTE com.domain.packagename.Reviews < /tmp/rgjvmtest-0.0.1-SNAPSHOT.jar
+1) 1) "3.6666666666666665"
 2) (empty array)
 ```
 
