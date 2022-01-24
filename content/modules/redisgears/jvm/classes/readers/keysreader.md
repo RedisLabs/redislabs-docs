@@ -47,7 +47,7 @@ public KeysReader(String pattern,
 | readValues | boolean | true | Whether or not to read the keys' values |
 | eventTypes | array of strings | null | The event types to register on (usually the command name) |
 | keyTypes | array of strings | null | The key types to register on |
-
+| commands | array of strings | null | The commands that this reader is registered on |
 
 ## Output records
 

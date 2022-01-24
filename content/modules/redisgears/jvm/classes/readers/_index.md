@@ -1,7 +1,7 @@
 ---
 Title: RedisGears readers
 linkTitle: Readers
-description:
+description: Extracts data from the database and creates records.
 weight: 60
 alwaysopen: false
 categories: ["Modules"]
