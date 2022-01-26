@@ -308,7 +308,7 @@ echo http://$NODE_IP:$NODE_PORT #Example: http://172.17.0.2:32388
 
 ```
 
-3. Open your browser and point to `http://<endpopoint>:<port>` from the previous command.
+3. Open your browser and point to `http://<endpoint>:<port>` from the previous command.
 
 4. To uninstall the helm chart:
 
