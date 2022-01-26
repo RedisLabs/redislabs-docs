@@ -7,7 +7,9 @@ alwaysopen: false
 categories: ["Modules"]
 ---
 
-With the [RedisGears JVM plugin](https://github.com/RedisGears/JVMPlugin), you can write RedisGears functions in [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) and run them on a [Redis Enterprise]({{<relref "/rs/">}}) cluster. The [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine) plugin supports both batch processing and event-driven processing.
+With the [RedisGears JVM plugin](https://github.com/RedisGears/JVMPlugin), you can write RedisGears functions in [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) and run them on a [Redis Enterprise]({{<relref "/rs/">}}) cluster. It currently supports JVM version 11.
+
+Similar to the Python plugin, the [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine) plugin allows both batch processing and event-driven processing.
 
 Before you can run RedisGears with Java, you will need to [install the RedisGears module and the JVM plugin]({{<relref "/modules/redisgears/jvm/install">}}) on your Redis Enterprise cluster and enable them for your database.
 

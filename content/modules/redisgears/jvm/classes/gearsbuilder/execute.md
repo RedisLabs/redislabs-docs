@@ -1,7 +1,7 @@
 ---
 Title: Execute
 linkTitle: execute
-description: Runs a Redis command.
+description: Runs a Redis command. A more flexible version of executeArray.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -11,7 +11,7 @@ categories: ["Modules"]
 public static java.lang.Object execute​(java.lang.String... command)
 ```
 
-Runs a Redis command.
+Runs a Redis command, similar to [`executeArray`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/executeArray">}}). However, the `execute` function is more flexible. Unlike `executeArray`, the list of string arguments does not have to be an explicit `String[]` object. It allows function calls like this: `execute("SET", "key", "value")`.
 
 ## Parameters
 
@@ -25,6 +25,14 @@ Returns the command result. It could be a string or an array of strings, dependi
 
 ## Example
 
+Without `String[]`:
+
 ```java
 GearsBuilder.execute("SET", "age:maximum", "100");
+```
+
+With `String[]`:
+
+```java
+GearsBuilder.execute(new String[]{"SET", "age:maximum", "100"});
 ```
