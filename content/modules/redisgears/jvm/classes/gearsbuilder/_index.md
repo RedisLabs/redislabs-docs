@@ -4,6 +4,7 @@ linkTitle: GearsBuilder
 description: Creates a RedisGears pipeline of operations to transform data.
 weight: 60
 alwaysopen: false
+toc: "false"
 categories: ["Modules"]
 ---
 

@@ -28,6 +28,10 @@ Execution modes:
 | ASYNC_LOCAL | Runs asynchronously but only on the current shard that generated the event. |
 | SYNC | Runs synchronously only on the same shard that generated the event. |
 
+{{<note>}}
+If you call `register()` without specifying an execution mode, it will default to `ASYNC`. 
+{{</note>}}
+
 ## Parameters
 
 | Name | Type | Description |

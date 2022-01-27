@@ -13,6 +13,10 @@ The `CommandOverrider` allows you to override and customize Redis commands.
 1. Add `register()` to the end of your `GearsBuilder` object.
 1. Run `RG.JEXECUTE` to register your code.
 
+{{<note>}}
+If you register code that uses `CommandOverrider`, its `reader` value is `"CommandReader"` when you run the [`RG.DUMPREGISTRATIONS`](http://oss.redis.com/redisgears/commands.html#rgdumpregistrations) command, not `"CommandOverrider"`.
+{{</note>}}
+
 ## Parameters
 
 | Name | Type | Description |

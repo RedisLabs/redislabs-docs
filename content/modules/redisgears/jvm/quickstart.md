@@ -142,7 +142,7 @@ public class Reviews implements Serializable
 			return accumulator;
 		}).map(r->{
 			// Calculate the average rating
-			return ((double) r.ratingsSum) / r.count;
+			return Double.valueOf(((double) r.ratingsSum) / r.count);
 		});
              
         // Run the data through the pipeline immediately
@@ -211,7 +211,9 @@ public class App
         
         // Store this pipeline of functions and 
         // run them when a new person key is added
-        gb.register();
+        gb.register(ExecutionMode.SYNC);
+        // Note: ExecutionMode defaults to ASYNC 
+        // if you call register() without any arguments
     }
 }
 ```

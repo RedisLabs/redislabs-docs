@@ -50,6 +50,11 @@ After the install is complete, RedisGears will appear in the list of available m
 
     {{<image filename="images/rs/icon_save.png" width="30px" alt="The Save icon">}}{{</image>}}
 
+    {{<note>}}
+You can configure additional JVM options in this box. For example:<br></br>
+Plugin gears_jvm JvmOptions <nobr>'-Dproperty1=value1</nobr> <nobr>-Dproperty2=value2'</nobr>
+    {{</note>}}
+
 1. Select the **Activate** button.
 
 ## Verify the install
