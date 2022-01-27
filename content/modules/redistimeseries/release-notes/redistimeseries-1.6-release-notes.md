@@ -17,7 +17,7 @@ RedisTimeSeries v1.6.8 requires:
 
 ## 1.6 GA (v1.6.8) (January 2022)
 
-This is the General Availability release of RedisTimeSeries 1.6
+This is the General Availability release of RedisTimeSeries 1.6.
 
 ### What's new in 1.6
 
