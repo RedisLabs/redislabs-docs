@@ -21,7 +21,7 @@ This is the General Availability release of RedisTimeSeries 1.6.
 
 ### What's new in 1.6
 
-- Introduction of `GROUPBY` and `REDUCE` in [TS.MRANGE and TS.MREVRANGE](https://oss.redis.com/redistimeseries/commands/#tsmrangetsmrevrange) to add support for "multi-key aggregation" and support for such aggregations spanning multiple shards, leveraging [LibMR](https://github.com/RedisGears/LibMR)). Currently, we support `min`, `max`, and `sum` as reducers and grouping by a label.
+- Introduction of `GROUPBY` and `REDUCE` in [TS.MRANGE and TS.MREVRANGE](https://oss.redis.com/redistimeseries/commands/#tsmrangetsmrevrange) to add support for "multi-key aggregation" and support for such aggregations spanning multiple shards, leveraging [LibMR](https://github.com/RedisGears/LibMR). Currently, we support `min`, `max`, and `sum` as reducers and grouping by a label.
 
 - [#722](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/722), [#275](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/275) Filter results using `FILTER_BY_TS` by providing a list of timestamps and `FILTER_BY_VALUE` by providing a `min` and a `max` value ([TS.RANGE, TS.REVRANGE](https://oss.redis.com/redistimeseries/commands/#tsrangetsrevrange), [TS.MRANGE, and TS.MREVRANGE](https://oss.redis.com/redistimeseries/commands/#tsmrangetsmrevrange)).
 
