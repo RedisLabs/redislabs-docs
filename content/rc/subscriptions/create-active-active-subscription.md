@@ -25,7 +25,7 @@ Consistency between each instance is maintained in the background; that is, each
 
 ## Define regions
 
-When you create a new flexible subscription, the Active-Active Redis option appears to the right of the cloud providers.
+When you create a new Flexible subscription, the Active-Active Redis option appears to the right of the cloud providers.
 
 {{<image filename="images/rc/create-flexible-sub-active-active-on.png" width="75%" alt="When you enable Active-Actve, you need to specify the regions for each database instance." >}}{{< /image >}}
 
