@@ -29,7 +29,7 @@ This is the General Availability release of RedisTimeSeries 1.6.
 
 - [#762](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/762) Limit the number of returned labels in the response of read commands ([TS.MRANGE, TS.MREVRANGE](https://oss.redis.com/redistimeseries/commands/#tsmrangetsmrevrange), and [TS.MGET](https://oss.redis.com/redistimeseries/commands/#tsmget)) using `SELECTED_LABELS`. This can be a significant performance improvement when returning a large number of series.
 
-- [#655](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/655), [#801](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/801) Ability to align the aggregation buckets with the requested start, end or specific timestamp on aggregation queries using `ALIGN` ([TS.RANGE, TS.REVRANGE](https://oss.redis.com/redistimeseries/commands/#tsrangetsrevrange), [TS.MRANGE, and TS.MREVRANGE](https://oss.redis.com/redistimeseries/commands/#tsmrangetsmrevrange)).
+- [#655](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/655), [#801](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/801) Ability to align the aggregation buckets with the requested start, end, or specific timestamp on aggregation queries using `ALIGN` ([TS.RANGE, TS.REVRANGE](https://oss.redis.com/redistimeseries/commands/#tsrangetsrevrange), [TS.MRANGE, and TS.MREVRANGE](https://oss.redis.com/redistimeseries/commands/#tsmrangetsmrevrange)).
 
 - [#675](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/675) Add keyspace notifications for all CRUD commands. Check out [this test](https://github.com/RedisTimeSeries/RedisTimeSeries/blob/master/tests/flow/test_ts_keyspace.py) for the details.
 
