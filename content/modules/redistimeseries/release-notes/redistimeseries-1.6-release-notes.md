@@ -12,8 +12,8 @@ categories: ["Modules"]
 
 RedisTimeSeries v1.6.8 requires:
 
-- Minimum Redis compatibility version (database): 6.2
-- Minimum Redis Enterprise Software version (cluster): 6.2
+- Minimum Redis compatibility version (database): 6.2.0
+- Minimum Redis Enterprise Software version (cluster): 6.2.0
 
 ## 1.6 GA (v1.6.8) (January 2022)
 
