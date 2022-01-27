@@ -20,7 +20,7 @@ Active-Active databases consist of multiple copies (also called _instances_) dep
 
 This reduces latency for local users and improves availability should a region fail.
 
-Consistency between each instance is maintained in the background; that is, each copy eventually includes updates from every region.  As a result, [memory size]({{<relref "/rc/databases/create-database#memory-size">}}) and throughout increase.
+Consistency between each instance is maintained in the background; that is, each copy eventually includes updates from every region.  As a result, [memory size]({{<relref "/rc/databases/create-database#memory-size">}}) and throughput increase.
 
 
 ## Define regions
