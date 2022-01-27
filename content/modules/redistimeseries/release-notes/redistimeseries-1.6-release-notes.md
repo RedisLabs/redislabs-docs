@@ -19,6 +19,10 @@ RedisTimeSeries v1.6.8 requires:
 
 This is the General Availability release of RedisTimeSeries 1.6.
 
+### Highlights
+
+RedisTimeSeries 1.6 adds support for aggregating across multiple time series (multi-key). Before this version, queries such as “the maximum observed value of a set of time series” needed to be calculated client-side. Such queries can now be computed server-side, leveraging the heart of RedisGears ([LibMR](https://github.com/RedisGears/LibMR)) for clustered databases.
+
 ### What's new in 1.6
 
 - Introduction of `GROUPBY` and `REDUCE` in [TS.MRANGE and TS.MREVRANGE](https://oss.redis.com/redistimeseries/commands/#tsmrangetsmrevrange) to add support for "multi-key aggregation" and support for such aggregations spanning multiple shards, leveraging [LibMR](https://github.com/RedisGears/LibMR). Currently, we support `min`, `max`, and `sum` as reducers and grouping by a label.
