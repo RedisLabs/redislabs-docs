@@ -197,7 +197,7 @@ You can test the operator by creating a minimal cluster by following this proced
 
 ## Enable the Admission Controller
 
-The Admission Controller dynamically validates REDB resources configured by the operator. It is strongly recommended that you use the Admission Controller on your Redis Enterprise Cluster (REC).
+The Admission Controller dynamically validates REDB resources configured by the operator. It is strongly recommended that you use the Admission Controller on your Redis Enterprise Cluster (REC). The admission controller only needs to be configured once per operator deployment.
 
 As part of the REC creation process, the operator stores the admission controller certificate in a Kubernetes secret called `admission-tls`. You may have to wait a few minutes after creating your REC to see the secret has been created.
 
@@ -280,14 +280,12 @@ The webhook will intercept requests from all namespaces unless you edit it to ta
       evictionPolicy: illegal
     EOF
     ```
+
   You should see your request was denied by the `admission webhook "redb.admission.redislabs"`.
-    
+
     ```sh
     Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
     ```
-
-
-
 
 ## Create a Redis Enterprise Database (REDB)
 
