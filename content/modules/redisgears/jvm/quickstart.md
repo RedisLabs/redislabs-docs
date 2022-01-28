@@ -45,7 +45,7 @@ For this quick start tutorial, you need:
 
 ### Build a JAR
 
-Use the Maven command line tool or an IDE plugin to compile and package your code into a JAR file:
+Use the Maven command-line tool or an IDE plugin to compile and package your code into a JAR file:
 
 ```sh
 $ mvn package
@@ -57,25 +57,25 @@ Upload your JAR file to a node in the Redis Enterprise cluster. You will need to
 
 ### Run RedisGears Java code
 
-Use the `RG.JEXECUTE` command to run your RedisGears Java code:
+Use the `RG.JEXECUTE` command to run your code:
 
 ```sh
 $ redis-cli -x -h {host} -p {port} RG.JEXECUTE {package.MainClass} < {filepath}/{JAR name}.jar
 ```
 
 {{<note>}}
-If you used `GearsBuilder.run()`, your code will run immediately when you run `RG.JEXECUTE`.
+When you use [`GearsBuilder.run()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/run">}}), `RG.JEXECUTE` runs your code immediately.
 <br></br>
-However, if you used `GearsBuilder.register()`, an `OK` message will display. Your code should run whenever certain database events occur.
+However, if you use [`GearsBuilder.register()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/register">}}), `RG.JEXECUTE` only outputs an `OK` message if it registers successfully. Your registered code will run whenever certain database events occur.
 {{</note>}}
 
 ## Example code
 
-You can use these code examples with your own Maven project to try out batch processing and event processing with the RedisGears JVM plugin.
+You can use these code examples with your own Maven project to try out batch processing or event processing with the RedisGears JVM plugin.
 
 ### Batch processing
 
-If you use the `GearsBuilder.run()` function within your code, then the functions you add to your pipeline will run exactly once after you use `RG.JEXECUTE` with your JAR file.
+If you use the [`GearsBuilder.run()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/run">}}) function within your code, then the functions you add to the pipeline will run exactly once when you use `RG.JEXECUTE` with your JAR file.
 
 The following example calculates the average rating of all restaurant reviews stored in your database.
 
@@ -162,9 +162,9 @@ $ redis-cli -x -h {host} -p {port} \
 
 ### Event processing
 
-If you use the `GearsBuilder.register()` function in your code, then the functions you add to your pipeline will run every time a certain database event occurs.
+If you use the [`GearsBuilder.register()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/register">}}) function in your code, then the functions you add to the pipeline will run every time a certain database event occurs.
 
-The following example registers a pipeline of functions that will automatically update the maximum age every time you add a new person hash to your database.
+The following example registers a pipeline of functions to automatically update the maximum age every time you add a new person hash to your database.
 
 #### Example code
 
@@ -220,7 +220,7 @@ public class App
 
 #### Example event processing
 
-After you register your code with the `RG.JEXECUTE` command, you can add some data to your database and check the value of `age:maximum` to verify that it runs correctly.
+After you register your code with the `RG.JEXECUTE` command, add some data to the database and check the value of `age:maximum` to verify that it runs correctly.
 
 1. Connect to your database with `redis-cli`:
 

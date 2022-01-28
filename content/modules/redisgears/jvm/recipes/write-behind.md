@@ -92,7 +92,7 @@ Then, register the following configuration files:
 1. Register the same mapping configuration for read-through:
 
     ```sh
-    > redis-cli -x RG.TRIGGER SYNC.REGISTERSOURCE StudentWrite mysql WriteBehind < src/test/resources/Student.hbm.xml 
+    > redis-cli -x RG.TRIGGER SYNC.REGISTERSOURCE StudentRead mysql ReadThrough 0 < src/test/resources/Student.hbm.xml 
     1) "OK"
     ````
 ## Example configuration

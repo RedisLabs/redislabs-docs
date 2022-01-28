@@ -1,5 +1,5 @@
 ---
-Title: Java-based Redisgears recipes
+Title: Java-based RedisGears recipes
 linkTitle: Recipes 
 description:
 weight: 70
