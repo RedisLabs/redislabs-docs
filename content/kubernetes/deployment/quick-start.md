@@ -195,9 +195,9 @@ You can test the operator by creating a minimal cluster by following this proced
 
 <!--- Once the cluster is up, the cluster GUI and API could be used to configure databases. It is recommended to use the K8s REDB API that is configured through the following steps. To configure the cluster using the cluster GUI/API, use the ui service created by the operator and the default credentials as set in a secret. The secret name is the same as the cluster name within the namespace.--->
 
-## Enable the Admission Controller
+## Enable the admission controller
 
-The Admission Controller dynamically validates REDB resources configured by the operator. It is strongly recommended that you use the Admission Controller on your Redis Enterprise Cluster (REC). The admission controller only needs to be configured once per operator deployment.
+The admission controller dynamically validates REDB resources configured by the operator. It is strongly recommended that you use the admission controller on your Redis Enterprise Cluster (REC). The admission controller only needs to be configured once per operator deployment.
 
 As part of the REC creation process, the operator stores the admission controller certificate in a Kubernetes secret called `admission-tls`. You may have to wait a few minutes after creating your REC to see the secret has been created.
 
