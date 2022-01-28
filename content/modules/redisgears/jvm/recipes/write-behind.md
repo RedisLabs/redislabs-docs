@@ -37,23 +37,7 @@ Then, register the following configuration files:
 
 ### Register rghibernate JAR
 
-1. Download [rghibernate](https://github.com/RedisGears/rghibernate):
-
-    ```sh
-    $ git clone git@github.com:RedisGears/rghibernate.git
-    ```
-
-1. From the downloaded directory, run the following command:
-
-    ```sh
-    $ git submodule update --init --recursive
-    ```
-
-1. Build the rghibernate JAR:
-
-    ```sh
-    $ make build
-    ```
+1. Download the rghibernate JAR from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
 1. Upload the JAR to a Redis node.
 
