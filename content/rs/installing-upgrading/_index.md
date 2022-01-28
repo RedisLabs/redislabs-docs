@@ -180,11 +180,34 @@ To install without answering the installation questions, either:
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
-## Notes
+## Permissions and access
 
-- Redis Enterprise Software installation creates the `redislabs:redislabs` user and group. Assigning other users to the `redislabs` group is optional. Users belonging to the `redislabs` group will have permission to read and execute (e.g. use the `rladmin` status command) but not to write or delete files and directories.
+- Redis Enterprise Software installation creates the `redislabs:redislabs` user and group. 
 
-- Redis Enterprise Software serves a large variety of industries. The common industry standard for permissions is `750` permissions. Reducing the permissions to `700` has not been tested and isn't supported. 
+    Assigning other users to the `redislabs` group is optional. Users belonging to the `redislabs` group have permission to read and execute (e.g. use the `rladmin` status command) but are not allowed to write (or delete) files or directories.
+
+- Redis Enterprise Software is certified to run with permissions set to `750`, an industry standard.
+
+    We recommend against reducing permissions to `700`; this configuration has not been tested and is not supported.
+
+## Install command line-options
+
+Run `./install.sh --help` to view command-line options supported by the install script.
+
+At this time, the following options are supported:
+
+| Option | Description |
+|--------|-------------|
+| `-y` | Automatically answers `yes` to all install prompts prompts, accepting all default values |
+| <nobr>`-c <answer file>`</nobr> | Specify answer file used to respond to install prompts |
+| <nobr>`-s <socket dir>`</s> | Specify directory for redislabs unix sockets  _(new installs only)_|
+| <nobr>`--install-dir <dir>`</nobr> | Specifies installation directory _(new installs only)_| 
+| <nobr>`--config-dir <dir>` | Configuration file directory _(new installs only)_|
+| <nobr>`--var-dir <dir>`</nobr> | Var dir used for installation _(new installs only)_|
+| <nobr>`--os-user <user>`| Operating system user account associated with install (default: `redislabs`; _new installs only)_|
+|<nobr>`--os-group <group>` | operating system group associated with install (default: `redislabs`; _new installs only)_ |
+
+The next section provides additional configuration details.
 
 ## More info and options
 
