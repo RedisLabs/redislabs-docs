@@ -19,10 +19,10 @@ To deploy Redis Enterprise Software on Kubernetes, you first need to install the
 
 This quick start guide is for generic Kubernetes distributions ([kOps](https://kops.sigs.k8s.io)) as well as:
 
- * [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/) (AKS)
- * [Rancher](https://rancher.com/products/rancher/) / [Rancher Kubernetes Engine](https://rancher.com/products/rke/) (RKE)
- * [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) (GKE)
- * [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS)
+* [Azure Kubernetes Service](https://azure.microsoft.com/en-us/services/kubernetes-service/) (AKS)
+* [Rancher](https://rancher.com/products/rancher/) / [Rancher Kubernetes Engine](https://rancher.com/products/rke/) (RKE)
+* [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine) (GKE)
+* [Amazon Elastic Kubernetes Service](https://aws.amazon.com/eks/) (EKS)
 
 If you're running either OpenShift or VMWare Tanzu, we provide specific getting started guides for installing the Redis Enterprise Operator on these platforms:
 
@@ -112,9 +112,7 @@ NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
 redis-enterprise-operator   1/1     1            1           0m36s
 ```
 
-## Test the operator
-
-### Create a Redis Enterprise cluster (REC)
+## Create a Redis Enterprise cluster (REC)
 
 A cluster is created by creating a custom resource with the kind "RedisEnterpriseCluster"
 that contains the specification of the cluster option. See the
@@ -197,13 +195,103 @@ You can test the operator by creating a minimal cluster by following this proced
 
 <!--- Once the cluster is up, the cluster GUI and API could be used to configure databases. It is recommended to use the K8s REDB API that is configured through the following steps. To configure the cluster using the cluster GUI/API, use the ui service created by the operator and the default credentials as set in a secret. The secret name is the same as the cluster name within the namespace.--->
 
-### Enable the Admission Controller
+## Enable the Admission Controller
+
+The Admission Controller dynamically validates REDB resources configured by the operator. It is strongly recommended that you use the Admission Controller on your Redis Enterprise Cluster (REC).
+
+As part of the REC creation process, the operator stores the admission controller certificate in a Kubernetes secret called `admission-tls`. You may have to wait a few minutes after creating your REC to see the secret has been created.
+
+1. Verify the secret has been created.
+
+    ```sh
+     kubectl get secret admission-tls
+     NAME            TYPE     DATA   AGE
+     admission-tls   Opaque   2      2m43s
+    ```
+
+1. Save the certificate to a local environment variable.
+
+    ```sh
+    CERT=`kubectl get secret admission-tls -o jsonpath='{.data.cert}'`
+    ```
+
+1. Create a patch file for the Kubernetes validating webhook.
+
+    ```sh
+    sed 's/NAMESPACE_OF_SERVICE_ACCOUNT/demo/g' admission/webhook.yaml | kubectl create -f -
+
+    cat > modified-webhook.yaml <<EOF
+    webhooks:
+    - name: redb.admission.redislabs
+      clientConfig:
+        caBundle: $CERT
+      admissionReviewVersions: ["v1beta1"]
+    EOF
+    ```
+
+1. Patch the webhook with the certificate.
+
+    ```sh
+    kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
+    ```
+
+### Limit the webhook to the relevant namespaces
+
+The webhook will intercept requests from all namespaces unless you edit it to target a specific namespace. You can do this by adding the `namespaceSelector` section to the webhook spec to target a label on the namespace.
+
+1. Make sure the namespace has a unique `namespace-name` label.
+
+    ```sh
+    apiVersion: v1
+    kind: Namespace
+    metadata:
+       labels:
+        namespace-name: example-ns
+    name: example-ns
+    ```
+
+1. Patch the webhook to add the `namespaceSelector` section.
+
+    ```sh
+    cat > modified-webhook.yaml <<EOF
+    webhooks:
+    - name: redb.admission.redislabs
+      namespaceSelector:
+        matchLabels:
+          namespace-name: staging
+    EOF
+    ```
+
+1. Apply the patch.
+
+    ```sh
+    kubectl patch ValidatingWebhookConfiguration redb-admission --patch "$(cat modified-webhook.yaml)"
+    ```
+
+1. Verify the admission controller is installed correctly by applying an invalid resource. This should force the admission controller to correct it.
+
+    ```sh
+    $ kubectl apply -f - << EOF
+    apiVersion: app.redislabs.com/v1alpha1
+    kind: RedisEnterpriseDatabase
+    metadata:
+      name: redis-enterprise-database
+    spec:
+      evictionPolicy: illegal
+    EOF
+    ```
+  You should see your request was denied by the `admission webhook "redb.admission.redislabs"`.
+    
+    ```sh
+    Error from server: error when creating "STDIN": admission webhook "redb.admission.redislabs" denied the request: eviction_policy: u'illegal' is not one of [u'volatile-lru', u'volatile-ttl', u'volatile-random', u'allkeys-lru', u'allkeys-random', u'noeviction', u'volatile-lfu', u'allkeys-lfu']
+    ```
 
 
 
-### Create a Redis Enterprise Database (REDB)
 
-Once the cluster is running, you can create a test database. 
+## Create a Redis Enterprise Database (REDB)
+
+Once the cluster is running, you can create a test database.
 
 1. Define the database with a sample REDB custom resource YAML file.
 
