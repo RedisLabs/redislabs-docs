@@ -35,8 +35,8 @@ The following example shows how to create a custom command to update an item's s
 Add a hash to the database that represents an inventory item:
 
 ```sh
-redis> HSET inventory:headphones:blue stock 5 price 30.00
-(integer) 2
+redis> HSET inventory:headphones:1 color "blue" stock 5 price 30.00
+(integer) 3
 ```
 
 Example code:
@@ -64,18 +64,20 @@ GearsBuilder.CreateGearsBuilder(reader).map(r-> {
 After you register the previous code with the `RG.JEXECUTE` command, run `RG.TRIGGER` to test it:
 
 ```sh
-redis> RG.TRIGGER Restock inventory:headphones:blue 20
-1) "OK restocked inventory:headphones:blue"
+redis> RG.TRIGGER Restock inventory:headphones:1 20
+1) "OK restocked inventory:headphones:1"
 ```
 
 The item now has the updated value for `stock` and a `last_restocked` timestamp:
 
 ```sh
-redis> HGETALL inventory:headphones:blue
-1) "stock"
-2) "20"
-3) "price"
-4) "30.00"
-5) "last_restocked"
-6) "1643232394078"
+redis> HGETALL inventory:headphones:1
+1) "color"
+2) "blue"
+3) "stock"
+4) "20"
+5) "price"
+6) "30.00"
+7) "last_restocked"
+8) "1643232394078"
 ```
