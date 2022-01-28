@@ -32,14 +32,14 @@ Function parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| initialValue | template type I | The initial value of the accumulated object |
 | accumulator | <nobr>AccumulateOperation<T,​I></nobr> | A function with logic to update the accumulator value with each record |
+| initialValue | template type I | The initial value of the accumulated object |
 
 ## Returns
 
 Returns a GearsBuilder object with a new template type.
 
-## Example
+## Examples
 
 Both of the following examples count the number of records in the pipeline.
 

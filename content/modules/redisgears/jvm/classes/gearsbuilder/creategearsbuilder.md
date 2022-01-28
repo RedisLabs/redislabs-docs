@@ -16,7 +16,7 @@ public static <I extends java.io.Serializable> GearsBuilder<I> CreateGearsBuilde
     java.lang.String desc)
 ```
 
-Creates a new GearsBuilder object. Use this function instead of a GearsBuilder constructor to avoid type warnings.
+Creates a new `GearsBuilder` object. Use this function instead of a `GearsBuilder` constructor to avoid type warnings.
 
 ## Parameters
 
@@ -30,8 +30,8 @@ Parameters:
 
 | Name | Type | Description |
 |------|------|-------------|
-| reader | BaseReader<I> | The pipe reader |
 | desc | string | The description |
+| reader | BaseReader<I> | The pipe reader |
 
 ## Returns
 

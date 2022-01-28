@@ -8,7 +8,8 @@ categories: ["Modules"]
 ---
 
 ```java
-public static native java.lang.Object callNextArray(java.lang.String[] command)
+public static native java.lang.Object callNextArray(
+    java.lang.String[] command)
 ```
 
 When you override a Redis command with the [`CommandOverrider`]({{<relref "/modules/redisgears/jvm/classes/readers/commandoverrider">}}), use `callNextArray` to run the next execution that overrides the command or the original command itself.

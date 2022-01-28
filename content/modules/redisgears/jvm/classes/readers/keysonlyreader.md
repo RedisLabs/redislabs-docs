@@ -23,8 +23,8 @@ public KeysOnlyReader(int scanSize, String pattern)
 
 | Name | Type | Default value | Description |
 |------|------|---------------|-------------|
+| pattern | string | "\*" (match all keys) | Get all keys that match this pattern |
 | scanSize | integer | 10000 | The scan command's size limit |
-| pattern | string | "\*" (match all keys) | The reader will get all keys that match this pattern |
 
 ## Output records
 
@@ -36,5 +36,11 @@ Get all keys in the database:
 
 ```java
 KeysOnlyReader reader = new KeysOnlyReader();
+```
+
+Only get keys that start with "user:":
+
+```java
+KeysOnlyReader reader = new KeysOnlyReader(1000, "user:*");
 ```
 

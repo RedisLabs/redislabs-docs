@@ -19,7 +19,7 @@ None
 
 ## Returns
 
-Returns a GearsBuilder object with a new template type (Integer).
+Returns a GearsBuilder object with a new template type of `Integer`.
 
 ## Example
 

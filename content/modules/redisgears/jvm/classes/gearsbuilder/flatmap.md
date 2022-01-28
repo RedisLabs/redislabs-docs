@@ -14,8 +14,8 @@ public <I extends java.io.Serializable> GearsBuilder<I> flatMap​(
 
 Maps a single input record to one or more output records.
 
-The FlatMap operation must return an [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html) object. RedisGears 
-splits the elements from the Iterable object and processes them as individual records.
+The FlatMap operation must return an [`Iterable`](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html). RedisGears 
+splits the elements from the `Iterable` object and processes them as individual records.
 
 ## Parameters
  

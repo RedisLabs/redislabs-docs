@@ -9,8 +9,8 @@ categories: ["Modules"]
 
 The `CommandOverrider` allows you to override and customize Redis commands.
 
-1. Pass the `CommandOverrider` to the `GearsBuilder.CreateGearsBuilder` function in your Java code.
-1. Add `register()` to the end of your `GearsBuilder` object.
+1. Pass the `CommandOverrider` to the [`GearsBuilder.CreateGearsBuilder()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/creategearsbuilder">}}) function in your Java code.
+1. Call the [`register()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/register">}}) function.
 1. Run `RG.JEXECUTE` to register your code.
 
 {{<note>}}
@@ -22,15 +22,15 @@ If you register code that uses `CommandOverrider`, its `reader` value is `"Comma
 | Name | Type | Description |
 |------|------|-------------|
 | command | string | The command to override |
-| prefix | string | The prefix |
+| prefix | string | Only override the command for keys that start with this string |
 
 ## Output records
 
-The command's name and arguments.
+Outputs a record with the command's name and arguments.
 
 ## Example
 
-The following example shows how to override the `HSET` Redis command so that it also adds a `last_modified` timestamp for "user:" hashes.
+The following example shows how to override the `HSET` command so that it also adds a `last_modified` timestamp for "user:" hashes.
 
 Add some user data as a hash:
 

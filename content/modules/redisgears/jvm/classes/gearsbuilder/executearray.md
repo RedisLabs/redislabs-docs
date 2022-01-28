@@ -8,7 +8,8 @@ categories: ["Modules"]
 ---
 
 ```java
-public static native Object executeArray(String[] command)
+public static native java.lang.Object executeArray(
+    java.lang.String[] command)
 ```
 
 Runs a Redis command. It accepts an array of strings, which represents the command to execute.

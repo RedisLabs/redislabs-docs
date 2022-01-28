@@ -12,7 +12,7 @@ public GearsBuilder<T> asyncForeach​(
     gears.operations.AsyncForeachOperation<T> foreach)
 ```
 
-The `asyncForeach` function allows you to use a [GearsFuture]({{<relref "/modules/redisgears/jvm/classes/gearsfuture">}}) object to define a set of operations and run them asynchronously for each record in the pipe.
+The `asyncForeach` function allows you to use a [`GearsFuture`]({{<relref "/modules/redisgears/jvm/classes/gearsfuture">}}) object to define a set of operations and run them asynchronously for each record in the pipe.
 
 ## Parameters
 

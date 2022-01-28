@@ -1,7 +1,7 @@
 ---
 Title: SetResult
 linkTitle: setResult
-description: Sets the future's result.
+description: Sets a computation to run asynchronously.
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
@@ -12,13 +12,13 @@ public void setResult​(I result)
 	throws java.lang.Exception
 ```
 
-Sets the future's result.
+Sets a computation to run asynchronously.
 
 ## Parameters
 
 | Name | Type | Description |
 |------|------|-------------|
-| result | template type I | The future's result |
+| result | template type I | The result of a computation |
 
 ## Returns
 

@@ -13,12 +13,12 @@ Reads Redis stream data.
 
 | Name | Type | Default value | Description |
 |------|------|---------------|-------------|
-| pattern | string | "\*" (match all keys) | The pattern of keys that store streams |
-| startId | string | "0-0" | Start reading from this stream ID |
 | batchSize | integer | 1 | The number of new messages that will cause the functions to run |
 | duration | integer | 0 | How many seconds to wait before execution, regardless of batch size |
 | failurePolicy | FailurePolicy | FailurePolicy.CONTINUE | How to handle execution failure (CONTINUE/ABORT/RETRY) |
 | failureRetryInterval | integer | 5000 | The number of seconds to wait before retrying |
+| pattern | string | "\*" (match all keys) | The pattern of keys that store streams |
+| startId | string | "0-0" | Start reading from this stream ID |
 | trimStream | boolean | true | Whether or not to trim the stream |
 
 ## Output records
@@ -29,11 +29,11 @@ Each record is a `HashMap<String, Object>` with the following fields:
 
 | Name | Type | Description |
 |------|------|-------------|
+| id | string | The message's ID |
 | key | string | The stream key name |
-| id | | The message's ID |
 | value | HashMap<String, byte[]> | The message's data |
 
-## Example
+## Examples
 
 The following example creates a `StreamReader` with default values:
 

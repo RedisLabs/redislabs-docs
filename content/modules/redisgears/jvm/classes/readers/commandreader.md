@@ -9,10 +9,10 @@ categories: ["Modules"]
 
 The `CommandReader` allows you to run RedisGears functions on command when you:
 
-1. Pass the `CommandReader` to the `GearsBuilder.CreateGearsBuilder` function in your Java code.
-1. Add `register()` to the end of your `GearsBuilder` object.
+1. Pass the `CommandReader` to the [`GearsBuilder.CreateGearsBuilder()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/creategearsbuilder">}}) function in your Java code.
+1. Call the [`register()`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/register">}}) function.
 1. Run `RG.JEXECUTE` to register your code.
-1. Run `RG.TRIGGER` to run your code on command:
+1. Use `RG.TRIGGER` to run your code on command:
 
     ```sh
     RG.TRIGGER <Trigger name> [arg1 arg2 ...]
@@ -22,11 +22,11 @@ The `CommandReader` allows you to run RedisGears functions on command when you:
 
 | Name | Type | Description |
 |------|------|-------------|
-| trigger | string | The command name that will trigger the registered RedisGears functions to run |
+| trigger | string | The command name that triggers the registered RedisGears functions to run |
 
 ## Output records
 
-The trigger's name and arguments.
+Outputs a record with the command trigger's name and arguments.
 
 ## Example
 

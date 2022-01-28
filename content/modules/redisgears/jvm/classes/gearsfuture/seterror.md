@@ -12,7 +12,7 @@ public void setError​(java.lang.String error)
 	throws java.lang.Exception
 ```
 
-Sets an error message.
+Sets an error message for an asynchronous computation.
 
 ## Parameters
 

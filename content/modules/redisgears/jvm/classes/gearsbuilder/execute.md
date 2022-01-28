@@ -11,7 +11,7 @@ categories: ["Modules"]
 public static java.lang.Object execute​(java.lang.String... command)
 ```
 
-Runs a Redis command, similar to [`executeArray`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/executeArray">}}). However, the `execute` function is more flexible. Unlike `executeArray`, the list of string arguments does not have to be an explicit `String[]` object. It allows function calls like this: `execute("SET", "key", "value")`.
+Runs a Redis command, similar to [`executeArray`]({{<relref "/modules/redisgears/jvm/classes/gearsbuilder/executeArray">}}). However, the `execute` function is more flexible. Unlike `executeArray`, the list of string arguments does not have to be an explicit `String[]` object. It allows function calls like this: <nobr>`execute("SET", "key", "value")`.</nobr>
 
 ## Parameters
 
@@ -23,7 +23,7 @@ Runs a Redis command, similar to [`executeArray`]({{<relref "/modules/redisgears
 
 Returns the command result. It could be a string or an array of strings, depending on the command.
 
-## Example
+## Examples
 
 Without `String[]`:
 

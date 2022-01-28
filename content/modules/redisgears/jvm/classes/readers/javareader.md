@@ -14,7 +14,7 @@ The `JavaReader` is an abstract class that allows you to create a custom reader 
 To create a custom reader:
 
 - Extend the `JavaReader` class
-- Override the `public Iterator<String> iterator()` function
+- Override the `iterator()` function
 
 ## Custom reader example
 
@@ -26,7 +26,7 @@ import java.util.Iterator;
 import gears.GearsBuilder;
 
 /**
- * A reader that reads only keys name from the key space
+ * A reader that only reads key names from the key space
  *
  */
 public class KeysOnlyReader extends JavaReader<String> {

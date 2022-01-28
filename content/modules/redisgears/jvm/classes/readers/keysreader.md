@@ -42,12 +42,13 @@ public KeysReader(String pattern,
 
 | Name | Type | Default value | Description |
 |------|------|---------------|-------------|
-| pattern/prefix | string | "\*" (match all keys) | The reader will get all keys that match this pattern |
-| noScan | boolean | false | Whether or not to scan the key space or just read the pattern as is |
-| readValues | boolean | true | Whether or not to read the keys' values |
+| commands | array of strings | null | The commands that this reader is registered on |
 | eventTypes | array of strings | null | The event types to register on (usually the command name) |
 | keyTypes | array of strings | null | The key types to register on |
-| commands | array of strings | null | The commands that this reader is registered on |
+| noScan | boolean | false | Whether or not to scan the key space or just read the pattern as is |
+| pattern/prefix | string | "\*" (match all keys) | The reader will get all keys that match this pattern |
+| readValues | boolean | true | Whether or not to read the keys' values |
+
 
 ## Output records
 
@@ -56,7 +57,7 @@ Creates a `KeysReaderRecord` for each matching key in the database.
 | Name | Type | Description |
 |------|------|-------------|
 | key | string | The name of the key |
-| type | long | The core Redis type may be: 'string', 'hash', 'list', 'set', 'zset' or 'stream' |
+| type | long | The core Redis type: 'string', 'hash', 'list', 'set', 'zset', or 'stream' |
 | event | string | The event that triggered the execution (null if using the run function) |
 | stringVal | string | The key's value for string data types |
 | hashVal | Map<String,String> | The key's value for hash data types |
@@ -65,16 +66,16 @@ Creates a `KeysReaderRecord` for each matching key in the database.
 
 ## Examples
 
-Here's a basic example of a `KeysReader` that will create records for all keys in the database:
+Here's a basic example of a `KeysReader` that creates records for all keys in the database:
 
 ```java
 KeysReader reader = new KeysReader();
 ```
 
-In the following example, the `KeysReader` object creates records for all keys in the database that match the string "person". Using the register function, it only runs for hashes after `HSET` and `DEL` events occur.
+In the following example, the `KeysReader` creates records for all keys in the database that start with "person:". When registered, it only runs for hashes after `HSET` and `DEL` events occur.
 
 ```java
 String[] eventTypes = {"HSET", "DEL"};
 String[] keyTypes = {"HASH"};
-KeysReader reader = new KeysReader("person", false, true, eventTypes, keyTypes);
+KeysReader reader = new KeysReader("person:*", false, true, eventTypes, keyTypes);
 ```
