@@ -204,8 +204,8 @@ At this time, the following options are supported:
 | <nobr>`--install-dir <dir>`</nobr> | Specifies installation directory _(new installs only)_ <br/> See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|  
 | <nobr>`--config-dir <dir>` | Configuration file directory *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|
 | <nobr>`--var-dir <dir>`</nobr> | Var dir used for installation *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|
-| <nobr>`--os-user <user>`| Operating system user account associated with install; default: `redislabs`<br/>*(new installs only)* See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}})|
-|<nobr>`--os-group <group>` | Operating system group associated with install; default: `redislabs`<br/>*(new installs only)* See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}}) |
+| <nobr>`--os-user <user>`| Operating system user account associated with install; default: `redislabs`<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}}) *(new installs only)*|
+|<nobr>`--os-group <group>` | Operating system group associated with install; default: `redislabs`<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}}) *(new installs only)* |
 
 The next section provides additional configuration details.
 
