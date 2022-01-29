@@ -43,7 +43,7 @@ Get information for all sessions:
     7) "upgradeData"
     8) (nil)
     9) "jar"
-   10) "/home/meir/work/RedisGears/plugins/jvmplugin/-jars/6876b8b78ccfc2ad764edc7ede590f573bd7260b.jar"
+   10) "/home/user/work/RedisGears/plugins/jvmplugin/-jars/6876b8b78ccfc2ad764edc7ede590f573bd7260b.jar"
    11) "refCount"
    12) (integer) 2
    13) "linked"
@@ -67,7 +67,7 @@ Get more detailed information about a specific session:
     7) "upgradeData"
     8) (nil)
     9) "jar"
-   10) "/home/meir/work/RedisGears/plugins/jvmplugin/-jars/6876b8b78ccfc2ad764edc7ede590f573bd7260b.jar"
+   10) "/home/user/work/RedisGears/plugins/jvmplugin/-jars/6876b8b78ccfc2ad764edc7ede590f573bd7260b.jar"
    11) "refCount"
    12) (integer) 2
    13) "linked"

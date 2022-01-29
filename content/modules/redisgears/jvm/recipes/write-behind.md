@@ -1,16 +1,16 @@
 ---
-Title: Write-behind caching with rghibernate
-linkTitle: Write-behind caching
-description: Write-behind and write-through caching between Redis and other databases (SQL or NoSQL).
+Title: Write-behind, write-through, and read-through caching
+linkTitle: Caching strategies
+description: Write-behind, write-through, and read-through caching between Redis and other databases (SQL or NoSQL).
 weight: 70
 alwaysopen: false
 toc: "true"
 categories: ["Modules"]
 ---
 
-The [rghibernate](https://github.com/RedisGears/rghibernate) recipe uses RedisGears functions and the [Hibernate](https://hibernate.org/) framework to implement write-behind and write-through caching.
+The [rghibernate](https://github.com/RedisGears/rghibernate) recipe uses RedisGears functions and the [Hibernate](https://hibernate.org/) framework to implement write-behind, write-through, and read-through caching.
 
-This caching strategy allows applications to simply connect to a Redis cache layer instead of an underlying database. Whenever the application updates data in the cache, Redis also syncs the data in the backend database.
+These caching strategies allow applications to simply connect to a Redis cache layer instead of an underlying database. Whenever the application updates data in the cache, Redis also syncs the data in the backend database.
 
 The underlying database could be an SQL database like MySQL, so you will need to provide an XML file that tells rghibernate how to map data between Redis and the other database.
 
@@ -25,7 +25,7 @@ The underlying database could be an SQL database like MySQL, so you will need to
 - Uses the Hibernate framework
 - Configurable rather than programmable
 
-## Set up write-behind caching
+## Set up write-behind and read-through
 
 To set up write-behind caching, first build an rghibernate JAR and register it with RedisGears.
 
@@ -139,3 +139,59 @@ The following XML maps Redis hashes, which represent students, to a MySQL table:
 
 </hibernate-mapping>
 ```
+## Commands
+
+Run rghibernate commands with [`RG.TRIGGER`](http://oss.redis.com/redisgears/commands.html#rgtrigger):
+
+```sh
+redis-cli RG.TRIGGER SYNC.<COMMAND>
+```
+
+To pass a file to a command like `SYNC.REGISTERCONNECTOR` or `SYNC.REGISTERSOURCE`, use the <nobr>`redis-cli -x`</nobr> option:
+
+```sh
+redis-cli -x RG.TRIGGER SYNC.{COMMAND} {arg1 arg2 ...} < {file}
+```
+
+### Command list
+
+| Command | Description |
+|---------|-------------|
+| [SYNC.REGISTERCONNECTOR](#syncregisterconnector) | Register a new connector |
+| SYNC.UNREGISTERCONNECTOR | Unregister a connector (cannot have sources attached) |
+| [SYNC.REGISTERSOURCE](#syncregistersource) | Extra configuration based on policy |
+| SYNC.UNREGISTERSOURCE | Unregister a source |
+| SYNC.INFO SOURCES | Dump all sources |
+| SYNC.INFO CONNECTORS | Dump all connectors |
+
+### SYNC.REGISTERCONNECTOR
+
+```sh
+$ redis-cli -x RG.TRIGGER SYNC.REGISTERCONNECTOR \
+    {connector name} {batch size} {timeout} {retry interval} \
+    < {connector xml}
+```
+
+| Name | Description |
+|------|-------------|
+| connector name | Name to give to your connector |
+| batch size | The size of the data sent to the backend in batches |
+| timeout | After this timeout, sends data to the backend even if the batch size was not reached |
+| retry interval | Retry interval on error |
+| connector xml | Hibernate XML definition of the connector |
+
+### SYNC.REGISTERSOURCE
+
+```sh
+redis-cli -x RG.TRIGGER SYNC.REGISTERSOURCE \
+    {source name} {connector name} {policy} \
+    < {mapping xml}
+```
+
+| Name | Description |
+|------|-------------|
+| source name | Name to give to your source |
+| connector name | Connector to send the data to |
+| policy | WriteBehind/WriteThrough/ReadThrough: <br></br>• On WriteThrough, an extra argument is WriteTimeout <br></br>• On ReadThrough, an extra argument is expire (0 for no expire) |
+| mapping xml | Hibernate XML definition of the mapping |
+
