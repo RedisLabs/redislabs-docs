@@ -198,14 +198,14 @@ At this time, the following options are supported:
 
 | Option | Description |
 |--------|-------------|
-| `-y` | Automatically answers `yes` to all install prompts prompts, accepting all default values |
-| <nobr>`-c <answer file>`</nobr> | Specify answer file used to respond to install prompts |
+| `-y` | Automatically answers `yes` to all install prompts, accepting all default values<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/manage-installation-questions">}})|
+| <nobr>`-c <answer file>`</nobr> | Specify answer file used to respond to install prompts<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/manage-installation-questions">}})|
 | <nobr>`-s <socket dir>`</s> | Specify directory for redislabs unix sockets  _(new installs only)_|
-| <nobr>`--install-dir <dir>`</nobr> | Specifies installation directory _(new installs only)_| 
-| <nobr>`--config-dir <dir>` | Configuration file directory _(new installs only)_|
-| <nobr>`--var-dir <dir>`</nobr> | Var dir used for installation _(new installs only)_|
-| <nobr>`--os-user <user>`| Operating system user account associated with install (default: `redislabs`; _new installs only)_|
-|<nobr>`--os-group <group>` | operating system group associated with install (default: `redislabs`; _new installs only)_ |
+| <nobr>`--install-dir <dir>`</nobr> | Specifies installation directory _(new installs only)_<br/> See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|  
+| <nobr>`--config-dir <dir>` | Configuration file directory _(new installs only)_<br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|
+| <nobr>`--var-dir <dir>`</nobr> | Var dir used for installation _(new installs only)_<br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|
+| <nobr>`--os-user <user>`| Operating system user account associated with install (default: `redislabs`; _new installs only)_<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}})|
+|<nobr>`--os-group <group>` | Operating system group associated with install (default: `redislabs`; _new installs only)_<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}}) |
 
 The next section provides additional configuration details.
 
