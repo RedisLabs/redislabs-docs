@@ -73,3 +73,4 @@ The VPC peering configuration requires you to initiate VPC peering on your Redis
 
 Now the VPC Peering request is accepted. Its status in the VPC Peering tab in the Redis Cloud subscription is updated to 'Peer Established'.
 
+Once peering is established, we recommend switching your application connection string to the private endpoint. 
