@@ -13,7 +13,7 @@ aliases: /rv/administration/configuration/monitoring-performance/
 
 Redis Enterprise Cloud provides a variety of metrics to help you monitor database performance.  You can view graphs of performance data at any time and receive emails when performance crosses defined threshholds.
 
-##  View database metrics
+## View database metrics
 
 The **Metrics** tab of the **View Database** screen provides a series of graphs showing performance data for your database.
 
@@ -23,7 +23,7 @@ Performance data provides insight into how your database is being used and how w
 
 The interval scrollbar controls the time period displayed in the graphs.  
 
-### Promote metric graphs
+## Promote metric graphs
 
 The **Metrics** screen shows two primary graphs and a collection of smaller ones.  You can promote any smaller graph to a primary position.
 
@@ -37,7 +37,7 @@ When you use the mouse to point to a smaller graph, three things appear:
 
 Use the promotion icons to promote the smaller graph to one of the primary positions. The left icon promotes the smaller graph to the left position and the right icon promotes the smaller graph to the right position.
 
-## Definition of each metric
+## Metric definitions
 
 Several metric graphs are available:
 
@@ -74,7 +74,7 @@ Alert settings are specific to a given database.  To receive alerts for multiple
 
 Any member of the account team can receive alert emails.
 
-To update alert settings for one or more team members, select **Access Management** fro the admin console menu and then select the **Team** tab.
+To update alert settings for one or more team members, select **Access Management** from the admin console menu and then select the **Team** tab.
 
 For details, see [Access management]({{< relref "/rc/administration/access-management" >}}).
 
