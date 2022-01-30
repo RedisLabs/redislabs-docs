@@ -9,12 +9,12 @@ the Redis Enterprise Software admin console.
 
 1. Choose **Setup** to begin configuring the node.
 
-    {{<image filename="/images/rs/rs-setup-new-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
+    {{<image filename="images/rs/rs-setup-new-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
 
 1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local' and then select 
 **Next**.
 
-    {{<image filename="/images/rs/rs-setup-node-config.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
+    {{<image filename="images/rs/rs-setup-node-config.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
 
 1. If you have a license key, enter it and then select **Next**.
 
@@ -22,7 +22,7 @@ the Redis Enterprise Software admin console.
 
 1. Enter an email and password for the administrator account.
 
-    {{<image filename="/images/rs/rs-setup-set-admin-creds.png" alt="Set the credentials for your admin user." >}}{{< /image >}}
+    {{<image filename="images/rs/rs-setup-set-admin-creds.png" alt="Set the credentials for your admin user." >}}{{< /image >}}
 
     These credentials are also used for connections to the REST API.
 
