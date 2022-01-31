@@ -39,6 +39,7 @@ Before installing Redis Enterprise Software, you need to:
 - Open appropriate [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) in the firewall to allow connections to the nodes.
 
 - Configure [cluster DNS]({{< relref "/rs/installing-upgrading/configuring/cluster-dns.md" >}}) so that cluster nodes can reach each other by DNS names.
+- By default, the install process requires an Internet connection to install dependencies and to synchronize the operating system clock.  To learn more, see [Offline installation]({{<relref "/rs/installing-upgrading/offline-installation">}}).
 
 ## Download the installation package
 
@@ -180,11 +181,34 @@ To install without answering the installation questions, either:
 
     For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
-## Notes
+## Permissions and access
 
-- Redis Enterprise Software installation creates the `redislabs:redislabs` user and group. Assigning other users to the `redislabs` group is optional. Users belonging to the `redislabs` group will have permission to read and execute (e.g. use the `rladmin` status command) but not to write or delete files and directories.
+- Redis Enterprise Software installation creates the `redislabs:redislabs` user and group. 
 
-- Redis Enterprise Software serves a large variety of industries. The common industry standard for permissions is `750` permissions. Reducing the permissions to `700` has not been tested and isn't supported. 
+    Assigning other users to the `redislabs` group is optional. Users belonging to the `redislabs` group have permission to read and execute (e.g. use the `rladmin` status command) but are not allowed to write (or delete) files or directories.
+
+- Redis Enterprise Software is certified to run with permissions set to `750`, an industry standard.
+
+    We recommend against reducing permissions to `700`; this configuration has not been tested and is not supported.
+
+## Install command line-options
+
+Run `./install.sh --help` to view command-line options supported by the install script.
+
+At this time, the following options are supported:
+
+| Option | Description |
+|--------|-------------|
+| `-y` | Automatically answers `yes` to all install prompts, accepting all default values<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/manage-installation-questions">}})|
+| <nobr>`-c <answer file>`</nobr> | Specify answer file used to respond to install prompts<br/>See [Manage install questions]({{<relref "/rs/installing-upgrading/manage-installation-questions">}})|
+| <nobr>`-s <socket dir>`</s> | Specify directory for redislabs unix sockets  _(new installs only)_|
+| <nobr>`--install-dir <dir>`</nobr> | Specifies installation directory _(new installs only)_ <br/> See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|  
+| <nobr>`--config-dir <dir>` | Configuration file directory *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|
+| <nobr>`--var-dir <dir>`</nobr> | Var dir used for installation *(new installs only)* <br/>See [Customize install locations]({{<relref "/rs/installing-upgrading/customize-install-directories">}})|
+| <nobr>`--os-user <user>`| Operating system user account associated with install; default: `redislabs`<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}}) *(new installs only)*|
+|<nobr>`--os-group <group>` | Operating system group associated with install; default: `redislabs`<br/>See [Customize user and group]({{<relref "/rs/installing-upgrading/customize-user-and-group">}}) *(new installs only)* |
+
+The next section provides additional configuration details.
 
 ## More info and options
 
