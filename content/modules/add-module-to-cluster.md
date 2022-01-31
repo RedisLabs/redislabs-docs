@@ -21,13 +21,13 @@ To get the latest features and fixes for a module, you must upgrade the module i
 
 {{< /note >}}
 
-## Getting the packaged modules
+## Get the packaged modules
 
 - Redis Enterprise modules - To download the upgrades to the modules,
     go to the [Redis Download Center](https://redislabs.com/download-center/modules/).
 - Custom packaged modules - Either download the [custom packaged module](https://redislabs.com/community/redis-modules-hub/) from the developer or [package the module yourself]({{< relref "/modules/packaging-modules.md" >}}).
 
-## Adding a module to a Redis Enterprise Software cluster
+## Add a module to a Redis Enterprise cluster
 
 You can add a module to your cluster using:
 
@@ -40,7 +40,7 @@ Example: [Installing RedisGears](https://docs.redislabs.com/latest/modules/redis
 
 - The admin console - For modules without dependencies, such as RedisGraph.
 
-### Adding a module using the REST API
+### REST API method
 
 Modules that have dependencies can only be added from the REST API.
 The `module.json` file in the module package lists the dependencies for the module and the URL to download each dependency.
@@ -79,7 +79,7 @@ You can also use the `/v1/modules` endpoint, but modules with dependencies are b
 
 1. When the action is complete, log into the cluster admin console and go to `settings` > `redis modules` to see the module in the list.
 
-### Adding a module using the admin console
+### Admin console method
 
 To add a module package to the cluster using the admin console:
 
@@ -93,7 +93,7 @@ To add a module package to the cluster using the admin console:
 
     If you don't see the updated module version, refresh the page.
 
-## Upgrading the module for the database
+## Upgrade the module for the database
 
 After you add an updated module to the cluster, go to the configuration of the databases that use the module.
 The database configuration shows that a new version of the module is available for the database.
