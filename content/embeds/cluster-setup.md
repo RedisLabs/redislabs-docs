@@ -1,29 +1,29 @@
-1. In the web browser on the host machine, go to https://localhost:8443 to see
-the Redis Enterprise Software web console.
+1. In the web browser on the host machine, go to [https://localhost:8443](https://localhost:8443) to see
+the Redis Enterprise Software admin console.
 
     {{< note >}}
-- Depending on your browser, you may see a certificate error. You can safely
-continue to the web console.
+- If your browser displays a certificate error, you can safely proceed.
 - If the server does not show the login screen, try again after a few minutes.
 
     {{< /note >}}
 
-1. Click **Setup** to start the node configuration steps.
+1. Choose **Setup** to begin configuring the node.
 
-    ![Redis Enterprise Software Setup](/images/rs/getstarted-setup.png)
+    {{<image filename="images/rs/rs-setup-new-cluster.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
 
-1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local`.
-Then click **Next** button.
+1. In the **Node Configuration** settings, enter a cluster FQDN such as `cluster.local' and then select 
+**Next**.
 
-    ![Redis Enterprise Software node configuration](/images/rs/getstarted-nodeconfig.png)
+    {{<image filename="images/rs/rs-setup-node-config.png" alt="When you first install Redis Enterprise Software, you need to set up a cluster." >}}{{< /image >}}
 
-1. Enter your license key, if you have one. If not, click the **Next** button to use the trial version.
+1. If you have a license key, enter it and then select **Next**.
 
-1. Enter an email and password for the admin account for the web console.
+    If you do not have a license key, a trial version is installed.
 
-    ![Redis Enterprise Software admin credentials](/images/rs/getstarted-admincredentials.png)
+1. Enter an email and password for the administrator account.
+
+    {{<image filename="images/rs/rs-setup-set-admin-creds.png" alt="Set the credentials for your admin user." >}}{{< /image >}}
 
     These credentials are also used for connections to the REST API.
 
-1. Click **OK** to confirm that you are aware of the replacement of the HTTPS SSL/TLS
-certificate on the node, and proceed through the browser warning.
+1. Select **OK** to acknowledge the replacement of the HTTPS TLS certificate on the node.  If you receive a browser warning, you can proceed safely.
