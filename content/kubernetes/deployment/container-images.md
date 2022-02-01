@@ -47,6 +47,7 @@ The information below will help you track and configure where your deployments p
 * A specific operator version only supports a specific Redis Enterprise version. Other combinations of operator and Redis Enterprise versions are **not supported**.
 {{< /note >}}
 
+
 ## Find container sources
 
 Every pod in your deployed application has a source registry. Any image not prefixed by a registry domain name (e.g., "gcr.io") will pull from the default registry for the Kubernetes cluster (i.e., DockerHub). You can use the commands below to discover the pull sources for the images on your cluster.
@@ -66,20 +67,6 @@ kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '
 You can limit this command to specific namespaces by replacing the `--all-namespaces` parameter with
 a set of `-n {namespace}` parameters, where each `{namespace}` is a specific
 namespace of interest on your cluster.
-
-## Rate limiting with DockerHub
-
-Docker has [rate limits for image pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/).
-Anonymous users are allowed a certain number of pulls every 6 hours. For authenticated users, the limit larger.
-These rate limits may affect your Kubernetes cluster in a number of ways:
-
-* The cluster nodes will likely be treated as a one anonymous user.
-* The number of pulls during a deployment might exceed the rate limit for other deployment dependencies, including our operator, Redis Enterprise Software, or other non-Redis pods.
-* Pull failures may prevent your deployment from downloading the required images in a timely manner. Delays here can affect the stability of deployments used by the Redis Enterprise operator.
-
-For these reasons, you should seriously consider where your images
-are pulled from to **avoid failures caused by rate limiting**. The easiest solution
-is to push the required images to a private container registry under your control.
 
 ## Create a private container registry
 
@@ -254,3 +241,17 @@ spec:
     repository: gcr.io/yourproject/redislabs/k8s-controller
     versionTag: 6.0.8-1
 ```
+
+## Rate limiting with DockerHub
+
+Docker has [rate limits for image pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/).
+Anonymous users are allowed a certain number of pulls every 6 hours. For authenticated users, the limit larger.
+These rate limits may affect your Kubernetes cluster in a number of ways:
+
+* The cluster nodes will likely be treated as a one anonymous user.
+* The number of pulls during a deployment might exceed the rate limit for other deployment dependencies, including our operator, Redis Enterprise Software, or other non-Redis pods.
+* Pull failures may prevent your deployment from downloading the required images in a timely manner. Delays here can affect the stability of deployments used by the Redis Enterprise operator.
+
+For these reasons, you should seriously consider where your images
+are pulled from to **avoid failures caused by rate limiting**. The easiest solution
+is to push the required images to a private container registry under your control.

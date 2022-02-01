@@ -66,21 +66,19 @@ The Redis Enterprise operator implementation is published as a Docker container.
 
 The operator [definition and reference materials](https://github.com/RedisLabs/redis-enterprise-k8s-docs) are available on GitHub. The operator definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
 
-{<note>}
+{{<note>}}
 If you do not pull images from DockerHub or another public registry, you'll need additional configuration in your operator deployment file and your Redis Enterprise cluster resource file. See [Manage image sources]({{<relref "/kubernetes/deployment/container-images.md#manage-image-sources">}}) for more info.
-{</note>}
+{{</note>}}
 
 ### Download the operator bundle
 
 To ensure that you pull the correct version of the bundle, check versions tags listed with the [operator releases on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/releases)
 or by [using the GitHub API](https://docs.github.com/en/rest/reference/repos#releases).
 
-1. Download the bundle for the latest release:
-
-    ```sh
-    VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
-    curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
-    ```
+```sh
+VERSION=`curl --silent https://api.github.com/repos/RedisLabs/redis-enterprise-k8s-docs/releases/latest | grep tag_name | awk -F'"' '{print $4}'`
+curl --silent -O https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/$VERSION/bundle.yaml
+```
 
 If you need a different release, replace `VERSION` in the above with a specific release tag.
 
