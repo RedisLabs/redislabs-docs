@@ -2,6 +2,52 @@
 
 The docs are updated regularly; here are some recent highlights:
 
+## January 2022
+
+- Redis Enterprise Cloud updates
+
+   - A new article describes how to create [Active-Active databases](https://docs.redis.com/staging/release-rc-aa/rc/subscriptions/create-active-active-subscription/) in Redis Enterprise Cloud (preview) ([PR #1763](https://github.com/RedisLabs/redislabs-docs/pull/1763))
+
+   - [Access management](https://docs.redis.com/latest/rc/administration/access-management/) was updated to describe the new Manager role for admin access and to reflect the current user experience (UX) ([PR #1763](https://github.com/RedisLabs/redislabs-docs/pull/1763))
+
+   - [Monitor database performance](https://docs.redis.com/latest/rc/databases/monitor-performance/) was updated to reflect current UX ([PR #1767](https://github.com/RedisLabs/redislabs-docs/pull/1767))
+
+- Redis Enterprise Software updates
+
+   - [Get started](https://docs.redis.com/latest/rs/getting-started/) was updated to reflect the current UX ([PR #1766](https://github.com/RedisLabs/redislabs-docs/pull/1766)) 
+
+   - [Install and setup](https://docs.redis.com/latest/rs/installing-upgrading/) now includes the [command-line options](https://docs.redis.com/latest/rs/installing-upgrading/#install-command-line-options) for the install script ([PR #1765](https://github.com/RedisLabs/redislabs-docs/pull/1765))
+
+- Redis Enterprise for Kubernetes updates
+
+    - Docs were added to support the v6.2.8 release ([PR #1733](https://github.com/RedisLabs/redislabs-docs/pull/1733)), including:
+
+        - Updates to the [OpenShift CLI deployment](https://docs.redis.com/staging/release-k8s-intrepid/kubernetes/deployment/openshift/openshift-cli/) doc 
+        - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) using K8s deployments 
+        - How to configure Istio for [external routing](https://docs.redis.com/latest/kubernetes/re-databases/ingress_routing_with_istio/)
+        - [v6.2.8 release notes](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-15-2022-01/) ([PR #1738](https://github.com/RedisLabs/redislabs-docs/pull/1738))
+
+    - Earlier Redis Enterprise for Kubernetes [release notes](https://docs.redis.com/latest/kubernetes/release-notes/) were updated to reflect similar changes in other parts of the portfolio ([PR #1732](https://github.com/RedisLabs/redislabs-docs/pull/1732))
+
+- Redis module updates
+
+    - Docs were added to describe Java virtual machine (JVM) [plugin support](https://docs.redis.com/staging/release-rc-aa/modules/redisgears/jvm/) for RedisGears (preview) ([PR #1758](https://github.com/RedisLabs/redislabs-docs/pull/1758)), including:
+
+        - A new [introduction](https://docs.redis.com/latest/modules/redisgears/jvm/) and a [quick start](https://docs.redis.com/latest/modules/redisgears/jvm/quickstart/)
+        - [Install docs](https://docs.redis.com/latest/modules/redisgears/jvm/install/)
+        - Recipes for common [caching scenarios](https://docs.redis.com/latest/modules/redisgears/jvm/recipes/write-behind/)
+        - Class and function [API reference](https://docs.redis.com/latest/modules/redisgears/jvm/classes/)
+
+    - Release notes were added for [RedisGraph v2.4.13](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/#v2413-december-2021) ([PR #1726](https://github.com/RedisLabs/redislabs-docs/pull/1726)), [RedisGears v1.0.9](https://docs.redis.com/latest/modules/redisgears/release-notes/redisgears-1.0-release-notes/#v109-january-2022) ([PR #1745](https://github.com/RedisLabs/redislabs-docs/pull/1745)), [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/#v226-january-2022) ([PR #1746](https://github.com/RedisLabs/redislabs-docs/pull/1746)), and [RedisTimeSeries v1.6](https://docs.redis.com/latest/modules/redistimeseries/release-notes/redistimeseries-1.6-release-notes/) ([PR #1761](https://github.com/RedisLabs/redislabs-docs/pull/1761))
+
+- Other updates
+
+    - Release notes were updated for [RedisInsight v2.0.3 preview](https://docs.redis.com/staging/release-rc-aa/ri/release-notes/v2.0.2/#203-december-2021) ([PR #1730](https://github.com/RedisLabs/redislabs-docs/pull/1730)) & [RedisInsight v1.11.1](https://docs.redis.com/latest/ri/release-notes/v1.11.0/#1111-january-2022) ([PR #1759](https://github.com/RedisLabs/redislabs-docs/pull/1759))
+
+Finally, a variety of updates addressed typos, missing images, and other glitches.
+
+To learn more, review the [merged pull requests](https://github.com/RedisLabs/redislabs-docs/pulls?q=is%3Apr+merged%3A2022-01-01..2022-01-31).
+
 ## December 2021
 
 - Redis Enterprise Cloud updates
