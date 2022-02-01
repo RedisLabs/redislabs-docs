@@ -6,7 +6,7 @@ The docs are updated regularly; here are some recent highlights:
 
 - Redis Enterprise Cloud updates
 
-   - A new article descibes how to create [Active-Active databases](https://docs.redis.com/staging/release-rc-aa/rc/subscriptions/create-active-active-subscription/) in Redis Enterprise Cloud (preview) ([PR #1763](https://github.com/RedisLabs/redislabs-docs/pull/1763))
+   - A new article describes how to create [Active-Active databases](https://docs.redis.com/staging/release-rc-aa/rc/subscriptions/create-active-active-subscription/) in Redis Enterprise Cloud (preview) ([PR #1763](https://github.com/RedisLabs/redislabs-docs/pull/1763))
 
    - [Access management](https://docs.redis.com/latest/rc/administration/access-management/) was updated to describe the new Manager role for admin access and to reflect the current user experience (UX) ([PR #1763](https://github.com/RedisLabs/redislabs-docs/pull/1763))
 
@@ -24,10 +24,10 @@ The docs are updated regularly; here are some recent highlights:
 
         - Updates to the [OpenShift CLI deployment](https://docs.redis.com/staging/release-k8s-intrepid/kubernetes/deployment/openshift/openshift-cli/) doc 
         - A new article shows how to [create Active-Active databases](https://docs.redis.com/latest/kubernetes/re-clusters/create-aa-database/) using K8s deployments 
-        - How to configure Isto for [external routing](https://docs.redis.com/latest/kubernetes/re-databases/ingress_routing_with_istio/)
+        - How to configure Istio for [external routing](https://docs.redis.com/latest/kubernetes/re-databases/ingress_routing_with_istio/)
         - [v6.2.8 release notes](https://docs.redis.com/latest/kubernetes/release-notes/k8s-6-2-8-15-2022-01/) ([PR #1738](https://github.com/RedisLabs/redislabs-docs/pull/1738))
 
-    - Earlier Redis Enterprise for Kubernetes [release notes](https://docs.redis.com/latest/rs/release-notes/) were updated to reflect similar changes in other parts of the portfolio ([PR #1732](https://github.com/RedisLabs/redislabs-docs/pull/1732))
+    - Earlier Redis Enterprise for Kubernetes [release notes](https://docs.redis.com/latest/kubernetes/release-notes/) were updated to reflect similar changes in other parts of the portfolio ([PR #1732](https://github.com/RedisLabs/redislabs-docs/pull/1732))
 
 - Redis module updates
 
@@ -38,7 +38,7 @@ The docs are updated regularly; here are some recent highlights:
         - Recipes for common [caching scenarios](https://docs.redis.com/latest/modules/redisgears/jvm/recipes/write-behind/)
         - Class and function [API reference](https://docs.redis.com/latest/modules/redisgears/jvm/classes/)
 
-    - Release notes were added for [RediGraph v2.4.13](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/#v2413-december-2021) ([PR #1726](https://github.com/RedisLabs/redislabs-docs/pull/1726)), [RedisGears v1.0.9](https://docs.redis.com/latest/modules/redisgears/release-notes/redisgears-1.0-release-notes/#v109-january-2022) ([PR #1754](https://github.com/RedisLabs/redislabs-docs/pull/1745)), [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/#v226-january-2022) ([PR #1746](https://github.com/RedisLabs/redislabs-docs/pull/1746)), and [RedisTimeSeries v1.6](https://docs.redis.com/latest/modules/redistimeseries/release-notes/redistimeseries-1.6-release-notes/) ([PR #1761](https://github.com/RedisLabs/redislabs-docs/pull/1761))
+    - Release notes were added for [RedisGraph v2.4.13](https://docs.redis.com/latest/modules/redisgraph/release-notes/redisgraph-2.4-release-notes/#v2413-december-2021) ([PR #1726](https://github.com/RedisLabs/redislabs-docs/pull/1726)), [RedisGears v1.0.9](https://docs.redis.com/latest/modules/redisgears/release-notes/redisgears-1.0-release-notes/#v109-january-2022) ([PR #1745](https://github.com/RedisLabs/redislabs-docs/pull/1745)), [RediSearch v2.2.6](https://docs.redis.com/latest/modules/redisearch/release-notes/redisearch-2.2-release-notes/#v226-january-2022) ([PR #1746](https://github.com/RedisLabs/redislabs-docs/pull/1746)), and [RedisTimeSeries v1.6](https://docs.redis.com/latest/modules/redistimeseries/release-notes/redistimeseries-1.6-release-notes/) ([PR #1761](https://github.com/RedisLabs/redislabs-docs/pull/1761))
 
 - Other updates
 
