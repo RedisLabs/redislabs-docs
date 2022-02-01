@@ -1,6 +1,6 @@
 ---
-Title: Manage container images
-linktitle: Manage container images
+Title: Use a private registry for container images
+linktitle: Use a private container registry
 description: This section details how the Redis Enterprise Software and Kubernetes operator images can be configured to be pulled from a variety of sources. This page describes how to configure alternate private repositories for images, plus some techniques for handling public repositories with rate limiting.
 weight: 92
 alwaysopen: false
@@ -53,13 +53,13 @@ Every pod in your deployed application has a source registry. Any image not pref
 
 To list all the images used by your cluster:
 
-```
+```sh
 kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' | uniq -c
 ```
 
 To specifically determine the pull source for the Redis Enterprise operator itself, run the following command:
 
-```
+```sh
 kubectl get pods --all-namespaces -o jsonpath="{..image}" |tr -s '[[:space:]]' '\n' | uniq -c | grep redislabs
 ```
 
@@ -81,12 +81,7 @@ For these reasons, you should seriously consider where your images
 are pulled from to **avoid failures caused by rate limiting**. The easiest solution
 is to push the required images to a private container registry under your control.
 
-## Manage image sources
-
-The images for Redis Enterprise Software and its Kubernetes operator are distributed on DockerHub,
-Red Hat, and other public registries. These images can be copied to a private registry and your deployment can pull images from there.
-
-### Create a private container registry
+## Create a private container registry
 
 You can set up a private container registry in a couple of ways:
 
@@ -99,7 +94,7 @@ Once you have set up a private container registry, you will identify the contain
 * A port (optional)
 * An repository path (optional)
 
-### Push Redis Enterprise images to a private container registry
+## Push images to a private container registry
 
 Important images for a Redis Enterprise Software deployment include:
 
@@ -117,7 +112,7 @@ to push the images you must:
 
 The example below shows the commands for pushing the images for Redis Enterprise Software and its operator to a private container registry:
 
-```
+```sh
 PRIVATE_REPO=...your repo...
 RS_VERSION=6.0.8-28
 OPERATOR_VERSION=6.0.8-1
@@ -132,38 +127,29 @@ docker push ${PRIVATE_REPO}/redislabs/operator:${OPERATOR_VERSION}
 docker push ${PRIVATE_REPO}/redislabs/k8s-controller:${OPERATOR_VERSION}
 ```
 
-## Using a private container registry
+## Configure deployments to use a private container registry
 
 Once you push your images to your private container registry, you need to
-configure your deployments to that registry for Redis Enterprise Software and operator
-deployments. There are two different deployments to consider:
-
- 1. The Redis Enterprise operator
- 2. The Redis Enterprise pods and Service Rigger created by the operator
-
-The operator container image is configured directly by the operator deployment
+configure your deployments to use that registry for Redis Enterprise Software and operator
+deployments. The operator container image is configured directly by the operator deployment
 bundle. The Redis Enterprise cluster pod (RS and bootstrapper) and Service Rigger
 images are configured in the Redis Enterprise custom resource.
 
 Depending on your Kubernetes platform, your private container registry may
-require authentication. If you are using a private container registry associated with
-your K8s cluster, you may be able to pull the images without credentials. Otherwise, you may
-need to add a [pull secret](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) to your namespace
-and then configure Kubernetes and the operator to use the pull secret.
+require authentication. If you do need authentication, add a [pull secret](https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/) to your namespace. Then you'll need to configure Kubernetes and the operator to use the pull secret. The two following sections have examples of adding the `imagePullSecrets` to the operator deployment and `pullSecrets` to the cluster custom resource.
 
-See the following two sections for how to specify registry credentials.
+### Specify the operator image source
 
-### Specify the operator image
+The operator bundle contains the operator deployment and the reference to the operator image (`redislabs/operator`). To use a private container registry, you must
+change this image reference in your operator deployment file **before** you deploy the operator. If you apply this change to modify an existing operator deployment, the operator's pod will restart.
 
-The operator bundle contains the operator deployment and the reference to the operator image (redislabs/operator). To use a private container registry, you must
-change this image reference **before** you deploy the operator. The 'containers:image' spec
-should point to the same repository and tag pushed to the private container registry.
+In the operator deployment file, 'containers:image' should point to the same repository and tag you used when [pushing]({{< relref "/kubernetes/deployment/container-images.md#push-images-to-a-private-container-registry" >}}) to the private container registry:
 
-```
+```sh
 ${PRIVATE_REPO}/redislabs/operator:${OPERATOR_VERSION}
 ```
 
-For example:
+The example below specifies a 6.0.8-1 operator image in a Google Container Registry:
 
 ```YAML
 apiVersion: apps/v1
@@ -187,13 +173,7 @@ spec:
 ...
 ```
 
-Note that if you apply this change to modify an existing operator deployment,
-the operator's pod will restart. As the operator is stateless, the restart will
-not affect any existing cluster managed by the operator.
-
-If your container registry requires a pull secret, you may specify the standard `imagePullSecrets`
- on the operator deployment:
-
+If your container registry requires a pull secret, configure `imagePullSecrets` on the operator deployment:
 
 ```YAML
 spec:
@@ -203,35 +183,30 @@ spec:
       - name: regcred
 ```
 
-### Specify the Redis Enterprise cluster images
+### Specify the Redis Enterprise cluster images source
 
 A Redis Enterprise cluster managed by the operator consists of three
 container images:
 
- * **`redislabs/redis`**: the Redis Enterprise Software container image
- * **`redislabs/operator`**: the bootstrapper is packaged within the operator container image
- * **`redislabs/k8s-controller`**: the Service Rigger container image
+* **`redislabs/redis`**: the Redis Enterprise Software container image
+* **`redislabs/operator`**: the bootstrapper is packaged within the operator container image
+* **`redislabs/k8s-controller`**: the Service Rigger container image
 
-By default, a new Redis Enterprise Software cluster is created using the
-container images listed above. These container images will be pulled from the default
-container registry for the Kubernetes cluster. This may not be the same
-container registry from which the operator itself was pulled.
+By default, a new Redis Enterprise cluster is created using the
+container images listed above. These container images are pulled from the K8s cluster's default
+container registry.
 
-To pull the Redis Enterprise Software and related container images from
-a private container registry, you must specify all three of these images in the
-Redis Enterprise cluster custom resource. The container
-images are controlled by an image specification that specifies the
-image pull policy, the container image (the container registry and repository),
-and the version tag.
+To [pull](https://docs.docker.com/engine/reference/commandline/pull/) the Redis Enterprise container images from
+a private container registry, you must specify them in the
+Redis Enterprise cluster custom resource.
 
-The corresponding image specification labels are:
+Add the following sections to the `spec` section of your RedisEnterpriseCluster resource file:
 
  * **`redisEnterpriseImageSpec`**: controls the Redis Enterprise Software container image. *The version should match the RS version associated with the operator version*.
  * **`bootstrapperImageSpec`**": controls the bootstrapper container image. *The version must match the operator version*.
  * **`redisEnterpriseServicesRiggerImageSpec`**: controls the Service Rigger container image. *The version must match the operator version*.
 
-For example, the following pulls all three container images from a
-private registry:
+The REC custom resource example below pulls all three container images from a GCR private registry:
 
 ```YAML
 apiVersion: app.redislabs.com/v1
@@ -255,7 +230,7 @@ spec:
 ```
 
 If your private container registry requires pull secrets, you must add `pullSecrets`
-to the `spec`:
+to the `spec` section:
 
 ```YAML
 apiVersion: app.redislabs.com/v1
