@@ -62,9 +62,13 @@ Throughout this guide, you should assume that each command is applied to the nam
 
 ## Install the operator
 
-The Redis Enterprise operator [definition and reference materials](https://github.com/RedisLabs/redis-enterprise-k8s-docs) are available on GitHub, while the
-operator implementation is published as a Docker container. The operator
-definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
+The Redis Enterprise operator implementation is published as a Docker container. For more information about image sources, see [Manage container images]({{<relref "/kubernetes/deployment/container-images.md">}})
+
+The operator [definition and reference materials](https://github.com/RedisLabs/redis-enterprise-k8s-docs) are available on GitHub. The operator definitions are [packaged as a single generic YAML file](https://github.com/RedisLabs/redis-enterprise-k8s-docs/blob/master/bundle.yaml).
+
+{<note>}
+If you do not pull images from DockerHub or another public registry, you'll need additional configuration in your operator deployment file and your Redis Enterprise cluster resource file. See [Manage image sources]({{<relref "/kubernetes/deployment/container-images.md#manage-image-sources">}}) for more info.
+{</note>}
 
 ### Download the operator bundle
 
