@@ -1,41 +1,37 @@
-DNS is critical to the default operation of Redis Enterprise Software deployments.
-This can be altered, but instead using the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}),
-which utilizes pure IP-based connectivity as it is compliant with the Redis Sentinel API.
+By default, Redis Enterprise Software deployments use DNS to communicate between nodes.  You can also use the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), which uses IP addresses to connect and complies with the [Redis Sentinel API](https://redis.io/topics/sentinel) supported by open source Redis.
 
-As part of the high availability capabilities in Redis Enterprise Software,
-each node includes a small DNS server for managing various internal cluster functionalities,
-such as automatic failover or automatic migration.
-Therefore, nodes that provision Redis Enterprise Software should run only the DNS server included with the software.  They should not run any other DNS servers; otherwise, unexpected behavior can occur.
+Each node in a Redis Enterprise cluster includes a small DNS server to manage internal functions, such as high availability, automatic failover, automatic migration, and so on.
+Nodes should only run the DNS server included with the software.  Running additional DNS servers can lead to unexpected behavior.
 
-## Cluster name (FQDN) and connection management
+## Cluster name and connection management
 
 Whether you're administering Redis Enterprise Software or accessing databases, there are two ways to connect:
 
-- URL-based connections - URL-based connections use DNS to resolve the fully qualified cluster domain name.  This means that DNS records might need to be updated when topology changes, such as adding (or removing) nodes from the cluster.  
+- URL-based connections - URL-based connections use DNS to resolve the fully qualified cluster domain name (FQDN).  This means that DNS records might need to be updated when topology changes, such as adding (or removing) nodes from the cluster.  
 
-    Because apps and other clients connections rely on the URL, they do not need to be modified when topology changes.  
+    Because apps and other clients connections rely on the URL (rather than the address), they do not need to be modified when topology changes.  
 
 - IP-based connections - IP-based connections do not require DNS setup, as they rely on the underlying TCP/IP addresses.  As long as topology changes do not change the address of the cluster nodes, no configuration changes are needed, DNS or otherwise.  
 
-    However, changes to IP addresses (or changes to IP address access) impact all apps and clients connecting to the node.
+    However, changes to IP addresses (or changes to IP address access) impact all connections to the node, including apps and clients.  IP address changes can therefore be unpredictable or time-consuming.
 
-## URL-based connections and how to set up cluster name (FQDN)
+## URL-based connections
 
-The Fully Qualified Domain Name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) of Redis Enterprise Software.
+The fully qualified domain name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) of Redis Enterprise Software.
 The FQDN is a crucial component of the high-availability mechanism because it's used internally to enable and implement automatic and transparent failover of nodes, databases shards, and endpoints.
 
 {{< note >}}
-Setting the cluster's FQDN is a one-time operation; it cannot be changed after being set.
+Setting the cluster's FQDN is a one-time operation, one that cannot be changed after being set.
 {{< /note >}}
 
-The FQDN must always comply with the IETF's [RFC 952](http://tools.ietf.org/html/rfc952) standard
-and section 2.1 of the [RFC 1123](http://tools.ietf.org/html/rfc1123) standard.
+The FQDN must always comply with the IETF's [RFC 952](https://datatracker.ietf.org/doc/html/rfc952) standard
+and section 2.1 of the [RFC 1123](https://datatracker.ietf.org/doc/html/rfc1123) standard.
 
-## Name the cluster domain name
+## Identify the cluster
 
-You can name the cluster domain name using either DNS or IP addresses.  
+To identify the cluster, either use DNS to define a fully qualified domain name or use the IP addresses of each node.  
 
-### DNS
+### Define domain using DNS
 
 Use DNS if you:
 
@@ -48,45 +44,42 @@ Use DNS if you:
 
     For example:
 
-        - Your domain is: mydomain.com
-        - You would like to name the Redis Enterprise Software cluster:
-            redislabscluster
-        - You have three nodes in the cluster:
-           - node1 with IP 1.1.1.1
-           - node2 with IP 2.2.2.2
-           - node3 with IP 3.3.3.3
+    - Your domain is: `mydomain.com`
+    - You would like to name the Redis Enterprise Software cluster `mycluster`
+    - You have three nodes in the cluster:
+        - node1 (IP address 1.1.1.1)
+        - node2 (2.2.2.2)
+        - node3 (3.3.3.3)
 
-1. In the FQDN field, enter the value `redislabscluster.mydomain.com`
-    and add the following records in the DNS for mydomain.com:
+1. In the FQDN field, enter the value `mycluster.mydomain.com`
+    and add the following records in the DNS table for `mydomain.com`:
 
-    ```sh
-    redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com
-                                               node2.redislabscluster.mydomain.com
-                                               node3.redislabscluster.mydomain.com 
-
-    node1.redislabscluster.mydomain.com   A    1.1.1.1
-
-    node2.redislabscluster.mydomain.com   A    2.2.2.2
-
-    node3.redislabscluster.mydomain.com   A    3.3.3.3
+    ``` sh
+    mycluster.mydomain.com        NS  node1.mycluster.mydomain.com
+                                      node2.mycluster.mydomain.com
+                                      node3.mycluster.mydomain.com 
+    
+    node1.mycluster.mydomain.com  A   1.1.1.1
+    
+    node2.mycluster.mydomain.com  A   2.2.2.2
+    
+    node3.mycluster.mydomain.com  A   3.3.3.3
     ```
 
-### Zero-configuration using mDNS (Development option only) {#zeroconfiguration-using-mdns-development-option-only}
+### Zero-configuration using mDNS {#zeroconfiguration-using-mdns-development-option-only}
 
-{{< note >}}
-mDNS is not supported for use with production environments and should only be used in development or test environments.
-{{< /note >}}
+Development and test environments can use [Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) (mDNS), a zero-configuration service designed for small networks.  Production environments should _not_ use mDNS.
 
-mDNS (Multicast DNS) is a standard protocol that provides DNS-like name resolution and service discovery capabilities
+mDNS is a standard protocol that provides DNS-like name resolution and service discovery capabilities
 to machines on local networks with minimal to no configuration.
-Because not all clients support mDNS, ensure first that the clients that are connecting to the cluster actually have mDNS support,
-and that the network infrastructure permits mDNS/multi-casting between them and the cluster nodes.
+
+Before adopting mDNS, verify that it's supported by each client you wish to use to connect to your Redis databases.  Also make sure that your network infrastructure permits mDNS/multi-casting between clients and cluster nodes.
 
 Configuring the cluster to support mDNS requires you to assign the cluster a `.local` name.
 
-For example, if you want to name the Redis Enterprise Software cluster `redislabscluster`, enter `redislabscluster.local` in the FQDN field.
+For example, if you want to name the Redis Enterprise Software cluster `rediscluster`, specify the FQDN name as `rediscluster.local`.
 
-When using the DNS or mDNS option, failover can be done transparently and the DNS is updated automatically to point to the IP of the new master.
+When using the DNS or mDNS option, failover can be done transparently and the DNS is updated automatically to point to the IP address of the new primary node.
 
 ## IP-based connections
 
@@ -104,5 +97,4 @@ When using the IP-based connection method, you can use the [Discovery Service]({
 to discover the database endpoint for a given database name as long as you have an IP address for at least one of the nodes in the cluster.
 The API used for discovery service is compliant with the Redis Sentinel API.
 
-To test your connection, try pinging the service.  For help, see [Connect yo your database]connYou can find a simple example of URL and IP-based connection in the "Testing Connectivity to your Database" section
-of [Creating a new database]({{< relref "rs/getting-started/#step-4-connect-to-your-database" >}}).
+To test your connection, try pinging the service.  For help, see [Connect to your database]({{< relref "rs/getting-started/#step-4-connect-to-your-database" >}}).
