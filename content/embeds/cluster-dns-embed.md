@@ -1,31 +1,30 @@
-DNS is critical to the default operation of Redis Enterprise Software deployments.
-This can be altered, but instead using the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}),
+Redis Enterprise Software deployments use DNS to communicate between nodes.
+<!-- This can be altered, but instead using the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}),
 which utilizes pure IP-based connectivity as it is compliant with the Redis Sentinel API.
+-->
 
-As part of the high availability capabilities in Redis Enterprise Software,
-each node includes a small DNS server for managing various internal cluster functionalities,
-such as automatic failover or automatic migration.
-Therefore, nodes that provision Redis Enterprise Software should run only the DNS server included with the software.  They should not run any other DNS servers; otherwise, unexpected behavior can occur.
+Each node in an Redis Enterprise cluster includes a small DNS server to manage internal functions, such as high availability, automatic failover, automatic migration, and so on.
+Nodes should only run the DNS server included with the software.  Running additional DNS servers can lead to unexpected behavior.
 
 ## Cluster name (FQDN) and connection management
 
 Whether you're administering Redis Enterprise Software or accessing databases, there are two ways to connect:
 
-- URL-based connections - URL-based connections use DNS to resolve the fully qualified cluster domain name.  This means that DNS records might need to be updated when topology changes, such as adding (or removing) nodes from the cluster.  
+- URL-based connections - URL-based connections use DNS to resolve the fully qualified cluster domain name (FQDN).  This means that DNS records might need to be updated when topology changes, such as adding (or removing) nodes from the cluster.  
 
-    Because apps and other clients connections rely on the URL, they do not need to be modified when topology changes.  
+    Because apps and other clients connections rely on the URL (rather than the address), they do not need to be modified when topology changes.  
 
 - IP-based connections - IP-based connections do not require DNS setup, as they rely on the underlying TCP/IP addresses.  As long as topology changes do not change the address of the cluster nodes, no configuration changes are needed, DNS or otherwise.  
 
-    However, changes to IP addresses (or changes to IP address access) impact all apps and clients connecting to the node.
+    However, changes to IP addresses (or changes to IP address access) impact all connections to the node, including apps and clients.  IP address changes can therefore be unpredictable or time-consuming.
 
 ## URL-based connections and how to set up cluster name (FQDN)
 
-The Fully Qualified Domain Name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) of Redis Enterprise Software.
+The fully qualified domain name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) of Redis Enterprise Software.
 The FQDN is a crucial component of the high-availability mechanism because it's used internally to enable and implement automatic and transparent failover of nodes, databases shards, and endpoints.
 
 {{< note >}}
-Setting the cluster's FQDN is a one-time operation; it cannot be changed after being set.
+Setting the cluster's FQDN is a one-time operation, one that cannot be changed after being set.
 {{< /note >}}
 
 The FQDN must always comply with the IETF's [RFC 952](http://tools.ietf.org/html/rfc952) standard
@@ -104,5 +103,4 @@ When using the IP-based connection method, you can use the [Discovery Service]({
 to discover the database endpoint for a given database name as long as you have an IP address for at least one of the nodes in the cluster.
 The API used for discovery service is compliant with the Redis Sentinel API.
 
-To test your connection, try pinging the service.  For help, see [Connect yo your database]connYou can find a simple example of URL and IP-based connection in the "Testing Connectivity to your Database" section
-of [Creating a new database]({{< relref "rs/getting-started/#step-4-connect-to-your-database" >}}).
+To test your connection, try pinging the service.  For help, see [Connect to your database]({{< relref "rs/getting-started/#step-4-connect-to-your-database" >}}).
