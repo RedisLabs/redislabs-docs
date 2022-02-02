@@ -34,7 +34,7 @@ and section 2.1 of the [RFC 1123](http://tools.ietf.org/html/rfc1123) standard.
 
 To identify the cluster, either use DNS to define a fully qualified domain name or use the IP addresses of each node.  
 
-### DNS
+### Define domain using DNS
 
 Use DNS if you:
 
@@ -49,25 +49,25 @@ Use DNS if you:
 
         - Your domain is: mydomain.com
         - You would like to name the Redis Enterprise Software cluster:
-            redislabscluster
+            rediscluster
         - You have three nodes in the cluster:
            - node1 with IP 1.1.1.1
            - node2 with IP 2.2.2.2
            - node3 with IP 3.3.3.3
 
-1. In the FQDN field, enter the value `redislabscluster.mydomain.com`
+1. In the FQDN field, enter the value `rediscluster.mydomain.com`
     and add the following records in the DNS for mydomain.com:
 
     ```sh
-    redislabscluster.mydomain.com         NS   node1.redislabscluster.mydomain.com
-                                               node2.redislabscluster.mydomain.com
-                                               node3.redislabscluster.mydomain.com 
+    rediscluster.mydomain.com         NS   node1.rediscluster.mydomain.com
+                                               node2.rediscluster.mydomain.com
+                                               node3.rediscluster.mydomain.com 
 
-    node1.redislabscluster.mydomain.com   A    1.1.1.1
+    node1.rediscluster.mydomain.com   A    1.1.1.1
 
-    node2.redislabscluster.mydomain.com   A    2.2.2.2
+    node2.rediscluster.mydomain.com   A    2.2.2.2
 
-    node3.redislabscluster.mydomain.com   A    3.3.3.3
+    node3.rediscluster.mydomain.com   A    3.3.3.3
     ```
 
 ### Zero-configuration using mDNS {#zeroconfiguration-using-mdns-development-option-only}
