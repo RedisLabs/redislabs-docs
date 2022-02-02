@@ -20,7 +20,8 @@ aliases: /rs/references/rest-api/modules
 | [GET](#get-module) | `/v1/modules/{uid}` | Get a specific module |
 | [POST](#post-module) | `/v1/modules` | Upload a new module |
 | [POST](#post-module-v2) | `/v2/modules` | Upload a new module and its dependencies |
-| [DELETE](#delete-module) | `/v1/modules/{uid}` | Delete a module |
+| [DELETE](#delete-module) | `/v1/modules/{uid}` | Delete a module without dependencies |
+| [DELETE](#delete-module-v2) | `/v2/modules/{uid}` | Delete a module with dependencies |
 
 ## List modules {#list-modules}
 
@@ -118,7 +119,7 @@ Packer](https://github.com/RedisLabs/RAMP).
 
 #### Example HTTP request
 
-	POST /modules 
+	POST /v1/modules 
 
 #### Request headers
 
@@ -243,11 +244,22 @@ Possible `error_code` values include [`/v1/modules` error codes](#post-error-cod
 |------|-------------|
 | invalid_dependency_data | Provided dependencies have an unexpected format |
 
-## Delete module {#delete-module}
+### Status codes {#post-status-codes-v2} 
+
+| Code | Description |
+|------|-------------|
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, scheduled module upload. |
+| [400 Bad Request](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1) | Module name or version does not exist. |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Dependency not found. |
+| [500 Internal Server Error](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.5.1) | Failed to get dependency. |
+
+## Delete module v1 {#delete-module}
 
 	DELETE /v1/modules/{string: uid}
 
 Delete a module.
+
+If the module has dependencies, use the [`v2` request](#delete-module-v2) instead.
 
 #### Required permissions
 
@@ -259,7 +271,7 @@ Delete a module.
 
 #### Example HTTP request
 
-	DELETE /module/1 
+	DELETE /v1/modules/1 
 
 #### Request headers
 
@@ -278,6 +290,12 @@ Delete a module.
 
 Returns a status code to indicate module deletion success or failure.
 
+### Error codes {#delete-error-codes} 
+
+| Code | Description |
+|------|-------------|
+| dependencies_not_supported | You can use the following API endpoint to delete this module with its dependencies: `/v2/modules/<uid>` |
+
 ### Status codes {#delete-status-codes} 
 
 | Code | Description |
@@ -285,3 +303,45 @@ Returns a status code to indicate module deletion success or failure.
 | [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, the module is deleted. |
 | [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to delete a nonexistent module. |
 | [406 Not Acceptable](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.7) | The request is not acceptable. |
+
+## Delete module v2 {#delete-module-v2}
+
+	DELETE /v2/modules/{string: uid}
+
+Delete a module with dependencies.
+
+#### Required permissions
+
+| Permission name |
+|-----------------|
+| [update_cluster]({{<relref "/rs/references/rest-api/permissions#update_cluster">}}) |
+
+### Request {#delete-request-v2} 
+
+#### Example HTTP request
+
+	DELETE /v2/modules/1 
+
+#### Request headers
+
+| Key | Value | Description |
+|-----|-------|-------------|
+| Host | cnm.cluster.fqdn | Domain name |
+| Accept | application/json | Accepted media type |
+
+#### URL parameters
+
+| Field | Type | Description |
+|-------|------|-------------|
+| uid | integer | The module's unique ID. |
+
+### Response {#delete-response-v2} 
+
+Returns a JSON object with an `action_uid` that allows you to track the progress of module deletion.
+
+### Status codes {#delete-status-codes-v2} 
+
+| Code | Description |
+|------|-------------|
+| [200 OK](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.1) | Success, scheduled module deletion. |
+| [404 Not Found](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5) | Attempting to delete a nonexistent module. |
