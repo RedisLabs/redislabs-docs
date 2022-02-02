@@ -79,7 +79,7 @@ Once you have set up a private container registry, you will identify the contain
 
 * A domain name
 * A port (optional)
-* An repository path (optional)
+* A repository path (optional)
 
 ## Push images to a private container registry
 
@@ -245,11 +245,11 @@ spec:
 ## Rate limiting with DockerHub
 
 Docker has [rate limits for image pulls](https://www.docker.com/blog/scaling-docker-to-serve-millions-more-developers-network-egress/).
-Anonymous users are allowed a certain number of pulls every 6 hours. For authenticated users, the limit larger.
+Anonymous users are allowed a certain number of pulls every 6 hours. For authenticated users, the limit is larger.
 These rate limits may affect your Kubernetes cluster in a number of ways:
 
-* The cluster nodes will likely be treated as a one anonymous user.
-* The number of pulls during a deployment might exceed the rate limit for other deployment dependencies, including our operator, Redis Enterprise Software, or other non-Redis pods.
+* The cluster nodes will likely be treated as a single anonymous user.
+* The number of pulls during a deployment might exceed the rate limit for other deployment dependencies, including the operator, Redis Enterprise Software, or other non-Redis pods.
 * Pull failures may prevent your deployment from downloading the required images in a timely manner. Delays here can affect the stability of deployments used by the Redis Enterprise operator.
 
 For these reasons, you should seriously consider where your images
