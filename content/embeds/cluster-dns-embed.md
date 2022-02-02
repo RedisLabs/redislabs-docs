@@ -1,7 +1,4 @@
-Redis Enterprise Software deployments use DNS to communicate between nodes.
-<!-- This can be altered, but instead using the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}),
-which utilizes pure IP-based connectivity as it is compliant with the Redis Sentinel API.
--->
+By default, Redis Enterprise Software deployments use DNS to communicate between nodes.  You can also use the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), which uses IP addresses to connect and complies with the [Redis Sentinel API](https://redis.io/topics/sentinel) supported by open source Redis.
 
 Each node in an Redis Enterprise cluster includes a small DNS server to manage internal functions, such as high availability, automatic failover, automatic migration, and so on.
 Nodes should only run the DNS server included with the software.  Running additional DNS servers can lead to unexpected behavior.
@@ -47,27 +44,26 @@ Use DNS if you:
 
     For example:
 
-        - Your domain is: mydomain.com
-        - You would like to name the Redis Enterprise Software cluster:
-            rediscluster
-        - You have three nodes in the cluster:
-           - node1 with IP 1.1.1.1
-           - node2 with IP 2.2.2.2
-           - node3 with IP 3.3.3.3
+    - Your domain is: `mydomain.com`
+    - You would like to name the Redis Enterprise Software cluster `mycluster`
+    - You have three nodes in the cluster:
+        - node1 (IP address 1.1.1.1)
+        - node2 (2.2.2.2)
+        - node3 (3.3.3.3)
 
-1. In the FQDN field, enter the value `rediscluster.mydomain.com`
-    and add the following records in the DNS for mydomain.com:
+1. In the FQDN field, enter the value `mycluster.mydomain.com`
+    and add the following records in the DNS table for `mydomain.com`:
 
-    ```sh
-    rediscluster.mydomain.com         NS   node1.rediscluster.mydomain.com
-                                               node2.rediscluster.mydomain.com
-                                               node3.rediscluster.mydomain.com 
-
-    node1.rediscluster.mydomain.com   A    1.1.1.1
-
-    node2.rediscluster.mydomain.com   A    2.2.2.2
-
-    node3.rediscluster.mydomain.com   A    3.3.3.3
+    ``` sh
+    mycluster.mydomain.com        NS  node1.mycluster.mydomain.com
+                                      node2.mycluster.mydomain.com
+                                      node3.mycluster.mydomain.com 
+    
+    node1.mycluster.mydomain.com  A   1.1.1.1
+    
+    node2.mycluster.mydomain.com  A   2.2.2.2
+    
+    node3.mycluster.mydomain.com  A   3.3.3.3
     ```
 
 ### Zero-configuration using mDNS {#zeroconfiguration-using-mdns-development-option-only}
