@@ -6,7 +6,7 @@ which utilizes pure IP-based connectivity as it is compliant with the Redis Sent
 Each node in an Redis Enterprise cluster includes a small DNS server to manage internal functions, such as high availability, automatic failover, automatic migration, and so on.
 Nodes should only run the DNS server included with the software.  Running additional DNS servers can lead to unexpected behavior.
 
-## Cluster name (FQDN) and connection management
+## Cluster name and connection management
 
 Whether you're administering Redis Enterprise Software or accessing databases, there are two ways to connect:
 
@@ -18,7 +18,7 @@ Whether you're administering Redis Enterprise Software or accessing databases, t
 
     However, changes to IP addresses (or changes to IP address access) impact all connections to the node, including apps and clients.  IP address changes can therefore be unpredictable or time-consuming.
 
-## URL-based connections and how to set up cluster name (FQDN)
+## URL-based connections
 
 The fully qualified domain name (FQDN) is the unique cluster identifier that enables clients to connect to [the different components]({{< relref "/rs/concepts/_index.md" >}}) of Redis Enterprise Software.
 The FQDN is a crucial component of the high-availability mechanism because it's used internally to enable and implement automatic and transparent failover of nodes, databases shards, and endpoints.
@@ -30,9 +30,9 @@ Setting the cluster's FQDN is a one-time operation, one that cannot be changed a
 The FQDN must always comply with the IETF's [RFC 952](http://tools.ietf.org/html/rfc952) standard
 and section 2.1 of the [RFC 1123](http://tools.ietf.org/html/rfc1123) standard.
 
-## Name the cluster domain name
+## Identify the cluster
 
-You can name the cluster domain name using either DNS or IP addresses.  
+To identify the cluster, either use DNS to define a fully qualified domain name or use the IP addresses of each node.  
 
 ### DNS
 
@@ -70,22 +70,20 @@ Use DNS if you:
     node3.redislabscluster.mydomain.com   A    3.3.3.3
     ```
 
-### Zero-configuration using mDNS (Development option only) {#zeroconfiguration-using-mdns-development-option-only}
+### Zero-configuration using mDNS {#zeroconfiguration-using-mdns-development-option-only}
 
-{{< note >}}
-mDNS is not supported for use with production environments and should only be used in development or test environments.
-{{< /note >}}
+Development and test environments can use [Multicast DNS](https://en.wikipedia.org/wiki/Multicast_DNS) (mDNS), a zero-configuration service designed for small networks.  Production environments should _not_ use mDNS.
 
-mDNS (Multicast DNS) is a standard protocol that provides DNS-like name resolution and service discovery capabilities
+mDNS is a standard protocol that provides DNS-like name resolution and service discovery capabilities
 to machines on local networks with minimal to no configuration.
-Because not all clients support mDNS, ensure first that the clients that are connecting to the cluster actually have mDNS support,
-and that the network infrastructure permits mDNS/multi-casting between them and the cluster nodes.
+
+Before adopting mDNS, verify that it's supported by each client you wish to use to connect to your Redis databases.  Also make sure that your network infrastructure permits mDNS/multi-casting between clients and cluster nodes.
 
 Configuring the cluster to support mDNS requires you to assign the cluster a `.local` name.
 
-For example, if you want to name the Redis Enterprise Software cluster `redislabscluster`, enter `redislabscluster.local` in the FQDN field.
+For example, if you want to name the Redis Enterprise Software cluster `rediscluster`, specify the FQDN name as `rediscluster.local`.
 
-When using the DNS or mDNS option, failover can be done transparently and the DNS is updated automatically to point to the IP of the new master.
+When using the DNS or mDNS option, failover can be done transparently and the DNS is updated automatically to point to the IP address of the new primary node.
 
 ## IP-based connections
 
