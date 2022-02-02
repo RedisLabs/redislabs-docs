@@ -1,4 +1,4 @@
-Yes we are. Not only are we are the home of Redis, but most of Redis’ core engineers also work for Redis Labs! We contribute extensively to the open source Redis project. As a rule, we adhere to the open source’s specifications and make every effort to update our service with its latest versions.
+Yes we are. Not only are we are the home of Redis, but most of the core engineers on open source Redis also work here.  We contribute extensively to the open source Redis project. As a rule, we adhere to the open source’s specifications and make every effort to update our service with its latest versions.
 
 That said, the following Redis features are not applicable in the context of our service:
 
@@ -15,8 +15,8 @@ That said, the following Redis features are not applicable in the context of our
     - [REPLCONF](http://redis.io/commands/REPLCONF)
     - [SLAVEOF](http://redis.io/commands/SLAVEOF)
     - [SYNC](http://redis.io/commands/SYNC)/[PSYNC](http://redis.io/commands/PSYNC)
-- Redis Labs clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
-- Redis Labs clustering technology allows [multiple active proxies](http://docs.redislabs.com/latest/rs/administering/designing-production/networking/multiple-active-proxy.md). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
+- Redis Enterprise clustering technology is different than the open source Redis Cluster and supports clustering in a seamless manner that works with all standard Redis clients. As a result, [all Cluster related commands](http://redis.io/commands#cluster) are blocked and show an error when used.
+- Redis Enterprise clustering technology allows [multiple active proxies](http://docs.redislabs.com/latest/rs/administering/designing-production/networking/multiple-active-proxy.md). As a result, the CLIENT ID command cannot guarantee incremental IDs between clients who connect to different nodes under multi proxy policies.
 - Commands that aren’t relevant for a hosted Redis service are blocked:
     - [CONFIG RESETSTAT](http://redis.io/commands/CONFIG-RESETSTAT)
     - [DEBUG OBJECT](http://redis.io/commands/DEBUG-OBJECT)/[SEGFAULT](http://redis.io/commands/DEBUG-SEGFAULT)
@@ -35,6 +35,9 @@ That said, the following Redis features are not applicable in the context of our
     - [MEMORY DOCTOR](https://redis.io/commands/memory-doctor)
     - [MEMORY MALLOC-STATS](https://redis.io/commands/memory-malloc-stats)
     - [MEMORY PURGE](https://redis.io/commands/memory-purge)
+    - [MODULE LOAD](https://redis.io/commands/module-load)
+    - [MODULE UNLOAD](https://redis.io/commands/module-unload)
+    - [MODULE LIST](https://redis.io/commands/module-list)
 - Additionally, only a subset of Redis’ configuration settings (via CONFIG GET/SET) is applicable to Redis Cloud. Attempts to get or set a configuration parameter that isn’t included in the following list show an error when used:
     - hash-max-ziplist-entries
     - hash-max-ziplist-value

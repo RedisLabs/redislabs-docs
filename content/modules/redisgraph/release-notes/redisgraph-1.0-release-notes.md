@@ -1,11 +1,21 @@
 ---
-Title: RedisGraph 1.0 Release Notes
-description:
+Title: RedisGraph 1.0 release notes
+linkTitle: v1.0 (November 2018)
+description: Fixed memory leaks. Support ‘*’ within RETURN clause. Added TYPE function. Initial support for UNWIND clause.
+min-version-db: "4.0.0"
+min-version-rs: "5.0.0"
 weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph 1.0.15 (March 2019)
+## Requirements
+
+RedisGraph v1.0.15 requires:
+
+- Minimum Redis compatibility version (database): 4.0.0
+- Minimum Redis Enterprise Software version (cluster): 5.0.0
+
+## v1.0.15 (March 2019)
 
 - GraphBLAS 2.3.0 [release notes](https://github.com/RedisLabsModules/RedisGraph/pull/390#issuecomment-470620353)
 - WITH clause: Allows query parts to be chained together, piping the results from one to be used as starting points or criteria of the next. [ref p.78](https://s3.amazonaws.com/artifacts.opencypher.org/openCypher9.pdf)
@@ -16,58 +26,55 @@ categories: ["Modules"]
     - #[363](https://github.com/RedisGraph/RedisGraph/issues/363) Remove graph entity property when it is set to null
     - #[386](https://github.com/RedisGraph/RedisGraph/issues/386) Return updated values on queries that modify data
 
-## RedisGraph 1.0.14 (February 2019)
+## v1.0.14 (21 February 2019)
 
-license update, REDIS SOURCE AVAILABLE LICENSE AGREEMENT.
+License update, REDIS SOURCE AVAILABLE LICENSE AGREEMENT.
 
-## RedisGraph 1.0.13 (February 2019)
+## v1.0.13 (6 February 2019)
 
 Reuse attribute name to avoid duplication
 
-## RedisGraph 1.0.12 (January 2019)
+## v1.0.12 (28 January 2019)
 
-traverse direction optimization to reduce number of matrix transpose
+Traverse direction optimization to reduce number of matrix transpose
 
-## RedisGraph 1.0.11 (January 2019)
+## v1.0.11 (17 January 2019)
 
-Removed OpenMP requirement
-Traverse from multiple nodes concurrently
+- Removed OpenMP requirement
+- Traverse from multiple nodes concurrently
 
-## RedisGraph 1.0.10 (January 2019)
+## v1.0.10 (9 January 2019)
 
-Update indices when MERGE create new entities
+Update indices when MERGE creates new entities
 
-## RedisGraph 1.0.9 (January 2019)
+## v1.0.9 (6 January 2019)
 
-Support for mixing MERGE and SET clauses
-Granular writer locking
-Fix graph serialization error in duplicate edge handling
+- Support for mixing MERGE and SET clauses
+- Granular writer locking
+- Fix graph serialization error in duplicate edge handling
 
-## RedisGraph 1.0.8
+## v1.0.8 (24 December 2018)
 
-Index utilization when performing cartesian product
+- Index utilization when performing cartesian product
+- Increase usage of rm_malloc functions in module
+- Allow serialization of NULL-valued properties
+- Support for multiple relationship types
 
-Increase usage of rm_malloc functions in module
+## v1.0.7 (18 December 2018)
 
-Allow serialization of NULL-valued properties
+- Bulk-insert support unicode
+- Bulk-insert better progress reporting
+- Multiple relationship types
 
-Support for multiple relationship types
-
-## RedisGraph 1.0.7
-
-Bulk-insert support unicode
-Bulk-insert better progress reporting
-Multiple relationship types
-
-## RedisGraph 1.0.5
+## v1.0.5 (15 December 2018)
 
 Bulk insert supports ID specifying + relationships attributes
 
-## RedisGraph 1.0.4
+## v1.0.4 (9 December 2018)
 
 - Compact GraphBLAS, using structural semiring
 
-## RedisGraph 1.0.3
+## v1.0.3 (2 December 2018)
 
 - GraphBLAS 2.2
 - Multiple CREATE clauses
@@ -77,11 +84,11 @@ Bulk insert supports ID specifying + relationships attributes
     - Entity returned from datablock should have its internals cleared
     - Loaded triemap strings are not guaranteed space for a null terminator
 
-## RedisGraph 1.0.2
+## v1.0.2 (25 November 2018)
 
 - Bug fix #[249](https://github.com/RedisGraph/RedisGraph/issues/249) reset operation within execution plan should propagate upwards
 
-## RedisGraph 1.0.1
+## v1.0.1 (22 November 2018)
 
 - Resolved a number of memory leaks
 - Support '*' within RETURN clause

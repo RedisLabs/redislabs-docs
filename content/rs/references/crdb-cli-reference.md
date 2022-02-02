@@ -77,7 +77,7 @@ crdb-cli crdb create --name <name> /
 [--oss-cluster true]
 [--bigstore true]
 [--bigstore-ram-size <maximum_memory>]
-[--with-module <module_name>]
+[--with-module name=<module_name>,version=<module_version>,args=<module_args>]
 ```
 
 After you run the command, the response shows the globally unique identifier (GUID) of the task and the GUID of the Active-Active database that was created:
@@ -89,12 +89,12 @@ Task 2b3d62c6-395b-4679-87b1-eef006ad4a38 created
   ---> Status changed: started -> finished
 ```
 
-If you only specify the required fields, the properties of the database are::
+If you only specify the required fields, the properties of the database are:
 
 - Compression level 3
 - Causal consistency is off
 - No password
-- No replication
+- Replication
 - No encryption
 - 1 shard
 - Shard key regex: `{u'regex': u'.*\\{(?<tag>.*)\\}.*'}, {u'regex': u'(?<tag>.*)'}`
@@ -110,8 +110,8 @@ The `crdb create` command supports several additional options:
 |`replication true`| boolean| Enables [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}})| where every master shard replicates to a replica shard (We recommend that you use replication so that active-active database synchronization traffic is off-loaded to the slave shard)|
 |`encryption true`| boolean| Enable encryption|
 |`sharding disable`| string| Disable sharding (also known as [database clustering]({{< relref "/rs/concepts/high-availability/replication.md" >}})) so that there is only one shard for the database|
-|`shards-count <number>`| integer| If sharding is enabled this specifies the number of Redis shards for each database instance|
-|`shard-key-regex <regex_rule>`| string| If sharding is enabled this defines a custom sharding key regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
+|`shards-count <number>`| integer| If clustering is enabled this specifies the number of Redis shards for each database instance|
+|`shard-key-regex <regex_rule>`| string| If clustering is enabled this defines a regex rule (also known as a [hashing policy]({{< relref "/rs/concepts/high-availability/clustering#custom-hashing-policy" >}}) that determines which keys are located in each shard|
 <!-- |`default-db-config <options>`|text|Default database configuration options|
 |`default-db-config-file <filename>`|file path|Default database configuration options| -->
 
@@ -123,7 +123,13 @@ To create an Active-Active database with two shards in each instance and with en
 crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --shards-count 2 --encrypted true
 ```
 
-To create an Active-Active database with no shards and with encrypted traffic between the clusters:
+To create an Active-Active database with two shards and with RediSearch 2.0.6 module:
+
+```sh
+crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --shards-count 2 --with-module name=search,version="2.0.6",args="PARTITIONS AUTO"
+```
+
+To create an Active-Active database with two shards and with encrypted traffic between the clusters:
 
 ```sh
 crdb-cli crdb create --name mycrdb --memory-size 100mb --port 12000 --instance fqdn=cluster1.local,username=test,password=test --instance fqdn=cluster2.local,username=test,password=test --encrypted true --shards-count 2
@@ -166,14 +172,13 @@ If you want to change the configuration of the local instance only, you can chan
 The syntax for the command is:
 
 ```sh
-crdb-cli crdb update --crdb-guid <crdb-guid> /
+crdb-cli crdb update --crdb-guid <CRDB-GUID> /
 [--no-wait] /
 [--db-config-json <file_content>] /
 [--db-config-json-file <filename>] /
 [--compression (0-6)] /
 [--causal-consistency true] /
 [--password <password>] /
-[--replication true] /
 [--encryption true] /
 [--oss-cluster true]
 [--bigstore-ram-size <maximum_memory>]
@@ -210,7 +215,7 @@ If the data in your database is important, make sure you back it up before you f
 To flush the data from an Active-Active database, run:
 
 ```sh
-crdb-cli crdb flush --crdb-guid <crdb-guid>
+crdb-cli crdb flush --crdb-guid <CRDB-GUID>
 ```
 
 ### Deleting an Active-Active database
@@ -221,7 +226,7 @@ This command requires the CRDB-GUID of the database.
 To delete an Active-Active database, run:
 
 ```sh
-crdb-cli crdb delete --crdb-guid <crdb-guid>
+crdb-cli crdb delete --crdb-guid <CRDB-GUID>
 ```
 
 {{< warning >}}
@@ -242,7 +247,7 @@ When you add an instance to an Active-Active database, you must specify:
 
 |Flag and argument| Argument type| Description|
 |---|---|---|
-|`crdb-guid <guid-id>`| string| The ID of the Active-Active database that you want to add the instance to|
+|`crdb-guid <CRDB-GUID>`| string| The ID of the Active-Active database that you want to add the instance to|
 |`instance fqdn=<cluster_fqdn>,username=<username>,password=<password>`| strings| The connection information for the participating cluster that will host the new instance|
 
 ### Removing an instance from an Active-Active database {#removing-an-instance-from-an-activeactive-database}
@@ -253,14 +258,14 @@ When you remove an instance from an Active-Active database, you must specify:
 
 |Flag and argument| Argument type| Description|
 |---|---|---|
-|`crdb-guid <guid-id>`| string| The ID of the Active-Active database that you want to add the instance to|
+|`crdb-guid <CRDB-GUID>`| string| The ID of the Active-Active database that you want to add the instance to|
 |`instance-id=<instance_id>`| integer| The ID of the instance to remove from the Active-Active database|
 
 {{< note >}}
 If the cluster that you run the command on cannot communicate with the instance that you want to remove,
-you can use the `--unordered` flag to remove the instance from the Active-Active database without purging the data from the instance.
+you can use the `--force` flag to remove the instance from the Active-Active database without purging the data from the instance.
 
-After you use `crdb remove-instance --unordered`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <crdb-guid> <instance-id>`
+After you use `crdb remove-instance --force`, you must run `crdb purge-instance` from the removed participating cluster to delete the Active-Active database and its data. To purge the instance, run: `crdb-cli crdb purge-instance --crdb-guid <CRDB-GUID> <instance-id>`
 {{< /note >}}
 
 ## Active-Active task status

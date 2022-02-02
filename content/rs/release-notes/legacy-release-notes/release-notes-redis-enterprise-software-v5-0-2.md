@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Software 5.0.2 (2018 March)
+linkTitle: 5.0.2 (2018 March)
 description:
 weight: 92
 alwaysopen: false
@@ -17,11 +18,13 @@ upgrade instructions before beginning the upgrade process.
 You can upgrade to RS 5.0.2 from RS 4.4.2 and above. If you have a
 version older than 4.4.2, you must first upgrade to at least 5.0.
 
-Note: Starting from RS 5.0.2, ports 3338 and 3339 should also be opened
-on each node for the purpose of internal cluster communication. For more
-information, check the ['network port
+{{< note >}}
+Starting from RS 5.0.2, ports 3338 and 3339 should also be opened
+on each node for the purpose of internal cluster communication.
+For more information, check the ['network port
 configurations']({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 page
+{{< /note >}}
 
 ## New features
 
@@ -77,13 +80,13 @@ page
 - Since Redis Enterprise CRDBs have counters, unlike traditional Redis
     databases, they must be handled differently when importing. There is
     a special type of import because of importing counter data types.
-    When performing the import through the web UI, you will be prompted
+    When performing the import through the admin console, you will be prompted
     to confirm you want to add the data to the CRDB or stop and go flush
     the database.
 - This version of RS comes with a pre-bundled python which might
     over-ride your default installed python version, this can be solved
     by changing your PATH environment variable.
-- Uploading a Redis Module through the Web UI, can be performed only
-    when the Web UI is connected to the master node.
+- Uploading a Redis Module through the admin console, can be performed only
+    when the admin console is connected to the master node.
 - Write operations are not allowed for database which was created with
     password of exactly 50-characters.

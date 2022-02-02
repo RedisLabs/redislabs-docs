@@ -19,7 +19,8 @@ Every instance of an Active-Active database can receive write operations, and al
 1. **Confirm connectivity** - Confirm network connectivity between the participating clusters.
 1. **Create Active-Active database** - Connect to one of your clusters and create a new Active-Active database.
 1. **Add participating clusters** - Add the participating clusters to the Active-Active database with the user credentials for the service account.
-1. **Confirm Active-Active database Synchronization** - Test writing to one cluster and reading from a different cluster.
+1. **Verify creation** - Log in to each of the participating clusters and verify your Active-Active database was created on them.
+1. **Confirm Active-Active database synchronization** - Test writing to one cluster and reading from a different cluster.
 
 ## Prerequisites
 
@@ -31,7 +32,7 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. To create service accounts, on each participating cluster:
 
-    1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the Active-Active database.
+    1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the Active-Active database.
         By default, the address is: `https://<RS_address>:8443`
     1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
     1. Enter the name, email, and password for the user, select the **Admin** role, and click ![Save](/images/rs/icon_save.png#no-click "Save").
@@ -45,7 +46,7 @@ Every instance of an Active-Active database can receive write operations, and al
     telnet <target FQDN> 9443
     ```
 
-1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the Active-Active database.
+1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the Active-Active database.
     By default, the address is: `https://<RS_address>:8443`
 
 1. In **databases**, click ![Add](/images/rs/icon_add.png#no-click "Add").
@@ -54,26 +55,25 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. In the **Deployment** box, select **Geo-Distributed** and click **Next** to create an Active-Active database on RAM.
 
-    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-architecture/redis-flash.md" >}}),
+    If your cluster supports [Redis on Flash]({{< relref "/rs/concepts/memory-performance/redis-flash.md" >}}),
     in **Runs on** you can select **Flash** so that your database uses Flash memory. We recommend that you use AOF every 1 sec
     for the best performance during the initial Active-Active database sync of a new replica.
 
-    ![new_geo-distributed](/images/rs/new_geo-distrbuted.png?width=600&height=608)
+    ![new_geo-distributed](/images/rs/new_geo-distrbuted.png)
 
 1. Enter the name of the new Active-Active database and select from the options:
 
     {{< note >}}
 
-- The eviction policy can only be set to **noeviction** for Active-Active databases.
 - You cannot enable or disable database clustering after the Active-Active database is created.
 
     {{< /note >}}
 
     - [**Replication**]({{< relref "/rs/concepts/high-availability/replication.md" >}}) - We recommend that all Active-Active database use replication for best intercluster synchronization performance.
-        When replication is enabled, every Active-Active database master shard is replicated to a corresponding slave shard. The slave shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
-        We also recommend that you enable [slave HA]({{< relref "/rs/administering/database-operations/slave-ha.md" >}}) to ensure that the slave shards are highly-available for this synchronization.
+        When replication is enabled, every Active-Active database master shard is replicated to a corresponding replica shard. The replica shards are then used to synchronize data between the instances, and the master shards are dedicated to handling client requests.
+        We also recommend that you enable [replica HA]({{< relref "/rs/administering/database-operations/replica-ha.md" >}}) to ensure that the replica shards are highly-available for this synchronization.
 
-    - [**Data persistence**]({{< relref "/rs/concepts/data-access/persistence.md" >}}) -
+    - [**Data persistence**]({{< relref "/rs/concepts/memory-performance/persistence.md" >}}) -
         To protect against loss of data stored in RAM,
         you can enable data persistence and select to store a copy of the data on disk with snapshots or Append Only File (AOF).
         AOF provides the fastest and most reliable method for instance failure recovery.
@@ -85,15 +85,15 @@ Every instance of an Active-Active database can receive write operations, and al
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that apply to those connections.
+    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/passwords-users-roles.md" >}}) that have access to the database
+        and the [Redis ACLs]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that apply to those connections.
         You can only configure access control after the Active-Active database is created.
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-        1. Select the [roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
-        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that you want the role to have in the database.
+        1. Select the [role]({{< relref "/rs/security/passwords-users-roles.md" >}}) that you want to have access to the database.
+        1. Select the [ACL]({{< relref "/rs/security/passwords-users-roles.md#database-access-control" >}}) that you want the role to have in the database.
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
@@ -109,12 +109,14 @@ Every instance of an Active-Active database can receive write operations, and al
         can use [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         without the limitations.
 
+    - [**OSS Cluster API**]({{< relref "/rs/administering/designing-production/networking/using-oss-cluster-api.md" >}}) - {{< embed-md "oss-cluster-api-intro.md"  >}}
+
     - **Eviction policy** - The eviction policy for Active-Active databases is `noeviction`.
 
     - **Participating Clusters** - You must specify the URL of the clusters that you want to
         host instances of an Active-Active database and the admin user account to connect to each cluster.
         1. In the **Participating Clusters** list, click ![Add](/images/rs/icon_add.png#no-click "Add") to add clusters.
-        1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn_or_ip_address>:9443`),
+        1. For each cluster, enter the URL for the cluster (`https://<cluster_fqdn>:9443`),
             enter the credentials (email address and password) for the service account that you created, and click ![Save](/images/rs/icon_save.png#no-click "Save").
 
     - **[Causal Consistency]({{< relref "/rs/administering/database-operations/causal-consistency-crdb.md" >}})** -
@@ -122,13 +124,11 @@ Every instance of an Active-Active database can receive write operations, and al
         on a specific key is maintained across all instances of an Active-Active database.
         To enable Causal Consistency for an existing Active-Active database, use the REST API.
 
-    - **TLS** - You can enable TLS for communications between participating clusters.
-        After you create the Active-Active database, you can enable SSL for the data
-        access operations from applications just like regular Redis Enterprise databases.
-
-        SSL for data access operations is a local setting on each
-        cluster that only impacts the specific instance of the Active-Active database you are editing and
-        does not apply automatically to all instances of an Active-Active database.
+    - **TLS** - If you enable TLS when you create the Active-Active database,
+        the nodes use the TLS mode **Require TLS for CRDB communication only**
+        to require TLS authentication and encryption for communications between participating clusters.
+        After you create the Active-Active database, you can set the TLS mode to **Require TLS for all communications**
+        so that client communication from applications are also authenticated and encryption.
 
 <!-- Also in getting-started-crdbs.md -->
 ## Test the connection to your member Redis Active-Active databases
@@ -187,10 +187,12 @@ redis-cli is a simple command-line tool to interact with redis database.
 A simple python application running on the host machine can also connect
 to the database.
 
-Note: Before you continue, you must have python and
+{{< note >}}
+Before you continue, you must have python and
 [redis-py](https://github.com/andymccurdy/redis-py#installation)
 (python library for connecting to Redis) configured on the host machine
 running the container.
+{{< /note >}}
 
 1. In the command-line terminal, create a new file called "redis_test.py"
 

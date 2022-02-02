@@ -1,11 +1,12 @@
 ---
-Title: RedisGears Quick Start Tutorial
+Title: RedisGears quick start tutorial
+linkTitle: Quick start
 description:
 weight: 50
 alwaysopen: false
 categories: ["Modules"]
 ---
-For this quick start tutorial, you'll need one of the following:
+For this tutorial, you'll need one of the following:
 
 - Either:
     - A Redis Enterprise cluster with [the RedisGear module installed]({{< relref "/modules/redisgears/installing-redisgears.md" >}}), [added to the cluster]({{< relref "/modules/add-module-to-cluster.md" >}}), and [added to a database]({{< relref "/modules/add-module-to-database.md" >}})
@@ -85,7 +86,7 @@ redis.cloud:6379> HSET person:4 name "James Jameson" age 21
 (integer) 2
 ```
 
-Each hash hash two fields, one containing a name and the other an age. Now, suppose we want to keep a record of the maximum age of all users. We can register a RedisGears function to do this. Open up a file called `maxage.py`, and add the following code:
+Each hash has two fields, one containing a name and the other an age. Now, suppose we want to keep a record of the maximum age of all users. We can register a RedisGears function to do this. Open up a file called `maxage.py`, and add the following code:
 
 ```py
 def age(x):

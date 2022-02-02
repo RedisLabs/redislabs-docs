@@ -1,5 +1,6 @@
 ---
 Title: Developing with Hashes in an Active-Active database
+linkTitle: Hashes
 description:
 weight: $weight
 alwaysopen: false

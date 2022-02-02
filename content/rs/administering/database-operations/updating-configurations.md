@@ -1,11 +1,11 @@
 ---
-Title: Updating the Database Configuration
+Title: Update the database configuration
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-You can change the configuration of a Redis Enterprise Software (RS) database at any time.
+You can change the configuration of a Redis Enterprise Software (RS) database, for example the number of shards or evicton policy, at any time.<!--more-->
 
 To edit the configuration of a database:
 
@@ -36,7 +36,7 @@ most database settings only apply to the Active-Active database instance that yo
 - TLS mode
 - Periodic backup
 
-You can change the global configuration of the Active-Active database from the command-line with the crdb-cli.
+You can change the global configuration of the Active-Active database from the command-line with the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}).
 
 ## Participating clusters
 
@@ -45,7 +45,7 @@ Use the participating clusters list to manage the changes to Active-Active topol
 You can make multiple changes at once to the list of participating clusters.
 The changes you make to the list are committed when the database configuration is saved.
 
-![pasted-image-0-1](/images/rs/pasted-image-0-1.png?width=1534&height=233)
+![add-active-active-participants](/images/rs/add-active-active-participants.png)
 
 All of the existing participating clusters must be online and in a syncing state when you add new participating clusters.
 
@@ -60,14 +60,52 @@ If a participating cluster that was removed forcefully returns attempts to re-jo
 it will have an out of date on Active-Active database membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
 
-## TLS authentication and encryption
+## Database replication backlog
 
-To prevent unauthorized access to your data, you can configure RS to secure communications with TLS protocol
-(the more secure successor to SSL).
-When you create Active-Active databases, you can specify TLS in two ways:
+Redis databases that use [replication for high availability]({{< relref "rs/concepts/high-availability/replication.md" >}}) maintain a replication backlog (per shard) to synchronize the primary and replica shards of a database.
+By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
+Use the [rladmin]({{< relref "rs/references/rladmin.md" >}}) and the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) utilities to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
 
-1. [Require TLS for All Communications]({{< relref "/rs/administering/designing-production/security/tls-configuration#configuring-tls-for-replica-of-communication-only-on-the-source-database" >}}) -
-    This configures the Active-Active database to support TLS for both data access operations performed
-    on the database as well as inter-cluster Active-Active database communications.
-1. [Require TLS for CRDB Communications Only]({{< relref "/rs/administering/designing-production/security/tls-configuration#configuring-tls-for-all-communication-on-the-source-database" >}}) -
-    This configures the Active-Active database to support TLS for only inter-cluster Active-Active database communications.
+The syntax varies between regular and Active-Active databases. 
+
+For a regular Redis database:
+```text
+rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
+```
+
+For an Active-Active database:
+```text
+crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"repl_backlog_size\": <size in MB | 'auto'>}"
+```
+
+## Active-Active CRDT replication backlog
+
+In addition to the database replication backlog, Active-Active databases maintain a CRDT replication backlog (per shard) to synchronize the database instances between clusters.
+By default, the CRDT replication backlog is set to one percent (1%) of the Active-Active database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
+Use the [crdb-cli]({{< relref "rs/references/crdb-cli-reference.md" >}}) utility to control the size of the CRDT replication backlog. You can set it to `auto` or set a specific size:  
+
+```text
+crdb-cli crdb update --crdb-guid <crdb_guid> --default-db-config "{\"crdt_repl_backlog_size\": <size in MB | 'auto'>}"
+```
+
+## Active-Passive replication backlog
+
+In addition to the database replication backlog, Active-Passive databases maintain a replication backlog (per shard) to synchronize the database instances between clusters.
+By default, the replication backlog is set to one percent (1%) of the database size divided by the database number of shards and ranges between 1MB to 250MB per shard.
+Use the [rladmin]({{< relref "rs/references/rladmin.md" >}}) utility to control the size of the replication backlog. You can set it to `auto` or set a specific size.  
+
+For an Active-Passive database:
+```text
+rladmin tune db <db:id | name> repl_backlog <Backlog size in MB or 'auto'>
+```
+
+    {{< note >}}
+On an Active-Passive database, the replication backlog configuration applies to both the replication backlog for shards synchronization and for synchronization of database instances between clusters.
+    {{< /note >}}
+
+**For Redis Software versions earlier than 6.0.20:**
+The replication backlog and the CRDT replication backlog defaults are set to 1MB and cannot be set dynamically with 'auto' mode.
+To control the size of the replication log, use [rladmin]({{< relref "rs/references/rladmin.md" >}}) to tune the local database instance in each cluster.
+```text
+rladmin tune db <db:id | name> repl_backlog <Backlog size in MB (or if ending with bytes, KB or GB, in the respective unit)>
+```

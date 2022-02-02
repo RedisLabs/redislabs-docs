@@ -8,7 +8,7 @@ categories: ["RS"]
 The Discovery Service provides an IP-based connection management service
 used when connecting to Redis Enterprise Software databases. When used
 in conjunction with Redis Enterprise Software's other high availability
-features, the Discovery Service assists an application cope with
+features, the Discovery Service assists an application scope with
 topology changes such as adding, removing of nodes, node failovers and
 so on. It does this by providing your application with the ability to
 easily discover which node hosts the database endpoint. The API used for

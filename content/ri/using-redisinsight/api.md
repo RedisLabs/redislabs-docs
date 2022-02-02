@@ -5,8 +5,8 @@ weight: 15
 categories: ["RI"]
 path: api/
 nextStep:
-    Title: Memory Analysis
-    href: /docs/features/memory-analysis/
+    Title: Adding Databases via GET URL
+    href: /docs/features/api-get/
 ---
 
 If you have a lot of Redis databases or you are using RedisInsight as part of some automated workflow,
@@ -138,6 +138,8 @@ The following parameters can be used:
 | useTls                   | boolean | Whether to use TLS to connect to the database or not          |
 | clientAuth               | boolean | Whether TLS client authentication is required by the database |
 | clientCertificateKeyPair | object  | (optional) [The details of the client certificate and private key used to connect to the Redis database](#tls-client-certificate-and-key). If client authentication is not required, this has to be provided |
+| verifyServerCert         | boolean | (optional) Whether to verify server certificate               |
+| caCert                   | object  | (optional) [The details of the CA certificate used to connect to the Redis database](#tls-ca-certificate) |
 
 ##### TLS client certificate and key
 
@@ -198,6 +200,63 @@ The client certificate and key details can be provided in two forms:
         }
     }
     ```
+
+##### TLS CA certificate
+
+The CA certificate details can be provided in two forms:
+
+1. If the certificate has already been used for a database before, the name of that certificate can be provided directly.
+
+    | Parameter                | Type    | Description                                                   |
+    |--------------------------|---------|---------------------------------------------------------------|
+    | name                     | string  | The name of the CA certificate                                |
+
+1. Alternatively, to create a new CA certificate for the database, a name must be provided along with the certificate string.
+
+    | Parameter                | Type    | Description                                                      |
+    |--------------------------|---------|------------------------------------------------------------------|
+    | new                      | object  | The details of the new CA certificate to be created              |
+    | new.name                 | string  | The name of the new CA cert                                      |
+    | new.cert                 | string  | The CA certificate string                                        |
+
+
+**Example**
+
+1. Using an existing CA certificate for a new database.
+    ```json
+    {
+        "name": "Prod Redis Enterprise DB",
+        "connectionType": "STANDALONE",
+        "host": "redis-ent.acme.com",
+        "port": 6379,
+        "tls": {
+            "useTls": true,
+            "caCert": {
+                "name": "my-cert"
+            }
+        }
+    }
+    ```
+
+1. Creating a new CA certificate while adding the database.
+    ```json
+    {
+        "name": "Prod Redis Enterprise DB",
+        "connectionType": "STANDALONE",
+        "host": "redis-ent.acme.com",
+        "port": 6379,
+        "tls": {
+            "useTls": true,
+            "caCert": {
+                "new": {
+                    "name": "Prod CA certificate",
+                    "cert": "-----BEGIN CERTIFICATE-----...-----END CERTIFICATE-----",
+                }
+            }
+        }
+    }
+    ```
+
 
 ### Success response
 

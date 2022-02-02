@@ -1,11 +1,58 @@
 ---
-Title: RedisGraph 2.0 Release Notes
-description:
+Title: RedisGraph 2.0 release notes
+linkTitle: v2.0 (January 2020)
+description: Enabled graph-aided search and graph visualisation. Cypher coverage. Performance improvements.
+min-version-db: "5.0.7"
+min-version-rs: "5.4.11"
 weight: 98
 alwaysopen: false
 categories: ["Modules"]
 ---
-## RedisGraph 2.0.19 (August 2020)
+## Requirements
+
+RedisGraph v2.0.21 requires:
+
+- Minimum Redis compatibility version (database): 5.0.7
+- Minimum Redis Enterprise Software version (cluster): 5.4.11
+
+## v2.0.21 (October 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor enhancements:
+
+    - #[1326](https://github.com/RedisGraph/RedisGraph/pull/1326), #[1330](https://github.com/RedisGraph/RedisGraph/pull/1330) Enable comments in Cypher queries.
+
+- Bug fixes:
+
+- #[1338](https://github.com/RedisGraph/RedisGraph/pull/1338) Update parser to support negative values.
+- #[1319](https://github.com/RedisGraph/RedisGraph/pull/1319) Replace assertion with runtime error - execution plan building process is unable locate an operation suitable for a filter.
+- #[1184](https://github.com/RedisGraph/RedisGraph/pull/1184) EXPLAIN and PROFILE are invalid clauses. They have counterpart commands [GRAPH.EXPLAIN](https://oss.redislabs.com/redisgraph/commands/#graphexplain) and [GRAPH.PROFILE](https://oss.redislabs.com/redisgraph/commands/#graphprofile)
+- #[1212](https://github.com/RedisGraph/RedisGraph/pull/1212) Emit error on the creation of undirected edges.
+
+## v2.0.20 (September 2020)
+
+This is a maintenance release for version 2.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Minor updates:
+
+    - #[1315](https://github.com/RedisGraph/RedisGraph/pull/1315) RediSearch 1.8.3
+    - #[1276](https://github.com/RedisGraph/RedisGraph/pull/1276) Graph info is added to Redis crash report.
+    - #[1265](https://github.com/RedisGraph/RedisGraph/pull/1265) Debug assertion functionality.
+
+## v2.0.19 (August 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -25,7 +72,7 @@ Details:
     - #[1223](https://github.com/RedisGraph/RedisGraph/pull/1223) Resolve race condition in accessing/updating attribute maps.
     - #[1196](https://github.com/RedisGraph/RedisGraph/pull/1196) Enable RediSearch [Garbage Collection](https://oss.redislabs.com/redisearch/Overview/#index_garbage_collection)
 
-## RedisGraph 2.0.15 (June 2020)
+## v2.0.15 (25 June 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -38,7 +85,7 @@ Details:
 - Bug Fixes:
     - #[1159](https://github.com/RedisGraph/RedisGraph/pull/1159) `IN` operator didn't result in an index array lookup with parameterised array (`IN $param`).
 
-## RedisGraph 2.0.14 (June 2020)
+## v2.0.14 (22 June 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -51,7 +98,7 @@ Details:
 - Bug Fixes:
     - #[1157](https://github.com/RedisGraph/RedisGraph/pull/1157) Index search not using query parameters.
 
-## RedisGraph 2.0.13 (June 2020)
+## v2.0.13 (15 June 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -65,7 +112,7 @@ Details:
     - #[1118](https://github.com/RedisGraph/RedisGraph/pull/1118) Added module [configuration](https://oss.redislabs.com/redisgraph/2.0/configuration/) parameters for the number of threads in OpenMP and concurrent queries.
     - #[1121](https://github.com/RedisGraph/RedisGraph/pull/1121) [RediSearch](https://github.com/RedisGraph/RedisGraph/blob/v2.0.13/redisearch.io) v1.8.1
 
-## RedisGraph 2.0.12 (May 2020)
+## v2.0.12 (May 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -78,7 +125,7 @@ Details:
 - Enhancements:
     - #[1103](https://github.com/RedisGraph/RedisGraph/pull/1103) RediSearch 1.8. This upgrade will reduce the resources required for Garbage Collection of indices inside RedisGraph.
 
-## RedisGraph 2.0.11 (April 2020)
+## v2.0.11 (April 2020)
 
 This is a maintenance release for version 2.0.
 
@@ -94,7 +141,7 @@ Details:
     - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056) Streamlined logic for uniquing entities.
     - #[1056](https://github.com/RedisGraph/RedisGraph/pull/1056) Enabled comparison routine for paths.
 
-## RedisGraph 2.0.10 (March 2020)
+## v2.0.10 (29 March 2020)
 
 Headlines:
 
@@ -108,7 +155,7 @@ Details:
     - #[1017](https://github.com/redisgraph/redisgraph/issues/1017), #[1019](https://github.com/redisgraph/redisgraph/issues/1019) - Algebraic expressions correctness.
     - #[1020](https://github.com/redisgraph/redisgraph/issues/1020) - Support parameterised SKIP and LIMIT.
 
-## RedisGraph 2.0.9 (March 2020)
+## v2.0.9 (19 March 2020)
 
 Headlines:
 
@@ -119,7 +166,7 @@ Details:
 - Bugfixes:
     - #[1028](https://github.com/redisgraph/redisgraph/issues/1028) Ensure proper placement of Index Scans when partially replacing Filter ops.
 
-## RedisGraph 2.0.8 (March 2020)
+## v2.0.8 (18 March 2020)
 
 Headlines:
 
@@ -130,7 +177,7 @@ Details:
 - Bugfixes:
     - #[1023](https://github.com/redisgraph/redisgraph/issues/1023) Fix regression in checking argument counts to GRAPH endpoints.
 
-## RedisGraph 2.0.6 (March 2020)
+## v2.0.6 (15 March 2020)
 
 Headlines:
 
@@ -144,7 +191,7 @@ Details:
 - #[925](https://github.com/redisgraph/redisgraph/issues/925) Bug fix within RediSearch
 - #[1001](https://github.com/redisgraph/redisgraph/issues/1001) Bug fix label scan invalid range
 
-## RedisGraph 2.0.5 (February 2020)
+## v2.0.5 (23 February 2020)
 
 Headlines:
 
@@ -155,7 +202,14 @@ Details:
 - Enhancement:
     - #[955](https://github.com/redisgraph/redisgraph/issues/955)  Switch OR,AND boolean semiring to ANY,PAIR.
 
-## RedisGraph 2.0.2 (February 2020)
+## v2.0.4 (23 February 2020)
+
+Details:
+
+- Enhancement:
+    - Reduce GraphBLAS size
+
+## v2.0.2 (23 February 2020)
 
 Headlines:
 
@@ -175,9 +229,9 @@ Details:
     - #[917](https://github.com/redisgraph/redisgraph/issues/917) #[940](https://github.com/redisgraph/redisgraph/issues/940) Resolve memory leaks
     - #[938](https://github.com/RedisGraph/RedisGraph/pull/938) Label matrix should be fetch right before eval
 
-## RedisGraph 2.0 GA (2.0.1 - January 2020)
+## v2.0 GA (2.0.1 - January 2020)
 
-This is the General Availability Release of RedisGraph 2.0 (2.0.1)!
+This is the General Availability (GA) release of RedisGraph 2.0 (2.0.1)!
 
 Headlines:
 
@@ -250,4 +304,6 @@ Full details:
     - #[607](https://github.com/RedisGraph/RedisGraph/issues/607) All ops NULL-set variables in their free routines (memory).
     - #[893](https://github.com/RedisGraph/RedisGraph/issues/893) Preserve the children array order when replacing operations.
 
-Note: the version inside Redis will be 20001 or 2.0.1 in semantic versioning.
+{{< note >}}
+The version inside Redis will be 20001 or 2.0.1 in semantic versioning.
+{{< /note >}}

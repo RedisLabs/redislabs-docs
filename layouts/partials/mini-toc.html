@@ -1,23 +1,25 @@
+{{ $headerRange := .Params.headerRange | default "[1-3]" }}
 <!-- ignore empty links with + -->
-{{ $headers := findRE "<h[1-3].*?>(.|\n])+?</h[1-3]>" .Content }}
+{{ $headers := findRE ( print "<h" $headerRange ".*?>(.|\n])+?</h" $headerRange ">") .Content }}
 <!-- at least one header to link to -->
 {{ $has_headers := ge (len $headers) 1 }}
+{{ $min_word_count := 250 }}
 <!-- a post can explicitly disable Table of Contents with toc: false
 {{ $show_toc := (eq $.Params.toc true) }} -->
-{{ if and (gt .WordCount 400 ) (ne .Params.toc "false") $has_headers }}
+{{ if and (or (and (gt .WordCount $min_word_count ) (ne .Params.toc "false")) (eq .Params.toc "true")) $has_headers }}
 <nav id="toc" data-toggle="toc">
   <!-- TOC header -->
-  <h4 class="text-muted">Page Contents</h4>
+  <h4 class="text-muted">Contents</h4>
   <ul class="nav">
     {{ range $i, $header := $headers }}
-      {{ $headerLevel := index (findRE "[1-3]" . 1) 0 }}
+      {{ $headerLevel := index (findRE $headerRange . 1) 0 }}
       {{ $headerLevel := len (seq $headerLevel) }}
 
-      {{ $anchorIDraw := ($header | plainify | htmlEscape | replaceRE "[/-]" "") }}
-      {{ $anchorID := ($anchorIDraw | anchorize)}}
+      {{ $genAnchor := index (split (index (split $header "id=\"") 1) "\"") 0 }}
+      {{ $anchorID := $genAnchor }}
 
       {{ if ne $i 0 }}
-        {{ $prevHeaderLevel := index (findRE "[1-3]" (index $headers (sub $i 1)) 1) 0 }}
+        {{ $prevHeaderLevel := index (findRE $headerRange (index $headers (sub $i 1)) 1) 0 }}
         {{ $prevHeaderLevel := len (seq $prevHeaderLevel) }}
 
           {{ if gt $headerLevel $prevHeaderLevel }}
@@ -37,7 +39,7 @@
           {{end}}
 
           <li>
-            <a href="#{{ $anchorID }}">{{ $header | plainify | htmlEscape }}</a>
+            <a href="#{{ $anchorID }}">{{ $header | plainify | safeHTML }}</a>
 
           {{ if eq $i (sub (len $headers) 1) }}
             {{ range seq (sub $prevHeaderLevel $headerLevel) }}
@@ -46,12 +48,12 @@
           {{end}}
       {{else}}
       <li>
-        <a href="#{{ $anchorID }}">{{ $header | plainify | htmlEscape }}</a>
+        <a href="#{{ $anchorID }}">{{ $header | plainify | safeHTML }}</a>
       {{end}}
     {{end}}
 
-    {{ $firstHeaderLevel := len (seq (index (findRE "[1-3]" (index $headers 0) 1) 0)) }}
-    {{ $lastHeaderLevel := len (seq (index (findRE "[1-3]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
+    {{ $firstHeaderLevel := len (seq (index (findRE $headerRange (index $headers 0) 1) 0)) }}
+    {{ $lastHeaderLevel := len (seq (index (findRE $headerRange (index $headers (sub (len $headers) 1)) 1) 0)) }}
     {{ range seq (sub $lastHeaderLevel $firstHeaderLevel) }}
       </li></ul></li>
     {{end}}
@@ -62,9 +64,6 @@
 <style>
 .main-content-right {
   display: none !important;
-}
-.main-content-left {
-  max-width: 100% !important;
 }
 </style>
 {{end}}

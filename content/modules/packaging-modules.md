@@ -1,19 +1,19 @@
 ---
-Title: Packaging Modules
+Title: Package modules
 description:
-weight: 95
+weight: 8
 alwaysopen: false
 categories: ["Modules"]
 aliases: /modules/packaging
 ---
 
 {{< warning >}}
-Redis Labs does not and cannot support third party modules or databases created with them.
+Redis does not and cannot support third-party modules or databases created with them.
 {{< /warning >}}
 
 ## Packaging non-certified modules
 
-In addition to the ones Redis Labs packages and certifies, there are
+In addition to the ones Redis packages and certifies, there are
 other modules that can be installed and extend Redis databases in Redis
 Enterprise Software. While many are compatible with RS, not all of them
 are. If they work, they must be packaged so RS knows how to deploy and
@@ -26,7 +26,7 @@ require six steps:
 1. Compile the module
 1. Install ramp-packer utility
 1. Wrap the custom module using ramp utility
-1. Deploy the custom module to the cluster using the web UI
+1. Deploy the custom module to the cluster using the admin console
 1. Create a database that utilizes the module
 
 ### Get the module from GitHub
@@ -46,7 +46,7 @@ cd myModule/;make
 ### Install ramp-packer utility
 
 [RAMP](https://github.com/RedisLabs/RAMP) or "Redis Automatic Module
-Packaging", is a utility created by Redis Labs for packaging up modules
+Packaging", is a utility created by Redis for packaging up modules
 to be installed into Redis Enterprise.
 
 Run the next command to install ramp-packer:

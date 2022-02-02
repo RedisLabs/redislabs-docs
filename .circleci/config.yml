@@ -1,7 +1,7 @@
 version: 2
 jobs:
     # The build job for staging branches that excludes Google Tag Manager
-    build-staging:
+    build-docs-staging:
         docker:
             # Hugo image
             - image: cibuilds/hugo:0.72
@@ -13,6 +13,14 @@ jobs:
             - run:
                 name: Set "Edit in GitHub" link for the specified branch in the hugo config
                 command: sed -i s/branch/${CIRCLE_BRANCH}/g config.toml
+            # Create temporary helper files to prepare for PDF generation
+            # - run:
+            #     name: Create helper files for PDF generation
+            #     command: |
+            #         cd utilities/create_pdf_tarball
+            #         ./create_html.sh
+            #         cd ../create_single_pdfs
+            #         ./create_html.sh
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
@@ -24,7 +32,13 @@ jobs:
                         export LOCATION=staging/${CIRCLE_BRANCH} ;
                     fi
                     echo ${LOCATION}
-                    hugo -v --baseURL //docs.redislabs.com/$LOCATION
+                    hugo -v --baseURL //docs.redis.com/$LOCATION
+            # Create internal links in temporary PDF generation helper files
+            # - run:
+            #     name: Create internal links in PDF generation helper files
+            #     command: |
+            #         cd utilities/create_pdf_tarball
+            #         ./edit_links.sh
             - run:
                 name: Remove generated directories that are not needed
                 command: |
@@ -34,9 +48,11 @@ jobs:
                 root: .
                 paths:
                     - public
+                    - utilities
+                    - content
 
     # The build job for production branches that includes Google Tag Manager
-    build-prod:
+    build-docs-prod:
         docker:
             - image: cibuilds/hugo:0.72
         working_directory: ~/project
@@ -56,7 +72,7 @@ jobs:
                 name: Build site files (HTML, CSS, images) with the baseURL for the specified branch, including Google snippets (production)
                 command: |
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    HUGO_ENV=production hugo -v --baseURL //docs.redislabs.com/$VERSION
+                    HUGO_ENV=production hugo -v --baseURL https://docs.redis.com/$VERSION
             - run:
                 name: Remove generated directories that are not needed
                 command: |
@@ -65,10 +81,62 @@ jobs:
             - persist_to_workspace:
                 root: .
                 paths:
+                    - robots.txt
+                    - website.json
                     - public
 
+    # The build job for latest branch that includes Google Tag Manager
+    build-docs-latest:
+        docker:
+            - image: cibuilds/hugo:0.72
+        working_directory: ~/project
+        steps:
+            # Checkout the code from the branch into the working_directory
+            - checkout
+            # Set GitHub branch name in config.toml for the Improve this Page link
+            - run:
+                name: Set "Edit in GitHub" link for the specified branch in the hugo config
+                command: |
+                    if [ "${CIRCLE_BRANCH}" == "latest" ] ;
+                        then sed -i s/branch/master/g config.toml
+                    else
+                        sed -i s/branch/${CIRCLE_BRANCH}/g config.toml ;
+                    fi
+            # Create temporary helper files to prepare for PDF generation
+            - run:
+                name: Create helper files for PDF generation
+                command: |
+                    cd utilities/create_pdf_tarball
+                    ./create_html.sh
+                    cd ../create_single_pdfs
+                    ./create_html.sh
+            - run:
+                name: Build site files (HTML, CSS, images) with the baseURL for the specified branch, including Google snippets (production)
+                command: |
+                    export LOCATION=${CIRCLE_BRANCH}
+                    HUGO_ENV=production hugo -v --baseURL https://docs.redis.com/$LOCATION
+            # Create internal links in temporary PDF generation helper files
+            - run:
+                name: Create internal links in PDF generation helper files
+                command: |
+                    cd utilities/create_pdf_tarball
+                    ./edit_links.sh
+            - run:
+                name: Remove generated directories that are not needed
+                command: |
+                    cd public
+                    rm -rf embeds revealjs
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - robots.txt
+                    - website.json
+                    - public
+                    - utilities
+                    - content
+
     # Deploy for branches other than -build to /staging/{branch}
-    deploy-staging:
+    deploy-docs-staging:
         docker:
             - image: xueshanf/awscli:latest
         working_directory: ~/project
@@ -78,7 +146,10 @@ jobs:
             # Set the signature version for the S3 auth
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
-                command: aws configure set default.s3.signature_version s3v4
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws configure set default.s3.signature_version s3v4
             # Declare target location for baseURL and deployment location and deploy to the S3 bucket corresponding to the current branch
             - run:
                 name: Replace existing site files on the AWS S3 bucket for the branch
@@ -88,10 +159,25 @@ jobs:
                     else
                         export LOCATION=staging/${CIRCLE_BRANCH} ;
                     fi
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read # --size-only
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --exclude "pdfs/*" # --size-only
+            # Purge the site cache to force the deployed changes to display immediately
+            - run:
+                name: Purge site cache
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/staging/*"
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - public
+                    - utilities
+                    - content
 
     # Deploy only RS site files to the AWS S3 bucket for the branch
-    deploy-prod:
+    deploy-docs-prod:
         docker:
             - image: xueshanf/awscli:latest
         working_directory: ~/project
@@ -101,16 +187,29 @@ jobs:
             # Set the signature version for the S3 auth
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
-                command: aws configure set default.s3.signature_version s3v4
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws configure set default.s3.signature_version s3v4
             # Deploy to the S3 bucket corresponding to the current branch
             - run:
                 name: Replace existing site files on the AWS S3 bucket for the branch
                 command:  |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
                     export VERSION=${CIRCLE_BRANCH/-build/}
-                    aws s3 sync public s3://docs.redislabs.com/$VERSION --delete --acl public-read --exclude "*rv/*" --exclude "*rc/*" # --size-only
+                    aws s3 sync public s3://docs.redis.com/$VERSION --delete --acl public-read --exclude "*rv/*" --exclude "*rc/*" # --size-only
+            # Purge the site cache to force the deployed changes to display immediately
+            - run:
+                name: Purge site cache
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    export VERSION=${CIRCLE_BRANCH/-build/}
+                    aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/${VERSION}/*"
 
     # Deploy for -build to push to /{version} without -build
-    deploy-latest:
+    deploy-docs-latest:
         docker:
             - image: xueshanf/awscli:latest
         working_directory: ~/project
@@ -120,51 +219,267 @@ jobs:
             # Set the signature version for the S3 auth
             - run:
                 name: Setting Signature Version 4 for S3 Request Authentication
-                command: aws configure set default.s3.signature_version s3v4
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws configure set default.s3.signature_version s3v4
             # Declare target location for baseURL and deployment location and deploy to the S3 bucket corresponding to the current branch
             - run:
                 name: Deploy site files to the AWS S3 bucket and set HTML, CSS, and JS files to expire for immediate client update
                 command: |
-                    #set aws S3 target location to branch_name
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    # Set aws S3 target location to branch_name
                     export LOCATION=${CIRCLE_BRANCH}
                     # Deploy HTML and CSS files to the S3 bucket corresponding to the current branch
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --include "*.js" --cache-control max-age=0 # --size-only
+                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "*.html" --include "*.css" --include "*.js" --cache-control max-age=0 # --size-only
                     # Deploy all other files to the S3 bucket corresponding to the current branch
-                    aws s3 sync public s3://docs.redislabs.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" --exclude "*.js" # --size-only
+                    aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --exclude "*.html" --exclude "*.css" --exclude "*.js" --exclude "pdfs/*" # --size-only
+                    # Deploy the robots.txt file
+                    aws s3 cp robots.txt s3://docs.redis.com/robots.txt --acl public-read
+                    # Deploy the S3 site configuration
+                    aws s3api put-bucket-website --bucket docs.redis.com --website-configuration file://website.json
+            # Purge the site cache to force the deployed changes to display immediately
+            - run:
+                name: Purge site cache
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws cloudfront create-invalidation --distribution-id=${CLOUDFRONT_DISTRIBUTION_ID} --paths "/latest/*" "/robots.txt"
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - public
+                    - utilities
+                    - content
+
+    # Build PDFs for staging branches
+    build-pdfs-staging:
+        docker:
+            - image: rrelledge/redis-docs-wkhtmltopdf:0.0.2
+        working_directory: ~/project
+        steps:
+            - attach_workspace:
+                at: ~/project
+            # Generate PDFs
+            - run:
+               name: Generate PDFs
+               command: |
+                   if [ "${CIRCLE_BRANCH}" == "master" ] ;
+                       then export LOCATION=staging/dev
+                   else
+                       export LOCATION=staging/${CIRCLE_BRANCH} ;
+                   fi
+                   wkhtmltopdf --version
+                   cd utilities/create_pdf_tarball
+                   ./create_pdfs_tarball.sh
+                   cd ../create_single_pdfs
+                   ./create_pdfs.sh
+            # Remove temporary helper files created for PDF tarball generation
+            - run:
+               name: Remove PDF tarball generation helper files
+               command: |
+                   cd utilities/create_pdf_tarball
+                   ./delete_tmps.sh
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - public
+                    - utilities
+                    - content
+
+    # Build PDFs for latest branch
+    build-pdfs-latest:
+        docker:
+            - image: rrelledge/redis-docs-wkhtmltopdf:0.0.2
+        working_directory: ~/project
+        steps:
+            - attach_workspace:
+                at: ~/project
+            # Generate PDFs
+            - run:
+               name: Generate PDFs
+               command: |
+                   export LOCATION=${CIRCLE_BRANCH}
+                   wkhtmltopdf --version
+                   cd utilities/create_pdf_tarball
+                   ./create_pdfs_tarball.sh
+                   cd ../create_single_pdfs
+                   ./create_pdfs.sh
+            # Remove temporary helper files created for PDF tarball generation
+            - run:
+               name: Remove PDF tarball generation helper files
+               command: |
+                   cd utilities/create_pdf_tarball
+                   ./delete_tmps.sh
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - public
+                    - utilities
+                    - content
+
+    # Deploy PDFs for staging branches
+    deploy-pdfs-staging:
+        docker:
+            - image: xueshanf/awscli:latest
+        working_directory: ~/project
+        steps:
+            - attach_workspace:
+                at: ~/project
+            # Set the signature version for the S3 auth
+            - run:
+                name: Setting Signature Version 4 for S3 Request Authentication
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws configure set default.s3.signature_version s3v4
+            # Deploy PDFs to S3 bucket
+            - run:
+               name: Deploy PDFs to S3 bucket
+               command: |
+                   if [ "${CIRCLE_BRANCH}" == "master" ] ;
+                       then export LOCATION=staging/dev
+                   else
+                       export LOCATION=staging/${CIRCLE_BRANCH} ;
+                   fi
+                   export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                   export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+
+                   # Update the current offline PDFs tarball
+                   aws s3 cp public/pdfs/archive/*.tar.gz s3://docs.redis.com/$LOCATION/pdfs/current/redis-docs-latest.tar.gz --acl public-read --cache-control max-age=0
+                   # Copy the offline PDFs tarball to the archive
+                   aws s3 cp public/pdfs/archive/*.tar.gz s3://docs.redis.com/$LOCATION/pdfs/archive/ --acl public-read
+
+                   # Sync standalone PDFs
+                   aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "pdfs/*.pdf" --cache-control max-age=0 # --size-only
+            # Remove temporary helper files created for standalone PDF generation
+            - run:
+               name: Remove standalone PDF generation helper files
+               command: |
+                   if [ "${CIRCLE_BRANCH}" == "master" ] ;
+                       then export LOCATION=staging/dev
+                   else
+                       export LOCATION=staging/${CIRCLE_BRANCH} ;
+                   fi
+                   export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                   export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+
+                   aws s3 rm s3://docs.redis.com/$LOCATION --recursive --exclude "*" --include "pdf-gen-*"
+
+    # Deploy PDFs for latest branch
+    deploy-pdfs-latest:
+        docker:
+            - image: xueshanf/awscli:latest
+        working_directory: ~/project
+        steps:
+            - attach_workspace:
+                at: ~/project
+            # Create new_website.json to include PDF redirects
+            - run:
+               name: Create new_website.json to include PDF redirects
+               command: |
+                   cd utilities/redirect_pdfs
+                   ./add_pdf_redirects.sh
+            # Set the signature version for the S3 auth
+            - run:
+                name: Setting Signature Version 4 for S3 Request Authentication
+                command: |
+                    export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                    export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                    aws configure set default.s3.signature_version s3v4
+            # Deploy PDFs to S3 bucket
+            - run:
+               name: Deploy PDFs to S3 bucket
+               command: |
+                   export LOCATION=${CIRCLE_BRANCH}
+                   export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                   export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+
+                   # Update the current offline PDFs tarball
+                   aws s3 cp public/pdfs/archive/*.tar.gz s3://docs.redis.com/$LOCATION/pdfs/current/redis-docs-latest.tar.gz --acl public-read --cache-control max-age=0
+                   # Copy the offline PDFs tarball to the archive
+                   aws s3 cp public/pdfs/archive/*.tar.gz s3://docs.redis.com/$LOCATION/pdfs/archive/ --acl public-read
+
+                   # Sync standalone PDFs
+                   aws s3 sync public s3://docs.redis.com/$LOCATION --delete --acl public-read --metadata-directive REPLACE --exclude "*" --include "pdfs/*.pdf" --cache-control max-age=0 # --size-only
+
+                   # Update the S3 site configuration to include PDF redirects
+                   aws s3api put-bucket-website --bucket docs.redis.com --website-configuration file://utilities/redirect_pdfs/new_website.json
+            # Remove temporary helper files created for standalone PDF generation
+            - run:
+               name: Remove standalone PDF generation helper files
+               command: |
+                   export LOCATION=${CIRCLE_BRANCH}
+                   export AWS_ACCESS_KEY_ID=${AWS_DOCS_ACCESS_KEY_ID}
+                   export AWS_SECRET_ACCESS_KEY=${AWS_DOCS_SECRET_ACCESS_KEY}
+                   aws s3 rm s3://docs.redis.com/$LOCATION --recursive --exclude "*" --include "pdf-gen-*"
 
 workflows:
   version: 2
   build-deploy:
     jobs:
-      - build-staging:
+      - build-docs-staging:
           filters:
             branches:
               ignore:
                 - /.*-build/
                 - latest
-      - build-prod:
+      - build-docs-prod:
           filters:
             branches:
               only:
                 - /.*-build/
+      - build-docs-latest:
+          filters:
+            branches:
+              only:
                 - latest
-      - deploy-staging:
+      - deploy-docs-staging:
           requires:
-            - build-staging
+            - build-docs-staging
           filters:
             branches:
               ignore:
                 - /.*-build/
                 - latest
-      - deploy-prod:
+      - deploy-docs-prod:
           requires:
-            - build-prod
+            - build-docs-prod
           filters:
             branches:
               only: /.*-build/
-      - deploy-latest:
+      - deploy-docs-latest:
           requires:
-            - build-prod
+            - build-docs-latest
+          filters:
+            branches:
+              only: latest
+    #   - build-pdfs-staging:
+    #       requires:
+    #         - deploy-docs-staging
+    #       filters:
+    #         branches:
+    #           ignore:
+    #             - /.*-build/
+    #             - latest
+      - build-pdfs-latest:
+          requires:
+            - deploy-docs-latest
+          filters:
+            branches:
+              only: latest
+    #   - deploy-pdfs-staging:
+    #       requires:
+    #         - build-pdfs-staging
+    #       filters:
+    #         branches:
+    #           ignore:
+    #             - /.*-build/
+    #             - latest
+      - deploy-pdfs-latest:
+          requires:
+            - build-pdfs-latest
           filters:
             branches:
               only: latest

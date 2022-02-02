@@ -1,9 +1,22 @@
-# Rule 1
-User-agent: *
-Disallow: /staging/
-
-# Rule 2
 User-agent: *
 Allow: /
+Disallow: /staging/
+Disallow: /5.2/
+Disallow: /5.4/
+Disallow: /5.6/
+Disallow: /6.0/
+Disallow: /6.2/
+Disallow: /latest/pdfs/
+Disallow: /latest/pdfs/archive/
+Disallow: /latest/pdfs/archive/tmp/
+Disallow: /latest/pdfs/current/
+Disallow: /latest/pdf-gen-*
+Disallow: /latest/pdf-gen-*/
+Disallow: /pdfs/
+Disallow: /pdfs/archive/
+Disallow: /pdfs/archive/tmp/
+Disallow: /pdfs/current/
+Disallow: /pdf-gen-*
+Disallow: /pdf-gen-*/
 
-Sitemap: https://docs.redislabs.com/latest/sitemap.xml
+Sitemap: https://docs.redis.com/latest/sitemap.xml

@@ -1,5 +1,6 @@
 ---
-title: CentOS/RHEL 7 Firewall Configuration
+title: Configure CentOS/RHEL 7 Firewall
+linkTitle: CentOS/RHEL 7 firewall
 description:
 weight: $weight
 alwaysopen: false

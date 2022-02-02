@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Pack 5.0 Release Notes (November 2017)
+linkTitle: 5.0 (November 2017)
 description:
 weight: 93
 alwaysopen: false
@@ -56,10 +57,10 @@ cluster to a specific use case or need. Once installed, modules benefit
 from the high performance, scalability, and high availability that Redis
 Enterprise is known for.
 
-#### Redis Labs modules
+#### Redis modules
 
-There are three modules Redis Labs has developed and certified with
-Redis Enterprise Pack (RS). The modules are:
+Redis has developed and certified the following modules for use with 
+Redis Enterprise Pack:
 
 - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
     - This module turns RS into a supercharged distributed in-memory
@@ -69,8 +70,8 @@ Redis Enterprise Pack (RS). The modules are:
       easily able to address nested data via a path.
 - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
     - Enables RS to have a scalable bloom filter as a data type. Bloom
-      filters are probabilistic data structures that do a very good job at
-      quickly determining if something is contained within a set.
+      filters are probabilistic data structures that
+      quickly determine if values are in a set.
 
 #### Custom modules
 
@@ -95,10 +96,10 @@ As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Pack can now use either built-in
 authentication or authenticate externally via LDAP with saslauthd. The
 accounts can be used for administering resources on the cluster via
-command line, Rest API, or Web UI.
+command line, Rest API, or admin console.
 
 For more information see [LDAP
-Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
+Integration]({{< relref "/rs/security/passwords-users-roles.md#setting-up-ldap" >}}).
 
 ## Additional capabilities
 

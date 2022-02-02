@@ -1,5 +1,6 @@
 ---
 Title: Redis Enterprise Pack 4.5 Release Notes (May 2017)
+linkTitle: 4.5 (May 2017)
 description:
 weight: 94
 alwaysopen: false
@@ -83,7 +84,7 @@ Support has been added RHEL 7.3 with this version.
 
 Important fixes in RP 4.5.0-22
 
-- RP12667 - Nginx security improvements, improved TLS and SSL related
+- RP12667 - NGINX security improvements, improved TLS and SSL related
     warnings on security scans.
 - RP12690 - Added simpler ability to recover cluster from AWS S3
 - RP13359 - Advanced memory allocation and booking enhancements

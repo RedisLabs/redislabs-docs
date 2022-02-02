@@ -1,5 +1,6 @@
 ---
-Title: Configuring AWS Route53 DNS Management
+Title: AWS Route53 DNS management
+linkTitle: AWS Route 53 DNS
 description:
 weight: $weight
 alwaysopen: false
@@ -7,10 +8,11 @@ categories: ["RS"]
 aliases: /rs/administering/installing-upgrading/configuring/cluster-name-dns-connection-management/configuring-aws-route53-dns-redis-enterprise
         /rs/installing-upgrading/configuring/cluster-name-dns-connection-management/configuring-aws-route53-dns-redis-enterprise/
 ---
-Redis Enterprise Software (RS) requires DNS to be properly configured to
-achieve high-availability (HA) and fail-over regardless of where it is
-installed. Here we discuss doing this with AWS's Route53 service
-for DNS resolution.
+Redis Enterprise Software requires DNS to be properly configured to
+achieve high availability and fail-over regardless of where it is
+installed. 
+
+Here, you learn how to configure AWS Route53 DNS resolution.
 
 ## Prerequisites
 
@@ -75,20 +77,19 @@ The first step is to connect your browser to AWS and to login into the
 administration interface. Then, you have to go in the *Services* menu at
 the top of the page and click on the *Route53* menu item:
 
-![01-ServicesRoute53-en](/images/rs/01-ServicesRoute53-en.png?width=600&height=837)
+![01-ServicesRoute53-en](/images/rs/01-ServicesRoute53-en.png)
 
-Then, I assume that you already have registered a domain, and that you
-defined *Route53* as the primary/master name server for the whole domain
-or for one of its sub-domains. So, you should have at least one zone in
+Make sure you have registered a domain, and that you have defined *Route53* as the primary/master name server for the whole domain
+or for one of its sub-domains. You should have at least one zone in
 *Route53*. Click on the *Hosted zones* link to open it:
 
-![02-Route53HostedZones-en](/images/rs/02-Route53HostedZones-en.png?width=600&height=237)
+![02-Route53HostedZones-en](/images/rs/02-Route53HostedZones-en.png)
 
 *Route53* is now displaying the list of the zones that you defined. You
 need to click on the zone in which you want to define your cluster,
 *demo-rlec.redislabs.com* in my case:
 
-![03-HostedZoneSelection-en](/images/rs/03-HostedZoneSelection-en.png?width=600&height=206)
+![03-HostedZoneSelection-en](/images/rs/03-HostedZoneSelection-en.png)
 
 ## Nameserver records creation
 
@@ -97,7 +98,7 @@ the name servers in your cluster, that is one of the nodes. To create
 the first name server IP address resolution record, you need to click on
 the *Create Record Set* blue button at the top of the list:
 
-![04-CreateRecordSet-en](/images/rs/04-CreateRecordSet-en.png?width=600&height=189)
+![04-CreateRecordSet-en](/images/rs/04-CreateRecordSet-en.png)
 
 This record is **only** used to resolve the IP address of the
 cluster name server to query, it is **not** used by the application to
@@ -125,13 +126,13 @@ IP, he already had the name server list).
 Finally submit the first name server's *A* record to *Route53*, using
 the *Create* button at the bottom of the right panel:
 
-![05-NS1Configuration-en](/images/rs/05-NS1Configuration-en.png?width=400&height=802)
+![05-NS1Configuration-en](/images/rs/05-NS1Configuration-en.png)
 
 You want (and need) to have all your cluster nodes acting as name
 servers, so you have to repeat these steps for all your nodes and you
 should get a list of *A* records in *Route53* interface:
 
-![06-NSList-en](/images/rs/06-NSList-en.png?width=600&height=133)
+![06-NSList-en](/images/rs/06-NSList-en.png)
 
 Now, the client-side resolver and the forwarding DNS can reach the
 cluster nameservers by their IP address, if they know what are the names
@@ -161,7 +162,7 @@ these records with a final dot, it is not a typo, because some other DNS
 require it and it does not seem to be an issue with \*Route53\*. At the
 end, we can click on the \*Create\* button:
 
-![07-NSRecord-en](/images/rs/07-NSRecord-en.png?width=400&height=817)
+![07-NSRecord-en](/images/rs/07-NSRecord-en.png)
 
 Congratulations, you completed the *Route53* DNS configuration for your
 Redis Enterprise Software. Let's check what you have.
@@ -172,7 +173,7 @@ You should end with several name server *A* record (one for each cluster
 node) to be able to reach any of them by its name. You should also have
 one record that lists the nameservers names for the zone (cluster):
 
-![08-FinalConfig-en](/images/rs/08-FinalConfig-en.png?width=600&height=155)
+![08-FinalConfig-en](/images/rs/08-FinalConfig-en.png)
 
 If your cluster nodes are healthy, up and running, with DNS network
 ports unfiltered, you can test the configuration. Who are the

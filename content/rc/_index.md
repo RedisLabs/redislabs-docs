@@ -5,6 +5,14 @@ weight: 10
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/
+         /rc/
+         /rediscloud
+         /redis-cloud
+         /redis_cloud
+         /redisenterprisecloud
+         /redis-enterprise-cloud
+         /redis_enterprise_cloud
+
 ---
 Redis Enterprise Cloud delivers a cost-effective, fully managed
 Database-as-a-Service (DBaaS) offering, fully hosted on public clouds.
@@ -49,8 +57,8 @@ while cutting the cost of your cloud resources by over 70%.
 
 ### True high availability
 
-Achieve high availability for your Redis databases, with continuous operation and zero operational effort
-Redis Labs proven technology provides true high availability for Redis deployments,
+Achieve high availability for your Redis databases, with continuous operation and zero operational effort.
+Redis adds proven technology to ensure high availability for Redis deployments,
 safeguarding against all possible failure scenarios by using:
 
 - Efficient, diskless, in-memory replication across multiple availability zones and regions

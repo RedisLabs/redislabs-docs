@@ -1,9 +1,13 @@
 ---
 Title: RedisAI
 description:
-weight: 55
+weight: 20
 alwaysopen: false
 categories: ["Modules"]
+aliases: /redisai/
+         /redis-ai/
+         /redis_ai/
+
 ---
 RedisAI is a Redis module for executing Deep Learning/Machine Learning models and managing their data.
 Its purpose is being a "workhorse" for model serving, by providing out-of-the-box support for popular DL/ML frameworks and unparalleled performance.

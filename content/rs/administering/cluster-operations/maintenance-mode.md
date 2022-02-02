@@ -1,15 +1,126 @@
 ---
-Title: Maintenance Mode for Cluster Nodes
-description: Prepare node for maintenance, and restore it to previous state
+Title: Maintenance mode for cluster nodes
+linkTitle: Maintenance mode
+description: Prepare a node for maintenance
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
+aliases: 
+        /rs/administering/cluster-operations/shutting-down-node.md
+        /rs/administering/cluster-operations/shutting-down-node/
 ---
-When you need to do hardware or operating system maintenance on a server that hosts an Redis Enterprise Software (RS) node,
-it is important that you move all of the shards on that node to another node to protect the data.
-You can use maintenance mode to handle this process simply and efficiently.
 
-For example, when you have a 3 node cluster with 4 shards, the status of the cluster is:
+Use maintenance mode to prevent data loss during hardware or operating system maintenance on Redis Enterprise servers. When maintenance mode is on, all shards move off of the node under maintenance and migrate to another available node.
+
+## Turn maintenance mode on
+
+When you turn maintenance mode on, Redis Enterprise does the following:
+
+1. Checks whether a shut down of the node will cause quorum loss. If so, maintenance mode will not turn on.
+
+    {{<warning>}}
+Maintenance mode does not protect against quorum loss. If you turn on maintenance mode for the majority of nodes in a cluster and restart them simultaneously, the quorum is lost. This can cause data loss.
+    {{</warning>}}
+
+1. Takes a snapshot of the node configuration to record which shards and endpoints are on the node.
+1. Marks the node as a quorum node to prevent shards and endpoints from migrating to it. 
+    {{<note>}}
+If you run [`rladmin status`]({{<relref "/rs/references/rladmin#status">}}), the node's shards field is now yellow to show that shards cannot migrate to it.
+    {{</note>}}
+    ![maintenance_mode](/images/rs/maintenance_mode.png)
+1. Migrates shards and binds endpoints to other nodes, if space is available.
+
+{{<note>}}
+Maintenance mode does not demote a master node by default. The cluster elects a new master node when the original master node is restarted. Alternatively, you can add the `demote_node` option to the `rladmin` command to [demote a master node](#demote-a-master-node) when you turn on maintenance mode.
+{{</note>}}
+
+To turn on maintenance mode for a node, run the following command:
+
+```sh
+rladmin node <node_id> maintenance_mode on
+```
+
+You can start server maintenance if:
+- All shards and endpoints have moved to other nodes
+- Enough nodes are still online to maintain quorum
+
+
+### Prevent replica shard migration
+
+If you do not have enough resources available to move all of the shards to other nodes, you can turn maintenance mode on without migrating the replica shards.
+
+{{<warning>}}
+If you prevent replica shard migration, the shards stay on the node during maintenance.
+If the maintenance node fails, the master shards do not have replica shards for data redundancy and high availability.
+{{</warning>}}
+
+To turn on maintenance mode without replica shard migration, run:
+
+```sh
+rladmin node <node_id> maintenance_mode on keep_slave_shards
+```
+
+### Demote a master node
+
+If you need to do maintenance that might affect connectivity to the master node, you can demote the master node when you turn on maintenance mode. This process also allows the cluster to elect a new master quicker.
+
+To demote a master node when you turn on maintenance mode, run:
+
+```sh
+rladmin node <node_id> maintenance_mode on demote_node
+```
+
+## Turn maintenance mode off
+
+When you turn maintenance mode off, Redis Enterprise:
+
+1. Loads a [specified snapshot](#specify-a-snapshot) or defaults to the latest snapshot.
+1. Unmarks the node as a quorum node to allow shards and endpoints to migrate to the node.
+1. Restores the shards and endpoints that were in the node at the time of the snapshot.
+1. Deletes the snapshot.
+
+To turn maintenance mode off after you finish server maintenance, run:
+
+```sh
+rladmin node <node_id> maintenance_mode off
+```
+
+### Specify a snapshot
+
+Redis Enterprise saves a snapshot of the node configuration every time you turn on maintenance mode. If multiple snapshots exist, you can restore a specific snapshot when you turn maintenance mode off.
+
+To get a list of available snapshots, run:
+
+```sh
+rladmin node <node_id> snapshot list
+```
+
+To specify a snapshot when you turn maintenance mode off, run:
+
+```sh
+rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
+```
+
+{{<note>}}
+If an error occurs when you turn on maintenance mode, the snapshot is not deleted.
+When you rerun the command, use the snapshot from the initial attempt since it contains the original state of the node.
+{{</note>}}
+
+### Skip shard restoration
+
+You can prevent the migrated shards and endpoints from returning to the original node after you turn off maintenance mode.
+
+To turn maintenance mode off and skip shard restoration, run:
+
+```sh
+rladmin node <node_id> maintenance_mode off skip_shards_restore
+```
+
+## Cluster status example
+
+This example shows how the output of [`rladmin status`]({{<relref "/rs/references/rladmin#status">}}) changes when you turn on maintenance mode for a node.
+
+The cluster status before turning on maintenance mode:
 
 ```sh
 redislabs@rp1_node1:/opt$ rladmin status
@@ -20,9 +131,7 @@ node:2    slave    172.17.0.4                         rp3_node1   2/100
 node:3    slave    172.17.0.3                         rp2_node1   0/100
 ```
 
-When you turn on maintenance mode for node 2, RS takes a snapshot and then moves the shards and endpoints from node 2 to another node. In our example, they are moved to node 3.
-
-The node in maintenance mode shows that 0/0 shards are on the node because no shards can be accepted on node 2. A node in quorum_only mode also shows 0/0 shards.
+The cluster status after turning on maintenance mode:
 
 ```sh
 redislabs@rp1_node1:/opt$ rladmin node 2 maintenance_mode on
@@ -40,109 +149,74 @@ node:2    slave    172.17.0.4                         rp3_node1   0/0
 node:3    slave    172.17.0.3                         rp2_node1   2/100
 ```
 
-## Turning maintenance mode ON
+After turning on maintenance mode for node 2, Redis Enterprise saves a snapshot of its configuration and then moves its shards and endpoints to node 3.
 
-When you turn maintenance mode on, RS:
+Now node 2 has `0/0` shards because shards cannot migrate to it while it is in maintenance mode.
 
-1. Checks whether shutdown of the node causes quorum loss in the current cluster state. If so, maintenance mode is not turned on.
+## Toggle maintenance mode via API 
 
-    {{< warning >}}
-Maintenance mode does not protect against quorum loss. If you enable maintenance mode for the majority of nodes in a cluster and restart them simultaneously,
-the quorum is lost and it can result data loss.
-    {{< /warning >}}
+You can also turn maintenance mode on or off via [REST API requests]({{<relref "/rs/references/rest-api">}}) to [<nobr>POST `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#post-node-action">}}).
 
-1. Takes a snapshot of the node configuration as a record of which shards and endpoints are on the node at that time.
-1. Marks the node as a quorum node to prevent shards and endpoints from migrating into the node.
-    The maintenance node entry in the rladmin status output is colored yellow to indicate that it cannot accept shard migration, just as a quorum_only node.
-    ![maintenance_mode](/images/rs/maintenance_mode.png)
-1. Migrates shards to other nodes and binds endpoints to other nodes, if space is available on other nodes.
+### Maintenance mode on
 
-{{< note >}}
-If the node is the master node in the cluster, maintenance mode does not demote the node.
-As usual, the cluster elects a new master node when the master node is restarted.
-{{< /note >}}
+Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_on`</nobr> request to turn on maintenance mode:
 
-To turn maintenance mode on, on one of the nodes in the cluster run:
-
-```sh
-rladmin node <node_id> maintenance_mode on
+```
+curl -X POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on 
+-k -u <user>:<password> 
+--data '{"keep_slave_shards":true}' 
+-H "Content-Type: application/json"
 ```
 
-After all of the shards and endpoints are moved from the node, it is safe to do maintenance on the server if there are enough nodes up to maintain the quorum.
+The `keep_slave_shards` boolean flag [prevents replica shard migration](#prevent-replica-shard-migration) when set to `true`.
 
-### Prevent slave shard migration
+The `maintenance_on` request returns a JSON response body:
 
-If you do not have enough resources in other cluster nodes to migrate all of the shards to other nodes,
-you can turn maintenance mode on without migrating the slave shards.
-
-{{< warning >}}
-If you prevent slave shard migration, the slave shards are kept on the node during maintenance.
-If the maintenance node fails, the master shards do not have slave shards for data redundancy and high availability.
-{{< /warning >}}
-
-To turn maintenance mode on and prevent slave shard migration, on one of the nodes in the cluster run:
-
-```sh
-rladmin node <node_id> maintenance_mode on keep_slave_shards
+```json
+{
+    "status":"queued",
+    "task_id":"38c7405b-26a7-4379-b84c-cab4b3db706d"
+}
 ```
 
-### Demoting a master node in maintenance mode
+### Maintenance mode off
 
-When you turn maintenance mode on for a master node in order to do maintenance that interrupts connectivity to the master node,
-you can demote the master node so that another node becomes the master.
-When you demote the master node, it takes less time for the cluster to elect a new master than if the cluster detects that the master not available.
+Send a <nobr>`POST /nodes/{node_uid}/actions/maintenance_off`</nobr> request to turn off maintenance mode:
 
-To demote a master node when you turn on maintenance mode:
-
-```sh
-rladmin node <node_id> maintenance_mode on demote_node
+```
+curl -X POST https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_off 
+-k -u <user>:<password> 
+--data '{"skip_shards_restore":false}' 
+-H "Content-Type: application/json"
 ```
 
-## Turning maintenance mode OFF
+The `skip_shards_restore` boolean flag allows the `maintenance_off` action to [skip shard restoration](#skip-shard-restoration) when set to `true`.
 
-When you turn maintenance mode off, RS:
+The `maintenance_off` request returns a JSON response body:
 
-1. Loads the latest snapshot, unless a snapshot is specified.
-1. Unmarks the node as a quorum node to allow shards and endpoints to migrate into the node.
-1. Restores the shards and endpoints that were in node at the time when the snapshot was taken.
-1. Deletes the snapshot.
-
-To turn maintenance mode off after you finish the server maintenance, on one of the nodes in the cluster run:
-
-```sh
-rladmin node <node_id> maintenance_mode off
+```json
+{
+    "status":"queued",
+    "task_id":"6c3c0d03-fb6f-40ad-9eca-9d46aa6a8487"
+}
 ```
 
-### Specifying a snapshot
+### Track action status
 
-Each time maintenance mode is turned on, a snapshot of the node configuration is saved.
-If there are multiple snapshots, you can restore a specified snapshot when you turn maintenance mode off.
+You can send a request to [<nobr>GET `/nodes/{node_uid}/actions/{action}`</nobr>]({{<relref "/rs/references/rest-api/requests/nodes/actions#get-node-action">}}) to track the [status]({{<relref "/rs/references/rest-api/objects/action">}}) of the `maintenance_on` and `maintenance_off` actions.
 
-To specify a snapshot when you turn maintenance mode off, on one of the nodes in the cluster run:
+This request returns the status of the `maintenance_on` action:
 
-```sh
-rladmin node <node_id> maintenance_mode off snapshot_name <snapshot_name>
+```
+curl https://<hostname>:9443/v1/nodes/<node_id>/actions/maintenance_on 
+-k -u <user>:<password>
 ```
 
-{{< note >}}
-If an error happens when you turn on maintenance mode, the snapshot is not deleted.
-When you re-run the command,
-we recommend that you use the snapshot from the initial attempt because it contains the original state of the node.
-{{< /note >}}
+The response body:
 
-To see the list of available snapshots, run:
-
-```sh
-rladmin node <node_id> snapshot list
-```
-
-### Skipping shard restoration
-
-If you do not want to change the distribution of shards and endpoints in the cluster when you turn maintenance mode off,
-you can turn maintenance mode off and prevent the shards and endpoints from moving back to the node.
-
-To turn maintenance mode off and skip shard restoration, on one of the nodes in the cluster run:
-
-```sh
-rladmin node <node_id> maintenance_mode off skip_shards_restore
+```json
+{
+    "status":"completed",
+    "task_id":"38c7405b-26a7-4379-b84c-cab4b3db706d"
+}
 ```

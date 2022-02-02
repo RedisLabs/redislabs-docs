@@ -6,7 +6,7 @@ alwaysopen: false
 draft: true
 categories: ["RS"]
 ---
-Below are detailed a few of the major features of this release of Redis Enterprise Software (RS)
+Below are detailed a few of the major features of this release of Redis Enterprise Software
 along with bug fixes and patches.
 
 ## Geo-Distributed Active-Active Conflict-free Replicated Databases (CRDB) {#geodistributed-activeactive-conflictfree-replicated-databases-crdb}
@@ -33,14 +33,13 @@ cluster to a specific use case or need. Once installed, modules benefit
 from the high performance, scalability, and high availability that Redis
 Enterprise is known for.
 
-### Redis Labs modules
+### Certified modules
 
-Redis Labs developed and certified these modules for use with RS:
+Redis developed and certified these modules for use with Redis Enterprise Software:
 
 - [RedisBloom]({{< relref "/modules/redisbloom/_index.md" >}})
-    - Enables RS to have a scalable bloom filter as a data type. Bloom
-      filters are probabilistic data structures that do a very good job at
-      quickly determining if something is contained within a set.
+    - Enables Redis to have a scalable bloom filter as a data type. Bloom
+      filters are probabilistic data structures that quickly determine if something is contained within a set.
 - [RedisGraph](https://oss.redislabs.com/redisgraph/#quickstart)
     - RedisGraph is the first queryable Property Graph database to use sparse
       matrices to represent the adjacency matrix in graphs and linear algebra to query the graph.
@@ -49,7 +48,7 @@ Redis Labs developed and certified these modules for use with RS:
     - Now you have the convenience JSON as a built-in data type and easily
       able to address nested data via a path.
 - [RediSearch]({{< relref "/modules/redisearch/_index.md" >}})
-    - This module turns RS into a supercharged distributed in-memory
+    - This module turns Redis into a distributed in-memory
       full-text indexing and search beast.
 
 ### Custom modules
@@ -75,7 +74,7 @@ As part of our continued emphasis on security, administrative user
 accounts in Redis Enterprise Software can now use either built-in
 authentication or authenticate externally via LDAP with saslauthd. The
 accounts can be used for administering resources on the cluster via
-command line, Rest API, or Web UI.
+command line, Rest API, or admin console.
 
 For more information see [LDAP
-Integration]({{< relref "/rs/administering/designing-production/security/ldap-integration.md" >}}).
+Integration]({{< relref "/rs/security/passwords-users-roles.md#setting-up-ldap" >}}).

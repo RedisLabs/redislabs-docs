@@ -1,0 +1,19 @@
+{{ $baseName := .File.BaseFileName }}
+{{ $tmpName := .File.Path }}
+
+{{ if eq $baseName "_index" }}
+    {{ $tmpName = replace $tmpName "/_index" "" }}
+{{ end }}
+
+{{ $tmpName = replace $tmpName "/" "-" }}
+
+{{ $pdfName := replace $tmpName ".md" ".pdf" }}
+
+{{ $pdfFilepath := "" }}
+{{ if strings.HasSuffix .Site.BaseURL "/" }}
+    {{ $pdfFilepath = print .Site.BaseURL "pdfs/" $pdfName }}
+{{ else }}
+    {{ $pdfFilepath = print .Site.BaseURL "/pdfs/" $pdfName }}
+{{ end }}
+
+<a href={{ $pdfFilepath }} download={{ $pdfName }} target="blank" rel="nofollow">

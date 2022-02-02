@@ -1,9 +1,12 @@
 ---
 Title: RedisGears
 description:
-weight: 55
+weight: 40
 alwaysopen: false
 categories: ["Modules"]
+aliases: /redisgears/
+         /redis-gears/
+         /redis_gears/
 ---
 ## What is RedisGears?
 
@@ -23,4 +26,4 @@ To get stated with RedisGears, see our [RedisGears Quick Start Tutorial]({{< rel
 
 Redis users typically implement caching by using the look-aside pattern. However, with RedisGears, you can implement write-behind caching strategies, as well.
 
-Redis Labs publishes RedisGears recipes to support write-behind. You can learn how to use these recipes in our [write-behind caching]({{< relref "/modules/redisgears/write-behind.md" >}}) guide.
+Redis publishes RedisGears recipes to support write-behind. You can learn how to use these recipes in our [write-behind caching]({{< relref "/modules/redisgears/write-behind.md" >}}) guide.

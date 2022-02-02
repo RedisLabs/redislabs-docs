@@ -1,9 +1,9 @@
 ---
 title: Contribution Guide
-description: How to contribute to the Redis Labs documentation
+description: How to contribute to the Redis documentation
 draft: false
 ---
-Redis Labs documentation is an open source project and we welcome edits of all types.
+Redis documentation is an open source project and we welcome edits of all types.
 
 Just to get you started, here is a simple explanation of how to contribute content to the docs.
 
@@ -12,17 +12,11 @@ Just to get you started, here is a simple explanation of how to contribute conte
 If you see a problem on a page, either with content or formatting, and you think you can fix it,
 you can click on the **Edit on GitHub** link, [edit the page, and submit the change]({{< relref "/editing-guide.md" >}}).
 
-If you see a problem on a page but you don't know how to fix it,
-go to [the Issues section of the repository](https://github.com/RedisLabs/redislabs-docs/issues) on GitHub and submit a **New Issue**.
-
-{{< note >}}
-If you do not have the information to enter into the issue, **DO NOT** open a new blank issue.
-{{< /note >}}
 
 ## Branches vs. forks
 
 The redislabs-docs repository is public but only members of the repository can create new branches in the repo.
-New branches in the repo are automatically built into staging sites at: `http://docs.redislabs.com/staging/<branch>`
+New branches in the repo are automatically built into staging sites at: `http://docs.redis.com/staging/<branch>`
 After every commit to a branch, the site is re-built within about 1 minute so you can see the live updates.
 
 If you are not a member of the repository, you can fork the repository to a branch in your account
@@ -37,7 +31,7 @@ you can open a pull request to submit your changes for consideration.
 
 After you clone the repository to your local machine, you can serve the site locally with Hugo and then browse to http://localhost:1313 to see how it looks.
 
-The Redis Labs documentation site does not run on the latest version of [Hugo](http://gohugo.io).
+The Redis documentation site does not run on the latest version of [Hugo](http://gohugo.io).
 You can go to the readme page of the redislabs-docs repository to find the version of Hugo that is currently supported.
 
 To run an older version of Hugo on your local machine:
@@ -120,7 +114,7 @@ and the concepts must explain any background information that is needed to know 
 
         1. To create service accounts, on each participating cluster:
 
-            1. In your web browser, open the web UI of the cluster that you want to connect to in order to create the CRDB.
+            1. In your web browser, open the admin console of the cluster that you want to connect to in order to create the CRDB.
                 By default, the address is: `https://<RS_address>:8443`
             1. Go to **settings > team** and click ![Add](/images/rs/icon_add.png#no-click "Add").
             1. Enter the name, email, and password for the user, select the **Admin** role,
@@ -141,7 +135,7 @@ and the concepts must explain any background information that is needed to know 
 
 - We recommend that you use a markdown linter in your IDE to maintain good markdown syntax.
 - Format names of UI controls in bold - **OK**
-- Format commands and input text in code - `rladmin`
+- Format commands, filenames, and input text in code - `rladmin`
 - Introduce a procedure with the goal of the procedure and a colon (:) - To authenticate to the Swagger UI:
 - Lead the sentence with the subject
 - Use “must” instead of - needs, wants, has to, desire, ...
@@ -170,7 +164,7 @@ Here are some examples:
 
 |  Text type | Wrong                                       | Correct                                | Explanation                                           |
 | --- | ------------------------------------------- | -------------------------------------- | ----------------------------------------------------- |
-| Procedure | Please sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
+| Procedure | Sign up for Redis Cloud Pro account. | Sign up for a Redis Cloud Pro account. | Do not use `please`. Do not skip `a`, `an`, or `the`. |
 | Procedure | Enter the Deployment CIDR that you will need to use | Enter the required Deployment CIDR. | Do not use future tense or any other complex verbs |
 
 ### Common syntax gotchas
@@ -250,3 +244,9 @@ Here are some examples:
         The key values are not saved when you refresh the page.
         {{< /note >}}
         ```
+## Related Information
+
+For more about contributing and editing documentation, see:
+
+- [Editing guide]({{<relref "content/editing-guide.md">}})
+- [Markdown cheatsheet]({{<relref "content/cheatsheet.md">}})

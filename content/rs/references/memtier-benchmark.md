@@ -1,75 +1,74 @@
 ---
-Title: Benchmark a Redis on Flash Enabled Database
+Title: Benchmark a Redis on Flash enabled database
+linkTitle: Benchmark Redis on Flash
 description:
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/references/cli-reference/memtier-benchmark/
 ---
-Redis on Flash (RoF) on Redis Enterprise Software (RS) lets you use more cost-effective Flash memory as a RAM extension for your database.
-But what does the performance look like as compared to an all-RAM RS database?
+Redis on Flash (RoF) on Redis Enterprise Software lets you use cost-effective Flash memory as a RAM extension for your database.
 
-The simple scenarios on this page show you how you can get performance results with the free RS trial version.
-If you would like assistance with your evaluation or need to test a larger cluster, we'd be happy to help.
+But what does the performance look like as compared to a memory-only database, one stored solely in RAM?
 
-{{< note >}}
-memtier_benchmark is included with Redis Enterprise Software in /opt/redislabs/bin/.
-To benchmark another database provider, you can get [memtier_benchmark on GitHub](https://github.com/RedisLabs/memtier_benchmark).
-{{< /note >}}
+These scenarios use the `memtier_benchmark` utility to evaluate the performance of a Redis Enterprise Software deployment, including the trial version.  
+
+The `memtier_benchmark` utility is located in `/opt/redislabs/bin/` of Redis Enterprise Software deployments.  To test performance for cloud provider deployments, see the [memtier-benchmark GitHub project](https://github.com/RedisLabs/memtier_benchmark).
+
+For additional, such as assistance with larger clusters, [contact support](https://redislabs.com/company/support/).
+
 
 ## Benchmark and performance test considerations
 
-For our testing, let's configure a Redis Enterprise Software cluster with the trial version
-and use memtier_benchmark to evaluate the performance of a Redis on Flash enabled database in these scenarios:
+These tests assume you're using a trial version of Redis Enterprise Software and want to test the performance of a Redis on Flash enabled database in the following scenarios:
 
-- Without replication: 4 master shards
-- With replication: 2 master and 2 slave shards
+- Without replication: Four (4) master shards
+- With replication: Two (2) primary and two replica shards
 
-While it concentrates on RoF, you can also use these steps to evaluate RS without RoF.
+With the trial version of Redis Enterprise Software you can create a cluster of up to four shards using a combination of database configurations, including:
 
-The Redis Enterprise Software trial version lets you use up to 4 Redis shards with multiple combinations of databases, such as:
+- Four databases, each with a single master shard
+- Two highly available databases with replication enabled (each database has one master shard and one replica shard)
+- One non-replicated clustered database with four master shards
+- One highly available and clustered database with two master shards and two replica shards
 
-- 4 databases with 1 master shard each
-- 2 highly available databases with replication, where each database has 1 master shard and 1 slave shard
-- 1 non-replicated clustered database with 4 master shards
-- 1 highly available and clustered database with 2 master shards and 2 slave shards
+## Test environment and cluster setup
 
-## Test environment and RS cluster setup
+For the test environment, you need to:
 
-For the test environment, you must:
-
-1. Create a three-node RS cluster.
+1. Create a cluster with three nodes.
 1. Prepare the flash memory.
-1. Set up the load generation tool.
+1. Configure the load generation tool.
 
-### Creating a three-node RS cluster {#creating-a-threenode-rs-cluster}
+### Creating a three-node cluster {#creating-a-threenode-rs-cluster}
 
-For this performance test, you need at least a three-node RS cluster.
+This performance test requires a three-node cluster.
+
 You can run all of these tests on Amazon AWS with these hosts:
 
-- 2 x i3.2xlarge (8 vCPU, 61 GiB RAM, up to 10GBit, 1.9TB NMVe SSD) - Used for serving RoF data
-- 1 x m4.large - Used as a quorum node
+- 2 x i3.2xlarge (8 vCPU, 61 GiB RAM, up to 10GBit, 1.9TB NMVe SSD)
+
+    These nodes serve RoF data
+
+- 1 x m4.large, which acts as a quorum node
 
 For instructions on how to install RS and set up a cluster, go to either:
 
 - [Quick Setup]({{< relref "/rs/getting-started/_index.md" >}}) for a test installation
 - [Install and Upgrade]({{< relref "/rs/installing-upgrading/_index.md" >}}) for a production installation
 
-For the tests we use a quorum node in the cluster to keep costs down on AWS instance usage,
-but still keep the minimum 3 nodes in the cluster that RS needs in case a node fails.
-The quorum node can be on a less powerful instance type (m4.large) as it does not have shards on it or take traffic.
+These tests use a quorum node to reduce AWS EC2 instance use while maintaining the three nodes required to support a quorum node in case of node failure.  Quorum nodes can be on less powerful instances because they do not have shards or support traffic.
 
-The main reason to use a i3.2xlarge instance is to use NVMe SSDs.
-Those SSDs are what RoF combines with RAM to host the database on.
-If you run these tests in another environment (such as on-premise),
-you must use NVMe SSDs to see the performance benefits of RoF.
+As of this writing, i3.2xlarge instances are required because they support NVMe SSDs, which are required to support RoF.  Redis on Flash requires Flash-enabled storage, such as NVMe SSDs.
 
-## Preparing the flash memory
+For best results, compare performance of a Flash-enabled deployment to the performance in a RAM-only environment, such as a strictly on-premises deployment.
+
+## Prepare the flash memory
 
 After you install RS on the nodes,
 the flash memory attached to the i3.2xlarge instances must be prepared and formatted with the `/opt/redislabs/sbin/prepare_flash.sh` script.
 
-## Setting up the load generation tool
+## Set up the load generation tool
 
 The memtier_benchmark load generator tool generates the load on the RoF databases.
 To use this tool, install RS on a dedicated instance that is not part of the RS cluster
@@ -82,18 +81,18 @@ For these tests, the load generation host uses a c4.8xlarge instance type.
 
 ### Create a Redis on Flash test database
 
-You can use the RS web UI to create a test database.
+You can use the RS admin console to create a test database.
 We recommend that you use a separate database for each test case with these requirements:
 
 |  **Parameter** | **With replication** | **Without replication** | **Description** |
 |  ------ | ------ | ------ | ------ |
 |  Name | test-1 | test-2 | The name of the test database |
-|  Memory limit | 100 GB | 100 GB | The memory limit refers to RAM+Flash, aggregated across all the shards of the database, including master and slave shards. |
+|  Memory limit | 100 GB | 100 GB | The memory limit refers to RAM+Flash, aggregated across all the shards of the database, including master and replica shards. |
 |  RAM limit | 0.3 | 0.3 | RoF always keeps the Redis keys and Redis dictionary in RAM and additional RAM is required for storing hot values. For the purpose of these tests 30% RAM was calculated as an optimal value. |
-|  Replication | Enabled | Disabled | A database with no replication has only master shards. A database with replication has master and slave shards. |
+|  Replication | Enabled | Disabled | A database with no replication has only master shards. A database with replication has master and replica shards. |
 |  Data persistence | None | None | No data persistence is needed for these tests. |
 |  Database clustering | Enabled | Enabled | A clustered database consists of multiple shards. |
-|  Number of (master) shards | 2 | 4 | Shards are distributed as follows:<br/>- With replication: 1 master shard and 1 slave shard on each node<br/>- Without replication: 2 master shards on each node |
+|  Number of (master) shards | 2 | 4 | Shards are distributed as follows:<br/>- With replication: One master shard and one replica shard on each node<br/>- Without replication: Two master shards on each node |
 |  Other parameters | Default | Default | Keep the default values for the other configuration parameters. |
 
 ## Data population
@@ -108,20 +107,20 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-maximum=$N -n allkeys -d 500 --key-pattern=P:P --ratio=1:0
 ```
 
-Set up a test database with these values:
+Set up a test database:
 
 |  **Parameter** | **Description** |
 |  ------ | ------ |
 |  Database host<br/>(-s) | The fully qualified name of the endpoint or the IP shown in the RS database configuration |
-|  Database port<br/>(-p) | The endpoint port shown in you RS database configuration |
+|  Database port<br/>(-p) | The endpoint port shown in your database configuration |
 |  Number of items<br/>(–key-maximum) | With replication: 75 Million<br/>Without replication: 150 Million |
 |  Item size<br/>(-d) | 500 Bytes |
 
 ## Centralize the keyspace
 
-### With replication
+### With replication {#centralize-with-repl}
 
-To create about 20.5 million items in RAM for your highly available clustered database with 75 million items, run:
+To create roughly 20.5 million items in RAM for your highly available clustered database with 75 million items, run:
 
 ```sh
 $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
@@ -129,9 +128,9 @@ $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 --key-pattern=P:P --ratio=0:1
 ```
 
-You can see the **Values in RAM** metric on the **metrics** page of your database in the RS web UI to validate the test.
+To verify the database values, use **Values in RAM** metric, which is available from the **Metrics** tab of your database in the admin console.
 
-### Without replication
+### Without replication {#centralize-wo-repl}
 
 To create 41 million items in RAM without replication enabled and 150 million items, run:
 
@@ -145,9 +144,9 @@ $ memtier_benchmark  -s $DB_HOST -p $DB_PORT --hide-histogram
 
 ### Generate load
 
-#### With replication
+#### With replication {#generate-with-repl}
 
-We recommend that you do a dry run and double check the RAM Hit Ratio on the **metrics** screen in the RS web UI before you write down the test results.
+We recommend that you do a dry run and double check the RAM Hit Ratio on the **metrics** screen in the RS admin console before you write down the test results.
 
 To test RoF with an 85% RAM Hit Ratio, run:
 
@@ -158,7 +157,7 @@ $ memtier_benchmark -s $DB_HOST -p $DB_PORT --pipeline=11 -c 20 -t 1
 --run-count=1 --out-file=test.out
 ```
 
-#### Without replication
+#### Without replication {#generate-wo-repl}
 
 Here is the command for 150 million items:
 
@@ -182,15 +181,17 @@ Where:
 
 ### Monitor the test results
 
-You can either monitor the results in the **metrics** tab of the RS Web UI or with the memtier_benchmark output.
-The memtier_benchmark results include the network latency between the load generator instance and the cluster instances.
-The metrics shown in the RS web UI do not include network latency.
+You can either monitor the results in the **metrics** tab of the admin console or with the `memtier_benchmark` output.  However, be aware that:
+
+- The memtier_benchmark results include the network latency between the load generator instance and the cluster instances.
+
+- The metrics shown in the admin console do _not_ include network latency.
 
 ### Expected results
 
 You should expect to see an average throughput of:
 
-- Around 160,000 ops/sec when testing without replication (i.e. 4 master shards)
-- Around 115,000 ops/sec when testing with enabled replication (i.e. 2 master and 2 slave shards)
+- Around 160,000 ops/sec when testing without replication (i.e. Four master shards)
+- Around 115,000 ops/sec when testing with enabled replication (i.e. Four master and 2 replica shards)
 
-In both cases the average latency should be sub-millisecond.
+In both cases, the average latency should be below one millisecond.

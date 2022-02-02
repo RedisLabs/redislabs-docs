@@ -1,10 +1,13 @@
 ---
 Title: RedisJSON
 description:
-weight: 40
+weight: 60
 alwaysopen: false
 categories: ["Modules"]
 aliases:
+  - /redisjson/
+  - /redis-json/
+  - /redis_json/
   - /rs/developing/modules/redisjson/
 ---
 Applications developed with the open source version of RedisJSON are 100%

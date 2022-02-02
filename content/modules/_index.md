@@ -1,18 +1,20 @@
 ---
-Title: Redis Modules
+Title: Redis modules
+linkTitle: Redis modules
 description:
 weight: 70
 alwaysopen: false
 categories: ["Modules"]
-aliases: /rs/developing/modules/
+aliases: /modules/
+         /rs/developing/modules/
 ---
-Redis Labs develops and packages modules for redis.
-The modules listed here are supported with [Redis Enterprise Software (RS)]({{< relref "/rs" >}}) clusters and [Redis Cloud Pro (RC Pro)]({{< relref "/rc" >}}).
+Redis develops several modules that extend the core Redis feature set. Some of the features these modules provide include [querying, indexing and full-text search]({{< relref "/modules/redisearch" >}}), [JSON support]({{< relref "/modules/redisjson" >}}), and [probabalistic data structures]({{< relref "/modules/redisbloom" >}}).
 
-Each module has its own quick start guide to help you get up and running quickly.
+You can use these modules with [Redis Enterprise Software]({{< relref "/rs" >}}).
+
+You can use many, but not all, modules with [Redis Enterprise Cloud]({{< relref "/rc" >}}).  For details, see [Redis Enterprise module support]({{<relref "modules/enterprise-capabilities#redis-enterprise-module-support">}}).
+
+
+Each module includes a quick start guide.
 
 {{< embed-html "modules.html" >}}
-
-[Custom modules](https://redislabs.com/community/redis-modules-hub/) are developed, packaged, and distributed by the Redis community.
-You can contribute to the Redis community with your own custom module
-and [package the module]({{< relref "/modules/packaging-modules.md" >}}) to [use it with Redis Enterprise]({{< relref "/modules/add-module-to-database.md" >}}).

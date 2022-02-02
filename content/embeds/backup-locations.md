@@ -71,27 +71,15 @@ To backup to a local mount point for a node:
 
     For example: `/mnt/Public`
 
-### OpenStack Swift
-
-{{< note >}}
-Support for OpenStack Object Storage ("Swift") for backup, import and export location ends on November 30, 2020.
-{{< /note >}}
-
-Before you choose to backup to OpenStack Swift, make sure that you have:
-
-- Storage URL in the format: `https://<openstack_url>/v1`
-- Container
-- Prefix (Optional)
-- User
-- Key
-
 ### Azure Blob Storage
 
 Before you choose to backup to Azure Blob Storage, make sure that you have:
 
 - Storage location path in the format: `/container_name/[path/]/`
 - Account name
-- Account key
+- An authentication token, either an account key or an Azure [shared access signature](https://docs.microsoft.com/en-us/rest/api/storageservices/delegate-access-with-shared-access-signature) (SAS).
+
+Azure SAS support requires Redis Software version 6.0.20.  To learn more about Azure SAS, see [Grant limited access to Azure Storage resources using shared access signatures](https://docs.microsoft.com/en-us/azure/storage/common/storage-sas-overview).
 
 ### Google Cloud Storage
 
@@ -102,3 +90,14 @@ Before you choose to backup to Google Cloud Storage, make sure that you have:
 - Client email
 - Private key ID
 - Private key
+
+{{< note >}}
+
+You can find the client and key details in your service account in the GCP console (**API & Services** > **Credentials** > **Create Credentials**).
+
+- Make sure that the service account has the `Storage Legacy Bucket Writer` permission on the target bucket.
+- Make sure that the bucket doesn't use a retention policy because it can interfere with the process.
+- The format of the private key from the downloaded JSON is in a single string where new lines are marked with `\n` characters.
+    When you paste the key into the RS admin console, replace each `\n` character with a new line.
+
+{{< /note >}}

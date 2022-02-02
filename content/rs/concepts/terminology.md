@@ -1,15 +1,16 @@
 ---
 title: Terminology in Redis Enterprise Software
-description:
+linkTitle: Terminology
+description: Explains terms used in Redis Enterprise Software and its docs.
 weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-Here are explanations of some of the terms used in Redis Enterprise Software (RS).
+Here are explanations of some of the terms used in Redis Enterprise Software.
 
 ## Node
 
-A node is a physical machine, virtual machine, container or cloud
+A _node_ is a physical machine, virtual machine, container or cloud
 instance on which the RS installation package was installed and the
 setup process was run in order to make the machine part of the cluster.
 
@@ -30,14 +31,13 @@ together with the other cluster nodes.
 As indicated above, each node serves as a container for hosting multiple
 database instances, referred to as "shards".
 
-RS supports various database configurations:
+Redis Enterprise Software supports various database configurations:
 
 - **Standard Redis database** - A single Redis shard with no
-    replication or data sharding.
+    replication or clustering.
 - **Highly available Redis database** - Every database master shard
-    has a replicated slave shard, so that if the master shard fails the
-    cluster can automatically failover to the slave shard with minimal
-    to no impact. Master and slave shards are always placed on separate
+    has a replica shard, so that if the master shard fails the
+    cluster can automatically fail over to the replica with minimal impact. Master and replica shards are always placed on separate
     nodes to ensure high availability.
 - **Clustered Redis database** - The data stored in the database is
     split across several shards. The number of shards can be defined by
@@ -45,7 +45,7 @@ RS supports various database configurations:
     shards are placed within the cluster. During the lifetime of the
     cluster, these algorithms might migrate a shard between nodes.
 - **Clustered and highly available Redis database** - Each master shard
-    in the clustered database has a slave shard, enabling failover if
+    in the clustered database has a replica shard, enabling failover if
     the master shard fails.
 
 ## Proxy
@@ -68,17 +68,17 @@ Each database is served by a database endpoint that is part of and
 managed by the proxies. The endpoint oversees forwarding Redis
 operations to specific database shards.
 
-If the master shard fails and the slave shard is promoted to master, the
+If the master shard fails and the replica shard is promoted to master, the
 master endpoint is updated to point to the new master shard.
 
-If the master endpoint fails, the slave endpoint is promoted to be the
+If the master endpoint fails, the replica endpoint is promoted to be the
 new master endpoint and is updated to point to the master shard.
 
 Similarly, if both the master shard and the master endpoint fail, then
-both the slave shard and the slave endpoint are promoted to be the new
+both the replica shard and the replica endpoint are promoted to be the new
 master shard and master endpoint.
 
-As can be understood from the above, a shard and its endpoint do not
+Shards and their endpoints do not
 have to reside within the same node in the cluster.
 
 In the case of a clustered database with multiple database shards, only

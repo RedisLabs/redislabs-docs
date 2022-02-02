@@ -1,13 +1,16 @@
 ---
 Title: RedisTimeSeries
 description:
-weight: 30
+weight: 80
 alwaysopen: false
 categories: ["Modules"]
 aliases:
+  - /redistimeseries/
+  - /redis-time-series/
+  - /redis_time_series/ 
   - /rs/developing/modules/redistimeseries/
 ---
-RedisTimeSeries is a Redis module developed by Redis Labs to enhance your experience managing time series data with Redis.
+RedisTimeSeries is a Redis module developed by Redis to enhance your experience managing time series data with Redis.
 
 ## Features
 
@@ -118,7 +121,7 @@ Ingestion details of each approach:
 
 All our ingestion operations were executed at sub-millisecond latency and, although both used the same Rax data structure, the RedisTimeSeries approach has slightly higher throughput than Redis Streams.
 
-As can be seen, the two approaches of using Sorted Sets yield very different throughput. This shows the value of always prototyping an approach against a specific use case. As we see on query performance, the Sorted Set per Device comes with improved write throughput but at the expense of query performance. It’s a trade off between ingestion, query performance and flexibility (remember the data modeling remark we made earlier) for your use case.
+Each approach yields different results, which shows the value of prototyping against specific use cases. As we see on query performance, the Sorted Set per Device comes with improved write throughput but at the expense of query performance. It’s a trade off between ingestion, query performance, and flexibility (remember the earlier data modeling remark).
 
 ### Read performance
 

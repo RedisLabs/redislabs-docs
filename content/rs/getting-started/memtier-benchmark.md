@@ -1,12 +1,13 @@
 ---
 Title: Benchmarking Redis Enterprise
+linkTitle: Benchmark
 description:
 weight: 50
 alwaysopen: false
 categories: ["RS"]
 ---
-If you need to do a quick performance benchmark of Redis Enterprise, we
-have a tool just for this; memtier_benchmark.
+
+Use the `memtier_benchmark` tool to perform a performance benchmark of Redis Enterprise Software.
 
 Prerequisites:
 
@@ -14,8 +15,7 @@ Prerequisites:
 - A cluster configured
 - A database created
 
-If you need a quick setup for the prerequisites, please [go
-here]({{< relref "/rs/getting-started/_index.md" >}}).
+For help with the prerequisites,see [Get started with Redis Enterprise Software]({{< relref "/rs/getting-started/_index.md" >}}).
 
 It is recommended to run memtier_benchmark on a separate node that is
 not part of the cluster being tested. If you run it on a node of the
@@ -53,7 +53,7 @@ Enterprise database and generates a load doing the following:
 Run this command until it fills up your database to where you want it
 for testing. The easiest way to check is on the database metrics page.
 
-![memtier_metrics_page](/images/rs/memtier_metrics_page.png?width=700&height=158)
+![memtier_metrics_page](/images/rs/memtier_metrics_page.png)
 
 Another use for memtier_benchmark is to populate a database with data
 for failure testing.

@@ -1,5 +1,6 @@
 ---
-Title: Adding a Redis Database
+Title: Add a Redis database
+linkTitle: Add database
 date: 2018-07-20 03:49:29 +0530
 weight: 10
 categories: ["RI"]
@@ -9,6 +10,7 @@ nextStep:
     href: /docs/features/memory-analysis/
 ---
 Before using any of the tools to work with your database, you must first add the database so RedisInsight can connect to it.
+
 Each of these database configurations requires specific steps to add them to RedisInsight:
 
 - Standalone Redis
@@ -16,6 +18,10 @@ Each of these database configurations requires specific steps to add them to Red
 - Redis Sentinel
 - Redis with TLS authentication
 - Elasticache
+
+### Supported Redis Versions
+
+Currently, RedisInsight supports Redis versions 4 and newer.
 
 ## Add a standalone Redis database
 
@@ -35,10 +41,16 @@ To add a standalone Redis database to RedisInsight:
 
     ![instance_overview_page](/images/ri/add-db-form-screen.png)
 
-    - **Name**: A name for your Redis database. It does not have to match the name of the database in the Redis cluster.
     - **Host**: The hostname of your Redis database, for example `redis.acme.com`.
        If your Redis server is running on your local machine, you can enter either `127.0.0.1` or `localhost`.
+       You can also paste a Connection URL. When pasted, the database details are automatically filled.
+
+       The following Connection URLs are supported:
+         - [`redis://[[user]:[pass]]@host:port`](https://www.iana.org/assignments/uri-schemes/prov/redis)
+         - [`rediss://[[user]:[pass]]@host:port`](https://www.iana.org/assignments/uri-schemes/prov/rediss)
+         - `host:port`
     - **Port**: The port your Redis database is available on. The default port for Redis is `6379`.
+    - **Name**: A name for your Redis database. It does not have to match the name of the database in the Redis cluster.
     - **Username**: The username, if your database is ACL enabled, otherwise leave this field empty.
     - **Password**: The password, if any, for your Redis database.
        If your database doesn't require a password, leave this field empty.
@@ -69,7 +81,7 @@ To add a [Redis Cluster](https://redis.io/topics/cluster-tutorial) database:
 ### Add a Redis Sentinel database
 
 [Redis Sentinel](https://redis.io/topics/sentinel) is often used for High Availability deployments of Redis.
-It provides automatic master-to-slave failover.
+It provides automatic master-to-replica failover.
 When you use Sentinel, clients connect to the Sentinel instance to get the current topology of the databases.
 The client then connects to the current master.
 If the connection fails, the client queries the Sentinel instance again to find the current master.
@@ -113,6 +125,11 @@ To add a TLS-enabled Redis database:
 1. Select **Use TLS**.
 
     ![instance_overview_page](/images/ri/add-db-tls-screen.png)
+
+1. If the server needs to be authenticated, pass a [CA Certificate](https://en.wikipedia.org/wiki/Certificate_authority).
+   1. If the certificate returned by the server needs to be verified, select **Verify TLS Certificate**.
+
+     ![instance_overview_page](/images/ri/add-db-tls-ca-cert-screen.png)
 
 1. If your database requires TLS client authentication to do mutual authentication:
 

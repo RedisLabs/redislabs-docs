@@ -1,61 +1,75 @@
 ---
-title: Getting Started with Redis Enterprise Software
+title: Get started with Redis Enterprise Software
+linkTitle: Get started
 description:
 weight: 30
 alwaysopen: false
 categories: ["RS"]
 aliases: /rs/getting-started/quick-setup/
+         /rs/getting-started/
+         /rs/getting-started.md
 ---
-In this quick setup guide, we take you through the steps to install Redis Enterprise Software (RS) on a Linux host to test its capabilities.
-The steps to set up a RS cluster with a single node are super simple and go as follows:
+This guide helps you install Redis Enterprise Software on a Linux host to test its capabilities.
+
+When finished, you'll have a simple cluster with a single node:
 
 - Step 1: Install Redis Enterprise Software
 - Step 2: Set up a Redis Enterprise Software cluster
 - Step 3: Create a new Redis database
 - Step 4: Connect to your Redis database
 
-This quick start is designed for local testing.
-To connect to the RS cluster remotely,
-make sure that the necessary [network ports]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}) are open to network traffic.
+{{< note >}}
+**This quick start is designed for local testing only.**
+For production environments, the [install and setup]({{< relref "/rs/installing-upgrading/_index.md" >}}) guide  walks through deployment options appropriate for a production environment.
+{{< /note >}}
 
-You can also get started with RS with:
+Quick start guides are also available to help you:
 
-- [RS in a Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}) for development or testing purposes
-- A [custom RS installation]({{< relref "/rs/installing-upgrading/_index.md" >}}) for production purposes
+- Run Redis Software using a [Docker container]({{< relref "/rs/getting-started/getting-started-docker.md" >}}), which lets you skip the installation process
+- Set up a [Redis on Flash cluster]({{< relref "/rs/getting-started/getting-started-redis-flash.md" >}}) to optimize  memory resources
+- Set up an [Active-Active cluster]({{< relref "/rs/getting-started/getting-started-active-active.md" >}}) to enable high availability
+- [Benchmark]({{< relref "/rs/getting-started/memtier-benchmark.md" >}}) Redis Enterprise Software performance.
 
 ## Step 1: Install Redis Enterprise Software
 
-You can download the binaries from the [Redis Enterprise Download Center](https://www.redislabs.com/download-center/)
+To install Redis Enterprise Software:
+
+1. Download the installation files from the [Redis Enterprise Download Center](https://www.redislabs.com/download-center/)
 and copy the download package to machine with a Linux-based OS. To untar the image:
 
-```sh
-tar vxf <downloaded tar file name>
-```
+    ```sh
+    tar vxf <downloaded tar file name>
+    ```
 
-Once the tar command completes, install RS with the install.sh script in
-the current directory.
+    {{< note >}}
+You are required to create a free login to access the download center.
+    {{< /note >}}
 
-```sh
-sudo ./install.sh -y
-```
+1. Once the tar command completes, run the `install.sh` script in the current directory.
 
-{{< note-safe >}}
-When port 53 is in use, the installation fails. This is known to happen in
-default Ubuntu 18.04 installations in which systemd-resolved (DNS server) is running.
+    ```sh
+    sudo ./install.sh -y
+    ```
+
+### Port availability
+
+If port 53 is in use, the installation fails. This is known to happen in
+default Ubuntu 18.04 installations where `systemd-resolved` (DNS server) is running.
 To workaround this issue, change the system configuration to make this port available
-before running RS installation.
+before installing Redis Enterprise Software.
 
-{{% expand "Example steps to resolve the port 53 conflict:" %}}
+Here's one way to do so:
 
 1. Run: `sudo vi /etc/systemd/resolved.conf`
 1. Add `DNSStubListener=no` as the last line in the file and save the file.
 1. Run: `sudo mv /etc/resolv.conf /etc/resolv.conf.orig`
 1. Run: `sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf`
 1. Run: `sudo service systemd-resolved restart`
-{{% /expand %}}
-{{< /note-safe >}}
+
 
 ## Step 2: Set up a cluster
+
+To set up your machine as a Redis Enterprise software cluster:
 
 {{< embed-md "cluster-setup.md" >}}
 
@@ -65,9 +79,13 @@ before running RS installation.
 
     ![Redis Enterprise Software create database](/images/rs/getstarted-newdatabase.png)
 
-1. Enter a database name such as `database1` and click **Activate** to create your database.
+1. Enter a database name such as `database1` and then select **Show Advanced Options**.
 
     ![Redis Enterprise Software configure new database screen](/images/rs/getstarted-createdatabase.png)
+
+1. In **Endpoint port number**, enter `12000`.
+
+1. Select the **Activate** button to create your database.
 
 You now have a Redis database!
 
@@ -79,12 +97,11 @@ You can test connectivity to your database with:
 - redis-cli - the built-in command-line tool
 - A _Hello World_ application using Python
 
-### Connecting using redis-cli {#connecting-using-rediscli}
+### Connect using redis-cli {#connecting-using-rediscli}
 
-redis-cli is a simple command-line tool to interact with Redis database.
+`redis-cli` is a simple command-line tool to interact with Redis database.
 
-Run redis-cli, located in the /opt/redislabs/bin directory, to connect
-to port 12000 and store and retrieve a key in database1
+Here's how to run `redis-cli` to connect to port 12000 and perform basic database operations using Redis commands:
 
 ```sh
 $ sudo /opt/redislabs/bin/redis-cli -p 12000
@@ -99,11 +116,12 @@ OK
 A simple python application running on the **host machine**, not the
 container, can also connect to database1.
 
-Note: The following section assumes you already have Python and redis-py
-(python library for connecting to Redis) configured on the host machine
-running the container. You can find the instructions to configure
-redis-py on the [github page for
-redis-py](https://github.com/andymccurdy/redis-py).
+{{< note >}}
+The following section assumes you already have Python and redis-py
+(python library for connecting to Redis) configured on the host machine running the container.
+You can find the instructions to configure redis-py on the
+[github page for redis-py](https://github.com/andymccurdy/redis-py).
+{{< /note >}}
 
 1. Create a new file called `redis_test.py` with this contents:
 
@@ -131,6 +149,29 @@ True
 get key1
 123
 ```
+
+## Supported web browsers
+
+To use the Redis Software admin console, you need a modern browser with JavaScript enabled.
+
+The following browsers have been tested with the current version of the admin console:
+
+- Microsoft Windows, version 10 or later.
+    - [Google Chrome](https://www.google.com/chrome/), version 48 and later
+    - [Microsoft Edge](https://www.microsoft.com/edge), version 20 and later
+    - [Mozilla Firefox](https://www.mozilla.org/firefox/), version 44 and and later
+    - [Opera](https://www.opera.com/), version 35 and later.
+
+- Apple macOS:
+    - [Google Chrome](https://www.google.com/chrome/), version 48 and later
+    - [Mozilla Firefox](https://www.mozilla.org/firefox/), version 44 and and later
+    - [Opera](https://www.opera.com/), version 35 and later.
+
+- Linux:
+    - [Google Chrome](https://www.google.com/chrome/), version 49 and later
+    - [Mozilla Firefox](https://www.mozilla.org/firefox/), version 44 and and later
+    - [Opera](https://www.opera.com/), version 35 and later.
+
 
 ## Next steps
 

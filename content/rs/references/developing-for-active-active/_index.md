@@ -1,5 +1,6 @@
 ---
-title: Developing Applications with Active-Active Databases
+title: Developing applications with Active-Active databases
+linkTitle: Active-active database apps
 description:
 weight: 85
 alwaysopen: false
@@ -30,7 +31,7 @@ where synchronization catches up to distribute all local member Active-Active da
 updates to other participating clusters and other member Active-Active databases.
 
 |  **Time** | **Member CRDB1** | **Member CRDB2** |
-|  ------: | :------: | :------: |
+|  :------: | :------: | :------: |
 |  t1 | INCRBY key1 7 |  |
 |  t2 |  | INCRBY key1 3 |
 |  t3 | GET key1<br/>7 | GET key1<br/>3 |
@@ -47,7 +48,7 @@ Databases provide various approaches to address some of these concerns:
     distributions, all writes go to an active cluster. Redis Enterprise
     provides a "Replica Of" capability that provides a similar approach.
     This can be employed when the workload is heavily balanced towards
-    read and very few writes. However, WAN performance and availability
+    read and few writes. However, WAN performance and availability
     is quite flaky and traveling large distances for writes take away
     from application performance and availability.
 - Two-phase Commit (2PC): This approach is designed around a protocol
@@ -87,7 +88,7 @@ Redis Enterprise Software.
 
 ## Compatibility
 
-Active-Active databases act very much like a standard Redis database except a few
+Active-Active databases behave like standard Redis databases, except for a few
 differences:
 
 - Active-Active databases in this version support all major Redis data types. See the
@@ -112,16 +113,17 @@ followed by descriptions:
 
 | **Data Type** | **Support Level** |
 |------------|-----------------|
-| Float Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-data-type-with-counter-value-in-crdbs" >}}) |
+| Bitfield | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
+| Float Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-counter-support" >}}) |
 | Geospatial | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
 | Hashes | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hashes-active-active.md" >}}); Hash fields are treated as strings or counters |
-| Integer Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-data-type-with-counter-value-in-crdbs" >}}) |
+| Integer Counters | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md#string-counter-support" >}}) |
 | Lists | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-lists-active-active.md" >}}) |
 | Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sets-active-active.md" >}}) |
 | Strings | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
 | Sorted Sets | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-sorted-sets-active-active.md" >}}) |
 | HyperLogLog | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-hll-active-active.md" >}}) |
-| Streams | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-strings-active-active.md" >}}) |
+| Streams | [Supported]({{< relref "/rs/references/developing-for-active-active/developing-streams-active-active.md" >}}) |
 | Bitsets | Not currently supported |
 
 ### Other data types
@@ -184,6 +186,10 @@ Furthermore, a replica that is NOT the "owner" of the expired value:
     DEL.
 - Expires it (sending a DEL) before making any modifications if a user
     attempts to access it in WRITE mode.
+    
+    {{< note >}}
+Expiration values are in the range of [0,&nbsp;2^49] for Active-Active databases and [0,&nbsp;2^64] for non Active-Active databases.
+    {{< /note >}}
 
 ## Out-of-Memory (OOM) {#outofmemory-oom}
 

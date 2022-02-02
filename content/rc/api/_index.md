@@ -1,43 +1,50 @@
 ---
-Title: API
-description:
+Title: Redis Enterprise Cloud REST API
+linkTitle: REST API
+description: Describes the Redis Cloud REST API and links to additional info
 weight: 80
 alwaysopen: false
 categories: ["RC"]
 aliases: /rv/api/
+         /rc/api/
+         /rc/api/_index.md
 ---
-Redis Cloud Pro (RC Pro) API follows the principles of the REST architectural style to expose programmatic access to Redis Labs Pro features and capabilities.
 
-## Supported Redis Cloud Pro features
+The [Redis Enterprise Cloud REST API](https://api.redislabs.com/v1/swagger-ui.html) helps you manage your Redis Cloud subscription programmatically.
 
-The API exposes programmatic access for management of:
+You can use the API to:
+ 
+- Create or manage databases  
+- Define or change hosting credentials    
+- Audit access via logs  
+- Backup or import databases  
 
-- [**Full lifecycle management**]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md" >}}) of Redis Labs Pro Subscriptions and Databases
-- [**System Log**]({{< relref  "/rc/api/how-to/view-auditing-using-system-log.md" >}}) for auditing lifecycle actions (create, update, delete) using
-- [**Hosting cloud provider credentials**]({{< relref  "/rc/api/how-to/create-and-manage-cloud-accounts.md" >}}) definition and management
-- **Backup & import databases** from various sources (e.g. AWS S3, FTP etc.)
-- **Redis Modules**
-- **Alerts settings**
-- **Secure connectivity to customer system** using VPC peering and CIDR restrictions settings
-
-## API features
-
-The RC Pro API includes these features:
-
-- Standard REST API (accessible using [any HTTP client / programming language]({{< relref  "/rc/api/how-to/using-curl.md" >}}))
-- Supports OpenAPI 2.0 standard
-- Exposes [Swagger user interface](https://api.redislabs.com/v1/swagger-ui.html)
-- Follows [Semantic Versioning 2.0](https://semver.org/#semantic-versioning-200) guidelines
-- Secure [authentication and authorization]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
-- Support for multiple personal [API Keys]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}}) (named and fully audited)
-- Restrict API usage to specific source IP addresses / ranges
+{{< note >}}
+The Redis Cloud REST API is available only with Flexible or Annual subscriptions.  It is not supported for Fixed or Free subscriptions.
+{{< /note >}}
 
 ## Getting started
 
-1. [Enable your Account to use API]({{< relref  "/rc/api/how-to/enable-your-account-to-use-api.md" >}})
-1. [Authentication and Authorization]({{< relref  "/rc/api/concepts/authentication-and-authorization.md" >}})
-1. [Create API Keys for your team]({{< relref  "/rc/api/how-to/create-api-keys-for-your-team.md" >}})
-1. [Using the API]({{< relref  "/rc/api/how-to/using-curl.md" >}})
-1. [The Processing and Provisioning Lifecycle]({{< relref  "/rc/api/concepts/provisioning-lifecycle.md" >}})
-1. [Create and manage Subscriptions]({{< relref  "/rc/api/how-to/create-and-manage-subscriptions.md" >}})
+1. [Enable the API]({{< relref  "/rc/api/get-started/enable-the-api.md" >}})
+1. [Authenticate and authorize]({{< relref  "/rc/api/get-started/_index.md" >}})
+1. [Create API keys]({{< relref  "/rc/api/get-started/manage-api-keys.md" >}})
+1. [Use the API]({{< relref  "/rc/api/get-started/use-rest-api.md" >}})
+1. [Learn the API lifecycle]({{< relref  "/rc/api/get-started/process-lifecycle.md" >}})
+1. [Create and manage subscriptions]({{< relref  "/rc/api/examples/manage-subscriptions.md" >}})
 
+## Examples
+
+1. [Manage subscriptions]({{< relref  "/rc/api/examples/manage-subscriptions.md" >}})
+1. Database examples
+    1. [Create database]({{< relref  "/rc/api/examples/create-database.md" >}})
+    1. [Update database]({{< relref  "/rc/api/examples/update-database.md" >}})
+    1. [Back up and import data]({{< relref  "/rc/api/examples/back-up-and-import-data.md" >}})
+1. [Manage cloud accounts]({{< relref  "/rc/api/examples/manage-cloud-accounts.md" >}})
+1. [Estimate costs]({{< relref  "/rc/api/examples/dryrun-cost-estimates.md" >}})
+1. [View account info]({{< relref  "/rc/api/examples/view-account-information.md" >}})
+    
+## More info
+
+- Use the [Redis Cloud API]({{< relref  "/rc/api/get-started/use-rest-api.md" >}})
+- [Full API Reference](https://api.redislabs.com/v1/swagger-ui.html)
+- Secure [authentication and authorization]({{< relref  "/rc/api/get-started/_index.md" >}})

@@ -1,5 +1,6 @@
 ---
 Title: Developing with Lists in an Active-Active Database
+linkTitle: Lists
 description:
 weight: $weight
 alwaysopen: false
@@ -13,7 +14,7 @@ Lists can be used to easily implement queues (using LPUSH and RPOP, for
 example) and stacks (using LPUSH and LPOP, for
 example).
 
-Lists in Active-Active databases are just the same as regular Redis Lists. Please see the
+Lists in Active-Active databases are just the same as regular Redis Lists. See the
 following examples to get familiar with Lists' behavior in an
 Active-Active database.
 

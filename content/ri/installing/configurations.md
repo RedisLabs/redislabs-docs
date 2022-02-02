@@ -24,10 +24,81 @@ To configure RedisInsight with environment variables:
 
 The following environment variables can be set to configure RedisInsight:
 
-- `REDISINSIGHT_PORT` - By default, RedisInsight listens on port 8001. To have RedisInsight bind to a different port, set the `REDISINSIGHT_PORT` environment variable.
+### RIPORT
 
-- `REDISINSIGHT_HOST` - By default, RedisInsight binds to the IP address `0.0.0.0`. To have RedisInsight bind to a different host, set the `REDISINSIGHT_HOST` environment variable.
+**Description:** Which port should RedisInsight listen on.
 
-- `REDISINSIGHT_HOME_DIR` - By default, RedisInsight stores application data (such as local database, log files and snapshot files) in  `~/.redisinsight` in your home directory on desktop and in the `/db` directory in the Docker container. To change this directory, set the `REDISINSIGHT_HOME_DIR` environment variable.
+**Type:**        Number
 
-- `LOG_DIR` - By default, RedisInsight stores log files in your home directory (`REDISINSIGHT_HOME_DIR`). To have RedisInsight store the log files in a different directory, set the `LOG_DIR` environment variable.
+**Default:**     `8001`
+
+### RIHOST
+
+**Description:** Which host should RedisInsight bind to.
+
+**Type:**        String
+
+**Default:**     `"0.0.0.0"` on Docker and `"127.0.0.1"` on Windows, Mac, and Linux.
+
+### RIHOMEDIR
+
+**Description:** Sets the storage directory where RedisInsight stores application data (such as local database, log files and snapshot files).
+
+**Type:**        String
+
+**Default:**     `"~/.redisinsight"` on desktop, `"/db"` on docker.
+
+### RILOGDIR
+
+**Description:** Sets the logging storage directory where RedisInsight stores application logs.
+
+**Type:**        String
+
+**Default:**     `"~/.redisinsight"` on desktop, `"/db"` on docker.
+
+
+### RILOGLEVEL
+
+**Description:** Configures the log level of the application. Possible values are - `"DEBUG"`, `"INFO"`, `"WARNING"`, `"ERROR`" and `"CRITICAL"`.
+
+**Type:**        String
+
+**Default:**     `"WARNING"`
+
+### REDISINSIGHT_PORT (DEPRECATED)
+
+**Description:** Which port should RedisInsight listen on.
+
+**Type:**        Number
+
+**Default:**     `8001`
+
+**Deprecated in:** `v1.9.0`
+
+### REDISINSIGHT_HOST (DEPRECATED)
+
+**Description:** Which host should RedisInsight bind to.
+
+**Type:**        String
+
+**Default:**     `"0.0.0.0"`
+
+**Deprecated in:** `v1.9.0`
+
+### REDISINSIGHT_HOME_DIR (DEPRECATED)
+
+**Description:** Sets the storage directory where RedisInsight stores application data (such as local database, log files and snapshot files).
+
+**Type:**          String
+
+**Default:**       `"~/.redisinsight"` on desktop, `"/db"` on docker.
+
+**Deprecated in:** `v1.9.0`
+
+### LOG_DIR (DEPRECATED)
+
+**Description:** Sets the logging storage directory where RedisInsight stores application logs.
+
+**Type:**        String
+
+**Default:**     `"~/.redisinsight"` on desktop, `"/db"` on docker.

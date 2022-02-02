@@ -9,21 +9,29 @@
       {{ partial "header.html" . }}
     </div>
     {{- if not .Site.Params.disableSearch}}
-        <div class="searchbox">
-		    <label for="search-by"><i class="fa fa-search"></i></label>
-		    <input data-search-input id="search-by" type="text" placeholder="{{T "Search-placeholder"}}">
-		    <span data-search-clear=""><i class="fa fa-close"></i></span>
-		</div>
-		<script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}"></script>
-		<script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}"></script>
-		<script type="text/javascript">
-        {{ if .Site.IsMultiLingual }}
-            var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
-        {{ else }}
-            var baseurl = "{{.Site.BaseURL}}";
-        {{ end }}
-		</script>
-		<script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
+    <div>
+      <div id="redis-sitesearch" class="redis-sitesearch redis-sitesearch-inline">
+        <input class="redis-sitesearch-input redis-sitesearch-input-inline" placeholder="{{T "Search-placeholder"}}" />
+
+        <div class="redis-sitesearch-result-list-wrapper">
+          <ul class="redis-sitesearch-result-list"></ul>
+          <div class="redisearch-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="{{"js/redis-sitesearch.min.js" | relURL}}"></script>
+    <script type="text/javascript" src="{{"js/search.js" | relURL}}"></script>
+    <link href="{{"css/redis-sitesearch.css" | relURL}}" rel="stylesheet">
+    <link href="{{"css/redis-sitesearch-overrides.css" | relURL}}" rel="stylesheet">
+
+      <script type="text/javascript">
+          {{ if .Site.IsMultiLingual }}
+              var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
+          {{ else }}
+              var baseurl = "{{.Site.BaseURL}}";
+          {{ end }}
+      </script>
     {{- end}}
   </div>
 
@@ -33,9 +41,9 @@
             <a href="{{"/" | relLangURL}}"><i class="fa fa-fw fa-home"></i></a>
             </li>
         {{- end}}
-		
+
 		{{- partial "menu.html" . }}
-		
+
 		{{- with .Site.Menus.shortcuts}}
         <section id="shortcuts">
             {{- range sort . "Weight"}}
@@ -55,7 +63,7 @@
 
     <hr />
     <li>{{- partial "language-selector.html" . }}</li>
-    
+
     </ul>
 
  <section id="footer">
@@ -81,6 +89,12 @@
         {{T "Edit-this-page"}}
       </a>
     </div>
+    <div id="top-pdf-link">
+      <a class="pdf-link" href="../pdfs/rs-docs.pdf" download="rs-docs.pdf" target="blank">
+        <i class="fa fa-code-fork"></i>
+        {{T "Download-pdf"}}
+      </a>
+    </div>
       {{- end }}
     {{- end -}}
 
@@ -92,10 +106,10 @@
         </span>
         <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
         <span class="links">
-        {{ template "breadcrumb" dict "page" . "value" .Title }}   
+        {{ template "breadcrumb" dict "page" . "value" .Title }}
         </span>
     </div>
-    
+
     <!-- TOC -->
     <div class="progress">
         <div class="wrapper">
@@ -120,8 +134,8 @@
 
 {{define "breadcrumb"}}
 {{ if .page.Parent}}
-{{$value := (printf "<a href='%s'>%s</a> <span>></span> %s" .page.Parent.RelPermalink .page.Parent.Title .value)}}
-{{ template "breadcrumb" dict "page" .page.Parent "value" $value }} 
+{{$value := (printf "<a href='%s'>%s</a> <span>></span> %s" .page.Parent.RelPermalink .page.Parent.LinkTitle .value)}}
+{{ template "breadcrumb" dict "page" .page.Parent "value" $value }}
 {{else}}
  {{.value|safeHTML}}
 {{end}}

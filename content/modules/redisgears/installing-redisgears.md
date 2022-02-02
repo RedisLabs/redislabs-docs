@@ -1,5 +1,5 @@
 ---
-Title: Installing RedisGears 
+Title: Install RedisGears 
 description:
 weight: 60
 alwaysopen: false
@@ -15,6 +15,11 @@ Before you can use RedisGears, you have to install the RedisGears module on your
 ## Installing RedisGears
 
 ### Step 1: Install RedisGears dependencies
+
+{{< note >}}
+This step is required for Redis Enterprise Software 6.0.8 and below only.
+For RS 6.0.12 and above, the dependencies are installed automatically when [you install with the `/v2/modules` endpoint]({{< relref "/modules/add-module-to-cluster.md#adding-a-module-using-the-rest-api" >}}).
+{{< /note >}}
 
 On each node in the Redis Enterprise cluster:
 
@@ -87,6 +92,8 @@ You can be more efficient and import only the requirements you need, but rgync i
 - redisgears-requirement-v1-cassandra-driver-linux-\<os>-x64.zip
 
 This list can be different or more extensive in newer versions.
+The `module.json` file in the module package lists the dependencies for the module.
+
     {{< /note >}}
 
 1. From the CLI of a node or of a client that is connected to the database, check that the requirements were imported successfully with: `redis-cli RG.PYDUMPREQS`
