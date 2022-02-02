@@ -1,6 +1,6 @@
 By default, Redis Enterprise Software deployments use DNS to communicate between nodes.  You can also use the [Discovery Service]({{< relref "/rs/concepts/data-access/discovery-service.md" >}}), which uses IP addresses to connect and complies with the [Redis Sentinel API](https://redis.io/topics/sentinel) supported by open source Redis.
 
-Each node in an Redis Enterprise cluster includes a small DNS server to manage internal functions, such as high availability, automatic failover, automatic migration, and so on.
+Each node in a Redis Enterprise cluster includes a small DNS server to manage internal functions, such as high availability, automatic failover, automatic migration, and so on.
 Nodes should only run the DNS server included with the software.  Running additional DNS servers can lead to unexpected behavior.
 
 ## Cluster name and connection management
@@ -24,8 +24,8 @@ The FQDN is a crucial component of the high-availability mechanism because it's 
 Setting the cluster's FQDN is a one-time operation, one that cannot be changed after being set.
 {{< /note >}}
 
-The FQDN must always comply with the IETF's [RFC 952](http://tools.ietf.org/html/rfc952) standard
-and section 2.1 of the [RFC 1123](http://tools.ietf.org/html/rfc1123) standard.
+The FQDN must always comply with the IETF's [RFC 952](https://datatracker.ietf.org/doc/html/rfc952) standard
+and section 2.1 of the [RFC 1123](https://datatracker.ietf.org/doc/html/rfc1123) standard.
 
 ## Identify the cluster
 
