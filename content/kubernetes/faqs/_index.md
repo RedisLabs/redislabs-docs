@@ -184,7 +184,7 @@ spec:
     - '*'
 ```
 
-([latest version on GitHub](https://raw.githubusercontent.com/RedisLabs/redis-enterprise-k8s-docs/master/psp.yaml))
+([latest version on GitHub](https://github.com/RedisLabs/redis-enterprise-k8s-docs/tags))
 
 The SYS_RESOURCE capability is required by the Redis Enterprise cluster (REC) container so that REC can set correct out of memory (OOM) scores to its processes inside the container.
 Also, some of the REC services must be able to increase default resource limits, especially the number of open file descriptors.
