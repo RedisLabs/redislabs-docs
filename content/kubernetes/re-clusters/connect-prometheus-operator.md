@@ -11,7 +11,7 @@ aliases: [
 ]  
 ---
 
-To collect and display metrics data from your databases, you can connect your [Prometheus](https://prometheus.io/) server to your Redis Enterprise cluster (REC). The Redis Enterprise operator creates a dedicated service to expose the `prometheus` port (8070) for data collection. A custom resource called `ServiceMonitor` allows the [Prometheus operator](https://github.com/prometheus-operator/prometheus-operator/tree/main/Documentation) to connect to this port and collect data from Redis Enterprise.
+To collect  metrics data from your databases and Redis Enterprise cluster (REC), you can connect your [Prometheus](https://prometheus.io/) server to an endpoint exposed on your REC. The Redis Enterprise operator creates a dedicated service to expose the `prometheus` port (8070) for data collection. A custom resource called `ServiceMonitor` allows the [Prometheus operator](https://github.com/prometheus-operator/prometheus-operator/tree/main/Documentation) to connect to this port and collect data from Redis Enterprise.
 
 ## Prerequisites
 
@@ -23,7 +23,7 @@ Before connecting Redis Enterprise to Prometheus on your Kubernetes cluster, mak
 
 ## Create a `ServiceMonitor` custom resource
 
-Below is an example `ServiceMonitor` custom resource file. By specifying the service label (`app: redis.io/service=prom-metrics`) in the `selector.matchLabels` section, you can point the Prometheus operator to the correct Redis Enterprise service (`<rec_name>-pom`).
+Below is an example `ServiceMonitor` custom resource file. By specifying the service label (`app: redis.io/service=prom-metrics`) in the `selector.matchLabels` section, you can point the Prometheus operator to the correct Redis Enterprise service (`<rec_name>-prom`).
 
 You'll need to configure the following fields to connect Prometheus to Redis Enterprise:
 
