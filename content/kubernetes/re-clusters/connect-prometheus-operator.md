@@ -6,8 +6,8 @@ weight: 92
 alwaysopen: false
 categories: ["Platforms"]
 aliases: [
-      /kubernetes/re-clusters/configure-prometheus-operator-for-redis.md,
-      /kubernetes/re-clusters/configure-prometheus-operator-for-redis/,
+      /kubernetes/re-clusters/connect-prometheus-operator.md,
+      /kubernetes/re-clusters/connect-prometheus-operator/,
 ]  
 ---
 
