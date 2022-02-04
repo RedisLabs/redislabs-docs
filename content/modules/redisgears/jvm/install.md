@@ -20,19 +20,36 @@ Before you can use RedisGears with the JVM, you need to install the RedisGears m
 
 ## Install RedisGears and the JVM plugin
 
-If your cluster uses Redis Enterprise v6.0.12 or later, you only need to download the RedisGears package. The JVM plugin installs automatically when you make a `POST` request to the `/v2/modules` REST API endpoint.
+If your cluster uses Redis Enterprise v6.0.12 or later and has internet access, you only need to download the RedisGears package. It automatically fetches dependencies like the JVM plugin during online installation.
 
-After the install is complete, RedisGears will appear in the list of available modules on the **settings** and **create database** pages of the Redis Enterprise admin console.
+Offline installation requires you to manually upload dependencies to the master node.
+
+To install RedisGears and the JVM plugin:
 
 1. Download the RedisGears package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
-1. Upload the package to a node in the cluster.
+    {{<note>}}
+For offline installation, you also need to download the packages for RedisGears dependencies.
+    {{</note>}}
 
-1. Add RedisGears to the cluster with a `POST` request to the `/v2/modules` REST API endpoint:
+1. Upload the RedisGears package to a node in the cluster.
+
+1. For offline installation only, copy the dependencies to the following directory on the master node: `$modulesdatadir/rg/<version_integer>/deps/`
+    ```sh
+    $ cp gears-jvm.linux-centos7-x64.0.1.0.tgz $modulesdatadir/rg/10201/deps/
+    ```
+
+    {{<note>}}
+Skip this step unless your cluster does not have internet access. 
+    {{</note>}}
+
+1. Add RedisGears to the cluster with a [`POST` request to the `/v2/modules` REST API endpoint]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}):
 
     ```sh
     $ curl -k -u "<user>:<password>" -F "module=@/tmp/redisgears.linux-centos7-x64.1.2.1.zip" https://localhost:9443/v2/modules
     ```
+
+After the install is complete, RedisGears will appear in the list of available modules on the **settings** and **create database** pages of the Redis Enterprise admin console.
 
 ## Enable RedisGears for a database
 
