@@ -9,21 +9,18 @@ Before you can use RedisGears, you have to install the RedisGears module on your
 
 ## Minimum requirements
 
-- Redis Enterprise 6.0.0 or later
+- Redis Enterprise 6.0.12 or later
 - The [cluster is setup]({{< relref "/rs/administering/new-cluster-setup.md" >}}) and all of the nodes are joined to the cluster
 
 ## Installing RedisGears
 
 ### Step 1: Install RedisGears dependencies
 
-{{< note >}}
-This step is required for Redis Enterprise Software 6.0.8 and below only.
-For RS 6.0.12 and above, the dependencies are installed automatically when [you install with the `/v2/modules` endpoint]({{< relref "/modules/add-module-to-cluster.md#adding-a-module-using-the-rest-api" >}}).
-{{< /note >}}
+This step is optional and is only required for environments that don't have direct access to the internet for downloading the dependencies.
 
 On each node in the Redis Enterprise cluster:
 
-1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module - Dependencies Package from the Redis Enterprise Software section of the Downloads page.
+1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module - Dependencies Package for both Java and Python from the Redis Enterprise Software section of the Downloads page.
 1. Copy the dependencies package to a node in your cluster.
 1. Run these commands as root:
 

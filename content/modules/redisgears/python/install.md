@@ -1,5 +1,5 @@
 ---
-Title: Install RedisGears and the JVM plugin 
+Title: Install RedisGears and the Python plugin 
 linkTitle: Install 
 description:
 weight: 20
@@ -8,7 +8,7 @@ toc: "true"
 categories: ["Modules"]
 ---
 
-Before you can use RedisGears with the JVM, you need to install the RedisGears module and JVM plugin on your Redis Enterprise cluster and enable them for a database.
+Before you can use RedisGears with Python, you need to install the RedisGears module and Python plugin on your Redis Enterprise cluster and enable them for a database.
 
 ## Prerequisites
 
@@ -18,10 +18,12 @@ Before you can use RedisGears with the JVM, you need to install the RedisGears m
 
 1. Added nodes to the cluster TODO link
 
-1. Install RedisGears and the JVM plugin TODO link to installation instructions
+1. Install RedisGears and the Python plugin TODO link to installation instructions
 
 
 ## Enable RedisGears for a database
+
+TODO this section needs to focus on python
 
 1. From the Redis Enterprise admin console's **databases** page, select the **Add** button to create a new database:
 

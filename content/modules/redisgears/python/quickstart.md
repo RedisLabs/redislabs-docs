@@ -1,8 +1,8 @@
 ---
-Title: RedisGears quick start tutorial
+Title: RedisGears Python quick start tutorial
 linkTitle: Quick start
-description:
-weight: 50
+description: A quick start tutorial to learn how to use RedisGears with Python.
+weight: 10
 alwaysopen: false
 categories: ["Modules"]
 ---

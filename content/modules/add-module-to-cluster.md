@@ -31,10 +31,11 @@ To get the latest features and fixes for a module, you must upgrade the module i
 
 You can add a module to your cluster using:
 
-- The REST API - For all modules, but modules with dependencies must use the `/v2/modules` endpoint.
+- The REST API - For modules without dependencies, use the `/v1/modules` endpoint.
+- The REST API - For modules with dependencies, use the `/v2/modules` endpoint.
 
 ```sh
-**Note:** The /v2/modules endpoint only exists for Redis Enterprise Software v6.0.12 and above. If you are on an older version, you must perform a manual installation of the module and its dependencies 
+**Note:** The /v2/modules endpoint only exists for Redis Enterprise Software v6.0.12 and above. If you are on an older version, you must perform a manual installation of the module and its dependencies. 
 Example: [Installing RedisGears](https://docs.redislabs.com/latest/modules/redisgears/installing-redisgears/)
 ```
 
@@ -42,42 +43,23 @@ Example: [Installing RedisGears](https://docs.redislabs.com/latest/modules/redis
 
 ### REST API method
 
-Modules that have dependencies can only be added from the REST API.
-The `module.json` file in the module package lists the dependencies for the module and the URL to download each dependency.
-When you add the module, the master node downloads and installs the dependencies.
-Then the other nodes in the cluster copy the dependencies from the master node.
-
-{{< note >}}
-- If your master node does not have connectivity to the internet, copy the dependencies to `<modulesdatadir>/<module_name>/<version_integer>/deps/`. `modulesdatadir` is depending on where Redis Enterprise is installed (`/var/opt/redislabs/modules/` by default), `module_name` is the module name you want to install (`rg` for RedisGears), and `version_integer` is an integer format xxyyzz (xyyzz if x < 10). You can calculate this number using the formula 1000*x + 100*y + z. For example, RedisGears 1.0.7 dependencies need to be placed under `/var/opt/redislabs/modules/rg/10007/deps`.
-- To remove a module with dependencies from a cluster, you must use a DELETE action with the `/v2/modules` endpoint.
-{{< /note >}}
-
 To add a module package to the cluster using the REST API:
 
-1. Copy the module package to a node in the cluster, for example:
+1. Copy the module package to a node in the cluster, for example: 
+TODO this should not point to an s3 URL but to the download centre.  We don't want to expose this
 
     ```sh
     curl https://redismodules.s3.amazonaws.com/redisgears/redisgears.linux-bionic-x64.1.0.3.zip -o /tmp/redisgears.linux-bionic-x64.1.0.3.zip
     ```
 
-1. POST the modules to the `/v2/modules` endpoint, for example:
+1. POST the modules to the `/v1/modules` endpoint, for example:
+TODO needs verification
 
     ```sh
-    curl -k -u "admin@redislabs.com:<password>" -F "module=@/tmp/redisgears.linux-bionic-x64.1.0.3.zip" https://localhost:9443/v2/modules
+    curl -k -u "admin@redislabs.com:<password>" -F "module=@/tmp/redisearch.Linux-ubuntu16.04-x86_64.2.2.6.zip" https://localhost:9443/v1/modules
     ```
 
-    The response includes an action ID that you can use with the `/v1/actions` endpoint to see the progress of the action, such as:
-
-    ```sh
-    $ curl -k -u "admin@redislabs.com:<password>" https://localhost:9443/v1/actions/d1b6d8c2-7a95-4a4d-8ce8-6e6b6f12308f
-    {"action_uid":"d1b6d8c2-7a95-4a4d-8ce8-6e6b6f12308f","module_uid":"9f52147d8036b08903ca3a8bca87da00","name":"module_installation","progress":"100","status":"completed","task_id":"d1b6d8c2-7a95-4a4d-8ce8-6e6b6f12308f"}
-    ```
-
-    {{< note >}}
-You can also use the `/v1/modules` endpoint, but modules with dependencies are blocked from using that endpoint.
-    {{< /note >}}
-
-1. When the action is complete, log into the cluster admin console and go to `settings` > `redis modules` to see the module in the list.
+1. When the action is complete, log into the cluster admin console and go to `settings` > `redis modules` to see the module in the list. TODO why no example on rladmin or validating REST API?  doesn't make sense to send people to the UI when the procedure avoids that.
 
 ### Admin console method
 
