@@ -24,7 +24,7 @@ Offline installation requires you to manually upload dependencies to the master 
 1. Download the **RedisGears** package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
     {{<note>}}
-For offline installation, you also need to download the **RedisGears Dependencies** packages for both Python and Java.
+For offline installation of RedisGears v1.2 and later, you also need to download the **RedisGears Dependencies** packages for both Python and Java.
     {{</note>}}
 
 1. Upload the RedisGears package to a node in the cluster.
