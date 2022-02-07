@@ -1,54 +1,58 @@
 ---
 Title: Install RedisGears 
+linkTitle: Install
 description:
 weight: 60
 alwaysopen: false
 categories: ["Modules"]
 ---
-Before you can use RedisGears, you have to install the RedisGears module on your RS cluster.
+Before you can use RedisGears, you have to install the RedisGears module on your Redis Enterprise cluster.
 
 ## Minimum requirements
 
 - Redis Enterprise 6.0.12 or later
 - The [cluster is setup]({{< relref "/rs/administering/new-cluster-setup.md" >}}) and all of the nodes are joined to the cluster
 
-## Installing RedisGears
+## Install RedisGears
 
-### Step 1: Install RedisGears dependencies
+If your cluster uses Redis Enterprise v6.0.12 or later and has internet access, you only need to download the RedisGears package. It automatically fetches dependencies like the Python and JVM plugins during online installation.
 
-This step is optional and is only required for environments that don't have direct access to the internet for downloading the dependencies.
+Offline installation requires you to manually upload dependencies to the master node.
 
-On each node in the Redis Enterprise cluster:
+### Install RedisGears and dependencies
 
-1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module - Dependencies Package for both Java and Python from the Redis Enterprise Software section of the Downloads page.
-1. Copy the dependencies package to a node in your cluster.
-1. Run these commands as root:
+1. Download the **RedisGears** package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
+    {{<note>}}
+For offline installation, you also need to download the **RedisGears Dependencies** packages for both Python and Java.
+    {{</note>}}
+
+1. Upload the RedisGears package to a node in the cluster.
+
+1. For offline installation only, copy the dependencies to the following directory on the master node: `$modulesdatadir/rg/<version_integer>/deps/`
     ```sh
-    # source /etc/opt/redislabs/redislabs_env_config.sh
-    # mkdir -p $modulesdatadir/rg/<version_integer>/deps/
-    # tar -xvf /<path>/redisgears-dependencies.linux-bionic-x64.<version>.tgz -C $modulesdatadir/rg/<version_integer>/deps
-    # chown -R $osuser $modulesdatadir/rg
+    $ cp redisgears-jvm.Linux-ubuntu18.04-x86_64.1.2.2.tgz $modulesdatadir/rg/10201/deps/
     ```
 
-{{< note >}}
-- `<version>` - The version number in the format `x.y.z`.
-- `<version_integer>` - The version number in integer format `xxyyzz` (`xyyzz` if `x` < 10). You can calculate this number using the formula `10000*x + 100*y + z`.
-- You must also run these commands on new nodes before you join them to an existing cluster.
-{{< /note >}}
+    {{<note>}}
+Skip this step unless your cluster does not have internet access. 
+    {{</note>}}
 
-### Step 2: Install the RedisGears module
+1. Add RedisGears to the cluster with a [`POST` request to the `/v2/modules` REST API endpoint]({{<relref "/rs/references/rest-api/requests/modules#post-module-v2">}}):
 
-1. [Download](https://redislabs.com/download-center/modules/) the RedisGears Module.
-1. In the RS admin console, [add the RedisGears module]({{< relref "/modules/add-module-to-cluster.md" >}}) to the cluster.
+    ```sh
+    $ curl -k -u "<user>:<password>" -F "module=@/tmp/redisgears.linux-centos7-x64.1.2.1.zip" https://localhost:9443/v2/modules
+    ```
 
-### Step 3: Create a database and verify the installation
+After the install is complete, RedisGears will appear in the list of available modules on the **settings** and **create database** pages of the Redis Enterprise admin console.
 
-1. Create a Redis Enterprise database [with the RedisGears module enabled]({{< relref "/modules/add-module-to-database.md" >}}).
-1. From the CLI of a node in the cluster, check that the database was created successfully and shards are running with: `rladmin status`
-1. From the CLI of a node or of a client that is connected to the database, check that RedisGears is running correctly with: `redis-cli RG.PYEXECUTE "GearsBuilder().run()"`
+### Enable RedisGears for a database
 
-    To connect to the database from a client, run: `redis-cli -h <FQDN_of_node> -p <host> [-a <password>]`
+After installation, create a new database and enable RedisGears:
+
+- [With Python]({{<relref "/modules/redisgears/python/install">}})
+
+- [With the JVM]({{<relref "/modules/redisgears/jvm/install">}})
 
 ## Install the write-behind recipe
 
@@ -60,14 +64,14 @@ The Write-Behind recipe comes with two types of dependencies:
 In most cases all of these can be provisioned to RedisGears before the Functions are uploaded.
 However, root access for the driver on the host is required in some cases, for example with Oracle drivers.
 
-### Step 1: Install Oracle driver (optional)
+### Install Oracle driver (optional)
 
 If you want to do write-behind with an Oracle database:
 
 1. [Download the Oracle driver](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html).
 1. On each RS node in the cluster, follow the installation instructions on the download page for the Oracle driver.
 
-### Step 2: Import requirements
+### Import requirements
 
 1. Install [Python 3](https://www.python.org/downloads/).
 1. To install the [gears-cli](https://pypi.org/project/gears-cli/), run: `pip install gears-cli`
@@ -99,7 +103,7 @@ The `module.json` file in the module package lists the dependencies for the modu
 
     This command returns a list of all available requirements.
 
-### Step 3: Register the functions
+### Register the functions
 
 The following is a RedisGears recipe that shows how to use the Write Behind pattern to map data from Redis Hashes to MySQL tables.
 The recipe maps all Redis Hashes with the prefix `person:<id>` to the MySQL table persons, with `<id>` being the primary key and mapped to the person_id column.

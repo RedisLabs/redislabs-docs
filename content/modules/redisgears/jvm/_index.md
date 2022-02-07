@@ -2,7 +2,7 @@
 Title: RedisGears JVM plugin
 linkTitle: Run with JVM
 description: The RedisGears JVM plugin allows you to run RedisGears functions in the Java virtual machine.
-weight: 71
+weight: 75
 alwaysopen: false
 categories: ["Modules"]
 ---
@@ -11,7 +11,7 @@ With the [RedisGears JVM plugin](https://github.com/RedisGears/JVMPlugin), you c
 
 Similar to the Python plugin, the JVM plugin allows both batch processing and event-driven processing.
 
-Before you can run RedisGears with Java, you will need to [install the RedisGears module and the JVM plugin]({{<relref "/modules/redisgears/jvm/install">}}) on your Redis Enterprise cluster and enable them for your database.
+Before you can run RedisGears with Java, you will need to [install the RedisGears module and the JVM plugin]({{<relref "/modules/redisgears/installing-redisgears#install-redisgears">}}) on your Redis Enterprise cluster and [enable them for your database]({{<relref "/modules/redisgears/jvm/install">}}).
 
 Once you have written your code, compile and package it into a [JAR](https://en.wikipedia.org/wiki/JAR_(file_format)) file and upload it to a node on your Redis Enterprise cluster. Use the `RG.JEXECUTE` command with the `redis-cli` command-line tool to run your code.
 

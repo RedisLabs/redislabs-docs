@@ -5,13 +5,14 @@ description: A quick start tutorial to learn how to use RedisGears with Python.
 weight: 10
 alwaysopen: false
 categories: ["Modules"]
+aliases: /modules/redisgears/redisgears-quickstart/
 ---
-For this tutorial, you'll need one of the following:
+For this tutorial, you need:
 
 - Either:
-    - A Redis Enterprise cluster with [the RedisGear module installed]({{< relref "/modules/redisgears/installing-redisgears.md" >}}), [added to the cluster]({{< relref "/modules/add-module-to-cluster.md" >}}), and [added to a database]({{< relref "/modules/add-module-to-database.md" >}})
+    - A Redis Enterprise cluster with the [RedisGears module and Python plugin installed]({{<relref "/modules/redisgears/installing-redisgears#install-redisgears">}}) and [enabled on a database]({{<relref "/modules/redisgears/python/install">}})
     - An OSS Redis database with the RedisGears module
-- redis-cli with connectivity to a redis database
+- `redis-cli` with connectivity to a Redis database
 
 ## RedisGears basics
 

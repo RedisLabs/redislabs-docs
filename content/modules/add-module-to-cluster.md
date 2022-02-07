@@ -29,37 +29,29 @@ To get the latest features and fixes for a module, you must upgrade the module i
 
 ## Add a module to a Redis Enterprise cluster
 
-You can add a module to your cluster using:
+Use one of the following methods to add a module to your cluster:
 
-- The REST API - For modules without dependencies, use the `/v1/modules` endpoint.
-- The REST API - For modules with dependencies, use the `/v2/modules` endpoint.
+- REST API [`POST` request to the `/v1/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module">}}) endpoint
 
-```sh
-**Note:** The /v2/modules endpoint only exists for Redis Enterprise Software v6.0.12 and above. If you are on an older version, you must perform a manual installation of the module and its dependencies. 
-Example: [Installing RedisGears](https://docs.redislabs.com/latest/modules/redisgears/installing-redisgears/)
-```
+- Redis Enterprise admin console
 
-- The admin console - For modules without dependencies, such as RedisGraph.
+- For RedisGears, follow these [installation instructions]({{<relref "/modules/redisgears/installing-redisgears">}})
 
 ### REST API method
 
-To add a module package to the cluster using the REST API:
+To add a module to the cluster using the REST API:
 
-1. Copy the module package to a node in the cluster, for example: 
-TODO this should not point to an s3 URL but to the download centre.  We don't want to expose this
+1. Download the module package from the [download center](https://redis.com/redis-enterprise-software/download-center/modules/).
 
-    ```sh
-    curl https://redismodules.s3.amazonaws.com/redisgears/redisgears.linux-bionic-x64.1.0.3.zip -o /tmp/redisgears.linux-bionic-x64.1.0.3.zip
-    ```
+1. Copy the package to a node in the cluster.
 
-1. POST the modules to the `/v1/modules` endpoint, for example:
-TODO needs verification
+1. Add the module to the cluster with a [`POST` request to the `/v1/modules`]({{<relref "/rs/references/rest-api/requests/modules#post-module">}}) endpoint:
 
     ```sh
     curl -k -u "admin@redislabs.com:<password>" -F "module=@/tmp/redisearch.Linux-ubuntu16.04-x86_64.2.2.6.zip" https://localhost:9443/v1/modules
     ```
 
-1. When the action is complete, log into the cluster admin console and go to `settings` > `redis modules` to see the module in the list. TODO why no example on rladmin or validating REST API?  doesn't make sense to send people to the UI when the procedure avoids that.
+1. If the module installation succeeds, the `POST` request returns a [JSON object]({{<relref "/rs/references/rest-api/objects/module">}}) that represents the new module. If it fails, it may return a JSON object with an `error_code` and `description` with more details.
 
 ### Admin console method
 

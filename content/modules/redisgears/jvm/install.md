@@ -14,12 +14,11 @@ Before you can use RedisGears with the JVM, you need to install the RedisGears m
 
 1. Redis Enterprise v6.0.12 or later
 
-1. Created a Redis Enterprise cluster TODO link
+1. [Created a Redis Enterprise cluster]({{<relref "/rs/administering/new-cluster-setup">}})
 
-1. Added nodes to the cluster TODO link
+1. [Added nodes to the cluster]({{<relref "/rs/administering/adding-node">}})
 
-1. Install RedisGears and the JVM plugin TODO link to installation instructions
-
+1. [Installed RedisGears and the JVM plugin]({{<relref "/modules/redisgears/installing-redisgears#install-redisgears">}})
 
 ## Enable RedisGears for a database
 
