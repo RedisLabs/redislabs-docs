@@ -10,10 +10,20 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RedisTimeSeries v1.4.13 requires:
+RedisTimeSeries v1.4.14 requires:
 
 - Minimum Redis compatibility version (database): 5.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.12
+
+## v1.4.14 (February 2022)
+
+This is a maintenance release for RedisTimeSeries 1.4.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Bug fixes:
+
+- [#891](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/891), [#892](https://github.com/RedisTimeSeries/RedisTimeSeries/pull/892) Fixed memory leak in parseCreateArgs when parsing error occurs (MOD-1958)
 
 ## v1.4.13 (November 2021)
 
