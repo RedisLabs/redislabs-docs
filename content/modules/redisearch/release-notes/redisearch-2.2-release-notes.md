@@ -10,10 +10,26 @@ categories: ["Modules"]
 ---
 ## Requirements
 
-RediSearch v2.2.6 requires:
+RediSearch v2.2.7 requires:
 
 - Minimum Redis compatibility version (database): 6.0.0
 - Minimum Redis Enterprise Software version (cluster): 6.0.0
+
+## v2.2.7 (February 2022)
+
+This is a maintenance release for RediSearch 2.2.
+
+Update urgency: `MODERATE`: Program an upgrade of the server, but it's not urgent.
+
+Details:
+
+- Bug fixes:
+  - [#2466](https://github.com/RediSearch/RediSearch/pull/2466) `FT.PROFILE` for `FT.AGGREGATE` on clustered databases
+  - [#2473](https://github.com/RediSearch/RediSearch/pull/2473) `FT.PROFILE` with no result processor present
+  - [#2490](https://github.com/RediSearch/RediSearch/pull/2490) Case sensitivity issue in searches of TAG field on JSON
+
+- Improvements:
+  - [#2469](https://github.com/RediSearch/RediSearch/pull/2469) Add API for TAG children query nodes
 
 ## v2.2.6 (January 2022)
 
