@@ -14,13 +14,13 @@ jobs:
                 name: Set "Edit in GitHub" link for the specified branch in the hugo config
                 command: sed -i s/branch/${CIRCLE_BRANCH}/g config.toml
             # Create temporary helper files to prepare for PDF generation
-            - run:
-                name: Create helper files for PDF generation
-                command: |
-                    cd utilities/create_pdf_tarball
-                    ./create_html.sh
-                    cd ../create_single_pdfs
-                    ./create_html.sh
+            # - run:
+            #     name: Create helper files for PDF generation
+            #     command: |
+            #         cd utilities/create_pdf_tarball
+            #         ./create_html.sh
+            #         cd ../create_single_pdfs
+            #         ./create_html.sh
             # Declare target location for baseURL and deployment location and build site
             # Improvement-> move the declaration to command and save to bash environment: echo 'export PATH=/path/to/foo/bin:$PATH' >> $BASH_ENV
             - run:
@@ -34,11 +34,11 @@ jobs:
                     echo ${LOCATION}
                     hugo -v --baseURL //docs.redis.com/$LOCATION
             # Create internal links in temporary PDF generation helper files
-            - run:
-                name: Create internal links in PDF generation helper files
-                command: |
-                    cd utilities/create_pdf_tarball
-                    ./edit_links.sh
+            # - run:
+            #     name: Create internal links in PDF generation helper files
+            #     command: |
+            #         cd utilities/create_pdf_tarball
+            #         ./edit_links.sh
             - run:
                 name: Remove generated directories that are not needed
                 command: |
@@ -455,28 +455,28 @@ workflows:
           filters:
             branches:
               only: latest
-      - build-pdfs-staging:
-          requires:
-            - deploy-docs-staging
-          filters:
-            branches:
-              ignore:
-                - /.*-build/
-                - latest
+    #   - build-pdfs-staging:
+    #       requires:
+    #         - deploy-docs-staging
+    #       filters:
+    #         branches:
+    #           ignore:
+    #             - /.*-build/
+    #             - latest
       - build-pdfs-latest:
           requires:
             - deploy-docs-latest
           filters:
             branches:
               only: latest
-      - deploy-pdfs-staging:
-          requires:
-            - build-pdfs-staging
-          filters:
-            branches:
-              ignore:
-                - /.*-build/
-                - latest
+    #   - deploy-pdfs-staging:
+    #       requires:
+    #         - build-pdfs-staging
+    #       filters:
+    #         branches:
+    #           ignore:
+    #             - /.*-build/
+    #             - latest
       - deploy-pdfs-latest:
           requires:
             - build-pdfs-latest
