@@ -21,8 +21,8 @@ The following table shows which modules are supported by Redis Enterprise Softwa
 | [RedisJSON]({{<relref "/modules/redisjson">}})   | Yes | Yes |
 | [RedisGraph]({{<relref "/modules/redisgraph">}}) | Yes | Yes |
 | [RedisTimeSeries]({{<relref "/modules/redistimeseries">}}) | Yes | Yes |
-| [RedisGears]({{<relref "/modules/redisgears">}}) | Yes | No |
 | [RedisBloom]({{<relref "/modules/redisbloom">}}) | Yes | Yes |
+| [RedisGears]({{<relref "/modules/redisgears">}}) | Yes | No |
 | [RedisAI]({{<relref "/modules/redisai">}})       | Yes | No |
 
 ## Module feature support
@@ -51,21 +51,21 @@ For details about individual modules, see the corresponding documentation.
 
 [^1]: The RedisGraph module supports clustering; however, individual graphs contained in a key reside in a single shard, which can affect pricing.  To learn more, [contact support](https://redis.com/company/support/).
 
-| Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
-|-------------------------|:------------:|:----------:|:------------:|:----------:| 
-| Active-Active (CRDB)    | No           | Yes (v1.0) | No           | No         | 
-| Backup/Restore          | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | 
-| Clustering              | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | 
-| Custom hashing policy   | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | 
-| Eviction expiration     | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | 
-| Failover/migration      | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | 
-| Internode encryption    | Yes (v1.4.9) | Yes (v1.2) | Yes (v2.2.6) | Yes (v1.2) | 
-| Module datatypes        | Yes          | Yes        | Yes          | Yes        | 
-| Persistence (AOF)       | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | 
-| Persistence (snapshot)  | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | Yes (v1.0) | 
-| Redis on Flash (RoF)    | No           | Yes (vTBD) | Yes (vTBD)   | No         | 
-| Replica Of              | Yes (v1.2)   | No         | Yes (v2.0)   | Yes (v1.0) | 
-| Reshard/rebalance       | Yes (v1.2)   | Yes (v1.0) | Yes (v2.0)   | No         | 
+| Feature name/capability | [RedisTimeSeries]({{< relref  "/modules/redistimeseries" >}}) | [RedisBloom]({{< relref  "/modules/redisbloom" >}}) | [RedisGears]({{< relref  "/modules/redisgears" >}}) | [RedisAI]({{< relref "/modules/redisai" >}}) |
+|-------------------------|:------------:|:------------:|:----------:|:----------:| 
+| Active-Active (CRDB)    | No           | No           | Yes (v1.0) | No         | 
+| Backup/Restore          | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Clustering              | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Custom hashing policy   | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Eviction expiration     | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Failover/migration      | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Internode encryption    | Yes (v1.4.9) | Yes (v2.2.6) | Yes (v1.2) | Yes (v1.2) | 
+| Module datatypes        | Yes          | Yes          | Yes        | Yes        | 
+| Persistence (AOF)       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Persistence (snapshot)  | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | Yes (v1.0) | 
+| Redis on Flash (RoF)    | No           | Yes (vTBD)   | Yes (vTBD) | No         | 
+| Replica Of              | Yes (v1.2)   | Yes (v2.0)   | No         | Yes (v1.0) | 
+| Reshard/rebalance       | Yes (v1.2)   | Yes (v2.0)   | Yes (v1.0) | No         | 
 
 [^2]: In version 1.6, RediSearch supported Replica Of only between databases with the same number of shards.  This limitation was fixed in v2.0. 
 
