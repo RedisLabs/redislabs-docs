@@ -16,7 +16,7 @@ This article describes Redis Enterprise feature compatibility for Redis modules.
 The following table shows which modules are supported by Redis Enterprise Software and Redis Enterprise Cloud.
 
 | Module | Redis Enterprise<br/>Software | Redis Enterprise<br/>Cloud |
-|--------|:-------------------------:|:-----------------------:|
+|:-------|:-------------------------:|:-----------------------:|
 | [RediSearch]({{<relref "/modules/redisearch">}}) | Yes | Yes |
 | [RedisJSON]({{<relref "/modules/redisjson">}})   | Yes | Yes |
 | [RedisGraph]({{<relref "/modules/redisgraph">}}) | Yes | Yes |
