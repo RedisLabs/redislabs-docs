@@ -455,28 +455,28 @@ workflows:
           filters:
             branches:
               only: latest
-    #   - build-pdfs-staging:
-    #       requires:
-    #         - deploy-docs-staging
-    #       filters:
-    #         branches:
-    #           ignore:
-    #             - /.*-build/
-    #             - latest
+      - build-pdfs-staging:
+          requires:
+            - deploy-docs-staging
+          filters:
+            branches:
+              ignore:
+                - /.*-build/
+                - latest
       - build-pdfs-latest:
           requires:
             - deploy-docs-latest
           filters:
             branches:
               only: latest
-    #   - deploy-pdfs-staging:
-    #       requires:
-    #         - build-pdfs-staging
-    #       filters:
-    #         branches:
-    #           ignore:
-    #             - /.*-build/
-    #             - latest
+      - deploy-pdfs-staging:
+          requires:
+            - build-pdfs-staging
+          filters:
+            branches:
+              ignore:
+                - /.*-build/
+                - latest
       - deploy-pdfs-latest:
           requires:
             - build-pdfs-latest
