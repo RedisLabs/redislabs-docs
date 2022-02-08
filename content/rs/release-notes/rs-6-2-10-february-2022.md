@@ -61,24 +61,21 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 ## Additional enhancements
 
-- MD5 checksum values are now displayed in the Download Center.
+- MD5 checksum values are now displayed in the [Download Center](https://redislabs.com/redis-enterprise-software/download-center/software/).
 
-
-
-* Providing the MD5 value in the download center.
-* Added an option to run a connectivity health check for the management layer of Active-Active databases. Run the following REST API command:
+- Added an option to run a connectivity health check for the management layer of Active-Active databases. Run the following REST API command:
 
     ```
     curl -k -X GET -u "demo@example.com:123456" https://127.0.0.1:9443/v1/crdb/<crdb_guid>/health_report
     ```
 
-- Added the TLS handshake error messages to the DMC proxy log (RS59346).
+- Added TLS handshake error messages to the DMC proxy log (RS59346).
 
 ## Resolved issues 
 
 - RS58219 - Fix a UI error message that showed a path instead of a relevant error message.
 - RS44958 - Fix incorrect description for the graph "incoming traffic" in Active-Active (geo-distributed) database UI Metrics.
-- RS66280 - Fixed the lexicographically [SORT](https://redis.io/commands/sort) command on Active-Active databases (e.g. `SORT mylist ALPHA`). The SORT command should only run on keys mapped to the same slot.
+- RS66280 - Fixed the lexicographic [SORT](https://redis.io/commands/sort) command on Active-Active databases (e.g. `SORT mylist ALPHA`). The SORT command should only run on keys mapped to the same slot.
 - RS64575 - Fixed a bug in the replication between primary and replica shards of a destination Active-active database in the scenario of using Replica-Of from a single to an Active-Active database, where the syncer process went down during the full sync.
 - RS65370 - Added logic to remove old syncer entries in the cluster configuration during upgrades.
 
@@ -88,7 +85,7 @@ For help upgrading a module, see [Add a module to a cluster](https://docs.redis.
 
 Release 6.2.10 fixes a latent bug in which the syncer accepts an invalid leaf proxy certificate (RS67434). Following the fix, we added a new flag that enables the syncer of the target database to accept a dummy or invalid certificate from the proxy of the source database. This feature can be used for development and test environments where you replicate the production configuration without access to the  production certificates. It is disabled by default for new databases.
 
-For seamless upgrade, the feature will be automatically enabled upon upgrade for replica-of and active-active TLS enabled target databases. We advise you to review and validate your certificates in your production environments and then to disable the feature via the API.
+For seamless upgrade, the feature will be automatically enabled upon upgrade for Replica-Of and Active-Active TLS-enabled target databases. We recommend reviewing and validating your certificates in your production environments and then disabling the feature via the API.
 
 ### Open Source Redis Security fixes compatibility
 
