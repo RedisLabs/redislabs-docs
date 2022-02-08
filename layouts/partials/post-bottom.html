@@ -10,11 +10,11 @@
         </div>
         <div style="display: flex;">
             <!-- Only display Download PDF button if on latest -->
-            {{ if in .Site.BaseURL "docs.redis.com/latest" }} <!--comment out for testing/preview-->
+            <!--{{ if in .Site.BaseURL "docs.redis.com/latest" }}--> <!--comment out for testing/preview-->
                 <div class="pdf-link" style="margin-right: 10px;">{{ partial "download-pdf.html" . }}<i class="fi-download"></i>
                     <span>{{T "Download-pdf"}}</span></a>
                 </div>
-            {{ end }} <!--comment out for testing/preview-->
+            <!--{{ end }}--> <!--comment out for testing/preview-->
             <div class="go-top-link">
                 <a href="#top" class="got-to-top">Top&nbsp;<i class="icon-Top"></i></a>
             </div>
