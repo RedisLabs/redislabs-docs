@@ -1,7 +1,7 @@
 ---
 Title: RedisGraph
 description:
-weight: 50
+weight: 40
 alwaysopen: false
 categories: ["Modules"]
 aliases:

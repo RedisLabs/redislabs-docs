@@ -1,7 +1,7 @@
 ---
 Title: RediSearch
 description:
-weight: 30
+weight: 20
 alwaysopen: false
 categories: ["Modules"]
 aliases:

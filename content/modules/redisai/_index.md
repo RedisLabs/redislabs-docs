@@ -1,7 +1,7 @@
 ---
 Title: RedisAI
 description:
-weight: 20
+weight: 80
 alwaysopen: false
 categories: ["Modules"]
 aliases: /redisai/
