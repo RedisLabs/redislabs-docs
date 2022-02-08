@@ -1,7 +1,7 @@
 ---
 Title: RedisTimeSeries
 description:
-weight: 80
+weight: 50
 alwaysopen: false
 categories: ["Modules"]
 aliases:
