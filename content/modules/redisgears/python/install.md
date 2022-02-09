@@ -36,6 +36,10 @@ Before you can use RedisGears with Python, you need to install the RedisGears mo
 
     {{<image filename="images/rs/icon_save.png" width="30px" alt="The Save icon">}}{{</image>}}
 
+    {{<note>}}
+Only RedisGears v1.2 and later require this configuration.
+    {{</note>}}
+
 1. Select the **Activate** button.
 
 ## Verify the install

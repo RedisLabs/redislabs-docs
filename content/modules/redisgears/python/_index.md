@@ -19,3 +19,4 @@ Once you have written your code, upload it to a node on your Redis Enterprise cl
 
 - [RedisGears Python quick start]({{<relref "/modules/redisgears/python/quickstart">}})
 - [RedisGears Python operations](http://oss.redis.com/redisgears/operations.html)
+- [RedisGears recipes]({{<relref "/modules/redisgears/python/recipes">}})
